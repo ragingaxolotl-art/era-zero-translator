@@ -1,9 +1,11 @@
 import{svgFromFormal,midiFromFormal,createBundle,verifyBundle}from'./engine.mjs';
 import{analyzeEnglish}from'./english.mjs';
+import{encodeName,estimatePhonemes,notesForName,midiFromName,PHONEMES}from'./names.mjs';
 
 const DIRECT=new Set(['atom','compound']);
 const ACTS={ASSERT:'assertion',QUESTION:'question',COMMAND:'command',DEFINE:'definition',POSSIBILITY:'possibility'};
 const state={mode:'general',data:null,analysis:null,selected:null,resolution:null,drafts:{general:'',controlled:''},resolutionCache:new Map()};
+let currentName=null;
 const $=id=>document.getElementById(id);
 const escapeHtml=value=>String(value??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const toast=message=>{const el=$('toast');el.textContent=message;el.classList.add('show');clearTimeout(el.timer);el.timer=setTimeout(()=>el.classList.remove('show'),3200)};
@@ -36,4 +38,11 @@ $('downloadMidi').addEventListener('click',()=>{if(state.resolution)download(new
 $('downloadBundle').addEventListener('click',async()=>{if(!state.resolution)return toast('Resolve a meaning before exporting.');try{const bundle=await createBundle(state.resolution,$('sourceInput').value);download(new Blob([JSON.stringify(bundle,null,2)],{type:'application/json'}),'era-zero-bundle.ezb.json')}catch(error){showError(error)}});
 $('importBundle').addEventListener('change',async event=>{const file=event.target.files[0];if(!file)return;try{const verified=await verifyBundle(JSON.parse(await file.text()));toast(`Valid ${verified.format} · ${verified.target_id}`)}catch(error){showError({code:'invalid_bundle',message:error.message})}finally{event.target.value=''}});
 $('previewTones').addEventListener('click',()=>{if(!state.resolution)return;const context=new(window.AudioContext||window.webkitAudioContext)();let at=context.currentTime+.05;state.resolution.formal.performance.lexical_events.forEach(event=>{const notes=[...event.family_opening_absolute_midi,...event.address_absolute_midi,...(event.runtime_tail?[event.runtime_tail.absolute_note]:[])];notes.forEach(note=>{const oscillator=context.createOscillator(),gain=context.createGain();oscillator.type='sine';oscillator.frequency.value=440*Math.pow(2,(note-69)/12);gain.gain.setValueAtTime(.0001,at);gain.gain.exponentialRampToValueAtTime(.1,at+.02);gain.gain.exponentialRampToValueAtTime(.0001,at+.28);oscillator.connect(gain).connect(context.destination);oscillator.start(at);oscillator.stop(at+.3);at+=.2})});toast('Reference-tone preview is presentation only.')});
+
+function playName(name){const context=new(window.AudioContext||window.webkitAudioContext)();let at=context.currentTime+.05;const notes=notesForName(name);notes.forEach((note,index)=>{const oscillator=context.createOscillator(),gain=context.createGain(),isFrame=index<3||index>=notes.length-3;oscillator.type=isFrame?'sine':index%2?'triangle':'square';oscillator.frequency.value=440*Math.pow(2,(note-69)/12);const duration=isFrame?.18:.25;gain.gain.setValueAtTime(.0001,at);gain.gain.exponentialRampToValueAtTime(isFrame?.08:.055,at+.015);gain.gain.exponentialRampToValueAtTime(.0001,at+duration);oscillator.connect(gain).connect(context.destination);oscillator.start(at);oscillator.stop(at+duration+.02);at+=duration+.035});toast('Playing framed phoneme tones. This is a label, not a semantic root.')}
+$('nameWord').addEventListener('input',()=>{$('namePhonemes').value=estimatePhonemes($('nameWord').value).join(' ')});
+$('generateName').addEventListener('click',async()=>{try{currentName=await encodeName($('nameWord').value,$('nameTag').value,$('namePhonemes').value);$('nameResult').classList.remove('hidden');$('nameId').textContent=currentName.name_id;$('namePhonemeResult').textContent=currentName.phonemes.join(' · ');$('nameToneResult').textContent=notesForName(currentName).join(' – ');$('nameBoundary').textContent=currentName.object_tag?`Label plus instance tag “${currentName.object_tag}”`:'Reusable label; add an object tag to distinguish one specific instance.'}catch(error){toast(error.message)}});
+$('playName').addEventListener('click',()=>{if(currentName)playName(currentName)});
+$('downloadNameMidi').addEventListener('click',()=>{if(currentName)download(new Blob([midiFromName(currentName)],{type:'audio/midi'}),`${currentName.normalized_label.replaceAll(' ','-')}.ezname.mid`)});
+$('phonemeHelp').textContent=`Editable sound symbols: ${PHONEMES.join(' ')}`;
 boot();

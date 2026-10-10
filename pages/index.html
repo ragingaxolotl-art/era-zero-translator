@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Browser workbench for conservative English-to-Era-Zero translation, clarification, formal notation, SVG, and MIDI export.">
   <title>Era Zero Translator Workbench</title>
-  <link rel="stylesheet" href="./styles.css?v=1.1">
+  <link rel="stylesheet" href="./styles.css?v=1.2">
 </head>
 <body>
   <div class="shell">
@@ -14,7 +14,7 @@
         <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
         <span><strong>ERA ZERO</strong><small>Translator Workbench</small></span>
       </a>
-      <div class="release"><span class="status-dot"></span><span id="serviceStatus">Checking engine</span><b>v1.1</b></div>
+      <div class="release"><span class="status-dot"></span><span id="serviceStatus">Checking engine</span><b>v1.2</b></div>
     </header>
 
     <main>
@@ -59,6 +59,28 @@
             <li>Every resolution round-trips exactly</li>
           </ul>
         </aside>
+      </section>
+
+      <section class="name-lab card" aria-labelledby="nameLabTitle">
+        <div class="name-lab-copy">
+          <p class="eyebrow">Unknown nouns and names</p>
+          <h2 id="nameLabTitle">Give an unfamiliar object a sound ID.</h2>
+          <p>Spell a label as deterministic phoneme tones. This identifies the label without claiming that Era Zero already knows its meaning. Add an object tag when two individual objects need different IDs.</p>
+        </div>
+        <div class="name-fields">
+          <label>Unknown word or name<input id="nameWord" placeholder="e.g. zibble"></label>
+          <label>Optional object tag<input id="nameTag" placeholder="e.g. blue-zibble-2"></label>
+          <label class="wide-field">Pronunciation symbols<input id="namePhonemes" placeholder="Z IH B AH L"><small id="phonemeHelp"></small></label>
+          <button id="generateName" class="primary">Generate sound ID <span>→</span></button>
+        </div>
+        <div id="nameResult" class="name-result hidden" aria-live="polite">
+          <div><span>Sound ID</span><code id="nameId"></code></div>
+          <div><span>Phonemes</span><code id="namePhonemeResult"></code></div>
+          <div><span>MIDI notes</span><code id="nameToneResult"></code></div>
+          <p id="nameBoundary"></p>
+          <div class="name-actions"><button id="playName">▶ Play phoneme tones</button><button id="downloadNameMidi">Download name MIDI</button></div>
+          <p class="microcopy">Experimental EZNAME-0.1 label channel · framed separately from canonical semantic roots · no semantic claim</p>
+        </div>
       </section>
 
       <section id="results" class="results hidden" aria-live="polite">
@@ -117,6 +139,6 @@
     <footer><span>DBA Era Zero · Canonical browser translator</span><span>EZIR-JSON-1 · EZF-1 · EZSVG-1 · MIDI-0 · EZB-1</span></footer>
   </div>
   <div id="toast" role="status" aria-live="polite"></div>
-  <script type="module" src="./app.js?v=1.1"></script>
+  <script type="module" src="./app.js?v=1.2"></script>
 </body>
 </html>

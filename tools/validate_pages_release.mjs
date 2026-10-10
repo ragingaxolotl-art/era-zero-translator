@@ -8,6 +8,7 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const pages=path.join(root,'pages');
 const engine=await import(path.join(pages,'engine.mjs'));
 const english=await import(path.join(pages,'english.mjs'));
+const names=await import(path.join(pages,'names.mjs'));
 const index=JSON.parse(await fs.readFile(path.join(pages,'data/index.json'),'utf8'));
 const checks=[];
 const check=(name,condition)=>{checks.push([name,Boolean(condition)]);if(!condition)console.error(`FAIL: ${name}`)};
@@ -33,6 +34,13 @@ for(const [sentence,target,act,runtime,automatic] of englishCases){
 }
 const ambiguousKnow=english.analyzeEnglish('I know the answer.',index);
 check('plain English preserves real ambiguity',ambiguousKnow.decision.requires_clarification&&ambiguousKnow.candidates.some(item=>item.route==='gap'));
+const named=await names.encodeName('zibble','blue-2');
+const namedAgain=await names.encodeName('zibble','blue-2');
+const differentInstance=await names.encodeName('zibble','red-1');
+check('phonemic label is deterministic',named.name_id===namedAgain.name_id&&JSON.stringify(names.notesForName(named))===JSON.stringify(names.notesForName(namedAgain)));
+check('phonemic estimate and framing',named.format==='EZNAME-0.1'&&named.phonemes.join(' ')==='Z IH B AH L'&&named.semantic_claim===false&&names.notesForName(named).length>named.phonemes.length*2);
+check('object instance distinction',named.name_id!==differentInstance.name_id&&JSON.stringify(named.instance_notes)!==JSON.stringify(differentInstance.instance_notes));
+check('phonemic MIDI conformance',new TextDecoder().decode(names.midiFromName(named).slice(0,4))==='MThd');
 
 let variants=0;
 for(const [target,relative] of Object.entries(index.resolution_files)){
@@ -59,8 +67,9 @@ check('bundle corruption rejection',rejected);
 const html=await fs.readFile(path.join(pages,'index.html'),'utf8');
 const app=await fs.readFile(path.join(pages,'app.js'),'utf8');
 const css=await fs.readFile(path.join(pages,'styles.css'),'utf8');
-check('project-relative versioned assets',html.includes('href="./styles.css?v=1.1"')&&html.includes('src="./app.js?v=1.1"')&&!html.includes('src="/app.js'));
+check('project-relative versioned assets',html.includes('href="./styles.css?v=1.2"')&&html.includes('src="./app.js?v=1.2"')&&!html.includes('src="/app.js'));
 check('English-first interface',html.includes('Write it in normal English')&&html.includes('No codes or brackets needed')&&app.includes("from'./english.mjs'"));
+check('nonsemantic phonemic-name interface',html.includes('Give an unfamiliar object a sound ID')&&html.includes('Experimental EZNAME-0.1')&&app.includes("from'./names.mjs'"));
 check('accessible responsive UI',html.includes('aria-live')&&html.includes('role="tablist"')&&css.includes('@media(max-width:900px)')&&css.includes('prefers-reduced-motion'));
 check('hosted limitation is explicit',app.includes('Open-slot compound role binding')||index.online_scope.note.includes('Open-slot compound'));
 

@@ -1,0 +1,40 @@
+---
+metadata:
+  title: Era Zero Experimental Phonemic Name Layer
+  format: EZNAME-0.1
+  status: experimental_noncanonical
+  semantic_authority_changes: 0
+  purpose: Identify unfamiliar labels and optionally distinguish individual referents without assigning an unapproved atomic meaning.
+authority_boundary:
+  semantic_claim: false
+  canonical_root_created: false
+  canonical_midi_modified: false
+  semantic_ir_modified: false
+  rule: An EZNAME sequence identifies a pronunciation label. It never defines what the referent is.
+input:
+  label: required Unicode source label normalized for the current English estimator
+  phonemes: editable sequence from the published EZNAME phoneme inventory
+  object_tag: optional user-provided instance discriminator
+phoneme_encoding:
+  inventory: [AA, AE, AH, AO, AW, AY, B, CH, D, DH, EH, ER, EY, F, G, HH, IH, IY, JH, K, L, M, N, NG, OW, OY, P, R, S, SH, T, TH, UH, UW, V, W, Y, Z, ZH, WB]
+  representation: Each inventory index maps bijectively to a two-note pair. The first note identifies an eight-member group and the second identifies the member.
+  start_frame_midi: [48, 60, 55]
+  end_frame_midi: [55, 60, 48]
+  namespace_rule: Framing and the EZNAME format tag keep name labels outside canonical lexical-event decoding.
+instance_identity:
+  status: optional
+  derivation: First eight hexadecimal symbols of SHA-256 over format, normalized label, phoneme sequence, and object tag are rendered as instance notes after a separate marker.
+  limitation: The tag distinguishes user-designated referents; it does not prove real-world identity.
+audio:
+  playback: Web Audio reference tones
+  export: Standard MIDI type 0, presentation-only
+  semantics: none
+pronunciation:
+  estimator: deterministic English grapheme-to-phoneme approximation with a small exception dictionary
+  user_override: required for pronunciations the estimator does not capture accurately
+  dialect_status: unspecified_until_user_override
+future_review:
+  - Approve or replace the phoneme inventory.
+  - Review multilingual and dialect-neutral pronunciation input.
+  - Decide whether EZNAME belongs in a future semantic-IR reference role.
+  - Preserve the strict distinction between a label, a kind meaning, and a particular object identity.
