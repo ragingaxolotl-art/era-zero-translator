@@ -1,6 +1,6 @@
-import{svgFromFormal,midiFromFormal,createBundle,verifyBundle,soundPlanFromFormal}from'./engine.mjs';
-import{analyzeEnglish}from'./english.mjs';
-import{encodeName,estimatePhonemes,notesForName,midiFromName,PHONEMES}from'./names.mjs';
+import{svgFromFormal,midiFromFormal,createBundle,verifyBundle,soundPlanFromFormal}from'./engine.mjs?v=1.3.1';
+import{analyzeEnglish}from'./english.mjs?v=1.3.1';
+import{encodeName,estimatePhonemes,notesForName,midiFromName,PHONEMES}from'./names.mjs?v=1.3.1';
 
 const DIRECT=new Set(['atom','compound']);
 const ACTS={ASSERT:'assertion',QUESTION:'question',COMMAND:'command',DEFINE:'definition',POSSIBILITY:'possibility'};
