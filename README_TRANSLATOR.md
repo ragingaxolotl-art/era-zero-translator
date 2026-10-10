@@ -10,7 +10,9 @@ The Pages build runs entirely in the browser. Its default interface accepts ordi
 
 Strong contextual cues choose the applicable indexed sense automatically—for example, spatial `go` in “Go home,” data transfer in “Send the file,” and communicative expression in “Send the message.” A resolved result exposes and plays its complete sound construction: family prefix/opening, full carrier, address path, runtime ending, and sentence contour.
 
-Release 1.4 adds a complete searchable inventory: all 436 indexed options are present in the browser rather than being hidden behind a candidate cutoff. Any English phrase may be entered. Approved semantic material is ranked normally, while unfamiliar terms are preserved as deterministic EZNAME phonemic labels and are never silently dropped or promoted into fake canonical meanings. The whole-phrase coverage panel makes that boundary visible word by word.
+Release 1.5 organizes the workbench into Translator, Dictionary, and Documents views. All 436 indexed options remain present rather than being hidden behind a candidate cutoff. The Dictionary exposes all 324 roots, 28 compounds, structural and grammar routes, and documented gaps through family/type filtering and a detailed generated-form inspector. The Documents view indexes every tracked specification, lexicon, migration, semantic review, report, test, example, and source-provenance record.
+
+Any English phrase may be entered. The word-matching panel preserves every word in order, recommends the strongest indexed atom, compound, grammar route, Semantic-IR route, or gap, and allows the user to choose another indexed reading. English-only function words make no atomic claim. Unfamiliar content terms are preserved as deterministic EZNAME phonemic labels and are never silently dropped or promoted into fake canonical meanings.
 
 One approved compound has open semantic slots. Because its arguments are arbitrary canonical lexical occurrences, the static release reports that boundary explicitly and routes full role binding to the Ruby API rather than fabricating or constraining an argument. Advanced controlled-English structural templates also remain in the full local compiler.
 
@@ -21,6 +23,7 @@ Rebuild and audit the Pages artifact:
 ```sh
 ruby tools/build_pages_release.rb
 node tools/validate_pages_release.mjs
+node tools/audit_full_translator.mjs
 ```
 
 GitHub Actions reruns the browser audit, the canonical product audit, and then deploys `pages/`.
@@ -65,7 +68,7 @@ ruby tools/validate_product_application.rb
 ruby tools/regress_current_state.rb
 ```
 
-The product audit covers API contracts, error paths, all reviewed indexed senses, ambiguity, gaps, compound roles, exact round trips, SVG/MIDI output, exchange-bundle corruption, UI accessibility markers, and canonical fingerprints. See `docs/PRODUCT_AUDIT.md` for the release checklist.
+The product audit covers API contracts, error paths, all reviewed indexed senses, ambiguity, gaps, compound roles, exact round trips, SVG/MIDI output, exchange-bundle corruption, UI accessibility markers, and canonical fingerprints. The full translator audit adds a broad phrase matrix, word-matching invariants, complete dictionary fields, document-manifest integrity, source links, and phonemic-label determinism. See `docs/PRODUCT_AUDIT.md` and `docs/PRODUCT_GOAL_AND_FULL_TEST_PLAN.md` for the release criteria.
 
 ## Scope
 

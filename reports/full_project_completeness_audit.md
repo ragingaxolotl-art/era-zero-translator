@@ -50,7 +50,7 @@ conversation and Google document are explicitly referenced
 
 ## PASS — authority artifacts present
 
-semantic_authority_status.md, lexicon/semantic_authority.yaml, spec/canonical_spec.yaml, lexicon/completed_atoms_source.md, docs/SOURCE_PROVENANCE.md, spec/source_provenance.yaml
+semantic_authority_status.md, lexicon/semantic_authority.yaml, spec/canonical_spec.yaml, lexicon/completed_atoms_source.md, docs/SOURCE_PROVENANCE.md, docs/PRODUCT_GOAL_AND_FULL_TEST_PLAN.md, spec/source_provenance.yaml, extraction/source_index.yaml, reports/full_translator_audit.md
 
 ## Product boundary
 

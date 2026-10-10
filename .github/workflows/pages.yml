@@ -32,10 +32,14 @@ jobs:
         run: ruby tools/build_pages_release.rb
       - name: Audit browser release
         run: node tools/validate_pages_release.mjs
+      - name: Audit phrases, dictionary, and documents
+        run: node tools/audit_full_translator.mjs
       - name: Audit canonical product
         run: ruby tools/validate_product_application.rb
       - name: Audit project completeness and provenance
         run: ruby tools/audit_project_completeness.rb
+      - name: Run complete historical regression
+        run: ruby tools/regress_current_state.rb
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

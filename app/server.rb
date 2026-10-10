@@ -5,7 +5,11 @@ require "webrick"
 require "json"
 require_relative "api"
 
-root = File.expand_path("public", __dir__)
+# Serve the same generated browser release that is published to GitHub Pages.
+# `app/public` remains the source template used by tools/build_pages_release.rb;
+# serving `pages` here prevents the local workbench from drifting from the
+# audited public interface.
+root = File.expand_path("../pages", __dir__)
 port = Integer(ENV.fetch("ERA_ZERO_PORT", "8787"))
 bind = ENV.fetch("ERA_ZERO_BIND", "127.0.0.1")
 api = EraZeroApp::API.new

@@ -122,7 +122,7 @@ Product frontend syntax: PASS
 ## PASS — validate translator workbench over real localhost HTTP
 
 ```text
-Product HTTP smoke: PASS (static UI, health, analyze, exact round trip)
+Product HTTP smoke: PASS (v1.5 UI, dictionary/documents, health, analyze, exact round trip)
 ```
 
 ## PASS — validate the complete REP:000–222 family

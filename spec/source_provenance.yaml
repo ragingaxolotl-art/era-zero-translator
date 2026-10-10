@@ -34,6 +34,9 @@ sources:
     - unfamiliar nouns and names need deterministic phonemic sound IDs
     - any phrase must be accepted without silently discarding unfamiliar terms
     - every indexed option must be discoverable in the interface
+    - every sentence word must have a visible recommended match and selectable indexed alternatives
+    - all roots and language routes must be browsable in a separate logical dictionary view
+    - all project documents and earlier-source references must be discoverable from the public workbench
 authority_artifacts:
   semantic_status: semantic_authority_status.md
   machine_authority: lexicon/semantic_authority.yaml

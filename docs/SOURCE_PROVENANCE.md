@@ -30,6 +30,9 @@ The present Codex conversation has no stable public source URL. Its user-directe
 - unfamiliar nouns and names use deterministic nonsemantic phonemic sound IDs;
 - arbitrary phrases are accepted, with unfamiliar terms retained rather than discarded;
 - all 436 indexed options are searchable in the browser.
+- every sentence word is shown with its best indexed match and selectable alternatives;
+- all roots, compounds, grammar routes, structural routes, and gaps are browsable in a separate Dictionary view;
+- the public Documents view exposes the project record and earlier-source references.
 
 These product decisions change no atomic meaning, compound definition, address, compact root, carrier, or note path.
 

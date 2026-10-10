@@ -37,7 +37,7 @@ add.call("all planned gates complete", readiness.fetch("required_gates").all? { 
 add.call("current progress flags", readiness.dig("gate4a", "dictionary_entries") == 28 && readiness.dig("gate4c", "general_english_translation") == true && readiness.dig("gate4d", "translator_authorized") == true && readiness.dig("renderer_decoder", "controlled_english_started") == true && readiness.dig("controlled_english", "general_english_started") == true, "no completed layer is still marked unstarted")
 add.call("shared conversation fingerprint", shared["decoded_sha256"] == "5a89af8cda717ce223e252348e0cf2f7735cd2d1f58c7b7655094a3d13862475" && shared["decoded_source_nodes"] == 313 && shared["visible_speaker_turns"] == 129, "313 nodes / 129 turns / fixed SHA-256")
 add.call("primary source links", shared["url"] == "https://chatgpt.com/share/6a666bd1-8ba4-83ea-90f9-b85db783af13" && provenance.dig("sources", "current_google_document", "drive_file_id") == "1btnSrT37YJt1aD4gXGtJBO8e3ZRG6COYmFLaRkykHA8", "conversation and Google document are explicitly referenced")
-required = %w[semantic_authority_status.md lexicon/semantic_authority.yaml spec/canonical_spec.yaml lexicon/completed_atoms_source.md docs/SOURCE_PROVENANCE.md spec/source_provenance.yaml]
+required = %w[semantic_authority_status.md lexicon/semantic_authority.yaml spec/canonical_spec.yaml lexicon/completed_atoms_source.md docs/SOURCE_PROVENANCE.md docs/PRODUCT_GOAL_AND_FULL_TEST_PLAN.md spec/source_provenance.yaml extraction/source_index.yaml reports/full_translator_audit.md]
 add.call("authority artifacts present", required.all? { |path| File.file?(File.join(root, path)) }, required.join(", "))
 
 passed = checks.count { |_name, ok, _detail| ok }

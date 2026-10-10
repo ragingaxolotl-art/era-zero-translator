@@ -1,4 +1,4 @@
-const STOPWORDS=new Set('a an the to of in on at for from with is are was were be being been do does did i you he she it we they this that these those my your his her its our their please now just'.split(' '));
+const STOPWORDS=new Set('a an the to of in on at for from with is are was were be being been do does did i you he she it we they this that these those my your his her its our their please now just may might maybe could can would will shall should perhaps possibly probably'.split(' '));
 const DIRECT=new Set(['atom','compound']);
 const INHERENTLY_POLYSEMOUS=new Set(['know','have','exist','receive','send','share','change','return','run','home']);
 
@@ -88,7 +88,7 @@ export function extractExplicitRuntime(value){
 export function inferEnglishIntent(raw,explicitRuntime=null){
   const text=normalize(raw),words=text.split(' ').filter(Boolean),first=words[0]||'';
   const question=String(raw).trim().endsWith('?')||/^(?:who|what|when|where|why|how|can|could|would|will|do|does|did|is|are|was|were|has|have|had)\b/.test(text);
-  const possibility=!question&&/\b(?:may|might|could|perhaps|possibly|probably)\b/.test(text);
+  const possibility=!question&&/\b(?:may|might|maybe|could|perhaps|possibly|probably)\b/.test(text);
   const definition=!question&&/\b(?:means|is defined as|refers to)\b/.test(text);
   const imperative=!question&&(first==='please'||/^(?:leave|go|move|approach|arrive|send|receive|share|create|make|fix|repair|stop|wait|continue|return|follow|cross|change|remember|think|look|listen)\b/.test(text));
   const speechAct=definition?'definition':possibility?'possibility':question?'question':imperative?'command':'assertion';
@@ -106,7 +106,7 @@ function scoreSense(sense,input,inputTokens){
   const surfaceMatch=lemmaTokens.size>0&&ratio===1;
   const hint=SENSE_HINTS.find(([pattern,key])=>key===sense.sense_key&&pattern.test(input));
   if(!exact&&!surfaceMatch&&!lexical&&!hint)return null;
-  let score=exact?1:surfaceMatch?(lemmaTokens.size===1?.78:.74):Math.min(.18+.34*ratio,.52);
+  let score=exact?1:surfaceMatch?(lemmaTokens.size===1?.78:.90):Math.min(.18+.34*ratio,.52);
   if(hint)score+=hint[2];
   const cue=overlap(inputTokens,lexicalTokens((sense.selection_cues||[]).join(' '))).length;
   const definition=overlap(inputTokens,lexicalTokens(sense.definition||'')).length;
@@ -116,13 +116,14 @@ function scoreSense(sense,input,inputTokens){
   return{sense_id:sense.sense_id,lemma:sense.lemma,sense_key:sense.sense_key,route:sense.route,target_id:sense.target_id,definition:sense.definition,selection_cues:sense.selection_cues||[],score,confidence:score>=.82?'high':score>=.62?'medium':'low',match_type:exact?'exact_lemma':hint?.[3]==='context'?'contextual_english':hint?'english_sentence':surfaceMatch?'inflected_lemma':'context_overlap',contextual_hint:hint?.[3]==='context',evidence:{lexical_overlap:lexical,selection_cue_overlap:cue,definition_overlap:definition}};
 }
 
-function termCoverage(normalized,data){
-  const words=(normalize(normalized).match(/[\p{L}\p{N}_-]+/gu)||[]).filter(word=>!STOPWORDS.has(word));
-  return words.map(word=>{
-    const forms=variants(word),matches=data.senses.filter(sense=>overlap(forms,lexicalTokens(sense.lemma,{keepStopwords:true})).length).map(sense=>({sense_id:sense.sense_id,lemma:sense.lemma,route:sense.route,target_id:sense.target_id,definition:sense.definition}));
+function termCoverage(normalized,data,ranked){
+  const words=normalize(normalized).match(/[\p{L}\p{N}_-]+/gu)||[],rankBySense=new Map(ranked.map((item,index)=>[item.sense_id,{index,score:item.score,match_type:item.match_type}]));
+  return words.map((word,tokenIndex)=>{
+    const forms=variants(word),matches=data.senses.filter(sense=>{const lemmaTokens=lexicalTokens(sense.lemma,{keepStopwords:true}),matched=overlap(forms,lemmaTokens).length;if(!matched)return false;if(!STOPWORDS.has(word))return true;return ['grammar','semantic_ir'].includes(sense.route)&&lemmaTokens.size===1}).map(sense=>{const ranking=rankBySense.get(sense.sense_id);return{sense_id:sense.sense_id,lemma:sense.lemma,sense_key:sense.sense_key,route:sense.route,target_id:sense.target_id,definition:sense.definition,score:ranking?.score??0,match_type:ranking?.match_type??'word_match'}}).sort((a,b)=>{const exactA=normalize(a.lemma)===word?1:0,exactB=normalize(b.lemma)===word?1:0;return b.score-a.score||exactB-exactA||a.lemma.localeCompare(b.lemma)||a.sense_id.localeCompare(b.sense_id)});
     const direct=matches.filter(match=>DIRECT.has(match.route));
     const gaps=matches.filter(match=>match.route==='gap');
-    return{term:word,status:direct.length?'canonical':gaps.length?'documented_gap':matches.length?'structural':'phonemic_label',matches};
+    const status=direct.length?'canonical':gaps.length?'documented_gap':matches.length?'structural':STOPWORDS.has(word)?'function_word':'phonemic_label';
+    return{token_index:tokenIndex,term:word,status,recommended_sense_id:matches[0]?.sense_id??null,matches};
   });
 }
 
@@ -131,8 +132,8 @@ export function analyzeEnglish(raw,data,{limit=Number.POSITIVE_INFINITY}={}){
   const normalized=normalize(text);
   if(!normalized)throw{code:'empty_input',message:'Write an English word, phrase, or sentence to translate.'};
   const intent=inferEnglishIntent(text,explicitRuntime),inputTokens=lexicalTokens(normalized);
-  const coverage=termCoverage(normalized,data);
   const ranked=data.senses.map(sense=>scoreSense(sense,normalized,inputTokens)).filter(Boolean).sort((a,b)=>b.score-a.score||a.sense_id.localeCompare(b.sense_id)).slice(0,limit);
+  const coverage=termCoverage(normalized,data,ranked);
   if(!ranked.length)return{status:'ok',input:raw,normalized_input:normalized,speech_act_proposal:intent.speechAct,explicit_runtime_state:intent.runtime,runtime_inference:intent.runtimeSource,candidates:[],candidate_count:0,term_coverage:coverage,decision:{auto_resolution_allowed:false,requires_clarification:true,reasons:['phonemic_labels_only'],competing_sense_ids:[]}};
   ranked.forEach(candidate=>{candidate.required_roles=candidate.target_id?data.required_roles[candidate.target_id]||[]:[]});
   const top=ranked[0],sameLemmaAmbiguity=INHERENTLY_POLYSEMOUS.has(normalize(top.lemma))&&!top.contextual_hint,competing=ranked.slice(1).filter(candidate=>top.contextual_hint?(candidate.contextual_hint&&top.score-candidate.score<.14):(top.score-candidate.score<.14||(sameLemmaAmbiguity&&normalize(candidate.lemma)===normalize(top.lemma)))),material=competing.length>0,direct=DIRECT.has(top.route),missingRoles=top.required_roles.length>0,structural=['semantic_ir','grammar'].includes(top.route),gap=top.route==='gap',hosted=Boolean(top.target_id&&data.resolution_files[top.target_id]);

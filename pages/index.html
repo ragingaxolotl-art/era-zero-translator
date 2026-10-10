@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Browser workbench for conservative English-to-Era-Zero translation, clarification, formal notation, SVG, and MIDI export.">
   <title>Era Zero Translator Workbench</title>
-  <link rel="stylesheet" href="./styles.css?v=1.4.2">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1420'/%3E%3Cpath d='M14 10h36v8H24v10h22v8H24v10h26v8H14z' fill='%2361e1d2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css?v=1.5.0">
 </head>
 <body>
   <div class="shell">
@@ -14,17 +15,22 @@
         <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
         <span><strong>ERA ZERO</strong><small>Translator Workbench</small></span>
       </a>
-      <div class="release"><span class="status-dot"></span><span id="serviceStatus">Checking engine</span><b>v1.4.2</b></div>
+      <div class="release"><span class="status-dot"></span><span id="serviceStatus">Checking engine</span><b>v1.5.0</b></div>
     </header>
+    <nav class="app-tabs" role="tablist" aria-label="Workbench view">
+      <button class="app-tab active" data-app-tab="translator" role="tab" aria-selected="true">Translator</button>
+      <button class="app-tab" data-app-tab="dictionary" role="tab" aria-selected="false">Dictionary</button>
+      <button class="app-tab" data-app-tab="documents" role="tab" aria-selected="false">Documents</button>
+    </nav>
 
     <main>
-      <section class="hero">
+      <section class="hero" data-app-view="translator">
         <p class="eyebrow">Meaning before performance</p>
         <h1>Write English. Get Era Zero.</h1>
         <p>Use an ordinary sentence. The translator infers intent and state, asks only when your wording has more than one real meaning, and produces canonical Era Zero notation.</p>
       </section>
 
-      <section class="workspace" aria-label="Translator workspace">
+      <section class="workspace" aria-label="Translator workspace" data-app-view="translator">
         <div class="composer card">
           <div class="mode-tabs" role="tablist" aria-label="Input mode">
             <button class="mode-tab active" data-mode="general" role="tab" aria-selected="true">Normal English</button>
@@ -61,7 +67,7 @@
         </aside>
       </section>
 
-      <section class="catalog card" aria-labelledby="catalogTitle">
+      <section class="catalog card view-hidden" aria-labelledby="catalogTitle" data-app-view="dictionary">
         <div class="catalog-copy">
           <p class="eyebrow">Complete language inventory</p>
           <h2 id="catalogTitle">Every approved meaning and every indexed option.</h2>
@@ -72,11 +78,20 @@
           <label>Route<select id="catalogRoute"><option value="all">All routes</option><option value="atom">Atomic roots</option><option value="compound">Compounds</option><option value="semantic_ir">Semantic IR</option><option value="grammar">Grammar</option><option value="gap">Documented gaps</option></select></label>
           <label>Family<select id="catalogFamily"><option value="all">All families</option><option>LIF</option><option>MOV</option><option>MAT</option><option>MIN</option><option>CON</option><option>STR</option><option>WRN</option><option>REP</option><option>LOG</option><option>DAT</option><option>CRE</option><option>ORI</option><option value="CMP">Compounds</option></select></label>
         </div>
-        <p id="catalogSummary" class="catalog-summary"></p>
-        <div id="catalogList" class="catalog-list" aria-live="polite"></div>
+        <div class="dictionary-body">
+          <div>
+            <p id="catalogSummary" class="catalog-summary"></p>
+            <div id="catalogList" class="catalog-list" aria-live="polite"></div>
+          </div>
+          <aside id="catalogDetail" class="catalog-detail" aria-live="polite">
+            <p class="eyebrow">Dictionary record</p>
+            <h3>Select an entry</h3>
+            <p>Choose any root, compound, structural route, grammar item, or documented gap to inspect its complete record.</p>
+          </aside>
+        </div>
       </section>
 
-      <section class="name-lab card" aria-labelledby="nameLabTitle">
+      <section class="name-lab card" aria-labelledby="nameLabTitle" data-app-view="translator">
         <div class="name-lab-copy">
           <p class="eyebrow">Unknown nouns and names</p>
           <h2 id="nameLabTitle">Give an unfamiliar object a sound ID.</h2>
@@ -98,7 +113,7 @@
         </div>
       </section>
 
-      <section id="results" class="results hidden" aria-live="polite">
+      <section id="results" class="results hidden" aria-live="polite" data-app-view="translator">
         <div class="section-heading">
           <div><p class="eyebrow">Interpretation</p><h2 id="resultTitle">Candidate meanings</h2></div>
           <p id="decisionSummary"></p>
@@ -126,7 +141,7 @@
         </div>
       </section>
 
-      <section id="output" class="output hidden">
+      <section id="output" class="output hidden" data-app-view="translator">
         <div class="section-heading">
           <div><p class="eyebrow">Canonical result</p><h2>One meaning, multiple views.</h2></div>
           <div class="actions"><button id="downloadBundle">Export EZB-1</button><label class="file-button">Import EZB-1<input id="importBundle" type="file" accept="application/json,.json"></label></div>
@@ -150,11 +165,26 @@
           <div id="panel-formal" class="output-panel"><pre id="formalCode"></pre></div>
         </div>
       </section>
+
+      <section class="documents card view-hidden" aria-labelledby="documentsTitle" data-app-view="documents">
+        <div class="documents-copy">
+          <p class="eyebrow">Complete project record</p>
+          <h2 id="documentsTitle">Specifications, reviews, tests, and source history.</h2>
+          <p>Every tracked language record is indexed here. Human-readable standards and machine authority remain separate, linked, and auditable.</p>
+        </div>
+        <div class="document-provenance" id="documentProvenance"></div>
+        <div class="document-controls">
+          <label>Search documents<input id="documentSearch" type="search" placeholder="title, path, category, or format"></label>
+          <label>Category<select id="documentCategory"><option value="all">All categories</option></select></label>
+        </div>
+        <p id="documentSummary" class="catalog-summary"></p>
+        <div id="documentList" class="document-list" aria-live="polite"></div>
+      </section>
     </main>
 
     <footer><span>DBA Era Zero · Canonical browser translator</span><span>EZIR-JSON-1 · EZF-1 · EZSVG-1 · MIDI-0 · EZB-1</span></footer>
   </div>
   <div id="toast" role="status" aria-live="polite"></div>
-  <script type="module" src="./app.js?v=1.4.2"></script>
+  <script type="module" src="./app.js?v=1.5.0"></script>
 </body>
 </html>
