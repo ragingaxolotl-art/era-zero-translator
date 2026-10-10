@@ -64,6 +64,13 @@
     {"phrase":"The pet is unwell.","target":"WRN:001","statuses":{"unwell":"canonical"}},
     {"phrase":"Goodbye.","target":"CON:100","statuses":{"goodbye":"canonical"}},
     {"phrase":"I need the file inside the folder.","target":"ORI:211","statuses":{"i":"participant_reference","need":"canonical","file":"canonical","inside":"canonical","folder":"canonical"}},
-    {"phrase":"I need the file that is inside the folder.","target":"ORI:211","statuses":{"i":"participant_reference","need":"canonical","file":"canonical","inside":"canonical","folder":"canonical"}}
+    {"phrase":"I need the file that is inside the folder.","target":"ORI:211","statuses":{"i":"participant_reference","need":"canonical","file":"canonical","inside":"canonical","folder":"canonical"}},
+    {"phrase":"I used the file.","route":"semantic_ir","sense_key":"instrumental_use_relation","statuses":{"i":"participant_reference","used":"structural","file":"canonical"},"must_not_auto":true},
+    {"phrase":"Delete the file.","route":"semantic_ir","sense_key":"requested_information_deletion","statuses":{"delete":"structural","file":"canonical"},"must_not_auto":true},
+    {"phrase":"The files are being deleted.","route":"semantic_ir","sense_key":"active_information_deletion","statuses":{"files":"canonical","deleted":"structural"},"must_not_auto":true},
+    {"phrase":"The files were deleted.","route":"semantic_ir","sense_key":"completed_information_deletion","statuses":{"files":"canonical","deleted":"structural"},"must_not_auto":true},
+    {"phrase":"We need to migrate.","target":"DAT:112","statuses":{"we":"participant_reference","need":"canonical","migrate":"canonical"}},
+    {"phrase":"The files are migrating.","target":"DAT:111","statuses":{"files":"canonical","migrating":"canonical"}},
+    {"phrase":"We migrated the files.","target":"DAT:110","statuses":{"we":"participant_reference","migrated":"canonical","files":"canonical"}}
   ]
 }

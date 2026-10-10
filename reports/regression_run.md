@@ -122,7 +122,7 @@ Audio voice envelopes: PASS · 5 voices · release tails and softened stops chec
 
 ```text
 Game/story translation audit: PASS
-Checks passed: 77; failed: 0; phrases: 62
+Checks passed: 86; failed: 0; phrases: 69
 ```
 
 ## PASS — validate translator workbench product application
@@ -141,7 +141,7 @@ Product frontend syntax: PASS (local source, browser release, viseme compiler)
 ## PASS — validate translator workbench over real localhost HTTP
 
 ```text
-Product HTTP smoke: PASS (v1.9.1 softened audio releases, selectable voices, layered head/eyes/mouth rig, standalone viseme file, health, analyze, exact round trip)
+Product HTTP smoke: PASS (v1.10.0 computer translation profile, softened audio releases, selectable voices, layered head/eyes/mouth rig, standalone viseme file, health, analyze, exact round trip)
 ```
 
 ## PASS — validate the complete REP:000–222 family

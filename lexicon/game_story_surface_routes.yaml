@@ -457,3 +457,90 @@ senses:
   fidelity: generalized
   selection_cues: [one item located within a folder or container, occupied internal place]
   excluded_readings: [movement into a container, metaphorical insider status, hidden mental content]
+- sense_id: GSE:042
+  lemma: use
+  surface_forms: [use, uses, using, used]
+  part_of_speech: verb
+  sense_key: instrumental_use_relation
+  route: semantic_ir
+  competition_group: computer_use
+  definition: An entity participates as the instrument or resource by which a separately identified action is performed.
+  generalization: The action, user, and purpose must be supplied by clause structure; use is not an honest synonym for executing, reading, changing, or transferring the entity.
+  fidelity: structural
+  selection_cues: [using a file, using a tool, employing a resource in an action]
+  excluded_readings: [program execution unless the object is explicitly a program, consumption, ownership, depletion]
+- sense_id: GSE:043
+  lemma: delete
+  surface_forms: [delete, deletes]
+  part_of_speech: verb
+  sense_key: requested_information_deletion
+  route: semantic_ir
+  competition_group: computer_deletion
+  definition: A requested operation whose intended result is that a selected information object is no longer retained by the addressed system.
+  generalization: Era Zero currently has no canonical atomic deletion process; this route preserves the requested operation without mislabeling deletion as dormancy, reconfiguration, or data transformation.
+  fidelity: structural
+  selection_cues: [delete a file, remove stored information, erasure request]
+  excluded_readings: [hiding, closing, moving to another folder, archival, temporary unavailability]
+- sense_id: GSE:044
+  lemma: deleting
+  surface_forms: [deleting, being deleted, is being deleted, are being deleted, was being deleted, were being deleted]
+  part_of_speech: verb
+  sense_key: active_information_deletion
+  route: semantic_ir
+  competition_group: computer_deletion
+  definition: An ongoing operation whose intended result is that a selected information object is no longer retained by the addressed system.
+  generalization: The active phase is preserved structurally; no existing canonical root is claimed to mean deletion.
+  fidelity: structural
+  selection_cues: [deletion in progress, files are being deleted]
+  excluded_readings: [already completed deletion, dormancy, loss of access, data transfer]
+- sense_id: GSE:045
+  lemma: deleted
+  surface_forms: [deleted, has deleted, have deleted, had deleted, was deleted, were deleted]
+  part_of_speech: verb
+  sense_key: completed_information_deletion
+  route: semantic_ir
+  competition_group: computer_deletion
+  definition: A completed operation whose result is that a selected information object is no longer retained by the addressed system.
+  generalization: The completed phase is preserved structurally; a deleted file is not treated as a dormant datum.
+  fidelity: structural
+  selection_cues: [completed deletion, file was deleted]
+  excluded_readings: [deletion in progress, hidden or archived file, inaccessible but retained data]
+- sense_id: GSE:046
+  lemma: migrate
+  surface_forms: [migrate, migrates, will migrate, need to migrate, needs to migrate, plan to migrate, plans to migrate]
+  part_of_speech: verb
+  sense_key: pending_data_migration_generalized
+  route: atom
+  target_id: DAT:112
+  competition_group: data_migration
+  definition: A not-yet-actualized data migration generalized as a bounded information transfer from a source toward a distinct target system.
+  generalization: Era Zero preserves pending target-directed transfer but does not assert schema conversion, cutover, validation, deletion of the source, or the transport mechanism.
+  fidelity: generalized
+  selection_cues: [need to migrate, planned migration, requested migration]
+  excluded_readings: [human relocation, completed migration, synchronization among multiple peers]
+- sense_id: GSE:047
+  lemma: migrating
+  surface_forms: [migrating, is migrating, are migrating, being migrated, is being migrated, are being migrated, migration in progress]
+  part_of_speech: verb
+  sense_key: active_data_migration_generalized
+  route: atom
+  target_id: DAT:111
+  competition_group: data_migration
+  definition: An ongoing data migration generalized as active bounded information transfer from a source to a distinct target system.
+  generalization: Era Zero preserves active target-directed transfer but does not assert schema conversion, cutover, validation, deletion of the source, or the transport mechanism.
+  fidelity: generalized
+  selection_cues: [data migration in progress, files being migrated]
+  excluded_readings: [human relocation, merely scheduled migration, synchronization among multiple peers]
+- sense_id: GSE:048
+  lemma: migrated
+  surface_forms: [migrated, has migrated, have migrated, had migrated, migration completed]
+  part_of_speech: verb
+  sense_key: completed_data_migration_generalized
+  route: atom
+  target_id: DAT:110
+  competition_group: data_migration
+  definition: A completed data migration generalized as completed bounded information transfer from a source to a distinct target system.
+  generalization: Era Zero preserves completed target receipt but does not assert schema conversion, cutover, validation, deletion of the source, or the transport mechanism.
+  fidelity: generalized
+  selection_cues: [completed data migration, files migrated to a new system]
+  excluded_readings: [human relocation, migration still in progress, synchronization among multiple peers]
