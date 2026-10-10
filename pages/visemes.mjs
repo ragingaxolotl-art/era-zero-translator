@@ -1,4 +1,4 @@
-import{soundPlanFromFormal}from'./engine.mjs?v=1.9.0';
+import{soundPlanFromFormal}from'./engine.mjs?v=1.9.1';
 
 export const VISEME_VERSION='EZVISEME-1';
 export const EYE_EXPRESSIONS=Object.freeze(['happy','sad','angry']);
