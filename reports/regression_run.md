@@ -109,7 +109,7 @@ Checks passed: 10; checks failed: 0
 ## PASS — validate carrier-driven character visemes
 
 ```text
-Viseme performance: PASS · 5265 variants · 60051 cues · 70067 assertions
+Viseme performance: PASS · 5265 variants · 60051 cues · 80601 assertions
 ```
 
 ## PASS — validate translator workbench product application
@@ -128,7 +128,7 @@ Product frontend syntax: PASS (local source, browser release, viseme compiler)
 ## PASS — validate translator workbench over real localhost HTTP
 
 ```text
-Product HTTP smoke: PASS (v1.6.1 UI, standalone viseme file, character, dictionary/documents, health, analyze, exact round trip)
+Product HTTP smoke: PASS (v1.7 layered head/eyes/mouth rig, standalone viseme file, health, analyze, exact round trip)
 ```
 
 ## PASS — validate the complete REP:000–222 family
@@ -208,7 +208,7 @@ Mode: canonical; checks passed: 24; checks failed: 0
 - controlled-English grammar restriction, unique canonical sense mapping, explicit roles and scope, open compound-slot enforcement, structured unsupported-input errors, golden translations, all 352 lexical routes, and full compiler-to-renderer-to-decoder round trips.
 - general-English deterministic ranking, exact-lemma recall across all 436 indexed senses, evidence and confidence, runtime alternatives, material ambiguity, structural and grammar routing, explicit gaps, role clarification, conservative auto-resolution, and selected-sense round trips.
 - validated EZF-1 to accessible SVG and Standard MIDI, deterministic byte output, three-anchor transposition behavior, all 972 atom/runtime presentations, invalid-input rejection, example artifacts, and semantic-identity preservation.
-- carrier-driven character visemes across all 324 atoms and all 5,265 hosted formal variants, with complete syllable coverage, note preservation, cue timing, grammatical-tone sustain, and transposition invariance.
+- carrier-driven character visemes across all 324 atoms and all 5,265 hosted formal variants, with independent base-head, happy/sad/angry eye, and timed mouth-sound layers; complete syllable coverage; note preservation; cue timing; grammatical-tone sustain; and transposition invariance.
 - local translator API and responsive workbench, reviewed-sense evaluation corpus, conservative clarification journeys, API error paths, EZB-1 import/export integrity, SVG/MIDI download, accessibility markers, and canonical semantic immutability.
 - full-family locus/process/affordance-relation separation, triplet coherence, runtime-state tailoring, collision routing, and rerun safety for `CON:000–222`.
 - constituent-position/interface/composite-arrangement entities; reconfiguration/incorporation/integration processes; matching reconfigurability/incorporability/integrability affordances; triplet coherence; lexical/runtime separation; collision routing; layer non-entailment; and rerun safety for `STR:000–222`.

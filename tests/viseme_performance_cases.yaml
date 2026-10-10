@@ -26,6 +26,8 @@ behavior_cases:
 - name: identity-preservation
   assertion: formal_id and semantic_digest are copied unchanged and semantic_identity_changed is false
 - name: standalone-file
-  assertion: a .ezviseme.json file labels every cue with viseme_sound while keeping pose matching internal
+  assertion: a .ezviseme.json file has independent head, selected eyes, and timed mouth-sound layers
+- name: eye-layer-independence
+  assertion: happy, sad, and angry change only layers.eyes while head, sound notes, and mouth cues remain byte-equivalent
 - name: transposition-invariance
   assertion: shifting all absolute MIDI notes does not change any carrier syllable or viseme

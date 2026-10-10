@@ -18,14 +18,19 @@ FileUtils.mkdir_p(resolution_dir)
 
 index_html = File.read(File.join(root, "app/public/index.html"))
   .gsub('href="/"', 'href="./"')
-  .gsub('href="/styles.css?v=1.6.1"', 'href="./styles.css?v=1.6.1"')
-  .gsub('<script src="/app.js?v=1.6.1" defer></script>', '<script type="module" src="./app.js?v=1.6.1"></script>')
+  .gsub('href="/styles.css?v=1.7.0"', 'href="./styles.css?v=1.7.0"')
+  .gsub('<script src="/app.js?v=1.7.0" defer></script>', '<script type="module" src="./app.js?v=1.7.0"></script>')
   .gsub('Canonical engine ready', 'Loading canonical browser engine')
   .gsub('Local workbench for', 'Browser workbench for')
   .gsub('DBA Era Zero · Local canonical translator', 'DBA Era Zero · Canonical browser translator')
 File.write(File.join(pages, "index.html"), index_html)
 FileUtils.cp(File.join(root, "app/public/styles.css"), File.join(pages, "styles.css"))
 File.write(File.join(pages, ".nojekyll"), "")
+%w[rig.json head/base.json eyes/happy.json eyes/sad.json eyes/angry.json mouth/sounds.json].each do |relative|
+  destination = File.join(pages, "visemes", relative)
+  FileUtils.mkdir_p(File.dirname(destination))
+  FileUtils.cp(File.join(root, "visemes", relative), destination)
+end
 
 senses = EraZeroValidation.load_yaml("lexicon/english_sense_index.yaml").fetch("senses")
 atoms = EraZeroValidation.load_yaml("lexicon/all_atoms.yaml").fetch("atoms")
@@ -82,7 +87,7 @@ browser_index = {
 File.write(File.join(data_dir, "index.json"), JSON.generate(browser_index))
 
 document_extensions = %w[.md .yaml .yml .json .jsonl .txt .svg .mid]
-document_directories = %w[docs spec lexicon migrations reviews reports tests examples extraction]
+document_directories = %w[docs spec lexicon migrations reviews reports tests examples extraction visemes]
 document_paths = document_directories.flat_map do |directory|
   Dir.glob(File.join(root, directory, "**", "*"))
 end.select { |path| File.file?(path) && document_extensions.include?(File.extname(path).downcase) }

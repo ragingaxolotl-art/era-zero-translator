@@ -57,9 +57,13 @@ compiler_contract:
   standalone_file:
     extension: .ezviseme.json
     player_label: viseme_sound
-    public_fields: format, version, formal_id, semantic_digest, duration_seconds, cues
-    cue_fields: at_seconds, duration_seconds, midi_note, viseme_sound, poses
-    rule: The player interface labels only the current viseme sound; articulation matching remains compiler data.
+    public_fields: format, version, formal_id, semantic_digest, duration_seconds, layers
+    layers:
+      head: fixed reference to head/base
+      eyes: one independent reference to eyes/happy, eyes/sad, or eyes/angry
+      mouth: fixed reference to mouth/sounds plus timed cues
+    mouth_cue_fields: at_seconds, duration_seconds, midi_note, viseme_sound, poses
+    rule: Eye expression can change independently; the head, canonical sound, and mouth cues remain identical.
   validation:
   - every canonical carrier syllable has an explicit map
   - cue times are monotonic and durations are positive

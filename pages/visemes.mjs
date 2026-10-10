@@ -1,6 +1,7 @@
-import{soundPlanFromFormal}from'./engine.mjs?v=1.6.1';
+import{soundPlanFromFormal}from'./engine.mjs?v=1.7.0';
 
 export const VISEME_VERSION='EZVISEME-1';
+export const EYE_EXPRESSIONS=Object.freeze(['happy','sad','angry']);
 export const VISEMES=Object.freeze({
   REST:{label:'rest',description:'Neutral closed rest between voiced events.'},
   MBP:{label:'bilabial closure',description:'Both lips close for m, b, or p.'},
@@ -76,7 +77,8 @@ export function visemeFrameAt(plan,elapsedSeconds){
   return{viseme:local<cue.onset_duration?cue.onset_viseme:cue.nucleus_viseme,cue,progress:Math.max(0,Math.min(1,local/cue.duration))};
 }
 
-export function visemeFileFromFormal(formal){
+export function visemeFileFromFormal(formal,eyeExpression='happy'){
+  if(!EYE_EXPRESSIONS.includes(eyeExpression))throw new Error(`Unknown eye-expression layer: ${eyeExpression}`);
   const plan=visemePlanFromFormal(formal);
-  return{format:plan.format,version:plan.version,formal_id:plan.formal_id,semantic_digest:plan.semantic_digest,semantic_identity_changed:false,duration_seconds:plan.duration_seconds,cues:plan.cues.map(cue=>({at_seconds:cue.start,duration_seconds:cue.duration,midi_note:cue.note,viseme_sound:cue.syllable,poses:cue.sustain_only?[{at_seconds:0,pose:cue.nucleus_viseme}]:[{at_seconds:0,pose:cue.onset_viseme},{at_seconds:cue.onset_duration,pose:cue.nucleus_viseme}]}))};
+  return{format:plan.format,version:plan.version,formal_id:plan.formal_id,semantic_digest:plan.semantic_digest,semantic_identity_changed:false,duration_seconds:plan.duration_seconds,layers:{head:{id:'head/base'},eyes:{id:`eyes/${eyeExpression}`,expression:eyeExpression},mouth:{id:'mouth/sounds',cues:plan.cues.map(cue=>({at_seconds:cue.start,duration_seconds:cue.duration,midi_note:cue.note,viseme_sound:cue.syllable,poses:cue.sustain_only?[{at_seconds:0,pose:cue.nucleus_viseme}]:[{at_seconds:0,pose:cue.onset_viseme},{at_seconds:cue.onset_duration,pose:cue.nucleus_viseme}]}))}}};
 }
