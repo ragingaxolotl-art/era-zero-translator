@@ -22,7 +22,7 @@ begin
   health = Net::HTTP.get_response(URI("#{base}/api/health"))
   raise "health failed" unless health.code == "200" && JSON.parse(health.body)["status"] == "ok"
   index = Net::HTTP.get_response(URI("#{base}/"))
-  raise "index failed" unless index.code == "200" && index.body.include?("Era Zero Translator Workbench") && index.body.include?("v1.7.0") && index.body.include?('data-app-tab="dictionary"') && index.body.include?('data-app-tab="documents"') && index.body.include?('data-rig-layer="head"') && index.body.include?('data-rig-layer="eyes"') && index.body.include?('data-rig-layer="mouth"')
+  raise "index failed" unless index.code == "200" && index.body.include?("Era Zero Translator Workbench") && index.body.include?("v1.8.0") && index.body.include?('data-app-tab="dictionary"') && index.body.include?('data-app-tab="documents"') && index.body.include?('data-rig-layer="head"') && index.body.include?('data-rig-layer="eyes"') && index.body.include?('data-rig-layer="mouth"')
   documents = Net::HTTP.get_response(URI("#{base}/data/documents.json"))
   raise "document manifest failed" unless documents.code == "200" && JSON.parse(documents.body)["count"] >= 300
   request = Net::HTTP::Post.new("/api/analyze", { "Content-Type" => "application/json" })
