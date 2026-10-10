@@ -1,0 +1,299 @@
+---
+metadata:
+  title: CON:000–022 English coverage and routing tests
+  status: review_evidence_not_translation_dictionary
+  range: CON:000–022
+  test_count: 61
+  no_forced_atomization: true
+tests:
+- test_id: CON0-T001
+  english_concept: source endpoint
+  routing: one_root
+  analysis: CON:000, CON:001, or CON:002 according to lexical persistence, participation,
+    or dormancy.
+- test_id: CON0-T002
+  english_concept: target endpoint
+  routing: one_root
+  analysis: CON:010, CON:011, or CON:012 according to lexical persistence, participation,
+    or dormancy.
+- test_id: CON0-T003
+  english_concept: shared channel
+  routing: one_root
+  analysis: CON:020, CON:021, or CON:022 according to lexical persistence, function,
+    or dormancy.
+- test_id: CON0-T004
+  english_concept: speaker
+  routing: compound
+  analysis: A living participant plus source endpoint; current speaking additionally
+    requires a CON process.
+- test_id: CON0-T005
+  english_concept: sender
+  routing: compound
+  analysis: A source endpoint combined with an outward communication process; do not
+    make sender an entity atom.
+- test_id: CON0-T006
+  english_concept: caller
+  routing: compound
+  analysis: A source endpoint in a call context, usually combined with LIF identity
+    and an exchange process.
+- test_id: CON0-T007
+  english_concept: author
+  routing: different_family
+  analysis: Authorship belongs primarily to CRE/DAT relations; an author can also
+    occupy a CON source endpoint.
+- test_id: CON0-T008
+  english_concept: listener
+  routing: compound
+  analysis: A target endpoint plus MIN attention or a receipt process; endpoint status
+    alone does not prove listening.
+- test_id: CON0-T009
+  english_concept: recipient
+  routing: compound
+  analysis: A target endpoint plus delivery or receipt; the person or device identity
+    belongs elsewhere.
+- test_id: CON0-T010
+  english_concept: addressee
+  routing: compound
+  analysis: A target endpoint plus an addressing relation or grammar role; the endpoint
+    root alone is not an intended-recipient relation.
+- test_id: CON0-T011
+  english_concept: audience
+  routing: compound
+  analysis: Multiple LIF participants occupying target endpoints in a shared channel;
+    not one atomic channel root.
+- test_id: CON0-T012
+  english_concept: correspondent
+  routing: compound
+  analysis: A participant with persistent source and target endpoint relations plus
+    CON:2xx bond semantics.
+- test_id: CON0-T013
+  english_concept: contact
+  routing: compound
+  analysis: Often a known participant plus persistent endpoint and bond; English contact
+    is too polysemous for one atom.
+- test_id: CON0-T014
+  english_concept: participant
+  routing: compound
+  analysis: A bearer occupying any endpoint or shared channel role; LIF/other identity
+    plus CON locus.
+- test_id: CON0-T015
+  english_concept: port
+  routing: compound
+  analysis: A STR or MAT interface assigned a CON endpoint; its physical or logical
+    structure is not Connection alone.
+- test_id: CON0-T016
+  english_concept: socket
+  routing: compound
+  analysis: A structured programming object plus CON endpoint and LOG protocol constraints.
+- test_id: CON0-T017
+  english_concept: API endpoint
+  routing: compound
+  analysis: A structured address/service locus plus persistent target or source endpoint;
+    DAT/LOG supply path and method details.
+- test_id: CON0-T018
+  english_concept: account
+  routing: different_family
+  analysis: Identity and records belong to LIF/DAT/STR; an account can be assigned
+    a CON endpoint.
+- test_id: CON0-T019
+  english_concept: address
+  routing: different_family
+  analysis: A stored locator is DAT or MOV/STR depending on sense; designation of
+    a target endpoint is compounded.
+- test_id: CON0-T020
+  english_concept: inbox
+  routing: compound
+  analysis: A structured data container associated with a target endpoint; not a Connection
+    atom.
+- test_id: CON0-T021
+  english_concept: conversation
+  routing: compound
+  analysis: An active shared channel plus reciprocal CON processes and participant
+    endpoints.
+- test_id: CON0-T022
+  english_concept: dialogue
+  routing: compound
+  analysis: A shared channel plus alternating source/target processes and relations.
+- test_id: CON0-T023
+  english_concept: group chat
+  routing: compound
+  analysis: An active shared channel plus identified participants, data messages,
+    and exchange processes.
+- test_id: CON0-T024
+  english_concept: forum
+  routing: compound
+  analysis: A persistent or dormant shared channel realized by STR and DAT storage.
+- test_id: CON0-T025
+  english_concept: meeting
+  routing: compound
+  analysis: A shared channel plus participants, time/location, and coordinated processes.
+- test_id: CON0-T026
+  english_concept: community
+  routing: compound
+  analysis: A LIF collective and CON relationships that may use a shared channel;
+    community is not the channel itself.
+- test_id: CON0-T027
+  english_concept: network
+  routing: compound
+  analysis: STR topology plus CON endpoints/channels and CON:2xx connectivity relations.
+- test_id: CON0-T028
+  english_concept: communication medium
+  routing: compound
+  analysis: A CON shared channel realized by MAT substrate or DAT signaling conventions.
+- test_id: CON0-T029
+  english_concept: radio channel
+  routing: compound
+  analysis: MAT frequency or carrier plus CON shared channel and LOG protocol constraints.
+- test_id: CON0-T030
+  english_concept: event bus
+  routing: compound
+  analysis: STR bus architecture plus active/persistent CON shared channel, DAT events,
+    and LOG rules.
+- test_id: CON0-T031
+  english_concept: publish-subscribe topic
+  routing: compound
+  analysis: DAT topic identity plus CON shared channel and CON/LOG participant relations.
+- test_id: CON0-T032
+  english_concept: send
+  routing: existing_con_process
+  analysis: Belongs in CON:1xx; source endpoint is an argument, not the send action.
+- test_id: CON0-T033
+  english_concept: receive
+  routing: existing_con_process
+  analysis: Belongs in CON:1xx; target endpoint is an argument, not the receive action.
+- test_id: CON0-T034
+  english_concept: deliver
+  routing: existing_con_process
+  analysis: A completed target-directed communication process in CON:1xx, not an endpoint
+    entity.
+- test_id: CON0-T035
+  english_concept: broadcast
+  routing: existing_con_process
+  analysis: A systemic communication process through a shared channel, not the channel
+    itself.
+- test_id: CON0-T036
+  english_concept: acknowledge
+  routing: existing_con_process
+  analysis: A response process or relation to be decided in CON:1xx/2xx, not this
+    entity block.
+- test_id: CON0-T037
+  english_concept: message
+  routing: different_family
+  analysis: DAT owns the information object; CON supplies endpoints, channel, and
+    transfer process.
+- test_id: CON0-T038
+  english_concept: signal
+  routing: different_family
+  analysis: DAT owns informational signal content and MAT owns physical realization;
+    CON supplies communicative locus.
+- test_id: CON0-T039
+  english_concept: record
+  routing: different_family
+  analysis: DAT owns stored information; association with an endpoint or channel is
+    a compound.
+- test_id: CON0-T040
+  english_concept: protocol
+  routing: different_family
+  analysis: LOG/STR owns formal rules and arrangement; compatibility across endpoints
+    belongs in CON:2xx.
+- test_id: CON0-T041
+  english_concept: language
+  routing: compound
+  analysis: A shared representational and rule system using DAT/MIN/LOG plus a CON
+    channel/community relation.
+- test_id: CON0-T042
+  english_concept: agreement
+  routing: future_con_relation
+  analysis: Agreement is a participant relationship and must be reviewed in CON:2xx
+    or compounded with MIN/LOG.
+- test_id: CON0-T043
+  english_concept: bond
+  routing: future_con_relation
+  analysis: A stable relationship between participants belongs in CON:2xx, not the
+    entity layer.
+- test_id: CON0-T044
+  english_concept: compatibility
+  routing: future_con_relation
+  analysis: Interoperability is a capacity or relation suited to CON:2xx plus LOG/STR
+    constraints.
+- test_id: CON0-T045
+  english_concept: reachability
+  routing: future_con_relation
+  analysis: Ability for communication to reach a target is a capacity/relation, not
+    an endpoint entity.
+- test_id: CON0-T046
+  english_concept: permission to communicate
+  routing: different_family
+  analysis: Permission is LOG/grammar or a social relation, not endpoint/channel identity.
+- test_id: CON0-T047
+  english_concept: online
+  routing: runtime_or_compound
+  analysis: Often runtime [1] applied to an active endpoint/channel plus implementation-specific
+    availability.
+- test_id: CON0-T048
+  english_concept: offline
+  routing: runtime_or_compound
+  analysis: May be runtime [0] or a dormant endpoint/channel plus WRN/STR state; it
+    is not one universal atom.
+- test_id: CON0-T049
+  english_concept: disconnected
+  routing: runtime_or_future_relation
+  analysis: May deny a connection relation or describe a dormant locus; do not collapse
+    relation and entity.
+- test_id: CON0-T050
+  english_concept: unreachable
+  routing: compound
+  analysis: A target endpoint plus denied reachability or WRN failure; CON:012 alone
+    means dormant participation.
+- test_id: CON0-T051
+  english_concept: silent
+  routing: compound
+  analysis: An endpoint with no current expression process; silence is not endpoint
+    dormancy by itself.
+- test_id: CON0-T052
+  english_concept: waiting for a reply
+  routing: grammar_or_compound
+  analysis: A prior communication process plus pending dependency and expected response;
+    not a dormant endpoint.
+- test_id: CON0-T053
+  english_concept: shared attention
+  routing: different_family
+  analysis: MIN:220–222 owns joint attention; it may occur through a CON shared channel.
+- test_id: CON0-T054
+  english_concept: telepathy
+  routing: compound
+  analysis: A communication process and channel whose physical mechanism is unspecified;
+    not a new atom.
+- test_id: CON0-T055
+  english_concept: translation
+  routing: compound
+  analysis: MIN/DAT/LOG transformation across representations and CON contexts; not
+    an endpoint entity.
+- test_id: CON0-T056
+  english_concept: encryption
+  routing: different_family
+  analysis: LOG/DAT transformation and access constraints; it may protect communication
+    but is not Connection itself.
+- test_id: CON0-T057
+  english_concept: notification
+  routing: compound
+  analysis: DAT message plus target-directed CON process, possibly WRN salience.
+- test_id: CON0-T058
+  english_concept: call session
+  routing: compound
+  analysis: An active shared channel plus endpoints, time bounds, and exchange processes.
+- test_id: CON0-T059
+  english_concept: multicast group
+  routing: compound
+  analysis: A participant set and target relations around a shared channel, not one
+    entity root.
+- test_id: CON0-T060
+  english_concept: common ground
+  routing: different_family
+  analysis: MIN shared representation plus CON relations; the shared channel does
+    not guarantee common understanding.
+- test_id: CON0-T061
+  english_concept: unknown endpoint type
+  routing: unresolved_gap
+  analysis: If bearer and source/target scope cannot be determined, the translator
+    must request clarification rather than guess.

@@ -1,9 +1,9 @@
 # General-English Candidate Translator Validation
 
-Status: **FAIL**
+Status: **PASS — CORE TRANSLATOR PIPELINE CANONICAL**
 
-- Checks passed: **15**
-- Checks failed: **1**
+- Checks passed: **16**
+- Checks failed: **0**
 - Indexed senses: **436**
 - Analysis fixtures: **13**
 - Resolution fixtures: **4**
@@ -67,15 +67,11 @@ unknown input and invalid runtime markers return stable errors without translati
 
 auto-resolution policy and implementation prohibit material ambiguity, missing state, missing roles, structural routes, gaps, and nonexact matches
 
-## FAIL — implementation
+## PASS — implementation
 
 library, CLI, spec, tests, report, and migration exist
 
 ## PASS — authority integration
 
 general English remains canonical and its migration records the glyph/audio handoff
-
-## Failures
-
-- implementation: library, CLI, spec, tests, report, and migration exist
 

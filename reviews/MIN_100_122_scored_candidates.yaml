@@ -1,0 +1,1416 @@
+---
+metadata:
+  title: MIN:100–122 adversarial candidate scoring
+  status: review_complete_pending_preapproval_validation
+  architecture_version: '1.0'
+  candidate_count_per_root: 5
+  scored_categories:
+  - atomicity
+  - address_fit
+  - family_fit
+  - neighbor_separation
+  - cross_family_separation
+  - compound_usefulness
+  - everyday_language_coverage
+  - technical_coverage
+  maximum_score: 80
+  current_phase2_meanings_are_replaceable: true
+  generated_fields_changed: false
+roots:
+- canonical_id: MIN:100
+  fixed_generated_fields:
+    canonical_id: MIN:100
+    universal_slot: completed inward process
+    family_qualified_transliteration: si·kam
+    local_compact_root: kam
+    formal_carrier: si-ki-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 2
+  current_meaning_rationale: "“Understanding achieved” was probably chosen because
+    completed + inward + Mind suggests a cognitive result internal to the cognizer.
+    Its definition then joins memory formation, insight, and decision—different results
+    with different truth, storage, and commitment conditions."
+  candidates:
+  - candidate_id: current_phase2
+    title: completed self-model revision
+    invariant_candidate: A completed cognitive process whose result is a change to
+      the cognizer's representation of the cognizer's own identity or condition.
+    analysis:
+      why_it_fits: It follows the broad completed inward process label and selects
+        a recognizable Mind activity.
+      useful_coverage: It covers familiar English words from the provisional catalogue.
+      semantic_territory_consumed: It consumes several mental operations or results
+        at once.
+      conflicts_or_future_limitations: "“Understanding achieved” was probably chosen
+        because completed + inward + Mind suggests a cognitive result internal to
+        the cognizer. Its definition then joins memory formation, insight, and decision—different
+        results with different truth, storage, and commitment conditions."
+    scores:
+      atomicity: 4
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 9
+      technical_coverage: 7
+    total: 53
+    maximum: 80
+  - candidate_id: representational_revision
+    title: completed self-model revision
+    invariant_candidate: A completed cognitive process whose result is a change to
+      the cognizer's representation of the cognizer's own identity or condition.
+    analysis:
+      why_it_fits: It assigns one Mind process—revision of cognitive representation—to
+        every address, varies only self-model scope across the second trit, and varies
+        only completed/active/nonactualized phase across the third.
+      useful_coverage: Learning-induced update, belief-model change, reinterpretation,
+        adaptation, agent world-model update, and multi-agent schema change when those
+        events actually alter cognitive representation.
+      semantic_territory_consumed: Only the process of cognitive representational
+        change; attention, access, inference, communication, truth, storage, planning,
+        and physical change remain separate.
+      conflicts_or_future_limitations: It intentionally requires compounds for ordinary
+        verbs such as learn, understand, remember, infer, decide, perceive, and deliberate
+        when those verbs carry more than representational change.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: attention_reallocation
+    title: completed inward attention shift
+    invariant_candidate: A completed reallocation of attention toward the cognizer's
+      own condition.
+    analysis:
+      why_it_fits: Attention is unmistakably mental and can be self-directed, target-directed,
+        or jointly aligned.
+      useful_coverage: Focus, notice, monitor, orient attention, distraction recovery,
+        and joint attention.
+      semantic_territory_consumed: Control over cognitive resource allocation rather
+        than transformation of represented content.
+      conflicts_or_future_limitations: Completed and nonactualized attention shifts
+        are less natural atoms than the active form; the architecture also leaves
+        learning and model update without a fundamental process.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 69
+    maximum: 80
+  - candidate_id: inference_or_evaluation
+    title: completed self-assessment
+    invariant_candidate: A completed inferential evaluation whose subject is the cognizer.
+    analysis:
+      why_it_fits: Assessment and deliberation can be inward, target-directed, or
+        distributed and can occupy all three process phases.
+      useful_coverage: Judge, infer, evaluate, reason, compare, deliberate, and decide.
+      semantic_territory_consumed: Epistemic and logical processing, often including
+        standards, evidence, or conclusions.
+      conflicts_or_future_limitations: It collides heavily with LOG and sometimes
+        CON; self-assessment, target inference, and collective deliberation are related
+        but not one exact process invariant.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 67
+    maximum: 80
+  - candidate_id: memory_access
+    title: completed autobiographical recall
+    invariant_candidate: A completed retrieval of a representation whose subject is
+      the remembering cognizer.
+    analysis:
+      why_it_fits: Memory access belongs to Mind and can concern the self, another
+        target, or a community.
+      useful_coverage: Remember, recall, recollect, retrieve, recognize, and reactivate
+        stored cognition.
+      semantic_territory_consumed: Access to representations presumed to have existed
+        before the process.
+      conflicts_or_future_limitations: It excludes perception, new learning, imagination,
+        and revision; shared recollection also collides with archives, testimony,
+        and communication.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 7
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 67
+    maximum: 80
+  recommended_candidate_id: representational_revision
+  recommendation_reason: Representational revision is the only candidate that preserves
+    one process center across all nine roots, anchors directly to canonical MIN:000–022
+    representations, respects nonactualized `1x2`, and keeps truth, communication,
+    storage, planning, and physical change outside MIN.
+  confidence: 0.97
+  canonicalized: false
+- canonical_id: MIN:101
+  fixed_generated_fields:
+    canonical_id: MIN:101
+    universal_slot: active inward process
+    family_qualified_transliteration: si·kak
+    local_compact_root: kak
+    formal_carrier: si-ki-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 4
+  current_meaning_rationale: "“Active reflection” follows active + inward + Mind,
+    but its definition merges remembering, imagining, evaluating, and reorganizing.
+    Reflection can merely inspect a self-representation; the address needs one process
+    center rather than every inward mental activity."
+  candidates:
+  - candidate_id: current_phase2
+    title: active self-model revision
+    invariant_candidate: An active cognitive process that is changing the cognizer's
+      representation of the cognizer's own identity or condition.
+    analysis:
+      why_it_fits: It follows the broad active inward process label and selects a
+        recognizable Mind activity.
+      useful_coverage: It covers familiar English words from the provisional catalogue.
+      semantic_territory_consumed: It consumes several mental operations or results
+        at once.
+      conflicts_or_future_limitations: "“Active reflection” follows active + inward
+        + Mind, but its definition merges remembering, imagining, evaluating, and
+        reorganizing. Reflection can merely inspect a self-representation; the address
+        needs one process center rather than every inward mental activity."
+    scores:
+      atomicity: 3
+      address_fit: 9
+      family_fit: 10
+      neighbor_separation: 5
+      cross_family_separation: 7
+      compound_usefulness: 7
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 59
+    maximum: 80
+  - candidate_id: representational_revision
+    title: active self-model revision
+    invariant_candidate: An active cognitive process that is changing the cognizer's
+      representation of the cognizer's own identity or condition.
+    analysis:
+      why_it_fits: It assigns one Mind process—revision of cognitive representation—to
+        every address, varies only self-model scope across the second trit, and varies
+        only completed/active/nonactualized phase across the third.
+      useful_coverage: Learning-induced update, belief-model change, reinterpretation,
+        adaptation, agent world-model update, and multi-agent schema change when those
+        events actually alter cognitive representation.
+      semantic_territory_consumed: Only the process of cognitive representational
+        change; attention, access, inference, communication, truth, storage, planning,
+        and physical change remain separate.
+      conflicts_or_future_limitations: It intentionally requires compounds for ordinary
+        verbs such as learn, understand, remember, infer, decide, perceive, and deliberate
+        when those verbs carry more than representational change.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: attention_reallocation
+    title: active inward attention shift
+    invariant_candidate: An active reallocation of attention toward the cognizer's
+      own condition.
+    analysis:
+      why_it_fits: Attention is unmistakably mental and can be self-directed, target-directed,
+        or jointly aligned.
+      useful_coverage: Focus, notice, monitor, orient attention, distraction recovery,
+        and joint attention.
+      semantic_territory_consumed: Control over cognitive resource allocation rather
+        than transformation of represented content.
+      conflicts_or_future_limitations: Completed and nonactualized attention shifts
+        are less natural atoms than the active form; the architecture also leaves
+        learning and model update without a fundamental process.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 71
+    maximum: 80
+  - candidate_id: inference_or_evaluation
+    title: active self-assessment
+    invariant_candidate: An active inferential evaluation whose subject is the cognizer.
+    analysis:
+      why_it_fits: Assessment and deliberation can be inward, target-directed, or
+        distributed and can occupy all three process phases.
+      useful_coverage: Judge, infer, evaluate, reason, compare, deliberate, and decide.
+      semantic_territory_consumed: Epistemic and logical processing, often including
+        standards, evidence, or conclusions.
+      conflicts_or_future_limitations: It collides heavily with LOG and sometimes
+        CON; self-assessment, target inference, and collective deliberation are related
+        but not one exact process invariant.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 67
+    maximum: 80
+  - candidate_id: memory_access
+    title: active autobiographical recall
+    invariant_candidate: An active retrieval of a representation whose subject is
+      the remembering cognizer.
+    analysis:
+      why_it_fits: Memory access belongs to Mind and can concern the self, another
+        target, or a community.
+      useful_coverage: Remember, recall, recollect, retrieve, recognize, and reactivate
+        stored cognition.
+      semantic_territory_consumed: Access to representations presumed to have existed
+        before the process.
+      conflicts_or_future_limitations: It excludes perception, new learning, imagination,
+        and revision; shared recollection also collides with archives, testimony,
+        and communication.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 7
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 67
+    maximum: 80
+  recommended_candidate_id: representational_revision
+  recommendation_reason: Representational revision is the only candidate that preserves
+    one process center across all nine roots, anchors directly to canonical MIN:000–022
+    representations, respects nonactualized `1x2`, and keeps truth, communication,
+    storage, planning, and physical change outside MIN.
+  confidence: 0.97
+  canonicalized: false
+- canonical_id: MIN:102
+  fixed_generated_fields:
+    canonical_id: MIN:102
+    universal_slot: pending inward process
+    family_qualified_transliteration: si·kan
+    local_compact_root: kan
+    formal_carrier: si-ki-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 0
+  current_meaning_rationale: "“Pending reflection” was chosen from the old label pending
+    inward process. The definition makes the process intended and not begun, but lexical
+    `1x2` is now fixed as nonactualized and cannot encode intention, scheduling, readiness,
+    queue position, probability, or future time."
+  candidates:
+  - candidate_id: current_phase2
+    title: nonactualized self-model revision
+    invariant_candidate: A cognitive process that would change the cognizer's representation
+      of the cognizer's own identity or condition if actualized, but is not active
+      or completed.
+    analysis:
+      why_it_fits: It follows the broad pending inward process label and selects a
+        recognizable Mind activity.
+      useful_coverage: It covers familiar English words from the provisional catalogue.
+      semantic_territory_consumed: It consumes several mental operations or results
+        at once.
+      conflicts_or_future_limitations: "“Pending reflection” was chosen from the old
+        label pending inward process. The definition makes the process intended and
+        not begun, but lexical `1x2` is now fixed as nonactualized and cannot encode
+        intention, scheduling, readiness, queue position, probability, or future time."
+    scores:
+      atomicity: 3
+      address_fit: 4
+      family_fit: 10
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 5
+      everyday_language_coverage: 8
+      technical_coverage: 5
+    total: 44
+    maximum: 80
+  - candidate_id: representational_revision
+    title: nonactualized self-model revision
+    invariant_candidate: A cognitive process that would change the cognizer's representation
+      of the cognizer's own identity or condition if actualized, but is not active
+      or completed.
+    analysis:
+      why_it_fits: It assigns one Mind process—revision of cognitive representation—to
+        every address, varies only self-model scope across the second trit, and varies
+        only completed/active/nonactualized phase across the third.
+      useful_coverage: Learning-induced update, belief-model change, reinterpretation,
+        adaptation, agent world-model update, and multi-agent schema change when those
+        events actually alter cognitive representation.
+      semantic_territory_consumed: Only the process of cognitive representational
+        change; attention, access, inference, communication, truth, storage, planning,
+        and physical change remain separate.
+      conflicts_or_future_limitations: It intentionally requires compounds for ordinary
+        verbs such as learn, understand, remember, infer, decide, perceive, and deliberate
+        when those verbs carry more than representational change.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: attention_reallocation
+    title: nonactualized inward attention shift
+    invariant_candidate: A nonactualized reallocation of attention toward the cognizer's
+      own condition.
+    analysis:
+      why_it_fits: Attention is unmistakably mental and can be self-directed, target-directed,
+        or jointly aligned.
+      useful_coverage: Focus, notice, monitor, orient attention, distraction recovery,
+        and joint attention.
+      semantic_territory_consumed: Control over cognitive resource allocation rather
+        than transformation of represented content.
+      conflicts_or_future_limitations: Completed and nonactualized attention shifts
+        are less natural atoms than the active form; the architecture also leaves
+        learning and model update without a fundamental process.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 69
+    maximum: 80
+  - candidate_id: inference_or_evaluation
+    title: nonactualized self-assessment
+    invariant_candidate: A nonactualized inferential evaluation whose subject would
+      be the cognizer.
+    analysis:
+      why_it_fits: Assessment and deliberation can be inward, target-directed, or
+        distributed and can occupy all three process phases.
+      useful_coverage: Judge, infer, evaluate, reason, compare, deliberate, and decide.
+      semantic_territory_consumed: Epistemic and logical processing, often including
+        standards, evidence, or conclusions.
+      conflicts_or_future_limitations: It collides heavily with LOG and sometimes
+        CON; self-assessment, target inference, and collective deliberation are related
+        but not one exact process invariant.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 67
+    maximum: 80
+  - candidate_id: memory_access
+    title: nonactualized autobiographical recall
+    invariant_candidate: A nonactualized retrieval of a representation whose subject
+      would be the remembering cognizer.
+    analysis:
+      why_it_fits: Memory access belongs to Mind and can concern the self, another
+        target, or a community.
+      useful_coverage: Remember, recall, recollect, retrieve, recognize, and reactivate
+        stored cognition.
+      semantic_territory_consumed: Access to representations presumed to have existed
+        before the process.
+      conflicts_or_future_limitations: It excludes perception, new learning, imagination,
+        and revision; shared recollection also collides with archives, testimony,
+        and communication.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 7
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 67
+    maximum: 80
+  recommended_candidate_id: representational_revision
+  recommendation_reason: Representational revision is the only candidate that preserves
+    one process center across all nine roots, anchors directly to canonical MIN:000–022
+    representations, respects nonactualized `1x2`, and keeps truth, communication,
+    storage, planning, and physical change outside MIN.
+  confidence: 0.97
+  canonicalized: false
+- canonical_id: MIN:110
+  fixed_generated_fields:
+    canonical_id: MIN:110
+    universal_slot: completed outward process
+    family_qualified_transliteration: si·kom
+    local_compact_root: kom
+    formal_carrier: si-ki-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 4
+  current_meaning_rationale: "“Target assessment complete” was chosen because completed
+    + outward + Mind suggests a settled cognitive treatment of an external target.
+    The definition merges observation, reasoning, interpretation, and decision, each
+    of which can finish without changing a target model in the same way."
+  candidates:
+  - candidate_id: current_phase2
+    title: completed target-model revision
+    invariant_candidate: A completed cognitive process whose result is a change to
+      a cognizer's representation of a distinct target.
+    analysis:
+      why_it_fits: It follows the broad completed outward process label and selects
+        a recognizable Mind activity.
+      useful_coverage: It covers familiar English words from the provisional catalogue.
+      semantic_territory_consumed: It consumes several mental operations or results
+        at once.
+      conflicts_or_future_limitations: "“Target assessment complete” was chosen because
+        completed + outward + Mind suggests a settled cognitive treatment of an external
+        target. The definition merges observation, reasoning, interpretation, and
+        decision, each of which can finish without changing a target model in the
+        same way."
+    scores:
+      atomicity: 3
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 7
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total: 56
+    maximum: 80
+  - candidate_id: representational_revision
+    title: completed target-model revision
+    invariant_candidate: A completed cognitive process whose result is a change to
+      a cognizer's representation of a distinct target.
+    analysis:
+      why_it_fits: It assigns one Mind process—revision of cognitive representation—to
+        every address, varies only target model scope across the second trit, and
+        varies only completed/active/nonactualized phase across the third.
+      useful_coverage: Learning-induced update, belief-model change, reinterpretation,
+        adaptation, agent world-model update, and multi-agent schema change when those
+        events actually alter cognitive representation.
+      semantic_territory_consumed: Only the process of cognitive representational
+        change; attention, access, inference, communication, truth, storage, planning,
+        and physical change remain separate.
+      conflicts_or_future_limitations: It intentionally requires compounds for ordinary
+        verbs such as learn, understand, remember, infer, decide, perceive, and deliberate
+        when those verbs carry more than representational change.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: attention_reallocation
+    title: completed target-attention shift
+    invariant_candidate: A completed reallocation of a cognizer's attention toward
+      a distinct target.
+    analysis:
+      why_it_fits: Attention is unmistakably mental and can be self-directed, target-directed,
+        or jointly aligned.
+      useful_coverage: Focus, notice, monitor, orient attention, distraction recovery,
+        and joint attention.
+      semantic_territory_consumed: Control over cognitive resource allocation rather
+        than transformation of represented content.
+      conflicts_or_future_limitations: Completed and nonactualized attention shifts
+        are less natural atoms than the active form; the architecture also leaves
+        learning and model update without a fundamental process.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 69
+    maximum: 80
+  - candidate_id: inference_or_evaluation
+    title: completed target inference
+    invariant_candidate: A completed inferential evaluation whose subject is a distinct
+      target.
+    analysis:
+      why_it_fits: Assessment and deliberation can be inward, target-directed, or
+        distributed and can occupy all three process phases.
+      useful_coverage: Judge, infer, evaluate, reason, compare, deliberate, and decide.
+      semantic_territory_consumed: Epistemic and logical processing, often including
+        standards, evidence, or conclusions.
+      conflicts_or_future_limitations: It collides heavily with LOG and sometimes
+        CON; self-assessment, target inference, and collective deliberation are related
+        but not one exact process invariant.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 67
+    maximum: 80
+  - candidate_id: memory_access
+    title: completed target recall
+    invariant_candidate: A completed retrieval of a representation of a distinct target.
+    analysis:
+      why_it_fits: Memory access belongs to Mind and can concern the self, another
+        target, or a community.
+      useful_coverage: Remember, recall, recollect, retrieve, recognize, and reactivate
+        stored cognition.
+      semantic_territory_consumed: Access to representations presumed to have existed
+        before the process.
+      conflicts_or_future_limitations: It excludes perception, new learning, imagination,
+        and revision; shared recollection also collides with archives, testimony,
+        and communication.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 7
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 67
+    maximum: 80
+  recommended_candidate_id: representational_revision
+  recommendation_reason: Representational revision is the only candidate that preserves
+    one process center across all nine roots, anchors directly to canonical MIN:000–022
+    representations, respects nonactualized `1x2`, and keeps truth, communication,
+    storage, planning, and physical change outside MIN.
+  confidence: 0.97
+  canonicalized: false
+- canonical_id: MIN:111
+  fixed_generated_fields:
+    canonical_id: MIN:111
+    universal_slot: active outward process
+    family_qualified_transliteration: si·kok
+    local_compact_root: kok
+    formal_carrier: si-ki-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 6
+  current_meaning_rationale: "“Active inquiry” fits active + outward + Mind at a broad
+    level, but its definition collapses observing, questioning, learning, and deciding.
+    An inquiry may gather data without yet altering cognition; a model-revision process
+    provides a single invariant."
+  candidates:
+  - candidate_id: current_phase2
+    title: active target-model revision
+    invariant_candidate: An active cognitive process that is changing a cognizer's
+      representation of a distinct target.
+    analysis:
+      why_it_fits: It follows the broad active outward process label and selects a
+        recognizable Mind activity.
+      useful_coverage: It covers familiar English words from the provisional catalogue.
+      semantic_territory_consumed: It consumes several mental operations or results
+        at once.
+      conflicts_or_future_limitations: "“Active inquiry” fits active + outward + Mind
+        at a broad level, but its definition collapses observing, questioning, learning,
+        and deciding. An inquiry may gather data without yet altering cognition; a
+        model-revision process provides a single invariant."
+    scores:
+      atomicity: 2
+      address_fit: 9
+      family_fit: 10
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 6
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 55
+    maximum: 80
+  - candidate_id: representational_revision
+    title: active target-model revision
+    invariant_candidate: An active cognitive process that is changing a cognizer's
+      representation of a distinct target.
+    analysis:
+      why_it_fits: It assigns one Mind process—revision of cognitive representation—to
+        every address, varies only target model scope across the second trit, and
+        varies only completed/active/nonactualized phase across the third.
+      useful_coverage: Learning-induced update, belief-model change, reinterpretation,
+        adaptation, agent world-model update, and multi-agent schema change when those
+        events actually alter cognitive representation.
+      semantic_territory_consumed: Only the process of cognitive representational
+        change; attention, access, inference, communication, truth, storage, planning,
+        and physical change remain separate.
+      conflicts_or_future_limitations: It intentionally requires compounds for ordinary
+        verbs such as learn, understand, remember, infer, decide, perceive, and deliberate
+        when those verbs carry more than representational change.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: attention_reallocation
+    title: active target-attention shift
+    invariant_candidate: An active reallocation of a cognizer's attention toward a
+      distinct target.
+    analysis:
+      why_it_fits: Attention is unmistakably mental and can be self-directed, target-directed,
+        or jointly aligned.
+      useful_coverage: Focus, notice, monitor, orient attention, distraction recovery,
+        and joint attention.
+      semantic_territory_consumed: Control over cognitive resource allocation rather
+        than transformation of represented content.
+      conflicts_or_future_limitations: Completed and nonactualized attention shifts
+        are less natural atoms than the active form; the architecture also leaves
+        learning and model update without a fundamental process.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 71
+    maximum: 80
+  - candidate_id: inference_or_evaluation
+    title: active target inference
+    invariant_candidate: An active inferential evaluation whose subject is a distinct
+      target.
+    analysis:
+      why_it_fits: Assessment and deliberation can be inward, target-directed, or
+        distributed and can occupy all three process phases.
+      useful_coverage: Judge, infer, evaluate, reason, compare, deliberate, and decide.
+      semantic_territory_consumed: Epistemic and logical processing, often including
+        standards, evidence, or conclusions.
+      conflicts_or_future_limitations: It collides heavily with LOG and sometimes
+        CON; self-assessment, target inference, and collective deliberation are related
+        but not one exact process invariant.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 67
+    maximum: 80
+  - candidate_id: memory_access
+    title: active target recall
+    invariant_candidate: An active retrieval of a representation of a distinct target.
+    analysis:
+      why_it_fits: Memory access belongs to Mind and can concern the self, another
+        target, or a community.
+      useful_coverage: Remember, recall, recollect, retrieve, recognize, and reactivate
+        stored cognition.
+      semantic_territory_consumed: Access to representations presumed to have existed
+        before the process.
+      conflicts_or_future_limitations: It excludes perception, new learning, imagination,
+        and revision; shared recollection also collides with archives, testimony,
+        and communication.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 7
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 67
+    maximum: 80
+  recommended_candidate_id: representational_revision
+  recommendation_reason: Representational revision is the only candidate that preserves
+    one process center across all nine roots, anchors directly to canonical MIN:000–022
+    representations, respects nonactualized `1x2`, and keeps truth, communication,
+    storage, planning, and physical change outside MIN.
+  confidence: 0.97
+  canonicalized: false
+- canonical_id: MIN:112
+  fixed_generated_fields:
+    canonical_id: MIN:112
+    universal_slot: pending outward process
+    family_qualified_transliteration: si·kon
+    local_compact_root: kon
+    formal_carrier: si-ki-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 2
+  current_meaning_rationale: "“Planned inquiry” was selected from the old pending-process
+    gloss. Planning and scheduling are explicitly excluded from lexical `1x2`; an
+    inquiry can also be planned without any target representation ever changing."
+  candidates:
+  - candidate_id: current_phase2
+    title: nonactualized target-model revision
+    invariant_candidate: A cognitive process that would change a cognizer's representation
+      of a distinct target if actualized, but is not active or completed.
+    analysis:
+      why_it_fits: It follows the broad pending outward process label and selects
+        a recognizable Mind activity.
+      useful_coverage: It covers familiar English words from the provisional catalogue.
+      semantic_territory_consumed: It consumes several mental operations or results
+        at once.
+      conflicts_or_future_limitations: "“Planned inquiry” was selected from the old
+        pending-process gloss. Planning and scheduling are explicitly excluded from
+        lexical `1x2`; an inquiry can also be planned without any target representation
+        ever changing."
+    scores:
+      atomicity: 5
+      address_fit: 4
+      family_fit: 10
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 5
+      everyday_language_coverage: 8
+      technical_coverage: 5
+    total: 47
+    maximum: 80
+  - candidate_id: representational_revision
+    title: nonactualized target-model revision
+    invariant_candidate: A cognitive process that would change a cognizer's representation
+      of a distinct target if actualized, but is not active or completed.
+    analysis:
+      why_it_fits: It assigns one Mind process—revision of cognitive representation—to
+        every address, varies only target model scope across the second trit, and
+        varies only completed/active/nonactualized phase across the third.
+      useful_coverage: Learning-induced update, belief-model change, reinterpretation,
+        adaptation, agent world-model update, and multi-agent schema change when those
+        events actually alter cognitive representation.
+      semantic_territory_consumed: Only the process of cognitive representational
+        change; attention, access, inference, communication, truth, storage, planning,
+        and physical change remain separate.
+      conflicts_or_future_limitations: It intentionally requires compounds for ordinary
+        verbs such as learn, understand, remember, infer, decide, perceive, and deliberate
+        when those verbs carry more than representational change.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: attention_reallocation
+    title: nonactualized target-attention shift
+    invariant_candidate: A nonactualized reallocation of a cognizer's attention toward
+      a distinct target.
+    analysis:
+      why_it_fits: Attention is unmistakably mental and can be self-directed, target-directed,
+        or jointly aligned.
+      useful_coverage: Focus, notice, monitor, orient attention, distraction recovery,
+        and joint attention.
+      semantic_territory_consumed: Control over cognitive resource allocation rather
+        than transformation of represented content.
+      conflicts_or_future_limitations: Completed and nonactualized attention shifts
+        are less natural atoms than the active form; the architecture also leaves
+        learning and model update without a fundamental process.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 69
+    maximum: 80
+  - candidate_id: inference_or_evaluation
+    title: nonactualized target inference
+    invariant_candidate: A nonactualized inferential evaluation whose subject would
+      be a distinct target.
+    analysis:
+      why_it_fits: Assessment and deliberation can be inward, target-directed, or
+        distributed and can occupy all three process phases.
+      useful_coverage: Judge, infer, evaluate, reason, compare, deliberate, and decide.
+      semantic_territory_consumed: Epistemic and logical processing, often including
+        standards, evidence, or conclusions.
+      conflicts_or_future_limitations: It collides heavily with LOG and sometimes
+        CON; self-assessment, target inference, and collective deliberation are related
+        but not one exact process invariant.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 67
+    maximum: 80
+  - candidate_id: memory_access
+    title: nonactualized target recall
+    invariant_candidate: A nonactualized retrieval of a representation of a distinct
+      target.
+    analysis:
+      why_it_fits: Memory access belongs to Mind and can concern the self, another
+        target, or a community.
+      useful_coverage: Remember, recall, recollect, retrieve, recognize, and reactivate
+        stored cognition.
+      semantic_territory_consumed: Access to representations presumed to have existed
+        before the process.
+      conflicts_or_future_limitations: It excludes perception, new learning, imagination,
+        and revision; shared recollection also collides with archives, testimony,
+        and communication.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 7
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 67
+    maximum: 80
+  recommended_candidate_id: representational_revision
+  recommendation_reason: Representational revision is the only candidate that preserves
+    one process center across all nine roots, anchors directly to canonical MIN:000–022
+    representations, respects nonactualized `1x2`, and keeps truth, communication,
+    storage, planning, and physical change outside MIN.
+  confidence: 0.97
+  canonicalized: false
+- canonical_id: MIN:120
+  fixed_generated_fields:
+    canonical_id: MIN:120
+    universal_slot: completed systemic process
+    family_qualified_transliteration: si·kim
+    local_compact_root: kim
+    formal_carrier: si-ki-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 0
+  current_meaning_rationale: "“Collective learning complete” was chosen because completed
+    + systemic + Mind suggests a group reaching a cognitive result. Learning, inquiry,
+    and common result are not one atom, and the old definition risks equating shared
+    cognition with consensus or communication."
+  candidates:
+  - candidate_id: current_phase2
+    title: completed shared-schema revision
+    invariant_candidate: A completed cognitive process distributed across multiple
+      cognizers whose result is a change to a representation held in common among
+      them.
+    analysis:
+      why_it_fits: It follows the broad completed systemic process label and selects
+        a recognizable Mind activity.
+      useful_coverage: It covers familiar English words from the provisional catalogue.
+      semantic_territory_consumed: It consumes several mental operations or results
+        at once.
+      conflicts_or_future_limitations: "“Collective learning complete” was chosen
+        because completed + systemic + Mind suggests a group reaching a cognitive
+        result. Learning, inquiry, and common result are not one atom, and the old
+        definition risks equating shared cognition with consensus or communication."
+    scores:
+      atomicity: 6
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total: 61
+    maximum: 80
+  - candidate_id: representational_revision
+    title: completed shared-schema revision
+    invariant_candidate: A completed cognitive process distributed across multiple
+      cognizers whose result is a change to a representation held in common among
+      them.
+    analysis:
+      why_it_fits: It assigns one Mind process—revision of cognitive representation—to
+        every address, varies only shared cognitive schema scope across the second
+        trit, and varies only completed/active/nonactualized phase across the third.
+      useful_coverage: Learning-induced update, belief-model change, reinterpretation,
+        adaptation, agent world-model update, and multi-agent schema change when those
+        events actually alter cognitive representation.
+      semantic_territory_consumed: Only the process of cognitive representational
+        change; attention, access, inference, communication, truth, storage, planning,
+        and physical change remain separate.
+      conflicts_or_future_limitations: It intentionally requires compounds for ordinary
+        verbs such as learn, understand, remember, infer, decide, perceive, and deliberate
+        when those verbs carry more than representational change.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 8
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 77
+    maximum: 80
+  - candidate_id: attention_reallocation
+    title: completed joint-attention alignment
+    invariant_candidate: A completed process by which multiple cognizers align attention
+      on one subject.
+    analysis:
+      why_it_fits: Attention is unmistakably mental and can be self-directed, target-directed,
+        or jointly aligned.
+      useful_coverage: Focus, notice, monitor, orient attention, distraction recovery,
+        and joint attention.
+      semantic_territory_consumed: Control over cognitive resource allocation rather
+        than transformation of represented content.
+      conflicts_or_future_limitations: Completed and nonactualized attention shifts
+        are less natural atoms than the active form; the architecture also leaves
+        learning and model update without a fundamental process.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 69
+    maximum: 80
+  - candidate_id: inference_or_evaluation
+    title: completed collective deliberation
+    invariant_candidate: A completed inferential evaluation distributed across multiple
+      cognizers.
+    analysis:
+      why_it_fits: Assessment and deliberation can be inward, target-directed, or
+        distributed and can occupy all three process phases.
+      useful_coverage: Judge, infer, evaluate, reason, compare, deliberate, and decide.
+      semantic_territory_consumed: Epistemic and logical processing, often including
+        standards, evidence, or conclusions.
+      conflicts_or_future_limitations: It collides heavily with LOG and sometimes
+        CON; self-assessment, target inference, and collective deliberation are related
+        but not one exact process invariant.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 64
+    maximum: 80
+  - candidate_id: memory_access
+    title: completed collective recollection
+    invariant_candidate: A completed retrieval of a representation across multiple
+      members of a cognitive community.
+    analysis:
+      why_it_fits: Memory access belongs to Mind and can concern the self, another
+        target, or a community.
+      useful_coverage: Remember, recall, recollect, retrieve, recognize, and reactivate
+        stored cognition.
+      semantic_territory_consumed: Access to representations presumed to have existed
+        before the process.
+      conflicts_or_future_limitations: It excludes perception, new learning, imagination,
+        and revision; shared recollection also collides with archives, testimony,
+        and communication.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total: 64
+    maximum: 80
+  recommended_candidate_id: representational_revision
+  recommendation_reason: Representational revision is the only candidate that preserves
+    one process center across all nine roots, anchors directly to canonical MIN:000–022
+    representations, respects nonactualized `1x2`, and keeps truth, communication,
+    storage, planning, and physical change outside MIN.
+  confidence: 0.95
+  canonicalized: false
+- canonical_id: MIN:121
+  fixed_generated_fields:
+    canonical_id: MIN:121
+    universal_slot: active systemic process
+    family_qualified_transliteration: si·kik
+    local_compact_root: kik
+    formal_carrier: si-ki-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 2
+  current_meaning_rationale: "“Distributed reasoning” strongly fits active + systemic
+    + Mind, but combining perceptions, memories, and judgments is a mechanism list
+    rather than an invariant. Reasoning also collides with LOG, and communication
+    between participants belongs to CON."
+  candidates:
+  - candidate_id: current_phase2
+    title: active shared-schema revision
+    invariant_candidate: An active cognitive process distributed across multiple cognizers
+      that is changing a representation held in common among them.
+    analysis:
+      why_it_fits: It follows the broad active systemic process label and selects
+        a recognizable Mind activity.
+      useful_coverage: It covers familiar English words from the provisional catalogue.
+      semantic_territory_consumed: It consumes several mental operations or results
+        at once.
+      conflicts_or_future_limitations: "“Distributed reasoning” strongly fits active
+        + systemic + Mind, but combining perceptions, memories, and judgments is a
+        mechanism list rather than an invariant. Reasoning also collides with LOG,
+        and communication between participants belongs to CON."
+    scores:
+      atomicity: 6
+      address_fit: 10
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 64
+    maximum: 80
+  - candidate_id: representational_revision
+    title: active shared-schema revision
+    invariant_candidate: An active cognitive process distributed across multiple cognizers
+      that is changing a representation held in common among them.
+    analysis:
+      why_it_fits: It assigns one Mind process—revision of cognitive representation—to
+        every address, varies only shared cognitive schema scope across the second
+        trit, and varies only completed/active/nonactualized phase across the third.
+      useful_coverage: Learning-induced update, belief-model change, reinterpretation,
+        adaptation, agent world-model update, and multi-agent schema change when those
+        events actually alter cognitive representation.
+      semantic_territory_consumed: Only the process of cognitive representational
+        change; attention, access, inference, communication, truth, storage, planning,
+        and physical change remain separate.
+      conflicts_or_future_limitations: It intentionally requires compounds for ordinary
+        verbs such as learn, understand, remember, infer, decide, perceive, and deliberate
+        when those verbs carry more than representational change.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 8
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 77
+    maximum: 80
+  - candidate_id: attention_reallocation
+    title: active joint-attention alignment
+    invariant_candidate: An active process by which multiple cognizers are aligning
+      attention on one subject.
+    analysis:
+      why_it_fits: Attention is unmistakably mental and can be self-directed, target-directed,
+        or jointly aligned.
+      useful_coverage: Focus, notice, monitor, orient attention, distraction recovery,
+        and joint attention.
+      semantic_territory_consumed: Control over cognitive resource allocation rather
+        than transformation of represented content.
+      conflicts_or_future_limitations: Completed and nonactualized attention shifts
+        are less natural atoms than the active form; the architecture also leaves
+        learning and model update without a fundamental process.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 71
+    maximum: 80
+  - candidate_id: inference_or_evaluation
+    title: active collective deliberation
+    invariant_candidate: An active inferential evaluation distributed across multiple
+      cognizers.
+    analysis:
+      why_it_fits: Assessment and deliberation can be inward, target-directed, or
+        distributed and can occupy all three process phases.
+      useful_coverage: Judge, infer, evaluate, reason, compare, deliberate, and decide.
+      semantic_territory_consumed: Epistemic and logical processing, often including
+        standards, evidence, or conclusions.
+      conflicts_or_future_limitations: It collides heavily with LOG and sometimes
+        CON; self-assessment, target inference, and collective deliberation are related
+        but not one exact process invariant.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 64
+    maximum: 80
+  - candidate_id: memory_access
+    title: active collective recollection
+    invariant_candidate: An active retrieval of a representation across multiple members
+      of a cognitive community.
+    analysis:
+      why_it_fits: Memory access belongs to Mind and can concern the self, another
+        target, or a community.
+      useful_coverage: Remember, recall, recollect, retrieve, recognize, and reactivate
+        stored cognition.
+      semantic_territory_consumed: Access to representations presumed to have existed
+        before the process.
+      conflicts_or_future_limitations: It excludes perception, new learning, imagination,
+        and revision; shared recollection also collides with archives, testimony,
+        and communication.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total: 64
+    maximum: 80
+  recommended_candidate_id: representational_revision
+  recommendation_reason: Representational revision is the only candidate that preserves
+    one process center across all nine roots, anchors directly to canonical MIN:000–022
+    representations, respects nonactualized `1x2`, and keeps truth, communication,
+    storage, planning, and physical change outside MIN.
+  confidence: 0.95
+  canonicalized: false
+- canonical_id: MIN:122
+  fixed_generated_fields:
+    canonical_id: MIN:122
+    universal_slot: pending systemic process
+    family_qualified_transliteration: si·kin
+    local_compact_root: kin
+    formal_carrier: si-ki-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - -2
+  current_meaning_rationale: "“Pending collective inquiry” was inferred from the old
+    pending label and then defined as prepared but not started. Preparation and scheduling
+    are external states; the lexical third trit must select only a nonactualized shared
+    cognitive process."
+  candidates:
+  - candidate_id: current_phase2
+    title: nonactualized shared-schema revision
+    invariant_candidate: A cognitive process distributed across multiple cognizers
+      that would change a representation held in common among them if actualized,
+      but is not active or completed.
+    analysis:
+      why_it_fits: It follows the broad pending systemic process label and selects
+        a recognizable Mind activity.
+      useful_coverage: It covers familiar English words from the provisional catalogue.
+      semantic_territory_consumed: It consumes several mental operations or results
+        at once.
+      conflicts_or_future_limitations: "“Pending collective inquiry” was inferred
+        from the old pending label and then defined as prepared but not started. Preparation
+        and scheduling are external states; the lexical third trit must select only
+        a nonactualized shared cognitive process."
+    scores:
+      atomicity: 5
+      address_fit: 4
+      family_fit: 9
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 5
+      everyday_language_coverage: 8
+      technical_coverage: 6
+    total: 47
+    maximum: 80
+  - candidate_id: representational_revision
+    title: nonactualized shared-schema revision
+    invariant_candidate: A cognitive process distributed across multiple cognizers
+      that would change a representation held in common among them if actualized,
+      but is not active or completed.
+    analysis:
+      why_it_fits: It assigns one Mind process—revision of cognitive representation—to
+        every address, varies only shared cognitive schema scope across the second
+        trit, and varies only completed/active/nonactualized phase across the third.
+      useful_coverage: Learning-induced update, belief-model change, reinterpretation,
+        adaptation, agent world-model update, and multi-agent schema change when those
+        events actually alter cognitive representation.
+      semantic_territory_consumed: Only the process of cognitive representational
+        change; attention, access, inference, communication, truth, storage, planning,
+        and physical change remain separate.
+      conflicts_or_future_limitations: It intentionally requires compounds for ordinary
+        verbs such as learn, understand, remember, infer, decide, perceive, and deliberate
+        when those verbs carry more than representational change.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 8
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 77
+    maximum: 80
+  - candidate_id: attention_reallocation
+    title: nonactualized joint-attention alignment
+    invariant_candidate: A nonactualized process by which multiple cognizers would
+      align attention on one subject.
+    analysis:
+      why_it_fits: Attention is unmistakably mental and can be self-directed, target-directed,
+        or jointly aligned.
+      useful_coverage: Focus, notice, monitor, orient attention, distraction recovery,
+        and joint attention.
+      semantic_territory_consumed: Control over cognitive resource allocation rather
+        than transformation of represented content.
+      conflicts_or_future_limitations: Completed and nonactualized attention shifts
+        are less natural atoms than the active form; the architecture also leaves
+        learning and model update without a fundamental process.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 69
+    maximum: 80
+  - candidate_id: inference_or_evaluation
+    title: nonactualized collective deliberation
+    invariant_candidate: A nonactualized inferential evaluation that would be distributed
+      across multiple cognizers.
+    analysis:
+      why_it_fits: Assessment and deliberation can be inward, target-directed, or
+        distributed and can occupy all three process phases.
+      useful_coverage: Judge, infer, evaluate, reason, compare, deliberate, and decide.
+      semantic_territory_consumed: Epistemic and logical processing, often including
+        standards, evidence, or conclusions.
+      conflicts_or_future_limitations: It collides heavily with LOG and sometimes
+        CON; self-assessment, target inference, and collective deliberation are related
+        but not one exact process invariant.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 64
+    maximum: 80
+  - candidate_id: memory_access
+    title: nonactualized collective recollection
+    invariant_candidate: A nonactualized retrieval of a representation across multiple
+      members of a cognitive community.
+    analysis:
+      why_it_fits: Memory access belongs to Mind and can concern the self, another
+        target, or a community.
+      useful_coverage: Remember, recall, recollect, retrieve, recognize, and reactivate
+        stored cognition.
+      semantic_territory_consumed: Access to representations presumed to have existed
+        before the process.
+      conflicts_or_future_limitations: It excludes perception, new learning, imagination,
+        and revision; shared recollection also collides with archives, testimony,
+        and communication.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total: 64
+    maximum: 80
+  recommended_candidate_id: representational_revision
+  recommendation_reason: Representational revision is the only candidate that preserves
+    one process center across all nine roots, anchors directly to canonical MIN:000–022
+    representations, respects nonactualized `1x2`, and keeps truth, communication,
+    storage, planning, and physical change outside MIN.
+  confidence: 0.95
+  canonicalized: false

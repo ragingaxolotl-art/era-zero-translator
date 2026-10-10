@@ -1,0 +1,1583 @@
+---
+metadata:
+  title: CON:000–022 recommended permanent semantic specification
+  status: approved_and_canonical_by_delegated_authority
+  architecture_version: '1.0'
+  semantic_center: 'communicative loci: source endpoint, target endpoint, or shared
+    channel'
+  triplets:
+    CON:000–002: 'source endpoint: persistent / active / dormant'
+    CON:010–012: 'target endpoint: persistent / active / dormant'
+    CON:020–022: 'shared channel: persistent / active / dormant'
+  generated_fields_changed: false
+  gate4_started: false
+  translator_started: false
+  roots_canonicalized:
+  - CON:000
+  - CON:001
+  - CON:002
+  - CON:010
+  - CON:011
+  - CON:012
+  - CON:020
+  - CON:021
+  - CON:022
+  approval_record: migrations/CON_000_022_semantic_approval.yaml
+roots:
+- fixed_generated_fields:
+    canonical_id: CON:000
+    universal_slot: stable inward entity
+    family_qualified_transliteration: wu·nam
+    local_compact_root: nam
+    formal_carrier: wu-ma-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: persistent source endpoint
+  invariant_definition: A bounded communicative locus that remains identified as the
+    source-side endpoint of an exchange context.
+  semantic_center: 'communicative loci: source endpoint, target endpoint, or shared
+    channel'
+  address_justification:
+    first_trit_0: 'Selects an entity or condition: persistent source endpoint is a
+      communicative endpoint locus, not the act of communicating and not the relationship
+      or capacity connecting participants.'
+    second_trit: 'Selects inward/source scope: the originating side is the locus named
+      by the root.'
+    third_trit: 'Selects stable or persistent lexical expression: the endpoint or
+      channel is retained as a persistent identity.'
+  inclusion_boundary: Includes only a communicative locus at this exact source, target,
+    or shared scope and this exact persistent, active, or dormant lexical expression.
+    The bearer may be a person, device, service, port, room, session, medium, or other
+    entity, but this root names its place in an exchange context rather than the bearer
+    itself.
+  excluded_meanings:
+  - The identity, life, consciousness, location, physical composition, or structure
+    of the endpoint bearer.
+  - A message, signal payload, symbol, record, protocol, language rule, or stored
+    address as an information object.
+  - Sending, receiving, delivering, broadcasting, negotiating, acknowledging, or otherwise
+    performing a communication process.
+  - A bond, agreement, compatibility relation, reachability capacity, permission,
+    access right, or possible network relation.
+  - Online/offline runtime status, success, failure, schedule, intention, attention,
+    comprehension, or future participation unless another root or grammar supplies
+    it.
+  nearest_neighbors:
+  - CON:001
+  - CON:002
+  - CON:010
+  - CON:020
+  - CON:100
+  - CON:200
+  - DAT:000
+  - STR:000
+  same_family_contrast: CON:0xx owns communicative endpoint and channel loci; CON:1xx
+    must own communication processes such as transmission or receipt; CON:2xx must
+    own capacities, bonds, compatibility, and unrealized relational possibilities.
+  cross_family_comparisons: &1
+    LIF: LIF identifies living or conscious participants. A person or organism can
+      bear a CON endpoint, but biological identity is not the communicative locus.
+    MOV: MOV owns physical position, approach, routes, and shared reference frames.
+      Spatial proximity can support communication without constituting an endpoint
+      or channel.
+    MAT: MAT owns cables, radios, bodies, sound waves, and other physical substrates.
+      CON names the communicative locus or environment realized through them.
+    MIN: MIN owns representations, revision, and attention. Understanding, noticing,
+      or jointly attending is not the same as occupying an endpoint or channel.
+    STR: STR owns topology, containment, organization, and system architecture. A
+      structure can implement a channel, but organization alone does not make it communicative.
+    WRN: WRN owns communication failure, loss, corruption, spoofing, and unavailability
+      when evaluated as danger or error. CON remains neutral about success.
+    REP: REP owns reconnecting, restoring, or healing damaged communication. A repaired
+      channel may again satisfy CON, but repair is not the endpoint or channel itself.
+    LOG: LOG owns protocol rules, typing, validity, permissions, and formal coordination.
+      Rule compatibility may govern a channel without being that channel.
+    DAT: DAT owns messages, symbols, records, payloads, and signals as information
+      objects. CON owns where communicative participation and shared exchange occur.
+    CRE: CRE owns designing or instantiating communication systems and artifacts.
+      A created interface becomes a CON endpoint only when assigned a communicative
+      locus.
+    ORI: ORI owns existence, manifestation, modality, time, and universal conditions.
+      Persistent, active, and dormant CON lexemes do not silently encode tense or
+      possibility.
+  runtime_state_interpretation:
+    '0': Denies that the persistent identification of this source-endpoint locus currently
+      holds in the exchange context; it does not assert either active participation
+      or dormant retention.
+    '1': Affirms that this source-endpoint locus remains persistently identified across
+      the stated exchange context, whether or not a particular exchange act is occurring.
+    2/num: Leaves unresolved whether the persistent identification of this source-endpoint
+      locus currently holds; it does not change source/target/shared scope or select
+      an active or dormant sibling.
+  lexical_runtime_distinction: The third lexical trit permanently selects stable or
+    persistent endpoint/channel character. Runtime `[2]/num` separately marks the
+    status of this token's assertion. Thus CON:000[1] affirms the persistent source
+    endpoint lexeme, while CON:000[2]/num leaves the assertion about that same lexeme
+    unresolved.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:000[1](ENDPOINT=me,CONTEXT=call)
+    literal_gloss: me as persistent source endpoint of call
+    natural_english: I remain the identified source endpoint for this call.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: The assertion affirms the persistent source endpoint.
+  - category: physical_or_spatial
+    semantic_graph: MAT(RADIO=device)+CON:000[1](ENDPOINT=device)
+    literal_gloss: physical radio bearing persistent source endpoint
+    natural_english: The radio is the identified transmitting-side endpoint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: MAT owns the radio; CON owns its communicative locus.
+  - category: temporal_or_sequential
+    semantic_graph: CON:000[1](ENDPOINT=station,ACROSS=sessions)
+    literal_gloss: station remains source endpoint across sessions
+    natural_english: The station keeps the same source-endpoint identity between sessions.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: Persistence spans sessions without asserting current transmission.
+  - category: cross_family_compound
+    semantic_graph: LIF:000[1](BEARER=person)+CON:000[1](ENDPOINT=person)
+    literal_gloss: continuous person plus persistent source endpoint
+    natural_english: The same person remains the source-side participant point.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: LIF supplies identity; CON supplies the endpoint.
+  - category: executable_or_programming
+    semantic_graph: CON:000[1](ENDPOINT=service_A,CONTEXT=request)
+    literal_gloss: service A as persistent request source endpoint
+    natural_english: Service A is registered as the source endpoint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: This is endpoint identity, not a send operation.
+    pseudocode: assert(communication_context.matches?("CON:000"))
+  - category: counterexample
+    semantic_graph: DAT(MESSAGE=payload)
+    literal_gloss: information payload
+    natural_english: The payload is data, not the source endpoint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: must_not_use_this_root
+    analysis: DAT must be used for message content.
+  future_compound_examples:
+  - CON:000 + LIF/MAT/STR identifies the living, physical, or structural bearer of
+    the communicative locus without redefining that bearer.
+  - CON:000 + DAT supplies a message, signal, record, address, or payload associated
+    with the endpoint or channel.
+  - CON:000 + CON:1xx supplies sending, receiving, delivery, broadcast, or another
+    exchange process through the locus.
+  - CON:000 + CON:2xx/LOG/WRN/REP supplies bond, compatibility, permission, failure,
+    or restoration while preserving the entity/process/relation boundary.
+  later_era_notes: Later eras may lexicalize speaker, listener, caller, callee, account,
+    mailbox, port, socket, room, forum, frequency, topic, bus, session, and medium
+    as compounds or descendants. The Era Zero invariant must remain neutral about
+    bearer identity, content, protocol, success, and physical implementation.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:001
+    universal_slot: active inward entity
+    family_qualified_transliteration: wu·nak
+    local_compact_root: nak
+    formal_carrier: wu-ma-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: active source endpoint
+  invariant_definition: A source-side communicative locus presently participating
+    as an endpoint in an exchange context.
+  semantic_center: 'communicative loci: source endpoint, target endpoint, or shared
+    channel'
+  address_justification:
+    first_trit_0: 'Selects an entity or condition: active source endpoint is a communicative
+      endpoint locus, not the act of communicating and not the relationship or capacity
+      connecting participants.'
+    second_trit: 'Selects inward/source scope: the originating side is the locus named
+      by the root.'
+    third_trit: 'Selects active or expressed lexical expression: the endpoint or channel
+      is presently participating or functioning.'
+  inclusion_boundary: Includes only a communicative locus at this exact source, target,
+    or shared scope and this exact persistent, active, or dormant lexical expression.
+    The bearer may be a person, device, service, port, room, session, medium, or other
+    entity, but this root names its place in an exchange context rather than the bearer
+    itself.
+  excluded_meanings:
+  - The identity, life, consciousness, location, physical composition, or structure
+    of the endpoint bearer.
+  - A message, signal payload, symbol, record, protocol, language rule, or stored
+    address as an information object.
+  - Sending, receiving, delivering, broadcasting, negotiating, acknowledging, or otherwise
+    performing a communication process.
+  - A bond, agreement, compatibility relation, reachability capacity, permission,
+    access right, or possible network relation.
+  - Online/offline runtime status, success, failure, schedule, intention, attention,
+    comprehension, or future participation unless another root or grammar supplies
+    it.
+  nearest_neighbors:
+  - CON:000
+  - CON:002
+  - CON:011
+  - CON:021
+  - CON:101
+  - CON:201
+  - DAT:001
+  - STR:001
+  same_family_contrast: CON:0xx owns communicative endpoint and channel loci; CON:1xx
+    must own communication processes such as transmission or receipt; CON:2xx must
+    own capacities, bonds, compatibility, and unrealized relational possibilities.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': States that this source-endpoint locus is not presently participating or
+      functioning, or that such participation has ceased; it does not by itself assert
+      the dormant sibling.
+    '1': Affirms that this source-endpoint locus is presently participating or functioning
+      in the stated exchange context.
+    2/num: Leaves unresolved whether this source-endpoint locus is presently participating
+      or functioning; it does not convert the lexeme into a dormant endpoint or channel.
+  lexical_runtime_distinction: The third lexical trit permanently selects active or
+    expressed endpoint/channel character. Runtime `[2]/num` separately marks the status
+    of this token's assertion. Thus CON:001[1] affirms the active source endpoint
+    lexeme, while CON:001[2]/num leaves the assertion about that same lexeme unresolved.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:000[1](ENDPOINT=me,CONTEXT=call)
+    literal_gloss: me as persistent source endpoint of call
+    natural_english: I remain the identified source endpoint for this call.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: The assertion affirms the persistent source endpoint.
+  - category: physical_or_spatial
+    semantic_graph: MAT(RADIO=device)+CON:000[1](ENDPOINT=device)
+    literal_gloss: physical radio bearing persistent source endpoint
+    natural_english: The radio is the identified transmitting-side endpoint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: MAT owns the radio; CON owns its communicative locus.
+  - category: temporal_or_sequential
+    semantic_graph: CON:000[1](ENDPOINT=station,ACROSS=sessions)
+    literal_gloss: station remains source endpoint across sessions
+    natural_english: The station keeps the same source-endpoint identity between sessions.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: Persistence spans sessions without asserting current transmission.
+  - category: cross_family_compound
+    semantic_graph: LIF:000[1](BEARER=person)+CON:000[1](ENDPOINT=person)
+    literal_gloss: continuous person plus persistent source endpoint
+    natural_english: The same person remains the source-side participant point.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: LIF supplies identity; CON supplies the endpoint.
+  - category: executable_or_programming
+    semantic_graph: CON:000[1](ENDPOINT=service_A,CONTEXT=request)
+    literal_gloss: service A as persistent request source endpoint
+    natural_english: Service A is registered as the source endpoint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: This is endpoint identity, not a send operation.
+    pseudocode: assert(communication_context.matches?("CON:001"))
+  - category: counterexample
+    semantic_graph: DAT(MESSAGE=payload)
+    literal_gloss: information payload
+    natural_english: The payload is data, not the source endpoint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: must_not_use_this_root
+    analysis: DAT must be used for message content.
+  future_compound_examples:
+  - CON:001 + LIF/MAT/STR identifies the living, physical, or structural bearer of
+    the communicative locus without redefining that bearer.
+  - CON:001 + DAT supplies a message, signal, record, address, or payload associated
+    with the endpoint or channel.
+  - CON:001 + CON:1xx supplies sending, receiving, delivery, broadcast, or another
+    exchange process through the locus.
+  - CON:001 + CON:2xx/LOG/WRN/REP supplies bond, compatibility, permission, failure,
+    or restoration while preserving the entity/process/relation boundary.
+  later_era_notes: Later eras may lexicalize speaker, listener, caller, callee, account,
+    mailbox, port, socket, room, forum, frequency, topic, bus, session, and medium
+    as compounds or descendants. The Era Zero invariant must remain neutral about
+    bearer identity, content, protocol, success, and physical implementation.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:002
+    universal_slot: dormant inward entity
+    family_qualified_transliteration: wu·nan
+    local_compact_root: nan
+    formal_carrier: wu-ma-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - -2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: dormant source endpoint
+  invariant_definition: A source-side communicative locus defined for an exchange
+    context without presently participating in it.
+  semantic_center: 'communicative loci: source endpoint, target endpoint, or shared
+    channel'
+  address_justification:
+    first_trit_0: 'Selects an entity or condition: dormant source endpoint is a communicative
+      endpoint locus, not the act of communicating and not the relationship or capacity
+      connecting participants.'
+    second_trit: 'Selects inward/source scope: the originating side is the locus named
+      by the root.'
+    third_trit: 'Selects dormant or latent lexical expression: the endpoint or channel
+      is defined without present participation or function.'
+  inclusion_boundary: Includes only a communicative locus at this exact source, target,
+    or shared scope and this exact persistent, active, or dormant lexical expression.
+    The bearer may be a person, device, service, port, room, session, medium, or other
+    entity, but this root names its place in an exchange context rather than the bearer
+    itself.
+  excluded_meanings:
+  - The identity, life, consciousness, location, physical composition, or structure
+    of the endpoint bearer.
+  - A message, signal payload, symbol, record, protocol, language rule, or stored
+    address as an information object.
+  - Sending, receiving, delivering, broadcasting, negotiating, acknowledging, or otherwise
+    performing a communication process.
+  - A bond, agreement, compatibility relation, reachability capacity, permission,
+    access right, or possible network relation.
+  - Online/offline runtime status, success, failure, schedule, intention, attention,
+    comprehension, or future participation unless another root or grammar supplies
+    it.
+  nearest_neighbors:
+  - CON:000
+  - CON:001
+  - CON:012
+  - CON:022
+  - CON:102
+  - CON:202
+  - DAT:002
+  - STR:002
+  same_family_contrast: CON:0xx owns communicative endpoint and channel loci; CON:1xx
+    must own communication processes such as transmission or receipt; CON:2xx must
+    own capacities, bonds, compatibility, and unrealized relational possibilities.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this defined-but-nonparticipating source-endpoint locus currently
+      holds in the exchange context; it does not assert the active sibling.
+    '1': Affirms that this source-endpoint locus remains defined in the exchange context
+      while not presently participating or functioning.
+    2/num: Leaves unresolved even the claim that this dormant source-endpoint locus
+      remains defined; lexical dormancy and the token's unresolved runtime status
+      stay distinct.
+  lexical_runtime_distinction: The third lexical trit permanently selects dormant
+    or latent endpoint/channel character. Runtime `[2]/num` separately marks the status
+    of this token's assertion. Thus CON:002[1] affirms the dormant source endpoint
+    lexeme, while CON:002[2]/num leaves the assertion about that same lexeme unresolved.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:000[1](ENDPOINT=me,CONTEXT=call)
+    literal_gloss: me as persistent source endpoint of call
+    natural_english: I remain the identified source endpoint for this call.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: The assertion affirms the persistent source endpoint.
+  - category: physical_or_spatial
+    semantic_graph: MAT(RADIO=device)+CON:000[1](ENDPOINT=device)
+    literal_gloss: physical radio bearing persistent source endpoint
+    natural_english: The radio is the identified transmitting-side endpoint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: MAT owns the radio; CON owns its communicative locus.
+  - category: temporal_or_sequential
+    semantic_graph: CON:000[1](ENDPOINT=station,ACROSS=sessions)
+    literal_gloss: station remains source endpoint across sessions
+    natural_english: The station keeps the same source-endpoint identity between sessions.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: Persistence spans sessions without asserting current transmission.
+  - category: cross_family_compound
+    semantic_graph: LIF:000[1](BEARER=person)+CON:000[1](ENDPOINT=person)
+    literal_gloss: continuous person plus persistent source endpoint
+    natural_english: The same person remains the source-side participant point.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: LIF supplies identity; CON supplies the endpoint.
+  - category: executable_or_programming
+    semantic_graph: CON:000[1](ENDPOINT=service_A,CONTEXT=request)
+    literal_gloss: service A as persistent request source endpoint
+    natural_english: Service A is registered as the source endpoint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: This is endpoint identity, not a send operation.
+    pseudocode: assert(communication_context.matches?("CON:002"))
+  - category: counterexample
+    semantic_graph: DAT(MESSAGE=payload)
+    literal_gloss: information payload
+    natural_english: The payload is data, not the source endpoint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: must_not_use_this_root
+    analysis: DAT must be used for message content.
+  future_compound_examples:
+  - CON:002 + LIF/MAT/STR identifies the living, physical, or structural bearer of
+    the communicative locus without redefining that bearer.
+  - CON:002 + DAT supplies a message, signal, record, address, or payload associated
+    with the endpoint or channel.
+  - CON:002 + CON:1xx supplies sending, receiving, delivery, broadcast, or another
+    exchange process through the locus.
+  - CON:002 + CON:2xx/LOG/WRN/REP supplies bond, compatibility, permission, failure,
+    or restoration while preserving the entity/process/relation boundary.
+  later_era_notes: Later eras may lexicalize speaker, listener, caller, callee, account,
+    mailbox, port, socket, room, forum, frequency, topic, bus, session, and medium
+    as compounds or descendants. The Era Zero invariant must remain neutral about
+    bearer identity, content, protocol, success, and physical implementation.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:010
+    universal_slot: stable outward entity
+    family_qualified_transliteration: wu·nom
+    local_compact_root: nom
+    formal_carrier: wu-ma-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: persistent target endpoint
+  invariant_definition: A bounded communicative locus that remains identified as the
+    target-side endpoint of an exchange context.
+  semantic_center: 'communicative loci: source endpoint, target endpoint, or shared
+    channel'
+  address_justification:
+    first_trit_0: 'Selects an entity or condition: persistent target endpoint is a
+      communicative endpoint locus, not the act of communicating and not the relationship
+      or capacity connecting participants.'
+    second_trit: 'Selects outward/target scope: the addressed side is the locus named
+      by the root.'
+    third_trit: 'Selects stable or persistent lexical expression: the endpoint or
+      channel is retained as a persistent identity.'
+  inclusion_boundary: Includes only a communicative locus at this exact source, target,
+    or shared scope and this exact persistent, active, or dormant lexical expression.
+    The bearer may be a person, device, service, port, room, session, medium, or other
+    entity, but this root names its place in an exchange context rather than the bearer
+    itself.
+  excluded_meanings:
+  - The identity, life, consciousness, location, physical composition, or structure
+    of the endpoint bearer.
+  - A message, signal payload, symbol, record, protocol, language rule, or stored
+    address as an information object.
+  - Sending, receiving, delivering, broadcasting, negotiating, acknowledging, or otherwise
+    performing a communication process.
+  - A bond, agreement, compatibility relation, reachability capacity, permission,
+    access right, or possible network relation.
+  - Online/offline runtime status, success, failure, schedule, intention, attention,
+    comprehension, or future participation unless another root or grammar supplies
+    it.
+  nearest_neighbors:
+  - CON:011
+  - CON:012
+  - CON:000
+  - CON:020
+  - CON:110
+  - CON:210
+  - DAT:010
+  - STR:010
+  same_family_contrast: CON:0xx owns communicative endpoint and channel loci; CON:1xx
+    must own communication processes such as transmission or receipt; CON:2xx must
+    own capacities, bonds, compatibility, and unrealized relational possibilities.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the persistent identification of this target-endpoint locus currently
+      holds in the exchange context; it does not assert either active participation
+      or dormant retention.
+    '1': Affirms that this target-endpoint locus remains persistently identified across
+      the stated exchange context, whether or not a particular exchange act is occurring.
+    2/num: Leaves unresolved whether the persistent identification of this target-endpoint
+      locus currently holds; it does not change source/target/shared scope or select
+      an active or dormant sibling.
+  lexical_runtime_distinction: The third lexical trit permanently selects stable or
+    persistent endpoint/channel character. Runtime `[2]/num` separately marks the
+    status of this token's assertion. Thus CON:010[1] affirms the persistent target
+    endpoint lexeme, while CON:010[2]/num leaves the assertion about that same lexeme
+    unresolved.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:001[1](ENDPOINT=caller,CONTEXT=conversation)
+    literal_gloss: caller presently source endpoint
+    natural_english: The caller is presently participating on the source side.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: The active entity is present without lexicalizing the act of sending.
+  - category: physical_or_spatial
+    semantic_graph: MAT(MICROPHONE=mic)+CON:001[1](ENDPOINT=mic)
+    literal_gloss: microphone presently source endpoint
+    natural_english: This microphone is the active source endpoint in the room.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: The device is MAT; its current communicative locus is CON.
+  - category: temporal_or_sequential
+    semantic_graph: CON:001[1](ENDPOINT=operator,DURING=turn)
+    literal_gloss: operator actively source endpoint during turn
+    natural_english: The operator occupies the source endpoint during this turn.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: Timing bounds the active endpoint condition.
+  - category: cross_family_compound
+    semantic_graph: MIN:001[1](MIND=agent)+CON:001[1](ENDPOINT=agent)
+    literal_gloss: manifest representation plus active source endpoint
+    natural_english: The agent is mentally engaged and presently occupies the source
+      endpoint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: Mind state and communication locus remain separate.
+  - category: executable_or_programming
+    semantic_graph: CON:001[1](ENDPOINT=producer,CHANNEL=events)
+    literal_gloss: producer presently source endpoint on events
+    natural_english: The producer is attached as the active source endpoint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: Publishing a payload remains a CON:1xx process plus DAT.
+    pseudocode: assert(communication_context.matches?("CON:010"))
+  - category: counterexample
+    semantic_graph: CON:111[1](SENDER=producer,TARGET=consumer)
+    literal_gloss: active outward communication process
+    natural_english: The producer is transmitting; that act is not CON:001.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: must_not_use_this_root
+    analysis: CON:1xx must own transmission processes.
+  future_compound_examples:
+  - CON:010 + LIF/MAT/STR identifies the living, physical, or structural bearer of
+    the communicative locus without redefining that bearer.
+  - CON:010 + DAT supplies a message, signal, record, address, or payload associated
+    with the endpoint or channel.
+  - CON:010 + CON:1xx supplies sending, receiving, delivery, broadcast, or another
+    exchange process through the locus.
+  - CON:010 + CON:2xx/LOG/WRN/REP supplies bond, compatibility, permission, failure,
+    or restoration while preserving the entity/process/relation boundary.
+  later_era_notes: Later eras may lexicalize speaker, listener, caller, callee, account,
+    mailbox, port, socket, room, forum, frequency, topic, bus, session, and medium
+    as compounds or descendants. The Era Zero invariant must remain neutral about
+    bearer identity, content, protocol, success, and physical implementation.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:011
+    universal_slot: active outward entity
+    family_qualified_transliteration: wu·nok
+    local_compact_root: nok
+    formal_carrier: wu-ma-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 4
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: active target endpoint
+  invariant_definition: A target-side communicative locus presently participating
+    as an endpoint in an exchange context.
+  semantic_center: 'communicative loci: source endpoint, target endpoint, or shared
+    channel'
+  address_justification:
+    first_trit_0: 'Selects an entity or condition: active target endpoint is a communicative
+      endpoint locus, not the act of communicating and not the relationship or capacity
+      connecting participants.'
+    second_trit: 'Selects outward/target scope: the addressed side is the locus named
+      by the root.'
+    third_trit: 'Selects active or expressed lexical expression: the endpoint or channel
+      is presently participating or functioning.'
+  inclusion_boundary: Includes only a communicative locus at this exact source, target,
+    or shared scope and this exact persistent, active, or dormant lexical expression.
+    The bearer may be a person, device, service, port, room, session, medium, or other
+    entity, but this root names its place in an exchange context rather than the bearer
+    itself.
+  excluded_meanings:
+  - The identity, life, consciousness, location, physical composition, or structure
+    of the endpoint bearer.
+  - A message, signal payload, symbol, record, protocol, language rule, or stored
+    address as an information object.
+  - Sending, receiving, delivering, broadcasting, negotiating, acknowledging, or otherwise
+    performing a communication process.
+  - A bond, agreement, compatibility relation, reachability capacity, permission,
+    access right, or possible network relation.
+  - Online/offline runtime status, success, failure, schedule, intention, attention,
+    comprehension, or future participation unless another root or grammar supplies
+    it.
+  nearest_neighbors:
+  - CON:010
+  - CON:012
+  - CON:001
+  - CON:021
+  - CON:111
+  - CON:211
+  - DAT:011
+  - STR:011
+  same_family_contrast: CON:0xx owns communicative endpoint and channel loci; CON:1xx
+    must own communication processes such as transmission or receipt; CON:2xx must
+    own capacities, bonds, compatibility, and unrealized relational possibilities.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': States that this target-endpoint locus is not presently participating or
+      functioning, or that such participation has ceased; it does not by itself assert
+      the dormant sibling.
+    '1': Affirms that this target-endpoint locus is presently participating or functioning
+      in the stated exchange context.
+    2/num: Leaves unresolved whether this target-endpoint locus is presently participating
+      or functioning; it does not convert the lexeme into a dormant endpoint or channel.
+  lexical_runtime_distinction: The third lexical trit permanently selects active or
+    expressed endpoint/channel character. Runtime `[2]/num` separately marks the status
+    of this token's assertion. Thus CON:011[1] affirms the active target endpoint
+    lexeme, while CON:011[2]/num leaves the assertion about that same lexeme unresolved.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:001[1](ENDPOINT=caller,CONTEXT=conversation)
+    literal_gloss: caller presently source endpoint
+    natural_english: The caller is presently participating on the source side.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: The active entity is present without lexicalizing the act of sending.
+  - category: physical_or_spatial
+    semantic_graph: MAT(MICROPHONE=mic)+CON:001[1](ENDPOINT=mic)
+    literal_gloss: microphone presently source endpoint
+    natural_english: This microphone is the active source endpoint in the room.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: The device is MAT; its current communicative locus is CON.
+  - category: temporal_or_sequential
+    semantic_graph: CON:001[1](ENDPOINT=operator,DURING=turn)
+    literal_gloss: operator actively source endpoint during turn
+    natural_english: The operator occupies the source endpoint during this turn.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: Timing bounds the active endpoint condition.
+  - category: cross_family_compound
+    semantic_graph: MIN:001[1](MIND=agent)+CON:001[1](ENDPOINT=agent)
+    literal_gloss: manifest representation plus active source endpoint
+    natural_english: The agent is mentally engaged and presently occupies the source
+      endpoint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: Mind state and communication locus remain separate.
+  - category: executable_or_programming
+    semantic_graph: CON:001[1](ENDPOINT=producer,CHANNEL=events)
+    literal_gloss: producer presently source endpoint on events
+    natural_english: The producer is attached as the active source endpoint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: Publishing a payload remains a CON:1xx process plus DAT.
+    pseudocode: assert(communication_context.matches?("CON:011"))
+  - category: counterexample
+    semantic_graph: CON:111[1](SENDER=producer,TARGET=consumer)
+    literal_gloss: active outward communication process
+    natural_english: The producer is transmitting; that act is not CON:001.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: must_not_use_this_root
+    analysis: CON:1xx must own transmission processes.
+  future_compound_examples:
+  - CON:011 + LIF/MAT/STR identifies the living, physical, or structural bearer of
+    the communicative locus without redefining that bearer.
+  - CON:011 + DAT supplies a message, signal, record, address, or payload associated
+    with the endpoint or channel.
+  - CON:011 + CON:1xx supplies sending, receiving, delivery, broadcast, or another
+    exchange process through the locus.
+  - CON:011 + CON:2xx/LOG/WRN/REP supplies bond, compatibility, permission, failure,
+    or restoration while preserving the entity/process/relation boundary.
+  later_era_notes: Later eras may lexicalize speaker, listener, caller, callee, account,
+    mailbox, port, socket, room, forum, frequency, topic, bus, session, and medium
+    as compounds or descendants. The Era Zero invariant must remain neutral about
+    bearer identity, content, protocol, success, and physical implementation.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:012
+    universal_slot: dormant outward entity
+    family_qualified_transliteration: wu·non
+    local_compact_root: non
+    formal_carrier: wu-ma-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: dormant target endpoint
+  invariant_definition: A target-side communicative locus defined for an exchange
+    context without presently participating in it.
+  semantic_center: 'communicative loci: source endpoint, target endpoint, or shared
+    channel'
+  address_justification:
+    first_trit_0: 'Selects an entity or condition: dormant target endpoint is a communicative
+      endpoint locus, not the act of communicating and not the relationship or capacity
+      connecting participants.'
+    second_trit: 'Selects outward/target scope: the addressed side is the locus named
+      by the root.'
+    third_trit: 'Selects dormant or latent lexical expression: the endpoint or channel
+      is defined without present participation or function.'
+  inclusion_boundary: Includes only a communicative locus at this exact source, target,
+    or shared scope and this exact persistent, active, or dormant lexical expression.
+    The bearer may be a person, device, service, port, room, session, medium, or other
+    entity, but this root names its place in an exchange context rather than the bearer
+    itself.
+  excluded_meanings:
+  - The identity, life, consciousness, location, physical composition, or structure
+    of the endpoint bearer.
+  - A message, signal payload, symbol, record, protocol, language rule, or stored
+    address as an information object.
+  - Sending, receiving, delivering, broadcasting, negotiating, acknowledging, or otherwise
+    performing a communication process.
+  - A bond, agreement, compatibility relation, reachability capacity, permission,
+    access right, or possible network relation.
+  - Online/offline runtime status, success, failure, schedule, intention, attention,
+    comprehension, or future participation unless another root or grammar supplies
+    it.
+  nearest_neighbors:
+  - CON:010
+  - CON:011
+  - CON:002
+  - CON:022
+  - CON:112
+  - CON:212
+  - DAT:012
+  - STR:012
+  same_family_contrast: CON:0xx owns communicative endpoint and channel loci; CON:1xx
+    must own communication processes such as transmission or receipt; CON:2xx must
+    own capacities, bonds, compatibility, and unrealized relational possibilities.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this defined-but-nonparticipating target-endpoint locus currently
+      holds in the exchange context; it does not assert the active sibling.
+    '1': Affirms that this target-endpoint locus remains defined in the exchange context
+      while not presently participating or functioning.
+    2/num: Leaves unresolved even the claim that this dormant target-endpoint locus
+      remains defined; lexical dormancy and the token's unresolved runtime status
+      stay distinct.
+  lexical_runtime_distinction: The third lexical trit permanently selects dormant
+    or latent endpoint/channel character. Runtime `[2]/num` separately marks the status
+    of this token's assertion. Thus CON:012[1] affirms the dormant target endpoint
+    lexeme, while CON:012[2]/num leaves the assertion about that same lexeme unresolved.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:001[1](ENDPOINT=caller,CONTEXT=conversation)
+    literal_gloss: caller presently source endpoint
+    natural_english: The caller is presently participating on the source side.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: The active entity is present without lexicalizing the act of sending.
+  - category: physical_or_spatial
+    semantic_graph: MAT(MICROPHONE=mic)+CON:001[1](ENDPOINT=mic)
+    literal_gloss: microphone presently source endpoint
+    natural_english: This microphone is the active source endpoint in the room.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: The device is MAT; its current communicative locus is CON.
+  - category: temporal_or_sequential
+    semantic_graph: CON:001[1](ENDPOINT=operator,DURING=turn)
+    literal_gloss: operator actively source endpoint during turn
+    natural_english: The operator occupies the source endpoint during this turn.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: Timing bounds the active endpoint condition.
+  - category: cross_family_compound
+    semantic_graph: MIN:001[1](MIND=agent)+CON:001[1](ENDPOINT=agent)
+    literal_gloss: manifest representation plus active source endpoint
+    natural_english: The agent is mentally engaged and presently occupies the source
+      endpoint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: Mind state and communication locus remain separate.
+  - category: executable_or_programming
+    semantic_graph: CON:001[1](ENDPOINT=producer,CHANNEL=events)
+    literal_gloss: producer presently source endpoint on events
+    natural_english: The producer is attached as the active source endpoint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: Publishing a payload remains a CON:1xx process plus DAT.
+    pseudocode: assert(communication_context.matches?("CON:012"))
+  - category: counterexample
+    semantic_graph: CON:111[1](SENDER=producer,TARGET=consumer)
+    literal_gloss: active outward communication process
+    natural_english: The producer is transmitting; that act is not CON:001.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: must_not_use_this_root
+    analysis: CON:1xx must own transmission processes.
+  future_compound_examples:
+  - CON:012 + LIF/MAT/STR identifies the living, physical, or structural bearer of
+    the communicative locus without redefining that bearer.
+  - CON:012 + DAT supplies a message, signal, record, address, or payload associated
+    with the endpoint or channel.
+  - CON:012 + CON:1xx supplies sending, receiving, delivery, broadcast, or another
+    exchange process through the locus.
+  - CON:012 + CON:2xx/LOG/WRN/REP supplies bond, compatibility, permission, failure,
+    or restoration while preserving the entity/process/relation boundary.
+  later_era_notes: Later eras may lexicalize speaker, listener, caller, callee, account,
+    mailbox, port, socket, room, forum, frequency, topic, bus, session, and medium
+    as compounds or descendants. The Era Zero invariant must remain neutral about
+    bearer identity, content, protocol, success, and physical implementation.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:020
+    universal_slot: stable collective entity
+    family_qualified_transliteration: wu·nim
+    local_compact_root: nim
+    formal_carrier: wu-ma-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: persistent shared channel
+  invariant_definition: A bounded communicative environment that remains the common
+    exchange context of multiple participant endpoints.
+  semantic_center: 'communicative loci: source endpoint, target endpoint, or shared
+    channel'
+  address_justification:
+    first_trit_0: 'Selects an entity or condition: persistent shared channel is a
+      shared communicative environment, not the act of communicating and not the relationship
+      or capacity connecting participants.'
+    second_trit: 'Selects shared/systemic scope: the common environment of multiple
+      endpoints is the locus named by the root.'
+    third_trit: 'Selects stable or persistent lexical expression: the endpoint or
+      channel is retained as a persistent identity.'
+  inclusion_boundary: Includes only a communicative locus at this exact source, target,
+    or shared scope and this exact persistent, active, or dormant lexical expression.
+    The bearer may be a person, device, service, port, room, session, medium, or other
+    entity, but this root names its place in an exchange context rather than the bearer
+    itself.
+  excluded_meanings:
+  - The identity, life, consciousness, location, physical composition, or structure
+    of the endpoint bearer.
+  - A message, signal payload, symbol, record, protocol, language rule, or stored
+    address as an information object.
+  - Sending, receiving, delivering, broadcasting, negotiating, acknowledging, or otherwise
+    performing a communication process.
+  - A bond, agreement, compatibility relation, reachability capacity, permission,
+    access right, or possible network relation.
+  - Online/offline runtime status, success, failure, schedule, intention, attention,
+    comprehension, or future participation unless another root or grammar supplies
+    it.
+  nearest_neighbors:
+  - CON:021
+  - CON:022
+  - CON:000
+  - CON:010
+  - CON:120
+  - CON:220
+  - DAT:020
+  - STR:020
+  same_family_contrast: CON:0xx owns communicative endpoint and channel loci; CON:1xx
+    must own communication processes such as transmission or receipt; CON:2xx must
+    own capacities, bonds, compatibility, and unrealized relational possibilities.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the persistent identification of this shared-channel locus currently
+      holds in the exchange context; it does not assert either active participation
+      or dormant retention.
+    '1': Affirms that this shared-channel locus remains persistently identified across
+      the stated exchange context, whether or not a particular exchange act is occurring.
+    2/num: Leaves unresolved whether the persistent identification of this shared-channel
+      locus currently holds; it does not change source/target/shared scope or select
+      an active or dormant sibling.
+  lexical_runtime_distinction: The third lexical trit permanently selects stable or
+    persistent endpoint/channel character. Runtime `[2]/num` separately marks the
+    status of this token's assertion. Thus CON:020[1] affirms the persistent shared
+    channel lexeme, while CON:020[2]/num leaves the assertion about that same lexeme
+    unresolved.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:002[1](ENDPOINT=former_speaker,CONTEXT=meeting)
+    literal_gloss: defined but dormant source endpoint
+    natural_english: The former speaker's source position remains defined, although
+      they are not participating now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: Runtime [1] affirms the dormant lexeme.
+  - category: physical_or_spatial
+    semantic_graph: MAT(RADIO=backup)+CON:002[1](ENDPOINT=backup)
+    literal_gloss: backup radio as dormant source endpoint
+    natural_english: The backup radio has a defined source-side endpoint but is not
+      participating.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: Dormancy is lexical, not physical nonexistence.
+  - category: temporal_or_sequential
+    semantic_graph: CON:002[1](ENDPOINT=archived_account,AFTER=session)
+    literal_gloss: source endpoint retained after session
+    natural_english: The account retains its source endpoint after the session closes.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: The locus persists as dormant after participation ends.
+  - category: cross_family_compound
+    semantic_graph: STR(PORT=port7)+CON:002[1](ENDPOINT=port7)
+    literal_gloss: structured port plus dormant source endpoint
+    natural_english: Port 7 is structurally defined as a source endpoint but is not
+      participating.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: STR supplies the port; CON supplies communicative status.
+  - category: executable_or_programming
+    semantic_graph: CON:002[1](ENDPOINT=producer_backup,CHANNEL=events)
+    literal_gloss: dormant producer endpoint
+    natural_english: The backup producer endpoint is registered but unattached.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: Registration is not a queued send.
+    pseudocode: assert(communication_context.matches?("CON:020"))
+  - category: counterexample
+    semantic_graph: CON:102[1](PROCESS=source_exchange)
+    literal_gloss: nonactualized inward communication process
+    natural_english: A pending communication operation is not a dormant endpoint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: must_not_use_this_root
+    analysis: Lexical entity dormancy and process nonactualization differ.
+  future_compound_examples:
+  - CON:020 + LIF/MAT/STR identifies the living, physical, or structural bearer of
+    the communicative locus without redefining that bearer.
+  - CON:020 + DAT supplies a message, signal, record, address, or payload associated
+    with the endpoint or channel.
+  - CON:020 + CON:1xx supplies sending, receiving, delivery, broadcast, or another
+    exchange process through the locus.
+  - CON:020 + CON:2xx/LOG/WRN/REP supplies bond, compatibility, permission, failure,
+    or restoration while preserving the entity/process/relation boundary.
+  later_era_notes: Later eras may lexicalize speaker, listener, caller, callee, account,
+    mailbox, port, socket, room, forum, frequency, topic, bus, session, and medium
+    as compounds or descendants. The Era Zero invariant must remain neutral about
+    bearer identity, content, protocol, success, and physical implementation.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:021
+    universal_slot: active collective entity
+    family_qualified_transliteration: wu·nik
+    local_compact_root: nik
+    formal_carrier: wu-ma-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: active shared channel
+  invariant_definition: A shared communicative environment presently functioning as
+    the common exchange context of multiple participant endpoints.
+  semantic_center: 'communicative loci: source endpoint, target endpoint, or shared
+    channel'
+  address_justification:
+    first_trit_0: 'Selects an entity or condition: active shared channel is a shared
+      communicative environment, not the act of communicating and not the relationship
+      or capacity connecting participants.'
+    second_trit: 'Selects shared/systemic scope: the common environment of multiple
+      endpoints is the locus named by the root.'
+    third_trit: 'Selects active or expressed lexical expression: the endpoint or channel
+      is presently participating or functioning.'
+  inclusion_boundary: Includes only a communicative locus at this exact source, target,
+    or shared scope and this exact persistent, active, or dormant lexical expression.
+    The bearer may be a person, device, service, port, room, session, medium, or other
+    entity, but this root names its place in an exchange context rather than the bearer
+    itself.
+  excluded_meanings:
+  - The identity, life, consciousness, location, physical composition, or structure
+    of the endpoint bearer.
+  - A message, signal payload, symbol, record, protocol, language rule, or stored
+    address as an information object.
+  - Sending, receiving, delivering, broadcasting, negotiating, acknowledging, or otherwise
+    performing a communication process.
+  - A bond, agreement, compatibility relation, reachability capacity, permission,
+    access right, or possible network relation.
+  - Online/offline runtime status, success, failure, schedule, intention, attention,
+    comprehension, or future participation unless another root or grammar supplies
+    it.
+  nearest_neighbors:
+  - CON:020
+  - CON:022
+  - CON:001
+  - CON:011
+  - CON:121
+  - CON:221
+  - DAT:021
+  - STR:021
+  same_family_contrast: CON:0xx owns communicative endpoint and channel loci; CON:1xx
+    must own communication processes such as transmission or receipt; CON:2xx must
+    own capacities, bonds, compatibility, and unrealized relational possibilities.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': States that this shared-channel locus is not presently participating or functioning,
+      or that such participation has ceased; it does not by itself assert the dormant
+      sibling.
+    '1': Affirms that this shared-channel locus is presently participating or functioning
+      in the stated exchange context.
+    2/num: Leaves unresolved whether this shared-channel locus is presently participating
+      or functioning; it does not convert the lexeme into a dormant endpoint or channel.
+  lexical_runtime_distinction: The third lexical trit permanently selects active or
+    expressed endpoint/channel character. Runtime `[2]/num` separately marks the status
+    of this token's assertion. Thus CON:021[1] affirms the active shared channel lexeme,
+    while CON:021[2]/num leaves the assertion about that same lexeme unresolved.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:002[1](ENDPOINT=former_speaker,CONTEXT=meeting)
+    literal_gloss: defined but dormant source endpoint
+    natural_english: The former speaker's source position remains defined, although
+      they are not participating now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: Runtime [1] affirms the dormant lexeme.
+  - category: physical_or_spatial
+    semantic_graph: MAT(RADIO=backup)+CON:002[1](ENDPOINT=backup)
+    literal_gloss: backup radio as dormant source endpoint
+    natural_english: The backup radio has a defined source-side endpoint but is not
+      participating.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: Dormancy is lexical, not physical nonexistence.
+  - category: temporal_or_sequential
+    semantic_graph: CON:002[1](ENDPOINT=archived_account,AFTER=session)
+    literal_gloss: source endpoint retained after session
+    natural_english: The account retains its source endpoint after the session closes.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: The locus persists as dormant after participation ends.
+  - category: cross_family_compound
+    semantic_graph: STR(PORT=port7)+CON:002[1](ENDPOINT=port7)
+    literal_gloss: structured port plus dormant source endpoint
+    natural_english: Port 7 is structurally defined as a source endpoint but is not
+      participating.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: STR supplies the port; CON supplies communicative status.
+  - category: executable_or_programming
+    semantic_graph: CON:002[1](ENDPOINT=producer_backup,CHANNEL=events)
+    literal_gloss: dormant producer endpoint
+    natural_english: The backup producer endpoint is registered but unattached.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: Registration is not a queued send.
+    pseudocode: assert(communication_context.matches?("CON:021"))
+  - category: counterexample
+    semantic_graph: CON:102[1](PROCESS=source_exchange)
+    literal_gloss: nonactualized inward communication process
+    natural_english: A pending communication operation is not a dormant endpoint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: must_not_use_this_root
+    analysis: Lexical entity dormancy and process nonactualization differ.
+  future_compound_examples:
+  - CON:021 + LIF/MAT/STR identifies the living, physical, or structural bearer of
+    the communicative locus without redefining that bearer.
+  - CON:021 + DAT supplies a message, signal, record, address, or payload associated
+    with the endpoint or channel.
+  - CON:021 + CON:1xx supplies sending, receiving, delivery, broadcast, or another
+    exchange process through the locus.
+  - CON:021 + CON:2xx/LOG/WRN/REP supplies bond, compatibility, permission, failure,
+    or restoration while preserving the entity/process/relation boundary.
+  later_era_notes: Later eras may lexicalize speaker, listener, caller, callee, account,
+    mailbox, port, socket, room, forum, frequency, topic, bus, session, and medium
+    as compounds or descendants. The Era Zero invariant must remain neutral about
+    bearer identity, content, protocol, success, and physical implementation.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:022
+    universal_slot: dormant collective entity
+    family_qualified_transliteration: wu·nin
+    local_compact_root: nin
+    formal_carrier: wu-ma-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -4
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: dormant shared channel
+  invariant_definition: A shared communicative environment defined for multiple participant
+    endpoints without presently functioning as their common exchange context.
+  semantic_center: 'communicative loci: source endpoint, target endpoint, or shared
+    channel'
+  address_justification:
+    first_trit_0: 'Selects an entity or condition: dormant shared channel is a shared
+      communicative environment, not the act of communicating and not the relationship
+      or capacity connecting participants.'
+    second_trit: 'Selects shared/systemic scope: the common environment of multiple
+      endpoints is the locus named by the root.'
+    third_trit: 'Selects dormant or latent lexical expression: the endpoint or channel
+      is defined without present participation or function.'
+  inclusion_boundary: Includes only a communicative locus at this exact source, target,
+    or shared scope and this exact persistent, active, or dormant lexical expression.
+    The bearer may be a person, device, service, port, room, session, medium, or other
+    entity, but this root names its place in an exchange context rather than the bearer
+    itself.
+  excluded_meanings:
+  - The identity, life, consciousness, location, physical composition, or structure
+    of the endpoint bearer.
+  - A message, signal payload, symbol, record, protocol, language rule, or stored
+    address as an information object.
+  - Sending, receiving, delivering, broadcasting, negotiating, acknowledging, or otherwise
+    performing a communication process.
+  - A bond, agreement, compatibility relation, reachability capacity, permission,
+    access right, or possible network relation.
+  - Online/offline runtime status, success, failure, schedule, intention, attention,
+    comprehension, or future participation unless another root or grammar supplies
+    it.
+  nearest_neighbors:
+  - CON:020
+  - CON:021
+  - CON:002
+  - CON:012
+  - CON:122
+  - CON:222
+  - DAT:022
+  - STR:022
+  same_family_contrast: CON:0xx owns communicative endpoint and channel loci; CON:1xx
+    must own communication processes such as transmission or receipt; CON:2xx must
+    own capacities, bonds, compatibility, and unrealized relational possibilities.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this defined-but-nonparticipating shared-channel locus currently
+      holds in the exchange context; it does not assert the active sibling.
+    '1': Affirms that this shared-channel locus remains defined in the exchange context
+      while not presently participating or functioning.
+    2/num: Leaves unresolved even the claim that this dormant shared-channel locus
+      remains defined; lexical dormancy and the token's unresolved runtime status
+      stay distinct.
+  lexical_runtime_distinction: The third lexical trit permanently selects dormant
+    or latent endpoint/channel character. Runtime `[2]/num` separately marks the status
+    of this token's assertion. Thus CON:022[1] affirms the dormant shared channel
+    lexeme, while CON:022[2]/num leaves the assertion about that same lexeme unresolved.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:002[1](ENDPOINT=former_speaker,CONTEXT=meeting)
+    literal_gloss: defined but dormant source endpoint
+    natural_english: The former speaker's source position remains defined, although
+      they are not participating now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: Runtime [1] affirms the dormant lexeme.
+  - category: physical_or_spatial
+    semantic_graph: MAT(RADIO=backup)+CON:002[1](ENDPOINT=backup)
+    literal_gloss: backup radio as dormant source endpoint
+    natural_english: The backup radio has a defined source-side endpoint but is not
+      participating.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: Dormancy is lexical, not physical nonexistence.
+  - category: temporal_or_sequential
+    semantic_graph: CON:002[1](ENDPOINT=archived_account,AFTER=session)
+    literal_gloss: source endpoint retained after session
+    natural_english: The account retains its source endpoint after the session closes.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: The locus persists as dormant after participation ends.
+  - category: cross_family_compound
+    semantic_graph: STR(PORT=port7)+CON:002[1](ENDPOINT=port7)
+    literal_gloss: structured port plus dormant source endpoint
+    natural_english: Port 7 is structurally defined as a source endpoint but is not
+      participating.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: STR supplies the port; CON supplies communicative status.
+  - category: executable_or_programming
+    semantic_graph: CON:002[1](ENDPOINT=producer_backup,CHANNEL=events)
+    literal_gloss: dormant producer endpoint
+    natural_english: The backup producer endpoint is registered but unattached.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: valid
+    analysis: Registration is not a queued send.
+    pseudocode: assert(communication_context.matches?("CON:022"))
+  - category: counterexample
+    semantic_graph: CON:102[1](PROCESS=source_exchange)
+    literal_gloss: nonactualized inward communication process
+    natural_english: A pending communication operation is not a dormant endpoint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or originating participant
+      middle: CON endpoint or shared channel
+      high: target endpoint or addressed participant
+      sustained: shared communicative environment or exchange context
+    use_status: must_not_use_this_root
+    analysis: Lexical entity dormancy and process nonactualization differ.
+  future_compound_examples:
+  - CON:022 + LIF/MAT/STR identifies the living, physical, or structural bearer of
+    the communicative locus without redefining that bearer.
+  - CON:022 + DAT supplies a message, signal, record, address, or payload associated
+    with the endpoint or channel.
+  - CON:022 + CON:1xx supplies sending, receiving, delivery, broadcast, or another
+    exchange process through the locus.
+  - CON:022 + CON:2xx/LOG/WRN/REP supplies bond, compatibility, permission, failure,
+    or restoration while preserving the entity/process/relation boundary.
+  later_era_notes: Later eras may lexicalize speaker, listener, caller, callee, account,
+    mailbox, port, socket, room, forum, frequency, topic, bus, session, and medium
+    as compounds or descendants. The Era Zero invariant must remain neutral about
+    bearer identity, content, protocol, success, and physical implementation.
+  confidence: 0.96
+  canonicalized: true
+approval_checklist:
+  family_domain_preserved: true
+  address_axes_preserved: true
+  one_invariant_per_root: true
+  triplets_coherent: true
+  cross_family_collisions_explicit: true
+  runtime_state_separated: true
+  generated_fields_unchanged: true
+  gate4_not_started: true
+  translator_not_started: true
+  canonicalized: true

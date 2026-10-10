@@ -1,0 +1,1663 @@
+---
+metadata:
+  title: ORI:200–222 recommended permanent semantic specification
+  status: approved_and_canonical_by_delegated_authority
+  architecture_version: '1.0'
+  semantic_center: 'ontological relations: source-grounding capacity, target-ground
+    dependence, and shared-world constraint'
+  triplets:
+    ORI:200–202: 'source-grounding capacity: persistent / operative / latent'
+    ORI:210–212: 'target-ground dependence: persistent / operative / latent'
+    ORI:220–222: 'shared-world constraint: persistent / operative / latent'
+  triplet_logic:
+    persistent: standing across the relevant reference span, independently of current
+      operation
+    operative: presently governing the specified case
+    latent: belonging without present operation
+    runtime_uncertainty: runtime [2]/num qualifies the selected lexical status and
+      never selects latency
+  generated_fields_changed: false
+  gate4_started: false
+  translator_started: false
+  roots_canonicalized:
+  - ORI:200
+  - ORI:201
+  - ORI:202
+  - ORI:210
+  - ORI:211
+  - ORI:212
+  - ORI:220
+  - ORI:221
+  - ORI:222
+  approval_record: migrations/ORI_200_222_semantic_approval.yaml
+roots:
+- fixed_generated_fields:
+    canonical_id: ORI:200
+    universal_slot: stable inward capacity
+    family_qualified_transliteration: nu·mam
+    local_compact_root: mam
+    formal_carrier: nu-nu-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: persistent source-grounding capacity
+  invariant_definition: A persistent ontological capacity of one source to ground
+    a specified state of affairs, independently of whether that capacity is presently
+    operative.
+  semantic_center: 'ontological relations: source-grounding capacity, target-ground
+    dependence, and shared-world constraint'
+  address_justification:
+    first_trit_2: Selects an ontological relation, capacity, dependence, or constraint
+      rather than an entity condition or bounded transition.
+    second_trit: Selects inward/source orientation and therefore source-grounding
+      capacity, not another Origin-family column.
+    third_trit: Selects persistent lexical status while leaving token truth, observer
+      knowledge, tense, probability, causation, and physical mechanism separate.
+  inclusion_boundary: Includes only a persistent source-grounding capacity as a substrate-neutral
+    relation in what may obtain within a specified reality. It is neutral about physical
+    mechanism, temporal order, probability, intention, observation, representation,
+    logical proof, software implementation, social permission, productive agency,
+    structural arrangement, danger, and repair. It neither creates its relata nor
+    asserts that a formal description is true.
+  excluded_meanings:
+  - The source-ground, distinct-existence, or shared-world condition itself.
+  - A bounded transition that establishes, actualizes, or changes an ontological condition.
+  - Causal force, productive method, temporal priority, provenance history, physical
+    disposition, biological capacity, mental possibility, permission, or plan.
+  - Formal entailment, satisfiability, probability, counterfactual accessibility,
+    data dependency, structural dependency, or software constraint without explicit
+    ontological scope.
+  - Observation, evidence, representation, truth, validity, certainty, consensus,
+    authorship, ownership, success, or failure.
+  - Any equation of lexical latency with runtime uncertainty, futurity, intention,
+    scheduling, or mere ignorance.
+  nearest_neighbors:
+  - ORI:201
+  - ORI:202
+  - ORI:210
+  - ORI:220
+  - ORI:000
+  - ORI:100
+  same_family_contrast: "`ORI:0xx` owns ontological conditions: source-ground, distinct
+    existence, and shared-world condition. `ORI:1xx` owns bounded transitions that
+    establish or change those conditions. `ORI:2xx` owns ontological relations and
+    capacities: source-grounding capacity, target-ground dependence, and shared-world
+    constraint. A relation does not entail that either relatum presently exists, that
+    a transition is occurring, or that a causal mechanism has acted. Persistent status
+    may coexist with either operative or latent status across compatible reference
+    spans; operative and latent are mutually exclusive for the same relation at one
+    reference time. Runtime `[2]/num` separately marks uncertainty about whichever
+    lexical status was selected."
+  cross_family_comparisons: &1
+    LIF: LIF owns biological capacities, dependencies, and social roles. ORI relation
+      is substrate-neutral ontological grounding, dependence, or world constraint.
+    MOV: MOV owns routes, destinations, and movement affordances. ORI relation does
+      not encode spatial reachability, travel, direction, or transport.
+    MAT: MAT owns physical dispositions, forces, and material dependencies. ORI relation
+      does not specify substance, energy, or physical mechanism.
+    MIN: MIN owns mental possibility, belief, intention, and attention. Conceivability
+      or expectation does not establish an ORI grounding relation.
+    CON: CON owns participant linkage, communication, permission, and authority. ORI
+      dependence is not a social or communication relationship.
+    WRN: WRN owns risk, vulnerability, failure, and harmful propagation. ORI capacity
+      and constraint are neutral about danger and failure.
+    STR: STR owns component dependency, containment, topology, and architecture. ORI
+      dependence concerns what may obtain, not arrangement alone.
+    REP: REP owns recoverability, repair prerequisites, and restoration paths. ORI
+      relations do not presuppose damage or acceptable prior state.
+    LOG: LOG owns formal entailment, satisfiability, proof, and rule evaluation. ORI
+      constraint applies to reality, not merely to a formal model or proposition.
+    DAT: DAT owns representational schemas, references, and data dependencies. A record
+      dependency does not by itself entail ontological dependence of its referent.
+    CRE: CRE owns generative capability, authorship, and productive constraints. ORI
+      source capacity does not assert an agent, method, artifact, or production event.
+  runtime_state_interpretation:
+    '0': Denies persistence of this source-grounding capacity; it does not assert
+      absence, impossibility, reversal, or the operative or latent sibling.
+    '1': Affirms that this source-grounding capacity persists across the relevant
+      reference span without asserting that it is presently operative.
+    2/num: Leaves persistence of this source-grounding capacity unresolved; runtime
+      uncertainty does not change the lexical root into operative or latent status.
+  lexical_runtime_distinction: Lexical third trit `0` permanently selects persistent
+    status for this source-grounding capacity. Runtime `[2]/num` instead leaves that
+    already-selected status claim unresolved. Thus a latent root with `[1]` positively
+    asserts latent membership, while any persistent or operative root with `[2]/num`
+    remains lexically persistent or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:200[1](SOURCE=s,STATE=q)
+    literal_gloss: affirm persistent source-grounding capacity
+    natural_english: The source-grounding capacity remains part of the standing ontology.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Valid ontological-relation claim.
+  - category: physical_or_spatial
+    semantic_graph: ORI:200[1](SOURCE=s,STATE=q)+MAT(BEARER=m)
+    literal_gloss: ontological relation plus material bearer
+    natural_english: The physical bearer participates, but the grounding relation
+      is stated separately.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: MAT supplies physical mechanism.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:200[1](SOURCE=s,STATE=q)+ORI(INTERVAL=i)
+    literal_gloss: persistent ontological relation during interval i
+    natural_english: During interval i, the relation has the selected lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Time does not select the third trit.
+  - category: cross_family_compound
+    semantic_graph: ORI:200[1](SOURCE=s,STATE=q)+LOG(RULE=r)+STR(SYSTEM=x)
+    literal_gloss: ontological relation plus rule and system structure
+    natural_english: The system models the relation while logic and structure state
+      its formal implementation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Ontology, logic, and structure remain separate.
+  - category: executable_or_programming
+    semantic_graph: ORI:200[1](SOURCE=s,STATE=q)
+    literal_gloss: assert persistent source-grounding capacity
+    natural_english: A runtime records the ontological relation without treating it
+      as a Boolean dependency or scheduler edge.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Useful for ontology graphs and state validation.
+    pseudocode: ontology.assert_relation("ORI:200")
+  - category: counterexample
+    semantic_graph: DAT(FOREIGN_KEY=k)+LOG(CONSTRAINT=c)
+    literal_gloss: data reference plus formal constraint
+    natural_english: The table has a foreign key constraint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: must_not_use_this_root
+    analysis: Use DAT and LOG unless the modeled referents themselves are ontologically
+      related.
+  future_compound_examples:
+  - ORI:200 + ORI:0xx states a related ontological condition without reducing relation
+    to state.
+  - ORI:200 + ORI:1xx states establishment or change of the relation without reducing
+    relation to process.
+  - ORI:200 + LOG/DAT/STR supplies formal rule, representation, or implementation
+    separately.
+  - ORI:200 + MAT/LIF/MIN/CON/CRE supplies physical, living, mental, social, or productive
+    mechanisms separately.
+  later_era_notes: Later eras may lexicalize causal sufficiency, historical provenance,
+    temporal priority, necessity, probability, counterfactual accessibility, world
+    identity, law revision, and specialized physical or computational affordances.
+    Era Zero should preserve this narrow ontological relation/capacity center and
+    build stronger claims compositionally.
+  confidence: 0.95
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:201
+    universal_slot: active inward capacity
+    family_qualified_transliteration: nu·mak
+    local_compact_root: mak
+    formal_carrier: nu-nu-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: operative source-grounding capacity
+  invariant_definition: An ontological capacity of one source that is presently operative
+    in grounding a specified state of affairs.
+  semantic_center: 'ontological relations: source-grounding capacity, target-ground
+    dependence, and shared-world constraint'
+  address_justification:
+    first_trit_2: Selects an ontological relation, capacity, dependence, or constraint
+      rather than an entity condition or bounded transition.
+    second_trit: Selects inward/source orientation and therefore source-grounding
+      capacity, not another Origin-family column.
+    third_trit: Selects operative lexical status while leaving token truth, observer
+      knowledge, tense, probability, causation, and physical mechanism separate.
+  inclusion_boundary: Includes only a operative source-grounding capacity as a substrate-neutral
+    relation in what may obtain within a specified reality. It is neutral about physical
+    mechanism, temporal order, probability, intention, observation, representation,
+    logical proof, software implementation, social permission, productive agency,
+    structural arrangement, danger, and repair. It neither creates its relata nor
+    asserts that a formal description is true.
+  excluded_meanings:
+  - The source-ground, distinct-existence, or shared-world condition itself.
+  - A bounded transition that establishes, actualizes, or changes an ontological condition.
+  - Causal force, productive method, temporal priority, provenance history, physical
+    disposition, biological capacity, mental possibility, permission, or plan.
+  - Formal entailment, satisfiability, probability, counterfactual accessibility,
+    data dependency, structural dependency, or software constraint without explicit
+    ontological scope.
+  - Observation, evidence, representation, truth, validity, certainty, consensus,
+    authorship, ownership, success, or failure.
+  - Any equation of lexical latency with runtime uncertainty, futurity, intention,
+    scheduling, or mere ignorance.
+  nearest_neighbors:
+  - ORI:200
+  - ORI:202
+  - ORI:211
+  - ORI:221
+  - ORI:001
+  - ORI:101
+  same_family_contrast: "`ORI:0xx` owns ontological conditions: source-ground, distinct
+    existence, and shared-world condition. `ORI:1xx` owns bounded transitions that
+    establish or change those conditions. `ORI:2xx` owns ontological relations and
+    capacities: source-grounding capacity, target-ground dependence, and shared-world
+    constraint. A relation does not entail that either relatum presently exists, that
+    a transition is occurring, or that a causal mechanism has acted. Persistent status
+    may coexist with either operative or latent status across compatible reference
+    spans; operative and latent are mutually exclusive for the same relation at one
+    reference time. Runtime `[2]/num` separately marks uncertainty about whichever
+    lexical status was selected."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this source-grounding capacity is presently operative; it does
+      not establish latency, impossibility, cessation, or lack of persistent standing.
+    '1': Affirms that this source-grounding capacity is presently operative without
+      asserting its cause, mechanism, duration, observability, or future continuation.
+    2/num: Leaves current operation of this source-grounding capacity unresolved;
+      token uncertainty does not select the persistent or latent lexical sibling.
+  lexical_runtime_distinction: Lexical third trit `1` permanently selects operative
+    status for this source-grounding capacity. Runtime `[2]/num` instead leaves that
+    already-selected status claim unresolved. Thus a latent root with `[1]` positively
+    asserts latent membership, while any persistent or operative root with `[2]/num`
+    remains lexically persistent or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:201[1](SOURCE=s,STATE=q)
+    literal_gloss: affirm operative source-grounding capacity
+    natural_english: The source-grounding capacity is governing the present case.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Valid ontological-relation claim.
+  - category: physical_or_spatial
+    semantic_graph: ORI:201[1](SOURCE=s,STATE=q)+MAT(BEARER=m)
+    literal_gloss: ontological relation plus material bearer
+    natural_english: The physical bearer participates, but the grounding relation
+      is stated separately.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: MAT supplies physical mechanism.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:201[1](SOURCE=s,STATE=q)+ORI(INTERVAL=i)
+    literal_gloss: operative ontological relation during interval i
+    natural_english: During interval i, the relation has the selected lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Time does not select the third trit.
+  - category: cross_family_compound
+    semantic_graph: ORI:201[1](SOURCE=s,STATE=q)+LOG(RULE=r)+STR(SYSTEM=x)
+    literal_gloss: ontological relation plus rule and system structure
+    natural_english: The system models the relation while logic and structure state
+      its formal implementation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Ontology, logic, and structure remain separate.
+  - category: executable_or_programming
+    semantic_graph: ORI:201[1](SOURCE=s,STATE=q)
+    literal_gloss: assert operative source-grounding capacity
+    natural_english: A runtime records the ontological relation without treating it
+      as a Boolean dependency or scheduler edge.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Useful for ontology graphs and state validation.
+    pseudocode: ontology.assert_relation("ORI:201")
+  - category: counterexample
+    semantic_graph: DAT(FOREIGN_KEY=k)+LOG(CONSTRAINT=c)
+    literal_gloss: data reference plus formal constraint
+    natural_english: The table has a foreign key constraint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: must_not_use_this_root
+    analysis: Use DAT and LOG unless the modeled referents themselves are ontologically
+      related.
+  future_compound_examples:
+  - ORI:201 + ORI:0xx states a related ontological condition without reducing relation
+    to state.
+  - ORI:201 + ORI:1xx states establishment or change of the relation without reducing
+    relation to process.
+  - ORI:201 + LOG/DAT/STR supplies formal rule, representation, or implementation
+    separately.
+  - ORI:201 + MAT/LIF/MIN/CON/CRE supplies physical, living, mental, social, or productive
+    mechanisms separately.
+  later_era_notes: Later eras may lexicalize causal sufficiency, historical provenance,
+    temporal priority, necessity, probability, counterfactual accessibility, world
+    identity, law revision, and specialized physical or computational affordances.
+    Era Zero should preserve this narrow ontological relation/capacity center and
+    build stronger claims compositionally.
+  confidence: 0.95
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:202
+    universal_slot: dormant inward capacity
+    family_qualified_transliteration: nu·man
+    local_compact_root: man
+    formal_carrier: nu-nu-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: latent source-grounding capacity
+  invariant_definition: An ontological capacity of one source to ground a specified
+    state of affairs that belongs to it without being presently operative.
+  semantic_center: 'ontological relations: source-grounding capacity, target-ground
+    dependence, and shared-world constraint'
+  address_justification:
+    first_trit_2: Selects an ontological relation, capacity, dependence, or constraint
+      rather than an entity condition or bounded transition.
+    second_trit: Selects inward/source orientation and therefore source-grounding
+      capacity, not another Origin-family column.
+    third_trit: Selects latent lexical status while leaving token truth, observer
+      knowledge, tense, probability, causation, and physical mechanism separate.
+  inclusion_boundary: Includes only a latent source-grounding capacity as a substrate-neutral
+    relation in what may obtain within a specified reality. It is neutral about physical
+    mechanism, temporal order, probability, intention, observation, representation,
+    logical proof, software implementation, social permission, productive agency,
+    structural arrangement, danger, and repair. It neither creates its relata nor
+    asserts that a formal description is true.
+  excluded_meanings:
+  - The source-ground, distinct-existence, or shared-world condition itself.
+  - A bounded transition that establishes, actualizes, or changes an ontological condition.
+  - Causal force, productive method, temporal priority, provenance history, physical
+    disposition, biological capacity, mental possibility, permission, or plan.
+  - Formal entailment, satisfiability, probability, counterfactual accessibility,
+    data dependency, structural dependency, or software constraint without explicit
+    ontological scope.
+  - Observation, evidence, representation, truth, validity, certainty, consensus,
+    authorship, ownership, success, or failure.
+  - Any equation of lexical latency with runtime uncertainty, futurity, intention,
+    scheduling, or mere ignorance.
+  nearest_neighbors:
+  - ORI:200
+  - ORI:201
+  - ORI:212
+  - ORI:222
+  - ORI:002
+  - ORI:102
+  same_family_contrast: "`ORI:0xx` owns ontological conditions: source-ground, distinct
+    existence, and shared-world condition. `ORI:1xx` owns bounded transitions that
+    establish or change those conditions. `ORI:2xx` owns ontological relations and
+    capacities: source-grounding capacity, target-ground dependence, and shared-world
+    constraint. A relation does not entail that either relatum presently exists, that
+    a transition is occurring, or that a causal mechanism has acted. Persistent status
+    may coexist with either operative or latent status across compatible reference
+    spans; operative and latent are mutually exclusive for the same relation at one
+    reference time. Runtime `[2]/num` separately marks uncertainty about whichever
+    lexical status was selected."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this source-grounding capacity belongs latently; it does not
+      establish operation, impossibility, prohibition, or absence of every related
+      capacity.
+    '1': Affirms that this source-grounding capacity belongs without present operation;
+      it does not encode probability, intention, scheduling, futurity, or runtime
+      uncertainty.
+    2/num: Leaves even the latent-status assertion unresolved; lexical latency remains
+      distinct from uncertainty about whether the claim holds.
+  lexical_runtime_distinction: Lexical third trit `2` permanently selects latent status
+    for this source-grounding capacity. Runtime `[2]/num` instead leaves that already-selected
+    status claim unresolved. Thus a latent root with `[1]` positively asserts latent
+    membership, while any persistent or operative root with `[2]/num` remains lexically
+    persistent or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:202[1](SOURCE=s,STATE=q)
+    literal_gloss: affirm latent source-grounding capacity
+    natural_english: The source-grounding capacity belongs to the ontology without
+      governing the present case.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Valid ontological-relation claim.
+  - category: physical_or_spatial
+    semantic_graph: ORI:202[1](SOURCE=s,STATE=q)+MAT(BEARER=m)
+    literal_gloss: ontological relation plus material bearer
+    natural_english: The physical bearer participates, but the grounding relation
+      is stated separately.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: MAT supplies physical mechanism.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:202[1](SOURCE=s,STATE=q)+ORI(INTERVAL=i)
+    literal_gloss: latent ontological relation during interval i
+    natural_english: During interval i, the relation has the selected lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Time does not select the third trit.
+  - category: cross_family_compound
+    semantic_graph: ORI:202[1](SOURCE=s,STATE=q)+LOG(RULE=r)+STR(SYSTEM=x)
+    literal_gloss: ontological relation plus rule and system structure
+    natural_english: The system models the relation while logic and structure state
+      its formal implementation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Ontology, logic, and structure remain separate.
+  - category: executable_or_programming
+    semantic_graph: ORI:202[1](SOURCE=s,STATE=q)
+    literal_gloss: assert latent source-grounding capacity
+    natural_english: A runtime records the ontological relation without treating it
+      as a Boolean dependency or scheduler edge.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Useful for ontology graphs and state validation.
+    pseudocode: ontology.assert_relation("ORI:202")
+  - category: counterexample
+    semantic_graph: DAT(FOREIGN_KEY=k)+LOG(CONSTRAINT=c)
+    literal_gloss: data reference plus formal constraint
+    natural_english: The table has a foreign key constraint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: must_not_use_this_root
+    analysis: Use DAT and LOG unless the modeled referents themselves are ontologically
+      related.
+  future_compound_examples:
+  - ORI:202 + ORI:0xx states a related ontological condition without reducing relation
+    to state.
+  - ORI:202 + ORI:1xx states establishment or change of the relation without reducing
+    relation to process.
+  - ORI:202 + LOG/DAT/STR supplies formal rule, representation, or implementation
+    separately.
+  - ORI:202 + MAT/LIF/MIN/CON/CRE supplies physical, living, mental, social, or productive
+    mechanisms separately.
+  later_era_notes: Later eras may lexicalize causal sufficiency, historical provenance,
+    temporal priority, necessity, probability, counterfactual accessibility, world
+    identity, law revision, and specialized physical or computational affordances.
+    Era Zero should preserve this narrow ontological relation/capacity center and
+    build stronger claims compositionally.
+  confidence: 0.95
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:210
+    universal_slot: stable outward relationship
+    family_qualified_transliteration: nu·mom
+    local_compact_root: mom
+    formal_carrier: nu-nu-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: persistent target-ground dependence
+  invariant_definition: A persistent ontological relation under which one target's
+    obtaining is conditional on a specified ground, independently of whether that
+    dependence is presently operative.
+  semantic_center: 'ontological relations: source-grounding capacity, target-ground
+    dependence, and shared-world constraint'
+  address_justification:
+    first_trit_2: Selects an ontological relation, capacity, dependence, or constraint
+      rather than an entity condition or bounded transition.
+    second_trit: Selects outward/target orientation and therefore target-ground dependence,
+      not another Origin-family column.
+    third_trit: Selects persistent lexical status while leaving token truth, observer
+      knowledge, tense, probability, causation, and physical mechanism separate.
+  inclusion_boundary: Includes only a persistent target-ground dependence as a substrate-neutral
+    relation in what may obtain within a specified reality. It is neutral about physical
+    mechanism, temporal order, probability, intention, observation, representation,
+    logical proof, software implementation, social permission, productive agency,
+    structural arrangement, danger, and repair. It neither creates its relata nor
+    asserts that a formal description is true.
+  excluded_meanings:
+  - The source-ground, distinct-existence, or shared-world condition itself.
+  - A bounded transition that establishes, actualizes, or changes an ontological condition.
+  - Causal force, productive method, temporal priority, provenance history, physical
+    disposition, biological capacity, mental possibility, permission, or plan.
+  - Formal entailment, satisfiability, probability, counterfactual accessibility,
+    data dependency, structural dependency, or software constraint without explicit
+    ontological scope.
+  - Observation, evidence, representation, truth, validity, certainty, consensus,
+    authorship, ownership, success, or failure.
+  - Any equation of lexical latency with runtime uncertainty, futurity, intention,
+    scheduling, or mere ignorance.
+  nearest_neighbors:
+  - ORI:211
+  - ORI:212
+  - ORI:200
+  - ORI:220
+  - ORI:010
+  - ORI:110
+  same_family_contrast: "`ORI:0xx` owns ontological conditions: source-ground, distinct
+    existence, and shared-world condition. `ORI:1xx` owns bounded transitions that
+    establish or change those conditions. `ORI:2xx` owns ontological relations and
+    capacities: source-grounding capacity, target-ground dependence, and shared-world
+    constraint. A relation does not entail that either relatum presently exists, that
+    a transition is occurring, or that a causal mechanism has acted. Persistent status
+    may coexist with either operative or latent status across compatible reference
+    spans; operative and latent are mutually exclusive for the same relation at one
+    reference time. Runtime `[2]/num` separately marks uncertainty about whichever
+    lexical status was selected."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies persistence of this target-ground dependence; it does not assert absence,
+      impossibility, reversal, or the operative or latent sibling.
+    '1': Affirms that this target-ground dependence persists across the relevant reference
+      span without asserting that it is presently operative.
+    2/num: Leaves persistence of this target-ground dependence unresolved; runtime
+      uncertainty does not change the lexical root into operative or latent status.
+  lexical_runtime_distinction: Lexical third trit `0` permanently selects persistent
+    status for this target-ground dependence. Runtime `[2]/num` instead leaves that
+    already-selected status claim unresolved. Thus a latent root with `[1]` positively
+    asserts latent membership, while any persistent or operative root with `[2]/num`
+    remains lexically persistent or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:210[1](TARGET=t,GROUND=g)
+    literal_gloss: affirm persistent target-ground dependence
+    natural_english: The target-ground dependence remains part of the standing ontology.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Valid ontological-relation claim.
+  - category: physical_or_spatial
+    semantic_graph: ORI:210[1](TARGET=t,GROUND=g)+MAT(BEARER=m)
+    literal_gloss: ontological relation plus material bearer
+    natural_english: The physical bearer participates, but the grounding relation
+      is stated separately.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: MAT supplies physical mechanism.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:210[1](TARGET=t,GROUND=g)+ORI(INTERVAL=i)
+    literal_gloss: persistent ontological relation during interval i
+    natural_english: During interval i, the relation has the selected lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Time does not select the third trit.
+  - category: cross_family_compound
+    semantic_graph: ORI:210[1](TARGET=t,GROUND=g)+LOG(RULE=r)+STR(SYSTEM=x)
+    literal_gloss: ontological relation plus rule and system structure
+    natural_english: The system models the relation while logic and structure state
+      its formal implementation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Ontology, logic, and structure remain separate.
+  - category: executable_or_programming
+    semantic_graph: ORI:210[1](TARGET=t,GROUND=g)
+    literal_gloss: assert persistent target-ground dependence
+    natural_english: A runtime records the ontological relation without treating it
+      as a Boolean dependency or scheduler edge.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Useful for ontology graphs and state validation.
+    pseudocode: ontology.assert_relation("ORI:210")
+  - category: counterexample
+    semantic_graph: DAT(FOREIGN_KEY=k)+LOG(CONSTRAINT=c)
+    literal_gloss: data reference plus formal constraint
+    natural_english: The table has a foreign key constraint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: must_not_use_this_root
+    analysis: Use DAT and LOG unless the modeled referents themselves are ontologically
+      related.
+  future_compound_examples:
+  - ORI:210 + ORI:0xx states a related ontological condition without reducing relation
+    to state.
+  - ORI:210 + ORI:1xx states establishment or change of the relation without reducing
+    relation to process.
+  - ORI:210 + LOG/DAT/STR supplies formal rule, representation, or implementation
+    separately.
+  - ORI:210 + MAT/LIF/MIN/CON/CRE supplies physical, living, mental, social, or productive
+    mechanisms separately.
+  later_era_notes: Later eras may lexicalize causal sufficiency, historical provenance,
+    temporal priority, necessity, probability, counterfactual accessibility, world
+    identity, law revision, and specialized physical or computational affordances.
+    Era Zero should preserve this narrow ontological relation/capacity center and
+    build stronger claims compositionally.
+  confidence: 0.95
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:211
+    universal_slot: active outward relationship
+    family_qualified_transliteration: nu·mok
+    local_compact_root: mok
+    formal_carrier: nu-nu-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: operative target-ground dependence
+  invariant_definition: An ontological relation that is presently conditioning one
+    target's obtaining on a specified ground.
+  semantic_center: 'ontological relations: source-grounding capacity, target-ground
+    dependence, and shared-world constraint'
+  address_justification:
+    first_trit_2: Selects an ontological relation, capacity, dependence, or constraint
+      rather than an entity condition or bounded transition.
+    second_trit: Selects outward/target orientation and therefore target-ground dependence,
+      not another Origin-family column.
+    third_trit: Selects operative lexical status while leaving token truth, observer
+      knowledge, tense, probability, causation, and physical mechanism separate.
+  inclusion_boundary: Includes only a operative target-ground dependence as a substrate-neutral
+    relation in what may obtain within a specified reality. It is neutral about physical
+    mechanism, temporal order, probability, intention, observation, representation,
+    logical proof, software implementation, social permission, productive agency,
+    structural arrangement, danger, and repair. It neither creates its relata nor
+    asserts that a formal description is true.
+  excluded_meanings:
+  - The source-ground, distinct-existence, or shared-world condition itself.
+  - A bounded transition that establishes, actualizes, or changes an ontological condition.
+  - Causal force, productive method, temporal priority, provenance history, physical
+    disposition, biological capacity, mental possibility, permission, or plan.
+  - Formal entailment, satisfiability, probability, counterfactual accessibility,
+    data dependency, structural dependency, or software constraint without explicit
+    ontological scope.
+  - Observation, evidence, representation, truth, validity, certainty, consensus,
+    authorship, ownership, success, or failure.
+  - Any equation of lexical latency with runtime uncertainty, futurity, intention,
+    scheduling, or mere ignorance.
+  nearest_neighbors:
+  - ORI:210
+  - ORI:212
+  - ORI:201
+  - ORI:221
+  - ORI:011
+  - ORI:111
+  same_family_contrast: "`ORI:0xx` owns ontological conditions: source-ground, distinct
+    existence, and shared-world condition. `ORI:1xx` owns bounded transitions that
+    establish or change those conditions. `ORI:2xx` owns ontological relations and
+    capacities: source-grounding capacity, target-ground dependence, and shared-world
+    constraint. A relation does not entail that either relatum presently exists, that
+    a transition is occurring, or that a causal mechanism has acted. Persistent status
+    may coexist with either operative or latent status across compatible reference
+    spans; operative and latent are mutually exclusive for the same relation at one
+    reference time. Runtime `[2]/num` separately marks uncertainty about whichever
+    lexical status was selected."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this target-ground dependence is presently operative; it does
+      not establish latency, impossibility, cessation, or lack of persistent standing.
+    '1': Affirms that this target-ground dependence is presently operative without
+      asserting its cause, mechanism, duration, observability, or future continuation.
+    2/num: Leaves current operation of this target-ground dependence unresolved; token
+      uncertainty does not select the persistent or latent lexical sibling.
+  lexical_runtime_distinction: Lexical third trit `1` permanently selects operative
+    status for this target-ground dependence. Runtime `[2]/num` instead leaves that
+    already-selected status claim unresolved. Thus a latent root with `[1]` positively
+    asserts latent membership, while any persistent or operative root with `[2]/num`
+    remains lexically persistent or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:211[1](TARGET=t,GROUND=g)
+    literal_gloss: affirm operative target-ground dependence
+    natural_english: The target-ground dependence is governing the present case.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Valid ontological-relation claim.
+  - category: physical_or_spatial
+    semantic_graph: ORI:211[1](TARGET=t,GROUND=g)+MAT(BEARER=m)
+    literal_gloss: ontological relation plus material bearer
+    natural_english: The physical bearer participates, but the grounding relation
+      is stated separately.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: MAT supplies physical mechanism.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:211[1](TARGET=t,GROUND=g)+ORI(INTERVAL=i)
+    literal_gloss: operative ontological relation during interval i
+    natural_english: During interval i, the relation has the selected lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Time does not select the third trit.
+  - category: cross_family_compound
+    semantic_graph: ORI:211[1](TARGET=t,GROUND=g)+LOG(RULE=r)+STR(SYSTEM=x)
+    literal_gloss: ontological relation plus rule and system structure
+    natural_english: The system models the relation while logic and structure state
+      its formal implementation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Ontology, logic, and structure remain separate.
+  - category: executable_or_programming
+    semantic_graph: ORI:211[1](TARGET=t,GROUND=g)
+    literal_gloss: assert operative target-ground dependence
+    natural_english: A runtime records the ontological relation without treating it
+      as a Boolean dependency or scheduler edge.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Useful for ontology graphs and state validation.
+    pseudocode: ontology.assert_relation("ORI:211")
+  - category: counterexample
+    semantic_graph: DAT(FOREIGN_KEY=k)+LOG(CONSTRAINT=c)
+    literal_gloss: data reference plus formal constraint
+    natural_english: The table has a foreign key constraint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: must_not_use_this_root
+    analysis: Use DAT and LOG unless the modeled referents themselves are ontologically
+      related.
+  future_compound_examples:
+  - ORI:211 + ORI:0xx states a related ontological condition without reducing relation
+    to state.
+  - ORI:211 + ORI:1xx states establishment or change of the relation without reducing
+    relation to process.
+  - ORI:211 + LOG/DAT/STR supplies formal rule, representation, or implementation
+    separately.
+  - ORI:211 + MAT/LIF/MIN/CON/CRE supplies physical, living, mental, social, or productive
+    mechanisms separately.
+  later_era_notes: Later eras may lexicalize causal sufficiency, historical provenance,
+    temporal priority, necessity, probability, counterfactual accessibility, world
+    identity, law revision, and specialized physical or computational affordances.
+    Era Zero should preserve this narrow ontological relation/capacity center and
+    build stronger claims compositionally.
+  confidence: 0.95
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:212
+    universal_slot: unresolved outward relationship
+    family_qualified_transliteration: nu·mon
+    local_compact_root: mon
+    formal_carrier: nu-nu-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: latent target-ground dependence
+  invariant_definition: An ontological relation under which one target's obtaining
+    would be conditional on a specified ground, without that dependence being presently
+    operative.
+  semantic_center: 'ontological relations: source-grounding capacity, target-ground
+    dependence, and shared-world constraint'
+  address_justification:
+    first_trit_2: Selects an ontological relation, capacity, dependence, or constraint
+      rather than an entity condition or bounded transition.
+    second_trit: Selects outward/target orientation and therefore target-ground dependence,
+      not another Origin-family column.
+    third_trit: Selects latent lexical status while leaving token truth, observer
+      knowledge, tense, probability, causation, and physical mechanism separate.
+  inclusion_boundary: Includes only a latent target-ground dependence as a substrate-neutral
+    relation in what may obtain within a specified reality. It is neutral about physical
+    mechanism, temporal order, probability, intention, observation, representation,
+    logical proof, software implementation, social permission, productive agency,
+    structural arrangement, danger, and repair. It neither creates its relata nor
+    asserts that a formal description is true.
+  excluded_meanings:
+  - The source-ground, distinct-existence, or shared-world condition itself.
+  - A bounded transition that establishes, actualizes, or changes an ontological condition.
+  - Causal force, productive method, temporal priority, provenance history, physical
+    disposition, biological capacity, mental possibility, permission, or plan.
+  - Formal entailment, satisfiability, probability, counterfactual accessibility,
+    data dependency, structural dependency, or software constraint without explicit
+    ontological scope.
+  - Observation, evidence, representation, truth, validity, certainty, consensus,
+    authorship, ownership, success, or failure.
+  - Any equation of lexical latency with runtime uncertainty, futurity, intention,
+    scheduling, or mere ignorance.
+  nearest_neighbors:
+  - ORI:210
+  - ORI:211
+  - ORI:202
+  - ORI:222
+  - ORI:012
+  - ORI:112
+  same_family_contrast: "`ORI:0xx` owns ontological conditions: source-ground, distinct
+    existence, and shared-world condition. `ORI:1xx` owns bounded transitions that
+    establish or change those conditions. `ORI:2xx` owns ontological relations and
+    capacities: source-grounding capacity, target-ground dependence, and shared-world
+    constraint. A relation does not entail that either relatum presently exists, that
+    a transition is occurring, or that a causal mechanism has acted. Persistent status
+    may coexist with either operative or latent status across compatible reference
+    spans; operative and latent are mutually exclusive for the same relation at one
+    reference time. Runtime `[2]/num` separately marks uncertainty about whichever
+    lexical status was selected."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this target-ground dependence belongs latently; it does not establish
+      operation, impossibility, prohibition, or absence of every related capacity.
+    '1': Affirms that this target-ground dependence belongs without present operation;
+      it does not encode probability, intention, scheduling, futurity, or runtime
+      uncertainty.
+    2/num: Leaves even the latent-status assertion unresolved; lexical latency remains
+      distinct from uncertainty about whether the claim holds.
+  lexical_runtime_distinction: Lexical third trit `2` permanently selects latent status
+    for this target-ground dependence. Runtime `[2]/num` instead leaves that already-selected
+    status claim unresolved. Thus a latent root with `[1]` positively asserts latent
+    membership, while any persistent or operative root with `[2]/num` remains lexically
+    persistent or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:212[1](TARGET=t,GROUND=g)
+    literal_gloss: affirm latent target-ground dependence
+    natural_english: The target-ground dependence belongs to the ontology without
+      governing the present case.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Valid ontological-relation claim.
+  - category: physical_or_spatial
+    semantic_graph: ORI:212[1](TARGET=t,GROUND=g)+MAT(BEARER=m)
+    literal_gloss: ontological relation plus material bearer
+    natural_english: The physical bearer participates, but the grounding relation
+      is stated separately.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: MAT supplies physical mechanism.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:212[1](TARGET=t,GROUND=g)+ORI(INTERVAL=i)
+    literal_gloss: latent ontological relation during interval i
+    natural_english: During interval i, the relation has the selected lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Time does not select the third trit.
+  - category: cross_family_compound
+    semantic_graph: ORI:212[1](TARGET=t,GROUND=g)+LOG(RULE=r)+STR(SYSTEM=x)
+    literal_gloss: ontological relation plus rule and system structure
+    natural_english: The system models the relation while logic and structure state
+      its formal implementation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Ontology, logic, and structure remain separate.
+  - category: executable_or_programming
+    semantic_graph: ORI:212[1](TARGET=t,GROUND=g)
+    literal_gloss: assert latent target-ground dependence
+    natural_english: A runtime records the ontological relation without treating it
+      as a Boolean dependency or scheduler edge.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Useful for ontology graphs and state validation.
+    pseudocode: ontology.assert_relation("ORI:212")
+  - category: counterexample
+    semantic_graph: DAT(FOREIGN_KEY=k)+LOG(CONSTRAINT=c)
+    literal_gloss: data reference plus formal constraint
+    natural_english: The table has a foreign key constraint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: must_not_use_this_root
+    analysis: Use DAT and LOG unless the modeled referents themselves are ontologically
+      related.
+  future_compound_examples:
+  - ORI:212 + ORI:0xx states a related ontological condition without reducing relation
+    to state.
+  - ORI:212 + ORI:1xx states establishment or change of the relation without reducing
+    relation to process.
+  - ORI:212 + LOG/DAT/STR supplies formal rule, representation, or implementation
+    separately.
+  - ORI:212 + MAT/LIF/MIN/CON/CRE supplies physical, living, mental, social, or productive
+    mechanisms separately.
+  later_era_notes: Later eras may lexicalize causal sufficiency, historical provenance,
+    temporal priority, necessity, probability, counterfactual accessibility, world
+    identity, law revision, and specialized physical or computational affordances.
+    Era Zero should preserve this narrow ontological relation/capacity center and
+    build stronger claims compositionally.
+  confidence: 0.95
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:220
+    universal_slot: stable systemic relationship
+    family_qualified_transliteration: nu·mim
+    local_compact_root: mim
+    formal_carrier: nu-nu-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: persistent shared-world constraint
+  invariant_definition: A persistent ontological relation that limits which states
+    may coherently obtain across one shared reality, independently of whether it is
+    presently operative.
+  semantic_center: 'ontological relations: source-grounding capacity, target-ground
+    dependence, and shared-world constraint'
+  address_justification:
+    first_trit_2: Selects an ontological relation, capacity, dependence, or constraint
+      rather than an entity condition or bounded transition.
+    second_trit: Selects systemic/shared orientation and therefore shared-world constraint,
+      not another Origin-family column.
+    third_trit: Selects persistent lexical status while leaving token truth, observer
+      knowledge, tense, probability, causation, and physical mechanism separate.
+  inclusion_boundary: Includes only a persistent shared-world constraint as a substrate-neutral
+    relation in what may obtain within a specified reality. It is neutral about physical
+    mechanism, temporal order, probability, intention, observation, representation,
+    logical proof, software implementation, social permission, productive agency,
+    structural arrangement, danger, and repair. It neither creates its relata nor
+    asserts that a formal description is true.
+  excluded_meanings:
+  - The source-ground, distinct-existence, or shared-world condition itself.
+  - A bounded transition that establishes, actualizes, or changes an ontological condition.
+  - Causal force, productive method, temporal priority, provenance history, physical
+    disposition, biological capacity, mental possibility, permission, or plan.
+  - Formal entailment, satisfiability, probability, counterfactual accessibility,
+    data dependency, structural dependency, or software constraint without explicit
+    ontological scope.
+  - Observation, evidence, representation, truth, validity, certainty, consensus,
+    authorship, ownership, success, or failure.
+  - Any equation of lexical latency with runtime uncertainty, futurity, intention,
+    scheduling, or mere ignorance.
+  nearest_neighbors:
+  - ORI:221
+  - ORI:222
+  - ORI:200
+  - ORI:210
+  - ORI:020
+  - ORI:120
+  same_family_contrast: "`ORI:0xx` owns ontological conditions: source-ground, distinct
+    existence, and shared-world condition. `ORI:1xx` owns bounded transitions that
+    establish or change those conditions. `ORI:2xx` owns ontological relations and
+    capacities: source-grounding capacity, target-ground dependence, and shared-world
+    constraint. A relation does not entail that either relatum presently exists, that
+    a transition is occurring, or that a causal mechanism has acted. Persistent status
+    may coexist with either operative or latent status across compatible reference
+    spans; operative and latent are mutually exclusive for the same relation at one
+    reference time. Runtime `[2]/num` separately marks uncertainty about whichever
+    lexical status was selected."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies persistence of this shared-world constraint; it does not assert absence,
+      impossibility, reversal, or the operative or latent sibling.
+    '1': Affirms that this shared-world constraint persists across the relevant reference
+      span without asserting that it is presently operative.
+    2/num: Leaves persistence of this shared-world constraint unresolved; runtime
+      uncertainty does not change the lexical root into operative or latent status.
+  lexical_runtime_distinction: Lexical third trit `0` permanently selects persistent
+    status for this shared-world constraint. Runtime `[2]/num` instead leaves that
+    already-selected status claim unresolved. Thus a latent root with `[1]` positively
+    asserts latent membership, while any persistent or operative root with `[2]/num`
+    remains lexically persistent or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:220[1](WORLD=w,STATE=q)
+    literal_gloss: affirm persistent shared-world constraint
+    natural_english: The shared-world constraint remains part of the standing ontology.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Valid ontological-relation claim.
+  - category: physical_or_spatial
+    semantic_graph: ORI:220[1](WORLD=w,STATE=q)+MAT(BEARER=m)
+    literal_gloss: ontological relation plus material bearer
+    natural_english: The physical bearer participates, but the grounding relation
+      is stated separately.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: MAT supplies physical mechanism.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:220[1](WORLD=w,STATE=q)+ORI(INTERVAL=i)
+    literal_gloss: persistent ontological relation during interval i
+    natural_english: During interval i, the relation has the selected lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Time does not select the third trit.
+  - category: cross_family_compound
+    semantic_graph: ORI:220[1](WORLD=w,STATE=q)+LOG(RULE=r)+STR(SYSTEM=x)
+    literal_gloss: ontological relation plus rule and system structure
+    natural_english: The system models the relation while logic and structure state
+      its formal implementation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Ontology, logic, and structure remain separate.
+  - category: executable_or_programming
+    semantic_graph: ORI:220[1](WORLD=w,STATE=q)
+    literal_gloss: assert persistent shared-world constraint
+    natural_english: A runtime records the ontological relation without treating it
+      as a Boolean dependency or scheduler edge.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Useful for ontology graphs and state validation.
+    pseudocode: ontology.assert_relation("ORI:220")
+  - category: counterexample
+    semantic_graph: DAT(FOREIGN_KEY=k)+LOG(CONSTRAINT=c)
+    literal_gloss: data reference plus formal constraint
+    natural_english: The table has a foreign key constraint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: must_not_use_this_root
+    analysis: Use DAT and LOG unless the modeled referents themselves are ontologically
+      related.
+  future_compound_examples:
+  - ORI:220 + ORI:0xx states a related ontological condition without reducing relation
+    to state.
+  - ORI:220 + ORI:1xx states establishment or change of the relation without reducing
+    relation to process.
+  - ORI:220 + LOG/DAT/STR supplies formal rule, representation, or implementation
+    separately.
+  - ORI:220 + MAT/LIF/MIN/CON/CRE supplies physical, living, mental, social, or productive
+    mechanisms separately.
+  later_era_notes: Later eras may lexicalize causal sufficiency, historical provenance,
+    temporal priority, necessity, probability, counterfactual accessibility, world
+    identity, law revision, and specialized physical or computational affordances.
+    Era Zero should preserve this narrow ontological relation/capacity center and
+    build stronger claims compositionally.
+  confidence: 0.95
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:221
+    universal_slot: active systemic relationship
+    family_qualified_transliteration: nu·mik
+    local_compact_root: mik
+    formal_carrier: nu-nu-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: operative shared-world constraint
+  invariant_definition: An ontological relation that is presently limiting which states
+    may coherently obtain across one shared reality.
+  semantic_center: 'ontological relations: source-grounding capacity, target-ground
+    dependence, and shared-world constraint'
+  address_justification:
+    first_trit_2: Selects an ontological relation, capacity, dependence, or constraint
+      rather than an entity condition or bounded transition.
+    second_trit: Selects systemic/shared orientation and therefore shared-world constraint,
+      not another Origin-family column.
+    third_trit: Selects operative lexical status while leaving token truth, observer
+      knowledge, tense, probability, causation, and physical mechanism separate.
+  inclusion_boundary: Includes only a operative shared-world constraint as a substrate-neutral
+    relation in what may obtain within a specified reality. It is neutral about physical
+    mechanism, temporal order, probability, intention, observation, representation,
+    logical proof, software implementation, social permission, productive agency,
+    structural arrangement, danger, and repair. It neither creates its relata nor
+    asserts that a formal description is true.
+  excluded_meanings:
+  - The source-ground, distinct-existence, or shared-world condition itself.
+  - A bounded transition that establishes, actualizes, or changes an ontological condition.
+  - Causal force, productive method, temporal priority, provenance history, physical
+    disposition, biological capacity, mental possibility, permission, or plan.
+  - Formal entailment, satisfiability, probability, counterfactual accessibility,
+    data dependency, structural dependency, or software constraint without explicit
+    ontological scope.
+  - Observation, evidence, representation, truth, validity, certainty, consensus,
+    authorship, ownership, success, or failure.
+  - Any equation of lexical latency with runtime uncertainty, futurity, intention,
+    scheduling, or mere ignorance.
+  nearest_neighbors:
+  - ORI:220
+  - ORI:222
+  - ORI:201
+  - ORI:211
+  - ORI:021
+  - ORI:121
+  same_family_contrast: "`ORI:0xx` owns ontological conditions: source-ground, distinct
+    existence, and shared-world condition. `ORI:1xx` owns bounded transitions that
+    establish or change those conditions. `ORI:2xx` owns ontological relations and
+    capacities: source-grounding capacity, target-ground dependence, and shared-world
+    constraint. A relation does not entail that either relatum presently exists, that
+    a transition is occurring, or that a causal mechanism has acted. Persistent status
+    may coexist with either operative or latent status across compatible reference
+    spans; operative and latent are mutually exclusive for the same relation at one
+    reference time. Runtime `[2]/num` separately marks uncertainty about whichever
+    lexical status was selected."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this shared-world constraint is presently operative; it does
+      not establish latency, impossibility, cessation, or lack of persistent standing.
+    '1': Affirms that this shared-world constraint is presently operative without
+      asserting its cause, mechanism, duration, observability, or future continuation.
+    2/num: Leaves current operation of this shared-world constraint unresolved; token
+      uncertainty does not select the persistent or latent lexical sibling.
+  lexical_runtime_distinction: Lexical third trit `1` permanently selects operative
+    status for this shared-world constraint. Runtime `[2]/num` instead leaves that
+    already-selected status claim unresolved. Thus a latent root with `[1]` positively
+    asserts latent membership, while any persistent or operative root with `[2]/num`
+    remains lexically persistent or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:221[1](WORLD=w,STATE=q)
+    literal_gloss: affirm operative shared-world constraint
+    natural_english: The shared-world constraint is governing the present case.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Valid ontological-relation claim.
+  - category: physical_or_spatial
+    semantic_graph: ORI:221[1](WORLD=w,STATE=q)+MAT(BEARER=m)
+    literal_gloss: ontological relation plus material bearer
+    natural_english: The physical bearer participates, but the grounding relation
+      is stated separately.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: MAT supplies physical mechanism.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:221[1](WORLD=w,STATE=q)+ORI(INTERVAL=i)
+    literal_gloss: operative ontological relation during interval i
+    natural_english: During interval i, the relation has the selected lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Time does not select the third trit.
+  - category: cross_family_compound
+    semantic_graph: ORI:221[1](WORLD=w,STATE=q)+LOG(RULE=r)+STR(SYSTEM=x)
+    literal_gloss: ontological relation plus rule and system structure
+    natural_english: The system models the relation while logic and structure state
+      its formal implementation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Ontology, logic, and structure remain separate.
+  - category: executable_or_programming
+    semantic_graph: ORI:221[1](WORLD=w,STATE=q)
+    literal_gloss: assert operative shared-world constraint
+    natural_english: A runtime records the ontological relation without treating it
+      as a Boolean dependency or scheduler edge.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Useful for ontology graphs and state validation.
+    pseudocode: ontology.assert_relation("ORI:221")
+  - category: counterexample
+    semantic_graph: DAT(FOREIGN_KEY=k)+LOG(CONSTRAINT=c)
+    literal_gloss: data reference plus formal constraint
+    natural_english: The table has a foreign key constraint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: must_not_use_this_root
+    analysis: Use DAT and LOG unless the modeled referents themselves are ontologically
+      related.
+  future_compound_examples:
+  - ORI:221 + ORI:0xx states a related ontological condition without reducing relation
+    to state.
+  - ORI:221 + ORI:1xx states establishment or change of the relation without reducing
+    relation to process.
+  - ORI:221 + LOG/DAT/STR supplies formal rule, representation, or implementation
+    separately.
+  - ORI:221 + MAT/LIF/MIN/CON/CRE supplies physical, living, mental, social, or productive
+    mechanisms separately.
+  later_era_notes: Later eras may lexicalize causal sufficiency, historical provenance,
+    temporal priority, necessity, probability, counterfactual accessibility, world
+    identity, law revision, and specialized physical or computational affordances.
+    Era Zero should preserve this narrow ontological relation/capacity center and
+    build stronger claims compositionally.
+  confidence: 0.95
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:222
+    universal_slot: unrealized systemic possibility
+    family_qualified_transliteration: nu·min
+    local_compact_root: min
+    formal_carrier: nu-nu-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: latent shared-world constraint
+  invariant_definition: An ontological relation that belongs to the admissible order
+    of one shared reality without presently limiting which states obtain within it.
+  semantic_center: 'ontological relations: source-grounding capacity, target-ground
+    dependence, and shared-world constraint'
+  address_justification:
+    first_trit_2: Selects an ontological relation, capacity, dependence, or constraint
+      rather than an entity condition or bounded transition.
+    second_trit: Selects systemic/shared orientation and therefore shared-world constraint,
+      not another Origin-family column.
+    third_trit: Selects latent lexical status while leaving token truth, observer
+      knowledge, tense, probability, causation, and physical mechanism separate.
+  inclusion_boundary: Includes only a latent shared-world constraint as a substrate-neutral
+    relation in what may obtain within a specified reality. It is neutral about physical
+    mechanism, temporal order, probability, intention, observation, representation,
+    logical proof, software implementation, social permission, productive agency,
+    structural arrangement, danger, and repair. It neither creates its relata nor
+    asserts that a formal description is true.
+  excluded_meanings:
+  - The source-ground, distinct-existence, or shared-world condition itself.
+  - A bounded transition that establishes, actualizes, or changes an ontological condition.
+  - Causal force, productive method, temporal priority, provenance history, physical
+    disposition, biological capacity, mental possibility, permission, or plan.
+  - Formal entailment, satisfiability, probability, counterfactual accessibility,
+    data dependency, structural dependency, or software constraint without explicit
+    ontological scope.
+  - Observation, evidence, representation, truth, validity, certainty, consensus,
+    authorship, ownership, success, or failure.
+  - Any equation of lexical latency with runtime uncertainty, futurity, intention,
+    scheduling, or mere ignorance.
+  nearest_neighbors:
+  - ORI:220
+  - ORI:221
+  - ORI:202
+  - ORI:212
+  - ORI:022
+  - ORI:122
+  same_family_contrast: "`ORI:0xx` owns ontological conditions: source-ground, distinct
+    existence, and shared-world condition. `ORI:1xx` owns bounded transitions that
+    establish or change those conditions. `ORI:2xx` owns ontological relations and
+    capacities: source-grounding capacity, target-ground dependence, and shared-world
+    constraint. A relation does not entail that either relatum presently exists, that
+    a transition is occurring, or that a causal mechanism has acted. Persistent status
+    may coexist with either operative or latent status across compatible reference
+    spans; operative and latent are mutually exclusive for the same relation at one
+    reference time. Runtime `[2]/num` separately marks uncertainty about whichever
+    lexical status was selected."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this shared-world constraint belongs latently; it does not establish
+      operation, impossibility, prohibition, or absence of every related capacity.
+    '1': Affirms that this shared-world constraint belongs without present operation;
+      it does not encode probability, intention, scheduling, futurity, or runtime
+      uncertainty.
+    2/num: Leaves even the latent-status assertion unresolved; lexical latency remains
+      distinct from uncertainty about whether the claim holds.
+  lexical_runtime_distinction: Lexical third trit `2` permanently selects latent status
+    for this shared-world constraint. Runtime `[2]/num` instead leaves that already-selected
+    status claim unresolved. Thus a latent root with `[1]` positively asserts latent
+    membership, while any persistent or operative root with `[2]/num` remains lexically
+    persistent or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:222[1](WORLD=w,STATE=q)
+    literal_gloss: affirm latent shared-world constraint
+    natural_english: The shared-world constraint belongs to the ontology without governing
+      the present case.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Valid ontological-relation claim.
+  - category: physical_or_spatial
+    semantic_graph: ORI:222[1](WORLD=w,STATE=q)+MAT(BEARER=m)
+    literal_gloss: ontological relation plus material bearer
+    natural_english: The physical bearer participates, but the grounding relation
+      is stated separately.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: MAT supplies physical mechanism.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:222[1](WORLD=w,STATE=q)+ORI(INTERVAL=i)
+    literal_gloss: latent ontological relation during interval i
+    natural_english: During interval i, the relation has the selected lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Time does not select the third trit.
+  - category: cross_family_compound
+    semantic_graph: ORI:222[1](WORLD=w,STATE=q)+LOG(RULE=r)+STR(SYSTEM=x)
+    literal_gloss: ontological relation plus rule and system structure
+    natural_english: The system models the relation while logic and structure state
+      its formal implementation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Ontology, logic, and structure remain separate.
+  - category: executable_or_programming
+    semantic_graph: ORI:222[1](WORLD=w,STATE=q)
+    literal_gloss: assert latent shared-world constraint
+    natural_english: A runtime records the ontological relation without treating it
+      as a Boolean dependency or scheduler edge.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: valid
+    analysis: Useful for ontology graphs and state validation.
+    pseudocode: ontology.assert_relation("ORI:222")
+  - category: counterexample
+    semantic_graph: DAT(FOREIGN_KEY=k)+LOG(CONSTRAINT=c)
+    literal_gloss: data reference plus formal constraint
+    natural_english: The table has a foreign key constraint.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose obtaining, capacity, or constraint is qualified
+      middle: ontological ground, target, or world relation as figure
+      high: specified grounded state, condition, or admissible outcome
+      sustained: relevant reality and reference conditions
+    use_status: must_not_use_this_root
+    analysis: Use DAT and LOG unless the modeled referents themselves are ontologically
+      related.
+  future_compound_examples:
+  - ORI:222 + ORI:0xx states a related ontological condition without reducing relation
+    to state.
+  - ORI:222 + ORI:1xx states establishment or change of the relation without reducing
+    relation to process.
+  - ORI:222 + LOG/DAT/STR supplies formal rule, representation, or implementation
+    separately.
+  - ORI:222 + MAT/LIF/MIN/CON/CRE supplies physical, living, mental, social, or productive
+    mechanisms separately.
+  later_era_notes: Later eras may lexicalize causal sufficiency, historical provenance,
+    temporal priority, necessity, probability, counterfactual accessibility, world
+    identity, law revision, and specialized physical or computational affordances.
+    Era Zero should preserve this narrow ontological relation/capacity center and
+    build stronger claims compositionally.
+  confidence: 0.95
+  canonicalized: true
+approval_checklist:
+  family_domain_preserved: true
+  address_axes_preserved: true
+  one_invariant_per_root: true
+  triplets_coherent: true
+  all_current_candidates_challenged: true
+  cross_family_collisions_explicit: true
+  runtime_state_separated: true
+  entity_process_relation_layers_separated: true
+  generated_fields_unchanged: true
+  gate4_not_started: true
+  translator_not_started: true
+  canonicalized: true

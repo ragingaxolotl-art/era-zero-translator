@@ -1,7 +1,7 @@
 ---
 metadata:
   title: Era Zero translator readiness
-  status: blocked_pending_compound_dictionary_and_later_gates
+  status: complete_all_planned_gates
   architecture_version: '1.0'
   broad_translator_authorized: true
   compound_architecture_version: 1.0.0
@@ -140,13 +140,13 @@ gate4a:
   schema: spec/compound_graph_schema.yaml
   validation: reports/gate4a_validation.md
   conformance_cases: tests/gate4a_compound_cases.yaml
-  dictionary_entries: 0
+  dictionary_entries: 28
 gate4b:
   status: complete_and_canonical
   dictionary: lexicon/compound_dictionary.yaml
   entries: 28
   validation: reports/gate4b_validation.md
-  english_index_started: false
+  english_index_started: true
 gate4c:
   status: complete_and_canonical
   index: lexicon/english_sense_index.yaml
@@ -154,12 +154,12 @@ gate4c:
   senses: 436
   lemmas: 419
   validation: reports/gate4c_validation.md
-  general_english_translation: false
+  general_english_translation: true
 gate4d:
   status: complete
   metrics: reports/gate4d_coverage_metrics.yaml
   report: reports/gate4d_coverage_and_ambiguity.md
-  translator_authorized: false
+  translator_authorized: true
 gate4e:
   status: complete_and_canonical
   table: lexicon/etymology_table.yaml
@@ -172,21 +172,21 @@ semantic_ir:
   spec: spec/semantic_ir_1.0.yaml
   schema: spec/semantic_ir_schema.yaml
   conformance: tests/semantic_ir_cases.yaml
-  renderer_started: false
+  renderer_started: true
 renderer_decoder:
   status: complete_and_canonical
   version: 1.0.0
   spec: spec/renderer_decoder_1.0.yaml
   implementation: tools/lib/era_zero_renderer.rb
   round_trip_cases: 48
-  controlled_english_started: false
+  controlled_english_started: true
 controlled_english:
   status: complete_and_canonical
   version: 1.0.0
   spec: spec/controlled_english_1.0.yaml
   implementation: tools/lib/era_zero_controlled_english.rb
   controlled_lexemes: 352
-  general_english_started: false
+  general_english_started: true
 general_english:
   status: complete_and_canonical
   version: 1.0.0

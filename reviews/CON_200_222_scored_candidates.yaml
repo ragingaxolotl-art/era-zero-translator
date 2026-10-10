@@ -1,0 +1,1435 @@
+---
+metadata:
+  title: CON:200–222 adversarial semantic candidates
+  status: approved_and_canonical_by_delegated_authority
+  architecture_version: '1.0'
+  range: CON:200–222
+  roots_reviewed: 9
+  candidate_architectures_per_root: 5
+  scored_categories:
+  - atomicity
+  - address_fit
+  - family_fit
+  - neighbor_separation
+  - cross_family_separation
+  - compound_usefulness
+  - everyday_language_coverage
+  - technical_coverage
+  generated_fields_changed: false
+  roots_canonicalized:
+  - CON:200
+  - CON:201
+  - CON:202
+  - CON:210
+  - CON:211
+  - CON:212
+  - CON:220
+  - CON:221
+  - CON:222
+  approval_record: migrations/CON_200_222_semantic_approval.yaml
+roots:
+- canonical_id: CON:200
+  fixed_generated_fields:
+    canonical_id: CON:200
+    universal_slot: stable inward capacity
+    family_qualified_transliteration: wu·mam
+    local_compact_root: mam
+    formal_carrier: wu-nu-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+  current_meaning_rationale: The Phase 2 title follows the endpoint-internal and enduring
+    slot labels and chooses a familiar Connection-domain use.
+  candidates:
+  - candidate_id: current_phase2
+    title: stable connectivity
+    invariant_candidate: An entity has a dependable inward capacity to establish and
+      maintain communication links.
+    analysis:
+      why_it_fits: The Phase 2 title follows the endpoint-internal and enduring slot
+        labels and chooses a familiar Connection-domain use.
+      useful_coverage: It directly covers ordinary or technical ideas associated with
+        stable connectivity.
+      semantic_territory_consumed: Across the block it consumes mixtures of ability,
+        receiving, responding, translation, social bonds, active message exchange,
+        identity, reachability, compatibility, routing, and community.
+      conflicts_or_future_limitations: The siblings do not preserve one invariant
+        axis; entity, process, capacity, social, topology, protocol, and modal claims
+        are mixed, so downstream composition would be unstable.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 53
+    maximum: 80
+  - candidate_id: capacity_and_participant_relations
+    title: enduring communicative participation capacity
+    invariant_candidate: A persistent capacity of an endpoint to participate in communicative
+      exchange.
+    analysis:
+      why_it_fits: The first trit remains capacity/relationship, the second trit alone
+        selects self capacity, directed target relation, or shared relation, and the
+        third trit alone selects its lexical condition.
+      useful_coverage: It covers can-communicate, presently communicatively available,
+        dormant capability, persistent contact relation, operative target relation,
+        unresolved contact relation, and stable, operative, or potential group participation.
+      semantic_territory_consumed: Only substrate-neutral communicative affordance
+        and participant relations; endpoints, channels, traffic, messages, cognition,
+        topology, policy, and physical carriers remain separate.
+      conflicts_or_future_limitations: It intentionally requires compounds for online
+        status, friendship, permission, protocol compatibility, reachability, conversation,
+        subscription, network topology, and group identity.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: access_and_reachability
+    title: persistent network access
+    invariant_candidate: A enduring condition of operational access or reachability
+      at endpoint-internal scope.
+    analysis:
+      why_it_fits: Access and reachability sound like capacities or endpoint relations,
+        and stable/active/dormant or unresolved conditions are natural.
+      useful_coverage: It would compactly express online, offline, accessible, reachable,
+        unreachable, addressable, and network-access states.
+      semantic_territory_consumed: Operational availability under physical paths,
+        permissions, protocols, failures, addresses, and network configuration.
+      conflicts_or_future_limitations: Reachability is normally a LOG conclusion over
+        MOV/STR paths, MAT interfaces, WRN faults, and permissions; treating it as
+        atomic hides the reason and collides with runtime state.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 61
+    maximum: 80
+  - candidate_id: social_affiliation
+    title: enduring conversational competence
+    invariant_candidate: A enduring condition of social communicative affiliation
+      at endpoint-internal scope.
+    analysis:
+      why_it_fits: Communication ability, interpersonal ties, and communities are
+        intuitive participant-level Connection meanings.
+      useful_coverage: It would cover sociability, availability to talk, friend, colleague,
+        audience, membership, community, and social group.
+      semantic_territory_consumed: Human or agent social identity, affective ties,
+        roles, membership, and collective identity.
+      conflicts_or_future_limitations: It is anthropocentric, collides with LIF identity/community
+        and STR membership, makes machines awkward, and confuses a communication relation
+        with friendship or affection.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 5
+    total: 57
+    maximum: 80
+  - candidate_id: protocol_interoperability
+    title: persistent protocol support
+    invariant_candidate: A enduring condition of protocol support or interoperability
+      at endpoint-internal scope.
+    analysis:
+      why_it_fits: Protocol support and compatibility are communication affordances
+        with strong stable/active/latent and pair/system contrasts.
+      useful_coverage: It would cover supported protocol, negotiated session, subscription,
+        compatibility, federation, and mesh operation.
+      semantic_territory_consumed: Formal rules, type compatibility, authentication,
+        subscription records, topology, and distributed coordination.
+      conflicts_or_future_limitations: Most of this belongs to LOG, DAT, or STR; it
+        is technology-specific, weak in ordinary conversation, and would make Connection
+        depend on a particular implementation architecture.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 6
+      technical_coverage: 10
+    total: 58
+    maximum: 80
+  recommended_candidate_id: capacity_and_participant_relations
+  recommendation_reason: Only this design gives the entire 2xx layer one ontological
+    type, preserves all address axes, and separates participant affordance/relation
+    from communicative loci, traffic, content, cognition, topology, protocol, reachability,
+    and social identity.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: CON:201
+  fixed_generated_fields:
+    canonical_id: CON:201
+    universal_slot: active inward capacity
+    family_qualified_transliteration: wu·mak
+    local_compact_root: mak
+    formal_carrier: wu-nu-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+  current_meaning_rationale: The Phase 2 title follows the endpoint-internal and presently
+    available slot labels and chooses a familiar Connection-domain use.
+  candidates:
+  - candidate_id: current_phase2
+    title: active receptivity
+    invariant_candidate: An entity's capacity to receive, respond, translate, or relay
+      communication is presently available.
+    analysis:
+      why_it_fits: The Phase 2 title follows the endpoint-internal and presently available
+        slot labels and chooses a familiar Connection-domain use.
+      useful_coverage: It directly covers ordinary or technical ideas associated with
+        active receptivity.
+      semantic_territory_consumed: Across the block it consumes mixtures of ability,
+        receiving, responding, translation, social bonds, active message exchange,
+        identity, reachability, compatibility, routing, and community.
+      conflicts_or_future_limitations: The siblings do not preserve one invariant
+        axis; entity, process, capacity, social, topology, protocol, and modal claims
+        are mixed, so downstream composition would be unstable.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 53
+    maximum: 80
+  - candidate_id: capacity_and_participant_relations
+    title: available communicative participation capacity
+    invariant_candidate: A communicative capacity of an endpoint that is presently
+      available for exercise in an exchange.
+    analysis:
+      why_it_fits: The first trit remains capacity/relationship, the second trit alone
+        selects self capacity, directed target relation, or shared relation, and the
+        third trit alone selects its lexical condition.
+      useful_coverage: It covers can-communicate, presently communicatively available,
+        dormant capability, persistent contact relation, operative target relation,
+        unresolved contact relation, and stable, operative, or potential group participation.
+      semantic_territory_consumed: Only substrate-neutral communicative affordance
+        and participant relations; endpoints, channels, traffic, messages, cognition,
+        topology, policy, and physical carriers remain separate.
+      conflicts_or_future_limitations: It intentionally requires compounds for online
+        status, friendship, permission, protocol compatibility, reachability, conversation,
+        subscription, network topology, and group identity.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: access_and_reachability
+    title: current addressability
+    invariant_candidate: A presently available condition of operational access or
+      reachability at endpoint-internal scope.
+    analysis:
+      why_it_fits: Access and reachability sound like capacities or endpoint relations,
+        and stable/active/dormant or unresolved conditions are natural.
+      useful_coverage: It would compactly express online, offline, accessible, reachable,
+        unreachable, addressable, and network-access states.
+      semantic_territory_consumed: Operational availability under physical paths,
+        permissions, protocols, failures, addresses, and network configuration.
+      conflicts_or_future_limitations: Reachability is normally a LOG conclusion over
+        MOV/STR paths, MAT interfaces, WRN faults, and permissions; treating it as
+        atomic hides the reason and collides with runtime state.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 61
+    maximum: 80
+  - candidate_id: social_affiliation
+    title: current social availability
+    invariant_candidate: A presently available condition of social communicative affiliation
+      at endpoint-internal scope.
+    analysis:
+      why_it_fits: Communication ability, interpersonal ties, and communities are
+        intuitive participant-level Connection meanings.
+      useful_coverage: It would cover sociability, availability to talk, friend, colleague,
+        audience, membership, community, and social group.
+      semantic_territory_consumed: Human or agent social identity, affective ties,
+        roles, membership, and collective identity.
+      conflicts_or_future_limitations: It is anthropocentric, collides with LIF identity/community
+        and STR membership, makes machines awkward, and confuses a communication relation
+        with friendship or affection.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 5
+    total: 57
+    maximum: 80
+  - candidate_id: protocol_interoperability
+    title: active protocol readiness
+    invariant_candidate: A presently available condition of protocol support or interoperability
+      at endpoint-internal scope.
+    analysis:
+      why_it_fits: Protocol support and compatibility are communication affordances
+        with strong stable/active/latent and pair/system contrasts.
+      useful_coverage: It would cover supported protocol, negotiated session, subscription,
+        compatibility, federation, and mesh operation.
+      semantic_territory_consumed: Formal rules, type compatibility, authentication,
+        subscription records, topology, and distributed coordination.
+      conflicts_or_future_limitations: Most of this belongs to LOG, DAT, or STR; it
+        is technology-specific, weak in ordinary conversation, and would make Connection
+        depend on a particular implementation architecture.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 6
+      technical_coverage: 10
+    total: 58
+    maximum: 80
+  recommended_candidate_id: capacity_and_participant_relations
+  recommendation_reason: Only this design gives the entire 2xx layer one ontological
+    type, preserves all address axes, and separates participant affordance/relation
+    from communicative loci, traffic, content, cognition, topology, protocol, reachability,
+    and social identity.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: CON:202
+  fixed_generated_fields:
+    canonical_id: CON:202
+    universal_slot: dormant inward capacity
+    family_qualified_transliteration: wu·man
+    local_compact_root: man
+    formal_carrier: wu-nu-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+  current_meaning_rationale: The Phase 2 title follows the endpoint-internal and latent
+    slot labels and chooses a familiar Connection-domain use.
+  candidates:
+  - candidate_id: current_phase2
+    title: dormant interface capacity
+    invariant_candidate: An interface or communicative ability exists but is disabled,
+      inaccessible, or not yet developed.
+    analysis:
+      why_it_fits: The Phase 2 title follows the endpoint-internal and latent slot
+        labels and chooses a familiar Connection-domain use.
+      useful_coverage: It directly covers ordinary or technical ideas associated with
+        dormant interface capacity.
+      semantic_territory_consumed: Across the block it consumes mixtures of ability,
+        receiving, responding, translation, social bonds, active message exchange,
+        identity, reachability, compatibility, routing, and community.
+      conflicts_or_future_limitations: The siblings do not preserve one invariant
+        axis; entity, process, capacity, social, topology, protocol, and modal claims
+        are mixed, so downstream composition would be unstable.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 53
+    maximum: 80
+  - candidate_id: capacity_and_participant_relations
+    title: latent communicative participation capacity
+    invariant_candidate: A communicative capacity of an endpoint that exists without
+      being presently available for exercise.
+    analysis:
+      why_it_fits: The first trit remains capacity/relationship, the second trit alone
+        selects self capacity, directed target relation, or shared relation, and the
+        third trit alone selects its lexical condition.
+      useful_coverage: It covers can-communicate, presently communicatively available,
+        dormant capability, persistent contact relation, operative target relation,
+        unresolved contact relation, and stable, operative, or potential group participation.
+      semantic_territory_consumed: Only substrate-neutral communicative affordance
+        and participant relations; endpoints, channels, traffic, messages, cognition,
+        topology, policy, and physical carriers remain separate.
+      conflicts_or_future_limitations: It intentionally requires compounds for online
+        status, friendship, permission, protocol compatibility, reachability, conversation,
+        subscription, network topology, and group identity.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: access_and_reachability
+    title: offline access potential
+    invariant_candidate: A latent condition of operational access or reachability
+      at endpoint-internal scope.
+    analysis:
+      why_it_fits: Access and reachability sound like capacities or endpoint relations,
+        and stable/active/dormant or unresolved conditions are natural.
+      useful_coverage: It would compactly express online, offline, accessible, reachable,
+        unreachable, addressable, and network-access states.
+      semantic_territory_consumed: Operational availability under physical paths,
+        permissions, protocols, failures, addresses, and network configuration.
+      conflicts_or_future_limitations: Reachability is normally a LOG conclusion over
+        MOV/STR paths, MAT interfaces, WRN faults, and permissions; treating it as
+        atomic hides the reason and collides with runtime state.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 61
+    maximum: 80
+  - candidate_id: social_affiliation
+    title: dormant conversational role
+    invariant_candidate: A latent condition of social communicative affiliation at
+      endpoint-internal scope.
+    analysis:
+      why_it_fits: Communication ability, interpersonal ties, and communities are
+        intuitive participant-level Connection meanings.
+      useful_coverage: It would cover sociability, availability to talk, friend, colleague,
+        audience, membership, community, and social group.
+      semantic_territory_consumed: Human or agent social identity, affective ties,
+        roles, membership, and collective identity.
+      conflicts_or_future_limitations: It is anthropocentric, collides with LIF identity/community
+        and STR membership, makes machines awkward, and confuses a communication relation
+        with friendship or affection.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 5
+    total: 57
+    maximum: 80
+  - candidate_id: protocol_interoperability
+    title: inactive protocol support
+    invariant_candidate: A latent condition of protocol support or interoperability
+      at endpoint-internal scope.
+    analysis:
+      why_it_fits: Protocol support and compatibility are communication affordances
+        with strong stable/active/latent and pair/system contrasts.
+      useful_coverage: It would cover supported protocol, negotiated session, subscription,
+        compatibility, federation, and mesh operation.
+      semantic_territory_consumed: Formal rules, type compatibility, authentication,
+        subscription records, topology, and distributed coordination.
+      conflicts_or_future_limitations: Most of this belongs to LOG, DAT, or STR; it
+        is technology-specific, weak in ordinary conversation, and would make Connection
+        depend on a particular implementation architecture.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 6
+      technical_coverage: 10
+    total: 58
+    maximum: 80
+  recommended_candidate_id: capacity_and_participant_relations
+  recommendation_reason: Only this design gives the entire 2xx layer one ontological
+    type, preserves all address axes, and separates participant affordance/relation
+    from communicative loci, traffic, content, cognition, topology, protocol, reachability,
+    and social identity.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: CON:210
+  fixed_generated_fields:
+    canonical_id: CON:210
+    universal_slot: stable outward relationship
+    family_qualified_transliteration: wu·mom
+    local_compact_root: mom
+    formal_carrier: wu-nu-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+  current_meaning_rationale: The Phase 2 title follows the target-directed and established
+    slot labels and chooses a familiar Connection-domain use.
+  candidates:
+  - candidate_id: current_phase2
+    title: established bond
+    invariant_candidate: Two participants have a stable communication, social, or
+      signaling relationship.
+    analysis:
+      why_it_fits: The Phase 2 title follows the target-directed and established slot
+        labels and chooses a familiar Connection-domain use.
+      useful_coverage: It directly covers ordinary or technical ideas associated with
+        established bond.
+      semantic_territory_consumed: Across the block it consumes mixtures of ability,
+        receiving, responding, translation, social bonds, active message exchange,
+        identity, reachability, compatibility, routing, and community.
+      conflicts_or_future_limitations: The siblings do not preserve one invariant
+        axis; entity, process, capacity, social, topology, protocol, and modal claims
+        are mixed, so downstream composition would be unstable.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 53
+    maximum: 80
+  - candidate_id: capacity_and_participant_relations
+    title: established directed communication relation
+    invariant_candidate: A persistent relation that identifies a distinct endpoint
+      as the target of communicative exchange from a reference endpoint.
+    analysis:
+      why_it_fits: The first trit remains capacity/relationship, the second trit alone
+        selects self capacity, directed target relation, or shared relation, and the
+        third trit alone selects its lexical condition.
+      useful_coverage: It covers can-communicate, presently communicatively available,
+        dormant capability, persistent contact relation, operative target relation,
+        unresolved contact relation, and stable, operative, or potential group participation.
+      semantic_territory_consumed: Only substrate-neutral communicative affordance
+        and participant relations; endpoints, channels, traffic, messages, cognition,
+        topology, policy, and physical carriers remain separate.
+      conflicts_or_future_limitations: It intentionally requires compounds for online
+        status, friendship, permission, protocol compatibility, reachability, conversation,
+        subscription, network topology, and group identity.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: access_and_reachability
+    title: established reachability
+    invariant_candidate: A established condition of operational access or reachability
+      at target-directed scope.
+    analysis:
+      why_it_fits: Access and reachability sound like capacities or endpoint relations,
+        and stable/active/dormant or unresolved conditions are natural.
+      useful_coverage: It would compactly express online, offline, accessible, reachable,
+        unreachable, addressable, and network-access states.
+      semantic_territory_consumed: Operational availability under physical paths,
+        permissions, protocols, failures, addresses, and network configuration.
+      conflicts_or_future_limitations: Reachability is normally a LOG conclusion over
+        MOV/STR paths, MAT interfaces, WRN faults, and permissions; treating it as
+        atomic hides the reason and collides with runtime state.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 61
+    maximum: 80
+  - candidate_id: social_affiliation
+    title: established social tie
+    invariant_candidate: A established condition of social communicative affiliation
+      at target-directed scope.
+    analysis:
+      why_it_fits: Communication ability, interpersonal ties, and communities are
+        intuitive participant-level Connection meanings.
+      useful_coverage: It would cover sociability, availability to talk, friend, colleague,
+        audience, membership, community, and social group.
+      semantic_territory_consumed: Human or agent social identity, affective ties,
+        roles, membership, and collective identity.
+      conflicts_or_future_limitations: It is anthropocentric, collides with LIF identity/community
+        and STR membership, makes machines awkward, and confuses a communication relation
+        with friendship or affection.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 5
+    total: 57
+    maximum: 80
+  - candidate_id: protocol_interoperability
+    title: established subscription
+    invariant_candidate: A established condition of protocol support or interoperability
+      at target-directed scope.
+    analysis:
+      why_it_fits: Protocol support and compatibility are communication affordances
+        with strong stable/active/latent and pair/system contrasts.
+      useful_coverage: It would cover supported protocol, negotiated session, subscription,
+        compatibility, federation, and mesh operation.
+      semantic_territory_consumed: Formal rules, type compatibility, authentication,
+        subscription records, topology, and distributed coordination.
+      conflicts_or_future_limitations: Most of this belongs to LOG, DAT, or STR; it
+        is technology-specific, weak in ordinary conversation, and would make Connection
+        depend on a particular implementation architecture.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 6
+      technical_coverage: 10
+    total: 58
+    maximum: 80
+  recommended_candidate_id: capacity_and_participant_relations
+  recommendation_reason: Only this design gives the entire 2xx layer one ontological
+    type, preserves all address axes, and separates participant affordance/relation
+    from communicative loci, traffic, content, cognition, topology, protocol, reachability,
+    and social identity.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: CON:211
+  fixed_generated_fields:
+    canonical_id: CON:211
+    universal_slot: active outward relationship
+    family_qualified_transliteration: wu·mok
+    local_compact_root: mok
+    formal_carrier: wu-nu-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+  current_meaning_rationale: The Phase 2 title follows the target-directed and presently
+    operative slot labels and chooses a familiar Connection-domain use.
+  candidates:
+  - candidate_id: current_phase2
+    title: active dialogue
+    invariant_candidate: Participants are actively exchanging messages, meanings,
+      or mutual responses.
+    analysis:
+      why_it_fits: The Phase 2 title follows the target-directed and presently operative
+        slot labels and chooses a familiar Connection-domain use.
+      useful_coverage: It directly covers ordinary or technical ideas associated with
+        active dialogue.
+      semantic_territory_consumed: Across the block it consumes mixtures of ability,
+        receiving, responding, translation, social bonds, active message exchange,
+        identity, reachability, compatibility, routing, and community.
+      conflicts_or_future_limitations: The siblings do not preserve one invariant
+        axis; entity, process, capacity, social, topology, protocol, and modal claims
+        are mixed, so downstream composition would be unstable.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 53
+    maximum: 80
+  - candidate_id: capacity_and_participant_relations
+    title: operative directed communication relation
+    invariant_candidate: A directed relation from a reference endpoint to a distinct
+      target that is presently operative as a participant link for communicative exchange.
+    analysis:
+      why_it_fits: The first trit remains capacity/relationship, the second trit alone
+        selects self capacity, directed target relation, or shared relation, and the
+        third trit alone selects its lexical condition.
+      useful_coverage: It covers can-communicate, presently communicatively available,
+        dormant capability, persistent contact relation, operative target relation,
+        unresolved contact relation, and stable, operative, or potential group participation.
+      semantic_territory_consumed: Only substrate-neutral communicative affordance
+        and participant relations; endpoints, channels, traffic, messages, cognition,
+        topology, policy, and physical carriers remain separate.
+      conflicts_or_future_limitations: It intentionally requires compounds for online
+        status, friendship, permission, protocol compatibility, reachability, conversation,
+        subscription, network topology, and group identity.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: access_and_reachability
+    title: live reachability
+    invariant_candidate: A presently operative condition of operational access or
+      reachability at target-directed scope.
+    analysis:
+      why_it_fits: Access and reachability sound like capacities or endpoint relations,
+        and stable/active/dormant or unresolved conditions are natural.
+      useful_coverage: It would compactly express online, offline, accessible, reachable,
+        unreachable, addressable, and network-access states.
+      semantic_territory_consumed: Operational availability under physical paths,
+        permissions, protocols, failures, addresses, and network configuration.
+      conflicts_or_future_limitations: Reachability is normally a LOG conclusion over
+        MOV/STR paths, MAT interfaces, WRN faults, and permissions; treating it as
+        atomic hides the reason and collides with runtime state.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 61
+    maximum: 80
+  - candidate_id: social_affiliation
+    title: engaged social tie
+    invariant_candidate: A presently operative condition of social communicative affiliation
+      at target-directed scope.
+    analysis:
+      why_it_fits: Communication ability, interpersonal ties, and communities are
+        intuitive participant-level Connection meanings.
+      useful_coverage: It would cover sociability, availability to talk, friend, colleague,
+        audience, membership, community, and social group.
+      semantic_territory_consumed: Human or agent social identity, affective ties,
+        roles, membership, and collective identity.
+      conflicts_or_future_limitations: It is anthropocentric, collides with LIF identity/community
+        and STR membership, makes machines awkward, and confuses a communication relation
+        with friendship or affection.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 5
+    total: 57
+    maximum: 80
+  - candidate_id: protocol_interoperability
+    title: active subscription
+    invariant_candidate: A presently operative condition of protocol support or interoperability
+      at target-directed scope.
+    analysis:
+      why_it_fits: Protocol support and compatibility are communication affordances
+        with strong stable/active/latent and pair/system contrasts.
+      useful_coverage: It would cover supported protocol, negotiated session, subscription,
+        compatibility, federation, and mesh operation.
+      semantic_territory_consumed: Formal rules, type compatibility, authentication,
+        subscription records, topology, and distributed coordination.
+      conflicts_or_future_limitations: Most of this belongs to LOG, DAT, or STR; it
+        is technology-specific, weak in ordinary conversation, and would make Connection
+        depend on a particular implementation architecture.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 6
+      technical_coverage: 10
+    total: 58
+    maximum: 80
+  recommended_candidate_id: capacity_and_participant_relations
+  recommendation_reason: Only this design gives the entire 2xx layer one ontological
+    type, preserves all address axes, and separates participant affordance/relation
+    from communicative loci, traffic, content, cognition, topology, protocol, reachability,
+    and social identity.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: CON:212
+  fixed_generated_fields:
+    canonical_id: CON:212
+    universal_slot: unresolved outward relationship
+    family_qualified_transliteration: wu·mon
+    local_compact_root: mon
+    formal_carrier: wu-nu-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+  current_meaning_rationale: The Phase 2 title follows the target-directed and unresolved
+    slot labels and chooses a familiar Connection-domain use.
+  candidates:
+  - candidate_id: current_phase2
+    title: unconfirmed contact
+    invariant_candidate: A possible bond or channel to another participant exists
+      but identity, reachability, or reciprocity is unresolved.
+    analysis:
+      why_it_fits: The Phase 2 title follows the target-directed and unresolved slot
+        labels and chooses a familiar Connection-domain use.
+      useful_coverage: It directly covers ordinary or technical ideas associated with
+        unconfirmed contact.
+      semantic_territory_consumed: Across the block it consumes mixtures of ability,
+        receiving, responding, translation, social bonds, active message exchange,
+        identity, reachability, compatibility, routing, and community.
+      conflicts_or_future_limitations: The siblings do not preserve one invariant
+        axis; entity, process, capacity, social, topology, protocol, and modal claims
+        are mixed, so downstream composition would be unstable.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 53
+    maximum: 80
+  - candidate_id: capacity_and_participant_relations
+    title: unresolved directed communication relation
+    invariant_candidate: A directed relation from a reference endpoint to a distinct
+      target whose status as a participant link for communicative exchange is undetermined.
+    analysis:
+      why_it_fits: The first trit remains capacity/relationship, the second trit alone
+        selects self capacity, directed target relation, or shared relation, and the
+        third trit alone selects its lexical condition.
+      useful_coverage: It covers can-communicate, presently communicatively available,
+        dormant capability, persistent contact relation, operative target relation,
+        unresolved contact relation, and stable, operative, or potential group participation.
+      semantic_territory_consumed: Only substrate-neutral communicative affordance
+        and participant relations; endpoints, channels, traffic, messages, cognition,
+        topology, policy, and physical carriers remain separate.
+      conflicts_or_future_limitations: It intentionally requires compounds for online
+        status, friendship, permission, protocol compatibility, reachability, conversation,
+        subscription, network topology, and group identity.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: access_and_reachability
+    title: unknown reachability
+    invariant_candidate: A unresolved condition of operational access or reachability
+      at target-directed scope.
+    analysis:
+      why_it_fits: Access and reachability sound like capacities or endpoint relations,
+        and stable/active/dormant or unresolved conditions are natural.
+      useful_coverage: It would compactly express online, offline, accessible, reachable,
+        unreachable, addressable, and network-access states.
+      semantic_territory_consumed: Operational availability under physical paths,
+        permissions, protocols, failures, addresses, and network configuration.
+      conflicts_or_future_limitations: Reachability is normally a LOG conclusion over
+        MOV/STR paths, MAT interfaces, WRN faults, and permissions; treating it as
+        atomic hides the reason and collides with runtime state.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 61
+    maximum: 80
+  - candidate_id: social_affiliation
+    title: uncertain social tie
+    invariant_candidate: A unresolved condition of social communicative affiliation
+      at target-directed scope.
+    analysis:
+      why_it_fits: Communication ability, interpersonal ties, and communities are
+        intuitive participant-level Connection meanings.
+      useful_coverage: It would cover sociability, availability to talk, friend, colleague,
+        audience, membership, community, and social group.
+      semantic_territory_consumed: Human or agent social identity, affective ties,
+        roles, membership, and collective identity.
+      conflicts_or_future_limitations: It is anthropocentric, collides with LIF identity/community
+        and STR membership, makes machines awkward, and confuses a communication relation
+        with friendship or affection.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 5
+    total: 57
+    maximum: 80
+  - candidate_id: protocol_interoperability
+    title: unresolved subscription
+    invariant_candidate: A unresolved condition of protocol support or interoperability
+      at target-directed scope.
+    analysis:
+      why_it_fits: Protocol support and compatibility are communication affordances
+        with strong stable/active/latent and pair/system contrasts.
+      useful_coverage: It would cover supported protocol, negotiated session, subscription,
+        compatibility, federation, and mesh operation.
+      semantic_territory_consumed: Formal rules, type compatibility, authentication,
+        subscription records, topology, and distributed coordination.
+      conflicts_or_future_limitations: Most of this belongs to LOG, DAT, or STR; it
+        is technology-specific, weak in ordinary conversation, and would make Connection
+        depend on a particular implementation architecture.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 6
+      technical_coverage: 10
+    total: 58
+    maximum: 80
+  recommended_candidate_id: capacity_and_participant_relations
+  recommendation_reason: Only this design gives the entire 2xx layer one ontological
+    type, preserves all address axes, and separates participant affordance/relation
+    from communicative loci, traffic, content, cognition, topology, protocol, reachability,
+    and social identity.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: CON:220
+  fixed_generated_fields:
+    canonical_id: CON:220
+    universal_slot: stable systemic relationship
+    family_qualified_transliteration: wu·mim
+    local_compact_root: mim
+    formal_carrier: wu-nu-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+  current_meaning_rationale: The Phase 2 title follows the shared/systemic and enduring
+    slot labels and chooses a familiar Connection-domain use.
+  candidates:
+  - candidate_id: current_phase2
+    title: interoperable network
+    invariant_candidate: A communication system has stable compatibility and routing
+      relationships among its parts.
+    analysis:
+      why_it_fits: The Phase 2 title follows the shared/systemic and enduring slot
+        labels and chooses a familiar Connection-domain use.
+      useful_coverage: It directly covers ordinary or technical ideas associated with
+        interoperable network.
+      semantic_territory_consumed: Across the block it consumes mixtures of ability,
+        receiving, responding, translation, social bonds, active message exchange,
+        identity, reachability, compatibility, routing, and community.
+      conflicts_or_future_limitations: The siblings do not preserve one invariant
+        axis; entity, process, capacity, social, topology, protocol, and modal claims
+        are mixed, so downstream composition would be unstable.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 53
+    maximum: 80
+  - candidate_id: capacity_and_participant_relations
+    title: enduring shared-participation relation
+    invariant_candidate: A persistent communicative relation among multiple endpoints
+      that constitutes them as co-participants in one shared exchange context.
+    analysis:
+      why_it_fits: The first trit remains capacity/relationship, the second trit alone
+        selects self capacity, directed target relation, or shared relation, and the
+        third trit alone selects its lexical condition.
+      useful_coverage: It covers can-communicate, presently communicatively available,
+        dormant capability, persistent contact relation, operative target relation,
+        unresolved contact relation, and stable, operative, or potential group participation.
+      semantic_territory_consumed: Only substrate-neutral communicative affordance
+        and participant relations; endpoints, channels, traffic, messages, cognition,
+        topology, policy, and physical carriers remain separate.
+      conflicts_or_future_limitations: It intentionally requires compounds for online
+        status, friendship, permission, protocol compatibility, reachability, conversation,
+        subscription, network topology, and group identity.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: access_and_reachability
+    title: persistent network access fabric
+    invariant_candidate: A enduring condition of operational access or reachability
+      at shared/systemic scope.
+    analysis:
+      why_it_fits: Access and reachability sound like capacities or endpoint relations,
+        and stable/active/dormant or unresolved conditions are natural.
+      useful_coverage: It would compactly express online, offline, accessible, reachable,
+        unreachable, addressable, and network-access states.
+      semantic_territory_consumed: Operational availability under physical paths,
+        permissions, protocols, failures, addresses, and network configuration.
+      conflicts_or_future_limitations: Reachability is normally a LOG conclusion over
+        MOV/STR paths, MAT interfaces, WRN faults, and permissions; treating it as
+        atomic hides the reason and collides with runtime state.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 61
+    maximum: 80
+  - candidate_id: social_affiliation
+    title: enduring communication community
+    invariant_candidate: A enduring condition of social communicative affiliation
+      at shared/systemic scope.
+    analysis:
+      why_it_fits: Communication ability, interpersonal ties, and communities are
+        intuitive participant-level Connection meanings.
+      useful_coverage: It would cover sociability, availability to talk, friend, colleague,
+        audience, membership, community, and social group.
+      semantic_territory_consumed: Human or agent social identity, affective ties,
+        roles, membership, and collective identity.
+      conflicts_or_future_limitations: It is anthropocentric, collides with LIF identity/community
+        and STR membership, makes machines awkward, and confuses a communication relation
+        with friendship or affection.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 5
+    total: 57
+    maximum: 80
+  - candidate_id: protocol_interoperability
+    title: interoperable federation
+    invariant_candidate: A enduring condition of protocol support or interoperability
+      at shared/systemic scope.
+    analysis:
+      why_it_fits: Protocol support and compatibility are communication affordances
+        with strong stable/active/latent and pair/system contrasts.
+      useful_coverage: It would cover supported protocol, negotiated session, subscription,
+        compatibility, federation, and mesh operation.
+      semantic_territory_consumed: Formal rules, type compatibility, authentication,
+        subscription records, topology, and distributed coordination.
+      conflicts_or_future_limitations: Most of this belongs to LOG, DAT, or STR; it
+        is technology-specific, weak in ordinary conversation, and would make Connection
+        depend on a particular implementation architecture.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 6
+      technical_coverage: 10
+    total: 58
+    maximum: 80
+  recommended_candidate_id: capacity_and_participant_relations
+  recommendation_reason: Only this design gives the entire 2xx layer one ontological
+    type, preserves all address axes, and separates participant affordance/relation
+    from communicative loci, traffic, content, cognition, topology, protocol, reachability,
+    and social identity.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: CON:221
+  fixed_generated_fields:
+    canonical_id: CON:221
+    universal_slot: active systemic relationship
+    family_qualified_transliteration: wu·mik
+    local_compact_root: mik
+    formal_carrier: wu-nu-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+  current_meaning_rationale: The Phase 2 title follows the shared/systemic and presently
+    operative slot labels and chooses a familiar Connection-domain use.
+  candidates:
+  - candidate_id: current_phase2
+    title: active mesh
+    invariant_candidate: Many participants are actively maintaining a distributed
+      web of exchange.
+    analysis:
+      why_it_fits: The Phase 2 title follows the shared/systemic and presently operative
+        slot labels and chooses a familiar Connection-domain use.
+      useful_coverage: It directly covers ordinary or technical ideas associated with
+        active mesh.
+      semantic_territory_consumed: Across the block it consumes mixtures of ability,
+        receiving, responding, translation, social bonds, active message exchange,
+        identity, reachability, compatibility, routing, and community.
+      conflicts_or_future_limitations: The siblings do not preserve one invariant
+        axis; entity, process, capacity, social, topology, protocol, and modal claims
+        are mixed, so downstream composition would be unstable.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 53
+    maximum: 80
+  - candidate_id: capacity_and_participant_relations
+    title: operative shared-participation relation
+    invariant_candidate: A communicative relation among multiple endpoints that presently
+      operates to constitute them as co-participants in one shared exchange context.
+    analysis:
+      why_it_fits: The first trit remains capacity/relationship, the second trit alone
+        selects self capacity, directed target relation, or shared relation, and the
+        third trit alone selects its lexical condition.
+      useful_coverage: It covers can-communicate, presently communicatively available,
+        dormant capability, persistent contact relation, operative target relation,
+        unresolved contact relation, and stable, operative, or potential group participation.
+      semantic_territory_consumed: Only substrate-neutral communicative affordance
+        and participant relations; endpoints, channels, traffic, messages, cognition,
+        topology, policy, and physical carriers remain separate.
+      conflicts_or_future_limitations: It intentionally requires compounds for online
+        status, friendship, permission, protocol compatibility, reachability, conversation,
+        subscription, network topology, and group identity.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: access_and_reachability
+    title: live access fabric
+    invariant_candidate: A presently operative condition of operational access or
+      reachability at shared/systemic scope.
+    analysis:
+      why_it_fits: Access and reachability sound like capacities or endpoint relations,
+        and stable/active/dormant or unresolved conditions are natural.
+      useful_coverage: It would compactly express online, offline, accessible, reachable,
+        unreachable, addressable, and network-access states.
+      semantic_territory_consumed: Operational availability under physical paths,
+        permissions, protocols, failures, addresses, and network configuration.
+      conflicts_or_future_limitations: Reachability is normally a LOG conclusion over
+        MOV/STR paths, MAT interfaces, WRN faults, and permissions; treating it as
+        atomic hides the reason and collides with runtime state.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 61
+    maximum: 80
+  - candidate_id: social_affiliation
+    title: engaged communication community
+    invariant_candidate: A presently operative condition of social communicative affiliation
+      at shared/systemic scope.
+    analysis:
+      why_it_fits: Communication ability, interpersonal ties, and communities are
+        intuitive participant-level Connection meanings.
+      useful_coverage: It would cover sociability, availability to talk, friend, colleague,
+        audience, membership, community, and social group.
+      semantic_territory_consumed: Human or agent social identity, affective ties,
+        roles, membership, and collective identity.
+      conflicts_or_future_limitations: It is anthropocentric, collides with LIF identity/community
+        and STR membership, makes machines awkward, and confuses a communication relation
+        with friendship or affection.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 5
+    total: 57
+    maximum: 80
+  - candidate_id: protocol_interoperability
+    title: active protocol federation
+    invariant_candidate: A presently operative condition of protocol support or interoperability
+      at shared/systemic scope.
+    analysis:
+      why_it_fits: Protocol support and compatibility are communication affordances
+        with strong stable/active/latent and pair/system contrasts.
+      useful_coverage: It would cover supported protocol, negotiated session, subscription,
+        compatibility, federation, and mesh operation.
+      semantic_territory_consumed: Formal rules, type compatibility, authentication,
+        subscription records, topology, and distributed coordination.
+      conflicts_or_future_limitations: Most of this belongs to LOG, DAT, or STR; it
+        is technology-specific, weak in ordinary conversation, and would make Connection
+        depend on a particular implementation architecture.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 6
+      technical_coverage: 10
+    total: 58
+    maximum: 80
+  recommended_candidate_id: capacity_and_participant_relations
+  recommendation_reason: Only this design gives the entire 2xx layer one ontological
+    type, preserves all address axes, and separates participant affordance/relation
+    from communicative loci, traffic, content, cognition, topology, protocol, reachability,
+    and social identity.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: CON:222
+  fixed_generated_fields:
+    canonical_id: CON:222
+    universal_slot: unrealized systemic possibility
+    family_qualified_transliteration: wu·min
+    local_compact_root: min
+    formal_carrier: wu-nu-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+  current_meaning_rationale: The Phase 2 title follows the shared/systemic and unrealized
+    slot labels and chooses a familiar Connection-domain use.
+  candidates:
+  - candidate_id: current_phase2
+    title: possible communication network
+    invariant_candidate: A valid shared channel system or community could form but
+      has not yet been realized.
+    analysis:
+      why_it_fits: The Phase 2 title follows the shared/systemic and unrealized slot
+        labels and chooses a familiar Connection-domain use.
+      useful_coverage: It directly covers ordinary or technical ideas associated with
+        possible communication network.
+      semantic_territory_consumed: Across the block it consumes mixtures of ability,
+        receiving, responding, translation, social bonds, active message exchange,
+        identity, reachability, compatibility, routing, and community.
+      conflicts_or_future_limitations: The siblings do not preserve one invariant
+        axis; entity, process, capacity, social, topology, protocol, and modal claims
+        are mixed, so downstream composition would be unstable.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 53
+    maximum: 80
+  - candidate_id: capacity_and_participant_relations
+    title: potential shared-participation relation
+    invariant_candidate: A not-yet-realized possible communicative relation among
+      multiple endpoints that would constitute them as co-participants in one shared
+      exchange context.
+    analysis:
+      why_it_fits: The first trit remains capacity/relationship, the second trit alone
+        selects self capacity, directed target relation, or shared relation, and the
+        third trit alone selects its lexical condition.
+      useful_coverage: It covers can-communicate, presently communicatively available,
+        dormant capability, persistent contact relation, operative target relation,
+        unresolved contact relation, and stable, operative, or potential group participation.
+      semantic_territory_consumed: Only substrate-neutral communicative affordance
+        and participant relations; endpoints, channels, traffic, messages, cognition,
+        topology, policy, and physical carriers remain separate.
+      conflicts_or_future_limitations: It intentionally requires compounds for online
+        status, friendship, permission, protocol compatibility, reachability, conversation,
+        subscription, network topology, and group identity.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: access_and_reachability
+    title: possible access fabric
+    invariant_candidate: A unrealized condition of operational access or reachability
+      at shared/systemic scope.
+    analysis:
+      why_it_fits: Access and reachability sound like capacities or endpoint relations,
+        and stable/active/dormant or unresolved conditions are natural.
+      useful_coverage: It would compactly express online, offline, accessible, reachable,
+        unreachable, addressable, and network-access states.
+      semantic_territory_consumed: Operational availability under physical paths,
+        permissions, protocols, failures, addresses, and network configuration.
+      conflicts_or_future_limitations: Reachability is normally a LOG conclusion over
+        MOV/STR paths, MAT interfaces, WRN faults, and permissions; treating it as
+        atomic hides the reason and collides with runtime state.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 61
+    maximum: 80
+  - candidate_id: social_affiliation
+    title: potential communication community
+    invariant_candidate: A unrealized condition of social communicative affiliation
+      at shared/systemic scope.
+    analysis:
+      why_it_fits: Communication ability, interpersonal ties, and communities are
+        intuitive participant-level Connection meanings.
+      useful_coverage: It would cover sociability, availability to talk, friend, colleague,
+        audience, membership, community, and social group.
+      semantic_territory_consumed: Human or agent social identity, affective ties,
+        roles, membership, and collective identity.
+      conflicts_or_future_limitations: It is anthropocentric, collides with LIF identity/community
+        and STR membership, makes machines awkward, and confuses a communication relation
+        with friendship or affection.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 5
+    total: 57
+    maximum: 80
+  - candidate_id: protocol_interoperability
+    title: possible interoperable federation
+    invariant_candidate: A unrealized condition of protocol support or interoperability
+      at shared/systemic scope.
+    analysis:
+      why_it_fits: Protocol support and compatibility are communication affordances
+        with strong stable/active/latent and pair/system contrasts.
+      useful_coverage: It would cover supported protocol, negotiated session, subscription,
+        compatibility, federation, and mesh operation.
+      semantic_territory_consumed: Formal rules, type compatibility, authentication,
+        subscription records, topology, and distributed coordination.
+      conflicts_or_future_limitations: Most of this belongs to LOG, DAT, or STR; it
+        is technology-specific, weak in ordinary conversation, and would make Connection
+        depend on a particular implementation architecture.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 6
+      technical_coverage: 10
+    total: 58
+    maximum: 80
+  recommended_candidate_id: capacity_and_participant_relations
+  recommendation_reason: Only this design gives the entire 2xx layer one ontological
+    type, preserves all address axes, and separates participant affordance/relation
+    from communicative loci, traffic, content, cognition, topology, protocol, reachability,
+    and social identity.
+  confidence: 0.97
+  canonicalized: true

@@ -1,0 +1,1767 @@
+---
+metadata:
+  title: MAT:200–222 recommended permanent semantic specifications
+  status: ready_for_delegated_approval_not_yet_canonical
+  review_scope: MAT:200–222 only
+  semantic_architecture: physical work capacity → material coupling → systemic material
+    interdependence
+  delegated_approval_authorized: true
+  roots_canonicalized: []
+  stop_boundary:
+  - MIN:000–022
+  - any other root block
+  - Gate 4
+  - translator implementation
+block_invariant: MAT:2xx encodes a material bearer's capacity to supply physical work,
+  a directed coupling that passes physical influence to a target, or systemic interdependence
+  among material parts; the third trit selects the applicable capacity/relationship
+  phase.
+roots:
+- fixed_generated_fields:
+    canonical_id: MAT:200
+    universal_slot: stable inward capacity
+    family_qualified_transliteration: ba·mam
+    local_compact_root: mam
+    formal_carrier: ba-nu-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+  proposal_status: recommended_for_delegated_approval_not_yet_canonical
+  proposed_title: enduring physical work capacity
+  invariant_definition: A persistent capacity of a material bearer to supply energy
+    for producing physical change.
+  semantic_center: physical work capacity
+  semantic_boundaries:
+  - Includes only a Matter-domain physical work capacity at the specified bearer/target/system
+    scale.
+  - Allows mechanical, thermal, electrical, chemical, or other physical specialization
+    without choosing one mode in the atom.
+  - Does not encode design purpose, ownership, usefulness, value, quantity, safety,
+    health, permission, schedule, or evidence.
+  - The lexical phase is enduring and remains distinct from runtime state.
+  excluded_meanings:
+  - Self-mobility and positional relations belong to canonical MOV:200–222.
+  - Material entities belong to canonical MAT:000–022; physical-state-change events
+    belong to canonical MAT:100–122.
+  - Form, fit geometry, topology, attachment arrangement, and system organization
+    belong to STR.
+  - Ownership, access, communication, and general participant transfer belong to CON
+    or grammar.
+  - Damage and failure belong to WRN; restoration belongs to REP; design and production
+    belong to CRE.
+  - Quantities, rates, efficiency, probability, readiness, schedule, and permission
+    require LOG/quantity grammar.
+  - Conservation as a universal law belongs to ORI/LOG even when MAT bearers instantiate
+    it.
+  nearest_neighbors:
+    same_triplet: MAT:200–MAT:202
+    same_triplet_0: MAT:200
+    same_triplet_1: MAT:201
+    same_triplet_2: MAT:202
+    same_phase_other_layers:
+    - MAT:210
+    - MAT:220
+    canonical_mat_entity_layer: MAT:000–022 owns material bearers and conditions.
+    canonical_mat_process_layer: MAT:100–122 owns physical-state-change events.
+    canonical_mov_relation_layer: MOV:200–222 owns mobility and positional relationships,
+      not material influence.
+  address_explanation:
+    first_trit_2: Selects relationship, capacity, or possibility rather than a material
+      entity or change event.
+    second_trit_0: 'Selects an inward bearer capacity: the material bearer''s own
+      ability to supply physical work.'
+    third_trit_0: Selects enduring capacity without asserting current availability.
+  runtime_state_interpretations:
+    '0': Denies that the bearer has the asserted enduring physical work capacity.
+    '1': Affirms the enduring capacity without saying it is presently available or
+      exercised.
+    '2': Marks the enduring-capacity assertion as dormant or unresolved; it does not
+      select lexical `MAT:202`.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects the
+    enduring form of physical work capacity. Runtime `[2]/num` separately qualifies
+    a token's current status and never substitutes a different lexical phase, plan,
+    probability, or future claim.
+  cross_family_comparisons:
+    LIF: LIF owns vitality, biological capacity, growth, and organism relations. `MAT:200`
+      owns physical work capacity only; living use requires an explicit LIF compound.
+    MOV: MOV owns self-mobility, position, displacement, and reference-frame configurations.
+      Physical work capacity or coupling does not entail movement, and movement does
+      not entail this MAT relation.
+    MIN: MIN owns ability, attention, intention, and cognitive relations in the mental
+      domain. Mental readiness or influence is not material capacity/coupling.
+    CON: CON owns communication, possession, access, social linkage, and general transfer
+      relations. MAT coupling is specifically the ability or actuality of direct physical
+      influence.
+    STR: STR owns form, topology, attachment geometry, compatibility, part-whole organization,
+      and load-path architecture. MAT owns physical work capacity and influence, not
+      the arrangement that enables it.
+    WRN: WRN owns weakness, overload, hazard, failure, and damage judgments. A capacity
+      or coupling may fail, but failure is not built into `MAT:200`.
+    REP: REP owns restoration of capacity or relation. A repaired coupling may use
+      MAT, but restorative direction remains REP.
+    LOG: LOG owns permission, scheduling, formal possibility, constraints, quantities,
+      and control readiness. MAT lexical phases and runtime states do not encode those
+      judgments.
+    DAT: DAT owns data links, records, signals, and dependency graphs about information.
+      A model of a coupling is not the physical relation it represents.
+    CRE: CRE owns designed affordance, production, and creation of systems. A designed
+      capacity or coupling is not physically realized merely because CRE asserts it.
+    ORI: ORI owns universal laws, ontological possibility, and conservation principles.
+      MAT owns a concrete bearer or system relation, not a law of reality.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MAT:200[1](BEARER=battery)
+    literal_gloss: battery; enduring physical work capacity
+    natural_english: The battery has a persistent capacity to do physical work.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Direct capacity use.
+  - category: physical_or_spatial
+    semantic_graph: MAT:200[1](BEARER=spring)
+    literal_gloss: spring; persistent capacity to supply physical energy
+    natural_english: The spring retains an enduring ability to drive a mechanism.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: The capacity persists even when unexercised.
+  - category: temporal_or_sequential
+    semantic_graph: MAT:200[1](BEARER=flywheel,ACROSS=interval)
+    literal_gloss: flywheel; work capacity persists across interval
+    natural_english: The flywheel's work capacity persists through the idle interval.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Persistence is explicit; no activity is asserted.
+  - category: cross_family_compound
+    semantic_graph: MAT:200[1](BEARER=engine)+CRE(FUNCTION=machine)
+    literal_gloss: engine; enduring work capacity plus designed function
+    natural_english: The engine is a machine with a persistent physical work capacity.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Designed purpose remains CRE.
+  - category: executable_or_programming
+    semantic_graph: MAT:200[1](BEARER=actuator)
+    literal_gloss: actuator; rated physical work capacity
+    natural_english: The controller records a persistent actuator work capacity.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: A capability declaration, not an execution event.
+    pseudocode: assert actuator.capabilities.include?(:physical_work)
+  - category: counterexample
+    semantic_graph: MOV:200[1](MOVER=animal)
+    literal_gloss: animal; enduring self-mobility
+    natural_english: The animal can move itself.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: must_not_use_this_mat_root
+    analysis: Self-mobility is canonical MOV:200; it is not identical to general physical
+      work capacity.
+  future_compound_decomposition_sketches_not_canonical:
+  - MAT:200 + physical-mode modifier → mechanical, thermal, electrical, chemical,
+    or other specialized capacity/coupling
+  - MAT:200 + STR/CRE/WRN/REP predicate → structured, designed, failed, hazardous,
+    or restored material capability/relation
+  - MAT:200 + quantity/LOG grammar → energy amount, force, power, rate, efficiency,
+    probability, threshold, or permission without overloading the atom
+  later_era_evolution_notes:
+  - Later technical vocabulary may name physical influence modes, units, tensors,
+    and constitutive laws without changing this invariant.
+  - Later colloquial forms may lexicalize high-frequency compounds such as powered,
+    connected, strong, or load-sharing.
+  - Future semantic changes require an explicit versioned migration.
+  confidence: 0.96
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MAT:201
+    universal_slot: active inward capacity
+    family_qualified_transliteration: ba·mak
+    local_compact_root: mak
+    formal_carrier: ba-nu-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+  proposal_status: recommended_for_delegated_approval_not_yet_canonical
+  proposed_title: available physical work capacity
+  invariant_definition: A material bearer's capacity to supply energy for physical
+    change that is presently available for exercise.
+  semantic_center: physical work capacity
+  semantic_boundaries:
+  - Includes only a Matter-domain physical work capacity at the specified bearer/target/system
+    scale.
+  - Allows mechanical, thermal, electrical, chemical, or other physical specialization
+    without choosing one mode in the atom.
+  - Does not encode design purpose, ownership, usefulness, value, quantity, safety,
+    health, permission, schedule, or evidence.
+  - The lexical phase is presently available and remains distinct from runtime state.
+  excluded_meanings:
+  - Self-mobility and positional relations belong to canonical MOV:200–222.
+  - Material entities belong to canonical MAT:000–022; physical-state-change events
+    belong to canonical MAT:100–122.
+  - Form, fit geometry, topology, attachment arrangement, and system organization
+    belong to STR.
+  - Ownership, access, communication, and general participant transfer belong to CON
+    or grammar.
+  - Damage and failure belong to WRN; restoration belongs to REP; design and production
+    belong to CRE.
+  - Quantities, rates, efficiency, probability, readiness, schedule, and permission
+    require LOG/quantity grammar.
+  - Conservation as a universal law belongs to ORI/LOG even when MAT bearers instantiate
+    it.
+  nearest_neighbors:
+    same_triplet: MAT:200–MAT:202
+    same_triplet_0: MAT:200
+    same_triplet_1: MAT:201
+    same_triplet_2: MAT:202
+    same_phase_other_layers:
+    - MAT:211
+    - MAT:221
+    canonical_mat_entity_layer: MAT:000–022 owns material bearers and conditions.
+    canonical_mat_process_layer: MAT:100–122 owns physical-state-change events.
+    canonical_mov_relation_layer: MOV:200–222 owns mobility and positional relationships,
+      not material influence.
+  address_explanation:
+    first_trit_2: Selects relationship, capacity, or possibility rather than a material
+      entity or change event.
+    second_trit_0: 'Selects an inward bearer capacity: the material bearer''s own
+      ability to supply physical work.'
+    third_trit_1: Selects capacity presently available for exercise.
+  runtime_state_interpretations:
+    '0': Denies that the bearer's physical work capacity is presently available.
+    '1': Affirms current availability of the capacity without asserting that work
+      is occurring.
+    '2': Marks current availability as dormant or unresolved; lexical `MAT:202` instead
+      asserts that the capacity exists in a latent phase.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects the
+    presently available form of physical work capacity. Runtime `[2]/num` separately
+    qualifies a token's current status and never substitutes a different lexical phase,
+    plan, probability, or future claim.
+  cross_family_comparisons:
+    LIF: LIF owns vitality, biological capacity, growth, and organism relations. `MAT:201`
+      owns physical work capacity only; living use requires an explicit LIF compound.
+    MOV: MOV owns self-mobility, position, displacement, and reference-frame configurations.
+      Physical work capacity or coupling does not entail movement, and movement does
+      not entail this MAT relation.
+    MIN: MIN owns ability, attention, intention, and cognitive relations in the mental
+      domain. Mental readiness or influence is not material capacity/coupling.
+    CON: CON owns communication, possession, access, social linkage, and general transfer
+      relations. MAT coupling is specifically the ability or actuality of direct physical
+      influence.
+    STR: STR owns form, topology, attachment geometry, compatibility, part-whole organization,
+      and load-path architecture. MAT owns physical work capacity and influence, not
+      the arrangement that enables it.
+    WRN: WRN owns weakness, overload, hazard, failure, and damage judgments. A capacity
+      or coupling may fail, but failure is not built into `MAT:201`.
+    REP: REP owns restoration of capacity or relation. A repaired coupling may use
+      MAT, but restorative direction remains REP.
+    LOG: LOG owns permission, scheduling, formal possibility, constraints, quantities,
+      and control readiness. MAT lexical phases and runtime states do not encode those
+      judgments.
+    DAT: DAT owns data links, records, signals, and dependency graphs about information.
+      A model of a coupling is not the physical relation it represents.
+    CRE: CRE owns designed affordance, production, and creation of systems. A designed
+      capacity or coupling is not physically realized merely because CRE asserts it.
+    ORI: ORI owns universal laws, ontological possibility, and conservation principles.
+      MAT owns a concrete bearer or system relation, not a law of reality.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MAT:201[1](BEARER=battery)
+    literal_gloss: battery; work capacity presently available
+    natural_english: The battery can power the lamp now.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Availability is foregrounded; no discharge event is asserted.
+  - category: physical_or_spatial
+    semantic_graph: MAT:201[1](BEARER=compressed_spring)
+    literal_gloss: spring; physical work capacity available
+    natural_english: The compressed spring is ready in the physical sense to drive
+      the latch.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Physical availability does not encode permission or schedule.
+  - category: temporal_or_sequential
+    semantic_graph: MAT:201[1](BEARER=capacitor,DURING=window)
+    literal_gloss: capacitor; work capacity available during interval
+    natural_english: The capacitor's energy is available during this interval.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Timing is supplied by the graph.
+  - category: cross_family_compound
+    semantic_graph: MAT:201[1](BEARER=robot)+LOG(PERMISSION=0)
+    literal_gloss: robot; physical work capacity available; action not permitted
+    natural_english: The robot is physically able to act, but it is not permitted
+      to.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Physical availability and permission are independent.
+  - category: executable_or_programming
+    semantic_graph: MAT:201[1](BEARER=power_cell)
+    literal_gloss: power cell; work capacity available
+    natural_english: The scheduler may consider the cell physically available.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: A capability predicate used by planning code.
+    pseudocode: assert power_cell.work_capacity.available?
+  - category: counterexample
+    semantic_graph: MAT:101[1](BEARER=metal,CHANGE=heating)
+    literal_gloss: metal; active focal material change
+    natural_english: The metal is heating.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: must_not_use_this_mat_root
+    analysis: An active material process is MAT:101; it does not by itself mean work
+      capacity is available.
+  future_compound_decomposition_sketches_not_canonical:
+  - MAT:201 + physical-mode modifier → mechanical, thermal, electrical, chemical,
+    or other specialized capacity/coupling
+  - MAT:201 + STR/CRE/WRN/REP predicate → structured, designed, failed, hazardous,
+    or restored material capability/relation
+  - MAT:201 + quantity/LOG grammar → energy amount, force, power, rate, efficiency,
+    probability, threshold, or permission without overloading the atom
+  later_era_evolution_notes:
+  - Later technical vocabulary may name physical influence modes, units, tensors,
+    and constitutive laws without changing this invariant.
+  - Later colloquial forms may lexicalize high-frequency compounds such as powered,
+    connected, strong, or load-sharing.
+  - Future semantic changes require an explicit versioned migration.
+  confidence: 0.98
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MAT:202
+    universal_slot: dormant inward capacity
+    family_qualified_transliteration: ba·man
+    local_compact_root: man
+    formal_carrier: ba-nu-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+  proposal_status: recommended_for_delegated_approval_not_yet_canonical
+  proposed_title: latent physical work capacity
+  invariant_definition: A material bearer's capacity to supply energy for physical
+    change that exists without being presently available for exercise.
+  semantic_center: physical work capacity
+  semantic_boundaries:
+  - Includes only a Matter-domain physical work capacity at the specified bearer/target/system
+    scale.
+  - Allows mechanical, thermal, electrical, chemical, or other physical specialization
+    without choosing one mode in the atom.
+  - Does not encode design purpose, ownership, usefulness, value, quantity, safety,
+    health, permission, schedule, or evidence.
+  - The lexical phase is latent/unavailable and remains distinct from runtime state.
+  excluded_meanings:
+  - Self-mobility and positional relations belong to canonical MOV:200–222.
+  - Material entities belong to canonical MAT:000–022; physical-state-change events
+    belong to canonical MAT:100–122.
+  - Form, fit geometry, topology, attachment arrangement, and system organization
+    belong to STR.
+  - Ownership, access, communication, and general participant transfer belong to CON
+    or grammar.
+  - Damage and failure belong to WRN; restoration belongs to REP; design and production
+    belong to CRE.
+  - Quantities, rates, efficiency, probability, readiness, schedule, and permission
+    require LOG/quantity grammar.
+  - Conservation as a universal law belongs to ORI/LOG even when MAT bearers instantiate
+    it.
+  nearest_neighbors:
+    same_triplet: MAT:200–MAT:202
+    same_triplet_0: MAT:200
+    same_triplet_1: MAT:201
+    same_triplet_2: MAT:202
+    same_phase_other_layers:
+    - MAT:212
+    - MAT:222
+    canonical_mat_entity_layer: MAT:000–022 owns material bearers and conditions.
+    canonical_mat_process_layer: MAT:100–122 owns physical-state-change events.
+    canonical_mov_relation_layer: MOV:200–222 owns mobility and positional relationships,
+      not material influence.
+  address_explanation:
+    first_trit_2: Selects relationship, capacity, or possibility rather than a material
+      entity or change event.
+    second_trit_0: 'Selects an inward bearer capacity: the material bearer''s own
+      ability to supply physical work.'
+    third_trit_2: Selects capacity that exists in a latent, presently unavailable
+      phase.
+  runtime_state_interpretations:
+    '0': Denies that the bearer retains the asserted latent work capacity.
+    '1': Affirms that the capacity exists while not presently available for exercise.
+    '2': Marks whether that latent capacity exists as dormant or unresolved; the double
+      layer does not encode readiness or future activation.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects the
+    latent/unavailable form of physical work capacity. Runtime `[2]/num` separately
+    qualifies a token's current status and never substitutes a different lexical phase,
+    plan, probability, or future claim.
+  cross_family_comparisons:
+    LIF: LIF owns vitality, biological capacity, growth, and organism relations. `MAT:202`
+      owns physical work capacity only; living use requires an explicit LIF compound.
+    MOV: MOV owns self-mobility, position, displacement, and reference-frame configurations.
+      Physical work capacity or coupling does not entail movement, and movement does
+      not entail this MAT relation.
+    MIN: MIN owns ability, attention, intention, and cognitive relations in the mental
+      domain. Mental readiness or influence is not material capacity/coupling.
+    CON: CON owns communication, possession, access, social linkage, and general transfer
+      relations. MAT coupling is specifically the ability or actuality of direct physical
+      influence.
+    STR: STR owns form, topology, attachment geometry, compatibility, part-whole organization,
+      and load-path architecture. MAT owns physical work capacity and influence, not
+      the arrangement that enables it.
+    WRN: WRN owns weakness, overload, hazard, failure, and damage judgments. A capacity
+      or coupling may fail, but failure is not built into `MAT:202`.
+    REP: REP owns restoration of capacity or relation. A repaired coupling may use
+      MAT, but restorative direction remains REP.
+    LOG: LOG owns permission, scheduling, formal possibility, constraints, quantities,
+      and control readiness. MAT lexical phases and runtime states do not encode those
+      judgments.
+    DAT: DAT owns data links, records, signals, and dependency graphs about information.
+      A model of a coupling is not the physical relation it represents.
+    CRE: CRE owns designed affordance, production, and creation of systems. A designed
+      capacity or coupling is not physically realized merely because CRE asserts it.
+    ORI: ORI owns universal laws, ontological possibility, and conservation principles.
+      MAT owns a concrete bearer or system relation, not a law of reality.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MAT:202[1](BEARER=cold_battery)
+    literal_gloss: battery; latent physical work capacity
+    natural_english: The cold battery retains capacity, but that capacity is not available
+      now.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Cause of latency is not built into the root.
+  - category: physical_or_spatial
+    semantic_graph: MAT:202[1](BEARER=locked_flywheel)
+    literal_gloss: flywheel; work capacity exists but unavailable
+    natural_english: The locked flywheel retains physical potential that cannot presently
+      be exercised.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: A barrier may be added separately.
+  - category: temporal_or_sequential
+    semantic_graph: MAT:202[1](BEARER=cell,UNTIL=warming)
+    literal_gloss: cell; latent capacity until condition changes
+    natural_english: The cell's work capacity remains latent until it warms.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: The condition is explicit and not predicted by the root.
+  - category: cross_family_compound
+    semantic_graph: MAT:202[1](BEARER=spring)+STR(BLOCK=lock)
+    literal_gloss: spring; latent work capacity plus structural block
+    natural_english: The spring has latent work capacity because a lock prevents release.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: STR supplies the blocking structure.
+  - category: executable_or_programming
+    semantic_graph: MAT:202[1](BEARER=reserve_cell)
+    literal_gloss: reserve cell; capacity exists but is unavailable
+    natural_english: The resource model retains the cell's latent physical capacity.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: The engine must not schedule it as currently available.
+    pseudocode: assert reserve_cell.work_capacity.exists? && !reserve_cell.work_capacity.available?
+  - category: counterexample
+    semantic_graph: MAT:102[1](BEARER=ice,CHANGE=melting)
+    literal_gloss: ice; possible focal material change
+    natural_english: The ice could melt.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: must_not_use_this_mat_root
+    analysis: A potential process is MAT:102; latent work capacity is a capacity,
+      not an event possibility.
+  future_compound_decomposition_sketches_not_canonical:
+  - MAT:202 + physical-mode modifier → mechanical, thermal, electrical, chemical,
+    or other specialized capacity/coupling
+  - MAT:202 + STR/CRE/WRN/REP predicate → structured, designed, failed, hazardous,
+    or restored material capability/relation
+  - MAT:202 + quantity/LOG grammar → energy amount, force, power, rate, efficiency,
+    probability, threshold, or permission without overloading the atom
+  later_era_evolution_notes:
+  - Later technical vocabulary may name physical influence modes, units, tensors,
+    and constitutive laws without changing this invariant.
+  - Later colloquial forms may lexicalize high-frequency compounds such as powered,
+    connected, strong, or load-sharing.
+  - Future semantic changes require an explicit versioned migration.
+  confidence: 0.99
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MAT:210
+    universal_slot: stable outward relationship
+    family_qualified_transliteration: ba·mom
+    local_compact_root: mom
+    formal_carrier: ba-nu-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+  proposal_status: recommended_for_delegated_approval_not_yet_canonical
+  proposed_title: established material coupling
+  invariant_definition: An established relation by which a material bearer can transmit
+    physical influence to a distinct target.
+  semantic_center: directed material coupling
+  semantic_boundaries:
+  - Includes only a Matter-domain directed material coupling at the specified bearer/target/system
+    scale.
+  - Allows mechanical, thermal, electrical, chemical, or other physical specialization
+    without choosing one mode in the atom.
+  - Does not encode design purpose, ownership, usefulness, value, quantity, safety,
+    health, permission, schedule, or evidence.
+  - The lexical phase is established and remains distinct from runtime state.
+  excluded_meanings:
+  - Self-mobility and positional relations belong to canonical MOV:200–222.
+  - Material entities belong to canonical MAT:000–022; physical-state-change events
+    belong to canonical MAT:100–122.
+  - Form, fit geometry, topology, attachment arrangement, and system organization
+    belong to STR.
+  - Ownership, access, communication, and general participant transfer belong to CON
+    or grammar.
+  - Damage and failure belong to WRN; restoration belongs to REP; design and production
+    belong to CRE.
+  - Quantities, rates, efficiency, probability, readiness, schedule, and permission
+    require LOG/quantity grammar.
+  - Conservation as a universal law belongs to ORI/LOG even when MAT bearers instantiate
+    it.
+  nearest_neighbors:
+    same_triplet: MAT:210–MAT:212
+    same_triplet_0: MAT:210
+    same_triplet_1: MAT:211
+    same_triplet_2: MAT:212
+    same_phase_other_layers:
+    - MAT:200
+    - MAT:220
+    canonical_mat_entity_layer: MAT:000–022 owns material bearers and conditions.
+    canonical_mat_process_layer: MAT:100–122 owns physical-state-change events.
+    canonical_mov_relation_layer: MOV:200–222 owns mobility and positional relationships,
+      not material influence.
+  address_explanation:
+    first_trit_2: Selects relationship, capacity, or possibility rather than a material
+      entity or change event.
+    second_trit_1: 'Selects an outward target relation: a directed coupling capable
+      of passing physical influence to a distinct target.'
+    third_trit_0: Selects an established directed material coupling.
+  runtime_state_interpretations:
+    '0': Denies the established directed material coupling.
+    '1': Affirms the established coupling without asserting current transmission.
+    '2': Marks the established-coupling assertion as unresolved; it does not select
+      lexical `MAT:212`.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects the
+    established form of directed material coupling. Runtime `[2]/num` separately qualifies
+    a token's current status and never substitutes a different lexical phase, plan,
+    probability, or future claim.
+  cross_family_comparisons:
+    LIF: LIF owns vitality, biological capacity, growth, and organism relations. `MAT:210`
+      owns directed material coupling only; living use requires an explicit LIF compound.
+    MOV: MOV owns self-mobility, position, displacement, and reference-frame configurations.
+      Physical work capacity or coupling does not entail movement, and movement does
+      not entail this MAT relation.
+    MIN: MIN owns ability, attention, intention, and cognitive relations in the mental
+      domain. Mental readiness or influence is not material capacity/coupling.
+    CON: CON owns communication, possession, access, social linkage, and general transfer
+      relations. MAT coupling is specifically the ability or actuality of direct physical
+      influence.
+    STR: STR owns form, topology, attachment geometry, compatibility, part-whole organization,
+      and load-path architecture. MAT owns physical work capacity and influence, not
+      the arrangement that enables it.
+    WRN: WRN owns weakness, overload, hazard, failure, and damage judgments. A capacity
+      or coupling may fail, but failure is not built into `MAT:210`.
+    REP: REP owns restoration of capacity or relation. A repaired coupling may use
+      MAT, but restorative direction remains REP.
+    LOG: LOG owns permission, scheduling, formal possibility, constraints, quantities,
+      and control readiness. MAT lexical phases and runtime states do not encode those
+      judgments.
+    DAT: DAT owns data links, records, signals, and dependency graphs about information.
+      A model of a coupling is not the physical relation it represents.
+    CRE: CRE owns designed affordance, production, and creation of systems. A designed
+      capacity or coupling is not physically realized merely because CRE asserts it.
+    ORI: ORI owns universal laws, ontological possibility, and conservation principles.
+      MAT owns a concrete bearer or system relation, not a law of reality.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MAT:210[1](BEARER=shaft,TARGET=pump)
+    literal_gloss: shaft; established material coupling to pump
+    natural_english: The shaft is mechanically coupled to the pump.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: The relation can exist while no influence is currently passing.
+  - category: physical_or_spatial
+    semantic_graph: MAT:210[1](BEARER=gear_a,TARGET=gear_b)
+    literal_gloss: gear A; established physical-influence relation to gear B
+    natural_english: These gears have an established coupling.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Geometry may be specified separately with STR.
+  - category: temporal_or_sequential
+    semantic_graph: MAT:210[1](BEARER=cable,TARGET=motor,ACROSS=idle)
+    literal_gloss: cable; coupling persists across idle interval
+    natural_english: The cable remains physically coupled to the motor while idle.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Stable relation does not mean active transfer.
+  - category: cross_family_compound
+    semantic_graph: STR(ASSEMBLY=gear_train)+MAT:210[1](BEARER=gear_a,TARGET=gear_b)
+    literal_gloss: structured assembly plus established material coupling
+    natural_english: The gear train's structure places the gears in a physical coupling.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: STR supplies arrangement; MAT supplies influence capability.
+  - category: executable_or_programming
+    semantic_graph: MAT:210[1](BEARER=port_a,TARGET=port_b)
+    literal_gloss: port A; established physical coupling to port B
+    natural_english: The simulation declares a physical influence edge.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: A stable graph edge without current flow.
+    pseudocode: 'material_graph.add_edge(port_a, port_b, mode: :coupled)'
+  - category: counterexample
+    semantic_graph: CON(OWNER=person,OBJECT=tool)
+    literal_gloss: person; ownership relation to tool
+    natural_english: The person owns the tool.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: must_not_use_this_mat_root
+    analysis: Ownership is not material coupling even when the object is physical.
+  future_compound_decomposition_sketches_not_canonical:
+  - MAT:210 + physical-mode modifier → mechanical, thermal, electrical, chemical,
+    or other specialized capacity/coupling
+  - MAT:210 + STR/CRE/WRN/REP predicate → structured, designed, failed, hazardous,
+    or restored material capability/relation
+  - MAT:210 + quantity/LOG grammar → energy amount, force, power, rate, efficiency,
+    probability, threshold, or permission without overloading the atom
+  later_era_evolution_notes:
+  - Later technical vocabulary may name physical influence modes, units, tensors,
+    and constitutive laws without changing this invariant.
+  - Later colloquial forms may lexicalize high-frequency compounds such as powered,
+    connected, strong, or load-sharing.
+  - Future semantic changes require an explicit versioned migration.
+  confidence: 0.98
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MAT:211
+    universal_slot: active outward relationship
+    family_qualified_transliteration: ba·mok
+    local_compact_root: mok
+    formal_carrier: ba-nu-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+  proposal_status: recommended_for_delegated_approval_not_yet_canonical
+  proposed_title: active material coupling
+  invariant_definition: A relation by which a material bearer is presently transmitting
+    physical influence to a distinct target.
+  semantic_center: directed material coupling
+  semantic_boundaries:
+  - Includes only a Matter-domain directed material coupling at the specified bearer/target/system
+    scale.
+  - Allows mechanical, thermal, electrical, chemical, or other physical specialization
+    without choosing one mode in the atom.
+  - Does not encode design purpose, ownership, usefulness, value, quantity, safety,
+    health, permission, schedule, or evidence.
+  - The lexical phase is actively transmitting and remains distinct from runtime state.
+  excluded_meanings:
+  - Self-mobility and positional relations belong to canonical MOV:200–222.
+  - Material entities belong to canonical MAT:000–022; physical-state-change events
+    belong to canonical MAT:100–122.
+  - Form, fit geometry, topology, attachment arrangement, and system organization
+    belong to STR.
+  - Ownership, access, communication, and general participant transfer belong to CON
+    or grammar.
+  - Damage and failure belong to WRN; restoration belongs to REP; design and production
+    belong to CRE.
+  - Quantities, rates, efficiency, probability, readiness, schedule, and permission
+    require LOG/quantity grammar.
+  - Conservation as a universal law belongs to ORI/LOG even when MAT bearers instantiate
+    it.
+  nearest_neighbors:
+    same_triplet: MAT:210–MAT:212
+    same_triplet_0: MAT:210
+    same_triplet_1: MAT:211
+    same_triplet_2: MAT:212
+    same_phase_other_layers:
+    - MAT:201
+    - MAT:221
+    canonical_mat_entity_layer: MAT:000–022 owns material bearers and conditions.
+    canonical_mat_process_layer: MAT:100–122 owns physical-state-change events.
+    canonical_mov_relation_layer: MOV:200–222 owns mobility and positional relationships,
+      not material influence.
+  address_explanation:
+    first_trit_2: Selects relationship, capacity, or possibility rather than a material
+      entity or change event.
+    second_trit_1: 'Selects an outward target relation: a directed coupling capable
+      of passing physical influence to a distinct target.'
+    third_trit_1: Selects a coupling presently transmitting physical influence.
+  runtime_state_interpretations:
+    '0': Denies that physical influence is presently passing through the coupling.
+    '1': Affirms current transmission of physical influence from bearer to target.
+    '2': Marks the active-coupling status as dormant or unresolved; lexical `MAT:212`
+      instead makes the relation itself unresolved.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects the
+    actively transmitting form of directed material coupling. Runtime `[2]/num` separately
+    qualifies a token's current status and never substitutes a different lexical phase,
+    plan, probability, or future claim.
+  cross_family_comparisons:
+    LIF: LIF owns vitality, biological capacity, growth, and organism relations. `MAT:211`
+      owns directed material coupling only; living use requires an explicit LIF compound.
+    MOV: MOV owns self-mobility, position, displacement, and reference-frame configurations.
+      Physical work capacity or coupling does not entail movement, and movement does
+      not entail this MAT relation.
+    MIN: MIN owns ability, attention, intention, and cognitive relations in the mental
+      domain. Mental readiness or influence is not material capacity/coupling.
+    CON: CON owns communication, possession, access, social linkage, and general transfer
+      relations. MAT coupling is specifically the ability or actuality of direct physical
+      influence.
+    STR: STR owns form, topology, attachment geometry, compatibility, part-whole organization,
+      and load-path architecture. MAT owns physical work capacity and influence, not
+      the arrangement that enables it.
+    WRN: WRN owns weakness, overload, hazard, failure, and damage judgments. A capacity
+      or coupling may fail, but failure is not built into `MAT:211`.
+    REP: REP owns restoration of capacity or relation. A repaired coupling may use
+      MAT, but restorative direction remains REP.
+    LOG: LOG owns permission, scheduling, formal possibility, constraints, quantities,
+      and control readiness. MAT lexical phases and runtime states do not encode those
+      judgments.
+    DAT: DAT owns data links, records, signals, and dependency graphs about information.
+      A model of a coupling is not the physical relation it represents.
+    CRE: CRE owns designed affordance, production, and creation of systems. A designed
+      capacity or coupling is not physically realized merely because CRE asserts it.
+    ORI: ORI owns universal laws, ontological possibility, and conservation principles.
+      MAT owns a concrete bearer or system relation, not a law of reality.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MAT:211[1](BEARER=gear_a,TARGET=gear_b)
+    literal_gloss: gear A; active material coupling to gear B
+    natural_english: The first gear is transmitting torque to the second.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Torque kind and magnitude may be added separately.
+  - category: physical_or_spatial
+    semantic_graph: MAT:211[1](BEARER=hot_plate,TARGET=pan)
+    literal_gloss: hot plate; physical influence actively passing to pan
+    natural_english: The hot plate is physically heating the pan through their coupling.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: The heating process itself may also use MAT:111.
+  - category: temporal_or_sequential
+    semantic_graph: MAT:211[1](BEARER=drive_shaft,TARGET=pump,DURING=run)
+    literal_gloss: shaft; active coupling during run
+    natural_english: The shaft is transmitting physical influence during the run.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Runtime interval is explicit.
+  - category: cross_family_compound
+    semantic_graph: MAT:211[1](BEARER=wheel,TARGET=axle)+MOV:121[1](MOVER=wheel)
+    literal_gloss: active coupling plus shared-frame motion
+    natural_english: The moving wheel is transmitting force to the axle.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Motion and coupling remain independent predicates.
+  - category: executable_or_programming
+    semantic_graph: MAT:211[1](BEARER=node_a,TARGET=node_b)
+    literal_gloss: node A; active physical influence edge to node B
+    natural_english: The physics engine marks the coupling edge active.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: An active relation, not merely adjacency.
+    pseudocode: assert material_graph.edge(node_a, node_b).transmitting?
+  - category: counterexample
+    semantic_graph: STR(ADJACENT=block_a,block_b)
+    literal_gloss: blocks; adjacent
+    natural_english: The blocks are next to each other but not interacting.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: must_not_use_this_mat_root
+    analysis: Adjacency or contact geometry without physical influence is STR, not
+      MAT:211.
+  future_compound_decomposition_sketches_not_canonical:
+  - MAT:211 + physical-mode modifier → mechanical, thermal, electrical, chemical,
+    or other specialized capacity/coupling
+  - MAT:211 + STR/CRE/WRN/REP predicate → structured, designed, failed, hazardous,
+    or restored material capability/relation
+  - MAT:211 + quantity/LOG grammar → energy amount, force, power, rate, efficiency,
+    probability, threshold, or permission without overloading the atom
+  later_era_evolution_notes:
+  - Later technical vocabulary may name physical influence modes, units, tensors,
+    and constitutive laws without changing this invariant.
+  - Later colloquial forms may lexicalize high-frequency compounds such as powered,
+    connected, strong, or load-sharing.
+  - Future semantic changes require an explicit versioned migration.
+  confidence: 0.99
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MAT:212
+    universal_slot: unresolved outward relationship
+    family_qualified_transliteration: ba·mon
+    local_compact_root: mon
+    formal_carrier: ba-nu-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+  proposal_status: recommended_for_delegated_approval_not_yet_canonical
+  proposed_title: unresolved material coupling
+  invariant_definition: Whether a material bearer can transmit physical influence
+    to a distinct target is unresolved.
+  semantic_center: directed material coupling
+  semantic_boundaries:
+  - Includes only a Matter-domain directed material coupling at the specified bearer/target/system
+    scale.
+  - Allows mechanical, thermal, electrical, chemical, or other physical specialization
+    without choosing one mode in the atom.
+  - Does not encode design purpose, ownership, usefulness, value, quantity, safety,
+    health, permission, schedule, or evidence.
+  - The lexical phase is unresolved and remains distinct from runtime state.
+  excluded_meanings:
+  - Self-mobility and positional relations belong to canonical MOV:200–222.
+  - Material entities belong to canonical MAT:000–022; physical-state-change events
+    belong to canonical MAT:100–122.
+  - Form, fit geometry, topology, attachment arrangement, and system organization
+    belong to STR.
+  - Ownership, access, communication, and general participant transfer belong to CON
+    or grammar.
+  - Damage and failure belong to WRN; restoration belongs to REP; design and production
+    belong to CRE.
+  - Quantities, rates, efficiency, probability, readiness, schedule, and permission
+    require LOG/quantity grammar.
+  - Conservation as a universal law belongs to ORI/LOG even when MAT bearers instantiate
+    it.
+  nearest_neighbors:
+    same_triplet: MAT:210–MAT:212
+    same_triplet_0: MAT:210
+    same_triplet_1: MAT:211
+    same_triplet_2: MAT:212
+    same_phase_other_layers:
+    - MAT:202
+    - MAT:222
+    canonical_mat_entity_layer: MAT:000–022 owns material bearers and conditions.
+    canonical_mat_process_layer: MAT:100–122 owns physical-state-change events.
+    canonical_mov_relation_layer: MOV:200–222 owns mobility and positional relationships,
+      not material influence.
+  address_explanation:
+    first_trit_2: Selects relationship, capacity, or possibility rather than a material
+      entity or change event.
+    second_trit_1: 'Selects an outward target relation: a directed coupling capable
+      of passing physical influence to a distinct target.'
+    third_trit_2: Selects an unresolved pairwise material coupling.
+  runtime_state_interpretations:
+    '0': Denies that the coupling question is unresolved—for example because the relation
+      has been resolved.
+    '1': Affirms that whether material influence can pass remains unresolved.
+    '2': Marks the status or availability of that unresolved assessment itself as
+      dormant or unknown; it does not create a plan or probability.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects the
+    unresolved form of directed material coupling. Runtime `[2]/num` separately qualifies
+    a token's current status and never substitutes a different lexical phase, plan,
+    probability, or future claim.
+  cross_family_comparisons:
+    LIF: LIF owns vitality, biological capacity, growth, and organism relations. `MAT:212`
+      owns directed material coupling only; living use requires an explicit LIF compound.
+    MOV: MOV owns self-mobility, position, displacement, and reference-frame configurations.
+      Physical work capacity or coupling does not entail movement, and movement does
+      not entail this MAT relation.
+    MIN: MIN owns ability, attention, intention, and cognitive relations in the mental
+      domain. Mental readiness or influence is not material capacity/coupling.
+    CON: CON owns communication, possession, access, social linkage, and general transfer
+      relations. MAT coupling is specifically the ability or actuality of direct physical
+      influence.
+    STR: STR owns form, topology, attachment geometry, compatibility, part-whole organization,
+      and load-path architecture. MAT owns physical work capacity and influence, not
+      the arrangement that enables it.
+    WRN: WRN owns weakness, overload, hazard, failure, and damage judgments. A capacity
+      or coupling may fail, but failure is not built into `MAT:212`.
+    REP: REP owns restoration of capacity or relation. A repaired coupling may use
+      MAT, but restorative direction remains REP.
+    LOG: LOG owns permission, scheduling, formal possibility, constraints, quantities,
+      and control readiness. MAT lexical phases and runtime states do not encode those
+      judgments.
+    DAT: DAT owns data links, records, signals, and dependency graphs about information.
+      A model of a coupling is not the physical relation it represents.
+    CRE: CRE owns designed affordance, production, and creation of systems. A designed
+      capacity or coupling is not physically realized merely because CRE asserts it.
+    ORI: ORI owns universal laws, ontological possibility, and conservation principles.
+      MAT owns a concrete bearer or system relation, not a law of reality.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MAT:212[1](BEARER=plug,TARGET=socket)
+    literal_gloss: plug-to-socket material coupling unresolved
+    natural_english: We do not know whether the plug is making physical contact well
+      enough to carry influence.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Uncertainty concerns the relation itself.
+  - category: physical_or_spatial
+    semantic_graph: MAT:212[1](BEARER=loose_wire,TARGET=terminal)
+    literal_gloss: wire; coupling to terminal unresolved
+    natural_english: The loose wire may or may not be physically coupled to the terminal.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Fit geometry alone would be STR.
+  - category: temporal_or_sequential
+    semantic_graph: MAT:212[1](BEARER=clutch,TARGET=shaft,UNTIL=sensor)
+    literal_gloss: clutch coupling unresolved until observation
+    natural_english: The clutch-to-shaft coupling remains unresolved until the sensor
+      reports.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Observation source is explicit.
+  - category: cross_family_compound
+    semantic_graph: MAT:212[1](BEARER=contact,TARGET=rail)+DAT(READING=unknown)
+    literal_gloss: material coupling unresolved; sensor record unavailable
+    natural_english: The contact may be coupled to the rail, but the sensor data is
+      missing.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: DAT explains evidence, not coupling.
+  - category: executable_or_programming
+    semantic_graph: MAT:212[1](BEARER=node_a,TARGET=node_b)
+    literal_gloss: physical influence edge has unknown truth value
+    natural_english: The solver keeps the coupling edge unresolved.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Three-valued relation state.
+    pseudocode: material_graph.edge(node_a, node_b).status = UNKNOWN
+  - category: counterexample
+    semantic_graph: LOG(SCHEDULE=connection_test)
+    literal_gloss: connection test; scheduled
+    natural_english: The connection test is scheduled.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: must_not_use_this_mat_root
+    analysis: Scheduling does not make the material coupling lexically unresolved.
+  future_compound_decomposition_sketches_not_canonical:
+  - MAT:212 + physical-mode modifier → mechanical, thermal, electrical, chemical,
+    or other specialized capacity/coupling
+  - MAT:212 + STR/CRE/WRN/REP predicate → structured, designed, failed, hazardous,
+    or restored material capability/relation
+  - MAT:212 + quantity/LOG grammar → energy amount, force, power, rate, efficiency,
+    probability, threshold, or permission without overloading the atom
+  later_era_evolution_notes:
+  - Later technical vocabulary may name physical influence modes, units, tensors,
+    and constitutive laws without changing this invariant.
+  - Later colloquial forms may lexicalize high-frequency compounds such as powered,
+    connected, strong, or load-sharing.
+  - Future semantic changes require an explicit versioned migration.
+  confidence: 0.99
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MAT:220
+    universal_slot: stable systemic relationship
+    family_qualified_transliteration: ba·mim
+    local_compact_root: mim
+    formal_carrier: ba-nu-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+  proposal_status: recommended_for_delegated_approval_not_yet_canonical
+  proposed_title: established systemic material interdependence
+  invariant_definition: A stable relation in which material parts of a shared system
+    mutually constrain one another's physical states.
+  semantic_center: systemic material interdependence
+  semantic_boundaries:
+  - Includes only a Matter-domain systemic material interdependence at the specified
+    bearer/target/system scale.
+  - Allows mechanical, thermal, electrical, chemical, or other physical specialization
+    without choosing one mode in the atom.
+  - Does not encode design purpose, ownership, usefulness, value, quantity, safety,
+    health, permission, schedule, or evidence.
+  - The lexical phase is established and remains distinct from runtime state.
+  excluded_meanings:
+  - Self-mobility and positional relations belong to canonical MOV:200–222.
+  - Material entities belong to canonical MAT:000–022; physical-state-change events
+    belong to canonical MAT:100–122.
+  - Form, fit geometry, topology, attachment arrangement, and system organization
+    belong to STR.
+  - Ownership, access, communication, and general participant transfer belong to CON
+    or grammar.
+  - Damage and failure belong to WRN; restoration belongs to REP; design and production
+    belong to CRE.
+  - Quantities, rates, efficiency, probability, readiness, schedule, and permission
+    require LOG/quantity grammar.
+  - Conservation as a universal law belongs to ORI/LOG even when MAT bearers instantiate
+    it.
+  nearest_neighbors:
+    same_triplet: MAT:220–MAT:222
+    same_triplet_0: MAT:220
+    same_triplet_1: MAT:221
+    same_triplet_2: MAT:222
+    same_phase_other_layers:
+    - MAT:200
+    - MAT:210
+    canonical_mat_entity_layer: MAT:000–022 owns material bearers and conditions.
+    canonical_mat_process_layer: MAT:100–122 owns physical-state-change events.
+    canonical_mov_relation_layer: MOV:200–222 owns mobility and positional relationships,
+      not material influence.
+  address_explanation:
+    first_trit_2: Selects relationship, capacity, or possibility rather than a material
+      entity or change event.
+    second_trit_2: 'Selects a shared/systemic relation: mutual physical constraint
+      or influence among material parts.'
+    third_trit_0: Selects established systemic material interdependence.
+  runtime_state_interpretations:
+    '0': Denies the asserted stable systemic material interdependence.
+    '1': Affirms the stable mutual physical-constraint relation without asserting
+      current activity.
+    '2': Marks the stable-system relation assertion as dormant or unresolved; it does
+      not select lexical `MAT:222`.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects the
+    established form of systemic material interdependence. Runtime `[2]/num` separately
+    qualifies a token's current status and never substitutes a different lexical phase,
+    plan, probability, or future claim.
+  cross_family_comparisons:
+    LIF: LIF owns vitality, biological capacity, growth, and organism relations. `MAT:220`
+      owns systemic material interdependence only; living use requires an explicit
+      LIF compound.
+    MOV: MOV owns self-mobility, position, displacement, and reference-frame configurations.
+      Physical work capacity or coupling does not entail movement, and movement does
+      not entail this MAT relation.
+    MIN: MIN owns ability, attention, intention, and cognitive relations in the mental
+      domain. Mental readiness or influence is not material capacity/coupling.
+    CON: CON owns communication, possession, access, social linkage, and general transfer
+      relations. MAT coupling is specifically the ability or actuality of direct physical
+      influence.
+    STR: STR owns form, topology, attachment geometry, compatibility, part-whole organization,
+      and load-path architecture. MAT owns physical work capacity and influence, not
+      the arrangement that enables it.
+    WRN: WRN owns weakness, overload, hazard, failure, and damage judgments. A capacity
+      or coupling may fail, but failure is not built into `MAT:220`.
+    REP: REP owns restoration of capacity or relation. A repaired coupling may use
+      MAT, but restorative direction remains REP.
+    LOG: LOG owns permission, scheduling, formal possibility, constraints, quantities,
+      and control readiness. MAT lexical phases and runtime states do not encode those
+      judgments.
+    DAT: DAT owns data links, records, signals, and dependency graphs about information.
+      A model of a coupling is not the physical relation it represents.
+    CRE: CRE owns designed affordance, production, and creation of systems. A designed
+      capacity or coupling is not physically realized merely because CRE asserts it.
+    ORI: ORI owns universal laws, ontological possibility, and conservation principles.
+      MAT owns a concrete bearer or system relation, not a law of reality.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MAT:220[1](SYSTEM=truss)
+    literal_gloss: truss; established systemic material interdependence
+    natural_english: The truss members form a stable load-sharing physical system.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Load-sharing kind may be specialized.
+  - category: physical_or_spatial
+    semantic_graph: MAT:220[1](SYSTEM=sealed_vessel)
+    literal_gloss: vessel parts; mutually constraining physical states
+    natural_english: The vessel and its contents have an established material interdependence.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Containment topology is STR; physical mutual constraint is MAT.
+  - category: temporal_or_sequential
+    semantic_graph: MAT:220[1](SYSTEM=suspension,ACROSS=idle)
+    literal_gloss: suspension; interdependence persists across idle interval
+    natural_english: The suspension's material interdependence persists while the
+      vehicle is parked.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: No active influence is required.
+  - category: cross_family_compound
+    semantic_graph: STR(TOPOLOGY=truss)+MAT:220[1](SYSTEM=truss)
+    literal_gloss: structural topology plus stable material interdependence
+    natural_english: The truss topology supports an established network of physical
+      constraints.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Topology and material relation remain separate.
+  - category: executable_or_programming
+    semantic_graph: MAT:220[1](SYSTEM=mesh)
+    literal_gloss: mesh; stable mutual physical-constraint relation
+    natural_english: The solver declares a persistent material dependency graph.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: A system-level invariant over coupling edges.
+    pseudocode: assert material_graph(mesh).stable_interdependence?
+  - category: counterexample
+    semantic_graph: ORI/LOG(CONSERVATION=energy)
+    literal_gloss: energy conservation law
+    natural_english: Energy is conserved in the model.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: must_not_use_this_mat_root
+    analysis: A universal or formal conservation law is not MAT:220 by itself.
+  future_compound_decomposition_sketches_not_canonical:
+  - MAT:220 + physical-mode modifier → mechanical, thermal, electrical, chemical,
+    or other specialized capacity/coupling
+  - MAT:220 + STR/CRE/WRN/REP predicate → structured, designed, failed, hazardous,
+    or restored material capability/relation
+  - MAT:220 + quantity/LOG grammar → energy amount, force, power, rate, efficiency,
+    probability, threshold, or permission without overloading the atom
+  later_era_evolution_notes:
+  - Later technical vocabulary may name physical influence modes, units, tensors,
+    and constitutive laws without changing this invariant.
+  - Later colloquial forms may lexicalize high-frequency compounds such as powered,
+    connected, strong, or load-sharing.
+  - Future semantic changes require an explicit versioned migration.
+  confidence: 0.97
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MAT:221
+    universal_slot: active systemic relationship
+    family_qualified_transliteration: ba·mik
+    local_compact_root: mik
+    formal_carrier: ba-nu-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+  proposal_status: recommended_for_delegated_approval_not_yet_canonical
+  proposed_title: active systemic material interdependence
+  invariant_definition: A relation in which material parts of a shared system are
+    presently exerting reciprocal physical influence.
+  semantic_center: systemic material interdependence
+  semantic_boundaries:
+  - Includes only a Matter-domain systemic material interdependence at the specified
+    bearer/target/system scale.
+  - Allows mechanical, thermal, electrical, chemical, or other physical specialization
+    without choosing one mode in the atom.
+  - Does not encode design purpose, ownership, usefulness, value, quantity, safety,
+    health, permission, schedule, or evidence.
+  - The lexical phase is actively reciprocal and remains distinct from runtime state.
+  excluded_meanings:
+  - Self-mobility and positional relations belong to canonical MOV:200–222.
+  - Material entities belong to canonical MAT:000–022; physical-state-change events
+    belong to canonical MAT:100–122.
+  - Form, fit geometry, topology, attachment arrangement, and system organization
+    belong to STR.
+  - Ownership, access, communication, and general participant transfer belong to CON
+    or grammar.
+  - Damage and failure belong to WRN; restoration belongs to REP; design and production
+    belong to CRE.
+  - Quantities, rates, efficiency, probability, readiness, schedule, and permission
+    require LOG/quantity grammar.
+  - Conservation as a universal law belongs to ORI/LOG even when MAT bearers instantiate
+    it.
+  nearest_neighbors:
+    same_triplet: MAT:220–MAT:222
+    same_triplet_0: MAT:220
+    same_triplet_1: MAT:221
+    same_triplet_2: MAT:222
+    same_phase_other_layers:
+    - MAT:201
+    - MAT:211
+    canonical_mat_entity_layer: MAT:000–022 owns material bearers and conditions.
+    canonical_mat_process_layer: MAT:100–122 owns physical-state-change events.
+    canonical_mov_relation_layer: MOV:200–222 owns mobility and positional relationships,
+      not material influence.
+  address_explanation:
+    first_trit_2: Selects relationship, capacity, or possibility rather than a material
+      entity or change event.
+    second_trit_2: 'Selects a shared/systemic relation: mutual physical constraint
+      or influence among material parts.'
+    third_trit_1: Selects active reciprocal material influence across the system.
+  runtime_state_interpretations:
+    '0': Denies that reciprocal physical influence is presently active across the
+      system.
+    '1': Affirms active reciprocal material influence among system parts.
+    '2': Marks current systemic activity as dormant or unresolved; lexical `MAT:222`
+      instead selects an unrealized possible relation.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects the
+    actively reciprocal form of systemic material interdependence. Runtime `[2]/num`
+    separately qualifies a token's current status and never substitutes a different
+    lexical phase, plan, probability, or future claim.
+  cross_family_comparisons:
+    LIF: LIF owns vitality, biological capacity, growth, and organism relations. `MAT:221`
+      owns systemic material interdependence only; living use requires an explicit
+      LIF compound.
+    MOV: MOV owns self-mobility, position, displacement, and reference-frame configurations.
+      Physical work capacity or coupling does not entail movement, and movement does
+      not entail this MAT relation.
+    MIN: MIN owns ability, attention, intention, and cognitive relations in the mental
+      domain. Mental readiness or influence is not material capacity/coupling.
+    CON: CON owns communication, possession, access, social linkage, and general transfer
+      relations. MAT coupling is specifically the ability or actuality of direct physical
+      influence.
+    STR: STR owns form, topology, attachment geometry, compatibility, part-whole organization,
+      and load-path architecture. MAT owns physical work capacity and influence, not
+      the arrangement that enables it.
+    WRN: WRN owns weakness, overload, hazard, failure, and damage judgments. A capacity
+      or coupling may fail, but failure is not built into `MAT:221`.
+    REP: REP owns restoration of capacity or relation. A repaired coupling may use
+      MAT, but restorative direction remains REP.
+    LOG: LOG owns permission, scheduling, formal possibility, constraints, quantities,
+      and control readiness. MAT lexical phases and runtime states do not encode those
+      judgments.
+    DAT: DAT owns data links, records, signals, and dependency graphs about information.
+      A model of a coupling is not the physical relation it represents.
+    CRE: CRE owns designed affordance, production, and creation of systems. A designed
+      capacity or coupling is not physically realized merely because CRE asserts it.
+    ORI: ORI owns universal laws, ontological possibility, and conservation principles.
+      MAT owns a concrete bearer or system relation, not a law of reality.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MAT:221[1](SYSTEM=suspension)
+    literal_gloss: suspension; active reciprocal material influence
+    natural_english: The suspension components are sharing load now.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: The relation is active across multiple parts.
+  - category: physical_or_spatial
+    semantic_graph: MAT:221[1](SYSTEM=gear_train)
+    literal_gloss: gear train; reciprocal physical influence active
+    natural_english: The gear train is actively transmitting forces among its parts.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Individual directed edges may also use MAT:211.
+  - category: temporal_or_sequential
+    semantic_graph: MAT:221[1](SYSTEM=bridge,DURING=load)
+    literal_gloss: bridge system; active interdependence during load
+    natural_english: The bridge members are mutually influencing one another under
+      the current load.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: The interval is explicit.
+  - category: cross_family_compound
+    semantic_graph: MAT:221[1](SYSTEM=pump_network)+MOV:121[1](MOVER=fluid)
+    literal_gloss: active material interdependence plus fluid movement
+    natural_english: The pump network is physically interacting while fluid moves
+      through it.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Movement is not absorbed into the relation.
+  - category: executable_or_programming
+    semantic_graph: MAT:221[1](SYSTEM=mesh)
+    literal_gloss: mesh; reciprocal physical dependencies active
+    natural_english: The solver marks the coupled material system active.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Many active coupling edges form a system relation.
+    pseudocode: assert material_graph(mesh).reciprocal_influence_active?
+  - category: counterexample
+    semantic_graph: CON/DAT(NETWORK=messages)
+    literal_gloss: participants; active information exchange
+    natural_english: The computers are exchanging messages.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: must_not_use_this_mat_root
+    analysis: Communication or data exchange is not systemic material interdependence.
+  future_compound_decomposition_sketches_not_canonical:
+  - MAT:221 + physical-mode modifier → mechanical, thermal, electrical, chemical,
+    or other specialized capacity/coupling
+  - MAT:221 + STR/CRE/WRN/REP predicate → structured, designed, failed, hazardous,
+    or restored material capability/relation
+  - MAT:221 + quantity/LOG grammar → energy amount, force, power, rate, efficiency,
+    probability, threshold, or permission without overloading the atom
+  later_era_evolution_notes:
+  - Later technical vocabulary may name physical influence modes, units, tensors,
+    and constitutive laws without changing this invariant.
+  - Later colloquial forms may lexicalize high-frequency compounds such as powered,
+    connected, strong, or load-sharing.
+  - Future semantic changes require an explicit versioned migration.
+  confidence: 0.98
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MAT:222
+    universal_slot: unrealized systemic possibility
+    family_qualified_transliteration: ba·min
+    local_compact_root: min
+    formal_carrier: ba-nu-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+  proposal_status: recommended_for_delegated_approval_not_yet_canonical
+  proposed_title: potential systemic material interdependence
+  invariant_definition: An unrealized possible relation in which material parts of
+    a shared system would mutually constrain one another's physical states.
+  semantic_center: systemic material interdependence
+  semantic_boundaries:
+  - Includes only a Matter-domain systemic material interdependence at the specified
+    bearer/target/system scale.
+  - Allows mechanical, thermal, electrical, chemical, or other physical specialization
+    without choosing one mode in the atom.
+  - Does not encode design purpose, ownership, usefulness, value, quantity, safety,
+    health, permission, schedule, or evidence.
+  - The lexical phase is unrealized possible and remains distinct from runtime state.
+  excluded_meanings:
+  - Self-mobility and positional relations belong to canonical MOV:200–222.
+  - Material entities belong to canonical MAT:000–022; physical-state-change events
+    belong to canonical MAT:100–122.
+  - Form, fit geometry, topology, attachment arrangement, and system organization
+    belong to STR.
+  - Ownership, access, communication, and general participant transfer belong to CON
+    or grammar.
+  - Damage and failure belong to WRN; restoration belongs to REP; design and production
+    belong to CRE.
+  - Quantities, rates, efficiency, probability, readiness, schedule, and permission
+    require LOG/quantity grammar.
+  - Conservation as a universal law belongs to ORI/LOG even when MAT bearers instantiate
+    it.
+  nearest_neighbors:
+    same_triplet: MAT:220–MAT:222
+    same_triplet_0: MAT:220
+    same_triplet_1: MAT:221
+    same_triplet_2: MAT:222
+    same_phase_other_layers:
+    - MAT:202
+    - MAT:212
+    canonical_mat_entity_layer: MAT:000–022 owns material bearers and conditions.
+    canonical_mat_process_layer: MAT:100–122 owns physical-state-change events.
+    canonical_mov_relation_layer: MOV:200–222 owns mobility and positional relationships,
+      not material influence.
+  address_explanation:
+    first_trit_2: Selects relationship, capacity, or possibility rather than a material
+      entity or change event.
+    second_trit_2: 'Selects a shared/systemic relation: mutual physical constraint
+      or influence among material parts.'
+    third_trit_2: Selects an unrealized possible systemic material interdependence.
+  runtime_state_interpretations:
+    '0': Rules out the asserted possible systemic material interdependence in the
+      stated frame.
+    '1': Affirms the unrealized possible relation without asserting design, schedule,
+      readiness, or eventual realization.
+    '2': Marks whether the possible relation holds as dormant or unresolved; runtime
+      status remains separate from lexical possibility.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects the
+    unrealized possible form of systemic material interdependence. Runtime `[2]/num`
+    separately qualifies a token's current status and never substitutes a different
+    lexical phase, plan, probability, or future claim.
+  cross_family_comparisons:
+    LIF: LIF owns vitality, biological capacity, growth, and organism relations. `MAT:222`
+      owns systemic material interdependence only; living use requires an explicit
+      LIF compound.
+    MOV: MOV owns self-mobility, position, displacement, and reference-frame configurations.
+      Physical work capacity or coupling does not entail movement, and movement does
+      not entail this MAT relation.
+    MIN: MIN owns ability, attention, intention, and cognitive relations in the mental
+      domain. Mental readiness or influence is not material capacity/coupling.
+    CON: CON owns communication, possession, access, social linkage, and general transfer
+      relations. MAT coupling is specifically the ability or actuality of direct physical
+      influence.
+    STR: STR owns form, topology, attachment geometry, compatibility, part-whole organization,
+      and load-path architecture. MAT owns physical work capacity and influence, not
+      the arrangement that enables it.
+    WRN: WRN owns weakness, overload, hazard, failure, and damage judgments. A capacity
+      or coupling may fail, but failure is not built into `MAT:222`.
+    REP: REP owns restoration of capacity or relation. A repaired coupling may use
+      MAT, but restorative direction remains REP.
+    LOG: LOG owns permission, scheduling, formal possibility, constraints, quantities,
+      and control readiness. MAT lexical phases and runtime states do not encode those
+      judgments.
+    DAT: DAT owns data links, records, signals, and dependency graphs about information.
+      A model of a coupling is not the physical relation it represents.
+    CRE: CRE owns designed affordance, production, and creation of systems. A designed
+      capacity or coupling is not physically realized merely because CRE asserts it.
+    ORI: ORI owns universal laws, ontological possibility, and conservation principles.
+      MAT owns a concrete bearer or system relation, not a law of reality.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MAT:222[1](SYSTEM=unassembled_modules)
+    literal_gloss: modules; possible systemic material interdependence unrealized
+    natural_english: These modules could form a load-sharing physical system, but
+      they do not yet.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Possibility concerns the relation, not a plan.
+  - category: physical_or_spatial
+    semantic_graph: MAT:222[1](SYSTEM=future_truss)
+    literal_gloss: truss parts; possible mutual physical constraint
+    natural_english: The members could physically support one another in that arrangement.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Arrangement itself is STR.
+  - category: temporal_or_sequential
+    semantic_graph: MAT:222[1](SYSTEM=components,BEFORE=assembly)
+    literal_gloss: components; potential interdependence before realization
+    natural_english: Before assembly, the systemic material relation is only possible.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: No future certainty is encoded.
+  - category: cross_family_compound
+    semantic_graph: CRE(DESIGN=machine)+STR(TOPOLOGY=planned)+MAT:222[1](SYSTEM=parts)
+    literal_gloss: design and topology plus possible material interdependence
+    natural_english: The design proposes a structure whose parts could become physically
+      interdependent.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Design and planned structure remain separate.
+  - category: executable_or_programming
+    semantic_graph: MAT:222[1](SYSTEM=candidate_graph)
+    literal_gloss: candidate graph; possible material interdependence unrealized
+    natural_english: The simulator records a feasible but unrealized coupling graph.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: valid
+    analysis: Feasibility does not schedule construction.
+    pseudocode: assert feasible?(candidate_graph) && !realized?(candidate_graph)
+  - category: counterexample
+    semantic_graph: CRE/STR(DESIGN=architecture)
+    literal_gloss: designed arrangement
+    natural_english: The engineer designed a new structure.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, source, or capacity holder
+      middle: MAT capacity/relationship predicate
+      high: distinct target or affected participant when present
+      sustained: shared material system or environmental frame when present
+    use_status: must_not_use_this_mat_root
+    analysis: A designed configuration is CRE/STR unless possible material interdependence
+      is also asserted.
+  future_compound_decomposition_sketches_not_canonical:
+  - MAT:222 + physical-mode modifier → mechanical, thermal, electrical, chemical,
+    or other specialized capacity/coupling
+  - MAT:222 + STR/CRE/WRN/REP predicate → structured, designed, failed, hazardous,
+    or restored material capability/relation
+  - MAT:222 + quantity/LOG grammar → energy amount, force, power, rate, efficiency,
+    probability, threshold, or permission without overloading the atom
+  later_era_evolution_notes:
+  - Later technical vocabulary may name physical influence modes, units, tensors,
+    and constitutive laws without changing this invariant.
+  - Later colloquial forms may lexicalize high-frequency compounds such as powered,
+    connected, strong, or load-sharing.
+  - Future semantic changes require an explicit versioned migration.
+  confidence: 0.99
+  canonicalized: false

@@ -249,7 +249,7 @@ translator_inventory_ok =
   readiness.dig("current_inventory", "unreviewed", "roots") == expected_provisional_count &&
   readiness.dig("current_inventory", "unreviewed", "nine_root_chunks") == expected_remaining_chunks &&
   readiness["next_semantic_chunk_after_pending_decisions"] == next_range
-translator_checks.add("translator inventory", "translator readiness mirrors live authority and names #{next_range} next",
+translator_checks.add("translator inventory", next_range ? "translator readiness mirrors live authority and names #{next_range} next" : "translator readiness mirrors live authority; no semantic packet remains",
                       translator_inventory_ok)
 
 safe_scope_ok =
@@ -332,7 +332,7 @@ EraZeroValidation.write("reports/current_state_regression.md", current_report)
 
 translator_report = translator_checks.markdown(
   title: "Translator Readiness Validation",
-  pass_status: "PASS — CURRENT ROADMAP CONSISTENT; BROAD TRANSLATOR STILL BLOCKED",
+  pass_status: "PASS — ALL PLANNED TRANSLATOR GATES COMPLETE",
   summary: [
     "Deterministic addresses: **324**",
     "Canonical meanings: **#{canonical_ids.length}**",
@@ -342,9 +342,9 @@ translator_report = translator_checks.markdown(
   ]
 )
 translator_report << if next_range
-                       "\nThe next semantic packet is `#{next_range}`. General English translation, compounds, semantic IR, and executable grammar remain unauthorized.\n"
+                       "\nThe next semantic packet is `#{next_range}`. Downstream features remain restricted to current canonical authority.\n"
                      else
-                       "\nAll atomic semantic packets are complete. General English translation, compounds, semantic IR, and executable grammar remain unauthorized pending their own gates.\n"
+                       "\nAll atomic semantic packets and all planned translator-readiness gates are complete. The translator remains conservative: documented vocabulary gaps and unsupported free-form composition are reported rather than guessed.\n"
                      end
 EraZeroValidation.write("reports/translator_readiness_validation.md", translator_report)
 

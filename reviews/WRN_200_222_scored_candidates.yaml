@@ -1,0 +1,1484 @@
+---
+metadata:
+  title: WRN:200–222 adversarial semantic candidates
+  status: approved_and_canonical_by_delegated_authority
+  architecture_version: '1.0'
+  range: WRN:200–222
+  roots_reviewed: 9
+  candidate_architectures_per_root: 5
+  scored_categories:
+  - atomicity
+  - address_fit
+  - family_fit
+  - neighbor_separation
+  - cross_family_separation
+  - compound_usefulness
+  - everyday_language_coverage
+  - technical_coverage
+  generated_fields_changed: false
+  roots_canonicalized:
+  - WRN:200
+  - WRN:201
+  - WRN:202
+  - WRN:210
+  - WRN:211
+  - WRN:212
+  - WRN:220
+  - WRN:221
+  - WRN:222
+  approval_record: migrations/WRN_200_222_semantic_approval.yaml
+roots:
+- canonical_id: WRN:200
+  fixed_generated_fields:
+    canonical_id: WRN:200
+    universal_slot: stable inward capacity
+    family_qualified_transliteration: da·mam
+    local_compact_root: mam
+    formal_carrier: da-nu-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+  current_meaning_rationale: The Phase 2 label follows the persistent independently
+    of current operation inward slot and uses familiar Warning vocabulary such as
+    vulnerability, exposure, attack, risk, and catastrophe.
+  candidates:
+  - candidate_id: phase2_mixed
+    title: stable vulnerability
+    invariant_candidate: An entity has a known, persistent inward susceptibility to
+      error, attack, damage, or failure.
+    analysis:
+      why_it_fits: The Phase 2 label follows the persistent independently of current
+        operation inward slot and uses familiar Warning vocabulary such as vulnerability,
+        exposure, attack, risk, and catastrophe.
+      useful_coverage: It reaches common security and safety language for weaknesses,
+        threats, exploitation, cascading failures, and system risk.
+      semantic_territory_consumed: It mixes capacities, present processes, observer
+        knowledge, uncertainty, probability, severity, causal interaction, and outcome
+        states.
+      conflicts_or_future_limitations: The triplets do not preserve one lexical-status
+        contrast; WRN:211 duplicates active impairment, WRN:212 conflates uncertainty
+        with lexical meaning, and WRN:222 absorbs ORI modality.
+    scores:
+      atomicity: 4
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: adverse_affordance
+    title: persistent internal susceptibility
+    invariant_candidate: A persistent susceptibility of one reference entity to undergo
+      internally originating degradation under qualifying conditions, independently
+      of whether that susceptibility is presently operative.
+    analysis:
+      why_it_fits: It makes first-trit 2 the capacity or qualifying relation for the
+        matching canonical WRN:10x transformation while preserving inward scope and
+        persistent expression.
+      useful_coverage: It covers vulnerability, exposure, attack surface, propagation
+        paths, contagion routes, fault trees, and failure channels in ordinary safety,
+        software, networks, and mathematics.
+      semantic_territory_consumed: Only the substrate-neutral adverse affordance that
+        enables internal susceptibility. Actual faults, hazards, processes, mechanics,
+        evidence, risk estimates, controls, and modality remain separate.
+      conflicts_or_future_limitations: The technical word pathway must be restricted
+        to adverse enablement rather than physical or communicative route identity,
+        but the invariant and compounds make that boundary explicit.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 10
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 80
+    maximum: 80
+  - candidate_id: adverse_observability
+    title: persistent internal fault observability
+    invariant_candidate: The persistent internal fault observability by which evidence
+      of an adverse condition at the selected scope can be made available to an observer.
+    analysis:
+      why_it_fits: Detectability of internal faults, target threats, and systemic
+        incidents is important to warning systems and can be expressed at persistent
+        inward scope.
+      useful_coverage: It would cover observability, diagnosability, monitor coverage,
+        alarm reach, traceability, and incident visibility.
+      semantic_territory_consumed: It consumes evidence acquisition and interpretation
+        rather than the adverse capacity or relation itself.
+      conflicts_or_future_limitations: DAT owns observations and records, MIN owns
+        recognition and belief, CON owns alert delivery, and harm can be enabled even
+        when completely unobservable.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  - candidate_id: protective_affordance
+    title: persistent internal resistance capacity
+    invariant_candidate: The persistent internal resistance capacity by which adverse
+      transformation at the selected scope can be prevented from being realized.
+    analysis:
+      why_it_fits: Resistance, shielding, and systemic containability are plausible
+        Warning-related capacities at inward scope and support all three lexical statuses.
+      useful_coverage: It would cover immunity, resilience, shielding, filtering,
+        isolation, containment, and fail-safe behavior.
+      semantic_territory_consumed: It consumes prevention, control, and recovery capacities
+        rather than the adverse affordance that makes harmful transformation possible.
+      conflicts_or_future_limitations: REP owns restoration and resistance, STR owns
+        containment and separation, LOG owns blocking rules, and protective capacity
+        is directionally opposite to vulnerability.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 64
+    maximum: 80
+  - candidate_id: risk_quantification
+    title: persistent internal risk relation
+    invariant_candidate: The persistent internal risk relation that assigns an evaluated
+      likelihood-and-impact relation to an adverse outcome at the selected scope.
+    analysis:
+      why_it_fits: Risk, likelihood, and impact are natural Warning-family relations
+        and can be scoped inward, toward a target, or across a system.
+      useful_coverage: It would cover risk scores, attack likelihood, expected loss,
+        severity, confidence, and catastrophe forecasts.
+      semantic_territory_consumed: It consumes quantitative or epistemic judgment
+        about adverse outcomes rather than the capacity or pathway that makes them
+        possible.
+      conflicts_or_future_limitations: LOG owns probability and inference, DAT owns
+        measured values, MIN owns confidence, and one risk number usually combines
+        likelihood, severity, time, and context.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 60
+    maximum: 80
+  recommended_candidate_id: adverse_affordance
+  recommendation_reason: Only the adverse-affordance architecture keeps one Warning
+    semantic center, aligns each column with its canonical WRN:1xx transformation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    conditions, processes, mechanics, evidence, observer knowledge, risk estimates,
+    protective controls, and general modality separate.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: WRN:201
+  fixed_generated_fields:
+    canonical_id: WRN:201
+    universal_slot: active inward capacity
+    family_qualified_transliteration: da·mak
+    local_compact_root: mak
+    formal_carrier: da-nu-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+  current_meaning_rationale: The Phase 2 label follows the presently operative inward
+    slot and uses familiar Warning vocabulary such as vulnerability, exposure, attack,
+    risk, and catastrophe.
+  candidates:
+  - candidate_id: phase2_mixed
+    title: active susceptibility
+    invariant_candidate: A vulnerability is presently exposed or capable of being
+      exploited.
+    analysis:
+      why_it_fits: The Phase 2 label follows the presently operative inward slot and
+        uses familiar Warning vocabulary such as vulnerability, exposure, attack,
+        risk, and catastrophe.
+      useful_coverage: It reaches common security and safety language for weaknesses,
+        threats, exploitation, cascading failures, and system risk.
+      semantic_territory_consumed: It mixes capacities, present processes, observer
+        knowledge, uncertainty, probability, severity, causal interaction, and outcome
+        states.
+      conflicts_or_future_limitations: The triplets do not preserve one lexical-status
+        contrast; WRN:211 duplicates active impairment, WRN:212 conflates uncertainty
+        with lexical meaning, and WRN:222 absorbs ORI modality.
+    scores:
+      atomicity: 4
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: adverse_affordance
+    title: operative internal susceptibility
+    invariant_candidate: A susceptibility of one reference entity to undergo internally
+      originating degradation that is presently operative under the applicable conditions.
+    analysis:
+      why_it_fits: It makes first-trit 2 the capacity or qualifying relation for the
+        matching canonical WRN:10x transformation while preserving inward scope and
+        operative expression.
+      useful_coverage: It covers vulnerability, exposure, attack surface, propagation
+        paths, contagion routes, fault trees, and failure channels in ordinary safety,
+        software, networks, and mathematics.
+      semantic_territory_consumed: Only the substrate-neutral adverse affordance that
+        enables internal susceptibility. Actual faults, hazards, processes, mechanics,
+        evidence, risk estimates, controls, and modality remain separate.
+      conflicts_or_future_limitations: The technical word pathway must be restricted
+        to adverse enablement rather than physical or communicative route identity,
+        but the invariant and compounds make that boundary explicit.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 10
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 80
+    maximum: 80
+  - candidate_id: adverse_observability
+    title: operative internal fault observability
+    invariant_candidate: The operative internal fault observability by which evidence
+      of an adverse condition at the selected scope can be made available to an observer.
+    analysis:
+      why_it_fits: Detectability of internal faults, target threats, and systemic
+        incidents is important to warning systems and can be expressed at operative
+        inward scope.
+      useful_coverage: It would cover observability, diagnosability, monitor coverage,
+        alarm reach, traceability, and incident visibility.
+      semantic_territory_consumed: It consumes evidence acquisition and interpretation
+        rather than the adverse capacity or relation itself.
+      conflicts_or_future_limitations: DAT owns observations and records, MIN owns
+        recognition and belief, CON owns alert delivery, and harm can be enabled even
+        when completely unobservable.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  - candidate_id: protective_affordance
+    title: operative internal resistance capacity
+    invariant_candidate: The operative internal resistance capacity by which adverse
+      transformation at the selected scope can be prevented from being realized.
+    analysis:
+      why_it_fits: Resistance, shielding, and systemic containability are plausible
+        Warning-related capacities at inward scope and support all three lexical statuses.
+      useful_coverage: It would cover immunity, resilience, shielding, filtering,
+        isolation, containment, and fail-safe behavior.
+      semantic_territory_consumed: It consumes prevention, control, and recovery capacities
+        rather than the adverse affordance that makes harmful transformation possible.
+      conflicts_or_future_limitations: REP owns restoration and resistance, STR owns
+        containment and separation, LOG owns blocking rules, and protective capacity
+        is directionally opposite to vulnerability.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 64
+    maximum: 80
+  - candidate_id: risk_quantification
+    title: operative internal risk relation
+    invariant_candidate: The operative internal risk relation that assigns an evaluated
+      likelihood-and-impact relation to an adverse outcome at the selected scope.
+    analysis:
+      why_it_fits: Risk, likelihood, and impact are natural Warning-family relations
+        and can be scoped inward, toward a target, or across a system.
+      useful_coverage: It would cover risk scores, attack likelihood, expected loss,
+        severity, confidence, and catastrophe forecasts.
+      semantic_territory_consumed: It consumes quantitative or epistemic judgment
+        about adverse outcomes rather than the capacity or pathway that makes them
+        possible.
+      conflicts_or_future_limitations: LOG owns probability and inference, DAT owns
+        measured values, MIN owns confidence, and one risk number usually combines
+        likelihood, severity, time, and context.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 60
+    maximum: 80
+  recommended_candidate_id: adverse_affordance
+  recommendation_reason: Only the adverse-affordance architecture keeps one Warning
+    semantic center, aligns each column with its canonical WRN:1xx transformation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    conditions, processes, mechanics, evidence, observer knowledge, risk estimates,
+    protective controls, and general modality separate.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: WRN:202
+  fixed_generated_fields:
+    canonical_id: WRN:202
+    universal_slot: dormant inward capacity
+    family_qualified_transliteration: da·man
+    local_compact_root: man
+    formal_carrier: da-nu-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+  current_meaning_rationale: The Phase 2 label follows the existing without present
+    operation inward slot and uses familiar Warning vocabulary such as vulnerability,
+    exposure, attack, risk, and catastrophe.
+  candidates:
+  - candidate_id: phase2_mixed
+    title: hidden vulnerability
+    invariant_candidate: A weakness could exist within an entity but is dormant, inaccessible,
+      or not yet discovered.
+    analysis:
+      why_it_fits: The Phase 2 label follows the existing without present operation
+        inward slot and uses familiar Warning vocabulary such as vulnerability, exposure,
+        attack, risk, and catastrophe.
+      useful_coverage: It reaches common security and safety language for weaknesses,
+        threats, exploitation, cascading failures, and system risk.
+      semantic_territory_consumed: It mixes capacities, present processes, observer
+        knowledge, uncertainty, probability, severity, causal interaction, and outcome
+        states.
+      conflicts_or_future_limitations: The triplets do not preserve one lexical-status
+        contrast; WRN:211 duplicates active impairment, WRN:212 conflates uncertainty
+        with lexical meaning, and WRN:222 absorbs ORI modality.
+    scores:
+      atomicity: 4
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 50
+    maximum: 80
+  - candidate_id: adverse_affordance
+    title: latent internal susceptibility
+    invariant_candidate: A susceptibility of one reference entity to undergo internally
+      originating degradation that exists without being presently operative under
+      the applicable conditions.
+    analysis:
+      why_it_fits: It makes first-trit 2 the capacity or qualifying relation for the
+        matching canonical WRN:10x transformation while preserving inward scope and
+        latent expression.
+      useful_coverage: It covers vulnerability, exposure, attack surface, propagation
+        paths, contagion routes, fault trees, and failure channels in ordinary safety,
+        software, networks, and mathematics.
+      semantic_territory_consumed: Only the substrate-neutral adverse affordance that
+        enables internal susceptibility. Actual faults, hazards, processes, mechanics,
+        evidence, risk estimates, controls, and modality remain separate.
+      conflicts_or_future_limitations: The technical word pathway must be restricted
+        to adverse enablement rather than physical or communicative route identity,
+        but the invariant and compounds make that boundary explicit.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 10
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 80
+    maximum: 80
+  - candidate_id: adverse_observability
+    title: latent internal fault observability
+    invariant_candidate: The latent internal fault observability by which evidence
+      of an adverse condition at the selected scope can be made available to an observer.
+    analysis:
+      why_it_fits: Detectability of internal faults, target threats, and systemic
+        incidents is important to warning systems and can be expressed at latent inward
+        scope.
+      useful_coverage: It would cover observability, diagnosability, monitor coverage,
+        alarm reach, traceability, and incident visibility.
+      semantic_territory_consumed: It consumes evidence acquisition and interpretation
+        rather than the adverse capacity or relation itself.
+      conflicts_or_future_limitations: DAT owns observations and records, MIN owns
+        recognition and belief, CON owns alert delivery, and harm can be enabled even
+        when completely unobservable.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  - candidate_id: protective_affordance
+    title: latent internal resistance capacity
+    invariant_candidate: The latent internal resistance capacity by which adverse
+      transformation at the selected scope can be prevented from being realized.
+    analysis:
+      why_it_fits: Resistance, shielding, and systemic containability are plausible
+        Warning-related capacities at inward scope and support all three lexical statuses.
+      useful_coverage: It would cover immunity, resilience, shielding, filtering,
+        isolation, containment, and fail-safe behavior.
+      semantic_territory_consumed: It consumes prevention, control, and recovery capacities
+        rather than the adverse affordance that makes harmful transformation possible.
+      conflicts_or_future_limitations: REP owns restoration and resistance, STR owns
+        containment and separation, LOG owns blocking rules, and protective capacity
+        is directionally opposite to vulnerability.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 64
+    maximum: 80
+  - candidate_id: risk_quantification
+    title: latent internal risk relation
+    invariant_candidate: The latent internal risk relation that assigns an evaluated
+      likelihood-and-impact relation to an adverse outcome at the selected scope.
+    analysis:
+      why_it_fits: Risk, likelihood, and impact are natural Warning-family relations
+        and can be scoped inward, toward a target, or across a system.
+      useful_coverage: It would cover risk scores, attack likelihood, expected loss,
+        severity, confidence, and catastrophe forecasts.
+      semantic_territory_consumed: It consumes quantitative or epistemic judgment
+        about adverse outcomes rather than the capacity or pathway that makes them
+        possible.
+      conflicts_or_future_limitations: LOG owns probability and inference, DAT owns
+        measured values, MIN owns confidence, and one risk number usually combines
+        likelihood, severity, time, and context.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 60
+    maximum: 80
+  recommended_candidate_id: adverse_affordance
+  recommendation_reason: Only the adverse-affordance architecture keeps one Warning
+    semantic center, aligns each column with its canonical WRN:1xx transformation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    conditions, processes, mechanics, evidence, observer knowledge, risk estimates,
+    protective controls, and general modality separate.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: WRN:210
+  fixed_generated_fields:
+    canonical_id: WRN:210
+    universal_slot: stable outward relationship
+    family_qualified_transliteration: da·mom
+    local_compact_root: mom
+    formal_carrier: da-nu-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+  current_meaning_rationale: The Phase 2 label follows the persistent independently
+    of current operation outward slot and uses familiar Warning vocabulary such as
+    vulnerability, exposure, attack, risk, and catastrophe.
+  candidates:
+  - candidate_id: phase2_mixed
+    title: known exposure relation
+    invariant_candidate: A stable relation connects a hazard to a target it can affect.
+    analysis:
+      why_it_fits: The Phase 2 label follows the persistent independently of current
+        operation outward slot and uses familiar Warning vocabulary such as vulnerability,
+        exposure, attack, risk, and catastrophe.
+      useful_coverage: It reaches common security and safety language for weaknesses,
+        threats, exploitation, cascading failures, and system risk.
+      semantic_territory_consumed: It mixes capacities, present processes, observer
+        knowledge, uncertainty, probability, severity, causal interaction, and outcome
+        states.
+      conflicts_or_future_limitations: The triplets do not preserve one lexical-status
+        contrast; WRN:211 duplicates active impairment, WRN:212 conflates uncertainty
+        with lexical meaning, and WRN:222 absorbs ORI modality.
+    scores:
+      atomicity: 4
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: adverse_affordance
+    title: persistent source-target exposure relation
+    invariant_candidate: A persistent exposure relation between one distinct hazard
+      source and one reference target that can enable source-to-target impairment
+      under qualifying conditions, independently of whether that relation is presently
+      operative.
+    analysis:
+      why_it_fits: It makes first-trit 2 the capacity or qualifying relation for the
+        matching canonical WRN:11x transformation while preserving outward scope and
+        persistent expression.
+      useful_coverage: It covers vulnerability, exposure, attack surface, propagation
+        paths, contagion routes, fault trees, and failure channels in ordinary safety,
+        software, networks, and mathematics.
+      semantic_territory_consumed: Only the substrate-neutral adverse affordance that
+        enables source-target exposure relation. Actual faults, hazards, processes,
+        mechanics, evidence, risk estimates, controls, and modality remain separate.
+      conflicts_or_future_limitations: The technical word pathway must be restricted
+        to adverse enablement rather than physical or communicative route identity,
+        but the invariant and compounds make that boundary explicit.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: adverse_observability
+    title: persistent target-threat observability
+    invariant_candidate: The persistent target-threat observability by which evidence
+      of an adverse condition at the selected scope can be made available to an observer.
+    analysis:
+      why_it_fits: Detectability of internal faults, target threats, and systemic
+        incidents is important to warning systems and can be expressed at persistent
+        outward scope.
+      useful_coverage: It would cover observability, diagnosability, monitor coverage,
+        alarm reach, traceability, and incident visibility.
+      semantic_territory_consumed: It consumes evidence acquisition and interpretation
+        rather than the adverse capacity or relation itself.
+      conflicts_or_future_limitations: DAT owns observations and records, MIN owns
+        recognition and belief, CON owns alert delivery, and harm can be enabled even
+        when completely unobservable.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  - candidate_id: protective_affordance
+    title: persistent target-shielding capacity
+    invariant_candidate: The persistent target-shielding capacity by which adverse
+      transformation at the selected scope can be prevented from being realized.
+    analysis:
+      why_it_fits: Resistance, shielding, and systemic containability are plausible
+        Warning-related capacities at outward scope and support all three lexical
+        statuses.
+      useful_coverage: It would cover immunity, resilience, shielding, filtering,
+        isolation, containment, and fail-safe behavior.
+      semantic_territory_consumed: It consumes prevention, control, and recovery capacities
+        rather than the adverse affordance that makes harmful transformation possible.
+      conflicts_or_future_limitations: REP owns restoration and resistance, STR owns
+        containment and separation, LOG owns blocking rules, and protective capacity
+        is directionally opposite to vulnerability.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 63
+    maximum: 80
+  - candidate_id: risk_quantification
+    title: persistent target-risk relation
+    invariant_candidate: The persistent target-risk relation that assigns an evaluated
+      likelihood-and-impact relation to an adverse outcome at the selected scope.
+    analysis:
+      why_it_fits: Risk, likelihood, and impact are natural Warning-family relations
+        and can be scoped inward, toward a target, or across a system.
+      useful_coverage: It would cover risk scores, attack likelihood, expected loss,
+        severity, confidence, and catastrophe forecasts.
+      semantic_territory_consumed: It consumes quantitative or epistemic judgment
+        about adverse outcomes rather than the capacity or pathway that makes them
+        possible.
+      conflicts_or_future_limitations: LOG owns probability and inference, DAT owns
+        measured values, MIN owns confidence, and one risk number usually combines
+        likelihood, severity, time, and context.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 60
+    maximum: 80
+  recommended_candidate_id: adverse_affordance
+  recommendation_reason: Only the adverse-affordance architecture keeps one Warning
+    semantic center, aligns each column with its canonical WRN:1xx transformation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    conditions, processes, mechanics, evidence, observer knowledge, risk estimates,
+    protective controls, and general modality separate.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: WRN:211
+  fixed_generated_fields:
+    canonical_id: WRN:211
+    universal_slot: active outward relationship
+    family_qualified_transliteration: da·mok
+    local_compact_root: mok
+    formal_carrier: da-nu-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+  current_meaning_rationale: The Phase 2 label follows the presently operative outward
+    slot and uses familiar Warning vocabulary such as vulnerability, exposure, attack,
+    risk, and catastrophe.
+  candidates:
+  - candidate_id: phase2_mixed
+    title: active attack relation
+    invariant_candidate: A hazard is actively exploiting, damaging, misleading, or
+      corrupting a target.
+    analysis:
+      why_it_fits: The Phase 2 label follows the presently operative outward slot
+        and uses familiar Warning vocabulary such as vulnerability, exposure, attack,
+        risk, and catastrophe.
+      useful_coverage: It reaches common security and safety language for weaknesses,
+        threats, exploitation, cascading failures, and system risk.
+      semantic_territory_consumed: It mixes capacities, present processes, observer
+        knowledge, uncertainty, probability, severity, causal interaction, and outcome
+        states.
+      conflicts_or_future_limitations: The triplets do not preserve one lexical-status
+        contrast; WRN:211 duplicates active impairment, WRN:212 conflates uncertainty
+        with lexical meaning, and WRN:222 absorbs ORI modality.
+    scores:
+      atomicity: 4
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: adverse_affordance
+    title: operative source-target exposure relation
+    invariant_candidate: An exposure relation between one distinct hazard source and
+      one reference target that presently enables that source to cause target impairment
+      under the applicable conditions.
+    analysis:
+      why_it_fits: It makes first-trit 2 the capacity or qualifying relation for the
+        matching canonical WRN:11x transformation while preserving outward scope and
+        operative expression.
+      useful_coverage: It covers vulnerability, exposure, attack surface, propagation
+        paths, contagion routes, fault trees, and failure channels in ordinary safety,
+        software, networks, and mathematics.
+      semantic_territory_consumed: Only the substrate-neutral adverse affordance that
+        enables source-target exposure relation. Actual faults, hazards, processes,
+        mechanics, evidence, risk estimates, controls, and modality remain separate.
+      conflicts_or_future_limitations: The technical word pathway must be restricted
+        to adverse enablement rather than physical or communicative route identity,
+        but the invariant and compounds make that boundary explicit.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: adverse_observability
+    title: operative target-threat observability
+    invariant_candidate: The operative target-threat observability by which evidence
+      of an adverse condition at the selected scope can be made available to an observer.
+    analysis:
+      why_it_fits: Detectability of internal faults, target threats, and systemic
+        incidents is important to warning systems and can be expressed at operative
+        outward scope.
+      useful_coverage: It would cover observability, diagnosability, monitor coverage,
+        alarm reach, traceability, and incident visibility.
+      semantic_territory_consumed: It consumes evidence acquisition and interpretation
+        rather than the adverse capacity or relation itself.
+      conflicts_or_future_limitations: DAT owns observations and records, MIN owns
+        recognition and belief, CON owns alert delivery, and harm can be enabled even
+        when completely unobservable.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  - candidate_id: protective_affordance
+    title: operative target-shielding capacity
+    invariant_candidate: The operative target-shielding capacity by which adverse
+      transformation at the selected scope can be prevented from being realized.
+    analysis:
+      why_it_fits: Resistance, shielding, and systemic containability are plausible
+        Warning-related capacities at outward scope and support all three lexical
+        statuses.
+      useful_coverage: It would cover immunity, resilience, shielding, filtering,
+        isolation, containment, and fail-safe behavior.
+      semantic_territory_consumed: It consumes prevention, control, and recovery capacities
+        rather than the adverse affordance that makes harmful transformation possible.
+      conflicts_or_future_limitations: REP owns restoration and resistance, STR owns
+        containment and separation, LOG owns blocking rules, and protective capacity
+        is directionally opposite to vulnerability.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 63
+    maximum: 80
+  - candidate_id: risk_quantification
+    title: operative target-risk relation
+    invariant_candidate: The operative target-risk relation that assigns an evaluated
+      likelihood-and-impact relation to an adverse outcome at the selected scope.
+    analysis:
+      why_it_fits: Risk, likelihood, and impact are natural Warning-family relations
+        and can be scoped inward, toward a target, or across a system.
+      useful_coverage: It would cover risk scores, attack likelihood, expected loss,
+        severity, confidence, and catastrophe forecasts.
+      semantic_territory_consumed: It consumes quantitative or epistemic judgment
+        about adverse outcomes rather than the capacity or pathway that makes them
+        possible.
+      conflicts_or_future_limitations: LOG owns probability and inference, DAT owns
+        measured values, MIN owns confidence, and one risk number usually combines
+        likelihood, severity, time, and context.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 60
+    maximum: 80
+  recommended_candidate_id: adverse_affordance
+  recommendation_reason: Only the adverse-affordance architecture keeps one Warning
+    semantic center, aligns each column with its canonical WRN:1xx transformation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    conditions, processes, mechanics, evidence, observer knowledge, risk estimates,
+    protective controls, and general modality separate.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: WRN:212
+  fixed_generated_fields:
+    canonical_id: WRN:212
+    universal_slot: unresolved outward relationship
+    family_qualified_transliteration: da·mon
+    local_compact_root: mon
+    formal_carrier: da-nu-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+  current_meaning_rationale: The Phase 2 label follows the existing without present
+    operation outward slot and uses familiar Warning vocabulary such as vulnerability,
+    exposure, attack, risk, and catastrophe.
+  candidates:
+  - candidate_id: phase2_mixed
+    title: uncertain threat relation
+    invariant_candidate: A possible harmful relation between source and target exists
+      but cause, reach, or severity is unresolved.
+    analysis:
+      why_it_fits: The Phase 2 label follows the existing without present operation
+        outward slot and uses familiar Warning vocabulary such as vulnerability, exposure,
+        attack, risk, and catastrophe.
+      useful_coverage: It reaches common security and safety language for weaknesses,
+        threats, exploitation, cascading failures, and system risk.
+      semantic_territory_consumed: It mixes capacities, present processes, observer
+        knowledge, uncertainty, probability, severity, causal interaction, and outcome
+        states.
+      conflicts_or_future_limitations: The triplets do not preserve one lexical-status
+        contrast; WRN:211 duplicates active impairment, WRN:212 conflates uncertainty
+        with lexical meaning, and WRN:222 absorbs ORI modality.
+    scores:
+      atomicity: 4
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 50
+    maximum: 80
+  - candidate_id: adverse_affordance
+    title: latent source-target exposure relation
+    invariant_candidate: An exposure relation between one distinct hazard source and
+      one reference target that exists without presently enabling that source to cause
+      target impairment under the applicable conditions.
+    analysis:
+      why_it_fits: It makes first-trit 2 the capacity or qualifying relation for the
+        matching canonical WRN:11x transformation while preserving outward scope and
+        latent expression.
+      useful_coverage: It covers vulnerability, exposure, attack surface, propagation
+        paths, contagion routes, fault trees, and failure channels in ordinary safety,
+        software, networks, and mathematics.
+      semantic_territory_consumed: Only the substrate-neutral adverse affordance that
+        enables source-target exposure relation. Actual faults, hazards, processes,
+        mechanics, evidence, risk estimates, controls, and modality remain separate.
+      conflicts_or_future_limitations: The technical word pathway must be restricted
+        to adverse enablement rather than physical or communicative route identity,
+        but the invariant and compounds make that boundary explicit.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: adverse_observability
+    title: latent target-threat observability
+    invariant_candidate: The latent target-threat observability by which evidence
+      of an adverse condition at the selected scope can be made available to an observer.
+    analysis:
+      why_it_fits: Detectability of internal faults, target threats, and systemic
+        incidents is important to warning systems and can be expressed at latent outward
+        scope.
+      useful_coverage: It would cover observability, diagnosability, monitor coverage,
+        alarm reach, traceability, and incident visibility.
+      semantic_territory_consumed: It consumes evidence acquisition and interpretation
+        rather than the adverse capacity or relation itself.
+      conflicts_or_future_limitations: DAT owns observations and records, MIN owns
+        recognition and belief, CON owns alert delivery, and harm can be enabled even
+        when completely unobservable.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  - candidate_id: protective_affordance
+    title: latent target-shielding capacity
+    invariant_candidate: The latent target-shielding capacity by which adverse transformation
+      at the selected scope can be prevented from being realized.
+    analysis:
+      why_it_fits: Resistance, shielding, and systemic containability are plausible
+        Warning-related capacities at outward scope and support all three lexical
+        statuses.
+      useful_coverage: It would cover immunity, resilience, shielding, filtering,
+        isolation, containment, and fail-safe behavior.
+      semantic_territory_consumed: It consumes prevention, control, and recovery capacities
+        rather than the adverse affordance that makes harmful transformation possible.
+      conflicts_or_future_limitations: REP owns restoration and resistance, STR owns
+        containment and separation, LOG owns blocking rules, and protective capacity
+        is directionally opposite to vulnerability.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 63
+    maximum: 80
+  - candidate_id: risk_quantification
+    title: latent target-risk relation
+    invariant_candidate: The latent target-risk relation that assigns an evaluated
+      likelihood-and-impact relation to an adverse outcome at the selected scope.
+    analysis:
+      why_it_fits: Risk, likelihood, and impact are natural Warning-family relations
+        and can be scoped inward, toward a target, or across a system.
+      useful_coverage: It would cover risk scores, attack likelihood, expected loss,
+        severity, confidence, and catastrophe forecasts.
+      semantic_territory_consumed: It consumes quantitative or epistemic judgment
+        about adverse outcomes rather than the capacity or pathway that makes them
+        possible.
+      conflicts_or_future_limitations: LOG owns probability and inference, DAT owns
+        measured values, MIN owns confidence, and one risk number usually combines
+        likelihood, severity, time, and context.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 60
+    maximum: 80
+  recommended_candidate_id: adverse_affordance
+  recommendation_reason: Only the adverse-affordance architecture keeps one Warning
+    semantic center, aligns each column with its canonical WRN:1xx transformation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    conditions, processes, mechanics, evidence, observer knowledge, risk estimates,
+    protective controls, and general modality separate.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: WRN:220
+  fixed_generated_fields:
+    canonical_id: WRN:220
+    universal_slot: stable systemic relationship
+    family_qualified_transliteration: da·mim
+    local_compact_root: mim
+    formal_carrier: da-nu-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+  current_meaning_rationale: The Phase 2 label follows the persistent independently
+    of current operation systemic slot and uses familiar Warning vocabulary such as
+    vulnerability, exposure, attack, risk, and catastrophe.
+  candidates:
+  - candidate_id: phase2_mixed
+    title: stable risk structure
+    invariant_candidate: A system has known dependencies through which danger or failure
+      could propagate.
+    analysis:
+      why_it_fits: The Phase 2 label follows the persistent independently of current
+        operation systemic slot and uses familiar Warning vocabulary such as vulnerability,
+        exposure, attack, risk, and catastrophe.
+      useful_coverage: It reaches common security and safety language for weaknesses,
+        threats, exploitation, cascading failures, and system risk.
+      semantic_territory_consumed: It mixes capacities, present processes, observer
+        knowledge, uncertainty, probability, severity, causal interaction, and outcome
+        states.
+      conflicts_or_future_limitations: The triplets do not preserve one lexical-status
+        contrast; WRN:211 duplicates active impairment, WRN:212 conflates uncertainty
+        with lexical meaning, and WRN:222 absorbs ORI modality.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 52
+    maximum: 80
+  - candidate_id: adverse_affordance
+    title: persistent systemic propagation pathway
+    invariant_candidate: A persistent pathway relation across multiple participants
+      in one shared system through which one correlated adverse condition can become
+      distributed, independently of whether that pathway is presently operative.
+    analysis:
+      why_it_fits: It makes first-trit 2 the capacity or qualifying relation for the
+        matching canonical WRN:12x transformation while preserving systemic scope
+        and persistent expression.
+      useful_coverage: It covers vulnerability, exposure, attack surface, propagation
+        paths, contagion routes, fault trees, and failure channels in ordinary safety,
+        software, networks, and mathematics.
+      semantic_territory_consumed: Only the substrate-neutral adverse affordance that
+        enables systemic propagation pathway. Actual faults, hazards, processes, mechanics,
+        evidence, risk estimates, controls, and modality remain separate.
+      conflicts_or_future_limitations: The technical word pathway must be restricted
+        to adverse enablement rather than physical or communicative route identity,
+        but the invariant and compounds make that boundary explicit.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: adverse_observability
+    title: persistent systemic incident observability
+    invariant_candidate: The persistent systemic incident observability by which evidence
+      of an adverse condition at the selected scope can be made available to an observer.
+    analysis:
+      why_it_fits: Detectability of internal faults, target threats, and systemic
+        incidents is important to warning systems and can be expressed at persistent
+        systemic scope.
+      useful_coverage: It would cover observability, diagnosability, monitor coverage,
+        alarm reach, traceability, and incident visibility.
+      semantic_territory_consumed: It consumes evidence acquisition and interpretation
+        rather than the adverse capacity or relation itself.
+      conflicts_or_future_limitations: DAT owns observations and records, MIN owns
+        recognition and belief, CON owns alert delivery, and harm can be enabled even
+        when completely unobservable.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 64
+    maximum: 80
+  - candidate_id: protective_affordance
+    title: persistent systemic containability
+    invariant_candidate: The persistent systemic containability by which adverse transformation
+      at the selected scope can be prevented from being realized.
+    analysis:
+      why_it_fits: Resistance, shielding, and systemic containability are plausible
+        Warning-related capacities at systemic scope and support all three lexical
+        statuses.
+      useful_coverage: It would cover immunity, resilience, shielding, filtering,
+        isolation, containment, and fail-safe behavior.
+      semantic_territory_consumed: It consumes prevention, control, and recovery capacities
+        rather than the adverse affordance that makes harmful transformation possible.
+      conflicts_or_future_limitations: REP owns restoration and resistance, STR owns
+        containment and separation, LOG owns blocking rules, and protective capacity
+        is directionally opposite to vulnerability.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  - candidate_id: risk_quantification
+    title: persistent systemic risk relation
+    invariant_candidate: The persistent systemic risk relation that assigns an evaluated
+      likelihood-and-impact relation to an adverse outcome at the selected scope.
+    analysis:
+      why_it_fits: Risk, likelihood, and impact are natural Warning-family relations
+        and can be scoped inward, toward a target, or across a system.
+      useful_coverage: It would cover risk scores, attack likelihood, expected loss,
+        severity, confidence, and catastrophe forecasts.
+      semantic_territory_consumed: It consumes quantitative or epistemic judgment
+        about adverse outcomes rather than the capacity or pathway that makes them
+        possible.
+      conflicts_or_future_limitations: LOG owns probability and inference, DAT owns
+        measured values, MIN owns confidence, and one risk number usually combines
+        likelihood, severity, time, and context.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 3
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 59
+    maximum: 80
+  recommended_candidate_id: adverse_affordance
+  recommendation_reason: Only the adverse-affordance architecture keeps one Warning
+    semantic center, aligns each column with its canonical WRN:1xx transformation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    conditions, processes, mechanics, evidence, observer knowledge, risk estimates,
+    protective controls, and general modality separate.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: WRN:221
+  fixed_generated_fields:
+    canonical_id: WRN:221
+    universal_slot: active systemic relationship
+    family_qualified_transliteration: da·mik
+    local_compact_root: mik
+    formal_carrier: da-nu-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+  current_meaning_rationale: The Phase 2 label follows the presently operative systemic
+    slot and uses familiar Warning vocabulary such as vulnerability, exposure, attack,
+    risk, and catastrophe.
+  candidates:
+  - candidate_id: phase2_mixed
+    title: cascading risk
+    invariant_candidate: Vulnerabilities or failures are actively interacting across
+      a system and increasing shared danger.
+    analysis:
+      why_it_fits: The Phase 2 label follows the presently operative systemic slot
+        and uses familiar Warning vocabulary such as vulnerability, exposure, attack,
+        risk, and catastrophe.
+      useful_coverage: It reaches common security and safety language for weaknesses,
+        threats, exploitation, cascading failures, and system risk.
+      semantic_territory_consumed: It mixes capacities, present processes, observer
+        knowledge, uncertainty, probability, severity, causal interaction, and outcome
+        states.
+      conflicts_or_future_limitations: The triplets do not preserve one lexical-status
+        contrast; WRN:211 duplicates active impairment, WRN:212 conflates uncertainty
+        with lexical meaning, and WRN:222 absorbs ORI modality.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 52
+    maximum: 80
+  - candidate_id: adverse_affordance
+    title: operative systemic propagation pathway
+    invariant_candidate: A pathway relation across multiple participants in one shared
+      system that presently enables one correlated adverse condition to become distributed
+      among them.
+    analysis:
+      why_it_fits: It makes first-trit 2 the capacity or qualifying relation for the
+        matching canonical WRN:12x transformation while preserving systemic scope
+        and operative expression.
+      useful_coverage: It covers vulnerability, exposure, attack surface, propagation
+        paths, contagion routes, fault trees, and failure channels in ordinary safety,
+        software, networks, and mathematics.
+      semantic_territory_consumed: Only the substrate-neutral adverse affordance that
+        enables systemic propagation pathway. Actual faults, hazards, processes, mechanics,
+        evidence, risk estimates, controls, and modality remain separate.
+      conflicts_or_future_limitations: The technical word pathway must be restricted
+        to adverse enablement rather than physical or communicative route identity,
+        but the invariant and compounds make that boundary explicit.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: adverse_observability
+    title: operative systemic incident observability
+    invariant_candidate: The operative systemic incident observability by which evidence
+      of an adverse condition at the selected scope can be made available to an observer.
+    analysis:
+      why_it_fits: Detectability of internal faults, target threats, and systemic
+        incidents is important to warning systems and can be expressed at operative
+        systemic scope.
+      useful_coverage: It would cover observability, diagnosability, monitor coverage,
+        alarm reach, traceability, and incident visibility.
+      semantic_territory_consumed: It consumes evidence acquisition and interpretation
+        rather than the adverse capacity or relation itself.
+      conflicts_or_future_limitations: DAT owns observations and records, MIN owns
+        recognition and belief, CON owns alert delivery, and harm can be enabled even
+        when completely unobservable.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 64
+    maximum: 80
+  - candidate_id: protective_affordance
+    title: operative systemic containability
+    invariant_candidate: The operative systemic containability by which adverse transformation
+      at the selected scope can be prevented from being realized.
+    analysis:
+      why_it_fits: Resistance, shielding, and systemic containability are plausible
+        Warning-related capacities at systemic scope and support all three lexical
+        statuses.
+      useful_coverage: It would cover immunity, resilience, shielding, filtering,
+        isolation, containment, and fail-safe behavior.
+      semantic_territory_consumed: It consumes prevention, control, and recovery capacities
+        rather than the adverse affordance that makes harmful transformation possible.
+      conflicts_or_future_limitations: REP owns restoration and resistance, STR owns
+        containment and separation, LOG owns blocking rules, and protective capacity
+        is directionally opposite to vulnerability.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  - candidate_id: risk_quantification
+    title: operative systemic risk relation
+    invariant_candidate: The operative systemic risk relation that assigns an evaluated
+      likelihood-and-impact relation to an adverse outcome at the selected scope.
+    analysis:
+      why_it_fits: Risk, likelihood, and impact are natural Warning-family relations
+        and can be scoped inward, toward a target, or across a system.
+      useful_coverage: It would cover risk scores, attack likelihood, expected loss,
+        severity, confidence, and catastrophe forecasts.
+      semantic_territory_consumed: It consumes quantitative or epistemic judgment
+        about adverse outcomes rather than the capacity or pathway that makes them
+        possible.
+      conflicts_or_future_limitations: LOG owns probability and inference, DAT owns
+        measured values, MIN owns confidence, and one risk number usually combines
+        likelihood, severity, time, and context.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 3
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 59
+    maximum: 80
+  recommended_candidate_id: adverse_affordance
+  recommendation_reason: Only the adverse-affordance architecture keeps one Warning
+    semantic center, aligns each column with its canonical WRN:1xx transformation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    conditions, processes, mechanics, evidence, observer knowledge, risk estimates,
+    protective controls, and general modality separate.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: WRN:222
+  fixed_generated_fields:
+    canonical_id: WRN:222
+    universal_slot: unrealized systemic possibility
+    family_qualified_transliteration: da·min
+    local_compact_root: min
+    formal_carrier: da-nu-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+  current_meaning_rationale: The Phase 2 label follows the existing without present
+    operation systemic slot and uses familiar Warning vocabulary such as vulnerability,
+    exposure, attack, risk, and catastrophe.
+  candidates:
+  - candidate_id: phase2_mixed
+    title: catastrophe possibility
+    invariant_candidate: A coherent system-level failure or corruption state could
+      occur but has not been realized.
+    analysis:
+      why_it_fits: The Phase 2 label follows the existing without present operation
+        systemic slot and uses familiar Warning vocabulary such as vulnerability,
+        exposure, attack, risk, and catastrophe.
+      useful_coverage: It reaches common security and safety language for weaknesses,
+        threats, exploitation, cascading failures, and system risk.
+      semantic_territory_consumed: It mixes capacities, present processes, observer
+        knowledge, uncertainty, probability, severity, causal interaction, and outcome
+        states.
+      conflicts_or_future_limitations: The triplets do not preserve one lexical-status
+        contrast; WRN:211 duplicates active impairment, WRN:212 conflates uncertainty
+        with lexical meaning, and WRN:222 absorbs ORI modality.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: adverse_affordance
+    title: latent systemic propagation pathway
+    invariant_candidate: A pathway relation across multiple participants in one shared
+      system through which one correlated adverse condition can become distributed
+      but that is not presently operative.
+    analysis:
+      why_it_fits: It makes first-trit 2 the capacity or qualifying relation for the
+        matching canonical WRN:12x transformation while preserving systemic scope
+        and latent expression.
+      useful_coverage: It covers vulnerability, exposure, attack surface, propagation
+        paths, contagion routes, fault trees, and failure channels in ordinary safety,
+        software, networks, and mathematics.
+      semantic_territory_consumed: Only the substrate-neutral adverse affordance that
+        enables systemic propagation pathway. Actual faults, hazards, processes, mechanics,
+        evidence, risk estimates, controls, and modality remain separate.
+      conflicts_or_future_limitations: The technical word pathway must be restricted
+        to adverse enablement rather than physical or communicative route identity,
+        but the invariant and compounds make that boundary explicit.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: adverse_observability
+    title: latent systemic incident observability
+    invariant_candidate: The latent systemic incident observability by which evidence
+      of an adverse condition at the selected scope can be made available to an observer.
+    analysis:
+      why_it_fits: Detectability of internal faults, target threats, and systemic
+        incidents is important to warning systems and can be expressed at latent systemic
+        scope.
+      useful_coverage: It would cover observability, diagnosability, monitor coverage,
+        alarm reach, traceability, and incident visibility.
+      semantic_territory_consumed: It consumes evidence acquisition and interpretation
+        rather than the adverse capacity or relation itself.
+      conflicts_or_future_limitations: DAT owns observations and records, MIN owns
+        recognition and belief, CON owns alert delivery, and harm can be enabled even
+        when completely unobservable.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 64
+    maximum: 80
+  - candidate_id: protective_affordance
+    title: latent systemic containability
+    invariant_candidate: The latent systemic containability by which adverse transformation
+      at the selected scope can be prevented from being realized.
+    analysis:
+      why_it_fits: Resistance, shielding, and systemic containability are plausible
+        Warning-related capacities at systemic scope and support all three lexical
+        statuses.
+      useful_coverage: It would cover immunity, resilience, shielding, filtering,
+        isolation, containment, and fail-safe behavior.
+      semantic_territory_consumed: It consumes prevention, control, and recovery capacities
+        rather than the adverse affordance that makes harmful transformation possible.
+      conflicts_or_future_limitations: REP owns restoration and resistance, STR owns
+        containment and separation, LOG owns blocking rules, and protective capacity
+        is directionally opposite to vulnerability.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  - candidate_id: risk_quantification
+    title: latent systemic risk relation
+    invariant_candidate: The latent systemic risk relation that assigns an evaluated
+      likelihood-and-impact relation to an adverse outcome at the selected scope.
+    analysis:
+      why_it_fits: Risk, likelihood, and impact are natural Warning-family relations
+        and can be scoped inward, toward a target, or across a system.
+      useful_coverage: It would cover risk scores, attack likelihood, expected loss,
+        severity, confidence, and catastrophe forecasts.
+      semantic_territory_consumed: It consumes quantitative or epistemic judgment
+        about adverse outcomes rather than the capacity or pathway that makes them
+        possible.
+      conflicts_or_future_limitations: LOG owns probability and inference, DAT owns
+        measured values, MIN owns confidence, and one risk number usually combines
+        likelihood, severity, time, and context.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 3
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 59
+    maximum: 80
+  recommended_candidate_id: adverse_affordance
+  recommendation_reason: Only the adverse-affordance architecture keeps one Warning
+    semantic center, aligns each column with its canonical WRN:1xx transformation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    conditions, processes, mechanics, evidence, observer knowledge, risk estimates,
+    protective controls, and general modality separate.
+  confidence: 0.97
+  canonicalized: true

@@ -1,0 +1,1412 @@
+---
+metadata:
+  title: MIN:200–222 adversarial candidate scoring
+  status: review_complete_pending_preapproval_validation
+  architecture_version: '1.0'
+  candidate_count_per_root: 5
+  scored_categories:
+  - atomicity
+  - address_fit
+  - family_fit
+  - neighbor_separation
+  - cross_family_separation
+  - compound_usefulness
+  - everyday_language_coverage
+  - technical_coverage
+  maximum_score: 80
+  current_phase2_meanings_are_replaceable: true
+  generated_fields_changed: false
+roots:
+- canonical_id: MIN:200
+  fixed_generated_fields:
+    canonical_id: MIN:200
+    universal_slot: stable inward capacity
+    family_qualified_transliteration: si·mam
+    local_compact_root: mam
+    formal_carrier: si-nu-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+  current_meaning_rationale: "“Stable competence” was probably chosen because stable
+    + inward capacity + Mind suggests a dependable cognitive ability. Its definition
+    combines understanding, remembering, learning, and deciding, which are different
+    processes with different success conditions."
+  candidates:
+  - candidate_id: current_phase2
+    title: enduring attentional capacity
+    invariant_candidate: A persistent capacity of a cognizer to allocate cognitive
+      processing selectively.
+    analysis:
+      why_it_fits: It follows the broad stable inward capacity label and names familiar
+        Mind vocabulary.
+      useful_coverage: It covers recognizable English cognitive concepts.
+      semantic_territory_consumed: It consumes multiple capacities, relations, processes,
+        or epistemic states.
+      conflicts_or_future_limitations: "“Stable competence” was probably chosen because
+        stable + inward capacity + Mind suggests a dependable cognitive ability. Its
+        definition combines understanding, remembering, learning, and deciding, which
+        are different processes with different success conditions."
+    scores:
+      atomicity: 3
+      address_fit: 9
+      family_fit: 10
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 6
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total: 55
+    maximum: 80
+  - candidate_id: attention_allocation
+    title: enduring attentional capacity
+    invariant_candidate: A persistent capacity of a cognizer to allocate cognitive
+      processing selectively.
+    analysis:
+      why_it_fits: It maps first-trit capacity/relation to one cognitive-allocation
+        center, uses source/target/systemic scope exactly, and follows the third-trit
+        stable/active/dormant-or-unresolved distinctions.
+      useful_coverage: Attention capacity, available cognitive bandwidth, focus, monitoring,
+        salience, vigilance, target prioritization, and joint attention in ordinary
+        and technical settings.
+      semantic_territory_consumed: Only selective allocation of cognitive processing
+        and the resulting attention relations.
+      conflicts_or_future_limitations: It intentionally leaves consciousness, perception,
+        representation, learning, inference, belief, goals, communication, and scheduler
+        implementation to other roots or compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: representational_grounding
+    title: enduring representational capacity
+    invariant_candidate: A persistent capacity of a cognizer to bear cognitive representations.
+    analysis:
+      why_it_fits: Representational capacity, aboutness, and inter-model alignment
+        form a plausible extension of canonical MIN:0xx.
+      useful_coverage: Intentionality, grounding, reference, representation-bearing,
+        common models, and technical agent semantics.
+      semantic_territory_consumed: Relations between cognizers, representations, targets,
+        and other cognizers' representations.
+      conflicts_or_future_limitations: It comes close to duplicating canonical MIN:0xx
+        representation ownership and can collide with LOG reference, DAT symbols,
+        and ORI aboutness.
+    scores:
+      atomicity: 10
+      address_fit: 9
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 8
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 74
+    maximum: 80
+  - candidate_id: epistemic_stance
+    title: enduring epistemic competence
+    invariant_candidate: A persistent capacity of a cognizer to form justified conclusions.
+    analysis:
+      why_it_fits: Knowledge, belief, doubt, competence, and agreement are central
+        cognitive relations.
+      useful_coverage: Know, believe, trust, doubt, justify, agree, consensus, and
+        common knowledge.
+      semantic_territory_consumed: Commitment and justification relations between
+        cognizers and propositions.
+      conflicts_or_future_limitations: It collides heavily with LOG truth/proof, ORI
+        reality/modality, and CON agreement; nonpropositional attention and imagery
+        are excluded.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  - candidate_id: executive_control
+    title: enduring executive-control capacity
+    invariant_candidate: A persistent capacity of a cognizer to select and regulate
+      cognitive operations.
+    analysis:
+      why_it_fits: Executive control naturally has capacity, goal-directed, and coordinated
+        forms.
+      useful_coverage: Choose, regulate, inhibit, pursue goals, coordinate agents,
+        plan, and schedule cognitive work.
+      semantic_territory_consumed: Control of cognitive operations and goal-directed
+        organization.
+      conflicts_or_future_limitations: It collides with CRE goals/plans, CON coordination,
+        STR control structure, and LOG decision rules; the target and systemic triplets
+        cease to be purely cognitive.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  recommended_candidate_id: attention_allocation
+  recommendation_reason: Attention allocation uniquely produces a natural capacity/target-relation/systemic-relation
+    architecture, fills the gap intentionally excluded from canonical MIN:0xx and
+    MIN:1xx, and avoids treating truth, belief, communication, goals, or storage as
+    Mind atoms.
+  confidence: 0.98
+  canonicalized: false
+- canonical_id: MIN:201
+  fixed_generated_fields:
+    canonical_id: MIN:201
+    universal_slot: active inward capacity
+    family_qualified_transliteration: si·mak
+    local_compact_root: mak
+    formal_carrier: si-nu-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+  current_meaning_rationale: "“Expressed focus” was selected from active inward capacity,
+    but the definition merges concentration, recall, imagination, and problem solving.
+    Focus on a target is a relationship, whereas this slot must name the source's
+    currently available capacity."
+  candidates:
+  - candidate_id: current_phase2
+    title: available attentional capacity
+    invariant_candidate: A cognizer's capacity to allocate cognitive processing selectively
+      that is presently available for exercise.
+    analysis:
+      why_it_fits: It follows the broad active inward capacity label and names familiar
+        Mind vocabulary.
+      useful_coverage: It covers recognizable English cognitive concepts.
+      semantic_territory_consumed: It consumes multiple capacities, relations, processes,
+        or epistemic states.
+      conflicts_or_future_limitations: "“Expressed focus” was selected from active
+        inward capacity, but the definition merges concentration, recall, imagination,
+        and problem solving. Focus on a target is a relationship, whereas this slot
+        must name the source's currently available capacity."
+    scores:
+      atomicity: 3
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 5
+      cross_family_separation: 7
+      compound_usefulness: 6
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total: 56
+    maximum: 80
+  - candidate_id: attention_allocation
+    title: available attentional capacity
+    invariant_candidate: A cognizer's capacity to allocate cognitive processing selectively
+      that is presently available for exercise.
+    analysis:
+      why_it_fits: It maps first-trit capacity/relation to one cognitive-allocation
+        center, uses source/target/systemic scope exactly, and follows the third-trit
+        stable/active/dormant-or-unresolved distinctions.
+      useful_coverage: Attention capacity, available cognitive bandwidth, focus, monitoring,
+        salience, vigilance, target prioritization, and joint attention in ordinary
+        and technical settings.
+      semantic_territory_consumed: Only selective allocation of cognitive processing
+        and the resulting attention relations.
+      conflicts_or_future_limitations: It intentionally leaves consciousness, perception,
+        representation, learning, inference, belief, goals, communication, and scheduler
+        implementation to other roots or compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: representational_grounding
+    title: available representational capacity
+    invariant_candidate: A cognizer's capacity to bear cognitive representations that
+      is presently available for exercise.
+    analysis:
+      why_it_fits: Representational capacity, aboutness, and inter-model alignment
+        form a plausible extension of canonical MIN:0xx.
+      useful_coverage: Intentionality, grounding, reference, representation-bearing,
+        common models, and technical agent semantics.
+      semantic_territory_consumed: Relations between cognizers, representations, targets,
+        and other cognizers' representations.
+      conflicts_or_future_limitations: It comes close to duplicating canonical MIN:0xx
+        representation ownership and can collide with LOG reference, DAT symbols,
+        and ORI aboutness.
+    scores:
+      atomicity: 10
+      address_fit: 9
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 8
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 74
+    maximum: 80
+  - candidate_id: epistemic_stance
+    title: available epistemic competence
+    invariant_candidate: A cognizer's capacity to form justified conclusions that
+      is presently available for exercise.
+    analysis:
+      why_it_fits: Knowledge, belief, doubt, competence, and agreement are central
+        cognitive relations.
+      useful_coverage: Know, believe, trust, doubt, justify, agree, consensus, and
+        common knowledge.
+      semantic_territory_consumed: Commitment and justification relations between
+        cognizers and propositions.
+      conflicts_or_future_limitations: It collides heavily with LOG truth/proof, ORI
+        reality/modality, and CON agreement; nonpropositional attention and imagery
+        are excluded.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  - candidate_id: executive_control
+    title: available executive control
+    invariant_candidate: A cognizer's capacity to select and regulate cognitive operations
+      that is presently available for exercise.
+    analysis:
+      why_it_fits: Executive control naturally has capacity, goal-directed, and coordinated
+        forms.
+      useful_coverage: Choose, regulate, inhibit, pursue goals, coordinate agents,
+        plan, and schedule cognitive work.
+      semantic_territory_consumed: Control of cognitive operations and goal-directed
+        organization.
+      conflicts_or_future_limitations: It collides with CRE goals/plans, CON coordination,
+        STR control structure, and LOG decision rules; the target and systemic triplets
+        cease to be purely cognitive.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  recommended_candidate_id: attention_allocation
+  recommendation_reason: Attention allocation uniquely produces a natural capacity/target-relation/systemic-relation
+    architecture, fills the gap intentionally excluded from canonical MIN:0xx and
+    MIN:1xx, and avoids treating truth, belief, communication, goals, or storage as
+    Mind atoms.
+  confidence: 0.98
+  canonicalized: false
+- canonical_id: MIN:202
+  fixed_generated_fields:
+    canonical_id: MIN:202
+    universal_slot: dormant inward capacity
+    family_qualified_transliteration: si·man
+    local_compact_root: man
+    formal_carrier: si-nu-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+  current_meaning_rationale: "“Latent aptitude” correctly recognizes dormant inward
+    capacity, but it narrows the capacity to learning or understanding and then mixes
+    undeveloped, inaccessible, and unexpressed conditions. A latent attention capacity
+    supplies one exact center."
+  candidates:
+  - candidate_id: current_phase2
+    title: latent attentional capacity
+    invariant_candidate: A cognizer's capacity to allocate cognitive processing selectively
+      that exists without being presently available for exercise.
+    analysis:
+      why_it_fits: It follows the broad dormant inward capacity label and names familiar
+        Mind vocabulary.
+      useful_coverage: It covers recognizable English cognitive concepts.
+      semantic_territory_consumed: It consumes multiple capacities, relations, processes,
+        or epistemic states.
+      conflicts_or_future_limitations: "“Latent aptitude” correctly recognizes dormant
+        inward capacity, but it narrows the capacity to learning or understanding
+        and then mixes undeveloped, inaccessible, and unexpressed conditions. A latent
+        attention capacity supplies one exact center."
+    scores:
+      atomicity: 5
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 6
+      cross_family_separation: 6
+      compound_usefulness: 7
+      everyday_language_coverage: 9
+      technical_coverage: 7
+    total: 58
+    maximum: 80
+  - candidate_id: attention_allocation
+    title: latent attentional capacity
+    invariant_candidate: A cognizer's capacity to allocate cognitive processing selectively
+      that exists without being presently available for exercise.
+    analysis:
+      why_it_fits: It maps first-trit capacity/relation to one cognitive-allocation
+        center, uses source/target/systemic scope exactly, and follows the third-trit
+        stable/active/dormant-or-unresolved distinctions.
+      useful_coverage: Attention capacity, available cognitive bandwidth, focus, monitoring,
+        salience, vigilance, target prioritization, and joint attention in ordinary
+        and technical settings.
+      semantic_territory_consumed: Only selective allocation of cognitive processing
+        and the resulting attention relations.
+      conflicts_or_future_limitations: It intentionally leaves consciousness, perception,
+        representation, learning, inference, belief, goals, communication, and scheduler
+        implementation to other roots or compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: representational_grounding
+    title: latent representational capacity
+    invariant_candidate: A cognizer's capacity to bear cognitive representations that
+      exists without being presently available for exercise.
+    analysis:
+      why_it_fits: Representational capacity, aboutness, and inter-model alignment
+        form a plausible extension of canonical MIN:0xx.
+      useful_coverage: Intentionality, grounding, reference, representation-bearing,
+        common models, and technical agent semantics.
+      semantic_territory_consumed: Relations between cognizers, representations, targets,
+        and other cognizers' representations.
+      conflicts_or_future_limitations: It comes close to duplicating canonical MIN:0xx
+        representation ownership and can collide with LOG reference, DAT symbols,
+        and ORI aboutness.
+    scores:
+      atomicity: 10
+      address_fit: 9
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 8
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 74
+    maximum: 80
+  - candidate_id: epistemic_stance
+    title: latent epistemic competence
+    invariant_candidate: A cognizer's capacity to form justified conclusions that
+      exists without being presently available for exercise.
+    analysis:
+      why_it_fits: Knowledge, belief, doubt, competence, and agreement are central
+        cognitive relations.
+      useful_coverage: Know, believe, trust, doubt, justify, agree, consensus, and
+        common knowledge.
+      semantic_territory_consumed: Commitment and justification relations between
+        cognizers and propositions.
+      conflicts_or_future_limitations: It collides heavily with LOG truth/proof, ORI
+        reality/modality, and CON agreement; nonpropositional attention and imagery
+        are excluded.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  - candidate_id: executive_control
+    title: latent executive-control capacity
+    invariant_candidate: A cognizer's capacity to select and regulate cognitive operations
+      that exists without being presently available for exercise.
+    analysis:
+      why_it_fits: Executive control naturally has capacity, goal-directed, and coordinated
+        forms.
+      useful_coverage: Choose, regulate, inhibit, pursue goals, coordinate agents,
+        plan, and schedule cognitive work.
+      semantic_territory_consumed: Control of cognitive operations and goal-directed
+        organization.
+      conflicts_or_future_limitations: It collides with CRE goals/plans, CON coordination,
+        STR control structure, and LOG decision rules; the target and systemic triplets
+        cease to be purely cognitive.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  recommended_candidate_id: attention_allocation
+  recommendation_reason: Attention allocation uniquely produces a natural capacity/target-relation/systemic-relation
+    architecture, fills the gap intentionally excluded from canonical MIN:0xx and
+    MIN:1xx, and avoids treating truth, belief, communication, goals, or storage as
+    Mind atoms.
+  confidence: 0.98
+  canonicalized: false
+- canonical_id: MIN:210
+  fixed_generated_fields:
+    canonical_id: MIN:210
+    universal_slot: stable outward relationship
+    family_qualified_transliteration: si·mom
+    local_compact_root: mom
+    formal_carrier: si-nu-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+  current_meaning_rationale: "“Settled belief relation” was chosen because stable
+    + outward relationship + Mind suggests a lasting cognitive stance toward a target.
+    The definition combines interpretation, recognition, and belief, creating collisions
+    with LOG, ORI, and canonical representation roots."
+  candidates:
+  - candidate_id: current_phase2
+    title: established target-attention relation
+    invariant_candidate: An established relation in which a cognizer's cognitive processing
+      is preferentially directed toward a distinct target.
+    analysis:
+      why_it_fits: It follows the broad stable outward relationship label and names
+        familiar Mind vocabulary.
+      useful_coverage: It covers recognizable English cognitive concepts.
+      semantic_territory_consumed: It consumes multiple capacities, relations, processes,
+        or epistemic states.
+      conflicts_or_future_limitations: "“Settled belief relation” was chosen because
+        stable + outward relationship + Mind suggests a lasting cognitive stance toward
+        a target. The definition combines interpretation, recognition, and belief,
+        creating collisions with LOG, ORI, and canonical representation roots."
+    scores:
+      atomicity: 4
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total: 56
+    maximum: 80
+  - candidate_id: attention_allocation
+    title: established target-attention relation
+    invariant_candidate: An established relation in which a cognizer's cognitive processing
+      is preferentially directed toward a distinct target.
+    analysis:
+      why_it_fits: It maps first-trit capacity/relation to one cognitive-allocation
+        center, uses source/target/systemic scope exactly, and follows the third-trit
+        stable/active/dormant-or-unresolved distinctions.
+      useful_coverage: Attention capacity, available cognitive bandwidth, focus, monitoring,
+        salience, vigilance, target prioritization, and joint attention in ordinary
+        and technical settings.
+      semantic_territory_consumed: Only selective allocation of cognitive processing
+        and the resulting attention relations.
+      conflicts_or_future_limitations: It intentionally leaves consciousness, perception,
+        representation, learning, inference, belief, goals, communication, and scheduler
+        implementation to other roots or compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: representational_grounding
+    title: established cognitive-reference relation
+    invariant_candidate: An established relation in which a cognizer's representation
+      is about a distinct target.
+    analysis:
+      why_it_fits: Representational capacity, aboutness, and inter-model alignment
+        form a plausible extension of canonical MIN:0xx.
+      useful_coverage: Intentionality, grounding, reference, representation-bearing,
+        common models, and technical agent semantics.
+      semantic_territory_consumed: Relations between cognizers, representations, targets,
+        and other cognizers' representations.
+      conflicts_or_future_limitations: It comes close to duplicating canonical MIN:0xx
+        representation ownership and can collide with LOG reference, DAT symbols,
+        and ORI aboutness.
+    scores:
+      atomicity: 10
+      address_fit: 9
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 8
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 74
+    maximum: 80
+  - candidate_id: epistemic_stance
+    title: settled belief commitment
+    invariant_candidate: An established relation in which a cognizer is epistemically
+      committed to a proposition about a distinct target.
+    analysis:
+      why_it_fits: Knowledge, belief, doubt, competence, and agreement are central
+        cognitive relations.
+      useful_coverage: Know, believe, trust, doubt, justify, agree, consensus, and
+        common knowledge.
+      semantic_territory_consumed: Commitment and justification relations between
+        cognizers and propositions.
+      conflicts_or_future_limitations: It collides heavily with LOG truth/proof, ORI
+        reality/modality, and CON agreement; nonpropositional attention and imagery
+        are excluded.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  - candidate_id: executive_control
+    title: established goal orientation
+    invariant_candidate: An established relation in which a cognizer treats a distinct
+      target as an objective of cognitive control.
+    analysis:
+      why_it_fits: Executive control naturally has capacity, goal-directed, and coordinated
+        forms.
+      useful_coverage: Choose, regulate, inhibit, pursue goals, coordinate agents,
+        plan, and schedule cognitive work.
+      semantic_territory_consumed: Control of cognitive operations and goal-directed
+        organization.
+      conflicts_or_future_limitations: It collides with CRE goals/plans, CON coordination,
+        STR control structure, and LOG decision rules; the target and systemic triplets
+        cease to be purely cognitive.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  recommended_candidate_id: attention_allocation
+  recommendation_reason: Attention allocation uniquely produces a natural capacity/target-relation/systemic-relation
+    architecture, fills the gap intentionally excluded from canonical MIN:0xx and
+    MIN:1xx, and avoids treating truth, belief, communication, goals, or storage as
+    Mind atoms.
+  confidence: 0.98
+  canonicalized: false
+- canonical_id: MIN:211
+  fixed_generated_fields:
+    canonical_id: MIN:211
+    universal_slot: active outward relationship
+    family_qualified_transliteration: si·mok
+    local_compact_root: mok
+    formal_carrier: si-nu-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+  current_meaning_rationale: "“Active attention relation” is the strongest current
+    title, but its definition dilutes attention with interpreting, trusting, doubting,
+    and evaluating. Those operations can occur without preferential processing and
+    bring LOG/ORI collisions into the atom."
+  candidates:
+  - candidate_id: current_phase2
+    title: active target attention
+    invariant_candidate: A relation in which a cognizer's cognitive processing is
+      presently preferentially directed toward a distinct target.
+    analysis:
+      why_it_fits: It follows the broad active outward relationship label and names
+        familiar Mind vocabulary.
+      useful_coverage: It covers recognizable English cognitive concepts.
+      semantic_territory_consumed: It consumes multiple capacities, relations, processes,
+        or epistemic states.
+      conflicts_or_future_limitations: "“Active attention relation” is the strongest
+        current title, but its definition dilutes attention with interpreting, trusting,
+        doubting, and evaluating. Those operations can occur without preferential
+        processing and bring LOG/ORI collisions into the atom."
+    scores:
+      atomicity: 3
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 7
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 59
+    maximum: 80
+  - candidate_id: attention_allocation
+    title: active target attention
+    invariant_candidate: A relation in which a cognizer's cognitive processing is
+      presently preferentially directed toward a distinct target.
+    analysis:
+      why_it_fits: It maps first-trit capacity/relation to one cognitive-allocation
+        center, uses source/target/systemic scope exactly, and follows the third-trit
+        stable/active/dormant-or-unresolved distinctions.
+      useful_coverage: Attention capacity, available cognitive bandwidth, focus, monitoring,
+        salience, vigilance, target prioritization, and joint attention in ordinary
+        and technical settings.
+      semantic_territory_consumed: Only selective allocation of cognitive processing
+        and the resulting attention relations.
+      conflicts_or_future_limitations: It intentionally leaves consciousness, perception,
+        representation, learning, inference, belief, goals, communication, and scheduler
+        implementation to other roots or compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: representational_grounding
+    title: active cognitive-reference relation
+    invariant_candidate: A relation in which a cognizer's representation is presently
+      about a distinct target.
+    analysis:
+      why_it_fits: Representational capacity, aboutness, and inter-model alignment
+        form a plausible extension of canonical MIN:0xx.
+      useful_coverage: Intentionality, grounding, reference, representation-bearing,
+        common models, and technical agent semantics.
+      semantic_territory_consumed: Relations between cognizers, representations, targets,
+        and other cognizers' representations.
+      conflicts_or_future_limitations: It comes close to duplicating canonical MIN:0xx
+        representation ownership and can collide with LOG reference, DAT symbols,
+        and ORI aboutness.
+    scores:
+      atomicity: 10
+      address_fit: 9
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 8
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 74
+    maximum: 80
+  - candidate_id: epistemic_stance
+    title: active belief engagement
+    invariant_candidate: A relation in which a cognizer is presently entertaining
+      an epistemic commitment about a distinct target.
+    analysis:
+      why_it_fits: Knowledge, belief, doubt, competence, and agreement are central
+        cognitive relations.
+      useful_coverage: Know, believe, trust, doubt, justify, agree, consensus, and
+        common knowledge.
+      semantic_territory_consumed: Commitment and justification relations between
+        cognizers and propositions.
+      conflicts_or_future_limitations: It collides heavily with LOG truth/proof, ORI
+        reality/modality, and CON agreement; nonpropositional attention and imagery
+        are excluded.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  - candidate_id: executive_control
+    title: active goal orientation
+    invariant_candidate: A relation in which a cognizer is presently treating a distinct
+      target as an objective of cognitive control.
+    analysis:
+      why_it_fits: Executive control naturally has capacity, goal-directed, and coordinated
+        forms.
+      useful_coverage: Choose, regulate, inhibit, pursue goals, coordinate agents,
+        plan, and schedule cognitive work.
+      semantic_territory_consumed: Control of cognitive operations and goal-directed
+        organization.
+      conflicts_or_future_limitations: It collides with CRE goals/plans, CON coordination,
+        STR control structure, and LOG decision rules; the target and systemic triplets
+        cease to be purely cognitive.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  recommended_candidate_id: attention_allocation
+  recommendation_reason: Attention allocation uniquely produces a natural capacity/target-relation/systemic-relation
+    architecture, fills the gap intentionally excluded from canonical MIN:0xx and
+    MIN:1xx, and avoids treating truth, belief, communication, goals, or storage as
+    Mind atoms.
+  confidence: 0.98
+  canonicalized: false
+- canonical_id: MIN:212
+  fixed_generated_fields:
+    canonical_id: MIN:212
+    universal_slot: unresolved outward relationship
+    family_qualified_transliteration: si·mon
+    local_compact_root: mon
+    formal_carrier: si-nu-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+  current_meaning_rationale: "“Uncertain interpretation” follows unresolved outward
+    relationship, but it selects uncertainty about a belief or understanding rather
+    than an unresolved cognitive relation. That collides with LOG/ORI uncertainty
+    and breaks the attention axis already latent in MIN:211."
+  candidates:
+  - candidate_id: current_phase2
+    title: unresolved target-attention relation
+    invariant_candidate: An unresolved attentional relation between a cognizer and
+      a distinct target whose receipt of preferential cognitive processing is undetermined.
+    analysis:
+      why_it_fits: It follows the broad unresolved outward relationship label and
+        names familiar Mind vocabulary.
+      useful_coverage: It covers recognizable English cognitive concepts.
+      semantic_territory_consumed: It consumes multiple capacities, relations, processes,
+        or epistemic states.
+      conflicts_or_future_limitations: "“Uncertain interpretation” follows unresolved
+        outward relationship, but it selects uncertainty about a belief or understanding
+        rather than an unresolved cognitive relation. That collides with LOG/ORI uncertainty
+        and breaks the attention axis already latent in MIN:211."
+    scores:
+      atomicity: 5
+      address_fit: 10
+      family_fit: 9
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total: 58
+    maximum: 80
+  - candidate_id: attention_allocation
+    title: unresolved target-attention relation
+    invariant_candidate: An unresolved attentional relation between a cognizer and
+      a distinct target whose receipt of preferential cognitive processing is undetermined.
+    analysis:
+      why_it_fits: It maps first-trit capacity/relation to one cognitive-allocation
+        center, uses source/target/systemic scope exactly, and follows the third-trit
+        stable/active/dormant-or-unresolved distinctions.
+      useful_coverage: Attention capacity, available cognitive bandwidth, focus, monitoring,
+        salience, vigilance, target prioritization, and joint attention in ordinary
+        and technical settings.
+      semantic_territory_consumed: Only selective allocation of cognitive processing
+        and the resulting attention relations.
+      conflicts_or_future_limitations: It intentionally leaves consciousness, perception,
+        representation, learning, inference, belief, goals, communication, and scheduler
+        implementation to other roots or compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: representational_grounding
+    title: unresolved cognitive-reference relation
+    invariant_candidate: Whether a cognizer's representation is about a distinct target
+      is unresolved.
+    analysis:
+      why_it_fits: Representational capacity, aboutness, and inter-model alignment
+        form a plausible extension of canonical MIN:0xx.
+      useful_coverage: Intentionality, grounding, reference, representation-bearing,
+        common models, and technical agent semantics.
+      semantic_territory_consumed: Relations between cognizers, representations, targets,
+        and other cognizers' representations.
+      conflicts_or_future_limitations: It comes close to duplicating canonical MIN:0xx
+        representation ownership and can collide with LOG reference, DAT symbols,
+        and ORI aboutness.
+    scores:
+      atomicity: 10
+      address_fit: 9
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 8
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 74
+    maximum: 80
+  - candidate_id: epistemic_stance
+    title: unresolved belief commitment
+    invariant_candidate: Whether a cognizer is epistemically committed to a proposition
+      about a distinct target is unresolved.
+    analysis:
+      why_it_fits: Knowledge, belief, doubt, competence, and agreement are central
+        cognitive relations.
+      useful_coverage: Know, believe, trust, doubt, justify, agree, consensus, and
+        common knowledge.
+      semantic_territory_consumed: Commitment and justification relations between
+        cognizers and propositions.
+      conflicts_or_future_limitations: It collides heavily with LOG truth/proof, ORI
+        reality/modality, and CON agreement; nonpropositional attention and imagery
+        are excluded.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  - candidate_id: executive_control
+    title: unresolved goal orientation
+    invariant_candidate: Whether a cognizer treats a distinct target as an objective
+      of cognitive control is unresolved.
+    analysis:
+      why_it_fits: Executive control naturally has capacity, goal-directed, and coordinated
+        forms.
+      useful_coverage: Choose, regulate, inhibit, pursue goals, coordinate agents,
+        plan, and schedule cognitive work.
+      semantic_territory_consumed: Control of cognitive operations and goal-directed
+        organization.
+      conflicts_or_future_limitations: It collides with CRE goals/plans, CON coordination,
+        STR control structure, and LOG decision rules; the target and systemic triplets
+        cease to be purely cognitive.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  recommended_candidate_id: attention_allocation
+  recommendation_reason: Attention allocation uniquely produces a natural capacity/target-relation/systemic-relation
+    architecture, fills the gap intentionally excluded from canonical MIN:0xx and
+    MIN:1xx, and avoids treating truth, belief, communication, goals, or storage as
+    Mind atoms.
+  confidence: 0.98
+  canonicalized: false
+- canonical_id: MIN:220
+  fixed_generated_fields:
+    canonical_id: MIN:220
+    universal_slot: stable systemic relationship
+    family_qualified_transliteration: si·mim
+    local_compact_root: mim
+    formal_carrier: si-nu-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+  current_meaning_rationale: "“Coherent worldview” was chosen because stable + systemic
+    relationship + Mind suggests an organized mental system. It ambiguously mixes
+    relations within concepts with relations shared across minds and imports coherence,
+    belief, and worldview without selecting a participant structure."
+  candidates:
+  - candidate_id: current_phase2
+    title: established joint-attention relation
+    invariant_candidate: A stable attentional relation among multiple cognizers that
+      gives one target shared cognitive priority.
+    analysis:
+      why_it_fits: It follows the broad stable systemic relationship label and names
+        familiar Mind vocabulary.
+      useful_coverage: It covers recognizable English cognitive concepts.
+      semantic_territory_consumed: It consumes multiple capacities, relations, processes,
+        or epistemic states.
+      conflicts_or_future_limitations: "“Coherent worldview” was chosen because stable
+        + systemic relationship + Mind suggests an organized mental system. It ambiguously
+        mixes relations within concepts with relations shared across minds and imports
+        coherence, belief, and worldview without selecting a participant structure."
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: attention_allocation
+    title: established joint-attention relation
+    invariant_candidate: A stable attentional relation among multiple cognizers that
+      gives one target shared cognitive priority.
+    analysis:
+      why_it_fits: It maps first-trit capacity/relation to one cognitive-allocation
+        center, uses source/target/systemic scope exactly, and follows the third-trit
+        stable/active/dormant-or-unresolved distinctions.
+      useful_coverage: Attention capacity, available cognitive bandwidth, focus, monitoring,
+        salience, vigilance, target prioritization, and joint attention in ordinary
+        and technical settings.
+      semantic_territory_consumed: Only selective allocation of cognitive processing
+        and the resulting attention relations.
+      conflicts_or_future_limitations: It intentionally leaves consciousness, perception,
+        representation, learning, inference, belief, goals, communication, and scheduler
+        implementation to other roots or compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 8
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: representational_grounding
+    title: established representational alignment
+    invariant_candidate: A stable relation of compatibility among representations
+      held by multiple cognizers.
+    analysis:
+      why_it_fits: Representational capacity, aboutness, and inter-model alignment
+        form a plausible extension of canonical MIN:0xx.
+      useful_coverage: Intentionality, grounding, reference, representation-bearing,
+        common models, and technical agent semantics.
+      semantic_territory_consumed: Relations between cognizers, representations, targets,
+        and other cognizers' representations.
+      conflicts_or_future_limitations: It comes close to duplicating canonical MIN:0xx
+        representation ownership and can collide with LOG reference, DAT symbols,
+        and ORI aboutness.
+    scores:
+      atomicity: 10
+      address_fit: 9
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 7
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 73
+    maximum: 80
+  - candidate_id: epistemic_stance
+    title: established common belief
+    invariant_candidate: A stable epistemic commitment to the same proposition across
+      multiple cognizers.
+    analysis:
+      why_it_fits: Knowledge, belief, doubt, competence, and agreement are central
+        cognitive relations.
+      useful_coverage: Know, believe, trust, doubt, justify, agree, consensus, and
+        common knowledge.
+      semantic_territory_consumed: Commitment and justification relations between
+        cognizers and propositions.
+      conflicts_or_future_limitations: It collides heavily with LOG truth/proof, ORI
+        reality/modality, and CON agreement; nonpropositional attention and imagery
+        are excluded.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 3
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 64
+    maximum: 80
+  - candidate_id: executive_control
+    title: established coordinated agency
+    invariant_candidate: A stable relation in which multiple cognizers organize cognitive
+      control around one objective.
+    analysis:
+      why_it_fits: Executive control naturally has capacity, goal-directed, and coordinated
+        forms.
+      useful_coverage: Choose, regulate, inhibit, pursue goals, coordinate agents,
+        plan, and schedule cognitive work.
+      semantic_territory_consumed: Control of cognitive operations and goal-directed
+        organization.
+      conflicts_or_future_limitations: It collides with CRE goals/plans, CON coordination,
+        STR control structure, and LOG decision rules; the target and systemic triplets
+        cease to be purely cognitive.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  recommended_candidate_id: attention_allocation
+  recommendation_reason: Attention allocation uniquely produces a natural capacity/target-relation/systemic-relation
+    architecture, fills the gap intentionally excluded from canonical MIN:0xx and
+    MIN:1xx, and avoids treating truth, belief, communication, goals, or storage as
+    Mind atoms.
+  confidence: 0.96
+  canonicalized: false
+- canonical_id: MIN:221
+  fixed_generated_fields:
+    canonical_id: MIN:221
+    universal_slot: active systemic relationship
+    family_qualified_transliteration: si·mik
+    local_compact_root: mik
+    formal_carrier: si-nu-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+  current_meaning_rationale: "“Distributed intelligence” correctly recognizes active
+    + systemic + Mind, but coordinating into a larger reasoning system mixes communication,
+    organization, inference, and collective agency. Multiple agents can jointly attend
+    without forming a super-agent or reasoning system."
+  candidates:
+  - candidate_id: current_phase2
+    title: active joint attention
+    invariant_candidate: An attentional relation in which multiple cognizers presently
+      give the same target shared cognitive priority.
+    analysis:
+      why_it_fits: It follows the broad active systemic relationship label and names
+        familiar Mind vocabulary.
+      useful_coverage: It covers recognizable English cognitive concepts.
+      semantic_territory_consumed: It consumes multiple capacities, relations, processes,
+        or epistemic states.
+      conflicts_or_future_limitations: "“Distributed intelligence” correctly recognizes
+        active + systemic + Mind, but coordinating into a larger reasoning system
+        mixes communication, organization, inference, and collective agency. Multiple
+        agents can jointly attend without forming a super-agent or reasoning system."
+    scores:
+      atomicity: 7
+      address_fit: 10
+      family_fit: 9
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 62
+    maximum: 80
+  - candidate_id: attention_allocation
+    title: active joint attention
+    invariant_candidate: An attentional relation in which multiple cognizers presently
+      give the same target shared cognitive priority.
+    analysis:
+      why_it_fits: It maps first-trit capacity/relation to one cognitive-allocation
+        center, uses source/target/systemic scope exactly, and follows the third-trit
+        stable/active/dormant-or-unresolved distinctions.
+      useful_coverage: Attention capacity, available cognitive bandwidth, focus, monitoring,
+        salience, vigilance, target prioritization, and joint attention in ordinary
+        and technical settings.
+      semantic_territory_consumed: Only selective allocation of cognitive processing
+        and the resulting attention relations.
+      conflicts_or_future_limitations: It intentionally leaves consciousness, perception,
+        representation, learning, inference, belief, goals, communication, and scheduler
+        implementation to other roots or compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 8
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: representational_grounding
+    title: active representational alignment
+    invariant_candidate: A relation in which representations held by multiple cognizers
+      are presently mutually compatible.
+    analysis:
+      why_it_fits: Representational capacity, aboutness, and inter-model alignment
+        form a plausible extension of canonical MIN:0xx.
+      useful_coverage: Intentionality, grounding, reference, representation-bearing,
+        common models, and technical agent semantics.
+      semantic_territory_consumed: Relations between cognizers, representations, targets,
+        and other cognizers' representations.
+      conflicts_or_future_limitations: It comes close to duplicating canonical MIN:0xx
+        representation ownership and can collide with LOG reference, DAT symbols,
+        and ORI aboutness.
+    scores:
+      atomicity: 10
+      address_fit: 9
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 7
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 73
+    maximum: 80
+  - candidate_id: epistemic_stance
+    title: active consensus
+    invariant_candidate: A relation in which multiple cognizers presently share an
+      epistemic commitment to the same proposition.
+    analysis:
+      why_it_fits: Knowledge, belief, doubt, competence, and agreement are central
+        cognitive relations.
+      useful_coverage: Know, believe, trust, doubt, justify, agree, consensus, and
+        common knowledge.
+      semantic_territory_consumed: Commitment and justification relations between
+        cognizers and propositions.
+      conflicts_or_future_limitations: It collides heavily with LOG truth/proof, ORI
+        reality/modality, and CON agreement; nonpropositional attention and imagery
+        are excluded.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 3
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 64
+    maximum: 80
+  - candidate_id: executive_control
+    title: active coordinated agency
+    invariant_candidate: A relation in which multiple cognizers are presently organizing
+      cognitive control around one objective.
+    analysis:
+      why_it_fits: Executive control naturally has capacity, goal-directed, and coordinated
+        forms.
+      useful_coverage: Choose, regulate, inhibit, pursue goals, coordinate agents,
+        plan, and schedule cognitive work.
+      semantic_territory_consumed: Control of cognitive operations and goal-directed
+        organization.
+      conflicts_or_future_limitations: It collides with CRE goals/plans, CON coordination,
+        STR control structure, and LOG decision rules; the target and systemic triplets
+        cease to be purely cognitive.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  recommended_candidate_id: attention_allocation
+  recommendation_reason: Attention allocation uniquely produces a natural capacity/target-relation/systemic-relation
+    architecture, fills the gap intentionally excluded from canonical MIN:0xx and
+    MIN:1xx, and avoids treating truth, belief, communication, goals, or storage as
+    Mind atoms.
+  confidence: 0.96
+  canonicalized: false
+- canonical_id: MIN:222
+  fixed_generated_fields:
+    canonical_id: MIN:222
+    universal_slot: unrealized systemic possibility
+    family_qualified_transliteration: si·min
+    local_compact_root: min
+    formal_carrier: si-nu-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+  current_meaning_rationale: "“Hypothesis space” was chosen from unrealized systemic
+    possibility, but a set of possibly valid explanations is a logical/data structure,
+    not a relationship among cognizers. It also imports validity and selection from
+    LOG/ORI."
+  candidates:
+  - candidate_id: current_phase2
+    title: potential joint attention
+    invariant_candidate: An unrealized possible attentional relation in which multiple
+      cognizers would give the same target shared cognitive priority.
+    analysis:
+      why_it_fits: It follows the broad unrealized systemic possibility label and
+        names familiar Mind vocabulary.
+      useful_coverage: It covers recognizable English cognitive concepts.
+      semantic_territory_consumed: It consumes multiple capacities, relations, processes,
+        or epistemic states.
+      conflicts_or_future_limitations: "“Hypothesis space” was chosen from unrealized
+        systemic possibility, but a set of possibly valid explanations is a logical/data
+        structure, not a relationship among cognizers. It also imports validity and
+        selection from LOG/ORI."
+    scores:
+      atomicity: 6
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 53
+    maximum: 80
+  - candidate_id: attention_allocation
+    title: potential joint attention
+    invariant_candidate: An unrealized possible attentional relation in which multiple
+      cognizers would give the same target shared cognitive priority.
+    analysis:
+      why_it_fits: It maps first-trit capacity/relation to one cognitive-allocation
+        center, uses source/target/systemic scope exactly, and follows the third-trit
+        stable/active/dormant-or-unresolved distinctions.
+      useful_coverage: Attention capacity, available cognitive bandwidth, focus, monitoring,
+        salience, vigilance, target prioritization, and joint attention in ordinary
+        and technical settings.
+      semantic_territory_consumed: Only selective allocation of cognitive processing
+        and the resulting attention relations.
+      conflicts_or_future_limitations: It intentionally leaves consciousness, perception,
+        representation, learning, inference, belief, goals, communication, and scheduler
+        implementation to other roots or compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 8
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: representational_grounding
+    title: potential representational alignment
+    invariant_candidate: An unrealized possible relation of compatibility among representations
+      held by multiple cognizers.
+    analysis:
+      why_it_fits: Representational capacity, aboutness, and inter-model alignment
+        form a plausible extension of canonical MIN:0xx.
+      useful_coverage: Intentionality, grounding, reference, representation-bearing,
+        common models, and technical agent semantics.
+      semantic_territory_consumed: Relations between cognizers, representations, targets,
+        and other cognizers' representations.
+      conflicts_or_future_limitations: It comes close to duplicating canonical MIN:0xx
+        representation ownership and can collide with LOG reference, DAT symbols,
+        and ORI aboutness.
+    scores:
+      atomicity: 10
+      address_fit: 9
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 7
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 73
+    maximum: 80
+  - candidate_id: epistemic_stance
+    title: potential common belief
+    invariant_candidate: An unrealized possible relation in which multiple cognizers
+      would share an epistemic commitment.
+    analysis:
+      why_it_fits: Knowledge, belief, doubt, competence, and agreement are central
+        cognitive relations.
+      useful_coverage: Know, believe, trust, doubt, justify, agree, consensus, and
+        common knowledge.
+      semantic_territory_consumed: Commitment and justification relations between
+        cognizers and propositions.
+      conflicts_or_future_limitations: It collides heavily with LOG truth/proof, ORI
+        reality/modality, and CON agreement; nonpropositional attention and imagery
+        are excluded.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 3
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 64
+    maximum: 80
+  - candidate_id: executive_control
+    title: potential coordinated agency
+    invariant_candidate: An unrealized possible relation in which multiple cognizers
+      would organize cognitive control around one objective.
+    analysis:
+      why_it_fits: Executive control naturally has capacity, goal-directed, and coordinated
+        forms.
+      useful_coverage: Choose, regulate, inhibit, pursue goals, coordinate agents,
+        plan, and schedule cognitive work.
+      semantic_territory_consumed: Control of cognitive operations and goal-directed
+        organization.
+      conflicts_or_future_limitations: It collides with CRE goals/plans, CON coordination,
+        STR control structure, and LOG decision rules; the target and systemic triplets
+        cease to be purely cognitive.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 65
+    maximum: 80
+  recommended_candidate_id: attention_allocation
+  recommendation_reason: Attention allocation uniquely produces a natural capacity/target-relation/systemic-relation
+    architecture, fills the gap intentionally excluded from canonical MIN:0xx and
+    MIN:1xx, and avoids treating truth, belief, communication, goals, or storage as
+    Mind atoms.
+  confidence: 0.96
+  canonicalized: false

@@ -1,6 +1,6 @@
 # Era Zero Complete Regression Run
 
-Status: **FAIL**
+Status: **PASS — ALL CURRENT-STATE CHECKS SUCCEEDED**
 
 Run this complete regression from the project root with:
 
@@ -10,35 +10,29 @@ ruby tools/regress_current_state.rb
 
 The command refreshes the current gap inventory, validates every active semantic authority layer, applies the reusable packet contract to the latest completed review packet (`ORI:200–222`), validates Gate 4A typed compounds, the Gate 4B canonical dictionary, and the Gate 4C English sense index, and runs full-family soundness audits for all complete canonical Creation, Data, Logic, Connection, Structure, Warning, Repair, and Origin families.
 
-## FAIL — refresh current gap inventory
+## PASS — refresh current gap inventory
 
 ```text
-/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `initialize': No such file or directory @ rb_sysopen - /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/reports/atomic_root_gaps.yaml (Errno::ENOENT)
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `open'
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `load_file'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/lib/era_zero_validation.rb:95:in `load_yaml'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/regenerate_current_gap_reports.rb:11:in `<main>'
+Gap reports regenerated: 324 canonical, 0 provisional, 0 chunks
+Next packet: none — atomic semantic review complete
 ```
 
-## FAIL — validate current authority and translator boundary
+## PASS — validate current authority and translator boundary
 
 ```text
-/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `initialize': No such file or directory @ rb_sysopen - /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/reports/atomic_root_gaps.yaml (Errno::ENOENT)
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `open'
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `load_file'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/lib/era_zero_validation.rb:95:in `load_yaml'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/validate_current_state.rb:215:in `<main>'
+Checks passed: 29
+Checks failed: 0
+Canonical: 324; provisional: 0
+Effective promotions: 288; generated-form assertions: 2592
+Translator checks passed: 8; failed: 0
 ```
 
-## FAIL — validate latest semantic packet with reusable contract
+## PASS — validate latest semantic packet with reusable contract
 
 ```text
-Missing packet files:
-- reviews/ORI_200_222_scored_candidates.yaml
-- reviews/ORI_200_222_recommended_spec.yaml
-- reviews/ORI_200_222_stress_tests.yaml
-- reviews/ORI_200_222_peer_review.md
-- reviews/ORI_200_222_collision_report.md
+ORI:200–222: PASS
+Mode: canonical; checks passed: 18; checks failed: 0
+Candidates: 45; score assertions: 360; stress tests: 115
 ```
 
 ## PASS — validate Gate 4A typed compound architecture
@@ -49,14 +43,11 @@ Checks passed: 21; checks failed: 0
 Valid cases: 12; invalid cases: 23; dictionary entries: 0
 ```
 
-## FAIL — validate Gate 4B high-frequency compound dictionary
+## PASS — validate Gate 4B high-frequency compound dictionary
 
 ```text
-/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `initialize': No such file or directory @ rb_sysopen - /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/reviews/gate4b_high_frequency_compounds_scored_candidates.yaml (Errno::ENOENT)
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `open'
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `load_file'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/lib/era_zero_validation.rb:95:in `load_yaml'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/validate_gate4b_compound_dictionary.rb:13:in `<main>'
+Gate 4B validation: PASS
+Checks passed: 16; checks failed: 0; entries: 28
 ```
 
 ## PASS — validate Gate 4C English concept and sense index
@@ -66,14 +57,11 @@ Gate 4C validation: PASS
 Checks passed: 17; checks failed: 0; senses: 436; lemmas: 419
 ```
 
-## FAIL — validate Gate 4D coverage and ambiguity report
+## PASS — validate Gate 4D coverage and ambiguity report
 
 ```text
-/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `initialize': No such file or directory @ rb_sysopen - /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/reports/gate4d_coverage_metrics.yaml (Errno::ENOENT)
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `open'
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `load_file'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/lib/era_zero_validation.rb:95:in `load_yaml'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/validate_gate4d_coverage_report.rb:8:in `<main>'
+Gate 4D validation: PASS
+Checks passed: 11; checks failed: 0
 ```
 
 ## PASS — validate Gate 4E formal etymology table
@@ -97,48 +85,32 @@ Renderer/decoder validation: PASS
 Checks passed: 12; checks failed: 0
 ```
 
-## FAIL — validate controlled English compiler
+## PASS — validate controlled English compiler
 
 ```text
-Controlled English validation: FAIL
-Checks passed: 12; checks failed: 1
+Controlled English validation: PASS
+Checks passed: 13; checks failed: 0
 ```
 
+## PASS — validate general-English candidate translator
+
 ```text
-implementation: compiler library, CLI, spec, golden tests, and report exist
+General English validation: PASS
+Checks passed: 16; checks failed: 0
 ```
 
-## FAIL — validate general-English candidate translator
+## PASS — validate glyph and MIDI presentation
 
 ```text
-General English validation: FAIL
-Checks passed: 15; checks failed: 1
+Glyph/audio validation: PASS
+Checks passed: 10; checks failed: 0
 ```
 
-```text
-implementation: library, CLI, spec, tests, report, and migration exist
-```
-
-## FAIL — validate glyph and MIDI presentation
+## PASS — validate translator workbench product application
 
 ```text
-Glyph/audio validation: FAIL
-Checks passed: 9; checks failed: 1
-```
-
-```text
-examples: three SVG/MIDI example pairs exist
-```
-
-## FAIL — validate translator workbench product application
-
-```text
-Product application audit: FAIL
-Checks passed: 14; checks failed: 1
-```
-
-```text
-documentation and launch: launcher, API guide, user guide, audit checklist, and source files exist
+Product application audit: PASS
+Checks passed: 15; checks failed: 0
 ```
 
 ## PASS — validate translator workbench frontend syntax
@@ -147,105 +119,66 @@ documentation and launch: launcher, API guide, user guide, audit checklist, and 
 Product frontend syntax: PASS
 ```
 
-## FAIL — validate translator workbench over real localhost HTTP
+## PASS — validate translator workbench over real localhost HTTP
 
 ```text
-/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/socket.rb:685:in `bind': Operation not permitted - bind(2) for 127.0.0.1 (Errno::EPERM)
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/socket.rb:685:in `block in ip_sockets_port0'
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/socket.rb:673:in `each'
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/socket.rb:673:in `ip_sockets_port0'
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/socket.rb:706:in `tcp_server_sockets_port0'
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/socket.rb:757:in `tcp_server_sockets'
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/webrick/utils.rb:60:in `create_listeners'
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/webrick/server.rb:130:in `listen'
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/webrick/server.rb:111:in `initialize'
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/webrick/httpserver.rb:47:in `initialize'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/test_product_http.rb:11:in `new'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/test_product_http.rb:11:in `<main>'
+Product HTTP smoke: PASS (static UI, health, analyze, exact round trip)
 ```
 
-## FAIL — validate the complete REP:000–222 family
+## PASS — validate the complete REP:000–222 family
 
 ```text
-/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `initialize': No such file or directory @ rb_sysopen - /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/reviews/REP_000_022_recommended_spec.yaml (Errno::ENOENT)
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `open'
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `load_file'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/lib/era_zero_validation.rb:95:in `load_yaml'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/validate_rep_000_222_soundness.rb:24:in `<main>'
+REP:000–222 soundness: PASS
+Mode: canonical; checks passed: 24; checks failed: 0
 ```
 
-## FAIL — validate the complete LOG:000–222 family
+## PASS — validate the complete LOG:000–222 family
 
 ```text
-/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `initialize': No such file or directory @ rb_sysopen - /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/reviews/LOG_000_022_recommended_spec.yaml (Errno::ENOENT)
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `open'
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `load_file'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/lib/era_zero_validation.rb:95:in `load_yaml'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/validate_log_000_222_soundness.rb:24:in `<main>'
+LOG:000–222 soundness: PASS
+Mode: canonical; checks passed: 24; checks failed: 0
 ```
 
-## FAIL — validate the complete DAT:000–222 family
+## PASS — validate the complete DAT:000–222 family
 
 ```text
-/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `initialize': No such file or directory @ rb_sysopen - /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/reviews/DAT_000_022_recommended_spec.yaml (Errno::ENOENT)
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `open'
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `load_file'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/lib/era_zero_validation.rb:95:in `load_yaml'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/validate_dat_000_222_soundness.rb:24:in `<main>'
+DAT:000–222 soundness: PASS
+Mode: canonical; checks passed: 24; checks failed: 0
 ```
 
-## FAIL — validate the complete CRE:000–222 family
+## PASS — validate the complete CRE:000–222 family
 
 ```text
-/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `initialize': No such file or directory @ rb_sysopen - /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/reviews/CRE_000_022_recommended_spec.yaml (Errno::ENOENT)
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `open'
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `load_file'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/lib/era_zero_validation.rb:95:in `load_yaml'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/validate_cre_000_222_soundness.rb:24:in `<main>'
+CRE:000–222 soundness: PASS
+Mode: canonical; checks passed: 24; checks failed: 0
 ```
 
-## FAIL — validate the complete ORI:000–222 family
+## PASS — validate the complete ORI:000–222 family
 
 ```text
-/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `initialize': No such file or directory @ rb_sysopen - /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/reviews/ORI_000_022_recommended_spec.yaml (Errno::ENOENT)
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `open'
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `load_file'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/lib/era_zero_validation.rb:95:in `load_yaml'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/validate_ori_000_222_soundness.rb:19:in `block in <main>'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/validate_ori_000_222_soundness.rb:19:in `to_h'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/validate_ori_000_222_soundness.rb:19:in `<main>'
+ORI:000–222 soundness: PASS
+Mode: canonical; checks passed: 22; checks failed: 0
 ```
 
-## FAIL — validate the complete CON:000–222 family
+## PASS — validate the complete CON:000–222 family
 
 ```text
-/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `initialize': No such file or directory @ rb_sysopen - /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/reviews/CON_000_022_recommended_spec.yaml (Errno::ENOENT)
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `open'
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `load_file'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/lib/era_zero_validation.rb:95:in `load_yaml'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/validate_con_000_222_soundness.rb:21:in `block in <main>'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/validate_con_000_222_soundness.rb:19:in `to_h'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/validate_con_000_222_soundness.rb:19:in `<main>'
+CON:000–222 soundness: PASS
+Mode: canonical; checks passed: 16; checks failed: 0
 ```
 
-## FAIL — validate the complete STR:000–222 family
+## PASS — validate the complete STR:000–222 family
 
 ```text
-/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `initialize': No such file or directory @ rb_sysopen - /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/reviews/STR_000_022_recommended_spec.yaml (Errno::ENOENT)
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `open'
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `load_file'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/lib/era_zero_validation.rb:95:in `load_yaml'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/validate_str_000_222_soundness.rb:24:in `<main>'
+STR:000–222 soundness: PASS
+Mode: canonical; checks passed: 24; checks failed: 0
 ```
 
-## FAIL — validate the complete WRN:000–222 family
+## PASS — validate the complete WRN:000–222 family
 
 ```text
-/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `initialize': No such file or directory @ rb_sysopen - /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/reviews/WRN_000_022_recommended_spec.yaml (Errno::ENOENT)
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `open'
-	from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/psych.rb:577:in `load_file'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/lib/era_zero_validation.rb:95:in `load_yaml'
-	from /Users/timetravellog/Desktop/DBA Language/github_release/era-zero-translator/tools/validate_wrn_000_222_soundness.rb:24:in `<main>'
+WRN:000–222 soundness: PASS
+Mode: canonical; checks passed: 24; checks failed: 0
 ```
 
 ## Regression coverage

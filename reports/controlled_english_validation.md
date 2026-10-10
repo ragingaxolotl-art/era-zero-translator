@@ -1,9 +1,9 @@
 # Controlled English Compiler Validation
 
-Status: **FAIL**
+Status: **PASS — CONTROLLED ENGLISH CANONICAL; GENERAL ENGLISH MAY BEGIN**
 
-- Checks passed: **12**
-- Checks failed: **1**
+- Checks passed: **13**
+- Checks failed: **0**
 - Controlled lexemes: **352**
 - Golden valid cases: **16**
 - Golden invalid cases: **17**
@@ -51,7 +51,7 @@ boundary forbids synonyms, implicit roles, first-sense choice, and general parsi
 
 documented errors cover parse, lexicon, state, operator, role, quantity, slot, and composition failures
 
-## FAIL — implementation
+## PASS — implementation
 
 compiler library, CLI, spec, golden tests, and report exist
 
@@ -62,8 +62,4 @@ the controlled-English release itself began no general-English work
 ## PASS — authority integration
 
 controlled English remains canonical after orderly downstream progression
-
-## Failures
-
-- implementation: compiler library, CLI, spec, golden tests, and report exist
 

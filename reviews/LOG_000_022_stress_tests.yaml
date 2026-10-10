@@ -1,0 +1,635 @@
+---
+metadata:
+  title: LOG:000–022 English coverage and routing tests
+  status: review_evidence_not_translation_dictionary
+  range: LOG:000–022
+  test_count: 126
+  no_forced_atomization: true
+tests:
+- test_id: REP0-T001
+  english_concept: rule
+  routing: one_root_or_compound
+  analysis: Use the appropriate LOG:0xx root when the intended sense is a formal admissibility
+    constraint; add domain and authority roots when English rule names an institution
+    or habit.
+- test_id: REP0-T002
+  english_concept: criterion
+  routing: one_root
+  analysis: An internal, target-directed, or shared formal criterion selects the matching
+    LOG:0xx scope.
+- test_id: REP0-T003
+  english_concept: invariant
+  routing: one_root_or_compound
+  analysis: An invariant internal to one formal specification maps to LOG:000–002
+    according to persistent, operative, or dormant status.
+- test_id: REP0-T004
+  english_concept: constraint
+  routing: one_root_or_compound
+  analysis: A target-directed constraint maps to LOG:010–012; a physical constraint
+    also needs MAT or STR.
+- test_id: REP0-T005
+  english_concept: policy
+  routing: one_root_or_compound
+  analysis: A shared formal policy can use LOG:020–022, while authorship and governed
+    participants remain separately typed.
+- test_id: REP0-T006
+  english_concept: protocol
+  routing: compound
+  analysis: LOG:020–022 supplies the shared rule regime and CON supplies the communication
+    system it governs.
+- test_id: REP0-T007
+  english_concept: law
+  routing: compound
+  analysis: LOG supplies formal constraint status; LIF and CON supply institution,
+    authority, persons, and promulgation.
+- test_id: REP0-T008
+  english_concept: permission
+  routing: compound_or_later_specialization
+  analysis: Permission is a deontic result under a criterion, not automatically the
+    criterion itself; express rule plus modality or reserve specialized vocabulary.
+- test_id: REP0-T009
+  english_concept: prohibition
+  routing: compound_or_later_specialization
+  analysis: A prohibitory rule can be a LOG constraint with polarity or modality,
+    but prohibition is not a separate atom in this block.
+- test_id: REP0-T010
+  english_concept: obligation
+  routing: compound_or_later_specialization
+  analysis: Obligation requires a formal rule plus deontic force and often an agent
+    or act compound.
+- test_id: REP0-T011
+  english_concept: axiom
+  routing: compound
+  analysis: Axiomhood requires a proposition or rule plus foundational status; LOG:000
+    alone means persistent internal criterion, not unproved truth.
+- test_id: REP0-T012
+  english_concept: proposition
+  routing: different_family_or_future_logic_vocabulary
+  analysis: A truth-bearing content is not automatically a constraint entity; DAT
+    may encode it and later LOG layers may evaluate it.
+- test_id: REP0-T013
+  english_concept: claim
+  routing: different_family_or_compound
+  analysis: CON owns assertion events, DAT owns expressed content, and MIN owns belief;
+    LOG:0xx applies only when content functions as a formal criterion.
+- test_id: REP0-T014
+  english_concept: truth
+  routing: unresolved_or_later_logic_vocabulary
+  analysis: Truth value is not identical to rule operation; do not force it into LOG:001.
+- test_id: REP0-T015
+  english_concept: 'false'
+  routing: unresolved_or_later_logic_vocabulary
+  analysis: Falsity is not dormancy. LOG:002 names a defined but inoperative internal
+    criterion.
+- test_id: REP0-T016
+  english_concept: valid
+  routing: process_or_relation_layer
+  analysis: Validity concerns satisfaction, derivation, or consequence and belongs
+    to later LOG layers or compounds, not the rule entity alone.
+- test_id: REP0-T017
+  english_concept: invalid
+  routing: process_or_relation_layer
+  analysis: Invalidity is not a dormant rule; it requires evaluation or a formal relation.
+- test_id: REP0-T018
+  english_concept: satisfied constraint
+  routing: compound
+  analysis: Use the LOG:0xx constraint plus a later evaluation or result expression;
+    operation alone does not entail satisfaction.
+- test_id: REP0-T019
+  english_concept: violated constraint
+  routing: compound
+  analysis: Use the LOG constraint plus an evaluation result; violation is not dormancy.
+- test_id: REP0-T020
+  english_concept: active rule
+  routing: one_root
+  analysis: Choose LOG:001, LOG:011, or LOG:021 according to internal, target, or
+    systemic scope.
+- test_id: REP0-T021
+  english_concept: suspended rule
+  routing: one_root_or_compound
+  analysis: A still-defined but inoperative rule uses a LOG:0x2 root; suspension cause
+    and future reactivation remain separate.
+- test_id: REP0-T022
+  english_concept: deleted rule
+  routing: different_meaning
+  analysis: Deletion removes rule identity and is not lexical dormancy, which requires
+    the rule to remain defined.
+- test_id: REP0-T023
+  english_concept: obsolete rule
+  routing: compound
+  analysis: Dormancy may describe nonoperation, but obsolescence additionally requires
+    temporal or replacement qualification.
+- test_id: REP0-T024
+  english_concept: future rule
+  routing: grammar_or_compound
+  analysis: ORI future qualification applies to a rule; lexical third trit 2 does
+    not mean future.
+- test_id: REP0-T025
+  english_concept: uncertain rule status
+  routing: runtime
+  analysis: Use runtime `[2]/num` on the selected LOG root rather than substituting
+    the dormant lexical root.
+- test_id: REP0-T026
+  english_concept: type constraint
+  routing: one_root_or_compound
+  analysis: Use a LOG constraint; DAT separately supplies the type representation
+    and value.
+- test_id: REP0-T027
+  english_concept: schema
+  routing: different_family_or_compound
+  analysis: DAT owns a schema as represented information; LOG owns the constraints
+    the schema expresses.
+- test_id: REP0-T028
+  english_concept: value
+  routing: different_family
+  analysis: DAT owns represented values; a value is not a formal criterion merely
+    because a program evaluates it.
+- test_id: REP0-T029
+  english_concept: variable
+  routing: different_family_or_compound
+  analysis: DAT owns the represented slot or symbol; binding and evaluation require
+    additional LOG process or relation vocabulary.
+- test_id: REP0-T030
+  english_concept: unbound variable
+  routing: different_family_or_compound
+  analysis: Unbound is a data or environment state, not a dormant criterion.
+- test_id: REP0-T031
+  english_concept: operand
+  routing: different_family_or_compound
+  analysis: DAT supplies the value or expression and LOG:1xx can later supply application
+    or evaluation.
+- test_id: REP0-T032
+  english_concept: algorithm
+  routing: different_family_or_compound
+  analysis: DAT stores its specification, LOG:1xx may execute or evaluate, and CRE
+    or STR may describe produced transformations.
+- test_id: REP0-T033
+  english_concept: program
+  routing: different_family_or_compound
+  analysis: DAT owns code as information; a running program is not a LOG:0xx rule
+    entity, though its policy regime may be.
+- test_id: REP0-T034
+  english_concept: proof
+  routing: process_or_data_compound
+  analysis: LOG:1xx should own proving or inference and DAT the proof object; LOG:0xx
+    supplies premises only when they function as constraints.
+- test_id: REP0-T035
+  english_concept: theorem
+  routing: unresolved_or_compound
+  analysis: A theorem is a proposition with derivational status, not automatically
+    a shared regime.
+- test_id: REP0-T036
+  english_concept: formal system
+  routing: one_root_or_compound
+  analysis: A shared formal regime maps to LOG:020–022; syntax, stored specification,
+    and executing machinery remain separate.
+- test_id: REP0-T037
+  english_concept: type system
+  routing: one_root_or_compound
+  analysis: A type system as a shared regime maps to LOG:020–022; individual type
+    records remain DAT.
+- test_id: REP0-T038
+  english_concept: legal code
+  routing: compound
+  analysis: LOG:020–022 supplies the shared formal regime while LIF and CON supply
+    institution, authority, and social participants.
+- test_id: REP0-T039
+  english_concept: house rule
+  routing: compound
+  analysis: LOG supplies the criterion or regime; LIF supplies household identity
+    and CON may supply promulgation.
+- test_id: REP0-T040
+  english_concept: game rule
+  routing: one_root_or_compound
+  analysis: LOG supplies rule status; the game, players, turns, and actions require
+    other families.
+- test_id: REP0-T041
+  english_concept: physical law
+  routing: compound
+  analysis: LOG can encode the formal constraint, while MAT and ORI supply physical
+    domain and causal or temporal interpretation.
+- test_id: REP0-T042
+  english_concept: natural regularity
+  routing: different_family_or_compound
+  analysis: Observed regularity is not automatically a formal rule; DAT evidence,
+    ORI causation, and LOG model remain distinct.
+- test_id: REP0-T043
+  english_concept: business rule
+  routing: one_root_or_compound
+  analysis: Use a LOG rule with LIF, CON, and DAT roots for organization, authority,
+    records, and governed workflow.
+- test_id: REP0-T044
+  english_concept: access-control rule
+  routing: compound
+  analysis: LOG supplies the rule, CON the relation or channel, DAT identity records,
+    and LIF or MIN the principal where relevant.
+- test_id: REP0-T045
+  english_concept: firewall rule
+  routing: compound
+  analysis: LOG supplies target-directed or shared constraint status; CON, DAT, and
+    STR supply packets, channels, and structure.
+- test_id: REP0-T046
+  english_concept: database constraint
+  routing: one_root_or_compound
+  analysis: Use LOG:010–012 for one target or LOG:020–022 for a shared database regime;
+    DAT owns the stored schema.
+- test_id: REP0-T047
+  english_concept: assert statement
+  routing: compound
+  analysis: LOG can supply the operative criterion and DAT the expression; execution
+    and pass or fail belong to LOG:1xx.
+- test_id: REP0-T048
+  english_concept: validation rule
+  routing: one_root_or_compound
+  analysis: The rule entity is LOG:0xx; the validation act and result must not be
+    folded into it.
+- test_id: REP0-T049
+  english_concept: lint rule
+  routing: one_root_or_compound
+  analysis: A lint criterion is LOG:0xx; tool execution and diagnostics require LOG:1xx
+    and DAT or WRN as appropriate.
+- test_id: REP0-T050
+  english_concept: equation
+  routing: different_family_or_compound
+  analysis: DAT supplies symbolic representation and LOG supplies formal constraint
+    only when the equation is used as an admissibility condition.
+- test_id: REP0-T051
+  english_concept: inequality constraint
+  routing: one_root_or_compound
+  analysis: LOG supplies the formal limit while DAT or MAT supplies variables and
+    quantities.
+- test_id: REP0-T052
+  english_concept: ethical norm
+  routing: compound_or_later_specialization
+  analysis: LOG can encode the formal norm, but agents, values, authority, and social
+    force require LIF, MIN, or CON compounds.
+- test_id: REP0-T053
+  english_concept: habit
+  routing: different_family
+  analysis: A habit is a behavioral or cognitive regularity, not a formal constraint
+    unless a separate rule is explicitly constituted.
+- test_id: REP0-T054
+  english_concept: advice
+  routing: different_family
+  analysis: CON owns communicative advice and MIN intention; advice is not a LOG rule
+    without formal normative status.
+- test_id: REP0-T055
+  english_concept: command
+  routing: different_family_or_compound
+  analysis: CON owns the directive act; LOG may separately encode the rule or obligation
+    it creates.
+- test_id: REP0-T056
+  english_concept: schedule
+  routing: different_family_or_compound
+  analysis: ORI owns temporal ordering and DAT its record; a schedule may be governed
+    by LOG constraints but is not one.
+- test_id: REP0-T057
+  english_concept: workflow
+  routing: compound
+  analysis: STR, CON, and ORI describe arranged steps and coordination; LOG supplies
+    governing conditions when explicitly present.
+- test_id: REP0-T058
+  english_concept: rule versus record
+  routing: scope_resolution_test
+  analysis: LOG owns the formal constraint; DAT owns the file, text, schema, or row
+    that represents it.
+- test_id: REP0-T059
+  english_concept: rule versus belief
+  routing: scope_resolution_test
+  analysis: LOG rule identity and operation are independent of whether a MIN cognizer
+    accepts or remembers it.
+- test_id: REP0-T060
+  english_concept: rule versus execution
+  routing: scope_resolution_test
+  analysis: LOG:0xx names the rule entity; LOG:1xx is reserved for actual evaluation
+    or rule application.
+- test_id: REP0-T061
+  english_concept: rule versus applicability
+  routing: scope_resolution_test
+  analysis: LOG:0xx names the rule; LOG:2xx is reserved for applicability, consequence,
+    or other formal relations.
+- test_id: REP0-T062
+  english_concept: rule versus physical limit
+  routing: scope_resolution_test
+  analysis: LOG supplies formal admissibility; MAT or STR supplies material or structural
+    limitation.
+- test_id: REP0-T063
+  english_concept: rule versus protocol channel
+  routing: scope_resolution_test
+  analysis: LOG supplies protocol constraints and CON supplies the channel and participant
+    relations.
+- test_id: REP0-T064
+  english_concept: rule versus restoration criterion
+  routing: scope_resolution_test
+  analysis: LOG owns the acceptance criterion while REP owns the restoration condition
+    it characterizes.
+- test_id: REP0-T065
+  english_concept: many independent rules
+  routing: multiple_roots_not_one_systemic_root
+  analysis: Separate unrelated criteria do not form one LOG:02x regime unless they
+    correlate participants within one shared rule domain.
+- test_id: REP0-T066
+  english_concept: shared rule with one participant
+  routing: scope_mismatch
+  analysis: A systemic regime requires multiple participants; one governed entity
+    selects inward or target scope.
+- test_id: REP0-T067
+  english_concept: persistent plus operative rule
+  routing: two_compatible_roots
+  analysis: The persistent root may co-occur with its operative sibling because identity
+    is neutral about present operation.
+- test_id: REP0-T068
+  english_concept: persistent plus dormant rule
+  routing: two_compatible_roots
+  analysis: The persistent root may co-occur with its dormant sibling because identity
+    is neutral about present operation.
+- test_id: REP0-T069
+  english_concept: operative and dormant rule simultaneously
+  routing: contradiction
+  analysis: For the same rule at one reference time, operative and dormant are mutually
+    exclusive.
+- test_id: REP0-T070
+  english_concept: dormant rule affirmed
+  routing: runtime_and_lexical
+  analysis: LOG:002, 012, or 022[1] affirms defined-but-inoperative status; runtime
+    affirmation is not lexical operation.
+- test_id: REP0-T071
+  english_concept: persistent rule uncertain
+  routing: runtime_and_lexical
+  analysis: LOG:000, 010, or 020[2]/num marks uncertainty about persistence; it does
+    not select lexical dormancy.
+- test_id: REP0-T072
+  english_concept: operative rule denied
+  routing: runtime_and_lexical
+  analysis: Runtime `[0]` denies present operation without deleting the criterion
+    or automatically affirming dormancy.
+- test_id: REP0-T073
+  english_concept: persistent internal formal criterion identity
+  routing: one_root
+  analysis: LOG:000[1] directly affirms the root's invariant without adding satisfaction,
+    truth, execution, or authority.
+- test_id: REP0-T074
+  english_concept: persistent internal formal criterion uncertain
+  routing: runtime
+  analysis: LOG:000[2]/num leaves this exact persistent claim unresolved and does
+    not select a lexical sibling.
+- test_id: REP0-T075
+  english_concept: persistent internal formal criterion as data
+  routing: compound
+  analysis: DAT represents the rule while LOG:000 supplies its formal constraint identity
+    and status.
+- test_id: REP0-T076
+  english_concept: persistent internal formal criterion being evaluated
+  routing: compound
+  analysis: LOG:000 supplies the rule entity; LOG:1xx must separately supply the evaluation
+    process.
+- test_id: REP0-T077
+  english_concept: persistent internal formal criterion believed
+  routing: compound
+  analysis: MIN supplies belief or acceptance while LOG:000 remains the formal rule
+    independently.
+- test_id: REP0-T078
+  english_concept: persistent internal formal criterion physically implemented
+  routing: compound
+  analysis: MAT or STR supplies implementation mechanics while LOG:000 supplies only
+    formal admissibility.
+- test_id: REP0-T079
+  english_concept: operative internal formal criterion identity
+  routing: one_root
+  analysis: LOG:001[1] directly affirms the root's invariant without adding satisfaction,
+    truth, execution, or authority.
+- test_id: REP0-T080
+  english_concept: operative internal formal criterion uncertain
+  routing: runtime
+  analysis: LOG:001[2]/num leaves this exact operative claim unresolved and does not
+    select a lexical sibling.
+- test_id: REP0-T081
+  english_concept: operative internal formal criterion as data
+  routing: compound
+  analysis: DAT represents the rule while LOG:001 supplies its formal constraint identity
+    and status.
+- test_id: REP0-T082
+  english_concept: operative internal formal criterion being evaluated
+  routing: compound
+  analysis: LOG:001 supplies the rule entity; LOG:1xx must separately supply the evaluation
+    process.
+- test_id: REP0-T083
+  english_concept: operative internal formal criterion believed
+  routing: compound
+  analysis: MIN supplies belief or acceptance while LOG:001 remains the formal rule
+    independently.
+- test_id: REP0-T084
+  english_concept: operative internal formal criterion physically implemented
+  routing: compound
+  analysis: MAT or STR supplies implementation mechanics while LOG:001 supplies only
+    formal admissibility.
+- test_id: REP0-T085
+  english_concept: dormant internal formal criterion identity
+  routing: one_root
+  analysis: LOG:002[1] directly affirms the root's invariant without adding satisfaction,
+    truth, execution, or authority.
+- test_id: REP0-T086
+  english_concept: dormant internal formal criterion uncertain
+  routing: runtime
+  analysis: LOG:002[2]/num leaves this exact dormant claim unresolved and does not
+    select a lexical sibling.
+- test_id: REP0-T087
+  english_concept: dormant internal formal criterion as data
+  routing: compound
+  analysis: DAT represents the rule while LOG:002 supplies its formal constraint identity
+    and status.
+- test_id: REP0-T088
+  english_concept: dormant internal formal criterion being evaluated
+  routing: compound
+  analysis: LOG:002 supplies the rule entity; LOG:1xx must separately supply the evaluation
+    process.
+- test_id: REP0-T089
+  english_concept: dormant internal formal criterion believed
+  routing: compound
+  analysis: MIN supplies belief or acceptance while LOG:002 remains the formal rule
+    independently.
+- test_id: REP0-T090
+  english_concept: dormant internal formal criterion physically implemented
+  routing: compound
+  analysis: MAT or STR supplies implementation mechanics while LOG:002 supplies only
+    formal admissibility.
+- test_id: REP0-T091
+  english_concept: persistent target-directed formal constraint identity
+  routing: one_root
+  analysis: LOG:010[1] directly affirms the root's invariant without adding satisfaction,
+    truth, execution, or authority.
+- test_id: REP0-T092
+  english_concept: persistent target-directed formal constraint uncertain
+  routing: runtime
+  analysis: LOG:010[2]/num leaves this exact persistent claim unresolved and does
+    not select a lexical sibling.
+- test_id: REP0-T093
+  english_concept: persistent target-directed formal constraint as data
+  routing: compound
+  analysis: DAT represents the rule while LOG:010 supplies its formal constraint identity
+    and status.
+- test_id: REP0-T094
+  english_concept: persistent target-directed formal constraint being evaluated
+  routing: compound
+  analysis: LOG:010 supplies the rule entity; LOG:1xx must separately supply the evaluation
+    process.
+- test_id: REP0-T095
+  english_concept: persistent target-directed formal constraint believed
+  routing: compound
+  analysis: MIN supplies belief or acceptance while LOG:010 remains the formal rule
+    independently.
+- test_id: REP0-T096
+  english_concept: persistent target-directed formal constraint physically implemented
+  routing: compound
+  analysis: MAT or STR supplies implementation mechanics while LOG:010 supplies only
+    formal admissibility.
+- test_id: REP0-T097
+  english_concept: operative target-directed formal constraint identity
+  routing: one_root
+  analysis: LOG:011[1] directly affirms the root's invariant without adding satisfaction,
+    truth, execution, or authority.
+- test_id: REP0-T098
+  english_concept: operative target-directed formal constraint uncertain
+  routing: runtime
+  analysis: LOG:011[2]/num leaves this exact operative claim unresolved and does not
+    select a lexical sibling.
+- test_id: REP0-T099
+  english_concept: operative target-directed formal constraint as data
+  routing: compound
+  analysis: DAT represents the rule while LOG:011 supplies its formal constraint identity
+    and status.
+- test_id: REP0-T100
+  english_concept: operative target-directed formal constraint being evaluated
+  routing: compound
+  analysis: LOG:011 supplies the rule entity; LOG:1xx must separately supply the evaluation
+    process.
+- test_id: REP0-T101
+  english_concept: operative target-directed formal constraint believed
+  routing: compound
+  analysis: MIN supplies belief or acceptance while LOG:011 remains the formal rule
+    independently.
+- test_id: REP0-T102
+  english_concept: operative target-directed formal constraint physically implemented
+  routing: compound
+  analysis: MAT or STR supplies implementation mechanics while LOG:011 supplies only
+    formal admissibility.
+- test_id: REP0-T103
+  english_concept: dormant target-directed formal constraint identity
+  routing: one_root
+  analysis: LOG:012[1] directly affirms the root's invariant without adding satisfaction,
+    truth, execution, or authority.
+- test_id: REP0-T104
+  english_concept: dormant target-directed formal constraint uncertain
+  routing: runtime
+  analysis: LOG:012[2]/num leaves this exact dormant claim unresolved and does not
+    select a lexical sibling.
+- test_id: REP0-T105
+  english_concept: dormant target-directed formal constraint as data
+  routing: compound
+  analysis: DAT represents the rule while LOG:012 supplies its formal constraint identity
+    and status.
+- test_id: REP0-T106
+  english_concept: dormant target-directed formal constraint being evaluated
+  routing: compound
+  analysis: LOG:012 supplies the rule entity; LOG:1xx must separately supply the evaluation
+    process.
+- test_id: REP0-T107
+  english_concept: dormant target-directed formal constraint believed
+  routing: compound
+  analysis: MIN supplies belief or acceptance while LOG:012 remains the formal rule
+    independently.
+- test_id: REP0-T108
+  english_concept: dormant target-directed formal constraint physically implemented
+  routing: compound
+  analysis: MAT or STR supplies implementation mechanics while LOG:012 supplies only
+    formal admissibility.
+- test_id: REP0-T109
+  english_concept: persistent shared formal regime identity
+  routing: one_root
+  analysis: LOG:020[1] directly affirms the root's invariant without adding satisfaction,
+    truth, execution, or authority.
+- test_id: REP0-T110
+  english_concept: persistent shared formal regime uncertain
+  routing: runtime
+  analysis: LOG:020[2]/num leaves this exact persistent claim unresolved and does
+    not select a lexical sibling.
+- test_id: REP0-T111
+  english_concept: persistent shared formal regime as data
+  routing: compound
+  analysis: DAT represents the rule while LOG:020 supplies its formal constraint identity
+    and status.
+- test_id: REP0-T112
+  english_concept: persistent shared formal regime being evaluated
+  routing: compound
+  analysis: LOG:020 supplies the rule entity; LOG:1xx must separately supply the evaluation
+    process.
+- test_id: REP0-T113
+  english_concept: persistent shared formal regime believed
+  routing: compound
+  analysis: MIN supplies belief or acceptance while LOG:020 remains the formal rule
+    independently.
+- test_id: REP0-T114
+  english_concept: persistent shared formal regime physically implemented
+  routing: compound
+  analysis: MAT or STR supplies implementation mechanics while LOG:020 supplies only
+    formal admissibility.
+- test_id: REP0-T115
+  english_concept: operative shared formal regime identity
+  routing: one_root
+  analysis: LOG:021[1] directly affirms the root's invariant without adding satisfaction,
+    truth, execution, or authority.
+- test_id: REP0-T116
+  english_concept: operative shared formal regime uncertain
+  routing: runtime
+  analysis: LOG:021[2]/num leaves this exact operative claim unresolved and does not
+    select a lexical sibling.
+- test_id: REP0-T117
+  english_concept: operative shared formal regime as data
+  routing: compound
+  analysis: DAT represents the rule while LOG:021 supplies its formal constraint identity
+    and status.
+- test_id: REP0-T118
+  english_concept: operative shared formal regime being evaluated
+  routing: compound
+  analysis: LOG:021 supplies the rule entity; LOG:1xx must separately supply the evaluation
+    process.
+- test_id: REP0-T119
+  english_concept: operative shared formal regime believed
+  routing: compound
+  analysis: MIN supplies belief or acceptance while LOG:021 remains the formal rule
+    independently.
+- test_id: REP0-T120
+  english_concept: operative shared formal regime physically implemented
+  routing: compound
+  analysis: MAT or STR supplies implementation mechanics while LOG:021 supplies only
+    formal admissibility.
+- test_id: REP0-T121
+  english_concept: dormant shared formal regime identity
+  routing: one_root
+  analysis: LOG:022[1] directly affirms the root's invariant without adding satisfaction,
+    truth, execution, or authority.
+- test_id: REP0-T122
+  english_concept: dormant shared formal regime uncertain
+  routing: runtime
+  analysis: LOG:022[2]/num leaves this exact dormant claim unresolved and does not
+    select a lexical sibling.
+- test_id: REP0-T123
+  english_concept: dormant shared formal regime as data
+  routing: compound
+  analysis: DAT represents the rule while LOG:022 supplies its formal constraint identity
+    and status.
+- test_id: REP0-T124
+  english_concept: dormant shared formal regime being evaluated
+  routing: compound
+  analysis: LOG:022 supplies the rule entity; LOG:1xx must separately supply the evaluation
+    process.
+- test_id: REP0-T125
+  english_concept: dormant shared formal regime believed
+  routing: compound
+  analysis: MIN supplies belief or acceptance while LOG:022 remains the formal rule
+    independently.
+- test_id: REP0-T126
+  english_concept: dormant shared formal regime physically implemented
+  routing: compound
+  analysis: MAT or STR supplies implementation mechanics while LOG:022 supplies only
+    formal admissibility.

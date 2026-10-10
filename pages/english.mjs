@@ -116,16 +116,28 @@ function scoreSense(sense,input,inputTokens){
   return{sense_id:sense.sense_id,lemma:sense.lemma,sense_key:sense.sense_key,route:sense.route,target_id:sense.target_id,definition:sense.definition,selection_cues:sense.selection_cues||[],score,confidence:score>=.82?'high':score>=.62?'medium':'low',match_type:exact?'exact_lemma':hint?.[3]==='context'?'contextual_english':hint?'english_sentence':surfaceMatch?'inflected_lemma':'context_overlap',contextual_hint:hint?.[3]==='context',evidence:{lexical_overlap:lexical,selection_cue_overlap:cue,definition_overlap:definition}};
 }
 
-export function analyzeEnglish(raw,data,{limit=8}={}){
+function termCoverage(normalized,data){
+  const words=(normalize(normalized).match(/[\p{L}\p{N}_-]+/gu)||[]).filter(word=>!STOPWORDS.has(word));
+  return words.map(word=>{
+    const forms=variants(word),matches=data.senses.filter(sense=>overlap(forms,lexicalTokens(sense.lemma,{keepStopwords:true})).length).map(sense=>({sense_id:sense.sense_id,lemma:sense.lemma,route:sense.route,target_id:sense.target_id,definition:sense.definition}));
+    const direct=matches.filter(match=>DIRECT.has(match.route));
+    const gaps=matches.filter(match=>match.route==='gap');
+    return{term:word,status:direct.length?'canonical':gaps.length?'documented_gap':matches.length?'structural':'phonemic_label',matches};
+  });
+}
+
+export function analyzeEnglish(raw,data,{limit=Number.POSITIVE_INFINITY}={}){
   let text,explicitRuntime;[text,explicitRuntime]=extractExplicitRuntime(raw);
   const normalized=normalize(text);
   if(!normalized)throw{code:'empty_input',message:'Write an English word, phrase, or sentence to translate.'};
   const intent=inferEnglishIntent(text,explicitRuntime),inputTokens=lexicalTokens(normalized);
+  const coverage=termCoverage(normalized,data);
   const ranked=data.senses.map(sense=>scoreSense(sense,normalized,inputTokens)).filter(Boolean).sort((a,b)=>b.score-a.score||a.sense_id.localeCompare(b.sense_id)).slice(0,limit);
-  if(!ranked.length)throw{code:'no_candidate',message:'I could not connect that English sentence to an approved Era Zero meaning yet. Try a shorter sentence focused on its main idea.'};
+  if(!ranked.length)return{status:'ok',input:raw,normalized_input:normalized,speech_act_proposal:intent.speechAct,explicit_runtime_state:intent.runtime,runtime_inference:intent.runtimeSource,candidates:[],candidate_count:0,term_coverage:coverage,decision:{auto_resolution_allowed:false,requires_clarification:true,reasons:['phonemic_labels_only'],competing_sense_ids:[]}};
   ranked.forEach(candidate=>{candidate.required_roles=candidate.target_id?data.required_roles[candidate.target_id]||[]:[]});
   const top=ranked[0],sameLemmaAmbiguity=INHERENTLY_POLYSEMOUS.has(normalize(top.lemma))&&!top.contextual_hint,competing=ranked.slice(1).filter(candidate=>top.contextual_hint?(candidate.contextual_hint&&top.score-candidate.score<.14):(top.score-candidate.score<.14||(sameLemmaAmbiguity&&normalize(candidate.lemma)===normalize(top.lemma)))),material=competing.length>0,direct=DIRECT.has(top.route),missingRoles=top.required_roles.length>0,structural=['semantic_ir','grammar'].includes(top.route),gap=top.route==='gap',hosted=Boolean(top.target_id&&data.resolution_files[top.target_id]);
   const confident=top.score>=.76&&(top.contextual_hint||!ranked[1]||top.score-ranked[1].score>=.14);
+  const hasUnfamiliarTerms=coverage.some(item=>item.status==='phonemic_label');
   const auto=Boolean(confident&&!material&&direct&&!missingRoles&&hosted);
   const reasons=[];
   if(material)reasons.push('material_sense_ambiguity');
@@ -134,6 +146,6 @@ export function analyzeEnglish(raw,data,{limit=8}={}){
   if(gap)reasons.push('documented_vocabulary_gap');
   if(!confident&&!material)reasons.push('low_confidence_english');
   if(direct&&!hosted)reasons.push('local_api_required');
-  const visibleCandidates=auto?[top]:[top,...ranked.slice(1).filter(candidate=>competing.includes(candidate)||top.score-candidate.score<.20)].slice(0,limit);
-  return{status:'ok',input:raw,normalized_input:normalized,speech_act_proposal:intent.speechAct,explicit_runtime_state:intent.runtime,runtime_inference:intent.runtimeSource,candidates:visibleCandidates,decision:{auto_resolution_allowed:auto,requires_clarification:!auto,reasons,competing_sense_ids:competing.map(item=>item.sense_id)}};
+  if(hasUnfamiliarTerms&&!auto)reasons.push('phonemic_labels_present');
+  return{status:'ok',input:raw,normalized_input:normalized,speech_act_proposal:intent.speechAct,explicit_runtime_state:intent.runtime,runtime_inference:intent.runtimeSource,candidates:ranked,candidate_count:ranked.length,term_coverage:coverage,decision:{auto_resolution_allowed:auto,requires_clarification:!auto,reasons,competing_sense_ids:competing.map(item=>item.sense_id)}};
 }

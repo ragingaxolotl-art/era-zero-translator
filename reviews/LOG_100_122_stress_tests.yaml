@@ -1,0 +1,614 @@
+---
+metadata:
+  title: LOG:100–122 English coverage and routing tests
+  status: review_evidence_not_translation_dictionary
+  range: LOG:100–122
+  test_count: 123
+  no_forced_atomization: true
+tests:
+- test_id: REP0-T001
+  english_concept: evaluate
+  routing: one_root_or_compound
+  analysis: Use LOG:1xx when the sense is a formal process that determines admissibility;
+    sensory appraisal or preference requires MIN, MAT, or other families.
+- test_id: REP0-T002
+  english_concept: check
+  routing: one_root_or_compound
+  analysis: A formal check maps to LOG:1xx according to scope and phase; inspection
+    mechanics, evidence, and results remain separate.
+- test_id: REP0-T003
+  english_concept: validate
+  routing: one_root_or_compound
+  analysis: LOG:1xx owns the formal evaluation process, DAT the data, LOG:0xx the
+    criterion, and result polarity remains a separate claim.
+- test_id: REP0-T004
+  english_concept: test
+  routing: one_root_or_compound
+  analysis: A formal admissibility test uses LOG:1xx; a physical experiment or medical
+    test requires MAT, LIF, DAT, and possibly CRE.
+- test_id: REP0-T005
+  english_concept: decide
+  routing: one_root_or_compound
+  analysis: A formal decision procedure can use LOG:1xx, while an agent's choice or
+    intention belongs to MIN and authority may require LIF or CON.
+- test_id: REP0-T006
+  english_concept: calculate
+  routing: compound_or_later_specialization
+  analysis: Calculation can be formal evaluation when it determines admissibility,
+    but arithmetic transformation and represented numbers require DAT and later specialization.
+- test_id: REP0-T007
+  english_concept: infer
+  routing: compound_or_later_specialization
+  analysis: Inference can use LOG:1xx when framed as formal evaluation; premises,
+    conclusion, and entailment relation remain separate.
+- test_id: REP0-T008
+  english_concept: deduce
+  routing: compound_or_later_specialization
+  analysis: Deduction is a specialized formal evaluation or derivation; do not make
+    conclusion production part of every LOG:1xx invariant.
+- test_id: REP0-T009
+  english_concept: prove
+  routing: compound_or_later_specialization
+  analysis: Proof construction or checking combines LOG:1xx with DAT proof objects
+    and LOG:2xx consequence relations.
+- test_id: REP0-T010
+  english_concept: verify
+  routing: one_root_or_compound
+  analysis: Formal verification uses LOG:1xx; evidence, instrumentation, observer
+    belief, and positive result are not entailed.
+- test_id: REP0-T011
+  english_concept: type-check
+  routing: one_root_or_compound
+  analysis: Use LOG:110–112 for a distinct target expression under a type constraint
+    or LOG:120–122 for coordinated module-level evaluation.
+- test_id: REP0-T012
+  english_concept: classify
+  routing: compound_or_later_specialization
+  analysis: Classification may be a formal evaluation, but category data and learned
+    models require DAT and MIN.
+- test_id: REP0-T013
+  english_concept: compare
+  routing: compound_or_later_specialization
+  analysis: Comparison can participate in evaluation; operands and ordering relation
+    are DAT or later LOG vocabulary.
+- test_id: REP0-T014
+  english_concept: authorize
+  routing: compound
+  analysis: LOG:1xx can evaluate permission, but authority, principal, policy, and
+    grant result require LIF, CON, DAT, and LOG:0xx compounds.
+- test_id: REP0-T015
+  english_concept: reject
+  routing: result_not_process
+  analysis: Rejection is one possible evaluation result and must not replace the completed-process
+    root.
+- test_id: REP0-T016
+  english_concept: accept
+  routing: result_not_process
+  analysis: Acceptance is one possible evaluation result and is not entailed by evaluation
+    completion.
+- test_id: REP0-T017
+  english_concept: pass
+  routing: result_not_process
+  analysis: Pass is result polarity; LOG:1x0 states completion without choosing pass
+    or fail.
+- test_id: REP0-T018
+  english_concept: fail
+  routing: result_not_process
+  analysis: Fail is result polarity; WRN applies only when failure is adverse rather
+    than merely nonconforming.
+- test_id: REP0-T019
+  english_concept: 'true'
+  routing: result_or_relation
+  analysis: Truth is not the evaluation process and should not be forced into a completed
+    LOG:1xx root.
+- test_id: REP0-T020
+  english_concept: 'false'
+  routing: result_or_relation
+  analysis: Falsity is not process nonactualization; LOG:1x2 says the evaluation is
+    not actualized.
+- test_id: REP0-T021
+  english_concept: valid
+  routing: result_or_relation
+  analysis: Validity may be an evaluation result or formal relation, not the completed
+    process itself.
+- test_id: REP0-T022
+  english_concept: invalid
+  routing: result_or_relation
+  analysis: Invalidity is not an active or nonactualized evaluation; keep result and
+    process separate.
+- test_id: REP0-T023
+  english_concept: satisfied
+  routing: result_or_relation
+  analysis: Constraint satisfaction is a result or relation; LOG:1xx only determines
+    admissibility.
+- test_id: REP0-T024
+  english_concept: violated
+  routing: result_or_relation
+  analysis: Violation is a result relative to a rule and is not equivalent to a completed
+    evaluation.
+- test_id: REP0-T025
+  english_concept: run a program
+  routing: different_family_or_compound
+  analysis: DAT owns code and machine state, while LOG:1xx applies only to the formal-evaluation
+    aspect of execution.
+- test_id: REP0-T026
+  english_concept: execute a command
+  routing: different_family_or_compound
+  analysis: CON or CRE may own the command and resulting action; LOG:1xx applies only
+    when formal admissibility is being determined.
+- test_id: REP0-T027
+  english_concept: simulate
+  routing: compound_or_later_specialization
+  analysis: Simulation transforms a represented model through time and needs DAT,
+    ORI, and possibly CRE; LOG:1xx can evaluate its states under rules.
+- test_id: REP0-T028
+  english_concept: optimize
+  routing: compound_or_later_specialization
+  analysis: Optimization requires objective and search relations beyond generic admissibility
+    evaluation.
+- test_id: REP0-T029
+  english_concept: solve
+  routing: compound_or_later_specialization
+  analysis: Solving may use LOG:1xx but solution construction and represented output
+    require DAT and possibly CRE.
+- test_id: REP0-T030
+  english_concept: completed internal evaluation
+  routing: one_root
+  analysis: LOG:100 states that one entity's admissibility was determined under its
+    internal criterion without stating the polarity.
+- test_id: REP0-T031
+  english_concept: active internal evaluation
+  routing: one_root
+  analysis: LOG:101 states that one entity's admissibility is currently being determined.
+- test_id: REP0-T032
+  english_concept: nonactualized internal evaluation
+  routing: one_root
+  analysis: LOG:102 states a typed inward evaluation that is not actualized, without
+    implying plan, queue, or future time.
+- test_id: REP0-T033
+  english_concept: completed target evaluation
+  routing: one_root
+  analysis: LOG:110 states completion of applying one specified constraint to one
+    distinct target.
+- test_id: REP0-T034
+  english_concept: active target evaluation
+  routing: one_root
+  analysis: LOG:111 states that one specified constraint is currently being applied
+    to one target.
+- test_id: REP0-T035
+  english_concept: nonactualized target evaluation
+  routing: one_root
+  analysis: LOG:112 states a typed target evaluation that is not actualized.
+- test_id: REP0-T036
+  english_concept: completed systemic evaluation
+  routing: one_root
+  analysis: LOG:120 states completion of one coordinated evaluation across multiple
+    participants under one shared regime.
+- test_id: REP0-T037
+  english_concept: active systemic evaluation
+  routing: one_root
+  analysis: LOG:121 states ongoing coordinated evaluation across multiple participants
+    under one regime.
+- test_id: REP0-T038
+  english_concept: nonactualized systemic evaluation
+  routing: one_root
+  analysis: LOG:122 states a typed coordinated systemic evaluation that is not actualized.
+- test_id: REP0-T039
+  english_concept: rule is operative
+  routing: different_layer
+  analysis: LOG:0x1 owns rule operation; an operative rule does not entail that LOG:1xx
+    evaluation is occurring.
+- test_id: REP0-T040
+  english_concept: rule exists
+  routing: different_layer
+  analysis: LOG:0xx owns rule identity; LOG:1xx requires a formal evaluation process.
+- test_id: REP0-T041
+  english_concept: rule applies
+  routing: future_relation_layer
+  analysis: Formal applicability belongs to LOG:2xx; process execution and applicability
+    are not identical.
+- test_id: REP0-T042
+  english_concept: result stored
+  routing: compound
+  analysis: DAT stores the result while LOG:1xx supplies the evaluation process.
+- test_id: REP0-T043
+  english_concept: proof object
+  routing: different_family
+  analysis: DAT owns the represented proof object; LOG:1xx may supply proof construction
+    or checking only when explicitly evaluated.
+- test_id: REP0-T044
+  english_concept: evaluation believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while LOG:1xx supplies formal process
+    phase.
+- test_id: REP0-T045
+  english_concept: evaluation observed
+  routing: compound
+  analysis: MIN and DAT supply observation or evidence; evaluation existence is independently
+    asserted.
+- test_id: REP0-T046
+  english_concept: evaluation caused a physical change
+  routing: compound
+  analysis: MAT or CRE supplies the physical transformation while LOG:1xx supplies
+    formal evaluation.
+- test_id: REP0-T047
+  english_concept: evaluation scheduled
+  routing: compound
+  analysis: ORI and DAT supply schedule; lexical third trit 2 only marks nonactualization.
+- test_id: REP0-T048
+  english_concept: evaluation queued
+  routing: compound
+  analysis: DAT and ORI supply queue state; LOG:102/112/122 do not encode readiness
+    or ordering.
+- test_id: REP0-T049
+  english_concept: evaluation impossible
+  routing: future_relation_or_modality
+  analysis: Negated LOG:2xx capability or ORI modality expresses impossibility; nonactualized
+    LOG:1x2 does not.
+- test_id: REP0-T050
+  english_concept: evaluation uncertain
+  routing: runtime
+  analysis: Use runtime `[2]/num` on the selected phase root rather than substituting
+    lexical nonactualization.
+- test_id: REP0-T051
+  english_concept: completed evaluation uncertain
+  routing: runtime_and_lexical
+  analysis: LOG:100/110/120[2]/num remains lexically completed while the token claim
+    is uncertain.
+- test_id: REP0-T052
+  english_concept: nonactualized evaluation affirmed
+  routing: runtime_and_lexical
+  analysis: LOG:102/112/122[1] affirms a typed-but-nonactualized process; runtime
+    affirmation does not make it active.
+- test_id: REP0-T053
+  english_concept: active evaluation denied
+  routing: runtime_and_lexical
+  analysis: Runtime `[0]` denies the active claim without automatically selecting
+    completion or nonactualization.
+- test_id: REP0-T054
+  english_concept: completed and active simultaneously
+  routing: phase_contradiction
+  analysis: The same bounded evaluation cannot be completed and active at one reference
+    time.
+- test_id: REP0-T055
+  english_concept: active and nonactualized simultaneously
+  routing: phase_contradiction
+  analysis: The same bounded evaluation cannot be both ongoing and nonactualized at
+    one reference time.
+- test_id: REP0-T056
+  english_concept: completed and nonactualized simultaneously
+  routing: phase_contradiction
+  analysis: The same bounded evaluation cannot be both completed and nonactualized
+    at one reference time.
+- test_id: REP0-T057
+  english_concept: many independent checks
+  routing: multiple_roots_not_one_systemic_root
+  analysis: Separate evaluations do not form one LOG:12x process unless coordinated
+    under one shared formal regime.
+- test_id: REP0-T058
+  english_concept: one check over many unrelated targets
+  routing: compound_or_multiple_roots
+  analysis: Plural targets alone do not establish one systemic regime or joint admissibility
+    relation.
+- test_id: REP0-T059
+  english_concept: joint compliance review
+  routing: one_root_or_compound
+  analysis: LOG:120–122 applies when multiple participants are evaluated together
+    under one shared formal regime.
+- test_id: REP0-T060
+  english_concept: rule evaluation versus rule
+  routing: scope_resolution_test
+  analysis: LOG:1xx owns evaluation; LOG:0xx owns the criterion or regime being evaluated.
+- test_id: REP0-T061
+  english_concept: rule evaluation versus applicability
+  routing: scope_resolution_test
+  analysis: LOG:1xx owns process; LOG:2xx owns whether a rule can apply or a consequence
+    holds.
+- test_id: REP0-T062
+  english_concept: evaluation versus data transformation
+  routing: scope_resolution_test
+  analysis: LOG determines admissibility; DAT or CRE transforms represented content.
+- test_id: REP0-T063
+  english_concept: evaluation versus belief revision
+  routing: scope_resolution_test
+  analysis: LOG supplies formal evaluation; MIN supplies cognitive change caused by
+    or responding to it.
+- test_id: REP0-T064
+  english_concept: evaluation versus physical inspection
+  routing: scope_resolution_test
+  analysis: LOG supplies formal determination; MAT, LIF, and DAT supply sensing and
+    evidence.
+- test_id: REP0-T065
+  english_concept: evaluation versus warning
+  routing: scope_resolution_test
+  analysis: LOG supplies rule-governed determination; WRN supplies adverse condition
+    or diagnostic warning when separately present.
+- test_id: REP0-T066
+  english_concept: evaluation versus restoration
+  routing: scope_resolution_test
+  analysis: LOG can evaluate a restoration criterion, while REP supplies the restoration
+    condition or process.
+- test_id: REP0-T067
+  english_concept: evaluation versus creation
+  routing: scope_resolution_test
+  analysis: LOG judges admissibility; CRE produces or transforms an artifact or representation.
+- test_id: REP0-T068
+  english_concept: evaluation versus communication
+  routing: scope_resolution_test
+  analysis: LOG supplies formal determination and CON supplies requests, responses,
+    votes, or messages.
+- test_id: REP0-T069
+  english_concept: evaluation versus time
+  routing: scope_resolution_test
+  analysis: Completed, active, and nonactualized are lexical phases; ORI supplies
+    past, future, duration, deadline, and schedule.
+- test_id: REP0-T070
+  english_concept: completed internal formal evaluation identity
+  routing: one_root
+  analysis: LOG:100[1] directly affirms the root's invariant without adding rule storage,
+    result polarity, or authority.
+- test_id: REP0-T071
+  english_concept: completed internal formal evaluation uncertain
+  routing: runtime
+  analysis: LOG:100[2]/num leaves this exact completed claim unresolved and does not
+    select a lexical sibling.
+- test_id: REP0-T072
+  english_concept: completed internal formal evaluation with data
+  routing: compound
+  analysis: DAT supplies inputs or outputs while LOG:100 supplies formal evaluation
+    phase.
+- test_id: REP0-T073
+  english_concept: completed internal formal evaluation under rule
+  routing: compound
+  analysis: LOG:0xx supplies the applicable criterion while LOG:100 supplies the evaluation
+    process.
+- test_id: REP0-T074
+  english_concept: completed internal formal evaluation believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while LOG:100 remains a formal process
+    claim.
+- test_id: REP0-T075
+  english_concept: completed internal formal evaluation physically implemented
+  routing: compound
+  analysis: MAT or STR supplies execution mechanics while LOG:100 supplies only admissibility
+    determination.
+- test_id: REP0-T076
+  english_concept: active internal formal evaluation identity
+  routing: one_root
+  analysis: LOG:101[1] directly affirms the root's invariant without adding rule storage,
+    result polarity, or authority.
+- test_id: REP0-T077
+  english_concept: active internal formal evaluation uncertain
+  routing: runtime
+  analysis: LOG:101[2]/num leaves this exact active claim unresolved and does not
+    select a lexical sibling.
+- test_id: REP0-T078
+  english_concept: active internal formal evaluation with data
+  routing: compound
+  analysis: DAT supplies inputs or outputs while LOG:101 supplies formal evaluation
+    phase.
+- test_id: REP0-T079
+  english_concept: active internal formal evaluation under rule
+  routing: compound
+  analysis: LOG:0xx supplies the applicable criterion while LOG:101 supplies the evaluation
+    process.
+- test_id: REP0-T080
+  english_concept: active internal formal evaluation believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while LOG:101 remains a formal process
+    claim.
+- test_id: REP0-T081
+  english_concept: active internal formal evaluation physically implemented
+  routing: compound
+  analysis: MAT or STR supplies execution mechanics while LOG:101 supplies only admissibility
+    determination.
+- test_id: REP0-T082
+  english_concept: nonactualized internal formal evaluation identity
+  routing: one_root
+  analysis: LOG:102[1] directly affirms the root's invariant without adding rule storage,
+    result polarity, or authority.
+- test_id: REP0-T083
+  english_concept: nonactualized internal formal evaluation uncertain
+  routing: runtime
+  analysis: LOG:102[2]/num leaves this exact nonactualized claim unresolved and does
+    not select a lexical sibling.
+- test_id: REP0-T084
+  english_concept: nonactualized internal formal evaluation with data
+  routing: compound
+  analysis: DAT supplies inputs or outputs while LOG:102 supplies formal evaluation
+    phase.
+- test_id: REP0-T085
+  english_concept: nonactualized internal formal evaluation under rule
+  routing: compound
+  analysis: LOG:0xx supplies the applicable criterion while LOG:102 supplies the evaluation
+    process.
+- test_id: REP0-T086
+  english_concept: nonactualized internal formal evaluation believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while LOG:102 remains a formal process
+    claim.
+- test_id: REP0-T087
+  english_concept: nonactualized internal formal evaluation physically implemented
+  routing: compound
+  analysis: MAT or STR supplies execution mechanics while LOG:102 supplies only admissibility
+    determination.
+- test_id: REP0-T088
+  english_concept: completed target constraint application identity
+  routing: one_root
+  analysis: LOG:110[1] directly affirms the root's invariant without adding rule storage,
+    result polarity, or authority.
+- test_id: REP0-T089
+  english_concept: completed target constraint application uncertain
+  routing: runtime
+  analysis: LOG:110[2]/num leaves this exact completed claim unresolved and does not
+    select a lexical sibling.
+- test_id: REP0-T090
+  english_concept: completed target constraint application with data
+  routing: compound
+  analysis: DAT supplies inputs or outputs while LOG:110 supplies formal evaluation
+    phase.
+- test_id: REP0-T091
+  english_concept: completed target constraint application under rule
+  routing: compound
+  analysis: LOG:0xx supplies the applicable criterion while LOG:110 supplies the evaluation
+    process.
+- test_id: REP0-T092
+  english_concept: completed target constraint application believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while LOG:110 remains a formal process
+    claim.
+- test_id: REP0-T093
+  english_concept: completed target constraint application physically implemented
+  routing: compound
+  analysis: MAT or STR supplies execution mechanics while LOG:110 supplies only admissibility
+    determination.
+- test_id: REP0-T094
+  english_concept: active target constraint application identity
+  routing: one_root
+  analysis: LOG:111[1] directly affirms the root's invariant without adding rule storage,
+    result polarity, or authority.
+- test_id: REP0-T095
+  english_concept: active target constraint application uncertain
+  routing: runtime
+  analysis: LOG:111[2]/num leaves this exact active claim unresolved and does not
+    select a lexical sibling.
+- test_id: REP0-T096
+  english_concept: active target constraint application with data
+  routing: compound
+  analysis: DAT supplies inputs or outputs while LOG:111 supplies formal evaluation
+    phase.
+- test_id: REP0-T097
+  english_concept: active target constraint application under rule
+  routing: compound
+  analysis: LOG:0xx supplies the applicable criterion while LOG:111 supplies the evaluation
+    process.
+- test_id: REP0-T098
+  english_concept: active target constraint application believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while LOG:111 remains a formal process
+    claim.
+- test_id: REP0-T099
+  english_concept: active target constraint application physically implemented
+  routing: compound
+  analysis: MAT or STR supplies execution mechanics while LOG:111 supplies only admissibility
+    determination.
+- test_id: REP0-T100
+  english_concept: nonactualized target constraint application identity
+  routing: one_root
+  analysis: LOG:112[1] directly affirms the root's invariant without adding rule storage,
+    result polarity, or authority.
+- test_id: REP0-T101
+  english_concept: nonactualized target constraint application uncertain
+  routing: runtime
+  analysis: LOG:112[2]/num leaves this exact nonactualized claim unresolved and does
+    not select a lexical sibling.
+- test_id: REP0-T102
+  english_concept: nonactualized target constraint application with data
+  routing: compound
+  analysis: DAT supplies inputs or outputs while LOG:112 supplies formal evaluation
+    phase.
+- test_id: REP0-T103
+  english_concept: nonactualized target constraint application under rule
+  routing: compound
+  analysis: LOG:0xx supplies the applicable criterion while LOG:112 supplies the evaluation
+    process.
+- test_id: REP0-T104
+  english_concept: nonactualized target constraint application believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while LOG:112 remains a formal process
+    claim.
+- test_id: REP0-T105
+  english_concept: nonactualized target constraint application physically implemented
+  routing: compound
+  analysis: MAT or STR supplies execution mechanics while LOG:112 supplies only admissibility
+    determination.
+- test_id: REP0-T106
+  english_concept: completed systemic regime evaluation identity
+  routing: one_root
+  analysis: LOG:120[1] directly affirms the root's invariant without adding rule storage,
+    result polarity, or authority.
+- test_id: REP0-T107
+  english_concept: completed systemic regime evaluation uncertain
+  routing: runtime
+  analysis: LOG:120[2]/num leaves this exact completed claim unresolved and does not
+    select a lexical sibling.
+- test_id: REP0-T108
+  english_concept: completed systemic regime evaluation with data
+  routing: compound
+  analysis: DAT supplies inputs or outputs while LOG:120 supplies formal evaluation
+    phase.
+- test_id: REP0-T109
+  english_concept: completed systemic regime evaluation under rule
+  routing: compound
+  analysis: LOG:0xx supplies the applicable criterion while LOG:120 supplies the evaluation
+    process.
+- test_id: REP0-T110
+  english_concept: completed systemic regime evaluation believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while LOG:120 remains a formal process
+    claim.
+- test_id: REP0-T111
+  english_concept: completed systemic regime evaluation physically implemented
+  routing: compound
+  analysis: MAT or STR supplies execution mechanics while LOG:120 supplies only admissibility
+    determination.
+- test_id: REP0-T112
+  english_concept: active systemic regime evaluation identity
+  routing: one_root
+  analysis: LOG:121[1] directly affirms the root's invariant without adding rule storage,
+    result polarity, or authority.
+- test_id: REP0-T113
+  english_concept: active systemic regime evaluation uncertain
+  routing: runtime
+  analysis: LOG:121[2]/num leaves this exact active claim unresolved and does not
+    select a lexical sibling.
+- test_id: REP0-T114
+  english_concept: active systemic regime evaluation with data
+  routing: compound
+  analysis: DAT supplies inputs or outputs while LOG:121 supplies formal evaluation
+    phase.
+- test_id: REP0-T115
+  english_concept: active systemic regime evaluation under rule
+  routing: compound
+  analysis: LOG:0xx supplies the applicable criterion while LOG:121 supplies the evaluation
+    process.
+- test_id: REP0-T116
+  english_concept: active systemic regime evaluation believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while LOG:121 remains a formal process
+    claim.
+- test_id: REP0-T117
+  english_concept: active systemic regime evaluation physically implemented
+  routing: compound
+  analysis: MAT or STR supplies execution mechanics while LOG:121 supplies only admissibility
+    determination.
+- test_id: REP0-T118
+  english_concept: nonactualized systemic regime evaluation identity
+  routing: one_root
+  analysis: LOG:122[1] directly affirms the root's invariant without adding rule storage,
+    result polarity, or authority.
+- test_id: REP0-T119
+  english_concept: nonactualized systemic regime evaluation uncertain
+  routing: runtime
+  analysis: LOG:122[2]/num leaves this exact nonactualized claim unresolved and does
+    not select a lexical sibling.
+- test_id: REP0-T120
+  english_concept: nonactualized systemic regime evaluation with data
+  routing: compound
+  analysis: DAT supplies inputs or outputs while LOG:122 supplies formal evaluation
+    phase.
+- test_id: REP0-T121
+  english_concept: nonactualized systemic regime evaluation under rule
+  routing: compound
+  analysis: LOG:0xx supplies the applicable criterion while LOG:122 supplies the evaluation
+    process.
+- test_id: REP0-T122
+  english_concept: nonactualized systemic regime evaluation believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while LOG:122 remains a formal process
+    claim.
+- test_id: REP0-T123
+  english_concept: nonactualized systemic regime evaluation physically implemented
+  routing: compound
+  analysis: MAT or STR supplies execution mechanics while LOG:122 supplies only admissibility
+    determination.

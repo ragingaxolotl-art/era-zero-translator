@@ -1,0 +1,580 @@
+---
+metadata:
+  title: CRE:100–122 English coverage and routing tests
+  status: review_evidence_not_translation_dictionary
+  range: CRE:100–122
+  test_count: 115
+  no_forced_atomization: true
+tests:
+- test_id: CRE1-T001
+  english_concept: form a design pattern
+  routing: one_root
+  analysis: Use CRE:100–102 when productive transformation forms or modifies a generative
+    pattern while retaining it within one entity.
+- test_id: CRE1-T002
+  english_concept: compose
+  routing: one_root_or_compound
+  analysis: Composition can use internal pattern formation or outward artifact generation
+    depending on whether the product remains a source pattern or becomes a generated
+    work.
+- test_id: CRE1-T003
+  english_concept: design
+  routing: polysemy_requires_routing
+  analysis: Mental conception is MIN, a production-guiding pattern is CRE:0xx, and
+    actual form-producing design work is CRE:1xx.
+- test_id: CRE1-T004
+  english_concept: sketch
+  routing: compound
+  analysis: CRE supplies productive pattern formation or artifact generation; DAT
+    or MAT supplies the mark and medium.
+- test_id: CRE1-T005
+  english_concept: draft
+  routing: compound
+  analysis: CRE supplies productive formation, DAT supplies the represented draft,
+    and ORI or later vocabulary supplies version status.
+- test_id: CRE1-T006
+  english_concept: revise a pattern
+  routing: one_root_or_compound
+  analysis: CRE:100–102 can modify a generative pattern; the previous and resulting
+    versions remain separate entities.
+- test_id: CRE1-T007
+  english_concept: imagine
+  routing: different_family
+  analysis: Imagination alone belongs to MIN and is not productive transformation.
+- test_id: CRE1-T008
+  english_concept: brainstorm
+  routing: different_family_or_compound
+  analysis: Collective ideation belongs chiefly to MIN and CON unless participants
+    actually co-generate one constituted result.
+- test_id: CRE1-T009
+  english_concept: intend to create
+  routing: different_family
+  analysis: Intention belongs to MIN and does not actualize a CRE productive process.
+- test_id: CRE1-T010
+  english_concept: plan production
+  routing: compound
+  analysis: MIN supplies intention, DAT the plan, LOG its constraints, and CRE:1xx
+    applies only when form-producing transformation is asserted.
+- test_id: CRE1-T011
+  english_concept: generate an artifact
+  routing: one_root
+  analysis: Use CRE:110–112 for a bounded productive transformation directed outward
+    from one source toward one generated artifact.
+- test_id: CRE1-T012
+  english_concept: create
+  routing: one_root_or_compound
+  analysis: Choose internal pattern formation, outward artifact generation, or systemic
+    co-generation by scope; medium and creator roles remain separate.
+- test_id: CRE1-T013
+  english_concept: render
+  routing: one_root_or_compound
+  analysis: Rendering can be artifact generation when it brings a generated product
+    into manifestation; DAT supplies representation and MAT the display medium.
+- test_id: CRE1-T014
+  english_concept: instantiate
+  routing: one_root_or_compound
+  analysis: Instantiation is artifact generation when a productive transformation
+    brings one product into manifestation; formal type relations remain LOG or STR.
+- test_id: CRE1-T015
+  english_concept: build
+  routing: compound
+  analysis: CRE supplies artifact generation while MAT and STR supply substance, assembly,
+    and structure.
+- test_id: CRE1-T016
+  english_concept: manufacture
+  routing: compound
+  analysis: CRE supplies generation, MAT physical transformation, and STR production
+    arrangement.
+- test_id: CRE1-T017
+  english_concept: assemble
+  routing: compound
+  analysis: STR owns incorporation and arrangement; CRE applies when assembly is asserted
+    as generation of one artifact.
+- test_id: CRE1-T018
+  english_concept: print
+  routing: compound
+  analysis: CRE can supply artifact generation, MAT supplies physical medium, and
+    DAT supplies encoded source content.
+- test_id: CRE1-T019
+  english_concept: compile code
+  routing: compound
+  analysis: CRE can supply generated artifact identity, LOG the formal procedure,
+    and DAT input and output representations.
+- test_id: CRE1-T020
+  english_concept: generate text
+  routing: compound
+  analysis: CRE supplies artifact generation while DAT supplies represented text and
+    LOG or CRE:2xx may supply the generator.
+- test_id: CRE1-T021
+  english_concept: synthesize an image
+  routing: compound
+  analysis: CRE supplies artifact generation and DAT supplies pixel representation;
+    implementation algorithm and medium remain separate.
+- test_id: CRE1-T022
+  english_concept: perform music
+  routing: compound_or_process_specialization
+  analysis: CRE may supply production of a performance artifact, while LIF agents,
+    CON coordination, and MAT sound realization remain separate.
+- test_id: CRE1-T023
+  english_concept: publish
+  routing: different_process_or_compound
+  analysis: Publication is chiefly CON distribution plus a CRE artifact; it is not
+    artifact generation itself.
+- test_id: CRE1-T024
+  english_concept: copy
+  routing: different_family_or_compound
+  analysis: DAT owns information copying; CRE applies only when the copy is constituted
+    as a newly generated artifact.
+- test_id: CRE1-T025
+  english_concept: transform data
+  routing: different_family
+  analysis: Representation change without form-producing creation belongs to DAT:1xx.
+- test_id: CRE1-T026
+  english_concept: reconfigure structure
+  routing: different_family
+  analysis: Arrangement change without productive generation belongs to STR:1xx.
+- test_id: CRE1-T027
+  english_concept: change matter
+  routing: different_family
+  analysis: Physical transformation without Creation-domain generation belongs to
+    MAT.
+- test_id: CRE1-T028
+  english_concept: restore
+  routing: different_family_or_compound
+  analysis: Return to an acceptable prior condition belongs to REP even when reconstruction
+    also generates an artifact.
+- test_id: CRE1-T029
+  english_concept: co-create
+  routing: one_root
+  analysis: Use CRE:120–122 when multiple participants coordinate productive transformation
+    toward one jointly constituted result.
+- test_id: CRE1-T030
+  english_concept: collaborate
+  routing: different_family_or_compound
+  analysis: CON owns collaboration; CRE systemic co-generation additionally requires
+    one jointly constituted productive result.
+- test_id: CRE1-T031
+  english_concept: collective authorship
+  routing: compound
+  analysis: CRE supplies systemic co-generation and LIF or CON supplies author roles
+    and social attribution.
+- test_id: CRE1-T032
+  english_concept: ensemble production
+  routing: compound
+  analysis: CRE:12x supplies jointly constituted generation while LIF, CON, MAT, and
+    STR supply participants, coordination, media, and arrangement.
+- test_id: CRE1-T033
+  english_concept: merge contributions
+  routing: compound
+  analysis: CRE systemic co-generation applies if contributions jointly constitute
+    one generated result; DAT or STR supplies informational or structural merging.
+- test_id: CRE1-T034
+  english_concept: crowdsource
+  routing: compound
+  analysis: CON and LIF supply participation relations; CRE:12x applies only when
+    those contributions co-generate one result.
+- test_id: CRE1-T035
+  english_concept: many independent creations
+  routing: multiple_processes_not_one_systemic_root
+  analysis: Separate creations do not become systemic co-generation merely because
+    they occur together.
+- test_id: CRE1-T036
+  english_concept: pipeline
+  routing: compound
+  analysis: STR and ORI supply arranged stages; CRE supplies the productive transformations
+    performed in them.
+- test_id: CRE1-T037
+  english_concept: generation completed
+  routing: one_root
+  analysis: Choose CRE:100, CRE:110, or CRE:120 by scope; completion does not entail
+    quality, acceptance, or persistence.
+- test_id: CRE1-T038
+  english_concept: generation active
+  routing: one_root
+  analysis: Choose CRE:101, CRE:111, or CRE:121 by scope; activity does not entail
+    eventual completion.
+- test_id: CRE1-T039
+  english_concept: generation pending
+  routing: one_root_with_boundary
+  analysis: CRE:102, CRE:112, or CRE:122 asserts a typed nonactualized process, not
+    scheduling, readiness, queueing, or intention.
+- test_id: CRE1-T040
+  english_concept: queued rendering
+  routing: compound
+  analysis: CRE:112 supplies nonactualized artifact generation; queue state and order
+    require STR, DAT, or ORI.
+- test_id: CRE1-T041
+  english_concept: scheduled build
+  routing: compound
+  analysis: CRE:112 supplies nonactualized artifact generation and ORI supplies schedule
+    or future placement.
+- test_id: CRE1-T042
+  english_concept: possible creation
+  routing: grammar_or_compound
+  analysis: Possibility is ORI or modal grammar; lexical nonactualization alone does
+    not assert possibility.
+- test_id: CRE1-T043
+  english_concept: failed creation
+  routing: compound
+  analysis: CRE supplies productive-process phase and WRN or LOG supplies failure
+    under a criterion.
+- test_id: CRE1-T044
+  english_concept: successful creation
+  routing: compound
+  analysis: CRE completion does not entail success; LOG or goal evaluation must supply
+    the criterion and result.
+- test_id: CRE1-T045
+  english_concept: unfinished artifact
+  routing: compound
+  analysis: A manifest artifact may result from an active process, but incompletion
+    and artifact state must be stated separately.
+- test_id: CRE1-T046
+  english_concept: original creation
+  routing: compound_or_later_relation
+  analysis: CRE supplies generation while originality requires provenance comparison
+    or later specialized vocabulary.
+- test_id: CRE1-T047
+  english_concept: automatic generation
+  routing: compound
+  analysis: CRE supplies productive transformation while LOG, DAT, or CRE:2xx supplies
+    the automated generator and capability.
+- test_id: CRE1-T048
+  english_concept: self-generation
+  routing: compound_or_later_relation
+  analysis: CRE supplies generation; source-product identity and reflexive relation
+    must be expressed separately.
+- test_id: CRE1-T049
+  english_concept: emergence
+  routing: compound_or_different_family
+  analysis: CRE applies when a productive process generates a form; ORI supplies causal
+    or ontological emergence.
+- test_id: CRE1-T050
+  english_concept: completed process uncertain
+  routing: runtime
+  analysis: A completed CRE:1x0 root with [2]/num leaves completion uncertain and
+    does not select active or nonactualized phase.
+- test_id: CRE1-T051
+  english_concept: active process denied
+  routing: runtime
+  analysis: An active CRE:1x1 root with [0] denies current activity without affirming
+    completion or nonactualization.
+- test_id: CRE1-T052
+  english_concept: nonactualized process affirmed
+  routing: runtime_and_lexical
+  analysis: A CRE:1x2 root with [1] confirms typed-but-nonactualized process status
+    without adding future or readiness.
+- test_id: CRE1-T053
+  english_concept: completed and active simultaneously
+  routing: contradiction
+  analysis: Completed and active are mutually exclusive phases for the same bounded
+    productive transformation at one reference time.
+- test_id: CRE1-T054
+  english_concept: active and nonactualized simultaneously
+  routing: contradiction
+  analysis: Active and nonactualized are mutually exclusive for the same bounded productive
+    transformation at one reference time.
+- test_id: CRE1-T055
+  english_concept: pattern versus pattern formation
+  routing: layer_boundary
+  analysis: CRE:0xx identifies the generative pattern; CRE:10x identifies the process
+    forming or modifying it.
+- test_id: CRE1-T056
+  english_concept: artifact versus artifact generation
+  routing: layer_boundary
+  analysis: CRE:01x identifies the generated artifact; CRE:11x identifies the process
+    bringing it into manifestation.
+- test_id: CRE1-T057
+  english_concept: repertoire versus co-generation
+  routing: layer_boundary
+  analysis: CRE:02x identifies the shared generative repertoire; CRE:12x identifies
+    coordinated production of one joint result.
+- test_id: CRE1-T058
+  english_concept: generation versus capability
+  routing: layer_boundary
+  analysis: CRE:1xx asserts actual process phase; CRE:2xx remains reserved for generative
+    capacity or enabling relation.
+- test_id: CRE1-T059
+  english_concept: creation versus causation
+  routing: cross_family_boundary
+  analysis: CRE supplies productive transformation while ORI supplies causal explanation
+    or ontological origin.
+- test_id: CRE1-T060
+  english_concept: creation versus communication
+  routing: cross_family_boundary
+  analysis: CRE supplies generation while CON supplies interaction, coordination,
+    publication, and exchange.
+- test_id: CRE1-T061
+  english_concept: creation versus computation
+  routing: cross_family_boundary
+  analysis: CRE supplies form-producing function; LOG and DAT supply formal operation
+    and information transformation when separately relevant.
+- test_id: CRE1-T062
+  english_concept: completed internal pattern formation direct
+  routing: one_root
+  analysis: CRE:100[1] directly affirms the invariant without adding quality, value,
+    authorship, medium, algorithm, or schedule.
+- test_id: CRE1-T063
+  english_concept: completed internal pattern formation uncertain
+  routing: runtime
+  analysis: CRE:100[2]/num leaves this exact completed phase claim unresolved and
+    does not select a lexical sibling.
+- test_id: CRE1-T064
+  english_concept: completed internal pattern formation with entity
+  routing: compound
+  analysis: CRE:0xx supplies the pattern, artifact, or repertoire while CRE:100 supplies
+    productive-process phase.
+- test_id: CRE1-T065
+  english_concept: completed internal pattern formation with medium
+  routing: compound
+  analysis: MAT supplies physical realization while CRE:100 remains substrate-neutral
+    generation.
+- test_id: CRE1-T066
+  english_concept: completed internal pattern formation with algorithm
+  routing: compound
+  analysis: LOG and DAT supply formal and representational implementation while CRE:100
+    supplies productive function.
+- test_id: CRE1-T067
+  english_concept: completed internal pattern formation evaluated
+  routing: compound
+  analysis: LOG supplies success or quality evaluation while CRE:100 remains the productive
+    transformation independently.
+- test_id: CRE1-T068
+  english_concept: active internal pattern formation direct
+  routing: one_root
+  analysis: CRE:101[1] directly affirms the invariant without adding quality, value,
+    authorship, medium, algorithm, or schedule.
+- test_id: CRE1-T069
+  english_concept: active internal pattern formation uncertain
+  routing: runtime
+  analysis: CRE:101[2]/num leaves this exact active phase claim unresolved and does
+    not select a lexical sibling.
+- test_id: CRE1-T070
+  english_concept: active internal pattern formation with entity
+  routing: compound
+  analysis: CRE:0xx supplies the pattern, artifact, or repertoire while CRE:101 supplies
+    productive-process phase.
+- test_id: CRE1-T071
+  english_concept: active internal pattern formation with medium
+  routing: compound
+  analysis: MAT supplies physical realization while CRE:101 remains substrate-neutral
+    generation.
+- test_id: CRE1-T072
+  english_concept: active internal pattern formation with algorithm
+  routing: compound
+  analysis: LOG and DAT supply formal and representational implementation while CRE:101
+    supplies productive function.
+- test_id: CRE1-T073
+  english_concept: active internal pattern formation evaluated
+  routing: compound
+  analysis: LOG supplies success or quality evaluation while CRE:101 remains the productive
+    transformation independently.
+- test_id: CRE1-T074
+  english_concept: nonactualized internal pattern formation direct
+  routing: one_root
+  analysis: CRE:102[1] directly affirms the invariant without adding quality, value,
+    authorship, medium, algorithm, or schedule.
+- test_id: CRE1-T075
+  english_concept: nonactualized internal pattern formation uncertain
+  routing: runtime
+  analysis: CRE:102[2]/num leaves this exact nonactualized phase claim unresolved
+    and does not select a lexical sibling.
+- test_id: CRE1-T076
+  english_concept: nonactualized internal pattern formation with entity
+  routing: compound
+  analysis: CRE:0xx supplies the pattern, artifact, or repertoire while CRE:102 supplies
+    productive-process phase.
+- test_id: CRE1-T077
+  english_concept: nonactualized internal pattern formation with medium
+  routing: compound
+  analysis: MAT supplies physical realization while CRE:102 remains substrate-neutral
+    generation.
+- test_id: CRE1-T078
+  english_concept: nonactualized internal pattern formation with algorithm
+  routing: compound
+  analysis: LOG and DAT supply formal and representational implementation while CRE:102
+    supplies productive function.
+- test_id: CRE1-T079
+  english_concept: nonactualized internal pattern formation evaluated
+  routing: compound
+  analysis: LOG supplies success or quality evaluation while CRE:102 remains the productive
+    transformation independently.
+- test_id: CRE1-T080
+  english_concept: completed artifact generation direct
+  routing: one_root
+  analysis: CRE:110[1] directly affirms the invariant without adding quality, value,
+    authorship, medium, algorithm, or schedule.
+- test_id: CRE1-T081
+  english_concept: completed artifact generation uncertain
+  routing: runtime
+  analysis: CRE:110[2]/num leaves this exact completed phase claim unresolved and
+    does not select a lexical sibling.
+- test_id: CRE1-T082
+  english_concept: completed artifact generation with entity
+  routing: compound
+  analysis: CRE:0xx supplies the pattern, artifact, or repertoire while CRE:110 supplies
+    productive-process phase.
+- test_id: CRE1-T083
+  english_concept: completed artifact generation with medium
+  routing: compound
+  analysis: MAT supplies physical realization while CRE:110 remains substrate-neutral
+    generation.
+- test_id: CRE1-T084
+  english_concept: completed artifact generation with algorithm
+  routing: compound
+  analysis: LOG and DAT supply formal and representational implementation while CRE:110
+    supplies productive function.
+- test_id: CRE1-T085
+  english_concept: completed artifact generation evaluated
+  routing: compound
+  analysis: LOG supplies success or quality evaluation while CRE:110 remains the productive
+    transformation independently.
+- test_id: CRE1-T086
+  english_concept: active artifact generation direct
+  routing: one_root
+  analysis: CRE:111[1] directly affirms the invariant without adding quality, value,
+    authorship, medium, algorithm, or schedule.
+- test_id: CRE1-T087
+  english_concept: active artifact generation uncertain
+  routing: runtime
+  analysis: CRE:111[2]/num leaves this exact active phase claim unresolved and does
+    not select a lexical sibling.
+- test_id: CRE1-T088
+  english_concept: active artifact generation with entity
+  routing: compound
+  analysis: CRE:0xx supplies the pattern, artifact, or repertoire while CRE:111 supplies
+    productive-process phase.
+- test_id: CRE1-T089
+  english_concept: active artifact generation with medium
+  routing: compound
+  analysis: MAT supplies physical realization while CRE:111 remains substrate-neutral
+    generation.
+- test_id: CRE1-T090
+  english_concept: active artifact generation with algorithm
+  routing: compound
+  analysis: LOG and DAT supply formal and representational implementation while CRE:111
+    supplies productive function.
+- test_id: CRE1-T091
+  english_concept: active artifact generation evaluated
+  routing: compound
+  analysis: LOG supplies success or quality evaluation while CRE:111 remains the productive
+    transformation independently.
+- test_id: CRE1-T092
+  english_concept: nonactualized artifact generation direct
+  routing: one_root
+  analysis: CRE:112[1] directly affirms the invariant without adding quality, value,
+    authorship, medium, algorithm, or schedule.
+- test_id: CRE1-T093
+  english_concept: nonactualized artifact generation uncertain
+  routing: runtime
+  analysis: CRE:112[2]/num leaves this exact nonactualized phase claim unresolved
+    and does not select a lexical sibling.
+- test_id: CRE1-T094
+  english_concept: nonactualized artifact generation with entity
+  routing: compound
+  analysis: CRE:0xx supplies the pattern, artifact, or repertoire while CRE:112 supplies
+    productive-process phase.
+- test_id: CRE1-T095
+  english_concept: nonactualized artifact generation with medium
+  routing: compound
+  analysis: MAT supplies physical realization while CRE:112 remains substrate-neutral
+    generation.
+- test_id: CRE1-T096
+  english_concept: nonactualized artifact generation with algorithm
+  routing: compound
+  analysis: LOG and DAT supply formal and representational implementation while CRE:112
+    supplies productive function.
+- test_id: CRE1-T097
+  english_concept: nonactualized artifact generation evaluated
+  routing: compound
+  analysis: LOG supplies success or quality evaluation while CRE:112 remains the productive
+    transformation independently.
+- test_id: CRE1-T098
+  english_concept: completed systemic co-generation direct
+  routing: one_root
+  analysis: CRE:120[1] directly affirms the invariant without adding quality, value,
+    authorship, medium, algorithm, or schedule.
+- test_id: CRE1-T099
+  english_concept: completed systemic co-generation uncertain
+  routing: runtime
+  analysis: CRE:120[2]/num leaves this exact completed phase claim unresolved and
+    does not select a lexical sibling.
+- test_id: CRE1-T100
+  english_concept: completed systemic co-generation with entity
+  routing: compound
+  analysis: CRE:0xx supplies the pattern, artifact, or repertoire while CRE:120 supplies
+    productive-process phase.
+- test_id: CRE1-T101
+  english_concept: completed systemic co-generation with medium
+  routing: compound
+  analysis: MAT supplies physical realization while CRE:120 remains substrate-neutral
+    generation.
+- test_id: CRE1-T102
+  english_concept: completed systemic co-generation with algorithm
+  routing: compound
+  analysis: LOG and DAT supply formal and representational implementation while CRE:120
+    supplies productive function.
+- test_id: CRE1-T103
+  english_concept: completed systemic co-generation evaluated
+  routing: compound
+  analysis: LOG supplies success or quality evaluation while CRE:120 remains the productive
+    transformation independently.
+- test_id: CRE1-T104
+  english_concept: active systemic co-generation direct
+  routing: one_root
+  analysis: CRE:121[1] directly affirms the invariant without adding quality, value,
+    authorship, medium, algorithm, or schedule.
+- test_id: CRE1-T105
+  english_concept: active systemic co-generation uncertain
+  routing: runtime
+  analysis: CRE:121[2]/num leaves this exact active phase claim unresolved and does
+    not select a lexical sibling.
+- test_id: CRE1-T106
+  english_concept: active systemic co-generation with entity
+  routing: compound
+  analysis: CRE:0xx supplies the pattern, artifact, or repertoire while CRE:121 supplies
+    productive-process phase.
+- test_id: CRE1-T107
+  english_concept: active systemic co-generation with medium
+  routing: compound
+  analysis: MAT supplies physical realization while CRE:121 remains substrate-neutral
+    generation.
+- test_id: CRE1-T108
+  english_concept: active systemic co-generation with algorithm
+  routing: compound
+  analysis: LOG and DAT supply formal and representational implementation while CRE:121
+    supplies productive function.
+- test_id: CRE1-T109
+  english_concept: active systemic co-generation evaluated
+  routing: compound
+  analysis: LOG supplies success or quality evaluation while CRE:121 remains the productive
+    transformation independently.
+- test_id: CRE1-T110
+  english_concept: nonactualized systemic co-generation direct
+  routing: one_root
+  analysis: CRE:122[1] directly affirms the invariant without adding quality, value,
+    authorship, medium, algorithm, or schedule.
+- test_id: CRE1-T111
+  english_concept: nonactualized systemic co-generation uncertain
+  routing: runtime
+  analysis: CRE:122[2]/num leaves this exact nonactualized phase claim unresolved
+    and does not select a lexical sibling.
+- test_id: CRE1-T112
+  english_concept: nonactualized systemic co-generation with entity
+  routing: compound
+  analysis: CRE:0xx supplies the pattern, artifact, or repertoire while CRE:122 supplies
+    productive-process phase.
+- test_id: CRE1-T113
+  english_concept: nonactualized systemic co-generation with medium
+  routing: compound
+  analysis: MAT supplies physical realization while CRE:122 remains substrate-neutral
+    generation.
+- test_id: CRE1-T114
+  english_concept: nonactualized systemic co-generation with algorithm
+  routing: compound
+  analysis: LOG and DAT supply formal and representational implementation while CRE:122
+    supplies productive function.
+- test_id: CRE1-T115
+  english_concept: nonactualized systemic co-generation evaluated
+  routing: compound
+  analysis: LOG supplies success or quality evaluation while CRE:122 remains the productive
+    transformation independently.

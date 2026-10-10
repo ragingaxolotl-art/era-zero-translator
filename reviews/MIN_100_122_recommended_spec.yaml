@@ -1,0 +1,1542 @@
+---
+metadata:
+  title: MIN:100–122 recommended permanent semantic specification
+  status: recommended_pending_delegated_approval
+  architecture_version: '1.0'
+  semantic_center: cognitive representational revision
+  triplets:
+    MIN:100–102: 'self-model revision: completed / active / nonactualized'
+    MIN:110–112: 'target-model revision: completed / active / nonactualized'
+    MIN:120–122: 'shared-schema revision: completed / active / nonactualized'
+  generated_fields_changed: false
+  gate4_started: false
+  translator_started: false
+roots:
+- fixed_generated_fields:
+    canonical_id: MIN:100
+    universal_slot: completed inward process
+    family_qualified_transliteration: si·kam
+    local_compact_root: kam
+    formal_carrier: si-ki-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 2
+  proposal_status: recommended_after_adversarial_review_pending_delegated_approval
+  proposed_title: completed self-model revision
+  invariant_definition: A completed cognitive process whose result is a change to
+    the cognizer's representation of the cognizer's own identity or condition.
+  semantic_center: cognitive representational revision
+  address_justification:
+    first_trit_1: 'Selects a process/action/transformation: a cognitive representation
+      changes rather than merely existing or being available.'
+    second_trit: 'Selects inward/self scope: the represented subject is the cognizer''s
+      own identity or condition.'
+    third_trit: 'Selects the completed phase: the revision has reached its bounded
+      result.'
+  inclusion_boundary: Includes only a cognitive process whose semantic result is a
+    change to the cognizer's representation of the cognizer. The change may add, remove,
+    reorganize, differentiate, merge, or reweight represented content without asserting
+    why, whether it is correct, or how it is physically realized.
+  excluded_meanings:
+  - Mere persistence, manifestation, or latency of a representation without change;
+    canonical MIN:0xx owns the representation entity or condition.
+  - Attention allocation, perception, recall, imagination, inference, evaluation,
+    learning, or decision when no representational change is asserted.
+  - Truth, proof, certainty, probability, belief commitment, or ontological accuracy.
+  - Communication, consensus procedure, data storage, physical neural change, structural
+    change, error detection, repair, planning, intention, scheduling, queuing, and
+    future time.
+  - A change to an external record or physical model unless a cognizer's representation
+    also changes.
+  nearest_neighbors:
+  - MIN:101
+  - MIN:102
+  - MIN:000
+  - MIN:001
+  - MIN:002
+  same_family_contrast: MIN:000–002 owns the representation at the same scope as a
+    cognitive entity/condition; MIN:100 owns the completed process that changes it.
+    The other two members of this 1x triplet own the identical revision process at
+    different lexical phases.
+  cross_family_comparisons: &1
+    LIF: LIF owns living identity, consciousness, and organismic condition. MIN owns
+      only a change in cognitive representation of such content; use a compound when
+      both are asserted.
+    MOV: MOV owns motion and change of position. MIN may revise a route or position
+      model but never performs the physical movement.
+    MAT: MAT owns physical bodies, signals, neural substrate, and material change.
+      MIN owns representational revision, not the substrate or stimulus.
+    CON: CON owns participant linkage, communication, access, and transmission. Communication
+      may cause or coordinate revision but is neither necessary nor sufficient for
+      it.
+    STR: STR owns external arrangement, hierarchy, and structural transition. MIN
+      owns a cognizer's revised representation of structure, not the structure itself.
+    WRN: WRN owns error, anomaly, hazard, and failure. A mistaken or discrepancy-triggered
+      revision requires WRN + MIN; revision itself is neutral about correctness.
+    REP: REP owns repair and restoration. Revision can improve, worsen, or neutrally
+      alter a representation; it must not imply correction or repair.
+    LOG: LOG owns inference validity, proof, consistency, and formal consequence.
+      Reasoning may cause cognitive revision, but valid inference and mental change
+      are independent.
+    DAT: DAT owns external information, records, storage, queues, and data flow. A
+      data update is not a cognitive revision unless a cognizer's representation also
+      changes.
+    CRE: CRE owns generation, design, intention artifacts, and plans. A newly created
+      idea may coincide with revision, but ideation and representational change are
+      distinct.
+    ORI: ORI owns time, existence, ontology, and modality. Possibility, future time,
+      certainty, and actualization relations must remain explicit rather than being
+      smuggled into MIN.
+  runtime_state_interpretation:
+    '0': Denies that the specified self-model revision exists in the lexical completed
+      phase for this token.
+    '1': Affirms that the specified self-model revision exists in the lexical completed
+      phase for this token.
+    2/num: Leaves the current assertion about the self-model revision dormant or unresolved;
+      it does not select another lexical phase or add a plan, schedule, or future
+      time.
+  lexical_runtime_distinction: The third lexical trit permanently selects the completed
+    kind of self-model revision. Runtime `[2]/num` separately marks the current assertion
+    token as dormant or unresolved. For a lexical `*2` root, `[1]` affirms that the
+    process is nonactualized; `[2]/num` leaves the assertion about that nonactualized
+    process unresolved. Neither layer encodes intention or schedule.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:100[1](COGNIZER=I,CONTENT=self_as_manager)
+    literal_gloss: I; completed revision of my self-model
+    natural_english: I changed how I see myself as a manager.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The completed change is owned; whether the new view is true is not.
+  - category: physical_or_spatial
+    semantic_graph: MAT(BODY=climber)+MIN:100[1](COGNIZER=climber,CONTENT=own_reach)
+    literal_gloss: climber's body plus completed self-model revision of reach
+    natural_english: After the test, the climber revised their sense of how far they
+      can reach.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: MAT owns the body; MIN owns the changed self-representation.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:100[1](COGNIZER=agent,BEFORE=self_v1,AFTER=self_v2)
+    literal_gloss: agent; self-model revision completed from v1 to v2
+    natural_english: The agent finished updating its self-model after the diagnostic.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Before/after content is graph structure, not hidden in the atom.
+  - category: cross_family_compound
+    semantic_graph: DAT(EVIDENCE=performance_log)+MIN:100[1](COGNIZER=agent,CONTENT=capability_model)
+    literal_gloss: performance log causes completed self-model revision
+    natural_english: The log led the agent to revise its model of its own capability.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: DAT supplies evidence; a causal relation must be explicit.
+  - category: executable_or_programming
+    semantic_graph: MIN:100[1](COGNIZER=agent,CONTENT=self_model,RESULT=version_4)
+    literal_gloss: agent; self-model revision completed with version 4
+    natural_english: Commit the revised agent self-model as version 4.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Useful as the semantic event behind a successful self-model update.
+    pseudocode: assert self_model.version == 4 && revision.complete?
+  - category: counterexample
+    semantic_graph: MIN:001[1](COGNIZER=I,CONTENT=current_mood)
+    literal_gloss: I; manifest self-representation
+    natural_english: I am aware of my mood, but my self-model has not changed.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: must_not_use_this_root
+    analysis: Present self-awareness without representational change uses MIN:001,
+      not MIN:100.
+  future_compound_examples:
+  - MIN:100 + MIN:0xx content node → explicitly links the revision event to its before/after
+    cognitive representation.
+  - MIN:100 + DAT/CON cause or evidence → learning, instruction, observation, testimony,
+    or data-driven model update without making transmission part of MIN.
+  - MIN:100 + LOG/WRN/REP predicate → inference-driven, discrepancy-triggered, corrective,
+    biased, or mistaken revision without claiming revision is necessarily rational
+    or reparative.
+  - MIN:100 + CRE/ORI/grammar → intended, planned, scheduled, possible, future, repeated,
+    or hypothetical revision while preserving the lexical/runtime boundary.
+  later_era_notes: Later eras may distinguish Bayesian update, conceptual change,
+    accommodation, reappraisal, model retraining, belief revision, memory reconsolidation,
+    and schema alignment as compounds or specialized descendants. The invariant must
+    remain neutral about mechanism, correctness, evidence, awareness, and implementation.
+  confidence: 0.97
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:101
+    universal_slot: active inward process
+    family_qualified_transliteration: si·kak
+    local_compact_root: kak
+    formal_carrier: si-ki-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 4
+  proposal_status: recommended_after_adversarial_review_pending_delegated_approval
+  proposed_title: active self-model revision
+  invariant_definition: An active cognitive process that is changing the cognizer's
+    representation of the cognizer's own identity or condition.
+  semantic_center: cognitive representational revision
+  address_justification:
+    first_trit_1: 'Selects a process/action/transformation: a cognitive representation
+      changes rather than merely existing or being available.'
+    second_trit: 'Selects inward/self scope: the represented subject is the cognizer''s
+      own identity or condition.'
+    third_trit: 'Selects the active phase: the revision is presently occurring.'
+  inclusion_boundary: Includes only a cognitive process whose semantic result is a
+    change to the cognizer's representation of the cognizer. The change may add, remove,
+    reorganize, differentiate, merge, or reweight represented content without asserting
+    why, whether it is correct, or how it is physically realized.
+  excluded_meanings:
+  - Mere persistence, manifestation, or latency of a representation without change;
+    canonical MIN:0xx owns the representation entity or condition.
+  - Attention allocation, perception, recall, imagination, inference, evaluation,
+    learning, or decision when no representational change is asserted.
+  - Truth, proof, certainty, probability, belief commitment, or ontological accuracy.
+  - Communication, consensus procedure, data storage, physical neural change, structural
+    change, error detection, repair, planning, intention, scheduling, queuing, and
+    future time.
+  - A change to an external record or physical model unless a cognizer's representation
+    also changes.
+  nearest_neighbors:
+  - MIN:100
+  - MIN:102
+  - MIN:000
+  - MIN:001
+  - MIN:002
+  same_family_contrast: MIN:000–002 owns the representation at the same scope as a
+    cognitive entity/condition; MIN:101 owns the active process that changes it. The
+    other two members of this 1x triplet own the identical revision process at different
+    lexical phases.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the specified self-model revision exists in the lexical active
+      phase for this token.
+    '1': Affirms that the specified self-model revision exists in the lexical active
+      phase for this token.
+    2/num: Leaves the current assertion about the self-model revision dormant or unresolved;
+      it does not select another lexical phase or add a plan, schedule, or future
+      time.
+  lexical_runtime_distinction: The third lexical trit permanently selects the active
+    kind of self-model revision. Runtime `[2]/num` separately marks the current assertion
+    token as dormant or unresolved. For a lexical `*2` root, `[1]` affirms that the
+    process is nonactualized; `[2]/num` leaves the assertion about that nonactualized
+    process unresolved. Neither layer encodes intention or schedule.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:101[1](COGNIZER=I,CONTENT=self_as_parent)
+    literal_gloss: I; self-model revision active
+    natural_english: I am rethinking what kind of parent I am.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The root applies because the self-representation is changing, not merely
+      being observed.
+  - category: physical_or_spatial
+    semantic_graph: MAT(SENSATION=fatigue)+MIN:101[1](COGNIZER=runner,CONTENT=own_limit)
+    literal_gloss: fatigue signal plus active revision of own limit
+    natural_english: The runner is revising their sense of their physical limit.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The physical signal remains MAT.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:101[1](COGNIZER=agent,DURING=calibration,CONTENT=self_accuracy)
+    literal_gloss: agent; self-model revision active during calibration
+    natural_english: The agent is updating its estimate of its own accuracy during
+      calibration.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The active phase is lexical; the interval is explicit.
+  - category: cross_family_compound
+    semantic_graph: WRN(DISCREPANCY=failed_prediction)+MIN:101[1](COGNIZER=agent,CONTENT=self_model)
+    literal_gloss: detected discrepancy plus active self-model revision
+    natural_english: The failed prediction is making the agent revise its self-model.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: WRN owns discrepancy; MIN owns cognitive revision.
+  - category: executable_or_programming
+    semantic_graph: MIN:101[1](COGNIZER=agent,CONTENT=self_model,INPUT=telemetry)
+    literal_gloss: agent; self-model revision executing from telemetry
+    natural_english: Update the agent's self-model from live telemetry.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Maps to an executing semantic operation, not the storage write itself.
+    pseudocode: while telemetry.open?; self_model.revise(telemetry.next); end
+  - category: counterexample
+    semantic_graph: MIN:001[1](COGNIZER=operator,CONTENT=current_state)
+    literal_gloss: operator; current self-state representation manifest
+    natural_english: The operator is monitoring their state without changing their
+      self-model.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: must_not_use_this_root
+    analysis: Monitoring or manifestation alone is not revision.
+  future_compound_examples:
+  - MIN:101 + MIN:0xx content node → explicitly links the revision event to its before/after
+    cognitive representation.
+  - MIN:101 + DAT/CON cause or evidence → learning, instruction, observation, testimony,
+    or data-driven model update without making transmission part of MIN.
+  - MIN:101 + LOG/WRN/REP predicate → inference-driven, discrepancy-triggered, corrective,
+    biased, or mistaken revision without claiming revision is necessarily rational
+    or reparative.
+  - MIN:101 + CRE/ORI/grammar → intended, planned, scheduled, possible, future, repeated,
+    or hypothetical revision while preserving the lexical/runtime boundary.
+  later_era_notes: Later eras may distinguish Bayesian update, conceptual change,
+    accommodation, reappraisal, model retraining, belief revision, memory reconsolidation,
+    and schema alignment as compounds or specialized descendants. The invariant must
+    remain neutral about mechanism, correctness, evidence, awareness, and implementation.
+  confidence: 0.97
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:102
+    universal_slot: pending inward process
+    family_qualified_transliteration: si·kan
+    local_compact_root: kan
+    formal_carrier: si-ki-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 0
+  proposal_status: recommended_after_adversarial_review_pending_delegated_approval
+  proposed_title: nonactualized self-model revision
+  invariant_definition: A cognitive process that would change the cognizer's representation
+    of the cognizer's own identity or condition if actualized, but is not active or
+    completed.
+  semantic_center: cognitive representational revision
+  address_justification:
+    first_trit_1: 'Selects a process/action/transformation: a cognitive representation
+      changes rather than merely existing or being available.'
+    second_trit: 'Selects inward/self scope: the represented subject is the cognizer''s
+      own identity or condition.'
+    third_trit: 'Selects the nonactualized phase: this revision is not active or completed.
+      It does not encode a plan, intention, schedule, queue, readiness, probability,
+      future time, or certainty.'
+  inclusion_boundary: Includes only a cognitive process whose semantic result is a
+    change to the cognizer's representation of the cognizer. The change may add, remove,
+    reorganize, differentiate, merge, or reweight represented content without asserting
+    why, whether it is correct, or how it is physically realized.
+  excluded_meanings:
+  - Mere persistence, manifestation, or latency of a representation without change;
+    canonical MIN:0xx owns the representation entity or condition.
+  - Attention allocation, perception, recall, imagination, inference, evaluation,
+    learning, or decision when no representational change is asserted.
+  - Truth, proof, certainty, probability, belief commitment, or ontological accuracy.
+  - Communication, consensus procedure, data storage, physical neural change, structural
+    change, error detection, repair, planning, intention, scheduling, queuing, and
+    future time.
+  - A change to an external record or physical model unless a cognizer's representation
+    also changes.
+  nearest_neighbors:
+  - MIN:100
+  - MIN:101
+  - MIN:000
+  - MIN:001
+  - MIN:002
+  same_family_contrast: MIN:000–002 owns the representation at the same scope as a
+    cognitive entity/condition; MIN:102 owns the nonactualized process that changes
+    it. The other two members of this 1x triplet own the identical revision process
+    at different lexical phases.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the specified nonactualized self-model revision exists in the
+      lexical nonactualized phase for this token.
+    '1': Affirms that the specified nonactualized self-model revision exists in the
+      lexical nonactualized phase for this token.
+    2/num: Leaves the current assertion about the nonactualized self-model revision
+      dormant or unresolved; it does not select another lexical phase or add a plan,
+      schedule, or future time.
+  lexical_runtime_distinction: The third lexical trit permanently selects the nonactualized
+    kind of self-model revision. Runtime `[2]/num` separately marks the current assertion
+    token as dormant or unresolved. For a lexical `*2` root, `[1]` affirms that the
+    process is nonactualized; `[2]/num` leaves the assertion about that nonactualized
+    process unresolved. Neither layer encodes intention or schedule.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:102[1](COGNIZER=I,CONTENT=self_as_leader)
+    literal_gloss: I; self-model revision nonactualized
+    natural_english: A change in how I see myself remains possible, but no such revision
+      is underway or complete.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Affirming the lexeme affirms its nonactualized status; it does not announce
+      a plan.
+  - category: physical_or_spatial
+    semantic_graph: MAT(EVENT=injury)+MIN:102[1](COGNIZER=athlete,CONTENT=body_capability)
+    literal_gloss: injury context plus nonactualized revision of own capability
+    natural_english: The injury could alter the athlete's self-model, but that cognitive
+      change has not occurred.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: No causal certainty is asserted.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:102[1](COGNIZER=agent,CONTENT=self_model,STATUS=unrealized)
+    literal_gloss: agent; self-model revision remains nonactualized
+    natural_english: The agent has not entered or completed a self-model revision.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: This says nothing about when or whether it will.
+  - category: cross_family_compound
+    semantic_graph: CRE(PLAN=self_review)+MIN:102[1](COGNIZER=person,CONTENT=self_model)
+    literal_gloss: created plan plus nonactualized self-model revision
+    natural_english: A self-review is planned, while the actual self-model revision
+      remains nonactualized.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The plan must be a separate CRE/DAT structure.
+  - category: executable_or_programming
+    semantic_graph: MIN:102[1](COGNIZER=agent,CONTENT=self_model)
+    literal_gloss: agent; self-model revision branch nonactualized
+    natural_english: A self-model revision is a possible branch, but no revision task
+      is running or complete.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Safe for representing a semantic branch without equating it with a queued
+      job.
+    pseudocode: assert !revision.running? && !revision.complete?
+  - category: counterexample
+    semantic_graph: DAT(SCHEDULE=tomorrow_review)
+    literal_gloss: stored schedule for review
+    natural_english: The self-review is scheduled for tomorrow.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: must_not_use_this_root
+    analysis: Scheduling is DAT/CRE plus temporal grammar; lexical MIN:102 does not
+      encode it.
+  future_compound_examples:
+  - MIN:102 + MIN:0xx content node → explicitly links the revision event to its before/after
+    cognitive representation.
+  - MIN:102 + DAT/CON cause or evidence → learning, instruction, observation, testimony,
+    or data-driven model update without making transmission part of MIN.
+  - MIN:102 + LOG/WRN/REP predicate → inference-driven, discrepancy-triggered, corrective,
+    biased, or mistaken revision without claiming revision is necessarily rational
+    or reparative.
+  - MIN:102 + CRE/ORI/grammar → intended, planned, scheduled, possible, future, repeated,
+    or hypothetical revision while preserving the lexical/runtime boundary.
+  later_era_notes: Later eras may distinguish Bayesian update, conceptual change,
+    accommodation, reappraisal, model retraining, belief revision, memory reconsolidation,
+    and schema alignment as compounds or specialized descendants. The invariant must
+    remain neutral about mechanism, correctness, evidence, awareness, and implementation.
+  confidence: 0.97
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:110
+    universal_slot: completed outward process
+    family_qualified_transliteration: si·kom
+    local_compact_root: kom
+    formal_carrier: si-ki-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 4
+  proposal_status: recommended_after_adversarial_review_pending_delegated_approval
+  proposed_title: completed target-model revision
+  invariant_definition: A completed cognitive process whose result is a change to
+    a cognizer's representation of a distinct target.
+  semantic_center: cognitive representational revision
+  address_justification:
+    first_trit_1: 'Selects a process/action/transformation: a cognitive representation
+      changes rather than merely existing or being available.'
+    second_trit: 'Selects outward/target scope: the represented subject is distinct
+      from the cognizer.'
+    third_trit: 'Selects the completed phase: the revision has reached its bounded
+      result.'
+  inclusion_boundary: Includes only a cognitive process whose semantic result is a
+    change to the cognizer's representation of a distinct target. The change may add,
+    remove, reorganize, differentiate, merge, or reweight represented content without
+    asserting why, whether it is correct, or how it is physically realized.
+  excluded_meanings:
+  - Mere persistence, manifestation, or latency of a representation without change;
+    canonical MIN:0xx owns the representation entity or condition.
+  - Attention allocation, perception, recall, imagination, inference, evaluation,
+    learning, or decision when no representational change is asserted.
+  - Truth, proof, certainty, probability, belief commitment, or ontological accuracy.
+  - Communication, consensus procedure, data storage, physical neural change, structural
+    change, error detection, repair, planning, intention, scheduling, queuing, and
+    future time.
+  - A change to an external record or physical model unless a cognizer's representation
+    also changes.
+  nearest_neighbors:
+  - MIN:111
+  - MIN:112
+  - MIN:010
+  - MIN:011
+  - MIN:012
+  same_family_contrast: MIN:010–012 owns the representation at the same scope as a
+    cognitive entity/condition; MIN:110 owns the completed process that changes it.
+    The other two members of this 1x triplet own the identical revision process at
+    different lexical phases.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the specified target-model revision exists in the lexical completed
+      phase for this token.
+    '1': Affirms that the specified target-model revision exists in the lexical completed
+      phase for this token.
+    2/num: Leaves the current assertion about the target-model revision dormant or
+      unresolved; it does not select another lexical phase or add a plan, schedule,
+      or future time.
+  lexical_runtime_distinction: The third lexical trit permanently selects the completed
+    kind of target model revision. Runtime `[2]/num` separately marks the current
+    assertion token as dormant or unresolved. For a lexical `*2` root, `[1]` affirms
+    that the process is nonactualized; `[2]/num` leaves the assertion about that nonactualized
+    process unresolved. Neither layer encodes intention or schedule.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:110[1](COGNIZER=I,TARGET=neighbor,RESULT=model_v2)
+    literal_gloss: I; target-model revision completed
+    natural_english: I changed my view of my neighbor after we spoke.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The conversation is a possible cause, not part of the atom.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBSERVATION=bridge_damage)+MIN:110[1](COGNIZER=engineer,TARGET=bridge_model)
+    literal_gloss: physical observation plus completed bridge-model revision
+    natural_english: The engineer finished updating their mental model of the bridge.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The bridge and signal are physical; the changed representation is mental.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:110[1](COGNIZER=student,TARGET=theory,BEFORE=model_a,AFTER=model_b)
+    literal_gloss: student; theory representation revised from a to b
+    natural_english: The lesson ended with the student's model of the theory changed.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Learning is expressed here only to the extent that a target representation
+      changed.
+  - category: cross_family_compound
+    semantic_graph: DAT(EVIDENCE=dataset)+LOG(INFERENCE=result)+MIN:110[1](COGNIZER=analyst,TARGET=system)
+    literal_gloss: dataset and inference plus completed target-model revision
+    natural_english: The analysis led the analyst to update their model of the system.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: DAT and LOG remain explicit.
+  - category: executable_or_programming
+    semantic_graph: MIN:110[1](COGNIZER=agent,TARGET=world_model.object_7,RESULT=revision_8)
+    literal_gloss: agent; target model revision completed
+    natural_english: Commit revision 8 of the agent's model of object 7.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: A semantic success event after model update.
+    pseudocode: assert world_model[:object_7].revision == 8
+  - category: counterexample
+    semantic_graph: MIN:010[1](COGNIZER=agent,TARGET=object_7)
+    literal_gloss: agent; persistent target representation
+    natural_english: The agent's representation of object 7 persisted unchanged.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: must_not_use_this_root
+    analysis: A persistent target model without change is MIN:010, not MIN:110.
+  future_compound_examples:
+  - MIN:110 + MIN:0xx content node → explicitly links the revision event to its before/after
+    cognitive representation.
+  - MIN:110 + DAT/CON cause or evidence → learning, instruction, observation, testimony,
+    or data-driven model update without making transmission part of MIN.
+  - MIN:110 + LOG/WRN/REP predicate → inference-driven, discrepancy-triggered, corrective,
+    biased, or mistaken revision without claiming revision is necessarily rational
+    or reparative.
+  - MIN:110 + CRE/ORI/grammar → intended, planned, scheduled, possible, future, repeated,
+    or hypothetical revision while preserving the lexical/runtime boundary.
+  later_era_notes: Later eras may distinguish Bayesian update, conceptual change,
+    accommodation, reappraisal, model retraining, belief revision, memory reconsolidation,
+    and schema alignment as compounds or specialized descendants. The invariant must
+    remain neutral about mechanism, correctness, evidence, awareness, and implementation.
+  confidence: 0.97
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:111
+    universal_slot: active outward process
+    family_qualified_transliteration: si·kok
+    local_compact_root: kok
+    formal_carrier: si-ki-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 6
+  proposal_status: recommended_after_adversarial_review_pending_delegated_approval
+  proposed_title: active target-model revision
+  invariant_definition: An active cognitive process that is changing a cognizer's
+    representation of a distinct target.
+  semantic_center: cognitive representational revision
+  address_justification:
+    first_trit_1: 'Selects a process/action/transformation: a cognitive representation
+      changes rather than merely existing or being available.'
+    second_trit: 'Selects outward/target scope: the represented subject is distinct
+      from the cognizer.'
+    third_trit: 'Selects the active phase: the revision is presently occurring.'
+  inclusion_boundary: Includes only a cognitive process whose semantic result is a
+    change to the cognizer's representation of a distinct target. The change may add,
+    remove, reorganize, differentiate, merge, or reweight represented content without
+    asserting why, whether it is correct, or how it is physically realized.
+  excluded_meanings:
+  - Mere persistence, manifestation, or latency of a representation without change;
+    canonical MIN:0xx owns the representation entity or condition.
+  - Attention allocation, perception, recall, imagination, inference, evaluation,
+    learning, or decision when no representational change is asserted.
+  - Truth, proof, certainty, probability, belief commitment, or ontological accuracy.
+  - Communication, consensus procedure, data storage, physical neural change, structural
+    change, error detection, repair, planning, intention, scheduling, queuing, and
+    future time.
+  - A change to an external record or physical model unless a cognizer's representation
+    also changes.
+  nearest_neighbors:
+  - MIN:110
+  - MIN:112
+  - MIN:010
+  - MIN:011
+  - MIN:012
+  same_family_contrast: MIN:010–012 owns the representation at the same scope as a
+    cognitive entity/condition; MIN:111 owns the active process that changes it. The
+    other two members of this 1x triplet own the identical revision process at different
+    lexical phases.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the specified target-model revision exists in the lexical active
+      phase for this token.
+    '1': Affirms that the specified target-model revision exists in the lexical active
+      phase for this token.
+    2/num: Leaves the current assertion about the target-model revision dormant or
+      unresolved; it does not select another lexical phase or add a plan, schedule,
+      or future time.
+  lexical_runtime_distinction: The third lexical trit permanently selects the active
+    kind of target model revision. Runtime `[2]/num` separately marks the current
+    assertion token as dormant or unresolved. For a lexical `*2` root, `[1]` affirms
+    that the process is nonactualized; `[2]/num` leaves the assertion about that nonactualized
+    process unresolved. Neither layer encodes intention or schedule.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:111[1](COGNIZER=I,TARGET=proposal)
+    literal_gloss: I; target-model revision active
+    natural_english: I am changing my understanding of the proposal as you explain
+      it.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Listening is not enough; the target representation must be changing.
+  - category: physical_or_spatial
+    semantic_graph: MAT(SIGNAL=radar_returns)+MIN:111[1](COGNIZER=operator,TARGET=storm_model)
+    literal_gloss: radar signal plus active storm-model revision
+    natural_english: The operator is updating their mental model of the storm.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: MAT owns the signal; MIN owns the ongoing revision.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:111[1](COGNIZER=student,TARGET=equation,DURING=lesson)
+    literal_gloss: student; equation representation revision active during lesson
+    natural_english: The student's model of the equation is changing during the lesson.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: No claim of completed understanding is made.
+  - category: cross_family_compound
+    semantic_graph: DAT(INPUT=telemetry)+MIN:111[1](COGNIZER=agent,TARGET=environment_model)
+    literal_gloss: telemetry input plus active target-model revision
+    natural_english: The agent is updating its environment model from telemetry.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Information transport and cognitive revision remain separate.
+  - category: executable_or_programming
+    semantic_graph: MIN:111[1](COGNIZER=agent,TARGET=belief_graph.node_42)
+    literal_gloss: agent; target-model revision executing on node 42
+    natural_english: Revise belief-graph node 42 as evidence arrives.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Formalizes an executing internal model update.
+    pseudocode: belief_graph[:node_42].revise!(evidence)
+  - category: counterexample
+    semantic_graph: CON(QUESTION=where_is_station,FROM=I,TO=you)
+    literal_gloss: question transmitted from me to you
+    natural_english: I asked where the station is.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: must_not_use_this_root
+    analysis: Questioning is a communicative act unless an actual cognitive model
+      revision is separately asserted.
+  future_compound_examples:
+  - MIN:111 + MIN:0xx content node → explicitly links the revision event to its before/after
+    cognitive representation.
+  - MIN:111 + DAT/CON cause or evidence → learning, instruction, observation, testimony,
+    or data-driven model update without making transmission part of MIN.
+  - MIN:111 + LOG/WRN/REP predicate → inference-driven, discrepancy-triggered, corrective,
+    biased, or mistaken revision without claiming revision is necessarily rational
+    or reparative.
+  - MIN:111 + CRE/ORI/grammar → intended, planned, scheduled, possible, future, repeated,
+    or hypothetical revision while preserving the lexical/runtime boundary.
+  later_era_notes: Later eras may distinguish Bayesian update, conceptual change,
+    accommodation, reappraisal, model retraining, belief revision, memory reconsolidation,
+    and schema alignment as compounds or specialized descendants. The invariant must
+    remain neutral about mechanism, correctness, evidence, awareness, and implementation.
+  confidence: 0.97
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:112
+    universal_slot: pending outward process
+    family_qualified_transliteration: si·kon
+    local_compact_root: kon
+    formal_carrier: si-ki-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 2
+  proposal_status: recommended_after_adversarial_review_pending_delegated_approval
+  proposed_title: nonactualized target-model revision
+  invariant_definition: A cognitive process that would change a cognizer's representation
+    of a distinct target if actualized, but is not active or completed.
+  semantic_center: cognitive representational revision
+  address_justification:
+    first_trit_1: 'Selects a process/action/transformation: a cognitive representation
+      changes rather than merely existing or being available.'
+    second_trit: 'Selects outward/target scope: the represented subject is distinct
+      from the cognizer.'
+    third_trit: 'Selects the nonactualized phase: this revision is not active or completed.
+      It does not encode a plan, intention, schedule, queue, readiness, probability,
+      future time, or certainty.'
+  inclusion_boundary: Includes only a cognitive process whose semantic result is a
+    change to the cognizer's representation of a distinct target. The change may add,
+    remove, reorganize, differentiate, merge, or reweight represented content without
+    asserting why, whether it is correct, or how it is physically realized.
+  excluded_meanings:
+  - Mere persistence, manifestation, or latency of a representation without change;
+    canonical MIN:0xx owns the representation entity or condition.
+  - Attention allocation, perception, recall, imagination, inference, evaluation,
+    learning, or decision when no representational change is asserted.
+  - Truth, proof, certainty, probability, belief commitment, or ontological accuracy.
+  - Communication, consensus procedure, data storage, physical neural change, structural
+    change, error detection, repair, planning, intention, scheduling, queuing, and
+    future time.
+  - A change to an external record or physical model unless a cognizer's representation
+    also changes.
+  nearest_neighbors:
+  - MIN:110
+  - MIN:111
+  - MIN:010
+  - MIN:011
+  - MIN:012
+  same_family_contrast: MIN:010–012 owns the representation at the same scope as a
+    cognitive entity/condition; MIN:112 owns the nonactualized process that changes
+    it. The other two members of this 1x triplet own the identical revision process
+    at different lexical phases.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the specified nonactualized target-model revision exists in the
+      lexical nonactualized phase for this token.
+    '1': Affirms that the specified nonactualized target-model revision exists in
+      the lexical nonactualized phase for this token.
+    2/num: Leaves the current assertion about the nonactualized target-model revision
+      dormant or unresolved; it does not select another lexical phase or add a plan,
+      schedule, or future time.
+  lexical_runtime_distinction: The third lexical trit permanently selects the nonactualized
+    kind of target model revision. Runtime `[2]/num` separately marks the current
+    assertion token as dormant or unresolved. For a lexical `*2` root, `[1]` affirms
+    that the process is nonactualized; `[2]/num` leaves the assertion about that nonactualized
+    process unresolved. Neither layer encodes intention or schedule.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:112[1](COGNIZER=I,TARGET=proposal)
+    literal_gloss: I; target-model revision nonactualized
+    natural_english: My view of the proposal could change, but it is not changing
+      and has not changed.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: No intention or likelihood is encoded.
+  - category: physical_or_spatial
+    semantic_graph: MAT(EVENT=new_measurement)+MIN:112[1](COGNIZER=engineer,TARGET=bridge_model)
+    literal_gloss: measurement context plus nonactualized bridge-model revision
+    natural_english: The new measurement could alter the engineer's bridge model,
+      but no revision is underway.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The measurement does not automatically imply cognitive change.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:112[1](COGNIZER=agent,TARGET=world_model,STATUS=unrealized)
+    literal_gloss: agent; target-model revision nonactualized
+    natural_english: The world-model revision remains an unrealized semantic possibility.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Future time and a task queue are absent.
+  - category: cross_family_compound
+    semantic_graph: DAT(QUEUE=item_7)+MIN:112[1](COGNIZER=agent,TARGET=object_7)
+    literal_gloss: queued record plus nonactualized target-model revision
+    natural_english: A model-update request is queued, while the cognitive revision
+      itself remains nonactualized.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: DAT owns the queue; MIN:112 does not.
+  - category: executable_or_programming
+    semantic_graph: MIN:112[1](COGNIZER=agent,TARGET=model.branch_b)
+    literal_gloss: agent; target-model revision branch nonactualized
+    natural_english: Branch B denotes a possible model revision with no running or
+      completed update.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Represents process nonactualization, not scheduler state.
+    pseudocode: assert !branch_b.running? && !branch_b.complete?
+  - category: counterexample
+    semantic_graph: DAT(SCHEDULE=model_review_at_0900)
+    literal_gloss: stored model-review schedule
+    natural_english: The model review is scheduled for 9:00.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: must_not_use_this_root
+    analysis: A schedule requires DAT plus temporal grammar.
+  future_compound_examples:
+  - MIN:112 + MIN:0xx content node → explicitly links the revision event to its before/after
+    cognitive representation.
+  - MIN:112 + DAT/CON cause or evidence → learning, instruction, observation, testimony,
+    or data-driven model update without making transmission part of MIN.
+  - MIN:112 + LOG/WRN/REP predicate → inference-driven, discrepancy-triggered, corrective,
+    biased, or mistaken revision without claiming revision is necessarily rational
+    or reparative.
+  - MIN:112 + CRE/ORI/grammar → intended, planned, scheduled, possible, future, repeated,
+    or hypothetical revision while preserving the lexical/runtime boundary.
+  later_era_notes: Later eras may distinguish Bayesian update, conceptual change,
+    accommodation, reappraisal, model retraining, belief revision, memory reconsolidation,
+    and schema alignment as compounds or specialized descendants. The invariant must
+    remain neutral about mechanism, correctness, evidence, awareness, and implementation.
+  confidence: 0.97
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:120
+    universal_slot: completed systemic process
+    family_qualified_transliteration: si·kim
+    local_compact_root: kim
+    formal_carrier: si-ki-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 0
+  proposal_status: recommended_after_adversarial_review_pending_delegated_approval
+  proposed_title: completed shared-schema revision
+  invariant_definition: A completed cognitive process distributed across multiple
+    cognizers whose result is a change to a representation held in common among them.
+  semantic_center: cognitive representational revision
+  address_justification:
+    first_trit_1: 'Selects a process/action/transformation: a cognitive representation
+      changes rather than merely existing or being available.'
+    second_trit: 'Selects systemic/shared scope: the changing representation is held
+      in common across multiple cognizers and the process is distributed among them.'
+    third_trit: 'Selects the completed phase: the revision has reached its bounded
+      result.'
+  inclusion_boundary: Includes only a cognitive process whose semantic result is a
+    change to a representation held in common across multiple cognizers. The change
+    may add, remove, reorganize, differentiate, merge, or reweight represented content
+    without asserting why, whether it is correct, or how it is physically realized.
+  excluded_meanings:
+  - Mere persistence, manifestation, or latency of a representation without change;
+    canonical MIN:0xx owns the representation entity or condition.
+  - Attention allocation, perception, recall, imagination, inference, evaluation,
+    learning, or decision when no representational change is asserted.
+  - Truth, proof, certainty, probability, belief commitment, or ontological accuracy.
+  - Communication, consensus procedure, data storage, physical neural change, structural
+    change, error detection, repair, planning, intention, scheduling, queuing, and
+    future time.
+  - A change to an external record or physical model unless a cognizer's representation
+    also changes.
+  nearest_neighbors:
+  - MIN:121
+  - MIN:122
+  - MIN:020
+  - MIN:021
+  - MIN:022
+  same_family_contrast: MIN:020–022 owns the representation at the same scope as a
+    cognitive entity/condition; MIN:120 owns the completed process that changes it.
+    The other two members of this 1x triplet own the identical revision process at
+    different lexical phases.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the specified shared-schema revision exists in the lexical completed
+      phase for this token.
+    '1': Affirms that the specified shared-schema revision exists in the lexical completed
+      phase for this token.
+    2/num: Leaves the current assertion about the shared-schema revision dormant or
+      unresolved; it does not select another lexical phase or add a plan, schedule,
+      or future time.
+  lexical_runtime_distinction: The third lexical trit permanently selects the completed
+    kind of shared cognitive schema revision. Runtime `[2]/num` separately marks the
+    current assertion token as dormant or unresolved. For a lexical `*2` root, `[1]`
+    affirms that the process is nonactualized; `[2]/num` leaves the assertion about
+    that nonactualized process unresolved. Neither layer encodes intention or schedule.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:120[1](COGNIZERS=team,CONTENT=shared_plan_model)
+    literal_gloss: team; shared-schema revision completed
+    natural_english: The team finished changing its common understanding of the plan.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Agreement, communication, and truth are not implied.
+  - category: physical_or_spatial
+    semantic_graph: MAT(EVENT=site_walk)+MIN:120[1](COGNIZERS=rescuers,CONTENT=building_schema)
+    literal_gloss: site walk plus completed shared building-schema revision
+    natural_english: The site walk ended with the rescuers' shared mental map changed.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The building and walk remain outside MIN.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:120[1](COGNIZERS=crew,BEFORE=schema_v1,AFTER=schema_v2)
+    literal_gloss: crew; shared schema revised from v1 to v2
+    natural_english: The crew completed a revision of its common operating model.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The atom owns the bounded distributed cognitive change.
+  - category: cross_family_compound
+    semantic_graph: CON(EXCHANGE=briefing)+MIN:120[1](COGNIZERS=crew,CONTENT=shared_schema)
+    literal_gloss: briefing exchange plus completed shared-schema revision
+    natural_english: The briefing produced a completed change in the crew's shared
+      mental model.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: CON owns exchange; causation is explicit.
+  - category: executable_or_programming
+    semantic_graph: MIN:120[1](COGNIZERS=agents,CONTENT=shared_world_model,RESULT=epoch_12)
+    literal_gloss: agents; shared world-model revision completed at epoch 12
+    natural_english: Commit epoch 12 of the agents' shared world model.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Useful for multi-agent convergence without asserting network transport.
+    pseudocode: assert shared_model.epoch == 12 && revision.complete?
+  - category: counterexample
+    semantic_graph: CON(CONSENSUS_VOTE=result_yes,PARTICIPANTS=team)
+    literal_gloss: team; vote produces yes result
+    natural_english: The team voted yes, but members' mental models may remain different.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: must_not_use_this_root
+    analysis: A social decision procedure is not automatically a shared cognitive
+      revision.
+  future_compound_examples:
+  - MIN:120 + MIN:0xx content node → explicitly links the revision event to its before/after
+    cognitive representation.
+  - MIN:120 + DAT/CON cause or evidence → learning, instruction, observation, testimony,
+    or data-driven model update without making transmission part of MIN.
+  - MIN:120 + LOG/WRN/REP predicate → inference-driven, discrepancy-triggered, corrective,
+    biased, or mistaken revision without claiming revision is necessarily rational
+    or reparative.
+  - MIN:120 + CRE/ORI/grammar → intended, planned, scheduled, possible, future, repeated,
+    or hypothetical revision while preserving the lexical/runtime boundary.
+  later_era_notes: Later eras may distinguish Bayesian update, conceptual change,
+    accommodation, reappraisal, model retraining, belief revision, memory reconsolidation,
+    and schema alignment as compounds or specialized descendants. The invariant must
+    remain neutral about mechanism, correctness, evidence, awareness, and implementation.
+  confidence: 0.95
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:121
+    universal_slot: active systemic process
+    family_qualified_transliteration: si·kik
+    local_compact_root: kik
+    formal_carrier: si-ki-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 2
+  proposal_status: recommended_after_adversarial_review_pending_delegated_approval
+  proposed_title: active shared-schema revision
+  invariant_definition: An active cognitive process distributed across multiple cognizers
+    that is changing a representation held in common among them.
+  semantic_center: cognitive representational revision
+  address_justification:
+    first_trit_1: 'Selects a process/action/transformation: a cognitive representation
+      changes rather than merely existing or being available.'
+    second_trit: 'Selects systemic/shared scope: the changing representation is held
+      in common across multiple cognizers and the process is distributed among them.'
+    third_trit: 'Selects the active phase: the revision is presently occurring.'
+  inclusion_boundary: Includes only a cognitive process whose semantic result is a
+    change to a representation held in common across multiple cognizers. The change
+    may add, remove, reorganize, differentiate, merge, or reweight represented content
+    without asserting why, whether it is correct, or how it is physically realized.
+  excluded_meanings:
+  - Mere persistence, manifestation, or latency of a representation without change;
+    canonical MIN:0xx owns the representation entity or condition.
+  - Attention allocation, perception, recall, imagination, inference, evaluation,
+    learning, or decision when no representational change is asserted.
+  - Truth, proof, certainty, probability, belief commitment, or ontological accuracy.
+  - Communication, consensus procedure, data storage, physical neural change, structural
+    change, error detection, repair, planning, intention, scheduling, queuing, and
+    future time.
+  - A change to an external record or physical model unless a cognizer's representation
+    also changes.
+  nearest_neighbors:
+  - MIN:120
+  - MIN:122
+  - MIN:020
+  - MIN:021
+  - MIN:022
+  same_family_contrast: MIN:020–022 owns the representation at the same scope as a
+    cognitive entity/condition; MIN:121 owns the active process that changes it. The
+    other two members of this 1x triplet own the identical revision process at different
+    lexical phases.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the specified shared-schema revision exists in the lexical active
+      phase for this token.
+    '1': Affirms that the specified shared-schema revision exists in the lexical active
+      phase for this token.
+    2/num: Leaves the current assertion about the shared-schema revision dormant or
+      unresolved; it does not select another lexical phase or add a plan, schedule,
+      or future time.
+  lexical_runtime_distinction: The third lexical trit permanently selects the active
+    kind of shared cognitive schema revision. Runtime `[2]/num` separately marks the
+    current assertion token as dormant or unresolved. For a lexical `*2` root, `[1]`
+    affirms that the process is nonactualized; `[2]/num` leaves the assertion about
+    that nonactualized process unresolved. Neither layer encodes intention or schedule.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:121[1](COGNIZERS=team,CONTENT=shared_problem_model)
+    literal_gloss: team; shared-schema revision active
+    natural_english: The team is changing its common understanding of the problem.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Members need not yet agree on a final result.
+  - category: physical_or_spatial
+    semantic_graph: MAT(SIGNALS=sensor_array)+MIN:121[1](COGNIZERS=operators,CONTENT=storm_schema)
+    literal_gloss: sensor signals plus active shared storm-schema revision
+    natural_english: The operators are jointly updating their shared model of the
+      storm.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Signals and communications are separate components.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:121[1](COGNIZERS=students,DURING=workshop,CONTENT=concept_schema)
+    literal_gloss: students; shared concept-schema revision active during workshop
+    natural_english: The class is actively reshaping its common model of the concept.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The workshop interval is external.
+  - category: cross_family_compound
+    semantic_graph: CON(EXCHANGE=discussion)+LOG(INFERENCE=analysis)+MIN:121[1](COGNIZERS=team,CONTENT=shared_schema)
+    literal_gloss: discussion and inference plus active shared-schema revision
+    natural_english: Through discussion and analysis, the team is revising its shared
+      model.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Each family keeps its own semantic work.
+  - category: executable_or_programming
+    semantic_graph: MIN:121[1](COGNIZERS=agents,CONTENT=shared_belief_graph,MERGE=active)
+    literal_gloss: agents; shared belief-graph revision active
+    natural_english: The agents are reconciling updates into a shared belief graph.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The root asserts distributed cognitive change, not the message protocol.
+    pseudocode: shared_belief_graph.merge!(agent_updates)
+  - category: counterexample
+    semantic_graph: CON(TRANSFER=messages,PARTICIPANTS=agents)
+    literal_gloss: messages moving among agents
+    natural_english: The agents are exchanging messages without changing a shared
+      model.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: must_not_use_this_root
+    analysis: Communication alone is CON, not MIN:121.
+  future_compound_examples:
+  - MIN:121 + MIN:0xx content node → explicitly links the revision event to its before/after
+    cognitive representation.
+  - MIN:121 + DAT/CON cause or evidence → learning, instruction, observation, testimony,
+    or data-driven model update without making transmission part of MIN.
+  - MIN:121 + LOG/WRN/REP predicate → inference-driven, discrepancy-triggered, corrective,
+    biased, or mistaken revision without claiming revision is necessarily rational
+    or reparative.
+  - MIN:121 + CRE/ORI/grammar → intended, planned, scheduled, possible, future, repeated,
+    or hypothetical revision while preserving the lexical/runtime boundary.
+  later_era_notes: Later eras may distinguish Bayesian update, conceptual change,
+    accommodation, reappraisal, model retraining, belief revision, memory reconsolidation,
+    and schema alignment as compounds or specialized descendants. The invariant must
+    remain neutral about mechanism, correctness, evidence, awareness, and implementation.
+  confidence: 0.95
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:122
+    universal_slot: pending systemic process
+    family_qualified_transliteration: si·kin
+    local_compact_root: kin
+    formal_carrier: si-ki-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - -2
+  proposal_status: recommended_after_adversarial_review_pending_delegated_approval
+  proposed_title: nonactualized shared-schema revision
+  invariant_definition: A cognitive process distributed across multiple cognizers
+    that would change a representation held in common among them if actualized, but
+    is not active or completed.
+  semantic_center: cognitive representational revision
+  address_justification:
+    first_trit_1: 'Selects a process/action/transformation: a cognitive representation
+      changes rather than merely existing or being available.'
+    second_trit: 'Selects systemic/shared scope: the changing representation is held
+      in common across multiple cognizers and the process is distributed among them.'
+    third_trit: 'Selects the nonactualized phase: this revision is not active or completed.
+      It does not encode a plan, intention, schedule, queue, readiness, probability,
+      future time, or certainty.'
+  inclusion_boundary: Includes only a cognitive process whose semantic result is a
+    change to a representation held in common across multiple cognizers. The change
+    may add, remove, reorganize, differentiate, merge, or reweight represented content
+    without asserting why, whether it is correct, or how it is physically realized.
+  excluded_meanings:
+  - Mere persistence, manifestation, or latency of a representation without change;
+    canonical MIN:0xx owns the representation entity or condition.
+  - Attention allocation, perception, recall, imagination, inference, evaluation,
+    learning, or decision when no representational change is asserted.
+  - Truth, proof, certainty, probability, belief commitment, or ontological accuracy.
+  - Communication, consensus procedure, data storage, physical neural change, structural
+    change, error detection, repair, planning, intention, scheduling, queuing, and
+    future time.
+  - A change to an external record or physical model unless a cognizer's representation
+    also changes.
+  nearest_neighbors:
+  - MIN:120
+  - MIN:121
+  - MIN:020
+  - MIN:021
+  - MIN:022
+  same_family_contrast: MIN:020–022 owns the representation at the same scope as a
+    cognitive entity/condition; MIN:122 owns the nonactualized process that changes
+    it. The other two members of this 1x triplet own the identical revision process
+    at different lexical phases.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the specified nonactualized shared-schema revision exists in
+      the lexical nonactualized phase for this token.
+    '1': Affirms that the specified nonactualized shared-schema revision exists in
+      the lexical nonactualized phase for this token.
+    2/num: Leaves the current assertion about the nonactualized shared-schema revision
+      dormant or unresolved; it does not select another lexical phase or add a plan,
+      schedule, or future time.
+  lexical_runtime_distinction: The third lexical trit permanently selects the nonactualized
+    kind of shared cognitive schema revision. Runtime `[2]/num` separately marks the
+    current assertion token as dormant or unresolved. For a lexical `*2` root, `[1]`
+    affirms that the process is nonactualized; `[2]/num` leaves the assertion about
+    that nonactualized process unresolved. Neither layer encodes intention or schedule.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:122[1](COGNIZERS=team,CONTENT=shared_plan_model)
+    literal_gloss: team; shared-schema revision nonactualized
+    natural_english: The team's common understanding could change, but no shared revision
+      is active or complete.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: This does not say the team intends to meet.
+  - category: physical_or_spatial
+    semantic_graph: MAT(EVENT=new_hazard)+MIN:122[1](COGNIZERS=rescuers,CONTENT=shared_map)
+    literal_gloss: hazard context plus nonactualized shared-map revision
+    natural_english: The hazard could alter the rescuers' shared map, but that cognitive
+      revision has not occurred.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Potential causation and actual planning remain separate.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:122[1](COGNIZERS=agents,CONTENT=shared_schema,STATUS=unrealized)
+    literal_gloss: agents; shared-schema revision remains nonactualized
+    natural_english: No shared-schema revision is running or complete.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The root makes no prediction.
+  - category: cross_family_compound
+    semantic_graph: CON(INVITATION=review_session)+DAT(SCHEDULE=tomorrow)+MIN:122[1](COGNIZERS=team,CONTENT=shared_schema)
+    literal_gloss: invitation and schedule plus nonactualized shared-schema revision
+    natural_english: A review is scheduled, while the actual shared cognitive revision
+      remains nonactualized.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: CON and DAT carry the invitation and schedule.
+  - category: executable_or_programming
+    semantic_graph: MIN:122[1](COGNIZERS=agents,CONTENT=shared_model,BRANCH=possible_merge)
+    literal_gloss: agents; shared-schema revision branch nonactualized
+    natural_english: A shared-model merge is a semantic possibility, not an executing
+      or completed merge.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Does not assert queue placement or readiness.
+    pseudocode: assert !merge.running? && !merge.complete?
+  - category: counterexample
+    semantic_graph: DAT(QUEUE=team_review_job)
+    literal_gloss: team review job queued
+    natural_english: The team review job is queued.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN revision predicate
+      high: represented target or revised content
+      sustained: shared frame, evidence context, or execution environment
+    use_status: must_not_use_this_root
+    analysis: Queue status is DAT/grammar and cannot be inferred from MIN:122.
+  future_compound_examples:
+  - MIN:122 + MIN:0xx content node → explicitly links the revision event to its before/after
+    cognitive representation.
+  - MIN:122 + DAT/CON cause or evidence → learning, instruction, observation, testimony,
+    or data-driven model update without making transmission part of MIN.
+  - MIN:122 + LOG/WRN/REP predicate → inference-driven, discrepancy-triggered, corrective,
+    biased, or mistaken revision without claiming revision is necessarily rational
+    or reparative.
+  - MIN:122 + CRE/ORI/grammar → intended, planned, scheduled, possible, future, repeated,
+    or hypothetical revision while preserving the lexical/runtime boundary.
+  later_era_notes: Later eras may distinguish Bayesian update, conceptual change,
+    accommodation, reappraisal, model retraining, belief revision, memory reconsolidation,
+    and schema alignment as compounds or specialized descendants. The invariant must
+    remain neutral about mechanism, correctness, evidence, awareness, and implementation.
+  confidence: 0.95
+  canonicalized: false
+approval_checklist:
+  one_invariant_center_for_all_nine: true
+  five_genuinely_distinct_candidates_per_root: true
+  all_user_scoring_categories_present: true
+  source_canonical_meanings_changed: false
+  previous_reviewed_canonical_meanings_changed: false
+  generated_fields_changed: false
+  lexical_1x2_planning_leakage: false
+  cross_family_collisions_resolved: true
+  stress_tests_allow_compounds_and_gaps: true
+  ready_for_independent_validation: true
+  canonicalized: false

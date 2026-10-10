@@ -1,0 +1,482 @@
+---
+metadata:
+  title: REP:000–022 English coverage and routing tests
+  status: review_evidence_not_translation_dictionary
+  range: REP:000–022
+  test_count: 100
+  no_forced_atomization: true
+tests:
+- test_id: REP0-T001
+  english_concept: restored
+  routing: one_root_or_compound
+  analysis: Select the appropriate REP:0xx scope and realization status; the word
+    alone does not identify bearer, criterion, or process.
+- test_id: REP0-T002
+  english_concept: recovered
+  routing: one_root_or_compound
+  analysis: REP:001, 011, or 021 can assert a presently realized restoration condition;
+    a past recovery event requires REP:1xx plus time.
+- test_id: REP0-T003
+  english_concept: healthy
+  routing: compound
+  analysis: LIF owns biological health; REP:001 or 011 applies only when that health
+    is asserted as a presently realized restoration condition.
+- test_id: REP0-T004
+  english_concept: healed
+  routing: compound
+  analysis: LIF/MAT supplies the living or material condition and REP:0x1 supplies
+    present realization; healing as an action belongs to REP:1xx.
+- test_id: REP0-T005
+  english_concept: repaired
+  routing: compound
+  analysis: MAT/STR describes the artifact state and REP:011 can assert its target
+    restoration condition; the repair event remains REP:1xx.
+- test_id: REP0-T006
+  english_concept: functional
+  routing: compound
+  analysis: Domain and LOG roots define function or criterion; REP adds restoration-relative
+    status only when restoration is intended.
+- test_id: REP0-T007
+  english_concept: working again
+  routing: compound
+  analysis: REP:0x1 supplies realized restored condition, ORI supplies again/prior
+    contrast, and domain roots define working.
+- test_id: REP0-T008
+  english_concept: clean
+  routing: compound
+  analysis: MAT or domain vocabulary owns physical or data cleanliness; REP applies
+    only when clean is the restoration condition.
+- test_id: REP0-T009
+  english_concept: intact
+  routing: compound
+  analysis: MAT owns physical integrity; REP does not make every intact object restored.
+- test_id: REP0-T010
+  english_concept: valid
+  routing: different_family_or_compound
+  analysis: LOG owns validity; a valid result is not necessarily a restoration condition.
+- test_id: REP0-T011
+  english_concept: correct
+  routing: different_family_or_compound
+  analysis: LOG/DAT owns correctness; REP applies only when correctness is the identified
+    restored state.
+- test_id: REP0-T012
+  english_concept: available
+  routing: different_family_or_compound
+  analysis: DAT/CON/STR may own availability; REP:0x1 is added only for restoration-relative
+    service status.
+- test_id: REP0-T013
+  english_concept: back to normal
+  routing: compound
+  analysis: REP:0x1 supplies current restored condition while the applicable normality
+    criterion must be supplied or contextually resolved.
+- test_id: REP0-T014
+  english_concept: known-good state
+  routing: one_root_plus_compound
+  analysis: REP:000 identifies an internal restoration condition; DAT/LOG supplies
+    the recorded or validated known-good criterion.
+- test_id: REP0-T015
+  english_concept: restoration standard
+  routing: one_root
+  analysis: REP:000, 010, or 020 identifies the applicable restoration condition according
+    to scope.
+- test_id: REP0-T016
+  english_concept: baseline
+  routing: underspecified
+  analysis: A DAT baseline record or LOG criterion may describe a REP restoration
+    condition but is not identical to it.
+- test_id: REP0-T017
+  english_concept: golden image
+  routing: different_family_or_compound
+  analysis: DAT owns the image; REP:000 may identify the condition it represents.
+- test_id: REP0-T018
+  english_concept: restore point
+  routing: different_family_or_compound
+  analysis: DAT owns the checkpoint or record; REP owns the restoration condition
+    referenced by it.
+- test_id: REP0-T019
+  english_concept: backup
+  routing: different_family
+  analysis: DAT owns stored backup information or MAT a spare object; neither is itself
+    a REP:0xx condition.
+- test_id: REP0-T020
+  english_concept: snapshot
+  routing: different_family
+  analysis: DAT owns the snapshot representation; its subject may have a REP condition.
+- test_id: REP0-T021
+  english_concept: accepted configuration
+  routing: compound
+  analysis: STR/DAT supplies configuration and LOG acceptance; REP:001 may assert
+    present realization as a restored condition.
+- test_id: REP0-T022
+  english_concept: persistent internal restoration condition
+  routing: one_root
+  analysis: REP:000 preserves the identity of one acceptable condition internal to
+    one entity regardless of present realization.
+- test_id: REP0-T023
+  english_concept: manifest internal restoration condition
+  routing: one_root
+  analysis: REP:001 asserts that the entity presently realizes its identified internal
+    restoration condition.
+- test_id: REP0-T024
+  english_concept: dormant internal restoration condition
+  routing: one_root
+  analysis: REP:002 asserts that the identified internal restoration condition is
+    not presently realized.
+- test_id: REP0-T025
+  english_concept: persistent target restoration condition
+  routing: one_root
+  analysis: REP:010 preserves the identity of one acceptable condition assigned to
+    one distinct target.
+- test_id: REP0-T026
+  english_concept: manifest target restoration condition
+  routing: one_root
+  analysis: REP:011 asserts that one distinct target presently realizes its restoration
+    condition.
+- test_id: REP0-T027
+  english_concept: dormant target restoration condition
+  routing: one_root
+  analysis: REP:012 asserts that one distinct target does not presently realize its
+    identified restoration condition.
+- test_id: REP0-T028
+  english_concept: persistent shared restoration condition
+  routing: one_root
+  analysis: REP:020 preserves one correlated restoration condition across multiple
+    participants.
+- test_id: REP0-T029
+  english_concept: manifest shared restoration condition
+  routing: one_root
+  analysis: REP:021 asserts present realization of one correlated restoration condition
+    across multiple participants.
+- test_id: REP0-T030
+  english_concept: dormant shared restoration condition
+  routing: one_root
+  analysis: REP:022 asserts that one identified shared restoration condition is not
+    presently realized.
+- test_id: REP0-T031
+  english_concept: persistent and manifest internal
+  routing: two_compatible_roots
+  analysis: REP:000 and REP:001 may co-occur because identity persistence and present
+    realization are independent claims.
+- test_id: REP0-T032
+  english_concept: persistent and dormant internal
+  routing: two_compatible_roots
+  analysis: REP:000 and REP:002 may co-occur because the condition remains identified
+    while unrealized.
+- test_id: REP0-T033
+  english_concept: manifest and dormant internal simultaneously
+  routing: invalid_same_reference_claim
+  analysis: REP:001 and REP:002 cannot both hold for the same condition at the same
+    reference time.
+- test_id: REP0-T034
+  english_concept: persistent and manifest target
+  routing: two_compatible_roots
+  analysis: REP:010 and REP:011 may co-occur.
+- test_id: REP0-T035
+  english_concept: persistent and dormant target
+  routing: two_compatible_roots
+  analysis: REP:010 and REP:012 may co-occur.
+- test_id: REP0-T036
+  english_concept: manifest and dormant target simultaneously
+  routing: invalid_same_reference_claim
+  analysis: REP:011 and REP:012 are mutually exclusive for one condition at one time.
+- test_id: REP0-T037
+  english_concept: persistent and manifest shared
+  routing: two_compatible_roots
+  analysis: REP:020 and REP:021 may co-occur.
+- test_id: REP0-T038
+  english_concept: persistent and dormant shared
+  routing: two_compatible_roots
+  analysis: REP:020 and REP:022 may co-occur.
+- test_id: REP0-T039
+  english_concept: manifest and dormant shared simultaneously
+  routing: invalid_same_reference_claim
+  analysis: REP:021 and REP:022 are mutually exclusive for one condition at one time.
+- test_id: REP0-T040
+  english_concept: confirmed dormant condition
+  routing: one_root_plus_runtime
+  analysis: REP:002[1], REP:012[1], or REP:022[1] affirms identified-but-unrealized
+    status.
+- test_id: REP0-T041
+  english_concept: manifest condition uncertain
+  routing: runtime_state
+  analysis: A ...1 root carrying [2]/num remains lexically manifest while its token
+    assertion is unresolved; it does not become ...2.
+- test_id: REP0-T042
+  english_concept: dormant condition uncertain
+  routing: runtime_state
+  analysis: A ...2 root carrying [2]/num questions the dormant claim rather than changing
+    it to manifest.
+- test_id: REP0-T043
+  english_concept: unknown restoration condition
+  routing: runtime_or_gap
+  analysis: Runtime uncertainty or MIN/DAT expresses ignorance; lexical dormancy does
+    not mean unknown.
+- test_id: REP0-T044
+  english_concept: condition not recorded
+  routing: one_root_plus_negation
+  analysis: A REP condition may remain identified while a DAT record claim is denied.
+- test_id: REP0-T045
+  english_concept: recorded but not realized
+  routing: compound
+  analysis: DAT asserts the record and REP:0x2 asserts identified-but-unrealized restoration
+    status.
+- test_id: REP0-T046
+  english_concept: realized but not recognized
+  routing: compound
+  analysis: REP:0x1 may hold while MIN recognition is denied.
+- test_id: REP0-T047
+  english_concept: damaged
+  routing: different_family_or_compound
+  analysis: WRN/MAT/LIF owns damage or degradation; REP:0x2 does not itself assert
+    damage.
+- test_id: REP0-T048
+  english_concept: faulty
+  routing: different_family
+  analysis: WRN owns adverse fault conditions; dormancy in REP is not a latent fault.
+- test_id: REP0-T049
+  english_concept: unsafe
+  routing: different_family_or_compound
+  analysis: WRN/LOG owns hazard or safety judgment; REP does not mean safe.
+- test_id: REP0-T050
+  english_concept: broken
+  routing: different_family_or_compound
+  analysis: MAT/WRN or domain vocabulary owns breakage; REP only states restoration-relative
+    condition.
+- test_id: REP0-T051
+  english_concept: unhealthy
+  routing: different_family_or_compound
+  analysis: LIF and WRN describe health/adversity; REP:002 may separately say an internal
+    restored condition is unrealized.
+- test_id: REP0-T052
+  english_concept: repairing
+  routing: future_rep_process
+  analysis: Actual ongoing repair belongs to REP:1xx, not the REP:0xx entity/condition
+    layer.
+- test_id: REP0-T053
+  english_concept: healing
+  routing: future_rep_process
+  analysis: The process belongs to REP:1xx with LIF; a currently healed condition
+    may use REP:0x1.
+- test_id: REP0-T054
+  english_concept: recovering
+  routing: future_rep_process
+  analysis: An active recovery operation belongs to REP:1xx, not REP:001.
+- test_id: REP0-T055
+  english_concept: maintaining
+  routing: future_rep_process
+  analysis: Maintenance activity belongs to REP:1xx; a maintained condition may be
+    expressed compositionally.
+- test_id: REP0-T056
+  english_concept: recalibrating
+  routing: future_rep_process
+  analysis: The transformation belongs to REP:1xx with MAT/LOG/STR criteria.
+- test_id: REP0-T057
+  english_concept: restoring a database
+  routing: future_rep_process
+  analysis: REP:1xx will own the restoration operation; DAT owns the database and
+    checkpoint.
+- test_id: REP0-T058
+  english_concept: repairable
+  routing: future_rep_affordance
+  analysis: Recoverability or repairability belongs to REP:2xx, not a dormant REP:0xx
+    condition.
+- test_id: REP0-T059
+  english_concept: recoverable
+  routing: future_rep_affordance
+  analysis: A capacity for future restoration belongs to REP:2xx and must not be inferred
+    from REP:002/012/022.
+- test_id: REP0-T060
+  english_concept: irreparable
+  routing: future_rep_affordance_plus_negation
+  analysis: Negated REP:2xx capacity is distinct from an unrealized restoration condition.
+- test_id: REP0-T061
+  english_concept: restorative resource
+  routing: different_family_or_compound
+  analysis: MAT/CRE/LIF owns a tool, spare, medicine, or caregiver; REP:0xx does not
+    name the resource.
+- test_id: REP0-T062
+  english_concept: spare part
+  routing: different_family
+  analysis: MAT/CRE owns the artifact and its intended use; it is not a restoration
+    condition.
+- test_id: REP0-T063
+  english_concept: medicine
+  routing: different_family_or_compound
+  analysis: MAT/LIF owns the substance and biological role; REP processes may describe
+    treatment.
+- test_id: REP0-T064
+  english_concept: caregiver
+  routing: different_family
+  analysis: LIF/CON owns the participant and care relation.
+- test_id: REP0-T065
+  english_concept: repair queue
+  routing: compound
+  analysis: DAT/ORI owns queued work and scheduling; a target's dormant restoration
+    condition does not mean queued.
+- test_id: REP0-T066
+  english_concept: scheduled maintenance
+  routing: compound
+  analysis: ORI plus REP:1xx process expresses schedule; third trit 2 does not encode
+    future time.
+- test_id: REP0-T067
+  english_concept: delay in repair
+  routing: compound
+  analysis: ORI timing plus REP:1xx process; not a REP:0xx condition.
+- test_id: REP0-T068
+  english_concept: replacement
+  routing: different_family_or_future_process
+  analysis: CRE owns creation/substitution and REP:1xx may supply restoration purpose.
+- test_id: REP0-T069
+  english_concept: reconstruction
+  routing: different_family_or_future_process
+  analysis: CRE/STR owns rebuilding mechanics; REP:1xx may supply restoration action.
+- test_id: REP0-T070
+  english_concept: return to a place
+  routing: different_family
+  analysis: MOV owns spatial return; it is not restoration merely because English
+    says return.
+- test_id: REP0-T071
+  english_concept: return to service
+  routing: compound
+  analysis: REP:0x1 supplies current restored condition, while ORI/MOV or REP:1xx
+    may express the transition.
+- test_id: REP0-T072
+  english_concept: rollback
+  routing: compound
+  analysis: DAT identifies prior state and REP:1xx expresses restoration process;
+    REP:0x1 can describe the achieved condition.
+- test_id: REP0-T073
+  english_concept: reset
+  routing: future_process_or_compound
+  analysis: A reset operation belongs to REP:1xx/CRE; its resulting acceptable condition
+    can use REP:0x1.
+- test_id: REP0-T074
+  english_concept: service online again
+  routing: compound
+  analysis: CON/DAT/STR describes service availability, ORI supplies again, and REP:021
+    may assert shared restored condition.
+- test_id: REP0-T075
+  english_concept: recovered cluster
+  routing: one_root_or_compound
+  analysis: REP:021 applies only when one correlated shared restoration condition
+    is realized across participants.
+- test_id: REP0-T076
+  english_concept: many healthy machines
+  routing: multiple_roots_not_one_systemic_root
+  analysis: Use separate REP:001 claims unless one correlated shared restoration condition
+    is asserted.
+- test_id: REP0-T077
+  english_concept: shared service-level target
+  routing: compound
+  analysis: LOG/DAT defines the target; REP:020 may identify it as a shared restoration
+    condition.
+- test_id: REP0-T078
+  english_concept: partially restored system
+  routing: compound_or_unresolved
+  analysis: REP:021 requires the stated shared condition to be realized; partial realization
+    needs participant-level claims, quantification, or later vocabulary.
+- test_id: REP0-T079
+  english_concept: mixed recovered and unrecovered nodes
+  routing: multiple_roots_or_quantification
+  analysis: Use participant-level REP:001/002 claims unless the exact shared condition
+    itself is realized or unrealized system-wide.
+- test_id: REP0-T080
+  english_concept: restored relationship
+  routing: compound
+  analysis: CON owns the relation and REP supplies restoration-relative condition
+    when reconciliation is intended.
+- test_id: REP0-T081
+  english_concept: reconciled group
+  routing: compound
+  analysis: CON/LIF supplies social relation and participants; REP:021 may assert
+    a shared restored condition.
+- test_id: REP0-T082
+  english_concept: corrected dataset
+  routing: compound
+  analysis: DAT/LOG supplies data and correctness; REP:011 applies only when this
+    is the target's identified restoration condition.
+- test_id: REP0-T083
+  english_concept: repaired structure
+  routing: compound
+  analysis: STR/MAT supplies structure and integrity; REP:011 supplies realized target
+    restoration status.
+- test_id: REP0-T084
+  english_concept: healed organism
+  routing: compound
+  analysis: LIF supplies biological condition; REP:001 or 011 supplies realization
+    according to reference framing.
+- test_id: REP0-T085
+  english_concept: self-restored process
+  routing: compound
+  analysis: REP:001 can assert the entity's condition; the self-directed restoration
+    event remains REP:1xx.
+- test_id: REP0-T086
+  english_concept: target restored by agent
+  routing: compound
+  analysis: REP:011 asserts target condition while REP:1xx and LIF/CRE separately
+    assert agent and action.
+- test_id: REP0-T087
+  english_concept: system restored through coordination
+  routing: compound
+  analysis: REP:021 asserts shared condition while CON and REP:1xx assert coordination
+    and restoration process.
+- test_id: REP0-T088
+  english_concept: future restored state
+  routing: compound_or_grammar
+  analysis: ORI future/modal qualification applies to a REP condition; dormant lexical
+    status alone does not mean future.
+- test_id: REP0-T089
+  english_concept: past restored state
+  routing: compound_or_grammar
+  analysis: ORI past reference plus REP:0x1; lexical manifestation does not encode
+    tense.
+- test_id: REP0-T090
+  english_concept: possible restoration condition
+  routing: compound_or_runtime
+  analysis: ORI modality or runtime uncertainty qualifies the REP claim; third trit
+    2 means unrealized, not merely possible.
+- test_id: REP0-T091
+  english_concept: permanent restoration condition
+  routing: one_root_or_compound
+  analysis: REP:0x0 identifies persistence; unrestricted permanence may require ORI/LOG
+    qualification.
+- test_id: REP0-T092
+  english_concept: temporary restored condition
+  routing: compound
+  analysis: REP:0x1 plus ORI duration; manifest does not entail persistence.
+- test_id: REP0-T093
+  english_concept: restoration condition versus criterion
+  routing: scope_resolution_test
+  analysis: REP names the acceptable condition; LOG names the rule by which it is
+    accepted.
+- test_id: REP0-T094
+  english_concept: restoration condition versus record
+  routing: scope_resolution_test
+  analysis: REP names the condition; DAT names its representation, backup, or checkpoint.
+- test_id: REP0-T095
+  english_concept: restoration condition versus process
+  routing: scope_resolution_test
+  analysis: REP:0xx names condition; REP:1xx is reserved for actual restoration.
+- test_id: REP0-T096
+  english_concept: restoration condition versus capacity
+  routing: scope_resolution_test
+  analysis: REP:0xx names condition; REP:2xx is reserved for recoverability and enabling
+    relations.
+- test_id: REP0-T097
+  english_concept: restoration condition versus health
+  routing: scope_resolution_test
+  analysis: REP supplies restoration-relative status; LIF owns biological health.
+- test_id: REP0-T098
+  english_concept: restoration condition versus integrity
+  routing: scope_resolution_test
+  analysis: REP supplies restoration-relative status; MAT/STR owns physical or structural
+    integrity.
+- test_id: REP0-T099
+  english_concept: restoration condition versus validity
+  routing: scope_resolution_test
+  analysis: REP supplies restoration-relative status; LOG owns validity.
+- test_id: REP0-T100
+  english_concept: restoration condition versus absence of fault
+  routing: scope_resolution_test
+  analysis: A REP condition does not logically equal negation of every WRN condition
+    unless a separate rule states equivalence.

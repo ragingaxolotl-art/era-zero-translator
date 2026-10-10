@@ -1,0 +1,1697 @@
+---
+metadata:
+  title: ORI:100–122 recommended permanent semantic specification
+  status: approved_and_canonical_by_delegated_authority
+  architecture_version: '1.0'
+  semantic_center: 'ontological transitions: source-ground establishment, distinct
+    actualization, and shared-world transition'
+  triplets:
+    ORI:100–102: 'source-ground establishment: completed / active / nonactualized'
+    ORI:110–112: 'distinct actualization: completed / active / nonactualized'
+    ORI:120–122: 'shared-world transition: completed / active / nonactualized'
+  triplet_logic:
+    process_phases: completed, active, and nonactualized are mutually exclusive for
+      one bounded transition at one reference time
+    nonactualized_member: asserts a typed process that is not occurring without intention,
+      possibility, planning, scheduling, or futurity
+    runtime_uncertainty: runtime [2]/num qualifies a selected lexical phase claim
+      and does not select a sibling
+  generated_fields_changed: false
+  gate4_started: false
+  translator_started: false
+  roots_canonicalized:
+  - ORI:100
+  - ORI:101
+  - ORI:102
+  - ORI:110
+  - ORI:111
+  - ORI:112
+  - ORI:120
+  - ORI:121
+  - ORI:122
+  approval_record: migrations/ORI_100_122_semantic_approval.yaml
+roots:
+- fixed_generated_fields:
+    canonical_id: ORI:100
+    universal_slot: completed inward process
+    family_qualified_transliteration: nu·kam
+    local_compact_root: kam
+    formal_carrier: nu-ki-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: completed source-ground establishment
+  invariant_definition: Completion of a bounded ontological transition by which one
+    referent becomes grounded as a source from which another state of affairs may
+    originate.
+  semantic_center: 'ontological transitions: source-ground establishment, distinct
+    actualization, and shared-world transition'
+  address_justification:
+    first_trit_1: Selects a bounded ontological transition rather than an entity condition,
+      causal or modal relation, observation, representation, or physical transformation.
+    second_trit: 'Selects inward/self scope: one referent undergoing establishment
+      as a source-ground for another state of affairs and no other Origin-family column.'
+    third_trit: Selects the completed phase of the same ontological transition while
+      leaving runtime assertion status, observer knowledge, clock time, probability,
+      intention, scheduling, causation, and physical mechanism separate.
+  inclusion_boundary: Includes only the completed source-ground establishment as a
+    substrate-neutral ontological transition at inward scope. The process changes
+    source-ground status only. It does not assert a causal mechanism, creator, temporal
+    schedule, physical transformation, or produced artifact. It is neutral about substance,
+    location, cognition, evidence, representation, logical validity, agency, authority,
+    productive method, hazard, repair, scheduling, duration, probability, and causal
+    mechanism.
+  excluded_meanings:
+  - The source-ground, distinct-existence, or shared-world condition as an entity-layer
+    state rather than its transition.
+  - A causal link, physical transformation, productive act, living process, mental
+    change, data operation, structural reconfiguration, warning, or repair process.
+  - Observation, detectability, evidence, truth, validity, certainty, consensus, permission,
+    authority, success, or result persistence.
+  - Unrestricted possibility, necessity, probability, counterfactuality, intention,
+    plan, readiness, schedule, queue, or future time.
+  - The content of a natural law, algorithm, causal mechanism, physical mechanism,
+    social convention, or formal model.
+  - Any claim that completion entails persistence, that activity entails observation,
+    or that nonactualization entails possibility, preparation, or futurity.
+  nearest_neighbors:
+  - ORI:101
+  - ORI:102
+  - ORI:110
+  - ORI:120
+  - ORI:000
+  - ORI:100
+  same_family_contrast: "`ORI:0xx` owns source-ground, distinct-existence, and shared-world
+    conditions. `ORI:1xx` owns the corresponding bounded ontological transitions:
+    source-ground establishment, distinct actualization, and shared-world transition.
+    `ORI:2xx` remains reserved for causal, modal, temporal, or provenance relations
+    and affordances. A condition does not entail its transition, and a completed transition
+    does not entail continued persistence. Completed, active, and nonactualized are
+    mutually exclusive phases of one bounded transition at one reference time. Lexical
+    nonactualization asserts a typed process that is not occurring; runtime `[2]/num`
+    separately marks uncertainty about any selected phase claim."
+  cross_family_comparisons: &1
+    LIF: LIF owns biological and social processes. ORI transition changes ontological
+      standing, not life stage, agency, birth, death, or role succession.
+    MOV: MOV owns displacement through space or routes. ORI transition is change in
+      what obtains in a reality and never entails travel, arrival, or trajectory.
+    MAT: MAT owns physical transformation, force, energy, and material state change.
+      ORI transition is substrate-neutral and does not describe physical mechanics.
+    MIN: MIN owns changes in attention, belief, intention, and understanding. Becoming
+      conceived or believed is not the same as becoming ontologically actual.
+    CON: CON owns communication, linkage, participation, and authority changes. ORI
+      systemic transition does not itself assert coordination or consensus.
+    WRN: WRN owns adverse transformations and propagation. An ontological transition
+      is neutral about harm, fault, risk, and failure.
+    STR: STR owns reconfiguration, incorporation, and integration. ORI transition
+      concerns ontological standing, not arrangement or dependency change alone.
+    REP: REP owns restoration toward an acceptable prior condition. ORI transition
+      neither presupposes damage nor encodes return, recovery, or repair.
+    LOG: LOG owns evaluation and constraint application. A proposition becoming accepted
+      or valid is not a referent becoming part of reality.
+    DAT: DAT owns transformation, transfer, and synchronization of represented information.
+      A record appearing does not entail its referent's actualization.
+    CRE: CRE owns productive generation of patterns and artifacts. ORI actualization
+      may accompany creation but does not assert a producer, artifact, medium, or
+      productive method.
+  runtime_state_interpretation:
+    '0': Denies that this source-ground establishment reached completion; it does
+      not assert that the active or nonactualized sibling holds and does not reverse
+      the transition.
+    '1': Affirms completion of this source-ground establishment without asserting
+      persistence, success under an external criterion, cause, observation, or physical
+      mechanism.
+    2/num: Leaves completion of this source-ground establishment unresolved; runtime
+      uncertainty does not change the lexical root into active or nonactualized phase.
+  lexical_runtime_distinction: Lexical third trit `0` permanently selects the completed
+    phase of this ontological transition. Runtime `[2]/num` instead leaves the already-selected
+    phase claim unresolved; it never changes process phase. Thus a nonactualized root
+    affirmed with `[1]` confirms that the typed transition is not occurring, while
+    a completed or active root carrying `[2]/num` remains lexically completed or active
+    but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:100[1](REFERENT=source,ORIGINAND=o,REALITY=r)
+    literal_gloss: affirm completed source-ground establishment
+    natural_english: The source-ground establishment for the source has completed.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: The root asserts ontological transition phase, not observation, causation,
+      physical mechanics, or evaluation.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=m)+ORI:100[1](REFERENT=source,ORIGINAND=o,REALITY=r)
+    literal_gloss: material bearer plus completed ontological transition
+    natural_english: The material bearer participates in the transition while MAT
+      separately describes physical change.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Ontological and material transformations remain separately typed.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:100[1](REFERENT=source,ORIGINAND=o,REALITY=r)+ORI(INTERVAL=w)
+    literal_gloss: completed ontological transition during interval w
+    natural_english: During interval w, the transition has the selected lexical phase.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Timing does not replace completed, active, or nonactualized phase.
+  - category: cross_family_compound
+    semantic_graph: ORI:100[1](REFERENT=source,ORIGINAND=o,REALITY=r)+CRE(PRODUCTION=p)+DAT(REPRESENTATION=d)
+    literal_gloss: ontological transition plus production plus representation
+    natural_english: The referent becomes actual while its production and description
+      remain separate claims.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Actualization, creation, and representation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: ORI:100[1](REFERENT=source,ORIGINAND=o,REALITY=r)
+    literal_gloss: assert completed ontological transition
+    natural_english: A state machine records the ontological transition phase without
+      conflating it with a Boolean proposition, scheduled job, or physical operation.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Transition, evaluation, scheduling, and implementation remain distinct.
+    pseudocode: 'world.transition("ORI:100", referent: "source")'
+  - category: counterexample
+    semantic_graph: DAT(INSERT=row)+LOG(EVALUATE=p)
+    literal_gloss: insert record and evaluate proposition
+    natural_english: The database inserted a row and marked its statement true.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: must_not_use_this_root
+    analysis: Use DAT and LOG for record and truth changes; ORI:100 is reserved for
+      ontological transition.
+  future_compound_examples:
+  - ORI:100 + ORI:0xx states the corresponding source-ground, distinct-existence,
+    or shared-world condition without reducing process to state.
+  - ORI:100 + ORI:2xx may state causal, modal, temporal, or provenance relations without
+    changing the process-layer meaning.
+  - ORI:100 + MAT/DAT/LOG/STR supplies physical mechanics, representation, evaluation,
+    or reconfiguration while preserving the ontological-transition boundary.
+  - ORI:100 + MIN/CON/LIF/CRE may express intention, communication, living agency,
+    or productive generation as separate meanings.
+  later_era_notes: Later eras may lexicalize creation ex nihilo, deactivation, annihilation,
+    instantiation, event birth, timeline branching, world merging, simulation bootstrapping,
+    epoch change, and specialized modal realization. Era Zero should preserve the
+    substrate-neutral ontological-transition center and derive stronger causal, temporal,
+    physical, and computational claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:101
+    universal_slot: active inward process
+    family_qualified_transliteration: nu·kak
+    local_compact_root: kak
+    formal_carrier: nu-ki-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 4
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: active source-ground establishment
+  invariant_definition: An ongoing bounded ontological transition by which one referent
+    is becoming grounded as a source from which another state of affairs may originate.
+  semantic_center: 'ontological transitions: source-ground establishment, distinct
+    actualization, and shared-world transition'
+  address_justification:
+    first_trit_1: Selects a bounded ontological transition rather than an entity condition,
+      causal or modal relation, observation, representation, or physical transformation.
+    second_trit: 'Selects inward/self scope: one referent undergoing establishment
+      as a source-ground for another state of affairs and no other Origin-family column.'
+    third_trit: Selects the active phase of the same ontological transition while
+      leaving runtime assertion status, observer knowledge, clock time, probability,
+      intention, scheduling, causation, and physical mechanism separate.
+  inclusion_boundary: Includes only the active source-ground establishment as a substrate-neutral
+    ontological transition at inward scope. The process changes source-ground status
+    only. It does not assert a causal mechanism, creator, temporal schedule, physical
+    transformation, or produced artifact. It is neutral about substance, location,
+    cognition, evidence, representation, logical validity, agency, authority, productive
+    method, hazard, repair, scheduling, duration, probability, and causal mechanism.
+  excluded_meanings:
+  - The source-ground, distinct-existence, or shared-world condition as an entity-layer
+    state rather than its transition.
+  - A causal link, physical transformation, productive act, living process, mental
+    change, data operation, structural reconfiguration, warning, or repair process.
+  - Observation, detectability, evidence, truth, validity, certainty, consensus, permission,
+    authority, success, or result persistence.
+  - Unrestricted possibility, necessity, probability, counterfactuality, intention,
+    plan, readiness, schedule, queue, or future time.
+  - The content of a natural law, algorithm, causal mechanism, physical mechanism,
+    social convention, or formal model.
+  - Any claim that completion entails persistence, that activity entails observation,
+    or that nonactualization entails possibility, preparation, or futurity.
+  nearest_neighbors:
+  - ORI:100
+  - ORI:102
+  - ORI:111
+  - ORI:121
+  - ORI:001
+  - ORI:101
+  same_family_contrast: "`ORI:0xx` owns source-ground, distinct-existence, and shared-world
+    conditions. `ORI:1xx` owns the corresponding bounded ontological transitions:
+    source-ground establishment, distinct actualization, and shared-world transition.
+    `ORI:2xx` remains reserved for causal, modal, temporal, or provenance relations
+    and affordances. A condition does not entail its transition, and a completed transition
+    does not entail continued persistence. Completed, active, and nonactualized are
+    mutually exclusive phases of one bounded transition at one reference time. Lexical
+    nonactualization asserts a typed process that is not occurring; runtime `[2]/num`
+    separately marks uncertainty about any selected phase claim."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this source-ground establishment is ongoing now; it does not
+      establish completion, nonactualization, impossibility, cancellation, or reversal.
+    '1': Affirms that this source-ground establishment is ongoing now without asserting
+      completion, duration, cause, success, observation, or material realization.
+    2/num: Leaves current activity of this source-ground establishment unresolved;
+      token uncertainty does not select the completed or nonactualized lexical sibling.
+  lexical_runtime_distinction: Lexical third trit `1` permanently selects the active
+    phase of this ontological transition. Runtime `[2]/num` instead leaves the already-selected
+    phase claim unresolved; it never changes process phase. Thus a nonactualized root
+    affirmed with `[1]` confirms that the typed transition is not occurring, while
+    a completed or active root carrying `[2]/num` remains lexically completed or active
+    but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:101[1](REFERENT=source,ORIGINAND=o,REALITY=r)
+    literal_gloss: affirm active source-ground establishment
+    natural_english: The source-ground establishment for the source is occurring.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: The root asserts ontological transition phase, not observation, causation,
+      physical mechanics, or evaluation.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=m)+ORI:101[1](REFERENT=source,ORIGINAND=o,REALITY=r)
+    literal_gloss: material bearer plus active ontological transition
+    natural_english: The material bearer participates in the transition while MAT
+      separately describes physical change.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Ontological and material transformations remain separately typed.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:101[1](REFERENT=source,ORIGINAND=o,REALITY=r)+ORI(INTERVAL=w)
+    literal_gloss: active ontological transition during interval w
+    natural_english: During interval w, the transition has the selected lexical phase.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Timing does not replace completed, active, or nonactualized phase.
+  - category: cross_family_compound
+    semantic_graph: ORI:101[1](REFERENT=source,ORIGINAND=o,REALITY=r)+CRE(PRODUCTION=p)+DAT(REPRESENTATION=d)
+    literal_gloss: ontological transition plus production plus representation
+    natural_english: The referent becomes actual while its production and description
+      remain separate claims.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Actualization, creation, and representation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: ORI:101[1](REFERENT=source,ORIGINAND=o,REALITY=r)
+    literal_gloss: assert active ontological transition
+    natural_english: A state machine records the ontological transition phase without
+      conflating it with a Boolean proposition, scheduled job, or physical operation.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Transition, evaluation, scheduling, and implementation remain distinct.
+    pseudocode: 'world.transition("ORI:101", referent: "source")'
+  - category: counterexample
+    semantic_graph: DAT(INSERT=row)+LOG(EVALUATE=p)
+    literal_gloss: insert record and evaluate proposition
+    natural_english: The database inserted a row and marked its statement true.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: must_not_use_this_root
+    analysis: Use DAT and LOG for record and truth changes; ORI:101 is reserved for
+      ontological transition.
+  future_compound_examples:
+  - ORI:101 + ORI:0xx states the corresponding source-ground, distinct-existence,
+    or shared-world condition without reducing process to state.
+  - ORI:101 + ORI:2xx may state causal, modal, temporal, or provenance relations without
+    changing the process-layer meaning.
+  - ORI:101 + MAT/DAT/LOG/STR supplies physical mechanics, representation, evaluation,
+    or reconfiguration while preserving the ontological-transition boundary.
+  - ORI:101 + MIN/CON/LIF/CRE may express intention, communication, living agency,
+    or productive generation as separate meanings.
+  later_era_notes: Later eras may lexicalize creation ex nihilo, deactivation, annihilation,
+    instantiation, event birth, timeline branching, world merging, simulation bootstrapping,
+    epoch change, and specialized modal realization. Era Zero should preserve the
+    substrate-neutral ontological-transition center and derive stronger causal, temporal,
+    physical, and computational claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:102
+    universal_slot: pending inward process
+    family_qualified_transliteration: nu·kan
+    local_compact_root: kan
+    formal_carrier: nu-ki-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: nonactualized source-ground establishment
+  invariant_definition: A nonactualized bounded ontological transition that would
+    ground one referent as a source from which another state of affairs may originate.
+  semantic_center: 'ontological transitions: source-ground establishment, distinct
+    actualization, and shared-world transition'
+  address_justification:
+    first_trit_1: Selects a bounded ontological transition rather than an entity condition,
+      causal or modal relation, observation, representation, or physical transformation.
+    second_trit: 'Selects inward/self scope: one referent undergoing establishment
+      as a source-ground for another state of affairs and no other Origin-family column.'
+    third_trit: Selects the nonactualized phase of the same ontological transition
+      while leaving runtime assertion status, observer knowledge, clock time, probability,
+      intention, scheduling, causation, and physical mechanism separate.
+  inclusion_boundary: Includes only the nonactualized source-ground establishment
+    as a substrate-neutral ontological transition at inward scope. The process changes
+    source-ground status only. It does not assert a causal mechanism, creator, temporal
+    schedule, physical transformation, or produced artifact. It is neutral about substance,
+    location, cognition, evidence, representation, logical validity, agency, authority,
+    productive method, hazard, repair, scheduling, duration, probability, and causal
+    mechanism.
+  excluded_meanings:
+  - The source-ground, distinct-existence, or shared-world condition as an entity-layer
+    state rather than its transition.
+  - A causal link, physical transformation, productive act, living process, mental
+    change, data operation, structural reconfiguration, warning, or repair process.
+  - Observation, detectability, evidence, truth, validity, certainty, consensus, permission,
+    authority, success, or result persistence.
+  - Unrestricted possibility, necessity, probability, counterfactuality, intention,
+    plan, readiness, schedule, queue, or future time.
+  - The content of a natural law, algorithm, causal mechanism, physical mechanism,
+    social convention, or formal model.
+  - Any claim that completion entails persistence, that activity entails observation,
+    or that nonactualization entails possibility, preparation, or futurity.
+  nearest_neighbors:
+  - ORI:100
+  - ORI:101
+  - ORI:112
+  - ORI:122
+  - ORI:002
+  - ORI:102
+  same_family_contrast: "`ORI:0xx` owns source-ground, distinct-existence, and shared-world
+    conditions. `ORI:1xx` owns the corresponding bounded ontological transitions:
+    source-ground establishment, distinct actualization, and shared-world transition.
+    `ORI:2xx` remains reserved for causal, modal, temporal, or provenance relations
+    and affordances. A condition does not entail its transition, and a completed transition
+    does not entail continued persistence. Completed, active, and nonactualized are
+    mutually exclusive phases of one bounded transition at one reference time. Lexical
+    nonactualization asserts a typed process that is not occurring; runtime `[2]/num`
+    separately marks uncertainty about any selected phase claim."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies this nonactualized source-ground establishment claim; it does not
+      establish that the process is active, completed, impossible, or prohibited.
+    '1': Affirms the typed source-ground establishment as nonactualized, without encoding
+      intention, planning, readiness, schedule, futurity, permission, probability,
+      or possibility.
+    2/num: Leaves unresolved even the assertion of this nonactualized source-ground
+      establishment; lexical nonactualization remains distinct from runtime uncertainty.
+  lexical_runtime_distinction: Lexical third trit `2` permanently selects the nonactualized
+    phase of this ontological transition. Runtime `[2]/num` instead leaves the already-selected
+    phase claim unresolved; it never changes process phase. Thus a nonactualized root
+    affirmed with `[1]` confirms that the typed transition is not occurring, while
+    a completed or active root carrying `[2]/num` remains lexically completed or active
+    but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:102[1](REFERENT=source,ORIGINAND=o,REALITY=r)
+    literal_gloss: affirm nonactualized source-ground establishment
+    natural_english: The source-ground establishment for the source is nonactualized.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: The root asserts ontological transition phase, not observation, causation,
+      physical mechanics, or evaluation.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=m)+ORI:102[1](REFERENT=source,ORIGINAND=o,REALITY=r)
+    literal_gloss: material bearer plus nonactualized ontological transition
+    natural_english: The material bearer participates in the transition while MAT
+      separately describes physical change.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Ontological and material transformations remain separately typed.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:102[1](REFERENT=source,ORIGINAND=o,REALITY=r)+ORI(INTERVAL=w)
+    literal_gloss: nonactualized ontological transition during interval w
+    natural_english: During interval w, the transition has the selected lexical phase.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Timing does not replace completed, active, or nonactualized phase.
+  - category: cross_family_compound
+    semantic_graph: ORI:102[1](REFERENT=source,ORIGINAND=o,REALITY=r)+CRE(PRODUCTION=p)+DAT(REPRESENTATION=d)
+    literal_gloss: ontological transition plus production plus representation
+    natural_english: The referent becomes actual while its production and description
+      remain separate claims.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Actualization, creation, and representation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: ORI:102[1](REFERENT=source,ORIGINAND=o,REALITY=r)
+    literal_gloss: assert nonactualized ontological transition
+    natural_english: A state machine records the ontological transition phase without
+      conflating it with a Boolean proposition, scheduled job, or physical operation.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Transition, evaluation, scheduling, and implementation remain distinct.
+    pseudocode: 'world.transition("ORI:102", referent: "source")'
+  - category: counterexample
+    semantic_graph: DAT(INSERT=row)+LOG(EVALUATE=p)
+    literal_gloss: insert record and evaluate proposition
+    natural_english: The database inserted a row and marked its statement true.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: must_not_use_this_root
+    analysis: Use DAT and LOG for record and truth changes; ORI:102 is reserved for
+      ontological transition.
+  future_compound_examples:
+  - ORI:102 + ORI:0xx states the corresponding source-ground, distinct-existence,
+    or shared-world condition without reducing process to state.
+  - ORI:102 + ORI:2xx may state causal, modal, temporal, or provenance relations without
+    changing the process-layer meaning.
+  - ORI:102 + MAT/DAT/LOG/STR supplies physical mechanics, representation, evaluation,
+    or reconfiguration while preserving the ontological-transition boundary.
+  - ORI:102 + MIN/CON/LIF/CRE may express intention, communication, living agency,
+    or productive generation as separate meanings.
+  later_era_notes: Later eras may lexicalize creation ex nihilo, deactivation, annihilation,
+    instantiation, event birth, timeline branching, world merging, simulation bootstrapping,
+    epoch change, and specialized modal realization. Era Zero should preserve the
+    substrate-neutral ontological-transition center and derive stronger causal, temporal,
+    physical, and computational claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:110
+    universal_slot: completed outward process
+    family_qualified_transliteration: nu·kom
+    local_compact_root: kom
+    formal_carrier: nu-ki-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 4
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: completed distinct actualization
+  invariant_definition: Completion of a bounded ontological transition by which one
+    distinct referent comes to obtain as part of the relevant reality.
+  semantic_center: 'ontological transitions: source-ground establishment, distinct
+    actualization, and shared-world transition'
+  address_justification:
+    first_trit_1: Selects a bounded ontological transition rather than an entity condition,
+      causal or modal relation, observation, representation, or physical transformation.
+    second_trit: 'Selects outward/target scope: one distinct referent undergoing actualization
+      within the relevant reality and no other Origin-family column.'
+    third_trit: Selects the completed phase of the same ontological transition while
+      leaving runtime assertion status, observer knowledge, clock time, probability,
+      intention, scheduling, causation, and physical mechanism separate.
+  inclusion_boundary: Includes only the completed distinct actualization as a substrate-neutral
+    ontological transition at outward scope. The process changes one distinct referent's
+    ontological standing. It does not identify substance, observability, truth-description,
+    representation, or causal mechanism. It is neutral about substance, location,
+    cognition, evidence, representation, logical validity, agency, authority, productive
+    method, hazard, repair, scheduling, duration, probability, and causal mechanism.
+  excluded_meanings:
+  - The source-ground, distinct-existence, or shared-world condition as an entity-layer
+    state rather than its transition.
+  - A causal link, physical transformation, productive act, living process, mental
+    change, data operation, structural reconfiguration, warning, or repair process.
+  - Observation, detectability, evidence, truth, validity, certainty, consensus, permission,
+    authority, success, or result persistence.
+  - Unrestricted possibility, necessity, probability, counterfactuality, intention,
+    plan, readiness, schedule, queue, or future time.
+  - The content of a natural law, algorithm, causal mechanism, physical mechanism,
+    social convention, or formal model.
+  - Any claim that completion entails persistence, that activity entails observation,
+    or that nonactualization entails possibility, preparation, or futurity.
+  nearest_neighbors:
+  - ORI:111
+  - ORI:112
+  - ORI:100
+  - ORI:120
+  - ORI:010
+  - ORI:110
+  same_family_contrast: "`ORI:0xx` owns source-ground, distinct-existence, and shared-world
+    conditions. `ORI:1xx` owns the corresponding bounded ontological transitions:
+    source-ground establishment, distinct actualization, and shared-world transition.
+    `ORI:2xx` remains reserved for causal, modal, temporal, or provenance relations
+    and affordances. A condition does not entail its transition, and a completed transition
+    does not entail continued persistence. Completed, active, and nonactualized are
+    mutually exclusive phases of one bounded transition at one reference time. Lexical
+    nonactualization asserts a typed process that is not occurring; runtime `[2]/num`
+    separately marks uncertainty about any selected phase claim."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this distinct actualization reached completion; it does not assert
+      that the active or nonactualized sibling holds and does not reverse the transition.
+    '1': Affirms completion of this distinct actualization without asserting persistence,
+      success under an external criterion, cause, observation, or physical mechanism.
+    2/num: Leaves completion of this distinct actualization unresolved; runtime uncertainty
+      does not change the lexical root into active or nonactualized phase.
+  lexical_runtime_distinction: Lexical third trit `0` permanently selects the completed
+    phase of this ontological transition. Runtime `[2]/num` instead leaves the already-selected
+    phase claim unresolved; it never changes process phase. Thus a nonactualized root
+    affirmed with `[1]` confirms that the typed transition is not occurring, while
+    a completed or active root carrying `[2]/num` remains lexically completed or active
+    but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:110[1](REFERENT=referent,REALITY=r)
+    literal_gloss: affirm completed distinct actualization
+    natural_english: The distinct actualization for the referent has completed.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: The root asserts ontological transition phase, not observation, causation,
+      physical mechanics, or evaluation.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=m)+ORI:110[1](REFERENT=referent,REALITY=r)
+    literal_gloss: material bearer plus completed ontological transition
+    natural_english: The material bearer participates in the transition while MAT
+      separately describes physical change.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Ontological and material transformations remain separately typed.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:110[1](REFERENT=referent,REALITY=r)+ORI(INTERVAL=w)
+    literal_gloss: completed ontological transition during interval w
+    natural_english: During interval w, the transition has the selected lexical phase.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Timing does not replace completed, active, or nonactualized phase.
+  - category: cross_family_compound
+    semantic_graph: ORI:110[1](REFERENT=referent,REALITY=r)+CRE(PRODUCTION=p)+DAT(REPRESENTATION=d)
+    literal_gloss: ontological transition plus production plus representation
+    natural_english: The referent becomes actual while its production and description
+      remain separate claims.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Actualization, creation, and representation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: ORI:110[1](REFERENT=referent,REALITY=r)
+    literal_gloss: assert completed ontological transition
+    natural_english: A state machine records the ontological transition phase without
+      conflating it with a Boolean proposition, scheduled job, or physical operation.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Transition, evaluation, scheduling, and implementation remain distinct.
+    pseudocode: 'world.transition("ORI:110", referent: "referent")'
+  - category: counterexample
+    semantic_graph: DAT(INSERT=row)+LOG(EVALUATE=p)
+    literal_gloss: insert record and evaluate proposition
+    natural_english: The database inserted a row and marked its statement true.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: must_not_use_this_root
+    analysis: Use DAT and LOG for record and truth changes; ORI:110 is reserved for
+      ontological transition.
+  future_compound_examples:
+  - ORI:110 + ORI:0xx states the corresponding source-ground, distinct-existence,
+    or shared-world condition without reducing process to state.
+  - ORI:110 + ORI:2xx may state causal, modal, temporal, or provenance relations without
+    changing the process-layer meaning.
+  - ORI:110 + MAT/DAT/LOG/STR supplies physical mechanics, representation, evaluation,
+    or reconfiguration while preserving the ontological-transition boundary.
+  - ORI:110 + MIN/CON/LIF/CRE may express intention, communication, living agency,
+    or productive generation as separate meanings.
+  later_era_notes: Later eras may lexicalize creation ex nihilo, deactivation, annihilation,
+    instantiation, event birth, timeline branching, world merging, simulation bootstrapping,
+    epoch change, and specialized modal realization. Era Zero should preserve the
+    substrate-neutral ontological-transition center and derive stronger causal, temporal,
+    physical, and computational claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:111
+    universal_slot: active outward process
+    family_qualified_transliteration: nu·kok
+    local_compact_root: kok
+    formal_carrier: nu-ki-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 6
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: active distinct actualization
+  invariant_definition: An ongoing bounded ontological transition by which one distinct
+    referent is coming to obtain as part of the relevant reality.
+  semantic_center: 'ontological transitions: source-ground establishment, distinct
+    actualization, and shared-world transition'
+  address_justification:
+    first_trit_1: Selects a bounded ontological transition rather than an entity condition,
+      causal or modal relation, observation, representation, or physical transformation.
+    second_trit: 'Selects outward/target scope: one distinct referent undergoing actualization
+      within the relevant reality and no other Origin-family column.'
+    third_trit: Selects the active phase of the same ontological transition while
+      leaving runtime assertion status, observer knowledge, clock time, probability,
+      intention, scheduling, causation, and physical mechanism separate.
+  inclusion_boundary: Includes only the active distinct actualization as a substrate-neutral
+    ontological transition at outward scope. The process changes one distinct referent's
+    ontological standing. It does not identify substance, observability, truth-description,
+    representation, or causal mechanism. It is neutral about substance, location,
+    cognition, evidence, representation, logical validity, agency, authority, productive
+    method, hazard, repair, scheduling, duration, probability, and causal mechanism.
+  excluded_meanings:
+  - The source-ground, distinct-existence, or shared-world condition as an entity-layer
+    state rather than its transition.
+  - A causal link, physical transformation, productive act, living process, mental
+    change, data operation, structural reconfiguration, warning, or repair process.
+  - Observation, detectability, evidence, truth, validity, certainty, consensus, permission,
+    authority, success, or result persistence.
+  - Unrestricted possibility, necessity, probability, counterfactuality, intention,
+    plan, readiness, schedule, queue, or future time.
+  - The content of a natural law, algorithm, causal mechanism, physical mechanism,
+    social convention, or formal model.
+  - Any claim that completion entails persistence, that activity entails observation,
+    or that nonactualization entails possibility, preparation, or futurity.
+  nearest_neighbors:
+  - ORI:110
+  - ORI:112
+  - ORI:101
+  - ORI:121
+  - ORI:011
+  - ORI:111
+  same_family_contrast: "`ORI:0xx` owns source-ground, distinct-existence, and shared-world
+    conditions. `ORI:1xx` owns the corresponding bounded ontological transitions:
+    source-ground establishment, distinct actualization, and shared-world transition.
+    `ORI:2xx` remains reserved for causal, modal, temporal, or provenance relations
+    and affordances. A condition does not entail its transition, and a completed transition
+    does not entail continued persistence. Completed, active, and nonactualized are
+    mutually exclusive phases of one bounded transition at one reference time. Lexical
+    nonactualization asserts a typed process that is not occurring; runtime `[2]/num`
+    separately marks uncertainty about any selected phase claim."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this distinct actualization is ongoing now; it does not establish
+      completion, nonactualization, impossibility, cancellation, or reversal.
+    '1': Affirms that this distinct actualization is ongoing now without asserting
+      completion, duration, cause, success, observation, or material realization.
+    2/num: Leaves current activity of this distinct actualization unresolved; token
+      uncertainty does not select the completed or nonactualized lexical sibling.
+  lexical_runtime_distinction: Lexical third trit `1` permanently selects the active
+    phase of this ontological transition. Runtime `[2]/num` instead leaves the already-selected
+    phase claim unresolved; it never changes process phase. Thus a nonactualized root
+    affirmed with `[1]` confirms that the typed transition is not occurring, while
+    a completed or active root carrying `[2]/num` remains lexically completed or active
+    but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:111[1](REFERENT=referent,REALITY=r)
+    literal_gloss: affirm active distinct actualization
+    natural_english: The distinct actualization for the referent is occurring.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: The root asserts ontological transition phase, not observation, causation,
+      physical mechanics, or evaluation.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=m)+ORI:111[1](REFERENT=referent,REALITY=r)
+    literal_gloss: material bearer plus active ontological transition
+    natural_english: The material bearer participates in the transition while MAT
+      separately describes physical change.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Ontological and material transformations remain separately typed.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:111[1](REFERENT=referent,REALITY=r)+ORI(INTERVAL=w)
+    literal_gloss: active ontological transition during interval w
+    natural_english: During interval w, the transition has the selected lexical phase.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Timing does not replace completed, active, or nonactualized phase.
+  - category: cross_family_compound
+    semantic_graph: ORI:111[1](REFERENT=referent,REALITY=r)+CRE(PRODUCTION=p)+DAT(REPRESENTATION=d)
+    literal_gloss: ontological transition plus production plus representation
+    natural_english: The referent becomes actual while its production and description
+      remain separate claims.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Actualization, creation, and representation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: ORI:111[1](REFERENT=referent,REALITY=r)
+    literal_gloss: assert active ontological transition
+    natural_english: A state machine records the ontological transition phase without
+      conflating it with a Boolean proposition, scheduled job, or physical operation.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Transition, evaluation, scheduling, and implementation remain distinct.
+    pseudocode: 'world.transition("ORI:111", referent: "referent")'
+  - category: counterexample
+    semantic_graph: DAT(INSERT=row)+LOG(EVALUATE=p)
+    literal_gloss: insert record and evaluate proposition
+    natural_english: The database inserted a row and marked its statement true.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: must_not_use_this_root
+    analysis: Use DAT and LOG for record and truth changes; ORI:111 is reserved for
+      ontological transition.
+  future_compound_examples:
+  - ORI:111 + ORI:0xx states the corresponding source-ground, distinct-existence,
+    or shared-world condition without reducing process to state.
+  - ORI:111 + ORI:2xx may state causal, modal, temporal, or provenance relations without
+    changing the process-layer meaning.
+  - ORI:111 + MAT/DAT/LOG/STR supplies physical mechanics, representation, evaluation,
+    or reconfiguration while preserving the ontological-transition boundary.
+  - ORI:111 + MIN/CON/LIF/CRE may express intention, communication, living agency,
+    or productive generation as separate meanings.
+  later_era_notes: Later eras may lexicalize creation ex nihilo, deactivation, annihilation,
+    instantiation, event birth, timeline branching, world merging, simulation bootstrapping,
+    epoch change, and specialized modal realization. Era Zero should preserve the
+    substrate-neutral ontological-transition center and derive stronger causal, temporal,
+    physical, and computational claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:112
+    universal_slot: pending outward process
+    family_qualified_transliteration: nu·kon
+    local_compact_root: kon
+    formal_carrier: nu-ki-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: nonactualized distinct actualization
+  invariant_definition: A nonactualized bounded ontological transition by which one
+    distinct referent would come to obtain as part of the relevant reality.
+  semantic_center: 'ontological transitions: source-ground establishment, distinct
+    actualization, and shared-world transition'
+  address_justification:
+    first_trit_1: Selects a bounded ontological transition rather than an entity condition,
+      causal or modal relation, observation, representation, or physical transformation.
+    second_trit: 'Selects outward/target scope: one distinct referent undergoing actualization
+      within the relevant reality and no other Origin-family column.'
+    third_trit: Selects the nonactualized phase of the same ontological transition
+      while leaving runtime assertion status, observer knowledge, clock time, probability,
+      intention, scheduling, causation, and physical mechanism separate.
+  inclusion_boundary: Includes only the nonactualized distinct actualization as a
+    substrate-neutral ontological transition at outward scope. The process changes
+    one distinct referent's ontological standing. It does not identify substance,
+    observability, truth-description, representation, or causal mechanism. It is neutral
+    about substance, location, cognition, evidence, representation, logical validity,
+    agency, authority, productive method, hazard, repair, scheduling, duration, probability,
+    and causal mechanism.
+  excluded_meanings:
+  - The source-ground, distinct-existence, or shared-world condition as an entity-layer
+    state rather than its transition.
+  - A causal link, physical transformation, productive act, living process, mental
+    change, data operation, structural reconfiguration, warning, or repair process.
+  - Observation, detectability, evidence, truth, validity, certainty, consensus, permission,
+    authority, success, or result persistence.
+  - Unrestricted possibility, necessity, probability, counterfactuality, intention,
+    plan, readiness, schedule, queue, or future time.
+  - The content of a natural law, algorithm, causal mechanism, physical mechanism,
+    social convention, or formal model.
+  - Any claim that completion entails persistence, that activity entails observation,
+    or that nonactualization entails possibility, preparation, or futurity.
+  nearest_neighbors:
+  - ORI:110
+  - ORI:111
+  - ORI:102
+  - ORI:122
+  - ORI:012
+  - ORI:112
+  same_family_contrast: "`ORI:0xx` owns source-ground, distinct-existence, and shared-world
+    conditions. `ORI:1xx` owns the corresponding bounded ontological transitions:
+    source-ground establishment, distinct actualization, and shared-world transition.
+    `ORI:2xx` remains reserved for causal, modal, temporal, or provenance relations
+    and affordances. A condition does not entail its transition, and a completed transition
+    does not entail continued persistence. Completed, active, and nonactualized are
+    mutually exclusive phases of one bounded transition at one reference time. Lexical
+    nonactualization asserts a typed process that is not occurring; runtime `[2]/num`
+    separately marks uncertainty about any selected phase claim."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies this nonactualized distinct actualization claim; it does not establish
+      that the process is active, completed, impossible, or prohibited.
+    '1': Affirms the typed distinct actualization as nonactualized, without encoding
+      intention, planning, readiness, schedule, futurity, permission, probability,
+      or possibility.
+    2/num: Leaves unresolved even the assertion of this nonactualized distinct actualization;
+      lexical nonactualization remains distinct from runtime uncertainty.
+  lexical_runtime_distinction: Lexical third trit `2` permanently selects the nonactualized
+    phase of this ontological transition. Runtime `[2]/num` instead leaves the already-selected
+    phase claim unresolved; it never changes process phase. Thus a nonactualized root
+    affirmed with `[1]` confirms that the typed transition is not occurring, while
+    a completed or active root carrying `[2]/num` remains lexically completed or active
+    but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:112[1](REFERENT=referent,REALITY=r)
+    literal_gloss: affirm nonactualized distinct actualization
+    natural_english: The distinct actualization for the referent is nonactualized.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: The root asserts ontological transition phase, not observation, causation,
+      physical mechanics, or evaluation.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=m)+ORI:112[1](REFERENT=referent,REALITY=r)
+    literal_gloss: material bearer plus nonactualized ontological transition
+    natural_english: The material bearer participates in the transition while MAT
+      separately describes physical change.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Ontological and material transformations remain separately typed.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:112[1](REFERENT=referent,REALITY=r)+ORI(INTERVAL=w)
+    literal_gloss: nonactualized ontological transition during interval w
+    natural_english: During interval w, the transition has the selected lexical phase.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Timing does not replace completed, active, or nonactualized phase.
+  - category: cross_family_compound
+    semantic_graph: ORI:112[1](REFERENT=referent,REALITY=r)+CRE(PRODUCTION=p)+DAT(REPRESENTATION=d)
+    literal_gloss: ontological transition plus production plus representation
+    natural_english: The referent becomes actual while its production and description
+      remain separate claims.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Actualization, creation, and representation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: ORI:112[1](REFERENT=referent,REALITY=r)
+    literal_gloss: assert nonactualized ontological transition
+    natural_english: A state machine records the ontological transition phase without
+      conflating it with a Boolean proposition, scheduled job, or physical operation.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Transition, evaluation, scheduling, and implementation remain distinct.
+    pseudocode: 'world.transition("ORI:112", referent: "referent")'
+  - category: counterexample
+    semantic_graph: DAT(INSERT=row)+LOG(EVALUATE=p)
+    literal_gloss: insert record and evaluate proposition
+    natural_english: The database inserted a row and marked its statement true.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: must_not_use_this_root
+    analysis: Use DAT and LOG for record and truth changes; ORI:112 is reserved for
+      ontological transition.
+  future_compound_examples:
+  - ORI:112 + ORI:0xx states the corresponding source-ground, distinct-existence,
+    or shared-world condition without reducing process to state.
+  - ORI:112 + ORI:2xx may state causal, modal, temporal, or provenance relations without
+    changing the process-layer meaning.
+  - ORI:112 + MAT/DAT/LOG/STR supplies physical mechanics, representation, evaluation,
+    or reconfiguration while preserving the ontological-transition boundary.
+  - ORI:112 + MIN/CON/LIF/CRE may express intention, communication, living agency,
+    or productive generation as separate meanings.
+  later_era_notes: Later eras may lexicalize creation ex nihilo, deactivation, annihilation,
+    instantiation, event birth, timeline branching, world merging, simulation bootstrapping,
+    epoch change, and specialized modal realization. Era Zero should preserve the
+    substrate-neutral ontological-transition center and derive stronger causal, temporal,
+    physical, and computational claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:120
+    universal_slot: completed systemic process
+    family_qualified_transliteration: nu·kim
+    local_compact_root: kim
+    formal_carrier: nu-ki-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: completed shared-world transition
+  invariant_definition: Completion of a bounded ontological transition by which what
+    obtains across one shared reality changes under one jointly applicable world condition.
+  semantic_center: 'ontological transitions: source-ground establishment, distinct
+    actualization, and shared-world transition'
+  address_justification:
+    first_trit_1: Selects a bounded ontological transition rather than an entity condition,
+      causal or modal relation, observation, representation, or physical transformation.
+    second_trit: 'Selects systemic/collective scope: what obtains across one shared
+      reality undergoing transition under one jointly applicable world condition and
+      no other Origin-family column.'
+    third_trit: Selects the completed phase of the same ontological transition while
+      leaving runtime assertion status, observer knowledge, clock time, probability,
+      intention, scheduling, causation, and physical mechanism separate.
+  inclusion_boundary: Includes only the completed shared-world transition as a substrate-neutral
+    ontological transition at systemic scope. The process changes what obtains across
+    a shared reality under one world condition. It does not itself state that condition's
+    content, social consensus, structural mechanics, or formal model. It is neutral
+    about substance, location, cognition, evidence, representation, logical validity,
+    agency, authority, productive method, hazard, repair, scheduling, duration, probability,
+    and causal mechanism.
+  excluded_meanings:
+  - The source-ground, distinct-existence, or shared-world condition as an entity-layer
+    state rather than its transition.
+  - A causal link, physical transformation, productive act, living process, mental
+    change, data operation, structural reconfiguration, warning, or repair process.
+  - Observation, detectability, evidence, truth, validity, certainty, consensus, permission,
+    authority, success, or result persistence.
+  - Unrestricted possibility, necessity, probability, counterfactuality, intention,
+    plan, readiness, schedule, queue, or future time.
+  - The content of a natural law, algorithm, causal mechanism, physical mechanism,
+    social convention, or formal model.
+  - Any claim that completion entails persistence, that activity entails observation,
+    or that nonactualization entails possibility, preparation, or futurity.
+  nearest_neighbors:
+  - ORI:121
+  - ORI:122
+  - ORI:100
+  - ORI:110
+  - ORI:020
+  - ORI:120
+  same_family_contrast: "`ORI:0xx` owns source-ground, distinct-existence, and shared-world
+    conditions. `ORI:1xx` owns the corresponding bounded ontological transitions:
+    source-ground establishment, distinct actualization, and shared-world transition.
+    `ORI:2xx` remains reserved for causal, modal, temporal, or provenance relations
+    and affordances. A condition does not entail its transition, and a completed transition
+    does not entail continued persistence. Completed, active, and nonactualized are
+    mutually exclusive phases of one bounded transition at one reference time. Lexical
+    nonactualization asserts a typed process that is not occurring; runtime `[2]/num`
+    separately marks uncertainty about any selected phase claim."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this shared-world transition reached completion; it does not
+      assert that the active or nonactualized sibling holds and does not reverse the
+      transition.
+    '1': Affirms completion of this shared-world transition without asserting persistence,
+      success under an external criterion, cause, observation, or physical mechanism.
+    2/num: Leaves completion of this shared-world transition unresolved; runtime uncertainty
+      does not change the lexical root into active or nonactualized phase.
+  lexical_runtime_distinction: Lexical third trit `0` permanently selects the completed
+    phase of this ontological transition. Runtime `[2]/num` instead leaves the already-selected
+    phase claim unresolved; it never changes process phase. Thus a nonactualized root
+    affirmed with `[1]` confirms that the typed transition is not occurring, while
+    a completed or active root carrying `[2]/num` remains lexically completed or active
+    but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:120[1](WORLD=world,CONDITION=c)
+    literal_gloss: affirm completed shared-world transition
+    natural_english: The shared-world transition for the world has completed.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: The root asserts ontological transition phase, not observation, causation,
+      physical mechanics, or evaluation.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=m)+ORI:120[1](WORLD=world,CONDITION=c)
+    literal_gloss: material bearer plus completed ontological transition
+    natural_english: The material bearer participates in the transition while MAT
+      separately describes physical change.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Ontological and material transformations remain separately typed.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:120[1](WORLD=world,CONDITION=c)+ORI(INTERVAL=w)
+    literal_gloss: completed ontological transition during interval w
+    natural_english: During interval w, the transition has the selected lexical phase.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Timing does not replace completed, active, or nonactualized phase.
+  - category: cross_family_compound
+    semantic_graph: ORI:120[1](WORLD=world,CONDITION=c)+CRE(PRODUCTION=p)+DAT(REPRESENTATION=d)
+    literal_gloss: ontological transition plus production plus representation
+    natural_english: The referent becomes actual while its production and description
+      remain separate claims.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Actualization, creation, and representation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: ORI:120[1](WORLD=world,CONDITION=c)
+    literal_gloss: assert completed ontological transition
+    natural_english: A state machine records the ontological transition phase without
+      conflating it with a Boolean proposition, scheduled job, or physical operation.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Transition, evaluation, scheduling, and implementation remain distinct.
+    pseudocode: 'world.transition("ORI:120", referent: "world")'
+  - category: counterexample
+    semantic_graph: DAT(INSERT=row)+LOG(EVALUATE=p)
+    literal_gloss: insert record and evaluate proposition
+    natural_english: The database inserted a row and marked its statement true.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: must_not_use_this_root
+    analysis: Use DAT and LOG for record and truth changes; ORI:120 is reserved for
+      ontological transition.
+  future_compound_examples:
+  - ORI:120 + ORI:0xx states the corresponding source-ground, distinct-existence,
+    or shared-world condition without reducing process to state.
+  - ORI:120 + ORI:2xx may state causal, modal, temporal, or provenance relations without
+    changing the process-layer meaning.
+  - ORI:120 + MAT/DAT/LOG/STR supplies physical mechanics, representation, evaluation,
+    or reconfiguration while preserving the ontological-transition boundary.
+  - ORI:120 + MIN/CON/LIF/CRE may express intention, communication, living agency,
+    or productive generation as separate meanings.
+  later_era_notes: Later eras may lexicalize creation ex nihilo, deactivation, annihilation,
+    instantiation, event birth, timeline branching, world merging, simulation bootstrapping,
+    epoch change, and specialized modal realization. Era Zero should preserve the
+    substrate-neutral ontological-transition center and derive stronger causal, temporal,
+    physical, and computational claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:121
+    universal_slot: active systemic process
+    family_qualified_transliteration: nu·kik
+    local_compact_root: kik
+    formal_carrier: nu-ki-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: active shared-world transition
+  invariant_definition: An ongoing bounded ontological transition by which what obtains
+    across one shared reality is changing under one jointly applicable world condition.
+  semantic_center: 'ontological transitions: source-ground establishment, distinct
+    actualization, and shared-world transition'
+  address_justification:
+    first_trit_1: Selects a bounded ontological transition rather than an entity condition,
+      causal or modal relation, observation, representation, or physical transformation.
+    second_trit: 'Selects systemic/collective scope: what obtains across one shared
+      reality undergoing transition under one jointly applicable world condition and
+      no other Origin-family column.'
+    third_trit: Selects the active phase of the same ontological transition while
+      leaving runtime assertion status, observer knowledge, clock time, probability,
+      intention, scheduling, causation, and physical mechanism separate.
+  inclusion_boundary: Includes only the active shared-world transition as a substrate-neutral
+    ontological transition at systemic scope. The process changes what obtains across
+    a shared reality under one world condition. It does not itself state that condition's
+    content, social consensus, structural mechanics, or formal model. It is neutral
+    about substance, location, cognition, evidence, representation, logical validity,
+    agency, authority, productive method, hazard, repair, scheduling, duration, probability,
+    and causal mechanism.
+  excluded_meanings:
+  - The source-ground, distinct-existence, or shared-world condition as an entity-layer
+    state rather than its transition.
+  - A causal link, physical transformation, productive act, living process, mental
+    change, data operation, structural reconfiguration, warning, or repair process.
+  - Observation, detectability, evidence, truth, validity, certainty, consensus, permission,
+    authority, success, or result persistence.
+  - Unrestricted possibility, necessity, probability, counterfactuality, intention,
+    plan, readiness, schedule, queue, or future time.
+  - The content of a natural law, algorithm, causal mechanism, physical mechanism,
+    social convention, or formal model.
+  - Any claim that completion entails persistence, that activity entails observation,
+    or that nonactualization entails possibility, preparation, or futurity.
+  nearest_neighbors:
+  - ORI:120
+  - ORI:122
+  - ORI:101
+  - ORI:111
+  - ORI:021
+  - ORI:121
+  same_family_contrast: "`ORI:0xx` owns source-ground, distinct-existence, and shared-world
+    conditions. `ORI:1xx` owns the corresponding bounded ontological transitions:
+    source-ground establishment, distinct actualization, and shared-world transition.
+    `ORI:2xx` remains reserved for causal, modal, temporal, or provenance relations
+    and affordances. A condition does not entail its transition, and a completed transition
+    does not entail continued persistence. Completed, active, and nonactualized are
+    mutually exclusive phases of one bounded transition at one reference time. Lexical
+    nonactualization asserts a typed process that is not occurring; runtime `[2]/num`
+    separately marks uncertainty about any selected phase claim."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this shared-world transition is ongoing now; it does not establish
+      completion, nonactualization, impossibility, cancellation, or reversal.
+    '1': Affirms that this shared-world transition is ongoing now without asserting
+      completion, duration, cause, success, observation, or material realization.
+    2/num: Leaves current activity of this shared-world transition unresolved; token
+      uncertainty does not select the completed or nonactualized lexical sibling.
+  lexical_runtime_distinction: Lexical third trit `1` permanently selects the active
+    phase of this ontological transition. Runtime `[2]/num` instead leaves the already-selected
+    phase claim unresolved; it never changes process phase. Thus a nonactualized root
+    affirmed with `[1]` confirms that the typed transition is not occurring, while
+    a completed or active root carrying `[2]/num` remains lexically completed or active
+    but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:121[1](WORLD=world,CONDITION=c)
+    literal_gloss: affirm active shared-world transition
+    natural_english: The shared-world transition for the world is occurring.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: The root asserts ontological transition phase, not observation, causation,
+      physical mechanics, or evaluation.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=m)+ORI:121[1](WORLD=world,CONDITION=c)
+    literal_gloss: material bearer plus active ontological transition
+    natural_english: The material bearer participates in the transition while MAT
+      separately describes physical change.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Ontological and material transformations remain separately typed.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:121[1](WORLD=world,CONDITION=c)+ORI(INTERVAL=w)
+    literal_gloss: active ontological transition during interval w
+    natural_english: During interval w, the transition has the selected lexical phase.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Timing does not replace completed, active, or nonactualized phase.
+  - category: cross_family_compound
+    semantic_graph: ORI:121[1](WORLD=world,CONDITION=c)+CRE(PRODUCTION=p)+DAT(REPRESENTATION=d)
+    literal_gloss: ontological transition plus production plus representation
+    natural_english: The referent becomes actual while its production and description
+      remain separate claims.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Actualization, creation, and representation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: ORI:121[1](WORLD=world,CONDITION=c)
+    literal_gloss: assert active ontological transition
+    natural_english: A state machine records the ontological transition phase without
+      conflating it with a Boolean proposition, scheduled job, or physical operation.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Transition, evaluation, scheduling, and implementation remain distinct.
+    pseudocode: 'world.transition("ORI:121", referent: "world")'
+  - category: counterexample
+    semantic_graph: DAT(INSERT=row)+LOG(EVALUATE=p)
+    literal_gloss: insert record and evaluate proposition
+    natural_english: The database inserted a row and marked its statement true.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: must_not_use_this_root
+    analysis: Use DAT and LOG for record and truth changes; ORI:121 is reserved for
+      ontological transition.
+  future_compound_examples:
+  - ORI:121 + ORI:0xx states the corresponding source-ground, distinct-existence,
+    or shared-world condition without reducing process to state.
+  - ORI:121 + ORI:2xx may state causal, modal, temporal, or provenance relations without
+    changing the process-layer meaning.
+  - ORI:121 + MAT/DAT/LOG/STR supplies physical mechanics, representation, evaluation,
+    or reconfiguration while preserving the ontological-transition boundary.
+  - ORI:121 + MIN/CON/LIF/CRE may express intention, communication, living agency,
+    or productive generation as separate meanings.
+  later_era_notes: Later eras may lexicalize creation ex nihilo, deactivation, annihilation,
+    instantiation, event birth, timeline branching, world merging, simulation bootstrapping,
+    epoch change, and specialized modal realization. Era Zero should preserve the
+    substrate-neutral ontological-transition center and derive stronger causal, temporal,
+    physical, and computational claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:122
+    universal_slot: pending systemic process
+    family_qualified_transliteration: nu·kin
+    local_compact_root: kin
+    formal_carrier: nu-ki-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - -2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: nonactualized shared-world transition
+  invariant_definition: A nonactualized bounded ontological transition by which what
+    obtains across one shared reality would change under one jointly applicable world
+    condition.
+  semantic_center: 'ontological transitions: source-ground establishment, distinct
+    actualization, and shared-world transition'
+  address_justification:
+    first_trit_1: Selects a bounded ontological transition rather than an entity condition,
+      causal or modal relation, observation, representation, or physical transformation.
+    second_trit: 'Selects systemic/collective scope: what obtains across one shared
+      reality undergoing transition under one jointly applicable world condition and
+      no other Origin-family column.'
+    third_trit: Selects the nonactualized phase of the same ontological transition
+      while leaving runtime assertion status, observer knowledge, clock time, probability,
+      intention, scheduling, causation, and physical mechanism separate.
+  inclusion_boundary: Includes only the nonactualized shared-world transition as a
+    substrate-neutral ontological transition at systemic scope. The process changes
+    what obtains across a shared reality under one world condition. It does not itself
+    state that condition's content, social consensus, structural mechanics, or formal
+    model. It is neutral about substance, location, cognition, evidence, representation,
+    logical validity, agency, authority, productive method, hazard, repair, scheduling,
+    duration, probability, and causal mechanism.
+  excluded_meanings:
+  - The source-ground, distinct-existence, or shared-world condition as an entity-layer
+    state rather than its transition.
+  - A causal link, physical transformation, productive act, living process, mental
+    change, data operation, structural reconfiguration, warning, or repair process.
+  - Observation, detectability, evidence, truth, validity, certainty, consensus, permission,
+    authority, success, or result persistence.
+  - Unrestricted possibility, necessity, probability, counterfactuality, intention,
+    plan, readiness, schedule, queue, or future time.
+  - The content of a natural law, algorithm, causal mechanism, physical mechanism,
+    social convention, or formal model.
+  - Any claim that completion entails persistence, that activity entails observation,
+    or that nonactualization entails possibility, preparation, or futurity.
+  nearest_neighbors:
+  - ORI:120
+  - ORI:121
+  - ORI:102
+  - ORI:112
+  - ORI:022
+  - ORI:122
+  same_family_contrast: "`ORI:0xx` owns source-ground, distinct-existence, and shared-world
+    conditions. `ORI:1xx` owns the corresponding bounded ontological transitions:
+    source-ground establishment, distinct actualization, and shared-world transition.
+    `ORI:2xx` remains reserved for causal, modal, temporal, or provenance relations
+    and affordances. A condition does not entail its transition, and a completed transition
+    does not entail continued persistence. Completed, active, and nonactualized are
+    mutually exclusive phases of one bounded transition at one reference time. Lexical
+    nonactualization asserts a typed process that is not occurring; runtime `[2]/num`
+    separately marks uncertainty about any selected phase claim."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies this nonactualized shared-world transition claim; it does not establish
+      that the process is active, completed, impossible, or prohibited.
+    '1': Affirms the typed shared-world transition as nonactualized, without encoding
+      intention, planning, readiness, schedule, futurity, permission, probability,
+      or possibility.
+    2/num: Leaves unresolved even the assertion of this nonactualized shared-world
+      transition; lexical nonactualization remains distinct from runtime uncertainty.
+  lexical_runtime_distinction: Lexical third trit `2` permanently selects the nonactualized
+    phase of this ontological transition. Runtime `[2]/num` instead leaves the already-selected
+    phase claim unresolved; it never changes process phase. Thus a nonactualized root
+    affirmed with `[1]` confirms that the typed transition is not occurring, while
+    a completed or active root carrying `[2]/num` remains lexically completed or active
+    but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:122[1](WORLD=world,CONDITION=c)
+    literal_gloss: affirm nonactualized shared-world transition
+    natural_english: The shared-world transition for the world is nonactualized.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: The root asserts ontological transition phase, not observation, causation,
+      physical mechanics, or evaluation.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=m)+ORI:122[1](WORLD=world,CONDITION=c)
+    literal_gloss: material bearer plus nonactualized ontological transition
+    natural_english: The material bearer participates in the transition while MAT
+      separately describes physical change.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Ontological and material transformations remain separately typed.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:122[1](WORLD=world,CONDITION=c)+ORI(INTERVAL=w)
+    literal_gloss: nonactualized ontological transition during interval w
+    natural_english: During interval w, the transition has the selected lexical phase.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Timing does not replace completed, active, or nonactualized phase.
+  - category: cross_family_compound
+    semantic_graph: ORI:122[1](WORLD=world,CONDITION=c)+CRE(PRODUCTION=p)+DAT(REPRESENTATION=d)
+    literal_gloss: ontological transition plus production plus representation
+    natural_english: The referent becomes actual while its production and description
+      remain separate claims.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Actualization, creation, and representation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: ORI:122[1](WORLD=world,CONDITION=c)
+    literal_gloss: assert nonactualized ontological transition
+    natural_english: A state machine records the ontological transition phase without
+      conflating it with a Boolean proposition, scheduled job, or physical operation.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: valid
+    analysis: Transition, evaluation, scheduling, and implementation remain distinct.
+    pseudocode: 'world.transition("ORI:122", referent: "world")'
+  - category: counterexample
+    semantic_graph: DAT(INSERT=row)+LOG(EVALUATE=p)
+    literal_gloss: insert record and evaluate proposition
+    natural_english: The database inserted a row and marked its statement true.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent or shared reality undergoing ontological transition
+      middle: source-ground establishment, actualization, or world transition as figure
+      high: resulting source status, distinct referent, or changed world condition
+      sustained: relevant reality and jointly applicable world condition
+    use_status: must_not_use_this_root
+    analysis: Use DAT and LOG for record and truth changes; ORI:122 is reserved for
+      ontological transition.
+  future_compound_examples:
+  - ORI:122 + ORI:0xx states the corresponding source-ground, distinct-existence,
+    or shared-world condition without reducing process to state.
+  - ORI:122 + ORI:2xx may state causal, modal, temporal, or provenance relations without
+    changing the process-layer meaning.
+  - ORI:122 + MAT/DAT/LOG/STR supplies physical mechanics, representation, evaluation,
+    or reconfiguration while preserving the ontological-transition boundary.
+  - ORI:122 + MIN/CON/LIF/CRE may express intention, communication, living agency,
+    or productive generation as separate meanings.
+  later_era_notes: Later eras may lexicalize creation ex nihilo, deactivation, annihilation,
+    instantiation, event birth, timeline branching, world merging, simulation bootstrapping,
+    epoch change, and specialized modal realization. Era Zero should preserve the
+    substrate-neutral ontological-transition center and derive stronger causal, temporal,
+    physical, and computational claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+approval_checklist:
+  family_domain_preserved: true
+  address_axes_preserved: true
+  one_invariant_per_root: true
+  triplets_coherent: true
+  all_current_candidates_challenged: true
+  cross_family_collisions_explicit: true
+  runtime_state_separated: true
+  entity_process_relation_layers_separated: true
+  generated_fields_unchanged: true
+  gate4_not_started: true
+  translator_not_started: true
+  canonicalized: true

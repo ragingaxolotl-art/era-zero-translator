@@ -1,0 +1,368 @@
+---
+metadata:
+  title: STR:100–122 English coverage and routing tests
+  status: review_evidence_not_translation_dictionary
+  range: STR:100–122
+  test_count: 73
+  no_forced_atomization: true
+tests:
+- test_id: STR1-T001
+  english_concept: rearrange
+  routing: one_root_or_compound
+  analysis: STR:100/101/102 when one structure's own constituents change positions;
+    MOV/MAT is added if physical displacement matters.
+- test_id: STR1-T002
+  english_concept: reconfigure
+  routing: one_root_or_compound
+  analysis: STR internal reconfiguration by phase when constituent-position assignment
+    changes; DAT/LOG is added for configuration records or rules.
+- test_id: STR1-T003
+  english_concept: reorder
+  routing: one_root_or_compound
+  analysis: STR:1x0 for structural order of existing constituents; DAT handles ordering
+    values in a record and ORI handles temporal sequence.
+- test_id: STR1-T004
+  english_concept: shuffle
+  routing: compound
+  analysis: Internal reconfiguration plus iteration/randomness grammar; physical movement
+    may require MOV.
+- test_id: STR1-T005
+  english_concept: rotate components
+  routing: compound
+  analysis: MOV/MAT rotation plus STR internal reconfiguration only if structural
+    positions or roles change.
+- test_id: STR1-T006
+  english_concept: refactor code
+  routing: compound
+  analysis: STR internal reconfiguration of program structure plus DAT code and LOG
+    behavioral invariants.
+- test_id: STR1-T007
+  english_concept: renovate
+  routing: compound
+  analysis: STR reconfiguration plus MAT/CRE/REP according to alteration, creation,
+    or restoration.
+- test_id: STR1-T008
+  english_concept: stabilize
+  routing: different_family_or_compound
+  analysis: WRN/REP/MAT owns stability or reinforcement; STR is added only if constituent
+    organization changes.
+- test_id: STR1-T009
+  english_concept: reinforce
+  routing: different_family_or_compound
+  analysis: MAT/REP owns added strength or restoration, often with target incorporation
+    when a brace becomes part of a structure.
+- test_id: STR1-T010
+  english_concept: fold
+  routing: different_family
+  analysis: Physical deformation is MAT unless folding also changes a defined part–whole
+    arrangement.
+- test_id: STR1-T011
+  english_concept: insert
+  routing: compound_or_one_root
+  analysis: STR target incorporation when the target becomes a constituent; MOV alone
+    covers putting an object into a spatial region.
+- test_id: STR1-T012
+  english_concept: include
+  routing: one_root_or_compound
+  analysis: STR target incorporation when inclusion is structural; set membership
+    or logical inclusion belongs to LOG.
+- test_id: STR1-T013
+  english_concept: incorporate
+  routing: one_root
+  analysis: STR:110/111/112 by phase when one distinct target becomes part of a reference
+    structure.
+- test_id: STR1-T014
+  english_concept: install
+  routing: compound
+  analysis: Target incorporation plus CRE/LOG/DAT operational setup; the English word
+    is too broad for one atom.
+- test_id: STR1-T015
+  english_concept: mount
+  routing: compound
+  analysis: Target incorporation plus MAT interface and a later STR attachment/support
+    relation.
+- test_id: STR1-T016
+  english_concept: attach
+  routing: future_str_relation_or_compound
+  analysis: Attachment is a continuing STR:2xx relation; incorporation is asserted
+    only when attachment makes the target a constituent.
+- test_id: STR1-T017
+  english_concept: enclose
+  routing: different_family_or_compound
+  analysis: MAT/STR relation owns containment or boundary; enclosure is not automatically
+    incorporation.
+- test_id: STR1-T018
+  english_concept: admit a member
+  routing: compound
+  analysis: LIF/LOG membership and permission plus STR incorporation only when a structural
+    role is instantiated.
+- test_id: STR1-T019
+  english_concept: onboard employee
+  routing: compound
+  analysis: LIF participant, LOG role/authority, DAT credentials, and perhaps STR
+    target incorporation.
+- test_id: STR1-T020
+  english_concept: add a field
+  routing: compound
+  analysis: DAT schema element plus STR target incorporation into an instantiated
+    object or schema structure.
+- test_id: STR1-T021
+  english_concept: plug in
+  routing: compound
+  analysis: MOV target placement, MAT contact, STR incorporation if constituent status
+    changes, and later STR/CON connectivity relation.
+- test_id: STR1-T022
+  english_concept: assemble
+  routing: compound_or_one_root
+  analysis: STR systemic integration for multiple existing structures becoming one
+    composite arrangement; CRE/MAT if fabrication or joining is central.
+- test_id: STR1-T023
+  english_concept: integrate
+  routing: one_root_or_compound
+  analysis: STR:120/121/122 when multiple structures become constituents of one arrangement;
+    software, social, or data senses add other families.
+- test_id: STR1-T024
+  english_concept: merge systems
+  routing: compound
+  analysis: Systemic integration plus LOG/DAT identity and conflict-resolution rules;
+    merging data values is DAT.
+- test_id: STR1-T025
+  english_concept: consolidate
+  routing: compound
+  analysis: Systemic integration plus LOG decisions or MOV/MAT gathering when those
+    senses matter.
+- test_id: STR1-T026
+  english_concept: federate
+  routing: compound
+  analysis: Systemic integration of structures plus LOG autonomy rules and CON interoperation.
+- test_id: STR1-T027
+  english_concept: compose modules
+  routing: one_root_or_compound
+  analysis: Systemic integration if existing module structures form one composite;
+    CRE if modules or content are generated.
+- test_id: STR1-T028
+  english_concept: build
+  routing: different_family_or_compound
+  analysis: CRE owns creation/construction; STR describes reconfiguration, incorporation,
+    or integration only when those structural transformations are specifically asserted.
+- test_id: STR1-T029
+  english_concept: construct
+  routing: different_family_or_compound
+  analysis: CRE/MAT owns physical construction; structural integration may be one
+    component of the graph.
+- test_id: STR1-T030
+  english_concept: fabricate
+  routing: different_family
+  analysis: CRE/MAT owns production of a physical artifact.
+- test_id: STR1-T031
+  english_concept: deploy
+  routing: compound
+  analysis: CRE/LOG/DAT/ORI operational rollout plus STR integration when structures
+    become one operating arrangement.
+- test_id: STR1-T032
+  english_concept: roll out
+  routing: compound
+  analysis: Schedule, distribution, activation, and integration are separate; no one
+    STR atom owns the English phrase.
+- test_id: STR1-T033
+  english_concept: organize
+  routing: underspecified_compound
+  analysis: May mean internal reconfiguration, target incorporation, systemic integration,
+    mental categorization, social coordination, or data sorting; translator must resolve
+    the sense.
+- test_id: STR1-T034
+  english_concept: restructure
+  routing: underspecified_one_root
+  analysis: Choose STR:1x0, 1x1, or 1x2 by what is structurally transformed; do not
+    default from the English word alone.
+- test_id: STR1-T035
+  english_concept: transform
+  routing: unresolved_or_compound
+  analysis: Family and structural scope must be known; generic change is not one STR
+    atom.
+- test_id: STR1-T036
+  english_concept: transition
+  routing: different_family_or_compound
+  analysis: ORI/MOV owns temporal or state transition generally; add STR only for
+    structural organization change.
+- test_id: STR1-T037
+  english_concept: migrate schema
+  routing: different_family_or_compound
+  analysis: DAT owns representation migration; STR internal reconfiguration applies
+    only to the instantiated structural arrangement.
+- test_id: STR1-T038
+  english_concept: move a file
+  routing: different_family
+  analysis: MOV/DAT owns relocation of a data object; structural incorporation applies
+    only if it becomes a constituent of a containing structure.
+- test_id: STR1-T039
+  english_concept: join two beams
+  routing: compound
+  analysis: MAT contact/join plus STR systemic integration if both beam structures
+    become one composite arrangement.
+- test_id: STR1-T040
+  english_concept: connect networks
+  routing: compound
+  analysis: CON connectivity and STR systemic integration are distinct; either may
+    occur without the other.
+- test_id: STR1-T041
+  english_concept: coordinate teams
+  routing: different_family_or_compound
+  analysis: CON/LOG owns communication and coordination; STR integration only if organizational
+    part–whole structure changes.
+- test_id: STR1-T042
+  english_concept: reorganize department
+  routing: compound
+  analysis: STR transformation plus LIF institutional identity and LOG role authority.
+- test_id: STR1-T043
+  english_concept: assign a role
+  routing: different_family
+  analysis: LOG owns role assignment; it is not target incorporation unless an actual
+    structural constituent relation changes.
+- test_id: STR1-T044
+  english_concept: schedule reorganization
+  routing: compound
+  analysis: ORI/LOG schedule plus STR:102, 112, or 122 as the nonactualized process;
+    scheduling is never inside lexical 1x2.
+- test_id: STR1-T045
+  english_concept: plan construction
+  routing: compound
+  analysis: MIN/CRE/DAT plan and design; STR:1x2 may identify a nonactualized structural
+    process without encoding the plan.
+- test_id: STR1-T046
+  english_concept: queue installation
+  routing: compound
+  analysis: DAT/LOG queue status plus STR:112; the queue is not the invariant.
+- test_id: STR1-T047
+  english_concept: possible integration
+  routing: one_root_plus_grammar
+  analysis: STR:122[1] affirms a nonactualized systemic integration; modality strength
+    or probability is supplied separately.
+- test_id: STR1-T048
+  english_concept: finish reorganizing
+  routing: one_root
+  analysis: STR:100 when internal constituent reassignment completed.
+- test_id: STR1-T049
+  english_concept: continue reorganizing
+  routing: one_root_plus_contour
+  analysis: STR:101 plus continuation contour or timing grammar.
+- test_id: STR1-T050
+  english_concept: stop integrating
+  routing: one_root_plus_runtime_or_grammar
+  analysis: Denied/ceased STR:121 plus event-boundary grammar; cessation does not
+    itself assert STR:120.
+- test_id: STR1-T051
+  english_concept: undo incorporation
+  routing: compound
+  analysis: A reverse structural process needs contour/direction plus STR target transformation;
+    removal should not be smuggled into incorporation.
+- test_id: STR1-T052
+  english_concept: remove component
+  routing: compound_or_gap
+  analysis: The inverse of incorporation requires explicit removal direction or a
+    later descendant; MOV alone is insufficient.
+- test_id: STR1-T053
+  english_concept: disassemble
+  routing: compound_or_gap
+  analysis: Reverse systemic integration needs directionality/decomposition grammar
+    and may involve MAT/REP; it is not STR:120.
+- test_id: STR1-T054
+  english_concept: split a system
+  routing: compound_or_gap
+  analysis: Decomposition is structurally meaningful but intentionally not forced
+    into the integration atom without a reverse operator.
+- test_id: STR1-T055
+  english_concept: repair structure
+  routing: different_family_or_compound
+  analysis: REP owns restoration; STR roots specify any accompanying reconfiguration,
+    incorporation, or integration.
+- test_id: STR1-T056
+  english_concept: replace component
+  routing: compound
+  analysis: REP replacement plus removal and target incorporation, with identity constraints
+    from LOG.
+- test_id: STR1-T057
+  english_concept: upgrade system
+  routing: compound
+  analysis: CRE/REP/DAT/LOG may contribute; STR says only how structural organization
+    changes.
+- test_id: STR1-T058
+  english_concept: configure network
+  routing: compound
+  analysis: DAT/LOG configuration plus STR internal or systemic transformation according
+    to topology change.
+- test_id: STR1-T059
+  english_concept: nest objects
+  routing: compound
+  analysis: STR integration or later containment relation plus explicit hierarchy;
+    nesting is not automatically physical enclosure.
+- test_id: STR1-T060
+  english_concept: compose functions
+  routing: compound
+  analysis: LOG/DAT function definitions plus STR systemic integration if program
+    structures become one composite.
+- test_id: STR1-T061
+  english_concept: link libraries
+  routing: compound
+  analysis: STR integration, LOG symbol resolution, and DAT program artifacts; linking
+    is not pure communication.
+- test_id: STR1-T062
+  english_concept: package application
+  routing: compound
+  analysis: STR integration plus DAT archive and CRE packaging operation.
+- test_id: STR1-T063
+  english_concept: synchronize replicas
+  routing: different_family_or_compound
+  analysis: DAT/CON/LOG owns state alignment; STR applies only if their composite
+    arrangement changes.
+- test_id: STR1-T064
+  english_concept: circulate
+  routing: different_family
+  analysis: MOV/CON owns repeated movement or distribution; circulation does not imply
+    structural integration.
+- test_id: STR1-T065
+  english_concept: unknown structural scope
+  routing: unresolved_gap
+  analysis: If internal, target, or systemic scope cannot be resolved, preserve ambiguity
+    or request clarification.
+- test_id: STR1-T066
+  english_concept: unknown structural phase
+  routing: unresolved_gap
+  analysis: If completed, active, or nonactualized phase cannot be resolved, do not
+    guess a third-trit value.
+- test_id: STR1-T067
+  english_concept: incorporate subsystem into existing host
+  routing: one_root_or_compound
+  analysis: STR:110/111/112 applies when the host remains the organizing whole and
+    one external subsystem crosses into constituent status.
+- test_id: STR1-T068
+  english_concept: integrate hosts into a new cluster
+  routing: one_root_or_compound
+  analysis: STR:120/121/122 applies when all host structures become peer constituents
+    of a higher-order cluster distinct from any one host.
+- test_id: STR1-T069
+  english_concept: incorporate one structure or integrate two
+  routing: scope_resolution_test
+  analysis: 'Ask which identity remains the whole: preserved reference selects incorporation;
+    a higher-order whole containing every input selects systemic integration.'
+- test_id: STR1-T070
+  english_concept: completed integration with current result
+  routing: compound
+  analysis: STR:120 states completed systemic integration at its completion time;
+    add STR:021 and an explicit time relation to assert that the resulting composite
+    is presently instantiated.
+- test_id: STR1-T071
+  english_concept: potential incorporation means likely
+  routing: must_not_infer
+  analysis: STR:112 supplies nonactualization only. Probability, capability, readiness,
+    permission, intention, schedule, and future realization require separate claims.
+- test_id: STR1-T072
+  english_concept: incorporation without attachment
+  routing: one_root_plus_negation
+  analysis: STR:110 may hold without asserting a continuing attachment relation; the
+    target may be structurally incorporated through another constituent relation.
+- test_id: STR1-T073
+  english_concept: engagement becomes incorporation
+  routing: two_process_or_state_claims
+  analysis: STR:011 can describe interface engagement during STR:111, but neither
+    entails the other without explicit target, position, and result relations.

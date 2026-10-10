@@ -1,0 +1,513 @@
+---
+metadata:
+  title: REP:200–222 English coverage and routing tests
+  status: review_evidence_not_translation_dictionary
+  range: REP:200–222
+  test_count: 105
+  no_forced_atomization: true
+tests:
+- test_id: REP2-T001
+  english_concept: recoverable
+  routing: one_root_or_compound
+  analysis: REP:200, 201, or 202 by persistent, operative, or latent inward recoverability;
+    add the bearer and restoration domain separately.
+- test_id: REP2-T002
+  english_concept: repairable
+  routing: one_root_or_compound
+  analysis: REP restorative affordance by scope and lexical status; repairability
+    of a target normally selects REP:2x1.
+- test_id: REP2-T003
+  english_concept: restorable
+  routing: one_root_or_compound
+  analysis: Select internal, target, or systemic REP:2xx according to the structure
+    of the enabling capacity or relation.
+- test_id: REP2-T004
+  english_concept: healable
+  routing: compound
+  analysis: REP recoverability or target restorative applicability plus LIF biological
+    bearer and mechanism.
+- test_id: REP2-T005
+  english_concept: treatable
+  routing: compound
+  analysis: REP:2x1 when one treatment source applies to one target; LIF/MAT supplies
+    clinical mechanism.
+- test_id: REP2-T006
+  english_concept: remediable
+  routing: one_root_or_compound
+  analysis: REP:2xx supplies restorative affordance while DAT, LOG, MAT, or another
+    family supplies the defect domain.
+- test_id: REP2-T007
+  english_concept: rehabilitable
+  routing: compound
+  analysis: REP restorative applicability plus LIF/CON/STR for function and participant
+    roles.
+- test_id: REP2-T008
+  english_concept: salvageable
+  routing: compound
+  analysis: REP target repairability plus MAT/CRE for material recovery and retained
+    identity.
+- test_id: REP2-T009
+  english_concept: fixable
+  routing: underspecified
+  analysis: May mean REP repairability, LOG correctability, DAT editability, or CRE
+    replaceability; resolve the sense.
+- test_id: REP2-T010
+  english_concept: possible recovery
+  routing: affordance_plus_modality
+  analysis: REP supplies typed recoverability or pathway; ORI/LOG supplies unrestricted
+    possibility or probability.
+- test_id: REP2-T011
+  english_concept: likely recovery
+  routing: affordance_plus_probability
+  analysis: REP supplies the restorative affordance while explicit probability grammar
+    supplies likelihood.
+- test_id: REP2-T012
+  english_concept: guaranteed recovery
+  routing: compound_or_invalid_inference
+  analysis: REP affordance alone never guarantees success; add LOG/ORI necessity and
+    process/result claims if justified.
+- test_id: REP2-T013
+  english_concept: persistent internal recoverability
+  routing: one_root
+  analysis: REP:200 preserves one entity's inward restoration capacity independently
+    of current operation.
+- test_id: REP2-T014
+  english_concept: operative internal recoverability
+  routing: one_root
+  analysis: REP:201 states that inward recoverability is presently operative under
+    applicable conditions.
+- test_id: REP2-T015
+  english_concept: latent internal recoverability
+  routing: one_root
+  analysis: REP:202 states that inward recoverability exists without being presently
+    operative.
+- test_id: REP2-T016
+  english_concept: self-healing capacity
+  routing: one_root_or_compound
+  analysis: REP:2x0 by status when restoration originates within the bearer; LIF/MAT
+    supplies mechanism.
+- test_id: REP2-T017
+  english_concept: self-repair capability
+  routing: one_root
+  analysis: REP:2x0 by lexical status when one entity can undergo internally originating
+    restoration.
+- test_id: REP2-T018
+  english_concept: regenerative capacity
+  routing: compound
+  analysis: REP internal recoverability plus LIF or MAT regeneration semantics.
+- test_id: REP2-T019
+  english_concept: automatic recovery capability
+  routing: compound
+  analysis: REP internal recoverability plus DAT/LOG automation and trigger conditions.
+- test_id: REP2-T020
+  english_concept: fault tolerance
+  routing: different_family_or_compound
+  analysis: Resistance to fault effects is protection, not necessarily recoverability;
+    WRN/STR/LOG may apply.
+- test_id: REP2-T021
+  english_concept: resilient
+  routing: underspecified
+  analysis: May mean resistance, continued function, fast recovery, or typed recoverability;
+    do not equate all resilience with REP:2xx.
+- test_id: REP2-T022
+  english_concept: withstands damage
+  routing: different_family
+  analysis: Protection or resistance can prevent degradation without providing capacity
+    to restore after degradation.
+- test_id: REP2-T023
+  english_concept: returns after damage
+  routing: compound
+  analysis: WRN supplies adverse condition, REP:2xx capacity, and REP:1xx actual restoration
+    if it occurs.
+- test_id: REP2-T024
+  english_concept: internal recovery occurring
+  routing: process_root
+  analysis: REP:100–102 by phase names the transformation; REP:2x0 names its capacity.
+- test_id: REP2-T025
+  english_concept: internally restored condition
+  routing: condition_root
+  analysis: REP:000–002 by status names the restoration condition rather than recoverability
+    or process.
+- test_id: REP2-T026
+  english_concept: persistent recoverability uncertain
+  routing: one_root_plus_runtime
+  analysis: REP:200[2]/num leaves the persistent claim unresolved and does not select
+    REP:202.
+- test_id: REP2-T027
+  english_concept: latent recoverability affirmed
+  routing: one_root_plus_runtime
+  analysis: REP:202[1] affirms a real but nonoperative capacity without adding hiddenness
+    or probability.
+- test_id: REP2-T028
+  english_concept: operative recoverability denied
+  routing: one_root_plus_runtime
+  analysis: REP:201[0] denies present operation without establishing REP:202 or REP:200.
+- test_id: REP2-T029
+  english_concept: hidden recoverability
+  routing: one_root_plus_epistemic_claim
+  analysis: REP:202 supplies nonoperation only; DAT/MIN must separately state that
+    observers have not discovered it.
+- test_id: REP2-T030
+  english_concept: unknown recoverability
+  routing: runtime_or_epistemic_claim
+  analysis: Use runtime [2]/num or DAT/MIN uncertainty; lexical latency does not mean
+    unknown.
+- test_id: REP2-T031
+  english_concept: scheduled self-recovery
+  routing: affordance_plus_time
+  analysis: REP recoverability plus ORI/DAT schedule; no REP:2xx third trit encodes
+    scheduling.
+- test_id: REP2-T032
+  english_concept: recovery resource available
+  routing: resource_plus_affordance
+  analysis: MAT/DAT/CRE owns the resource; REP:201 applies only if the typed capacity
+    is currently operative.
+- test_id: REP2-T033
+  english_concept: backup exists
+  routing: different_family
+  analysis: DAT owns the backup record; its existence does not prove internal recoverability.
+- test_id: REP2-T034
+  english_concept: spare part exists
+  routing: different_family
+  analysis: MAT/CRE owns the spare; it may or may not apply to a target.
+- test_id: REP2-T035
+  english_concept: persistent source-target restorative relation
+  routing: one_root
+  analysis: REP:210 preserves one source-target restorative applicability relation
+    independently of current operation.
+- test_id: REP2-T036
+  english_concept: operative source-target restorative relation
+  routing: one_root
+  analysis: REP:211 states that one source-target relation presently enables target
+    restoration.
+- test_id: REP2-T037
+  english_concept: latent source-target restorative relation
+  routing: one_root
+  analysis: REP:212 states that the relation exists without presently enabling target
+    restoration.
+- test_id: REP2-T038
+  english_concept: remedy applies to target
+  routing: one_root
+  analysis: REP:2x1 by lexical status when one distinct restorative source is applicable
+    to one target.
+- test_id: REP2-T039
+  english_concept: medicine can treat patient
+  routing: compound
+  analysis: REP target restorative relation plus MAT/LIF remedy and patient semantics.
+- test_id: REP2-T040
+  english_concept: patch applies to software
+  routing: compound
+  analysis: REP:2x1 supplies restorative applicability while DAT/LOG supplies version
+    and compatibility constraints.
+- test_id: REP2-T041
+  english_concept: checkpoint can restore database
+  routing: compound
+  analysis: REP:2x1 supplies checkpoint-to-target restorative applicability; DAT owns
+    checkpoint and database.
+- test_id: REP2-T042
+  english_concept: tool can repair device
+  routing: compound
+  analysis: REP:2x1 supplies tool-to-target restorative applicability; MAT/CRE owns
+    tool and mechanics.
+- test_id: REP2-T043
+  english_concept: donor compatible with recipient
+  routing: compound
+  analysis: REP:2x1 only when compatibility enables restoration; LIF/LOG/MAT supplies
+    biological and formal constraints.
+- test_id: REP2-T044
+  english_concept: service available for target
+  routing: underspecified_compound
+  analysis: CON service relation and REP restorative applicability are separate; availability
+    alone does not prove repairability.
+- test_id: REP2-T045
+  english_concept: technician responsible for target
+  routing: different_family
+  analysis: CON/LOG owns role and obligation; responsibility does not entail ability
+    to restore.
+- test_id: REP2-T046
+  english_concept: caregiver assigned
+  routing: different_family_or_compound
+  analysis: LIF/CON owns care role; REP relation applies only if actual restorative
+    enablement is asserted.
+- test_id: REP2-T047
+  english_concept: active care
+  routing: process_or_relation
+  analysis: Actual sustaining or healing is REP:111 plus LIF/CON; operative applicability
+    alone does not perform care.
+- test_id: REP2-T048
+  english_concept: maintenance bond
+  routing: different_family_or_compound
+  analysis: CON/LOG owns service responsibility; REP:210 applies only to restorative
+    enablement.
+- test_id: REP2-T049
+  english_concept: warranty
+  routing: different_family
+  analysis: LOG/CON owns contractual coverage; a warranty does not make a target repairable.
+- test_id: REP2-T050
+  english_concept: repair permission
+  routing: different_family
+  analysis: LOG permission neither establishes nor removes a restorative applicability
+    relation.
+- test_id: REP2-T051
+  english_concept: repair appointment
+  routing: different_family_or_compound
+  analysis: DAT/ORI owns the appointment; REP affordance may hold independently.
+- test_id: REP2-T052
+  english_concept: unconfirmed repairability
+  routing: runtime_or_epistemic_claim
+  analysis: Use runtime uncertainty or DAT/MIN evidence; REP:212 means a real latent
+    relation, not an unverified possibility.
+- test_id: REP2-T053
+  english_concept: source restoring target now
+  routing: process_root
+  analysis: REP:111 is the active target restoration process; REP:211 names the enabling
+    relation.
+- test_id: REP2-T054
+  english_concept: target restored
+  routing: condition_or_completed_process
+  analysis: REP:011 names current target condition and REP:110 completed target restoration;
+    REP:2x1 alone asserts neither.
+- test_id: REP2-T055
+  english_concept: operative relation uncertain
+  routing: one_root_plus_runtime
+  analysis: REP:211[2]/num questions current operation while preserving the operative
+    lexical selection.
+- test_id: REP2-T056
+  english_concept: latent relation affirmed
+  routing: one_root_plus_runtime
+  analysis: REP:212[1] affirms the relation exists but is not currently operative.
+- test_id: REP2-T057
+  english_concept: persistent relation denied
+  routing: one_root_plus_runtime
+  analysis: REP:210[0] denies persistent identity without choosing the operative or
+    latent sibling.
+- test_id: REP2-T058
+  english_concept: source compatible but unavailable
+  routing: compound
+  analysis: REP:210 or 212 may hold while availability is denied; compatibility and
+    current operation are distinct.
+- test_id: REP2-T059
+  english_concept: source available but incompatible
+  routing: resource_plus_negated_affordance
+  analysis: A resource may exist while REP restorative applicability is false.
+- test_id: REP2-T060
+  english_concept: one remedy for two unrelated targets
+  routing: multiple_relations
+  analysis: Use separate REP:2x1 relations unless one shared-system restoration pathway
+    is asserted.
+- test_id: REP2-T061
+  english_concept: persistent systemic restoration pathway
+  routing: one_root
+  analysis: REP:220 preserves one restoration-enabling pathway across multiple participants
+    independently of current operation.
+- test_id: REP2-T062
+  english_concept: operative systemic restoration pathway
+  routing: one_root
+  analysis: REP:221 states that the shared-system pathway presently enables coordinated
+    restoration.
+- test_id: REP2-T063
+  english_concept: latent systemic restoration pathway
+  routing: one_root
+  analysis: REP:222 states that the pathway exists without being presently operative.
+- test_id: REP2-T064
+  english_concept: disaster recovery pathway
+  routing: one_root_or_compound
+  analysis: REP:2x2 by status when one pathway enables a shared restoration condition
+    across participants.
+- test_id: REP2-T065
+  english_concept: failover path
+  routing: compound
+  analysis: REP systemic restoration pathway plus DAT/CON/STR topology and failover
+    rules.
+- test_id: REP2-T066
+  english_concept: recovery network
+  routing: one_root_or_compound
+  analysis: REP:2x2 if the network enables coordinated shared restoration; CON/STR
+    owns network structure.
+- test_id: REP2-T067
+  english_concept: mutual aid network
+  routing: compound
+  analysis: REP systemic pathway plus CON/LIF participant and social-relation semantics.
+- test_id: REP2-T068
+  english_concept: ecosystem recovery pathway
+  routing: compound
+  analysis: REP:2x2 plus LIF/MAT/CON when one shared restoration condition spans participants.
+- test_id: REP2-T069
+  english_concept: restoration supply chain
+  routing: compound
+  analysis: REP pathway plus MOV/CON/MAT resources and transport; the supply chain
+    is not automatically operative.
+- test_id: REP2-T070
+  english_concept: redundancy
+  routing: different_family_or_compound
+  analysis: STR/DAT owns duplicate structure or data; redundancy may realize a REP
+    pathway but is not identical to restorative enablement.
+- test_id: REP2-T071
+  english_concept: backup network
+  routing: different_family_or_compound
+  analysis: DAT/CON/STR owns backup resources and topology; REP applies only if they
+    enable shared restoration.
+- test_id: REP2-T072
+  english_concept: adaptive recovery network
+  routing: process_plus_affordance
+  analysis: Active reallocation is a process; REP:221 only states the pathway is currently
+    operative.
+- test_id: REP2-T073
+  english_concept: system reallocating support
+  routing: process_or_compound
+  analysis: CON/STR/REP:121 describes coordinated restorative action; pathway operation
+    alone does not assert reallocation.
+- test_id: REP2-T074
+  english_concept: system recovery occurring
+  routing: process_root
+  analysis: REP:120–122 by phase names coordinated restoration; REP:2x2 names its
+    enabling pathway.
+- test_id: REP2-T075
+  english_concept: shared restored condition
+  routing: condition_root
+  analysis: REP:020–022 by status names the shared restoration condition, not its
+    pathway.
+- test_id: REP2-T076
+  english_concept: possible recovery path
+  routing: affordance_plus_modality_or_runtime
+  analysis: REP:222 means an existing latent pathway; mere possibility or lack of
+    evidence requires ORI or runtime uncertainty.
+- test_id: REP2-T077
+  english_concept: path not demonstrated
+  routing: epistemic_claim
+  analysis: DAT/MIN owns demonstration status; a REP pathway may exist or fail independently.
+- test_id: REP2-T078
+  english_concept: pathway scheduled for activation
+  routing: affordance_plus_time
+  analysis: REP:222 plus ORI/DAT schedule; lexical latency never means scheduled.
+- test_id: REP2-T079
+  english_concept: pathway ready
+  routing: one_root_or_compound
+  analysis: REP:221 when currently operative; operational readiness criteria may require
+    LOG/DAT.
+- test_id: REP2-T080
+  english_concept: many independent recoverable machines
+  routing: multiple_roots_not_systemic
+  analysis: Use separate REP:2x0 claims; independent capacities do not form one shared
+    restoration pathway.
+- test_id: REP2-T081
+  english_concept: one technician repairs many independent targets
+  routing: multiple_target_relations
+  analysis: Use per-target REP:2x1 and process claims unless a coordinated shared
+    restoration pathway exists.
+- test_id: REP2-T082
+  english_concept: communication network only
+  routing: different_family
+  analysis: CON reachability does not entail capacity to restore a shared condition.
+- test_id: REP2-T083
+  english_concept: structural dependency only
+  routing: different_family
+  analysis: STR dependency can realize or obstruct a pathway but is not restorative
+    enablement by itself.
+- test_id: REP2-T084
+  english_concept: persistent pathway uncertain
+  routing: one_root_plus_runtime
+  analysis: REP:220[2]/num leaves the persistent pathway assertion unresolved and
+    does not select REP:222.
+- test_id: REP2-T085
+  english_concept: latent pathway affirmed
+  routing: one_root_plus_runtime
+  analysis: REP:222[1] affirms an existing nonoperative pathway without probability
+    or future time.
+- test_id: REP2-T086
+  english_concept: operative pathway denied
+  routing: one_root_plus_runtime
+  analysis: REP:221[0] denies current operation without establishing persistence or
+    latency.
+- test_id: REP2-T087
+  english_concept: persistent plus operative recoverability
+  routing: two_compatible_roots
+  analysis: REP:200 and REP:201 may co-occur because identity persistence and current
+    operation are independent claims.
+- test_id: REP2-T088
+  english_concept: persistent plus latent recoverability
+  routing: two_compatible_roots
+  analysis: REP:200 and REP:202 may co-occur while the capacity is not currently operative.
+- test_id: REP2-T089
+  english_concept: operative and latent simultaneously
+  routing: invalid_same_reference_claim
+  analysis: REP:201 and REP:202 are mutually exclusive for the same capacity at one
+    reference time.
+- test_id: REP2-T090
+  english_concept: persistent plus operative relation
+  routing: two_compatible_roots
+  analysis: REP:210 and REP:211 may co-occur because persistent identity is neutral
+    about current operation.
+- test_id: REP2-T091
+  english_concept: persistent plus latent relation
+  routing: two_compatible_roots
+  analysis: REP:210 and REP:212 may co-occur because persistent identity is neutral
+    about current operation.
+- test_id: REP2-T092
+  english_concept: operative and latent relation simultaneously
+  routing: invalid_same_reference_claim
+  analysis: REP:211 and REP:212 are mutually exclusive at one time.
+- test_id: REP2-T093
+  english_concept: persistent plus operative pathway
+  routing: two_compatible_roots
+  analysis: REP:220 and REP:221 may co-occur because persistent identity is neutral
+    about current operation.
+- test_id: REP2-T094
+  english_concept: persistent plus latent pathway
+  routing: two_compatible_roots
+  analysis: REP:220 and REP:222 may co-occur because persistent identity is neutral
+    about current operation.
+- test_id: REP2-T095
+  english_concept: operative and latent pathway simultaneously
+  routing: invalid_same_reference_claim
+  analysis: REP:221 and REP:222 are mutually exclusive at one time.
+- test_id: REP2-T096
+  english_concept: affordance versus condition
+  routing: scope_resolution_test
+  analysis: REP:2xx names restorative capacity or relation; REP:0xx names the restoration
+    condition.
+- test_id: REP2-T097
+  english_concept: affordance versus process
+  routing: scope_resolution_test
+  analysis: REP:2xx names restorative capacity or relation; REP:1xx names actual restoration
+    by phase.
+- test_id: REP2-T098
+  english_concept: recoverability versus resistance
+  routing: scope_resolution_test
+  analysis: Recoverability enables restoration after or from loss; resistance prevents
+    or withstands adverse change.
+- test_id: REP2-T099
+  english_concept: restorative relation versus service relation
+  routing: scope_resolution_test
+  analysis: REP:2x1 enables target restoration; CON/LOG owns service, responsibility,
+    and obligation.
+- test_id: REP2-T100
+  english_concept: restoration pathway versus network
+  routing: scope_resolution_test
+  analysis: REP:2x2 supplies restorative enablement; CON/STR/DAT owns network structure
+    and resources.
+- test_id: REP2-T101
+  english_concept: latent versus unknown
+  routing: scope_resolution_test
+  analysis: REP:202[1] affirms nonoperative recoverability; REP:201[2]/num leaves
+    operative status unresolved.
+- test_id: REP2-T102
+  english_concept: typed affordance versus general possibility
+  routing: scope_resolution_test
+  analysis: REP:2xx asserts a specific capacity or relation; ORI owns unrestricted
+    possibility.
+- test_id: REP2-T103
+  english_concept: restoration affordance versus backup
+  routing: scope_resolution_test
+  analysis: REP states capacity or relation; DAT/MAT/CRE owns the backup or spare
+    resource.
+- test_id: REP2-T104
+  english_concept: restoration affordance versus maintenance
+  routing: scope_resolution_test
+  analysis: REP enables restoring an unrealized condition; maintenance can preserve
+    an already realized condition.
+- test_id: REP2-T105
+  english_concept: restoration affordance versus protection
+  routing: scope_resolution_test
+  analysis: REP enables restorative transformation; protection prevents or limits
+    adverse transformation.

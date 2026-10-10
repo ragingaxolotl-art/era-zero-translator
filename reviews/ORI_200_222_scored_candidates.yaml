@@ -1,0 +1,1364 @@
+---
+metadata:
+  title: ORI:200–222 adversarial semantic candidates
+  status: approved_and_canonical_by_delegated_authority
+  architecture_version: '1.0'
+  range: ORI:200–222
+  roots_reviewed: 9
+  candidate_architectures_per_root: 5
+  scored_categories:
+  - atomicity
+  - address_fit
+  - family_fit
+  - neighbor_separation
+  - cross_family_separation
+  - compound_usefulness
+  - everyday_language_coverage
+  - technical_coverage
+  generated_fields_changed: false
+  roots_canonicalized:
+  - ORI:200
+  - ORI:201
+  - ORI:202
+  - ORI:210
+  - ORI:211
+  - ORI:212
+  - ORI:220
+  - ORI:221
+  - ORI:222
+  approval_record: migrations/ORI_200_222_semantic_approval.yaml
+roots:
+- canonical_id: ORI:200
+  fixed_generated_fields:
+    canonical_id: ORI:200
+    universal_slot: stable inward capacity
+    family_qualified_transliteration: nu·mam
+    local_compact_root: mam
+    formal_carrier: nu-nu-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+  current_meaning_rationale: The provisional set recognizes first-trit 2 as relational
+    or modal and uses source, target, and systemic orientation.
+  candidates:
+  - candidate_id: current_phase2
+    title: stable existence capacity
+    invariant_candidate: A source has a dependable inward capacity to exist, persist,
+      or become actual.
+    analysis:
+      why_it_fits: The provisional set recognizes first-trit 2 as relational or modal
+        and uses source, target, and systemic orientation.
+      useful_coverage: It covers capacity, possibility, dependence, causation, contingency,
+        universality, and possible worlds.
+      semantic_territory_consumed: It combines several unrelated modal, causal, dispositional,
+        and cosmological concepts.
+      conflicts_or_future_limitations: The triplets do not preserve one relation across
+        third-trit states and collide with LOG, CRE, MAT, STR, and temporal grammar.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 7
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: grounded_relations
+    title: persistent source-grounding capacity
+    invariant_candidate: A persistent ontological capacity of one source to ground
+      a specified state of affairs, independently of whether that capacity is presently
+      operative.
+    analysis:
+      why_it_fits: First-trit 2 selects a relation or capacity; the second trit selects
+        source, target, or shared-world scope; the third selects persistent, operative,
+        or latent status.
+      useful_coverage: It supports dispositions, dependency injection, preconditions,
+        world constraints, configuration regimes, ontology, and ordinary claims about
+        what can ground or constrain what.
+      semantic_territory_consumed: Only ontological grounding capacity, target dependence,
+        and reality-wide constraint.
+      conflicts_or_future_limitations: Causal mechanisms, physical affordances, logical
+        entailment, probability, schedules, and unrestricted possible worlds require
+        other roots or compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: causal_provenance
+    title: persistent causal potency
+    invariant_candidate: A persistent causal or provenance relation at source scope.
+    analysis:
+      why_it_fits: Source and target orientation naturally suggest cause, result,
+        and provenance networks.
+      useful_coverage: It would cover causal power, derivation, origin histories,
+        ancestry, and causal networks.
+      semantic_territory_consumed: It makes every relation causal and mixes capacity
+        with historical derivation.
+      conflicts_or_future_limitations: CRE, MAT, LIF, DAT, STR, and WRN own typed
+        mechanisms; not every ontological dependence is causal or historical.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 60
+    maximum: 80
+  - candidate_id: modal_logic
+    title: necessary self-possibility
+    invariant_candidate: A persistent modal accessibility relation at source scope.
+    analysis:
+      why_it_fits: Capacity and possibility invite necessary, actual, and possible
+        readings at source, target, and world scope.
+      useful_coverage: It would cover modal operators, counterfactuals, necessity,
+        contingency, accessibility, and possible worlds.
+      semantic_territory_consumed: It treats the third trit as a modal scale rather
+        than persistent, active, and dormant lexical status.
+      conflicts_or_future_limitations: It collides with LOG and runtime uncertainty
+        and cannot explain active relations without redefining the address axes.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 62
+    maximum: 80
+  - candidate_id: temporal_origination
+    title: persistent source priority
+    invariant_candidate: A persistent temporal-origination relation at source scope.
+    analysis:
+      why_it_fits: Origins and dependence can be interpreted as before-after relations
+        or temporal priority.
+      useful_coverage: It would cover antecedence, succession, duration, epochs, and
+        prospective timelines.
+      semantic_territory_consumed: It turns relational scope into chronology and makes
+        potential status mean future time.
+      conflicts_or_future_limitations: Temporal order is not identical to ontological
+        grounding; scheduling and tense require grammar or later dedicated relations.
+    scores:
+      atomicity: 7
+      address_fit: 6
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 57
+    maximum: 80
+  recommended_candidate_id: grounded_relations
+  recommendation_reason: Only the grounded-relations architecture keeps all nine addresses
+    on one ontological relation/capacity layer, preserves source/target/systemic orientation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    causal mechanism, modal logic, time, physical affordance, representation, and
+    formal constraint separately typed.
+  confidence: 0.95
+  canonicalized: true
+- canonical_id: ORI:201
+  fixed_generated_fields:
+    canonical_id: ORI:201
+    universal_slot: active inward capacity
+    family_qualified_transliteration: nu·mak
+    local_compact_root: mak
+    formal_carrier: nu-nu-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+  current_meaning_rationale: The provisional set recognizes first-trit 2 as relational
+    or modal and uses source, target, and systemic orientation.
+  candidates:
+  - candidate_id: current_phase2
+    title: expressed possibility
+    invariant_candidate: An inward possibility is currently viable and participating
+      in actuality.
+    analysis:
+      why_it_fits: The provisional set recognizes first-trit 2 as relational or modal
+        and uses source, target, and systemic orientation.
+      useful_coverage: It covers capacity, possibility, dependence, causation, contingency,
+        universality, and possible worlds.
+      semantic_territory_consumed: It combines several unrelated modal, causal, dispositional,
+        and cosmological concepts.
+      conflicts_or_future_limitations: The triplets do not preserve one relation across
+        third-trit states and collide with LOG, CRE, MAT, STR, and temporal grammar.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 7
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: grounded_relations
+    title: operative source-grounding capacity
+    invariant_candidate: An ontological capacity of one source that is presently operative
+      in grounding a specified state of affairs.
+    analysis:
+      why_it_fits: First-trit 2 selects a relation or capacity; the second trit selects
+        source, target, or shared-world scope; the third selects persistent, operative,
+        or latent status.
+      useful_coverage: It supports dispositions, dependency injection, preconditions,
+        world constraints, configuration regimes, ontology, and ordinary claims about
+        what can ground or constrain what.
+      semantic_territory_consumed: Only ontological grounding capacity, target dependence,
+        and reality-wide constraint.
+      conflicts_or_future_limitations: Causal mechanisms, physical affordances, logical
+        entailment, probability, schedules, and unrestricted possible worlds require
+        other roots or compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: causal_provenance
+    title: operative causal efficacy
+    invariant_candidate: A active causal or provenance relation at source scope.
+    analysis:
+      why_it_fits: Source and target orientation naturally suggest cause, result,
+        and provenance networks.
+      useful_coverage: It would cover causal power, derivation, origin histories,
+        ancestry, and causal networks.
+      semantic_territory_consumed: It makes every relation causal and mixes capacity
+        with historical derivation.
+      conflicts_or_future_limitations: CRE, MAT, LIF, DAT, STR, and WRN own typed
+        mechanisms; not every ontological dependence is causal or historical.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 60
+    maximum: 80
+  - candidate_id: modal_logic
+    title: actual self-possibility
+    invariant_candidate: A active modal accessibility relation at source scope.
+    analysis:
+      why_it_fits: Capacity and possibility invite necessary, actual, and possible
+        readings at source, target, and world scope.
+      useful_coverage: It would cover modal operators, counterfactuals, necessity,
+        contingency, accessibility, and possible worlds.
+      semantic_territory_consumed: It treats the third trit as a modal scale rather
+        than persistent, active, and dormant lexical status.
+      conflicts_or_future_limitations: It collides with LOG and runtime uncertainty
+        and cannot explain active relations without redefining the address axes.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 62
+    maximum: 80
+  - candidate_id: temporal_origination
+    title: active source priority
+    invariant_candidate: A active temporal-origination relation at source scope.
+    analysis:
+      why_it_fits: Origins and dependence can be interpreted as before-after relations
+        or temporal priority.
+      useful_coverage: It would cover antecedence, succession, duration, epochs, and
+        prospective timelines.
+      semantic_territory_consumed: It turns relational scope into chronology and makes
+        potential status mean future time.
+      conflicts_or_future_limitations: Temporal order is not identical to ontological
+        grounding; scheduling and tense require grammar or later dedicated relations.
+    scores:
+      atomicity: 7
+      address_fit: 6
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 57
+    maximum: 80
+  recommended_candidate_id: grounded_relations
+  recommendation_reason: Only the grounded-relations architecture keeps all nine addresses
+    on one ontological relation/capacity layer, preserves source/target/systemic orientation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    causal mechanism, modal logic, time, physical affordance, representation, and
+    formal constraint separately typed.
+  confidence: 0.95
+  canonicalized: true
+- canonical_id: ORI:202
+  fixed_generated_fields:
+    canonical_id: ORI:202
+    universal_slot: dormant inward capacity
+    family_qualified_transliteration: nu·man
+    local_compact_root: man
+    formal_carrier: nu-nu-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+  current_meaning_rationale: The provisional set recognizes first-trit 2 as relational
+    or modal and uses source, target, and systemic orientation.
+  candidates:
+  - candidate_id: current_phase2
+    title: pure potential
+    invariant_candidate: A capacity for existence is present only as dormant, pre-manifest
+      possibility.
+    analysis:
+      why_it_fits: The provisional set recognizes first-trit 2 as relational or modal
+        and uses source, target, and systemic orientation.
+      useful_coverage: It covers capacity, possibility, dependence, causation, contingency,
+        universality, and possible worlds.
+      semantic_territory_consumed: It combines several unrelated modal, causal, dispositional,
+        and cosmological concepts.
+      conflicts_or_future_limitations: The triplets do not preserve one relation across
+        third-trit states and collide with LOG, CRE, MAT, STR, and temporal grammar.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 3
+      compound_usefulness: 8
+      everyday_language_coverage: 7
+      technical_coverage: 8
+    total: 50
+    maximum: 80
+  - candidate_id: grounded_relations
+    title: latent source-grounding capacity
+    invariant_candidate: An ontological capacity of one source to ground a specified
+      state of affairs that belongs to it without being presently operative.
+    analysis:
+      why_it_fits: First-trit 2 selects a relation or capacity; the second trit selects
+        source, target, or shared-world scope; the third selects persistent, operative,
+        or latent status.
+      useful_coverage: It supports dispositions, dependency injection, preconditions,
+        world constraints, configuration regimes, ontology, and ordinary claims about
+        what can ground or constrain what.
+      semantic_territory_consumed: Only ontological grounding capacity, target dependence,
+        and reality-wide constraint.
+      conflicts_or_future_limitations: Causal mechanisms, physical affordances, logical
+        entailment, probability, schedules, and unrestricted possible worlds require
+        other roots or compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: causal_provenance
+    title: latent causal potency
+    invariant_candidate: A potential causal or provenance relation at source scope.
+    analysis:
+      why_it_fits: Source and target orientation naturally suggest cause, result,
+        and provenance networks.
+      useful_coverage: It would cover causal power, derivation, origin histories,
+        ancestry, and causal networks.
+      semantic_territory_consumed: It makes every relation causal and mixes capacity
+        with historical derivation.
+      conflicts_or_future_limitations: CRE, MAT, LIF, DAT, STR, and WRN own typed
+        mechanisms; not every ontological dependence is causal or historical.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 60
+    maximum: 80
+  - candidate_id: modal_logic
+    title: possible self-possibility
+    invariant_candidate: A potential modal accessibility relation at source scope.
+    analysis:
+      why_it_fits: Capacity and possibility invite necessary, actual, and possible
+        readings at source, target, and world scope.
+      useful_coverage: It would cover modal operators, counterfactuals, necessity,
+        contingency, accessibility, and possible worlds.
+      semantic_territory_consumed: It treats the third trit as a modal scale rather
+        than persistent, active, and dormant lexical status.
+      conflicts_or_future_limitations: It collides with LOG and runtime uncertainty
+        and cannot explain active relations without redefining the address axes.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 62
+    maximum: 80
+  - candidate_id: temporal_origination
+    title: prospective source priority
+    invariant_candidate: A potential temporal-origination relation at source scope.
+    analysis:
+      why_it_fits: Origins and dependence can be interpreted as before-after relations
+        or temporal priority.
+      useful_coverage: It would cover antecedence, succession, duration, epochs, and
+        prospective timelines.
+      semantic_territory_consumed: It turns relational scope into chronology and makes
+        potential status mean future time.
+      conflicts_or_future_limitations: Temporal order is not identical to ontological
+        grounding; scheduling and tense require grammar or later dedicated relations.
+    scores:
+      atomicity: 7
+      address_fit: 6
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 57
+    maximum: 80
+  recommended_candidate_id: grounded_relations
+  recommendation_reason: Only the grounded-relations architecture keeps all nine addresses
+    on one ontological relation/capacity layer, preserves source/target/systemic orientation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    causal mechanism, modal logic, time, physical affordance, representation, and
+    formal constraint separately typed.
+  confidence: 0.95
+  canonicalized: true
+- canonical_id: ORI:210
+  fixed_generated_fields:
+    canonical_id: ORI:210
+    universal_slot: stable outward relationship
+    family_qualified_transliteration: nu·mom
+    local_compact_root: mom
+    formal_carrier: nu-nu-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+  current_meaning_rationale: The provisional set recognizes first-trit 2 as relational
+    or modal and uses source, target, and systemic orientation.
+  candidates:
+  - candidate_id: current_phase2
+    title: necessary dependence
+    invariant_candidate: A stable causal or ontological relation makes a target depend
+      on a source or prior condition.
+    analysis:
+      why_it_fits: The provisional set recognizes first-trit 2 as relational or modal
+        and uses source, target, and systemic orientation.
+      useful_coverage: It covers capacity, possibility, dependence, causation, contingency,
+        universality, and possible worlds.
+      semantic_territory_consumed: It combines several unrelated modal, causal, dispositional,
+        and cosmological concepts.
+      conflicts_or_future_limitations: The triplets do not preserve one relation across
+        third-trit states and collide with LOG, CRE, MAT, STR, and temporal grammar.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 7
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: grounded_relations
+    title: persistent target-ground dependence
+    invariant_candidate: A persistent ontological relation under which one target's
+      obtaining is conditional on a specified ground, independently of whether that
+      dependence is presently operative.
+    analysis:
+      why_it_fits: First-trit 2 selects a relation or capacity; the second trit selects
+        source, target, or shared-world scope; the third selects persistent, operative,
+        or latent status.
+      useful_coverage: It supports dispositions, dependency injection, preconditions,
+        world constraints, configuration regimes, ontology, and ordinary claims about
+        what can ground or constrain what.
+      semantic_territory_consumed: Only ontological grounding capacity, target dependence,
+        and reality-wide constraint.
+      conflicts_or_future_limitations: Causal mechanisms, physical affordances, logical
+        entailment, probability, schedules, and unrestricted possible worlds require
+        other roots or compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: causal_provenance
+    title: persistent causal derivation
+    invariant_candidate: A persistent causal or provenance relation at target scope.
+    analysis:
+      why_it_fits: Source and target orientation naturally suggest cause, result,
+        and provenance networks.
+      useful_coverage: It would cover causal power, derivation, origin histories,
+        ancestry, and causal networks.
+      semantic_territory_consumed: It makes every relation causal and mixes capacity
+        with historical derivation.
+      conflicts_or_future_limitations: CRE, MAT, LIF, DAT, STR, and WRN own typed
+        mechanisms; not every ontological dependence is causal or historical.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 60
+    maximum: 80
+  - candidate_id: modal_logic
+    title: necessary target possibility
+    invariant_candidate: A persistent modal accessibility relation at target scope.
+    analysis:
+      why_it_fits: Capacity and possibility invite necessary, actual, and possible
+        readings at source, target, and world scope.
+      useful_coverage: It would cover modal operators, counterfactuals, necessity,
+        contingency, accessibility, and possible worlds.
+      semantic_territory_consumed: It treats the third trit as a modal scale rather
+        than persistent, active, and dormant lexical status.
+      conflicts_or_future_limitations: It collides with LOG and runtime uncertainty
+        and cannot explain active relations without redefining the address axes.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 61
+    maximum: 80
+  - candidate_id: temporal_origination
+    title: persistent temporal derivation
+    invariant_candidate: A persistent temporal-origination relation at target scope.
+    analysis:
+      why_it_fits: Origins and dependence can be interpreted as before-after relations
+        or temporal priority.
+      useful_coverage: It would cover antecedence, succession, duration, epochs, and
+        prospective timelines.
+      semantic_territory_consumed: It turns relational scope into chronology and makes
+        potential status mean future time.
+      conflicts_or_future_limitations: Temporal order is not identical to ontological
+        grounding; scheduling and tense require grammar or later dedicated relations.
+    scores:
+      atomicity: 7
+      address_fit: 7
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 58
+    maximum: 80
+  recommended_candidate_id: grounded_relations
+  recommendation_reason: Only the grounded-relations architecture keeps all nine addresses
+    on one ontological relation/capacity layer, preserves source/target/systemic orientation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    causal mechanism, modal logic, time, physical affordance, representation, and
+    formal constraint separately typed.
+  confidence: 0.95
+  canonicalized: true
+- canonical_id: ORI:211
+  fixed_generated_fields:
+    canonical_id: ORI:211
+    universal_slot: active outward relationship
+    family_qualified_transliteration: nu·mok
+    local_compact_root: mok
+    formal_carrier: nu-nu-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+  current_meaning_rationale: The provisional set recognizes first-trit 2 as relational
+    or modal and uses source, target, and systemic orientation.
+  candidates:
+  - candidate_id: current_phase2
+    title: active causation
+    invariant_candidate: A source condition is actively bringing about, constraining,
+      or sustaining a target.
+    analysis:
+      why_it_fits: The provisional set recognizes first-trit 2 as relational or modal
+        and uses source, target, and systemic orientation.
+      useful_coverage: It covers capacity, possibility, dependence, causation, contingency,
+        universality, and possible worlds.
+      semantic_territory_consumed: It combines several unrelated modal, causal, dispositional,
+        and cosmological concepts.
+      conflicts_or_future_limitations: The triplets do not preserve one relation across
+        third-trit states and collide with LOG, CRE, MAT, STR, and temporal grammar.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 7
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: grounded_relations
+    title: operative target-ground dependence
+    invariant_candidate: An ontological relation that is presently conditioning one
+      target's obtaining on a specified ground.
+    analysis:
+      why_it_fits: First-trit 2 selects a relation or capacity; the second trit selects
+        source, target, or shared-world scope; the third selects persistent, operative,
+        or latent status.
+      useful_coverage: It supports dispositions, dependency injection, preconditions,
+        world constraints, configuration regimes, ontology, and ordinary claims about
+        what can ground or constrain what.
+      semantic_territory_consumed: Only ontological grounding capacity, target dependence,
+        and reality-wide constraint.
+      conflicts_or_future_limitations: Causal mechanisms, physical affordances, logical
+        entailment, probability, schedules, and unrestricted possible worlds require
+        other roots or compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: causal_provenance
+    title: active causal derivation
+    invariant_candidate: A active causal or provenance relation at target scope.
+    analysis:
+      why_it_fits: Source and target orientation naturally suggest cause, result,
+        and provenance networks.
+      useful_coverage: It would cover causal power, derivation, origin histories,
+        ancestry, and causal networks.
+      semantic_territory_consumed: It makes every relation causal and mixes capacity
+        with historical derivation.
+      conflicts_or_future_limitations: CRE, MAT, LIF, DAT, STR, and WRN own typed
+        mechanisms; not every ontological dependence is causal or historical.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 60
+    maximum: 80
+  - candidate_id: modal_logic
+    title: actual target possibility
+    invariant_candidate: A active modal accessibility relation at target scope.
+    analysis:
+      why_it_fits: Capacity and possibility invite necessary, actual, and possible
+        readings at source, target, and world scope.
+      useful_coverage: It would cover modal operators, counterfactuals, necessity,
+        contingency, accessibility, and possible worlds.
+      semantic_territory_consumed: It treats the third trit as a modal scale rather
+        than persistent, active, and dormant lexical status.
+      conflicts_or_future_limitations: It collides with LOG and runtime uncertainty
+        and cannot explain active relations without redefining the address axes.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 61
+    maximum: 80
+  - candidate_id: temporal_origination
+    title: active temporal derivation
+    invariant_candidate: A active temporal-origination relation at target scope.
+    analysis:
+      why_it_fits: Origins and dependence can be interpreted as before-after relations
+        or temporal priority.
+      useful_coverage: It would cover antecedence, succession, duration, epochs, and
+        prospective timelines.
+      semantic_territory_consumed: It turns relational scope into chronology and makes
+        potential status mean future time.
+      conflicts_or_future_limitations: Temporal order is not identical to ontological
+        grounding; scheduling and tense require grammar or later dedicated relations.
+    scores:
+      atomicity: 7
+      address_fit: 7
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 58
+    maximum: 80
+  recommended_candidate_id: grounded_relations
+  recommendation_reason: Only the grounded-relations architecture keeps all nine addresses
+    on one ontological relation/capacity layer, preserves source/target/systemic orientation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    causal mechanism, modal logic, time, physical affordance, representation, and
+    formal constraint separately typed.
+  confidence: 0.95
+  canonicalized: true
+- canonical_id: ORI:212
+  fixed_generated_fields:
+    canonical_id: ORI:212
+    universal_slot: unresolved outward relationship
+    family_qualified_transliteration: nu·mon
+    local_compact_root: mon
+    formal_carrier: nu-nu-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+  current_meaning_rationale: The provisional set recognizes first-trit 2 as relational
+    or modal and uses source, target, and systemic orientation.
+  candidates:
+  - candidate_id: current_phase2
+    title: contingency
+    invariant_candidate: A possible causal or ontological relation could hold, but
+      necessity, outcome, or dependence is unresolved.
+    analysis:
+      why_it_fits: The provisional set recognizes first-trit 2 as relational or modal
+        and uses source, target, and systemic orientation.
+      useful_coverage: It covers capacity, possibility, dependence, causation, contingency,
+        universality, and possible worlds.
+      semantic_territory_consumed: It combines several unrelated modal, causal, dispositional,
+        and cosmological concepts.
+      conflicts_or_future_limitations: The triplets do not preserve one relation across
+        third-trit states and collide with LOG, CRE, MAT, STR, and temporal grammar.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 3
+      compound_usefulness: 8
+      everyday_language_coverage: 7
+      technical_coverage: 8
+    total: 50
+    maximum: 80
+  - candidate_id: grounded_relations
+    title: latent target-ground dependence
+    invariant_candidate: An ontological relation under which one target's obtaining
+      would be conditional on a specified ground, without that dependence being presently
+      operative.
+    analysis:
+      why_it_fits: First-trit 2 selects a relation or capacity; the second trit selects
+        source, target, or shared-world scope; the third selects persistent, operative,
+        or latent status.
+      useful_coverage: It supports dispositions, dependency injection, preconditions,
+        world constraints, configuration regimes, ontology, and ordinary claims about
+        what can ground or constrain what.
+      semantic_territory_consumed: Only ontological grounding capacity, target dependence,
+        and reality-wide constraint.
+      conflicts_or_future_limitations: Causal mechanisms, physical affordances, logical
+        entailment, probability, schedules, and unrestricted possible worlds require
+        other roots or compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: causal_provenance
+    title: possible causal derivation
+    invariant_candidate: A potential causal or provenance relation at target scope.
+    analysis:
+      why_it_fits: Source and target orientation naturally suggest cause, result,
+        and provenance networks.
+      useful_coverage: It would cover causal power, derivation, origin histories,
+        ancestry, and causal networks.
+      semantic_territory_consumed: It makes every relation causal and mixes capacity
+        with historical derivation.
+      conflicts_or_future_limitations: CRE, MAT, LIF, DAT, STR, and WRN own typed
+        mechanisms; not every ontological dependence is causal or historical.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 60
+    maximum: 80
+  - candidate_id: modal_logic
+    title: contingent target possibility
+    invariant_candidate: A potential modal accessibility relation at target scope.
+    analysis:
+      why_it_fits: Capacity and possibility invite necessary, actual, and possible
+        readings at source, target, and world scope.
+      useful_coverage: It would cover modal operators, counterfactuals, necessity,
+        contingency, accessibility, and possible worlds.
+      semantic_territory_consumed: It treats the third trit as a modal scale rather
+        than persistent, active, and dormant lexical status.
+      conflicts_or_future_limitations: It collides with LOG and runtime uncertainty
+        and cannot explain active relations without redefining the address axes.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 61
+    maximum: 80
+  - candidate_id: temporal_origination
+    title: prospective temporal derivation
+    invariant_candidate: A potential temporal-origination relation at target scope.
+    analysis:
+      why_it_fits: Origins and dependence can be interpreted as before-after relations
+        or temporal priority.
+      useful_coverage: It would cover antecedence, succession, duration, epochs, and
+        prospective timelines.
+      semantic_territory_consumed: It turns relational scope into chronology and makes
+        potential status mean future time.
+      conflicts_or_future_limitations: Temporal order is not identical to ontological
+        grounding; scheduling and tense require grammar or later dedicated relations.
+    scores:
+      atomicity: 7
+      address_fit: 7
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 58
+    maximum: 80
+  recommended_candidate_id: grounded_relations
+  recommendation_reason: Only the grounded-relations architecture keeps all nine addresses
+    on one ontological relation/capacity layer, preserves source/target/systemic orientation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    causal mechanism, modal logic, time, physical affordance, representation, and
+    formal constraint separately typed.
+  confidence: 0.95
+  canonicalized: true
+- canonical_id: ORI:220
+  fixed_generated_fields:
+    canonical_id: ORI:220
+    universal_slot: stable systemic relationship
+    family_qualified_transliteration: nu·mim
+    local_compact_root: mim
+    formal_carrier: nu-nu-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+  current_meaning_rationale: The provisional set recognizes first-trit 2 as relational
+    or modal and uses source, target, and systemic orientation.
+  candidates:
+  - candidate_id: current_phase2
+    title: universality
+    invariant_candidate: A foundational relation holds stably across every relevant
+      part of a reality.
+    analysis:
+      why_it_fits: The provisional set recognizes first-trit 2 as relational or modal
+        and uses source, target, and systemic orientation.
+      useful_coverage: It covers capacity, possibility, dependence, causation, contingency,
+        universality, and possible worlds.
+      semantic_territory_consumed: It combines several unrelated modal, causal, dispositional,
+        and cosmological concepts.
+      conflicts_or_future_limitations: The triplets do not preserve one relation across
+        third-trit states and collide with LOG, CRE, MAT, STR, and temporal grammar.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 7
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: grounded_relations
+    title: persistent shared-world constraint
+    invariant_candidate: A persistent ontological relation that limits which states
+      may coherently obtain across one shared reality, independently of whether it
+      is presently operative.
+    analysis:
+      why_it_fits: First-trit 2 selects a relation or capacity; the second trit selects
+        source, target, or shared-world scope; the third selects persistent, operative,
+        or latent status.
+      useful_coverage: It supports dispositions, dependency injection, preconditions,
+        world constraints, configuration regimes, ontology, and ordinary claims about
+        what can ground or constrain what.
+      semantic_territory_consumed: Only ontological grounding capacity, target dependence,
+        and reality-wide constraint.
+      conflicts_or_future_limitations: Causal mechanisms, physical affordances, logical
+        entailment, probability, schedules, and unrestricted possible worlds require
+        other roots or compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: causal_provenance
+    title: persistent causal network
+    invariant_candidate: A persistent causal or provenance relation at shared-world
+      scope.
+    analysis:
+      why_it_fits: Source and target orientation naturally suggest cause, result,
+        and provenance networks.
+      useful_coverage: It would cover causal power, derivation, origin histories,
+        ancestry, and causal networks.
+      semantic_territory_consumed: It makes every relation causal and mixes capacity
+        with historical derivation.
+      conflicts_or_future_limitations: CRE, MAT, LIF, DAT, STR, and WRN own typed
+        mechanisms; not every ontological dependence is causal or historical.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 59
+    maximum: 80
+  - candidate_id: modal_logic
+    title: necessary world
+    invariant_candidate: A persistent modal accessibility relation at shared-world
+      scope.
+    analysis:
+      why_it_fits: Capacity and possibility invite necessary, actual, and possible
+        readings at source, target, and world scope.
+      useful_coverage: It would cover modal operators, counterfactuals, necessity,
+        contingency, accessibility, and possible worlds.
+      semantic_territory_consumed: It treats the third trit as a modal scale rather
+        than persistent, active, and dormant lexical status.
+      conflicts_or_future_limitations: It collides with LOG and runtime uncertainty
+        and cannot explain active relations without redefining the address axes.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 62
+    maximum: 80
+  - candidate_id: temporal_origination
+    title: persistent temporal order
+    invariant_candidate: A persistent temporal-origination relation at shared-world
+      scope.
+    analysis:
+      why_it_fits: Origins and dependence can be interpreted as before-after relations
+        or temporal priority.
+      useful_coverage: It would cover antecedence, succession, duration, epochs, and
+        prospective timelines.
+      semantic_territory_consumed: It turns relational scope into chronology and makes
+        potential status mean future time.
+      conflicts_or_future_limitations: Temporal order is not identical to ontological
+        grounding; scheduling and tense require grammar or later dedicated relations.
+    scores:
+      atomicity: 7
+      address_fit: 7
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 58
+    maximum: 80
+  recommended_candidate_id: grounded_relations
+  recommendation_reason: Only the grounded-relations architecture keeps all nine addresses
+    on one ontological relation/capacity layer, preserves source/target/systemic orientation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    causal mechanism, modal logic, time, physical affordance, representation, and
+    formal constraint separately typed.
+  confidence: 0.95
+  canonicalized: true
+- canonical_id: ORI:221
+  fixed_generated_fields:
+    canonical_id: ORI:221
+    universal_slot: active systemic relationship
+    family_qualified_transliteration: nu·mik
+    local_compact_root: mik
+    formal_carrier: nu-nu-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+  current_meaning_rationale: The provisional set recognizes first-trit 2 as relational
+    or modal and uses source, target, and systemic orientation.
+  candidates:
+  - candidate_id: current_phase2
+    title: lawful interdependence
+    invariant_candidate: Parts of reality are actively co-determining one another
+      under shared laws.
+    analysis:
+      why_it_fits: The provisional set recognizes first-trit 2 as relational or modal
+        and uses source, target, and systemic orientation.
+      useful_coverage: It covers capacity, possibility, dependence, causation, contingency,
+        universality, and possible worlds.
+      semantic_territory_consumed: It combines several unrelated modal, causal, dispositional,
+        and cosmological concepts.
+      conflicts_or_future_limitations: The triplets do not preserve one relation across
+        third-trit states and collide with LOG, CRE, MAT, STR, and temporal grammar.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 7
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: grounded_relations
+    title: operative shared-world constraint
+    invariant_candidate: An ontological relation that is presently limiting which
+      states may coherently obtain across one shared reality.
+    analysis:
+      why_it_fits: First-trit 2 selects a relation or capacity; the second trit selects
+        source, target, or shared-world scope; the third selects persistent, operative,
+        or latent status.
+      useful_coverage: It supports dispositions, dependency injection, preconditions,
+        world constraints, configuration regimes, ontology, and ordinary claims about
+        what can ground or constrain what.
+      semantic_territory_consumed: Only ontological grounding capacity, target dependence,
+        and reality-wide constraint.
+      conflicts_or_future_limitations: Causal mechanisms, physical affordances, logical
+        entailment, probability, schedules, and unrestricted possible worlds require
+        other roots or compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: causal_provenance
+    title: active causal network
+    invariant_candidate: A active causal or provenance relation at shared-world scope.
+    analysis:
+      why_it_fits: Source and target orientation naturally suggest cause, result,
+        and provenance networks.
+      useful_coverage: It would cover causal power, derivation, origin histories,
+        ancestry, and causal networks.
+      semantic_territory_consumed: It makes every relation causal and mixes capacity
+        with historical derivation.
+      conflicts_or_future_limitations: CRE, MAT, LIF, DAT, STR, and WRN own typed
+        mechanisms; not every ontological dependence is causal or historical.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 59
+    maximum: 80
+  - candidate_id: modal_logic
+    title: actual world
+    invariant_candidate: A active modal accessibility relation at shared-world scope.
+    analysis:
+      why_it_fits: Capacity and possibility invite necessary, actual, and possible
+        readings at source, target, and world scope.
+      useful_coverage: It would cover modal operators, counterfactuals, necessity,
+        contingency, accessibility, and possible worlds.
+      semantic_territory_consumed: It treats the third trit as a modal scale rather
+        than persistent, active, and dormant lexical status.
+      conflicts_or_future_limitations: It collides with LOG and runtime uncertainty
+        and cannot explain active relations without redefining the address axes.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 62
+    maximum: 80
+  - candidate_id: temporal_origination
+    title: active temporal order
+    invariant_candidate: A active temporal-origination relation at shared-world scope.
+    analysis:
+      why_it_fits: Origins and dependence can be interpreted as before-after relations
+        or temporal priority.
+      useful_coverage: It would cover antecedence, succession, duration, epochs, and
+        prospective timelines.
+      semantic_territory_consumed: It turns relational scope into chronology and makes
+        potential status mean future time.
+      conflicts_or_future_limitations: Temporal order is not identical to ontological
+        grounding; scheduling and tense require grammar or later dedicated relations.
+    scores:
+      atomicity: 7
+      address_fit: 7
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 58
+    maximum: 80
+  recommended_candidate_id: grounded_relations
+  recommendation_reason: Only the grounded-relations architecture keeps all nine addresses
+    on one ontological relation/capacity layer, preserves source/target/systemic orientation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    causal mechanism, modal logic, time, physical affordance, representation, and
+    formal constraint separately typed.
+  confidence: 0.95
+  canonicalized: true
+- canonical_id: ORI:222
+  fixed_generated_fields:
+    canonical_id: ORI:222
+    universal_slot: unrealized systemic possibility
+    family_qualified_transliteration: nu·min
+    local_compact_root: min
+    formal_carrier: nu-nu-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+  current_meaning_rationale: The provisional set recognizes first-trit 2 as relational
+    or modal and uses source, target, and systemic orientation.
+  candidates:
+  - candidate_id: current_phase2
+    title: possible world
+    invariant_candidate: A coherent system of reality and law could exist, but it
+      is not presently realized.
+    analysis:
+      why_it_fits: The provisional set recognizes first-trit 2 as relational or modal
+        and uses source, target, and systemic orientation.
+      useful_coverage: It covers capacity, possibility, dependence, causation, contingency,
+        universality, and possible worlds.
+      semantic_territory_consumed: It combines several unrelated modal, causal, dispositional,
+        and cosmological concepts.
+      conflicts_or_future_limitations: The triplets do not preserve one relation across
+        third-trit states and collide with LOG, CRE, MAT, STR, and temporal grammar.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 3
+      compound_usefulness: 8
+      everyday_language_coverage: 7
+      technical_coverage: 8
+    total: 50
+    maximum: 80
+  - candidate_id: grounded_relations
+    title: latent shared-world constraint
+    invariant_candidate: An ontological relation that belongs to the admissible order
+      of one shared reality without presently limiting which states obtain within
+      it.
+    analysis:
+      why_it_fits: First-trit 2 selects a relation or capacity; the second trit selects
+        source, target, or shared-world scope; the third selects persistent, operative,
+        or latent status.
+      useful_coverage: It supports dispositions, dependency injection, preconditions,
+        world constraints, configuration regimes, ontology, and ordinary claims about
+        what can ground or constrain what.
+      semantic_territory_consumed: Only ontological grounding capacity, target dependence,
+        and reality-wide constraint.
+      conflicts_or_future_limitations: Causal mechanisms, physical affordances, logical
+        entailment, probability, schedules, and unrestricted possible worlds require
+        other roots or compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: causal_provenance
+    title: possible causal network
+    invariant_candidate: A potential causal or provenance relation at shared-world
+      scope.
+    analysis:
+      why_it_fits: Source and target orientation naturally suggest cause, result,
+        and provenance networks.
+      useful_coverage: It would cover causal power, derivation, origin histories,
+        ancestry, and causal networks.
+      semantic_territory_consumed: It makes every relation causal and mixes capacity
+        with historical derivation.
+      conflicts_or_future_limitations: CRE, MAT, LIF, DAT, STR, and WRN own typed
+        mechanisms; not every ontological dependence is causal or historical.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 59
+    maximum: 80
+  - candidate_id: modal_logic
+    title: modally accessible world
+    invariant_candidate: A potential modal accessibility relation at shared-world
+      scope.
+    analysis:
+      why_it_fits: Capacity and possibility invite necessary, actual, and possible
+        readings at source, target, and world scope.
+      useful_coverage: It would cover modal operators, counterfactuals, necessity,
+        contingency, accessibility, and possible worlds.
+      semantic_territory_consumed: It treats the third trit as a modal scale rather
+        than persistent, active, and dormant lexical status.
+      conflicts_or_future_limitations: It collides with LOG and runtime uncertainty
+        and cannot explain active relations without redefining the address axes.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 62
+    maximum: 80
+  - candidate_id: temporal_origination
+    title: prospective temporal order
+    invariant_candidate: A potential temporal-origination relation at shared-world
+      scope.
+    analysis:
+      why_it_fits: Origins and dependence can be interpreted as before-after relations
+        or temporal priority.
+      useful_coverage: It would cover antecedence, succession, duration, epochs, and
+        prospective timelines.
+      semantic_territory_consumed: It turns relational scope into chronology and makes
+        potential status mean future time.
+      conflicts_or_future_limitations: Temporal order is not identical to ontological
+        grounding; scheduling and tense require grammar or later dedicated relations.
+    scores:
+      atomicity: 7
+      address_fit: 7
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 58
+    maximum: 80
+  recommended_candidate_id: grounded_relations
+  recommendation_reason: Only the grounded-relations architecture keeps all nine addresses
+    on one ontological relation/capacity layer, preserves source/target/systemic orientation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    causal mechanism, modal logic, time, physical affordance, representation, and
+    formal constraint separately typed.
+  confidence: 0.95
+  canonicalized: true

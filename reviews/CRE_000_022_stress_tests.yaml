@@ -1,0 +1,620 @@
+---
+metadata:
+  title: CRE:000–022 English coverage and routing tests
+  status: review_evidence_not_translation_dictionary
+  range: CRE:000–022
+  test_count: 125
+  no_forced_atomization: true
+tests:
+- test_id: CRE0-T001
+  english_concept: design pattern
+  routing: one_root_or_compound
+  analysis: Use CRE:000–002 when a bounded form-specifying source for production is
+    meant; DAT or STR may separately encode its representation or arrangement.
+- test_id: CRE0-T002
+  english_concept: template
+  routing: one_root_or_compound
+  analysis: A template functioning as a source for production maps to the internal-pattern
+    triplet; its file encoding remains DAT.
+- test_id: CRE0-T003
+  english_concept: motif
+  routing: one_root_or_compound
+  analysis: A recurring form-specifying source can use CRE:000–002, with genre or
+    medium supplied compositionally.
+- test_id: CRE0-T004
+  english_concept: recipe
+  routing: compound
+  analysis: CRE supplies the production-guiding pattern, LOG its constraints, DAT
+    its written representation, and MAT its ingredients.
+- test_id: CRE0-T005
+  english_concept: blueprint
+  routing: compound
+  analysis: CRE supplies generative function, DAT the represented plan, and STR the
+    arrangement described.
+- test_id: CRE0-T006
+  english_concept: algorithm as generator
+  routing: compound
+  analysis: CRE may identify the form-producing pattern; LOG supplies formal operations
+    and DAT the encoded program.
+- test_id: CRE0-T007
+  english_concept: idea
+  routing: different_family_or_compound
+  analysis: A subjective conception belongs to MIN unless it is separately constituted
+    as a form-specifying production source.
+- test_id: CRE0-T008
+  english_concept: inspiration
+  routing: different_family
+  analysis: Inspiration is a mental event or condition in MIN, not an entity in the
+    Creation entity layer.
+- test_id: CRE0-T009
+  english_concept: intention to create
+  routing: different_family_or_compound
+  analysis: MIN owns intention; a CRE generative pattern may be compounded only when
+    a production source is also identified.
+- test_id: CRE0-T010
+  english_concept: plan
+  routing: compound
+  analysis: DAT can encode a plan, LOG can govern it, and CRE applies when the plan
+    functions as a production source.
+- test_id: CRE0-T011
+  english_concept: schema
+  routing: different_family_or_compound
+  analysis: STR owns arrangement and DAT owns its representation; CRE applies only
+    if the schema functions generatively.
+- test_id: CRE0-T012
+  english_concept: rule
+  routing: different_family
+  analysis: Formal admissibility belongs to LOG even when a rule participates in a
+    generator.
+- test_id: CRE0-T013
+  english_concept: prototype
+  routing: compound
+  analysis: A prototype is a generated artifact plus experimental or revision status;
+    evolution is not encoded in CRE:011 alone.
+- test_id: CRE0-T014
+  english_concept: artifact
+  routing: one_root
+  analysis: CRE:010–012 owns one bounded product of productive transformation directed
+    outward from a source.
+- test_id: CRE0-T015
+  english_concept: artwork
+  routing: one_root_or_compound
+  analysis: A work can use the artifact triplet; medium, cultural value, authorship,
+    and genre require compounds.
+- test_id: CRE0-T016
+  english_concept: generated file
+  routing: compound
+  analysis: CRE supplies generated-product identity and DAT supplies the information
+    object and encoding.
+- test_id: CRE0-T017
+  english_concept: manufactured object
+  routing: compound
+  analysis: CRE supplies generated-product identity and MAT supplies substance and
+    physical realization.
+- test_id: CRE0-T018
+  english_concept: model output
+  routing: compound
+  analysis: CRE supplies generated artifact; DAT supplies represented output and LOG
+    or CRE:1xx supplies computation or generation.
+- test_id: CRE0-T019
+  english_concept: finished work
+  routing: compound
+  analysis: CRE:010 or CRE:011 identifies the artifact, while completion requires
+    process-state or ORI qualification; persistence does not mean finished.
+- test_id: CRE0-T020
+  english_concept: unfinished work
+  routing: compound
+  analysis: A manifest artifact may be unfinished, but incompletion must be expressed
+    separately from manifestation.
+- test_id: CRE0-T021
+  english_concept: unbuilt design
+  routing: compound_or_not_yet_artifact
+  analysis: A design that has not produced an artifact is a generative pattern plus
+    future or unrealized qualification, not automatically CRE:012.
+- test_id: CRE0-T022
+  english_concept: destroyed artifact
+  routing: different_meaning
+  analysis: Destruction may end artifact identity; lexical dormancy requires the same
+    artifact to remain maintained but unmanifest.
+- test_id: CRE0-T023
+  english_concept: hidden artwork
+  routing: compound
+  analysis: A hidden manifest artifact remains CRE:011; access or visibility is separate
+    and must not be confused with dormancy.
+- test_id: CRE0-T024
+  english_concept: archived digital work
+  routing: compound
+  analysis: CRE identifies the artifact, DAT its stored representation, and dormant
+    status applies only if the creation entity itself is unmanifest.
+- test_id: CRE0-T025
+  english_concept: copy
+  routing: compound
+  analysis: CRE may identify each generated artifact while provenance and duplication
+    process remain separate.
+- test_id: CRE0-T026
+  english_concept: original
+  routing: compound_or_later_specialization
+  analysis: Originality is a provenance relation, not generated-artifact identity
+    itself.
+- test_id: CRE0-T027
+  english_concept: creator
+  routing: different_family
+  analysis: A living or social creator belongs to LIF; CRE identifies the pattern,
+    product, or repertoire.
+- test_id: CRE0-T028
+  english_concept: authorship
+  routing: different_family_or_later_relation
+  analysis: Authorship is a relation among agent, act, and product, reserved for compounds
+    or the CRE relation layer.
+- test_id: CRE0-T029
+  english_concept: tool
+  routing: different_family_or_compound
+  analysis: MAT or STR owns a tool as physical or functional apparatus; CRE applies
+    only when it is itself a generated artifact.
+- test_id: CRE0-T030
+  english_concept: material
+  routing: different_family
+  analysis: Substance belongs to MAT even when used in production.
+- test_id: CRE0-T031
+  english_concept: production
+  routing: later_process_layer
+  analysis: Actual productive transformation belongs to CRE:1xx, not the entity layer.
+- test_id: CRE0-T032
+  english_concept: revision
+  routing: later_process_layer
+  analysis: Changing a pattern or artifact belongs to CRE:1xx; CRE:001 or CRE:011
+    only says it is manifest.
+- test_id: CRE0-T033
+  english_concept: testing
+  routing: different_family_or_compound
+  analysis: Testing requires LOG evaluation and perhaps CRE process roots; it is not
+    entailed by manifest artifact status.
+- test_id: CRE0-T034
+  english_concept: publication
+  routing: compound
+  analysis: Publication involves CON distribution and CRE artifact status, not an
+    atomic entity meaning here.
+- test_id: CRE0-T035
+  english_concept: design system
+  routing: compound_or_one_root
+  analysis: A coordinated shared production repertoire can use CRE:020–022; formal
+    constraints and structural organization remain LOG and STR.
+- test_id: CRE0-T036
+  english_concept: style library
+  routing: one_root_or_compound
+  analysis: A coordinated shared collection of production-guiding patterns maps to
+    CRE:020–022, with DAT for encoded assets.
+- test_id: CRE0-T037
+  english_concept: template library
+  routing: one_root_or_compound
+  analysis: Use the systemic repertoire triplet when multiple participants maintain
+    it as one shared production resource.
+- test_id: CRE0-T038
+  english_concept: generative environment
+  routing: compound
+  analysis: The repertoire is CRE:02x, while active generation is CRE:1xx and tooling
+    or infrastructure belongs to STR, DAT, or MAT.
+- test_id: CRE0-T039
+  english_concept: creative tradition
+  routing: compound
+  analysis: CRE supplies a shared repertoire and LIF supplies the community and cultural
+    continuity.
+- test_id: CRE0-T040
+  english_concept: shared repertoire
+  routing: one_root
+  analysis: CRE:020–022 directly owns a coordinated collection of generative patterns
+    maintained across multiple participants.
+- test_id: CRE0-T041
+  english_concept: many unrelated templates
+  routing: multiple_roots_not_one_systemic_root
+  analysis: Unrelated templates do not form one CRE:02x repertoire without coordinated
+    maintenance as one shared production resource.
+- test_id: CRE0-T042
+  english_concept: private pattern
+  routing: one_root
+  analysis: Use CRE:000–002 for a generative pattern maintained within one reference
+    entity.
+- test_id: CRE0-T043
+  english_concept: pattern used by a team
+  routing: compound_or_scope_resolution
+  analysis: Use CRE:02x if coordinated as a shared repertoire; mere use of one private
+    pattern by others does not automatically change its scope.
+- test_id: CRE0-T044
+  english_concept: manifest template
+  routing: one_root
+  analysis: CRE:001 affirms a presently expressed internal generative pattern without
+    claiming active production.
+- test_id: CRE0-T045
+  english_concept: dormant template
+  routing: one_root
+  analysis: CRE:002 affirms that the internal generative pattern remains maintained
+    but unexpressed.
+- test_id: CRE0-T046
+  english_concept: manifest artifact
+  routing: one_root
+  analysis: CRE:011 affirms a presently manifest generated product without claiming
+    it is finished, used, or valuable.
+- test_id: CRE0-T047
+  english_concept: dormant artifact
+  routing: one_root
+  analysis: CRE:012 affirms a maintained generated product that is not presently manifest;
+    it is not a merely intended future product.
+- test_id: CRE0-T048
+  english_concept: manifest repertoire
+  routing: one_root
+  analysis: CRE:021 affirms a presently expressed shared generative repertoire without
+    claiming that production is running.
+- test_id: CRE0-T049
+  english_concept: dormant repertoire
+  routing: one_root
+  analysis: CRE:022 affirms a maintained but presently unexpressed shared generative
+    repertoire.
+- test_id: CRE0-T050
+  english_concept: persistent pattern uncertain
+  routing: runtime
+  analysis: CRE:000[2]/num leaves persistence uncertain; it does not select lexical
+    dormancy.
+- test_id: CRE0-T051
+  english_concept: manifest artifact denied
+  routing: runtime
+  analysis: CRE:011[0] denies present manifestation without deleting the artifact
+    or automatically affirming dormancy.
+- test_id: CRE0-T052
+  english_concept: dormant repertoire affirmed
+  routing: runtime_and_lexical
+  analysis: CRE:022[1] confirms maintained-but-unexpressed systemic repertoire status.
+- test_id: CRE0-T053
+  english_concept: persistent plus manifest artifact
+  routing: two_compatible_roots
+  analysis: CRE:010 and CRE:011 may co-occur because persistence is neutral about
+    present manifestation.
+- test_id: CRE0-T054
+  english_concept: persistent plus dormant artifact
+  routing: two_compatible_roots
+  analysis: CRE:010 and CRE:012 may co-occur because persistence is neutral about
+    present manifestation.
+- test_id: CRE0-T055
+  english_concept: manifest and dormant artifact simultaneously
+  routing: contradiction
+  analysis: CRE:011 and CRE:012 are mutually exclusive for the same artifact at one
+    reference time.
+- test_id: CRE0-T056
+  english_concept: beautiful artwork
+  routing: compound_or_unresolved_value
+  analysis: CRE supplies artifact identity; aesthetic appraisal belongs to MIN or
+    later value vocabulary.
+- test_id: CRE0-T057
+  english_concept: successful design
+  routing: compound
+  analysis: CRE supplies pattern or artifact identity; success requires a goal, criterion,
+    and evaluation.
+- test_id: CRE0-T058
+  english_concept: copyrighted work
+  routing: compound
+  analysis: CRE supplies artifact identity while legal authority, ownership, and restriction
+    require LIF, CON, and LOG.
+- test_id: CRE0-T059
+  english_concept: versioned design
+  routing: compound
+  analysis: CRE supplies generative entity identity and DAT or later provenance vocabulary
+    supplies version relations.
+- test_id: CRE0-T060
+  english_concept: procedural generation
+  routing: later_process_layer
+  analysis: Actual algorithmic generation belongs to CRE:1xx, with LOG and DAT for
+    algorithm and representation.
+- test_id: CRE0-T061
+  english_concept: emergent form
+  routing: compound_or_later_process
+  analysis: CRE can identify the resulting artifact, while emergence and causal process
+    remain CRE:1xx or ORI.
+- test_id: CRE0-T062
+  english_concept: natural pattern
+  routing: different_family_or_compound
+  analysis: A regular physical form belongs to MAT or STR unless it functions as a
+    production source or generated product in the intended model.
+- test_id: CRE0-T063
+  english_concept: self-modifying template
+  routing: compound
+  analysis: CRE:0xx identifies the pattern and CRE:1xx later expresses its transformation;
+    self-reference and code remain separate.
+- test_id: CRE0-T064
+  english_concept: factory
+  routing: different_family_or_compound
+  analysis: A factory is LIF/STR/MAT infrastructure; CRE:02x applies only to its shared
+    generative repertoire.
+- test_id: CRE0-T065
+  english_concept: creative capacity
+  routing: later_relation_layer
+  analysis: Capacity to generate belongs to CRE:2xx, not the entity layer.
+- test_id: CRE0-T066
+  english_concept: reusable component
+  routing: compound
+  analysis: CRE may identify a generated artifact or pattern, while reusability is
+    a production relation or affordance.
+- test_id: CRE0-T067
+  english_concept: design language
+  routing: compound_or_one_root
+  analysis: CRE:02x can supply the shared generative repertoire; LOG and STR supply
+    constraints and organization.
+- test_id: CRE0-T068
+  english_concept: source code
+  routing: compound
+  analysis: DAT owns the encoded program, LOG owns formal operations, and CRE:0xx
+    applies if it functions as a production-generating pattern.
+- test_id: CRE0-T069
+  english_concept: rendered image
+  routing: compound
+  analysis: CRE identifies the generated artifact, DAT the pixel representation, and
+    MAT the display medium.
+- test_id: CRE0-T070
+  english_concept: musical score
+  routing: compound
+  analysis: CRE can identify a production-guiding pattern, DAT its notation, and CON
+    or MAT the performance and sound realization.
+- test_id: CRE0-T071
+  english_concept: performance
+  routing: later_process_or_compound
+  analysis: A performance is an event involving agents and production; the entity
+    layer may identify its pattern or resulting artifact but not the event itself.
+- test_id: CRE0-T072
+  english_concept: persistent internal generative pattern identity
+  routing: one_root
+  analysis: CRE:000[1] directly affirms the root's invariant without adding production,
+    completion, quality, value, authorship, or medium.
+- test_id: CRE0-T073
+  english_concept: persistent internal generative pattern uncertain
+  routing: runtime
+  analysis: CRE:000[2]/num leaves this exact persistent claim unresolved and does
+    not select a lexical sibling.
+- test_id: CRE0-T074
+  english_concept: persistent internal generative pattern encoded
+  routing: compound
+  analysis: DAT supplies representation while CRE:000 supplies Creation-domain identity
+    and expression status.
+- test_id: CRE0-T075
+  english_concept: persistent internal generative pattern physically realized
+  routing: compound
+  analysis: MAT supplies medium and substance while CRE:000 supplies generative identity.
+- test_id: CRE0-T076
+  english_concept: persistent internal generative pattern mentally appreciated
+  routing: compound
+  analysis: MIN supplies cognition or valuation while CRE:000 remains the Creation
+    entity independently.
+- test_id: CRE0-T077
+  english_concept: persistent internal generative pattern being produced
+  routing: compound
+  analysis: CRE:000 supplies the entity; CRE:1xx must separately supply actual production
+    or transformation.
+- test_id: CRE0-T078
+  english_concept: manifest internal generative pattern identity
+  routing: one_root
+  analysis: CRE:001[1] directly affirms the root's invariant without adding production,
+    completion, quality, value, authorship, or medium.
+- test_id: CRE0-T079
+  english_concept: manifest internal generative pattern uncertain
+  routing: runtime
+  analysis: CRE:001[2]/num leaves this exact manifest claim unresolved and does not
+    select a lexical sibling.
+- test_id: CRE0-T080
+  english_concept: manifest internal generative pattern encoded
+  routing: compound
+  analysis: DAT supplies representation while CRE:001 supplies Creation-domain identity
+    and expression status.
+- test_id: CRE0-T081
+  english_concept: manifest internal generative pattern physically realized
+  routing: compound
+  analysis: MAT supplies medium and substance while CRE:001 supplies generative identity.
+- test_id: CRE0-T082
+  english_concept: manifest internal generative pattern mentally appreciated
+  routing: compound
+  analysis: MIN supplies cognition or valuation while CRE:001 remains the Creation
+    entity independently.
+- test_id: CRE0-T083
+  english_concept: manifest internal generative pattern being produced
+  routing: compound
+  analysis: CRE:001 supplies the entity; CRE:1xx must separately supply actual production
+    or transformation.
+- test_id: CRE0-T084
+  english_concept: dormant internal generative pattern identity
+  routing: one_root
+  analysis: CRE:002[1] directly affirms the root's invariant without adding production,
+    completion, quality, value, authorship, or medium.
+- test_id: CRE0-T085
+  english_concept: dormant internal generative pattern uncertain
+  routing: runtime
+  analysis: CRE:002[2]/num leaves this exact dormant claim unresolved and does not
+    select a lexical sibling.
+- test_id: CRE0-T086
+  english_concept: dormant internal generative pattern encoded
+  routing: compound
+  analysis: DAT supplies representation while CRE:002 supplies Creation-domain identity
+    and expression status.
+- test_id: CRE0-T087
+  english_concept: dormant internal generative pattern physically realized
+  routing: compound
+  analysis: MAT supplies medium and substance while CRE:002 supplies generative identity.
+- test_id: CRE0-T088
+  english_concept: dormant internal generative pattern mentally appreciated
+  routing: compound
+  analysis: MIN supplies cognition or valuation while CRE:002 remains the Creation
+    entity independently.
+- test_id: CRE0-T089
+  english_concept: dormant internal generative pattern being produced
+  routing: compound
+  analysis: CRE:002 supplies the entity; CRE:1xx must separately supply actual production
+    or transformation.
+- test_id: CRE0-T090
+  english_concept: persistent generated artifact identity
+  routing: one_root
+  analysis: CRE:010[1] directly affirms the root's invariant without adding production,
+    completion, quality, value, authorship, or medium.
+- test_id: CRE0-T091
+  english_concept: persistent generated artifact uncertain
+  routing: runtime
+  analysis: CRE:010[2]/num leaves this exact persistent claim unresolved and does
+    not select a lexical sibling.
+- test_id: CRE0-T092
+  english_concept: persistent generated artifact encoded
+  routing: compound
+  analysis: DAT supplies representation while CRE:010 supplies Creation-domain identity
+    and expression status.
+- test_id: CRE0-T093
+  english_concept: persistent generated artifact physically realized
+  routing: compound
+  analysis: MAT supplies medium and substance while CRE:010 supplies generative identity.
+- test_id: CRE0-T094
+  english_concept: persistent generated artifact mentally appreciated
+  routing: compound
+  analysis: MIN supplies cognition or valuation while CRE:010 remains the Creation
+    entity independently.
+- test_id: CRE0-T095
+  english_concept: persistent generated artifact being produced
+  routing: compound
+  analysis: CRE:010 supplies the entity; CRE:1xx must separately supply actual production
+    or transformation.
+- test_id: CRE0-T096
+  english_concept: manifest generated artifact identity
+  routing: one_root
+  analysis: CRE:011[1] directly affirms the root's invariant without adding production,
+    completion, quality, value, authorship, or medium.
+- test_id: CRE0-T097
+  english_concept: manifest generated artifact uncertain
+  routing: runtime
+  analysis: CRE:011[2]/num leaves this exact manifest claim unresolved and does not
+    select a lexical sibling.
+- test_id: CRE0-T098
+  english_concept: manifest generated artifact encoded
+  routing: compound
+  analysis: DAT supplies representation while CRE:011 supplies Creation-domain identity
+    and expression status.
+- test_id: CRE0-T099
+  english_concept: manifest generated artifact physically realized
+  routing: compound
+  analysis: MAT supplies medium and substance while CRE:011 supplies generative identity.
+- test_id: CRE0-T100
+  english_concept: manifest generated artifact mentally appreciated
+  routing: compound
+  analysis: MIN supplies cognition or valuation while CRE:011 remains the Creation
+    entity independently.
+- test_id: CRE0-T101
+  english_concept: manifest generated artifact being produced
+  routing: compound
+  analysis: CRE:011 supplies the entity; CRE:1xx must separately supply actual production
+    or transformation.
+- test_id: CRE0-T102
+  english_concept: dormant generated artifact identity
+  routing: one_root
+  analysis: CRE:012[1] directly affirms the root's invariant without adding production,
+    completion, quality, value, authorship, or medium.
+- test_id: CRE0-T103
+  english_concept: dormant generated artifact uncertain
+  routing: runtime
+  analysis: CRE:012[2]/num leaves this exact dormant claim unresolved and does not
+    select a lexical sibling.
+- test_id: CRE0-T104
+  english_concept: dormant generated artifact encoded
+  routing: compound
+  analysis: DAT supplies representation while CRE:012 supplies Creation-domain identity
+    and expression status.
+- test_id: CRE0-T105
+  english_concept: dormant generated artifact physically realized
+  routing: compound
+  analysis: MAT supplies medium and substance while CRE:012 supplies generative identity.
+- test_id: CRE0-T106
+  english_concept: dormant generated artifact mentally appreciated
+  routing: compound
+  analysis: MIN supplies cognition or valuation while CRE:012 remains the Creation
+    entity independently.
+- test_id: CRE0-T107
+  english_concept: dormant generated artifact being produced
+  routing: compound
+  analysis: CRE:012 supplies the entity; CRE:1xx must separately supply actual production
+    or transformation.
+- test_id: CRE0-T108
+  english_concept: persistent shared generative repertoire identity
+  routing: one_root
+  analysis: CRE:020[1] directly affirms the root's invariant without adding production,
+    completion, quality, value, authorship, or medium.
+- test_id: CRE0-T109
+  english_concept: persistent shared generative repertoire uncertain
+  routing: runtime
+  analysis: CRE:020[2]/num leaves this exact persistent claim unresolved and does
+    not select a lexical sibling.
+- test_id: CRE0-T110
+  english_concept: persistent shared generative repertoire encoded
+  routing: compound
+  analysis: DAT supplies representation while CRE:020 supplies Creation-domain identity
+    and expression status.
+- test_id: CRE0-T111
+  english_concept: persistent shared generative repertoire physically realized
+  routing: compound
+  analysis: MAT supplies medium and substance while CRE:020 supplies generative identity.
+- test_id: CRE0-T112
+  english_concept: persistent shared generative repertoire mentally appreciated
+  routing: compound
+  analysis: MIN supplies cognition or valuation while CRE:020 remains the Creation
+    entity independently.
+- test_id: CRE0-T113
+  english_concept: persistent shared generative repertoire being produced
+  routing: compound
+  analysis: CRE:020 supplies the entity; CRE:1xx must separately supply actual production
+    or transformation.
+- test_id: CRE0-T114
+  english_concept: manifest shared generative repertoire identity
+  routing: one_root
+  analysis: CRE:021[1] directly affirms the root's invariant without adding production,
+    completion, quality, value, authorship, or medium.
+- test_id: CRE0-T115
+  english_concept: manifest shared generative repertoire uncertain
+  routing: runtime
+  analysis: CRE:021[2]/num leaves this exact manifest claim unresolved and does not
+    select a lexical sibling.
+- test_id: CRE0-T116
+  english_concept: manifest shared generative repertoire encoded
+  routing: compound
+  analysis: DAT supplies representation while CRE:021 supplies Creation-domain identity
+    and expression status.
+- test_id: CRE0-T117
+  english_concept: manifest shared generative repertoire physically realized
+  routing: compound
+  analysis: MAT supplies medium and substance while CRE:021 supplies generative identity.
+- test_id: CRE0-T118
+  english_concept: manifest shared generative repertoire mentally appreciated
+  routing: compound
+  analysis: MIN supplies cognition or valuation while CRE:021 remains the Creation
+    entity independently.
+- test_id: CRE0-T119
+  english_concept: manifest shared generative repertoire being produced
+  routing: compound
+  analysis: CRE:021 supplies the entity; CRE:1xx must separately supply actual production
+    or transformation.
+- test_id: CRE0-T120
+  english_concept: dormant shared generative repertoire identity
+  routing: one_root
+  analysis: CRE:022[1] directly affirms the root's invariant without adding production,
+    completion, quality, value, authorship, or medium.
+- test_id: CRE0-T121
+  english_concept: dormant shared generative repertoire uncertain
+  routing: runtime
+  analysis: CRE:022[2]/num leaves this exact dormant claim unresolved and does not
+    select a lexical sibling.
+- test_id: CRE0-T122
+  english_concept: dormant shared generative repertoire encoded
+  routing: compound
+  analysis: DAT supplies representation while CRE:022 supplies Creation-domain identity
+    and expression status.
+- test_id: CRE0-T123
+  english_concept: dormant shared generative repertoire physically realized
+  routing: compound
+  analysis: MAT supplies medium and substance while CRE:022 supplies generative identity.
+- test_id: CRE0-T124
+  english_concept: dormant shared generative repertoire mentally appreciated
+  routing: compound
+  analysis: MIN supplies cognition or valuation while CRE:022 remains the Creation
+    entity independently.
+- test_id: CRE0-T125
+  english_concept: dormant shared generative repertoire being produced
+  routing: compound
+  analysis: CRE:022 supplies the entity; CRE:1xx must separately supply actual production
+    or transformation.

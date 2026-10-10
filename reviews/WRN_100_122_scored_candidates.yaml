@@ -1,0 +1,1500 @@
+---
+metadata:
+  title: WRN:100–122 adversarial semantic candidates
+  status: approved_and_canonical_by_delegated_authority
+  architecture_version: '1.0'
+  range: WRN:100–122
+  roots_reviewed: 9
+  candidate_architectures_per_root: 5
+  scored_categories:
+  - atomicity
+  - address_fit
+  - family_fit
+  - neighbor_separation
+  - cross_family_separation
+  - compound_usefulness
+  - everyday_language_coverage
+  - technical_coverage
+  generated_fields_changed: false
+  roots_canonicalized:
+  - WRN:100
+  - WRN:101
+  - WRN:102
+  - WRN:110
+  - WRN:111
+  - WRN:112
+  - WRN:120
+  - WRN:121
+  - WRN:122
+  approval_record: migrations/WRN_100_122_semantic_approval.yaml
+roots:
+- canonical_id: WRN:100
+  fixed_generated_fields:
+    canonical_id: WRN:100
+    universal_slot: completed inward process
+    family_qualified_transliteration: da·kam
+    local_compact_root: kam
+    formal_carrier: da-ki-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 2
+  current_meaning_rationale: The provisional choice follows the inward/self and completed
+    slot labels and favors familiar safety operations such as diagnosis, monitoring,
+    warning, isolation, containment, and emergency response.
+  candidates:
+  - candidate_id: current_phase2
+    title: diagnosis complete
+    invariant_candidate: An inward process of detecting, classifying, or tracing an
+      entity's fault has reached a stable result.
+    analysis:
+      why_it_fits: The provisional choice follows the inward/self and completed slot
+        labels and favors familiar safety operations such as diagnosis, monitoring,
+        warning, isolation, containment, and emergency response.
+      useful_coverage: It reaches common operational language for inspecting, detecting,
+        alerting, blocking, quarantining, shutting down, closing incidents, and staging
+        contingencies.
+      semantic_territory_consumed: It mixes assessment, evidence, communication, access
+        control, spatial isolation, shutdown, repair-like containment, coordination,
+        planning, scheduling, and response policy.
+      conflicts_or_future_limitations: Triplets do not preserve one process center,
+        1x2 roots improperly encode plans or schedules, and definitions collide with
+        MIN, DAT, CON, LOG, STR, REP, and ORI.
+    scores:
+      atomicity: 6
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 53
+    maximum: 80
+  - candidate_id: adverse_transformation
+    title: completed internal degradation
+    invariant_candidate: Completion of an adverse transformation originating within
+      one reference entity by which that entity enters a less acceptable condition.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral transformation toward
+        a less acceptable condition; the second trit alone distinguishes self-originating
+        degradation, one-source target impairment, or propagation across multiple
+        system participants, and the third alone selects phase.
+      useful_coverage: It covers degrade, fail, deteriorate, corrupt, damage, impair,
+        infect, compromise, contaminate, propagate, cascade, and spread across ordinary,
+        safety, programming, and mathematical domains.
+      semantic_territory_consumed: Only adverse change and its scope. Physical mechanics,
+        movement, creation or destruction, invalidity, diagnosis, warning messages,
+        containment, repair, causal attribution, probability, plans, and time remain
+        separate.
+      conflicts_or_future_limitations: The context-sensitive phrase less acceptable
+        requires an applicable evaluation frame, but it is narrower and more compositional
+        than importing domain-specific mechanics or response policy.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: assessment_detection
+    title: completed internal fault assessment
+    invariant_candidate: A completed determination process that establishes whether
+      an adverse condition obtains at inward/self scope.
+    analysis:
+      why_it_fits: Internal inspection, target hazard assessment, and systemic incident
+        correlation align naturally with inward, outward, and shared scope and support
+        all three process phases.
+      useful_coverage: It covers inspect, test, monitor, diagnose, triage, classify,
+        trace, assess, audit, and correlate incidents.
+      semantic_territory_consumed: Acquisition and interpretation of evidence about
+        adverse conditions rather than adverse transformation itself.
+      conflicts_or_future_limitations: MIN owns cognition, DAT owns observations and
+        evidence, LOG owns tests, and many noncognitive systems fail without assessment;
+        the architecture would make Warning dependent on an observer.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 8
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 68
+    maximum: 80
+  - candidate_id: protective_control_response
+    title: completed internal containment
+    invariant_candidate: A completed containment process that prevents an adverse
+      condition from extending beyond a boundary at inward/self scope.
+    analysis:
+      why_it_fits: Self-protection, target isolation, and coordinated containment
+        form recognizable safety responses at the three scopes.
+      useful_coverage: It covers shield, block, quarantine, isolate, contain, suppress,
+        shut down, evacuate, and emergency response.
+      semantic_territory_consumed: Restoration, access control, structural separation,
+        movement, policy enforcement, and coordinated action.
+      conflicts_or_future_limitations: REP owns restoration, LOG owns permission and
+        blocking, STR/MOV owns isolation, CON owns coordination, and one atomic grid
+        cannot merge these different control mechanisms.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 60
+    maximum: 80
+  - candidate_id: warning_communication
+    title: completed internal alarm emission
+    invariant_candidate: A completed communicative process that emits one warning
+      expression toward the endpoint selected by inward/self scope.
+    analysis:
+      why_it_fits: Internal alarms, directed warnings, and shared broadcasts follow
+        inward, outward, and systemic communication scope and are central to ordinary
+        warning language.
+      useful_coverage: It covers signal, alert, notify, warn, announce danger, escalate,
+        broadcast, and publish an incident notice.
+      semantic_territory_consumed: Expression, message content, endpoints, channels,
+        delivery, and participant awareness.
+      conflicts_or_future_limitations: CON owns exchange and participant direction,
+        DAT owns message content, and warning communication can occur when no adverse
+        transformation exists.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 4
+      neighbor_separation: 7
+      cross_family_separation: 3
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 56
+    maximum: 80
+  recommended_candidate_id: adverse_transformation
+  recommendation_reason: Only this architecture preserves one substrate-neutral WRN
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical WRN:0xx conditions, and avoids absorbing mechanics,
+    diagnosis, evidence, warning communication, containment, repair, rules, probability,
+    or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: WRN:101
+  fixed_generated_fields:
+    canonical_id: WRN:101
+    universal_slot: active inward process
+    family_qualified_transliteration: da·kak
+    local_compact_root: kak
+    formal_carrier: da-ki-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 4
+  current_meaning_rationale: The provisional choice follows the inward/self and active
+    slot labels and favors familiar safety operations such as diagnosis, monitoring,
+    warning, isolation, containment, and emergency response.
+  candidates:
+  - candidate_id: current_phase2
+    title: self-monitoring
+    invariant_candidate: An entity is actively checking itself for danger, error,
+      damage, or corruption.
+    analysis:
+      why_it_fits: The provisional choice follows the inward/self and active slot
+        labels and favors familiar safety operations such as diagnosis, monitoring,
+        warning, isolation, containment, and emergency response.
+      useful_coverage: It reaches common operational language for inspecting, detecting,
+        alerting, blocking, quarantining, shutting down, closing incidents, and staging
+        contingencies.
+      semantic_territory_consumed: It mixes assessment, evidence, communication, access
+        control, spatial isolation, shutdown, repair-like containment, coordination,
+        planning, scheduling, and response policy.
+      conflicts_or_future_limitations: Triplets do not preserve one process center,
+        1x2 roots improperly encode plans or schedules, and definitions collide with
+        MIN, DAT, CON, LOG, STR, REP, and ORI.
+    scores:
+      atomicity: 6
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 53
+    maximum: 80
+  - candidate_id: adverse_transformation
+    title: active internal degradation
+    invariant_candidate: An ongoing adverse transformation originating within one
+      reference entity by which that entity is entering a less acceptable condition.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral transformation toward
+        a less acceptable condition; the second trit alone distinguishes self-originating
+        degradation, one-source target impairment, or propagation across multiple
+        system participants, and the third alone selects phase.
+      useful_coverage: It covers degrade, fail, deteriorate, corrupt, damage, impair,
+        infect, compromise, contaminate, propagate, cascade, and spread across ordinary,
+        safety, programming, and mathematical domains.
+      semantic_territory_consumed: Only adverse change and its scope. Physical mechanics,
+        movement, creation or destruction, invalidity, diagnosis, warning messages,
+        containment, repair, causal attribution, probability, plans, and time remain
+        separate.
+      conflicts_or_future_limitations: The context-sensitive phrase less acceptable
+        requires an applicable evaluation frame, but it is narrower and more compositional
+        than importing domain-specific mechanics or response policy.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: assessment_detection
+    title: active internal fault assessment
+    invariant_candidate: A active determination process that establishes whether an
+      adverse condition obtains at inward/self scope.
+    analysis:
+      why_it_fits: Internal inspection, target hazard assessment, and systemic incident
+        correlation align naturally with inward, outward, and shared scope and support
+        all three process phases.
+      useful_coverage: It covers inspect, test, monitor, diagnose, triage, classify,
+        trace, assess, audit, and correlate incidents.
+      semantic_territory_consumed: Acquisition and interpretation of evidence about
+        adverse conditions rather than adverse transformation itself.
+      conflicts_or_future_limitations: MIN owns cognition, DAT owns observations and
+        evidence, LOG owns tests, and many noncognitive systems fail without assessment;
+        the architecture would make Warning dependent on an observer.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 8
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 68
+    maximum: 80
+  - candidate_id: protective_control_response
+    title: active internal containment
+    invariant_candidate: A active containment process that prevents an adverse condition
+      from extending beyond a boundary at inward/self scope.
+    analysis:
+      why_it_fits: Self-protection, target isolation, and coordinated containment
+        form recognizable safety responses at the three scopes.
+      useful_coverage: It covers shield, block, quarantine, isolate, contain, suppress,
+        shut down, evacuate, and emergency response.
+      semantic_territory_consumed: Restoration, access control, structural separation,
+        movement, policy enforcement, and coordinated action.
+      conflicts_or_future_limitations: REP owns restoration, LOG owns permission and
+        blocking, STR/MOV owns isolation, CON owns coordination, and one atomic grid
+        cannot merge these different control mechanisms.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 60
+    maximum: 80
+  - candidate_id: warning_communication
+    title: active internal alarm emission
+    invariant_candidate: A active communicative process that emits one warning expression
+      toward the endpoint selected by inward/self scope.
+    analysis:
+      why_it_fits: Internal alarms, directed warnings, and shared broadcasts follow
+        inward, outward, and systemic communication scope and are central to ordinary
+        warning language.
+      useful_coverage: It covers signal, alert, notify, warn, announce danger, escalate,
+        broadcast, and publish an incident notice.
+      semantic_territory_consumed: Expression, message content, endpoints, channels,
+        delivery, and participant awareness.
+      conflicts_or_future_limitations: CON owns exchange and participant direction,
+        DAT owns message content, and warning communication can occur when no adverse
+        transformation exists.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 4
+      neighbor_separation: 7
+      cross_family_separation: 3
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 56
+    maximum: 80
+  recommended_candidate_id: adverse_transformation
+  recommendation_reason: Only this architecture preserves one substrate-neutral WRN
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical WRN:0xx conditions, and avoids absorbing mechanics,
+    diagnosis, evidence, warning communication, containment, repair, rules, probability,
+    or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: WRN:102
+  fixed_generated_fields:
+    canonical_id: WRN:102
+    universal_slot: pending inward process
+    family_qualified_transliteration: da·kan
+    local_compact_root: kan
+    formal_carrier: da-ki-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 0
+  current_meaning_rationale: The provisional choice follows the inward/self and nonactualized
+    slot labels and favors familiar safety operations such as diagnosis, monitoring,
+    warning, isolation, containment, and emergency response.
+  candidates:
+  - candidate_id: current_phase2
+    title: pending inspection
+    invariant_candidate: An inward diagnostic process is required or scheduled but
+      has not begun.
+    analysis:
+      why_it_fits: The provisional choice follows the inward/self and nonactualized
+        slot labels and favors familiar safety operations such as diagnosis, monitoring,
+        warning, isolation, containment, and emergency response.
+      useful_coverage: It reaches common operational language for inspecting, detecting,
+        alerting, blocking, quarantining, shutting down, closing incidents, and staging
+        contingencies.
+      semantic_territory_consumed: It mixes assessment, evidence, communication, access
+        control, spatial isolation, shutdown, repair-like containment, coordination,
+        planning, scheduling, and response policy.
+      conflicts_or_future_limitations: Triplets do not preserve one process center,
+        1x2 roots improperly encode plans or schedules, and definitions collide with
+        MIN, DAT, CON, LOG, STR, REP, and ORI.
+    scores:
+      atomicity: 5
+      address_fit: 6
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: adverse_transformation
+    title: nonactualized internal degradation
+    invariant_candidate: A nonactualized adverse transformation originating within
+      one reference entity by which that entity would enter a less acceptable condition.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral transformation toward
+        a less acceptable condition; the second trit alone distinguishes self-originating
+        degradation, one-source target impairment, or propagation across multiple
+        system participants, and the third alone selects phase.
+      useful_coverage: It covers degrade, fail, deteriorate, corrupt, damage, impair,
+        infect, compromise, contaminate, propagate, cascade, and spread across ordinary,
+        safety, programming, and mathematical domains.
+      semantic_territory_consumed: Only adverse change and its scope. Physical mechanics,
+        movement, creation or destruction, invalidity, diagnosis, warning messages,
+        containment, repair, causal attribution, probability, plans, and time remain
+        separate.
+      conflicts_or_future_limitations: The context-sensitive phrase less acceptable
+        requires an applicable evaluation frame, but it is narrower and more compositional
+        than importing domain-specific mechanics or response policy.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: assessment_detection
+    title: nonactualized internal fault assessment
+    invariant_candidate: A nonactualized determination process that establishes whether
+      an adverse condition obtains at inward/self scope.
+    analysis:
+      why_it_fits: Internal inspection, target hazard assessment, and systemic incident
+        correlation align naturally with inward, outward, and shared scope and support
+        all three process phases.
+      useful_coverage: It covers inspect, test, monitor, diagnose, triage, classify,
+        trace, assess, audit, and correlate incidents.
+      semantic_territory_consumed: Acquisition and interpretation of evidence about
+        adverse conditions rather than adverse transformation itself.
+      conflicts_or_future_limitations: MIN owns cognition, DAT owns observations and
+        evidence, LOG owns tests, and many noncognitive systems fail without assessment;
+        the architecture would make Warning dependent on an observer.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 8
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 68
+    maximum: 80
+  - candidate_id: protective_control_response
+    title: nonactualized internal containment
+    invariant_candidate: A nonactualized containment process that prevents an adverse
+      condition from extending beyond a boundary at inward/self scope.
+    analysis:
+      why_it_fits: Self-protection, target isolation, and coordinated containment
+        form recognizable safety responses at the three scopes.
+      useful_coverage: It covers shield, block, quarantine, isolate, contain, suppress,
+        shut down, evacuate, and emergency response.
+      semantic_territory_consumed: Restoration, access control, structural separation,
+        movement, policy enforcement, and coordinated action.
+      conflicts_or_future_limitations: REP owns restoration, LOG owns permission and
+        blocking, STR/MOV owns isolation, CON owns coordination, and one atomic grid
+        cannot merge these different control mechanisms.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 60
+    maximum: 80
+  - candidate_id: warning_communication
+    title: nonactualized internal alarm emission
+    invariant_candidate: A nonactualized communicative process that emits one warning
+      expression toward the endpoint selected by inward/self scope.
+    analysis:
+      why_it_fits: Internal alarms, directed warnings, and shared broadcasts follow
+        inward, outward, and systemic communication scope and are central to ordinary
+        warning language.
+      useful_coverage: It covers signal, alert, notify, warn, announce danger, escalate,
+        broadcast, and publish an incident notice.
+      semantic_territory_consumed: Expression, message content, endpoints, channels,
+        delivery, and participant awareness.
+      conflicts_or_future_limitations: CON owns exchange and participant direction,
+        DAT owns message content, and warning communication can occur when no adverse
+        transformation exists.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 4
+      neighbor_separation: 7
+      cross_family_separation: 3
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 56
+    maximum: 80
+  recommended_candidate_id: adverse_transformation
+  recommendation_reason: Only this architecture preserves one substrate-neutral WRN
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical WRN:0xx conditions, and avoids absorbing mechanics,
+    diagnosis, evidence, warning communication, containment, repair, rules, probability,
+    or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: WRN:110
+  fixed_generated_fields:
+    canonical_id: WRN:110
+    universal_slot: completed outward process
+    family_qualified_transliteration: da·kom
+    local_compact_root: kom
+    formal_carrier: da-ki-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 4
+  current_meaning_rationale: The provisional choice follows the outward/target and
+    completed slot labels and favors familiar safety operations such as diagnosis,
+    monitoring, warning, isolation, containment, and emergency response.
+  candidates:
+  - candidate_id: current_phase2
+    title: containment complete
+    invariant_candidate: A warning, block, isolation, or shutdown applied to a target
+      has finished and bounded the hazard.
+    analysis:
+      why_it_fits: The provisional choice follows the outward/target and completed
+        slot labels and favors familiar safety operations such as diagnosis, monitoring,
+        warning, isolation, containment, and emergency response.
+      useful_coverage: It reaches common operational language for inspecting, detecting,
+        alerting, blocking, quarantining, shutting down, closing incidents, and staging
+        contingencies.
+      semantic_territory_consumed: It mixes assessment, evidence, communication, access
+        control, spatial isolation, shutdown, repair-like containment, coordination,
+        planning, scheduling, and response policy.
+      conflicts_or_future_limitations: Triplets do not preserve one process center,
+        1x2 roots improperly encode plans or schedules, and definitions collide with
+        MIN, DAT, CON, LOG, STR, REP, and ORI.
+    scores:
+      atomicity: 6
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 53
+    maximum: 80
+  - candidate_id: adverse_transformation
+    title: completed target impairment
+    invariant_candidate: Completion of an adverse transformation by which one distinct
+      source causes one reference target to enter a less acceptable condition.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral transformation toward
+        a less acceptable condition; the second trit alone distinguishes self-originating
+        degradation, one-source target impairment, or propagation across multiple
+        system participants, and the third alone selects phase.
+      useful_coverage: It covers degrade, fail, deteriorate, corrupt, damage, impair,
+        infect, compromise, contaminate, propagate, cascade, and spread across ordinary,
+        safety, programming, and mathematical domains.
+      semantic_territory_consumed: Only adverse change and its scope. Physical mechanics,
+        movement, creation or destruction, invalidity, diagnosis, warning messages,
+        containment, repair, causal attribution, probability, plans, and time remain
+        separate.
+      conflicts_or_future_limitations: The context-sensitive phrase less acceptable
+        requires an applicable evaluation frame, but it is narrower and more compositional
+        than importing domain-specific mechanics or response policy.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: assessment_detection
+    title: completed target hazard assessment
+    invariant_candidate: A completed determination process that establishes whether
+      an adverse condition obtains at outward/target scope.
+    analysis:
+      why_it_fits: Internal inspection, target hazard assessment, and systemic incident
+        correlation align naturally with inward, outward, and shared scope and support
+        all three process phases.
+      useful_coverage: It covers inspect, test, monitor, diagnose, triage, classify,
+        trace, assess, audit, and correlate incidents.
+      semantic_territory_consumed: Acquisition and interpretation of evidence about
+        adverse conditions rather than adverse transformation itself.
+      conflicts_or_future_limitations: MIN owns cognition, DAT owns observations and
+        evidence, LOG owns tests, and many noncognitive systems fail without assessment;
+        the architecture would make Warning dependent on an observer.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 8
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 67
+    maximum: 80
+  - candidate_id: protective_control_response
+    title: completed target containment
+    invariant_candidate: A completed containment process that prevents an adverse
+      condition from extending beyond a boundary at outward/target scope.
+    analysis:
+      why_it_fits: Self-protection, target isolation, and coordinated containment
+        form recognizable safety responses at the three scopes.
+      useful_coverage: It covers shield, block, quarantine, isolate, contain, suppress,
+        shut down, evacuate, and emergency response.
+      semantic_territory_consumed: Restoration, access control, structural separation,
+        movement, policy enforcement, and coordinated action.
+      conflicts_or_future_limitations: REP owns restoration, LOG owns permission and
+        blocking, STR/MOV owns isolation, CON owns coordination, and one atomic grid
+        cannot merge these different control mechanisms.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 60
+    maximum: 80
+  - candidate_id: warning_communication
+    title: completed target warning
+    invariant_candidate: A completed communicative process that emits one warning
+      expression toward the endpoint selected by outward/target scope.
+    analysis:
+      why_it_fits: Internal alarms, directed warnings, and shared broadcasts follow
+        inward, outward, and systemic communication scope and are central to ordinary
+        warning language.
+      useful_coverage: It covers signal, alert, notify, warn, announce danger, escalate,
+        broadcast, and publish an incident notice.
+      semantic_territory_consumed: Expression, message content, endpoints, channels,
+        delivery, and participant awareness.
+      conflicts_or_future_limitations: CON owns exchange and participant direction,
+        DAT owns message content, and warning communication can occur when no adverse
+        transformation exists.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 5
+      neighbor_separation: 7
+      cross_family_separation: 3
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 57
+    maximum: 80
+  recommended_candidate_id: adverse_transformation
+  recommendation_reason: Only this architecture preserves one substrate-neutral WRN
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical WRN:0xx conditions, and avoids absorbing mechanics,
+    diagnosis, evidence, warning communication, containment, repair, rules, probability,
+    or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: WRN:111
+  fixed_generated_fields:
+    canonical_id: WRN:111
+    universal_slot: active outward process
+    family_qualified_transliteration: da·kok
+    local_compact_root: kok
+    formal_carrier: da-ki-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 6
+  current_meaning_rationale: The provisional choice follows the outward/target and
+    active slot labels and favors familiar safety operations such as diagnosis, monitoring,
+    warning, isolation, containment, and emergency response.
+  candidates:
+  - candidate_id: current_phase2
+    title: warn or isolate
+    invariant_candidate: A dangerous target is actively being signaled, blocked, quarantined,
+      or shut down.
+    analysis:
+      why_it_fits: The provisional choice follows the outward/target and active slot
+        labels and favors familiar safety operations such as diagnosis, monitoring,
+        warning, isolation, containment, and emergency response.
+      useful_coverage: It reaches common operational language for inspecting, detecting,
+        alerting, blocking, quarantining, shutting down, closing incidents, and staging
+        contingencies.
+      semantic_territory_consumed: It mixes assessment, evidence, communication, access
+        control, spatial isolation, shutdown, repair-like containment, coordination,
+        planning, scheduling, and response policy.
+      conflicts_or_future_limitations: Triplets do not preserve one process center,
+        1x2 roots improperly encode plans or schedules, and definitions collide with
+        MIN, DAT, CON, LOG, STR, REP, and ORI.
+    scores:
+      atomicity: 6
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 53
+    maximum: 80
+  - candidate_id: adverse_transformation
+    title: active target impairment
+    invariant_candidate: An ongoing adverse transformation by which one distinct source
+      causes one reference target to enter a less acceptable condition.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral transformation toward
+        a less acceptable condition; the second trit alone distinguishes self-originating
+        degradation, one-source target impairment, or propagation across multiple
+        system participants, and the third alone selects phase.
+      useful_coverage: It covers degrade, fail, deteriorate, corrupt, damage, impair,
+        infect, compromise, contaminate, propagate, cascade, and spread across ordinary,
+        safety, programming, and mathematical domains.
+      semantic_territory_consumed: Only adverse change and its scope. Physical mechanics,
+        movement, creation or destruction, invalidity, diagnosis, warning messages,
+        containment, repair, causal attribution, probability, plans, and time remain
+        separate.
+      conflicts_or_future_limitations: The context-sensitive phrase less acceptable
+        requires an applicable evaluation frame, but it is narrower and more compositional
+        than importing domain-specific mechanics or response policy.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: assessment_detection
+    title: active target hazard assessment
+    invariant_candidate: A active determination process that establishes whether an
+      adverse condition obtains at outward/target scope.
+    analysis:
+      why_it_fits: Internal inspection, target hazard assessment, and systemic incident
+        correlation align naturally with inward, outward, and shared scope and support
+        all three process phases.
+      useful_coverage: It covers inspect, test, monitor, diagnose, triage, classify,
+        trace, assess, audit, and correlate incidents.
+      semantic_territory_consumed: Acquisition and interpretation of evidence about
+        adverse conditions rather than adverse transformation itself.
+      conflicts_or_future_limitations: MIN owns cognition, DAT owns observations and
+        evidence, LOG owns tests, and many noncognitive systems fail without assessment;
+        the architecture would make Warning dependent on an observer.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 8
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 67
+    maximum: 80
+  - candidate_id: protective_control_response
+    title: active target containment
+    invariant_candidate: A active containment process that prevents an adverse condition
+      from extending beyond a boundary at outward/target scope.
+    analysis:
+      why_it_fits: Self-protection, target isolation, and coordinated containment
+        form recognizable safety responses at the three scopes.
+      useful_coverage: It covers shield, block, quarantine, isolate, contain, suppress,
+        shut down, evacuate, and emergency response.
+      semantic_territory_consumed: Restoration, access control, structural separation,
+        movement, policy enforcement, and coordinated action.
+      conflicts_or_future_limitations: REP owns restoration, LOG owns permission and
+        blocking, STR/MOV owns isolation, CON owns coordination, and one atomic grid
+        cannot merge these different control mechanisms.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 60
+    maximum: 80
+  - candidate_id: warning_communication
+    title: active target warning
+    invariant_candidate: A active communicative process that emits one warning expression
+      toward the endpoint selected by outward/target scope.
+    analysis:
+      why_it_fits: Internal alarms, directed warnings, and shared broadcasts follow
+        inward, outward, and systemic communication scope and are central to ordinary
+        warning language.
+      useful_coverage: It covers signal, alert, notify, warn, announce danger, escalate,
+        broadcast, and publish an incident notice.
+      semantic_territory_consumed: Expression, message content, endpoints, channels,
+        delivery, and participant awareness.
+      conflicts_or_future_limitations: CON owns exchange and participant direction,
+        DAT owns message content, and warning communication can occur when no adverse
+        transformation exists.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 5
+      neighbor_separation: 7
+      cross_family_separation: 3
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 57
+    maximum: 80
+  recommended_candidate_id: adverse_transformation
+  recommendation_reason: Only this architecture preserves one substrate-neutral WRN
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical WRN:0xx conditions, and avoids absorbing mechanics,
+    diagnosis, evidence, warning communication, containment, repair, rules, probability,
+    or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: WRN:112
+  fixed_generated_fields:
+    canonical_id: WRN:112
+    universal_slot: pending outward process
+    family_qualified_transliteration: da·kon
+    local_compact_root: kon
+    formal_carrier: da-ki-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 2
+  current_meaning_rationale: The provisional choice follows the outward/target and
+    nonactualized slot labels and favors familiar safety operations such as diagnosis,
+    monitoring, warning, isolation, containment, and emergency response.
+  candidates:
+  - candidate_id: current_phase2
+    title: pending containment
+    invariant_candidate: A warning or isolation action toward a target is prepared
+      but not yet executing.
+    analysis:
+      why_it_fits: The provisional choice follows the outward/target and nonactualized
+        slot labels and favors familiar safety operations such as diagnosis, monitoring,
+        warning, isolation, containment, and emergency response.
+      useful_coverage: It reaches common operational language for inspecting, detecting,
+        alerting, blocking, quarantining, shutting down, closing incidents, and staging
+        contingencies.
+      semantic_territory_consumed: It mixes assessment, evidence, communication, access
+        control, spatial isolation, shutdown, repair-like containment, coordination,
+        planning, scheduling, and response policy.
+      conflicts_or_future_limitations: Triplets do not preserve one process center,
+        1x2 roots improperly encode plans or schedules, and definitions collide with
+        MIN, DAT, CON, LOG, STR, REP, and ORI.
+    scores:
+      atomicity: 5
+      address_fit: 6
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: adverse_transformation
+    title: nonactualized target impairment
+    invariant_candidate: A nonactualized adverse transformation by which one distinct
+      source would cause one reference target to enter a less acceptable condition.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral transformation toward
+        a less acceptable condition; the second trit alone distinguishes self-originating
+        degradation, one-source target impairment, or propagation across multiple
+        system participants, and the third alone selects phase.
+      useful_coverage: It covers degrade, fail, deteriorate, corrupt, damage, impair,
+        infect, compromise, contaminate, propagate, cascade, and spread across ordinary,
+        safety, programming, and mathematical domains.
+      semantic_territory_consumed: Only adverse change and its scope. Physical mechanics,
+        movement, creation or destruction, invalidity, diagnosis, warning messages,
+        containment, repair, causal attribution, probability, plans, and time remain
+        separate.
+      conflicts_or_future_limitations: The context-sensitive phrase less acceptable
+        requires an applicable evaluation frame, but it is narrower and more compositional
+        than importing domain-specific mechanics or response policy.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: assessment_detection
+    title: nonactualized target hazard assessment
+    invariant_candidate: A nonactualized determination process that establishes whether
+      an adverse condition obtains at outward/target scope.
+    analysis:
+      why_it_fits: Internal inspection, target hazard assessment, and systemic incident
+        correlation align naturally with inward, outward, and shared scope and support
+        all three process phases.
+      useful_coverage: It covers inspect, test, monitor, diagnose, triage, classify,
+        trace, assess, audit, and correlate incidents.
+      semantic_territory_consumed: Acquisition and interpretation of evidence about
+        adverse conditions rather than adverse transformation itself.
+      conflicts_or_future_limitations: MIN owns cognition, DAT owns observations and
+        evidence, LOG owns tests, and many noncognitive systems fail without assessment;
+        the architecture would make Warning dependent on an observer.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 8
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 67
+    maximum: 80
+  - candidate_id: protective_control_response
+    title: nonactualized target containment
+    invariant_candidate: A nonactualized containment process that prevents an adverse
+      condition from extending beyond a boundary at outward/target scope.
+    analysis:
+      why_it_fits: Self-protection, target isolation, and coordinated containment
+        form recognizable safety responses at the three scopes.
+      useful_coverage: It covers shield, block, quarantine, isolate, contain, suppress,
+        shut down, evacuate, and emergency response.
+      semantic_territory_consumed: Restoration, access control, structural separation,
+        movement, policy enforcement, and coordinated action.
+      conflicts_or_future_limitations: REP owns restoration, LOG owns permission and
+        blocking, STR/MOV owns isolation, CON owns coordination, and one atomic grid
+        cannot merge these different control mechanisms.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 60
+    maximum: 80
+  - candidate_id: warning_communication
+    title: nonactualized target warning
+    invariant_candidate: A nonactualized communicative process that emits one warning
+      expression toward the endpoint selected by outward/target scope.
+    analysis:
+      why_it_fits: Internal alarms, directed warnings, and shared broadcasts follow
+        inward, outward, and systemic communication scope and are central to ordinary
+        warning language.
+      useful_coverage: It covers signal, alert, notify, warn, announce danger, escalate,
+        broadcast, and publish an incident notice.
+      semantic_territory_consumed: Expression, message content, endpoints, channels,
+        delivery, and participant awareness.
+      conflicts_or_future_limitations: CON owns exchange and participant direction,
+        DAT owns message content, and warning communication can occur when no adverse
+        transformation exists.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 5
+      neighbor_separation: 7
+      cross_family_separation: 3
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 57
+    maximum: 80
+  recommended_candidate_id: adverse_transformation
+  recommendation_reason: Only this architecture preserves one substrate-neutral WRN
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical WRN:0xx conditions, and avoids absorbing mechanics,
+    diagnosis, evidence, warning communication, containment, repair, rules, probability,
+    or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: WRN:120
+  fixed_generated_fields:
+    canonical_id: WRN:120
+    universal_slot: completed systemic process
+    family_qualified_transliteration: da·kim
+    local_compact_root: kim
+    formal_carrier: da-ki-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 0
+  current_meaning_rationale: The provisional choice follows the shared/systemic and
+    completed slot labels and favors familiar safety operations such as diagnosis,
+    monitoring, warning, isolation, containment, and emergency response.
+  candidates:
+  - candidate_id: current_phase2
+    title: incident closure
+    invariant_candidate: A coordinated system-level detection and containment process
+      has reached a stable end state.
+    analysis:
+      why_it_fits: The provisional choice follows the shared/systemic and completed
+        slot labels and favors familiar safety operations such as diagnosis, monitoring,
+        warning, isolation, containment, and emergency response.
+      useful_coverage: It reaches common operational language for inspecting, detecting,
+        alerting, blocking, quarantining, shutting down, closing incidents, and staging
+        contingencies.
+      semantic_territory_consumed: It mixes assessment, evidence, communication, access
+        control, spatial isolation, shutdown, repair-like containment, coordination,
+        planning, scheduling, and response policy.
+      conflicts_or_future_limitations: Triplets do not preserve one process center,
+        1x2 roots improperly encode plans or schedules, and definitions collide with
+        MIN, DAT, CON, LOG, STR, REP, and ORI.
+    scores:
+      atomicity: 6
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 52
+    maximum: 80
+  - candidate_id: adverse_transformation
+    title: completed systemic propagation
+    invariant_candidate: Completion of an adverse transformation by which one correlated
+      adverse condition becomes distributed across multiple participant entities within
+      a shared system.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral transformation toward
+        a less acceptable condition; the second trit alone distinguishes self-originating
+        degradation, one-source target impairment, or propagation across multiple
+        system participants, and the third alone selects phase.
+      useful_coverage: It covers degrade, fail, deteriorate, corrupt, damage, impair,
+        infect, compromise, contaminate, propagate, cascade, and spread across ordinary,
+        safety, programming, and mathematical domains.
+      semantic_territory_consumed: Only adverse change and its scope. Physical mechanics,
+        movement, creation or destruction, invalidity, diagnosis, warning messages,
+        containment, repair, causal attribution, probability, plans, and time remain
+        separate.
+      conflicts_or_future_limitations: The context-sensitive phrase less acceptable
+        requires an applicable evaluation frame, but it is narrower and more compositional
+        than importing domain-specific mechanics or response policy.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: assessment_detection
+    title: completed systemic incident assessment
+    invariant_candidate: A completed determination process that establishes whether
+      an adverse condition obtains at shared/systemic scope.
+    analysis:
+      why_it_fits: Internal inspection, target hazard assessment, and systemic incident
+        correlation align naturally with inward, outward, and shared scope and support
+        all three process phases.
+      useful_coverage: It covers inspect, test, monitor, diagnose, triage, classify,
+        trace, assess, audit, and correlate incidents.
+      semantic_territory_consumed: Acquisition and interpretation of evidence about
+        adverse conditions rather than adverse transformation itself.
+      conflicts_or_future_limitations: MIN owns cognition, DAT owns observations and
+        evidence, LOG owns tests, and many noncognitive systems fail without assessment;
+        the architecture would make Warning dependent on an observer.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 8
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 68
+    maximum: 80
+  - candidate_id: protective_control_response
+    title: completed systemic containment
+    invariant_candidate: A completed containment process that prevents an adverse
+      condition from extending beyond a boundary at shared/systemic scope.
+    analysis:
+      why_it_fits: Self-protection, target isolation, and coordinated containment
+        form recognizable safety responses at the three scopes.
+      useful_coverage: It covers shield, block, quarantine, isolate, contain, suppress,
+        shut down, evacuate, and emergency response.
+      semantic_territory_consumed: Restoration, access control, structural separation,
+        movement, policy enforcement, and coordinated action.
+      conflicts_or_future_limitations: REP owns restoration, LOG owns permission and
+        blocking, STR/MOV owns isolation, CON owns coordination, and one atomic grid
+        cannot merge these different control mechanisms.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 3
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 59
+    maximum: 80
+  - candidate_id: warning_communication
+    title: completed shared warning
+    invariant_candidate: A completed communicative process that emits one warning
+      expression toward the endpoint selected by shared/systemic scope.
+    analysis:
+      why_it_fits: Internal alarms, directed warnings, and shared broadcasts follow
+        inward, outward, and systemic communication scope and are central to ordinary
+        warning language.
+      useful_coverage: It covers signal, alert, notify, warn, announce danger, escalate,
+        broadcast, and publish an incident notice.
+      semantic_territory_consumed: Expression, message content, endpoints, channels,
+        delivery, and participant awareness.
+      conflicts_or_future_limitations: CON owns exchange and participant direction,
+        DAT owns message content, and warning communication can occur when no adverse
+        transformation exists.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 5
+      neighbor_separation: 7
+      cross_family_separation: 2
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 56
+    maximum: 80
+  recommended_candidate_id: adverse_transformation
+  recommendation_reason: Only this architecture preserves one substrate-neutral WRN
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical WRN:0xx conditions, and avoids absorbing mechanics,
+    diagnosis, evidence, warning communication, containment, repair, rules, probability,
+    or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: WRN:121
+  fixed_generated_fields:
+    canonical_id: WRN:121
+    universal_slot: active systemic process
+    family_qualified_transliteration: da·kik
+    local_compact_root: kik
+    formal_carrier: da-ki-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 2
+  current_meaning_rationale: The provisional choice follows the shared/systemic and
+    active slot labels and favors familiar safety operations such as diagnosis, monitoring,
+    warning, isolation, containment, and emergency response.
+  candidates:
+  - candidate_id: current_phase2
+    title: emergency response
+    invariant_candidate: A network or community is actively detecting, warning about,
+      isolating, or responding to a distributed incident.
+    analysis:
+      why_it_fits: The provisional choice follows the shared/systemic and active slot
+        labels and favors familiar safety operations such as diagnosis, monitoring,
+        warning, isolation, containment, and emergency response.
+      useful_coverage: It reaches common operational language for inspecting, detecting,
+        alerting, blocking, quarantining, shutting down, closing incidents, and staging
+        contingencies.
+      semantic_territory_consumed: It mixes assessment, evidence, communication, access
+        control, spatial isolation, shutdown, repair-like containment, coordination,
+        planning, scheduling, and response policy.
+      conflicts_or_future_limitations: Triplets do not preserve one process center,
+        1x2 roots improperly encode plans or schedules, and definitions collide with
+        MIN, DAT, CON, LOG, STR, REP, and ORI.
+    scores:
+      atomicity: 6
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 52
+    maximum: 80
+  - candidate_id: adverse_transformation
+    title: active systemic propagation
+    invariant_candidate: An ongoing adverse transformation by which one correlated
+      adverse condition becomes distributed across multiple participant entities within
+      a shared system.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral transformation toward
+        a less acceptable condition; the second trit alone distinguishes self-originating
+        degradation, one-source target impairment, or propagation across multiple
+        system participants, and the third alone selects phase.
+      useful_coverage: It covers degrade, fail, deteriorate, corrupt, damage, impair,
+        infect, compromise, contaminate, propagate, cascade, and spread across ordinary,
+        safety, programming, and mathematical domains.
+      semantic_territory_consumed: Only adverse change and its scope. Physical mechanics,
+        movement, creation or destruction, invalidity, diagnosis, warning messages,
+        containment, repair, causal attribution, probability, plans, and time remain
+        separate.
+      conflicts_or_future_limitations: The context-sensitive phrase less acceptable
+        requires an applicable evaluation frame, but it is narrower and more compositional
+        than importing domain-specific mechanics or response policy.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: assessment_detection
+    title: active systemic incident assessment
+    invariant_candidate: A active determination process that establishes whether an
+      adverse condition obtains at shared/systemic scope.
+    analysis:
+      why_it_fits: Internal inspection, target hazard assessment, and systemic incident
+        correlation align naturally with inward, outward, and shared scope and support
+        all three process phases.
+      useful_coverage: It covers inspect, test, monitor, diagnose, triage, classify,
+        trace, assess, audit, and correlate incidents.
+      semantic_territory_consumed: Acquisition and interpretation of evidence about
+        adverse conditions rather than adverse transformation itself.
+      conflicts_or_future_limitations: MIN owns cognition, DAT owns observations and
+        evidence, LOG owns tests, and many noncognitive systems fail without assessment;
+        the architecture would make Warning dependent on an observer.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 8
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 68
+    maximum: 80
+  - candidate_id: protective_control_response
+    title: active systemic containment
+    invariant_candidate: A active containment process that prevents an adverse condition
+      from extending beyond a boundary at shared/systemic scope.
+    analysis:
+      why_it_fits: Self-protection, target isolation, and coordinated containment
+        form recognizable safety responses at the three scopes.
+      useful_coverage: It covers shield, block, quarantine, isolate, contain, suppress,
+        shut down, evacuate, and emergency response.
+      semantic_territory_consumed: Restoration, access control, structural separation,
+        movement, policy enforcement, and coordinated action.
+      conflicts_or_future_limitations: REP owns restoration, LOG owns permission and
+        blocking, STR/MOV owns isolation, CON owns coordination, and one atomic grid
+        cannot merge these different control mechanisms.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 3
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 59
+    maximum: 80
+  - candidate_id: warning_communication
+    title: active shared warning
+    invariant_candidate: A active communicative process that emits one warning expression
+      toward the endpoint selected by shared/systemic scope.
+    analysis:
+      why_it_fits: Internal alarms, directed warnings, and shared broadcasts follow
+        inward, outward, and systemic communication scope and are central to ordinary
+        warning language.
+      useful_coverage: It covers signal, alert, notify, warn, announce danger, escalate,
+        broadcast, and publish an incident notice.
+      semantic_territory_consumed: Expression, message content, endpoints, channels,
+        delivery, and participant awareness.
+      conflicts_or_future_limitations: CON owns exchange and participant direction,
+        DAT owns message content, and warning communication can occur when no adverse
+        transformation exists.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 5
+      neighbor_separation: 7
+      cross_family_separation: 2
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 56
+    maximum: 80
+  recommended_candidate_id: adverse_transformation
+  recommendation_reason: Only this architecture preserves one substrate-neutral WRN
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical WRN:0xx conditions, and avoids absorbing mechanics,
+    diagnosis, evidence, warning communication, containment, repair, rules, probability,
+    or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: WRN:122
+  fixed_generated_fields:
+    canonical_id: WRN:122
+    universal_slot: pending systemic process
+    family_qualified_transliteration: da·kin
+    local_compact_root: kin
+    formal_carrier: da-ki-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - -2
+  current_meaning_rationale: The provisional choice follows the shared/systemic and
+    nonactualized slot labels and favors familiar safety operations such as diagnosis,
+    monitoring, warning, isolation, containment, and emergency response.
+  candidates:
+  - candidate_id: current_phase2
+    title: staged contingency
+    invariant_candidate: A system-level warning or emergency response is prepared
+      but has not been activated.
+    analysis:
+      why_it_fits: The provisional choice follows the shared/systemic and nonactualized
+        slot labels and favors familiar safety operations such as diagnosis, monitoring,
+        warning, isolation, containment, and emergency response.
+      useful_coverage: It reaches common operational language for inspecting, detecting,
+        alerting, blocking, quarantining, shutting down, closing incidents, and staging
+        contingencies.
+      semantic_territory_consumed: It mixes assessment, evidence, communication, access
+        control, spatial isolation, shutdown, repair-like containment, coordination,
+        planning, scheduling, and response policy.
+      conflicts_or_future_limitations: Triplets do not preserve one process center,
+        1x2 roots improperly encode plans or schedules, and definitions collide with
+        MIN, DAT, CON, LOG, STR, REP, and ORI.
+    scores:
+      atomicity: 5
+      address_fit: 6
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 50
+    maximum: 80
+  - candidate_id: adverse_transformation
+    title: nonactualized systemic propagation
+    invariant_candidate: A nonactualized adverse transformation by which one correlated
+      adverse condition would become distributed across multiple participant entities
+      within a shared system.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral transformation toward
+        a less acceptable condition; the second trit alone distinguishes self-originating
+        degradation, one-source target impairment, or propagation across multiple
+        system participants, and the third alone selects phase.
+      useful_coverage: It covers degrade, fail, deteriorate, corrupt, damage, impair,
+        infect, compromise, contaminate, propagate, cascade, and spread across ordinary,
+        safety, programming, and mathematical domains.
+      semantic_territory_consumed: Only adverse change and its scope. Physical mechanics,
+        movement, creation or destruction, invalidity, diagnosis, warning messages,
+        containment, repair, causal attribution, probability, plans, and time remain
+        separate.
+      conflicts_or_future_limitations: The context-sensitive phrase less acceptable
+        requires an applicable evaluation frame, but it is narrower and more compositional
+        than importing domain-specific mechanics or response policy.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: assessment_detection
+    title: nonactualized systemic incident assessment
+    invariant_candidate: A nonactualized determination process that establishes whether
+      an adverse condition obtains at shared/systemic scope.
+    analysis:
+      why_it_fits: Internal inspection, target hazard assessment, and systemic incident
+        correlation align naturally with inward, outward, and shared scope and support
+        all three process phases.
+      useful_coverage: It covers inspect, test, monitor, diagnose, triage, classify,
+        trace, assess, audit, and correlate incidents.
+      semantic_territory_consumed: Acquisition and interpretation of evidence about
+        adverse conditions rather than adverse transformation itself.
+      conflicts_or_future_limitations: MIN owns cognition, DAT owns observations and
+        evidence, LOG owns tests, and many noncognitive systems fail without assessment;
+        the architecture would make Warning dependent on an observer.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 8
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 68
+    maximum: 80
+  - candidate_id: protective_control_response
+    title: nonactualized systemic containment
+    invariant_candidate: A nonactualized containment process that prevents an adverse
+      condition from extending beyond a boundary at shared/systemic scope.
+    analysis:
+      why_it_fits: Self-protection, target isolation, and coordinated containment
+        form recognizable safety responses at the three scopes.
+      useful_coverage: It covers shield, block, quarantine, isolate, contain, suppress,
+        shut down, evacuate, and emergency response.
+      semantic_territory_consumed: Restoration, access control, structural separation,
+        movement, policy enforcement, and coordinated action.
+      conflicts_or_future_limitations: REP owns restoration, LOG owns permission and
+        blocking, STR/MOV owns isolation, CON owns coordination, and one atomic grid
+        cannot merge these different control mechanisms.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 3
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 59
+    maximum: 80
+  - candidate_id: warning_communication
+    title: nonactualized shared warning
+    invariant_candidate: A nonactualized communicative process that emits one warning
+      expression toward the endpoint selected by shared/systemic scope.
+    analysis:
+      why_it_fits: Internal alarms, directed warnings, and shared broadcasts follow
+        inward, outward, and systemic communication scope and are central to ordinary
+        warning language.
+      useful_coverage: It covers signal, alert, notify, warn, announce danger, escalate,
+        broadcast, and publish an incident notice.
+      semantic_territory_consumed: Expression, message content, endpoints, channels,
+        delivery, and participant awareness.
+      conflicts_or_future_limitations: CON owns exchange and participant direction,
+        DAT owns message content, and warning communication can occur when no adverse
+        transformation exists.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 5
+      neighbor_separation: 7
+      cross_family_separation: 2
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 56
+    maximum: 80
+  recommended_candidate_id: adverse_transformation
+  recommendation_reason: Only this architecture preserves one substrate-neutral WRN
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical WRN:0xx conditions, and avoids absorbing mechanics,
+    diagnosis, evidence, warning communication, containment, repair, rules, probability,
+    or scheduling.
+  confidence: 0.97
+  canonicalized: true

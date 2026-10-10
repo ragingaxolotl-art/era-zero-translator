@@ -1,0 +1,575 @@
+---
+metadata:
+  title: ORI:000–022 English coverage and routing tests
+  status: review_evidence_not_translation_dictionary
+  range: ORI:000–022
+  test_count: 115
+  no_forced_atomization: true
+tests:
+- test_id: ORI0-T001
+  english_concept: exists
+  routing: one_root_or_compound
+  analysis: ORI:01x supplies a distinct-existence condition; the lexical third must
+    match persistent, occurrent, or latent status.
+- test_id: ORI0-T002
+  english_concept: is real
+  routing: one_root_or_context
+  analysis: ORI:010 or ORI:011 may qualify a distinct referent, but discourse must
+    identify the relevant reality.
+- test_id: ORI0-T003
+  english_concept: source
+  routing: one_root_or_compound
+  analysis: ORI:00x supplies source-ground status; a specific causal link or creator
+    role remains separate.
+- test_id: ORI0-T004
+  english_concept: origin
+  routing: ambiguous_compound
+  analysis: Origin may mean source-ground, temporal beginning, causal antecedent,
+    provenance, or creation and must be disambiguated.
+- test_id: ORI0-T005
+  english_concept: foundation
+  routing: one_root_or_compound
+  analysis: ORI:000 can state persistent source-grounding while STR handles structural
+    foundation and LOG handles axiomatic basis.
+- test_id: ORI0-T006
+  english_concept: currently operative source
+  routing: one_root
+  analysis: ORI:001 directly asserts an operative source-ground condition without
+    naming the causal mechanism.
+- test_id: ORI0-T007
+  english_concept: dormant source
+  routing: one_root
+  analysis: ORI:002 affirms a source-ground condition that belongs without present
+    operation.
+- test_id: ORI0-T008
+  english_concept: manifest entity
+  routing: one_root
+  analysis: ORI:011 asserts a distinct referent presently manifesting or changing
+    in the relevant reality.
+- test_id: ORI0-T009
+  english_concept: enduring entity
+  routing: one_root
+  analysis: ORI:010 asserts persistent distinct existence without requiring present
+    change.
+- test_id: ORI0-T010
+  english_concept: latent entity
+  routing: one_root
+  analysis: ORI:012 affirms membership in the relevant reality without present manifestation
+    or change.
+- test_id: ORI0-T011
+  english_concept: world order
+  routing: one_root_or_compound
+  analysis: ORI:020 asserts persistent shared-world condition; the content of its
+    laws requires LOG, STR, or later vocabulary.
+- test_id: ORI0-T012
+  english_concept: world unfolding
+  routing: one_root
+  analysis: ORI:021 asserts a shared-world condition presently expressed through change.
+- test_id: ORI0-T013
+  english_concept: dormant world condition
+  routing: one_root
+  analysis: ORI:022 affirms a shared-world condition without present expression through
+    change.
+- test_id: ORI0-T014
+  english_concept: fact
+  routing: different_family_or_compound
+  analysis: LOG owns propositional truth and DAT owns records; ORI only qualifies
+    the state of affairs itself.
+- test_id: ORI0-T015
+  english_concept: true proposition
+  routing: different_family
+  analysis: LOG owns truth evaluation; a true sentence is not identical to the condition
+    it represents.
+- test_id: ORI0-T016
+  english_concept: observed
+  routing: different_family_or_compound
+  analysis: MIN and DAT own observation and evidence; ORI does not equate manifestation
+    with being observed.
+- test_id: ORI0-T017
+  english_concept: physical object
+  routing: compound
+  analysis: MAT supplies substance and physical properties while ORI may separately
+    qualify existence.
+- test_id: ORI0-T018
+  english_concept: living being
+  routing: compound
+  analysis: LIF supplies living identity while ORI may separately qualify ontological
+    status.
+- test_id: ORI0-T019
+  english_concept: created artifact
+  routing: compound
+  analysis: CRE supplies artifact and production; ORI distinct existence adds only
+    ontological qualification.
+- test_id: ORI0-T020
+  english_concept: caused by
+  routing: reserved_relation
+  analysis: A causal relation belongs in later ORI relation review, not the entity-condition
+    layer.
+- test_id: ORI0-T021
+  english_concept: began
+  routing: process_layer
+  analysis: A beginning is an ORI process, not a source-ground condition.
+- test_id: ORI0-T022
+  english_concept: became real
+  routing: process_layer
+  analysis: Actualization or manifestation transition belongs to ORI:1xx, not an ORI:0xx
+    condition.
+- test_id: ORI0-T023
+  english_concept: possible
+  routing: reserved_relation_or_grammar
+  analysis: Unrestricted possibility is modal and must not be collapsed into lexical
+    latency.
+- test_id: ORI0-T024
+  english_concept: necessary
+  routing: reserved_relation_or_grammar
+  analysis: Necessity is modal and belongs outside this condition block.
+- test_id: ORI0-T025
+  english_concept: probable
+  routing: reserved_relation_or_grammar
+  analysis: Probability qualifies a claim or world relation and is not an entity condition.
+- test_id: ORI0-T026
+  english_concept: imaginary
+  routing: different_family_or_compound
+  analysis: MIN supplies imagination; whether an imagined referent also belongs to
+    a modeled reality is separate.
+- test_id: ORI0-T027
+  english_concept: fictional character
+  routing: compound
+  analysis: DAT or MIN supplies representation while ORI can qualify membership in
+    a fictional world only with explicit context.
+- test_id: ORI0-T028
+  english_concept: simulation object
+  routing: compound
+  analysis: DAT/LOG supplies model implementation and ORI qualifies membership in
+    the simulated reality.
+- test_id: ORI0-T029
+  english_concept: database row exists
+  routing: compound
+  analysis: DAT owns the record; ORI applies only if the modeled referent's ontology
+    is separately asserted.
+- test_id: ORI0-T030
+  english_concept: component enabled
+  routing: different_family
+  analysis: STR or LOG owns enablement; lexical ORI occurrence is not a software-enabled
+    flag.
+- test_id: ORI0-T031
+  english_concept: active process
+  routing: process_layer
+  analysis: Use the relevant family process root; ORI:0x1 remains a condition, not
+    an action.
+- test_id: ORI0-T032
+  english_concept: hidden object
+  routing: compound
+  analysis: ORI latency does not mean hidden; perception or access requires MIN, DAT,
+    or CON.
+- test_id: ORI0-T033
+  english_concept: future object
+  routing: compound_or_unresolved
+  analysis: Futurity is temporal; ORI latency alone does not mean future existence.
+- test_id: ORI0-T034
+  english_concept: past object
+  routing: compound_or_unresolved
+  analysis: Past time requires temporal qualification and is not identical to persistent
+    existence.
+- test_id: ORI0-T035
+  english_concept: counterfactual object
+  routing: reserved_relation
+  analysis: Counterfactual world membership is reserved for modal ORI relations or
+    later vocabulary.
+- test_id: ORI0-T036
+  english_concept: natural law
+  routing: compound
+  analysis: ORI:020 may qualify a world condition while LOG states the law's formal
+    content and applicability.
+- test_id: ORI0-T037
+  english_concept: social norm
+  routing: different_family_or_compound
+  analysis: CON and LOG own shared authority and rules; a norm is not automatically
+    a world condition.
+- test_id: ORI0-T038
+  english_concept: shared belief
+  routing: different_family
+  analysis: MIN and CON own collective cognition; agreement does not make a condition
+    ontological.
+- test_id: ORI0-T039
+  english_concept: consensus reality
+  routing: compound
+  analysis: ORI supplies shared-world qualification while MIN/CON supplies consensus
+    among participants.
+- test_id: ORI0-T040
+  english_concept: provenance
+  routing: reserved_relation
+  analysis: Historical source-to-result provenance belongs in an ORI relation or compound,
+    not source-ground identity alone.
+- test_id: ORI0-T041
+  english_concept: authorship
+  routing: different_family_or_compound
+  analysis: LIF/CON/CRE own author role, attribution, and production; ORI source-grounding
+    is not authorship.
+- test_id: ORI0-T042
+  english_concept: persistent and occurrent
+  routing: two_compatible_roots
+  analysis: Persistent identity and present occurrence may be jointly asserted for
+    the same condition.
+- test_id: ORI0-T043
+  english_concept: persistent and latent
+  routing: two_compatible_roots
+  analysis: A persistent condition may currently be latent without contradiction.
+- test_id: ORI0-T044
+  english_concept: occurrent and latent
+  routing: invalid_same_reference_claim
+  analysis: Occurrence and latency are mutually exclusive for the same condition at
+    one reference time.
+- test_id: ORI0-T045
+  english_concept: latent condition affirmed
+  routing: runtime_and_lexical
+  analysis: An ORI:0x2 root with runtime [1] confirms membership without present expression.
+- test_id: ORI0-T046
+  english_concept: occurrent condition uncertain
+  routing: runtime_and_lexical
+  analysis: An ORI:0x1 root with runtime [2]/num remains lexically occurrent while
+    the token claim is unresolved.
+- test_id: ORI0-T047
+  english_concept: persistent condition denied
+  routing: runtime_and_lexical
+  analysis: Runtime [0] denies the persistent claim without selecting occurrence or
+    latency.
+- test_id: ORI0-T048
+  english_concept: unknown existence
+  routing: runtime_or_epistemic
+  analysis: Use runtime [2]/num or MIN/DAT evidence; lexical latency never means unknown.
+- test_id: ORI0-T049
+  english_concept: unobserved existence
+  routing: compound
+  analysis: ORI asserts ontological status and MIN/DAT separately assert absence of
+    observation or evidence.
+- test_id: ORI0-T050
+  english_concept: deleted record
+  routing: different_family_or_compound
+  analysis: DAT owns deletion; the modeled referent may retain, lose, or never have
+    had ORI status independently.
+- test_id: ORI0-T051
+  english_concept: destroyed object
+  routing: compound
+  analysis: MAT/CRE/WRN supplies destruction while ORI may qualify the resulting existence
+    condition.
+- test_id: ORI0-T052
+  english_concept: repaired object
+  routing: compound
+  analysis: REP supplies restoration while ORI only qualifies the object's ontological
+    condition.
+- test_id: ORI0-T053
+  english_concept: same object across versions
+  routing: compound
+  analysis: ORI persistence can combine with DAT/STR identity criteria; it does not
+    define version equivalence.
+- test_id: ORI0-T054
+  english_concept: world invariant
+  routing: compound
+  analysis: ORI:020 supplies persistent world condition while LOG defines and proves
+    the invariant.
+- test_id: ORI0-T055
+  english_concept: eventual world state
+  routing: grammar_or_reserved_relation
+  analysis: Temporal eventuality is not lexical latency and requires timing grammar
+    or later ORI relations.
+- test_id: ORI0-T056
+  english_concept: nothing
+  routing: unresolved_vocabulary_gap
+  analysis: Absence or nullity is not assigned to this block and remains unresolved
+    or compositional.
+- test_id: ORI0-T057
+  english_concept: impossible entity
+  routing: reserved_relation
+  analysis: Impossibility is a modal qualification and must not be encoded as denial
+    of a latent condition.
+- test_id: ORI0-T058
+  english_concept: virtual resource
+  routing: compound
+  analysis: DAT/STR describes the computational resource while ORI may qualify model-relative
+    existence.
+- test_id: ORI0-T059
+  english_concept: law presently expressed
+  routing: one_root_or_compound
+  analysis: ORI:021 states occurrent shared-world expression while LOG supplies the
+    law's content.
+- test_id: ORI0-T060
+  english_concept: source no longer operative
+  routing: one_root_or_compound
+  analysis: ORI:002 may express latent source-grounding; explicit cessation may require
+    an ORI process or contour.
+- test_id: ORI0-T061
+  english_concept: entity ceased to manifest
+  routing: process_plus_condition
+  analysis: A transition process plus ORI:012 is needed; the latent condition alone
+    does not encode cessation.
+- test_id: ORI0-T062
+  english_concept: persistent source-ground condition identity
+  routing: one_root
+  analysis: ORI:000[1] directly affirms the invariant without adding a cause, process,
+    observer, representation, or physical substrate.
+- test_id: ORI0-T063
+  english_concept: persistent source-ground condition uncertain
+  routing: runtime
+  analysis: ORI:000[2]/num leaves this exact persistent condition claim unresolved
+    and does not select a lexical sibling.
+- test_id: ORI0-T064
+  english_concept: persistent source-ground condition represented
+  routing: compound
+  analysis: DAT supplies a representation while ORI:000 supplies the modeled ontological
+    condition.
+- test_id: ORI0-T065
+  english_concept: persistent source-ground condition proposition
+  routing: compound
+  analysis: LOG supplies a proposition about the condition while ORI:000 remains the
+    state-of-affairs claim.
+- test_id: ORI0-T066
+  english_concept: persistent source-ground condition believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while ORI:000 remains an objective ontological
+    claim.
+- test_id: ORI0-T067
+  english_concept: persistent source-ground condition physically realized
+  routing: compound
+  analysis: MAT supplies physical constitution while ORI:000 supplies only ontological
+    qualification.
+- test_id: ORI0-T068
+  english_concept: operative source-ground condition identity
+  routing: one_root
+  analysis: ORI:001[1] directly affirms the invariant without adding a cause, process,
+    observer, representation, or physical substrate.
+- test_id: ORI0-T069
+  english_concept: operative source-ground condition uncertain
+  routing: runtime
+  analysis: ORI:001[2]/num leaves this exact operative condition claim unresolved
+    and does not select a lexical sibling.
+- test_id: ORI0-T070
+  english_concept: operative source-ground condition represented
+  routing: compound
+  analysis: DAT supplies a representation while ORI:001 supplies the modeled ontological
+    condition.
+- test_id: ORI0-T071
+  english_concept: operative source-ground condition proposition
+  routing: compound
+  analysis: LOG supplies a proposition about the condition while ORI:001 remains the
+    state-of-affairs claim.
+- test_id: ORI0-T072
+  english_concept: operative source-ground condition believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while ORI:001 remains an objective ontological
+    claim.
+- test_id: ORI0-T073
+  english_concept: operative source-ground condition physically realized
+  routing: compound
+  analysis: MAT supplies physical constitution while ORI:001 supplies only ontological
+    qualification.
+- test_id: ORI0-T074
+  english_concept: latent source-ground condition identity
+  routing: one_root
+  analysis: ORI:002[1] directly affirms the invariant without adding a cause, process,
+    observer, representation, or physical substrate.
+- test_id: ORI0-T075
+  english_concept: latent source-ground condition uncertain
+  routing: runtime
+  analysis: ORI:002[2]/num leaves this exact latent condition claim unresolved and
+    does not select a lexical sibling.
+- test_id: ORI0-T076
+  english_concept: latent source-ground condition represented
+  routing: compound
+  analysis: DAT supplies a representation while ORI:002 supplies the modeled ontological
+    condition.
+- test_id: ORI0-T077
+  english_concept: latent source-ground condition proposition
+  routing: compound
+  analysis: LOG supplies a proposition about the condition while ORI:002 remains the
+    state-of-affairs claim.
+- test_id: ORI0-T078
+  english_concept: latent source-ground condition believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while ORI:002 remains an objective ontological
+    claim.
+- test_id: ORI0-T079
+  english_concept: latent source-ground condition physically realized
+  routing: compound
+  analysis: MAT supplies physical constitution while ORI:002 supplies only ontological
+    qualification.
+- test_id: ORI0-T080
+  english_concept: persistent distinct-existence condition identity
+  routing: one_root
+  analysis: ORI:010[1] directly affirms the invariant without adding a cause, process,
+    observer, representation, or physical substrate.
+- test_id: ORI0-T081
+  english_concept: persistent distinct-existence condition uncertain
+  routing: runtime
+  analysis: ORI:010[2]/num leaves this exact persistent condition claim unresolved
+    and does not select a lexical sibling.
+- test_id: ORI0-T082
+  english_concept: persistent distinct-existence condition represented
+  routing: compound
+  analysis: DAT supplies a representation while ORI:010 supplies the modeled ontological
+    condition.
+- test_id: ORI0-T083
+  english_concept: persistent distinct-existence condition proposition
+  routing: compound
+  analysis: LOG supplies a proposition about the condition while ORI:010 remains the
+    state-of-affairs claim.
+- test_id: ORI0-T084
+  english_concept: persistent distinct-existence condition believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while ORI:010 remains an objective ontological
+    claim.
+- test_id: ORI0-T085
+  english_concept: persistent distinct-existence condition physically realized
+  routing: compound
+  analysis: MAT supplies physical constitution while ORI:010 supplies only ontological
+    qualification.
+- test_id: ORI0-T086
+  english_concept: occurrent distinct-existence condition identity
+  routing: one_root
+  analysis: ORI:011[1] directly affirms the invariant without adding a cause, process,
+    observer, representation, or physical substrate.
+- test_id: ORI0-T087
+  english_concept: occurrent distinct-existence condition uncertain
+  routing: runtime
+  analysis: ORI:011[2]/num leaves this exact occurrent condition claim unresolved
+    and does not select a lexical sibling.
+- test_id: ORI0-T088
+  english_concept: occurrent distinct-existence condition represented
+  routing: compound
+  analysis: DAT supplies a representation while ORI:011 supplies the modeled ontological
+    condition.
+- test_id: ORI0-T089
+  english_concept: occurrent distinct-existence condition proposition
+  routing: compound
+  analysis: LOG supplies a proposition about the condition while ORI:011 remains the
+    state-of-affairs claim.
+- test_id: ORI0-T090
+  english_concept: occurrent distinct-existence condition believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while ORI:011 remains an objective ontological
+    claim.
+- test_id: ORI0-T091
+  english_concept: occurrent distinct-existence condition physically realized
+  routing: compound
+  analysis: MAT supplies physical constitution while ORI:011 supplies only ontological
+    qualification.
+- test_id: ORI0-T092
+  english_concept: latent distinct-existence condition identity
+  routing: one_root
+  analysis: ORI:012[1] directly affirms the invariant without adding a cause, process,
+    observer, representation, or physical substrate.
+- test_id: ORI0-T093
+  english_concept: latent distinct-existence condition uncertain
+  routing: runtime
+  analysis: ORI:012[2]/num leaves this exact latent condition claim unresolved and
+    does not select a lexical sibling.
+- test_id: ORI0-T094
+  english_concept: latent distinct-existence condition represented
+  routing: compound
+  analysis: DAT supplies a representation while ORI:012 supplies the modeled ontological
+    condition.
+- test_id: ORI0-T095
+  english_concept: latent distinct-existence condition proposition
+  routing: compound
+  analysis: LOG supplies a proposition about the condition while ORI:012 remains the
+    state-of-affairs claim.
+- test_id: ORI0-T096
+  english_concept: latent distinct-existence condition believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while ORI:012 remains an objective ontological
+    claim.
+- test_id: ORI0-T097
+  english_concept: latent distinct-existence condition physically realized
+  routing: compound
+  analysis: MAT supplies physical constitution while ORI:012 supplies only ontological
+    qualification.
+- test_id: ORI0-T098
+  english_concept: persistent shared-world condition identity
+  routing: one_root
+  analysis: ORI:020[1] directly affirms the invariant without adding a cause, process,
+    observer, representation, or physical substrate.
+- test_id: ORI0-T099
+  english_concept: persistent shared-world condition uncertain
+  routing: runtime
+  analysis: ORI:020[2]/num leaves this exact persistent condition claim unresolved
+    and does not select a lexical sibling.
+- test_id: ORI0-T100
+  english_concept: persistent shared-world condition represented
+  routing: compound
+  analysis: DAT supplies a representation while ORI:020 supplies the modeled ontological
+    condition.
+- test_id: ORI0-T101
+  english_concept: persistent shared-world condition proposition
+  routing: compound
+  analysis: LOG supplies a proposition about the condition while ORI:020 remains the
+    state-of-affairs claim.
+- test_id: ORI0-T102
+  english_concept: persistent shared-world condition believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while ORI:020 remains an objective ontological
+    claim.
+- test_id: ORI0-T103
+  english_concept: persistent shared-world condition physically realized
+  routing: compound
+  analysis: MAT supplies physical constitution while ORI:020 supplies only ontological
+    qualification.
+- test_id: ORI0-T104
+  english_concept: occurrent shared-world condition identity
+  routing: one_root
+  analysis: ORI:021[1] directly affirms the invariant without adding a cause, process,
+    observer, representation, or physical substrate.
+- test_id: ORI0-T105
+  english_concept: occurrent shared-world condition uncertain
+  routing: runtime
+  analysis: ORI:021[2]/num leaves this exact occurrent condition claim unresolved
+    and does not select a lexical sibling.
+- test_id: ORI0-T106
+  english_concept: occurrent shared-world condition represented
+  routing: compound
+  analysis: DAT supplies a representation while ORI:021 supplies the modeled ontological
+    condition.
+- test_id: ORI0-T107
+  english_concept: occurrent shared-world condition proposition
+  routing: compound
+  analysis: LOG supplies a proposition about the condition while ORI:021 remains the
+    state-of-affairs claim.
+- test_id: ORI0-T108
+  english_concept: occurrent shared-world condition believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while ORI:021 remains an objective ontological
+    claim.
+- test_id: ORI0-T109
+  english_concept: occurrent shared-world condition physically realized
+  routing: compound
+  analysis: MAT supplies physical constitution while ORI:021 supplies only ontological
+    qualification.
+- test_id: ORI0-T110
+  english_concept: latent shared-world condition identity
+  routing: one_root
+  analysis: ORI:022[1] directly affirms the invariant without adding a cause, process,
+    observer, representation, or physical substrate.
+- test_id: ORI0-T111
+  english_concept: latent shared-world condition uncertain
+  routing: runtime
+  analysis: ORI:022[2]/num leaves this exact latent condition claim unresolved and
+    does not select a lexical sibling.
+- test_id: ORI0-T112
+  english_concept: latent shared-world condition represented
+  routing: compound
+  analysis: DAT supplies a representation while ORI:022 supplies the modeled ontological
+    condition.
+- test_id: ORI0-T113
+  english_concept: latent shared-world condition proposition
+  routing: compound
+  analysis: LOG supplies a proposition about the condition while ORI:022 remains the
+    state-of-affairs claim.
+- test_id: ORI0-T114
+  english_concept: latent shared-world condition believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while ORI:022 remains an objective ontological
+    claim.
+- test_id: ORI0-T115
+  english_concept: latent shared-world condition physically realized
+  routing: compound
+  analysis: MAT supplies physical constitution while ORI:022 supplies only ontological
+    qualification.

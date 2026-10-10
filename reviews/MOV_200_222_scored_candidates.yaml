@@ -1,0 +1,1126 @@
+---
+metadata:
+  title: MOV:200–222 scored semantic candidates
+  status: peer_review_recommendations_not_canonical
+  roots_reviewed: 9
+  candidates_per_root_minimum: 4
+  generated_fields_changed: false
+  score_role: Decision aid only; written reasoning is authoritative.
+scoring:
+  scale: 1–10
+  categories:
+  - atomicity
+  - address_fit
+  - motion_family_fit
+  - neighbor_separation
+  - separation_from_mov_000_122
+  - cross_family_separation
+  - everyday_language_usefulness
+  - technical_programming_usefulness
+  - compound_usefulness
+  maximum_total: 90
+roots:
+- canonical_id: MOV:200
+  authority_status: provisional_pending_user_decision
+  fixed_generated_fields:
+    canonical_id: MOV:200
+    family: MOV
+    address: '200'
+    universal_slot: stable inward capacity
+    family_onset: gi
+    family_qualified_transliteration: gi·mam
+    local_compact_root: mam
+    formal_carrier: gi-nu-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+  current_provisional_meaning:
+    title: enduring self-mobility
+    definition: An enduring capacity of a mover to change its own position.
+    probable_rationale: The provisional author used stable + inward + capacity to
+      reserve an enduring ability of a mover to relocate itself. That choice correctly
+      avoided naming an actual movement event.
+  candidates:
+  - candidate_id: current_stable_mobility
+    title: stable mobility
+    invariant_candidate: An entity has a dependable capacity to change its own position.
+    analysis:
+      why_it_fits: It directly realizes stable inward Motion capacity.
+      useful_coverage: Mobile, locomotion-capable, enduring self-relocation capability.
+      semantic_territory_consumed: The mover's durable capacity, independent of any
+        current journey.
+      risks_and_future_limitations: The word stable can be confused with immobility;
+        dependable should not imply physical integrity or permission.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      motion_family_fit: 9
+      neighbor_separation: 8
+      separation_from_mov_000_122: 9
+      cross_family_separation: 8
+      everyday_language_usefulness: 9
+      technical_programming_usefulness: 9
+      compound_usefulness: 10
+    total: 80
+    maximum: 90
+  - candidate_id: movement_initiation_capability
+    title: movement-initiation capability
+    invariant_candidate: A mover has the capacity to begin displacement from its current
+      position.
+    analysis:
+      why_it_fits: Initiation is source-oriented and capacity-like.
+      useful_coverage: Can start, launch capability, ability to set off.
+      semantic_territory_consumed: The threshold between rest and motion.
+      risks_and_future_limitations: It crowds MOV:102 potential departure and excludes
+        movers that can continue but cannot self-initiate.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      motion_family_fit: 9
+      neighbor_separation: 7
+      separation_from_mov_000_122: 5
+      cross_family_separation: 8
+      everyday_language_usefulness: 8
+      technical_programming_usefulness: 9
+      compound_usefulness: 8
+    total: 70
+    maximum: 90
+  - candidate_id: range_of_motion
+    title: range of motion
+    invariant_candidate: A mover has a bounded set of positions it can occupy through
+      movement.
+    analysis:
+      why_it_fits: A stable inward capacity can be construed as a reachable set.
+      useful_coverage: Joint range, travel envelope, workspace, mobility radius.
+      semantic_territory_consumed: Quantified extents of possible self-position.
+      risks_and_future_limitations: It imports boundaries, geometry, and physical
+        constitution from STR and MAT; it is better composed from mobility plus bounds.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      motion_family_fit: 8
+      neighbor_separation: 8
+      separation_from_mov_000_122: 9
+      cross_family_separation: 5
+      everyday_language_usefulness: 8
+      technical_programming_usefulness: 8
+      compound_usefulness: 8
+    total: 70
+    maximum: 90
+  - candidate_id: positional_freedom
+    title: positional freedom
+    invariant_candidate: A mover is free of restrictions that would prevent self-displacement.
+    analysis:
+      why_it_fits: Freedom can behave like a stable inward movement capacity.
+      useful_coverage: Freedom of movement, unconstrained travel, maneuverability.
+      semantic_territory_consumed: Absence of external restrictions.
+      risks_and_future_limitations: It makes LOG permission and STR constraints part
+        of the atom and treats capacity as a negative condition.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      motion_family_fit: 8
+      neighbor_separation: 7
+      separation_from_mov_000_122: 8
+      cross_family_separation: 5
+      everyday_language_usefulness: 8
+      technical_programming_usefulness: 7
+      compound_usefulness: 8
+    total: 66
+    maximum: 90
+  recommended_winner: current_stable_mobility
+  recommended_title: enduring self-mobility
+  recommended_invariant_definition: An enduring capacity of a mover to change its
+    own position.
+  confidence: 0.94
+  canonicalized: false
+- canonical_id: MOV:201
+  authority_status: provisional_pending_user_decision
+  fixed_generated_fields:
+    canonical_id: MOV:201
+    family: MOV
+    address: '201'
+    universal_slot: active inward capacity
+    family_onset: gi
+    family_qualified_transliteration: gi·mak
+    local_compact_root: mak
+    formal_carrier: gi-nu-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+  current_provisional_meaning:
+    title: available self-mobility
+    definition: A mover's capacity to change its own position that is presently available
+      for exercise.
+    probable_rationale: The provisional meaning tried to make the inward capacity
+      presently expressed. It correctly sought an active capacity, but the phrase
+      'being exercised' accidentally asserted a movement process.
+  candidates:
+  - candidate_id: current_expressed_mobility
+    title: expressed mobility
+    invariant_candidate: An entity's capacity for movement is currently available
+      and being exercised.
+    analysis:
+      why_it_fits: It makes the inward capacity current and salient.
+      useful_coverage: Ready-and-moving, enabled locomotion, expressed mobility.
+      semantic_territory_consumed: Both availability and actual exercise.
+      risks_and_future_limitations: Combining availability with exercise violates
+        atomicity and collides directly with MOV:121.
+    scores:
+      atomicity: 7
+      address_fit: 7
+      motion_family_fit: 9
+      neighbor_separation: 6
+      separation_from_mov_000_122: 3
+      cross_family_separation: 8
+      everyday_language_usefulness: 8
+      technical_programming_usefulness: 8
+      compound_usefulness: 8
+    total: 64
+    maximum: 90
+  - candidate_id: available_self_mobility
+    title: available self-mobility
+    invariant_candidate: A mover's capacity to change its own position is presently
+      available for exercise.
+    analysis:
+      why_it_fits: It is precisely an active inward Motion capacity without asserting
+        motion.
+      useful_coverage: Can move now, operable locomotion, currently usable mobility.
+      semantic_territory_consumed: Present availability of the mover's own positional-change
+        capacity.
+      risks_and_future_limitations: Availability must not be paraphrased as permission,
+        readiness plan, or actual movement.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      motion_family_fit: 10
+      neighbor_separation: 9
+      separation_from_mov_000_122: 10
+      cross_family_separation: 9
+      everyday_language_usefulness: 9
+      technical_programming_usefulness: 10
+      compound_usefulness: 10
+    total: 87
+    maximum: 90
+  - candidate_id: movement_initiation_control
+    title: movement-initiation control
+    invariant_candidate: A mover presently controls whether its own displacement begins.
+    analysis:
+      why_it_fits: Control is active, inward, and connected to movement capacity.
+      useful_coverage: Self-starting, motor control, command authority.
+      semantic_territory_consumed: Agency over onset.
+      risks_and_future_limitations: It collides with MIN intention, LOG authorization,
+        and control grammar; nonagentive movers would be excluded.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      motion_family_fit: 8
+      neighbor_separation: 7
+      separation_from_mov_000_122: 7
+      cross_family_separation: 5
+      everyday_language_usefulness: 8
+      technical_programming_usefulness: 9
+      compound_usefulness: 8
+    total: 67
+    maximum: 90
+  - candidate_id: realized_motion_range
+    title: realized motion range
+    invariant_candidate: A mover presently has access to a set of positions it can
+      occupy.
+    analysis:
+      why_it_fits: The currently accessible positional set looks like an active capacity.
+      useful_coverage: Current workspace, maneuvering envelope, reachable nearby positions.
+      semantic_territory_consumed: A set of currently attainable positions.
+      risks_and_future_limitations: It imports geometry, topology, and reachability
+        proof from STR, DAT, and LOG.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      motion_family_fit: 8
+      neighbor_separation: 7
+      separation_from_mov_000_122: 8
+      cross_family_separation: 5
+      everyday_language_usefulness: 8
+      technical_programming_usefulness: 9
+      compound_usefulness: 8
+    total: 68
+    maximum: 90
+  recommended_winner: available_self_mobility
+  recommended_title: available self-mobility
+  recommended_invariant_definition: A mover's capacity to change its own position
+    that is presently available for exercise.
+  confidence: 0.96
+  canonicalized: false
+- canonical_id: MOV:202
+  authority_status: provisional_pending_user_decision
+  fixed_generated_fields:
+    canonical_id: MOV:202
+    family: MOV
+    address: '202'
+    universal_slot: dormant inward capacity
+    family_onset: gi
+    family_qualified_transliteration: gi·man
+    local_compact_root: man
+    formal_carrier: gi-nu-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+  current_provisional_meaning:
+    title: latent self-mobility
+    definition: A mover's capacity to change its own position that exists without
+      being presently available for exercise.
+    probable_rationale: The provisional author mapped dormant + inward + capacity
+      to mobility that exists under suitable conditions but is not expressed. That
+      is the natural third member of the capacity triplet.
+  candidates:
+  - candidate_id: current_latent_mobility
+    title: latent mobility
+    invariant_candidate: An entity could move under suitable conditions, but that
+      capacity is not presently available or expressed.
+    analysis:
+      why_it_fits: It directly realizes dormant inward Motion capacity.
+      useful_coverage: Dormant locomotion, temporarily unavailable mobility, retained
+        ability to move.
+      semantic_territory_consumed: Existing self-mobility capacity in a nonavailable
+        phase.
+      risks_and_future_limitations: Suitable conditions must not smuggle in a plan,
+        permission, or prediction.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      motion_family_fit: 10
+      neighbor_separation: 9
+      separation_from_mov_000_122: 10
+      cross_family_separation: 9
+      everyday_language_usefulness: 9
+      technical_programming_usefulness: 9
+      compound_usefulness: 10
+    total: 86
+    maximum: 90
+  - candidate_id: movement_readiness
+    title: movement readiness
+    invariant_candidate: A mover is prepared for a movement operation that has not
+      begun.
+    analysis:
+      why_it_fits: Readiness seems like a dormant capacity.
+      useful_coverage: Ready to go, staged vehicle, preflight movement state.
+      semantic_territory_consumed: Preparation for a particular event.
+      risks_and_future_limitations: It imports event specification and preparation,
+        conflicts with the approved rejection of readiness in 1x2, and narrows general
+        capacity.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      motion_family_fit: 9
+      neighbor_separation: 8
+      separation_from_mov_000_122: 6
+      cross_family_separation: 6
+      everyday_language_usefulness: 9
+      technical_programming_usefulness: 9
+      compound_usefulness: 8
+    total: 72
+    maximum: 90
+  - candidate_id: immobilization_condition
+    title: immobilization condition
+    invariant_candidate: A mover's positional-change capacity is presently prevented
+      from expression.
+    analysis:
+      why_it_fits: A dormant capacity may be blocked.
+      useful_coverage: Temporarily immobilized, stuck, constrained.
+      semantic_territory_consumed: The preventing condition rather than the capacity.
+      risks_and_future_limitations: It turns a positive capacity address into a negative
+        condition and collides with MAT/STR/LOG causes.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      motion_family_fit: 8
+      neighbor_separation: 7
+      separation_from_mov_000_122: 9
+      cross_family_separation: 5
+      everyday_language_usefulness: 9
+      technical_programming_usefulness: 8
+      compound_usefulness: 7
+    total: 69
+    maximum: 90
+  - candidate_id: possible_departure
+    title: possible departure
+    invariant_candidate: A displacement away from the mover's source could occur.
+    analysis:
+      why_it_fits: Potential sourceward action can look like inward possibility.
+      useful_coverage: Might leave, possible launch, potential exit.
+      semantic_territory_consumed: A nonactualized process token.
+      risks_and_future_limitations: It duplicates the now-canonical MOV:102 and ignores
+        that first trit 2 is capacity/relationship, not process.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      motion_family_fit: 9
+      neighbor_separation: 7
+      separation_from_mov_000_122: 2
+      cross_family_separation: 8
+      everyday_language_usefulness: 9
+      technical_programming_usefulness: 8
+      compound_usefulness: 8
+    total: 68
+    maximum: 90
+  recommended_winner: current_latent_mobility
+  recommended_title: latent self-mobility
+  recommended_invariant_definition: A mover's capacity to change its own position
+    that exists without being presently available for exercise.
+  confidence: 0.97
+  canonicalized: false
+- canonical_id: MOV:210
+  authority_status: provisional_pending_user_decision
+  fixed_generated_fields:
+    canonical_id: MOV:210
+    family: MOV
+    address: '210'
+    universal_slot: stable outward relationship
+    family_onset: gi
+    family_qualified_transliteration: gi·mom
+    local_compact_root: mom
+    formal_carrier: gi-nu-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+  current_provisional_meaning:
+    title: established target-relative position
+    definition: An established positional relation of a mover to a target position.
+    probable_rationale: The provisional author treated stable outward relationship
+      as an established trajectory from mover to target. The target orientation was
+      sound, but trajectory imported an ordered path and implied future motion.
+  candidates:
+  - candidate_id: current_fixed_trajectory_relation
+    title: fixed trajectory relation
+    invariant_candidate: A mover has an established directional or sequential relation
+      to a target.
+    analysis:
+      why_it_fits: A trajectory relates a mover outward to a target.
+      useful_coverage: Heading, course relation, sequential progress.
+      semantic_territory_consumed: Direction plus ordered movement toward a target.
+      risks_and_future_limitations: It mixes relation with route/process, crowds MOV:020
+        and MOV:111, and the word sequential leaks beyond spatial Motion.
+    scores:
+      atomicity: 7
+      address_fit: 7
+      motion_family_fit: 9
+      neighbor_separation: 6
+      separation_from_mov_000_122: 5
+      cross_family_separation: 7
+      everyday_language_usefulness: 7
+      technical_programming_usefulness: 9
+      compound_usefulness: 8
+    total: 65
+    maximum: 90
+  - candidate_id: established_target_relative_position
+    title: established target-relative position
+    invariant_candidate: An established positional relation of a mover to a target
+      position.
+    analysis:
+      why_it_fits: It is exactly a stable outward Motion relationship.
+      useful_coverage: Relative position, near/far, direction, distance, beside/above/below
+        after modifiers.
+      semantic_territory_consumed: A dyadic relation between mover position and target
+        position.
+      risks_and_future_limitations: It must remain general; distance, bearing, and
+        orientation are values or modifiers, not bundled senses.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      motion_family_fit: 10
+      neighbor_separation: 9
+      separation_from_mov_000_122: 10
+      cross_family_separation: 9
+      everyday_language_usefulness: 10
+      technical_programming_usefulness: 10
+      compound_usefulness: 10
+    total: 88
+    maximum: 90
+  - candidate_id: distance_to_target
+    title: distance to target
+    invariant_candidate: A measure separates a mover's position from a target position.
+    analysis:
+      why_it_fits: Distance is a stable target-relative Motion relation.
+      useful_coverage: Near, far, metric distance, separation thresholds.
+      semantic_territory_consumed: Scalar separation only.
+      risks_and_future_limitations: It sacrifices direction and relative-position
+        coverage and depends on quantitative grammar or DAT values.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      motion_family_fit: 9
+      neighbor_separation: 8
+      separation_from_mov_000_122: 10
+      cross_family_separation: 7
+      everyday_language_usefulness: 10
+      technical_programming_usefulness: 10
+      compound_usefulness: 9
+    total: 81
+    maximum: 90
+  - candidate_id: reachability_relation
+    title: target reachability
+    invariant_candidate: A target position is reachable by the mover under the governing
+      movement constraints.
+    analysis:
+      why_it_fits: Reachability is a useful target-directed relationship.
+      useful_coverage: Accessible, can arrive, path-planning feasibility.
+      semantic_territory_consumed: Existence of an allowed path from mover to target.
+      risks_and_future_limitations: It is principally a LOG proof over STR routes
+        and constraints, and it overlaps MOV:012 and MOV:020.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      motion_family_fit: 8
+      neighbor_separation: 8
+      separation_from_mov_000_122: 8
+      cross_family_separation: 5
+      everyday_language_usefulness: 9
+      technical_programming_usefulness: 10
+      compound_usefulness: 9
+    total: 73
+    maximum: 90
+  recommended_winner: established_target_relative_position
+  recommended_title: established target-relative position
+  recommended_invariant_definition: An established positional relation of a mover
+    to a target position.
+  confidence: 0.95
+  canonicalized: false
+- canonical_id: MOV:211
+  authority_status: provisional_pending_user_decision
+  fixed_generated_fields:
+    canonical_id: MOV:211
+    family: MOV
+    address: '211'
+    universal_slot: active outward relationship
+    family_onset: gi
+    family_qualified_transliteration: gi·mok
+    local_compact_root: mok
+    formal_carrier: gi-nu-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+  current_provisional_meaning:
+    title: live target-relative position
+    definition: A positional relation of a mover to a target position that is currently
+      maintained or updated.
+    probable_rationale: The provisional author interpreted active outward relationship
+      as pursuit, following, escorting, or tracking. Those readings made the relation
+      live, but bundled several processes and participant roles.
+  candidates:
+  - candidate_id: current_active_pursuit_relation
+    title: active pursuit relation
+    invariant_candidate: A mover is actively following, approaching, escorting, or
+      tracking a target.
+    analysis:
+      why_it_fits: Pursuit is active and target-oriented.
+      useful_coverage: Follow, chase, escort, track.
+      semantic_territory_consumed: Multiple target-directed motion and attention relations.
+      risks_and_future_limitations: The list is non-atomic and collides with MOV:111,
+        MIN attention, DAT tracking, and CON coordination.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      motion_family_fit: 8
+      neighbor_separation: 5
+      separation_from_mov_000_122: 3
+      cross_family_separation: 6
+      everyday_language_usefulness: 8
+      technical_programming_usefulness: 8
+      compound_usefulness: 7
+    total: 57
+    maximum: 90
+  - candidate_id: live_target_relative_position
+    title: live target-relative position
+    invariant_candidate: A positional relation of a mover to a target position that
+      is currently maintained or updated.
+    analysis:
+      why_it_fits: It is an active outward relationship rather than a movement process.
+      useful_coverage: Live relative position, continuously updated separation, maintained
+        alongside relation.
+      semantic_territory_consumed: Current maintenance or update of one dyadic positional
+        relation.
+      risks_and_future_limitations: Updated must not imply that Motion owns the sensor,
+        data stream, attention, or motion causing the update.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      motion_family_fit: 10
+      neighbor_separation: 9
+      separation_from_mov_000_122: 10
+      cross_family_separation: 9
+      everyday_language_usefulness: 9
+      technical_programming_usefulness: 10
+      compound_usefulness: 10
+    total: 87
+    maximum: 90
+  - candidate_id: target_tracking_relation
+    title: target tracking relation
+    invariant_candidate: A mover maintains a current estimate of a target's changing
+      position relative to itself.
+    analysis:
+      why_it_fits: Tracking is a natural active target relation.
+      useful_coverage: Radar tracking, following a marker, dynamic relative pose.
+      semantic_territory_consumed: Measurement and estimation of a target.
+      risks_and_future_limitations: It imports DAT records and MIN attention and excludes
+        live relations that are not observed.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      motion_family_fit: 8
+      neighbor_separation: 8
+      separation_from_mov_000_122: 9
+      cross_family_separation: 5
+      everyday_language_usefulness: 8
+      technical_programming_usefulness: 10
+      compound_usefulness: 9
+    total: 74
+    maximum: 90
+  - candidate_id: changing_separation_relation
+    title: changing target separation
+    invariant_candidate: The separation between a mover and target is currently changing.
+    analysis:
+      why_it_fits: A changing relation realizes active outward relationship.
+      useful_coverage: Closing, receding, varying distance.
+      semantic_territory_consumed: Rate of change of target separation.
+      risks_and_future_limitations: It becomes a disguised approach/departure process
+        and cannot express a maintained live relation at constant separation.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      motion_family_fit: 9
+      neighbor_separation: 8
+      separation_from_mov_000_122: 5
+      cross_family_separation: 8
+      everyday_language_usefulness: 8
+      technical_programming_usefulness: 9
+      compound_usefulness: 9
+    total: 73
+    maximum: 90
+  recommended_winner: live_target_relative_position
+  recommended_title: live target-relative position
+  recommended_invariant_definition: A positional relation of a mover to a target position
+    that is currently maintained or updated.
+  confidence: 0.93
+  canonicalized: false
+- canonical_id: MOV:212
+  authority_status: provisional_pending_user_decision
+  fixed_generated_fields:
+    canonical_id: MOV:212
+    family: MOV
+    address: '212'
+    universal_slot: unresolved outward relationship
+    family_onset: gi
+    family_qualified_transliteration: gi·mon
+    local_compact_root: mon
+    formal_carrier: gi-nu-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+  current_provisional_meaning:
+    title: unresolved target-relative position
+    definition: An unresolved relation between a mover's position and a target position.
+    probable_rationale: The provisional author recognized that the slot needed an
+      unresolved target-oriented relation, but chose a possible path whose direction,
+      reachability, or completion was unresolved. That imported three different questions
+      and a route entity.
+  candidates:
+  - candidate_id: current_unresolved_route_relation
+    title: unresolved route relation
+    invariant_candidate: A possible path between mover and target exists, but its
+      direction, reachability, or completion is not resolved.
+    analysis:
+      why_it_fits: It is unresolved and target-oriented.
+      useful_coverage: Unknown route, uncertain reachability, unresolved journey.
+      semantic_territory_consumed: Path existence, direction, reachability, and completion.
+      risks_and_future_limitations: It is non-atomic and collides with MOV:020–022,
+        LOG, STR, and MOV:112.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      motion_family_fit: 8
+      neighbor_separation: 6
+      separation_from_mov_000_122: 4
+      cross_family_separation: 5
+      everyday_language_usefulness: 8
+      technical_programming_usefulness: 9
+      compound_usefulness: 7
+    total: 59
+    maximum: 90
+  - candidate_id: unresolved_target_relative_position
+    title: unresolved target-relative position
+    invariant_candidate: An unresolved relation between a mover's position and a target
+      position.
+    analysis:
+      why_it_fits: It directly realizes unresolved outward Motion relationship.
+      useful_coverage: Unknown relative position, unresolved side/distance/bearing,
+        possible positional relation.
+      semantic_territory_consumed: The unresolved value or validity of one dyadic
+        position relation.
+      risks_and_future_limitations: It must not claim that a map record is missing
+        or that reachability is unknown; those are DAT/LOG causes.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      motion_family_fit: 10
+      neighbor_separation: 9
+      separation_from_mov_000_122: 10
+      cross_family_separation: 9
+      everyday_language_usefulness: 9
+      technical_programming_usefulness: 10
+      compound_usefulness: 10
+    total: 87
+    maximum: 90
+  - candidate_id: uncertain_reachability
+    title: uncertain target reachability
+    invariant_candidate: Whether the mover can reach the target position is unresolved.
+    analysis:
+      why_it_fits: It is a highly useful unresolved target relation.
+      useful_coverage: Maybe accessible, unknown path feasibility, state reachability
+        query.
+      semantic_territory_consumed: Unresolved existence of an allowed route.
+      risks_and_future_limitations: Reachability is a LOG result over STR and MOV
+        data, not a primitive positional relation.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      motion_family_fit: 8
+      neighbor_separation: 8
+      separation_from_mov_000_122: 8
+      cross_family_separation: 5
+      everyday_language_usefulness: 9
+      technical_programming_usefulness: 10
+      compound_usefulness: 9
+    total: 74
+    maximum: 90
+  - candidate_id: possible_target_linkage
+    title: possible spatial linkage
+    invariant_candidate: A spatial link may connect a mover to a target.
+    analysis:
+      why_it_fits: A possible link is an unrealized outward relation.
+      useful_coverage: Potential tether, corridor, route, access relation.
+      semantic_territory_consumed: Connection between participants or loci.
+      risks_and_future_limitations: It collides with CON linkage and STR route structure
+        and says little about position.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      motion_family_fit: 8
+      neighbor_separation: 7
+      separation_from_mov_000_122: 6
+      cross_family_separation: 5
+      everyday_language_usefulness: 7
+      technical_programming_usefulness: 8
+      compound_usefulness: 8
+    total: 64
+    maximum: 90
+  recommended_winner: unresolved_target_relative_position
+  recommended_title: unresolved target-relative position
+  recommended_invariant_definition: An unresolved relation between a mover's position
+    and a target position.
+  confidence: 0.95
+  canonicalized: false
+- canonical_id: MOV:220
+  authority_status: provisional_pending_user_decision
+  fixed_generated_fields:
+    canonical_id: MOV:220
+    family: MOV
+    address: '220'
+    universal_slot: stable systemic relationship
+    family_onset: gi
+    family_qualified_transliteration: gi·mim
+    local_compact_root: mim
+    formal_carrier: gi-nu-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+  current_provisional_meaning:
+    title: established shared-frame configuration
+    definition: An established positional configuration among loci within a shared
+      reference frame.
+    probable_rationale: The provisional author chose a stable recurring order because
+      systemic Motion often presents as cycles, transport systems, or temporal recurrence.
+      Recurrence, however, is only one pattern and imports time/order beyond positional
+      relationship.
+  candidates:
+  - candidate_id: current_stable_cycle_relation
+    title: stable cycle relation
+    invariant_candidate: A transport, orbital, or temporal system has an established
+      recurring order.
+    analysis:
+      why_it_fits: A recurring systemic relation can be stable and Motion-specific.
+      useful_coverage: Orbit, cycle, timetable recurrence, looped transport.
+      semantic_territory_consumed: Recurrence and ordering across a system.
+      risks_and_future_limitations: It bundles transport, orbital, and temporal senses
+        and collides with ORI, STR, and route cycles.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      motion_family_fit: 9
+      neighbor_separation: 8
+      separation_from_mov_000_122: 7
+      cross_family_separation: 6
+      everyday_language_usefulness: 8
+      technical_programming_usefulness: 9
+      compound_usefulness: 8
+    total: 70
+    maximum: 90
+  - candidate_id: established_shared_frame_configuration
+    title: established shared-frame configuration
+    invariant_candidate: An established positional configuration among loci within
+      a shared reference frame.
+    analysis:
+      why_it_fits: It is exactly a stable systemic Motion relationship.
+      useful_coverage: Spatial arrangement, formation, relative placement of multiple
+        loci, stable orbital geometry after MAT composition.
+      semantic_territory_consumed: A multi-locus positional configuration in one frame.
+      risks_and_future_limitations: It must not absorb organizational structure, causal
+        forces, coordination, or a map representation.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      motion_family_fit: 10
+      neighbor_separation: 9
+      separation_from_mov_000_122: 10
+      cross_family_separation: 9
+      everyday_language_usefulness: 10
+      technical_programming_usefulness: 10
+      compound_usefulness: 10
+    total: 88
+    maximum: 90
+  - candidate_id: route_connectivity_relation
+    title: route connectivity
+    invariant_candidate: A system has established route connections among its positions.
+    analysis:
+      why_it_fits: Connectivity is stable and systemic.
+      useful_coverage: Transport topology, connected routes, network reachability.
+      semantic_territory_consumed: Edges and paths among loci.
+      risks_and_future_limitations: It duplicates MOV:020–022 and belongs primarily
+        to STR topology.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      motion_family_fit: 8
+      neighbor_separation: 7
+      separation_from_mov_000_122: 4
+      cross_family_separation: 4
+      everyday_language_usefulness: 8
+      technical_programming_usefulness: 9
+      compound_usefulness: 9
+    total: 66
+    maximum: 90
+  - candidate_id: environmental_navigability
+    title: environmental navigability
+    invariant_candidate: A shared environment affords movement among its positions.
+    analysis:
+      why_it_fits: Navigability is a systemic Motion relationship between mover and
+        environment.
+      useful_coverage: Traversable space, room to move, usable network.
+      semantic_territory_consumed: Affordance under constraints.
+      risks_and_future_limitations: It depends on STR boundaries, LOG constraints,
+        MAT dimensions, and often a particular mover; it is less purely systemic.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      motion_family_fit: 9
+      neighbor_separation: 8
+      separation_from_mov_000_122: 8
+      cross_family_separation: 5
+      everyday_language_usefulness: 9
+      technical_programming_usefulness: 10
+      compound_usefulness: 9
+    total: 75
+    maximum: 90
+  recommended_winner: established_shared_frame_configuration
+  recommended_title: established shared-frame configuration
+  recommended_invariant_definition: An established positional configuration among
+    loci within a shared reference frame.
+  confidence: 0.94
+  canonicalized: false
+- canonical_id: MOV:221
+  authority_status: provisional_pending_user_decision
+  fixed_generated_fields:
+    canonical_id: MOV:221
+    family: MOV
+    address: '221'
+    universal_slot: active systemic relationship
+    family_onset: gi
+    family_qualified_transliteration: gi·mik
+    local_compact_root: mik
+    formal_carrier: gi-nu-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+  current_provisional_meaning:
+    title: live shared-frame configuration
+    definition: A positional configuration among loci that is currently maintained
+      or updated within a shared reference frame.
+    probable_rationale: The provisional meaning associated active systemic relationship
+      with synchronized movers in a route, cadence, or schedule. It captured an active
+      system, but bundled coordination, route use, timing, and movement.
+  candidates:
+  - candidate_id: current_synchronized_flow_relation
+    title: synchronized flow relation
+    invariant_candidate: Multiple movers or transitions are actively coordinated within
+      one route, cadence, or schedule.
+    analysis:
+      why_it_fits: Synchronization is an active systemic relation.
+      useful_coverage: Convoy, synchronized traffic, scheduled flow, coordinated transitions.
+      semantic_territory_consumed: Coordination, timing, route, and active movement.
+      risks_and_future_limitations: It is non-atomic and collides with CON, MOV:021,
+        MOV:121, STR, and scheduling grammar.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      motion_family_fit: 8
+      neighbor_separation: 5
+      separation_from_mov_000_122: 3
+      cross_family_separation: 4
+      everyday_language_usefulness: 8
+      technical_programming_usefulness: 8
+      compound_usefulness: 8
+    total: 56
+    maximum: 90
+  - candidate_id: live_shared_frame_configuration
+    title: live shared-frame configuration
+    invariant_candidate: A positional configuration among loci that is currently maintained
+      or updated within a shared reference frame.
+    analysis:
+      why_it_fits: It realizes active systemic Motion relationship without becoming
+        a process.
+      useful_coverage: Live formation, dynamic spatial arrangement, maintained multi-locus
+        pose.
+      semantic_territory_consumed: Current maintenance or update of a shared-frame
+        configuration.
+      risks_and_future_limitations: It must not imply coordination, data acquisition,
+        or actual movement; those are separable causes or realizations.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      motion_family_fit: 10
+      neighbor_separation: 9
+      separation_from_mov_000_122: 10
+      cross_family_separation: 9
+      everyday_language_usefulness: 9
+      technical_programming_usefulness: 10
+      compound_usefulness: 10
+    total: 87
+    maximum: 90
+  - candidate_id: coordinated_formation
+    title: coordinated formation
+    invariant_candidate: Multiple movers maintain assigned relative positions through
+      coordination.
+    analysis:
+      why_it_fits: Formation is an active systemic positional relation.
+      useful_coverage: Convoy formation, flocking, synchronized robots.
+      semantic_territory_consumed: Participant coordination that maintains positions.
+      risks_and_future_limitations: Coordination belongs to CON and excludes accidental
+        or externally maintained configurations.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      motion_family_fit: 8
+      neighbor_separation: 8
+      separation_from_mov_000_122: 9
+      cross_family_separation: 5
+      everyday_language_usefulness: 9
+      technical_programming_usefulness: 9
+      compound_usefulness: 9
+    total: 74
+    maximum: 90
+  - candidate_id: traffic_load_relation
+    title: traffic-load relation
+    invariant_candidate: A route system currently bears a distribution of moving traffic.
+    analysis:
+      why_it_fits: Traffic distribution is a live systemic Motion relation.
+      useful_coverage: Congestion, load balance, route usage.
+      semantic_territory_consumed: Flow amount over a network.
+      risks_and_future_limitations: It presupposes MOV:021, route topology, quantities,
+        and possibly DAT measurements.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      motion_family_fit: 8
+      neighbor_separation: 7
+      separation_from_mov_000_122: 5
+      cross_family_separation: 5
+      everyday_language_usefulness: 8
+      technical_programming_usefulness: 9
+      compound_usefulness: 8
+    total: 65
+    maximum: 90
+  recommended_winner: live_shared_frame_configuration
+  recommended_title: live shared-frame configuration
+  recommended_invariant_definition: A positional configuration among loci that is
+    currently maintained or updated within a shared reference frame.
+  confidence: 0.92
+  canonicalized: false
+- canonical_id: MOV:222
+  authority_status: provisional_pending_user_decision
+  fixed_generated_fields:
+    canonical_id: MOV:222
+    family: MOV
+    address: '222'
+    universal_slot: unrealized systemic possibility
+    family_onset: gi
+    family_qualified_transliteration: gi·min
+    local_compact_root: min
+    formal_carrier: gi-nu-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+  current_provisional_meaning:
+    title: potential shared-frame configuration
+    definition: An unrealized possible positional configuration among loci within
+      a shared reference frame.
+    probable_rationale: The provisional author mapped unrealized systemic possibility
+      to an unselected path branch. This used the possibility value well, but prematurely
+      fixed the system relation as route topology and planning.
+  candidates:
+  - candidate_id: current_possible_path_branch
+    title: possible path branch
+    invariant_candidate: A valid system-level route or future sequence could exist,
+      but no branch has yet been selected or realized.
+    analysis:
+      why_it_fits: A possible branch is unrealized and systemic.
+      useful_coverage: Alternative path, future sequence, route branch.
+      semantic_territory_consumed: Path generation, validity, choice, and future sequence.
+      risks_and_future_limitations: It collides with MOV:020–022, LOG validity, CRE
+        generation, STR topology, and planning.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      motion_family_fit: 8
+      neighbor_separation: 7
+      separation_from_mov_000_122: 4
+      cross_family_separation: 5
+      everyday_language_usefulness: 8
+      technical_programming_usefulness: 9
+      compound_usefulness: 8
+    total: 66
+    maximum: 90
+  - candidate_id: potential_shared_frame_configuration
+    title: potential shared-frame configuration
+    invariant_candidate: An unrealized possible positional configuration among loci
+      within a shared reference frame.
+    analysis:
+      why_it_fits: It exactly realizes unrealized systemic Motion possibility.
+      useful_coverage: Possible arrangement, candidate formation, unrealized multi-locus
+        placement.
+      semantic_territory_consumed: One possible positional configuration in a shared
+        frame.
+      risks_and_future_limitations: It must not claim feasibility, selection, generation,
+        probability, future occurrence, or permission.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      motion_family_fit: 10
+      neighbor_separation: 9
+      separation_from_mov_000_122: 10
+      cross_family_separation: 9
+      everyday_language_usefulness: 9
+      technical_programming_usefulness: 10
+      compound_usefulness: 10
+    total: 87
+    maximum: 90
+  - candidate_id: possible_navigability
+    title: possible navigability
+    invariant_candidate: Movement among positions in a system may be possible.
+    analysis:
+      why_it_fits: It is a systemic movement possibility.
+      useful_coverage: Maybe traversable, potential route availability, possible access.
+      semantic_territory_consumed: Existence of permitted traversals.
+      risks_and_future_limitations: It depends on LOG proof, STR topology, and MOV
+        route entities and approaches a potential process MOV:122.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      motion_family_fit: 9
+      neighbor_separation: 8
+      separation_from_mov_000_122: 8
+      cross_family_separation: 5
+      everyday_language_usefulness: 9
+      technical_programming_usefulness: 10
+      compound_usefulness: 9
+    total: 75
+    maximum: 90
+  - candidate_id: collision_free_motion_possibility
+    title: collision-free motion possibility
+    invariant_candidate: A system may permit movers to change position without collision.
+    analysis:
+      why_it_fits: It is a useful environmental Motion possibility.
+      useful_coverage: Spatial compatibility, feasible formations, collision avoidance.
+      semantic_territory_consumed: Safety-constrained joint motion.
+      risks_and_future_limitations: It imports WRN risk, MAT dimensions, LOG constraints,
+        and actual or potential movement processes.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      motion_family_fit: 9
+      neighbor_separation: 7
+      separation_from_mov_000_122: 8
+      cross_family_separation: 4
+      everyday_language_usefulness: 8
+      technical_programming_usefulness: 10
+      compound_usefulness: 9
+    total: 71
+    maximum: 90
+  recommended_winner: potential_shared_frame_configuration
+  recommended_title: potential shared-frame configuration
+  recommended_invariant_definition: An unrealized possible positional configuration
+    among loci within a shared reference frame.
+  confidence: 0.95
+  canonicalized: false

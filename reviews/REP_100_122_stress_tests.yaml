@@ -1,0 +1,508 @@
+---
+metadata:
+  title: REP:100–122 English coverage and routing tests
+  status: review_evidence_not_translation_dictionary
+  range: REP:100–122
+  test_count: 105
+  no_forced_atomization: true
+tests:
+- test_id: REP1-T001
+  english_concept: restore
+  routing: one_root_or_compound
+  analysis: Select REP:100–122 by inward, target, or systemic scope and completed,
+    active, or nonactualized phase; domain mechanics remain separate.
+- test_id: REP1-T002
+  english_concept: repair
+  routing: one_root_or_compound
+  analysis: REP:1xx supplies restorative transformation when movement toward an applicable
+    restoration condition is meant; the repaired condition itself is REP:0xx.
+- test_id: REP1-T003
+  english_concept: heal
+  routing: compound
+  analysis: REP restorative process plus LIF biological bearer and mechanism; healing
+    need not be internally originating.
+- test_id: REP1-T004
+  english_concept: recover
+  routing: one_root_or_compound
+  analysis: REP:1xx when a restorative transformation is meant; regained condition
+    may instead be REP:0x1 and historical change requires ORI.
+- test_id: REP1-T005
+  english_concept: rehabilitate
+  routing: compound
+  analysis: REP target or systemic restoration plus LIF/CON/STR details of function,
+    participant roles, and training.
+- test_id: REP1-T006
+  english_concept: remediate
+  routing: one_root_or_compound
+  analysis: REP target restoration plus domain roots for the defect, environment,
+    data, or rule being remediated.
+- test_id: REP1-T007
+  english_concept: recalibrate
+  routing: compound
+  analysis: REP restoration plus MAT/LOG measurement and criterion semantics.
+- test_id: REP1-T008
+  english_concept: reconcile
+  routing: compound
+  analysis: REP restoration plus CON/DAT/LOG for social, record, or accounting reconciliation.
+- test_id: REP1-T009
+  english_concept: return to service
+  routing: compound
+  analysis: REP restoration plus ORI transition and CON/DAT/STR service-state semantics.
+- test_id: REP1-T010
+  english_concept: back to normal
+  routing: compound
+  analysis: REP restorative process or realized condition plus an explicit or resolved
+    normality criterion.
+- test_id: REP1-T011
+  english_concept: improve
+  routing: underspecified
+  analysis: Improvement need not be restoration; it may be CRE enhancement, learning,
+    optimization, or generic change.
+- test_id: REP1-T012
+  english_concept: transform
+  routing: unresolved
+  analysis: Generic transformation lacks Repair-family direction, scope, phase, and
+    applicable restoration condition.
+- test_id: REP1-T013
+  english_concept: change
+  routing: unresolved
+  analysis: Generic change must not be forced into REP without restoration-relative
+    semantics.
+- test_id: REP1-T014
+  english_concept: fix
+  routing: underspecified
+  analysis: May mean REP restoration, LOG correction, DAT edit, MAT repair, or CRE
+    replacement; translator must resolve sense.
+- test_id: REP1-T015
+  english_concept: correct
+  routing: different_family_or_compound
+  analysis: LOG owns correctness; REP applies only when a process moves a bearer toward
+    a restoration condition.
+- test_id: REP1-T016
+  english_concept: maintain
+  routing: different_process_or_compound
+  analysis: Preserving an already acceptable condition is not necessarily restorative
+    change; maintenance may compound with REP when it restores.
+- test_id: REP1-T017
+  english_concept: service equipment
+  routing: underspecified
+  analysis: May be maintenance, inspection, cleaning, replacement, or target restoration;
+    do not force one atomic root.
+- test_id: REP1-T018
+  english_concept: self-repair completed
+  routing: one_root
+  analysis: REP:100 states completion of restorative transformation originating within
+    one entity.
+- test_id: REP1-T019
+  english_concept: self-repair active
+  routing: one_root
+  analysis: REP:101 states ongoing restorative transformation originating within one
+    entity.
+- test_id: REP1-T020
+  english_concept: self-repair nonactualized
+  routing: one_root
+  analysis: REP:102 affirms a valid inward restorative transformation that is neither
+    ongoing nor completed.
+- test_id: REP1-T021
+  english_concept: autonomic healing
+  routing: one_root_or_compound
+  analysis: REP:10x by phase with LIF when healing originates within the organism.
+- test_id: REP1-T022
+  english_concept: self-healing polymer
+  routing: compound
+  analysis: REP:10x supplies inward restoration while MAT supplies polymer mechanism.
+- test_id: REP1-T023
+  english_concept: automatic retry recovery
+  routing: compound
+  analysis: REP:10x supplies internally originating recovery while DAT/LOG supplies
+    retry and success conditions.
+- test_id: REP1-T024
+  english_concept: garbage collection recovery
+  routing: compound
+  analysis: REP:10x only when the internal process restores an applicable condition;
+    DAT/CRE owns memory operations.
+- test_id: REP1-T025
+  english_concept: immune recovery
+  routing: compound
+  analysis: REP internal restoration plus LIF physiology; an external treatment would
+    instead support target restoration.
+- test_id: REP1-T026
+  english_concept: internal restoration uncertain
+  routing: runtime_state
+  analysis: REP:101[2]/num leaves ongoing status unresolved and does not select REP:102.
+- test_id: REP1-T027
+  english_concept: confirmed nonactualized self-restoration
+  routing: one_root_plus_runtime
+  analysis: REP:102[1] affirms nonactualization without plan, capability, schedule,
+    or probability.
+- test_id: REP1-T028
+  english_concept: completed self-restoration disputed
+  routing: one_root_plus_runtime
+  analysis: REP:100[2]/num keeps completed lexical phase while leaving the token assertion
+    unresolved.
+- test_id: REP1-T029
+  english_concept: self-restoration scheduled
+  routing: root_plus_time
+  analysis: REP:102 plus ORI or scheduling grammar; lexical nonactualization never
+    means scheduled.
+- test_id: REP1-T030
+  english_concept: self-restoration possible
+  routing: root_plus_modality_or_affordance
+  analysis: REP:102 identifies the process as nonactualized; ORI modality or REP:2xx
+    must supply possibility or capacity.
+- test_id: REP1-T031
+  english_concept: self-restoration impossible
+  routing: future_affordance_plus_negation
+  analysis: Negated REP:2xx recoverability is distinct from REP:102 nonactualization.
+- test_id: REP1-T032
+  english_concept: self-maintenance
+  routing: different_process_or_compound
+  analysis: Maintenance can preserve rather than restore; add REP:10x only if an actual
+    restorative change occurs.
+- test_id: REP1-T033
+  english_concept: self-test
+  routing: different_family
+  analysis: LOG/DAT/MIN owns testing and observation; testing does not restore.
+- test_id: REP1-T034
+  english_concept: self-correcting code
+  routing: compound
+  analysis: REP:10x when the program actually returns itself to a restoration condition;
+    LOG/DAT specifies the correction.
+- test_id: REP1-T035
+  english_concept: target repair completed
+  routing: one_root
+  analysis: REP:110 states completed restoration caused in one target by one distinct
+    source.
+- test_id: REP1-T036
+  english_concept: target repair active
+  routing: one_root
+  analysis: REP:111 states ongoing source-to-target restorative transformation.
+- test_id: REP1-T037
+  english_concept: target repair nonactualized
+  routing: one_root
+  analysis: REP:112 states a valid source-to-target restorative transformation that
+    is not ongoing or completed.
+- test_id: REP1-T038
+  english_concept: technician repairs panel
+  routing: one_root_or_compound
+  analysis: REP:111 with LIF agent and MAT panel mechanics.
+- test_id: REP1-T039
+  english_concept: doctor treats patient
+  routing: compound
+  analysis: REP:111 only when treatment is restorative; LIF owns patient, physiology,
+    and clinical action.
+- test_id: REP1-T040
+  english_concept: medicine heals patient
+  routing: compound
+  analysis: MAT/LIF supplies substance and biological mechanism while REP:111 supplies
+    target restoration.
+- test_id: REP1-T041
+  english_concept: patch software
+  routing: compound
+  analysis: REP:111 supplies target restoration; DAT/LOG/CRE supplies code change
+    and validity.
+- test_id: REP1-T042
+  english_concept: restore database
+  routing: compound
+  analysis: REP:11x by phase with DAT for database and checkpoint semantics.
+- test_id: REP1-T043
+  english_concept: repair road
+  routing: compound
+  analysis: REP:11x with MAT/STR for material and structural mechanics.
+- test_id: REP1-T044
+  english_concept: recalibrate sensor
+  routing: compound
+  analysis: REP:11x with MAT/DAT/LOG measurement and criterion.
+- test_id: REP1-T045
+  english_concept: reconcile account
+  routing: compound
+  analysis: REP:11x only when the account is restored to an accepted condition; DAT/LOG
+    owns records and correctness.
+- test_id: REP1-T046
+  english_concept: clean contaminated surface
+  routing: compound
+  analysis: REP:11x may supply restoration while MAT/WRN supplies substance and adverse
+    condition.
+- test_id: REP1-T047
+  english_concept: replace broken component
+  routing: compound
+  analysis: CRE owns replacement and REP:11x may assert that the target system is
+    thereby restored.
+- test_id: REP1-T048
+  english_concept: rebuild target
+  routing: compound
+  analysis: CRE/STR owns reconstruction; REP:11x separately asserts restorative direction.
+- test_id: REP1-T049
+  english_concept: target restoration uncertain
+  routing: runtime_state
+  analysis: REP:111[2]/num questions ongoing restoration rather than selecting REP:112.
+- test_id: REP1-T050
+  english_concept: confirmed nonactualized target repair
+  routing: one_root_plus_runtime
+  analysis: REP:112[1] affirms the process without saying it is queued, scheduled,
+    possible, or intended.
+- test_id: REP1-T051
+  english_concept: repair appointment
+  routing: different_family_or_compound
+  analysis: DAT/ORI owns the appointment; REP:112 may name the nonactualized process
+    only as a separate assertion.
+- test_id: REP1-T052
+  english_concept: repair queue
+  routing: different_family_or_compound
+  analysis: DAT/LOG owns queued work; REP:112 does not lexicalize the queue.
+- test_id: REP1-T053
+  english_concept: repair plan
+  routing: different_family_or_compound
+  analysis: MIN/DAT/LOG owns the plan; REP:112 names only a nonactualized restorative
+    process.
+- test_id: REP1-T054
+  english_concept: repair permission
+  routing: different_family_or_compound
+  analysis: LOG owns permission; permission neither performs nor guarantees target
+    restoration.
+- test_id: REP1-T055
+  english_concept: repair readiness
+  routing: future_affordance_or_compound
+  analysis: REP:2xx and resources express enabling capacity; REP:112 alone does not.
+- test_id: REP1-T056
+  english_concept: repair failed
+  routing: compound
+  analysis: An active or completed attempted process plus LOG/WRN outcome claims;
+    the successful-completion invariant of REP:110 must not be asserted if the target
+    condition was not realized.
+- test_id: REP1-T057
+  english_concept: repair attempt
+  routing: compound_or_gap
+  analysis: REP:111 may apply while genuinely moving toward restoration; mere effort
+    without restorative transformation requires agency/action semantics.
+- test_id: REP1-T058
+  english_concept: repair stopped
+  routing: root_plus_event_boundary
+  analysis: Denied or ceased REP:111 plus ORI boundary; stopping does not imply completed
+    restoration.
+- test_id: REP1-T059
+  english_concept: repair continued
+  routing: root_plus_contour
+  analysis: REP:111 plus continuation contour or temporal grammar.
+- test_id: REP1-T060
+  english_concept: repair repeated
+  routing: root_plus_iteration
+  analysis: REP:11x plus iteration grammar; repetition is not inside the atom.
+- test_id: REP1-T061
+  english_concept: system restoration completed
+  routing: one_root
+  analysis: REP:120 states completion of one coordinated systemic restorative transformation.
+- test_id: REP1-T062
+  english_concept: system restoration active
+  routing: one_root
+  analysis: REP:121 states ongoing coordinated systemic restorative transformation.
+- test_id: REP1-T063
+  english_concept: system restoration nonactualized
+  routing: one_root
+  analysis: REP:122 states a valid coordinated systemic restoration that is neither
+    ongoing nor completed.
+- test_id: REP1-T064
+  english_concept: disaster recovery
+  routing: one_root_or_compound
+  analysis: REP:12x by phase when one shared restoration condition is coordinated
+    across participants; WRN/ORI supplies disaster and timing.
+- test_id: REP1-T065
+  english_concept: restore service cluster
+  routing: one_root_or_compound
+  analysis: REP:12x if coordinated restoration realizes one shared service condition
+    across nodes.
+- test_id: REP1-T066
+  english_concept: community rebuilding
+  routing: compound
+  analysis: REP:121 only for coordinated restoration of a shared condition; CRE/STR/LIF/CON
+    supplies rebuilding and participants.
+- test_id: REP1-T067
+  english_concept: ecosystem recovery
+  routing: compound
+  analysis: REP:12x plus LIF/MAT/CON when one shared restoration condition spans interacting
+    participants.
+- test_id: REP1-T068
+  english_concept: hospital recovery operation
+  routing: compound
+  analysis: REP:12x if coordinated across system participants; LIF/CON/DAT supplies
+    institution and coordination.
+- test_id: REP1-T069
+  english_concept: network failover recovery
+  routing: compound
+  analysis: REP:12x may assert shared restoration; DAT/CON/STR supplies failover mechanism
+    and topology.
+- test_id: REP1-T070
+  english_concept: coordinated rollback
+  routing: compound
+  analysis: REP:12x plus DAT checkpoint and CON coordination; rollback alone is not
+    necessarily restoration.
+- test_id: REP1-T071
+  english_concept: mass healing
+  routing: compound
+  analysis: Use REP:12x only for one correlated shared restoration condition, not
+    merely many independent healing events.
+- test_id: REP1-T072
+  english_concept: many independent repairs
+  routing: multiple_roots_not_one_systemic_process
+  analysis: Use separate REP:10x or REP:11x assertions unless one coordinated shared
+    restoration condition is involved.
+- test_id: REP1-T073
+  english_concept: one technician repairs two unrelated targets
+  routing: multiple_target_processes
+  analysis: Use per-target REP:11x claims unless the targets participate in one coordinated
+    systemic restoration.
+- test_id: REP1-T074
+  english_concept: coordination without restoration
+  routing: different_family
+  analysis: CON owns coordination; no REP:12x root applies unless restorative change
+    occurs.
+- test_id: REP1-T075
+  english_concept: system maintenance
+  routing: different_process_or_compound
+  analysis: Routine preservation is not automatically systemic restoration; use REP
+    only when the shared condition is being restored.
+- test_id: REP1-T076
+  english_concept: system restoration uncertain
+  routing: runtime_state
+  analysis: REP:121[2]/num leaves ongoing systemic restoration unresolved rather than
+    selecting REP:122.
+- test_id: REP1-T077
+  english_concept: confirmed nonactualized systemic restoration
+  routing: one_root_plus_runtime
+  analysis: REP:122[1] affirms nonactualization without a plan, resources, or eventual
+    success.
+- test_id: REP1-T078
+  english_concept: staged recovery resources
+  routing: compound_not_one_root
+  analysis: DAT/MAT/CRE supplies plans and resources; REP:122 does not assert preparation
+    or readiness.
+- test_id: REP1-T079
+  english_concept: future system recovery
+  routing: root_plus_time
+  analysis: REP:122 plus ORI future relation; nonactualized does not itself mean future.
+- test_id: REP1-T080
+  english_concept: likely recovery
+  routing: root_plus_probability
+  analysis: REP process plus explicit probability or evidence; no third trit encodes
+    likelihood.
+- test_id: REP1-T081
+  english_concept: completed restoration still active
+  routing: invalid_same_event_claim
+  analysis: REP:1x0 and REP:1x1 cannot describe the same event phase at one reference
+    time without separate segments.
+- test_id: REP1-T082
+  english_concept: active then completed restoration
+  routing: two_time_indexed_roots
+  analysis: Relate REP:1x1 earlier to REP:1x0 later; roots do not encode the transition
+    timing.
+- test_id: REP1-T083
+  english_concept: nonactualized then active restoration
+  routing: two_time_indexed_roots
+  analysis: Relate REP:1x2 earlier to REP:1x1 later; no plan or inevitability is implied.
+- test_id: REP1-T084
+  english_concept: restored condition
+  routing: entity_not_process
+  analysis: REP:0x1 owns the presently realized restoration condition; REP:1xx is
+    used only when the transformation is asserted.
+- test_id: REP1-T085
+  english_concept: restoration standard
+  routing: entity_or_rule_not_process
+  analysis: REP:0x0 identifies the condition and LOG may define its criterion; REP:1xx
+    does not name the standard.
+- test_id: REP1-T086
+  english_concept: recoverable
+  routing: future_rep_affordance
+  analysis: Reserved for REP:2xx capacity or relation review; it is not an active
+    or nonactualized process.
+- test_id: REP1-T087
+  english_concept: repairable
+  routing: future_rep_affordance
+  analysis: Reserved for REP:2xx; a target can be repairable while no restoration
+    occurs.
+- test_id: REP1-T088
+  english_concept: healing capacity
+  routing: future_rep_affordance
+  analysis: REP:2xx with LIF; capacity is distinct from actual healing transformation.
+- test_id: REP1-T089
+  english_concept: backup
+  routing: different_family
+  analysis: DAT owns the backup record; restoring from it requires a separate REP
+    process.
+- test_id: REP1-T090
+  english_concept: restore point
+  routing: different_family
+  analysis: DAT owns the checkpoint; it is neither the restoration condition nor the
+    restoration process.
+- test_id: REP1-T091
+  english_concept: validation passed
+  routing: different_family_or_compound
+  analysis: LOG/DAT owns validation; REP:1x0 applies only if a restorative transformation
+    also completed.
+- test_id: REP1-T092
+  english_concept: replacement completed
+  routing: different_family_or_compound
+  analysis: CRE owns substitution; REP applies only if replacement restored the target
+    or system condition.
+- test_id: REP1-T093
+  english_concept: return home
+  routing: different_family
+  analysis: MOV owns spatial return; no restorative transformation is implied.
+- test_id: REP1-T094
+  english_concept: return to health
+  routing: compound
+  analysis: REP restorative process plus LIF health and ORI transition.
+- test_id: REP1-T095
+  english_concept: reverse degradation
+  routing: compound
+  analysis: WRN names degradation and REP names restoration; REP does not encode a
+    generic inverse operator.
+- test_id: REP1-T096
+  english_concept: prevent damage
+  routing: different_family_or_compound
+  analysis: Prevention and protection are not restoration because no movement from
+    a less acceptable condition is required.
+- test_id: REP1-T097
+  english_concept: contain fault
+  routing: different_family_or_compound
+  analysis: STR/LOG/WRN owns containment; containment may support but does not equal
+    restoration.
+- test_id: REP1-T098
+  english_concept: create improved version
+  routing: different_family
+  analysis: CRE owns generation or enhancement; improvement beyond the restoration
+    condition is not REP restoration.
+- test_id: REP1-T099
+  english_concept: restoration versus maintenance
+  routing: scope_resolution_test
+  analysis: REP:1xx moves toward realizing a restoration condition; maintenance can
+    merely preserve an already realized condition.
+- test_id: REP1-T100
+  english_concept: restoration versus validation
+  routing: scope_resolution_test
+  analysis: REP:1xx performs restorative change; LOG/DAT tests or records whether
+    criteria hold.
+- test_id: REP1-T101
+  english_concept: restoration versus replacement
+  routing: scope_resolution_test
+  analysis: REP supplies restorative direction; CRE supplies substitution or reconstruction
+    mechanics.
+- test_id: REP1-T102
+  english_concept: restoration versus recoverability
+  routing: scope_resolution_test
+  analysis: REP:1xx is actualized by phase; REP:2xx will own capacities and enabling
+    relations.
+- test_id: REP1-T103
+  english_concept: restoration versus condition
+  routing: scope_resolution_test
+  analysis: REP:0xx names the acceptable condition; REP:1xx names transformation toward
+    realizing it.
+- test_id: REP1-T104
+  english_concept: restoration versus adverse process
+  routing: scope_resolution_test
+  analysis: REP moves toward an applicable restoration condition; WRN moves toward
+    a less acceptable condition.
+- test_id: REP1-T105
+  english_concept: nonactualized versus uncertain
+  routing: scope_resolution_test
+  analysis: REP:102[1] affirms a nonactualized process; REP:101[2]/num leaves an active-process
+    assertion uncertain.

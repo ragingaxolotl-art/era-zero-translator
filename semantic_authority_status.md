@@ -2,6 +2,8 @@
 
 Current authority: **324 CANONICAL ROOTS / 0 PROVISIONAL ROOTS**
 
+Current system status: **ALL PLANNED TRANSLATOR-READINESS GATES COMPLETE** — 28 approved compounds, 436 indexed senses, canonical Semantic IR, renderer/decoder, controlled and general English, SVG, MIDI, and the browser/local product are implemented. Dated milestone sections below are retained as audit history; “next” and “not started” statements inside them describe that milestone, not present authority.
+
 The Era Zero Core Architecture 1.0 and all generated forms remain fixed. The earlier broad Gate 3 promotion remains **WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION**; selective reviewed approvals do not reinstate it.
 
 ## Canonical semantic authority
@@ -22,20 +24,20 @@ The Era Zero Core Architecture 1.0 and all generated forms remain fixed. The ear
 
 ## Atomic semantic review complete
 
-All 324 atomic meanings have completed detailed semantic review. No provisional atomic roots or unreviewed nine-root chunks remain. This completion does not approve compound meanings, an English concept index, etymology, semantic IR, grammar implementation, renderer, or translator.
+All 324 atomic meanings have completed detailed semantic review. No provisional atomic roots or unreviewed nine-root chunks remain. Atomic completion did not by itself approve downstream layers; those layers were approved later through their separately recorded gates.
 
-## Stop boundary
+## Historical atomic-review stop boundary
 
 - Last completed packet: `ORI:200–222`.
 - Next semantic packet: none; all thirty-two packets are complete.
 - Gate 4A typed compound architecture is canonical.
-- Gate 4B compound dictionary, later compositional gates, and translator implementation remain deferred.
+- At that milestone, Gate 4B and later compositional work remained deferred. They are now complete as recorded below.
 
 ## Gate 4A compound architecture
 
-Gate 4A is complete and canonical at version **1.0.0**. A lexical compound is a connected acyclic semantic graph with one explicit head, typed modifier or argument edges, deterministic serialization, and versioned change control. The architecture creates no compound meanings: the approved dictionary contains **0 entries**.
+Gate 4A is complete and canonical at version **1.0.0**. A lexical compound is a connected acyclic semantic graph with one explicit head, typed modifier or argument edges, deterministic serialization, and versioned change control. At Gate 4A completion the architecture itself created no meanings and the dictionary contained 0 entries; Gate 4B later approved 28.
 
-The next authorized task is **Gate 4B: the reviewed high-frequency compound dictionary**. English indexing, semantic IR, executable grammar, rendering, decoding, and translation remain unstarted.
+The next authorized task at that historical milestone was **Gate 4B: the reviewed high-frequency compound dictionary**. Its completion and all later gate completions are recorded below.
 
 Machine-readable authority: `lexicon/semantic_authority.yaml`.
 Latest selective approval: `migrations/ORI_200_222_semantic_approval.yaml`.
@@ -46,8 +48,8 @@ Latest architecture approval: `migrations/gate4a_compound_architecture_1.0.yaml`
 - Status: **canonical initial release 1.0.0**.
 - Approved compound definitions: **28**.
 - Atomic authority remains **324 canonical / 0 provisional**; no atomic meaning or generated form changed.
-- Common concepts unsupported by the atoms remain gaps or are deferred; English labels are not yet an English sense index.
-- Next authorized work: **Gate 4C English concept and sense index**. Semantic IR, grammar, renderer, decoder, and translator remain unstarted.
+- Common concepts unsupported by the atoms remained gaps or were deferred; English labels were not yet an English sense index at this milestone.
+- The next work at this milestone was **Gate 4C English concept and sense index**; it and the later layers are now complete.
 
 ## Gate 4D coverage and ambiguity — 2026-10-09
 

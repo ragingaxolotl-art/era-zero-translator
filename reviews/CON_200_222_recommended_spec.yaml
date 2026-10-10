@@ -1,0 +1,1638 @@
+---
+metadata:
+  title: CON:200–222 recommended permanent semantic specification
+  status: approved_and_canonical_by_delegated_authority
+  architecture_version: '1.0'
+  semantic_center: 'communicative affordances and participant relations: endpoint
+    participation capacity, directed target relation, and shared co-participation
+    relation'
+  triplets:
+    CON:200–202: 'endpoint communicative participation capacity: enduring / presently
+      available / latent'
+    CON:210–212: 'directed target communication relation: established / presently
+      operative / unresolved'
+    CON:220–222: 'shared co-participation relation: enduring / presently operative
+      / unrealized potential'
+  generated_fields_changed: false
+  gate4_started: false
+  translator_started: false
+  roots_canonicalized:
+  - CON:200
+  - CON:201
+  - CON:202
+  - CON:210
+  - CON:211
+  - CON:212
+  - CON:220
+  - CON:221
+  - CON:222
+  approval_record: migrations/CON_200_222_semantic_approval.yaml
+roots:
+- fixed_generated_fields:
+    canonical_id: CON:200
+    universal_slot: stable inward capacity
+    family_qualified_transliteration: wu·mam
+    local_compact_root: mam
+    formal_carrier: wu-nu-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: enduring communicative participation capacity
+  invariant_definition: A persistent capacity of an endpoint to participate in communicative
+    exchange.
+  semantic_center: 'communicative affordances and participant relations: endpoint
+    participation capacity, directed target relation, and shared co-participation
+    relation'
+  address_justification:
+    first_trit_2: Selects a capacity or relationship. enduring communicative participation
+      capacity is neither a communicative locus (`CON:0xx`) nor an expression, reception,
+      or distribution process (`CON:1xx`).
+    second_trit: 'Selects inward/self scope: endpoint-internal participation affordance,
+      a directed relation to a distinct target, or a relation shared among multiple
+      participant endpoints.'
+    third_trit: Selects the stable or enduring lexical member while leaving runtime
+      assertion status, temporal scheduling, probability, permission, and failure
+      to separate grammar or roots.
+  inclusion_boundary: Includes only the enduring capacity by which an endpoint can
+    participate, relates communicatively to a distinct target, or stands with multiple
+    endpoints as co-participants in an exchange context. It is neutral about endpoints
+    and channels as loci, actual message traffic, content, physical substrate, cognition,
+    topology, protocol, reachability, social identity, and scheduling.
+  excluded_meanings:
+  - The source endpoint, target endpoint, shared channel, interface, device, address
+    record, participant set, or topology as an entity.
+  - Expression, reception, distribution, dialogue, broadcast, negotiation, acknowledgement,
+    or any other communicative event or traffic.
+  - A physical link, route, movement, carrier, transceiver, permission, authentication,
+    protocol compatibility, logical reachability, failure, repair, or queue state.
+  - Friendship, kinship, affection, community identity, structural membership, attention,
+    understanding, agreement, or joint mental state.
+  - Intention, plan, schedule, probability, future time, or guaranteed later realization—especially
+    for lexical third-trit 2.
+  nearest_neighbors:
+  - CON:201
+  - CON:202
+  - CON:210
+  - CON:220
+  - CON:000
+  - CON:100
+  same_family_contrast: "`CON:0xx` owns communicative loci, `CON:1xx` owns exchange
+    processes through those loci, and `CON:2xx` owns substrate-neutral communicative
+    participation capacity or participant relations. An active capacity or relation
+    never entails active traffic."
+  cross_family_comparisons: &1
+    LIF: LIF owns the identity and living or conscious status of participants and
+      communities. CON may relate those participants but never makes a social group
+      or organism identical to a communication relation.
+    MOV: MOV owns displacement, approach, traversal, and spatial reachability through
+      routes. A communicative relation can hold across distance without asserting
+      physical or logical reachability.
+    MAT: MAT owns physical interfaces, transceivers, cables, sound, light, and carrier
+      media. CON capacity is substrate-neutral and does not assert that hardware exists
+      or functions.
+    MIN: MIN owns attention, interpretation, understanding, willingness, memory, and
+      joint mental state. Communicative participation does not entail attention or
+      comprehension.
+    STR: STR owns graph topology, membership structure, containers, interfaces, and
+      system arrangement. CON owns the communicative participant relation, not the
+      network's structural edges or shape.
+    WRN: WRN owns failure, blockage, corruption, deception, and risk. A CON capacity
+      or relation is neutral about faults unless a WRN claim is compounded.
+    REP: REP owns restoration, reconnection after failure, and recovery of an interface
+      or channel. A persistent or latent CON capacity is not itself a repair operation.
+    LOG: LOG owns permission, authentication, protocol validity, compatibility tests,
+      obligations, and reachability conclusions. CON relations do not imply authorization,
+      compatibility, or successful reachability.
+    DAT: DAT owns participant addresses, contact records, messages, streams, and subscription
+      records as information objects. CON owns the affordance or relation those records
+      may describe.
+    CRE: CRE owns creation of interfaces, accounts, groups, protocols, and links.
+      CON:2xx states a capacity or relation without asserting how it was created.
+    ORI: ORI owns existence, modality, time, possibility, and ontological transition.
+      CON:222 contributes a domain-specific unrealized shared relation but not plan,
+      probability, schedule, or future time.
+  runtime_state_interpretation:
+    '0': Denies that the enduring condition named by enduring communicative participation
+      capacity holds in the stated context; it does not assert the active or dormant/unresolved
+      sibling.
+    '1': Affirms the persistent capacity or relation named by enduring communicative
+      participation capacity, even if no exchange is occurring at this moment.
+    2/num: Leaves unresolved whether the enduring condition named by enduring communicative
+      participation capacity holds; it does not convert the lexeme into its active
+      or dormant/unresolved sibling.
+  lexical_runtime_distinction: Lexical third trit `0` permanently selects the stable
+    or enduring member of this triplet. Runtime `[2]/num` instead leaves the truth
+    or applicability of that already-selected lexeme unresolved; it never changes
+    the lexical member.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:200[1](ENDPOINT=archivist)
+    literal_gloss: enduring endpoint-internal communicative participation capacity
+    natural_english: The archivist retains the capacity to communicate even while
+      silent.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: The root describes capacity, not a message event.
+  - category: physical_or_spatial
+    semantic_graph: MAT(INTERFACE=device)+CON:200[1](ENDPOINT=device)
+    literal_gloss: physical interface plus enduring communicative capacity
+    natural_english: The probe has a persistent communication capability independent
+      of this antenna's current state.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: MAT supplies hardware; CON supplies substrate-neutral capacity.
+  - category: temporal_or_sequential
+    semantic_graph: CON:200[1](ENDPOINT=delegate,CONTEXT=session)+ORI(TIME=now)
+    literal_gloss: enduring capacity evaluated in this session
+    natural_english: The delegate's communicative capacity has the stated condition
+      during this session.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: ORI supplies the evaluation time.
+  - category: cross_family_compound
+    semantic_graph: LIF(AGENT=pilot)+MIN(ATTENTION=pilot)+CON:200[1](ENDPOINT=pilot)
+    literal_gloss: agent attention plus communicative participation capacity
+    natural_english: The pilot is attentive and has the stated communicative capacity.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: Attention and communication capacity are independent claims.
+  - category: executable_or_programming
+    semantic_graph: CON:200[1](ENDPOINT=actor,CAPABILITY=communicative_participation)
+    literal_gloss: assert enduring communication capability
+    natural_english: The object implements a persistent communicative-participant
+      capability.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: The capability does not imply authentication, compatibility, or I/O
+      traffic.
+    pseudocode: assert(relation.matches?("CON:200"))
+  - category: counterexample
+    semantic_graph: CON:101[1](SOURCE=actor,EXPRESSION=message)
+    literal_gloss: active source expression
+    natural_english: The actor is sending a message.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: must_not_use_this_root
+    analysis: Traffic is CON:1xx, not an endpoint capacity.
+  future_compound_examples:
+  - CON:200 + CON:0xx supplies a concrete endpoint or channel without confusing the
+    locus with this capacity or relation.
+  - CON:200 + CON:1xx adds expression, reception, or distribution traffic without
+    making traffic part of the invariant.
+  - CON:200 + DAT/LOG/STR adds addresses, messages, permission, protocol, membership,
+    or topology as typed independent layers.
+  - CON:200 + MAT/MOV/MIN/LIF adds hardware, routes, attention, or participant identity
+    while preserving the neutral Connection center.
+  later_era_notes: Later eras may lexicalize online, offline, contact, friend, subscriber,
+    reachable, compatible, networked, community, group chat, peer, or federation.
+    Era Zero should derive those senses compositionally and preserve the capacity/relation
+    versus locus/process boundary.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:201
+    universal_slot: active inward capacity
+    family_qualified_transliteration: wu·mak
+    local_compact_root: mak
+    formal_carrier: wu-nu-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: available communicative participation capacity
+  invariant_definition: A communicative capacity of an endpoint that is presently
+    available for exercise in an exchange.
+  semantic_center: 'communicative affordances and participant relations: endpoint
+    participation capacity, directed target relation, and shared co-participation
+    relation'
+  address_justification:
+    first_trit_2: Selects a capacity or relationship. available communicative participation
+      capacity is neither a communicative locus (`CON:0xx`) nor an expression, reception,
+      or distribution process (`CON:1xx`).
+    second_trit: 'Selects inward/self scope: endpoint-internal participation affordance,
+      a directed relation to a distinct target, or a relation shared among multiple
+      participant endpoints.'
+    third_trit: Selects the active or presently operative lexical member while leaving
+      runtime assertion status, temporal scheduling, probability, permission, and
+      failure to separate grammar or roots.
+  inclusion_boundary: Includes only the presently available capacity by which an endpoint
+    can participate, relates communicatively to a distinct target, or stands with
+    multiple endpoints as co-participants in an exchange context. It is neutral about
+    endpoints and channels as loci, actual message traffic, content, physical substrate,
+    cognition, topology, protocol, reachability, social identity, and scheduling.
+  excluded_meanings:
+  - The source endpoint, target endpoint, shared channel, interface, device, address
+    record, participant set, or topology as an entity.
+  - Expression, reception, distribution, dialogue, broadcast, negotiation, acknowledgement,
+    or any other communicative event or traffic.
+  - A physical link, route, movement, carrier, transceiver, permission, authentication,
+    protocol compatibility, logical reachability, failure, repair, or queue state.
+  - Friendship, kinship, affection, community identity, structural membership, attention,
+    understanding, agreement, or joint mental state.
+  - Intention, plan, schedule, probability, future time, or guaranteed later realization—especially
+    for lexical third-trit 2.
+  nearest_neighbors:
+  - CON:200
+  - CON:202
+  - CON:211
+  - CON:221
+  - CON:001
+  - CON:101
+  same_family_contrast: "`CON:0xx` owns communicative loci, `CON:1xx` owns exchange
+    processes through those loci, and `CON:2xx` owns substrate-neutral communicative
+    participation capacity or participant relations. An active capacity or relation
+    never entails active traffic."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the presently operative condition named by available communicative
+      participation capacity holds now; persistence, latency, or future operation
+      is not thereby decided.
+    '1': Affirms that available communicative participation capacity is presently
+      available or operative, without asserting that expression, reception, or distribution
+      traffic is occurring.
+    2/num: Leaves unresolved whether available communicative participation capacity
+      is presently operative; it does not select the enduring or dormant/unresolved
+      lexical sibling.
+  lexical_runtime_distinction: Lexical third trit `1` permanently selects the active
+    or presently operative member of this triplet. Runtime `[2]/num` instead leaves
+    the truth or applicability of that already-selected lexeme unresolved; it never
+    changes the lexical member.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:201[1](ENDPOINT=interpreter)
+    literal_gloss: presently available endpoint-internal communicative participation
+      capacity
+    natural_english: The interpreter is presently available to participate in the
+      exchange.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: The root describes capacity, not a message event.
+  - category: physical_or_spatial
+    semantic_graph: MAT(INTERFACE=device)+CON:201[1](ENDPOINT=device)
+    literal_gloss: physical interface plus presently available communicative capacity
+    natural_english: The field unit's communicative capability is usable at this location
+      now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: MAT supplies hardware; CON supplies substrate-neutral capacity.
+  - category: temporal_or_sequential
+    semantic_graph: CON:201[1](ENDPOINT=delegate,CONTEXT=session)+ORI(TIME=now)
+    literal_gloss: presently available capacity evaluated in this session
+    natural_english: The delegate's communicative capacity has the stated condition
+      during this session.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: ORI supplies the evaluation time.
+  - category: cross_family_compound
+    semantic_graph: LIF(AGENT=pilot)+MIN(ATTENTION=pilot)+CON:201[1](ENDPOINT=pilot)
+    literal_gloss: agent attention plus communicative participation capacity
+    natural_english: The pilot is attentive and has the stated communicative capacity.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: Attention and communication capacity are independent claims.
+  - category: executable_or_programming
+    semantic_graph: CON:201[1](ENDPOINT=actor,CAPABILITY=communicative_participation)
+    literal_gloss: assert presently available communication capability
+    natural_english: The actor's communication capability is currently exercisable.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: The capability does not imply authentication, compatibility, or I/O
+      traffic.
+    pseudocode: assert(relation.matches?("CON:201"))
+  - category: counterexample
+    semantic_graph: CON:101[1](SOURCE=actor,EXPRESSION=message)
+    literal_gloss: active source expression
+    natural_english: The actor is sending a message.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: must_not_use_this_root
+    analysis: Traffic is CON:1xx, not an endpoint capacity.
+  future_compound_examples:
+  - CON:201 + CON:0xx supplies a concrete endpoint or channel without confusing the
+    locus with this capacity or relation.
+  - CON:201 + CON:1xx adds expression, reception, or distribution traffic without
+    making traffic part of the invariant.
+  - CON:201 + DAT/LOG/STR adds addresses, messages, permission, protocol, membership,
+    or topology as typed independent layers.
+  - CON:201 + MAT/MOV/MIN/LIF adds hardware, routes, attention, or participant identity
+    while preserving the neutral Connection center.
+  later_era_notes: Later eras may lexicalize online, offline, contact, friend, subscriber,
+    reachable, compatible, networked, community, group chat, peer, or federation.
+    Era Zero should derive those senses compositionally and preserve the capacity/relation
+    versus locus/process boundary.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:202
+    universal_slot: dormant inward capacity
+    family_qualified_transliteration: wu·man
+    local_compact_root: man
+    formal_carrier: wu-nu-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: latent communicative participation capacity
+  invariant_definition: A communicative capacity of an endpoint that exists without
+    being presently available for exercise.
+  semantic_center: 'communicative affordances and participant relations: endpoint
+    participation capacity, directed target relation, and shared co-participation
+    relation'
+  address_justification:
+    first_trit_2: Selects a capacity or relationship. latent communicative participation
+      capacity is neither a communicative locus (`CON:0xx`) nor an expression, reception,
+      or distribution process (`CON:1xx`).
+    second_trit: 'Selects inward/self scope: endpoint-internal participation affordance,
+      a directed relation to a distinct target, or a relation shared among multiple
+      participant endpoints.'
+    third_trit: Selects the dormant, unresolved, or unrealized lexical member while
+      leaving runtime assertion status, temporal scheduling, probability, permission,
+      and failure to separate grammar or roots.
+  inclusion_boundary: Includes only the latent capacity by which an endpoint can participate,
+    relates communicatively to a distinct target, or stands with multiple endpoints
+    as co-participants in an exchange context. It is neutral about endpoints and channels
+    as loci, actual message traffic, content, physical substrate, cognition, topology,
+    protocol, reachability, social identity, and scheduling.
+  excluded_meanings:
+  - The source endpoint, target endpoint, shared channel, interface, device, address
+    record, participant set, or topology as an entity.
+  - Expression, reception, distribution, dialogue, broadcast, negotiation, acknowledgement,
+    or any other communicative event or traffic.
+  - A physical link, route, movement, carrier, transceiver, permission, authentication,
+    protocol compatibility, logical reachability, failure, repair, or queue state.
+  - Friendship, kinship, affection, community identity, structural membership, attention,
+    understanding, agreement, or joint mental state.
+  - Intention, plan, schedule, probability, future time, or guaranteed later realization—especially
+    for lexical third-trit 2.
+  nearest_neighbors:
+  - CON:200
+  - CON:201
+  - CON:212
+  - CON:222
+  - CON:002
+  - CON:102
+  same_family_contrast: "`CON:0xx` owns communicative loci, `CON:1xx` owns exchange
+    processes through those loci, and `CON:2xx` owns substrate-neutral communicative
+    participation capacity or participant relations. An active capacity or relation
+    never entails active traffic."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies the latent, unresolved, or potential condition named by latent communicative
+      participation capacity; it does not affirm an active or enduring alternative.
+    '1': Affirms exactly the latent, unresolved, or unrealized condition named by
+      latent communicative participation capacity, without adding intention, plan,
+      schedule, probability, permission, or future time.
+    2/num: Leaves unresolved whether even the lexical latent, unresolved, or potential
+      condition named by latent communicative participation capacity holds; lexical
+      third-trit 2 and runtime uncertainty remain distinct.
+  lexical_runtime_distinction: Lexical third trit `2` permanently selects the dormant,
+    unresolved, or unrealized member of this triplet. Runtime `[2]/num` instead leaves
+    the truth or applicability of that already-selected lexeme unresolved; it never
+    changes the lexical member.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:202[1](ENDPOINT=offline terminal)
+    literal_gloss: latent endpoint-internal communicative participation capacity
+    natural_english: The offline terminal still has a communicative capability, but
+      it cannot exercise it now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: The root describes capacity, not a message event.
+  - category: physical_or_spatial
+    semantic_graph: MAT(INTERFACE=device)+CON:202[1](ENDPOINT=device)
+    literal_gloss: physical interface plus latent communicative capacity
+    natural_english: The buried sensor retains a dormant capability although its radio
+      is unavailable.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: MAT supplies hardware; CON supplies substrate-neutral capacity.
+  - category: temporal_or_sequential
+    semantic_graph: CON:202[1](ENDPOINT=delegate,CONTEXT=session)+ORI(TIME=now)
+    literal_gloss: latent capacity evaluated in this session
+    natural_english: The delegate's communicative capacity has the stated condition
+      during this session.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: ORI supplies the evaluation time.
+  - category: cross_family_compound
+    semantic_graph: LIF(AGENT=pilot)+MIN(ATTENTION=pilot)+CON:202[1](ENDPOINT=pilot)
+    literal_gloss: agent attention plus communicative participation capacity
+    natural_english: The pilot is attentive and has the stated communicative capacity.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: Attention and communication capacity are independent claims.
+  - category: executable_or_programming
+    semantic_graph: CON:202[1](ENDPOINT=actor,CAPABILITY=communicative_participation)
+    literal_gloss: assert latent communication capability
+    natural_english: The actor has the capability, but it is suspended and cannot
+      currently be exercised.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: The capability does not imply authentication, compatibility, or I/O
+      traffic.
+    pseudocode: assert(relation.matches?("CON:202"))
+  - category: counterexample
+    semantic_graph: CON:101[1](SOURCE=actor,EXPRESSION=message)
+    literal_gloss: active source expression
+    natural_english: The actor is sending a message.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: must_not_use_this_root
+    analysis: Traffic is CON:1xx, not an endpoint capacity.
+  future_compound_examples:
+  - CON:202 + CON:0xx supplies a concrete endpoint or channel without confusing the
+    locus with this capacity or relation.
+  - CON:202 + CON:1xx adds expression, reception, or distribution traffic without
+    making traffic part of the invariant.
+  - CON:202 + DAT/LOG/STR adds addresses, messages, permission, protocol, membership,
+    or topology as typed independent layers.
+  - CON:202 + MAT/MOV/MIN/LIF adds hardware, routes, attention, or participant identity
+    while preserving the neutral Connection center.
+  later_era_notes: Later eras may lexicalize online, offline, contact, friend, subscriber,
+    reachable, compatible, networked, community, group chat, peer, or federation.
+    Era Zero should derive those senses compositionally and preserve the capacity/relation
+    versus locus/process boundary.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:210
+    universal_slot: stable outward relationship
+    family_qualified_transliteration: wu·mom
+    local_compact_root: mom
+    formal_carrier: wu-nu-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: established directed communication relation
+  invariant_definition: A persistent relation that identifies a distinct endpoint
+    as the target of communicative exchange from a reference endpoint.
+  semantic_center: 'communicative affordances and participant relations: endpoint
+    participation capacity, directed target relation, and shared co-participation
+    relation'
+  address_justification:
+    first_trit_2: Selects a capacity or relationship. established directed communication
+      relation is neither a communicative locus (`CON:0xx`) nor an expression, reception,
+      or distribution process (`CON:1xx`).
+    second_trit: 'Selects outward/target scope: endpoint-internal participation affordance,
+      a directed relation to a distinct target, or a relation shared among multiple
+      participant endpoints.'
+    third_trit: Selects the stable or enduring lexical member while leaving runtime
+      assertion status, temporal scheduling, probability, permission, and failure
+      to separate grammar or roots.
+  inclusion_boundary: Includes only the established directed relation by which an
+    endpoint can participate, relates communicatively to a distinct target, or stands
+    with multiple endpoints as co-participants in an exchange context. It is neutral
+    about endpoints and channels as loci, actual message traffic, content, physical
+    substrate, cognition, topology, protocol, reachability, social identity, and scheduling.
+  excluded_meanings:
+  - The source endpoint, target endpoint, shared channel, interface, device, address
+    record, participant set, or topology as an entity.
+  - Expression, reception, distribution, dialogue, broadcast, negotiation, acknowledgement,
+    or any other communicative event or traffic.
+  - A physical link, route, movement, carrier, transceiver, permission, authentication,
+    protocol compatibility, logical reachability, failure, repair, or queue state.
+  - Friendship, kinship, affection, community identity, structural membership, attention,
+    understanding, agreement, or joint mental state.
+  - Intention, plan, schedule, probability, future time, or guaranteed later realization—especially
+    for lexical third-trit 2.
+  nearest_neighbors:
+  - CON:211
+  - CON:212
+  - CON:200
+  - CON:220
+  - CON:010
+  - CON:110
+  same_family_contrast: "`CON:0xx` owns communicative loci, `CON:1xx` owns exchange
+    processes through those loci, and `CON:2xx` owns substrate-neutral communicative
+    participation capacity or participant relations. An active capacity or relation
+    never entails active traffic."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the enduring condition named by established directed communication
+      relation holds in the stated context; it does not assert the active or dormant/unresolved
+      sibling.
+    '1': Affirms the persistent capacity or relation named by established directed
+      communication relation, even if no exchange is occurring at this moment.
+    2/num: Leaves unresolved whether the enduring condition named by established directed
+      communication relation holds; it does not convert the lexeme into its active
+      or dormant/unresolved sibling.
+  lexical_runtime_distinction: Lexical third trit `0` permanently selects the stable
+    or enduring member of this triplet. Runtime `[2]/num` instead leaves the truth
+    or applicability of that already-selected lexeme unresolved; it never changes
+    the lexical member.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:210[1](REFERENCE=clinic,TARGET=doctor)
+    literal_gloss: established directed communication relation
+    natural_english: The clinic keeps the doctor as an established communication contact.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: No message exchange or social affection is entailed.
+  - category: physical_or_spatial
+    semantic_graph: MOV(DISTANCE=remote)+CON:210[1](REFERENCE=station,TARGET=relay)
+    literal_gloss: remote target plus established directed relation
+    natural_english: The relay has the stated communication relation to the station
+      despite being remote.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: Distance does not determine the communicative relation.
+  - category: temporal_or_sequential
+    semantic_graph: CON:210[1](REFERENCE=office,TARGET=delegate)+ORI(INTERVAL=shift)
+    literal_gloss: directed relation evaluated during a shift
+    natural_english: The target relation has the stated condition during the shift.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: The relation is not itself a schedule.
+  - category: cross_family_compound
+    semantic_graph: DAT(ADDRESS=a)+LOG(PERMISSION=p)+CON:210[1](REFERENCE=service,TARGET=peer)
+    literal_gloss: address and permission plus directed communication relation
+    natural_english: The service records an address and permission separately from
+      its target relation to the peer.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: DAT/LOG do not collapse into CON.
+  - category: executable_or_programming
+    semantic_graph: CON:210[1](REFERENCE=service,TARGET=callback)
+    literal_gloss: assert established directed participant relation
+    natural_english: The service retains a directed participant relation to its auditor.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: No send, receipt, protocol success, or reachability is implied.
+    pseudocode: assert(relation.matches?("CON:210"))
+  - category: counterexample
+    semantic_graph: CON:111[1](TARGET=doctor,EXPRESSION=alert)
+    literal_gloss: active target reception
+    natural_english: The target is receiving an alert.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: must_not_use_this_root
+    analysis: Reception traffic is CON:1xx, not the directed relation.
+  future_compound_examples:
+  - CON:210 + CON:0xx supplies a concrete endpoint or channel without confusing the
+    locus with this capacity or relation.
+  - CON:210 + CON:1xx adds expression, reception, or distribution traffic without
+    making traffic part of the invariant.
+  - CON:210 + DAT/LOG/STR adds addresses, messages, permission, protocol, membership,
+    or topology as typed independent layers.
+  - CON:210 + MAT/MOV/MIN/LIF adds hardware, routes, attention, or participant identity
+    while preserving the neutral Connection center.
+  later_era_notes: Later eras may lexicalize online, offline, contact, friend, subscriber,
+    reachable, compatible, networked, community, group chat, peer, or federation.
+    Era Zero should derive those senses compositionally and preserve the capacity/relation
+    versus locus/process boundary.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:211
+    universal_slot: active outward relationship
+    family_qualified_transliteration: wu·mok
+    local_compact_root: mok
+    formal_carrier: wu-nu-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: operative directed communication relation
+  invariant_definition: A directed relation from a reference endpoint to a distinct
+    target that is presently operative as a participant link for communicative exchange.
+  semantic_center: 'communicative affordances and participant relations: endpoint
+    participation capacity, directed target relation, and shared co-participation
+    relation'
+  address_justification:
+    first_trit_2: Selects a capacity or relationship. operative directed communication
+      relation is neither a communicative locus (`CON:0xx`) nor an expression, reception,
+      or distribution process (`CON:1xx`).
+    second_trit: 'Selects outward/target scope: endpoint-internal participation affordance,
+      a directed relation to a distinct target, or a relation shared among multiple
+      participant endpoints.'
+    third_trit: Selects the active or presently operative lexical member while leaving
+      runtime assertion status, temporal scheduling, probability, permission, and
+      failure to separate grammar or roots.
+  inclusion_boundary: Includes only the presently operative directed relation by which
+    an endpoint can participate, relates communicatively to a distinct target, or
+    stands with multiple endpoints as co-participants in an exchange context. It is
+    neutral about endpoints and channels as loci, actual message traffic, content,
+    physical substrate, cognition, topology, protocol, reachability, social identity,
+    and scheduling.
+  excluded_meanings:
+  - The source endpoint, target endpoint, shared channel, interface, device, address
+    record, participant set, or topology as an entity.
+  - Expression, reception, distribution, dialogue, broadcast, negotiation, acknowledgement,
+    or any other communicative event or traffic.
+  - A physical link, route, movement, carrier, transceiver, permission, authentication,
+    protocol compatibility, logical reachability, failure, repair, or queue state.
+  - Friendship, kinship, affection, community identity, structural membership, attention,
+    understanding, agreement, or joint mental state.
+  - Intention, plan, schedule, probability, future time, or guaranteed later realization—especially
+    for lexical third-trit 2.
+  nearest_neighbors:
+  - CON:210
+  - CON:212
+  - CON:201
+  - CON:221
+  - CON:011
+  - CON:111
+  same_family_contrast: "`CON:0xx` owns communicative loci, `CON:1xx` owns exchange
+    processes through those loci, and `CON:2xx` owns substrate-neutral communicative
+    participation capacity or participant relations. An active capacity or relation
+    never entails active traffic."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the presently operative condition named by operative directed
+      communication relation holds now; persistence, latency, or future operation
+      is not thereby decided.
+    '1': Affirms that operative directed communication relation is presently available
+      or operative, without asserting that expression, reception, or distribution
+      traffic is occurring.
+    2/num: Leaves unresolved whether operative directed communication relation is
+      presently operative; it does not select the enduring or dormant/unresolved lexical
+      sibling.
+  lexical_runtime_distinction: Lexical third trit `1` permanently selects the active
+    or presently operative member of this triplet. Runtime `[2]/num` instead leaves
+    the truth or applicability of that already-selected lexeme unresolved; it never
+    changes the lexical member.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:211[1](REFERENCE=clinic,TARGET=on-call technician)
+    literal_gloss: presently operative directed communication relation
+    natural_english: The on-call technician is presently operative as the service's
+      communication target.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: No message exchange or social affection is entailed.
+  - category: physical_or_spatial
+    semantic_graph: MOV(DISTANCE=remote)+CON:211[1](REFERENCE=station,TARGET=relay)
+    literal_gloss: remote target plus presently operative directed relation
+    natural_english: The relay has the stated communication relation to the station
+      despite being remote.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: Distance does not determine the communicative relation.
+  - category: temporal_or_sequential
+    semantic_graph: CON:211[1](REFERENCE=office,TARGET=delegate)+ORI(INTERVAL=shift)
+    literal_gloss: directed relation evaluated during a shift
+    natural_english: The target relation has the stated condition during the shift.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: The relation is not itself a schedule.
+  - category: cross_family_compound
+    semantic_graph: DAT(ADDRESS=a)+LOG(PERMISSION=p)+CON:211[1](REFERENCE=service,TARGET=peer)
+    literal_gloss: address and permission plus directed communication relation
+    natural_english: The service records an address and permission separately from
+      its target relation to the peer.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: DAT/LOG do not collapse into CON.
+  - category: executable_or_programming
+    semantic_graph: CON:211[1](REFERENCE=service,TARGET=callback)
+    literal_gloss: assert presently operative directed participant relation
+    natural_english: The callback target relation is presently operative.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: No send, receipt, protocol success, or reachability is implied.
+    pseudocode: assert(relation.matches?("CON:211"))
+  - category: counterexample
+    semantic_graph: CON:111[1](TARGET=on-call technician,EXPRESSION=alert)
+    literal_gloss: active target reception
+    natural_english: The target is receiving an alert.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: must_not_use_this_root
+    analysis: Reception traffic is CON:1xx, not the directed relation.
+  future_compound_examples:
+  - CON:211 + CON:0xx supplies a concrete endpoint or channel without confusing the
+    locus with this capacity or relation.
+  - CON:211 + CON:1xx adds expression, reception, or distribution traffic without
+    making traffic part of the invariant.
+  - CON:211 + DAT/LOG/STR adds addresses, messages, permission, protocol, membership,
+    or topology as typed independent layers.
+  - CON:211 + MAT/MOV/MIN/LIF adds hardware, routes, attention, or participant identity
+    while preserving the neutral Connection center.
+  later_era_notes: Later eras may lexicalize online, offline, contact, friend, subscriber,
+    reachable, compatible, networked, community, group chat, peer, or federation.
+    Era Zero should derive those senses compositionally and preserve the capacity/relation
+    versus locus/process boundary.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:212
+    universal_slot: unresolved outward relationship
+    family_qualified_transliteration: wu·mon
+    local_compact_root: mon
+    formal_carrier: wu-nu-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: unresolved directed communication relation
+  invariant_definition: A directed relation from a reference endpoint to a distinct
+    target whose status as a participant link for communicative exchange is undetermined.
+  semantic_center: 'communicative affordances and participant relations: endpoint
+    participation capacity, directed target relation, and shared co-participation
+    relation'
+  address_justification:
+    first_trit_2: Selects a capacity or relationship. unresolved directed communication
+      relation is neither a communicative locus (`CON:0xx`) nor an expression, reception,
+      or distribution process (`CON:1xx`).
+    second_trit: 'Selects outward/target scope: endpoint-internal participation affordance,
+      a directed relation to a distinct target, or a relation shared among multiple
+      participant endpoints.'
+    third_trit: Selects the dormant, unresolved, or unrealized lexical member while
+      leaving runtime assertion status, temporal scheduling, probability, permission,
+      and failure to separate grammar or roots.
+  inclusion_boundary: Includes only the unresolved directed relation by which an endpoint
+    can participate, relates communicatively to a distinct target, or stands with
+    multiple endpoints as co-participants in an exchange context. It is neutral about
+    endpoints and channels as loci, actual message traffic, content, physical substrate,
+    cognition, topology, protocol, reachability, social identity, and scheduling.
+  excluded_meanings:
+  - The source endpoint, target endpoint, shared channel, interface, device, address
+    record, participant set, or topology as an entity.
+  - Expression, reception, distribution, dialogue, broadcast, negotiation, acknowledgement,
+    or any other communicative event or traffic.
+  - A physical link, route, movement, carrier, transceiver, permission, authentication,
+    protocol compatibility, logical reachability, failure, repair, or queue state.
+  - Friendship, kinship, affection, community identity, structural membership, attention,
+    understanding, agreement, or joint mental state.
+  - Intention, plan, schedule, probability, future time, or guaranteed later realization—especially
+    for lexical third-trit 2.
+  nearest_neighbors:
+  - CON:210
+  - CON:211
+  - CON:202
+  - CON:222
+  - CON:012
+  - CON:112
+  same_family_contrast: "`CON:0xx` owns communicative loci, `CON:1xx` owns exchange
+    processes through those loci, and `CON:2xx` owns substrate-neutral communicative
+    participation capacity or participant relations. An active capacity or relation
+    never entails active traffic."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies the latent, unresolved, or potential condition named by unresolved
+      directed communication relation; it does not affirm an active or enduring alternative.
+    '1': Affirms exactly the latent, unresolved, or unrealized condition named by
+      unresolved directed communication relation, without adding intention, plan,
+      schedule, probability, permission, or future time.
+    2/num: Leaves unresolved whether even the lexical latent, unresolved, or potential
+      condition named by unresolved directed communication relation holds; lexical
+      third-trit 2 and runtime uncertainty remain distinct.
+  lexical_runtime_distinction: Lexical third trit `2` permanently selects the dormant,
+    unresolved, or unrealized member of this triplet. Runtime `[2]/num` instead leaves
+    the truth or applicability of that already-selected lexeme unresolved; it never
+    changes the lexical member.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:212[1](REFERENCE=clinic,TARGET=unknown delegate)
+    literal_gloss: unresolved directed communication relation
+    natural_english: Whether the delegate is a valid communication contact is still
+      unresolved.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: No message exchange or social affection is entailed.
+  - category: physical_or_spatial
+    semantic_graph: MOV(DISTANCE=remote)+CON:212[1](REFERENCE=station,TARGET=relay)
+    literal_gloss: remote target plus unresolved directed relation
+    natural_english: The relay has the stated communication relation to the station
+      despite being remote.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: Distance does not determine the communicative relation.
+  - category: temporal_or_sequential
+    semantic_graph: CON:212[1](REFERENCE=office,TARGET=delegate)+ORI(INTERVAL=shift)
+    literal_gloss: directed relation evaluated during a shift
+    natural_english: The target relation has the stated condition during the shift.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: The relation is not itself a schedule.
+  - category: cross_family_compound
+    semantic_graph: DAT(ADDRESS=a)+LOG(PERMISSION=p)+CON:212[1](REFERENCE=service,TARGET=peer)
+    literal_gloss: address and permission plus directed communication relation
+    natural_english: The service records an address and permission separately from
+      its target relation to the peer.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: DAT/LOG do not collapse into CON.
+  - category: executable_or_programming
+    semantic_graph: CON:212[1](REFERENCE=service,TARGET=callback)
+    literal_gloss: assert unresolved directed participant relation
+    natural_english: The endpoint relation is represented without claiming that linkage
+      is established or absent.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: No send, receipt, protocol success, or reachability is implied.
+    pseudocode: assert(relation.matches?("CON:212"))
+  - category: counterexample
+    semantic_graph: CON:111[1](TARGET=unknown delegate,EXPRESSION=alert)
+    literal_gloss: active target reception
+    natural_english: The target is receiving an alert.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: must_not_use_this_root
+    analysis: Reception traffic is CON:1xx, not the directed relation.
+  future_compound_examples:
+  - CON:212 + CON:0xx supplies a concrete endpoint or channel without confusing the
+    locus with this capacity or relation.
+  - CON:212 + CON:1xx adds expression, reception, or distribution traffic without
+    making traffic part of the invariant.
+  - CON:212 + DAT/LOG/STR adds addresses, messages, permission, protocol, membership,
+    or topology as typed independent layers.
+  - CON:212 + MAT/MOV/MIN/LIF adds hardware, routes, attention, or participant identity
+    while preserving the neutral Connection center.
+  later_era_notes: Later eras may lexicalize online, offline, contact, friend, subscriber,
+    reachable, compatible, networked, community, group chat, peer, or federation.
+    Era Zero should derive those senses compositionally and preserve the capacity/relation
+    versus locus/process boundary.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:220
+    universal_slot: stable systemic relationship
+    family_qualified_transliteration: wu·mim
+    local_compact_root: mim
+    formal_carrier: wu-nu-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: enduring shared-participation relation
+  invariant_definition: A persistent communicative relation among multiple endpoints
+    that constitutes them as co-participants in one shared exchange context.
+  semantic_center: 'communicative affordances and participant relations: endpoint
+    participation capacity, directed target relation, and shared co-participation
+    relation'
+  address_justification:
+    first_trit_2: Selects a capacity or relationship. enduring shared-participation
+      relation is neither a communicative locus (`CON:0xx`) nor an expression, reception,
+      or distribution process (`CON:1xx`).
+    second_trit: 'Selects systemic/shared scope: endpoint-internal participation affordance,
+      a directed relation to a distinct target, or a relation shared among multiple
+      participant endpoints.'
+    third_trit: Selects the stable or enduring lexical member while leaving runtime
+      assertion status, temporal scheduling, probability, permission, and failure
+      to separate grammar or roots.
+  inclusion_boundary: Includes only the enduring shared relation by which an endpoint
+    can participate, relates communicatively to a distinct target, or stands with
+    multiple endpoints as co-participants in an exchange context. It is neutral about
+    endpoints and channels as loci, actual message traffic, content, physical substrate,
+    cognition, topology, protocol, reachability, social identity, and scheduling.
+  excluded_meanings:
+  - The source endpoint, target endpoint, shared channel, interface, device, address
+    record, participant set, or topology as an entity.
+  - Expression, reception, distribution, dialogue, broadcast, negotiation, acknowledgement,
+    or any other communicative event or traffic.
+  - A physical link, route, movement, carrier, transceiver, permission, authentication,
+    protocol compatibility, logical reachability, failure, repair, or queue state.
+  - Friendship, kinship, affection, community identity, structural membership, attention,
+    understanding, agreement, or joint mental state.
+  - Intention, plan, schedule, probability, future time, or guaranteed later realization—especially
+    for lexical third-trit 2.
+  nearest_neighbors:
+  - CON:221
+  - CON:222
+  - CON:200
+  - CON:210
+  - CON:020
+  - CON:120
+  same_family_contrast: "`CON:0xx` owns communicative loci, `CON:1xx` owns exchange
+    processes through those loci, and `CON:2xx` owns substrate-neutral communicative
+    participation capacity or participant relations. An active capacity or relation
+    never entails active traffic."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the enduring condition named by enduring shared-participation
+      relation holds in the stated context; it does not assert the active or dormant/unresolved
+      sibling.
+    '1': Affirms the persistent capacity or relation named by enduring shared-participation
+      relation, even if no exchange is occurring at this moment.
+    2/num: Leaves unresolved whether the enduring condition named by enduring shared-participation
+      relation holds; it does not convert the lexeme into its active or dormant/unresolved
+      sibling.
+  lexical_runtime_distinction: Lexical third trit `0` permanently selects the stable
+    or enduring member of this triplet. Runtime `[2]/num` instead leaves the truth
+    or applicability of that already-selected lexeme unresolved; it never changes
+    the lexical member.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:220[1](PARTICIPANTS=research team)
+    literal_gloss: enduring shared-participation relation
+    natural_english: The research team remains related as co-participants in one exchange
+      context.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: The relation is not the group's social identity.
+  - category: physical_or_spatial
+    semantic_graph: MOV(DISTRIBUTED=sensors)+CON:220[1](PARTICIPANTS=sensors)
+    literal_gloss: spatially distributed endpoints plus enduring shared relation
+    natural_english: The separated sensors have the stated co-participation relation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: MOV adds distribution in space; CON adds communicative co-participation.
+  - category: temporal_or_sequential
+    semantic_graph: CON:220[1](PARTICIPANTS=crew)+ORI(INTERVAL=incident)
+    literal_gloss: shared relation evaluated during incident
+    natural_english: The crew's shared-participation relation has the stated condition
+      during the incident.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: Duration and schedule remain ORI/LOG.
+  - category: cross_family_compound
+    semantic_graph: STR(MEMBERSHIP=set)+CON:020(CHANNEL=room)+CON:220[1](PARTICIPANTS=set)
+    literal_gloss: membership structure and shared channel plus shared participant
+      relation
+    natural_english: The members share a channel and also stand in the stated co-participation
+      relation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: STR membership, CON:0xx channel, and CON:2xx relation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: CON:220[1](PARTICIPANTS=peers,CONTEXT=session)
+    literal_gloss: assert enduring shared communicative relation
+    natural_english: The participant set retains one shared communicative relation.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: No topology, protocol compatibility, consensus, or traffic is implied.
+    pseudocode: assert(relation.matches?("CON:220"))
+  - category: counterexample
+    semantic_graph: CON:121[1](EXPRESSION=alert,ENDPOINTS=research team)
+    literal_gloss: active shared distribution
+    natural_english: An alert is being distributed to the group.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: must_not_use_this_root
+    analysis: Shared traffic is CON:1xx, not the participant relation.
+  future_compound_examples:
+  - CON:220 + CON:0xx supplies a concrete endpoint or channel without confusing the
+    locus with this capacity or relation.
+  - CON:220 + CON:1xx adds expression, reception, or distribution traffic without
+    making traffic part of the invariant.
+  - CON:220 + DAT/LOG/STR adds addresses, messages, permission, protocol, membership,
+    or topology as typed independent layers.
+  - CON:220 + MAT/MOV/MIN/LIF adds hardware, routes, attention, or participant identity
+    while preserving the neutral Connection center.
+  later_era_notes: Later eras may lexicalize online, offline, contact, friend, subscriber,
+    reachable, compatible, networked, community, group chat, peer, or federation.
+    Era Zero should derive those senses compositionally and preserve the capacity/relation
+    versus locus/process boundary.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:221
+    universal_slot: active systemic relationship
+    family_qualified_transliteration: wu·mik
+    local_compact_root: mik
+    formal_carrier: wu-nu-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: operative shared-participation relation
+  invariant_definition: A communicative relation among multiple endpoints that presently
+    operates to constitute them as co-participants in one shared exchange context.
+  semantic_center: 'communicative affordances and participant relations: endpoint
+    participation capacity, directed target relation, and shared co-participation
+    relation'
+  address_justification:
+    first_trit_2: Selects a capacity or relationship. operative shared-participation
+      relation is neither a communicative locus (`CON:0xx`) nor an expression, reception,
+      or distribution process (`CON:1xx`).
+    second_trit: 'Selects systemic/shared scope: endpoint-internal participation affordance,
+      a directed relation to a distinct target, or a relation shared among multiple
+      participant endpoints.'
+    third_trit: Selects the active or presently operative lexical member while leaving
+      runtime assertion status, temporal scheduling, probability, permission, and
+      failure to separate grammar or roots.
+  inclusion_boundary: Includes only the presently operative shared relation by which
+    an endpoint can participate, relates communicatively to a distinct target, or
+    stands with multiple endpoints as co-participants in an exchange context. It is
+    neutral about endpoints and channels as loci, actual message traffic, content,
+    physical substrate, cognition, topology, protocol, reachability, social identity,
+    and scheduling.
+  excluded_meanings:
+  - The source endpoint, target endpoint, shared channel, interface, device, address
+    record, participant set, or topology as an entity.
+  - Expression, reception, distribution, dialogue, broadcast, negotiation, acknowledgement,
+    or any other communicative event or traffic.
+  - A physical link, route, movement, carrier, transceiver, permission, authentication,
+    protocol compatibility, logical reachability, failure, repair, or queue state.
+  - Friendship, kinship, affection, community identity, structural membership, attention,
+    understanding, agreement, or joint mental state.
+  - Intention, plan, schedule, probability, future time, or guaranteed later realization—especially
+    for lexical third-trit 2.
+  nearest_neighbors:
+  - CON:220
+  - CON:222
+  - CON:201
+  - CON:211
+  - CON:021
+  - CON:121
+  same_family_contrast: "`CON:0xx` owns communicative loci, `CON:1xx` owns exchange
+    processes through those loci, and `CON:2xx` owns substrate-neutral communicative
+    participation capacity or participant relations. An active capacity or relation
+    never entails active traffic."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the presently operative condition named by operative shared-participation
+      relation holds now; persistence, latency, or future operation is not thereby
+      decided.
+    '1': Affirms that operative shared-participation relation is presently available
+      or operative, without asserting that expression, reception, or distribution
+      traffic is occurring.
+    2/num: Leaves unresolved whether operative shared-participation relation is presently
+      operative; it does not select the enduring or dormant/unresolved lexical sibling.
+  lexical_runtime_distinction: Lexical third trit `1` permanently selects the active
+    or presently operative member of this triplet. Runtime `[2]/num` instead leaves
+    the truth or applicability of that already-selected lexeme unresolved; it never
+    changes the lexical member.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:221[1](PARTICIPANTS=incident crew)
+    literal_gloss: presently operative shared-participation relation
+    natural_english: The incident crew is presently operating as co-participants in
+      one exchange context.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: The relation is not the group's social identity.
+  - category: physical_or_spatial
+    semantic_graph: MOV(DISTRIBUTED=sensors)+CON:221[1](PARTICIPANTS=sensors)
+    literal_gloss: spatially distributed endpoints plus presently operative shared
+      relation
+    natural_english: The separated sensors have the stated co-participation relation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: MOV adds distribution in space; CON adds communicative co-participation.
+  - category: temporal_or_sequential
+    semantic_graph: CON:221[1](PARTICIPANTS=crew)+ORI(INTERVAL=incident)
+    literal_gloss: shared relation evaluated during incident
+    natural_english: The crew's shared-participation relation has the stated condition
+      during the incident.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: Duration and schedule remain ORI/LOG.
+  - category: cross_family_compound
+    semantic_graph: STR(MEMBERSHIP=set)+CON:020(CHANNEL=room)+CON:221[1](PARTICIPANTS=set)
+    literal_gloss: membership structure and shared channel plus shared participant
+      relation
+    natural_english: The members share a channel and also stand in the stated co-participation
+      relation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: STR membership, CON:0xx channel, and CON:2xx relation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: CON:221[1](PARTICIPANTS=peers,CONTEXT=session)
+    literal_gloss: assert presently operative shared communicative relation
+    natural_english: The participant set's shared communicative relation is presently
+      operative.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: No topology, protocol compatibility, consensus, or traffic is implied.
+    pseudocode: assert(relation.matches?("CON:221"))
+  - category: counterexample
+    semantic_graph: CON:121[1](EXPRESSION=alert,ENDPOINTS=incident crew)
+    literal_gloss: active shared distribution
+    natural_english: An alert is being distributed to the group.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: must_not_use_this_root
+    analysis: Shared traffic is CON:1xx, not the participant relation.
+  future_compound_examples:
+  - CON:221 + CON:0xx supplies a concrete endpoint or channel without confusing the
+    locus with this capacity or relation.
+  - CON:221 + CON:1xx adds expression, reception, or distribution traffic without
+    making traffic part of the invariant.
+  - CON:221 + DAT/LOG/STR adds addresses, messages, permission, protocol, membership,
+    or topology as typed independent layers.
+  - CON:221 + MAT/MOV/MIN/LIF adds hardware, routes, attention, or participant identity
+    while preserving the neutral Connection center.
+  later_era_notes: Later eras may lexicalize online, offline, contact, friend, subscriber,
+    reachable, compatible, networked, community, group chat, peer, or federation.
+    Era Zero should derive those senses compositionally and preserve the capacity/relation
+    versus locus/process boundary.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:222
+    universal_slot: unrealized systemic possibility
+    family_qualified_transliteration: wu·min
+    local_compact_root: min
+    formal_carrier: wu-nu-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: potential shared-participation relation
+  invariant_definition: A not-yet-realized possible communicative relation among multiple
+    endpoints that would constitute them as co-participants in one shared exchange
+    context.
+  semantic_center: 'communicative affordances and participant relations: endpoint
+    participation capacity, directed target relation, and shared co-participation
+    relation'
+  address_justification:
+    first_trit_2: Selects a capacity or relationship. potential shared-participation
+      relation is neither a communicative locus (`CON:0xx`) nor an expression, reception,
+      or distribution process (`CON:1xx`).
+    second_trit: 'Selects systemic/shared scope: endpoint-internal participation affordance,
+      a directed relation to a distinct target, or a relation shared among multiple
+      participant endpoints.'
+    third_trit: Selects the dormant, unresolved, or unrealized lexical member while
+      leaving runtime assertion status, temporal scheduling, probability, permission,
+      and failure to separate grammar or roots.
+  inclusion_boundary: Includes only the unrealized shared relation by which an endpoint
+    can participate, relates communicatively to a distinct target, or stands with
+    multiple endpoints as co-participants in an exchange context. It is neutral about
+    endpoints and channels as loci, actual message traffic, content, physical substrate,
+    cognition, topology, protocol, reachability, social identity, and scheduling.
+  excluded_meanings:
+  - The source endpoint, target endpoint, shared channel, interface, device, address
+    record, participant set, or topology as an entity.
+  - Expression, reception, distribution, dialogue, broadcast, negotiation, acknowledgement,
+    or any other communicative event or traffic.
+  - A physical link, route, movement, carrier, transceiver, permission, authentication,
+    protocol compatibility, logical reachability, failure, repair, or queue state.
+  - Friendship, kinship, affection, community identity, structural membership, attention,
+    understanding, agreement, or joint mental state.
+  - Intention, plan, schedule, probability, future time, or guaranteed later realization—especially
+    for lexical third-trit 2.
+  nearest_neighbors:
+  - CON:220
+  - CON:221
+  - CON:202
+  - CON:212
+  - CON:022
+  - CON:122
+  same_family_contrast: "`CON:0xx` owns communicative loci, `CON:1xx` owns exchange
+    processes through those loci, and `CON:2xx` owns substrate-neutral communicative
+    participation capacity or participant relations. An active capacity or relation
+    never entails active traffic."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies the latent, unresolved, or potential condition named by potential
+      shared-participation relation; it does not affirm an active or enduring alternative.
+    '1': Affirms exactly the latent, unresolved, or unrealized condition named by
+      potential shared-participation relation, without adding intention, plan, schedule,
+      probability, permission, or future time.
+    2/num: Leaves unresolved whether even the lexical latent, unresolved, or potential
+      condition named by potential shared-participation relation holds; lexical third-trit
+      2 and runtime uncertainty remain distinct.
+  lexical_runtime_distinction: Lexical third trit `2` permanently selects the dormant,
+    unresolved, or unrealized member of this triplet. Runtime `[2]/num` instead leaves
+    the truth or applicability of that already-selected lexeme unresolved; it never
+    changes the lexical member.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:222[1](PARTICIPANTS=proposed panel)
+    literal_gloss: unrealized shared-participation relation
+    natural_english: The proposed panel could become co-participants, but that shared
+      relation is not realized.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: The relation is not the group's social identity.
+  - category: physical_or_spatial
+    semantic_graph: MOV(DISTRIBUTED=sensors)+CON:222[1](PARTICIPANTS=sensors)
+    literal_gloss: spatially distributed endpoints plus unrealized shared relation
+    natural_english: The separated sensors have the stated co-participation relation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: MOV adds distribution in space; CON adds communicative co-participation.
+  - category: temporal_or_sequential
+    semantic_graph: CON:222[1](PARTICIPANTS=crew)+ORI(INTERVAL=incident)
+    literal_gloss: shared relation evaluated during incident
+    natural_english: The crew's shared-participation relation has the stated condition
+      during the incident.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: Duration and schedule remain ORI/LOG.
+  - category: cross_family_compound
+    semantic_graph: STR(MEMBERSHIP=set)+CON:020(CHANNEL=room)+CON:222[1](PARTICIPANTS=set)
+    literal_gloss: membership structure and shared channel plus shared participant
+      relation
+    natural_english: The members share a channel and also stand in the stated co-participation
+      relation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: STR membership, CON:0xx channel, and CON:2xx relation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: CON:222[1](PARTICIPANTS=peers,CONTEXT=session)
+    literal_gloss: assert unrealized shared communicative relation
+    natural_english: A possible participant set is modeled without instantiating a
+      channel or membership structure.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: valid
+    analysis: No topology, protocol compatibility, consensus, or traffic is implied.
+    pseudocode: assert(relation.matches?("CON:222"))
+  - category: counterexample
+    semantic_graph: CON:121[1](EXPRESSION=alert,ENDPOINTS=proposed panel)
+    literal_gloss: active shared distribution
+    natural_english: An alert is being distributed to the group.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference or source endpoint
+      middle: capacity or communicative participant relation
+      high: distinct target endpoint
+      sustained: shared exchange context or co-participant set
+    use_status: must_not_use_this_root
+    analysis: Shared traffic is CON:1xx, not the participant relation.
+  future_compound_examples:
+  - CON:222 + CON:0xx supplies a concrete endpoint or channel without confusing the
+    locus with this capacity or relation.
+  - CON:222 + CON:1xx adds expression, reception, or distribution traffic without
+    making traffic part of the invariant.
+  - CON:222 + DAT/LOG/STR adds addresses, messages, permission, protocol, membership,
+    or topology as typed independent layers.
+  - CON:222 + MAT/MOV/MIN/LIF adds hardware, routes, attention, or participant identity
+    while preserving the neutral Connection center.
+  later_era_notes: Later eras may lexicalize online, offline, contact, friend, subscriber,
+    reachable, compatible, networked, community, group chat, peer, or federation.
+    Era Zero should derive those senses compositionally and preserve the capacity/relation
+    versus locus/process boundary.
+  confidence: 0.97
+  canonicalized: true
+approval_checklist:
+  family_domain_preserved: true
+  address_axes_preserved: true
+  one_invariant_per_root: true
+  triplets_coherent: true
+  all_current_candidates_challenged: true
+  cross_family_collisions_explicit: true
+  runtime_state_separated: true
+  locus_process_relation_layers_separated: true
+  generated_fields_unchanged: true
+  gate4_not_started: true
+  translator_not_started: true
+  canonicalized: true

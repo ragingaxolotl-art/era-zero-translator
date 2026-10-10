@@ -1,0 +1,569 @@
+---
+metadata:
+  title: ORI:100–122 English coverage and routing tests
+  status: review_evidence_not_translation_dictionary
+  range: ORI:100–122
+  test_count: 114
+  no_forced_atomization: true
+tests:
+- test_id: ORI1-T001
+  english_concept: begin
+  routing: one_root_or_compound
+  analysis: ORI:10x can establish source-ground status, while a generic temporal beginning
+    may require later ORI relation or grammar.
+- test_id: ORI1-T002
+  english_concept: become
+  routing: one_root_or_compound
+  analysis: Choose the triplet by what changes ontologically; broad becoming is not
+    one forced atom.
+- test_id: ORI1-T003
+  english_concept: emerge
+  routing: one_root_or_compound
+  analysis: ORI:11x covers a distinct referent coming to obtain; spatial emergence
+    or observation requires MOV or MIN/DAT.
+- test_id: ORI1-T004
+  english_concept: actualize
+  routing: one_root
+  analysis: ORI:110–112 owns bounded transition of one distinct referent into obtaining
+    in the relevant reality.
+- test_id: ORI1-T005
+  english_concept: instantiate
+  routing: one_root_or_compound
+  analysis: Distinct actualization can cover ontological instantiation while LOG/STR
+    supplies type or structural relation.
+- test_id: ORI1-T006
+  english_concept: manifest
+  routing: one_root_or_compound
+  analysis: ORI:11x covers becoming ontologically manifest, not merely becoming visible
+    or represented.
+- test_id: ORI1-T007
+  english_concept: originate
+  routing: ambiguous_compound
+  analysis: Originate may mean source-ground establishment, causal beginning, production,
+    provenance, or temporal onset and must be disambiguated.
+- test_id: ORI1-T008
+  english_concept: establish a source
+  routing: one_root
+  analysis: ORI:10x changes one referent into a source-ground without asserting causal
+    sufficiency or authorship.
+- test_id: ORI1-T009
+  english_concept: activate a source
+  routing: one_root_or_compound
+  analysis: ORI:101 can cover ongoing source-ground establishment; operational enablement
+    may additionally require another family.
+- test_id: ORI1-T010
+  english_concept: source established
+  routing: one_root
+  analysis: ORI:100 affirms completion of source-ground establishment without asserting
+    persistence.
+- test_id: ORI1-T011
+  english_concept: source establishment underway
+  routing: one_root
+  analysis: ORI:101 affirms the bounded process is ongoing.
+- test_id: ORI1-T012
+  english_concept: source establishment not occurring
+  routing: one_root
+  analysis: ORI:102 affirms the typed process as nonactualized without saying why.
+- test_id: ORI1-T013
+  english_concept: entity came into existence
+  routing: one_root
+  analysis: ORI:110 states completed distinct actualization in a specified reality.
+- test_id: ORI1-T014
+  english_concept: entity coming into existence
+  routing: one_root
+  analysis: ORI:111 states active distinct actualization.
+- test_id: ORI1-T015
+  english_concept: entity would come into existence
+  routing: one_root_or_compound
+  analysis: ORI:112 states nonactualized actualization; conditional or modal force
+    requires grammar or ORI:2xx.
+- test_id: ORI1-T016
+  english_concept: world changed
+  routing: one_root_or_compound
+  analysis: ORI:120 states completed shared-world transition when ontological standing
+    across the shared reality changed.
+- test_id: ORI1-T017
+  english_concept: world changing
+  routing: one_root
+  analysis: ORI:121 states active shared-world transition under one jointly applicable
+    world condition.
+- test_id: ORI1-T018
+  english_concept: world transition not occurring
+  routing: one_root
+  analysis: ORI:122 affirms a nonactualized shared-world transition without possibility
+    or planning.
+- test_id: ORI1-T019
+  english_concept: epoch change
+  routing: one_root_or_compound
+  analysis: ORI systemic transition combines with temporal qualification; epoch duration
+    is separate.
+- test_id: ORI1-T020
+  english_concept: timeline branch
+  routing: compound_or_later_specialization
+  analysis: ORI may supply systemic ontological transition while temporal branching
+    and model structure require later relations, LOG, or STR.
+- test_id: ORI1-T021
+  english_concept: simulation starts
+  routing: compound
+  analysis: ORI may supply actualization of the simulated world while DAT/LOG/STR
+    supplies implementation and state machine.
+- test_id: ORI1-T022
+  english_concept: program object instantiated
+  routing: compound
+  analysis: ORI supplies distinct actualization; DAT/LOG/STR supplies code, type,
+    allocation, and structure.
+- test_id: ORI1-T023
+  english_concept: database row inserted
+  routing: different_family
+  analysis: DAT owns insertion of a record; ORI applies only if the modeled referent
+    also changes ontological standing.
+- test_id: ORI1-T024
+  english_concept: artifact created
+  routing: compound
+  analysis: CRE owns productive generation; ORI distinct actualization may separately
+    qualify the artifact's entry into reality.
+- test_id: ORI1-T025
+  english_concept: material transformed
+  routing: different_family
+  analysis: MAT owns physical transformation; ORI is needed only for a separate ontological
+    transition.
+- test_id: ORI1-T026
+  english_concept: moved into the room
+  routing: different_family
+  analysis: MOV owns spatial displacement and arrival; location change alone is not
+    actualization.
+- test_id: ORI1-T027
+  english_concept: structure reconfigured
+  routing: different_family
+  analysis: STR owns arrangement change; reconfiguration alone is not ontological
+    transition.
+- test_id: ORI1-T028
+  english_concept: person was born
+  routing: compound
+  analysis: LIF owns biological birth while ORI may supply ontological actualization
+    if explicitly relevant.
+- test_id: ORI1-T029
+  english_concept: person died
+  routing: compound_or_gap
+  analysis: LIF owns biological death; cessation of existence is not automatically
+    the inverse of actualization and may need later vocabulary.
+- test_id: ORI1-T030
+  english_concept: idea occurred
+  routing: different_family_or_compound
+  analysis: MIN owns mental occurrence; ORI applies only if model-relative ontological
+    standing is separately asserted.
+- test_id: ORI1-T031
+  english_concept: message delivered
+  routing: different_family
+  analysis: CON/DAT owns delivery and transfer; receipt does not entail actualization.
+- test_id: ORI1-T032
+  english_concept: rule became valid
+  routing: different_family_or_compound
+  analysis: LOG owns validity and applicability; ORI transition applies only to a
+    separately asserted ontological condition.
+- test_id: ORI1-T033
+  english_concept: repair completed
+  routing: different_family
+  analysis: REP owns restorative completion; ORI does not encode return to an acceptable
+    condition.
+- test_id: ORI1-T034
+  english_concept: failure propagated
+  routing: different_family
+  analysis: WRN owns adverse propagation; ORI transition is neutral about harm.
+- test_id: ORI1-T035
+  english_concept: caused
+  routing: reserved_relation
+  analysis: Causal connection belongs in ORI:2xx or a compound and is not entailed
+    by transition.
+- test_id: ORI1-T036
+  english_concept: produced
+  routing: different_family_or_compound
+  analysis: CRE or MAT owns production mechanics; ORI only states change in ontological
+    standing.
+- test_id: ORI1-T037
+  english_concept: observed appearing
+  routing: compound
+  analysis: ORI supplies actualization while MIN/DAT supplies observation and evidence.
+- test_id: ORI1-T038
+  english_concept: represented as existing
+  routing: compound
+  analysis: DAT supplies representation and LOG may supply proposition; neither entails
+    ORI actualization.
+- test_id: ORI1-T039
+  english_concept: scheduled to begin
+  routing: grammar_or_compound
+  analysis: Scheduling does not select lexical nonactualization; ORI:1x2 plus explicit
+    schedule is required.
+- test_id: ORI1-T040
+  english_concept: intends to instantiate
+  routing: compound
+  analysis: MIN supplies intention; ORI:112 supplies only a nonactualized transition
+    if the typed process is asserted.
+- test_id: ORI1-T041
+  english_concept: ready to actualize
+  routing: compound
+  analysis: Readiness is not lexical 1x2 and requires an affordance or condition plus
+    the nonactualized process.
+- test_id: ORI1-T042
+  english_concept: possible actualization
+  routing: compound
+  analysis: ORI:112 supplies nonactualized process while ORI:2xx must later supply
+    possibility.
+- test_id: ORI1-T043
+  english_concept: probable actualization
+  routing: compound
+  analysis: Probability is separate from the nonactualized process.
+- test_id: ORI1-T044
+  english_concept: future actualization
+  routing: compound
+  analysis: Futurity is temporal and not encoded by lexical nonactualization.
+- test_id: ORI1-T045
+  english_concept: completed transition persists
+  routing: compound
+  analysis: ORI:1x0 supplies completion and ORI:0x0 separately supplies persistent
+    resulting condition.
+- test_id: ORI1-T046
+  english_concept: active transition uncertain
+  routing: runtime_and_lexical
+  analysis: ORI:1x1[2]/num leaves an active-phase claim unresolved without selecting
+    nonactualization.
+- test_id: ORI1-T047
+  english_concept: nonactualized transition affirmed
+  routing: runtime_and_lexical
+  analysis: ORI:1x2[1] confirms the typed process is not occurring without modality
+    or schedule.
+- test_id: ORI1-T048
+  english_concept: completed transition denied
+  routing: runtime_and_lexical
+  analysis: ORI:1x0[0] denies completion without selecting active or nonactualized
+    phase.
+- test_id: ORI1-T049
+  english_concept: active and completed simultaneously
+  routing: invalid_same_reference_claim
+  analysis: Active and completed are mutually exclusive phases of the same bounded
+    transition at one reference time.
+- test_id: ORI1-T050
+  english_concept: active and nonactualized simultaneously
+  routing: invalid_same_reference_claim
+  analysis: Active and nonactualized are mutually exclusive for the same transition
+    at one reference time.
+- test_id: ORI1-T051
+  english_concept: creation ex nihilo
+  routing: compound_or_later_specialization
+  analysis: ORI actualization plus CRE generation may approximate this, but the stronger
+    metaphysical claim remains later vocabulary.
+- test_id: ORI1-T052
+  english_concept: annihilate
+  routing: unresolved_vocabulary_gap
+  analysis: Cessation of ontological standing is not forced into actualization and
+    remains for later ORI design.
+- test_id: ORI1-T053
+  english_concept: deactivate
+  routing: different_family_or_compound
+  analysis: Operational deactivation is usually LOG, STR, DAT, or affordance state;
+    it is not necessarily ontological transition.
+- test_id: ORI1-T054
+  english_concept: world merge
+  routing: compound_or_later_specialization
+  analysis: Shared-world transition may participate, but identity mapping and structural
+    integration require later vocabulary and STR/LOG.
+- test_id: ORI1-T055
+  english_concept: world split
+  routing: compound_or_later_specialization
+  analysis: Shared-world transition may participate, but branching relations and resulting
+    world identities remain later vocabulary.
+- test_id: ORI1-T056
+  english_concept: state machine transition
+  routing: compound
+  analysis: STR/LOG supplies machine structure and rule while ORI applies only if
+    the transition is ontological in the modeled domain.
+- test_id: ORI1-T057
+  english_concept: event starts
+  routing: one_root_or_compound
+  analysis: ORI source-ground establishment or actualization may apply depending on
+    event ontology; temporal onset remains separate.
+- test_id: ORI1-T058
+  english_concept: event ends
+  routing: unresolved_or_compound
+  analysis: Completion of the event itself is not automatically cessation of existence
+    and may require event-specific grammar.
+- test_id: ORI1-T059
+  english_concept: reality reboot
+  routing: compound_or_later_specialization
+  analysis: ORI systemic transition plus restoration, data, and structural processes
+    may express the concept compositionally.
+- test_id: ORI1-T060
+  english_concept: law takes effect
+  routing: compound
+  analysis: LOG supplies applicability while ORI systemic transition applies only
+    if what obtains across reality changes.
+- test_id: ORI1-T061
+  english_concept: completed source-ground establishment process
+  routing: one_root
+  analysis: ORI:100[1] directly affirms the invariant without adding a cause, clock,
+    observer, representation, or physical mechanism.
+- test_id: ORI1-T062
+  english_concept: completed source-ground establishment uncertain
+  routing: runtime
+  analysis: ORI:100[2]/num leaves this exact completed transition claim unresolved
+    and does not select a lexical sibling.
+- test_id: ORI1-T063
+  english_concept: completed source-ground establishment represented
+  routing: compound
+  analysis: DAT supplies a representation while ORI:100 supplies the modeled ontological
+    transition.
+- test_id: ORI1-T064
+  english_concept: completed source-ground establishment proposition
+  routing: compound
+  analysis: LOG supplies a proposition about the transition while ORI:100 remains
+    the state-of-affairs change.
+- test_id: ORI1-T065
+  english_concept: completed source-ground establishment believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while ORI:100 remains an objective transition
+    claim.
+- test_id: ORI1-T066
+  english_concept: completed source-ground establishment physically realized
+  routing: compound
+  analysis: MAT supplies physical mechanics while ORI:100 supplies only ontological
+    transition.
+- test_id: ORI1-T067
+  english_concept: active source-ground establishment process
+  routing: one_root
+  analysis: ORI:101[1] directly affirms the invariant without adding a cause, clock,
+    observer, representation, or physical mechanism.
+- test_id: ORI1-T068
+  english_concept: active source-ground establishment uncertain
+  routing: runtime
+  analysis: ORI:101[2]/num leaves this exact active transition claim unresolved and
+    does not select a lexical sibling.
+- test_id: ORI1-T069
+  english_concept: active source-ground establishment represented
+  routing: compound
+  analysis: DAT supplies a representation while ORI:101 supplies the modeled ontological
+    transition.
+- test_id: ORI1-T070
+  english_concept: active source-ground establishment proposition
+  routing: compound
+  analysis: LOG supplies a proposition about the transition while ORI:101 remains
+    the state-of-affairs change.
+- test_id: ORI1-T071
+  english_concept: active source-ground establishment believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while ORI:101 remains an objective transition
+    claim.
+- test_id: ORI1-T072
+  english_concept: active source-ground establishment physically realized
+  routing: compound
+  analysis: MAT supplies physical mechanics while ORI:101 supplies only ontological
+    transition.
+- test_id: ORI1-T073
+  english_concept: nonactualized source-ground establishment process
+  routing: one_root
+  analysis: ORI:102[1] directly affirms the invariant without adding a cause, clock,
+    observer, representation, or physical mechanism.
+- test_id: ORI1-T074
+  english_concept: nonactualized source-ground establishment uncertain
+  routing: runtime
+  analysis: ORI:102[2]/num leaves this exact nonactualized transition claim unresolved
+    and does not select a lexical sibling.
+- test_id: ORI1-T075
+  english_concept: nonactualized source-ground establishment represented
+  routing: compound
+  analysis: DAT supplies a representation while ORI:102 supplies the modeled ontological
+    transition.
+- test_id: ORI1-T076
+  english_concept: nonactualized source-ground establishment proposition
+  routing: compound
+  analysis: LOG supplies a proposition about the transition while ORI:102 remains
+    the state-of-affairs change.
+- test_id: ORI1-T077
+  english_concept: nonactualized source-ground establishment believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while ORI:102 remains an objective transition
+    claim.
+- test_id: ORI1-T078
+  english_concept: nonactualized source-ground establishment physically realized
+  routing: compound
+  analysis: MAT supplies physical mechanics while ORI:102 supplies only ontological
+    transition.
+- test_id: ORI1-T079
+  english_concept: completed distinct actualization process
+  routing: one_root
+  analysis: ORI:110[1] directly affirms the invariant without adding a cause, clock,
+    observer, representation, or physical mechanism.
+- test_id: ORI1-T080
+  english_concept: completed distinct actualization uncertain
+  routing: runtime
+  analysis: ORI:110[2]/num leaves this exact completed transition claim unresolved
+    and does not select a lexical sibling.
+- test_id: ORI1-T081
+  english_concept: completed distinct actualization represented
+  routing: compound
+  analysis: DAT supplies a representation while ORI:110 supplies the modeled ontological
+    transition.
+- test_id: ORI1-T082
+  english_concept: completed distinct actualization proposition
+  routing: compound
+  analysis: LOG supplies a proposition about the transition while ORI:110 remains
+    the state-of-affairs change.
+- test_id: ORI1-T083
+  english_concept: completed distinct actualization believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while ORI:110 remains an objective transition
+    claim.
+- test_id: ORI1-T084
+  english_concept: completed distinct actualization physically realized
+  routing: compound
+  analysis: MAT supplies physical mechanics while ORI:110 supplies only ontological
+    transition.
+- test_id: ORI1-T085
+  english_concept: active distinct actualization process
+  routing: one_root
+  analysis: ORI:111[1] directly affirms the invariant without adding a cause, clock,
+    observer, representation, or physical mechanism.
+- test_id: ORI1-T086
+  english_concept: active distinct actualization uncertain
+  routing: runtime
+  analysis: ORI:111[2]/num leaves this exact active transition claim unresolved and
+    does not select a lexical sibling.
+- test_id: ORI1-T087
+  english_concept: active distinct actualization represented
+  routing: compound
+  analysis: DAT supplies a representation while ORI:111 supplies the modeled ontological
+    transition.
+- test_id: ORI1-T088
+  english_concept: active distinct actualization proposition
+  routing: compound
+  analysis: LOG supplies a proposition about the transition while ORI:111 remains
+    the state-of-affairs change.
+- test_id: ORI1-T089
+  english_concept: active distinct actualization believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while ORI:111 remains an objective transition
+    claim.
+- test_id: ORI1-T090
+  english_concept: active distinct actualization physically realized
+  routing: compound
+  analysis: MAT supplies physical mechanics while ORI:111 supplies only ontological
+    transition.
+- test_id: ORI1-T091
+  english_concept: nonactualized distinct actualization process
+  routing: one_root
+  analysis: ORI:112[1] directly affirms the invariant without adding a cause, clock,
+    observer, representation, or physical mechanism.
+- test_id: ORI1-T092
+  english_concept: nonactualized distinct actualization uncertain
+  routing: runtime
+  analysis: ORI:112[2]/num leaves this exact nonactualized transition claim unresolved
+    and does not select a lexical sibling.
+- test_id: ORI1-T093
+  english_concept: nonactualized distinct actualization represented
+  routing: compound
+  analysis: DAT supplies a representation while ORI:112 supplies the modeled ontological
+    transition.
+- test_id: ORI1-T094
+  english_concept: nonactualized distinct actualization proposition
+  routing: compound
+  analysis: LOG supplies a proposition about the transition while ORI:112 remains
+    the state-of-affairs change.
+- test_id: ORI1-T095
+  english_concept: nonactualized distinct actualization believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while ORI:112 remains an objective transition
+    claim.
+- test_id: ORI1-T096
+  english_concept: nonactualized distinct actualization physically realized
+  routing: compound
+  analysis: MAT supplies physical mechanics while ORI:112 supplies only ontological
+    transition.
+- test_id: ORI1-T097
+  english_concept: completed shared-world transition process
+  routing: one_root
+  analysis: ORI:120[1] directly affirms the invariant without adding a cause, clock,
+    observer, representation, or physical mechanism.
+- test_id: ORI1-T098
+  english_concept: completed shared-world transition uncertain
+  routing: runtime
+  analysis: ORI:120[2]/num leaves this exact completed transition claim unresolved
+    and does not select a lexical sibling.
+- test_id: ORI1-T099
+  english_concept: completed shared-world transition represented
+  routing: compound
+  analysis: DAT supplies a representation while ORI:120 supplies the modeled ontological
+    transition.
+- test_id: ORI1-T100
+  english_concept: completed shared-world transition proposition
+  routing: compound
+  analysis: LOG supplies a proposition about the transition while ORI:120 remains
+    the state-of-affairs change.
+- test_id: ORI1-T101
+  english_concept: completed shared-world transition believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while ORI:120 remains an objective transition
+    claim.
+- test_id: ORI1-T102
+  english_concept: completed shared-world transition physically realized
+  routing: compound
+  analysis: MAT supplies physical mechanics while ORI:120 supplies only ontological
+    transition.
+- test_id: ORI1-T103
+  english_concept: active shared-world transition process
+  routing: one_root
+  analysis: ORI:121[1] directly affirms the invariant without adding a cause, clock,
+    observer, representation, or physical mechanism.
+- test_id: ORI1-T104
+  english_concept: active shared-world transition uncertain
+  routing: runtime
+  analysis: ORI:121[2]/num leaves this exact active transition claim unresolved and
+    does not select a lexical sibling.
+- test_id: ORI1-T105
+  english_concept: active shared-world transition represented
+  routing: compound
+  analysis: DAT supplies a representation while ORI:121 supplies the modeled ontological
+    transition.
+- test_id: ORI1-T106
+  english_concept: active shared-world transition proposition
+  routing: compound
+  analysis: LOG supplies a proposition about the transition while ORI:121 remains
+    the state-of-affairs change.
+- test_id: ORI1-T107
+  english_concept: active shared-world transition believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while ORI:121 remains an objective transition
+    claim.
+- test_id: ORI1-T108
+  english_concept: active shared-world transition physically realized
+  routing: compound
+  analysis: MAT supplies physical mechanics while ORI:121 supplies only ontological
+    transition.
+- test_id: ORI1-T109
+  english_concept: nonactualized shared-world transition process
+  routing: one_root
+  analysis: ORI:122[1] directly affirms the invariant without adding a cause, clock,
+    observer, representation, or physical mechanism.
+- test_id: ORI1-T110
+  english_concept: nonactualized shared-world transition uncertain
+  routing: runtime
+  analysis: ORI:122[2]/num leaves this exact nonactualized transition claim unresolved
+    and does not select a lexical sibling.
+- test_id: ORI1-T111
+  english_concept: nonactualized shared-world transition represented
+  routing: compound
+  analysis: DAT supplies a representation while ORI:122 supplies the modeled ontological
+    transition.
+- test_id: ORI1-T112
+  english_concept: nonactualized shared-world transition proposition
+  routing: compound
+  analysis: LOG supplies a proposition about the transition while ORI:122 remains
+    the state-of-affairs change.
+- test_id: ORI1-T113
+  english_concept: nonactualized shared-world transition believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while ORI:122 remains an objective transition
+    claim.
+- test_id: ORI1-T114
+  english_concept: nonactualized shared-world transition physically realized
+  routing: compound
+  analysis: MAT supplies physical mechanics while ORI:122 supplies only ontological
+    transition.

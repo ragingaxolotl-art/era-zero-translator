@@ -1,0 +1,582 @@
+---
+metadata:
+  title: CRE:200–222 English coverage and routing tests
+  status: review_evidence_not_translation_dictionary
+  range: CRE:200–222
+  test_count: 115
+  no_forced_atomization: true
+tests:
+- test_id: CRE2-T001
+  english_concept: capable of forming a design pattern
+  routing: one_root
+  analysis: CRE:200–202 owns typed capacity within one entity to form or modify a
+    retained generative pattern.
+- test_id: CRE2-T002
+  english_concept: capable of revising a template
+  routing: one_root_or_compound
+  analysis: Internal pattern-forming capacity covers productive modification; DAT
+    supplies an encoded template and ORI may supply version timing.
+- test_id: CRE2-T003
+  english_concept: creative ability
+  routing: ambiguous_compound
+  analysis: Use CRE only for productive enablement; MIN supplies imagination and LIF
+    supplies an agent or social role.
+- test_id: CRE2-T004
+  english_concept: talented artist
+  routing: compound_or_later_specialization
+  analysis: LIF identifies the person, MIN may supply cognitive ability, CRE supplies
+    productive affordance, and evaluation supplies talent or quality.
+- test_id: CRE2-T005
+  english_concept: imaginative
+  routing: different_family
+  analysis: Imagination belongs to MIN and does not by itself establish capacity for
+    productive transformation.
+- test_id: CRE2-T006
+  english_concept: intends to create
+  routing: different_family
+  analysis: Intention belongs to MIN; a productive affordance may exist without intention
+    and intention may exist without operative capacity.
+- test_id: CRE2-T007
+  english_concept: knows how to create
+  routing: compound
+  analysis: MIN supplies knowledge while CRE supplies objective productive enablement
+    under the stated conditions.
+- test_id: CRE2-T008
+  english_concept: generator available
+  routing: one_root_or_compound
+  analysis: An operative CRE affordance can express present productive enablement
+    while LOG, DAT, STR, or MAT supplies the implementing generator.
+- test_id: CRE2-T009
+  english_concept: generator exists
+  routing: entity_or_compound
+  analysis: A tool or program is an entity; CRE:2xx applies only when its typed productive
+    affordance is asserted.
+- test_id: CRE2-T010
+  english_concept: renderable
+  routing: one_root_or_compound
+  analysis: Source-artifact generative relation can cover renderability when one source
+    can yield one prospective artifact; representation and renderer remain separate.
+- test_id: CRE2-T011
+  english_concept: compilable
+  routing: compound_or_later_specialization
+  analysis: CRE supplies productive enablement, LOG the formal procedure, DAT the
+    code representation, and result validity remains separate.
+- test_id: CRE2-T012
+  english_concept: manufacturable
+  routing: compound
+  analysis: CRE supplies artifact-generative enablement while MAT and STR supply physical
+    materials, mechanics, and assembly constraints.
+- test_id: CRE2-T013
+  english_concept: printable
+  routing: compound
+  analysis: CRE supplies source-artifact generativity, DAT supplies encoded input,
+    and MAT supplies the printing medium and mechanism.
+- test_id: CRE2-T014
+  english_concept: buildable
+  routing: one_root_or_compound
+  analysis: CRE:210–212 can state that one source is generatively related to a prospective
+    artifact; structural feasibility and resources are separate.
+- test_id: CRE2-T015
+  english_concept: generatable artifact
+  routing: one_root
+  analysis: CRE:210–212 asserts the typed source-artifact relation that can enable
+    one prospective artifact to be brought into manifestation.
+- test_id: CRE2-T016
+  english_concept: source can produce target
+  routing: one_root
+  analysis: Use CRE:210–212 when one source stands in the relevant generative relation
+    to one distinct prospective artifact.
+- test_id: CRE2-T017
+  english_concept: authored by
+  routing: reserved_relation
+  analysis: Authorship identifies an agent-to-work attribution and requires LIF, CON,
+    or later provenance vocabulary rather than generic productive enablement.
+- test_id: CRE2-T018
+  english_concept: created by
+  routing: compound_or_reserved_relation
+  analysis: CRE can supply the creation event or affordance, but causal source attribution
+    requires ORI and participant identity.
+- test_id: CRE2-T019
+  english_concept: derived from
+  routing: compound_or_reserved_relation
+  analysis: Derivation requires causal or historical provenance beyond a present source-artifact
+    productive affordance.
+- test_id: CRE2-T020
+  english_concept: inspired by
+  routing: different_family_or_compound
+  analysis: MIN supplies inspiration and ORI may supply causal relation; CRE applies
+    only if productive enablement is separately asserted.
+- test_id: CRE2-T021
+  english_concept: owned by
+  routing: different_relation
+  analysis: Ownership and authority are not Creation affordances and require social,
+    legal, or connection relations.
+- test_id: CRE2-T022
+  english_concept: licensed to generate
+  routing: compound
+  analysis: CRE supplies productive affordance while LOG or CON supplies permission,
+    policy, and authority.
+- test_id: CRE2-T023
+  english_concept: resources sufficient to build
+  routing: compound
+  analysis: CRE supplies productive affordance; MAT, STR, DAT, and LOG supply required
+    resources and constraints.
+- test_id: CRE2-T024
+  english_concept: toolchain ready
+  routing: compound
+  analysis: Operative CRE capacity may combine with available tools and dependencies,
+    but readiness is not the invariant meaning.
+- test_id: CRE2-T025
+  english_concept: scheduled generation
+  routing: compound
+  analysis: A latent or operative productive affordance combines with ORI scheduling;
+    lexical status never means scheduled.
+- test_id: CRE2-T026
+  english_concept: possible creation
+  routing: different_family
+  analysis: ORI owns unrestricted possibility; CRE:2xx asserts a specific existing
+    productive affordance.
+- test_id: CRE2-T027
+  english_concept: probable creation
+  routing: different_family_or_compound
+  analysis: ORI supplies probability and CRE separately supplies the typed productive
+    affordance.
+- test_id: CRE2-T028
+  english_concept: creation process running
+  routing: process_layer
+  analysis: CRE:1xx owns actual productive-process phase; CRE:2xx only states capacity
+    or a qualifying relation.
+- test_id: CRE2-T029
+  english_concept: creation process completed
+  routing: process_layer
+  analysis: CRE:1x0 owns completion; a productive affordance entails no actual process
+    or result.
+- test_id: CRE2-T030
+  english_concept: generative pattern exists
+  routing: entity_layer
+  analysis: CRE:00x owns the generative pattern; existence or manifestation does not
+    entail pattern-forming capacity.
+- test_id: CRE2-T031
+  english_concept: artifact exists
+  routing: entity_layer
+  analysis: CRE:01x owns the generated artifact; artifact identity does not entail
+    a currently operative source-artifact relation.
+- test_id: CRE2-T032
+  english_concept: shared repertoire exists
+  routing: entity_layer
+  analysis: CRE:02x owns a shared generative repertoire; it does not entail capacity
+    for one jointly constituted result.
+- test_id: CRE2-T033
+  english_concept: co-creatable
+  routing: one_root
+  analysis: CRE:220–222 asserts capacity of multiple participants to generate one
+    jointly constituted result in a shared production domain.
+- test_id: CRE2-T034
+  english_concept: team can create together
+  routing: one_root_or_compound
+  analysis: CRE supplies systemic co-generative capacity while LIF and CON supply
+    participants, roles, and coordination channels.
+- test_id: CRE2-T035
+  english_concept: collaborative
+  routing: different_family_or_compound
+  analysis: CON owns collaboration; CRE systemic capacity additionally requires productive
+    enablement for one joint result.
+- test_id: CRE2-T036
+  english_concept: collective creativity
+  routing: compound
+  analysis: CRE supplies co-generative capacity, LIF supplies the collective, and
+    MIN may supply shared ideation.
+- test_id: CRE2-T037
+  english_concept: crowdsourceable
+  routing: compound_or_later_specialization
+  analysis: CRE supplies possible joint production while CON and LIF supply contributor
+    relations and participation structure.
+- test_id: CRE2-T038
+  english_concept: ensemble can perform
+  routing: compound
+  analysis: CRE may supply systemic productive capacity while LIF, CON, and MAT supply
+    performers, coordination, and physical realization.
+- test_id: CRE2-T039
+  english_concept: composable
+  routing: different_family_or_compound
+  analysis: STR owns compatibility for combination; CRE applies only when the combination
+    enables one generated result.
+- test_id: CRE2-T040
+  english_concept: remixable
+  routing: compound_or_later_specialization
+  analysis: CRE supplies productive affordance, STR composability, DAT representations,
+    and provenance remains separately typed.
+- test_id: CRE2-T041
+  english_concept: extensible design system
+  routing: compound
+  analysis: STR and LOG supply modular structure and constraints; CRE supplies productive
+    capacity only when new forms can be generated.
+- test_id: CRE2-T042
+  english_concept: design space
+  routing: entity_relation_or_compound
+  analysis: A structured possibility space belongs chiefly to STR, LOG, and ORI; CRE:2xx
+    asserts concrete productive enablement, not the space itself.
+- test_id: CRE2-T043
+  english_concept: unrealized form space
+  routing: different_family_or_compound
+  analysis: ORI supplies unrealized possibility and LOG/STR supplies constraints;
+    lexical CRE latency requires an existing typed affordance.
+- test_id: CRE2-T044
+  english_concept: many independent creators
+  routing: multiple_affordances
+  analysis: Use separate CRE:20x or CRE:21x claims unless the participants can jointly
+    constitute one result under CRE:22x.
+- test_id: CRE2-T045
+  english_concept: shared tools only
+  routing: implementation_not_affordance
+  analysis: Common tools may support co-generative capacity but do not establish coordinated
+    productive enablement for one joint result.
+- test_id: CRE2-T046
+  english_concept: common template only
+  routing: entity_not_affordance
+  analysis: A shared CRE:02x repertoire can exist even when participants lack operative
+    systemic co-generative capacity.
+- test_id: CRE2-T047
+  english_concept: persistent productive capacity
+  routing: one_root
+  analysis: Choose CRE:200, CRE:210, or CRE:220 by scope; persistence is neutral about
+    current operation.
+- test_id: CRE2-T048
+  english_concept: operative productive capacity
+  routing: one_root
+  analysis: Choose CRE:201, CRE:211, or CRE:221 by scope; operation does not assert
+    that production is occurring.
+- test_id: CRE2-T049
+  english_concept: latent productive capacity
+  routing: one_root
+  analysis: Choose CRE:202, CRE:212, or CRE:222 by scope; latency means existing but
+    nonoperative, not unknown or future.
+- test_id: CRE2-T050
+  english_concept: persistent plus operative capacity
+  routing: two_compatible_roots
+  analysis: The persistent and operative siblings may co-occur because identity and
+    current operation are independent claims.
+- test_id: CRE2-T051
+  english_concept: persistent plus latent capacity
+  routing: two_compatible_roots
+  analysis: The persistent and latent siblings may co-occur while the same affordance
+    exists nonoperatively.
+- test_id: CRE2-T052
+  english_concept: operative and latent simultaneously
+  routing: invalid_same_reference_claim
+  analysis: Operative and latent are mutually exclusive for the same productive affordance
+    at one reference time.
+- test_id: CRE2-T053
+  english_concept: latent affordance affirmed
+  routing: runtime_and_lexical
+  analysis: A CRE:2x2 root with runtime [1] confirms an existing nonoperative productive
+    affordance.
+- test_id: CRE2-T054
+  english_concept: operative affordance uncertain
+  routing: runtime_and_lexical
+  analysis: A CRE:2x1 root with runtime [2]/num leaves current operation unresolved
+    without selecting lexical latency.
+- test_id: CRE2-T055
+  english_concept: persistent affordance denied
+  routing: runtime_and_lexical
+  analysis: Runtime [0] denies persistent identity without selecting an operative
+    or latent sibling.
+- test_id: CRE2-T056
+  english_concept: unknown productive capacity
+  routing: runtime_or_epistemic
+  analysis: Use runtime [2]/num or MIN/DAT evidence; lexical latency never means unknown.
+- test_id: CRE2-T057
+  english_concept: hidden capacity
+  routing: compound
+  analysis: CRE latency supplies nonoperation only; observer ignorance or undisclosed
+    status requires MIN, DAT, or CON.
+- test_id: CRE2-T058
+  english_concept: capacity versus agency
+  routing: cross_family_boundary
+  analysis: CRE owns typed productive enablement while LIF and MIN own agent identity,
+    agency, and cognitive capacities.
+- test_id: CRE2-T059
+  english_concept: capacity versus authorship
+  routing: same_domain_boundary
+  analysis: CRE:2xx enables productive transformation; authorship attributes a result
+    to a participant and remains separately typed.
+- test_id: CRE2-T060
+  english_concept: capacity versus structural compatibility
+  routing: cross_family_boundary
+  analysis: CRE requires form-producing function while STR owns whether components
+    can be arranged or combined.
+- test_id: CRE2-T061
+  english_concept: capacity versus general possibility
+  routing: cross_family_boundary
+  analysis: CRE:2xx asserts an existing typed affordance while ORI owns unrestricted
+    possibility, necessity, and probability.
+- test_id: CRE2-T062
+  english_concept: persistent internal pattern-forming capacity identity
+  routing: one_root
+  analysis: CRE:200[1] directly affirms the invariant without adding a Creation entity,
+    actual process, creator identity, physical medium, quality, or authority.
+- test_id: CRE2-T063
+  english_concept: persistent internal pattern-forming capacity uncertain
+  routing: runtime
+  analysis: CRE:200[2]/num leaves this exact persistent affordance claim unresolved
+    and does not select a lexical sibling.
+- test_id: CRE2-T064
+  english_concept: persistent internal pattern-forming capacity with entity
+  routing: compound
+  analysis: CRE:0xx supplies the generative pattern, artifact, or repertoire while
+    CRE:200 supplies typed productive enablement.
+- test_id: CRE2-T065
+  english_concept: persistent internal pattern-forming capacity under rule
+  routing: compound
+  analysis: LOG:0xx supplies a qualifying constraint while CRE:200 supplies the corresponding
+    productive affordance.
+- test_id: CRE2-T066
+  english_concept: persistent internal pattern-forming capacity believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while CRE:200 remains an objective productive-affordance
+    claim.
+- test_id: CRE2-T067
+  english_concept: persistent internal pattern-forming capacity actualized
+  routing: compound
+  analysis: CRE:1xx supplies actual process phase while CRE:200 supplies only enabling
+    capacity or relation.
+- test_id: CRE2-T068
+  english_concept: operative internal pattern-forming capacity identity
+  routing: one_root
+  analysis: CRE:201[1] directly affirms the invariant without adding a Creation entity,
+    actual process, creator identity, physical medium, quality, or authority.
+- test_id: CRE2-T069
+  english_concept: operative internal pattern-forming capacity uncertain
+  routing: runtime
+  analysis: CRE:201[2]/num leaves this exact operative affordance claim unresolved
+    and does not select a lexical sibling.
+- test_id: CRE2-T070
+  english_concept: operative internal pattern-forming capacity with entity
+  routing: compound
+  analysis: CRE:0xx supplies the generative pattern, artifact, or repertoire while
+    CRE:201 supplies typed productive enablement.
+- test_id: CRE2-T071
+  english_concept: operative internal pattern-forming capacity under rule
+  routing: compound
+  analysis: LOG:0xx supplies a qualifying constraint while CRE:201 supplies the corresponding
+    productive affordance.
+- test_id: CRE2-T072
+  english_concept: operative internal pattern-forming capacity believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while CRE:201 remains an objective productive-affordance
+    claim.
+- test_id: CRE2-T073
+  english_concept: operative internal pattern-forming capacity actualized
+  routing: compound
+  analysis: CRE:1xx supplies actual process phase while CRE:201 supplies only enabling
+    capacity or relation.
+- test_id: CRE2-T074
+  english_concept: latent internal pattern-forming capacity identity
+  routing: one_root
+  analysis: CRE:202[1] directly affirms the invariant without adding a Creation entity,
+    actual process, creator identity, physical medium, quality, or authority.
+- test_id: CRE2-T075
+  english_concept: latent internal pattern-forming capacity uncertain
+  routing: runtime
+  analysis: CRE:202[2]/num leaves this exact latent affordance claim unresolved and
+    does not select a lexical sibling.
+- test_id: CRE2-T076
+  english_concept: latent internal pattern-forming capacity with entity
+  routing: compound
+  analysis: CRE:0xx supplies the generative pattern, artifact, or repertoire while
+    CRE:202 supplies typed productive enablement.
+- test_id: CRE2-T077
+  english_concept: latent internal pattern-forming capacity under rule
+  routing: compound
+  analysis: LOG:0xx supplies a qualifying constraint while CRE:202 supplies the corresponding
+    productive affordance.
+- test_id: CRE2-T078
+  english_concept: latent internal pattern-forming capacity believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while CRE:202 remains an objective productive-affordance
+    claim.
+- test_id: CRE2-T079
+  english_concept: latent internal pattern-forming capacity actualized
+  routing: compound
+  analysis: CRE:1xx supplies actual process phase while CRE:202 supplies only enabling
+    capacity or relation.
+- test_id: CRE2-T080
+  english_concept: persistent source-artifact generative relation identity
+  routing: one_root
+  analysis: CRE:210[1] directly affirms the invariant without adding a Creation entity,
+    actual process, creator identity, physical medium, quality, or authority.
+- test_id: CRE2-T081
+  english_concept: persistent source-artifact generative relation uncertain
+  routing: runtime
+  analysis: CRE:210[2]/num leaves this exact persistent affordance claim unresolved
+    and does not select a lexical sibling.
+- test_id: CRE2-T082
+  english_concept: persistent source-artifact generative relation with entity
+  routing: compound
+  analysis: CRE:0xx supplies the generative pattern, artifact, or repertoire while
+    CRE:210 supplies typed productive enablement.
+- test_id: CRE2-T083
+  english_concept: persistent source-artifact generative relation under rule
+  routing: compound
+  analysis: LOG:0xx supplies a qualifying constraint while CRE:210 supplies the corresponding
+    productive affordance.
+- test_id: CRE2-T084
+  english_concept: persistent source-artifact generative relation believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while CRE:210 remains an objective productive-affordance
+    claim.
+- test_id: CRE2-T085
+  english_concept: persistent source-artifact generative relation actualized
+  routing: compound
+  analysis: CRE:1xx supplies actual process phase while CRE:210 supplies only enabling
+    capacity or relation.
+- test_id: CRE2-T086
+  english_concept: operative source-artifact generative relation identity
+  routing: one_root
+  analysis: CRE:211[1] directly affirms the invariant without adding a Creation entity,
+    actual process, creator identity, physical medium, quality, or authority.
+- test_id: CRE2-T087
+  english_concept: operative source-artifact generative relation uncertain
+  routing: runtime
+  analysis: CRE:211[2]/num leaves this exact operative affordance claim unresolved
+    and does not select a lexical sibling.
+- test_id: CRE2-T088
+  english_concept: operative source-artifact generative relation with entity
+  routing: compound
+  analysis: CRE:0xx supplies the generative pattern, artifact, or repertoire while
+    CRE:211 supplies typed productive enablement.
+- test_id: CRE2-T089
+  english_concept: operative source-artifact generative relation under rule
+  routing: compound
+  analysis: LOG:0xx supplies a qualifying constraint while CRE:211 supplies the corresponding
+    productive affordance.
+- test_id: CRE2-T090
+  english_concept: operative source-artifact generative relation believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while CRE:211 remains an objective productive-affordance
+    claim.
+- test_id: CRE2-T091
+  english_concept: operative source-artifact generative relation actualized
+  routing: compound
+  analysis: CRE:1xx supplies actual process phase while CRE:211 supplies only enabling
+    capacity or relation.
+- test_id: CRE2-T092
+  english_concept: latent source-artifact generative relation identity
+  routing: one_root
+  analysis: CRE:212[1] directly affirms the invariant without adding a Creation entity,
+    actual process, creator identity, physical medium, quality, or authority.
+- test_id: CRE2-T093
+  english_concept: latent source-artifact generative relation uncertain
+  routing: runtime
+  analysis: CRE:212[2]/num leaves this exact latent affordance claim unresolved and
+    does not select a lexical sibling.
+- test_id: CRE2-T094
+  english_concept: latent source-artifact generative relation with entity
+  routing: compound
+  analysis: CRE:0xx supplies the generative pattern, artifact, or repertoire while
+    CRE:212 supplies typed productive enablement.
+- test_id: CRE2-T095
+  english_concept: latent source-artifact generative relation under rule
+  routing: compound
+  analysis: LOG:0xx supplies a qualifying constraint while CRE:212 supplies the corresponding
+    productive affordance.
+- test_id: CRE2-T096
+  english_concept: latent source-artifact generative relation believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while CRE:212 remains an objective productive-affordance
+    claim.
+- test_id: CRE2-T097
+  english_concept: latent source-artifact generative relation actualized
+  routing: compound
+  analysis: CRE:1xx supplies actual process phase while CRE:212 supplies only enabling
+    capacity or relation.
+- test_id: CRE2-T098
+  english_concept: persistent systemic co-generative capacity identity
+  routing: one_root
+  analysis: CRE:220[1] directly affirms the invariant without adding a Creation entity,
+    actual process, creator identity, physical medium, quality, or authority.
+- test_id: CRE2-T099
+  english_concept: persistent systemic co-generative capacity uncertain
+  routing: runtime
+  analysis: CRE:220[2]/num leaves this exact persistent affordance claim unresolved
+    and does not select a lexical sibling.
+- test_id: CRE2-T100
+  english_concept: persistent systemic co-generative capacity with entity
+  routing: compound
+  analysis: CRE:0xx supplies the generative pattern, artifact, or repertoire while
+    CRE:220 supplies typed productive enablement.
+- test_id: CRE2-T101
+  english_concept: persistent systemic co-generative capacity under rule
+  routing: compound
+  analysis: LOG:0xx supplies a qualifying constraint while CRE:220 supplies the corresponding
+    productive affordance.
+- test_id: CRE2-T102
+  english_concept: persistent systemic co-generative capacity believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while CRE:220 remains an objective productive-affordance
+    claim.
+- test_id: CRE2-T103
+  english_concept: persistent systemic co-generative capacity actualized
+  routing: compound
+  analysis: CRE:1xx supplies actual process phase while CRE:220 supplies only enabling
+    capacity or relation.
+- test_id: CRE2-T104
+  english_concept: operative systemic co-generative capacity identity
+  routing: one_root
+  analysis: CRE:221[1] directly affirms the invariant without adding a Creation entity,
+    actual process, creator identity, physical medium, quality, or authority.
+- test_id: CRE2-T105
+  english_concept: operative systemic co-generative capacity uncertain
+  routing: runtime
+  analysis: CRE:221[2]/num leaves this exact operative affordance claim unresolved
+    and does not select a lexical sibling.
+- test_id: CRE2-T106
+  english_concept: operative systemic co-generative capacity with entity
+  routing: compound
+  analysis: CRE:0xx supplies the generative pattern, artifact, or repertoire while
+    CRE:221 supplies typed productive enablement.
+- test_id: CRE2-T107
+  english_concept: operative systemic co-generative capacity under rule
+  routing: compound
+  analysis: LOG:0xx supplies a qualifying constraint while CRE:221 supplies the corresponding
+    productive affordance.
+- test_id: CRE2-T108
+  english_concept: operative systemic co-generative capacity believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while CRE:221 remains an objective productive-affordance
+    claim.
+- test_id: CRE2-T109
+  english_concept: operative systemic co-generative capacity actualized
+  routing: compound
+  analysis: CRE:1xx supplies actual process phase while CRE:221 supplies only enabling
+    capacity or relation.
+- test_id: CRE2-T110
+  english_concept: latent systemic co-generative capacity identity
+  routing: one_root
+  analysis: CRE:222[1] directly affirms the invariant without adding a Creation entity,
+    actual process, creator identity, physical medium, quality, or authority.
+- test_id: CRE2-T111
+  english_concept: latent systemic co-generative capacity uncertain
+  routing: runtime
+  analysis: CRE:222[2]/num leaves this exact latent affordance claim unresolved and
+    does not select a lexical sibling.
+- test_id: CRE2-T112
+  english_concept: latent systemic co-generative capacity with entity
+  routing: compound
+  analysis: CRE:0xx supplies the generative pattern, artifact, or repertoire while
+    CRE:222 supplies typed productive enablement.
+- test_id: CRE2-T113
+  english_concept: latent systemic co-generative capacity under rule
+  routing: compound
+  analysis: LOG:0xx supplies a qualifying constraint while CRE:222 supplies the corresponding
+    productive affordance.
+- test_id: CRE2-T114
+  english_concept: latent systemic co-generative capacity believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while CRE:222 remains an objective productive-affordance
+    claim.
+- test_id: CRE2-T115
+  english_concept: latent systemic co-generative capacity actualized
+  routing: compound
+  analysis: CRE:1xx supplies actual process phase while CRE:222 supplies only enabling
+    capacity or relation.

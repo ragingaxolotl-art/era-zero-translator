@@ -1,0 +1,331 @@
+---
+metadata:
+  title: MOV:100–122 peer-review ownership matrix and stress tests
+  status: review_evidence_not_canonical
+  stress_test_count: 42
+  canonicalized: false
+ownership_matrix:
+- root: MOV:100
+  owns:
+  - left
+  - departed
+  - completed departure from a source
+  belongs_elsewhere:
+  - origin position → MOV:000
+  - current position → MOV:001
+  - detachment without motion → CON/STR
+  reserved_for_compounds:
+  - exit
+  - launch cargo
+  - evacuated
+  intentionally_undefined:
+  - cause of departure
+  - speed
+  - manner
+- root: MOV:101
+  owns:
+  - leaving
+  - departing
+  - moving away from a source
+  belongs_elsewhere:
+  - decision to leave → MIN
+  - propulsive force → MAT
+  - social withdrawal → CON
+  reserved_for_compounds:
+  - take off
+  - retreat from danger
+  - exit a container
+  intentionally_undefined:
+  - acceleration
+  - direction after departure
+  - destination
+- root: MOV:102
+  owns:
+  - queued departure
+  - specified unbegun departure
+  belongs_elsewhere:
+  - readiness/capacity → future capacity review
+  - permission → LOG/CON
+  - waiting → timing/aspect
+  reserved_for_compounds:
+  - scheduled departure
+  - cleared departure
+  - delayed departure
+  intentionally_undefined:
+  - clock time
+  - probability
+  - reason for delay
+- root: MOV:110
+  owns:
+  - arrived
+  - reached a target
+  - completed targetward displacement
+  belongs_elsewhere:
+  - destination → MOV:010
+  - receipt → CON/DAT
+  - impact → MAT
+  reserved_for_compounds:
+  - enter
+  - dock
+  - deliver
+  - return completed
+  intentionally_undefined:
+  - acceptance
+  - contact force
+  - containment
+- root: MOV:111
+  owns:
+  - approaching
+  - heading toward
+  - moving toward a target
+  belongs_elsewhere:
+  - active destination → MOV:011
+  - attention toward → MIN
+  - message transmission → CON/DAT
+  reserved_for_compounds:
+  - pursue
+  - follow a moving target
+  - enter while under way
+  - transport toward
+  intentionally_undefined:
+  - guidance controller
+  - target velocity
+  - arrival prediction
+- root: MOV:112
+  owns:
+  - queued targetward trip
+  - specified unbegun approach
+  belongs_elsewhere:
+  - unreachable destination → MOV:012
+  - intention → MIN
+  - schedule → timing/LOG
+  reserved_for_compounds:
+  - scheduled approach
+  - awaiting entry
+  - planned delivery trip
+  intentionally_undefined:
+  - estimated arrival time
+  - permission
+  - eventual success
+- root: MOV:120
+  owns:
+  - completed route traversal
+  - finished route run
+  - traversed an ordered path
+  belongs_elsewhere:
+  - route entity → MOV:020
+  - generic system completion → domain family
+  - data synchronization → DAT
+  reserved_for_compounds:
+  - completed orbit
+  - completed migration
+  - completed transport circuit
+  intentionally_undefined:
+  - payload
+  - loop count
+  - collective coordination
+- root: MOV:121
+  owns:
+  - traversing a route
+  - traveling along a system-defined path
+  - route progress
+  belongs_elsewhere:
+  - active route network → MOV:021
+  - resource flow → MAT
+  - data stream → DAT
+  - broadcast → CON
+  reserved_for_compounds:
+  - circulate
+  - orbit
+  - move together
+  - repeat a route
+  - migrate
+  intentionally_undefined:
+  - speed
+  - cycle geometry
+  - synchronization
+- root: MOV:122
+  owns:
+  - queued route traversal
+  - specified unbegun route run
+  belongs_elsewhere:
+  - dormant route → MOV:022
+  - paused active traversal → MOV:121[2]
+  - scheduled task → LOG/timing
+  reserved_for_compounds:
+  - scheduled route run
+  - pending migration
+  - planned cargo circuit
+  intentionally_undefined:
+  - dispatch time
+  - authorization
+  - delay duration
+english_motion_stress_tests:
+- english_concept: leave
+  mapping: MOV:101 while active; MOV:100 when completed
+  classification: one root selected by lexical phase
+  rationale: Direct source departure.
+- english_concept: depart
+  mapping: MOV:101 / MOV:100
+  classification: one root selected by lexical phase
+  rationale: Same source-relative center as leave.
+- english_concept: go
+  mapping: MOV:101, MOV:111, or MOV:121 depending source, target, or route salience
+  classification: context-selected; not one atom
+  rationale: English go underspecifies orientation.
+- english_concept: move
+  mapping: context-selected Motion root or unresolved manner-neutral superordinate
+  classification: not forced
+  rationale: Generic move is broader than any one orientation slot.
+- english_concept: approach
+  mapping: MOV:111
+  classification: one root
+  rationale: Active target-relative displacement.
+- english_concept: arrive
+  mapping: MOV:110
+  classification: one root
+  rationale: Completed target-relative displacement.
+- english_concept: reach
+  mapping: MOV:110
+  classification: one root
+  rationale: Target endpoint reached; contact is not implied.
+- english_concept: travel
+  mapping: MOV:121 when route is central; MOV:111 when destination is central
+  classification: context-selected
+  rationale: Travel does not always lexicalize route or target.
+- english_concept: follow a route
+  mapping: MOV:121 + MOV:020
+  classification: root plus existing entity
+  rationale: Traversal process plus established route.
+- english_concept: follow a person
+  mapping: MOV:111 plus a future moving-target relation
+  classification: reserved compound / relationship gap
+  rationale: Following requires persistent retargeting.
+- english_concept: wait
+  mapping: timing/aspect; a pending Motion root may coexist
+  classification: belongs elsewhere
+  rationale: Waiting is duration without required displacement.
+- english_concept: pause
+  mapping: MOV:101[2], MOV:111[2], or MOV:121[2] plus duration
+  classification: runtime state plus timing
+  rationale: Operation began and is suspended; not lexical pending.
+- english_concept: stop
+  mapping: active Motion root [0] plus cessation/command contour
+  classification: runtime/grammar
+  rationale: Termination modifies an active process.
+- english_concept: continue
+  mapping: active Motion root [1] plus continuative aspect
+  classification: grammar
+  rationale: Continuation does not change orientation.
+- english_concept: cross
+  mapping: MOV:121 plus a boundary/path relation
+  classification: reserved compound
+  rationale: Crossing requires a boundary or span.
+- english_concept: return
+  mapping: MOV:111/MOV:110 with target bound to a prior MOV:000
+  classification: reserved compound/graph
+  rationale: Return is target approach/arrival plus historical identity of the target.
+- english_concept: redirect
+  mapping: replace target binding, then MOV:112 or MOV:111
+  classification: operation sequence / reserved compound
+  rationale: Redirection relates two motion plans or vectors.
+- english_concept: move together
+  mapping: collective actor + MOV:121; add coordination only if asserted
+  classification: reserved compound
+  rationale: Togetherness belongs to actor/relationship structure.
+- english_concept: circulate
+  mapping: MOV:121 + cyclic route + repeated-loop contour
+  classification: reserved compound
+  rationale: Cycle topology and repetition are independent.
+- english_concept: repeat a route
+  mapping: MOV:121 + MOV:020 + repeated-loop contour
+  classification: root plus grammar
+  rationale: Repetition is not atomic route traversal.
+- english_concept: schedule
+  mapping: pending root plus later timing/LOG/DAT scheduler semantics
+  classification: belongs elsewhere / compound
+  rationale: Scheduling is not Motion.
+- english_concept: delay
+  mapping: pending or suspended Motion root plus timing relation
+  classification: belongs elsewhere / unresolved timing
+  rationale: Delay compares expected and actual onset/progress.
+- english_concept: transition
+  mapping: Motion only with explicit positions/route; otherwise STR, CRE, ORI, MIN, or DAT
+  classification: family-selected
+  rationale: Generic change must not default to Motion.
+- english_concept: transport
+  mapping: MOV:111 or MOV:121 plus MAT payload/carrier roles
+  classification: reserved compound
+  rationale: Transport combines displacement and participant roles.
+- english_concept: deliver
+  mapping: MOV:110 plus MAT/DAT/CON transfer and recipient roles
+  classification: reserved compound
+  rationale: Arrival does not imply successful transfer.
+- english_concept: transfer
+  mapping: domain-specific family; add MOV only for explicit displacement
+  classification: belongs elsewhere / compound
+  rationale: Possession, data, and energy transfer are not synonymous with motion.
+- english_concept: exit
+  mapping: MOV:101/MOV:100 plus STR boundary/container
+  classification: reserved compound
+  rationale: Departure plus crossing out of a bounded region.
+- english_concept: enter
+  mapping: MOV:111/MOV:110 plus STR boundary/container
+  classification: reserved compound
+  rationale: Target motion plus crossing into containment.
+- english_concept: launch
+  mapping: MOV:101/MOV:100 plus MAT force/vehicle roles when relevant
+  classification: one root or compound
+  rationale: The displacement core is departure; mechanics are separate.
+- english_concept: take off
+  mapping: MOV:101/MOV:100 plus manner/medium
+  classification: reserved compound
+  rationale: Departure survives; flight onset is additional.
+- english_concept: migrate
+  mapping: LIF collective actor + MOV:121/120 + route
+  classification: reserved compound
+  rationale: Migration includes living participants and often a route.
+- english_concept: orbit
+  mapping: MOV:121 + cyclic/geometric route + repeated-loop contour
+  classification: reserved compound
+  rationale: Orbital geometry is additional.
+- english_concept: wander
+  mapping: unresolved
+  classification: intentionally undefined
+  rationale: No stable source, target, or system route is central.
+- english_concept: reverse
+  mapping: relation between successive motion vectors or target/source rebinding
+  classification: intentionally undefined / future compound
+  rationale: Reversal is second-order over motion operations.
+- english_concept: accelerate
+  mapping: unresolved Motion/MAT boundary
+  classification: intentionally undefined
+  rationale: Requires rate-of-change semantics not supplied by this block.
+- english_concept: decelerate
+  mapping: unresolved Motion/MAT boundary
+  classification: intentionally undefined
+  rationale: Same rate-of-change issue as accelerate.
+- english_concept: rotate
+  mapping: unresolved Motion vocabulary gap
+  classification: intentionally undefined
+  rationale: Rotation is displacement around an axis, not captured by source/target/route phase alone.
+- english_concept: flow
+  mapping: MOV:121 only when route traversal is asserted; otherwise MAT/DAT/CON
+  classification: family-selected
+  rationale: Carrier-domain meaning controls.
+- english_concept: destination
+  mapping: MOV:010
+  classification: existing Motion entity
+  rationale: Entity, not process.
+- english_concept: route
+  mapping: MOV:020
+  classification: existing Motion entity
+  rationale: Entity, not process.
+- english_concept: current position
+  mapping: MOV:001
+  classification: existing Motion entity
+  rationale: Entity, not process.
+- english_concept: start moving
+  mapping: MOV:101 at onset plus timing/aspect; not a separate atom here
+  classification: root plus grammar
+  rationale: Starting is phase boundary over active departure.

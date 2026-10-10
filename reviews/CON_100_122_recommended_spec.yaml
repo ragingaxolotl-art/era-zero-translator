@@ -1,0 +1,1633 @@
+---
+metadata:
+  title: CON:100–122 recommended permanent semantic specification
+  status: approved_and_canonical_by_delegated_authority
+  architecture_version: '1.0'
+  semantic_center: 'participant-addressed communicative exchange processes: source
+    expression, target reception, and shared distribution'
+  triplets:
+    CON:100–102: 'source expression: completed / active / nonactualized'
+    CON:110–112: 'target reception: completed / active / nonactualized'
+    CON:120–122: 'shared distribution: completed / active / nonactualized'
+  generated_fields_changed: false
+  gate4_started: false
+  translator_started: false
+  roots_canonicalized:
+  - CON:100
+  - CON:101
+  - CON:102
+  - CON:110
+  - CON:111
+  - CON:112
+  - CON:120
+  - CON:121
+  - CON:122
+  approval_record: migrations/CON_100_122_semantic_approval.yaml
+roots:
+- fixed_generated_fields:
+    canonical_id: CON:100
+    universal_slot: completed inward process
+    family_qualified_transliteration: wu·kam
+    local_compact_root: kam
+    formal_carrier: wu-ki-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: completed source expression
+  invariant_definition: Completion of an act by which a source endpoint makes a communicative
+    expression available to an exchange context.
+  semantic_center: 'participant-addressed communicative exchange processes: source
+    expression, target reception, and shared distribution'
+  address_justification:
+    first_trit_1: 'Selects a process, action, or transformation: completed source
+      expression is an exchange act, not an endpoint/channel entity and not a bond,
+      capacity, or compatibility relation.'
+    second_trit: 'Selects inward/source scope: it locates the exchange process at
+      the originating endpoint and its act of making an expression available without
+      changing the content or physical carrier.'
+    third_trit: 'Selects the completed process phase: the same exchange act is completed,
+      while intention, planning, scheduling, queueing, probability, and future time
+      remain outside the lexeme.'
+  inclusion_boundary: Includes only the completed participant-addressed act at inward/source
+    scope by which a source endpoint makes an expression available. It is neutral
+    about the expression's content, physical carrier, protocol, success quality, comprehension,
+    response, and later use.
+  excluded_meanings:
+  - The endpoint, participant, shared channel, device, medium, route, or topology
+    as an entity or condition.
+  - The message, signal, request, symbol, payload, record, draft, queue item, or protocol
+    as content or structure.
+  - Physical propagation, movement, transduction, storage, computation, attention,
+    interpretation, understanding, agreement, or belief change.
+  - Opening, closing, joining, repairing, authenticating, authorizing, scheduling,
+    or configuring a channel or endpoint.
+  - Intention, readiness, permission, plan, schedule, queue status, probability, certainty,
+    futurity, or obligation—especially for lexical 1x2 roots.
+  - Reciprocal conversation, acknowledgement, negotiation, consensus, request-response,
+    or transport, which require compounds and explicit participant/content relations.
+  nearest_neighbors:
+  - CON:101
+  - CON:102
+  - CON:110
+  - CON:120
+  - CON:000
+  - CON:200
+  - DAT:100
+  - MIN:100
+  same_family_contrast: CON:0xx owns the endpoint/channel loci through which exchange
+    occurs; CON:1xx owns the expression, reception, and distribution processes themselves;
+    CON:2xx remains reserved for capacities, bonds, compatibility, reachability, and
+    possible exchange relations.
+  cross_family_comparisons: &1
+    LIF: LIF identifies living or conscious participants. A being may perform a CON
+      exchange process, but life, identity, consciousness, and responsiveness are
+      not expression, reception, or distribution.
+    MOV: MOV owns physical displacement, approach, traversal, and reference-frame
+      change. A message or carrier may move physically, but a communicative exchange
+      can occur without lexicalizing spatial motion.
+    MAT: MAT owns sound waves, photons, cables, radios, bodies, and other physical
+      carriers. CON names the communicative act realized through a carrier, not the
+      carrier's physical transmission.
+    MIN: MIN owns attention, perception, interpretation, understanding, and belief
+      change. Reception ends when an expression is taken up at the target endpoint;
+      comprehension requires MIN.
+    STR: STR owns topology, containment, interface arrangement, and system transition.
+      Opening, joining, or restructuring a channel is not the exchange act itself.
+    WRN: WRN owns loss, corruption, failure, spoofing, and danger evaluation. CON
+      exchange processes are neutral about success quality except for their completed/ongoing/nonactualized
+      lexical phase.
+    REP: REP owns restoring a failed endpoint, channel, signal path, or exchange.
+      Reconnection and retransmission for repair must compound REP with CON rather
+      than redefining CON.
+    LOG: LOG owns protocol rules, permissions, turn constraints, validity, acknowledgement
+      obligations, and formal coordination. Those rules can govern a CON act without
+      becoming that act.
+    DAT: DAT owns the message, signal, request, symbol, payload, or record as an information
+      object. CON owns making that expression available or taking it up in a participant
+      exchange context.
+    CRE: CRE owns composing, generating, transforming, or designing content and communication
+      systems. Source expression can communicate already-created content and therefore
+      must not imply creation.
+    ORI: ORI owns existence, time, modality, manifestation, and ontological transition.
+      A lexical nonactualized CON process does not silently encode intention, schedule,
+      futurity, or probability.
+  runtime_state_interpretation:
+    '0': States that completion of this source-expression act is false, unavailable
+      as a valid result, or not established in the exchange context; it does not assert
+      the active or nonactualized sibling.
+    '1': Affirms that this source-expression act reached its completed phase in the
+      stated exchange context; the result does not entail reception, comprehension,
+      response, or endpoint-wide uptake unless separately asserted.
+    2/num: Leaves unresolved whether this source-expression act reached completion
+      or whether that completion remains a valid result; it does not change the lexical
+      process into an active or nonactualized sibling.
+  lexical_runtime_distinction: The third lexical trit permanently selects the completed
+    member of the source process triplet. Runtime `[2]/num` instead qualifies the
+    assertion about that already-selected lexeme. Therefore CON:100[1] affirms a completed
+    exchange act, while CON:100[2]/num leaves the assertion about that same completed
+    act unresolved.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:100[1](SOURCE=me,EXPRESSION=greeting,CONTEXT=call)
+    literal_gloss: my completed making-available of greeting
+    natural_english: I have said my greeting into the call.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: Completion is at source expression, not at target understanding.
+  - category: physical_or_spatial
+    semantic_graph: CON:001(SOURCE=beacon)+CON:100[1](EXPRESSION=ping)
+    literal_gloss: beacon endpoint plus completed source expression
+    natural_english: The beacon finished emitting the communicative ping.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: MAT is required if physical wave emission itself matters.
+  - category: temporal_or_sequential
+    semantic_graph: CON:100[1](SOURCE=operator,BEFORE=reply)
+    literal_gloss: source expression completed before reply
+    natural_english: The operator finished speaking before the reply began.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: The root supplies the completed source-side phase.
+  - category: cross_family_compound
+    semantic_graph: CRE(COMPOSE=notice)+DAT(NOTICE=n)+CON:100[1](SOURCE=clerk,EXPRESSION=n)
+    literal_gloss: created notice data made available by source
+    natural_english: The clerk composed and issued the notice.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: CRE owns composition and DAT owns content.
+  - category: executable_or_programming
+    semantic_graph: CON:100[1](SOURCE=producer,EXPRESSION=event,CHANNEL=bus)
+    literal_gloss: producer completed source expression of event
+    natural_english: The producer completed publication of the event to the bus.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: This does not prove any consumer received it.
+    pseudocode: assert(exchange_process.matches?("CON:100"))
+  - category: counterexample
+    semantic_graph: MIN(UNDERSTAND=listener,OBJECT=greeting)
+    literal_gloss: listener understands greeting
+    natural_english: The listener understood the greeting.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: must_not_use_this_root
+    analysis: Understanding is MIN, not completed source expression.
+  future_compound_examples:
+  - CON:100 + DAT supplies the expression, message, signal, request, or payload without
+    turning content into a Connection process.
+  - CON:100 + CON:0xx identifies the source endpoint, target endpoint, or shared channel
+    participating in the process.
+  - CON:100 + MIN/MAT/MOV distinguishes comprehension or attention from physical carrier
+    propagation and spatial transport.
+  - CON:100 + LOG/STR/WRN/REP adds protocol, topology, failure, or repair while preserving
+    the neutral exchange invariant.
+  later_era_notes: Later eras may lexicalize speak, tell, publish, send, hear, receive,
+    deliver, notify, broadcast, multicast, subscribe, acknowledge, converse, negotiate,
+    and transport as descendants or compounds. Era Zero must preserve the source-expression
+    / target-reception / shared-distribution distinction and must not let nonactualized
+    1x2 roots acquire planning or future-time semantics.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:101
+    universal_slot: active inward process
+    family_qualified_transliteration: wu·kak
+    local_compact_root: kak
+    formal_carrier: wu-ki-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 4
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: active source expression
+  invariant_definition: An ongoing act by which a source endpoint makes a communicative
+    expression available to an exchange context.
+  semantic_center: 'participant-addressed communicative exchange processes: source
+    expression, target reception, and shared distribution'
+  address_justification:
+    first_trit_1: 'Selects a process, action, or transformation: active source expression
+      is an exchange act, not an endpoint/channel entity and not a bond, capacity,
+      or compatibility relation.'
+    second_trit: 'Selects inward/source scope: it locates the exchange process at
+      the originating endpoint and its act of making an expression available without
+      changing the content or physical carrier.'
+    third_trit: 'Selects the active process phase: the same exchange act is ongoing,
+      while intention, planning, scheduling, queueing, probability, and future time
+      remain outside the lexeme.'
+  inclusion_boundary: Includes only the ongoing participant-addressed act at inward/source
+    scope by which a source endpoint makes an expression available. It is neutral
+    about the expression's content, physical carrier, protocol, success quality, comprehension,
+    response, and later use.
+  excluded_meanings:
+  - The endpoint, participant, shared channel, device, medium, route, or topology
+    as an entity or condition.
+  - The message, signal, request, symbol, payload, record, draft, queue item, or protocol
+    as content or structure.
+  - Physical propagation, movement, transduction, storage, computation, attention,
+    interpretation, understanding, agreement, or belief change.
+  - Opening, closing, joining, repairing, authenticating, authorizing, scheduling,
+    or configuring a channel or endpoint.
+  - Intention, readiness, permission, plan, schedule, queue status, probability, certainty,
+    futurity, or obligation—especially for lexical 1x2 roots.
+  - Reciprocal conversation, acknowledgement, negotiation, consensus, request-response,
+    or transport, which require compounds and explicit participant/content relations.
+  nearest_neighbors:
+  - CON:100
+  - CON:102
+  - CON:111
+  - CON:121
+  - CON:001
+  - CON:201
+  - DAT:101
+  - MIN:101
+  same_family_contrast: CON:0xx owns the endpoint/channel loci through which exchange
+    occurs; CON:1xx owns the expression, reception, and distribution processes themselves;
+    CON:2xx remains reserved for capacities, bonds, compatibility, reachability, and
+    possible exchange relations.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': States that this source-expression act is not presently ongoing or has ceased;
+      it does not assert that the process completed or remains available as a nonactualized
+      act.
+    '1': Affirms that this source-expression act is presently ongoing in the stated
+      exchange context.
+    2/num: Leaves unresolved whether this source-expression act is presently ongoing;
+      it does not select either the completed or nonactualized lexical sibling.
+  lexical_runtime_distinction: The third lexical trit permanently selects the active
+    member of the source process triplet. Runtime `[2]/num` instead qualifies the
+    assertion about that already-selected lexeme. Therefore CON:101[1] affirms a ongoing
+    exchange act, while CON:101[2]/num leaves the assertion about that same ongoing
+    act unresolved.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:101[1](SOURCE=me,EXPRESSION=story)
+    literal_gloss: my ongoing source expression of story
+    natural_english: I am telling the story now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: The expression is presently being made available.
+  - category: physical_or_spatial
+    semantic_graph: MAT(SPEAKER=device)+CON:101[1](SOURCE=device,EXPRESSION=alarm)
+    literal_gloss: speaker device actively expressing alarm
+    natural_english: The speaker is sounding the alarm message.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: MAT owns sound; CON owns communicative expression.
+  - category: temporal_or_sequential
+    semantic_graph: CON:101[1](SOURCE=host,DURING=opening_turn)
+    literal_gloss: host actively source-expressing during opening turn
+    natural_english: The host is speaking during the opening turn.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: A time phrase bounds the ongoing process.
+  - category: cross_family_compound
+    semantic_graph: DAT(MESSAGE=m)+CON:101[1](SOURCE=service,EXPRESSION=m)
+    literal_gloss: message data undergoing source expression
+    natural_english: The service is publishing the message.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: The data object and exchange process stay separate.
+  - category: executable_or_programming
+    semantic_graph: CON:101[1](SOURCE=socket,EXPRESSION=frame)
+    literal_gloss: socket actively source-expressing frame
+    natural_english: The socket is sending the frame into the exchange context.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: Physical byte movement may add MAT/MOV.
+    pseudocode: assert(exchange_process.matches?("CON:101"))
+  - category: counterexample
+    semantic_graph: STR(OPEN=channel)
+    literal_gloss: channel is being opened
+    natural_english: The channel is opening.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: must_not_use_this_root
+    analysis: Channel lifecycle is STR/CON relation, not active expression.
+  future_compound_examples:
+  - CON:101 + DAT supplies the expression, message, signal, request, or payload without
+    turning content into a Connection process.
+  - CON:101 + CON:0xx identifies the source endpoint, target endpoint, or shared channel
+    participating in the process.
+  - CON:101 + MIN/MAT/MOV distinguishes comprehension or attention from physical carrier
+    propagation and spatial transport.
+  - CON:101 + LOG/STR/WRN/REP adds protocol, topology, failure, or repair while preserving
+    the neutral exchange invariant.
+  later_era_notes: Later eras may lexicalize speak, tell, publish, send, hear, receive,
+    deliver, notify, broadcast, multicast, subscribe, acknowledge, converse, negotiate,
+    and transport as descendants or compounds. Era Zero must preserve the source-expression
+    / target-reception / shared-distribution distinction and must not let nonactualized
+    1x2 roots acquire planning or future-time semantics.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:102
+    universal_slot: pending inward process
+    family_qualified_transliteration: wu·kan
+    local_compact_root: kan
+    formal_carrier: wu-ki-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: potential source expression
+  invariant_definition: A nonactualized act by which a source endpoint would make
+    a communicative expression available to an exchange context.
+  semantic_center: 'participant-addressed communicative exchange processes: source
+    expression, target reception, and shared distribution'
+  address_justification:
+    first_trit_1: 'Selects a process, action, or transformation: potential source
+      expression is an exchange act, not an endpoint/channel entity and not a bond,
+      capacity, or compatibility relation.'
+    second_trit: 'Selects inward/source scope: it locates the exchange process at
+      the originating endpoint and its act of making an expression available without
+      changing the content or physical carrier.'
+    third_trit: 'Selects the nonactualized process phase: the same exchange act is
+      nonactualized, while intention, planning, scheduling, queueing, probability,
+      and future time remain outside the lexeme.'
+  inclusion_boundary: Includes only the nonactualized participant-addressed act at
+    inward/source scope by which a source endpoint makes an expression available.
+    It is neutral about the expression's content, physical carrier, protocol, success
+    quality, comprehension, response, and later use.
+  excluded_meanings:
+  - The endpoint, participant, shared channel, device, medium, route, or topology
+    as an entity or condition.
+  - The message, signal, request, symbol, payload, record, draft, queue item, or protocol
+    as content or structure.
+  - Physical propagation, movement, transduction, storage, computation, attention,
+    interpretation, understanding, agreement, or belief change.
+  - Opening, closing, joining, repairing, authenticating, authorizing, scheduling,
+    or configuring a channel or endpoint.
+  - Intention, readiness, permission, plan, schedule, queue status, probability, certainty,
+    futurity, or obligation—especially for lexical 1x2 roots.
+  - Reciprocal conversation, acknowledgement, negotiation, consensus, request-response,
+    or transport, which require compounds and explicit participant/content relations.
+  nearest_neighbors:
+  - CON:100
+  - CON:101
+  - CON:112
+  - CON:122
+  - CON:002
+  - CON:202
+  - DAT:102
+  - MIN:102
+  same_family_contrast: CON:0xx owns the endpoint/channel loci through which exchange
+    occurs; CON:1xx owns the expression, reception, and distribution processes themselves;
+    CON:2xx remains reserved for capacities, bonds, compatibility, reachability, and
+    possible exchange relations.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this source-expression act currently holds even as a valid nonactualized
+      exchange act; it does not assert that the act is active or completed.
+    '1': Affirms that this source-expression act is nonactualized—neither ongoing
+      nor completed—without adding intention, plan, queue, schedule, permission, probability,
+      or future time.
+    2/num: Leaves unresolved even the assertion that this source-expression act is
+      a valid nonactualized act; lexical nonactualization and runtime uncertainty
+      remain separate.
+  lexical_runtime_distinction: The third lexical trit permanently selects the nonactualized
+    member of the source process triplet. Runtime `[2]/num` instead qualifies the
+    assertion about that already-selected lexeme. Therefore CON:102[1] affirms a nonactualized
+    exchange act, while CON:102[2]/num leaves the assertion about that same nonactualized
+    act unresolved.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:102[1](SOURCE=me,EXPRESSION=answer)
+    literal_gloss: valid nonactualized source expression of answer
+    natural_english: I could give an answer, but no answer is being expressed.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: The lexical root does not assert intention or schedule.
+  - category: physical_or_spatial
+    semantic_graph: CON:102[1](SOURCE=unused_beacon,EXPRESSION=ping)
+    literal_gloss: nonactualized source expression from beacon
+    natural_english: The beacon could issue a ping in this context, but it is not
+      doing so.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: Hardware readiness is not implied.
+  - category: temporal_or_sequential
+    semantic_graph: CON:102[1](SOURCE=delegate,CONTEXT=meeting)
+    literal_gloss: nonactualized source expression in meeting
+    natural_english: The delegate has a possible speaking act that is not occurring.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: Future timing requires separate grammar.
+  - category: cross_family_compound
+    semantic_graph: LOG(PERMIT=speak)+CON:102[1](SOURCE=delegate,EXPRESSION=statement)
+    literal_gloss: permitted plus nonactualized source expression
+    natural_english: The delegate may speak, but has not begun.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: LOG adds permission; CON:102 alone does not.
+  - category: executable_or_programming
+    semantic_graph: CON:102[1](SOURCE=producer,EXPRESSION=event)
+    literal_gloss: nonactualized publication act
+    natural_english: A publication operation exists as a possibility but is neither
+      active nor complete.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: Do not translate this as queued or scheduled without other structure.
+    pseudocode: assert(exchange_process.matches?("CON:102"))
+  - category: counterexample
+    semantic_graph: DAT(DRAFT=answer)+ORI(FUTURE=time)
+    literal_gloss: draft answer assigned future time
+    natural_english: The answer is drafted for later.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: must_not_use_this_root
+    analysis: Drafting and futurity are not CON:102.
+  future_compound_examples:
+  - CON:102 + DAT supplies the expression, message, signal, request, or payload without
+    turning content into a Connection process.
+  - CON:102 + CON:0xx identifies the source endpoint, target endpoint, or shared channel
+    participating in the process.
+  - CON:102 + MIN/MAT/MOV distinguishes comprehension or attention from physical carrier
+    propagation and spatial transport.
+  - CON:102 + LOG/STR/WRN/REP adds protocol, topology, failure, or repair while preserving
+    the neutral exchange invariant.
+  later_era_notes: Later eras may lexicalize speak, tell, publish, send, hear, receive,
+    deliver, notify, broadcast, multicast, subscribe, acknowledge, converse, negotiate,
+    and transport as descendants or compounds. Era Zero must preserve the source-expression
+    / target-reception / shared-distribution distinction and must not let nonactualized
+    1x2 roots acquire planning or future-time semantics.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:110
+    universal_slot: completed outward process
+    family_qualified_transliteration: wu·kom
+    local_compact_root: kom
+    formal_carrier: wu-ki-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 4
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: completed target reception
+  invariant_definition: Completion of an act by which a target endpoint takes up a
+    communicative expression from an exchange context.
+  semantic_center: 'participant-addressed communicative exchange processes: source
+    expression, target reception, and shared distribution'
+  address_justification:
+    first_trit_1: 'Selects a process, action, or transformation: completed target
+      reception is an exchange act, not an endpoint/channel entity and not a bond,
+      capacity, or compatibility relation.'
+    second_trit: 'Selects outward/target scope: it locates the exchange process at
+      the addressed endpoint and its act of taking an expression up without changing
+      the content or physical carrier.'
+    third_trit: 'Selects the completed process phase: the same exchange act is completed,
+      while intention, planning, scheduling, queueing, probability, and future time
+      remain outside the lexeme.'
+  inclusion_boundary: Includes only the completed participant-addressed act at outward/target
+    scope by which a target endpoint takes up an expression. It is neutral about the
+    expression's content, physical carrier, protocol, success quality, comprehension,
+    response, and later use.
+  excluded_meanings:
+  - The endpoint, participant, shared channel, device, medium, route, or topology
+    as an entity or condition.
+  - The message, signal, request, symbol, payload, record, draft, queue item, or protocol
+    as content or structure.
+  - Physical propagation, movement, transduction, storage, computation, attention,
+    interpretation, understanding, agreement, or belief change.
+  - Opening, closing, joining, repairing, authenticating, authorizing, scheduling,
+    or configuring a channel or endpoint.
+  - Intention, readiness, permission, plan, schedule, queue status, probability, certainty,
+    futurity, or obligation—especially for lexical 1x2 roots.
+  - Reciprocal conversation, acknowledgement, negotiation, consensus, request-response,
+    or transport, which require compounds and explicit participant/content relations.
+  nearest_neighbors:
+  - CON:111
+  - CON:112
+  - CON:100
+  - CON:120
+  - CON:010
+  - CON:210
+  - DAT:110
+  - MIN:110
+  same_family_contrast: CON:0xx owns the endpoint/channel loci through which exchange
+    occurs; CON:1xx owns the expression, reception, and distribution processes themselves;
+    CON:2xx remains reserved for capacities, bonds, compatibility, reachability, and
+    possible exchange relations.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': States that completion of this target-reception act is false, unavailable
+      as a valid result, or not established in the exchange context; it does not assert
+      the active or nonactualized sibling.
+    '1': Affirms that this target-reception act reached its completed phase in the
+      stated exchange context; the result does not entail reception, comprehension,
+      response, or endpoint-wide uptake unless separately asserted.
+    2/num: Leaves unresolved whether this target-reception act reached completion
+      or whether that completion remains a valid result; it does not change the lexical
+      process into an active or nonactualized sibling.
+  lexical_runtime_distinction: The third lexical trit permanently selects the completed
+    member of the target process triplet. Runtime `[2]/num` instead qualifies the
+    assertion about that already-selected lexeme. Therefore CON:110[1] affirms a completed
+    exchange act, while CON:110[2]/num leaves the assertion about that same completed
+    act unresolved.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:110[1](TARGET=you,EXPRESSION=greeting)
+    literal_gloss: your completed uptake of greeting
+    natural_english: You received the greeting.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: Reception does not assert understanding or agreement.
+  - category: physical_or_spatial
+    semantic_graph: MAT(RECEIVER=radio)+CON:110[1](TARGET=radio,EXPRESSION=signal)
+    literal_gloss: radio plus completed target reception
+    natural_english: The radio completed uptake of the signal.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: MAT owns physical detection; CON owns communicative uptake.
+  - category: temporal_or_sequential
+    semantic_graph: CON:110[1](TARGET=clerk,BEFORE=response)
+    literal_gloss: target reception completed before response
+    natural_english: The clerk received it before responding.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: Response is a separate source expression.
+  - category: cross_family_compound
+    semantic_graph: DAT(MESSAGE=m)+CON:110[1](TARGET=reader,EXPRESSION=m)+MIN(UNDERSTAND=reader)
+    literal_gloss: message received and understood
+    natural_english: The reader received and understood the message.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: MIN is necessary for understanding.
+  - category: executable_or_programming
+    semantic_graph: CON:110[1](TARGET=consumer,EXPRESSION=event)
+    literal_gloss: consumer completed communicative uptake of event
+    natural_english: The consumer completed receipt of the event.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: Acknowledgement or processing requires LOG/DAT/MIN.
+    pseudocode: assert(exchange_process.matches?("CON:110"))
+  - category: counterexample
+    semantic_graph: CON:100[1](SOURCE=producer,EXPRESSION=event)
+    literal_gloss: completed source expression only
+    natural_english: The producer published the event.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: must_not_use_this_root
+    analysis: Publication alone does not prove target reception.
+  future_compound_examples:
+  - CON:110 + DAT supplies the expression, message, signal, request, or payload without
+    turning content into a Connection process.
+  - CON:110 + CON:0xx identifies the source endpoint, target endpoint, or shared channel
+    participating in the process.
+  - CON:110 + MIN/MAT/MOV distinguishes comprehension or attention from physical carrier
+    propagation and spatial transport.
+  - CON:110 + LOG/STR/WRN/REP adds protocol, topology, failure, or repair while preserving
+    the neutral exchange invariant.
+  later_era_notes: Later eras may lexicalize speak, tell, publish, send, hear, receive,
+    deliver, notify, broadcast, multicast, subscribe, acknowledge, converse, negotiate,
+    and transport as descendants or compounds. Era Zero must preserve the source-expression
+    / target-reception / shared-distribution distinction and must not let nonactualized
+    1x2 roots acquire planning or future-time semantics.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:111
+    universal_slot: active outward process
+    family_qualified_transliteration: wu·kok
+    local_compact_root: kok
+    formal_carrier: wu-ki-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 6
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: active target reception
+  invariant_definition: An ongoing act by which a target endpoint takes up a communicative
+    expression from an exchange context.
+  semantic_center: 'participant-addressed communicative exchange processes: source
+    expression, target reception, and shared distribution'
+  address_justification:
+    first_trit_1: 'Selects a process, action, or transformation: active target reception
+      is an exchange act, not an endpoint/channel entity and not a bond, capacity,
+      or compatibility relation.'
+    second_trit: 'Selects outward/target scope: it locates the exchange process at
+      the addressed endpoint and its act of taking an expression up without changing
+      the content or physical carrier.'
+    third_trit: 'Selects the active process phase: the same exchange act is ongoing,
+      while intention, planning, scheduling, queueing, probability, and future time
+      remain outside the lexeme.'
+  inclusion_boundary: Includes only the ongoing participant-addressed act at outward/target
+    scope by which a target endpoint takes up an expression. It is neutral about the
+    expression's content, physical carrier, protocol, success quality, comprehension,
+    response, and later use.
+  excluded_meanings:
+  - The endpoint, participant, shared channel, device, medium, route, or topology
+    as an entity or condition.
+  - The message, signal, request, symbol, payload, record, draft, queue item, or protocol
+    as content or structure.
+  - Physical propagation, movement, transduction, storage, computation, attention,
+    interpretation, understanding, agreement, or belief change.
+  - Opening, closing, joining, repairing, authenticating, authorizing, scheduling,
+    or configuring a channel or endpoint.
+  - Intention, readiness, permission, plan, schedule, queue status, probability, certainty,
+    futurity, or obligation—especially for lexical 1x2 roots.
+  - Reciprocal conversation, acknowledgement, negotiation, consensus, request-response,
+    or transport, which require compounds and explicit participant/content relations.
+  nearest_neighbors:
+  - CON:110
+  - CON:112
+  - CON:101
+  - CON:121
+  - CON:011
+  - CON:211
+  - DAT:111
+  - MIN:111
+  same_family_contrast: CON:0xx owns the endpoint/channel loci through which exchange
+    occurs; CON:1xx owns the expression, reception, and distribution processes themselves;
+    CON:2xx remains reserved for capacities, bonds, compatibility, reachability, and
+    possible exchange relations.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': States that this target-reception act is not presently ongoing or has ceased;
+      it does not assert that the process completed or remains available as a nonactualized
+      act.
+    '1': Affirms that this target-reception act is presently ongoing in the stated
+      exchange context.
+    2/num: Leaves unresolved whether this target-reception act is presently ongoing;
+      it does not select either the completed or nonactualized lexical sibling.
+  lexical_runtime_distinction: The third lexical trit permanently selects the active
+    member of the target process triplet. Runtime `[2]/num` instead qualifies the
+    assertion about that already-selected lexeme. Therefore CON:111[1] affirms a ongoing
+    exchange act, while CON:111[2]/num leaves the assertion about that same ongoing
+    act unresolved.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:111[1](TARGET=me,EXPRESSION=story)
+    literal_gloss: my ongoing uptake of story
+    natural_english: I am receiving the story as it is told.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: Attention and comprehension remain separate MIN claims.
+  - category: physical_or_spatial
+    semantic_graph: MAT(EARPIECE=device)+CON:111[1](TARGET=device,EXPRESSION=call_audio)
+    literal_gloss: earpiece actively receiving call expression
+    natural_english: The earpiece is taking up the call audio now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: Physical transduction is MAT.
+  - category: temporal_or_sequential
+    semantic_graph: CON:111[1](TARGET=auditor,DURING=stream)
+    literal_gloss: auditor actively receiving during stream
+    natural_english: The auditor is receiving the stream.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: The active phase is contemporaneous with the stream.
+  - category: cross_family_compound
+    semantic_graph: CON:111[1](TARGET=student,EXPRESSION=lesson)+MIN:211[1](COGNIZER=student,TARGET=lesson)
+    literal_gloss: active reception plus active attention
+    natural_english: The student is receiving and attending to the lesson.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: Neither root entails the other.
+  - category: executable_or_programming
+    semantic_graph: CON:111[1](TARGET=subscriber,EXPRESSION=frames)
+    literal_gloss: subscriber actively taking up frames
+    natural_english: The subscriber is receiving frames from the channel.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: Buffer storage is DAT/STR.
+    pseudocode: assert(exchange_process.matches?("CON:111"))
+  - category: counterexample
+    semantic_graph: MOV(PATH=packet_route)+MAT(CARRIER=photons)
+    literal_gloss: packet carrier traverses route
+    natural_english: Photons are moving along the route.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: must_not_use_this_root
+    analysis: Physical propagation is not target reception.
+  future_compound_examples:
+  - CON:111 + DAT supplies the expression, message, signal, request, or payload without
+    turning content into a Connection process.
+  - CON:111 + CON:0xx identifies the source endpoint, target endpoint, or shared channel
+    participating in the process.
+  - CON:111 + MIN/MAT/MOV distinguishes comprehension or attention from physical carrier
+    propagation and spatial transport.
+  - CON:111 + LOG/STR/WRN/REP adds protocol, topology, failure, or repair while preserving
+    the neutral exchange invariant.
+  later_era_notes: Later eras may lexicalize speak, tell, publish, send, hear, receive,
+    deliver, notify, broadcast, multicast, subscribe, acknowledge, converse, negotiate,
+    and transport as descendants or compounds. Era Zero must preserve the source-expression
+    / target-reception / shared-distribution distinction and must not let nonactualized
+    1x2 roots acquire planning or future-time semantics.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:112
+    universal_slot: pending outward process
+    family_qualified_transliteration: wu·kon
+    local_compact_root: kon
+    formal_carrier: wu-ki-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: potential target reception
+  invariant_definition: A nonactualized act by which a target endpoint would take
+    up a communicative expression from an exchange context.
+  semantic_center: 'participant-addressed communicative exchange processes: source
+    expression, target reception, and shared distribution'
+  address_justification:
+    first_trit_1: 'Selects a process, action, or transformation: potential target
+      reception is an exchange act, not an endpoint/channel entity and not a bond,
+      capacity, or compatibility relation.'
+    second_trit: 'Selects outward/target scope: it locates the exchange process at
+      the addressed endpoint and its act of taking an expression up without changing
+      the content or physical carrier.'
+    third_trit: 'Selects the nonactualized process phase: the same exchange act is
+      nonactualized, while intention, planning, scheduling, queueing, probability,
+      and future time remain outside the lexeme.'
+  inclusion_boundary: Includes only the nonactualized participant-addressed act at
+    outward/target scope by which a target endpoint takes up an expression. It is
+    neutral about the expression's content, physical carrier, protocol, success quality,
+    comprehension, response, and later use.
+  excluded_meanings:
+  - The endpoint, participant, shared channel, device, medium, route, or topology
+    as an entity or condition.
+  - The message, signal, request, symbol, payload, record, draft, queue item, or protocol
+    as content or structure.
+  - Physical propagation, movement, transduction, storage, computation, attention,
+    interpretation, understanding, agreement, or belief change.
+  - Opening, closing, joining, repairing, authenticating, authorizing, scheduling,
+    or configuring a channel or endpoint.
+  - Intention, readiness, permission, plan, schedule, queue status, probability, certainty,
+    futurity, or obligation—especially for lexical 1x2 roots.
+  - Reciprocal conversation, acknowledgement, negotiation, consensus, request-response,
+    or transport, which require compounds and explicit participant/content relations.
+  nearest_neighbors:
+  - CON:110
+  - CON:111
+  - CON:102
+  - CON:122
+  - CON:012
+  - CON:212
+  - DAT:112
+  - MIN:112
+  same_family_contrast: CON:0xx owns the endpoint/channel loci through which exchange
+    occurs; CON:1xx owns the expression, reception, and distribution processes themselves;
+    CON:2xx remains reserved for capacities, bonds, compatibility, reachability, and
+    possible exchange relations.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this target-reception act currently holds even as a valid nonactualized
+      exchange act; it does not assert that the act is active or completed.
+    '1': Affirms that this target-reception act is nonactualized—neither ongoing nor
+      completed—without adding intention, plan, queue, schedule, permission, probability,
+      or future time.
+    2/num: Leaves unresolved even the assertion that this target-reception act is
+      a valid nonactualized act; lexical nonactualization and runtime uncertainty
+      remain separate.
+  lexical_runtime_distinction: The third lexical trit permanently selects the nonactualized
+    member of the target process triplet. Runtime `[2]/num` instead qualifies the
+    assertion about that already-selected lexeme. Therefore CON:112[1] affirms a nonactualized
+    exchange act, while CON:112[2]/num leaves the assertion about that same nonactualized
+    act unresolved.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:112[1](TARGET=absent_member,EXPRESSION=notice)
+    literal_gloss: valid nonactualized target reception of notice
+    natural_english: The absent member could receive the notice in this exchange,
+      but has not.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: No queue, plan, or future event is asserted.
+  - category: physical_or_spatial
+    semantic_graph: CON:112[1](TARGET=backup_receiver,EXPRESSION=signal)
+    literal_gloss: nonactualized reception at backup receiver
+    natural_english: Reception by the backup receiver is possible but not occurring.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: Availability of the hardware needs MAT/STR/WRN.
+  - category: temporal_or_sequential
+    semantic_graph: CON:112[1](TARGET=reader,CONTEXT=session)
+    literal_gloss: nonactualized target uptake in session
+    natural_english: The reader has not taken up the expression in this session.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: The root is not a promise of later receipt.
+  - category: cross_family_compound
+    semantic_graph: DAT(QUEUE=m)+CON:112[1](TARGET=consumer,EXPRESSION=m)
+    literal_gloss: queued data plus nonactualized reception
+    natural_english: The message is queued, and its reception has not occurred.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: DAT supplies queue status explicitly.
+  - category: executable_or_programming
+    semantic_graph: CON:112[1](TARGET=consumer,EXPRESSION=event)
+    literal_gloss: nonactualized consume act
+    natural_english: Consumer uptake is a possible operation, not an active or completed
+      one.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: Await grammar may add a runtime dependency.
+    pseudocode: assert(exchange_process.matches?("CON:112"))
+  - category: counterexample
+    semantic_graph: LOG(SCHEDULE=delivery)+ORI(TIME=later)
+    literal_gloss: scheduled delivery time
+    natural_english: Delivery is scheduled for later.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: must_not_use_this_root
+    analysis: Scheduling and future time are not CON:112.
+  future_compound_examples:
+  - CON:112 + DAT supplies the expression, message, signal, request, or payload without
+    turning content into a Connection process.
+  - CON:112 + CON:0xx identifies the source endpoint, target endpoint, or shared channel
+    participating in the process.
+  - CON:112 + MIN/MAT/MOV distinguishes comprehension or attention from physical carrier
+    propagation and spatial transport.
+  - CON:112 + LOG/STR/WRN/REP adds protocol, topology, failure, or repair while preserving
+    the neutral exchange invariant.
+  later_era_notes: Later eras may lexicalize speak, tell, publish, send, hear, receive,
+    deliver, notify, broadcast, multicast, subscribe, acknowledge, converse, negotiate,
+    and transport as descendants or compounds. Era Zero must preserve the source-expression
+    / target-reception / shared-distribution distinction and must not let nonactualized
+    1x2 roots acquire planning or future-time semantics.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:120
+    universal_slot: completed systemic process
+    family_qualified_transliteration: wu·kim
+    local_compact_root: kim
+    formal_carrier: wu-ki-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: completed shared distribution
+  invariant_definition: Completion of an act by which a communicative expression is
+    made available across a shared channel to multiple participant endpoints.
+  semantic_center: 'participant-addressed communicative exchange processes: source
+    expression, target reception, and shared distribution'
+  address_justification:
+    first_trit_1: 'Selects a process, action, or transformation: completed shared
+      distribution is an exchange act, not an endpoint/channel entity and not a bond,
+      capacity, or compatibility relation.'
+    second_trit: 'Selects shared/systemic scope: it locates the exchange process at
+      the shared channel and availability of an expression to multiple endpoints without
+      changing the content or physical carrier.'
+    third_trit: 'Selects the completed process phase: the same exchange act is completed,
+      while intention, planning, scheduling, queueing, probability, and future time
+      remain outside the lexeme.'
+  inclusion_boundary: Includes only the completed participant-addressed act at shared/systemic
+    scope by which an expression is made available across a shared channel to multiple
+    endpoints. It is neutral about the expression's content, physical carrier, protocol,
+    success quality, comprehension, response, and later use.
+  excluded_meanings:
+  - The endpoint, participant, shared channel, device, medium, route, or topology
+    as an entity or condition.
+  - The message, signal, request, symbol, payload, record, draft, queue item, or protocol
+    as content or structure.
+  - Physical propagation, movement, transduction, storage, computation, attention,
+    interpretation, understanding, agreement, or belief change.
+  - Opening, closing, joining, repairing, authenticating, authorizing, scheduling,
+    or configuring a channel or endpoint.
+  - Intention, readiness, permission, plan, schedule, queue status, probability, certainty,
+    futurity, or obligation—especially for lexical 1x2 roots.
+  - Reciprocal conversation, acknowledgement, negotiation, consensus, request-response,
+    or transport, which require compounds and explicit participant/content relations.
+  nearest_neighbors:
+  - CON:121
+  - CON:122
+  - CON:100
+  - CON:110
+  - CON:020
+  - CON:220
+  - DAT:120
+  - MIN:120
+  same_family_contrast: CON:0xx owns the endpoint/channel loci through which exchange
+    occurs; CON:1xx owns the expression, reception, and distribution processes themselves;
+    CON:2xx remains reserved for capacities, bonds, compatibility, reachability, and
+    possible exchange relations.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': States that completion of this shared-distribution act is false, unavailable
+      as a valid result, or not established in the exchange context; it does not assert
+      the active or nonactualized sibling.
+    '1': Affirms that this shared-distribution act reached its completed phase in
+      the stated exchange context; the result does not entail reception, comprehension,
+      response, or endpoint-wide uptake unless separately asserted.
+    2/num: Leaves unresolved whether this shared-distribution act reached completion
+      or whether that completion remains a valid result; it does not change the lexical
+      process into an active or nonactualized sibling.
+  lexical_runtime_distinction: The third lexical trit permanently selects the completed
+    member of the shared process triplet. Runtime `[2]/num` instead qualifies the
+    assertion about that already-selected lexeme. Therefore CON:120[1] affirms a completed
+    exchange act, while CON:120[2]/num leaves the assertion about that same completed
+    act unresolved.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:120[1](EXPRESSION=announcement,CHANNEL=room,ENDPOINTS=group)
+    literal_gloss: completed shared availability of announcement
+    natural_english: The announcement has been distributed to the room.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: Individual uptake is not entailed.
+  - category: physical_or_spatial
+    semantic_graph: MAT(RADIO_BAND=band)+CON:120[1](EXPRESSION=alert,CHANNEL=band)
+    literal_gloss: completed shared distribution over radio band
+    natural_english: The alert finished broadcasting across the radio channel.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: MAT owns the band and waves.
+  - category: temporal_or_sequential
+    semantic_graph: CON:120[1](EXPRESSION=agenda,BEFORE=meeting)
+    literal_gloss: shared distribution completed before meeting
+    natural_english: The agenda was distributed before the meeting.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: Timing is supplied separately.
+  - category: cross_family_compound
+    semantic_graph: DAT(DOCUMENT=d)+CON:120[1](EXPRESSION=d,ENDPOINTS=team)
+    literal_gloss: document data completed shared distribution
+    natural_english: The document was distributed to the team.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: DAT owns the document; CON owns distribution.
+  - category: executable_or_programming
+    semantic_graph: CON:120[1](EXPRESSION=event,CHANNEL=topic,ENDPOINTS=subscribers)
+    literal_gloss: completed distribution of event across topic
+    natural_english: The event publication cycle across subscribers completed.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: This does not prove every subscriber processed it.
+    pseudocode: assert(exchange_process.matches?("CON:120"))
+  - category: counterexample
+    semantic_graph: CON:110[1](TARGET=one_consumer,EXPRESSION=event)
+    literal_gloss: one target completed reception
+    natural_english: One consumer received the event.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: must_not_use_this_root
+    analysis: Single-target reception is CON:110, not shared distribution.
+  future_compound_examples:
+  - CON:120 + DAT supplies the expression, message, signal, request, or payload without
+    turning content into a Connection process.
+  - CON:120 + CON:0xx identifies the source endpoint, target endpoint, or shared channel
+    participating in the process.
+  - CON:120 + MIN/MAT/MOV distinguishes comprehension or attention from physical carrier
+    propagation and spatial transport.
+  - CON:120 + LOG/STR/WRN/REP adds protocol, topology, failure, or repair while preserving
+    the neutral exchange invariant.
+  later_era_notes: Later eras may lexicalize speak, tell, publish, send, hear, receive,
+    deliver, notify, broadcast, multicast, subscribe, acknowledge, converse, negotiate,
+    and transport as descendants or compounds. Era Zero must preserve the source-expression
+    / target-reception / shared-distribution distinction and must not let nonactualized
+    1x2 roots acquire planning or future-time semantics.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:121
+    universal_slot: active systemic process
+    family_qualified_transliteration: wu·kik
+    local_compact_root: kik
+    formal_carrier: wu-ki-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: active shared distribution
+  invariant_definition: An ongoing act by which a communicative expression is made
+    available across a shared channel to multiple participant endpoints.
+  semantic_center: 'participant-addressed communicative exchange processes: source
+    expression, target reception, and shared distribution'
+  address_justification:
+    first_trit_1: 'Selects a process, action, or transformation: active shared distribution
+      is an exchange act, not an endpoint/channel entity and not a bond, capacity,
+      or compatibility relation.'
+    second_trit: 'Selects shared/systemic scope: it locates the exchange process at
+      the shared channel and availability of an expression to multiple endpoints without
+      changing the content or physical carrier.'
+    third_trit: 'Selects the active process phase: the same exchange act is ongoing,
+      while intention, planning, scheduling, queueing, probability, and future time
+      remain outside the lexeme.'
+  inclusion_boundary: Includes only the ongoing participant-addressed act at shared/systemic
+    scope by which an expression is made available across a shared channel to multiple
+    endpoints. It is neutral about the expression's content, physical carrier, protocol,
+    success quality, comprehension, response, and later use.
+  excluded_meanings:
+  - The endpoint, participant, shared channel, device, medium, route, or topology
+    as an entity or condition.
+  - The message, signal, request, symbol, payload, record, draft, queue item, or protocol
+    as content or structure.
+  - Physical propagation, movement, transduction, storage, computation, attention,
+    interpretation, understanding, agreement, or belief change.
+  - Opening, closing, joining, repairing, authenticating, authorizing, scheduling,
+    or configuring a channel or endpoint.
+  - Intention, readiness, permission, plan, schedule, queue status, probability, certainty,
+    futurity, or obligation—especially for lexical 1x2 roots.
+  - Reciprocal conversation, acknowledgement, negotiation, consensus, request-response,
+    or transport, which require compounds and explicit participant/content relations.
+  nearest_neighbors:
+  - CON:120
+  - CON:122
+  - CON:101
+  - CON:111
+  - CON:021
+  - CON:221
+  - DAT:121
+  - MIN:121
+  same_family_contrast: CON:0xx owns the endpoint/channel loci through which exchange
+    occurs; CON:1xx owns the expression, reception, and distribution processes themselves;
+    CON:2xx remains reserved for capacities, bonds, compatibility, reachability, and
+    possible exchange relations.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': States that this shared-distribution act is not presently ongoing or has
+      ceased; it does not assert that the process completed or remains available as
+      a nonactualized act.
+    '1': Affirms that this shared-distribution act is presently ongoing in the stated
+      exchange context.
+    2/num: Leaves unresolved whether this shared-distribution act is presently ongoing;
+      it does not select either the completed or nonactualized lexical sibling.
+  lexical_runtime_distinction: The third lexical trit permanently selects the active
+    member of the shared process triplet. Runtime `[2]/num` instead qualifies the
+    assertion about that already-selected lexeme. Therefore CON:121[1] affirms a ongoing
+    exchange act, while CON:121[2]/num leaves the assertion about that same ongoing
+    act unresolved.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:121[1](EXPRESSION=announcement,CHANNEL=hall,ENDPOINTS=crowd)
+    literal_gloss: ongoing shared distribution of announcement
+    natural_english: The announcement is being broadcast through the hall.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: The root does not claim reciprocal conversation.
+  - category: physical_or_spatial
+    semantic_graph: MAT(AIRWAVES=local)+CON:121[1](EXPRESSION=weather,CHANNEL=radio)
+    literal_gloss: weather expression actively distributed over radio
+    natural_english: The weather report is broadcasting now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: MAT supplies physical propagation.
+  - category: temporal_or_sequential
+    semantic_graph: CON:121[1](EXPRESSION=updates,DURING=incident)
+    literal_gloss: updates actively shared during incident
+    natural_english: Updates are being distributed during the incident.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: The event interval bounds the active process.
+  - category: cross_family_compound
+    semantic_graph: DAT(STREAM=s)+CON:121[1](EXPRESSION=s,ENDPOINTS=viewers)
+    literal_gloss: data stream under active shared distribution
+    natural_english: The stream is being distributed to viewers.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: Viewer reception remains separately assertable.
+  - category: executable_or_programming
+    semantic_graph: CON:121[1](EXPRESSION=frames,CHANNEL=multicast,ENDPOINTS=clients)
+    literal_gloss: frames actively distributed across multicast channel
+    natural_english: The server is multicasting frames to the clients.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: Routing policy belongs to LOG/STR.
+    pseudocode: assert(exchange_process.matches?("CON:121"))
+  - category: counterexample
+    semantic_graph: LOG(CONSENSUS=participants)
+    literal_gloss: participants reach formal agreement
+    natural_english: The participants are negotiating consensus.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: must_not_use_this_root
+    analysis: Negotiation is not distribution merely because it is shared.
+  future_compound_examples:
+  - CON:121 + DAT supplies the expression, message, signal, request, or payload without
+    turning content into a Connection process.
+  - CON:121 + CON:0xx identifies the source endpoint, target endpoint, or shared channel
+    participating in the process.
+  - CON:121 + MIN/MAT/MOV distinguishes comprehension or attention from physical carrier
+    propagation and spatial transport.
+  - CON:121 + LOG/STR/WRN/REP adds protocol, topology, failure, or repair while preserving
+    the neutral exchange invariant.
+  later_era_notes: Later eras may lexicalize speak, tell, publish, send, hear, receive,
+    deliver, notify, broadcast, multicast, subscribe, acknowledge, converse, negotiate,
+    and transport as descendants or compounds. Era Zero must preserve the source-expression
+    / target-reception / shared-distribution distinction and must not let nonactualized
+    1x2 roots acquire planning or future-time semantics.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CON:122
+    universal_slot: pending systemic process
+    family_qualified_transliteration: wu·kin
+    local_compact_root: kin
+    formal_carrier: wu-ki-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - -2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: potential shared distribution
+  invariant_definition: A nonactualized act by which a communicative expression would
+    be made available across a shared channel to multiple participant endpoints.
+  semantic_center: 'participant-addressed communicative exchange processes: source
+    expression, target reception, and shared distribution'
+  address_justification:
+    first_trit_1: 'Selects a process, action, or transformation: potential shared
+      distribution is an exchange act, not an endpoint/channel entity and not a bond,
+      capacity, or compatibility relation.'
+    second_trit: 'Selects shared/systemic scope: it locates the exchange process at
+      the shared channel and availability of an expression to multiple endpoints without
+      changing the content or physical carrier.'
+    third_trit: 'Selects the nonactualized process phase: the same exchange act is
+      nonactualized, while intention, planning, scheduling, queueing, probability,
+      and future time remain outside the lexeme.'
+  inclusion_boundary: Includes only the nonactualized participant-addressed act at
+    shared/systemic scope by which an expression is made available across a shared
+    channel to multiple endpoints. It is neutral about the expression's content, physical
+    carrier, protocol, success quality, comprehension, response, and later use.
+  excluded_meanings:
+  - The endpoint, participant, shared channel, device, medium, route, or topology
+    as an entity or condition.
+  - The message, signal, request, symbol, payload, record, draft, queue item, or protocol
+    as content or structure.
+  - Physical propagation, movement, transduction, storage, computation, attention,
+    interpretation, understanding, agreement, or belief change.
+  - Opening, closing, joining, repairing, authenticating, authorizing, scheduling,
+    or configuring a channel or endpoint.
+  - Intention, readiness, permission, plan, schedule, queue status, probability, certainty,
+    futurity, or obligation—especially for lexical 1x2 roots.
+  - Reciprocal conversation, acknowledgement, negotiation, consensus, request-response,
+    or transport, which require compounds and explicit participant/content relations.
+  nearest_neighbors:
+  - CON:120
+  - CON:121
+  - CON:102
+  - CON:112
+  - CON:022
+  - CON:222
+  - DAT:122
+  - MIN:122
+  same_family_contrast: CON:0xx owns the endpoint/channel loci through which exchange
+    occurs; CON:1xx owns the expression, reception, and distribution processes themselves;
+    CON:2xx remains reserved for capacities, bonds, compatibility, reachability, and
+    possible exchange relations.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this shared-distribution act currently holds even as a valid
+      nonactualized exchange act; it does not assert that the act is active or completed.
+    '1': Affirms that this shared-distribution act is nonactualized—neither ongoing
+      nor completed—without adding intention, plan, queue, schedule, permission, probability,
+      or future time.
+    2/num: Leaves unresolved even the assertion that this shared-distribution act
+      is a valid nonactualized act; lexical nonactualization and runtime uncertainty
+      remain separate.
+  lexical_runtime_distinction: The third lexical trit permanently selects the nonactualized
+    member of the shared process triplet. Runtime `[2]/num` instead qualifies the
+    assertion about that already-selected lexeme. Therefore CON:122[1] affirms a nonactualized
+    exchange act, while CON:122[2]/num leaves the assertion about that same nonactualized
+    act unresolved.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CON:122[1](EXPRESSION=announcement,CHANNEL=room,ENDPOINTS=group)
+    literal_gloss: valid nonactualized shared distribution
+    natural_english: The announcement could be distributed to the room, but no distribution
+      is occurring.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: No plan or intention is implied.
+  - category: physical_or_spatial
+    semantic_graph: CON:122[1](EXPRESSION=alert,CHANNEL=reserve_band)
+    literal_gloss: nonactualized shared distribution over reserve band
+    natural_english: The alert could be broadcast on the reserve band, but is not.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: A configured transmitter would need MAT/STR.
+  - category: temporal_or_sequential
+    semantic_graph: CON:122[1](EXPRESSION=update,CONTEXT=event)
+    literal_gloss: nonactualized distribution in event context
+    natural_english: Distribution of the update remains unrealized in this event context.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: Later realization is not guaranteed.
+  - category: cross_family_compound
+    semantic_graph: LOG(PERMIT=broadcast)+CON:122[1](EXPRESSION=alert,ENDPOINTS=public)
+    literal_gloss: permitted plus nonactualized shared distribution
+    natural_english: The alert may be broadcast, but no broadcast has begun.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: LOG adds permission explicitly.
+  - category: executable_or_programming
+    semantic_graph: CON:122[1](EXPRESSION=event,CHANNEL=topic,ENDPOINTS=subscribers)
+    literal_gloss: nonactualized fan-out operation
+    natural_english: A fan-out operation is possible but neither executing nor complete.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: valid
+    analysis: Queue and scheduler state require DAT/LOG/ORI.
+    pseudocode: assert(exchange_process.matches?("CON:122"))
+  - category: counterexample
+    semantic_graph: DAT(QUEUE=event)+LOG(SCHEDULE=publish)
+    literal_gloss: queued and scheduled event
+    natural_english: The event is queued for publication.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: source endpoint or initiating participant
+      middle: communicative exchange process
+      high: target endpoint or receiving participant
+      sustained: shared channel or exchange context
+    use_status: must_not_use_this_root
+    analysis: Queued publication is a compound, not the invariant of CON:122.
+  future_compound_examples:
+  - CON:122 + DAT supplies the expression, message, signal, request, or payload without
+    turning content into a Connection process.
+  - CON:122 + CON:0xx identifies the source endpoint, target endpoint, or shared channel
+    participating in the process.
+  - CON:122 + MIN/MAT/MOV distinguishes comprehension or attention from physical carrier
+    propagation and spatial transport.
+  - CON:122 + LOG/STR/WRN/REP adds protocol, topology, failure, or repair while preserving
+    the neutral exchange invariant.
+  later_era_notes: Later eras may lexicalize speak, tell, publish, send, hear, receive,
+    deliver, notify, broadcast, multicast, subscribe, acknowledge, converse, negotiate,
+    and transport as descendants or compounds. Era Zero must preserve the source-expression
+    / target-reception / shared-distribution distinction and must not let nonactualized
+    1x2 roots acquire planning or future-time semantics.
+  confidence: 0.97
+  canonicalized: true
+approval_checklist:
+  family_domain_preserved: true
+  address_axes_preserved: true
+  one_invariant_per_root: true
+  triplets_coherent: true
+  current_candidates_challenged: true
+  cross_family_collisions_explicit: true
+  runtime_state_separated: true
+  nonactualized_process_rule_preserved: true
+  generated_fields_unchanged: true
+  gate4_not_started: true
+  translator_not_started: true
+  canonicalized: true

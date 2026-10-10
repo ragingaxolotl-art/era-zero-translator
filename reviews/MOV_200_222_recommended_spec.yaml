@@ -1,0 +1,1035 @@
+---
+metadata:
+  title: MOV:200–222 recommended semantic specification
+  status: ready_for_user_approval_not_canonical
+  architecture_version: '1.0'
+  canonical_baseline: LIF:000–222, MOV:000–122
+  generated_fields_changed: false
+  roots_canonicalized: []
+  stop_boundary:
+  - MAT:000–022
+  - any other root block
+  - Gate 4
+  - compound architecture
+layer_design:
+  first_trit: capacity, relationship, or possibility; never a disguised entity or
+    process
+  row_20x: 'self-mobility capacity: enduring / presently available / latent'
+  row_21x: 'dyadic target-relative position: established / live / unresolved'
+  row_22x: 'systemic shared-frame configuration: established / live / unrealized possible'
+  parallelism_assessment: 'The rows are structurally parallel at the address-axis
+    level, not forced into one ontological noun: inward selects capacity, outward
+    selects a dyadic relation, and systemic selects a multi-locus configuration.'
+roots:
+- authority_status: recommended_not_canonical
+  fixed_generated_fields:
+    canonical_id: MOV:200
+    family: MOV
+    address: '200'
+    universal_slot: stable inward capacity
+    family_onset: gi
+    family_qualified_transliteration: gi·mam
+    local_compact_root: mam
+    formal_carrier: gi-nu-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+  recommended_title: enduring self-mobility
+  invariant_definition: An enduring capacity of a mover to change its own position.
+  confidence: 0.94
+  semantic_boundaries:
+  - Includes a mover's durable capacity for self-positional change whether or not
+    it is moving now.
+  - Applies to physical or explicitly modeled abstract movers.
+  - Does not assert that the capacity is currently usable, that movement is occurring,
+    or that departure is potential.
+  excluded_meanings:
+  - Current availability is MOV:201.
+  - Latent or currently unavailable capacity is MOV:202.
+  - Actual shared-frame movement is MOV:120–122.
+  - Body integrity, energy, and force belong to MAT; permission belongs to LOG; range
+    bounds require STR or quantitative composition.
+  nearest_motion_contrasts:
+    MOV:001: present position is an occupied locus; MOV:200 is a capacity
+    MOV:100–102: departure roots are processes; MOV:200 does not assert a departure
+      token
+    MOV:120–122: shared-frame movement roots describe positional change; MOV:200 describes
+      durable capability
+  cross_family_comparisons:
+    MAT: MAT owns bodies, dimensions, forces, and collision mechanics that may stabilize
+      or constrain the established configuration.
+    MIN: MIN owns awareness, prediction, and planning of a configuration; the configuration
+      does not imply a mind.
+    CON: CON owns participant coordination and linkage; a shared-frame positional
+      configuration may be accidental or externally imposed.
+    STR: STR owns topology, containment, organization, and route structure; MOV owns
+      only the loci's positional configuration.
+    LOG: LOG owns permission, compatibility, feasibility, constraints, and reachability
+      proofs; configuration alone proves none.
+    DAT: DAT owns maps, pose arrays, coordinates, and configuration records; representations
+      are not the positional relation.
+    CRE: CRE owns generation or transformation of configurations and paths; the resulting
+      positional configuration is MOV.
+    ORI: ORI owns universal spatial possibility and reality; MOV:222 is only a Motion-domain
+      configuration possibility.
+  address_explanation:
+    first_trit_2: Selects relationship or possibility rather than a movement event.
+    second_trit: Inward/self/source makes the capacity a property of the mover.
+    third_trit: Stable/bounded selects enduring or established status.
+  runtime_state_interpretations:
+    '0': Denies that the mover has the asserted enduring self-mobility capacity.
+    '1': Affirms that the mover possesses the enduring capacity, even if presently
+      at rest.
+    '2': Marks the truth or current status of that enduring-capacity assertion as
+      dormant, remembered, possible, or unresolved; it does not turn the root into
+      MOV:202.
+  ordinary_language_examples:
+  - semantic_graph: MOV:200[1](MOVER=animal)
+    literal_gloss: the animal has enduring self-mobility
+    natural_english: The animal is mobile by nature.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - MOVER
+  - semantic_graph: MOV:200[1](MOVER=rover)
+    literal_gloss: the rover has enduring self-mobility
+    natural_english: The rover was built to relocate itself.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - MOVER
+  - semantic_graph: MOV:200[1](MOVER=bird)
+    literal_gloss: the bird has enduring self-mobility
+    natural_english: Even while resting, the bird can change where it is.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - MOVER
+  technical_programming_examples:
+  - semantic_graph: MOV:200[1](MOVER=robot)
+    interpretation: Type-level capability independent of current actuator state.
+    pseudocode: capabilities(robot).include?(:self_mobility)
+    runtime_state: 1
+  - semantic_graph: MOV:200[1](MOVER=agent)
+    interpretation: A state-space agent has a transition relation that can change
+      its own position variable.
+    pseudocode: 'exists p1 != p0: transition(agent, p0, p1)'
+    runtime_state: 1
+  future_compound_decomposition_sketches_not_canonical:
+  - MOV:200 + STR boundary + quantity → range of motion
+  - MOV:200 + MAT body/actuator → physically embodied mobility
+  - MOV:200 + collective actor role → group mobility capacity
+  later_era_evolution_notes:
+  - A later quantitative layer may measure degree or range without changing this invariant.
+  - A later agency distinction may separate self-propelled from externally driven
+    movers compositionally.
+- authority_status: recommended_not_canonical
+  fixed_generated_fields:
+    canonical_id: MOV:201
+    family: MOV
+    address: '201'
+    universal_slot: active inward capacity
+    family_onset: gi
+    family_qualified_transliteration: gi·mak
+    local_compact_root: mak
+    formal_carrier: gi-nu-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+  recommended_title: available self-mobility
+  invariant_definition: A mover's capacity to change its own position that is presently
+    available for exercise.
+  confidence: 0.96
+  semantic_boundaries:
+  - Includes present usability of a mover's own mobility capacity.
+  - May hold while the mover is stationary.
+  - Does not assert permission, intention, readiness of a scheduled event, or actual
+    displacement.
+  excluded_meanings:
+  - Enduring capacity without a current-availability claim is MOV:200.
+  - Capacity retained but not presently available is MOV:202.
+  - Ongoing movement is MOV:101, MOV:111, or MOV:121 according to frame.
+  - Energy and actuator condition belong to MAT; authorization belongs to LOG.
+  nearest_motion_contrasts:
+    MOV:011: active destination is a guiding target entity, not a capacity
+    MOV:101: active departure is movement away from a source, not the ability to do
+      so
+    MOV:121: active shared-frame movement changes position; MOV:201 may be true while
+      position is unchanged
+  cross_family_comparisons:
+    MAT: MAT owns bodies, dimensions, forces, and collision mechanics that may stabilize
+      or constrain the live/current configuration.
+    MIN: MIN owns awareness, prediction, and planning of a configuration; the configuration
+      does not imply a mind.
+    CON: CON owns participant coordination and linkage; a shared-frame positional
+      configuration may be accidental or externally imposed.
+    STR: STR owns topology, containment, organization, and route structure; MOV owns
+      only the loci's positional configuration.
+    LOG: LOG owns permission, compatibility, feasibility, constraints, and reachability
+      proofs; configuration alone proves none.
+    DAT: DAT owns maps, pose arrays, coordinates, and configuration records; representations
+      are not the positional relation.
+    CRE: CRE owns generation or transformation of configurations and paths; the resulting
+      positional configuration is MOV.
+    ORI: ORI owns universal spatial possibility and reality; MOV:222 is only a Motion-domain
+      configuration possibility.
+  address_explanation:
+    first_trit_2: Selects relationship or possibility rather than a movement event.
+    second_trit: Inward/self/source makes the capacity a property of the mover.
+    third_trit: Active/changing/expressed selects present availability, maintenance,
+      or update.
+  runtime_state_interpretations:
+    '0': Denies that self-mobility is currently available; it does not necessarily
+      deny enduring capacity.
+    '1': Affirms that the mover can presently exercise its self-mobility.
+    '2': Marks current availability as pending, dormant, remembered, possible, or
+      unresolved; the lexical root remains active capacity rather than latent capacity.
+  ordinary_language_examples:
+  - semantic_graph: MOV:201[1](MOVER=person)
+    literal_gloss: the person's self-mobility is presently available
+    natural_english: I can move now.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - MOVER
+  - semantic_graph: MOV:201[1](MOVER=wheelchair)
+    literal_gloss: the chair's self-mobility is presently usable
+    natural_english: The powered chair is able to move.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - MOVER
+  - semantic_graph: MOV:201[0](MOVER=drone)
+    literal_gloss: the drone's current self-mobility is unavailable
+    natural_english: The drone cannot move right now.
+    runtime_state: 0
+    contour: declarative
+    roles:
+    - MOVER
+  technical_programming_examples:
+  - semantic_graph: MOV:201[1](MOVER=robot)
+    interpretation: A runtime capability check succeeds without commanding movement.
+    pseudocode: if mobility_available?(robot) then expose_move_controls
+    runtime_state: 1
+  - semantic_graph: MOV:201[1](MOVER=process)
+    interpretation: An explicitly spatial agent can currently transition its position
+      state.
+    pseudocode: assert(enabled(position_transition(agent)))
+    runtime_state: 1
+  future_compound_decomposition_sketches_not_canonical:
+  - MOV:201 + LOG permission → currently permitted and able to move
+  - MOV:201 + STR clearance → room to move now
+  - MOV:201 + MAT energy → powered mobility currently available
+  later_era_evolution_notes:
+  - Do not let a future runtime API redefine availability as execution.
+  - Readiness of a particular departure remains compositional and must not be back-filled
+    into this root.
+- authority_status: recommended_not_canonical
+  fixed_generated_fields:
+    canonical_id: MOV:202
+    family: MOV
+    address: '202'
+    universal_slot: dormant inward capacity
+    family_onset: gi
+    family_qualified_transliteration: gi·man
+    local_compact_root: man
+    formal_carrier: gi-nu-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+  recommended_title: latent self-mobility
+  invariant_definition: A mover's capacity to change its own position that exists
+    without being presently available for exercise.
+  confidence: 0.97
+  semantic_boundaries:
+  - Includes retained or dormant self-mobility that is not currently usable.
+  - Affirms the capacity itself while denying present availability.
+  - Does not assert why the capacity is unavailable or that a movement event will
+    occur.
+  excluded_meanings:
+  - Enduring capacity without dormancy is MOV:200.
+  - Presently available capacity is MOV:201.
+  - Potential source departure is MOV:102; potential generic movement is MOV:122.
+  - A block, break, empty battery, or legal restriction belongs to STR, MAT, or LOG.
+  nearest_motion_contrasts:
+    MOV:002: retained position is a remembered locus; MOV:202 is a retained capacity
+    MOV:022: dormant route system is a route entity; MOV:202 is a mover's capacity
+    MOV:102 and MOV:122: those roots select potential processes; MOV:202 selects dormant
+      capacity
+  cross_family_comparisons:
+    MAT: MAT owns bodies, dimensions, forces, and collision mechanics that may stabilize
+      or constrain the dormant/unresolved/potential configuration.
+    MIN: MIN owns awareness, prediction, and planning of a configuration; the configuration
+      does not imply a mind.
+    CON: CON owns participant coordination and linkage; a shared-frame positional
+      configuration may be accidental or externally imposed.
+    STR: STR owns topology, containment, organization, and route structure; MOV owns
+      only the loci's positional configuration.
+    LOG: LOG owns permission, compatibility, feasibility, constraints, and reachability
+      proofs; configuration alone proves none.
+    DAT: DAT owns maps, pose arrays, coordinates, and configuration records; representations
+      are not the positional relation.
+    CRE: CRE owns generation or transformation of configurations and paths; the resulting
+      positional configuration is MOV.
+    ORI: ORI owns universal spatial possibility and reality; MOV:222 is only a Motion-domain
+      configuration possibility.
+  address_explanation:
+    first_trit_2: Selects relationship or possibility rather than a movement event.
+    second_trit: Inward/self/source makes the capacity a property of the mover.
+    third_trit: Dormant/unresolved/potential selects latent capacity, unresolved relation,
+      or unrealized configuration possibility.
+  runtime_state_interpretations:
+    '0': Denies that a latent self-mobility capacity exists.
+    '1': Affirms that the mover retains self-mobility even though it is not presently
+      available.
+    '2': Marks the assertion of latent capacity itself as dormant, remembered, possible,
+      or unresolved; this is not the same as lexical dormancy.
+  ordinary_language_examples:
+  - semantic_graph: MOV:202[1](MOVER=stored_rover)
+    literal_gloss: the stored rover retains unavailable self-mobility
+    natural_english: The stored rover could move again, but not now.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - MOVER
+  - semantic_graph: MOV:202[1](MOVER=dormant_animal)
+    literal_gloss: the animal's self-mobility exists latently
+    natural_english: The hibernating animal retains the capacity to move.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - MOVER
+  - semantic_graph: MOV:202[1](MOVER=unpowered_drone)
+    literal_gloss: the drone retains self-mobility that is unavailable
+    natural_english: The drone is mobile in design, but its mobility is dormant.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - MOVER
+  technical_programming_examples:
+  - semantic_graph: MOV:202[1](MOVER=robot)
+    interpretation: The capability is installed but unavailable in the current operating
+      state.
+    pseudocode: assert(has_capability(robot, :move) && !available?(robot, :move))
+    runtime_state: 1
+  - semantic_graph: MOV:202[1](MOVER=agent)
+    interpretation: A transition relation exists but is disabled by the present state.
+    pseudocode: exists transition(position); enabled_now = false
+    runtime_state: 1
+  future_compound_decomposition_sketches_not_canonical:
+  - MOV:202 + MAT unpowered → mobility dormant because energy is absent
+  - MOV:202 + STR blocked → mobility retained under a structural obstruction
+  - MOV:202 + LOG restricted → mobility retained but presently disallowed
+  later_era_evolution_notes:
+  - Later causal grammar may state why availability is absent without changing this
+    root.
+  - Do not collapse lexical dormant capacity into runtime `[2]/num`.
+- authority_status: recommended_not_canonical
+  fixed_generated_fields:
+    canonical_id: MOV:210
+    family: MOV
+    address: '210'
+    universal_slot: stable outward relationship
+    family_onset: gi
+    family_qualified_transliteration: gi·mom
+    local_compact_root: mom
+    formal_carrier: gi-nu-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+  recommended_title: established target-relative position
+  invariant_definition: An established positional relation of a mover to a target
+    position.
+  confidence: 0.95
+  semantic_boundaries:
+  - Includes the established dyadic spatial relation between a mover and target.
+  - Supports distance, direction, bearing, and axis relations through modifiers or
+    quantitative values.
+  - Does not require either participant to move.
+  excluded_meanings:
+  - The target entity is MOV:010–012.
+  - Movement toward the target is MOV:110–112.
+  - A route is MOV:020–022.
+  - Coordinate records belong to DAT; reachability proofs to LOG; topology to STR.
+  nearest_motion_contrasts:
+    MOV:001: present position is a monadic occupied locus; MOV:210 relates it to a
+      target
+    MOV:010: defined destination names the target entity; MOV:210 states a relation
+      to it
+    MOV:111: active target approach asserts displacement toward target; MOV:210 can
+      hold at rest
+    MOV:020: an established route is an ordered position sequence; MOV:210 requires
+      no path
+  cross_family_comparisons:
+    MAT: MAT owns bodies, dimensions, forces, and collision mechanics that may stabilize
+      or constrain the established configuration.
+    MIN: MIN owns awareness, prediction, and planning of a configuration; the configuration
+      does not imply a mind.
+    CON: CON owns participant coordination and linkage; a shared-frame positional
+      configuration may be accidental or externally imposed.
+    STR: STR owns topology, containment, organization, and route structure; MOV owns
+      only the loci's positional configuration.
+    LOG: LOG owns permission, compatibility, feasibility, constraints, and reachability
+      proofs; configuration alone proves none.
+    DAT: DAT owns maps, pose arrays, coordinates, and configuration records; representations
+      are not the positional relation.
+    CRE: CRE owns generation or transformation of configurations and paths; the resulting
+      positional configuration is MOV.
+    ORI: ORI owns universal spatial possibility and reality; MOV:222 is only a Motion-domain
+      configuration possibility.
+  address_explanation:
+    first_trit_2: Selects relationship or possibility rather than a movement event.
+    second_trit: Outward/other/target makes the relation dyadic between mover and
+      target.
+    third_trit: Stable/bounded selects enduring or established status.
+  runtime_state_interpretations:
+    '0': Denies the asserted established target-relative positional relation.
+    '1': Affirms that the stated target-relative positional relation is established
+      and valid.
+    '2': Marks the validity or availability of that established-relation assertion
+      as dormant, remembered, possible, or unresolved; lexical MOV:212 instead selects
+      unresolved relation as the concept.
+  ordinary_language_examples:
+  - semantic_graph: MOV:210[1](MOVER=us,TARGET=cabin,VALUE=3km)
+    literal_gloss: our established position-relation to the cabin has distance three
+      kilometers
+    natural_english: The cabin is three kilometers from us.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - MOVER
+    - TARGET
+    - VALUE
+  - semantic_graph: MOV:210[1](MOVER=boat,TARGET=buoy,AXIS=east)
+    literal_gloss: the boat's established position is east relative to the buoy
+    natural_english: The boat is east of the buoy.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - MOVER
+    - TARGET
+    - AXIS
+  - semantic_graph: MOV:210[1](MOVER=me,TARGET=you,RELATION=beside)
+    literal_gloss: my established position is beside yours
+    natural_english: I am beside you.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - MOVER
+    - TARGET
+    - RELATION
+  technical_programming_examples:
+  - semantic_graph: MOV:210[1](MOVER=node_a,TARGET=node_b,VALUE=vector)
+    interpretation: A resolved relative-position vector, not a route.
+    pseudocode: relative_position[node_a, node_b] = vector
+    runtime_state: 1
+  - semantic_graph: MOV:210[1](MOVER=agent,TARGET=goal,VALUE=metric)
+    interpretation: A state-space relation used as input to planning without asserting
+      reachability.
+    pseudocode: d = metric(position(agent), position(goal))
+    runtime_state: 1
+  future_compound_decomposition_sketches_not_canonical:
+  - MOV:210 + quantity/metric → distance to target
+  - MOV:210 + axis/angle → direction or bearing
+  - MOV:210 + LOG proof + MOV:020 → target reachability
+  later_era_evolution_notes:
+  - Later geometric registers may encode vector, angle, or metric while preserving
+    this relational invariant.
+  - Do not redefine the atom as destination, route, or approach.
+- authority_status: recommended_not_canonical
+  fixed_generated_fields:
+    canonical_id: MOV:211
+    family: MOV
+    address: '211'
+    universal_slot: active outward relationship
+    family_onset: gi
+    family_qualified_transliteration: gi·mok
+    local_compact_root: mok
+    formal_carrier: gi-nu-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+  recommended_title: live target-relative position
+  invariant_definition: A positional relation of a mover to a target position that
+    is currently maintained or updated.
+  confidence: 0.93
+  semantic_boundaries:
+  - Includes a target-relative positional relation treated as presently live, maintained,
+    or updated.
+  - The relation may remain numerically constant or change.
+  - Does not assert movement toward, away from, or along with the target.
+  excluded_meanings:
+  - Established nonlive relation is MOV:210; unresolved relation is MOV:212.
+  - Approach is MOV:111; departure from a source is MOV:101; generic movement is MOV:121.
+  - Observation belongs to MIN, coordinate streams to DAT, and coordination to CON.
+  - A route, destination, pursuit plan, or following operation is not encoded.
+  nearest_motion_contrasts:
+    MOV:001: present position supplies a locus; MOV:211 maintains its relation to
+      a target
+    MOV:011: active destination guides movement; MOV:211 need not make the target
+      a destination
+    MOV:111: approach changes position toward target; MOV:211 can remain live at constant
+      separation
+    MOV:121: shared-frame movement asserts position change; MOV:211 asserts only a
+      live dyadic relation
+  cross_family_comparisons:
+    MAT: MAT owns bodies, dimensions, forces, and collision mechanics that may stabilize
+      or constrain the live/current configuration.
+    MIN: MIN owns awareness, prediction, and planning of a configuration; the configuration
+      does not imply a mind.
+    CON: CON owns participant coordination and linkage; a shared-frame positional
+      configuration may be accidental or externally imposed.
+    STR: STR owns topology, containment, organization, and route structure; MOV owns
+      only the loci's positional configuration.
+    LOG: LOG owns permission, compatibility, feasibility, constraints, and reachability
+      proofs; configuration alone proves none.
+    DAT: DAT owns maps, pose arrays, coordinates, and configuration records; representations
+      are not the positional relation.
+    CRE: CRE owns generation or transformation of configurations and paths; the resulting
+      positional configuration is MOV.
+    ORI: ORI owns universal spatial possibility and reality; MOV:222 is only a Motion-domain
+      configuration possibility.
+  address_explanation:
+    first_trit_2: Selects relationship or possibility rather than a movement event.
+    second_trit: Outward/other/target makes the relation dyadic between mover and
+      target.
+    third_trit: Active/changing/expressed selects present availability, maintenance,
+      or update.
+  runtime_state_interpretations:
+    '0': Denies that the target-relative positional relation is currently maintained
+      or updated.
+    '1': Affirms that the relation is live now.
+    '2': Marks the live-relation token as pending, dormant, remembered, possible,
+      or unresolved; it does not select lexical MOV:212.
+  ordinary_language_examples:
+  - semantic_graph: MOV:211[1](MOVER=drone,TARGET=beacon)
+    literal_gloss: the drone's relation to the beacon is live
+    natural_english: The drone's position relative to the beacon is being kept current.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - MOVER
+    - TARGET
+  - semantic_graph: MOV:211[1](MOVER=us,TARGET=guide,RELATION=alongside)
+    literal_gloss: our alongside positional relation to the guide is live
+    natural_english: We are staying alongside the guide.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - MOVER
+    - TARGET
+    - RELATION
+  - semantic_graph: MOV:211[1](MOVER=ship,TARGET=shoreline)
+    literal_gloss: the ship's target-relative position to the shoreline is continuously
+      current
+    natural_english: The ship's position relative to shore is being updated.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - MOVER
+    - TARGET
+  technical_programming_examples:
+  - semantic_graph: MOV:211[1](MOVER=robot,TARGET=marker,VALUE=pose)
+    interpretation: The relative pose relation is maintained as live state.
+    pseudocode: relative_pose.update(robot, marker)
+    runtime_state: 1
+  - semantic_graph: MOV:211[1](MOVER=agent,TARGET=goal)
+    interpretation: A solver maintains a current relational variable without asserting
+      approach.
+    pseudocode: maintain(relation(position(agent), position(goal)))
+    runtime_state: 1
+  future_compound_decomposition_sketches_not_canonical:
+  - MOV:211 + DAT coordinate stream → tracked relative position
+  - MOV:211 + MIN attention → attended target-relative position
+  - MOV:211 + CON coordination + MOV:121 → coordinated movement relative to a target
+  later_era_evolution_notes:
+  - A later calculus may distinguish maintained, sampled, and continuously updated
+    relations.
+  - The atom must remain neutral about sensors and direction of movement.
+- authority_status: recommended_not_canonical
+  fixed_generated_fields:
+    canonical_id: MOV:212
+    family: MOV
+    address: '212'
+    universal_slot: unresolved outward relationship
+    family_onset: gi
+    family_qualified_transliteration: gi·mon
+    local_compact_root: mon
+    formal_carrier: gi-nu-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+  recommended_title: unresolved target-relative position
+  invariant_definition: An unresolved relation between a mover's position and a target
+    position.
+  confidence: 0.95
+  semantic_boundaries:
+  - Includes a target-relative positional relation whose value or validity is not
+    resolved.
+  - Can support questions about distance, side, bearing, or relative placement without
+    selecting one.
+  - Does not assert why the relation is unresolved.
+  excluded_meanings:
+  - A dormant or unreachable destination entity is MOV:012.
+  - Potential target approach is MOV:112.
+  - A possible or dormant route uses MOV:020–022 with runtime/logic.
+  - Missing coordinate data belongs to DAT; reachability uncertainty to LOG.
+  nearest_motion_contrasts:
+    MOV:012: MOV:012 classifies the target entity as dormant/unreachable; MOV:212
+      classifies the positional relation as unresolved
+    MOV:112: MOV:112 is a potential movement process; MOV:212 is not a process
+    MOV:020–022: route roots name path entities/systems; MOV:212 does not assert any
+      route
+    MOV:210–211: those select established or live relations; MOV:212 selects the unresolved
+      relation
+  cross_family_comparisons:
+    MAT: MAT owns bodies, dimensions, forces, and collision mechanics that may stabilize
+      or constrain the dormant/unresolved/potential configuration.
+    MIN: MIN owns awareness, prediction, and planning of a configuration; the configuration
+      does not imply a mind.
+    CON: CON owns participant coordination and linkage; a shared-frame positional
+      configuration may be accidental or externally imposed.
+    STR: STR owns topology, containment, organization, and route structure; MOV owns
+      only the loci's positional configuration.
+    LOG: LOG owns permission, compatibility, feasibility, constraints, and reachability
+      proofs; configuration alone proves none.
+    DAT: DAT owns maps, pose arrays, coordinates, and configuration records; representations
+      are not the positional relation.
+    CRE: CRE owns generation or transformation of configurations and paths; the resulting
+      positional configuration is MOV.
+    ORI: ORI owns universal spatial possibility and reality; MOV:222 is only a Motion-domain
+      configuration possibility.
+  address_explanation:
+    first_trit_2: Selects relationship or possibility rather than a movement event.
+    second_trit: Outward/other/target makes the relation dyadic between mover and
+      target.
+    third_trit: Dormant/unresolved/potential selects latent capacity, unresolved relation,
+      or unrealized configuration possibility.
+  runtime_state_interpretations:
+    '0': Denies that the asserted target-relative relation is unresolved.
+    '1': Affirms the unresolved target-relative relation as the valid lexical concept.
+    '2': Marks the status of that unresolved-relation assertion itself as pending,
+      dormant, remembered, possible, or unresolved; this second-order status is distinct
+      from lexical unresolvedness.
+  ordinary_language_examples:
+  - semantic_graph: MOV:212[1](MOVER=probe,TARGET=station)
+    literal_gloss: the probe-to-station positional relation is unresolved
+    natural_english: We do not yet know where the probe is relative to the station.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - MOVER
+    - TARGET
+  - semantic_graph: MOV:212[1](MOVER=boat,TARGET=bridge)
+    literal_gloss: the boat's position relation to the bridge is unresolved
+    natural_english: It is unclear which side of the bridge the boat is on.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - MOVER
+    - TARGET
+  - semantic_graph: MOV:212[1](MOVER=traveler,TARGET=landmark)
+    literal_gloss: the traveler's target-relative position is unresolved
+    natural_english: Their position relative to the landmark is unknown.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - MOVER
+    - TARGET
+  technical_programming_examples:
+  - semantic_graph: MOV:212[1](MOVER=node_a,TARGET=node_b)
+    interpretation: The relative-position variable is unresolved, independently of
+      the reason.
+    pseudocode: relative_position[node_a, node_b] = UNRESOLVED
+    runtime_state: 1
+  - semantic_graph: MOV:212[1](MOVER=agent,TARGET=goal)
+    interpretation: A spatial relation remains unbound in a constraint system.
+    pseudocode: assert(unbound?(relation(position(agent), position(goal))))
+    runtime_state: 1
+  future_compound_decomposition_sketches_not_canonical:
+  - MOV:212 + DAT missing record → unresolved relation because coordinates are absent
+  - MOV:212 + LOG reachability query → unresolved positional relation under a reachability
+    proof
+  - MOV:212 + MIN uncertainty → an agent is uncertain about the relative position
+  later_era_evolution_notes:
+  - Later epistemic grammar may distinguish unknown, underspecified, and indeterminate
+    causes.
+  - Keep the invariant relational so the atom does not absorb map or path semantics.
+- authority_status: recommended_not_canonical
+  fixed_generated_fields:
+    canonical_id: MOV:220
+    family: MOV
+    address: '220'
+    universal_slot: stable systemic relationship
+    family_onset: gi
+    family_qualified_transliteration: gi·mim
+    local_compact_root: mim
+    formal_carrier: gi-nu-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+  recommended_title: established shared-frame configuration
+  invariant_definition: An established positional configuration among loci within
+    a shared reference frame.
+  confidence: 0.94
+  semantic_boundaries:
+  - Includes an established multi-locus arrangement defined only by positions in a
+    shared frame.
+  - May describe physical, simulated, or explicit state-space loci.
+  - Does not imply that anything is moving or that the configuration has a route,
+    topology, purpose, or cause.
+  excluded_meanings:
+  - A route or network entity is MOV:020–022.
+  - Completed shared-frame movement is MOV:120.
+  - Organizational structure and topology belong to STR.
+  - Forces and bodies belong to MAT; coordination belongs to CON; coordinate records
+    belong to DAT.
+  nearest_motion_contrasts:
+    MOV:020: an established route orders positions as a path; MOV:220 only relates
+      their placement in one frame
+    MOV:021: an active flow network carries movement; MOV:220 may be wholly static
+    MOV:120: completed shared-frame movement is an event; MOV:220 is the resulting
+      or independent configuration, not the event
+  cross_family_comparisons:
+    MAT: MAT owns bodies, dimensions, forces, and collision mechanics that may stabilize
+      or constrain the established configuration.
+    MIN: MIN owns awareness, prediction, and planning of a configuration; the configuration
+      does not imply a mind.
+    CON: CON owns participant coordination and linkage; a shared-frame positional
+      configuration may be accidental or externally imposed.
+    STR: STR owns topology, containment, organization, and route structure; MOV owns
+      only the loci's positional configuration.
+    LOG: LOG owns permission, compatibility, feasibility, constraints, and reachability
+      proofs; configuration alone proves none.
+    DAT: DAT owns maps, pose arrays, coordinates, and configuration records; representations
+      are not the positional relation.
+    CRE: CRE owns generation or transformation of configurations and paths; the resulting
+      positional configuration is MOV.
+    ORI: ORI owns universal spatial possibility and reality; MOV:222 is only a Motion-domain
+      configuration possibility.
+  address_explanation:
+    first_trit_2: Selects relationship or possibility rather than a movement event.
+    second_trit: Shared/environmental/systemic makes the relation a multi-locus configuration
+      in one frame.
+    third_trit: Stable/bounded selects enduring or established status.
+  runtime_state_interpretations:
+    '0': Denies that the asserted shared-frame configuration is established.
+    '1': Affirms the established positional configuration.
+    '2': Marks the status of that established-configuration assertion as dormant,
+      remembered, possible, or unresolved; lexical MOV:222 instead selects potential
+      configuration.
+  ordinary_language_examples:
+  - semantic_graph: MOV:220[1](LOCI=vehicles,FRAME=parking_area)
+    literal_gloss: the vehicles have an established shared-frame configuration
+    natural_english: The vehicles are parked in an established formation.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - LOCI
+    - FRAME
+  - semantic_graph: MOV:220[1](LOCI=chairs,FRAME=room)
+    literal_gloss: the chairs' positions form an established configuration
+    natural_english: The chairs remain arranged around the table.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - LOCI
+    - FRAME
+  - semantic_graph: MOV:220[1](LOCI=satellites,FRAME=orbital_frame)
+    literal_gloss: the satellites have an established positional configuration
+    natural_english: The satellites hold a stable formation.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - LOCI
+    - FRAME
+  technical_programming_examples:
+  - semantic_graph: MOV:220[1](LOCI=nodes,FRAME=world,VALUE=poses)
+    interpretation: A resolved set of relative poses, independent of graph edges.
+    pseudocode: configuration = {node => pose_in(world)}
+    runtime_state: 1
+  - semantic_graph: MOV:220[1](LOCI=agents,FRAME=state_space)
+    interpretation: A multi-agent positional state in an explicitly spatial model.
+    pseudocode: assert(configuration.valid_positions_only?)
+    runtime_state: 1
+  future_compound_decomposition_sketches_not_canonical:
+  - MOV:220 + MAT forces → stable orbital configuration
+  - MOV:220 + STR topology → spatially embedded structure
+  - MOV:220 + role geometry → beside/above/between formation
+  later_era_evolution_notes:
+  - A later geometry layer may distinguish rigid, periodic, and statistical configurations.
+  - Keep purpose and organization outside the atomic Motion relation.
+- authority_status: recommended_not_canonical
+  fixed_generated_fields:
+    canonical_id: MOV:221
+    family: MOV
+    address: '221'
+    universal_slot: active systemic relationship
+    family_onset: gi
+    family_qualified_transliteration: gi·mik
+    local_compact_root: mik
+    formal_carrier: gi-nu-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+  recommended_title: live shared-frame configuration
+  invariant_definition: A positional configuration among loci that is currently maintained
+    or updated within a shared reference frame.
+  confidence: 0.92
+  semantic_boundaries:
+  - Includes a multi-locus positional configuration treated as presently live, maintained,
+    or updated.
+  - The positions may remain constant or change.
+  - Does not assert a route, traffic, synchronization, coordination, or shared movement.
+  excluded_meanings:
+  - Established nonlive configuration is MOV:220; unrealized possible configuration
+    is MOV:222.
+  - Active flow network is MOV:021.
+  - Active shared-frame movement is MOV:121.
+  - Coordination belongs to CON; map/pose streams to DAT; scheduling to grammar or
+    LOG.
+  nearest_motion_contrasts:
+    MOV:021: the active flow network is a route system carrying motion; MOV:221 is
+      a live positional configuration
+    MOV:121: active shared-frame movement changes position; MOV:221 can remain live
+      while positions remain constant
+    MOV:211: MOV:211 is dyadic mover-to-target relation; MOV:221 is systemic among
+      loci
+  cross_family_comparisons:
+    MAT: MAT owns bodies, dimensions, forces, and collision mechanics that may stabilize
+      or constrain the live/current configuration.
+    MIN: MIN owns awareness, prediction, and planning of a configuration; the configuration
+      does not imply a mind.
+    CON: CON owns participant coordination and linkage; a shared-frame positional
+      configuration may be accidental or externally imposed.
+    STR: STR owns topology, containment, organization, and route structure; MOV owns
+      only the loci's positional configuration.
+    LOG: LOG owns permission, compatibility, feasibility, constraints, and reachability
+      proofs; configuration alone proves none.
+    DAT: DAT owns maps, pose arrays, coordinates, and configuration records; representations
+      are not the positional relation.
+    CRE: CRE owns generation or transformation of configurations and paths; the resulting
+      positional configuration is MOV.
+    ORI: ORI owns universal spatial possibility and reality; MOV:222 is only a Motion-domain
+      configuration possibility.
+  address_explanation:
+    first_trit_2: Selects relationship or possibility rather than a movement event.
+    second_trit: Shared/environmental/systemic makes the relation a multi-locus configuration
+      in one frame.
+    third_trit: Active/changing/expressed selects present availability, maintenance,
+      or update.
+  runtime_state_interpretations:
+    '0': Denies that the shared-frame configuration is currently maintained or updated.
+    '1': Affirms that the multi-locus configuration is live.
+    '2': Marks the live-configuration token as pending, dormant, remembered, possible,
+      or unresolved; it does not select lexical MOV:222.
+  ordinary_language_examples:
+  - semantic_graph: MOV:221[1](LOCI=drones,FRAME=airspace)
+    literal_gloss: the drones' shared-frame configuration is live
+    natural_english: The drone formation is being maintained.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - LOCI
+    - FRAME
+  - semantic_graph: MOV:221[1](LOCI=players,FRAME=field)
+    literal_gloss: the players' positional configuration is currently maintained
+    natural_english: The players are holding a live formation.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - LOCI
+    - FRAME
+  - semantic_graph: MOV:221[1](LOCI=satellites,FRAME=orbital_frame)
+    literal_gloss: the satellites' multi-locus relation is continuously current
+    natural_english: The satellite constellation's relative positions are being kept
+      current.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - LOCI
+    - FRAME
+  technical_programming_examples:
+  - semantic_graph: MOV:221[1](LOCI=robots,FRAME=world,VALUE=poses)
+    interpretation: A live configuration state is maintained separately from motion
+      commands.
+    pseudocode: formation_state.update(current_poses)
+    runtime_state: 1
+  - semantic_graph: MOV:221[1](LOCI=agents,FRAME=simulation)
+    interpretation: A simulation maintains a current relational configuration.
+    pseudocode: assert(configuration_timestamp == now)
+    runtime_state: 1
+  future_compound_decomposition_sketches_not_canonical:
+  - MOV:221 + CON coordination + MOV:121 → coordinated moving formation
+  - MOV:221 + DAT pose stream → observed live configuration
+  - MOV:221 + MOV:021 → traffic distribution over an active network
+  later_era_evolution_notes:
+  - A future temporal layer may express update cadence without making cadence atomic
+    here.
+  - Keep live configuration distinct from synchronized motion.
+- authority_status: recommended_not_canonical
+  fixed_generated_fields:
+    canonical_id: MOV:222
+    family: MOV
+    address: '222'
+    universal_slot: unrealized systemic possibility
+    family_onset: gi
+    family_qualified_transliteration: gi·min
+    local_compact_root: min
+    formal_carrier: gi-nu-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+  recommended_title: potential shared-frame configuration
+  invariant_definition: An unrealized possible positional configuration among loci
+    within a shared reference frame.
+  confidence: 0.95
+  semantic_boundaries:
+  - Includes an unrealized possible arrangement of loci in a shared frame.
+  - Does not assert that the arrangement is feasible, selected, scheduled, probable,
+    or future.
+  - The possibility is configuration-level, not a movement event.
+  excluded_meanings:
+  - Potential shared-frame movement is MOV:122.
+  - Possible routes use MOV:020–022 with LOG/STR or runtime composition.
+  - Path generation belongs to CRE; permission and feasibility to LOG; topology to
+    STR.
+  - Universal possibility or reality belongs to ORI.
+  nearest_motion_contrasts:
+    MOV:022: dormant route system is a route entity; MOV:222 is a possible positional
+      configuration
+    MOV:122: MOV:122 is a nonactualized movement process; MOV:222 is a nonactualized
+      relationship/configuration
+    MOV:212: MOV:212 is an unresolved dyadic relation; MOV:222 is a systemic possible
+      configuration
+  cross_family_comparisons:
+    MAT: MAT owns bodies, dimensions, forces, and collision mechanics that may stabilize
+      or constrain the dormant/unresolved/potential configuration.
+    MIN: MIN owns awareness, prediction, and planning of a configuration; the configuration
+      does not imply a mind.
+    CON: CON owns participant coordination and linkage; a shared-frame positional
+      configuration may be accidental or externally imposed.
+    STR: STR owns topology, containment, organization, and route structure; MOV owns
+      only the loci's positional configuration.
+    LOG: LOG owns permission, compatibility, feasibility, constraints, and reachability
+      proofs; configuration alone proves none.
+    DAT: DAT owns maps, pose arrays, coordinates, and configuration records; representations
+      are not the positional relation.
+    CRE: CRE owns generation or transformation of configurations and paths; the resulting
+      positional configuration is MOV.
+    ORI: ORI owns universal spatial possibility and reality; MOV:222 is only a Motion-domain
+      configuration possibility.
+  address_explanation:
+    first_trit_2: Selects relationship or possibility rather than a movement event.
+    second_trit: Shared/environmental/systemic makes the relation a multi-locus configuration
+      in one frame.
+    third_trit: Dormant/unresolved/potential selects latent capacity, unresolved relation,
+      or unrealized configuration possibility.
+  runtime_state_interpretations:
+    '0': Denies the asserted potential shared-frame configuration.
+    '1': Affirms that the unrealized configuration is a valid possibility without
+      asserting feasibility or future realization.
+    '2': Marks the status of that potential-configuration assertion as dormant, remembered,
+      possible, or unresolved; this is token status layered over lexical possibility.
+  ordinary_language_examples:
+  - semantic_graph: MOV:222[1](LOCI=drones,FRAME=airspace,FORM=ring)
+    literal_gloss: a ring configuration of the drones is an unrealized possibility
+    natural_english: The drones could occupy a ring formation.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - LOCI
+    - FRAME
+    - FORM
+  - semantic_graph: MOV:222[1](LOCI=furniture,FRAME=room,FORM=alternate)
+    literal_gloss: an alternative room configuration is possible but unrealized
+    natural_english: The furniture could be arranged differently.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - LOCI
+    - FRAME
+    - FORM
+  - semantic_graph: MOV:222[1](LOCI=vehicles,FRAME=road,FORM=spaced)
+    literal_gloss: a different vehicle-spacing configuration is possible
+    natural_english: The vehicles could occupy a more widely spaced formation.
+    runtime_state: 1
+    contour: declarative
+    roles:
+    - LOCI
+    - FRAME
+    - FORM
+  technical_programming_examples:
+  - semantic_graph: MOV:222[1](LOCI=agents,FRAME=world,VALUE=candidate_poses)
+    interpretation: A candidate configuration is represented without claiming constraint
+      satisfaction.
+    pseudocode: candidates << configuration(candidate_poses)
+    runtime_state: 1
+  - semantic_graph: MOV:222[1](LOCI=states,FRAME=explicit_state_space)
+    interpretation: An unrealized joint positional assignment exists as a model candidate.
+    pseudocode: model.add_candidate(joint_position_assignment)
+    runtime_state: 1
+  future_compound_decomposition_sketches_not_canonical:
+  - MOV:222 + LOG constraints → feasible shared-frame configuration
+  - MOV:222 + CRE generation → generated candidate configuration
+  - MOV:222 + WRN collision risk + MAT dimensions → candidate configuration with collision
+    analysis
+  later_era_evolution_notes:
+  - A later modal layer may distinguish possible, probable, permitted, and feasible
+    without changing this atom.
+  - Do not let route planning reclaim this address merely because configurations are
+    planning inputs.

@@ -1,0 +1,1546 @@
+---
+metadata:
+  title: MIN:200–222 recommended permanent semantic specification
+  status: recommended_pending_delegated_approval
+  architecture_version: '1.0'
+  semantic_center: selective allocation of cognitive processing
+  triplets:
+    MIN:200–202: 'attentional capacity: enduring / available / latent'
+    MIN:210–212: 'target-attention relation: established / active / unresolved'
+    MIN:220–222: 'joint-attention relation: established / active / potential'
+  generated_fields_changed: false
+  gate4_started: false
+  translator_started: false
+roots:
+- fixed_generated_fields:
+    canonical_id: MIN:200
+    universal_slot: stable inward capacity
+    family_qualified_transliteration: si·mam
+    local_compact_root: mam
+    formal_carrier: si-nu-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+  proposal_status: recommended_after_adversarial_review_pending_delegated_approval
+  proposed_title: enduring attentional capacity
+  invariant_definition: A persistent capacity of a cognizer to allocate cognitive
+    processing selectively.
+  semantic_center: selective allocation of cognitive processing
+  address_justification:
+    first_trit_2: 'Selects a capacity: the cognizer can allocate cognitive processing
+      selectively.'
+    second_trit: 'Selects inward/source scope: the cognizer is the bearer and source
+      of attentional capacity.'
+    third_trit: 'Selects stable expression: the attentional capacity persists across
+      episodes.'
+  inclusion_boundary: Includes only the capacity for, directed relation of, or systemic
+    relation of selectively allocating cognitive processing at this address's exact
+    scope and lexical expression. Preferential processing may concern sensory, remembered,
+    imagined, conceptual, or executable content without asserting which mechanism
+    supplies it.
+  excluded_meanings:
+  - Consciousness, wakefulness, arousal, sensory stimulation, gaze direction, bodily
+    orientation, or neural resource use.
+  - A representation merely persisting, manifesting, or remaining latent; canonical
+    MIN:0xx owns representational content.
+  - Revision, learning, interpretation, inference, evaluation, belief, trust, doubt,
+    certainty, truth, decision, or goal commitment.
+  - Communication, access permission, role assignment, coordination procedure, queue
+    order, data subscription, plan, intention, schedule, readiness, or future time.
+  - Success, failure, distraction, correction, or recovery unless WRN/REP or another
+    explicit relation supplies the evaluation.
+  nearest_neighbors:
+  - MIN:201
+  - MIN:202
+  - MIN:000
+  - MIN:001
+  - MIN:002
+  - MIN:100
+  - MIN:101
+  - MIN:102
+  same_family_contrast: Canonical MIN:0xx owns cognitive representations and MIN:1xx
+    owns their revision; this triplet owns the cognizer's capacity to allocate processing,
+    not content or change.
+  cross_family_comparisons: &1
+    LIF: LIF owns consciousness, wakefulness, organismic responsiveness, and living
+      condition. MIN attention may require consciousness in some beings but does not
+      define life or arousal.
+    MOV: MOV owns gaze shifts, head turns, approach, and physical orientation. Bodily
+      orientation can evidence or serve attention without being the cognitive relation.
+    MAT: MAT owns neural substrate, sensory energy, physical stimuli, and resource
+      consumption. MIN owns selective cognitive allocation, not its physical implementation.
+    CON: CON owns communication, access, assignment, and participant coordination.
+      Messages or roles may establish attention but do not guarantee cognitive priority.
+    STR: STR owns queues, hierarchies, and external priority structures. An ordered
+      task list is not attention unless a cognizer preferentially processes its target.
+    WRN: WRN owns distraction as failure, missed signals, ambiguity, and attentional
+      lapse when evaluated as problems. Attention itself is neutral about success
+      or error.
+    REP: REP owns recovery or repair of impaired attention. Refocusing may restore
+      attention, but the repair process is not the capacity or relation.
+    LOG: LOG owns inference, consistency, truth support, and formal priority rules.
+      Attending to a claim neither proves it nor commits the cognizer to it.
+    DAT: DAT owns input streams, subscriptions, queues, records, and scheduler state.
+      Data selection can implement attention but is not automatically cognitive attention.
+    CRE: CRE owns goals, intentions, plans, and designed attention policies. Intended
+      or scheduled focus must be compounded rather than encoded in MIN.
+    ORI: ORI owns time, modality, existence, certainty, and realization. Potential
+      or unresolved attention does not silently encode probability, future time, or
+      epistemic truth.
+  runtime_state_interpretation:
+    '0': Denies that the specified enduring attentional capacity holds for this token.
+    '1': Affirms that the specified enduring attentional capacity holds for this token.
+    2/num: Marks the current assertion about the enduring attentional capacity as
+      dormant or unresolved; it does not select a different lexical capacity/relation
+      or add probability, intention, schedule, or future time.
+  lexical_runtime_distinction: The third lexical trit permanently selects enduring
+    attentional capacity. Runtime `[2]/num` separately marks this token's assertion
+    as dormant or unresolved. For lexical `MIN:202`, `MIN:212`, or `MIN:222`, runtime
+    `[1]` affirms the latent, unresolved, or potential lexeme; runtime `[2]/num` leaves
+    the assertion about that lexeme unresolved. The two layers never collapse.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:200[1](COGNIZER=reader)
+    literal_gloss: reader; enduring capacity to allocate attention
+    natural_english: She retains the ability to choose what to pay attention to.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: No claim is made that the capacity is currently available or exercised.
+  - category: physical_or_spatial
+    semantic_graph: MIN:200[1](COGNIZER=pilot,DOMAIN=instrument_panel)
+    literal_gloss: pilot; enduring attentional capacity in instrument domain
+    natural_english: The pilot has a dependable capacity to allocate attention across
+      the instruments.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The instruments are physical targets; the capacity is cognitive.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:200[1](COGNIZER=operator,ACROSS=shifts)
+    literal_gloss: operator; attentional capacity persists across shifts
+    natural_english: The operator's attentional capacity persists across work sessions.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Persistence is lexical rather than a schedule.
+  - category: cross_family_compound
+    semantic_graph: MAT(BRAIN=person)+MIN:200[1](COGNIZER=person)
+    literal_gloss: physical neural bearer plus enduring attentional capacity
+    natural_english: The person's brain supports a persistent capacity to allocate
+      attention.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: MAT owns the substrate; MIN owns the cognitive capacity.
+  - category: executable_or_programming
+    semantic_graph: MIN:200[1](COGNIZER=agent,RESOURCE=attention_allocator)
+    literal_gloss: agent; enduring attention-allocation capacity
+    natural_english: The agent has a persistent attention-allocation capability.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Useful for a capability declaration independent of current resource
+      availability.
+    pseudocode: assert agent.capabilities.include?(:selective_attention)
+  - category: counterexample
+    semantic_graph: LIF(CONSCIOUS=person)
+    literal_gloss: person; conscious living condition
+    natural_english: The person is awake, but wakefulness alone does not prove selective
+      attentional capacity.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: must_not_use_this_root
+    analysis: Consciousness or arousal is LIF, not MIN:200.
+  future_compound_examples:
+  - MIN:200 + MIN:0xx → links attention to represented content without making content
+    and attention identical.
+  - MIN:200 + MIN:1xx → expresses attention participating in representational revision
+    without asserting that attention guarantees learning.
+  - MIN:200 + MAT/MOV/CON/DAT → expresses stimulus-driven, gaze-supported, communicated,
+    or implementation-level attention while preserving family boundaries.
+  - MIN:200 + WRN/REP/CRE/ORI/grammar → distracted, restored, intended, scheduled,
+    repeated, possible, or future attention with the added meaning explicit.
+  later_era_notes: Later eras may distinguish sustained, selective, divided, alternating,
+    executive, spatial, feature-based, social, and machine attention as compounds
+    or specialized descendants. The invariant must remain neutral about sensory modality,
+    consciousness, correctness, goals, physical mechanism, and resource quantity.
+  confidence: 0.98
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:201
+    universal_slot: active inward capacity
+    family_qualified_transliteration: si·mak
+    local_compact_root: mak
+    formal_carrier: si-nu-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+  proposal_status: recommended_after_adversarial_review_pending_delegated_approval
+  proposed_title: available attentional capacity
+  invariant_definition: A cognizer's capacity to allocate cognitive processing selectively
+    that is presently available for exercise.
+  semantic_center: selective allocation of cognitive processing
+  address_justification:
+    first_trit_2: 'Selects a capacity: the cognizer can allocate cognitive processing
+      selectively.'
+    second_trit: 'Selects inward/source scope: the cognizer is the bearer and source
+      of attentional capacity.'
+    third_trit: 'Selects active expression: the capacity is presently available for
+      exercise.'
+  inclusion_boundary: Includes only the capacity for, directed relation of, or systemic
+    relation of selectively allocating cognitive processing at this address's exact
+    scope and lexical expression. Preferential processing may concern sensory, remembered,
+    imagined, conceptual, or executable content without asserting which mechanism
+    supplies it.
+  excluded_meanings:
+  - Consciousness, wakefulness, arousal, sensory stimulation, gaze direction, bodily
+    orientation, or neural resource use.
+  - A representation merely persisting, manifesting, or remaining latent; canonical
+    MIN:0xx owns representational content.
+  - Revision, learning, interpretation, inference, evaluation, belief, trust, doubt,
+    certainty, truth, decision, or goal commitment.
+  - Communication, access permission, role assignment, coordination procedure, queue
+    order, data subscription, plan, intention, schedule, readiness, or future time.
+  - Success, failure, distraction, correction, or recovery unless WRN/REP or another
+    explicit relation supplies the evaluation.
+  nearest_neighbors:
+  - MIN:200
+  - MIN:202
+  - MIN:000
+  - MIN:001
+  - MIN:002
+  - MIN:100
+  - MIN:101
+  - MIN:102
+  same_family_contrast: Canonical MIN:0xx owns cognitive representations and MIN:1xx
+    owns their revision; this triplet owns the cognizer's capacity to allocate processing,
+    not content or change.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the specified available attentional capacity holds for this token.
+    '1': Affirms that the specified available attentional capacity holds for this
+      token.
+    2/num: Marks the current assertion about the available attentional capacity as
+      dormant or unresolved; it does not select a different lexical capacity/relation
+      or add probability, intention, schedule, or future time.
+  lexical_runtime_distinction: The third lexical trit permanently selects available
+    attentional capacity. Runtime `[2]/num` separately marks this token's assertion
+    as dormant or unresolved. For lexical `MIN:202`, `MIN:212`, or `MIN:222`, runtime
+    `[1]` affirms the latent, unresolved, or potential lexeme; runtime `[2]/num` leaves
+    the assertion about that lexeme unresolved. The two layers never collapse.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:201[1](COGNIZER=I,AMOUNT=sufficient)
+    literal_gloss: I; attentional capacity presently available
+    natural_english: I have enough attention available to read this carefully now.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: This is capacity availability, not the act of focusing on the page.
+  - category: physical_or_spatial
+    semantic_graph: MIN:201[1](COGNIZER=driver,DOMAIN=mirror_check)
+    literal_gloss: driver; attentional capacity available for mirror check
+    natural_english: The driver has attention available to check the mirror.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Actual attention to the mirror would be MIN:211.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:201[1](COGNIZER=student,AFTER=break)
+    literal_gloss: student; attention capacity available after break
+    natural_english: After the break, the student's attention is available again.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The temporal relation is explicit.
+  - category: cross_family_compound
+    semantic_graph: MAT(AROUSAL=adequate)+MIN:201[1](COGNIZER=operator)
+    literal_gloss: adequate physical arousal plus available attention capacity
+    natural_english: The operator is physically alert and has attention available.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: MAT/LIF arousal does not itself encode selective allocation.
+  - category: executable_or_programming
+    semantic_graph: MIN:201[1](COGNIZER=agent,BUDGET=0.6)
+    literal_gloss: agent; 0.6 attention budget available
+    natural_english: The agent currently has 0.6 units of attention capacity available.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Quantity grammar supplies the budget value.
+    pseudocode: assert agent.attention_budget.available == 0.6
+  - category: counterexample
+    semantic_graph: MIN:211[1](COGNIZER=I,TARGET=page)
+    literal_gloss: I; active attention directed to page
+    natural_english: I am focusing on the page.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: must_not_use_this_root
+    analysis: Target focus is an outward relation, not inward capacity availability.
+  future_compound_examples:
+  - MIN:201 + MIN:0xx → links attention to represented content without making content
+    and attention identical.
+  - MIN:201 + MIN:1xx → expresses attention participating in representational revision
+    without asserting that attention guarantees learning.
+  - MIN:201 + MAT/MOV/CON/DAT → expresses stimulus-driven, gaze-supported, communicated,
+    or implementation-level attention while preserving family boundaries.
+  - MIN:201 + WRN/REP/CRE/ORI/grammar → distracted, restored, intended, scheduled,
+    repeated, possible, or future attention with the added meaning explicit.
+  later_era_notes: Later eras may distinguish sustained, selective, divided, alternating,
+    executive, spatial, feature-based, social, and machine attention as compounds
+    or specialized descendants. The invariant must remain neutral about sensory modality,
+    consciousness, correctness, goals, physical mechanism, and resource quantity.
+  confidence: 0.98
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:202
+    universal_slot: dormant inward capacity
+    family_qualified_transliteration: si·man
+    local_compact_root: man
+    formal_carrier: si-nu-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+  proposal_status: recommended_after_adversarial_review_pending_delegated_approval
+  proposed_title: latent attentional capacity
+  invariant_definition: A cognizer's capacity to allocate cognitive processing selectively
+    that exists without being presently available for exercise.
+  semantic_center: selective allocation of cognitive processing
+  address_justification:
+    first_trit_2: 'Selects a capacity: the cognizer can allocate cognitive processing
+      selectively.'
+    second_trit: 'Selects inward/source scope: the cognizer is the bearer and source
+      of attentional capacity.'
+    third_trit: 'Selects dormant expression: the capacity exists without presently
+      being available for exercise.'
+  inclusion_boundary: Includes only the capacity for, directed relation of, or systemic
+    relation of selectively allocating cognitive processing at this address's exact
+    scope and lexical expression. Preferential processing may concern sensory, remembered,
+    imagined, conceptual, or executable content without asserting which mechanism
+    supplies it.
+  excluded_meanings:
+  - Consciousness, wakefulness, arousal, sensory stimulation, gaze direction, bodily
+    orientation, or neural resource use.
+  - A representation merely persisting, manifesting, or remaining latent; canonical
+    MIN:0xx owns representational content.
+  - Revision, learning, interpretation, inference, evaluation, belief, trust, doubt,
+    certainty, truth, decision, or goal commitment.
+  - Communication, access permission, role assignment, coordination procedure, queue
+    order, data subscription, plan, intention, schedule, readiness, or future time.
+  - Success, failure, distraction, correction, or recovery unless WRN/REP or another
+    explicit relation supplies the evaluation.
+  nearest_neighbors:
+  - MIN:200
+  - MIN:201
+  - MIN:000
+  - MIN:001
+  - MIN:002
+  - MIN:100
+  - MIN:101
+  - MIN:102
+  same_family_contrast: Canonical MIN:0xx owns cognitive representations and MIN:1xx
+    owns their revision; this triplet owns the cognizer's capacity to allocate processing,
+    not content or change.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the specified latent attentional capacity holds for this token.
+    '1': Affirms that the specified latent attentional capacity holds for this token.
+    2/num: Marks the current assertion about the latent attentional capacity as dormant
+      or unresolved; it does not select a different lexical capacity/relation or add
+      probability, intention, schedule, or future time.
+  lexical_runtime_distinction: The third lexical trit permanently selects latent attentional
+    capacity. Runtime `[2]/num` separately marks this token's assertion as dormant
+    or unresolved. For lexical `MIN:202`, `MIN:212`, or `MIN:222`, runtime `[1]` affirms
+    the latent, unresolved, or potential lexeme; runtime `[2]/num` leaves the assertion
+    about that lexeme unresolved. The two layers never collapse.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:202[1](COGNIZER=sleeping_student)
+    literal_gloss: sleeping student; attentional capacity latent
+    natural_english: The sleeping student retains attentional capacity, but it is
+      not presently available.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The reason for unavailability is external to the root.
+  - category: physical_or_spatial
+    semantic_graph: MAT(SEDATION=patient)+MIN:202[1](COGNIZER=patient)
+    literal_gloss: sedated patient plus latent attention capacity
+    natural_english: Sedation leaves the patient's attentional capacity unavailable
+      without asserting that it is absent.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: MAT owns sedation.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:202[1](COGNIZER=agent,DURING=shutdown)
+    literal_gloss: agent; attentional capacity latent during shutdown
+    natural_english: The agent's attention capability persists in a latent state during
+      shutdown.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Reactivation is not promised.
+  - category: cross_family_compound
+    semantic_graph: LIF(SLEEP=person)+MIN:202[1](COGNIZER=person)
+    literal_gloss: sleeping life state plus latent attentional capacity
+    natural_english: The sleeping person retains a dormant capacity for selective
+      attention.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: LIF owns sleep; MIN owns capacity.
+  - category: executable_or_programming
+    semantic_graph: MIN:202[1](COGNIZER=agent,MODULE=attention)
+    literal_gloss: agent; attention module capability latent
+    natural_english: The agent retains an attention capability while the module is
+      unavailable.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: A capability record distinct from runtime enablement.
+    pseudocode: assert agent.capabilities.include?(:attention) && !agent.attention.available?
+  - category: counterexample
+    semantic_graph: MIN:200[0](COGNIZER=system)
+    literal_gloss: system; no enduring attentional capacity
+    natural_english: The system has no selective-attention capability at all.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: must_not_use_this_root
+    analysis: Absence of capacity is negation, not latent capacity.
+  future_compound_examples:
+  - MIN:202 + MIN:0xx → links attention to represented content without making content
+    and attention identical.
+  - MIN:202 + MIN:1xx → expresses attention participating in representational revision
+    without asserting that attention guarantees learning.
+  - MIN:202 + MAT/MOV/CON/DAT → expresses stimulus-driven, gaze-supported, communicated,
+    or implementation-level attention while preserving family boundaries.
+  - MIN:202 + WRN/REP/CRE/ORI/grammar → distracted, restored, intended, scheduled,
+    repeated, possible, or future attention with the added meaning explicit.
+  later_era_notes: Later eras may distinguish sustained, selective, divided, alternating,
+    executive, spatial, feature-based, social, and machine attention as compounds
+    or specialized descendants. The invariant must remain neutral about sensory modality,
+    consciousness, correctness, goals, physical mechanism, and resource quantity.
+  confidence: 0.98
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:210
+    universal_slot: stable outward relationship
+    family_qualified_transliteration: si·mom
+    local_compact_root: mom
+    formal_carrier: si-nu-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+  proposal_status: recommended_after_adversarial_review_pending_delegated_approval
+  proposed_title: established target-attention relation
+  invariant_definition: An established relation in which a cognizer's cognitive processing
+    is preferentially directed toward a distinct target.
+  semantic_center: selective allocation of cognitive processing
+  address_justification:
+    first_trit_2: 'Selects a relationship or possibility: attention links a cognizer
+      or cognitive community to a target.'
+    second_trit: 'Selects outward/target scope: preferential processing is directed
+      toward one distinct target.'
+    third_trit: 'Selects a stable relationship: the attentional relation persists
+      as an established orientation.'
+  inclusion_boundary: Includes only the capacity for, directed relation of, or systemic
+    relation of selectively allocating cognitive processing at this address's exact
+    scope and lexical expression. Preferential processing may concern sensory, remembered,
+    imagined, conceptual, or executable content without asserting which mechanism
+    supplies it.
+  excluded_meanings:
+  - Consciousness, wakefulness, arousal, sensory stimulation, gaze direction, bodily
+    orientation, or neural resource use.
+  - A representation merely persisting, manifesting, or remaining latent; canonical
+    MIN:0xx owns representational content.
+  - Revision, learning, interpretation, inference, evaluation, belief, trust, doubt,
+    certainty, truth, decision, or goal commitment.
+  - Communication, access permission, role assignment, coordination procedure, queue
+    order, data subscription, plan, intention, schedule, readiness, or future time.
+  - Success, failure, distraction, correction, or recovery unless WRN/REP or another
+    explicit relation supplies the evaluation.
+  nearest_neighbors:
+  - MIN:211
+  - MIN:212
+  - MIN:010
+  - MIN:011
+  - MIN:012
+  - MIN:110
+  - MIN:111
+  - MIN:112
+  same_family_contrast: MIN:010–012 owns a target representation and MIN:110–112 owns
+    target-model revision; this triplet owns preferential processing directed to the
+    target.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the specified established target-attention relation holds for
+      this token.
+    '1': Affirms that the specified established target-attention relation holds for
+      this token.
+    2/num: Marks the current assertion about the established target-attention relation
+      as dormant or unresolved; it does not select a different lexical capacity/relation
+      or add probability, intention, schedule, or future time.
+  lexical_runtime_distinction: The third lexical trit permanently selects established
+    target-attention relation. Runtime `[2]/num` separately marks this token's assertion
+    as dormant or unresolved. For lexical `MIN:202`, `MIN:212`, or `MIN:222`, runtime
+    `[1]` affirms the latent, unresolved, or potential lexeme; runtime `[2]/num` leaves
+    the assertion about that lexeme unresolved. The two layers never collapse.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:210[1](COGNIZER=analyst,TARGET=budget_issue)
+    literal_gloss: analyst; established attention relation to budget issue
+    natural_english: The budget issue remains the analyst's standing focus across
+      meetings.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The relation persists even when not continuously manifest.
+  - category: physical_or_spatial
+    semantic_graph: MIN:210[1](COGNIZER=sentinel,TARGET=north_gate)
+    literal_gloss: sentinel; established attention relation to north gate
+    natural_english: The north gate remains a standing object of the sentinel's attention
+      across scans.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: A role assignment alone would require CON/STR.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:210[1](COGNIZER=researcher,TARGET=question,ACROSS=sessions)
+    literal_gloss: researcher; target-attention relation persists across sessions
+    natural_english: The research question remains the researcher's standing attentional
+      target.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: This is stable orientation, not uninterrupted active focus.
+  - category: cross_family_compound
+    semantic_graph: CON(ROLE=watcher,TARGET=gate)+MIN:210[1](COGNIZER=guard,TARGET=gate)
+    literal_gloss: watch role plus established cognitive orientation to gate
+    natural_english: The guard is assigned to watch the gate and maintains it as a
+      standing attentional target.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: CON owns the assignment; MIN owns attention.
+  - category: executable_or_programming
+    semantic_graph: MIN:210[1](COGNIZER=agent,TARGET=objective_7)
+    literal_gloss: agent; established attention relation to objective 7
+    natural_english: Objective 7 is pinned as a standing attentional target for the
+      agent.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Semantic orientation distinct from a data subscription.
+    pseudocode: assert agent.attention_targets.pinned?(:objective_7)
+  - category: counterexample
+    semantic_graph: MIN:010[1](COGNIZER=agent,TARGET=objective_7)
+    literal_gloss: agent; persistent representation of objective 7
+    natural_english: The agent remembers objective 7 but does not prioritize it.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: must_not_use_this_root
+    analysis: A persistent target representation is not an attention relation.
+  future_compound_examples:
+  - MIN:210 + MIN:0xx → links attention to represented content without making content
+    and attention identical.
+  - MIN:210 + MIN:1xx → expresses attention participating in representational revision
+    without asserting that attention guarantees learning.
+  - MIN:210 + MAT/MOV/CON/DAT → expresses stimulus-driven, gaze-supported, communicated,
+    or implementation-level attention while preserving family boundaries.
+  - MIN:210 + WRN/REP/CRE/ORI/grammar → distracted, restored, intended, scheduled,
+    repeated, possible, or future attention with the added meaning explicit.
+  later_era_notes: Later eras may distinguish sustained, selective, divided, alternating,
+    executive, spatial, feature-based, social, and machine attention as compounds
+    or specialized descendants. The invariant must remain neutral about sensory modality,
+    consciousness, correctness, goals, physical mechanism, and resource quantity.
+  confidence: 0.98
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:211
+    universal_slot: active outward relationship
+    family_qualified_transliteration: si·mok
+    local_compact_root: mok
+    formal_carrier: si-nu-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+  proposal_status: recommended_after_adversarial_review_pending_delegated_approval
+  proposed_title: active target attention
+  invariant_definition: A relation in which a cognizer's cognitive processing is presently
+    preferentially directed toward a distinct target.
+  semantic_center: selective allocation of cognitive processing
+  address_justification:
+    first_trit_2: 'Selects a relationship or possibility: attention links a cognizer
+      or cognitive community to a target.'
+    second_trit: 'Selects outward/target scope: preferential processing is directed
+      toward one distinct target.'
+    third_trit: 'Selects an active relationship: preferential processing is occurring
+      now.'
+  inclusion_boundary: Includes only the capacity for, directed relation of, or systemic
+    relation of selectively allocating cognitive processing at this address's exact
+    scope and lexical expression. Preferential processing may concern sensory, remembered,
+    imagined, conceptual, or executable content without asserting which mechanism
+    supplies it.
+  excluded_meanings:
+  - Consciousness, wakefulness, arousal, sensory stimulation, gaze direction, bodily
+    orientation, or neural resource use.
+  - A representation merely persisting, manifesting, or remaining latent; canonical
+    MIN:0xx owns representational content.
+  - Revision, learning, interpretation, inference, evaluation, belief, trust, doubt,
+    certainty, truth, decision, or goal commitment.
+  - Communication, access permission, role assignment, coordination procedure, queue
+    order, data subscription, plan, intention, schedule, readiness, or future time.
+  - Success, failure, distraction, correction, or recovery unless WRN/REP or another
+    explicit relation supplies the evaluation.
+  nearest_neighbors:
+  - MIN:210
+  - MIN:212
+  - MIN:010
+  - MIN:011
+  - MIN:012
+  - MIN:110
+  - MIN:111
+  - MIN:112
+  same_family_contrast: MIN:010–012 owns a target representation and MIN:110–112 owns
+    target-model revision; this triplet owns preferential processing directed to the
+    target.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the specified active target attention holds for this token.
+    '1': Affirms that the specified active target attention holds for this token.
+    2/num: Marks the current assertion about the active target attention as dormant
+      or unresolved; it does not select a different lexical capacity/relation or add
+      probability, intention, schedule, or future time.
+  lexical_runtime_distinction: The third lexical trit permanently selects active target
+    attention. Runtime `[2]/num` separately marks this token's assertion as dormant
+    or unresolved. For lexical `MIN:202`, `MIN:212`, or `MIN:222`, runtime `[1]` affirms
+    the latent, unresolved, or potential lexeme; runtime `[2]/num` leaves the assertion
+    about that lexeme unresolved. The two layers never collapse.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:211[1](COGNIZER=I,TARGET=your_words)
+    literal_gloss: I; attention presently directed to your words
+    natural_english: I am paying attention to what you are saying.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Understanding or agreement is not asserted.
+  - category: physical_or_spatial
+    semantic_graph: MIN:211[1](COGNIZER=driver,TARGET=pedestrian)
+    literal_gloss: driver; active attention to pedestrian
+    natural_english: The driver is focusing on the pedestrian.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Eye or head movement is separate MOV/MAT evidence.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:211[1](COGNIZER=operator,TARGET=alarm,DURING=interval_4)
+    literal_gloss: operator; alarm prioritized during interval 4
+    natural_english: The operator is attending to the alarm during interval 4.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The interval is graph-level.
+  - category: cross_family_compound
+    semantic_graph: MAT(SIGNAL=flashing_light)+MIN:211[1](COGNIZER=operator,TARGET=warning)
+    literal_gloss: flashing signal plus active attention to warning
+    natural_english: The flashing light has the operator's attention.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Causation is explicit; MAT owns the signal.
+  - category: executable_or_programming
+    semantic_graph: MIN:211[1](COGNIZER=agent,TARGET=event_42,PRIORITY=high)
+    literal_gloss: agent; active attention on event 42 with high priority
+    natural_english: The agent is allocating preferential processing to event 42.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Priority quantity/ordering remains grammar or LOG/STR.
+    pseudocode: assert agent.attention.current_target == :event_42
+  - category: counterexample
+    semantic_graph: MIN:011[1](COGNIZER=driver,TARGET=billboard)
+    literal_gloss: driver; billboard representation manifest
+    natural_english: The billboard is present in the driver's scene model but remains
+      peripheral.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: must_not_use_this_root
+    analysis: Manifest representation does not entail attention.
+  future_compound_examples:
+  - MIN:211 + MIN:0xx → links attention to represented content without making content
+    and attention identical.
+  - MIN:211 + MIN:1xx → expresses attention participating in representational revision
+    without asserting that attention guarantees learning.
+  - MIN:211 + MAT/MOV/CON/DAT → expresses stimulus-driven, gaze-supported, communicated,
+    or implementation-level attention while preserving family boundaries.
+  - MIN:211 + WRN/REP/CRE/ORI/grammar → distracted, restored, intended, scheduled,
+    repeated, possible, or future attention with the added meaning explicit.
+  later_era_notes: Later eras may distinguish sustained, selective, divided, alternating,
+    executive, spatial, feature-based, social, and machine attention as compounds
+    or specialized descendants. The invariant must remain neutral about sensory modality,
+    consciousness, correctness, goals, physical mechanism, and resource quantity.
+  confidence: 0.98
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:212
+    universal_slot: unresolved outward relationship
+    family_qualified_transliteration: si·mon
+    local_compact_root: mon
+    formal_carrier: si-nu-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+  proposal_status: recommended_after_adversarial_review_pending_delegated_approval
+  proposed_title: unresolved target-attention relation
+  invariant_definition: An unresolved attentional relation between a cognizer and
+    a distinct target whose receipt of preferential cognitive processing is undetermined.
+  semantic_center: selective allocation of cognitive processing
+  address_justification:
+    first_trit_2: 'Selects a relationship or possibility: attention links a cognizer
+      or cognitive community to a target.'
+    second_trit: 'Selects outward/target scope: preferential processing is directed
+      toward one distinct target.'
+    third_trit: 'Selects an unresolved relationship: whether the target receives preferential
+      processing is lexically unresolved.'
+  inclusion_boundary: Includes only the capacity for, directed relation of, or systemic
+    relation of selectively allocating cognitive processing at this address's exact
+    scope and lexical expression. Preferential processing may concern sensory, remembered,
+    imagined, conceptual, or executable content without asserting which mechanism
+    supplies it.
+  excluded_meanings:
+  - Consciousness, wakefulness, arousal, sensory stimulation, gaze direction, bodily
+    orientation, or neural resource use.
+  - A representation merely persisting, manifesting, or remaining latent; canonical
+    MIN:0xx owns representational content.
+  - Revision, learning, interpretation, inference, evaluation, belief, trust, doubt,
+    certainty, truth, decision, or goal commitment.
+  - Communication, access permission, role assignment, coordination procedure, queue
+    order, data subscription, plan, intention, schedule, readiness, or future time.
+  - Success, failure, distraction, correction, or recovery unless WRN/REP or another
+    explicit relation supplies the evaluation.
+  nearest_neighbors:
+  - MIN:210
+  - MIN:211
+  - MIN:010
+  - MIN:011
+  - MIN:012
+  - MIN:110
+  - MIN:111
+  - MIN:112
+  same_family_contrast: MIN:010–012 owns a target representation and MIN:110–112 owns
+    target-model revision; this triplet owns preferential processing directed to the
+    target.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the specified unresolved target-attention relation holds for
+      this token.
+    '1': Affirms that the specified unresolved target-attention relation holds for
+      this token.
+    2/num: Marks the current assertion about the unresolved target-attention relation
+      as dormant or unresolved; it does not select a different lexical capacity/relation
+      or add probability, intention, schedule, or future time.
+  lexical_runtime_distinction: The third lexical trit permanently selects unresolved
+    target-attention relation. Runtime `[2]/num` separately marks this token's assertion
+    as dormant or unresolved. For lexical `MIN:202`, `MIN:212`, or `MIN:222`, runtime
+    `[1]` affirms the latent, unresolved, or potential lexeme; runtime `[2]/num` leaves
+    the assertion about that lexeme unresolved. The two layers never collapse.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:212[1](COGNIZER=listener,TARGET=me)
+    literal_gloss: listener-to-me attention relation unresolved
+    natural_english: I cannot tell whether the listener is paying attention to me.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The uncertainty concerns the attention relation, not the truth of a
+      proposition.
+  - category: physical_or_spatial
+    semantic_graph: WRN(OCCLUSION=camera)+MIN:212[1](COGNIZER=pilot,TARGET=warning_light)
+    literal_gloss: camera occlusion plus unresolved pilot attention to warning light
+    natural_english: The camera cannot establish whether the pilot is attending to
+      the warning light.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: WRN owns the evidential defect.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:212[1](COGNIZER=operator,TARGET=alarm,AT=t4)
+    literal_gloss: operator attention to alarm unresolved at t4
+    natural_english: At that moment, the operator's attentional relation to the alarm
+      is unresolved.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: No future claim is made.
+  - category: cross_family_compound
+    semantic_graph: DAT(TRACE=missing)+MIN:212[1](COGNIZER=agent,TARGET=event_42)
+    literal_gloss: missing trace plus unresolved attention relation
+    natural_english: Because the trace is missing, whether the agent attended to event
+      42 remains unresolved.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: DAT supplies evidence status; MIN supplies the relation under question.
+  - category: executable_or_programming
+    semantic_graph: MIN:212[1](COGNIZER=agent,TARGET=event_42)
+    literal_gloss: agent-to-event attention relation unknown
+    natural_english: Return unknown for whether event 42 received preferential processing.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: A semantic unknown, not a false focus assertion.
+    pseudocode: assert attention_relation(:event_42).status == :unresolved
+  - category: counterexample
+    semantic_graph: LOG(UNCERTAIN=claim_about_event_42)
+    literal_gloss: claim truth or support uncertain
+    natural_english: The agent is unsure whether the claim is true.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: must_not_use_this_root
+    analysis: Epistemic uncertainty is LOG/ORI or a compound, not attention.
+  future_compound_examples:
+  - MIN:212 + MIN:0xx → links attention to represented content without making content
+    and attention identical.
+  - MIN:212 + MIN:1xx → expresses attention participating in representational revision
+    without asserting that attention guarantees learning.
+  - MIN:212 + MAT/MOV/CON/DAT → expresses stimulus-driven, gaze-supported, communicated,
+    or implementation-level attention while preserving family boundaries.
+  - MIN:212 + WRN/REP/CRE/ORI/grammar → distracted, restored, intended, scheduled,
+    repeated, possible, or future attention with the added meaning explicit.
+  later_era_notes: Later eras may distinguish sustained, selective, divided, alternating,
+    executive, spatial, feature-based, social, and machine attention as compounds
+    or specialized descendants. The invariant must remain neutral about sensory modality,
+    consciousness, correctness, goals, physical mechanism, and resource quantity.
+  confidence: 0.98
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:220
+    universal_slot: stable systemic relationship
+    family_qualified_transliteration: si·mim
+    local_compact_root: mim
+    formal_carrier: si-nu-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+  proposal_status: recommended_after_adversarial_review_pending_delegated_approval
+  proposed_title: established joint-attention relation
+  invariant_definition: A stable attentional relation among multiple cognizers that
+    gives one target shared cognitive priority.
+  semantic_center: selective allocation of cognitive processing
+  address_justification:
+    first_trit_2: 'Selects a relationship or possibility: attention links a cognizer
+      or cognitive community to a target.'
+    second_trit: 'Selects systemic/shared scope: multiple cognizers participate in
+      one shared attentional relation.'
+    third_trit: 'Selects a stable relationship: the attentional relation persists
+      as an established orientation.'
+  inclusion_boundary: Includes only the capacity for, directed relation of, or systemic
+    relation of selectively allocating cognitive processing at this address's exact
+    scope and lexical expression. Preferential processing may concern sensory, remembered,
+    imagined, conceptual, or executable content without asserting which mechanism
+    supplies it.
+  excluded_meanings:
+  - Consciousness, wakefulness, arousal, sensory stimulation, gaze direction, bodily
+    orientation, or neural resource use.
+  - A representation merely persisting, manifesting, or remaining latent; canonical
+    MIN:0xx owns representational content.
+  - Revision, learning, interpretation, inference, evaluation, belief, trust, doubt,
+    certainty, truth, decision, or goal commitment.
+  - Communication, access permission, role assignment, coordination procedure, queue
+    order, data subscription, plan, intention, schedule, readiness, or future time.
+  - Success, failure, distraction, correction, or recovery unless WRN/REP or another
+    explicit relation supplies the evaluation.
+  nearest_neighbors:
+  - MIN:221
+  - MIN:222
+  - MIN:020
+  - MIN:021
+  - MIN:022
+  - MIN:120
+  - MIN:121
+  - MIN:122
+  same_family_contrast: MIN:020–022 owns shared cognitive schemas and MIN:120–122
+    owns their revision; this triplet owns shared cognitive priority, which may exist
+    without agreement or model change.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the specified established joint-attention relation holds for
+      this token.
+    '1': Affirms that the specified established joint-attention relation holds for
+      this token.
+    2/num: Marks the current assertion about the established joint-attention relation
+      as dormant or unresolved; it does not select a different lexical capacity/relation
+      or add probability, intention, schedule, or future time.
+  lexical_runtime_distinction: The third lexical trit permanently selects established
+    joint-attention relation. Runtime `[2]/num` separately marks this token's assertion
+    as dormant or unresolved. For lexical `MIN:202`, `MIN:212`, or `MIN:222`, runtime
+    `[1]` affirms the latent, unresolved, or potential lexeme; runtime `[2]/num` leaves
+    the assertion about that lexeme unresolved. The two layers never collapse.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:220[1](COGNIZERS=family,TARGET=child_safety)
+    literal_gloss: family; established joint-attention relation to child safety
+    natural_english: The family maintains child safety as a shared attentional priority.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Agreement on every belief is not required.
+  - category: physical_or_spatial
+    semantic_graph: MIN:220[1](COGNIZERS=crew,TARGET=pressure_gauge)
+    literal_gloss: crew; stable shared attentional priority on gauge
+    natural_english: The pressure gauge is an established shared focus for the crew
+      throughout the operation.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The physical gauge remains MAT.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:220[1](COGNIZERS=team,TARGET=incident_dashboard,ACROSS=shifts)
+    literal_gloss: team; joint-attention relation persists across shifts
+    natural_english: The dashboard remains the team's shared attentional priority
+      across shifts.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The active viewers may change while the relation persists.
+  - category: cross_family_compound
+    semantic_graph: CON(BRIEFING=incident)+MIN:220[1](COGNIZERS=responders,TARGET=dashboard)
+    literal_gloss: briefing plus established joint attention to dashboard
+    natural_english: The briefing establishes the dashboard as the responders' shared
+      focus.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: CON owns the briefing; MIN owns cognitive priority.
+  - category: executable_or_programming
+    semantic_graph: MIN:220[1](COGNIZERS=agents,TARGET=shared_objective)
+    literal_gloss: agents; established joint-attention relation to shared objective
+    natural_english: The agents maintain a shared attentional policy around the objective.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The relation is semantic, not merely a common configuration record.
+    pseudocode: assert swarm.shared_attention_targets.include?(:objective)
+  - category: counterexample
+    semantic_graph: MIN:020[1](COGNIZERS=team,CONTENT=procedure)
+    literal_gloss: team; persistent shared schema of procedure
+    natural_english: The team shares the procedure but is not currently or dispositionally
+      focused on it.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: must_not_use_this_root
+    analysis: Shared representation does not entail shared priority.
+  future_compound_examples:
+  - MIN:220 + MIN:0xx → links attention to represented content without making content
+    and attention identical.
+  - MIN:220 + MIN:1xx → expresses attention participating in representational revision
+    without asserting that attention guarantees learning.
+  - MIN:220 + MAT/MOV/CON/DAT → expresses stimulus-driven, gaze-supported, communicated,
+    or implementation-level attention while preserving family boundaries.
+  - MIN:220 + WRN/REP/CRE/ORI/grammar → distracted, restored, intended, scheduled,
+    repeated, possible, or future attention with the added meaning explicit.
+  later_era_notes: Later eras may distinguish sustained, selective, divided, alternating,
+    executive, spatial, feature-based, social, and machine attention as compounds
+    or specialized descendants. The invariant must remain neutral about sensory modality,
+    consciousness, correctness, goals, physical mechanism, and resource quantity.
+  confidence: 0.96
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:221
+    universal_slot: active systemic relationship
+    family_qualified_transliteration: si·mik
+    local_compact_root: mik
+    formal_carrier: si-nu-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+  proposal_status: recommended_after_adversarial_review_pending_delegated_approval
+  proposed_title: active joint attention
+  invariant_definition: An attentional relation in which multiple cognizers presently
+    give the same target shared cognitive priority.
+  semantic_center: selective allocation of cognitive processing
+  address_justification:
+    first_trit_2: 'Selects a relationship or possibility: attention links a cognizer
+      or cognitive community to a target.'
+    second_trit: 'Selects systemic/shared scope: multiple cognizers participate in
+      one shared attentional relation.'
+    third_trit: 'Selects an active relationship: preferential processing is occurring
+      now.'
+  inclusion_boundary: Includes only the capacity for, directed relation of, or systemic
+    relation of selectively allocating cognitive processing at this address's exact
+    scope and lexical expression. Preferential processing may concern sensory, remembered,
+    imagined, conceptual, or executable content without asserting which mechanism
+    supplies it.
+  excluded_meanings:
+  - Consciousness, wakefulness, arousal, sensory stimulation, gaze direction, bodily
+    orientation, or neural resource use.
+  - A representation merely persisting, manifesting, or remaining latent; canonical
+    MIN:0xx owns representational content.
+  - Revision, learning, interpretation, inference, evaluation, belief, trust, doubt,
+    certainty, truth, decision, or goal commitment.
+  - Communication, access permission, role assignment, coordination procedure, queue
+    order, data subscription, plan, intention, schedule, readiness, or future time.
+  - Success, failure, distraction, correction, or recovery unless WRN/REP or another
+    explicit relation supplies the evaluation.
+  nearest_neighbors:
+  - MIN:220
+  - MIN:222
+  - MIN:020
+  - MIN:021
+  - MIN:022
+  - MIN:120
+  - MIN:121
+  - MIN:122
+  same_family_contrast: MIN:020–022 owns shared cognitive schemas and MIN:120–122
+    owns their revision; this triplet owns shared cognitive priority, which may exist
+    without agreement or model change.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the specified active joint attention holds for this token.
+    '1': Affirms that the specified active joint attention holds for this token.
+    2/num: Marks the current assertion about the active joint attention as dormant
+      or unresolved; it does not select a different lexical capacity/relation or add
+      probability, intention, schedule, or future time.
+  lexical_runtime_distinction: The third lexical trit permanently selects active joint
+    attention. Runtime `[2]/num` separately marks this token's assertion as dormant
+    or unresolved. For lexical `MIN:202`, `MIN:212`, or `MIN:222`, runtime `[1]` affirms
+    the latent, unresolved, or potential lexeme; runtime `[2]/num` leaves the assertion
+    about that lexeme unresolved. The two layers never collapse.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:221[1](COGNIZERS=group,TARGET=speaker)
+    literal_gloss: group; active joint attention to speaker
+    natural_english: Everyone is paying attention to the speaker together.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Agreement, learning, and communication success are not implied.
+  - category: physical_or_spatial
+    semantic_graph: MIN:221[1](COGNIZERS=rescuers,TARGET=exit)
+    literal_gloss: rescuers; active joint attention to exit
+    natural_english: The rescuers are jointly focusing on the blocked exit.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Their gaze and movement are separate.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:221[1](COGNIZERS=operators,TARGET=alert,DURING=t4)
+    literal_gloss: operators; shared priority on alert during t4
+    natural_english: During the alert interval, the operators are jointly attending
+      to it.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The interval is explicit.
+  - category: cross_family_compound
+    semantic_graph: CON(BROADCAST=warning)+MIN:221[1](COGNIZERS=crew,TARGET=warning)
+    literal_gloss: warning broadcast plus active joint attention
+    natural_english: The broadcast has brought the crew's attention together on the
+      warning.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: CON owns transmission; the causal link is graph-level.
+  - category: executable_or_programming
+    semantic_graph: MIN:221[1](COGNIZERS=agents,TARGET=object_7)
+    literal_gloss: agents; active joint attention to object 7
+    natural_english: The agents are concurrently prioritizing object 7.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Useful for multi-agent attention without asserting message transport.
+    pseudocode: assert agents.all? { |a| a.attention.current_target == :object_7 }
+  - category: counterexample
+    semantic_graph: CON(TRANSFER=messages,PARTICIPANTS=agents)
+    literal_gloss: agents exchanging messages
+    natural_english: The agents exchange messages while focusing on different targets.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: must_not_use_this_root
+    analysis: Communication or coordination does not entail joint attention.
+  future_compound_examples:
+  - MIN:221 + MIN:0xx → links attention to represented content without making content
+    and attention identical.
+  - MIN:221 + MIN:1xx → expresses attention participating in representational revision
+    without asserting that attention guarantees learning.
+  - MIN:221 + MAT/MOV/CON/DAT → expresses stimulus-driven, gaze-supported, communicated,
+    or implementation-level attention while preserving family boundaries.
+  - MIN:221 + WRN/REP/CRE/ORI/grammar → distracted, restored, intended, scheduled,
+    repeated, possible, or future attention with the added meaning explicit.
+  later_era_notes: Later eras may distinguish sustained, selective, divided, alternating,
+    executive, spatial, feature-based, social, and machine attention as compounds
+    or specialized descendants. The invariant must remain neutral about sensory modality,
+    consciousness, correctness, goals, physical mechanism, and resource quantity.
+  confidence: 0.96
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:222
+    universal_slot: unrealized systemic possibility
+    family_qualified_transliteration: si·min
+    local_compact_root: min
+    formal_carrier: si-nu-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+  proposal_status: recommended_after_adversarial_review_pending_delegated_approval
+  proposed_title: potential joint attention
+  invariant_definition: An unrealized possible attentional relation in which multiple
+    cognizers would give the same target shared cognitive priority.
+  semantic_center: selective allocation of cognitive processing
+  address_justification:
+    first_trit_2: 'Selects a relationship or possibility: attention links a cognizer
+      or cognitive community to a target.'
+    second_trit: 'Selects systemic/shared scope: multiple cognizers participate in
+      one shared attentional relation.'
+    third_trit: 'Selects an unrealized systemic possibility: joint attention could
+      exist but is not realized.'
+  inclusion_boundary: Includes only the capacity for, directed relation of, or systemic
+    relation of selectively allocating cognitive processing at this address's exact
+    scope and lexical expression. Preferential processing may concern sensory, remembered,
+    imagined, conceptual, or executable content without asserting which mechanism
+    supplies it.
+  excluded_meanings:
+  - Consciousness, wakefulness, arousal, sensory stimulation, gaze direction, bodily
+    orientation, or neural resource use.
+  - A representation merely persisting, manifesting, or remaining latent; canonical
+    MIN:0xx owns representational content.
+  - Revision, learning, interpretation, inference, evaluation, belief, trust, doubt,
+    certainty, truth, decision, or goal commitment.
+  - Communication, access permission, role assignment, coordination procedure, queue
+    order, data subscription, plan, intention, schedule, readiness, or future time.
+  - Success, failure, distraction, correction, or recovery unless WRN/REP or another
+    explicit relation supplies the evaluation.
+  nearest_neighbors:
+  - MIN:220
+  - MIN:221
+  - MIN:020
+  - MIN:021
+  - MIN:022
+  - MIN:120
+  - MIN:121
+  - MIN:122
+  same_family_contrast: MIN:020–022 owns shared cognitive schemas and MIN:120–122
+    owns their revision; this triplet owns shared cognitive priority, which may exist
+    without agreement or model change.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the specified potential joint attention holds for this token.
+    '1': Affirms that the specified potential joint attention holds for this token.
+    2/num: Marks the current assertion about the potential joint attention as dormant
+      or unresolved; it does not select a different lexical capacity/relation or add
+      probability, intention, schedule, or future time.
+  lexical_runtime_distinction: The third lexical trit permanently selects potential
+    joint attention. Runtime `[2]/num` separately marks this token's assertion as
+    dormant or unresolved. For lexical `MIN:202`, `MIN:212`, or `MIN:222`, runtime
+    `[1]` affirms the latent, unresolved, or potential lexeme; runtime `[2]/num` leaves
+    the assertion about that lexeme unresolved. The two layers never collapse.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:222[1](COGNIZERS=team,TARGET=new_alert)
+    literal_gloss: team; potential joint attention to new alert
+    natural_english: The new alert could become the team's shared focus, but no joint
+      attention exists yet.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: No plan, schedule, or probability is encoded.
+  - category: physical_or_spatial
+    semantic_graph: MAT(BEACON=light)+MIN:222[1](COGNIZERS=hikers,TARGET=beacon)
+    literal_gloss: beacon plus unrealized possible joint attention
+    natural_english: The beacon could become a shared focus for the hikers, but it
+      has not.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Physical salience is not cognitive realization.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:222[1](COGNIZERS=agents,TARGET=event_42,STATUS=unrealized)
+    literal_gloss: agents; joint attention to event 42 unrealized
+    natural_english: A joint-attention relation to event 42 remains unrealized.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: The root does not predict later realization.
+  - category: cross_family_compound
+    semantic_graph: DAT(SCHEDULE=review)+CRE(PLAN=meeting)+MIN:222[1](COGNIZERS=team,TARGET=proposal)
+    literal_gloss: schedule and plan plus potential joint attention
+    natural_english: A review is planned, while shared attention to the proposal remains
+      only potential.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: Planning and scheduling stay outside MIN.
+  - category: executable_or_programming
+    semantic_graph: MIN:222[1](COGNIZERS=agents,TARGET=candidate_7)
+    literal_gloss: agents; potential attention rendezvous on candidate 7
+    natural_english: Candidate 7 could become a shared focus, but the agents have
+      not aligned attention.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: valid
+    analysis: A semantic possibility distinct from queued execution.
+    pseudocode: assert agents.none? { |a| a.attention.current_target == :candidate_7
+      }
+  - category: counterexample
+    semantic_graph: DAT(SCHEDULE=team_meeting_at_0900)
+    literal_gloss: stored team meeting schedule
+    natural_english: The team meeting is scheduled for 9:00.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or cognitive community
+      middle: MIN attention capacity or relation
+      high: attentional target when present
+      sustained: attentional frame, evidence context, or execution environment
+    use_status: must_not_use_this_root
+    analysis: A schedule does not itself establish potential joint attention.
+  future_compound_examples:
+  - MIN:222 + MIN:0xx → links attention to represented content without making content
+    and attention identical.
+  - MIN:222 + MIN:1xx → expresses attention participating in representational revision
+    without asserting that attention guarantees learning.
+  - MIN:222 + MAT/MOV/CON/DAT → expresses stimulus-driven, gaze-supported, communicated,
+    or implementation-level attention while preserving family boundaries.
+  - MIN:222 + WRN/REP/CRE/ORI/grammar → distracted, restored, intended, scheduled,
+    repeated, possible, or future attention with the added meaning explicit.
+  later_era_notes: Later eras may distinguish sustained, selective, divided, alternating,
+    executive, spatial, feature-based, social, and machine attention as compounds
+    or specialized descendants. The invariant must remain neutral about sensory modality,
+    consciousness, correctness, goals, physical mechanism, and resource quantity.
+  confidence: 0.96
+  canonicalized: false
+approval_checklist:
+  one_invariant_center_for_all_nine: true
+  five_genuinely_distinct_candidates_per_root: true
+  all_user_scoring_categories_present: true
+  source_canonical_meanings_changed: false
+  previous_reviewed_canonical_meanings_changed: false
+  generated_fields_changed: false
+  cross_family_collisions_resolved: true
+  runtime_and_lexical_states_separated: true
+  stress_tests_allow_compounds_and_gaps: true
+  ready_for_independent_validation: true
+  canonicalized: false

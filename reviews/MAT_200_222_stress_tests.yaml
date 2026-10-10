@@ -1,0 +1,454 @@
+---
+metadata:
+  title: MAT:200–222 semantic stress tests
+  status: review_evidence_pending_delegated_approval
+  test_count: 85
+  forced_atomic_mappings: false
+classification_values:
+- direct proposed root
+- composition
+- canonical/future other family
+- grammar or quantity
+- unresolved lexical ambiguity
+- canonical MAT process
+- canonical MAT entity
+- root plus runtime
+tests:
+- number: 1
+  concept: physical capacity
+  classification: direct proposed root
+  mapping: MAT:200/201/202 by lexical phase
+  rationale: The block owns physical work capacity, not every physical property.
+- number: 2
+  concept: work capacity
+  classification: direct proposed root
+  mapping: MAT:200/201/202
+  rationale: Central inward-capacity meaning.
+- number: 3
+  concept: energy capacity
+  classification: composition
+  mapping: MAT work capacity + energy kind/quantity
+  rationale: Energy amount needs physical-mode and quantity detail.
+- number: 4
+  concept: rated capacity
+  classification: composition
+  mapping: MAT:200 + LOG/quantity rating
+  rationale: A rating is a formal value over enduring capacity.
+- number: 5
+  concept: available power
+  classification: composition
+  mapping: MAT:201 + energy/time quantity
+  rationale: Power is a rate, not the atom.
+- number: 6
+  concept: latent energy
+  classification: direct proposed root
+  mapping: MAT:202 + energy-kind modifier
+  rationale: Latent work capacity exists but is unavailable.
+- number: 7
+  concept: battery capacity
+  classification: composition
+  mapping: MAT capacity + canonical MAT object/substrate + quantity
+  rationale: Battery kind and amount are separate.
+- number: 8
+  concept: fuel potential
+  classification: composition
+  mapping: MAT:200/201/202 + chemical energy + CRE/LIF use role
+  rationale: Fuel is resource-relative.
+- number: 9
+  concept: spring potential
+  classification: composition
+  mapping: MAT capacity + mechanical mode + quantity
+  rationale: Specific mechanical storage is compositional.
+- number: 10
+  concept: strength
+  classification: composition
+  mapping: MAT:200 + STR load relation + WRN threshold
+  rationale: Strength is response under a defined load.
+- number: 11
+  concept: resilience
+  classification: composition
+  mapping: MAT:200 + STR/WRN recovery and disruption relation
+  rationale: Resilience is narrower than general work capacity.
+- number: 12
+  concept: rigidity
+  classification: composition
+  mapping: MAT bearer + STR form retention + quantity
+  rationale: Rigidity is a constitutive property.
+- number: 13
+  concept: flexibility
+  classification: composition
+  mapping: MAT bearer + STR deformation capacity
+  rationale: Flexibility concerns form response.
+- number: 14
+  concept: elasticity
+  classification: composition
+  mapping: MAT capacity + STR reversible deformation + quantity
+  rationale: Reversibility and modulus require more structure.
+- number: 15
+  concept: hardness
+  classification: composition
+  mapping: MAT bearer + WRN/STR indentation resistance + quantity
+  rationale: Hardness is a measured response property.
+- number: 16
+  concept: toughness
+  classification: composition
+  mapping: MAT work capacity + WRN fracture threshold + quantity
+  rationale: A specialized energy-to-failure property.
+- number: 17
+  concept: conductivity
+  classification: composition
+  mapping: MAT:210/211 + physical-mode and quantity
+  rationale: Conductivity measures coupling behavior.
+- number: 18
+  concept: thermal capacity
+  classification: composition
+  mapping: MAT:200 + thermal mode + quantity
+  rationale: Heat capacity is measured, not atomic.
+- number: 19
+  concept: electrical capacity
+  classification: composition
+  mapping: MAT capacity + electrical mode + quantity
+  rationale: Capacitance needs formal units and relation structure.
+- number: 20
+  concept: physical readiness
+  classification: composition
+  mapping: MAT:201; LOG for operational readiness
+  rationale: Present physical availability does not include plans or permission.
+- number: 21
+  concept: permission to use energy
+  classification: canonical/future other family
+  mapping: LOG permission + MAT capacity
+  rationale: Permission is not physical availability.
+- number: 22
+  concept: scheduled discharge
+  classification: composition
+  mapping: LOG schedule + MAT capacity/process
+  rationale: Schedule is separate.
+- number: 23
+  concept: probable activation
+  classification: grammar or quantity
+  mapping: LOG probability + MAT:202 or MAT process
+  rationale: Probability is not lexical dormancy.
+- number: 24
+  concept: material coupling
+  classification: direct proposed root
+  mapping: MAT:210/211/212 by relation phase
+  rationale: Central pairwise relationship.
+- number: 25
+  concept: physical connection
+  classification: unresolved lexical ambiguity
+  mapping: MAT coupling when influence can pass; STR/CON otherwise
+  rationale: English connection is domain-ambiguous.
+- number: 26
+  concept: contact
+  classification: composition
+  mapping: STR contact geometry; MAT:210/211 if physical influence is enabled/active
+  rationale: Mere touching is not always coupling.
+- number: 27
+  concept: attachment
+  classification: composition
+  mapping: STR attachment + MAT coupling when influence relation is asserted
+  rationale: Attachment is structural.
+- number: 28
+  concept: fit
+  classification: canonical/future other family
+  mapping: STR compatibility/geometry
+  rationale: Fit alone is not material influence.
+- number: 29
+  concept: compatibility
+  classification: canonical/future other family
+  mapping: STR/LOG compatibility + MAT mode when physical
+  rationale: Compatibility is a constraint judgment.
+- number: 30
+  concept: ownership
+  classification: canonical/future other family
+  mapping: CON relation
+  rationale: Physical possession is not coupling.
+- number: 31
+  concept: possession
+  classification: canonical/future other family
+  mapping: CON relation + MAT object
+  rationale: Possession is social/legal.
+- number: 32
+  concept: resource assignment
+  classification: composition
+  mapping: CON/LOG/CRE role + MAT bearer
+  rationale: Resourcehood is contextual.
+- number: 33
+  concept: load bearing
+  classification: composition
+  mapping: MAT coupling/capacity + STR load path + quantity
+  rationale: Load type and magnitude are separate.
+- number: 34
+  concept: force transmission
+  classification: composition
+  mapping: MAT:211 + force mode/quantity
+  rationale: Active coupling owns the relation; force is specialized.
+- number: 35
+  concept: heat transfer
+  classification: composition
+  mapping: MAT:211 + thermal mode + MAT:111 target change
+  rationale: Coupling and heating process are distinct.
+- number: 36
+  concept: electrical current
+  classification: composition
+  mapping: MAT:211/221 + electrical mode + quantity + MOV as needed
+  rationale: Current is measured flow.
+- number: 37
+  concept: friction
+  classification: composition
+  mapping: MAT:211 + contact/motion + constitutive relation
+  rationale: Friction needs MOV and quantity.
+- number: 38
+  concept: collision
+  classification: composition
+  mapping: MOV approach/arrival + MAT:211 + MAT target change/WRN as needed
+  rationale: Collision is an event, not just a relation.
+- number: 39
+  concept: bond
+  classification: composition
+  mapping: MAT:210/211 + chemical mode + STR relation
+  rationale: Bond type is specialized.
+- number: 40
+  concept: adhesion
+  classification: composition
+  mapping: MAT coupling + surface/force relation
+  rationale: Adhesion is a mode of coupling.
+- number: 41
+  concept: interface
+  classification: canonical/future other family
+  mapping: STR boundary/interface; MAT coupling if influence passes
+  rationale: Interface is structural unless material influence is asserted.
+- number: 42
+  concept: gear mesh
+  classification: composition
+  mapping: STR geometry + MAT:210/211 + MOV rotation
+  rationale: Three independent semantics.
+- number: 43
+  concept: power cable connection
+  classification: composition
+  mapping: MAT coupling + STR assembly + electrical mode
+  rationale: Connection geometry and physical influence differ.
+- number: 44
+  concept: active coupling
+  classification: direct proposed root
+  mapping: MAT:211
+  rationale: Physical influence is presently passing.
+- number: 45
+  concept: uncertain contact
+  classification: composition
+  mapping: MAT:212 when influence relation is unresolved; DAT/MIN for evidence
+  rationale: Uncertainty source may be separate.
+- number: 46
+  concept: broken connection
+  classification: composition
+  mapping: MAT:210/211[0] or MAT:212 + WRN failure
+  rationale: Failure judgment belongs to WRN.
+- number: 47
+  concept: repaired coupling
+  classification: composition
+  mapping: REP + MAT:210/211
+  rationale: Restoration is separate.
+- number: 48
+  concept: systemic interdependence
+  classification: direct proposed root
+  mapping: MAT:220/221/222 by phase
+  rationale: Central systemic relationship.
+- number: 49
+  concept: load-sharing system
+  classification: composition
+  mapping: MAT:220/221 + STR topology + quantity
+  rationale: Load-sharing specializes interdependence.
+- number: 50
+  concept: active load network
+  classification: composition
+  mapping: MAT:221 + STR network
+  rationale: Network topology is separate.
+- number: 51
+  concept: possible coupling network
+  classification: direct proposed root
+  mapping: MAT:222
+  rationale: An unrealized possible systemic physical relation.
+- number: 52
+  concept: equilibrium
+  classification: composition
+  mapping: MAT:220 + LOG/quantity equality + physical state
+  rationale: Equilibrium is a specialized balance condition.
+- number: 53
+  concept: conservation
+  classification: canonical/future other family
+  mapping: ORI/LOG law + MAT system
+  rationale: Universal law is not one concrete relation.
+- number: 54
+  concept: mass balance
+  classification: composition
+  mapping: LOG equality + MAT system + quantity
+  rationale: Accounting equation is formal.
+- number: 55
+  concept: energy balance
+  classification: composition
+  mapping: LOG equality + MAT system + quantity
+  rationale: Measured conservation statement.
+- number: 56
+  concept: resource balance
+  classification: composition
+  mapping: DAT/LOG accounting + MAT bearers
+  rationale: Resource value and records are contextual.
+- number: 57
+  concept: exchange network
+  classification: unresolved lexical ambiguity
+  mapping: MAT:221 for reciprocal physical influence; CON/DAT/MOV otherwise
+  rationale: Exchange spans domains.
+- number: 58
+  concept: circulation network
+  classification: composition
+  mapping: MOV movement + STR network + MAT bearers; MAT:221 only if reciprocal physical
+    influence
+  rationale: Movement is not absorbed.
+- number: 59
+  concept: power grid
+  classification: composition
+  mapping: MAT:220/221 + STR topology + electrical mode + CRE function
+  rationale: A grid is structured and designed.
+- number: 60
+  concept: thermal network
+  classification: composition
+  mapping: MAT interdependence + STR topology + thermal mode
+  rationale: Mode and topology are separate.
+- number: 61
+  concept: ecosystem interdependence
+  classification: composition
+  mapping: LIF systemic relation + MAT:220/221 physical layer
+  rationale: Living and material interdependence differ.
+- number: 62
+  concept: machine system
+  classification: composition
+  mapping: CRE/STR machine + MAT capacities/couplings
+  rationale: Machinehood is functional.
+- number: 63
+  concept: material configuration
+  classification: canonical/future other family
+  mapping: STR arrangement + MAT bearers
+  rationale: Configuration is structural.
+- number: 64
+  concept: possible configuration
+  classification: composition
+  mapping: STR/CRE possible arrangement + MAT:222 only if physical interdependence
+    is possible
+  rationale: Do not collapse arrangement and relation.
+- number: 65
+  concept: topology
+  classification: canonical/future other family
+  mapping: STR
+  rationale: Topology is structural.
+- number: 66
+  concept: data dependency
+  classification: canonical/future other family
+  mapping: DAT/LOG
+  rationale: Information relation is not material.
+- number: 67
+  concept: communication link
+  classification: canonical/future other family
+  mapping: CON
+  rationale: Communication is not physical coupling even on physical hardware.
+- number: 68
+  concept: social network
+  classification: canonical/future other family
+  mapping: CON
+  rationale: Social interdependence is not Matter.
+- number: 69
+  concept: physical influence
+  classification: direct proposed root
+  mapping: MAT:210/211/212 or MAT:220/221/222 by scale and phase
+  rationale: Central relation concept.
+- number: 70
+  concept: cause
+  classification: unresolved lexical ambiguity
+  mapping: role/ORI/LOG; MAT only for physical influence relation
+  rationale: General causation exceeds Matter.
+- number: 71
+  concept: affordance
+  classification: composition
+  mapping: CRE/STR function + MAT capacity
+  rationale: Designed or perceived usability is not raw capacity.
+- number: 72
+  concept: accessibility
+  classification: canonical/future other family
+  mapping: CON/LOG/STR
+  rationale: Access is not lexical capacity availability.
+- number: 73
+  concept: failure risk
+  classification: composition
+  mapping: WRN risk + MAT capacity/coupling + LOG probability
+  rationale: Risk and probability are separate.
+- number: 74
+  concept: move itself
+  classification: canonical/future other family
+  mapping: MOV:200/201/202
+  rationale: Canonical self-mobility is Motion.
+- number: 75
+  concept: change physical state
+  classification: canonical MAT process
+  mapping: MAT:100–122
+  rationale: Event, not capacity or relation.
+- number: 76
+  concept: material object
+  classification: canonical MAT entity
+  mapping: MAT:010–012
+  rationale: Bearer entity, not capacity.
+- number: 77
+  concept: energy amount
+  classification: grammar or quantity
+  mapping: MAT bearer/capacity + quantity/unit
+  rationale: Amount is formal grammar.
+- number: 78
+  concept: power rate
+  classification: grammar or quantity
+  mapping: MAT:201 + energy/time quantity
+  rationale: Rate is derived.
+- number: 79
+  concept: efficiency
+  classification: grammar or quantity
+  mapping: output/input ratio over MAT process/capacity
+  rationale: Efficiency is quantitative.
+- number: 80
+  concept: coupling coefficient
+  classification: grammar or quantity
+  mapping: MAT coupling + numeric coefficient
+  rationale: Coefficient is a measurement.
+- number: 81
+  concept: unknown whether capacity exists
+  classification: root plus runtime
+  mapping: MAT:200[2]/num or MAT:202[2]/num by lexical claim
+  rationale: Runtime 2 qualifies the selected capacity assertion.
+- number: 82
+  concept: capacity unavailable now
+  classification: direct proposed root
+  mapping: MAT:202 when capacity exists latently; MAT:201[0] when denying present
+    availability
+  rationale: Lexical and runtime choices preserve the distinction.
+- number: 83
+  concept: coupling inactive now
+  classification: root plus runtime
+  mapping: MAT:211[0] if established coupling is not transmitting; MAT:210 for stable
+    relation
+  rationale: Active relation negation differs from stable relation.
+- number: 84
+  concept: coupling status unknown
+  classification: direct proposed root
+  mapping: MAT:212
+  rationale: The pairwise relation itself is unresolved.
+- number: 85
+  concept: possible system scheduled later
+  classification: composition
+  mapping: MAT:222 + LOG schedule if both are asserted
+  rationale: Lexical possibility alone never encodes schedule.
+coverage_summary:
+  direct proposed root: 10
+  composition: 49
+  canonical/future other family: 14
+  grammar or quantity: 5
+  unresolved lexical ambiguity: 3
+  canonical MAT process: 1
+  canonical MAT entity: 1
+  root plus runtime: 2

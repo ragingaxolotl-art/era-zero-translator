@@ -1,0 +1,565 @@
+---
+metadata:
+  title: DAT:000–022 English coverage and routing tests
+  status: review_evidence_not_translation_dictionary
+  range: DAT:000–022
+  test_count: 113
+  no_forced_atomization: true
+tests:
+- test_id: DAT0-T001
+  english_concept: datum
+  routing: one_root
+  analysis: DAT:000–002 owns one bounded information object maintained within one
+    entity according to lexical status.
+- test_id: DAT0-T002
+  english_concept: data
+  routing: one_root_or_compound
+  analysis: Use DAT:0xx for information entities; quantity, type, medium, provenance,
+    and processing may require compounds.
+- test_id: DAT0-T003
+  english_concept: record
+  routing: one_root_or_compound
+  analysis: A record is a DAT entity when the information object is meant; storage
+    format and access remain separate.
+- test_id: DAT0-T004
+  english_concept: value
+  routing: one_root_or_compound
+  analysis: DAT identifies the represented value object while LOG, MAT, or later vocabulary
+    supplies type and domain semantics.
+- test_id: DAT0-T005
+  english_concept: identifier
+  routing: one_root_or_compound
+  analysis: A target reference can identify one referent; uniqueness and namespace
+    rules require LOG or later vocabulary.
+- test_id: DAT0-T006
+  english_concept: reference
+  routing: one_root
+  analysis: DAT:010–012 owns a bounded information object whose content denotes one
+    distinct referent.
+- test_id: DAT0-T007
+  english_concept: pointer
+  routing: compound
+  analysis: DAT target reference plus STR/DAT storage-address structure; representation
+    and dereference behavior remain separate.
+- test_id: DAT0-T008
+  english_concept: metadata
+  routing: compound
+  analysis: DAT information about another datum uses target reference plus data-type
+    or relation details.
+- test_id: DAT0-T009
+  english_concept: dataset
+  routing: one_root
+  analysis: DAT:020–022 owns one coordinated shared information collection across
+    multiple participants.
+- test_id: DAT0-T010
+  english_concept: database
+  routing: compound
+  analysis: DAT shared dataset plus STR storage/index structure and LOG constraints;
+    software and access mechanisms remain separate.
+- test_id: DAT0-T011
+  english_concept: corpus
+  routing: one_root_or_compound
+  analysis: A shared coordinated information collection can use DAT:02x; language
+    or media subtype is compositional.
+- test_id: DAT0-T012
+  english_concept: archive
+  routing: one_root_or_compound
+  analysis: DAT:022 states a maintained but unmanifest dataset; archive medium, access
+    restriction, and retention policy remain separate.
+- test_id: DAT0-T013
+  english_concept: file
+  routing: compound
+  analysis: DAT supplies the information entity and STR/MAT supplies file structure
+    and storage medium.
+- test_id: DAT0-T014
+  english_concept: document
+  routing: compound
+  analysis: DAT supplies the information object; layout, medium, authorship, and communication
+    require other roots.
+- test_id: DAT0-T015
+  english_concept: symbol
+  routing: one_root_or_compound
+  analysis: A symbol is a DAT entity with representational convention; interpretation
+    may require LOG, MIN, or CON.
+- test_id: DAT0-T016
+  english_concept: code
+  routing: compound
+  analysis: DAT supplies represented instructions while LOG supplies formal constraints
+    and CRE/STR supplies execution.
+- test_id: DAT0-T017
+  english_concept: schema
+  routing: compound
+  analysis: DAT supplies represented schema content, STR its organization, and LOG
+    its constraints.
+- test_id: DAT0-T018
+  english_concept: message
+  routing: compound
+  analysis: DAT supplies message content while CON supplies sender, recipient, channel,
+    transmission, and reception.
+- test_id: DAT0-T019
+  english_concept: packet
+  routing: compound
+  analysis: DAT supplies content or target reference; CON and STR supply transfer
+    and packet structure.
+- test_id: DAT0-T020
+  english_concept: signal
+  routing: compound
+  analysis: DAT supplies information content, MAT the carrier, and CON the transmission
+    relation.
+- test_id: DAT0-T021
+  english_concept: input
+  routing: process_or_role
+  analysis: Input is a role in a process, not an entity status; DAT:1xx or compounds
+    must supply entry or update.
+- test_id: DAT0-T022
+  english_concept: output
+  routing: process_or_role
+  analysis: Output is a process-relative role and does not replace a persistent or
+    manifest information entity.
+- test_id: DAT0-T023
+  english_concept: stream
+  routing: process_layer
+  analysis: Information flow or repeated updates belong to DAT:1xx, not the entity
+    layer.
+- test_id: DAT0-T024
+  english_concept: queue
+  routing: compound_or_relation
+  analysis: Queue order and delivery state require STR, ORI, CON, or later DAT relations;
+    dormancy does not mean queued.
+- test_id: DAT0-T025
+  english_concept: stored
+  routing: compound_or_relation
+  analysis: DAT entity identity plus storage affordance or MAT/STR medium; persistence
+    alone does not specify storage mechanism.
+- test_id: DAT0-T026
+  english_concept: accessible
+  routing: relation_layer
+  analysis: Access is an affordance or relation and is not entailed by manifestation.
+- test_id: DAT0-T027
+  english_concept: visible
+  routing: compound
+  analysis: Manifest data plus MIN/MAT observation conditions; manifestation does
+    not entail that an observer sees it.
+- test_id: DAT0-T028
+  english_concept: known
+  routing: different_family
+  analysis: MIN owns knowledge or belief; a datum can persist without being known.
+- test_id: DAT0-T029
+  english_concept: 'true'
+  routing: different_family_or_compound
+  analysis: Truth or validity is not information-object manifestation and requires
+    LOG or later semantic relations.
+- test_id: DAT0-T030
+  english_concept: corrupt
+  routing: compound
+  analysis: WRN supplies adverse state while DAT supplies the affected information
+    object.
+- test_id: DAT0-T031
+  english_concept: deleted
+  routing: process_or_absence
+  analysis: Deletion is a transformation or absence claim, not lexical dormancy.
+- test_id: DAT0-T032
+  english_concept: copied
+  routing: process_layer
+  analysis: Copying is a data transformation in DAT:1xx; the resulting objects are
+    separate DAT entities.
+- test_id: DAT0-T033
+  english_concept: sent
+  routing: compound
+  analysis: CON and DAT:1xx supply transmission; a target reference alone does not
+    entail delivery.
+- test_id: DAT0-T034
+  english_concept: received
+  routing: compound
+  analysis: CON supplies reception and DAT supplies the information object; manifestation
+    does not entail receipt.
+- test_id: DAT0-T035
+  english_concept: persistent internal datum
+  routing: one_root
+  analysis: DAT:000 preserves one bounded internal information object independently
+    of present manifestation.
+- test_id: DAT0-T036
+  english_concept: manifest internal datum
+  routing: one_root
+  analysis: DAT:001 states that one bounded internal information object is presently
+    manifest.
+- test_id: DAT0-T037
+  english_concept: dormant internal datum
+  routing: one_root
+  analysis: DAT:002 states that one maintained internal information object is not
+    presently manifest.
+- test_id: DAT0-T038
+  english_concept: persistent target reference
+  routing: one_root
+  analysis: DAT:010 preserves one referential information object independently of
+    present manifestation.
+- test_id: DAT0-T039
+  english_concept: manifest target reference
+  routing: one_root
+  analysis: DAT:011 states that one datum presently manifests reference to one distinct
+    referent.
+- test_id: DAT0-T040
+  english_concept: dormant target reference
+  routing: one_root
+  analysis: DAT:012 states that the referential datum exists without presently manifesting
+    its reference.
+- test_id: DAT0-T041
+  english_concept: persistent shared dataset
+  routing: one_root
+  analysis: DAT:020 preserves one coordinated shared collection independently of present
+    manifestation.
+- test_id: DAT0-T042
+  english_concept: manifest shared dataset
+  routing: one_root
+  analysis: DAT:021 states that one coordinated shared collection is presently manifest.
+- test_id: DAT0-T043
+  english_concept: dormant shared dataset
+  routing: one_root
+  analysis: DAT:022 states that one shared collection remains maintained but unmanifest.
+- test_id: DAT0-T044
+  english_concept: persistent plus manifest datum
+  routing: two_compatible_roots
+  analysis: DAT:000 and DAT:001 may co-occur because identity persistence is neutral
+    about manifestation.
+- test_id: DAT0-T045
+  english_concept: persistent plus dormant datum
+  routing: two_compatible_roots
+  analysis: DAT:000 and DAT:002 may co-occur while the datum is unmanifest.
+- test_id: DAT0-T046
+  english_concept: manifest and dormant datum simultaneously
+  routing: contradiction
+  analysis: DAT:001 and DAT:002 are mutually exclusive for the same datum at one reference
+    time.
+- test_id: DAT0-T047
+  english_concept: dormant datum affirmed
+  routing: runtime_and_lexical
+  analysis: DAT:002/012/022[1] affirms maintained-but-unmanifest status; it does not
+    mean unknown or inaccessible.
+- test_id: DAT0-T048
+  english_concept: manifest datum uncertain
+  routing: runtime_and_lexical
+  analysis: DAT:001/011/021[2]/num questions the manifest claim without selecting
+    lexical dormancy.
+- test_id: DAT0-T049
+  english_concept: persistent datum denied
+  routing: runtime_and_lexical
+  analysis: Runtime [0] denies persistent identity without automatically selecting
+    manifestation or dormancy.
+- test_id: DAT0-T050
+  english_concept: data entity versus medium
+  routing: scope_resolution_test
+  analysis: DAT owns the information object while MAT owns paper, magnetic state,
+    voltage, or another carrier.
+- test_id: DAT0-T051
+  english_concept: data entity versus belief
+  routing: scope_resolution_test
+  analysis: DAT identity and manifestation are independent of MIN knowledge or belief.
+- test_id: DAT0-T052
+  english_concept: data entity versus message
+  routing: scope_resolution_test
+  analysis: DAT supplies content while CON supplies communicative act and participant
+    relation.
+- test_id: DAT0-T053
+  english_concept: data entity versus rule
+  routing: scope_resolution_test
+  analysis: DAT represents information while LOG supplies the formal criterion or
+    evaluation.
+- test_id: DAT0-T054
+  english_concept: data entity versus processing
+  routing: scope_resolution_test
+  analysis: DAT:0xx names the object while DAT:1xx remains for transformation or flow.
+- test_id: DAT0-T055
+  english_concept: data entity versus access
+  routing: scope_resolution_test
+  analysis: Manifest status does not entail that a particular participant can retrieve
+    or use the datum.
+- test_id: DAT0-T056
+  english_concept: many unrelated data objects
+  routing: multiple_roots_not_one_dataset
+  analysis: Separate objects do not form one DAT:02x dataset without coordinated shared
+    collection identity.
+- test_id: DAT0-T057
+  english_concept: reference without delivery
+  routing: one_root
+  analysis: DAT:010–012 may denote a target without any CON transmission or reception
+    event.
+- test_id: DAT0-T058
+  english_concept: archived but accessible
+  routing: compound
+  analysis: DAT dormancy means unmanifest, not inaccessible; access must be stated
+    independently.
+- test_id: DAT0-T059
+  english_concept: manifest but unread
+  routing: compound
+  analysis: DAT manifestation can hold while MIN or access claims deny observation
+    or reading.
+- test_id: DAT0-T060
+  english_concept: persistent internal datum identity
+  routing: one_root
+  analysis: DAT:000[1] directly affirms the invariant without adding truth, access,
+    processing, transmission, or medium.
+- test_id: DAT0-T061
+  english_concept: persistent internal datum uncertain
+  routing: runtime
+  analysis: DAT:000[2]/num leaves this exact persistent claim unresolved and does
+    not select a lexical sibling.
+- test_id: DAT0-T062
+  english_concept: persistent internal datum in a medium
+  routing: compound
+  analysis: MAT or STR supplies physical realization while DAT:000 supplies information-object
+    identity and status.
+- test_id: DAT0-T063
+  english_concept: persistent internal datum being processed
+  routing: compound
+  analysis: DAT:000 supplies the entity; DAT:1xx must separately supply transformation
+    or flow.
+- test_id: DAT0-T064
+  english_concept: persistent internal datum believed
+  routing: compound
+  analysis: MIN supplies belief or understanding while DAT:000 remains the information
+    object independently.
+- test_id: DAT0-T065
+  english_concept: persistent internal datum communicated
+  routing: compound
+  analysis: CON supplies transmission or reception while DAT:000 supplies only information
+    content and status.
+- test_id: DAT0-T066
+  english_concept: manifest internal datum identity
+  routing: one_root
+  analysis: DAT:001[1] directly affirms the invariant without adding truth, access,
+    processing, transmission, or medium.
+- test_id: DAT0-T067
+  english_concept: manifest internal datum uncertain
+  routing: runtime
+  analysis: DAT:001[2]/num leaves this exact manifest claim unresolved and does not
+    select a lexical sibling.
+- test_id: DAT0-T068
+  english_concept: manifest internal datum in a medium
+  routing: compound
+  analysis: MAT or STR supplies physical realization while DAT:001 supplies information-object
+    identity and status.
+- test_id: DAT0-T069
+  english_concept: manifest internal datum being processed
+  routing: compound
+  analysis: DAT:001 supplies the entity; DAT:1xx must separately supply transformation
+    or flow.
+- test_id: DAT0-T070
+  english_concept: manifest internal datum believed
+  routing: compound
+  analysis: MIN supplies belief or understanding while DAT:001 remains the information
+    object independently.
+- test_id: DAT0-T071
+  english_concept: manifest internal datum communicated
+  routing: compound
+  analysis: CON supplies transmission or reception while DAT:001 supplies only information
+    content and status.
+- test_id: DAT0-T072
+  english_concept: dormant internal datum identity
+  routing: one_root
+  analysis: DAT:002[1] directly affirms the invariant without adding truth, access,
+    processing, transmission, or medium.
+- test_id: DAT0-T073
+  english_concept: dormant internal datum uncertain
+  routing: runtime
+  analysis: DAT:002[2]/num leaves this exact dormant claim unresolved and does not
+    select a lexical sibling.
+- test_id: DAT0-T074
+  english_concept: dormant internal datum in a medium
+  routing: compound
+  analysis: MAT or STR supplies physical realization while DAT:002 supplies information-object
+    identity and status.
+- test_id: DAT0-T075
+  english_concept: dormant internal datum being processed
+  routing: compound
+  analysis: DAT:002 supplies the entity; DAT:1xx must separately supply transformation
+    or flow.
+- test_id: DAT0-T076
+  english_concept: dormant internal datum believed
+  routing: compound
+  analysis: MIN supplies belief or understanding while DAT:002 remains the information
+    object independently.
+- test_id: DAT0-T077
+  english_concept: dormant internal datum communicated
+  routing: compound
+  analysis: CON supplies transmission or reception while DAT:002 supplies only information
+    content and status.
+- test_id: DAT0-T078
+  english_concept: persistent target reference identity
+  routing: one_root
+  analysis: DAT:010[1] directly affirms the invariant without adding truth, access,
+    processing, transmission, or medium.
+- test_id: DAT0-T079
+  english_concept: persistent target reference uncertain
+  routing: runtime
+  analysis: DAT:010[2]/num leaves this exact persistent claim unresolved and does
+    not select a lexical sibling.
+- test_id: DAT0-T080
+  english_concept: persistent target reference in a medium
+  routing: compound
+  analysis: MAT or STR supplies physical realization while DAT:010 supplies information-object
+    identity and status.
+- test_id: DAT0-T081
+  english_concept: persistent target reference being processed
+  routing: compound
+  analysis: DAT:010 supplies the entity; DAT:1xx must separately supply transformation
+    or flow.
+- test_id: DAT0-T082
+  english_concept: persistent target reference believed
+  routing: compound
+  analysis: MIN supplies belief or understanding while DAT:010 remains the information
+    object independently.
+- test_id: DAT0-T083
+  english_concept: persistent target reference communicated
+  routing: compound
+  analysis: CON supplies transmission or reception while DAT:010 supplies only information
+    content and status.
+- test_id: DAT0-T084
+  english_concept: manifest target reference identity
+  routing: one_root
+  analysis: DAT:011[1] directly affirms the invariant without adding truth, access,
+    processing, transmission, or medium.
+- test_id: DAT0-T085
+  english_concept: manifest target reference uncertain
+  routing: runtime
+  analysis: DAT:011[2]/num leaves this exact manifest claim unresolved and does not
+    select a lexical sibling.
+- test_id: DAT0-T086
+  english_concept: manifest target reference in a medium
+  routing: compound
+  analysis: MAT or STR supplies physical realization while DAT:011 supplies information-object
+    identity and status.
+- test_id: DAT0-T087
+  english_concept: manifest target reference being processed
+  routing: compound
+  analysis: DAT:011 supplies the entity; DAT:1xx must separately supply transformation
+    or flow.
+- test_id: DAT0-T088
+  english_concept: manifest target reference believed
+  routing: compound
+  analysis: MIN supplies belief or understanding while DAT:011 remains the information
+    object independently.
+- test_id: DAT0-T089
+  english_concept: manifest target reference communicated
+  routing: compound
+  analysis: CON supplies transmission or reception while DAT:011 supplies only information
+    content and status.
+- test_id: DAT0-T090
+  english_concept: dormant target reference identity
+  routing: one_root
+  analysis: DAT:012[1] directly affirms the invariant without adding truth, access,
+    processing, transmission, or medium.
+- test_id: DAT0-T091
+  english_concept: dormant target reference uncertain
+  routing: runtime
+  analysis: DAT:012[2]/num leaves this exact dormant claim unresolved and does not
+    select a lexical sibling.
+- test_id: DAT0-T092
+  english_concept: dormant target reference in a medium
+  routing: compound
+  analysis: MAT or STR supplies physical realization while DAT:012 supplies information-object
+    identity and status.
+- test_id: DAT0-T093
+  english_concept: dormant target reference being processed
+  routing: compound
+  analysis: DAT:012 supplies the entity; DAT:1xx must separately supply transformation
+    or flow.
+- test_id: DAT0-T094
+  english_concept: dormant target reference believed
+  routing: compound
+  analysis: MIN supplies belief or understanding while DAT:012 remains the information
+    object independently.
+- test_id: DAT0-T095
+  english_concept: dormant target reference communicated
+  routing: compound
+  analysis: CON supplies transmission or reception while DAT:012 supplies only information
+    content and status.
+- test_id: DAT0-T096
+  english_concept: persistent shared dataset identity
+  routing: one_root
+  analysis: DAT:020[1] directly affirms the invariant without adding truth, access,
+    processing, transmission, or medium.
+- test_id: DAT0-T097
+  english_concept: persistent shared dataset uncertain
+  routing: runtime
+  analysis: DAT:020[2]/num leaves this exact persistent claim unresolved and does
+    not select a lexical sibling.
+- test_id: DAT0-T098
+  english_concept: persistent shared dataset in a medium
+  routing: compound
+  analysis: MAT or STR supplies physical realization while DAT:020 supplies information-object
+    identity and status.
+- test_id: DAT0-T099
+  english_concept: persistent shared dataset being processed
+  routing: compound
+  analysis: DAT:020 supplies the entity; DAT:1xx must separately supply transformation
+    or flow.
+- test_id: DAT0-T100
+  english_concept: persistent shared dataset believed
+  routing: compound
+  analysis: MIN supplies belief or understanding while DAT:020 remains the information
+    object independently.
+- test_id: DAT0-T101
+  english_concept: persistent shared dataset communicated
+  routing: compound
+  analysis: CON supplies transmission or reception while DAT:020 supplies only information
+    content and status.
+- test_id: DAT0-T102
+  english_concept: manifest shared dataset identity
+  routing: one_root
+  analysis: DAT:021[1] directly affirms the invariant without adding truth, access,
+    processing, transmission, or medium.
+- test_id: DAT0-T103
+  english_concept: manifest shared dataset uncertain
+  routing: runtime
+  analysis: DAT:021[2]/num leaves this exact manifest claim unresolved and does not
+    select a lexical sibling.
+- test_id: DAT0-T104
+  english_concept: manifest shared dataset in a medium
+  routing: compound
+  analysis: MAT or STR supplies physical realization while DAT:021 supplies information-object
+    identity and status.
+- test_id: DAT0-T105
+  english_concept: manifest shared dataset being processed
+  routing: compound
+  analysis: DAT:021 supplies the entity; DAT:1xx must separately supply transformation
+    or flow.
+- test_id: DAT0-T106
+  english_concept: manifest shared dataset believed
+  routing: compound
+  analysis: MIN supplies belief or understanding while DAT:021 remains the information
+    object independently.
+- test_id: DAT0-T107
+  english_concept: manifest shared dataset communicated
+  routing: compound
+  analysis: CON supplies transmission or reception while DAT:021 supplies only information
+    content and status.
+- test_id: DAT0-T108
+  english_concept: dormant shared dataset identity
+  routing: one_root
+  analysis: DAT:022[1] directly affirms the invariant without adding truth, access,
+    processing, transmission, or medium.
+- test_id: DAT0-T109
+  english_concept: dormant shared dataset uncertain
+  routing: runtime
+  analysis: DAT:022[2]/num leaves this exact dormant claim unresolved and does not
+    select a lexical sibling.
+- test_id: DAT0-T110
+  english_concept: dormant shared dataset in a medium
+  routing: compound
+  analysis: MAT or STR supplies physical realization while DAT:022 supplies information-object
+    identity and status.
+- test_id: DAT0-T111
+  english_concept: dormant shared dataset being processed
+  routing: compound
+  analysis: DAT:022 supplies the entity; DAT:1xx must separately supply transformation
+    or flow.
+- test_id: DAT0-T112
+  english_concept: dormant shared dataset believed
+  routing: compound
+  analysis: MIN supplies belief or understanding while DAT:022 remains the information
+    object independently.
+- test_id: DAT0-T113
+  english_concept: dormant shared dataset communicated
+  routing: compound
+  analysis: CON supplies transmission or reception while DAT:022 supplies only information
+    content and status.

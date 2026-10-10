@@ -1,0 +1,1440 @@
+---
+metadata:
+  title: LOG:100–122 adversarial semantic candidates
+  status: approved_and_canonical_by_delegated_authority
+  architecture_version: '1.0'
+  range: LOG:100–122
+  roots_reviewed: 9
+  candidate_architectures_per_root: 5
+  scored_categories:
+  - atomicity
+  - address_fit
+  - family_fit
+  - neighbor_separation
+  - cross_family_separation
+  - compound_usefulness
+  - everyday_language_coverage
+  - technical_coverage
+  generated_fields_changed: false
+  roots_canonicalized:
+  - LOG:100
+  - LOG:101
+  - LOG:102
+  - LOG:110
+  - LOG:111
+  - LOG:112
+  - LOG:120
+  - LOG:121
+  - LOG:122
+  approval_record: migrations/LOG_100_122_semantic_approval.yaml
+roots:
+- canonical_id: LOG:100
+  fixed_generated_fields:
+    canonical_id: LOG:100
+    universal_slot: completed inward process
+    family_qualified_transliteration: te·kam
+    local_compact_root: kam
+    formal_carrier: te-ki-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 2
+  current_meaning_rationale: The provisional title uses familiar proof, computation,
+    comparison, operator, and execution vocabulary and roughly follows the inward
+    and completed slot labels.
+  candidates:
+  - candidate_id: current_phase2
+    title: proof complete
+    invariant_candidate: An inward evaluation, calculation, or inference has completed
+      with a stable result.
+    analysis:
+      why_it_fits: The provisional title uses familiar proof, computation, comparison,
+        operator, and execution vocabulary and roughly follows the inward and completed
+        slot labels.
+      useful_coverage: It covers proving, calculating, comparing, testing, applying
+        operators, running programs, and completing executions.
+      semantic_territory_consumed: Across the block it mixes evaluation, inference,
+        transformation, stable results, scheduling, readiness, missing inputs, and
+        program execution.
+      conflicts_or_future_limitations: The triplets do not preserve one process center;
+        several roots encode results or scheduler state, while apply-operator can
+        mean arbitrary MAT, STR, CRE, or DAT transformation.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 59
+    maximum: 80
+  - candidate_id: formal_evaluation_processes
+    title: completed internal formal evaluation
+    invariant_candidate: Completion of a formal evaluation that determines the admissibility
+      of one reference entity under its applicable internal criterion.
+    analysis:
+      why_it_fits: The first trit is one actual or nonactualized formal process; the
+        second changes only the evaluation scope—one entity under an internal criterion,
+        one target under an assigned constraint, or multiple participants under one
+        regime; the third changes only completed, active, or nonactualized phase.
+      useful_coverage: It supports checking, validating, deciding, type-checking,
+        classifying, testing, proof checking, rule application, policy evaluation,
+        and multi-participant constraint resolution.
+      semantic_territory_consumed: Only the formal process that determines admissibility.
+        The rule entity, input representation, result polarity, physical transformation,
+        scheduler state, applicability relation, and modality remain separate.
+      conflicts_or_future_limitations: Some English inference and computation senses
+        do more than evaluate admissibility, so those senses require compounds or
+        later specialization rather than expanding the invariant.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 10
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 80
+    maximum: 80
+  - candidate_id: logical_derivation_processes
+    title: completed internal derivation
+    invariant_candidate: A completed formal derivation performed at inward logical
+      scope.
+    analysis:
+      why_it_fits: Derivation is central to logic and naturally has completed, active,
+        and nonactualized phases across inward, target, and systemic scopes.
+      useful_coverage: It would cover infer, deduce, prove, derive, calculate, simplify,
+        solve, and establish a conclusion.
+      semantic_territory_consumed: It specializes the process layer to conclusion
+        production from premises rather than general rule-governed evaluation.
+      conflicts_or_future_limitations: Target evaluation, validation, policy decisions,
+        and consistency checks may produce no new conclusion; derivation also risks
+        collision with CRE generation and DAT transformation.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 70
+    maximum: 80
+  - candidate_id: comparison_classification_processes
+    title: completed internal classification
+    invariant_candidate: A completed formal comparison or classification performed
+      at inward scope.
+    analysis:
+      why_it_fits: Comparison and classification are common formal operations on one
+        entity, a target, or a set of participants.
+      useful_coverage: It would cover compare, match, classify, sort, test, discriminate,
+        rank, and type-check.
+      semantic_territory_consumed: It consumes only a subset of formal evaluation
+        and pulls ranking or sorting toward DAT/MAT operations.
+      conflicts_or_future_limitations: Proof checking, permission decisions, satisfiability,
+        and systemic constraint resolution are not necessarily comparisons or classifications.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 8
+      cross_family_separation: 8
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 68
+    maximum: 80
+  - candidate_id: program_execution_processes
+    title: completed internal execution
+    invariant_candidate: A completed program or rule-system execution at inward scope.
+    analysis:
+      why_it_fits: Programs and rule systems execute as processes with completed,
+        active, and nonactualized phases and are technically useful.
+      useful_coverage: It would cover run, execute, iterate, branch, interpret, compile,
+        and evaluate code.
+      semantic_territory_consumed: It makes computational implementation obligatory
+        and absorbs control flow, scheduling, and state transformation.
+      conflicts_or_future_limitations: Ordinary reasoning and formal evaluation need
+        not be programs; execution mechanics collide with DAT, STR, CRE, and ORI.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 6
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 60
+    maximum: 80
+  recommended_candidate_id: formal_evaluation_processes
+  recommendation_reason: Only this architecture keeps all nine roots on one admissibility-determining
+    process center, follows inward/target/systemic scope exactly, and gives every
+    triplet one completed/active/nonactualized axis while reserving rule entities,
+    represented inputs, result polarity, scheduler states, and formal relations for
+    LOG:0xx, LOG:2xx, or other families.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: LOG:101
+  fixed_generated_fields:
+    canonical_id: LOG:101
+    universal_slot: active inward process
+    family_qualified_transliteration: te·kak
+    local_compact_root: kak
+    formal_carrier: te-ki-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 4
+  current_meaning_rationale: The provisional title uses familiar proof, computation,
+    comparison, operator, and execution vocabulary and roughly follows the inward
+    and active slot labels.
+  candidates:
+  - candidate_id: current_phase2
+    title: active computation
+    invariant_candidate: A logical agent is actively calculating, evaluating, inferring,
+      or checking its own state.
+    analysis:
+      why_it_fits: The provisional title uses familiar proof, computation, comparison,
+        operator, and execution vocabulary and roughly follows the inward and active
+        slot labels.
+      useful_coverage: It covers proving, calculating, comparing, testing, applying
+        operators, running programs, and completing executions.
+      semantic_territory_consumed: Across the block it mixes evaluation, inference,
+        transformation, stable results, scheduling, readiness, missing inputs, and
+        program execution.
+      conflicts_or_future_limitations: The triplets do not preserve one process center;
+        several roots encode results or scheduler state, while apply-operator can
+        mean arbitrary MAT, STR, CRE, or DAT transformation.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 59
+    maximum: 80
+  - candidate_id: formal_evaluation_processes
+    title: active internal formal evaluation
+    invariant_candidate: An ongoing formal evaluation that is determining the admissibility
+      of one reference entity under its applicable internal criterion.
+    analysis:
+      why_it_fits: The first trit is one actual or nonactualized formal process; the
+        second changes only the evaluation scope—one entity under an internal criterion,
+        one target under an assigned constraint, or multiple participants under one
+        regime; the third changes only completed, active, or nonactualized phase.
+      useful_coverage: It supports checking, validating, deciding, type-checking,
+        classifying, testing, proof checking, rule application, policy evaluation,
+        and multi-participant constraint resolution.
+      semantic_territory_consumed: Only the formal process that determines admissibility.
+        The rule entity, input representation, result polarity, physical transformation,
+        scheduler state, applicability relation, and modality remain separate.
+      conflicts_or_future_limitations: Some English inference and computation senses
+        do more than evaluate admissibility, so those senses require compounds or
+        later specialization rather than expanding the invariant.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 10
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 80
+    maximum: 80
+  - candidate_id: logical_derivation_processes
+    title: active internal derivation
+    invariant_candidate: A active formal derivation performed at inward logical scope.
+    analysis:
+      why_it_fits: Derivation is central to logic and naturally has completed, active,
+        and nonactualized phases across inward, target, and systemic scopes.
+      useful_coverage: It would cover infer, deduce, prove, derive, calculate, simplify,
+        solve, and establish a conclusion.
+      semantic_territory_consumed: It specializes the process layer to conclusion
+        production from premises rather than general rule-governed evaluation.
+      conflicts_or_future_limitations: Target evaluation, validation, policy decisions,
+        and consistency checks may produce no new conclusion; derivation also risks
+        collision with CRE generation and DAT transformation.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 70
+    maximum: 80
+  - candidate_id: comparison_classification_processes
+    title: active internal classification
+    invariant_candidate: A active formal comparison or classification performed at
+      inward scope.
+    analysis:
+      why_it_fits: Comparison and classification are common formal operations on one
+        entity, a target, or a set of participants.
+      useful_coverage: It would cover compare, match, classify, sort, test, discriminate,
+        rank, and type-check.
+      semantic_territory_consumed: It consumes only a subset of formal evaluation
+        and pulls ranking or sorting toward DAT/MAT operations.
+      conflicts_or_future_limitations: Proof checking, permission decisions, satisfiability,
+        and systemic constraint resolution are not necessarily comparisons or classifications.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 8
+      cross_family_separation: 8
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 68
+    maximum: 80
+  - candidate_id: program_execution_processes
+    title: active internal execution
+    invariant_candidate: A active program or rule-system execution at inward scope.
+    analysis:
+      why_it_fits: Programs and rule systems execute as processes with completed,
+        active, and nonactualized phases and are technically useful.
+      useful_coverage: It would cover run, execute, iterate, branch, interpret, compile,
+        and evaluate code.
+      semantic_territory_consumed: It makes computational implementation obligatory
+        and absorbs control flow, scheduling, and state transformation.
+      conflicts_or_future_limitations: Ordinary reasoning and formal evaluation need
+        not be programs; execution mechanics collide with DAT, STR, CRE, and ORI.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 6
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 60
+    maximum: 80
+  recommended_candidate_id: formal_evaluation_processes
+  recommendation_reason: Only this architecture keeps all nine roots on one admissibility-determining
+    process center, follows inward/target/systemic scope exactly, and gives every
+    triplet one completed/active/nonactualized axis while reserving rule entities,
+    represented inputs, result polarity, scheduler states, and formal relations for
+    LOG:0xx, LOG:2xx, or other families.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: LOG:102
+  fixed_generated_fields:
+    canonical_id: LOG:102
+    universal_slot: pending inward process
+    family_qualified_transliteration: te·kan
+    local_compact_root: kan
+    formal_carrier: te-ki-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 0
+  current_meaning_rationale: The provisional title uses familiar proof, computation,
+    comparison, operator, and execution vocabulary and roughly follows the inward
+    and nonactualized slot labels.
+  candidates:
+  - candidate_id: current_phase2
+    title: deferred computation
+    invariant_candidate: An inward evaluation is specified or possible but has not
+      started or lacks a needed value.
+    analysis:
+      why_it_fits: The provisional title uses familiar proof, computation, comparison,
+        operator, and execution vocabulary and roughly follows the inward and nonactualized
+        slot labels.
+      useful_coverage: It covers proving, calculating, comparing, testing, applying
+        operators, running programs, and completing executions.
+      semantic_territory_consumed: Across the block it mixes evaluation, inference,
+        transformation, stable results, scheduling, readiness, missing inputs, and
+        program execution.
+      conflicts_or_future_limitations: The triplets do not preserve one process center;
+        several roots encode results or scheduler state, while apply-operator can
+        mean arbitrary MAT, STR, CRE, or DAT transformation.
+    scores:
+      atomicity: 5
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 58
+    maximum: 80
+  - candidate_id: formal_evaluation_processes
+    title: nonactualized internal formal evaluation
+    invariant_candidate: A nonactualized formal evaluation that would determine the
+      admissibility of one reference entity under its applicable internal criterion.
+    analysis:
+      why_it_fits: The first trit is one actual or nonactualized formal process; the
+        second changes only the evaluation scope—one entity under an internal criterion,
+        one target under an assigned constraint, or multiple participants under one
+        regime; the third changes only completed, active, or nonactualized phase.
+      useful_coverage: It supports checking, validating, deciding, type-checking,
+        classifying, testing, proof checking, rule application, policy evaluation,
+        and multi-participant constraint resolution.
+      semantic_territory_consumed: Only the formal process that determines admissibility.
+        The rule entity, input representation, result polarity, physical transformation,
+        scheduler state, applicability relation, and modality remain separate.
+      conflicts_or_future_limitations: Some English inference and computation senses
+        do more than evaluate admissibility, so those senses require compounds or
+        later specialization rather than expanding the invariant.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 10
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 80
+    maximum: 80
+  - candidate_id: logical_derivation_processes
+    title: nonactualized internal derivation
+    invariant_candidate: A nonactualized formal derivation performed at inward logical
+      scope.
+    analysis:
+      why_it_fits: Derivation is central to logic and naturally has completed, active,
+        and nonactualized phases across inward, target, and systemic scopes.
+      useful_coverage: It would cover infer, deduce, prove, derive, calculate, simplify,
+        solve, and establish a conclusion.
+      semantic_territory_consumed: It specializes the process layer to conclusion
+        production from premises rather than general rule-governed evaluation.
+      conflicts_or_future_limitations: Target evaluation, validation, policy decisions,
+        and consistency checks may produce no new conclusion; derivation also risks
+        collision with CRE generation and DAT transformation.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 6
+      cross_family_separation: 8
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 69
+    maximum: 80
+  - candidate_id: comparison_classification_processes
+    title: nonactualized internal classification
+    invariant_candidate: A nonactualized formal comparison or classification performed
+      at inward scope.
+    analysis:
+      why_it_fits: Comparison and classification are common formal operations on one
+        entity, a target, or a set of participants.
+      useful_coverage: It would cover compare, match, classify, sort, test, discriminate,
+        rank, and type-check.
+      semantic_territory_consumed: It consumes only a subset of formal evaluation
+        and pulls ranking or sorting toward DAT/MAT operations.
+      conflicts_or_future_limitations: Proof checking, permission decisions, satisfiability,
+        and systemic constraint resolution are not necessarily comparisons or classifications.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 8
+      cross_family_separation: 8
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 68
+    maximum: 80
+  - candidate_id: program_execution_processes
+    title: nonactualized internal execution
+    invariant_candidate: A nonactualized program or rule-system execution at inward
+      scope.
+    analysis:
+      why_it_fits: Programs and rule systems execute as processes with completed,
+        active, and nonactualized phases and are technically useful.
+      useful_coverage: It would cover run, execute, iterate, branch, interpret, compile,
+        and evaluate code.
+      semantic_territory_consumed: It makes computational implementation obligatory
+        and absorbs control flow, scheduling, and state transformation.
+      conflicts_or_future_limitations: Ordinary reasoning and formal evaluation need
+        not be programs; execution mechanics collide with DAT, STR, CRE, and ORI.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 6
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 60
+    maximum: 80
+  recommended_candidate_id: formal_evaluation_processes
+  recommendation_reason: Only this architecture keeps all nine roots on one admissibility-determining
+    process center, follows inward/target/systemic scope exactly, and gives every
+    triplet one completed/active/nonactualized axis while reserving rule entities,
+    represented inputs, result polarity, scheduler states, and formal relations for
+    LOG:0xx, LOG:2xx, or other families.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: LOG:110
+  fixed_generated_fields:
+    canonical_id: LOG:110
+    universal_slot: completed outward process
+    family_qualified_transliteration: te·kom
+    local_compact_root: kom
+    formal_carrier: te-ki-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 4
+  current_meaning_rationale: The provisional title uses familiar proof, computation,
+    comparison, operator, and execution vocabulary and roughly follows the outward
+    and completed slot labels.
+  candidates:
+  - candidate_id: current_phase2
+    title: comparison resolved
+    invariant_candidate: A test, operator, or comparison applied to a target has produced
+      a stable result.
+    analysis:
+      why_it_fits: The provisional title uses familiar proof, computation, comparison,
+        operator, and execution vocabulary and roughly follows the outward and completed
+        slot labels.
+      useful_coverage: It covers proving, calculating, comparing, testing, applying
+        operators, running programs, and completing executions.
+      semantic_territory_consumed: Across the block it mixes evaluation, inference,
+        transformation, stable results, scheduling, readiness, missing inputs, and
+        program execution.
+      conflicts_or_future_limitations: The triplets do not preserve one process center;
+        several roots encode results or scheduler state, while apply-operator can
+        mean arbitrary MAT, STR, CRE, or DAT transformation.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 59
+    maximum: 80
+  - candidate_id: formal_evaluation_processes
+    title: completed target constraint application
+    invariant_candidate: Completion of a formal evaluation that applies one specified
+      constraint to one distinct reference target and determines that target's admissibility
+      under the constraint.
+    analysis:
+      why_it_fits: The first trit is one actual or nonactualized formal process; the
+        second changes only the evaluation scope—one entity under an internal criterion,
+        one target under an assigned constraint, or multiple participants under one
+        regime; the third changes only completed, active, or nonactualized phase.
+      useful_coverage: It supports checking, validating, deciding, type-checking,
+        classifying, testing, proof checking, rule application, policy evaluation,
+        and multi-participant constraint resolution.
+      semantic_territory_consumed: Only the formal process that determines admissibility.
+        The rule entity, input representation, result polarity, physical transformation,
+        scheduler state, applicability relation, and modality remain separate.
+      conflicts_or_future_limitations: Some English inference and computation senses
+        do more than evaluate admissibility, so those senses require compounds or
+        later specialization rather than expanding the invariant.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: logical_derivation_processes
+    title: completed target derivation
+    invariant_candidate: A completed formal derivation performed at outward logical
+      scope.
+    analysis:
+      why_it_fits: Derivation is central to logic and naturally has completed, active,
+        and nonactualized phases across inward, target, and systemic scopes.
+      useful_coverage: It would cover infer, deduce, prove, derive, calculate, simplify,
+        solve, and establish a conclusion.
+      semantic_territory_consumed: It specializes the process layer to conclusion
+        production from premises rather than general rule-governed evaluation.
+      conflicts_or_future_limitations: Target evaluation, validation, policy decisions,
+        and consistency checks may produce no new conclusion; derivation also risks
+        collision with CRE generation and DAT transformation.
+    scores:
+      atomicity: 9
+      address_fit: 7
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 69
+    maximum: 80
+  - candidate_id: comparison_classification_processes
+    title: completed target comparison
+    invariant_candidate: A completed formal comparison or classification performed
+      at outward scope.
+    analysis:
+      why_it_fits: Comparison and classification are common formal operations on one
+        entity, a target, or a set of participants.
+      useful_coverage: It would cover compare, match, classify, sort, test, discriminate,
+        rank, and type-check.
+      semantic_territory_consumed: It consumes only a subset of formal evaluation
+        and pulls ranking or sorting toward DAT/MAT operations.
+      conflicts_or_future_limitations: Proof checking, permission decisions, satisfiability,
+        and systemic constraint resolution are not necessarily comparisons or classifications.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 8
+      cross_family_separation: 8
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 69
+    maximum: 80
+  - candidate_id: program_execution_processes
+    title: completed target execution
+    invariant_candidate: A completed program or rule-system execution at outward scope.
+    analysis:
+      why_it_fits: Programs and rule systems execute as processes with completed,
+        active, and nonactualized phases and are technically useful.
+      useful_coverage: It would cover run, execute, iterate, branch, interpret, compile,
+        and evaluate code.
+      semantic_territory_consumed: It makes computational implementation obligatory
+        and absorbs control flow, scheduling, and state transformation.
+      conflicts_or_future_limitations: Ordinary reasoning and formal evaluation need
+        not be programs; execution mechanics collide with DAT, STR, CRE, and ORI.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 58
+    maximum: 80
+  recommended_candidate_id: formal_evaluation_processes
+  recommendation_reason: Only this architecture keeps all nine roots on one admissibility-determining
+    process center, follows inward/target/systemic scope exactly, and gives every
+    triplet one completed/active/nonactualized axis while reserving rule entities,
+    represented inputs, result polarity, scheduler states, and formal relations for
+    LOG:0xx, LOG:2xx, or other families.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: LOG:111
+  fixed_generated_fields:
+    canonical_id: LOG:111
+    universal_slot: active outward process
+    family_qualified_transliteration: te·kok
+    local_compact_root: kok
+    formal_carrier: te-ki-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 6
+  current_meaning_rationale: The provisional title uses familiar proof, computation,
+    comparison, operator, and execution vocabulary and roughly follows the outward
+    and active slot labels.
+  candidates:
+  - candidate_id: current_phase2
+    title: apply operator
+    invariant_candidate: A target is actively being compared, tested, classified,
+      or transformed by a rule.
+    analysis:
+      why_it_fits: The provisional title uses familiar proof, computation, comparison,
+        operator, and execution vocabulary and roughly follows the outward and active
+        slot labels.
+      useful_coverage: It covers proving, calculating, comparing, testing, applying
+        operators, running programs, and completing executions.
+      semantic_territory_consumed: Across the block it mixes evaluation, inference,
+        transformation, stable results, scheduling, readiness, missing inputs, and
+        program execution.
+      conflicts_or_future_limitations: The triplets do not preserve one process center;
+        several roots encode results or scheduler state, while apply-operator can
+        mean arbitrary MAT, STR, CRE, or DAT transformation.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 59
+    maximum: 80
+  - candidate_id: formal_evaluation_processes
+    title: active target constraint application
+    invariant_candidate: An ongoing formal evaluation that applies one specified constraint
+      to one distinct reference target and is determining that target's admissibility
+      under the constraint.
+    analysis:
+      why_it_fits: The first trit is one actual or nonactualized formal process; the
+        second changes only the evaluation scope—one entity under an internal criterion,
+        one target under an assigned constraint, or multiple participants under one
+        regime; the third changes only completed, active, or nonactualized phase.
+      useful_coverage: It supports checking, validating, deciding, type-checking,
+        classifying, testing, proof checking, rule application, policy evaluation,
+        and multi-participant constraint resolution.
+      semantic_territory_consumed: Only the formal process that determines admissibility.
+        The rule entity, input representation, result polarity, physical transformation,
+        scheduler state, applicability relation, and modality remain separate.
+      conflicts_or_future_limitations: Some English inference and computation senses
+        do more than evaluate admissibility, so those senses require compounds or
+        later specialization rather than expanding the invariant.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: logical_derivation_processes
+    title: active target derivation
+    invariant_candidate: A active formal derivation performed at outward logical scope.
+    analysis:
+      why_it_fits: Derivation is central to logic and naturally has completed, active,
+        and nonactualized phases across inward, target, and systemic scopes.
+      useful_coverage: It would cover infer, deduce, prove, derive, calculate, simplify,
+        solve, and establish a conclusion.
+      semantic_territory_consumed: It specializes the process layer to conclusion
+        production from premises rather than general rule-governed evaluation.
+      conflicts_or_future_limitations: Target evaluation, validation, policy decisions,
+        and consistency checks may produce no new conclusion; derivation also risks
+        collision with CRE generation and DAT transformation.
+    scores:
+      atomicity: 9
+      address_fit: 7
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 69
+    maximum: 80
+  - candidate_id: comparison_classification_processes
+    title: active target comparison
+    invariant_candidate: A active formal comparison or classification performed at
+      outward scope.
+    analysis:
+      why_it_fits: Comparison and classification are common formal operations on one
+        entity, a target, or a set of participants.
+      useful_coverage: It would cover compare, match, classify, sort, test, discriminate,
+        rank, and type-check.
+      semantic_territory_consumed: It consumes only a subset of formal evaluation
+        and pulls ranking or sorting toward DAT/MAT operations.
+      conflicts_or_future_limitations: Proof checking, permission decisions, satisfiability,
+        and systemic constraint resolution are not necessarily comparisons or classifications.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 8
+      cross_family_separation: 8
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 69
+    maximum: 80
+  - candidate_id: program_execution_processes
+    title: active target execution
+    invariant_candidate: A active program or rule-system execution at outward scope.
+    analysis:
+      why_it_fits: Programs and rule systems execute as processes with completed,
+        active, and nonactualized phases and are technically useful.
+      useful_coverage: It would cover run, execute, iterate, branch, interpret, compile,
+        and evaluate code.
+      semantic_territory_consumed: It makes computational implementation obligatory
+        and absorbs control flow, scheduling, and state transformation.
+      conflicts_or_future_limitations: Ordinary reasoning and formal evaluation need
+        not be programs; execution mechanics collide with DAT, STR, CRE, and ORI.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 58
+    maximum: 80
+  recommended_candidate_id: formal_evaluation_processes
+  recommendation_reason: Only this architecture keeps all nine roots on one admissibility-determining
+    process center, follows inward/target/systemic scope exactly, and gives every
+    triplet one completed/active/nonactualized axis while reserving rule entities,
+    represented inputs, result polarity, scheduler states, and formal relations for
+    LOG:0xx, LOG:2xx, or other families.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: LOG:112
+  fixed_generated_fields:
+    canonical_id: LOG:112
+    universal_slot: pending outward process
+    family_qualified_transliteration: te·kon
+    local_compact_root: kon
+    formal_carrier: te-ki-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 2
+  current_meaning_rationale: The provisional title uses familiar proof, computation,
+    comparison, operator, and execution vocabulary and roughly follows the outward
+    and nonactualized slot labels.
+  candidates:
+  - candidate_id: current_phase2
+    title: pending test
+    invariant_candidate: A test or operation on a target is specified but not yet
+      evaluated.
+    analysis:
+      why_it_fits: The provisional title uses familiar proof, computation, comparison,
+        operator, and execution vocabulary and roughly follows the outward and nonactualized
+        slot labels.
+      useful_coverage: It covers proving, calculating, comparing, testing, applying
+        operators, running programs, and completing executions.
+      semantic_territory_consumed: Across the block it mixes evaluation, inference,
+        transformation, stable results, scheduling, readiness, missing inputs, and
+        program execution.
+      conflicts_or_future_limitations: The triplets do not preserve one process center;
+        several roots encode results or scheduler state, while apply-operator can
+        mean arbitrary MAT, STR, CRE, or DAT transformation.
+    scores:
+      atomicity: 5
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 58
+    maximum: 80
+  - candidate_id: formal_evaluation_processes
+    title: nonactualized target constraint application
+    invariant_candidate: A nonactualized formal evaluation that would apply one specified
+      constraint to one distinct reference target and determine that target's admissibility
+      under the constraint.
+    analysis:
+      why_it_fits: The first trit is one actual or nonactualized formal process; the
+        second changes only the evaluation scope—one entity under an internal criterion,
+        one target under an assigned constraint, or multiple participants under one
+        regime; the third changes only completed, active, or nonactualized phase.
+      useful_coverage: It supports checking, validating, deciding, type-checking,
+        classifying, testing, proof checking, rule application, policy evaluation,
+        and multi-participant constraint resolution.
+      semantic_territory_consumed: Only the formal process that determines admissibility.
+        The rule entity, input representation, result polarity, physical transformation,
+        scheduler state, applicability relation, and modality remain separate.
+      conflicts_or_future_limitations: Some English inference and computation senses
+        do more than evaluate admissibility, so those senses require compounds or
+        later specialization rather than expanding the invariant.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: logical_derivation_processes
+    title: nonactualized target derivation
+    invariant_candidate: A nonactualized formal derivation performed at outward logical
+      scope.
+    analysis:
+      why_it_fits: Derivation is central to logic and naturally has completed, active,
+        and nonactualized phases across inward, target, and systemic scopes.
+      useful_coverage: It would cover infer, deduce, prove, derive, calculate, simplify,
+        solve, and establish a conclusion.
+      semantic_territory_consumed: It specializes the process layer to conclusion
+        production from premises rather than general rule-governed evaluation.
+      conflicts_or_future_limitations: Target evaluation, validation, policy decisions,
+        and consistency checks may produce no new conclusion; derivation also risks
+        collision with CRE generation and DAT transformation.
+    scores:
+      atomicity: 9
+      address_fit: 7
+      family_fit: 10
+      neighbor_separation: 6
+      cross_family_separation: 8
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 68
+    maximum: 80
+  - candidate_id: comparison_classification_processes
+    title: nonactualized target comparison
+    invariant_candidate: A nonactualized formal comparison or classification performed
+      at outward scope.
+    analysis:
+      why_it_fits: Comparison and classification are common formal operations on one
+        entity, a target, or a set of participants.
+      useful_coverage: It would cover compare, match, classify, sort, test, discriminate,
+        rank, and type-check.
+      semantic_territory_consumed: It consumes only a subset of formal evaluation
+        and pulls ranking or sorting toward DAT/MAT operations.
+      conflicts_or_future_limitations: Proof checking, permission decisions, satisfiability,
+        and systemic constraint resolution are not necessarily comparisons or classifications.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 8
+      cross_family_separation: 8
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 69
+    maximum: 80
+  - candidate_id: program_execution_processes
+    title: nonactualized target execution
+    invariant_candidate: A nonactualized program or rule-system execution at outward
+      scope.
+    analysis:
+      why_it_fits: Programs and rule systems execute as processes with completed,
+        active, and nonactualized phases and are technically useful.
+      useful_coverage: It would cover run, execute, iterate, branch, interpret, compile,
+        and evaluate code.
+      semantic_territory_consumed: It makes computational implementation obligatory
+        and absorbs control flow, scheduling, and state transformation.
+      conflicts_or_future_limitations: Ordinary reasoning and formal evaluation need
+        not be programs; execution mechanics collide with DAT, STR, CRE, and ORI.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 58
+    maximum: 80
+  recommended_candidate_id: formal_evaluation_processes
+  recommendation_reason: Only this architecture keeps all nine roots on one admissibility-determining
+    process center, follows inward/target/systemic scope exactly, and gives every
+    triplet one completed/active/nonactualized axis while reserving rule entities,
+    represented inputs, result polarity, scheduler states, and formal relations for
+    LOG:0xx, LOG:2xx, or other families.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: LOG:120
+  fixed_generated_fields:
+    canonical_id: LOG:120
+    universal_slot: completed systemic process
+    family_qualified_transliteration: te·kim
+    local_compact_root: kim
+    formal_carrier: te-ki-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 0
+  current_meaning_rationale: The provisional title uses familiar proof, computation,
+    comparison, operator, and execution vocabulary and roughly follows the systemic
+    and completed slot labels.
+  candidates:
+  - candidate_id: current_phase2
+    title: execution complete
+    invariant_candidate: A program, proof, iteration, or multi-step rule process has
+      reached its defined end state.
+    analysis:
+      why_it_fits: The provisional title uses familiar proof, computation, comparison,
+        operator, and execution vocabulary and roughly follows the systemic and completed
+        slot labels.
+      useful_coverage: It covers proving, calculating, comparing, testing, applying
+        operators, running programs, and completing executions.
+      semantic_territory_consumed: Across the block it mixes evaluation, inference,
+        transformation, stable results, scheduling, readiness, missing inputs, and
+        program execution.
+      conflicts_or_future_limitations: The triplets do not preserve one process center;
+        several roots encode results or scheduler state, while apply-operator can
+        mean arbitrary MAT, STR, CRE, or DAT transformation.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 4
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 58
+    maximum: 80
+  - candidate_id: formal_evaluation_processes
+    title: completed systemic regime evaluation
+    invariant_candidate: Completion of a coordinated formal evaluation that determines
+      the joint admissibility of multiple participants under one shared formal regime.
+    analysis:
+      why_it_fits: The first trit is one actual or nonactualized formal process; the
+        second changes only the evaluation scope—one entity under an internal criterion,
+        one target under an assigned constraint, or multiple participants under one
+        regime; the third changes only completed, active, or nonactualized phase.
+      useful_coverage: It supports checking, validating, deciding, type-checking,
+        classifying, testing, proof checking, rule application, policy evaluation,
+        and multi-participant constraint resolution.
+      semantic_territory_consumed: Only the formal process that determines admissibility.
+        The rule entity, input representation, result polarity, physical transformation,
+        scheduler state, applicability relation, and modality remain separate.
+      conflicts_or_future_limitations: Some English inference and computation senses
+        do more than evaluate admissibility, so those senses require compounds or
+        later specialization rather than expanding the invariant.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: logical_derivation_processes
+    title: completed systemic derivation
+    invariant_candidate: A completed formal derivation performed at systemic logical
+      scope.
+    analysis:
+      why_it_fits: Derivation is central to logic and naturally has completed, active,
+        and nonactualized phases across inward, target, and systemic scopes.
+      useful_coverage: It would cover infer, deduce, prove, derive, calculate, simplify,
+        solve, and establish a conclusion.
+      semantic_territory_consumed: It specializes the process layer to conclusion
+        production from premises rather than general rule-governed evaluation.
+      conflicts_or_future_limitations: Target evaluation, validation, policy decisions,
+        and consistency checks may produce no new conclusion; derivation also risks
+        collision with CRE generation and DAT transformation.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 70
+    maximum: 80
+  - candidate_id: comparison_classification_processes
+    title: completed systemic classification
+    invariant_candidate: A completed formal comparison or classification performed
+      at systemic scope.
+    analysis:
+      why_it_fits: Comparison and classification are common formal operations on one
+        entity, a target, or a set of participants.
+      useful_coverage: It would cover compare, match, classify, sort, test, discriminate,
+        rank, and type-check.
+      semantic_territory_consumed: It consumes only a subset of formal evaluation
+        and pulls ranking or sorting toward DAT/MAT operations.
+      conflicts_or_future_limitations: Proof checking, permission decisions, satisfiability,
+        and systemic constraint resolution are not necessarily comparisons or classifications.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 8
+      cross_family_separation: 8
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 68
+    maximum: 80
+  - candidate_id: program_execution_processes
+    title: completed program execution
+    invariant_candidate: A completed program or rule-system execution at systemic
+      scope.
+    analysis:
+      why_it_fits: Programs and rule systems execute as processes with completed,
+        active, and nonactualized phases and are technically useful.
+      useful_coverage: It would cover run, execute, iterate, branch, interpret, compile,
+        and evaluate code.
+      semantic_territory_consumed: It makes computational implementation obligatory
+        and absorbs control flow, scheduling, and state transformation.
+      conflicts_or_future_limitations: Ordinary reasoning and formal evaluation need
+        not be programs; execution mechanics collide with DAT, STR, CRE, and ORI.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 62
+    maximum: 80
+  recommended_candidate_id: formal_evaluation_processes
+  recommendation_reason: Only this architecture keeps all nine roots on one admissibility-determining
+    process center, follows inward/target/systemic scope exactly, and gives every
+    triplet one completed/active/nonactualized axis while reserving rule entities,
+    represented inputs, result polarity, scheduler states, and formal relations for
+    LOG:0xx, LOG:2xx, or other families.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: LOG:121
+  fixed_generated_fields:
+    canonical_id: LOG:121
+    universal_slot: active systemic process
+    family_qualified_transliteration: te·kik
+    local_compact_root: kik
+    formal_carrier: te-ki-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 2
+  current_meaning_rationale: The provisional title uses familiar proof, computation,
+    comparison, operator, and execution vocabulary and roughly follows the systemic
+    and active slot labels.
+  candidates:
+  - candidate_id: current_phase2
+    title: system execution
+    invariant_candidate: Rules, branches, or iterations are actively executing across
+      a formal system.
+    analysis:
+      why_it_fits: The provisional title uses familiar proof, computation, comparison,
+        operator, and execution vocabulary and roughly follows the systemic and active
+        slot labels.
+      useful_coverage: It covers proving, calculating, comparing, testing, applying
+        operators, running programs, and completing executions.
+      semantic_territory_consumed: Across the block it mixes evaluation, inference,
+        transformation, stable results, scheduling, readiness, missing inputs, and
+        program execution.
+      conflicts_or_future_limitations: The triplets do not preserve one process center;
+        several roots encode results or scheduler state, while apply-operator can
+        mean arbitrary MAT, STR, CRE, or DAT transformation.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 4
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 58
+    maximum: 80
+  - candidate_id: formal_evaluation_processes
+    title: active systemic regime evaluation
+    invariant_candidate: An ongoing coordinated formal evaluation that is determining
+      the joint admissibility of multiple participants under one shared formal regime.
+    analysis:
+      why_it_fits: The first trit is one actual or nonactualized formal process; the
+        second changes only the evaluation scope—one entity under an internal criterion,
+        one target under an assigned constraint, or multiple participants under one
+        regime; the third changes only completed, active, or nonactualized phase.
+      useful_coverage: It supports checking, validating, deciding, type-checking,
+        classifying, testing, proof checking, rule application, policy evaluation,
+        and multi-participant constraint resolution.
+      semantic_territory_consumed: Only the formal process that determines admissibility.
+        The rule entity, input representation, result polarity, physical transformation,
+        scheduler state, applicability relation, and modality remain separate.
+      conflicts_or_future_limitations: Some English inference and computation senses
+        do more than evaluate admissibility, so those senses require compounds or
+        later specialization rather than expanding the invariant.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: logical_derivation_processes
+    title: active systemic derivation
+    invariant_candidate: A active formal derivation performed at systemic logical
+      scope.
+    analysis:
+      why_it_fits: Derivation is central to logic and naturally has completed, active,
+        and nonactualized phases across inward, target, and systemic scopes.
+      useful_coverage: It would cover infer, deduce, prove, derive, calculate, simplify,
+        solve, and establish a conclusion.
+      semantic_territory_consumed: It specializes the process layer to conclusion
+        production from premises rather than general rule-governed evaluation.
+      conflicts_or_future_limitations: Target evaluation, validation, policy decisions,
+        and consistency checks may produce no new conclusion; derivation also risks
+        collision with CRE generation and DAT transformation.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 70
+    maximum: 80
+  - candidate_id: comparison_classification_processes
+    title: active systemic classification
+    invariant_candidate: A active formal comparison or classification performed at
+      systemic scope.
+    analysis:
+      why_it_fits: Comparison and classification are common formal operations on one
+        entity, a target, or a set of participants.
+      useful_coverage: It would cover compare, match, classify, sort, test, discriminate,
+        rank, and type-check.
+      semantic_territory_consumed: It consumes only a subset of formal evaluation
+        and pulls ranking or sorting toward DAT/MAT operations.
+      conflicts_or_future_limitations: Proof checking, permission decisions, satisfiability,
+        and systemic constraint resolution are not necessarily comparisons or classifications.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 8
+      cross_family_separation: 8
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 68
+    maximum: 80
+  - candidate_id: program_execution_processes
+    title: active program execution
+    invariant_candidate: A active program or rule-system execution at systemic scope.
+    analysis:
+      why_it_fits: Programs and rule systems execute as processes with completed,
+        active, and nonactualized phases and are technically useful.
+      useful_coverage: It would cover run, execute, iterate, branch, interpret, compile,
+        and evaluate code.
+      semantic_territory_consumed: It makes computational implementation obligatory
+        and absorbs control flow, scheduling, and state transformation.
+      conflicts_or_future_limitations: Ordinary reasoning and formal evaluation need
+        not be programs; execution mechanics collide with DAT, STR, CRE, and ORI.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 62
+    maximum: 80
+  recommended_candidate_id: formal_evaluation_processes
+  recommendation_reason: Only this architecture keeps all nine roots on one admissibility-determining
+    process center, follows inward/target/systemic scope exactly, and gives every
+    triplet one completed/active/nonactualized axis while reserving rule entities,
+    represented inputs, result polarity, scheduler states, and formal relations for
+    LOG:0xx, LOG:2xx, or other families.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: LOG:122
+  fixed_generated_fields:
+    canonical_id: LOG:122
+    universal_slot: pending systemic process
+    family_qualified_transliteration: te·kin
+    local_compact_root: kin
+    formal_carrier: te-ki-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - -2
+  current_meaning_rationale: The provisional title uses familiar proof, computation,
+    comparison, operator, and execution vocabulary and roughly follows the systemic
+    and nonactualized slot labels.
+  candidates:
+  - candidate_id: current_phase2
+    title: scheduled execution
+    invariant_candidate: A program or system-level evaluation is ready or waiting
+      but has not begun.
+    analysis:
+      why_it_fits: The provisional title uses familiar proof, computation, comparison,
+        operator, and execution vocabulary and roughly follows the systemic and nonactualized
+        slot labels.
+      useful_coverage: It covers proving, calculating, comparing, testing, applying
+        operators, running programs, and completing executions.
+      semantic_territory_consumed: Across the block it mixes evaluation, inference,
+        transformation, stable results, scheduling, readiness, missing inputs, and
+        program execution.
+      conflicts_or_future_limitations: The triplets do not preserve one process center;
+        several roots encode results or scheduler state, while apply-operator can
+        mean arbitrary MAT, STR, CRE, or DAT transformation.
+    scores:
+      atomicity: 5
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 4
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 57
+    maximum: 80
+  - candidate_id: formal_evaluation_processes
+    title: nonactualized systemic regime evaluation
+    invariant_candidate: A nonactualized coordinated formal evaluation that would
+      determine the joint admissibility of multiple participants under one shared
+      formal regime.
+    analysis:
+      why_it_fits: The first trit is one actual or nonactualized formal process; the
+        second changes only the evaluation scope—one entity under an internal criterion,
+        one target under an assigned constraint, or multiple participants under one
+        regime; the third changes only completed, active, or nonactualized phase.
+      useful_coverage: It supports checking, validating, deciding, type-checking,
+        classifying, testing, proof checking, rule application, policy evaluation,
+        and multi-participant constraint resolution.
+      semantic_territory_consumed: Only the formal process that determines admissibility.
+        The rule entity, input representation, result polarity, physical transformation,
+        scheduler state, applicability relation, and modality remain separate.
+      conflicts_or_future_limitations: Some English inference and computation senses
+        do more than evaluate admissibility, so those senses require compounds or
+        later specialization rather than expanding the invariant.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: logical_derivation_processes
+    title: nonactualized systemic derivation
+    invariant_candidate: A nonactualized formal derivation performed at systemic logical
+      scope.
+    analysis:
+      why_it_fits: Derivation is central to logic and naturally has completed, active,
+        and nonactualized phases across inward, target, and systemic scopes.
+      useful_coverage: It would cover infer, deduce, prove, derive, calculate, simplify,
+        solve, and establish a conclusion.
+      semantic_territory_consumed: It specializes the process layer to conclusion
+        production from premises rather than general rule-governed evaluation.
+      conflicts_or_future_limitations: Target evaluation, validation, policy decisions,
+        and consistency checks may produce no new conclusion; derivation also risks
+        collision with CRE generation and DAT transformation.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 6
+      cross_family_separation: 8
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 69
+    maximum: 80
+  - candidate_id: comparison_classification_processes
+    title: nonactualized systemic classification
+    invariant_candidate: A nonactualized formal comparison or classification performed
+      at systemic scope.
+    analysis:
+      why_it_fits: Comparison and classification are common formal operations on one
+        entity, a target, or a set of participants.
+      useful_coverage: It would cover compare, match, classify, sort, test, discriminate,
+        rank, and type-check.
+      semantic_territory_consumed: It consumes only a subset of formal evaluation
+        and pulls ranking or sorting toward DAT/MAT operations.
+      conflicts_or_future_limitations: Proof checking, permission decisions, satisfiability,
+        and systemic constraint resolution are not necessarily comparisons or classifications.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 8
+      cross_family_separation: 8
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 68
+    maximum: 80
+  - candidate_id: program_execution_processes
+    title: nonactualized program execution
+    invariant_candidate: A nonactualized program or rule-system execution at systemic
+      scope.
+    analysis:
+      why_it_fits: Programs and rule systems execute as processes with completed,
+        active, and nonactualized phases and are technically useful.
+      useful_coverage: It would cover run, execute, iterate, branch, interpret, compile,
+        and evaluate code.
+      semantic_territory_consumed: It makes computational implementation obligatory
+        and absorbs control flow, scheduling, and state transformation.
+      conflicts_or_future_limitations: Ordinary reasoning and formal evaluation need
+        not be programs; execution mechanics collide with DAT, STR, CRE, and ORI.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 62
+    maximum: 80
+  recommended_candidate_id: formal_evaluation_processes
+  recommendation_reason: Only this architecture keeps all nine roots on one admissibility-determining
+    process center, follows inward/target/systemic scope exactly, and gives every
+    triplet one completed/active/nonactualized axis while reserving rule entities,
+    represented inputs, result polarity, scheduler states, and formal relations for
+    LOG:0xx, LOG:2xx, or other families.
+  confidence: 0.96
+  canonicalized: true

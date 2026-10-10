@@ -1,0 +1,1934 @@
+---
+metadata:
+  title: REP:100–122 recommended permanent semantic specification
+  status: approved_and_canonical_by_delegated_authority
+  architecture_version: '1.0'
+  semantic_center: 'substrate-neutral restorative transformation: internal restoration,
+    source-to-target restoration, and coordinated systemic restoration'
+  triplets:
+    REP:100–102: 'internal restoration: completed / active / nonactualized'
+    REP:110–112: 'source-to-target restoration: completed / active / nonactualized'
+    REP:120–122: 'coordinated systemic restoration: completed / active / nonactualized'
+  scope_separation:
+    inward: the restorative transformation originates within one reference entity
+    outward: one distinct source causes restorative transformation in one reference
+      target
+    systemic: one coordinated transformation realizes one shared restoration condition
+      across multiple participants
+  generated_fields_changed: false
+  gate4_started: false
+  translator_started: false
+  roots_canonicalized:
+  - REP:100
+  - REP:101
+  - REP:102
+  - REP:110
+  - REP:111
+  - REP:112
+  - REP:120
+  - REP:121
+  - REP:122
+  approval_record: migrations/REP_100_122_semantic_approval.yaml
+roots:
+- fixed_generated_fields:
+    canonical_id: REP:100
+    universal_slot: completed inward process
+    family_qualified_transliteration: ya·kam
+    local_compact_root: kam
+    formal_carrier: ya-ki-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: completed internal restoration
+  invariant_definition: Completion of a restorative transformation originating within
+    one reference entity by which that entity enters its applicable internal restoration
+    condition.
+  semantic_center: 'substrate-neutral restorative transformation: internal restoration,
+    source-to-target restoration, and coordinated systemic restoration'
+  address_justification:
+    first_trit_1: Selects a restorative process, action, or transformation rather
+      than a restoration-condition entity, recoverability affordance, resource, record,
+      rule, or schedule.
+    second_trit: 'Selects inward/self scope: this root originates within one reference
+      entity and changes that entity toward its applicable internal restoration condition
+      without requiring a distinct external source; no competing family or temporal
+      phase is added by this axis.'
+    third_trit: Selects the completed phase of the same internal-restoration process;
+      planning, queueing, schedule, futurity, permission, probability, and runtime
+      truth status remain separate.
+  inclusion_boundary: Includes only a completed substrate-neutral restorative transformation
+    that originates within one reference entity and changes that entity toward its
+    applicable internal restoration condition without requiring a distinct external
+    source. If a distinct external source causes the change, use target restoration;
+    if one shared condition is realized across several participants, use systemic
+    restoration. The transformation may be realized physically, biologically, computationally,
+    informationally, socially, or conceptually, but it does not itself assert the
+    bearer, concrete mechanics, movement path, record, observer knowledge, validation,
+    maintenance, replacement, resource, recoverability, probability, schedule, or
+    causal history beyond the scope roles required by the invariant.
+  excluded_meanings:
+  - The restoration condition, bearer, restorative source, target, participant, material
+    object, organism, software component, institution, checkpoint, or data record
+    as an entity.
+  - Spatial movement, return, route traversal, physical force, biological mechanism,
+    data copying, structural reconfiguration, creation, replacement, or reconstruction
+    as such without the REP restorative transformation claim.
+  - Planning, intention, staging, queueing, scheduling, permission, readiness, probability,
+    futurity, obligation, or specification—especially for lexical 1x2.
+  - Inspection, validation, verification, certification, evidence collection, belief
+    revision, diagnosis, recognition, or measurement of a restoration condition.
+  - Maintenance, preservation, routine servicing, warning, containment, neutral coordination,
+    fabrication, replacement, reconstruction, or mere communication about restoration.
+  - Recoverability, repairability, restorative capacity, remedy availability, caregiver
+    relation, service contract, resource readiness, probability, or other continuing
+    capacity or relation.
+  nearest_neighbors:
+  - REP:101
+  - REP:102
+  - REP:110
+  - REP:120
+  - REP:000
+  - REP:200
+  same_family_contrast: REP:0xx owns internal, target, and shared restoration-condition
+    entities. REP:1xx owns restorative transformations toward realizing those conditions.
+    REP:2xx remains reserved for recoverability, repairability, and enabling restoration
+    relations. Internal restoration has no required distinct external source. Target
+    restoration preserves one source and one target as distinct roles. Systemic restoration
+    requires one coordinated transformation that realizes one shared restoration condition
+    across multiple participants. A completed REP:1xx root entails that the applicable
+    restoration condition was realized by the stated transformation at completion;
+    it does not entail that the result persists, that it was recorded or validated,
+    that maintenance continues, or that a continuing REP:2xx affordance holds unless
+    separately asserted.
+  cross_family_comparisons: &1
+    LIF: LIF owns living identity, physiology, health, injury, illness, and care roles.
+      REP can classify healing as restoration, but it does not define the biological
+      mechanism or the living bearer.
+    MOV: MOV owns location, displacement, approach, traversal, and return. Moving
+      something back can serve restoration, but REP names transformation toward an
+      applicable restoration condition rather than the path traveled.
+    MAT: MAT owns substance, force, energy, fracture, contact, shape, and physical
+      change. REP abstracts restorative direction and scope; material repair mechanics
+      remain separately asserted.
+    MIN: MIN owns perception, attention, belief, memory, intention, satisfaction,
+      and recognition. Restoration can occur without awareness, and believing something
+      repaired does not perform the transformation.
+    CON: CON owns care communication, service requests, coordination, and participant
+      exchange. Coordination may support systemic restoration but is not itself the
+      restorative transformation.
+    WRN: WRN owns faults, hazards, degradation, impairment, and adverse propagation.
+      REP:1xx moves toward realizing an applicable restoration condition; WRN moves
+      toward a less acceptable condition, and neither process entails the other.
+    STR: STR owns reconfiguration, incorporation, integration, and structural affordances.
+      A structural change can implement restoration, but REP does not specify topology
+      or constituent arrangement.
+    LOG: LOG owns correctness, validity, rule satisfaction, permission, and constraints.
+      Correction can be one result of restoration, but checking or satisfying a rule
+      is not automatically a restorative transformation.
+    DAT: DAT owns records, checkpoints, backups, schemas, measurements, and information
+      transformation. Restoring data may use a checkpoint, but the record and copy
+      operation do not replace the REP transformation claim.
+    CRE: CRE owns generation, fabrication, replacement, reconstruction, and destruction.
+      Replacement or rebuilding may realize restoration, but creation and substitution
+      are not identical to movement toward a restoration condition.
+    ORI: ORI owns tense, duration, possibility, necessity, and general transition.
+      Lexical REP:1x2 selects a nonactualized restorative process and does not encode
+      plan, schedule, queue, probability, future time, or eventual realization.
+  runtime_state_interpretation:
+    '0': Denies that this internal-restoration process reached completion in the stated
+      restoration context; it does not assert that the active or nonactualized sibling
+      holds.
+    '1': Affirms that this internal-restoration process reached completion and realized
+      the applicable restoration condition, without asserting the concrete mechanism,
+      record, validation, permanence, maintenance, replacement, or continuing recoverability.
+    2/num: Leaves unresolved whether this internal-restoration process reached completion
+      or whether that completed result remains applicable; the lexical root stays
+      completed.
+  lexical_runtime_distinction: The lexical third trit permanently selects the completed
+    member of this process triplet. Runtime `[2]/num` instead qualifies the truth,
+    applicability, or resolution of a token of that already-selected root; it never
+    changes the root into a planned, future, or different-phase process.
+  catalogue_title_guard: The concise catalogue title is controlled by the invariant
+    definition and must not be broadened with unstated mechanics, records, validation,
+    maintenance, replacement, result persistence, or temporal semantics.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: REP:100[1](ENTITY=device,CONDITION=condition)
+    literal_gloss: completed internal restoration
+    natural_english: The device completed an internally originating restoration into
+      its accepted condition.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: The restorative transformation originates within one reference entity
+      and does not require a distinct external source. The assertion does not add
+      a mechanism, record, validation, schedule, or guarantee beyond the invariant.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=organism)+REP:100[1](ENTITY=organism,CONDITION=condition)
+    literal_gloss: material realization plus completed internal restoration
+    natural_english: The organism completed an internally originating healing process
+      into its applicable restored condition.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: The restorative transformation originates within one reference entity
+      and does not require a distinct external source. MAT/LIF owns concrete mechanics;
+      REP owns restorative direction and scope.
+  - category: temporal_or_sequential
+    semantic_graph: REP:100[1](ENTITY=device,CONDITION=condition)+ORI(INTERVAL=service_window)
+    literal_gloss: completed internal restoration during an explicit interval
+    natural_english: During the service window, the device completed an internally
+      originating restoration into its accepted condition.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: ORI supplies temporal location; lexical phase is not tense or schedule.
+  - category: cross_family_compound
+    semantic_graph: DAT(BASELINE=d)+LOG(CRITERION=k)+REP:100[1](ENTITY=device,CONDITION=condition)
+    literal_gloss: baseline and criterion plus completed internal restoration
+    natural_english: The baseline and criterion specify the accepted condition toward
+      which the restorative transformation moves.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: The restorative transformation originates within one reference entity
+      and does not require a distinct external source. DAT and LOG describe references;
+      neither performs restoration.
+  - category: executable_or_programming
+    semantic_graph: REP:100[1](ENTITY=service,CONDITION=known_good)
+    literal_gloss: assert completed internal restoration
+    natural_english: The service completed an internally originating recovery into
+      its known-good condition.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: The restorative transformation originates within one reference entity
+      and does not require a distinct external source. Checkpoints, validation, replacement,
+      coordination, and recoverability require separate DAT/LOG/CRE/CON/REP:2xx assertions.
+    pseudocode: assert(restorative_process.matches?("REP:100"))
+  - category: counterexample
+    semantic_graph: WRN:101[1](ENTITY=device)
+    literal_gloss: ongoing internal degradation
+    natural_english: The device is deteriorating.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: must_not_use_this_root
+    analysis: Degradation moves toward a less acceptable condition and belongs to
+      WRN, not internal restoration.
+  future_compound_examples:
+  - REP:100 + REP:0xx identifies the internal, target, or shared restoration condition
+    realized by or guiding the restorative process.
+  - REP:100 + MAT/MOV/LIF specifies physical mechanics, return path, or living effects
+    without reducing restoration to those domains.
+  - REP:100 + DAT/MIN/LOG specifies a checkpoint, recognition, evidence, or validation
+    while keeping the restorative process independent.
+  - REP:100 + CRE/STR/CON distinguishes replacement, reconstruction, structural reconfiguration,
+    and coordination from restoration itself.
+  later_era_notes: Later eras may lexicalize heal, mend, repair, rehabilitate, remediate,
+    recalibrate, reconcile, recover, reset, restore-from-backup, return-to-service,
+    and disaster recovery as descendants or typed compounds. Era Zero must preserve
+    the internal-origin / one-source-one-target / coordinated-multi-participant contrast
+    and must not let nonactualized 1x2 roots acquire planning or modal-strength semantics.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: REP:101
+    universal_slot: active inward process
+    family_qualified_transliteration: ya·kak
+    local_compact_root: kak
+    formal_carrier: ya-ki-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 4
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: active internal restoration
+  invariant_definition: An ongoing restorative transformation originating within one
+    reference entity by which that entity is entering its applicable internal restoration
+    condition.
+  semantic_center: 'substrate-neutral restorative transformation: internal restoration,
+    source-to-target restoration, and coordinated systemic restoration'
+  address_justification:
+    first_trit_1: Selects a restorative process, action, or transformation rather
+      than a restoration-condition entity, recoverability affordance, resource, record,
+      rule, or schedule.
+    second_trit: 'Selects inward/self scope: this root originates within one reference
+      entity and changes that entity toward its applicable internal restoration condition
+      without requiring a distinct external source; no competing family or temporal
+      phase is added by this axis.'
+    third_trit: Selects the active phase of the same internal-restoration process;
+      planning, queueing, schedule, futurity, permission, probability, and runtime
+      truth status remain separate.
+  inclusion_boundary: Includes only an active substrate-neutral restorative transformation
+    that originates within one reference entity and changes that entity toward its
+    applicable internal restoration condition without requiring a distinct external
+    source. If a distinct external source causes the change, use target restoration;
+    if one shared condition is realized across several participants, use systemic
+    restoration. The transformation may be realized physically, biologically, computationally,
+    informationally, socially, or conceptually, but it does not itself assert the
+    bearer, concrete mechanics, movement path, record, observer knowledge, validation,
+    maintenance, replacement, resource, recoverability, probability, schedule, or
+    causal history beyond the scope roles required by the invariant.
+  excluded_meanings:
+  - The restoration condition, bearer, restorative source, target, participant, material
+    object, organism, software component, institution, checkpoint, or data record
+    as an entity.
+  - Spatial movement, return, route traversal, physical force, biological mechanism,
+    data copying, structural reconfiguration, creation, replacement, or reconstruction
+    as such without the REP restorative transformation claim.
+  - Planning, intention, staging, queueing, scheduling, permission, readiness, probability,
+    futurity, obligation, or specification—especially for lexical 1x2.
+  - Inspection, validation, verification, certification, evidence collection, belief
+    revision, diagnosis, recognition, or measurement of a restoration condition.
+  - Maintenance, preservation, routine servicing, warning, containment, neutral coordination,
+    fabrication, replacement, reconstruction, or mere communication about restoration.
+  - Recoverability, repairability, restorative capacity, remedy availability, caregiver
+    relation, service contract, resource readiness, probability, or other continuing
+    capacity or relation.
+  nearest_neighbors:
+  - REP:100
+  - REP:102
+  - REP:111
+  - REP:121
+  - REP:001
+  - REP:201
+  same_family_contrast: REP:0xx owns internal, target, and shared restoration-condition
+    entities. REP:1xx owns restorative transformations toward realizing those conditions.
+    REP:2xx remains reserved for recoverability, repairability, and enabling restoration
+    relations. Internal restoration has no required distinct external source. Target
+    restoration preserves one source and one target as distinct roles. Systemic restoration
+    requires one coordinated transformation that realizes one shared restoration condition
+    across multiple participants. A completed REP:1xx root entails that the applicable
+    restoration condition was realized by the stated transformation at completion;
+    it does not entail that the result persists, that it was recorded or validated,
+    that maintenance continues, or that a continuing REP:2xx affordance holds unless
+    separately asserted.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this internal-restoration process is presently ongoing or states
+      that it has ceased; completion, reversal, and nonactualized availability remain
+      undecided.
+    '1': Affirms that this internal-restoration process is presently ongoing toward
+      the applicable restoration condition, without guaranteeing completion, persistence
+      of the result, recognition, validation, maintenance, or future success.
+    2/num: Leaves unresolved whether this internal-restoration process is presently
+      ongoing; the runtime marker does not select the completed or nonactualized lexical
+      sibling.
+  lexical_runtime_distinction: The lexical third trit permanently selects the active
+    member of this process triplet. Runtime `[2]/num` instead qualifies the truth,
+    applicability, or resolution of a token of that already-selected root; it never
+    changes the root into a planned, future, or different-phase process.
+  catalogue_title_guard: The concise catalogue title is controlled by the invariant
+    definition and must not be broadened with unstated mechanics, records, validation,
+    maintenance, replacement, result persistence, or temporal semantics.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: REP:101[1](ENTITY=device,CONDITION=condition)
+    literal_gloss: ongoing internal restoration
+    natural_english: The device is undergoing an internally originating restoration
+      toward its accepted condition.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: The restorative transformation originates within one reference entity
+      and does not require a distinct external source. The assertion does not add
+      a mechanism, record, validation, schedule, or guarantee beyond the invariant.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=organism)+REP:101[1](ENTITY=organism,CONDITION=condition)
+    literal_gloss: material realization plus ongoing internal restoration
+    natural_english: The organism is actively healing toward its applicable restored
+      condition.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: The restorative transformation originates within one reference entity
+      and does not require a distinct external source. MAT/LIF owns concrete mechanics;
+      REP owns restorative direction and scope.
+  - category: temporal_or_sequential
+    semantic_graph: REP:101[1](ENTITY=device,CONDITION=condition)+ORI(INTERVAL=service_window)
+    literal_gloss: ongoing internal restoration during an explicit interval
+    natural_english: During the service window, the device is undergoing an internally
+      originating restoration toward its accepted condition.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: ORI supplies temporal location; lexical phase is not tense or schedule.
+  - category: cross_family_compound
+    semantic_graph: DAT(BASELINE=d)+LOG(CRITERION=k)+REP:101[1](ENTITY=device,CONDITION=condition)
+    literal_gloss: baseline and criterion plus ongoing internal restoration
+    natural_english: The baseline and criterion specify the accepted condition toward
+      which the restorative transformation moves.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: The restorative transformation originates within one reference entity
+      and does not require a distinct external source. DAT and LOG describe references;
+      neither performs restoration.
+  - category: executable_or_programming
+    semantic_graph: REP:101[1](ENTITY=service,CONDITION=known_good)
+    literal_gloss: assert ongoing internal restoration
+    natural_english: The service is actively recovering toward its known-good condition.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: The restorative transformation originates within one reference entity
+      and does not require a distinct external source. Checkpoints, validation, replacement,
+      coordination, and recoverability require separate DAT/LOG/CRE/CON/REP:2xx assertions.
+    pseudocode: assert(restorative_process.matches?("REP:101"))
+  - category: counterexample
+    semantic_graph: WRN:101[1](ENTITY=device)
+    literal_gloss: ongoing internal degradation
+    natural_english: The device is deteriorating.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: must_not_use_this_root
+    analysis: Degradation moves toward a less acceptable condition and belongs to
+      WRN, not internal restoration.
+  future_compound_examples:
+  - REP:101 + REP:0xx identifies the internal, target, or shared restoration condition
+    realized by or guiding the restorative process.
+  - REP:101 + MAT/MOV/LIF specifies physical mechanics, return path, or living effects
+    without reducing restoration to those domains.
+  - REP:101 + DAT/MIN/LOG specifies a checkpoint, recognition, evidence, or validation
+    while keeping the restorative process independent.
+  - REP:101 + CRE/STR/CON distinguishes replacement, reconstruction, structural reconfiguration,
+    and coordination from restoration itself.
+  later_era_notes: Later eras may lexicalize heal, mend, repair, rehabilitate, remediate,
+    recalibrate, reconcile, recover, reset, restore-from-backup, return-to-service,
+    and disaster recovery as descendants or typed compounds. Era Zero must preserve
+    the internal-origin / one-source-one-target / coordinated-multi-participant contrast
+    and must not let nonactualized 1x2 roots acquire planning or modal-strength semantics.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: REP:102
+    universal_slot: pending inward process
+    family_qualified_transliteration: ya·kan
+    local_compact_root: kan
+    formal_carrier: ya-ki-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: nonactualized internal restoration
+  invariant_definition: A nonactualized restorative transformation originating within
+    one reference entity by which that entity would enter its applicable internal
+    restoration condition.
+  semantic_center: 'substrate-neutral restorative transformation: internal restoration,
+    source-to-target restoration, and coordinated systemic restoration'
+  address_justification:
+    first_trit_1: Selects a restorative process, action, or transformation rather
+      than a restoration-condition entity, recoverability affordance, resource, record,
+      rule, or schedule.
+    second_trit: 'Selects inward/self scope: this root originates within one reference
+      entity and changes that entity toward its applicable internal restoration condition
+      without requiring a distinct external source; no competing family or temporal
+      phase is added by this axis.'
+    third_trit: Selects the nonactualized phase of the same internal-restoration process;
+      planning, queueing, schedule, futurity, permission, probability, and runtime
+      truth status remain separate.
+  inclusion_boundary: Includes only a nonactualized substrate-neutral restorative
+    transformation that originates within one reference entity and changes that entity
+    toward its applicable internal restoration condition without requiring a distinct
+    external source. If a distinct external source causes the change, use target restoration;
+    if one shared condition is realized across several participants, use systemic
+    restoration. The transformation may be realized physically, biologically, computationally,
+    informationally, socially, or conceptually, but it does not itself assert the
+    bearer, concrete mechanics, movement path, record, observer knowledge, validation,
+    maintenance, replacement, resource, recoverability, probability, schedule, or
+    causal history beyond the scope roles required by the invariant.
+  excluded_meanings:
+  - The restoration condition, bearer, restorative source, target, participant, material
+    object, organism, software component, institution, checkpoint, or data record
+    as an entity.
+  - Spatial movement, return, route traversal, physical force, biological mechanism,
+    data copying, structural reconfiguration, creation, replacement, or reconstruction
+    as such without the REP restorative transformation claim.
+  - Planning, intention, staging, queueing, scheduling, permission, readiness, probability,
+    futurity, obligation, or specification—especially for lexical 1x2.
+  - Inspection, validation, verification, certification, evidence collection, belief
+    revision, diagnosis, recognition, or measurement of a restoration condition.
+  - Maintenance, preservation, routine servicing, warning, containment, neutral coordination,
+    fabrication, replacement, reconstruction, or mere communication about restoration.
+  - Recoverability, repairability, restorative capacity, remedy availability, caregiver
+    relation, service contract, resource readiness, probability, or other continuing
+    capacity or relation.
+  nearest_neighbors:
+  - REP:100
+  - REP:101
+  - REP:112
+  - REP:122
+  - REP:002
+  - REP:202
+  same_family_contrast: REP:0xx owns internal, target, and shared restoration-condition
+    entities. REP:1xx owns restorative transformations toward realizing those conditions.
+    REP:2xx remains reserved for recoverability, repairability, and enabling restoration
+    relations. Internal restoration has no required distinct external source. Target
+    restoration preserves one source and one target as distinct roles. Systemic restoration
+    requires one coordinated transformation that realizes one shared restoration condition
+    across multiple participants. A completed REP:1xx root entails that the applicable
+    restoration condition was realized by the stated transformation at completion;
+    it does not entail that the result persists, that it was recorded or validated,
+    that maintenance continues, or that a continuing REP:2xx affordance holds unless
+    separately asserted.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this internal-restoration process holds even as a valid nonactualized
+      transformation in the stated context; it does not assert activity or completion.
+    '1': Affirms this internal-restoration process as nonactualized—neither ongoing
+      nor completed—without adding plan, intention, queue, schedule, permission, readiness,
+      probability, or future time.
+    2/num: Leaves unresolved even the assertion that this internal-restoration process
+      is a valid nonactualized transformation; lexical nonactualization and runtime
+      uncertainty remain distinct.
+  lexical_runtime_distinction: The lexical third trit permanently selects the nonactualized
+    member of this process triplet. Runtime `[2]/num` instead qualifies the truth,
+    applicability, or resolution of a token of that already-selected root; it never
+    changes the root into a planned, future, or different-phase process.
+  catalogue_title_guard: The word `nonactualized` in the concise catalogue title denotes
+    a valid restorative process that is neither ongoing nor completed. It does not
+    assert capability, readiness, probability, permission, intention, schedule, future
+    time, or eventual realization.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: REP:102[1](ENTITY=device,CONDITION=condition)
+    literal_gloss: nonactualized internal restoration
+    natural_english: The internally originating restoration by which the device would
+      enter its accepted condition is nonactualized.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: The restorative transformation originates within one reference entity
+      and does not require a distinct external source. The assertion does not add
+      a mechanism, record, validation, schedule, or guarantee beyond the invariant.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=organism)+REP:102[1](ENTITY=organism,CONDITION=condition)
+    literal_gloss: material realization plus nonactualized internal restoration
+    natural_english: The organism's internally originating healing process is nonactualized.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: The restorative transformation originates within one reference entity
+      and does not require a distinct external source. MAT/LIF owns concrete mechanics;
+      REP owns restorative direction and scope.
+  - category: temporal_or_sequential
+    semantic_graph: REP:102[1](ENTITY=device,CONDITION=condition)+ORI(INTERVAL=service_window)
+    literal_gloss: nonactualized internal restoration during an explicit interval
+    natural_english: During the service window, the internally originating restoration
+      by which the device would enter its accepted condition is nonactualized.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: ORI supplies temporal location; lexical phase is not tense or schedule.
+  - category: cross_family_compound
+    semantic_graph: DAT(BASELINE=d)+LOG(CRITERION=k)+REP:102[1](ENTITY=device,CONDITION=condition)
+    literal_gloss: baseline and criterion plus nonactualized internal restoration
+    natural_english: The baseline and criterion specify the accepted condition toward
+      which the restorative transformation moves.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: The restorative transformation originates within one reference entity
+      and does not require a distinct external source. DAT and LOG describe references;
+      neither performs restoration.
+  - category: executable_or_programming
+    semantic_graph: REP:102[1](ENTITY=service,CONDITION=known_good)
+    literal_gloss: assert nonactualized internal restoration
+    natural_english: The service's internally originating recovery process is nonactualized.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: The restorative transformation originates within one reference entity
+      and does not require a distinct external source. Checkpoints, validation, replacement,
+      coordination, and recoverability require separate DAT/LOG/CRE/CON/REP:2xx assertions.
+    pseudocode: assert(restorative_process.matches?("REP:102"))
+  - category: counterexample
+    semantic_graph: WRN:101[1](ENTITY=device)
+    literal_gloss: ongoing internal degradation
+    natural_english: The device is deteriorating.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: must_not_use_this_root
+    analysis: Degradation moves toward a less acceptable condition and belongs to
+      WRN, not internal restoration.
+  future_compound_examples:
+  - REP:102 + REP:0xx identifies the internal, target, or shared restoration condition
+    realized by or guiding the restorative process.
+  - REP:102 + MAT/MOV/LIF specifies physical mechanics, return path, or living effects
+    without reducing restoration to those domains.
+  - REP:102 + DAT/MIN/LOG specifies a checkpoint, recognition, evidence, or validation
+    while keeping the restorative process independent.
+  - REP:102 + CRE/STR/CON distinguishes replacement, reconstruction, structural reconfiguration,
+    and coordination from restoration itself.
+  later_era_notes: Later eras may lexicalize heal, mend, repair, rehabilitate, remediate,
+    recalibrate, reconcile, recover, reset, restore-from-backup, return-to-service,
+    and disaster recovery as descendants or typed compounds. Era Zero must preserve
+    the internal-origin / one-source-one-target / coordinated-multi-participant contrast
+    and must not let nonactualized 1x2 roots acquire planning or modal-strength semantics.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: REP:110
+    universal_slot: completed outward process
+    family_qualified_transliteration: ya·kom
+    local_compact_root: kom
+    formal_carrier: ya-ki-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 4
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: completed target restoration
+  invariant_definition: Completion of a restorative transformation by which one distinct
+    source causes one reference target to enter its applicable target restoration
+    condition.
+  semantic_center: 'substrate-neutral restorative transformation: internal restoration,
+    source-to-target restoration, and coordinated systemic restoration'
+  address_justification:
+    first_trit_1: Selects a restorative process, action, or transformation rather
+      than a restoration-condition entity, recoverability affordance, resource, record,
+      rule, or schedule.
+    second_trit: 'Selects outward/target scope: this root uses one distinct source
+      to cause one reference target to enter its applicable target restoration condition
+      while source and target remain separately identified; no competing family or
+      temporal phase is added by this axis.'
+    third_trit: Selects the completed phase of the same target-restoration process;
+      planning, queueing, schedule, futurity, permission, probability, and runtime
+      truth status remain separate.
+  inclusion_boundary: Includes only a completed substrate-neutral restorative transformation
+    that uses one distinct source to cause one reference target to enter its applicable
+    target restoration condition while source and target remain separately identified.
+    The restorative source remains distinct from one target. If the change originates
+    inside the target without a distinct source, use internal restoration; if one
+    shared condition becomes realized across several participants, use systemic restoration.
+    The transformation may be realized physically, biologically, computationally,
+    informationally, socially, or conceptually, but it does not itself assert the
+    bearer, concrete mechanics, movement path, record, observer knowledge, validation,
+    maintenance, replacement, resource, recoverability, probability, schedule, or
+    causal history beyond the scope roles required by the invariant.
+  excluded_meanings:
+  - The restoration condition, bearer, restorative source, target, participant, material
+    object, organism, software component, institution, checkpoint, or data record
+    as an entity.
+  - Spatial movement, return, route traversal, physical force, biological mechanism,
+    data copying, structural reconfiguration, creation, replacement, or reconstruction
+    as such without the REP restorative transformation claim.
+  - Planning, intention, staging, queueing, scheduling, permission, readiness, probability,
+    futurity, obligation, or specification—especially for lexical 1x2.
+  - Inspection, validation, verification, certification, evidence collection, belief
+    revision, diagnosis, recognition, or measurement of a restoration condition.
+  - Maintenance, preservation, routine servicing, warning, containment, neutral coordination,
+    fabrication, replacement, reconstruction, or mere communication about restoration.
+  - Recoverability, repairability, restorative capacity, remedy availability, caregiver
+    relation, service contract, resource readiness, probability, or other continuing
+    capacity or relation.
+  nearest_neighbors:
+  - REP:111
+  - REP:112
+  - REP:100
+  - REP:120
+  - REP:010
+  - REP:210
+  same_family_contrast: REP:0xx owns internal, target, and shared restoration-condition
+    entities. REP:1xx owns restorative transformations toward realizing those conditions.
+    REP:2xx remains reserved for recoverability, repairability, and enabling restoration
+    relations. Internal restoration has no required distinct external source. Target
+    restoration preserves one source and one target as distinct roles. Systemic restoration
+    requires one coordinated transformation that realizes one shared restoration condition
+    across multiple participants. A completed REP:1xx root entails that the applicable
+    restoration condition was realized by the stated transformation at completion;
+    it does not entail that the result persists, that it was recorded or validated,
+    that maintenance continues, or that a continuing REP:2xx affordance holds unless
+    separately asserted.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this target-restoration process reached completion in the stated
+      restoration context; it does not assert that the active or nonactualized sibling
+      holds.
+    '1': Affirms that this target-restoration process reached completion and realized
+      the applicable restoration condition, without asserting the concrete mechanism,
+      record, validation, permanence, maintenance, replacement, or continuing recoverability.
+    2/num: Leaves unresolved whether this target-restoration process reached completion
+      or whether that completed result remains applicable; the lexical root stays
+      completed.
+  lexical_runtime_distinction: The lexical third trit permanently selects the completed
+    member of this process triplet. Runtime `[2]/num` instead qualifies the truth,
+    applicability, or resolution of a token of that already-selected root; it never
+    changes the root into a planned, future, or different-phase process.
+  catalogue_title_guard: The concise catalogue title is controlled by the invariant
+    definition and must not be broadened with unstated mechanics, records, validation,
+    maintenance, replacement, result persistence, or temporal semantics.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: REP:110[1](ENTITY=target,SOURCE=technician)
+    literal_gloss: completed target restoration
+    natural_english: The technician completed a restorative transformation that returned
+      the target to its accepted condition.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One distinct source and one target remain separately identified while
+      the source causes restorative change in the target. The assertion does not add
+      a mechanism, record, validation, schedule, or guarantee beyond the invariant.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=panel)+REP:110[1](ENTITY=panel,SOURCE=repairer)
+    literal_gloss: material realization plus completed target restoration
+    natural_english: The repairer completed restoration of the panel to its accepted
+      target condition.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One distinct source and one target remain separately identified while
+      the source causes restorative change in the target. MAT/LIF owns concrete mechanics;
+      REP owns restorative direction and scope.
+  - category: temporal_or_sequential
+    semantic_graph: REP:110[1](ENTITY=target,SOURCE=technician)+ORI(INTERVAL=service_window)
+    literal_gloss: completed target restoration during an explicit interval
+    natural_english: During the service window, the technician completed a restorative
+      transformation that returned the target to its accepted condition.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: ORI supplies temporal location; lexical phase is not tense or schedule.
+  - category: cross_family_compound
+    semantic_graph: DAT(BASELINE=d)+LOG(CRITERION=k)+REP:110[1](ENTITY=target,SOURCE=technician)
+    literal_gloss: baseline and criterion plus completed target restoration
+    natural_english: The baseline and criterion specify the accepted condition toward
+      which the restorative transformation moves.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One distinct source and one target remain separately identified while
+      the source causes restorative change in the target. DAT and LOG describe references;
+      neither performs restoration.
+  - category: executable_or_programming
+    semantic_graph: REP:110[1](ENTITY=database,SOURCE=recovery_service)
+    literal_gloss: assert completed target restoration
+    natural_english: The recovery service completed restoration of the database to
+      its accepted target condition.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One distinct source and one target remain separately identified while
+      the source causes restorative change in the target. Checkpoints, validation,
+      replacement, coordination, and recoverability require separate DAT/LOG/CRE/CON/REP:2xx
+      assertions.
+    pseudocode: assert(restorative_process.matches?("REP:110"))
+  - category: counterexample
+    semantic_graph: CRE:111[1](SOURCE=factory,TARGET=part)
+    literal_gloss: active target fabrication
+    natural_english: The factory is fabricating a replacement part.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: must_not_use_this_root
+    analysis: Creation or replacement belongs to CRE unless a separate REP claim asserts
+      restoration of the target.
+  future_compound_examples:
+  - REP:110 + REP:0xx identifies the internal, target, or shared restoration condition
+    realized by or guiding the restorative process.
+  - REP:110 + MAT/MOV/LIF specifies physical mechanics, return path, or living effects
+    without reducing restoration to those domains.
+  - REP:110 + DAT/MIN/LOG specifies a checkpoint, recognition, evidence, or validation
+    while keeping the restorative process independent.
+  - REP:110 + CRE/STR/CON distinguishes replacement, reconstruction, structural reconfiguration,
+    and coordination from restoration itself.
+  later_era_notes: Later eras may lexicalize heal, mend, repair, rehabilitate, remediate,
+    recalibrate, reconcile, recover, reset, restore-from-backup, return-to-service,
+    and disaster recovery as descendants or typed compounds. Era Zero must preserve
+    the internal-origin / one-source-one-target / coordinated-multi-participant contrast
+    and must not let nonactualized 1x2 roots acquire planning or modal-strength semantics.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: REP:111
+    universal_slot: active outward process
+    family_qualified_transliteration: ya·kok
+    local_compact_root: kok
+    formal_carrier: ya-ki-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 6
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: active target restoration
+  invariant_definition: An ongoing restorative transformation by which one distinct
+    source causes one reference target to enter its applicable target restoration
+    condition.
+  semantic_center: 'substrate-neutral restorative transformation: internal restoration,
+    source-to-target restoration, and coordinated systemic restoration'
+  address_justification:
+    first_trit_1: Selects a restorative process, action, or transformation rather
+      than a restoration-condition entity, recoverability affordance, resource, record,
+      rule, or schedule.
+    second_trit: 'Selects outward/target scope: this root uses one distinct source
+      to cause one reference target to enter its applicable target restoration condition
+      while source and target remain separately identified; no competing family or
+      temporal phase is added by this axis.'
+    third_trit: Selects the active phase of the same target-restoration process; planning,
+      queueing, schedule, futurity, permission, probability, and runtime truth status
+      remain separate.
+  inclusion_boundary: Includes only an active substrate-neutral restorative transformation
+    that uses one distinct source to cause one reference target to enter its applicable
+    target restoration condition while source and target remain separately identified.
+    The restorative source remains distinct from one target. If the change originates
+    inside the target without a distinct source, use internal restoration; if one
+    shared condition becomes realized across several participants, use systemic restoration.
+    The transformation may be realized physically, biologically, computationally,
+    informationally, socially, or conceptually, but it does not itself assert the
+    bearer, concrete mechanics, movement path, record, observer knowledge, validation,
+    maintenance, replacement, resource, recoverability, probability, schedule, or
+    causal history beyond the scope roles required by the invariant.
+  excluded_meanings:
+  - The restoration condition, bearer, restorative source, target, participant, material
+    object, organism, software component, institution, checkpoint, or data record
+    as an entity.
+  - Spatial movement, return, route traversal, physical force, biological mechanism,
+    data copying, structural reconfiguration, creation, replacement, or reconstruction
+    as such without the REP restorative transformation claim.
+  - Planning, intention, staging, queueing, scheduling, permission, readiness, probability,
+    futurity, obligation, or specification—especially for lexical 1x2.
+  - Inspection, validation, verification, certification, evidence collection, belief
+    revision, diagnosis, recognition, or measurement of a restoration condition.
+  - Maintenance, preservation, routine servicing, warning, containment, neutral coordination,
+    fabrication, replacement, reconstruction, or mere communication about restoration.
+  - Recoverability, repairability, restorative capacity, remedy availability, caregiver
+    relation, service contract, resource readiness, probability, or other continuing
+    capacity or relation.
+  nearest_neighbors:
+  - REP:110
+  - REP:112
+  - REP:101
+  - REP:121
+  - REP:011
+  - REP:211
+  same_family_contrast: REP:0xx owns internal, target, and shared restoration-condition
+    entities. REP:1xx owns restorative transformations toward realizing those conditions.
+    REP:2xx remains reserved for recoverability, repairability, and enabling restoration
+    relations. Internal restoration has no required distinct external source. Target
+    restoration preserves one source and one target as distinct roles. Systemic restoration
+    requires one coordinated transformation that realizes one shared restoration condition
+    across multiple participants. A completed REP:1xx root entails that the applicable
+    restoration condition was realized by the stated transformation at completion;
+    it does not entail that the result persists, that it was recorded or validated,
+    that maintenance continues, or that a continuing REP:2xx affordance holds unless
+    separately asserted.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this target-restoration process is presently ongoing or states
+      that it has ceased; completion, reversal, and nonactualized availability remain
+      undecided.
+    '1': Affirms that this target-restoration process is presently ongoing toward
+      the applicable restoration condition, without guaranteeing completion, persistence
+      of the result, recognition, validation, maintenance, or future success.
+    2/num: Leaves unresolved whether this target-restoration process is presently
+      ongoing; the runtime marker does not select the completed or nonactualized lexical
+      sibling.
+  lexical_runtime_distinction: The lexical third trit permanently selects the active
+    member of this process triplet. Runtime `[2]/num` instead qualifies the truth,
+    applicability, or resolution of a token of that already-selected root; it never
+    changes the root into a planned, future, or different-phase process.
+  catalogue_title_guard: The concise catalogue title is controlled by the invariant
+    definition and must not be broadened with unstated mechanics, records, validation,
+    maintenance, replacement, result persistence, or temporal semantics.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: REP:111[1](ENTITY=target,SOURCE=technician)
+    literal_gloss: ongoing target restoration
+    natural_english: The technician is restoring the target toward its accepted condition.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One distinct source and one target remain separately identified while
+      the source causes restorative change in the target. The assertion does not add
+      a mechanism, record, validation, schedule, or guarantee beyond the invariant.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=panel)+REP:111[1](ENTITY=panel,SOURCE=repairer)
+    literal_gloss: material realization plus ongoing target restoration
+    natural_english: The repairer is restoring the panel toward its accepted target
+      condition.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One distinct source and one target remain separately identified while
+      the source causes restorative change in the target. MAT/LIF owns concrete mechanics;
+      REP owns restorative direction and scope.
+  - category: temporal_or_sequential
+    semantic_graph: REP:111[1](ENTITY=target,SOURCE=technician)+ORI(INTERVAL=service_window)
+    literal_gloss: ongoing target restoration during an explicit interval
+    natural_english: During the service window, the technician is restoring the target
+      toward its accepted condition.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: ORI supplies temporal location; lexical phase is not tense or schedule.
+  - category: cross_family_compound
+    semantic_graph: DAT(BASELINE=d)+LOG(CRITERION=k)+REP:111[1](ENTITY=target,SOURCE=technician)
+    literal_gloss: baseline and criterion plus ongoing target restoration
+    natural_english: The baseline and criterion specify the accepted condition toward
+      which the restorative transformation moves.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One distinct source and one target remain separately identified while
+      the source causes restorative change in the target. DAT and LOG describe references;
+      neither performs restoration.
+  - category: executable_or_programming
+    semantic_graph: REP:111[1](ENTITY=database,SOURCE=recovery_service)
+    literal_gloss: assert ongoing target restoration
+    natural_english: The recovery service is restoring the database toward its accepted
+      target condition.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One distinct source and one target remain separately identified while
+      the source causes restorative change in the target. Checkpoints, validation,
+      replacement, coordination, and recoverability require separate DAT/LOG/CRE/CON/REP:2xx
+      assertions.
+    pseudocode: assert(restorative_process.matches?("REP:111"))
+  - category: counterexample
+    semantic_graph: CRE:111[1](SOURCE=factory,TARGET=part)
+    literal_gloss: active target fabrication
+    natural_english: The factory is fabricating a replacement part.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: must_not_use_this_root
+    analysis: Creation or replacement belongs to CRE unless a separate REP claim asserts
+      restoration of the target.
+  future_compound_examples:
+  - REP:111 + REP:0xx identifies the internal, target, or shared restoration condition
+    realized by or guiding the restorative process.
+  - REP:111 + MAT/MOV/LIF specifies physical mechanics, return path, or living effects
+    without reducing restoration to those domains.
+  - REP:111 + DAT/MIN/LOG specifies a checkpoint, recognition, evidence, or validation
+    while keeping the restorative process independent.
+  - REP:111 + CRE/STR/CON distinguishes replacement, reconstruction, structural reconfiguration,
+    and coordination from restoration itself.
+  later_era_notes: Later eras may lexicalize heal, mend, repair, rehabilitate, remediate,
+    recalibrate, reconcile, recover, reset, restore-from-backup, return-to-service,
+    and disaster recovery as descendants or typed compounds. Era Zero must preserve
+    the internal-origin / one-source-one-target / coordinated-multi-participant contrast
+    and must not let nonactualized 1x2 roots acquire planning or modal-strength semantics.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: REP:112
+    universal_slot: pending outward process
+    family_qualified_transliteration: ya·kon
+    local_compact_root: kon
+    formal_carrier: ya-ki-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: nonactualized target restoration
+  invariant_definition: A nonactualized restorative transformation by which one distinct
+    source would cause one reference target to enter its applicable target restoration
+    condition.
+  semantic_center: 'substrate-neutral restorative transformation: internal restoration,
+    source-to-target restoration, and coordinated systemic restoration'
+  address_justification:
+    first_trit_1: Selects a restorative process, action, or transformation rather
+      than a restoration-condition entity, recoverability affordance, resource, record,
+      rule, or schedule.
+    second_trit: 'Selects outward/target scope: this root uses one distinct source
+      to cause one reference target to enter its applicable target restoration condition
+      while source and target remain separately identified; no competing family or
+      temporal phase is added by this axis.'
+    third_trit: Selects the nonactualized phase of the same target-restoration process;
+      planning, queueing, schedule, futurity, permission, probability, and runtime
+      truth status remain separate.
+  inclusion_boundary: Includes only a nonactualized substrate-neutral restorative
+    transformation that uses one distinct source to cause one reference target to
+    enter its applicable target restoration condition while source and target remain
+    separately identified. The restorative source remains distinct from one target.
+    If the change originates inside the target without a distinct source, use internal
+    restoration; if one shared condition becomes realized across several participants,
+    use systemic restoration. The transformation may be realized physically, biologically,
+    computationally, informationally, socially, or conceptually, but it does not itself
+    assert the bearer, concrete mechanics, movement path, record, observer knowledge,
+    validation, maintenance, replacement, resource, recoverability, probability, schedule,
+    or causal history beyond the scope roles required by the invariant.
+  excluded_meanings:
+  - The restoration condition, bearer, restorative source, target, participant, material
+    object, organism, software component, institution, checkpoint, or data record
+    as an entity.
+  - Spatial movement, return, route traversal, physical force, biological mechanism,
+    data copying, structural reconfiguration, creation, replacement, or reconstruction
+    as such without the REP restorative transformation claim.
+  - Planning, intention, staging, queueing, scheduling, permission, readiness, probability,
+    futurity, obligation, or specification—especially for lexical 1x2.
+  - Inspection, validation, verification, certification, evidence collection, belief
+    revision, diagnosis, recognition, or measurement of a restoration condition.
+  - Maintenance, preservation, routine servicing, warning, containment, neutral coordination,
+    fabrication, replacement, reconstruction, or mere communication about restoration.
+  - Recoverability, repairability, restorative capacity, remedy availability, caregiver
+    relation, service contract, resource readiness, probability, or other continuing
+    capacity or relation.
+  nearest_neighbors:
+  - REP:110
+  - REP:111
+  - REP:102
+  - REP:122
+  - REP:012
+  - REP:212
+  same_family_contrast: REP:0xx owns internal, target, and shared restoration-condition
+    entities. REP:1xx owns restorative transformations toward realizing those conditions.
+    REP:2xx remains reserved for recoverability, repairability, and enabling restoration
+    relations. Internal restoration has no required distinct external source. Target
+    restoration preserves one source and one target as distinct roles. Systemic restoration
+    requires one coordinated transformation that realizes one shared restoration condition
+    across multiple participants. A completed REP:1xx root entails that the applicable
+    restoration condition was realized by the stated transformation at completion;
+    it does not entail that the result persists, that it was recorded or validated,
+    that maintenance continues, or that a continuing REP:2xx affordance holds unless
+    separately asserted.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this target-restoration process holds even as a valid nonactualized
+      transformation in the stated context; it does not assert activity or completion.
+    '1': Affirms this target-restoration process as nonactualized—neither ongoing
+      nor completed—without adding plan, intention, queue, schedule, permission, readiness,
+      probability, or future time.
+    2/num: Leaves unresolved even the assertion that this target-restoration process
+      is a valid nonactualized transformation; lexical nonactualization and runtime
+      uncertainty remain distinct.
+  lexical_runtime_distinction: The lexical third trit permanently selects the nonactualized
+    member of this process triplet. Runtime `[2]/num` instead qualifies the truth,
+    applicability, or resolution of a token of that already-selected root; it never
+    changes the root into a planned, future, or different-phase process.
+  catalogue_title_guard: The word `nonactualized` in the concise catalogue title denotes
+    a valid restorative process that is neither ongoing nor completed. It does not
+    assert capability, readiness, probability, permission, intention, schedule, future
+    time, or eventual realization.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: REP:112[1](ENTITY=target,SOURCE=technician)
+    literal_gloss: nonactualized target restoration
+    natural_english: The technician-to-target restoration process is nonactualized.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One distinct source and one target remain separately identified while
+      the source causes restorative change in the target. The assertion does not add
+      a mechanism, record, validation, schedule, or guarantee beyond the invariant.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=panel)+REP:112[1](ENTITY=panel,SOURCE=repairer)
+    literal_gloss: material realization plus nonactualized target restoration
+    natural_english: The repairer's restoration of the panel is nonactualized.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One distinct source and one target remain separately identified while
+      the source causes restorative change in the target. MAT/LIF owns concrete mechanics;
+      REP owns restorative direction and scope.
+  - category: temporal_or_sequential
+    semantic_graph: REP:112[1](ENTITY=target,SOURCE=technician)+ORI(INTERVAL=service_window)
+    literal_gloss: nonactualized target restoration during an explicit interval
+    natural_english: During the service window, the technician-to-target restoration
+      process is nonactualized.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: ORI supplies temporal location; lexical phase is not tense or schedule.
+  - category: cross_family_compound
+    semantic_graph: DAT(BASELINE=d)+LOG(CRITERION=k)+REP:112[1](ENTITY=target,SOURCE=technician)
+    literal_gloss: baseline and criterion plus nonactualized target restoration
+    natural_english: The baseline and criterion specify the accepted condition toward
+      which the restorative transformation moves.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One distinct source and one target remain separately identified while
+      the source causes restorative change in the target. DAT and LOG describe references;
+      neither performs restoration.
+  - category: executable_or_programming
+    semantic_graph: REP:112[1](ENTITY=database,SOURCE=recovery_service)
+    literal_gloss: assert nonactualized target restoration
+    natural_english: The recovery service's target restoration is nonactualized.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One distinct source and one target remain separately identified while
+      the source causes restorative change in the target. Checkpoints, validation,
+      replacement, coordination, and recoverability require separate DAT/LOG/CRE/CON/REP:2xx
+      assertions.
+    pseudocode: assert(restorative_process.matches?("REP:112"))
+  - category: counterexample
+    semantic_graph: CRE:111[1](SOURCE=factory,TARGET=part)
+    literal_gloss: active target fabrication
+    natural_english: The factory is fabricating a replacement part.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: must_not_use_this_root
+    analysis: Creation or replacement belongs to CRE unless a separate REP claim asserts
+      restoration of the target.
+  future_compound_examples:
+  - REP:112 + REP:0xx identifies the internal, target, or shared restoration condition
+    realized by or guiding the restorative process.
+  - REP:112 + MAT/MOV/LIF specifies physical mechanics, return path, or living effects
+    without reducing restoration to those domains.
+  - REP:112 + DAT/MIN/LOG specifies a checkpoint, recognition, evidence, or validation
+    while keeping the restorative process independent.
+  - REP:112 + CRE/STR/CON distinguishes replacement, reconstruction, structural reconfiguration,
+    and coordination from restoration itself.
+  later_era_notes: Later eras may lexicalize heal, mend, repair, rehabilitate, remediate,
+    recalibrate, reconcile, recover, reset, restore-from-backup, return-to-service,
+    and disaster recovery as descendants or typed compounds. Era Zero must preserve
+    the internal-origin / one-source-one-target / coordinated-multi-participant contrast
+    and must not let nonactualized 1x2 roots acquire planning or modal-strength semantics.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: REP:120
+    universal_slot: completed systemic process
+    family_qualified_transliteration: ya·kim
+    local_compact_root: kim
+    formal_carrier: ya-ki-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: completed systemic restoration
+  invariant_definition: Completion of a coordinated restorative transformation by
+    which one shared restoration condition becomes realized across multiple participant
+    entities within one shared system.
+  semantic_center: 'substrate-neutral restorative transformation: internal restoration,
+    source-to-target restoration, and coordinated systemic restoration'
+  address_justification:
+    first_trit_1: Selects a restorative process, action, or transformation rather
+      than a restoration-condition entity, recoverability affordance, resource, record,
+      rule, or schedule.
+    second_trit: 'Selects shared/systemic scope: this root coordinates restorative
+      change by which one shared restoration condition becomes realized across multiple
+      participant entities within one shared system; no competing family or temporal
+      phase is added by this axis.'
+    third_trit: Selects the completed phase of the same systemic-restoration process;
+      planning, queueing, schedule, futurity, permission, probability, and runtime
+      truth status remain separate.
+  inclusion_boundary: Includes only a completed substrate-neutral restorative transformation
+    that coordinates restorative change by which one shared restoration condition
+    becomes realized across multiple participant entities within one shared system.
+    One coordinated restorative transformation must realize one shared restoration
+    condition across multiple participants. Several unrelated repairs or one source
+    restoring one target do not satisfy systemic scope. The transformation may be
+    realized physically, biologically, computationally, informationally, socially,
+    or conceptually, but it does not itself assert the bearer, concrete mechanics,
+    movement path, record, observer knowledge, validation, maintenance, replacement,
+    resource, recoverability, probability, schedule, or causal history beyond the
+    scope roles required by the invariant.
+  excluded_meanings:
+  - The restoration condition, bearer, restorative source, target, participant, material
+    object, organism, software component, institution, checkpoint, or data record
+    as an entity.
+  - Spatial movement, return, route traversal, physical force, biological mechanism,
+    data copying, structural reconfiguration, creation, replacement, or reconstruction
+    as such without the REP restorative transformation claim.
+  - Planning, intention, staging, queueing, scheduling, permission, readiness, probability,
+    futurity, obligation, or specification—especially for lexical 1x2.
+  - Inspection, validation, verification, certification, evidence collection, belief
+    revision, diagnosis, recognition, or measurement of a restoration condition.
+  - Maintenance, preservation, routine servicing, warning, containment, neutral coordination,
+    fabrication, replacement, reconstruction, or mere communication about restoration.
+  - Recoverability, repairability, restorative capacity, remedy availability, caregiver
+    relation, service contract, resource readiness, probability, or other continuing
+    capacity or relation.
+  nearest_neighbors:
+  - REP:121
+  - REP:122
+  - REP:100
+  - REP:110
+  - REP:020
+  - REP:220
+  same_family_contrast: REP:0xx owns internal, target, and shared restoration-condition
+    entities. REP:1xx owns restorative transformations toward realizing those conditions.
+    REP:2xx remains reserved for recoverability, repairability, and enabling restoration
+    relations. Internal restoration has no required distinct external source. Target
+    restoration preserves one source and one target as distinct roles. Systemic restoration
+    requires one coordinated transformation that realizes one shared restoration condition
+    across multiple participants. A completed REP:1xx root entails that the applicable
+    restoration condition was realized by the stated transformation at completion;
+    it does not entail that the result persists, that it was recorded or validated,
+    that maintenance continues, or that a continuing REP:2xx affordance holds unless
+    separately asserted.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this systemic-restoration process reached completion in the stated
+      restoration context; it does not assert that the active or nonactualized sibling
+      holds.
+    '1': Affirms that this systemic-restoration process reached completion and realized
+      the applicable restoration condition, without asserting the concrete mechanism,
+      record, validation, permanence, maintenance, replacement, or continuing recoverability.
+    2/num: Leaves unresolved whether this systemic-restoration process reached completion
+      or whether that completed result remains applicable; the lexical root stays
+      completed.
+  lexical_runtime_distinction: The lexical third trit permanently selects the completed
+    member of this process triplet. Runtime `[2]/num` instead qualifies the truth,
+    applicability, or resolution of a token of that already-selected root; it never
+    changes the root into a planned, future, or different-phase process.
+  catalogue_title_guard: The concise catalogue title is controlled by the invariant
+    definition and must not be broadened with unstated mechanics, records, validation,
+    maintenance, replacement, result persistence, or temporal semantics.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: REP:120[1](ENTITY=community_system,PARTICIPANTS=participants)
+    literal_gloss: completed systemic restoration
+    natural_english: The participants completed one coordinated transformation that
+      realized the shared restoration condition.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One coordinated restorative transformation makes one shared restoration
+      condition realized across multiple participants in a shared system. The assertion
+      does not add a mechanism, record, validation, schedule, or guarantee beyond
+      the invariant.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=facility)+REP:120[1](ENTITY=facility,PARTICIPANTS=zones)
+    literal_gloss: material realization plus completed systemic restoration
+    natural_english: The facility completed coordinated restoration across its coupled
+      zones.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One coordinated restorative transformation makes one shared restoration
+      condition realized across multiple participants in a shared system. MAT/LIF
+      owns concrete mechanics; REP owns restorative direction and scope.
+  - category: temporal_or_sequential
+    semantic_graph: REP:120[1](ENTITY=community_system,PARTICIPANTS=participants)+ORI(INTERVAL=service_window)
+    literal_gloss: completed systemic restoration during an explicit interval
+    natural_english: During the service window, the participants completed one coordinated
+      transformation that realized the shared restoration condition.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: ORI supplies temporal location; lexical phase is not tense or schedule.
+  - category: cross_family_compound
+    semantic_graph: DAT(BASELINE=d)+LOG(CRITERION=k)+REP:120[1](ENTITY=community_system,PARTICIPANTS=participants)
+    literal_gloss: baseline and criterion plus completed systemic restoration
+    natural_english: The baseline and criterion specify the accepted condition toward
+      which the restorative transformation moves.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One coordinated restorative transformation makes one shared restoration
+      condition realized across multiple participants in a shared system. DAT and
+      LOG describe references; neither performs restoration.
+  - category: executable_or_programming
+    semantic_graph: REP:120[1](ENTITY=cluster,PARTICIPANTS=nodes)
+    literal_gloss: assert completed systemic restoration
+    natural_english: The cluster completed coordinated restoration of service across
+      its nodes.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One coordinated restorative transformation makes one shared restoration
+      condition realized across multiple participants in a shared system. Checkpoints,
+      validation, replacement, coordination, and recoverability require separate DAT/LOG/CRE/CON/REP:2xx
+      assertions.
+    pseudocode: assert(restorative_process.matches?("REP:120"))
+  - category: counterexample
+    semantic_graph: CON:121[1](PARTICIPANTS=nodes,EXPRESSION=updates)
+    literal_gloss: active coordinated exchange
+    natural_english: The nodes are coordinating updates.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: must_not_use_this_root
+    analysis: Coordination alone belongs to CON and does not entail systemic restoration.
+  future_compound_examples:
+  - REP:120 + REP:0xx identifies the internal, target, or shared restoration condition
+    realized by or guiding the restorative process.
+  - REP:120 + MAT/MOV/LIF specifies physical mechanics, return path, or living effects
+    without reducing restoration to those domains.
+  - REP:120 + DAT/MIN/LOG specifies a checkpoint, recognition, evidence, or validation
+    while keeping the restorative process independent.
+  - REP:120 + CRE/STR/CON distinguishes replacement, reconstruction, structural reconfiguration,
+    and coordination from restoration itself.
+  later_era_notes: Later eras may lexicalize heal, mend, repair, rehabilitate, remediate,
+    recalibrate, reconcile, recover, reset, restore-from-backup, return-to-service,
+    and disaster recovery as descendants or typed compounds. Era Zero must preserve
+    the internal-origin / one-source-one-target / coordinated-multi-participant contrast
+    and must not let nonactualized 1x2 roots acquire planning or modal-strength semantics.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: REP:121
+    universal_slot: active systemic process
+    family_qualified_transliteration: ya·kik
+    local_compact_root: kik
+    formal_carrier: ya-ki-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: active systemic restoration
+  invariant_definition: An ongoing coordinated restorative transformation by which
+    one shared restoration condition is becoming realized across multiple participant
+    entities within one shared system.
+  semantic_center: 'substrate-neutral restorative transformation: internal restoration,
+    source-to-target restoration, and coordinated systemic restoration'
+  address_justification:
+    first_trit_1: Selects a restorative process, action, or transformation rather
+      than a restoration-condition entity, recoverability affordance, resource, record,
+      rule, or schedule.
+    second_trit: 'Selects shared/systemic scope: this root coordinates restorative
+      change by which one shared restoration condition becomes realized across multiple
+      participant entities within one shared system; no competing family or temporal
+      phase is added by this axis.'
+    third_trit: Selects the active phase of the same systemic-restoration process;
+      planning, queueing, schedule, futurity, permission, probability, and runtime
+      truth status remain separate.
+  inclusion_boundary: Includes only an active substrate-neutral restorative transformation
+    that coordinates restorative change by which one shared restoration condition
+    becomes realized across multiple participant entities within one shared system.
+    One coordinated restorative transformation must realize one shared restoration
+    condition across multiple participants. Several unrelated repairs or one source
+    restoring one target do not satisfy systemic scope. The transformation may be
+    realized physically, biologically, computationally, informationally, socially,
+    or conceptually, but it does not itself assert the bearer, concrete mechanics,
+    movement path, record, observer knowledge, validation, maintenance, replacement,
+    resource, recoverability, probability, schedule, or causal history beyond the
+    scope roles required by the invariant.
+  excluded_meanings:
+  - The restoration condition, bearer, restorative source, target, participant, material
+    object, organism, software component, institution, checkpoint, or data record
+    as an entity.
+  - Spatial movement, return, route traversal, physical force, biological mechanism,
+    data copying, structural reconfiguration, creation, replacement, or reconstruction
+    as such without the REP restorative transformation claim.
+  - Planning, intention, staging, queueing, scheduling, permission, readiness, probability,
+    futurity, obligation, or specification—especially for lexical 1x2.
+  - Inspection, validation, verification, certification, evidence collection, belief
+    revision, diagnosis, recognition, or measurement of a restoration condition.
+  - Maintenance, preservation, routine servicing, warning, containment, neutral coordination,
+    fabrication, replacement, reconstruction, or mere communication about restoration.
+  - Recoverability, repairability, restorative capacity, remedy availability, caregiver
+    relation, service contract, resource readiness, probability, or other continuing
+    capacity or relation.
+  nearest_neighbors:
+  - REP:120
+  - REP:122
+  - REP:101
+  - REP:111
+  - REP:021
+  - REP:221
+  same_family_contrast: REP:0xx owns internal, target, and shared restoration-condition
+    entities. REP:1xx owns restorative transformations toward realizing those conditions.
+    REP:2xx remains reserved for recoverability, repairability, and enabling restoration
+    relations. Internal restoration has no required distinct external source. Target
+    restoration preserves one source and one target as distinct roles. Systemic restoration
+    requires one coordinated transformation that realizes one shared restoration condition
+    across multiple participants. A completed REP:1xx root entails that the applicable
+    restoration condition was realized by the stated transformation at completion;
+    it does not entail that the result persists, that it was recorded or validated,
+    that maintenance continues, or that a continuing REP:2xx affordance holds unless
+    separately asserted.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this systemic-restoration process is presently ongoing or states
+      that it has ceased; completion, reversal, and nonactualized availability remain
+      undecided.
+    '1': Affirms that this systemic-restoration process is presently ongoing toward
+      the applicable restoration condition, without guaranteeing completion, persistence
+      of the result, recognition, validation, maintenance, or future success.
+    2/num: Leaves unresolved whether this systemic-restoration process is presently
+      ongoing; the runtime marker does not select the completed or nonactualized lexical
+      sibling.
+  lexical_runtime_distinction: The lexical third trit permanently selects the active
+    member of this process triplet. Runtime `[2]/num` instead qualifies the truth,
+    applicability, or resolution of a token of that already-selected root; it never
+    changes the root into a planned, future, or different-phase process.
+  catalogue_title_guard: The concise catalogue title is controlled by the invariant
+    definition and must not be broadened with unstated mechanics, records, validation,
+    maintenance, replacement, result persistence, or temporal semantics.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: REP:121[1](ENTITY=community_system,PARTICIPANTS=participants)
+    literal_gloss: ongoing systemic restoration
+    natural_english: The participants are coordinating one restorative transformation
+      toward the shared restoration condition.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One coordinated restorative transformation makes one shared restoration
+      condition realized across multiple participants in a shared system. The assertion
+      does not add a mechanism, record, validation, schedule, or guarantee beyond
+      the invariant.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=facility)+REP:121[1](ENTITY=facility,PARTICIPANTS=zones)
+    literal_gloss: material realization plus ongoing systemic restoration
+    natural_english: The coupled zones are undergoing coordinated restoration toward
+      the facility's shared condition.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One coordinated restorative transformation makes one shared restoration
+      condition realized across multiple participants in a shared system. MAT/LIF
+      owns concrete mechanics; REP owns restorative direction and scope.
+  - category: temporal_or_sequential
+    semantic_graph: REP:121[1](ENTITY=community_system,PARTICIPANTS=participants)+ORI(INTERVAL=service_window)
+    literal_gloss: ongoing systemic restoration during an explicit interval
+    natural_english: During the service window, the participants are coordinating
+      one restorative transformation toward the shared restoration condition.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: ORI supplies temporal location; lexical phase is not tense or schedule.
+  - category: cross_family_compound
+    semantic_graph: DAT(BASELINE=d)+LOG(CRITERION=k)+REP:121[1](ENTITY=community_system,PARTICIPANTS=participants)
+    literal_gloss: baseline and criterion plus ongoing systemic restoration
+    natural_english: The baseline and criterion specify the accepted condition toward
+      which the restorative transformation moves.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One coordinated restorative transformation makes one shared restoration
+      condition realized across multiple participants in a shared system. DAT and
+      LOG describe references; neither performs restoration.
+  - category: executable_or_programming
+    semantic_graph: REP:121[1](ENTITY=cluster,PARTICIPANTS=nodes)
+    literal_gloss: assert ongoing systemic restoration
+    natural_english: The cluster nodes are undergoing coordinated restoration toward
+      one shared service condition.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One coordinated restorative transformation makes one shared restoration
+      condition realized across multiple participants in a shared system. Checkpoints,
+      validation, replacement, coordination, and recoverability require separate DAT/LOG/CRE/CON/REP:2xx
+      assertions.
+    pseudocode: assert(restorative_process.matches?("REP:121"))
+  - category: counterexample
+    semantic_graph: CON:121[1](PARTICIPANTS=nodes,EXPRESSION=updates)
+    literal_gloss: active coordinated exchange
+    natural_english: The nodes are coordinating updates.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: must_not_use_this_root
+    analysis: Coordination alone belongs to CON and does not entail systemic restoration.
+  future_compound_examples:
+  - REP:121 + REP:0xx identifies the internal, target, or shared restoration condition
+    realized by or guiding the restorative process.
+  - REP:121 + MAT/MOV/LIF specifies physical mechanics, return path, or living effects
+    without reducing restoration to those domains.
+  - REP:121 + DAT/MIN/LOG specifies a checkpoint, recognition, evidence, or validation
+    while keeping the restorative process independent.
+  - REP:121 + CRE/STR/CON distinguishes replacement, reconstruction, structural reconfiguration,
+    and coordination from restoration itself.
+  later_era_notes: Later eras may lexicalize heal, mend, repair, rehabilitate, remediate,
+    recalibrate, reconcile, recover, reset, restore-from-backup, return-to-service,
+    and disaster recovery as descendants or typed compounds. Era Zero must preserve
+    the internal-origin / one-source-one-target / coordinated-multi-participant contrast
+    and must not let nonactualized 1x2 roots acquire planning or modal-strength semantics.
+  confidence: 0.97
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: REP:122
+    universal_slot: pending systemic process
+    family_qualified_transliteration: ya·kin
+    local_compact_root: kin
+    formal_carrier: ya-ki-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - -2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: nonactualized systemic restoration
+  invariant_definition: A nonactualized coordinated restorative transformation by
+    which one shared restoration condition would become realized across multiple participant
+    entities within one shared system.
+  semantic_center: 'substrate-neutral restorative transformation: internal restoration,
+    source-to-target restoration, and coordinated systemic restoration'
+  address_justification:
+    first_trit_1: Selects a restorative process, action, or transformation rather
+      than a restoration-condition entity, recoverability affordance, resource, record,
+      rule, or schedule.
+    second_trit: 'Selects shared/systemic scope: this root coordinates restorative
+      change by which one shared restoration condition becomes realized across multiple
+      participant entities within one shared system; no competing family or temporal
+      phase is added by this axis.'
+    third_trit: Selects the nonactualized phase of the same systemic-restoration process;
+      planning, queueing, schedule, futurity, permission, probability, and runtime
+      truth status remain separate.
+  inclusion_boundary: Includes only a nonactualized substrate-neutral restorative
+    transformation that coordinates restorative change by which one shared restoration
+    condition becomes realized across multiple participant entities within one shared
+    system. One coordinated restorative transformation must realize one shared restoration
+    condition across multiple participants. Several unrelated repairs or one source
+    restoring one target do not satisfy systemic scope. The transformation may be
+    realized physically, biologically, computationally, informationally, socially,
+    or conceptually, but it does not itself assert the bearer, concrete mechanics,
+    movement path, record, observer knowledge, validation, maintenance, replacement,
+    resource, recoverability, probability, schedule, or causal history beyond the
+    scope roles required by the invariant.
+  excluded_meanings:
+  - The restoration condition, bearer, restorative source, target, participant, material
+    object, organism, software component, institution, checkpoint, or data record
+    as an entity.
+  - Spatial movement, return, route traversal, physical force, biological mechanism,
+    data copying, structural reconfiguration, creation, replacement, or reconstruction
+    as such without the REP restorative transformation claim.
+  - Planning, intention, staging, queueing, scheduling, permission, readiness, probability,
+    futurity, obligation, or specification—especially for lexical 1x2.
+  - Inspection, validation, verification, certification, evidence collection, belief
+    revision, diagnosis, recognition, or measurement of a restoration condition.
+  - Maintenance, preservation, routine servicing, warning, containment, neutral coordination,
+    fabrication, replacement, reconstruction, or mere communication about restoration.
+  - Recoverability, repairability, restorative capacity, remedy availability, caregiver
+    relation, service contract, resource readiness, probability, or other continuing
+    capacity or relation.
+  nearest_neighbors:
+  - REP:120
+  - REP:121
+  - REP:102
+  - REP:112
+  - REP:022
+  - REP:222
+  same_family_contrast: REP:0xx owns internal, target, and shared restoration-condition
+    entities. REP:1xx owns restorative transformations toward realizing those conditions.
+    REP:2xx remains reserved for recoverability, repairability, and enabling restoration
+    relations. Internal restoration has no required distinct external source. Target
+    restoration preserves one source and one target as distinct roles. Systemic restoration
+    requires one coordinated transformation that realizes one shared restoration condition
+    across multiple participants. A completed REP:1xx root entails that the applicable
+    restoration condition was realized by the stated transformation at completion;
+    it does not entail that the result persists, that it was recorded or validated,
+    that maintenance continues, or that a continuing REP:2xx affordance holds unless
+    separately asserted.
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this systemic-restoration process holds even as a valid nonactualized
+      transformation in the stated context; it does not assert activity or completion.
+    '1': Affirms this systemic-restoration process as nonactualized—neither ongoing
+      nor completed—without adding plan, intention, queue, schedule, permission, readiness,
+      probability, or future time.
+    2/num: Leaves unresolved even the assertion that this systemic-restoration process
+      is a valid nonactualized transformation; lexical nonactualization and runtime
+      uncertainty remain distinct.
+  lexical_runtime_distinction: The lexical third trit permanently selects the nonactualized
+    member of this process triplet. Runtime `[2]/num` instead qualifies the truth,
+    applicability, or resolution of a token of that already-selected root; it never
+    changes the root into a planned, future, or different-phase process.
+  catalogue_title_guard: The word `nonactualized` in the concise catalogue title denotes
+    a valid restorative process that is neither ongoing nor completed. It does not
+    assert capability, readiness, probability, permission, intention, schedule, future
+    time, or eventual realization.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: REP:122[1](ENTITY=community_system,PARTICIPANTS=participants)
+    literal_gloss: nonactualized systemic restoration
+    natural_english: The coordinated systemic restoration process is nonactualized.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One coordinated restorative transformation makes one shared restoration
+      condition realized across multiple participants in a shared system. The assertion
+      does not add a mechanism, record, validation, schedule, or guarantee beyond
+      the invariant.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=facility)+REP:122[1](ENTITY=facility,PARTICIPANTS=zones)
+    literal_gloss: material realization plus nonactualized systemic restoration
+    natural_english: The facility-wide coordinated restoration is nonactualized.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One coordinated restorative transformation makes one shared restoration
+      condition realized across multiple participants in a shared system. MAT/LIF
+      owns concrete mechanics; REP owns restorative direction and scope.
+  - category: temporal_or_sequential
+    semantic_graph: REP:122[1](ENTITY=community_system,PARTICIPANTS=participants)+ORI(INTERVAL=service_window)
+    literal_gloss: nonactualized systemic restoration during an explicit interval
+    natural_english: During the service window, the coordinated systemic restoration
+      process is nonactualized.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: ORI supplies temporal location; lexical phase is not tense or schedule.
+  - category: cross_family_compound
+    semantic_graph: DAT(BASELINE=d)+LOG(CRITERION=k)+REP:122[1](ENTITY=community_system,PARTICIPANTS=participants)
+    literal_gloss: baseline and criterion plus nonactualized systemic restoration
+    natural_english: The baseline and criterion specify the accepted condition toward
+      which the restorative transformation moves.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One coordinated restorative transformation makes one shared restoration
+      condition realized across multiple participants in a shared system. DAT and
+      LOG describe references; neither performs restoration.
+  - category: executable_or_programming
+    semantic_graph: REP:122[1](ENTITY=cluster,PARTICIPANTS=nodes)
+    literal_gloss: assert nonactualized systemic restoration
+    natural_english: The coordinated cluster restoration process is nonactualized.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: valid
+    analysis: One coordinated restorative transformation makes one shared restoration
+      condition realized across multiple participants in a shared system. Checkpoints,
+      validation, replacement, coordination, and recoverability require separate DAT/LOG/CRE/CON/REP:2xx
+      assertions.
+    pseudocode: assert(restorative_process.matches?("REP:122"))
+  - category: counterexample
+    semantic_graph: CON:121[1](PARTICIPANTS=nodes,EXPRESSION=updates)
+    literal_gloss: active coordinated exchange
+    natural_english: The nodes are coordinating updates.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or restoration target
+      middle: restorative transformation
+      high: distinct restorative source or participating agent
+      sustained: shared system and participants realizing one restoration condition
+    use_status: must_not_use_this_root
+    analysis: Coordination alone belongs to CON and does not entail systemic restoration.
+  future_compound_examples:
+  - REP:122 + REP:0xx identifies the internal, target, or shared restoration condition
+    realized by or guiding the restorative process.
+  - REP:122 + MAT/MOV/LIF specifies physical mechanics, return path, or living effects
+    without reducing restoration to those domains.
+  - REP:122 + DAT/MIN/LOG specifies a checkpoint, recognition, evidence, or validation
+    while keeping the restorative process independent.
+  - REP:122 + CRE/STR/CON distinguishes replacement, reconstruction, structural reconfiguration,
+    and coordination from restoration itself.
+  later_era_notes: Later eras may lexicalize heal, mend, repair, rehabilitate, remediate,
+    recalibrate, reconcile, recover, reset, restore-from-backup, return-to-service,
+    and disaster recovery as descendants or typed compounds. Era Zero must preserve
+    the internal-origin / one-source-one-target / coordinated-multi-participant contrast
+    and must not let nonactualized 1x2 roots acquire planning or modal-strength semantics.
+  confidence: 0.97
+  canonicalized: true
+approval_checklist:
+  family_domain_preserved: true
+  address_axes_preserved: true
+  one_invariant_per_root: true
+  triplets_coherent: true
+  current_candidates_challenged: true
+  cross_family_collisions_explicit: true
+  runtime_state_separated: true
+  nonactualized_process_rule_preserved: true
+  generated_fields_unchanged: true
+  gate4_not_started: true
+  translator_not_started: true
+  canonicalized: true

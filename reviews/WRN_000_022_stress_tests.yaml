@@ -1,0 +1,459 @@
+---
+metadata:
+  title: WRN:000–022 English coverage and routing tests
+  status: review_evidence_not_translation_dictionary
+  range: WRN:000–022
+  test_count: 92
+  no_forced_atomization: true
+tests:
+- test_id: WRN0-T001
+  english_concept: defect
+  routing: one_root_or_compound
+  analysis: WRN:00x when an intrinsic adverse condition is meant; add MAT, DAT, LOG,
+    or domain roots for its realization or classification.
+- test_id: WRN0-T002
+  english_concept: persistent defect
+  routing: one_root
+  analysis: WRN:000 names an intrinsic adverse condition that remains identified independently
+    of current manifestation.
+- test_id: WRN0-T003
+  english_concept: active defect
+  routing: one_root
+  analysis: WRN:001 names an intrinsic adverse condition presently producing harmful
+    deviation.
+- test_id: WRN0-T004
+  english_concept: latent defect
+  routing: one_root
+  analysis: WRN:002 names an intrinsic adverse condition present without current harmful
+    deviation.
+- test_id: WRN0-T005
+  english_concept: bug
+  routing: one_root_or_compound
+  analysis: WRN:00x supplies adverse-condition status; DAT/LOG/program-domain composition
+    supplies code, rule, and output details.
+- test_id: WRN0-T006
+  english_concept: software bug firing
+  routing: one_root
+  analysis: WRN:001 applies when an intrinsic software fault is presently producing
+    harmful deviation.
+- test_id: WRN0-T007
+  english_concept: dormant race condition
+  routing: one_root
+  analysis: WRN:002 applies when the intrinsic fault exists but does not manifest
+    in the current execution.
+- test_id: WRN0-T008
+  english_concept: syntax error
+  routing: different_family_or_compound
+  analysis: LOG/DAT owns formal invalidity or encoding; add WRN only when adverse
+    status beyond invalidity is asserted.
+- test_id: WRN0-T009
+  english_concept: wrong answer
+  routing: different_family_or_compound
+  analysis: LOG owns incorrectness and DAT the output; WRN:001 applies only if an
+    intrinsic adverse condition is also claimed.
+- test_id: WRN0-T010
+  english_concept: crack
+  routing: compound
+  analysis: MAT names the physical discontinuity; WRN:00x classifies it as an intrinsic
+    adverse condition when context warrants.
+- test_id: WRN0-T011
+  english_concept: fracture causing vibration
+  routing: compound
+  analysis: MAT fracture and force effects plus WRN:001 manifest internal fault.
+- test_id: WRN0-T012
+  english_concept: harmless variation
+  routing: not_warning
+  analysis: A difference that is not adverse must not be forced into WRN even if unusual
+    or statistically rare.
+- test_id: WRN0-T013
+  english_concept: anomaly
+  routing: underspecified
+  analysis: May mean DAT statistical deviation, MIN surprise, LOG nonconformance,
+    or a WRN adverse condition; translator must resolve the sense.
+- test_id: WRN0-T014
+  english_concept: symptom
+  routing: different_family_or_compound
+  analysis: A symptom may be LIF/MAT/DAT evidence of WRN:001, but evidence or effect
+    is not automatically the underlying fault.
+- test_id: WRN0-T015
+  english_concept: diagnosis
+  routing: future_process_or_compound
+  analysis: Detection and classification belong to WRN:1xx review plus MIN/DAT; WRN:0xx
+    names the condition diagnosed.
+- test_id: WRN0-T016
+  english_concept: suspected defect
+  routing: runtime_or_compound
+  analysis: Observer uncertainty uses MIN/DAT or runtime `[2]/num`; it must not be
+    confused with lexical WRN:002 latency.
+- test_id: WRN0-T017
+  english_concept: unknown active fault
+  routing: runtime_state
+  analysis: WRN:001[2]/num leaves present manifestation unresolved; it is not WRN:002.
+- test_id: WRN0-T018
+  english_concept: confirmed latent fault
+  routing: one_root_plus_runtime
+  analysis: WRN:002[1] affirms that the intrinsic fault exists in nonmanifest form.
+- test_id: WRN0-T019
+  english_concept: persistent fault uncertain
+  routing: one_root_plus_runtime
+  analysis: WRN:000[2]/num keeps stable lexical identity while leaving the token assertion
+    unresolved.
+- test_id: WRN0-T020
+  english_concept: persistent and manifest fault
+  routing: two_compatible_roots
+  analysis: 'WRN:000 and WRN:001 may both hold: persistence concerns identity, manifestation
+    concerns current harmful deviation.'
+- test_id: WRN0-T021
+  english_concept: persistent and latent fault
+  routing: two_compatible_roots
+  analysis: WRN:000 and WRN:002 may both hold when the same enduring fault is currently
+    nonmanifest.
+- test_id: WRN0-T022
+  english_concept: manifest and latent simultaneously
+  routing: invalid_same_reference_claim
+  analysis: WRN:001 and WRN:002 cannot both hold for the same condition at the same
+    reference time.
+- test_id: WRN0-T023
+  english_concept: hazard
+  routing: one_root_or_compound
+  analysis: WRN:01x when a distinct external adverse condition relative to one target
+    is meant; mechanics remain in other families.
+- test_id: WRN0-T024
+  english_concept: persistent hazard
+  routing: one_root
+  analysis: WRN:010 names a distinct external condition that remains capable of adversely
+    affecting one target.
+- test_id: WRN0-T025
+  english_concept: active hazard
+  routing: one_root
+  analysis: WRN:011 names a distinct external condition presently expressing its harmful
+    potential.
+- test_id: WRN0-T026
+  english_concept: dormant hazard
+  routing: one_root
+  analysis: WRN:012 names a present external hazard whose harmful potential is not
+    currently expressed.
+- test_id: WRN0-T027
+  english_concept: threat
+  routing: one_root_or_compound
+  analysis: WRN:01x supplies external adverse-condition status; intent, approach,
+    exposure, and attack require MIN, MOV, or WRN relation/process claims.
+- test_id: WRN0-T028
+  english_concept: attacker
+  routing: compound
+  analysis: LIF or artifact identity plus MIN intent and WRN external-hazard status;
+    WRN alone does not mean person or agency.
+- test_id: WRN0-T029
+  english_concept: attack
+  routing: future_process_or_compound
+  analysis: An attack is an action or harmful relation, not a WRN:0xx entity; use
+    the later WRN process/relation review plus domain roots.
+- test_id: WRN0-T030
+  english_concept: approaching danger
+  routing: compound
+  analysis: MOV approach plus WRN:011 only when the external adverse condition is
+    presently manifest toward the target.
+- test_id: WRN0-T031
+  english_concept: destination
+  routing: different_family
+  analysis: MOV owns destinations; being a destination does not entail hazard.
+- test_id: WRN0-T032
+  english_concept: obstacle
+  routing: compound
+  analysis: MAT/STR/MOV describes the blocking object or relation; WRN adds adverse
+    significance only in context.
+- test_id: WRN0-T033
+  english_concept: exposed wire
+  routing: compound
+  analysis: MAT describes the wire and exposure geometry; WRN:010 or 011 classifies
+    external adverse status relative to a target.
+- test_id: WRN0-T034
+  english_concept: sealed poison
+  routing: one_root_or_compound
+  analysis: WRN:012 can name a dormant external hazard; MAT supplies the substance
+    and containment.
+- test_id: WRN0-T035
+  english_concept: loaded weapon
+  routing: compound
+  analysis: MAT and CRE describe the artifact and state; WRN:01x supplies context-dependent
+    hazard status.
+- test_id: WRN0-T036
+  english_concept: warning sign
+  routing: different_family_or_compound
+  analysis: DAT/CON owns the sign and communicated warning; it may refer to WRN:010
+    but is not the hazard itself.
+- test_id: WRN0-T037
+  english_concept: alarm
+  routing: different_family
+  analysis: CON/DAT owns an alarm signal or indicator; WRN names the adverse condition
+    signaled.
+- test_id: WRN0-T038
+  english_concept: false alarm
+  routing: compound
+  analysis: CON/DAT alarm plus denial of the represented WRN condition; the alarm
+    object does not become a fault.
+- test_id: WRN0-T039
+  english_concept: unreported hazard
+  routing: one_root_plus_negation
+  analysis: WRN:01x may hold while CON warning and DAT record claims are denied.
+- test_id: WRN0-T040
+  english_concept: risk
+  routing: underspecified
+  analysis: May mean an adverse condition, probability, vulnerability, exposure relation,
+    or expected loss; translator must not force it into WRN:0xx.
+- test_id: WRN0-T041
+  english_concept: probable hazard
+  routing: compound
+  analysis: Probability or epistemic qualification plus WRN:01x; lexical third trit
+    2 does not encode likelihood.
+- test_id: WRN0-T042
+  english_concept: future hazard
+  routing: compound_or_grammar
+  analysis: ORI time/modal qualification plus WRN root; dormancy does not itself mean
+    future.
+- test_id: WRN0-T043
+  english_concept: external hazard uncertain
+  routing: runtime_state
+  analysis: WRN:010[2]/num or WRN:011[2]/num questions the chosen claim; it is not
+    automatically WRN:012.
+- test_id: WRN0-T044
+  english_concept: confirmed dormant hazard
+  routing: one_root_plus_runtime
+  analysis: WRN:012[1] affirms present nonmanifest external hazard status.
+- test_id: WRN0-T045
+  english_concept: hazard source and target
+  routing: one_root
+  analysis: WRN:01x preserves one distinct hazard source relative to one reference
+    target.
+- test_id: WRN0-T046
+  english_concept: two targets exposed to one hazard
+  routing: compound_or_relation
+  analysis: WRN:01x may be asserted per target; shared exposure or propagation belongs
+    to WRN:2xx relation review.
+- test_id: WRN0-T047
+  english_concept: incident
+  routing: one_root_or_compound
+  analysis: WRN:02x only when one correlated adverse condition spans multiple participants;
+    event sequencing may require ORI or process roots.
+- test_id: WRN0-T048
+  english_concept: persistent distributed fault
+  routing: one_root
+  analysis: WRN:020 preserves one correlated adverse identity across multiple system
+    participants.
+- test_id: WRN0-T049
+  english_concept: active distributed fault
+  routing: one_root
+  analysis: WRN:021 says one correlated adverse condition presently produces harmful
+    deviation across participants.
+- test_id: WRN0-T050
+  english_concept: latent distributed fault
+  routing: one_root
+  analysis: WRN:022 says one correlated adverse condition is present across participants
+    without current harmful deviation.
+- test_id: WRN0-T051
+  english_concept: outage
+  routing: one_root_or_compound
+  analysis: WRN:021 may classify a correlated active adverse condition; service state,
+    cause, and temporal duration require other claims.
+- test_id: WRN0-T052
+  english_concept: cascading failure
+  routing: future_relation_or_compound
+  analysis: Propagation and causal cascade belong to WRN:1xx/2xx review; WRN:021 only
+    states the manifest distributed condition.
+- test_id: WRN0-T053
+  english_concept: epidemic
+  routing: compound
+  analysis: LIF owns organisms and health; WRN:02x may supply correlated distributed
+    adversity, while transmission is a separate process/relation.
+- test_id: WRN0-T054
+  english_concept: network breach
+  routing: compound
+  analysis: DAT/CON/LOG describes network, access, and rules; WRN:02x applies only
+    if one distributed adverse condition is asserted.
+- test_id: WRN0-T055
+  english_concept: compromised cluster
+  routing: one_root_or_compound
+  analysis: WRN:02x supplies the correlated distributed fault; DAT/CON/STR supplies
+    cluster structure and linkage.
+- test_id: WRN0-T056
+  english_concept: many unrelated bugs
+  routing: not_systemic_root
+  analysis: A list of independent WRN:00x faults is not one WRN:02x condition without
+    correlation and shared-system scope.
+- test_id: WRN0-T057
+  english_concept: shared dependency
+  routing: different_family_or_compound
+  analysis: STR/LOG/CON owns dependency; it may enable a distributed fault but is
+    not itself adverse.
+- test_id: WRN0-T058
+  english_concept: system
+  routing: underspecified
+  analysis: STR, CON, DAT, LIF, or LOG may define the system; WRN:02x names only its
+    correlated adverse condition.
+- test_id: WRN0-T059
+  english_concept: emergency
+  routing: compound
+  analysis: WRN condition plus urgency, response, time, and often LIF/MAT impact;
+    not one entity root.
+- test_id: WRN0-T060
+  english_concept: catastrophe
+  routing: compound_or_later_vocabulary
+  analysis: Severe realized harm requires WRN with magnitude and domain effects; severity
+    is not encoded by second trit.
+- test_id: WRN0-T061
+  english_concept: contained incident
+  routing: compound
+  analysis: WRN:02x supplies incident condition and WRN:1xx process/relation review
+    supplies containment; contained does not equal stable third trit.
+- test_id: WRN0-T062
+  english_concept: spreading corruption
+  routing: future_process_or_relation
+  analysis: Spreading is propagation; WRN:021 may describe the resulting manifest
+    distributed condition but must not absorb the propagation process.
+- test_id: WRN0-T063
+  english_concept: systemic risk
+  routing: future_relation_or_compound
+  analysis: Vulnerability, dependency, probability, and propagation possibility belong
+    to WRN:2xx and ORI/LOG; WRN:022 requires a present correlated dormant condition.
+- test_id: WRN0-T064
+  english_concept: possible outage
+  routing: compound_or_gap
+  analysis: ORI probability/modality plus a WRN condition or process; WRN:022 is not
+    bare possibility of a future outage.
+- test_id: WRN0-T065
+  english_concept: distributed fault uncertain
+  routing: runtime_state
+  analysis: WRN:020[2]/num or WRN:021[2]/num questions a selected distributed claim
+    rather than selecting WRN:022.
+- test_id: WRN0-T066
+  english_concept: confirmed latent distributed fault
+  routing: one_root_plus_runtime
+  analysis: WRN:022[1] affirms the correlated nonmanifest system condition.
+- test_id: WRN0-T067
+  english_concept: persistent and active distributed fault
+  routing: two_compatible_roots
+  analysis: WRN:020 and WRN:021 may co-occur because identity persistence and present
+    manifestation are independent claims.
+- test_id: WRN0-T068
+  english_concept: harm
+  routing: different_family_or_compound
+  analysis: LIF, MAT, DAT, LOG, or other domains specify what is harmed; WRN supplies
+    adverse classification, not all effect semantics.
+- test_id: WRN0-T069
+  english_concept: damage
+  routing: different_family_or_compound
+  analysis: MAT or domain roots describe physical or functional loss; WRN says the
+    condition is adverse.
+- test_id: WRN0-T070
+  english_concept: failure
+  routing: underspecified
+  analysis: Could mean WRN adverse condition, LOG non-satisfaction, REP loss, MAT
+    breakage, or a process event; translator must resolve sense.
+- test_id: WRN0-T071
+  english_concept: invalid
+  routing: different_family
+  analysis: LOG owns validity judgments; add WRN only for adverse consequences or
+    condition classification.
+- test_id: WRN0-T072
+  english_concept: unsafe
+  routing: compound
+  analysis: WRN condition plus applicable standards, target, vulnerability, or probability;
+    not automatically one atom.
+- test_id: WRN0-T073
+  english_concept: dangerous idea
+  routing: compound
+  analysis: MIN/DAT supplies the idea; WRN supplies context-specific adverse status
+    if warranted.
+- test_id: WRN0-T074
+  english_concept: corrupted file
+  routing: compound
+  analysis: DAT owns the information object and representational corruption; WRN adds
+    adverse status when consequences matter.
+- test_id: WRN0-T075
+  english_concept: fear
+  routing: different_family
+  analysis: MIN owns fear as mental state; an actual WRN hazard may be present or
+    absent independently.
+- test_id: WRN0-T076
+  english_concept: suspicion
+  routing: different_family
+  analysis: MIN owns suspicion; runtime uncertainty can qualify a WRN claim without
+    changing lexical latency.
+- test_id: WRN0-T077
+  english_concept: warning someone
+  routing: future_process_or_compound
+  analysis: CON communication plus WRN:1xx process review; WRN:0xx names the adverse
+    condition referenced.
+- test_id: WRN0-T078
+  english_concept: repair
+  routing: different_family
+  analysis: REP owns repair and recovery; a repaired fault may cease to hold, but
+    repair is not a WRN entity.
+- test_id: WRN0-T079
+  english_concept: vulnerability
+  routing: future_wrn_capacity
+  analysis: Reserved for WRN:2xx capacity/relation review; vulnerability is not the
+    same as an existing fault.
+- test_id: WRN0-T080
+  english_concept: exposure
+  routing: future_wrn_relation
+  analysis: Reserved for WRN:2xx relation review; external hazard identity does not
+    entail target exposure.
+- test_id: WRN0-T081
+  english_concept: no alarm but active fault
+  routing: one_root_plus_negation
+  analysis: WRN:001 may hold while CON/DAT alarm claims are denied, proving condition
+    and representation are separate.
+- test_id: WRN0-T082
+  english_concept: alarm but no fault
+  routing: different_family_plus_negation
+  analysis: CON/DAT alarm may hold while the represented WRN condition is denied.
+- test_id: WRN0-T083
+  english_concept: hazard moving but not active
+  routing: compound
+  analysis: MOV can describe displacement while WRN:012 asserts dormant harmful potential;
+    motion alone does not select manifest status.
+- test_id: WRN0-T084
+  english_concept: active fault with no known cause
+  routing: one_root_plus_gap
+  analysis: WRN:001 can be affirmed while causal source remains unresolved; the atom
+    does not encode cause.
+- test_id: WRN0-T085
+  english_concept: same adverse condition across nodes
+  routing: one_root
+  analysis: WRN:020/021/022 is selected by persistence or manifestation of one correlated
+    distributed condition.
+- test_id: WRN0-T086
+  english_concept: coincidental simultaneous failures
+  routing: multiple_roots_not_one_systemic_root
+  analysis: Use separate WRN:001 assertions unless evidence supports one correlated
+    WRN:021 identity.
+- test_id: WRN0-T087
+  english_concept: latent versus unknown
+  routing: scope_resolution_test
+  analysis: WRN:002[1] affirms nonmanifest existence; WRN:001[2]/num leaves manifest
+    status epistemically unresolved.
+- test_id: WRN0-T088
+  english_concept: hazard versus approach
+  routing: scope_resolution_test
+  analysis: WRN:01x identifies external adverse condition; MOV identifies approach
+    or location.
+- test_id: WRN0-T089
+  english_concept: distributed condition versus propagation
+  routing: scope_resolution_test
+  analysis: WRN:02x identifies a correlated system condition; WRN process/relation
+    roots must separately express spread.
+- test_id: WRN0-T090
+  english_concept: condition versus warning message
+  routing: scope_resolution_test
+  analysis: WRN:0xx identifies the adverse condition; CON/DAT identifies the message
+    or record.
+- test_id: WRN0-T091
+  english_concept: condition versus vulnerability
+  routing: scope_resolution_test
+  analysis: WRN:0xx identifies a present adverse condition; WRN:2xx will determine
+    susceptibility or exposure relations.
+- test_id: WRN0-T092
+  english_concept: condition versus repairability
+  routing: scope_resolution_test
+  analysis: WRN:0xx identifies adversity; REP identifies capacity or process for restoration.

@@ -1,0 +1,1801 @@
+---
+metadata:
+  title: MIN:000–022 recommended permanent semantic specifications
+  status: ready_for_delegated_approval_not_yet_canonical
+  review_scope: MIN:000–022 only
+  semantic_architecture: self-representation → target representation → shared cognitive
+    schema
+  lexical_expression_axis: persistent → manifest → latent
+  delegated_approval_authorized: true
+  roots_canonicalized: []
+  stop_boundary:
+  - MIN:100–122
+  - any other root block
+  - Gate 4
+  - translator implementation
+block_invariant: The 0xx Mind layer names cognitive representations as entities or
+  conditions. The second trit selects self, target, or shared scope; the third selects
+  persistent, presently manifest, or latent expression.
+triplet_contrasts:
+- range: MIN:000–002
+  shared_axis: representation of the cognizer's own identity or condition
+  contrast: persistent across episodes / presently manifest / persisting but not manifest
+- range: MIN:010–012
+  shared_axis: representation of a distinct target
+  contrast: persistent across episodes / presently manifest / persisting but not manifest
+- range: MIN:020–022
+  shared_axis: representation held across multiple cognizers
+  contrast: persistent across episodes / presently manifest among them / persisting
+    but not manifest among them
+roots:
+- fixed_generated_fields:
+    canonical_id: MIN:000
+    universal_slot: stable inward entity
+    family_qualified_transliteration: si·nam
+    local_compact_root: nam
+    formal_carrier: si-ma-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 0
+  proposal_status: recommended_for_delegated_approval_not_yet_canonical
+  proposed_title: persistent self-representation
+  invariant_definition: A mental representation of the cognizer's own identity or
+    condition that persists across cognitive episodes.
+  semantic_center: self-representation
+  semantic_boundaries:
+  - Includes one cognitive representation at the address's self, target, or shared
+    scope.
+  - Allows propositional, imagistic, sensory, conceptual, procedural, or model-like
+    content without selecting one representational format.
+  - Does not assert truth, accuracy, certainty, origin, storage medium, communication,
+    learning, attention allocation, or physical realization.
+  - The lexical expression is persistent and remains distinct from runtime state.
+  excluded_meanings:
+  - The act of perceiving, remembering, learning, interpreting, or reasoning belongs
+    to MIN:1xx and remains provisional until separately reviewed.
+  - Competence, attention capacity, belief relation, uncertainty, and distributed
+    intelligence belong to MIN:2xx and remain provisional until separately reviewed.
+  - Living identity and consciousness belong to LIF; neural or sensory substrate belongs
+    to MAT.
+  - Communication, consensus procedure, access, and social tradition belong to CON
+    or compounds.
+  - External records, symbols, models, and archives belong to DAT/STR unless cognitive
+    representation is separately asserted.
+  - Truth, proof, probability, formal proposition, and ontological reality belong
+    to LOG/ORI or grammar.
+  - Error, hallucination, bias, forgetting, and cognitive damage require WRN/REP or
+    explicit compounds.
+  nearest_neighbors:
+    same_triplet: MIN:000–MIN:002
+    same_triplet_0: MIN:000
+    same_triplet_1: MIN:001
+    same_triplet_2: MIN:002
+    same_phase_other_scopes:
+    - MIN:010
+    - MIN:020
+    future_min_process_layer: MIN:100–122 owns cognitive events after separate review;
+      this root is not an event.
+    future_min_relation_layer: MIN:200–222 owns capacities and relations after separate
+      review; this root is not a capacity or belief relation.
+    canonical_dat_boundary: DAT remains provisional, but its family owns external
+      information records rather than cognition.
+  address_explanation:
+    first_trit_0: Selects a mental entity or condition—the representation—not the
+      process that produced, accessed, or changed it.
+    second_trit_0: Selects the cognizer's representation of the cognizer's own identity
+      or condition.
+    third_trit_0: Selects a persistent representation that remains stable across cognitive
+      episodes.
+  runtime_state_interpretations:
+    '0': Denies that the cognizer has the specified self-representation in the lexical
+      persistent condition.
+    '1': Affirms that the cognizer has the specified self-representation in the lexical
+      persistent condition.
+    '2': Marks the assertion about the persistent self-representation as dormant or
+      unresolved; it does not select another lexical address.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects the
+    persistent form of self-representation. Runtime `[2]/num` separately qualifies
+    a token's current assertion status; it never changes the root to another lexical
+    phase, adds future time, or duplicates lexical latency.
+  cross_family_comparisons:
+    LIF: LIF owns living identity, consciousness, vitality, and organism status. `MIN:000`
+      owns self-representation as cognitive content, never the bearer or identity
+      itself.
+    MOV: MOV owns literal position and motion. Attention shifts and mental maps may
+      use motion metaphors, but `MIN:000` does not encode displacement.
+    MAT: MAT owns neural substrate, sensory energy, and physical-state change. `MIN:000`
+      owns the representation realized by or about those states.
+    CON: CON owns communication, access, possession, social linkage, and participant
+      transfer. Shared access or messaging does not guarantee self-representation.
+    STR: STR owns form, topology, organization, and formal schema structure. `MIN:000`
+      requires cognitive representation in cognizers, not merely an organized artifact.
+    WRN: WRN owns error, confusion, danger, corruption, and failure judgments. A representation
+      may be false or biased without `MIN:000` encoding error.
+    REP: REP owns restoration and recovery. Recall or rehabilitation may restore access
+      to a representation, but `MIN:000` names the representational entity or condition.
+    LOG: LOG owns formal propositions, truth functions, proof, rules, and quantified
+      constraints. `MIN:000` may be nonpropositional, false, vague, or imagistic.
+    DAT: DAT owns records, symbols, messages, and stored information. A record can
+      exist without a cognizer; `MIN:000` requires cognitive content.
+    CRE: CRE owns designing, imagining as generation, and creating artifacts or forms.
+      A created idea can become self-representation, but creation is not built into
+      `MIN:000`.
+    ORI: ORI owns reality, ontological identity, necessity, and universal law. Representation
+      does not entail that its content is real or true.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:000[1](COGNIZER=I,CONTENT=self_as_teacher)
+    literal_gloss: I; persistent self-representation as teacher
+    natural_english: I still think of myself as a teacher.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: The root owns the persisting self-model, not the truth of the occupation.
+  - category: physical_or_spatial
+    semantic_graph: MIN:000[1](COGNIZER=pilot,CONTENT=body_orientation)
+    literal_gloss: pilot; persistent self-representation of bodily orientation
+    natural_english: The pilot retains a stable internal model of their own orientation.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: Body geometry may be added with MAT/STR.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:000[1](COGNIZER=agent,ACROSS=sessions)
+    literal_gloss: agent; self-representation persists across sessions
+    natural_english: The agent keeps the same self-model across restarts.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: Persistence is lexical; storage mechanism is external.
+  - category: cross_family_compound
+    semantic_graph: LIF(IDENTITY=person)+MIN:000[1](COGNIZER=person,CONTENT=self)
+    literal_gloss: living identity plus persistent representation of that identity
+    natural_english: The person has an enduring mental model of who they are.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: LIF owns identity; MIN owns its representation.
+  - category: executable_or_programming
+    semantic_graph: MIN:000[1](COGNIZER=agent,CONTENT=self_model)
+    literal_gloss: agent; persistent cognitive self-model
+    natural_english: The agent maintains a persistent representation of itself.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: A semantic object in an agent model.
+    pseudocode: assert agent.self_model.persists_across_episodes?
+  - category: counterexample
+    semantic_graph: LIF:000[1](ENTITY=person)
+    literal_gloss: person; enduring living identity
+    natural_english: The person continues to be the same individual.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: must_not_use_this_min_root
+    analysis: Identity itself is LIF, not a mental representation of identity.
+  future_compound_decomposition_sketches_not_canonical:
+  - MIN:000 + sensory/modality modifier → visual, auditory, proprioceptive, propositional,
+    imagistic, or procedural representation
+  - MIN:000 + LOG/ORI/WRN predicate → believed, true, probable, false, biased, uncertain,
+    or hallucinatory representation without overloading the atom
+  - MIN:000 + DAT/CON/MIN-process relation → stored, communicated, recalled, learned,
+    inferred, or attended representation with explicit provenance and action
+  later_era_evolution_notes:
+  - Later technical vocabulary may distinguish symbolic, embodied, probabilistic,
+    vector, episodic, semantic, and procedural representation without changing this
+    invariant.
+  - Later colloquial forms may lexicalize high-frequency compounds such as memory,
+    idea, belief, awareness, culture, and mental image.
+  - Future semantic changes require an explicit versioned migration.
+  confidence: 0.98
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:001
+    universal_slot: active inward entity
+    family_qualified_transliteration: si·nak
+    local_compact_root: nak
+    formal_carrier: si-ma-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 2
+  proposal_status: recommended_for_delegated_approval_not_yet_canonical
+  proposed_title: manifest self-representation
+  invariant_definition: A mental representation of the cognizer's own identity or
+    condition that is presently manifest in cognition.
+  semantic_center: self-representation
+  semantic_boundaries:
+  - Includes one cognitive representation at the address's self, target, or shared
+    scope.
+  - Allows propositional, imagistic, sensory, conceptual, procedural, or model-like
+    content without selecting one representational format.
+  - Does not assert truth, accuracy, certainty, origin, storage medium, communication,
+    learning, attention allocation, or physical realization.
+  - The lexical expression is manifest and remains distinct from runtime state.
+  excluded_meanings:
+  - The act of perceiving, remembering, learning, interpreting, or reasoning belongs
+    to MIN:1xx and remains provisional until separately reviewed.
+  - Competence, attention capacity, belief relation, uncertainty, and distributed
+    intelligence belong to MIN:2xx and remain provisional until separately reviewed.
+  - Living identity and consciousness belong to LIF; neural or sensory substrate belongs
+    to MAT.
+  - Communication, consensus procedure, access, and social tradition belong to CON
+    or compounds.
+  - External records, symbols, models, and archives belong to DAT/STR unless cognitive
+    representation is separately asserted.
+  - Truth, proof, probability, formal proposition, and ontological reality belong
+    to LOG/ORI or grammar.
+  - Error, hallucination, bias, forgetting, and cognitive damage require WRN/REP or
+    explicit compounds.
+  nearest_neighbors:
+    same_triplet: MIN:000–MIN:002
+    same_triplet_0: MIN:000
+    same_triplet_1: MIN:001
+    same_triplet_2: MIN:002
+    same_phase_other_scopes:
+    - MIN:011
+    - MIN:021
+    future_min_process_layer: MIN:100–122 owns cognitive events after separate review;
+      this root is not an event.
+    future_min_relation_layer: MIN:200–222 owns capacities and relations after separate
+      review; this root is not a capacity or belief relation.
+    canonical_dat_boundary: DAT remains provisional, but its family owns external
+      information records rather than cognition.
+  address_explanation:
+    first_trit_0: Selects a mental entity or condition—the representation—not the
+      process that produced, accessed, or changed it.
+    second_trit_0: Selects the cognizer's representation of the cognizer's own identity
+      or condition.
+    third_trit_1: Selects a representation presently manifest in cognition.
+  runtime_state_interpretations:
+    '0': Denies that the cognizer has the specified self-representation in the lexical
+      manifest condition.
+    '1': Affirms that the cognizer has the specified self-representation in the lexical
+      manifest condition.
+    '2': Marks the assertion about the manifest self-representation as dormant or
+      unresolved; it does not select another lexical address.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects the
+    manifest form of self-representation. Runtime `[2]/num` separately qualifies a
+    token's current assertion status; it never changes the root to another lexical
+    phase, adds future time, or duplicates lexical latency.
+  cross_family_comparisons:
+    LIF: LIF owns living identity, consciousness, vitality, and organism status. `MIN:001`
+      owns self-representation as cognitive content, never the bearer or identity
+      itself.
+    MOV: MOV owns literal position and motion. Attention shifts and mental maps may
+      use motion metaphors, but `MIN:001` does not encode displacement.
+    MAT: MAT owns neural substrate, sensory energy, and physical-state change. `MIN:001`
+      owns the representation realized by or about those states.
+    CON: CON owns communication, access, possession, social linkage, and participant
+      transfer. Shared access or messaging does not guarantee self-representation.
+    STR: STR owns form, topology, organization, and formal schema structure. `MIN:001`
+      requires cognitive representation in cognizers, not merely an organized artifact.
+    WRN: WRN owns error, confusion, danger, corruption, and failure judgments. A representation
+      may be false or biased without `MIN:001` encoding error.
+    REP: REP owns restoration and recovery. Recall or rehabilitation may restore access
+      to a representation, but `MIN:001` names the representational entity or condition.
+    LOG: LOG owns formal propositions, truth functions, proof, rules, and quantified
+      constraints. `MIN:001` may be nonpropositional, false, vague, or imagistic.
+    DAT: DAT owns records, symbols, messages, and stored information. A record can
+      exist without a cognizer; `MIN:001` requires cognitive content.
+    CRE: CRE owns designing, imagining as generation, and creating artifacts or forms.
+      A created idea can become self-representation, but creation is not built into
+      `MIN:001`.
+    ORI: ORI owns reality, ontological identity, necessity, and universal law. Representation
+      does not entail that its content is real or true.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:001[1](COGNIZER=I,CONTENT=anxious_self)
+    literal_gloss: I; self-condition represented now
+    natural_english: I am aware that I am anxious right now.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: The manifest self-representation is distinct from the emotion itself.
+  - category: physical_or_spatial
+    semantic_graph: MIN:001[1](COGNIZER=climber,CONTENT=left_hand_position)
+    literal_gloss: climber; own hand position manifest in cognition
+    natural_english: The climber is presently aware of where their left hand is.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: Spatial content does not turn MIN into MOV or STR.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:001[1](COGNIZER=operator,DURING=self_check)
+    literal_gloss: operator; self-state representation manifest during check
+    natural_english: During the check, the operator's current self-state is mentally
+      present.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: The interval is graph-level.
+  - category: cross_family_compound
+    semantic_graph: MAT(SIGNAL=heartbeat)+MIN:001[1](COGNIZER=person,CONTENT=heartbeat_state)
+    literal_gloss: physical signal plus manifest self-representation
+    natural_english: The person is presently aware of their heartbeat.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: MAT owns the signal; MIN owns its cognitive representation.
+  - category: executable_or_programming
+    semantic_graph: MIN:001[1](COGNIZER=agent,CONTENT=current_self_state)
+    literal_gloss: agent; current self-state manifest
+    natural_english: The agent has its current self-state loaded in working cognition.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: Not the act of loading it.
+    pseudocode: assert agent.working_model.includes?(agent.current_self_state)
+  - category: counterexample
+    semantic_graph: MIN:101[1](COGNIZER=person,PROCESS=reflection)
+    literal_gloss: person; active inward cognitive process
+    natural_english: The person is reflecting on themselves.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: must_not_use_this_min_root
+    analysis: The act of reflection belongs to the later 1xx process layer.
+  future_compound_decomposition_sketches_not_canonical:
+  - MIN:001 + sensory/modality modifier → visual, auditory, proprioceptive, propositional,
+    imagistic, or procedural representation
+  - MIN:001 + LOG/ORI/WRN predicate → believed, true, probable, false, biased, uncertain,
+    or hallucinatory representation without overloading the atom
+  - MIN:001 + DAT/CON/MIN-process relation → stored, communicated, recalled, learned,
+    inferred, or attended representation with explicit provenance and action
+  later_era_evolution_notes:
+  - Later technical vocabulary may distinguish symbolic, embodied, probabilistic,
+    vector, episodic, semantic, and procedural representation without changing this
+    invariant.
+  - Later colloquial forms may lexicalize high-frequency compounds such as memory,
+    idea, belief, awareness, culture, and mental image.
+  - Future semantic changes require an explicit versioned migration.
+  confidence: 0.98
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:002
+    universal_slot: dormant inward entity
+    family_qualified_transliteration: si·nan
+    local_compact_root: nan
+    formal_carrier: si-ma-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - -2
+  proposal_status: recommended_for_delegated_approval_not_yet_canonical
+  proposed_title: latent self-representation
+  invariant_definition: A mental representation of the cognizer's own identity or
+    condition that persists without presently manifesting in cognition.
+  semantic_center: self-representation
+  semantic_boundaries:
+  - Includes one cognitive representation at the address's self, target, or shared
+    scope.
+  - Allows propositional, imagistic, sensory, conceptual, procedural, or model-like
+    content without selecting one representational format.
+  - Does not assert truth, accuracy, certainty, origin, storage medium, communication,
+    learning, attention allocation, or physical realization.
+  - The lexical expression is latent and remains distinct from runtime state.
+  excluded_meanings:
+  - The act of perceiving, remembering, learning, interpreting, or reasoning belongs
+    to MIN:1xx and remains provisional until separately reviewed.
+  - Competence, attention capacity, belief relation, uncertainty, and distributed
+    intelligence belong to MIN:2xx and remain provisional until separately reviewed.
+  - Living identity and consciousness belong to LIF; neural or sensory substrate belongs
+    to MAT.
+  - Communication, consensus procedure, access, and social tradition belong to CON
+    or compounds.
+  - External records, symbols, models, and archives belong to DAT/STR unless cognitive
+    representation is separately asserted.
+  - Truth, proof, probability, formal proposition, and ontological reality belong
+    to LOG/ORI or grammar.
+  - Error, hallucination, bias, forgetting, and cognitive damage require WRN/REP or
+    explicit compounds.
+  nearest_neighbors:
+    same_triplet: MIN:000–MIN:002
+    same_triplet_0: MIN:000
+    same_triplet_1: MIN:001
+    same_triplet_2: MIN:002
+    same_phase_other_scopes:
+    - MIN:012
+    - MIN:022
+    future_min_process_layer: MIN:100–122 owns cognitive events after separate review;
+      this root is not an event.
+    future_min_relation_layer: MIN:200–222 owns capacities and relations after separate
+      review; this root is not a capacity or belief relation.
+    canonical_dat_boundary: DAT remains provisional, but its family owns external
+      information records rather than cognition.
+  address_explanation:
+    first_trit_0: Selects a mental entity or condition—the representation—not the
+      process that produced, accessed, or changed it.
+    second_trit_0: Selects the cognizer's representation of the cognizer's own identity
+      or condition.
+    third_trit_2: Selects a representation that persists without presently manifesting
+      in cognition.
+  runtime_state_interpretations:
+    '0': Denies that the cognizer has the specified self-representation in the lexical
+      latent condition.
+    '1': Affirms that the cognizer has the specified self-representation in the lexical
+      latent condition.
+    '2': Marks the assertion about the latent self-representation as dormant or unresolved;
+      it does not select another lexical address.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects the
+    latent form of self-representation. Runtime `[2]/num` separately qualifies a token's
+    current assertion status; it never changes the root to another lexical phase,
+    adds future time, or duplicates lexical latency.
+  cross_family_comparisons:
+    LIF: LIF owns living identity, consciousness, vitality, and organism status. `MIN:002`
+      owns self-representation as cognitive content, never the bearer or identity
+      itself.
+    MOV: MOV owns literal position and motion. Attention shifts and mental maps may
+      use motion metaphors, but `MIN:002` does not encode displacement.
+    MAT: MAT owns neural substrate, sensory energy, and physical-state change. `MIN:002`
+      owns the representation realized by or about those states.
+    CON: CON owns communication, access, possession, social linkage, and participant
+      transfer. Shared access or messaging does not guarantee self-representation.
+    STR: STR owns form, topology, organization, and formal schema structure. `MIN:002`
+      requires cognitive representation in cognizers, not merely an organized artifact.
+    WRN: WRN owns error, confusion, danger, corruption, and failure judgments. A representation
+      may be false or biased without `MIN:002` encoding error.
+    REP: REP owns restoration and recovery. Recall or rehabilitation may restore access
+      to a representation, but `MIN:002` names the representational entity or condition.
+    LOG: LOG owns formal propositions, truth functions, proof, rules, and quantified
+      constraints. `MIN:002` may be nonpropositional, false, vague, or imagistic.
+    DAT: DAT owns records, symbols, messages, and stored information. A record can
+      exist without a cognizer; `MIN:002` requires cognitive content.
+    CRE: CRE owns designing, imagining as generation, and creating artifacts or forms.
+      A created idea can become self-representation, but creation is not built into
+      `MIN:002`.
+    ORI: ORI owns reality, ontological identity, necessity, and universal law. Representation
+      does not entail that its content is real or true.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:002[1](COGNIZER=adult,CONTENT=childhood_self_image)
+    literal_gloss: adult; childhood self-image latent
+    natural_english: Their childhood self-image still exists but is not presently
+      in mind.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: Affirming the lexeme affirms latency.
+  - category: physical_or_spatial
+    semantic_graph: MIN:002[1](COGNIZER=dancer,CONTENT=body_map)
+    literal_gloss: dancer; body self-model latent
+    natural_english: The dancer's body map persists outside current awareness.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: Physical embodiment may be separately asserted.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:002[1](COGNIZER=agent,UNTIL=reactivation)
+    literal_gloss: agent; self-representation latent until reactivation
+    natural_english: The self-model remains latent between sessions.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: No future certainty is encoded.
+  - category: cross_family_compound
+    semantic_graph: DAT(RECORD=profile)+MIN:002[1](COGNIZER=person,CONTENT=self_history)
+    literal_gloss: external record plus latent self-representation
+    natural_english: The profile is recorded, while the person's corresponding self-memory
+      is latent.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: DAT and MIN remain different bearers.
+  - category: executable_or_programming
+    semantic_graph: MIN:002[1](COGNIZER=agent,CONTENT=inactive_self_schema)
+    literal_gloss: agent; inactive self-schema persists
+    natural_english: The agent retains a dormant self-schema outside its active context.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: A persisted cognitive object.
+    pseudocode: assert agent.long_term_model.include?(:self_schema) && !agent.context.include?(:self_schema)
+  - category: counterexample
+    semantic_graph: MIN:012[1](COGNIZER=person,TARGET=melody)
+    literal_gloss: person; target representation latent
+    natural_english: The melody is familiar but not currently recalled.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: must_not_use_this_min_root
+    analysis: A latent representation of another target belongs to MIN:012.
+  future_compound_decomposition_sketches_not_canonical:
+  - MIN:002 + sensory/modality modifier → visual, auditory, proprioceptive, propositional,
+    imagistic, or procedural representation
+  - MIN:002 + LOG/ORI/WRN predicate → believed, true, probable, false, biased, uncertain,
+    or hallucinatory representation without overloading the atom
+  - MIN:002 + DAT/CON/MIN-process relation → stored, communicated, recalled, learned,
+    inferred, or attended representation with explicit provenance and action
+  later_era_evolution_notes:
+  - Later technical vocabulary may distinguish symbolic, embodied, probabilistic,
+    vector, episodic, semantic, and procedural representation without changing this
+    invariant.
+  - Later colloquial forms may lexicalize high-frequency compounds such as memory,
+    idea, belief, awareness, culture, and mental image.
+  - Future semantic changes require an explicit versioned migration.
+  confidence: 0.99
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:010
+    universal_slot: stable outward entity
+    family_qualified_transliteration: si·nom
+    local_compact_root: nom
+    formal_carrier: si-ma-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 2
+  proposal_status: recommended_for_delegated_approval_not_yet_canonical
+  proposed_title: persistent target representation
+  invariant_definition: A mental representation of a distinct target that persists
+    across cognitive episodes.
+  semantic_center: target representation
+  semantic_boundaries:
+  - Includes one cognitive representation at the address's self, target, or shared
+    scope.
+  - Allows propositional, imagistic, sensory, conceptual, procedural, or model-like
+    content without selecting one representational format.
+  - Does not assert truth, accuracy, certainty, origin, storage medium, communication,
+    learning, attention allocation, or physical realization.
+  - The lexical expression is persistent and remains distinct from runtime state.
+  excluded_meanings:
+  - The act of perceiving, remembering, learning, interpreting, or reasoning belongs
+    to MIN:1xx and remains provisional until separately reviewed.
+  - Competence, attention capacity, belief relation, uncertainty, and distributed
+    intelligence belong to MIN:2xx and remain provisional until separately reviewed.
+  - Living identity and consciousness belong to LIF; neural or sensory substrate belongs
+    to MAT.
+  - Communication, consensus procedure, access, and social tradition belong to CON
+    or compounds.
+  - External records, symbols, models, and archives belong to DAT/STR unless cognitive
+    representation is separately asserted.
+  - Truth, proof, probability, formal proposition, and ontological reality belong
+    to LOG/ORI or grammar.
+  - Error, hallucination, bias, forgetting, and cognitive damage require WRN/REP or
+    explicit compounds.
+  nearest_neighbors:
+    same_triplet: MIN:010–MIN:012
+    same_triplet_0: MIN:010
+    same_triplet_1: MIN:011
+    same_triplet_2: MIN:012
+    same_phase_other_scopes:
+    - MIN:000
+    - MIN:020
+    future_min_process_layer: MIN:100–122 owns cognitive events after separate review;
+      this root is not an event.
+    future_min_relation_layer: MIN:200–222 owns capacities and relations after separate
+      review; this root is not a capacity or belief relation.
+    canonical_dat_boundary: DAT remains provisional, but its family owns external
+      information records rather than cognition.
+  address_explanation:
+    first_trit_0: Selects a mental entity or condition—the representation—not the
+      process that produced, accessed, or changed it.
+    second_trit_1: Selects the cognizer's representation of a distinct target.
+    third_trit_0: Selects a persistent representation that remains stable across cognitive
+      episodes.
+  runtime_state_interpretations:
+    '0': Denies that the cognizer has the specified representation of the target in
+      the lexical persistent condition.
+    '1': Affirms that the cognizer has the specified representation of the target
+      in the lexical persistent condition.
+    '2': Marks the assertion about the persistent target representation as dormant
+      or unresolved; it does not select another lexical address.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects the
+    persistent form of target representation. Runtime `[2]/num` separately qualifies
+    a token's current assertion status; it never changes the root to another lexical
+    phase, adds future time, or duplicates lexical latency.
+  cross_family_comparisons:
+    LIF: LIF owns living identity, consciousness, vitality, and organism status. `MIN:010`
+      owns target representation as cognitive content, never the bearer or identity
+      itself.
+    MOV: MOV owns literal position and motion. Attention shifts and mental maps may
+      use motion metaphors, but `MIN:010` does not encode displacement.
+    MAT: MAT owns neural substrate, sensory energy, and physical-state change. `MIN:010`
+      owns the representation realized by or about those states.
+    CON: CON owns communication, access, possession, social linkage, and participant
+      transfer. Shared access or messaging does not guarantee target representation.
+    STR: STR owns form, topology, organization, and formal schema structure. `MIN:010`
+      requires cognitive representation in cognizers, not merely an organized artifact.
+    WRN: WRN owns error, confusion, danger, corruption, and failure judgments. A representation
+      may be false or biased without `MIN:010` encoding error.
+    REP: REP owns restoration and recovery. Recall or rehabilitation may restore access
+      to a representation, but `MIN:010` names the representational entity or condition.
+    LOG: LOG owns formal propositions, truth functions, proof, rules, and quantified
+      constraints. `MIN:010` may be nonpropositional, false, vague, or imagistic.
+    DAT: DAT owns records, symbols, messages, and stored information. A record can
+      exist without a cognizer; `MIN:010` requires cognitive content.
+    CRE: CRE owns designing, imagining as generation, and creating artifacts or forms.
+      A created idea can become target representation, but creation is not built into
+      `MIN:010`.
+    ORI: ORI owns reality, ontological identity, necessity, and universal law. Representation
+      does not entail that its content is real or true.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:010[1](COGNIZER=I,TARGET=station)
+    literal_gloss: I; persistent representation of station
+    natural_english: I have a lasting mental picture of the station.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: Accuracy is not asserted.
+  - category: physical_or_spatial
+    semantic_graph: MIN:010[1](COGNIZER=hiker,TARGET=valley)
+    literal_gloss: hiker; persistent target representation of valley
+    natural_english: The hiker retains a stable mental map of the valley.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: The physical valley is MAT/STR/MOV context.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:010[1](COGNIZER=student,TARGET=concept,ACROSS=lessons)
+    literal_gloss: student; target representation persists across lessons
+    natural_english: The concept remains in the student's mental model across lessons.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: Learning processes are not built in.
+  - category: cross_family_compound
+    semantic_graph: DAT(RECORD=blueprint)+MIN:010[1](COGNIZER=engineer,TARGET=machine)
+    literal_gloss: blueprint record plus persistent mental representation
+    natural_english: The engineer retains a mental model of the machine described
+      by the blueprint.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: DAT owns the blueprint.
+  - category: executable_or_programming
+    semantic_graph: MIN:010[1](COGNIZER=agent,TARGET=object_7)
+    literal_gloss: agent; persistent representation of object 7
+    natural_english: The agent maintains a persistent internal object model.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: Useful for knowledge graphs and robotics.
+    pseudocode: assert agent.world_model.persistent_node?(:object_7)
+  - category: counterexample
+    semantic_graph: DAT(RECORD=station_map)
+    literal_gloss: stored map record
+    natural_english: The database stores a map of the station.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: must_not_use_this_min_root
+    analysis: A record without a cognizer is DAT, not MIN.
+  future_compound_decomposition_sketches_not_canonical:
+  - MIN:010 + sensory/modality modifier → visual, auditory, proprioceptive, propositional,
+    imagistic, or procedural representation
+  - MIN:010 + LOG/ORI/WRN predicate → believed, true, probable, false, biased, uncertain,
+    or hallucinatory representation without overloading the atom
+  - MIN:010 + DAT/CON/MIN-process relation → stored, communicated, recalled, learned,
+    inferred, or attended representation with explicit provenance and action
+  later_era_evolution_notes:
+  - Later technical vocabulary may distinguish symbolic, embodied, probabilistic,
+    vector, episodic, semantic, and procedural representation without changing this
+    invariant.
+  - Later colloquial forms may lexicalize high-frequency compounds such as memory,
+    idea, belief, awareness, culture, and mental image.
+  - Future semantic changes require an explicit versioned migration.
+  confidence: 0.99
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:011
+    universal_slot: active outward entity
+    family_qualified_transliteration: si·nok
+    local_compact_root: nok
+    formal_carrier: si-ma-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 4
+  proposal_status: recommended_for_delegated_approval_not_yet_canonical
+  proposed_title: manifest target representation
+  invariant_definition: A mental representation of a distinct target that is presently
+    manifest in cognition.
+  semantic_center: target representation
+  semantic_boundaries:
+  - Includes one cognitive representation at the address's self, target, or shared
+    scope.
+  - Allows propositional, imagistic, sensory, conceptual, procedural, or model-like
+    content without selecting one representational format.
+  - Does not assert truth, accuracy, certainty, origin, storage medium, communication,
+    learning, attention allocation, or physical realization.
+  - The lexical expression is manifest and remains distinct from runtime state.
+  excluded_meanings:
+  - The act of perceiving, remembering, learning, interpreting, or reasoning belongs
+    to MIN:1xx and remains provisional until separately reviewed.
+  - Competence, attention capacity, belief relation, uncertainty, and distributed
+    intelligence belong to MIN:2xx and remain provisional until separately reviewed.
+  - Living identity and consciousness belong to LIF; neural or sensory substrate belongs
+    to MAT.
+  - Communication, consensus procedure, access, and social tradition belong to CON
+    or compounds.
+  - External records, symbols, models, and archives belong to DAT/STR unless cognitive
+    representation is separately asserted.
+  - Truth, proof, probability, formal proposition, and ontological reality belong
+    to LOG/ORI or grammar.
+  - Error, hallucination, bias, forgetting, and cognitive damage require WRN/REP or
+    explicit compounds.
+  nearest_neighbors:
+    same_triplet: MIN:010–MIN:012
+    same_triplet_0: MIN:010
+    same_triplet_1: MIN:011
+    same_triplet_2: MIN:012
+    same_phase_other_scopes:
+    - MIN:001
+    - MIN:021
+    future_min_process_layer: MIN:100–122 owns cognitive events after separate review;
+      this root is not an event.
+    future_min_relation_layer: MIN:200–222 owns capacities and relations after separate
+      review; this root is not a capacity or belief relation.
+    canonical_dat_boundary: DAT remains provisional, but its family owns external
+      information records rather than cognition.
+  address_explanation:
+    first_trit_0: Selects a mental entity or condition—the representation—not the
+      process that produced, accessed, or changed it.
+    second_trit_1: Selects the cognizer's representation of a distinct target.
+    third_trit_1: Selects a representation presently manifest in cognition.
+  runtime_state_interpretations:
+    '0': Denies that the cognizer has the specified representation of the target in
+      the lexical manifest condition.
+    '1': Affirms that the cognizer has the specified representation of the target
+      in the lexical manifest condition.
+    '2': Marks the assertion about the manifest target representation as dormant or
+      unresolved; it does not select another lexical address.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects the
+    manifest form of target representation. Runtime `[2]/num` separately qualifies
+    a token's current assertion status; it never changes the root to another lexical
+    phase, adds future time, or duplicates lexical latency.
+  cross_family_comparisons:
+    LIF: LIF owns living identity, consciousness, vitality, and organism status. `MIN:011`
+      owns target representation as cognitive content, never the bearer or identity
+      itself.
+    MOV: MOV owns literal position and motion. Attention shifts and mental maps may
+      use motion metaphors, but `MIN:011` does not encode displacement.
+    MAT: MAT owns neural substrate, sensory energy, and physical-state change. `MIN:011`
+      owns the representation realized by or about those states.
+    CON: CON owns communication, access, possession, social linkage, and participant
+      transfer. Shared access or messaging does not guarantee target representation.
+    STR: STR owns form, topology, organization, and formal schema structure. `MIN:011`
+      requires cognitive representation in cognizers, not merely an organized artifact.
+    WRN: WRN owns error, confusion, danger, corruption, and failure judgments. A representation
+      may be false or biased without `MIN:011` encoding error.
+    REP: REP owns restoration and recovery. Recall or rehabilitation may restore access
+      to a representation, but `MIN:011` names the representational entity or condition.
+    LOG: LOG owns formal propositions, truth functions, proof, rules, and quantified
+      constraints. `MIN:011` may be nonpropositional, false, vague, or imagistic.
+    DAT: DAT owns records, symbols, messages, and stored information. A record can
+      exist without a cognizer; `MIN:011` requires cognitive content.
+    CRE: CRE owns designing, imagining as generation, and creating artifacts or forms.
+      A created idea can become target representation, but creation is not built into
+      `MIN:011`.
+    ORI: ORI owns reality, ontological identity, necessity, and universal law. Representation
+      does not entail that its content is real or true.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:011[1](COGNIZER=I,TARGET=door)
+    literal_gloss: I; door representation manifest
+    natural_english: I can picture the door right now.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: The source may be sight or recall.
+  - category: physical_or_spatial
+    semantic_graph: MIN:011[1](COGNIZER=driver,TARGET=pedestrian)
+    literal_gloss: driver; pedestrian represented now
+    natural_english: The pedestrian is presently represented in the driver's scene
+      model.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: Sensing and movement remain separate predicates.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:011[1](COGNIZER=operator,TARGET=alarm,DURING=inspection)
+    literal_gloss: operator; alarm target manifest during inspection
+    natural_english: The alarm remains mentally present during the inspection.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: Duration is supplied externally.
+  - category: cross_family_compound
+    semantic_graph: MAT(SIGNAL=light)+MIN:011[1](COGNIZER=observer,TARGET=lamp)
+    literal_gloss: physical signal plus manifest target representation
+    natural_english: The light produces a presently manifest mental representation
+      of the lamp.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: Causation and sensory process require separate relations.
+  - category: executable_or_programming
+    semantic_graph: MIN:011[1](COGNIZER=agent,TARGET=object_7)
+    literal_gloss: agent; target model loaded in active cognition
+    natural_english: Object 7 is present in the agent's active scene model.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: A current representational node.
+    pseudocode: assert agent.active_scene.include?(:object_7)
+  - category: counterexample
+    semantic_graph: MIN:111[1](COGNIZER=agent,TARGET=object_7,PROCESS=observe)
+    literal_gloss: agent; active inquiry about target
+    natural_english: The agent is observing object 7.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: must_not_use_this_min_root
+    analysis: Observation is a process in the later 1xx layer, not the representation
+      entity.
+  future_compound_decomposition_sketches_not_canonical:
+  - MIN:011 + sensory/modality modifier → visual, auditory, proprioceptive, propositional,
+    imagistic, or procedural representation
+  - MIN:011 + LOG/ORI/WRN predicate → believed, true, probable, false, biased, uncertain,
+    or hallucinatory representation without overloading the atom
+  - MIN:011 + DAT/CON/MIN-process relation → stored, communicated, recalled, learned,
+    inferred, or attended representation with explicit provenance and action
+  later_era_evolution_notes:
+  - Later technical vocabulary may distinguish symbolic, embodied, probabilistic,
+    vector, episodic, semantic, and procedural representation without changing this
+    invariant.
+  - Later colloquial forms may lexicalize high-frequency compounds such as memory,
+    idea, belief, awareness, culture, and mental image.
+  - Future semantic changes require an explicit versioned migration.
+  confidence: 0.99
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:012
+    universal_slot: dormant outward entity
+    family_qualified_transliteration: si·non
+    local_compact_root: non
+    formal_carrier: si-ma-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 0
+  proposal_status: recommended_for_delegated_approval_not_yet_canonical
+  proposed_title: latent target representation
+  invariant_definition: A mental representation of a distinct target that persists
+    without presently manifesting in cognition.
+  semantic_center: target representation
+  semantic_boundaries:
+  - Includes one cognitive representation at the address's self, target, or shared
+    scope.
+  - Allows propositional, imagistic, sensory, conceptual, procedural, or model-like
+    content without selecting one representational format.
+  - Does not assert truth, accuracy, certainty, origin, storage medium, communication,
+    learning, attention allocation, or physical realization.
+  - The lexical expression is latent and remains distinct from runtime state.
+  excluded_meanings:
+  - The act of perceiving, remembering, learning, interpreting, or reasoning belongs
+    to MIN:1xx and remains provisional until separately reviewed.
+  - Competence, attention capacity, belief relation, uncertainty, and distributed
+    intelligence belong to MIN:2xx and remain provisional until separately reviewed.
+  - Living identity and consciousness belong to LIF; neural or sensory substrate belongs
+    to MAT.
+  - Communication, consensus procedure, access, and social tradition belong to CON
+    or compounds.
+  - External records, symbols, models, and archives belong to DAT/STR unless cognitive
+    representation is separately asserted.
+  - Truth, proof, probability, formal proposition, and ontological reality belong
+    to LOG/ORI or grammar.
+  - Error, hallucination, bias, forgetting, and cognitive damage require WRN/REP or
+    explicit compounds.
+  nearest_neighbors:
+    same_triplet: MIN:010–MIN:012
+    same_triplet_0: MIN:010
+    same_triplet_1: MIN:011
+    same_triplet_2: MIN:012
+    same_phase_other_scopes:
+    - MIN:002
+    - MIN:022
+    future_min_process_layer: MIN:100–122 owns cognitive events after separate review;
+      this root is not an event.
+    future_min_relation_layer: MIN:200–222 owns capacities and relations after separate
+      review; this root is not a capacity or belief relation.
+    canonical_dat_boundary: DAT remains provisional, but its family owns external
+      information records rather than cognition.
+  address_explanation:
+    first_trit_0: Selects a mental entity or condition—the representation—not the
+      process that produced, accessed, or changed it.
+    second_trit_1: Selects the cognizer's representation of a distinct target.
+    third_trit_2: Selects a representation that persists without presently manifesting
+      in cognition.
+  runtime_state_interpretations:
+    '0': Denies that the cognizer has the specified representation of the target in
+      the lexical latent condition.
+    '1': Affirms that the cognizer has the specified representation of the target
+      in the lexical latent condition.
+    '2': Marks the assertion about the latent target representation as dormant or
+      unresolved; it does not select another lexical address.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects the
+    latent form of target representation. Runtime `[2]/num` separately qualifies a
+    token's current assertion status; it never changes the root to another lexical
+    phase, adds future time, or duplicates lexical latency.
+  cross_family_comparisons:
+    LIF: LIF owns living identity, consciousness, vitality, and organism status. `MIN:012`
+      owns target representation as cognitive content, never the bearer or identity
+      itself.
+    MOV: MOV owns literal position and motion. Attention shifts and mental maps may
+      use motion metaphors, but `MIN:012` does not encode displacement.
+    MAT: MAT owns neural substrate, sensory energy, and physical-state change. `MIN:012`
+      owns the representation realized by or about those states.
+    CON: CON owns communication, access, possession, social linkage, and participant
+      transfer. Shared access or messaging does not guarantee target representation.
+    STR: STR owns form, topology, organization, and formal schema structure. `MIN:012`
+      requires cognitive representation in cognizers, not merely an organized artifact.
+    WRN: WRN owns error, confusion, danger, corruption, and failure judgments. A representation
+      may be false or biased without `MIN:012` encoding error.
+    REP: REP owns restoration and recovery. Recall or rehabilitation may restore access
+      to a representation, but `MIN:012` names the representational entity or condition.
+    LOG: LOG owns formal propositions, truth functions, proof, rules, and quantified
+      constraints. `MIN:012` may be nonpropositional, false, vague, or imagistic.
+    DAT: DAT owns records, symbols, messages, and stored information. A record can
+      exist without a cognizer; `MIN:012` requires cognitive content.
+    CRE: CRE owns designing, imagining as generation, and creating artifacts or forms.
+      A created idea can become target representation, but creation is not built into
+      `MIN:012`.
+    ORI: ORI owns reality, ontological identity, necessity, and universal law. Representation
+      does not entail that its content is real or true.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:012[1](COGNIZER=I,TARGET=melody)
+    literal_gloss: I; melody representation latent
+    natural_english: The melody is familiar, but I cannot bring it to mind right now.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: Recognition history is not required.
+  - category: physical_or_spatial
+    semantic_graph: MIN:012[1](COGNIZER=hiker,TARGET=landmark)
+    literal_gloss: hiker; landmark representation latent
+    natural_english: The landmark's mental image persists outside the hiker's present
+      awareness.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: The landmark itself is not dormant.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:012[1](COGNIZER=student,TARGET=formula,UNTIL=cue)
+    literal_gloss: student; formula representation latent until cue
+    natural_english: The formula remains latent until a cue makes it manifest.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: The cue and transition are separate.
+  - category: cross_family_compound
+    semantic_graph: DAT(CUE=photo)+MIN:012[1](COGNIZER=person,TARGET=friend)
+    literal_gloss: photo cue plus latent target representation
+    natural_english: The photo can cue a latent mental representation of the friend.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: DAT supplies the cue; MIN supplies the cognitive content.
+  - category: executable_or_programming
+    semantic_graph: MIN:012[1](COGNIZER=agent,TARGET=object_7)
+    literal_gloss: agent; target model persists outside active context
+    natural_english: Object 7 remains in long-term cognition but not in the active
+      scene.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: A latent world-model node.
+    pseudocode: assert agent.world_model.include?(:object_7) && !agent.active_scene.include?(:object_7)
+  - category: counterexample
+    semantic_graph: MIN:012[0](COGNIZER=agent,TARGET=unknown_object)
+    literal_gloss: no latent target representation
+    natural_english: The agent has no representation of the unknown object.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: must_not_use_this_min_root
+    analysis: No representation is negation, not an 'unrecognized impression' atom.
+  future_compound_decomposition_sketches_not_canonical:
+  - MIN:012 + sensory/modality modifier → visual, auditory, proprioceptive, propositional,
+    imagistic, or procedural representation
+  - MIN:012 + LOG/ORI/WRN predicate → believed, true, probable, false, biased, uncertain,
+    or hallucinatory representation without overloading the atom
+  - MIN:012 + DAT/CON/MIN-process relation → stored, communicated, recalled, learned,
+    inferred, or attended representation with explicit provenance and action
+  later_era_evolution_notes:
+  - Later technical vocabulary may distinguish symbolic, embodied, probabilistic,
+    vector, episodic, semantic, and procedural representation without changing this
+    invariant.
+  - Later colloquial forms may lexicalize high-frequency compounds such as memory,
+    idea, belief, awareness, culture, and mental image.
+  - Future semantic changes require an explicit versioned migration.
+  confidence: 0.99
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:020
+    universal_slot: stable collective entity
+    family_qualified_transliteration: si·nim
+    local_compact_root: nim
+    formal_carrier: si-ma-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -2
+  proposal_status: recommended_for_delegated_approval_not_yet_canonical
+  proposed_title: persistent shared cognitive schema
+  invariant_definition: A mental representation held in common across multiple cognizers
+    that persists across cognitive episodes.
+  semantic_center: shared cognitive schema
+  semantic_boundaries:
+  - Includes one cognitive representation at the address's self, target, or shared
+    scope.
+  - Allows propositional, imagistic, sensory, conceptual, procedural, or model-like
+    content without selecting one representational format.
+  - Does not assert truth, accuracy, certainty, origin, storage medium, communication,
+    learning, attention allocation, or physical realization.
+  - The lexical expression is persistent and remains distinct from runtime state.
+  excluded_meanings:
+  - The act of perceiving, remembering, learning, interpreting, or reasoning belongs
+    to MIN:1xx and remains provisional until separately reviewed.
+  - Competence, attention capacity, belief relation, uncertainty, and distributed
+    intelligence belong to MIN:2xx and remain provisional until separately reviewed.
+  - Living identity and consciousness belong to LIF; neural or sensory substrate belongs
+    to MAT.
+  - Communication, consensus procedure, access, and social tradition belong to CON
+    or compounds.
+  - External records, symbols, models, and archives belong to DAT/STR unless cognitive
+    representation is separately asserted.
+  - Truth, proof, probability, formal proposition, and ontological reality belong
+    to LOG/ORI or grammar.
+  - Error, hallucination, bias, forgetting, and cognitive damage require WRN/REP or
+    explicit compounds.
+  nearest_neighbors:
+    same_triplet: MIN:020–MIN:022
+    same_triplet_0: MIN:020
+    same_triplet_1: MIN:021
+    same_triplet_2: MIN:022
+    same_phase_other_scopes:
+    - MIN:000
+    - MIN:010
+    future_min_process_layer: MIN:100–122 owns cognitive events after separate review;
+      this root is not an event.
+    future_min_relation_layer: MIN:200–222 owns capacities and relations after separate
+      review; this root is not a capacity or belief relation.
+    canonical_dat_boundary: DAT remains provisional, but its family owns external
+      information records rather than cognition.
+  address_explanation:
+    first_trit_0: Selects a mental entity or condition—the representation—not the
+      process that produced, accessed, or changed it.
+    second_trit_2: Selects a representation held in common across multiple cognizers.
+    third_trit_0: Selects a persistent representation that remains stable across cognitive
+      episodes.
+  runtime_state_interpretations:
+    '0': Denies that the specified representation is held across the cognizers in
+      the lexical persistent condition.
+    '1': Affirms that the specified representation is held across the cognizers in
+      the lexical persistent condition.
+    '2': Marks the assertion about the persistent shared cognitive schema as dormant
+      or unresolved; it does not select another lexical address.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects the
+    persistent form of shared cognitive schema. Runtime `[2]/num` separately qualifies
+    a token's current assertion status; it never changes the root to another lexical
+    phase, adds future time, or duplicates lexical latency.
+  cross_family_comparisons:
+    LIF: LIF owns living identity, consciousness, vitality, and organism status. `MIN:020`
+      owns shared cognitive schema as cognitive content, never the bearer or identity
+      itself.
+    MOV: MOV owns literal position and motion. Attention shifts and mental maps may
+      use motion metaphors, but `MIN:020` does not encode displacement.
+    MAT: MAT owns neural substrate, sensory energy, and physical-state change. `MIN:020`
+      owns the representation realized by or about those states.
+    CON: CON owns communication, access, possession, social linkage, and participant
+      transfer. Shared access or messaging does not guarantee shared cognitive schema.
+    STR: STR owns form, topology, organization, and formal schema structure. `MIN:020`
+      requires cognitive representation in cognizers, not merely an organized artifact.
+    WRN: WRN owns error, confusion, danger, corruption, and failure judgments. A representation
+      may be false or biased without `MIN:020` encoding error.
+    REP: REP owns restoration and recovery. Recall or rehabilitation may restore access
+      to a representation, but `MIN:020` names the representational entity or condition.
+    LOG: LOG owns formal propositions, truth functions, proof, rules, and quantified
+      constraints. `MIN:020` may be nonpropositional, false, vague, or imagistic.
+    DAT: DAT owns records, symbols, messages, and stored information. A record can
+      exist without a cognizer; `MIN:020` requires cognitive content.
+    CRE: CRE owns designing, imagining as generation, and creating artifacts or forms.
+      A created idea can become shared cognitive schema, but creation is not built
+      into `MIN:020`.
+    ORI: ORI owns reality, ontological identity, necessity, and universal law. Representation
+      does not entail that its content is real or true.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:020[1](COGNIZERS=team,CONTENT=emergency_plan)
+    literal_gloss: team; persistent shared cognitive schema of plan
+    natural_english: The team shares a lasting mental model of the emergency plan.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: The plan itself may be DAT/LOG/CRE.
+  - category: physical_or_spatial
+    semantic_graph: MIN:020[1](COGNIZERS=rescuers,CONTENT=building_layout)
+    literal_gloss: rescuers; persistent shared layout schema
+    natural_english: The rescuers share a stable mental map of the building.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: The building structure is STR.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:020[1](COGNIZERS=crew,ACROSS=shifts)
+    literal_gloss: crew; shared schema persists across shifts
+    natural_english: The crew's common mental model persists across shifts.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: Persistence does not require continuous discussion.
+  - category: cross_family_compound
+    semantic_graph: CON(PROTOCOL=team)+MIN:020[1](COGNIZERS=team,CONTENT=roles)
+    literal_gloss: communication convention plus shared cognitive schema
+    natural_english: The protocol supports a shared mental model of the roles.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: CON owns the convention and linkage.
+  - category: executable_or_programming
+    semantic_graph: MIN:020[1](COGNIZERS=agents,CONTENT=world_model_v3)
+    literal_gloss: agents; persistent common world schema
+    natural_english: The agents share a persistent cognitive world model.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: Common representation, not merely common data bytes.
+    pseudocode: assert agents.all? { |a| a.cognitive_schema.equivalent?(:world_model_v3)
+      }
+  - category: counterexample
+    semantic_graph: DAT(RECORD=manual)
+    literal_gloss: manual; shared accessible record
+    natural_english: Everyone can access the same manual.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: must_not_use_this_min_root
+    analysis: Common access to data does not prove a shared cognitive schema.
+  future_compound_decomposition_sketches_not_canonical:
+  - MIN:020 + sensory/modality modifier → visual, auditory, proprioceptive, propositional,
+    imagistic, or procedural representation
+  - MIN:020 + LOG/ORI/WRN predicate → believed, true, probable, false, biased, uncertain,
+    or hallucinatory representation without overloading the atom
+  - MIN:020 + DAT/CON/MIN-process relation → stored, communicated, recalled, learned,
+    inferred, or attended representation with explicit provenance and action
+  later_era_evolution_notes:
+  - Later technical vocabulary may distinguish symbolic, embodied, probabilistic,
+    vector, episodic, semantic, and procedural representation without changing this
+    invariant.
+  - Later colloquial forms may lexicalize high-frequency compounds such as memory,
+    idea, belief, awareness, culture, and mental image.
+  - Future semantic changes require an explicit versioned migration.
+  confidence: 0.97
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:021
+    universal_slot: active collective entity
+    family_qualified_transliteration: si·nik
+    local_compact_root: nik
+    formal_carrier: si-ma-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - 0
+  proposal_status: recommended_for_delegated_approval_not_yet_canonical
+  proposed_title: manifest shared cognitive schema
+  invariant_definition: A mental representation held in common across multiple cognizers
+    that is presently manifest among them.
+  semantic_center: shared cognitive schema
+  semantic_boundaries:
+  - Includes one cognitive representation at the address's self, target, or shared
+    scope.
+  - Allows propositional, imagistic, sensory, conceptual, procedural, or model-like
+    content without selecting one representational format.
+  - Does not assert truth, accuracy, certainty, origin, storage medium, communication,
+    learning, attention allocation, or physical realization.
+  - The lexical expression is manifest and remains distinct from runtime state.
+  excluded_meanings:
+  - The act of perceiving, remembering, learning, interpreting, or reasoning belongs
+    to MIN:1xx and remains provisional until separately reviewed.
+  - Competence, attention capacity, belief relation, uncertainty, and distributed
+    intelligence belong to MIN:2xx and remain provisional until separately reviewed.
+  - Living identity and consciousness belong to LIF; neural or sensory substrate belongs
+    to MAT.
+  - Communication, consensus procedure, access, and social tradition belong to CON
+    or compounds.
+  - External records, symbols, models, and archives belong to DAT/STR unless cognitive
+    representation is separately asserted.
+  - Truth, proof, probability, formal proposition, and ontological reality belong
+    to LOG/ORI or grammar.
+  - Error, hallucination, bias, forgetting, and cognitive damage require WRN/REP or
+    explicit compounds.
+  nearest_neighbors:
+    same_triplet: MIN:020–MIN:022
+    same_triplet_0: MIN:020
+    same_triplet_1: MIN:021
+    same_triplet_2: MIN:022
+    same_phase_other_scopes:
+    - MIN:001
+    - MIN:011
+    future_min_process_layer: MIN:100–122 owns cognitive events after separate review;
+      this root is not an event.
+    future_min_relation_layer: MIN:200–222 owns capacities and relations after separate
+      review; this root is not a capacity or belief relation.
+    canonical_dat_boundary: DAT remains provisional, but its family owns external
+      information records rather than cognition.
+  address_explanation:
+    first_trit_0: Selects a mental entity or condition—the representation—not the
+      process that produced, accessed, or changed it.
+    second_trit_2: Selects a representation held in common across multiple cognizers.
+    third_trit_1: Selects a representation presently manifest in cognition.
+  runtime_state_interpretations:
+    '0': Denies that the specified representation is held across the cognizers in
+      the lexical manifest condition.
+    '1': Affirms that the specified representation is held across the cognizers in
+      the lexical manifest condition.
+    '2': Marks the assertion about the manifest shared cognitive schema as dormant
+      or unresolved; it does not select another lexical address.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects the
+    manifest form of shared cognitive schema. Runtime `[2]/num` separately qualifies
+    a token's current assertion status; it never changes the root to another lexical
+    phase, adds future time, or duplicates lexical latency.
+  cross_family_comparisons:
+    LIF: LIF owns living identity, consciousness, vitality, and organism status. `MIN:021`
+      owns shared cognitive schema as cognitive content, never the bearer or identity
+      itself.
+    MOV: MOV owns literal position and motion. Attention shifts and mental maps may
+      use motion metaphors, but `MIN:021` does not encode displacement.
+    MAT: MAT owns neural substrate, sensory energy, and physical-state change. `MIN:021`
+      owns the representation realized by or about those states.
+    CON: CON owns communication, access, possession, social linkage, and participant
+      transfer. Shared access or messaging does not guarantee shared cognitive schema.
+    STR: STR owns form, topology, organization, and formal schema structure. `MIN:021`
+      requires cognitive representation in cognizers, not merely an organized artifact.
+    WRN: WRN owns error, confusion, danger, corruption, and failure judgments. A representation
+      may be false or biased without `MIN:021` encoding error.
+    REP: REP owns restoration and recovery. Recall or rehabilitation may restore access
+      to a representation, but `MIN:021` names the representational entity or condition.
+    LOG: LOG owns formal propositions, truth functions, proof, rules, and quantified
+      constraints. `MIN:021` may be nonpropositional, false, vague, or imagistic.
+    DAT: DAT owns records, symbols, messages, and stored information. A record can
+      exist without a cognizer; `MIN:021` requires cognitive content.
+    CRE: CRE owns designing, imagining as generation, and creating artifacts or forms.
+      A created idea can become shared cognitive schema, but creation is not built
+      into `MIN:021`.
+    ORI: ORI owns reality, ontological identity, necessity, and universal law. Representation
+      does not entail that its content is real or true.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:021[1](COGNIZERS=team,CONTENT=current_situation)
+    literal_gloss: team; shared situation schema manifest now
+    natural_english: The team is presently working from the same mental picture.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: This requires common representation, not just simultaneous attention.
+  - category: physical_or_spatial
+    semantic_graph: MIN:021[1](COGNIZERS=pilots,CONTENT=airspace)
+    literal_gloss: pilots; shared airspace schema manifest
+    natural_english: Both pilots currently share the same cognitive map of the airspace.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: The spatial map's geometry remains STR/DAT content.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:021[1](COGNIZERS=crew,DURING=briefing)
+    literal_gloss: crew; common schema manifest during briefing
+    natural_english: During the briefing, the shared plan is mentally present across
+      the crew.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: The briefing process is CON/MIN:1xx.
+  - category: cross_family_compound
+    semantic_graph: CON(SESSION=briefing)+MIN:021[1](COGNIZERS=crew,CONTENT=plan)
+    literal_gloss: communication session plus manifest shared schema
+    natural_english: The briefing makes the crew's shared mental model presently manifest.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: Communication and representation are distinct.
+  - category: executable_or_programming
+    semantic_graph: MIN:021[1](COGNIZERS=agents,CONTENT=active_consensus_model)
+    literal_gloss: agents; common cognitive model active
+    natural_english: The agents currently operate from one shared world model.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: The model is cognitively manifest across agents.
+    pseudocode: assert agents.active_models.map(&:semantic_hash).uniq.one?
+  - category: counterexample
+    semantic_graph: CON/LOG(JOINT_FOCUS=screen)+MIN:021[0](COGNIZERS=audience)
+    literal_gloss: audience attends together; no shared schema
+    natural_english: Everyone watches the screen but interprets it differently.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: must_not_use_this_min_root
+    analysis: Joint attention alone does not establish a shared cognitive schema.
+  future_compound_decomposition_sketches_not_canonical:
+  - MIN:021 + sensory/modality modifier → visual, auditory, proprioceptive, propositional,
+    imagistic, or procedural representation
+  - MIN:021 + LOG/ORI/WRN predicate → believed, true, probable, false, biased, uncertain,
+    or hallucinatory representation without overloading the atom
+  - MIN:021 + DAT/CON/MIN-process relation → stored, communicated, recalled, learned,
+    inferred, or attended representation with explicit provenance and action
+  later_era_evolution_notes:
+  - Later technical vocabulary may distinguish symbolic, embodied, probabilistic,
+    vector, episodic, semantic, and procedural representation without changing this
+    invariant.
+  - Later colloquial forms may lexicalize high-frequency compounds such as memory,
+    idea, belief, awareness, culture, and mental image.
+  - Future semantic changes require an explicit versioned migration.
+  confidence: 0.96
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MIN:022
+    universal_slot: dormant collective entity
+    family_qualified_transliteration: si·nin
+    local_compact_root: nin
+    formal_carrier: si-ma-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -4
+  proposal_status: recommended_for_delegated_approval_not_yet_canonical
+  proposed_title: latent shared cognitive schema
+  invariant_definition: A mental representation held in common across multiple cognizers
+    that persists without presently manifesting among them.
+  semantic_center: shared cognitive schema
+  semantic_boundaries:
+  - Includes one cognitive representation at the address's self, target, or shared
+    scope.
+  - Allows propositional, imagistic, sensory, conceptual, procedural, or model-like
+    content without selecting one representational format.
+  - Does not assert truth, accuracy, certainty, origin, storage medium, communication,
+    learning, attention allocation, or physical realization.
+  - The lexical expression is latent and remains distinct from runtime state.
+  excluded_meanings:
+  - The act of perceiving, remembering, learning, interpreting, or reasoning belongs
+    to MIN:1xx and remains provisional until separately reviewed.
+  - Competence, attention capacity, belief relation, uncertainty, and distributed
+    intelligence belong to MIN:2xx and remain provisional until separately reviewed.
+  - Living identity and consciousness belong to LIF; neural or sensory substrate belongs
+    to MAT.
+  - Communication, consensus procedure, access, and social tradition belong to CON
+    or compounds.
+  - External records, symbols, models, and archives belong to DAT/STR unless cognitive
+    representation is separately asserted.
+  - Truth, proof, probability, formal proposition, and ontological reality belong
+    to LOG/ORI or grammar.
+  - Error, hallucination, bias, forgetting, and cognitive damage require WRN/REP or
+    explicit compounds.
+  nearest_neighbors:
+    same_triplet: MIN:020–MIN:022
+    same_triplet_0: MIN:020
+    same_triplet_1: MIN:021
+    same_triplet_2: MIN:022
+    same_phase_other_scopes:
+    - MIN:002
+    - MIN:012
+    future_min_process_layer: MIN:100–122 owns cognitive events after separate review;
+      this root is not an event.
+    future_min_relation_layer: MIN:200–222 owns capacities and relations after separate
+      review; this root is not a capacity or belief relation.
+    canonical_dat_boundary: DAT remains provisional, but its family owns external
+      information records rather than cognition.
+  address_explanation:
+    first_trit_0: Selects a mental entity or condition—the representation—not the
+      process that produced, accessed, or changed it.
+    second_trit_2: Selects a representation held in common across multiple cognizers.
+    third_trit_2: Selects a representation that persists without presently manifesting
+      in cognition.
+  runtime_state_interpretations:
+    '0': Denies that the specified representation is held across the cognizers in
+      the lexical latent condition.
+    '1': Affirms that the specified representation is held across the cognizers in
+      the lexical latent condition.
+    '2': Marks the assertion about the latent shared cognitive schema as dormant or
+      unresolved; it does not select another lexical address.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects the
+    latent form of shared cognitive schema. Runtime `[2]/num` separately qualifies
+    a token's current assertion status; it never changes the root to another lexical
+    phase, adds future time, or duplicates lexical latency.
+  cross_family_comparisons:
+    LIF: LIF owns living identity, consciousness, vitality, and organism status. `MIN:022`
+      owns shared cognitive schema as cognitive content, never the bearer or identity
+      itself.
+    MOV: MOV owns literal position and motion. Attention shifts and mental maps may
+      use motion metaphors, but `MIN:022` does not encode displacement.
+    MAT: MAT owns neural substrate, sensory energy, and physical-state change. `MIN:022`
+      owns the representation realized by or about those states.
+    CON: CON owns communication, access, possession, social linkage, and participant
+      transfer. Shared access or messaging does not guarantee shared cognitive schema.
+    STR: STR owns form, topology, organization, and formal schema structure. `MIN:022`
+      requires cognitive representation in cognizers, not merely an organized artifact.
+    WRN: WRN owns error, confusion, danger, corruption, and failure judgments. A representation
+      may be false or biased without `MIN:022` encoding error.
+    REP: REP owns restoration and recovery. Recall or rehabilitation may restore access
+      to a representation, but `MIN:022` names the representational entity or condition.
+    LOG: LOG owns formal propositions, truth functions, proof, rules, and quantified
+      constraints. `MIN:022` may be nonpropositional, false, vague, or imagistic.
+    DAT: DAT owns records, symbols, messages, and stored information. A record can
+      exist without a cognizer; `MIN:022` requires cognitive content.
+    CRE: CRE owns designing, imagining as generation, and creating artifacts or forms.
+      A created idea can become shared cognitive schema, but creation is not built
+      into `MIN:022`.
+    ORI: ORI owns reality, ontological identity, necessity, and universal law. Representation
+      does not entail that its content is real or true.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MIN:022[1](COGNIZERS=old_team,CONTENT=procedure)
+    literal_gloss: team; shared procedure schema latent
+    natural_english: The old team still shares the know-how, though nobody is thinking
+      about it now.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: Practice and transmission are not asserted.
+  - category: physical_or_spatial
+    semantic_graph: MIN:022[1](COGNIZERS=residents,CONTENT=evacuation_route)
+    literal_gloss: residents; shared route schema latent
+    natural_english: The residents' common mental map of the evacuation route is presently
+      latent.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: The route itself is MOV/STR.
+  - category: temporal_or_sequential
+    semantic_graph: MIN:022[1](COGNIZERS=crew,BETWEEN=drills)
+    literal_gloss: crew; common schema latent between drills
+    natural_english: Between drills, the shared emergency schema persists without
+      being manifest.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: The next drill is not predicted.
+  - category: cross_family_compound
+    semantic_graph: DAT(ARCHIVE=manual)+MIN:022[1](COGNIZERS=crew,CONTENT=procedure)
+    literal_gloss: archive plus latent shared cognitive schema
+    natural_english: The manual records the procedure while the crew's common mental
+      schema remains latent.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: An archive alone is not a mental schema.
+  - category: executable_or_programming
+    semantic_graph: MIN:022[1](COGNIZERS=agents,CONTENT=inactive_policy)
+    literal_gloss: agents; common policy schema latent
+    natural_english: The agents retain a shared cognitive policy outside active context.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: valid
+    analysis: All agents retain equivalent latent content.
+    pseudocode: assert agents.all? { |a| a.long_term_model.include?(:inactive_policy)
+      }
+  - category: counterexample
+    semantic_graph: DAT(RECORD=lost_archive)+MIN:022[0](COGNIZERS=community)
+    literal_gloss: archive exists; no shared cognitive schema
+    natural_english: The archive survives, but nobody understands its contents.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: cognizer or focal mental bearer
+      middle: MIN representation predicate
+      high: represented target when present
+      sustained: shared cognitive community or interpretive frame when present
+    use_status: must_not_use_this_min_root
+    analysis: Preserved data without cognitive representation is DAT, not MIN:022.
+  future_compound_decomposition_sketches_not_canonical:
+  - MIN:022 + sensory/modality modifier → visual, auditory, proprioceptive, propositional,
+    imagistic, or procedural representation
+  - MIN:022 + LOG/ORI/WRN predicate → believed, true, probable, false, biased, uncertain,
+    or hallucinatory representation without overloading the atom
+  - MIN:022 + DAT/CON/MIN-process relation → stored, communicated, recalled, learned,
+    inferred, or attended representation with explicit provenance and action
+  later_era_evolution_notes:
+  - Later technical vocabulary may distinguish symbolic, embodied, probabilistic,
+    vector, episodic, semantic, and procedural representation without changing this
+    invariant.
+  - Later colloquial forms may lexicalize high-frequency compounds such as memory,
+    idea, belief, awareness, culture, and mental image.
+  - Future semantic changes require an explicit versioned migration.
+  confidence: 0.97
+  canonicalized: false

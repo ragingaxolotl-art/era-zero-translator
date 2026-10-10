@@ -1,6 +1,6 @@
 # Translator Readiness Validation
 
-Status: **PASS — CURRENT ROADMAP CONSISTENT; BROAD TRANSLATOR STILL BLOCKED**
+Status: **PASS — ALL PLANNED TRANSLATOR GATES COMPLETE**
 
 - Checks passed: **8**
 - Checks failed: **0**
@@ -16,7 +16,7 @@ Status: **PASS — CURRENT ROADMAP CONSISTENT; BROAD TRANSLATOR STILL BLOCKED**
 
 ## PASS — translator inventory
 
-translator readiness mirrors live authority and names  next
+translator readiness mirrors live authority; no semantic packet remains
 
 ## PASS — safe translator boundary
 
@@ -43,4 +43,4 @@ no provisional ID is present in the runtime canonical specification
 the roadmap preserves the block and the complete dependency sequence
 
 
-All atomic semantic packets are complete. General English translation, compounds, semantic IR, and executable grammar remain unauthorized pending their own gates.
+All atomic semantic packets and all planned translator-readiness gates are complete. The translator remains conservative: documented vocabulary gaps and unsupported free-form composition are reported rather than guessed.

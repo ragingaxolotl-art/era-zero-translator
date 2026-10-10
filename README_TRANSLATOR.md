@@ -10,6 +10,8 @@ The Pages build runs entirely in the browser. Its default interface accepts ordi
 
 Strong contextual cues choose the applicable indexed sense automatically—for example, spatial `go` in “Go home,” data transfer in “Send the file,” and communicative expression in “Send the message.” A resolved result exposes and plays its complete sound construction: family prefix/opening, full carrier, address path, runtime ending, and sentence contour.
 
+Release 1.4 adds a complete searchable inventory: all 436 indexed options are present in the browser rather than being hidden behind a candidate cutoff. Any English phrase may be entered. Approved semantic material is ranked normally, while unfamiliar terms are preserved as deterministic EZNAME phonemic labels and are never silently dropped or promoted into fake canonical meanings. The whole-phrase coverage panel makes that boundary visible word by word.
+
 One approved compound has open semantic slots. Because its arguments are arbitrary canonical lexical occurrences, the static release reports that boundary explicitly and routes full role binding to the Ruby API rather than fabricating or constraining an argument. Advanced controlled-English structural templates also remain in the full local compiler.
 
 The browser also includes the experimental **EZNAME-0.1** channel for unfamiliar nouns and proper names. It estimates an editable phoneme sequence, maps every phoneme to a framed deterministic tone pair, and can add an optional instance signature so two specific objects with the same label remain distinct. EZNAME is a nonsemantic label and never creates or modifies a canonical Era Zero meaning.
@@ -67,4 +69,6 @@ The product audit covers API contracts, error paths, all reviewed indexed senses
 
 ## Scope
 
-This is a deterministic indexed translator, not a statistical paraphrase model. English outside the 436-sense index may return no candidate. Structural and grammar senses can require a future richer composition UI. Those outcomes are honest limitations, not failures to be hidden by guessing.
+This is a deterministic indexed translator, not a statistical paraphrase model. English outside the 436-sense index is retained through the nonsemantic phonemic-label channel, but that fallback is not presented as a semantic translation. Structural and grammar senses can require a future richer composition UI. Those outcomes are honest limitations, not failures to be hidden by guessing.
+
+Source and conversation provenance is recorded in `docs/SOURCE_PROVENANCE.md` and `spec/source_provenance.yaml`.

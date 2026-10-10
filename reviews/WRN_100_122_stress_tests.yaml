@@ -1,0 +1,451 @@
+---
+metadata:
+  title: WRN:100–122 English coverage and routing tests
+  status: review_evidence_not_translation_dictionary
+  range: WRN:100–122
+  test_count: 93
+  no_forced_atomization: true
+tests:
+- test_id: WRN1-T001
+  english_concept: degrade
+  routing: one_root_or_compound
+  analysis: WRN:100/101/102 by phase when adverse change originates within one entity;
+    add domain mechanics separately.
+- test_id: WRN1-T002
+  english_concept: deteriorate
+  routing: one_root
+  analysis: WRN:1x0 by phase when an entity enters a less acceptable condition through
+    internally originating change.
+- test_id: WRN1-T003
+  english_concept: internal failure completed
+  routing: one_root
+  analysis: WRN:100 states completion of internally originating adverse transformation.
+- test_id: WRN1-T004
+  english_concept: internal failure ongoing
+  routing: one_root
+  analysis: WRN:101 states ongoing internally originating adverse transformation.
+- test_id: WRN1-T005
+  english_concept: internal failure nonactualized
+  routing: one_root
+  analysis: WRN:102 states the adverse process without asserting that it began, was
+    planned, or will occur.
+- test_id: WRN1-T006
+  english_concept: decay
+  routing: one_root_or_compound
+  analysis: WRN internal degradation plus MAT/LIF/ORI for physical, biological, or
+    temporal mechanism.
+- test_id: WRN1-T007
+  english_concept: wear out
+  routing: compound
+  analysis: WRN internal degradation plus MAT friction and ORI duration; the phrase
+    may describe process or completed state.
+- test_id: WRN1-T008
+  english_concept: overheat
+  routing: compound
+  analysis: MAT thermal change plus WRN internal degradation when the heating moves
+    the entity toward a less acceptable condition.
+- test_id: WRN1-T009
+  english_concept: crack forming
+  routing: compound
+  analysis: MAT fracture process plus WRN:101 if it is an adverse internally originating
+    transformation.
+- test_id: WRN1-T010
+  english_concept: software service degrading
+  routing: one_root_or_compound
+  analysis: WRN:101 supplies adverse process; DAT/LOG supplies state and correctness
+    details.
+- test_id: WRN1-T011
+  english_concept: memory leak worsening
+  routing: compound
+  analysis: DAT/MAT resource semantics plus WRN:101 internally originating degradation.
+- test_id: WRN1-T012
+  english_concept: invalid proof step
+  routing: different_family
+  analysis: LOG owns invalidity; no adverse transformation is implied.
+- test_id: WRN1-T013
+  english_concept: state transition
+  routing: different_family_or_compound
+  analysis: ORI owns generic transition; WRN applies only when the transformation
+    is adverse and scope-resolved.
+- test_id: WRN1-T014
+  english_concept: transform
+  routing: unresolved
+  analysis: Generic change lacks family, adverse criterion, scope, and phase; do not
+    force it into WRN.
+- test_id: WRN1-T015
+  english_concept: improve
+  routing: different_family_or_compound
+  analysis: Improvement is not WRN degradation; REP or CRE may apply depending on
+    restoration or creation.
+- test_id: WRN1-T016
+  english_concept: repair
+  routing: different_family
+  analysis: REP owns restoration toward an acceptable condition, the directional opposite
+    of WRN adverse transformation.
+- test_id: WRN1-T017
+  english_concept: self-monitor
+  routing: different_family_or_compound
+  analysis: DAT/MIN/LOG owns observation and assessment; monitoring can occur without
+    degradation.
+- test_id: WRN1-T018
+  english_concept: diagnose
+  routing: different_family_or_compound
+  analysis: MIN/DAT/LOG owns evidence interpretation; diagnosis is not the adverse
+    transformation diagnosed.
+- test_id: WRN1-T019
+  english_concept: detect fault
+  routing: different_family_or_compound
+  analysis: DAT/MIN owns detection; WRN:0xx names the condition and WRN:1xx the adverse
+    change, neither of which entails observation.
+- test_id: WRN1-T020
+  english_concept: internal degradation uncertain
+  routing: runtime_state
+  analysis: WRN:101[2]/num leaves ongoing status unresolved; it is not WRN:102.
+- test_id: WRN1-T021
+  english_concept: confirmed nonactualized degradation
+  routing: one_root_plus_runtime
+  analysis: WRN:102[1] affirms the nonactualized process without plan, probability,
+    or future time.
+- test_id: WRN1-T022
+  english_concept: completed degradation disputed
+  routing: one_root_plus_runtime
+  analysis: WRN:100[2]/num keeps completed lexical phase while leaving the assertion
+    unresolved.
+- test_id: WRN1-T023
+  english_concept: impair
+  routing: one_root_or_compound
+  analysis: WRN:110/111/112 by phase when one distinct source causes one target to
+    enter a less acceptable condition.
+- test_id: WRN1-T024
+  english_concept: damage target
+  routing: one_root_or_compound
+  analysis: WRN target impairment plus MAT/LIF/DAT for the concrete damage domain.
+- test_id: WRN1-T025
+  english_concept: harm
+  routing: one_root_or_compound
+  analysis: WRN target impairment when a distinct source-target adverse process is
+    meant; outcome semantics may require other families.
+- test_id: WRN1-T026
+  english_concept: attack
+  routing: compound
+  analysis: WRN target impairment plus MIN intent, MOV approach, MAT force, LOG authorization,
+    or CON activity as applicable.
+- test_id: WRN1-T027
+  english_concept: corrode
+  routing: compound
+  analysis: MAT chemical change plus WRN target impairment when a distinct corrosive
+    source acts on a target.
+- test_id: WRN1-T028
+  english_concept: poison
+  routing: compound
+  analysis: MAT substance and LIF biological effect plus WRN target impairment.
+- test_id: WRN1-T029
+  english_concept: infect one host
+  routing: compound
+  analysis: LIF biological identity and mechanism plus WRN target impairment when
+    one source causes adverse change in one host.
+- test_id: WRN1-T030
+  english_concept: malicious payload exploits parser
+  routing: compound
+  analysis: DAT/LOG supplies payload and exploit rules; WRN:111 supplies ongoing target
+    impairment.
+- test_id: WRN1-T031
+  english_concept: collision damages car
+  routing: compound
+  analysis: MOV approach and MAT collision plus WRN target impairment of the car.
+- test_id: WRN1-T032
+  english_concept: approach target
+  routing: different_family
+  analysis: MOV owns approach; it is not impairment without adverse transformation.
+- test_id: WRN1-T033
+  english_concept: touch target
+  routing: different_family
+  analysis: MAT contact does not imply adverse change.
+- test_id: WRN1-T034
+  english_concept: threaten
+  routing: underspecified
+  analysis: May mean external hazard condition, communicated threat, intent, or active
+    target impairment; translator must resolve sense.
+- test_id: WRN1-T035
+  english_concept: warn target
+  routing: different_family_or_compound
+  analysis: CON owns warning communication; the warning may refer to WRN conditions
+    or processes but is not impairment.
+- test_id: WRN1-T036
+  english_concept: isolate target
+  routing: different_family_or_compound
+  analysis: STR/MOV/LOG owns separation or access control; isolation may prevent impairment
+    rather than constitute it.
+- test_id: WRN1-T037
+  english_concept: contain target
+  routing: different_family_or_compound
+  analysis: STR/LOG owns containment; WRN impairment can occur with or without containment.
+- test_id: WRN1-T038
+  english_concept: target impairment uncertain
+  routing: runtime_state
+  analysis: WRN:111[2]/num questions ongoing impairment; it does not select WRN:112.
+- test_id: WRN1-T039
+  english_concept: confirmed nonactualized impairment
+  routing: one_root_plus_runtime
+  analysis: WRN:112[1] affirms a valid source-target adverse process that is not occurring
+    or complete.
+- test_id: WRN1-T040
+  english_concept: completed impairment with recovered target
+  routing: two_time_claims
+  analysis: WRN:110 may describe past completion while REP states later recovery;
+    completion does not entail current damage.
+- test_id: WRN1-T041
+  english_concept: spread
+  routing: one_root_or_compound
+  analysis: WRN:120/121/122 by phase only when one correlated adverse condition distributes
+    across multiple participants.
+- test_id: WRN1-T042
+  english_concept: propagate fault
+  routing: one_root
+  analysis: WRN systemic propagation by phase if the same correlated adverse condition
+    becomes distributed across system participants.
+- test_id: WRN1-T043
+  english_concept: cascade
+  routing: one_root_or_compound
+  analysis: WRN systemic propagation plus STR/LOG dependency and causal-order semantics.
+- test_id: WRN1-T044
+  english_concept: outbreak
+  routing: compound
+  analysis: WRN systemic propagation plus LIF or domain identity, timing, and participant
+    semantics.
+- test_id: WRN1-T045
+  english_concept: contamination spreading
+  routing: compound
+  analysis: MAT substance and movement plus WRN:121 systemic propagation across participants
+    or zones.
+- test_id: WRN1-T046
+  english_concept: malware spreading
+  routing: compound
+  analysis: DAT/LOG/CON describes code, exploit, and channels; WRN:121 supplies adverse
+    systemic propagation.
+- test_id: WRN1-T047
+  english_concept: rumor spreading
+  routing: different_family
+  analysis: CON/DAT owns information propagation unless the content or effects are
+    separately classified as adverse.
+- test_id: WRN1-T048
+  english_concept: software update spreading
+  routing: different_family
+  analysis: CON/DAT/CRE distribution is neutral and not WRN without adverse transformation.
+- test_id: WRN1-T049
+  english_concept: disease spreading
+  routing: compound
+  analysis: LIF owns biological process; WRN supplies adverse systemic scope when
+    useful.
+- test_id: WRN1-T050
+  english_concept: fire spreading
+  routing: compound
+  analysis: MAT/CRE physical process and MOV extent plus WRN systemic propagation.
+- test_id: WRN1-T051
+  english_concept: cascade completed
+  routing: one_root
+  analysis: WRN:120 if one adverse condition completed distribution across multiple
+    participants.
+- test_id: WRN1-T052
+  english_concept: cascade active
+  routing: one_root
+  analysis: WRN:121 if the correlated adverse condition is currently becoming distributed.
+- test_id: WRN1-T053
+  english_concept: cascade nonactualized
+  routing: one_root
+  analysis: WRN:122 affirms the propagation process as nonactualized without probability
+    or plan.
+- test_id: WRN1-T054
+  english_concept: many unrelated failures
+  routing: multiple_roots_not_one_systemic_process
+  analysis: Use separate WRN internal or target processes; simultaneity alone is not
+    correlated systemic propagation.
+- test_id: WRN1-T055
+  english_concept: same source harms two independent targets
+  routing: multiple_target_processes_or_systemic_if_correlated
+  analysis: Use per-target impairment unless one correlated condition is explicitly
+    propagating through a shared system.
+- test_id: WRN1-T056
+  english_concept: broadcast warning
+  routing: different_family
+  analysis: CON owns distribution of warning messages; WRN propagation requires the
+    adverse condition itself to distribute.
+- test_id: WRN1-T057
+  english_concept: emergency response
+  routing: different_family_or_compound
+  analysis: REP/CON/LOG/MOV owns coordinated response; it may react to WRN propagation
+    but is not the propagation.
+- test_id: WRN1-T058
+  english_concept: incident closure
+  routing: different_family_or_compound
+  analysis: REP/LOG/ORI owns resolution and closure criteria; WRN:120 means completed
+    propagation, not successful response.
+- test_id: WRN1-T059
+  english_concept: contain outbreak
+  routing: compound
+  analysis: STR/LOG/REP containment plus WRN systemic propagation; containing it does
+    not redefine the WRN process.
+- test_id: WRN1-T060
+  english_concept: systemic propagation uncertain
+  routing: runtime_state
+  analysis: WRN:121[2]/num leaves ongoing propagation unresolved rather than selecting
+    WRN:122.
+- test_id: WRN1-T061
+  english_concept: confirmed nonactualized propagation
+  routing: one_root_plus_runtime
+  analysis: WRN:122[1] affirms the nonactualized propagation process without asserting
+    likelihood.
+- test_id: WRN1-T062
+  english_concept: schedule degradation
+  routing: compound
+  analysis: ORI/LOG schedule plus WRN:102; scheduling is never lexical phase 2.
+- test_id: WRN1-T063
+  english_concept: plan attack
+  routing: compound
+  analysis: MIN intention and LOG/ORI plan plus WRN:112; the WRN root itself does
+    not encode planning.
+- test_id: WRN1-T064
+  english_concept: queue containment
+  routing: different_process_plus_queue
+  analysis: DAT/LOG queue plus STR/REP containment; WRN:112 is not containment and
+    phase 2 never means queued.
+- test_id: WRN1-T065
+  english_concept: possible propagation
+  routing: one_root_plus_modality
+  analysis: WRN:122[1] affirms nonactualization; ORI or probability grammar supplies
+    possibility strength.
+- test_id: WRN1-T066
+  english_concept: likely impairment
+  routing: one_root_plus_probability
+  analysis: WRN:112 or another phase plus explicit probability; no WRN third trit
+    encodes likelihood.
+- test_id: WRN1-T067
+  english_concept: future degradation
+  routing: one_root_plus_time
+  analysis: ORI future relation plus a phase-resolved WRN process; nonactualized does
+    not itself mean future.
+- test_id: WRN1-T068
+  english_concept: completed process still active
+  routing: invalid_same_event_claim
+  analysis: WRN:1x0 and WRN:1x1 cannot describe the same event phase at the same reference
+    time without separate event segments.
+- test_id: WRN1-T069
+  english_concept: active then completed
+  routing: two_time_indexed_roots
+  analysis: Relate WRN:1x1 at an earlier time to WRN:1x0 later; roots do not encode
+    transition timing themselves.
+- test_id: WRN1-T070
+  english_concept: nonactualized then active
+  routing: two_time_indexed_roots
+  analysis: Relate WRN:1x2 at one time to WRN:1x1 later; no plan or inevitability
+    is implied.
+- test_id: WRN1-T071
+  english_concept: stop degradation
+  routing: root_plus_event_boundary
+  analysis: Ceased or denied WRN:101 plus event-boundary grammar; stopping does not
+    assert completed degradation or repair.
+- test_id: WRN1-T072
+  english_concept: continue impairment
+  routing: root_plus_contour
+  analysis: WRN:111 plus continuation contour or timing grammar.
+- test_id: WRN1-T073
+  english_concept: repeat propagation
+  routing: root_plus_iteration
+  analysis: WRN:12x plus iteration grammar; repetition is not built into the atom.
+- test_id: WRN1-T074
+  english_concept: reverse degradation
+  routing: different_family_or_compound
+  analysis: REP restoration is not reverse-WRN encoded inside the degradation root.
+- test_id: WRN1-T075
+  english_concept: create defect
+  routing: compound
+  analysis: CRE generation plus WRN condition or process; creation and adverse transformation
+    remain separate claims.
+- test_id: WRN1-T076
+  english_concept: destroy target
+  routing: compound
+  analysis: CRE/MAT destruction plus WRN target impairment when a less acceptable
+    condition is asserted before or through destruction.
+- test_id: WRN1-T077
+  english_concept: corrupt data
+  routing: compound
+  analysis: DAT representational mutation plus WRN internal degradation or target
+    impairment depending on source structure.
+- test_id: WRN1-T078
+  english_concept: invalidate token
+  routing: different_family_or_compound
+  analysis: LOG invalidation plus WRN only if adverse transformation is independently
+    asserted.
+- test_id: WRN1-T079
+  english_concept: reduce performance
+  routing: one_root_or_compound
+  analysis: WRN internal degradation when internally originating; target impairment
+    when a distinct source causes it; DAT supplies metric.
+- test_id: WRN1-T080
+  english_concept: cause discomfort
+  routing: compound
+  analysis: WRN target impairment plus LIF/MIN state; cause and target must be explicit.
+- test_id: WRN1-T081
+  english_concept: negligible adverse change
+  routing: one_root_plus_severity
+  analysis: WRN still applies if context classifies the change as adverse; severity
+    is separately qualified.
+- test_id: WRN1-T082
+  english_concept: beneficial stress
+  routing: not_warning_without_adverse_frame
+  analysis: If the applicable evaluation frame treats the transformation as beneficial
+    rather than adverse, WRN must not be used.
+- test_id: WRN1-T083
+  english_concept: unknown adverse criterion
+  routing: unresolved_gap
+  analysis: If no applicable standard or evaluation frame makes the change less acceptable,
+    do not guess WRN family membership.
+- test_id: WRN1-T084
+  english_concept: unknown source scope
+  routing: unresolved_gap
+  analysis: If internal origin, distinct source-target, or multi-participant propagation
+    cannot be resolved, preserve ambiguity.
+- test_id: WRN1-T085
+  english_concept: unknown phase
+  routing: unresolved_gap
+  analysis: If completed, active, or nonactualized phase cannot be resolved, do not
+    guess the third trit.
+- test_id: WRN1-T086
+  english_concept: fault condition versus degradation
+  routing: scope_resolution_test
+  analysis: WRN:00x names the condition; WRN:10x names the adverse process producing
+    a less acceptable condition.
+- test_id: WRN1-T087
+  english_concept: hazard versus target impairment
+  routing: scope_resolution_test
+  analysis: WRN:01x names a distinct external hazard; WRN:11x names the source-to-target
+    adverse transformation.
+- test_id: WRN1-T088
+  english_concept: distributed fault versus propagation
+  routing: scope_resolution_test
+  analysis: WRN:02x names a correlated system condition; WRN:12x names its distribution
+    process.
+- test_id: WRN1-T089
+  english_concept: impairment versus exposure
+  routing: scope_resolution_test
+  analysis: WRN:11x asserts adverse change; WRN:2xx will determine vulnerability or
+    exposure relations that may exist without change.
+- test_id: WRN1-T090
+  english_concept: propagation versus communication
+  routing: scope_resolution_test
+  analysis: WRN:12x distributes an adverse condition; CON distributes expressions
+    or information.
+- test_id: WRN1-T091
+  english_concept: degradation versus repair
+  routing: scope_resolution_test
+  analysis: WRN moves toward a less acceptable condition; REP moves toward restoration.
+- test_id: WRN1-T092
+  english_concept: adverse change versus physical change
+  routing: scope_resolution_test
+  analysis: WRN supplies evaluative adversity; MAT supplies physical mechanics, and
+    either can occur without the other.
+- test_id: WRN1-T093
+  english_concept: nonactualized versus uncertain
+  routing: scope_resolution_test
+  analysis: WRN:102[1] affirms a nonactualized process; WRN:101[2]/num leaves an active-process
+    assertion uncertain.

@@ -1,0 +1,523 @@
+---
+metadata:
+  title: WRN:200–222 English coverage and routing tests
+  status: review_evidence_not_translation_dictionary
+  range: WRN:200–222
+  test_count: 104
+  no_forced_atomization: true
+tests:
+- test_id: WRN2-T001
+  english_concept: vulnerable
+  routing: one_root_or_compound
+  analysis: WRN:200, 201, or 202 by persistent, operative, or latent internal susceptibility;
+    add the relevant degradation domain separately.
+- test_id: WRN2-T002
+  english_concept: susceptible
+  routing: one_root
+  analysis: WRN:2x0 when one entity has an adverse affordance for internally originating
+    degradation and scope is resolved.
+- test_id: WRN2-T003
+  english_concept: weak
+  routing: underspecified
+  analysis: May mean WRN susceptibility, MAT low strength, REP low resistance, MIN
+    low confidence, or another domain; resolve the sense.
+- test_id: WRN2-T004
+  english_concept: fault-prone
+  routing: one_root_or_compound
+  analysis: WRN internal susceptibility plus LOG/DAT fault criteria; proneness does
+    not assert a fault or failure event.
+- test_id: WRN2-T005
+  english_concept: failure-prone
+  routing: one_root_or_compound
+  analysis: WRN internal susceptibility plus a domain-specific failure definition;
+    probability remains separate.
+- test_id: WRN2-T006
+  english_concept: fragile
+  routing: compound
+  analysis: WRN internal susceptibility plus MAT force threshold or REP low resistance;
+    fragility is not one untyped atom.
+- test_id: WRN2-T007
+  english_concept: brittle
+  routing: different_family_or_compound
+  analysis: MAT owns material brittleness; add WRN susceptibility only when adverse
+    degradation affordance is asserted.
+- test_id: WRN2-T008
+  english_concept: unstable
+  routing: underspecified
+  analysis: May denote dynamic instability, logical inconsistency, social volatility,
+    or WRN susceptibility; do not force it into Warning.
+- test_id: WRN2-T009
+  english_concept: buggy
+  routing: compound
+  analysis: WRN intrinsic fault or susceptibility plus DAT/LOG software semantics;
+    distinguish condition, affordance, and active degradation.
+- test_id: WRN2-T010
+  english_concept: defective
+  routing: condition_not_affordance
+  analysis: WRN:00x names an intrinsic adverse condition; WRN:2x0 states susceptibility
+    and does not entail an existing defect.
+- test_id: WRN2-T011
+  english_concept: persistent susceptibility
+  routing: one_root
+  analysis: WRN:200 preserves internal-susceptibility identity independently of whether
+    it is currently operative.
+- test_id: WRN2-T012
+  english_concept: operative susceptibility
+  routing: one_root
+  analysis: WRN:201 states that internal susceptibility is presently operative under
+    applicable conditions without asserting degradation.
+- test_id: WRN2-T013
+  english_concept: latent susceptibility
+  routing: one_root
+  analysis: WRN:202 states that internal susceptibility exists but is not presently
+    operative.
+- test_id: WRN2-T014
+  english_concept: hidden vulnerability
+  routing: one_root_plus_epistemic_claim
+  analysis: WRN:202 supplies latent nonoperation only; DAT/MIN must separately state
+    that observers have not discovered it.
+- test_id: WRN2-T015
+  english_concept: unknown vulnerability
+  routing: runtime_state_or_epistemic_claim
+  analysis: Use runtime [2]/num or DAT/MIN uncertainty; lexical WRN:202 does not mean
+    unknown.
+- test_id: WRN2-T016
+  english_concept: possible vulnerability
+  routing: affordance_plus_modality
+  analysis: A WRN susceptibility root identifies the typed affordance; ORI/LOG supplies
+    unrestricted possibility or probability.
+- test_id: WRN2-T017
+  english_concept: likely vulnerability
+  routing: affordance_plus_probability
+  analysis: WRN supplies susceptibility while LOG or probability grammar supplies
+    likelihood; third trit never means likely.
+- test_id: WRN2-T018
+  english_concept: scheduled vulnerability scan
+  routing: different_process_plus_time
+  analysis: DAT/LOG/MIN owns scanning and ORI owns schedule; no WRN:2xx root encodes
+    the scan.
+- test_id: WRN2-T019
+  english_concept: self-monitoring
+  routing: different_family
+  analysis: DAT/MIN owns observation of one entity; susceptibility may exist with
+    no monitoring.
+- test_id: WRN2-T020
+  english_concept: diagnosable
+  routing: different_family_or_compound
+  analysis: DAT/MIN/LOG owns diagnosability; adverse susceptibility and evidence availability
+    are independent.
+- test_id: WRN2-T021
+  english_concept: observable fault
+  routing: compound
+  analysis: WRN:0xx fault condition plus DAT evidence availability; WRN:2xx is not
+    observability.
+- test_id: WRN2-T022
+  english_concept: resistant
+  routing: different_family
+  analysis: REP owns resistance or prevention capacity; resistance is directionally
+    opposite to adverse susceptibility.
+- test_id: WRN2-T023
+  english_concept: immune
+  routing: different_family_or_compound
+  analysis: LIF and REP own biological or protective immunity; denial of WRN susceptibility
+    may be added but is not the same atom.
+- test_id: WRN2-T024
+  english_concept: self-protecting
+  routing: different_family_or_compound
+  analysis: REP/LOG/STR owns protective action or control; WRN internal susceptibility
+    does not protect.
+- test_id: WRN2-T025
+  english_concept: self-healing
+  routing: different_family
+  analysis: REP owns recovery capacity and repair; susceptibility neither entails
+    nor denies self-healing.
+- test_id: WRN2-T026
+  english_concept: internally degrading
+  routing: process_root
+  analysis: WRN:100–102 by phase names adverse transformation; WRN:2x0 names susceptibility
+    to it.
+- test_id: WRN2-T027
+  english_concept: internal fault present
+  routing: condition_root
+  analysis: WRN:000–002 by manifestation status names the adverse condition rather
+    than susceptibility or process.
+- test_id: WRN2-T028
+  english_concept: persistent susceptibility currently uncertain
+  routing: one_root_plus_runtime
+  analysis: WRN:200[2]/num leaves the persistent claim unresolved and does not select
+    WRN:202.
+- test_id: WRN2-T029
+  english_concept: latent susceptibility affirmed
+  routing: one_root_plus_runtime
+  analysis: WRN:202[1] affirms a real but nonoperative susceptibility without adding
+    hiddenness or likelihood.
+- test_id: WRN2-T030
+  english_concept: operative susceptibility denied
+  routing: one_root_plus_runtime
+  analysis: WRN:201[0] denies present operation without establishing that WRN:202
+    or WRN:200 holds.
+- test_id: WRN2-T031
+  english_concept: exposed to
+  routing: one_root
+  analysis: WRN:2x1 by lexical status when one distinct hazard source and one target
+    have an impairment-enabling relation.
+- test_id: WRN2-T032
+  english_concept: exposure
+  routing: one_root_or_compound
+  analysis: WRN source-target exposure relation if adverse enablement is meant; physical
+    contact, publicity, and experience belong elsewhere.
+- test_id: WRN2-T033
+  english_concept: attack surface
+  routing: compound
+  analysis: WRN source-target exposure plus STR interfaces and LOG exploit conditions;
+    it is not one atomic surface entity.
+- test_id: WRN2-T034
+  english_concept: exploitable
+  routing: compound
+  analysis: WRN:2x1 supplies adverse exposure while LOG/DAT supplies exploit rule
+    or flaw; exploitation itself is WRN:11x plus domain mechanics.
+- test_id: WRN2-T035
+  english_concept: reachable by hazard
+  routing: compound
+  analysis: WRN exposure plus MOV reachability or CON channel facts; spatial or network
+    reach alone is neutral.
+- test_id: WRN2-T036
+  english_concept: within blast radius
+  routing: compound
+  analysis: WRN exposure relation plus MAT/MOV extent and force; it does not assert
+    that damage occurs.
+- test_id: WRN2-T037
+  english_concept: permeable to toxin
+  routing: compound
+  analysis: WRN exposure plus MAT permeability and LIF/MAT toxin semantics; permeability
+    alone is not adverse.
+- test_id: WRN2-T038
+  english_concept: at risk from source
+  routing: one_root_or_compound
+  analysis: WRN exposure when the phrase means impairment-enabling relation; likelihood
+    and severity require separate LOG/DAT claims.
+- test_id: WRN2-T039
+  english_concept: persistent exposure relation
+  routing: one_root
+  analysis: WRN:210 preserves one source-target adverse-enablement relation independently
+    of current operation.
+- test_id: WRN2-T040
+  english_concept: operative exposure relation
+  routing: one_root
+  analysis: WRN:211 states that the source-target relation presently enables impairment
+    but not that impairment is occurring.
+- test_id: WRN2-T041
+  english_concept: latent exposure relation
+  routing: one_root
+  analysis: WRN:212 states that the source-target relation exists without presently
+    enabling impairment.
+- test_id: WRN2-T042
+  english_concept: uncertain threat relation
+  routing: runtime_state_or_epistemic_claim
+  analysis: Use WRN:210/211/212 with runtime [2]/num or DAT/MIN evidence claims; lexical
+    212 means latent, not uncertain.
+- test_id: WRN2-T043
+  english_concept: active attack
+  routing: process_or_compound
+  analysis: WRN:111 supplies active target impairment; MIN, MOV, MAT, DAT, or LOG
+    supplies intent and mechanics as applicable.
+- test_id: WRN2-T044
+  english_concept: hazard exists
+  routing: condition_root
+  analysis: WRN:010–012 names the distinct external hazard condition; an exposure
+    relation to a target must be separately asserted.
+- test_id: WRN2-T045
+  english_concept: hazard touches target
+  routing: different_family_or_compound
+  analysis: MAT contact does not entail adverse exposure; WRN applies only if impairment
+    enablement is asserted.
+- test_id: WRN2-T046
+  english_concept: hazard approaches target
+  routing: different_family
+  analysis: MOV owns approach; proximity may coexist with exposure but is neither
+    necessary nor sufficient.
+- test_id: WRN2-T047
+  english_concept: hazard warns target
+  routing: different_family
+  analysis: CON owns warning communication; a source may warn without being able to
+    impair the target.
+- test_id: WRN2-T048
+  english_concept: target blocked from source
+  routing: different_family_or_compound
+  analysis: LOG/STR owns blocking or separation; it may make WRN exposure latent or
+    false but is not the exposure atom.
+- test_id: WRN2-T049
+  english_concept: target shielded
+  routing: different_family_or_compound
+  analysis: REP/MAT/STR owns protection; shield status and adverse exposure must be
+    asserted separately.
+- test_id: WRN2-T050
+  english_concept: source authorized to act
+  routing: different_family
+  analysis: LOG permission neither establishes nor removes a WRN exposure relation.
+- test_id: WRN2-T051
+  english_concept: source likely to harm target
+  routing: compound
+  analysis: WRN exposure or impairment plus LOG probability; likely is not encoded
+    by lexical status.
+- test_id: WRN2-T052
+  english_concept: exposure window
+  routing: compound
+  analysis: ORI interval plus WRN source-target exposure; the WRN relation itself
+    is tenseless.
+- test_id: WRN2-T053
+  english_concept: operative exposure uncertain
+  routing: one_root_plus_runtime
+  analysis: WRN:211[2]/num questions current operation while preserving the operative
+    lexical selection.
+- test_id: WRN2-T054
+  english_concept: latent exposure affirmed
+  routing: one_root_plus_runtime
+  analysis: WRN:212[1] affirms an existing nonoperative relation and does not mean
+    a merely possible or unknown relation.
+- test_id: WRN2-T055
+  english_concept: impairment without enduring exposure
+  routing: process_plus_relation_status
+  analysis: WRN:111 may occur while WRN:210 is denied; an event does not guarantee
+    a persistent enabling relation.
+- test_id: WRN2-T056
+  english_concept: exposure without impairment
+  routing: one_root
+  analysis: WRN:210 or 211 can hold without WRN:11x because an affordance does not
+    entail its realization.
+- test_id: WRN2-T057
+  english_concept: propagation pathway
+  routing: one_root
+  analysis: WRN:2x2 by lexical status when one adverse condition can distribute across
+    multiple participants in one shared system.
+- test_id: WRN2-T058
+  english_concept: failure path
+  routing: one_root_or_compound
+  analysis: WRN systemic pathway plus STR/LOG dependency structure; a neutral dependency
+    edge alone is not adverse.
+- test_id: WRN2-T059
+  english_concept: contagion route
+  routing: compound
+  analysis: WRN systemic pathway plus LIF biological identity and MOV/CON transmission
+    realization.
+- test_id: WRN2-T060
+  english_concept: infection channel
+  routing: compound
+  analysis: WRN systemic pathway plus LIF and CON/MAT channel semantics; no propagation
+    event is entailed.
+- test_id: WRN2-T061
+  english_concept: cascade path
+  routing: one_root_or_compound
+  analysis: WRN systemic pathway when one correlated adverse condition can distribute;
+    add STR/LOG dependency details.
+- test_id: WRN2-T062
+  english_concept: fault tree
+  routing: compound
+  analysis: DAT representation and LOG causal structure may describe a WRN propagation
+    pathway but are not the pathway itself.
+- test_id: WRN2-T063
+  english_concept: blast path
+  routing: compound
+  analysis: WRN systemic pathway plus MAT force and MOV extent; the adverse distribution
+    need not be active.
+- test_id: WRN2-T064
+  english_concept: shared vulnerability
+  routing: underspecified
+  analysis: May be several independent susceptibilities or one systemic propagation
+    pathway; correlation and participant structure must be resolved.
+- test_id: WRN2-T065
+  english_concept: common-mode failure channel
+  routing: compound
+  analysis: WRN systemic pathway plus STR dependency and LOG common-cause criteria.
+- test_id: WRN2-T066
+  english_concept: persistent propagation pathway
+  routing: one_root
+  analysis: WRN:220 preserves pathway identity independently of whether it presently
+    enables propagation.
+- test_id: WRN2-T067
+  english_concept: operative propagation pathway
+  routing: one_root
+  analysis: WRN:221 states that the pathway presently enables one correlated adverse
+    condition to distribute.
+- test_id: WRN2-T068
+  english_concept: latent propagation pathway
+  routing: one_root
+  analysis: WRN:222 states that the pathway exists but does not presently enable distribution.
+- test_id: WRN2-T069
+  english_concept: catastrophe possibility
+  routing: compound_not_atom
+  analysis: Use WRN affordance plus ORI/LOG possibility and DAT/LOG outcome criteria;
+    WRN:222 is a latent pathway, not catastrophe modality.
+- test_id: WRN2-T070
+  english_concept: cascading risk
+  routing: compound
+  analysis: WRN propagation pathway or process plus LOG/DAT probability and severity;
+    risk does not collapse into pathway identity.
+- test_id: WRN2-T071
+  english_concept: failure spreading
+  routing: process_root
+  analysis: WRN:120–122 by phase names the propagation process; WRN:2x2 names the
+    pathway that can enable it.
+- test_id: WRN2-T072
+  english_concept: distributed fault present
+  routing: condition_root
+  analysis: WRN:020–022 names the correlated adverse condition across participants;
+    the pathway remains a separate relation.
+- test_id: WRN2-T073
+  english_concept: neutral network route
+  routing: different_family
+  analysis: MOV/CON/STR owns neutral routes and channels; WRN applies only when adverse
+    propagation enablement is asserted.
+- test_id: WRN2-T074
+  english_concept: broadcast channel
+  routing: different_family
+  analysis: CON owns expression distribution; a warning broadcast is not an adverse
+    propagation pathway.
+- test_id: WRN2-T075
+  english_concept: dataflow edge
+  routing: different_family_or_compound
+  analysis: DAT/CON owns information flow; add WRN only when it enables distribution
+    of an adverse condition.
+- test_id: WRN2-T076
+  english_concept: structural dependency
+  routing: different_family_or_compound
+  analysis: STR/LOG owns dependency; it becomes a WRN compound only when adverse propagation
+    enablement is asserted.
+- test_id: WRN2-T077
+  english_concept: many unrelated failures
+  routing: not_systemic_pathway
+  analysis: Separate inward or target roots are required; simultaneity does not create
+    one correlated pathway.
+- test_id: WRN2-T078
+  english_concept: same source can harm two independent targets
+  routing: multiple_exposure_relations
+  analysis: Use two WRN:2x1 exposure relations unless one adverse condition can propagate
+    among participants through a shared system.
+- test_id: WRN2-T079
+  english_concept: participants connected but immune
+  routing: other_family_plus_negation
+  analysis: STR/CON connectivity can hold while WRN propagation enablement is denied
+    due to REP/LIF protection.
+- test_id: WRN2-T080
+  english_concept: pathway exists but propagation stopped
+  routing: relation_plus_process_boundary
+  analysis: WRN:220 may remain true while WRN:121 is denied or ceased; process cessation
+    does not erase persistent pathway identity.
+- test_id: WRN2-T081
+  english_concept: operative pathway uncertain
+  routing: one_root_plus_runtime
+  analysis: WRN:221[2]/num leaves present operation unresolved and does not select
+    WRN:222.
+- test_id: WRN2-T082
+  english_concept: latent pathway affirmed
+  routing: one_root_plus_runtime
+  analysis: WRN:222[1] affirms a real nonoperative pathway without probability, plan,
+    or future activation.
+- test_id: WRN2-T083
+  english_concept: persistent and operative susceptibility
+  routing: compatible_lexical_states
+  analysis: WRN:200 and WRN:201 may co-occur for one susceptibility because persistence
+    is operation-neutral.
+- test_id: WRN2-T084
+  english_concept: persistent and latent exposure
+  routing: compatible_lexical_states
+  analysis: WRN:210 and WRN:212 may co-occur because persistent identity does not
+    assert current operation.
+- test_id: WRN2-T085
+  english_concept: operative and latent same affordance
+  routing: incompatible_same_time_claim
+  analysis: WRN:2x1 and WRN:2x2 are mutually exclusive for the same affordance at
+    one reference time.
+- test_id: WRN2-T086
+  english_concept: latent becomes operative
+  routing: two_time_indexed_claims
+  analysis: Relate WRN:2x2 at an earlier time to WRN:2x1 later; the roots do not encode
+    activation by themselves.
+- test_id: WRN2-T087
+  english_concept: operative becomes latent
+  routing: two_time_indexed_claims
+  analysis: Relate WRN:2x1 at an earlier time to WRN:2x2 later; no repair or containment
+    process is entailed.
+- test_id: WRN2-T088
+  english_concept: affordance versus condition
+  routing: scope_resolution_test
+  analysis: WRN:0xx identifies an adverse condition; WRN:2xx identifies capacity or
+    relation enabling a WRN:1xx process.
+- test_id: WRN2-T089
+  english_concept: affordance versus process
+  routing: scope_resolution_test
+  analysis: WRN:2xx can hold without any WRN:1xx event, and a WRN:1xx event does not
+    guarantee the affordance persists.
+- test_id: WRN2-T090
+  english_concept: latent versus uncertain
+  routing: scope_resolution_test
+  analysis: WRN:202[1] affirms nonoperation; WRN:201[2]/num preserves operative lexical
+    status while leaving its truth unresolved.
+- test_id: WRN2-T091
+  english_concept: pathway versus route
+  routing: scope_resolution_test
+  analysis: WRN systemic pathway asserts adverse propagation enablement; MOV/CON/STR
+    routes can be entirely neutral.
+- test_id: WRN2-T092
+  english_concept: exposure versus contact
+  routing: scope_resolution_test
+  analysis: WRN exposure asserts impairment enablement; MAT contact alone does not.
+- test_id: WRN2-T093
+  english_concept: susceptibility versus risk score
+  routing: scope_resolution_test
+  analysis: WRN susceptibility is an adverse affordance; LOG/DAT supplies quantified
+    likelihood and impact.
+- test_id: WRN2-T094
+  english_concept: protective control removes operation
+  routing: compound
+  analysis: REP/STR/LOG control may change WRN:201 or 211 to a latent sibling, but
+    the control and status transition remain separate claims.
+- test_id: WRN2-T095
+  english_concept: create a vulnerability
+  routing: compound
+  analysis: CRE generation plus the resulting WRN susceptibility; the creation process
+    is not encoded in WRN:2xx.
+- test_id: WRN2-T096
+  english_concept: repair a vulnerability
+  routing: compound
+  analysis: REP repair plus denial or status change of WRN susceptibility; repair
+    is not the adverse affordance.
+- test_id: WRN2-T097
+  english_concept: measure exposure
+  routing: compound
+  analysis: DAT measurement plus WRN source-target relation; the measurement can be
+    wrong while the relation still holds.
+- test_id: WRN2-T098
+  english_concept: calculate risk
+  routing: different_family_or_compound
+  analysis: LOG/DAT computes likelihood and impact from WRN conditions and affordances;
+    the result is not itself a WRN root.
+- test_id: WRN2-T099
+  english_concept: warn about a pathway
+  routing: compound
+  analysis: CON warning expression plus DAT content referring to a WRN systemic pathway.
+- test_id: WRN2-T100
+  english_concept: future exposure
+  routing: one_root_plus_time
+  analysis: ORI future relation plus a status-resolved WRN exposure root; lexical
+    latency does not mean future.
+- test_id: WRN2-T101
+  english_concept: scheduled activation of pathway
+  routing: compound
+  analysis: ORI/LOG schedule plus status and process claims; WRN:222 does not encode
+    scheduling.
+- test_id: WRN2-T102
+  english_concept: unknown scope
+  routing: unresolved_gap
+  analysis: If internal susceptibility, one-source-one-target exposure, or systemic
+    pathway cannot be distinguished, preserve ambiguity.
+- test_id: WRN2-T103
+  english_concept: unknown lexical status
+  routing: unresolved_gap
+  analysis: If persistent, operative, or latent status cannot be resolved, use runtime
+    uncertainty or leave the address unspecified rather than guessing.
+- test_id: WRN2-T104
+  english_concept: no applicable adverse criterion
+  routing: not_warning
+  analysis: If no evaluation frame classifies the enabled transformation as adverse,
+    do not use WRN even when a neutral capacity or route exists.

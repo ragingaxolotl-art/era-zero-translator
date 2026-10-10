@@ -1,0 +1,1479 @@
+---
+metadata:
+  title: CON:100–122 adversarial semantic candidates
+  status: approved_and_canonical_by_delegated_authority
+  architecture_version: '1.0'
+  range: CON:100–122
+  roots_reviewed: 9
+  candidate_architectures_per_root: 5
+  scored_categories:
+  - atomicity
+  - address_fit
+  - family_fit
+  - neighbor_separation
+  - cross_family_separation
+  - compound_usefulness
+  - everyday_language_coverage
+  - technical_coverage
+  generated_fields_changed: false
+  roots_canonicalized:
+  - CON:100
+  - CON:101
+  - CON:102
+  - CON:110
+  - CON:111
+  - CON:112
+  - CON:120
+  - CON:121
+  - CON:122
+  approval_record: migrations/CON_100_122_semantic_approval.yaml
+roots:
+- canonical_id: CON:100
+  fixed_generated_fields:
+    canonical_id: CON:100
+    universal_slot: completed inward process
+    family_qualified_transliteration: wu·kam
+    local_compact_root: kam
+    formal_carrier: wu-ki-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 2
+  current_meaning_rationale: The Phase 2 choice follows the inward/source and completed
+    slot labels and selects salient Connection vocabulary such as synchronization,
+    transmission, delivery, or broadcast.
+  candidates:
+  - candidate_id: current_phase2
+    title: self-synchronization complete
+    invariant_candidate: An entity's internal participants or interfaces have completed
+      a connection or synchronization process.
+    analysis:
+      why_it_fits: The Phase 2 choice follows the inward/source and completed slot
+        labels and selects salient Connection vocabulary such as synchronization,
+        transmission, delivery, or broadcast.
+      useful_coverage: It would directly cover familiar social and network operations
+        associated with self-synchronization complete.
+      semantic_territory_consumed: It consumes different mixtures of channel setup,
+        participant synchronization, content transfer, routing, negotiation, and system
+        coordination at different addresses.
+      conflicts_or_future_limitations: The nine current meanings do not share one
+        process center, completed/active/nonactualized siblings are not exact phase
+        variants, and several definitions encode intention, preparation, queueing,
+        or network structure forbidden by the 1x2 clarification.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 55
+    maximum: 80
+  - candidate_id: expression_reception_distribution
+    title: completed source expression
+    invariant_candidate: Completion of an act by which a source endpoint makes a communicative
+      expression available to an exchange context.
+    analysis:
+      why_it_fits: Every root is one communicative availability process; source, target,
+        and shared scope follow the second trit exactly, while the third trit changes
+        only realization phase.
+      useful_coverage: It covers saying, signaling, publishing, receiving, hearing-at-an-endpoint,
+        multicasting, broadcasting, and formal send/receive/distribute operations
+        without absorbing their content.
+      semantic_territory_consumed: 'Only participant-addressed exchange: making an
+        expression available from a source, taking it up at a target, or making it
+        available across a shared channel to multiple endpoints.'
+      conflicts_or_future_limitations: It deliberately leaves composition to CRE/DAT,
+        comprehension to MIN, physical propagation to MAT/MOV, channel lifecycle to
+        STR/CON:0xx, protocol to LOG, and reciprocal interaction to compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: channel_lifecycle
+    title: completed source-channel establishment
+    invariant_candidate: A completed process that establishes or changes source-side
+      participation in a communication channel.
+    analysis:
+      why_it_fits: Opening, joining, and establishing channels are Connection processes
+        and can be distributed across source, target, and systemic scope.
+      useful_coverage: It would cover connect, attach, dial, accept, join, open, close,
+        subscribe, and network formation in ordinary and technical settings.
+      semantic_territory_consumed: Creation or transition of endpoint/channel participation
+        state rather than communication through an established exchange context.
+      conflicts_or_future_limitations: It collides with canonical CON:0xx loci, future
+        CON:2xx connectivity capacities, STR topology, REP reconnection, and runtime
+        participation state; it also leaves send/receive without a coherent atomic
+        home.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 59
+    maximum: 80
+  - candidate_id: synchronization_coordination
+    title: completed self-synchronization
+    invariant_candidate: A completed process that aligns communicative state or timing
+      at source-side scope.
+    analysis:
+      why_it_fits: Synchronization and coordination are systemic Connection processes
+        and have strong programming and distributed-system value.
+      useful_coverage: It would cover handshakes, barriers, consensus, state alignment,
+        clock synchronization, negotiation, and group coordination.
+      semantic_territory_consumed: Agreement of participant states or behavior under
+        shared constraints.
+      conflicts_or_future_limitations: State alignment belongs partly to STR, MIN,
+        DAT, or LOG depending on what is aligned; negotiation and consensus are relational
+        compounds, and ordinary one-way communication would remain poorly covered.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 7
+      technical_coverage: 9
+    total: 56
+    maximum: 80
+  - candidate_id: conversational_role_action
+    title: completed conversational initiation
+    invariant_candidate: A completed discourse act performed at source-side scope
+      in a participant exchange.
+    analysis:
+      why_it_fits: Speaking, listening, acknowledging, and negotiating are recognizable
+        communication actions with source, target, and shared roles.
+      useful_coverage: It would give compact atoms for talk, listen, reply, acknowledge,
+        converse, negotiate, and deliberate.
+      semantic_territory_consumed: Human-style discourse acts and turn-taking rather
+        than substrate-neutral exchange processes.
+      conflicts_or_future_limitations: It is anthropocentric, listening often requires
+        MIN attention, acknowledgement requires LOG/DAT relation to a prior message,
+        and the three triplets cannot remain exact phase variants without forcing
+        unrelated discourse acts together.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 6
+    total: 59
+    maximum: 80
+  recommended_candidate_id: expression_reception_distribution
+  recommendation_reason: This is the only architecture that gives all nine roots one
+    substrate-neutral exchange center, exact source/target/shared scope, exact completed/active/nonactualized
+    triplets, and clean boundaries from content, cognition, physical propagation,
+    topology, protocol, and future relationship roots.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: CON:101
+  fixed_generated_fields:
+    canonical_id: CON:101
+    universal_slot: active inward process
+    family_qualified_transliteration: wu·kak
+    local_compact_root: kak
+    formal_carrier: wu-ki-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 4
+  current_meaning_rationale: The Phase 2 choice follows the inward/source and active
+    slot labels and selects salient Connection vocabulary such as synchronization,
+    transmission, delivery, or broadcast.
+  candidates:
+  - candidate_id: current_phase2
+    title: opening a channel
+    invariant_candidate: An entity is actively connecting, listening, or synchronizing
+      its own communication interfaces.
+    analysis:
+      why_it_fits: The Phase 2 choice follows the inward/source and active slot labels
+        and selects salient Connection vocabulary such as synchronization, transmission,
+        delivery, or broadcast.
+      useful_coverage: It would directly cover familiar social and network operations
+        associated with opening a channel.
+      semantic_territory_consumed: It consumes different mixtures of channel setup,
+        participant synchronization, content transfer, routing, negotiation, and system
+        coordination at different addresses.
+      conflicts_or_future_limitations: The nine current meanings do not share one
+        process center, completed/active/nonactualized siblings are not exact phase
+        variants, and several definitions encode intention, preparation, queueing,
+        or network structure forbidden by the 1x2 clarification.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 55
+    maximum: 80
+  - candidate_id: expression_reception_distribution
+    title: active source expression
+    invariant_candidate: An ongoing act by which a source endpoint makes a communicative
+      expression available to an exchange context.
+    analysis:
+      why_it_fits: Every root is one communicative availability process; source, target,
+        and shared scope follow the second trit exactly, while the third trit changes
+        only realization phase.
+      useful_coverage: It covers saying, signaling, publishing, receiving, hearing-at-an-endpoint,
+        multicasting, broadcasting, and formal send/receive/distribute operations
+        without absorbing their content.
+      semantic_territory_consumed: 'Only participant-addressed exchange: making an
+        expression available from a source, taking it up at a target, or making it
+        available across a shared channel to multiple endpoints.'
+      conflicts_or_future_limitations: It deliberately leaves composition to CRE/DAT,
+        comprehension to MIN, physical propagation to MAT/MOV, channel lifecycle to
+        STR/CON:0xx, protocol to LOG, and reciprocal interaction to compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: channel_lifecycle
+    title: active source-channel establishment
+    invariant_candidate: A active process that establishes or changes source-side
+      participation in a communication channel.
+    analysis:
+      why_it_fits: Opening, joining, and establishing channels are Connection processes
+        and can be distributed across source, target, and systemic scope.
+      useful_coverage: It would cover connect, attach, dial, accept, join, open, close,
+        subscribe, and network formation in ordinary and technical settings.
+      semantic_territory_consumed: Creation or transition of endpoint/channel participation
+        state rather than communication through an established exchange context.
+      conflicts_or_future_limitations: It collides with canonical CON:0xx loci, future
+        CON:2xx connectivity capacities, STR topology, REP reconnection, and runtime
+        participation state; it also leaves send/receive without a coherent atomic
+        home.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 59
+    maximum: 80
+  - candidate_id: synchronization_coordination
+    title: active self-synchronization
+    invariant_candidate: A active process that aligns communicative state or timing
+      at source-side scope.
+    analysis:
+      why_it_fits: Synchronization and coordination are systemic Connection processes
+        and have strong programming and distributed-system value.
+      useful_coverage: It would cover handshakes, barriers, consensus, state alignment,
+        clock synchronization, negotiation, and group coordination.
+      semantic_territory_consumed: Agreement of participant states or behavior under
+        shared constraints.
+      conflicts_or_future_limitations: State alignment belongs partly to STR, MIN,
+        DAT, or LOG depending on what is aligned; negotiation and consensus are relational
+        compounds, and ordinary one-way communication would remain poorly covered.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 7
+      technical_coverage: 9
+    total: 56
+    maximum: 80
+  - candidate_id: conversational_role_action
+    title: active conversational initiation
+    invariant_candidate: A active discourse act performed at source-side scope in
+      a participant exchange.
+    analysis:
+      why_it_fits: Speaking, listening, acknowledging, and negotiating are recognizable
+        communication actions with source, target, and shared roles.
+      useful_coverage: It would give compact atoms for talk, listen, reply, acknowledge,
+        converse, negotiate, and deliberate.
+      semantic_territory_consumed: Human-style discourse acts and turn-taking rather
+        than substrate-neutral exchange processes.
+      conflicts_or_future_limitations: It is anthropocentric, listening often requires
+        MIN attention, acknowledgement requires LOG/DAT relation to a prior message,
+        and the three triplets cannot remain exact phase variants without forcing
+        unrelated discourse acts together.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 6
+    total: 59
+    maximum: 80
+  recommended_candidate_id: expression_reception_distribution
+  recommendation_reason: This is the only architecture that gives all nine roots one
+    substrate-neutral exchange center, exact source/target/shared scope, exact completed/active/nonactualized
+    triplets, and clean boundaries from content, cognition, physical propagation,
+    topology, protocol, and future relationship roots.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: CON:102
+  fixed_generated_fields:
+    canonical_id: CON:102
+    universal_slot: pending inward process
+    family_qualified_transliteration: wu·kan
+    local_compact_root: kan
+    formal_carrier: wu-ki-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 0
+  current_meaning_rationale: The Phase 2 choice follows the inward/source and nonactualized
+    slot labels and selects salient Connection vocabulary such as synchronization,
+    transmission, delivery, or broadcast.
+  candidates:
+  - candidate_id: current_phase2
+    title: queued self-connection
+    invariant_candidate: An inward connection or synchronization is possible or prepared
+      but has not begun.
+    analysis:
+      why_it_fits: The Phase 2 choice follows the inward/source and nonactualized
+        slot labels and selects salient Connection vocabulary such as synchronization,
+        transmission, delivery, or broadcast.
+      useful_coverage: It would directly cover familiar social and network operations
+        associated with queued self-connection.
+      semantic_territory_consumed: It consumes different mixtures of channel setup,
+        participant synchronization, content transfer, routing, negotiation, and system
+        coordination at different addresses.
+      conflicts_or_future_limitations: The nine current meanings do not share one
+        process center, completed/active/nonactualized siblings are not exact phase
+        variants, and several definitions encode intention, preparation, queueing,
+        or network structure forbidden by the 1x2 clarification.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 55
+    maximum: 80
+  - candidate_id: expression_reception_distribution
+    title: potential source expression
+    invariant_candidate: A nonactualized act by which a source endpoint would make
+      a communicative expression available to an exchange context.
+    analysis:
+      why_it_fits: Every root is one communicative availability process; source, target,
+        and shared scope follow the second trit exactly, while the third trit changes
+        only realization phase.
+      useful_coverage: It covers saying, signaling, publishing, receiving, hearing-at-an-endpoint,
+        multicasting, broadcasting, and formal send/receive/distribute operations
+        without absorbing their content.
+      semantic_territory_consumed: 'Only participant-addressed exchange: making an
+        expression available from a source, taking it up at a target, or making it
+        available across a shared channel to multiple endpoints.'
+      conflicts_or_future_limitations: It deliberately leaves composition to CRE/DAT,
+        comprehension to MIN, physical propagation to MAT/MOV, channel lifecycle to
+        STR/CON:0xx, protocol to LOG, and reciprocal interaction to compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: channel_lifecycle
+    title: potential source-channel establishment
+    invariant_candidate: A nonactualized process that establishes or changes source-side
+      participation in a communication channel.
+    analysis:
+      why_it_fits: Opening, joining, and establishing channels are Connection processes
+        and can be distributed across source, target, and systemic scope.
+      useful_coverage: It would cover connect, attach, dial, accept, join, open, close,
+        subscribe, and network formation in ordinary and technical settings.
+      semantic_territory_consumed: Creation or transition of endpoint/channel participation
+        state rather than communication through an established exchange context.
+      conflicts_or_future_limitations: It collides with canonical CON:0xx loci, future
+        CON:2xx connectivity capacities, STR topology, REP reconnection, and runtime
+        participation state; it also leaves send/receive without a coherent atomic
+        home.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 59
+    maximum: 80
+  - candidate_id: synchronization_coordination
+    title: potential self-synchronization
+    invariant_candidate: A nonactualized process that aligns communicative state or
+      timing at source-side scope.
+    analysis:
+      why_it_fits: Synchronization and coordination are systemic Connection processes
+        and have strong programming and distributed-system value.
+      useful_coverage: It would cover handshakes, barriers, consensus, state alignment,
+        clock synchronization, negotiation, and group coordination.
+      semantic_territory_consumed: Agreement of participant states or behavior under
+        shared constraints.
+      conflicts_or_future_limitations: State alignment belongs partly to STR, MIN,
+        DAT, or LOG depending on what is aligned; negotiation and consensus are relational
+        compounds, and ordinary one-way communication would remain poorly covered.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 7
+      technical_coverage: 9
+    total: 56
+    maximum: 80
+  - candidate_id: conversational_role_action
+    title: potential conversational initiation
+    invariant_candidate: A nonactualized discourse act performed at source-side scope
+      in a participant exchange.
+    analysis:
+      why_it_fits: Speaking, listening, acknowledging, and negotiating are recognizable
+        communication actions with source, target, and shared roles.
+      useful_coverage: It would give compact atoms for talk, listen, reply, acknowledge,
+        converse, negotiate, and deliberate.
+      semantic_territory_consumed: Human-style discourse acts and turn-taking rather
+        than substrate-neutral exchange processes.
+      conflicts_or_future_limitations: It is anthropocentric, listening often requires
+        MIN attention, acknowledgement requires LOG/DAT relation to a prior message,
+        and the three triplets cannot remain exact phase variants without forcing
+        unrelated discourse acts together.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 6
+    total: 59
+    maximum: 80
+  recommended_candidate_id: expression_reception_distribution
+  recommendation_reason: This is the only architecture that gives all nine roots one
+    substrate-neutral exchange center, exact source/target/shared scope, exact completed/active/nonactualized
+    triplets, and clean boundaries from content, cognition, physical propagation,
+    topology, protocol, and future relationship roots.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: CON:110
+  fixed_generated_fields:
+    canonical_id: CON:110
+    universal_slot: completed outward process
+    family_qualified_transliteration: wu·kom
+    local_compact_root: kom
+    formal_carrier: wu-ki-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 4
+  current_meaning_rationale: The Phase 2 choice follows the outward/target and completed
+    slot labels and selects salient Connection vocabulary such as synchronization,
+    transmission, delivery, or broadcast.
+  candidates:
+  - candidate_id: current_phase2
+    title: delivery complete
+    invariant_candidate: A communicative act to a selected target has reached that
+      target and completed its transfer.
+    analysis:
+      why_it_fits: The Phase 2 choice follows the outward/target and completed slot
+        labels and selects salient Connection vocabulary such as synchronization,
+        transmission, delivery, or broadcast.
+      useful_coverage: It would directly cover familiar social and network operations
+        associated with delivery complete.
+      semantic_territory_consumed: It consumes different mixtures of channel setup,
+        participant synchronization, content transfer, routing, negotiation, and system
+        coordination at different addresses.
+      conflicts_or_future_limitations: The nine current meanings do not share one
+        process center, completed/active/nonactualized siblings are not exact phase
+        variants, and several definitions encode intention, preparation, queueing,
+        or network structure forbidden by the 1x2 clarification.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 55
+    maximum: 80
+  - candidate_id: expression_reception_distribution
+    title: completed target reception
+    invariant_candidate: Completion of an act by which a target endpoint takes up
+      a communicative expression from an exchange context.
+    analysis:
+      why_it_fits: Every root is one communicative availability process; source, target,
+        and shared scope follow the second trit exactly, while the third trit changes
+        only realization phase.
+      useful_coverage: It covers saying, signaling, publishing, receiving, hearing-at-an-endpoint,
+        multicasting, broadcasting, and formal send/receive/distribute operations
+        without absorbing their content.
+      semantic_territory_consumed: 'Only participant-addressed exchange: making an
+        expression available from a source, taking it up at a target, or making it
+        available across a shared channel to multiple endpoints.'
+      conflicts_or_future_limitations: It deliberately leaves composition to CRE/DAT,
+        comprehension to MIN, physical propagation to MAT/MOV, channel lifecycle to
+        STR/CON:0xx, protocol to LOG, and reciprocal interaction to compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: channel_lifecycle
+    title: completed target-channel establishment
+    invariant_candidate: A completed process that establishes or changes target-side
+      participation in a communication channel.
+    analysis:
+      why_it_fits: Opening, joining, and establishing channels are Connection processes
+        and can be distributed across source, target, and systemic scope.
+      useful_coverage: It would cover connect, attach, dial, accept, join, open, close,
+        subscribe, and network formation in ordinary and technical settings.
+      semantic_territory_consumed: Creation or transition of endpoint/channel participation
+        state rather than communication through an established exchange context.
+      conflicts_or_future_limitations: It collides with canonical CON:0xx loci, future
+        CON:2xx connectivity capacities, STR topology, REP reconnection, and runtime
+        participation state; it also leaves send/receive without a coherent atomic
+        home.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 59
+    maximum: 80
+  - candidate_id: synchronization_coordination
+    title: completed delivery
+    invariant_candidate: A completed process that aligns communicative state or timing
+      at target-side scope.
+    analysis:
+      why_it_fits: Synchronization and coordination are systemic Connection processes
+        and have strong programming and distributed-system value.
+      useful_coverage: It would cover handshakes, barriers, consensus, state alignment,
+        clock synchronization, negotiation, and group coordination.
+      semantic_territory_consumed: Agreement of participant states or behavior under
+        shared constraints.
+      conflicts_or_future_limitations: State alignment belongs partly to STR, MIN,
+        DAT, or LOG depending on what is aligned; negotiation and consensus are relational
+        compounds, and ordinary one-way communication would remain poorly covered.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 7
+      technical_coverage: 9
+    total: 56
+    maximum: 80
+  - candidate_id: conversational_role_action
+    title: completed acknowledgement
+    invariant_candidate: A completed discourse act performed at target-side scope
+      in a participant exchange.
+    analysis:
+      why_it_fits: Speaking, listening, acknowledging, and negotiating are recognizable
+        communication actions with source, target, and shared roles.
+      useful_coverage: It would give compact atoms for talk, listen, reply, acknowledge,
+        converse, negotiate, and deliberate.
+      semantic_territory_consumed: Human-style discourse acts and turn-taking rather
+        than substrate-neutral exchange processes.
+      conflicts_or_future_limitations: It is anthropocentric, listening often requires
+        MIN attention, acknowledgement requires LOG/DAT relation to a prior message,
+        and the three triplets cannot remain exact phase variants without forcing
+        unrelated discourse acts together.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 6
+    total: 59
+    maximum: 80
+  recommended_candidate_id: expression_reception_distribution
+  recommendation_reason: This is the only architecture that gives all nine roots one
+    substrate-neutral exchange center, exact source/target/shared scope, exact completed/active/nonactualized
+    triplets, and clean boundaries from content, cognition, physical propagation,
+    topology, protocol, and future relationship roots.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: CON:111
+  fixed_generated_fields:
+    canonical_id: CON:111
+    universal_slot: active outward process
+    family_qualified_transliteration: wu·kok
+    local_compact_root: kok
+    formal_carrier: wu-ki-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 6
+  current_meaning_rationale: The Phase 2 choice follows the outward/target and active
+    slot labels and selects salient Connection vocabulary such as synchronization,
+    transmission, delivery, or broadcast.
+  candidates:
+  - candidate_id: current_phase2
+    title: active transmission
+    invariant_candidate: A message, signal, request, or expression is actively being
+      sent to an external target.
+    analysis:
+      why_it_fits: The Phase 2 choice follows the outward/target and active slot labels
+        and selects salient Connection vocabulary such as synchronization, transmission,
+        delivery, or broadcast.
+      useful_coverage: It would directly cover familiar social and network operations
+        associated with active transmission.
+      semantic_territory_consumed: It consumes different mixtures of channel setup,
+        participant synchronization, content transfer, routing, negotiation, and system
+        coordination at different addresses.
+      conflicts_or_future_limitations: The nine current meanings do not share one
+        process center, completed/active/nonactualized siblings are not exact phase
+        variants, and several definitions encode intention, preparation, queueing,
+        or network structure forbidden by the 1x2 clarification.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 55
+    maximum: 80
+  - candidate_id: expression_reception_distribution
+    title: active target reception
+    invariant_candidate: An ongoing act by which a target endpoint takes up a communicative
+      expression from an exchange context.
+    analysis:
+      why_it_fits: Every root is one communicative availability process; source, target,
+        and shared scope follow the second trit exactly, while the third trit changes
+        only realization phase.
+      useful_coverage: It covers saying, signaling, publishing, receiving, hearing-at-an-endpoint,
+        multicasting, broadcasting, and formal send/receive/distribute operations
+        without absorbing their content.
+      semantic_territory_consumed: 'Only participant-addressed exchange: making an
+        expression available from a source, taking it up at a target, or making it
+        available across a shared channel to multiple endpoints.'
+      conflicts_or_future_limitations: It deliberately leaves composition to CRE/DAT,
+        comprehension to MIN, physical propagation to MAT/MOV, channel lifecycle to
+        STR/CON:0xx, protocol to LOG, and reciprocal interaction to compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: channel_lifecycle
+    title: active target-channel establishment
+    invariant_candidate: A active process that establishes or changes target-side
+      participation in a communication channel.
+    analysis:
+      why_it_fits: Opening, joining, and establishing channels are Connection processes
+        and can be distributed across source, target, and systemic scope.
+      useful_coverage: It would cover connect, attach, dial, accept, join, open, close,
+        subscribe, and network formation in ordinary and technical settings.
+      semantic_territory_consumed: Creation or transition of endpoint/channel participation
+        state rather than communication through an established exchange context.
+      conflicts_or_future_limitations: It collides with canonical CON:0xx loci, future
+        CON:2xx connectivity capacities, STR topology, REP reconnection, and runtime
+        participation state; it also leaves send/receive without a coherent atomic
+        home.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 59
+    maximum: 80
+  - candidate_id: synchronization_coordination
+    title: active target synchronization
+    invariant_candidate: A active process that aligns communicative state or timing
+      at target-side scope.
+    analysis:
+      why_it_fits: Synchronization and coordination are systemic Connection processes
+        and have strong programming and distributed-system value.
+      useful_coverage: It would cover handshakes, barriers, consensus, state alignment,
+        clock synchronization, negotiation, and group coordination.
+      semantic_territory_consumed: Agreement of participant states or behavior under
+        shared constraints.
+      conflicts_or_future_limitations: State alignment belongs partly to STR, MIN,
+        DAT, or LOG depending on what is aligned; negotiation and consensus are relational
+        compounds, and ordinary one-way communication would remain poorly covered.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 7
+      technical_coverage: 9
+    total: 56
+    maximum: 80
+  - candidate_id: conversational_role_action
+    title: active acknowledgement
+    invariant_candidate: A active discourse act performed at target-side scope in
+      a participant exchange.
+    analysis:
+      why_it_fits: Speaking, listening, acknowledging, and negotiating are recognizable
+        communication actions with source, target, and shared roles.
+      useful_coverage: It would give compact atoms for talk, listen, reply, acknowledge,
+        converse, negotiate, and deliberate.
+      semantic_territory_consumed: Human-style discourse acts and turn-taking rather
+        than substrate-neutral exchange processes.
+      conflicts_or_future_limitations: It is anthropocentric, listening often requires
+        MIN attention, acknowledgement requires LOG/DAT relation to a prior message,
+        and the three triplets cannot remain exact phase variants without forcing
+        unrelated discourse acts together.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 6
+    total: 59
+    maximum: 80
+  recommended_candidate_id: expression_reception_distribution
+  recommendation_reason: This is the only architecture that gives all nine roots one
+    substrate-neutral exchange center, exact source/target/shared scope, exact completed/active/nonactualized
+    triplets, and clean boundaries from content, cognition, physical propagation,
+    topology, protocol, and future relationship roots.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: CON:112
+  fixed_generated_fields:
+    canonical_id: CON:112
+    universal_slot: pending outward process
+    family_qualified_transliteration: wu·kon
+    local_compact_root: kon
+    formal_carrier: wu-ki-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 2
+  current_meaning_rationale: The Phase 2 choice follows the outward/target and nonactualized
+    slot labels and selects salient Connection vocabulary such as synchronization,
+    transmission, delivery, or broadcast.
+  candidates:
+  - candidate_id: current_phase2
+    title: queued contact
+    invariant_candidate: A communication toward a target is composed, intended, or
+      waiting for an available channel.
+    analysis:
+      why_it_fits: The Phase 2 choice follows the outward/target and nonactualized
+        slot labels and selects salient Connection vocabulary such as synchronization,
+        transmission, delivery, or broadcast.
+      useful_coverage: It would directly cover familiar social and network operations
+        associated with queued contact.
+      semantic_territory_consumed: It consumes different mixtures of channel setup,
+        participant synchronization, content transfer, routing, negotiation, and system
+        coordination at different addresses.
+      conflicts_or_future_limitations: The nine current meanings do not share one
+        process center, completed/active/nonactualized siblings are not exact phase
+        variants, and several definitions encode intention, preparation, queueing,
+        or network structure forbidden by the 1x2 clarification.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 55
+    maximum: 80
+  - candidate_id: expression_reception_distribution
+    title: potential target reception
+    invariant_candidate: A nonactualized act by which a target endpoint would take
+      up a communicative expression from an exchange context.
+    analysis:
+      why_it_fits: Every root is one communicative availability process; source, target,
+        and shared scope follow the second trit exactly, while the third trit changes
+        only realization phase.
+      useful_coverage: It covers saying, signaling, publishing, receiving, hearing-at-an-endpoint,
+        multicasting, broadcasting, and formal send/receive/distribute operations
+        without absorbing their content.
+      semantic_territory_consumed: 'Only participant-addressed exchange: making an
+        expression available from a source, taking it up at a target, or making it
+        available across a shared channel to multiple endpoints.'
+      conflicts_or_future_limitations: It deliberately leaves composition to CRE/DAT,
+        comprehension to MIN, physical propagation to MAT/MOV, channel lifecycle to
+        STR/CON:0xx, protocol to LOG, and reciprocal interaction to compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: channel_lifecycle
+    title: potential target-channel establishment
+    invariant_candidate: A nonactualized process that establishes or changes target-side
+      participation in a communication channel.
+    analysis:
+      why_it_fits: Opening, joining, and establishing channels are Connection processes
+        and can be distributed across source, target, and systemic scope.
+      useful_coverage: It would cover connect, attach, dial, accept, join, open, close,
+        subscribe, and network formation in ordinary and technical settings.
+      semantic_territory_consumed: Creation or transition of endpoint/channel participation
+        state rather than communication through an established exchange context.
+      conflicts_or_future_limitations: It collides with canonical CON:0xx loci, future
+        CON:2xx connectivity capacities, STR topology, REP reconnection, and runtime
+        participation state; it also leaves send/receive without a coherent atomic
+        home.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 59
+    maximum: 80
+  - candidate_id: synchronization_coordination
+    title: potential delivery
+    invariant_candidate: A nonactualized process that aligns communicative state or
+      timing at target-side scope.
+    analysis:
+      why_it_fits: Synchronization and coordination are systemic Connection processes
+        and have strong programming and distributed-system value.
+      useful_coverage: It would cover handshakes, barriers, consensus, state alignment,
+        clock synchronization, negotiation, and group coordination.
+      semantic_territory_consumed: Agreement of participant states or behavior under
+        shared constraints.
+      conflicts_or_future_limitations: State alignment belongs partly to STR, MIN,
+        DAT, or LOG depending on what is aligned; negotiation and consensus are relational
+        compounds, and ordinary one-way communication would remain poorly covered.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 7
+      technical_coverage: 9
+    total: 56
+    maximum: 80
+  - candidate_id: conversational_role_action
+    title: potential acknowledgement
+    invariant_candidate: A nonactualized discourse act performed at target-side scope
+      in a participant exchange.
+    analysis:
+      why_it_fits: Speaking, listening, acknowledging, and negotiating are recognizable
+        communication actions with source, target, and shared roles.
+      useful_coverage: It would give compact atoms for talk, listen, reply, acknowledge,
+        converse, negotiate, and deliberate.
+      semantic_territory_consumed: Human-style discourse acts and turn-taking rather
+        than substrate-neutral exchange processes.
+      conflicts_or_future_limitations: It is anthropocentric, listening often requires
+        MIN attention, acknowledgement requires LOG/DAT relation to a prior message,
+        and the three triplets cannot remain exact phase variants without forcing
+        unrelated discourse acts together.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 6
+    total: 59
+    maximum: 80
+  recommended_candidate_id: expression_reception_distribution
+  recommendation_reason: This is the only architecture that gives all nine roots one
+    substrate-neutral exchange center, exact source/target/shared scope, exact completed/active/nonactualized
+    triplets, and clean boundaries from content, cognition, physical propagation,
+    topology, protocol, and future relationship roots.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: CON:120
+  fixed_generated_fields:
+    canonical_id: CON:120
+    universal_slot: completed systemic process
+    family_qualified_transliteration: wu·kim
+    local_compact_root: kim
+    formal_carrier: wu-ki-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 0
+  current_meaning_rationale: The Phase 2 choice follows the shared/systemic and completed
+    slot labels and selects salient Connection vocabulary such as synchronization,
+    transmission, delivery, or broadcast.
+  candidates:
+  - candidate_id: current_phase2
+    title: network synchronization complete
+    invariant_candidate: A shared communication system has completed a broadcast,
+      negotiation, or synchronization cycle.
+    analysis:
+      why_it_fits: The Phase 2 choice follows the shared/systemic and completed slot
+        labels and selects salient Connection vocabulary such as synchronization,
+        transmission, delivery, or broadcast.
+      useful_coverage: It would directly cover familiar social and network operations
+        associated with network synchronization complete.
+      semantic_territory_consumed: It consumes different mixtures of channel setup,
+        participant synchronization, content transfer, routing, negotiation, and system
+        coordination at different addresses.
+      conflicts_or_future_limitations: The nine current meanings do not share one
+        process center, completed/active/nonactualized siblings are not exact phase
+        variants, and several definitions encode intention, preparation, queueing,
+        or network structure forbidden by the 1x2 clarification.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 55
+    maximum: 80
+  - candidate_id: expression_reception_distribution
+    title: completed shared distribution
+    invariant_candidate: Completion of an act by which a communicative expression
+      is made available across a shared channel to multiple participant endpoints.
+    analysis:
+      why_it_fits: Every root is one communicative availability process; source, target,
+        and shared scope follow the second trit exactly, while the third trit changes
+        only realization phase.
+      useful_coverage: It covers saying, signaling, publishing, receiving, hearing-at-an-endpoint,
+        multicasting, broadcasting, and formal send/receive/distribute operations
+        without absorbing their content.
+      semantic_territory_consumed: 'Only participant-addressed exchange: making an
+        expression available from a source, taking it up at a target, or making it
+        available across a shared channel to multiple endpoints.'
+      conflicts_or_future_limitations: It deliberately leaves composition to CRE/DAT,
+        comprehension to MIN, physical propagation to MAT/MOV, channel lifecycle to
+        STR/CON:0xx, protocol to LOG, and reciprocal interaction to compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: channel_lifecycle
+    title: completed network establishment
+    invariant_candidate: A completed process that establishes or changes shared-system
+      participation in a communication channel.
+    analysis:
+      why_it_fits: Opening, joining, and establishing channels are Connection processes
+        and can be distributed across source, target, and systemic scope.
+      useful_coverage: It would cover connect, attach, dial, accept, join, open, close,
+        subscribe, and network formation in ordinary and technical settings.
+      semantic_territory_consumed: Creation or transition of endpoint/channel participation
+        state rather than communication through an established exchange context.
+      conflicts_or_future_limitations: It collides with canonical CON:0xx loci, future
+        CON:2xx connectivity capacities, STR topology, REP reconnection, and runtime
+        participation state; it also leaves send/receive without a coherent atomic
+        home.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 59
+    maximum: 80
+  - candidate_id: synchronization_coordination
+    title: completed network synchronization
+    invariant_candidate: A completed process that aligns communicative state or timing
+      at shared-system scope.
+    analysis:
+      why_it_fits: Synchronization and coordination are systemic Connection processes
+        and have strong programming and distributed-system value.
+      useful_coverage: It would cover handshakes, barriers, consensus, state alignment,
+        clock synchronization, negotiation, and group coordination.
+      semantic_territory_consumed: Agreement of participant states or behavior under
+        shared constraints.
+      conflicts_or_future_limitations: State alignment belongs partly to STR, MIN,
+        DAT, or LOG depending on what is aligned; negotiation and consensus are relational
+        compounds, and ordinary one-way communication would remain poorly covered.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 7
+      technical_coverage: 9
+    total: 56
+    maximum: 80
+  - candidate_id: conversational_role_action
+    title: completed negotiation cycle
+    invariant_candidate: A completed discourse act performed at shared-system scope
+      in a participant exchange.
+    analysis:
+      why_it_fits: Speaking, listening, acknowledging, and negotiating are recognizable
+        communication actions with source, target, and shared roles.
+      useful_coverage: It would give compact atoms for talk, listen, reply, acknowledge,
+        converse, negotiate, and deliberate.
+      semantic_territory_consumed: Human-style discourse acts and turn-taking rather
+        than substrate-neutral exchange processes.
+      conflicts_or_future_limitations: It is anthropocentric, listening often requires
+        MIN attention, acknowledgement requires LOG/DAT relation to a prior message,
+        and the three triplets cannot remain exact phase variants without forcing
+        unrelated discourse acts together.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 6
+    total: 59
+    maximum: 80
+  recommended_candidate_id: expression_reception_distribution
+  recommendation_reason: This is the only architecture that gives all nine roots one
+    substrate-neutral exchange center, exact source/target/shared scope, exact completed/active/nonactualized
+    triplets, and clean boundaries from content, cognition, physical propagation,
+    topology, protocol, and future relationship roots.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: CON:121
+  fixed_generated_fields:
+    canonical_id: CON:121
+    universal_slot: active systemic process
+    family_qualified_transliteration: wu·kik
+    local_compact_root: kik
+    formal_carrier: wu-ki-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 2
+  current_meaning_rationale: The Phase 2 choice follows the shared/systemic and active
+    slot labels and selects salient Connection vocabulary such as synchronization,
+    transmission, delivery, or broadcast.
+  candidates:
+  - candidate_id: current_phase2
+    title: broadcast exchange
+    invariant_candidate: Messages or signals are actively being shared, routed, or
+      negotiated across a network.
+    analysis:
+      why_it_fits: The Phase 2 choice follows the shared/systemic and active slot
+        labels and selects salient Connection vocabulary such as synchronization,
+        transmission, delivery, or broadcast.
+      useful_coverage: It would directly cover familiar social and network operations
+        associated with broadcast exchange.
+      semantic_territory_consumed: It consumes different mixtures of channel setup,
+        participant synchronization, content transfer, routing, negotiation, and system
+        coordination at different addresses.
+      conflicts_or_future_limitations: The nine current meanings do not share one
+        process center, completed/active/nonactualized siblings are not exact phase
+        variants, and several definitions encode intention, preparation, queueing,
+        or network structure forbidden by the 1x2 clarification.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 55
+    maximum: 80
+  - candidate_id: expression_reception_distribution
+    title: active shared distribution
+    invariant_candidate: An ongoing act by which a communicative expression is made
+      available across a shared channel to multiple participant endpoints.
+    analysis:
+      why_it_fits: Every root is one communicative availability process; source, target,
+        and shared scope follow the second trit exactly, while the third trit changes
+        only realization phase.
+      useful_coverage: It covers saying, signaling, publishing, receiving, hearing-at-an-endpoint,
+        multicasting, broadcasting, and formal send/receive/distribute operations
+        without absorbing their content.
+      semantic_territory_consumed: 'Only participant-addressed exchange: making an
+        expression available from a source, taking it up at a target, or making it
+        available across a shared channel to multiple endpoints.'
+      conflicts_or_future_limitations: It deliberately leaves composition to CRE/DAT,
+        comprehension to MIN, physical propagation to MAT/MOV, channel lifecycle to
+        STR/CON:0xx, protocol to LOG, and reciprocal interaction to compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: channel_lifecycle
+    title: active network establishment
+    invariant_candidate: A active process that establishes or changes shared-system
+      participation in a communication channel.
+    analysis:
+      why_it_fits: Opening, joining, and establishing channels are Connection processes
+        and can be distributed across source, target, and systemic scope.
+      useful_coverage: It would cover connect, attach, dial, accept, join, open, close,
+        subscribe, and network formation in ordinary and technical settings.
+      semantic_territory_consumed: Creation or transition of endpoint/channel participation
+        state rather than communication through an established exchange context.
+      conflicts_or_future_limitations: It collides with canonical CON:0xx loci, future
+        CON:2xx connectivity capacities, STR topology, REP reconnection, and runtime
+        participation state; it also leaves send/receive without a coherent atomic
+        home.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 59
+    maximum: 80
+  - candidate_id: synchronization_coordination
+    title: active network synchronization
+    invariant_candidate: A active process that aligns communicative state or timing
+      at shared-system scope.
+    analysis:
+      why_it_fits: Synchronization and coordination are systemic Connection processes
+        and have strong programming and distributed-system value.
+      useful_coverage: It would cover handshakes, barriers, consensus, state alignment,
+        clock synchronization, negotiation, and group coordination.
+      semantic_territory_consumed: Agreement of participant states or behavior under
+        shared constraints.
+      conflicts_or_future_limitations: State alignment belongs partly to STR, MIN,
+        DAT, or LOG depending on what is aligned; negotiation and consensus are relational
+        compounds, and ordinary one-way communication would remain poorly covered.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 7
+      technical_coverage: 9
+    total: 56
+    maximum: 80
+  - candidate_id: conversational_role_action
+    title: active negotiation cycle
+    invariant_candidate: A active discourse act performed at shared-system scope in
+      a participant exchange.
+    analysis:
+      why_it_fits: Speaking, listening, acknowledging, and negotiating are recognizable
+        communication actions with source, target, and shared roles.
+      useful_coverage: It would give compact atoms for talk, listen, reply, acknowledge,
+        converse, negotiate, and deliberate.
+      semantic_territory_consumed: Human-style discourse acts and turn-taking rather
+        than substrate-neutral exchange processes.
+      conflicts_or_future_limitations: It is anthropocentric, listening often requires
+        MIN attention, acknowledgement requires LOG/DAT relation to a prior message,
+        and the three triplets cannot remain exact phase variants without forcing
+        unrelated discourse acts together.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 6
+    total: 59
+    maximum: 80
+  recommended_candidate_id: expression_reception_distribution
+  recommendation_reason: This is the only architecture that gives all nine roots one
+    substrate-neutral exchange center, exact source/target/shared scope, exact completed/active/nonactualized
+    triplets, and clean boundaries from content, cognition, physical propagation,
+    topology, protocol, and future relationship roots.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: CON:122
+  fixed_generated_fields:
+    canonical_id: CON:122
+    universal_slot: pending systemic process
+    family_qualified_transliteration: wu·kin
+    local_compact_root: kin
+    formal_carrier: wu-ki-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - -2
+  current_meaning_rationale: The Phase 2 choice follows the shared/systemic and nonactualized
+    slot labels and selects salient Connection vocabulary such as synchronization,
+    transmission, delivery, or broadcast.
+  candidates:
+  - candidate_id: current_phase2
+    title: pending broadcast
+    invariant_candidate: A system-wide communication or synchronization process is
+      staged but has not started.
+    analysis:
+      why_it_fits: The Phase 2 choice follows the shared/systemic and nonactualized
+        slot labels and selects salient Connection vocabulary such as synchronization,
+        transmission, delivery, or broadcast.
+      useful_coverage: It would directly cover familiar social and network operations
+        associated with pending broadcast.
+      semantic_territory_consumed: It consumes different mixtures of channel setup,
+        participant synchronization, content transfer, routing, negotiation, and system
+        coordination at different addresses.
+      conflicts_or_future_limitations: The nine current meanings do not share one
+        process center, completed/active/nonactualized siblings are not exact phase
+        variants, and several definitions encode intention, preparation, queueing,
+        or network structure forbidden by the 1x2 clarification.
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 55
+    maximum: 80
+  - candidate_id: expression_reception_distribution
+    title: potential shared distribution
+    invariant_candidate: A nonactualized act by which a communicative expression would
+      be made available across a shared channel to multiple participant endpoints.
+    analysis:
+      why_it_fits: Every root is one communicative availability process; source, target,
+        and shared scope follow the second trit exactly, while the third trit changes
+        only realization phase.
+      useful_coverage: It covers saying, signaling, publishing, receiving, hearing-at-an-endpoint,
+        multicasting, broadcasting, and formal send/receive/distribute operations
+        without absorbing their content.
+      semantic_territory_consumed: 'Only participant-addressed exchange: making an
+        expression available from a source, taking it up at a target, or making it
+        available across a shared channel to multiple endpoints.'
+      conflicts_or_future_limitations: It deliberately leaves composition to CRE/DAT,
+        comprehension to MIN, physical propagation to MAT/MOV, channel lifecycle to
+        STR/CON:0xx, protocol to LOG, and reciprocal interaction to compounds.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: channel_lifecycle
+    title: potential network establishment
+    invariant_candidate: A nonactualized process that establishes or changes shared-system
+      participation in a communication channel.
+    analysis:
+      why_it_fits: Opening, joining, and establishing channels are Connection processes
+        and can be distributed across source, target, and systemic scope.
+      useful_coverage: It would cover connect, attach, dial, accept, join, open, close,
+        subscribe, and network formation in ordinary and technical settings.
+      semantic_territory_consumed: Creation or transition of endpoint/channel participation
+        state rather than communication through an established exchange context.
+      conflicts_or_future_limitations: It collides with canonical CON:0xx loci, future
+        CON:2xx connectivity capacities, STR topology, REP reconnection, and runtime
+        participation state; it also leaves send/receive without a coherent atomic
+        home.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 59
+    maximum: 80
+  - candidate_id: synchronization_coordination
+    title: potential network synchronization
+    invariant_candidate: A nonactualized process that aligns communicative state or
+      timing at shared-system scope.
+    analysis:
+      why_it_fits: Synchronization and coordination are systemic Connection processes
+        and have strong programming and distributed-system value.
+      useful_coverage: It would cover handshakes, barriers, consensus, state alignment,
+        clock synchronization, negotiation, and group coordination.
+      semantic_territory_consumed: Agreement of participant states or behavior under
+        shared constraints.
+      conflicts_or_future_limitations: State alignment belongs partly to STR, MIN,
+        DAT, or LOG depending on what is aligned; negotiation and consensus are relational
+        compounds, and ordinary one-way communication would remain poorly covered.
+    scores:
+      atomicity: 7
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 7
+      technical_coverage: 9
+    total: 56
+    maximum: 80
+  - candidate_id: conversational_role_action
+    title: potential negotiation cycle
+    invariant_candidate: A nonactualized discourse act performed at shared-system
+      scope in a participant exchange.
+    analysis:
+      why_it_fits: Speaking, listening, acknowledging, and negotiating are recognizable
+        communication actions with source, target, and shared roles.
+      useful_coverage: It would give compact atoms for talk, listen, reply, acknowledge,
+        converse, negotiate, and deliberate.
+      semantic_territory_consumed: Human-style discourse acts and turn-taking rather
+        than substrate-neutral exchange processes.
+      conflicts_or_future_limitations: It is anthropocentric, listening often requires
+        MIN attention, acknowledgement requires LOG/DAT relation to a prior message,
+        and the three triplets cannot remain exact phase variants without forcing
+        unrelated discourse acts together.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 6
+    total: 59
+    maximum: 80
+  recommended_candidate_id: expression_reception_distribution
+  recommendation_reason: This is the only architecture that gives all nine roots one
+    substrate-neutral exchange center, exact source/target/shared scope, exact completed/active/nonactualized
+    triplets, and clean boundaries from content, cognition, physical propagation,
+    topology, protocol, and future relationship roots.
+  confidence: 0.97
+  canonicalized: true

@@ -1,0 +1,404 @@
+---
+metadata:
+  title: MAT:000–022 semantic stress tests
+  status: review_evidence_not_canonical
+  test_count: 75
+  forced_atomic_mappings: false
+classification_values:
+- direct proposed root
+- root plus runtime or later property
+- composition
+- MAT later layer
+- canonical/future other family
+- different future family
+- grammar or modifier
+- grammar or quantity
+- unresolved lexical ambiguity
+tests:
+- number: 1
+  concept: body
+  classification: composition
+  mapping: MAT:000 + role/context
+  rationale: The root owns constitutive matter; biological identity still requires
+    LIF.
+- number: 2
+  concept: physical self
+  classification: composition
+  mapping: LIF:000 + MAT:000
+  rationale: Identity and material substrate are independent.
+- number: 3
+  concept: corpse
+  classification: composition
+  mapping: MAT:000 or MAT:002 + LIF state/absence + WRN/ORI as needed
+  rationale: Death is not reducible to dormant matter.
+- number: 4
+  concept: matter
+  classification: direct proposed root
+  mapping: MAT:000, MAT:010, or MAT:020 by scope
+  rationale: English matter underspecifies focal substrate, object, or aggregate.
+- number: 5
+  concept: substance
+  classification: composition
+  mapping: MAT:020 + kind/classifier
+  rationale: A substance kind needs classification beyond aggregate existence.
+- number: 6
+  concept: material
+  classification: grammar or modifier
+  mapping: MAT family typing
+  rationale: Adjectival material normally modifies another concept.
+- number: 7
+  concept: object
+  classification: direct proposed root
+  mapping: MAT:010
+  rationale: Distinct external material object.
+- number: 8
+  concept: thing
+  classification: unresolved lexical ambiguity
+  mapping: MAT:010 only when physical
+  rationale: Thing may be abstract, living, informational, or physical.
+- number: 9
+  concept: tool
+  classification: composition
+  mapping: MAT:010/011 + CRE/STR function
+  rationale: Instrumental purpose is not material objecthood.
+- number: 10
+  concept: machine
+  classification: composition
+  mapping: MAT object/aggregate + STR organization + CRE function
+  rationale: Machine is a structured functional artifact.
+- number: 11
+  concept: device
+  classification: composition
+  mapping: MAT:010 + STR/CRE function
+  rationale: Devicehood is functional.
+- number: 12
+  concept: active machine
+  classification: composition
+  mapping: MAT:011 or MAT:021 + STR machine structure
+  rationale: Material activity and machine organization are separate.
+- number: 13
+  concept: inactive machine
+  classification: composition
+  mapping: MAT:012 or MAT:022 + STR machine structure
+  rationale: Dormant material entity plus machine structure.
+- number: 14
+  concept: resource
+  classification: composition
+  mapping: MAT entity + LOG/CON/CRE use-role
+  rationale: Resource is a contextual usability relation.
+- number: 15
+  concept: raw material
+  classification: composition
+  mapping: MAT:020/022 + CRE unformed role
+  rationale: Rawness is relative to a creation process.
+- number: 16
+  concept: fuel
+  classification: composition
+  mapping: MAT entity + MAT:202 candidate energy potential + use-role
+  rationale: Requires the later capacity review.
+- number: 17
+  concept: food
+  classification: composition
+  mapping: MAT entity + LIF nourishment relation
+  rationale: Food is matter in a life-support role.
+- number: 18
+  concept: water
+  classification: composition
+  mapping: MAT:020 + substance-kind classifier
+  rationale: The atomic root supplies aggregate matter, not chemical identity.
+- number: 19
+  concept: air
+  classification: composition
+  mapping: MAT:020 + gas/medium classifier
+  rationale: Material aggregate plus phase/kind.
+- number: 20
+  concept: energy
+  classification: unresolved lexical ambiguity
+  mapping: MAT:001, MAT:011/021, or later MAT:201/202 by sense
+  rationale: Expressed state, bearer, available work, and stored potential are distinct.
+- number: 21
+  concept: power
+  classification: MAT later layer
+  mapping: likely MAT:201 + quantity/time
+  rationale: Power is a rate/capacity concept, not an entity root.
+- number: 22
+  concept: charge
+  classification: composition
+  mapping: active/dormant MAT entity + physical-state modifier
+  rationale: Charge type and magnitude need physical/quantity vocabulary.
+- number: 23
+  concept: heat
+  classification: composition
+  mapping: MAT:001/011/021 + thermal modifier
+  rationale: Thermal activity specializes material activity.
+- number: 24
+  concept: temperature
+  classification: grammar or quantity
+  mapping: MAT entity + LOG quantity + thermal scale
+  rationale: A measured scalar is not an atomic entity.
+- number: 25
+  concept: mass
+  classification: grammar or quantity
+  mapping: MAT entity + quantitative property
+  rationale: Mass belongs to the later property/quantity layer.
+- number: 26
+  concept: weight
+  classification: composition
+  mapping: MAT entity + force relation + quantity
+  rationale: Weight depends on force and frame.
+- number: 27
+  concept: volume
+  classification: grammar or quantity
+  mapping: MAT entity + STR spatial extent + quantity
+  rationale: Volume is measured extent.
+- number: 28
+  concept: size
+  classification: grammar or quantity
+  mapping: MAT/MOV/STR extent + quantity
+  rationale: Context determines the domain.
+- number: 29
+  concept: shape
+  classification: different future family
+  mapping: STR form/configuration
+  rationale: Shape is structural organization of a material bearer.
+- number: 30
+  concept: boundary
+  classification: different future family
+  mapping: STR boundary + MAT bearer
+  rationale: Boundary is structural, though physically instantiated.
+- number: 31
+  concept: part
+  classification: composition
+  mapping: MAT:010 + STR part-whole relation
+  rationale: Part is a structural relationship.
+- number: 32
+  concept: whole
+  classification: composition
+  mapping: MAT entity + STR whole relation
+  rationale: Wholeness is not material substance alone.
+- number: 33
+  concept: collection
+  classification: direct proposed root
+  mapping: MAT:020
+  rationale: When the collection is explicitly material.
+- number: 34
+  concept: aggregate
+  classification: direct proposed root
+  mapping: MAT:020/021/022 by phase
+  rationale: Phase distinguishes stable, active, and dormant aggregate.
+- number: 35
+  concept: stock
+  classification: composition
+  mapping: MAT:020/022 + quantity + resource role
+  rationale: Stock is a material aggregate in an inventory role.
+- number: 36
+  concept: reserve
+  classification: composition
+  mapping: MAT:022 + capacity/use-role
+  rationale: Reserve purpose is not lexical dormancy itself.
+- number: 37
+  concept: supply
+  classification: composition
+  mapping: MAT aggregate + CON access + LOG availability
+  rationale: Supply is a relational/functional reading.
+- number: 38
+  concept: inventory
+  classification: composition
+  mapping: MAT aggregate + DAT record + CON ownership
+  rationale: Physical stock and inventory record are distinct.
+- number: 39
+  concept: powered
+  classification: direct proposed root
+  mapping: MAT:001 or MAT:011
+  rationale: Scope chooses focal substrate or external object.
+- number: 40
+  concept: unpowered
+  classification: direct proposed root
+  mapping: MAT:002 or MAT:012
+  rationale: Dormant material state; cause may require more roots.
+- number: 41
+  concept: hot
+  classification: composition
+  mapping: MAT active root + thermal modifier
+  rationale: Hot is a quantitative thermal specialization.
+- number: 42
+  concept: cold
+  classification: composition
+  mapping: MAT stable/dormant root + thermal modifier
+  rationale: Cold does not necessarily mean dormant.
+- number: 43
+  concept: solid
+  classification: composition
+  mapping: MAT entity + material-phase classifier
+  rationale: Phase-of-matter vocabulary is not yet atomic.
+- number: 44
+  concept: liquid
+  classification: composition
+  mapping: MAT aggregate + material-phase classifier
+  rationale: Liquid is a material kind/phase.
+- number: 45
+  concept: gas
+  classification: composition
+  mapping: MAT aggregate + material-phase classifier
+  rationale: Gas is a material kind/phase.
+- number: 46
+  concept: plasma
+  classification: composition
+  mapping: MAT:021 + material-phase classifier
+  rationale: Often active aggregate, but plasma identity needs a classifier.
+- number: 47
+  concept: hard
+  classification: MAT later layer
+  mapping: MAT:200/210 candidate property relation
+  rationale: Hardness is a capacity/property, not an entity.
+- number: 48
+  concept: soft
+  classification: MAT later layer
+  mapping: MAT:200/210 candidate property relation
+  rationale: Softness is a response property.
+- number: 49
+  concept: flexible
+  classification: MAT later layer
+  mapping: MAT:200 plus STR deformation relation
+  rationale: Flexibility is a material/structural capacity.
+- number: 50
+  concept: rigid
+  classification: MAT later layer
+  mapping: MAT:200 plus STR form retention
+  rationale: Rigidity is capacity to resist deformation.
+- number: 51
+  concept: strong
+  classification: MAT later layer
+  mapping: MAT:200 + load relation
+  rationale: Strength is capacity.
+- number: 52
+  concept: weak
+  classification: root plus runtime or later property
+  mapping: MAT:200[0] candidate + quantity
+  rationale: Requires approval of the capacity layer.
+- number: 53
+  concept: dense
+  classification: grammar or quantity
+  mapping: MAT aggregate + mass/volume ratio
+  rationale: Density is derived quantity.
+- number: 54
+  concept: sparse
+  classification: grammar or quantity
+  mapping: MAT aggregate + low density/distribution
+  rationale: Sparse is structural/quantitative.
+- number: 55
+  concept: intact
+  classification: composition
+  mapping: MAT:000/010/020 + STR coherence + WRN[0]
+  rationale: Integrity is intentionally not atomic here.
+- number: 56
+  concept: broken
+  classification: different future family
+  mapping: WRN failure/damage + MAT bearer
+  rationale: Brokenness is a warning/failure condition.
+- number: 57
+  concept: damaged
+  classification: different future family
+  mapping: WRN damage + MAT bearer
+  rationale: Matter supplies the affected entity.
+- number: 58
+  concept: repaired
+  classification: canonical/future other family
+  mapping: REP restoration + MAT bearer
+  rationale: Repair status is not a material entity phase.
+- number: 59
+  concept: force
+  classification: MAT later layer
+  mapping: MAT:111/210/211 candidate review
+  rationale: Force is a process/relationship, not a 0xx entity.
+- number: 60
+  concept: pressure
+  classification: composition
+  mapping: MAT aggregate + force/area quantity
+  rationale: Pressure is a derived physical relation.
+- number: 61
+  concept: chemical reaction
+  classification: MAT later layer
+  mapping: MAT:101/121 candidate process + MAT entities
+  rationale: The active aggregate may be a participant, not the reaction event.
+- number: 62
+  concept: consumption
+  classification: MAT later layer
+  mapping: MAT:101/111/121 candidate process
+  rationale: Consumption is transformation/transfer.
+- number: 63
+  concept: flow of matter
+  classification: composition
+  mapping: MOV:121 + MAT entity, or future MAT:121 when exchange is foregrounded
+  rationale: Displacement and material-domain exchange are distinct.
+- number: 64
+  concept: electric current
+  classification: composition
+  mapping: MAT:021 + flow/process + quantity
+  rationale: Active aggregate is not itself the current process.
+- number: 65
+  concept: moving object
+  classification: composition
+  mapping: MAT:010/011 + MOV:121
+  rationale: Movement does not automatically make the object materially active.
+- number: 66
+  concept: living body
+  classification: composition
+  mapping: LIF entity + MAT:000/001
+  rationale: Life and substrate are separate domains.
+- number: 67
+  concept: conscious body
+  classification: composition
+  mapping: LIF:001 + MAT:000/001
+  rationale: Consciousness does not follow from energetic matter.
+- number: 68
+  concept: data object
+  classification: different future family
+  mapping: DAT entity; MAT only for physical storage bearer
+  rationale: Do not treat spatial metaphors or software objects as matter.
+- number: 69
+  concept: ownership
+  classification: different future family
+  mapping: CON relation + MAT object
+  rationale: Ownership is not material attachment.
+- number: 70
+  concept: accessibility
+  classification: different future family
+  mapping: CON/LOG/STR relation + MAT entity
+  rationale: Access is explicitly excluded from dormant MAT roots.
+- number: 71
+  concept: scarce
+  classification: grammar or quantity
+  mapping: MAT stock + low quantity relative to demand
+  rationale: Scarcity is comparative/contextual.
+- number: 72
+  concept: abundant
+  classification: grammar or quantity
+  mapping: MAT stock + high quantity relative to demand
+  rationale: Abundance is comparative/contextual.
+- number: 73
+  concept: empty
+  classification: root plus runtime or quantity
+  mapping: aggregate membership/quantity = zero
+  rationale: Empty is not dormant; an empty container may remain active.
+- number: 74
+  concept: full
+  classification: grammar or quantity
+  mapping: MAT/STR container + capacity ratio
+  rationale: Fullness is a quantity relation.
+- number: 75
+  concept: conservation
+  classification: MAT later layer
+  mapping: MAT:220 candidate + LOG equality
+  rationale: Conservation is a systemic relationship/law.
+coverage_summary:
+  composition: 37
+  direct proposed root: 6
+  grammar or modifier: 1
+  unresolved lexical ambiguity: 2
+  MAT later layer: 10
+  grammar or quantity: 9
+  different future family: 7
+  root plus runtime or later property: 1
+  canonical/future other family: 1
+  root plus runtime or quantity: 1

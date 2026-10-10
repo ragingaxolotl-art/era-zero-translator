@@ -1,0 +1,1524 @@
+---
+metadata:
+  title: DAT:200–222 adversarial semantic candidates
+  status: approved_and_canonical_by_delegated_authority
+  architecture_version: '1.0'
+  range: DAT:200–222
+  roots_reviewed: 9
+  candidate_architectures_per_root: 5
+  scored_categories:
+  - atomicity
+  - address_fit
+  - family_fit
+  - neighbor_separation
+  - cross_family_separation
+  - compound_usefulness
+  - everyday_language_coverage
+  - technical_coverage
+  generated_fields_changed: false
+  roots_canonicalized:
+  - DAT:200
+  - DAT:201
+  - DAT:202
+  - DAT:210
+  - DAT:211
+  - DAT:212
+  - DAT:220
+  - DAT:221
+  - DAT:222
+  approval_record: migrations/DAT_200_222_semantic_approval.yaml
+roots:
+- canonical_id: DAT:200
+  fixed_generated_fields:
+    canonical_id: DAT:200
+    universal_slot: stable inward capacity
+    family_qualified_transliteration: li·mam
+    local_compact_root: mam
+    formal_carrier: li-nu-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+  current_meaning_rationale: The provisional titles use familiar data-relation vocabulary—access,
+    retrieval, reference, dereference, integrity, provenance, consistency, and recoverability—and
+    roughly reflect inward scope and persistent status.
+  candidates:
+  - candidate_id: current_phase2
+    title: stable access capacity
+    invariant_candidate: An entity has dependable permission and means to read, retain,
+      or use its own information.
+    analysis:
+      why_it_fits: The provisional titles use familiar data-relation vocabulary—access,
+        retrieval, reference, dereference, integrity, provenance, consistency, and
+        recoverability—and roughly reflect inward scope and persistent status.
+      useful_coverage: They reach storage access, lookup, addressing, provenance,
+        distributed consistency, reconstruction, and permission-aware systems.
+      semantic_territory_consumed: Across the block they mix permission, means, reading,
+        writing, search, recovery, reference identity, dereference processes, validation,
+        integrity, provenance, replication, reconstruction, observer uncertainty,
+        and possibility.
+      conflicts_or_future_limitations: The three triplets have no shared invariant
+        center and the third trit shifts among stability, current processes, brokenness,
+        ambiguity, missingness, and possibility.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 9
+      neighbor_separation: 4
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 55
+    maximum: 80
+  - candidate_id: information_process_affordances
+    title: persistent internal data transformability
+    invariant_candidate: A persistent capacity of represented information within one
+      reference entity to undergo bounded internal data transformation, independently
+      of whether that capacity is presently operative.
+    analysis:
+      why_it_fits: First-trit 2 becomes the capacity or qualifying relation enabling
+        the matching DAT:1xx process; the second trit changes only inward, target,
+        or systemic scope; and the third changes only persistent, operative, or latent
+        status.
+      useful_coverage: It supports transformable, encodable, transferable, writable-to,
+        stream-capable, synchronizable, interoperable, replication-capable, and capability-aware
+        programming.
+      semantic_territory_consumed: Only typed enablement for the approved information
+        transformation, transfer, or synchronization processes. Data entities, actual
+        processes, algorithms, media, permission, integrity results, provenance, observer
+        access, and modality remain separate.
+      conflicts_or_future_limitations: Stronger claims about authorization, bandwidth,
+        losslessness, consistency, termination, storage durability, or recovery require
+        compounds or later specialization.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 10
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 80
+    maximum: 80
+  - candidate_id: access_retrieval_relations
+    title: persistent internal retrievability
+    invariant_candidate: A persistent information access or retrieval relation at
+      inward scope.
+    analysis:
+      why_it_fits: Access and retrieval relations are central to information systems
+        and can be described as persistent, operative, or latent.
+      useful_coverage: It would cover readable, writable, searchable, retrievable,
+        available, accessible, and recoverable data.
+      semantic_territory_consumed: It consumes observer- or principal-relative access
+        and storage availability rather than general enablement of the three DAT:1xx
+        processes.
+      conflicts_or_future_limitations: Access requires an accessor, permission or
+        channel, and often a storage relation; it fits the outward column better than
+        the entire cube and collides with CON, STR, REP, and MIN.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 7
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 69
+    maximum: 80
+  - candidate_id: reference_resolution_relations
+    title: persistent internal reference resolution
+    invariant_candidate: A persistent reference-resolution relation at inward information
+      scope.
+    analysis:
+      why_it_fits: References and their resolution are central Data relations, especially
+        for a source pointing toward a distinct target.
+      useful_coverage: It would cover addressable, resolvable, dereferenceable, linkable,
+        citable, locatable, and lookup-capable.
+      semantic_territory_consumed: It consumes the relation between an information
+        object and its referent rather than enablement for transformation, transfer,
+        or synchronization.
+      conflicts_or_future_limitations: Reference resolution strongly favors the outward
+        column; inward and systemic variants become strained, while DAT:010–012 already
+        owns target-denoting information entities.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 68
+    maximum: 80
+  - candidate_id: integrity_provenance_relations
+    title: persistent internal integrity relation
+    invariant_candidate: A persistent information-integrity or provenance relation
+      at inward scope.
+    analysis:
+      why_it_fits: Integrity and provenance are important information relations that
+        can be persistent, presently effective, or latent across local, target, and
+        systemic scopes.
+      useful_coverage: It would cover authentic, intact, traceable, consistent, verified,
+        replicated, and provenance-linked information.
+      semantic_territory_consumed: It consumes positive quality, historical origin,
+        or agreement relations rather than process enablement.
+      conflicts_or_future_limitations: Integrity is a result under a criterion, provenance
+        requires causal/history structure, and neither supplies a coherent inward/target/systemic
+        affordance cube.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 7
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 63
+    maximum: 80
+  recommended_candidate_id: information_process_affordances
+  recommendation_reason: Only this architecture keeps all nine roots on one information-process-enablement
+    center, follows inward/target/systemic scope exactly, and gives every triplet
+    one persistent/operative/latent axis while reserving information entities, actual
+    processes, algorithms, media, access, integrity, provenance, permission, and modality
+    for other roots or composition.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: DAT:201
+  fixed_generated_fields:
+    canonical_id: DAT:201
+    universal_slot: active inward capacity
+    family_qualified_transliteration: li·mak
+    local_compact_root: mak
+    formal_carrier: li-nu-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+  current_meaning_rationale: The provisional titles use familiar data-relation vocabulary—access,
+    retrieval, reference, dereference, integrity, provenance, consistency, and recoverability—and
+    roughly reflect inward scope and operative status.
+  candidates:
+  - candidate_id: current_phase2
+    title: active retrievability
+    invariant_candidate: Information is currently readable, writable, searchable,
+      or recoverable by the entity.
+    analysis:
+      why_it_fits: The provisional titles use familiar data-relation vocabulary—access,
+        retrieval, reference, dereference, integrity, provenance, consistency, and
+        recoverability—and roughly reflect inward scope and operative status.
+      useful_coverage: They reach storage access, lookup, addressing, provenance,
+        distributed consistency, reconstruction, and permission-aware systems.
+      semantic_territory_consumed: Across the block they mix permission, means, reading,
+        writing, search, recovery, reference identity, dereference processes, validation,
+        integrity, provenance, replication, reconstruction, observer uncertainty,
+        and possibility.
+      conflicts_or_future_limitations: The three triplets have no shared invariant
+        center and the third trit shifts among stability, current processes, brokenness,
+        ambiguity, missingness, and possibility.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 9
+      neighbor_separation: 4
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 55
+    maximum: 80
+  - candidate_id: information_process_affordances
+    title: operative internal data transformability
+    invariant_candidate: A capacity of represented information within one reference
+      entity to undergo bounded internal data transformation that is presently operative.
+    analysis:
+      why_it_fits: First-trit 2 becomes the capacity or qualifying relation enabling
+        the matching DAT:1xx process; the second trit changes only inward, target,
+        or systemic scope; and the third changes only persistent, operative, or latent
+        status.
+      useful_coverage: It supports transformable, encodable, transferable, writable-to,
+        stream-capable, synchronizable, interoperable, replication-capable, and capability-aware
+        programming.
+      semantic_territory_consumed: Only typed enablement for the approved information
+        transformation, transfer, or synchronization processes. Data entities, actual
+        processes, algorithms, media, permission, integrity results, provenance, observer
+        access, and modality remain separate.
+      conflicts_or_future_limitations: Stronger claims about authorization, bandwidth,
+        losslessness, consistency, termination, storage durability, or recovery require
+        compounds or later specialization.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 10
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 80
+    maximum: 80
+  - candidate_id: access_retrieval_relations
+    title: operative internal retrievability
+    invariant_candidate: A operative information access or retrieval relation at inward
+      scope.
+    analysis:
+      why_it_fits: Access and retrieval relations are central to information systems
+        and can be described as persistent, operative, or latent.
+      useful_coverage: It would cover readable, writable, searchable, retrievable,
+        available, accessible, and recoverable data.
+      semantic_territory_consumed: It consumes observer- or principal-relative access
+        and storage availability rather than general enablement of the three DAT:1xx
+        processes.
+      conflicts_or_future_limitations: Access requires an accessor, permission or
+        channel, and often a storage relation; it fits the outward column better than
+        the entire cube and collides with CON, STR, REP, and MIN.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 7
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 69
+    maximum: 80
+  - candidate_id: reference_resolution_relations
+    title: operative internal reference resolution
+    invariant_candidate: A operative reference-resolution relation at inward information
+      scope.
+    analysis:
+      why_it_fits: References and their resolution are central Data relations, especially
+        for a source pointing toward a distinct target.
+      useful_coverage: It would cover addressable, resolvable, dereferenceable, linkable,
+        citable, locatable, and lookup-capable.
+      semantic_territory_consumed: It consumes the relation between an information
+        object and its referent rather than enablement for transformation, transfer,
+        or synchronization.
+      conflicts_or_future_limitations: Reference resolution strongly favors the outward
+        column; inward and systemic variants become strained, while DAT:010–012 already
+        owns target-denoting information entities.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 68
+    maximum: 80
+  - candidate_id: integrity_provenance_relations
+    title: operative internal integrity relation
+    invariant_candidate: A operative information-integrity or provenance relation
+      at inward scope.
+    analysis:
+      why_it_fits: Integrity and provenance are important information relations that
+        can be persistent, presently effective, or latent across local, target, and
+        systemic scopes.
+      useful_coverage: It would cover authentic, intact, traceable, consistent, verified,
+        replicated, and provenance-linked information.
+      semantic_territory_consumed: It consumes positive quality, historical origin,
+        or agreement relations rather than process enablement.
+      conflicts_or_future_limitations: Integrity is a result under a criterion, provenance
+        requires causal/history structure, and neither supplies a coherent inward/target/systemic
+        affordance cube.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 7
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 63
+    maximum: 80
+  recommended_candidate_id: information_process_affordances
+  recommendation_reason: Only this architecture keeps all nine roots on one information-process-enablement
+    center, follows inward/target/systemic scope exactly, and gives every triplet
+    one persistent/operative/latent axis while reserving information entities, actual
+    processes, algorithms, media, access, integrity, provenance, permission, and modality
+    for other roots or composition.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: DAT:202
+  fixed_generated_fields:
+    canonical_id: DAT:202
+    universal_slot: dormant inward capacity
+    family_qualified_transliteration: li·man
+    local_compact_root: man
+    formal_carrier: li-nu-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+  current_meaning_rationale: The provisional titles use familiar data-relation vocabulary—access,
+    retrieval, reference, dereference, integrity, provenance, consistency, and recoverability—and
+    roughly reflect inward scope and latent status.
+  candidates:
+  - candidate_id: current_phase2
+    title: locked data potential
+    invariant_candidate: Information exists and may be recoverable, but access, decoding,
+      or retrieval is presently unavailable.
+    analysis:
+      why_it_fits: The provisional titles use familiar data-relation vocabulary—access,
+        retrieval, reference, dereference, integrity, provenance, consistency, and
+        recoverability—and roughly reflect inward scope and latent status.
+      useful_coverage: They reach storage access, lookup, addressing, provenance,
+        distributed consistency, reconstruction, and permission-aware systems.
+      semantic_territory_consumed: Across the block they mix permission, means, reading,
+        writing, search, recovery, reference identity, dereference processes, validation,
+        integrity, provenance, replication, reconstruction, observer uncertainty,
+        and possibility.
+      conflicts_or_future_limitations: The three triplets have no shared invariant
+        center and the third trit shifts among stability, current processes, brokenness,
+        ambiguity, missingness, and possibility.
+    scores:
+      atomicity: 4
+      address_fit: 7
+      family_fit: 9
+      neighbor_separation: 4
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 54
+    maximum: 80
+  - candidate_id: information_process_affordances
+    title: latent internal data transformability
+    invariant_candidate: A capacity of represented information within one reference
+      entity to undergo bounded internal data transformation that exists without being
+      presently operative.
+    analysis:
+      why_it_fits: First-trit 2 becomes the capacity or qualifying relation enabling
+        the matching DAT:1xx process; the second trit changes only inward, target,
+        or systemic scope; and the third changes only persistent, operative, or latent
+        status.
+      useful_coverage: It supports transformable, encodable, transferable, writable-to,
+        stream-capable, synchronizable, interoperable, replication-capable, and capability-aware
+        programming.
+      semantic_territory_consumed: Only typed enablement for the approved information
+        transformation, transfer, or synchronization processes. Data entities, actual
+        processes, algorithms, media, permission, integrity results, provenance, observer
+        access, and modality remain separate.
+      conflicts_or_future_limitations: Stronger claims about authorization, bandwidth,
+        losslessness, consistency, termination, storage durability, or recovery require
+        compounds or later specialization.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 10
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 80
+    maximum: 80
+  - candidate_id: access_retrieval_relations
+    title: latent internal retrievability
+    invariant_candidate: A latent information access or retrieval relation at inward
+      scope.
+    analysis:
+      why_it_fits: Access and retrieval relations are central to information systems
+        and can be described as persistent, operative, or latent.
+      useful_coverage: It would cover readable, writable, searchable, retrievable,
+        available, accessible, and recoverable data.
+      semantic_territory_consumed: It consumes observer- or principal-relative access
+        and storage availability rather than general enablement of the three DAT:1xx
+        processes.
+      conflicts_or_future_limitations: Access requires an accessor, permission or
+        channel, and often a storage relation; it fits the outward column better than
+        the entire cube and collides with CON, STR, REP, and MIN.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 6
+      cross_family_separation: 7
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 68
+    maximum: 80
+  - candidate_id: reference_resolution_relations
+    title: latent internal reference resolution
+    invariant_candidate: A latent reference-resolution relation at inward information
+      scope.
+    analysis:
+      why_it_fits: References and their resolution are central Data relations, especially
+        for a source pointing toward a distinct target.
+      useful_coverage: It would cover addressable, resolvable, dereferenceable, linkable,
+        citable, locatable, and lookup-capable.
+      semantic_territory_consumed: It consumes the relation between an information
+        object and its referent rather than enablement for transformation, transfer,
+        or synchronization.
+      conflicts_or_future_limitations: Reference resolution strongly favors the outward
+        column; inward and systemic variants become strained, while DAT:010–012 already
+        owns target-denoting information entities.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 68
+    maximum: 80
+  - candidate_id: integrity_provenance_relations
+    title: latent internal integrity relation
+    invariant_candidate: A latent information-integrity or provenance relation at
+      inward scope.
+    analysis:
+      why_it_fits: Integrity and provenance are important information relations that
+        can be persistent, presently effective, or latent across local, target, and
+        systemic scopes.
+      useful_coverage: It would cover authentic, intact, traceable, consistent, verified,
+        replicated, and provenance-linked information.
+      semantic_territory_consumed: It consumes positive quality, historical origin,
+        or agreement relations rather than process enablement.
+      conflicts_or_future_limitations: Integrity is a result under a criterion, provenance
+        requires causal/history structure, and neither supplies a coherent inward/target/systemic
+        affordance cube.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 7
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 63
+    maximum: 80
+  recommended_candidate_id: information_process_affordances
+  recommendation_reason: Only this architecture keeps all nine roots on one information-process-enablement
+    center, follows inward/target/systemic scope exactly, and gives every triplet
+    one persistent/operative/latent axis while reserving information entities, actual
+    processes, algorithms, media, access, integrity, provenance, permission, and modality
+    for other roots or composition.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: DAT:210
+  fixed_generated_fields:
+    canonical_id: DAT:210
+    universal_slot: stable outward relationship
+    family_qualified_transliteration: li·mom
+    local_compact_root: mom
+    formal_carrier: li-nu-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+  current_meaning_rationale: The provisional titles use familiar data-relation vocabulary—access,
+    retrieval, reference, dereference, integrity, provenance, consistency, and recoverability—and
+    roughly reflect outward scope and persistent status.
+  candidates:
+  - candidate_id: current_phase2
+    title: stable reference
+    invariant_candidate: An information object has an established addressing, citation,
+      lookup, or identity relation to a target.
+    analysis:
+      why_it_fits: The provisional titles use familiar data-relation vocabulary—access,
+        retrieval, reference, dereference, integrity, provenance, consistency, and
+        recoverability—and roughly reflect outward scope and persistent status.
+      useful_coverage: They reach storage access, lookup, addressing, provenance,
+        distributed consistency, reconstruction, and permission-aware systems.
+      semantic_territory_consumed: Across the block they mix permission, means, reading,
+        writing, search, recovery, reference identity, dereference processes, validation,
+        integrity, provenance, replication, reconstruction, observer uncertainty,
+        and possibility.
+      conflicts_or_future_limitations: The three triplets have no shared invariant
+        center and the third trit shifts among stability, current processes, brokenness,
+        ambiguity, missingness, and possibility.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 9
+      neighbor_separation: 4
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 55
+    maximum: 80
+  - candidate_id: information_process_affordances
+    title: persistent source-target data transferability
+    invariant_candidate: A persistent information-transfer relation between one source
+      context and one distinct reference target that can enable bounded target data
+      transfer, independently of whether that relation is presently operative.
+    analysis:
+      why_it_fits: First-trit 2 becomes the capacity or qualifying relation enabling
+        the matching DAT:1xx process; the second trit changes only inward, target,
+        or systemic scope; and the third changes only persistent, operative, or latent
+        status.
+      useful_coverage: It supports transformable, encodable, transferable, writable-to,
+        stream-capable, synchronizable, interoperable, replication-capable, and capability-aware
+        programming.
+      semantic_territory_consumed: Only typed enablement for the approved information
+        transformation, transfer, or synchronization processes. Data entities, actual
+        processes, algorithms, media, permission, integrity results, provenance, observer
+        access, and modality remain separate.
+      conflicts_or_future_limitations: Stronger claims about authorization, bandwidth,
+        losslessness, consistency, termination, storage durability, or recovery require
+        compounds or later specialization.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: access_retrieval_relations
+    title: persistent target access relation
+    invariant_candidate: A persistent information access or retrieval relation at
+      outward scope.
+    analysis:
+      why_it_fits: Access and retrieval relations are central to information systems
+        and can be described as persistent, operative, or latent.
+      useful_coverage: It would cover readable, writable, searchable, retrievable,
+        available, accessible, and recoverable data.
+      semantic_territory_consumed: It consumes observer- or principal-relative access
+        and storage availability rather than general enablement of the three DAT:1xx
+        processes.
+      conflicts_or_future_limitations: Access requires an accessor, permission or
+        channel, and often a storage relation; it fits the outward column better than
+        the entire cube and collides with CON, STR, REP, and MIN.
+    scores:
+      atomicity: 9
+      address_fit: 7
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 7
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 68
+    maximum: 80
+  - candidate_id: reference_resolution_relations
+    title: persistent target reference resolution
+    invariant_candidate: A persistent reference-resolution relation at outward information
+      scope.
+    analysis:
+      why_it_fits: References and their resolution are central Data relations, especially
+        for a source pointing toward a distinct target.
+      useful_coverage: It would cover addressable, resolvable, dereferenceable, linkable,
+        citable, locatable, and lookup-capable.
+      semantic_territory_consumed: It consumes the relation between an information
+        object and its referent rather than enablement for transformation, transfer,
+        or synchronization.
+      conflicts_or_future_limitations: Reference resolution strongly favors the outward
+        column; inward and systemic variants become strained, while DAT:010–012 already
+        owns target-denoting information entities.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 69
+    maximum: 80
+  - candidate_id: integrity_provenance_relations
+    title: persistent target provenance relation
+    invariant_candidate: A persistent information-integrity or provenance relation
+      at outward scope.
+    analysis:
+      why_it_fits: Integrity and provenance are important information relations that
+        can be persistent, presently effective, or latent across local, target, and
+        systemic scopes.
+      useful_coverage: It would cover authentic, intact, traceable, consistent, verified,
+        replicated, and provenance-linked information.
+      semantic_territory_consumed: It consumes positive quality, historical origin,
+        or agreement relations rather than process enablement.
+      conflicts_or_future_limitations: Integrity is a result under a criterion, provenance
+        requires causal/history structure, and neither supplies a coherent inward/target/systemic
+        affordance cube.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 9
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 62
+    maximum: 80
+  recommended_candidate_id: information_process_affordances
+  recommendation_reason: Only this architecture keeps all nine roots on one information-process-enablement
+    center, follows inward/target/systemic scope exactly, and gives every triplet
+    one persistent/operative/latent axis while reserving information entities, actual
+    processes, algorithms, media, access, integrity, provenance, permission, and modality
+    for other roots or composition.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: DAT:211
+  fixed_generated_fields:
+    canonical_id: DAT:211
+    universal_slot: active outward relationship
+    family_qualified_transliteration: li·mok
+    local_compact_root: mok
+    formal_carrier: li-nu-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+  current_meaning_rationale: The provisional titles use familiar data-relation vocabulary—access,
+    retrieval, reference, dereference, integrity, provenance, consistency, and recoverability—and
+    roughly reflect outward scope and operative status.
+  candidates:
+  - candidate_id: current_phase2
+    title: active dereference
+    invariant_candidate: A reference is presently resolving, retrieving, validating,
+      or linking its target.
+    analysis:
+      why_it_fits: The provisional titles use familiar data-relation vocabulary—access,
+        retrieval, reference, dereference, integrity, provenance, consistency, and
+        recoverability—and roughly reflect outward scope and operative status.
+      useful_coverage: They reach storage access, lookup, addressing, provenance,
+        distributed consistency, reconstruction, and permission-aware systems.
+      semantic_territory_consumed: Across the block they mix permission, means, reading,
+        writing, search, recovery, reference identity, dereference processes, validation,
+        integrity, provenance, replication, reconstruction, observer uncertainty,
+        and possibility.
+      conflicts_or_future_limitations: The three triplets have no shared invariant
+        center and the third trit shifts among stability, current processes, brokenness,
+        ambiguity, missingness, and possibility.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 9
+      neighbor_separation: 4
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 55
+    maximum: 80
+  - candidate_id: information_process_affordances
+    title: operative source-target data transferability
+    invariant_candidate: An information-transfer relation between one source context
+      and one distinct reference target that presently enables bounded target data
+      transfer.
+    analysis:
+      why_it_fits: First-trit 2 becomes the capacity or qualifying relation enabling
+        the matching DAT:1xx process; the second trit changes only inward, target,
+        or systemic scope; and the third changes only persistent, operative, or latent
+        status.
+      useful_coverage: It supports transformable, encodable, transferable, writable-to,
+        stream-capable, synchronizable, interoperable, replication-capable, and capability-aware
+        programming.
+      semantic_territory_consumed: Only typed enablement for the approved information
+        transformation, transfer, or synchronization processes. Data entities, actual
+        processes, algorithms, media, permission, integrity results, provenance, observer
+        access, and modality remain separate.
+      conflicts_or_future_limitations: Stronger claims about authorization, bandwidth,
+        losslessness, consistency, termination, storage durability, or recovery require
+        compounds or later specialization.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: access_retrieval_relations
+    title: operative target access relation
+    invariant_candidate: A operative information access or retrieval relation at outward
+      scope.
+    analysis:
+      why_it_fits: Access and retrieval relations are central to information systems
+        and can be described as persistent, operative, or latent.
+      useful_coverage: It would cover readable, writable, searchable, retrievable,
+        available, accessible, and recoverable data.
+      semantic_territory_consumed: It consumes observer- or principal-relative access
+        and storage availability rather than general enablement of the three DAT:1xx
+        processes.
+      conflicts_or_future_limitations: Access requires an accessor, permission or
+        channel, and often a storage relation; it fits the outward column better than
+        the entire cube and collides with CON, STR, REP, and MIN.
+    scores:
+      atomicity: 9
+      address_fit: 7
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 7
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 68
+    maximum: 80
+  - candidate_id: reference_resolution_relations
+    title: operative target reference resolution
+    invariant_candidate: A operative reference-resolution relation at outward information
+      scope.
+    analysis:
+      why_it_fits: References and their resolution are central Data relations, especially
+        for a source pointing toward a distinct target.
+      useful_coverage: It would cover addressable, resolvable, dereferenceable, linkable,
+        citable, locatable, and lookup-capable.
+      semantic_territory_consumed: It consumes the relation between an information
+        object and its referent rather than enablement for transformation, transfer,
+        or synchronization.
+      conflicts_or_future_limitations: Reference resolution strongly favors the outward
+        column; inward and systemic variants become strained, while DAT:010–012 already
+        owns target-denoting information entities.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 69
+    maximum: 80
+  - candidate_id: integrity_provenance_relations
+    title: operative target provenance relation
+    invariant_candidate: A operative information-integrity or provenance relation
+      at outward scope.
+    analysis:
+      why_it_fits: Integrity and provenance are important information relations that
+        can be persistent, presently effective, or latent across local, target, and
+        systemic scopes.
+      useful_coverage: It would cover authentic, intact, traceable, consistent, verified,
+        replicated, and provenance-linked information.
+      semantic_territory_consumed: It consumes positive quality, historical origin,
+        or agreement relations rather than process enablement.
+      conflicts_or_future_limitations: Integrity is a result under a criterion, provenance
+        requires causal/history structure, and neither supplies a coherent inward/target/systemic
+        affordance cube.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 9
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 62
+    maximum: 80
+  recommended_candidate_id: information_process_affordances
+  recommendation_reason: Only this architecture keeps all nine roots on one information-process-enablement
+    center, follows inward/target/systemic scope exactly, and gives every triplet
+    one persistent/operative/latent axis while reserving information entities, actual
+    processes, algorithms, media, access, integrity, provenance, permission, and modality
+    for other roots or composition.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: DAT:212
+  fixed_generated_fields:
+    canonical_id: DAT:212
+    universal_slot: unresolved outward relationship
+    family_qualified_transliteration: li·mon
+    local_compact_root: mon
+    formal_carrier: li-nu-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+  current_meaning_rationale: The provisional titles use familiar data-relation vocabulary—access,
+    retrieval, reference, dereference, integrity, provenance, consistency, and recoverability—and
+    roughly reflect outward scope and latent status.
+  candidates:
+  - candidate_id: current_phase2
+    title: unresolved reference
+    invariant_candidate: A possible link to a target exists but is broken, ambiguous,
+      missing, or not yet verified.
+    analysis:
+      why_it_fits: The provisional titles use familiar data-relation vocabulary—access,
+        retrieval, reference, dereference, integrity, provenance, consistency, and
+        recoverability—and roughly reflect outward scope and latent status.
+      useful_coverage: They reach storage access, lookup, addressing, provenance,
+        distributed consistency, reconstruction, and permission-aware systems.
+      semantic_territory_consumed: Across the block they mix permission, means, reading,
+        writing, search, recovery, reference identity, dereference processes, validation,
+        integrity, provenance, replication, reconstruction, observer uncertainty,
+        and possibility.
+      conflicts_or_future_limitations: The three triplets have no shared invariant
+        center and the third trit shifts among stability, current processes, brokenness,
+        ambiguity, missingness, and possibility.
+    scores:
+      atomicity: 4
+      address_fit: 7
+      family_fit: 9
+      neighbor_separation: 4
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 54
+    maximum: 80
+  - candidate_id: information_process_affordances
+    title: latent source-target data transferability
+    invariant_candidate: An information-transfer relation between one source context
+      and one distinct reference target that exists without presently enabling bounded
+      target data transfer.
+    analysis:
+      why_it_fits: First-trit 2 becomes the capacity or qualifying relation enabling
+        the matching DAT:1xx process; the second trit changes only inward, target,
+        or systemic scope; and the third changes only persistent, operative, or latent
+        status.
+      useful_coverage: It supports transformable, encodable, transferable, writable-to,
+        stream-capable, synchronizable, interoperable, replication-capable, and capability-aware
+        programming.
+      semantic_territory_consumed: Only typed enablement for the approved information
+        transformation, transfer, or synchronization processes. Data entities, actual
+        processes, algorithms, media, permission, integrity results, provenance, observer
+        access, and modality remain separate.
+      conflicts_or_future_limitations: Stronger claims about authorization, bandwidth,
+        losslessness, consistency, termination, storage durability, or recovery require
+        compounds or later specialization.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: access_retrieval_relations
+    title: latent target access relation
+    invariant_candidate: A latent information access or retrieval relation at outward
+      scope.
+    analysis:
+      why_it_fits: Access and retrieval relations are central to information systems
+        and can be described as persistent, operative, or latent.
+      useful_coverage: It would cover readable, writable, searchable, retrievable,
+        available, accessible, and recoverable data.
+      semantic_territory_consumed: It consumes observer- or principal-relative access
+        and storage availability rather than general enablement of the three DAT:1xx
+        processes.
+      conflicts_or_future_limitations: Access requires an accessor, permission or
+        channel, and often a storage relation; it fits the outward column better than
+        the entire cube and collides with CON, STR, REP, and MIN.
+    scores:
+      atomicity: 9
+      address_fit: 7
+      family_fit: 9
+      neighbor_separation: 6
+      cross_family_separation: 7
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 67
+    maximum: 80
+  - candidate_id: reference_resolution_relations
+    title: latent target reference resolution
+    invariant_candidate: A latent reference-resolution relation at outward information
+      scope.
+    analysis:
+      why_it_fits: References and their resolution are central Data relations, especially
+        for a source pointing toward a distinct target.
+      useful_coverage: It would cover addressable, resolvable, dereferenceable, linkable,
+        citable, locatable, and lookup-capable.
+      semantic_territory_consumed: It consumes the relation between an information
+        object and its referent rather than enablement for transformation, transfer,
+        or synchronization.
+      conflicts_or_future_limitations: Reference resolution strongly favors the outward
+        column; inward and systemic variants become strained, while DAT:010–012 already
+        owns target-denoting information entities.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 69
+    maximum: 80
+  - candidate_id: integrity_provenance_relations
+    title: latent target provenance relation
+    invariant_candidate: A latent information-integrity or provenance relation at
+      outward scope.
+    analysis:
+      why_it_fits: Integrity and provenance are important information relations that
+        can be persistent, presently effective, or latent across local, target, and
+        systemic scopes.
+      useful_coverage: It would cover authentic, intact, traceable, consistent, verified,
+        replicated, and provenance-linked information.
+      semantic_territory_consumed: It consumes positive quality, historical origin,
+        or agreement relations rather than process enablement.
+      conflicts_or_future_limitations: Integrity is a result under a criterion, provenance
+        requires causal/history structure, and neither supplies a coherent inward/target/systemic
+        affordance cube.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 9
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 62
+    maximum: 80
+  recommended_candidate_id: information_process_affordances
+  recommendation_reason: Only this architecture keeps all nine roots on one information-process-enablement
+    center, follows inward/target/systemic scope exactly, and gives every triplet
+    one persistent/operative/latent axis while reserving information entities, actual
+    processes, algorithms, media, access, integrity, provenance, permission, and modality
+    for other roots or composition.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: DAT:220
+  fixed_generated_fields:
+    canonical_id: DAT:220
+    universal_slot: stable systemic relationship
+    family_qualified_transliteration: li·mim
+    local_compact_root: mim
+    formal_carrier: li-nu-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+  current_meaning_rationale: The provisional titles use familiar data-relation vocabulary—access,
+    retrieval, reference, dereference, integrity, provenance, consistency, and recoverability—and
+    roughly reflect systemic scope and persistent status.
+  candidates:
+  - candidate_id: current_phase2
+    title: stable information integrity
+    invariant_candidate: A data system has established fidelity, provenance, consistency,
+      and replication relationships.
+    analysis:
+      why_it_fits: The provisional titles use familiar data-relation vocabulary—access,
+        retrieval, reference, dereference, integrity, provenance, consistency, and
+        recoverability—and roughly reflect systemic scope and persistent status.
+      useful_coverage: They reach storage access, lookup, addressing, provenance,
+        distributed consistency, reconstruction, and permission-aware systems.
+      semantic_territory_consumed: Across the block they mix permission, means, reading,
+        writing, search, recovery, reference identity, dereference processes, validation,
+        integrity, provenance, replication, reconstruction, observer uncertainty,
+        and possibility.
+      conflicts_or_future_limitations: The three triplets have no shared invariant
+        center and the third trit shifts among stability, current processes, brokenness,
+        ambiguity, missingness, and possibility.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 54
+    maximum: 80
+  - candidate_id: information_process_affordances
+    title: persistent systemic data synchronizability
+    invariant_candidate: A persistent capacity of information states across multiple
+      participants in one shared data domain to undergo coordinated alignment under
+      one synchronization criterion, independently of whether that capacity is presently
+      operative.
+    analysis:
+      why_it_fits: First-trit 2 becomes the capacity or qualifying relation enabling
+        the matching DAT:1xx process; the second trit changes only inward, target,
+        or systemic scope; and the third changes only persistent, operative, or latent
+        status.
+      useful_coverage: It supports transformable, encodable, transferable, writable-to,
+        stream-capable, synchronizable, interoperable, replication-capable, and capability-aware
+        programming.
+      semantic_territory_consumed: Only typed enablement for the approved information
+        transformation, transfer, or synchronization processes. Data entities, actual
+        processes, algorithms, media, permission, integrity results, provenance, observer
+        access, and modality remain separate.
+      conflicts_or_future_limitations: Stronger claims about authorization, bandwidth,
+        losslessness, consistency, termination, storage durability, or recovery require
+        compounds or later specialization.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: access_retrieval_relations
+    title: persistent systemic retrievability
+    invariant_candidate: A persistent information access or retrieval relation at
+      systemic scope.
+    analysis:
+      why_it_fits: Access and retrieval relations are central to information systems
+        and can be described as persistent, operative, or latent.
+      useful_coverage: It would cover readable, writable, searchable, retrievable,
+        available, accessible, and recoverable data.
+      semantic_territory_consumed: It consumes observer- or principal-relative access
+        and storage availability rather than general enablement of the three DAT:1xx
+        processes.
+      conflicts_or_future_limitations: Access requires an accessor, permission or
+        channel, and often a storage relation; it fits the outward column better than
+        the entire cube and collides with CON, STR, REP, and MIN.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 7
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 69
+    maximum: 80
+  - candidate_id: reference_resolution_relations
+    title: persistent systemic reference resolution
+    invariant_candidate: A persistent reference-resolution relation at systemic information
+      scope.
+    analysis:
+      why_it_fits: References and their resolution are central Data relations, especially
+        for a source pointing toward a distinct target.
+      useful_coverage: It would cover addressable, resolvable, dereferenceable, linkable,
+        citable, locatable, and lookup-capable.
+      semantic_territory_consumed: It consumes the relation between an information
+        object and its referent rather than enablement for transformation, transfer,
+        or synchronization.
+      conflicts_or_future_limitations: Reference resolution strongly favors the outward
+        column; inward and systemic variants become strained, while DAT:010–012 already
+        owns target-denoting information entities.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 68
+    maximum: 80
+  - candidate_id: integrity_provenance_relations
+    title: persistent systemic integrity relation
+    invariant_candidate: A persistent information-integrity or provenance relation
+      at systemic scope.
+    analysis:
+      why_it_fits: Integrity and provenance are important information relations that
+        can be persistent, presently effective, or latent across local, target, and
+        systemic scopes.
+      useful_coverage: It would cover authentic, intact, traceable, consistent, verified,
+        replicated, and provenance-linked information.
+      semantic_territory_consumed: It consumes positive quality, historical origin,
+        or agreement relations rather than process enablement.
+      conflicts_or_future_limitations: Integrity is a result under a criterion, provenance
+        requires causal/history structure, and neither supplies a coherent inward/target/systemic
+        affordance cube.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 7
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 63
+    maximum: 80
+  recommended_candidate_id: information_process_affordances
+  recommendation_reason: Only this architecture keeps all nine roots on one information-process-enablement
+    center, follows inward/target/systemic scope exactly, and gives every triplet
+    one persistent/operative/latent axis while reserving information entities, actual
+    processes, algorithms, media, access, integrity, provenance, permission, and modality
+    for other roots or composition.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: DAT:221
+  fixed_generated_fields:
+    canonical_id: DAT:221
+    universal_slot: active systemic relationship
+    family_qualified_transliteration: li·mik
+    local_compact_root: mik
+    formal_carrier: li-nu-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+  current_meaning_rationale: The provisional titles use familiar data-relation vocabulary—access,
+    retrieval, reference, dereference, integrity, provenance, consistency, and recoverability—and
+    roughly reflect systemic scope and operative status.
+  candidates:
+  - candidate_id: current_phase2
+    title: active provenance network
+    invariant_candidate: Records are actively being traced, checked, reconciled, or
+      replicated across a distributed system.
+    analysis:
+      why_it_fits: The provisional titles use familiar data-relation vocabulary—access,
+        retrieval, reference, dereference, integrity, provenance, consistency, and
+        recoverability—and roughly reflect systemic scope and operative status.
+      useful_coverage: They reach storage access, lookup, addressing, provenance,
+        distributed consistency, reconstruction, and permission-aware systems.
+      semantic_territory_consumed: Across the block they mix permission, means, reading,
+        writing, search, recovery, reference identity, dereference processes, validation,
+        integrity, provenance, replication, reconstruction, observer uncertainty,
+        and possibility.
+      conflicts_or_future_limitations: The three triplets have no shared invariant
+        center and the third trit shifts among stability, current processes, brokenness,
+        ambiguity, missingness, and possibility.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 54
+    maximum: 80
+  - candidate_id: information_process_affordances
+    title: operative systemic data synchronizability
+    invariant_candidate: A capacity of information states across multiple participants
+      in one shared data domain to undergo coordinated alignment under one synchronization
+      criterion that is presently operative.
+    analysis:
+      why_it_fits: First-trit 2 becomes the capacity or qualifying relation enabling
+        the matching DAT:1xx process; the second trit changes only inward, target,
+        or systemic scope; and the third changes only persistent, operative, or latent
+        status.
+      useful_coverage: It supports transformable, encodable, transferable, writable-to,
+        stream-capable, synchronizable, interoperable, replication-capable, and capability-aware
+        programming.
+      semantic_territory_consumed: Only typed enablement for the approved information
+        transformation, transfer, or synchronization processes. Data entities, actual
+        processes, algorithms, media, permission, integrity results, provenance, observer
+        access, and modality remain separate.
+      conflicts_or_future_limitations: Stronger claims about authorization, bandwidth,
+        losslessness, consistency, termination, storage durability, or recovery require
+        compounds or later specialization.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: access_retrieval_relations
+    title: operative systemic retrievability
+    invariant_candidate: A operative information access or retrieval relation at systemic
+      scope.
+    analysis:
+      why_it_fits: Access and retrieval relations are central to information systems
+        and can be described as persistent, operative, or latent.
+      useful_coverage: It would cover readable, writable, searchable, retrievable,
+        available, accessible, and recoverable data.
+      semantic_territory_consumed: It consumes observer- or principal-relative access
+        and storage availability rather than general enablement of the three DAT:1xx
+        processes.
+      conflicts_or_future_limitations: Access requires an accessor, permission or
+        channel, and often a storage relation; it fits the outward column better than
+        the entire cube and collides with CON, STR, REP, and MIN.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 7
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 69
+    maximum: 80
+  - candidate_id: reference_resolution_relations
+    title: operative systemic reference resolution
+    invariant_candidate: A operative reference-resolution relation at systemic information
+      scope.
+    analysis:
+      why_it_fits: References and their resolution are central Data relations, especially
+        for a source pointing toward a distinct target.
+      useful_coverage: It would cover addressable, resolvable, dereferenceable, linkable,
+        citable, locatable, and lookup-capable.
+      semantic_territory_consumed: It consumes the relation between an information
+        object and its referent rather than enablement for transformation, transfer,
+        or synchronization.
+      conflicts_or_future_limitations: Reference resolution strongly favors the outward
+        column; inward and systemic variants become strained, while DAT:010–012 already
+        owns target-denoting information entities.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 68
+    maximum: 80
+  - candidate_id: integrity_provenance_relations
+    title: operative systemic integrity relation
+    invariant_candidate: A operative information-integrity or provenance relation
+      at systemic scope.
+    analysis:
+      why_it_fits: Integrity and provenance are important information relations that
+        can be persistent, presently effective, or latent across local, target, and
+        systemic scopes.
+      useful_coverage: It would cover authentic, intact, traceable, consistent, verified,
+        replicated, and provenance-linked information.
+      semantic_territory_consumed: It consumes positive quality, historical origin,
+        or agreement relations rather than process enablement.
+      conflicts_or_future_limitations: Integrity is a result under a criterion, provenance
+        requires causal/history structure, and neither supplies a coherent inward/target/systemic
+        affordance cube.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 7
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 63
+    maximum: 80
+  recommended_candidate_id: information_process_affordances
+  recommendation_reason: Only this architecture keeps all nine roots on one information-process-enablement
+    center, follows inward/target/systemic scope exactly, and gives every triplet
+    one persistent/operative/latent axis while reserving information entities, actual
+    processes, algorithms, media, access, integrity, provenance, permission, and modality
+    for other roots or composition.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: DAT:222
+  fixed_generated_fields:
+    canonical_id: DAT:222
+    universal_slot: unrealized systemic possibility
+    family_qualified_transliteration: li·min
+    local_compact_root: min
+    formal_carrier: li-nu-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+  current_meaning_rationale: The provisional titles use familiar data-relation vocabulary—access,
+    retrieval, reference, dereference, integrity, provenance, consistency, and recoverability—and
+    roughly reflect systemic scope and latent status.
+  candidates:
+  - candidate_id: current_phase2
+    title: recoverable information possibility
+    invariant_candidate: A coherent system-level record could be reconstructed or
+      discovered, but it is not yet available.
+    analysis:
+      why_it_fits: The provisional titles use familiar data-relation vocabulary—access,
+        retrieval, reference, dereference, integrity, provenance, consistency, and
+        recoverability—and roughly reflect systemic scope and latent status.
+      useful_coverage: They reach storage access, lookup, addressing, provenance,
+        distributed consistency, reconstruction, and permission-aware systems.
+      semantic_territory_consumed: Across the block they mix permission, means, reading,
+        writing, search, recovery, reference identity, dereference processes, validation,
+        integrity, provenance, replication, reconstruction, observer uncertainty,
+        and possibility.
+      conflicts_or_future_limitations: The three triplets have no shared invariant
+        center and the third trit shifts among stability, current processes, brokenness,
+        ambiguity, missingness, and possibility.
+    scores:
+      atomicity: 4
+      address_fit: 7
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 53
+    maximum: 80
+  - candidate_id: information_process_affordances
+    title: latent systemic data synchronizability
+    invariant_candidate: A capacity of information states across multiple participants
+      in one shared data domain to undergo coordinated alignment under one synchronization
+      criterion that exists without being presently operative.
+    analysis:
+      why_it_fits: First-trit 2 becomes the capacity or qualifying relation enabling
+        the matching DAT:1xx process; the second trit changes only inward, target,
+        or systemic scope; and the third changes only persistent, operative, or latent
+        status.
+      useful_coverage: It supports transformable, encodable, transferable, writable-to,
+        stream-capable, synchronizable, interoperable, replication-capable, and capability-aware
+        programming.
+      semantic_territory_consumed: Only typed enablement for the approved information
+        transformation, transfer, or synchronization processes. Data entities, actual
+        processes, algorithms, media, permission, integrity results, provenance, observer
+        access, and modality remain separate.
+      conflicts_or_future_limitations: Stronger claims about authorization, bandwidth,
+        losslessness, consistency, termination, storage durability, or recovery require
+        compounds or later specialization.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: access_retrieval_relations
+    title: latent systemic retrievability
+    invariant_candidate: A latent information access or retrieval relation at systemic
+      scope.
+    analysis:
+      why_it_fits: Access and retrieval relations are central to information systems
+        and can be described as persistent, operative, or latent.
+      useful_coverage: It would cover readable, writable, searchable, retrievable,
+        available, accessible, and recoverable data.
+      semantic_territory_consumed: It consumes observer- or principal-relative access
+        and storage availability rather than general enablement of the three DAT:1xx
+        processes.
+      conflicts_or_future_limitations: Access requires an accessor, permission or
+        channel, and often a storage relation; it fits the outward column better than
+        the entire cube and collides with CON, STR, REP, and MIN.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 6
+      cross_family_separation: 7
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 68
+    maximum: 80
+  - candidate_id: reference_resolution_relations
+    title: latent systemic reference resolution
+    invariant_candidate: A latent reference-resolution relation at systemic information
+      scope.
+    analysis:
+      why_it_fits: References and their resolution are central Data relations, especially
+        for a source pointing toward a distinct target.
+      useful_coverage: It would cover addressable, resolvable, dereferenceable, linkable,
+        citable, locatable, and lookup-capable.
+      semantic_territory_consumed: It consumes the relation between an information
+        object and its referent rather than enablement for transformation, transfer,
+        or synchronization.
+      conflicts_or_future_limitations: Reference resolution strongly favors the outward
+        column; inward and systemic variants become strained, while DAT:010–012 already
+        owns target-denoting information entities.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 68
+    maximum: 80
+  - candidate_id: integrity_provenance_relations
+    title: latent systemic integrity relation
+    invariant_candidate: A latent information-integrity or provenance relation at
+      systemic scope.
+    analysis:
+      why_it_fits: Integrity and provenance are important information relations that
+        can be persistent, presently effective, or latent across local, target, and
+        systemic scopes.
+      useful_coverage: It would cover authentic, intact, traceable, consistent, verified,
+        replicated, and provenance-linked information.
+      semantic_territory_consumed: It consumes positive quality, historical origin,
+        or agreement relations rather than process enablement.
+      conflicts_or_future_limitations: Integrity is a result under a criterion, provenance
+        requires causal/history structure, and neither supplies a coherent inward/target/systemic
+        affordance cube.
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 6
+      cross_family_separation: 7
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 63
+    maximum: 80
+  recommended_candidate_id: information_process_affordances
+  recommendation_reason: Only this architecture keeps all nine roots on one information-process-enablement
+    center, follows inward/target/systemic scope exactly, and gives every triplet
+    one persistent/operative/latent axis while reserving information entities, actual
+    processes, algorithms, media, access, integrity, provenance, permission, and modality
+    for other roots or composition.
+  confidence: 0.96
+  canonicalized: true

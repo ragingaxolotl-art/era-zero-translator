@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Browser workbench for conservative English-to-Era-Zero translation, clarification, formal notation, SVG, and MIDI export.">
   <title>Era Zero Translator Workbench</title>
-  <link rel="stylesheet" href="./styles.css?v=1.3.1">
+  <link rel="stylesheet" href="./styles.css?v=1.4.0">
 </head>
 <body>
   <div class="shell">
@@ -14,7 +14,7 @@
         <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
         <span><strong>ERA ZERO</strong><small>Translator Workbench</small></span>
       </a>
-      <div class="release"><span class="status-dot"></span><span id="serviceStatus">Checking engine</span><b>v1.3.1</b></div>
+      <div class="release"><span class="status-dot"></span><span id="serviceStatus">Checking engine</span><b>v1.4.0</b></div>
     </header>
 
     <main>
@@ -40,7 +40,7 @@
             <button data-example="I am not moving.">negative</button>
           </div>
           <div class="composer-footer">
-            <p id="inputHint">No codes or brackets needed. I will infer the intent and ask when the meaning is genuinely ambiguous.</p>
+          <p id="inputHint">Any phrase is accepted. Approved meanings are translated; unfamiliar terms receive nonsemantic phonemic sound IDs instead of being discarded.</p>
             <button id="analyzeButton" class="primary">Translate English <span>→</span></button>
           </div>
         </div>
@@ -59,6 +59,21 @@
             <li>Every resolution round-trips exactly</li>
           </ul>
         </aside>
+      </section>
+
+      <section class="catalog card" aria-labelledby="catalogTitle">
+        <div class="catalog-copy">
+          <p class="eyebrow">Complete language inventory</p>
+          <h2 id="catalogTitle">Every approved meaning and every indexed option.</h2>
+          <p>Search all 324 atomic roots, 28 approved compounds, structural routes, and documented gaps. Nothing is hidden by the sentence-ranking cutoff.</p>
+        </div>
+        <div class="catalog-controls">
+          <label>Search the full language<input id="catalogSearch" type="search" placeholder="word, definition, family, address, or sense ID"></label>
+          <label>Route<select id="catalogRoute"><option value="all">All routes</option><option value="atom">Atomic roots</option><option value="compound">Compounds</option><option value="semantic_ir">Semantic IR</option><option value="grammar">Grammar</option><option value="gap">Documented gaps</option></select></label>
+          <label>Family<select id="catalogFamily"><option value="all">All families</option><option>LIF</option><option>MOV</option><option>MAT</option><option>MIN</option><option>CON</option><option>STR</option><option>WRN</option><option>REP</option><option>LOG</option><option>DAT</option><option>CRE</option><option>ORI</option><option value="CMP">Compounds</option></select></label>
+        </div>
+        <p id="catalogSummary" class="catalog-summary"></p>
+        <div id="catalogList" class="catalog-list" aria-live="polite"></div>
       </section>
 
       <section class="name-lab card" aria-labelledby="nameLabTitle">
@@ -90,14 +105,15 @@
         </div>
         <div class="result-grid">
           <div>
+            <div id="phraseCoverage" class="phrase-coverage hidden"></div>
             <div id="candidateList" class="candidate-list"></div>
           </div>
-          <aside class="resolution card">
+          <aside id="resolutionPanel" class="resolution card">
             <h3>Resolve this reading</h3>
             <p id="resolutionPrompt">Select a candidate to inspect its requirements.</p>
             <div class="field-row">
-              <label>Is the statement true?
-                <select id="runtimeState"><option value="">Choose…</option><option value="0">No / denied</option><option value="1">Yes / affirmed</option><option value="2">Unknown / unresolved</option></select>
+              <label>Runtime state
+                <select id="runtimeState"><option value="">Choose…</option><option value="0">[0] inactive / ended / unavailable</option><option value="1">[1] active / valid / executing</option><option value="2">[2]/num dormant / pending / unresolved</option></select>
               </label>
               <label>Speech act
                 <select id="speechAct"><option value="assertion">Assertion</option><option value="question">Question</option><option value="command">Command</option><option value="definition">Definition</option><option value="possibility">Possibility</option></select>
@@ -139,6 +155,6 @@
     <footer><span>DBA Era Zero · Canonical browser translator</span><span>EZIR-JSON-1 · EZF-1 · EZSVG-1 · MIDI-0 · EZB-1</span></footer>
   </div>
   <div id="toast" role="status" aria-live="polite"></div>
-  <script type="module" src="./app.js?v=1.3.1"></script>
+  <script type="module" src="./app.js?v=1.4.0"></script>
 </body>
 </html>

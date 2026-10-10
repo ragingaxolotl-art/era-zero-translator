@@ -1,0 +1,667 @@
+---
+metadata:
+  title: DAT:100–122 English coverage and routing tests
+  status: review_evidence_not_translation_dictionary
+  range: DAT:100–122
+  test_count: 133
+  no_forced_atomization: true
+tests:
+- test_id: DAT1-T001
+  english_concept: transform data
+  routing: one_root
+  analysis: Use DAT:100–102 when represented information changes while remaining within
+    one reference entity.
+- test_id: DAT1-T002
+  english_concept: encode
+  routing: one_root_or_compound
+  analysis: Encoding is an internal data transformation when the representation changes
+    locally; the specific code system remains a compound or later specialization.
+- test_id: DAT1-T003
+  english_concept: decode
+  routing: one_root_or_compound
+  analysis: Decoding is an internal transformation of represented information and
+    does not entail human understanding.
+- test_id: DAT1-T004
+  english_concept: parse
+  routing: one_root_or_compound
+  analysis: Parsing can use DAT:100–102 for representation transformation; the grammar
+    or formal criterion remains LOG or later vocabulary.
+- test_id: DAT1-T005
+  english_concept: serialize
+  routing: one_root_or_compound
+  analysis: Serialization is an internal data transformation whose output format is
+    separately represented.
+- test_id: DAT1-T006
+  english_concept: deserialize
+  routing: one_root_or_compound
+  analysis: Deserialization is an internal data transformation and does not entail
+    storage access or semantic comprehension.
+- test_id: DAT1-T007
+  english_concept: compress
+  routing: one_root_or_compound
+  analysis: Compression is an internal data transformation; size relation and algorithm
+    remain separate.
+- test_id: DAT1-T008
+  english_concept: decompress
+  routing: one_root_or_compound
+  analysis: Decompression is an internal data transformation; fidelity is not asserted
+    by completion alone.
+- test_id: DAT1-T009
+  english_concept: encrypt
+  routing: compound_or_later_specialization
+  analysis: Encryption combines internal data transformation with a key and security
+    purpose; neither is built into DAT:10x.
+- test_id: DAT1-T010
+  english_concept: decrypt
+  routing: compound_or_later_specialization
+  analysis: Decryption is a keyed internal data transformation and does not entail
+    authorization or successful comprehension.
+- test_id: DAT1-T011
+  english_concept: update a local record
+  routing: one_root_or_compound
+  analysis: Use DAT:100–102 when the represented content changes locally; the record
+    entity is DAT:0xx.
+- test_id: DAT1-T012
+  english_concept: calculate a value
+  routing: compound
+  analysis: DAT may transform represented values, while LOG supplies formal evaluation
+    and the operation specification remains separate.
+- test_id: DAT1-T013
+  english_concept: read
+  routing: ambiguous_compound
+  analysis: A storage read may combine DAT entity access with target transfer or internal
+    transformation; the English word is not forced into one atom.
+- test_id: DAT1-T014
+  english_concept: inspect data
+  routing: different_family_or_compound
+  analysis: Observation and attention belong to MIN; DAT supplies only the information
+    entity or transformation involved.
+- test_id: DAT1-T015
+  english_concept: understand
+  routing: different_family
+  analysis: Understanding is cognitive and belongs to MIN even when decoding data
+    is a prerequisite.
+- test_id: DAT1-T016
+  english_concept: create a new message
+  routing: compound
+  analysis: CRE supplies coming-into-being and DAT supplies the information object
+    or its transformation.
+- test_id: DAT1-T017
+  english_concept: copy to a target
+  routing: one_root
+  analysis: DAT:110–112 owns bounded information transfer to one distinct target and
+    is neutral about whether the source retains a copy.
+- test_id: DAT1-T018
+  english_concept: send data
+  routing: one_root_or_compound
+  analysis: DAT:110–112 supplies target transfer; CON is added when a participant
+    communication act or channel is asserted.
+- test_id: DAT1-T019
+  english_concept: write to storage
+  routing: one_root_or_compound
+  analysis: Target data transfer can model the information arriving at a distinct
+    storage target; MAT or STR supplies the medium or containment.
+- test_id: DAT1-T020
+  english_concept: load into memory
+  routing: one_root_or_compound
+  analysis: Target data transfer can model information arriving in a distinct target
+    context; memory hardware and access remain separate.
+- test_id: DAT1-T021
+  english_concept: retrieve
+  routing: ambiguous_compound
+  analysis: Retrieval may be target transfer from storage, but search, access, and
+    source selection are separate meanings.
+- test_id: DAT1-T022
+  english_concept: download
+  routing: compound
+  analysis: DAT target transfer combines with CON channel and often MOV/MAT carrier
+    realization; direction is resolved by graph roles.
+- test_id: DAT1-T023
+  english_concept: upload
+  routing: compound
+  analysis: DAT target transfer supplies information arrival at the target while network
+    roles and direction conventions remain external.
+- test_id: DAT1-T024
+  english_concept: stream
+  routing: compound_or_later_specialization
+  analysis: Streaming is temporally extended target transfer and needs ORI contour
+    or later specialization.
+- test_id: DAT1-T025
+  english_concept: broadcast
+  routing: compound_or_later_specialization
+  analysis: Broadcast requires one-to-many communication structure; one DAT:11x target
+    transfer alone does not encode it.
+- test_id: DAT1-T026
+  english_concept: relay
+  routing: compound
+  analysis: Relay combines successive DAT transfers with CON or STR path structure.
+- test_id: DAT1-T027
+  english_concept: move a file
+  routing: compound
+  analysis: DAT target transfer does not entail deletion at the source; destructive
+    move needs an explicit source-removal or structural compound.
+- test_id: DAT1-T028
+  english_concept: receive
+  routing: role-relative_compound
+  analysis: The same target transfer can be viewed from the target, but participant
+    receipt or acknowledgment may require CON.
+- test_id: DAT1-T029
+  english_concept: deliver a message
+  routing: compound
+  analysis: DAT supplies information transfer; CON supplies communicative roles and
+    uptake; completion does not entail comprehension.
+- test_id: DAT1-T030
+  english_concept: acknowledge receipt
+  routing: different_family_or_compound
+  analysis: Acknowledgment is a communicative response in CON, not part of DAT transfer
+    completion.
+- test_id: DAT1-T031
+  english_concept: synchronize replicas
+  routing: one_root
+  analysis: DAT:120–122 owns coordinated information-state alignment across multiple
+    participants under one criterion.
+- test_id: DAT1-T032
+  english_concept: reconcile records
+  routing: one_root_or_compound
+  analysis: Systemic synchronization covers coordinated alignment; comparison policy
+    and conflict resolution require LOG and later specialization.
+- test_id: DAT1-T033
+  english_concept: replicate data
+  routing: one_root_or_compound
+  analysis: Replication can realize systemic synchronization, but DAT:12x does not
+    require a particular leader, topology, or copy algorithm.
+- test_id: DAT1-T034
+  english_concept: merge concurrent edits
+  routing: compound_or_later_specialization
+  analysis: Merge combines systemic synchronization with a conflict-resolution rule;
+    the rule and result remain separate.
+- test_id: DAT1-T035
+  english_concept: reach eventual consistency
+  routing: compound
+  analysis: DAT:120 may assert completed alignment at a reference point; eventuality
+    and the consistency criterion require ORI and LOG.
+- test_id: DAT1-T036
+  english_concept: index records
+  routing: compound_or_later_specialization
+  analysis: Indexing is a structural or representational transformation, not inherently
+    systemic synchronization.
+- test_id: DAT1-T037
+  english_concept: aggregate records
+  routing: compound_or_later_specialization
+  analysis: Aggregation may transform many data items into one; plurality alone does
+    not make it synchronization.
+- test_id: DAT1-T038
+  english_concept: sort
+  routing: compound_or_later_specialization
+  analysis: Sorting is a representation transformation under an ordering rule, requiring
+    DAT plus LOG.
+- test_id: DAT1-T039
+  english_concept: deduplicate
+  routing: compound_or_later_specialization
+  analysis: Deduplication is an internal or systemic transformation under identity
+    criteria, not the generic synchronization atom.
+- test_id: DAT1-T040
+  english_concept: cache coherence
+  routing: compound
+  analysis: Systemic synchronization supplies alignment; cache structure and coherence
+    rule remain STR and LOG.
+- test_id: DAT1-T041
+  english_concept: database transaction
+  routing: compound_or_later_specialization
+  analysis: A transaction may include transformations, transfers, constraints, and
+    synchronization and should not be one DAT atom.
+- test_id: DAT1-T042
+  english_concept: completed internal data transformation
+  routing: one_root
+  analysis: DAT:100 states completion of a bounded local information transformation
+    without asserting fidelity or success quality.
+- test_id: DAT1-T043
+  english_concept: active internal data transformation
+  routing: one_root
+  analysis: DAT:101 states that the bounded local information transformation is ongoing.
+- test_id: DAT1-T044
+  english_concept: nonactualized internal data transformation
+  routing: one_root
+  analysis: DAT:102 states a typed local transformation that is not actualized without
+    implying plan or queue.
+- test_id: DAT1-T045
+  english_concept: completed target data transfer
+  routing: one_root
+  analysis: DAT:110 states completion of one bounded transfer to one distinct target
+    without asserting acknowledgment.
+- test_id: DAT1-T046
+  english_concept: active target data transfer
+  routing: one_root
+  analysis: DAT:111 states that one bounded transfer toward one distinct target is
+    ongoing.
+- test_id: DAT1-T047
+  english_concept: nonactualized target data transfer
+  routing: one_root
+  analysis: DAT:112 states a typed target transfer that is not actualized.
+- test_id: DAT1-T048
+  english_concept: completed systemic data synchronization
+  routing: one_root
+  analysis: DAT:120 states completion of coordinated alignment across multiple participants
+    under one criterion.
+- test_id: DAT1-T049
+  english_concept: active systemic data synchronization
+  routing: one_root
+  analysis: DAT:121 states that coordinated multi-participant alignment is ongoing.
+- test_id: DAT1-T050
+  english_concept: nonactualized systemic data synchronization
+  routing: one_root
+  analysis: DAT:122 states a typed systemic synchronization that is not actualized.
+- test_id: DAT1-T051
+  english_concept: datum exists
+  routing: different_layer
+  analysis: DAT:0xx owns the information entity; entity existence does not entail
+    a DAT:1xx process.
+- test_id: DAT1-T052
+  english_concept: datum is manifest
+  routing: different_layer
+  analysis: DAT:001/011/021 owns manifestation; a manifest datum need not be transforming
+    or moving.
+- test_id: DAT1-T053
+  english_concept: data process is possible
+  routing: future_affordance_or_modality
+  analysis: DAT:2xx or ORI modality must express capability or possibility; DAT:1x2
+    only states nonactualization.
+- test_id: DAT1-T054
+  english_concept: data process scheduled
+  routing: compound
+  analysis: ORI and a schedule record supply scheduling; lexical third trit 2 encodes
+    no future time.
+- test_id: DAT1-T055
+  english_concept: data process queued
+  routing: compound
+  analysis: DAT and ORI may represent a queue; DAT:102/112/122 do not encode readiness
+    or ordering.
+- test_id: DAT1-T056
+  english_concept: data process uncertain
+  routing: runtime
+  analysis: Use runtime `[2]/num` on the selected phase root rather than substituting
+    lexical nonactualization.
+- test_id: DAT1-T057
+  english_concept: completed data process uncertain
+  routing: runtime_and_lexical
+  analysis: DAT:100/110/120[2]/num remains lexically completed while the token claim
+    is uncertain.
+- test_id: DAT1-T058
+  english_concept: nonactualized data process affirmed
+  routing: runtime_and_lexical
+  analysis: DAT:102/112/122[1] affirms a typed-but-nonactualized process.
+- test_id: DAT1-T059
+  english_concept: active data process denied
+  routing: runtime_and_lexical
+  analysis: Runtime `[0]` denies the active claim without automatically selecting
+    completion or nonactualization.
+- test_id: DAT1-T060
+  english_concept: completed and active simultaneously
+  routing: phase_contradiction
+  analysis: The same bounded data process cannot be completed and active at one reference
+    time.
+- test_id: DAT1-T061
+  english_concept: active and nonactualized simultaneously
+  routing: phase_contradiction
+  analysis: The same bounded data process cannot be both ongoing and nonactualized
+    at one reference time.
+- test_id: DAT1-T062
+  english_concept: completed and nonactualized simultaneously
+  routing: phase_contradiction
+  analysis: The same bounded data process cannot be both completed and nonactualized
+    at one reference time.
+- test_id: DAT1-T063
+  english_concept: many independent transfers
+  routing: multiple_roots_not_one_systemic_root
+  analysis: Separate transfers do not form one DAT:12x synchronization unless coordinated
+    under one shared alignment criterion.
+- test_id: DAT1-T064
+  english_concept: one transfer to many unrelated targets
+  routing: compound_or_multiple_roots
+  analysis: Plural targets alone do not establish systemic synchronization or shared-state
+    alignment.
+- test_id: DAT1-T065
+  english_concept: data transformation versus creation
+  routing: scope_resolution_test
+  analysis: DAT:10x changes represented information; CRE supplies coming-into-being
+    or productive generation when independently asserted.
+- test_id: DAT1-T066
+  english_concept: data transfer versus motion
+  routing: scope_resolution_test
+  analysis: DAT:11x transfers information; MOV and MAT supply spatial displacement
+    and physical carriers.
+- test_id: DAT1-T067
+  english_concept: data transfer versus communication
+  routing: scope_resolution_test
+  analysis: DAT supplies information-state arrival while CON supplies participant
+    exchange, intent, channel, or uptake.
+- test_id: DAT1-T068
+  english_concept: synchronization versus restoration
+  routing: scope_resolution_test
+  analysis: DAT:12x aligns information states; REP supplies return to an acceptable
+    prior condition.
+- test_id: DAT1-T069
+  english_concept: synchronization versus structural reconfiguration
+  routing: scope_resolution_test
+  analysis: DAT aligns represented states while STR changes component arrangement
+    or membership.
+- test_id: DAT1-T070
+  english_concept: data process versus time
+  routing: scope_resolution_test
+  analysis: Completed, active, and nonactualized are lexical phases; ORI supplies
+    past, future, duration, deadline, and schedule.
+- test_id: DAT1-T071
+  english_concept: completed internal data transformation identity
+  routing: one_root
+  analysis: DAT:100[1] directly affirms the root's invariant without adding a physical
+    carrier, scheduler state, quality judgment, or participant intent.
+- test_id: DAT1-T072
+  english_concept: completed internal data transformation uncertain
+  routing: runtime
+  analysis: DAT:100[2]/num leaves this exact completed claim unresolved and does not
+    select a lexical sibling.
+- test_id: DAT1-T073
+  english_concept: completed internal data transformation with datum
+  routing: compound
+  analysis: DAT:0xx supplies the information entity while DAT:100 supplies process
+    phase.
+- test_id: DAT1-T074
+  english_concept: completed internal data transformation under criterion
+  routing: compound
+  analysis: LOG:0xx supplies an encoding, transfer, or synchronization criterion while
+    DAT:100 supplies the data process.
+- test_id: DAT1-T075
+  english_concept: completed internal data transformation observed
+  routing: compound
+  analysis: MIN supplies observation or confidence while DAT:100 remains an information-process
+    claim.
+- test_id: DAT1-T076
+  english_concept: completed internal data transformation physically realized
+  routing: compound
+  analysis: MAT or MOV supplies the physical mechanism or carrier motion while DAT:100
+    supplies only information-state process.
+- test_id: DAT1-T077
+  english_concept: completed internal data transformation communicated
+  routing: compound
+  analysis: CON supplies participant roles, channel, or uptake while DAT:100 supplies
+    the information transformation or transfer.
+- test_id: DAT1-T078
+  english_concept: active internal data transformation identity
+  routing: one_root
+  analysis: DAT:101[1] directly affirms the root's invariant without adding a physical
+    carrier, scheduler state, quality judgment, or participant intent.
+- test_id: DAT1-T079
+  english_concept: active internal data transformation uncertain
+  routing: runtime
+  analysis: DAT:101[2]/num leaves this exact active claim unresolved and does not
+    select a lexical sibling.
+- test_id: DAT1-T080
+  english_concept: active internal data transformation with datum
+  routing: compound
+  analysis: DAT:0xx supplies the information entity while DAT:101 supplies process
+    phase.
+- test_id: DAT1-T081
+  english_concept: active internal data transformation under criterion
+  routing: compound
+  analysis: LOG:0xx supplies an encoding, transfer, or synchronization criterion while
+    DAT:101 supplies the data process.
+- test_id: DAT1-T082
+  english_concept: active internal data transformation observed
+  routing: compound
+  analysis: MIN supplies observation or confidence while DAT:101 remains an information-process
+    claim.
+- test_id: DAT1-T083
+  english_concept: active internal data transformation physically realized
+  routing: compound
+  analysis: MAT or MOV supplies the physical mechanism or carrier motion while DAT:101
+    supplies only information-state process.
+- test_id: DAT1-T084
+  english_concept: active internal data transformation communicated
+  routing: compound
+  analysis: CON supplies participant roles, channel, or uptake while DAT:101 supplies
+    the information transformation or transfer.
+- test_id: DAT1-T085
+  english_concept: nonactualized internal data transformation identity
+  routing: one_root
+  analysis: DAT:102[1] directly affirms the root's invariant without adding a physical
+    carrier, scheduler state, quality judgment, or participant intent.
+- test_id: DAT1-T086
+  english_concept: nonactualized internal data transformation uncertain
+  routing: runtime
+  analysis: DAT:102[2]/num leaves this exact nonactualized claim unresolved and does
+    not select a lexical sibling.
+- test_id: DAT1-T087
+  english_concept: nonactualized internal data transformation with datum
+  routing: compound
+  analysis: DAT:0xx supplies the information entity while DAT:102 supplies process
+    phase.
+- test_id: DAT1-T088
+  english_concept: nonactualized internal data transformation under criterion
+  routing: compound
+  analysis: LOG:0xx supplies an encoding, transfer, or synchronization criterion while
+    DAT:102 supplies the data process.
+- test_id: DAT1-T089
+  english_concept: nonactualized internal data transformation observed
+  routing: compound
+  analysis: MIN supplies observation or confidence while DAT:102 remains an information-process
+    claim.
+- test_id: DAT1-T090
+  english_concept: nonactualized internal data transformation physically realized
+  routing: compound
+  analysis: MAT or MOV supplies the physical mechanism or carrier motion while DAT:102
+    supplies only information-state process.
+- test_id: DAT1-T091
+  english_concept: nonactualized internal data transformation communicated
+  routing: compound
+  analysis: CON supplies participant roles, channel, or uptake while DAT:102 supplies
+    the information transformation or transfer.
+- test_id: DAT1-T092
+  english_concept: completed target data transfer identity
+  routing: one_root
+  analysis: DAT:110[1] directly affirms the root's invariant without adding a physical
+    carrier, scheduler state, quality judgment, or participant intent.
+- test_id: DAT1-T093
+  english_concept: completed target data transfer uncertain
+  routing: runtime
+  analysis: DAT:110[2]/num leaves this exact completed claim unresolved and does not
+    select a lexical sibling.
+- test_id: DAT1-T094
+  english_concept: completed target data transfer with datum
+  routing: compound
+  analysis: DAT:0xx supplies the information entity while DAT:110 supplies process
+    phase.
+- test_id: DAT1-T095
+  english_concept: completed target data transfer under criterion
+  routing: compound
+  analysis: LOG:0xx supplies an encoding, transfer, or synchronization criterion while
+    DAT:110 supplies the data process.
+- test_id: DAT1-T096
+  english_concept: completed target data transfer observed
+  routing: compound
+  analysis: MIN supplies observation or confidence while DAT:110 remains an information-process
+    claim.
+- test_id: DAT1-T097
+  english_concept: completed target data transfer physically realized
+  routing: compound
+  analysis: MAT or MOV supplies the physical mechanism or carrier motion while DAT:110
+    supplies only information-state process.
+- test_id: DAT1-T098
+  english_concept: completed target data transfer communicated
+  routing: compound
+  analysis: CON supplies participant roles, channel, or uptake while DAT:110 supplies
+    the information transformation or transfer.
+- test_id: DAT1-T099
+  english_concept: active target data transfer identity
+  routing: one_root
+  analysis: DAT:111[1] directly affirms the root's invariant without adding a physical
+    carrier, scheduler state, quality judgment, or participant intent.
+- test_id: DAT1-T100
+  english_concept: active target data transfer uncertain
+  routing: runtime
+  analysis: DAT:111[2]/num leaves this exact active claim unresolved and does not
+    select a lexical sibling.
+- test_id: DAT1-T101
+  english_concept: active target data transfer with datum
+  routing: compound
+  analysis: DAT:0xx supplies the information entity while DAT:111 supplies process
+    phase.
+- test_id: DAT1-T102
+  english_concept: active target data transfer under criterion
+  routing: compound
+  analysis: LOG:0xx supplies an encoding, transfer, or synchronization criterion while
+    DAT:111 supplies the data process.
+- test_id: DAT1-T103
+  english_concept: active target data transfer observed
+  routing: compound
+  analysis: MIN supplies observation or confidence while DAT:111 remains an information-process
+    claim.
+- test_id: DAT1-T104
+  english_concept: active target data transfer physically realized
+  routing: compound
+  analysis: MAT or MOV supplies the physical mechanism or carrier motion while DAT:111
+    supplies only information-state process.
+- test_id: DAT1-T105
+  english_concept: active target data transfer communicated
+  routing: compound
+  analysis: CON supplies participant roles, channel, or uptake while DAT:111 supplies
+    the information transformation or transfer.
+- test_id: DAT1-T106
+  english_concept: nonactualized target data transfer identity
+  routing: one_root
+  analysis: DAT:112[1] directly affirms the root's invariant without adding a physical
+    carrier, scheduler state, quality judgment, or participant intent.
+- test_id: DAT1-T107
+  english_concept: nonactualized target data transfer uncertain
+  routing: runtime
+  analysis: DAT:112[2]/num leaves this exact nonactualized claim unresolved and does
+    not select a lexical sibling.
+- test_id: DAT1-T108
+  english_concept: nonactualized target data transfer with datum
+  routing: compound
+  analysis: DAT:0xx supplies the information entity while DAT:112 supplies process
+    phase.
+- test_id: DAT1-T109
+  english_concept: nonactualized target data transfer under criterion
+  routing: compound
+  analysis: LOG:0xx supplies an encoding, transfer, or synchronization criterion while
+    DAT:112 supplies the data process.
+- test_id: DAT1-T110
+  english_concept: nonactualized target data transfer observed
+  routing: compound
+  analysis: MIN supplies observation or confidence while DAT:112 remains an information-process
+    claim.
+- test_id: DAT1-T111
+  english_concept: nonactualized target data transfer physically realized
+  routing: compound
+  analysis: MAT or MOV supplies the physical mechanism or carrier motion while DAT:112
+    supplies only information-state process.
+- test_id: DAT1-T112
+  english_concept: nonactualized target data transfer communicated
+  routing: compound
+  analysis: CON supplies participant roles, channel, or uptake while DAT:112 supplies
+    the information transformation or transfer.
+- test_id: DAT1-T113
+  english_concept: completed systemic data synchronization identity
+  routing: one_root
+  analysis: DAT:120[1] directly affirms the root's invariant without adding a physical
+    carrier, scheduler state, quality judgment, or participant intent.
+- test_id: DAT1-T114
+  english_concept: completed systemic data synchronization uncertain
+  routing: runtime
+  analysis: DAT:120[2]/num leaves this exact completed claim unresolved and does not
+    select a lexical sibling.
+- test_id: DAT1-T115
+  english_concept: completed systemic data synchronization with datum
+  routing: compound
+  analysis: DAT:0xx supplies the information entity while DAT:120 supplies process
+    phase.
+- test_id: DAT1-T116
+  english_concept: completed systemic data synchronization under criterion
+  routing: compound
+  analysis: LOG:0xx supplies an encoding, transfer, or synchronization criterion while
+    DAT:120 supplies the data process.
+- test_id: DAT1-T117
+  english_concept: completed systemic data synchronization observed
+  routing: compound
+  analysis: MIN supplies observation or confidence while DAT:120 remains an information-process
+    claim.
+- test_id: DAT1-T118
+  english_concept: completed systemic data synchronization physically realized
+  routing: compound
+  analysis: MAT or MOV supplies the physical mechanism or carrier motion while DAT:120
+    supplies only information-state process.
+- test_id: DAT1-T119
+  english_concept: completed systemic data synchronization communicated
+  routing: compound
+  analysis: CON supplies participant roles, channel, or uptake while DAT:120 supplies
+    the information transformation or transfer.
+- test_id: DAT1-T120
+  english_concept: active systemic data synchronization identity
+  routing: one_root
+  analysis: DAT:121[1] directly affirms the root's invariant without adding a physical
+    carrier, scheduler state, quality judgment, or participant intent.
+- test_id: DAT1-T121
+  english_concept: active systemic data synchronization uncertain
+  routing: runtime
+  analysis: DAT:121[2]/num leaves this exact active claim unresolved and does not
+    select a lexical sibling.
+- test_id: DAT1-T122
+  english_concept: active systemic data synchronization with datum
+  routing: compound
+  analysis: DAT:0xx supplies the information entity while DAT:121 supplies process
+    phase.
+- test_id: DAT1-T123
+  english_concept: active systemic data synchronization under criterion
+  routing: compound
+  analysis: LOG:0xx supplies an encoding, transfer, or synchronization criterion while
+    DAT:121 supplies the data process.
+- test_id: DAT1-T124
+  english_concept: active systemic data synchronization observed
+  routing: compound
+  analysis: MIN supplies observation or confidence while DAT:121 remains an information-process
+    claim.
+- test_id: DAT1-T125
+  english_concept: active systemic data synchronization physically realized
+  routing: compound
+  analysis: MAT or MOV supplies the physical mechanism or carrier motion while DAT:121
+    supplies only information-state process.
+- test_id: DAT1-T126
+  english_concept: active systemic data synchronization communicated
+  routing: compound
+  analysis: CON supplies participant roles, channel, or uptake while DAT:121 supplies
+    the information transformation or transfer.
+- test_id: DAT1-T127
+  english_concept: nonactualized systemic data synchronization identity
+  routing: one_root
+  analysis: DAT:122[1] directly affirms the root's invariant without adding a physical
+    carrier, scheduler state, quality judgment, or participant intent.
+- test_id: DAT1-T128
+  english_concept: nonactualized systemic data synchronization uncertain
+  routing: runtime
+  analysis: DAT:122[2]/num leaves this exact nonactualized claim unresolved and does
+    not select a lexical sibling.
+- test_id: DAT1-T129
+  english_concept: nonactualized systemic data synchronization with datum
+  routing: compound
+  analysis: DAT:0xx supplies the information entity while DAT:122 supplies process
+    phase.
+- test_id: DAT1-T130
+  english_concept: nonactualized systemic data synchronization under criterion
+  routing: compound
+  analysis: LOG:0xx supplies an encoding, transfer, or synchronization criterion while
+    DAT:122 supplies the data process.
+- test_id: DAT1-T131
+  english_concept: nonactualized systemic data synchronization observed
+  routing: compound
+  analysis: MIN supplies observation or confidence while DAT:122 remains an information-process
+    claim.
+- test_id: DAT1-T132
+  english_concept: nonactualized systemic data synchronization physically realized
+  routing: compound
+  analysis: MAT or MOV supplies the physical mechanism or carrier motion while DAT:122
+    supplies only information-state process.
+- test_id: DAT1-T133
+  english_concept: nonactualized systemic data synchronization communicated
+  routing: compound
+  analysis: CON supplies participant roles, channel, or uptake while DAT:122 supplies
+    the information transformation or transfer.

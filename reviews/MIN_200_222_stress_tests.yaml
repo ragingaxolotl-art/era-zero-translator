@@ -1,0 +1,290 @@
+---
+metadata:
+  title: MIN:200–222 English coverage and stress tests
+  status: review_complete
+  test_count: 61
+  forced_atomic_mappings_forbidden: true
+tests:
+- test_id: MIN2-T001
+  english_concept: attention capacity
+  routing: one_root
+  analysis: MIN:200 enduring, MIN:201 available, or MIN:202 latent according to lexical
+    expression.
+- test_id: MIN2-T002
+  english_concept: pay attention
+  routing: one_root
+  analysis: MIN:211 when one cognizer presently gives a distinct target preferential
+    processing.
+- test_id: MIN2-T003
+  english_concept: focus
+  routing: one_root_or_compound
+  analysis: MIN:211 for current target attention; duration, intensity, and exclusivity
+    require grammar or modifiers.
+- test_id: MIN2-T004
+  english_concept: concentrate
+  routing: compound
+  analysis: MIN:211 plus sustained duration and possibly exclusion of competing targets;
+    not a separate atom.
+- test_id: MIN2-T005
+  english_concept: standing focus
+  routing: one_root
+  analysis: MIN:210 for an established target-attention relation across episodes.
+- test_id: MIN2-T006
+  english_concept: available attention
+  routing: one_root
+  analysis: MIN:201; this does not assert a current target.
+- test_id: MIN2-T007
+  english_concept: latent attention ability
+  routing: one_root
+  analysis: MIN:202; the capacity exists but is not presently available.
+- test_id: MIN2-T008
+  english_concept: unclear whether listening
+  routing: one_root
+  analysis: MIN:212 when the listener-to-speech attention relation is unresolved.
+- test_id: MIN2-T009
+  english_concept: joint attention
+  routing: one_root
+  analysis: MIN:221 active, MIN:220 established, or MIN:222 potential.
+- test_id: MIN2-T010
+  english_concept: shared focus
+  routing: one_root_or_compound
+  analysis: The MIN:22x triplet when multiple cognizers give one target shared priority;
+    persistence or timing may be added.
+- test_id: MIN2-T011
+  english_concept: notice
+  routing: compound_or_transition
+  analysis: 'A target becomes manifest and receives attention: MIN:011 plus MIN:211
+    and a transition relation.'
+- test_id: MIN2-T012
+  english_concept: awareness
+  routing: existing_root_or_compound
+  analysis: Usually manifest MIN:0xx representation; attention is added only when
+    preferential processing is intended.
+- test_id: MIN2-T013
+  english_concept: consciousness
+  routing: different_family
+  analysis: LIF owns conscious living condition; attention can be present, absent,
+    or impaired within it.
+- test_id: MIN2-T014
+  english_concept: wakefulness
+  routing: different_family
+  analysis: LIF/MAT arousal, not selective cognitive allocation.
+- test_id: MIN2-T015
+  english_concept: vigilance
+  routing: compound
+  analysis: Enduring/available attention capacity plus sustained target monitoring
+    and timing grammar.
+- test_id: MIN2-T016
+  english_concept: monitor
+  routing: compound
+  analysis: MIN:210 or MIN:211 plus repeated observation/perception and a target.
+- test_id: MIN2-T017
+  english_concept: watch
+  routing: compound
+  analysis: MIN:211 plus sensory observation; gaze and physical orientation are MOV/MAT.
+- test_id: MIN2-T018
+  english_concept: listen
+  routing: compound
+  analysis: MIN:211 plus auditory MAT signal/perception; hearing alone does not entail
+    attention.
+- test_id: MIN2-T019
+  english_concept: look at
+  routing: different_family_or_compound
+  analysis: MOV/MAT gaze direction; add MIN:211 only when cognitive priority is asserted.
+- test_id: MIN2-T020
+  english_concept: gaze shift
+  routing: different_family
+  analysis: MOV physical orientation change, not attention itself.
+- test_id: MIN2-T021
+  english_concept: ignore
+  routing: negation_or_compound
+  analysis: Often MIN:211[0] for target attention, possibly with an intentional CRE/ORI
+    relation.
+- test_id: MIN2-T022
+  english_concept: overlook
+  routing: compound
+  analysis: 'Failure to attend or represent a relevant target: WRN plus negated/unresolved
+    MIN attention.'
+- test_id: MIN2-T023
+  english_concept: distract
+  routing: compound
+  analysis: WRN/MOV/MAT cause plus a change from one MIN:211 target to another; attention
+    is not inherently erroneous.
+- test_id: MIN2-T024
+  english_concept: mind wandering
+  routing: compound_or_gap
+  analysis: Attention leaves an intended target and shifts among internal content;
+    requires target transition and intention context.
+- test_id: MIN2-T025
+  english_concept: multitask
+  routing: compound
+  analysis: Multiple attention relations plus divided allocation, quantity, simultaneity,
+    or alternation grammar.
+- test_id: MIN2-T026
+  english_concept: attention budget
+  routing: one_root_plus_quantity
+  analysis: MIN:201 plus quantity grammar; the number is not part of the atom.
+- test_id: MIN2-T027
+  english_concept: cognitive load
+  routing: compound_or_gap
+  analysis: Available capacity, task demand, and resource quantity; not identical
+    to attention.
+- test_id: MIN2-T028
+  english_concept: fatigue
+  routing: different_family_or_compound
+  analysis: MAT/LIF condition that may reduce MIN:201 without being attentional capacity
+    itself.
+- test_id: MIN2-T029
+  english_concept: sleep
+  routing: different_family_plus_root
+  analysis: LIF sleep may coexist with MIN:202 latent attentional capacity.
+- test_id: MIN2-T030
+  english_concept: coma
+  routing: different_family_or_gap
+  analysis: LIF/MAT condition; whether attentional capacity persists is a separate
+    assertion.
+- test_id: MIN2-T031
+  english_concept: remember
+  routing: existing_root_or_transition
+  analysis: MIN:0xx latent-to-manifest representation; pure recall is not attention
+    allocation.
+- test_id: MIN2-T032
+  english_concept: learn
+  routing: compound
+  analysis: MIN:1xx representational revision plus sources and often MIN:211 attention;
+    attention does not guarantee learning.
+- test_id: MIN2-T033
+  english_concept: understand
+  routing: compound
+  analysis: Representation plus revision/coherence; attention may participate but
+    is insufficient.
+- test_id: MIN2-T034
+  english_concept: revise a belief
+  routing: existing_root_or_compound
+  analysis: Canonical MIN:1xx revision with LOG/ORI belief relations; not attention.
+- test_id: MIN2-T035
+  english_concept: infer
+  routing: different_family_or_compound
+  analysis: LOG inference; MIN:211 may describe focus on premises but not validity.
+- test_id: MIN2-T036
+  english_concept: believe
+  routing: compound_or_gap
+  analysis: Epistemic commitment requires LOG/ORI plus MIN representation; deliberately
+    not assigned to MIN:2xx attention.
+- test_id: MIN2-T037
+  english_concept: trust
+  routing: compound_or_gap
+  analysis: Participant/epistemic relation requiring CON/LOG/ORI; attention alone
+    does not imply trust.
+- test_id: MIN2-T038
+  english_concept: doubt
+  routing: compound_or_gap
+  analysis: Epistemic modality or unresolved commitment, not unresolved attention
+    unless focus itself is unknown.
+- test_id: MIN2-T039
+  english_concept: decide
+  routing: compound_or_gap
+  analysis: Alternative selection and commitment require LOG/CRE/ORI; available attention
+    is only a possible prerequisite.
+- test_id: MIN2-T040
+  english_concept: plan to focus
+  routing: compound
+  analysis: CRE plan or intention plus MIN attention root; the attention atom does
+    not encode planning.
+- test_id: MIN2-T041
+  english_concept: schedule attention
+  routing: compound
+  analysis: DAT schedule plus MIN:222 or another attention relation; schedule and
+    potential relation stay distinct.
+- test_id: MIN2-T042
+  english_concept: queue an attention task
+  routing: compound
+  analysis: DAT queue state plus attention semantics; MIN does not encode queue position.
+- test_id: MIN2-T043
+  english_concept: priority list
+  routing: different_family
+  analysis: STR/DAT ordered structure; not cognitive priority until a cognizer preferentially
+    processes it.
+- test_id: MIN2-T044
+  english_concept: data subscription
+  routing: different_family
+  analysis: DAT/CON relation; an agent may subscribe without attending.
+- test_id: MIN2-T045
+  english_concept: sensor salience
+  routing: different_family_or_compound
+  analysis: MAT/DAT signal property; add MIN:211 only when a cognizer prioritizes
+    it.
+- test_id: MIN2-T046
+  english_concept: visual salience
+  routing: compound
+  analysis: MAT stimulus contrast plus a potential or active attention relation; salience
+    does not guarantee attention.
+- test_id: MIN2-T047
+  english_concept: shared representation
+  routing: existing_root
+  analysis: MIN:020–022; shared content can exist without joint attention.
+- test_id: MIN2-T048
+  english_concept: shared model revision
+  routing: existing_root
+  analysis: MIN:120–122; model change can occur without concurrent joint attention.
+- test_id: MIN2-T049
+  english_concept: agreement
+  routing: compound_or_gap
+  analysis: CON/LOG relation; people may agree while attending to different things.
+- test_id: MIN2-T050
+  english_concept: consensus
+  routing: compound
+  analysis: CON decision relation plus LOG/ORI commitment and possibly shared MIN
+    content; not joint attention.
+- test_id: MIN2-T051
+  english_concept: collaboration
+  routing: different_family_or_compound
+  analysis: CON/STR coordination; MIN:221 only if collaborators share a current focus.
+- test_id: MIN2-T052
+  english_concept: distributed intelligence
+  routing: compound
+  analysis: Multiple cognitive agents, CON coordination, LOG inference, MIN representations/revisions,
+    and possibly joint attention.
+- test_id: MIN2-T053
+  english_concept: common knowledge
+  routing: compound
+  analysis: Shared/recursive epistemic relation requiring LOG/CON/MIN content; not
+    attention.
+- test_id: MIN2-T054
+  english_concept: attention head in a neural network
+  routing: technical_compound_or_analogy
+  analysis: MIN attention only when the system is modeled as a cognizer; otherwise
+    DAT/LOG/MAT computation.
+- test_id: MIN2-T055
+  english_concept: query-key attention score
+  routing: different_family_or_compound
+  analysis: LOG/DAT mathematical relation; cognitive MIN semantics is optional and
+    must be explicit.
+- test_id: MIN2-T056
+  english_concept: event-loop priority
+  routing: different_family_or_compound
+  analysis: STR/DAT scheduler priority; MIN only for a cognitive agent's selective
+    processing.
+- test_id: MIN2-T057
+  english_concept: potential joint attention
+  routing: one_root
+  analysis: MIN:222; it asserts an unrealized possible relation, not a plan or probability.
+- test_id: MIN2-T058
+  english_concept: unknown active focus
+  routing: runtime_or_lexical_contrast
+  analysis: MIN:211[2] leaves an active-focus assertion unresolved; MIN:212[1] affirms
+    the lexical unresolved relation.
+- test_id: MIN2-T059
+  english_concept: refocus
+  routing: compound
+  analysis: REP or attention-target transition plus MIN:211; restoration is not built
+    into the attention root.
+- test_id: MIN2-T060
+  english_concept: attention lapse
+  routing: compound
+  analysis: WRN failure plus loss or negation of an expected MIN:211 relation.
+- test_id: MIN2-T061
+  english_concept: sustained attention
+  routing: one_root_plus_timing
+  analysis: MIN:210 or repeated/durative MIN:211 with timing grammar, depending standing
+    versus currently active focus.

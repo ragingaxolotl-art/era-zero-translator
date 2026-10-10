@@ -1,0 +1,415 @@
+---
+metadata:
+  title: STR:000–022 English coverage and routing tests
+  status: review_evidence_not_translation_dictionary
+  range: STR:000–022
+  test_count: 91
+  no_forced_atomization: true
+tests:
+- test_id: STR0-T001
+  english_concept: slot
+  routing: one_root
+  analysis: STR:000/001/002 according to persistence, occupancy, or vacancy.
+- test_id: STR0-T002
+  english_concept: place for a part
+  routing: one_root
+  analysis: STR:000 names a persistent constituent position.
+- test_id: STR0-T003
+  english_concept: occupied slot
+  routing: one_root
+  analysis: STR:001 names a constituent position presently occupied.
+- test_id: STR0-T004
+  english_concept: empty slot
+  routing: one_root
+  analysis: STR:002 names a defined but unoccupied constituent position.
+- test_id: STR0-T005
+  english_concept: seat
+  routing: compound
+  analysis: STR constituent position plus MAT seat object or LIF occupant context.
+- test_id: STR0-T006
+  english_concept: assigned seat
+  routing: compound
+  analysis: STR:000 plus LOG/DAT assignment; assignment is not occupancy.
+- test_id: STR0-T007
+  english_concept: occupied seat
+  routing: one_root_or_compound
+  analysis: STR:001 for occupancy of the position; LIF identifies the occupant and
+    MAT the chair.
+- test_id: STR0-T008
+  english_concept: vacancy
+  routing: one_root_or_compound
+  analysis: STR:002 for structural vacancy; job or social vacancy adds LIF/LOG.
+- test_id: STR0-T009
+  english_concept: component
+  routing: different_family_or_compound
+  analysis: MAT owns a physical component; STR:000–002 owns its position in a whole.
+- test_id: STR0-T010
+  english_concept: part
+  routing: underspecified
+  analysis: Could mean material constituent, structural position, logical member,
+    or portion; translator must resolve the sense.
+- test_id: STR0-T011
+  english_concept: array index
+  routing: compound
+  analysis: DAT/LOG owns numerical index semantics; STR may name the constituent position
+    it addresses.
+- test_id: STR0-T012
+  english_concept: array element present
+  routing: compound
+  analysis: STR:001 position occupancy plus DAT stored value.
+- test_id: STR0-T013
+  english_concept: optional field absent
+  routing: compound
+  analysis: STR:002 structural position plus DAT/LOG field schema and absent value.
+- test_id: STR0-T014
+  english_concept: role
+  routing: underspecified
+  analysis: STR covers a constituent position only; authority, social, grammatical,
+    or program roles belong elsewhere.
+- test_id: STR0-T015
+  english_concept: job opening
+  routing: compound
+  analysis: STR:002 position plus LIF/LOG institutional and authority semantics.
+- test_id: STR0-T016
+  english_concept: coordinate
+  routing: different_family
+  analysis: MOV owns spatial position in a reference frame.
+- test_id: STR0-T017
+  english_concept: destination
+  routing: different_family
+  analysis: MOV owns target location or arrival relation.
+- test_id: STR0-T018
+  english_concept: inside
+  routing: different_family_or_compound
+  analysis: MOV/MAT owns spatial containment; STR names a constituent position only
+    when part–whole organization is meant.
+- test_id: STR0-T019
+  english_concept: interface
+  routing: one_root_or_compound
+  analysis: STR:010–012 only for structural engagement loci; communication, UI, or
+    protocol senses route elsewhere.
+- test_id: STR0-T020
+  english_concept: mounting point
+  routing: one_root
+  analysis: STR:010 persistent structural interface.
+- test_id: STR0-T021
+  english_concept: connected mount
+  routing: one_root_or_compound
+  analysis: STR:011 for engaged interface; STR:2xx later specifies the attachment
+    relation.
+- test_id: STR0-T022
+  english_concept: unused mount
+  routing: one_root
+  analysis: STR:012 for a defined but unengaged structural interface.
+- test_id: STR0-T023
+  english_concept: socket
+  routing: compound
+  analysis: STR interface plus MAT physical socket; CON/LOG only if communicative
+    or typed.
+- test_id: STR0-T024
+  english_concept: plugged socket
+  routing: one_root_or_compound
+  analysis: STR:011 for engagement, MAT for plug and socket bodies.
+- test_id: STR0-T025
+  english_concept: open port
+  routing: underspecified
+  analysis: May mean STR unengaged interface, CON endpoint, LOG permission, or network
+    state.
+- test_id: STR0-T026
+  english_concept: API
+  routing: different_family_or_compound
+  analysis: LOG/DAT defines protocol and types; STR may describe a software attachment
+    locus only compositionally.
+- test_id: STR0-T027
+  english_concept: communication endpoint
+  routing: existing_con_root
+  analysis: CON:000–012 owns communicative endpoints.
+- test_id: STR0-T028
+  english_concept: doorway
+  routing: compound
+  analysis: STR interface plus MAT boundary opening and MOV traversal affordance.
+- test_id: STR0-T029
+  english_concept: boundary
+  routing: underspecified
+  analysis: Could be MAT surface, MOV region limit, STR interface, LOG constraint,
+    or social boundary.
+- test_id: STR0-T030
+  english_concept: wall
+  routing: different_family_or_compound
+  analysis: MAT owns the wall body; STR may describe its interface or place in an
+    arrangement.
+- test_id: STR0-T031
+  english_concept: container
+  routing: compound
+  analysis: MAT object plus STR arrangement and STR:2xx containment relation; not
+    one STR:0xx atom.
+- test_id: STR0-T032
+  english_concept: shelter
+  routing: compound
+  analysis: MAT structure, STR arrangement/support, and WRN/LIF protective purpose.
+- test_id: STR0-T033
+  english_concept: attached
+  routing: future_str_relation_or_compound
+  analysis: STR:011 can assert interface engagement, but exact attachment is a STR:2xx
+    relation.
+- test_id: STR0-T034
+  english_concept: detached
+  routing: compound
+  analysis: Unengaged interface plus negated/former attachment relation; REP/WRN may
+    be relevant.
+- test_id: STR0-T035
+  english_concept: compatible connector
+  routing: compound
+  analysis: STR interface plus LOG compatibility and MAT connector.
+- test_id: STR0-T036
+  english_concept: blocked interface
+  routing: compound
+  analysis: STR interface plus WRN/LOG blockage; blockage is not dormancy.
+- test_id: STR0-T037
+  english_concept: layout
+  routing: one_root_or_compound
+  analysis: STR:020–022 according to persistence or realization; DAT owns a layout
+    document.
+- test_id: STR0-T038
+  english_concept: arrangement
+  routing: one_root
+  analysis: STR:020/021/022 when part–whole structural arrangement is intended.
+- test_id: STR0-T039
+  english_concept: topology
+  routing: one_root_or_compound
+  analysis: STR composite arrangement; DAT/LOG adds graph representation and constraints.
+- test_id: STR0-T040
+  english_concept: assembled structure
+  routing: one_root_or_compound
+  analysis: STR:021 for presently realized arrangement; MAT supplies constituents
+    and CRE the assembly process.
+- test_id: STR0-T041
+  english_concept: unassembled design
+  routing: compound
+  analysis: STR:022 dormant arrangement plus DAT blueprint; CRE may add intended construction.
+- test_id: STR0-T042
+  english_concept: persistent architecture
+  routing: one_root
+  analysis: STR:020 if the same part–whole arrangement persists across constituent
+    change.
+- test_id: STR0-T043
+  english_concept: deployed topology
+  routing: one_root_or_compound
+  analysis: STR:021 for realized arrangement; deployment process is CRE/STR:1xx and
+    schedule is LOG/ORI.
+- test_id: STR0-T044
+  english_concept: undeployed topology
+  routing: one_root_or_compound
+  analysis: STR:022 if structurally defined but unrealized; no plan or future time
+    is implied.
+- test_id: STR0-T045
+  english_concept: blueprint
+  routing: different_family
+  analysis: DAT owns the information object describing a structure.
+- test_id: STR0-T046
+  english_concept: schema
+  routing: underspecified
+  analysis: DAT/LOG owns information/type schema; STR owns an arrangement only when
+    actual part–whole organization is intended.
+- test_id: STR0-T047
+  english_concept: diagram
+  routing: different_family
+  analysis: DAT owns the representational artifact.
+- test_id: STR0-T048
+  english_concept: graph
+  routing: underspecified
+  analysis: DAT may own graph data, LOG relation formalism, STR topology, or MOV route
+    graph.
+- test_id: STR0-T049
+  english_concept: tree hierarchy
+  routing: compound
+  analysis: STR composite arrangement plus LOG/DAT parent relation and labels.
+- test_id: STR0-T050
+  english_concept: dependency graph
+  routing: compound
+  analysis: STR arrangement plus LOG dependency relations and DAT graph representation.
+- test_id: STR0-T051
+  english_concept: network
+  routing: underspecified
+  analysis: Could be STR topology, CON participant relation/channel, MOV routes, or
+    LIF social network.
+- test_id: STR0-T052
+  english_concept: mesh
+  routing: compound
+  analysis: STR topology plus constituent/interface relations; CON adds communication.
+- test_id: STR0-T053
+  english_concept: system
+  routing: underspecified
+  analysis: A system may be a STR arrangement, LIF collective, DAT model, or functioning
+    process complex.
+- test_id: STR0-T054
+  english_concept: organization
+  routing: underspecified
+  analysis: May mean STR arrangement, LIF institution, LOG authority, or CRE organizing
+    process.
+- test_id: STR0-T055
+  english_concept: institution
+  routing: different_family_or_compound
+  analysis: LIF collective identity and LOG roles/governance; STR may describe its
+    arrangement.
+- test_id: STR0-T056
+  english_concept: team
+  routing: different_family_or_compound
+  analysis: LIF owns collective identity; STR may describe member positions.
+- test_id: STR0-T057
+  english_concept: infrastructure
+  routing: compound
+  analysis: MAT assets, STR arrangements/relations, MOV routes, CON channels, and
+    LOG governance.
+- test_id: STR0-T058
+  english_concept: building
+  routing: different_family_or_compound
+  analysis: MAT owns the physical object, STR its arrangement, CRE construction, and
+    LIF/LOG use.
+- test_id: STR0-T059
+  english_concept: frame
+  routing: compound
+  analysis: MAT frame components plus STR composite arrangement and support relations.
+- test_id: STR0-T060
+  english_concept: skeleton
+  routing: compound
+  analysis: LIF/MAT body parts plus STR arrangement/support.
+- test_id: STR0-T061
+  english_concept: mechanism
+  routing: compound
+  analysis: STR arrangement plus STR:1xx processes, MAT components, and function semantics.
+- test_id: STR0-T062
+  english_concept: operating mechanism
+  routing: compound
+  analysis: An arrangement with active processes; no STR:0xx entity alone means operation.
+- test_id: STR0-T063
+  english_concept: load-bearing
+  routing: different_family_or_compound
+  analysis: MAT capacity and STR:2xx support relation; not an entity-layer invariant.
+- test_id: STR0-T064
+  english_concept: support
+  routing: future_str_relation
+  analysis: Reserved for STR:2xx relation/capacity review.
+- test_id: STR0-T065
+  english_concept: containment
+  routing: future_str_relation_or_compound
+  analysis: A relation for STR:2xx with MOV/MAT spatial semantics as needed.
+- test_id: STR0-T066
+  english_concept: membership
+  routing: compound_or_logic
+  analysis: STR position occupancy plus LOG/LIF membership semantics.
+- test_id: STR0-T067
+  english_concept: construction
+  routing: future_str_process_or_creation
+  analysis: STR:1xx/CRE owns structural change; STR:0xx names the resulting loci or
+    arrangement.
+- test_id: STR0-T068
+  english_concept: assemble
+  routing: future_str_process_or_creation
+  analysis: A structural creation/change process, not STR:021 itself.
+- test_id: STR0-T069
+  english_concept: rearrange
+  routing: future_str_process
+  analysis: STR:1xx process; resulting arrangement may be STR:020/021.
+- test_id: STR0-T070
+  english_concept: repair structure
+  routing: different_family_or_compound
+  analysis: REP restores a STR arrangement, interface, or position.
+- test_id: STR0-T071
+  english_concept: collapse
+  routing: different_family_or_compound
+  analysis: WRN/MAT/STR process describes loss of realized arrangement.
+- test_id: STR0-T072
+  english_concept: stable
+  routing: runtime_or_other_family
+  analysis: Stability alone is not a STR root; select what structural entity persists
+    and distinguish runtime status.
+- test_id: STR0-T073
+  english_concept: active structure
+  routing: underspecified
+  analysis: Could mean occupied position, engaged interface, realized arrangement,
+    active process, or functioning system.
+- test_id: STR0-T074
+  english_concept: dormant institution
+  routing: compound
+  analysis: LIF/LOG institution plus possibly STR:022 arrangement; dormancy of the
+    organization is broader.
+- test_id: STR0-T075
+  english_concept: possible architecture
+  routing: compound
+  analysis: ORI modality plus STR:022 only if a defined but unrealized part–whole
+    arrangement exists.
+- test_id: STR0-T076
+  english_concept: planned layout
+  routing: compound
+  analysis: DAT plan and LOG/ORI intention/schedule plus STR:022; dormancy does not
+    imply planning.
+- test_id: STR0-T077
+  english_concept: unknown occupancy
+  routing: runtime_state
+  analysis: STR:001[2]/num questions occupied status; it is not STR:002 vacancy.
+- test_id: STR0-T078
+  english_concept: unknown vacancy
+  routing: runtime_state
+  analysis: STR:002[2]/num questions the vacancy claim; STR:002[1] affirms vacancy.
+- test_id: STR0-T079
+  english_concept: unknown engagement
+  routing: runtime_state
+  analysis: STR:011[2]/num leaves engagement unresolved; it is not STR:012 unengaged.
+- test_id: STR0-T080
+  english_concept: unknown realization
+  routing: runtime_state
+  analysis: STR:021[2]/num leaves present realization unresolved; it is not STR:022
+    dormant arrangement.
+- test_id: STR0-T081
+  english_concept: future assembly
+  routing: compound_or_grammar
+  analysis: ORI future plus CRE/STR process; third lexical trit 2 does not mean future.
+- test_id: STR0-T082
+  english_concept: structural identity across replacement
+  routing: one_root
+  analysis: STR:020 captures persistence of one arrangement across constituent replacement.
+- test_id: STR0-T083
+  english_concept: same slot, new occupant
+  routing: one_root_or_compound
+  analysis: STR:000 persists while STR:001 occupancy can change and MAT/LIF identifies
+    occupants.
+- test_id: STR0-T084
+  english_concept: engaged interface without communication
+  routing: one_root_plus_negation
+  analysis: STR:011 can hold while CON activity is denied; structural engagement does
+    not entail communication.
+- test_id: STR0-T085
+  english_concept: realized arrangement without function
+  routing: one_root_plus_negation
+  analysis: STR:021 can hold even when no intended function or active process is asserted.
+- test_id: STR0-T086
+  english_concept: persistent and occupied same position
+  routing: two_compatible_roots
+  analysis: 'STR:000 and STR:001 may both hold: one asserts the position''s enduring
+    identity and the other its present occupancy.'
+- test_id: STR0-T087
+  english_concept: persistent and vacant same position
+  routing: two_compatible_roots
+  analysis: 'STR:000 and STR:002 may both hold: persistence is realization-neutral
+    while vacancy is the present condition.'
+- test_id: STR0-T088
+  english_concept: occupied and vacant at the same time
+  routing: invalid_same_reference_claim
+  analysis: STR:001 and STR:002 cannot both be true of the same position at the same
+    reference time; use separate times or runtime uncertainty.
+- test_id: STR0-T089
+  english_concept: persistent and engaged same interface
+  routing: two_compatible_roots
+  analysis: STR:010 and STR:011 may co-occur because interface identity and present
+    engagement are different claims.
+- test_id: STR0-T090
+  english_concept: dormant arrangement and blueprint
+  routing: compound
+  analysis: STR:022 names the unrealized structural arrangement; DAT separately names
+    the blueprint or schema that describes it.
+- test_id: STR0-T091
+  english_concept: engaged interface without incorporation
+  routing: one_root_plus_negation
+  analysis: STR:011 may hold while target incorporation is denied; contact at a boundary
+    does not itself confer constituent status.

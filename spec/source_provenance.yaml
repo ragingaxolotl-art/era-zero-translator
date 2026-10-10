@@ -1,0 +1,54 @@
+---
+metadata:
+  title: Era Zero source and conversation provenance
+  version: 1.0.0
+  status: current
+  audited: '2026-10-10'
+authority_order:
+- explicit user corrections
+- latest user-approved or user-continued canonical specification
+- later fixed, complete, or versioned standard
+- unresolved when precedence cannot be proven
+sources:
+  original_shared_conversation:
+    url: https://chatgpt.com/share/6a666bd1-8ba4-83ea-90f9-b85db783af13
+    decoded_sha256: 5a89af8cda717ce223e252348e0cf2f7735cd2d1f58c7b7655094a3d13862475
+    decoded_source_nodes: 313
+    visible_speaker_turns: 129
+    preserved_record: lexicon/completed_atoms_source.md
+    scope: Core architecture and the 36 source-developed LIF:000-222 and MOV:000-022 records.
+  current_google_document:
+    url: https://docs.google.com/document/d/1btnSrT37YJt1aD4gXGtJBO8e3ZRG6COYmFLaRkykHA8/edit?tab=t.0
+    drive_file_id: 1btnSrT37YJt1aD4gXGtJBO8e3ZRG6COYmFLaRkykHA8
+    observed_modified_time: '2026-10-10T12:26:15.819Z'
+    observed_revision_id: AHj4eMQ9T41x4oefS531p30O9y07_ZEKaZauQoRK5_pnUsiIyXP-lLLXk_EzTa-mNEAIkGbAADJkPR8wx5-oAGo5F-IINNqdsT2ONRKYy4o
+    scope: Human-readable integrated standard and milestone history.
+  current_codex_development_conversation:
+    public_url: null
+    date: '2026-10-10'
+    evidence: Git history beginning with the English-first browser release and this provenance record.
+    user_directions:
+    - ordinary English must be the default input
+    - context should select an applicable meaning when it is strong
+    - every family prefix and musical component must be used
+    - unfamiliar nouns and names need deterministic phonemic sound IDs
+    - any phrase must be accepted without silently discarding unfamiliar terms
+    - every indexed option must be discoverable in the interface
+authority_artifacts:
+  semantic_status: semantic_authority_status.md
+  machine_authority: lexicon/semantic_authority.yaml
+  canonical_specification: spec/canonical_spec.yaml
+  atomic_lexicon: lexicon/all_atoms.yaml
+  compound_dictionary: lexicon/compound_dictionary.yaml
+  english_sense_index: lexicon/english_sense_index.yaml
+  migrations: migrations/
+  validation_reports: reports/
+release_inventory:
+  canonical_atoms: 324
+  source_developed_atoms: 36
+  selectively_reviewed_atoms: 288
+  approved_compounds: 28
+  indexed_senses: 436
+  indexed_lemmas: 419
+  direct_lexical_targets: 352
+  documented_gaps: 11

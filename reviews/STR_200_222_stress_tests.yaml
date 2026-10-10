@@ -1,0 +1,397 @@
+---
+metadata:
+  title: STR:200–222 English coverage and routing tests
+  status: review_evidence_not_translation_dictionary
+  range: STR:200–222
+  test_count: 82
+  no_forced_atomization: true
+tests:
+- test_id: STR2-T001
+  english_concept: reconfigurable
+  routing: one_root
+  analysis: STR:200, 201, or 202 by enduring, available, or latent internal reconfiguration
+    capacity.
+- test_id: STR2-T002
+  english_concept: flexible
+  routing: compound_or_other_family
+  analysis: MAT owns physical flexibility; STR:2x0 applies only when own constituent
+    assignments can change.
+- test_id: STR2-T003
+  english_concept: adaptable
+  routing: underspecified_compound
+  analysis: May mean structural reconfigurability, mental adaptation, biological adaptation,
+    or repair; resolve the domain.
+- test_id: STR2-T004
+  english_concept: mutable structure
+  routing: one_root_or_compound
+  analysis: STR:2x0 covers structural reconfigurability; LOG/DAT may constrain mutation
+    rules or representation.
+- test_id: STR2-T005
+  english_concept: modular
+  routing: compound
+  analysis: STR internal reconfigurability plus identifiable constituent positions
+    and often target incorporability.
+- test_id: STR2-T006
+  english_concept: configurable
+  routing: compound_or_one_root
+  analysis: STR:2x0 if constituent placement can change; DAT/LOG if only parameter
+    values or rules change.
+- test_id: STR2-T007
+  english_concept: extensible
+  routing: one_root_or_compound
+  analysis: Target incorporability by lexical status, often combined with defined
+    interface and capacity limits.
+- test_id: STR2-T008
+  english_concept: plugin-ready
+  routing: compound
+  analysis: STR:211 plus DAT interface description and LOG type or permission constraints.
+- test_id: STR2-T009
+  english_concept: spare slot
+  routing: entity_plus_compound
+  analysis: STR:002 names a vacant constituent position; STR:2x1 is added only for
+    a particular target's incorporability.
+- test_id: STR2-T010
+  english_concept: storage capacity
+  routing: different_family_or_compound
+  analysis: Quantity and physical volume belong to MAT/LOG; STR:2x0 is not generic
+    capacity.
+- test_id: STR2-T011
+  english_concept: load-bearing
+  routing: different_family
+  analysis: MAT physical work or force capacity, not internal reconfiguration capacity.
+- test_id: STR2-T012
+  english_concept: structurally resilient
+  routing: different_family_or_compound
+  analysis: REP/MAT owns recovery and physical resilience; STR may state preserved
+    reconfigurability separately.
+- test_id: STR2-T013
+  english_concept: self-repairing
+  routing: different_family
+  analysis: REP owns repairability; rearrangeability is insufficient.
+- test_id: STR2-T014
+  english_concept: host accepts component
+  routing: one_root
+  analysis: STR:210, 211, or 212 by established, operative, or unresolved target incorporability.
+- test_id: STR2-T015
+  english_concept: fits
+  routing: compound_or_one_root
+  analysis: STR target incorporability when fit means admission as a constituent;
+    physical dimensions add MAT.
+- test_id: STR2-T016
+  english_concept: compatible
+  routing: underspecified_compound
+  analysis: Could be structural incorporability, LOG type validity, CON protocol compatibility,
+    or DAT schema compatibility.
+- test_id: STR2-T017
+  english_concept: interface-compatible
+  routing: compound
+  analysis: STR target incorporability plus STR interface entity and usually LOG/DAT
+    interface constraints.
+- test_id: STR2-T018
+  english_concept: socket match
+  routing: compound
+  analysis: STR incorporability plus MAT geometry/contact; matching does not assert
+    insertion.
+- test_id: STR2-T019
+  english_concept: mountable
+  routing: compound
+  analysis: STR target incorporability plus a later attachment/support relation and
+    often MAT force constraints.
+- test_id: STR2-T020
+  english_concept: attachable
+  routing: compound_or_gap
+  analysis: Attachment is a continuing relation not collapsed into incorporability;
+    use a compound or preserve the gap.
+- test_id: STR2-T021
+  english_concept: containable
+  routing: compound_or_gap
+  analysis: Containment requires boundary and relation semantics; incorporability
+    applies only if constituent status is intended.
+- test_id: STR2-T022
+  english_concept: support relation
+  routing: different_semantic_direction
+  analysis: Physical support or structural dependence is intentionally not the atomic
+    winner; compose MAT/STR/LOG as needed.
+- test_id: STR2-T023
+  english_concept: depends on
+  routing: different_family_or_compound
+  analysis: LOG, DAT, CON, MAT, or STR may own the dependency sense; target incorporability
+    does not imply dependence.
+- test_id: STR2-T024
+  english_concept: part of
+  routing: entity_or_compound
+  analysis: Actual constituency is expressed through STR:0xx arrangement/position
+    plus an explicit relation or result; STR:2x1 only qualifies incorporation.
+- test_id: STR2-T025
+  english_concept: member of
+  routing: different_family_or_compound
+  analysis: LOG set membership or LIF social membership; do not force into STR target
+    incorporability.
+- test_id: STR2-T026
+  english_concept: contains
+  routing: entity_or_compound
+  analysis: STR composite/position plus containment relation; a host can contain without
+    admitting the target as a constituent.
+- test_id: STR2-T027
+  english_concept: integrable
+  routing: one_root
+  analysis: STR:220, 221, or 222 by enduring, operative, or unrealized systemic integrability.
+- test_id: STR2-T028
+  english_concept: composable
+  routing: one_root_or_compound
+  analysis: STR systemic integrability when structures can become peer constituents
+    of a higher-order whole.
+- test_id: STR2-T029
+  english_concept: interoperable
+  routing: compound
+  analysis: CON communication and LOG protocol constraints plus STR systemic integrability
+    only if one composite structure is possible.
+- test_id: STR2-T030
+  english_concept: federatable
+  routing: compound
+  analysis: STR systemic integrability plus LOG autonomy and CON coordination rules.
+- test_id: STR2-T031
+  english_concept: clusterable
+  routing: one_root_or_compound
+  analysis: STR systemic integrability; MOV shared location and LOG cluster policy
+    remain separate.
+- test_id: STR2-T032
+  english_concept: mergeable systems
+  routing: compound
+  analysis: STR systemic integrability plus DAT/LOG identity and conflict rules.
+- test_id: STR2-T033
+  english_concept: assemblable
+  routing: compound
+  analysis: STR integrability plus CRE/MAT if fabrication or physical joining is intended.
+- test_id: STR2-T034
+  english_concept: shared architecture
+  routing: entity_or_relation
+  analysis: STR:020–022 owns the composite arrangement; STR:2x2 owns only qualifying
+    integrability.
+- test_id: STR2-T035
+  english_concept: topology
+  routing: entity_or_different_relation
+  analysis: STR arrangement or MOV frame may represent topology; it is not automatically
+    an integrability affordance.
+- test_id: STR2-T036
+  english_concept: governance
+  routing: different_family_or_compound
+  analysis: LOG authority and LIF institution with CON coordination; intentionally
+    rejected as the STR systemic atom.
+- test_id: STR2-T037
+  english_concept: coordination
+  routing: different_family
+  analysis: CON communication/coordination does not imply structural integrability.
+- test_id: STR2-T038
+  english_concept: network compatibility
+  routing: compound
+  analysis: CON/DAT/LOG protocol claims plus STR integrability when a higher-order
+    structure is at issue.
+- test_id: STR2-T039
+  english_concept: rearrange
+  routing: process_root
+  analysis: Use STR:100–102 by phase; STR:2x0 states only the capacity for that transformation.
+- test_id: STR2-T040
+  english_concept: incorporate
+  routing: process_root
+  analysis: Use STR:110–112 by phase; STR:2x1 states only the target-qualifying relation.
+- test_id: STR2-T041
+  english_concept: integrate
+  routing: process_root
+  analysis: Use STR:120–122 by phase; STR:2x2 states only the systemic qualifying
+    relation or possibility.
+- test_id: STR2-T042
+  english_concept: build
+  routing: different_family_or_compound
+  analysis: CRE owns creation; structural affordances can be inputs to building but
+    are not the build event.
+- test_id: STR2-T043
+  english_concept: construct
+  routing: different_family_or_compound
+  analysis: CRE/MAT owns construction; STR:2xx may describe reconfigurability or integrability
+    of inputs.
+- test_id: STR2-T044
+  english_concept: repair
+  routing: different_family
+  analysis: REP owns repair and recoverability; a separate STR claim is needed only
+    if repair restores a structural affordance.
+- test_id: STR2-T045
+  english_concept: transport
+  routing: different_family
+  analysis: MOV/MAT owns transport; structural fit is a separate possible condition.
+- test_id: STR2-T046
+  english_concept: communicate
+  routing: different_family
+  analysis: CON owns exchange; structural integrability is neither necessary nor sufficient.
+- test_id: STR2-T047
+  english_concept: type compatible
+  routing: different_family
+  analysis: LOG owns formal type compatibility; STR applies only to structural constituent
+    organization.
+- test_id: STR2-T048
+  english_concept: schema compatible
+  routing: different_family_or_compound
+  analysis: DAT/LOG owns schema compatibility; STR applies if instantiated structures
+    can combine.
+- test_id: STR2-T049
+  english_concept: API compatible
+  routing: compound
+  analysis: LOG/DAT/CON own protocol validity and exchange; STR integrability may
+    be separately asserted.
+- test_id: STR2-T050
+  english_concept: scheduled integration
+  routing: compound
+  analysis: ORI/LOG schedule plus STR:122 for a nonactualized process; STR:2xx never
+    encodes schedule.
+- test_id: STR2-T051
+  english_concept: possible integration
+  routing: ambiguous_root_or_process
+  analysis: STR:122 is a nonactualized process; STR:222 is an unrealized qualifying
+    possibility. Choose by whether the claim is about an event or a relation.
+- test_id: STR2-T052
+  english_concept: likely integration
+  routing: compound
+  analysis: Probability plus STR:122 or 222; neither root carries likelihood.
+- test_id: STR2-T053
+  english_concept: ready to integrate
+  routing: compound
+  analysis: Readiness requires an explicit runtime or LOG/ORI condition; STR:221 states
+    only operative integrability.
+- test_id: STR2-T054
+  english_concept: permitted to integrate
+  routing: compound
+  analysis: LOG permission plus STR:2x2; permission does not establish structural
+    integrability.
+- test_id: STR2-T055
+  english_concept: reconfiguration capacity in use
+  routing: two_claims
+  analysis: STR:201 states available capacity and STR:101 states the active process;
+    neither entails the other.
+- test_id: STR2-T056
+  english_concept: stable capacity currently uncertain
+  routing: one_root_plus_runtime
+  analysis: 'STR:200[2]/num: stable lexical capacity with unresolved token-level assertion.'
+- test_id: STR2-T057
+  english_concept: latent capacity affirmed
+  routing: one_root_plus_runtime
+  analysis: 'STR:202[1]: the latent capacity is asserted as real although unavailable.'
+- test_id: STR2-T058
+  english_concept: operative target fit denied
+  routing: one_root_plus_runtime
+  analysis: 'STR:211[0]: deny current operation without asserting STR:212.'
+- test_id: STR2-T059
+  english_concept: unresolved fit affirmed
+  routing: one_root_plus_runtime
+  analysis: 'STR:212[1]: affirm that qualification remains unresolved; not the same
+    as STR:210[2].'
+- test_id: STR2-T060
+  english_concept: enduring integrability uncertain
+  routing: one_root_plus_runtime
+  analysis: 'STR:220[2]/num: uncertainty about an enduring relation, not lexical unrealized
+    possibility.'
+- test_id: STR2-T061
+  english_concept: unrealized integrability affirmed
+  routing: one_root_plus_runtime
+  analysis: 'STR:222[1]: affirm the unrealized structural possibility without asserting
+    process, probability, or plan.'
+- test_id: STR2-T062
+  english_concept: drawer fits but is not inserted
+  routing: one_root
+  analysis: STR:210 or 211 can hold without STR:110/111 because a qualifying relation
+    does not entail the incorporation process.
+- test_id: STR2-T063
+  english_concept: drawer inserted despite no enduring fit
+  routing: process_plus_state
+  analysis: STR:110 may be true while STR:210 is false; successful process does not
+    guarantee persistent affordance.
+- test_id: STR2-T064
+  english_concept: modules integrable but communicating separately
+  routing: one_root_plus_other_family
+  analysis: STR:2x2 and CON relations are independent; the modules may be structurally
+    integrable without any shared exchange.
+- test_id: STR2-T065
+  english_concept: modules communicating but not integrable
+  routing: different_family_plus_negation
+  analysis: CON may hold while STR integrability is denied because successful exchange
+    does not establish a higher-order structural affordance.
+- test_id: STR2-T066
+  english_concept: two parts already form a composite
+  routing: entity_or_process
+  analysis: Use STR:020/021 for the arrangement or STR:120 for completed integration;
+    not STR:2x2 alone.
+- test_id: STR2-T067
+  english_concept: one host absorbs one subsystem
+  routing: target_incorporability
+  analysis: Preserved host and one target select STR:2x1, not systemic STR:2x2.
+- test_id: STR2-T068
+  english_concept: two hosts can form a new cluster
+  routing: systemic_integrability
+  analysis: Peer inputs and a higher-order whole select STR:2x2, not target STR:2x1.
+- test_id: STR2-T069
+  english_concept: unknown host identity
+  routing: unresolved_gap
+  analysis: If preserved host versus peer-input scope is unknown, do not guess outward
+    or systemic address.
+- test_id: STR2-T070
+  english_concept: unknown affordance status
+  routing: unresolved_gap
+  analysis: If stable, active, or lexical unresolved status cannot be determined,
+    preserve ambiguity rather than guessing the third trit.
+- test_id: STR2-T071
+  english_concept: physical clearance only
+  routing: different_family_or_compound
+  analysis: MAT geometry may show clearance; STR incorporability additionally requires
+    constituent qualification.
+- test_id: STR2-T072
+  english_concept: logical rule says allowed but structure cannot accept
+  routing: two_claims
+  analysis: LOG permission can be true while STR target incorporability is false.
+- test_id: STR2-T073
+  english_concept: blueprint says composable but implementation is not
+  routing: two_claims
+  analysis: DAT specification can claim compatibility while STR systemic integrability
+    is denied.
+- test_id: STR2-T074
+  english_concept: repair makes structure reconfigurable
+  routing: compound
+  analysis: REP process plus STR:201 result claim; repair and reconfigurability remain
+    distinct.
+- test_id: STR2-T075
+  english_concept: design for modularity
+  routing: compound
+  analysis: CRE/DAT design plus a nonactualized or asserted STR affordance; design
+    does not establish the affordance.
+- test_id: STR2-T076
+  english_concept: future extensibility
+  routing: compound
+  analysis: ORI future relation plus STR target incorporability; the STR root itself
+    is tenseless.
+- test_id: STR2-T077
+  english_concept: general possibility
+  routing: different_family
+  analysis: ORI owns unrestricted possibility; STR:222 is narrowly systemic and structural.
+- test_id: STR2-T078
+  english_concept: system necessity
+  routing: different_family
+  analysis: ORI/LOG owns necessity; integrability says what can structurally combine,
+    not what must.
+- test_id: STR2-T079
+  english_concept: structural possibility becomes active
+  routing: two_time_indexed_claims
+  analysis: Relate STR:222 at one time to STR:221 at another; the roots do not encode
+    the transition by themselves.
+- test_id: STR2-T080
+  english_concept: capacity versus active process
+  routing: scope_resolution_test
+  analysis: STR:201[1] asserts available reconfiguration capacity; STR:101[1] asserts
+    reconfiguration is occurring.
+- test_id: STR2-T081
+  english_concept: fit relation versus incorporation
+  routing: scope_resolution_test
+  analysis: STR:211[1] asserts operative incorporability; STR:111[1] asserts the target
+    is actually being incorporated.
+- test_id: STR2-T082
+  english_concept: integrability relation versus integration
+  routing: scope_resolution_test
+  analysis: STR:221[1] asserts operative systemic integrability; STR:121[1] asserts
+    integration is occurring.

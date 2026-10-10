@@ -1,0 +1,981 @@
+---
+metadata:
+  title: MOV:100–122 adversarial peer review — scored candidates
+  status: recommendations_pending_user_approval_not_canonical
+  scope:
+  - MOV:100
+  - MOV:101
+  - MOV:102
+  - MOV:110
+  - MOV:111
+  - MOV:112
+  - MOV:120
+  - MOV:121
+  - MOV:122
+  score_scale: 1–10 per category; eight equally weighted categories; totals out of 80
+  score_categories:
+  - atomicity
+  - address_fit
+  - family_fit
+  - neighbor_separation
+  - cross_family_separation
+  - compound_usefulness
+  - everyday_language_coverage
+  - technical_coverage
+  current_meanings_defended_by_default: false
+  canonicalized: false
+roots:
+- canonical_id: MOV:100
+  fixed_generated_fields:
+    canonical_id: MOV:100
+    universal_slot: completed inward process
+    family_qualified_transliteration: gi·kam
+    local_compact_root: kam
+    formal_carrier: gi-ki-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 2
+  why_current_was_probably_chosen: The second trit's source reading naturally suggests motion away from an origin, while the third trit's completed value suggests the post-departure condition. It also creates an intuitive mirror with target-arrival MOV:110.
+  candidates:
+  - candidate_id: current_departure_complete
+    title: departure complete
+    invariant_candidate: Movement away from the source has finished and the mover is no longer occupying its starting position.
+    semantic_direction: Source-relative displacement completed.
+    is_current_phase2_candidate: true
+    recommended_winner: true
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total_score: 71
+    peer_review_note: Strong and ordinary, but the original wording mixes completion with a derived occupancy consequence. It survives if tightened to one invariant.
+  - candidate_id: self_relocation_complete
+    title: self-relocation completed
+    invariant_candidate: A mover has completed changing its own position.
+    semantic_direction: Generic self-caused displacement rather than source separation.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 7
+      address_fit: 6
+      family_fit: 9
+      neighbor_separation: 4
+      cross_family_separation: 8
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total_score: 60
+    peer_review_note: 'Technically useful but too broad: it consumes arrival and route traversal and wastes the second-trit contrast.'
+  - candidate_id: inward_convergence_complete
+    title: inward convergence completed
+    invariant_candidate: Motion toward an internal or source center has finished.
+    semantic_direction: Centripetal motion toward the source/self.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 9
+      address_fit: 7
+      family_fit: 10
+      neighbor_separation: 8
+      cross_family_separation: 9
+      compound_usefulness: 7
+      everyday_language_coverage: 6
+      technical_coverage: 7
+    total_score: 63
+    peer_review_note: A literal reading of inward, but it competes conceptually with target approach once the source is treated as the target and has weaker everyday coverage.
+  - candidate_id: motion_initiation_complete
+    title: motion initiation completed
+    invariant_candidate: A mover's transition from rest into motion has finished.
+    semantic_direction: Source as the initial state of a motion operation.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total_score: 66
+    peer_review_note: Useful in control systems, but 'initial state' is a derived interpretation of source and the concept introduces rest/velocity semantics absent from the address.
+  - candidate_id: source_detachment_complete
+    title: source detachment completed
+    invariant_candidate: A mover's attachment to its source has ended.
+    semantic_direction: Relational separation or release.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 6
+    total_score: 54
+    peer_review_note: Often accompanies departure, but attachment can end without displacement and belongs more naturally to Connection or Structure.
+  recommendation:
+    winner_candidate_id: current_departure_complete
+    canonicalization_status: not_canonical_pending_user_decision
+- canonical_id: MOV:101
+  fixed_generated_fields:
+    canonical_id: MOV:101
+    universal_slot: active inward process
+    family_qualified_transliteration: gi·kak
+    local_compact_root: kak
+    formal_carrier: gi-ki-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 4
+  why_current_was_probably_chosen: The active process at a source is most naturally interpreted as leaving. The original label 'self-departure' also tried to use the second trit's self reading while preserving a clear contrast with completed departure and readiness.
+  candidates:
+  - candidate_id: current_self_departure
+    title: self-departure
+    invariant_candidate: An entity is actively leaving its own source or current position.
+    semantic_direction: Ongoing source-relative displacement.
+    is_current_phase2_candidate: true
+    recommended_winner: true
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total_score: 73
+    peer_review_note: The semantic center is strong, but 'own source or current position' is broader than necessary. A specified source is cleaner than the ambiguous word self.
+  - candidate_id: generic_self_locomotion
+    title: active self-locomotion
+    invariant_candidate: A mover is actively changing its own position.
+    semantic_direction: Generic self-motion.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 7
+      address_fit: 7
+      family_fit: 10
+      neighbor_separation: 4
+      cross_family_separation: 8
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total_score: 66
+    peer_review_note: Excellent coverage but destroys the source/target/systemic partition by absorbing nearly all active Motion.
+  - candidate_id: active_inward_convergence
+    title: active inward convergence
+    invariant_candidate: A mover is actively moving toward an internal or source center.
+    semantic_direction: Centripetal motion.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 9
+      address_fit: 7
+      family_fit: 10
+      neighbor_separation: 8
+      cross_family_separation: 9
+      compound_usefulness: 7
+      everyday_language_coverage: 7
+      technical_coverage: 8
+    total_score: 65
+    peer_review_note: Motion-specific and atomic, but source-as-goal duplicates target approach and makes the orientation cube less orthogonal.
+  - candidate_id: active_motion_initiation
+    title: active motion initiation
+    invariant_candidate: A mover is actively transitioning from rest into motion.
+    semantic_direction: Starting or accelerating into movement.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 7
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total_score: 60
+    peer_review_note: Control-system value is high, but it introduces velocity and force territory and does not cover ordinary departure after onset.
+  - candidate_id: active_disengagement
+    title: active disengagement
+    invariant_candidate: A mover is actively breaking its relation to a source.
+    semantic_direction: Withdrawal or disconnection.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 5
+      neighbor_separation: 7
+      cross_family_separation: 3
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 6
+    total_score: 52
+    peer_review_note: Relation-breaking is not necessarily motion and collides heavily with Connection and Structure.
+  recommendation:
+    winner_candidate_id: current_self_departure
+    canonicalization_status: not_canonical_pending_user_decision
+- canonical_id: MOV:102
+  fixed_generated_fields:
+    canonical_id: MOV:102
+    universal_slot: pending inward process
+    family_qualified_transliteration: gi·kan
+    local_compact_root: kan
+    formal_carrier: gi-ki-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 0
+  why_current_was_probably_chosen: The pending third trit encouraged a pre-departure reading. 'Readiness' was likely chosen because it sounds natural before motion starts and mirrors completed and active departure without requiring a precise scheduling grammar.
+  candidates:
+  - candidate_id: current_departure_readiness
+    title: departure readiness
+    invariant_candidate: An entity is prepared to leave its source, but outward motion has not yet begun.
+    semantic_direction: Readiness or capability before departure.
+    is_current_phase2_candidate: true
+    recommended_winner: false
+    scores:
+      atomicity: 6
+      address_fit: 7
+      family_fit: 9
+      neighbor_separation: 8
+      cross_family_separation: 7
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 6
+    total_score: 58
+    peer_review_note: The definition mixes a process with preparation/capacity. A mover may be ready without any departure operation being specified.
+  - candidate_id: queued_source_departure
+    title: pending source departure
+    invariant_candidate: A specified displacement away from a source position that has not yet begun.
+    semantic_direction: A source-departure event in its lexical pre-onset phase.
+    is_current_phase2_candidate: false
+    recommended_winner: true
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total_score: 75
+    peer_review_note: Preserves one process across the triplet and cleanly separates lexical pending phase from readiness, capacity, permission, and runtime suspension.
+  - candidate_id: waiting_at_source
+    title: waiting at source
+    invariant_candidate: A mover remains at its source for an interval.
+    semantic_direction: Non-motion or delay at the source.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 7
+      address_fit: 5
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 7
+      compound_usefulness: 6
+      everyday_language_coverage: 10
+      technical_coverage: 6
+    total_score: 54
+    peer_review_note: Everyday useful but waiting does not entail a future departure and is primarily timing/aspect, not a Motion process.
+  - candidate_id: latent_self_mobility
+    title: latent self-mobility
+    invariant_candidate: A mover has an unexpressed ability to change its own position.
+    semantic_direction: Dormant motion capacity.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 8
+      address_fit: 5
+      family_fit: 10
+      neighbor_separation: 4
+      cross_family_separation: 8
+      compound_usefulness: 7
+      everyday_language_coverage: 7
+      technical_coverage: 8
+    total_score: 57
+    peer_review_note: Belongs to the 2xx capacity layer; placing it at a 1xx address violates the first trit.
+  - candidate_id: intended_retreat
+    title: intended retreat
+    invariant_candidate: A mover intends to increase distance from a source or threat.
+    semantic_direction: Goal/intention to withdraw.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 7
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 6
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 5
+    total_score: 56
+    peer_review_note: Retreat adds threat and intention, colliding with Mind and Warning and narrowing ordinary departure.
+  recommendation:
+    winner_candidate_id: queued_source_departure
+    canonicalization_status: not_canonical_pending_user_decision
+- canonical_id: MOV:110
+  fixed_generated_fields:
+    canonical_id: MOV:110
+    universal_slot: completed outward process
+    family_qualified_transliteration: gi·kom
+    local_compact_root: kom
+    formal_carrier: gi-ki-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 4
+  why_current_was_probably_chosen: A completed target-oriented Motion process almost directly yields arrival. It mirrors source departure and aligns with the canonical destination entity roots MOV:010–012.
+  candidates:
+  - candidate_id: current_arrival_complete
+    title: arrival complete
+    invariant_candidate: Movement to the selected destination has finished and the mover has entered or reached it.
+    semantic_direction: Target-relative displacement completed.
+    is_current_phase2_candidate: true
+    recommended_winner: true
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total_score: 77
+    peer_review_note: The best fit. The word 'entered' should be removed from the invariant because arrival need not cross a boundary.
+  - candidate_id: target_contact_complete
+    title: target contact completed
+    invariant_candidate: A mover has made physical contact with a target.
+    semantic_direction: Impact, docking, or touch.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total_score: 61
+    peer_review_note: Motion-related but contact is a material/structural relation and arrival can occur without contact.
+  - candidate_id: outward_projection_complete
+    title: outward projection completed
+    invariant_candidate: A mover has completed motion from itself toward an external direction.
+    semantic_direction: Emanation or outward motion from self.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 8
+      everyday_language_coverage: 7
+      technical_coverage: 8
+    total_score: 62
+    peer_review_note: Uses outward but weakens the explicit target reading and overlaps source departure.
+  - candidate_id: delivery_transfer_complete
+    title: delivery completed
+    invariant_candidate: Something has been transferred successfully to a recipient or target.
+    semantic_direction: Transfer of possession, data, or matter.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 5
+      neighbor_separation: 7
+      cross_family_separation: 3
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total_score: 57
+    peer_review_note: Very useful English, but transfer success belongs to Matter, Data, or Connection; physical arrival is only one component.
+  - candidate_id: boundary_entry_complete
+    title: entry completed
+    invariant_candidate: A mover has crossed fully into a bounded target region.
+    semantic_direction: Boundary crossing into a container.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 8
+      neighbor_separation: 8
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total_score: 65
+    peer_review_note: Atomic but too narrow and structurally loaded; arrival at a point does not require containment.
+  recommendation:
+    winner_candidate_id: current_arrival_complete
+    canonicalization_status: not_canonical_pending_user_decision
+- canonical_id: MOV:111
+  fixed_generated_fields:
+    canonical_id: MOV:111
+    universal_slot: active outward process
+    family_qualified_transliteration: gi·kok
+    local_compact_root: kok
+    formal_carrier: gi-ki-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 6
+  why_current_was_probably_chosen: 'An active target-oriented process is naturally approach: the mover is currently progressing toward a selected destination. It provides a clean active counterpart to arrival.'
+  candidates:
+  - candidate_id: current_destination_approach
+    title: destination approach
+    invariant_candidate: An entity is actively moving toward a selected destination.
+    semantic_direction: Ongoing target-relative displacement.
+    is_current_phase2_candidate: true
+    recommended_winner: true
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total_score: 77
+    peer_review_note: The strongest candidate. 'Target' is preferable to 'destination' because approach can be assessed before a final endpoint is accepted.
+  - candidate_id: pursuit
+    title: active pursuit
+    invariant_candidate: A mover is actively following a moving target.
+    semantic_direction: Sustained approach to a changing target.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 6
+      cross_family_separation: 7
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 7
+    total_score: 63
+    peer_review_note: Useful but adds moving-target tracking and a relationship likely reserved for a compound or 2xx root.
+  - candidate_id: outward_projection
+    title: active outward projection
+    invariant_candidate: A mover is actively moving outward from itself.
+    semantic_direction: Emanation rather than target approach.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 8
+      address_fit: 7
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total_score: 63
+    peer_review_note: Fits outward, but duplicates source departure and does not require a target.
+  - candidate_id: target_transfer
+    title: active transfer to target
+    invariant_candidate: A resource, message, or object is actively being transferred to a target.
+    semantic_direction: Delivery process.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 5
+      neighbor_separation: 7
+      cross_family_separation: 3
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total_score: 55
+    peer_review_note: Bundles motion with possession, information, or communication transfer.
+  - candidate_id: steering_guidance
+    title: active guidance toward target
+    invariant_candidate: A mover's direction is actively being controlled toward a target.
+    semantic_direction: Control of trajectory.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 7
+      address_fit: 8
+      family_fit: 8
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total_score: 60
+    peer_review_note: Guidance can occur without displacement and adds control/agency semantics.
+  recommendation:
+    winner_candidate_id: current_destination_approach
+    canonicalization_status: not_canonical_pending_user_decision
+- canonical_id: MOV:112
+  fixed_generated_fields:
+    canonical_id: MOV:112
+    universal_slot: pending outward process
+    family_qualified_transliteration: gi·kon
+    local_compact_root: kon
+    formal_carrier: gi-ki-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 2
+  why_current_was_probably_chosen: The pending third trit suggested an arrival that has not happened yet. The original definition then tried to clarify that targetward movement is intended or queued, but the title remained outcome-framed and phase-ambiguous.
+  candidates:
+  - candidate_id: current_pending_arrival
+    title: pending arrival
+    invariant_candidate: Movement toward a destination is intended or queued, but arrival is not yet in progress.
+    semantic_direction: An expected arrival outcome.
+    is_current_phase2_candidate: true
+    recommended_winner: false
+    scores:
+      atomicity: 6
+      address_fit: 8
+      family_fit: 10
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 7
+    total_score: 61
+    peer_review_note: The title can describe both a queued trip and an active trip whose arrival is still pending. It does not cleanly name the lexical pre-onset process.
+  - candidate_id: queued_targetward_displacement
+    title: pending target approach
+    invariant_candidate: A specified displacement toward a target position that has not yet begun.
+    semantic_direction: A targetward event in its lexical pre-onset phase.
+    is_current_phase2_candidate: false
+    recommended_winner: true
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total_score: 75
+    peer_review_note: Restores exact triplet parallelism and avoids defining a process through the nonoccurrence of its later result.
+  - candidate_id: unavailable_destination
+    title: unavailable destination
+    invariant_candidate: A target is defined but cannot currently be reached.
+    semantic_direction: Target condition rather than process.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 8
+      address_fit: 6
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 9
+      compound_usefulness: 6
+      everyday_language_coverage: 8
+      technical_coverage: 7
+    total_score: 56
+    peer_review_note: Already occupied canonically by MOV:012 and violates the process/entity boundary.
+  - candidate_id: target_selection_intent
+    title: targetward intention
+    invariant_candidate: An actor intends to move toward a selected target.
+    semantic_direction: Mental commitment or goal selection.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 6
+      address_fit: 7
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 7
+    total_score: 55
+    peer_review_note: Intention can exist without a specified executable motion and collides with Mind and Logic.
+  - candidate_id: waiting_for_entry
+    title: waiting for entry
+    invariant_candidate: A mover remains outside a target while awaiting entry.
+    semantic_direction: Delay at a target boundary.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 7
+      address_fit: 6
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 9
+      technical_coverage: 6
+    total_score: 54
+    peer_review_note: Adds waiting, boundary, and containment; it is not the general pending phase of targetward motion.
+  recommendation:
+    winner_candidate_id: queued_targetward_displacement
+    canonicalization_status: not_canonical_pending_user_decision
+- canonical_id: MOV:120
+  fixed_generated_fields:
+    canonical_id: MOV:120
+    universal_slot: completed systemic process
+    family_qualified_transliteration: gi·kim
+    local_compact_root: kim
+    formal_carrier: gi-ki-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 0
+  why_current_was_probably_chosen: The systemic second trit invited a route-wide or system-wide reading, and Motion's broad source description included transition and time. The Phase 2 definition therefore bundled transfer, circulation, and temporal transition under a generic completed system transition.
+  candidates:
+  - candidate_id: current_system_transition_complete
+    title: system transition complete
+    invariant_candidate: A route-wide transfer, circulation step, or temporal transition has reached its defined end state.
+    semantic_direction: Umbrella system-level transition.
+    is_current_phase2_candidate: true
+    recommended_winner: false
+    scores:
+      atomicity: 4
+      address_fit: 8
+      family_fit: 5
+      neighbor_separation: 6
+      cross_family_separation: 3
+      compound_usefulness: 7
+      everyday_language_coverage: 6
+      technical_coverage: 8
+    total_score: 47
+    peer_review_note: 'Not permanently atomic: it explicitly lists unrelated processes and collides with Matter, Data, Structure, Creation, Logic, and Origin.'
+  - candidate_id: completed_route_traversal
+    title: completed route traversal
+    invariant_candidate: Completion of motion along a shared or system-defined route.
+    semantic_direction: Use of an ordered Motion route as a completed process.
+    is_current_phase2_candidate: false
+    recommended_winner: true
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total_score: 76
+    peer_review_note: The strongest systemic Motion interpretation. It pairs cleanly with canonical route entities without collapsing into their entity meaning.
+  - candidate_id: completed_circulation_cycle
+    title: circulation cycle completed
+    invariant_candidate: A mover has completed one cycle around a recurring route.
+    semantic_direction: Cyclic systemic motion.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 10
+      neighbor_separation: 8
+      cross_family_separation: 8
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total_score: 68
+    peer_review_note: Atomic and Motion-specific but unnecessarily restricts the systemic triplet to cycles; loop/repetition can be compositional.
+  - candidate_id: collective_relocation_complete
+    title: collective relocation completed
+    invariant_candidate: A group of movers has completed relocating as one coordinated set.
+    semantic_direction: Group/collective motion.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 7
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total_score: 64
+    peer_review_note: Fits shared orientation, but actor plurality and coordination are participant properties, not the most general systemic Motion center.
+  - candidate_id: network_distribution_complete
+    title: network distribution completed
+    invariant_candidate: Items have completed distribution across a network.
+    semantic_direction: Transport or dissemination through a system.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 6
+      address_fit: 9
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 3
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total_score: 57
+    peer_review_note: Adds payload transfer and distribution goals, colliding with Matter, Data, and Connection.
+  recommendation:
+    winner_candidate_id: completed_route_traversal
+    canonicalization_status: not_canonical_pending_user_decision
+- canonical_id: MOV:121
+  fixed_generated_fields:
+    canonical_id: MOV:121
+    universal_slot: active systemic process
+    family_qualified_transliteration: gi·kik
+    local_compact_root: kik
+    formal_carrier: gi-ki-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 2
+  why_current_was_probably_chosen: Active systemic Motion strongly suggests flow. The Phase 2 definition tried to maximize coverage by allowing entities, signals, and time-indexed states to move through a shared route system.
+  candidates:
+  - candidate_id: current_system_flow
+    title: system flow
+    invariant_candidate: Entities, signals, or time-indexed states are actively moving through a shared route system.
+    semantic_direction: Generic flow of heterogeneous carriers.
+    is_current_phase2_candidate: true
+    recommended_winner: false
+    scores:
+      atomicity: 4
+      address_fit: 9
+      family_fit: 6
+      neighbor_separation: 6
+      cross_family_separation: 2
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total_score: 51
+    peer_review_note: The carrier list reveals a non-atomic umbrella. Signals and state transitions belong to other families unless route traversal itself is being asserted.
+  - candidate_id: active_route_traversal
+    title: active route traversal
+    invariant_candidate: Ongoing motion along a shared or system-defined route.
+    semantic_direction: Active use of an ordered Motion route.
+    is_current_phase2_candidate: false
+    recommended_winner: true
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total_score: 77
+    peer_review_note: Highly atomic, broadly useful, and technically precise. Route identity supplies systemic orientation without importing payload semantics.
+  - candidate_id: coordinated_collective_motion
+    title: coordinated collective motion
+    invariant_candidate: Multiple movers are actively moving as one coordinated group.
+    semantic_direction: Synchronized group movement.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 6
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total_score: 64
+    peer_review_note: Useful for convoys and flocks but builds participant plurality and coordination into the atom.
+  - candidate_id: active_circulation
+    title: active circulation
+    invariant_candidate: A mover or stream is actively repeating motion around a route.
+    semantic_direction: Cyclic flow.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 10
+      neighbor_separation: 8
+      cross_family_separation: 8
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total_score: 69
+    peer_review_note: Motion-specific and coherent, but repetition and cycle topology should remain compositional so linear routes are not excluded.
+  - candidate_id: state_space_transition
+    title: active state-space transition
+    invariant_candidate: A system is actively moving through an ordered sequence of states.
+    semantic_direction: Abstract transition or workflow execution.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 7
+      address_fit: 9
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 6
+      technical_coverage: 10
+    total_score: 59
+    peer_review_note: Technically powerful, but dangerously broad; it becomes Motion only when states are explicitly represented as positions on a route.
+  recommendation:
+    winner_candidate_id: active_route_traversal
+    canonicalization_status: not_canonical_pending_user_decision
+- canonical_id: MOV:122
+  fixed_generated_fields:
+    canonical_id: MOV:122
+    universal_slot: pending systemic process
+    family_qualified_transliteration: gi·kin
+    local_compact_root: kin
+    formal_carrier: gi-ki-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - -2
+  why_current_was_probably_chosen: The pending systemic slot was paired with the broad system-transition interpretation of MOV:120–121. The definition therefore treated any route-wide transfer or temporal transition as staged but unstarted.
+  candidates:
+  - candidate_id: current_pending_system_transition
+    title: pending system transition
+    invariant_candidate: A route-wide transfer or temporal transition is staged but has not started.
+    semantic_direction: Generic future system change.
+    is_current_phase2_candidate: true
+    recommended_winner: false
+    scores:
+      atomicity: 5
+      address_fit: 9
+      family_fit: 5
+      neighbor_separation: 6
+      cross_family_separation: 3
+      compound_usefulness: 7
+      everyday_language_coverage: 6
+      technical_coverage: 8
+    total_score: 49
+    peer_review_note: Still bundles different domains and makes Motion the default family for generic system change.
+  - candidate_id: queued_route_traversal
+    title: pending route traversal
+    invariant_candidate: Motion along a shared or system-defined route that is specified but has not yet begun.
+    semantic_direction: A route-traversal event in its lexical pre-onset phase.
+    is_current_phase2_candidate: false
+    recommended_winner: true
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total_score: 76
+    peer_review_note: Completes the route-traversal triplet with exact phase symmetry and keeps scheduling, route availability, and payload external.
+  - candidate_id: dormant_route_system
+    title: dormant route system
+    invariant_candidate: A route system exists but is not currently operating.
+    semantic_direction: Inactive route entity.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 9
+      address_fit: 6
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 9
+      compound_usefulness: 6
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total_score: 58
+    peer_review_note: Already canonically occupied by MOV:022 and violates the 1xx process requirement.
+  - candidate_id: scheduled_network_flow
+    title: scheduled network flow
+    invariant_candidate: A system-wide flow is assigned a future execution time.
+    semantic_direction: Scheduled distributed process.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 6
+      address_fit: 9
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total_score: 58
+    peer_review_note: Adds scheduler/time semantics and generic flow across other families.
+  - candidate_id: suspended_systemic_motion
+    title: suspended systemic motion
+    invariant_candidate: A system-level motion process began and is currently paused.
+    semantic_direction: Paused active route operation.
+    is_current_phase2_candidate: false
+    recommended_winner: false
+    scores:
+      atomicity: 8
+      address_fit: 6
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 8
+      compound_usefulness: 8
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total_score: 63
+    peer_review_note: Useful, but suspension after onset is the tailored runtime [2] state of MOV:121, not a lexical pending process.
+  recommendation:
+    winner_candidate_id: queued_route_traversal
+    canonicalization_status: not_canonical_pending_user_decision

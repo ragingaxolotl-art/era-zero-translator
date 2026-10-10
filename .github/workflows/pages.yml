@@ -34,6 +34,8 @@ jobs:
         run: node tools/validate_pages_release.mjs
       - name: Audit canonical product
         run: ruby tools/validate_product_application.rb
+      - name: Audit project completeness and provenance
+        run: ruby tools/audit_project_completeness.rb
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

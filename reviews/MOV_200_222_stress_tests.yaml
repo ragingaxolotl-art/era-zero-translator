@@ -1,0 +1,249 @@
+---
+metadata:
+  title: MOV:200–222 semantic stress tests
+  status: review_evidence_not_canonical
+  test_count: 45
+  minimum_required: 45
+  forced_atomic_mappings: false
+classification_values:
+- direct atomic root
+- root plus runtime state
+- composition
+- grammar or logic
+- another family
+- unresolved gap
+tests:
+- number: 1
+  concept: can move
+  classification: direct atomic root
+  mapping: MOV:201
+  rationale: Presently available self-mobility; use MOV:200 for enduring capability
+    without a current-availability claim.
+- number: 2
+  concept: cannot move
+  classification: root plus runtime state
+  mapping: MOV:201[0]
+  rationale: Denies current availability; MOV:200[0] denies enduring capacity.
+- number: 3
+  concept: mobile
+  classification: direct atomic root
+  mapping: MOV:200
+  rationale: Enduring mobility; MOV:201 if the intended reading is usable now.
+- number: 4
+  concept: immobile
+  classification: root plus runtime state
+  mapping: MOV:200[0] or MOV:201[0]
+  rationale: Context distinguishes no enduring capacity from temporary unavailability.
+- number: 5
+  concept: flexible
+  classification: another family
+  mapping: MAT plus STR/quantity
+  rationale: Material deformation or degrees of freedom are not positional mobility
+    by default.
+- number: 6
+  concept: range of motion
+  classification: composition
+  mapping: MOV:200 + STR boundary + quantity
+  rationale: Mobility constrained to a quantified reachable envelope.
+- number: 7
+  concept: freedom of movement
+  classification: composition
+  mapping: MOV:201 + LOG permission + absence of STR constraint
+  rationale: Ability, authorization, and constraint are separate.
+- number: 8
+  concept: reachable
+  classification: grammar or logic
+  mapping: LOG reachability proof + MOV:210/MOV:020
+  rationale: A relation and route are inputs; reachability is not a primitive Motion
+    relationship.
+- number: 9
+  concept: unreachable
+  classification: grammar or logic
+  mapping: LOG negated reachability; MOV:012 where the destination itself is dormant/unreachable
+  rationale: Do not overload MOV:212.
+- number: 10
+  concept: near
+  classification: composition
+  mapping: MOV:210 + low distance degree
+  rationale: Near is a value over the target-relative relation.
+- number: 11
+  concept: far
+  classification: composition
+  mapping: MOV:210 + high distance degree
+  rationale: Far is a value over the target-relative relation.
+- number: 12
+  concept: distance
+  classification: composition
+  mapping: MOV:210 + metric quantity
+  rationale: MOV:210 supplies the relation; quantity supplies the measure.
+- number: 13
+  concept: direction
+  classification: composition
+  mapping: MOV:210 + axis/vector value
+  rationale: Direction is a value of the relation.
+- number: 14
+  concept: bearing
+  classification: composition
+  mapping: MOV:210 + angular value
+  rationale: Bearing requires a reference axis and number.
+- number: 15
+  concept: orientation
+  classification: composition
+  mapping: MOV:210 + frame/axis role
+  rationale: Body orientation may additionally require MAT or STR.
+- number: 16
+  concept: relative position
+  classification: direct atomic root
+  mapping: MOV:210
+  rationale: Established mover-to-target positional relation.
+- number: 17
+  concept: beside
+  classification: composition
+  mapping: MOV:210 + horizontal adjacency relation
+  rationale: A language-level relational modifier specializes the atom.
+- number: 18
+  concept: above
+  classification: composition
+  mapping: MOV:210 + vertical positive-axis relation
+  rationale: Axis value specializes target-relative position.
+- number: 19
+  concept: below
+  classification: composition
+  mapping: MOV:210 + vertical negative-axis relation
+  rationale: Axis value specializes target-relative position.
+- number: 20
+  concept: between
+  classification: composition
+  mapping: MOV:220 + two anchor roles + betweenness relation
+  rationale: Systemic configuration supports multi-anchor geometry.
+- number: 21
+  concept: connected by a route
+  classification: composition
+  mapping: MOV:020 + source/target bindings
+  rationale: The approved route entity owns the connection.
+- number: 22
+  concept: accessible
+  classification: grammar or logic
+  mapping: LOG access/reachability + CON when participant access is meant
+  rationale: Accessibility is not merely position.
+- number: 23
+  concept: navigable
+  classification: composition
+  mapping: MOV:020/022 + STR topology + LOG constraints
+  rationale: Navigability is a derived affordance.
+- number: 24
+  concept: blocked
+  classification: another family
+  mapping: STR obstruction or MAT blocker; WRN if danger/failure is asserted
+  rationale: The cause is not a Motion capacity atom.
+- number: 25
+  concept: constrained
+  classification: another family
+  mapping: STR constraint or LOG rule
+  rationale: Use MOV capacity only to state the affected capability.
+- number: 26
+  concept: path available
+  classification: root plus runtime state
+  mapping: MOV:020[1]
+  rationale: An established route asserted currently valid/available.
+- number: 27
+  concept: possible path
+  classification: composition
+  mapping: MOV:020[2] or MOV:022 + LOG possibility
+  rationale: Route entity plus token status or explicit logic; not MOV:222.
+- number: 28
+  concept: shortest path
+  classification: grammar or logic
+  mapping: LOG optimization over MOV:020 routes + metric
+  rationale: Shortest is a computed comparison.
+- number: 29
+  concept: movement permission
+  classification: another family
+  mapping: LOG permission applied to a MOV process
+  rationale: Permission is explicitly outside Motion atoms.
+- number: 30
+  concept: movement restriction
+  classification: another family
+  mapping: LOG prohibition and/or STR constraint
+  rationale: Restriction is not mobility itself.
+- number: 31
+  concept: traffic capacity
+  classification: composition
+  mapping: MOV:021 + quantity + STR/MAT limits
+  rationale: Network throughput is not self-mobility; no new atom is forced.
+- number: 32
+  concept: network mobility
+  classification: composition
+  mapping: MOV:200/201 with collective actor + MOV:020/STR network
+  rationale: Depends on what is mobile and on network structure.
+- number: 33
+  concept: spatial compatibility
+  classification: composition
+  mapping: MOV:220 or MOV:222 + LOG constraints + MAT dimensions
+  rationale: Configuration supplies positions; compatibility is evaluated.
+- number: 34
+  concept: collision risk
+  classification: composition
+  mapping: MOV:222 + WRN risk + MAT dimensions/trajectories
+  rationale: Risk is warning-domain and predictive.
+- number: 35
+  concept: room to move
+  classification: composition
+  mapping: MOV:201 + STR boundary + MAT dimensions
+  rationale: Current mobility plus clearance.
+- number: 36
+  concept: drift potential
+  classification: direct atomic root
+  mapping: MOV:122
+  rationale: Potential shared-frame movement, with manner/cause added later.
+- number: 37
+  concept: orbit stability
+  classification: composition
+  mapping: MOV:220 + MAT dynamics + stability criterion
+  rationale: Configuration plus physical cause and test.
+- number: 38
+  concept: group mobility
+  classification: composition
+  mapping: MOV:200/201 with collective actor role
+  rationale: The mobility root can scope over a group; configuration may be added.
+- number: 39
+  concept: coordinated movement
+  classification: composition
+  mapping: MOV:121 + CON coordination
+  rationale: Actual movement and coordination remain separate.
+- number: 40
+  concept: transport capacity
+  classification: composition
+  mapping: MOV:021 + payload MAT + quantity/STR limits
+  rationale: Throughput/payload capacity is not the mover's self-mobility.
+- number: 41
+  concept: teleportation possibility
+  classification: composition
+  mapping: MOV:122 + CRE/ORI discontinuity specification
+  rationale: Potential positional change is MOV; mechanism/ontology is elsewhere.
+- number: 42
+  concept: transition allowed
+  classification: grammar or logic
+  mapping: LOG permission + domain process
+  rationale: Use MOV only when transition is explicitly modeled as positional change.
+- number: 43
+  concept: state reachable
+  classification: grammar or logic
+  mapping: LOG reachability + explicit state-space MOV:210/MOV:020
+  rationale: Metaphorical state change is not automatically Motion.
+- number: 44
+  concept: route exists
+  classification: direct atomic root
+  mapping: MOV:020
+  rationale: Existing approved route entity.
+- number: 45
+  concept: motion could occur
+  classification: direct atomic root
+  mapping: MOV:122
+  rationale: Potential shared-frame movement, not self-mobility capacity.
+coverage_summary:
+  direct atomic root: 6
+  root plus runtime state: 3
+  another family: 5
+  composition: 25
+  grammar or logic: 6

@@ -1,0 +1,504 @@
+---
+metadata:
+  title: MOV:100–122 examples and coverage tests
+  status: review_evidence_not_canonical
+  example_count: 54
+  english_coverage_test_count: 25
+root_examples:
+- root: MOV:100
+  examples:
+  - category: conversation
+    semantic_graph: "(traveler:x) -actor→ (e:MOV:100[1]) -source→ (home:MOV:000[1])"
+    literal_gloss: traveler; source-departure-completed; home-origin
+    natural_english: The traveler has left home.
+    runtime_state: "[1] completion valid"
+    contour: falling declaration
+    role_register_assignments: low=traveler; middle=MOV:100; high=completed separation; sustained=home/source
+  - category: physical_spatial
+    semantic_graph: "(drone:x) -actor→ (e:MOV:100[1]) -source→ (pad:MOV:000[1])"
+    literal_gloss: drone; completed displacement away; launch pad
+    natural_english: The drone is clear of the launch pad.
+    runtime_state: "[1] completion valid"
+    contour: falling declaration
+    role_register_assignments: low=drone; middle=departure; high=clear-of-source result; sustained=pad
+  - category: temporal_sequential
+    semantic_graph: "(cursor:x) -actor→ (e:MOV:100[1]) -source→ (step0:MOV:000[1])"
+    literal_gloss: cursor; completed departure; initial sequence position
+    natural_english: The workflow has left its initialization step.
+    runtime_state: "[1] completed phase asserted"
+    contour: rise-return definition
+    role_register_assignments: low=cursor; middle=departure; high=post-initial result; sustained=sequence
+  - category: cross_family_compound
+    semantic_graph: "(self:LIF:001[1]) -actor→ (e:MOV:100[1]) -source→ (camp:MOV:000[1])"
+    literal_gloss: conscious self + completed source departure + camp origin
+    natural_english: I have left the camp.
+    runtime_state: "[1] on LIF actor and MOV process"
+    contour: falling declaration
+    role_register_assignments: low=LIF:001 actor; middle=MOV:100; high=departure result; sustained=MOV:000
+  - category: executable_programming
+    semantic_graph: assert(e:MOV:100[1]); source(e)=MOV:000; postcondition=away_from(actor(e),source(e))
+    literal_gloss: assert completed source departure with separation postcondition
+    natural_english: Assert that the departure operation completed.
+    runtime_state: "[1] makes the postcondition valid"
+    contour: sharply falling command
+    role_register_assignments: low=actor binding; middle=operation; high=postcondition; sustained=source binding
+  - category: counterexample
+    semantic_graph: "(mind:x) -recalls→ (home:MIN:*[1]); MOV:100 absent"
+    literal_gloss: mental recall of home; no displacement
+    natural_english: They remembered home; they did not leave it.
+    runtime_state: "[1] belongs on the mental predicate"
+    contour: falling declaration
+    role_register_assignments: low=experiencer; middle=MIN predicate; high=memory target; no MOV register
+- root: MOV:101
+  examples:
+  - category: conversation
+    semantic_graph: "(self:LIF:001[1]) -actor→ (e:MOV:101[1]) -source→ (here:MOV:001[1])"
+    literal_gloss: conscious self; active source departure; current place
+    natural_english: I'm leaving now.
+    runtime_state: "[1] departure executing"
+    contour: falling declaration
+    role_register_assignments: low=LIF:001; middle=MOV:101; high=increasing separation; sustained=source
+  - category: physical_spatial
+    semantic_graph: "(cart:x) -actor→ (e:MOV:101[1]) -source→ (dock:MOV:000[1])"
+    literal_gloss: cart; moving away; dock
+    natural_english: The cart is rolling off the dock.
+    runtime_state: "[1] active motion"
+    contour: falling declaration
+    role_register_assignments: low=cart; middle=departure; high=away vector; sustained=dock
+  - category: temporal_sequential
+    semantic_graph: "(token:x) -actor→ (e:MOV:101[1]) -source→ (init:MOV:000[1])"
+    literal_gloss: token; active departure; initial sequence position
+    natural_english: The control token is leaving initialization.
+    runtime_state: "[1] sequential displacement executing"
+    contour: falling declaration
+    role_register_assignments: low=token; middle=MOV:101; high=next-position direction; sustained=workflow
+  - category: cross_family_compound
+    semantic_graph: "(other:LIF:011[1]) -actor→ (e:MOV:101[1]) -source→ (room:MOV:000[1])"
+    literal_gloss: conscious other + active departure + room source
+    natural_english: She is leaving the room.
+    runtime_state: "[1] actor responsive and motion active"
+    contour: falling declaration
+    role_register_assignments: low=LIF:011; middle=MOV:101; high=departure direction; sustained=room
+  - category: executable_programming
+    semantic_graph: 'run(e:MOV:101[1]); while executing: separation(actor(e),source(e)) increases'
+    literal_gloss: execute active departure; separation monotonically increases
+    natural_english: Run the leave-source operation.
+    runtime_state: "[1] operation executing"
+    contour: sharply falling command
+    role_register_assignments: low=actor; middle=operation; high=invariant; sustained=source
+  - category: counterexample
+    semantic_graph: "(self:LIF:001[1]) -decides→ (plan:MOV:102[1]); MOV:101[0]"
+    literal_gloss: decision and queued departure; no active displacement
+    natural_english: I decided to leave, but I am still standing here.
+    runtime_state: MOV:102[1], MOV:101[0]
+    contour: falling declaration
+    role_register_assignments: low=decider; middle=plan; high=future departure; no active-motion register
+- root: MOV:102
+  examples:
+  - category: conversation
+    semantic_graph: "(bus:x) -actor→ (e:MOV:102[1]) -source→ (station:MOV:000[1])"
+    literal_gloss: bus; pending source departure; station
+    natural_english: The bus is set to leave the station.
+    runtime_state: "[1] queued departure valid"
+    contour: falling declaration
+    role_register_assignments: low=bus; middle=MOV:102; high=queued onset; sustained=station
+  - category: physical_spatial
+    semantic_graph: "(arm:x) -actor→ (e:MOV:102[1]) -source→ (rest:MOV:000[1])"
+    literal_gloss: robot arm; specified unbegun departure; rest position
+    natural_english: The arm is staged to move off its rest point.
+    runtime_state: "[1] staged operation"
+    contour: fall-rise possibility
+    role_register_assignments: low=arm; middle=pending departure; high=future separation; sustained=rest point
+  - category: temporal_sequential
+    semantic_graph: "(job:x) -actor→ (e:MOV:102[1]) -source→ (queue_head:MOV:000[1])"
+    literal_gloss: job; pending departure; queue origin
+    natural_english: The job is queued to leave the first stage.
+    runtime_state: "[1] pre-onset operation valid"
+    contour: falling declaration
+    role_register_assignments: low=job; middle=MOV:102; high=next-stage onset; sustained=queue
+  - category: cross_family_compound
+    semantic_graph: "(other:LIF:011[1]) -actor→ (e:MOV:102[1]) -source→ (camp:MOV:000[1])"
+    literal_gloss: conscious other + pending departure + camp source
+    natural_english: She is scheduled to depart the camp.
+    runtime_state: "[1] validates the motion plan; schedule time remains external"
+    contour: falling declaration
+    role_register_assignments: low=LIF:011; middle=MOV:102; high=future onset; sustained=camp
+  - category: executable_programming
+    semantic_graph: enqueue(e:MOV:102[1]); precondition=at(actor(e),source(e)); started(e)=false
+    literal_gloss: enqueue source-departure operation; actor still at source; not started
+    natural_english: Queue a departure from the source.
+    runtime_state: "[1] pending operation accepted"
+    contour: sharply falling command
+    role_register_assignments: low=actor; middle=queue operation; high=precondition; sustained=source
+  - category: counterexample
+    semantic_graph: "(traveler:x) -waits_at→ (station:MOV:001[1]); departure unspecified"
+    literal_gloss: traveler remains at station; no departure event specified
+    natural_english: The traveler is waiting, but no trip has been planned.
+    runtime_state: "[1] on waiting predicate; MOV:102 absent"
+    contour: falling declaration
+    role_register_assignments: low=traveler; middle=timing/wait predicate; high=duration; sustained=station
+- root: MOV:110
+  examples:
+  - category: conversation
+    semantic_graph: "(other:LIF:011[1]) -actor→ (e:MOV:110[1]) -target→ (here:MOV:010[1])"
+    literal_gloss: conscious other; target-arrival-completed; here as destination
+    natural_english: She has arrived.
+    runtime_state: "[1] arrival completion valid"
+    contour: falling declaration
+    role_register_assignments: low=LIF:011; middle=MOV:110; high=target reached; sustained=none
+  - category: physical_spatial
+    semantic_graph: "(parcel:x) -actor→ (e:MOV:110[1]) -target→ (bay:MOV:010[1])"
+    literal_gloss: parcel; completed targetward displacement; loading bay
+    natural_english: The parcel reached the loading bay.
+    runtime_state: "[1] endpoint condition met"
+    contour: falling declaration
+    role_register_assignments: low=parcel; middle=arrival; high=bay target; sustained=route
+  - category: temporal_sequential
+    semantic_graph: "(cursor:x) -actor→ (e:MOV:110[1]) -target→ (final:MOV:010[1])"
+    literal_gloss: cursor; arrival completed; final sequence position
+    natural_english: The cursor reached the final step.
+    runtime_state: "[1] sequential endpoint reached"
+    contour: falling declaration
+    role_register_assignments: low=cursor; middle=MOV:110; high=final step; sustained=sequence
+  - category: cross_family_compound
+    semantic_graph: "(self:LIF:001[1]) -actor→ (e:MOV:110[1]) -target→ (meeting:MOV:010[1])"
+    literal_gloss: conscious self + completed target arrival + meeting location
+    natural_english: I arrived at the meeting place.
+    runtime_state: "[1] actor and arrival valid"
+    contour: falling declaration
+    role_register_assignments: low=LIF:001; middle=MOV:110; high=MOV:010; sustained=context
+  - category: executable_programming
+    semantic_graph: assert(e:MOV:110[1]); target(e)=MOV:010; postcondition=at(actor(e),target(e))
+    literal_gloss: assert completed targetward motion with at-target postcondition
+    natural_english: Assert that the mover reached the target.
+    runtime_state: "[1] postcondition valid"
+    contour: sharply falling command
+    role_register_assignments: low=actor; middle=operation; high=target/postcondition; sustained=route
+  - category: counterexample
+    semantic_graph: "(destination:MOV:010[1]); no motion event"
+    literal_gloss: defined destination only
+    natural_english: The address is our destination, but nobody has arrived.
+    runtime_state: MOV:010[1]; MOV:110[0]
+    contour: falling declaration
+    role_register_assignments: high=destination entity; no low actor or middle arrival process
+- root: MOV:111
+  examples:
+  - category: conversation
+    semantic_graph: "(self:LIF:001[1]) -actor→ (e:MOV:111[1]) -target→ (home:MOV:011[1])"
+    literal_gloss: conscious self; active target approach; reachable home
+    natural_english: I'm heading home.
+    runtime_state: "[1] approach executing"
+    contour: falling declaration
+    role_register_assignments: low=LIF:001; middle=MOV:111; high=home target; sustained=route
+  - category: physical_spatial
+    semantic_graph: "(probe:x) -actor→ (e:MOV:111[1]) -target→ (dock:MOV:011[1])"
+    literal_gloss: probe; ongoing targetward displacement; active dock
+    natural_english: The probe is approaching the dock.
+    runtime_state: "[1] distance/path-to-target decreasing"
+    contour: falling declaration
+    role_register_assignments: low=probe; middle=approach; high=dock; sustained=space
+  - category: temporal_sequential
+    semantic_graph: "(task:x) -actor→ (e:MOV:111[1]) -target→ (deadline:MOV:011[1])"
+    literal_gloss: task; active approach; target sequence point
+    natural_english: The task is moving toward its completion step.
+    runtime_state: "[1] sequential targetward progress"
+    contour: falling declaration
+    role_register_assignments: low=task; middle=MOV:111; high=completion step; sustained=timeline
+  - category: cross_family_compound
+    semantic_graph: "(other:LIF:011[1]) -actor→ (e:MOV:111[1]) -target→ (self:LIF:001[1])"
+    literal_gloss: conscious other + active target approach + conscious self target
+    natural_english: She is coming toward me.
+    runtime_state: "[1] both life nodes responsive; motion active"
+    contour: falling declaration
+    role_register_assignments: low=LIF:011 actor; middle=MOV:111; high=LIF:001 target; sustained=space
+  - category: executable_programming
+    semantic_graph: run(e:MOV:111[1]); target(e)=MOV:011; invariant=progress_toward(actor(e),target(e))
+    literal_gloss: execute target-approach operation under progress invariant
+    natural_english: Move the actor toward the target.
+    runtime_state: "[1] operation executing"
+    contour: sharply falling command
+    role_register_assignments: low=actor; middle=operation; high=target; sustained=path
+  - category: counterexample
+    semantic_graph: "(actor:x) -faces→ (target:MOV:011[1]); position unchanged"
+    literal_gloss: orientation toward target; no displacement
+    natural_english: The rover faces the dock but is not approaching it.
+    runtime_state: "[1] on orientation predicate; MOV:111[0]"
+    contour: falling declaration
+    role_register_assignments: low=rover; high=target; no middle motion process
+- root: MOV:112
+  examples:
+  - category: conversation
+    semantic_graph: "(self:LIF:001[1]) -actor→ (e:MOV:112[1]) -target→ (home:MOV:010[1])"
+    literal_gloss: conscious self; pending target approach; home destination
+    natural_english: I'm set to head home.
+    runtime_state: "[1] targetward operation valid but unbegun"
+    contour: fall-rise possibility
+    role_register_assignments: low=LIF:001; middle=MOV:112; high=home; sustained=timing context
+  - category: physical_spatial
+    semantic_graph: "(rover:x) -actor→ (e:MOV:112[1]) -target→ (marker:MOV:010[1])"
+    literal_gloss: rover; specified unbegun targetward displacement; marker
+    natural_english: The rover is queued to move to the marker.
+    runtime_state: "[1] queue valid"
+    contour: falling declaration
+    role_register_assignments: low=rover; middle=pending approach; high=marker; sustained=terrain
+  - category: temporal_sequential
+    semantic_graph: "(job:x) -actor→ (e:MOV:112[1]) -target→ (stage3:MOV:010[1])"
+    literal_gloss: job; pending targetward movement; third sequence position
+    natural_english: The job is queued to advance to stage three.
+    runtime_state: "[1] sequential operation pending"
+    contour: falling declaration
+    role_register_assignments: low=job; middle=MOV:112; high=stage3; sustained=workflow
+  - category: cross_family_compound
+    semantic_graph: "(other:LIF:011[1]) -actor→ (e:MOV:112[1]) -target→ (self:LIF:001[1])"
+    literal_gloss: conscious other + pending approach + conscious target
+    natural_english: She plans to come to me.
+    runtime_state: "[1] motion plan valid; mental intention is separate"
+    contour: falling declaration
+    role_register_assignments: low=LIF:011; middle=MOV:112; high=LIF:001; sustained=context
+  - category: executable_programming
+    semantic_graph: enqueue(e:MOV:112[1]); target(e)=MOV:010; started(e)=false
+    literal_gloss: enqueue targetward displacement; target bound; execution false
+    natural_english: Queue movement to the target.
+    runtime_state: "[1] pending operation accepted"
+    contour: sharply falling command
+    role_register_assignments: low=actor binding; middle=queue; high=target binding; sustained=scheduler
+  - category: counterexample
+    semantic_graph: "(target:MOV:012[1]); no movement operation"
+    literal_gloss: destination defined but inaccessible; no queued approach
+    natural_english: The destination is closed; no trip has been scheduled.
+    runtime_state: MOV:012[1]; MOV:112 absent
+    contour: falling declaration
+    role_register_assignments: high=pending destination entity; no middle process
+- root: MOV:120
+  examples:
+  - category: conversation
+    semantic_graph: "(bus:x) -actor→ (e:MOV:120[1]) -route→ (line:MOV:020[1])"
+    literal_gloss: bus; completed system-route traversal; established line
+    natural_english: The bus finished its route.
+    runtime_state: "[1] traversal completion valid"
+    contour: falling declaration
+    role_register_assignments: low=bus; middle=MOV:120; high=route completion; sustained=MOV:020
+  - category: physical_spatial
+    semantic_graph: "(robot:x) -actor→ (e:MOV:120[1]) -route→ (corridor:MOV:020[1])"
+    literal_gloss: robot; completed route traversal; corridor
+    natural_english: The robot completed the corridor run.
+    runtime_state: "[1] route endpoint/cycle met"
+    contour: falling declaration
+    role_register_assignments: low=robot; middle=traversal; high=completed run; sustained=corridor
+  - category: temporal_sequential
+    semantic_graph: "(job:x) -actor→ (e:MOV:120[1]) -route→ (workflow:MOV:020[1])"
+    literal_gloss: job; completed traversal; ordered workflow
+    natural_english: The job traversed the whole workflow.
+    runtime_state: "[1] sequence traversal complete"
+    contour: falling declaration
+    role_register_assignments: low=job; middle=MOV:120; high=workflow completion; sustained=workflow
+  - category: cross_family_compound
+    semantic_graph: "(community:LIF:021[1]) -actor→ (e:MOV:120[1]) -route→ (evacuation:MOV:020[1])"
+    literal_gloss: living community + completed shared-route traversal + evacuation route
+    natural_english: The community completed the evacuation route.
+    runtime_state: "[1] community active; traversal complete"
+    contour: falling declaration
+    role_register_assignments: low=LIF:021; middle=MOV:120; high=route completion; sustained=MOV:020
+  - category: executable_programming
+    semantic_graph: assert(e:MOV:120[1]); route(e)=MOV:020; visited_required_positions(e)=true
+    literal_gloss: assert route traversal completed and required ordered positions visited
+    natural_english: Assert that the route run completed.
+    runtime_state: "[1] route-completion postcondition valid"
+    contour: sharply falling command
+    role_register_assignments: low=mover; middle=operation; high=completion result; sustained=route
+  - category: counterexample
+    semantic_graph: "(route:MOV:020[1]); traversals=0"
+    literal_gloss: established route exists; no completed traversal
+    natural_english: The route exists, but nobody has completed it.
+    runtime_state: MOV:020[1]; MOV:120[0]
+    contour: falling declaration
+    role_register_assignments: sustained=route entity; no actor/process/result registers
+- root: MOV:121
+  examples:
+  - category: conversation
+    semantic_graph: "(traffic:x) -actor→ (e:MOV:121[1]) -route→ (line:MOV:021[1])"
+    literal_gloss: traffic; active route traversal; live route network
+    natural_english: Traffic is moving along the line.
+    runtime_state: "[1] traversal active"
+    contour: falling declaration
+    role_register_assignments: low=traffic; middle=MOV:121; high=forward route progress; sustained=MOV:021
+  - category: physical_spatial
+    semantic_graph: "(convoy:x) -actor→ (e:MOV:121[1]) -route→ (corridor:MOV:020[1])"
+    literal_gloss: convoy; ongoing traversal; shared corridor
+    natural_english: The convoy is moving through the corridor.
+    runtime_state: "[1] route progress executing"
+    contour: falling declaration
+    role_register_assignments: low=convoy; middle=traversal; high=next route position; sustained=corridor
+  - category: temporal_sequential
+    semantic_graph: "(batch:x) -actor→ (e:MOV:121[1]) -route→ (pipeline:MOV:020[1])"
+    literal_gloss: batch; active traversal; ordered pipeline
+    natural_english: The batch is progressing through the pipeline.
+    runtime_state: "[1] sequence traversal active"
+    contour: falling declaration
+    role_register_assignments: low=batch; middle=MOV:121; high=next stage; sustained=pipeline
+  - category: cross_family_compound
+    semantic_graph: "(community:LIF:021[1]) -actor→ (e:MOV:121[1]) -route→ (trail:MOV:020[1])"
+    literal_gloss: living community + active shared-route traversal + established trail
+    natural_english: The group is moving together along the trail.
+    runtime_state: "[1] community and traversal active; togetherness comes from collective actor"
+    contour: repeated-loop contour only if cyclic
+    role_register_assignments: low=LIF:021; middle=MOV:121; high=route progress; sustained=MOV:020
+  - category: executable_programming
+    semantic_graph: run(e:MOV:121[1]); route(e)=MOV:020; invariant=ordered_progress(e)
+    literal_gloss: execute traversal along bound route under ordered-progress invariant
+    natural_english: Run the route traversal.
+    runtime_state: "[1] system-route operation executing"
+    contour: sharply falling command
+    role_register_assignments: low=mover set; middle=operation; high=next position; sustained=route
+  - category: counterexample
+    semantic_graph: "(records:DAT:*[1]) -replicate_across→ (network:DAT:*[1]); spatial_route_unspecified"
+    literal_gloss: data replication; no Motion route asserted
+    natural_english: The database is replicating records; that is not automatically route traversal.
+    runtime_state: "[1] on DAT process; MOV:121 absent unless a route model is added"
+    contour: falling declaration
+    role_register_assignments: low=data source; middle=DAT process; high=replica target; no MOV route register
+- root: MOV:122
+  examples:
+  - category: conversation
+    semantic_graph: "(convoy:x) -actor→ (e:MOV:122[1]) -route→ (road:MOV:020[1])"
+    literal_gloss: convoy; pending route traversal; established road
+    natural_english: The convoy is queued to take the road.
+    runtime_state: "[1] route run valid but unbegun"
+    contour: falling declaration
+    role_register_assignments: low=convoy; middle=MOV:122; high=future route run; sustained=road
+  - category: physical_spatial
+    semantic_graph: "(carts:x) -actor→ (e:MOV:122[1]) -route→ (loop:MOV:020[1])"
+    literal_gloss: carts; pending traversal; warehouse loop
+    natural_english: The carts are staged for the warehouse loop.
+    runtime_state: "[1] staged route operation"
+    contour: fall-rise possibility
+    role_register_assignments: low=carts; middle=pending traversal; high=run onset; sustained=loop
+  - category: temporal_sequential
+    semantic_graph: "(batch:x) -actor→ (e:MOV:122[1]) -route→ (pipeline:MOV:020[1])"
+    literal_gloss: batch; specified unbegun traversal; ordered pipeline
+    natural_english: The batch is queued to enter the pipeline.
+    runtime_state: "[1] workflow traversal pending"
+    contour: falling declaration
+    role_register_assignments: low=batch; middle=MOV:122; high=future first stage; sustained=pipeline
+  - category: cross_family_compound
+    semantic_graph: "(community:LIF:021[1]) -actor→ (e:MOV:122[1]) -route→ (migration:MOV:020[1])"
+    literal_gloss: living community + pending route traversal + migration route
+    natural_english: The community is prepared to begin the migration route.
+    runtime_state: "[1] collective actor active; route operation pending"
+    contour: fall-rise possibility
+    role_register_assignments: low=LIF:021; middle=MOV:122; high=planned run; sustained=MOV:020
+  - category: executable_programming
+    semantic_graph: enqueue(e:MOV:122[1]); route(e)=MOV:020; started(e)=false
+    literal_gloss: enqueue system-route traversal; bind route; execution not started
+    natural_english: Queue the route run.
+    runtime_state: "[1] pending traversal accepted"
+    contour: sharply falling command
+    role_register_assignments: low=mover set; middle=queue; high=route binding; sustained=scheduler
+  - category: counterexample
+    semantic_graph: "(route:MOV:022[1]); operation unspecified"
+    literal_gloss: dormant route system; no pending traversal event
+    natural_english: The rail line is inactive, but no run is queued.
+    runtime_state: MOV:022[1]; MOV:122 absent
+    contour: falling declaration
+    role_register_assignments: sustained=dormant route entity; no actor/process/result registers
+english_motion_coverage:
+- english_concept: leave
+  mapping_type: one root in this block
+  expression: MOV:101 while under way; MOV:100 once completed
+  rationale: English tense/aspect selects the phase; the atomic center is source-relative displacement.
+- english_concept: depart
+  mapping_type: one root in this block
+  expression: MOV:101 or MOV:100
+  rationale: Same source-oriented triplet as leave.
+- english_concept: go
+  mapping_type: compound or context-selected root
+  expression: MOV:101 away from a source, MOV:111 toward a target, or MOV:121 along a system route
+  rationale: English go underspecifies orientation and must not be forced into one atom.
+- english_concept: approach
+  mapping_type: one root in this block
+  expression: MOV:111
+  rationale: Active target-relative displacement.
+- english_concept: arrive
+  mapping_type: one root in this block
+  expression: MOV:110
+  rationale: Completed target-relative displacement.
+- english_concept: follow
+  mapping_type: compound or unresolved vocabulary gap
+  expression: MOV:111 toward a moving target plus a future Motion relationship/constraint
+  rationale: Following includes sustained target relation and retargeting; active approach alone is not always enough.
+- english_concept: wait
+  mapping_type: contour/timing grammar or unresolved vocabulary gap
+  expression: A pending root may be present, but waiting itself is not MOV:102/112/122
+  rationale: Waiting is duration without required displacement.
+- english_concept: pause
+  mapping_type: runtime state plus timing grammar
+  expression: MOV:101[2], MOV:111[2], or MOV:121[2] when an active operation is suspended
+  rationale: Runtime [2] suspends/defers the active operation; lexical third-trit 2 would instead name a pre-onset process.
+- english_concept: stop
+  mapping_type: runtime state plus contour
+  expression: Active Motion root [0], often with sharply falling command contour
+  rationale: Stopping terminates a currently active operation; exact cessation semantics may need later grammar.
+- english_concept: continue
+  mapping_type: runtime state plus contour/timing grammar
+  expression: Active root [1] with continuation or repeated-loop contour where appropriate
+  rationale: Continuation is aspect over an active process, not a new atomic direction.
+- english_concept: cross
+  mapping_type: compound
+  expression: MOV:121 + MOV:020 with a boundary/route relation
+  rationale: Crossing requires a boundary/path model; the route traversal supplies the Motion process.
+- english_concept: return
+  mapping_type: compound
+  expression: MOV:111/MOV:110 with target=MOV:000; departure history may also be referenced
+  rationale: Return is targetward movement whose target is a prior origin.
+- english_concept: redirect
+  mapping_type: compound or operation sequence
+  expression: Bind a new MOV:010 target, then use MOV:112 or MOV:111; cancel/replace the earlier targetward operation
+  rationale: Redirection changes a target relation rather than introducing a new displacement phase.
+- english_concept: move together
+  mapping_type: compound
+  expression: LIF:021 collective actor + MOV:121, with coordination added later if needed
+  rationale: Collective actor supplies togetherness; MOV:121 supplies shared-route traversal.
+- english_concept: circulate
+  mapping_type: compound plus contour
+  expression: MOV:121 + MOV:020/MOV:021 + repeated-loop contour
+  rationale: Looping/cycle structure is not baked into the atomic definition.
+- english_concept: repeat a route
+  mapping_type: compound plus contour
+  expression: MOV:121 + MOV:020 + repeated-loop contour
+  rationale: Repetition modifies route traversal.
+- english_concept: schedule
+  mapping_type: different family or later grammar
+  expression: MOV:102/112/122 can be the scheduled operation, but scheduling belongs to future timing/LOG/DAT review
+  rationale: The Motion root must not absorb calendar or scheduler semantics.
+- english_concept: delay
+  mapping_type: contour/timing grammar or unresolved vocabulary gap
+  expression: Pending/suspended Motion root plus duration/cause
+  rationale: Delay is a relation between expected and actual onset/progress.
+- english_concept: transition
+  mapping_type: context-selected family
+  expression: MOV only when positions or ordered route states are explicitly modeled; STR/ORI/CRE for their own domains
+  rationale: Generic change is not automatically Motion.
+- english_concept: transport
+  mapping_type: compound
+  expression: MOV:111 or MOV:121 + MAT payload/carrier semantics
+  rationale: Transport combines displacement with a material participant relation.
+- english_concept: exit
+  mapping_type: compound
+  expression: MOV:101/MOV:100 + a STR boundary/container relation
+  rationale: Leaving a bounded region adds structural boundary semantics.
+- english_concept: enter
+  mapping_type: compound
+  expression: MOV:111/MOV:110 + a STR boundary/container relation
+  rationale: Target arrival alone does not encode containment.
+- english_concept: orbit
+  mapping_type: compound plus contour
+  expression: MOV:121 + route/cycle relation + repeated-loop contour
+  rationale: Orbital geometry and repetition are not atomic here.
+- english_concept: wander
+  mapping_type: unresolved vocabulary gap
+  expression: No forced mapping
+  rationale: Wandering lacks a stable source, target, or system-route axis and may require manner/trajectory vocabulary.
+- english_concept: reverse
+  mapping_type: compound or unresolved vocabulary gap
+  expression: Replace target/source bindings or apply a future direction relation
+  rationale: Reversal is a relation between successive motion vectors, not one phase root.

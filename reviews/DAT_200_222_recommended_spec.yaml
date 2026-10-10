@@ -1,0 +1,1843 @@
+---
+metadata:
+  title: DAT:200–222 recommended permanent semantic specification
+  status: approved_and_canonical_by_delegated_authority
+  architecture_version: '1.0'
+  semantic_center: 'information-process affordances: internal transformability, source-target
+    transferability, and systemic synchronizability'
+  triplets:
+    DAT:200–202: 'internal data transformability: persistent / operative / latent'
+    DAT:210–212: 'source-target data transferability: persistent / operative / latent'
+    DAT:220–222: 'systemic data synchronizability: persistent / operative / latent'
+  triplet_logic:
+    affordance_statuses: persistent identity may co-occur with operative or latent
+      status; operative and latent are mutually exclusive at one reference time
+    latent_member: affirms an existing nonoperative affordance without hiddenness,
+      probability, planning, scheduling, or futurity
+    runtime_uncertainty: runtime [2]/num qualifies a selected lexical claim and does
+      not select a sibling
+  generated_fields_changed: false
+  gate4_started: false
+  translator_started: false
+  roots_canonicalized:
+  - DAT:200
+  - DAT:201
+  - DAT:202
+  - DAT:210
+  - DAT:211
+  - DAT:212
+  - DAT:220
+  - DAT:221
+  - DAT:222
+  approval_record: migrations/DAT_200_222_semantic_approval.yaml
+roots:
+- fixed_generated_fields:
+    canonical_id: DAT:200
+    universal_slot: stable inward capacity
+    family_qualified_transliteration: li·mam
+    local_compact_root: mam
+    formal_carrier: li-nu-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: persistent internal data transformability
+  invariant_definition: A persistent capacity of represented information within one
+    reference entity to undergo bounded internal data transformation, independently
+    of whether that capacity is presently operative.
+  semantic_center: 'information-process affordances: internal transformability, source-target
+    transferability, and systemic synchronizability'
+  address_justification:
+    first_trit_2: Selects an information-process capacity or qualifying transfer relation
+      rather than an information entity, actual data process, physical carrier, result
+      value, or unrestricted modality.
+    second_trit: 'Selects inward/self scope: represented information within one entity
+      and its capacity for bounded internal transformation and no other Data-family
+      column.'
+    third_trit: Selects the persistent status of the same information-process affordance
+      while leaving runtime truth status, actual processing, quality, observer knowledge,
+      tense, probability, permission, and scheduling separate.
+  inclusion_boundary: Includes only the persistent internal data transformability
+    as a substrate-neutral information-process affordance at inward scope. The capacity
+    concerns represented information within one entity without requiring a distinct
+    external target. The datum, algorithm, medium, actual transformation, and result
+    remain separate. It is neutral about information-object identity, storage medium,
+    access authority, fidelity, integrity, provenance, bandwidth, resource sufficiency,
+    observer belief, scheduling, probability, timing, and cause.
+  excluded_meanings:
+  - The internal datum, target reference, or shared dataset as an entity, and its
+    persistent, manifest, or dormant status.
+  - The completed, active, or nonactualized transformation, target transfer, or synchronization
+    process and any quality or acknowledgment result.
+  - Specific encodings, schemas, algorithms, storage devices, physical carriers, channels,
+    credentials, bandwidth, or computational resources.
+  - Physical, biological, communicative, cognitive, logical, structural, restorative,
+    creative, or adverse capacity or transformation.
+  - Access permission, retrieval, reference resolution, integrity, provenance, consistency,
+    compatibility, ownership, authority, performance, or resource sufficiency.
+  - Observer knowledge, evidence, intention, plan, readiness, queue, schedule, future
+    time, unrestricted possibility, necessity, probability, or cause.
+  nearest_neighbors:
+  - DAT:201
+  - DAT:202
+  - DAT:210
+  - DAT:220
+  - DAT:000
+  - DAT:100
+  same_family_contrast: "`DAT:0xx` owns information entities and their persistent,
+    manifest, or dormant status. `DAT:1xx` owns the corresponding completed, active,
+    or nonactualized information processes. `DAT:2xx` owns only typed process enablement:
+    internal transformability, source-target transferability, and systemic synchronizability.
+    A datum does not entail transformability, an affordance does not entail an actual
+    process, and a completed process does not entail fidelity, persistence, or acknowledgment.
+    Persistent identity may co-occur with operative or latent status; operative and
+    latent are mutually exclusive for the same affordance at one reference time. Lexical
+    latency affirms an existing but nonoperative affordance; runtime `[2]/num` separately
+    marks uncertainty about any selected status."
+  cross_family_comparisons: &1
+    LIF: LIF owns living identities, biological capacities, agents, and social roles.
+      A living bearer may support data processing, but DAT:2xx does not encode life,
+      health, intelligence, office, or agency.
+    MOV: MOV owns position, routes, displacement, and motion affordances. Physical
+      carrier reachability may realize transferability, but information-process enablement
+      is not spatial reachability or a route.
+    MAT: MAT owns substance, energy, force, contact, material compatibility, and physical
+      capacities. Material media may realize a data affordance, but DAT:2xx does not
+      encode storage hardware, energy, mechanism, or physical coupling.
+    MIN: MIN owns attention, belief, expectation, confidence, understanding, and cognitive
+      capacity. Data transformability or transferability can hold without anyone knowing,
+      understanding, observing, or intending that it holds.
+    CON: CON owns communication, social linkage, participation, access authority,
+      and interaction channels. A channel may realize target data transfer, but participant
+      reachability, permission, and communicative uptake are not DAT:2xx affordances.
+    WRN: WRN owns hazards, faults, adverse processes, susceptibility, exposure, and
+      propagation pathways. Lack of a data affordance may be adverse, but DAT:2xx
+      does not assert corruption, danger, failure, warning, or vulnerability.
+    STR: STR owns arrangements, interfaces, dependencies, structural compatibility,
+      and transformation affordances. Structure may realize a data affordance, but
+      DAT:2xx adds only typed information-process enablement.
+    REP: REP owns restoration conditions, transformations, and affordances. Recovering
+      information may use DAT processes, but DAT:2xx is not recoverability, restoration
+      applicability, or a recovery pathway.
+    LOG: LOG owns formal criteria, evaluations, applicability, and joint evaluability.
+      A rule may qualify a data operation, but formal admissibility and data-process
+      enablement remain distinct.
+    CRE: CRE owns generation, construction, transformation, and productive capacities.
+      Creating information or an algorithm is separate from whether existing represented
+      information can be transformed, transferred, or synchronized.
+    ORI: ORI owns general possibility, necessity, probability, time, cause, and ontological
+      qualification. DAT:2xx asserts a typed existing information-process affordance,
+      never unrestricted possibility or futurity.
+  runtime_state_interpretation:
+    '0': Denies that this internal data transformability persists in the stated information
+      context; it does not select the operative or latent sibling and does not establish
+      a different access or quality relation.
+    '1': Affirms that this internal data transformability persists independently of
+      current operation, without asserting that a data process is occurring or that
+      any result quality holds.
+    2/num: Leaves unresolved whether this persistent internal data transformability
+      claim holds; runtime uncertainty does not change the lexical root into operative
+      or latent status.
+  lexical_runtime_distinction: Lexical third trit `0` permanently selects the persistent
+    status of this information-process affordance. Runtime `[2]/num` instead leaves
+    the already-selected status claim unresolved; it never changes affordance status.
+    Thus a latent root affirmed with `[1]` is a confirmed existing-but-nonoperative
+    affordance, while a persistent or operative root carrying `[2]/num` remains lexically
+    persistent or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: DAT:200[1](ENTITY=device,DATA=d)
+    literal_gloss: affirm persistent internal data transformability
+    natural_english: The internal data transformability for the device persists independently
+      of present operation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: The root asserts information-process enablement and lexical status,
+      not an actual process or result.
+  - category: physical_or_spatial
+    semantic_graph: MAT(BEARER=m)+DAT:200[1](ENTITY=device,DATA=d)
+    literal_gloss: material bearer plus persistent information-process affordance
+    natural_english: The machine has the stated data affordance while MAT separately
+      describes storage media, signal mechanics, or carrier motion.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Information affordance and physical implementation remain separately
+      typed.
+  - category: temporal_or_sequential
+    semantic_graph: DAT:200[1](ENTITY=device,DATA=d)+ORI(INTERVAL=w)
+    literal_gloss: persistent information-process affordance during interval w
+    natural_english: During interval w, the affordance has the stated lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: ORI supplies time and does not replace persistent, operative, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: DAT:001[1](DATA=d)+DAT:200[1](ENTITY=device,DATA=d)+CON(CHANNEL=h)
+    literal_gloss: manifest datum plus persistent information affordance plus channel
+    natural_english: The datum and affordance remain DAT while CON supplies any communication
+      channel or access authority.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Entity, affordance, and participant relation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: DAT:200[1](ENTITY=device,DATA=d)
+    literal_gloss: assert persistent information-process affordance
+    natural_english: A runtime tracks whether the selected data affordance has the
+      stated status without asserting process execution or outcome.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Capability, process, and result remain distinct.
+    pseudocode: assert(data_affordance.status == "DAT:200")
+  - category: counterexample
+    semantic_graph: DAT:101[1](ENTITY=device,DATA=d)
+    literal_gloss: active internal data transformation
+    natural_english: The information transformation is running now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: must_not_use_this_root
+    analysis: Use DAT:1xx for the actual process; DAT:200 names only its enabling
+      capacity or relation.
+  future_compound_examples:
+  - DAT:200 + DAT:0xx supplies the datum, target reference, or shared dataset without
+    reducing the affordance to its information entity.
+  - DAT:200 + DAT:1xx states that the corresponding data transformation, transfer,
+    or synchronization is actually completed, active, or nonactualized.
+  - DAT:200 + MAT/MOV/STR supplies media, physical paths, resources, and implementation
+    while preserving the DAT affordance boundary.
+  - DAT:200 + ORI/CON/LOG may express timing, modality, permission, authority, or
+    a qualifying criterion as separate meanings.
+  later_era_notes: Later eras may lexicalize readability, writability, storage durability,
+    lossless transformability, bandwidth, reachability, authorization, retrievability,
+    reference resolution, provenance, integrity, convergence guarantees, and resource-bounded
+    processing. Era Zero should preserve the substrate-neutral information-process-enablement
+    center and derive stronger technical claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: DAT:201
+    universal_slot: active inward capacity
+    family_qualified_transliteration: li·mak
+    local_compact_root: mak
+    formal_carrier: li-nu-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: operative internal data transformability
+  invariant_definition: A capacity of represented information within one reference
+    entity to undergo bounded internal data transformation that is presently operative.
+  semantic_center: 'information-process affordances: internal transformability, source-target
+    transferability, and systemic synchronizability'
+  address_justification:
+    first_trit_2: Selects an information-process capacity or qualifying transfer relation
+      rather than an information entity, actual data process, physical carrier, result
+      value, or unrestricted modality.
+    second_trit: 'Selects inward/self scope: represented information within one entity
+      and its capacity for bounded internal transformation and no other Data-family
+      column.'
+    third_trit: Selects the operative status of the same information-process affordance
+      while leaving runtime truth status, actual processing, quality, observer knowledge,
+      tense, probability, permission, and scheduling separate.
+  inclusion_boundary: Includes only the operative internal data transformability as
+    a substrate-neutral information-process affordance at inward scope. The capacity
+    concerns represented information within one entity without requiring a distinct
+    external target. The datum, algorithm, medium, actual transformation, and result
+    remain separate. It is neutral about information-object identity, storage medium,
+    access authority, fidelity, integrity, provenance, bandwidth, resource sufficiency,
+    observer belief, scheduling, probability, timing, and cause.
+  excluded_meanings:
+  - The internal datum, target reference, or shared dataset as an entity, and its
+    persistent, manifest, or dormant status.
+  - The completed, active, or nonactualized transformation, target transfer, or synchronization
+    process and any quality or acknowledgment result.
+  - Specific encodings, schemas, algorithms, storage devices, physical carriers, channels,
+    credentials, bandwidth, or computational resources.
+  - Physical, biological, communicative, cognitive, logical, structural, restorative,
+    creative, or adverse capacity or transformation.
+  - Access permission, retrieval, reference resolution, integrity, provenance, consistency,
+    compatibility, ownership, authority, performance, or resource sufficiency.
+  - Observer knowledge, evidence, intention, plan, readiness, queue, schedule, future
+    time, unrestricted possibility, necessity, probability, or cause.
+  nearest_neighbors:
+  - DAT:200
+  - DAT:202
+  - DAT:211
+  - DAT:221
+  - DAT:001
+  - DAT:101
+  same_family_contrast: "`DAT:0xx` owns information entities and their persistent,
+    manifest, or dormant status. `DAT:1xx` owns the corresponding completed, active,
+    or nonactualized information processes. `DAT:2xx` owns only typed process enablement:
+    internal transformability, source-target transferability, and systemic synchronizability.
+    A datum does not entail transformability, an affordance does not entail an actual
+    process, and a completed process does not entail fidelity, persistence, or acknowledgment.
+    Persistent identity may co-occur with operative or latent status; operative and
+    latent are mutually exclusive for the same affordance at one reference time. Lexical
+    latency affirms an existing but nonoperative affordance; runtime `[2]/num` separately
+    marks uncertainty about any selected status."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this internal data transformability is presently operative; it
+      does not deny persistent identity or affirm the latent sibling, impossibility,
+      or rule absence.
+    '1': Affirms that this internal data transformability is presently operative under
+      the applicable conditions, without asserting that the corresponding data process
+      is underway or completed.
+    2/num: Leaves current operation of this internal data transformability unresolved;
+      token uncertainty does not select the persistent or latent lexical sibling.
+  lexical_runtime_distinction: Lexical third trit `1` permanently selects the operative
+    status of this information-process affordance. Runtime `[2]/num` instead leaves
+    the already-selected status claim unresolved; it never changes affordance status.
+    Thus a latent root affirmed with `[1]` is a confirmed existing-but-nonoperative
+    affordance, while a persistent or operative root carrying `[2]/num` remains lexically
+    persistent or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: DAT:201[1](ENTITY=device,DATA=d)
+    literal_gloss: affirm operative internal data transformability
+    natural_english: The internal data transformability for the device is presently
+      operative.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: The root asserts information-process enablement and lexical status,
+      not an actual process or result.
+  - category: physical_or_spatial
+    semantic_graph: MAT(BEARER=m)+DAT:201[1](ENTITY=device,DATA=d)
+    literal_gloss: material bearer plus operative information-process affordance
+    natural_english: The machine has the stated data affordance while MAT separately
+      describes storage media, signal mechanics, or carrier motion.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Information affordance and physical implementation remain separately
+      typed.
+  - category: temporal_or_sequential
+    semantic_graph: DAT:201[1](ENTITY=device,DATA=d)+ORI(INTERVAL=w)
+    literal_gloss: operative information-process affordance during interval w
+    natural_english: During interval w, the affordance has the stated lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: ORI supplies time and does not replace persistent, operative, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: DAT:001[1](DATA=d)+DAT:201[1](ENTITY=device,DATA=d)+CON(CHANNEL=h)
+    literal_gloss: manifest datum plus operative information affordance plus channel
+    natural_english: The datum and affordance remain DAT while CON supplies any communication
+      channel or access authority.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Entity, affordance, and participant relation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: DAT:201[1](ENTITY=device,DATA=d)
+    literal_gloss: assert operative information-process affordance
+    natural_english: A runtime tracks whether the selected data affordance has the
+      stated status without asserting process execution or outcome.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Capability, process, and result remain distinct.
+    pseudocode: assert(data_affordance.status == "DAT:201")
+  - category: counterexample
+    semantic_graph: DAT:101[1](ENTITY=device,DATA=d)
+    literal_gloss: active internal data transformation
+    natural_english: The information transformation is running now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: must_not_use_this_root
+    analysis: Use DAT:1xx for the actual process; DAT:201 names only its enabling
+      capacity or relation.
+  future_compound_examples:
+  - DAT:201 + DAT:0xx supplies the datum, target reference, or shared dataset without
+    reducing the affordance to its information entity.
+  - DAT:201 + DAT:1xx states that the corresponding data transformation, transfer,
+    or synchronization is actually completed, active, or nonactualized.
+  - DAT:201 + MAT/MOV/STR supplies media, physical paths, resources, and implementation
+    while preserving the DAT affordance boundary.
+  - DAT:201 + ORI/CON/LOG may express timing, modality, permission, authority, or
+    a qualifying criterion as separate meanings.
+  later_era_notes: Later eras may lexicalize readability, writability, storage durability,
+    lossless transformability, bandwidth, reachability, authorization, retrievability,
+    reference resolution, provenance, integrity, convergence guarantees, and resource-bounded
+    processing. Era Zero should preserve the substrate-neutral information-process-enablement
+    center and derive stronger technical claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: DAT:202
+    universal_slot: dormant inward capacity
+    family_qualified_transliteration: li·man
+    local_compact_root: man
+    formal_carrier: li-nu-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: latent internal data transformability
+  invariant_definition: A capacity of represented information within one reference
+    entity to undergo bounded internal data transformation that exists without being
+    presently operative.
+  semantic_center: 'information-process affordances: internal transformability, source-target
+    transferability, and systemic synchronizability'
+  address_justification:
+    first_trit_2: Selects an information-process capacity or qualifying transfer relation
+      rather than an information entity, actual data process, physical carrier, result
+      value, or unrestricted modality.
+    second_trit: 'Selects inward/self scope: represented information within one entity
+      and its capacity for bounded internal transformation and no other Data-family
+      column.'
+    third_trit: Selects the latent status of the same information-process affordance
+      while leaving runtime truth status, actual processing, quality, observer knowledge,
+      tense, probability, permission, and scheduling separate.
+  inclusion_boundary: Includes only the latent internal data transformability as a
+    substrate-neutral information-process affordance at inward scope. The capacity
+    concerns represented information within one entity without requiring a distinct
+    external target. The datum, algorithm, medium, actual transformation, and result
+    remain separate. It is neutral about information-object identity, storage medium,
+    access authority, fidelity, integrity, provenance, bandwidth, resource sufficiency,
+    observer belief, scheduling, probability, timing, and cause.
+  excluded_meanings:
+  - The internal datum, target reference, or shared dataset as an entity, and its
+    persistent, manifest, or dormant status.
+  - The completed, active, or nonactualized transformation, target transfer, or synchronization
+    process and any quality or acknowledgment result.
+  - Specific encodings, schemas, algorithms, storage devices, physical carriers, channels,
+    credentials, bandwidth, or computational resources.
+  - Physical, biological, communicative, cognitive, logical, structural, restorative,
+    creative, or adverse capacity or transformation.
+  - Access permission, retrieval, reference resolution, integrity, provenance, consistency,
+    compatibility, ownership, authority, performance, or resource sufficiency.
+  - Observer knowledge, evidence, intention, plan, readiness, queue, schedule, future
+    time, unrestricted possibility, necessity, probability, or cause.
+  nearest_neighbors:
+  - DAT:200
+  - DAT:201
+  - DAT:212
+  - DAT:222
+  - DAT:002
+  - DAT:102
+  same_family_contrast: "`DAT:0xx` owns information entities and their persistent,
+    manifest, or dormant status. `DAT:1xx` owns the corresponding completed, active,
+    or nonactualized information processes. `DAT:2xx` owns only typed process enablement:
+    internal transformability, source-target transferability, and systemic synchronizability.
+    A datum does not entail transformability, an affordance does not entail an actual
+    process, and a completed process does not entail fidelity, persistence, or acknowledgment.
+    Persistent identity may co-occur with operative or latent status; operative and
+    latent are mutually exclusive for the same affordance at one reference time. Lexical
+    latency affirms an existing but nonoperative affordance; runtime `[2]/num` separately
+    marks uncertainty about any selected status."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this internal data transformability exists as the stated nonoperative
+      information affordance; it does not establish that an operative sibling holds
+      or that the process is impossible.
+    '1': Affirms this internal data transformability as existing but not presently
+      operative, without encoding hiddenness, uncertainty, probability, future activation,
+      missing resources, or permission.
+    2/num: Leaves unresolved even the assertion that this latent internal data transformability
+      exists; lexical latency remains distinct from runtime assertion-level uncertainty.
+  lexical_runtime_distinction: Lexical third trit `2` permanently selects the latent
+    status of this information-process affordance. Runtime `[2]/num` instead leaves
+    the already-selected status claim unresolved; it never changes affordance status.
+    Thus a latent root affirmed with `[1]` is a confirmed existing-but-nonoperative
+    affordance, while a persistent or operative root carrying `[2]/num` remains lexically
+    persistent or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: DAT:202[1](ENTITY=device,DATA=d)
+    literal_gloss: affirm latent internal data transformability
+    natural_english: The internal data transformability for the device exists but
+      is not presently operative.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: The root asserts information-process enablement and lexical status,
+      not an actual process or result.
+  - category: physical_or_spatial
+    semantic_graph: MAT(BEARER=m)+DAT:202[1](ENTITY=device,DATA=d)
+    literal_gloss: material bearer plus latent information-process affordance
+    natural_english: The machine has the stated data affordance while MAT separately
+      describes storage media, signal mechanics, or carrier motion.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Information affordance and physical implementation remain separately
+      typed.
+  - category: temporal_or_sequential
+    semantic_graph: DAT:202[1](ENTITY=device,DATA=d)+ORI(INTERVAL=w)
+    literal_gloss: latent information-process affordance during interval w
+    natural_english: During interval w, the affordance has the stated lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: ORI supplies time and does not replace persistent, operative, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: DAT:001[1](DATA=d)+DAT:202[1](ENTITY=device,DATA=d)+CON(CHANNEL=h)
+    literal_gloss: manifest datum plus latent information affordance plus channel
+    natural_english: The datum and affordance remain DAT while CON supplies any communication
+      channel or access authority.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Entity, affordance, and participant relation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: DAT:202[1](ENTITY=device,DATA=d)
+    literal_gloss: assert latent information-process affordance
+    natural_english: A runtime tracks whether the selected data affordance has the
+      stated status without asserting process execution or outcome.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Capability, process, and result remain distinct.
+    pseudocode: assert(data_affordance.status == "DAT:202")
+  - category: counterexample
+    semantic_graph: DAT:101[1](ENTITY=device,DATA=d)
+    literal_gloss: active internal data transformation
+    natural_english: The information transformation is running now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: must_not_use_this_root
+    analysis: Use DAT:1xx for the actual process; DAT:202 names only its enabling
+      capacity or relation.
+  future_compound_examples:
+  - DAT:202 + DAT:0xx supplies the datum, target reference, or shared dataset without
+    reducing the affordance to its information entity.
+  - DAT:202 + DAT:1xx states that the corresponding data transformation, transfer,
+    or synchronization is actually completed, active, or nonactualized.
+  - DAT:202 + MAT/MOV/STR supplies media, physical paths, resources, and implementation
+    while preserving the DAT affordance boundary.
+  - DAT:202 + ORI/CON/LOG may express timing, modality, permission, authority, or
+    a qualifying criterion as separate meanings.
+  later_era_notes: Later eras may lexicalize readability, writability, storage durability,
+    lossless transformability, bandwidth, reachability, authorization, retrievability,
+    reference resolution, provenance, integrity, convergence guarantees, and resource-bounded
+    processing. Era Zero should preserve the substrate-neutral information-process-enablement
+    center and derive stronger technical claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: DAT:210
+    universal_slot: stable outward relationship
+    family_qualified_transliteration: li·mom
+    local_compact_root: mom
+    formal_carrier: li-nu-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: persistent source-target data transferability
+  invariant_definition: A persistent information-transfer relation between one source
+    context and one distinct reference target that can enable bounded target data
+    transfer, independently of whether that relation is presently operative.
+  semantic_center: 'information-process affordances: internal transformability, source-target
+    transferability, and systemic synchronizability'
+  address_justification:
+    first_trit_2: Selects an information-process capacity or qualifying transfer relation
+      rather than an information entity, actual data process, physical carrier, result
+      value, or unrestricted modality.
+    second_trit: 'Selects outward/target scope: one source context and one distinct
+      target joined by an information-transfer relation and no other Data-family column.'
+    third_trit: Selects the persistent status of the same information-process affordance
+      while leaving runtime truth status, actual processing, quality, observer knowledge,
+      tense, probability, permission, and scheduling separate.
+  inclusion_boundary: Includes only the persistent source-target data transferability
+    as a substrate-neutral information-process affordance at outward scope. The relation
+    preserves one source context and one distinct target. Physical path, channel,
+    permission, actual transfer, acknowledgment, and later persistence remain separate.
+    It is neutral about information-object identity, storage medium, access authority,
+    fidelity, integrity, provenance, bandwidth, resource sufficiency, observer belief,
+    scheduling, probability, timing, and cause.
+  excluded_meanings:
+  - The internal datum, target reference, or shared dataset as an entity, and its
+    persistent, manifest, or dormant status.
+  - The completed, active, or nonactualized transformation, target transfer, or synchronization
+    process and any quality or acknowledgment result.
+  - Specific encodings, schemas, algorithms, storage devices, physical carriers, channels,
+    credentials, bandwidth, or computational resources.
+  - Physical, biological, communicative, cognitive, logical, structural, restorative,
+    creative, or adverse capacity or transformation.
+  - Access permission, retrieval, reference resolution, integrity, provenance, consistency,
+    compatibility, ownership, authority, performance, or resource sufficiency.
+  - Observer knowledge, evidence, intention, plan, readiness, queue, schedule, future
+    time, unrestricted possibility, necessity, probability, or cause.
+  nearest_neighbors:
+  - DAT:211
+  - DAT:212
+  - DAT:200
+  - DAT:220
+  - DAT:010
+  - DAT:110
+  same_family_contrast: "`DAT:0xx` owns information entities and their persistent,
+    manifest, or dormant status. `DAT:1xx` owns the corresponding completed, active,
+    or nonactualized information processes. `DAT:2xx` owns only typed process enablement:
+    internal transformability, source-target transferability, and systemic synchronizability.
+    A datum does not entail transformability, an affordance does not entail an actual
+    process, and a completed process does not entail fidelity, persistence, or acknowledgment.
+    Persistent identity may co-occur with operative or latent status; operative and
+    latent are mutually exclusive for the same affordance at one reference time. Lexical
+    latency affirms an existing but nonoperative affordance; runtime `[2]/num` separately
+    marks uncertainty about any selected status."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this source-target data transferability persists in the stated
+      information context; it does not select the operative or latent sibling and
+      does not establish a different access or quality relation.
+    '1': Affirms that this source-target data transferability persists independently
+      of current operation, without asserting that a data process is occurring or
+      that any result quality holds.
+    2/num: Leaves unresolved whether this persistent source-target data transferability
+      claim holds; runtime uncertainty does not change the lexical root into operative
+      or latent status.
+  lexical_runtime_distinction: Lexical third trit `0` permanently selects the persistent
+    status of this information-process affordance. Runtime `[2]/num` instead leaves
+    the already-selected status claim unresolved; it never changes affordance status.
+    Thus a latent root affirmed with `[1]` is a confirmed existing-but-nonoperative
+    affordance, while a persistent or operative root carrying `[2]/num` remains lexically
+    persistent or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: DAT:210[1](SOURCE=s,TARGET=recipient,DATA=d)
+    literal_gloss: affirm persistent source-target data transferability
+    natural_english: The source-target data transferability for the recipient persists
+      independently of present operation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: The root asserts information-process enablement and lexical status,
+      not an actual process or result.
+  - category: physical_or_spatial
+    semantic_graph: MAT(BEARER=m)+DAT:210[1](SOURCE=s,TARGET=recipient,DATA=d)
+    literal_gloss: material bearer plus persistent information-process affordance
+    natural_english: The machine has the stated data affordance while MAT separately
+      describes storage media, signal mechanics, or carrier motion.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Information affordance and physical implementation remain separately
+      typed.
+  - category: temporal_or_sequential
+    semantic_graph: DAT:210[1](SOURCE=s,TARGET=recipient,DATA=d)+ORI(INTERVAL=w)
+    literal_gloss: persistent information-process affordance during interval w
+    natural_english: During interval w, the affordance has the stated lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: ORI supplies time and does not replace persistent, operative, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: DAT:001[1](DATA=d)+DAT:210[1](SOURCE=s,TARGET=recipient,DATA=d)+CON(CHANNEL=h)
+    literal_gloss: manifest datum plus persistent information affordance plus channel
+    natural_english: The datum and affordance remain DAT while CON supplies any communication
+      channel or access authority.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Entity, affordance, and participant relation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: DAT:210[1](SOURCE=s,TARGET=recipient,DATA=d)
+    literal_gloss: assert persistent information-process affordance
+    natural_english: A runtime tracks whether the selected data affordance has the
+      stated status without asserting process execution or outcome.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Capability, process, and result remain distinct.
+    pseudocode: assert(data_affordance.status == "DAT:210")
+  - category: counterexample
+    semantic_graph: DAT:101[1](ENTITY=recipient,DATA=d)
+    literal_gloss: active internal data transformation
+    natural_english: The information transformation is running now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: must_not_use_this_root
+    analysis: Use DAT:1xx for the actual process; DAT:210 names only its enabling
+      capacity or relation.
+  future_compound_examples:
+  - DAT:210 + DAT:0xx supplies the datum, target reference, or shared dataset without
+    reducing the affordance to its information entity.
+  - DAT:210 + DAT:1xx states that the corresponding data transformation, transfer,
+    or synchronization is actually completed, active, or nonactualized.
+  - DAT:210 + MAT/MOV/STR supplies media, physical paths, resources, and implementation
+    while preserving the DAT affordance boundary.
+  - DAT:210 + ORI/CON/LOG may express timing, modality, permission, authority, or
+    a qualifying criterion as separate meanings.
+  later_era_notes: Later eras may lexicalize readability, writability, storage durability,
+    lossless transformability, bandwidth, reachability, authorization, retrievability,
+    reference resolution, provenance, integrity, convergence guarantees, and resource-bounded
+    processing. Era Zero should preserve the substrate-neutral information-process-enablement
+    center and derive stronger technical claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: DAT:211
+    universal_slot: active outward relationship
+    family_qualified_transliteration: li·mok
+    local_compact_root: mok
+    formal_carrier: li-nu-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: operative source-target data transferability
+  invariant_definition: An information-transfer relation between one source context
+    and one distinct reference target that presently enables bounded target data transfer.
+  semantic_center: 'information-process affordances: internal transformability, source-target
+    transferability, and systemic synchronizability'
+  address_justification:
+    first_trit_2: Selects an information-process capacity or qualifying transfer relation
+      rather than an information entity, actual data process, physical carrier, result
+      value, or unrestricted modality.
+    second_trit: 'Selects outward/target scope: one source context and one distinct
+      target joined by an information-transfer relation and no other Data-family column.'
+    third_trit: Selects the operative status of the same information-process affordance
+      while leaving runtime truth status, actual processing, quality, observer knowledge,
+      tense, probability, permission, and scheduling separate.
+  inclusion_boundary: Includes only the operative source-target data transferability
+    as a substrate-neutral information-process affordance at outward scope. The relation
+    preserves one source context and one distinct target. Physical path, channel,
+    permission, actual transfer, acknowledgment, and later persistence remain separate.
+    It is neutral about information-object identity, storage medium, access authority,
+    fidelity, integrity, provenance, bandwidth, resource sufficiency, observer belief,
+    scheduling, probability, timing, and cause.
+  excluded_meanings:
+  - The internal datum, target reference, or shared dataset as an entity, and its
+    persistent, manifest, or dormant status.
+  - The completed, active, or nonactualized transformation, target transfer, or synchronization
+    process and any quality or acknowledgment result.
+  - Specific encodings, schemas, algorithms, storage devices, physical carriers, channels,
+    credentials, bandwidth, or computational resources.
+  - Physical, biological, communicative, cognitive, logical, structural, restorative,
+    creative, or adverse capacity or transformation.
+  - Access permission, retrieval, reference resolution, integrity, provenance, consistency,
+    compatibility, ownership, authority, performance, or resource sufficiency.
+  - Observer knowledge, evidence, intention, plan, readiness, queue, schedule, future
+    time, unrestricted possibility, necessity, probability, or cause.
+  nearest_neighbors:
+  - DAT:210
+  - DAT:212
+  - DAT:201
+  - DAT:221
+  - DAT:011
+  - DAT:111
+  same_family_contrast: "`DAT:0xx` owns information entities and their persistent,
+    manifest, or dormant status. `DAT:1xx` owns the corresponding completed, active,
+    or nonactualized information processes. `DAT:2xx` owns only typed process enablement:
+    internal transformability, source-target transferability, and systemic synchronizability.
+    A datum does not entail transformability, an affordance does not entail an actual
+    process, and a completed process does not entail fidelity, persistence, or acknowledgment.
+    Persistent identity may co-occur with operative or latent status; operative and
+    latent are mutually exclusive for the same affordance at one reference time. Lexical
+    latency affirms an existing but nonoperative affordance; runtime `[2]/num` separately
+    marks uncertainty about any selected status."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this source-target data transferability is presently operative;
+      it does not deny persistent identity or affirm the latent sibling, impossibility,
+      or rule absence.
+    '1': Affirms that this source-target data transferability is presently operative
+      under the applicable conditions, without asserting that the corresponding data
+      process is underway or completed.
+    2/num: Leaves current operation of this source-target data transferability unresolved;
+      token uncertainty does not select the persistent or latent lexical sibling.
+  lexical_runtime_distinction: Lexical third trit `1` permanently selects the operative
+    status of this information-process affordance. Runtime `[2]/num` instead leaves
+    the already-selected status claim unresolved; it never changes affordance status.
+    Thus a latent root affirmed with `[1]` is a confirmed existing-but-nonoperative
+    affordance, while a persistent or operative root carrying `[2]/num` remains lexically
+    persistent or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: DAT:211[1](SOURCE=s,TARGET=recipient,DATA=d)
+    literal_gloss: affirm operative source-target data transferability
+    natural_english: The source-target data transferability for the recipient is presently
+      operative.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: The root asserts information-process enablement and lexical status,
+      not an actual process or result.
+  - category: physical_or_spatial
+    semantic_graph: MAT(BEARER=m)+DAT:211[1](SOURCE=s,TARGET=recipient,DATA=d)
+    literal_gloss: material bearer plus operative information-process affordance
+    natural_english: The machine has the stated data affordance while MAT separately
+      describes storage media, signal mechanics, or carrier motion.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Information affordance and physical implementation remain separately
+      typed.
+  - category: temporal_or_sequential
+    semantic_graph: DAT:211[1](SOURCE=s,TARGET=recipient,DATA=d)+ORI(INTERVAL=w)
+    literal_gloss: operative information-process affordance during interval w
+    natural_english: During interval w, the affordance has the stated lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: ORI supplies time and does not replace persistent, operative, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: DAT:001[1](DATA=d)+DAT:211[1](SOURCE=s,TARGET=recipient,DATA=d)+CON(CHANNEL=h)
+    literal_gloss: manifest datum plus operative information affordance plus channel
+    natural_english: The datum and affordance remain DAT while CON supplies any communication
+      channel or access authority.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Entity, affordance, and participant relation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: DAT:211[1](SOURCE=s,TARGET=recipient,DATA=d)
+    literal_gloss: assert operative information-process affordance
+    natural_english: A runtime tracks whether the selected data affordance has the
+      stated status without asserting process execution or outcome.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Capability, process, and result remain distinct.
+    pseudocode: assert(data_affordance.status == "DAT:211")
+  - category: counterexample
+    semantic_graph: DAT:101[1](ENTITY=recipient,DATA=d)
+    literal_gloss: active internal data transformation
+    natural_english: The information transformation is running now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: must_not_use_this_root
+    analysis: Use DAT:1xx for the actual process; DAT:211 names only its enabling
+      capacity or relation.
+  future_compound_examples:
+  - DAT:211 + DAT:0xx supplies the datum, target reference, or shared dataset without
+    reducing the affordance to its information entity.
+  - DAT:211 + DAT:1xx states that the corresponding data transformation, transfer,
+    or synchronization is actually completed, active, or nonactualized.
+  - DAT:211 + MAT/MOV/STR supplies media, physical paths, resources, and implementation
+    while preserving the DAT affordance boundary.
+  - DAT:211 + ORI/CON/LOG may express timing, modality, permission, authority, or
+    a qualifying criterion as separate meanings.
+  later_era_notes: Later eras may lexicalize readability, writability, storage durability,
+    lossless transformability, bandwidth, reachability, authorization, retrievability,
+    reference resolution, provenance, integrity, convergence guarantees, and resource-bounded
+    processing. Era Zero should preserve the substrate-neutral information-process-enablement
+    center and derive stronger technical claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: DAT:212
+    universal_slot: unresolved outward relationship
+    family_qualified_transliteration: li·mon
+    local_compact_root: mon
+    formal_carrier: li-nu-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: latent source-target data transferability
+  invariant_definition: An information-transfer relation between one source context
+    and one distinct reference target that exists without presently enabling bounded
+    target data transfer.
+  semantic_center: 'information-process affordances: internal transformability, source-target
+    transferability, and systemic synchronizability'
+  address_justification:
+    first_trit_2: Selects an information-process capacity or qualifying transfer relation
+      rather than an information entity, actual data process, physical carrier, result
+      value, or unrestricted modality.
+    second_trit: 'Selects outward/target scope: one source context and one distinct
+      target joined by an information-transfer relation and no other Data-family column.'
+    third_trit: Selects the latent status of the same information-process affordance
+      while leaving runtime truth status, actual processing, quality, observer knowledge,
+      tense, probability, permission, and scheduling separate.
+  inclusion_boundary: Includes only the latent source-target data transferability
+    as a substrate-neutral information-process affordance at outward scope. The relation
+    preserves one source context and one distinct target. Physical path, channel,
+    permission, actual transfer, acknowledgment, and later persistence remain separate.
+    It is neutral about information-object identity, storage medium, access authority,
+    fidelity, integrity, provenance, bandwidth, resource sufficiency, observer belief,
+    scheduling, probability, timing, and cause.
+  excluded_meanings:
+  - The internal datum, target reference, or shared dataset as an entity, and its
+    persistent, manifest, or dormant status.
+  - The completed, active, or nonactualized transformation, target transfer, or synchronization
+    process and any quality or acknowledgment result.
+  - Specific encodings, schemas, algorithms, storage devices, physical carriers, channels,
+    credentials, bandwidth, or computational resources.
+  - Physical, biological, communicative, cognitive, logical, structural, restorative,
+    creative, or adverse capacity or transformation.
+  - Access permission, retrieval, reference resolution, integrity, provenance, consistency,
+    compatibility, ownership, authority, performance, or resource sufficiency.
+  - Observer knowledge, evidence, intention, plan, readiness, queue, schedule, future
+    time, unrestricted possibility, necessity, probability, or cause.
+  nearest_neighbors:
+  - DAT:210
+  - DAT:211
+  - DAT:202
+  - DAT:222
+  - DAT:012
+  - DAT:112
+  same_family_contrast: "`DAT:0xx` owns information entities and their persistent,
+    manifest, or dormant status. `DAT:1xx` owns the corresponding completed, active,
+    or nonactualized information processes. `DAT:2xx` owns only typed process enablement:
+    internal transformability, source-target transferability, and systemic synchronizability.
+    A datum does not entail transformability, an affordance does not entail an actual
+    process, and a completed process does not entail fidelity, persistence, or acknowledgment.
+    Persistent identity may co-occur with operative or latent status; operative and
+    latent are mutually exclusive for the same affordance at one reference time. Lexical
+    latency affirms an existing but nonoperative affordance; runtime `[2]/num` separately
+    marks uncertainty about any selected status."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this source-target data transferability exists as the stated
+      nonoperative information affordance; it does not establish that an operative
+      sibling holds or that the process is impossible.
+    '1': Affirms this source-target data transferability as existing but not presently
+      operative, without encoding hiddenness, uncertainty, probability, future activation,
+      missing resources, or permission.
+    2/num: Leaves unresolved even the assertion that this latent source-target data
+      transferability exists; lexical latency remains distinct from runtime assertion-level
+      uncertainty.
+  lexical_runtime_distinction: Lexical third trit `2` permanently selects the latent
+    status of this information-process affordance. Runtime `[2]/num` instead leaves
+    the already-selected status claim unresolved; it never changes affordance status.
+    Thus a latent root affirmed with `[1]` is a confirmed existing-but-nonoperative
+    affordance, while a persistent or operative root carrying `[2]/num` remains lexically
+    persistent or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: DAT:212[1](SOURCE=s,TARGET=recipient,DATA=d)
+    literal_gloss: affirm latent source-target data transferability
+    natural_english: The source-target data transferability for the recipient exists
+      but is not presently operative.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: The root asserts information-process enablement and lexical status,
+      not an actual process or result.
+  - category: physical_or_spatial
+    semantic_graph: MAT(BEARER=m)+DAT:212[1](SOURCE=s,TARGET=recipient,DATA=d)
+    literal_gloss: material bearer plus latent information-process affordance
+    natural_english: The machine has the stated data affordance while MAT separately
+      describes storage media, signal mechanics, or carrier motion.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Information affordance and physical implementation remain separately
+      typed.
+  - category: temporal_or_sequential
+    semantic_graph: DAT:212[1](SOURCE=s,TARGET=recipient,DATA=d)+ORI(INTERVAL=w)
+    literal_gloss: latent information-process affordance during interval w
+    natural_english: During interval w, the affordance has the stated lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: ORI supplies time and does not replace persistent, operative, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: DAT:001[1](DATA=d)+DAT:212[1](SOURCE=s,TARGET=recipient,DATA=d)+CON(CHANNEL=h)
+    literal_gloss: manifest datum plus latent information affordance plus channel
+    natural_english: The datum and affordance remain DAT while CON supplies any communication
+      channel or access authority.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Entity, affordance, and participant relation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: DAT:212[1](SOURCE=s,TARGET=recipient,DATA=d)
+    literal_gloss: assert latent information-process affordance
+    natural_english: A runtime tracks whether the selected data affordance has the
+      stated status without asserting process execution or outcome.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Capability, process, and result remain distinct.
+    pseudocode: assert(data_affordance.status == "DAT:212")
+  - category: counterexample
+    semantic_graph: DAT:101[1](ENTITY=recipient,DATA=d)
+    literal_gloss: active internal data transformation
+    natural_english: The information transformation is running now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: must_not_use_this_root
+    analysis: Use DAT:1xx for the actual process; DAT:212 names only its enabling
+      capacity or relation.
+  future_compound_examples:
+  - DAT:212 + DAT:0xx supplies the datum, target reference, or shared dataset without
+    reducing the affordance to its information entity.
+  - DAT:212 + DAT:1xx states that the corresponding data transformation, transfer,
+    or synchronization is actually completed, active, or nonactualized.
+  - DAT:212 + MAT/MOV/STR supplies media, physical paths, resources, and implementation
+    while preserving the DAT affordance boundary.
+  - DAT:212 + ORI/CON/LOG may express timing, modality, permission, authority, or
+    a qualifying criterion as separate meanings.
+  later_era_notes: Later eras may lexicalize readability, writability, storage durability,
+    lossless transformability, bandwidth, reachability, authorization, retrievability,
+    reference resolution, provenance, integrity, convergence guarantees, and resource-bounded
+    processing. Era Zero should preserve the substrate-neutral information-process-enablement
+    center and derive stronger technical claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: DAT:220
+    universal_slot: stable systemic relationship
+    family_qualified_transliteration: li·mim
+    local_compact_root: mim
+    formal_carrier: li-nu-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: persistent systemic data synchronizability
+  invariant_definition: A persistent capacity of information states across multiple
+    participants in one shared data domain to undergo coordinated alignment under
+    one synchronization criterion, independently of whether that capacity is presently
+    operative.
+  semantic_center: 'information-process affordances: internal transformability, source-target
+    transferability, and systemic synchronizability'
+  address_justification:
+    first_trit_2: Selects an information-process capacity or qualifying transfer relation
+      rather than an information entity, actual data process, physical carrier, result
+      value, or unrestricted modality.
+    second_trit: 'Selects systemic/collective scope: multiple participants whose information
+      states can undergo coordinated alignment under one synchronization criterion
+      and no other Data-family column.'
+    third_trit: Selects the persistent status of the same information-process affordance
+      while leaving runtime truth status, actual processing, quality, observer knowledge,
+      tense, probability, permission, and scheduling separate.
+  inclusion_boundary: Includes only the persistent systemic data synchronizability
+    as a substrate-neutral information-process affordance at systemic scope. The capacity
+    requires multiple participants to be jointly synchronizable under one shared criterion.
+    Several independently transformable or transferable participants do not constitute
+    one systemic affordance. It is neutral about information-object identity, storage
+    medium, access authority, fidelity, integrity, provenance, bandwidth, resource
+    sufficiency, observer belief, scheduling, probability, timing, and cause.
+  excluded_meanings:
+  - The internal datum, target reference, or shared dataset as an entity, and its
+    persistent, manifest, or dormant status.
+  - The completed, active, or nonactualized transformation, target transfer, or synchronization
+    process and any quality or acknowledgment result.
+  - Specific encodings, schemas, algorithms, storage devices, physical carriers, channels,
+    credentials, bandwidth, or computational resources.
+  - Physical, biological, communicative, cognitive, logical, structural, restorative,
+    creative, or adverse capacity or transformation.
+  - Access permission, retrieval, reference resolution, integrity, provenance, consistency,
+    compatibility, ownership, authority, performance, or resource sufficiency.
+  - Observer knowledge, evidence, intention, plan, readiness, queue, schedule, future
+    time, unrestricted possibility, necessity, probability, or cause.
+  nearest_neighbors:
+  - DAT:221
+  - DAT:222
+  - DAT:200
+  - DAT:210
+  - DAT:020
+  - DAT:120
+  same_family_contrast: "`DAT:0xx` owns information entities and their persistent,
+    manifest, or dormant status. `DAT:1xx` owns the corresponding completed, active,
+    or nonactualized information processes. `DAT:2xx` owns only typed process enablement:
+    internal transformability, source-target transferability, and systemic synchronizability.
+    A datum does not entail transformability, an affordance does not entail an actual
+    process, and a completed process does not entail fidelity, persistence, or acknowledgment.
+    Persistent identity may co-occur with operative or latent status; operative and
+    latent are mutually exclusive for the same affordance at one reference time. Lexical
+    latency affirms an existing but nonoperative affordance; runtime `[2]/num` separately
+    marks uncertainty about any selected status."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this systemic data synchronizability persists in the stated information
+      context; it does not select the operative or latent sibling and does not establish
+      a different access or quality relation.
+    '1': Affirms that this systemic data synchronizability persists independently
+      of current operation, without asserting that a data process is occurring or
+      that any result quality holds.
+    2/num: Leaves unresolved whether this persistent systemic data synchronizability
+      claim holds; runtime uncertainty does not change the lexical root into operative
+      or latent status.
+  lexical_runtime_distinction: Lexical third trit `0` permanently selects the persistent
+    status of this information-process affordance. Runtime `[2]/num` instead leaves
+    the already-selected status claim unresolved; it never changes affordance status.
+    Thus a latent root affirmed with `[1]` is a confirmed existing-but-nonoperative
+    affordance, while a persistent or operative root carrying `[2]/num` remains lexically
+    persistent or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: DAT:220[1](DOMAIN=network,PARTICIPANTS={a,b,c},CRITERION=c)
+    literal_gloss: affirm persistent systemic data synchronizability
+    natural_english: The systemic data synchronizability for the network persists
+      independently of present operation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: The root asserts information-process enablement and lexical status,
+      not an actual process or result.
+  - category: physical_or_spatial
+    semantic_graph: MAT(BEARER=m)+DAT:220[1](DOMAIN=network,PARTICIPANTS={a,b,c},CRITERION=c)
+    literal_gloss: material bearer plus persistent information-process affordance
+    natural_english: The machine has the stated data affordance while MAT separately
+      describes storage media, signal mechanics, or carrier motion.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Information affordance and physical implementation remain separately
+      typed.
+  - category: temporal_or_sequential
+    semantic_graph: DAT:220[1](DOMAIN=network,PARTICIPANTS={a,b,c},CRITERION=c)+ORI(INTERVAL=w)
+    literal_gloss: persistent information-process affordance during interval w
+    natural_english: During interval w, the affordance has the stated lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: ORI supplies time and does not replace persistent, operative, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: DAT:001[1](DATA=d)+DAT:220[1](DOMAIN=network,PARTICIPANTS={a,b,c},CRITERION=c)+CON(CHANNEL=h)
+    literal_gloss: manifest datum plus persistent information affordance plus channel
+    natural_english: The datum and affordance remain DAT while CON supplies any communication
+      channel or access authority.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Entity, affordance, and participant relation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: DAT:220[1](DOMAIN=network,PARTICIPANTS={a,b,c},CRITERION=c)
+    literal_gloss: assert persistent information-process affordance
+    natural_english: A runtime tracks whether the selected data affordance has the
+      stated status without asserting process execution or outcome.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Capability, process, and result remain distinct.
+    pseudocode: assert(data_affordance.status == "DAT:220")
+  - category: counterexample
+    semantic_graph: DAT:101[1](ENTITY=network,DATA=d)
+    literal_gloss: active internal data transformation
+    natural_english: The information transformation is running now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: must_not_use_this_root
+    analysis: Use DAT:1xx for the actual process; DAT:220 names only its enabling
+      capacity or relation.
+  future_compound_examples:
+  - DAT:220 + DAT:0xx supplies the datum, target reference, or shared dataset without
+    reducing the affordance to its information entity.
+  - DAT:220 + DAT:1xx states that the corresponding data transformation, transfer,
+    or synchronization is actually completed, active, or nonactualized.
+  - DAT:220 + MAT/MOV/STR supplies media, physical paths, resources, and implementation
+    while preserving the DAT affordance boundary.
+  - DAT:220 + ORI/CON/LOG may express timing, modality, permission, authority, or
+    a qualifying criterion as separate meanings.
+  later_era_notes: Later eras may lexicalize readability, writability, storage durability,
+    lossless transformability, bandwidth, reachability, authorization, retrievability,
+    reference resolution, provenance, integrity, convergence guarantees, and resource-bounded
+    processing. Era Zero should preserve the substrate-neutral information-process-enablement
+    center and derive stronger technical claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: DAT:221
+    universal_slot: active systemic relationship
+    family_qualified_transliteration: li·mik
+    local_compact_root: mik
+    formal_carrier: li-nu-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: operative systemic data synchronizability
+  invariant_definition: A capacity of information states across multiple participants
+    in one shared data domain to undergo coordinated alignment under one synchronization
+    criterion that is presently operative.
+  semantic_center: 'information-process affordances: internal transformability, source-target
+    transferability, and systemic synchronizability'
+  address_justification:
+    first_trit_2: Selects an information-process capacity or qualifying transfer relation
+      rather than an information entity, actual data process, physical carrier, result
+      value, or unrestricted modality.
+    second_trit: 'Selects systemic/collective scope: multiple participants whose information
+      states can undergo coordinated alignment under one synchronization criterion
+      and no other Data-family column.'
+    third_trit: Selects the operative status of the same information-process affordance
+      while leaving runtime truth status, actual processing, quality, observer knowledge,
+      tense, probability, permission, and scheduling separate.
+  inclusion_boundary: Includes only the operative systemic data synchronizability
+    as a substrate-neutral information-process affordance at systemic scope. The capacity
+    requires multiple participants to be jointly synchronizable under one shared criterion.
+    Several independently transformable or transferable participants do not constitute
+    one systemic affordance. It is neutral about information-object identity, storage
+    medium, access authority, fidelity, integrity, provenance, bandwidth, resource
+    sufficiency, observer belief, scheduling, probability, timing, and cause.
+  excluded_meanings:
+  - The internal datum, target reference, or shared dataset as an entity, and its
+    persistent, manifest, or dormant status.
+  - The completed, active, or nonactualized transformation, target transfer, or synchronization
+    process and any quality or acknowledgment result.
+  - Specific encodings, schemas, algorithms, storage devices, physical carriers, channels,
+    credentials, bandwidth, or computational resources.
+  - Physical, biological, communicative, cognitive, logical, structural, restorative,
+    creative, or adverse capacity or transformation.
+  - Access permission, retrieval, reference resolution, integrity, provenance, consistency,
+    compatibility, ownership, authority, performance, or resource sufficiency.
+  - Observer knowledge, evidence, intention, plan, readiness, queue, schedule, future
+    time, unrestricted possibility, necessity, probability, or cause.
+  nearest_neighbors:
+  - DAT:220
+  - DAT:222
+  - DAT:201
+  - DAT:211
+  - DAT:021
+  - DAT:121
+  same_family_contrast: "`DAT:0xx` owns information entities and their persistent,
+    manifest, or dormant status. `DAT:1xx` owns the corresponding completed, active,
+    or nonactualized information processes. `DAT:2xx` owns only typed process enablement:
+    internal transformability, source-target transferability, and systemic synchronizability.
+    A datum does not entail transformability, an affordance does not entail an actual
+    process, and a completed process does not entail fidelity, persistence, or acknowledgment.
+    Persistent identity may co-occur with operative or latent status; operative and
+    latent are mutually exclusive for the same affordance at one reference time. Lexical
+    latency affirms an existing but nonoperative affordance; runtime `[2]/num` separately
+    marks uncertainty about any selected status."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this systemic data synchronizability is presently operative;
+      it does not deny persistent identity or affirm the latent sibling, impossibility,
+      or rule absence.
+    '1': Affirms that this systemic data synchronizability is presently operative
+      under the applicable conditions, without asserting that the corresponding data
+      process is underway or completed.
+    2/num: Leaves current operation of this systemic data synchronizability unresolved;
+      token uncertainty does not select the persistent or latent lexical sibling.
+  lexical_runtime_distinction: Lexical third trit `1` permanently selects the operative
+    status of this information-process affordance. Runtime `[2]/num` instead leaves
+    the already-selected status claim unresolved; it never changes affordance status.
+    Thus a latent root affirmed with `[1]` is a confirmed existing-but-nonoperative
+    affordance, while a persistent or operative root carrying `[2]/num` remains lexically
+    persistent or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: DAT:221[1](DOMAIN=network,PARTICIPANTS={a,b,c},CRITERION=c)
+    literal_gloss: affirm operative systemic data synchronizability
+    natural_english: The systemic data synchronizability for the network is presently
+      operative.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: The root asserts information-process enablement and lexical status,
+      not an actual process or result.
+  - category: physical_or_spatial
+    semantic_graph: MAT(BEARER=m)+DAT:221[1](DOMAIN=network,PARTICIPANTS={a,b,c},CRITERION=c)
+    literal_gloss: material bearer plus operative information-process affordance
+    natural_english: The machine has the stated data affordance while MAT separately
+      describes storage media, signal mechanics, or carrier motion.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Information affordance and physical implementation remain separately
+      typed.
+  - category: temporal_or_sequential
+    semantic_graph: DAT:221[1](DOMAIN=network,PARTICIPANTS={a,b,c},CRITERION=c)+ORI(INTERVAL=w)
+    literal_gloss: operative information-process affordance during interval w
+    natural_english: During interval w, the affordance has the stated lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: ORI supplies time and does not replace persistent, operative, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: DAT:001[1](DATA=d)+DAT:221[1](DOMAIN=network,PARTICIPANTS={a,b,c},CRITERION=c)+CON(CHANNEL=h)
+    literal_gloss: manifest datum plus operative information affordance plus channel
+    natural_english: The datum and affordance remain DAT while CON supplies any communication
+      channel or access authority.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Entity, affordance, and participant relation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: DAT:221[1](DOMAIN=network,PARTICIPANTS={a,b,c},CRITERION=c)
+    literal_gloss: assert operative information-process affordance
+    natural_english: A runtime tracks whether the selected data affordance has the
+      stated status without asserting process execution or outcome.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Capability, process, and result remain distinct.
+    pseudocode: assert(data_affordance.status == "DAT:221")
+  - category: counterexample
+    semantic_graph: DAT:101[1](ENTITY=network,DATA=d)
+    literal_gloss: active internal data transformation
+    natural_english: The information transformation is running now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: must_not_use_this_root
+    analysis: Use DAT:1xx for the actual process; DAT:221 names only its enabling
+      capacity or relation.
+  future_compound_examples:
+  - DAT:221 + DAT:0xx supplies the datum, target reference, or shared dataset without
+    reducing the affordance to its information entity.
+  - DAT:221 + DAT:1xx states that the corresponding data transformation, transfer,
+    or synchronization is actually completed, active, or nonactualized.
+  - DAT:221 + MAT/MOV/STR supplies media, physical paths, resources, and implementation
+    while preserving the DAT affordance boundary.
+  - DAT:221 + ORI/CON/LOG may express timing, modality, permission, authority, or
+    a qualifying criterion as separate meanings.
+  later_era_notes: Later eras may lexicalize readability, writability, storage durability,
+    lossless transformability, bandwidth, reachability, authorization, retrievability,
+    reference resolution, provenance, integrity, convergence guarantees, and resource-bounded
+    processing. Era Zero should preserve the substrate-neutral information-process-enablement
+    center and derive stronger technical claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: DAT:222
+    universal_slot: unrealized systemic possibility
+    family_qualified_transliteration: li·min
+    local_compact_root: min
+    formal_carrier: li-nu-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: latent systemic data synchronizability
+  invariant_definition: A capacity of information states across multiple participants
+    in one shared data domain to undergo coordinated alignment under one synchronization
+    criterion that exists without being presently operative.
+  semantic_center: 'information-process affordances: internal transformability, source-target
+    transferability, and systemic synchronizability'
+  address_justification:
+    first_trit_2: Selects an information-process capacity or qualifying transfer relation
+      rather than an information entity, actual data process, physical carrier, result
+      value, or unrestricted modality.
+    second_trit: 'Selects systemic/collective scope: multiple participants whose information
+      states can undergo coordinated alignment under one synchronization criterion
+      and no other Data-family column.'
+    third_trit: Selects the latent status of the same information-process affordance
+      while leaving runtime truth status, actual processing, quality, observer knowledge,
+      tense, probability, permission, and scheduling separate.
+  inclusion_boundary: Includes only the latent systemic data synchronizability as
+    a substrate-neutral information-process affordance at systemic scope. The capacity
+    requires multiple participants to be jointly synchronizable under one shared criterion.
+    Several independently transformable or transferable participants do not constitute
+    one systemic affordance. It is neutral about information-object identity, storage
+    medium, access authority, fidelity, integrity, provenance, bandwidth, resource
+    sufficiency, observer belief, scheduling, probability, timing, and cause.
+  excluded_meanings:
+  - The internal datum, target reference, or shared dataset as an entity, and its
+    persistent, manifest, or dormant status.
+  - The completed, active, or nonactualized transformation, target transfer, or synchronization
+    process and any quality or acknowledgment result.
+  - Specific encodings, schemas, algorithms, storage devices, physical carriers, channels,
+    credentials, bandwidth, or computational resources.
+  - Physical, biological, communicative, cognitive, logical, structural, restorative,
+    creative, or adverse capacity or transformation.
+  - Access permission, retrieval, reference resolution, integrity, provenance, consistency,
+    compatibility, ownership, authority, performance, or resource sufficiency.
+  - Observer knowledge, evidence, intention, plan, readiness, queue, schedule, future
+    time, unrestricted possibility, necessity, probability, or cause.
+  nearest_neighbors:
+  - DAT:220
+  - DAT:221
+  - DAT:202
+  - DAT:212
+  - DAT:022
+  - DAT:122
+  same_family_contrast: "`DAT:0xx` owns information entities and their persistent,
+    manifest, or dormant status. `DAT:1xx` owns the corresponding completed, active,
+    or nonactualized information processes. `DAT:2xx` owns only typed process enablement:
+    internal transformability, source-target transferability, and systemic synchronizability.
+    A datum does not entail transformability, an affordance does not entail an actual
+    process, and a completed process does not entail fidelity, persistence, or acknowledgment.
+    Persistent identity may co-occur with operative or latent status; operative and
+    latent are mutually exclusive for the same affordance at one reference time. Lexical
+    latency affirms an existing but nonoperative affordance; runtime `[2]/num` separately
+    marks uncertainty about any selected status."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this systemic data synchronizability exists as the stated nonoperative
+      information affordance; it does not establish that an operative sibling holds
+      or that the process is impossible.
+    '1': Affirms this systemic data synchronizability as existing but not presently
+      operative, without encoding hiddenness, uncertainty, probability, future activation,
+      missing resources, or permission.
+    2/num: Leaves unresolved even the assertion that this latent systemic data synchronizability
+      exists; lexical latency remains distinct from runtime assertion-level uncertainty.
+  lexical_runtime_distinction: Lexical third trit `2` permanently selects the latent
+    status of this information-process affordance. Runtime `[2]/num` instead leaves
+    the already-selected status claim unresolved; it never changes affordance status.
+    Thus a latent root affirmed with `[1]` is a confirmed existing-but-nonoperative
+    affordance, while a persistent or operative root carrying `[2]/num` remains lexically
+    persistent or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: DAT:222[1](DOMAIN=network,PARTICIPANTS={a,b,c},CRITERION=c)
+    literal_gloss: affirm latent systemic data synchronizability
+    natural_english: The systemic data synchronizability for the network exists but
+      is not presently operative.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: The root asserts information-process enablement and lexical status,
+      not an actual process or result.
+  - category: physical_or_spatial
+    semantic_graph: MAT(BEARER=m)+DAT:222[1](DOMAIN=network,PARTICIPANTS={a,b,c},CRITERION=c)
+    literal_gloss: material bearer plus latent information-process affordance
+    natural_english: The machine has the stated data affordance while MAT separately
+      describes storage media, signal mechanics, or carrier motion.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Information affordance and physical implementation remain separately
+      typed.
+  - category: temporal_or_sequential
+    semantic_graph: DAT:222[1](DOMAIN=network,PARTICIPANTS={a,b,c},CRITERION=c)+ORI(INTERVAL=w)
+    literal_gloss: latent information-process affordance during interval w
+    natural_english: During interval w, the affordance has the stated lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: ORI supplies time and does not replace persistent, operative, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: DAT:001[1](DATA=d)+DAT:222[1](DOMAIN=network,PARTICIPANTS={a,b,c},CRITERION=c)+CON(CHANNEL=h)
+    literal_gloss: manifest datum plus latent information affordance plus channel
+    natural_english: The datum and affordance remain DAT while CON supplies any communication
+      channel or access authority.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Entity, affordance, and participant relation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: DAT:222[1](DOMAIN=network,PARTICIPANTS={a,b,c},CRITERION=c)
+    literal_gloss: assert latent information-process affordance
+    natural_english: A runtime tracks whether the selected data affordance has the
+      stated status without asserting process execution or outcome.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: valid
+    analysis: Capability, process, and result remain distinct.
+    pseudocode: assert(data_affordance.status == "DAT:222")
+  - category: counterexample
+    semantic_graph: DAT:101[1](ENTITY=network,DATA=d)
+    literal_gloss: active internal data transformation
+    natural_english: The information transformation is running now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, source context, or participant whose data affordance
+        is asserted
+      middle: information-process capacity or transfer relation as the asserted figure
+      high: represented information, distinct target, or synchronization criterion
+      sustained: shared data domain and multiple synchronizable participants
+    use_status: must_not_use_this_root
+    analysis: Use DAT:1xx for the actual process; DAT:222 names only its enabling
+      capacity or relation.
+  future_compound_examples:
+  - DAT:222 + DAT:0xx supplies the datum, target reference, or shared dataset without
+    reducing the affordance to its information entity.
+  - DAT:222 + DAT:1xx states that the corresponding data transformation, transfer,
+    or synchronization is actually completed, active, or nonactualized.
+  - DAT:222 + MAT/MOV/STR supplies media, physical paths, resources, and implementation
+    while preserving the DAT affordance boundary.
+  - DAT:222 + ORI/CON/LOG may express timing, modality, permission, authority, or
+    a qualifying criterion as separate meanings.
+  later_era_notes: Later eras may lexicalize readability, writability, storage durability,
+    lossless transformability, bandwidth, reachability, authorization, retrievability,
+    reference resolution, provenance, integrity, convergence guarantees, and resource-bounded
+    processing. Era Zero should preserve the substrate-neutral information-process-enablement
+    center and derive stronger technical claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+approval_checklist:
+  family_domain_preserved: true
+  address_axes_preserved: true
+  one_invariant_per_root: true
+  triplets_coherent: true
+  all_current_candidates_challenged: true
+  cross_family_collisions_explicit: true
+  runtime_state_separated: true
+  entity_process_relation_layers_separated: true
+  generated_fields_unchanged: true
+  gate4_not_started: true
+  translator_not_started: true
+  canonicalized: true

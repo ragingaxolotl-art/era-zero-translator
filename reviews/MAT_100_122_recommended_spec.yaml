@@ -1,0 +1,1803 @@
+---
+metadata:
+  title: MAT:100–122 recommended permanent semantic specifications
+  status: ready_for_user_approval_not_canonical
+  review_scope: MAT:100–122 only
+  semantic_architecture: physical-state change × locus × lexical phase
+  roots_canonicalized: []
+  stop_boundary:
+  - MAT:200–222
+  - any other root block
+  - Gate 4
+  - translator implementation
+block_invariant: MAT:1xx denotes physical-state change. The second trit selects focal,
+  target, or systemic locus; the third selects completed, ongoing, or nonactualized
+  phase.
+roots:
+- fixed_generated_fields:
+    canonical_id: MAT:100
+    universal_slot: completed inward process
+    family_qualified_transliteration: ba·kam
+    local_compact_root: kam
+    formal_carrier: ba-ki-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 2
+  proposal_status: recommended_pending_user_decision_not_canonical
+  proposed_title: completed focal material change
+  invariant_definition: Completion of a physical-state change localized within the
+    focal material bearer.
+  semantic_center: physical-state change
+  semantic_boundaries:
+  - Includes a change in an intrinsic physical state of matter at the stated observational
+    scale.
+  - Allows thermal, phase, compositional, chemical, electrical, or mechanical specialization
+    without building those subtypes into the atom.
+  - Does not require an intentional agent, beneficial or harmful result, transfer
+    path, schedule, or named cause.
+  - The process locus is focal/inward and the lexical phase is completed.
+  excluded_meanings:
+  - Position or displacement without intrinsic physical-state change belongs to MOV.
+  - Creation purpose belongs to CRE; structural organization to STR; damage to WRN;
+    restoration to REP.
+  - Mental, informational, logical, social, and ontological changes belong to their
+    own families.
+  - Matter/energy transport, input, output, circulation, or exchange requires MOV/CON
+    roles unless intrinsic physical-state change is also asserted.
+  - Scheduling, planning, queueing, readiness, probability, and future certainty are
+    never supplied by lexical trit 2.
+  - A material entity/condition belongs to MAT:0xx; a capacity or relationship remains
+    for MAT:2xx review.
+  nearest_neighbors:
+    triplet: MAT:100–MAT:102
+    same_triplet_completed: MAT:100
+    same_triplet_active: MAT:101
+    same_triplet_potential: MAT:102
+    same_phase_other_loci:
+    - MAT:110
+    - MAT:120
+    entity_layer: MAT:0xx describes material bearers/conditions, not change events.
+    capacity_relationship_layer: MAT:2xx remains provisional and must not be preempted
+      by this process root.
+  address_explanation:
+    first_trit_1: Selects a process/action/transformation rather than a material entity
+      or capacity.
+    second_trit_0: 'Localizes the physical-state change within the focal bearer: inward/self/source
+      orientation.'
+    third_trit_0: 'Selects the completed lexical phase: the change event reached its
+      boundary.'
+  runtime_state_interpretations:
+    '0': Denies or deactivates the claim that the focal/inward physical-state change
+      reached completion.
+    '1': Affirms that the focal/inward change reached its completion boundary; it
+      does not describe the resulting entity state.
+    '2': Marks the completion assertion itself as dormant, unavailable, remembered,
+      or unresolved. It does not select lexical potential `MAT:102`.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects completed
+    physical-state change. Runtime `[2]/num` instead qualifies the current status
+    of a token of that already selected lexeme and never inserts planning, scheduling,
+    or a different lexical phase.
+  cross_family_comparisons:
+    LIF: LIF owns living growth, metabolism, vitality, and identity. `MAT:100` owns
+      only the completed physical-state change at the focal/inward locus; use a compound
+      when a living process has a material realization.
+    MOV: MOV owns position and displacement. Matter crossing space or circulating
+      without intrinsic physical-state change uses MOV with a material bearer, not
+      `MAT:100` alone.
+    MIN: MIN owns mental-state change, attention, memory, and learning. A thought
+      or perception changing does not select `MAT:100` unless a physical material
+      change is separately asserted.
+    CON: CON owns communication, transfer relations, access, and participant linkage.
+      `MAT:100` does not by itself encode giver, receiver, possession, or transmission.
+    STR: STR owns topology, organization, part-whole structure, assembly schema, and
+      boundary relations. `MAT:100` owns physical-state change, not abstract or functional
+      reorganization.
+    WRN: WRN owns damage, hazard, failure, and corruption judgments. A physical change
+      is not inherently harmful; combine WRN when the change is damage or risk.
+    REP: REP owns restoration and healing as goal-directed return toward a prior or
+      viable state. `MAT:100` describes the physical change without restorative purpose.
+    LOG: LOG owns scheduling, queueing, control flow, permission, conditions, and
+      formal state transitions. Lexical process phase and runtime status do not encode
+      those operations.
+    DAT: DAT owns information mutation, storage, decoding, and signal flow. A data
+      structure changing is not a material process unless its physical storage bearer
+      is separately foregrounded.
+    CRE: CRE owns intentional generation, design, novel form, and production semantics.
+      `MAT:100` may supply physical realization, but it never entails artifact creation
+      or purpose.
+    ORI: ORI owns ontological becoming, temporal framing, and reality-level transition.
+      `MAT:100` is limited to a Matter-family physical-state change in an already
+      asserted frame.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MAT:100[1](BEARER=ice,CHANGE=phase)
+    literal_gloss: ice; focal material change; completed
+    natural_english: The ice has finished melting.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Direct ordinary use of the proposed invariant.
+  - category: physical_or_spatial
+    semantic_graph: MAT:100[1](BEARER=forged_bar,CHANGE=cooling)
+    literal_gloss: bar; internal physical-state change; completed
+    natural_english: The forged bar has cooled through the specified transition.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Physical example; any location is contextual and does not replace the
+      intrinsic-change invariant.
+  - category: temporal_or_sequential
+    semantic_graph: MAT:100[1](BEARER=resin,CHANGE=curing,AFTER=interval)
+    literal_gloss: resin; focal material change completed after interval
+    natural_english: After ten minutes, the resin finished curing.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Time or sequence is supplied by the graph, not silently by the atomic
+      root.
+  - category: cross_family_compound
+    semantic_graph: MAT:100[1](BEARER=printed_part)+CRE(ORIGIN=printing)
+    literal_gloss: created part; subsequent focal material change completed
+    natural_english: The printed part finished hardening after fabrication.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: A decomposition sketch showing how purpose, harm, life, restoration,
+      or creation remains outside MAT.
+  - category: executable_or_programming
+    semantic_graph: MAT:100[1](BEARER=batch,CHANGE=phase)
+    literal_gloss: batch; physical-state transition reached completion
+    natural_english: The controller records the batch transition as complete.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Typed event-state interpretation suitable for a future semantic IR.
+    pseudocode: assert transition(batch, :phase).completed?
+  - category: counterexample
+    semantic_graph: MOV:110[1](MOVER=person,TARGET=door)
+    literal_gloss: person; target arrival completed
+    natural_english: The person arrived at the door.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: must_not_use_this_mat_root
+    analysis: Arrival changes position, not intrinsic material state; do not use MAT:100.
+  future_compound_decomposition_sketches_not_canonical:
+  - MAT:100 + change-kind modifier → a specific physical process such as melting,
+    heating, curing, or deformation
+  - MAT:100 + CRE/STR/WRN/REP predicate → created, organized, harmful, or restorative
+    physical change
+  - MAT:100 + MOV/CON roles → material ingress, delivery, transport, circulation,
+    or exchange with explicit participants
+  later_era_evolution_notes:
+  - Later technical vocabulary may subtype physical-state dimensions and attach measurements
+    without changing this invariant.
+  - Later colloquial forms may lexicalize common compounds such as melt, burn, or
+    bend, but the Era Zero atom remains the general locus-and-phase process.
+  - Any future reassignment requires an explicit versioned migration after user approval.
+  confidence: 0.97
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MAT:101
+    universal_slot: active inward process
+    family_qualified_transliteration: ba·kak
+    local_compact_root: kak
+    formal_carrier: ba-ki-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 4
+  proposal_status: recommended_pending_user_decision_not_canonical
+  proposed_title: active focal material change
+  invariant_definition: An ongoing physical-state change localized within the focal
+    material bearer.
+  semantic_center: physical-state change
+  semantic_boundaries:
+  - Includes a change in an intrinsic physical state of matter at the stated observational
+    scale.
+  - Allows thermal, phase, compositional, chemical, electrical, or mechanical specialization
+    without building those subtypes into the atom.
+  - Does not require an intentional agent, beneficial or harmful result, transfer
+    path, schedule, or named cause.
+  - The process locus is focal/inward and the lexical phase is active/ongoing.
+  excluded_meanings:
+  - Position or displacement without intrinsic physical-state change belongs to MOV.
+  - Creation purpose belongs to CRE; structural organization to STR; damage to WRN;
+    restoration to REP.
+  - Mental, informational, logical, social, and ontological changes belong to their
+    own families.
+  - Matter/energy transport, input, output, circulation, or exchange requires MOV/CON
+    roles unless intrinsic physical-state change is also asserted.
+  - Scheduling, planning, queueing, readiness, probability, and future certainty are
+    never supplied by lexical trit 2.
+  - A material entity/condition belongs to MAT:0xx; a capacity or relationship remains
+    for MAT:2xx review.
+  nearest_neighbors:
+    triplet: MAT:100–MAT:102
+    same_triplet_completed: MAT:100
+    same_triplet_active: MAT:101
+    same_triplet_potential: MAT:102
+    same_phase_other_loci:
+    - MAT:111
+    - MAT:121
+    entity_layer: MAT:0xx describes material bearers/conditions, not change events.
+    capacity_relationship_layer: MAT:2xx remains provisional and must not be preempted
+      by this process root.
+  address_explanation:
+    first_trit_1: Selects a process/action/transformation rather than a material entity
+      or capacity.
+    second_trit_0: 'Localizes the physical-state change within the focal bearer: inward/self/source
+      orientation.'
+    third_trit_1: 'Selects the active lexical phase: the change is presently ongoing.'
+  runtime_state_interpretations:
+    '0': Denies that the focal/inward physical-state change is presently underway.
+    '1': Affirms that the focal/inward physical-state change is underway at the reference
+      time.
+    '2': Marks the current status of this active-process assertion as dormant, paused,
+      unavailable, or unresolved. It does not change the lexeme into `MAT:102`.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects active/ongoing
+    physical-state change. Runtime `[2]/num` instead qualifies the current status
+    of a token of that already selected lexeme and never inserts planning, scheduling,
+    or a different lexical phase.
+  cross_family_comparisons:
+    LIF: LIF owns living growth, metabolism, vitality, and identity. `MAT:101` owns
+      only the active/ongoing physical-state change at the focal/inward locus; use
+      a compound when a living process has a material realization.
+    MOV: MOV owns position and displacement. Matter crossing space or circulating
+      without intrinsic physical-state change uses MOV with a material bearer, not
+      `MAT:101` alone.
+    MIN: MIN owns mental-state change, attention, memory, and learning. A thought
+      or perception changing does not select `MAT:101` unless a physical material
+      change is separately asserted.
+    CON: CON owns communication, transfer relations, access, and participant linkage.
+      `MAT:101` does not by itself encode giver, receiver, possession, or transmission.
+    STR: STR owns topology, organization, part-whole structure, assembly schema, and
+      boundary relations. `MAT:101` owns physical-state change, not abstract or functional
+      reorganization.
+    WRN: WRN owns damage, hazard, failure, and corruption judgments. A physical change
+      is not inherently harmful; combine WRN when the change is damage or risk.
+    REP: REP owns restoration and healing as goal-directed return toward a prior or
+      viable state. `MAT:101` describes the physical change without restorative purpose.
+    LOG: LOG owns scheduling, queueing, control flow, permission, conditions, and
+      formal state transitions. Lexical process phase and runtime status do not encode
+      those operations.
+    DAT: DAT owns information mutation, storage, decoding, and signal flow. A data
+      structure changing is not a material process unless its physical storage bearer
+      is separately foregrounded.
+    CRE: CRE owns intentional generation, design, novel form, and production semantics.
+      `MAT:101` may supply physical realization, but it never entails artifact creation
+      or purpose.
+    ORI: ORI owns ontological becoming, temporal framing, and reality-level transition.
+      `MAT:101` is limited to a Matter-family physical-state change in an already
+      asserted frame.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MAT:101[1](BEARER=soup,CHANGE=cooling)
+    literal_gloss: soup; focal material change; ongoing
+    natural_english: The soup is cooling.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Direct ordinary use of the proposed invariant.
+  - category: physical_or_spatial
+    semantic_graph: MAT:101[1](BEARER=wire,CHANGE=annealing)
+    literal_gloss: wire; internal physical-state change; ongoing
+    natural_english: The wire is annealing inside the furnace.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Physical example; any location is contextual and does not replace the
+      intrinsic-change invariant.
+  - category: temporal_or_sequential
+    semantic_graph: MAT:101[1](BEARER=mixture,CHANGE=reaction,DURING=interval)
+    literal_gloss: mixture; focal material change active during interval
+    natural_english: The mixture is reacting during this stage.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Time or sequence is supplied by the graph, not silently by the atomic
+      root.
+  - category: cross_family_compound
+    semantic_graph: MAT:101[1](BEARER=pipe)+WRN(CAUSE=corrosion)
+    literal_gloss: pipe; active material change with damage classification
+    natural_english: The pipe is corroding.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: A decomposition sketch showing how purpose, harm, life, restoration,
+      or creation remains outside MAT.
+  - category: executable_or_programming
+    semantic_graph: MAT:101[1](BEARER=sample,CHANGE=thermal)
+    literal_gloss: sample; physical-state transition currently active
+    natural_english: The monitor reports that the sample is changing temperature.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Typed event-state interpretation suitable for a future semantic IR.
+    pseudocode: assert transition(sample, :thermal).active?
+  - category: counterexample
+    semantic_graph: DAT:101[1](RECORD=config)
+    literal_gloss: configuration record; active decoding or mutation
+    natural_english: The configuration data is changing.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: must_not_use_this_mat_root
+    analysis: A data mutation is not a material-state change; do not use MAT:101 without
+      a physical bearer change.
+  future_compound_decomposition_sketches_not_canonical:
+  - MAT:101 + change-kind modifier → a specific physical process such as melting,
+    heating, curing, or deformation
+  - MAT:101 + CRE/STR/WRN/REP predicate → created, organized, harmful, or restorative
+    physical change
+  - MAT:101 + MOV/CON roles → material ingress, delivery, transport, circulation,
+    or exchange with explicit participants
+  later_era_evolution_notes:
+  - Later technical vocabulary may subtype physical-state dimensions and attach measurements
+    without changing this invariant.
+  - Later colloquial forms may lexicalize common compounds such as melt, burn, or
+    bend, but the Era Zero atom remains the general locus-and-phase process.
+  - Any future reassignment requires an explicit versioned migration after user approval.
+  confidence: 0.98
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MAT:102
+    universal_slot: pending inward process
+    family_qualified_transliteration: ba·kan
+    local_compact_root: kan
+    formal_carrier: ba-ki-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 0
+  proposal_status: recommended_pending_user_decision_not_canonical
+  proposed_title: potential focal material change
+  invariant_definition: A possible physical-state change localized within the focal
+    material bearer that is not active or completed.
+  semantic_center: physical-state change
+  semantic_boundaries:
+  - Includes a change in an intrinsic physical state of matter at the stated observational
+    scale.
+  - Allows thermal, phase, compositional, chemical, electrical, or mechanical specialization
+    without building those subtypes into the atom.
+  - Does not require an intentional agent, beneficial or harmful result, transfer
+    path, schedule, or named cause.
+  - The process locus is focal/inward and the lexical phase is potential/nonactualized.
+  excluded_meanings:
+  - Position or displacement without intrinsic physical-state change belongs to MOV.
+  - Creation purpose belongs to CRE; structural organization to STR; damage to WRN;
+    restoration to REP.
+  - Mental, informational, logical, social, and ontological changes belong to their
+    own families.
+  - Matter/energy transport, input, output, circulation, or exchange requires MOV/CON
+    roles unless intrinsic physical-state change is also asserted.
+  - Scheduling, planning, queueing, readiness, probability, and future certainty are
+    never supplied by lexical trit 2.
+  - A material entity/condition belongs to MAT:0xx; a capacity or relationship remains
+    for MAT:2xx review.
+  nearest_neighbors:
+    triplet: MAT:100–MAT:102
+    same_triplet_completed: MAT:100
+    same_triplet_active: MAT:101
+    same_triplet_potential: MAT:102
+    same_phase_other_loci:
+    - MAT:112
+    - MAT:122
+    entity_layer: MAT:0xx describes material bearers/conditions, not change events.
+    capacity_relationship_layer: MAT:2xx remains provisional and must not be preempted
+      by this process root.
+  address_explanation:
+    first_trit_1: Selects a process/action/transformation rather than a material entity
+      or capacity.
+    second_trit_0: 'Localizes the physical-state change within the focal bearer: inward/self/source
+      orientation.'
+    third_trit_2: 'Selects a nonactualized lexical phase: the change is possible but
+      neither active nor completed.'
+  runtime_state_interpretations:
+    '0': Rules out the asserted focal/inward physical-state change as a live possibility
+      in the stated frame.
+    '1': Affirms that the focal/inward physical-state change is possible while remaining
+      nonactualized.
+    '2': Marks whether that nonactualized possibility holds as dormant or unresolved.
+      This layered status still does not encode a plan, queue, schedule, readiness,
+      or future certainty.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects potential/nonactualized
+    physical-state change. Runtime `[2]/num` instead qualifies the current status
+    of a token of that already selected lexeme and never inserts planning, scheduling,
+    or a different lexical phase.
+  cross_family_comparisons:
+    LIF: LIF owns living growth, metabolism, vitality, and identity. `MAT:102` owns
+      only the potential/nonactualized physical-state change at the focal/inward locus;
+      use a compound when a living process has a material realization.
+    MOV: MOV owns position and displacement. Matter crossing space or circulating
+      without intrinsic physical-state change uses MOV with a material bearer, not
+      `MAT:102` alone.
+    MIN: MIN owns mental-state change, attention, memory, and learning. A thought
+      or perception changing does not select `MAT:102` unless a physical material
+      change is separately asserted.
+    CON: CON owns communication, transfer relations, access, and participant linkage.
+      `MAT:102` does not by itself encode giver, receiver, possession, or transmission.
+    STR: STR owns topology, organization, part-whole structure, assembly schema, and
+      boundary relations. `MAT:102` owns physical-state change, not abstract or functional
+      reorganization.
+    WRN: WRN owns damage, hazard, failure, and corruption judgments. A physical change
+      is not inherently harmful; combine WRN when the change is damage or risk.
+    REP: REP owns restoration and healing as goal-directed return toward a prior or
+      viable state. `MAT:102` describes the physical change without restorative purpose.
+    LOG: LOG owns scheduling, queueing, control flow, permission, conditions, and
+      formal state transitions. Lexical process phase and runtime status do not encode
+      those operations.
+    DAT: DAT owns information mutation, storage, decoding, and signal flow. A data
+      structure changing is not a material process unless its physical storage bearer
+      is separately foregrounded.
+    CRE: CRE owns intentional generation, design, novel form, and production semantics.
+      `MAT:102` may supply physical realization, but it never entails artifact creation
+      or purpose.
+    ORI: ORI owns ontological becoming, temporal framing, and reality-level transition.
+      `MAT:102` is limited to a Matter-family physical-state change in an already
+      asserted frame.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MAT:102[1](BEARER=chocolate,CHANGE=melting)
+    literal_gloss: chocolate; possible focal material change; nonactualized
+    natural_english: The chocolate could melt.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Direct ordinary use of the proposed invariant.
+  - category: physical_or_spatial
+    semantic_graph: MAT:102[1](BEARER=alloy,CHANGE=softening)
+    literal_gloss: alloy; possible internal physical-state change
+    natural_english: The alloy can soften under suitable conditions.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Physical example; any location is contextual and does not replace the
+      intrinsic-change invariant.
+  - category: temporal_or_sequential
+    semantic_graph: MAT:102[1](BEARER=sample,CHANGE=crystallization)
+    literal_gloss: sample; nonactualized possible material change
+    natural_english: Crystallization remains physically possible, but it has not started.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Time or sequence is supplied by the graph, not silently by the atomic
+      root.
+  - category: cross_family_compound
+    semantic_graph: MAT:102[1](BEARER=surface)+WRN(POSSIBLE=corrosion)
+    literal_gloss: surface; possible physical change classified as harmful
+    natural_english: The surface could corrode.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: A decomposition sketch showing how purpose, harm, life, restoration,
+      or creation remains outside MAT.
+  - category: executable_or_programming
+    semantic_graph: MAT:102[1](BEARER=material,CHANGE=phase)
+    literal_gloss: material; phase change lies in the reachable physical state space
+    natural_english: The simulator permits a phase transition from this state.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Typed event-state interpretation suitable for a future semantic IR.
+    pseudocode: assert reachable?(material.state, :phase_changed)
+  - category: counterexample
+    semantic_graph: LOG(plan)+ORI(future)
+    literal_gloss: operation; planned for later
+    natural_english: The operation is scheduled for tomorrow.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: must_not_use_this_mat_root
+    analysis: Scheduling does not follow from lexical trit 2; MAT:102 alone must not
+      encode a plan or queue.
+  future_compound_decomposition_sketches_not_canonical:
+  - MAT:102 + change-kind modifier → a specific physical process such as melting,
+    heating, curing, or deformation
+  - MAT:102 + CRE/STR/WRN/REP predicate → created, organized, harmful, or restorative
+    physical change
+  - MAT:102 + MOV/CON roles → material ingress, delivery, transport, circulation,
+    or exchange with explicit participants
+  later_era_evolution_notes:
+  - Later technical vocabulary may subtype physical-state dimensions and attach measurements
+    without changing this invariant.
+  - Later colloquial forms may lexicalize common compounds such as melt, burn, or
+    bend, but the Era Zero atom remains the general locus-and-phase process.
+  - Any future reassignment requires an explicit versioned migration after user approval.
+  confidence: 0.99
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MAT:110
+    universal_slot: completed outward process
+    family_qualified_transliteration: ba·kom
+    local_compact_root: kom
+    formal_carrier: ba-ki-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 4
+  proposal_status: recommended_pending_user_decision_not_canonical
+  proposed_title: completed target material change
+  invariant_definition: Completion of a physical-state change localized in a distinct
+    material target.
+  semantic_center: physical-state change
+  semantic_boundaries:
+  - Includes a change in an intrinsic physical state of matter at the stated observational
+    scale.
+  - Allows thermal, phase, compositional, chemical, electrical, or mechanical specialization
+    without building those subtypes into the atom.
+  - Does not require an intentional agent, beneficial or harmful result, transfer
+    path, schedule, or named cause.
+  - The process locus is distinct-target/outward and the lexical phase is completed.
+  excluded_meanings:
+  - Position or displacement without intrinsic physical-state change belongs to MOV.
+  - Creation purpose belongs to CRE; structural organization to STR; damage to WRN;
+    restoration to REP.
+  - Mental, informational, logical, social, and ontological changes belong to their
+    own families.
+  - Matter/energy transport, input, output, circulation, or exchange requires MOV/CON
+    roles unless intrinsic physical-state change is also asserted.
+  - Scheduling, planning, queueing, readiness, probability, and future certainty are
+    never supplied by lexical trit 2.
+  - A material entity/condition belongs to MAT:0xx; a capacity or relationship remains
+    for MAT:2xx review.
+  nearest_neighbors:
+    triplet: MAT:110–MAT:112
+    same_triplet_completed: MAT:110
+    same_triplet_active: MAT:111
+    same_triplet_potential: MAT:112
+    same_phase_other_loci:
+    - MAT:100
+    - MAT:120
+    entity_layer: MAT:0xx describes material bearers/conditions, not change events.
+    capacity_relationship_layer: MAT:2xx remains provisional and must not be preempted
+      by this process root.
+  address_explanation:
+    first_trit_1: Selects a process/action/transformation rather than a material entity
+      or capacity.
+    second_trit_1: 'Localizes the physical-state change in a distinct target: outward/other/target
+      orientation.'
+    third_trit_0: 'Selects the completed lexical phase: the change event reached its
+      boundary.'
+  runtime_state_interpretations:
+    '0': Denies or deactivates the claim that the distinct-target/outward physical-state
+      change reached completion.
+    '1': Affirms that the distinct-target/outward change reached its completion boundary;
+      it does not describe the resulting entity state.
+    '2': Marks the completion assertion itself as dormant, unavailable, remembered,
+      or unresolved. It does not select lexical potential `MAT:112`.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects completed
+    physical-state change. Runtime `[2]/num` instead qualifies the current status
+    of a token of that already selected lexeme and never inserts planning, scheduling,
+    or a different lexical phase.
+  cross_family_comparisons:
+    LIF: LIF owns living growth, metabolism, vitality, and identity. `MAT:110` owns
+      only the completed physical-state change at the distinct-target/outward locus;
+      use a compound when a living process has a material realization.
+    MOV: MOV owns position and displacement. Matter crossing space or circulating
+      without intrinsic physical-state change uses MOV with a material bearer, not
+      `MAT:110` alone.
+    MIN: MIN owns mental-state change, attention, memory, and learning. A thought
+      or perception changing does not select `MAT:110` unless a physical material
+      change is separately asserted.
+    CON: CON owns communication, transfer relations, access, and participant linkage.
+      `MAT:110` does not by itself encode giver, receiver, possession, or transmission.
+    STR: STR owns topology, organization, part-whole structure, assembly schema, and
+      boundary relations. `MAT:110` owns physical-state change, not abstract or functional
+      reorganization.
+    WRN: WRN owns damage, hazard, failure, and corruption judgments. A physical change
+      is not inherently harmful; combine WRN when the change is damage or risk.
+    REP: REP owns restoration and healing as goal-directed return toward a prior or
+      viable state. `MAT:110` describes the physical change without restorative purpose.
+    LOG: LOG owns scheduling, queueing, control flow, permission, conditions, and
+      formal state transitions. Lexical process phase and runtime status do not encode
+      those operations.
+    DAT: DAT owns information mutation, storage, decoding, and signal flow. A data
+      structure changing is not a material process unless its physical storage bearer
+      is separately foregrounded.
+    CRE: CRE owns intentional generation, design, novel form, and production semantics.
+      `MAT:110` may supply physical realization, but it never entails artifact creation
+      or purpose.
+    ORI: ORI owns ontological becoming, temporal framing, and reality-level transition.
+      `MAT:110` is limited to a Matter-family physical-state change in an already
+      asserted frame.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MAT:110[1](TARGET=blade,CHANGE=tempering)
+    literal_gloss: blade; target material change; completed
+    natural_english: The blade has finished tempering.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Direct ordinary use of the proposed invariant.
+  - category: physical_or_spatial
+    semantic_graph: MAT:110[1](TARGET=panel,CHANGE=deformation)
+    literal_gloss: panel; target-local physical-state change completed
+    natural_english: The panel has been bent to its final curvature.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Physical example; any location is contextual and does not replace the
+      intrinsic-change invariant.
+  - category: temporal_or_sequential
+    semantic_graph: MAT:110[1](TARGET=coating,CHANGE=curing,AFTER=interval)
+    literal_gloss: coating; target change completed after interval
+    natural_english: The coating finished curing after the hold period.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Time or sequence is supplied by the graph, not silently by the atomic
+      root.
+  - category: cross_family_compound
+    semantic_graph: CRE(AGENT=smith,GOAL=blade)+MAT:110[1](TARGET=blade)
+    literal_gloss: intentional creation process plus completed target material change
+    natural_english: The smith finished physically forming the blade.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: A decomposition sketch showing how purpose, harm, life, restoration,
+      or creation remains outside MAT.
+  - category: executable_or_programming
+    semantic_graph: MAT:110[1](TARGET=workpiece,CHANGE=hardening)
+    literal_gloss: workpiece; requested physical transition completed
+    natural_english: The machine marks the workpiece hardening step complete.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Typed event-state interpretation suitable for a future semantic IR.
+    pseudocode: assert material_step(workpiece, :hardening).completed?
+  - category: counterexample
+    semantic_graph: CRE:110[1](TARGET=artifact)
+    literal_gloss: artifact creation completed
+    natural_english: The designer completed the artifact.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: must_not_use_this_mat_root
+    analysis: Completion of a designed artifact is CRE unless an actual target-local
+      physical-state change is asserted.
+  future_compound_decomposition_sketches_not_canonical:
+  - MAT:110 + change-kind modifier → a specific physical process such as melting,
+    heating, curing, or deformation
+  - MAT:110 + CRE/STR/WRN/REP predicate → created, organized, harmful, or restorative
+    physical change
+  - MAT:110 + MOV/CON roles → material ingress, delivery, transport, circulation,
+    or exchange with explicit participants
+  later_era_evolution_notes:
+  - Later technical vocabulary may subtype physical-state dimensions and attach measurements
+    without changing this invariant.
+  - Later colloquial forms may lexicalize common compounds such as melt, burn, or
+    bend, but the Era Zero atom remains the general locus-and-phase process.
+  - Any future reassignment requires an explicit versioned migration after user approval.
+  confidence: 0.98
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MAT:111
+    universal_slot: active outward process
+    family_qualified_transliteration: ba·kok
+    local_compact_root: kok
+    formal_carrier: ba-ki-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 6
+  proposal_status: recommended_pending_user_decision_not_canonical
+  proposed_title: active target material change
+  invariant_definition: An ongoing physical-state change localized in a distinct material
+    target.
+  semantic_center: physical-state change
+  semantic_boundaries:
+  - Includes a change in an intrinsic physical state of matter at the stated observational
+    scale.
+  - Allows thermal, phase, compositional, chemical, electrical, or mechanical specialization
+    without building those subtypes into the atom.
+  - Does not require an intentional agent, beneficial or harmful result, transfer
+    path, schedule, or named cause.
+  - The process locus is distinct-target/outward and the lexical phase is active/ongoing.
+  excluded_meanings:
+  - Position or displacement without intrinsic physical-state change belongs to MOV.
+  - Creation purpose belongs to CRE; structural organization to STR; damage to WRN;
+    restoration to REP.
+  - Mental, informational, logical, social, and ontological changes belong to their
+    own families.
+  - Matter/energy transport, input, output, circulation, or exchange requires MOV/CON
+    roles unless intrinsic physical-state change is also asserted.
+  - Scheduling, planning, queueing, readiness, probability, and future certainty are
+    never supplied by lexical trit 2.
+  - A material entity/condition belongs to MAT:0xx; a capacity or relationship remains
+    for MAT:2xx review.
+  nearest_neighbors:
+    triplet: MAT:110–MAT:112
+    same_triplet_completed: MAT:110
+    same_triplet_active: MAT:111
+    same_triplet_potential: MAT:112
+    same_phase_other_loci:
+    - MAT:101
+    - MAT:121
+    entity_layer: MAT:0xx describes material bearers/conditions, not change events.
+    capacity_relationship_layer: MAT:2xx remains provisional and must not be preempted
+      by this process root.
+  address_explanation:
+    first_trit_1: Selects a process/action/transformation rather than a material entity
+      or capacity.
+    second_trit_1: 'Localizes the physical-state change in a distinct target: outward/other/target
+      orientation.'
+    third_trit_1: 'Selects the active lexical phase: the change is presently ongoing.'
+  runtime_state_interpretations:
+    '0': Denies that the distinct-target/outward physical-state change is presently
+      underway.
+    '1': Affirms that the distinct-target/outward physical-state change is underway
+      at the reference time.
+    '2': Marks the current status of this active-process assertion as dormant, paused,
+      unavailable, or unresolved. It does not change the lexeme into `MAT:112`.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects active/ongoing
+    physical-state change. Runtime `[2]/num` instead qualifies the current status
+    of a token of that already selected lexeme and never inserts planning, scheduling,
+    or a different lexical phase.
+  cross_family_comparisons:
+    LIF: LIF owns living growth, metabolism, vitality, and identity. `MAT:111` owns
+      only the active/ongoing physical-state change at the distinct-target/outward
+      locus; use a compound when a living process has a material realization.
+    MOV: MOV owns position and displacement. Matter crossing space or circulating
+      without intrinsic physical-state change uses MOV with a material bearer, not
+      `MAT:111` alone.
+    MIN: MIN owns mental-state change, attention, memory, and learning. A thought
+      or perception changing does not select `MAT:111` unless a physical material
+      change is separately asserted.
+    CON: CON owns communication, transfer relations, access, and participant linkage.
+      `MAT:111` does not by itself encode giver, receiver, possession, or transmission.
+    STR: STR owns topology, organization, part-whole structure, assembly schema, and
+      boundary relations. `MAT:111` owns physical-state change, not abstract or functional
+      reorganization.
+    WRN: WRN owns damage, hazard, failure, and corruption judgments. A physical change
+      is not inherently harmful; combine WRN when the change is damage or risk.
+    REP: REP owns restoration and healing as goal-directed return toward a prior or
+      viable state. `MAT:111` describes the physical change without restorative purpose.
+    LOG: LOG owns scheduling, queueing, control flow, permission, conditions, and
+      formal state transitions. Lexical process phase and runtime status do not encode
+      those operations.
+    DAT: DAT owns information mutation, storage, decoding, and signal flow. A data
+      structure changing is not a material process unless its physical storage bearer
+      is separately foregrounded.
+    CRE: CRE owns intentional generation, design, novel form, and production semantics.
+      `MAT:111` may supply physical realization, but it never entails artifact creation
+      or purpose.
+    ORI: ORI owns ontological becoming, temporal framing, and reality-level transition.
+      `MAT:111` is limited to a Matter-family physical-state change in an already
+      asserted frame.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MAT:111[1](TARGET=coating,CHANGE=dissolution)
+    literal_gloss: coating; target material change; ongoing
+    natural_english: The coating is dissolving.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Direct ordinary use of the proposed invariant.
+  - category: physical_or_spatial
+    semantic_graph: MAT:111[1](TARGET=sheet,CHANGE=deformation)
+    literal_gloss: sheet; target-local physical-state change active
+    natural_english: The press is bending the sheet.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Physical example; any location is contextual and does not replace the
+      intrinsic-change invariant.
+  - category: temporal_or_sequential
+    semantic_graph: MAT:111[1](TARGET=sample,CHANGE=heating,DURING=stage)
+    literal_gloss: sample; target change active during stage
+    natural_english: The sample is heating during the current stage.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Time or sequence is supplied by the graph, not silently by the atomic
+      root.
+  - category: cross_family_compound
+    semantic_graph: MAT:111[1](TARGET=beam)+WRN(CAUSE=fracture)
+    literal_gloss: beam; active target change classified as damage
+    natural_english: The beam is cracking under load.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: A decomposition sketch showing how purpose, harm, life, restoration,
+      or creation remains outside MAT.
+  - category: executable_or_programming
+    semantic_graph: MAT:111[1](TARGET=part,CHANGE=coating)
+    literal_gloss: part; physical-state transition currently executing
+    natural_english: The cell reports that the part coating process is active.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Typed event-state interpretation suitable for a future semantic IR.
+    pseudocode: assert material_step(part, :coating).active?
+  - category: counterexample
+    semantic_graph: MOV:121[1](MOVER=crate,FRAME=room)
+    literal_gloss: crate; active shared-frame movement
+    natural_english: The crate is moving across the room.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: must_not_use_this_mat_root
+    analysis: Displacement without intrinsic physical change is MOV, not MAT:111.
+  future_compound_decomposition_sketches_not_canonical:
+  - MAT:111 + change-kind modifier → a specific physical process such as melting,
+    heating, curing, or deformation
+  - MAT:111 + CRE/STR/WRN/REP predicate → created, organized, harmful, or restorative
+    physical change
+  - MAT:111 + MOV/CON roles → material ingress, delivery, transport, circulation,
+    or exchange with explicit participants
+  later_era_evolution_notes:
+  - Later technical vocabulary may subtype physical-state dimensions and attach measurements
+    without changing this invariant.
+  - Later colloquial forms may lexicalize common compounds such as melt, burn, or
+    bend, but the Era Zero atom remains the general locus-and-phase process.
+  - Any future reassignment requires an explicit versioned migration after user approval.
+  confidence: 0.98
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MAT:112
+    universal_slot: pending outward process
+    family_qualified_transliteration: ba·kon
+    local_compact_root: kon
+    formal_carrier: ba-ki-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 2
+  proposal_status: recommended_pending_user_decision_not_canonical
+  proposed_title: potential target material change
+  invariant_definition: A possible physical-state change localized in a distinct material
+    target that is not active or completed.
+  semantic_center: physical-state change
+  semantic_boundaries:
+  - Includes a change in an intrinsic physical state of matter at the stated observational
+    scale.
+  - Allows thermal, phase, compositional, chemical, electrical, or mechanical specialization
+    without building those subtypes into the atom.
+  - Does not require an intentional agent, beneficial or harmful result, transfer
+    path, schedule, or named cause.
+  - The process locus is distinct-target/outward and the lexical phase is potential/nonactualized.
+  excluded_meanings:
+  - Position or displacement without intrinsic physical-state change belongs to MOV.
+  - Creation purpose belongs to CRE; structural organization to STR; damage to WRN;
+    restoration to REP.
+  - Mental, informational, logical, social, and ontological changes belong to their
+    own families.
+  - Matter/energy transport, input, output, circulation, or exchange requires MOV/CON
+    roles unless intrinsic physical-state change is also asserted.
+  - Scheduling, planning, queueing, readiness, probability, and future certainty are
+    never supplied by lexical trit 2.
+  - A material entity/condition belongs to MAT:0xx; a capacity or relationship remains
+    for MAT:2xx review.
+  nearest_neighbors:
+    triplet: MAT:110–MAT:112
+    same_triplet_completed: MAT:110
+    same_triplet_active: MAT:111
+    same_triplet_potential: MAT:112
+    same_phase_other_loci:
+    - MAT:102
+    - MAT:122
+    entity_layer: MAT:0xx describes material bearers/conditions, not change events.
+    capacity_relationship_layer: MAT:2xx remains provisional and must not be preempted
+      by this process root.
+  address_explanation:
+    first_trit_1: Selects a process/action/transformation rather than a material entity
+      or capacity.
+    second_trit_1: 'Localizes the physical-state change in a distinct target: outward/other/target
+      orientation.'
+    third_trit_2: 'Selects a nonactualized lexical phase: the change is possible but
+      neither active nor completed.'
+  runtime_state_interpretations:
+    '0': Rules out the asserted distinct-target/outward physical-state change as a
+      live possibility in the stated frame.
+    '1': Affirms that the distinct-target/outward physical-state change is possible
+      while remaining nonactualized.
+    '2': Marks whether that nonactualized possibility holds as dormant or unresolved.
+      This layered status still does not encode a plan, queue, schedule, readiness,
+      or future certainty.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects potential/nonactualized
+    physical-state change. Runtime `[2]/num` instead qualifies the current status
+    of a token of that already selected lexeme and never inserts planning, scheduling,
+    or a different lexical phase.
+  cross_family_comparisons:
+    LIF: LIF owns living growth, metabolism, vitality, and identity. `MAT:112` owns
+      only the potential/nonactualized physical-state change at the distinct-target/outward
+      locus; use a compound when a living process has a material realization.
+    MOV: MOV owns position and displacement. Matter crossing space or circulating
+      without intrinsic physical-state change uses MOV with a material bearer, not
+      `MAT:112` alone.
+    MIN: MIN owns mental-state change, attention, memory, and learning. A thought
+      or perception changing does not select `MAT:112` unless a physical material
+      change is separately asserted.
+    CON: CON owns communication, transfer relations, access, and participant linkage.
+      `MAT:112` does not by itself encode giver, receiver, possession, or transmission.
+    STR: STR owns topology, organization, part-whole structure, assembly schema, and
+      boundary relations. `MAT:112` owns physical-state change, not abstract or functional
+      reorganization.
+    WRN: WRN owns damage, hazard, failure, and corruption judgments. A physical change
+      is not inherently harmful; combine WRN when the change is damage or risk.
+    REP: REP owns restoration and healing as goal-directed return toward a prior or
+      viable state. `MAT:112` describes the physical change without restorative purpose.
+    LOG: LOG owns scheduling, queueing, control flow, permission, conditions, and
+      formal state transitions. Lexical process phase and runtime status do not encode
+      those operations.
+    DAT: DAT owns information mutation, storage, decoding, and signal flow. A data
+      structure changing is not a material process unless its physical storage bearer
+      is separately foregrounded.
+    CRE: CRE owns intentional generation, design, novel form, and production semantics.
+      `MAT:112` may supply physical realization, but it never entails artifact creation
+      or purpose.
+    ORI: ORI owns ontological becoming, temporal framing, and reality-level transition.
+      `MAT:112` is limited to a Matter-family physical-state change in an already
+      asserted frame.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MAT:112[1](TARGET=pipe,CHANGE=thawing)
+    literal_gloss: pipe; possible target material change; nonactualized
+    natural_english: The pipe could thaw.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Direct ordinary use of the proposed invariant.
+  - category: physical_or_spatial
+    semantic_graph: MAT:112[1](TARGET=glass,CHANGE=fracture)
+    literal_gloss: glass; possible target-local physical-state change
+    natural_english: The glass can fracture under this load.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Physical example; any location is contextual and does not replace the
+      intrinsic-change invariant.
+  - category: temporal_or_sequential
+    semantic_graph: MAT:112[1](TARGET=coating,CHANGE=curing)
+    literal_gloss: coating; target change possible but inactive
+    natural_english: The coating can cure, but curing has not begun.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Time or sequence is supplied by the graph, not silently by the atomic
+      root.
+  - category: cross_family_compound
+    semantic_graph: MAT:112[1](TARGET=cell)+REP(POSSIBLE=healing)
+    literal_gloss: cell; possible physical change under restorative interpretation
+    natural_english: The tissue could physically heal.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: A decomposition sketch showing how purpose, harm, life, restoration,
+      or creation remains outside MAT.
+  - category: executable_or_programming
+    semantic_graph: MAT:112[1](TARGET=component,CHANGE=deformation)
+    literal_gloss: component; deformation lies in reachable physical states
+    natural_english: The model permits deformation of the component.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Typed event-state interpretation suitable for a future semantic IR.
+    pseudocode: assert reachable?(component.state, :deformed)
+  - category: counterexample
+    semantic_graph: LOG(queue)+MAT(target)
+    literal_gloss: target operation; queued
+    natural_english: The machine queued the coating operation.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: must_not_use_this_mat_root
+    analysis: Queue status needs LOG/grammar; it is not encoded by MAT:112.
+  future_compound_decomposition_sketches_not_canonical:
+  - MAT:112 + change-kind modifier → a specific physical process such as melting,
+    heating, curing, or deformation
+  - MAT:112 + CRE/STR/WRN/REP predicate → created, organized, harmful, or restorative
+    physical change
+  - MAT:112 + MOV/CON roles → material ingress, delivery, transport, circulation,
+    or exchange with explicit participants
+  later_era_evolution_notes:
+  - Later technical vocabulary may subtype physical-state dimensions and attach measurements
+    without changing this invariant.
+  - Later colloquial forms may lexicalize common compounds such as melt, burn, or
+    bend, but the Era Zero atom remains the general locus-and-phase process.
+  - Any future reassignment requires an explicit versioned migration after user approval.
+  confidence: 0.99
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MAT:120
+    universal_slot: completed systemic process
+    family_qualified_transliteration: ba·kim
+    local_compact_root: kim
+    formal_carrier: ba-ki-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 0
+  proposal_status: recommended_pending_user_decision_not_canonical
+  proposed_title: completed systemic material change
+  invariant_definition: Completion of a physical-state change distributed across materially
+    interacting parts of a shared system.
+  semantic_center: physical-state change
+  semantic_boundaries:
+  - Includes a change in an intrinsic physical state of matter at the stated observational
+    scale.
+  - Allows thermal, phase, compositional, chemical, electrical, or mechanical specialization
+    without building those subtypes into the atom.
+  - Does not require an intentional agent, beneficial or harmful result, transfer
+    path, schedule, or named cause.
+  - The process locus is shared-system/systemic and the lexical phase is completed.
+  excluded_meanings:
+  - Position or displacement without intrinsic physical-state change belongs to MOV.
+  - Creation purpose belongs to CRE; structural organization to STR; damage to WRN;
+    restoration to REP.
+  - Mental, informational, logical, social, and ontological changes belong to their
+    own families.
+  - Matter/energy transport, input, output, circulation, or exchange requires MOV/CON
+    roles unless intrinsic physical-state change is also asserted.
+  - Scheduling, planning, queueing, readiness, probability, and future certainty are
+    never supplied by lexical trit 2.
+  - A material entity/condition belongs to MAT:0xx; a capacity or relationship remains
+    for MAT:2xx review.
+  nearest_neighbors:
+    triplet: MAT:120–MAT:122
+    same_triplet_completed: MAT:120
+    same_triplet_active: MAT:121
+    same_triplet_potential: MAT:122
+    same_phase_other_loci:
+    - MAT:100
+    - MAT:110
+    entity_layer: MAT:0xx describes material bearers/conditions, not change events.
+    capacity_relationship_layer: MAT:2xx remains provisional and must not be preempted
+      by this process root.
+  address_explanation:
+    first_trit_1: Selects a process/action/transformation rather than a material entity
+      or capacity.
+    second_trit_2: Distributes the physical-state change across interacting parts
+      of a shared system or environment.
+    third_trit_0: 'Selects the completed lexical phase: the change event reached its
+      boundary.'
+  runtime_state_interpretations:
+    '0': Denies or deactivates the claim that the shared-system/systemic physical-state
+      change reached completion.
+    '1': Affirms that the shared-system/systemic change reached its completion boundary;
+      it does not describe the resulting entity state.
+    '2': Marks the completion assertion itself as dormant, unavailable, remembered,
+      or unresolved. It does not select lexical potential `MAT:122`.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects completed
+    physical-state change. Runtime `[2]/num` instead qualifies the current status
+    of a token of that already selected lexeme and never inserts planning, scheduling,
+    or a different lexical phase.
+  cross_family_comparisons:
+    LIF: LIF owns living growth, metabolism, vitality, and identity. `MAT:120` owns
+      only the completed physical-state change at the shared-system/systemic locus;
+      use a compound when a living process has a material realization.
+    MOV: MOV owns position and displacement. Matter crossing space or circulating
+      without intrinsic physical-state change uses MOV with a material bearer, not
+      `MAT:120` alone.
+    MIN: MIN owns mental-state change, attention, memory, and learning. A thought
+      or perception changing does not select `MAT:120` unless a physical material
+      change is separately asserted.
+    CON: CON owns communication, transfer relations, access, and participant linkage.
+      `MAT:120` does not by itself encode giver, receiver, possession, or transmission.
+    STR: STR owns topology, organization, part-whole structure, assembly schema, and
+      boundary relations. `MAT:120` owns physical-state change, not abstract or functional
+      reorganization.
+    WRN: WRN owns damage, hazard, failure, and corruption judgments. A physical change
+      is not inherently harmful; combine WRN when the change is damage or risk.
+    REP: REP owns restoration and healing as goal-directed return toward a prior or
+      viable state. `MAT:120` describes the physical change without restorative purpose.
+    LOG: LOG owns scheduling, queueing, control flow, permission, conditions, and
+      formal state transitions. Lexical process phase and runtime status do not encode
+      those operations.
+    DAT: DAT owns information mutation, storage, decoding, and signal flow. A data
+      structure changing is not a material process unless its physical storage bearer
+      is separately foregrounded.
+    CRE: CRE owns intentional generation, design, novel form, and production semantics.
+      `MAT:120` may supply physical realization, but it never entails artifact creation
+      or purpose.
+    ORI: ORI owns ontological becoming, temporal framing, and reality-level transition.
+      `MAT:120` is limited to a Matter-family physical-state change in an already
+      asserted frame.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MAT:120[1](SYSTEM=reactor,CHANGE=equilibration)
+    literal_gloss: reactor system; distributed material change; completed
+    natural_english: The reactor contents have finished equilibrating.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Direct ordinary use of the proposed invariant.
+  - category: physical_or_spatial
+    semantic_graph: MAT:120[1](SYSTEM=coolant_loop,CHANGE=thermal_equalization)
+    literal_gloss: coolant loop; distributed physical-state change completed
+    natural_english: The coolant loop reached thermal equilibrium throughout.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Physical example; any location is contextual and does not replace the
+      intrinsic-change invariant.
+  - category: temporal_or_sequential
+    semantic_graph: MAT:120[1](SYSTEM=batch,CHANGE=mixing,AFTER=cycle)
+    literal_gloss: batch system; distributed material change completed
+    natural_english: After the cycle, the batch was uniformly mixed.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Time or sequence is supplied by the graph, not silently by the atomic
+      root.
+  - category: cross_family_compound
+    semantic_graph: MAT:120[1](SYSTEM=recycling_batch)+CRE(RESULT=new_material)
+    literal_gloss: distributed physical change completed with creation result
+    natural_english: The recycling batch finished becoming usable material.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: A decomposition sketch showing how purpose, harm, life, restoration,
+      or creation remains outside MAT.
+  - category: executable_or_programming
+    semantic_graph: MAT:120[1](SYSTEM=mesh,CHANGE=equilibration)
+    literal_gloss: material system; distributed transition converged
+    natural_english: The simulation reports material equilibration complete.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Typed event-state interpretation suitable for a future semantic IR.
+    pseudocode: assert material_field(mesh).converged?
+  - category: counterexample
+    semantic_graph: DAT:120[1](SYSTEM=replicas)
+    literal_gloss: replicated data process completed
+    natural_english: The data replicas finished synchronizing.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: must_not_use_this_mat_root
+    analysis: A distributed information process is DAT/CON, not a systemic material
+      change.
+  future_compound_decomposition_sketches_not_canonical:
+  - MAT:120 + change-kind modifier → a specific physical process such as melting,
+    heating, curing, or deformation
+  - MAT:120 + CRE/STR/WRN/REP predicate → created, organized, harmful, or restorative
+    physical change
+  - MAT:120 + MOV/CON roles → material ingress, delivery, transport, circulation,
+    or exchange with explicit participants
+  later_era_evolution_notes:
+  - Later technical vocabulary may subtype physical-state dimensions and attach measurements
+    without changing this invariant.
+  - Later colloquial forms may lexicalize common compounds such as melt, burn, or
+    bend, but the Era Zero atom remains the general locus-and-phase process.
+  - Any future reassignment requires an explicit versioned migration after user approval.
+  confidence: 0.96
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MAT:121
+    universal_slot: active systemic process
+    family_qualified_transliteration: ba·kik
+    local_compact_root: kik
+    formal_carrier: ba-ki-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 2
+  proposal_status: recommended_pending_user_decision_not_canonical
+  proposed_title: active systemic material change
+  invariant_definition: An ongoing physical-state change distributed across materially
+    interacting parts of a shared system.
+  semantic_center: physical-state change
+  semantic_boundaries:
+  - Includes a change in an intrinsic physical state of matter at the stated observational
+    scale.
+  - Allows thermal, phase, compositional, chemical, electrical, or mechanical specialization
+    without building those subtypes into the atom.
+  - Does not require an intentional agent, beneficial or harmful result, transfer
+    path, schedule, or named cause.
+  - The process locus is shared-system/systemic and the lexical phase is active/ongoing.
+  excluded_meanings:
+  - Position or displacement without intrinsic physical-state change belongs to MOV.
+  - Creation purpose belongs to CRE; structural organization to STR; damage to WRN;
+    restoration to REP.
+  - Mental, informational, logical, social, and ontological changes belong to their
+    own families.
+  - Matter/energy transport, input, output, circulation, or exchange requires MOV/CON
+    roles unless intrinsic physical-state change is also asserted.
+  - Scheduling, planning, queueing, readiness, probability, and future certainty are
+    never supplied by lexical trit 2.
+  - A material entity/condition belongs to MAT:0xx; a capacity or relationship remains
+    for MAT:2xx review.
+  nearest_neighbors:
+    triplet: MAT:120–MAT:122
+    same_triplet_completed: MAT:120
+    same_triplet_active: MAT:121
+    same_triplet_potential: MAT:122
+    same_phase_other_loci:
+    - MAT:101
+    - MAT:111
+    entity_layer: MAT:0xx describes material bearers/conditions, not change events.
+    capacity_relationship_layer: MAT:2xx remains provisional and must not be preempted
+      by this process root.
+  address_explanation:
+    first_trit_1: Selects a process/action/transformation rather than a material entity
+      or capacity.
+    second_trit_2: Distributes the physical-state change across interacting parts
+      of a shared system or environment.
+    third_trit_1: 'Selects the active lexical phase: the change is presently ongoing.'
+  runtime_state_interpretations:
+    '0': Denies that the shared-system/systemic physical-state change is presently
+      underway.
+    '1': Affirms that the shared-system/systemic physical-state change is underway
+      at the reference time.
+    '2': Marks the current status of this active-process assertion as dormant, paused,
+      unavailable, or unresolved. It does not change the lexeme into `MAT:122`.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects active/ongoing
+    physical-state change. Runtime `[2]/num` instead qualifies the current status
+    of a token of that already selected lexeme and never inserts planning, scheduling,
+    or a different lexical phase.
+  cross_family_comparisons:
+    LIF: LIF owns living growth, metabolism, vitality, and identity. `MAT:121` owns
+      only the active/ongoing physical-state change at the shared-system/systemic
+      locus; use a compound when a living process has a material realization.
+    MOV: MOV owns position and displacement. Matter crossing space or circulating
+      without intrinsic physical-state change uses MOV with a material bearer, not
+      `MAT:121` alone.
+    MIN: MIN owns mental-state change, attention, memory, and learning. A thought
+      or perception changing does not select `MAT:121` unless a physical material
+      change is separately asserted.
+    CON: CON owns communication, transfer relations, access, and participant linkage.
+      `MAT:121` does not by itself encode giver, receiver, possession, or transmission.
+    STR: STR owns topology, organization, part-whole structure, assembly schema, and
+      boundary relations. `MAT:121` owns physical-state change, not abstract or functional
+      reorganization.
+    WRN: WRN owns damage, hazard, failure, and corruption judgments. A physical change
+      is not inherently harmful; combine WRN when the change is damage or risk.
+    REP: REP owns restoration and healing as goal-directed return toward a prior or
+      viable state. `MAT:121` describes the physical change without restorative purpose.
+    LOG: LOG owns scheduling, queueing, control flow, permission, conditions, and
+      formal state transitions. Lexical process phase and runtime status do not encode
+      those operations.
+    DAT: DAT owns information mutation, storage, decoding, and signal flow. A data
+      structure changing is not a material process unless its physical storage bearer
+      is separately foregrounded.
+    CRE: CRE owns intentional generation, design, novel form, and production semantics.
+      `MAT:121` may supply physical realization, but it never entails artifact creation
+      or purpose.
+    ORI: ORI owns ontological becoming, temporal framing, and reality-level transition.
+      `MAT:121` is limited to a Matter-family physical-state change in an already
+      asserted frame.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MAT:121[1](SYSTEM=fermentation_vat,CHANGE=reaction)
+    literal_gloss: vat system; distributed material change; ongoing
+    natural_english: The vat is fermenting throughout.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Direct ordinary use of the proposed invariant.
+  - category: physical_or_spatial
+    semantic_graph: MAT:121[1](SYSTEM=alloy_bath,CHANGE=mixing)
+    literal_gloss: alloy bath; distributed physical-state change active
+    natural_english: The alloy bath is changing composition across the whole vessel.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Physical example; any location is contextual and does not replace the
+      intrinsic-change invariant.
+  - category: temporal_or_sequential
+    semantic_graph: MAT:121[1](SYSTEM=reactor,CHANGE=equilibration,DURING=stage)
+    literal_gloss: reactor; distributed material change active during stage
+    natural_english: The reactor is equilibrating during this stage.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Time or sequence is supplied by the graph, not silently by the atomic
+      root.
+  - category: cross_family_compound
+    semantic_graph: MAT:121[1](SYSTEM=ecosystem)+LIF(PROCESS=metabolism)
+    literal_gloss: distributed material change within a living system
+    natural_english: Material is being transformed across the ecosystem’s living processes.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: A decomposition sketch showing how purpose, harm, life, restoration,
+      or creation remains outside MAT.
+  - category: executable_or_programming
+    semantic_graph: MAT:121[1](SYSTEM=grid,CHANGE=thermal)
+    literal_gloss: material field; distributed transition currently evolving
+    natural_english: The solver is evolving the thermal state across the grid.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Typed event-state interpretation suitable for a future semantic IR.
+    pseudocode: assert material_field(grid).evolving?
+  - category: counterexample
+    semantic_graph: MOV:121[1](MOVER=water,FRAME=pipe_network)
+    literal_gloss: water; active shared-frame movement
+    natural_english: Water is circulating without changing physical state.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: must_not_use_this_mat_root
+    analysis: Pure circulation is MOV plus a material bearer; MAT:121 requires distributed
+      physical-state change.
+  future_compound_decomposition_sketches_not_canonical:
+  - MAT:121 + change-kind modifier → a specific physical process such as melting,
+    heating, curing, or deformation
+  - MAT:121 + CRE/STR/WRN/REP predicate → created, organized, harmful, or restorative
+    physical change
+  - MAT:121 + MOV/CON roles → material ingress, delivery, transport, circulation,
+    or exchange with explicit participants
+  later_era_evolution_notes:
+  - Later technical vocabulary may subtype physical-state dimensions and attach measurements
+    without changing this invariant.
+  - Later colloquial forms may lexicalize common compounds such as melt, burn, or
+    bend, but the Era Zero atom remains the general locus-and-phase process.
+  - Any future reassignment requires an explicit versioned migration after user approval.
+  confidence: 0.97
+  canonicalized: false
+- fixed_generated_fields:
+    canonical_id: MAT:122
+    universal_slot: pending systemic process
+    family_qualified_transliteration: ba·kin
+    local_compact_root: kin
+    formal_carrier: ba-ki-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - -2
+  proposal_status: recommended_pending_user_decision_not_canonical
+  proposed_title: potential systemic material change
+  invariant_definition: A possible physical-state change distributed across materially
+    interacting parts of a shared system that is not active or completed.
+  semantic_center: physical-state change
+  semantic_boundaries:
+  - Includes a change in an intrinsic physical state of matter at the stated observational
+    scale.
+  - Allows thermal, phase, compositional, chemical, electrical, or mechanical specialization
+    without building those subtypes into the atom.
+  - Does not require an intentional agent, beneficial or harmful result, transfer
+    path, schedule, or named cause.
+  - The process locus is shared-system/systemic and the lexical phase is potential/nonactualized.
+  excluded_meanings:
+  - Position or displacement without intrinsic physical-state change belongs to MOV.
+  - Creation purpose belongs to CRE; structural organization to STR; damage to WRN;
+    restoration to REP.
+  - Mental, informational, logical, social, and ontological changes belong to their
+    own families.
+  - Matter/energy transport, input, output, circulation, or exchange requires MOV/CON
+    roles unless intrinsic physical-state change is also asserted.
+  - Scheduling, planning, queueing, readiness, probability, and future certainty are
+    never supplied by lexical trit 2.
+  - A material entity/condition belongs to MAT:0xx; a capacity or relationship remains
+    for MAT:2xx review.
+  nearest_neighbors:
+    triplet: MAT:120–MAT:122
+    same_triplet_completed: MAT:120
+    same_triplet_active: MAT:121
+    same_triplet_potential: MAT:122
+    same_phase_other_loci:
+    - MAT:102
+    - MAT:112
+    entity_layer: MAT:0xx describes material bearers/conditions, not change events.
+    capacity_relationship_layer: MAT:2xx remains provisional and must not be preempted
+      by this process root.
+  address_explanation:
+    first_trit_1: Selects a process/action/transformation rather than a material entity
+      or capacity.
+    second_trit_2: Distributes the physical-state change across interacting parts
+      of a shared system or environment.
+    third_trit_2: 'Selects a nonactualized lexical phase: the change is possible but
+      neither active nor completed.'
+  runtime_state_interpretations:
+    '0': Rules out the asserted shared-system/systemic physical-state change as a
+      live possibility in the stated frame.
+    '1': Affirms that the shared-system/systemic physical-state change is possible
+      while remaining nonactualized.
+    '2': Marks whether that nonactualized possibility holds as dormant or unresolved.
+      This layered status still does not encode a plan, queue, schedule, readiness,
+      or future certainty.
+  lexical_third_trit_vs_runtime_2: The third lexical trit permanently selects potential/nonactualized
+    physical-state change. Runtime `[2]/num` instead qualifies the current status
+    of a token of that already selected lexeme and never inserts planning, scheduling,
+    or a different lexical phase.
+  cross_family_comparisons:
+    LIF: LIF owns living growth, metabolism, vitality, and identity. `MAT:122` owns
+      only the potential/nonactualized physical-state change at the shared-system/systemic
+      locus; use a compound when a living process has a material realization.
+    MOV: MOV owns position and displacement. Matter crossing space or circulating
+      without intrinsic physical-state change uses MOV with a material bearer, not
+      `MAT:122` alone.
+    MIN: MIN owns mental-state change, attention, memory, and learning. A thought
+      or perception changing does not select `MAT:122` unless a physical material
+      change is separately asserted.
+    CON: CON owns communication, transfer relations, access, and participant linkage.
+      `MAT:122` does not by itself encode giver, receiver, possession, or transmission.
+    STR: STR owns topology, organization, part-whole structure, assembly schema, and
+      boundary relations. `MAT:122` owns physical-state change, not abstract or functional
+      reorganization.
+    WRN: WRN owns damage, hazard, failure, and corruption judgments. A physical change
+      is not inherently harmful; combine WRN when the change is damage or risk.
+    REP: REP owns restoration and healing as goal-directed return toward a prior or
+      viable state. `MAT:122` describes the physical change without restorative purpose.
+    LOG: LOG owns scheduling, queueing, control flow, permission, conditions, and
+      formal state transitions. Lexical process phase and runtime status do not encode
+      those operations.
+    DAT: DAT owns information mutation, storage, decoding, and signal flow. A data
+      structure changing is not a material process unless its physical storage bearer
+      is separately foregrounded.
+    CRE: CRE owns intentional generation, design, novel form, and production semantics.
+      `MAT:122` may supply physical realization, but it never entails artifact creation
+      or purpose.
+    ORI: ORI owns ontological becoming, temporal framing, and reality-level transition.
+      `MAT:122` is limited to a Matter-family physical-state change in an already
+      asserted frame.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: MAT:122[1](SYSTEM=atmosphere,CHANGE=condensation)
+    literal_gloss: atmospheric system; possible distributed material change
+    natural_english: Condensation could develop across the system.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Direct ordinary use of the proposed invariant.
+  - category: physical_or_spatial
+    semantic_graph: MAT:122[1](SYSTEM=reactor,CHANGE=runaway_reaction)
+    literal_gloss: reactor system; possible distributed physical-state change
+    natural_english: A system-wide reaction is physically possible but has not started.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Physical example; any location is contextual and does not replace the
+      intrinsic-change invariant.
+  - category: temporal_or_sequential
+    semantic_graph: MAT:122[1](SYSTEM=batch,CHANGE=crystallization)
+    literal_gloss: batch; distributed change nonactualized
+    natural_english: The batch could crystallize throughout; no such change is active.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Time or sequence is supplied by the graph, not silently by the atomic
+      root.
+  - category: cross_family_compound
+    semantic_graph: MAT:122[1](SYSTEM=grid)+WRN(POSSIBLE=overheating)
+    literal_gloss: systemic physical change possible and hazardous
+    natural_english: The grid could overheat system-wide.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: A decomposition sketch showing how purpose, harm, life, restoration,
+      or creation remains outside MAT.
+  - category: executable_or_programming
+    semantic_graph: MAT:122[1](SYSTEM=mesh,CHANGE=phase)
+    literal_gloss: mesh; distributed phase transition belongs to reachable state space
+    natural_english: The model allows a system-wide phase transition.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: valid
+    analysis: Typed event-state interpretation suitable for a future semantic IR.
+    pseudocode: assert reachable?(mesh.state, :distributed_phase_change)
+  - category: counterexample
+    semantic_graph: LOG(schedule)+MAT(system)
+    literal_gloss: system operation; scheduled
+    natural_english: The plant scheduled a material cycle.
+    runtime_state: 1
+    contour: declarative
+    role_registers:
+      low: focal bearer, affected source, or initiating participant
+      middle: MAT process predicate
+      high: distinct target, result, or contrasted participant when present
+      sustained: shared material environment or system when present
+    use_status: must_not_use_this_mat_root
+    analysis: Scheduling and cycle specification are separate LOG/grammar structures;
+      MAT:122 alone must not encode them.
+  future_compound_decomposition_sketches_not_canonical:
+  - MAT:122 + change-kind modifier → a specific physical process such as melting,
+    heating, curing, or deformation
+  - MAT:122 + CRE/STR/WRN/REP predicate → created, organized, harmful, or restorative
+    physical change
+  - MAT:122 + MOV/CON roles → material ingress, delivery, transport, circulation,
+    or exchange with explicit participants
+  later_era_evolution_notes:
+  - Later technical vocabulary may subtype physical-state dimensions and attach measurements
+    without changing this invariant.
+  - Later colloquial forms may lexicalize common compounds such as melt, burn, or
+    bend, but the Era Zero atom remains the general locus-and-phase process.
+  - Any future reassignment requires an explicit versioned migration after user approval.
+  confidence: 0.99
+  canonicalized: false

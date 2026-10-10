@@ -1,0 +1,248 @@
+---
+metadata:
+  title: MIN:100–122 English coverage and stress tests
+  status: review_complete
+  test_count: 51
+  forced_atomic_mappings_forbidden: true
+tests:
+- test_id: MIN1-T001
+  english_concept: learn
+  routing: compound
+  analysis: MIN:111/110 only when a target representation changes; add source/evidence
+    and result. Skill acquisition without representational change belongs elsewhere.
+- test_id: MIN1-T002
+  english_concept: understand
+  routing: compound
+  analysis: Usually a manifest/persistent target representation plus completed target-model
+    revision and often LOG coherence; not one atom.
+- test_id: MIN1-T003
+  english_concept: realize
+  routing: compound
+  analysis: Completed target- or self-model revision plus a newly manifest representation;
+    truth is not automatic.
+- test_id: MIN1-T004
+  english_concept: change one's mind
+  routing: one_root_or_compound
+  analysis: MIN:101 while the relevant self/target model is changing, MIN:100/110
+    when completed; content relation remains explicit.
+- test_id: MIN1-T005
+  english_concept: reconsider oneself
+  routing: one_root
+  analysis: MIN:101 when the self-model is actually changing; mere inspection is a
+    gap or attention/inference compound.
+- test_id: MIN1-T006
+  english_concept: revise self-image
+  routing: one_root
+  analysis: MIN:101 active, MIN:100 completed, MIN:102 nonactualized.
+- test_id: MIN1-T007
+  english_concept: revise an opinion of someone
+  routing: one_root
+  analysis: MIN:111 active, MIN:110 completed, MIN:112 nonactualized.
+- test_id: MIN1-T008
+  english_concept: update a world model
+  routing: one_root
+  analysis: MIN:111 active or MIN:110 completed when the bearer is a cognizer/agent.
+- test_id: MIN1-T009
+  english_concept: update a database record
+  routing: different_family
+  analysis: DAT, not MIN, unless a cognitive representation also changes.
+- test_id: MIN1-T010
+  english_concept: reflect
+  routing: compound_or_gap
+  analysis: MIN:101 only when reflection changes the self-model; otherwise attention/evaluation
+    remains outside this block.
+- test_id: MIN1-T011
+  english_concept: introspect
+  routing: compound_or_gap
+  analysis: Inward attention plus manifest self-representation; revision is optional.
+- test_id: MIN1-T012
+  english_concept: remember
+  routing: state_transition_or_gap
+  analysis: Transition from latent to manifest MIN representation; pure recall is
+    not revision.
+- test_id: MIN1-T013
+  english_concept: recall a face
+  routing: state_transition_or_gap
+  analysis: MIN:012 → MIN:011 plus a later access process; not MIN:111 unless the
+    face model changes.
+- test_id: MIN1-T014
+  english_concept: forget
+  routing: compound_or_gap
+  analysis: Loss, inaccessibility, or transition of a representation requires MIN:0xx
+    plus WRN/REP/grammar; not automatically revision.
+- test_id: MIN1-T015
+  english_concept: imagine
+  routing: compound_or_gap
+  analysis: Creation of a mental representation requires CRE + MIN content/process
+    relations; not identical to revision.
+- test_id: MIN1-T016
+  english_concept: perceive
+  routing: compound_or_gap
+  analysis: MAT signal plus a Mind representation/acquisition relation; perceptual
+    input can occur without revision.
+- test_id: MIN1-T017
+  english_concept: observe
+  routing: compound_or_gap
+  analysis: Attention/perception plus target representation; use MIN:111 only if observation
+    changes the target model.
+- test_id: MIN1-T018
+  english_concept: notice
+  routing: existing_root_or_gap
+  analysis: Manifest target representation MIN:011 plus attention transition; not
+    model revision by default.
+- test_id: MIN1-T019
+  english_concept: focus
+  routing: later_mind_layer
+  analysis: Attention allocation is intentionally reserved for MIN:2xx review or compounds.
+- test_id: MIN1-T020
+  english_concept: study
+  routing: compound
+  analysis: Intended/active inquiry combines attention, DAT sources, LOG operations,
+    and possible MIN:111 revision.
+- test_id: MIN1-T021
+  english_concept: ask
+  routing: different_family
+  analysis: CON for a question transmitted to another participant; cognitive uncertainty
+    is separate.
+- test_id: MIN1-T022
+  english_concept: inquire
+  routing: compound
+  analysis: CON/DAT/LOG process with possible MIN:111; inquiry need not change the
+    inquirer's representation.
+- test_id: MIN1-T023
+  english_concept: infer
+  routing: different_family_or_compound
+  analysis: LOG owns formal consequence; add MIN:110/111 only if the cognizer's target
+    model changes.
+- test_id: MIN1-T024
+  english_concept: reason
+  routing: different_family_or_compound
+  analysis: LOG owns inferential structure; MIN records cognitive representational
+    change when it occurs.
+- test_id: MIN1-T025
+  english_concept: evaluate
+  routing: compound_or_gap
+  analysis: Requires a criterion and comparison relation; add MIN revision only when
+    evaluation changes a model.
+- test_id: MIN1-T026
+  english_concept: judge
+  routing: compound_or_gap
+  analysis: Epistemic or normative commitment requires LOG/ORI/grammar; not one revision
+    atom.
+- test_id: MIN1-T027
+  english_concept: decide
+  routing: compound_or_gap
+  analysis: Choice/commitment needs alternatives, selection, and often CRE/LOG; model
+    revision may accompany it but is not the decision.
+- test_id: MIN1-T028
+  english_concept: plan
+  routing: different_family_or_compound
+  analysis: CRE/DAT plus temporal/modal grammar; forbidden as the lexical meaning
+    of MIN:*2.
+- test_id: MIN1-T029
+  english_concept: intend
+  routing: grammar_or_compound
+  analysis: Modal/agentive relation; forbidden as the lexical meaning of MIN:*2.
+- test_id: MIN1-T030
+  english_concept: schedule
+  routing: different_family
+  analysis: DAT plus temporal grammar; forbidden as the lexical meaning of MIN:*2.
+- test_id: MIN1-T031
+  english_concept: prepare to rethink
+  routing: compound
+  analysis: CRE/DAT preparation plus MIN:102/112/122; preparation is separate from
+    process nonactualization.
+- test_id: MIN1-T032
+  english_concept: possible revision
+  routing: one_root_plus_grammar
+  analysis: MIN:*2 selects nonactualized revision; modality may further state why
+    it is considered possible.
+- test_id: MIN1-T033
+  english_concept: queued revision
+  routing: compound
+  analysis: DAT queue state plus MIN:*2; the root alone does not encode queue placement.
+- test_id: MIN1-T034
+  english_concept: collective learning
+  routing: compound
+  analysis: MIN:121/120 only for shared-schema change, usually with CON exchange and
+    DAT evidence.
+- test_id: MIN1-T035
+  english_concept: deliberate together
+  routing: compound
+  analysis: LOG reasoning + CON participation; MIN:121 only if a shared schema is
+    changing.
+- test_id: MIN1-T036
+  english_concept: reach consensus
+  routing: compound
+  analysis: CON agreement procedure + MIN:020/021 shared schema + possibly MIN:120;
+    consensus is not the atom.
+- test_id: MIN1-T037
+  english_concept: share an idea
+  routing: different_family_or_compound
+  analysis: CON transmission + MIN representations in participants; no revision is
+    guaranteed.
+- test_id: MIN1-T038
+  english_concept: teach
+  routing: compound
+  analysis: CON/DAT transmission intended to cause MIN:111/110 in a learner; success
+    must be separately asserted.
+- test_id: MIN1-T039
+  english_concept: train a model
+  routing: compound
+  analysis: Repeated DAT input + MIN:111 revision + technical control grammar; physical
+    compute remains MAT.
+- test_id: MIN1-T040
+  english_concept: model converges
+  routing: compound
+  analysis: MIN:120 completed shared-schema revision plus LOG/MAT/DAT criteria depending
+    on model type.
+- test_id: MIN1-T041
+  english_concept: hallucinate
+  routing: compound
+  analysis: WRN + CRE/MIN representation; revision is asserted only if an existing
+    model changes.
+- test_id: MIN1-T042
+  english_concept: correct a misconception
+  routing: compound
+  analysis: WRN identifies error, REP expresses correction, MIN:110 records completed
+    target-model revision.
+- test_id: MIN1-T043
+  english_concept: brain plasticity
+  routing: different_family
+  analysis: MAT physical neural change; cognitive revision may be correlated but is
+    not identical.
+- test_id: MIN1-T044
+  english_concept: reorganize a file tree
+  routing: different_family
+  analysis: STR/DAT, not MIN, unless a cognizer's representation also changes.
+- test_id: MIN1-T045
+  english_concept: redirect attention
+  routing: later_mind_layer
+  analysis: Attention process/capacity, intentionally not owned by representational
+    revision.
+- test_id: MIN1-T046
+  english_concept: belief remains unchanged
+  routing: existing_root
+  analysis: MIN:000/010/020 persistent representation depending scope; no MIN:1xx
+    revision.
+- test_id: MIN1-T047
+  english_concept: mental image is present
+  routing: existing_root
+  analysis: MIN:001/011/021 manifest representation depending scope.
+- test_id: MIN1-T048
+  english_concept: idea is latent
+  routing: existing_root
+  analysis: MIN:002/012/022 latent representation depending scope.
+- test_id: MIN1-T049
+  english_concept: truth of a belief
+  routing: different_family
+  analysis: LOG/ORI plus a MIN representation relation; revision is irrelevant.
+- test_id: MIN1-T050
+  english_concept: repeatedly revise
+  routing: one_root_plus_grammar
+  analysis: MIN:101 or bounded MIN:100/110/120 events plus repetition grammar.
+- test_id: MIN1-T051
+  english_concept: revision failed
+  routing: compound
+  analysis: WRN process failure + the relevant MIN revision root with negated/noncompleted
+    result.

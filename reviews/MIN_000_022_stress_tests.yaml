@@ -1,0 +1,481 @@
+---
+metadata:
+  title: MIN:000–022 English concept stress tests
+  status: review_evidence_not_dictionary
+  scope: MIN:000–022 only
+  concept_count: 91
+  no_forced_atomization: true
+classification_values:
+- direct proposed root
+- composition
+- canonical/future other family
+- future MIN capacity/relationship
+- future MIN process/capacity
+- grammar or quantity
+- unresolved lexical ambiguity
+- root plus runtime
+tests:
+- test_id: MIN000-T001
+  concept: self-image
+  classification: direct proposed root
+  mapping: MIN:000
+  reason: Persistent representation of oneself.
+- test_id: MIN000-T002
+  concept: body image
+  classification: composition
+  mapping: MIN:000 + MAT/STR
+  reason: Self-representation with embodied or structural content.
+- test_id: MIN000-T003
+  concept: current self-awareness
+  classification: direct proposed root
+  mapping: MIN:001
+  reason: Self-representation presently manifest.
+- test_id: MIN000-T004
+  concept: subconscious self-schema
+  classification: direct proposed root
+  mapping: MIN:002
+  reason: Latent self-representation.
+- test_id: MIN000-T005
+  concept: autobiographical memory
+  classification: composition
+  mapping: MIN:000/002 + temporal/source relation
+  reason: Depends on persistence and current manifestation.
+- test_id: MIN000-T006
+  concept: sense of identity
+  classification: composition
+  mapping: LIF + MIN:000
+  reason: Identity and its cognitive representation are distinct.
+- test_id: MIN000-T007
+  concept: consciousness
+  classification: canonical/future other family
+  mapping: LIF
+  reason: The condition of consciousness is not merely a representation.
+- test_id: MIN000-T008
+  concept: emotion
+  classification: composition
+  mapping: LIF/MIN representation
+  reason: Emotion itself versus representation of emotion.
+- test_id: MIN000-T009
+  concept: pain awareness
+  classification: composition
+  mapping: LIF/MAT sensation + MIN:001
+  reason: Bodily state plus manifest self-representation.
+- test_id: MIN000-T010
+  concept: desire
+  classification: future MIN capacity/relationship
+  mapping: MIN:2xx or unresolved
+  reason: Motivational relation is not fixed here.
+- test_id: MIN000-T011
+  concept: intention
+  classification: future MIN process/capacity
+  mapping: MIN:1xx/2xx
+  reason: Intentional commitment is not a representation entity.
+- test_id: MIN000-T012
+  concept: attention
+  classification: future MIN process/capacity
+  mapping: MIN:1xx/2xx
+  reason: Allocation of cognition is reserved.
+- test_id: MIN000-T013
+  concept: focus
+  classification: future MIN process/capacity
+  mapping: MIN:1xx/2xx
+  reason: Not forced into an entity root.
+- test_id: MIN000-T014
+  concept: introspection
+  classification: future MIN process/capacity
+  mapping: MIN:1xx
+  reason: An inward cognitive process.
+- test_id: MIN000-T015
+  concept: reflection
+  classification: future MIN process/capacity
+  mapping: MIN:1xx
+  reason: An inward cognitive process.
+- test_id: MIN000-T016
+  concept: remember
+  classification: future MIN process/capacity
+  mapping: MIN:1xx
+  reason: Recall is a process; resulting content may be manifest.
+- test_id: MIN000-T017
+  concept: forget
+  classification: composition
+  mapping: MIN representation + WRN/REP/runtime
+  reason: Loss, inaccessibility, or latency must be distinguished.
+- test_id: MIN000-T018
+  concept: memory content
+  classification: composition
+  mapping: MIN:000/010/020 by scope
+  reason: Representation plus temporal/provenance relation.
+- test_id: MIN000-T019
+  concept: mental image of a place
+  classification: direct proposed root
+  mapping: MIN:010/011/012
+  reason: Target representation selected by expression.
+- test_id: MIN000-T020
+  concept: concept
+  classification: composition
+  mapping: MIN representation + LOG/STR type
+  reason: Representation whose content is conceptual.
+- test_id: MIN000-T021
+  concept: idea
+  classification: composition
+  mapping: MIN representation + CRE/source
+  reason: Representation with a creation or emergence relation.
+- test_id: MIN000-T022
+  concept: belief
+  classification: future MIN capacity/relationship
+  mapping: MIN:2xx + representation
+  reason: Commitment toward content is relational.
+- test_id: MIN000-T023
+  concept: opinion
+  classification: composition
+  mapping: MIN:2xx + MIN representation
+  reason: Belief relation plus represented content.
+- test_id: MIN000-T024
+  concept: knowledge
+  classification: composition
+  mapping: MIN representation + LOG/ORI justification/truth
+  reason: Do not equate representation with knowledge.
+- test_id: MIN000-T025
+  concept: certainty
+  classification: grammar or quantity
+  mapping: LOG/modality
+  reason: Degree or status of commitment.
+- test_id: MIN000-T026
+  concept: doubt
+  classification: future MIN capacity/relationship
+  mapping: MIN:2xx or LOG
+  reason: Unresolved epistemic relation.
+- test_id: MIN000-T027
+  concept: truth
+  classification: canonical/future other family
+  mapping: LOG/ORI
+  reason: Representation may be true or false.
+- test_id: MIN000-T028
+  concept: false belief
+  classification: composition
+  mapping: MIN representation + MIN:2xx + WRN/LOG
+  reason: Content, commitment, and error are separate.
+- test_id: MIN000-T029
+  concept: hallucination
+  classification: composition
+  mapping: MIN:011 + WRN + absent external cause
+  reason: Manifest target-like representation with error conditions.
+- test_id: MIN000-T030
+  concept: dream
+  classification: composition
+  mapping: MIN representation + LIF state/CRE
+  reason: Generated or manifest content under a sleep state.
+- test_id: MIN000-T031
+  concept: imagination
+  classification: future MIN process/capacity
+  mapping: MIN:1xx/2xx + CRE
+  reason: Generation process, not the represented entity.
+- test_id: MIN000-T032
+  concept: perception
+  classification: future MIN process/capacity
+  mapping: MIN:1xx
+  reason: Perceiving is a process; content may map to MIN:011.
+- test_id: MIN000-T033
+  concept: sensation
+  classification: composition
+  mapping: MAT/LIF signal + MIN:001/011
+  reason: Physical/biological signal and cognitive representation.
+- test_id: MIN000-T034
+  concept: recognition
+  classification: future MIN process/capacity
+  mapping: MIN:1xx
+  reason: A target-directed cognitive process.
+- test_id: MIN000-T035
+  concept: unrecognized object
+  classification: unresolved lexical ambiguity
+  mapping: MIN:012 or no MIN root
+  reason: May mean latent representation or absence of representation.
+- test_id: MIN000-T036
+  concept: familiar face not recalled
+  classification: direct proposed root
+  mapping: MIN:012
+  reason: Target representation persists but is not manifest.
+- test_id: MIN000-T037
+  concept: mental map
+  classification: composition
+  mapping: MIN:010/011/012 + STR/MOV
+  reason: Representation with spatial structure.
+- test_id: MIN000-T038
+  concept: world model
+  classification: direct proposed root
+  mapping: MIN:010
+  reason: Persistent target/environment representation.
+- test_id: MIN000-T039
+  concept: active scene model
+  classification: direct proposed root
+  mapping: MIN:011
+  reason: Target representation presently manifest.
+- test_id: MIN000-T040
+  concept: cached object model
+  classification: direct proposed root
+  mapping: MIN:012
+  reason: Target representation latent outside active cognition.
+- test_id: MIN000-T041
+  concept: prediction
+  classification: future MIN process/capacity
+  mapping: MIN:1xx/2xx + LOG
+  reason: Inference or modal relation, not entity alone.
+- test_id: MIN000-T042
+  concept: expectation
+  classification: future MIN capacity/relationship
+  mapping: MIN:2xx
+  reason: Target-directed anticipatory relation.
+- test_id: MIN000-T043
+  concept: hypothesis
+  classification: composition
+  mapping: MIN representation + LOG possibility
+  reason: Represented proposition under formal possibility.
+- test_id: MIN000-T044
+  concept: theory
+  classification: composition
+  mapping: MIN:020 + LOG/STR
+  reason: Shared schema plus formal organization and evidence.
+- test_id: MIN000-T045
+  concept: common understanding
+  classification: direct proposed root
+  mapping: MIN:020/021
+  reason: Persistent or presently manifest shared schema.
+- test_id: MIN000-T046
+  concept: team mental model
+  classification: direct proposed root
+  mapping: MIN:020
+  reason: Persistent schema held across team members.
+- test_id: MIN000-T047
+  concept: shared situation awareness
+  classification: direct proposed root
+  mapping: MIN:021
+  reason: Shared schema presently manifest.
+- test_id: MIN000-T048
+  concept: tacit group knowledge
+  classification: direct proposed root
+  mapping: MIN:022
+  reason: Shared schema latent among members.
+- test_id: MIN000-T049
+  concept: collective memory
+  classification: composition
+  mapping: MIN:020/022 + temporal/source relation
+  reason: Shared representation with memory provenance.
+- test_id: MIN000-T050
+  concept: culture
+  classification: composition
+  mapping: MIN:020/022 + CON/STR/DAT
+  reason: Shared cognition, practices, transmission, and artifacts.
+- test_id: MIN000-T051
+  concept: tradition
+  classification: composition
+  mapping: MIN:020/022 + CON/DAT + temporal continuity
+  reason: Not one atomic Mind entity.
+- test_id: MIN000-T052
+  concept: convention
+  classification: composition
+  mapping: CON/STR/LOG + MIN:020
+  reason: Normative or communicative rule plus shared schema.
+- test_id: MIN000-T053
+  concept: consensus
+  classification: composition
+  mapping: MIN:021 + CON/LOG process/result
+  reason: Shared manifest schema plus agreement conditions.
+- test_id: MIN000-T054
+  concept: joint attention
+  classification: future MIN process/capacity
+  mapping: MIN:1xx/2xx
+  reason: Simultaneous attention does not imply shared representation.
+- test_id: MIN000-T055
+  concept: groupthink
+  classification: composition
+  mapping: MIN:020/021 + WRN/CON
+  reason: Shared schema plus dysfunctional social/error condition.
+- test_id: MIN000-T056
+  concept: rumor
+  classification: composition
+  mapping: DAT/CON + MIN representation
+  reason: Transmitted content and participant beliefs.
+- test_id: MIN000-T057
+  concept: shared database
+  classification: canonical/future other family
+  mapping: DAT
+  reason: Common stored data is not cognitive sharing.
+- test_id: MIN000-T058
+  concept: manual everyone can access
+  classification: canonical/future other family
+  mapping: DAT/CON
+  reason: Access does not prove a shared mental model.
+- test_id: MIN000-T059
+  concept: message
+  classification: canonical/future other family
+  mapping: DAT/CON
+  reason: Information artifact or transmission.
+- test_id: MIN000-T060
+  concept: communication
+  classification: canonical/future other family
+  mapping: CON
+  reason: Participant transfer process or relation.
+- test_id: MIN000-T061
+  concept: signal
+  classification: canonical/future other family
+  mapping: DAT/MAT
+  reason: Physical or informational carrier.
+- test_id: MIN000-T062
+  concept: record
+  classification: canonical/future other family
+  mapping: DAT
+  reason: External stored information.
+- test_id: MIN000-T063
+  concept: database row
+  classification: canonical/future other family
+  mapping: DAT
+  reason: Stored symbol structure.
+- test_id: MIN000-T064
+  concept: neural state
+  classification: canonical/future other family
+  mapping: MAT
+  reason: Physical realization is not mental content.
+- test_id: MIN000-T065
+  concept: brain
+  classification: canonical/future other family
+  mapping: MAT/LIF
+  reason: Biological material bearer.
+- test_id: MIN000-T066
+  concept: software object model
+  classification: unresolved lexical ambiguity
+  mapping: DAT/STR or MIN
+  reason: MIN only when the software is treated as a cognizer's representation.
+- test_id: MIN000-T067
+  concept: AI self-model
+  classification: direct proposed root
+  mapping: MIN:000/001/002
+  reason: Self-representation selected by expression.
+- test_id: MIN000-T068
+  concept: AI world model
+  classification: direct proposed root
+  mapping: MIN:010/011/012
+  reason: Target representation selected by expression.
+- test_id: MIN000-T069
+  concept: multi-agent shared model
+  classification: direct proposed root
+  mapping: MIN:020/021/022
+  reason: Shared schema selected by expression.
+- test_id: MIN000-T070
+  concept: working memory
+  classification: composition
+  mapping: MIN:001/011/021 + cognitive-role relation
+  reason: Manifest representation serving a working role.
+- test_id: MIN000-T071
+  concept: long-term memory
+  classification: composition
+  mapping: MIN:000/010/020 + temporal persistence
+  reason: Persistent representation with storage/retention relation.
+- test_id: MIN000-T072
+  concept: latent memory
+  classification: direct proposed root
+  mapping: MIN:002/012/022
+  reason: Latent representation selected by scope.
+- test_id: MIN000-T073
+  concept: recall cue
+  classification: composition
+  mapping: DAT/MIN-process + MIN latent root
+  reason: Cue and transition are separate.
+- test_id: MIN000-T074
+  concept: learning
+  classification: future MIN process/capacity
+  mapping: MIN:1xx/2xx
+  reason: Representation change process.
+- test_id: MIN000-T075
+  concept: reasoning
+  classification: future MIN process/capacity
+  mapping: MIN:1xx
+  reason: Cognitive transformation process.
+- test_id: MIN000-T076
+  concept: decision
+  classification: future MIN process/capacity
+  mapping: MIN:1xx + LOG
+  reason: Choice process/result, not a representation alone.
+- test_id: MIN000-T077
+  concept: skill
+  classification: future MIN capacity/relationship
+  mapping: MIN:2xx
+  reason: Competence or disposition.
+- test_id: MIN000-T078
+  concept: intelligence
+  classification: future MIN capacity/relationship
+  mapping: MIN:2xx
+  reason: Capacity or system relation.
+- test_id: MIN000-T079
+  concept: meaning
+  classification: unresolved lexical ambiguity
+  mapping: MIN representation + LOG/CON context
+  reason: Meaning may be cognitive, linguistic, or formal.
+- test_id: MIN000-T080
+  concept: category
+  classification: composition
+  mapping: MIN representation + LOG/STR
+  reason: Represented classification schema.
+- test_id: MIN000-T081
+  concept: stereotype
+  classification: composition
+  mapping: MIN:010/020 + WRN/LOG
+  reason: Representation plus generalization/error conditions.
+- test_id: MIN000-T082
+  concept: cognitive bias
+  classification: composition
+  mapping: MIN representation/relation + WRN
+  reason: Systematic error condition.
+- test_id: MIN000-T083
+  concept: ontology
+  classification: composition
+  mapping: MIN:020 + LOG/ORI/STR
+  reason: Shared cognitive schema plus formal ontological structure.
+- test_id: MIN000-T084
+  concept: source code
+  classification: canonical/future other family
+  mapping: DAT/LOG
+  reason: External formal record.
+- test_id: MIN000-T085
+  concept: theorem
+  classification: canonical/future other family
+  mapping: LOG
+  reason: Formal proposition/proof object.
+- test_id: MIN000-T086
+  concept: variable
+  classification: canonical/future other family
+  mapping: LOG/DAT
+  reason: Formal symbol or data reference.
+- test_id: MIN000-T087
+  concept: mental representation denied
+  classification: root plus runtime
+  mapping: MIN:0xx[0]
+  reason: Runtime denial does not change lexical scope/expression.
+- test_id: MIN000-T088
+  concept: representation status unresolved
+  classification: root plus runtime
+  mapping: MIN:0xx[2]/num
+  reason: Runtime uncertainty does not select lexical latency.
+- test_id: MIN000-T089
+  concept: planned thought
+  classification: grammar or quantity
+  mapping: MIN process + modality/time
+  reason: Planning and future time are not lexical 0xx meanings.
+- test_id: MIN000-T090
+  concept: probable belief
+  classification: grammar or quantity
+  mapping: MIN relation + LOG probability
+  reason: Probability remains formal/modality grammar.
+- test_id: MIN000-T091
+  concept: number of remembered items
+  classification: grammar or quantity
+  mapping: MIN representation + quantity
+  reason: Cardinality is not an atomic Mind root.
+coverage_summary:
+  direct proposed root: 16
+  composition: 32
+  canonical/future other family: 14
+  future MIN capacity/relationship: 6
+  future MIN process/capacity: 14
+  grammar or quantity: 4
+  unresolved lexical ambiguity: 3
+  root plus runtime: 2

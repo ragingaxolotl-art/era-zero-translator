@@ -1,0 +1,1740 @@
+---
+metadata:
+  version: 1.0.0
+  score_scale: 1-10
+  categories:
+  - atomicity
+  - address_fit
+  - family_fit
+  - neighbor_separation
+  - cross_family_separation
+  - compound_usefulness
+  - everyday_language_coverage
+  - technical_coverage
+reviews:
+- compound_id: CMP:61bfb0de7a1e9d7f5b981725
+  display_title: material artifact
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: MAT:010
+      - node_id: h
+        kind: root
+        root_id: CRE:010
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:a7fc0ca38a6f95a40cdb87b1
+  display_title: composite artifact
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: STR:020
+      - node_id: h
+        kind: root
+        root_id: CRE:010
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:111b772027accab2054f0415
+  display_title: physical tool
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: MAT:200
+      - node_id: h
+        kind: root
+        root_id: CRE:010
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:8e5ae722d9e5e31f85ac3c5b
+  display_title: machine
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: STR:020
+      - node_id: q02
+        kind: root
+        root_id: MAT:200
+      - node_id: h
+        kind: root
+        root_id: CRE:010
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+      - edge_id: e02
+        type: qualifies
+        from: q02
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:e152ea538409460a93b99b90
+  display_title: dormant machine
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: STR:022
+      - node_id: q02
+        kind: root
+        root_id: MAT:202
+      - node_id: h
+        kind: root
+        root_id: CRE:012
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+      - edge_id: e02
+        type: qualifies
+        from: q02
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:919b714e6201a462756224a2
+  display_title: material route
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: MAT:020
+      - node_id: h
+        kind: root
+        root_id: MOV:020
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:3122dedcff0f85ad293e2580
+  display_title: living body
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: LIF:010
+      - node_id: h
+        kind: root
+        root_id: MAT:000
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:2d993bb1d93b7d24d303e364
+  display_title: dormant living body
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: LIF:012
+      - node_id: h
+        kind: root
+        root_id: MAT:002
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:4144fad413b8ce5012088c61
+  display_title: material biosystem
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: MAT:020
+      - node_id: h
+        kind: root
+        root_id: LIF:220
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:e2af90ba78681e87e68450e5
+  display_title: generated living being
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: CRE:010
+      - node_id: h
+        kind: root
+        root_id: LIF:010
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:218a5578a2274b92ba3d72db
+  display_title: living communication network
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: LIF:221
+      - node_id: h
+        kind: root
+        root_id: CON:021
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:608ecb4f3c515a9c9a3443ec
+  display_title: message datum
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: CON:020
+      - node_id: h
+        kind: root
+        root_id: DAT:000
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:d98407801d64c085f702c9db
+  display_title: addressed message
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: CON:010
+      - node_id: h
+        kind: root
+        root_id: DAT:010
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:99a87c8869d58498f524f1cc
+  display_title: shared message collection
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: CON:020
+      - node_id: h
+        kind: root
+        root_id: DAT:020
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:2f350e7d8e5dfba4a802d82d
+  display_title: program definition
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: DAT:000
+      - node_id: q02
+        kind: root
+        root_id: LOG:010
+      - node_id: h
+        kind: root
+        root_id: CRE:000
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+      - edge_id: e02
+        type: qualifies
+        from: q02
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:9e8b36f50570a0c3c362a968
+  display_title: dormant program
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: DAT:002
+      - node_id: q02
+        kind: root
+        root_id: LOG:012
+      - node_id: h
+        kind: root
+        root_id: CRE:002
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+      - edge_id: e02
+        type: qualifies
+        from: q02
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:44173561806bc8f334a0b7c9
+  display_title: shared knowledge base
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: MIN:020
+      - node_id: h
+        kind: root
+        root_id: DAT:020
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:725868579ebb0e2ef83cf708
+  display_title: data transfer channel
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: CON:020
+      - node_id: h
+        kind: root
+        root_id: DAT:210
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:8f05a5e16a897935492726fa
+  display_title: synchronized data network
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: CON:220
+      - node_id: h
+        kind: root
+        root_id: DAT:220
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:f1abd5eccdf06d92d5690a32
+  display_title: physical injury
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: MAT:000
+      - node_id: h
+        kind: root
+        root_id: WRN:000
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:cb0812face56f90b7ba139c5
+  display_title: material hazard
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: MAT:010
+      - node_id: h
+        kind: root
+        root_id: WRN:010
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:22f8ddc4d9b2d1a818d38e9f
+  display_title: physical repair
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: MAT:110
+      - node_id: h
+        kind: root
+        root_id: REP:110
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:b518a324d776e46e9d0ff041
+  display_title: data repair
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: DAT:100
+      - node_id: h
+        kind: root
+        root_id: REP:100
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:e799b436d9c5e7d87a5516fa
+  display_title: structural repair
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: STR:100
+      - node_id: h
+        kind: root
+        root_id: REP:100
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:33c135410b0deef525b6770d
+  display_title: backup dataset
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: REP:220
+      - node_id: h
+        kind: root
+        root_id: DAT:022
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:2d26353b47b531bd3f5ae090
+  display_title: shared-world law
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: LOG:020
+      - node_id: h
+        kind: root
+        root_id: ORI:220
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:578fd06e1dec6f91d2b35add
+  display_title: formal ontological dependence
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: LOG:010
+      - node_id: h
+        kind: root
+        root_id: ORI:210
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high
+- compound_id: CMP:742b44d9ead66b451346708a
+  display_title: directed data link
+  current_choice_reason: The selected head names the semantic category; every other
+    node supplies a separately canonical restriction.
+  candidates:
+  - candidate_id: selected_graph
+    direction: explicit compositional subtype
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: DAT:000
+      - node_id: a-source-01
+        kind: slot
+        slot_name: source
+        slot_type: entity
+      - node_id: a-target-01
+        kind: slot
+        slot_name: target
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: CON:210
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+      - edge_id: e02
+        type: fills_role
+        from: a-source-01
+        to: h
+        role: source
+      - edge_id: e03
+        type: fills_role
+        from: a-target-01
+        to: h
+        role: target
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 70
+    decision: winner
+  - candidate_id: reverse_head
+    direction: reverse semantic head while retaining the same roots
+    scores:
+      atomicity: 6
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 5
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 46
+    decision: 'rejected: names a different category and weakens head predictability'
+  - candidate_id: single_atom
+    direction: collapse to the present semantic-head atom
+    scores:
+      atomicity: 3
+      address_fit: 5
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 5
+      compound_usefulness: 3
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 36
+    decision: 'rejected: loses the explicit cross-family distinction'
+  recommendation: approve selected_graph
+  confidence: high

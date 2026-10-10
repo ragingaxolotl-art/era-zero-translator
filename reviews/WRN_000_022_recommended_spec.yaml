@@ -1,0 +1,1790 @@
+---
+metadata:
+  title: WRN:000–022 recommended permanent semantic specification
+  status: approved_and_canonical_by_delegated_authority
+  architecture_version: '1.0'
+  semantic_center: 'adverse-condition entities: intrinsic faults, distinct external
+    hazards, and correlated distributed faults'
+  triplets:
+    WRN:000–002: 'intrinsic adverse condition: persistent / manifest / latent'
+    WRN:010–012: 'distinct external hazard: persistent / manifest / dormant'
+    WRN:020–022: 'correlated distributed fault: persistent / manifest / latent'
+  triplet_logic:
+    persistent_member: asserts adverse-condition identity across time and is manifestation-neutral
+    active_dormant_members: mutually exclusive for the same adverse condition at the
+      same reference time
+    runtime_uncertainty: runtime [2]/num qualifies a selected lexical claim and does
+      not select a sibling
+  generated_fields_changed: false
+  gate4_started: false
+  translator_started: false
+  roots_canonicalized:
+  - WRN:000
+  - WRN:001
+  - WRN:002
+  - WRN:010
+  - WRN:011
+  - WRN:012
+  - WRN:020
+  - WRN:021
+  - WRN:022
+  approval_record: migrations/WRN_000_022_semantic_approval.yaml
+roots:
+- fixed_generated_fields:
+    canonical_id: WRN:000
+    universal_slot: stable inward entity
+    family_qualified_transliteration: da·nam
+    local_compact_root: nam
+    formal_carrier: da-ma-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: persistent internal fault
+  invariant_definition: An intrinsic adverse condition that remains identified within
+    one reference entity independently of whether it is presently producing harmful
+    deviation.
+  semantic_center: 'adverse-condition entities: intrinsic faults, distinct external
+    hazards, and correlated distributed faults'
+  address_justification:
+    first_trit_0: 'Selects an entity or condition: persistent internal fault is an
+      adverse condition, not its detection, warning, containment, propagation, causal
+      mechanism, susceptibility relation, evidence record, or repair.'
+    second_trit: 'Selects inward/self scope: one intrinsic adverse condition located
+      within a reference entity and no other Warning-family column.'
+    third_trit: Selects the stable/persistent condition by adverse identity or manifestation
+      while leaving runtime truth status, observer knowledge, tense, probability,
+      and response phase separate.
+  inclusion_boundary: Includes only the persistent intrinsic adverse condition as
+    a substrate-neutral claim about one intrinsic adverse condition located within
+    a reference entity. The claim is about an adverse condition intrinsic to the reference
+    entity, not about an external source, an observer's belief, or a diagnostic record.
+    It is neutral about physical mechanism, observer knowledge, evidential certainty,
+    signaling, formal validity, moral blame, repairability, severity, probability,
+    timing, and response.
+  excluded_meanings:
+  - The person, organism, material object, software component, institution, or system
+    that bears, causes, observes, records, or responds to the condition.
+  - Physical fracture, force, heat, collision, displacement, approach, biological
+    injury, illness, fear, or pain without a separate applicable WRN adverse classification.
+  - Formal falsehood, invalidity, contradiction, type error, permission violation,
+    incompatibility, or schema mismatch merely as a rule judgment.
+  - Alarm, warning message, symptom report, log entry, error code, measurement, diagnosis,
+    belief, suspicion, attention, or evidence about the condition.
+  - Detecting, warning, attacking, spreading, containing, isolating, shutting down,
+    repairing, recovering, or responding as a process or relation.
+  - Severity, probability, uncertainty to an observer, possible future occurrence,
+    schedule, cause, blame, intent, exploitability, vulnerability, exposure, or guaranteed
+    harm.
+  nearest_neighbors:
+  - WRN:001
+  - WRN:002
+  - WRN:010
+  - WRN:020
+  - WRN:100
+  - WRN:200
+  same_family_contrast: "`WRN:0xx` owns adverse conditions as entities; `WRN:1xx`
+    remains the process layer for detecting, warning, containing, or responding; `WRN:2xx`
+    remains the capacity/relation layer for susceptibility, exposure, and systemic
+    risk relations. Manifestation in 0xx does not itself name the process that caused,
+    detected, communicated, propagated, or remediated it, and an adverse condition
+    does not entail a particular vulnerability or exposure relation. The persistent
+    member is manifestation-neutral: it may co-occur with the manifest sibling or
+    the dormant sibling at the same reference time. It asserts continuity of adverse-condition
+    identity rather than a third mutually exclusive manifestation value."
+  cross_family_comparisons: &1
+    LIF: LIF owns living identity, health state, care, harm to organisms, and social
+      collectives. WRN may classify an adverse condition affecting life, but it does
+      not itself assert injury, illness, fear, care, or social identity.
+    MOV: MOV owns location, approach, traversal, redirection, and shared motion. A
+      moving object can be hazardous, but WRN names the adverse condition rather than
+      the displacement or route.
+    MAT: MAT owns substance, energy, force, contact, fracture, and other physical
+      states. WRN names the adverse significance of a condition; material damage,
+      collision, heat, and pressure require MAT claims.
+    MIN: MIN owns perception, belief, attention, intention, fear, and suspicion. A
+      fault or hazard may be unknown or disbelieved and still exist; uncertainty in
+      an observer is not lexical latency in WRN.
+    CON: CON owns signals, alerts, messages, channels, and participant exchange. Communicating
+      a warning does not create the adverse condition, and an uncommunicated condition
+      may still be WRN:0xx.
+    REP: REP owns diagnosis as restoration work, repair, recovery, replacement, and
+      maintenance. A WRN entity may motivate repair but does not assert that repair
+      is possible, attempted, or successful.
+    STR: STR owns positions, interfaces, arrangements, transformations, and structural
+      affordances. A malformed or unsafe structure needs WRN for adversity and STR
+      for the structural fact; neither family subsumes the other.
+    LOG: LOG owns validity, contradiction, permission, constraints, type judgments,
+      and formal nonconformance. WRN does not make a proposition false or a value
+      invalid merely because its consequences are dangerous.
+    DAT: DAT owns records, error codes, evidence, measurements, schemas, and provenance.
+      Data can describe a fault or hazard without being that condition; corrupted
+      information requires DAT plus WRN when adversity is asserted.
+    CRE: CRE owns generation, design, fabrication, mutation, and destruction as transformations
+      of artifacts. A defect may result from creation or destruction, but WRN:0xx
+      names the adverse condition after causal history is factored out.
+    ORI: ORI owns time, existence, general possibility, necessity, and manifestation.
+      WRN lexical stable, active, and dormant status is specific to adverse conditions
+      and never replaces tense, probability, or unrestricted modality.
+  runtime_state_interpretation:
+    '0': Denies that the persistent intrinsic adverse condition remains identified
+      in the stated warning context; it does not affirm the manifest or dormant sibling
+      and does not assert safety in every other respect.
+    '1': Affirms that the intrinsic adverse condition persists as identified, without
+      deciding current harmful manifestation, evidence, awareness, severity, damage,
+      response, probability, or causal history beyond the invariant.
+    2/num: Leaves unresolved whether the persistent intrinsic adverse condition remains
+      identified; the token stays the stable lexical root and does not become the
+      manifest or dormant sibling.
+  lexical_runtime_distinction: Lexical third trit `0` permanently selects the stable/persistent
+    member of this adverse-condition triplet. Runtime `[2]/num` instead leaves the
+    truth or applicability of that already-selected root unresolved; it never changes
+    manifestation phase. Thus a latent root affirmed with `[1]` is a confirmed latent
+    condition, while a persistent or manifest root carrying `[2]/num` remains lexically
+    persistent or manifest but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: WRN:000[1](ENTITY=e,FAULT=f)
+    literal_gloss: affirm persistent intrinsic adverse condition
+    natural_english: The account still has the same internal fault even when no error
+      is visible.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: The root asserts the condition, not whether anyone knows or reports
+      it.
+  - category: physical_or_spatial
+    semantic_graph: MAT(BODY=b)+WRN:000[1](ENTITY=b,FAULT=f)
+    literal_gloss: material body plus persistent internal fault
+    natural_english: The beam retains an intrinsic crack condition even while unloaded.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: MAT supplies the physical realization; WRN supplies adverse status.
+  - category: temporal_or_sequential
+    semantic_graph: WRN:000[1](ENTITY=e,FAULT=f)+ORI(INTERVAL=w)
+    literal_gloss: internal fault status during interval w
+    natural_english: During the test interval, the entity has the stated internal-fault
+      status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: ORI supplies time; the lexical third trit supplies manifestation status,
+      not tense.
+  - category: cross_family_compound
+    semantic_graph: DAT(EVIDENCE=d)+MIN(AWARE=a)+WRN:000[1](ENTITY=e,FAULT=f)
+    literal_gloss: evidence and awareness plus intrinsic fault
+    natural_english: The inspection record and the observer's awareness are separate
+      from the internal fault itself.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: DAT and MIN can track a fault without constituting it.
+  - category: executable_or_programming
+    semantic_graph: WRN:000[1](ENTITY=module,FAULT=bug)
+    literal_gloss: assert persistent internal fault
+    natural_english: The parser object retains a known internal defect across executions.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: The program may test evidence, but the semantic assertion concerns the
+      adverse condition.
+    pseudocode: assert(adverse_condition.matches?("WRN:000"))
+  - category: counterexample
+    semantic_graph: LOG(INVALID=true)
+    literal_gloss: formal invalidity
+    natural_english: The proof step is invalid.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: must_not_use_this_root
+    analysis: Formal invalidity belongs to LOG unless an additional WRN claim says
+      it is adverse in the relevant context.
+  future_compound_examples:
+  - WRN:000 + MAT/LIF supplies the physical or living bearer and concrete harm mechanism
+    without reducing adverse status to matter or biology.
+  - WRN:000 + MOV/ORI supplies approach, location, sequence, or time without turning
+    manifestation status into motion or tense.
+  - WRN:000 + DAT/MIN/CON supplies evidence, recognition, or a warning signal while
+    preserving the underlying adverse condition as independent.
+  - WRN:000 + WRN:1xx/2xx may later express detection, warning, containment, susceptibility,
+    exposure, or propagation as separate processes or relations.
+  later_era_notes: Later eras may lexicalize bug, crack, contamination, malware, pathogen,
+    hostile actor, outage, cascading failure, incident, emergency, defect class, symptom,
+    severity, and confidence. Era Zero should preserve the adverse-condition center
+    and derive domain-specific senses compositionally. The stable/persistent root
+    must not be treated as mutually exclusive with its manifest or dormant sibling.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: WRN:001
+    universal_slot: active inward entity
+    family_qualified_transliteration: da·nak
+    local_compact_root: nak
+    formal_carrier: da-ma-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: manifest internal fault
+  invariant_definition: An intrinsic adverse condition within one reference entity
+    that is presently producing harmful deviation from that entity's accepted state.
+  semantic_center: 'adverse-condition entities: intrinsic faults, distinct external
+    hazards, and correlated distributed faults'
+  address_justification:
+    first_trit_0: 'Selects an entity or condition: manifest internal fault is an adverse
+      condition, not its detection, warning, containment, propagation, causal mechanism,
+      susceptibility relation, evidence record, or repair.'
+    second_trit: 'Selects inward/self scope: one intrinsic adverse condition located
+      within a reference entity and no other Warning-family column.'
+    third_trit: Selects the active/presently manifest condition by adverse identity
+      or manifestation while leaving runtime truth status, observer knowledge, tense,
+      probability, and response phase separate.
+  inclusion_boundary: Includes only the manifest intrinsic adverse condition as a
+    substrate-neutral claim about one intrinsic adverse condition located within a
+    reference entity. The claim is about an adverse condition intrinsic to the reference
+    entity, not about an external source, an observer's belief, or a diagnostic record.
+    It is neutral about physical mechanism, observer knowledge, evidential certainty,
+    signaling, formal validity, moral blame, repairability, severity, probability,
+    timing, and response.
+  excluded_meanings:
+  - The person, organism, material object, software component, institution, or system
+    that bears, causes, observes, records, or responds to the condition.
+  - Physical fracture, force, heat, collision, displacement, approach, biological
+    injury, illness, fear, or pain without a separate applicable WRN adverse classification.
+  - Formal falsehood, invalidity, contradiction, type error, permission violation,
+    incompatibility, or schema mismatch merely as a rule judgment.
+  - Alarm, warning message, symptom report, log entry, error code, measurement, diagnosis,
+    belief, suspicion, attention, or evidence about the condition.
+  - Detecting, warning, attacking, spreading, containing, isolating, shutting down,
+    repairing, recovering, or responding as a process or relation.
+  - Severity, probability, uncertainty to an observer, possible future occurrence,
+    schedule, cause, blame, intent, exploitability, vulnerability, exposure, or guaranteed
+    harm.
+  nearest_neighbors:
+  - WRN:000
+  - WRN:002
+  - WRN:011
+  - WRN:021
+  - WRN:101
+  - WRN:201
+  same_family_contrast: "`WRN:0xx` owns adverse conditions as entities; `WRN:1xx`
+    remains the process layer for detecting, warning, containing, or responding; `WRN:2xx`
+    remains the capacity/relation layer for susceptibility, exposure, and systemic
+    risk relations. Manifestation in 0xx does not itself name the process that caused,
+    detected, communicated, propagated, or remediated it, and an adverse condition
+    does not entail a particular vulnerability or exposure relation. The persistent
+    sibling may also hold because it asserts adverse-condition identity across time.
+    Manifest and dormant siblings are mutually exclusive for the same condition at
+    the same reference time, while runtime `[2]/num` may leave either selected claim
+    unresolved."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies the present manifest condition of this intrinsic adverse condition;
+      persistence, dormancy, past manifestation, future manifestation, and observer
+      knowledge remain undecided.
+    '1': Affirms that this intrinsic adverse condition is presently manifest, without
+      asserting a particular material mechanism, alert, belief, formal violation,
+      repair action, severity, or final harm outcome.
+    2/num: Leaves unresolved whether this intrinsic adverse condition is presently
+      manifest; runtime uncertainty does not select the persistent or dormant lexical
+      sibling.
+  lexical_runtime_distinction: Lexical third trit `1` permanently selects the active/presently
+    manifest member of this adverse-condition triplet. Runtime `[2]/num` instead leaves
+    the truth or applicability of that already-selected root unresolved; it never
+    changes manifestation phase. Thus a latent root affirmed with `[1]` is a confirmed
+    latent condition, while a persistent or manifest root carrying `[2]/num` remains
+    lexically persistent or manifest but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: WRN:001[1](ENTITY=e,FAULT=f)
+    literal_gloss: affirm manifest intrinsic adverse condition
+    natural_english: The payment service has an internal fault producing wrong totals
+      right now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: The root asserts the condition, not whether anyone knows or reports
+      it.
+  - category: physical_or_spatial
+    semantic_graph: MAT(BODY=b)+WRN:001[1](ENTITY=b,FAULT=f)
+    literal_gloss: material body plus manifest internal fault
+    natural_english: The cracked bearing is presently producing harmful vibration
+      inside the pump.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: MAT supplies the physical realization; WRN supplies adverse status.
+  - category: temporal_or_sequential
+    semantic_graph: WRN:001[1](ENTITY=e,FAULT=f)+ORI(INTERVAL=w)
+    literal_gloss: internal fault status during interval w
+    natural_english: During the test interval, the entity has the stated internal-fault
+      status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: ORI supplies time; the lexical third trit supplies manifestation status,
+      not tense.
+  - category: cross_family_compound
+    semantic_graph: DAT(EVIDENCE=d)+MIN(AWARE=a)+WRN:001[1](ENTITY=e,FAULT=f)
+    literal_gloss: evidence and awareness plus intrinsic fault
+    natural_english: The inspection record and the observer's awareness are separate
+      from the internal fault itself.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: DAT and MIN can track a fault without constituting it.
+  - category: executable_or_programming
+    semantic_graph: WRN:001[1](ENTITY=module,FAULT=bug)
+    literal_gloss: assert manifest internal fault
+    natural_english: The arithmetic bug is presently generating invalid output in
+      this process.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: The program may test evidence, but the semantic assertion concerns the
+      adverse condition.
+    pseudocode: assert(adverse_condition.matches?("WRN:001"))
+  - category: counterexample
+    semantic_graph: LOG(INVALID=true)
+    literal_gloss: formal invalidity
+    natural_english: The proof step is invalid.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: must_not_use_this_root
+    analysis: Formal invalidity belongs to LOG unless an additional WRN claim says
+      it is adverse in the relevant context.
+  future_compound_examples:
+  - WRN:001 + MAT/LIF supplies the physical or living bearer and concrete harm mechanism
+    without reducing adverse status to matter or biology.
+  - WRN:001 + MOV/ORI supplies approach, location, sequence, or time without turning
+    manifestation status into motion or tense.
+  - WRN:001 + DAT/MIN/CON supplies evidence, recognition, or a warning signal while
+    preserving the underlying adverse condition as independent.
+  - WRN:001 + WRN:1xx/2xx may later express detection, warning, containment, susceptibility,
+    exposure, or propagation as separate processes or relations.
+  later_era_notes: Later eras may lexicalize bug, crack, contamination, malware, pathogen,
+    hostile actor, outage, cascading failure, incident, emergency, defect class, symptom,
+    severity, and confidence. Era Zero should preserve the adverse-condition center
+    and derive domain-specific senses compositionally. The stable/persistent root
+    must not be treated as mutually exclusive with its manifest or dormant sibling.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: WRN:002
+    universal_slot: dormant inward entity
+    family_qualified_transliteration: da·nan
+    local_compact_root: nan
+    formal_carrier: da-ma-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - -2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: latent internal fault
+  invariant_definition: An intrinsic adverse condition within one reference entity
+    that is present without presently producing harmful deviation.
+  semantic_center: 'adverse-condition entities: intrinsic faults, distinct external
+    hazards, and correlated distributed faults'
+  address_justification:
+    first_trit_0: 'Selects an entity or condition: latent internal fault is an adverse
+      condition, not its detection, warning, containment, propagation, causal mechanism,
+      susceptibility relation, evidence record, or repair.'
+    second_trit: 'Selects inward/self scope: one intrinsic adverse condition located
+      within a reference entity and no other Warning-family column.'
+    third_trit: Selects the dormant/presently nonmanifest condition by adverse identity
+      or manifestation while leaving runtime truth status, observer knowledge, tense,
+      probability, and response phase separate.
+  inclusion_boundary: Includes only the latent intrinsic adverse condition as a substrate-neutral
+    claim about one intrinsic adverse condition located within a reference entity.
+    The claim is about an adverse condition intrinsic to the reference entity, not
+    about an external source, an observer's belief, or a diagnostic record. It is
+    neutral about physical mechanism, observer knowledge, evidential certainty, signaling,
+    formal validity, moral blame, repairability, severity, probability, timing, and
+    response.
+  excluded_meanings:
+  - The person, organism, material object, software component, institution, or system
+    that bears, causes, observes, records, or responds to the condition.
+  - Physical fracture, force, heat, collision, displacement, approach, biological
+    injury, illness, fear, or pain without a separate applicable WRN adverse classification.
+  - Formal falsehood, invalidity, contradiction, type error, permission violation,
+    incompatibility, or schema mismatch merely as a rule judgment.
+  - Alarm, warning message, symptom report, log entry, error code, measurement, diagnosis,
+    belief, suspicion, attention, or evidence about the condition.
+  - Detecting, warning, attacking, spreading, containing, isolating, shutting down,
+    repairing, recovering, or responding as a process or relation.
+  - Severity, probability, uncertainty to an observer, possible future occurrence,
+    schedule, cause, blame, intent, exploitability, vulnerability, exposure, or guaranteed
+    harm.
+  nearest_neighbors:
+  - WRN:000
+  - WRN:001
+  - WRN:012
+  - WRN:022
+  - WRN:102
+  - WRN:202
+  same_family_contrast: "`WRN:0xx` owns adverse conditions as entities; `WRN:1xx`
+    remains the process layer for detecting, warning, containing, or responding; `WRN:2xx`
+    remains the capacity/relation layer for susceptibility, exposure, and systemic
+    risk relations. Manifestation in 0xx does not itself name the process that caused,
+    detected, communicated, propagated, or remediated it, and an adverse condition
+    does not entail a particular vulnerability or exposure relation. The persistent
+    sibling may also hold because it asserts adverse-condition identity across time.
+    Manifest and dormant siblings are mutually exclusive for the same condition at
+    the same reference time, while runtime `[2]/num` may leave either selected claim
+    unresolved."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies the latent adverse-condition status named by this root; it does not
+      affirm the persistent or manifest sibling and does not by itself certify complete
+      safety.
+    '1': Affirms exactly that this intrinsic adverse condition is latent, without
+      adding concealment from an observer, lack of evidence, probability, schedule,
+      intention, damage, or response.
+    2/num: Leaves unresolved whether even the lexical latent condition holds; lexical
+      third-trit 2 still names nonmanifest status, while runtime `[2]/num` marks uncertainty
+      about the whole assertion.
+  lexical_runtime_distinction: Lexical third trit `2` permanently selects the dormant/presently
+    nonmanifest member of this adverse-condition triplet. Runtime `[2]/num` instead
+    leaves the truth or applicability of that already-selected root unresolved; it
+    never changes manifestation phase. Thus a latent root affirmed with `[1]` is a
+    confirmed latent condition, while a persistent or manifest root carrying `[2]/num`
+    remains lexically persistent or manifest but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: WRN:002[1](ENTITY=e,FAULT=f)
+    literal_gloss: affirm latent intrinsic adverse condition
+    natural_english: The device contains a latent fault that is not currently affecting
+      operation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: The root asserts the condition, not whether anyone knows or reports
+      it.
+  - category: physical_or_spatial
+    semantic_graph: MAT(BODY=b)+WRN:002[1](ENTITY=b,FAULT=f)
+    literal_gloss: material body plus latent internal fault
+    natural_english: A hidden inclusion remains in the casting without presently deforming
+      it.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: MAT supplies the physical realization; WRN supplies adverse status.
+  - category: temporal_or_sequential
+    semantic_graph: WRN:002[1](ENTITY=e,FAULT=f)+ORI(INTERVAL=w)
+    literal_gloss: internal fault status during interval w
+    natural_english: During the test interval, the entity has the stated internal-fault
+      status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: ORI supplies time; the lexical third trit supplies manifestation status,
+      not tense.
+  - category: cross_family_compound
+    semantic_graph: DAT(EVIDENCE=d)+MIN(AWARE=a)+WRN:002[1](ENTITY=e,FAULT=f)
+    literal_gloss: evidence and awareness plus intrinsic fault
+    natural_english: The inspection record and the observer's awareness are separate
+      from the internal fault itself.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: DAT and MIN can track a fault without constituting it.
+  - category: executable_or_programming
+    semantic_graph: WRN:002[1](ENTITY=module,FAULT=bug)
+    literal_gloss: assert latent internal fault
+    natural_english: The race defect exists in the module but is not manifest in this
+      execution.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: The program may test evidence, but the semantic assertion concerns the
+      adverse condition.
+    pseudocode: assert(adverse_condition.matches?("WRN:002"))
+  - category: counterexample
+    semantic_graph: LOG(INVALID=true)
+    literal_gloss: formal invalidity
+    natural_english: The proof step is invalid.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: must_not_use_this_root
+    analysis: Formal invalidity belongs to LOG unless an additional WRN claim says
+      it is adverse in the relevant context.
+  future_compound_examples:
+  - WRN:002 + MAT/LIF supplies the physical or living bearer and concrete harm mechanism
+    without reducing adverse status to matter or biology.
+  - WRN:002 + MOV/ORI supplies approach, location, sequence, or time without turning
+    manifestation status into motion or tense.
+  - WRN:002 + DAT/MIN/CON supplies evidence, recognition, or a warning signal while
+    preserving the underlying adverse condition as independent.
+  - WRN:002 + WRN:1xx/2xx may later express detection, warning, containment, susceptibility,
+    exposure, or propagation as separate processes or relations.
+  later_era_notes: Later eras may lexicalize bug, crack, contamination, malware, pathogen,
+    hostile actor, outage, cascading failure, incident, emergency, defect class, symptom,
+    severity, and confidence. Era Zero should preserve the adverse-condition center
+    and derive domain-specific senses compositionally. The stable/persistent root
+    must not be treated as mutually exclusive with its manifest or dormant sibling.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: WRN:010
+    universal_slot: stable outward entity
+    family_qualified_transliteration: da·nom
+    local_compact_root: nom
+    formal_carrier: da-ma-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: persistent external hazard
+  invariant_definition: A distinct external condition that remains identified as capable
+    of adversely affecting one reference target independently of current contact or
+    effect.
+  semantic_center: 'adverse-condition entities: intrinsic faults, distinct external
+    hazards, and correlated distributed faults'
+  address_justification:
+    first_trit_0: 'Selects an entity or condition: persistent external hazard is an
+      adverse condition, not its detection, warning, containment, propagation, causal
+      mechanism, susceptibility relation, evidence record, or repair.'
+    second_trit: 'Selects outward/target scope: one adverse condition distinct from
+      and externally oriented toward one reference target and no other Warning-family
+      column.'
+    third_trit: Selects the stable/persistent condition by adverse identity or manifestation
+      while leaving runtime truth status, observer knowledge, tense, probability,
+      and response phase separate.
+  inclusion_boundary: Includes only the persistent distinct external adverse condition
+    as a substrate-neutral claim about one adverse condition distinct from and externally
+    oriented toward one reference target. The claim preserves one hazard as distinct
+    from one target. Actual contact, approach, attack, exposure, damage, and warning
+    actions remain separate processes or relations. It is neutral about physical mechanism,
+    observer knowledge, evidential certainty, signaling, formal validity, moral blame,
+    repairability, severity, probability, timing, and response.
+  excluded_meanings:
+  - The person, organism, material object, software component, institution, or system
+    that bears, causes, observes, records, or responds to the condition.
+  - Physical fracture, force, heat, collision, displacement, approach, biological
+    injury, illness, fear, or pain without a separate applicable WRN adverse classification.
+  - Formal falsehood, invalidity, contradiction, type error, permission violation,
+    incompatibility, or schema mismatch merely as a rule judgment.
+  - Alarm, warning message, symptom report, log entry, error code, measurement, diagnosis,
+    belief, suspicion, attention, or evidence about the condition.
+  - Detecting, warning, attacking, spreading, containing, isolating, shutting down,
+    repairing, recovering, or responding as a process or relation.
+  - Severity, probability, uncertainty to an observer, possible future occurrence,
+    schedule, cause, blame, intent, exploitability, vulnerability, exposure, or guaranteed
+    harm.
+  nearest_neighbors:
+  - WRN:011
+  - WRN:012
+  - WRN:000
+  - WRN:020
+  - WRN:110
+  - WRN:210
+  same_family_contrast: "`WRN:0xx` owns adverse conditions as entities; `WRN:1xx`
+    remains the process layer for detecting, warning, containing, or responding; `WRN:2xx`
+    remains the capacity/relation layer for susceptibility, exposure, and systemic
+    risk relations. Manifestation in 0xx does not itself name the process that caused,
+    detected, communicated, propagated, or remediated it, and an adverse condition
+    does not entail a particular vulnerability or exposure relation. The persistent
+    member is manifestation-neutral: it may co-occur with the manifest sibling or
+    the dormant sibling at the same reference time. It asserts continuity of adverse-condition
+    identity rather than a third mutually exclusive manifestation value."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the persistent distinct external adverse condition remains identified
+      in the stated warning context; it does not affirm the manifest or dormant sibling
+      and does not assert safety in every other respect.
+    '1': Affirms that the distinct external adverse condition persists as identified,
+      without deciding current harmful manifestation, evidence, awareness, severity,
+      damage, response, probability, or causal history beyond the invariant.
+    2/num: Leaves unresolved whether the persistent distinct external adverse condition
+      remains identified; the token stays the stable lexical root and does not become
+      the manifest or dormant sibling.
+  lexical_runtime_distinction: Lexical third trit `0` permanently selects the stable/persistent
+    member of this adverse-condition triplet. Runtime `[2]/num` instead leaves the
+    truth or applicability of that already-selected root unresolved; it never changes
+    manifestation phase. Thus a latent root affirmed with `[1]` is a confirmed latent
+    condition, while a persistent or manifest root carrying `[2]/num` remains lexically
+    persistent or manifest but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: WRN:010[1](HAZARD=h,TARGET=t)
+    literal_gloss: affirm persistent external hazard
+    natural_english: That exposed cable remains an external hazard even while nobody
+      is near it.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: The root preserves one hazard distinct from one reference target.
+  - category: physical_or_spatial
+    semantic_graph: MAT(SOURCE=s)+WRN:010[1](HAZARD=s,TARGET=t)
+    literal_gloss: material source plus persistent external hazard
+    natural_english: The unsecured ledge remains a fall hazard independently of current
+      contact.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: MAT supplies the source and mechanics; WRN supplies adverse significance.
+  - category: temporal_or_sequential
+    semantic_graph: WRN:010[1](HAZARD=h,TARGET=t)+ORI(INTERVAL=w)
+    literal_gloss: external-hazard status during interval w
+    natural_english: During the maintenance window, the source has the stated external-hazard
+      status relative to the target.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: ORI locates the claim; lexical status is not a schedule.
+  - category: cross_family_compound
+    semantic_graph: MOV(APPROACH=p)+MAT(ENERGY=q)+WRN:010[1](HAZARD=h,TARGET=t)
+    literal_gloss: approach and physical energy plus external hazard
+    natural_english: The moving object has physical energy and is separately classified
+      as the stated external hazard.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: Motion and matter explain mechanics; WRN supplies the adverse condition.
+  - category: executable_or_programming
+    semantic_graph: WRN:010[1](HAZARD=input,TARGET=parser)
+    literal_gloss: assert persistent external hazard
+    natural_english: The untrusted input source remains a hazard to this parser even
+      when idle.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: Input provenance and formal validity remain DAT/LOG.
+    pseudocode: assert(adverse_condition.matches?("WRN:010"))
+  - category: counterexample
+    semantic_graph: MOV:101[1](MOVER=m,PATH=p)
+    literal_gloss: ongoing approach
+    natural_english: The bicycle is approaching the gate.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: must_not_use_this_root
+    analysis: Approach is MOV; it becomes a WRN hazard only when adverse capability
+      is separately asserted.
+  future_compound_examples:
+  - WRN:010 + MAT/LIF supplies the physical or living bearer and concrete harm mechanism
+    without reducing adverse status to matter or biology.
+  - WRN:010 + MOV/ORI supplies approach, location, sequence, or time without turning
+    manifestation status into motion or tense.
+  - WRN:010 + DAT/MIN/CON supplies evidence, recognition, or a warning signal while
+    preserving the underlying adverse condition as independent.
+  - WRN:010 + WRN:1xx/2xx may later express detection, warning, containment, susceptibility,
+    exposure, or propagation as separate processes or relations.
+  later_era_notes: Later eras may lexicalize bug, crack, contamination, malware, pathogen,
+    hostile actor, outage, cascading failure, incident, emergency, defect class, symptom,
+    severity, and confidence. Era Zero should preserve the adverse-condition center
+    and derive domain-specific senses compositionally. The stable/persistent root
+    must not be treated as mutually exclusive with its manifest or dormant sibling.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: WRN:011
+    universal_slot: active outward entity
+    family_qualified_transliteration: da·nok
+    local_compact_root: nok
+    formal_carrier: da-ma-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 4
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: manifest external hazard
+  invariant_definition: A distinct external condition that is presently expressing
+    the harmful potential by which it can adversely affect one reference target.
+  semantic_center: 'adverse-condition entities: intrinsic faults, distinct external
+    hazards, and correlated distributed faults'
+  address_justification:
+    first_trit_0: 'Selects an entity or condition: manifest external hazard is an
+      adverse condition, not its detection, warning, containment, propagation, causal
+      mechanism, susceptibility relation, evidence record, or repair.'
+    second_trit: 'Selects outward/target scope: one adverse condition distinct from
+      and externally oriented toward one reference target and no other Warning-family
+      column.'
+    third_trit: Selects the active/presently manifest condition by adverse identity
+      or manifestation while leaving runtime truth status, observer knowledge, tense,
+      probability, and response phase separate.
+  inclusion_boundary: Includes only the manifest distinct external adverse condition
+    as a substrate-neutral claim about one adverse condition distinct from and externally
+    oriented toward one reference target. The claim preserves one hazard as distinct
+    from one target. Actual contact, approach, attack, exposure, damage, and warning
+    actions remain separate processes or relations. It is neutral about physical mechanism,
+    observer knowledge, evidential certainty, signaling, formal validity, moral blame,
+    repairability, severity, probability, timing, and response.
+  excluded_meanings:
+  - The person, organism, material object, software component, institution, or system
+    that bears, causes, observes, records, or responds to the condition.
+  - Physical fracture, force, heat, collision, displacement, approach, biological
+    injury, illness, fear, or pain without a separate applicable WRN adverse classification.
+  - Formal falsehood, invalidity, contradiction, type error, permission violation,
+    incompatibility, or schema mismatch merely as a rule judgment.
+  - Alarm, warning message, symptom report, log entry, error code, measurement, diagnosis,
+    belief, suspicion, attention, or evidence about the condition.
+  - Detecting, warning, attacking, spreading, containing, isolating, shutting down,
+    repairing, recovering, or responding as a process or relation.
+  - Severity, probability, uncertainty to an observer, possible future occurrence,
+    schedule, cause, blame, intent, exploitability, vulnerability, exposure, or guaranteed
+    harm.
+  nearest_neighbors:
+  - WRN:010
+  - WRN:012
+  - WRN:001
+  - WRN:021
+  - WRN:111
+  - WRN:211
+  same_family_contrast: "`WRN:0xx` owns adverse conditions as entities; `WRN:1xx`
+    remains the process layer for detecting, warning, containing, or responding; `WRN:2xx`
+    remains the capacity/relation layer for susceptibility, exposure, and systemic
+    risk relations. Manifestation in 0xx does not itself name the process that caused,
+    detected, communicated, propagated, or remediated it, and an adverse condition
+    does not entail a particular vulnerability or exposure relation. The persistent
+    sibling may also hold because it asserts adverse-condition identity across time.
+    Manifest and dormant siblings are mutually exclusive for the same condition at
+    the same reference time, while runtime `[2]/num` may leave either selected claim
+    unresolved."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies the present manifest condition of this distinct external adverse condition;
+      persistence, dormancy, past manifestation, future manifestation, and observer
+      knowledge remain undecided.
+    '1': Affirms that this distinct external adverse condition is presently manifest,
+      without asserting a particular material mechanism, alert, belief, formal violation,
+      repair action, severity, or final harm outcome.
+    2/num: Leaves unresolved whether this distinct external adverse condition is presently
+      manifest; runtime uncertainty does not select the persistent or dormant lexical
+      sibling.
+  lexical_runtime_distinction: Lexical third trit `1` permanently selects the active/presently
+    manifest member of this adverse-condition triplet. Runtime `[2]/num` instead leaves
+    the truth or applicability of that already-selected root unresolved; it never
+    changes manifestation phase. Thus a latent root affirmed with `[1]` is a confirmed
+    latent condition, while a persistent or manifest root carrying `[2]/num` remains
+    lexically persistent or manifest but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: WRN:011[1](HAZARD=h,TARGET=t)
+    literal_gloss: affirm manifest external hazard
+    natural_english: The external hazard is presently expressing the condition that
+      can harm this target.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: The root preserves one hazard distinct from one reference target.
+  - category: physical_or_spatial
+    semantic_graph: MAT(SOURCE=s)+WRN:011[1](HAZARD=s,TARGET=t)
+    literal_gloss: material source plus manifest external hazard
+    natural_english: The energized arc is presently expressing its harmful potential
+      toward nearby equipment.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: MAT supplies the source and mechanics; WRN supplies adverse significance.
+  - category: temporal_or_sequential
+    semantic_graph: WRN:011[1](HAZARD=h,TARGET=t)+ORI(INTERVAL=w)
+    literal_gloss: external-hazard status during interval w
+    natural_english: During the maintenance window, the source has the stated external-hazard
+      status relative to the target.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: ORI locates the claim; lexical status is not a schedule.
+  - category: cross_family_compound
+    semantic_graph: MOV(APPROACH=p)+MAT(ENERGY=q)+WRN:011[1](HAZARD=h,TARGET=t)
+    literal_gloss: approach and physical energy plus external hazard
+    natural_english: The moving object has physical energy and is separately classified
+      as the stated external hazard.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: Motion and matter explain mechanics; WRN supplies the adverse condition.
+  - category: executable_or_programming
+    semantic_graph: WRN:011[1](HAZARD=input,TARGET=parser)
+    literal_gloss: assert manifest external hazard
+    natural_english: The malicious payload is presently expressing the harmful condition
+      relevant to this parser.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: Input provenance and formal validity remain DAT/LOG.
+    pseudocode: assert(adverse_condition.matches?("WRN:011"))
+  - category: counterexample
+    semantic_graph: MOV:101[1](MOVER=m,PATH=p)
+    literal_gloss: ongoing approach
+    natural_english: The bicycle is approaching the gate.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: must_not_use_this_root
+    analysis: Approach is MOV; it becomes a WRN hazard only when adverse capability
+      is separately asserted.
+  future_compound_examples:
+  - WRN:011 + MAT/LIF supplies the physical or living bearer and concrete harm mechanism
+    without reducing adverse status to matter or biology.
+  - WRN:011 + MOV/ORI supplies approach, location, sequence, or time without turning
+    manifestation status into motion or tense.
+  - WRN:011 + DAT/MIN/CON supplies evidence, recognition, or a warning signal while
+    preserving the underlying adverse condition as independent.
+  - WRN:011 + WRN:1xx/2xx may later express detection, warning, containment, susceptibility,
+    exposure, or propagation as separate processes or relations.
+  later_era_notes: Later eras may lexicalize bug, crack, contamination, malware, pathogen,
+    hostile actor, outage, cascading failure, incident, emergency, defect class, symptom,
+    severity, and confidence. Era Zero should preserve the adverse-condition center
+    and derive domain-specific senses compositionally. The stable/persistent root
+    must not be treated as mutually exclusive with its manifest or dormant sibling.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: WRN:012
+    universal_slot: dormant outward entity
+    family_qualified_transliteration: da·non
+    local_compact_root: non
+    formal_carrier: da-ma-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: dormant external hazard
+  invariant_definition: A distinct external condition capable of adversely affecting
+    one reference target that is present without presently expressing that harmful
+    potential.
+  semantic_center: 'adverse-condition entities: intrinsic faults, distinct external
+    hazards, and correlated distributed faults'
+  address_justification:
+    first_trit_0: 'Selects an entity or condition: dormant external hazard is an adverse
+      condition, not its detection, warning, containment, propagation, causal mechanism,
+      susceptibility relation, evidence record, or repair.'
+    second_trit: 'Selects outward/target scope: one adverse condition distinct from
+      and externally oriented toward one reference target and no other Warning-family
+      column.'
+    third_trit: Selects the dormant/presently nonmanifest condition by adverse identity
+      or manifestation while leaving runtime truth status, observer knowledge, tense,
+      probability, and response phase separate.
+  inclusion_boundary: Includes only the dormant distinct external adverse condition
+    as a substrate-neutral claim about one adverse condition distinct from and externally
+    oriented toward one reference target. The claim preserves one hazard as distinct
+    from one target. Actual contact, approach, attack, exposure, damage, and warning
+    actions remain separate processes or relations. It is neutral about physical mechanism,
+    observer knowledge, evidential certainty, signaling, formal validity, moral blame,
+    repairability, severity, probability, timing, and response.
+  excluded_meanings:
+  - The person, organism, material object, software component, institution, or system
+    that bears, causes, observes, records, or responds to the condition.
+  - Physical fracture, force, heat, collision, displacement, approach, biological
+    injury, illness, fear, or pain without a separate applicable WRN adverse classification.
+  - Formal falsehood, invalidity, contradiction, type error, permission violation,
+    incompatibility, or schema mismatch merely as a rule judgment.
+  - Alarm, warning message, symptom report, log entry, error code, measurement, diagnosis,
+    belief, suspicion, attention, or evidence about the condition.
+  - Detecting, warning, attacking, spreading, containing, isolating, shutting down,
+    repairing, recovering, or responding as a process or relation.
+  - Severity, probability, uncertainty to an observer, possible future occurrence,
+    schedule, cause, blame, intent, exploitability, vulnerability, exposure, or guaranteed
+    harm.
+  nearest_neighbors:
+  - WRN:010
+  - WRN:011
+  - WRN:002
+  - WRN:022
+  - WRN:112
+  - WRN:212
+  same_family_contrast: "`WRN:0xx` owns adverse conditions as entities; `WRN:1xx`
+    remains the process layer for detecting, warning, containing, or responding; `WRN:2xx`
+    remains the capacity/relation layer for susceptibility, exposure, and systemic
+    risk relations. Manifestation in 0xx does not itself name the process that caused,
+    detected, communicated, propagated, or remediated it, and an adverse condition
+    does not entail a particular vulnerability or exposure relation. The persistent
+    sibling may also hold because it asserts adverse-condition identity across time.
+    Manifest and dormant siblings are mutually exclusive for the same condition at
+    the same reference time, while runtime `[2]/num` may leave either selected claim
+    unresolved."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies the dormant adverse-condition status named by this root; it does not
+      affirm the persistent or manifest sibling and does not by itself certify complete
+      safety.
+    '1': Affirms exactly that this distinct external adverse condition is dormant,
+      without adding concealment from an observer, lack of evidence, probability,
+      schedule, intention, damage, or response.
+    2/num: Leaves unresolved whether even the lexical dormant condition holds; lexical
+      third-trit 2 still names nonmanifest status, while runtime `[2]/num` marks uncertainty
+      about the whole assertion.
+  lexical_runtime_distinction: Lexical third trit `2` permanently selects the dormant/presently
+    nonmanifest member of this adverse-condition triplet. Runtime `[2]/num` instead
+    leaves the truth or applicability of that already-selected root unresolved; it
+    never changes manifestation phase. Thus a latent root affirmed with `[1]` is a
+    confirmed latent condition, while a persistent or manifest root carrying `[2]/num`
+    remains lexically persistent or manifest but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: WRN:012[1](HAZARD=h,TARGET=t)
+    literal_gloss: affirm dormant external hazard
+    natural_english: The dormant hazard is present but its harmful potential is not
+      currently expressed.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: The root preserves one hazard distinct from one reference target.
+  - category: physical_or_spatial
+    semantic_graph: MAT(SOURCE=s)+WRN:012[1](HAZARD=s,TARGET=t)
+    literal_gloss: material source plus dormant external hazard
+    natural_english: The isolated chemical remains a dormant external hazard while
+      sealed.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: MAT supplies the source and mechanics; WRN supplies adverse significance.
+  - category: temporal_or_sequential
+    semantic_graph: WRN:012[1](HAZARD=h,TARGET=t)+ORI(INTERVAL=w)
+    literal_gloss: external-hazard status during interval w
+    natural_english: During the maintenance window, the source has the stated external-hazard
+      status relative to the target.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: ORI locates the claim; lexical status is not a schedule.
+  - category: cross_family_compound
+    semantic_graph: MOV(APPROACH=p)+MAT(ENERGY=q)+WRN:012[1](HAZARD=h,TARGET=t)
+    literal_gloss: approach and physical energy plus external hazard
+    natural_english: The moving object has physical energy and is separately classified
+      as the stated external hazard.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: Motion and matter explain mechanics; WRN supplies the adverse condition.
+  - category: executable_or_programming
+    semantic_graph: WRN:012[1](HAZARD=input,TARGET=parser)
+    literal_gloss: assert dormant external hazard
+    natural_english: The quarantined payload remains present as a dormant external
+      hazard.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: Input provenance and formal validity remain DAT/LOG.
+    pseudocode: assert(adverse_condition.matches?("WRN:012"))
+  - category: counterexample
+    semantic_graph: MOV:101[1](MOVER=m,PATH=p)
+    literal_gloss: ongoing approach
+    natural_english: The bicycle is approaching the gate.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: must_not_use_this_root
+    analysis: Approach is MOV; it becomes a WRN hazard only when adverse capability
+      is separately asserted.
+  future_compound_examples:
+  - WRN:012 + MAT/LIF supplies the physical or living bearer and concrete harm mechanism
+    without reducing adverse status to matter or biology.
+  - WRN:012 + MOV/ORI supplies approach, location, sequence, or time without turning
+    manifestation status into motion or tense.
+  - WRN:012 + DAT/MIN/CON supplies evidence, recognition, or a warning signal while
+    preserving the underlying adverse condition as independent.
+  - WRN:012 + WRN:1xx/2xx may later express detection, warning, containment, susceptibility,
+    exposure, or propagation as separate processes or relations.
+  later_era_notes: Later eras may lexicalize bug, crack, contamination, malware, pathogen,
+    hostile actor, outage, cascading failure, incident, emergency, defect class, symptom,
+    severity, and confidence. Era Zero should preserve the adverse-condition center
+    and derive domain-specific senses compositionally. The stable/persistent root
+    must not be treated as mutually exclusive with its manifest or dormant sibling.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: WRN:020
+    universal_slot: stable collective entity
+    family_qualified_transliteration: da·nim
+    local_compact_root: nim
+    formal_carrier: da-ma-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: persistent distributed fault
+  invariant_definition: One correlated adverse condition that remains identified across
+    multiple participant entities within a shared system independently of its present
+    manifestation pattern.
+  semantic_center: 'adverse-condition entities: intrinsic faults, distinct external
+    hazards, and correlated distributed faults'
+  address_justification:
+    first_trit_0: 'Selects an entity or condition: persistent distributed fault is
+      an adverse condition, not its detection, warning, containment, propagation,
+      causal mechanism, susceptibility relation, evidence record, or repair.'
+    second_trit: 'Selects systemic/collective scope: one correlated adverse condition
+      distributed across multiple participants in a shared system and no other Warning-family
+      column.'
+    third_trit: Selects the stable/persistent condition by adverse identity or manifestation
+      while leaving runtime truth status, observer knowledge, tense, probability,
+      and response phase separate.
+  inclusion_boundary: Includes only the persistent correlated distributed adverse
+    condition as a substrate-neutral claim about one correlated adverse condition
+    distributed across multiple participants in a shared system. The claim requires
+    one correlated adverse identity across multiple participants. A coincidental collection
+    of unrelated faults is not systemic, and the communication or dependency graph
+    that links participants is separate. It is neutral about physical mechanism, observer
+    knowledge, evidential certainty, signaling, formal validity, moral blame, repairability,
+    severity, probability, timing, and response.
+  excluded_meanings:
+  - The person, organism, material object, software component, institution, or system
+    that bears, causes, observes, records, or responds to the condition.
+  - Physical fracture, force, heat, collision, displacement, approach, biological
+    injury, illness, fear, or pain without a separate applicable WRN adverse classification.
+  - Formal falsehood, invalidity, contradiction, type error, permission violation,
+    incompatibility, or schema mismatch merely as a rule judgment.
+  - Alarm, warning message, symptom report, log entry, error code, measurement, diagnosis,
+    belief, suspicion, attention, or evidence about the condition.
+  - Detecting, warning, attacking, spreading, containing, isolating, shutting down,
+    repairing, recovering, or responding as a process or relation.
+  - Severity, probability, uncertainty to an observer, possible future occurrence,
+    schedule, cause, blame, intent, exploitability, vulnerability, exposure, or guaranteed
+    harm.
+  nearest_neighbors:
+  - WRN:021
+  - WRN:022
+  - WRN:000
+  - WRN:010
+  - WRN:120
+  - WRN:220
+  same_family_contrast: "`WRN:0xx` owns adverse conditions as entities; `WRN:1xx`
+    remains the process layer for detecting, warning, containing, or responding; `WRN:2xx`
+    remains the capacity/relation layer for susceptibility, exposure, and systemic
+    risk relations. Manifestation in 0xx does not itself name the process that caused,
+    detected, communicated, propagated, or remediated it, and an adverse condition
+    does not entail a particular vulnerability or exposure relation. The persistent
+    member is manifestation-neutral: it may co-occur with the manifest sibling or
+    the dormant sibling at the same reference time. It asserts continuity of adverse-condition
+    identity rather than a third mutually exclusive manifestation value."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that the persistent correlated distributed adverse condition remains
+      identified in the stated warning context; it does not affirm the manifest or
+      dormant sibling and does not assert safety in every other respect.
+    '1': Affirms that the correlated distributed adverse condition persists as identified,
+      without deciding current harmful manifestation, evidence, awareness, severity,
+      damage, response, probability, or causal history beyond the invariant.
+    2/num: Leaves unresolved whether the persistent correlated distributed adverse
+      condition remains identified; the token stays the stable lexical root and does
+      not become the manifest or dormant sibling.
+  lexical_runtime_distinction: Lexical third trit `0` permanently selects the stable/persistent
+    member of this adverse-condition triplet. Runtime `[2]/num` instead leaves the
+    truth or applicability of that already-selected root unresolved; it never changes
+    manifestation phase. Thus a latent root affirmed with `[1]` is a confirmed latent
+    condition, while a persistent or manifest root carrying `[2]/num` remains lexically
+    persistent or manifest but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: WRN:020[1](SYSTEM=s,PARTICIPANTS={a,b},FAULT=f)
+    literal_gloss: affirm persistent distributed fault
+    natural_english: The service cluster retains one distributed fault identity across
+      its affected nodes.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: The root requires one correlated condition across multiple participants,
+      not merely many unrelated faults.
+  - category: physical_or_spatial
+    semantic_graph: MAT(SUBSTRATES={a,b})+WRN:020[1](SYSTEM=s,PARTICIPANTS={a,b},FAULT=f)
+    literal_gloss: material substrates plus persistent distributed fault
+    natural_english: The contamination pattern remains one distributed adverse condition
+      across several rooms.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: MAT supplies physical manifestation; WRN supplies correlated systemic
+      adversity.
+  - category: temporal_or_sequential
+    semantic_graph: WRN:020[1](SYSTEM=s,PARTICIPANTS={a,b},FAULT=f)+ORI(INTERVAL=w)
+    literal_gloss: distributed-fault status during interval w
+    natural_english: Across the interval, the shared system has the stated distributed-fault
+      status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: ORI supplies the interval; WRN supplies scope and manifestation status.
+  - category: cross_family_compound
+    semantic_graph: CON(DEPENDENCIES=g)+DAT(OBSERVATIONS=d)+WRN:020[1](SYSTEM=s,PARTICIPANTS={a,b},FAULT=f)
+    literal_gloss: dependencies and observations plus distributed fault
+    natural_english: The communication graph and measurements help characterize one
+      distributed adverse condition.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: CON and DAT describe linkage and evidence; neither alone establishes
+      correlated adversity.
+  - category: executable_or_programming
+    semantic_graph: WRN:020[1](SYSTEM=cluster,PARTICIPANTS=nodes,FAULT=f)
+    literal_gloss: assert persistent distributed fault
+    natural_english: The cluster retains one distributed fault identity across node
+      restarts.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: The assertion requires correlation across nodes rather than a list of
+      independent exceptions.
+    pseudocode: assert(adverse_condition.matches?("WRN:020"))
+  - category: counterexample
+    semantic_graph: WRN:001[1](ENTITY=a,FAULT=x)+WRN:001[1](ENTITY=b,FAULT=y)
+    literal_gloss: two unrelated manifest internal faults
+    natural_english: Two machines happen to fail for unrelated reasons.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: must_not_use_this_root
+    analysis: Multiple faults are not one systemic WRN:02x condition without a shared
+      correlated adverse identity.
+  future_compound_examples:
+  - WRN:020 + MAT/LIF supplies the physical or living bearer and concrete harm mechanism
+    without reducing adverse status to matter or biology.
+  - WRN:020 + MOV/ORI supplies approach, location, sequence, or time without turning
+    manifestation status into motion or tense.
+  - WRN:020 + DAT/MIN/CON supplies evidence, recognition, or a warning signal while
+    preserving the underlying adverse condition as independent.
+  - WRN:020 + WRN:1xx/2xx may later express detection, warning, containment, susceptibility,
+    exposure, or propagation as separate processes or relations.
+  later_era_notes: Later eras may lexicalize bug, crack, contamination, malware, pathogen,
+    hostile actor, outage, cascading failure, incident, emergency, defect class, symptom,
+    severity, and confidence. Era Zero should preserve the adverse-condition center
+    and derive domain-specific senses compositionally. The stable/persistent root
+    must not be treated as mutually exclusive with its manifest or dormant sibling.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: WRN:021
+    universal_slot: active collective entity
+    family_qualified_transliteration: da·nik
+    local_compact_root: nik
+    formal_carrier: da-ma-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: manifest distributed fault
+  invariant_definition: One correlated adverse condition that is presently producing
+    harmful deviation across multiple participant entities within a shared system.
+  semantic_center: 'adverse-condition entities: intrinsic faults, distinct external
+    hazards, and correlated distributed faults'
+  address_justification:
+    first_trit_0: 'Selects an entity or condition: manifest distributed fault is an
+      adverse condition, not its detection, warning, containment, propagation, causal
+      mechanism, susceptibility relation, evidence record, or repair.'
+    second_trit: 'Selects systemic/collective scope: one correlated adverse condition
+      distributed across multiple participants in a shared system and no other Warning-family
+      column.'
+    third_trit: Selects the active/presently manifest condition by adverse identity
+      or manifestation while leaving runtime truth status, observer knowledge, tense,
+      probability, and response phase separate.
+  inclusion_boundary: Includes only the manifest correlated distributed adverse condition
+    as a substrate-neutral claim about one correlated adverse condition distributed
+    across multiple participants in a shared system. The claim requires one correlated
+    adverse identity across multiple participants. A coincidental collection of unrelated
+    faults is not systemic, and the communication or dependency graph that links participants
+    is separate. It is neutral about physical mechanism, observer knowledge, evidential
+    certainty, signaling, formal validity, moral blame, repairability, severity, probability,
+    timing, and response.
+  excluded_meanings:
+  - The person, organism, material object, software component, institution, or system
+    that bears, causes, observes, records, or responds to the condition.
+  - Physical fracture, force, heat, collision, displacement, approach, biological
+    injury, illness, fear, or pain without a separate applicable WRN adverse classification.
+  - Formal falsehood, invalidity, contradiction, type error, permission violation,
+    incompatibility, or schema mismatch merely as a rule judgment.
+  - Alarm, warning message, symptom report, log entry, error code, measurement, diagnosis,
+    belief, suspicion, attention, or evidence about the condition.
+  - Detecting, warning, attacking, spreading, containing, isolating, shutting down,
+    repairing, recovering, or responding as a process or relation.
+  - Severity, probability, uncertainty to an observer, possible future occurrence,
+    schedule, cause, blame, intent, exploitability, vulnerability, exposure, or guaranteed
+    harm.
+  nearest_neighbors:
+  - WRN:020
+  - WRN:022
+  - WRN:001
+  - WRN:011
+  - WRN:121
+  - WRN:221
+  same_family_contrast: "`WRN:0xx` owns adverse conditions as entities; `WRN:1xx`
+    remains the process layer for detecting, warning, containing, or responding; `WRN:2xx`
+    remains the capacity/relation layer for susceptibility, exposure, and systemic
+    risk relations. Manifestation in 0xx does not itself name the process that caused,
+    detected, communicated, propagated, or remediated it, and an adverse condition
+    does not entail a particular vulnerability or exposure relation. The persistent
+    sibling may also hold because it asserts adverse-condition identity across time.
+    Manifest and dormant siblings are mutually exclusive for the same condition at
+    the same reference time, while runtime `[2]/num` may leave either selected claim
+    unresolved."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies the present manifest condition of this correlated distributed adverse
+      condition; persistence, dormancy, past manifestation, future manifestation,
+      and observer knowledge remain undecided.
+    '1': Affirms that this correlated distributed adverse condition is presently manifest,
+      without asserting a particular material mechanism, alert, belief, formal violation,
+      repair action, severity, or final harm outcome.
+    2/num: Leaves unresolved whether this correlated distributed adverse condition
+      is presently manifest; runtime uncertainty does not select the persistent or
+      dormant lexical sibling.
+  lexical_runtime_distinction: Lexical third trit `1` permanently selects the active/presently
+    manifest member of this adverse-condition triplet. Runtime `[2]/num` instead leaves
+    the truth or applicability of that already-selected root unresolved; it never
+    changes manifestation phase. Thus a latent root affirmed with `[1]` is a confirmed
+    latent condition, while a persistent or manifest root carrying `[2]/num` remains
+    lexically persistent or manifest but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: WRN:021[1](SYSTEM=s,PARTICIPANTS={a,b},FAULT=f)
+    literal_gloss: affirm manifest distributed fault
+    natural_english: The distributed fault is presently producing failures across
+      several services.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: The root requires one correlated condition across multiple participants,
+      not merely many unrelated faults.
+  - category: physical_or_spatial
+    semantic_graph: MAT(SUBSTRATES={a,b})+WRN:021[1](SYSTEM=s,PARTICIPANTS={a,b},FAULT=f)
+    literal_gloss: material substrates plus manifest distributed fault
+    natural_english: The same correlated contamination is presently producing harmful
+      effects across multiple rooms.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: MAT supplies physical manifestation; WRN supplies correlated systemic
+      adversity.
+  - category: temporal_or_sequential
+    semantic_graph: WRN:021[1](SYSTEM=s,PARTICIPANTS={a,b},FAULT=f)+ORI(INTERVAL=w)
+    literal_gloss: distributed-fault status during interval w
+    natural_english: Across the interval, the shared system has the stated distributed-fault
+      status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: ORI supplies the interval; WRN supplies scope and manifestation status.
+  - category: cross_family_compound
+    semantic_graph: CON(DEPENDENCIES=g)+DAT(OBSERVATIONS=d)+WRN:021[1](SYSTEM=s,PARTICIPANTS={a,b},FAULT=f)
+    literal_gloss: dependencies and observations plus distributed fault
+    natural_english: The communication graph and measurements help characterize one
+      distributed adverse condition.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: CON and DAT describe linkage and evidence; neither alone establishes
+      correlated adversity.
+  - category: executable_or_programming
+    semantic_graph: WRN:021[1](SYSTEM=cluster,PARTICIPANTS=nodes,FAULT=f)
+    literal_gloss: assert manifest distributed fault
+    natural_english: The correlated fault is presently producing errors across multiple
+      nodes.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: The assertion requires correlation across nodes rather than a list of
+      independent exceptions.
+    pseudocode: assert(adverse_condition.matches?("WRN:021"))
+  - category: counterexample
+    semantic_graph: WRN:001[1](ENTITY=a,FAULT=x)+WRN:001[1](ENTITY=b,FAULT=y)
+    literal_gloss: two unrelated manifest internal faults
+    natural_english: Two machines happen to fail for unrelated reasons.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: must_not_use_this_root
+    analysis: Multiple faults are not one systemic WRN:02x condition without a shared
+      correlated adverse identity.
+  future_compound_examples:
+  - WRN:021 + MAT/LIF supplies the physical or living bearer and concrete harm mechanism
+    without reducing adverse status to matter or biology.
+  - WRN:021 + MOV/ORI supplies approach, location, sequence, or time without turning
+    manifestation status into motion or tense.
+  - WRN:021 + DAT/MIN/CON supplies evidence, recognition, or a warning signal while
+    preserving the underlying adverse condition as independent.
+  - WRN:021 + WRN:1xx/2xx may later express detection, warning, containment, susceptibility,
+    exposure, or propagation as separate processes or relations.
+  later_era_notes: Later eras may lexicalize bug, crack, contamination, malware, pathogen,
+    hostile actor, outage, cascading failure, incident, emergency, defect class, symptom,
+    severity, and confidence. Era Zero should preserve the adverse-condition center
+    and derive domain-specific senses compositionally. The stable/persistent root
+    must not be treated as mutually exclusive with its manifest or dormant sibling.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: WRN:022
+    universal_slot: dormant collective entity
+    family_qualified_transliteration: da·nin
+    local_compact_root: nin
+    formal_carrier: da-ma-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -4
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: latent distributed fault
+  invariant_definition: One correlated adverse condition present across multiple participant
+    entities within a shared system without presently producing harmful deviation.
+  semantic_center: 'adverse-condition entities: intrinsic faults, distinct external
+    hazards, and correlated distributed faults'
+  address_justification:
+    first_trit_0: 'Selects an entity or condition: latent distributed fault is an
+      adverse condition, not its detection, warning, containment, propagation, causal
+      mechanism, susceptibility relation, evidence record, or repair.'
+    second_trit: 'Selects systemic/collective scope: one correlated adverse condition
+      distributed across multiple participants in a shared system and no other Warning-family
+      column.'
+    third_trit: Selects the dormant/presently nonmanifest condition by adverse identity
+      or manifestation while leaving runtime truth status, observer knowledge, tense,
+      probability, and response phase separate.
+  inclusion_boundary: Includes only the latent correlated distributed adverse condition
+    as a substrate-neutral claim about one correlated adverse condition distributed
+    across multiple participants in a shared system. The claim requires one correlated
+    adverse identity across multiple participants. A coincidental collection of unrelated
+    faults is not systemic, and the communication or dependency graph that links participants
+    is separate. It is neutral about physical mechanism, observer knowledge, evidential
+    certainty, signaling, formal validity, moral blame, repairability, severity, probability,
+    timing, and response.
+  excluded_meanings:
+  - The person, organism, material object, software component, institution, or system
+    that bears, causes, observes, records, or responds to the condition.
+  - Physical fracture, force, heat, collision, displacement, approach, biological
+    injury, illness, fear, or pain without a separate applicable WRN adverse classification.
+  - Formal falsehood, invalidity, contradiction, type error, permission violation,
+    incompatibility, or schema mismatch merely as a rule judgment.
+  - Alarm, warning message, symptom report, log entry, error code, measurement, diagnosis,
+    belief, suspicion, attention, or evidence about the condition.
+  - Detecting, warning, attacking, spreading, containing, isolating, shutting down,
+    repairing, recovering, or responding as a process or relation.
+  - Severity, probability, uncertainty to an observer, possible future occurrence,
+    schedule, cause, blame, intent, exploitability, vulnerability, exposure, or guaranteed
+    harm.
+  nearest_neighbors:
+  - WRN:020
+  - WRN:021
+  - WRN:002
+  - WRN:012
+  - WRN:122
+  - WRN:222
+  same_family_contrast: "`WRN:0xx` owns adverse conditions as entities; `WRN:1xx`
+    remains the process layer for detecting, warning, containing, or responding; `WRN:2xx`
+    remains the capacity/relation layer for susceptibility, exposure, and systemic
+    risk relations. Manifestation in 0xx does not itself name the process that caused,
+    detected, communicated, propagated, or remediated it, and an adverse condition
+    does not entail a particular vulnerability or exposure relation. The persistent
+    sibling may also hold because it asserts adverse-condition identity across time.
+    Manifest and dormant siblings are mutually exclusive for the same condition at
+    the same reference time, while runtime `[2]/num` may leave either selected claim
+    unresolved."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies the latent adverse-condition status named by this root; it does not
+      affirm the persistent or manifest sibling and does not by itself certify complete
+      safety.
+    '1': Affirms exactly that this correlated distributed adverse condition is latent,
+      without adding concealment from an observer, lack of evidence, probability,
+      schedule, intention, damage, or response.
+    2/num: Leaves unresolved whether even the lexical latent condition holds; lexical
+      third-trit 2 still names nonmanifest status, while runtime `[2]/num` marks uncertainty
+      about the whole assertion.
+  lexical_runtime_distinction: Lexical third trit `2` permanently selects the dormant/presently
+    nonmanifest member of this adverse-condition triplet. Runtime `[2]/num` instead
+    leaves the truth or applicability of that already-selected root unresolved; it
+    never changes manifestation phase. Thus a latent root affirmed with `[1]` is a
+    confirmed latent condition, while a persistent or manifest root carrying `[2]/num`
+    remains lexically persistent or manifest but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: WRN:022[1](SYSTEM=s,PARTICIPANTS={a,b},FAULT=f)
+    literal_gloss: affirm latent distributed fault
+    natural_english: The correlated fault is present across the cluster but is not
+      currently manifesting failures.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: The root requires one correlated condition across multiple participants,
+      not merely many unrelated faults.
+  - category: physical_or_spatial
+    semantic_graph: MAT(SUBSTRATES={a,b})+WRN:022[1](SYSTEM=s,PARTICIPANTS={a,b},FAULT=f)
+    literal_gloss: material substrates plus latent distributed fault
+    natural_english: The correlated contamination remains across the rooms without
+      currently producing detectable harmful effects.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: MAT supplies physical manifestation; WRN supplies correlated systemic
+      adversity.
+  - category: temporal_or_sequential
+    semantic_graph: WRN:022[1](SYSTEM=s,PARTICIPANTS={a,b},FAULT=f)+ORI(INTERVAL=w)
+    literal_gloss: distributed-fault status during interval w
+    natural_english: Across the interval, the shared system has the stated distributed-fault
+      status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: ORI supplies the interval; WRN supplies scope and manifestation status.
+  - category: cross_family_compound
+    semantic_graph: CON(DEPENDENCIES=g)+DAT(OBSERVATIONS=d)+WRN:022[1](SYSTEM=s,PARTICIPANTS={a,b},FAULT=f)
+    literal_gloss: dependencies and observations plus distributed fault
+    natural_english: The communication graph and measurements help characterize one
+      distributed adverse condition.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: CON and DAT describe linkage and evidence; neither alone establishes
+      correlated adversity.
+  - category: executable_or_programming
+    semantic_graph: WRN:022[1](SYSTEM=cluster,PARTICIPANTS=nodes,FAULT=f)
+    literal_gloss: assert latent distributed fault
+    natural_english: The compromised configuration is present across nodes but dormant
+      in this execution window.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: valid
+    analysis: The assertion requires correlation across nodes rather than a list of
+      independent exceptions.
+    pseudocode: assert(adverse_condition.matches?("WRN:022"))
+  - category: counterexample
+    semantic_graph: WRN:001[1](ENTITY=a,FAULT=x)+WRN:001[1](ENTITY=b,FAULT=y)
+    literal_gloss: two unrelated manifest internal faults
+    natural_english: Two machines happen to fail for unrelated reasons.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity or target under evaluation
+      middle: adverse condition as the asserted figure
+      high: distinct external hazard source or affected participant
+      sustained: shared system containing correlated participants
+    use_status: must_not_use_this_root
+    analysis: Multiple faults are not one systemic WRN:02x condition without a shared
+      correlated adverse identity.
+  future_compound_examples:
+  - WRN:022 + MAT/LIF supplies the physical or living bearer and concrete harm mechanism
+    without reducing adverse status to matter or biology.
+  - WRN:022 + MOV/ORI supplies approach, location, sequence, or time without turning
+    manifestation status into motion or tense.
+  - WRN:022 + DAT/MIN/CON supplies evidence, recognition, or a warning signal while
+    preserving the underlying adverse condition as independent.
+  - WRN:022 + WRN:1xx/2xx may later express detection, warning, containment, susceptibility,
+    exposure, or propagation as separate processes or relations.
+  later_era_notes: Later eras may lexicalize bug, crack, contamination, malware, pathogen,
+    hostile actor, outage, cascading failure, incident, emergency, defect class, symptom,
+    severity, and confidence. Era Zero should preserve the adverse-condition center
+    and derive domain-specific senses compositionally. The stable/persistent root
+    must not be treated as mutually exclusive with its manifest or dormant sibling.
+  confidence: 0.96
+  canonicalized: true
+approval_checklist:
+  family_domain_preserved: true
+  address_axes_preserved: true
+  one_invariant_per_root: true
+  triplets_coherent: true
+  all_current_candidates_challenged: true
+  cross_family_collisions_explicit: true
+  runtime_state_separated: true
+  entity_process_relation_layers_separated: true
+  generated_fields_unchanged: true
+  gate4_not_started: true
+  translator_not_started: true
+  canonicalized: true

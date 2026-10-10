@@ -1,0 +1,1479 @@
+---
+metadata:
+  title: WRN:000–022 adversarial semantic candidates
+  status: approved_and_canonical_by_delegated_authority
+  architecture_version: '1.0'
+  range: WRN:000–022
+  roots_reviewed: 9
+  candidate_architectures_per_root: 5
+  scored_categories:
+  - atomicity
+  - address_fit
+  - family_fit
+  - neighbor_separation
+  - cross_family_separation
+  - compound_usefulness
+  - everyday_language_coverage
+  - technical_coverage
+  generated_fields_changed: false
+  roots_canonicalized:
+  - WRN:000
+  - WRN:001
+  - WRN:002
+  - WRN:010
+  - WRN:011
+  - WRN:012
+  - WRN:020
+  - WRN:021
+  - WRN:022
+  approval_record: migrations/WRN_000_022_semantic_approval.yaml
+roots:
+- canonical_id: WRN:000
+  fixed_generated_fields:
+    canonical_id: WRN:000
+    universal_slot: stable inward entity
+    family_qualified_transliteration: da·nam
+    local_compact_root: nam
+    formal_carrier: da-ma-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 0
+  current_meaning_rationale: The provisional title follows the inward and persistent
+    slot labels and uses familiar warning vocabulary such as defect, threat, incident,
+    corruption, and risk.
+  candidates:
+  - candidate_id: current_phase2
+    title: contained defect
+    invariant_candidate: An inward error, weakness, or corruption is identified and
+      bounded within an entity.
+    analysis:
+      why_it_fits: The provisional title follows the inward and persistent slot labels
+        and uses familiar warning vocabulary such as defect, threat, incident, corruption,
+        and risk.
+      useful_coverage: It reaches common talk about bugs, dangers, attacks, outages,
+        spreading failures, and latent risks.
+      semantic_territory_consumed: Across the block it mixes adverse conditions, evidence
+        status, boundedness, approach, attack processes, causal harm, propagation,
+        probability, and confirmation.
+      conflicts_or_future_limitations: The mixed definitions are disjunctive, active
+        roots absorb WRN processes and relations, and dormant roots confuse observer
+        uncertainty with a condition's lexical inactivity.
+    scores:
+      atomicity: 4
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 9
+      technical_coverage: 7
+    total: 50
+    maximum: 80
+  - candidate_id: adverse_condition_entities
+    title: persistent internal fault
+    invariant_candidate: An intrinsic adverse condition that remains identified within
+      one reference entity independently of whether it is presently producing harmful
+      deviation.
+    analysis:
+      why_it_fits: The first trit stays entity/condition; the second alone selects
+        an intrinsic fault, a distinct external hazard, or one correlated distributed
+        fault; the third alone selects persistent identity, present manifestation,
+        or dormant/latent manifestation.
+      useful_coverage: It supplies compact atoms for defects, bugs, hazards, threats,
+        compromised nodes, outbreaks, systemic faults, silent failures, safety engineering,
+        monitoring, and exception handling.
+      semantic_territory_consumed: Only the substrate-neutral identity and manifestation
+        state of an adverse condition. Evidence, belief, signals, damage mechanics,
+        formal invalidity, warning actions, repair, probability, and causal history
+        remain separate.
+      conflicts_or_future_limitations: Broad English words such as error, failure,
+        danger, attack, corruption, incident, and risk require sense resolution or
+        compounds, but the resulting atoms remain stable and highly compositional.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 10
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 80
+    maximum: 80
+  - candidate_id: evidence_and_alarm_entities
+    title: persistent anomaly evidence
+    invariant_candidate: A persistent evidential or alarm object concerning an adverse
+      condition at inward scope.
+    analysis:
+      why_it_fits: Anomaly evidence, warning objects, and shared alarms can be stored,
+        active, or dormant and are strongly associated with the Warning family.
+      useful_coverage: It would directly cover logs, alerts, indicators, sirens, badges,
+        notifications, and incident tickets.
+      semantic_territory_consumed: Representations and communications about adverse
+        conditions rather than the conditions themselves.
+      conflicts_or_future_limitations: DAT owns records and evidence, CON owns alerts
+        and signals, and MIN owns recognition; a quiet or missing alarm would incorrectly
+        imply no underlying fault.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total: 58
+    maximum: 80
+  - candidate_id: severity_ladder_entities
+    title: enduring minor defect
+    invariant_candidate: A persistent adverse entity at a severity level conventionally
+      associated with inward scope.
+    analysis:
+      why_it_fits: Defect, threat, and crisis form an intuitive increase in seriousness
+        and have natural stable, active, and potential readings.
+      useful_coverage: It would make common severity distinctions concise in conversation,
+        operations, medicine, security, and incident management.
+      semantic_territory_consumed: Impact magnitude and urgency rather than inward,
+        outward, and systemic reference scope.
+      conflicts_or_future_limitations: Severity is contextual and graded, does not
+        perfectly track the second trit, and would make the address cube encode policy-dependent
+        thresholds rather than universal semantic direction.
+    scores:
+      atomicity: 8
+      address_fit: 6
+      family_fit: 9
+      neighbor_separation: 4
+      cross_family_separation: 7
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 7
+    total: 59
+    maximum: 80
+  - candidate_id: norm_deviation_entities
+    title: persistent internal nonconformance
+    invariant_candidate: A persistent departure from an applicable norm at inward
+      scope.
+    analysis:
+      why_it_fits: Internal nonconformance, target mismatch, and systemic inconsistency
+        are precise technical warning conditions aligned with inward, outward, and
+        shared scope.
+      useful_coverage: It would serve validation, type checking, contracts, protocol
+        compatibility, tests, invariants, and formal verification.
+      semantic_territory_consumed: Departure from an explicit norm, rule, schema,
+        contract, or proposition.
+      conflicts_or_future_limitations: LOG owns validity and constraints and DAT owns
+        schema conformance; many hazards are fully conformant, while many invalid
+        states are harmless.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 63
+    maximum: 80
+  recommended_candidate_id: adverse_condition_entities
+  recommendation_reason: Only this architecture keeps all nine roots as substrate-neutral
+    adverse conditions, follows inward/outward/systemic scope exactly, gives every
+    triplet one manifestation axis, and leaves evidence, belief, signaling, mechanics,
+    validity, response, repair, probability, and causation to their proper families
+    or later WRN layers.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: WRN:001
+  fixed_generated_fields:
+    canonical_id: WRN:001
+    universal_slot: active inward entity
+    family_qualified_transliteration: da·nak
+    local_compact_root: nak
+    formal_carrier: da-ma-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 2
+  current_meaning_rationale: The provisional title follows the inward and manifest
+    slot labels and uses familiar warning vocabulary such as defect, threat, incident,
+    corruption, and risk.
+  candidates:
+  - candidate_id: current_phase2
+    title: active internal fault
+    invariant_candidate: An error or harmful condition is presently disrupting an
+      entity from within.
+    analysis:
+      why_it_fits: The provisional title follows the inward and manifest slot labels
+        and uses familiar warning vocabulary such as defect, threat, incident, corruption,
+        and risk.
+      useful_coverage: It reaches common talk about bugs, dangers, attacks, outages,
+        spreading failures, and latent risks.
+      semantic_territory_consumed: Across the block it mixes adverse conditions, evidence
+        status, boundedness, approach, attack processes, causal harm, propagation,
+        probability, and confirmation.
+      conflicts_or_future_limitations: The mixed definitions are disjunctive, active
+        roots absorb WRN processes and relations, and dormant roots confuse observer
+        uncertainty with a condition's lexical inactivity.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 9
+      technical_coverage: 7
+    total: 51
+    maximum: 80
+  - candidate_id: adverse_condition_entities
+    title: manifest internal fault
+    invariant_candidate: An intrinsic adverse condition within one reference entity
+      that is presently producing harmful deviation from that entity's accepted state.
+    analysis:
+      why_it_fits: The first trit stays entity/condition; the second alone selects
+        an intrinsic fault, a distinct external hazard, or one correlated distributed
+        fault; the third alone selects persistent identity, present manifestation,
+        or dormant/latent manifestation.
+      useful_coverage: It supplies compact atoms for defects, bugs, hazards, threats,
+        compromised nodes, outbreaks, systemic faults, silent failures, safety engineering,
+        monitoring, and exception handling.
+      semantic_territory_consumed: Only the substrate-neutral identity and manifestation
+        state of an adverse condition. Evidence, belief, signals, damage mechanics,
+        formal invalidity, warning actions, repair, probability, and causal history
+        remain separate.
+      conflicts_or_future_limitations: Broad English words such as error, failure,
+        danger, attack, corruption, incident, and risk require sense resolution or
+        compounds, but the resulting atoms remain stable and highly compositional.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 10
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 80
+    maximum: 80
+  - candidate_id: evidence_and_alarm_entities
+    title: active anomaly signal
+    invariant_candidate: A manifest evidential or alarm object concerning an adverse
+      condition at inward scope.
+    analysis:
+      why_it_fits: Anomaly evidence, warning objects, and shared alarms can be stored,
+        active, or dormant and are strongly associated with the Warning family.
+      useful_coverage: It would directly cover logs, alerts, indicators, sirens, badges,
+        notifications, and incident tickets.
+      semantic_territory_consumed: Representations and communications about adverse
+        conditions rather than the conditions themselves.
+      conflicts_or_future_limitations: DAT owns records and evidence, CON owns alerts
+        and signals, and MIN owns recognition; a quiet or missing alarm would incorrectly
+        imply no underlying fault.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total: 58
+    maximum: 80
+  - candidate_id: severity_ladder_entities
+    title: active serious fault
+    invariant_candidate: A manifest adverse entity at a severity level conventionally
+      associated with inward scope.
+    analysis:
+      why_it_fits: Defect, threat, and crisis form an intuitive increase in seriousness
+        and have natural stable, active, and potential readings.
+      useful_coverage: It would make common severity distinctions concise in conversation,
+        operations, medicine, security, and incident management.
+      semantic_territory_consumed: Impact magnitude and urgency rather than inward,
+        outward, and systemic reference scope.
+      conflicts_or_future_limitations: Severity is contextual and graded, does not
+        perfectly track the second trit, and would make the address cube encode policy-dependent
+        thresholds rather than universal semantic direction.
+    scores:
+      atomicity: 8
+      address_fit: 6
+      family_fit: 9
+      neighbor_separation: 5
+      cross_family_separation: 7
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 7
+    total: 60
+    maximum: 80
+  - candidate_id: norm_deviation_entities
+    title: manifest internal invalidity
+    invariant_candidate: A manifest departure from an applicable norm at inward scope.
+    analysis:
+      why_it_fits: Internal nonconformance, target mismatch, and systemic inconsistency
+        are precise technical warning conditions aligned with inward, outward, and
+        shared scope.
+      useful_coverage: It would serve validation, type checking, contracts, protocol
+        compatibility, tests, invariants, and formal verification.
+      semantic_territory_consumed: Departure from an explicit norm, rule, schema,
+        contract, or proposition.
+      conflicts_or_future_limitations: LOG owns validity and constraints and DAT owns
+        schema conformance; many hazards are fully conformant, while many invalid
+        states are harmless.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 63
+    maximum: 80
+  recommended_candidate_id: adverse_condition_entities
+  recommendation_reason: Only this architecture keeps all nine roots as substrate-neutral
+    adverse conditions, follows inward/outward/systemic scope exactly, gives every
+    triplet one manifestation axis, and leaves evidence, belief, signaling, mechanics,
+    validity, response, repair, probability, and causation to their proper families
+    or later WRN layers.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: WRN:002
+  fixed_generated_fields:
+    canonical_id: WRN:002
+    universal_slot: dormant inward entity
+    family_qualified_transliteration: da·nan
+    local_compact_root: nan
+    formal_carrier: da-ma-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - -2
+  current_meaning_rationale: The provisional title follows the inward and latent slot
+    labels and uses familiar warning vocabulary such as defect, threat, incident,
+    corruption, and risk.
+  candidates:
+  - candidate_id: current_phase2
+    title: latent defect
+    invariant_candidate: An inward flaw or corruption may exist but is hidden, inactive,
+      or not yet detectable.
+    analysis:
+      why_it_fits: The provisional title follows the inward and latent slot labels
+        and uses familiar warning vocabulary such as defect, threat, incident, corruption,
+        and risk.
+      useful_coverage: It reaches common talk about bugs, dangers, attacks, outages,
+        spreading failures, and latent risks.
+      semantic_territory_consumed: Across the block it mixes adverse conditions, evidence
+        status, boundedness, approach, attack processes, causal harm, propagation,
+        probability, and confirmation.
+      conflicts_or_future_limitations: The mixed definitions are disjunctive, active
+        roots absorb WRN processes and relations, and dormant roots confuse observer
+        uncertainty with a condition's lexical inactivity.
+    scores:
+      atomicity: 4
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 9
+      technical_coverage: 7
+    total: 50
+    maximum: 80
+  - candidate_id: adverse_condition_entities
+    title: latent internal fault
+    invariant_candidate: An intrinsic adverse condition within one reference entity
+      that is present without presently producing harmful deviation.
+    analysis:
+      why_it_fits: The first trit stays entity/condition; the second alone selects
+        an intrinsic fault, a distinct external hazard, or one correlated distributed
+        fault; the third alone selects persistent identity, present manifestation,
+        or dormant/latent manifestation.
+      useful_coverage: It supplies compact atoms for defects, bugs, hazards, threats,
+        compromised nodes, outbreaks, systemic faults, silent failures, safety engineering,
+        monitoring, and exception handling.
+      semantic_territory_consumed: Only the substrate-neutral identity and manifestation
+        state of an adverse condition. Evidence, belief, signals, damage mechanics,
+        formal invalidity, warning actions, repair, probability, and causal history
+        remain separate.
+      conflicts_or_future_limitations: Broad English words such as error, failure,
+        danger, attack, corruption, incident, and risk require sense resolution or
+        compounds, but the resulting atoms remain stable and highly compositional.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 10
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 80
+    maximum: 80
+  - candidate_id: evidence_and_alarm_entities
+    title: stored anomaly indication
+    invariant_candidate: A latent evidential or alarm object concerning an adverse
+      condition at inward scope.
+    analysis:
+      why_it_fits: Anomaly evidence, warning objects, and shared alarms can be stored,
+        active, or dormant and are strongly associated with the Warning family.
+      useful_coverage: It would directly cover logs, alerts, indicators, sirens, badges,
+        notifications, and incident tickets.
+      semantic_territory_consumed: Representations and communications about adverse
+        conditions rather than the conditions themselves.
+      conflicts_or_future_limitations: DAT owns records and evidence, CON owns alerts
+        and signals, and MIN owns recognition; a quiet or missing alarm would incorrectly
+        imply no underlying fault.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 5
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total: 57
+    maximum: 80
+  - candidate_id: severity_ladder_entities
+    title: potential minor defect
+    invariant_candidate: A latent adverse entity at a severity level conventionally
+      associated with inward scope.
+    analysis:
+      why_it_fits: Defect, threat, and crisis form an intuitive increase in seriousness
+        and have natural stable, active, and potential readings.
+      useful_coverage: It would make common severity distinctions concise in conversation,
+        operations, medicine, security, and incident management.
+      semantic_territory_consumed: Impact magnitude and urgency rather than inward,
+        outward, and systemic reference scope.
+      conflicts_or_future_limitations: Severity is contextual and graded, does not
+        perfectly track the second trit, and would make the address cube encode policy-dependent
+        thresholds rather than universal semantic direction.
+    scores:
+      atomicity: 8
+      address_fit: 6
+      family_fit: 9
+      neighbor_separation: 5
+      cross_family_separation: 7
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 7
+    total: 60
+    maximum: 80
+  - candidate_id: norm_deviation_entities
+    title: unverified internal nonconformance
+    invariant_candidate: A latent departure from an applicable norm at inward scope.
+    analysis:
+      why_it_fits: Internal nonconformance, target mismatch, and systemic inconsistency
+        are precise technical warning conditions aligned with inward, outward, and
+        shared scope.
+      useful_coverage: It would serve validation, type checking, contracts, protocol
+        compatibility, tests, invariants, and formal verification.
+      semantic_territory_consumed: Departure from an explicit norm, rule, schema,
+        contract, or proposition.
+      conflicts_or_future_limitations: LOG owns validity and constraints and DAT owns
+        schema conformance; many hazards are fully conformant, while many invalid
+        states are harmless.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 63
+    maximum: 80
+  recommended_candidate_id: adverse_condition_entities
+  recommendation_reason: Only this architecture keeps all nine roots as substrate-neutral
+    adverse conditions, follows inward/outward/systemic scope exactly, gives every
+    triplet one manifestation axis, and leaves evidence, belief, signaling, mechanics,
+    validity, response, repair, probability, and causation to their proper families
+    or later WRN layers.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: WRN:010
+  fixed_generated_fields:
+    canonical_id: WRN:010
+    universal_slot: stable outward entity
+    family_qualified_transliteration: da·nom
+    local_compact_root: nom
+    formal_carrier: da-ma-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 2
+  current_meaning_rationale: The provisional title follows the outward and persistent
+    slot labels and uses familiar warning vocabulary such as defect, threat, incident,
+    corruption, and risk.
+  candidates:
+  - candidate_id: current_phase2
+    title: known hazard
+    invariant_candidate: A stable external source of danger, damage, error, or invalid
+      behavior is identified.
+    analysis:
+      why_it_fits: The provisional title follows the outward and persistent slot labels
+        and uses familiar warning vocabulary such as defect, threat, incident, corruption,
+        and risk.
+      useful_coverage: It reaches common talk about bugs, dangers, attacks, outages,
+        spreading failures, and latent risks.
+      semantic_territory_consumed: Across the block it mixes adverse conditions, evidence
+        status, boundedness, approach, attack processes, causal harm, propagation,
+        probability, and confirmation.
+      conflicts_or_future_limitations: The mixed definitions are disjunctive, active
+        roots absorb WRN processes and relations, and dormant roots confuse observer
+        uncertainty with a condition's lexical inactivity.
+    scores:
+      atomicity: 4
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 9
+      technical_coverage: 7
+    total: 50
+    maximum: 80
+  - candidate_id: adverse_condition_entities
+    title: persistent external hazard
+    invariant_candidate: A distinct external condition that remains identified as
+      capable of adversely affecting one reference target independently of current
+      contact or effect.
+    analysis:
+      why_it_fits: The first trit stays entity/condition; the second alone selects
+        an intrinsic fault, a distinct external hazard, or one correlated distributed
+        fault; the third alone selects persistent identity, present manifestation,
+        or dormant/latent manifestation.
+      useful_coverage: It supplies compact atoms for defects, bugs, hazards, threats,
+        compromised nodes, outbreaks, systemic faults, silent failures, safety engineering,
+        monitoring, and exception handling.
+      semantic_territory_consumed: Only the substrate-neutral identity and manifestation
+        state of an adverse condition. Evidence, belief, signals, damage mechanics,
+        formal invalidity, warning actions, repair, probability, and causal history
+        remain separate.
+      conflicts_or_future_limitations: Broad English words such as error, failure,
+        danger, attack, corruption, incident, and risk require sense resolution or
+        compounds, but the resulting atoms remain stable and highly compositional.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: evidence_and_alarm_entities
+    title: persistent warning object
+    invariant_candidate: A persistent evidential or alarm object concerning an adverse
+      condition at outward scope.
+    analysis:
+      why_it_fits: Anomaly evidence, warning objects, and shared alarms can be stored,
+        active, or dormant and are strongly associated with the Warning family.
+      useful_coverage: It would directly cover logs, alerts, indicators, sirens, badges,
+        notifications, and incident tickets.
+      semantic_territory_consumed: Representations and communications about adverse
+        conditions rather than the conditions themselves.
+      conflicts_or_future_limitations: DAT owns records and evidence, CON owns alerts
+        and signals, and MIN owns recognition; a quiet or missing alarm would incorrectly
+        imply no underlying fault.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 2
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total: 56
+    maximum: 80
+  - candidate_id: severity_ladder_entities
+    title: enduring external threat
+    invariant_candidate: A persistent adverse entity at a severity level conventionally
+      associated with outward scope.
+    analysis:
+      why_it_fits: Defect, threat, and crisis form an intuitive increase in seriousness
+        and have natural stable, active, and potential readings.
+      useful_coverage: It would make common severity distinctions concise in conversation,
+        operations, medicine, security, and incident management.
+      semantic_territory_consumed: Impact magnitude and urgency rather than inward,
+        outward, and systemic reference scope.
+      conflicts_or_future_limitations: Severity is contextual and graded, does not
+        perfectly track the second trit, and would make the address cube encode policy-dependent
+        thresholds rather than universal semantic direction.
+    scores:
+      atomicity: 8
+      address_fit: 6
+      family_fit: 9
+      neighbor_separation: 4
+      cross_family_separation: 7
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 7
+    total: 59
+    maximum: 80
+  - candidate_id: norm_deviation_entities
+    title: persistent target mismatch
+    invariant_candidate: A persistent departure from an applicable norm at outward
+      scope.
+    analysis:
+      why_it_fits: Internal nonconformance, target mismatch, and systemic inconsistency
+        are precise technical warning conditions aligned with inward, outward, and
+        shared scope.
+      useful_coverage: It would serve validation, type checking, contracts, protocol
+        compatibility, tests, invariants, and formal verification.
+      semantic_territory_consumed: Departure from an explicit norm, rule, schema,
+        contract, or proposition.
+      conflicts_or_future_limitations: LOG owns validity and constraints and DAT owns
+        schema conformance; many hazards are fully conformant, while many invalid
+        states are harmless.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 3
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 61
+    maximum: 80
+  recommended_candidate_id: adverse_condition_entities
+  recommendation_reason: Only this architecture keeps all nine roots as substrate-neutral
+    adverse conditions, follows inward/outward/systemic scope exactly, gives every
+    triplet one manifestation axis, and leaves evidence, belief, signaling, mechanics,
+    validity, response, repair, probability, and causation to their proper families
+    or later WRN layers.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: WRN:011
+  fixed_generated_fields:
+    canonical_id: WRN:011
+    universal_slot: active outward entity
+    family_qualified_transliteration: da·nok
+    local_compact_root: nok
+    formal_carrier: da-ma-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 4
+  current_meaning_rationale: The provisional title follows the outward and manifest
+    slot labels and uses familiar warning vocabulary such as defect, threat, incident,
+    corruption, and risk.
+  candidates:
+  - candidate_id: current_phase2
+    title: active threat
+    invariant_candidate: An external hazard is presently approaching, attacking, failing,
+      or causing harm.
+    analysis:
+      why_it_fits: The provisional title follows the outward and manifest slot labels
+        and uses familiar warning vocabulary such as defect, threat, incident, corruption,
+        and risk.
+      useful_coverage: It reaches common talk about bugs, dangers, attacks, outages,
+        spreading failures, and latent risks.
+      semantic_territory_consumed: Across the block it mixes adverse conditions, evidence
+        status, boundedness, approach, attack processes, causal harm, propagation,
+        probability, and confirmation.
+      conflicts_or_future_limitations: The mixed definitions are disjunctive, active
+        roots absorb WRN processes and relations, and dormant roots confuse observer
+        uncertainty with a condition's lexical inactivity.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 9
+      technical_coverage: 7
+    total: 51
+    maximum: 80
+  - candidate_id: adverse_condition_entities
+    title: manifest external hazard
+    invariant_candidate: A distinct external condition that is presently expressing
+      the harmful potential by which it can adversely affect one reference target.
+    analysis:
+      why_it_fits: The first trit stays entity/condition; the second alone selects
+        an intrinsic fault, a distinct external hazard, or one correlated distributed
+        fault; the third alone selects persistent identity, present manifestation,
+        or dormant/latent manifestation.
+      useful_coverage: It supplies compact atoms for defects, bugs, hazards, threats,
+        compromised nodes, outbreaks, systemic faults, silent failures, safety engineering,
+        monitoring, and exception handling.
+      semantic_territory_consumed: Only the substrate-neutral identity and manifestation
+        state of an adverse condition. Evidence, belief, signals, damage mechanics,
+        formal invalidity, warning actions, repair, probability, and causal history
+        remain separate.
+      conflicts_or_future_limitations: Broad English words such as error, failure,
+        danger, attack, corruption, incident, and risk require sense resolution or
+        compounds, but the resulting atoms remain stable and highly compositional.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: evidence_and_alarm_entities
+    title: active alarm object
+    invariant_candidate: A manifest evidential or alarm object concerning an adverse
+      condition at outward scope.
+    analysis:
+      why_it_fits: Anomaly evidence, warning objects, and shared alarms can be stored,
+        active, or dormant and are strongly associated with the Warning family.
+      useful_coverage: It would directly cover logs, alerts, indicators, sirens, badges,
+        notifications, and incident tickets.
+      semantic_territory_consumed: Representations and communications about adverse
+        conditions rather than the conditions themselves.
+      conflicts_or_future_limitations: DAT owns records and evidence, CON owns alerts
+        and signals, and MIN owns recognition; a quiet or missing alarm would incorrectly
+        imply no underlying fault.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 2
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total: 56
+    maximum: 80
+  - candidate_id: severity_ladder_entities
+    title: immediate external danger
+    invariant_candidate: A manifest adverse entity at a severity level conventionally
+      associated with outward scope.
+    analysis:
+      why_it_fits: Defect, threat, and crisis form an intuitive increase in seriousness
+        and have natural stable, active, and potential readings.
+      useful_coverage: It would make common severity distinctions concise in conversation,
+        operations, medicine, security, and incident management.
+      semantic_territory_consumed: Impact magnitude and urgency rather than inward,
+        outward, and systemic reference scope.
+      conflicts_or_future_limitations: Severity is contextual and graded, does not
+        perfectly track the second trit, and would make the address cube encode policy-dependent
+        thresholds rather than universal semantic direction.
+    scores:
+      atomicity: 8
+      address_fit: 6
+      family_fit: 9
+      neighbor_separation: 5
+      cross_family_separation: 7
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 7
+    total: 60
+    maximum: 80
+  - candidate_id: norm_deviation_entities
+    title: active target incompatibility
+    invariant_candidate: A manifest departure from an applicable norm at outward scope.
+    analysis:
+      why_it_fits: Internal nonconformance, target mismatch, and systemic inconsistency
+        are precise technical warning conditions aligned with inward, outward, and
+        shared scope.
+      useful_coverage: It would serve validation, type checking, contracts, protocol
+        compatibility, tests, invariants, and formal verification.
+      semantic_territory_consumed: Departure from an explicit norm, rule, schema,
+        contract, or proposition.
+      conflicts_or_future_limitations: LOG owns validity and constraints and DAT owns
+        schema conformance; many hazards are fully conformant, while many invalid
+        states are harmless.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 3
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 61
+    maximum: 80
+  recommended_candidate_id: adverse_condition_entities
+  recommendation_reason: Only this architecture keeps all nine roots as substrate-neutral
+    adverse conditions, follows inward/outward/systemic scope exactly, gives every
+    triplet one manifestation axis, and leaves evidence, belief, signaling, mechanics,
+    validity, response, repair, probability, and causation to their proper families
+    or later WRN layers.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: WRN:012
+  fixed_generated_fields:
+    canonical_id: WRN:012
+    universal_slot: dormant outward entity
+    family_qualified_transliteration: da·non
+    local_compact_root: non
+    formal_carrier: da-ma-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 0
+  current_meaning_rationale: The provisional title follows the outward and dormant
+    slot labels and uses familiar warning vocabulary such as defect, threat, incident,
+    corruption, and risk.
+  candidates:
+  - candidate_id: current_phase2
+    title: suspected hazard
+    invariant_candidate: A possible external danger has been indicated but is inactive,
+      inaccessible, or not yet confirmed.
+    analysis:
+      why_it_fits: The provisional title follows the outward and dormant slot labels
+        and uses familiar warning vocabulary such as defect, threat, incident, corruption,
+        and risk.
+      useful_coverage: It reaches common talk about bugs, dangers, attacks, outages,
+        spreading failures, and latent risks.
+      semantic_territory_consumed: Across the block it mixes adverse conditions, evidence
+        status, boundedness, approach, attack processes, causal harm, propagation,
+        probability, and confirmation.
+      conflicts_or_future_limitations: The mixed definitions are disjunctive, active
+        roots absorb WRN processes and relations, and dormant roots confuse observer
+        uncertainty with a condition's lexical inactivity.
+    scores:
+      atomicity: 4
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 9
+      technical_coverage: 7
+    total: 50
+    maximum: 80
+  - candidate_id: adverse_condition_entities
+    title: dormant external hazard
+    invariant_candidate: A distinct external condition capable of adversely affecting
+      one reference target that is present without presently expressing that harmful
+      potential.
+    analysis:
+      why_it_fits: The first trit stays entity/condition; the second alone selects
+        an intrinsic fault, a distinct external hazard, or one correlated distributed
+        fault; the third alone selects persistent identity, present manifestation,
+        or dormant/latent manifestation.
+      useful_coverage: It supplies compact atoms for defects, bugs, hazards, threats,
+        compromised nodes, outbreaks, systemic faults, silent failures, safety engineering,
+        monitoring, and exception handling.
+      semantic_territory_consumed: Only the substrate-neutral identity and manifestation
+        state of an adverse condition. Evidence, belief, signals, damage mechanics,
+        formal invalidity, warning actions, repair, probability, and causal history
+        remain separate.
+      conflicts_or_future_limitations: Broad English words such as error, failure,
+        danger, attack, corruption, incident, and risk require sense resolution or
+        compounds, but the resulting atoms remain stable and highly compositional.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: evidence_and_alarm_entities
+    title: queued warning object
+    invariant_candidate: A dormant evidential or alarm object concerning an adverse
+      condition at outward scope.
+    analysis:
+      why_it_fits: Anomaly evidence, warning objects, and shared alarms can be stored,
+        active, or dormant and are strongly associated with the Warning family.
+      useful_coverage: It would directly cover logs, alerts, indicators, sirens, badges,
+        notifications, and incident tickets.
+      semantic_territory_consumed: Representations and communications about adverse
+        conditions rather than the conditions themselves.
+      conflicts_or_future_limitations: DAT owns records and evidence, CON owns alerts
+        and signals, and MIN owns recognition; a quiet or missing alarm would incorrectly
+        imply no underlying fault.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 5
+      neighbor_separation: 7
+      cross_family_separation: 2
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total: 55
+    maximum: 80
+  - candidate_id: severity_ladder_entities
+    title: potential external threat
+    invariant_candidate: A dormant adverse entity at a severity level conventionally
+      associated with outward scope.
+    analysis:
+      why_it_fits: Defect, threat, and crisis form an intuitive increase in seriousness
+        and have natural stable, active, and potential readings.
+      useful_coverage: It would make common severity distinctions concise in conversation,
+        operations, medicine, security, and incident management.
+      semantic_territory_consumed: Impact magnitude and urgency rather than inward,
+        outward, and systemic reference scope.
+      conflicts_or_future_limitations: Severity is contextual and graded, does not
+        perfectly track the second trit, and would make the address cube encode policy-dependent
+        thresholds rather than universal semantic direction.
+    scores:
+      atomicity: 8
+      address_fit: 6
+      family_fit: 9
+      neighbor_separation: 5
+      cross_family_separation: 7
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 7
+    total: 60
+    maximum: 80
+  - candidate_id: norm_deviation_entities
+    title: unverified target mismatch
+    invariant_candidate: A dormant departure from an applicable norm at outward scope.
+    analysis:
+      why_it_fits: Internal nonconformance, target mismatch, and systemic inconsistency
+        are precise technical warning conditions aligned with inward, outward, and
+        shared scope.
+      useful_coverage: It would serve validation, type checking, contracts, protocol
+        compatibility, tests, invariants, and formal verification.
+      semantic_territory_consumed: Departure from an explicit norm, rule, schema,
+        contract, or proposition.
+      conflicts_or_future_limitations: LOG owns validity and constraints and DAT owns
+        schema conformance; many hazards are fully conformant, while many invalid
+        states are harmless.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 3
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 61
+    maximum: 80
+  recommended_candidate_id: adverse_condition_entities
+  recommendation_reason: Only this architecture keeps all nine roots as substrate-neutral
+    adverse conditions, follows inward/outward/systemic scope exactly, gives every
+    triplet one manifestation axis, and leaves evidence, belief, signaling, mechanics,
+    validity, response, repair, probability, and causation to their proper families
+    or later WRN layers.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: WRN:020
+  fixed_generated_fields:
+    canonical_id: WRN:020
+    universal_slot: stable collective entity
+    family_qualified_transliteration: da·nim
+    local_compact_root: nim
+    formal_carrier: da-ma-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -2
+  current_meaning_rationale: The provisional title follows the systemic and persistent
+    slot labels and uses familiar warning vocabulary such as defect, threat, incident,
+    corruption, and risk.
+  candidates:
+  - candidate_id: current_phase2
+    title: contained incident field
+    invariant_candidate: A system-level hazard or failure condition is known, bounded,
+      and no longer spreading.
+    analysis:
+      why_it_fits: The provisional title follows the systemic and persistent slot
+        labels and uses familiar warning vocabulary such as defect, threat, incident,
+        corruption, and risk.
+      useful_coverage: It reaches common talk about bugs, dangers, attacks, outages,
+        spreading failures, and latent risks.
+      semantic_territory_consumed: Across the block it mixes adverse conditions, evidence
+        status, boundedness, approach, attack processes, causal harm, propagation,
+        probability, and confirmation.
+      conflicts_or_future_limitations: The mixed definitions are disjunctive, active
+        roots absorb WRN processes and relations, and dormant roots confuse observer
+        uncertainty with a condition's lexical inactivity.
+    scores:
+      atomicity: 4
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 3
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 9
+      technical_coverage: 7
+    total: 49
+    maximum: 80
+  - candidate_id: adverse_condition_entities
+    title: persistent distributed fault
+    invariant_candidate: One correlated adverse condition that remains identified
+      across multiple participant entities within a shared system independently of
+      its present manifestation pattern.
+    analysis:
+      why_it_fits: The first trit stays entity/condition; the second alone selects
+        an intrinsic fault, a distinct external hazard, or one correlated distributed
+        fault; the third alone selects persistent identity, present manifestation,
+        or dormant/latent manifestation.
+      useful_coverage: It supplies compact atoms for defects, bugs, hazards, threats,
+        compromised nodes, outbreaks, systemic faults, silent failures, safety engineering,
+        monitoring, and exception handling.
+      semantic_territory_consumed: Only the substrate-neutral identity and manifestation
+        state of an adverse condition. Evidence, belief, signals, damage mechanics,
+        formal invalidity, warning actions, repair, probability, and causal history
+        remain separate.
+      conflicts_or_future_limitations: Broad English words such as error, failure,
+        danger, attack, corruption, incident, and risk require sense resolution or
+        compounds, but the resulting atoms remain stable and highly compositional.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: evidence_and_alarm_entities
+    title: persistent shared alarm
+    invariant_candidate: A persistent evidential or alarm object concerning an adverse
+      condition at systemic scope.
+    analysis:
+      why_it_fits: Anomaly evidence, warning objects, and shared alarms can be stored,
+        active, or dormant and are strongly associated with the Warning family.
+      useful_coverage: It would directly cover logs, alerts, indicators, sirens, badges,
+        notifications, and incident tickets.
+      semantic_territory_consumed: Representations and communications about adverse
+        conditions rather than the conditions themselves.
+      conflicts_or_future_limitations: DAT owns records and evidence, CON owns alerts
+        and signals, and MIN owns recognition; a quiet or missing alarm would incorrectly
+        imply no underlying fault.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total: 58
+    maximum: 80
+  - candidate_id: severity_ladder_entities
+    title: enduring crisis condition
+    invariant_candidate: A persistent adverse entity at a severity level conventionally
+      associated with systemic scope.
+    analysis:
+      why_it_fits: Defect, threat, and crisis form an intuitive increase in seriousness
+        and have natural stable, active, and potential readings.
+      useful_coverage: It would make common severity distinctions concise in conversation,
+        operations, medicine, security, and incident management.
+      semantic_territory_consumed: Impact magnitude and urgency rather than inward,
+        outward, and systemic reference scope.
+      conflicts_or_future_limitations: Severity is contextual and graded, does not
+        perfectly track the second trit, and would make the address cube encode policy-dependent
+        thresholds rather than universal semantic direction.
+    scores:
+      atomicity: 8
+      address_fit: 4
+      family_fit: 9
+      neighbor_separation: 4
+      cross_family_separation: 7
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 7
+    total: 57
+    maximum: 80
+  - candidate_id: norm_deviation_entities
+    title: persistent systemic inconsistency
+    invariant_candidate: A persistent departure from an applicable norm at systemic
+      scope.
+    analysis:
+      why_it_fits: Internal nonconformance, target mismatch, and systemic inconsistency
+        are precise technical warning conditions aligned with inward, outward, and
+        shared scope.
+      useful_coverage: It would serve validation, type checking, contracts, protocol
+        compatibility, tests, invariants, and formal verification.
+      semantic_territory_consumed: Departure from an explicit norm, rule, schema,
+        contract, or proposition.
+      conflicts_or_future_limitations: LOG owns validity and constraints and DAT owns
+        schema conformance; many hazards are fully conformant, while many invalid
+        states are harmless.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 62
+    maximum: 80
+  recommended_candidate_id: adverse_condition_entities
+  recommendation_reason: Only this architecture keeps all nine roots as substrate-neutral
+    adverse conditions, follows inward/outward/systemic scope exactly, gives every
+    triplet one manifestation axis, and leaves evidence, belief, signaling, mechanics,
+    validity, response, repair, probability, and causation to their proper families
+    or later WRN layers.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: WRN:021
+  fixed_generated_fields:
+    canonical_id: WRN:021
+    universal_slot: active collective entity
+    family_qualified_transliteration: da·nik
+    local_compact_root: nik
+    formal_carrier: da-ma-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - 0
+  current_meaning_rationale: The provisional title follows the systemic and manifest
+    slot labels and uses familiar warning vocabulary such as defect, threat, incident,
+    corruption, and risk.
+  candidates:
+  - candidate_id: current_phase2
+    title: spreading corruption
+    invariant_candidate: Error, damage, danger, or hostile behavior is actively propagating
+      through a shared system.
+    analysis:
+      why_it_fits: The provisional title follows the systemic and manifest slot labels
+        and uses familiar warning vocabulary such as defect, threat, incident, corruption,
+        and risk.
+      useful_coverage: It reaches common talk about bugs, dangers, attacks, outages,
+        spreading failures, and latent risks.
+      semantic_territory_consumed: Across the block it mixes adverse conditions, evidence
+        status, boundedness, approach, attack processes, causal harm, propagation,
+        probability, and confirmation.
+      conflicts_or_future_limitations: The mixed definitions are disjunctive, active
+        roots absorb WRN processes and relations, and dormant roots confuse observer
+        uncertainty with a condition's lexical inactivity.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 3
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 9
+      technical_coverage: 7
+    total: 50
+    maximum: 80
+  - candidate_id: adverse_condition_entities
+    title: manifest distributed fault
+    invariant_candidate: One correlated adverse condition that is presently producing
+      harmful deviation across multiple participant entities within a shared system.
+    analysis:
+      why_it_fits: The first trit stays entity/condition; the second alone selects
+        an intrinsic fault, a distinct external hazard, or one correlated distributed
+        fault; the third alone selects persistent identity, present manifestation,
+        or dormant/latent manifestation.
+      useful_coverage: It supplies compact atoms for defects, bugs, hazards, threats,
+        compromised nodes, outbreaks, systemic faults, silent failures, safety engineering,
+        monitoring, and exception handling.
+      semantic_territory_consumed: Only the substrate-neutral identity and manifestation
+        state of an adverse condition. Evidence, belief, signals, damage mechanics,
+        formal invalidity, warning actions, repair, probability, and causal history
+        remain separate.
+      conflicts_or_future_limitations: Broad English words such as error, failure,
+        danger, attack, corruption, incident, and risk require sense resolution or
+        compounds, but the resulting atoms remain stable and highly compositional.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: evidence_and_alarm_entities
+    title: active shared alarm
+    invariant_candidate: A manifest evidential or alarm object concerning an adverse
+      condition at systemic scope.
+    analysis:
+      why_it_fits: Anomaly evidence, warning objects, and shared alarms can be stored,
+        active, or dormant and are strongly associated with the Warning family.
+      useful_coverage: It would directly cover logs, alerts, indicators, sirens, badges,
+        notifications, and incident tickets.
+      semantic_territory_consumed: Representations and communications about adverse
+        conditions rather than the conditions themselves.
+      conflicts_or_future_limitations: DAT owns records and evidence, CON owns alerts
+        and signals, and MIN owns recognition; a quiet or missing alarm would incorrectly
+        imply no underlying fault.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total: 58
+    maximum: 80
+  - candidate_id: severity_ladder_entities
+    title: active crisis condition
+    invariant_candidate: A manifest adverse entity at a severity level conventionally
+      associated with systemic scope.
+    analysis:
+      why_it_fits: Defect, threat, and crisis form an intuitive increase in seriousness
+        and have natural stable, active, and potential readings.
+      useful_coverage: It would make common severity distinctions concise in conversation,
+        operations, medicine, security, and incident management.
+      semantic_territory_consumed: Impact magnitude and urgency rather than inward,
+        outward, and systemic reference scope.
+      conflicts_or_future_limitations: Severity is contextual and graded, does not
+        perfectly track the second trit, and would make the address cube encode policy-dependent
+        thresholds rather than universal semantic direction.
+    scores:
+      atomicity: 8
+      address_fit: 4
+      family_fit: 9
+      neighbor_separation: 5
+      cross_family_separation: 7
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 7
+    total: 58
+    maximum: 80
+  - candidate_id: norm_deviation_entities
+    title: manifest systemic invalidity
+    invariant_candidate: A manifest departure from an applicable norm at systemic
+      scope.
+    analysis:
+      why_it_fits: Internal nonconformance, target mismatch, and systemic inconsistency
+        are precise technical warning conditions aligned with inward, outward, and
+        shared scope.
+      useful_coverage: It would serve validation, type checking, contracts, protocol
+        compatibility, tests, invariants, and formal verification.
+      semantic_territory_consumed: Departure from an explicit norm, rule, schema,
+        contract, or proposition.
+      conflicts_or_future_limitations: LOG owns validity and constraints and DAT owns
+        schema conformance; many hazards are fully conformant, while many invalid
+        states are harmless.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 62
+    maximum: 80
+  recommended_candidate_id: adverse_condition_entities
+  recommendation_reason: Only this architecture keeps all nine roots as substrate-neutral
+    adverse conditions, follows inward/outward/systemic scope exactly, gives every
+    triplet one manifestation axis, and leaves evidence, belief, signaling, mechanics,
+    validity, response, repair, probability, and causation to their proper families
+    or later WRN layers.
+  confidence: 0.96
+  canonicalized: true
+- canonical_id: WRN:022
+  fixed_generated_fields:
+    canonical_id: WRN:022
+    universal_slot: dormant collective entity
+    family_qualified_transliteration: da·nin
+    local_compact_root: nin
+    formal_carrier: da-ma-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -4
+  current_meaning_rationale: The provisional title follows the systemic and latent
+    slot labels and uses familiar warning vocabulary such as defect, threat, incident,
+    corruption, and risk.
+  candidates:
+  - candidate_id: current_phase2
+    title: latent systemic risk
+    invariant_candidate: A distributed failure or hazard could emerge, but it is currently
+      hidden or unrealized.
+    analysis:
+      why_it_fits: The provisional title follows the systemic and latent slot labels
+        and uses familiar warning vocabulary such as defect, threat, incident, corruption,
+        and risk.
+      useful_coverage: It reaches common talk about bugs, dangers, attacks, outages,
+        spreading failures, and latent risks.
+      semantic_territory_consumed: Across the block it mixes adverse conditions, evidence
+        status, boundedness, approach, attack processes, causal harm, propagation,
+        probability, and confirmation.
+      conflicts_or_future_limitations: The mixed definitions are disjunctive, active
+        roots absorb WRN processes and relations, and dormant roots confuse observer
+        uncertainty with a condition's lexical inactivity.
+    scores:
+      atomicity: 4
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 3
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 9
+      technical_coverage: 7
+    total: 49
+    maximum: 80
+  - candidate_id: adverse_condition_entities
+    title: latent distributed fault
+    invariant_candidate: One correlated adverse condition present across multiple
+      participant entities within a shared system without presently producing harmful
+      deviation.
+    analysis:
+      why_it_fits: The first trit stays entity/condition; the second alone selects
+        an intrinsic fault, a distinct external hazard, or one correlated distributed
+        fault; the third alone selects persistent identity, present manifestation,
+        or dormant/latent manifestation.
+      useful_coverage: It supplies compact atoms for defects, bugs, hazards, threats,
+        compromised nodes, outbreaks, systemic faults, silent failures, safety engineering,
+        monitoring, and exception handling.
+      semantic_territory_consumed: Only the substrate-neutral identity and manifestation
+        state of an adverse condition. Evidence, belief, signals, damage mechanics,
+        formal invalidity, warning actions, repair, probability, and causal history
+        remain separate.
+      conflicts_or_future_limitations: Broad English words such as error, failure,
+        danger, attack, corruption, incident, and risk require sense resolution or
+        compounds, but the resulting atoms remain stable and highly compositional.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: evidence_and_alarm_entities
+    title: stored shared warning
+    invariant_candidate: A latent evidential or alarm object concerning an adverse
+      condition at systemic scope.
+    analysis:
+      why_it_fits: Anomaly evidence, warning objects, and shared alarms can be stored,
+        active, or dormant and are strongly associated with the Warning family.
+      useful_coverage: It would directly cover logs, alerts, indicators, sirens, badges,
+        notifications, and incident tickets.
+      semantic_territory_consumed: Representations and communications about adverse
+        conditions rather than the conditions themselves.
+      conflicts_or_future_limitations: DAT owns records and evidence, CON owns alerts
+        and signals, and MIN owns recognition; a quiet or missing alarm would incorrectly
+        imply no underlying fault.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 5
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total: 57
+    maximum: 80
+  - candidate_id: severity_ladder_entities
+    title: potential crisis condition
+    invariant_candidate: A latent adverse entity at a severity level conventionally
+      associated with systemic scope.
+    analysis:
+      why_it_fits: Defect, threat, and crisis form an intuitive increase in seriousness
+        and have natural stable, active, and potential readings.
+      useful_coverage: It would make common severity distinctions concise in conversation,
+        operations, medicine, security, and incident management.
+      semantic_territory_consumed: Impact magnitude and urgency rather than inward,
+        outward, and systemic reference scope.
+      conflicts_or_future_limitations: Severity is contextual and graded, does not
+        perfectly track the second trit, and would make the address cube encode policy-dependent
+        thresholds rather than universal semantic direction.
+    scores:
+      atomicity: 8
+      address_fit: 4
+      family_fit: 9
+      neighbor_separation: 5
+      cross_family_separation: 7
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 7
+    total: 58
+    maximum: 80
+  - candidate_id: norm_deviation_entities
+    title: unverified systemic inconsistency
+    invariant_candidate: A latent departure from an applicable norm at systemic scope.
+    analysis:
+      why_it_fits: Internal nonconformance, target mismatch, and systemic inconsistency
+        are precise technical warning conditions aligned with inward, outward, and
+        shared scope.
+      useful_coverage: It would serve validation, type checking, contracts, protocol
+        compatibility, tests, invariants, and formal verification.
+      semantic_territory_consumed: Departure from an explicit norm, rule, schema,
+        contract, or proposition.
+      conflicts_or_future_limitations: LOG owns validity and constraints and DAT owns
+        schema conformance; many hazards are fully conformant, while many invalid
+        states are harmless.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 62
+    maximum: 80
+  recommended_candidate_id: adverse_condition_entities
+  recommendation_reason: Only this architecture keeps all nine roots as substrate-neutral
+    adverse conditions, follows inward/outward/systemic scope exactly, gives every
+    triplet one manifestation axis, and leaves evidence, belief, signaling, mechanics,
+    validity, response, repair, probability, and causation to their proper families
+    or later WRN layers.
+  confidence: 0.96
+  canonicalized: true

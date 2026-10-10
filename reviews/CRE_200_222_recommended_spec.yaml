@@ -1,0 +1,1895 @@
+---
+metadata:
+  title: CRE:200–222 recommended permanent semantic specification
+  status: approved_and_canonical_by_delegated_authority
+  architecture_version: '1.0'
+  semantic_center: 'productive-process affordances: internal pattern-forming capacity,
+    source-artifact generative relations, and systemic co-generative capacity'
+  triplets:
+    CRE:200–202: 'internal pattern-forming capacity: persistent / operative / latent'
+    CRE:210–212: 'source-artifact generative relation: persistent / operative / latent'
+    CRE:220–222: 'systemic co-generative capacity: persistent / operative / latent'
+  triplet_logic:
+    affordance_statuses: persistent identity may co-occur with operative or latent
+      status; operative and latent are mutually exclusive at one reference time
+    latent_member: affirms an existing nonoperative affordance without hiddenness,
+      probability, planning, scheduling, or futurity
+    runtime_uncertainty: runtime [2]/num qualifies a selected lexical claim and does
+      not select a sibling
+  generated_fields_changed: false
+  gate4_started: false
+  translator_started: false
+  roots_canonicalized:
+  - CRE:200
+  - CRE:201
+  - CRE:202
+  - CRE:210
+  - CRE:211
+  - CRE:212
+  - CRE:220
+  - CRE:221
+  - CRE:222
+  approval_record: migrations/CRE_200_222_semantic_approval.yaml
+roots:
+- fixed_generated_fields:
+    canonical_id: CRE:200
+    universal_slot: stable inward capacity
+    family_qualified_transliteration: ga·mam
+    local_compact_root: mam
+    formal_carrier: ga-nu-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: persistent internal pattern-forming capacity
+  invariant_definition: A persistent capacity within one reference entity to form
+    or modify a generative pattern while retaining it within that entity, independently
+    of whether that capacity is presently operative.
+  semantic_center: 'productive-process affordances: internal pattern-forming capacity,
+    source-artifact generative relations, and systemic co-generative capacity'
+  address_justification:
+    first_trit_2: Selects a productive-process capacity or qualifying generative relation
+      rather than a Creation entity, actual productive process, creator, physical
+      mechanism, result value, or unrestricted modality.
+    second_trit: 'Selects inward/self scope: one reference entity and its capacity
+      to form or modify a retained generative pattern and no other Creation-family
+      column.'
+    third_trit: Selects the persistent status of the same productive affordance while
+      leaving runtime truth status, actual production, quality, authorship, observer
+      knowledge, tense, probability, permission, and scheduling separate.
+  inclusion_boundary: Includes only the persistent internal pattern-forming capacity
+    as a substrate-neutral productive-process affordance at inward scope. The capacity
+    concerns productive formation or modification of a generative pattern retained
+    within one entity and does not itself produce an outward artifact. The pattern,
+    algorithm, medium, actual transformation, and result remain separate. It is neutral
+    about Creation-entity identity, mental agency, physical medium, formal algorithm,
+    structural mechanics, creator role, authorship, originality, quality, value, resource
+    sufficiency, scheduling, probability, timing, and cause.
+  excluded_meanings:
+  - The generative pattern, generated artifact, or shared generative repertoire as
+    an entity, and its persistent, manifest, or dormant status.
+  - The completed, active, or nonactualized pattern-formation, artifact-generation,
+    or systemic co-generation process and any quality result.
+  - Mental imagination, general agency, specific encodings, formal algorithms, physical
+    tools, media, structural arrangements, credentials, or computational resources.
+  - Physical, biological, communicative, cognitive, informational, logical, structural,
+    restorative, or adverse capacity or transformation.
+  - Authorship, attribution, provenance, originality, ownership, authority, formal
+    possibility, composability alone, quality, performance, or resource sufficiency.
+  - Observer knowledge, evidence, intention, plan, readiness, queue, schedule, future
+    time, unrestricted possibility, necessity, probability, or cause.
+  nearest_neighbors:
+  - CRE:201
+  - CRE:202
+  - CRE:210
+  - CRE:220
+  - CRE:000
+  - CRE:100
+  same_family_contrast: "`CRE:0xx` owns generative patterns, generated artifacts,
+    and shared generative repertoires as entities. `CRE:1xx` owns the corresponding
+    completed, active, or nonactualized productive transformations. `CRE:2xx` owns
+    only typed productive enablement: internal pattern-forming capacity, source-artifact
+    generative relations, and systemic co-generative capacity. A manifest pattern
+    does not entail capacity, an affordance does not entail an actual process, and
+    a completed process does not entail continuing capacity, quality, or authorship.
+    Persistent identity may co-occur with operative or latent status; operative and
+    latent are mutually exclusive for the same affordance at one reference time. Lexical
+    latency affirms an existing but nonoperative affordance; runtime `[2]/num` separately
+    marks uncertainty about any selected status."
+  cross_family_comparisons: &1
+    LIF: LIF owns living identities, biological capacities, agents, and social roles.
+      A living creator may bear a productive affordance, but CRE:2xx does not encode
+      organism, personhood, office, institutional role, or agency in general.
+    MOV: MOV owns position, routes, displacement, and motion affordances. Material
+      or informational inputs may move during production, but CRE:2xx asserts generative
+      enablement rather than spatial reachability.
+    MAT: MAT owns substance, energy, force, contact, material compatibility, and physical
+      capacities. Tools and media may realize a generative affordance, but CRE:2xx
+      remains substrate-neutral.
+    MIN: MIN owns imagination, intention, attention, understanding, and cognitive
+      capacities. Productive affordance can exist without awareness or imagination,
+      and imagination alone does not establish CRE:2xx.
+    CON: CON owns linkage, communication, participation, authority, and interaction
+      channels. Coordination can support co-generation, but CRE:2xx requires typed
+      enablement for one productive transformation rather than interaction alone.
+    WRN: WRN owns hazards, faults, adverse processes, susceptibility, exposure, and
+      propagation pathways. A blocked productive affordance may be adverse, but CRE:2xx
+      does not assert failure, danger, or vulnerability.
+    STR: STR owns arrangements, interfaces, dependencies, structural compatibility,
+      and reconfiguration affordances. Structure may enable production, but CRE:2xx
+      requires form-producing function rather than composability alone.
+    REP: REP owns restoration conditions, transformations, and affordances. Reconstruction
+      may use a generative affordance, but CRE:2xx does not entail return to a prior
+      acceptable state.
+    LOG: LOG owns formal constraints, evaluations, applicability, and evaluability.
+      Rules may govern a generator, but CRE:2xx does not assert admissibility, computability,
+      or formal validity.
+    DAT: DAT owns represented information and data-process affordances. Encoded templates
+      and algorithms may implement CRE:2xx, but information transformability is not
+      productive generation.
+    ORI: ORI owns time, cause, provenance, unrestricted possibility, necessity, probability,
+      and ontological qualification. CRE:2xx asserts a typed existing productive affordance,
+      never mere possibility or causal origin.
+  runtime_state_interpretation:
+    '0': Denies that this internal pattern-forming capacity persists in the stated
+      production context; it does not select the operative or latent sibling and does
+      not establish a different agency, authorship, or quality relation.
+    '1': Affirms that this internal pattern-forming capacity persists independently
+      of current operation, without asserting that a productive process is occurring
+      or that any result quality holds.
+    2/num: Leaves unresolved whether this persistent internal pattern-forming capacity
+      claim holds; runtime uncertainty does not change the lexical root into operative
+      or latent status.
+  lexical_runtime_distinction: Lexical third trit `0` permanently selects the persistent
+    status of this productive affordance. Runtime `[2]/num` instead leaves the already-selected
+    status claim unresolved; it never changes affordance status. Thus a latent root
+    affirmed with `[1]` is a confirmed existing-but-nonoperative productive affordance,
+    while a persistent or operative root carrying `[2]/num` remains lexically persistent
+    or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CRE:200[1](ENTITY=studio,PATTERN=p)
+    literal_gloss: affirm persistent internal pattern-forming capacity
+    natural_english: The internal pattern-forming capacity for the studio persists
+      independently of present operation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: The root asserts productive enablement and lexical status, not an actual
+      process, creator identity, or result quality.
+  - category: physical_or_spatial
+    semantic_graph: MAT(MEDIUM=m)+CRE:200[1](ENTITY=studio,PATTERN=p)
+    literal_gloss: material medium plus persistent productive affordance
+    natural_english: The workshop or machine realizes the productive affordance while
+      MAT separately describes substance, energy, tools, and physical mechanics.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Productive affordance and material implementation remain separately
+      typed.
+  - category: temporal_or_sequential
+    semantic_graph: CRE:200[1](ENTITY=studio,PATTERN=p)+ORI(INTERVAL=w)
+    literal_gloss: persistent productive affordance during interval w
+    natural_english: During interval w, the productive affordance has the stated lexical
+      status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: ORI supplies time and does not replace persistent, operative, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: CRE:001[1](PATTERN=p)+CRE:200[1](ENTITY=studio,PATTERN=p)+DAT(REPRESENTATION=d)
+    literal_gloss: manifest generative pattern plus persistent productive affordance
+      plus data representation
+    natural_english: The generative entity and its productive affordance remain CRE
+      while DAT separately supplies an encoded representation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Entity, affordance, and representation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: CRE:200[1](ENTITY=studio,PATTERN=p)
+    literal_gloss: assert persistent productive affordance
+    natural_english: A runtime tracks whether the selected generative affordance has
+      the stated status without asserting execution, completion, or output quality.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Capability, process, and result remain distinct.
+    pseudocode: assert(productive_affordance.status == "CRE:200")
+  - category: counterexample
+    semantic_graph: CRE:101[1](ENTITY=studio,PATTERN=p)
+    literal_gloss: active internal pattern formation
+    natural_english: The productive transformation is running now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: must_not_use_this_root
+    analysis: Use CRE:1xx for the actual process; CRE:200 names only its enabling
+      capacity or relation.
+  future_compound_examples:
+  - CRE:200 + CRE:0xx supplies the generative pattern, generated artifact, or shared
+    repertoire without reducing the affordance to its Creation entity.
+  - CRE:200 + CRE:1xx states that the corresponding pattern formation, artifact generation,
+    or systemic co-generation is actually completed, active, or nonactualized.
+  - CRE:200 + MAT/DAT/LOG/STR supplies medium, representation, algorithm, resources,
+    and implementation while preserving the CRE affordance boundary.
+  - CRE:200 + ORI/CON/LIF may express timing, modality, provenance, participant roles,
+    authorship, or authority as separate meanings.
+  later_era_notes: Later eras may lexicalize artistic talent, authorship, originality,
+    derivation, remixability, renderability, compilability, manufacturability, toolchain
+    availability, resource-bounded generativity, design-space traversal, and specialized
+    collective-production capacities. Era Zero should preserve the substrate-neutral
+    productive-enablement center and derive stronger social, legal, aesthetic, and
+    technical claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CRE:201
+    universal_slot: active inward capacity
+    family_qualified_transliteration: ga·mak
+    local_compact_root: mak
+    formal_carrier: ga-nu-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: operative internal pattern-forming capacity
+  invariant_definition: A capacity within one reference entity to form or modify a
+    generative pattern while retaining it within that entity that is presently operative.
+  semantic_center: 'productive-process affordances: internal pattern-forming capacity,
+    source-artifact generative relations, and systemic co-generative capacity'
+  address_justification:
+    first_trit_2: Selects a productive-process capacity or qualifying generative relation
+      rather than a Creation entity, actual productive process, creator, physical
+      mechanism, result value, or unrestricted modality.
+    second_trit: 'Selects inward/self scope: one reference entity and its capacity
+      to form or modify a retained generative pattern and no other Creation-family
+      column.'
+    third_trit: Selects the operative status of the same productive affordance while
+      leaving runtime truth status, actual production, quality, authorship, observer
+      knowledge, tense, probability, permission, and scheduling separate.
+  inclusion_boundary: Includes only the operative internal pattern-forming capacity
+    as a substrate-neutral productive-process affordance at inward scope. The capacity
+    concerns productive formation or modification of a generative pattern retained
+    within one entity and does not itself produce an outward artifact. The pattern,
+    algorithm, medium, actual transformation, and result remain separate. It is neutral
+    about Creation-entity identity, mental agency, physical medium, formal algorithm,
+    structural mechanics, creator role, authorship, originality, quality, value, resource
+    sufficiency, scheduling, probability, timing, and cause.
+  excluded_meanings:
+  - The generative pattern, generated artifact, or shared generative repertoire as
+    an entity, and its persistent, manifest, or dormant status.
+  - The completed, active, or nonactualized pattern-formation, artifact-generation,
+    or systemic co-generation process and any quality result.
+  - Mental imagination, general agency, specific encodings, formal algorithms, physical
+    tools, media, structural arrangements, credentials, or computational resources.
+  - Physical, biological, communicative, cognitive, informational, logical, structural,
+    restorative, or adverse capacity or transformation.
+  - Authorship, attribution, provenance, originality, ownership, authority, formal
+    possibility, composability alone, quality, performance, or resource sufficiency.
+  - Observer knowledge, evidence, intention, plan, readiness, queue, schedule, future
+    time, unrestricted possibility, necessity, probability, or cause.
+  nearest_neighbors:
+  - CRE:200
+  - CRE:202
+  - CRE:211
+  - CRE:221
+  - CRE:001
+  - CRE:101
+  same_family_contrast: "`CRE:0xx` owns generative patterns, generated artifacts,
+    and shared generative repertoires as entities. `CRE:1xx` owns the corresponding
+    completed, active, or nonactualized productive transformations. `CRE:2xx` owns
+    only typed productive enablement: internal pattern-forming capacity, source-artifact
+    generative relations, and systemic co-generative capacity. A manifest pattern
+    does not entail capacity, an affordance does not entail an actual process, and
+    a completed process does not entail continuing capacity, quality, or authorship.
+    Persistent identity may co-occur with operative or latent status; operative and
+    latent are mutually exclusive for the same affordance at one reference time. Lexical
+    latency affirms an existing but nonoperative affordance; runtime `[2]/num` separately
+    marks uncertainty about any selected status."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this internal pattern-forming capacity is presently operative;
+      it does not deny persistent identity or affirm the latent sibling, impossibility,
+      or rule absence.
+    '1': Affirms that this internal pattern-forming capacity is presently operative
+      under the applicable conditions, without asserting that the corresponding productive
+      process is underway or completed.
+    2/num: Leaves current operation of this internal pattern-forming capacity unresolved;
+      token uncertainty does not select the persistent or latent lexical sibling.
+  lexical_runtime_distinction: Lexical third trit `1` permanently selects the operative
+    status of this productive affordance. Runtime `[2]/num` instead leaves the already-selected
+    status claim unresolved; it never changes affordance status. Thus a latent root
+    affirmed with `[1]` is a confirmed existing-but-nonoperative productive affordance,
+    while a persistent or operative root carrying `[2]/num` remains lexically persistent
+    or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CRE:201[1](ENTITY=studio,PATTERN=p)
+    literal_gloss: affirm operative internal pattern-forming capacity
+    natural_english: The internal pattern-forming capacity for the studio is presently
+      operative.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: The root asserts productive enablement and lexical status, not an actual
+      process, creator identity, or result quality.
+  - category: physical_or_spatial
+    semantic_graph: MAT(MEDIUM=m)+CRE:201[1](ENTITY=studio,PATTERN=p)
+    literal_gloss: material medium plus operative productive affordance
+    natural_english: The workshop or machine realizes the productive affordance while
+      MAT separately describes substance, energy, tools, and physical mechanics.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Productive affordance and material implementation remain separately
+      typed.
+  - category: temporal_or_sequential
+    semantic_graph: CRE:201[1](ENTITY=studio,PATTERN=p)+ORI(INTERVAL=w)
+    literal_gloss: operative productive affordance during interval w
+    natural_english: During interval w, the productive affordance has the stated lexical
+      status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: ORI supplies time and does not replace persistent, operative, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: CRE:001[1](PATTERN=p)+CRE:201[1](ENTITY=studio,PATTERN=p)+DAT(REPRESENTATION=d)
+    literal_gloss: manifest generative pattern plus operative productive affordance
+      plus data representation
+    natural_english: The generative entity and its productive affordance remain CRE
+      while DAT separately supplies an encoded representation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Entity, affordance, and representation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: CRE:201[1](ENTITY=studio,PATTERN=p)
+    literal_gloss: assert operative productive affordance
+    natural_english: A runtime tracks whether the selected generative affordance has
+      the stated status without asserting execution, completion, or output quality.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Capability, process, and result remain distinct.
+    pseudocode: assert(productive_affordance.status == "CRE:201")
+  - category: counterexample
+    semantic_graph: CRE:101[1](ENTITY=studio,PATTERN=p)
+    literal_gloss: active internal pattern formation
+    natural_english: The productive transformation is running now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: must_not_use_this_root
+    analysis: Use CRE:1xx for the actual process; CRE:201 names only its enabling
+      capacity or relation.
+  future_compound_examples:
+  - CRE:201 + CRE:0xx supplies the generative pattern, generated artifact, or shared
+    repertoire without reducing the affordance to its Creation entity.
+  - CRE:201 + CRE:1xx states that the corresponding pattern formation, artifact generation,
+    or systemic co-generation is actually completed, active, or nonactualized.
+  - CRE:201 + MAT/DAT/LOG/STR supplies medium, representation, algorithm, resources,
+    and implementation while preserving the CRE affordance boundary.
+  - CRE:201 + ORI/CON/LIF may express timing, modality, provenance, participant roles,
+    authorship, or authority as separate meanings.
+  later_era_notes: Later eras may lexicalize artistic talent, authorship, originality,
+    derivation, remixability, renderability, compilability, manufacturability, toolchain
+    availability, resource-bounded generativity, design-space traversal, and specialized
+    collective-production capacities. Era Zero should preserve the substrate-neutral
+    productive-enablement center and derive stronger social, legal, aesthetic, and
+    technical claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CRE:202
+    universal_slot: dormant inward capacity
+    family_qualified_transliteration: ga·man
+    local_compact_root: man
+    formal_carrier: ga-nu-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: latent internal pattern-forming capacity
+  invariant_definition: A capacity within one reference entity to form or modify a
+    generative pattern while retaining it within that entity that exists without being
+    presently operative.
+  semantic_center: 'productive-process affordances: internal pattern-forming capacity,
+    source-artifact generative relations, and systemic co-generative capacity'
+  address_justification:
+    first_trit_2: Selects a productive-process capacity or qualifying generative relation
+      rather than a Creation entity, actual productive process, creator, physical
+      mechanism, result value, or unrestricted modality.
+    second_trit: 'Selects inward/self scope: one reference entity and its capacity
+      to form or modify a retained generative pattern and no other Creation-family
+      column.'
+    third_trit: Selects the latent status of the same productive affordance while
+      leaving runtime truth status, actual production, quality, authorship, observer
+      knowledge, tense, probability, permission, and scheduling separate.
+  inclusion_boundary: Includes only the latent internal pattern-forming capacity as
+    a substrate-neutral productive-process affordance at inward scope. The capacity
+    concerns productive formation or modification of a generative pattern retained
+    within one entity and does not itself produce an outward artifact. The pattern,
+    algorithm, medium, actual transformation, and result remain separate. It is neutral
+    about Creation-entity identity, mental agency, physical medium, formal algorithm,
+    structural mechanics, creator role, authorship, originality, quality, value, resource
+    sufficiency, scheduling, probability, timing, and cause.
+  excluded_meanings:
+  - The generative pattern, generated artifact, or shared generative repertoire as
+    an entity, and its persistent, manifest, or dormant status.
+  - The completed, active, or nonactualized pattern-formation, artifact-generation,
+    or systemic co-generation process and any quality result.
+  - Mental imagination, general agency, specific encodings, formal algorithms, physical
+    tools, media, structural arrangements, credentials, or computational resources.
+  - Physical, biological, communicative, cognitive, informational, logical, structural,
+    restorative, or adverse capacity or transformation.
+  - Authorship, attribution, provenance, originality, ownership, authority, formal
+    possibility, composability alone, quality, performance, or resource sufficiency.
+  - Observer knowledge, evidence, intention, plan, readiness, queue, schedule, future
+    time, unrestricted possibility, necessity, probability, or cause.
+  nearest_neighbors:
+  - CRE:200
+  - CRE:201
+  - CRE:212
+  - CRE:222
+  - CRE:002
+  - CRE:102
+  same_family_contrast: "`CRE:0xx` owns generative patterns, generated artifacts,
+    and shared generative repertoires as entities. `CRE:1xx` owns the corresponding
+    completed, active, or nonactualized productive transformations. `CRE:2xx` owns
+    only typed productive enablement: internal pattern-forming capacity, source-artifact
+    generative relations, and systemic co-generative capacity. A manifest pattern
+    does not entail capacity, an affordance does not entail an actual process, and
+    a completed process does not entail continuing capacity, quality, or authorship.
+    Persistent identity may co-occur with operative or latent status; operative and
+    latent are mutually exclusive for the same affordance at one reference time. Lexical
+    latency affirms an existing but nonoperative affordance; runtime `[2]/num` separately
+    marks uncertainty about any selected status."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this internal pattern-forming capacity exists as the stated nonoperative
+      productive affordance; it does not establish that an operative sibling holds
+      or that the process is impossible.
+    '1': Affirms this internal pattern-forming capacity as existing but not presently
+      operative, without encoding hiddenness, uncertainty, probability, future activation,
+      missing resources, or permission.
+    2/num: Leaves unresolved even the assertion that this latent internal pattern-forming
+      capacity exists; lexical latency remains distinct from runtime assertion-level
+      uncertainty.
+  lexical_runtime_distinction: Lexical third trit `2` permanently selects the latent
+    status of this productive affordance. Runtime `[2]/num` instead leaves the already-selected
+    status claim unresolved; it never changes affordance status. Thus a latent root
+    affirmed with `[1]` is a confirmed existing-but-nonoperative productive affordance,
+    while a persistent or operative root carrying `[2]/num` remains lexically persistent
+    or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CRE:202[1](ENTITY=studio,PATTERN=p)
+    literal_gloss: affirm latent internal pattern-forming capacity
+    natural_english: The internal pattern-forming capacity for the studio exists but
+      is not presently operative.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: The root asserts productive enablement and lexical status, not an actual
+      process, creator identity, or result quality.
+  - category: physical_or_spatial
+    semantic_graph: MAT(MEDIUM=m)+CRE:202[1](ENTITY=studio,PATTERN=p)
+    literal_gloss: material medium plus latent productive affordance
+    natural_english: The workshop or machine realizes the productive affordance while
+      MAT separately describes substance, energy, tools, and physical mechanics.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Productive affordance and material implementation remain separately
+      typed.
+  - category: temporal_or_sequential
+    semantic_graph: CRE:202[1](ENTITY=studio,PATTERN=p)+ORI(INTERVAL=w)
+    literal_gloss: latent productive affordance during interval w
+    natural_english: During interval w, the productive affordance has the stated lexical
+      status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: ORI supplies time and does not replace persistent, operative, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: CRE:001[1](PATTERN=p)+CRE:202[1](ENTITY=studio,PATTERN=p)+DAT(REPRESENTATION=d)
+    literal_gloss: manifest generative pattern plus latent productive affordance plus
+      data representation
+    natural_english: The generative entity and its productive affordance remain CRE
+      while DAT separately supplies an encoded representation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Entity, affordance, and representation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: CRE:202[1](ENTITY=studio,PATTERN=p)
+    literal_gloss: assert latent productive affordance
+    natural_english: A runtime tracks whether the selected generative affordance has
+      the stated status without asserting execution, completion, or output quality.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Capability, process, and result remain distinct.
+    pseudocode: assert(productive_affordance.status == "CRE:202")
+  - category: counterexample
+    semantic_graph: CRE:101[1](ENTITY=studio,PATTERN=p)
+    literal_gloss: active internal pattern formation
+    natural_english: The productive transformation is running now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: must_not_use_this_root
+    analysis: Use CRE:1xx for the actual process; CRE:202 names only its enabling
+      capacity or relation.
+  future_compound_examples:
+  - CRE:202 + CRE:0xx supplies the generative pattern, generated artifact, or shared
+    repertoire without reducing the affordance to its Creation entity.
+  - CRE:202 + CRE:1xx states that the corresponding pattern formation, artifact generation,
+    or systemic co-generation is actually completed, active, or nonactualized.
+  - CRE:202 + MAT/DAT/LOG/STR supplies medium, representation, algorithm, resources,
+    and implementation while preserving the CRE affordance boundary.
+  - CRE:202 + ORI/CON/LIF may express timing, modality, provenance, participant roles,
+    authorship, or authority as separate meanings.
+  later_era_notes: Later eras may lexicalize artistic talent, authorship, originality,
+    derivation, remixability, renderability, compilability, manufacturability, toolchain
+    availability, resource-bounded generativity, design-space traversal, and specialized
+    collective-production capacities. Era Zero should preserve the substrate-neutral
+    productive-enablement center and derive stronger social, legal, aesthetic, and
+    technical claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CRE:210
+    universal_slot: stable outward relationship
+    family_qualified_transliteration: ga·mom
+    local_compact_root: mom
+    formal_carrier: ga-nu-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: persistent source-artifact generative relation
+  invariant_definition: A persistent generative relation from one source toward one
+    distinct prospective artifact that can enable the artifact to be brought into
+    manifestation by productive transformation, independently of whether that relation
+    is presently operative.
+  semantic_center: 'productive-process affordances: internal pattern-forming capacity,
+    source-artifact generative relations, and systemic co-generative capacity'
+  address_justification:
+    first_trit_2: Selects a productive-process capacity or qualifying generative relation
+      rather than a Creation entity, actual productive process, creator, physical
+      mechanism, result value, or unrestricted modality.
+    second_trit: 'Selects outward/target scope: one source and one distinct prospective
+      artifact joined by a relation enabling outward artifact generation and no other
+      Creation-family column.'
+    third_trit: Selects the persistent status of the same productive affordance while
+      leaving runtime truth status, actual production, quality, authorship, observer
+      knowledge, tense, probability, permission, and scheduling separate.
+  inclusion_boundary: Includes only the persistent source-artifact generative relation
+    as a substrate-neutral productive-process affordance at outward scope. The relation
+    preserves one production source and one distinct prospective artifact role. Physical
+    mechanism, creator identity, actual generation, completion, acceptance, and later
+    persistence remain separate. It is neutral about Creation-entity identity, mental
+    agency, physical medium, formal algorithm, structural mechanics, creator role,
+    authorship, originality, quality, value, resource sufficiency, scheduling, probability,
+    timing, and cause.
+  excluded_meanings:
+  - The generative pattern, generated artifact, or shared generative repertoire as
+    an entity, and its persistent, manifest, or dormant status.
+  - The completed, active, or nonactualized pattern-formation, artifact-generation,
+    or systemic co-generation process and any quality result.
+  - Mental imagination, general agency, specific encodings, formal algorithms, physical
+    tools, media, structural arrangements, credentials, or computational resources.
+  - Physical, biological, communicative, cognitive, informational, logical, structural,
+    restorative, or adverse capacity or transformation.
+  - Authorship, attribution, provenance, originality, ownership, authority, formal
+    possibility, composability alone, quality, performance, or resource sufficiency.
+  - Observer knowledge, evidence, intention, plan, readiness, queue, schedule, future
+    time, unrestricted possibility, necessity, probability, or cause.
+  nearest_neighbors:
+  - CRE:211
+  - CRE:212
+  - CRE:200
+  - CRE:220
+  - CRE:010
+  - CRE:110
+  same_family_contrast: "`CRE:0xx` owns generative patterns, generated artifacts,
+    and shared generative repertoires as entities. `CRE:1xx` owns the corresponding
+    completed, active, or nonactualized productive transformations. `CRE:2xx` owns
+    only typed productive enablement: internal pattern-forming capacity, source-artifact
+    generative relations, and systemic co-generative capacity. A manifest pattern
+    does not entail capacity, an affordance does not entail an actual process, and
+    a completed process does not entail continuing capacity, quality, or authorship.
+    Persistent identity may co-occur with operative or latent status; operative and
+    latent are mutually exclusive for the same affordance at one reference time. Lexical
+    latency affirms an existing but nonoperative affordance; runtime `[2]/num` separately
+    marks uncertainty about any selected status."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this source-artifact generative relation persists in the stated
+      production context; it does not select the operative or latent sibling and does
+      not establish a different agency, authorship, or quality relation.
+    '1': Affirms that this source-artifact generative relation persists independently
+      of current operation, without asserting that a productive process is occurring
+      or that any result quality holds.
+    2/num: Leaves unresolved whether this persistent source-artifact generative relation
+      claim holds; runtime uncertainty does not change the lexical root into operative
+      or latent status.
+  lexical_runtime_distinction: Lexical third trit `0` permanently selects the persistent
+    status of this productive affordance. Runtime `[2]/num` instead leaves the already-selected
+    status claim unresolved; it never changes affordance status. Thus a latent root
+    affirmed with `[1]` is a confirmed existing-but-nonoperative productive affordance,
+    while a persistent or operative root carrying `[2]/num` remains lexically persistent
+    or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CRE:210[1](SOURCE=s,PROSPECTIVE_ARTIFACT=artifact)
+    literal_gloss: affirm persistent source-artifact generative relation
+    natural_english: The source-artifact generative relation for the artifact persists
+      independently of present operation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: The root asserts productive enablement and lexical status, not an actual
+      process, creator identity, or result quality.
+  - category: physical_or_spatial
+    semantic_graph: MAT(MEDIUM=m)+CRE:210[1](SOURCE=s,PROSPECTIVE_ARTIFACT=artifact)
+    literal_gloss: material medium plus persistent productive affordance
+    natural_english: The workshop or machine realizes the productive affordance while
+      MAT separately describes substance, energy, tools, and physical mechanics.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Productive affordance and material implementation remain separately
+      typed.
+  - category: temporal_or_sequential
+    semantic_graph: CRE:210[1](SOURCE=s,PROSPECTIVE_ARTIFACT=artifact)+ORI(INTERVAL=w)
+    literal_gloss: persistent productive affordance during interval w
+    natural_english: During interval w, the productive affordance has the stated lexical
+      status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: ORI supplies time and does not replace persistent, operative, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: CRE:001[1](PATTERN=p)+CRE:210[1](SOURCE=s,PROSPECTIVE_ARTIFACT=artifact)+DAT(REPRESENTATION=d)
+    literal_gloss: manifest generative pattern plus persistent productive affordance
+      plus data representation
+    natural_english: The generative entity and its productive affordance remain CRE
+      while DAT separately supplies an encoded representation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Entity, affordance, and representation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: CRE:210[1](SOURCE=s,PROSPECTIVE_ARTIFACT=artifact)
+    literal_gloss: assert persistent productive affordance
+    natural_english: A runtime tracks whether the selected generative affordance has
+      the stated status without asserting execution, completion, or output quality.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Capability, process, and result remain distinct.
+    pseudocode: assert(productive_affordance.status == "CRE:210")
+  - category: counterexample
+    semantic_graph: CRE:101[1](ENTITY=artifact,PATTERN=p)
+    literal_gloss: active internal pattern formation
+    natural_english: The productive transformation is running now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: must_not_use_this_root
+    analysis: Use CRE:1xx for the actual process; CRE:210 names only its enabling
+      capacity or relation.
+  future_compound_examples:
+  - CRE:210 + CRE:0xx supplies the generative pattern, generated artifact, or shared
+    repertoire without reducing the affordance to its Creation entity.
+  - CRE:210 + CRE:1xx states that the corresponding pattern formation, artifact generation,
+    or systemic co-generation is actually completed, active, or nonactualized.
+  - CRE:210 + MAT/DAT/LOG/STR supplies medium, representation, algorithm, resources,
+    and implementation while preserving the CRE affordance boundary.
+  - CRE:210 + ORI/CON/LIF may express timing, modality, provenance, participant roles,
+    authorship, or authority as separate meanings.
+  later_era_notes: Later eras may lexicalize artistic talent, authorship, originality,
+    derivation, remixability, renderability, compilability, manufacturability, toolchain
+    availability, resource-bounded generativity, design-space traversal, and specialized
+    collective-production capacities. Era Zero should preserve the substrate-neutral
+    productive-enablement center and derive stronger social, legal, aesthetic, and
+    technical claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CRE:211
+    universal_slot: active outward relationship
+    family_qualified_transliteration: ga·mok
+    local_compact_root: mok
+    formal_carrier: ga-nu-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: operative source-artifact generative relation
+  invariant_definition: A generative relation from one source toward one distinct
+    prospective artifact that presently enables the artifact to be brought into manifestation
+    by productive transformation.
+  semantic_center: 'productive-process affordances: internal pattern-forming capacity,
+    source-artifact generative relations, and systemic co-generative capacity'
+  address_justification:
+    first_trit_2: Selects a productive-process capacity or qualifying generative relation
+      rather than a Creation entity, actual productive process, creator, physical
+      mechanism, result value, or unrestricted modality.
+    second_trit: 'Selects outward/target scope: one source and one distinct prospective
+      artifact joined by a relation enabling outward artifact generation and no other
+      Creation-family column.'
+    third_trit: Selects the operative status of the same productive affordance while
+      leaving runtime truth status, actual production, quality, authorship, observer
+      knowledge, tense, probability, permission, and scheduling separate.
+  inclusion_boundary: Includes only the operative source-artifact generative relation
+    as a substrate-neutral productive-process affordance at outward scope. The relation
+    preserves one production source and one distinct prospective artifact role. Physical
+    mechanism, creator identity, actual generation, completion, acceptance, and later
+    persistence remain separate. It is neutral about Creation-entity identity, mental
+    agency, physical medium, formal algorithm, structural mechanics, creator role,
+    authorship, originality, quality, value, resource sufficiency, scheduling, probability,
+    timing, and cause.
+  excluded_meanings:
+  - The generative pattern, generated artifact, or shared generative repertoire as
+    an entity, and its persistent, manifest, or dormant status.
+  - The completed, active, or nonactualized pattern-formation, artifact-generation,
+    or systemic co-generation process and any quality result.
+  - Mental imagination, general agency, specific encodings, formal algorithms, physical
+    tools, media, structural arrangements, credentials, or computational resources.
+  - Physical, biological, communicative, cognitive, informational, logical, structural,
+    restorative, or adverse capacity or transformation.
+  - Authorship, attribution, provenance, originality, ownership, authority, formal
+    possibility, composability alone, quality, performance, or resource sufficiency.
+  - Observer knowledge, evidence, intention, plan, readiness, queue, schedule, future
+    time, unrestricted possibility, necessity, probability, or cause.
+  nearest_neighbors:
+  - CRE:210
+  - CRE:212
+  - CRE:201
+  - CRE:221
+  - CRE:011
+  - CRE:111
+  same_family_contrast: "`CRE:0xx` owns generative patterns, generated artifacts,
+    and shared generative repertoires as entities. `CRE:1xx` owns the corresponding
+    completed, active, or nonactualized productive transformations. `CRE:2xx` owns
+    only typed productive enablement: internal pattern-forming capacity, source-artifact
+    generative relations, and systemic co-generative capacity. A manifest pattern
+    does not entail capacity, an affordance does not entail an actual process, and
+    a completed process does not entail continuing capacity, quality, or authorship.
+    Persistent identity may co-occur with operative or latent status; operative and
+    latent are mutually exclusive for the same affordance at one reference time. Lexical
+    latency affirms an existing but nonoperative affordance; runtime `[2]/num` separately
+    marks uncertainty about any selected status."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this source-artifact generative relation is presently operative;
+      it does not deny persistent identity or affirm the latent sibling, impossibility,
+      or rule absence.
+    '1': Affirms that this source-artifact generative relation is presently operative
+      under the applicable conditions, without asserting that the corresponding productive
+      process is underway or completed.
+    2/num: Leaves current operation of this source-artifact generative relation unresolved;
+      token uncertainty does not select the persistent or latent lexical sibling.
+  lexical_runtime_distinction: Lexical third trit `1` permanently selects the operative
+    status of this productive affordance. Runtime `[2]/num` instead leaves the already-selected
+    status claim unresolved; it never changes affordance status. Thus a latent root
+    affirmed with `[1]` is a confirmed existing-but-nonoperative productive affordance,
+    while a persistent or operative root carrying `[2]/num` remains lexically persistent
+    or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CRE:211[1](SOURCE=s,PROSPECTIVE_ARTIFACT=artifact)
+    literal_gloss: affirm operative source-artifact generative relation
+    natural_english: The source-artifact generative relation for the artifact is presently
+      operative.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: The root asserts productive enablement and lexical status, not an actual
+      process, creator identity, or result quality.
+  - category: physical_or_spatial
+    semantic_graph: MAT(MEDIUM=m)+CRE:211[1](SOURCE=s,PROSPECTIVE_ARTIFACT=artifact)
+    literal_gloss: material medium plus operative productive affordance
+    natural_english: The workshop or machine realizes the productive affordance while
+      MAT separately describes substance, energy, tools, and physical mechanics.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Productive affordance and material implementation remain separately
+      typed.
+  - category: temporal_or_sequential
+    semantic_graph: CRE:211[1](SOURCE=s,PROSPECTIVE_ARTIFACT=artifact)+ORI(INTERVAL=w)
+    literal_gloss: operative productive affordance during interval w
+    natural_english: During interval w, the productive affordance has the stated lexical
+      status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: ORI supplies time and does not replace persistent, operative, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: CRE:001[1](PATTERN=p)+CRE:211[1](SOURCE=s,PROSPECTIVE_ARTIFACT=artifact)+DAT(REPRESENTATION=d)
+    literal_gloss: manifest generative pattern plus operative productive affordance
+      plus data representation
+    natural_english: The generative entity and its productive affordance remain CRE
+      while DAT separately supplies an encoded representation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Entity, affordance, and representation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: CRE:211[1](SOURCE=s,PROSPECTIVE_ARTIFACT=artifact)
+    literal_gloss: assert operative productive affordance
+    natural_english: A runtime tracks whether the selected generative affordance has
+      the stated status without asserting execution, completion, or output quality.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Capability, process, and result remain distinct.
+    pseudocode: assert(productive_affordance.status == "CRE:211")
+  - category: counterexample
+    semantic_graph: CRE:101[1](ENTITY=artifact,PATTERN=p)
+    literal_gloss: active internal pattern formation
+    natural_english: The productive transformation is running now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: must_not_use_this_root
+    analysis: Use CRE:1xx for the actual process; CRE:211 names only its enabling
+      capacity or relation.
+  future_compound_examples:
+  - CRE:211 + CRE:0xx supplies the generative pattern, generated artifact, or shared
+    repertoire without reducing the affordance to its Creation entity.
+  - CRE:211 + CRE:1xx states that the corresponding pattern formation, artifact generation,
+    or systemic co-generation is actually completed, active, or nonactualized.
+  - CRE:211 + MAT/DAT/LOG/STR supplies medium, representation, algorithm, resources,
+    and implementation while preserving the CRE affordance boundary.
+  - CRE:211 + ORI/CON/LIF may express timing, modality, provenance, participant roles,
+    authorship, or authority as separate meanings.
+  later_era_notes: Later eras may lexicalize artistic talent, authorship, originality,
+    derivation, remixability, renderability, compilability, manufacturability, toolchain
+    availability, resource-bounded generativity, design-space traversal, and specialized
+    collective-production capacities. Era Zero should preserve the substrate-neutral
+    productive-enablement center and derive stronger social, legal, aesthetic, and
+    technical claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CRE:212
+    universal_slot: unresolved outward relationship
+    family_qualified_transliteration: ga·mon
+    local_compact_root: mon
+    formal_carrier: ga-nu-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: latent source-artifact generative relation
+  invariant_definition: A generative relation from one source toward one distinct
+    prospective artifact that exists without presently enabling the artifact to be
+    brought into manifestation by productive transformation.
+  semantic_center: 'productive-process affordances: internal pattern-forming capacity,
+    source-artifact generative relations, and systemic co-generative capacity'
+  address_justification:
+    first_trit_2: Selects a productive-process capacity or qualifying generative relation
+      rather than a Creation entity, actual productive process, creator, physical
+      mechanism, result value, or unrestricted modality.
+    second_trit: 'Selects outward/target scope: one source and one distinct prospective
+      artifact joined by a relation enabling outward artifact generation and no other
+      Creation-family column.'
+    third_trit: Selects the latent status of the same productive affordance while
+      leaving runtime truth status, actual production, quality, authorship, observer
+      knowledge, tense, probability, permission, and scheduling separate.
+  inclusion_boundary: Includes only the latent source-artifact generative relation
+    as a substrate-neutral productive-process affordance at outward scope. The relation
+    preserves one production source and one distinct prospective artifact role. Physical
+    mechanism, creator identity, actual generation, completion, acceptance, and later
+    persistence remain separate. It is neutral about Creation-entity identity, mental
+    agency, physical medium, formal algorithm, structural mechanics, creator role,
+    authorship, originality, quality, value, resource sufficiency, scheduling, probability,
+    timing, and cause.
+  excluded_meanings:
+  - The generative pattern, generated artifact, or shared generative repertoire as
+    an entity, and its persistent, manifest, or dormant status.
+  - The completed, active, or nonactualized pattern-formation, artifact-generation,
+    or systemic co-generation process and any quality result.
+  - Mental imagination, general agency, specific encodings, formal algorithms, physical
+    tools, media, structural arrangements, credentials, or computational resources.
+  - Physical, biological, communicative, cognitive, informational, logical, structural,
+    restorative, or adverse capacity or transformation.
+  - Authorship, attribution, provenance, originality, ownership, authority, formal
+    possibility, composability alone, quality, performance, or resource sufficiency.
+  - Observer knowledge, evidence, intention, plan, readiness, queue, schedule, future
+    time, unrestricted possibility, necessity, probability, or cause.
+  nearest_neighbors:
+  - CRE:210
+  - CRE:211
+  - CRE:202
+  - CRE:222
+  - CRE:012
+  - CRE:112
+  same_family_contrast: "`CRE:0xx` owns generative patterns, generated artifacts,
+    and shared generative repertoires as entities. `CRE:1xx` owns the corresponding
+    completed, active, or nonactualized productive transformations. `CRE:2xx` owns
+    only typed productive enablement: internal pattern-forming capacity, source-artifact
+    generative relations, and systemic co-generative capacity. A manifest pattern
+    does not entail capacity, an affordance does not entail an actual process, and
+    a completed process does not entail continuing capacity, quality, or authorship.
+    Persistent identity may co-occur with operative or latent status; operative and
+    latent are mutually exclusive for the same affordance at one reference time. Lexical
+    latency affirms an existing but nonoperative affordance; runtime `[2]/num` separately
+    marks uncertainty about any selected status."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this source-artifact generative relation exists as the stated
+      nonoperative productive affordance; it does not establish that an operative
+      sibling holds or that the process is impossible.
+    '1': Affirms this source-artifact generative relation as existing but not presently
+      operative, without encoding hiddenness, uncertainty, probability, future activation,
+      missing resources, or permission.
+    2/num: Leaves unresolved even the assertion that this latent source-artifact generative
+      relation exists; lexical latency remains distinct from runtime assertion-level
+      uncertainty.
+  lexical_runtime_distinction: Lexical third trit `2` permanently selects the latent
+    status of this productive affordance. Runtime `[2]/num` instead leaves the already-selected
+    status claim unresolved; it never changes affordance status. Thus a latent root
+    affirmed with `[1]` is a confirmed existing-but-nonoperative productive affordance,
+    while a persistent or operative root carrying `[2]/num` remains lexically persistent
+    or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CRE:212[1](SOURCE=s,PROSPECTIVE_ARTIFACT=artifact)
+    literal_gloss: affirm latent source-artifact generative relation
+    natural_english: The source-artifact generative relation for the artifact exists
+      but is not presently operative.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: The root asserts productive enablement and lexical status, not an actual
+      process, creator identity, or result quality.
+  - category: physical_or_spatial
+    semantic_graph: MAT(MEDIUM=m)+CRE:212[1](SOURCE=s,PROSPECTIVE_ARTIFACT=artifact)
+    literal_gloss: material medium plus latent productive affordance
+    natural_english: The workshop or machine realizes the productive affordance while
+      MAT separately describes substance, energy, tools, and physical mechanics.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Productive affordance and material implementation remain separately
+      typed.
+  - category: temporal_or_sequential
+    semantic_graph: CRE:212[1](SOURCE=s,PROSPECTIVE_ARTIFACT=artifact)+ORI(INTERVAL=w)
+    literal_gloss: latent productive affordance during interval w
+    natural_english: During interval w, the productive affordance has the stated lexical
+      status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: ORI supplies time and does not replace persistent, operative, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: CRE:001[1](PATTERN=p)+CRE:212[1](SOURCE=s,PROSPECTIVE_ARTIFACT=artifact)+DAT(REPRESENTATION=d)
+    literal_gloss: manifest generative pattern plus latent productive affordance plus
+      data representation
+    natural_english: The generative entity and its productive affordance remain CRE
+      while DAT separately supplies an encoded representation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Entity, affordance, and representation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: CRE:212[1](SOURCE=s,PROSPECTIVE_ARTIFACT=artifact)
+    literal_gloss: assert latent productive affordance
+    natural_english: A runtime tracks whether the selected generative affordance has
+      the stated status without asserting execution, completion, or output quality.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Capability, process, and result remain distinct.
+    pseudocode: assert(productive_affordance.status == "CRE:212")
+  - category: counterexample
+    semantic_graph: CRE:101[1](ENTITY=artifact,PATTERN=p)
+    literal_gloss: active internal pattern formation
+    natural_english: The productive transformation is running now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: must_not_use_this_root
+    analysis: Use CRE:1xx for the actual process; CRE:212 names only its enabling
+      capacity or relation.
+  future_compound_examples:
+  - CRE:212 + CRE:0xx supplies the generative pattern, generated artifact, or shared
+    repertoire without reducing the affordance to its Creation entity.
+  - CRE:212 + CRE:1xx states that the corresponding pattern formation, artifact generation,
+    or systemic co-generation is actually completed, active, or nonactualized.
+  - CRE:212 + MAT/DAT/LOG/STR supplies medium, representation, algorithm, resources,
+    and implementation while preserving the CRE affordance boundary.
+  - CRE:212 + ORI/CON/LIF may express timing, modality, provenance, participant roles,
+    authorship, or authority as separate meanings.
+  later_era_notes: Later eras may lexicalize artistic talent, authorship, originality,
+    derivation, remixability, renderability, compilability, manufacturability, toolchain
+    availability, resource-bounded generativity, design-space traversal, and specialized
+    collective-production capacities. Era Zero should preserve the substrate-neutral
+    productive-enablement center and derive stronger social, legal, aesthetic, and
+    technical claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CRE:220
+    universal_slot: stable systemic relationship
+    family_qualified_transliteration: ga·mim
+    local_compact_root: mim
+    formal_carrier: ga-nu-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: persistent systemic co-generative capacity
+  invariant_definition: A persistent capacity of multiple participants in one shared
+    production domain to generate one jointly constituted result through coordinated
+    productive transformation, independently of whether that capacity is presently
+    operative.
+  semantic_center: 'productive-process affordances: internal pattern-forming capacity,
+    source-artifact generative relations, and systemic co-generative capacity'
+  address_justification:
+    first_trit_2: Selects a productive-process capacity or qualifying generative relation
+      rather than a Creation entity, actual productive process, creator, physical
+      mechanism, result value, or unrestricted modality.
+    second_trit: 'Selects systemic/collective scope: multiple participants in one
+      shared production domain with capacity for one jointly constituted result and
+      no other Creation-family column.'
+    third_trit: Selects the persistent status of the same productive affordance while
+      leaving runtime truth status, actual production, quality, authorship, observer
+      knowledge, tense, probability, permission, and scheduling separate.
+  inclusion_boundary: Includes only the persistent systemic co-generative capacity
+    as a substrate-neutral productive-process affordance at systemic scope. The capacity
+    requires multiple participants whose coordinated productive contributions can
+    constitute one joint result. Independent productive capacities or collaboration
+    alone do not constitute one systemic affordance. It is neutral about Creation-entity
+    identity, mental agency, physical medium, formal algorithm, structural mechanics,
+    creator role, authorship, originality, quality, value, resource sufficiency, scheduling,
+    probability, timing, and cause.
+  excluded_meanings:
+  - The generative pattern, generated artifact, or shared generative repertoire as
+    an entity, and its persistent, manifest, or dormant status.
+  - The completed, active, or nonactualized pattern-formation, artifact-generation,
+    or systemic co-generation process and any quality result.
+  - Mental imagination, general agency, specific encodings, formal algorithms, physical
+    tools, media, structural arrangements, credentials, or computational resources.
+  - Physical, biological, communicative, cognitive, informational, logical, structural,
+    restorative, or adverse capacity or transformation.
+  - Authorship, attribution, provenance, originality, ownership, authority, formal
+    possibility, composability alone, quality, performance, or resource sufficiency.
+  - Observer knowledge, evidence, intention, plan, readiness, queue, schedule, future
+    time, unrestricted possibility, necessity, probability, or cause.
+  nearest_neighbors:
+  - CRE:221
+  - CRE:222
+  - CRE:200
+  - CRE:210
+  - CRE:020
+  - CRE:120
+  same_family_contrast: "`CRE:0xx` owns generative patterns, generated artifacts,
+    and shared generative repertoires as entities. `CRE:1xx` owns the corresponding
+    completed, active, or nonactualized productive transformations. `CRE:2xx` owns
+    only typed productive enablement: internal pattern-forming capacity, source-artifact
+    generative relations, and systemic co-generative capacity. A manifest pattern
+    does not entail capacity, an affordance does not entail an actual process, and
+    a completed process does not entail continuing capacity, quality, or authorship.
+    Persistent identity may co-occur with operative or latent status; operative and
+    latent are mutually exclusive for the same affordance at one reference time. Lexical
+    latency affirms an existing but nonoperative affordance; runtime `[2]/num` separately
+    marks uncertainty about any selected status."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this systemic co-generative capacity persists in the stated production
+      context; it does not select the operative or latent sibling and does not establish
+      a different agency, authorship, or quality relation.
+    '1': Affirms that this systemic co-generative capacity persists independently
+      of current operation, without asserting that a productive process is occurring
+      or that any result quality holds.
+    2/num: Leaves unresolved whether this persistent systemic co-generative capacity
+      claim holds; runtime uncertainty does not change the lexical root into operative
+      or latent status.
+  lexical_runtime_distinction: Lexical third trit `0` permanently selects the persistent
+    status of this productive affordance. Runtime `[2]/num` instead leaves the already-selected
+    status claim unresolved; it never changes affordance status. Thus a latent root
+    affirmed with `[1]` is a confirmed existing-but-nonoperative productive affordance,
+    while a persistent or operative root carrying `[2]/num` remains lexically persistent
+    or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CRE:220[1](DOMAIN=collective,PARTICIPANTS={a,b,c},RESULT=r)
+    literal_gloss: affirm persistent systemic co-generative capacity
+    natural_english: The systemic co-generative capacity for the collective persists
+      independently of present operation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: The root asserts productive enablement and lexical status, not an actual
+      process, creator identity, or result quality.
+  - category: physical_or_spatial
+    semantic_graph: MAT(MEDIUM=m)+CRE:220[1](DOMAIN=collective,PARTICIPANTS={a,b,c},RESULT=r)
+    literal_gloss: material medium plus persistent productive affordance
+    natural_english: The workshop or machine realizes the productive affordance while
+      MAT separately describes substance, energy, tools, and physical mechanics.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Productive affordance and material implementation remain separately
+      typed.
+  - category: temporal_or_sequential
+    semantic_graph: CRE:220[1](DOMAIN=collective,PARTICIPANTS={a,b,c},RESULT=r)+ORI(INTERVAL=w)
+    literal_gloss: persistent productive affordance during interval w
+    natural_english: During interval w, the productive affordance has the stated lexical
+      status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: ORI supplies time and does not replace persistent, operative, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: CRE:001[1](PATTERN=p)+CRE:220[1](DOMAIN=collective,PARTICIPANTS={a,b,c},RESULT=r)+DAT(REPRESENTATION=d)
+    literal_gloss: manifest generative pattern plus persistent productive affordance
+      plus data representation
+    natural_english: The generative entity and its productive affordance remain CRE
+      while DAT separately supplies an encoded representation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Entity, affordance, and representation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: CRE:220[1](DOMAIN=collective,PARTICIPANTS={a,b,c},RESULT=r)
+    literal_gloss: assert persistent productive affordance
+    natural_english: A runtime tracks whether the selected generative affordance has
+      the stated status without asserting execution, completion, or output quality.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Capability, process, and result remain distinct.
+    pseudocode: assert(productive_affordance.status == "CRE:220")
+  - category: counterexample
+    semantic_graph: CRE:101[1](ENTITY=collective,PATTERN=p)
+    literal_gloss: active internal pattern formation
+    natural_english: The productive transformation is running now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: must_not_use_this_root
+    analysis: Use CRE:1xx for the actual process; CRE:220 names only its enabling
+      capacity or relation.
+  future_compound_examples:
+  - CRE:220 + CRE:0xx supplies the generative pattern, generated artifact, or shared
+    repertoire without reducing the affordance to its Creation entity.
+  - CRE:220 + CRE:1xx states that the corresponding pattern formation, artifact generation,
+    or systemic co-generation is actually completed, active, or nonactualized.
+  - CRE:220 + MAT/DAT/LOG/STR supplies medium, representation, algorithm, resources,
+    and implementation while preserving the CRE affordance boundary.
+  - CRE:220 + ORI/CON/LIF may express timing, modality, provenance, participant roles,
+    authorship, or authority as separate meanings.
+  later_era_notes: Later eras may lexicalize artistic talent, authorship, originality,
+    derivation, remixability, renderability, compilability, manufacturability, toolchain
+    availability, resource-bounded generativity, design-space traversal, and specialized
+    collective-production capacities. Era Zero should preserve the substrate-neutral
+    productive-enablement center and derive stronger social, legal, aesthetic, and
+    technical claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CRE:221
+    universal_slot: active systemic relationship
+    family_qualified_transliteration: ga·mik
+    local_compact_root: mik
+    formal_carrier: ga-nu-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: operative systemic co-generative capacity
+  invariant_definition: A capacity of multiple participants in one shared production
+    domain to generate one jointly constituted result through coordinated productive
+    transformation that is presently operative.
+  semantic_center: 'productive-process affordances: internal pattern-forming capacity,
+    source-artifact generative relations, and systemic co-generative capacity'
+  address_justification:
+    first_trit_2: Selects a productive-process capacity or qualifying generative relation
+      rather than a Creation entity, actual productive process, creator, physical
+      mechanism, result value, or unrestricted modality.
+    second_trit: 'Selects systemic/collective scope: multiple participants in one
+      shared production domain with capacity for one jointly constituted result and
+      no other Creation-family column.'
+    third_trit: Selects the operative status of the same productive affordance while
+      leaving runtime truth status, actual production, quality, authorship, observer
+      knowledge, tense, probability, permission, and scheduling separate.
+  inclusion_boundary: Includes only the operative systemic co-generative capacity
+    as a substrate-neutral productive-process affordance at systemic scope. The capacity
+    requires multiple participants whose coordinated productive contributions can
+    constitute one joint result. Independent productive capacities or collaboration
+    alone do not constitute one systemic affordance. It is neutral about Creation-entity
+    identity, mental agency, physical medium, formal algorithm, structural mechanics,
+    creator role, authorship, originality, quality, value, resource sufficiency, scheduling,
+    probability, timing, and cause.
+  excluded_meanings:
+  - The generative pattern, generated artifact, or shared generative repertoire as
+    an entity, and its persistent, manifest, or dormant status.
+  - The completed, active, or nonactualized pattern-formation, artifact-generation,
+    or systemic co-generation process and any quality result.
+  - Mental imagination, general agency, specific encodings, formal algorithms, physical
+    tools, media, structural arrangements, credentials, or computational resources.
+  - Physical, biological, communicative, cognitive, informational, logical, structural,
+    restorative, or adverse capacity or transformation.
+  - Authorship, attribution, provenance, originality, ownership, authority, formal
+    possibility, composability alone, quality, performance, or resource sufficiency.
+  - Observer knowledge, evidence, intention, plan, readiness, queue, schedule, future
+    time, unrestricted possibility, necessity, probability, or cause.
+  nearest_neighbors:
+  - CRE:220
+  - CRE:222
+  - CRE:201
+  - CRE:211
+  - CRE:021
+  - CRE:121
+  same_family_contrast: "`CRE:0xx` owns generative patterns, generated artifacts,
+    and shared generative repertoires as entities. `CRE:1xx` owns the corresponding
+    completed, active, or nonactualized productive transformations. `CRE:2xx` owns
+    only typed productive enablement: internal pattern-forming capacity, source-artifact
+    generative relations, and systemic co-generative capacity. A manifest pattern
+    does not entail capacity, an affordance does not entail an actual process, and
+    a completed process does not entail continuing capacity, quality, or authorship.
+    Persistent identity may co-occur with operative or latent status; operative and
+    latent are mutually exclusive for the same affordance at one reference time. Lexical
+    latency affirms an existing but nonoperative affordance; runtime `[2]/num` separately
+    marks uncertainty about any selected status."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this systemic co-generative capacity is presently operative;
+      it does not deny persistent identity or affirm the latent sibling, impossibility,
+      or rule absence.
+    '1': Affirms that this systemic co-generative capacity is presently operative
+      under the applicable conditions, without asserting that the corresponding productive
+      process is underway or completed.
+    2/num: Leaves current operation of this systemic co-generative capacity unresolved;
+      token uncertainty does not select the persistent or latent lexical sibling.
+  lexical_runtime_distinction: Lexical third trit `1` permanently selects the operative
+    status of this productive affordance. Runtime `[2]/num` instead leaves the already-selected
+    status claim unresolved; it never changes affordance status. Thus a latent root
+    affirmed with `[1]` is a confirmed existing-but-nonoperative productive affordance,
+    while a persistent or operative root carrying `[2]/num` remains lexically persistent
+    or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CRE:221[1](DOMAIN=collective,PARTICIPANTS={a,b,c},RESULT=r)
+    literal_gloss: affirm operative systemic co-generative capacity
+    natural_english: The systemic co-generative capacity for the collective is presently
+      operative.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: The root asserts productive enablement and lexical status, not an actual
+      process, creator identity, or result quality.
+  - category: physical_or_spatial
+    semantic_graph: MAT(MEDIUM=m)+CRE:221[1](DOMAIN=collective,PARTICIPANTS={a,b,c},RESULT=r)
+    literal_gloss: material medium plus operative productive affordance
+    natural_english: The workshop or machine realizes the productive affordance while
+      MAT separately describes substance, energy, tools, and physical mechanics.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Productive affordance and material implementation remain separately
+      typed.
+  - category: temporal_or_sequential
+    semantic_graph: CRE:221[1](DOMAIN=collective,PARTICIPANTS={a,b,c},RESULT=r)+ORI(INTERVAL=w)
+    literal_gloss: operative productive affordance during interval w
+    natural_english: During interval w, the productive affordance has the stated lexical
+      status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: ORI supplies time and does not replace persistent, operative, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: CRE:001[1](PATTERN=p)+CRE:221[1](DOMAIN=collective,PARTICIPANTS={a,b,c},RESULT=r)+DAT(REPRESENTATION=d)
+    literal_gloss: manifest generative pattern plus operative productive affordance
+      plus data representation
+    natural_english: The generative entity and its productive affordance remain CRE
+      while DAT separately supplies an encoded representation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Entity, affordance, and representation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: CRE:221[1](DOMAIN=collective,PARTICIPANTS={a,b,c},RESULT=r)
+    literal_gloss: assert operative productive affordance
+    natural_english: A runtime tracks whether the selected generative affordance has
+      the stated status without asserting execution, completion, or output quality.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Capability, process, and result remain distinct.
+    pseudocode: assert(productive_affordance.status == "CRE:221")
+  - category: counterexample
+    semantic_graph: CRE:101[1](ENTITY=collective,PATTERN=p)
+    literal_gloss: active internal pattern formation
+    natural_english: The productive transformation is running now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: must_not_use_this_root
+    analysis: Use CRE:1xx for the actual process; CRE:221 names only its enabling
+      capacity or relation.
+  future_compound_examples:
+  - CRE:221 + CRE:0xx supplies the generative pattern, generated artifact, or shared
+    repertoire without reducing the affordance to its Creation entity.
+  - CRE:221 + CRE:1xx states that the corresponding pattern formation, artifact generation,
+    or systemic co-generation is actually completed, active, or nonactualized.
+  - CRE:221 + MAT/DAT/LOG/STR supplies medium, representation, algorithm, resources,
+    and implementation while preserving the CRE affordance boundary.
+  - CRE:221 + ORI/CON/LIF may express timing, modality, provenance, participant roles,
+    authorship, or authority as separate meanings.
+  later_era_notes: Later eras may lexicalize artistic talent, authorship, originality,
+    derivation, remixability, renderability, compilability, manufacturability, toolchain
+    availability, resource-bounded generativity, design-space traversal, and specialized
+    collective-production capacities. Era Zero should preserve the substrate-neutral
+    productive-enablement center and derive stronger social, legal, aesthetic, and
+    technical claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: CRE:222
+    universal_slot: unrealized systemic possibility
+    family_qualified_transliteration: ga·min
+    local_compact_root: min
+    formal_carrier: ga-nu-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 11
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: latent systemic co-generative capacity
+  invariant_definition: A capacity of multiple participants in one shared production
+    domain to generate one jointly constituted result through coordinated productive
+    transformation that exists without being presently operative.
+  semantic_center: 'productive-process affordances: internal pattern-forming capacity,
+    source-artifact generative relations, and systemic co-generative capacity'
+  address_justification:
+    first_trit_2: Selects a productive-process capacity or qualifying generative relation
+      rather than a Creation entity, actual productive process, creator, physical
+      mechanism, result value, or unrestricted modality.
+    second_trit: 'Selects systemic/collective scope: multiple participants in one
+      shared production domain with capacity for one jointly constituted result and
+      no other Creation-family column.'
+    third_trit: Selects the latent status of the same productive affordance while
+      leaving runtime truth status, actual production, quality, authorship, observer
+      knowledge, tense, probability, permission, and scheduling separate.
+  inclusion_boundary: Includes only the latent systemic co-generative capacity as
+    a substrate-neutral productive-process affordance at systemic scope. The capacity
+    requires multiple participants whose coordinated productive contributions can
+    constitute one joint result. Independent productive capacities or collaboration
+    alone do not constitute one systemic affordance. It is neutral about Creation-entity
+    identity, mental agency, physical medium, formal algorithm, structural mechanics,
+    creator role, authorship, originality, quality, value, resource sufficiency, scheduling,
+    probability, timing, and cause.
+  excluded_meanings:
+  - The generative pattern, generated artifact, or shared generative repertoire as
+    an entity, and its persistent, manifest, or dormant status.
+  - The completed, active, or nonactualized pattern-formation, artifact-generation,
+    or systemic co-generation process and any quality result.
+  - Mental imagination, general agency, specific encodings, formal algorithms, physical
+    tools, media, structural arrangements, credentials, or computational resources.
+  - Physical, biological, communicative, cognitive, informational, logical, structural,
+    restorative, or adverse capacity or transformation.
+  - Authorship, attribution, provenance, originality, ownership, authority, formal
+    possibility, composability alone, quality, performance, or resource sufficiency.
+  - Observer knowledge, evidence, intention, plan, readiness, queue, schedule, future
+    time, unrestricted possibility, necessity, probability, or cause.
+  nearest_neighbors:
+  - CRE:220
+  - CRE:221
+  - CRE:202
+  - CRE:212
+  - CRE:022
+  - CRE:122
+  same_family_contrast: "`CRE:0xx` owns generative patterns, generated artifacts,
+    and shared generative repertoires as entities. `CRE:1xx` owns the corresponding
+    completed, active, or nonactualized productive transformations. `CRE:2xx` owns
+    only typed productive enablement: internal pattern-forming capacity, source-artifact
+    generative relations, and systemic co-generative capacity. A manifest pattern
+    does not entail capacity, an affordance does not entail an actual process, and
+    a completed process does not entail continuing capacity, quality, or authorship.
+    Persistent identity may co-occur with operative or latent status; operative and
+    latent are mutually exclusive for the same affordance at one reference time. Lexical
+    latency affirms an existing but nonoperative affordance; runtime `[2]/num` separately
+    marks uncertainty about any selected status."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this systemic co-generative capacity exists as the stated nonoperative
+      productive affordance; it does not establish that an operative sibling holds
+      or that the process is impossible.
+    '1': Affirms this systemic co-generative capacity as existing but not presently
+      operative, without encoding hiddenness, uncertainty, probability, future activation,
+      missing resources, or permission.
+    2/num: Leaves unresolved even the assertion that this latent systemic co-generative
+      capacity exists; lexical latency remains distinct from runtime assertion-level
+      uncertainty.
+  lexical_runtime_distinction: Lexical third trit `2` permanently selects the latent
+    status of this productive affordance. Runtime `[2]/num` instead leaves the already-selected
+    status claim unresolved; it never changes affordance status. Thus a latent root
+    affirmed with `[1]` is a confirmed existing-but-nonoperative productive affordance,
+    while a persistent or operative root carrying `[2]/num` remains lexically persistent
+    or operative but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: CRE:222[1](DOMAIN=collective,PARTICIPANTS={a,b,c},RESULT=r)
+    literal_gloss: affirm latent systemic co-generative capacity
+    natural_english: The systemic co-generative capacity for the collective exists
+      but is not presently operative.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: The root asserts productive enablement and lexical status, not an actual
+      process, creator identity, or result quality.
+  - category: physical_or_spatial
+    semantic_graph: MAT(MEDIUM=m)+CRE:222[1](DOMAIN=collective,PARTICIPANTS={a,b,c},RESULT=r)
+    literal_gloss: material medium plus latent productive affordance
+    natural_english: The workshop or machine realizes the productive affordance while
+      MAT separately describes substance, energy, tools, and physical mechanics.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Productive affordance and material implementation remain separately
+      typed.
+  - category: temporal_or_sequential
+    semantic_graph: CRE:222[1](DOMAIN=collective,PARTICIPANTS={a,b,c},RESULT=r)+ORI(INTERVAL=w)
+    literal_gloss: latent productive affordance during interval w
+    natural_english: During interval w, the productive affordance has the stated lexical
+      status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: ORI supplies time and does not replace persistent, operative, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: CRE:001[1](PATTERN=p)+CRE:222[1](DOMAIN=collective,PARTICIPANTS={a,b,c},RESULT=r)+DAT(REPRESENTATION=d)
+    literal_gloss: manifest generative pattern plus latent productive affordance plus
+      data representation
+    natural_english: The generative entity and its productive affordance remain CRE
+      while DAT separately supplies an encoded representation.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Entity, affordance, and representation remain distinct.
+  - category: executable_or_programming
+    semantic_graph: CRE:222[1](DOMAIN=collective,PARTICIPANTS={a,b,c},RESULT=r)
+    literal_gloss: assert latent productive affordance
+    natural_english: A runtime tracks whether the selected generative affordance has
+      the stated status without asserting execution, completion, or output quality.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: valid
+    analysis: Capability, process, and result remain distinct.
+    pseudocode: assert(productive_affordance.status == "CRE:222")
+  - category: counterexample
+    semantic_graph: CRE:101[1](ENTITY=collective,PATTERN=p)
+    literal_gloss: active internal pattern formation
+    natural_english: The productive transformation is running now.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: reference entity, production source, or participant bearing the productive
+        affordance
+      middle: productive capacity or generative relation as the asserted figure
+      high: generative pattern, prospective artifact, or jointly constituted result
+      sustained: shared production domain and multiple co-generative participants
+    use_status: must_not_use_this_root
+    analysis: Use CRE:1xx for the actual process; CRE:222 names only its enabling
+      capacity or relation.
+  future_compound_examples:
+  - CRE:222 + CRE:0xx supplies the generative pattern, generated artifact, or shared
+    repertoire without reducing the affordance to its Creation entity.
+  - CRE:222 + CRE:1xx states that the corresponding pattern formation, artifact generation,
+    or systemic co-generation is actually completed, active, or nonactualized.
+  - CRE:222 + MAT/DAT/LOG/STR supplies medium, representation, algorithm, resources,
+    and implementation while preserving the CRE affordance boundary.
+  - CRE:222 + ORI/CON/LIF may express timing, modality, provenance, participant roles,
+    authorship, or authority as separate meanings.
+  later_era_notes: Later eras may lexicalize artistic talent, authorship, originality,
+    derivation, remixability, renderability, compilability, manufacturability, toolchain
+    availability, resource-bounded generativity, design-space traversal, and specialized
+    collective-production capacities. Era Zero should preserve the substrate-neutral
+    productive-enablement center and derive stronger social, legal, aesthetic, and
+    technical claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+approval_checklist:
+  family_domain_preserved: true
+  address_axes_preserved: true
+  one_invariant_per_root: true
+  triplets_coherent: true
+  all_current_candidates_challenged: true
+  cross_family_collisions_explicit: true
+  runtime_state_separated: true
+  entity_process_relation_layers_separated: true
+  generated_fields_unchanged: true
+  gate4_not_started: true
+  translator_not_started: true
+  canonicalized: true

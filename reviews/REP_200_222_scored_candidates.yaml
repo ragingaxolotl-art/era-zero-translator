@@ -1,0 +1,1491 @@
+---
+metadata:
+  title: REP:200–222 adversarial semantic candidates
+  status: approved_and_canonical_by_delegated_authority
+  architecture_version: '1.0'
+  range: REP:200–222
+  roots_reviewed: 9
+  candidate_architectures_per_root: 5
+  scored_categories:
+  - atomicity
+  - address_fit
+  - family_fit
+  - neighbor_separation
+  - cross_family_separation
+  - compound_usefulness
+  - everyday_language_coverage
+  - technical_coverage
+  generated_fields_changed: false
+  roots_canonicalized:
+  - REP:200
+  - REP:201
+  - REP:202
+  - REP:210
+  - REP:211
+  - REP:212
+  - REP:220
+  - REP:221
+  - REP:222
+  approval_record: migrations/REP_200_222_semantic_approval.yaml
+roots:
+- canonical_id: REP:200
+  fixed_generated_fields:
+    canonical_id: REP:200
+    universal_slot: stable inward capacity
+    family_qualified_transliteration: ya·mam
+    local_compact_root: mam
+    formal_carrier: ya-nu-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+  current_meaning_rationale: The Phase 2 label follows the persistent independently
+    of current operation inward slot and uses familiar Repair vocabulary such as resilience,
+    regeneration, repairability, care, redundancy, and recovery paths.
+  candidates:
+  - candidate_id: phase2_mixed
+    title: stable resilience
+    invariant_candidate: An entity has a dependable inward capacity to withstand damage
+      and return to valid function.
+    analysis:
+      why_it_fits: The Phase 2 label follows the persistent independently of current
+        operation inward slot and uses familiar Repair vocabulary such as resilience,
+        regeneration, repairability, care, redundancy, and recovery paths.
+      useful_coverage: It reaches common talk about self-healing, remedies, service
+        relations, backups, redundancy, and distributed recovery.
+      semantic_territory_consumed: It mixes restorative capacity, actual care processes,
+        protection, maintenance responsibility, observer verification, resources,
+        probability, and system behavior.
+      conflicts_or_future_limitations: The triplets do not preserve one lexical-status
+        contrast; REP:211 duplicates active target restoration, REP:212 conflates
+        uncertainty with latency, and REP:222 absorbs possibility and evidence.
+    scores:
+      atomicity: 4
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: restoration_affordance
+    title: persistent internal recoverability
+    invariant_candidate: A persistent capacity of one reference entity to undergo
+      internally originating restoration under qualifying conditions, independently
+      of whether that capacity is presently operative.
+    analysis:
+      why_it_fits: It makes first-trit 2 the capacity or qualifying relation for the
+        matching canonical REP:10x transformation while preserving inward scope and
+        persistent expression.
+      useful_coverage: It covers recoverability, repairability, remedy applicability,
+        rehabilitative compatibility, restoration channels, disaster-recovery paths,
+        and systemic recovery affordances.
+      semantic_territory_consumed: Only the substrate-neutral restorative affordance
+        that enables internal recoverability. Conditions, actual restoration, mechanics,
+        records, resources, service obligations, protection, and modality remain separate.
+      conflicts_or_future_limitations: The technical words applicability and pathway
+        must be restricted to restorative enablement rather than generic compatibility
+        or route identity, but the invariant and compounds make that boundary explicit.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 10
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 80
+    maximum: 80
+  - candidate_id: protective_resilience
+    title: persistent internal resistance capacity
+    invariant_candidate: The persistent internal resistance capacity by which adverse
+      transformation at the selected scope can be resisted before restoration is required.
+    analysis:
+      why_it_fits: Resistance, immunity, shielding, and resilience are related to
+        Repair and can be expressed at persistent inward scope.
+      useful_coverage: It would cover withstand, resist, absorb, shield, prevent failure,
+        preserve operation, and fail-safe behavior.
+      semantic_territory_consumed: It consumes prevention and protection before restorative
+        transformation is needed.
+      conflicts_or_future_limitations: WRN/STR/LOG and domain mechanics own resistance
+        and protection; something can be highly recoverable yet unable to withstand
+        the initiating damage.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 66
+    maximum: 80
+  - candidate_id: maintenance_service_relation
+    title: persistent internal maintenance capacity
+    invariant_candidate: The persistent internal maintenance capacity by which an
+      acceptable condition can be preserved through service at the selected scope.
+    analysis:
+      why_it_fits: Internal maintenance capacity, target service relationships, and
+        systemic maintenance networks are plausible Repair affordances at inward scope.
+      useful_coverage: It would cover maintainability, responsibility, service access,
+        care relations, support contracts, and maintenance organizations.
+      semantic_territory_consumed: It consumes preservation, obligation, participant
+        roles, communication, scheduling, and service administration.
+      conflicts_or_future_limitations: CON owns service relations, LOG owns obligations,
+        DAT/ORI owns schedules, and maintainability does not require a capacity to
+        restore an unrealized condition.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 63
+    maximum: 80
+  - candidate_id: backup_resource_network
+    title: persistent internal recovery resource
+    invariant_candidate: The persistent internal recovery resource constituted by
+      a stored or assigned remedy resource at the selected scope.
+    analysis:
+      why_it_fits: Reserves, remedies, backups, spare parts, and redundant networks
+        are concrete enablers of restoration at inward scope.
+      useful_coverage: It would cover medicine, tools, replacement parts, backups,
+        golden images, reserve capacity, and redundant support nodes.
+      semantic_territory_consumed: It consumes material, informational, creative,
+        and organizational resources rather than the typed restorative capacity or
+        relation.
+      conflicts_or_future_limitations: MAT, DAT, CRE, LIF, and CON own the resources
+        and participants; possessing a resource does not entail that it applies to
+        or can restore the bearer.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 62
+    maximum: 80
+  recommended_candidate_id: restoration_affordance
+  recommendation_reason: Only the restoration-affordance architecture keeps one Repair
+    semantic center, aligns each column with its canonical REP:1xx transformation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    conditions, processes, mechanics, protection, maintenance, resources, records,
+    observer knowledge, and general modality separate.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: REP:201
+  fixed_generated_fields:
+    canonical_id: REP:201
+    universal_slot: active inward capacity
+    family_qualified_transliteration: ya·mak
+    local_compact_root: mak
+    formal_carrier: ya-nu-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+  current_meaning_rationale: The Phase 2 label follows the presently operative inward
+    slot and uses familiar Repair vocabulary such as resilience, regeneration, repairability,
+    care, redundancy, and recovery paths.
+  candidates:
+  - candidate_id: phase2_mixed
+    title: active regeneration
+    invariant_candidate: An entity's capacity to heal, adapt, restore, or correct
+      itself is presently available.
+    analysis:
+      why_it_fits: The Phase 2 label follows the presently operative inward slot and
+        uses familiar Repair vocabulary such as resilience, regeneration, repairability,
+        care, redundancy, and recovery paths.
+      useful_coverage: It reaches common talk about self-healing, remedies, service
+        relations, backups, redundancy, and distributed recovery.
+      semantic_territory_consumed: It mixes restorative capacity, actual care processes,
+        protection, maintenance responsibility, observer verification, resources,
+        probability, and system behavior.
+      conflicts_or_future_limitations: The triplets do not preserve one lexical-status
+        contrast; REP:211 duplicates active target restoration, REP:212 conflates
+        uncertainty with latency, and REP:222 absorbs possibility and evidence.
+    scores:
+      atomicity: 4
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: restoration_affordance
+    title: operative internal recoverability
+    invariant_candidate: A capacity of one reference entity to undergo internally
+      originating restoration that is presently operative under the applicable conditions.
+    analysis:
+      why_it_fits: It makes first-trit 2 the capacity or qualifying relation for the
+        matching canonical REP:10x transformation while preserving inward scope and
+        operative expression.
+      useful_coverage: It covers recoverability, repairability, remedy applicability,
+        rehabilitative compatibility, restoration channels, disaster-recovery paths,
+        and systemic recovery affordances.
+      semantic_territory_consumed: Only the substrate-neutral restorative affordance
+        that enables internal recoverability. Conditions, actual restoration, mechanics,
+        records, resources, service obligations, protection, and modality remain separate.
+      conflicts_or_future_limitations: The technical words applicability and pathway
+        must be restricted to restorative enablement rather than generic compatibility
+        or route identity, but the invariant and compounds make that boundary explicit.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 10
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 80
+    maximum: 80
+  - candidate_id: protective_resilience
+    title: operative internal resistance capacity
+    invariant_candidate: The operative internal resistance capacity by which adverse
+      transformation at the selected scope can be resisted before restoration is required.
+    analysis:
+      why_it_fits: Resistance, immunity, shielding, and resilience are related to
+        Repair and can be expressed at operative inward scope.
+      useful_coverage: It would cover withstand, resist, absorb, shield, prevent failure,
+        preserve operation, and fail-safe behavior.
+      semantic_territory_consumed: It consumes prevention and protection before restorative
+        transformation is needed.
+      conflicts_or_future_limitations: WRN/STR/LOG and domain mechanics own resistance
+        and protection; something can be highly recoverable yet unable to withstand
+        the initiating damage.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 66
+    maximum: 80
+  - candidate_id: maintenance_service_relation
+    title: operative internal maintenance capacity
+    invariant_candidate: The operative internal maintenance capacity by which an acceptable
+      condition can be preserved through service at the selected scope.
+    analysis:
+      why_it_fits: Internal maintenance capacity, target service relationships, and
+        systemic maintenance networks are plausible Repair affordances at inward scope.
+      useful_coverage: It would cover maintainability, responsibility, service access,
+        care relations, support contracts, and maintenance organizations.
+      semantic_territory_consumed: It consumes preservation, obligation, participant
+        roles, communication, scheduling, and service administration.
+      conflicts_or_future_limitations: CON owns service relations, LOG owns obligations,
+        DAT/ORI owns schedules, and maintainability does not require a capacity to
+        restore an unrealized condition.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 63
+    maximum: 80
+  - candidate_id: backup_resource_network
+    title: operative internal recovery resource
+    invariant_candidate: The operative internal recovery resource constituted by a
+      stored or assigned remedy resource at the selected scope.
+    analysis:
+      why_it_fits: Reserves, remedies, backups, spare parts, and redundant networks
+        are concrete enablers of restoration at inward scope.
+      useful_coverage: It would cover medicine, tools, replacement parts, backups,
+        golden images, reserve capacity, and redundant support nodes.
+      semantic_territory_consumed: It consumes material, informational, creative,
+        and organizational resources rather than the typed restorative capacity or
+        relation.
+      conflicts_or_future_limitations: MAT, DAT, CRE, LIF, and CON own the resources
+        and participants; possessing a resource does not entail that it applies to
+        or can restore the bearer.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 62
+    maximum: 80
+  recommended_candidate_id: restoration_affordance
+  recommendation_reason: Only the restoration-affordance architecture keeps one Repair
+    semantic center, aligns each column with its canonical REP:1xx transformation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    conditions, processes, mechanics, protection, maintenance, resources, records,
+    observer knowledge, and general modality separate.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: REP:202
+  fixed_generated_fields:
+    canonical_id: REP:202
+    universal_slot: dormant inward capacity
+    family_qualified_transliteration: ya·man
+    local_compact_root: man
+    formal_carrier: ya-nu-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+  current_meaning_rationale: The Phase 2 label follows the existing without present
+    operation inward slot and uses familiar Repair vocabulary such as resilience,
+    regeneration, repairability, care, redundancy, and recovery paths.
+  candidates:
+  - candidate_id: phase2_mixed
+    title: reserve recoverability
+    invariant_candidate: Recovery remains possible through dormant backups, reserves,
+      or undeveloped regenerative capacity.
+    analysis:
+      why_it_fits: The Phase 2 label follows the existing without present operation
+        inward slot and uses familiar Repair vocabulary such as resilience, regeneration,
+        repairability, care, redundancy, and recovery paths.
+      useful_coverage: It reaches common talk about self-healing, remedies, service
+        relations, backups, redundancy, and distributed recovery.
+      semantic_territory_consumed: It mixes restorative capacity, actual care processes,
+        protection, maintenance responsibility, observer verification, resources,
+        probability, and system behavior.
+      conflicts_or_future_limitations: The triplets do not preserve one lexical-status
+        contrast; REP:211 duplicates active target restoration, REP:212 conflates
+        uncertainty with latency, and REP:222 absorbs possibility and evidence.
+    scores:
+      atomicity: 4
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 50
+    maximum: 80
+  - candidate_id: restoration_affordance
+    title: latent internal recoverability
+    invariant_candidate: A capacity of one reference entity to undergo internally
+      originating restoration that exists without being presently operative under
+      the applicable conditions.
+    analysis:
+      why_it_fits: It makes first-trit 2 the capacity or qualifying relation for the
+        matching canonical REP:10x transformation while preserving inward scope and
+        latent expression.
+      useful_coverage: It covers recoverability, repairability, remedy applicability,
+        rehabilitative compatibility, restoration channels, disaster-recovery paths,
+        and systemic recovery affordances.
+      semantic_territory_consumed: Only the substrate-neutral restorative affordance
+        that enables internal recoverability. Conditions, actual restoration, mechanics,
+        records, resources, service obligations, protection, and modality remain separate.
+      conflicts_or_future_limitations: The technical words applicability and pathway
+        must be restricted to restorative enablement rather than generic compatibility
+        or route identity, but the invariant and compounds make that boundary explicit.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 10
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 80
+    maximum: 80
+  - candidate_id: protective_resilience
+    title: latent internal resistance capacity
+    invariant_candidate: The latent internal resistance capacity by which adverse
+      transformation at the selected scope can be resisted before restoration is required.
+    analysis:
+      why_it_fits: Resistance, immunity, shielding, and resilience are related to
+        Repair and can be expressed at latent inward scope.
+      useful_coverage: It would cover withstand, resist, absorb, shield, prevent failure,
+        preserve operation, and fail-safe behavior.
+      semantic_territory_consumed: It consumes prevention and protection before restorative
+        transformation is needed.
+      conflicts_or_future_limitations: WRN/STR/LOG and domain mechanics own resistance
+        and protection; something can be highly recoverable yet unable to withstand
+        the initiating damage.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 66
+    maximum: 80
+  - candidate_id: maintenance_service_relation
+    title: latent internal maintenance capacity
+    invariant_candidate: The latent internal maintenance capacity by which an acceptable
+      condition can be preserved through service at the selected scope.
+    analysis:
+      why_it_fits: Internal maintenance capacity, target service relationships, and
+        systemic maintenance networks are plausible Repair affordances at inward scope.
+      useful_coverage: It would cover maintainability, responsibility, service access,
+        care relations, support contracts, and maintenance organizations.
+      semantic_territory_consumed: It consumes preservation, obligation, participant
+        roles, communication, scheduling, and service administration.
+      conflicts_or_future_limitations: CON owns service relations, LOG owns obligations,
+        DAT/ORI owns schedules, and maintainability does not require a capacity to
+        restore an unrealized condition.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 63
+    maximum: 80
+  - candidate_id: backup_resource_network
+    title: latent internal recovery resource
+    invariant_candidate: The latent internal recovery resource constituted by a stored
+      or assigned remedy resource at the selected scope.
+    analysis:
+      why_it_fits: Reserves, remedies, backups, spare parts, and redundant networks
+        are concrete enablers of restoration at inward scope.
+      useful_coverage: It would cover medicine, tools, replacement parts, backups,
+        golden images, reserve capacity, and redundant support nodes.
+      semantic_territory_consumed: It consumes material, informational, creative,
+        and organizational resources rather than the typed restorative capacity or
+        relation.
+      conflicts_or_future_limitations: MAT, DAT, CRE, LIF, and CON own the resources
+        and participants; possessing a resource does not entail that it applies to
+        or can restore the bearer.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 62
+    maximum: 80
+  recommended_candidate_id: restoration_affordance
+  recommendation_reason: Only the restoration-affordance architecture keeps one Repair
+    semantic center, aligns each column with its canonical REP:1xx transformation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    conditions, processes, mechanics, protection, maintenance, resources, records,
+    observer knowledge, and general modality separate.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: REP:210
+  fixed_generated_fields:
+    canonical_id: REP:210
+    universal_slot: stable outward relationship
+    family_qualified_transliteration: ya·mom
+    local_compact_root: mom
+    formal_carrier: ya-nu-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+  current_meaning_rationale: The Phase 2 label follows the persistent independently
+    of current operation outward slot and uses familiar Repair vocabulary such as
+    resilience, regeneration, repairability, care, redundancy, and recovery paths.
+  candidates:
+  - candidate_id: phase2_mixed
+    title: maintenance bond
+    invariant_candidate: A stable relation establishes responsibility, compatibility,
+      or access for repairing a target.
+    analysis:
+      why_it_fits: The Phase 2 label follows the persistent independently of current
+        operation outward slot and uses familiar Repair vocabulary such as resilience,
+        regeneration, repairability, care, redundancy, and recovery paths.
+      useful_coverage: It reaches common talk about self-healing, remedies, service
+        relations, backups, redundancy, and distributed recovery.
+      semantic_territory_consumed: It mixes restorative capacity, actual care processes,
+        protection, maintenance responsibility, observer verification, resources,
+        probability, and system behavior.
+      conflicts_or_future_limitations: The triplets do not preserve one lexical-status
+        contrast; REP:211 duplicates active target restoration, REP:212 conflates
+        uncertainty with latency, and REP:222 absorbs possibility and evidence.
+    scores:
+      atomicity: 4
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: restoration_affordance
+    title: persistent source-target restorative relation
+    invariant_candidate: A persistent restorative applicability relation between one
+      distinct source and one reference target that can enable source-to-target restoration
+      under qualifying conditions, independently of whether that relation is presently
+      operative.
+    analysis:
+      why_it_fits: It makes first-trit 2 the capacity or qualifying relation for the
+        matching canonical REP:11x transformation while preserving outward scope and
+        persistent expression.
+      useful_coverage: It covers recoverability, repairability, remedy applicability,
+        rehabilitative compatibility, restoration channels, disaster-recovery paths,
+        and systemic recovery affordances.
+      semantic_territory_consumed: Only the substrate-neutral restorative affordance
+        that enables source-target restorative applicability relation. Conditions,
+        actual restoration, mechanics, records, resources, service obligations, protection,
+        and modality remain separate.
+      conflicts_or_future_limitations: The technical words applicability and pathway
+        must be restricted to restorative enablement rather than generic compatibility
+        or route identity, but the invariant and compounds make that boundary explicit.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: protective_resilience
+    title: persistent target protection relation
+    invariant_candidate: The persistent target protection relation by which adverse
+      transformation at the selected scope can be resisted before restoration is required.
+    analysis:
+      why_it_fits: Resistance, immunity, shielding, and resilience are related to
+        Repair and can be expressed at persistent outward scope.
+      useful_coverage: It would cover withstand, resist, absorb, shield, prevent failure,
+        preserve operation, and fail-safe behavior.
+      semantic_territory_consumed: It consumes prevention and protection before restorative
+        transformation is needed.
+      conflicts_or_future_limitations: WRN/STR/LOG and domain mechanics own resistance
+        and protection; something can be highly recoverable yet unable to withstand
+        the initiating damage.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 66
+    maximum: 80
+  - candidate_id: maintenance_service_relation
+    title: persistent target service relation
+    invariant_candidate: The persistent target service relation by which an acceptable
+      condition can be preserved through service at the selected scope.
+    analysis:
+      why_it_fits: Internal maintenance capacity, target service relationships, and
+        systemic maintenance networks are plausible Repair affordances at outward
+        scope.
+      useful_coverage: It would cover maintainability, responsibility, service access,
+        care relations, support contracts, and maintenance organizations.
+      semantic_territory_consumed: It consumes preservation, obligation, participant
+        roles, communication, scheduling, and service administration.
+      conflicts_or_future_limitations: CON owns service relations, LOG owns obligations,
+        DAT/ORI owns schedules, and maintainability does not require a capacity to
+        restore an unrealized condition.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 62
+    maximum: 80
+  - candidate_id: backup_resource_network
+    title: persistent target remedy resource
+    invariant_candidate: The persistent target remedy resource constituted by a stored
+      or assigned remedy resource at the selected scope.
+    analysis:
+      why_it_fits: Reserves, remedies, backups, spare parts, and redundant networks
+        are concrete enablers of restoration at outward scope.
+      useful_coverage: It would cover medicine, tools, replacement parts, backups,
+        golden images, reserve capacity, and redundant support nodes.
+      semantic_territory_consumed: It consumes material, informational, creative,
+        and organizational resources rather than the typed restorative capacity or
+        relation.
+      conflicts_or_future_limitations: MAT, DAT, CRE, LIF, and CON own the resources
+        and participants; possessing a resource does not entail that it applies to
+        or can restore the bearer.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 63
+    maximum: 80
+  recommended_candidate_id: restoration_affordance
+  recommendation_reason: Only the restoration-affordance architecture keeps one Repair
+    semantic center, aligns each column with its canonical REP:1xx transformation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    conditions, processes, mechanics, protection, maintenance, resources, records,
+    observer knowledge, and general modality separate.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: REP:211
+  fixed_generated_fields:
+    canonical_id: REP:211
+    universal_slot: active outward relationship
+    family_qualified_transliteration: ya·mok
+    local_compact_root: mok
+    formal_carrier: ya-nu-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+  current_meaning_rationale: The Phase 2 label follows the presently operative outward
+    slot and uses familiar Repair vocabulary such as resilience, regeneration, repairability,
+    care, redundancy, and recovery paths.
+  candidates:
+  - candidate_id: phase2_mixed
+    title: active care relation
+    invariant_candidate: One participant is actively sustaining, healing, correcting,
+      or restoring another target.
+    analysis:
+      why_it_fits: The Phase 2 label follows the presently operative outward slot
+        and uses familiar Repair vocabulary such as resilience, regeneration, repairability,
+        care, redundancy, and recovery paths.
+      useful_coverage: It reaches common talk about self-healing, remedies, service
+        relations, backups, redundancy, and distributed recovery.
+      semantic_territory_consumed: It mixes restorative capacity, actual care processes,
+        protection, maintenance responsibility, observer verification, resources,
+        probability, and system behavior.
+      conflicts_or_future_limitations: The triplets do not preserve one lexical-status
+        contrast; REP:211 duplicates active target restoration, REP:212 conflates
+        uncertainty with latency, and REP:222 absorbs possibility and evidence.
+    scores:
+      atomicity: 4
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: restoration_affordance
+    title: operative source-target restorative relation
+    invariant_candidate: A restorative applicability relation between one distinct
+      source and one reference target that presently enables that source to cause
+      target restoration under the applicable conditions.
+    analysis:
+      why_it_fits: It makes first-trit 2 the capacity or qualifying relation for the
+        matching canonical REP:11x transformation while preserving outward scope and
+        operative expression.
+      useful_coverage: It covers recoverability, repairability, remedy applicability,
+        rehabilitative compatibility, restoration channels, disaster-recovery paths,
+        and systemic recovery affordances.
+      semantic_territory_consumed: Only the substrate-neutral restorative affordance
+        that enables source-target restorative applicability relation. Conditions,
+        actual restoration, mechanics, records, resources, service obligations, protection,
+        and modality remain separate.
+      conflicts_or_future_limitations: The technical words applicability and pathway
+        must be restricted to restorative enablement rather than generic compatibility
+        or route identity, but the invariant and compounds make that boundary explicit.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: protective_resilience
+    title: operative target protection relation
+    invariant_candidate: The operative target protection relation by which adverse
+      transformation at the selected scope can be resisted before restoration is required.
+    analysis:
+      why_it_fits: Resistance, immunity, shielding, and resilience are related to
+        Repair and can be expressed at operative outward scope.
+      useful_coverage: It would cover withstand, resist, absorb, shield, prevent failure,
+        preserve operation, and fail-safe behavior.
+      semantic_territory_consumed: It consumes prevention and protection before restorative
+        transformation is needed.
+      conflicts_or_future_limitations: WRN/STR/LOG and domain mechanics own resistance
+        and protection; something can be highly recoverable yet unable to withstand
+        the initiating damage.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 66
+    maximum: 80
+  - candidate_id: maintenance_service_relation
+    title: operative target service relation
+    invariant_candidate: The operative target service relation by which an acceptable
+      condition can be preserved through service at the selected scope.
+    analysis:
+      why_it_fits: Internal maintenance capacity, target service relationships, and
+        systemic maintenance networks are plausible Repair affordances at outward
+        scope.
+      useful_coverage: It would cover maintainability, responsibility, service access,
+        care relations, support contracts, and maintenance organizations.
+      semantic_territory_consumed: It consumes preservation, obligation, participant
+        roles, communication, scheduling, and service administration.
+      conflicts_or_future_limitations: CON owns service relations, LOG owns obligations,
+        DAT/ORI owns schedules, and maintainability does not require a capacity to
+        restore an unrealized condition.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 62
+    maximum: 80
+  - candidate_id: backup_resource_network
+    title: operative target remedy resource
+    invariant_candidate: The operative target remedy resource constituted by a stored
+      or assigned remedy resource at the selected scope.
+    analysis:
+      why_it_fits: Reserves, remedies, backups, spare parts, and redundant networks
+        are concrete enablers of restoration at outward scope.
+      useful_coverage: It would cover medicine, tools, replacement parts, backups,
+        golden images, reserve capacity, and redundant support nodes.
+      semantic_territory_consumed: It consumes material, informational, creative,
+        and organizational resources rather than the typed restorative capacity or
+        relation.
+      conflicts_or_future_limitations: MAT, DAT, CRE, LIF, and CON own the resources
+        and participants; possessing a resource does not entail that it applies to
+        or can restore the bearer.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 63
+    maximum: 80
+  recommended_candidate_id: restoration_affordance
+  recommendation_reason: Only the restoration-affordance architecture keeps one Repair
+    semantic center, aligns each column with its canonical REP:1xx transformation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    conditions, processes, mechanics, protection, maintenance, resources, records,
+    observer knowledge, and general modality separate.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: REP:212
+  fixed_generated_fields:
+    canonical_id: REP:212
+    universal_slot: unresolved outward relationship
+    family_qualified_transliteration: ya·mon
+    local_compact_root: mon
+    formal_carrier: ya-nu-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+  current_meaning_rationale: The Phase 2 label follows the existing without present
+    operation outward slot and uses familiar Repair vocabulary such as resilience,
+    regeneration, repairability, care, redundancy, and recovery paths.
+  candidates:
+  - candidate_id: phase2_mixed
+    title: unconfirmed repairability
+    invariant_candidate: A target may be repairable or compatible with a remedy, but
+      the relation is not yet verified.
+    analysis:
+      why_it_fits: The Phase 2 label follows the existing without present operation
+        outward slot and uses familiar Repair vocabulary such as resilience, regeneration,
+        repairability, care, redundancy, and recovery paths.
+      useful_coverage: It reaches common talk about self-healing, remedies, service
+        relations, backups, redundancy, and distributed recovery.
+      semantic_territory_consumed: It mixes restorative capacity, actual care processes,
+        protection, maintenance responsibility, observer verification, resources,
+        probability, and system behavior.
+      conflicts_or_future_limitations: The triplets do not preserve one lexical-status
+        contrast; REP:211 duplicates active target restoration, REP:212 conflates
+        uncertainty with latency, and REP:222 absorbs possibility and evidence.
+    scores:
+      atomicity: 4
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 50
+    maximum: 80
+  - candidate_id: restoration_affordance
+    title: latent source-target restorative relation
+    invariant_candidate: A restorative applicability relation between one distinct
+      source and one reference target that exists without presently enabling that
+      source to cause target restoration under the applicable conditions.
+    analysis:
+      why_it_fits: It makes first-trit 2 the capacity or qualifying relation for the
+        matching canonical REP:11x transformation while preserving outward scope and
+        latent expression.
+      useful_coverage: It covers recoverability, repairability, remedy applicability,
+        rehabilitative compatibility, restoration channels, disaster-recovery paths,
+        and systemic recovery affordances.
+      semantic_territory_consumed: Only the substrate-neutral restorative affordance
+        that enables source-target restorative applicability relation. Conditions,
+        actual restoration, mechanics, records, resources, service obligations, protection,
+        and modality remain separate.
+      conflicts_or_future_limitations: The technical words applicability and pathway
+        must be restricted to restorative enablement rather than generic compatibility
+        or route identity, but the invariant and compounds make that boundary explicit.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: protective_resilience
+    title: latent target protection relation
+    invariant_candidate: The latent target protection relation by which adverse transformation
+      at the selected scope can be resisted before restoration is required.
+    analysis:
+      why_it_fits: Resistance, immunity, shielding, and resilience are related to
+        Repair and can be expressed at latent outward scope.
+      useful_coverage: It would cover withstand, resist, absorb, shield, prevent failure,
+        preserve operation, and fail-safe behavior.
+      semantic_territory_consumed: It consumes prevention and protection before restorative
+        transformation is needed.
+      conflicts_or_future_limitations: WRN/STR/LOG and domain mechanics own resistance
+        and protection; something can be highly recoverable yet unable to withstand
+        the initiating damage.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 66
+    maximum: 80
+  - candidate_id: maintenance_service_relation
+    title: latent target service relation
+    invariant_candidate: The latent target service relation by which an acceptable
+      condition can be preserved through service at the selected scope.
+    analysis:
+      why_it_fits: Internal maintenance capacity, target service relationships, and
+        systemic maintenance networks are plausible Repair affordances at outward
+        scope.
+      useful_coverage: It would cover maintainability, responsibility, service access,
+        care relations, support contracts, and maintenance organizations.
+      semantic_territory_consumed: It consumes preservation, obligation, participant
+        roles, communication, scheduling, and service administration.
+      conflicts_or_future_limitations: CON owns service relations, LOG owns obligations,
+        DAT/ORI owns schedules, and maintainability does not require a capacity to
+        restore an unrealized condition.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 62
+    maximum: 80
+  - candidate_id: backup_resource_network
+    title: latent target remedy resource
+    invariant_candidate: The latent target remedy resource constituted by a stored
+      or assigned remedy resource at the selected scope.
+    analysis:
+      why_it_fits: Reserves, remedies, backups, spare parts, and redundant networks
+        are concrete enablers of restoration at outward scope.
+      useful_coverage: It would cover medicine, tools, replacement parts, backups,
+        golden images, reserve capacity, and redundant support nodes.
+      semantic_territory_consumed: It consumes material, informational, creative,
+        and organizational resources rather than the typed restorative capacity or
+        relation.
+      conflicts_or_future_limitations: MAT, DAT, CRE, LIF, and CON own the resources
+        and participants; possessing a resource does not entail that it applies to
+        or can restore the bearer.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 63
+    maximum: 80
+  recommended_candidate_id: restoration_affordance
+  recommendation_reason: Only the restoration-affordance architecture keeps one Repair
+    semantic center, aligns each column with its canonical REP:1xx transformation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    conditions, processes, mechanics, protection, maintenance, resources, records,
+    observer knowledge, and general modality separate.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: REP:220
+  fixed_generated_fields:
+    canonical_id: REP:220
+    universal_slot: stable systemic relationship
+    family_qualified_transliteration: ya·mim
+    local_compact_root: mim
+    formal_carrier: ya-nu-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+  current_meaning_rationale: The Phase 2 label follows the persistent independently
+    of current operation systemic slot and uses familiar Repair vocabulary such as
+    resilience, regeneration, repairability, care, redundancy, and recovery paths.
+  candidates:
+  - candidate_id: phase2_mixed
+    title: stable redundancy
+    invariant_candidate: A system has established backup, substitution, and recovery
+      relationships that preserve function.
+    analysis:
+      why_it_fits: The Phase 2 label follows the persistent independently of current
+        operation systemic slot and uses familiar Repair vocabulary such as resilience,
+        regeneration, repairability, care, redundancy, and recovery paths.
+      useful_coverage: It reaches common talk about self-healing, remedies, service
+        relations, backups, redundancy, and distributed recovery.
+      semantic_territory_consumed: It mixes restorative capacity, actual care processes,
+        protection, maintenance responsibility, observer verification, resources,
+        probability, and system behavior.
+      conflicts_or_future_limitations: The triplets do not preserve one lexical-status
+        contrast; REP:211 duplicates active target restoration, REP:212 conflates
+        uncertainty with latency, and REP:222 absorbs possibility and evidence.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 52
+    maximum: 80
+  - candidate_id: restoration_affordance
+    title: persistent systemic restoration pathway
+    invariant_candidate: A persistent pathway relation across multiple participants
+      in one shared system through which one shared restoration condition can become
+      realized, independently of whether that pathway is presently operative.
+    analysis:
+      why_it_fits: It makes first-trit 2 the capacity or qualifying relation for the
+        matching canonical REP:12x transformation while preserving systemic scope
+        and persistent expression.
+      useful_coverage: It covers recoverability, repairability, remedy applicability,
+        rehabilitative compatibility, restoration channels, disaster-recovery paths,
+        and systemic recovery affordances.
+      semantic_territory_consumed: Only the substrate-neutral restorative affordance
+        that enables systemic restoration pathway. Conditions, actual restoration,
+        mechanics, records, resources, service obligations, protection, and modality
+        remain separate.
+      conflicts_or_future_limitations: The technical words applicability and pathway
+        must be restricted to restorative enablement rather than generic compatibility
+        or route identity, but the invariant and compounds make that boundary explicit.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: protective_resilience
+    title: persistent systemic resilience network
+    invariant_candidate: The persistent systemic resilience network by which adverse
+      transformation at the selected scope can be resisted before restoration is required.
+    analysis:
+      why_it_fits: Resistance, immunity, shielding, and resilience are related to
+        Repair and can be expressed at persistent systemic scope.
+      useful_coverage: It would cover withstand, resist, absorb, shield, prevent failure,
+        preserve operation, and fail-safe behavior.
+      semantic_territory_consumed: It consumes prevention and protection before restorative
+        transformation is needed.
+      conflicts_or_future_limitations: WRN/STR/LOG and domain mechanics own resistance
+        and protection; something can be highly recoverable yet unable to withstand
+        the initiating damage.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 65
+    maximum: 80
+  - candidate_id: maintenance_service_relation
+    title: persistent systemic maintenance network
+    invariant_candidate: The persistent systemic maintenance network by which an acceptable
+      condition can be preserved through service at the selected scope.
+    analysis:
+      why_it_fits: Internal maintenance capacity, target service relationships, and
+        systemic maintenance networks are plausible Repair affordances at systemic
+        scope.
+      useful_coverage: It would cover maintainability, responsibility, service access,
+        care relations, support contracts, and maintenance organizations.
+      semantic_territory_consumed: It consumes preservation, obligation, participant
+        roles, communication, scheduling, and service administration.
+      conflicts_or_future_limitations: CON owns service relations, LOG owns obligations,
+        DAT/ORI owns schedules, and maintainability does not require a capacity to
+        restore an unrealized condition.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 64
+    maximum: 80
+  - candidate_id: backup_resource_network
+    title: persistent systemic backup network
+    invariant_candidate: The persistent systemic backup network constituted by a stored
+      or assigned remedy resource at the selected scope.
+    analysis:
+      why_it_fits: Reserves, remedies, backups, spare parts, and redundant networks
+        are concrete enablers of restoration at systemic scope.
+      useful_coverage: It would cover medicine, tools, replacement parts, backups,
+        golden images, reserve capacity, and redundant support nodes.
+      semantic_territory_consumed: It consumes material, informational, creative,
+        and organizational resources rather than the typed restorative capacity or
+        relation.
+      conflicts_or_future_limitations: MAT, DAT, CRE, LIF, and CON own the resources
+        and participants; possessing a resource does not entail that it applies to
+        or can restore the bearer.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 61
+    maximum: 80
+  recommended_candidate_id: restoration_affordance
+  recommendation_reason: Only the restoration-affordance architecture keeps one Repair
+    semantic center, aligns each column with its canonical REP:1xx transformation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    conditions, processes, mechanics, protection, maintenance, resources, records,
+    observer knowledge, and general modality separate.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: REP:221
+  fixed_generated_fields:
+    canonical_id: REP:221
+    universal_slot: active systemic relationship
+    family_qualified_transliteration: ya·mik
+    local_compact_root: mik
+    formal_carrier: ya-nu-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+  current_meaning_rationale: The Phase 2 label follows the presently operative systemic
+    slot and uses familiar Repair vocabulary such as resilience, regeneration, repairability,
+    care, redundancy, and recovery paths.
+  candidates:
+  - candidate_id: phase2_mixed
+    title: adaptive recovery network
+    invariant_candidate: A distributed system is actively reallocating support and
+      repair capacity around damage.
+    analysis:
+      why_it_fits: The Phase 2 label follows the presently operative systemic slot
+        and uses familiar Repair vocabulary such as resilience, regeneration, repairability,
+        care, redundancy, and recovery paths.
+      useful_coverage: It reaches common talk about self-healing, remedies, service
+        relations, backups, redundancy, and distributed recovery.
+      semantic_territory_consumed: It mixes restorative capacity, actual care processes,
+        protection, maintenance responsibility, observer verification, resources,
+        probability, and system behavior.
+      conflicts_or_future_limitations: The triplets do not preserve one lexical-status
+        contrast; REP:211 duplicates active target restoration, REP:212 conflates
+        uncertainty with latency, and REP:222 absorbs possibility and evidence.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 52
+    maximum: 80
+  - candidate_id: restoration_affordance
+    title: operative systemic restoration pathway
+    invariant_candidate: A pathway relation across multiple participants in one shared
+      system that presently enables one shared restoration condition to become realized
+      among them.
+    analysis:
+      why_it_fits: It makes first-trit 2 the capacity or qualifying relation for the
+        matching canonical REP:12x transformation while preserving systemic scope
+        and operative expression.
+      useful_coverage: It covers recoverability, repairability, remedy applicability,
+        rehabilitative compatibility, restoration channels, disaster-recovery paths,
+        and systemic recovery affordances.
+      semantic_territory_consumed: Only the substrate-neutral restorative affordance
+        that enables systemic restoration pathway. Conditions, actual restoration,
+        mechanics, records, resources, service obligations, protection, and modality
+        remain separate.
+      conflicts_or_future_limitations: The technical words applicability and pathway
+        must be restricted to restorative enablement rather than generic compatibility
+        or route identity, but the invariant and compounds make that boundary explicit.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: protective_resilience
+    title: operative systemic resilience network
+    invariant_candidate: The operative systemic resilience network by which adverse
+      transformation at the selected scope can be resisted before restoration is required.
+    analysis:
+      why_it_fits: Resistance, immunity, shielding, and resilience are related to
+        Repair and can be expressed at operative systemic scope.
+      useful_coverage: It would cover withstand, resist, absorb, shield, prevent failure,
+        preserve operation, and fail-safe behavior.
+      semantic_territory_consumed: It consumes prevention and protection before restorative
+        transformation is needed.
+      conflicts_or_future_limitations: WRN/STR/LOG and domain mechanics own resistance
+        and protection; something can be highly recoverable yet unable to withstand
+        the initiating damage.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 65
+    maximum: 80
+  - candidate_id: maintenance_service_relation
+    title: operative systemic maintenance network
+    invariant_candidate: The operative systemic maintenance network by which an acceptable
+      condition can be preserved through service at the selected scope.
+    analysis:
+      why_it_fits: Internal maintenance capacity, target service relationships, and
+        systemic maintenance networks are plausible Repair affordances at systemic
+        scope.
+      useful_coverage: It would cover maintainability, responsibility, service access,
+        care relations, support contracts, and maintenance organizations.
+      semantic_territory_consumed: It consumes preservation, obligation, participant
+        roles, communication, scheduling, and service administration.
+      conflicts_or_future_limitations: CON owns service relations, LOG owns obligations,
+        DAT/ORI owns schedules, and maintainability does not require a capacity to
+        restore an unrealized condition.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 64
+    maximum: 80
+  - candidate_id: backup_resource_network
+    title: operative systemic backup network
+    invariant_candidate: The operative systemic backup network constituted by a stored
+      or assigned remedy resource at the selected scope.
+    analysis:
+      why_it_fits: Reserves, remedies, backups, spare parts, and redundant networks
+        are concrete enablers of restoration at systemic scope.
+      useful_coverage: It would cover medicine, tools, replacement parts, backups,
+        golden images, reserve capacity, and redundant support nodes.
+      semantic_territory_consumed: It consumes material, informational, creative,
+        and organizational resources rather than the typed restorative capacity or
+        relation.
+      conflicts_or_future_limitations: MAT, DAT, CRE, LIF, and CON own the resources
+        and participants; possessing a resource does not entail that it applies to
+        or can restore the bearer.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 61
+    maximum: 80
+  recommended_candidate_id: restoration_affordance
+  recommendation_reason: Only the restoration-affordance architecture keeps one Repair
+    semantic center, aligns each column with its canonical REP:1xx transformation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    conditions, processes, mechanics, protection, maintenance, resources, records,
+    observer knowledge, and general modality separate.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: REP:222
+  fixed_generated_fields:
+    canonical_id: REP:222
+    universal_slot: unrealized systemic possibility
+    family_qualified_transliteration: ya·min
+    local_compact_root: min
+    formal_carrier: ya-nu-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+  current_meaning_rationale: The Phase 2 label follows the existing without present
+    operation systemic slot and uses familiar Repair vocabulary such as resilience,
+    regeneration, repairability, care, redundancy, and recovery paths.
+  candidates:
+  - candidate_id: phase2_mixed
+    title: possible recovery path
+    invariant_candidate: A system-level route back to valid function could exist but
+      has not yet been demonstrated.
+    analysis:
+      why_it_fits: The Phase 2 label follows the existing without present operation
+        systemic slot and uses familiar Repair vocabulary such as resilience, regeneration,
+        repairability, care, redundancy, and recovery paths.
+      useful_coverage: It reaches common talk about self-healing, remedies, service
+        relations, backups, redundancy, and distributed recovery.
+      semantic_territory_consumed: It mixes restorative capacity, actual care processes,
+        protection, maintenance responsibility, observer verification, resources,
+        probability, and system behavior.
+      conflicts_or_future_limitations: The triplets do not preserve one lexical-status
+        contrast; REP:211 duplicates active target restoration, REP:212 conflates
+        uncertainty with latency, and REP:222 absorbs possibility and evidence.
+    scores:
+      atomicity: 5
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: restoration_affordance
+    title: latent systemic restoration pathway
+    invariant_candidate: A pathway relation across multiple participants in one shared
+      system through which one shared restoration condition can become realized but
+      that is not presently operative.
+    analysis:
+      why_it_fits: It makes first-trit 2 the capacity or qualifying relation for the
+        matching canonical REP:12x transformation while preserving systemic scope
+        and latent expression.
+      useful_coverage: It covers recoverability, repairability, remedy applicability,
+        rehabilitative compatibility, restoration channels, disaster-recovery paths,
+        and systemic recovery affordances.
+      semantic_territory_consumed: Only the substrate-neutral restorative affordance
+        that enables systemic restoration pathway. Conditions, actual restoration,
+        mechanics, records, resources, service obligations, protection, and modality
+        remain separate.
+      conflicts_or_future_limitations: The technical words applicability and pathway
+        must be restricted to restorative enablement rather than generic compatibility
+        or route identity, but the invariant and compounds make that boundary explicit.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: protective_resilience
+    title: latent systemic resilience network
+    invariant_candidate: The latent systemic resilience network by which adverse transformation
+      at the selected scope can be resisted before restoration is required.
+    analysis:
+      why_it_fits: Resistance, immunity, shielding, and resilience are related to
+        Repair and can be expressed at latent systemic scope.
+      useful_coverage: It would cover withstand, resist, absorb, shield, prevent failure,
+        preserve operation, and fail-safe behavior.
+      semantic_territory_consumed: It consumes prevention and protection before restorative
+        transformation is needed.
+      conflicts_or_future_limitations: WRN/STR/LOG and domain mechanics own resistance
+        and protection; something can be highly recoverable yet unable to withstand
+        the initiating damage.
+    scores:
+      atomicity: 9
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 8
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 65
+    maximum: 80
+  - candidate_id: maintenance_service_relation
+    title: latent systemic maintenance network
+    invariant_candidate: The latent systemic maintenance network by which an acceptable
+      condition can be preserved through service at the selected scope.
+    analysis:
+      why_it_fits: Internal maintenance capacity, target service relationships, and
+        systemic maintenance networks are plausible Repair affordances at systemic
+        scope.
+      useful_coverage: It would cover maintainability, responsibility, service access,
+        care relations, support contracts, and maintenance organizations.
+      semantic_territory_consumed: It consumes preservation, obligation, participant
+        roles, communication, scheduling, and service administration.
+      conflicts_or_future_limitations: CON owns service relations, LOG owns obligations,
+        DAT/ORI owns schedules, and maintainability does not require a capacity to
+        restore an unrealized condition.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 64
+    maximum: 80
+  - candidate_id: backup_resource_network
+    title: latent systemic backup network
+    invariant_candidate: The latent systemic backup network constituted by a stored
+      or assigned remedy resource at the selected scope.
+    analysis:
+      why_it_fits: Reserves, remedies, backups, spare parts, and redundant networks
+        are concrete enablers of restoration at systemic scope.
+      useful_coverage: It would cover medicine, tools, replacement parts, backups,
+        golden images, reserve capacity, and redundant support nodes.
+      semantic_territory_consumed: It consumes material, informational, creative,
+        and organizational resources rather than the typed restorative capacity or
+        relation.
+      conflicts_or_future_limitations: MAT, DAT, CRE, LIF, and CON own the resources
+        and participants; possessing a resource does not entail that it applies to
+        or can restore the bearer.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 61
+    maximum: 80
+  recommended_candidate_id: restoration_affordance
+  recommendation_reason: Only the restoration-affordance architecture keeps one Repair
+    semantic center, aligns each column with its canonical REP:1xx transformation,
+    changes only persistent/operative/latent status within each triplet, and leaves
+    conditions, processes, mechanics, protection, maintenance, resources, records,
+    observer knowledge, and general modality separate.
+  confidence: 0.97
+  canonicalized: true

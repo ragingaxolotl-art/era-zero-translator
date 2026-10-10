@@ -1,0 +1,550 @@
+---
+metadata:
+  title: MOV:100–122 recommended permanent semantic specification
+  status: peer_review_recommendation_pending_user_approval
+  canonicalized: false
+  generated_fields_changed: false
+  reviewed_roots:
+  - MOV:100
+  - MOV:101
+  - MOV:102
+  - MOV:110
+  - MOV:111
+  - MOV:112
+  - MOV:120
+  - MOV:121
+  - MOV:122
+triplet_architecture:
+- range: MOV:100–102
+  shared_axis: source-relative displacement
+  phase_contrast: completed / ongoing / specified but unbegun
+- range: MOV:110–112
+  shared_axis: target-relative displacement
+  phase_contrast: completed at target / ongoing toward target / specified but unbegun
+- range: MOV:120–122
+  shared_axis: system-route traversal
+  phase_contrast: completed / ongoing / specified but unbegun
+roots:
+- canonical_id: MOV:100
+  fixed_generated_fields:
+    canonical_id: MOV:100
+    universal_slot: completed inward process
+    family_qualified_transliteration: gi·kam
+    local_compact_root: kam
+    formal_carrier: gi-ki-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 2
+  recommended_permanent_specification:
+    canonical_title: completed source departure
+    invariant_definition: Completion of a mover's displacement away from a specified source position.
+    semantic_boundaries: Owns only the completed phase of source-relative displacement. The source must be specified or recoverable from context.
+    excluded_meanings:
+    - generic relocation
+    - target arrival
+    - detachment without displacement
+    - permission to leave
+    - movement cause or force
+    - ontological disappearance
+    nearest_neighbors:
+    - MOV:101 active source departure
+    - MOV:102 pending source departure
+    - MOV:000 origin position
+    - MOV:001 present position
+    cross_family_comparisons:
+      MAT: MAT supplies the moving body, payload, force, or launch mechanics; MOV:100 supplies only completed displacement from source.
+      MIN: A decision to leave or loss of attention is mental change, not departure.
+      CON: Ending contact or a channel is not departure unless displacement also occurs.
+      STR: Exiting a container requires a boundary compound; removal without motion is structural.
+      DAT: Deleting or sending a record from storage is Data unless positions and displacement are explicitly modeled.
+      CRE: A thing ceasing to be generated is not departure.
+      ORI: Ceasing to exist or leaving an ontological state belongs to Origin.
+    address_explanation: First trit 1 selects a process. Second trit 0 anchors the process at its source. Third trit 0 selects completion. 'Completed source departure' is the minimal intersection of those three constraints.
+    runtime_states:
+      '0': The claimed completed departure is false, invalidated, or unavailable as a fact.
+      '1': The source departure is validly complete.
+      '2': Whether the source departure completed is unresolved or awaiting confirmation.
+    natural_language_examples:
+    - The train has left the station.
+    - The bird is no longer at the nest; its departure is complete.
+    - The cursor has left the initialization position.
+    programming_examples:
+    - assert MOV:100[1] with source=MOV:000 and postcondition separation(source,mover)>0
+    - emit MOV:100[2] when a remote departure completion awaits acknowledgment
+    future_compound_examples:
+    - 'exit a building: MOV:100 plus a later structural-boundary relation'
+    - 'launch cargo: MOV:100 plus material payload and force roles'
+    - 'return leg completed: MOV:100 relative to the return leg''s source'
+    era_evolution_notes: Later eras may lexicalize depart, exit, launch, or withdraw, but their Era Zero decomposition must preserve the source-displacement invariant.
+- canonical_id: MOV:101
+  fixed_generated_fields:
+    canonical_id: MOV:101
+    universal_slot: active inward process
+    family_qualified_transliteration: gi·kak
+    local_compact_root: kak
+    formal_carrier: gi-ki-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 4
+  recommended_permanent_specification:
+    canonical_title: active source departure
+    invariant_definition: Ongoing displacement of a mover away from a specified source position.
+    semantic_boundaries: Owns motion presently increasing separation from a source. It does not specify destination, cause, manner, speed, or social meaning.
+    excluded_meanings:
+    - generic motion without a source relation
+    - decision or intention to leave
+    - completed departure
+    - target approach
+    - disconnection without displacement
+    - acceleration as such
+    nearest_neighbors:
+    - MOV:100 completed source departure
+    - MOV:102 pending source departure
+    - MOV:000 origin position
+    - MOV:001 present position
+    cross_family_comparisons:
+      MAT: Physical propulsion and force are MAT contributions; the displacement relation remains MOV.
+      MIN: Thinking about leaving is not active departure.
+      CON: Withdrawing from a conversation is CON unless the participant also moves.
+      STR: A component can detach structurally without departing spatially.
+      DAT: A read pointer leaving a buffer position uses MOV only if positions are explicitly modeled.
+      CRE: Transformation away from a design state is CRE unless modeled as traversal.
+      ORI: Leaving existence is ontological, not kinematic.
+    address_explanation: First trit 1 makes this an event. Second trit 0 makes source separation the defining relation. Third trit 1 requires the event to be under way.
+    runtime_states:
+      '0': The active departure is not executing or the assertion is false.
+      '1': Separation from the source is currently increasing.
+      '2': The active departure operation is suspended, blocked, or unresolved; it remains lexically active rather than becoming MOV:102.
+    natural_language_examples:
+    - I'm leaving the station now.
+    - The rover is rolling away from its dock.
+    - The process is leaving its initialization state along an explicit state path.
+    programming_examples:
+    - run MOV:101[1] while separation(actor,source) is monotonically increasing
+    - set MOV:101[2] when the departure operation is paused after motion began
+    future_compound_examples:
+    - 'withdraw from a group: MOV:101 plus Connection only if literal displacement occurs'
+    - 'take off: MOV:101 plus later manner/medium semantics'
+    - 'evacuate a room: MOV:101 plus a structural boundary and collective actor'
+    era_evolution_notes: Later vocabulary may shorten leave, depart, retreat, take off, or pull away, but the atomic root should remain manner-neutral.
+- canonical_id: MOV:102
+  fixed_generated_fields:
+    canonical_id: MOV:102
+    universal_slot: pending inward process
+    family_qualified_transliteration: gi·kan
+    local_compact_root: kan
+    formal_carrier: gi-ki-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 0
+  recommended_permanent_specification:
+    canonical_title: pending source departure
+    invariant_definition: A specified displacement away from a source position that has not yet begun.
+    semantic_boundaries: Owns a source-departure event represented before onset. The event must be specified; readiness, permission, probability, and clock time are independent.
+    excluded_meanings:
+    - mere readiness or capability
+    - waiting without a departure plan
+    - permission to leave
+    - active or completed motion
+    - dormant route
+    - suspended active departure
+    nearest_neighbors:
+    - MOV:100 completed source departure
+    - MOV:101 active source departure
+    - MOV:002 retained position
+    - future MOV 2xx mobility capacity
+    cross_family_comparisons:
+      MAT: Fuel, force, and mechanical readiness are MAT conditions, not the pending event.
+      MIN: Intent or decision may motivate the event but does not constitute it.
+      CON: Clearance or permission is a communicative/logical relation.
+      STR: A closed gate can block the event but is not its meaning.
+      DAT: A scheduler record may represent the event; it is not the event.
+      CRE: A planned transformation belongs to Creation, not source departure.
+      ORI: Future time or possibility status must be supplied separately.
+    address_explanation: First trit 1 demands a process, eliminating readiness as a capacity. Second trit 0 fixes source orientation. Third trit 2 fixes a specified but unbegun phase.
+    runtime_states:
+      '0': The pending departure is canceled, invalid, or unavailable.
+      '1': The pending departure is a valid queued operation.
+      '2': The pending operation itself is tentative, dormant, or awaiting confirmation.
+    natural_language_examples:
+    - The train is set to depart, but it has not moved.
+    - The drone's departure from the pad is queued.
+    - The job is scheduled to leave its initial stage.
+    programming_examples:
+    - enqueue MOV:102[1] with source bound and started=false
+    - use MOV:102[2] for a tentative departure request awaiting authorization
+    future_compound_examples:
+    - 'scheduled departure: MOV:102 plus later time/scheduler semantics'
+    - 'cleared for departure: MOV:102 plus permission'
+    - 'launch pending: MOV:102 plus material readiness conditions'
+    era_evolution_notes: Later eras may lexicalize ready, scheduled, cleared, or due, but those must not be back-projected into the atomic event.
+- canonical_id: MOV:110
+  fixed_generated_fields:
+    canonical_id: MOV:110
+    universal_slot: completed outward process
+    family_qualified_transliteration: gi·kom
+    local_compact_root: kom
+    formal_carrier: gi-ki-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 4
+  recommended_permanent_specification:
+    canonical_title: completed target arrival
+    invariant_definition: Completion of a mover's displacement to a specified target position.
+    semantic_boundaries: Owns only the completed phase of target-relative displacement. Reaching the target is sufficient; entry, contact, delivery, and acceptance are separate.
+    excluded_meanings:
+    - destination entity
+    - near-target position
+    - physical impact
+    - message delivery
+    - material transfer
+    - entry into a container
+    - manifestation
+    nearest_neighbors:
+    - MOV:111 active target approach
+    - MOV:112 pending target approach
+    - MOV:010 defined destination
+    - MOV:011 active destination
+    cross_family_comparisons:
+      MAT: A payload or impact compounds with arrival; it is not built into arrival.
+      MIN: Achieving a goal mentally is not arrival unless a state-space path is explicit.
+      CON: Receipt or acknowledgment is communication, not motion completion.
+      STR: Entering a container adds a structural boundary relation.
+      DAT: Successful data delivery is DAT/CON even if packet motion is modeled.
+      CRE: Producing a target result is Creation, not arrival.
+      ORI: Becoming actual is manifestation, not target displacement.
+    address_explanation: First trit 1 selects the process, second trit 1 selects a target, and third trit 0 selects endpoint completion. Arrival is the exact Motion-specific intersection.
+    runtime_states:
+      '0': The arrival-completion claim is false or invalid.
+      '1': The mover has validly reached the target.
+      '2': Whether the mover reached the target awaits confirmation.
+    natural_language_examples:
+    - She has arrived at the station.
+    - The probe reached the dock.
+    - The cursor reached the final sequence position.
+    programming_examples:
+    - assert MOV:110[1] with postcondition position(actor)=target
+    - emit MOV:110[2] while target-arrival telemetry is unconfirmed
+    future_compound_examples:
+    - 'enter a room: MOV:110 plus structural containment'
+    - 'deliver cargo: MOV:110 plus material payload and transfer'
+    - 'return home: MOV:110 with target bound to an earlier MOV:000'
+    era_evolution_notes: Later lexical forms for arrive, reach, enter, dock, land, and deliver should retain their additional boundary, manner, or transfer components.
+- canonical_id: MOV:111
+  fixed_generated_fields:
+    canonical_id: MOV:111
+    universal_slot: active outward process
+    family_qualified_transliteration: gi·kok
+    local_compact_root: kok
+    formal_carrier: gi-ki-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 6
+  recommended_permanent_specification:
+    canonical_title: active target approach
+    invariant_definition: Ongoing displacement of a mover toward a specified target position.
+    semantic_boundaries: Owns targetward displacement in progress. It asserts progress toward a target, not merely orientation, intention, tracking, or target availability.
+    excluded_meanings:
+    - facing a target while stationary
+    - pursuit relation
+    - planned future travel
+    - successful arrival
+    - message transmission
+    - goal achievement without a path
+    nearest_neighbors:
+    - MOV:110 completed target arrival
+    - MOV:112 pending target approach
+    - MOV:010 defined destination
+    - MOV:011 active destination
+    cross_family_comparisons:
+      MAT: Force and vehicle dynamics are material contributors.
+      MIN: Attention toward a subject is not spatial/sequential approach.
+      CON: Contacting or messaging a participant is not approach.
+      STR: Approaching a structure does not imply entry or docking.
+      DAT: Data transfer is not target approach unless a route-position model is explicit.
+      CRE: Progress toward a design result is metaphorical unless modeled as positions.
+      ORI: Approaching actuality is ontological change, not Motion by default.
+    address_explanation: Process + target + active yields ongoing displacement whose defining vector is targetward. No extra participant relation or transfer semantics are needed.
+    runtime_states:
+      '0': The approach is not executing or the assertion is false.
+      '1': The mover is currently progressing toward the target.
+      '2': The active approach is suspended, blocked, or unresolved after onset.
+    natural_language_examples:
+    - The train is approaching the platform.
+    - I'm heading home.
+    - The task cursor is progressing toward the final step.
+    programming_examples:
+    - run MOV:111[1] with invariant distance(actor,target) decreases or path-progress increases
+    - use MOV:111[2] for a targetward operation paused after execution began
+    future_compound_examples:
+    - 'pursue a person: MOV:111 plus moving-target relation'
+    - 'enter a building: MOV:111/110 plus structural boundary'
+    - 'transport toward a depot: MOV:111 plus material payload roles'
+    era_evolution_notes: Later words for come, approach, advance, pursue, enter, and deliver must preserve whether they add deixis, moving-target tracking, boundary crossing, or transfer.
+- canonical_id: MOV:112
+  fixed_generated_fields:
+    canonical_id: MOV:112
+    universal_slot: pending outward process
+    family_qualified_transliteration: gi·kon
+    local_compact_root: kon
+    formal_carrier: gi-ki-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 2
+  recommended_permanent_specification:
+    canonical_title: pending target approach
+    invariant_definition: A specified displacement toward a target position that has not yet begun.
+    semantic_boundaries: Owns a targetward Motion event before onset. It requires a specified event and target, but not a schedule, intention, accessible target, or eventual success.
+    excluded_meanings:
+    - pending outcome during active travel
+    - unavailable destination
+    - mere intention or desire
+    - waiting at a boundary
+    - active approach
+    - arrival
+    nearest_neighbors:
+    - MOV:110 completed target arrival
+    - MOV:111 active target approach
+    - MOV:012 pending destination
+    - future Motion relationship roots
+    cross_family_comparisons:
+      MAT: Vehicle/payload readiness is Material.
+      MIN: Desire or intention toward a target is mental.
+      CON: Invitation or permission to approach is communicative.
+      STR: Entry clearance and boundaries are structural/logical additions.
+      DAT: A queue record represents but does not equal the movement operation.
+      CRE: A planned creation toward a target form is Creation.
+      ORI: Future time and possibility are external to the Motion invariant.
+    address_explanation: The first trit requires an operation, the second binds its target, and the third makes the operation lexically pre-onset. 'Pending arrival' is rejected because it describes an absent result rather than the operation.
+    runtime_states:
+      '0': The pending targetward operation is canceled or invalid.
+      '1': The targetward operation is validly queued and unbegun.
+      '2': The queued operation itself is tentative or awaiting confirmation.
+    natural_language_examples:
+    - The rover is queued to move to the marker.
+    - I'm set to head home, but I haven't started.
+    - The job is waiting to advance to stage three.
+    programming_examples:
+    - enqueue MOV:112[1] with target bound and started=false
+    - mark MOV:112[2] when a targetward request exists but is not yet confirmed
+    future_compound_examples:
+    - 'scheduled approach: MOV:112 plus later time semantics'
+    - 'awaiting entry: MOV:112 plus timing and structural boundary'
+    - 'planned delivery trip: MOV:112 plus payload and transfer roles'
+    era_evolution_notes: Later forms may distinguish due, expected, intended, scheduled, or cleared. None should alter the Era Zero event-phase distinction.
+- canonical_id: MOV:120
+  fixed_generated_fields:
+    canonical_id: MOV:120
+    universal_slot: completed systemic process
+    family_qualified_transliteration: gi·kim
+    local_compact_root: kim
+    formal_carrier: gi-ki-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 0
+  recommended_permanent_specification:
+    canonical_title: completed route traversal
+    invariant_definition: Completion of motion along a shared or system-defined route.
+    semantic_boundaries: Owns completion of an operation whose identity depends on traversal of an ordered route, not merely reaching a target. A single mover qualifies when the system-defined route is semantically central.
+    excluded_meanings:
+    - route entity
+    - generic system transition
+    - material circulation
+    - data synchronization
+    - group coordination
+    - isolated target arrival
+    - ontological or temporal change without an explicit route
+    nearest_neighbors:
+    - MOV:121 active route traversal
+    - MOV:122 pending route traversal
+    - MOV:020 established route
+    - MOV:021 active flow network
+    - MOV:110 completed target arrival
+    cross_family_comparisons:
+      MAT: Material circulation or transport adds a payload/substance graph.
+      MIN: Completing a thought process is Mind unless represented as explicit route positions.
+      CON: Completing broadcast or negotiation is Connection.
+      STR: Completing deployment or reorganization is Structure.
+      DAT: Completing synchronization or replication is Data.
+      CRE: Completing system generation is Creation.
+      ORI: Completing an epochal or ontological transition is Origin.
+    address_explanation: Process + systemic/shared + completed should remain Motion-specific. Traversal makes the system-defined route, rather than the target or payload, the defining relation.
+    runtime_states:
+      '0': The claimed route-traversal completion is false or invalid.
+      '1': The route traversal is validly complete.
+      '2': Completion of the route traversal awaits confirmation.
+    natural_language_examples:
+    - The bus completed its route.
+    - The robot finished the corridor run.
+    - The job traversed the full workflow path.
+    programming_examples:
+    - assert MOV:120[1] when all required route positions were visited in order
+    - use MOV:120[2] when a distributed route run reports completion but final acknowledgment is missing
+    future_compound_examples:
+    - 'complete an orbit: MOV:120 plus a cyclic-route relation'
+    - 'finish transporting cargo: MOV:120 plus payload/carrier roles'
+    - 'complete a migration: MOV:120 plus a living collective actor'
+    era_evolution_notes: Later eras may lexicalize circuit, orbit, commute, migration, pipeline completion, or tour; route topology and carried domain remain separable.
+- canonical_id: MOV:121
+  fixed_generated_fields:
+    canonical_id: MOV:121
+    universal_slot: active systemic process
+    family_qualified_transliteration: gi·kik
+    local_compact_root: kik
+    formal_carrier: gi-ki-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 2
+  recommended_permanent_specification:
+    canonical_title: active route traversal
+    invariant_definition: Ongoing motion along a shared or system-defined route.
+    semantic_boundaries: Owns motion currently progressing through an ordered route whose identity is shared, environmental, distributed, or system-defined. It does not type the mover or payload.
+    excluded_meanings:
+    - route network entity
+    - generic flow of matter or information
+    - coordination by itself
+    - cyclic repetition by itself
+    - target approach with no route salience
+    - system transformation
+    nearest_neighbors:
+    - MOV:120 completed route traversal
+    - MOV:122 pending route traversal
+    - MOV:020 established route
+    - MOV:021 active flow network
+    - MOV:111 active target approach
+    cross_family_comparisons:
+      MAT: Resource or fluid flow belongs to MAT; MOV:121 may add the route-traversal component.
+      MIN: Reasoning through states is MIN unless explicit positions/routes are modeled.
+      CON: Broadcast and participant exchange are CON.
+      STR: Organizational workflow change is STR unless route traversal is separately represented.
+      DAT: Data streaming, replication, and synchronization are DAT.
+      CRE: Generative progression is CRE.
+      ORI: Temporal or ontological unfolding is ORI unless an explicit positional route is part of the graph.
+    address_explanation: The systemic second trit is satisfied by the route's shared/system-defined identity. The active third trit makes traversal ongoing. This is more precise than generic flow and more general than circulation.
+    runtime_states:
+      '0': The route traversal is not executing.
+      '1': Motion is actively progressing along the route.
+      '2': The active traversal is paused, blocked, or unresolved after onset; this is not MOV:122.
+    natural_language_examples:
+    - Traffic is moving along the highway.
+    - The convoy is traversing the corridor.
+    - The batch is progressing through the explicit pipeline path.
+    programming_examples:
+    - run MOV:121[1] with route=MOV:020 and invariant ordered_progress
+    - mark MOV:121[2] when a route traversal has begun but is paused at an intermediate position
+    future_compound_examples:
+    - 'circulate: MOV:121 plus a cyclic route and repeated-loop contour'
+    - 'move together: MOV:121 plus a collective actor and optional coordination relation'
+    - 'stream data through a topology: MOV:121 plus DAT process only when route positions matter'
+    era_evolution_notes: Later words may compress travel, traverse, commute, circulate, orbit, migrate, process, or stream. The atomic route relation must remain recoverable.
+- canonical_id: MOV:122
+  fixed_generated_fields:
+    canonical_id: MOV:122
+    universal_slot: pending systemic process
+    family_qualified_transliteration: gi·kin
+    local_compact_root: kin
+    formal_carrier: gi-ki-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - -2
+  recommended_permanent_specification:
+    canonical_title: pending route traversal
+    invariant_definition: Motion along a shared or system-defined route that is specified but has not yet begun.
+    semantic_boundaries: Owns a route-traversal operation represented before onset. The route may be active or inactive; schedule, authorization, delay, payload, and probability are separate.
+    excluded_meanings:
+    - dormant route entity
+    - paused traversal after onset
+    - generic scheduled task
+    - system transformation
+    - material or data flow
+    - timing or delay itself
+    nearest_neighbors:
+    - MOV:120 completed route traversal
+    - MOV:121 active route traversal
+    - MOV:022 dormant route system
+    - MOV:020 established route
+    - MOV:112 pending target approach
+    cross_family_comparisons:
+      MAT: Staged transport adds material payload/carrier roles.
+      MIN: Group intention to travel is mental/social context, not the operation.
+      CON: Dispatch or authorization messages do not equal the pending traversal.
+      STR: A staged deployment or reorganization is Structure.
+      DAT: A queued data synchronization is Data.
+      CRE: A staged generation process is Creation.
+      ORI: Future system or epoch transition is Origin unless route motion is explicit.
+    address_explanation: The address requires a process, makes an ordered shared route the systemic relation, and fixes the process before onset. Runtime suspension of an already active traversal is excluded.
+    runtime_states:
+      '0': The pending route traversal is canceled or invalid.
+      '1': The route traversal is validly queued and unbegun.
+      '2': The queued traversal itself is tentative or awaiting confirmation.
+    natural_language_examples:
+    - The convoy is queued to take the northern route.
+    - The carts are staged for the warehouse loop.
+    - The batch is queued to enter the pipeline path.
+    programming_examples:
+    - enqueue MOV:122[1] with route=MOV:020 and started=false
+    - use MOV:122[2] for a tentative route run awaiting dispatch approval
+    future_compound_examples:
+    - 'scheduled route run: MOV:122 plus time/scheduler semantics'
+    - 'pending migration: MOV:122 plus a living collective actor'
+    - 'planned cargo circuit: MOV:122 plus payload and cyclic-route roles'
+    era_evolution_notes: Later forms may distinguish scheduled, dispatched, staged, tentative, delayed, or awaiting clearance. Those are modifiers of the pending traversal, not replacements for it.
+authority:
+  recommended_titles_are_not_yet_canonical: true
+  explicit_user_approval_required: true
+  next_block_authorized: false
+  gate4_authorized: false

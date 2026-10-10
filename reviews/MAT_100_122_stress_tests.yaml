@@ -1,0 +1,434 @@
+---
+metadata:
+  title: MAT:100–122 semantic stress tests
+  status: review_evidence_not_canonical
+  test_count: 82
+  forced_atomic_mappings: false
+classification_values:
+- direct proposed root
+- composition
+- canonical/future other family
+- unresolved lexical ambiguity
+- grammar or quantity
+- root plus runtime
+tests:
+- number: 1
+  concept: melt
+  classification: direct proposed root
+  mapping: MAT:100/101/102, MAT:110/111/112, or MAT:120/121/122 by locus and phase
+  rationale: Melting is a physical-state change; English omits locus and phase.
+- number: 2
+  concept: freeze
+  classification: direct proposed root
+  mapping: MAT process root by locus and phase + phase-kind modifier
+  rationale: Freezing specializes physical-state change.
+- number: 3
+  concept: evaporate
+  classification: direct proposed root
+  mapping: MAT process root by locus and phase + phase-kind modifier
+  rationale: Phase transition is direct; escape path is separate MOV.
+- number: 4
+  concept: condense
+  classification: direct proposed root
+  mapping: MAT process root by locus and phase + phase-kind modifier
+  rationale: Condensation is intrinsic material change.
+- number: 5
+  concept: heat
+  classification: direct proposed root
+  mapping: MAT process root by locus and phase + thermal modifier
+  rationale: Heating changes thermal state.
+- number: 6
+  concept: cool
+  classification: direct proposed root
+  mapping: MAT process root by locus and phase + thermal modifier
+  rationale: Cooling changes thermal state.
+- number: 7
+  concept: warm
+  classification: direct proposed root
+  mapping: active or completed MAT change + magnitude
+  rationale: Warm may also describe a resulting condition.
+- number: 8
+  concept: chill
+  classification: direct proposed root
+  mapping: MAT change + thermal direction and magnitude
+  rationale: The atom does not encode direction or amount.
+- number: 9
+  concept: burn
+  classification: composition
+  mapping: MAT change + WRN and/or CRE reaction-kind
+  rationale: Burning is physical change often classified as destructive.
+- number: 10
+  concept: ignite
+  classification: composition
+  mapping: MAT:100/101/110/111 + transition-to-combustion modifier
+  rationale: Onset and causation require event structure.
+- number: 11
+  concept: extinguish
+  classification: composition
+  mapping: MAT target change + REP/WRN[0] as context requires
+  rationale: Ending combustion is not a primitive in this block.
+- number: 12
+  concept: dissolve
+  classification: direct proposed root
+  mapping: MAT change by affected locus + dissolution modifier
+  rationale: Dissolution is a material-state/composition change.
+- number: 13
+  concept: crystallize
+  classification: direct proposed root
+  mapping: MAT change by locus and phase + crystallization modifier
+  rationale: Crystallization is physical-state change.
+- number: 14
+  concept: corrode
+  classification: composition
+  mapping: MAT active/potential change + WRN damage
+  rationale: Corrosion is material change with harmful interpretation.
+- number: 15
+  concept: rust
+  classification: composition
+  mapping: MAT change + chemical-kind modifier + WRN when damage is asserted
+  rationale: Rust is a specific reaction/result.
+- number: 16
+  concept: oxidize
+  classification: direct proposed root
+  mapping: MAT change + chemical-kind modifier
+  rationale: Oxidation need not be harmful.
+- number: 17
+  concept: reduce chemically
+  classification: direct proposed root
+  mapping: MAT change + chemical-kind modifier
+  rationale: Chemical reduction is physical composition/state change.
+- number: 18
+  concept: ferment
+  classification: composition
+  mapping: MAT change + LIF microorganism/process context
+  rationale: Fermentation joins material and living processes.
+- number: 19
+  concept: digest
+  classification: composition
+  mapping: LIF process + MAT focal/target change
+  rationale: Biological digestion is not Matter alone.
+- number: 20
+  concept: metabolize
+  classification: canonical/future other family
+  mapping: LIF process + MAT participants
+  rationale: Metabolism is fundamentally living-system activity.
+- number: 21
+  concept: cure material
+  classification: direct proposed root
+  mapping: MAT change by locus and phase + curing modifier
+  rationale: Material curing is direct.
+- number: 22
+  concept: harden
+  classification: direct proposed root
+  mapping: MAT change + property-direction modifier
+  rationale: Hardening changes material response properties.
+- number: 23
+  concept: soften
+  classification: direct proposed root
+  mapping: MAT change + property-direction modifier
+  rationale: Softening changes material response properties.
+- number: 24
+  concept: bend
+  classification: direct proposed root
+  mapping: MAT target/focal change + deformation modifier
+  rationale: Bending is intrinsic deformation; mere rotation is MOV.
+- number: 25
+  concept: deform
+  classification: direct proposed root
+  mapping: MAT process root by locus and phase
+  rationale: Deformation is a physical-state change.
+- number: 26
+  concept: stretch
+  classification: direct proposed root
+  mapping: MAT change + deformation direction/quantity
+  rationale: Magnitude and axis require grammar.
+- number: 27
+  concept: compress
+  classification: direct proposed root
+  mapping: MAT change + compression modifier and quantity
+  rationale: Pressure cause remains separate.
+- number: 28
+  concept: fracture
+  classification: composition
+  mapping: MAT change + WRN damage
+  rationale: Fracture combines physical change with failure.
+- number: 29
+  concept: break
+  classification: composition
+  mapping: MAT change + WRN/STR boundary failure
+  rationale: English break conflates process and failure result.
+- number: 30
+  concept: crush
+  classification: composition
+  mapping: MAT target change + force/cause + WRN as needed
+  rationale: Cause and damage are separate.
+- number: 31
+  concept: grind
+  classification: composition
+  mapping: MAT target change + repetition/instrument roles
+  rationale: Grinding is iterated deformation/fragmentation.
+- number: 32
+  concept: mix
+  classification: direct proposed root
+  mapping: MAT:120/121/122 when distributed intrinsic composition changes; otherwise
+    MOV/STR composition
+  rationale: Mixing may be state change or only rearrangement.
+- number: 33
+  concept: separate mixture
+  classification: composition
+  mapping: MAT change + STR partition/MOV separation
+  rationale: Separation adds topology and displacement.
+- number: 34
+  concept: filter
+  classification: composition
+  mapping: STR selection boundary + MOV material passage + MAT bearers
+  rationale: Filtering is not one intrinsic state-change atom.
+- number: 35
+  concept: absorb
+  classification: composition
+  mapping: MAT focal change + MOV/CON ingress roles
+  rationale: Absorption includes transfer across a boundary.
+- number: 36
+  concept: ingest
+  classification: composition
+  mapping: LIF actor + MOV/CON ingress + MAT object
+  rationale: Ingestion is living-agent intake.
+- number: 37
+  concept: consume
+  classification: unresolved lexical ambiguity
+  mapping: MAT change, LIF use, or resource/accounting graph by sense
+  rationale: English consume spans physical, biological, and abstract senses.
+- number: 38
+  concept: emit
+  classification: composition
+  mapping: MOV source departure + MAT bearer/energy + cause
+  rationale: Emission is outward movement, not necessarily intrinsic change.
+- number: 39
+  concept: excrete
+  classification: composition
+  mapping: LIF process + MOV source departure + MAT bearer
+  rationale: Biological expulsion is cross-family.
+- number: 40
+  concept: leak
+  classification: composition
+  mapping: MOV source departure + STR boundary failure + MAT bearer + WRN as needed
+  rationale: Leak includes displacement and failed containment.
+- number: 41
+  concept: pour
+  classification: canonical/future other family
+  mapping: MOV movement + MAT aggregate + agent/instrument roles
+  rationale: Pouring can occur without material-state change.
+- number: 42
+  concept: inject
+  classification: composition
+  mapping: MOV target approach/arrival + MAT bearer + CON/role grammar
+  rationale: Injection is targeted transfer.
+- number: 43
+  concept: coat
+  classification: composition
+  mapping: MAT target change + MOV/CON material delivery + CRE goal if intentional
+  rationale: Coating combines delivery, result, and often purpose.
+- number: 44
+  concept: paint
+  classification: composition
+  mapping: CRE design/purpose + MAT target change + material delivery
+  rationale: Painting is intentional creation plus physical process.
+- number: 45
+  concept: forge
+  classification: composition
+  mapping: CRE production + MAT target change + force/thermal modifiers
+  rationale: Forging is not an atomic target change without purpose and method.
+- number: 46
+  concept: fabricate
+  classification: canonical/future other family
+  mapping: CRE process + MAT physical realization
+  rationale: Fabrication is creation-oriented.
+- number: 47
+  concept: manufacture
+  classification: canonical/future other family
+  mapping: CRE/STR process + MAT realization
+  rationale: Manufacture includes design, organization, and production.
+- number: 48
+  concept: assemble
+  classification: canonical/future other family
+  mapping: STR organization + CRE process + MAT parts
+  rationale: Assembly changes structure, not necessarily intrinsic material state.
+- number: 49
+  concept: disassemble
+  classification: composition
+  mapping: STR organization reversal + MOV part separation + MAT parts
+  rationale: Disassembly is structural.
+- number: 50
+  concept: repair
+  classification: canonical/future other family
+  mapping: REP process + MAT affected bearer/change
+  rationale: Restorative purpose belongs to REP.
+- number: 51
+  concept: heal
+  classification: canonical/future other family
+  mapping: REP + LIF + MAT physical realization
+  rationale: Healing is restorative and biological.
+- number: 52
+  concept: grow
+  classification: canonical/future other family
+  mapping: LIF growth + MAT incorporation/change
+  rationale: Growth is living development when biological.
+- number: 53
+  concept: decay
+  classification: composition
+  mapping: MAT change + WRN/LIF/ORI context
+  rationale: Decay may be material, biological, or abstract.
+- number: 54
+  concept: decompose materially
+  classification: direct proposed root
+  mapping: MAT change + decomposition modifier
+  rationale: Material decomposition is physical composition change.
+- number: 55
+  concept: charge battery
+  classification: composition
+  mapping: MAT focal/target change + later MAT energy capacity + quantity
+  rationale: Stored capacity is not a process invariant.
+- number: 56
+  concept: discharge battery
+  classification: composition
+  mapping: MAT change + later MAT capacity + energy transfer roles
+  rationale: Capacity and transfer need separate semantics.
+- number: 57
+  concept: power device
+  classification: composition
+  mapping: MAT active condition/process + later MAT energy capacity + CON roles
+  rationale: Power can mean supply, capacity, or operation.
+- number: 58
+  concept: apply force
+  classification: composition
+  mapping: MAT target change only if state changes + force relation/quantity
+  rationale: A force with no intrinsic change is not direct MAT:111.
+- number: 59
+  concept: push
+  classification: canonical/future other family
+  mapping: MOV/force relation; add MAT target change if deformation occurs
+  rationale: Pushing usually foregrounds motion.
+- number: 60
+  concept: pull
+  classification: canonical/future other family
+  mapping: MOV/force relation; add MAT change if deformation occurs
+  rationale: Pulling usually foregrounds motion.
+- number: 61
+  concept: carry
+  classification: canonical/future other family
+  mapping: MOV shared-frame movement + CON support relation + MAT object
+  rationale: Carrying does not imply intrinsic change.
+- number: 62
+  concept: transport
+  classification: canonical/future other family
+  mapping: MOV process + MAT bearer + source/target roles
+  rationale: Transport is displacement.
+- number: 63
+  concept: circulate
+  classification: composition
+  mapping: MOV shared-frame movement + MAT material; MAT:121 only when distributed
+    state change also occurs
+  rationale: Pure circulation is not physical-state change.
+- number: 64
+  concept: exchange materials
+  classification: composition
+  mapping: CON participant relation + MOV transfers + MAT bearers
+  rationale: Exchange ownership/participants are separate.
+- number: 65
+  concept: redistribute
+  classification: composition
+  mapping: MOV movements + STR distribution + MAT bearers
+  rationale: Redistribution can preserve intrinsic states.
+- number: 66
+  concept: recycle
+  classification: composition
+  mapping: CRE/REP goal + MAT systemic change + MOV/STR logistics
+  rationale: Recycling includes purpose and multi-step structure.
+- number: 67
+  concept: process a batch
+  classification: unresolved lexical ambiguity
+  mapping: MAT:120/121/122 only for distributed physical change; otherwise CRE/LOG/STR
+  rationale: Process is domain-unspecific.
+- number: 68
+  concept: phase transition
+  classification: direct proposed root
+  mapping: MAT process root by locus and phase + phase-kind
+  rationale: A central direct use.
+- number: 69
+  concept: physical state change
+  classification: direct proposed root
+  mapping: MAT:100–122 by locus and lexical phase
+  rationale: This is the block invariant.
+- number: 70
+  concept: transform
+  classification: unresolved lexical ambiguity
+  mapping: MAT, CRE, STR, DAT, MIN, LIF, or ORI by changed domain
+  rationale: English transform is cross-domain.
+- number: 71
+  concept: convert energy
+  classification: composition
+  mapping: MAT state change + later energy relationship/quantity
+  rationale: Energy-specific conversion is narrower than the block invariant.
+- number: 72
+  concept: create
+  classification: canonical/future other family
+  mapping: CRE
+  rationale: Creation is not equivalent to physical change.
+- number: 73
+  concept: destroy
+  classification: composition
+  mapping: WRN/CRE/ORI + MAT physical change as applicable
+  rationale: Destruction includes loss and evaluation.
+- number: 74
+  concept: data mutation
+  classification: canonical/future other family
+  mapping: DAT/LOG
+  rationale: Abstract information change is not Matter.
+- number: 75
+  concept: move
+  classification: canonical/future other family
+  mapping: MOV
+  rationale: Position change alone is Motion.
+- number: 76
+  concept: temperature rise of five degrees
+  classification: grammar or quantity
+  mapping: MAT active/completed change + thermal direction + quantity 5
+  rationale: Magnitude requires quantity grammar.
+- number: 77
+  concept: possible melting scheduled tomorrow
+  classification: composition
+  mapping: MAT:102/112/122 + LOG schedule + ORI/reference time
+  rationale: Lexical potential does not encode schedule.
+- number: 78
+  concept: material change probability
+  classification: grammar or quantity
+  mapping: MAT potential process + LOG probability value
+  rationale: Probability is not lexical trit 2.
+- number: 79
+  concept: finished changing but result unknown
+  classification: composition
+  mapping: MAT:100/110/120[1] + DAT/LOG unresolved result
+  rationale: Completed event and unknown result are independent.
+- number: 80
+  concept: change paused midway
+  classification: composition
+  mapping: MAT active root with runtime/state/timing grammar
+  rationale: Paused execution is not automatically lexical potential.
+- number: 81
+  concept: no physical change
+  classification: root plus runtime
+  mapping: appropriate MAT process root [0]
+  rationale: Runtime zero negates the selected process assertion.
+- number: 82
+  concept: uncertain whether change completed
+  classification: root plus runtime
+  mapping: MAT:100/110/120[2]/num
+  rationale: Runtime 2 qualifies the completion claim; it does not select potential
+    process.
+coverage_summary:
+  direct proposed root: 23
+  composition: 37
+  canonical/future other family: 15
+  unresolved lexical ambiguity: 3
+  grammar or quantity: 2
+  root plus runtime: 2

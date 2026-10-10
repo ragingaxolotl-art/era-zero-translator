@@ -1,0 +1,306 @@
+---
+metadata:
+  title: CON:100–122 English coverage and routing tests
+  status: review_evidence_not_translation_dictionary
+  range: CON:100–122
+  test_count: 62
+  no_forced_atomization: true
+tests:
+- test_id: CON1-T001
+  english_concept: say
+  routing: one_root_or_compound
+  analysis: CON:100/101/102 supplies source expression by phase; DAT supplies what
+    is said and LIF identifies the speaker.
+- test_id: CON1-T002
+  english_concept: speak
+  routing: one_root_or_compound
+  analysis: Active speaking maps to CON:101 when only communicative expression matters;
+    voice production adds MAT and a living speaker adds LIF.
+- test_id: CON1-T003
+  english_concept: tell
+  routing: compound
+  analysis: Source expression plus explicit target endpoint and DAT content; tell
+    is not a single atom.
+- test_id: CON1-T004
+  english_concept: state
+  routing: compound
+  analysis: DAT proposition plus source expression; LOG contour may mark assertion.
+- test_id: CON1-T005
+  english_concept: ask
+  routing: compound
+  analysis: DAT question content plus source expression and rising/query contour.
+- test_id: CON1-T006
+  english_concept: request
+  routing: compound
+  analysis: DAT/LOG requested operation plus source expression toward a target.
+- test_id: CON1-T007
+  english_concept: answer
+  routing: compound
+  analysis: A source expression related by LOG/DAT to a prior question.
+- test_id: CON1-T008
+  english_concept: reply
+  routing: compound
+  analysis: Source expression whose relation to an earlier exchange is explicit; not
+    a new atomic process.
+- test_id: CON1-T009
+  english_concept: publish
+  routing: one_root_or_compound
+  analysis: CON:100/101/102 for source expression; DAT content and a shared or target
+    context are separate arguments.
+- test_id: CON1-T010
+  english_concept: send
+  routing: one_root_or_compound
+  analysis: CON:101 covers ongoing source expression in communicative sense; physical
+    transport requires MAT/MOV and content requires DAT.
+- test_id: CON1-T011
+  english_concept: emit
+  routing: different_family_or_compound
+  analysis: Pure physical emission is MAT; communicative emission is MAT plus CON:100/101/102.
+- test_id: CON1-T012
+  english_concept: transmit
+  routing: compound
+  analysis: Communicative source expression plus MAT/MOV carrier propagation when
+    transmission emphasizes the path.
+- test_id: CON1-T013
+  english_concept: finish sending
+  routing: one_root_or_compound
+  analysis: CON:100 completes source expression; delivery or target uptake must be
+    separately asserted.
+- test_id: CON1-T014
+  english_concept: could speak
+  routing: one_root_plus_grammar
+  analysis: CON:102[1] can assert a nonactualized source expression; ability, permission,
+    and future schedule require separate roots or grammar.
+- test_id: CON1-T015
+  english_concept: draft
+  routing: different_family
+  analysis: CRE/DAT owns composing an unexpressed information object; drafting is
+    not source expression.
+- test_id: CON1-T016
+  english_concept: queue a message
+  routing: different_family_or_compound
+  analysis: DAT/STR/LOG owns queue placement; combine with CON:102 or CON:112 only
+    if a nonactualized exchange is also asserted.
+- test_id: CON1-T017
+  english_concept: schedule a send
+  routing: compound
+  analysis: LOG/ORI scheduling plus a nonactualized CON source expression; the schedule
+    is not inside CON:102.
+- test_id: CON1-T018
+  english_concept: hear
+  routing: compound
+  analysis: MAT perception and MIN attention may combine with CON:110/111 target reception;
+    hearing is not always communicative.
+- test_id: CON1-T019
+  english_concept: receive
+  routing: one_root_or_compound
+  analysis: CON:110/111/112 owns communicative target uptake by phase; DAT storage
+    or MAT physical acquisition may need other families.
+- test_id: CON1-T020
+  english_concept: deliver
+  routing: compound
+  analysis: Completed source expression plus completed target reception and explicit
+    expression identity; delivery is not collapsed into one endpoint's act.
+- test_id: CON1-T021
+  english_concept: read a message
+  routing: compound
+  analysis: CON target reception plus DAT text and MIN perception/interpretation.
+- test_id: CON1-T022
+  english_concept: listen
+  routing: compound
+  analysis: CON:111 target reception plus MIN active attention; either condition can
+    occur without the other.
+- test_id: CON1-T023
+  english_concept: understand
+  routing: different_family
+  analysis: MIN owns comprehension even when a CON reception process supplied the
+    expression.
+- test_id: CON1-T024
+  english_concept: acknowledge
+  routing: compound
+  analysis: A new source expression related by LOG/DAT to a completed reception; acknowledgement
+    is not reception itself.
+- test_id: CON1-T025
+  english_concept: ignore
+  routing: compound_or_different_family
+  analysis: A possible or actual CON reception combined with denied MIN attention;
+    context determines whether reception occurred.
+- test_id: CON1-T026
+  english_concept: miss a message
+  routing: compound
+  analysis: Denied or failed CON reception plus WRN and DAT message identity.
+- test_id: CON1-T027
+  english_concept: could receive
+  routing: one_root_plus_grammar
+  analysis: CON:112[1] states nonactualized reception; capacity, permission, schedule,
+    and probability remain separate.
+- test_id: CON1-T028
+  english_concept: subscribe
+  routing: future_con_relation_or_compound
+  analysis: Subscription is a persistent relation/capacity involving CON:2xx plus
+    LOG/DAT topic identity, not target reception.
+- test_id: CON1-T029
+  english_concept: broadcast
+  routing: one_root_or_compound
+  analysis: CON:120/121/122 owns shared distribution by phase; carrier, content, and
+    channel are separate.
+- test_id: CON1-T030
+  english_concept: multicast
+  routing: compound
+  analysis: Shared distribution plus an explicitly delimited endpoint set and LOG/STR
+    routing.
+- test_id: CON1-T031
+  english_concept: announce
+  routing: compound
+  analysis: DAT announcement content plus source expression or shared distribution
+    depending on scope.
+- test_id: CON1-T032
+  english_concept: notify
+  routing: compound
+  analysis: DAT notice plus source expression and target reception relation; WRN may
+    add salience.
+- test_id: CON1-T033
+  english_concept: circulate information
+  routing: compound
+  analysis: Repeated or networked shared distribution plus DAT content and contour/loop
+    grammar.
+- test_id: CON1-T034
+  english_concept: share
+  routing: compound_or_one_root
+  analysis: CON:121 fits active shared distribution of an expression; sharing possession,
+    matter, or access belongs elsewhere.
+- test_id: CON1-T035
+  english_concept: stream
+  routing: compound
+  analysis: DAT sequence plus ongoing source expression/shared distribution and target
+    reception as separately assertable processes.
+- test_id: CON1-T036
+  english_concept: fan out
+  routing: one_root_or_compound
+  analysis: CON:121 provides active shared distribution; topology and routing policy
+    add STR/LOG.
+- test_id: CON1-T037
+  english_concept: finish broadcasting
+  routing: one_root
+  analysis: CON:120 when shared availability completed; it does not guarantee every
+    endpoint received the expression.
+- test_id: CON1-T038
+  english_concept: possible broadcast
+  routing: one_root_plus_grammar
+  analysis: CON:122[1] affirms nonactualized shared distribution without asserting
+    plan, queue, or future event.
+- test_id: CON1-T039
+  english_concept: conversation
+  routing: compound
+  analysis: Alternating source expression and target reception among endpoints in
+    a shared channel, often with overlap and timing grammar.
+- test_id: CON1-T040
+  english_concept: dialogue
+  routing: compound
+  analysis: Reciprocal CON processes plus participant relations; no one root owns
+    reciprocity.
+- test_id: CON1-T041
+  english_concept: negotiate
+  routing: compound
+  analysis: Multiple expression/reception cycles plus LOG proposals, constraints,
+    and possible MIN revisions.
+- test_id: CON1-T042
+  english_concept: agree
+  routing: different_family_or_future_relation
+  analysis: Agreement is a MIN/LOG state or future CON:2xx relationship, not shared
+    distribution.
+- test_id: CON1-T043
+  english_concept: synchronize
+  routing: compound_or_different_family
+  analysis: Alignment belongs to STR/DAT/LOG/MIN according to what is synchronized;
+    communication may be instrumental.
+- test_id: CON1-T044
+  english_concept: handshake
+  routing: compound
+  analysis: Reciprocal source/reception processes plus LOG protocol and CON:2xx compatibility.
+- test_id: CON1-T045
+  english_concept: open a channel
+  routing: compound_or_different_family
+  analysis: STR/CON:0xx/2xx lifecycle relation; not source expression.
+- test_id: CON1-T046
+  english_concept: connect
+  routing: future_con_relation_or_compound
+  analysis: Establishing connectivity belongs to CON:2xx with STR/REP as needed, not
+    this process layer's exchange invariant.
+- test_id: CON1-T047
+  english_concept: route
+  routing: different_family_or_compound
+  analysis: STR/LOG selects paths; CON shared distribution can use routing without
+    owning it.
+- test_id: CON1-T048
+  english_concept: forward
+  routing: compound
+  analysis: Target reception followed by a new source expression, linked to the same
+    DAT content.
+- test_id: CON1-T049
+  english_concept: relay
+  routing: compound
+  analysis: A participant acts as target then source; add MAT/MOV if physical transport
+    matters.
+- test_id: CON1-T050
+  english_concept: transport a letter
+  routing: compound
+  analysis: MOV/MAT owns physical displacement and object; CON source/reception processes
+    describe communicative use.
+- test_id: CON1-T051
+  english_concept: upload
+  routing: compound
+  analysis: DAT object transfer plus CON source expression/target reception and STR
+    destination context.
+- test_id: CON1-T052
+  english_concept: download
+  routing: compound
+  analysis: DAT object acquisition plus CON target reception; storage and physical
+    transfer stay separate.
+- test_id: CON1-T053
+  english_concept: copy data
+  routing: different_family
+  analysis: DAT/CRE owns duplication; communication processes are optional.
+- test_id: CON1-T054
+  english_concept: store a message
+  routing: different_family
+  analysis: DAT/STR owns persistence in a container; reception may precede storage
+    but is distinct.
+- test_id: CON1-T055
+  english_concept: encrypt a message
+  routing: different_family
+  analysis: LOG/DAT transformation; encryption can precede source expression.
+- test_id: CON1-T056
+  english_concept: decode a message
+  routing: different_family
+  analysis: DAT/MIN/LOG interpretation or transformation after reception.
+- test_id: CON1-T057
+  english_concept: telepathy
+  routing: compound
+  analysis: Source expression and target reception with unspecified carrier; no new
+    atomic root is required.
+- test_id: CON1-T058
+  english_concept: communicate
+  routing: underspecified_compound
+  analysis: English communicate may mean source expression, target reception, shared
+    distribution, or reciprocal exchange; translator must resolve the graph.
+- test_id: CON1-T059
+  english_concept: contact
+  routing: underspecified_compound
+  analysis: May mean endpoint relation, source expression, target reception, or successful
+    exchange; do not guess one atom.
+- test_id: CON1-T060
+  english_concept: message
+  routing: different_family_or_compound
+  analysis: As a noun it is DAT; as a verb it is DAT content plus CON source expression
+    toward a target.
+- test_id: CON1-T061
+  english_concept: signal
+  routing: different_family_or_compound
+  analysis: DAT owns the sign, MAT the carrier, and CON the communicative exchange
+    process.
+- test_id: CON1-T062
+  english_concept: unknown exchange phase
+  routing: unresolved_gap
+  analysis: If completed, active, or nonactualized phase cannot be determined, the
+    translator must preserve ambiguity or ask for clarification.

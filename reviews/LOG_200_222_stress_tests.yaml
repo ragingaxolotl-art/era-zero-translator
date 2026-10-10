@@ -1,0 +1,609 @@
+---
+metadata:
+  title: LOG:200–222 English coverage and routing tests
+  status: review_evidence_not_translation_dictionary
+  range: LOG:200–222
+  test_count: 123
+  no_forced_atomization: true
+tests:
+- test_id: LOG2-T001
+  english_concept: evaluable
+  routing: one_root
+  analysis: LOG:2xx by scope and status asserts the typed capacity or applicability
+    relation enabling formal evaluation.
+- test_id: LOG2-T002
+  english_concept: checkable
+  routing: one_root_or_compound
+  analysis: Use LOG:2xx for formal checkability; sensing, data availability, and observer
+    knowledge remain separate.
+- test_id: LOG2-T003
+  english_concept: decidable
+  routing: compound_or_later_specialization
+  analysis: LOG internal evaluability is necessary for contextual decidability, but
+    termination and algorithmic guarantees require DAT and later technical vocabulary.
+- test_id: LOG2-T004
+  english_concept: computable
+  routing: compound_or_later_specialization
+  analysis: Computability requires LOG evaluability plus DAT algorithm and representation
+    semantics; resource or complexity claims remain separate.
+- test_id: LOG2-T005
+  english_concept: applicable rule
+  routing: one_root
+  analysis: LOG:210–212 states a relation between one specified constraint and one
+    distinct target according to lexical status.
+- test_id: LOG2-T006
+  english_concept: constraint applies now
+  routing: one_root
+  analysis: LOG:211 states that the constraint-target applicability relation is presently
+    operative.
+- test_id: LOG2-T007
+  english_concept: constraint could apply later
+  routing: compound
+  analysis: LOG:212 may assert an existing latent relation, while ORI separately supplies
+    future time; mere possibility alone is insufficient.
+- test_id: LOG2-T008
+  english_concept: eligible for evaluation
+  routing: one_root_or_compound
+  analysis: LOG:2xx can express formal evaluability; institutional eligibility or
+    permission requires CON, LIF, or authority compounds.
+- test_id: LOG2-T009
+  english_concept: jointly evaluable
+  routing: one_root
+  analysis: LOG:220–222 applies when multiple participants can undergo one coordinated
+    joint evaluation under a shared regime.
+- test_id: LOG2-T010
+  english_concept: independently evaluable participants
+  routing: multiple_roots_not_systemic
+  analysis: Use separate LOG:2x0 claims; independent capacities do not establish systemic
+    joint-evaluability.
+- test_id: LOG2-T011
+  english_concept: formal consequence
+  routing: reserved_relation
+  analysis: Entailment or implication is intentionally not collapsed into general
+    evaluability and remains compound or later specialization.
+- test_id: LOG2-T012
+  english_concept: entails
+  routing: reserved_relation
+  analysis: Premise-to-conclusion entailment requires distinct consequence roles and
+    is not the LOG:2xx affordance center.
+- test_id: LOG2-T013
+  english_concept: implies
+  routing: reserved_relation
+  analysis: Implication is a consequence relation rather than capacity to evaluate
+    a bearer or target.
+- test_id: LOG2-T014
+  english_concept: consistent
+  routing: reserved_relation
+  analysis: Consistency is a result or relation among formal contents; an inconsistent
+    object may still be evaluable.
+- test_id: LOG2-T015
+  english_concept: compatible
+  routing: compound_or_different_family
+  analysis: Formal compatibility may support applicability, while structural or material
+    compatibility belongs to STR or MAT.
+- test_id: LOG2-T016
+  english_concept: satisfiable
+  routing: compound_or_later_specialization
+  analysis: Satisfiability requires a formal content and model relation beyond generic
+    evaluation affordance.
+- test_id: LOG2-T017
+  english_concept: permitted
+  routing: compound_or_different_family
+  analysis: Permission requires policy, authority, and often participants; evaluability
+    is independent of authorization.
+- test_id: LOG2-T018
+  english_concept: authorized
+  routing: compound_or_different_family
+  analysis: CON/LIF/DAT supplies principal and authority semantics; LOG:2xx does not
+    itself grant access.
+- test_id: LOG2-T019
+  english_concept: possible
+  routing: different_family
+  analysis: ORI owns unrestricted possibility; LOG:2xx asserts a specific typed evaluation
+    affordance that actually exists.
+- test_id: LOG2-T020
+  english_concept: probable evaluation
+  routing: different_family
+  analysis: ORI or runtime confidence expresses probability; no lexical LOG:2xx status
+    means probable.
+- test_id: LOG2-T021
+  english_concept: evaluation running
+  routing: process_layer
+  analysis: LOG:1xx owns actual evaluation phase; LOG:2xx only states capacity or
+    applicability.
+- test_id: LOG2-T022
+  english_concept: evaluation completed
+  routing: process_layer
+  analysis: LOG:1x0 owns completion and determination of a result; affordance alone
+    entails no process.
+- test_id: LOG2-T023
+  english_concept: rule exists
+  routing: entity_layer
+  analysis: LOG:0xx owns rule identity; a defined rule may lack an applicable target
+    or evaluator.
+- test_id: LOG2-T024
+  english_concept: rule operative
+  routing: entity_layer
+  analysis: LOG:0x1 owns operation of a constraint; an operative rule need not be
+    evaluable for a particular target.
+- test_id: LOG2-T025
+  english_concept: accepted
+  routing: result_not_affordance
+  analysis: Acceptance is result polarity and is not entailed by evaluability or applicability.
+- test_id: LOG2-T026
+  english_concept: rejected
+  routing: result_not_affordance
+  analysis: Rejection is result polarity and must remain separate from LOG:2xx.
+- test_id: LOG2-T027
+  english_concept: 'true'
+  routing: result_or_relation
+  analysis: Truth is not capacity for evaluation and is not selected by persistent,
+    operative, or latent status.
+- test_id: LOG2-T028
+  english_concept: proof exists
+  routing: compound
+  analysis: DAT owns proof representation; consequence and verification relations
+    remain distinct from evaluability.
+- test_id: LOG2-T029
+  english_concept: algorithm exists
+  routing: compound
+  analysis: DAT/CRE owns the algorithm artifact or construction; LOG:2xx may state
+    that an evaluation is enabled.
+- test_id: LOG2-T030
+  english_concept: resources available
+  routing: compound
+  analysis: DAT/MAT owns computational resources; their availability may realize operative
+    evaluability but is not identical to it.
+- test_id: LOG2-T031
+  english_concept: persistent internal evaluability
+  routing: one_root
+  analysis: LOG:200 preserves one entity's internal formal-evaluation capacity independently
+    of current operation.
+- test_id: LOG2-T032
+  english_concept: operative internal evaluability
+  routing: one_root
+  analysis: LOG:201 states that one entity's internal formal-evaluation capacity is
+    presently operative.
+- test_id: LOG2-T033
+  english_concept: latent internal evaluability
+  routing: one_root
+  analysis: LOG:202 states that the capacity exists without being presently operative.
+- test_id: LOG2-T034
+  english_concept: persistent constraint-target applicability
+  routing: one_root
+  analysis: LOG:210 preserves one specified constraint-target applicability relation
+    independently of present operation.
+- test_id: LOG2-T035
+  english_concept: operative constraint-target applicability
+  routing: one_root
+  analysis: LOG:211 states that one specified constraint presently applies as an evaluation-enabling
+    relation to one target.
+- test_id: LOG2-T036
+  english_concept: latent constraint-target applicability
+  routing: one_root
+  analysis: LOG:212 states that the relation exists without presently enabling target
+    evaluation.
+- test_id: LOG2-T037
+  english_concept: persistent systemic joint-evaluability
+  routing: one_root
+  analysis: LOG:220 preserves one coordinated joint-evaluation capacity across participants
+    under one regime.
+- test_id: LOG2-T038
+  english_concept: operative systemic joint-evaluability
+  routing: one_root
+  analysis: LOG:221 states that the coordinated joint-evaluation capacity is presently
+    operative.
+- test_id: LOG2-T039
+  english_concept: latent systemic joint-evaluability
+  routing: one_root
+  analysis: LOG:222 states that the capacity exists without being presently operative.
+- test_id: LOG2-T040
+  english_concept: persistent plus operative evaluability
+  routing: two_compatible_roots
+  analysis: LOG:200 and LOG:201 may co-occur because persistent identity is neutral
+    about current operation.
+- test_id: LOG2-T041
+  english_concept: persistent plus latent evaluability
+  routing: two_compatible_roots
+  analysis: LOG:200 and LOG:202 may co-occur while the capacity is not presently operative.
+- test_id: LOG2-T042
+  english_concept: operative and latent evaluability simultaneously
+  routing: invalid_same_reference_claim
+  analysis: LOG:201 and LOG:202 are mutually exclusive for the same capacity at one
+    reference time.
+- test_id: LOG2-T043
+  english_concept: persistent plus operative applicability
+  routing: two_compatible_roots
+  analysis: LOG:210 and LOG:211 may co-occur because persistence and current operation
+    are independent claims.
+- test_id: LOG2-T044
+  english_concept: persistent plus latent applicability
+  routing: two_compatible_roots
+  analysis: LOG:210 and LOG:212 may co-occur while the relation is nonoperative.
+- test_id: LOG2-T045
+  english_concept: operative and latent applicability simultaneously
+  routing: invalid_same_reference_claim
+  analysis: LOG:211 and LOG:212 are mutually exclusive at one reference time.
+- test_id: LOG2-T046
+  english_concept: persistent plus operative joint-evaluability
+  routing: two_compatible_roots
+  analysis: LOG:220 and LOG:221 may co-occur because identity persistence is neutral
+    about current operation.
+- test_id: LOG2-T047
+  english_concept: persistent plus latent joint-evaluability
+  routing: two_compatible_roots
+  analysis: LOG:220 and LOG:222 may co-occur while the systemic capacity is nonoperative.
+- test_id: LOG2-T048
+  english_concept: operative and latent joint-evaluability simultaneously
+  routing: invalid_same_reference_claim
+  analysis: LOG:221 and LOG:222 are mutually exclusive at one reference time.
+- test_id: LOG2-T049
+  english_concept: latent evaluability affirmed
+  routing: runtime_and_lexical
+  analysis: LOG:202[1] affirms an existing nonoperative capacity without adding uncertainty
+    or future time.
+- test_id: LOG2-T050
+  english_concept: operative evaluability uncertain
+  routing: runtime_and_lexical
+  analysis: LOG:201[2]/num leaves current operation unresolved while preserving the
+    operative lexical selection.
+- test_id: LOG2-T051
+  english_concept: persistent evaluability denied
+  routing: runtime_and_lexical
+  analysis: LOG:200[0] denies persistent identity without selecting the operative
+    or latent sibling.
+- test_id: LOG2-T052
+  english_concept: unknown evaluability
+  routing: runtime_or_epistemic
+  analysis: Use runtime [2]/num or MIN/DAT evidence; lexical latency does not mean
+    unknown.
+- test_id: LOG2-T053
+  english_concept: hidden applicability
+  routing: compound
+  analysis: LOG:212 supplies nonoperation only; MIN/DAT separately states that observers
+    have not discovered the relation.
+- test_id: LOG2-T054
+  english_concept: scheduled activation
+  routing: compound
+  analysis: LOG:2x2 plus ORI/DAT may describe scheduled activation; lexical latency
+    never means scheduled.
+- test_id: LOG2-T055
+  english_concept: evaluation affordance versus rule
+  routing: scope_resolution_test
+  analysis: LOG:2xx owns enablement while LOG:0xx owns the criterion or regime entity.
+- test_id: LOG2-T056
+  english_concept: evaluation affordance versus process
+  routing: scope_resolution_test
+  analysis: LOG:2xx owns enablement while LOG:1xx owns actual evaluation by phase.
+- test_id: LOG2-T057
+  english_concept: evaluability versus consequence
+  routing: scope_resolution_test
+  analysis: Capacity to evaluate does not entail any premise-to-conclusion relation.
+- test_id: LOG2-T058
+  english_concept: evaluability versus consistency
+  routing: scope_resolution_test
+  analysis: An object can be evaluable whether it proves consistent or inconsistent.
+- test_id: LOG2-T059
+  english_concept: applicability versus permission
+  routing: scope_resolution_test
+  analysis: A constraint may formally apply even when no authority permits acting
+    on the result.
+- test_id: LOG2-T060
+  english_concept: evaluability versus data availability
+  routing: scope_resolution_test
+  analysis: DAT owns inputs and resources; LOG states the typed evaluation affordance
+    realized through them.
+- test_id: LOG2-T061
+  english_concept: evaluability versus understanding
+  routing: scope_resolution_test
+  analysis: MIN owns comprehension and confidence; formal evaluability can hold without
+    human understanding.
+- test_id: LOG2-T062
+  english_concept: evaluability versus physical capability
+  routing: scope_resolution_test
+  analysis: MAT/STR owns implementation capacity; LOG owns only formal-evaluation
+    enablement.
+- test_id: LOG2-T063
+  english_concept: evaluability versus restoration
+  routing: scope_resolution_test
+  analysis: REP owns restoration affordance; LOG may state that the restoration is
+    formally evaluable.
+- test_id: LOG2-T064
+  english_concept: evaluability versus general possibility
+  routing: scope_resolution_test
+  analysis: LOG:2xx asserts a specific existing affordance; ORI owns unrestricted
+    possibility, necessity, and probability.
+- test_id: LOG2-T065
+  english_concept: one constraint applicable to many unrelated targets
+  routing: multiple_relations
+  analysis: Use separate LOG:2x1 claims unless one shared regime establishes coordinated
+    joint-evaluability.
+- test_id: LOG2-T066
+  english_concept: shared schema validation capability
+  routing: compound
+  analysis: LOG systemic joint-evaluability plus DAT schema and representations; schema
+    identity is not absorbed into LOG.
+- test_id: LOG2-T067
+  english_concept: distributed compliance capability
+  routing: one_root_or_compound
+  analysis: LOG:22x applies only when participants can undergo one coordinated joint
+    evaluation under one shared regime.
+- test_id: LOG2-T068
+  english_concept: network reachability only
+  routing: different_family
+  analysis: CON reachability may implement evaluation but does not entail joint-evaluability.
+- test_id: LOG2-T069
+  english_concept: common rule without joint evaluation
+  routing: entity_not_affordance
+  analysis: LOG:02x may define a shared regime even when LOG:22x joint-evaluability
+    is absent.
+- test_id: LOG2-T070
+  english_concept: persistent internal formal evaluability identity
+  routing: one_root
+  analysis: LOG:200[1] directly affirms the root's invariant without adding rule storage,
+    evaluation process, result polarity, or authority.
+- test_id: LOG2-T071
+  english_concept: persistent internal formal evaluability uncertain
+  routing: runtime
+  analysis: LOG:200[2]/num leaves this exact persistent affordance claim unresolved
+    and does not select a lexical sibling.
+- test_id: LOG2-T072
+  english_concept: persistent internal formal evaluability with data
+  routing: compound
+  analysis: DAT supplies inputs, algorithms, or resources while LOG:200 supplies formal-evaluation
+    enablement.
+- test_id: LOG2-T073
+  english_concept: persistent internal formal evaluability under rule
+  routing: compound
+  analysis: LOG:0xx supplies the criterion or regime while LOG:200 supplies the corresponding
+    evaluation affordance.
+- test_id: LOG2-T074
+  english_concept: persistent internal formal evaluability believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while LOG:200 remains an objective formal-affordance
+    claim.
+- test_id: LOG2-T075
+  english_concept: persistent internal formal evaluability actualized
+  routing: compound
+  analysis: LOG:1xx supplies actual evaluation phase while LOG:200 supplies only the
+    enabling capacity or applicability relation.
+- test_id: LOG2-T076
+  english_concept: operative internal formal evaluability identity
+  routing: one_root
+  analysis: LOG:201[1] directly affirms the root's invariant without adding rule storage,
+    evaluation process, result polarity, or authority.
+- test_id: LOG2-T077
+  english_concept: operative internal formal evaluability uncertain
+  routing: runtime
+  analysis: LOG:201[2]/num leaves this exact operative affordance claim unresolved
+    and does not select a lexical sibling.
+- test_id: LOG2-T078
+  english_concept: operative internal formal evaluability with data
+  routing: compound
+  analysis: DAT supplies inputs, algorithms, or resources while LOG:201 supplies formal-evaluation
+    enablement.
+- test_id: LOG2-T079
+  english_concept: operative internal formal evaluability under rule
+  routing: compound
+  analysis: LOG:0xx supplies the criterion or regime while LOG:201 supplies the corresponding
+    evaluation affordance.
+- test_id: LOG2-T080
+  english_concept: operative internal formal evaluability believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while LOG:201 remains an objective formal-affordance
+    claim.
+- test_id: LOG2-T081
+  english_concept: operative internal formal evaluability actualized
+  routing: compound
+  analysis: LOG:1xx supplies actual evaluation phase while LOG:201 supplies only the
+    enabling capacity or applicability relation.
+- test_id: LOG2-T082
+  english_concept: latent internal formal evaluability identity
+  routing: one_root
+  analysis: LOG:202[1] directly affirms the root's invariant without adding rule storage,
+    evaluation process, result polarity, or authority.
+- test_id: LOG2-T083
+  english_concept: latent internal formal evaluability uncertain
+  routing: runtime
+  analysis: LOG:202[2]/num leaves this exact latent affordance claim unresolved and
+    does not select a lexical sibling.
+- test_id: LOG2-T084
+  english_concept: latent internal formal evaluability with data
+  routing: compound
+  analysis: DAT supplies inputs, algorithms, or resources while LOG:202 supplies formal-evaluation
+    enablement.
+- test_id: LOG2-T085
+  english_concept: latent internal formal evaluability under rule
+  routing: compound
+  analysis: LOG:0xx supplies the criterion or regime while LOG:202 supplies the corresponding
+    evaluation affordance.
+- test_id: LOG2-T086
+  english_concept: latent internal formal evaluability believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while LOG:202 remains an objective formal-affordance
+    claim.
+- test_id: LOG2-T087
+  english_concept: latent internal formal evaluability actualized
+  routing: compound
+  analysis: LOG:1xx supplies actual evaluation phase while LOG:202 supplies only the
+    enabling capacity or applicability relation.
+- test_id: LOG2-T088
+  english_concept: persistent constraint-target applicability identity
+  routing: one_root
+  analysis: LOG:210[1] directly affirms the root's invariant without adding rule storage,
+    evaluation process, result polarity, or authority.
+- test_id: LOG2-T089
+  english_concept: persistent constraint-target applicability uncertain
+  routing: runtime
+  analysis: LOG:210[2]/num leaves this exact persistent affordance claim unresolved
+    and does not select a lexical sibling.
+- test_id: LOG2-T090
+  english_concept: persistent constraint-target applicability with data
+  routing: compound
+  analysis: DAT supplies inputs, algorithms, or resources while LOG:210 supplies formal-evaluation
+    enablement.
+- test_id: LOG2-T091
+  english_concept: persistent constraint-target applicability under rule
+  routing: compound
+  analysis: LOG:0xx supplies the criterion or regime while LOG:210 supplies the corresponding
+    evaluation affordance.
+- test_id: LOG2-T092
+  english_concept: persistent constraint-target applicability believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while LOG:210 remains an objective formal-affordance
+    claim.
+- test_id: LOG2-T093
+  english_concept: persistent constraint-target applicability actualized
+  routing: compound
+  analysis: LOG:1xx supplies actual evaluation phase while LOG:210 supplies only the
+    enabling capacity or applicability relation.
+- test_id: LOG2-T094
+  english_concept: operative constraint-target applicability identity
+  routing: one_root
+  analysis: LOG:211[1] directly affirms the root's invariant without adding rule storage,
+    evaluation process, result polarity, or authority.
+- test_id: LOG2-T095
+  english_concept: operative constraint-target applicability uncertain
+  routing: runtime
+  analysis: LOG:211[2]/num leaves this exact operative affordance claim unresolved
+    and does not select a lexical sibling.
+- test_id: LOG2-T096
+  english_concept: operative constraint-target applicability with data
+  routing: compound
+  analysis: DAT supplies inputs, algorithms, or resources while LOG:211 supplies formal-evaluation
+    enablement.
+- test_id: LOG2-T097
+  english_concept: operative constraint-target applicability under rule
+  routing: compound
+  analysis: LOG:0xx supplies the criterion or regime while LOG:211 supplies the corresponding
+    evaluation affordance.
+- test_id: LOG2-T098
+  english_concept: operative constraint-target applicability believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while LOG:211 remains an objective formal-affordance
+    claim.
+- test_id: LOG2-T099
+  english_concept: operative constraint-target applicability actualized
+  routing: compound
+  analysis: LOG:1xx supplies actual evaluation phase while LOG:211 supplies only the
+    enabling capacity or applicability relation.
+- test_id: LOG2-T100
+  english_concept: latent constraint-target applicability identity
+  routing: one_root
+  analysis: LOG:212[1] directly affirms the root's invariant without adding rule storage,
+    evaluation process, result polarity, or authority.
+- test_id: LOG2-T101
+  english_concept: latent constraint-target applicability uncertain
+  routing: runtime
+  analysis: LOG:212[2]/num leaves this exact latent affordance claim unresolved and
+    does not select a lexical sibling.
+- test_id: LOG2-T102
+  english_concept: latent constraint-target applicability with data
+  routing: compound
+  analysis: DAT supplies inputs, algorithms, or resources while LOG:212 supplies formal-evaluation
+    enablement.
+- test_id: LOG2-T103
+  english_concept: latent constraint-target applicability under rule
+  routing: compound
+  analysis: LOG:0xx supplies the criterion or regime while LOG:212 supplies the corresponding
+    evaluation affordance.
+- test_id: LOG2-T104
+  english_concept: latent constraint-target applicability believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while LOG:212 remains an objective formal-affordance
+    claim.
+- test_id: LOG2-T105
+  english_concept: latent constraint-target applicability actualized
+  routing: compound
+  analysis: LOG:1xx supplies actual evaluation phase while LOG:212 supplies only the
+    enabling capacity or applicability relation.
+- test_id: LOG2-T106
+  english_concept: persistent systemic joint-evaluability identity
+  routing: one_root
+  analysis: LOG:220[1] directly affirms the root's invariant without adding rule storage,
+    evaluation process, result polarity, or authority.
+- test_id: LOG2-T107
+  english_concept: persistent systemic joint-evaluability uncertain
+  routing: runtime
+  analysis: LOG:220[2]/num leaves this exact persistent affordance claim unresolved
+    and does not select a lexical sibling.
+- test_id: LOG2-T108
+  english_concept: persistent systemic joint-evaluability with data
+  routing: compound
+  analysis: DAT supplies inputs, algorithms, or resources while LOG:220 supplies formal-evaluation
+    enablement.
+- test_id: LOG2-T109
+  english_concept: persistent systemic joint-evaluability under rule
+  routing: compound
+  analysis: LOG:0xx supplies the criterion or regime while LOG:220 supplies the corresponding
+    evaluation affordance.
+- test_id: LOG2-T110
+  english_concept: persistent systemic joint-evaluability believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while LOG:220 remains an objective formal-affordance
+    claim.
+- test_id: LOG2-T111
+  english_concept: persistent systemic joint-evaluability actualized
+  routing: compound
+  analysis: LOG:1xx supplies actual evaluation phase while LOG:220 supplies only the
+    enabling capacity or applicability relation.
+- test_id: LOG2-T112
+  english_concept: operative systemic joint-evaluability identity
+  routing: one_root
+  analysis: LOG:221[1] directly affirms the root's invariant without adding rule storage,
+    evaluation process, result polarity, or authority.
+- test_id: LOG2-T113
+  english_concept: operative systemic joint-evaluability uncertain
+  routing: runtime
+  analysis: LOG:221[2]/num leaves this exact operative affordance claim unresolved
+    and does not select a lexical sibling.
+- test_id: LOG2-T114
+  english_concept: operative systemic joint-evaluability with data
+  routing: compound
+  analysis: DAT supplies inputs, algorithms, or resources while LOG:221 supplies formal-evaluation
+    enablement.
+- test_id: LOG2-T115
+  english_concept: operative systemic joint-evaluability under rule
+  routing: compound
+  analysis: LOG:0xx supplies the criterion or regime while LOG:221 supplies the corresponding
+    evaluation affordance.
+- test_id: LOG2-T116
+  english_concept: operative systemic joint-evaluability believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while LOG:221 remains an objective formal-affordance
+    claim.
+- test_id: LOG2-T117
+  english_concept: operative systemic joint-evaluability actualized
+  routing: compound
+  analysis: LOG:1xx supplies actual evaluation phase while LOG:221 supplies only the
+    enabling capacity or applicability relation.
+- test_id: LOG2-T118
+  english_concept: latent systemic joint-evaluability identity
+  routing: one_root
+  analysis: LOG:222[1] directly affirms the root's invariant without adding rule storage,
+    evaluation process, result polarity, or authority.
+- test_id: LOG2-T119
+  english_concept: latent systemic joint-evaluability uncertain
+  routing: runtime
+  analysis: LOG:222[2]/num leaves this exact latent affordance claim unresolved and
+    does not select a lexical sibling.
+- test_id: LOG2-T120
+  english_concept: latent systemic joint-evaluability with data
+  routing: compound
+  analysis: DAT supplies inputs, algorithms, or resources while LOG:222 supplies formal-evaluation
+    enablement.
+- test_id: LOG2-T121
+  english_concept: latent systemic joint-evaluability under rule
+  routing: compound
+  analysis: LOG:0xx supplies the criterion or regime while LOG:222 supplies the corresponding
+    evaluation affordance.
+- test_id: LOG2-T122
+  english_concept: latent systemic joint-evaluability believed
+  routing: compound
+  analysis: MIN supplies belief or confidence while LOG:222 remains an objective formal-affordance
+    claim.
+- test_id: LOG2-T123
+  english_concept: latent systemic joint-evaluability actualized
+  routing: compound
+  analysis: LOG:1xx supplies actual evaluation phase while LOG:222 supplies only the
+    enabling capacity or applicability relation.

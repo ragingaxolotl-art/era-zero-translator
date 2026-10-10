@@ -1,0 +1,195 @@
+---
+metadata:
+  title: Era Zero Gate 4D Coverage and Ambiguity Metrics
+  version: 1.0.0
+  status: canonical_measurement_release
+  benchmark: Gate 4C exact canonical labels plus reviewed high-frequency senses
+  sense_index_fingerprint: 518054d1d531e526d8be4c22852b45796f3234fdcdeb90097afb1d1843e09f91
+  translator_started: false
+inventory:
+  total_senses: 436
+  total_lemmas: 419
+  canonical_atom_targets: 324
+  canonical_compound_targets: 28
+  reviewed_high_frequency_senses: 84
+route_coverage:
+  direct_atom: 358
+  direct_compound: 35
+  future_grammar: 8
+  future_semantic_ir: 24
+  unsupported_gap: 11
+  direct_lexical_percent: 90.14
+  structurally_routed_percent: 97.48
+  explicit_gap_percent: 2.52
+high_frequency_benchmark:
+  senses: 84
+  by_route:
+    semantic_ir: 24
+    grammar: 8
+    atom: 34
+    compound: 7
+    gap: 11
+  direct_lexical_percent: 48.81
+  eventual_structural_percent: 86.9
+  gap_percent: 13.1
+ambiguity:
+  lemmas_requiring_disambiguation: 41
+  lemma_ambiguity_percent: 9.79
+  lemmas_with_multiple_direct_targets:
+  - change
+  - exist
+  - receive
+  - send
+  - share
+  multiple_direct_target_count: 5
+  policy: Never choose the first candidate. Use sense ID, contextual constraints,
+    or explicit clarification.
+family_exact_label_coverage:
+  CON:
+    canonical_atoms: 27
+    exact_controlled_senses: 27
+    coverage_percent: 100.0
+  CRE:
+    canonical_atoms: 27
+    exact_controlled_senses: 27
+    coverage_percent: 100.0
+  DAT:
+    canonical_atoms: 27
+    exact_controlled_senses: 27
+    coverage_percent: 100.0
+  LIF:
+    canonical_atoms: 27
+    exact_controlled_senses: 27
+    coverage_percent: 100.0
+  LOG:
+    canonical_atoms: 27
+    exact_controlled_senses: 27
+    coverage_percent: 100.0
+  MAT:
+    canonical_atoms: 27
+    exact_controlled_senses: 27
+    coverage_percent: 100.0
+  MIN:
+    canonical_atoms: 27
+    exact_controlled_senses: 27
+    coverage_percent: 100.0
+  MOV:
+    canonical_atoms: 27
+    exact_controlled_senses: 27
+    coverage_percent: 100.0
+  ORI:
+    canonical_atoms: 27
+    exact_controlled_senses: 27
+    coverage_percent: 100.0
+  REP:
+    canonical_atoms: 27
+    exact_controlled_senses: 27
+    coverage_percent: 100.0
+  STR:
+    canonical_atoms: 27
+    exact_controlled_senses: 27
+    coverage_percent: 100.0
+  WRN:
+    canonical_atoms: 27
+    exact_controlled_senses: 27
+    coverage_percent: 100.0
+gaps:
+- lemma: food
+  sense_key: nutritive_material
+  definition: Material conventionally suitable for consumption to support life.
+- lemma: friend
+  sense_key: social_friendship
+  definition: A person standing in a socially recognized friendship relation.
+- lemma: have
+  sense_key: possession
+  definition: Stand in a possession or control relation.
+- lemma: home
+  sense_key: affective_social_center
+  definition: A socially or affectively anchored place of belonging.
+- lemma: home
+  sense_key: physical_dwelling
+  definition: A structure conventionally serving as a habitual dwelling.
+- lemma: know
+  sense_key: truth_entailing_knowledge
+  definition: Possess justified or truth-entailing knowledge.
+- lemma: move
+  sense_key: emotional_effect
+  definition: Cause an affective response.
+- lemma: safe
+  sense_key: acceptable_risk
+  definition: Below a contextually acceptable risk threshold.
+- lemma: think
+  sense_key: generic_cognition
+  definition: Engage in cognition not limited to model revision or attention.
+- lemma: 'true'
+  sense_key: truth_value
+  definition: Satisfying a truth condition.
+- lemma: water
+  sense_key: chemical_substance
+  definition: The substance H2O under ordinary reference conditions.
+grammar_dependencies:
+- - and
+  - coordination_all
+- - be
+  - copular_predication
+- - cause
+  - semantic_role
+- - have
+  - perfect_auxiliary
+- - many
+  - plural_quantity
+- - not
+  - negation
+- - one
+  - quantity_one
+- - or
+  - coordination_any
+semantic_ir_dependencies:
+- - after
+  - temporal_order
+- - become
+  - generic_transition
+- - before
+  - temporal_order
+- - build
+  - generate_composite_artifact
+- - change
+  - generic_state_transition
+- - continue
+  - persistence_of_occurrence
+- - cross
+  - boundary_traversal
+- - follow
+  - trajectory_tracking
+- - forget
+  - lose_access_to_representation
+- - future
+  - reference_time_after_now
+- - go
+  - abstract_transition
+- - if
+  - conditional
+- - move
+  - cause_target_displacement
+- - past
+  - reference_time_before_now
+- - pause
+  - temporary_suspension
+- - remember
+  - manifest_latent_representation
+- - return
+  - function_result
+- - return
+  - movement_to_prior_position
+- - run
+  - locomotion
+- - run
+  - machine_operation
+- - run
+  - program_execution
+- - stop
+  - cessation
+- - transport
+  - caused_target_movement
+- - wait
+  - deferred_action

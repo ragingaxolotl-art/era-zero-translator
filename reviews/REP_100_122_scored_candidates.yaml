@@ -1,0 +1,1505 @@
+---
+metadata:
+  title: REP:100–122 adversarial semantic candidates
+  status: approved_and_canonical_by_delegated_authority
+  architecture_version: '1.0'
+  range: REP:100–122
+  roots_reviewed: 9
+  candidate_architectures_per_root: 5
+  scored_categories:
+  - atomicity
+  - address_fit
+  - family_fit
+  - neighbor_separation
+  - cross_family_separation
+  - compound_usefulness
+  - everyday_language_coverage
+  - technical_coverage
+  generated_fields_changed: false
+  roots_canonicalized:
+  - REP:100
+  - REP:101
+  - REP:102
+  - REP:110
+  - REP:111
+  - REP:112
+  - REP:120
+  - REP:121
+  - REP:122
+  approval_record: migrations/REP_100_122_semantic_approval.yaml
+roots:
+- canonical_id: REP:100
+  fixed_generated_fields:
+    canonical_id: REP:100
+    universal_slot: completed inward process
+    family_qualified_transliteration: ya·kam
+    local_compact_root: kam
+    formal_carrier: ya-ki-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 2
+  current_meaning_rationale: The provisional choice follows the inward/self and completed
+    slot labels and favors familiar Repair language such as healing, correction, recalibration,
+    restoration, maintenance, and recovery.
+  candidates:
+  - candidate_id: current_phase2
+    title: self-repair complete
+    invariant_candidate: An entity has completed an inward process of healing, correction,
+      recalibration, or restoration.
+    analysis:
+      why_it_fits: The provisional choice follows the inward/self and completed slot
+        labels and favors familiar Repair language such as healing, correction, recalibration,
+        restoration, maintenance, and recovery.
+      useful_coverage: It reaches common talk about self-repair, target repair, system
+        recovery, maintenance cycles, queued work, and staged recovery.
+      semantic_territory_consumed: It mixes restorative transformation, maintenance,
+        rebuilding, possibility, schedules, preparation, plans, resources, coordination,
+        and stable results.
+      conflicts_or_future_limitations: The lexical 1x2 roots improperly encode possibility,
+        queues, schedules, or plans; the systemic triplet mixes maintenance and restoration;
+        and several definitions collide with CRE, DAT, CON, LOG, and ORI.
+    scores:
+      atomicity: 6
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 53
+    maximum: 80
+  - candidate_id: restorative_transformation
+    title: completed internal restoration
+    invariant_candidate: Completion of a restorative transformation originating within
+      one reference entity by which that entity enters its applicable internal restoration
+      condition.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral transformation toward
+        realizing an applicable restoration condition; the second trit alone distinguishes
+        internally originating restoration, one-source target restoration, or coordinated
+        restoration across multiple system participants, and the third alone selects
+        phase.
+      useful_coverage: It covers heal, repair, restore, recover, recalibrate, reconcile,
+        rehabilitate, remediate, return to service, and coordinated recovery across
+        ordinary and technical domains.
+      semantic_territory_consumed: Only restorative change and its scope. Domain mechanics,
+        movement, maintenance, replacement, records, validation, coordination, resources,
+        probability, plans, and time remain separate.
+      conflicts_or_future_limitations: The applicable restoration condition must be
+        resolved from REP:0xx or context, but that factoring is compositional and
+        prevents this process atom from absorbing domain-specific health, integrity,
+        or correctness.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: maintenance_action
+    title: completed internal maintenance
+    invariant_candidate: A completed upkeep process that preserves an already acceptable
+      condition at inward/self scope.
+    analysis:
+      why_it_fits: Internal upkeep, target servicing, and systemic maintenance naturally
+        use inward, outward, and shared scope with completed, active, or nonactualized
+        phases.
+      useful_coverage: It covers service, preserve, sustain, clean, patch, inspect,
+        tune, lubricate, and administer upkeep.
+      semantic_territory_consumed: Preservation of an existing acceptable condition,
+        recurring service, inspection, resource use, and organizational responsibility.
+      conflicts_or_future_limitations: Maintenance need not move anything toward restoration,
+        restoration can occur without ongoing maintenance, and the architecture collides
+        with LOG rules, DAT schedules, MAT actions, and CON service relations.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 7
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 66
+    maximum: 80
+  - candidate_id: corrective_validation
+    title: completed internal revalidation
+    invariant_candidate: A completed verification process that tests a corrected condition
+      against a criterion at inward/self scope.
+    analysis:
+      why_it_fits: Self-checking, target correction verification, and systemic revalidation
+        can be framed as Repair processes at all three scopes.
+      useful_coverage: It covers test, validate, verify, reconcile, audit, certify,
+        check correction, and confirm recovery.
+      semantic_territory_consumed: Rule satisfaction, evidence acquisition, comparison,
+        records, and observer judgment rather than restoration itself.
+      conflicts_or_future_limitations: LOG owns validity and acceptance, DAT owns
+        measurements and evidence, MIN owns judgment, and a restored condition can
+        exist without validation.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 8
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 61
+    maximum: 80
+  - candidate_id: replacement_reconstruction
+    title: completed internal reconstruction
+    invariant_candidate: A completed replacement or reconstruction process that substitutes
+      newly made structure at inward/self scope.
+    analysis:
+      why_it_fits: Self-rebuilding, replacement of a target, and reconstruction of
+        a shared system are common ways to accomplish repair and support all phases.
+      useful_coverage: It covers replace, rebuild, reconstruct, regenerate, refabricate,
+        reinstall, recreate, and swap components.
+      semantic_territory_consumed: Creation, destruction, substitution, identity continuity,
+        structural assembly, and material operations.
+      conflicts_or_future_limitations: CRE and STR own those transformations, many
+        repairs do not replace or rebuild, and a replacement can occur without restoration
+        of the original bearer.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 61
+    maximum: 80
+  recommended_candidate_id: restorative_transformation
+  recommendation_reason: Only this architecture preserves one substrate-neutral Repair
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical REP:0xx conditions, and avoids absorbing domain
+    mechanics, maintenance, validation, replacement, records, resources, probability,
+    or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: REP:101
+  fixed_generated_fields:
+    canonical_id: REP:101
+    universal_slot: active inward process
+    family_qualified_transliteration: ya·kak
+    local_compact_root: kak
+    formal_carrier: ya-ki-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 4
+  current_meaning_rationale: The provisional choice follows the inward/self and active
+    slot labels and favors familiar Repair language such as healing, correction, recalibration,
+    restoration, maintenance, and recovery.
+  candidates:
+  - candidate_id: current_phase2
+    title: active self-repair
+    invariant_candidate: An entity is actively healing, correcting, or rebuilding
+      its own function.
+    analysis:
+      why_it_fits: The provisional choice follows the inward/self and active slot
+        labels and favors familiar Repair language such as healing, correction, recalibration,
+        restoration, maintenance, and recovery.
+      useful_coverage: It reaches common talk about self-repair, target repair, system
+        recovery, maintenance cycles, queued work, and staged recovery.
+      semantic_territory_consumed: It mixes restorative transformation, maintenance,
+        rebuilding, possibility, schedules, preparation, plans, resources, coordination,
+        and stable results.
+      conflicts_or_future_limitations: The lexical 1x2 roots improperly encode possibility,
+        queues, schedules, or plans; the systemic triplet mixes maintenance and restoration;
+        and several definitions collide with CRE, DAT, CON, LOG, and ORI.
+    scores:
+      atomicity: 6
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 53
+    maximum: 80
+  - candidate_id: restorative_transformation
+    title: active internal restoration
+    invariant_candidate: An ongoing restorative transformation originating within
+      one reference entity by which that entity is entering its applicable internal
+      restoration condition.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral transformation toward
+        realizing an applicable restoration condition; the second trit alone distinguishes
+        internally originating restoration, one-source target restoration, or coordinated
+        restoration across multiple system participants, and the third alone selects
+        phase.
+      useful_coverage: It covers heal, repair, restore, recover, recalibrate, reconcile,
+        rehabilitate, remediate, return to service, and coordinated recovery across
+        ordinary and technical domains.
+      semantic_territory_consumed: Only restorative change and its scope. Domain mechanics,
+        movement, maintenance, replacement, records, validation, coordination, resources,
+        probability, plans, and time remain separate.
+      conflicts_or_future_limitations: The applicable restoration condition must be
+        resolved from REP:0xx or context, but that factoring is compositional and
+        prevents this process atom from absorbing domain-specific health, integrity,
+        or correctness.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: maintenance_action
+    title: active internal maintenance
+    invariant_candidate: A active upkeep process that preserves an already acceptable
+      condition at inward/self scope.
+    analysis:
+      why_it_fits: Internal upkeep, target servicing, and systemic maintenance naturally
+        use inward, outward, and shared scope with completed, active, or nonactualized
+        phases.
+      useful_coverage: It covers service, preserve, sustain, clean, patch, inspect,
+        tune, lubricate, and administer upkeep.
+      semantic_territory_consumed: Preservation of an existing acceptable condition,
+        recurring service, inspection, resource use, and organizational responsibility.
+      conflicts_or_future_limitations: Maintenance need not move anything toward restoration,
+        restoration can occur without ongoing maintenance, and the architecture collides
+        with LOG rules, DAT schedules, MAT actions, and CON service relations.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 7
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 66
+    maximum: 80
+  - candidate_id: corrective_validation
+    title: active internal revalidation
+    invariant_candidate: A active verification process that tests a corrected condition
+      against a criterion at inward/self scope.
+    analysis:
+      why_it_fits: Self-checking, target correction verification, and systemic revalidation
+        can be framed as Repair processes at all three scopes.
+      useful_coverage: It covers test, validate, verify, reconcile, audit, certify,
+        check correction, and confirm recovery.
+      semantic_territory_consumed: Rule satisfaction, evidence acquisition, comparison,
+        records, and observer judgment rather than restoration itself.
+      conflicts_or_future_limitations: LOG owns validity and acceptance, DAT owns
+        measurements and evidence, MIN owns judgment, and a restored condition can
+        exist without validation.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 8
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 61
+    maximum: 80
+  - candidate_id: replacement_reconstruction
+    title: active internal reconstruction
+    invariant_candidate: A active replacement or reconstruction process that substitutes
+      newly made structure at inward/self scope.
+    analysis:
+      why_it_fits: Self-rebuilding, replacement of a target, and reconstruction of
+        a shared system are common ways to accomplish repair and support all phases.
+      useful_coverage: It covers replace, rebuild, reconstruct, regenerate, refabricate,
+        reinstall, recreate, and swap components.
+      semantic_territory_consumed: Creation, destruction, substitution, identity continuity,
+        structural assembly, and material operations.
+      conflicts_or_future_limitations: CRE and STR own those transformations, many
+        repairs do not replace or rebuild, and a replacement can occur without restoration
+        of the original bearer.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 61
+    maximum: 80
+  recommended_candidate_id: restorative_transformation
+  recommendation_reason: Only this architecture preserves one substrate-neutral Repair
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical REP:0xx conditions, and avoids absorbing domain
+    mechanics, maintenance, validation, replacement, records, resources, probability,
+    or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: REP:102
+  fixed_generated_fields:
+    canonical_id: REP:102
+    universal_slot: pending inward process
+    family_qualified_transliteration: ya·kan
+    local_compact_root: kan
+    formal_carrier: ya-ki-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 0
+  current_meaning_rationale: The provisional choice follows the inward/self and nonactualized
+    slot labels and favors familiar Repair language such as healing, correction, recalibration,
+    restoration, maintenance, and recovery.
+  candidates:
+  - candidate_id: current_phase2
+    title: queued self-repair
+    invariant_candidate: An inward recovery process is possible or scheduled but has
+      not begun.
+    analysis:
+      why_it_fits: The provisional choice follows the inward/self and nonactualized
+        slot labels and favors familiar Repair language such as healing, correction,
+        recalibration, restoration, maintenance, and recovery.
+      useful_coverage: It reaches common talk about self-repair, target repair, system
+        recovery, maintenance cycles, queued work, and staged recovery.
+      semantic_territory_consumed: It mixes restorative transformation, maintenance,
+        rebuilding, possibility, schedules, preparation, plans, resources, coordination,
+        and stable results.
+      conflicts_or_future_limitations: The lexical 1x2 roots improperly encode possibility,
+        queues, schedules, or plans; the systemic triplet mixes maintenance and restoration;
+        and several definitions collide with CRE, DAT, CON, LOG, and ORI.
+    scores:
+      atomicity: 5
+      address_fit: 6
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: restorative_transformation
+    title: nonactualized internal restoration
+    invariant_candidate: A nonactualized restorative transformation originating within
+      one reference entity by which that entity would enter its applicable internal
+      restoration condition.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral transformation toward
+        realizing an applicable restoration condition; the second trit alone distinguishes
+        internally originating restoration, one-source target restoration, or coordinated
+        restoration across multiple system participants, and the third alone selects
+        phase.
+      useful_coverage: It covers heal, repair, restore, recover, recalibrate, reconcile,
+        rehabilitate, remediate, return to service, and coordinated recovery across
+        ordinary and technical domains.
+      semantic_territory_consumed: Only restorative change and its scope. Domain mechanics,
+        movement, maintenance, replacement, records, validation, coordination, resources,
+        probability, plans, and time remain separate.
+      conflicts_or_future_limitations: The applicable restoration condition must be
+        resolved from REP:0xx or context, but that factoring is compositional and
+        prevents this process atom from absorbing domain-specific health, integrity,
+        or correctness.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: maintenance_action
+    title: nonactualized internal maintenance
+    invariant_candidate: A nonactualized upkeep process that preserves an already
+      acceptable condition at inward/self scope.
+    analysis:
+      why_it_fits: Internal upkeep, target servicing, and systemic maintenance naturally
+        use inward, outward, and shared scope with completed, active, or nonactualized
+        phases.
+      useful_coverage: It covers service, preserve, sustain, clean, patch, inspect,
+        tune, lubricate, and administer upkeep.
+      semantic_territory_consumed: Preservation of an existing acceptable condition,
+        recurring service, inspection, resource use, and organizational responsibility.
+      conflicts_or_future_limitations: Maintenance need not move anything toward restoration,
+        restoration can occur without ongoing maintenance, and the architecture collides
+        with LOG rules, DAT schedules, MAT actions, and CON service relations.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 7
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 66
+    maximum: 80
+  - candidate_id: corrective_validation
+    title: nonactualized internal revalidation
+    invariant_candidate: A nonactualized verification process that tests a corrected
+      condition against a criterion at inward/self scope.
+    analysis:
+      why_it_fits: Self-checking, target correction verification, and systemic revalidation
+        can be framed as Repair processes at all three scopes.
+      useful_coverage: It covers test, validate, verify, reconcile, audit, certify,
+        check correction, and confirm recovery.
+      semantic_territory_consumed: Rule satisfaction, evidence acquisition, comparison,
+        records, and observer judgment rather than restoration itself.
+      conflicts_or_future_limitations: LOG owns validity and acceptance, DAT owns
+        measurements and evidence, MIN owns judgment, and a restored condition can
+        exist without validation.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 8
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 61
+    maximum: 80
+  - candidate_id: replacement_reconstruction
+    title: nonactualized internal reconstruction
+    invariant_candidate: A nonactualized replacement or reconstruction process that
+      substitutes newly made structure at inward/self scope.
+    analysis:
+      why_it_fits: Self-rebuilding, replacement of a target, and reconstruction of
+        a shared system are common ways to accomplish repair and support all phases.
+      useful_coverage: It covers replace, rebuild, reconstruct, regenerate, refabricate,
+        reinstall, recreate, and swap components.
+      semantic_territory_consumed: Creation, destruction, substitution, identity continuity,
+        structural assembly, and material operations.
+      conflicts_or_future_limitations: CRE and STR own those transformations, many
+        repairs do not replace or rebuild, and a replacement can occur without restoration
+        of the original bearer.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 61
+    maximum: 80
+  recommended_candidate_id: restorative_transformation
+  recommendation_reason: Only this architecture preserves one substrate-neutral Repair
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical REP:0xx conditions, and avoids absorbing domain
+    mechanics, maintenance, validation, replacement, records, resources, probability,
+    or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: REP:110
+  fixed_generated_fields:
+    canonical_id: REP:110
+    universal_slot: completed outward process
+    family_qualified_transliteration: ya·kom
+    local_compact_root: kom
+    formal_carrier: ya-ki-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 4
+  current_meaning_rationale: The provisional choice follows the outward/target and
+    completed slot labels and favors familiar Repair language such as healing, correction,
+    recalibration, restoration, maintenance, and recovery.
+  candidates:
+  - candidate_id: current_phase2
+    title: target repair complete
+    invariant_candidate: Repair, healing, correction, or restoration applied to an
+      external target has finished.
+    analysis:
+      why_it_fits: The provisional choice follows the outward/target and completed
+        slot labels and favors familiar Repair language such as healing, correction,
+        recalibration, restoration, maintenance, and recovery.
+      useful_coverage: It reaches common talk about self-repair, target repair, system
+        recovery, maintenance cycles, queued work, and staged recovery.
+      semantic_territory_consumed: It mixes restorative transformation, maintenance,
+        rebuilding, possibility, schedules, preparation, plans, resources, coordination,
+        and stable results.
+      conflicts_or_future_limitations: The lexical 1x2 roots improperly encode possibility,
+        queues, schedules, or plans; the systemic triplet mixes maintenance and restoration;
+        and several definitions collide with CRE, DAT, CON, LOG, and ORI.
+    scores:
+      atomicity: 6
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 53
+    maximum: 80
+  - candidate_id: restorative_transformation
+    title: completed target restoration
+    invariant_candidate: Completion of a restorative transformation by which one distinct
+      source causes one reference target to enter its applicable target restoration
+      condition.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral transformation toward
+        realizing an applicable restoration condition; the second trit alone distinguishes
+        internally originating restoration, one-source target restoration, or coordinated
+        restoration across multiple system participants, and the third alone selects
+        phase.
+      useful_coverage: It covers heal, repair, restore, recover, recalibrate, reconcile,
+        rehabilitate, remediate, return to service, and coordinated recovery across
+        ordinary and technical domains.
+      semantic_territory_consumed: Only restorative change and its scope. Domain mechanics,
+        movement, maintenance, replacement, records, validation, coordination, resources,
+        probability, plans, and time remain separate.
+      conflicts_or_future_limitations: The applicable restoration condition must be
+        resolved from REP:0xx or context, but that factoring is compositional and
+        prevents this process atom from absorbing domain-specific health, integrity,
+        or correctness.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: maintenance_action
+    title: completed target maintenance
+    invariant_candidate: A completed upkeep process that preserves an already acceptable
+      condition at outward/target scope.
+    analysis:
+      why_it_fits: Internal upkeep, target servicing, and systemic maintenance naturally
+        use inward, outward, and shared scope with completed, active, or nonactualized
+        phases.
+      useful_coverage: It covers service, preserve, sustain, clean, patch, inspect,
+        tune, lubricate, and administer upkeep.
+      semantic_territory_consumed: Preservation of an existing acceptable condition,
+        recurring service, inspection, resource use, and organizational responsibility.
+      conflicts_or_future_limitations: Maintenance need not move anything toward restoration,
+        restoration can occur without ongoing maintenance, and the architecture collides
+        with LOG rules, DAT schedules, MAT actions, and CON service relations.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 65
+    maximum: 80
+  - candidate_id: corrective_validation
+    title: completed target correction check
+    invariant_candidate: A completed verification process that tests a corrected condition
+      against a criterion at outward/target scope.
+    analysis:
+      why_it_fits: Self-checking, target correction verification, and systemic revalidation
+        can be framed as Repair processes at all three scopes.
+      useful_coverage: It covers test, validate, verify, reconcile, audit, certify,
+        check correction, and confirm recovery.
+      semantic_territory_consumed: Rule satisfaction, evidence acquisition, comparison,
+        records, and observer judgment rather than restoration itself.
+      conflicts_or_future_limitations: LOG owns validity and acceptance, DAT owns
+        measurements and evidence, MIN owns judgment, and a restored condition can
+        exist without validation.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 8
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 62
+    maximum: 80
+  - candidate_id: replacement_reconstruction
+    title: completed target replacement
+    invariant_candidate: A completed replacement or reconstruction process that substitutes
+      newly made structure at outward/target scope.
+    analysis:
+      why_it_fits: Self-rebuilding, replacement of a target, and reconstruction of
+        a shared system are common ways to accomplish repair and support all phases.
+      useful_coverage: It covers replace, rebuild, reconstruct, regenerate, refabricate,
+        reinstall, recreate, and swap components.
+      semantic_territory_consumed: Creation, destruction, substitution, identity continuity,
+        structural assembly, and material operations.
+      conflicts_or_future_limitations: CRE and STR own those transformations, many
+        repairs do not replace or rebuild, and a replacement can occur without restoration
+        of the original bearer.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 62
+    maximum: 80
+  recommended_candidate_id: restorative_transformation
+  recommendation_reason: Only this architecture preserves one substrate-neutral Repair
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical REP:0xx conditions, and avoids absorbing domain
+    mechanics, maintenance, validation, replacement, records, resources, probability,
+    or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: REP:111
+  fixed_generated_fields:
+    canonical_id: REP:111
+    universal_slot: active outward process
+    family_qualified_transliteration: ya·kok
+    local_compact_root: kok
+    formal_carrier: ya-ki-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 6
+  current_meaning_rationale: The provisional choice follows the outward/target and
+    active slot labels and favors familiar Repair language such as healing, correction,
+    recalibration, restoration, maintenance, and recovery.
+  candidates:
+  - candidate_id: current_phase2
+    title: active target repair
+    invariant_candidate: A target is actively being healed, corrected, restored, or
+      recalibrated.
+    analysis:
+      why_it_fits: The provisional choice follows the outward/target and active slot
+        labels and favors familiar Repair language such as healing, correction, recalibration,
+        restoration, maintenance, and recovery.
+      useful_coverage: It reaches common talk about self-repair, target repair, system
+        recovery, maintenance cycles, queued work, and staged recovery.
+      semantic_territory_consumed: It mixes restorative transformation, maintenance,
+        rebuilding, possibility, schedules, preparation, plans, resources, coordination,
+        and stable results.
+      conflicts_or_future_limitations: The lexical 1x2 roots improperly encode possibility,
+        queues, schedules, or plans; the systemic triplet mixes maintenance and restoration;
+        and several definitions collide with CRE, DAT, CON, LOG, and ORI.
+    scores:
+      atomicity: 6
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 53
+    maximum: 80
+  - candidate_id: restorative_transformation
+    title: active target restoration
+    invariant_candidate: An ongoing restorative transformation by which one distinct
+      source causes one reference target to enter its applicable target restoration
+      condition.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral transformation toward
+        realizing an applicable restoration condition; the second trit alone distinguishes
+        internally originating restoration, one-source target restoration, or coordinated
+        restoration across multiple system participants, and the third alone selects
+        phase.
+      useful_coverage: It covers heal, repair, restore, recover, recalibrate, reconcile,
+        rehabilitate, remediate, return to service, and coordinated recovery across
+        ordinary and technical domains.
+      semantic_territory_consumed: Only restorative change and its scope. Domain mechanics,
+        movement, maintenance, replacement, records, validation, coordination, resources,
+        probability, plans, and time remain separate.
+      conflicts_or_future_limitations: The applicable restoration condition must be
+        resolved from REP:0xx or context, but that factoring is compositional and
+        prevents this process atom from absorbing domain-specific health, integrity,
+        or correctness.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: maintenance_action
+    title: active target maintenance
+    invariant_candidate: A active upkeep process that preserves an already acceptable
+      condition at outward/target scope.
+    analysis:
+      why_it_fits: Internal upkeep, target servicing, and systemic maintenance naturally
+        use inward, outward, and shared scope with completed, active, or nonactualized
+        phases.
+      useful_coverage: It covers service, preserve, sustain, clean, patch, inspect,
+        tune, lubricate, and administer upkeep.
+      semantic_territory_consumed: Preservation of an existing acceptable condition,
+        recurring service, inspection, resource use, and organizational responsibility.
+      conflicts_or_future_limitations: Maintenance need not move anything toward restoration,
+        restoration can occur without ongoing maintenance, and the architecture collides
+        with LOG rules, DAT schedules, MAT actions, and CON service relations.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 65
+    maximum: 80
+  - candidate_id: corrective_validation
+    title: active target correction check
+    invariant_candidate: A active verification process that tests a corrected condition
+      against a criterion at outward/target scope.
+    analysis:
+      why_it_fits: Self-checking, target correction verification, and systemic revalidation
+        can be framed as Repair processes at all three scopes.
+      useful_coverage: It covers test, validate, verify, reconcile, audit, certify,
+        check correction, and confirm recovery.
+      semantic_territory_consumed: Rule satisfaction, evidence acquisition, comparison,
+        records, and observer judgment rather than restoration itself.
+      conflicts_or_future_limitations: LOG owns validity and acceptance, DAT owns
+        measurements and evidence, MIN owns judgment, and a restored condition can
+        exist without validation.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 8
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 62
+    maximum: 80
+  - candidate_id: replacement_reconstruction
+    title: active target replacement
+    invariant_candidate: A active replacement or reconstruction process that substitutes
+      newly made structure at outward/target scope.
+    analysis:
+      why_it_fits: Self-rebuilding, replacement of a target, and reconstruction of
+        a shared system are common ways to accomplish repair and support all phases.
+      useful_coverage: It covers replace, rebuild, reconstruct, regenerate, refabricate,
+        reinstall, recreate, and swap components.
+      semantic_territory_consumed: Creation, destruction, substitution, identity continuity,
+        structural assembly, and material operations.
+      conflicts_or_future_limitations: CRE and STR own those transformations, many
+        repairs do not replace or rebuild, and a replacement can occur without restoration
+        of the original bearer.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 62
+    maximum: 80
+  recommended_candidate_id: restorative_transformation
+  recommendation_reason: Only this architecture preserves one substrate-neutral Repair
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical REP:0xx conditions, and avoids absorbing domain
+    mechanics, maintenance, validation, replacement, records, resources, probability,
+    or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: REP:112
+  fixed_generated_fields:
+    canonical_id: REP:112
+    universal_slot: pending outward process
+    family_qualified_transliteration: ya·kon
+    local_compact_root: kon
+    formal_carrier: ya-ki-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 2
+  current_meaning_rationale: The provisional choice follows the outward/target and
+    nonactualized slot labels and favors familiar Repair language such as healing,
+    correction, recalibration, restoration, maintenance, and recovery.
+  candidates:
+  - candidate_id: current_phase2
+    title: scheduled target repair
+    invariant_candidate: A repair operation for a target is prepared but not yet executing.
+    analysis:
+      why_it_fits: The provisional choice follows the outward/target and nonactualized
+        slot labels and favors familiar Repair language such as healing, correction,
+        recalibration, restoration, maintenance, and recovery.
+      useful_coverage: It reaches common talk about self-repair, target repair, system
+        recovery, maintenance cycles, queued work, and staged recovery.
+      semantic_territory_consumed: It mixes restorative transformation, maintenance,
+        rebuilding, possibility, schedules, preparation, plans, resources, coordination,
+        and stable results.
+      conflicts_or_future_limitations: The lexical 1x2 roots improperly encode possibility,
+        queues, schedules, or plans; the systemic triplet mixes maintenance and restoration;
+        and several definitions collide with CRE, DAT, CON, LOG, and ORI.
+    scores:
+      atomicity: 5
+      address_fit: 6
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: restorative_transformation
+    title: nonactualized target restoration
+    invariant_candidate: A nonactualized restorative transformation by which one distinct
+      source would cause one reference target to enter its applicable target restoration
+      condition.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral transformation toward
+        realizing an applicable restoration condition; the second trit alone distinguishes
+        internally originating restoration, one-source target restoration, or coordinated
+        restoration across multiple system participants, and the third alone selects
+        phase.
+      useful_coverage: It covers heal, repair, restore, recover, recalibrate, reconcile,
+        rehabilitate, remediate, return to service, and coordinated recovery across
+        ordinary and technical domains.
+      semantic_territory_consumed: Only restorative change and its scope. Domain mechanics,
+        movement, maintenance, replacement, records, validation, coordination, resources,
+        probability, plans, and time remain separate.
+      conflicts_or_future_limitations: The applicable restoration condition must be
+        resolved from REP:0xx or context, but that factoring is compositional and
+        prevents this process atom from absorbing domain-specific health, integrity,
+        or correctness.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: maintenance_action
+    title: nonactualized target maintenance
+    invariant_candidate: A nonactualized upkeep process that preserves an already
+      acceptable condition at outward/target scope.
+    analysis:
+      why_it_fits: Internal upkeep, target servicing, and systemic maintenance naturally
+        use inward, outward, and shared scope with completed, active, or nonactualized
+        phases.
+      useful_coverage: It covers service, preserve, sustain, clean, patch, inspect,
+        tune, lubricate, and administer upkeep.
+      semantic_territory_consumed: Preservation of an existing acceptable condition,
+        recurring service, inspection, resource use, and organizational responsibility.
+      conflicts_or_future_limitations: Maintenance need not move anything toward restoration,
+        restoration can occur without ongoing maintenance, and the architecture collides
+        with LOG rules, DAT schedules, MAT actions, and CON service relations.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 6
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 65
+    maximum: 80
+  - candidate_id: corrective_validation
+    title: nonactualized target correction check
+    invariant_candidate: A nonactualized verification process that tests a corrected
+      condition against a criterion at outward/target scope.
+    analysis:
+      why_it_fits: Self-checking, target correction verification, and systemic revalidation
+        can be framed as Repair processes at all three scopes.
+      useful_coverage: It covers test, validate, verify, reconcile, audit, certify,
+        check correction, and confirm recovery.
+      semantic_territory_consumed: Rule satisfaction, evidence acquisition, comparison,
+        records, and observer judgment rather than restoration itself.
+      conflicts_or_future_limitations: LOG owns validity and acceptance, DAT owns
+        measurements and evidence, MIN owns judgment, and a restored condition can
+        exist without validation.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 8
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 62
+    maximum: 80
+  - candidate_id: replacement_reconstruction
+    title: nonactualized target replacement
+    invariant_candidate: A nonactualized replacement or reconstruction process that
+      substitutes newly made structure at outward/target scope.
+    analysis:
+      why_it_fits: Self-rebuilding, replacement of a target, and reconstruction of
+        a shared system are common ways to accomplish repair and support all phases.
+      useful_coverage: It covers replace, rebuild, reconstruct, regenerate, refabricate,
+        reinstall, recreate, and swap components.
+      semantic_territory_consumed: Creation, destruction, substitution, identity continuity,
+        structural assembly, and material operations.
+      conflicts_or_future_limitations: CRE and STR own those transformations, many
+        repairs do not replace or rebuild, and a replacement can occur without restoration
+        of the original bearer.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 5
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 62
+    maximum: 80
+  recommended_candidate_id: restorative_transformation
+  recommendation_reason: Only this architecture preserves one substrate-neutral Repair
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical REP:0xx conditions, and avoids absorbing domain
+    mechanics, maintenance, validation, replacement, records, resources, probability,
+    or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: REP:120
+  fixed_generated_fields:
+    canonical_id: REP:120
+    universal_slot: completed systemic process
+    family_qualified_transliteration: ya·kim
+    local_compact_root: kim
+    formal_carrier: ya-ki-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 0
+  current_meaning_rationale: The provisional choice follows the shared/systemic and
+    completed slot labels and favors familiar Repair language such as healing, correction,
+    recalibration, restoration, maintenance, and recovery.
+  candidates:
+  - candidate_id: current_phase2
+    title: system recovery complete
+    invariant_candidate: A coordinated recovery or maintenance cycle has restored
+      stable function across a system.
+    analysis:
+      why_it_fits: The provisional choice follows the shared/systemic and completed
+        slot labels and favors familiar Repair language such as healing, correction,
+        recalibration, restoration, maintenance, and recovery.
+      useful_coverage: It reaches common talk about self-repair, target repair, system
+        recovery, maintenance cycles, queued work, and staged recovery.
+      semantic_territory_consumed: It mixes restorative transformation, maintenance,
+        rebuilding, possibility, schedules, preparation, plans, resources, coordination,
+        and stable results.
+      conflicts_or_future_limitations: The lexical 1x2 roots improperly encode possibility,
+        queues, schedules, or plans; the systemic triplet mixes maintenance and restoration;
+        and several definitions collide with CRE, DAT, CON, LOG, and ORI.
+    scores:
+      atomicity: 6
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 52
+    maximum: 80
+  - candidate_id: restorative_transformation
+    title: completed systemic restoration
+    invariant_candidate: Completion of a coordinated restorative transformation by
+      which one shared restoration condition becomes realized across multiple participant
+      entities within one shared system.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral transformation toward
+        realizing an applicable restoration condition; the second trit alone distinguishes
+        internally originating restoration, one-source target restoration, or coordinated
+        restoration across multiple system participants, and the third alone selects
+        phase.
+      useful_coverage: It covers heal, repair, restore, recover, recalibrate, reconcile,
+        rehabilitate, remediate, return to service, and coordinated recovery across
+        ordinary and technical domains.
+      semantic_territory_consumed: Only restorative change and its scope. Domain mechanics,
+        movement, maintenance, replacement, records, validation, coordination, resources,
+        probability, plans, and time remain separate.
+      conflicts_or_future_limitations: The applicable restoration condition must be
+        resolved from REP:0xx or context, but that factoring is compositional and
+        prevents this process atom from absorbing domain-specific health, integrity,
+        or correctness.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: maintenance_action
+    title: completed systemic maintenance
+    invariant_candidate: A completed upkeep process that preserves an already acceptable
+      condition at shared/systemic scope.
+    analysis:
+      why_it_fits: Internal upkeep, target servicing, and systemic maintenance naturally
+        use inward, outward, and shared scope with completed, active, or nonactualized
+        phases.
+      useful_coverage: It covers service, preserve, sustain, clean, patch, inspect,
+        tune, lubricate, and administer upkeep.
+      semantic_territory_consumed: Preservation of an existing acceptable condition,
+        recurring service, inspection, resource use, and organizational responsibility.
+      conflicts_or_future_limitations: Maintenance need not move anything toward restoration,
+        restoration can occur without ongoing maintenance, and the architecture collides
+        with LOG rules, DAT schedules, MAT actions, and CON service relations.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 7
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 67
+    maximum: 80
+  - candidate_id: corrective_validation
+    title: completed systemic revalidation
+    invariant_candidate: A completed verification process that tests a corrected condition
+      against a criterion at shared/systemic scope.
+    analysis:
+      why_it_fits: Self-checking, target correction verification, and systemic revalidation
+        can be framed as Repair processes at all three scopes.
+      useful_coverage: It covers test, validate, verify, reconcile, audit, certify,
+        check correction, and confirm recovery.
+      semantic_territory_consumed: Rule satisfaction, evidence acquisition, comparison,
+        records, and observer judgment rather than restoration itself.
+      conflicts_or_future_limitations: LOG owns validity and acceptance, DAT owns
+        measurements and evidence, MIN owns judgment, and a restored condition can
+        exist without validation.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 8
+      cross_family_separation: 3
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 60
+    maximum: 80
+  - candidate_id: replacement_reconstruction
+    title: completed systemic reconstruction
+    invariant_candidate: A completed replacement or reconstruction process that substitutes
+      newly made structure at shared/systemic scope.
+    analysis:
+      why_it_fits: Self-rebuilding, replacement of a target, and reconstruction of
+        a shared system are common ways to accomplish repair and support all phases.
+      useful_coverage: It covers replace, rebuild, reconstruct, regenerate, refabricate,
+        reinstall, recreate, and swap components.
+      semantic_territory_consumed: Creation, destruction, substitution, identity continuity,
+        structural assembly, and material operations.
+      conflicts_or_future_limitations: CRE and STR own those transformations, many
+        repairs do not replace or rebuild, and a replacement can occur without restoration
+        of the original bearer.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 61
+    maximum: 80
+  recommended_candidate_id: restorative_transformation
+  recommendation_reason: Only this architecture preserves one substrate-neutral Repair
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical REP:0xx conditions, and avoids absorbing domain
+    mechanics, maintenance, validation, replacement, records, resources, probability,
+    or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: REP:121
+  fixed_generated_fields:
+    canonical_id: REP:121
+    universal_slot: active systemic process
+    family_qualified_transliteration: ya·kik
+    local_compact_root: kik
+    formal_carrier: ya-ki-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 2
+  current_meaning_rationale: The provisional choice follows the shared/systemic and
+    active slot labels and favors familiar Repair language such as healing, correction,
+    recalibration, restoration, maintenance, and recovery.
+  candidates:
+  - candidate_id: current_phase2
+    title: coordinated restoration
+    invariant_candidate: Participants are actively repairing, healing, restoring,
+      or maintaining a shared system.
+    analysis:
+      why_it_fits: The provisional choice follows the shared/systemic and active slot
+        labels and favors familiar Repair language such as healing, correction, recalibration,
+        restoration, maintenance, and recovery.
+      useful_coverage: It reaches common talk about self-repair, target repair, system
+        recovery, maintenance cycles, queued work, and staged recovery.
+      semantic_territory_consumed: It mixes restorative transformation, maintenance,
+        rebuilding, possibility, schedules, preparation, plans, resources, coordination,
+        and stable results.
+      conflicts_or_future_limitations: The lexical 1x2 roots improperly encode possibility,
+        queues, schedules, or plans; the systemic triplet mixes maintenance and restoration;
+        and several definitions collide with CRE, DAT, CON, LOG, and ORI.
+    scores:
+      atomicity: 6
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 52
+    maximum: 80
+  - candidate_id: restorative_transformation
+    title: active systemic restoration
+    invariant_candidate: An ongoing coordinated restorative transformation by which
+      one shared restoration condition is becoming realized across multiple participant
+      entities within one shared system.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral transformation toward
+        realizing an applicable restoration condition; the second trit alone distinguishes
+        internally originating restoration, one-source target restoration, or coordinated
+        restoration across multiple system participants, and the third alone selects
+        phase.
+      useful_coverage: It covers heal, repair, restore, recover, recalibrate, reconcile,
+        rehabilitate, remediate, return to service, and coordinated recovery across
+        ordinary and technical domains.
+      semantic_territory_consumed: Only restorative change and its scope. Domain mechanics,
+        movement, maintenance, replacement, records, validation, coordination, resources,
+        probability, plans, and time remain separate.
+      conflicts_or_future_limitations: The applicable restoration condition must be
+        resolved from REP:0xx or context, but that factoring is compositional and
+        prevents this process atom from absorbing domain-specific health, integrity,
+        or correctness.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: maintenance_action
+    title: active systemic maintenance
+    invariant_candidate: A active upkeep process that preserves an already acceptable
+      condition at shared/systemic scope.
+    analysis:
+      why_it_fits: Internal upkeep, target servicing, and systemic maintenance naturally
+        use inward, outward, and shared scope with completed, active, or nonactualized
+        phases.
+      useful_coverage: It covers service, preserve, sustain, clean, patch, inspect,
+        tune, lubricate, and administer upkeep.
+      semantic_territory_consumed: Preservation of an existing acceptable condition,
+        recurring service, inspection, resource use, and organizational responsibility.
+      conflicts_or_future_limitations: Maintenance need not move anything toward restoration,
+        restoration can occur without ongoing maintenance, and the architecture collides
+        with LOG rules, DAT schedules, MAT actions, and CON service relations.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 7
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 67
+    maximum: 80
+  - candidate_id: corrective_validation
+    title: active systemic revalidation
+    invariant_candidate: A active verification process that tests a corrected condition
+      against a criterion at shared/systemic scope.
+    analysis:
+      why_it_fits: Self-checking, target correction verification, and systemic revalidation
+        can be framed as Repair processes at all three scopes.
+      useful_coverage: It covers test, validate, verify, reconcile, audit, certify,
+        check correction, and confirm recovery.
+      semantic_territory_consumed: Rule satisfaction, evidence acquisition, comparison,
+        records, and observer judgment rather than restoration itself.
+      conflicts_or_future_limitations: LOG owns validity and acceptance, DAT owns
+        measurements and evidence, MIN owns judgment, and a restored condition can
+        exist without validation.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 8
+      cross_family_separation: 3
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 60
+    maximum: 80
+  - candidate_id: replacement_reconstruction
+    title: active systemic reconstruction
+    invariant_candidate: A active replacement or reconstruction process that substitutes
+      newly made structure at shared/systemic scope.
+    analysis:
+      why_it_fits: Self-rebuilding, replacement of a target, and reconstruction of
+        a shared system are common ways to accomplish repair and support all phases.
+      useful_coverage: It covers replace, rebuild, reconstruct, regenerate, refabricate,
+        reinstall, recreate, and swap components.
+      semantic_territory_consumed: Creation, destruction, substitution, identity continuity,
+        structural assembly, and material operations.
+      conflicts_or_future_limitations: CRE and STR own those transformations, many
+        repairs do not replace or rebuild, and a replacement can occur without restoration
+        of the original bearer.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 61
+    maximum: 80
+  recommended_candidate_id: restorative_transformation
+  recommendation_reason: Only this architecture preserves one substrate-neutral Repair
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical REP:0xx conditions, and avoids absorbing domain
+    mechanics, maintenance, validation, replacement, records, resources, probability,
+    or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: REP:122
+  fixed_generated_fields:
+    canonical_id: REP:122
+    universal_slot: pending systemic process
+    family_qualified_transliteration: ya·kin
+    local_compact_root: kin
+    formal_carrier: ya-ki-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - -2
+  current_meaning_rationale: The provisional choice follows the shared/systemic and
+    nonactualized slot labels and favors familiar Repair language such as healing,
+    correction, recalibration, restoration, maintenance, and recovery.
+  candidates:
+  - candidate_id: current_phase2
+    title: staged system recovery
+    invariant_candidate: A system-level restoration plan and resources are prepared
+      but have not been activated.
+    analysis:
+      why_it_fits: The provisional choice follows the shared/systemic and nonactualized
+        slot labels and favors familiar Repair language such as healing, correction,
+        recalibration, restoration, maintenance, and recovery.
+      useful_coverage: It reaches common talk about self-repair, target repair, system
+        recovery, maintenance cycles, queued work, and staged recovery.
+      semantic_territory_consumed: It mixes restorative transformation, maintenance,
+        rebuilding, possibility, schedules, preparation, plans, resources, coordination,
+        and stable results.
+      conflicts_or_future_limitations: The lexical 1x2 roots improperly encode possibility,
+        queues, schedules, or plans; the systemic triplet mixes maintenance and restoration;
+        and several definitions collide with CRE, DAT, CON, LOG, and ORI.
+    scores:
+      atomicity: 5
+      address_fit: 6
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 50
+    maximum: 80
+  - candidate_id: restorative_transformation
+    title: nonactualized systemic restoration
+    invariant_candidate: A nonactualized coordinated restorative transformation by
+      which one shared restoration condition would become realized across multiple
+      participant entities within one shared system.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral transformation toward
+        realizing an applicable restoration condition; the second trit alone distinguishes
+        internally originating restoration, one-source target restoration, or coordinated
+        restoration across multiple system participants, and the third alone selects
+        phase.
+      useful_coverage: It covers heal, repair, restore, recover, recalibrate, reconcile,
+        rehabilitate, remediate, return to service, and coordinated recovery across
+        ordinary and technical domains.
+      semantic_territory_consumed: Only restorative change and its scope. Domain mechanics,
+        movement, maintenance, replacement, records, validation, coordination, resources,
+        probability, plans, and time remain separate.
+      conflicts_or_future_limitations: The applicable restoration condition must be
+        resolved from REP:0xx or context, but that factoring is compositional and
+        prevents this process atom from absorbing domain-specific health, integrity,
+        or correctness.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: maintenance_action
+    title: nonactualized systemic maintenance
+    invariant_candidate: A nonactualized upkeep process that preserves an already
+      acceptable condition at shared/systemic scope.
+    analysis:
+      why_it_fits: Internal upkeep, target servicing, and systemic maintenance naturally
+        use inward, outward, and shared scope with completed, active, or nonactualized
+        phases.
+      useful_coverage: It covers service, preserve, sustain, clean, patch, inspect,
+        tune, lubricate, and administer upkeep.
+      semantic_territory_consumed: Preservation of an existing acceptable condition,
+        recurring service, inspection, resource use, and organizational responsibility.
+      conflicts_or_future_limitations: Maintenance need not move anything toward restoration,
+        restoration can occur without ongoing maintenance, and the architecture collides
+        with LOG rules, DAT schedules, MAT actions, and CON service relations.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 9
+      neighbor_separation: 7
+      cross_family_separation: 7
+      compound_usefulness: 9
+      everyday_language_coverage: 10
+      technical_coverage: 9
+    total: 67
+    maximum: 80
+  - candidate_id: corrective_validation
+    title: nonactualized systemic revalidation
+    invariant_candidate: A nonactualized verification process that tests a corrected
+      condition against a criterion at shared/systemic scope.
+    analysis:
+      why_it_fits: Self-checking, target correction verification, and systemic revalidation
+        can be framed as Repair processes at all three scopes.
+      useful_coverage: It covers test, validate, verify, reconcile, audit, certify,
+        check correction, and confirm recovery.
+      semantic_territory_consumed: Rule satisfaction, evidence acquisition, comparison,
+        records, and observer judgment rather than restoration itself.
+      conflicts_or_future_limitations: LOG owns validity and acceptance, DAT owns
+        measurements and evidence, MIN owns judgment, and a restored condition can
+        exist without validation.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 8
+      cross_family_separation: 3
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 60
+    maximum: 80
+  - candidate_id: replacement_reconstruction
+    title: nonactualized systemic reconstruction
+    invariant_candidate: A nonactualized replacement or reconstruction process that
+      substitutes newly made structure at shared/systemic scope.
+    analysis:
+      why_it_fits: Self-rebuilding, replacement of a target, and reconstruction of
+        a shared system are common ways to accomplish repair and support all phases.
+      useful_coverage: It covers replace, rebuild, reconstruct, regenerate, refabricate,
+        reinstall, recreate, and swap components.
+      semantic_territory_consumed: Creation, destruction, substitution, identity continuity,
+        structural assembly, and material operations.
+      conflicts_or_future_limitations: CRE and STR own those transformations, many
+        repairs do not replace or rebuild, and a replacement can occur without restoration
+        of the original bearer.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 61
+    maximum: 80
+  recommended_candidate_id: restorative_transformation
+  recommendation_reason: Only this architecture preserves one substrate-neutral Repair
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical REP:0xx conditions, and avoids absorbing domain
+    mechanics, maintenance, validation, replacement, records, resources, probability,
+    or scheduling.
+  confidence: 0.97
+  canonicalized: true

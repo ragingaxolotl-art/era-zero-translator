@@ -1,0 +1,344 @@
+---
+metadata:
+  title: CON:200–222 English coverage and routing tests
+  status: review_evidence_not_translation_dictionary
+  range: CON:200–222
+  test_count: 73
+  no_forced_atomization: true
+tests:
+- test_id: CON2-T001
+  english_concept: can communicate
+  routing: one_root
+  analysis: CON:200 when a persistent endpoint capability is asserted; present usability
+    instead selects CON:201.
+- test_id: CON2-T002
+  english_concept: communicatively available
+  routing: one_root
+  analysis: CON:201 owns present exercisability of an endpoint's communicative participation
+    capacity.
+- test_id: CON2-T003
+  english_concept: communicatively dormant
+  routing: one_root
+  analysis: CON:202 owns an existing capacity that cannot presently be exercised.
+- test_id: CON2-T004
+  english_concept: online
+  routing: compound
+  analysis: CON:201 may contribute present communication capacity, but MAT/STR/LOG/WRN
+    determine interface, configuration, permission, and fault state.
+- test_id: CON2-T005
+  english_concept: offline
+  routing: compound
+  analysis: CON:202 may contribute latent capacity; physical disconnection or denied
+    access requires MAT/STR/LOG/WRN.
+- test_id: CON2-T006
+  english_concept: has a radio
+  routing: different_family
+  analysis: MAT owns the physical device; no communicative capacity is inferred without
+    context.
+- test_id: CON2-T007
+  english_concept: knows a language
+  routing: different_family_or_compound
+  analysis: MIN/DAT owns knowledge of a symbol system; communication capacity may
+    be compounded but is not identical.
+- test_id: CON2-T008
+  english_concept: is willing to talk
+  routing: compound
+  analysis: MIN willingness plus CON capacity; willingness is not inside CON:201.
+- test_id: CON2-T009
+  english_concept: send
+  routing: existing_con_process
+  analysis: CON:100–102 owns source expression by phase, not CON:2xx.
+- test_id: CON2-T010
+  english_concept: receive
+  routing: existing_con_process
+  analysis: CON:110–112 owns target reception by phase, not endpoint capacity.
+- test_id: CON2-T011
+  english_concept: broadcast
+  routing: existing_con_process
+  analysis: CON:120–122 owns shared distribution by phase.
+- test_id: CON2-T012
+  english_concept: contact
+  routing: underspecified
+  analysis: May mean a directed relation, a DAT contact record, an exchange event,
+    or successful reachability; the translator must resolve the graph.
+- test_id: CON2-T013
+  english_concept: established contact
+  routing: one_root_or_compound
+  analysis: CON:210 if only the persistent directed participant relation matters;
+    identity and address records add LIF/DAT.
+- test_id: CON2-T014
+  english_concept: live contact
+  routing: one_root_or_compound
+  analysis: CON:211 for a presently operative directed participant relation, without
+    claiming messages are flowing.
+- test_id: CON2-T015
+  english_concept: unknown contact status
+  routing: one_root
+  analysis: CON:212 owns the unresolved directed participant-link relation.
+- test_id: CON2-T016
+  english_concept: friend
+  routing: compound_or_different_family
+  analysis: LIF/MIN/social relation plus possible CON:210; friendship must not be
+    reduced to communication linkage.
+- test_id: CON2-T017
+  english_concept: colleague
+  routing: compound_or_different_family
+  analysis: LIF role and STR institutional membership; communication relations are
+    optional.
+- test_id: CON2-T018
+  english_concept: subscriber
+  routing: compound
+  analysis: CON directed relation plus DAT topic/subscription record and LOG entitlement.
+- test_id: CON2-T019
+  english_concept: callback target
+  routing: one_root_or_compound
+  analysis: CON:210 or CON:211 supplies the directed participant relation; DAT stores
+    the callback address and LOG governs invocation.
+- test_id: CON2-T020
+  english_concept: reachable
+  routing: compound_or_logic
+  analysis: LOG conclusion over CON relation, route, physical interface, permission,
+    and failures; not one CON atom.
+- test_id: CON2-T021
+  english_concept: unreachable
+  routing: compound_or_logic
+  analysis: Negated LOG reachability with cause routed to MOV/STR/MAT/WRN/LOG.
+- test_id: CON2-T022
+  english_concept: addressable
+  routing: compound
+  analysis: DAT address plus CON relation/capacity and LOG validity.
+- test_id: CON2-T023
+  english_concept: authenticated peer
+  routing: compound
+  analysis: CON directed relation plus LOG authentication.
+- test_id: CON2-T024
+  english_concept: permitted recipient
+  routing: compound
+  analysis: CON target relation plus LOG permission.
+- test_id: CON2-T025
+  english_concept: blocked contact
+  routing: compound
+  analysis: CON directed relation plus WRN/LOG denial; blockage does not erase the
+    relation.
+- test_id: CON2-T026
+  english_concept: communicating now
+  routing: existing_con_process_or_compound
+  analysis: Requires CON:1xx traffic, possibly with CON:211; an operative relation
+    alone is insufficient.
+- test_id: CON2-T027
+  english_concept: dialogue
+  routing: compound
+  analysis: Alternating source expression and target reception among related endpoints;
+    not CON:211 alone.
+- test_id: CON2-T028
+  english_concept: conversation
+  routing: compound
+  analysis: Multiple CON:1xx acts, participant relations, timing, and content.
+- test_id: CON2-T029
+  english_concept: reply
+  routing: compound
+  analysis: A source expression related by DAT/LOG to a prior reception.
+- test_id: CON2-T030
+  english_concept: acknowledge
+  routing: compound
+  analysis: Reception followed by a LOG-related source expression.
+- test_id: CON2-T031
+  english_concept: group of correspondents
+  routing: one_root_or_compound
+  analysis: CON:220 for enduring shared co-participation; LIF/STR supplies identity
+    or formal membership.
+- test_id: CON2-T032
+  english_concept: active communication group
+  routing: one_root_or_compound
+  analysis: CON:221 for operative shared participation; actual distribution or dialogue
+    needs CON:1xx.
+- test_id: CON2-T033
+  english_concept: possible communication group
+  routing: one_root
+  analysis: CON:222 for an unrealized possible shared-participation relation.
+- test_id: CON2-T034
+  english_concept: community
+  routing: different_family_or_compound
+  analysis: LIF owns collective identity; CON shared relation may be one component.
+- test_id: CON2-T035
+  english_concept: audience
+  routing: compound
+  analysis: STR/LIF participant set plus target endpoints and shared distribution
+    context.
+- test_id: CON2-T036
+  english_concept: team
+  routing: different_family_or_compound
+  analysis: LIF/STR owns the team; CON:220/221 only if shared communicative participation
+    is asserted.
+- test_id: CON2-T037
+  english_concept: group chat
+  routing: compound
+  analysis: CON:020/021 channel, CON:220/221 shared relation, and repeated CON:1xx
+    traffic.
+- test_id: CON2-T038
+  english_concept: shared room
+  routing: existing_con_entity
+  analysis: CON:020–022 owns the shared channel locus; CON:2xx owns the participant
+    relation, not the room.
+- test_id: CON2-T039
+  english_concept: network
+  routing: different_family_or_compound
+  analysis: STR owns topology; CON may add participant relations and channels.
+- test_id: CON2-T040
+  english_concept: mesh
+  routing: different_family_or_compound
+  analysis: STR graph topology plus CON relations and optional active traffic.
+- test_id: CON2-T041
+  english_concept: federation
+  routing: compound
+  analysis: STR membership/topology, LOG compatibility/governance, and CON shared
+    relation.
+- test_id: CON2-T042
+  english_concept: interoperable
+  routing: compound_or_logic
+  analysis: LOG compatibility over protocols and types; not CON:220.
+- test_id: CON2-T043
+  english_concept: compatible protocol
+  routing: different_family
+  analysis: LOG owns compatibility and protocol rules.
+- test_id: CON2-T044
+  english_concept: handshake
+  routing: compound
+  analysis: Reciprocal CON:1xx processes governed by LOG, possibly establishing a
+    CON:211 relation.
+- test_id: CON2-T045
+  english_concept: subscription
+  routing: compound
+  analysis: DAT record plus LOG entitlement plus directed or shared CON relation.
+- test_id: CON2-T046
+  english_concept: topic membership
+  routing: compound
+  analysis: STR/DAT membership plus CON shared relation where communicative co-participation
+    matters.
+- test_id: CON2-T047
+  english_concept: multicast group
+  routing: compound
+  analysis: STR/DAT endpoint set, CON shared relation, LOG routing, and CON:1xx distribution.
+- test_id: CON2-T048
+  english_concept: consensus
+  routing: different_family_or_compound
+  analysis: LOG agreement and MIN aligned judgments after communicative exchange.
+- test_id: CON2-T049
+  english_concept: joint attention
+  routing: different_family_or_compound
+  analysis: MIN owns shared attention; CON relation may enable but does not entail
+    it.
+- test_id: CON2-T050
+  english_concept: coordinate
+  routing: compound
+  analysis: LOG/STR coordination using CON processes and relations.
+- test_id: CON2-T051
+  english_concept: connected
+  routing: underspecified
+  analysis: Could be physical, structural, logical, social, or communicative; do not
+    map blindly to CON.
+- test_id: CON2-T052
+  english_concept: disconnected
+  routing: underspecified
+  analysis: Could negate a locus, relation, capacity, route, or hardware link; cause
+    and layer must be resolved.
+- test_id: CON2-T053
+  english_concept: reconnect
+  routing: different_family_or_compound
+  analysis: REP restores a CON locus, capacity, or relation after failure.
+- test_id: CON2-T054
+  english_concept: route exists
+  routing: different_family
+  analysis: MOV/STR owns a route or topology; existence of a route does not establish
+    a CON relation.
+- test_id: CON2-T055
+  english_concept: data stream
+  routing: different_family_or_compound
+  analysis: DAT owns the stream; CON:1xx owns its exchange processes and CON:2xx may
+    own participant relations.
+- test_id: CON2-T056
+  english_concept: message queue
+  routing: different_family
+  analysis: DAT/STR owns queued messages; no communication relation or scheduled exchange
+    is inferred.
+- test_id: CON2-T057
+  english_concept: transport
+  routing: different_family_or_compound
+  analysis: MOV/MAT owns displacement of a carrier; communicative use adds CON/DAT.
+- test_id: CON2-T058
+  english_concept: schedule a call
+  routing: compound
+  analysis: ORI/LOG schedule plus potential CON processes and participant relations.
+- test_id: CON2-T059
+  english_concept: possible meeting
+  routing: compound
+  analysis: ORI modality plus LIF/STR event participants; CON:222 only if unrealized
+    shared communicative co-participation is specifically asserted.
+- test_id: CON2-T060
+  english_concept: unknown relationship
+  routing: underspecified
+  analysis: CON:212 only for an unresolved directed communicative relation; social,
+    structural, or logical relations belong elsewhere.
+- test_id: CON2-T061
+  english_concept: unknown group formation
+  routing: one_root_or_compound
+  analysis: CON:222 for potential shared communicative relation, with ORI/STR for
+    broader formation claims.
+- test_id: CON2-T062
+  english_concept: participant
+  routing: existing_con_entity_or_compound
+  analysis: CON:0xx identifies communicative endpoint loci; CON:2xx adds capacity
+    or relation.
+- test_id: CON2-T063
+  english_concept: server/client
+  routing: compound
+  analysis: STR/LOG roles plus CON endpoints, processes, capacities, and relations
+    as separately asserted.
+- test_id: CON2-T064
+  english_concept: peer
+  routing: compound
+  analysis: A symmetric or reciprocal construction over directed relations; no single
+    directional root entails peerhood.
+- test_id: CON2-T065
+  english_concept: telepathy
+  routing: compound
+  analysis: CON capacity, directed relation, source expression, and target reception
+    with carrier unspecified.
+- test_id: CON2-T066
+  english_concept: silence despite capability
+  routing: one_root_plus_negation
+  analysis: CON:200[1] with denied CON:101; persistent capacity can coexist with no
+    active expression.
+- test_id: CON2-T067
+  english_concept: operative link without traffic
+  routing: one_root_plus_negation
+  analysis: CON:211[1] with denied CON:101/111; this is a required non-entailment.
+- test_id: CON2-T068
+  english_concept: traffic without persistent contact
+  routing: existing_process_plus_negation
+  analysis: A transient CON:1xx exchange can occur while CON:210 is denied or unspecified.
+- test_id: CON2-T069
+  english_concept: potential group with no channel
+  routing: one_root_plus_negation
+  analysis: CON:222[1] can hold while CON:020/021 is denied; the possible relation
+    is not a channel entity.
+- test_id: CON2-T070
+  english_concept: uncertain active capacity
+  routing: runtime_state
+  analysis: CON:201[2]/num leaves present availability unresolved; it is not CON:202
+    latent capacity.
+- test_id: CON2-T071
+  english_concept: uncertain potential group
+  routing: runtime_state
+  analysis: CON:222[2]/num questions even the potential relation; CON:222[1] affirms
+    it as unrealized.
+- test_id: CON2-T072
+  english_concept: future communication
+  routing: compound_or_grammar
+  analysis: ORI future time plus a potential CON process or relation; third lexical
+    trit 2 alone does not mean future.
+- test_id: CON2-T073
+  english_concept: communication permission
+  routing: different_family_or_compound
+  analysis: LOG permission applies to a CON capacity, relation, or process but is
+    never contained in it.

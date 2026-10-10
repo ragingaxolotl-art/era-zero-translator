@@ -1,0 +1,1443 @@
+---
+metadata:
+  title: STR:100–122 adversarial semantic candidates
+  status: approved_and_canonical_by_delegated_authority
+  architecture_version: '1.0'
+  range: STR:100–122
+  roots_reviewed: 9
+  candidate_architectures_per_root: 5
+  scored_categories:
+  - atomicity
+  - address_fit
+  - family_fit
+  - neighbor_separation
+  - cross_family_separation
+  - compound_usefulness
+  - everyday_language_coverage
+  - technical_coverage
+  generated_fields_changed: false
+  roots_canonicalized:
+  - STR:100
+  - STR:101
+  - STR:102
+  - STR:110
+  - STR:111
+  - STR:112
+  - STR:120
+  - STR:121
+  - STR:122
+  approval_record: migrations/STR_100_122_semantic_approval.yaml
+roots:
+- canonical_id: STR:100
+  fixed_generated_fields:
+    canonical_id: STR:100
+    universal_slot: completed inward process
+    family_qualified_transliteration: do·kam
+    local_compact_root: kam
+    formal_carrier: do-ki-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 2
+  current_meaning_rationale: The provisional choice follows the inward/self and completed
+    slot labels and favors familiar words such as self-organization, construction,
+    and deployment.
+  candidates:
+  - candidate_id: current_phase2
+    title: self-organization complete
+    invariant_candidate: An inward arrangement, reinforcement, or reorganization has
+      reached a stable finished form.
+    analysis:
+      why_it_fits: The provisional choice follows the inward/self and completed slot
+        labels and favors familiar words such as self-organization, construction,
+        and deployment.
+      useful_coverage: It offers direct everyday and technical labels for rearranging,
+        stabilizing, building, installing, rolling out, and coordinating.
+      semantic_territory_consumed: It mixes arrangement, reinforcement, stability,
+        assembly, enclosure, installation, deployment, organizational roles, planning,
+        staging, and queueing.
+      conflicts_or_future_limitations: Triplets do not preserve one exact process,
+        1x2 roots improperly encode plans or queues, and definitions collide with
+        MAT, CRE, LOG, DAT, LIF, CON, WRN, and REP.
+    scores:
+      atomicity: 6
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 53
+    maximum: 80
+  - candidate_id: reconfiguration_incorporation_integration
+    title: completed internal reconfiguration
+    invariant_candidate: Completion of a structural transformation that changes how
+      a reference structure's own constituents occupy its internal positions.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral structural transformation;
+        the second trit alone distinguishes internal constituent reassignment, incorporation
+        of one distinct target, or integration of multiple structures, and the third
+        alone selects phase.
+      useful_coverage: It covers rearrange, reconfigure, insert, include, mount, onboard
+        structurally, merge assemblies, integrate modules, compose systems, and exact
+        graph or object-layout transformations.
+      semantic_territory_consumed: Only transformation of constituent-to-position
+        and structure-to-whole organization. Creation, physical deformation, repair,
+        planning, rules, data descriptions, communication, and movement remain separate.
+      conflicts_or_future_limitations: Broad English build, install, merge, deploy,
+        organize, restructure, and integrate require sense analysis or compounds;
+        this restriction is deliberate and translator-safe.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: physical_deformation_enclosure_assembly
+    title: completed inward deformation
+    invariant_candidate: A completed physical transformation that changes matter through
+      inward/self deformation, enclosure, or assembly.
+    analysis:
+      why_it_fits: Bending internally, enclosing a target, and physically assembling
+        a whole are observable structural transformations with good spatial examples.
+      useful_coverage: It covers fold, bend, compress, wrap, enclose, fasten, assemble,
+        and fabricate.
+      semantic_territory_consumed: Material shape change, surfaces, forces, joins,
+        and construction operations.
+      conflicts_or_future_limitations: The architecture is MAT-heavy, weak for abstract
+        or software structure, duplicates CRE construction and REP reassembly, and
+        makes the STR family substrate-specific.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total: 58
+    maximum: 80
+  - candidate_id: schema_migration_installation_deployment
+    title: completed local schema migration
+    invariant_candidate: A completed technical transformation that changes a schema,
+      installs a target, or deploys a system at inward/self scope.
+    analysis:
+      why_it_fits: Local migration, component installation, and distributed deployment
+        mirror inward, target, and systemic scope and are technically useful.
+      useful_coverage: It covers schema migration, package installation, configuration
+        rollout, service deployment, and topology updates.
+      semantic_territory_consumed: Software lifecycle, data representation, configuration
+        records, execution environments, and operational release state.
+      conflicts_or_future_limitations: It collides with DAT, LOG, CRE, and CON; it
+        is historically narrow and would make ordinary physical and social structural
+        transformations metaphorical extensions of software.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 6
+      technical_coverage: 10
+    total: 58
+    maximum: 80
+  - candidate_id: role_allocation_institutional_reorganization
+    title: completed internal role reassignment
+    invariant_candidate: A completed social transformation that reallocates roles
+      or reorganizes an institution at inward/self scope.
+    analysis:
+      why_it_fits: Internal reassignment, appointment of an outside participant, and
+        institutional reorganization form an intuitive social-structure grid.
+      useful_coverage: It covers staffing, appointing, assigning offices, restructuring
+        departments, reorganizing teams, and governance changes.
+      semantic_territory_consumed: Participant identity, social membership, authority,
+        obligation, institutional continuity, and communicative coordination.
+      conflicts_or_future_limitations: It collides with LIF, LOG, and CON, is anthropocentric,
+        and cannot cleanly generalize to physical or computational part–whole organization.
+    scores:
+      atomicity: 7
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 6
+    total: 53
+    maximum: 80
+  recommended_candidate_id: reconfiguration_incorporation_integration
+  recommendation_reason: Only this architecture preserves one substrate-neutral STR
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical STR:0xx loci, and avoids absorbing matter, creation,
+    repair, data, rules, communication, or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: STR:101
+  fixed_generated_fields:
+    canonical_id: STR:101
+    universal_slot: active inward process
+    family_qualified_transliteration: do·kak
+    local_compact_root: kak
+    formal_carrier: do-ki-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 4
+  current_meaning_rationale: The provisional choice follows the inward/self and active
+    slot labels and favors familiar words such as self-organization, construction,
+    and deployment.
+  candidates:
+  - candidate_id: current_phase2
+    title: active self-organization
+    invariant_candidate: An entity is actively arranging, stabilizing, or restructuring
+      its own components.
+    analysis:
+      why_it_fits: The provisional choice follows the inward/self and active slot
+        labels and favors familiar words such as self-organization, construction,
+        and deployment.
+      useful_coverage: It offers direct everyday and technical labels for rearranging,
+        stabilizing, building, installing, rolling out, and coordinating.
+      semantic_territory_consumed: It mixes arrangement, reinforcement, stability,
+        assembly, enclosure, installation, deployment, organizational roles, planning,
+        staging, and queueing.
+      conflicts_or_future_limitations: Triplets do not preserve one exact process,
+        1x2 roots improperly encode plans or queues, and definitions collide with
+        MAT, CRE, LOG, DAT, LIF, CON, WRN, and REP.
+    scores:
+      atomicity: 6
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 53
+    maximum: 80
+  - candidate_id: reconfiguration_incorporation_integration
+    title: active internal reconfiguration
+    invariant_candidate: An ongoing structural transformation that changes how a reference
+      structure's own constituents occupy its internal positions.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral structural transformation;
+        the second trit alone distinguishes internal constituent reassignment, incorporation
+        of one distinct target, or integration of multiple structures, and the third
+        alone selects phase.
+      useful_coverage: It covers rearrange, reconfigure, insert, include, mount, onboard
+        structurally, merge assemblies, integrate modules, compose systems, and exact
+        graph or object-layout transformations.
+      semantic_territory_consumed: Only transformation of constituent-to-position
+        and structure-to-whole organization. Creation, physical deformation, repair,
+        planning, rules, data descriptions, communication, and movement remain separate.
+      conflicts_or_future_limitations: Broad English build, install, merge, deploy,
+        organize, restructure, and integrate require sense analysis or compounds;
+        this restriction is deliberate and translator-safe.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: physical_deformation_enclosure_assembly
+    title: active inward deformation
+    invariant_candidate: A active physical transformation that changes matter through
+      inward/self deformation, enclosure, or assembly.
+    analysis:
+      why_it_fits: Bending internally, enclosing a target, and physically assembling
+        a whole are observable structural transformations with good spatial examples.
+      useful_coverage: It covers fold, bend, compress, wrap, enclose, fasten, assemble,
+        and fabricate.
+      semantic_territory_consumed: Material shape change, surfaces, forces, joins,
+        and construction operations.
+      conflicts_or_future_limitations: The architecture is MAT-heavy, weak for abstract
+        or software structure, duplicates CRE construction and REP reassembly, and
+        makes the STR family substrate-specific.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total: 58
+    maximum: 80
+  - candidate_id: schema_migration_installation_deployment
+    title: active local schema migration
+    invariant_candidate: A active technical transformation that changes a schema,
+      installs a target, or deploys a system at inward/self scope.
+    analysis:
+      why_it_fits: Local migration, component installation, and distributed deployment
+        mirror inward, target, and systemic scope and are technically useful.
+      useful_coverage: It covers schema migration, package installation, configuration
+        rollout, service deployment, and topology updates.
+      semantic_territory_consumed: Software lifecycle, data representation, configuration
+        records, execution environments, and operational release state.
+      conflicts_or_future_limitations: It collides with DAT, LOG, CRE, and CON; it
+        is historically narrow and would make ordinary physical and social structural
+        transformations metaphorical extensions of software.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 6
+      technical_coverage: 10
+    total: 58
+    maximum: 80
+  - candidate_id: role_allocation_institutional_reorganization
+    title: active internal role reassignment
+    invariant_candidate: A active social transformation that reallocates roles or
+      reorganizes an institution at inward/self scope.
+    analysis:
+      why_it_fits: Internal reassignment, appointment of an outside participant, and
+        institutional reorganization form an intuitive social-structure grid.
+      useful_coverage: It covers staffing, appointing, assigning offices, restructuring
+        departments, reorganizing teams, and governance changes.
+      semantic_territory_consumed: Participant identity, social membership, authority,
+        obligation, institutional continuity, and communicative coordination.
+      conflicts_or_future_limitations: It collides with LIF, LOG, and CON, is anthropocentric,
+        and cannot cleanly generalize to physical or computational part–whole organization.
+    scores:
+      atomicity: 7
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 6
+    total: 53
+    maximum: 80
+  recommended_candidate_id: reconfiguration_incorporation_integration
+  recommendation_reason: Only this architecture preserves one substrate-neutral STR
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical STR:0xx loci, and avoids absorbing matter, creation,
+    repair, data, rules, communication, or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: STR:102
+  fixed_generated_fields:
+    canonical_id: STR:102
+    universal_slot: pending inward process
+    family_qualified_transliteration: do·kan
+    local_compact_root: kan
+    formal_carrier: do-ki-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 0
+  current_meaning_rationale: The provisional choice follows the inward/self and nonactualized
+    slot labels and favors familiar words such as self-organization, construction,
+    and deployment.
+  candidates:
+  - candidate_id: current_phase2
+    title: queued reorganization
+    invariant_candidate: An inward structural change is planned or possible but has
+      not begun.
+    analysis:
+      why_it_fits: The provisional choice follows the inward/self and nonactualized
+        slot labels and favors familiar words such as self-organization, construction,
+        and deployment.
+      useful_coverage: It offers direct everyday and technical labels for rearranging,
+        stabilizing, building, installing, rolling out, and coordinating.
+      semantic_territory_consumed: It mixes arrangement, reinforcement, stability,
+        assembly, enclosure, installation, deployment, organizational roles, planning,
+        staging, and queueing.
+      conflicts_or_future_limitations: Triplets do not preserve one exact process,
+        1x2 roots improperly encode plans or queues, and definitions collide with
+        MAT, CRE, LOG, DAT, LIF, CON, WRN, and REP.
+    scores:
+      atomicity: 5
+      address_fit: 6
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: reconfiguration_incorporation_integration
+    title: potential internal reconfiguration
+    invariant_candidate: A nonactualized structural transformation that would change
+      how a reference structure's own constituents occupy its internal positions.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral structural transformation;
+        the second trit alone distinguishes internal constituent reassignment, incorporation
+        of one distinct target, or integration of multiple structures, and the third
+        alone selects phase.
+      useful_coverage: It covers rearrange, reconfigure, insert, include, mount, onboard
+        structurally, merge assemblies, integrate modules, compose systems, and exact
+        graph or object-layout transformations.
+      semantic_territory_consumed: Only transformation of constituent-to-position
+        and structure-to-whole organization. Creation, physical deformation, repair,
+        planning, rules, data descriptions, communication, and movement remain separate.
+      conflicts_or_future_limitations: Broad English build, install, merge, deploy,
+        organize, restructure, and integrate require sense analysis or compounds;
+        this restriction is deliberate and translator-safe.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: physical_deformation_enclosure_assembly
+    title: potential inward deformation
+    invariant_candidate: A nonactualized physical transformation that changes matter
+      through inward/self deformation, enclosure, or assembly.
+    analysis:
+      why_it_fits: Bending internally, enclosing a target, and physically assembling
+        a whole are observable structural transformations with good spatial examples.
+      useful_coverage: It covers fold, bend, compress, wrap, enclose, fasten, assemble,
+        and fabricate.
+      semantic_territory_consumed: Material shape change, surfaces, forces, joins,
+        and construction operations.
+      conflicts_or_future_limitations: The architecture is MAT-heavy, weak for abstract
+        or software structure, duplicates CRE construction and REP reassembly, and
+        makes the STR family substrate-specific.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 8
+    total: 58
+    maximum: 80
+  - candidate_id: schema_migration_installation_deployment
+    title: potential local schema migration
+    invariant_candidate: A nonactualized technical transformation that changes a schema,
+      installs a target, or deploys a system at inward/self scope.
+    analysis:
+      why_it_fits: Local migration, component installation, and distributed deployment
+        mirror inward, target, and systemic scope and are technically useful.
+      useful_coverage: It covers schema migration, package installation, configuration
+        rollout, service deployment, and topology updates.
+      semantic_territory_consumed: Software lifecycle, data representation, configuration
+        records, execution environments, and operational release state.
+      conflicts_or_future_limitations: It collides with DAT, LOG, CRE, and CON; it
+        is historically narrow and would make ordinary physical and social structural
+        transformations metaphorical extensions of software.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 6
+      technical_coverage: 10
+    total: 58
+    maximum: 80
+  - candidate_id: role_allocation_institutional_reorganization
+    title: potential internal role reassignment
+    invariant_candidate: A nonactualized social transformation that reallocates roles
+      or reorganizes an institution at inward/self scope.
+    analysis:
+      why_it_fits: Internal reassignment, appointment of an outside participant, and
+        institutional reorganization form an intuitive social-structure grid.
+      useful_coverage: It covers staffing, appointing, assigning offices, restructuring
+        departments, reorganizing teams, and governance changes.
+      semantic_territory_consumed: Participant identity, social membership, authority,
+        obligation, institutional continuity, and communicative coordination.
+      conflicts_or_future_limitations: It collides with LIF, LOG, and CON, is anthropocentric,
+        and cannot cleanly generalize to physical or computational part–whole organization.
+    scores:
+      atomicity: 7
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 6
+    total: 53
+    maximum: 80
+  recommended_candidate_id: reconfiguration_incorporation_integration
+  recommendation_reason: Only this architecture preserves one substrate-neutral STR
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical STR:0xx loci, and avoids absorbing matter, creation,
+    repair, data, rules, communication, or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: STR:110
+  fixed_generated_fields:
+    canonical_id: STR:110
+    universal_slot: completed outward process
+    family_qualified_transliteration: do·kom
+    local_compact_root: kom
+    formal_carrier: do-ki-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 4
+  current_meaning_rationale: The provisional choice follows the outward/target and
+    completed slot labels and favors familiar words such as self-organization, construction,
+    and deployment.
+  candidates:
+  - candidate_id: current_phase2
+    title: construction complete
+    invariant_candidate: The assembly, enclosure, or organization of an external target
+      has reached its intended form.
+    analysis:
+      why_it_fits: The provisional choice follows the outward/target and completed
+        slot labels and favors familiar words such as self-organization, construction,
+        and deployment.
+      useful_coverage: It offers direct everyday and technical labels for rearranging,
+        stabilizing, building, installing, rolling out, and coordinating.
+      semantic_territory_consumed: It mixes arrangement, reinforcement, stability,
+        assembly, enclosure, installation, deployment, organizational roles, planning,
+        staging, and queueing.
+      conflicts_or_future_limitations: Triplets do not preserve one exact process,
+        1x2 roots improperly encode plans or queues, and definitions collide with
+        MAT, CRE, LOG, DAT, LIF, CON, WRN, and REP.
+    scores:
+      atomicity: 6
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 53
+    maximum: 80
+  - candidate_id: reconfiguration_incorporation_integration
+    title: completed target incorporation
+    invariant_candidate: Completion of a structural transformation by which a distinct
+      target becomes incorporated into a reference structure.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral structural transformation;
+        the second trit alone distinguishes internal constituent reassignment, incorporation
+        of one distinct target, or integration of multiple structures, and the third
+        alone selects phase.
+      useful_coverage: It covers rearrange, reconfigure, insert, include, mount, onboard
+        structurally, merge assemblies, integrate modules, compose systems, and exact
+        graph or object-layout transformations.
+      semantic_territory_consumed: Only transformation of constituent-to-position
+        and structure-to-whole organization. Creation, physical deformation, repair,
+        planning, rules, data descriptions, communication, and movement remain separate.
+      conflicts_or_future_limitations: Broad English build, install, merge, deploy,
+        organize, restructure, and integrate require sense analysis or compounds;
+        this restriction is deliberate and translator-safe.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: physical_deformation_enclosure_assembly
+    title: completed enclosure of target
+    invariant_candidate: A completed physical transformation that changes matter through
+      outward/target deformation, enclosure, or assembly.
+    analysis:
+      why_it_fits: Bending internally, enclosing a target, and physically assembling
+        a whole are observable structural transformations with good spatial examples.
+      useful_coverage: It covers fold, bend, compress, wrap, enclose, fasten, assemble,
+        and fabricate.
+      semantic_territory_consumed: Material shape change, surfaces, forces, joins,
+        and construction operations.
+      conflicts_or_future_limitations: The architecture is MAT-heavy, weak for abstract
+        or software structure, duplicates CRE construction and REP reassembly, and
+        makes the STR family substrate-specific.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 60
+    maximum: 80
+  - candidate_id: schema_migration_installation_deployment
+    title: completed target installation
+    invariant_candidate: A completed technical transformation that changes a schema,
+      installs a target, or deploys a system at outward/target scope.
+    analysis:
+      why_it_fits: Local migration, component installation, and distributed deployment
+        mirror inward, target, and systemic scope and are technically useful.
+      useful_coverage: It covers schema migration, package installation, configuration
+        rollout, service deployment, and topology updates.
+      semantic_territory_consumed: Software lifecycle, data representation, configuration
+        records, execution environments, and operational release state.
+      conflicts_or_future_limitations: It collides with DAT, LOG, CRE, and CON; it
+        is historically narrow and would make ordinary physical and social structural
+        transformations metaphorical extensions of software.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 3
+      compound_usefulness: 9
+      everyday_language_coverage: 7
+      technical_coverage: 10
+    total: 58
+    maximum: 80
+  - candidate_id: role_allocation_institutional_reorganization
+    title: completed assignment of external role
+    invariant_candidate: A completed social transformation that reallocates roles
+      or reorganizes an institution at outward/target scope.
+    analysis:
+      why_it_fits: Internal reassignment, appointment of an outside participant, and
+        institutional reorganization form an intuitive social-structure grid.
+      useful_coverage: It covers staffing, appointing, assigning offices, restructuring
+        departments, reorganizing teams, and governance changes.
+      semantic_territory_consumed: Participant identity, social membership, authority,
+        obligation, institutional continuity, and communicative coordination.
+      conflicts_or_future_limitations: It collides with LIF, LOG, and CON, is anthropocentric,
+        and cannot cleanly generalize to physical or computational part–whole organization.
+    scores:
+      atomicity: 7
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 7
+    total: 54
+    maximum: 80
+  recommended_candidate_id: reconfiguration_incorporation_integration
+  recommendation_reason: Only this architecture preserves one substrate-neutral STR
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical STR:0xx loci, and avoids absorbing matter, creation,
+    repair, data, rules, communication, or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: STR:111
+  fixed_generated_fields:
+    canonical_id: STR:111
+    universal_slot: active outward process
+    family_qualified_transliteration: do·kok
+    local_compact_root: kok
+    formal_carrier: do-ki-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 6
+  current_meaning_rationale: The provisional choice follows the outward/target and
+    active slot labels and favors familiar words such as self-organization, construction,
+    and deployment.
+  candidates:
+  - candidate_id: current_phase2
+    title: active construction
+    invariant_candidate: Components are actively being assembled, enclosed, ordered,
+      or installed into an external target.
+    analysis:
+      why_it_fits: The provisional choice follows the outward/target and active slot
+        labels and favors familiar words such as self-organization, construction,
+        and deployment.
+      useful_coverage: It offers direct everyday and technical labels for rearranging,
+        stabilizing, building, installing, rolling out, and coordinating.
+      semantic_territory_consumed: It mixes arrangement, reinforcement, stability,
+        assembly, enclosure, installation, deployment, organizational roles, planning,
+        staging, and queueing.
+      conflicts_or_future_limitations: Triplets do not preserve one exact process,
+        1x2 roots improperly encode plans or queues, and definitions collide with
+        MAT, CRE, LOG, DAT, LIF, CON, WRN, and REP.
+    scores:
+      atomicity: 6
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 53
+    maximum: 80
+  - candidate_id: reconfiguration_incorporation_integration
+    title: active target incorporation
+    invariant_candidate: An ongoing structural transformation by which a distinct
+      target becomes incorporated into a reference structure.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral structural transformation;
+        the second trit alone distinguishes internal constituent reassignment, incorporation
+        of one distinct target, or integration of multiple structures, and the third
+        alone selects phase.
+      useful_coverage: It covers rearrange, reconfigure, insert, include, mount, onboard
+        structurally, merge assemblies, integrate modules, compose systems, and exact
+        graph or object-layout transformations.
+      semantic_territory_consumed: Only transformation of constituent-to-position
+        and structure-to-whole organization. Creation, physical deformation, repair,
+        planning, rules, data descriptions, communication, and movement remain separate.
+      conflicts_or_future_limitations: Broad English build, install, merge, deploy,
+        organize, restructure, and integrate require sense analysis or compounds;
+        this restriction is deliberate and translator-safe.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: physical_deformation_enclosure_assembly
+    title: active enclosure of target
+    invariant_candidate: A active physical transformation that changes matter through
+      outward/target deformation, enclosure, or assembly.
+    analysis:
+      why_it_fits: Bending internally, enclosing a target, and physically assembling
+        a whole are observable structural transformations with good spatial examples.
+      useful_coverage: It covers fold, bend, compress, wrap, enclose, fasten, assemble,
+        and fabricate.
+      semantic_territory_consumed: Material shape change, surfaces, forces, joins,
+        and construction operations.
+      conflicts_or_future_limitations: The architecture is MAT-heavy, weak for abstract
+        or software structure, duplicates CRE construction and REP reassembly, and
+        makes the STR family substrate-specific.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 60
+    maximum: 80
+  - candidate_id: schema_migration_installation_deployment
+    title: active target installation
+    invariant_candidate: A active technical transformation that changes a schema,
+      installs a target, or deploys a system at outward/target scope.
+    analysis:
+      why_it_fits: Local migration, component installation, and distributed deployment
+        mirror inward, target, and systemic scope and are technically useful.
+      useful_coverage: It covers schema migration, package installation, configuration
+        rollout, service deployment, and topology updates.
+      semantic_territory_consumed: Software lifecycle, data representation, configuration
+        records, execution environments, and operational release state.
+      conflicts_or_future_limitations: It collides with DAT, LOG, CRE, and CON; it
+        is historically narrow and would make ordinary physical and social structural
+        transformations metaphorical extensions of software.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 3
+      compound_usefulness: 9
+      everyday_language_coverage: 7
+      technical_coverage: 10
+    total: 58
+    maximum: 80
+  - candidate_id: role_allocation_institutional_reorganization
+    title: active assignment of external role
+    invariant_candidate: A active social transformation that reallocates roles or
+      reorganizes an institution at outward/target scope.
+    analysis:
+      why_it_fits: Internal reassignment, appointment of an outside participant, and
+        institutional reorganization form an intuitive social-structure grid.
+      useful_coverage: It covers staffing, appointing, assigning offices, restructuring
+        departments, reorganizing teams, and governance changes.
+      semantic_territory_consumed: Participant identity, social membership, authority,
+        obligation, institutional continuity, and communicative coordination.
+      conflicts_or_future_limitations: It collides with LIF, LOG, and CON, is anthropocentric,
+        and cannot cleanly generalize to physical or computational part–whole organization.
+    scores:
+      atomicity: 7
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 7
+    total: 54
+    maximum: 80
+  recommended_candidate_id: reconfiguration_incorporation_integration
+  recommendation_reason: Only this architecture preserves one substrate-neutral STR
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical STR:0xx loci, and avoids absorbing matter, creation,
+    repair, data, rules, communication, or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: STR:112
+  fixed_generated_fields:
+    canonical_id: STR:112
+    universal_slot: pending outward process
+    family_qualified_transliteration: do·kon
+    local_compact_root: kon
+    formal_carrier: do-ki-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 2
+  current_meaning_rationale: The provisional choice follows the outward/target and
+    nonactualized slot labels and favors familiar words such as self-organization,
+    construction, and deployment.
+  candidates:
+  - candidate_id: current_phase2
+    title: planned construction
+    invariant_candidate: Work on a structure or organized target is designed or staged
+      but not yet active.
+    analysis:
+      why_it_fits: The provisional choice follows the outward/target and nonactualized
+        slot labels and favors familiar words such as self-organization, construction,
+        and deployment.
+      useful_coverage: It offers direct everyday and technical labels for rearranging,
+        stabilizing, building, installing, rolling out, and coordinating.
+      semantic_territory_consumed: It mixes arrangement, reinforcement, stability,
+        assembly, enclosure, installation, deployment, organizational roles, planning,
+        staging, and queueing.
+      conflicts_or_future_limitations: Triplets do not preserve one exact process,
+        1x2 roots improperly encode plans or queues, and definitions collide with
+        MAT, CRE, LOG, DAT, LIF, CON, WRN, and REP.
+    scores:
+      atomicity: 5
+      address_fit: 6
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 51
+    maximum: 80
+  - candidate_id: reconfiguration_incorporation_integration
+    title: potential target incorporation
+    invariant_candidate: A nonactualized structural transformation by which a distinct
+      target would become incorporated into a reference structure.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral structural transformation;
+        the second trit alone distinguishes internal constituent reassignment, incorporation
+        of one distinct target, or integration of multiple structures, and the third
+        alone selects phase.
+      useful_coverage: It covers rearrange, reconfigure, insert, include, mount, onboard
+        structurally, merge assemblies, integrate modules, compose systems, and exact
+        graph or object-layout transformations.
+      semantic_territory_consumed: Only transformation of constituent-to-position
+        and structure-to-whole organization. Creation, physical deformation, repair,
+        planning, rules, data descriptions, communication, and movement remain separate.
+      conflicts_or_future_limitations: Broad English build, install, merge, deploy,
+        organize, restructure, and integrate require sense analysis or compounds;
+        this restriction is deliberate and translator-safe.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: physical_deformation_enclosure_assembly
+    title: potential enclosure of target
+    invariant_candidate: A nonactualized physical transformation that changes matter
+      through outward/target deformation, enclosure, or assembly.
+    analysis:
+      why_it_fits: Bending internally, enclosing a target, and physically assembling
+        a whole are observable structural transformations with good spatial examples.
+      useful_coverage: It covers fold, bend, compress, wrap, enclose, fasten, assemble,
+        and fabricate.
+      semantic_territory_consumed: Material shape change, surfaces, forces, joins,
+        and construction operations.
+      conflicts_or_future_limitations: The architecture is MAT-heavy, weak for abstract
+        or software structure, duplicates CRE construction and REP reassembly, and
+        makes the STR family substrate-specific.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 8
+    total: 60
+    maximum: 80
+  - candidate_id: schema_migration_installation_deployment
+    title: potential target installation
+    invariant_candidate: A nonactualized technical transformation that changes a schema,
+      installs a target, or deploys a system at outward/target scope.
+    analysis:
+      why_it_fits: Local migration, component installation, and distributed deployment
+        mirror inward, target, and systemic scope and are technically useful.
+      useful_coverage: It covers schema migration, package installation, configuration
+        rollout, service deployment, and topology updates.
+      semantic_territory_consumed: Software lifecycle, data representation, configuration
+        records, execution environments, and operational release state.
+      conflicts_or_future_limitations: It collides with DAT, LOG, CRE, and CON; it
+        is historically narrow and would make ordinary physical and social structural
+        transformations metaphorical extensions of software.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 3
+      compound_usefulness: 9
+      everyday_language_coverage: 7
+      technical_coverage: 10
+    total: 58
+    maximum: 80
+  - candidate_id: role_allocation_institutional_reorganization
+    title: potential assignment of external role
+    invariant_candidate: A nonactualized social transformation that reallocates roles
+      or reorganizes an institution at outward/target scope.
+    analysis:
+      why_it_fits: Internal reassignment, appointment of an outside participant, and
+        institutional reorganization form an intuitive social-structure grid.
+      useful_coverage: It covers staffing, appointing, assigning offices, restructuring
+        departments, reorganizing teams, and governance changes.
+      semantic_territory_consumed: Participant identity, social membership, authority,
+        obligation, institutional continuity, and communicative coordination.
+      conflicts_or_future_limitations: It collides with LIF, LOG, and CON, is anthropocentric,
+        and cannot cleanly generalize to physical or computational part–whole organization.
+    scores:
+      atomicity: 7
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 6
+      cross_family_separation: 4
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 7
+    total: 54
+    maximum: 80
+  recommended_candidate_id: reconfiguration_incorporation_integration
+  recommendation_reason: Only this architecture preserves one substrate-neutral STR
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical STR:0xx loci, and avoids absorbing matter, creation,
+    repair, data, rules, communication, or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: STR:120
+  fixed_generated_fields:
+    canonical_id: STR:120
+    universal_slot: completed systemic process
+    family_qualified_transliteration: do·kim
+    local_compact_root: kim
+    formal_carrier: do-ki-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 0
+  current_meaning_rationale: The provisional choice follows the shared/systemic and
+    completed slot labels and favors familiar words such as self-organization, construction,
+    and deployment.
+  candidates:
+  - candidate_id: current_phase2
+    title: system deployment complete
+    invariant_candidate: A shared architecture or organization has completed a defined
+      build, rollout, or reorganization.
+    analysis:
+      why_it_fits: The provisional choice follows the shared/systemic and completed
+        slot labels and favors familiar words such as self-organization, construction,
+        and deployment.
+      useful_coverage: It offers direct everyday and technical labels for rearranging,
+        stabilizing, building, installing, rolling out, and coordinating.
+      semantic_territory_consumed: It mixes arrangement, reinforcement, stability,
+        assembly, enclosure, installation, deployment, organizational roles, planning,
+        staging, and queueing.
+      conflicts_or_future_limitations: Triplets do not preserve one exact process,
+        1x2 roots improperly encode plans or queues, and definitions collide with
+        MAT, CRE, LOG, DAT, LIF, CON, WRN, and REP.
+    scores:
+      atomicity: 6
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 52
+    maximum: 80
+  - candidate_id: reconfiguration_incorporation_integration
+    title: completed systemic integration
+    invariant_candidate: Completion of a structural transformation by which multiple
+      structures become organized as constituents of one composite arrangement.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral structural transformation;
+        the second trit alone distinguishes internal constituent reassignment, incorporation
+        of one distinct target, or integration of multiple structures, and the third
+        alone selects phase.
+      useful_coverage: It covers rearrange, reconfigure, insert, include, mount, onboard
+        structurally, merge assemblies, integrate modules, compose systems, and exact
+        graph or object-layout transformations.
+      semantic_territory_consumed: Only transformation of constituent-to-position
+        and structure-to-whole organization. Creation, physical deformation, repair,
+        planning, rules, data descriptions, communication, and movement remain separate.
+      conflicts_or_future_limitations: Broad English build, install, merge, deploy,
+        organize, restructure, and integrate require sense analysis or compounds;
+        this restriction is deliberate and translator-safe.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: physical_deformation_enclosure_assembly
+    title: completed physical assembly
+    invariant_candidate: A completed physical transformation that changes matter through
+      shared/systemic deformation, enclosure, or assembly.
+    analysis:
+      why_it_fits: Bending internally, enclosing a target, and physically assembling
+        a whole are observable structural transformations with good spatial examples.
+      useful_coverage: It covers fold, bend, compress, wrap, enclose, fasten, assemble,
+        and fabricate.
+      semantic_territory_consumed: Material shape change, surfaces, forces, joins,
+        and construction operations.
+      conflicts_or_future_limitations: The architecture is MAT-heavy, weak for abstract
+        or software structure, duplicates CRE construction and REP reassembly, and
+        makes the STR family substrate-specific.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 7
+    total: 58
+    maximum: 80
+  - candidate_id: schema_migration_installation_deployment
+    title: completed system deployment
+    invariant_candidate: A completed technical transformation that changes a schema,
+      installs a target, or deploys a system at shared/systemic scope.
+    analysis:
+      why_it_fits: Local migration, component installation, and distributed deployment
+        mirror inward, target, and systemic scope and are technically useful.
+      useful_coverage: It covers schema migration, package installation, configuration
+        rollout, service deployment, and topology updates.
+      semantic_territory_consumed: Software lifecycle, data representation, configuration
+        records, execution environments, and operational release state.
+      conflicts_or_future_limitations: It collides with DAT, LOG, CRE, and CON; it
+        is historically narrow and would make ordinary physical and social structural
+        transformations metaphorical extensions of software.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 7
+      technical_coverage: 10
+    total: 59
+    maximum: 80
+  - candidate_id: role_allocation_institutional_reorganization
+    title: completed institutional reorganization
+    invariant_candidate: A completed social transformation that reallocates roles
+      or reorganizes an institution at shared/systemic scope.
+    analysis:
+      why_it_fits: Internal reassignment, appointment of an outside participant, and
+        institutional reorganization form an intuitive social-structure grid.
+      useful_coverage: It covers staffing, appointing, assigning offices, restructuring
+        departments, reorganizing teams, and governance changes.
+      semantic_territory_consumed: Participant identity, social membership, authority,
+        obligation, institutional continuity, and communicative coordination.
+      conflicts_or_future_limitations: It collides with LIF, LOG, and CON, is anthropocentric,
+        and cannot cleanly generalize to physical or computational part–whole organization.
+    scores:
+      atomicity: 7
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 6
+      cross_family_separation: 3
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 7
+    total: 54
+    maximum: 80
+  recommended_candidate_id: reconfiguration_incorporation_integration
+  recommendation_reason: Only this architecture preserves one substrate-neutral STR
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical STR:0xx loci, and avoids absorbing matter, creation,
+    repair, data, rules, communication, or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: STR:121
+  fixed_generated_fields:
+    canonical_id: STR:121
+    universal_slot: active systemic process
+    family_qualified_transliteration: do·kik
+    local_compact_root: kik
+    formal_carrier: do-ki-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 2
+  current_meaning_rationale: The provisional choice follows the shared/systemic and
+    active slot labels and favors familiar words such as self-organization, construction,
+    and deployment.
+  candidates:
+  - candidate_id: current_phase2
+    title: system organization
+    invariant_candidate: Components, roles, or boundaries are actively being coordinated
+      across a larger system.
+    analysis:
+      why_it_fits: The provisional choice follows the shared/systemic and active slot
+        labels and favors familiar words such as self-organization, construction,
+        and deployment.
+      useful_coverage: It offers direct everyday and technical labels for rearranging,
+        stabilizing, building, installing, rolling out, and coordinating.
+      semantic_territory_consumed: It mixes arrangement, reinforcement, stability,
+        assembly, enclosure, installation, deployment, organizational roles, planning,
+        staging, and queueing.
+      conflicts_or_future_limitations: Triplets do not preserve one exact process,
+        1x2 roots improperly encode plans or queues, and definitions collide with
+        MAT, CRE, LOG, DAT, LIF, CON, WRN, and REP.
+    scores:
+      atomicity: 6
+      address_fit: 7
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 52
+    maximum: 80
+  - candidate_id: reconfiguration_incorporation_integration
+    title: active systemic integration
+    invariant_candidate: An ongoing structural transformation by which multiple structures
+      become organized as constituents of one composite arrangement.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral structural transformation;
+        the second trit alone distinguishes internal constituent reassignment, incorporation
+        of one distinct target, or integration of multiple structures, and the third
+        alone selects phase.
+      useful_coverage: It covers rearrange, reconfigure, insert, include, mount, onboard
+        structurally, merge assemblies, integrate modules, compose systems, and exact
+        graph or object-layout transformations.
+      semantic_territory_consumed: Only transformation of constituent-to-position
+        and structure-to-whole organization. Creation, physical deformation, repair,
+        planning, rules, data descriptions, communication, and movement remain separate.
+      conflicts_or_future_limitations: Broad English build, install, merge, deploy,
+        organize, restructure, and integrate require sense analysis or compounds;
+        this restriction is deliberate and translator-safe.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 10
+      technical_coverage: 10
+    total: 79
+    maximum: 80
+  - candidate_id: physical_deformation_enclosure_assembly
+    title: active physical assembly
+    invariant_candidate: A active physical transformation that changes matter through
+      shared/systemic deformation, enclosure, or assembly.
+    analysis:
+      why_it_fits: Bending internally, enclosing a target, and physically assembling
+        a whole are observable structural transformations with good spatial examples.
+      useful_coverage: It covers fold, bend, compress, wrap, enclose, fasten, assemble,
+        and fabricate.
+      semantic_territory_consumed: Material shape change, surfaces, forces, joins,
+        and construction operations.
+      conflicts_or_future_limitations: The architecture is MAT-heavy, weak for abstract
+        or software structure, duplicates CRE construction and REP reassembly, and
+        makes the STR family substrate-specific.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 7
+    total: 58
+    maximum: 80
+  - candidate_id: schema_migration_installation_deployment
+    title: active system deployment
+    invariant_candidate: A active technical transformation that changes a schema,
+      installs a target, or deploys a system at shared/systemic scope.
+    analysis:
+      why_it_fits: Local migration, component installation, and distributed deployment
+        mirror inward, target, and systemic scope and are technically useful.
+      useful_coverage: It covers schema migration, package installation, configuration
+        rollout, service deployment, and topology updates.
+      semantic_territory_consumed: Software lifecycle, data representation, configuration
+        records, execution environments, and operational release state.
+      conflicts_or_future_limitations: It collides with DAT, LOG, CRE, and CON; it
+        is historically narrow and would make ordinary physical and social structural
+        transformations metaphorical extensions of software.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 7
+      technical_coverage: 10
+    total: 59
+    maximum: 80
+  - candidate_id: role_allocation_institutional_reorganization
+    title: active institutional reorganization
+    invariant_candidate: A active social transformation that reallocates roles or
+      reorganizes an institution at shared/systemic scope.
+    analysis:
+      why_it_fits: Internal reassignment, appointment of an outside participant, and
+        institutional reorganization form an intuitive social-structure grid.
+      useful_coverage: It covers staffing, appointing, assigning offices, restructuring
+        departments, reorganizing teams, and governance changes.
+      semantic_territory_consumed: Participant identity, social membership, authority,
+        obligation, institutional continuity, and communicative coordination.
+      conflicts_or_future_limitations: It collides with LIF, LOG, and CON, is anthropocentric,
+        and cannot cleanly generalize to physical or computational part–whole organization.
+    scores:
+      atomicity: 7
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 6
+      cross_family_separation: 3
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 7
+    total: 54
+    maximum: 80
+  recommended_candidate_id: reconfiguration_incorporation_integration
+  recommendation_reason: Only this architecture preserves one substrate-neutral STR
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical STR:0xx loci, and avoids absorbing matter, creation,
+    repair, data, rules, communication, or scheduling.
+  confidence: 0.97
+  canonicalized: true
+- canonical_id: STR:122
+  fixed_generated_fields:
+    canonical_id: STR:122
+    universal_slot: pending systemic process
+    family_qualified_transliteration: do·kin
+    local_compact_root: kin
+    formal_carrier: do-ki-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - -2
+  current_meaning_rationale: The provisional choice follows the shared/systemic and
+    nonactualized slot labels and favors familiar words such as self-organization,
+    construction, and deployment.
+  candidates:
+  - candidate_id: current_phase2
+    title: staged system deployment
+    invariant_candidate: A system-wide build or organizational change is prepared
+      but has not begun.
+    analysis:
+      why_it_fits: The provisional choice follows the shared/systemic and nonactualized
+        slot labels and favors familiar words such as self-organization, construction,
+        and deployment.
+      useful_coverage: It offers direct everyday and technical labels for rearranging,
+        stabilizing, building, installing, rolling out, and coordinating.
+      semantic_territory_consumed: It mixes arrangement, reinforcement, stability,
+        assembly, enclosure, installation, deployment, organizational roles, planning,
+        staging, and queueing.
+      conflicts_or_future_limitations: Triplets do not preserve one exact process,
+        1x2 roots improperly encode plans or queues, and definitions collide with
+        MAT, CRE, LOG, DAT, LIF, CON, WRN, and REP.
+    scores:
+      atomicity: 5
+      address_fit: 6
+      family_fit: 8
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 7
+      everyday_language_coverage: 8
+      technical_coverage: 8
+    total: 50
+    maximum: 80
+  - candidate_id: reconfiguration_incorporation_integration
+    title: potential systemic integration
+    invariant_candidate: A nonactualized structural transformation by which multiple
+      structures would become organized as constituents of one composite arrangement.
+    analysis:
+      why_it_fits: Every address selects one substrate-neutral structural transformation;
+        the second trit alone distinguishes internal constituent reassignment, incorporation
+        of one distinct target, or integration of multiple structures, and the third
+        alone selects phase.
+      useful_coverage: It covers rearrange, reconfigure, insert, include, mount, onboard
+        structurally, merge assemblies, integrate modules, compose systems, and exact
+        graph or object-layout transformations.
+      semantic_territory_consumed: Only transformation of constituent-to-position
+        and structure-to-whole organization. Creation, physical deformation, repair,
+        planning, rules, data descriptions, communication, and movement remain separate.
+      conflicts_or_future_limitations: Broad English build, install, merge, deploy,
+        organize, restructure, and integrate require sense analysis or compounds;
+        this restriction is deliberate and translator-safe.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 9
+      technical_coverage: 10
+    total: 78
+    maximum: 80
+  - candidate_id: physical_deformation_enclosure_assembly
+    title: potential physical assembly
+    invariant_candidate: A nonactualized physical transformation that changes matter
+      through shared/systemic deformation, enclosure, or assembly.
+    analysis:
+      why_it_fits: Bending internally, enclosing a target, and physically assembling
+        a whole are observable structural transformations with good spatial examples.
+      useful_coverage: It covers fold, bend, compress, wrap, enclose, fasten, assemble,
+        and fabricate.
+      semantic_territory_consumed: Material shape change, surfaces, forces, joins,
+        and construction operations.
+      conflicts_or_future_limitations: The architecture is MAT-heavy, weak for abstract
+        or software structure, duplicates CRE construction and REP reassembly, and
+        makes the STR family substrate-specific.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 7
+      neighbor_separation: 6
+      cross_family_separation: 5
+      compound_usefulness: 8
+      everyday_language_coverage: 9
+      technical_coverage: 7
+    total: 58
+    maximum: 80
+  - candidate_id: schema_migration_installation_deployment
+    title: potential system deployment
+    invariant_candidate: A nonactualized technical transformation that changes a schema,
+      installs a target, or deploys a system at shared/systemic scope.
+    analysis:
+      why_it_fits: Local migration, component installation, and distributed deployment
+        mirror inward, target, and systemic scope and are technically useful.
+      useful_coverage: It covers schema migration, package installation, configuration
+        rollout, service deployment, and topology updates.
+      semantic_territory_consumed: Software lifecycle, data representation, configuration
+        records, execution environments, and operational release state.
+      conflicts_or_future_limitations: It collides with DAT, LOG, CRE, and CON; it
+        is historically narrow and would make ordinary physical and social structural
+        transformations metaphorical extensions of software.
+    scores:
+      atomicity: 8
+      address_fit: 8
+      family_fit: 6
+      neighbor_separation: 7
+      cross_family_separation: 4
+      compound_usefulness: 9
+      everyday_language_coverage: 7
+      technical_coverage: 10
+    total: 59
+    maximum: 80
+  - candidate_id: role_allocation_institutional_reorganization
+    title: potential institutional reorganization
+    invariant_candidate: A nonactualized social transformation that reallocates roles
+      or reorganizes an institution at shared/systemic scope.
+    analysis:
+      why_it_fits: Internal reassignment, appointment of an outside participant, and
+        institutional reorganization form an intuitive social-structure grid.
+      useful_coverage: It covers staffing, appointing, assigning offices, restructuring
+        departments, reorganizing teams, and governance changes.
+      semantic_territory_consumed: Participant identity, social membership, authority,
+        obligation, institutional continuity, and communicative coordination.
+      conflicts_or_future_limitations: It collides with LIF, LOG, and CON, is anthropocentric,
+        and cannot cleanly generalize to physical or computational part–whole organization.
+    scores:
+      atomicity: 7
+      address_fit: 7
+      family_fit: 6
+      neighbor_separation: 6
+      cross_family_separation: 3
+      compound_usefulness: 8
+      everyday_language_coverage: 10
+      technical_coverage: 7
+    total: 54
+    maximum: 80
+  recommended_candidate_id: reconfiguration_incorporation_integration
+  recommendation_reason: Only this architecture preserves one substrate-neutral STR
+    process center, changes only scope across columns and phase across each triplet,
+    composes directly with canonical STR:0xx loci, and avoids absorbing matter, creation,
+    repair, data, rules, communication, or scheduling.
+  confidence: 0.97
+  canonicalized: true

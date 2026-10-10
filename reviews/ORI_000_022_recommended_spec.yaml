@@ -1,0 +1,1736 @@
+---
+metadata:
+  title: ORI:000–022 recommended permanent semantic specification
+  status: approved_and_canonical_by_delegated_authority
+  architecture_version: '1.0'
+  semantic_center: 'ontological conditions: source-ground, distinct existence, and
+    shared-world order'
+  triplets:
+    ORI:000–002: 'source-ground condition: persistent / operative / latent'
+    ORI:010–012: 'distinct-existence condition: persistent / occurrent / latent'
+    ORI:020–022: 'shared-world condition: persistent / occurrent / latent'
+  triplet_logic:
+    condition_statuses: persistent identity may co-occur with occurrent or latent
+      status; occurrent and latent are mutually exclusive at one reference time
+    latent_member: affirms membership without present expression and without hiddenness,
+      probability, planning, scheduling, or futurity
+    runtime_uncertainty: runtime [2]/num qualifies a selected lexical claim and does
+      not select a sibling
+  generated_fields_changed: false
+  gate4_started: false
+  translator_started: false
+  roots_canonicalized:
+  - ORI:000
+  - ORI:001
+  - ORI:002
+  - ORI:010
+  - ORI:011
+  - ORI:012
+  - ORI:020
+  - ORI:021
+  - ORI:022
+  approval_record: migrations/ORI_000_022_semantic_approval.yaml
+roots:
+- fixed_generated_fields:
+    canonical_id: ORI:000
+    universal_slot: stable inward entity
+    family_qualified_transliteration: nu·nam
+    local_compact_root: nam
+    formal_carrier: nu-ma-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: persistent source-ground condition
+  invariant_definition: A persistent ontological condition by which one referent is
+    grounded as a source from which another state of affairs may originate, independently
+    of whether that grounding is presently operative.
+  semantic_center: 'ontological conditions: source-ground, distinct existence, and
+    shared-world order'
+  address_justification:
+    first_trit_0: Selects an ontological entity or condition rather than an originating
+      process, causal or modal relation, observation, representation, or physical
+      constitution.
+    second_trit: 'Selects inward/self scope: one referent qualified as a source-ground
+      for an originating state of affairs and no other Origin-family column.'
+    third_trit: Selects the persistent status of the same ontological condition while
+      leaving runtime assertion status, observer knowledge, clock time, probability,
+      truth evaluation, causation, and physical realization separate.
+  inclusion_boundary: Includes only the persistent source-ground condition as a substrate-neutral
+    ontological qualification at inward scope. The condition qualifies source-grounding
+    only. It does not assert a particular causal link, creator, temporal beginning,
+    physical substrate, or produced result. It is neutral about substance, location,
+    cognition, evidence, representation, logical validity, agency, authority, productive
+    method, hazard, repair, scheduling, exact time, probability, and causal mechanism.
+  excluded_meanings:
+  - A causal link, temporal beginning, production event, authorship claim, or historical
+    provenance relation.
+  - A material object, living agent, mental representation, data record, proposition,
+    structural arrangement, warning, or repair condition.
+  - Observation, detectability, evidence, truth, validity, certainty, consensus, permission,
+    or authority.
+  - Unrestricted possibility, necessity, probability, counterfactuality, schedule,
+    future time, or mere nonexistence.
+  - The content of a natural law, algorithm, causal mechanism, physical mechanism,
+    social convention, or formal model.
+  - Any claim that persistence entails current expression, or that latency entails
+    uncertainty, concealment, planning, or futurity.
+  nearest_neighbors:
+  - ORI:001
+  - ORI:002
+  - ORI:010
+  - ORI:020
+  - ORI:000
+  - ORI:100
+  same_family_contrast: "`ORI:0xx` owns ontological conditions: source-ground, distinct
+    existence, and shared-world order. `ORI:1xx` is reserved for origin/reality processes
+    such as beginning, actualization, or world change. `ORI:2xx` is reserved for causal,
+    modal, temporal, or provenance relations and affordances. An ontological condition
+    does not entail a cause, process, representation, observation, or physical substrate.
+    Persistent identity may co-occur with occurrent/operative or latent status; occurrent/operative
+    and latent are mutually exclusive for the same condition at one reference time.
+    Lexical latency affirms membership without present expression; runtime `[2]/num`
+    separately marks uncertainty about any selected claim."
+  cross_family_comparisons: &1
+    LIF: LIF owns living identities, biological conditions, agents, and social roles.
+      ORI states how a referent belongs to reality, not whether it is alive, a person,
+      or a role bearer.
+    MOV: MOV owns position, routes, displacement, and motion conditions. Change of
+      location may manifest an ORI condition, but spatial position or movement is
+      not ontological status.
+    MAT: MAT owns substance, energy, force, contact, and physical capacities. ORI
+      is substrate-neutral and never identifies matter merely because matter exists.
+    MIN: MIN owns belief, attention, intention, understanding, and mental possibility.
+      ORI makes an ontological claim, not a claim about what any observer conceives
+      or knows.
+    CON: CON owns linkage, communication, participation, authority, and interaction
+      channels. Shared reality does not itself assert communication or a social relation.
+    WRN: WRN owns hazards, faults, adverse processes, susceptibility, exposure, and
+      propagation. An unrealized or changing ORI condition is not thereby a risk or
+      failure.
+    STR: STR owns arrangements, interfaces, dependencies, and structural compatibility.
+      ORI may qualify a structure as obtaining, but it does not describe the arrangement
+      itself.
+    REP: REP owns restoration conditions, transformations, and affordances. Return
+      to a prior acceptable state is not encoded by persistence, occurrence, or latency
+      in ORI.
+    LOG: LOG owns formal propositions, constraints, validity, evaluation, and applicability.
+      ORI distinct existence is not the truth value or proof status of a representation.
+    DAT: DAT owns represented information, records, and data processes. An encoded
+      model of a world is DAT; the modeled ontological condition remains ORI.
+    CRE: CRE owns generative entities, productive transformations, and productive
+      affordances. ORI source-grounding does not assert authorship, manufacture, or
+      creation.
+  runtime_state_interpretation:
+    '0': Denies that this source-ground condition persists in the stated reality;
+      it does not select the occurrent or latent sibling and does not deny the referent
+      itself.
+    '1': Affirms that this source-ground condition persists independently of present
+      expression, without asserting a cause, observation, proof, or physical realization.
+    2/num: Leaves unresolved whether this persistent source-ground condition claim
+      holds; runtime uncertainty does not change the lexical root into operative or
+      latent status.
+  lexical_runtime_distinction: Lexical third trit `0` permanently selects the persistent
+    status of this ontological condition. Runtime `[2]/num` instead leaves the already-selected
+    claim unresolved; it never changes lexical status. Thus a latent root affirmed
+    with `[1]` confirms membership without present expression, while a persistent
+    or occurrent root carrying `[2]/num` remains lexically persistent or occurrent
+    but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:000[1](SOURCE=source,ORIGINAND=o,REALITY=r)
+    literal_gloss: affirm persistent source-ground condition
+    natural_english: The source-ground condition for the source persists independently
+      of present expression.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: The root asserts ontological status, not knowledge, evidence, physical
+      composition, or a causal event.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=m)+ORI:000[1](SOURCE=source,ORIGINAND=o,REALITY=r)
+    literal_gloss: material object plus persistent ontological condition
+    natural_english: The object has the stated place in reality while MAT separately
+      describes its substance and physical properties.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Ontological status and material constitution remain separately typed.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:000[1](SOURCE=source,ORIGINAND=o,REALITY=r)+ORI(INTERVAL=w)
+    literal_gloss: persistent ontological condition during interval w
+    natural_english: During interval w, the condition has the selected lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Temporal anchoring does not replace persistent, occurrent, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: ORI:000[1](SOURCE=source,ORIGINAND=o,REALITY=r)+DAT(REPRESENTATION=d)+MIN(BELIEF=b)
+    literal_gloss: ontological condition plus representation plus belief
+    natural_english: The condition, its recorded description, and an observer's belief
+      are asserted separately.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Reality, representation, and cognition remain distinct.
+  - category: executable_or_programming
+    semantic_graph: ORI:000[1](SOURCE=source,ORIGINAND=o,REALITY=r)
+    literal_gloss: assert persistent ontological condition
+    natural_english: A runtime records the selected world-state condition without
+      conflating it with a Boolean proposition or observation event.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Ontological state, truth evaluation, and stored data remain distinct.
+    pseudocode: 'world.assert_condition("ORI:000", referent: "source")'
+  - category: counterexample
+    semantic_graph: LOG(PROPOSITION=p)+DAT(RECORD=d)
+    literal_gloss: represented proposition with stored evidence
+    natural_english: The database says the proposition is true.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: must_not_use_this_root
+    analysis: Use LOG and DAT for truth/evidence; ORI:000 is reserved for the condition's
+      place in reality.
+  future_compound_examples:
+  - ORI:000 + ORI:1xx may state the process through which the condition begins, changes,
+    or becomes manifest.
+  - ORI:000 + ORI:2xx may state causal, modal, temporal, or provenance relations without
+    changing the entity-layer meaning.
+  - ORI:000 + MAT/DAT/LOG/STR supplies substrate, representation, proposition, or
+    arrangement while preserving the ontological boundary.
+  - ORI:000 + MIN/CON/LIF may express belief, evidence-sharing, participant identity,
+    or social authority as separate meanings.
+  later_era_notes: Later eras may lexicalize kinds of existence, event ontology, possible-world
+    membership, necessity, counterfactual objects, causal powers, temporal regions,
+    simulation layers, provenance chains, and law-governed worlds. Era Zero should
+    preserve the substrate-neutral ontological center and derive stronger metaphysical,
+    scientific, social, and computational claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:001
+    universal_slot: active inward entity
+    family_qualified_transliteration: nu·nak
+    local_compact_root: nak
+    formal_carrier: nu-ma-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: operative source-ground condition
+  invariant_definition: An ontological condition by which one referent is grounded
+    as a source from which another state of affairs may originate and that grounding
+    is presently operative.
+  semantic_center: 'ontological conditions: source-ground, distinct existence, and
+    shared-world order'
+  address_justification:
+    first_trit_0: Selects an ontological entity or condition rather than an originating
+      process, causal or modal relation, observation, representation, or physical
+      constitution.
+    second_trit: 'Selects inward/self scope: one referent qualified as a source-ground
+      for an originating state of affairs and no other Origin-family column.'
+    third_trit: Selects the occurrent or operative status of the same ontological
+      condition while leaving runtime assertion status, observer knowledge, clock
+      time, probability, truth evaluation, causation, and physical realization separate.
+  inclusion_boundary: Includes only the operative source-ground condition as a substrate-neutral
+    ontological qualification at inward scope. The condition qualifies source-grounding
+    only. It does not assert a particular causal link, creator, temporal beginning,
+    physical substrate, or produced result. It is neutral about substance, location,
+    cognition, evidence, representation, logical validity, agency, authority, productive
+    method, hazard, repair, scheduling, exact time, probability, and causal mechanism.
+  excluded_meanings:
+  - A causal link, temporal beginning, production event, authorship claim, or historical
+    provenance relation.
+  - A material object, living agent, mental representation, data record, proposition,
+    structural arrangement, warning, or repair condition.
+  - Observation, detectability, evidence, truth, validity, certainty, consensus, permission,
+    or authority.
+  - Unrestricted possibility, necessity, probability, counterfactuality, schedule,
+    future time, or mere nonexistence.
+  - The content of a natural law, algorithm, causal mechanism, physical mechanism,
+    social convention, or formal model.
+  - Any claim that persistence entails current expression, or that latency entails
+    uncertainty, concealment, planning, or futurity.
+  nearest_neighbors:
+  - ORI:000
+  - ORI:002
+  - ORI:011
+  - ORI:021
+  - ORI:001
+  - ORI:101
+  same_family_contrast: "`ORI:0xx` owns ontological conditions: source-ground, distinct
+    existence, and shared-world order. `ORI:1xx` is reserved for origin/reality processes
+    such as beginning, actualization, or world change. `ORI:2xx` is reserved for causal,
+    modal, temporal, or provenance relations and affordances. An ontological condition
+    does not entail a cause, process, representation, observation, or physical substrate.
+    Persistent identity may co-occur with occurrent/operative or latent status; occurrent/operative
+    and latent are mutually exclusive for the same condition at one reference time.
+    Lexical latency affirms membership without present expression; runtime `[2]/num`
+    separately marks uncertainty about any selected claim."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this source-ground condition is presently operative or occurrent;
+      it does not deny persistent identity or affirm latency, impossibility, or nonexistence.
+    '1': Affirms that this source-ground condition is presently operative or occurrent
+      in the relevant reality without asserting observation, evidence, causation,
+      or temporal duration.
+    2/num: Leaves present occurrence of this source-ground condition unresolved; token
+      uncertainty does not select the persistent or latent lexical sibling.
+  lexical_runtime_distinction: Lexical third trit `1` permanently selects the occurrent
+    or operative status of this ontological condition. Runtime `[2]/num` instead leaves
+    the already-selected claim unresolved; it never changes lexical status. Thus a
+    latent root affirmed with `[1]` confirms membership without present expression,
+    while a persistent or occurrent root carrying `[2]/num` remains lexically persistent
+    or occurrent but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:001[1](SOURCE=source,ORIGINAND=o,REALITY=r)
+    literal_gloss: affirm operative source-ground condition
+    natural_english: The source-ground condition for the source is presently expressed.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: The root asserts ontological status, not knowledge, evidence, physical
+      composition, or a causal event.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=m)+ORI:001[1](SOURCE=source,ORIGINAND=o,REALITY=r)
+    literal_gloss: material object plus operative ontological condition
+    natural_english: The object has the stated place in reality while MAT separately
+      describes its substance and physical properties.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Ontological status and material constitution remain separately typed.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:001[1](SOURCE=source,ORIGINAND=o,REALITY=r)+ORI(INTERVAL=w)
+    literal_gloss: operative ontological condition during interval w
+    natural_english: During interval w, the condition has the selected lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Temporal anchoring does not replace persistent, occurrent, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: ORI:001[1](SOURCE=source,ORIGINAND=o,REALITY=r)+DAT(REPRESENTATION=d)+MIN(BELIEF=b)
+    literal_gloss: ontological condition plus representation plus belief
+    natural_english: The condition, its recorded description, and an observer's belief
+      are asserted separately.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Reality, representation, and cognition remain distinct.
+  - category: executable_or_programming
+    semantic_graph: ORI:001[1](SOURCE=source,ORIGINAND=o,REALITY=r)
+    literal_gloss: assert operative ontological condition
+    natural_english: A runtime records the selected world-state condition without
+      conflating it with a Boolean proposition or observation event.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Ontological state, truth evaluation, and stored data remain distinct.
+    pseudocode: 'world.assert_condition("ORI:001", referent: "source")'
+  - category: counterexample
+    semantic_graph: LOG(PROPOSITION=p)+DAT(RECORD=d)
+    literal_gloss: represented proposition with stored evidence
+    natural_english: The database says the proposition is true.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: must_not_use_this_root
+    analysis: Use LOG and DAT for truth/evidence; ORI:001 is reserved for the condition's
+      place in reality.
+  future_compound_examples:
+  - ORI:001 + ORI:1xx may state the process through which the condition begins, changes,
+    or becomes manifest.
+  - ORI:001 + ORI:2xx may state causal, modal, temporal, or provenance relations without
+    changing the entity-layer meaning.
+  - ORI:001 + MAT/DAT/LOG/STR supplies substrate, representation, proposition, or
+    arrangement while preserving the ontological boundary.
+  - ORI:001 + MIN/CON/LIF may express belief, evidence-sharing, participant identity,
+    or social authority as separate meanings.
+  later_era_notes: Later eras may lexicalize kinds of existence, event ontology, possible-world
+    membership, necessity, counterfactual objects, causal powers, temporal regions,
+    simulation layers, provenance chains, and law-governed worlds. Era Zero should
+    preserve the substrate-neutral ontological center and derive stronger metaphysical,
+    scientific, social, and computational claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:002
+    universal_slot: dormant inward entity
+    family_qualified_transliteration: nu·nan
+    local_compact_root: nan
+    formal_carrier: nu-ma-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - -2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: latent source-ground condition
+  invariant_definition: An ontological condition by which one referent is grounded
+    as a source from which another state of affairs may originate and that grounding
+    exists without being presently operative.
+  semantic_center: 'ontological conditions: source-ground, distinct existence, and
+    shared-world order'
+  address_justification:
+    first_trit_0: Selects an ontological entity or condition rather than an originating
+      process, causal or modal relation, observation, representation, or physical
+      constitution.
+    second_trit: 'Selects inward/self scope: one referent qualified as a source-ground
+      for an originating state of affairs and no other Origin-family column.'
+    third_trit: Selects the latent status of the same ontological condition while
+      leaving runtime assertion status, observer knowledge, clock time, probability,
+      truth evaluation, causation, and physical realization separate.
+  inclusion_boundary: Includes only the latent source-ground condition as a substrate-neutral
+    ontological qualification at inward scope. The condition qualifies source-grounding
+    only. It does not assert a particular causal link, creator, temporal beginning,
+    physical substrate, or produced result. It is neutral about substance, location,
+    cognition, evidence, representation, logical validity, agency, authority, productive
+    method, hazard, repair, scheduling, exact time, probability, and causal mechanism.
+  excluded_meanings:
+  - A causal link, temporal beginning, production event, authorship claim, or historical
+    provenance relation.
+  - A material object, living agent, mental representation, data record, proposition,
+    structural arrangement, warning, or repair condition.
+  - Observation, detectability, evidence, truth, validity, certainty, consensus, permission,
+    or authority.
+  - Unrestricted possibility, necessity, probability, counterfactuality, schedule,
+    future time, or mere nonexistence.
+  - The content of a natural law, algorithm, causal mechanism, physical mechanism,
+    social convention, or formal model.
+  - Any claim that persistence entails current expression, or that latency entails
+    uncertainty, concealment, planning, or futurity.
+  nearest_neighbors:
+  - ORI:000
+  - ORI:001
+  - ORI:012
+  - ORI:022
+  - ORI:002
+  - ORI:102
+  same_family_contrast: "`ORI:0xx` owns ontological conditions: source-ground, distinct
+    existence, and shared-world order. `ORI:1xx` is reserved for origin/reality processes
+    such as beginning, actualization, or world change. `ORI:2xx` is reserved for causal,
+    modal, temporal, or provenance relations and affordances. An ontological condition
+    does not entail a cause, process, representation, observation, or physical substrate.
+    Persistent identity may co-occur with occurrent/operative or latent status; occurrent/operative
+    and latent are mutually exclusive for the same condition at one reference time.
+    Lexical latency affirms membership without present expression; runtime `[2]/num`
+    separately marks uncertainty about any selected claim."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this source-ground condition belongs to the relevant reality
+      in latent form; it does not establish the occurrent sibling or metaphysical
+      impossibility.
+    '1': Affirms this source-ground condition as belonging to the relevant reality
+      without present expression, without encoding ignorance, probability, futurity,
+      concealment, or permission.
+    2/num: Leaves unresolved even the assertion that this latent source-ground condition
+      exists; lexical latency remains distinct from runtime assertion-level uncertainty.
+  lexical_runtime_distinction: Lexical third trit `2` permanently selects the latent
+    status of this ontological condition. Runtime `[2]/num` instead leaves the already-selected
+    claim unresolved; it never changes lexical status. Thus a latent root affirmed
+    with `[1]` confirms membership without present expression, while a persistent
+    or occurrent root carrying `[2]/num` remains lexically persistent or occurrent
+    but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:002[1](SOURCE=source,ORIGINAND=o,REALITY=r)
+    literal_gloss: affirm latent source-ground condition
+    natural_english: The source-ground condition for the source belongs without present
+      expression.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: The root asserts ontological status, not knowledge, evidence, physical
+      composition, or a causal event.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=m)+ORI:002[1](SOURCE=source,ORIGINAND=o,REALITY=r)
+    literal_gloss: material object plus latent ontological condition
+    natural_english: The object has the stated place in reality while MAT separately
+      describes its substance and physical properties.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Ontological status and material constitution remain separately typed.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:002[1](SOURCE=source,ORIGINAND=o,REALITY=r)+ORI(INTERVAL=w)
+    literal_gloss: latent ontological condition during interval w
+    natural_english: During interval w, the condition has the selected lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Temporal anchoring does not replace persistent, occurrent, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: ORI:002[1](SOURCE=source,ORIGINAND=o,REALITY=r)+DAT(REPRESENTATION=d)+MIN(BELIEF=b)
+    literal_gloss: ontological condition plus representation plus belief
+    natural_english: The condition, its recorded description, and an observer's belief
+      are asserted separately.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Reality, representation, and cognition remain distinct.
+  - category: executable_or_programming
+    semantic_graph: ORI:002[1](SOURCE=source,ORIGINAND=o,REALITY=r)
+    literal_gloss: assert latent ontological condition
+    natural_english: A runtime records the selected world-state condition without
+      conflating it with a Boolean proposition or observation event.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Ontological state, truth evaluation, and stored data remain distinct.
+    pseudocode: 'world.assert_condition("ORI:002", referent: "source")'
+  - category: counterexample
+    semantic_graph: LOG(PROPOSITION=p)+DAT(RECORD=d)
+    literal_gloss: represented proposition with stored evidence
+    natural_english: The database says the proposition is true.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: must_not_use_this_root
+    analysis: Use LOG and DAT for truth/evidence; ORI:002 is reserved for the condition's
+      place in reality.
+  future_compound_examples:
+  - ORI:002 + ORI:1xx may state the process through which the condition begins, changes,
+    or becomes manifest.
+  - ORI:002 + ORI:2xx may state causal, modal, temporal, or provenance relations without
+    changing the entity-layer meaning.
+  - ORI:002 + MAT/DAT/LOG/STR supplies substrate, representation, proposition, or
+    arrangement while preserving the ontological boundary.
+  - ORI:002 + MIN/CON/LIF may express belief, evidence-sharing, participant identity,
+    or social authority as separate meanings.
+  later_era_notes: Later eras may lexicalize kinds of existence, event ontology, possible-world
+    membership, necessity, counterfactual objects, causal powers, temporal regions,
+    simulation layers, provenance chains, and law-governed worlds. Era Zero should
+    preserve the substrate-neutral ontological center and derive stronger metaphysical,
+    scientific, social, and computational claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:010
+    universal_slot: stable outward entity
+    family_qualified_transliteration: nu·nom
+    local_compact_root: nom
+    formal_carrier: nu-ma-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: persistent distinct-existence condition
+  invariant_definition: A persistent ontological condition under which one distinct
+    referent obtains as part of the relevant reality, independently of whether it
+    is presently manifesting or changing.
+  semantic_center: 'ontological conditions: source-ground, distinct existence, and
+    shared-world order'
+  address_justification:
+    first_trit_0: Selects an ontological entity or condition rather than an originating
+      process, causal or modal relation, observation, representation, or physical
+      constitution.
+    second_trit: 'Selects outward/target scope: one distinct referent qualified by
+      how it obtains within the relevant reality and no other Origin-family column.'
+    third_trit: Selects the persistent status of the same ontological condition while
+      leaving runtime assertion status, observer knowledge, clock time, probability,
+      truth evaluation, causation, and physical realization separate.
+  inclusion_boundary: Includes only the persistent distinct-existence condition as
+    a substrate-neutral ontological qualification at outward scope. The condition
+    qualifies one distinct referent's membership or manifestation in reality. It does
+    not identify the referent's substance, truth-description, observability, or cause.
+    It is neutral about substance, location, cognition, evidence, representation,
+    logical validity, agency, authority, productive method, hazard, repair, scheduling,
+    exact time, probability, and causal mechanism.
+  excluded_meanings:
+  - A causal link, temporal beginning, production event, authorship claim, or historical
+    provenance relation.
+  - A material object, living agent, mental representation, data record, proposition,
+    structural arrangement, warning, or repair condition.
+  - Observation, detectability, evidence, truth, validity, certainty, consensus, permission,
+    or authority.
+  - Unrestricted possibility, necessity, probability, counterfactuality, schedule,
+    future time, or mere nonexistence.
+  - The content of a natural law, algorithm, causal mechanism, physical mechanism,
+    social convention, or formal model.
+  - Any claim that persistence entails current expression, or that latency entails
+    uncertainty, concealment, planning, or futurity.
+  nearest_neighbors:
+  - ORI:011
+  - ORI:012
+  - ORI:000
+  - ORI:020
+  - ORI:010
+  - ORI:110
+  same_family_contrast: "`ORI:0xx` owns ontological conditions: source-ground, distinct
+    existence, and shared-world order. `ORI:1xx` is reserved for origin/reality processes
+    such as beginning, actualization, or world change. `ORI:2xx` is reserved for causal,
+    modal, temporal, or provenance relations and affordances. An ontological condition
+    does not entail a cause, process, representation, observation, or physical substrate.
+    Persistent identity may co-occur with occurrent/operative or latent status; occurrent/operative
+    and latent are mutually exclusive for the same condition at one reference time.
+    Lexical latency affirms membership without present expression; runtime `[2]/num`
+    separately marks uncertainty about any selected claim."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this distinct-existence condition persists in the stated reality;
+      it does not select the occurrent or latent sibling and does not deny the referent
+      itself.
+    '1': Affirms that this distinct-existence condition persists independently of
+      present expression, without asserting a cause, observation, proof, or physical
+      realization.
+    2/num: Leaves unresolved whether this persistent distinct-existence condition
+      claim holds; runtime uncertainty does not change the lexical root into operative
+      or latent status.
+  lexical_runtime_distinction: Lexical third trit `0` permanently selects the persistent
+    status of this ontological condition. Runtime `[2]/num` instead leaves the already-selected
+    claim unresolved; it never changes lexical status. Thus a latent root affirmed
+    with `[1]` confirms membership without present expression, while a persistent
+    or occurrent root carrying `[2]/num` remains lexically persistent or occurrent
+    but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:010[1](REFERENT=referent,REALITY=r)
+    literal_gloss: affirm persistent distinct-existence condition
+    natural_english: The distinct-existence condition for the referent persists independently
+      of present expression.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: The root asserts ontological status, not knowledge, evidence, physical
+      composition, or a causal event.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=m)+ORI:010[1](REFERENT=referent,REALITY=r)
+    literal_gloss: material object plus persistent ontological condition
+    natural_english: The object has the stated place in reality while MAT separately
+      describes its substance and physical properties.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Ontological status and material constitution remain separately typed.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:010[1](REFERENT=referent,REALITY=r)+ORI(INTERVAL=w)
+    literal_gloss: persistent ontological condition during interval w
+    natural_english: During interval w, the condition has the selected lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Temporal anchoring does not replace persistent, occurrent, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: ORI:010[1](REFERENT=referent,REALITY=r)+DAT(REPRESENTATION=d)+MIN(BELIEF=b)
+    literal_gloss: ontological condition plus representation plus belief
+    natural_english: The condition, its recorded description, and an observer's belief
+      are asserted separately.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Reality, representation, and cognition remain distinct.
+  - category: executable_or_programming
+    semantic_graph: ORI:010[1](REFERENT=referent,REALITY=r)
+    literal_gloss: assert persistent ontological condition
+    natural_english: A runtime records the selected world-state condition without
+      conflating it with a Boolean proposition or observation event.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Ontological state, truth evaluation, and stored data remain distinct.
+    pseudocode: 'world.assert_condition("ORI:010", referent: "referent")'
+  - category: counterexample
+    semantic_graph: LOG(PROPOSITION=p)+DAT(RECORD=d)
+    literal_gloss: represented proposition with stored evidence
+    natural_english: The database says the proposition is true.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: must_not_use_this_root
+    analysis: Use LOG and DAT for truth/evidence; ORI:010 is reserved for the condition's
+      place in reality.
+  future_compound_examples:
+  - ORI:010 + ORI:1xx may state the process through which the condition begins, changes,
+    or becomes manifest.
+  - ORI:010 + ORI:2xx may state causal, modal, temporal, or provenance relations without
+    changing the entity-layer meaning.
+  - ORI:010 + MAT/DAT/LOG/STR supplies substrate, representation, proposition, or
+    arrangement while preserving the ontological boundary.
+  - ORI:010 + MIN/CON/LIF may express belief, evidence-sharing, participant identity,
+    or social authority as separate meanings.
+  later_era_notes: Later eras may lexicalize kinds of existence, event ontology, possible-world
+    membership, necessity, counterfactual objects, causal powers, temporal regions,
+    simulation layers, provenance chains, and law-governed worlds. Era Zero should
+    preserve the substrate-neutral ontological center and derive stronger metaphysical,
+    scientific, social, and computational claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:011
+    universal_slot: active outward entity
+    family_qualified_transliteration: nu·nok
+    local_compact_root: nok
+    formal_carrier: nu-ma-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 4
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: occurrent distinct-existence condition
+  invariant_definition: An ontological condition under which one distinct referent
+    is presently manifesting or changing as part of the relevant reality.
+  semantic_center: 'ontological conditions: source-ground, distinct existence, and
+    shared-world order'
+  address_justification:
+    first_trit_0: Selects an ontological entity or condition rather than an originating
+      process, causal or modal relation, observation, representation, or physical
+      constitution.
+    second_trit: 'Selects outward/target scope: one distinct referent qualified by
+      how it obtains within the relevant reality and no other Origin-family column.'
+    third_trit: Selects the occurrent or operative status of the same ontological
+      condition while leaving runtime assertion status, observer knowledge, clock
+      time, probability, truth evaluation, causation, and physical realization separate.
+  inclusion_boundary: Includes only the occurrent distinct-existence condition as
+    a substrate-neutral ontological qualification at outward scope. The condition
+    qualifies one distinct referent's membership or manifestation in reality. It does
+    not identify the referent's substance, truth-description, observability, or cause.
+    It is neutral about substance, location, cognition, evidence, representation,
+    logical validity, agency, authority, productive method, hazard, repair, scheduling,
+    exact time, probability, and causal mechanism.
+  excluded_meanings:
+  - A causal link, temporal beginning, production event, authorship claim, or historical
+    provenance relation.
+  - A material object, living agent, mental representation, data record, proposition,
+    structural arrangement, warning, or repair condition.
+  - Observation, detectability, evidence, truth, validity, certainty, consensus, permission,
+    or authority.
+  - Unrestricted possibility, necessity, probability, counterfactuality, schedule,
+    future time, or mere nonexistence.
+  - The content of a natural law, algorithm, causal mechanism, physical mechanism,
+    social convention, or formal model.
+  - Any claim that persistence entails current expression, or that latency entails
+    uncertainty, concealment, planning, or futurity.
+  nearest_neighbors:
+  - ORI:010
+  - ORI:012
+  - ORI:001
+  - ORI:021
+  - ORI:011
+  - ORI:111
+  same_family_contrast: "`ORI:0xx` owns ontological conditions: source-ground, distinct
+    existence, and shared-world order. `ORI:1xx` is reserved for origin/reality processes
+    such as beginning, actualization, or world change. `ORI:2xx` is reserved for causal,
+    modal, temporal, or provenance relations and affordances. An ontological condition
+    does not entail a cause, process, representation, observation, or physical substrate.
+    Persistent identity may co-occur with occurrent/operative or latent status; occurrent/operative
+    and latent are mutually exclusive for the same condition at one reference time.
+    Lexical latency affirms membership without present expression; runtime `[2]/num`
+    separately marks uncertainty about any selected claim."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this distinct-existence condition is presently operative or occurrent;
+      it does not deny persistent identity or affirm latency, impossibility, or nonexistence.
+    '1': Affirms that this distinct-existence condition is presently operative or
+      occurrent in the relevant reality without asserting observation, evidence, causation,
+      or temporal duration.
+    2/num: Leaves present occurrence of this distinct-existence condition unresolved;
+      token uncertainty does not select the persistent or latent lexical sibling.
+  lexical_runtime_distinction: Lexical third trit `1` permanently selects the occurrent
+    or operative status of this ontological condition. Runtime `[2]/num` instead leaves
+    the already-selected claim unresolved; it never changes lexical status. Thus a
+    latent root affirmed with `[1]` confirms membership without present expression,
+    while a persistent or occurrent root carrying `[2]/num` remains lexically persistent
+    or occurrent but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:011[1](REFERENT=referent,REALITY=r)
+    literal_gloss: affirm occurrent distinct-existence condition
+    natural_english: The distinct-existence condition for the referent is presently
+      expressed.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: The root asserts ontological status, not knowledge, evidence, physical
+      composition, or a causal event.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=m)+ORI:011[1](REFERENT=referent,REALITY=r)
+    literal_gloss: material object plus occurrent ontological condition
+    natural_english: The object has the stated place in reality while MAT separately
+      describes its substance and physical properties.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Ontological status and material constitution remain separately typed.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:011[1](REFERENT=referent,REALITY=r)+ORI(INTERVAL=w)
+    literal_gloss: occurrent ontological condition during interval w
+    natural_english: During interval w, the condition has the selected lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Temporal anchoring does not replace persistent, occurrent, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: ORI:011[1](REFERENT=referent,REALITY=r)+DAT(REPRESENTATION=d)+MIN(BELIEF=b)
+    literal_gloss: ontological condition plus representation plus belief
+    natural_english: The condition, its recorded description, and an observer's belief
+      are asserted separately.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Reality, representation, and cognition remain distinct.
+  - category: executable_or_programming
+    semantic_graph: ORI:011[1](REFERENT=referent,REALITY=r)
+    literal_gloss: assert occurrent ontological condition
+    natural_english: A runtime records the selected world-state condition without
+      conflating it with a Boolean proposition or observation event.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Ontological state, truth evaluation, and stored data remain distinct.
+    pseudocode: 'world.assert_condition("ORI:011", referent: "referent")'
+  - category: counterexample
+    semantic_graph: LOG(PROPOSITION=p)+DAT(RECORD=d)
+    literal_gloss: represented proposition with stored evidence
+    natural_english: The database says the proposition is true.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: must_not_use_this_root
+    analysis: Use LOG and DAT for truth/evidence; ORI:011 is reserved for the condition's
+      place in reality.
+  future_compound_examples:
+  - ORI:011 + ORI:1xx may state the process through which the condition begins, changes,
+    or becomes manifest.
+  - ORI:011 + ORI:2xx may state causal, modal, temporal, or provenance relations without
+    changing the entity-layer meaning.
+  - ORI:011 + MAT/DAT/LOG/STR supplies substrate, representation, proposition, or
+    arrangement while preserving the ontological boundary.
+  - ORI:011 + MIN/CON/LIF may express belief, evidence-sharing, participant identity,
+    or social authority as separate meanings.
+  later_era_notes: Later eras may lexicalize kinds of existence, event ontology, possible-world
+    membership, necessity, counterfactual objects, causal powers, temporal regions,
+    simulation layers, provenance chains, and law-governed worlds. Era Zero should
+    preserve the substrate-neutral ontological center and derive stronger metaphysical,
+    scientific, social, and computational claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:012
+    universal_slot: dormant outward entity
+    family_qualified_transliteration: nu·non
+    local_compact_root: non
+    formal_carrier: nu-ma-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: latent distinct-existence condition
+  invariant_definition: An ontological condition under which one distinct referent
+    belongs to the relevant reality without presently manifesting or changing within
+    it.
+  semantic_center: 'ontological conditions: source-ground, distinct existence, and
+    shared-world order'
+  address_justification:
+    first_trit_0: Selects an ontological entity or condition rather than an originating
+      process, causal or modal relation, observation, representation, or physical
+      constitution.
+    second_trit: 'Selects outward/target scope: one distinct referent qualified by
+      how it obtains within the relevant reality and no other Origin-family column.'
+    third_trit: Selects the latent status of the same ontological condition while
+      leaving runtime assertion status, observer knowledge, clock time, probability,
+      truth evaluation, causation, and physical realization separate.
+  inclusion_boundary: Includes only the latent distinct-existence condition as a substrate-neutral
+    ontological qualification at outward scope. The condition qualifies one distinct
+    referent's membership or manifestation in reality. It does not identify the referent's
+    substance, truth-description, observability, or cause. It is neutral about substance,
+    location, cognition, evidence, representation, logical validity, agency, authority,
+    productive method, hazard, repair, scheduling, exact time, probability, and causal
+    mechanism.
+  excluded_meanings:
+  - A causal link, temporal beginning, production event, authorship claim, or historical
+    provenance relation.
+  - A material object, living agent, mental representation, data record, proposition,
+    structural arrangement, warning, or repair condition.
+  - Observation, detectability, evidence, truth, validity, certainty, consensus, permission,
+    or authority.
+  - Unrestricted possibility, necessity, probability, counterfactuality, schedule,
+    future time, or mere nonexistence.
+  - The content of a natural law, algorithm, causal mechanism, physical mechanism,
+    social convention, or formal model.
+  - Any claim that persistence entails current expression, or that latency entails
+    uncertainty, concealment, planning, or futurity.
+  nearest_neighbors:
+  - ORI:010
+  - ORI:011
+  - ORI:002
+  - ORI:022
+  - ORI:012
+  - ORI:112
+  same_family_contrast: "`ORI:0xx` owns ontological conditions: source-ground, distinct
+    existence, and shared-world order. `ORI:1xx` is reserved for origin/reality processes
+    such as beginning, actualization, or world change. `ORI:2xx` is reserved for causal,
+    modal, temporal, or provenance relations and affordances. An ontological condition
+    does not entail a cause, process, representation, observation, or physical substrate.
+    Persistent identity may co-occur with occurrent/operative or latent status; occurrent/operative
+    and latent are mutually exclusive for the same condition at one reference time.
+    Lexical latency affirms membership without present expression; runtime `[2]/num`
+    separately marks uncertainty about any selected claim."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this distinct-existence condition belongs to the relevant reality
+      in latent form; it does not establish the occurrent sibling or metaphysical
+      impossibility.
+    '1': Affirms this distinct-existence condition as belonging to the relevant reality
+      without present expression, without encoding ignorance, probability, futurity,
+      concealment, or permission.
+    2/num: Leaves unresolved even the assertion that this latent distinct-existence
+      condition exists; lexical latency remains distinct from runtime assertion-level
+      uncertainty.
+  lexical_runtime_distinction: Lexical third trit `2` permanently selects the latent
+    status of this ontological condition. Runtime `[2]/num` instead leaves the already-selected
+    claim unresolved; it never changes lexical status. Thus a latent root affirmed
+    with `[1]` confirms membership without present expression, while a persistent
+    or occurrent root carrying `[2]/num` remains lexically persistent or occurrent
+    but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:012[1](REFERENT=referent,REALITY=r)
+    literal_gloss: affirm latent distinct-existence condition
+    natural_english: The distinct-existence condition for the referent belongs without
+      present expression.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: The root asserts ontological status, not knowledge, evidence, physical
+      composition, or a causal event.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=m)+ORI:012[1](REFERENT=referent,REALITY=r)
+    literal_gloss: material object plus latent ontological condition
+    natural_english: The object has the stated place in reality while MAT separately
+      describes its substance and physical properties.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Ontological status and material constitution remain separately typed.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:012[1](REFERENT=referent,REALITY=r)+ORI(INTERVAL=w)
+    literal_gloss: latent ontological condition during interval w
+    natural_english: During interval w, the condition has the selected lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Temporal anchoring does not replace persistent, occurrent, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: ORI:012[1](REFERENT=referent,REALITY=r)+DAT(REPRESENTATION=d)+MIN(BELIEF=b)
+    literal_gloss: ontological condition plus representation plus belief
+    natural_english: The condition, its recorded description, and an observer's belief
+      are asserted separately.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Reality, representation, and cognition remain distinct.
+  - category: executable_or_programming
+    semantic_graph: ORI:012[1](REFERENT=referent,REALITY=r)
+    literal_gloss: assert latent ontological condition
+    natural_english: A runtime records the selected world-state condition without
+      conflating it with a Boolean proposition or observation event.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Ontological state, truth evaluation, and stored data remain distinct.
+    pseudocode: 'world.assert_condition("ORI:012", referent: "referent")'
+  - category: counterexample
+    semantic_graph: LOG(PROPOSITION=p)+DAT(RECORD=d)
+    literal_gloss: represented proposition with stored evidence
+    natural_english: The database says the proposition is true.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: must_not_use_this_root
+    analysis: Use LOG and DAT for truth/evidence; ORI:012 is reserved for the condition's
+      place in reality.
+  future_compound_examples:
+  - ORI:012 + ORI:1xx may state the process through which the condition begins, changes,
+    or becomes manifest.
+  - ORI:012 + ORI:2xx may state causal, modal, temporal, or provenance relations without
+    changing the entity-layer meaning.
+  - ORI:012 + MAT/DAT/LOG/STR supplies substrate, representation, proposition, or
+    arrangement while preserving the ontological boundary.
+  - ORI:012 + MIN/CON/LIF may express belief, evidence-sharing, participant identity,
+    or social authority as separate meanings.
+  later_era_notes: Later eras may lexicalize kinds of existence, event ontology, possible-world
+    membership, necessity, counterfactual objects, causal powers, temporal regions,
+    simulation layers, provenance chains, and law-governed worlds. Era Zero should
+    preserve the substrate-neutral ontological center and derive stronger metaphysical,
+    scientific, social, and computational claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:020
+    universal_slot: stable collective entity
+    family_qualified_transliteration: nu·nim
+    local_compact_root: nim
+    formal_carrier: nu-ma-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -2
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: persistent shared-world condition
+  invariant_definition: A persistent ontological condition that jointly constrains
+    what obtains across one shared reality, independently of whether that condition
+    is presently being expressed through change.
+  semantic_center: 'ontological conditions: source-ground, distinct existence, and
+    shared-world order'
+  address_justification:
+    first_trit_0: Selects an ontological entity or condition rather than an originating
+      process, causal or modal relation, observation, representation, or physical
+      constitution.
+    second_trit: 'Selects systemic/collective scope: one condition qualifying what
+      obtains across a shared reality and no other Origin-family column.'
+    third_trit: Selects the persistent status of the same ontological condition while
+      leaving runtime assertion status, observer knowledge, clock time, probability,
+      truth evaluation, causation, and physical realization separate.
+  inclusion_boundary: Includes only the persistent shared-world condition as a substrate-neutral
+    ontological qualification at systemic scope. The condition qualifies a shared
+    world as a whole. It does not itself state a law's content, a social consensus,
+    a structural arrangement, or a formal model. It is neutral about substance, location,
+    cognition, evidence, representation, logical validity, agency, authority, productive
+    method, hazard, repair, scheduling, exact time, probability, and causal mechanism.
+  excluded_meanings:
+  - A causal link, temporal beginning, production event, authorship claim, or historical
+    provenance relation.
+  - A material object, living agent, mental representation, data record, proposition,
+    structural arrangement, warning, or repair condition.
+  - Observation, detectability, evidence, truth, validity, certainty, consensus, permission,
+    or authority.
+  - Unrestricted possibility, necessity, probability, counterfactuality, schedule,
+    future time, or mere nonexistence.
+  - The content of a natural law, algorithm, causal mechanism, physical mechanism,
+    social convention, or formal model.
+  - Any claim that persistence entails current expression, or that latency entails
+    uncertainty, concealment, planning, or futurity.
+  nearest_neighbors:
+  - ORI:021
+  - ORI:022
+  - ORI:000
+  - ORI:010
+  - ORI:020
+  - ORI:120
+  same_family_contrast: "`ORI:0xx` owns ontological conditions: source-ground, distinct
+    existence, and shared-world order. `ORI:1xx` is reserved for origin/reality processes
+    such as beginning, actualization, or world change. `ORI:2xx` is reserved for causal,
+    modal, temporal, or provenance relations and affordances. An ontological condition
+    does not entail a cause, process, representation, observation, or physical substrate.
+    Persistent identity may co-occur with occurrent/operative or latent status; occurrent/operative
+    and latent are mutually exclusive for the same condition at one reference time.
+    Lexical latency affirms membership without present expression; runtime `[2]/num`
+    separately marks uncertainty about any selected claim."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this shared-world condition persists in the stated reality; it
+      does not select the occurrent or latent sibling and does not deny the referent
+      itself.
+    '1': Affirms that this shared-world condition persists independently of present
+      expression, without asserting a cause, observation, proof, or physical realization.
+    2/num: Leaves unresolved whether this persistent shared-world condition claim
+      holds; runtime uncertainty does not change the lexical root into operative or
+      latent status.
+  lexical_runtime_distinction: Lexical third trit `0` permanently selects the persistent
+    status of this ontological condition. Runtime `[2]/num` instead leaves the already-selected
+    claim unresolved; it never changes lexical status. Thus a latent root affirmed
+    with `[1]` confirms membership without present expression, while a persistent
+    or occurrent root carrying `[2]/num` remains lexically persistent or occurrent
+    but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:020[1](WORLD=world,MEMBERS={a,b,c})
+    literal_gloss: affirm persistent shared-world condition
+    natural_english: The shared-world condition for the world persists independently
+      of present expression.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: The root asserts ontological status, not knowledge, evidence, physical
+      composition, or a causal event.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=m)+ORI:020[1](WORLD=world,MEMBERS={a,b,c})
+    literal_gloss: material object plus persistent ontological condition
+    natural_english: The object has the stated place in reality while MAT separately
+      describes its substance and physical properties.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Ontological status and material constitution remain separately typed.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:020[1](WORLD=world,MEMBERS={a,b,c})+ORI(INTERVAL=w)
+    literal_gloss: persistent ontological condition during interval w
+    natural_english: During interval w, the condition has the selected lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Temporal anchoring does not replace persistent, occurrent, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: ORI:020[1](WORLD=world,MEMBERS={a,b,c})+DAT(REPRESENTATION=d)+MIN(BELIEF=b)
+    literal_gloss: ontological condition plus representation plus belief
+    natural_english: The condition, its recorded description, and an observer's belief
+      are asserted separately.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Reality, representation, and cognition remain distinct.
+  - category: executable_or_programming
+    semantic_graph: ORI:020[1](WORLD=world,MEMBERS={a,b,c})
+    literal_gloss: assert persistent ontological condition
+    natural_english: A runtime records the selected world-state condition without
+      conflating it with a Boolean proposition or observation event.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Ontological state, truth evaluation, and stored data remain distinct.
+    pseudocode: 'world.assert_condition("ORI:020", referent: "world")'
+  - category: counterexample
+    semantic_graph: LOG(PROPOSITION=p)+DAT(RECORD=d)
+    literal_gloss: represented proposition with stored evidence
+    natural_english: The database says the proposition is true.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: must_not_use_this_root
+    analysis: Use LOG and DAT for truth/evidence; ORI:020 is reserved for the condition's
+      place in reality.
+  future_compound_examples:
+  - ORI:020 + ORI:1xx may state the process through which the condition begins, changes,
+    or becomes manifest.
+  - ORI:020 + ORI:2xx may state causal, modal, temporal, or provenance relations without
+    changing the entity-layer meaning.
+  - ORI:020 + MAT/DAT/LOG/STR supplies substrate, representation, proposition, or
+    arrangement while preserving the ontological boundary.
+  - ORI:020 + MIN/CON/LIF may express belief, evidence-sharing, participant identity,
+    or social authority as separate meanings.
+  later_era_notes: Later eras may lexicalize kinds of existence, event ontology, possible-world
+    membership, necessity, counterfactual objects, causal powers, temporal regions,
+    simulation layers, provenance chains, and law-governed worlds. Era Zero should
+    preserve the substrate-neutral ontological center and derive stronger metaphysical,
+    scientific, social, and computational claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:021
+    universal_slot: active collective entity
+    family_qualified_transliteration: nu·nik
+    local_compact_root: nik
+    formal_carrier: nu-ma-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - 0
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: occurrent shared-world condition
+  invariant_definition: An ontological condition that is presently being expressed
+    through change across one shared reality.
+  semantic_center: 'ontological conditions: source-ground, distinct existence, and
+    shared-world order'
+  address_justification:
+    first_trit_0: Selects an ontological entity or condition rather than an originating
+      process, causal or modal relation, observation, representation, or physical
+      constitution.
+    second_trit: 'Selects systemic/collective scope: one condition qualifying what
+      obtains across a shared reality and no other Origin-family column.'
+    third_trit: Selects the occurrent or operative status of the same ontological
+      condition while leaving runtime assertion status, observer knowledge, clock
+      time, probability, truth evaluation, causation, and physical realization separate.
+  inclusion_boundary: Includes only the occurrent shared-world condition as a substrate-neutral
+    ontological qualification at systemic scope. The condition qualifies a shared
+    world as a whole. It does not itself state a law's content, a social consensus,
+    a structural arrangement, or a formal model. It is neutral about substance, location,
+    cognition, evidence, representation, logical validity, agency, authority, productive
+    method, hazard, repair, scheduling, exact time, probability, and causal mechanism.
+  excluded_meanings:
+  - A causal link, temporal beginning, production event, authorship claim, or historical
+    provenance relation.
+  - A material object, living agent, mental representation, data record, proposition,
+    structural arrangement, warning, or repair condition.
+  - Observation, detectability, evidence, truth, validity, certainty, consensus, permission,
+    or authority.
+  - Unrestricted possibility, necessity, probability, counterfactuality, schedule,
+    future time, or mere nonexistence.
+  - The content of a natural law, algorithm, causal mechanism, physical mechanism,
+    social convention, or formal model.
+  - Any claim that persistence entails current expression, or that latency entails
+    uncertainty, concealment, planning, or futurity.
+  nearest_neighbors:
+  - ORI:020
+  - ORI:022
+  - ORI:001
+  - ORI:011
+  - ORI:021
+  - ORI:121
+  same_family_contrast: "`ORI:0xx` owns ontological conditions: source-ground, distinct
+    existence, and shared-world order. `ORI:1xx` is reserved for origin/reality processes
+    such as beginning, actualization, or world change. `ORI:2xx` is reserved for causal,
+    modal, temporal, or provenance relations and affordances. An ontological condition
+    does not entail a cause, process, representation, observation, or physical substrate.
+    Persistent identity may co-occur with occurrent/operative or latent status; occurrent/operative
+    and latent are mutually exclusive for the same condition at one reference time.
+    Lexical latency affirms membership without present expression; runtime `[2]/num`
+    separately marks uncertainty about any selected claim."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this shared-world condition is presently operative or occurrent;
+      it does not deny persistent identity or affirm latency, impossibility, or nonexistence.
+    '1': Affirms that this shared-world condition is presently operative or occurrent
+      in the relevant reality without asserting observation, evidence, causation,
+      or temporal duration.
+    2/num: Leaves present occurrence of this shared-world condition unresolved; token
+      uncertainty does not select the persistent or latent lexical sibling.
+  lexical_runtime_distinction: Lexical third trit `1` permanently selects the occurrent
+    or operative status of this ontological condition. Runtime `[2]/num` instead leaves
+    the already-selected claim unresolved; it never changes lexical status. Thus a
+    latent root affirmed with `[1]` confirms membership without present expression,
+    while a persistent or occurrent root carrying `[2]/num` remains lexically persistent
+    or occurrent but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:021[1](WORLD=world,MEMBERS={a,b,c})
+    literal_gloss: affirm occurrent shared-world condition
+    natural_english: The shared-world condition for the world is presently expressed.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: The root asserts ontological status, not knowledge, evidence, physical
+      composition, or a causal event.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=m)+ORI:021[1](WORLD=world,MEMBERS={a,b,c})
+    literal_gloss: material object plus occurrent ontological condition
+    natural_english: The object has the stated place in reality while MAT separately
+      describes its substance and physical properties.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Ontological status and material constitution remain separately typed.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:021[1](WORLD=world,MEMBERS={a,b,c})+ORI(INTERVAL=w)
+    literal_gloss: occurrent ontological condition during interval w
+    natural_english: During interval w, the condition has the selected lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Temporal anchoring does not replace persistent, occurrent, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: ORI:021[1](WORLD=world,MEMBERS={a,b,c})+DAT(REPRESENTATION=d)+MIN(BELIEF=b)
+    literal_gloss: ontological condition plus representation plus belief
+    natural_english: The condition, its recorded description, and an observer's belief
+      are asserted separately.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Reality, representation, and cognition remain distinct.
+  - category: executable_or_programming
+    semantic_graph: ORI:021[1](WORLD=world,MEMBERS={a,b,c})
+    literal_gloss: assert occurrent ontological condition
+    natural_english: A runtime records the selected world-state condition without
+      conflating it with a Boolean proposition or observation event.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Ontological state, truth evaluation, and stored data remain distinct.
+    pseudocode: 'world.assert_condition("ORI:021", referent: "world")'
+  - category: counterexample
+    semantic_graph: LOG(PROPOSITION=p)+DAT(RECORD=d)
+    literal_gloss: represented proposition with stored evidence
+    natural_english: The database says the proposition is true.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: must_not_use_this_root
+    analysis: Use LOG and DAT for truth/evidence; ORI:021 is reserved for the condition's
+      place in reality.
+  future_compound_examples:
+  - ORI:021 + ORI:1xx may state the process through which the condition begins, changes,
+    or becomes manifest.
+  - ORI:021 + ORI:2xx may state causal, modal, temporal, or provenance relations without
+    changing the entity-layer meaning.
+  - ORI:021 + MAT/DAT/LOG/STR supplies substrate, representation, proposition, or
+    arrangement while preserving the ontological boundary.
+  - ORI:021 + MIN/CON/LIF may express belief, evidence-sharing, participant identity,
+    or social authority as separate meanings.
+  later_era_notes: Later eras may lexicalize kinds of existence, event ontology, possible-world
+    membership, necessity, counterfactual objects, causal powers, temporal regions,
+    simulation layers, provenance chains, and law-governed worlds. Era Zero should
+    preserve the substrate-neutral ontological center and derive stronger metaphysical,
+    scientific, social, and computational claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+- fixed_generated_fields:
+    canonical_id: ORI:022
+    universal_slot: dormant collective entity
+    family_qualified_transliteration: nu·nin
+    local_compact_root: nin
+    formal_carrier: nu-ma-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -4
+  proposal_status: canonical_by_delegated_approval
+  proposed_title: latent shared-world condition
+  invariant_definition: An ontological condition that belongs to one shared reality
+    without presently being expressed through change across it.
+  semantic_center: 'ontological conditions: source-ground, distinct existence, and
+    shared-world order'
+  address_justification:
+    first_trit_0: Selects an ontological entity or condition rather than an originating
+      process, causal or modal relation, observation, representation, or physical
+      constitution.
+    second_trit: 'Selects systemic/collective scope: one condition qualifying what
+      obtains across a shared reality and no other Origin-family column.'
+    third_trit: Selects the latent status of the same ontological condition while
+      leaving runtime assertion status, observer knowledge, clock time, probability,
+      truth evaluation, causation, and physical realization separate.
+  inclusion_boundary: Includes only the latent shared-world condition as a substrate-neutral
+    ontological qualification at systemic scope. The condition qualifies a shared
+    world as a whole. It does not itself state a law's content, a social consensus,
+    a structural arrangement, or a formal model. It is neutral about substance, location,
+    cognition, evidence, representation, logical validity, agency, authority, productive
+    method, hazard, repair, scheduling, exact time, probability, and causal mechanism.
+  excluded_meanings:
+  - A causal link, temporal beginning, production event, authorship claim, or historical
+    provenance relation.
+  - A material object, living agent, mental representation, data record, proposition,
+    structural arrangement, warning, or repair condition.
+  - Observation, detectability, evidence, truth, validity, certainty, consensus, permission,
+    or authority.
+  - Unrestricted possibility, necessity, probability, counterfactuality, schedule,
+    future time, or mere nonexistence.
+  - The content of a natural law, algorithm, causal mechanism, physical mechanism,
+    social convention, or formal model.
+  - Any claim that persistence entails current expression, or that latency entails
+    uncertainty, concealment, planning, or futurity.
+  nearest_neighbors:
+  - ORI:020
+  - ORI:021
+  - ORI:002
+  - ORI:012
+  - ORI:022
+  - ORI:122
+  same_family_contrast: "`ORI:0xx` owns ontological conditions: source-ground, distinct
+    existence, and shared-world order. `ORI:1xx` is reserved for origin/reality processes
+    such as beginning, actualization, or world change. `ORI:2xx` is reserved for causal,
+    modal, temporal, or provenance relations and affordances. An ontological condition
+    does not entail a cause, process, representation, observation, or physical substrate.
+    Persistent identity may co-occur with occurrent/operative or latent status; occurrent/operative
+    and latent are mutually exclusive for the same condition at one reference time.
+    Lexical latency affirms membership without present expression; runtime `[2]/num`
+    separately marks uncertainty about any selected claim."
+  cross_family_comparisons: *1
+  runtime_state_interpretation:
+    '0': Denies that this shared-world condition belongs to the relevant reality in
+      latent form; it does not establish the occurrent sibling or metaphysical impossibility.
+    '1': Affirms this shared-world condition as belonging to the relevant reality
+      without present expression, without encoding ignorance, probability, futurity,
+      concealment, or permission.
+    2/num: Leaves unresolved even the assertion that this latent shared-world condition
+      exists; lexical latency remains distinct from runtime assertion-level uncertainty.
+  lexical_runtime_distinction: Lexical third trit `2` permanently selects the latent
+    status of this ontological condition. Runtime `[2]/num` instead leaves the already-selected
+    claim unresolved; it never changes lexical status. Thus a latent root affirmed
+    with `[1]` confirms membership without present expression, while a persistent
+    or occurrent root carrying `[2]/num` remains lexically persistent or occurrent
+    but uncertain as a token claim.
+  examples:
+  - category: ordinary_conversation
+    semantic_graph: ORI:022[1](WORLD=world,MEMBERS={a,b,c})
+    literal_gloss: affirm latent shared-world condition
+    natural_english: The shared-world condition for the world belongs without present
+      expression.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: The root asserts ontological status, not knowledge, evidence, physical
+      composition, or a causal event.
+  - category: physical_or_spatial
+    semantic_graph: MAT(OBJECT=m)+ORI:022[1](WORLD=world,MEMBERS={a,b,c})
+    literal_gloss: material object plus latent ontological condition
+    natural_english: The object has the stated place in reality while MAT separately
+      describes its substance and physical properties.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Ontological status and material constitution remain separately typed.
+  - category: temporal_or_sequential
+    semantic_graph: ORI:022[1](WORLD=world,MEMBERS={a,b,c})+ORI(INTERVAL=w)
+    literal_gloss: latent ontological condition during interval w
+    natural_english: During interval w, the condition has the selected lexical status.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Temporal anchoring does not replace persistent, occurrent, or latent
+      status.
+  - category: cross_family_compound
+    semantic_graph: ORI:022[1](WORLD=world,MEMBERS={a,b,c})+DAT(REPRESENTATION=d)+MIN(BELIEF=b)
+    literal_gloss: ontological condition plus representation plus belief
+    natural_english: The condition, its recorded description, and an observer's belief
+      are asserted separately.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Reality, representation, and cognition remain distinct.
+  - category: executable_or_programming
+    semantic_graph: ORI:022[1](WORLD=world,MEMBERS={a,b,c})
+    literal_gloss: assert latent ontological condition
+    natural_english: A runtime records the selected world-state condition without
+      conflating it with a Boolean proposition or observation event.
+    runtime_state: 1
+    contour: level assertion or sharply falling execution
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: valid
+    analysis: Ontological state, truth evaluation, and stored data remain distinct.
+    pseudocode: 'world.assert_condition("ORI:022", referent: "world")'
+  - category: counterexample
+    semantic_graph: LOG(PROPOSITION=p)+DAT(RECORD=d)
+    literal_gloss: represented proposition with stored evidence
+    natural_english: The database says the proposition is true.
+    runtime_state: 1
+    contour: level declaration
+    role_registers:
+      low: referent whose ontological condition is qualified
+      middle: source-ground, distinct existence, or shared-world condition as figure
+      high: originating state of affairs, distinct manifestation, or world-level consequence
+      sustained: relevant reality, reference frame, and shared domain
+    use_status: must_not_use_this_root
+    analysis: Use LOG and DAT for truth/evidence; ORI:022 is reserved for the condition's
+      place in reality.
+  future_compound_examples:
+  - ORI:022 + ORI:1xx may state the process through which the condition begins, changes,
+    or becomes manifest.
+  - ORI:022 + ORI:2xx may state causal, modal, temporal, or provenance relations without
+    changing the entity-layer meaning.
+  - ORI:022 + MAT/DAT/LOG/STR supplies substrate, representation, proposition, or
+    arrangement while preserving the ontological boundary.
+  - ORI:022 + MIN/CON/LIF may express belief, evidence-sharing, participant identity,
+    or social authority as separate meanings.
+  later_era_notes: Later eras may lexicalize kinds of existence, event ontology, possible-world
+    membership, necessity, counterfactual objects, causal powers, temporal regions,
+    simulation layers, provenance chains, and law-governed worlds. Era Zero should
+    preserve the substrate-neutral ontological center and derive stronger metaphysical,
+    scientific, social, and computational claims compositionally.
+  confidence: 0.96
+  canonicalized: true
+approval_checklist:
+  family_domain_preserved: true
+  address_axes_preserved: true
+  one_invariant_per_root: true
+  triplets_coherent: true
+  all_current_candidates_challenged: true
+  cross_family_collisions_explicit: true
+  runtime_state_separated: true
+  entity_process_relation_layers_separated: true
+  generated_fields_unchanged: true
+  gate4_not_started: true
+  translator_not_started: true
+  canonicalized: true

@@ -1,0 +1,563 @@
+---
+metadata:
+  title: MOV:100–122 detailed semantic candidates
+  status: proposed_for_user_review_not_canonical
+  semantic_authority: PROVISIONAL — PENDING DETAILED SEMANTIC REVIEW
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  fixed_generated_fields_must_not_change: true
+  root_count: 9
+triplet_design:
+- range: MOV:100–102
+  shared_axis: source-relative displacement
+  completed_active_pending_contrast: 100 completion away from source; 101 ongoing motion away from source; 102 specified source departure before onset
+- range: MOV:110–112
+  shared_axis: target-relative displacement
+  completed_active_pending_contrast: 110 completion at target; 111 ongoing motion toward target; 112 specified targetward motion before onset
+- range: MOV:120–122
+  shared_axis: system-route traversal
+  completed_active_pending_contrast: 120 completed traversal; 121 ongoing traversal; 122 specified traversal before onset
+roots:
+- status: proposed_in_detailed_review_not_canonical
+  fixed_generated_fields:
+    canonical_id: MOV:100
+    universal_slot: completed inward process
+    family_qualified_transliteration: gi·kam
+    local_compact_root: kam
+    formal_carrier: gi-ki-ma-ma
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 2
+  current_phase2_candidate:
+    title: completed source departure
+    definition: Completion of a mover's displacement away from a source position.
+    authority: candidate_only
+  candidate_analysis:
+  - title: source departure completed
+    definition: Completion of a mover's displacement away from a specified source position.
+    fit: The address is a completed process oriented to a source. A completed source-relative displacement is the direct Motion-family reading.
+    useful_coverage: left, departed, exited a starting point, completed takeoff from an origin
+    territory_consumed: Only the completed phase of motion away from an identified source.
+    limitations_or_conflicts: Requires a source relation; it does not by itself identify the destination, cause, cargo, or manner.
+    selection: selected
+  - title: completed release from source
+    definition: Completion of a source's release of a mover.
+    fit: Release also points away from a source and can culminate in separation.
+    useful_coverage: launch, release, discharge, unmoor
+    territory_consumed: Source control, attachment, and permission as well as motion.
+    limitations_or_conflicts: It would collide with CON disengagement, STR detachment, MAT force, and permission grammar; release can occur without displacement.
+    selection: rejected
+  - title: completed self-relocation
+    definition: Completion of any relocation by a mover.
+    fit: Relocation is a completed Motion process and may begin from the mover's own position.
+    useful_coverage: move, transfer, change position
+    territory_consumed: Both source departure and target arrival.
+    limitations_or_conflicts: 'Too broad: it erases the second-trit contrast with MOV:110 and makes the triplets non-compositional.'
+    selection: rejected
+  proposed_title: source departure completed
+  invariant_definition: Completion of a mover's displacement away from a specified source position.
+  address_justification:
+    first_trit: '1 = process/action/transformation: this root predicates displacement, not a position, route, capacity, or relationship.'
+    second_trit: '0 = inward/source: the process is defined by displacement relative to its source position.'
+    third_trit: '0 = completed: the defining displacement/traversal has reached its endpoint condition.'
+  boundaries:
+    includes: A completed displacement whose defining relation is that the mover is now away from its specified source.
+    does_not_include: Mere source identification, intention to leave, motion still under way, destination arrival, release without displacement, or ontological change.
+    nearest_same_family_root: MOV:101 handles the same source departure while it is under way; MOV:000 is the source-position entity.
+    cross_domain_handling: Use a MAT compound for a material payload, CON for social/channel disengagement, STR for component removal, and ORI for change of existence.
+  existing_motion_entity_contrast: MOV:000 names the origin; MOV:100 asserts that motion away from that origin has completed.
+  runtime_state_interpretations:
+    '0': The asserted completion does not hold, has been invalidated, or is unavailable as a fact.
+    '1': 'The departure completion is a valid current fact: the mover has left the source.'
+    '2': Whether the departure completed is pending confirmation or intentionally left unresolved.
+  lexical_third_trit_vs_runtime_state_2: 'Lexical trit 2 is not present here: lexical trit 0 permanently makes this the completed member. MOV:100[2] therefore means a completed-departure proposition whose truth/status is unresolved, not a not-yet-begun departure.'
+  confidence: 0.9
+- status: proposed_in_detailed_review_not_canonical
+  fixed_generated_fields:
+    canonical_id: MOV:101
+    universal_slot: active inward process
+    family_qualified_transliteration: gi·kak
+    local_compact_root: kak
+    formal_carrier: gi-ki-ma-ki
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 4
+  current_phase2_candidate:
+    title: active source departure
+    definition: Ongoing displacement of a mover away from a source position.
+    authority: candidate_only
+  candidate_analysis:
+  - title: source departure active
+    definition: Ongoing displacement of a mover away from a specified source position.
+    fit: It is an active process whose defining anchor is the source.
+    useful_coverage: leaving, departing, moving away, taking off
+    territory_consumed: Only active source-oriented motion.
+    limitations_or_conflicts: It needs an explicit or recoverable source and does not say where the mover is headed.
+    selection: selected
+  - title: generic self-motion
+    definition: A mover is changing its own position.
+    fit: An active inward process can be read as an entity acting on its own position.
+    useful_coverage: go, move, travel
+    territory_consumed: Nearly every active Motion event.
+    limitations_or_conflicts: It would swallow MOV:111 and MOV:121, leaving orientation and systemic triplets without clear work.
+    selection: rejected
+  - title: active disengagement
+    definition: A mover is actively breaking a relation to its source.
+    fit: Disengagement often accompanies departure.
+    useful_coverage: detach, disconnect, withdraw
+    territory_consumed: Connection, structure, and social relation as well as motion.
+    limitations_or_conflicts: A relation can end without spatial or sequential displacement; that belongs to CON or STR, possibly compounded with MOV.
+    selection: rejected
+  proposed_title: source departure active
+  invariant_definition: Ongoing displacement of a mover away from a specified source position.
+  address_justification:
+    first_trit: '1 = process/action/transformation: this root predicates displacement, not a position, route, capacity, or relationship.'
+    second_trit: '0 = inward/source: the process is defined by displacement relative to its source position.'
+    third_trit: '1 = active: the defining displacement/traversal is presently under way.'
+  boundaries:
+    includes: Motion presently increasing separation from a specified source, whether physical or along an explicitly modeled sequence.
+    does_not_include: Generic activity, a decision to leave, completed departure, targetward approach, or social withdrawal without motion.
+    nearest_same_family_root: MOV:100 handles completed departure; MOV:102 handles the specified but unbegun departure.
+    cross_domain_handling: Compound with MAT for physical cargo/body details, LIF for a living actor, CON for withdrawal from a participant, or STR for a component exiting a structure.
+  existing_motion_entity_contrast: MOV:001 names the mover's current position; MOV:101 is the act of leaving a source position and may update MOV:001 over time.
+  runtime_state_interpretations:
+    '0': The active-departure operation is not executing or the assertion is false.
+    '1': The mover is currently increasing separation from the source.
+    '2': The active-departure operation is suspended, awaiting observation, or otherwise unresolved as an execution state.
+  lexical_third_trit_vs_runtime_state_2: Lexical trit 1 permanently selects the active phase. MOV:101[2] is still the active-departure concept placed in a pending/suspended assertion state; MOV:102 is the distinct lexical concept of a departure specified before it begins.
+  confidence: 0.93
+- status: proposed_in_detailed_review_not_canonical
+  fixed_generated_fields:
+    canonical_id: MOV:102
+    universal_slot: pending inward process
+    family_qualified_transliteration: gi·kan
+    local_compact_root: kan
+    formal_carrier: gi-ki-ma-nu
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 0
+  current_phase2_candidate:
+    title: potential source departure
+    definition: A potential displacement away from a source position that is not presently active or completed.
+    authority: candidate_only
+  candidate_analysis:
+  - title: source departure pending
+    definition: A specified displacement away from a source position that has not yet begun.
+    fit: The address is a pending process oriented to a source; the operation exists lexically but has not entered execution.
+    useful_coverage: set to leave, queued departure, prepared launch, upcoming exit
+    territory_consumed: Only an identified source departure before onset.
+    limitations_or_conflicts: Timing, permission, readiness, and probability must be supplied by grammar or compounds.
+    selection: selected
+  - title: departure readiness
+    definition: A mover is ready and able to leave.
+    fit: Readiness commonly precedes departure and matches the pending phase.
+    useful_coverage: ready to go, cleared to launch, prepared
+    territory_consumed: Capacity and permission in addition to the pending event.
+    limitations_or_conflicts: A mover can be ready without a departure being specified; capacity belongs in the 2xx layer and permission belongs to later grammar/logic.
+    selection: rejected
+  - title: waiting at source
+    definition: A mover remains at a source until departure.
+    fit: Waiting often co-occurs with an unbegun departure.
+    useful_coverage: wait, hold, stand by
+    territory_consumed: Duration and non-motion.
+    limitations_or_conflicts: Waiting is not necessarily motion and can occur without any intended departure; it should be timing/contour or a separate reviewed concept.
+    selection: rejected
+  proposed_title: source departure pending
+  invariant_definition: A specified displacement away from a source position that has not yet begun.
+  address_justification:
+    first_trit: '1 = process/action/transformation: this root predicates displacement, not a position, route, capacity, or relationship.'
+    second_trit: '0 = inward/source: the process is defined by displacement relative to its source position.'
+    third_trit: '2 = pending: the defining displacement/traversal is specified but has not begun.'
+  boundaries:
+    includes: A departure event represented as specified or queued while displacement remains unbegun.
+    does_not_include: Readiness alone, permission, waiting duration, a dormant route, an unreachable destination, or active motion.
+    nearest_same_family_root: MOV:101 handles execution of the departure; MOV:022 handles a dormant route system rather than a pending operation.
+    cross_domain_handling: Scheduling requires later LOG/DAT/ORI review; a living traveler may be supplied by LIF; material launch conditions require MAT.
+  existing_motion_entity_contrast: MOV:002 is a retained former/source position; MOV:102 is a future operation relative to a source and does not name a position.
+  runtime_state_interpretations:
+    '0': The queued departure is canceled, invalid, or not available.
+    '1': A valid departure operation is queued and has not begun.
+    '2': The status of the queued departure itself is dormant or unresolved—for example, the plan exists but is not confirmed.
+  lexical_third_trit_vs_runtime_state_2: Lexical trit 2 makes pending departure the root's permanent semantic phase. MOV:102[1] says that pending operation is validly queued; MOV:102[2] says the queue/plan is itself unresolved.
+  confidence: 0.87
+- status: proposed_in_detailed_review_not_canonical
+  fixed_generated_fields:
+    canonical_id: MOV:110
+    universal_slot: completed outward process
+    family_qualified_transliteration: gi·kom
+    local_compact_root: kom
+    formal_carrier: gi-ki-ki-ma
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 4
+  current_phase2_candidate:
+    title: completed target arrival
+    definition: Completion of a mover's displacement to a target position.
+    authority: candidate_only
+  candidate_analysis:
+  - title: target arrival completed
+    definition: Completion of a mover's displacement to a specified target position.
+    fit: This is the direct completed, target-oriented Motion process.
+    useful_coverage: arrive, reach, enter the destination, complete delivery travel
+    territory_consumed: Only the completion of targetward displacement.
+    limitations_or_conflicts: It does not imply successful communication, payload transfer, acceptance, or transformation at the target.
+    selection: selected
+  - title: target entry completed
+    definition: A mover has crossed into a target region.
+    fit: Entry is a clear completed target-oriented motion.
+    useful_coverage: enter, cross a boundary, dock
+    territory_consumed: Boundary crossing rather than all reaching.
+    limitations_or_conflicts: 'Too narrow: arrival can occur at a point or endpoint without entering a container; boundary semantics should be compounded.'
+    selection: rejected
+  - title: outward transfer completed
+    definition: Something has been transferred to a target.
+    fit: Transfer ends at a target and is outward.
+    useful_coverage: deliver, send, hand over
+    territory_consumed: Material, data, and communication transfer.
+    limitations_or_conflicts: It would invade MAT, DAT, and CON. MOV should express only the displacement component.
+    selection: rejected
+  proposed_title: target arrival completed
+  invariant_definition: Completion of a mover's displacement to a specified target position.
+  address_justification:
+    first_trit: '1 = process/action/transformation: this root predicates displacement, not a position, route, capacity, or relationship.'
+    second_trit: '1 = outward/target: the process is defined by displacement relative to a selected target position.'
+    third_trit: '0 = completed: the defining displacement/traversal has reached its endpoint condition.'
+  boundaries:
+    includes: A target-oriented displacement whose endpoint condition has been met.
+    does_not_include: Merely naming a destination, being near it, delivery of information, acceptance by a recipient, or creation at the target.
+    nearest_same_family_root: MOV:111 handles the approach in progress; MOV:010 names the destination entity.
+    cross_domain_handling: Transport/delivery is a compound with MAT or DAT/CON depending on what arrives; entry into a structure adds STR.
+  existing_motion_entity_contrast: MOV:010 is a defined destination even with no motion; MOV:110 asserts that the process of reaching it is complete.
+  runtime_state_interpretations:
+    '0': The arrival-completion assertion is false, revoked, or unavailable.
+    '1': The mover has validly reached the specified target.
+    '2': Whether the target was reached is awaiting confirmation or intentionally unresolved.
+  lexical_third_trit_vs_runtime_state_2: Lexical trit 0 permanently makes this completed targetward displacement. MOV:110[2] is an unresolved claim about completed arrival, not a pending journey.
+  confidence: 0.95
+- status: proposed_in_detailed_review_not_canonical
+  fixed_generated_fields:
+    canonical_id: MOV:111
+    universal_slot: active outward process
+    family_qualified_transliteration: gi·kok
+    local_compact_root: kok
+    formal_carrier: gi-ki-ki-ki
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 6
+  current_phase2_candidate:
+    title: active target approach
+    definition: Ongoing displacement of a mover toward a target position.
+    authority: candidate_only
+  candidate_analysis:
+  - title: target approach active
+    definition: Ongoing displacement of a mover toward a specified target position.
+    fit: It is the exact active, target-oriented Motion reading.
+    useful_coverage: approach, head toward, advance on, travel to
+    territory_consumed: Only motion currently reducing the target-relative path.
+    limitations_or_conflicts: A target must be specified; intention or orientation without displacement is insufficient.
+    selection: selected
+  - title: directed motion
+    definition: Motion with any direction.
+    fit: An outward process naturally suggests direction.
+    useful_coverage: go north, move forward, steer
+    territory_consumed: All vector-directed motion, even without a target.
+    limitations_or_conflicts: Too broad and weakens the target axis; direction/vector may require another Motion relation or compound.
+    selection: rejected
+  - title: pursuit
+    definition: A mover follows a changing target.
+    fit: Pursuit is active targetward motion.
+    useful_coverage: follow, chase, track
+    territory_consumed: Moving-target relation and continued retargeting.
+    limitations_or_conflicts: Too specific; it would consume likely 2xx relationship territory and require target motion semantics.
+    selection: rejected
+  proposed_title: target approach active
+  invariant_definition: Ongoing displacement of a mover toward a specified target position.
+  address_justification:
+    first_trit: '1 = process/action/transformation: this root predicates displacement, not a position, route, capacity, or relationship.'
+    second_trit: '1 = outward/target: the process is defined by displacement relative to a selected target position.'
+    third_trit: '1 = active: the defining displacement/traversal is presently under way.'
+  boundaries:
+    includes: Motion presently oriented toward and progressing with respect to a specified target.
+    does_not_include: Facing a target while stationary, intending to go later, following as a social relation, or merely having a reachable destination.
+    nearest_same_family_root: MOV:110 handles completed arrival; MOV:112 handles the same targetward displacement before onset; MOV:011 is the active destination entity.
+    cross_domain_handling: Pursuit of a living target compounds with LIF; data transmission with DAT/CON must not collapse into MOV; force-driven travel may add MAT.
+  existing_motion_entity_contrast: MOV:011 is a destination currently reachable and guiding motion; MOV:111 is the mover's targetward action.
+  runtime_state_interpretations:
+    '0': The approach is not executing or the approach assertion is false.
+    '1': The mover is currently progressing toward the target.
+    '2': The active approach is suspended, awaiting observation, or otherwise unresolved as an executing operation.
+  lexical_third_trit_vs_runtime_state_2: Lexical trit 1 defines the active targetward process. MOV:111[2] is the active-approach concept in a suspended/unresolved runtime state; MOV:112 is lexically pre-onset.
+  confidence: 0.95
+- status: proposed_in_detailed_review_not_canonical
+  fixed_generated_fields:
+    canonical_id: MOV:112
+    universal_slot: pending outward process
+    family_qualified_transliteration: gi·kon
+    local_compact_root: kon
+    formal_carrier: gi-ki-ki-nu
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 2
+  current_phase2_candidate:
+    title: potential target approach
+    definition: A potential displacement toward a target position that is not presently active or completed.
+    authority: candidate_only
+  candidate_analysis:
+  - title: target approach pending
+    definition: A specified displacement toward a target position that has not yet begun.
+    fit: It supplies the pending phase of the targetward displacement triplet.
+    useful_coverage: set to approach, queued trip to, planned arrival movement
+    territory_consumed: Only a specified targetward motion before onset.
+    limitations_or_conflicts: It does not itself encode schedule time, target accessibility, probability, or permission.
+    selection: selected
+  - title: pending arrival
+    definition: Arrival at a target has not yet happened.
+    fit: Every planned targetward trip has a not-yet-completed arrival.
+    useful_coverage: expected arrival, due in, not here yet
+    territory_consumed: Any absence of completed arrival, including active approach and failure.
+    limitations_or_conflicts: 'Negatively defined and phase-ambiguous: an active MOV:111 would also be a ''pending arrival.'''
+    selection: rejected
+  - title: unavailable destination
+    definition: A target cannot yet be reached.
+    fit: Unreachability can prevent a targetward process from beginning.
+    useful_coverage: closed destination, blocked endpoint
+    territory_consumed: Destination condition rather than process.
+    limitations_or_conflicts: MOV:012 already canonically names a pending/inaccessible destination entity.
+    selection: rejected
+  proposed_title: target approach pending
+  invariant_definition: A specified displacement toward a target position that has not yet begun.
+  address_justification:
+    first_trit: '1 = process/action/transformation: this root predicates displacement, not a position, route, capacity, or relationship.'
+    second_trit: '1 = outward/target: the process is defined by displacement relative to a selected target position.'
+    third_trit: '2 = pending: the defining displacement/traversal is specified but has not begun.'
+  boundaries:
+    includes: A targetward displacement represented as a valid specified operation before onset.
+    does_not_include: An inaccessible destination, an active approach, expected time of arrival, waiting duration, or target selection alone.
+    nearest_same_family_root: MOV:111 handles execution; MOV:012 handles a destination that is defined but not currently reachable.
+    cross_domain_handling: A schedule requires later timing/LOG/DAT semantics; a living target adds LIF; material transport adds MAT.
+  existing_motion_entity_contrast: MOV:012 is a pending destination condition; MOV:112 is a pending movement operation toward a destination.
+  runtime_state_interpretations:
+    '0': The planned targetward motion is canceled, invalid, or unavailable.
+    '1': The targetward displacement is validly specified and has not begun.
+    '2': The planned operation itself is dormant or unresolved—for example, awaiting confirmation.
+  lexical_third_trit_vs_runtime_state_2: Lexical trit 2 permanently identifies the pre-onset targetward operation. MOV:112[1] validates that pending operation; MOV:112[2] makes the operation's own current status unresolved.
+  confidence: 0.89
+- status: proposed_in_detailed_review_not_canonical
+  fixed_generated_fields:
+    canonical_id: MOV:120
+    universal_slot: completed systemic process
+    family_qualified_transliteration: gi·kim
+    local_compact_root: kim
+    formal_carrier: gi-ki-nu-ma
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 0
+  current_phase2_candidate:
+    title: completed shared-frame movement
+    definition: Completion of a mover's change of position relative to a shared or environmental reference frame.
+    authority: candidate_only
+  candidate_analysis:
+  - title: route traversal completed
+    definition: Completion of motion along a shared or system-defined route.
+    fit: A completed systemic Motion process should be defined by participation in a shared route system, not by an unrelated change domain.
+    useful_coverage: complete a route, finish a circuit, traverse a workflow, complete a transport run
+    territory_consumed: Only completion of traversal through an ordered shared path.
+    limitations_or_conflicts: The route must be system-defined or shared; isolated point-to-point arrival remains MOV:110.
+    selection: selected
+  - title: system transition completed
+    definition: Any system-wide transition has reached its end.
+    fit: The address is a completed systemic process and Motion can metaphorically express transitions.
+    useful_coverage: phase change, deployment, epoch change, workflow completion
+    territory_consumed: Every domain's system-level transformation.
+    limitations_or_conflicts: It invades STR, CRE, LOG, and ORI and lacks a stable Motion-specific center.
+    selection: rejected
+  - title: circulation cycle completed
+    definition: A circulating flow has finished one cycle.
+    fit: Circulation is systemic motion and has clear completed cycles.
+    useful_coverage: orbit complete, circuit complete, one loop finished
+    territory_consumed: Only cyclic route motion.
+    limitations_or_conflicts: Too narrow for non-cyclic shared routes; repetition/looping should be supplied by contour or a route compound.
+    selection: rejected
+  proposed_title: route traversal completed
+  invariant_definition: Completion of motion along a shared or system-defined route.
+  address_justification:
+    first_trit: '1 = process/action/transformation: this root predicates displacement, not a position, route, capacity, or relationship.'
+    second_trit: '2 = systemic/shared: the process is defined by traversal of a route shared or established by a system.'
+    third_trit: '0 = completed: the defining displacement/traversal has reached its endpoint condition.'
+  boundaries:
+    includes: Completion of traversal whose identity depends on an established ordered route shared by a system, group, or workflow.
+    does_not_include: The route entity itself, isolated arrival without route salience, circulation of material/data as such, or ontological/system reconfiguration.
+    nearest_same_family_root: MOV:121 handles traversal in progress; MOV:020 names the established route; MOV:021 names a network currently carrying flow.
+    cross_domain_handling: Compound with MAT for transported resources, DAT for data moving through the route, LIF for a group, STR for infrastructure, or ORI only when an ontological event is independently asserted.
+  existing_motion_entity_contrast: MOV:020 is an established route whether or not used; MOV:120 is the completed use/traversal of such a route.
+  runtime_state_interpretations:
+    '0': The route-traversal completion is not a valid current fact or has been invalidated.
+    '1': The defined route traversal has completed.
+    '2': Completion of the route traversal is awaiting confirmation or unresolved.
+  lexical_third_trit_vs_runtime_state_2: Lexical trit 0 makes route-traversal completion the permanent concept. MOV:120[2] is uncertainty about that completion; MOV:122 is a route traversal lexically specified before onset.
+  confidence: 0.83
+- status: proposed_in_detailed_review_not_canonical
+  fixed_generated_fields:
+    canonical_id: MOV:121
+    universal_slot: active systemic process
+    family_qualified_transliteration: gi·kik
+    local_compact_root: kik
+    formal_carrier: gi-ki-nu-ki
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 2
+  current_phase2_candidate:
+    title: active shared-frame movement
+    definition: Ongoing change of a mover's position relative to a shared or environmental reference frame.
+    authority: candidate_only
+  candidate_analysis:
+  - title: route traversal active
+    definition: Ongoing motion along a shared or system-defined route.
+    fit: It is an active systemic Motion process with route membership as its organizing relation.
+    useful_coverage: travel through a route, traffic in a corridor, progress through a workflow, circulate with loop contour
+    territory_consumed: Only active traversal of an ordered shared path.
+    limitations_or_conflicts: It does not identify what is carried, whether participants are synchronized, or whether the route is cyclic.
+    selection: selected
+  - title: system flow
+    definition: Entities, signals, or states move through a system.
+    fit: Flow is active systemic motion.
+    useful_coverage: traffic, data flow, resource circulation, process flow
+    territory_consumed: Motion plus DAT, MAT, CON, and temporal state change.
+    limitations_or_conflicts: The carrier/domain list is not atomic and would absorb other families' core processes.
+    selection: rejected
+  - title: coordinated movement
+    definition: Multiple movers move together.
+    fit: Shared orientation can express collective coordination.
+    useful_coverage: convoy, flocking, synchronization, march
+    territory_consumed: Participant coordination and relationships.
+    limitations_or_conflicts: Too narrow and likely belongs partly to MOV 2xx or CON; one mover can still traverse a system route.
+    selection: rejected
+  proposed_title: route traversal active
+  invariant_definition: Ongoing motion along a shared or system-defined route.
+  address_justification:
+    first_trit: '1 = process/action/transformation: this root predicates displacement, not a position, route, capacity, or relationship.'
+    second_trit: '2 = systemic/shared: the process is defined by traversal of a route shared or established by a system.'
+    third_trit: '1 = active: the defining displacement/traversal is presently under way.'
+  boundaries:
+    includes: Motion currently progressing through an ordered path whose identity is systemic, shared, or workflow-defined.
+    does_not_include: The active route network entity, data transfer itself, resource exchange itself, group synchronization, or generic target approach.
+    nearest_same_family_root: MOV:120 handles completed traversal; MOV:122 handles specified unbegun traversal; MOV:021 is the active flow-network entity.
+    cross_domain_handling: 'Use compounds to type movers or payloads: LIF for living participants, MAT for material transport, DAT/CON for information or communication, STR for infrastructure.'
+  existing_motion_entity_contrast: MOV:021 names a route network currently carrying flow; MOV:121 predicates traversal by a mover or cohort through a route.
+  runtime_state_interpretations:
+    '0': The route traversal is not executing or the assertion is false.
+    '1': Motion is currently progressing along the shared/system route.
+    '2': The active traversal is suspended, blocked, or unresolved as an executing operation.
+  lexical_third_trit_vs_runtime_state_2: Lexical trit 1 selects active route traversal. MOV:121[2] is that active operation in a suspended/unresolved runtime condition, whereas MOV:122 is lexically a not-yet-begun traversal.
+  confidence: 0.87
+- status: proposed_in_detailed_review_not_canonical
+  fixed_generated_fields:
+    canonical_id: MOV:122
+    universal_slot: pending systemic process
+    family_qualified_transliteration: gi·kin
+    local_compact_root: kin
+    formal_carrier: gi-ki-nu-nu
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    relative_note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - -2
+  current_phase2_candidate:
+    title: potential shared-frame movement
+    definition: A potential change of a mover's position relative to a shared or environmental reference frame that is not presently active or completed.
+    authority: candidate_only
+  candidate_analysis:
+  - title: route traversal pending
+    definition: Motion along a shared or system-defined route that is specified but has not yet begun.
+    fit: It completes the systemic traversal triplet with a clear pre-onset process.
+    useful_coverage: queued route run, planned circuit, staged workflow traversal, convoy awaiting start
+    territory_consumed: Only a specified system-route traversal before onset.
+    limitations_or_conflicts: Schedule time, delay cause, route availability, and payload type are external.
+    selection: selected
+  - title: scheduled system transition
+    definition: A system change is scheduled.
+    fit: Scheduling and pending systemic action commonly coincide.
+    useful_coverage: cron job, timetable, planned rollout, future phase
+    territory_consumed: Time, logic, and all transformation domains.
+    limitations_or_conflicts: Scheduling is not Motion-specific and cannot be settled before LOG/DAT/ORI and timing grammar review.
+    selection: rejected
+  - title: dormant route
+    definition: A route exists but is inactive.
+    fit: An inactive system route is associated with pending traversal.
+    useful_coverage: closed line, unused corridor, suspended service
+    territory_consumed: Route entity condition.
+    limitations_or_conflicts: MOV:022 already canonically names a dormant route system; the 1xx address must remain a process.
+    selection: rejected
+  proposed_title: route traversal pending
+  invariant_definition: Motion along a shared or system-defined route that is specified but has not yet begun.
+  address_justification:
+    first_trit: '1 = process/action/transformation: this root predicates displacement, not a position, route, capacity, or relationship.'
+    second_trit: '2 = systemic/shared: the process is defined by traversal of a route shared or established by a system.'
+    third_trit: '2 = pending: the defining displacement/traversal is specified but has not begun.'
+  boundaries:
+    includes: A route-specific traversal operation represented as validly specified before its motion begins.
+    does_not_include: A dormant route, a timetable itself, delay duration/cause, active traffic, or a generic system transformation.
+    nearest_same_family_root: MOV:121 handles execution; MOV:022 handles the dormant route entity.
+    cross_domain_handling: A scheduled transport combines this root with timing/LOG and MAT payload semantics after those are reviewed; a living cohort adds LIF.
+  existing_motion_entity_contrast: MOV:022 is a dormant route system regardless of any operation; MOV:122 is a pending act of traversing a route that may itself be active or inactive.
+  runtime_state_interpretations:
+    '0': The planned route traversal is canceled, invalid, or unavailable.
+    '1': A valid route traversal is queued and has not begun.
+    '2': The queued traversal itself is dormant or unresolved, such as a tentative run awaiting authorization.
+  lexical_third_trit_vs_runtime_state_2: Lexical trit 2 permanently selects a not-yet-begun route traversal. MOV:122[1] validates the queue; MOV:122[2] makes the queued operation's current status unresolved.
+  confidence: 0.83
+approval:
+  canonicalized: false
+  requires_explicit_user_decision: true
+  next_packet_authorized: false
