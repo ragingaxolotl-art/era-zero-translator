@@ -6,7 +6,7 @@ This repository contains both the full canonical Ruby application/API and a dete
 
 ## Hosted release
 
-The Pages build runs entirely in the browser. It includes all 436 indexed senses and precomputed canonical resolution artifacts for all 324 atoms and every closed approved compound: 351 direct targets × 3 runtime states × 5 speech acts = 5,265 exact variants. Semantic IR, EZF-1, SVG, MIDI, reference-tone preview, and integrity-checked EZB-1 exchange are available without a server.
+The Pages build runs entirely in the browser. Its default interface accepts ordinary English sentences—no state brackets or controlled syntax required—and infers inflections, questions, commands, negation, and the ordinary positive state. Genuine polysemy is surfaced for the user instead of guessed. It includes all 436 indexed senses and precomputed canonical resolution artifacts for all 324 atoms and every closed approved compound: 351 direct targets × 3 runtime states × 5 speech acts = 5,265 exact variants. Semantic IR, EZF-1, SVG, MIDI, reference-tone preview, and integrity-checked EZB-1 exchange are available without a server.
 
 One approved compound has open semantic slots. Because its arguments are arbitrary canonical lexical occurrences, the static release reports that boundary explicitly and routes full role binding to the Ruby API rather than fabricating or constraining an argument. Advanced controlled-English structural templates also remain in the full local compiler.
 
@@ -40,7 +40,7 @@ Open `http://127.0.0.1:8787`. Set `ERA_ZERO_PORT` to choose another port. The se
 - Successful resolution visibly confirms exact decoder round trip.
 - Every export bundle is integrity checked and versioned.
 
-The workbench provides general-English and controlled-English modes, ranked candidate inspection, runtime and speech-act controls, dynamic compound-role fields, Semantic IR/EZF inspection, reference-tone preview, SVG/MIDI download, and EZB-1 import/export.
+The workbench provides an English-first mode plus optional advanced exact syntax, ranked candidate inspection, plain-language truth and speech-act controls, dynamic compound-role fields, Semantic IR/EZF inspection, reference-tone preview, SVG/MIDI download, and EZB-1 import/export.
 
 ## Command-line interfaces
 

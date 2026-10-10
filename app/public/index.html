@@ -14,34 +14,34 @@
         <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
         <span><strong>ERA ZERO</strong><small>Translator Workbench</small></span>
       </a>
-      <div class="release"><span class="status-dot"></span><span id="serviceStatus">Checking engine</span><b>v1.0</b></div>
+      <div class="release"><span class="status-dot"></span><span id="serviceStatus">Checking engine</span><b>v1.1</b></div>
     </header>
 
     <main>
       <section class="hero">
         <p class="eyebrow">Meaning before performance</p>
-        <h1>Translate without hiding uncertainty.</h1>
-        <p>Analyze ordinary English, inspect ranked meanings, resolve ambiguity explicitly, and export canonical Era Zero notation.</p>
+        <h1>Write English. Get Era Zero.</h1>
+        <p>Use an ordinary sentence. The translator infers intent and state, asks only when your wording has more than one real meaning, and produces canonical Era Zero notation.</p>
       </section>
 
       <section class="workspace" aria-label="Translator workspace">
         <div class="composer card">
           <div class="mode-tabs" role="tablist" aria-label="Input mode">
-            <button class="mode-tab active" data-mode="general" role="tab" aria-selected="true">General English</button>
-            <button class="mode-tab" data-mode="controlled" role="tab" aria-selected="false">Controlled English</button>
+            <button class="mode-tab active" data-mode="general" role="tab" aria-selected="true">Normal English</button>
+            <button class="mode-tab" data-mode="controlled" role="tab" aria-selected="false">Advanced exact syntax</button>
           </div>
-          <label for="sourceInput" id="inputLabel">What do you want to express?</label>
-          <textarea id="sourceInput" rows="5" spellcheck="true" placeholder="Try: leave [1]  ·  go [1]  ·  change represented information content [1]"></textarea>
+          <label for="sourceInput" id="inputLabel">Write it in normal English</label>
+          <textarea id="sourceInput" rows="5" spellcheck="true" placeholder="Try: I am leaving home now."></textarea>
           <div class="examples" aria-label="Examples">
             <span>Examples</span>
-            <button data-example="leave [1]">leave</button>
-            <button data-example="go [1]">go</button>
-            <button data-example="change represented information content [1]">change data</button>
-            <button data-example="food [1]">known gap</button>
+            <button data-example="I am leaving home now.">leaving home</button>
+            <button data-example="She arrived at the station.">arrived</button>
+            <button data-example="Are they approaching the bridge?">question</button>
+            <button data-example="I am not moving.">negative</button>
           </div>
           <div class="composer-footer">
-            <p id="inputHint">Use a final [0], [1], or [2] to specify runtime state. Omit it to compare alternatives.</p>
-            <button id="analyzeButton" class="primary">Analyze meaning <span>→</span></button>
+            <p id="inputHint">No codes or brackets needed. I will infer the intent and ask when the meaning is genuinely ambiguous.</p>
+            <button id="analyzeButton" class="primary">Translate English <span>→</span></button>
           </div>
         </div>
 
@@ -74,8 +74,8 @@
             <h3>Resolve this reading</h3>
             <p id="resolutionPrompt">Select a candidate to inspect its requirements.</p>
             <div class="field-row">
-              <label>Runtime state
-                <select id="runtimeState"><option value="">Choose…</option><option value="0">[0] inactive / ended</option><option value="1">[1] active / valid</option><option value="2">[2] num / pending</option></select>
+              <label>Is the statement true?
+                <select id="runtimeState"><option value="">Choose…</option><option value="0">No / denied</option><option value="1">Yes / affirmed</option><option value="2">Unknown / unresolved</option></select>
               </label>
               <label>Speech act
                 <select id="speechAct"><option value="assertion">Assertion</option><option value="question">Question</option><option value="command">Command</option><option value="definition">Definition</option><option value="possibility">Possibility</option></select>
@@ -101,7 +101,7 @@
         </nav>
         <div class="output-card card">
           <div id="panel-meaning" class="output-panel active">
-            <div class="meaning-summary"><span id="targetBadge"></span><h3 id="meaningTitle"></h3><p id="controlledText"></p></div>
+            <div class="meaning-summary"><span id="targetBadge"></span><h3 id="meaningTitle"></h3><p class="translation-line"><b>Your English</b><q id="sourceEcho"></q></p><p class="translation-line"><b>Era Zero canonical form</b><code id="controlledText"></code></p></div>
             <div class="identity-grid"><div><span>Utterance</span><code id="utteranceId"></code></div><div><span>Formal identity</span><code id="formalId"></code></div><div><span>Round trip</span><strong id="roundTrip"></strong></div></div>
           </div>
           <div id="panel-glyph" class="output-panel">
