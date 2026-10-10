@@ -124,6 +124,12 @@ Audio voice envelopes: PASS · 5 voices · release tails and softened stops chec
 Conversation validation: PASS · 14 passed · 0 failed · 6 turns
 ```
 
+## PASS — validate keyed lore conversation performances
+
+```text
+Lore conversation validation: PASS · 61 passed · 0 failed · 5 presets · 22 turns
+```
+
 ## PASS — audit game and story English translation profile
 
 ```text
@@ -153,7 +159,7 @@ Product frontend syntax: PASS (local source, browser release, viseme compiler)
 ## PASS — validate translator workbench over real localhost HTTP
 
 ```text
-Product HTTP smoke: PASS (v1.12.0 complete plain-English matching, two-being conversation workbench and MP3, computer translation profile, selectable voices, layered character rig, health, analyze, exact round trip)
+Product HTTP smoke: PASS (v1.13.0 complete plain-English matching, keyed lore conversations, two-being conversation workbench and MP3, computer translation profile, selectable voices, layered character rig, health, analyze, exact round trip)
 ```
 
 ## PASS — validate the complete REP:000–222 family

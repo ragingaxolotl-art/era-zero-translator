@@ -18,8 +18,8 @@ FileUtils.mkdir_p(resolution_dir)
 
 index_html = File.read(File.join(root, "app/public/index.html"))
   .gsub('href="/"', 'href="./"')
-  .gsub('href="/styles.css?v=1.12.0"', 'href="./styles.css?v=1.12.0"')
-  .gsub('<script src="/app.js?v=1.12.0" defer></script>', '<script type="module" src="./app.js?v=1.12.0"></script>')
+  .gsub('href="/styles.css?v=1.13.0"', 'href="./styles.css?v=1.13.0"')
+  .gsub('<script src="/app.js?v=1.13.0" defer></script>', '<script type="module" src="./app.js?v=1.13.0"></script>')
   .gsub('Canonical engine ready', 'Loading canonical browser engine')
   .gsub('Local workbench for', 'Browser workbench for')
   .gsub('DBA Era Zero · Local canonical translator', 'DBA Era Zero · Canonical browser translator')
@@ -37,6 +37,7 @@ game_story_senses = EraZeroValidation.load_yaml("lexicon/game_story_surface_rout
 atoms = EraZeroValidation.load_yaml("lexicon/all_atoms.yaml").fetch("atoms")
 compounds = EraZeroValidation.load_yaml("lexicon/compound_dictionary.yaml").fetch("entries")
 plain_english = EraZeroValidation.load_yaml("lexicon/plain_english_index.yaml")
+lore_conversations = JSON.parse(File.read(File.join(root, "examples/lore_conversation_presets.json")))
 compound_by_id = compounds.to_h { |compound| [compound.fetch("compound_id"), compound] }
 allowed = senses.select { |sense| sense["controlled_input_allowed"] == true && %w[atom compound].include?(sense["route"]) }
 canonical_by_target = allowed.group_by { |sense| sense.fetch("target_id") }.transform_values do |items|
@@ -77,6 +78,7 @@ browser_index = {
   "senses" => senses,
   "game_story_senses" => game_story_senses,
   "plain_english" => plain_english,
+  "lore_conversations" => lore_conversations,
   "atoms" => atoms,
   "compounds" => compounds,
   "controlled" => allowed.map { |sense| sense.slice("sense_id", "lemma", "route", "target_id") },

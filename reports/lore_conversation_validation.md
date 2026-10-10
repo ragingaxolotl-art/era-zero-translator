@@ -1,0 +1,73 @@
+# Lore Conversation Preset Validation
+
+Status: **PASS**
+
+- Checks passed: **61**
+- Checks failed: **0**
+- Presets: **5**
+- Performance turns: **22**
+- Hosted canonical concept performances found: **39**
+
+## Checks
+
+- PASS — presentation-only format
+- PASS — five literature moments
+- PASS — expected story keys
+- PASS — unique input keys and aliases
+- PASS — FEAST-CARRY complete context
+- PASS — FEAST-CARRY two-speaker exchange
+- PASS — FEAST-CARRY turn 1 playable — Brindle: Somebody has to begin.
+- PASS — FEAST-CARRY turn 1 honest predicates — Brindle: Somebody has to begin.
+- PASS — FEAST-CARRY turn 2 playable — Tavi: Please help the people who carry the meals.
+- PASS — FEAST-CARRY turn 2 honest predicates — Tavi: Please help the people who carry the meals.
+- PASS — FEAST-CARRY turn 3 playable — Brindle: We are here together.
+- PASS — FEAST-CARRY turn 3 honest predicates — Brindle: We are here together.
+- PASS — FEAST-CARRY turn 4 playable — Tavi: I will help.
+- PASS — FEAST-CARRY turn 4 honest predicates — Tavi: I will help.
+- PASS — CURRENT-LISTEN complete context
+- PASS — CURRENT-LISTEN two-speaker exchange
+- PASS — CURRENT-LISTEN turn 1 playable — Pell: I need the present route.
+- PASS — CURRENT-LISTEN turn 1 honest predicates — Pell: I need the present route.
+- PASS — CURRENT-LISTEN turn 2 playable — Suth: The present route is here.
+- PASS — CURRENT-LISTEN turn 2 honest predicates — Suth: The present route is here.
+- PASS — CURRENT-LISTEN turn 3 playable — Pell: We are moving together.
+- PASS — CURRENT-LISTEN turn 3 honest predicates — Pell: We are moving together.
+- PASS — CURRENT-LISTEN turn 4 playable — Suth: Keep listening for living people.
+- PASS — CURRENT-LISTEN turn 4 honest predicates — Suth: Keep listening for living people.
+- PASS — ROOMS-BESIDE complete context
+- PASS — ROOMS-BESIDE two-speaker exchange
+- PASS — ROOMS-BESIDE turn 1 playable — Palinode: I preserved the objection.
+- PASS — ROOMS-BESIDE turn 1 honest predicates — Palinode: I preserved the objection.
+- PASS — ROOMS-BESIDE turn 2 playable — Serein: Keep my objection beside yours.
+- PASS — ROOMS-BESIDE turn 2 honest predicates — Serein: Keep my objection beside yours.
+- PASS — ROOMS-BESIDE turn 3 playable — Palinode: I will keep it.
+- PASS — ROOMS-BESIDE turn 3 honest predicates — Palinode: I will keep it.
+- PASS — ROOMS-BESIDE turn 4 playable — Serein: Help me place this wall.
+- PASS — ROOMS-BESIDE turn 4 honest predicates — Serein: Help me place this wall.
+- PASS — ARRIVAL-ASK complete context
+- PASS — ARRIVAL-ASK two-speaker exchange
+- PASS — ARRIVAL-ASK turn 1 playable — Nacre: I need the low-water gate.
+- PASS — ARRIVAL-ASK turn 1 honest predicates — Nacre: I need the low-water gate.
+- PASS — ARRIVAL-ASK turn 2 playable — Varo: You are at your destination.
+- PASS — ARRIVAL-ASK turn 2 honest predicates — Varo: You are at your destination.
+- PASS — ARRIVAL-ASK turn 3 playable — Nacre: No. My current position is your station. We need a live receiving exchange.
+- PASS — ARRIVAL-ASK turn 3 honest predicates — Nacre: No. My current position is your station. We need a live receiving exchange.
+- PASS — ARRIVAL-ASK turn 4 playable — Varo: I will stay until you answer.
+- PASS — ARRIVAL-ASK turn 4 honest predicates — Varo: I will stay until you answer.
+- PASS — TWO-DROPS-WAIT complete context
+- PASS — TWO-DROPS-WAIT two-speaker exchange
+- PASS — TWO-DROPS-WAIT turn 1 playable — Dema: I found your home.
+- PASS — TWO-DROPS-WAIT turn 1 honest predicates — Dema: I found your home.
+- PASS — TWO-DROPS-WAIT turn 2 playable — Issa: Please do not clean it.
+- PASS — TWO-DROPS-WAIT turn 2 honest predicates — Issa: Please do not clean it.
+- PASS — TWO-DROPS-WAIT turn 3 playable — Dema: We need a safe route.
+- PASS — TWO-DROPS-WAIT turn 3 honest predicates — Dema: We need a safe route.
+- PASS — TWO-DROPS-WAIT turn 4 playable — Issa: Wait and listen for the answer.
+- PASS — TWO-DROPS-WAIT turn 4 honest predicates — Issa: Wait and listen for the answer.
+- PASS — TWO-DROPS-WAIT turn 5 playable — Dema: The nursery arrived.
+- PASS — TWO-DROPS-WAIT turn 5 honest predicates — Dema: The nursery arrived.
+- PASS — TWO-DROPS-WAIT turn 6 playable — Issa: We are here.
+- PASS — TWO-DROPS-WAIT turn 6 honest predicates — Issa: We are here.
+- PASS — lore records embedded in browser data
+- PASS — keyed lore interface present
+- PASS — key resolution and arbitrary speaker labels present

@@ -82,6 +82,10 @@ commands = [
     [node, File.join(ROOT, "tools/validate_conversation.mjs")]
   ],
   [
+    "validate keyed lore conversation performances",
+    [node, File.join(ROOT, "tools/validate_lore_conversations.mjs")]
+  ],
+  [
     "audit game and story English translation profile",
     [node, File.join(ROOT, "tools/audit_game_story_translation.mjs")]
   ],
