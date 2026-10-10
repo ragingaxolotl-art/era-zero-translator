@@ -59,7 +59,7 @@ check('bundle corruption rejection',rejected);
 const html=await fs.readFile(path.join(pages,'index.html'),'utf8');
 const app=await fs.readFile(path.join(pages,'app.js'),'utf8');
 const css=await fs.readFile(path.join(pages,'styles.css'),'utf8');
-check('project-relative assets',html.includes('href="./styles.css"')&&html.includes('src="./app.js"')&&!html.includes('src="/app.js"'));
+check('project-relative versioned assets',html.includes('href="./styles.css?v=1.1"')&&html.includes('src="./app.js?v=1.1"')&&!html.includes('src="/app.js'));
 check('English-first interface',html.includes('Write it in normal English')&&html.includes('No codes or brackets needed')&&app.includes("from'./english.mjs'"));
 check('accessible responsive UI',html.includes('aria-live')&&html.includes('role="tablist"')&&css.includes('@media(max-width:900px)')&&css.includes('prefers-reduced-motion'));
 check('hosted limitation is explicit',app.includes('Open-slot compound role binding')||index.online_scope.note.includes('Open-slot compound'));
