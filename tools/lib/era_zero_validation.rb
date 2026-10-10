@@ -92,7 +92,13 @@ module EraZeroValidation
   module_function
 
   def load_yaml(relative_path)
-    YAML.load_file(File.join(ROOT, relative_path))
+    path = File.join(ROOT, relative_path)
+    content = File.read(path, encoding: "UTF-8")
+    # Psych 4+ changed YAML.load_file to safe loading and rejects the aliases
+    # emitted by Ruby's own YAML serializer for shared arrays in the canonical
+    # lexicon. These files are trusted, version-controlled project authority,
+    # so preserve the historical full-loader behavior across Ruby versions.
+    YAML.respond_to?(:unsafe_load) ? YAML.unsafe_load(content) : YAML.load(content)
   end
 
   def write(relative_path, content)
