@@ -24,7 +24,11 @@ const englishCases=[
   ['I am not moving.','MOV:121','assertion',0,true],
   ['Please leave now.','MOV:101','command',1,true],
   ['Could we approach the station?','MOV:111','question',1,true],
-  ['They left the building.','MOV:100','assertion',1,true]
+  ['They left the building.','MOV:100','assertion',1,true],
+  ['Go home.','MOV:121','command',1,true],
+  ['Send the file.','DAT:111','command',1,true],
+  ['Send the message.','CON:101','command',1,true],
+  ['I changed my mind.','MIN:101','assertion',1,true]
 ];
 for(const [sentence,target,act,runtime,automatic] of englishCases){
   const result=english.analyzeEnglish(sentence,index);
@@ -57,6 +61,8 @@ for(const [target,relative] of Object.entries(index.resolution_files)){
 check('complete direct variant matrix',variants===351*15);
 
 const sample=JSON.parse(await fs.readFile(path.join(pages,'data/resolutions/mov_101.json'),'utf8')).variants['assertion:1'];
+const soundPlan=engine.soundPlanFromFormal(sample.formal),sourceEvent=sample.formal.performance.lexical_events[0];
+check('complete audible sound plan',JSON.stringify(soundPlan.lexical_events[0].family_opening)===JSON.stringify(sourceEvent.family_opening_absolute_midi)&&JSON.stringify(soundPlan.lexical_events[0].address_path)===JSON.stringify(sourceEvent.address_absolute_midi)&&soundPlan.lexical_events[0].runtime_ending[0]===sourceEvent.runtime_tail.absolute_note&&JSON.stringify(soundPlan.sentence_contour)===JSON.stringify(sample.formal.performance.contour_relative_semitones.map(offset=>sample.formal.performance.anchor_midi+offset)));
 const bundle=await engine.createBundle(sample,'leave [1]');
 const verified=await engine.verifyBundle(bundle);
 check('portable EZB-1 bundle',verified.status==='valid'&&verified.target_id==='MOV:101');
@@ -67,9 +73,10 @@ check('bundle corruption rejection',rejected);
 const html=await fs.readFile(path.join(pages,'index.html'),'utf8');
 const app=await fs.readFile(path.join(pages,'app.js'),'utf8');
 const css=await fs.readFile(path.join(pages,'styles.css'),'utf8');
-check('project-relative versioned assets',html.includes('href="./styles.css?v=1.2"')&&html.includes('src="./app.js?v=1.2"')&&!html.includes('src="/app.js'));
+check('project-relative versioned assets',html.includes('href="./styles.css?v=1.3"')&&html.includes('src="./app.js?v=1.3"')&&!html.includes('src="/app.js'));
 check('English-first interface',html.includes('Write it in normal English')&&html.includes('No codes or brackets needed')&&app.includes("from'./english.mjs'"));
 check('nonsemantic phonemic-name interface',html.includes('Give an unfamiliar object a sound ID')&&html.includes('Experimental EZNAME-0.1')&&app.includes("from'./names.mjs'"));
+check('visible complete sound construction',html.includes('id="hearTranslation"')&&html.includes('id="prefixText"')&&html.includes('id="carrierText"')&&html.includes('id="familyNotes"')&&html.includes('id="addressNotes"')&&html.includes('id="runtimeNote"')&&html.includes('id="contourNotes"')&&app.includes('soundPlanFromFormal'));
 check('accessible responsive UI',html.includes('aria-live')&&html.includes('role="tablist"')&&css.includes('@media(max-width:900px)')&&css.includes('prefers-reduced-motion'));
 check('hosted limitation is explicit',app.includes('Open-slot compound role binding')||index.online_scope.note.includes('Open-slot compound'));
 

@@ -17,6 +17,20 @@ const IRREGULAR={
 };
 
 const SENSE_HINTS=[
+  [/\b(?:go|goes|going|went|gone)\s+(?:home|there|here|to|toward|towards|into|through|across|away)\b/,'spatial_movement',.58,'context'],
+  [/\b(?:go|goes|going|went|gone)\s+(?:red|dark|silent|offline|online|bad|wrong|cold|hot|missing|blank|viral)\b/,'abstract_transition',.62,'context'],
+  [/\b(?:send|sends|sending|sent)\b.*\b(?:file|data|packet|record|code|document|information)\b/,'data_transfer',.62,'context'],
+  [/\b(?:send|sends|sending|sent|say|tell)\b.*\b(?:message|word|reply|greeting|warning|request)\b/,'communicative_expression',.62,'context'],
+  [/\b(?:receive|receives|receiving|received)\b.*\b(?:file|data|packet|record|code|document|information)\b/,'data_transfer_completion',.62,'context'],
+  [/\b(?:receive|receives|receiving|received|hear)\b.*\b(?:message|word|reply|greeting|warning|request)\b/,'communicative_reception',.62,'context'],
+  [/\b(?:change|changes|changing|changed)\b.*\b(?:mind|opinion|belief|self image)\b/,'mental_revision',.62,'context'],
+  [/\b(?:change|changes|changing|changed)\b.*\b(?:file|data|record|code|document|information)\b/,'data_transformation',.62,'context'],
+  [/\b(?:change|changes|changing|changed)\b.*\b(?:layout|structure|arrangement|configuration)\b/,'structural_reconfiguration',.62,'context'],
+  [/\b(?:run|runs|running|ran)\b.*\b(?:program|script|code|function|application)\b/,'program_execution',.62,'context'],
+  [/\b(?:run|runs|running|ran)\b.*\b(?:machine|engine|motor|device)\b/,'machine_operation',.62,'context'],
+  [/\b(?:run|runs|running|ran)\b.*\b(?:home|race|mile|road|trail)\b/,'locomotion',.62,'context'],
+  [/\b(?:return|returns|returning|returned)\b.*\b(?:value|result|object|null|response)\b/,'function_result',.62,'context'],
+  [/\b(?:return|returns|returning|returned)\b.*\b(?:home|back|place|position|origin)\b/,'movement_to_prior_position',.62,'context'],
   [/\b(?:am|is|are|was|were|be|been)?\s*leaving\b/,'active_departure',.52],
   [/\b(?:left|departed|has left|have left|had left)\b/,'completed_departure',.58],
   [/\b(?:approach|approaches|approaching)\b/,'active_target_approach',.50],
@@ -99,7 +113,7 @@ function scoreSense(sense,input,inputTokens){
   score+=Math.min(cue*.025,.08)+Math.min(definition*.012,.07);
   if(sense.sense_key==='canonical_atom_label'&&!exact)score=Math.min(score,.62);
   score=Math.round(Math.min(score,1)*10000)/10000;
-  return{sense_id:sense.sense_id,lemma:sense.lemma,sense_key:sense.sense_key,route:sense.route,target_id:sense.target_id,definition:sense.definition,selection_cues:sense.selection_cues||[],score,confidence:score>=.82?'high':score>=.62?'medium':'low',match_type:exact?'exact_lemma':hint?'english_sentence':surfaceMatch?'inflected_lemma':'context_overlap',evidence:{lexical_overlap:lexical,selection_cue_overlap:cue,definition_overlap:definition}};
+  return{sense_id:sense.sense_id,lemma:sense.lemma,sense_key:sense.sense_key,route:sense.route,target_id:sense.target_id,definition:sense.definition,selection_cues:sense.selection_cues||[],score,confidence:score>=.82?'high':score>=.62?'medium':'low',match_type:exact?'exact_lemma':hint?.[3]==='context'?'contextual_english':hint?'english_sentence':surfaceMatch?'inflected_lemma':'context_overlap',contextual_hint:hint?.[3]==='context',evidence:{lexical_overlap:lexical,selection_cue_overlap:cue,definition_overlap:definition}};
 }
 
 export function analyzeEnglish(raw,data,{limit=8}={}){
@@ -110,8 +124,8 @@ export function analyzeEnglish(raw,data,{limit=8}={}){
   const ranked=data.senses.map(sense=>scoreSense(sense,normalized,inputTokens)).filter(Boolean).sort((a,b)=>b.score-a.score||a.sense_id.localeCompare(b.sense_id)).slice(0,limit);
   if(!ranked.length)throw{code:'no_candidate',message:'I could not connect that English sentence to an approved Era Zero meaning yet. Try a shorter sentence focused on its main idea.'};
   ranked.forEach(candidate=>{candidate.required_roles=candidate.target_id?data.required_roles[candidate.target_id]||[]:[]});
-  const top=ranked[0],sameLemmaAmbiguity=INHERENTLY_POLYSEMOUS.has(normalize(top.lemma)),competing=ranked.slice(1).filter(candidate=>top.score-candidate.score<.14||(sameLemmaAmbiguity&&normalize(candidate.lemma)===normalize(top.lemma))),material=competing.length>0,direct=DIRECT.has(top.route),missingRoles=top.required_roles.length>0,structural=['semantic_ir','grammar'].includes(top.route),gap=top.route==='gap',hosted=Boolean(top.target_id&&data.resolution_files[top.target_id]);
-  const confident=top.score>=.76&&(!ranked[1]||top.score-ranked[1].score>=.14);
+  const top=ranked[0],sameLemmaAmbiguity=INHERENTLY_POLYSEMOUS.has(normalize(top.lemma))&&!top.contextual_hint,competing=ranked.slice(1).filter(candidate=>top.contextual_hint?(candidate.contextual_hint&&top.score-candidate.score<.14):(top.score-candidate.score<.14||(sameLemmaAmbiguity&&normalize(candidate.lemma)===normalize(top.lemma)))),material=competing.length>0,direct=DIRECT.has(top.route),missingRoles=top.required_roles.length>0,structural=['semantic_ir','grammar'].includes(top.route),gap=top.route==='gap',hosted=Boolean(top.target_id&&data.resolution_files[top.target_id]);
+  const confident=top.score>=.76&&(top.contextual_hint||!ranked[1]||top.score-ranked[1].score>=.14);
   const auto=Boolean(confident&&!material&&direct&&!missingRoles&&hosted);
   const reasons=[];
   if(material)reasons.push('material_sense_ambiguity');
