@@ -116,14 +116,14 @@ Viseme performance: PASS · 5265 variants · 60051 cues · 80601 assertions
 
 ```text
 Game/story translation audit: PASS
-Checks passed: 71; failed: 0; phrases: 60
+Checks passed: 77; failed: 0; phrases: 62
 ```
 
 ## PASS — validate translator workbench product application
 
 ```text
 Product application audit: PASS
-Checks passed: 15; checks failed: 0
+Checks passed: 16; checks failed: 0
 ```
 
 ## PASS — validate translator workbench frontend syntax
@@ -135,7 +135,7 @@ Product frontend syntax: PASS (local source, browser release, viseme compiler)
 ## PASS — validate translator workbench over real localhost HTTP
 
 ```text
-Product HTTP smoke: PASS (v1.7 layered head/eyes/mouth rig, standalone viseme file, health, analyze, exact round trip)
+Product HTTP smoke: PASS (v1.9 selectable audio voices, layered head/eyes/mouth rig, standalone viseme file, health, analyze, exact round trip)
 ```
 
 ## PASS — validate the complete REP:000–222 family

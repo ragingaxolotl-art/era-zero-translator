@@ -2,7 +2,7 @@
 
 Status: **PASS — CANONICAL PRODUCT RELEASE MEETS AUDIT CONTRACT**
 
-- Checks passed: **15**
+- Checks passed: **16**
 - Checks failed: **0**
 - API endpoints: **9**
 - Reviewed-sense evaluation cases: **84**
@@ -54,6 +54,10 @@ invalid JSON, missing fields, oversized bodies, unknown routes, and methods retu
 ## PASS — workbench surface
 
 responsive UI exposes analysis, clarification, roles, runtime, speech act, IR, EZF, SVG, MIDI, and bundles with accessibility markers
+
+## PASS — selectable audio voices
+
+the local workbench exposes instrument-like presentation voices without changing semantic data
 
 ## PASS — mode-state isolation
 
