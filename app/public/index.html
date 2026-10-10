@@ -6,7 +6,7 @@
   <meta name="description" content="Local workbench for conservative English-to-Era-Zero translation, clarification, formal notation, SVG, and MIDI export.">
   <title>Era Zero Translator Workbench</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1420'/%3E%3Cpath d='M14 10h36v8H24v10h22v8H24v10h26v8H14z' fill='%2361e1d2'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="/styles.css?v=1.5.0">
+  <link rel="stylesheet" href="/styles.css?v=1.6.0">
 </head>
 <body>
   <div class="shell">
@@ -15,7 +15,7 @@
         <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
         <span><strong>ERA ZERO</strong><small>Translator Workbench</small></span>
       </a>
-      <div class="release"><span class="status-dot"></span><span id="serviceStatus">Checking engine</span><b>v1.5.0</b></div>
+      <div class="release"><span class="status-dot"></span><span id="serviceStatus">Checking engine</span><b>v1.6.0</b></div>
     </header>
     <nav class="app-tabs" role="tablist" aria-label="Workbench view">
       <button class="app-tab active" data-app-tab="translator" role="tab" aria-selected="true">Translator</button>
@@ -154,7 +154,7 @@
         </nav>
         <div class="output-card card">
           <div id="panel-meaning" class="output-panel active">
-            <div class="meaning-summary"><span id="targetBadge"></span><h3 id="meaningTitle"></h3><p class="translation-line"><b>Your English</b><q id="sourceEcho"></q></p><p class="translation-line"><b>Era Zero canonical form</b><code id="controlledText"></code></p><div class="translation-actions"><button id="hearTranslation">▶ Hear Era Zero</button><span>Plays every required sound component in order.</span></div><div class="sound-components" aria-label="Complete sound construction"><div><span>Family prefix</span><code id="prefixText"></code></div><div><span>Full sung carrier</span><code id="carrierText"></code></div><div><span>Family opening notes</span><code id="familyNotes"></code></div><div><span>Address path</span><code id="addressNotes"></code></div><div><span>Runtime ending</span><code id="runtimeNote"></code></div><div><span>Sentence contour</span><code id="contourNotes"></code></div></div></div>
+            <div class="meaning-summary"><span id="targetBadge"></span><h3 id="meaningTitle"></h3><p class="translation-line"><b>Your English</b><q id="sourceEcho"></q></p><p class="translation-line"><b>Era Zero canonical form</b><code id="controlledText"></code></p><div class="translation-actions"><button id="hearTranslation">▶ Hear Era Zero</button><button id="showCharacter">◉ Character close-up</button><span>Hear every sound or watch the carrier syllables drive a synchronized speaking face.</span></div><div class="sound-components" aria-label="Complete sound construction"><div><span>Family prefix</span><code id="prefixText"></code></div><div><span>Full sung carrier</span><code id="carrierText"></code></div><div><span>Family opening notes</span><code id="familyNotes"></code></div><div><span>Address path</span><code id="addressNotes"></code></div><div><span>Runtime ending</span><code id="runtimeNote"></code></div><div><span>Sentence contour</span><code id="contourNotes"></code></div></div></div>
             <div class="identity-grid"><div><span>Utterance</span><code id="utteranceId"></code></div><div><span>Formal identity</span><code id="formalId"></code></div><div><span>Round trip</span><strong id="roundTrip"></strong></div></div>
           </div>
           <div id="panel-glyph" class="output-panel">
@@ -184,7 +184,41 @@
 
     <footer><span>DBA Era Zero · Local canonical translator</span><span>EZIR-JSON-1 · EZF-1 · EZSVG-1 · MIDI-0 · EZB-1</span></footer>
   </div>
+  <div id="characterDialog" class="character-dialog hidden" role="dialog" aria-modal="true" aria-labelledby="characterTitle">
+    <div class="character-backdrop" data-close-character></div>
+    <section class="character-stage">
+      <header><div><p class="eyebrow">EZVISEME-1 performance</p><h2 id="characterTitle">Character voice close-up</h2></div><button id="closeCharacter" class="character-close" aria-label="Close character performance">×</button></header>
+      <div class="character-scene">
+        <div class="tone-halo" id="toneHalo" aria-hidden="true"></div>
+        <svg class="character-face" viewBox="0 0 360 360" role="img" aria-labelledby="faceTitle faceDesc">
+          <title id="faceTitle">Animated Era Zero speaking character</title>
+          <desc id="faceDesc">A close-up face whose mouth follows the carrier phonemes while the pitch plan plays.</desc>
+          <defs><linearGradient id="faceGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7ad8ff"/><stop offset="1" stop-color="#5ee2bd"/></linearGradient></defs>
+          <path class="face-silhouette" d="M180 28c89 0 145 68 145 157 0 97-57 151-145 151S35 282 35 185C35 96 91 28 180 28Z"/>
+          <path class="face-panel" d="M180 57c72 0 116 55 116 127 0 78-45 123-116 123S64 262 64 184C64 112 108 57 180 57Z"/>
+          <g class="face-eyes"><path d="M95 164q34-25 68 0q-34 19-68 0Z"/><path d="M197 164q34-25 68 0q-34 19-68 0Z"/><circle cx="130" cy="161" r="7"/><circle cx="230" cy="161" r="7"/></g>
+          <g id="visemeMouth" class="viseme-mouth" data-viseme="REST">
+            <path class="mouth-shape v-rest" d="M139 240Q180 246 221 240"/>
+            <path class="mouth-shape v-mbp" d="M137 239Q180 230 223 239Q180 249 137 239Z"/>
+            <path class="mouth-shape v-tds" d="M140 233Q180 223 220 233L214 249Q180 254 146 249Z"/>
+            <path class="mouth-shape v-kg" d="M143 229Q180 214 217 229Q211 263 180 267Q149 263 143 229Z"/>
+            <path class="mouth-shape v-ln" d="M141 232Q180 220 219 232Q210 254 180 256Q150 254 141 232Z"/>
+            <ellipse class="mouth-shape v-w" cx="180" cy="241" rx="22" ry="15"/>
+            <path class="mouth-shape v-y" d="M133 237Q180 221 227 237Q180 251 133 237Z"/>
+            <ellipse class="mouth-shape v-a" cx="180" cy="242" rx="38" ry="32"/>
+            <path class="mouth-shape v-e" d="M136 236Q180 217 224 236Q180 263 136 236Z"/>
+            <path class="mouth-shape v-i" d="M127 239Q180 225 233 239Q180 253 127 239Z"/>
+            <ellipse class="mouth-shape v-o" cx="180" cy="241" rx="27" ry="31"/>
+            <ellipse class="mouth-shape v-u" cx="180" cy="241" rx="18" ry="24"/>
+          </g>
+        </svg>
+      </div>
+      <div class="character-readout" aria-live="polite"><div><span>Carrier</span><strong id="visemeSyllable">ready</strong></div><div><span>Mouth shape</span><strong id="visemeLabel">rest</strong></div><div><span>Tone</span><strong id="visemeTone">—</strong></div><div><span>Layer</span><strong id="visemeLayer">—</strong></div></div>
+      <div class="character-progress" aria-hidden="true"><i id="characterProgress"></i></div>
+      <footer><p>Pitch controls the sung note. Phonemes control the mouth. This presentation layer never changes the translated meaning.</p><button id="replayCharacter" class="primary">▶ Replay performance</button></footer>
+    </section>
+  </div>
   <div id="toast" role="status" aria-live="polite"></div>
-  <script src="/app.js?v=1.5.0" defer></script>
+  <script src="/app.js?v=1.6.0" defer></script>
 </body>
 </html>

@@ -12,4 +12,6 @@ else
   exit 1
 fi
 "$NODE_BIN" --check "$PROJECT_DIR/app/public/app.js"
-echo "Product frontend syntax: PASS"
+"$NODE_BIN" --check "$PROJECT_DIR/pages/app.js"
+"$NODE_BIN" --check "$PROJECT_DIR/pages/visemes.mjs"
+echo "Product frontend syntax: PASS (local source, browser release, viseme compiler)"

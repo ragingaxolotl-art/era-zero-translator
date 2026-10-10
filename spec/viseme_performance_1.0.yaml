@@ -1,0 +1,66 @@
+---
+metadata:
+  title: Era Zero Carrier-to-Viseme Presentation Profile
+  format: EZVISEME-1
+  version: 1.0.0
+  status: presentation_extension
+  semantic_identity_changed: false
+  canonical_dependencies:
+  - EZF-1 lexical performance events
+  - formal carrier syllables
+  - reference MIDI pitch and timing plan
+separation_rules:
+  phoneme_rule: The carrier syllable selects the mouth articulation.
+  pitch_rule: MIDI pitch controls the audible frequency and may control non-mouth visual emphasis only.
+  invariant: Transposing a performance never changes its viseme sequence.
+  runtime_and_contour: Runtime endings and sentence contours sustain the most recent vowel nucleus; they do not invent a lexical syllable.
+  semantic_rule: Visemes are derived presentation data and never enter Semantic IR, UTT identity, EZF identity, or lexical authority.
+visemes:
+  REST: neutral closed rest
+  MBP: closed lips for m, b, and p
+  TDS: front-tongue articulation for t, d, and s
+  KG: back-tongue articulation for k and g
+  LN: raised-tongue articulation for l and n
+  W: rounded forward glide for w
+  Y: narrow palatal glide for y
+  A: wide open vowel a
+  E: mid-spread vowel e
+  I: narrow-spread vowel i
+  O: round-open vowel o
+  U: round-narrow vowel u
+carrier_syllable_map:
+  ba: [MBP, A]
+  da: [TDS, A]
+  do: [TDS, O]
+  ga: [KG, A]
+  gi: [KG, I]
+  ki: [KG, I]
+  li: [LN, I]
+  ma: [MBP, A]
+  ni: [LN, I]
+  nu: [LN, U]
+  si: [TDS, I]
+  te: [TDS, E]
+  wu: [W, U]
+  ya: [Y, A]
+timing_profile_seconds:
+  initial_lead: 0.08
+  family_opening_note: 0.24
+  address_note: 0.24
+  runtime_note: canonical runtime duration in beats multiplied by 0.24 seconds
+  sentence_contour_note: 0.30
+  consonant_onset: minimum of 0.075 seconds or 28 percent of the note
+  sustain: remainder of the voiced note uses the vowel nucleus
+compiler_contract:
+  input: one validated EZF-1 formal document
+  output: ordered note cues with start, duration, MIDI note, carrier syllable, onset viseme, and nucleus viseme
+  validation:
+  - every canonical carrier syllable has an explicit map
+  - cue times are monotonic and durations are positive
+  - every emitted MIDI note is preserved from the formal sound plan
+  - the viseme plan carries the input formal_id and semantic_digest unchanged
+  - pitch transposition leaves all syllables and visemes unchanged
+implementation:
+  browser_module: pages/visemes.mjs
+  interface: Character close-up in the translator canonical-result view
+  validator: tools/validate_viseme_performance.mjs

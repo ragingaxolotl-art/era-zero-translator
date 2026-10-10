@@ -10,6 +10,8 @@ The Pages build runs entirely in the browser. Its default interface accepts ordi
 
 Strong contextual cues choose the applicable indexed sense automatically—for example, spatial `go` in “Go home,” data transfer in “Send the file,” and communicative expression in “Send the message.” A resolved result exposes and plays its complete sound construction: family prefix/opening, full carrier, address path, runtime ending, and sentence contour.
 
+The **EZVISEME-1** character view turns that same canonical performance into a synchronized close-up. Carrier consonants and vowels select explicit mouth poses while MIDI pitch remains a separate musical channel. All 14 carrier syllables are mapped, runtime and contour tones sustain the preceding vowel, and transposition never changes the mouth sequence. The viseme layer is presentation-only and does not participate in Semantic IR or formal identity. See [docs/VISEME_PERFORMANCE_LAYER.md](docs/VISEME_PERFORMANCE_LAYER.md).
+
 One approved compound has open semantic slots. Because its arguments are arbitrary canonical lexical occurrences, the static release reports that boundary explicitly and routes full role binding to the Ruby API rather than fabricating or constraining an argument. Advanced controlled-English structural templates also remain in the full local compiler.
 
 The browser also includes the experimental **EZNAME-0.1** channel for unfamiliar nouns and proper names. It estimates an editable phoneme sequence, maps every phoneme to a framed deterministic tone pair, and can add an optional instance signature so two specific objects with the same label remain distinct. EZNAME is a nonsemantic label and never creates or modifies a canonical Era Zero meaning.
@@ -19,6 +21,7 @@ Rebuild and audit the Pages artifact:
 ```sh
 ruby tools/build_pages_release.rb
 node tools/validate_pages_release.mjs
+node tools/validate_viseme_performance.mjs
 ```
 
 GitHub Actions reruns the browser audit, the canonical product audit, and then deploys `pages/`.

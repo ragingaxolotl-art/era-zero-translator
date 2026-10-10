@@ -15,6 +15,7 @@ remaining_chunks = version.fetch("unreviewed_nine_root_chunks")
 migration_count = EraZeroValidation::EFFECTIVE_MIGRATIONS.length
 promotion_count = EraZeroValidation.effective_promotions.length
 ruby = RbConfig.ruby
+node = ENV.fetch("ERA_ZERO_NODE", "node")
 commands = [
   ["refresh current gap inventory", [ruby, File.join(ROOT, "tools/regenerate_current_gap_reports.rb")]],
   ["validate current authority and translator boundary", [ruby, File.join(ROOT, "tools/validate_current_state.rb")]],
@@ -67,6 +68,10 @@ commands = [
   [
     "validate glyph and MIDI presentation",
     [ruby, File.join(ROOT, "tools/validate_glyph_audio.rb")]
+  ],
+  [
+    "validate carrier-driven character visemes",
+    [node, File.join(ROOT, "tools/validate_viseme_performance.mjs")]
   ],
   [
     "validate translator workbench product application",
@@ -155,6 +160,7 @@ report << "- deterministic atom and compound rendering, required compound-slot b
 report << "- controlled-English grammar restriction, unique canonical sense mapping, explicit roles and scope, open compound-slot enforcement, structured unsupported-input errors, golden translations, all 352 lexical routes, and full compiler-to-renderer-to-decoder round trips.\n"
 report << "- general-English deterministic ranking, exact-lemma recall across all 436 indexed senses, evidence and confidence, runtime alternatives, material ambiguity, structural and grammar routing, explicit gaps, role clarification, conservative auto-resolution, and selected-sense round trips.\n"
 report << "- validated EZF-1 to accessible SVG and Standard MIDI, deterministic byte output, three-anchor transposition behavior, all 972 atom/runtime presentations, invalid-input rejection, example artifacts, and semantic-identity preservation.\n"
+report << "- carrier-driven character visemes across all 324 atoms and all 5,265 hosted formal variants, with complete syllable coverage, note preservation, cue timing, grammatical-tone sustain, and transposition invariance.\n"
 report << "- local translator API and responsive workbench, reviewed-sense evaluation corpus, conservative clarification journeys, API error paths, EZB-1 import/export integrity, SVG/MIDI download, accessibility markers, and canonical semantic immutability.\n"
 report << "- full-family locus/process/affordance-relation separation, triplet coherence, runtime-state tailoring, collision routing, and rerun safety for `CON:000–222`.\n"
 report << "- constituent-position/interface/composite-arrangement entities; reconfiguration/incorporation/integration processes; matching reconfigurability/incorporability/integrability affordances; triplet coherence; lexical/runtime separation; collision routing; layer non-entailment; and rerun safety for `STR:000–222`.\n"

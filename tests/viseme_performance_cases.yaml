@@ -1,0 +1,29 @@
+---
+format: EZVISEME-TEST-1
+required_visemes: [REST, MBP, TDS, KG, LN, W, Y, A, E, I, O, U]
+syllable_cases:
+  ba: [MBP, A]
+  da: [TDS, A]
+  do: [TDS, O]
+  ga: [KG, A]
+  gi: [KG, I]
+  ki: [KG, I]
+  li: [LN, I]
+  ma: [MBP, A]
+  ni: [LN, I]
+  nu: [LN, U]
+  si: [TDS, I]
+  te: [TDS, E]
+  wu: [W, U]
+  ya: [Y, A]
+behavior_cases:
+- name: carrier-not-pitch-selects-mouth
+  assertion: identical carrier syllables at different MIDI notes have identical onset and nucleus visemes
+- name: address-alignment
+  assertion: each four-syllable formal carrier aligns in order to the four address-path notes
+- name: grammatical-tone-sustain
+  assertion: runtime and contour tones sustain the preceding vowel nucleus without creating a syllable
+- name: identity-preservation
+  assertion: formal_id and semantic_digest are copied unchanged and semantic_identity_changed is false
+- name: transposition-invariance
+  assertion: shifting all absolute MIDI notes does not change any carrier syllable or viseme
