@@ -1,8 +1,8 @@
-import{svgFromFormal,midiFromFormal,createBundle,verifyBundle,soundPlanFromFormal}from'./engine.mjs?v=1.9.1';
-import{analyzeEnglish}from'./english.mjs?v=1.9.1';
-import{encodeName,estimatePhonemes,notesForName,midiFromName,PHONEMES}from'./names.mjs?v=1.9.1';
-import{visemePlanFromFormal,visemeFrameAt,visemeFileFromFormal,EYE_EXPRESSIONS}from'./visemes.mjs?v=1.9.1';
-import{VOICE_PROFILES,voiceProfile,scheduleVoiceTone}from'./voices.mjs?v=1.9.1';
+import{svgFromFormal,midiFromFormal,createBundle,verifyBundle,soundPlanFromFormal}from'./engine.mjs?v=1.10.0';
+import{analyzeEnglish}from'./english.mjs?v=1.10.0';
+import{encodeName,estimatePhonemes,notesForName,midiFromName,PHONEMES}from'./names.mjs?v=1.10.0';
+import{visemePlanFromFormal,visemeFrameAt,visemeFileFromFormal,EYE_EXPRESSIONS}from'./visemes.mjs?v=1.10.0';
+import{VOICE_PROFILES,voiceProfile,scheduleVoiceTone}from'./voices.mjs?v=1.10.0';
 
 const DIRECT=new Set(['atom','compound']);
 const ACTS={ASSERT:'assertion',QUESTION:'question',COMMAND:'command',DEFINE:'definition',POSSIBILITY:'possibility'};
