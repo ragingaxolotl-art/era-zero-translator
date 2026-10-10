@@ -22,7 +22,7 @@ begin
   health = Net::HTTP.get_response(URI("#{base}/api/health"))
   raise "health failed" unless health.code == "200" && JSON.parse(health.body)["status"] == "ok"
   index = Net::HTTP.get_response(URI("#{base}/"))
-  raise "index failed" unless index.code == "200" && index.body.include?("Era Zero Translator Workbench") && index.body.include?("v1.11.0") && index.body.include?('data-app-tab="conversation"') && index.body.include?('id="conversationScript"') && index.body.include?('data-app-tab="dictionary"') && index.body.include?('data-app-tab="documents"') && index.body.include?('data-rig-layer="head"') && index.body.include?('data-rig-layer="eyes"') && index.body.include?('data-rig-layer="mouth"') && index.body.include?('id="soundVoice"')
+  raise "index failed" unless index.code == "200" && index.body.include?("Era Zero Translator Workbench") && index.body.include?("v1.12.0") && index.body.include?('data-app-tab="conversation"') && index.body.include?('id="conversationScript"') && index.body.include?('data-app-tab="dictionary"') && index.body.include?('data-app-tab="documents"') && index.body.include?('data-rig-layer="head"') && index.body.include?('data-rig-layer="eyes"') && index.body.include?('data-rig-layer="mouth"') && index.body.include?('id="soundVoice"')
   documents = Net::HTTP.get_response(URI("#{base}/data/documents.json"))
   raise "document manifest failed" unless documents.code == "200" && JSON.parse(documents.body)["count"] >= 300
   request = Net::HTTP::Post.new("/api/analyze", { "Content-Type" => "application/json" })
@@ -30,7 +30,7 @@ begin
   analysis = Net::HTTP.start("127.0.0.1", port) { |http| http.request(request) }
   data = JSON.parse(analysis.body)
   raise "analysis failed" unless analysis.code == "200" && data.dig("decision", "auto_resolution_allowed") == true && data.dig("translation", "round_trip_equal") == true
-  puts "Product HTTP smoke: PASS (v1.11.0 two-being conversation workbench and MP3, computer translation profile, softened audio releases, selectable voices, layered head/eyes/mouth rig, standalone viseme file, health, analyze, exact round trip)"
+  puts "Product HTTP smoke: PASS (v1.12.0 complete plain-English matching, two-being conversation workbench and MP3, computer translation profile, selectable voices, layered character rig, health, analyze, exact round trip)"
 ensure
   server.shutdown
   thread.join(5)

@@ -23,7 +23,7 @@ Status: **PASS**
 | I see you. | MIN:011 | i:participant_reference, see:canonical, you:participant_reference | yes | PASS |
 | I noticed Pip. | MIN:011 | i:participant_reference, noticed:canonical, pip:phonemic_label | yes | PASS |
 | I need food. | ORI:211 | i:participant_reference, need:canonical, food:documented_gap | yes | PASS |
-| The pet needs rest. | ORI:211 | the:function_word, pet:phonemic_label, needs:canonical, rest:canonical | no | PASS |
+| The pet needs rest. | ORI:211 | the:function_word, pet:phonemic_label, needs:canonical, rest:canonical | yes | PASS |
 | I am hungry. | ORI:211 | i:participant_reference, am:function_word, hungry:canonical | yes | PASS |
 | I am thirsty. | ORI:211 | i:participant_reference, am:function_word, thirsty:canonical | yes | PASS |
 | I am tired. | ORI:211 | i:participant_reference, am:function_word, tired:canonical | yes | PASS |

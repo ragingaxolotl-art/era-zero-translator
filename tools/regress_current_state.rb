@@ -86,6 +86,10 @@ commands = [
     [node, File.join(ROOT, "tools/audit_game_story_translation.mjs")]
   ],
   [
+    "validate complete plain-English discovery and matching layer",
+    [node, File.join(ROOT, "tools/validate_plain_english_index.mjs")]
+  ],
+  [
     "validate translator workbench product application",
     [ruby, File.join(ROOT, "tools/validate_product_application.rb")]
   ],

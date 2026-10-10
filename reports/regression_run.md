@@ -131,6 +131,12 @@ Game/story translation audit: PASS
 Checks passed: 86; failed: 0; phrases: 69
 ```
 
+## PASS — validate complete plain-English discovery and matching layer
+
+```text
+Plain-English matching: PASS (352/352 labels; 352 complete mappings)
+```
+
 ## PASS — validate translator workbench product application
 
 ```text
@@ -147,7 +153,7 @@ Product frontend syntax: PASS (local source, browser release, viseme compiler)
 ## PASS — validate translator workbench over real localhost HTTP
 
 ```text
-Product HTTP smoke: PASS (v1.11.0 two-being conversation workbench and MP3, computer translation profile, softened audio releases, selectable voices, layered head/eyes/mouth rig, standalone viseme file, health, analyze, exact round trip)
+Product HTTP smoke: PASS (v1.12.0 complete plain-English matching, two-being conversation workbench and MP3, computer translation profile, selectable voices, layered character rig, health, analyze, exact round trip)
 ```
 
 ## PASS — validate the complete REP:000–222 family
