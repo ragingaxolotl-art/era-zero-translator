@@ -16,6 +16,8 @@ One approved compound has open semantic slots. Because its arguments are arbitra
 
 The browser also includes the experimental **EZNAME-0.1** channel for unfamiliar nouns and proper names. It estimates an editable phoneme sequence, maps every phoneme to a framed deterministic tone pair, and can add an optional instance signature so two specific objects with the same label remain distinct. EZNAME is a nonsemantic label and never creates or modifies a canonical Era Zero meaning.
 
+The **Game and Story profile 0.1** adds conservative routes for Cyber Pet and narrative language without changing the canonical lexicon. Unknown nouns may retain EZNAME labels, pronouns become participant references, and unknown verbs or descriptors now block automatic translation instead of being disguised as names. Narrow English words such as `found`, `hungry`, `tired`, `feed`, and `hurt` may use an existing broader canonical center only with the lost detail shown explicitly. Emotion, play, ingestion, and game-meter concepts remain honest gaps where Era Zero has no approved meaning. See [docs/GAME_STORY_TRANSLATION_PROFILE.md](docs/GAME_STORY_TRANSLATION_PROFILE.md).
+
 Rebuild and audit the Pages artifact:
 
 ```sh
@@ -64,6 +66,12 @@ Run the product audit and the complete language regression:
 ```text
 ruby tools/validate_product_application.rb
 ruby tools/regress_current_state.rb
+```
+
+Run the focused 60-phrase game/story audit with the configured Node runtime:
+
+```text
+node tools/audit_game_story_translation.mjs
 ```
 
 The product audit covers API contracts, error paths, all reviewed indexed senses, ambiguity, gaps, compound roles, exact round trips, SVG/MIDI output, exchange-bundle corruption, UI accessibility markers, and canonical fingerprints. See `docs/PRODUCT_AUDIT.md` for the release checklist.

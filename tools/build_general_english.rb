@@ -10,7 +10,7 @@ include EraZeroValidation
 VERSION = "1.0.0"
 DATE = "2026-10-09"
 
-translator = EraZeroGeneralEnglish::Translator.new
+translator = EraZeroGeneralEnglish::Translator.new(profile: false)
 sense_doc = EraZeroValidation.load_yaml("lexicon/english_sense_index.yaml")
 senses = sense_doc.fetch("senses")
 find_sense = lambda { |lemma, key| senses.find { |sense| sense["lemma"] == lemma && sense["sense_key"] == key } or raise "missing sense #{lemma}/#{key}" }

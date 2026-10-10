@@ -18,7 +18,7 @@ The workbench is an interface to the approved language. It does not acquire auth
    - every indexed alternative for that word;
    - a selector for accepting a different alternative;
    - an explicit English-function-word classification when no lexical root is asserted;
-   - a deterministic EZNAME phonemic label only for genuinely unfamiliar content words.
+   - a deterministic EZNAME phonemic label only for genuinely unfamiliar noun referents.
 4. Canonically resolvable readings display controlled English, Semantic IR, EZF-1, exact round-trip status, glyphs, MIDI, and the complete audible construction.
 5. A separate Dictionary view lets the user browse by family and entry type, search by English, definition, ID, address, root, or carrier, and open a detailed record without leaving the page.
 6. A Documents view exposes the authoritative specifications, lexicons, migrations, semantic reviews, reports, tests, provenance records, the original shared conversation reference, and the integrated Google document.
@@ -31,6 +31,8 @@ The workbench is an interface to the approved language. It does not acquire auth
 - Structural or grammar routes are not falsely presented as atomic roots.
 - Documented gaps remain gaps.
 - EZNAME labels identify a surface label; they make no semantic claim.
+- Unknown nouns may use EZNAME; unknown verbs and descriptors must remain unresolved semantic content and block automatic translation.
+- Game/story generalizations must be entailment-preserving, visibly marked, and must state which English detail was lost.
 - Word-level selections are an analysis aid. A complete multi-root utterance is emitted only when the approved Semantic IR can represent and validate it.
 
 ## Implementation plan
@@ -96,6 +98,7 @@ Test at least 60 phrases covering:
 
 - Confirm AudioContext creation, explicit resume, running state, visible playback state, and error feedback.
 - Confirm phoneme-label and full-phrase label playback.
+- Run the dedicated game/story corpus across care, nourishment, rest, health, emotion, movement, discovery, arbitrary nouns, pronouns, unknown predicates, and unknown descriptors.
 - Confirm resolved output includes prefix, carrier, family opening, address path, runtime ending, and sentence contour.
 - Verify deterministic SVG, MIDI, and EZB-1 generation and corruption rejection.
 

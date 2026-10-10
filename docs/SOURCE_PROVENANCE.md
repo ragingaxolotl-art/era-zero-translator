@@ -28,7 +28,7 @@ The present Codex conversation has no stable public source URL. Its user-directe
 - context may automatically choose an applicable indexed meaning when confidence is strong;
 - every generated family prefix, family opening, address path, runtime ending, and sentence contour is visible and audible;
 - unfamiliar nouns and names use deterministic nonsemantic phonemic sound IDs;
-- arbitrary phrases are accepted, with unfamiliar terms retained rather than discarded;
+- arbitrary phrases are analyzed, with unfamiliar noun referents retained and unknown predicates reported as unresolved meaning;
 - all 436 indexed options are searchable in the browser.
 - every sentence word is shown with its best indexed match and selectable alternatives;
 - all roots, compounds, grammar routes, structural routes, and gaps are browsable in a separate Dictionary view;

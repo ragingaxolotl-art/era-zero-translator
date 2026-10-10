@@ -44,7 +44,7 @@ const cases=[
   {phrase:'Cross the bridge.',key:'boundary_traversal',route:'semantic_ir',auto:false},
   {phrase:'Follow the route.',key:'trajectory_tracking',route:'semantic_ir',auto:false},
   {phrase:'Transport the box.',key:'caused_target_movement',route:'semantic_ir',auto:false},
-  {phrase:'Zibble frobnates quux.',candidates:0,unknown:3,auto:false},
+  {phrase:'Zibble frobnates quux.',candidates:0,unknown:2,unresolved:1,auto:false},
   {phrase:'Go home with zibble.',target:'MOV:121',unknown:1,auto:true},
   {phrase:'Please send the data.',target:'DAT:111',act:'command',auto:true},
   {phrase:'Could you send the message?',target:'CON:101',act:'question',auto:true},
@@ -77,7 +77,7 @@ const cases=[
   {phrase:'Go home [2].',target:'MOV:121',state:2},
   {phrase:'Go, home!',target:'MOV:121'},
   {phrase:'GO HOME.',target:'MOV:121'},
-  {phrase:'Send the file to zibble.',target:'DAT:111',unknown:2},
+  {phrase:'Send the file to zibble.',target:'DAT:111',unknown:1},
   {phrase:'Change the data and send the message.',unknown:0},
   {phrase:'Zibble zibble.',candidates:0,unknown:2,auto:false},
   {phrase:'The zibble is moving.',target:'MOV:121',unknown:1},
@@ -93,7 +93,7 @@ const cases=[
 const phraseRows=[];
 for(const test of cases){
   const result=analyzeEnglish(test.phrase,data),top=result.candidates[0];
-  let ok=result.status==='ok'&&result.term_coverage.every(item=>['function_word','phonemic_label'].includes(item.status)||item.matches.some(match=>match.sense_id===item.recommended_sense_id));
+  let ok=result.status==='ok'&&result.term_coverage.every(item=>['function_word','participant_reference','phonemic_label','labeled_entity','unresolved_semantic'].includes(item.status)||item.matches.some(match=>match.sense_id===item.recommended_sense_id));
   if('target'in test)ok&&=top?.target_id===test.target;
   if('key'in test)ok&&=top?.sense_key===test.key;
   if('route'in test)ok&&=top?.route===test.route;
@@ -101,8 +101,10 @@ for(const test of cases){
   if('act'in test)ok&&=result.speech_act_proposal===test.act;
   if('state'in test)ok&&=result.explicit_runtime_state===test.state;
   if('candidates'in test)ok&&=result.candidate_count===test.candidates;
-  const unknown=result.term_coverage.filter(item=>item.status==='phonemic_label').length;
+  const unknown=result.term_coverage.filter(item=>['phonemic_label','labeled_entity'].includes(item.status)).length;
   if('unknown'in test)ok&&=unknown===test.unknown;
+  const unresolved=result.term_coverage.filter(item=>item.status==='unresolved_semantic').length;
+  if('unresolved'in test)ok&&=unresolved===test.unresolved;
   phraseRows.push({test,result,top,unknown,ok});
   check(`phrase: ${test.phrase}`,ok,`${top?.target_id||top?.sense_key||'no semantic candidate'}; ${result.candidate_count} candidates; ${unknown} labels`);
 }
@@ -121,7 +123,7 @@ check('required authority documents are public',requiredDocuments.every(required
 check('all evidence categories available',['Core documentation','Specifications','Lexicons and authority','Migrations and approvals','Semantic reviews','Validation reports','Test evidence','Examples and presentation','Source extraction'].every(category=>documents.categories.includes(category)));
 check('conversation and integrated document linked',documents.sources.some(source=>source.url.includes('chatgpt.com/share/6a666'))&&documents.sources.some(source=>source.url.includes('docs.google.com/document/d/1btn')));
 check('three-view workbench',html.includes('data-app-tab="translator"')&&html.includes('data-app-tab="dictionary"')&&html.includes('data-app-tab="documents"'));
-check('word match selectors and overrides',app.includes('Match each word to Era Zero')&&app.includes('Meaning match for')&&app.includes('state.wordSelections.set'));
+check('word match selectors and overrides',app.includes('How each word is handled')&&app.includes('Meaning match for')&&app.includes('state.wordSelections.set'));
 check('dictionary inspector exposes generated fields',app.includes('Universal slot')&&app.includes('Formal carrier')&&app.includes('Relative note path'));
 check('document browser is searchable',html.includes('id="documentSearch"')&&app.includes('filterDocuments'));
 check('audio engine resumes before playback',app.includes("sharedAudioContext.state==='suspended'")&&app.includes('await sharedAudioContext.resume()'));

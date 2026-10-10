@@ -33,6 +33,7 @@ File.write(File.join(pages, ".nojekyll"), "")
 end
 
 senses = EraZeroValidation.load_yaml("lexicon/english_sense_index.yaml").fetch("senses")
+game_story_senses = EraZeroValidation.load_yaml("lexicon/game_story_surface_routes.yaml").fetch("senses")
 atoms = EraZeroValidation.load_yaml("lexicon/all_atoms.yaml").fetch("atoms")
 compounds = EraZeroValidation.load_yaml("lexicon/compound_dictionary.yaml").fetch("entries")
 compound_by_id = compounds.to_h { |compound| [compound.fetch("compound_id"), compound] }
@@ -73,11 +74,18 @@ browser_index = {
   "format" => "EZ-WEB-1", "version" => "1.0.0", "generated" => "2026-10-10",
   "counts" => { "atoms" => 324, "compounds" => 28, "senses" => senses.length, "lemmas" => senses.map { |s| s["lemma"].downcase }.uniq.length, "gaps" => senses.count { |s| s["route"] == "gap" } },
   "senses" => senses,
+  "game_story_senses" => game_story_senses,
   "atoms" => atoms,
   "compounds" => compounds,
   "controlled" => allowed.map { |sense| sense.slice("sense_id", "lemma", "route", "target_id") },
   "required_roles" => required_roles,
   "resolution_files" => resolution_files,
+  "game_story_profile" => {
+    "version" => "0.1.0",
+    "surface_routes" => game_story_senses.length,
+    "canonical_semantic_changes" => 0,
+    "note" => "Generalized routes disclose lost detail; unknown predicates remain unresolved; nouns may retain nonsemantic EZNAME labels."
+  },
   "online_scope" => {
     "direct_targets" => resolution_files.length,
     "slotted_compounds" => required_roles.count { |_id, roles| !roles.empty? },

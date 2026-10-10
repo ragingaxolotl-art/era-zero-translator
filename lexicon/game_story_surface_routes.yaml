@@ -1,0 +1,459 @@
+---
+metadata:
+  title: Era Zero Game and Story English Surface Routes
+  version: 0.1.0
+  status: translator_profile
+  semantic_authority_changes: 0
+  purpose: >-
+    Give story dialogue and Cyber Pet phrases conservative routes into existing
+    canonical meanings without adding roots or pretending that a generalized
+    paraphrase is an exact English definition.
+policy:
+  noun_labels: >-
+    An unmatched common noun or proper name may receive an EZNAME label. When a
+    broad class such as person is known, the class and label remain separate.
+  predicates: >-
+    An unmatched verb or descriptor must be reported as unresolved semantic
+    content. It must never silently become an EZNAME label.
+  generalized_routes: >-
+    A generalized route is permitted only when the source phrase entails the
+    selected canonical meaning. The interface must disclose the lost detail.
+  gaps: >-
+    A gap may carry a phonemic noun label for reference, but that label does not
+    resolve or conceal the semantic gap.
+senses:
+- sense_id: GSE:001
+  lemma: find
+  surface_forms: [find, finds, finding, found, discover, discovers, discovering, discovered, locate, locates, locating, located]
+  part_of_speech: verb
+  sense_key: completed_target_discovery_generalized
+  route: atom
+  target_id: MIN:110
+  definition: A completed discovery generalized as a completed revision of the discoverer's representation of a distinct target.
+  generalization: Era Zero preserves the completed target-model change but does not assert the narrower method of visual search or physical location.
+  fidelity: generalized
+  selection_cues: [discovery, locating a person or object, finding something sought]
+  excluded_readings: [establish or found an organization, cast metal, fail or sink]
+- sense_id: GSE:002
+  lemma: search
+  surface_forms: [search, searches, searching, seek, seeks, seeking, look for, looking for]
+  part_of_speech: verb
+  sense_key: active_search_attention_generalized
+  route: atom
+  target_id: MIN:211
+  definition: An active search generalized as present preferential attention directed toward a distinct target.
+  generalization: Era Zero preserves active target-directed attention but does not assert a particular search method.
+  fidelity: generalized
+  selection_cues: [looking for a target, active search]
+  excluded_readings: [database query syntax, physical movement without attention]
+- sense_id: GSE:003
+  lemma: see
+  surface_forms: [see, sees, seeing, saw, seen, notice, notices, noticing, noticed]
+  part_of_speech: verb
+  sense_key: manifest_target_representation_generalized
+  route: atom
+  target_id: MIN:011
+  definition: Awareness of a distinct target generalized as that target's representation being presently manifest in cognition.
+  generalization: Era Zero preserves present target awareness but does not encode the sensory channel.
+  fidelity: generalized
+  selection_cues: [noticing or presently perceiving a target]
+  excluded_readings: [understand an abstract proposition, visit socially]
+- sense_id: GSE:004
+  lemma: need
+  surface_forms: [need, needs, needing, needed, require, requires, requiring, required]
+  part_of_speech: verb
+  sense_key: operative_dependence_generalized
+  route: atom
+  target_id: ORI:211
+  definition: A present need generalized as one target's obtaining being actively conditional on a distinct ground.
+  generalization: Era Zero preserves operative dependence but not desire, urgency, ownership, or the exact needed resource.
+  fidelity: generalized
+  selection_cues: [a condition depends on a resource or prerequisite]
+  excluded_readings: [mere preference, emotional desire, obligation imposed by a rule]
+- sense_id: GSE:005
+  lemma: hungry
+  surface_forms: [hungry, hunger, starving]
+  part_of_speech: adjective
+  sense_key: nourishment_dependence_generalized
+  route: atom
+  target_id: ORI:211
+  definition: Hunger generalized as the being's acceptable condition presently depending on nourishment.
+  generalization: Era Zero preserves present dependence on nourishment but does not lexicalize hunger or nutritional physiology.
+  fidelity: generalized
+  selection_cues: [low fullness, needing nourishment]
+  excluded_readings: [metaphorical ambition, appetite preference]
+- sense_id: GSE:006
+  lemma: thirsty
+  surface_forms: [thirsty, thirst, dehydrated]
+  part_of_speech: adjective
+  sense_key: hydration_dependence_generalized
+  route: atom
+  target_id: ORI:211
+  definition: Thirst generalized as the being's acceptable condition presently depending on hydration.
+  generalization: Era Zero preserves present dependence on hydration but does not lexicalize thirst or water.
+  fidelity: generalized
+  selection_cues: [needing hydration]
+  excluded_readings: [metaphorical desire]
+- sense_id: GSE:007
+  lemma: tired
+  surface_forms: [tired, sleepy, exhausted, fatigue, fatigued]
+  part_of_speech: adjective
+  sense_key: rest_dependence_generalized
+  route: atom
+  target_id: ORI:211
+  definition: Tiredness generalized as the being's acceptable functioning presently depending on restorative rest.
+  generalization: Era Zero preserves present dependence on restoration but does not lexicalize energy, fatigue, or sleep pressure.
+  fidelity: generalized
+  selection_cues: [low energy, needing rest]
+  excluded_readings: [boredom, unwillingness, electrical battery level]
+- sense_id: GSE:008
+  lemma: care
+  surface_forms: [care, cares, caring, help, helps, helping, support, supports, supporting, nurture, nurtures, nurturing, feed, feeds, feeding, fed]
+  part_of_speech: verb
+  sense_key: active_living_care_generalized
+  route: atom
+  target_id: LIF:211
+  definition: Support for another living being generalized as active protection, nurture, or sustenance of that being.
+  generalization: Era Zero preserves active care but not the specific means such as feeding, cleaning, comforting, or medical help.
+  fidelity: generalized
+  selection_cues: [care for a living target, feed or support a pet]
+  excluded_readings: [repair of a nonliving machine, abstract concern without action]
+- sense_id: GSE:009
+  lemma: rest
+  surface_forms: [rest, rests, resting, recover, recovers, recovering, recuperate, recuperates, recuperating]
+  part_of_speech: verb
+  sense_key: active_internal_restoration_generalized
+  route: atom
+  target_id: REP:101
+  definition: Rest or recovery generalized as an ongoing internally originating restoration toward an acceptable condition.
+  generalization: Era Zero preserves active internal restoration but not sleep, inactivity, or a specific energy meter.
+  fidelity: generalized
+  selection_cues: [recovering energy or health, restorative rest]
+  excluded_readings: [placing an object down, the remainder of a collection]
+- sense_id: GSE:010
+  lemma: sleep
+  surface_forms: [sleep, sleeps, sleeping, slept, asleep]
+  part_of_speech: adjective
+  sense_key: unexpressed_preserved_self_generalized
+  route: atom
+  target_id: LIF:002
+  definition: Sleep generalized as the self remaining preserved without present conscious expression.
+  generalization: Era Zero preserves the dormant conscious expression but does not distinguish sleep from other nonresponsive states.
+  fidelity: generalized
+  selection_cues: [ordinary sleep, sleeping pet]
+  excluded_readings: [death, erased identity, a computer's power state]
+- sense_id: GSE:011
+  lemma: awake
+  surface_forms: [awake, alert, conscious, responsive]
+  part_of_speech: adjective
+  sense_key: manifest_self_generalized
+  route: atom
+  target_id: LIF:001
+  definition: Wakefulness generalized as the self being presently conscious, aware, and mentally available.
+  generalization: Era Zero preserves manifested consciousness but not alertness level or mood.
+  fidelity: generalized
+  selection_cues: [awake speaker, responsive pet]
+  excluded_readings: [merely powered machinery]
+- sense_id: GSE:012
+  lemma: wake up
+  surface_forms: [wake, wakes, waking, woke, awaken, awakens, awakening, awakened, wake up, wakes up, waking up, woke up]
+  part_of_speech: verb
+  sense_key: active_self_awakening_generalized
+  route: atom
+  target_id: LIF:101
+  definition: Waking generalized as bringing one's own consciousness or functioning into active expression.
+  generalization: This route is for the waking being; causing another being to wake requires LIF:111.
+  fidelity: generalized
+  selection_cues: [the subject wakes or becomes responsive]
+  excluded_readings: [a source wakes another target, powering a nonliving device]
+- sense_id: GSE:013
+  lemma: wake another
+  surface_forms: [wake them, wake him, wake her, wake it, wake the pet, awaken them, awaken the pet]
+  part_of_speech: verb
+  sense_key: active_target_awakening_generalized
+  route: atom
+  target_id: LIF:111
+  definition: Causing another living being to wake generalized as actively bringing that being into conscious or functional expression.
+  generalization: Era Zero preserves active target awakening but not the method used.
+  fidelity: generalized
+  selection_cues: [one participant wakes another]
+  excluded_readings: [the subject wakes without an external target]
+- sense_id: GSE:014
+  lemma: heal
+  surface_forms: [heal, heals, healing, recover health, recovering health]
+  part_of_speech: verb
+  sense_key: active_internal_restoration
+  route: atom
+  target_id: REP:101
+  definition: Ongoing healing within a being generalized as active internally originating restoration.
+  generalization: Era Zero does not specify tissue, medicine, or a health statistic.
+  fidelity: generalized
+  selection_cues: [a being is healing]
+  excluded_readings: [one agent treating another]
+- sense_id: GSE:015
+  lemma: treat
+  surface_forms: [treat, treats, treating, treated, heal them, heal the pet, clean, cleans, cleaning, cleaned]
+  part_of_speech: verb
+  sense_key: active_target_restoration_generalized
+  route: atom
+  target_id: REP:111
+  definition: Treatment or cleaning generalized as one source actively causing a target to approach its applicable acceptable condition.
+  generalization: Era Zero preserves target restoration but not medicine, washing, or the affected property.
+  fidelity: generalized
+  selection_cues: [treating, cleaning, or restoring another target]
+  excluded_readings: [social treatment, data cleanup, completed restoration]
+- sense_id: GSE:016
+  lemma: well
+  surface_forms: [well, healthy, healed, recovered, better]
+  part_of_speech: adjective
+  sense_key: manifest_internal_restoration_condition_generalized
+  route: atom
+  target_id: REP:001
+  definition: Being well generalized as an acceptable internal restoration condition presently realized in the being.
+  generalization: Era Zero preserves realized acceptable internal condition but not a medical diagnosis or comparative degree.
+  fidelity: generalized
+  selection_cues: [healthy or recovered internal condition]
+  excluded_readings: [skillful performance, a water well]
+- sense_id: GSE:017
+  lemma: sick
+  surface_forms: [sick, ill, unwell, malfunctioning]
+  part_of_speech: adjective
+  sense_key: manifest_internal_fault_generalized
+  route: atom
+  target_id: WRN:001
+  definition: Sickness generalized as an intrinsic adverse condition presently producing harmful deviation within the being.
+  generalization: Era Zero preserves a manifest internal fault but not a disease, cause, or symptom.
+  fidelity: generalized
+  selection_cues: [illness or active internal malfunction]
+  excluded_readings: [external danger, disgust slang]
+- sense_id: GSE:018
+  lemma: hurt
+  surface_forms: [hurt, injured, injury, wounded]
+  part_of_speech: adjective
+  sense_key: physical_injury
+  route: compound
+  target_id: CMP:f1abd5eccdf06d92d5690a32
+  definition: A persistent internal fault inhering in a persistent material substrate.
+  generalization: The approved physical-injury compound does not encode pain intensity, cause, or body location.
+  fidelity: generalized
+  selection_cues: [physical injury to a living body]
+  excluded_readings: [hurt feelings, future danger]
+- sense_id: GSE:019
+  lemma: lost
+  surface_forms: [lost, missing, cannot find, can't find]
+  part_of_speech: adjective
+  sense_key: unresolved_position_generalized
+  route: atom
+  target_id: MOV:212
+  definition: Being lost generalized as an unresolved relation between a mover's position and a target position.
+  generalization: Era Zero preserves unresolved target-relative position but not ownership loss, memory failure, or destruction.
+  fidelity: generalized
+  selection_cues: [unknown whereabouts, cannot locate a mover]
+  excluded_readings: [lost game, lost data, bereavement]
+- sense_id: GSE:020
+  lemma: hello
+  surface_forms: [hello, hi, hey, goodbye, bye, thanks, thank you]
+  part_of_speech: interjection
+  sense_key: completed_social_expression_generalized
+  route: atom
+  target_id: CON:100
+  definition: A greeting, farewell, or thanks generalized as a completed communicative expression made available by a source endpoint.
+  generalization: Era Zero preserves that an expression was completed but not its social content.
+  fidelity: generalized
+  selection_cues: [short social utterance]
+  excluded_readings: [the content or emotional tone of the utterance]
+- sense_id: GSE:021
+  lemma: want
+  surface_forms: [want, wants, wanting, wanted, wish, wishes, wishing, desire, desires, desiring]
+  part_of_speech: verb
+  sense_key: desire
+  route: gap
+  definition: A preference or desire for a state, object, or event.
+  fidelity: gap
+  selection_cues: [preference rather than objective dependence]
+  excluded_readings: [need or prerequisite]
+- sense_id: GSE:022
+  lemma: happy
+  surface_forms: [happy, happiness, joyful, excited, pleased]
+  part_of_speech: adjective
+  sense_key: positive_affect
+  route: gap
+  definition: A positively valenced affective state.
+  fidelity: gap
+- sense_id: GSE:023
+  lemma: sad
+  surface_forms: [sad, sadness, unhappy, crying, lonely]
+  part_of_speech: adjective
+  sense_key: negative_affect
+  route: gap
+  definition: A negatively valenced affective state characterized by sorrow or low mood.
+  fidelity: gap
+- sense_id: GSE:024
+  lemma: angry
+  surface_forms: [angry, anger, mad, frustrated, annoyed]
+  part_of_speech: adjective
+  sense_key: anger_affect
+  route: gap
+  definition: An affective state of anger, irritation, or frustration.
+  fidelity: gap
+- sense_id: GSE:025
+  lemma: afraid
+  surface_forms: [afraid, scared, frightened, fearful, fear]
+  part_of_speech: adjective
+  sense_key: fear_affect
+  route: gap
+  definition: An affective state oriented toward perceived threat.
+  fidelity: gap
+- sense_id: GSE:026
+  lemma: love
+  surface_forms: [love, loves, loving, like, likes, liking, affection]
+  part_of_speech: verb
+  sense_key: affection_or_preference
+  route: gap
+  definition: Affection for, attachment to, or positive preference toward a target.
+  fidelity: gap
+- sense_id: GSE:027
+  lemma: play
+  surface_forms: [play, plays, playing, played, party, dance, dances, dancing, danced]
+  part_of_speech: verb
+  sense_key: recreational_activity
+  route: gap
+  definition: Activity undertaken primarily for recreation, enjoyment, or social engagement.
+  fidelity: gap
+- sense_id: GSE:028
+  lemma: eat
+  surface_forms: [eat, eats, eating, ate, eaten, drink, drinks, drinking, drank, drunk]
+  part_of_speech: verb
+  sense_key: ingestion
+  route: gap
+  definition: Taking nutritive material into a living body.
+  fidelity: gap
+- sense_id: GSE:029
+  lemma: food
+  surface_forms: [food, meal, snack, apple, treat, water]
+  part_of_speech: noun
+  sense_key: nutritive_referent
+  route: gap
+  definition: A labeled nutritive or hydrating referent whose specific semantics are not lexicalized in Era Zero.
+  fidelity: gap
+  noun_label_allowed: true
+- sense_id: GSE:030
+  lemma: toy
+  surface_forms: [toy, ball, game, bed, blanket, medicine, bandage, brush]
+  part_of_speech: noun
+  sense_key: game_object_referent
+  route: gap
+  definition: A labeled game or care object whose specific object class is not lexicalized in Era Zero.
+  fidelity: gap
+  noun_label_allowed: true
+- sense_id: GSE:031
+  lemma: energy
+  surface_forms: [energy, fullness, cleanliness, health, stamina, focus]
+  part_of_speech: noun
+  sense_key: game_status_measure
+  route: gap
+  definition: A game-specific measured status whose scale and unit require an explicit measurement schema.
+  fidelity: gap
+  noun_label_allowed: true
+- sense_id: GSE:032
+  lemma: dirty
+  surface_forms: [dirty, messy, filthy]
+  part_of_speech: adjective
+  sense_key: cleanliness_deficit
+  route: gap
+  definition: A material cleanliness condition below the contextually accepted threshold.
+  fidelity: gap
+- sense_id: GSE:033
+  lemma: full
+  surface_forms: [full, satisfied, clean]
+  part_of_speech: adjective
+  sense_key: satisfied_game_status
+  route: gap
+  definition: A game-specific care measure at or above its contextually accepted threshold.
+  fidelity: gap
+- sense_id: GSE:034
+  lemma: programmer
+  surface_forms: [programmer, coder, developer]
+  part_of_speech: noun
+  sense_key: labeled_person_occupation
+  route: label
+  semantic_class_target_id: LIF:010
+  definition: A person referent preserved by a phonemic label; the occupation is not asserted unless separately composed.
+  fidelity: labeled_referent
+  noun_label_allowed: true
+- sense_id: GSE:035
+  lemma: here
+  surface_forms: [here]
+  part_of_speech: adverb
+  sense_key: deictic_present_position_generalized
+  route: atom
+  target_id: MOV:001
+  definition: Here generalized as the position presently occupied in the active deictic context.
+  generalization: Era Zero preserves present position but not which participant establishes the deictic center.
+  fidelity: generalized
+  selection_cues: [the current place]
+  excluded_readings: [attention-getting discourse marker]
+- sense_id: GSE:036
+  lemma: near
+  surface_forms: [near, nearby, close, far, distant]
+  part_of_speech: adjective
+  sense_key: target_relative_position_generalized
+  route: atom
+  target_id: MOV:210
+  definition: Nearness or distance generalized as an established positional relation to a distinct target position.
+  generalization: Era Zero preserves the target-relative positional relation but not its distance value or direction.
+  fidelity: generalized
+  selection_cues: [position stated relative to another place or object]
+  excluded_readings: [emotional closeness, temporal proximity]
+- sense_id: GSE:037
+  lemma: low
+  surface_forms: [low, high, empty, maximum, minimum]
+  part_of_speech: adjective
+  sense_key: game_measure_level
+  route: gap
+  definition: A qualitative position on a game-specific measured scale.
+  fidelity: gap
+- sense_id: GSE:038
+  lemma: let
+  surface_forms: [let, let's, lets]
+  part_of_speech: grammar
+  sense_key: permissive_or_cohortative_clause
+  route: grammar
+  definition: A permissive or first-person-group imperative construction requiring clause and participant structure.
+  fidelity: structural
+- sense_id: GSE:039
+  lemma: file
+  surface_forms: [file, files, data file, document file]
+  part_of_speech: noun
+  sense_key: persistent_information_object_generalized
+  route: atom
+  target_id: DAT:000
+  definition: A computer file generalized as a persistent bounded information object maintained within a reference system.
+  generalization: Era Zero preserves the file as a maintained bounded information object but does not assert its format, filename, filesystem path, ownership, or physical storage medium.
+  fidelity: generalized
+  selection_cues: [computer file, stored document, bounded data object]
+  excluded_readings: [paper held in a physical folder, tool used to abrade material, filing an official request]
+- sense_id: GSE:040
+  lemma: folder
+  surface_forms: [folder, folders, directory, directories]
+  part_of_speech: noun
+  sense_key: persistent_information_container_generalized
+  route: atom
+  target_id: STR:020
+  definition: A filesystem folder generalized as a persistent part-whole arrangement that organizes contained entries as one structure.
+  generalization: Era Zero preserves the folder's structural organization but does not assert a filesystem implementation, path, permissions, ownership, or whether an entry is currently open.
+  fidelity: generalized
+  selection_cues: [filesystem folder, directory containing files, data organization]
+  excluded_readings: [a physical paper folder considered only as matter, folding an object, a participant who folds]
+- sense_id: GSE:041
+  lemma: inside
+  surface_forms: [inside, within, contained in, located inside, located within]
+  part_of_speech: adjective
+  sense_key: occupied_internal_position_generalized
+  route: atom
+  target_id: STR:001
+  definition: Being inside a container generalized as a constituent presently occupying an internal position of that structure.
+  generalization: Era Zero preserves present occupation of an internal structural position but does not assert exact coordinates, filesystem path syntax, depth, ownership, or physical enclosure.
+  fidelity: generalized
+  selection_cues: [one item located within a folder or container, occupied internal place]
+  excluded_readings: [movement into a container, metaphorical insider status, hidden mental content]

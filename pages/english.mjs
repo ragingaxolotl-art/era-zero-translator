@@ -1,11 +1,13 @@
-const STOPWORDS=new Set('a an the to of in on at for from with is are was were be being been do does did i you he she it we they this that these those my your his her its our their please now just may might maybe could can would will shall should perhaps possibly probably'.split(' '));
+const STOPWORDS=new Set('a an the to of in on at for from with am is are was were be being been do does did i you he she it we they this that these those my your his her its our their please now just may might maybe could can would will shall should perhaps possibly probably'.split(' '));
 const DIRECT=new Set(['atom','compound']);
 const INHERENTLY_POLYSEMOUS=new Set(['know','have','exist','receive','send','share','change','return','run','home']);
+const PARTICIPANTS=new Map(Object.entries({i:'speaker',me:'speaker',my:'speaker',myself:'speaker',we:'speaker_group',us:'speaker_group',our:'speaker_group',ourselves:'speaker_group',you:'addressee',your:'addressee',yourself:'addressee',he:'other_person',him:'other_person',his:'other_person',she:'other_person',her:'other_person',hers:'other_person',they:'other_group',them:'other_group',their:'other_group',it:'other_referent',its:'other_referent'}));
 
 const IRREGULAR={
   am:['be'],are:['be'],is:['be'],was:['be'],were:['be'],been:['be'],
   left:['leave','depart'],went:['go'],gone:['go'],
   came:['come'],come:['come'],ran:['run'],
+  found:['find'],
   made:['make','create'],built:['build'],
   knew:['know'],known:['know'],thought:['think'],
   sent:['send'],received:['receive'],
@@ -17,6 +19,7 @@ const IRREGULAR={
 };
 
 const SENSE_HINTS=[
+  [/\b(?:wait|waits|waiting|waited)\b/,'deferred_action',.62,'context'],
   [/\b(?:go|goes|going|went|gone)\s+(?:home|there|here|to|toward|towards|into|through|across|away)\b/,'spatial_movement',.58,'context'],
   [/\b(?:go|goes|going|went|gone)\s+(?:red|dark|silent|offline|online|bad|wrong|cold|hot|missing|blank|viral)\b/,'abstract_transition',.62,'context'],
   [/\b(?:send|sends|sending|sent)\b.*\b(?:file|data|packet|record|code|document|information)\b/,'data_transfer',.62,'context'],
@@ -101,29 +104,49 @@ export function inferEnglishIntent(raw,explicitRuntime=null){
 }
 
 function scoreSense(sense,input,inputTokens){
-  const lemma=normalize(sense.lemma),lemmaTokens=lexicalTokens(lemma),exact=input===lemma;
-  const lexical=overlap(inputTokens,lemmaTokens).length,ratio=lexical/Math.max(lemmaTokens.size,1);
-  const surfaceMatch=lemmaTokens.size>0&&ratio===1;
+  const forms=[sense.lemma,...(sense.surface_forms||[])].map(normalize),formTokens=forms.map(form=>lexicalTokens(form));
+  const exact=forms.includes(input),bestTokens=formTokens.sort((a,b)=>overlap(inputTokens,b).length/Math.max(b.size,1)-overlap(inputTokens,a).length/Math.max(a.size,1))[0]||new Set();
+  const lexical=overlap(inputTokens,bestTokens).length,ratio=lexical/Math.max(bestTokens.size,1);
+  const surfaceMatch=bestTokens.size>0&&ratio===1;
   const hint=SENSE_HINTS.find(([pattern,key])=>key===sense.sense_key&&pattern.test(input));
   if(!exact&&!surfaceMatch&&!lexical&&!hint)return null;
-  let score=exact?1:surfaceMatch?(lemmaTokens.size===1?.78:.90):Math.min(.18+.34*ratio,.52);
+  let score=exact?1:surfaceMatch?(bestTokens.size===1?.78:.90):Math.min(.18+.34*ratio,.52);
   if(hint)score+=hint[2];
   const cue=overlap(inputTokens,lexicalTokens((sense.selection_cues||[]).join(' '))).length;
   const definition=overlap(inputTokens,lexicalTokens(sense.definition||'')).length;
   score+=Math.min(cue*.025,.08)+Math.min(definition*.012,.07);
+  const headForms=forms.map(form=>form.split(' ')[0]).filter(Boolean),headPattern=headForms.length?headForms.map(form=>form.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|'):null;
+  const profileSense=String(sense.sense_id).startsWith('GSE:');
+  if(profileSense&&headPattern&&sense.part_of_speech==='verb'&&new RegExp(`^(?:please )?(?:${headPattern})\\b|\\b(?:i|we|you|he|she|they|it) (?:${headPattern})\\b`).test(input))score+=.12;
+  if(profileSense&&headPattern&&sense.part_of_speech==='adjective'&&new RegExp(`\\b(?:am|is|are|was|were|feel|feels|felt|seem|seems) (?:${headPattern})\\b`).test(input))score+=.10;
   if(sense.sense_key==='canonical_atom_label'&&!exact)score=Math.min(score,.62);
   score=Math.round(Math.min(score,1)*10000)/10000;
-  return{sense_id:sense.sense_id,lemma:sense.lemma,sense_key:sense.sense_key,route:sense.route,target_id:sense.target_id,definition:sense.definition,selection_cues:sense.selection_cues||[],score,confidence:score>=.82?'high':score>=.62?'medium':'low',match_type:exact?'exact_lemma':hint?.[3]==='context'?'contextual_english':hint?'english_sentence':surfaceMatch?'inflected_lemma':'context_overlap',contextual_hint:hint?.[3]==='context',evidence:{lexical_overlap:lexical,selection_cue_overlap:cue,definition_overlap:definition}};
+  return{sense_id:sense.sense_id,lemma:sense.lemma,sense_key:sense.sense_key,route:sense.route,target_id:sense.target_id,definition:sense.definition,selection_cues:sense.selection_cues||[],generalization:sense.generalization||null,fidelity:sense.fidelity||'indexed',part_of_speech:sense.part_of_speech||null,noun_label_allowed:Boolean(sense.noun_label_allowed),score,confidence:score>=.82?'high':score>=.62?'medium':'low',match_type:exact?'exact_lemma':hint?.[3]==='context'?'contextual_english':hint?'english_sentence':surfaceMatch?'inflected_lemma':'context_overlap',contextual_hint:hint?.[3]==='context',evidence:{lexical_overlap:lexical,selection_cue_overlap:cue,definition_overlap:definition}};
 }
 
-function termCoverage(normalized,data,ranked){
+function unknownSemanticKind(words,index){
+  const word=words[index],previous=words[index-1]||'',beforePrevious=words[index-2]||'',next=words[index+1]||'';
+  if(['a','an','the','this','that','these','those','my','your','his','her','its','our','their'].includes(previous))return null;
+  if(/(?:ed|ing)$/.test(word)||['do','does','did','can','could','will','would','should','may','might','must'].includes(previous)||(previous==='to'&&['want','wants','wanted','need','needs','needed','try','tries','tried','plan','plans','planned'].includes(beforePrevious)))return'verb';
+  if(['am','is','are','was','were','be','being','been','feel','feels','felt','seem','seems','look','looks'].includes(previous))return'descriptor';
+  if(index===0&&next&&['the','a','an','me','us','him','her','them','it'].includes(next))return'verb';
+  if(index===1&&PARTICIPANTS.has(previous)&&next)return'verb';
+  if(index>0&&next&&/(?:s|es)$/.test(word)&&!STOPWORDS.has(previous))return'verb';
+  if(/(?:ous|ful|less|ive|able|ible|ish|ary|ory)$/.test(word))return'descriptor';
+  return null;
+}
+
+function termCoverage(normalized,data,ranked,allSenses){
   const words=normalize(normalized).match(/[\p{L}\p{N}_-]+/gu)||[],rankBySense=new Map(ranked.map((item,index)=>[item.sense_id,{index,score:item.score,match_type:item.match_type}]));
   return words.map((word,tokenIndex)=>{
-    const forms=variants(word),matches=data.senses.filter(sense=>{const lemmaTokens=lexicalTokens(sense.lemma,{keepStopwords:true}),matched=overlap(forms,lemmaTokens).length;if(!matched)return false;if(!STOPWORDS.has(word))return true;return ['grammar','semantic_ir'].includes(sense.route)&&lemmaTokens.size===1}).map(sense=>{const ranking=rankBySense.get(sense.sense_id);return{sense_id:sense.sense_id,lemma:sense.lemma,sense_key:sense.sense_key,route:sense.route,target_id:sense.target_id,definition:sense.definition,score:ranking?.score??0,match_type:ranking?.match_type??'word_match'}}).sort((a,b)=>{const exactA=normalize(a.lemma)===word?1:0,exactB=normalize(b.lemma)===word?1:0;return b.score-a.score||exactB-exactA||a.lemma.localeCompare(b.lemma)||a.sense_id.localeCompare(b.sense_id)});
+    const forms=variants(word),matches=allSenses.filter(sense=>{const surface=[sense.lemma,...(sense.surface_forms||[])];const matched=surface.some(item=>{const comparable=String(sense.sense_id).startsWith('GSE:')?normalize(item).split(' ')[0]:item;return overlap(forms,lexicalTokens(comparable,{keepStopwords:true})).length});if(!matched)return false;if(!STOPWORDS.has(word))return true;return ['grammar','semantic_ir'].includes(sense.route)}).map(sense=>{const ranking=rankBySense.get(sense.sense_id);return{sense_id:sense.sense_id,lemma:sense.lemma,sense_key:sense.sense_key,route:sense.route,target_id:sense.target_id,semantic_class_target_id:sense.semantic_class_target_id,definition:sense.definition,generalization:sense.generalization||null,fidelity:sense.fidelity||'indexed',part_of_speech:sense.part_of_speech||null,noun_label_allowed:Boolean(sense.noun_label_allowed),score:ranking?.score??0,match_type:ranking?.match_type??'word_match'}}).sort((a,b)=>{const exactA=a.lemma===word?1:0,exactB=b.lemma===word?1:0;return b.score-a.score||exactB-exactA||a.lemma.localeCompare(b.lemma)||a.sense_id.localeCompare(b.sense_id)});
     const direct=matches.filter(match=>DIRECT.has(match.route));
     const gaps=matches.filter(match=>match.route==='gap');
-    const status=direct.length?'canonical':gaps.length?'documented_gap':matches.length?'structural':STOPWORDS.has(word)?'function_word':'phonemic_label';
-    return{token_index:tokenIndex,term:word,status,recommended_sense_id:matches[0]?.sense_id??null,matches};
+    const labels=matches.filter(match=>match.route==='label');
+    const participant=PARTICIPANTS.get(word),semanticKind=unknownSemanticKind(words,tokenIndex);
+    const status=direct.length?'canonical':gaps.length?'documented_gap':labels.length?'labeled_entity':matches.length?'structural':participant?'participant_reference':STOPWORDS.has(word)?'function_word':semanticKind?'unresolved_semantic':'phonemic_label';
+    const label=labels[0];
+    return{token_index:tokenIndex,term:word,status,semantic_kind:semanticKind,participant_role:participant||null,semantic_class_target_id:label?.semantic_class_target_id||null,recommended_sense_id:matches[0]?.sense_id??null,matches};
   });
 }
 
@@ -132,14 +155,20 @@ export function analyzeEnglish(raw,data,{limit=Number.POSITIVE_INFINITY}={}){
   const normalized=normalize(text);
   if(!normalized)throw{code:'empty_input',message:'Write an English word, phrase, or sentence to translate.'};
   const intent=inferEnglishIntent(text,explicitRuntime),inputTokens=lexicalTokens(normalized);
-  const ranked=data.senses.map(sense=>scoreSense(sense,normalized,inputTokens)).filter(Boolean).sort((a,b)=>b.score-a.score||a.sense_id.localeCompare(b.sense_id)).slice(0,limit);
-  const coverage=termCoverage(normalized,data,ranked);
-  if(!ranked.length)return{status:'ok',input:raw,normalized_input:normalized,speech_act_proposal:intent.speechAct,explicit_runtime_state:intent.runtime,runtime_inference:intent.runtimeSource,candidates:[],candidate_count:0,term_coverage:coverage,decision:{auto_resolution_allowed:false,requires_clarification:true,reasons:['phonemic_labels_only'],competing_sense_ids:[]}};
+  const allSenses=[...data.senses,...(data.game_story_senses||[])],candidateSenses=allSenses.filter(sense=>sense.route!=='label');
+  const ranked=candidateSenses.map(sense=>scoreSense(sense,normalized,inputTokens)).filter(Boolean).sort((a,b)=>b.score-a.score||a.sense_id.localeCompare(b.sense_id)).slice(0,limit);
+  const coverage=termCoverage(normalized,data,ranked,allSenses);
+  const unresolvedSemantic=coverage.some(item=>item.status==='unresolved_semantic');
+  if(!ranked.length)return{status:'ok',input:raw,normalized_input:normalized,speech_act_proposal:intent.speechAct,explicit_runtime_state:intent.runtime,runtime_inference:intent.runtimeSource,candidates:[],candidate_count:0,term_coverage:coverage,decision:{auto_resolution_allowed:false,requires_clarification:true,reasons:[unresolvedSemantic?'unresolved_semantic_content':'phonemic_labels_only'],competing_sense_ids:[]}};
   ranked.forEach(candidate=>{candidate.required_roles=candidate.target_id?data.required_roles[candidate.target_id]||[]:[]});
-  const top=ranked[0],sameLemmaAmbiguity=INHERENTLY_POLYSEMOUS.has(normalize(top.lemma))&&!top.contextual_hint,competing=ranked.slice(1).filter(candidate=>top.contextual_hint?(candidate.contextual_hint&&top.score-candidate.score<.14):(top.score-candidate.score<.14||(sameLemmaAmbiguity&&normalize(candidate.lemma)===normalize(top.lemma)))),material=competing.length>0,direct=DIRECT.has(top.route),missingRoles=top.required_roles.length>0,structural=['semantic_ir','grammar'].includes(top.route),gap=top.route==='gap',hosted=Boolean(top.target_id&&data.resolution_files[top.target_id]);
-  const confident=top.score>=.76&&(top.contextual_hint||!ranked[1]||top.score-ranked[1].score>=.14);
+  const top=ranked[0],sameLemmaAmbiguity=INHERENTLY_POLYSEMOUS.has(normalize(top.lemma))&&!top.contextual_hint;
+  const competesForSameHead=candidate=>!top.part_of_speech||!candidate.part_of_speech||candidate.part_of_speech===top.part_of_speech||normalize(candidate.lemma)===normalize(top.lemma);
+  const competing=ranked.slice(1).filter(candidate=>competesForSameHead(candidate)&&(top.contextual_hint?(candidate.contextual_hint&&top.score-candidate.score<.14):(top.score-candidate.score<.14||(sameLemmaAmbiguity&&normalize(candidate.lemma)===normalize(top.lemma)))))
+  const material=competing.length>0,direct=DIRECT.has(top.route),missingRoles=top.required_roles.length>0,structural=['semantic_ir','grammar'].includes(top.route),gap=top.route==='gap',hosted=Boolean(top.target_id&&data.resolution_files[top.target_id]);
+  const nextSameHead=ranked.slice(1).find(competesForSameHead);
+  const confident=top.score>=.76&&(top.contextual_hint||!nextSameHead||top.score-nextSameHead.score>=.14);
   const hasUnfamiliarTerms=coverage.some(item=>item.status==='phonemic_label');
-  const auto=Boolean(confident&&!material&&direct&&!missingRoles&&hosted);
+  const auto=Boolean(confident&&!material&&direct&&!missingRoles&&hosted&&!unresolvedSemantic);
   const reasons=[];
   if(material)reasons.push('material_sense_ambiguity');
   if(missingRoles)reasons.push('required_roles_missing');
@@ -147,6 +176,7 @@ export function analyzeEnglish(raw,data,{limit=Number.POSITIVE_INFINITY}={}){
   if(gap)reasons.push('documented_vocabulary_gap');
   if(!confident&&!material)reasons.push('low_confidence_english');
   if(direct&&!hosted)reasons.push('local_api_required');
+  if(unresolvedSemantic)reasons.push('unresolved_semantic_content');
   if(hasUnfamiliarTerms&&!auto)reasons.push('phonemic_labels_present');
   return{status:'ok',input:raw,normalized_input:normalized,speech_act_proposal:intent.speechAct,explicit_runtime_state:intent.runtime,runtime_inference:intent.runtimeSource,candidates:ranked,candidate_count:ranked.length,term_coverage:coverage,decision:{auto_resolution_allowed:auto,requires_clarification:!auto,reasons,competing_sense_ids:competing.map(item=>item.sense_id)}};
 }

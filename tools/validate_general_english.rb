@@ -12,7 +12,7 @@ spec = EraZeroValidation.load_yaml("spec/general_english_1.0.yaml")
 tests = EraZeroValidation.load_yaml("tests/general_english_cases.yaml")
 sense_doc = EraZeroValidation.load_yaml("lexicon/english_sense_index.yaml")
 senses = sense_doc.fetch("senses")
-translator = EraZeroGeneralEnglish::Translator.new
+translator = EraZeroGeneralEnglish::Translator.new(profile: false)
 checks = EraZeroValidation::CheckSet.new
 
 checks.add("source immutability", "sense index, controlled English, and Semantic IR match recorded fingerprints", spec.dig("metadata", "sense_index_fingerprint") == EraZeroValidation.fingerprint(senses) && spec.dig("metadata", "controlled_english_fingerprint") == EraZeroValidation.fingerprint(EraZeroValidation.load_yaml("spec/controlled_english_1.0.yaml")) && spec.dig("metadata", "semantic_ir_fingerprint") == EraZeroValidation.fingerprint(EraZeroValidation.load_yaml("spec/semantic_ir_1.0.yaml")))

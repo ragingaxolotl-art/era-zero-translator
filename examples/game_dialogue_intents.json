@@ -1,0 +1,140 @@
+{
+  "format": "EZ-GAME-DIALOGUE-INTENTS-0.1",
+  "semantic_authority_changes": 0,
+  "integration_status": "ready_for_game_adapter",
+  "speaker_convention": "The active Cyber Pet is the discourse speaker; the player is the default addressee. These roles are game context and are not silently added to canonical Semantic IR.",
+  "intents": [
+    {
+      "intent": "care_request",
+      "game_trigger": "one or more care meters require player attention",
+      "subtitle": "Please care for me.",
+      "surface_sense_id": "GSE:008",
+      "target_id": "LIF:211",
+      "speech_act": "command",
+      "runtime_state": 1,
+      "eye_expression": "sad"
+    },
+    {
+      "intent": "nourishment_dependence",
+      "game_trigger": "Fullness is below the configured request threshold",
+      "subtitle": "I need nourishment.",
+      "surface_sense_id": "GSE:005",
+      "target_id": "ORI:211",
+      "speech_act": "assertion",
+      "runtime_state": 1,
+      "eye_expression": "sad",
+      "optional_noun_label": "food"
+    },
+    {
+      "intent": "rest_dependence",
+      "game_trigger": "Energy is below the configured request threshold",
+      "subtitle": "I need restoration.",
+      "surface_sense_id": "GSE:007",
+      "target_id": "ORI:211",
+      "speech_act": "assertion",
+      "runtime_state": 1,
+      "eye_expression": "sad",
+      "optional_noun_label": "rest"
+    },
+    {
+      "intent": "active_recovery",
+      "game_trigger": "rest, nap, or internal healing is active",
+      "subtitle": "I am recovering.",
+      "surface_sense_id": "GSE:009",
+      "target_id": "REP:101",
+      "speech_act": "assertion",
+      "runtime_state": 1,
+      "eye_expression": "happy"
+    },
+    {
+      "intent": "target_treatment",
+      "game_trigger": "cleaning or treatment is actively restoring the pet",
+      "subtitle": "You are restoring me.",
+      "surface_sense_id": "GSE:015",
+      "target_id": "REP:111",
+      "speech_act": "assertion",
+      "runtime_state": 1,
+      "eye_expression": "happy"
+    },
+    {
+      "intent": "manifest_injury",
+      "game_trigger": "an injury condition is active",
+      "subtitle": "I am injured.",
+      "surface_sense_id": "GSE:018",
+      "target_id": "CMP:f1abd5eccdf06d92d5690a32",
+      "speech_act": "assertion",
+      "runtime_state": 1,
+      "eye_expression": "sad"
+    },
+    {
+      "intent": "manifest_internal_problem",
+      "game_trigger": "an illness or internal malfunction is active",
+      "subtitle": "Something is wrong inside me.",
+      "surface_sense_id": "GSE:017",
+      "target_id": "WRN:001",
+      "speech_act": "assertion",
+      "runtime_state": 1,
+      "eye_expression": "sad"
+    },
+    {
+      "intent": "awake",
+      "game_trigger": "the pet is awake and responsive",
+      "subtitle": "I am awake.",
+      "surface_sense_id": "GSE:011",
+      "target_id": "LIF:001",
+      "speech_act": "assertion",
+      "runtime_state": 1,
+      "eye_expression": "happy"
+    },
+    {
+      "intent": "asleep",
+      "game_trigger": "the pet is sleeping",
+      "subtitle": "I am asleep.",
+      "surface_sense_id": "GSE:010",
+      "target_id": "LIF:002",
+      "speech_act": "assertion",
+      "runtime_state": 1,
+      "eye_expression": "sad"
+    },
+    {
+      "intent": "greeting",
+      "game_trigger": "the player enters the active pet's care room",
+      "subtitle": "Hello.",
+      "surface_sense_id": "GSE:020",
+      "target_id": "CON:100",
+      "speech_act": "assertion",
+      "runtime_state": 1,
+      "eye_expression": "happy"
+    },
+    {
+      "intent": "target_found",
+      "game_trigger": "the pet or player completes a target discovery",
+      "subtitle": "I found it.",
+      "surface_sense_id": "GSE:001",
+      "target_id": "MIN:110",
+      "speech_act": "assertion",
+      "runtime_state": 1,
+      "eye_expression": "happy"
+    },
+    {
+      "intent": "target_search",
+      "game_trigger": "the pet is actively seeking a target",
+      "subtitle": "I am looking for it.",
+      "surface_sense_id": "GSE:002",
+      "target_id": "MIN:211",
+      "speech_act": "assertion",
+      "runtime_state": 1,
+      "eye_expression": "happy"
+    },
+    {
+      "intent": "position_here",
+      "game_trigger": "the pet announces its current deictic position",
+      "subtitle": "I am here.",
+      "surface_sense_id": "GSE:035",
+      "target_id": "MOV:001",
+      "speech_act": "assertion",
+      "runtime_state": 1,
+      "eye_expression": "happy"
+    }
+  ]
+}

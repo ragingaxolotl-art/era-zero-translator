@@ -74,6 +74,10 @@ commands = [
     [node, File.join(ROOT, "tools/validate_viseme_performance.mjs")]
   ],
   [
+    "audit game and story English translation profile",
+    [node, File.join(ROOT, "tools/audit_game_story_translation.mjs")]
+  ],
+  [
     "validate translator workbench product application",
     [ruby, File.join(ROOT, "tools/validate_product_application.rb")]
   ],
@@ -161,6 +165,7 @@ report << "- controlled-English grammar restriction, unique canonical sense mapp
 report << "- general-English deterministic ranking, exact-lemma recall across all 436 indexed senses, evidence and confidence, runtime alternatives, material ambiguity, structural and grammar routing, explicit gaps, role clarification, conservative auto-resolution, and selected-sense round trips.\n"
 report << "- validated EZF-1 to accessible SVG and Standard MIDI, deterministic byte output, three-anchor transposition behavior, all 972 atom/runtime presentations, invalid-input rejection, example artifacts, and semantic-identity preservation.\n"
 report << "- carrier-driven character visemes across all 324 atoms and all 5,265 hosted formal variants, with independent base-head, happy/sad/angry eye, and timed mouth-sound layers; complete syllable coverage; note preservation; cue timing; grammatical-tone sustain; and transposition invariance.\n"
+report << "- game/story English routing across care, need, nourishment, rest, health, discovery, participant references, labeled nouns, disclosed generalizations, explicit semantic gaps, and rejection of phonemic fallback for unknown verbs and descriptors.\n"
 report << "- local translator API and responsive workbench, reviewed-sense evaluation corpus, conservative clarification journeys, API error paths, EZB-1 import/export integrity, SVG/MIDI download, accessibility markers, and canonical semantic immutability.\n"
 report << "- full-family locus/process/affordance-relation separation, triplet coherence, runtime-state tailoring, collision routing, and rerun safety for `CON:000–222`.\n"
 report << "- constituent-position/interface/composite-arrangement entities; reconfiguration/incorporation/integration processes; matching reconfigurability/incorporability/integrability affordances; triplet coherence; lexical/runtime separation; collision routing; layer non-entailment; and rerun safety for `STR:000–222`.\n"

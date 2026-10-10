@@ -27,8 +27,11 @@ module EraZeroGeneralEnglish
   end
 
   class Translator
-    def initialize
-      @senses = EraZeroValidation.load_yaml("lexicon/english_sense_index.yaml").fetch("senses")
+    def initialize(profile: true)
+      canonical_senses = EraZeroValidation.load_yaml("lexicon/english_sense_index.yaml").fetch("senses")
+      game_story_senses = profile ? EraZeroValidation.load_yaml("lexicon/game_story_surface_routes.yaml").fetch("senses") : []
+      @senses = canonical_senses + game_story_senses
+      @analysis_senses = @senses.reject { |sense| sense["route"] == "label" }
       @sense_by_id = @senses.to_h { |sense| [sense.fetch("sense_id"), sense] }
       controlled = @senses.select { |sense| sense["controlled_input_allowed"] == true && DIRECT_ROUTES.include?(sense["route"]) }
       @canonical_label = controlled.to_h { |sense| [sense.fetch("target_id"), sense.fetch("lemma")] }
@@ -43,7 +46,7 @@ module EraZeroGeneralEnglish
       return error("empty_input", "General-English input is empty.", original) if normalized.empty?
       proposed_speech_act = original.strip.end_with?("?") ? "question" : "assertion"
       tokens = semantic_tokens(normalized)
-      ranked = @senses.map { |sense| score_sense(sense, normalized, tokens) }.select { |candidate| candidate["score"] > 0.0 }.sort_by { |candidate| [-candidate["score"], candidate["sense_id"]] }.first(limit)
+      ranked = @analysis_senses.map { |sense| score_sense(sense, normalized, tokens) }.select { |candidate| candidate["score"] > 0.0 }.sort_by { |candidate| [-candidate["score"], candidate["sense_id"]] }.first(limit)
       return error("no_candidate", "No indexed Era Zero sense overlaps the input.", original, { "normalized_input" => normalized }) if ranked.empty?
 
       ranked.each { |candidate| enrich_candidate!(candidate, explicit_state, proposed_speech_act) }
@@ -141,10 +144,10 @@ module EraZeroGeneralEnglish
     end
 
     def score_sense(sense, input, input_tokens)
-      lemma = normalize(sense.fetch("lemma"))
-      lemma_tokens = semantic_tokens(lemma)
-      exact = input == lemma
-      contained = phrase_present?(input, lemma)
+      forms = [sense.fetch("lemma"), *Array(sense["surface_forms"])].map { |form| normalize(form) }.uniq
+      exact = forms.include?(input)
+      contained = forms.any? { |form| phrase_present?(input, form) }
+      lemma_tokens = forms.map { |form| semantic_tokens(form) }.max_by { |tokens| (input_tokens & tokens).length.fdiv([tokens.length, 1].max) }
       lexical_overlap = (input_tokens & lemma_tokens).length
       return empty_candidate(sense) if !exact && !contained && lexical_overlap.zero?
       base = if exact then 1.0 elsif contained then 0.72 else [0.18 * lexical_overlap / [lemma_tokens.length, 1].max.to_f, 0.45].min end
@@ -155,7 +158,8 @@ module EraZeroGeneralEnglish
       {
         "sense_id" => sense.fetch("sense_id"), "lemma" => sense.fetch("lemma"), "sense_key" => sense.fetch("sense_key"),
         "route" => sense.fetch("route"), "target_id" => sense["target_id"], "definition" => sense.fetch("definition"),
-        "selection_cues" => Array(sense["selection_cues"]), "score" => score,
+        "selection_cues" => Array(sense["selection_cues"]), "generalization" => sense["generalization"],
+        "fidelity" => sense["fidelity"], "part_of_speech" => sense["sense_id"].start_with?("GSE:") ? sense["part_of_speech"] : nil, "score" => score,
         "confidence" => score >= 0.9 ? "high" : score >= 0.65 ? "medium" : "low",
         "match_type" => exact ? "exact_lemma" : contained ? "contained_lemma" : "token_overlap",
         "evidence" => { "lexical_overlap" => lexical_overlap, "selection_cue_overlap" => cue_overlap, "definition_overlap" => definition_overlap }
