@@ -6,7 +6,7 @@ import{fileURLToPath}from'node:url';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const pages=path.join(root,'pages');
 const{soundPlanFromFormal}=await import(path.join(pages,'engine.mjs'));
-const{VISEMES,SYLLABLE_VISEMES,visemesForSyllable,visemePlanFromFormal,visemeFrameAt}=await import(path.join(pages,'visemes.mjs'));
+const{VISEMES,SYLLABLE_VISEMES,visemesForSyllable,visemePlanFromFormal,visemeFrameAt,visemeFileFromFormal}=await import(path.join(pages,'visemes.mjs'));
 const index=JSON.parse(await fs.readFile(path.join(pages,'data/index.json'),'utf8'));
 const failures=[];
 let assertions=0,variants=0,cues=0;
@@ -26,11 +26,14 @@ for(const[canonicalId,relative]of Object.entries(index.resolution_files)){
   for(const[key,result]of Object.entries(document.variants)){
     variants++;
     const formal=result.formal,sound=soundPlanFromFormal(formal),plan=visemePlanFromFormal(formal);
+    const file=visemeFileFromFormal(formal);
     const expectedNotes=sound.lexical_events.flatMap(event=>[...event.family_opening,...event.address_path,...event.runtime_ending]).concat(sound.sentence_contour);
     cues+=plan.cues.length;
     check(plan.format==='EZVISEME-1'&&plan.version==='1.0.0',`${canonicalId} ${key} format`);
     check(plan.formal_id===formal.formal_id&&plan.semantic_digest===formal.semantic_digest&&plan.semantic_identity_changed===false,`${canonicalId} ${key} identity preservation`);
     check(plan.pitch_drives_viseme===false&&plan.carrier_drives_viseme===true,`${canonicalId} ${key} channel separation`);
+    check(file.format==='EZVISEME-1'&&file.formal_id===formal.formal_id&&file.semantic_digest===formal.semantic_digest&&file.semantic_identity_changed===false,`${canonicalId} ${key} standalone file identity`);
+    check(file.cues.length===plan.cues.length&&file.cues.every((cue,i)=>cue.viseme_sound===plan.cues[i].syllable&&cue.midi_note===plan.cues[i].note&&cue.poses.length>=1),`${canonicalId} ${key} standalone viseme file cues`);
     check(JSON.stringify(plan.cues.map(cue=>cue.note))===JSON.stringify(expectedNotes),`${canonicalId} ${key} note preservation`);
     check(plan.cues.every((cue,i)=>cue.duration>0&&cue.start>=0&&(i===0||cue.start>plan.cues[i-1].start)),`${canonicalId} ${key} timing order`);
     check(plan.cues.every(cue=>VISEMES[cue.onset_viseme]&&VISEMES[cue.nucleus_viseme]),`${canonicalId} ${key} pose validity`);

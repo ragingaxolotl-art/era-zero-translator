@@ -25,5 +25,7 @@ behavior_cases:
   assertion: runtime and contour tones sustain the preceding vowel nucleus without creating a syllable
 - name: identity-preservation
   assertion: formal_id and semantic_digest are copied unchanged and semantic_identity_changed is false
+- name: standalone-file
+  assertion: a .ezviseme.json file labels every cue with viseme_sound while keeping pose matching internal
 - name: transposition-invariance
   assertion: shifting all absolute MIDI notes does not change any carrier syllable or viseme

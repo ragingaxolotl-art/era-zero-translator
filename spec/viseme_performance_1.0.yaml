@@ -54,6 +54,12 @@ timing_profile_seconds:
 compiler_contract:
   input: one validated EZF-1 formal document
   output: ordered note cues with start, duration, MIDI note, carrier syllable, onset viseme, and nucleus viseme
+  standalone_file:
+    extension: .ezviseme.json
+    player_label: viseme_sound
+    public_fields: format, version, formal_id, semantic_digest, duration_seconds, cues
+    cue_fields: at_seconds, duration_seconds, midi_note, viseme_sound, poses
+    rule: The player interface labels only the current viseme sound; articulation matching remains compiler data.
   validation:
   - every canonical carrier syllable has an explicit map
   - cue times are monotonic and durations are positive

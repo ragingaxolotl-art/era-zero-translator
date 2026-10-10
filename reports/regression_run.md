@@ -109,7 +109,7 @@ Checks passed: 10; checks failed: 0
 ## PASS — validate carrier-driven character visemes
 
 ```text
-Viseme performance: PASS · 5265 variants · 60051 cues · 59537 assertions
+Viseme performance: PASS · 5265 variants · 60051 cues · 70067 assertions
 ```
 
 ## PASS — validate translator workbench product application
@@ -128,7 +128,7 @@ Product frontend syntax: PASS (local source, browser release, viseme compiler)
 ## PASS — validate translator workbench over real localhost HTTP
 
 ```text
-Product HTTP smoke: PASS (v1.6 UI, viseme character, dictionary/documents, health, analyze, exact round trip)
+Product HTTP smoke: PASS (v1.6.1 UI, standalone viseme file, character, dictionary/documents, health, analyze, exact round trip)
 ```
 
 ## PASS — validate the complete REP:000–222 family

@@ -1,4 +1,4 @@
-import{soundPlanFromFormal}from'./engine.mjs?v=1.6.0';
+import{soundPlanFromFormal}from'./engine.mjs?v=1.6.1';
 
 export const VISEME_VERSION='EZVISEME-1';
 export const VISEMES=Object.freeze({
@@ -74,4 +74,9 @@ export function visemeFrameAt(plan,elapsedSeconds){
   if(!cue)return{viseme:'REST',cue:null,progress:0};
   const local=elapsedSeconds-cue.start;
   return{viseme:local<cue.onset_duration?cue.onset_viseme:cue.nucleus_viseme,cue,progress:Math.max(0,Math.min(1,local/cue.duration))};
+}
+
+export function visemeFileFromFormal(formal){
+  const plan=visemePlanFromFormal(formal);
+  return{format:plan.format,version:plan.version,formal_id:plan.formal_id,semantic_digest:plan.semantic_digest,semantic_identity_changed:false,duration_seconds:plan.duration_seconds,cues:plan.cues.map(cue=>({at_seconds:cue.start,duration_seconds:cue.duration,midi_note:cue.note,viseme_sound:cue.syllable,poses:cue.sustain_only?[{at_seconds:0,pose:cue.nucleus_viseme}]:[{at_seconds:0,pose:cue.onset_viseme},{at_seconds:cue.onset_duration,pose:cue.nucleus_viseme}]}))};
 }

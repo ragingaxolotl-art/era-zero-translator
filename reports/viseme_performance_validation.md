@@ -5,7 +5,7 @@ Status: **PASS**
 - Canonical atoms covered: **324**
 - Hosted formal variants covered: **5265**
 - Synchronized tone/viseme cues checked: **60051**
-- Assertions: **59537**
+- Assertions: **70067**
 - Failures: **0**
 - Semantic identity changed: **no**
 - Transposition invariance: **verified**

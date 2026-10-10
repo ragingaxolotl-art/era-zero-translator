@@ -2,7 +2,9 @@
 
 Status: implemented as a presentation-only extension (`EZVISEME-1`).
 
-The translator can now open a close-up character and play the resolved Era Zero tone sequence while the character articulates its carrier syllables. This does not add words, change roots, reinterpret grammar, or modify Semantic IR or EZF identity.
+The translator can now open a close-up character and play the resolved Era Zero tone sequence while the character articulates its carrier syllables. It can also export the compiled performance as a standalone `.ezviseme.json` file. This does not add words, change roots, reinterpret grammar, or modify Semantic IR or EZF identity.
+
+The player-facing close-up is intentionally simple: it labels only the current **viseme sound** (`gi`, `ki`, `nu`, and so on). The pose matching, MIDI note, timing layer, and articulation logic remain inside the compiler output and are not explained to the player.
 
 ## What controls what
 
@@ -43,7 +45,7 @@ For a normal voiced event, the onset occupies no more than 75 ms and the vowel o
 
 ## Character integration contract
 
-Games may consume the output of `visemePlanFromFormal(formal)` and replace the built-in SVG face with sprites, blend shapes, skeletal mouth poses, or a 3D facial rig. Required pose names are `REST`, `MBP`, `TDS`, `KG`, `LN`, `W`, `Y`, `A`, `E`, `I`, `O`, and `U`.
+Games may consume the standalone output of `visemeFileFromFormal(formal)` and replace the built-in SVG face with sprites, blend shapes, skeletal mouth poses, or a 3D facial rig. Each cue carries `at_seconds`, `duration_seconds`, `midi_note`, a player-readable `viseme_sound`, and its timed internal poses. Required pose names are `REST`, `MBP`, `TDS`, `KG`, `LN`, `W`, `Y`, `A`, `E`, `I`, `O`, and `U`.
 
 The presentation must not infer meaning from a pose, write viseme data back into the semantic graph, or change a mouth sequence because a pitch was transposed. A game may use note pitch or intensity for eyebrows, glow, head motion, or other non-mouth performance accents.
 
