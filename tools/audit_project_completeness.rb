@@ -6,7 +6,13 @@ require "set"
 require_relative "lib/era_zero_validation"
 
 root = EraZeroValidation::ROOT
-load_yaml = ->(path) { YAML.load_file(File.join(root, path)) }
+# Ruby 3.3 disables YAML aliases unless they are explicitly authorized. The
+# canonical lexicon intentionally uses anchors/aliases to keep generated forms
+# consistent, so the audit must opt in on every supported Ruby version.
+load_yaml = lambda do |path|
+  absolute = File.join(root, path)
+  YAML.safe_load(File.read(absolute), aliases: true, filename: absolute)
+end
 atoms = load_yaml.call("lexicon/all_atoms.yaml").fetch("atoms")
 compounds = load_yaml.call("lexicon/compound_dictionary.yaml").fetch("entries")
 senses = load_yaml.call("lexicon/english_sense_index.yaml").fetch("senses")
