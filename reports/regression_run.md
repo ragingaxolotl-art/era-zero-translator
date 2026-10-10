@@ -118,6 +118,12 @@ Viseme performance: PASS · 5265 variants · 60051 cues · 80601 assertions
 Audio voice envelopes: PASS · 5 voices · release tails and softened stops checked
 ```
 
+## PASS — validate two-being conversation and MP3
+
+```text
+Conversation validation: PASS · 14 passed · 0 failed · 6 turns
+```
+
 ## PASS — audit game and story English translation profile
 
 ```text
@@ -141,7 +147,7 @@ Product frontend syntax: PASS (local source, browser release, viseme compiler)
 ## PASS — validate translator workbench over real localhost HTTP
 
 ```text
-Product HTTP smoke: PASS (v1.10.0 computer translation profile, softened audio releases, selectable voices, layered head/eyes/mouth rig, standalone viseme file, health, analyze, exact round trip)
+Product HTTP smoke: PASS (v1.11.0 two-being conversation workbench and MP3, computer translation profile, softened audio releases, selectable voices, layered head/eyes/mouth rig, standalone viseme file, health, analyze, exact round trip)
 ```
 
 ## PASS — validate the complete REP:000–222 family

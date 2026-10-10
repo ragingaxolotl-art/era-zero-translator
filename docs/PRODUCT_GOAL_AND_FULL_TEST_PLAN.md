@@ -1,6 +1,6 @@
 # Era Zero Translator: Product Goal and Full Audit Plan
 
-Status: implemented and audited through v1.10.0
+Status: implemented and audited through v1.11.0
 Authority date: 2026-10-10
 
 ## Product goal

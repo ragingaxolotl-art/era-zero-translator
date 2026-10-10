@@ -78,6 +78,10 @@ commands = [
     [node, File.join(ROOT, "tools/validate_audio_voices.mjs")]
   ],
   [
+    "validate two-being conversation and MP3",
+    [node, File.join(ROOT, "tools/validate_conversation.mjs")]
+  ],
+  [
     "audit game and story English translation profile",
     [node, File.join(ROOT, "tools/audit_game_story_translation.mjs")]
   ],

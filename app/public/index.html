@@ -6,7 +6,7 @@
   <meta name="description" content="Local workbench for conservative English-to-Era-Zero translation, clarification, formal notation, SVG, and MIDI export.">
   <title>Era Zero Translator Workbench</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1420'/%3E%3Cpath d='M14 10h36v8H24v10h22v8H24v10h26v8H14z' fill='%2361e1d2'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="/styles.css?v=1.10.0">
+  <link rel="stylesheet" href="/styles.css?v=1.11.0">
 </head>
 <body>
   <div class="shell">
@@ -15,10 +15,11 @@
         <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
         <span><strong>ERA ZERO</strong><small>Translator Workbench</small></span>
       </a>
-      <div class="release"><span class="status-dot"></span><span id="serviceStatus">Checking engine</span><b>v1.10.0</b></div>
+      <div class="release"><span class="status-dot"></span><span id="serviceStatus">Checking engine</span><b>v1.11.0</b></div>
     </header>
     <nav class="app-tabs" role="tablist" aria-label="Workbench view">
       <button class="app-tab active" data-app-tab="translator" role="tab" aria-selected="true">Translator</button>
+      <button class="app-tab" data-app-tab="conversation" role="tab" aria-selected="false">Conversation</button>
       <button class="app-tab" data-app-tab="dictionary" role="tab" aria-selected="false">Dictionary</button>
       <button class="app-tab" data-app-tab="documents" role="tab" aria-selected="false">Documents</button>
     </nav>
@@ -176,6 +177,26 @@
         </div>
       </section>
 
+      <section class="conversation card view-hidden" aria-labelledby="conversationTitle" data-app-view="conversation">
+        <div class="conversation-copy">
+          <div><p class="eyebrow">Two-being performance</p><h2 id="conversationTitle">Write a conversation and hear the speakers alternate.</h2></div>
+          <p>One line is one turn. Oca uses an ocarina voice on the left; Orin uses a warm-organ voice on the right. Canonical pitches stay unchanged.</p>
+        </div>
+        <div class="conversation-demo">
+          <div><strong>The File Migration</strong><span>Six-turn included performance</span></div>
+          <audio controls preload="metadata" src="./media/two-beings-file-migration.mp3">Your browser cannot play the included MP3.</audio>
+          <a class="download-link" href="./media/two-beings-file-migration.mp3" download>Download MP3</a>
+        </div>
+        <label class="conversation-editor">Conversation script
+          <textarea id="conversationScript" rows="10" spellcheck="true"></textarea>
+          <small>Format each line as “Oca: sentence” or “Orin: sentence.” Unknown verbs remain visible instead of becoming sound labels.</small>
+        </label>
+        <div class="conversation-actions"><button id="loadDemoConversation">Load demo</button><button id="buildConversation">Translate conversation</button><button id="playConversation" class="primary" disabled>▶ Play back-and-forth</button></div>
+        <p id="conversationStatus" class="conversation-status" aria-live="polite">Load or write a conversation, then translate it.</p>
+        <div id="conversationTurns" class="conversation-turns" aria-live="polite"></div>
+        <p class="microcopy">The current performance sounds the ordered approved concepts in each English sentence. Function words and participant pronouns guide interpretation but do not receive invented roots.</p>
+      </section>
+
       <section class="documents card view-hidden" aria-labelledby="documentsTitle" data-app-view="documents">
         <div class="documents-copy">
           <p class="eyebrow">Complete project record</p>
@@ -229,6 +250,6 @@
     </section>
   </div>
   <div id="toast" role="status" aria-live="polite"></div>
-  <script src="/app.js?v=1.10.0" defer></script>
+  <script src="/app.js?v=1.11.0" defer></script>
 </body>
 </html>

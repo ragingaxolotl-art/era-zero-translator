@@ -1,0 +1,40 @@
+{
+  "format": "EZ-CONVERSATION-1",
+  "title": "The File Migration",
+  "speakers": {
+    "Oca": {"voice": "ocarina", "pan": -0.32},
+    "Orin": {"voice": "warm_organ", "pan": 0.32}
+  },
+  "turns": [
+    {
+      "speaker": "Oca",
+      "english": "Hello, I need the file inside the folder.",
+      "targets": ["CON:100", "ORI:211", "DAT:000", "STR:001", "STR:020"]
+    },
+    {
+      "speaker": "Orin",
+      "english": "I found the file.",
+      "targets": ["MIN:110", "DAT:000"]
+    },
+    {
+      "speaker": "Oca",
+      "english": "Please send the file to me.",
+      "targets": ["DAT:111", "DAT:000"]
+    },
+    {
+      "speaker": "Orin",
+      "english": "We need to migrate the file.",
+      "targets": ["ORI:211", "DAT:112", "DAT:000"]
+    },
+    {
+      "speaker": "Oca",
+      "english": "The file is migrating.",
+      "targets": ["DAT:000", "DAT:111"]
+    },
+    {
+      "speaker": "Orin",
+      "english": "We migrated the file.",
+      "targets": ["DAT:110", "DAT:000"]
+    }
+  ]
+}
