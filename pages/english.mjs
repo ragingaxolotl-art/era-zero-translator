@@ -21,6 +21,7 @@ const IRREGULAR={
 const SENSE_HINTS=[
   [/\b(?:find|finds|finding|found|discover|discovers|discovered)\b/,'completed_target_discovery_generalized',.34,'context'],
   [/\b(?:wait|waits|waiting|waited)\b/,'deferred_action',.62,'context'],
+  [/\b(?:cross|crosses|crossing|crossed)\b.*\b(?:bridge|boundary|border|line|threshold)\b/,'boundary_traversal',.68,'context'],
   [/\b(?:go|goes|going|went|gone)\s+(?:home|there|here|to|toward|towards|into|through|across|away)\b/,'spatial_movement',.58,'context'],
   [/\b(?:go|goes|going|went|gone)\s+(?:red|dark|silent|offline|online|bad|wrong|cold|hot|missing|blank|viral)\b/,'abstract_transition',.62,'context'],
   [/\b(?:send|sends|sending|sent)\b.*\b(?:file|data|packet|record|code|document|information)\b/,'data_transfer',.62,'context'],
@@ -131,7 +132,7 @@ function scoreSense(sense,input,inputTokens){
   if(lexicalLayer==='1'){
     const modalQuestion=/^(?:could|can|may|might|will|would)\s+(?:i|we|you|he|she|they|it)\b/.test(input),phase=!modalQuestion&&/\b(?:possible|planned|pending|will|shall|may|might|could|plan|plans|intend|intends|need|needs|needed|want|wants|wanted|later|soon)\b/.test(input)?'2':/\b(?:ongoing|active|current)\b/.test(input)?'1':/\b(?:finished|completed|has|have|had)\b|\b(?:sent|left|went|came|found|made|built|knew|received|broke|fixed|repaired|moved|stopped|continued|arrived|departed|returned|crossed|followed|waited|shared|changed|created|\w+ed)\b/.test(input)?'0':'1';
     if(phase===lexicalPhase)score+=sense.plain_mapping ? .16 : .08;
-    else if(['mental_revision','completed_target_discovery_generalized'].includes(sense.sense_key))score-=.02;
+    else if(['mental_revision','completed_target_discovery_generalized','data_transfer_completion','completed_target_restoration','completed_target_arrival'].includes(sense.sense_key))score-=.02;
     else score=Math.min(score-.18,sense.plain_mapping ? .72 : .84);
   }
   score=Math.round(Math.min(score,1)*10000)/10000;
