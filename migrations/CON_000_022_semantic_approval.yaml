@@ -1,0 +1,226 @@
+---
+metadata:
+  title: CON:000–022 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.7
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: CON:000–022
+  recommendation: reviews/CON_000_022_recommended_spec.yaml
+  review: reviews/CON_000_022_peer_review.md
+  validation: reviews/CON_000_022_validation.md
+  collision_report: reviews/CON_000_022_collision_report.md
+  stress_tests: reviews/CON_000_022_stress_tests.yaml
+promoted_roots:
+- canonical_id: CON:000
+  canonical_title: persistent source endpoint
+  invariant_definition: A bounded communicative locus that remains identified as the
+    source-side endpoint of an exchange context.
+  fixed_generated_fields:
+    family: CON
+    address: '000'
+    universal_slot: stable inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    family_onset: wu
+    local_compact_root: nam
+    canonical_transliteration: wu·nam
+    formal_carrier: wu-ma-ma-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 0
+- canonical_id: CON:001
+  canonical_title: active source endpoint
+  invariant_definition: A source-side communicative locus presently participating
+    as an endpoint in an exchange context.
+  fixed_generated_fields:
+    family: CON
+    address: '001'
+    universal_slot: active inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    family_onset: wu
+    local_compact_root: nak
+    canonical_transliteration: wu·nak
+    formal_carrier: wu-ma-ma-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 2
+- canonical_id: CON:002
+  canonical_title: dormant source endpoint
+  invariant_definition: A source-side communicative locus defined for an exchange
+    context without presently participating in it.
+  fixed_generated_fields:
+    family: CON
+    address: '002'
+    universal_slot: dormant inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    family_onset: wu
+    local_compact_root: nan
+    canonical_transliteration: wu·nan
+    formal_carrier: wu-ma-ma-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - -2
+- canonical_id: CON:010
+  canonical_title: persistent target endpoint
+  invariant_definition: A bounded communicative locus that remains identified as the
+    target-side endpoint of an exchange context.
+  fixed_generated_fields:
+    family: CON
+    address: '010'
+    universal_slot: stable outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    family_onset: wu
+    local_compact_root: nom
+    canonical_transliteration: wu·nom
+    formal_carrier: wu-ma-ki-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 2
+- canonical_id: CON:011
+  canonical_title: active target endpoint
+  invariant_definition: A target-side communicative locus presently participating
+    as an endpoint in an exchange context.
+  fixed_generated_fields:
+    family: CON
+    address: '011'
+    universal_slot: active outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    family_onset: wu
+    local_compact_root: nok
+    canonical_transliteration: wu·nok
+    formal_carrier: wu-ma-ki-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 4
+- canonical_id: CON:012
+  canonical_title: dormant target endpoint
+  invariant_definition: A target-side communicative locus defined for an exchange
+    context without presently participating in it.
+  fixed_generated_fields:
+    family: CON
+    address: '012'
+    universal_slot: dormant outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    family_onset: wu
+    local_compact_root: non
+    canonical_transliteration: wu·non
+    formal_carrier: wu-ma-ki-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 0
+- canonical_id: CON:020
+  canonical_title: persistent shared channel
+  invariant_definition: A bounded communicative environment that remains the common
+    exchange context of multiple participant endpoints.
+  fixed_generated_fields:
+    family: CON
+    address: '020'
+    universal_slot: stable collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    family_onset: wu
+    local_compact_root: nim
+    canonical_transliteration: wu·nim
+    formal_carrier: wu-ma-nu-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -2
+- canonical_id: CON:021
+  canonical_title: active shared channel
+  invariant_definition: A shared communicative environment presently functioning as
+    the common exchange context of multiple participant endpoints.
+  fixed_generated_fields:
+    family: CON
+    address: '021'
+    universal_slot: active collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    family_onset: wu
+    local_compact_root: nik
+    canonical_transliteration: wu·nik
+    formal_carrier: wu-ma-nu-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - 0
+- canonical_id: CON:022
+  canonical_title: dormant shared channel
+  invariant_definition: A shared communicative environment defined for multiple participant
+    endpoints without presently functioning as their common exchange context.
+  fixed_generated_fields:
+    family: CON
+    address: '022'
+    universal_slot: dormant collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    family_onset: wu
+    local_compact_root: nin
+    canonical_transliteration: wu·nin
+    formal_carrier: wu-ma-nu-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -4
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 117
+  provisional_count_after: 207
+  unreviewed_chunks_after: 23
+  future_change_policy: explicit versioned migration required
+  next_review_packet: CON:100–122
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

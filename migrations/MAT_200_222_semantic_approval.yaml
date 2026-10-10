@@ -1,0 +1,217 @@
+---
+metadata:
+  title: MAT:200–222 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.3
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: MAT:200–222
+  recommendation: reviews/MAT_200_222_recommended_spec.yaml
+  review: reviews/MAT_200_222_peer_review.md
+  validation: reviews/MAT_200_222_validation.md
+  collision_report: reviews/MAT_200_222_collision_report.md
+  stress_tests: reviews/MAT_200_222_stress_tests.yaml
+promoted_roots:
+- canonical_id: MAT:200
+  canonical_title: enduring physical work capacity
+  invariant_definition: A persistent capacity of a material bearer to supply energy
+    for producing physical change.
+  fixed_generated_fields:
+    family: MAT
+    address: '200'
+    universal_slot: stable inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: mam
+    canonical_transliteration: ba·mam
+    formal_carrier: ba-nu-ma-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+- canonical_id: MAT:201
+  canonical_title: available physical work capacity
+  invariant_definition: A material bearer's capacity to supply energy for physical
+    change that is presently available for exercise.
+  fixed_generated_fields:
+    family: MAT
+    address: '201'
+    universal_slot: active inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: mak
+    canonical_transliteration: ba·mak
+    formal_carrier: ba-nu-ma-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+- canonical_id: MAT:202
+  canonical_title: latent physical work capacity
+  invariant_definition: A material bearer's capacity to supply energy for physical
+    change that exists without being presently available for exercise.
+  fixed_generated_fields:
+    family: MAT
+    address: '202'
+    universal_slot: dormant inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: man
+    canonical_transliteration: ba·man
+    formal_carrier: ba-nu-ma-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+- canonical_id: MAT:210
+  canonical_title: established material coupling
+  invariant_definition: An established relation by which a material bearer can transmit
+    physical influence to a distinct target.
+  fixed_generated_fields:
+    family: MAT
+    address: '210'
+    universal_slot: stable outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: mom
+    canonical_transliteration: ba·mom
+    formal_carrier: ba-nu-ki-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+- canonical_id: MAT:211
+  canonical_title: active material coupling
+  invariant_definition: A relation by which a material bearer is presently transmitting
+    physical influence to a distinct target.
+  fixed_generated_fields:
+    family: MAT
+    address: '211'
+    universal_slot: active outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: mok
+    canonical_transliteration: ba·mok
+    formal_carrier: ba-nu-ki-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+- canonical_id: MAT:212
+  canonical_title: unresolved material coupling
+  invariant_definition: Whether a material bearer can transmit physical influence
+    to a distinct target is unresolved.
+  fixed_generated_fields:
+    family: MAT
+    address: '212'
+    universal_slot: unresolved outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: mon
+    canonical_transliteration: ba·mon
+    formal_carrier: ba-nu-ki-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+- canonical_id: MAT:220
+  canonical_title: established systemic material interdependence
+  invariant_definition: A stable relation in which material parts of a shared system
+    mutually constrain one another's physical states.
+  fixed_generated_fields:
+    family: MAT
+    address: '220'
+    universal_slot: stable systemic relationship
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: mim
+    canonical_transliteration: ba·mim
+    formal_carrier: ba-nu-nu-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+- canonical_id: MAT:221
+  canonical_title: active systemic material interdependence
+  invariant_definition: A relation in which material parts of a shared system are
+    presently exerting reciprocal physical influence.
+  fixed_generated_fields:
+    family: MAT
+    address: '221'
+    universal_slot: active systemic relationship
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: mik
+    canonical_transliteration: ba·mik
+    formal_carrier: ba-nu-nu-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+- canonical_id: MAT:222
+  canonical_title: potential systemic material interdependence
+  invariant_definition: An unrealized possible relation in which material parts of
+    a shared system would mutually constrain one another's physical states.
+  fixed_generated_fields:
+    family: MAT
+    address: '222'
+    universal_slot: unrealized systemic possibility
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: min
+    canonical_transliteration: ba·min
+    formal_carrier: ba-nu-nu-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 81
+  provisional_count_after: 243
+  unreviewed_chunks_after: 27
+  future_change_policy: explicit versioned migration required
+  next_review_packet: MIN:000–022
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

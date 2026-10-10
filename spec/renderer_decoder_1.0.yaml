@@ -1,0 +1,167 @@
+---
+metadata:
+  title: Era Zero Deterministic Renderer and Inverse Decoder
+  version: 1.0.0
+  status: canonical
+  formal_format: EZF-1
+  performance_profile: reference-midi-v1
+  semantic_ir_fingerprint: bf965de543f802cb095fb34287bbc063e7fc1f0c293fb6bd1d89a6482bc2ac01
+  atomic_lexicon_fingerprint: 9b2e6047a5bbd39f0b54ff2f49b569cf7e4726b361b51a62070804727efce26f
+  compound_dictionary_fingerprint: 7fe378e505f032fd58681c2bdf1f41195a1428075d20e46f66330466a4d983b5
+  controlled_english_started: false
+  general_english_started: false
+render_pipeline:
+- validate canonical semantic IR identity
+- resolve every lexical target against canonical atom or approved compound authority
+- require explicit IR bindings for every open compound slot and expand root graphs
+  with qualifier-before-head order
+- assign role register from explicit fills_role edges
+- emit family opening and address interval paths
+- append runtime ending to each atomic occurrence or compound head
+- derive speech-act contour and secondary repetition/parallel/dependency contours
+- derive edge boundary timing
+- emit literal gloss and canonical EZF identity
+formal_document:
+  semantic_layer: the complete canonical IR, retained losslessly for inverse decoding
+  performance_layer: a deterministic derived plan containing lexical events, registers,
+    relative and absolute notes, runtime tails, contours, and timing
+  literal_gloss: deterministic node-and-component ordered lexical labels; diagnostic,
+    not natural English
+  formal_identity: SHA-256 of semantic digest plus the transposition-independent relative
+    performance plan; ID is EZF:<first 24 lowercase hexadecimal digits>
+  transposition: anchor_midi and all absolute notes are presentation data excluded
+    from formal identity and decoded semantic equality
+reference_pitch_profile:
+  anchor_midi_default: 60
+  anchor_name: C4 under MIDI convention; any integer 24–96 is valid
+  register_offsets_semitones:
+    low: -12
+    middle: 0
+    high: 12
+    sustained_background: -5
+  family_opening: register base plus the family's fixed harmonic-signature semitone
+    offsets
+  address_path: register base plus the root's fixed relative note path
+  identity_rule: interval relations identify meaning; exact pitch does not
+runtime_endings:
+  0:
+    rule: from the address-final note, descend one semitone
+    articulation: sharp stop
+    reference_duration_beats: 0.25
+  1:
+    rule: return firmly to the phrase/register starting pitch
+    articulation: firm return
+    reference_duration_beats: 0.5
+  2:
+    name: num
+    rule: from the address-final note, rise seven semitones (a perfect fifth)
+    articulation: sustain
+    reference_duration_beats: 2.0
+contours:
+  primary:
+    assertion: level
+    question: rising
+    command: sharply_falling
+    definition: rise_then_return
+    possibility: fall_then_rise
+  reference_relative_paths:
+    level:
+    - 0
+    - 0
+    rising:
+    - 0
+    - 2
+    sharply_falling:
+    - 0
+    - -4
+    rise_then_return:
+    - 0
+    - 2
+    - 0
+    fall_then_rise:
+    - 0
+    - -2
+    - 2
+  secondary:
+    repetition: repeated_loop
+    parallel: overlapping_phrases
+    condition_or_dependency: unresolved_ending
+  rule: Contour conveys grammar and never replaces the runtime ending or lexical address
+    path.
+timing:
+  reference_beats:
+    no_gap: 0.0
+    short_gap: 0.5
+    medium_gap: 1.0
+    long_gap: 2.0
+    overlap: 0.0
+    repeated_pulse: 0.5
+  edge_mapping:
+    qualifies: no_gap
+    fills_role: short_gap
+    ordinary_structural_edge: medium_gap
+    parallel_membership: overlap
+    statement_end: long_gap
+    repetition: repeated_pulse
+  rule: Beat values are a versioned reference performance profile; boundary categories
+    carry grammar.
+registers:
+  core:
+    low:
+    - actor
+    - source
+    - cause
+    middle:
+    - predicate and all roles without a specialized profile
+    high:
+    - target
+    - result
+    - destination
+    - recipient
+    - beneficiary
+    sustained_background:
+    - environment
+    - persistent_condition
+    - location
+    - time
+  selection: high, then low, then sustained-background, then middle when one occurrence
+    fills multiple roles
+  compound_rule: Components inherit the external occurrence register; only the compound
+    head receives the occurrence runtime ending. Every open participant slot must
+    be bound by an explicit IR fills_role edge before rendering.
+decoder:
+  checks:
+  - EZF format
+  - semantic digest
+  - UTT identity
+  - lexical authority
+  - generated transliteration
+  - carrier
+  - relative path
+  - absolute transposition
+  - runtime ending
+  - register
+  - contour
+  - timing
+  - literal gloss
+  - EZF identity
+  result: the exact canonical semantic IR
+  presentation_exclusions:
+  - anchor_midi
+  - absolute notes
+  - reference durations
+  corruption_policy: Any mismatch is a structured decode error; the decoder never
+    repairs or guesses.
+round_trip_contract:
+  equation: decode(render(IR, anchor)) = IR
+  anchors:
+  - 48
+  - 60
+  - 72
+  semantic_comparison: exact deep equality of canonical IR
+  transposition_test: relative plan and semantic result remain identical while every
+    absolute note shifts by the anchor delta
+implementation:
+  library: tools/lib/era_zero_renderer.rb
+  render_cli: tools/render_ir.rb
+  decode_cli: tools/decode_formal.rb

@@ -1,0 +1,1143 @@
+---
+metadata:
+  version: 1.0.0
+  sense_count: 436
+  lemma_count: 419
+exact_atom_labels:
+- input: continuous self
+  expected_route: atom
+  expected_target: LIF:000
+- input: conscious self
+  expected_route: atom
+  expected_target: LIF:001
+- input: dormant self
+  expected_route: atom
+  expected_target: LIF:002
+- input: identified other
+  expected_route: atom
+  expected_target: LIF:010
+- input: conscious other
+  expected_route: atom
+  expected_target: LIF:011
+- input: dormant other
+  expected_route: atom
+  expected_target: LIF:012
+- input: life-kind
+  expected_route: atom
+  expected_target: LIF:020
+- input: living community
+  expected_route: atom
+  expected_target: LIF:021
+- input: dormant lineage
+  expected_route: atom
+  expected_target: LIF:022
+- input: completed self-development
+  expected_route: atom
+  expected_target: LIF:100
+- input: awaken or activate oneself
+  expected_route: atom
+  expected_target: LIF:101
+- input: readiness for self-awakening
+  expected_route: atom
+  expected_target: LIF:102
+- input: completed awakening of another
+  expected_route: atom
+  expected_target: LIF:110
+- input: actively awaken another
+  expected_route: atom
+  expected_target: LIF:111
+- input: prepare another for awakening
+  expected_route: atom
+  expected_target: LIF:112
+- input: completed development of a living system
+  expected_route: atom
+  expected_target: LIF:120
+- input: cause a living population to grow
+  expected_route: atom
+  expected_target: LIF:121
+- input: preserve life for future growth
+  expected_route: atom
+  expected_target: LIF:122
+- input: stable viability
+  expected_route: atom
+  expected_target: LIF:200
+- input: active vitality
+  expected_route: atom
+  expected_target: LIF:201
+- input: dormant life-potential
+  expected_route: atom
+  expected_target: LIF:202
+- input: established life-bond
+  expected_route: atom
+  expected_target: LIF:210
+- input: active care
+  expected_route: atom
+  expected_target: LIF:211
+- input: possible or unresolved kinship
+  expected_route: atom
+  expected_target: LIF:212
+- input: stable biosystem
+  expected_route: atom
+  expected_target: LIF:220
+- input: active living network
+  expected_route: atom
+  expected_target: LIF:221
+- input: unrealized life
+  expected_route: atom
+  expected_target: LIF:222
+- input: origin position
+  expected_route: atom
+  expected_target: MOV:000
+- input: present position
+  expected_route: atom
+  expected_target: MOV:001
+- input: retained position
+  expected_route: atom
+  expected_target: MOV:002
+- input: defined destination
+  expected_route: atom
+  expected_target: MOV:010
+- input: active destination
+  expected_route: atom
+  expected_target: MOV:011
+- input: pending destination
+  expected_route: atom
+  expected_target: MOV:012
+- input: established route
+  expected_route: atom
+  expected_target: MOV:020
+- input: active flow network
+  expected_route: atom
+  expected_target: MOV:021
+- input: dormant route system
+  expected_route: atom
+  expected_target: MOV:022
+- input: completed source departure
+  expected_route: atom
+  expected_target: MOV:100
+- input: active source departure
+  expected_route: atom
+  expected_target: MOV:101
+- input: potential source departure
+  expected_route: atom
+  expected_target: MOV:102
+- input: completed target arrival
+  expected_route: atom
+  expected_target: MOV:110
+- input: active target approach
+  expected_route: atom
+  expected_target: MOV:111
+- input: potential target approach
+  expected_route: atom
+  expected_target: MOV:112
+- input: completed shared-frame movement
+  expected_route: atom
+  expected_target: MOV:120
+- input: active shared-frame movement
+  expected_route: atom
+  expected_target: MOV:121
+- input: potential shared-frame movement
+  expected_route: atom
+  expected_target: MOV:122
+- input: enduring self-mobility
+  expected_route: atom
+  expected_target: MOV:200
+- input: available self-mobility
+  expected_route: atom
+  expected_target: MOV:201
+- input: latent self-mobility
+  expected_route: atom
+  expected_target: MOV:202
+- input: established target-relative position
+  expected_route: atom
+  expected_target: MOV:210
+- input: live target-relative position
+  expected_route: atom
+  expected_target: MOV:211
+- input: unresolved target-relative position
+  expected_route: atom
+  expected_target: MOV:212
+- input: established shared-frame configuration
+  expected_route: atom
+  expected_target: MOV:220
+- input: live shared-frame configuration
+  expected_route: atom
+  expected_target: MOV:221
+- input: potential shared-frame configuration
+  expected_route: atom
+  expected_target: MOV:222
+- input: persistent material substrate
+  expected_route: atom
+  expected_target: MAT:000
+- input: active material substrate
+  expected_route: atom
+  expected_target: MAT:001
+- input: dormant material substrate
+  expected_route: atom
+  expected_target: MAT:002
+- input: distinct material object
+  expected_route: atom
+  expected_target: MAT:010
+- input: active material object
+  expected_route: atom
+  expected_target: MAT:011
+- input: dormant material object
+  expected_route: atom
+  expected_target: MAT:012
+- input: stable material aggregate
+  expected_route: atom
+  expected_target: MAT:020
+- input: active material aggregate
+  expected_route: atom
+  expected_target: MAT:021
+- input: dormant material aggregate
+  expected_route: atom
+  expected_target: MAT:022
+- input: completed focal material change
+  expected_route: atom
+  expected_target: MAT:100
+- input: active focal material change
+  expected_route: atom
+  expected_target: MAT:101
+- input: potential focal material change
+  expected_route: atom
+  expected_target: MAT:102
+- input: completed target material change
+  expected_route: atom
+  expected_target: MAT:110
+- input: active target material change
+  expected_route: atom
+  expected_target: MAT:111
+- input: potential target material change
+  expected_route: atom
+  expected_target: MAT:112
+- input: completed systemic material change
+  expected_route: atom
+  expected_target: MAT:120
+- input: active systemic material change
+  expected_route: atom
+  expected_target: MAT:121
+- input: potential systemic material change
+  expected_route: atom
+  expected_target: MAT:122
+- input: enduring physical work capacity
+  expected_route: atom
+  expected_target: MAT:200
+- input: available physical work capacity
+  expected_route: atom
+  expected_target: MAT:201
+- input: latent physical work capacity
+  expected_route: atom
+  expected_target: MAT:202
+- input: established material coupling
+  expected_route: atom
+  expected_target: MAT:210
+- input: active material coupling
+  expected_route: atom
+  expected_target: MAT:211
+- input: unresolved material coupling
+  expected_route: atom
+  expected_target: MAT:212
+- input: established systemic material interdependence
+  expected_route: atom
+  expected_target: MAT:220
+- input: active systemic material interdependence
+  expected_route: atom
+  expected_target: MAT:221
+- input: potential systemic material interdependence
+  expected_route: atom
+  expected_target: MAT:222
+- input: persistent self-representation
+  expected_route: atom
+  expected_target: MIN:000
+- input: manifest self-representation
+  expected_route: atom
+  expected_target: MIN:001
+- input: latent self-representation
+  expected_route: atom
+  expected_target: MIN:002
+- input: persistent target representation
+  expected_route: atom
+  expected_target: MIN:010
+- input: manifest target representation
+  expected_route: atom
+  expected_target: MIN:011
+- input: latent target representation
+  expected_route: atom
+  expected_target: MIN:012
+- input: persistent shared cognitive schema
+  expected_route: atom
+  expected_target: MIN:020
+- input: manifest shared cognitive schema
+  expected_route: atom
+  expected_target: MIN:021
+- input: latent shared cognitive schema
+  expected_route: atom
+  expected_target: MIN:022
+- input: completed self-model revision
+  expected_route: atom
+  expected_target: MIN:100
+- input: active self-model revision
+  expected_route: atom
+  expected_target: MIN:101
+- input: nonactualized self-model revision
+  expected_route: atom
+  expected_target: MIN:102
+- input: completed target-model revision
+  expected_route: atom
+  expected_target: MIN:110
+- input: active target-model revision
+  expected_route: atom
+  expected_target: MIN:111
+- input: nonactualized target-model revision
+  expected_route: atom
+  expected_target: MIN:112
+- input: completed shared-schema revision
+  expected_route: atom
+  expected_target: MIN:120
+- input: active shared-schema revision
+  expected_route: atom
+  expected_target: MIN:121
+- input: nonactualized shared-schema revision
+  expected_route: atom
+  expected_target: MIN:122
+- input: enduring attentional capacity
+  expected_route: atom
+  expected_target: MIN:200
+- input: available attentional capacity
+  expected_route: atom
+  expected_target: MIN:201
+- input: latent attentional capacity
+  expected_route: atom
+  expected_target: MIN:202
+- input: established target-attention relation
+  expected_route: atom
+  expected_target: MIN:210
+- input: active target attention
+  expected_route: atom
+  expected_target: MIN:211
+- input: unresolved target-attention relation
+  expected_route: atom
+  expected_target: MIN:212
+- input: established joint-attention relation
+  expected_route: atom
+  expected_target: MIN:220
+- input: active joint attention
+  expected_route: atom
+  expected_target: MIN:221
+- input: potential joint attention
+  expected_route: atom
+  expected_target: MIN:222
+- input: persistent source endpoint
+  expected_route: atom
+  expected_target: CON:000
+- input: active source endpoint
+  expected_route: atom
+  expected_target: CON:001
+- input: dormant source endpoint
+  expected_route: atom
+  expected_target: CON:002
+- input: persistent target endpoint
+  expected_route: atom
+  expected_target: CON:010
+- input: active target endpoint
+  expected_route: atom
+  expected_target: CON:011
+- input: dormant target endpoint
+  expected_route: atom
+  expected_target: CON:012
+- input: persistent shared channel
+  expected_route: atom
+  expected_target: CON:020
+- input: active shared channel
+  expected_route: atom
+  expected_target: CON:021
+- input: dormant shared channel
+  expected_route: atom
+  expected_target: CON:022
+- input: completed source expression
+  expected_route: atom
+  expected_target: CON:100
+- input: active source expression
+  expected_route: atom
+  expected_target: CON:101
+- input: potential source expression
+  expected_route: atom
+  expected_target: CON:102
+- input: completed target reception
+  expected_route: atom
+  expected_target: CON:110
+- input: active target reception
+  expected_route: atom
+  expected_target: CON:111
+- input: potential target reception
+  expected_route: atom
+  expected_target: CON:112
+- input: completed shared distribution
+  expected_route: atom
+  expected_target: CON:120
+- input: active shared distribution
+  expected_route: atom
+  expected_target: CON:121
+- input: potential shared distribution
+  expected_route: atom
+  expected_target: CON:122
+- input: enduring communicative participation capacity
+  expected_route: atom
+  expected_target: CON:200
+- input: available communicative participation capacity
+  expected_route: atom
+  expected_target: CON:201
+- input: latent communicative participation capacity
+  expected_route: atom
+  expected_target: CON:202
+- input: established directed communication relation
+  expected_route: atom
+  expected_target: CON:210
+- input: operative directed communication relation
+  expected_route: atom
+  expected_target: CON:211
+- input: unresolved directed communication relation
+  expected_route: atom
+  expected_target: CON:212
+- input: enduring shared-participation relation
+  expected_route: atom
+  expected_target: CON:220
+- input: operative shared-participation relation
+  expected_route: atom
+  expected_target: CON:221
+- input: potential shared-participation relation
+  expected_route: atom
+  expected_target: CON:222
+- input: persistent constituent position
+  expected_route: atom
+  expected_target: STR:000
+- input: occupied constituent position
+  expected_route: atom
+  expected_target: STR:001
+- input: vacant constituent position
+  expected_route: atom
+  expected_target: STR:002
+- input: persistent structural interface
+  expected_route: atom
+  expected_target: STR:010
+- input: engaged structural interface
+  expected_route: atom
+  expected_target: STR:011
+- input: unengaged structural interface
+  expected_route: atom
+  expected_target: STR:012
+- input: persistent composite arrangement
+  expected_route: atom
+  expected_target: STR:020
+- input: instantiated composite arrangement
+  expected_route: atom
+  expected_target: STR:021
+- input: dormant composite arrangement
+  expected_route: atom
+  expected_target: STR:022
+- input: completed internal reconfiguration
+  expected_route: atom
+  expected_target: STR:100
+- input: active internal reconfiguration
+  expected_route: atom
+  expected_target: STR:101
+- input: potential internal reconfiguration
+  expected_route: atom
+  expected_target: STR:102
+- input: completed target incorporation
+  expected_route: atom
+  expected_target: STR:110
+- input: active target incorporation
+  expected_route: atom
+  expected_target: STR:111
+- input: potential target incorporation
+  expected_route: atom
+  expected_target: STR:112
+- input: completed systemic integration
+  expected_route: atom
+  expected_target: STR:120
+- input: active systemic integration
+  expected_route: atom
+  expected_target: STR:121
+- input: potential systemic integration
+  expected_route: atom
+  expected_target: STR:122
+- input: enduring internal reconfiguration capacity
+  expected_route: atom
+  expected_target: STR:200
+- input: available internal reconfiguration capacity
+  expected_route: atom
+  expected_target: STR:201
+- input: latent internal reconfiguration capacity
+  expected_route: atom
+  expected_target: STR:202
+- input: established target-incorporability relation
+  expected_route: atom
+  expected_target: STR:210
+- input: operative target-incorporability relation
+  expected_route: atom
+  expected_target: STR:211
+- input: unresolved target-incorporability relation
+  expected_route: atom
+  expected_target: STR:212
+- input: enduring systemic-integrability relation
+  expected_route: atom
+  expected_target: STR:220
+- input: operative systemic-integrability relation
+  expected_route: atom
+  expected_target: STR:221
+- input: unrealized systemic-integrability possibility
+  expected_route: atom
+  expected_target: STR:222
+- input: persistent internal fault
+  expected_route: atom
+  expected_target: WRN:000
+- input: manifest internal fault
+  expected_route: atom
+  expected_target: WRN:001
+- input: latent internal fault
+  expected_route: atom
+  expected_target: WRN:002
+- input: persistent external hazard
+  expected_route: atom
+  expected_target: WRN:010
+- input: manifest external hazard
+  expected_route: atom
+  expected_target: WRN:011
+- input: dormant external hazard
+  expected_route: atom
+  expected_target: WRN:012
+- input: persistent distributed fault
+  expected_route: atom
+  expected_target: WRN:020
+- input: manifest distributed fault
+  expected_route: atom
+  expected_target: WRN:021
+- input: latent distributed fault
+  expected_route: atom
+  expected_target: WRN:022
+- input: completed internal degradation
+  expected_route: atom
+  expected_target: WRN:100
+- input: active internal degradation
+  expected_route: atom
+  expected_target: WRN:101
+- input: nonactualized internal degradation
+  expected_route: atom
+  expected_target: WRN:102
+- input: completed target impairment
+  expected_route: atom
+  expected_target: WRN:110
+- input: active target impairment
+  expected_route: atom
+  expected_target: WRN:111
+- input: nonactualized target impairment
+  expected_route: atom
+  expected_target: WRN:112
+- input: completed systemic propagation
+  expected_route: atom
+  expected_target: WRN:120
+- input: active systemic propagation
+  expected_route: atom
+  expected_target: WRN:121
+- input: nonactualized systemic propagation
+  expected_route: atom
+  expected_target: WRN:122
+- input: persistent internal susceptibility
+  expected_route: atom
+  expected_target: WRN:200
+- input: operative internal susceptibility
+  expected_route: atom
+  expected_target: WRN:201
+- input: latent internal susceptibility
+  expected_route: atom
+  expected_target: WRN:202
+- input: persistent source-target exposure relation
+  expected_route: atom
+  expected_target: WRN:210
+- input: operative source-target exposure relation
+  expected_route: atom
+  expected_target: WRN:211
+- input: latent source-target exposure relation
+  expected_route: atom
+  expected_target: WRN:212
+- input: persistent systemic propagation pathway
+  expected_route: atom
+  expected_target: WRN:220
+- input: operative systemic propagation pathway
+  expected_route: atom
+  expected_target: WRN:221
+- input: latent systemic propagation pathway
+  expected_route: atom
+  expected_target: WRN:222
+- input: persistent internal restoration condition
+  expected_route: atom
+  expected_target: REP:000
+- input: manifest internal restoration condition
+  expected_route: atom
+  expected_target: REP:001
+- input: dormant internal restoration condition
+  expected_route: atom
+  expected_target: REP:002
+- input: persistent target restoration condition
+  expected_route: atom
+  expected_target: REP:010
+- input: manifest target restoration condition
+  expected_route: atom
+  expected_target: REP:011
+- input: dormant target restoration condition
+  expected_route: atom
+  expected_target: REP:012
+- input: persistent shared restoration condition
+  expected_route: atom
+  expected_target: REP:020
+- input: manifest shared restoration condition
+  expected_route: atom
+  expected_target: REP:021
+- input: dormant shared restoration condition
+  expected_route: atom
+  expected_target: REP:022
+- input: completed internal restoration
+  expected_route: atom
+  expected_target: REP:100
+- input: active internal restoration
+  expected_route: atom
+  expected_target: REP:101
+- input: nonactualized internal restoration
+  expected_route: atom
+  expected_target: REP:102
+- input: completed target restoration
+  expected_route: atom
+  expected_target: REP:110
+- input: active target restoration
+  expected_route: atom
+  expected_target: REP:111
+- input: nonactualized target restoration
+  expected_route: atom
+  expected_target: REP:112
+- input: completed systemic restoration
+  expected_route: atom
+  expected_target: REP:120
+- input: active systemic restoration
+  expected_route: atom
+  expected_target: REP:121
+- input: nonactualized systemic restoration
+  expected_route: atom
+  expected_target: REP:122
+- input: persistent internal recoverability
+  expected_route: atom
+  expected_target: REP:200
+- input: operative internal recoverability
+  expected_route: atom
+  expected_target: REP:201
+- input: latent internal recoverability
+  expected_route: atom
+  expected_target: REP:202
+- input: persistent source-target restorative relation
+  expected_route: atom
+  expected_target: REP:210
+- input: operative source-target restorative relation
+  expected_route: atom
+  expected_target: REP:211
+- input: latent source-target restorative relation
+  expected_route: atom
+  expected_target: REP:212
+- input: persistent systemic restoration pathway
+  expected_route: atom
+  expected_target: REP:220
+- input: operative systemic restoration pathway
+  expected_route: atom
+  expected_target: REP:221
+- input: latent systemic restoration pathway
+  expected_route: atom
+  expected_target: REP:222
+- input: persistent internal formal criterion
+  expected_route: atom
+  expected_target: LOG:000
+- input: operative internal formal criterion
+  expected_route: atom
+  expected_target: LOG:001
+- input: dormant internal formal criterion
+  expected_route: atom
+  expected_target: LOG:002
+- input: persistent target-directed formal constraint
+  expected_route: atom
+  expected_target: LOG:010
+- input: operative target-directed formal constraint
+  expected_route: atom
+  expected_target: LOG:011
+- input: dormant target-directed formal constraint
+  expected_route: atom
+  expected_target: LOG:012
+- input: persistent shared formal regime
+  expected_route: atom
+  expected_target: LOG:020
+- input: operative shared formal regime
+  expected_route: atom
+  expected_target: LOG:021
+- input: dormant shared formal regime
+  expected_route: atom
+  expected_target: LOG:022
+- input: completed internal formal evaluation
+  expected_route: atom
+  expected_target: LOG:100
+- input: active internal formal evaluation
+  expected_route: atom
+  expected_target: LOG:101
+- input: nonactualized internal formal evaluation
+  expected_route: atom
+  expected_target: LOG:102
+- input: completed target constraint application
+  expected_route: atom
+  expected_target: LOG:110
+- input: active target constraint application
+  expected_route: atom
+  expected_target: LOG:111
+- input: nonactualized target constraint application
+  expected_route: atom
+  expected_target: LOG:112
+- input: completed systemic regime evaluation
+  expected_route: atom
+  expected_target: LOG:120
+- input: active systemic regime evaluation
+  expected_route: atom
+  expected_target: LOG:121
+- input: nonactualized systemic regime evaluation
+  expected_route: atom
+  expected_target: LOG:122
+- input: persistent internal formal evaluability
+  expected_route: atom
+  expected_target: LOG:200
+- input: operative internal formal evaluability
+  expected_route: atom
+  expected_target: LOG:201
+- input: latent internal formal evaluability
+  expected_route: atom
+  expected_target: LOG:202
+- input: persistent constraint-target applicability
+  expected_route: atom
+  expected_target: LOG:210
+- input: operative constraint-target applicability
+  expected_route: atom
+  expected_target: LOG:211
+- input: latent constraint-target applicability
+  expected_route: atom
+  expected_target: LOG:212
+- input: persistent systemic joint-evaluability
+  expected_route: atom
+  expected_target: LOG:220
+- input: operative systemic joint-evaluability
+  expected_route: atom
+  expected_target: LOG:221
+- input: latent systemic joint-evaluability
+  expected_route: atom
+  expected_target: LOG:222
+- input: persistent internal datum
+  expected_route: atom
+  expected_target: DAT:000
+- input: manifest internal datum
+  expected_route: atom
+  expected_target: DAT:001
+- input: dormant internal datum
+  expected_route: atom
+  expected_target: DAT:002
+- input: persistent target reference
+  expected_route: atom
+  expected_target: DAT:010
+- input: manifest target reference
+  expected_route: atom
+  expected_target: DAT:011
+- input: dormant target reference
+  expected_route: atom
+  expected_target: DAT:012
+- input: persistent shared dataset
+  expected_route: atom
+  expected_target: DAT:020
+- input: manifest shared dataset
+  expected_route: atom
+  expected_target: DAT:021
+- input: dormant shared dataset
+  expected_route: atom
+  expected_target: DAT:022
+- input: completed internal data transformation
+  expected_route: atom
+  expected_target: DAT:100
+- input: active internal data transformation
+  expected_route: atom
+  expected_target: DAT:101
+- input: nonactualized internal data transformation
+  expected_route: atom
+  expected_target: DAT:102
+- input: completed target data transfer
+  expected_route: atom
+  expected_target: DAT:110
+- input: active target data transfer
+  expected_route: atom
+  expected_target: DAT:111
+- input: nonactualized target data transfer
+  expected_route: atom
+  expected_target: DAT:112
+- input: completed systemic data synchronization
+  expected_route: atom
+  expected_target: DAT:120
+- input: active systemic data synchronization
+  expected_route: atom
+  expected_target: DAT:121
+- input: nonactualized systemic data synchronization
+  expected_route: atom
+  expected_target: DAT:122
+- input: persistent internal data transformability
+  expected_route: atom
+  expected_target: DAT:200
+- input: operative internal data transformability
+  expected_route: atom
+  expected_target: DAT:201
+- input: latent internal data transformability
+  expected_route: atom
+  expected_target: DAT:202
+- input: persistent source-target data transferability
+  expected_route: atom
+  expected_target: DAT:210
+- input: operative source-target data transferability
+  expected_route: atom
+  expected_target: DAT:211
+- input: latent source-target data transferability
+  expected_route: atom
+  expected_target: DAT:212
+- input: persistent systemic data synchronizability
+  expected_route: atom
+  expected_target: DAT:220
+- input: operative systemic data synchronizability
+  expected_route: atom
+  expected_target: DAT:221
+- input: latent systemic data synchronizability
+  expected_route: atom
+  expected_target: DAT:222
+- input: persistent internal generative pattern
+  expected_route: atom
+  expected_target: CRE:000
+- input: manifest internal generative pattern
+  expected_route: atom
+  expected_target: CRE:001
+- input: dormant internal generative pattern
+  expected_route: atom
+  expected_target: CRE:002
+- input: persistent generated artifact
+  expected_route: atom
+  expected_target: CRE:010
+- input: manifest generated artifact
+  expected_route: atom
+  expected_target: CRE:011
+- input: dormant generated artifact
+  expected_route: atom
+  expected_target: CRE:012
+- input: persistent shared generative repertoire
+  expected_route: atom
+  expected_target: CRE:020
+- input: manifest shared generative repertoire
+  expected_route: atom
+  expected_target: CRE:021
+- input: dormant shared generative repertoire
+  expected_route: atom
+  expected_target: CRE:022
+- input: completed internal pattern formation
+  expected_route: atom
+  expected_target: CRE:100
+- input: active internal pattern formation
+  expected_route: atom
+  expected_target: CRE:101
+- input: nonactualized internal pattern formation
+  expected_route: atom
+  expected_target: CRE:102
+- input: completed artifact generation
+  expected_route: atom
+  expected_target: CRE:110
+- input: active artifact generation
+  expected_route: atom
+  expected_target: CRE:111
+- input: nonactualized artifact generation
+  expected_route: atom
+  expected_target: CRE:112
+- input: completed systemic co-generation
+  expected_route: atom
+  expected_target: CRE:120
+- input: active systemic co-generation
+  expected_route: atom
+  expected_target: CRE:121
+- input: nonactualized systemic co-generation
+  expected_route: atom
+  expected_target: CRE:122
+- input: persistent internal pattern-forming capacity
+  expected_route: atom
+  expected_target: CRE:200
+- input: operative internal pattern-forming capacity
+  expected_route: atom
+  expected_target: CRE:201
+- input: latent internal pattern-forming capacity
+  expected_route: atom
+  expected_target: CRE:202
+- input: persistent source-artifact generative relation
+  expected_route: atom
+  expected_target: CRE:210
+- input: operative source-artifact generative relation
+  expected_route: atom
+  expected_target: CRE:211
+- input: latent source-artifact generative relation
+  expected_route: atom
+  expected_target: CRE:212
+- input: persistent systemic co-generative capacity
+  expected_route: atom
+  expected_target: CRE:220
+- input: operative systemic co-generative capacity
+  expected_route: atom
+  expected_target: CRE:221
+- input: latent systemic co-generative capacity
+  expected_route: atom
+  expected_target: CRE:222
+- input: persistent source-ground condition
+  expected_route: atom
+  expected_target: ORI:000
+- input: operative source-ground condition
+  expected_route: atom
+  expected_target: ORI:001
+- input: latent source-ground condition
+  expected_route: atom
+  expected_target: ORI:002
+- input: persistent distinct-existence condition
+  expected_route: atom
+  expected_target: ORI:010
+- input: occurrent distinct-existence condition
+  expected_route: atom
+  expected_target: ORI:011
+- input: latent distinct-existence condition
+  expected_route: atom
+  expected_target: ORI:012
+- input: persistent shared-world condition
+  expected_route: atom
+  expected_target: ORI:020
+- input: occurrent shared-world condition
+  expected_route: atom
+  expected_target: ORI:021
+- input: latent shared-world condition
+  expected_route: atom
+  expected_target: ORI:022
+- input: completed source-ground establishment
+  expected_route: atom
+  expected_target: ORI:100
+- input: active source-ground establishment
+  expected_route: atom
+  expected_target: ORI:101
+- input: nonactualized source-ground establishment
+  expected_route: atom
+  expected_target: ORI:102
+- input: completed distinct actualization
+  expected_route: atom
+  expected_target: ORI:110
+- input: active distinct actualization
+  expected_route: atom
+  expected_target: ORI:111
+- input: nonactualized distinct actualization
+  expected_route: atom
+  expected_target: ORI:112
+- input: completed shared-world transition
+  expected_route: atom
+  expected_target: ORI:120
+- input: active shared-world transition
+  expected_route: atom
+  expected_target: ORI:121
+- input: nonactualized shared-world transition
+  expected_route: atom
+  expected_target: ORI:122
+- input: persistent source-grounding capacity
+  expected_route: atom
+  expected_target: ORI:200
+- input: operative source-grounding capacity
+  expected_route: atom
+  expected_target: ORI:201
+- input: latent source-grounding capacity
+  expected_route: atom
+  expected_target: ORI:202
+- input: persistent target-ground dependence
+  expected_route: atom
+  expected_target: ORI:210
+- input: operative target-ground dependence
+  expected_route: atom
+  expected_target: ORI:211
+- input: latent target-ground dependence
+  expected_route: atom
+  expected_target: ORI:212
+- input: persistent shared-world constraint
+  expected_route: atom
+  expected_target: ORI:220
+- input: operative shared-world constraint
+  expected_route: atom
+  expected_target: ORI:221
+- input: latent shared-world constraint
+  expected_route: atom
+  expected_target: ORI:222
+exact_compound_labels:
+- input: physical tool
+  expected_route: compound
+  expected_target: CMP:111b772027accab2054f0415
+- input: living communication network
+  expected_route: compound
+  expected_target: CMP:218a5578a2274b92ba3d72db
+- input: physical repair
+  expected_route: compound
+  expected_target: CMP:22f8ddc4d9b2d1a818d38e9f
+- input: shared-world law
+  expected_route: compound
+  expected_target: CMP:2d26353b47b531bd3f5ae090
+- input: dormant living body
+  expected_route: compound
+  expected_target: CMP:2d993bb1d93b7d24d303e364
+- input: program definition
+  expected_route: compound
+  expected_target: CMP:2f350e7d8e5dfba4a802d82d
+- input: living body
+  expected_route: compound
+  expected_target: CMP:3122dedcff0f85ad293e2580
+- input: backup dataset
+  expected_route: compound
+  expected_target: CMP:33c135410b0deef525b6770d
+- input: material biosystem
+  expected_route: compound
+  expected_target: CMP:4144fad413b8ce5012088c61
+- input: shared knowledge base
+  expected_route: compound
+  expected_target: CMP:44173561806bc8f334a0b7c9
+- input: formal ontological dependence
+  expected_route: compound
+  expected_target: CMP:578fd06e1dec6f91d2b35add
+- input: message datum
+  expected_route: compound
+  expected_target: CMP:608ecb4f3c515a9c9a3443ec
+- input: material artifact
+  expected_route: compound
+  expected_target: CMP:61bfb0de7a1e9d7f5b981725
+- input: data transfer channel
+  expected_route: compound
+  expected_target: CMP:725868579ebb0e2ef83cf708
+- input: directed data link
+  expected_route: compound
+  expected_target: CMP:742b44d9ead66b451346708a
+- input: machine
+  expected_route: compound
+  expected_target: CMP:8e5ae722d9e5e31f85ac3c5b
+- input: synchronized data network
+  expected_route: compound
+  expected_target: CMP:8f05a5e16a897935492726fa
+- input: material route
+  expected_route: compound
+  expected_target: CMP:919b714e6201a462756224a2
+- input: shared message collection
+  expected_route: compound
+  expected_target: CMP:99a87c8869d58498f524f1cc
+- input: dormant program
+  expected_route: compound
+  expected_target: CMP:9e8b36f50570a0c3c362a968
+- input: composite artifact
+  expected_route: compound
+  expected_target: CMP:a7fc0ca38a6f95a40cdb87b1
+- input: data repair
+  expected_route: compound
+  expected_target: CMP:b518a324d776e46e9d0ff041
+- input: material hazard
+  expected_route: compound
+  expected_target: CMP:cb0812face56f90b7ba139c5
+- input: addressed message
+  expected_route: compound
+  expected_target: CMP:d98407801d64c085f702c9db
+- input: dormant machine
+  expected_route: compound
+  expected_target: CMP:e152ea538409460a93b99b90
+- input: generated living being
+  expected_route: compound
+  expected_target: CMP:e2af90ba78681e87e68450e5
+- input: structural repair
+  expected_route: compound
+  expected_target: CMP:e799b436d9c5e7d87a5516fa
+- input: physical injury
+  expected_route: compound
+  expected_target: CMP:f1abd5eccdf06d92d5690a32
+polysemy_tests:
+- input: go
+  expected: requires_disambiguation
+  minimum_senses: 2
+- input: move
+  expected: requires_disambiguation
+  minimum_senses: 2
+- input: run
+  expected: requires_disambiguation
+  minimum_senses: 2
+- input: return
+  expected: requires_disambiguation
+  minimum_senses: 2
+- input: send
+  expected: requires_disambiguation
+  minimum_senses: 2
+- input: receive
+  expected: requires_disambiguation
+  minimum_senses: 2
+- input: share
+  expected: requires_disambiguation
+  minimum_senses: 2
+- input: change
+  expected: requires_disambiguation
+  minimum_senses: 2
+- input: know
+  expected: requires_disambiguation
+  minimum_senses: 2
+- input: exist
+  expected: requires_disambiguation
+  minimum_senses: 2
+- input: have
+  expected: requires_disambiguation
+  minimum_senses: 2
+- input: home
+  expected: requires_disambiguation
+  minimum_senses: 2
+gap_tests:
+- input: water
+  expected_route: gap
+- input: food
+  expected_route: gap
+- input: friend
+  expected_route: gap
+- input: safe
+  expected_route: gap
+- input: 'true'
+  expected_route: gap
+grammar_tests:
+- input: not
+  expected_route: grammar
+- input: and
+  expected_route: grammar
+- input: or
+  expected_route: grammar
+- input: one
+  expected_route: grammar
+- input: many
+  expected_route: grammar
+- input: cause
+  expected_route: grammar
+ir_tests:
+- input: wait
+  expected_route: semantic_ir
+- input: pause
+  expected_route: semantic_ir
+- input: stop
+  expected_route: semantic_ir
+- input: continue
+  expected_route: semantic_ir
+- input: transport
+  expected_route: semantic_ir
+- input: before
+  expected_route: semantic_ir
+- input: after
+  expected_route: semantic_ir
+- input: past
+  expected_route: semantic_ir
+- input: future
+  expected_route: semantic_ir

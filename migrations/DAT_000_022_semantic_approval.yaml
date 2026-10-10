@@ -1,0 +1,232 @@
+---
+metadata:
+  title: DAT:000–022 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.22
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: DAT:000–022
+  recommendation: reviews/DAT_000_022_recommended_spec.yaml
+  review: reviews/DAT_000_022_peer_review.md
+  validation: reviews/DAT_000_022_validation.md
+  soundness: reviews/DAT_000_022_soundness_audit.md
+  collision_report: reviews/DAT_000_022_collision_report.md
+  stress_tests: reviews/DAT_000_022_stress_tests.yaml
+promoted_roots:
+- canonical_id: DAT:000
+  canonical_title: persistent internal datum
+  invariant_definition: A persistent bounded information object maintained within
+    one reference entity, independently of whether that information object is presently
+    manifest.
+  fixed_generated_fields:
+    family: DAT
+    address: '000'
+    universal_slot: stable inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: nam
+    canonical_transliteration: li·nam
+    formal_carrier: li-ma-ma-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 0
+- canonical_id: DAT:001
+  canonical_title: manifest internal datum
+  invariant_definition: A bounded information object that is presently manifest within
+    one reference entity.
+  fixed_generated_fields:
+    family: DAT
+    address: '001'
+    universal_slot: active inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: nak
+    canonical_transliteration: li·nak
+    formal_carrier: li-ma-ma-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 2
+- canonical_id: DAT:002
+  canonical_title: dormant internal datum
+  invariant_definition: A bounded information object that remains maintained within
+    one reference entity without being presently manifest.
+  fixed_generated_fields:
+    family: DAT
+    address: '002'
+    universal_slot: dormant inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: nan
+    canonical_transliteration: li·nan
+    formal_carrier: li-ma-ma-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - -2
+- canonical_id: DAT:010
+  canonical_title: persistent target reference
+  invariant_definition: A persistent bounded information object whose content denotes
+    one distinct reference target, independently of whether that referential content
+    is presently manifest.
+  fixed_generated_fields:
+    family: DAT
+    address: '010'
+    universal_slot: stable outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: nom
+    canonical_transliteration: li·nom
+    formal_carrier: li-ma-ki-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 2
+- canonical_id: DAT:011
+  canonical_title: manifest target reference
+  invariant_definition: A bounded information object whose content presently manifests
+    a reference to one distinct reference target.
+  fixed_generated_fields:
+    family: DAT
+    address: '011'
+    universal_slot: active outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: nok
+    canonical_transliteration: li·nok
+    formal_carrier: li-ma-ki-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 4
+- canonical_id: DAT:012
+  canonical_title: dormant target reference
+  invariant_definition: A bounded information object whose content denotes one distinct
+    reference target without presently manifesting that reference.
+  fixed_generated_fields:
+    family: DAT
+    address: '012'
+    universal_slot: dormant outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: non
+    canonical_transliteration: li·non
+    formal_carrier: li-ma-ki-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 0
+- canonical_id: DAT:020
+  canonical_title: persistent shared dataset
+  invariant_definition: A persistent coordinated collection of information objects
+    maintained as one shared dataset across multiple participants in one information
+    domain, independently of whether that dataset is presently manifest.
+  fixed_generated_fields:
+    family: DAT
+    address: '020'
+    universal_slot: stable collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: nim
+    canonical_transliteration: li·nim
+    formal_carrier: li-ma-nu-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -2
+- canonical_id: DAT:021
+  canonical_title: manifest shared dataset
+  invariant_definition: A coordinated collection of information objects that is presently
+    manifest as one shared dataset across multiple participants in one information
+    domain.
+  fixed_generated_fields:
+    family: DAT
+    address: '021'
+    universal_slot: active collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: nik
+    canonical_transliteration: li·nik
+    formal_carrier: li-ma-nu-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - 0
+- canonical_id: DAT:022
+  canonical_title: dormant shared dataset
+  invariant_definition: A coordinated collection of information objects maintained
+    as one shared dataset across multiple participants in one information domain without
+    being presently manifest.
+  fixed_generated_fields:
+    family: DAT
+    address: '022'
+    universal_slot: dormant collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: nin
+    canonical_transliteration: li·nin
+    formal_carrier: li-ma-nu-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -4
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 252
+  provisional_count_after: 72
+  unreviewed_chunks_after: 8
+  future_change_policy: explicit versioned migration required
+  next_review_packet: DAT:100–122
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

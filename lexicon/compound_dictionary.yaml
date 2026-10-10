@@ -1,0 +1,1200 @@
+---
+metadata:
+  title: Era Zero Gate 4B High-Frequency Compound Dictionary
+  version: 1.0.0
+  status: canonical_initial_release
+  approval_basis: User delegated approval by requesting the next translator-readiness
+    stage
+  architecture: spec/compound_architecture_1.0.yaml
+  entry_count: 28
+  scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
+    not an English concept index.
+  atomic_meanings_changed: false
+  generated_fields_changed: false
+  english_index_started: false
+  semantic_ir_started: false
+  translator_started: false
+entries:
+- architecture_version: '1.0'
+  compound_id: CMP:111b772027accab2054f0415
+  content_digest: 111b772027accab2054f04158521688548f4899eb5feda420f7ace4ebefba396
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: physical tool
+  english_glosses:
+  - physical tool
+  semantic_head: h
+  invariant_definition: A generated artifact with enduring physical work capacity.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: MAT:200
+  - node_id: h
+    kind: root
+    root_id: CRE:010
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: made implements able to produce physical change
+    excludes: raw energy sources and artifacts without physical work capacity
+  collision_audit: Instrument use is not lexicalized; the compound names the artifact-capacity
+    combination only.
+  confidence: high
+  examples:
+    ordinary: a tool capable of doing physical work
+    technical: an actuator or implement
+    future_compound: may fill an instrument role in later utterance IR
+    counterexample: Do not use physical tool when only the head meaning is asserted
+      and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 111b772027accab2054f04158521688548f4899eb5feda420f7ace4ebefba396
+- architecture_version: '1.0'
+  compound_id: CMP:218a5578a2274b92ba3d72db
+  content_digest: 218a5578a2274b92ba3d72db291d07498972eeb4a076cd232ffb798e0e862989
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: living communication network
+  english_glosses:
+  - living communication network
+  semantic_head: h
+  invariant_definition: An active shared channel whose participating exchange context
+    is an active living network.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: LIF:221
+  - node_id: h
+    kind: root
+    root_id: CON:021
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: currently functioning communication networks constituted by living participants
+    excludes: inactive communities and channels without living-network participation
+  collision_audit: CON is head; LIF restricts participant-system character.
+  confidence: high
+  examples:
+    ordinary: a community actively communicating
+    technical: a live biological or social exchange network
+    future_compound: may combine with data synchronization
+    counterexample: Do not use living communication network when only the head meaning
+      is asserted and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 218a5578a2274b92ba3d72db291d07498972eeb4a076cd232ffb798e0e862989
+- architecture_version: '1.0'
+  compound_id: CMP:22f8ddc4d9b2d1a818d38e9f
+  content_digest: 22f8ddc4d9b2d1a818d38e9fa1dc82343d7588ea825c12c9b5ae17856d9dc38a
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: physical repair
+  english_glosses:
+  - physical repair
+  semantic_head: h
+  invariant_definition: A completed target restoration whose restorative transformation
+    is a completed target material change.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: MAT:110
+  - node_id: h
+    kind: root
+    root_id: REP:110
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: completed restoration of a distinct material target
+    excludes: maintenance without completed restoration and nonphysical recovery
+  collision_audit: REP supplies restorative direction; MAT supplies physical-change
+    domain.
+  confidence: high
+  examples:
+    ordinary: a completed physical repair
+    technical: a completed restorative material transformation
+    future_compound: active and nonactualized variants use the matching triplet atoms
+    counterexample: Do not use physical repair when only the head meaning is asserted
+      and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 22f8ddc4d9b2d1a818d38e9fa1dc82343d7588ea825c12c9b5ae17856d9dc38a
+- architecture_version: '1.0'
+  compound_id: CMP:2d26353b47b531bd3f5ae090
+  content_digest: 2d26353b47b531bd3f5ae0901bf01e4ce43f5223e70b70cdd716b295e0beac27
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: shared-world law
+  english_glosses:
+  - shared-world law
+  semantic_head: h
+  invariant_definition: A persistent shared-world constraint organized as a persistent
+    shared formal regime.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: LOG:020
+  - node_id: h
+    kind: root
+    root_id: ORI:220
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: formal regimes treated as constraints on co-instantiation in one shared
+      world
+    excludes: human rules without world-level scope and descriptive regularities not
+      asserted as constraints
+  collision_audit: ORI owns world constraint; LOG specifies formal organization.
+  confidence: high
+  examples:
+    ordinary: a rule governing what can coexist in this world
+    technical: a formal world constraint
+    future_compound: may qualify simulations, ontologies, or logical systems
+    counterexample: Do not use shared-world law when only the head meaning is asserted
+      and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 2d26353b47b531bd3f5ae0901bf01e4ce43f5223e70b70cdd716b295e0beac27
+- architecture_version: '1.0'
+  compound_id: CMP:2d993bb1d93b7d24d303e364
+  content_digest: 2d993bb1d93b7d24d303e3640d3fa402963c4b8f10a7e9e3392d12226c649174
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: dormant living body
+  english_glosses:
+  - dormant living body
+  semantic_head: h
+  invariant_definition: A dormant material substrate that preserves the identity of
+    a dormant living being.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: LIF:012
+  - node_id: h
+    kind: root
+    root_id: MAT:002
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: a preserved inactive body whose individual identity remains
+    excludes: dead matter with no preserved life identity and an awake body
+  collision_audit: Does not assert death, unconsciousness cause, or future awakening.
+  confidence: high
+  examples:
+    ordinary: a dormant preserved body
+    technical: a suspended organismal substrate
+    future_compound: may combine with awakening or restoration
+    counterexample: Do not use dormant living body when only the head meaning is asserted
+      and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 2d993bb1d93b7d24d303e3640d3fa402963c4b8f10a7e9e3392d12226c649174
+- architecture_version: '1.0'
+  compound_id: CMP:2f350e7d8e5dfba4a802d82d
+  content_digest: 2f350e7d8e5dfba4a802d82dc95260ddcfa10e8ca8b7e00d34593d8e087c1c9f
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: program definition
+  english_glosses:
+  - program definition
+  semantic_head: h
+  invariant_definition: A persistent internal generative pattern represented as bounded
+    data and constrained by a persistent target-directed formal constraint.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: DAT:000
+  - node_id: q02
+    kind: root
+    root_id: LOG:010
+  - node_id: h
+    kind: root
+    root_id: CRE:000
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  - edge_id: e02
+    type: qualifies
+    from: q02
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: stored formal generative specifications
+    excludes: a running process, arbitrary data, or unconstrained creative pattern
+  collision_audit: This is a definition object; execution belongs to later semantic
+    IR.
+  confidence: high
+  examples:
+    ordinary: a program as stored instructions
+    technical: an executable specification before execution
+    future_compound: may be dormant, shared, generated, or attached to a machine
+    counterexample: Do not use program definition when only the head meaning is asserted
+      and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 2f350e7d8e5dfba4a802d82dc95260ddcfa10e8ca8b7e00d34593d8e087c1c9f
+- architecture_version: '1.0'
+  compound_id: CMP:3122dedcff0f85ad293e2580
+  content_digest: 3122dedcff0f85ad293e258040307a6365b55fa8c93434d3d5756100352f7c25
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: living body
+  english_glosses:
+  - living body
+  semantic_head: h
+  invariant_definition: A persistent material substrate constituting an identified
+    living being.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: LIF:010
+  - node_id: h
+    kind: root
+    root_id: MAT:000
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: the physical body of an identified living other
+    excludes: unidentified biomass and nonliving objects
+  collision_audit: LIF supplies living identity; MAT supplies physical constitution.
+  confidence: high
+  examples:
+    ordinary: that being's body
+    technical: an organismal material substrate
+    future_compound: may be a bearer of injury or restoration
+    counterexample: Do not use living body when only the head meaning is asserted
+      and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 3122dedcff0f85ad293e258040307a6365b55fa8c93434d3d5756100352f7c25
+- architecture_version: '1.0'
+  compound_id: CMP:33c135410b0deef525b6770d
+  content_digest: 33c135410b0deef525b6770d4a8f40c3032cecd94d385aa905fb0d30dd7440f6
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: backup dataset
+  english_glosses:
+  - backup dataset
+  semantic_head: h
+  invariant_definition: A dormant shared dataset maintained in relation to a persistent
+    systemic restoration pathway.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: REP:220
+  - node_id: h
+    kind: root
+    root_id: DAT:022
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: inactive shared datasets preserved as system-restoration resources
+    excludes: ordinary dormant datasets with no restoration function and active synchronization
+  collision_audit: Backup purpose comes from REP; stored shared information comes
+    from DAT.
+  confidence: high
+  examples:
+    ordinary: a backup dataset
+    technical: a dormant recovery corpus
+    future_compound: may qualify a program, knowledge base, or synchronized network
+    counterexample: Do not use backup dataset when only the head meaning is asserted
+      and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 33c135410b0deef525b6770d4a8f40c3032cecd94d385aa905fb0d30dd7440f6
+- architecture_version: '1.0'
+  compound_id: CMP:4144fad413b8ce5012088c61
+  content_digest: 4144fad413b8ce5012088c6193969cb6f73701fe8a61e005e8c66bb6ef90deaa
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: material biosystem
+  english_glosses:
+  - material biosystem
+  semantic_head: h
+  invariant_definition: A stable biosystem whose interacting participants are treated
+    as one material aggregate.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: MAT:020
+  - node_id: h
+    kind: root
+    root_id: LIF:220
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: ecologies or living systems considered in their material organization
+    excludes: mere piles of organisms and nonmaterial models
+  collision_audit: LIF remains the head because self-sustaining life relations define
+    the whole.
+  confidence: high
+  examples:
+    ordinary: a materially embodied ecosystem
+    technical: a physical biosystem
+    future_compound: may combine with shared-world or hazard concepts
+    counterexample: Do not use material biosystem when only the head meaning is asserted
+      and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 4144fad413b8ce5012088c6193969cb6f73701fe8a61e005e8c66bb6ef90deaa
+- architecture_version: '1.0'
+  compound_id: CMP:44173561806bc8f334a0b7c9
+  content_digest: 44173561806bc8f334a0b7c9a87b29ba2bc84d18360e234eaa701c7e5eae8370
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: shared knowledge base
+  english_glosses:
+  - shared knowledge base
+  semantic_head: h
+  invariant_definition: A persistent shared dataset organized by a persistent shared
+    cognitive schema.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: MIN:020
+  - node_id: h
+    kind: root
+    root_id: DAT:020
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: shared datasets whose organization encodes a common conceptual schema
+    excludes: unstructured shared data and a schema without stored data
+  collision_audit: MIN supplies shared conceptual organization; DAT supplies the dataset.
+  confidence: high
+  examples:
+    ordinary: a shared knowledge base
+    technical: a schema-governed collaborative dataset
+    future_compound: may be communicative, synchronized, or dormant
+    counterexample: Do not use shared knowledge base when only the head meaning is
+      asserted and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 44173561806bc8f334a0b7c9a87b29ba2bc84d18360e234eaa701c7e5eae8370
+- architecture_version: '1.0'
+  compound_id: CMP:578fd06e1dec6f91d2b35add
+  content_digest: 578fd06e1dec6f91d2b35addea49cab1370912015a72ce2fed948395804930f7
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: formal ontological dependence
+  english_glosses:
+  - formal ontological dependence
+  semantic_head: h
+  invariant_definition: A persistent target-ground dependence constrained by a persistent
+    target-directed formal constraint.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: LOG:010
+  - node_id: h
+    kind: root
+    root_id: ORI:210
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: formally specified dependence of a target's existence on a distinct
+      ground
+    excludes: mere logical implication and causal influence
+  collision_audit: ORI supplies existential grounding; LOG supplies formal restriction.
+  confidence: high
+  examples:
+    ordinary: a formally stated dependence for something to exist
+    technical: a constrained grounding relation
+    future_compound: may later bind explicit source and target roles
+    counterexample: Do not use formal ontological dependence when only the head meaning
+      is asserted and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 578fd06e1dec6f91d2b35addea49cab1370912015a72ce2fed948395804930f7
+- architecture_version: '1.0'
+  compound_id: CMP:608ecb4f3c515a9c9a3443ec
+  content_digest: 608ecb4f3c515a9c9a3443ec287b2836f35df7e5b2214fea55fabc1d69c9b035
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: message datum
+  english_glosses:
+  - message datum
+  semantic_head: h
+  invariant_definition: A persistent bounded datum maintained as content within a
+    shared communicative channel.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: CON:020
+  - node_id: h
+    kind: root
+    root_id: DAT:000
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: bounded information treated as communicative content
+    excludes: private data not placed in a shared channel and the transmission event
+      itself
+  collision_audit: DAT owns the information object; CON contributes channel context,
+    not transfer.
+  confidence: high
+  examples:
+    ordinary: a message as an information object
+    technical: a channel-scoped message payload
+    future_compound: may be target-referential, manifest, dormant, or collected
+    counterexample: Do not use message datum when only the head meaning is asserted
+      and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 608ecb4f3c515a9c9a3443ec287b2836f35df7e5b2214fea55fabc1d69c9b035
+- architecture_version: '1.0'
+  compound_id: CMP:61bfb0de7a1e9d7f5b981725
+  content_digest: 61bfb0de7a1e9d7f5b98172517f8145bf2603c26ec4ed8da6b1149474901b518
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: material artifact
+  english_glosses:
+  - material artifact
+  semantic_head: h
+  invariant_definition: A generated artifact whose bounded product is material.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: MAT:010
+  - node_id: h
+    kind: root
+    root_id: CRE:010
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: manufactured or generated physical objects
+    excludes: natural objects and nonmaterial products
+  collision_audit: CRE supplies artifact status; MAT supplies physical boundedness;
+    neither atom alone entails both.
+  confidence: high
+  examples:
+    ordinary: a made physical object
+    technical: a fabricated component
+    future_compound: may qualify a tool, machine, or repair target
+    counterexample: Do not use material artifact when only the head meaning is asserted
+      and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 61bfb0de7a1e9d7f5b98172517f8145bf2603c26ec4ed8da6b1149474901b518
+- architecture_version: '1.0'
+  compound_id: CMP:725868579ebb0e2ef83cf708
+  content_digest: 725868579ebb0e2ef83cf7089271a399a547885e12b8bbde8b60552c9e41bcd0
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: data transfer channel
+  english_glosses:
+  - data transfer channel
+  semantic_head: h
+  invariant_definition: A persistent target-directed data-transferability relation
+    situated in a persistent shared communicative channel.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: CON:020
+  - node_id: h
+    kind: root
+    root_id: DAT:210
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: stable channel contexts that can carry data to a target
+    excludes: a current transfer event and channels without data-transferability
+  collision_audit: DAT is head because transferability is the named relation; CON
+    restricts its medium.
+  confidence: high
+  examples:
+    ordinary: a channel for sending data
+    technical: a data transport channel
+    future_compound: may be directed, operative, dormant, or secured later
+    counterexample: Do not use data transfer channel when only the head meaning is
+      asserted and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 725868579ebb0e2ef83cf7089271a399a547885e12b8bbde8b60552c9e41bcd0
+- architecture_version: '1.0'
+  compound_id: CMP:742b44d9ead66b451346708a
+  content_digest: 742b44d9ead66b451346708a55701f9e55d12b6359366cddec873c6537829129
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: directed data link
+  english_glosses:
+  - directed data link
+  semantic_head: h
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: DAT:000
+  - node_id: a-source-01
+    kind: slot
+    slot_name: source
+    slot_type: entity
+  - node_id: a-target-01
+    kind: slot
+    slot_name: target
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: CON:210
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  - edge_id: e02
+    type: fills_role
+    from: a-source-01
+    to: h
+    role: source
+  - edge_id: e03
+    type: fills_role
+    from: a-target-01
+    to: h
+    role: target
+  lexical_constraints:
+  - Source and target remain open typed slots; the bounded datum qualifies the directed
+    communication relation.
+  invariant_definition: An established directed communication relation between open
+    source and target participants whose exchanged content is a bounded datum.
+  boundaries:
+    includes: a reusable source-to-target data-communication relation template
+    excludes: a transfer occurrence, an undirected channel, or fixed participant identities
+  collision_audit: CON:210 remains the relation head; DAT:000 restricts content; slots
+    bind participants without lexicalizing them.
+  confidence: high
+  examples:
+    ordinary: a data link from one participant to another
+    technical: a typed directed messaging edge
+    future_compound: may be instantiated by later IR with concrete endpoints
+    counterexample: Do not use for a broadcast with no distinct target.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 742b44d9ead66b451346708a55701f9e55d12b6359366cddec873c6537829129
+- architecture_version: '1.0'
+  compound_id: CMP:8e5ae722d9e5e31f85ac3c5b
+  content_digest: 8e5ae722d9e5e31f85ac3c5b465d536e077c3fa205ea3ab6e31f75f6948b8b14
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: machine
+  english_glosses:
+  - machine
+  semantic_head: h
+  invariant_definition: A generated artifact that is both a persistent composite arrangement
+    and a bearer of enduring physical work capacity.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: STR:020
+  - node_id: q02
+    kind: root
+    root_id: MAT:200
+  - node_id: h
+    kind: root
+    root_id: CRE:010
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  - edge_id: e02
+    type: qualifies
+    from: q02
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: made organized devices capable of physical work
+    excludes: simple passive artifacts and natural energetic systems
+  collision_audit: The two qualifiers distinguish machine from generic tool and generic
+    assembly.
+  confidence: high
+  examples:
+    ordinary: a machine
+    technical: an engineered mechanism
+    future_compound: may be qualified by active, dormant, data, or control concepts
+    counterexample: Do not use machine when only the head meaning is asserted and
+      the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 8e5ae722d9e5e31f85ac3c5b465d536e077c3fa205ea3ab6e31f75f6948b8b14
+- architecture_version: '1.0'
+  compound_id: CMP:8f05a5e16a897935492726fa
+  content_digest: 8f05a5e16a897935492726faf2e747c5fa22f3b3cc01e1b30fb853521782ec7b
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: synchronized data network
+  english_glosses:
+  - synchronized data network
+  semantic_head: h
+  invariant_definition: A persistent systemic data-synchronizability relation situated
+    among enduring co-participants in one shared exchange context.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: CON:220
+  - node_id: h
+    kind: root
+    root_id: DAT:220
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: participant networks capable of coordinated data-state alignment
+    excludes: an active synchronization event and disconnected datasets
+  collision_audit: Capability is not occurrence; DAT owns synchronizability and CON
+    owns co-participation.
+  confidence: high
+  examples:
+    ordinary: a network able to keep shared data aligned
+    technical: a synchronizable replicated-data network
+    future_compound: may be operative or latent through matching triplet atoms
+    counterexample: Do not use synchronized data network when only the head meaning
+      is asserted and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 8f05a5e16a897935492726faf2e747c5fa22f3b3cc01e1b30fb853521782ec7b
+- architecture_version: '1.0'
+  compound_id: CMP:919b714e6201a462756224a2
+  content_digest: 919b714e6201a462756224a27932d620baaef25ac165ab07a89cc4cbee40be3d
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: material route
+  english_glosses:
+  - material route
+  semantic_head: h
+  invariant_definition: An established route realized by a stable material aggregate.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: MAT:020
+  - node_id: h
+    kind: root
+    root_id: MOV:020
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: roads, tracks, pipes, and other materially realized routes
+    excludes: abstract routes and material aggregates not serving as routes
+  collision_audit: MOV owns route identity; MAT only specifies its physical realization.
+  confidence: high
+  examples:
+    ordinary: a physical route
+    technical: a material transport path
+    future_compound: may take destination or flow-network elaboration
+    counterexample: Do not use material route when only the head meaning is asserted
+      and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 919b714e6201a462756224a27932d620baaef25ac165ab07a89cc4cbee40be3d
+- architecture_version: '1.0'
+  compound_id: CMP:99a87c8869d58498f524f1cc
+  content_digest: 99a87c8869d58498f524f1cc2782321e356f26bf94b14c405077c92a58ff97a7
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: shared message collection
+  english_glosses:
+  - shared message collection
+  semantic_head: h
+  invariant_definition: A persistent shared dataset maintained as communicative content
+    within a persistent shared channel.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: CON:020
+  - node_id: h
+    kind: root
+    root_id: DAT:020
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: archives, threads, or corpora defined within a shared exchange context
+    excludes: a single message and unrelated datasets
+  collision_audit: The dataset is head; the channel specifies its communication context.
+  confidence: high
+  examples:
+    ordinary: a shared collection of messages
+    technical: a channel message corpus
+    future_compound: may be dormant, manifest, synchronized, or backed up
+    counterexample: Do not use shared message collection when only the head meaning
+      is asserted and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 99a87c8869d58498f524f1cc2782321e356f26bf94b14c405077c92a58ff97a7
+- architecture_version: '1.0'
+  compound_id: CMP:9e8b36f50570a0c3c362a968
+  content_digest: 9e8b36f50570a0c3c362a968c9a99eff8df12285e44484758641ad7e2b47f247
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: dormant program
+  english_glosses:
+  - dormant program
+  semantic_head: h
+  invariant_definition: A dormant internal generative pattern represented by dormant
+    data under a dormant target-directed formal constraint.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: DAT:002
+  - node_id: q02
+    kind: root
+    root_id: LOG:012
+  - node_id: h
+    kind: root
+    root_id: CRE:002
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  - edge_id: e02
+    type: qualifies
+    from: q02
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: stored programs not presently manifest or operative
+    excludes: deleted programs and running executions
+  collision_audit: Lexical dormancy is not the same as runtime state [2]/num on program-definition.
+  confidence: high
+  examples:
+    ordinary: a saved inactive program
+    technical: an installed but nonrunning executable specification
+    future_compound: may later combine with activation or host relations
+    counterexample: Do not use dormant program when only the head meaning is asserted
+      and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 9e8b36f50570a0c3c362a968c9a99eff8df12285e44484758641ad7e2b47f247
+- architecture_version: '1.0'
+  compound_id: CMP:a7fc0ca38a6f95a40cdb87b1
+  content_digest: a7fc0ca38a6f95a40cdb87b1966435f90b824e57edd04c7cdc8e76beedcdacfb
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: composite artifact
+  english_glosses:
+  - composite artifact
+  semantic_head: h
+  invariant_definition: A generated artifact organized as a persistent part–whole
+    arrangement.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: STR:020
+  - node_id: h
+    kind: root
+    root_id: CRE:010
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: made assemblies with persistent constituent organization
+    excludes: unstructured products and natural structures
+  collision_audit: STR supplies composite organization; CRE supplies generated-artifact
+    status.
+  confidence: high
+  examples:
+    ordinary: an assembled made thing
+    technical: a constructed module
+    future_compound: may combine with material or data qualifiers
+    counterexample: Do not use composite artifact when only the head meaning is asserted
+      and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: a7fc0ca38a6f95a40cdb87b1966435f90b824e57edd04c7cdc8e76beedcdacfb
+- architecture_version: '1.0'
+  compound_id: CMP:b518a324d776e46e9d0ff041
+  content_digest: b518a324d776e46e9d0ff041bb5acc721a256348465cf4ee2965c6a770b04521
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: data repair
+  english_glosses:
+  - data repair
+  semantic_head: h
+  invariant_definition: A completed internal restoration whose restorative transformation
+    is a completed internal data transformation.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: DAT:100
+  - node_id: h
+    kind: root
+    root_id: REP:100
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: completed correction or restoration of data within one bearer
+    excludes: data transfer, backup creation, and physical repair
+  collision_audit: The composition requires both transformation of information and
+    return to a restoration standard.
+  confidence: high
+  examples:
+    ordinary: repaired data
+    technical: a completed restorative data transformation
+    future_compound: may combine with datasets, programs, or knowledge bases
+    counterexample: Do not use data repair when only the head meaning is asserted
+      and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: b518a324d776e46e9d0ff041bb5acc721a256348465cf4ee2965c6a770b04521
+- architecture_version: '1.0'
+  compound_id: CMP:cb0812face56f90b7ba139c5
+  content_digest: cb0812face56f90b7ba139c53a0c4b69820830bde14c60bcd0160122199daa8b
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: material hazard
+  english_glosses:
+  - material hazard
+  semantic_head: h
+  invariant_definition: A persistent external hazard that is a distinct material object.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: MAT:010
+  - node_id: h
+    kind: root
+    root_id: WRN:010
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: physical objects identified as capable of adverse effect
+    excludes: abstract risks and actual impairment events
+  collision_audit: Hazard potential is WRN; material objecthood is MAT.
+  confidence: high
+  examples:
+    ordinary: a hazardous object
+    technical: an external physical hazard source
+    future_compound: may bind a target later in utterance IR
+    counterexample: Do not use material hazard when only the head meaning is asserted
+      and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: cb0812face56f90b7ba139c53a0c4b69820830bde14c60bcd0160122199daa8b
+- architecture_version: '1.0'
+  compound_id: CMP:d98407801d64c085f702c9db
+  content_digest: d98407801d64c085f702c9dbfc86b643031cbda4ef933b6fe1c06d26f54c6e7b
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: addressed message
+  english_glosses:
+  - addressed message
+  semantic_head: h
+  invariant_definition: A persistent target reference maintained as content for a
+    persistent target communicative endpoint.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: CON:010
+  - node_id: h
+    kind: root
+    root_id: DAT:010
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: message content that denotes and is organized for a target endpoint
+    excludes: unaddressed broadcasts and the act of delivery
+  collision_audit: Target reference and target endpoint are distinct atoms; their
+    conjunction is explicit.
+  confidence: high
+  examples:
+    ordinary: a message addressed to someone
+    technical: a target-addressed payload
+    future_compound: may participate in a directed data link
+    counterexample: Do not use addressed message when only the head meaning is asserted
+      and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: d98407801d64c085f702c9dbfc86b643031cbda4ef933b6fe1c06d26f54c6e7b
+- architecture_version: '1.0'
+  compound_id: CMP:e152ea538409460a93b99b90
+  content_digest: e152ea538409460a93b99b9058ed1443cb3db1490edc80b2bae66cd2beae8bbb
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: dormant machine
+  english_glosses:
+  - dormant machine
+  semantic_head: h
+  invariant_definition: A dormant generated artifact whose composite arrangement and
+    physical work capacity persist without present operation.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: STR:022
+  - node_id: q02
+    kind: root
+    root_id: MAT:202
+  - node_id: h
+    kind: root
+    root_id: CRE:012
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  - edge_id: e02
+    type: qualifies
+    from: q02
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: inactive machines retaining structure and latent capacity
+    excludes: broken machines lacking capacity and currently operating machines
+  collision_audit: Lexical dormancy is encoded independently in all three atomic facets;
+    runtime state remains separate.
+  confidence: high
+  examples:
+    ordinary: a powered-down but usable machine
+    technical: an offline mechanism
+    future_compound: may combine with a restoration or activation expression later
+    counterexample: Do not use dormant machine when only the head meaning is asserted
+      and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: e152ea538409460a93b99b9058ed1443cb3db1490edc80b2bae66cd2beae8bbb
+- architecture_version: '1.0'
+  compound_id: CMP:e2af90ba78681e87e68450e5
+  content_digest: e2af90ba78681e87e68450e55eeecd7e016b3f28b0c837c89b6c17dcf6035437
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: generated living being
+  english_glosses:
+  - generated living being
+  semantic_head: h
+  invariant_definition: An identified living being whose individual existence is a
+    generated artifact.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: CRE:010
+  - node_id: h
+    kind: root
+    root_id: LIF:010
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: artificially generated individual living beings
+    excludes: naturally occurring beings and nonliving artifacts
+  collision_audit: Generation qualifies the living entity without reducing life to
+    artifact mechanics.
+  confidence: high
+  examples:
+    ordinary: a created living individual
+    technical: a generated organism or artificial life entity
+    future_compound: may take material, data, or origin qualifiers
+    counterexample: Do not use generated living being when only the head meaning is
+      asserted and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: e2af90ba78681e87e68450e55eeecd7e016b3f28b0c837c89b6c17dcf6035437
+- architecture_version: '1.0'
+  compound_id: CMP:e799b436d9c5e7d87a5516fa
+  content_digest: e799b436d9c5e7d87a5516fa59156bbbd5017b752d3de5056e1ba3425da670ed
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: structural repair
+  english_glosses:
+  - structural repair
+  semantic_head: h
+  invariant_definition: A completed internal restoration whose restorative transformation
+    is a completed internal structural reconfiguration.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: STR:100
+  - node_id: h
+    kind: root
+    root_id: REP:100
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: completed restoration by reorganizing one structure internally
+    excludes: mere rearrangement and material change without restoration
+  collision_audit: STR describes reconfiguration; REP adds restoration criterion.
+  confidence: high
+  examples:
+    ordinary: a completed structural repair
+    technical: restorative reconfiguration
+    future_compound: may apply to artifacts, bodies, or data structures
+    counterexample: Do not use structural repair when only the head meaning is asserted
+      and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: e799b436d9c5e7d87a5516fa59156bbbd5017b752d3de5056e1ba3425da670ed
+- architecture_version: '1.0'
+  compound_id: CMP:f1abd5eccdf06d92d5690a32
+  content_digest: f1abd5eccdf06d92d5690a32fdd15868b95af51fb4273e9e53304bbf082107cc
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-09'
+  display_title: physical injury
+  english_glosses:
+  - physical injury
+  semantic_head: h
+  invariant_definition: A persistent internal fault inhering in a persistent material
+    substrate.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: MAT:000
+  - node_id: h
+    kind: root
+    root_id: WRN:000
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: intrinsic adverse physical conditions of a body or material bearer
+    excludes: external hazards and purely mental or informational faults
+  collision_audit: WRN is head; MAT restricts the fault domain without asserting its
+    cause.
+  confidence: high
+  examples:
+    ordinary: a physical injury
+    technical: an intrinsic material fault
+    future_compound: may take living-body, manifestation, or restoration elaboration
+    counterexample: Do not use physical injury when only the head meaning is asserted
+      and the qualifier is not true.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: f1abd5eccdf06d92d5690a32fdd15868b95af51fb4273e9e53304bbf082107cc

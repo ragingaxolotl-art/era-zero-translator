@@ -1,0 +1,216 @@
+---
+metadata:
+  title: Era Zero semantic authority status
+  effective_date: '2026-07-26'
+  user_direction: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  current_status: all 324 roots canonical; semantic review complete; no packet awaiting
+    decision
+  selective_review_approval: MOV:100–222, MAT:000–222, MIN:000–222, CON:000–222, STR:000–222,
+    WRN:000–222, REP:000–222, LOG:000–222, DAT:000–222, and ORI:000–222 canonical
+    through detailed selective approvals
+  last_review_update: '2026-10-09'
+architecture:
+  version: '1.0'
+  status: fixed
+  process_1x2_clarification:
+    scope: all lexical addresses of the form 1x2
+    status: canonical_architecture_clarification
+    rule: 'The third lexical trit contributes a nonactualized process: a family-domain
+      process that is not presently active or completed and whose realization is dormant,
+      potential, or unresolved.'
+    does_not_encode:
+    - specification
+    - intention
+    - planning
+    - schedule
+    - queue
+    - permission
+    - readiness
+    - probability
+    - future_time
+    - certainty
+    runtime_distinction: Runtime [2]/num qualifies the current status of a token of
+      the selected lexeme; it does not select the lexical nonactualized-process concept.
+    migration_policy: Future changes require an explicit versioned migration.
+semantic_inventory:
+  total_generated_addresses: 324
+  canonical_roots: 324
+  provisional_roots: 0
+  missing_generated_addresses: 0
+  canonical_ranges:
+  - LIF:000–222
+  - MOV:000–222
+  - MAT:000–222
+  - MIN:000–222
+  - CON:000–222
+  - STR:000–222
+  - WRN:000–222
+  - REP:000–222
+  - LOG:000–222
+  - DAT:000–222
+  - CRE:000–222
+  - ORI:000–222
+  provisional_ranges: []
+fixed_for_all_324_addresses:
+- family
+- address
+- universal_slot
+- harmonic_signature
+- family_onset
+- local_compact_root
+- formal_carrier
+- relative_note_path
+prohibited_dependencies:
+- compounds
+- English concept index
+- etymology layer
+- semantic IR
+- grammar implementation
+- renderer
+- translator
+stop_boundary:
+  do_not_begin:
+  - Gate 4
+  - compound architecture
+  - translator implementation
+approved_review_packets:
+- range: MOV:100–122
+  status: canonical_by_explicit_user_approval
+  canonicalized: true
+  generated_fields_changed: false
+- range: MOV:200–222
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: MAT:000–022
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: MAT:100–122
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: MAT:200–222
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: MIN:000–022
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: MIN:100–122
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: MIN:200–222
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: CON:000–022
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: CON:100–122
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: CON:200–222
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: STR:000–022
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: STR:100–122
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: STR:200–222
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: WRN:000–022
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: WRN:100–122
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: WRN:200–222
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: REP:000–022
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: REP:100–122
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: REP:200–222
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: LOG:000–022
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: LOG:100–122
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: LOG:200–222
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: DAT:000–022
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: DAT:100–122
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: DAT:200–222
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: CRE:000–022
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: CRE:100–122
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: CRE:200–222
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: ORI:000–022
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: ORI:100–122
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+- range: ORI:200–222
+  status: canonical_by_explicit_user_delegation_after_detailed_review
+  canonicalized: true
+  generated_fields_changed: false
+review_packets_pending_user_decision: []
+semantic_review_progress:
+  canonical_review_chunks: 32
+  reviewed_pending_decision_chunks: 0
+  unreviewed_chunks: 0
+  reviewed_pending_decision_roots: 0
+  unreviewed_roots: 0
+last_completed_review_packet:
+  range: ORI:200–222
+  status: canonical_by_delegated_approval
+  canonicalized: true
+next_review_packet: 

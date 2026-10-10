@@ -1,0 +1,226 @@
+---
+metadata:
+  title: WRN:200–222 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.15
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: WRN:200–222
+  recommendation: reviews/WRN_200_222_recommended_spec.yaml
+  review: reviews/WRN_200_222_peer_review.md
+  validation: reviews/WRN_200_222_validation.md
+  soundness: reviews/WRN_000_222_soundness_audit.md
+  collision_report: reviews/WRN_200_222_collision_report.md
+  stress_tests: reviews/WRN_200_222_stress_tests.yaml
+promoted_roots:
+- canonical_id: WRN:200
+  canonical_title: persistent internal susceptibility
+  invariant_definition: A persistent susceptibility of one reference entity to undergo
+    internally originating degradation under qualifying conditions, independently
+    of whether that susceptibility is presently operative.
+  fixed_generated_fields:
+    family: WRN
+    address: '200'
+    universal_slot: stable inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: mam
+    canonical_transliteration: da·mam
+    formal_carrier: da-nu-ma-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+- canonical_id: WRN:201
+  canonical_title: operative internal susceptibility
+  invariant_definition: A susceptibility of one reference entity to undergo internally
+    originating degradation that is presently operative under the applicable conditions.
+  fixed_generated_fields:
+    family: WRN
+    address: '201'
+    universal_slot: active inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: mak
+    canonical_transliteration: da·mak
+    formal_carrier: da-nu-ma-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+- canonical_id: WRN:202
+  canonical_title: latent internal susceptibility
+  invariant_definition: A susceptibility of one reference entity to undergo internally
+    originating degradation that exists without being presently operative under the
+    applicable conditions.
+  fixed_generated_fields:
+    family: WRN
+    address: '202'
+    universal_slot: dormant inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: man
+    canonical_transliteration: da·man
+    formal_carrier: da-nu-ma-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+- canonical_id: WRN:210
+  canonical_title: persistent source-target exposure relation
+  invariant_definition: A persistent exposure relation between one distinct hazard
+    source and one reference target that can enable source-to-target impairment under
+    qualifying conditions, independently of whether that relation is presently operative.
+  fixed_generated_fields:
+    family: WRN
+    address: '210'
+    universal_slot: stable outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: mom
+    canonical_transliteration: da·mom
+    formal_carrier: da-nu-ki-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+- canonical_id: WRN:211
+  canonical_title: operative source-target exposure relation
+  invariant_definition: An exposure relation between one distinct hazard source and
+    one reference target that presently enables that source to cause target impairment
+    under the applicable conditions.
+  fixed_generated_fields:
+    family: WRN
+    address: '211'
+    universal_slot: active outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: mok
+    canonical_transliteration: da·mok
+    formal_carrier: da-nu-ki-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+- canonical_id: WRN:212
+  canonical_title: latent source-target exposure relation
+  invariant_definition: An exposure relation between one distinct hazard source and
+    one reference target that exists without presently enabling that source to cause
+    target impairment under the applicable conditions.
+  fixed_generated_fields:
+    family: WRN
+    address: '212'
+    universal_slot: unresolved outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: mon
+    canonical_transliteration: da·mon
+    formal_carrier: da-nu-ki-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+- canonical_id: WRN:220
+  canonical_title: persistent systemic propagation pathway
+  invariant_definition: A persistent pathway relation across multiple participants
+    in one shared system through which one correlated adverse condition can become
+    distributed, independently of whether that pathway is presently operative.
+  fixed_generated_fields:
+    family: WRN
+    address: '220'
+    universal_slot: stable systemic relationship
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: mim
+    canonical_transliteration: da·mim
+    formal_carrier: da-nu-nu-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+- canonical_id: WRN:221
+  canonical_title: operative systemic propagation pathway
+  invariant_definition: A pathway relation across multiple participants in one shared
+    system that presently enables one correlated adverse condition to become distributed
+    among them.
+  fixed_generated_fields:
+    family: WRN
+    address: '221'
+    universal_slot: active systemic relationship
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: mik
+    canonical_transliteration: da·mik
+    formal_carrier: da-nu-nu-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+- canonical_id: WRN:222
+  canonical_title: latent systemic propagation pathway
+  invariant_definition: A pathway relation across multiple participants in one shared
+    system through which one correlated adverse condition can become distributed but
+    that is not presently operative.
+  fixed_generated_fields:
+    family: WRN
+    address: '222'
+    universal_slot: unrealized systemic possibility
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: min
+    canonical_transliteration: da·min
+    formal_carrier: da-nu-nu-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 189
+  provisional_count_after: 135
+  unreviewed_chunks_after: 15
+  future_change_policy: explicit versioned migration required
+  next_review_packet: REP:000–022
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

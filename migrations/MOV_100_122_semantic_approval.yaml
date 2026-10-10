@@ -1,0 +1,227 @@
+---
+metadata:
+  title: MOV:100–122 selective semantic approval and canonization
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.1
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+architecture_clarification:
+  scope: all lexical addresses of the form 1x2
+  status: canonical_architecture_clarification
+  rule: 'The third lexical trit contributes a nonactualized process: a family-domain
+    process that is not presently active or completed and whose realization is dormant,
+    potential, or unresolved.'
+  does_not_encode:
+  - specification
+  - intention
+  - planning
+  - schedule
+  - queue
+  - permission
+  - readiness
+  - probability
+  - future_time
+  - certainty
+  runtime_distinction: Runtime [2]/num qualifies the current status of a token of
+    the selected lexeme; it does not select the lexical nonactualized-process concept.
+  migration_policy: Future changes require an explicit versioned migration.
+promoted_roots:
+- canonical_id: MOV:100
+  canonical_title: completed source departure
+  invariant_definition: Completion of a mover's displacement away from a source position.
+  fixed_generated_fields:
+    family: MOV
+    address: '100'
+    universal_slot: completed inward process
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    family_onset: gi
+    local_compact_root: kam
+    canonical_transliteration: gi·kam
+    formal_carrier: gi-ki-ma-ma
+    note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 2
+- canonical_id: MOV:101
+  canonical_title: active source departure
+  invariant_definition: Ongoing displacement of a mover away from a source position.
+  fixed_generated_fields:
+    family: MOV
+    address: '101'
+    universal_slot: active inward process
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    family_onset: gi
+    local_compact_root: kak
+    canonical_transliteration: gi·kak
+    formal_carrier: gi-ki-ma-ki
+    note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 4
+- canonical_id: MOV:102
+  canonical_title: potential source departure
+  invariant_definition: A potential displacement away from a source position that
+    is not presently active or completed.
+  fixed_generated_fields:
+    family: MOV
+    address: '102'
+    universal_slot: pending inward process
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    family_onset: gi
+    local_compact_root: kan
+    canonical_transliteration: gi·kan
+    formal_carrier: gi-ki-ma-nu
+    note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 0
+- canonical_id: MOV:110
+  canonical_title: completed target arrival
+  invariant_definition: Completion of a mover's displacement to a target position.
+  fixed_generated_fields:
+    family: MOV
+    address: '110'
+    universal_slot: completed outward process
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    family_onset: gi
+    local_compact_root: kom
+    canonical_transliteration: gi·kom
+    formal_carrier: gi-ki-ki-ma
+    note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 4
+- canonical_id: MOV:111
+  canonical_title: active target approach
+  invariant_definition: Ongoing displacement of a mover toward a target position.
+  fixed_generated_fields:
+    family: MOV
+    address: '111'
+    universal_slot: active outward process
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    family_onset: gi
+    local_compact_root: kok
+    canonical_transliteration: gi·kok
+    formal_carrier: gi-ki-ki-ki
+    note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 6
+- canonical_id: MOV:112
+  canonical_title: potential target approach
+  invariant_definition: A potential displacement toward a target position that is
+    not presently active or completed.
+  fixed_generated_fields:
+    family: MOV
+    address: '112'
+    universal_slot: pending outward process
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    family_onset: gi
+    local_compact_root: kon
+    canonical_transliteration: gi·kon
+    formal_carrier: gi-ki-ki-nu
+    note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 2
+- canonical_id: MOV:120
+  canonical_title: completed shared-frame movement
+  invariant_definition: Completion of a mover's change of position relative to a shared
+    or environmental reference frame.
+  fixed_generated_fields:
+    family: MOV
+    address: '120'
+    universal_slot: completed systemic process
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    family_onset: gi
+    local_compact_root: kim
+    canonical_transliteration: gi·kim
+    formal_carrier: gi-ki-nu-ma
+    note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 0
+- canonical_id: MOV:121
+  canonical_title: active shared-frame movement
+  invariant_definition: Ongoing change of a mover's position relative to a shared
+    or environmental reference frame.
+  fixed_generated_fields:
+    family: MOV
+    address: '121'
+    universal_slot: active systemic process
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    family_onset: gi
+    local_compact_root: kik
+    canonical_transliteration: gi·kik
+    formal_carrier: gi-ki-nu-ki
+    note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 2
+- canonical_id: MOV:122
+  canonical_title: potential shared-frame movement
+  invariant_definition: A potential change of a mover's position relative to a shared
+    or environmental reference frame that is not presently active or completed.
+  fixed_generated_fields:
+    family: MOV
+    address: '122'
+    universal_slot: pending systemic process
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    family_onset: gi
+    local_compact_root: kin
+    canonical_transliteration: gi·kin
+    formal_carrier: gi-ki-nu-nu
+    note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - -2
+audit:
+  source_canonical_roots_changed: false
+  route_traversal_status: reserved for later composition using shared-frame movement
+    plus MOV:020
+  excluded_process_semantics:
+  - schedule
+  - queue
+  - intention
+  - permission
+  - readiness
+  - probability
+  future_change_policy: explicit versioned migration required
+  downstream_implementation_begun: false

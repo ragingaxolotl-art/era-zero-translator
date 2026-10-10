@@ -1,0 +1,159 @@
+---
+metadata:
+  title: Era Zero Controlled English Compiler
+  version: 1.0.0
+  status: canonical
+  sense_index_fingerprint: df74c082ff27e556c465e2cf25381433125b8211588889904e4b38668aff16d5
+  semantic_ir_fingerprint: bf965de543f802cb095fb34287bbc063e7fc1f0c293fb6bd1d89a6482bc2ac01
+  renderer_fingerprint: b9752734c08e2690b62eebf4a4b85b15744b3e629608cc1bb7b84a8c52fa707c
+  controlled_lexeme_count: 352
+  general_english_started: false
+boundary:
+  purpose: A deterministic, auditable input language for canonical labels and explicit
+    semantic operators; not unrestricted English.
+  accepted_lexemes: 'Exact quoted canonical atom and approved compound labels whose
+    sense record has controlled_input_allowed: true.'
+  normalization: Unicode NFC, lowercase lookup, collapsed internal whitespace; output
+    retains canonical target identity.
+  no_guessing: Unknown, non-controlled, ambiguous, or underspecified input returns
+    one structured error and no IR.
+  excluded:
+  - synonym inference
+  - pronouns or implicit coreference
+  - implicit tense
+  - implicit roles
+  - unquoted free phrases
+  - ranked candidate selection
+  - general-English parsing
+grammar:
+  terminal: Every input ends in exactly one period.
+  speech_act: ASSERT | QUESTION | COMMAND | DEFINE | POSSIBILITY
+  lexical: '"<controlled label>" [0|1|2]'
+  simple: ACT [NOT] [MODAL mode] [ASPECT aspect] LEXICAL {ROLE role LEXICAL} [TIME
+    relation SPEECH_TIME] [MEASURE decimal unit] [QUANTIFIER kind [decimal]] .
+  sequence: ACT SEQUENCE LEXICAL THEN LEXICAL {THEN LEXICAL} .
+  parallel: ACT PARALLEL LEXICAL AND LEXICAL {AND LEXICAL} .
+  repetition: ACT REPEAT positive_integer TIMES LEXICAL .
+  conditional: ACT IF LEXICAL THEN LEXICAL .
+  ordering_rule: Keywords and modifiers occur only in the documented order; reordering
+    is an error, not an alternative parse.
+inventories:
+  speech_acts:
+    ASSERT: assertion
+    QUESTION: question
+    COMMAND: command
+    DEFINE: definition
+    POSSIBILITY: possibility
+  roles:
+  - actor
+  - source
+  - cause
+  - experiencer
+  - bearer
+  - predicate
+  - target
+  - result
+  - destination
+  - instrument
+  - material
+  - content
+  - recipient
+  - location
+  - environment
+  - condition
+  - persistent_condition
+  - time
+  - manner
+  - quantity
+  - comparison_standard
+  - beneficiary
+  modalities:
+  - possible
+  - necessary
+  - permitted
+  - obligated
+  - intended
+  - predicted
+  - counterfactual
+  aspects:
+  - bounded
+  - ongoing
+  - habitual
+  - iterative
+  - perfect
+  - prospective
+  time_relations:
+  - before
+  - at
+  - after
+  - during
+  - starts
+  - ends
+  - overlaps
+  units:
+  - '1'
+  - second
+  - minute
+  - hour
+  - day
+  - meter
+  - kilometer
+  - gram
+  - kilogram
+  - degree
+  - radian
+  - bit
+  - byte
+  runtime_states:
+    0: state zero
+    1: state one
+    2: state two, named num in the renderer
+mapping:
+  lexical: The unique controlled sense supplies target_type and target_id.
+  roles: ROLE creates an explicit fills_role edge from argument occurrence to head
+    occurrence.
+  operators: NOT, MODAL, ASPECT, and QUANTIFIER create explicit nested scope_operator
+    nodes in written order.
+  time: TIME creates a speech_time anchor and explicit time_relation to the root clause.
+  measurement: MEASURE creates a measurement node filling quantity.
+  compound_slots: Every open slot declared by an approved compound must be supplied
+    by a matching ROLE binding.
+  composition: SEQUENCE, PARALLEL, REPEAT, and IF create the canonical coordination,
+    repetition, and conditional IR structures.
+errors:
+- empty_input
+- missing_terminal_period
+- unsupported_speech_act
+- missing_clause
+- invalid_lexical_form
+- invalid_runtime_state
+- unknown_lexeme
+- ambiguous_lexeme
+- unsupported_sense_route
+- invalid_modality
+- invalid_aspect
+- invalid_role
+- duplicate_role
+- invalid_time_relation
+- duplicate_time
+- invalid_quantity
+- invalid_unit
+- duplicate_measurement
+- missing_quantifier_value
+- duplicate_quantifier
+- missing_compound_role
+- invalid_coordination
+- invalid_repetition
+- invalid_conditional
+- unexpected_token
+pipeline:
+- controlled input
+- deterministic compiler
+- canonical semantic IR
+- IR validation
+- EZF-1 renderer
+- inverse decoder
+implementation:
+  library: tools/lib/era_zero_controlled_english.rb
+  cli: tools/compile_controlled_english.rb
+  golden_tests: tests/controlled_english_cases.yaml

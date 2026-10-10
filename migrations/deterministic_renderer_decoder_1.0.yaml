@@ -1,0 +1,13 @@
+---
+migration_id: deterministic_renderer_decoder_1.0
+date: '2026-10-09'
+status: applied
+from:
+  deterministic_renderer_and_decoder: not_started
+to:
+  deterministic_renderer_and_decoder: complete
+  version: 1.0.0
+  round_trip_cases: 48
+semantic_ir_fingerprint: bf965de543f802cb095fb34287bbc063e7fc1f0c293fb6bd1d89a6482bc2ac01
+lexical_changes: []
+next_gate: controlled_english

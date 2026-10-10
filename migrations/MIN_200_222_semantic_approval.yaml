@@ -1,0 +1,217 @@
+---
+metadata:
+  title: MIN:200–222 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.6
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: MIN:200–222
+  recommendation: reviews/MIN_200_222_recommended_spec.yaml
+  review: reviews/MIN_200_222_peer_review.md
+  validation: reviews/MIN_200_222_validation.md
+  collision_report: reviews/MIN_200_222_collision_report.md
+  stress_tests: reviews/MIN_200_222_stress_tests.yaml
+promoted_roots:
+- canonical_id: MIN:200
+  canonical_title: enduring attentional capacity
+  invariant_definition: A persistent capacity of a cognizer to allocate cognitive
+    processing selectively.
+  fixed_generated_fields:
+    family: MIN
+    address: '200'
+    universal_slot: stable inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    family_onset: si
+    local_compact_root: mam
+    canonical_transliteration: si·mam
+    formal_carrier: si-nu-ma-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+- canonical_id: MIN:201
+  canonical_title: available attentional capacity
+  invariant_definition: A cognizer's capacity to allocate cognitive processing selectively
+    that is presently available for exercise.
+  fixed_generated_fields:
+    family: MIN
+    address: '201'
+    universal_slot: active inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    family_onset: si
+    local_compact_root: mak
+    canonical_transliteration: si·mak
+    formal_carrier: si-nu-ma-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+- canonical_id: MIN:202
+  canonical_title: latent attentional capacity
+  invariant_definition: A cognizer's capacity to allocate cognitive processing selectively
+    that exists without being presently available for exercise.
+  fixed_generated_fields:
+    family: MIN
+    address: '202'
+    universal_slot: dormant inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    family_onset: si
+    local_compact_root: man
+    canonical_transliteration: si·man
+    formal_carrier: si-nu-ma-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+- canonical_id: MIN:210
+  canonical_title: established target-attention relation
+  invariant_definition: An established relation in which a cognizer's cognitive processing
+    is preferentially directed toward a distinct target.
+  fixed_generated_fields:
+    family: MIN
+    address: '210'
+    universal_slot: stable outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    family_onset: si
+    local_compact_root: mom
+    canonical_transliteration: si·mom
+    formal_carrier: si-nu-ki-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+- canonical_id: MIN:211
+  canonical_title: active target attention
+  invariant_definition: A relation in which a cognizer's cognitive processing is presently
+    preferentially directed toward a distinct target.
+  fixed_generated_fields:
+    family: MIN
+    address: '211'
+    universal_slot: active outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    family_onset: si
+    local_compact_root: mok
+    canonical_transliteration: si·mok
+    formal_carrier: si-nu-ki-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+- canonical_id: MIN:212
+  canonical_title: unresolved target-attention relation
+  invariant_definition: An unresolved attentional relation between a cognizer and
+    a distinct target whose receipt of preferential cognitive processing is undetermined.
+  fixed_generated_fields:
+    family: MIN
+    address: '212'
+    universal_slot: unresolved outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    family_onset: si
+    local_compact_root: mon
+    canonical_transliteration: si·mon
+    formal_carrier: si-nu-ki-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+- canonical_id: MIN:220
+  canonical_title: established joint-attention relation
+  invariant_definition: A stable attentional relation among multiple cognizers that
+    gives one target shared cognitive priority.
+  fixed_generated_fields:
+    family: MIN
+    address: '220'
+    universal_slot: stable systemic relationship
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    family_onset: si
+    local_compact_root: mim
+    canonical_transliteration: si·mim
+    formal_carrier: si-nu-nu-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+- canonical_id: MIN:221
+  canonical_title: active joint attention
+  invariant_definition: An attentional relation in which multiple cognizers presently
+    give the same target shared cognitive priority.
+  fixed_generated_fields:
+    family: MIN
+    address: '221'
+    universal_slot: active systemic relationship
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    family_onset: si
+    local_compact_root: mik
+    canonical_transliteration: si·mik
+    formal_carrier: si-nu-nu-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+- canonical_id: MIN:222
+  canonical_title: potential joint attention
+  invariant_definition: An unrealized possible attentional relation in which multiple
+    cognizers would give the same target shared cognitive priority.
+  fixed_generated_fields:
+    family: MIN
+    address: '222'
+    universal_slot: unrealized systemic possibility
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    family_onset: si
+    local_compact_root: min
+    canonical_transliteration: si·min
+    formal_carrier: si-nu-nu-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 108
+  provisional_count_after: 216
+  unreviewed_chunks_after: 24
+  future_change_policy: explicit versioned migration required
+  next_review_packet: CON:000–022
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

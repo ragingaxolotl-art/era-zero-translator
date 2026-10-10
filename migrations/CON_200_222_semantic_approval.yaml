@@ -1,0 +1,228 @@
+---
+metadata:
+  title: CON:200–222 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.9
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: CON:200–222
+  recommendation: reviews/CON_200_222_recommended_spec.yaml
+  review: reviews/CON_200_222_peer_review.md
+  validation: reviews/CON_200_222_validation.md
+  full_family_soundness: reviews/CON_000_222_soundness_audit.md
+  collision_report: reviews/CON_200_222_collision_report.md
+  stress_tests: reviews/CON_200_222_stress_tests.yaml
+promoted_roots:
+- canonical_id: CON:200
+  canonical_title: enduring communicative participation capacity
+  invariant_definition: A persistent capacity of an endpoint to participate in communicative
+    exchange.
+  fixed_generated_fields:
+    family: CON
+    address: '200'
+    universal_slot: stable inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    family_onset: wu
+    local_compact_root: mam
+    canonical_transliteration: wu·mam
+    formal_carrier: wu-nu-ma-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+- canonical_id: CON:201
+  canonical_title: available communicative participation capacity
+  invariant_definition: A communicative capacity of an endpoint that is presently
+    available for exercise in an exchange.
+  fixed_generated_fields:
+    family: CON
+    address: '201'
+    universal_slot: active inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    family_onset: wu
+    local_compact_root: mak
+    canonical_transliteration: wu·mak
+    formal_carrier: wu-nu-ma-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+- canonical_id: CON:202
+  canonical_title: latent communicative participation capacity
+  invariant_definition: A communicative capacity of an endpoint that exists without
+    being presently available for exercise.
+  fixed_generated_fields:
+    family: CON
+    address: '202'
+    universal_slot: dormant inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    family_onset: wu
+    local_compact_root: man
+    canonical_transliteration: wu·man
+    formal_carrier: wu-nu-ma-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+- canonical_id: CON:210
+  canonical_title: established directed communication relation
+  invariant_definition: A persistent relation that identifies a distinct endpoint
+    as the target of communicative exchange from a reference endpoint.
+  fixed_generated_fields:
+    family: CON
+    address: '210'
+    universal_slot: stable outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    family_onset: wu
+    local_compact_root: mom
+    canonical_transliteration: wu·mom
+    formal_carrier: wu-nu-ki-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+- canonical_id: CON:211
+  canonical_title: operative directed communication relation
+  invariant_definition: A directed relation from a reference endpoint to a distinct
+    target that is presently operative as a participant link for communicative exchange.
+  fixed_generated_fields:
+    family: CON
+    address: '211'
+    universal_slot: active outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    family_onset: wu
+    local_compact_root: mok
+    canonical_transliteration: wu·mok
+    formal_carrier: wu-nu-ki-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+- canonical_id: CON:212
+  canonical_title: unresolved directed communication relation
+  invariant_definition: A directed relation from a reference endpoint to a distinct
+    target whose status as a participant link for communicative exchange is undetermined.
+  fixed_generated_fields:
+    family: CON
+    address: '212'
+    universal_slot: unresolved outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    family_onset: wu
+    local_compact_root: mon
+    canonical_transliteration: wu·mon
+    formal_carrier: wu-nu-ki-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+- canonical_id: CON:220
+  canonical_title: enduring shared-participation relation
+  invariant_definition: A persistent communicative relation among multiple endpoints
+    that constitutes them as co-participants in one shared exchange context.
+  fixed_generated_fields:
+    family: CON
+    address: '220'
+    universal_slot: stable systemic relationship
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    family_onset: wu
+    local_compact_root: mim
+    canonical_transliteration: wu·mim
+    formal_carrier: wu-nu-nu-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+- canonical_id: CON:221
+  canonical_title: operative shared-participation relation
+  invariant_definition: A communicative relation among multiple endpoints that presently
+    operates to constitute them as co-participants in one shared exchange context.
+  fixed_generated_fields:
+    family: CON
+    address: '221'
+    universal_slot: active systemic relationship
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    family_onset: wu
+    local_compact_root: mik
+    canonical_transliteration: wu·mik
+    formal_carrier: wu-nu-nu-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+- canonical_id: CON:222
+  canonical_title: potential shared-participation relation
+  invariant_definition: A not-yet-realized possible communicative relation among multiple
+    endpoints that would constitute them as co-participants in one shared exchange
+    context.
+  fixed_generated_fields:
+    family: CON
+    address: '222'
+    universal_slot: unrealized systemic possibility
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 9
+    family_onset: wu
+    local_compact_root: min
+    canonical_transliteration: wu·min
+    formal_carrier: wu-nu-nu-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 135
+  provisional_count_after: 189
+  unreviewed_chunks_after: 21
+  future_change_policy: explicit versioned migration required
+  next_review_packet: STR:000–022
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

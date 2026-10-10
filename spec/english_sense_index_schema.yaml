@@ -1,0 +1,37 @@
+---
+metadata:
+  title: Era Zero English sense-index schema
+  version: 1.0.0
+  status: canonical_gate4c
+normalization:
+  case: Unicode lowercase
+  whitespace: trim and collapse
+  punctuation: curly apostrophes normalize to ASCII; other punctuation remains tokenization
+    input
+routes:
+  atom: one canonical atomic root
+  compound: one approved Gate 4B compound
+  grammar: later executable grammar, not a lexical root
+  semantic_ir: later occurrence/proposition IR
+  gap: meaning currently unsupported; must not be guessed
+required_sense_fields:
+- sense_id
+- lemma
+- display_form
+- part_of_speech
+- sense_key
+- route
+- definition
+- selection_cues
+- excluded_readings
+- confidence
+- controlled_input_allowed
+- provenance
+target_rule: target_id is required exactly for atom and compound routes and forbidden
+  for grammar, semantic_ir, and gap routes
+lookup_rule: A surface lemma never selects a target without a sense decision. Multiple
+  senses require contextual disambiguation or clarification.
+controlled_input_rule: Only exact canonical labels marked controlled_input_allowed
+  may resolve without contextual ranking in the future controlled-English compiler.
+no_silent_guess: An unsupported or unresolved reading returns its recorded route;
+  it never falls back to a semantically nearby atom.

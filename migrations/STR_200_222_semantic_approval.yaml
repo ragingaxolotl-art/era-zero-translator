@@ -1,0 +1,227 @@
+---
+metadata:
+  title: STR:200–222 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.12
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: STR:200–222
+  recommendation: reviews/STR_200_222_recommended_spec.yaml
+  review: reviews/STR_200_222_peer_review.md
+  validation: reviews/STR_200_222_validation.md
+  soundness: reviews/STR_000_222_soundness_audit.md
+  collision_report: reviews/STR_200_222_collision_report.md
+  stress_tests: reviews/STR_200_222_stress_tests.yaml
+promoted_roots:
+- canonical_id: STR:200
+  canonical_title: enduring internal reconfiguration capacity
+  invariant_definition: A persistent capacity of a reference structure to reassign
+    its own constituents among its internal positions while preserving that structure
+    as the reference whole.
+  fixed_generated_fields:
+    family: STR
+    address: '200'
+    universal_slot: stable inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: mam
+    canonical_transliteration: do·mam
+    formal_carrier: do-nu-ma-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+- canonical_id: STR:201
+  canonical_title: available internal reconfiguration capacity
+  invariant_definition: A capacity of a reference structure to reassign its own constituents
+    among its internal positions that is presently available for exercise while preserving
+    that structure as the reference whole.
+  fixed_generated_fields:
+    family: STR
+    address: '201'
+    universal_slot: active inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: mak
+    canonical_transliteration: do·mak
+    formal_carrier: do-nu-ma-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+- canonical_id: STR:202
+  canonical_title: latent internal reconfiguration capacity
+  invariant_definition: A capacity of a reference structure to reassign its own constituents
+    among its internal positions that exists without being presently available for
+    exercise while preserving that structure as the reference whole.
+  fixed_generated_fields:
+    family: STR
+    address: '202'
+    universal_slot: dormant inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: man
+    canonical_transliteration: do·man
+    formal_carrier: do-nu-ma-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+- canonical_id: STR:210
+  canonical_title: established target-incorporability relation
+  invariant_definition: A persistent structural relation that qualifies one distinct
+    target for incorporation as a constituent of a reference structure while preserving
+    the reference as the organizing whole.
+  fixed_generated_fields:
+    family: STR
+    address: '210'
+    universal_slot: stable outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: mom
+    canonical_transliteration: do·mom
+    formal_carrier: do-nu-ki-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+- canonical_id: STR:211
+  canonical_title: operative target-incorporability relation
+  invariant_definition: A structural relation that presently qualifies one distinct
+    target for incorporation as a constituent of a reference structure while preserving
+    the reference as the organizing whole.
+  fixed_generated_fields:
+    family: STR
+    address: '211'
+    universal_slot: active outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: mok
+    canonical_transliteration: do·mok
+    formal_carrier: do-nu-ki-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+- canonical_id: STR:212
+  canonical_title: unresolved target-incorporability relation
+  invariant_definition: An unresolved structural relation between a reference structure
+    and one distinct target whose qualification for incorporation as a constituent
+    remains undetermined.
+  fixed_generated_fields:
+    family: STR
+    address: '212'
+    universal_slot: unresolved outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: mon
+    canonical_transliteration: do·mon
+    formal_carrier: do-nu-ki-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+- canonical_id: STR:220
+  canonical_title: enduring systemic-integrability relation
+  invariant_definition: A persistent structural relation among multiple structures
+    that qualifies them for organization as peer constituents of one higher-order
+    composite distinct from every input.
+  fixed_generated_fields:
+    family: STR
+    address: '220'
+    universal_slot: stable systemic relationship
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: mim
+    canonical_transliteration: do·mim
+    formal_carrier: do-nu-nu-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+- canonical_id: STR:221
+  canonical_title: operative systemic-integrability relation
+  invariant_definition: A structural relation among multiple structures that presently
+    qualifies them for organization as peer constituents of one higher-order composite
+    distinct from every input.
+  fixed_generated_fields:
+    family: STR
+    address: '221'
+    universal_slot: active systemic relationship
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: mik
+    canonical_transliteration: do·mik
+    formal_carrier: do-nu-nu-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+- canonical_id: STR:222
+  canonical_title: unrealized systemic-integrability possibility
+  invariant_definition: An unrealized structural possibility that multiple structures
+    could qualify for organization as peer constituents of one higher-order composite
+    distinct from every input.
+  fixed_generated_fields:
+    family: STR
+    address: '222'
+    universal_slot: unrealized systemic possibility
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: min
+    canonical_transliteration: do·min
+    formal_carrier: do-nu-nu-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 162
+  provisional_count_after: 162
+  unreviewed_chunks_after: 18
+  future_change_policy: explicit versioned migration required
+  next_review_packet: WRN:000–022
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

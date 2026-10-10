@@ -1,0 +1,217 @@
+---
+metadata:
+  title: MIN:000–022 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.4
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: MIN:000–022
+  recommendation: reviews/MIN_000_022_recommended_spec.yaml
+  review: reviews/MIN_000_022_peer_review.md
+  validation: reviews/MIN_000_022_validation.md
+  collision_report: reviews/MIN_000_022_collision_report.md
+  stress_tests: reviews/MIN_000_022_stress_tests.yaml
+promoted_roots:
+- canonical_id: MIN:000
+  canonical_title: persistent self-representation
+  invariant_definition: A mental representation of the cognizer's own identity or
+    condition that persists across cognitive episodes.
+  fixed_generated_fields:
+    family: MIN
+    address: '000'
+    universal_slot: stable inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    family_onset: si
+    local_compact_root: nam
+    canonical_transliteration: si·nam
+    formal_carrier: si-ma-ma-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 0
+- canonical_id: MIN:001
+  canonical_title: manifest self-representation
+  invariant_definition: A mental representation of the cognizer's own identity or
+    condition that is presently manifest in cognition.
+  fixed_generated_fields:
+    family: MIN
+    address: '001'
+    universal_slot: active inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    family_onset: si
+    local_compact_root: nak
+    canonical_transliteration: si·nak
+    formal_carrier: si-ma-ma-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 2
+- canonical_id: MIN:002
+  canonical_title: latent self-representation
+  invariant_definition: A mental representation of the cognizer's own identity or
+    condition that persists without presently manifesting in cognition.
+  fixed_generated_fields:
+    family: MIN
+    address: '002'
+    universal_slot: dormant inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    family_onset: si
+    local_compact_root: nan
+    canonical_transliteration: si·nan
+    formal_carrier: si-ma-ma-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - -2
+- canonical_id: MIN:010
+  canonical_title: persistent target representation
+  invariant_definition: A mental representation of a distinct target that persists
+    across cognitive episodes.
+  fixed_generated_fields:
+    family: MIN
+    address: '010'
+    universal_slot: stable outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    family_onset: si
+    local_compact_root: nom
+    canonical_transliteration: si·nom
+    formal_carrier: si-ma-ki-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 2
+- canonical_id: MIN:011
+  canonical_title: manifest target representation
+  invariant_definition: A mental representation of a distinct target that is presently
+    manifest in cognition.
+  fixed_generated_fields:
+    family: MIN
+    address: '011'
+    universal_slot: active outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    family_onset: si
+    local_compact_root: nok
+    canonical_transliteration: si·nok
+    formal_carrier: si-ma-ki-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 4
+- canonical_id: MIN:012
+  canonical_title: latent target representation
+  invariant_definition: A mental representation of a distinct target that persists
+    without presently manifesting in cognition.
+  fixed_generated_fields:
+    family: MIN
+    address: '012'
+    universal_slot: dormant outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    family_onset: si
+    local_compact_root: non
+    canonical_transliteration: si·non
+    formal_carrier: si-ma-ki-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 0
+- canonical_id: MIN:020
+  canonical_title: persistent shared cognitive schema
+  invariant_definition: A mental representation held in common across multiple cognizers
+    that persists across cognitive episodes.
+  fixed_generated_fields:
+    family: MIN
+    address: '020'
+    universal_slot: stable collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    family_onset: si
+    local_compact_root: nim
+    canonical_transliteration: si·nim
+    formal_carrier: si-ma-nu-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -2
+- canonical_id: MIN:021
+  canonical_title: manifest shared cognitive schema
+  invariant_definition: A mental representation held in common across multiple cognizers
+    that is presently manifest among them.
+  fixed_generated_fields:
+    family: MIN
+    address: '021'
+    universal_slot: active collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    family_onset: si
+    local_compact_root: nik
+    canonical_transliteration: si·nik
+    formal_carrier: si-ma-nu-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - 0
+- canonical_id: MIN:022
+  canonical_title: latent shared cognitive schema
+  invariant_definition: A mental representation held in common across multiple cognizers
+    that persists without presently manifesting among them.
+  fixed_generated_fields:
+    family: MIN
+    address: '022'
+    universal_slot: dormant collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    family_onset: si
+    local_compact_root: nin
+    canonical_transliteration: si·nin
+    formal_carrier: si-ma-nu-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -4
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 90
+  provisional_count_after: 234
+  unreviewed_chunks_after: 26
+  future_change_policy: explicit versioned migration required
+  next_review_packet: MIN:100–122
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

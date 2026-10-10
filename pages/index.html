@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Browser workbench for conservative English-to-Era-Zero translation, clarification, formal notation, SVG, and MIDI export.">
+  <title>Era Zero Translator Workbench</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Era Zero Translator home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span><strong>ERA ZERO</strong><small>Translator Workbench</small></span>
+      </a>
+      <div class="release"><span class="status-dot"></span><span id="serviceStatus">Checking engine</span><b>v1.0</b></div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Meaning before performance</p>
+        <h1>Translate without hiding uncertainty.</h1>
+        <p>Analyze ordinary English, inspect ranked meanings, resolve ambiguity explicitly, and export canonical Era Zero notation.</p>
+      </section>
+
+      <section class="workspace" aria-label="Translator workspace">
+        <div class="composer card">
+          <div class="mode-tabs" role="tablist" aria-label="Input mode">
+            <button class="mode-tab active" data-mode="general" role="tab" aria-selected="true">General English</button>
+            <button class="mode-tab" data-mode="controlled" role="tab" aria-selected="false">Controlled English</button>
+          </div>
+          <label for="sourceInput" id="inputLabel">What do you want to express?</label>
+          <textarea id="sourceInput" rows="5" spellcheck="true" placeholder="Try: leave [1]  ·  go [1]  ·  change represented information content [1]"></textarea>
+          <div class="examples" aria-label="Examples">
+            <span>Examples</span>
+            <button data-example="leave [1]">leave</button>
+            <button data-example="go [1]">go</button>
+            <button data-example="change represented information content [1]">change data</button>
+            <button data-example="food [1]">known gap</button>
+          </div>
+          <div class="composer-footer">
+            <p id="inputHint">Use a final [0], [1], or [2] to specify runtime state. Omit it to compare alternatives.</p>
+            <button id="analyzeButton" class="primary">Analyze meaning <span>→</span></button>
+          </div>
+        </div>
+
+        <aside class="principles card" aria-label="Translation guarantees">
+          <p class="eyebrow">Release guarantees</p>
+          <dl>
+            <div><dt>324</dt><dd>canonical atoms</dd></div>
+            <div><dt>28</dt><dd>approved compounds</dd></div>
+            <div><dt>436</dt><dd>indexed senses</dd></div>
+            <div><dt>11</dt><dd>visible gaps</dd></div>
+          </dl>
+          <ul>
+            <li>No first-match guessing</li>
+            <li>Runtime, tense, and modality stay separate</li>
+            <li>Every resolution round-trips exactly</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section id="results" class="results hidden" aria-live="polite">
+        <div class="section-heading">
+          <div><p class="eyebrow">Interpretation</p><h2 id="resultTitle">Candidate meanings</h2></div>
+          <p id="decisionSummary"></p>
+        </div>
+        <div class="result-grid">
+          <div>
+            <div id="candidateList" class="candidate-list"></div>
+          </div>
+          <aside class="resolution card">
+            <h3>Resolve this reading</h3>
+            <p id="resolutionPrompt">Select a candidate to inspect its requirements.</p>
+            <div class="field-row">
+              <label>Runtime state
+                <select id="runtimeState"><option value="">Choose…</option><option value="0">[0] inactive / ended</option><option value="1">[1] active / valid</option><option value="2">[2] num / pending</option></select>
+              </label>
+              <label>Speech act
+                <select id="speechAct"><option value="assertion">Assertion</option><option value="question">Question</option><option value="command">Command</option><option value="definition">Definition</option><option value="possibility">Possibility</option></select>
+              </label>
+            </div>
+            <div id="roleFields"></div>
+            <button id="resolveButton" class="primary wide" disabled>Resolve &amp; render</button>
+            <p class="microcopy">Resolution is enabled only when every required semantic choice is explicit.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="output" class="output hidden">
+        <div class="section-heading">
+          <div><p class="eyebrow">Canonical result</p><h2>One meaning, multiple views.</h2></div>
+          <div class="actions"><button id="downloadBundle">Export EZB-1</button><label class="file-button">Import EZB-1<input id="importBundle" type="file" accept="application/json,.json"></label></div>
+        </div>
+        <nav class="output-tabs" aria-label="Result view">
+          <button class="output-tab active" data-panel="meaning">Meaning</button>
+          <button class="output-tab" data-panel="glyph">Glyph</button>
+          <button class="output-tab" data-panel="ir">Semantic IR</button>
+          <button class="output-tab" data-panel="formal">EZF-1</button>
+        </nav>
+        <div class="output-card card">
+          <div id="panel-meaning" class="output-panel active">
+            <div class="meaning-summary"><span id="targetBadge"></span><h3 id="meaningTitle"></h3><p id="controlledText"></p></div>
+            <div class="identity-grid"><div><span>Utterance</span><code id="utteranceId"></code></div><div><span>Formal identity</span><code id="formalId"></code></div><div><span>Round trip</span><strong id="roundTrip"></strong></div></div>
+          </div>
+          <div id="panel-glyph" class="output-panel">
+            <div class="glyph-toolbar"><button id="previewTones">▶ Preview reference tones</button><button id="downloadSvg">Download SVG</button><button id="downloadMidi">Download MIDI</button></div>
+            <div id="glyphStage" class="glyph-stage"><p>Resolve a meaning to generate notation.</p></div>
+          </div>
+          <div id="panel-ir" class="output-panel"><pre id="irCode"></pre></div>
+          <div id="panel-formal" class="output-panel"><pre id="formalCode"></pre></div>
+        </div>
+      </section>
+    </main>
+
+    <footer><span>DBA Era Zero · Canonical browser translator</span><span>EZIR-JSON-1 · EZF-1 · EZSVG-1 · MIDI-0 · EZB-1</span></footer>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+---
+metadata:
+  title: ORI:200–222 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.30
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: ORI:200–222
+  recommendation: reviews/ORI_200_222_recommended_spec.yaml
+  review: reviews/ORI_200_222_peer_review.md
+  validation: reviews/ORI_200_222_validation.md
+  soundness: reviews/ORI_000_222_soundness_audit.md
+  collision_report: reviews/ORI_200_222_collision_report.md
+  stress_tests: reviews/ORI_200_222_stress_tests.yaml
+promoted_roots:
+- canonical_id: ORI:200
+  canonical_title: persistent source-grounding capacity
+  invariant_definition: A persistent ontological capacity of one source to ground
+    a specified state of affairs, independently of whether that capacity is presently
+    operative.
+  fixed_generated_fields:
+    family: ORI
+    address: '200'
+    universal_slot: stable inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    family_onset: nu
+    local_compact_root: mam
+    canonical_transliteration: nu·mam
+    formal_carrier: nu-nu-ma-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+- canonical_id: ORI:201
+  canonical_title: operative source-grounding capacity
+  invariant_definition: An ontological capacity of one source that is presently operative
+    in grounding a specified state of affairs.
+  fixed_generated_fields:
+    family: ORI
+    address: '201'
+    universal_slot: active inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    family_onset: nu
+    local_compact_root: mak
+    canonical_transliteration: nu·mak
+    formal_carrier: nu-nu-ma-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+- canonical_id: ORI:202
+  canonical_title: latent source-grounding capacity
+  invariant_definition: An ontological capacity of one source to ground a specified
+    state of affairs that belongs to it without being presently operative.
+  fixed_generated_fields:
+    family: ORI
+    address: '202'
+    universal_slot: dormant inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    family_onset: nu
+    local_compact_root: man
+    canonical_transliteration: nu·man
+    formal_carrier: nu-nu-ma-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+- canonical_id: ORI:210
+  canonical_title: persistent target-ground dependence
+  invariant_definition: A persistent ontological relation under which one target's
+    obtaining is conditional on a specified ground, independently of whether that
+    dependence is presently operative.
+  fixed_generated_fields:
+    family: ORI
+    address: '210'
+    universal_slot: stable outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    family_onset: nu
+    local_compact_root: mom
+    canonical_transliteration: nu·mom
+    formal_carrier: nu-nu-ki-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+- canonical_id: ORI:211
+  canonical_title: operative target-ground dependence
+  invariant_definition: An ontological relation that is presently conditioning one
+    target's obtaining on a specified ground.
+  fixed_generated_fields:
+    family: ORI
+    address: '211'
+    universal_slot: active outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    family_onset: nu
+    local_compact_root: mok
+    canonical_transliteration: nu·mok
+    formal_carrier: nu-nu-ki-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+- canonical_id: ORI:212
+  canonical_title: latent target-ground dependence
+  invariant_definition: An ontological relation under which one target's obtaining
+    would be conditional on a specified ground, without that dependence being presently
+    operative.
+  fixed_generated_fields:
+    family: ORI
+    address: '212'
+    universal_slot: unresolved outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    family_onset: nu
+    local_compact_root: mon
+    canonical_transliteration: nu·mon
+    formal_carrier: nu-nu-ki-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+- canonical_id: ORI:220
+  canonical_title: persistent shared-world constraint
+  invariant_definition: A persistent ontological relation that limits which states
+    may coherently obtain across one shared reality, independently of whether it is
+    presently operative.
+  fixed_generated_fields:
+    family: ORI
+    address: '220'
+    universal_slot: stable systemic relationship
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    family_onset: nu
+    local_compact_root: mim
+    canonical_transliteration: nu·mim
+    formal_carrier: nu-nu-nu-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+- canonical_id: ORI:221
+  canonical_title: operative shared-world constraint
+  invariant_definition: An ontological relation that is presently limiting which states
+    may coherently obtain across one shared reality.
+  fixed_generated_fields:
+    family: ORI
+    address: '221'
+    universal_slot: active systemic relationship
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    family_onset: nu
+    local_compact_root: mik
+    canonical_transliteration: nu·mik
+    formal_carrier: nu-nu-nu-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+- canonical_id: ORI:222
+  canonical_title: latent shared-world constraint
+  invariant_definition: An ontological relation that belongs to the admissible order
+    of one shared reality without presently limiting which states obtain within it.
+  fixed_generated_fields:
+    family: ORI
+    address: '222'
+    universal_slot: unrealized systemic possibility
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    family_onset: nu
+    local_compact_root: min
+    canonical_transliteration: nu·min
+    formal_carrier: nu-nu-nu-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 324
+  provisional_count_after: 0
+  unreviewed_chunks_after: 0
+  future_change_policy: explicit versioned migration required
+  next_review_packet: 
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

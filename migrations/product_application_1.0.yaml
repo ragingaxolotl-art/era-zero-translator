@@ -1,0 +1,14 @@
+---
+migration_id: product_application_1.0
+date: '2026-10-10'
+status: applied
+from:
+  translator_product: not_started
+to:
+  translator_product: canonical
+  version: 1.0.0
+  api: true
+  web_workbench: true
+  exchange_format: EZB-1
+lexical_changes: []
+semantic_changes: []

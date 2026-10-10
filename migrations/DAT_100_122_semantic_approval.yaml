@@ -1,0 +1,233 @@
+---
+metadata:
+  title: DAT:100–122 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.23
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: DAT:100–122
+  recommendation: reviews/DAT_100_122_recommended_spec.yaml
+  review: reviews/DAT_100_122_peer_review.md
+  validation: reviews/DAT_100_122_validation.md
+  soundness: reviews/DAT_000_122_soundness_audit.md
+  collision_report: reviews/DAT_100_122_collision_report.md
+  stress_tests: reviews/DAT_100_122_stress_tests.yaml
+promoted_roots:
+- canonical_id: DAT:100
+  canonical_title: completed internal data transformation
+  invariant_definition: Completion of a bounded transformation of represented information
+    within one reference entity, yielding transformed information without transferring
+    it to a distinct target.
+  fixed_generated_fields:
+    family: DAT
+    address: '100'
+    universal_slot: completed inward process
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: kam
+    canonical_transliteration: li·kam
+    formal_carrier: li-ki-ma-ma
+    note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 2
+- canonical_id: DAT:101
+  canonical_title: active internal data transformation
+  invariant_definition: An ongoing bounded transformation of represented information
+    within one reference entity that is producing transformed information without
+    transferring it to a distinct target.
+  fixed_generated_fields:
+    family: DAT
+    address: '101'
+    universal_slot: active inward process
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: kak
+    canonical_transliteration: li·kak
+    formal_carrier: li-ki-ma-ki
+    note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 4
+- canonical_id: DAT:102
+  canonical_title: nonactualized internal data transformation
+  invariant_definition: A nonactualized bounded transformation that would transform
+    represented information within one reference entity without transferring it to
+    a distinct target.
+  fixed_generated_fields:
+    family: DAT
+    address: '102'
+    universal_slot: pending inward process
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: kan
+    canonical_transliteration: li·kan
+    formal_carrier: li-ki-ma-nu
+    note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 0
+- canonical_id: DAT:110
+  canonical_title: completed target data transfer
+  invariant_definition: Completion of a bounded information transfer from one source
+    context to one distinct reference target, causing that target to receive the transferred
+    information.
+  fixed_generated_fields:
+    family: DAT
+    address: '110'
+    universal_slot: completed outward process
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: kom
+    canonical_transliteration: li·kom
+    formal_carrier: li-ki-ki-ma
+    note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 4
+- canonical_id: DAT:111
+  canonical_title: active target data transfer
+  invariant_definition: An ongoing bounded information transfer from one source context
+    to one distinct reference target that is causing that target to receive the transferred
+    information.
+  fixed_generated_fields:
+    family: DAT
+    address: '111'
+    universal_slot: active outward process
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: kok
+    canonical_transliteration: li·kok
+    formal_carrier: li-ki-ki-ki
+    note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 6
+- canonical_id: DAT:112
+  canonical_title: nonactualized target data transfer
+  invariant_definition: A nonactualized bounded information transfer that would carry
+    information from one source context to one distinct reference target.
+  fixed_generated_fields:
+    family: DAT
+    address: '112'
+    universal_slot: pending outward process
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: kon
+    canonical_transliteration: li·kon
+    formal_carrier: li-ki-ki-nu
+    note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 2
+- canonical_id: DAT:120
+  canonical_title: completed systemic data synchronization
+  invariant_definition: Completion of a coordinated information-state alignment across
+    multiple participants in one shared data domain under one synchronization criterion.
+  fixed_generated_fields:
+    family: DAT
+    address: '120'
+    universal_slot: completed systemic process
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: kim
+    canonical_transliteration: li·kim
+    formal_carrier: li-ki-nu-ma
+    note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 0
+- canonical_id: DAT:121
+  canonical_title: active systemic data synchronization
+  invariant_definition: An ongoing coordinated information-state alignment across
+    multiple participants in one shared data domain under one synchronization criterion.
+  fixed_generated_fields:
+    family: DAT
+    address: '121'
+    universal_slot: active systemic process
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: kik
+    canonical_transliteration: li·kik
+    formal_carrier: li-ki-nu-ki
+    note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 2
+- canonical_id: DAT:122
+  canonical_title: nonactualized systemic data synchronization
+  invariant_definition: A nonactualized coordinated process that would align information
+    states across multiple participants in one shared data domain under one synchronization
+    criterion.
+  fixed_generated_fields:
+    family: DAT
+    address: '122'
+    universal_slot: pending systemic process
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: kin
+    canonical_transliteration: li·kin
+    formal_carrier: li-ki-nu-nu
+    note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - -2
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 261
+  provisional_count_after: 63
+  unreviewed_chunks_after: 7
+  future_change_policy: explicit versioned migration required
+  next_review_packet: DAT:200–222
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

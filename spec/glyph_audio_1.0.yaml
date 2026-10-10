@@ -1,0 +1,49 @@
+---
+metadata:
+  title: Era Zero Deterministic Glyph and MIDI Presentation
+  version: 1.0.0
+  status: canonical
+  renderer_fingerprint: b9752734c08e2690b62eebf4a4b85b15744b3e629608cc1bb7b84a8c52fa707c
+  semantic_identity: unchanged
+  synthesized_waveform_audio: optional_not_implemented
+input_contract:
+  format: validated EZF-1 only
+  validation: inverse-decode before presentation generation
+  identity: SVG and MIDI are derived presentation artifacts and never participate
+    in UTT or EZF identity.
+svg:
+  format: EZSVG-1
+  encoding: UTF-8 SVG 1.1-compatible XML
+  layout: one labeled row per lexical event; family opening, address path, and runtime
+    ending rendered as connected pitch points
+  metadata:
+  - formal_id
+  - semantic_digest
+  - profile
+  - primary contour
+  accessibility: role=img with title and description; every event exposes target and
+    register data attributes
+  determinism: identical EZF input produces byte-identical SVG
+midi:
+  format: Standard MIDI File type 0
+  ticks_per_beat: 480
+  tempo_microseconds_per_quarter: 500000
+  program: 0
+  sequence: each lexical event emits family opening, address path, and runtime tail;
+    primary contour follows lexical material
+  velocity:
+    lexical: 90
+    contour: 70
+  determinism: identical EZF input produces byte-identical MIDI
+audio:
+  status: optional and not implemented in Era Zero 1.0
+  reason: MIDI preserves the deterministic pitch/timing performance without choosing
+    a voice, instrument recording, or synthesis engine.
+  future_rule: Any synthesizer must consume the canonical MIDI/performance plan and
+    remain presentation-only.
+transposition: Changing anchor pitch changes SVG vertical coordinates and MIDI notes
+  but not semantic_digest or formal_id.
+implementation:
+  library: tools/lib/era_zero_presentation.rb
+  cli: tools/generate_presentation.rb
+  examples: examples/presentation/

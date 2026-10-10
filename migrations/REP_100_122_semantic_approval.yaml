@@ -1,0 +1,236 @@
+---
+metadata:
+  title: REP:100–122 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.17
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: REP:100–122
+  recommendation: reviews/REP_100_122_recommended_spec.yaml
+  review: reviews/REP_100_122_peer_review.md
+  validation: reviews/REP_100_122_validation.md
+  soundness: reviews/REP_000_122_soundness_audit.md
+  collision_report: reviews/REP_100_122_collision_report.md
+  stress_tests: reviews/REP_100_122_stress_tests.yaml
+promoted_roots:
+- canonical_id: REP:100
+  canonical_title: completed internal restoration
+  invariant_definition: Completion of a restorative transformation originating within
+    one reference entity by which that entity enters its applicable internal restoration
+    condition.
+  fixed_generated_fields:
+    family: REP
+    address: '100'
+    universal_slot: completed inward process
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: kam
+    canonical_transliteration: ya·kam
+    formal_carrier: ya-ki-ma-ma
+    note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 2
+- canonical_id: REP:101
+  canonical_title: active internal restoration
+  invariant_definition: An ongoing restorative transformation originating within one
+    reference entity by which that entity is entering its applicable internal restoration
+    condition.
+  fixed_generated_fields:
+    family: REP
+    address: '101'
+    universal_slot: active inward process
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: kak
+    canonical_transliteration: ya·kak
+    formal_carrier: ya-ki-ma-ki
+    note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 4
+- canonical_id: REP:102
+  canonical_title: nonactualized internal restoration
+  invariant_definition: A nonactualized restorative transformation originating within
+    one reference entity by which that entity would enter its applicable internal
+    restoration condition.
+  fixed_generated_fields:
+    family: REP
+    address: '102'
+    universal_slot: pending inward process
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: kan
+    canonical_transliteration: ya·kan
+    formal_carrier: ya-ki-ma-nu
+    note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 0
+- canonical_id: REP:110
+  canonical_title: completed target restoration
+  invariant_definition: Completion of a restorative transformation by which one distinct
+    source causes one reference target to enter its applicable target restoration
+    condition.
+  fixed_generated_fields:
+    family: REP
+    address: '110'
+    universal_slot: completed outward process
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: kom
+    canonical_transliteration: ya·kom
+    formal_carrier: ya-ki-ki-ma
+    note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 4
+- canonical_id: REP:111
+  canonical_title: active target restoration
+  invariant_definition: An ongoing restorative transformation by which one distinct
+    source causes one reference target to enter its applicable target restoration
+    condition.
+  fixed_generated_fields:
+    family: REP
+    address: '111'
+    universal_slot: active outward process
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: kok
+    canonical_transliteration: ya·kok
+    formal_carrier: ya-ki-ki-ki
+    note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 6
+- canonical_id: REP:112
+  canonical_title: nonactualized target restoration
+  invariant_definition: A nonactualized restorative transformation by which one distinct
+    source would cause one reference target to enter its applicable target restoration
+    condition.
+  fixed_generated_fields:
+    family: REP
+    address: '112'
+    universal_slot: pending outward process
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: kon
+    canonical_transliteration: ya·kon
+    formal_carrier: ya-ki-ki-nu
+    note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 2
+- canonical_id: REP:120
+  canonical_title: completed systemic restoration
+  invariant_definition: Completion of a coordinated restorative transformation by
+    which one shared restoration condition becomes realized across multiple participant
+    entities within one shared system.
+  fixed_generated_fields:
+    family: REP
+    address: '120'
+    universal_slot: completed systemic process
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: kim
+    canonical_transliteration: ya·kim
+    formal_carrier: ya-ki-nu-ma
+    note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 0
+- canonical_id: REP:121
+  canonical_title: active systemic restoration
+  invariant_definition: An ongoing coordinated restorative transformation by which
+    one shared restoration condition is becoming realized across multiple participant
+    entities within one shared system.
+  fixed_generated_fields:
+    family: REP
+    address: '121'
+    universal_slot: active systemic process
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: kik
+    canonical_transliteration: ya·kik
+    formal_carrier: ya-ki-nu-ki
+    note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 2
+- canonical_id: REP:122
+  canonical_title: nonactualized systemic restoration
+  invariant_definition: A nonactualized coordinated restorative transformation by
+    which one shared restoration condition would become realized across multiple participant
+    entities within one shared system.
+  fixed_generated_fields:
+    family: REP
+    address: '122'
+    universal_slot: pending systemic process
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: kin
+    canonical_transliteration: ya·kin
+    formal_carrier: ya-ki-nu-nu
+    note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - -2
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 207
+  provisional_count_after: 117
+  unreviewed_chunks_after: 13
+  future_change_policy: explicit versioned migration required
+  next_review_packet: REP:200–222
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

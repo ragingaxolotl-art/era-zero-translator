@@ -1,0 +1,223 @@
+---
+metadata:
+  title: LOG:200–222 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.21
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: LOG:200–222
+  recommendation: reviews/LOG_200_222_recommended_spec.yaml
+  review: reviews/LOG_200_222_peer_review.md
+  validation: reviews/LOG_200_222_validation.md
+  soundness: reviews/LOG_000_222_soundness_audit.md
+  collision_report: reviews/LOG_200_222_collision_report.md
+  stress_tests: reviews/LOG_200_222_stress_tests.yaml
+promoted_roots:
+- canonical_id: LOG:200
+  canonical_title: persistent internal formal evaluability
+  invariant_definition: A persistent capacity of one reference entity to undergo formal
+    evaluation under its applicable internal criterion, independently of whether that
+    capacity is presently operative.
+  fixed_generated_fields:
+    family: LOG
+    address: '200'
+    universal_slot: stable inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: mam
+    canonical_transliteration: te·mam
+    formal_carrier: te-nu-ma-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+- canonical_id: LOG:201
+  canonical_title: operative internal formal evaluability
+  invariant_definition: A capacity of one reference entity to undergo formal evaluation
+    under its applicable internal criterion that is presently operative.
+  fixed_generated_fields:
+    family: LOG
+    address: '201'
+    universal_slot: active inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: mak
+    canonical_transliteration: te·mak
+    formal_carrier: te-nu-ma-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+- canonical_id: LOG:202
+  canonical_title: latent internal formal evaluability
+  invariant_definition: A capacity of one reference entity to undergo formal evaluation
+    under its applicable internal criterion that exists without being presently operative.
+  fixed_generated_fields:
+    family: LOG
+    address: '202'
+    universal_slot: dormant inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: man
+    canonical_transliteration: te·man
+    formal_carrier: te-nu-ma-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+- canonical_id: LOG:210
+  canonical_title: persistent constraint-target applicability
+  invariant_definition: A persistent formal applicability relation between one specified
+    constraint and one distinct reference target that can enable target constraint
+    application, independently of whether that relation is presently operative.
+  fixed_generated_fields:
+    family: LOG
+    address: '210'
+    universal_slot: stable outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: mom
+    canonical_transliteration: te·mom
+    formal_carrier: te-nu-ki-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+- canonical_id: LOG:211
+  canonical_title: operative constraint-target applicability
+  invariant_definition: A formal applicability relation between one specified constraint
+    and one distinct reference target that presently enables target constraint application.
+  fixed_generated_fields:
+    family: LOG
+    address: '211'
+    universal_slot: active outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: mok
+    canonical_transliteration: te·mok
+    formal_carrier: te-nu-ki-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+- canonical_id: LOG:212
+  canonical_title: latent constraint-target applicability
+  invariant_definition: A formal applicability relation between one specified constraint
+    and one distinct reference target that exists without presently enabling target
+    constraint application.
+  fixed_generated_fields:
+    family: LOG
+    address: '212'
+    universal_slot: unresolved outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: mon
+    canonical_transliteration: te·mon
+    formal_carrier: te-nu-ki-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+- canonical_id: LOG:220
+  canonical_title: persistent systemic joint-evaluability
+  invariant_definition: A persistent capacity of multiple participants under one shared
+    formal regime to undergo one coordinated joint evaluation, independently of whether
+    that capacity is presently operative.
+  fixed_generated_fields:
+    family: LOG
+    address: '220'
+    universal_slot: stable systemic relationship
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: mim
+    canonical_transliteration: te·mim
+    formal_carrier: te-nu-nu-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+- canonical_id: LOG:221
+  canonical_title: operative systemic joint-evaluability
+  invariant_definition: A capacity of multiple participants under one shared formal
+    regime to undergo one coordinated joint evaluation that is presently operative.
+  fixed_generated_fields:
+    family: LOG
+    address: '221'
+    universal_slot: active systemic relationship
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: mik
+    canonical_transliteration: te·mik
+    formal_carrier: te-nu-nu-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+- canonical_id: LOG:222
+  canonical_title: latent systemic joint-evaluability
+  invariant_definition: A capacity of multiple participants under one shared formal
+    regime to undergo one coordinated joint evaluation that exists without being presently
+    operative.
+  fixed_generated_fields:
+    family: LOG
+    address: '222'
+    universal_slot: unrealized systemic possibility
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: min
+    canonical_transliteration: te·min
+    formal_carrier: te-nu-nu-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 243
+  provisional_count_after: 81
+  unreviewed_chunks_after: 9
+  future_change_policy: explicit versioned migration required
+  next_review_packet: DAT:000–022
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

@@ -1,0 +1,236 @@
+---
+metadata:
+  title: REP:200–222 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.18
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: REP:200–222
+  recommendation: reviews/REP_200_222_recommended_spec.yaml
+  review: reviews/REP_200_222_peer_review.md
+  validation: reviews/REP_200_222_validation.md
+  soundness: reviews/REP_000_222_soundness_audit.md
+  collision_report: reviews/REP_200_222_collision_report.md
+  stress_tests: reviews/REP_200_222_stress_tests.yaml
+promoted_roots:
+- canonical_id: REP:200
+  canonical_title: persistent internal recoverability
+  invariant_definition: A persistent capacity of one reference entity to undergo internally
+    originating restoration under qualifying conditions, independently of whether
+    that capacity is presently operative.
+  fixed_generated_fields:
+    family: REP
+    address: '200'
+    universal_slot: stable inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: mam
+    canonical_transliteration: ya·mam
+    formal_carrier: ya-nu-ma-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+- canonical_id: REP:201
+  canonical_title: operative internal recoverability
+  invariant_definition: A capacity of one reference entity to undergo internally originating
+    restoration that is presently operative under the applicable conditions.
+  fixed_generated_fields:
+    family: REP
+    address: '201'
+    universal_slot: active inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: mak
+    canonical_transliteration: ya·mak
+    formal_carrier: ya-nu-ma-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+- canonical_id: REP:202
+  canonical_title: latent internal recoverability
+  invariant_definition: A capacity of one reference entity to undergo internally originating
+    restoration that exists without being presently operative under the applicable
+    conditions.
+  fixed_generated_fields:
+    family: REP
+    address: '202'
+    universal_slot: dormant inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: man
+    canonical_transliteration: ya·man
+    formal_carrier: ya-nu-ma-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+- canonical_id: REP:210
+  canonical_title: persistent source-target restorative relation
+  invariant_definition: A persistent restorative applicability relation between one
+    distinct source and one reference target that can enable source-to-target restoration
+    under qualifying conditions, independently of whether that relation is presently
+    operative.
+  fixed_generated_fields:
+    family: REP
+    address: '210'
+    universal_slot: stable outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: mom
+    canonical_transliteration: ya·mom
+    formal_carrier: ya-nu-ki-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+- canonical_id: REP:211
+  canonical_title: operative source-target restorative relation
+  invariant_definition: A restorative applicability relation between one distinct
+    source and one reference target that presently enables that source to cause target
+    restoration under the applicable conditions.
+  fixed_generated_fields:
+    family: REP
+    address: '211'
+    universal_slot: active outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: mok
+    canonical_transliteration: ya·mok
+    formal_carrier: ya-nu-ki-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+- canonical_id: REP:212
+  canonical_title: latent source-target restorative relation
+  invariant_definition: A restorative applicability relation between one distinct
+    source and one reference target that exists without presently enabling that source
+    to cause target restoration under the applicable conditions.
+  fixed_generated_fields:
+    family: REP
+    address: '212'
+    universal_slot: unresolved outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: mon
+    canonical_transliteration: ya·mon
+    formal_carrier: ya-nu-ki-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+- canonical_id: REP:220
+  canonical_title: persistent systemic restoration pathway
+  invariant_definition: A persistent pathway relation across multiple participants
+    in one shared system through which one shared restoration condition can become
+    realized, independently of whether that pathway is presently operative.
+  fixed_generated_fields:
+    family: REP
+    address: '220'
+    universal_slot: stable systemic relationship
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: mim
+    canonical_transliteration: ya·mim
+    formal_carrier: ya-nu-nu-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+- canonical_id: REP:221
+  canonical_title: operative systemic restoration pathway
+  invariant_definition: A pathway relation across multiple participants in one shared
+    system that presently enables one shared restoration condition to become realized
+    among them.
+  fixed_generated_fields:
+    family: REP
+    address: '221'
+    universal_slot: active systemic relationship
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: mik
+    canonical_transliteration: ya·mik
+    formal_carrier: ya-nu-nu-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+- canonical_id: REP:222
+  canonical_title: latent systemic restoration pathway
+  invariant_definition: A pathway relation across multiple participants in one shared
+    system through which one shared restoration condition can become realized but
+    that is not presently operative.
+  fixed_generated_fields:
+    family: REP
+    address: '222'
+    universal_slot: unrealized systemic possibility
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: min
+    canonical_transliteration: ya·min
+    formal_carrier: ya-nu-nu-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 216
+  provisional_count_after: 108
+  unreviewed_chunks_after: 12
+  future_change_policy: explicit versioned migration required
+  next_review_packet: LOG:000–022
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

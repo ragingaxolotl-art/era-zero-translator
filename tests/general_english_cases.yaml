@@ -1,0 +1,2277 @@
+---
+metadata:
+  version: 1.0.0
+  analysis_cases: 13
+  resolution_cases: 4
+  indexed_senses: 436
+  reviewed_noncanonical_senses: 84
+analysis_cases:
+- case_id: unique_exact_with_runtime
+  input: leave [1]
+  expected:
+    status: ok
+    translator_version: 1.0.0
+    input: leave [1]
+    normalized_input: leave
+    speech_act_proposal: assertion
+    explicit_runtime_state: 1
+    candidates:
+    - sense_id: ENS:723b76515108bf4a17e07bb7
+      lemma: leave
+      sense_key: active_departure
+      route: atom
+      target_id: MOV:101
+      definition: To be undergoing displacement away from a source position.
+      selection_cues:
+      - departure is in progress
+      score: 1.0
+      confidence: high
+      match_type: exact_lemma
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 0
+      canonical_label: active source departure
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: MOV:101
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:ece93a3460b79ba681c694b5
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: ece93a3460b79ba681c694b56dcd8559dc5fdc890c6b31cdae659c9829bdf920
+    decision:
+      auto_resolution_allowed: true
+      requires_clarification: false
+      reasons: []
+      competing_sense_ids: []
+    translation:
+      status: resolved
+      source_input: leave [1]
+      sense_id: ENS:723b76515108bf4a17e07bb7
+      route: atom
+      target_id: MOV:101
+      controlled_input: ASSERT "active source departure" [1].
+      semantic_ir: &1
+        ir_version: '1.0'
+        root_clause: n001
+        speech_act: assertion
+        nodes:
+        - node_id: n001
+          kind: clause
+          clause_type: predication
+        - node_id: n002
+          kind: lexical_occurrence
+          target_type: atom
+          target_id: MOV:101
+          runtime_state:
+            code: 1
+        edges:
+        - edge_id: e001
+          type: centers
+          from: n002
+          to: n001
+        discourse_constraints: {}
+        utterance_id: UTT:ece93a3460b79ba681c694b5
+        serialization:
+          canonical_format: EZIR-JSON-1
+          content_digest: ece93a3460b79ba681c694b56dcd8559dc5fdc890c6b31cdae659c9829bdf920
+      formal:
+        format: EZF-1
+        renderer_version: 1.0.0
+        formal_id: EZF:1bd53aa1422c748757242eb9
+        formal_digest: 1bd53aa1422c748757242eb94dbaa12cd1c2ff4e0b4fe245562962c0c2a268f0
+        semantic_digest: ece93a3460b79ba681c694b56dcd8559dc5fdc890c6b31cdae659c9829bdf920
+        semantic_ir: *1
+        performance:
+          profile: reference-midi-v1
+          anchor_midi: 60
+          transposition_semantically_significant: false
+          primary_contour: level
+          contour_relative_semitones: &13
+          - 0
+          - 0
+          secondary_contours: []
+          lexical_events:
+          - occurrence_id: n002
+            target_id: MOV:101
+            register: middle
+            base_midi: 60
+            family_qualified_transliteration: gi·kak
+            formal_carrier: gi-ki-ma-ki
+            family_opening_relative_semitones: &14
+            - 0
+            - 2
+            - 7
+            family_opening_absolute_midi:
+            - 60
+            - 62
+            - 67
+            address_relative_semitones: &15
+            - 0
+            - 2
+            - 2
+            - 4
+            address_absolute_midi:
+            - 60
+            - 62
+            - 62
+            - 64
+            note_duration_beats: 1.0
+            runtime_tail:
+              code: 1
+              name: active
+              relative_motion_semitones: -4
+              absolute_note: 60
+              articulation: firm_return
+              duration_beats: 0.5
+          structural_events:
+          - edge_id: e001
+            edge_type: centers
+            from: n002
+            to: n001
+            boundary: medium_gap
+            boundary_beats: 1.0
+          statement_boundary: long_gap
+          statement_boundary_beats: 2.0
+        literal_gloss: n002:active source departure[1]
+      round_trip_equal: true
+- case_id: question_with_runtime
+  input: approach [1]?
+  expected:
+    status: ok
+    translator_version: 1.0.0
+    input: approach [1]?
+    normalized_input: approach
+    speech_act_proposal: question
+    explicit_runtime_state: 1
+    candidates:
+    - sense_id: ENS:3214e617d9796e986d0caf3f
+      lemma: approach
+      sense_key: active_target_approach
+      route: atom
+      target_id: MOV:111
+      definition: To be undergoing displacement toward a target position.
+      selection_cues:
+      - motion toward target is active
+      score: 1.0
+      confidence: high
+      match_type: exact_lemma
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 0
+      canonical_label: active target approach
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: question
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: MOV:111
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:4beea5a71802d3a957d38c85
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: 4beea5a71802d3a957d38c85af2ef60e2189fe7777f981822669df30eb53dd00
+    - sense_id: ENS:8ec9c6927a0b250ccff97a65
+      lemma: active target approach
+      sense_key: canonical_atom_label
+      route: atom
+      target_id: MOV:111
+      definition: Ongoing displacement of a mover toward a target position.
+      selection_cues:
+      - exact canonical label
+      - family domain MOV
+      - universal slot active outward process
+      score: 0.06
+      confidence: low
+      match_type: token_overlap
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 0
+      canonical_label: active target approach
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: question
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: MOV:111
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:4beea5a71802d3a957d38c85
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: 4beea5a71802d3a957d38c85af2ef60e2189fe7777f981822669df30eb53dd00
+    - sense_id: ENS:e968dc79b97a9d2d2ad83782
+      lemma: potential target approach
+      sense_key: canonical_atom_label
+      route: atom
+      target_id: MOV:112
+      definition: A potential displacement toward a target position that is not presently
+        active or completed.
+      selection_cues:
+      - exact canonical label
+      - family domain MOV
+      - universal slot pending outward process
+      score: 0.06
+      confidence: low
+      match_type: token_overlap
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 0
+      canonical_label: potential target approach
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: question
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: MOV:112
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:9c908fbbd0da4c4c59bcf97c
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: 9c908fbbd0da4c4c59bcf97c62952650a9aa9a519e25909a6a4e427e7e1850f4
+    decision:
+      auto_resolution_allowed: true
+      requires_clarification: false
+      reasons: []
+      competing_sense_ids: []
+    translation:
+      status: resolved
+      source_input: approach [1]?
+      sense_id: ENS:3214e617d9796e986d0caf3f
+      route: atom
+      target_id: MOV:111
+      controlled_input: QUESTION "active target approach" [1].
+      semantic_ir: &2
+        ir_version: '1.0'
+        root_clause: n001
+        speech_act: question
+        nodes:
+        - node_id: n001
+          kind: clause
+          clause_type: predication
+        - node_id: n002
+          kind: lexical_occurrence
+          target_type: atom
+          target_id: MOV:111
+          runtime_state:
+            code: 1
+        edges:
+        - edge_id: e001
+          type: centers
+          from: n002
+          to: n001
+        discourse_constraints: {}
+        utterance_id: UTT:4beea5a71802d3a957d38c85
+        serialization:
+          canonical_format: EZIR-JSON-1
+          content_digest: 4beea5a71802d3a957d38c85af2ef60e2189fe7777f981822669df30eb53dd00
+      formal:
+        format: EZF-1
+        renderer_version: 1.0.0
+        formal_id: EZF:1000b737b2fbe8eea6bde096
+        formal_digest: 1000b737b2fbe8eea6bde096bac1ba1def93e838311c2bd9fafdeb146d2da0eb
+        semantic_digest: 4beea5a71802d3a957d38c85af2ef60e2189fe7777f981822669df30eb53dd00
+        semantic_ir: *2
+        performance:
+          profile: reference-midi-v1
+          anchor_midi: 60
+          transposition_semantically_significant: false
+          primary_contour: rising
+          contour_relative_semitones: &17
+          - 0
+          - 2
+          secondary_contours: []
+          lexical_events:
+          - occurrence_id: n002
+            target_id: MOV:111
+            register: middle
+            base_midi: 60
+            family_qualified_transliteration: gi·kok
+            formal_carrier: gi-ki-ki-ki
+            family_opening_relative_semitones: &18
+            - 0
+            - 2
+            - 7
+            family_opening_absolute_midi:
+            - 60
+            - 62
+            - 67
+            address_relative_semitones: &19
+            - 0
+            - 2
+            - 4
+            - 6
+            address_absolute_midi:
+            - 60
+            - 62
+            - 64
+            - 66
+            note_duration_beats: 1.0
+            runtime_tail:
+              code: 1
+              name: active
+              relative_motion_semitones: -6
+              absolute_note: 60
+              articulation: firm_return
+              duration_beats: 0.5
+          structural_events:
+          - edge_id: e001
+            edge_type: centers
+            from: n002
+            to: n001
+            boundary: medium_gap
+            boundary_beats: 1.0
+          statement_boundary: long_gap
+          statement_boundary_beats: 2.0
+        literal_gloss: n002:active target approach[1]
+      round_trip_equal: true
+- case_id: missing_runtime
+  input: arrive
+  expected:
+    status: ok
+    translator_version: 1.0.0
+    input: arrive
+    normalized_input: arrive
+    speech_act_proposal: assertion
+    explicit_runtime_state: 
+    candidates:
+    - sense_id: ENS:b1563c8c463e36e3e134035b
+      lemma: arrive
+      sense_key: completed_target_arrival
+      route: atom
+      target_id: MOV:110
+      definition: To complete displacement to a target position.
+      selection_cues:
+      - endpoint has been reached
+      score: 1.0
+      confidence: high
+      match_type: exact_lemma
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 0
+      canonical_label: completed target arrival
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 0
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: MOV:110
+            runtime_state:
+              code: 0
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:713a5586ec5c8e774cb1d21c
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: 713a5586ec5c8e774cb1d21c6093e945da8d068cd9bcf910d9dd822febb6cc3d
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: MOV:110
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:5c77f669a1e10638d5be1439
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: 5c77f669a1e10638d5be1439a039d99258868321529157d6b6cdcabd585131b7
+      - runtime_state: 2
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: MOV:110
+            runtime_state:
+              code: 2
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:c1a776ea59c091f362f9ed48
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: c1a776ea59c091f362f9ed486d868db9df226da61af000e6a8020a6bd4a0fec6
+    decision:
+      auto_resolution_allowed: false
+      requires_clarification: true
+      reasons:
+      - runtime_state_required
+      competing_sense_ids: []
+    clarification:
+    - field: runtime_state
+      question: 'What is the occurrence runtime state: 0, 1, or 2?'
+      options:
+      - 0
+      - 1
+      - 2
+- case_id: lexical_ambiguity
+  input: go [1]
+  expected:
+    status: ok
+    translator_version: 1.0.0
+    input: go [1]
+    normalized_input: go
+    speech_act_proposal: assertion
+    explicit_runtime_state: 1
+    candidates:
+    - sense_id: ENS:5ad7aa675898f637de9413e2
+      lemma: go
+      sense_key: abstract_transition
+      route: semantic_ir
+      definition: Enter another nonspatial state through a context-specific transition.
+      selection_cues:
+      - go dark, go silent, go wrong
+      score: 1.0
+      confidence: high
+      match_type: exact_lemma
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 1
+        definition_overlap: 0
+    - sense_id: ENS:f0621b3832207e0f002b7811
+      lemma: go
+      sense_key: spatial_movement
+      route: atom
+      target_id: MOV:121
+      definition: Undergo active change of position in a shared frame.
+      selection_cues:
+      - literal spatial displacement
+      score: 1.0
+      confidence: high
+      match_type: exact_lemma
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 0
+      canonical_label: active shared-frame movement
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: MOV:121
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:09fb8348084a6bba029b61b3
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: '09fb8348084a6bba029b61b3ed79a042c4ddcb9cc2a31bc9fb2a6fa8cefbe771'
+    decision:
+      auto_resolution_allowed: false
+      requires_clarification: true
+      reasons:
+      - material_sense_ambiguity
+      - structural_template_required
+      competing_sense_ids:
+      - ENS:f0621b3832207e0f002b7811
+    clarification:
+    - field: sense_id
+      question: Which meaning is intended?
+      options:
+      - sense_id: ENS:5ad7aa675898f637de9413e2
+        definition: Enter another nonspatial state through a context-specific transition.
+        route: semantic_ir
+      - sense_id: ENS:f0621b3832207e0f002b7811
+        definition: Undergo active change of position in a shared frame.
+        route: atom
+    - field: structure
+      question: Supply the missing participants, states, or clause structure required
+        by this semantic route.
+      route: semantic_ir
+- case_id: broad_polysemy
+  input: change [1]
+  expected:
+    status: ok
+    translator_version: 1.0.0
+    input: change [1]
+    normalized_input: change
+    speech_act_proposal: assertion
+    explicit_runtime_state: 1
+    candidates:
+    - sense_id: ENS:4466c32070b45d89c6279d3a
+      lemma: change
+      sense_key: generic_state_transition
+      route: semantic_ir
+      definition: Transition between context-selected states without enough domain
+        information to choose an atom.
+      selection_cues: &4
+      - domain is unspecified
+      score: 1.0
+      confidence: high
+      match_type: exact_lemma
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 0
+    - sense_id: ENS:5768a88555f2db09257adaee
+      lemma: change
+      sense_key: structural_reconfiguration
+      route: atom
+      target_id: STR:101
+      definition: Actively reconfigure one structure internally.
+      selection_cues: &6
+      - part-position arrangement changes
+      score: 1.0
+      confidence: high
+      match_type: exact_lemma
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 0
+      canonical_label: active internal reconfiguration
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: STR:101
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:281579b3fb72fad6a801e7d2
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: 281579b3fb72fad6a801e7d2ed801295d8751d2527fae29f9643b9606b200a7a
+    - sense_id: ENS:5802625fcb9558432be04a15
+      lemma: change
+      sense_key: mental_revision
+      route: atom
+      target_id: MIN:101
+      definition: Actively revise the cognizer's self-model.
+      selection_cues: &7
+      - self-understanding changes
+      score: 1.0
+      confidence: high
+      match_type: exact_lemma
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 0
+      canonical_label: active self-model revision
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: MIN:101
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:d943934e41bbbaaaaba6b045
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: d943934e41bbbaaaaba6b0454717b52771b2ecb2b35376d29158977f8eee0c68
+    - sense_id: ENS:5ac40242b12e752bb91e5bde
+      lemma: change
+      sense_key: data_transformation
+      route: atom
+      target_id: DAT:101
+      definition: Actively transform represented information within one bearer.
+      selection_cues: &3
+      - information content changes
+      score: 1.0
+      confidence: high
+      match_type: exact_lemma
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 0
+      canonical_label: active internal data transformation
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: DAT:101
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:3ace2a7ed47f6a7727943653
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: 3ace2a7ed47f6a77279436530576b78a9bae56404aed5aa3f8ac265e338a9ad9
+    - sense_id: ENS:a25801322c9328ebed641068
+      lemma: change
+      sense_key: material_change
+      route: atom
+      target_id: MAT:101
+      definition: Undergo an active inward physical-state change.
+      selection_cues: &5
+      - material bearer and physical state
+      score: 1.0
+      confidence: high
+      match_type: exact_lemma
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 1
+      canonical_label: active focal material change
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: MAT:101
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:045165220ffdb424c606c4b6
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: 045165220ffdb424c606c4b60bee96dee78953633567d8d55cc2eccb8b92aad8
+    - sense_id: ENS:17debe254c0cf35f28cdaa21
+      lemma: active systemic material change
+      sense_key: canonical_atom_label
+      route: atom
+      target_id: MAT:121
+      definition: An ongoing physical-state change distributed across materially interacting
+        parts of a shared system.
+      selection_cues: &8
+      - exact canonical label
+      - family domain MAT
+      - universal slot active systemic process
+      score: 0.065
+      confidence: low
+      match_type: token_overlap
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 1
+      canonical_label: active systemic material change
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: MAT:121
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:f326ac79b26924c6716a58e9
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: f326ac79b26924c6716a58e994a45c4bb5c0fec7c0ada9a79206e236b2c313e8
+    - sense_id: ENS:19b4251c8120baac2507447f
+      lemma: completed target material change
+      sense_key: canonical_atom_label
+      route: atom
+      target_id: MAT:110
+      definition: Completion of a physical-state change localized in a distinct material
+        target.
+      selection_cues: &9
+      - exact canonical label
+      - family domain MAT
+      - universal slot completed outward process
+      score: 0.065
+      confidence: low
+      match_type: token_overlap
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 1
+      canonical_label: completed target material change
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: MAT:110
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:4e663167274d99b6c36dfbdc
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: 4e663167274d99b6c36dfbdc9449684a01a33d92c328859cd1980772568a8108
+    - sense_id: ENS:21c4bbd3d3af50b3f1edbfac
+      lemma: potential focal material change
+      sense_key: canonical_atom_label
+      route: atom
+      target_id: MAT:102
+      definition: A possible physical-state change localized within the focal material
+        bearer that is not active or completed.
+      selection_cues: &10
+      - exact canonical label
+      - family domain MAT
+      - universal slot pending inward process
+      score: 0.065
+      confidence: low
+      match_type: token_overlap
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 1
+      canonical_label: potential focal material change
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: MAT:102
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:cef672f52022ac67541711fb
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: cef672f52022ac67541711fb831e888e561e8cecb44047e661cf727531ad5dcb
+    decision:
+      auto_resolution_allowed: false
+      requires_clarification: true
+      reasons:
+      - material_sense_ambiguity
+      - structural_template_required
+      competing_sense_ids:
+      - ENS:5768a88555f2db09257adaee
+      - ENS:5802625fcb9558432be04a15
+      - ENS:5ac40242b12e752bb91e5bde
+      - ENS:a25801322c9328ebed641068
+    clarification:
+    - field: sense_id
+      question: Which meaning is intended?
+      options:
+      - sense_id: ENS:4466c32070b45d89c6279d3a
+        definition: Transition between context-selected states without enough domain
+          information to choose an atom.
+        route: semantic_ir
+      - sense_id: ENS:5768a88555f2db09257adaee
+        definition: Actively reconfigure one structure internally.
+        route: atom
+      - sense_id: ENS:5802625fcb9558432be04a15
+        definition: Actively revise the cognizer's self-model.
+        route: atom
+      - sense_id: ENS:5ac40242b12e752bb91e5bde
+        definition: Actively transform represented information within one bearer.
+        route: atom
+      - sense_id: ENS:a25801322c9328ebed641068
+        definition: Undergo an active inward physical-state change.
+        route: atom
+    - field: structure
+      question: Supply the missing participants, states, or clause structure required
+        by this semantic route.
+      route: semantic_ir
+- case_id: contextual_ranking
+  input: change represented information content [1]
+  expected:
+    status: ok
+    translator_version: 1.0.0
+    input: change represented information content [1]
+    normalized_input: change represented information content
+    speech_act_proposal: assertion
+    explicit_runtime_state: 1
+    candidates:
+    - sense_id: ENS:5ac40242b12e752bb91e5bde
+      lemma: change
+      sense_key: data_transformation
+      route: atom
+      target_id: DAT:101
+      definition: Actively transform represented information within one bearer.
+      selection_cues: *3
+      score: 0.88
+      confidence: medium
+      match_type: contained_lemma
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 2
+        definition_overlap: 2
+      canonical_label: active internal data transformation
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: DAT:101
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:3ace2a7ed47f6a7727943653
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: 3ace2a7ed47f6a77279436530576b78a9bae56404aed5aa3f8ac265e338a9ad9
+    - sense_id: ENS:4466c32070b45d89c6279d3a
+      lemma: change
+      sense_key: generic_state_transition
+      route: semantic_ir
+      definition: Transition between context-selected states without enough domain
+        information to choose an atom.
+      selection_cues: *4
+      score: 0.74
+      confidence: medium
+      match_type: contained_lemma
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 1
+    - sense_id: ENS:a25801322c9328ebed641068
+      lemma: change
+      sense_key: material_change
+      route: atom
+      target_id: MAT:101
+      definition: Undergo an active inward physical-state change.
+      selection_cues: *5
+      score: 0.74
+      confidence: medium
+      match_type: contained_lemma
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 1
+      canonical_label: active focal material change
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: MAT:101
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:045165220ffdb424c606c4b6
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: 045165220ffdb424c606c4b60bee96dee78953633567d8d55cc2eccb8b92aad8
+    - sense_id: ENS:5768a88555f2db09257adaee
+      lemma: change
+      sense_key: structural_reconfiguration
+      route: atom
+      target_id: STR:101
+      definition: Actively reconfigure one structure internally.
+      selection_cues: *6
+      score: 0.72
+      confidence: medium
+      match_type: contained_lemma
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 0
+      canonical_label: active internal reconfiguration
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: STR:101
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:281579b3fb72fad6a801e7d2
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: 281579b3fb72fad6a801e7d2ed801295d8751d2527fae29f9643b9606b200a7a
+    - sense_id: ENS:5802625fcb9558432be04a15
+      lemma: change
+      sense_key: mental_revision
+      route: atom
+      target_id: MIN:101
+      definition: Actively revise the cognizer's self-model.
+      selection_cues: *7
+      score: 0.72
+      confidence: medium
+      match_type: contained_lemma
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 0
+      canonical_label: active self-model revision
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: MIN:101
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:d943934e41bbbaaaaba6b045
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: d943934e41bbbaaaaba6b0454717b52771b2ecb2b35376d29158977f8eee0c68
+    - sense_id: ENS:17debe254c0cf35f28cdaa21
+      lemma: active systemic material change
+      sense_key: canonical_atom_label
+      route: atom
+      target_id: MAT:121
+      definition: An ongoing physical-state change distributed across materially interacting
+        parts of a shared system.
+      selection_cues: *8
+      score: 0.065
+      confidence: low
+      match_type: token_overlap
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 1
+      canonical_label: active systemic material change
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: MAT:121
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:f326ac79b26924c6716a58e9
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: f326ac79b26924c6716a58e994a45c4bb5c0fec7c0ada9a79206e236b2c313e8
+    - sense_id: ENS:19b4251c8120baac2507447f
+      lemma: completed target material change
+      sense_key: canonical_atom_label
+      route: atom
+      target_id: MAT:110
+      definition: Completion of a physical-state change localized in a distinct material
+        target.
+      selection_cues: *9
+      score: 0.065
+      confidence: low
+      match_type: token_overlap
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 1
+      canonical_label: completed target material change
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: MAT:110
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:4e663167274d99b6c36dfbdc
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: 4e663167274d99b6c36dfbdc9449684a01a33d92c328859cd1980772568a8108
+    - sense_id: ENS:21c4bbd3d3af50b3f1edbfac
+      lemma: potential focal material change
+      sense_key: canonical_atom_label
+      route: atom
+      target_id: MAT:102
+      definition: A possible physical-state change localized within the focal material
+        bearer that is not active or completed.
+      selection_cues: *10
+      score: 0.065
+      confidence: low
+      match_type: token_overlap
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 1
+      canonical_label: potential focal material change
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: MAT:102
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:cef672f52022ac67541711fb
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: cef672f52022ac67541711fb831e888e561e8cecb44047e661cf727531ad5dcb
+    decision:
+      auto_resolution_allowed: false
+      requires_clarification: true
+      reasons:
+      - nonexact_surface_match
+      competing_sense_ids: []
+    clarification: []
+- case_id: structural_route
+  input: build [1]
+  expected:
+    status: ok
+    translator_version: 1.0.0
+    input: build [1]
+    normalized_input: build
+    speech_act_proposal: assertion
+    explicit_runtime_state: 1
+    candidates:
+    - sense_id: ENS:c905c4d6c245b415ebec6f04
+      lemma: build
+      sense_key: generate_composite_artifact
+      route: semantic_ir
+      definition: Generate an artifact while establishing its composite arrangement.
+      selection_cues:
+      - construction and assembly
+      score: 1.0
+      confidence: high
+      match_type: exact_lemma
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 0
+    decision:
+      auto_resolution_allowed: false
+      requires_clarification: true
+      reasons:
+      - structural_template_required
+      competing_sense_ids: []
+    clarification:
+    - field: structure
+      question: Supply the missing participants, states, or clause structure required
+        by this semantic route.
+      route: semantic_ir
+- case_id: grammar_route
+  input: and
+  expected:
+    status: ok
+    translator_version: 1.0.0
+    input: and
+    normalized_input: and
+    speech_act_proposal: assertion
+    explicit_runtime_state: 
+    candidates:
+    - sense_id: ENS:07d4d96033cd7db59d0e0c45
+      lemma: and
+      sense_key: coordination_all
+      route: grammar
+      definition: Coordinate all listed expressions conjunctively.
+      selection_cues:
+      - all conjuncts intended
+      score: 1.0
+      confidence: high
+      match_type: exact_lemma
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 0
+    decision:
+      auto_resolution_allowed: false
+      requires_clarification: true
+      reasons:
+      - structural_template_required
+      competing_sense_ids: []
+    clarification:
+    - field: structure
+      question: Supply the missing participants, states, or clause structure required
+        by this semantic route.
+      route: grammar
+- case_id: documented_gap
+  input: food [1]
+  expected:
+    status: ok
+    translator_version: 1.0.0
+    input: food [1]
+    normalized_input: food
+    speech_act_proposal: assertion
+    explicit_runtime_state: 1
+    candidates:
+    - sense_id: ENS:6f129b0baf7f4e34b541b3ac
+      lemma: food
+      sense_key: nutritive_material
+      route: gap
+      definition: Material conventionally suitable for consumption to support life.
+      selection_cues:
+      - nutrition and consumption
+      score: 1.0
+      confidence: high
+      match_type: exact_lemma
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 0
+    decision:
+      auto_resolution_allowed: false
+      requires_clarification: true
+      reasons:
+      - documented_vocabulary_gap
+      competing_sense_ids: []
+    clarification:
+    - field: vocabulary
+      question: This concept is an explicit Era Zero vocabulary gap; choose a supported
+        paraphrase or defer translation.
+      sense_id: ENS:6f129b0baf7f4e34b541b3ac
+- case_id: gap_polysemy
+  input: home [1]
+  expected:
+    status: ok
+    translator_version: 1.0.0
+    input: home [1]
+    normalized_input: home
+    speech_act_proposal: assertion
+    explicit_runtime_state: 1
+    candidates:
+    - sense_id: ENS:32fa33661747d4717393f2ed
+      lemma: home
+      sense_key: physical_dwelling
+      route: gap
+      definition: A structure conventionally serving as a habitual dwelling.
+      selection_cues:
+      - building or residence
+      score: 1.0
+      confidence: high
+      match_type: exact_lemma
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 0
+    - sense_id: ENS:ce7583f1235d7078c9de8e70
+      lemma: home
+      sense_key: affective_social_center
+      route: gap
+      definition: A socially or affectively anchored place of belonging.
+      selection_cues:
+      - belonging or attachment
+      score: 1.0
+      confidence: high
+      match_type: exact_lemma
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 0
+    decision:
+      auto_resolution_allowed: false
+      requires_clarification: true
+      reasons:
+      - material_sense_ambiguity
+      - documented_vocabulary_gap
+      competing_sense_ids:
+      - ENS:ce7583f1235d7078c9de8e70
+    clarification:
+    - field: sense_id
+      question: Which meaning is intended?
+      options:
+      - sense_id: ENS:32fa33661747d4717393f2ed
+        definition: A structure conventionally serving as a habitual dwelling.
+        route: gap
+      - sense_id: ENS:ce7583f1235d7078c9de8e70
+        definition: A socially or affectively anchored place of belonging.
+        route: gap
+    - field: vocabulary
+      question: This concept is an explicit Era Zero vocabulary gap; choose a supported
+        paraphrase or defer translation.
+      sense_id: ENS:32fa33661747d4717393f2ed
+- case_id: slotted_compound
+  input: directed data link [1]
+  expected:
+    status: ok
+    translator_version: 1.0.0
+    input: directed data link [1]
+    normalized_input: directed data link
+    speech_act_proposal: assertion
+    explicit_runtime_state: 1
+    candidates:
+    - sense_id: ENS:9b064955bf2ce7ec90c73704
+      lemma: directed data link
+      sense_key: canonical_compound_label
+      route: compound
+      target_id: CMP:742b44d9ead66b451346708a
+      definition: An established directed communication relation between open source
+        and target participants whose exchanged content is a bounded datum.
+      selection_cues:
+      - exact approved compound label
+      - all component restrictions are intended
+      score: 1.0
+      confidence: high
+      match_type: exact_lemma
+      evidence:
+        lexical_overlap: 3
+        selection_cue_overlap: 0
+        definition_overlap: 1
+      canonical_label: directed data link
+      required_roles: &11
+      - source
+      - target
+      semantic_ir_options: []
+    - sense_id: ENS:9cd2b59ce4e5811e3ac32391
+      lemma: data
+      sense_key: bounded_information_object
+      route: atom
+      target_id: DAT:000
+      definition: A persistent bounded information object maintained within one bearer.
+      selection_cues:
+      - one internal datum is intended
+      score: 0.72
+      confidence: medium
+      match_type: contained_lemma
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 0
+      canonical_label: persistent internal datum
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: DAT:000
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:6ead5ea4bef2268e2f1c7a85
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: 6ead5ea4bef2268e2f1c7a854ccb65f49e106cf63c1f0931fe36547111ffef65
+    - sense_id: ENS:3b918553e966d23903ae7256
+      lemma: data repair
+      sense_key: canonical_compound_label
+      route: compound
+      target_id: CMP:b518a324d776e46e9d0ff041
+      definition: A completed internal restoration whose restorative transformation
+        is a completed internal data transformation.
+      selection_cues:
+      - exact approved compound label
+      - all component restrictions are intended
+      score: 0.11
+      confidence: low
+      match_type: token_overlap
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 1
+      canonical_label: data repair
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: compound
+            target_id: CMP:b518a324d776e46e9d0ff041
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:960debeb3bef4ca02234a3ff
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: 960debeb3bef4ca02234a3ff0a6d4f226c9d1060a75ffe8ba448ec4245f1e882
+    - sense_id: ENS:035d34120f3850c209adff28
+      lemma: unresolved directed communication relation
+      sense_key: canonical_atom_label
+      route: atom
+      target_id: CON:212
+      definition: A directed relation from a reference endpoint to a distinct target
+        whose status as a participant link for communicative exchange is undetermined.
+      selection_cues:
+      - exact canonical label
+      - family domain CON
+      - universal slot unresolved outward relationship
+      score: 0.085
+      confidence: low
+      match_type: token_overlap
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 2
+      canonical_label: unresolved directed communication relation
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: CON:212
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:34c850eb88d8d92285a2589b
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: 34c850eb88d8d92285a2589bc218fa39baf6b61f8e01aec54f529d63ac1fd10c
+    - sense_id: ENS:78021fd966e48e91f760c933
+      lemma: operative directed communication relation
+      sense_key: canonical_atom_label
+      route: atom
+      target_id: CON:211
+      definition: A directed relation from a reference endpoint to a distinct target
+        that is presently operative as a participant link for communicative exchange.
+      selection_cues:
+      - exact canonical label
+      - family domain CON
+      - universal slot active outward relationship
+      score: 0.085
+      confidence: low
+      match_type: token_overlap
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 2
+      canonical_label: operative directed communication relation
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: CON:211
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:2dbdbb66bb05a015dcf9b6c0
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: 2dbdbb66bb05a015dcf9b6c0a6c450005e058a78c448c25cb28aa1f2c609fe8a
+    - sense_id: ENS:0f23a572cb4430970732cafd
+      lemma: latent source-target data transferability
+      sense_key: canonical_atom_label
+      route: atom
+      target_id: DAT:212
+      definition: An information-transfer relation between one source context and
+        one distinct reference target that exists without presently enabling bounded
+        target data transfer.
+      selection_cues:
+      - exact canonical label
+      - family domain DAT
+      - universal slot unresolved outward relationship
+      score: 0.065
+      confidence: low
+      match_type: token_overlap
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 1
+      canonical_label: latent source-target data transferability
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: DAT:212
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:03aba17154f0b65c60189764
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: 03aba17154f0b65c6018976485d068b41b349c81cd1cd2aa4a5e2c39f33d654d
+    - sense_id: ENS:4a4759bcfa66e9514bda6645
+      lemma: operative source-target data transferability
+      sense_key: canonical_atom_label
+      route: atom
+      target_id: DAT:211
+      definition: An information-transfer relation between one source context and
+        one distinct reference target that presently enables bounded target data transfer.
+      selection_cues:
+      - exact canonical label
+      - family domain DAT
+      - universal slot active outward relationship
+      score: 0.065
+      confidence: low
+      match_type: token_overlap
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 1
+      canonical_label: operative source-target data transferability
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: DAT:211
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:296b73ec387d17a6cc491547
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: 296b73ec387d17a6cc491547e96a3ac1f3990c66ae53edae44281867deb9cbaa
+    - sense_id: ENS:674d5e63943f9b35da77290a
+      lemma: latent systemic data synchronizability
+      sense_key: canonical_atom_label
+      route: atom
+      target_id: DAT:222
+      definition: A capacity of information states across multiple participants in
+        one shared data domain to undergo coordinated alignment under one synchronization
+        criterion that exists without being presently operative.
+      selection_cues:
+      - exact canonical label
+      - family domain DAT
+      - universal slot unrealized systemic possibility
+      score: 0.065
+      confidence: low
+      match_type: token_overlap
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 1
+      canonical_label: latent systemic data synchronizability
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: atom
+            target_id: DAT:222
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:ac9fe3812f9939b5b2ed5b37
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: ac9fe3812f9939b5b2ed5b3706a96a89441ce24500fbc48ad81404bd05b3e2f9
+    decision:
+      auto_resolution_allowed: false
+      requires_clarification: true
+      reasons:
+      - required_roles_missing
+      competing_sense_ids: []
+    clarification:
+    - field: roles
+      question: Supply canonical controlled labels for every required role.
+      required_roles: *11
+- case_id: unknown
+  input: flurple the moon [1]
+  expected:
+    status: error
+    error:
+      code: no_candidate
+      message: No indexed Era Zero sense overlaps the input.
+      input: flurple the moon [1]
+      details:
+        normalized_input: flurple the moon
+- case_id: invalid_runtime
+  input: leave [num]
+  expected:
+    status: error
+    error:
+      code: invalid_runtime_state
+      message: An explicit runtime marker must be [0], [1], or [2].
+      input: leave [num]
+      details:
+        runtime_state: num
+resolution_cases:
+- case_id: resolve_atom
+  input: leave
+  sense_id: ENS:723b76515108bf4a17e07bb7
+  runtime_state: 1
+  speech_act: assertion
+  roles: {}
+  expected:
+    status: resolved
+    source_input: leave
+    sense_id: ENS:723b76515108bf4a17e07bb7
+    route: atom
+    target_id: MOV:101
+    controlled_input: ASSERT "active source departure" [1].
+    semantic_ir: &12
+      ir_version: '1.0'
+      root_clause: n001
+      speech_act: assertion
+      nodes:
+      - node_id: n001
+        kind: clause
+        clause_type: predication
+      - node_id: n002
+        kind: lexical_occurrence
+        target_type: atom
+        target_id: MOV:101
+        runtime_state:
+          code: 1
+      edges:
+      - edge_id: e001
+        type: centers
+        from: n002
+        to: n001
+      discourse_constraints: {}
+      utterance_id: UTT:ece93a3460b79ba681c694b5
+      serialization:
+        canonical_format: EZIR-JSON-1
+        content_digest: ece93a3460b79ba681c694b56dcd8559dc5fdc890c6b31cdae659c9829bdf920
+    formal:
+      format: EZF-1
+      renderer_version: 1.0.0
+      formal_id: EZF:1bd53aa1422c748757242eb9
+      formal_digest: 1bd53aa1422c748757242eb94dbaa12cd1c2ff4e0b4fe245562962c0c2a268f0
+      semantic_digest: ece93a3460b79ba681c694b56dcd8559dc5fdc890c6b31cdae659c9829bdf920
+      semantic_ir: *12
+      performance:
+        profile: reference-midi-v1
+        anchor_midi: 60
+        transposition_semantically_significant: false
+        primary_contour: level
+        contour_relative_semitones: *13
+        secondary_contours: []
+        lexical_events:
+        - occurrence_id: n002
+          target_id: MOV:101
+          register: middle
+          base_midi: 60
+          family_qualified_transliteration: gi·kak
+          formal_carrier: gi-ki-ma-ki
+          family_opening_relative_semitones: *14
+          family_opening_absolute_midi:
+          - 60
+          - 62
+          - 67
+          address_relative_semitones: *15
+          address_absolute_midi:
+          - 60
+          - 62
+          - 62
+          - 64
+          note_duration_beats: 1.0
+          runtime_tail:
+            code: 1
+            name: active
+            relative_motion_semitones: -4
+            absolute_note: 60
+            articulation: firm_return
+            duration_beats: 0.5
+        structural_events:
+        - edge_id: e001
+          edge_type: centers
+          from: n002
+          to: n001
+          boundary: medium_gap
+          boundary_beats: 1.0
+        statement_boundary: long_gap
+        statement_boundary_beats: 2.0
+      literal_gloss: n002:active source departure[1]
+    round_trip_equal: true
+- case_id: resolve_question
+  input: approach?
+  sense_id: ENS:3214e617d9796e986d0caf3f
+  runtime_state: 1
+  speech_act: question
+  roles: {}
+  expected:
+    status: resolved
+    source_input: approach?
+    sense_id: ENS:3214e617d9796e986d0caf3f
+    route: atom
+    target_id: MOV:111
+    controlled_input: QUESTION "active target approach" [1].
+    semantic_ir: &16
+      ir_version: '1.0'
+      root_clause: n001
+      speech_act: question
+      nodes:
+      - node_id: n001
+        kind: clause
+        clause_type: predication
+      - node_id: n002
+        kind: lexical_occurrence
+        target_type: atom
+        target_id: MOV:111
+        runtime_state:
+          code: 1
+      edges:
+      - edge_id: e001
+        type: centers
+        from: n002
+        to: n001
+      discourse_constraints: {}
+      utterance_id: UTT:4beea5a71802d3a957d38c85
+      serialization:
+        canonical_format: EZIR-JSON-1
+        content_digest: 4beea5a71802d3a957d38c85af2ef60e2189fe7777f981822669df30eb53dd00
+    formal:
+      format: EZF-1
+      renderer_version: 1.0.0
+      formal_id: EZF:1000b737b2fbe8eea6bde096
+      formal_digest: 1000b737b2fbe8eea6bde096bac1ba1def93e838311c2bd9fafdeb146d2da0eb
+      semantic_digest: 4beea5a71802d3a957d38c85af2ef60e2189fe7777f981822669df30eb53dd00
+      semantic_ir: *16
+      performance:
+        profile: reference-midi-v1
+        anchor_midi: 60
+        transposition_semantically_significant: false
+        primary_contour: rising
+        contour_relative_semitones: *17
+        secondary_contours: []
+        lexical_events:
+        - occurrence_id: n002
+          target_id: MOV:111
+          register: middle
+          base_midi: 60
+          family_qualified_transliteration: gi·kok
+          formal_carrier: gi-ki-ki-ki
+          family_opening_relative_semitones: *18
+          family_opening_absolute_midi:
+          - 60
+          - 62
+          - 67
+          address_relative_semitones: *19
+          address_absolute_midi:
+          - 60
+          - 62
+          - 64
+          - 66
+          note_duration_beats: 1.0
+          runtime_tail:
+            code: 1
+            name: active
+            relative_motion_semitones: -6
+            absolute_note: 60
+            articulation: firm_return
+            duration_beats: 0.5
+        structural_events:
+        - edge_id: e001
+          edge_type: centers
+          from: n002
+          to: n001
+          boundary: medium_gap
+          boundary_beats: 1.0
+        statement_boundary: long_gap
+        statement_boundary_beats: 2.0
+      literal_gloss: n002:active target approach[1]
+    round_trip_equal: true
+- case_id: resolve_slotted_compound
+  input: directed data link
+  sense_id: ENS:9b064955bf2ce7ec90c73704
+  runtime_state: 1
+  speech_act: assertion
+  roles:
+    source:
+      label: conscious other
+      state: 1
+    target:
+      label: active material object
+      state: 1
+  expected:
+    status: resolved
+    source_input: directed data link
+    sense_id: ENS:9b064955bf2ce7ec90c73704
+    route: compound
+    target_id: CMP:742b44d9ead66b451346708a
+    controlled_input: ASSERT "directed data link" [1] ROLE source "conscious other"
+      [1] ROLE target "active material object" [1].
+    semantic_ir: &20
+      ir_version: '1.0'
+      root_clause: n001
+      speech_act: assertion
+      nodes:
+      - node_id: n001
+        kind: clause
+        clause_type: predication
+      - node_id: n002
+        kind: lexical_occurrence
+        target_type: compound
+        target_id: CMP:742b44d9ead66b451346708a
+        runtime_state:
+          code: 1
+      - node_id: n003
+        kind: lexical_occurrence
+        target_type: atom
+        target_id: LIF:011
+        runtime_state:
+          code: 1
+      - node_id: n004
+        kind: lexical_occurrence
+        target_type: atom
+        target_id: MAT:011
+        runtime_state:
+          code: 1
+      edges:
+      - edge_id: e001
+        type: fills_role
+        from: n003
+        to: n002
+        role: source
+      - edge_id: e002
+        type: fills_role
+        from: n004
+        to: n002
+        role: target
+      - edge_id: e003
+        type: centers
+        from: n002
+        to: n001
+      discourse_constraints: {}
+      utterance_id: UTT:b8f1f16ea820e92732e8f1b7
+      serialization:
+        canonical_format: EZIR-JSON-1
+        content_digest: b8f1f16ea820e92732e8f1b75f054c43a109e3f4eaa3248d0841269f5e55106d
+    formal:
+      format: EZF-1
+      renderer_version: 1.0.0
+      formal_id: EZF:0ce32f86624558cf3e8bdf58
+      formal_digest: 0ce32f86624558cf3e8bdf585a02f6ff34841beb68e319f518682294c858b819
+      semantic_digest: b8f1f16ea820e92732e8f1b75f054c43a109e3f4eaa3248d0841269f5e55106d
+      semantic_ir: *20
+      performance:
+        profile: reference-midi-v1
+        anchor_midi: 60
+        transposition_semantically_significant: false
+        primary_contour: level
+        contour_relative_semitones: *13
+        secondary_contours: []
+        lexical_events:
+        - occurrence_id: n002
+          component_node_id: q01
+          component_role: qualifier
+          target_id: DAT:000
+          register: middle
+          base_midi: 60
+          family_qualified_transliteration: li·nam
+          formal_carrier: li-ma-ma-ma
+          family_opening_relative_semitones:
+          - 0
+          - 4
+          - 7
+          - 11
+          family_opening_absolute_midi:
+          - 60
+          - 64
+          - 67
+          - 71
+          address_relative_semitones:
+          - 0
+          - 0
+          - 0
+          - 0
+          address_absolute_midi:
+          - 60
+          - 60
+          - 60
+          - 60
+          note_duration_beats: 1.0
+        - occurrence_id: n002
+          component_node_id: h
+          component_role: head
+          target_id: CON:210
+          register: middle
+          base_midi: 60
+          family_qualified_transliteration: wu·mom
+          formal_carrier: wu-nu-ki-ma
+          family_opening_relative_semitones:
+          - 0
+          - 4
+          - 7
+          - 9
+          family_opening_absolute_midi:
+          - 60
+          - 64
+          - 67
+          - 69
+          address_relative_semitones:
+          - 0
+          - -2
+          - 0
+          - 0
+          address_absolute_midi:
+          - 60
+          - 58
+          - 60
+          - 60
+          note_duration_beats: 1.0
+          runtime_tail:
+            code: 1
+            name: active
+            relative_motion_semitones: 0
+            absolute_note: 60
+            articulation: firm_return
+            duration_beats: 0.5
+        - occurrence_id: n003
+          target_id: LIF:011
+          register: low
+          base_midi: 48
+          family_qualified_transliteration: ni·nok
+          formal_carrier: ni-ma-ki-ki
+          family_opening_relative_semitones:
+          - 0
+          - 4
+          - 7
+          family_opening_absolute_midi:
+          - 48
+          - 52
+          - 55
+          address_relative_semitones:
+          - 0
+          - 0
+          - 2
+          - 4
+          address_absolute_midi:
+          - 48
+          - 48
+          - 50
+          - 52
+          note_duration_beats: 1.0
+          runtime_tail:
+            code: 1
+            name: active
+            relative_motion_semitones: -4
+            absolute_note: 48
+            articulation: firm_return
+            duration_beats: 0.5
+        - occurrence_id: n004
+          target_id: MAT:011
+          register: high
+          base_midi: 72
+          family_qualified_transliteration: ba·nok
+          formal_carrier: ba-ma-ki-ki
+          family_opening_relative_semitones:
+          - 0
+          - 7
+          - 12
+          family_opening_absolute_midi:
+          - 72
+          - 79
+          - 84
+          address_relative_semitones:
+          - 0
+          - 0
+          - 2
+          - 4
+          address_absolute_midi:
+          - 72
+          - 72
+          - 74
+          - 76
+          note_duration_beats: 1.0
+          runtime_tail:
+            code: 1
+            name: active
+            relative_motion_semitones: -4
+            absolute_note: 72
+            articulation: firm_return
+            duration_beats: 0.5
+        structural_events:
+        - edge_id: e001
+          edge_type: fills_role
+          from: n003
+          to: n002
+          role: source
+          boundary: short_gap
+          boundary_beats: 0.5
+        - edge_id: e002
+          edge_type: fills_role
+          from: n004
+          to: n002
+          role: target
+          boundary: short_gap
+          boundary_beats: 0.5
+        - edge_id: e003
+          edge_type: centers
+          from: n002
+          to: n001
+          boundary: medium_gap
+          boundary_beats: 1.0
+        statement_boundary: long_gap
+        statement_boundary_beats: 2.0
+      literal_gloss: n002.q01:persistent internal datum | n002.h:established directed
+        communication relation[1] | n003:conscious other[1] | n004:active material
+        object[1]
+    round_trip_equal: true
+- case_id: reject_structural_as_lexeme
+  input: build
+  sense_id: ENS:c905c4d6c245b415ebec6f04
+  runtime_state: 1
+  speech_act: assertion
+  roles: {}
+  expected:
+    status: error
+    error:
+      code: structural_route_requires_template
+      message: The selected sense requires a semantic-IR or grammar template and cannot
+        be reduced to one lexical occurrence.
+      input: build
+      details:
+        sense_id: ENS:c905c4d6c245b415ebec6f04
+        route: semantic_ir

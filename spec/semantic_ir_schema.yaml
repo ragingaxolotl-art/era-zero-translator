@@ -1,0 +1,82 @@
+---
+metadata:
+  title: Era Zero semantic IR schema
+  version: 1.0.0
+  status: canonical
+required_document_fields:
+- ir_version
+- utterance_id
+- root_clause
+- speech_act
+- nodes
+- edges
+- serialization
+node_kinds:
+- clause
+- lexical_occurrence
+- literal
+- variable
+- reference
+- scope_operator
+- coordination
+- time_anchor
+- measurement
+- state_snapshot
+edge_types:
+- centers
+- fills_role
+- scopes
+- member_of
+- qualifies
+- time_relation
+- condition_of
+- before_state
+- after_state
+- corefers_with
+- grounds
+roles:
+- actor
+- source
+- cause
+- experiencer
+- bearer
+- predicate
+- target
+- result
+- destination
+- instrument
+- material
+- content
+- recipient
+- location
+- environment
+- condition
+- persistent_condition
+- time
+- manner
+- quantity
+- comparison_standard
+- beneficiary
+speech_acts:
+- assertion
+- question
+- command
+- definition
+- possibility
+forbidden_semantic_fields:
+- english_source
+- literal_gloss
+- natural_rendering
+- notes
+- confidence
+- renderer_plan
+- absolute_pitch
+- midi
+- svg
+- audio
+identifier_patterns:
+  utterance: "\\AUTT:[0-9a-f]{24}\\z"
+  node: "\\An[0-9]{3}\\z"
+  edge: "\\Ae[0-9]{3}\\z"
+  referent: "\\Ar:[a-z][a-z0-9_-]*\\z"
+  variable: "\\Av:[a-z][a-z0-9_-]*\\z"

@@ -1,0 +1,221 @@
+---
+metadata:
+  title: WRN:100–122 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.14
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: WRN:100–122
+  recommendation: reviews/WRN_100_122_recommended_spec.yaml
+  review: reviews/WRN_100_122_peer_review.md
+  validation: reviews/WRN_100_122_validation.md
+  soundness: reviews/WRN_000_122_soundness_audit.md
+  collision_report: reviews/WRN_100_122_collision_report.md
+  stress_tests: reviews/WRN_100_122_stress_tests.yaml
+promoted_roots:
+- canonical_id: WRN:100
+  canonical_title: completed internal degradation
+  invariant_definition: Completion of an adverse transformation originating within
+    one reference entity by which that entity enters a less acceptable condition.
+  fixed_generated_fields:
+    family: WRN
+    address: '100'
+    universal_slot: completed inward process
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: kam
+    canonical_transliteration: da·kam
+    formal_carrier: da-ki-ma-ma
+    note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 2
+- canonical_id: WRN:101
+  canonical_title: active internal degradation
+  invariant_definition: An ongoing adverse transformation originating within one reference
+    entity by which that entity is entering a less acceptable condition.
+  fixed_generated_fields:
+    family: WRN
+    address: '101'
+    universal_slot: active inward process
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: kak
+    canonical_transliteration: da·kak
+    formal_carrier: da-ki-ma-ki
+    note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 4
+- canonical_id: WRN:102
+  canonical_title: nonactualized internal degradation
+  invariant_definition: A nonactualized adverse transformation originating within
+    one reference entity by which that entity would enter a less acceptable condition.
+  fixed_generated_fields:
+    family: WRN
+    address: '102'
+    universal_slot: pending inward process
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: kan
+    canonical_transliteration: da·kan
+    formal_carrier: da-ki-ma-nu
+    note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 0
+- canonical_id: WRN:110
+  canonical_title: completed target impairment
+  invariant_definition: Completion of an adverse transformation by which one distinct
+    source causes one reference target to enter a less acceptable condition.
+  fixed_generated_fields:
+    family: WRN
+    address: '110'
+    universal_slot: completed outward process
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: kom
+    canonical_transliteration: da·kom
+    formal_carrier: da-ki-ki-ma
+    note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 4
+- canonical_id: WRN:111
+  canonical_title: active target impairment
+  invariant_definition: An ongoing adverse transformation by which one distinct source
+    causes one reference target to enter a less acceptable condition.
+  fixed_generated_fields:
+    family: WRN
+    address: '111'
+    universal_slot: active outward process
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: kok
+    canonical_transliteration: da·kok
+    formal_carrier: da-ki-ki-ki
+    note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 6
+- canonical_id: WRN:112
+  canonical_title: nonactualized target impairment
+  invariant_definition: A nonactualized adverse transformation by which one distinct
+    source would cause one reference target to enter a less acceptable condition.
+  fixed_generated_fields:
+    family: WRN
+    address: '112'
+    universal_slot: pending outward process
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: kon
+    canonical_transliteration: da·kon
+    formal_carrier: da-ki-ki-nu
+    note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 2
+- canonical_id: WRN:120
+  canonical_title: completed systemic propagation
+  invariant_definition: Completion of an adverse transformation by which one correlated
+    adverse condition becomes distributed across multiple participant entities within
+    a shared system.
+  fixed_generated_fields:
+    family: WRN
+    address: '120'
+    universal_slot: completed systemic process
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: kim
+    canonical_transliteration: da·kim
+    formal_carrier: da-ki-nu-ma
+    note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 0
+- canonical_id: WRN:121
+  canonical_title: active systemic propagation
+  invariant_definition: An ongoing adverse transformation by which one correlated
+    adverse condition becomes distributed across multiple participant entities within
+    a shared system.
+  fixed_generated_fields:
+    family: WRN
+    address: '121'
+    universal_slot: active systemic process
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: kik
+    canonical_transliteration: da·kik
+    formal_carrier: da-ki-nu-ki
+    note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 2
+- canonical_id: WRN:122
+  canonical_title: nonactualized systemic propagation
+  invariant_definition: A nonactualized adverse transformation by which one correlated
+    adverse condition would become distributed across multiple participant entities
+    within a shared system.
+  fixed_generated_fields:
+    family: WRN
+    address: '122'
+    universal_slot: pending systemic process
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: kin
+    canonical_transliteration: da·kin
+    formal_carrier: da-ki-nu-nu
+    note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - -2
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 180
+  provisional_count_after: 144
+  unreviewed_chunks_after: 16
+  future_change_policy: explicit versioned migration required
+  next_review_packet: WRN:200–222
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

@@ -1,0 +1,46 @@
+---
+migration_id: gate4b_compound_dictionary_1.0
+date: '2026-10-09'
+status: applied
+authority_basis: User authorized the next stage after Gate 4A and delegated root/compound
+  approval decisions.
+from:
+  gate4b_status: not_started
+  approved_compounds: 0
+to:
+  gate4b_status: complete
+  approved_compounds: 28
+  dictionary_version: 1.0.0
+atomic_lexicon_fingerprint: 9b2e6047a5bbd39f0b54ff2f49b569cf7e4726b361b51a62070804727efce26f
+semantic_changes_to_atoms: []
+generated_field_changes: []
+approved_compound_ids:
+- CMP:111b772027accab2054f0415
+- CMP:218a5578a2274b92ba3d72db
+- CMP:22f8ddc4d9b2d1a818d38e9f
+- CMP:2d26353b47b531bd3f5ae090
+- CMP:2d993bb1d93b7d24d303e364
+- CMP:2f350e7d8e5dfba4a802d82d
+- CMP:3122dedcff0f85ad293e2580
+- CMP:33c135410b0deef525b6770d
+- CMP:4144fad413b8ce5012088c61
+- CMP:44173561806bc8f334a0b7c9
+- CMP:578fd06e1dec6f91d2b35add
+- CMP:608ecb4f3c515a9c9a3443ec
+- CMP:61bfb0de7a1e9d7f5b981725
+- CMP:725868579ebb0e2ef83cf708
+- CMP:742b44d9ead66b451346708a
+- CMP:8e5ae722d9e5e31f85ac3c5b
+- CMP:8f05a5e16a897935492726fa
+- CMP:919b714e6201a462756224a2
+- CMP:99a87c8869d58498f524f1cc
+- CMP:9e8b36f50570a0c3c362a968
+- CMP:a7fc0ca38a6f95a40cdb87b1
+- CMP:b518a324d776e46e9d0ff041
+- CMP:cb0812face56f90b7ba139c5
+- CMP:d98407801d64c085f702c9db
+- CMP:e152ea538409460a93b99b90
+- CMP:e2af90ba78681e87e68450e5
+- CMP:e799b436d9c5e7d87a5516fa
+- CMP:f1abd5eccdf06d92d5690a32
+next_gate: gate4c_english_concept_and_sense_index

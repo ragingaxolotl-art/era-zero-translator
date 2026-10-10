@@ -1,0 +1,203 @@
+---
+metadata:
+  title: Era Zero translator readiness
+  status: blocked_pending_compound_dictionary_and_later_gates
+  architecture_version: '1.0'
+  broad_translator_authorized: true
+  compound_architecture_version: 1.0.0
+current_inventory:
+  deterministic_addresses: 324
+  canonical_meanings: 324
+  provisional_meanings: 0
+  reviewed_pending_user_decision:
+    roots: 0
+    packets: []
+  unreviewed:
+    roots: 0
+    nine_root_chunks: 0
+safe_now:
+  explicit_canonical_id_renderer_prototype: true
+  maximum_semantic_scope: 324 canonical roots
+  reject_provisional_roots: true
+  general_english_translation: true
+  compound_translation: true
+  compound_schema_validation: true
+  compound_definition_authoring: true
+  approved_compound_count: 28
+  controlled_english_translation: true
+  svg_generation: true
+  midi_generation: true
+required_gates:
+- order: 1
+  gate: atomic_semantic_freeze
+  deliverables:
+  - all 324 meanings explicitly reviewed and approved or release-excluded
+  - exclusions and neighboring contrasts
+  - provenance and versioned migrations
+  status: complete
+- order: 2
+  gate: compound_and_coverage
+  deliverables:
+  - typed compound schema
+  - canonical high-frequency compound dictionary
+  - English concept and sense index
+  - expressibility and ambiguity report
+  - Era etymology table
+  status: complete
+  subgates:
+  - gate: gate4a_typed_compound_architecture
+    status: complete
+    artifact: spec/compound_architecture_1.0.yaml
+  - gate: gate4b_high_frequency_compound_dictionary
+    status: complete
+    entries: 28
+  - gate: gate4c_english_concept_and_sense_index
+    status: complete
+    senses: 436
+    lemmas: 419
+  - gate: gate4d_coverage_and_ambiguity_report
+    status: complete
+    direct_lexical_percent: 90.14
+    explicit_gaps: 11
+  - gate: gate4e_etymology_table
+    status: complete
+    entries: 352
+- order: 3
+  gate: semantic_ir_and_grammar
+  deliverables:
+  - utterance IR schema
+  - typed semantic roles
+  - scope and attachment rules
+  - negation
+  - quantity and measurement
+  - modality
+  - reference time and state transitions
+  - coordination, seriality, parallelism, repetition, and recursion
+  - canonical serialization
+  status: complete
+  artifact: spec/semantic_ir_1.0.yaml
+  validation: reports/semantic_ir_validation.md
+- order: 4
+  gate: deterministic_renderer_and_decoder
+  deliverables:
+  - IR to formal notation
+  - family-qualified transliteration
+  - formal carrier
+  - relative and absolute notes
+  - runtime ending
+  - contour, timing, and register plan
+  - literal gloss
+  - inverse decoder
+  - round_trip_conformance
+  status: complete
+  artifact: spec/renderer_decoder_1.0.yaml
+  validation: reports/renderer_decoder_validation.md
+- order: 5
+  gate: controlled_english
+  deliverables:
+  - restricted template grammar
+  - deterministic sense mappings
+  - structured unsupported-input errors
+  - golden translation tests
+  status: complete
+  artifact: spec/controlled_english_1.0.yaml
+  validation: reports/controlled_english_validation.md
+- order: 6
+  gate: general_english
+  deliverables:
+  - ranked candidate IRs
+  - ambiguity confidence
+  - interactive clarification
+  - no_silent_guess policy
+  status: complete
+  artifact: spec/general_english_1.0.yaml
+  validation: reports/general_english_validation.md
+- order: 7
+  gate: glyph_and_audio
+  deliverables:
+  - IR-driven SVG
+  - MIDI
+  - optional synthesized audio
+  status: complete
+  artifact: spec/glyph_audio_1.0.yaml
+  validation: reports/glyph_audio_validation.md
+translator_start_conditions:
+- all atomic release meanings are canonical
+- compound and sense schemas are approved
+- English concept mappings distinguish atoms, compounds, grammar, other families,
+  and gaps
+- semantic IR and grammar are versioned
+- deterministic renderer and decoder pass round-trip tests
+- unsupported and ambiguous inputs have specified behavior
+next_semantic_chunk_after_pending_decisions: 
+authority:
+  semantic_status_source: lexicon/semantic_authority.yaml
+  roadmap: reports/translator_readiness_roadmap.md
+next_authorized_gate: 
+gate4a:
+  status: complete_and_canonical
+  architecture: spec/compound_architecture_1.0.yaml
+  schema: spec/compound_graph_schema.yaml
+  validation: reports/gate4a_validation.md
+  conformance_cases: tests/gate4a_compound_cases.yaml
+  dictionary_entries: 0
+gate4b:
+  status: complete_and_canonical
+  dictionary: lexicon/compound_dictionary.yaml
+  entries: 28
+  validation: reports/gate4b_validation.md
+  english_index_started: false
+gate4c:
+  status: complete_and_canonical
+  index: lexicon/english_sense_index.yaml
+  schema: spec/english_sense_index_schema.yaml
+  senses: 436
+  lemmas: 419
+  validation: reports/gate4c_validation.md
+  general_english_translation: false
+gate4d:
+  status: complete
+  metrics: reports/gate4d_coverage_metrics.yaml
+  report: reports/gate4d_coverage_and_ambiguity.md
+  translator_authorized: false
+gate4e:
+  status: complete_and_canonical
+  table: lexicon/etymology_table.yaml
+  schema: spec/etymology_schema.yaml
+  entries: 352
+  validation: reports/gate4e_validation.md
+semantic_ir:
+  status: complete_and_canonical
+  version: 1.0.0
+  spec: spec/semantic_ir_1.0.yaml
+  schema: spec/semantic_ir_schema.yaml
+  conformance: tests/semantic_ir_cases.yaml
+  renderer_started: false
+renderer_decoder:
+  status: complete_and_canonical
+  version: 1.0.0
+  spec: spec/renderer_decoder_1.0.yaml
+  implementation: tools/lib/era_zero_renderer.rb
+  round_trip_cases: 48
+  controlled_english_started: false
+controlled_english:
+  status: complete_and_canonical
+  version: 1.0.0
+  spec: spec/controlled_english_1.0.yaml
+  implementation: tools/lib/era_zero_controlled_english.rb
+  controlled_lexemes: 352
+  general_english_started: false
+general_english:
+  status: complete_and_canonical
+  version: 1.0.0
+  spec: spec/general_english_1.0.yaml
+  implementation: tools/lib/era_zero_general_english.rb
+  indexed_senses: 436
+  silent_first_match: false
+glyph_and_audio:
+  status: complete_and_canonical
+  version: 1.0.0
+  spec: spec/glyph_audio_1.0.yaml
+  svg: true
+  midi: true
+  synthesized_waveform_audio: false

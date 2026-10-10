@@ -1,0 +1,235 @@
+---
+metadata:
+  title: DAT:200–222 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.24
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: DAT:200–222
+  recommendation: reviews/DAT_200_222_recommended_spec.yaml
+  review: reviews/DAT_200_222_peer_review.md
+  validation: reviews/DAT_200_222_validation.md
+  soundness: reviews/DAT_000_222_soundness_audit.md
+  collision_report: reviews/DAT_200_222_collision_report.md
+  stress_tests: reviews/DAT_200_222_stress_tests.yaml
+promoted_roots:
+- canonical_id: DAT:200
+  canonical_title: persistent internal data transformability
+  invariant_definition: A persistent capacity of represented information within one
+    reference entity to undergo bounded internal data transformation, independently
+    of whether that capacity is presently operative.
+  fixed_generated_fields:
+    family: DAT
+    address: '200'
+    universal_slot: stable inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: mam
+    canonical_transliteration: li·mam
+    formal_carrier: li-nu-ma-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+- canonical_id: DAT:201
+  canonical_title: operative internal data transformability
+  invariant_definition: A capacity of represented information within one reference
+    entity to undergo bounded internal data transformation that is presently operative.
+  fixed_generated_fields:
+    family: DAT
+    address: '201'
+    universal_slot: active inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: mak
+    canonical_transliteration: li·mak
+    formal_carrier: li-nu-ma-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+- canonical_id: DAT:202
+  canonical_title: latent internal data transformability
+  invariant_definition: A capacity of represented information within one reference
+    entity to undergo bounded internal data transformation that exists without being
+    presently operative.
+  fixed_generated_fields:
+    family: DAT
+    address: '202'
+    universal_slot: dormant inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: man
+    canonical_transliteration: li·man
+    formal_carrier: li-nu-ma-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+- canonical_id: DAT:210
+  canonical_title: persistent source-target data transferability
+  invariant_definition: A persistent information-transfer relation between one source
+    context and one distinct reference target that can enable bounded target data
+    transfer, independently of whether that relation is presently operative.
+  fixed_generated_fields:
+    family: DAT
+    address: '210'
+    universal_slot: stable outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: mom
+    canonical_transliteration: li·mom
+    formal_carrier: li-nu-ki-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+- canonical_id: DAT:211
+  canonical_title: operative source-target data transferability
+  invariant_definition: An information-transfer relation between one source context
+    and one distinct reference target that presently enables bounded target data transfer.
+  fixed_generated_fields:
+    family: DAT
+    address: '211'
+    universal_slot: active outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: mok
+    canonical_transliteration: li·mok
+    formal_carrier: li-nu-ki-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+- canonical_id: DAT:212
+  canonical_title: latent source-target data transferability
+  invariant_definition: An information-transfer relation between one source context
+    and one distinct reference target that exists without presently enabling bounded
+    target data transfer.
+  fixed_generated_fields:
+    family: DAT
+    address: '212'
+    universal_slot: unresolved outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: mon
+    canonical_transliteration: li·mon
+    formal_carrier: li-nu-ki-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+- canonical_id: DAT:220
+  canonical_title: persistent systemic data synchronizability
+  invariant_definition: A persistent capacity of information states across multiple
+    participants in one shared data domain to undergo coordinated alignment under
+    one synchronization criterion, independently of whether that capacity is presently
+    operative.
+  fixed_generated_fields:
+    family: DAT
+    address: '220'
+    universal_slot: stable systemic relationship
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: mim
+    canonical_transliteration: li·mim
+    formal_carrier: li-nu-nu-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+- canonical_id: DAT:221
+  canonical_title: operative systemic data synchronizability
+  invariant_definition: A capacity of information states across multiple participants
+    in one shared data domain to undergo coordinated alignment under one synchronization
+    criterion that is presently operative.
+  fixed_generated_fields:
+    family: DAT
+    address: '221'
+    universal_slot: active systemic relationship
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: mik
+    canonical_transliteration: li·mik
+    formal_carrier: li-nu-nu-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+- canonical_id: DAT:222
+  canonical_title: latent systemic data synchronizability
+  invariant_definition: A capacity of information states across multiple participants
+    in one shared data domain to undergo coordinated alignment under one synchronization
+    criterion that exists without being presently operative.
+  fixed_generated_fields:
+    family: DAT
+    address: '222'
+    universal_slot: unrealized systemic possibility
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 7
+    - 11
+    family_onset: li
+    local_compact_root: min
+    canonical_transliteration: li·min
+    formal_carrier: li-nu-nu-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 270
+  provisional_count_after: 54
+  unreviewed_chunks_after: 6
+  future_change_policy: explicit versioned migration required
+  next_review_packet: CRE:000–022
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

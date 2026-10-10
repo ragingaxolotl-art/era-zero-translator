@@ -1,0 +1,484 @@
+---
+metadata:
+  title: Era Zero Semantic IR and Executable Grammar
+  version: 1.0.0
+  status: canonical
+  ir_version: '1.0'
+  grammar_version: '1.0'
+  atomic_lexicon_fingerprint: 9b2e6047a5bbd39f0b54ff2f49b569cf7e4726b361b51a62070804727efce26f
+  compound_dictionary_fingerprint: 7fe378e505f032fd58681c2bdf1f41195a1428075d20e46f66330466a4d983b5
+  renderer_started: false
+  decoder_started: false
+  translator_started: false
+design_principles:
+  meaning_before_performance: The IR represents semantic structure independently of
+    note choice, voice allocation, timing values, glyph layout, or English word order.
+  lexical_immutability: Atom and compound occurrences reference canonical targets
+    without altering their definitions or generated forms.
+  explicit_scope: Negation, modality, quantification, time, aspect, conditionals,
+    and repetition name an exact scope node.
+  dimension_separation: Lexical third trit, occurrence runtime state, polarity, modality,
+    reference time, and aspect are independent fields and never substitute for one
+    another.
+  finite_graph: Every utterance is a finite connected directed acyclic graph with
+    one root clause.
+  no_silent_inference: Roles, attachment, coreference, order, and coordination are
+    explicit; a renderer or translator may not infer them from adjacency.
+document_model:
+  required_fields:
+  - ir_version
+  - utterance_id
+  - root_clause
+  - speech_act
+  - nodes
+  - edges
+  - serialization
+  utterance_id_pattern: UTT:<24 lowercase hexadecimal digits>
+  root_clause: Exactly one clause node is the external semantic root.
+  graph: All non-root nodes must have a directed path to root_clause. Cycles are prohibited,
+    including through embedded clauses and coreference.
+  semantic_payload:
+  - ir_version
+  - root_clause
+  - speech_act
+  - nodes
+  - edges
+  - discourse_constraints
+  nonidentity_metadata:
+  - english_source
+  - literal_gloss
+  - natural_rendering
+  - notes
+  - confidence
+  - renderer_plan
+  - absolute_pitch
+  - midi
+  - svg
+  - audio
+node_types:
+  clause:
+    required:
+    - node_id
+    - kind
+    - clause_type
+    clause_types:
+    - predication
+    - relation
+    - definition
+    - conditional
+    - comparison
+    - transition
+    rule: A clause contains one predicate or operator center and may embed other clauses.
+  lexical_occurrence:
+    required:
+    - node_id
+    - kind
+    - target_type
+    - target_id
+    - runtime_state
+    target_types:
+    - atom
+    - compound
+    rule: References exactly one canonical lexical target; runtime state describes
+      this occurrence only.
+  literal:
+    required:
+    - node_id
+    - kind
+    - datatype
+    - value
+    datatypes:
+    - boolean
+    - integer
+    - decimal
+    - string
+    - datetime
+    - duration
+    - unit
+    - symbol
+    rule: Literal values carry no unstated lexical meaning.
+  variable:
+    required:
+    - node_id
+    - kind
+    - variable_id
+    - value_type
+    value_types:
+    - entity
+    - process
+    - relation
+    - condition
+    - value
+    - location
+    - time
+    - quantity
+    - proposition
+    rule: Variables are locally bound or explicitly discourse-bound.
+  reference:
+    required:
+    - node_id
+    - kind
+    - referent_id
+    rule: A reference resolves to one declared discourse referent; unresolved reference
+      is an error, not a guess.
+  scope_operator:
+    required:
+    - node_id
+    - kind
+    - operator
+    operators:
+    - negation
+    - modality
+    - quantifier
+    - aspect
+    - repetition
+    rule: Every operator has exactly one scopes edge.
+  coordination:
+    required:
+    - node_id
+    - kind
+    - operator
+    operators:
+    - all_of
+    - any_of
+    - exactly_one
+    - sequence
+    - parallel
+    rule: Members are explicit; sequence requires integer order, parallel forbids
+      order.
+  time_anchor:
+    required:
+    - node_id
+    - kind
+    - anchor_type
+    anchor_types:
+    - speech_time
+    - reference_time
+    - absolute_time
+    - interval
+    rule: Time is an occurrence relation, never inferred from lexical trit or runtime
+      state.
+  measurement:
+    required:
+    - node_id
+    - kind
+    - magnitude
+    - unit
+    rule: Magnitude is numeric or a quantity variable and unit is a controlled symbol.
+  state_snapshot:
+    required:
+    - node_id
+    - kind
+    - bearer
+    - state_value
+    rule: Used only as before or after state of an explicit transition clause.
+edge_types:
+  centers:
+    direction: predicate_or_operator_to_clause
+    cardinality: exactly one incoming center per clause
+  fills_role:
+    direction: argument_to_lexical_or_clause_center
+    roles: &1
+    - actor
+    - source
+    - cause
+    - experiencer
+    - bearer
+    - predicate
+    - target
+    - result
+    - destination
+    - instrument
+    - material
+    - content
+    - recipient
+    - location
+    - environment
+    - condition
+    - persistent_condition
+    - time
+    - manner
+    - quantity
+    - comparison_standard
+    - beneficiary
+    cardinality: at most one per singular role unless coordinated
+  scopes:
+    direction: scoped_node_to_operator
+    cardinality: exactly one incoming per scope operator
+  member_of:
+    direction: member_to_coordination
+    attributes:
+    - order
+    cardinality: at least two members
+  qualifies:
+    direction: descriptor_to_described
+    rule: Lexical qualification only; propositional modification uses a clause or
+      scoped operator.
+  time_relation:
+    direction: time_anchor_to_clause
+    relations:
+    - before
+    - at
+    - after
+    - during
+    - starts
+    - ends
+    - overlaps
+    cardinality: explicit relation required
+  condition_of:
+    direction: condition_clause_to_consequent_clause
+    attributes:
+    - condition_status
+    condition_statuses:
+    - open
+    - satisfied
+    - unsatisfied
+    - counterfactual
+  before_state:
+    direction: state_snapshot_to_transition_clause
+    cardinality: exactly one for transition
+  after_state:
+    direction: state_snapshot_to_transition_clause
+    cardinality: exactly one for transition
+  corefers_with:
+    direction: reference_to_declared_referent
+    cardinality: exactly one
+  grounds:
+    direction: supporting_clause_to_supported_clause
+    rule: Discourse/evidential dependency, not lexical ORI grounding unless ORI is
+      explicitly used.
+role_system:
+  roles: *1
+  core_register_defaults:
+    low:
+    - actor
+    - source
+    - cause
+    middle:
+    - predicate
+    high:
+    - target
+    - result
+    - destination
+    sustained_background:
+    - environment
+    - persistent_condition
+  typed_extensions:
+    experiencer: cognitive or affective bearer
+    bearer: entity in which a state inheres
+    content: communicated or represented information
+    recipient: participant receiving possession or benefit rather than merely a target
+    instrument: means used
+    material: constituent input
+    location: spatial/model setting
+    time: temporal argument
+    manner: mode of occurrence
+    quantity: cardinality or measure
+    comparison_standard: reference for comparison
+    beneficiary: entity for whose benefit an occurrence is performed
+  selection_rule: Lexical invariants constrain plausible roles, but the IR never invents
+    a missing participant. Required role profiles are defined by controlled-English
+    templates and later translator rules.
+runtime_state:
+  codes:
+    0: inactive, false, ended, unavailable, or inaccessible as specifically interpreted
+      for the lexical target
+    1: active, valid, expressed, or executing as specifically interpreted for the
+      lexical target
+    2: dormant, pending, remembered, possible, or unresolved as specifically interpreted
+      for the lexical target
+  representation:
+    code: 0, 1, or 2
+    num: the fixed name of code 2, not a numeric parameter or extra value
+  separations:
+  - runtime 0 is not propositional negation
+  - runtime 1 is not present tense or truth
+  - runtime 2/num is not future tense, modality, or lexical third trit 2
+  - runtime state never changes compound identity
+polarity_and_scope:
+  positive: absence of a negation operator over the relevant scope
+  negative: one explicit negation scope_operator with one scopes edge
+  double_negation: two nested negation operators remain structurally distinct; no
+    automatic cancellation in canonical IR
+  scope_targets:
+  - clause
+  - lexical_occurrence
+  - coordination
+  - scope_operator
+  prohibition: Do not encode not-X as runtime [0] or as a dormant/pending lexical
+    root.
+quantity_and_measurement:
+  quantifiers:
+  - exact
+  - at_least
+  - at_most
+  - range
+  - all
+  - some
+  - none
+  - proportional
+  number_format: Canonical finite decimal string; no exponent; -0 normalizes to 0;
+    leading and trailing redundant zeros removed.
+  units:
+    dimensionless: '1'
+    time:
+    - second
+    - minute
+    - hour
+    - day
+    length:
+    - meter
+    - kilometer
+    mass:
+    - gram
+    - kilogram
+    angle:
+    - degree
+    - radian
+    information:
+    - bit
+    - byte
+  scope: A quantifier scopes exactly one variable, reference, lexical occurrence,
+    or coordination. Measurement binds through quantity or another explicit semantic
+    role.
+  none_vs_negation: Quantifier none over a participant set is not identical to negating
+    the entire clause.
+modality:
+  modes:
+  - possible
+  - necessary
+  - permitted
+  - obligated
+  - intended
+  - predicted
+  - counterfactual
+  strength: Optional canonical decimal from 0 through 1 for epistemic confidence only;
+    deontic force uses the mode name, not a probability.
+  scope: A modality operator scopes exactly one proposition or predicate occurrence.
+  separation: possible modality is not runtime [2], potential lexical third trit,
+    or fall-then-rise contour; those layers may co-occur independently.
+time_and_aspect:
+  reference_time: Every tense interpretation is a time_relation between a clause and
+    speech_time, another reference_time, an absolute_time, or an interval.
+  relations:
+  - before
+  - at
+  - after
+  - during
+  - starts
+  - ends
+  - overlaps
+  aspects:
+  - bounded
+  - ongoing
+  - habitual
+  - iterative
+  - perfect
+  - prospective
+  separation: Completed/active/pending lexical meanings and runtime state do not determine
+    reference time or grammatical aspect.
+  state_transition: A transition clause has exactly one before_state and one after_state;
+    a lexical process occurrence may center it but does not silently supply either
+    snapshot.
+composition:
+  coordination:
+    all_of: all members asserted
+    any_of: one or more alternatives
+    exactly_one: one alternative
+    sequence: members execute or occur in explicit order
+    parallel: members occur without serial ordering
+  seriality: Sequence members have unique contiguous order integers beginning at 1.
+  parallelism: Parallel members have no order attribute; performance overlap is derived
+    later.
+  repetition: Repetition scopes one clause or coordination and specifies exactly one
+    of finite count, while-condition, or until-condition.
+  recursion: Clause embedding and compound references may recurse structurally only
+    through a finite acyclic expanded graph. Self-reference requires an explicit reference
+    node and never creates an infinite lexical graph.
+  conditionals: A conditional clause contains explicit condition_of structure; modality
+    and counterfactual status remain separately encoded.
+discourse:
+  referent_declaration: Entity occurrences and variables may declare stable referent_id
+    values within a discourse context.
+  coreference: Reference nodes resolve by exact referent_id through one corefers_with
+    edge; pronoun form and salience are later surface decisions.
+  unresolved_reference: Must produce an error or clarification request.
+  ellipsis: Not canonical IR; omitted content must be recovered before serialization.
+execution_semantics:
+  validation_order:
+  - schema and identifier validation
+  - target authority resolution
+  - graph connectivity and acyclicity
+  - node and edge cardinality
+  - scope and binding
+  - quantity/unit normalization
+  - time and transition consistency
+  - canonical serialization
+  evaluation_order: Dependencies and embedded scopes evaluate before their containing
+    clause; sequence order is explicit; parallel members are unordered relative to
+    one another; assertions do not mutate lexicon authority.
+  questions: Return the value or truth status of the scoped clause without asserting
+    it.
+  commands: Request execution of the scoped process; permission and obligation remain
+    explicit modality.
+  definitions: Bind a symbol or variable to a proposition, value, or type within an
+    explicit context.
+  errors:
+  - unknown_target
+  - invalid_runtime_state
+  - missing_role_target
+  - unknown_role
+  - invalid_scope
+  - cycle
+  - disconnected_node
+  - unresolved_reference
+  - invalid_quantity
+  - invalid_unit
+  - invalid_time_relation
+  - invalid_transition
+  - invalid_coordination
+  - invalid_repetition
+  - forbidden_surface_field
+canonical_serialization:
+  encoding: UTF-8 JSON
+  unicode: NFC
+  object_keys: lexicographic
+  numbers: canonical decimal strings
+  node_order: lexicographic node_id
+  edge_order: edge type rank, target, role/relation, source, then canonical attributes
+  content_identity: SHA-256 over the canonical semantic payload; utterance_id is UTT:<first
+    24 lowercase hexadecimal digits>.
+  excluded:
+  - english_source
+  - literal_gloss
+  - natural_rendering
+  - notes
+  - confidence
+  - renderer_plan
+  - absolute_pitch
+  - midi
+  - svg
+  - audio
+  versioning: A payload-semantic change produces a new utterance identity. Editorial
+    metadata never changes identity.
+surface_contract_for_later_renderer:
+  speech_act_to_contour:
+    assertion: level
+    question: rising
+    command: sharply_falling
+    definition: rise_then_return
+    possibility: fall_then_rise
+  role_to_register:
+    actor/source/cause: low
+    predicate: middle
+    target/result/destination: high
+    environment/persistent_condition: sustained_background
+  timing:
+    qualifies: no_gap
+    fills_role: short_gap
+    next_instruction: medium_gap
+    statement_end: long_gap
+    parallel: overlap
+    repetition: repeated_pulse
+  boundary: These mappings constrain the next gate but contain no absolute pitch,
+    voice allocation, MIDI, glyph, or audio implementation.

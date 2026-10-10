@@ -1,0 +1,77 @@
+---
+metadata:
+  title: Era Zero General-English Candidate Translator
+  version: 1.0.0
+  status: canonical
+  sense_index_fingerprint: df74c082ff27e556c465e2cf25381433125b8211588889904e4b38668aff16d5
+  controlled_english_fingerprint: 57c47195665b331681c055a8d040abc3b39edf5cf97e372b4240a3ccfc6f628b
+  semantic_ir_fingerprint: bf965de543f802cb095fb34287bbc063e7fc1f0c293fb6bd1d89a6482bc2ac01
+  reviewed_noncanonical_senses: 84
+  silent_first_match: false
+contract:
+  analysis: Return ranked indexed senses, evidence, route, confidence, candidate IRs
+    where structurally possible, and explicit clarification state.
+  resolution: Produce canonical IR and EZF-1 only from an explicitly selected sense,
+    runtime state, speech act, and every required role.
+  auto_resolution: Allowed only for one unique exact lemma, an explicit runtime marker,
+    a direct atom or compound route, and no unbound compound roles.
+  no_silent_guess: Never choose the first index entry, invent a missing role, collapse
+    a structural route into one atom, or conceal a documented vocabulary gap.
+normalization:
+  text: Unicode NFC, lowercase, punctuation removed for matching, whitespace collapsed.
+  runtime_marker: An optional final [0], [1], or [2] is semantic input and removed
+    before sense matching.
+  speech_act_proposal: A final question mark proposes question; every other surface
+    proposes assertion. The proposal is visible and may be overridden during explicit
+    resolution.
+ranking:
+  exact_lemma: 1.0
+  contained_lemma: 0.72
+  token_overlap: 0.18 per covered lemma-token proportion, capped at 0.45
+  selection_cue_overlap: 0.06 per input/cue token, capped at 0.18
+  definition_overlap: 0.02 per input/definition token, capped at 0.08
+  total: sum capped at 1.0 and rounded to four decimals; ties break by sense_id, never
+    file order
+  confidence:
+    high: ">= 0.90"
+    medium: ">= 0.65"
+    low: "< 0.65"
+  material_ambiguity: Any competing candidate within 0.12 of the top score requires
+    clarification.
+route_behavior:
+  atom: Expose canonical target and full IR alternatives for every unexcluded runtime
+    state.
+  compound: Expose IR alternatives when the graph has no open slots; otherwise request
+    every required role.
+  semantic_ir: Request missing structural participants or state-transition structure.
+  grammar: Request the expressions to be joined or scoped by the grammatical relation.
+  gap: Report the recorded vocabulary gap and do not fabricate a lexical target.
+clarification_reasons:
+- material_sense_ambiguity
+- runtime_state_required
+- required_roles_missing
+- structural_template_required
+- documented_vocabulary_gap
+- nonexact_surface_match
+errors:
+- empty_input
+- invalid_runtime_state
+- no_candidate
+- unknown_sense
+- invalid_speech_act
+- invalid_role
+- structural_route_requires_template
+- missing_required_role
+- controlled_resolution_failed
+pipeline:
+- general-English analysis
+- ranked indexed senses
+- explicit clarification or conservative auto-resolution
+- controlled-English canonicalization
+- semantic IR
+- EZF-1
+- inverse decode
+implementation:
+  library: tools/lib/era_zero_general_english.rb
+  cli: tools/translate_general_english.rb
+  evaluation: tests/general_english_cases.yaml

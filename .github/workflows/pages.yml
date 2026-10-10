@@ -1,0 +1,43 @@
+name: Deploy Era Zero Translator
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  validate-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Build deterministic browser release
+        run: ruby tools/build_pages_release.rb
+      - name: Audit browser release
+        run: node tools/validate_pages_release.mjs
+      - name: Audit canonical product
+        run: ruby tools/validate_product_application.rb
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: pages
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

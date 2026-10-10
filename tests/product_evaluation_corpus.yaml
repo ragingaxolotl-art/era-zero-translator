@@ -1,0 +1,669 @@
+---
+metadata:
+  version: 1.0.0
+  sense_cases: 84
+  journey_cases: 13
+  total: 97
+sense_cases:
+- case_id: sense-001
+  category: indexed_sense_recall
+  input: after [1]
+  expected_sense_id: ENS:b3a61677f9ceaa9d33f9798c
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-002
+  category: indexed_sense_recall
+  input: and [1]
+  expected_sense_id: ENS:07d4d96033cd7db59d0e0c45
+  expected_route: grammar
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-003
+  category: indexed_sense_recall
+  input: approach [1]
+  expected_sense_id: ENS:3214e617d9796e986d0caf3f
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: false
+- case_id: sense-004
+  category: indexed_sense_recall
+  input: arrive [1]
+  expected_sense_id: ENS:b1563c8c463e36e3e134035b
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: false
+- case_id: sense-005
+  category: indexed_sense_recall
+  input: attention [1]
+  expected_sense_id: ENS:250d732ee9f0283ec5ddb2b3
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: false
+- case_id: sense-006
+  category: indexed_sense_recall
+  input: backup [1]
+  expected_sense_id: ENS:ad8a752709bdd172f58df346
+  expected_route: compound
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-007
+  category: indexed_sense_recall
+  input: be [1]
+  expected_sense_id: ENS:5ab179f3fc3ea14446785917
+  expected_route: grammar
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-008
+  category: indexed_sense_recall
+  input: become [1]
+  expected_sense_id: ENS:3c01bc5f389682c42f4bb128
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-009
+  category: indexed_sense_recall
+  input: before [1]
+  expected_sense_id: ENS:f989ded430f1dd203c2b30fb
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-010
+  category: indexed_sense_recall
+  input: body [1]
+  expected_sense_id: ENS:4ba08e5d2231c0881249f7ba
+  expected_route: compound
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-011
+  category: indexed_sense_recall
+  input: break [1]
+  expected_sense_id: ENS:4e25796700cc15e14040ccc5
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: false
+- case_id: sense-012
+  category: indexed_sense_recall
+  input: build [1]
+  expected_sense_id: ENS:c905c4d6c245b415ebec6f04
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-013
+  category: indexed_sense_recall
+  input: cause [1]
+  expected_sense_id: ENS:c4b6bbda20f77f413356e78e
+  expected_route: grammar
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-014
+  category: indexed_sense_recall
+  input: change [1]
+  expected_sense_id: ENS:5ac40242b12e752bb91e5bde
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-015
+  category: indexed_sense_recall
+  input: change [1]
+  expected_sense_id: ENS:4466c32070b45d89c6279d3a
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-016
+  category: indexed_sense_recall
+  input: change [1]
+  expected_sense_id: ENS:a25801322c9328ebed641068
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-017
+  category: indexed_sense_recall
+  input: change [1]
+  expected_sense_id: ENS:5802625fcb9558432be04a15
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-018
+  category: indexed_sense_recall
+  input: change [1]
+  expected_sense_id: ENS:5768a88555f2db09257adaee
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-019
+  category: indexed_sense_recall
+  input: community [1]
+  expected_sense_id: ENS:a4390645ea409c7b69b818a1
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: false
+- case_id: sense-020
+  category: indexed_sense_recall
+  input: continue [1]
+  expected_sense_id: ENS:dad12cc129934924d0b30996
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-021
+  category: indexed_sense_recall
+  input: create [1]
+  expected_sense_id: ENS:259f9210b63cd16ffed8286a
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: false
+- case_id: sense-022
+  category: indexed_sense_recall
+  input: cross [1]
+  expected_sense_id: ENS:2307af5cd9af1dfdf0715b4e
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-023
+  category: indexed_sense_recall
+  input: danger [1]
+  expected_sense_id: ENS:783cb9ac9e17a7e04353a11e
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: false
+- case_id: sense-024
+  category: indexed_sense_recall
+  input: data [1]
+  expected_sense_id: ENS:9cd2b59ce4e5811e3ac32391
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: false
+- case_id: sense-025
+  category: indexed_sense_recall
+  input: depart [1]
+  expected_sense_id: ENS:87b6694a6714d56b02ea6e7c
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: false
+- case_id: sense-026
+  category: indexed_sense_recall
+  input: destination [1]
+  expected_sense_id: ENS:ae8071e06a583ece599ca404
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: false
+- case_id: sense-027
+  category: indexed_sense_recall
+  input: exist [1]
+  expected_sense_id: ENS:31570c65fff4db911851a769
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-028
+  category: indexed_sense_recall
+  input: exist [1]
+  expected_sense_id: ENS:21f018f3fb7652b879ae2d5b
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-029
+  category: indexed_sense_recall
+  input: fix [1]
+  expected_sense_id: ENS:6d9271cb4b53de4bfc4a54dd
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: false
+- case_id: sense-030
+  category: indexed_sense_recall
+  input: follow [1]
+  expected_sense_id: ENS:4f7c87330a8274dcb7ceaf35
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-031
+  category: indexed_sense_recall
+  input: food [1]
+  expected_sense_id: ENS:6f129b0baf7f4e34b541b3ac
+  expected_route: gap
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-032
+  category: indexed_sense_recall
+  input: forget [1]
+  expected_sense_id: ENS:2d33f24e902c2cb4cfac56d3
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-033
+  category: indexed_sense_recall
+  input: friend [1]
+  expected_sense_id: ENS:a8c7b0b838715af591353a29
+  expected_route: gap
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-034
+  category: indexed_sense_recall
+  input: future [1]
+  expected_sense_id: ENS:3a52c8f1a5eb614d5593140d
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-035
+  category: indexed_sense_recall
+  input: go [1]
+  expected_sense_id: ENS:5ad7aa675898f637de9413e2
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-036
+  category: indexed_sense_recall
+  input: go [1]
+  expected_sense_id: ENS:f0621b3832207e0f002b7811
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-037
+  category: indexed_sense_recall
+  input: have [1]
+  expected_sense_id: ENS:6c88cdc2532bd142502cd306
+  expected_route: grammar
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-038
+  category: indexed_sense_recall
+  input: have [1]
+  expected_sense_id: ENS:b110a9f781f7b17331893258
+  expected_route: gap
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-039
+  category: indexed_sense_recall
+  input: home [1]
+  expected_sense_id: ENS:ce7583f1235d7078c9de8e70
+  expected_route: gap
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-040
+  category: indexed_sense_recall
+  input: home [1]
+  expected_sense_id: ENS:32fa33661747d4717393f2ed
+  expected_route: gap
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-041
+  category: indexed_sense_recall
+  input: if [1]
+  expected_sense_id: ENS:3b557ca390c8df8027ced433
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-042
+  category: indexed_sense_recall
+  input: injury [1]
+  expected_sense_id: ENS:6cfc0269b3e11fba8fef53e9
+  expected_route: compound
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-043
+  category: indexed_sense_recall
+  input: know [1]
+  expected_sense_id: ENS:7a7a779150abda10b3747adb
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-044
+  category: indexed_sense_recall
+  input: know [1]
+  expected_sense_id: ENS:0280e7d97af99a109cf9f9c7
+  expected_route: gap
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-045
+  category: indexed_sense_recall
+  input: law [1]
+  expected_sense_id: ENS:c037ba86606dd870491d7b7f
+  expected_route: compound
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-046
+  category: indexed_sense_recall
+  input: leave [1]
+  expected_sense_id: ENS:723b76515108bf4a17e07bb7
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: false
+- case_id: sense-047
+  category: indexed_sense_recall
+  input: make [1]
+  expected_sense_id: ENS:b92aa5ecfae0079cf40bfd93
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: false
+- case_id: sense-048
+  category: indexed_sense_recall
+  input: many [1]
+  expected_sense_id: ENS:4b54e3d2e35423b4ad69106a
+  expected_route: grammar
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-049
+  category: indexed_sense_recall
+  input: message [1]
+  expected_sense_id: ENS:05cbcc0b98b310b7680e6b50
+  expected_route: compound
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-050
+  category: indexed_sense_recall
+  input: move [1]
+  expected_sense_id: ENS:9cdc02bf28481ad4b32ebaaa
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-051
+  category: indexed_sense_recall
+  input: move [1]
+  expected_sense_id: ENS:ebe15400ef3f9ca02167230e
+  expected_route: gap
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-052
+  category: indexed_sense_recall
+  input: move [1]
+  expected_sense_id: ENS:1ad113c37a9ed4516c48b6d7
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-053
+  category: indexed_sense_recall
+  input: not [1]
+  expected_sense_id: ENS:7a2a733d7ac4e070be1333db
+  expected_route: grammar
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-054
+  category: indexed_sense_recall
+  input: one [1]
+  expected_sense_id: ENS:59218a1c61e8fadbf9ebe4ec
+  expected_route: grammar
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-055
+  category: indexed_sense_recall
+  input: or [1]
+  expected_sense_id: ENS:7cd212223a73bdd0c7a252e1
+  expected_route: grammar
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-056
+  category: indexed_sense_recall
+  input: origin [1]
+  expected_sense_id: ENS:6a96bce37d637fe18b6dc0a9
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: false
+- case_id: sense-057
+  category: indexed_sense_recall
+  input: past [1]
+  expected_sense_id: ENS:a10921c3c47805bd67e92fb6
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-058
+  category: indexed_sense_recall
+  input: pause [1]
+  expected_sense_id: ENS:b0c7388400dda032c4c14318
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-059
+  category: indexed_sense_recall
+  input: person [1]
+  expected_sense_id: ENS:444ce49f2c76da2da998fa42
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: false
+- case_id: sense-060
+  category: indexed_sense_recall
+  input: program [1]
+  expected_sense_id: ENS:4e3e07163b8d7c7749a15c97
+  expected_route: compound
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-061
+  category: indexed_sense_recall
+  input: receive [1]
+  expected_sense_id: ENS:b51a4cc96b353e6b21534689
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-062
+  category: indexed_sense_recall
+  input: receive [1]
+  expected_sense_id: ENS:b14282461b611cd7275d2101
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-063
+  category: indexed_sense_recall
+  input: remember [1]
+  expected_sense_id: ENS:901babefedfc9e1f7aa95438
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-064
+  category: indexed_sense_recall
+  input: repair [1]
+  expected_sense_id: ENS:c32777032ea8e6deca4bfd90
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: false
+- case_id: sense-065
+  category: indexed_sense_recall
+  input: return [1]
+  expected_sense_id: ENS:19cd0d609dff1ebdc1d2cbbd
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-066
+  category: indexed_sense_recall
+  input: return [1]
+  expected_sense_id: ENS:aade26f173c426afdcc5bea6
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-067
+  category: indexed_sense_recall
+  input: route [1]
+  expected_sense_id: ENS:7660ff0929ff6fd78f912906
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: false
+- case_id: sense-068
+  category: indexed_sense_recall
+  input: rule [1]
+  expected_sense_id: ENS:f387f27b5390348e016dfb4f
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: false
+- case_id: sense-069
+  category: indexed_sense_recall
+  input: run [1]
+  expected_sense_id: ENS:2bd37ef07c4c7659b601b038
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-070
+  category: indexed_sense_recall
+  input: run [1]
+  expected_sense_id: ENS:dadb556a5e1dc67a7827d6cd
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-071
+  category: indexed_sense_recall
+  input: run [1]
+  expected_sense_id: ENS:d501e16436e892a28cbca8f7
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-072
+  category: indexed_sense_recall
+  input: safe [1]
+  expected_sense_id: ENS:1c20a869b40f414d7ac15458
+  expected_route: gap
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-073
+  category: indexed_sense_recall
+  input: self [1]
+  expected_sense_id: ENS:e2737704f0c0bebfb4450550
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: false
+- case_id: sense-074
+  category: indexed_sense_recall
+  input: send [1]
+  expected_sense_id: ENS:50bbce40c409400d345ba3d9
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-075
+  category: indexed_sense_recall
+  input: send [1]
+  expected_sense_id: ENS:3dcee6330406c24c9328cf69
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-076
+  category: indexed_sense_recall
+  input: share [1]
+  expected_sense_id: ENS:5fa1b67e0a5c6a984da7f1d0
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-077
+  category: indexed_sense_recall
+  input: share [1]
+  expected_sense_id: ENS:dab5db0c258b3b6f10ca8317
+  expected_route: atom
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-078
+  category: indexed_sense_recall
+  input: stop [1]
+  expected_sense_id: ENS:c1c7595e90f9472f9c3c2a45
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-079
+  category: indexed_sense_recall
+  input: think [1]
+  expected_sense_id: ENS:2256a16b09f47e8c41961a36
+  expected_route: gap
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-080
+  category: indexed_sense_recall
+  input: tool [1]
+  expected_sense_id: ENS:58375e9ff4fe7dbf4b0a0297
+  expected_route: compound
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-081
+  category: indexed_sense_recall
+  input: transport [1]
+  expected_sense_id: ENS:12a4c2b7592a8f9c66ac33f7
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-082
+  category: indexed_sense_recall
+  input: true [1]
+  expected_sense_id: ENS:bb6e0e732d3e63427e25d683
+  expected_route: gap
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-083
+  category: indexed_sense_recall
+  input: wait [1]
+  expected_sense_id: ENS:608cf277730410f915c85501
+  expected_route: semantic_ir
+  candidate_present: true
+  expected_clarification: true
+- case_id: sense-084
+  category: indexed_sense_recall
+  input: water [1]
+  expected_sense_id: ENS:b4e230454467ad8c75af4664
+  expected_route: gap
+  candidate_present: true
+  expected_clarification: true
+journey_cases:
+- case_id: journey-auto-leave
+  category: auto_resolution
+  input: leave [1]
+  expect:
+    auto: true
+    target_id: MOV:101
+- case_id: journey-question
+  category: speech_act
+  input: approach [1]?
+  expect:
+    speech_act: question
+    target_id: MOV:111
+- case_id: journey-runtime
+  category: clarification
+  input: arrive
+  expect:
+    reason: runtime_state_required
+- case_id: journey-go
+  category: polysemy
+  input: go [1]
+  expect:
+    reason: material_sense_ambiguity
+    routes:
+    - atom
+    - semantic_ir
+- case_id: journey-change
+  category: polysemy
+  input: change [1]
+  expect:
+    minimum_exact_candidates: 5
+- case_id: journey-data-context
+  category: contextual_ranking
+  input: change represented information content [1]
+  expect:
+    top_target: DAT:101
+    clarify: true
+- case_id: journey-food-gap
+  category: gap
+  input: food [1]
+  expect:
+    route: gap
+- case_id: journey-home-gap
+  category: gap_polysemy
+  input: home [1]
+  expect:
+    minimum_gap_candidates: 2
+- case_id: journey-build
+  category: structural_route
+  input: build [1]
+  expect:
+    route: semantic_ir
+- case_id: journey-and
+  category: grammar_route
+  input: and
+  expect:
+    route: grammar
+- case_id: journey-slotted
+  category: compound_roles
+  input: directed data link [1]
+  expect:
+    roles:
+    - source
+    - target
+- case_id: journey-unknown
+  category: unsupported
+  input: flurple the moon [1]
+  expect:
+    error: no_candidate
+- case_id: journey-bad-state
+  category: invalid
+  input: leave [num]
+  expect:
+    error: invalid_runtime_state

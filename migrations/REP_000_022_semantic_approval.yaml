@@ -1,0 +1,232 @@
+---
+metadata:
+  title: REP:000–022 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.16
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: REP:000–022
+  recommendation: reviews/REP_000_022_recommended_spec.yaml
+  review: reviews/REP_000_022_peer_review.md
+  validation: reviews/REP_000_022_validation.md
+  soundness: reviews/REP_000_022_soundness_audit.md
+  collision_report: reviews/REP_000_022_collision_report.md
+  stress_tests: reviews/REP_000_022_stress_tests.yaml
+promoted_roots:
+- canonical_id: REP:000
+  canonical_title: persistent internal restoration condition
+  invariant_definition: An acceptable condition internal to one reference entity that
+    remains identified as that entity's restoration standard independently of whether
+    it is presently realized.
+  fixed_generated_fields:
+    family: REP
+    address: '000'
+    universal_slot: stable inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: nam
+    canonical_transliteration: ya·nam
+    formal_carrier: ya-ma-ma-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 0
+- canonical_id: REP:001
+  canonical_title: manifest internal restoration condition
+  invariant_definition: An acceptable condition internal to one reference entity that
+    is presently realized as that entity's restored state.
+  fixed_generated_fields:
+    family: REP
+    address: '001'
+    universal_slot: active inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: nak
+    canonical_transliteration: ya·nak
+    formal_carrier: ya-ma-ma-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 2
+- canonical_id: REP:002
+  canonical_title: dormant internal restoration condition
+  invariant_definition: An acceptable condition internal to one reference entity that
+    remains identified as its restoration standard without being presently realized.
+  fixed_generated_fields:
+    family: REP
+    address: '002'
+    universal_slot: dormant inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: nan
+    canonical_transliteration: ya·nan
+    formal_carrier: ya-ma-ma-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - -2
+- canonical_id: REP:010
+  canonical_title: persistent target restoration condition
+  invariant_definition: An acceptable condition of one distinct reference target that
+    remains identified as that target's restoration standard independently of whether
+    it is presently realized.
+  fixed_generated_fields:
+    family: REP
+    address: '010'
+    universal_slot: stable outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: nom
+    canonical_transliteration: ya·nom
+    formal_carrier: ya-ma-ki-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 2
+- canonical_id: REP:011
+  canonical_title: manifest target restoration condition
+  invariant_definition: An acceptable condition of one distinct reference target that
+    is presently realized as that target's restored state.
+  fixed_generated_fields:
+    family: REP
+    address: '011'
+    universal_slot: active outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: nok
+    canonical_transliteration: ya·nok
+    formal_carrier: ya-ma-ki-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 4
+- canonical_id: REP:012
+  canonical_title: dormant target restoration condition
+  invariant_definition: An acceptable condition of one distinct reference target that
+    remains identified as its restoration standard without being presently realized.
+  fixed_generated_fields:
+    family: REP
+    address: '012'
+    universal_slot: dormant outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: non
+    canonical_transliteration: ya·non
+    formal_carrier: ya-ma-ki-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 0
+- canonical_id: REP:020
+  canonical_title: persistent shared restoration condition
+  invariant_definition: One correlated acceptable condition that remains identified
+    across multiple participant entities within a shared system as their restoration
+    standard independently of its present realization pattern.
+  fixed_generated_fields:
+    family: REP
+    address: '020'
+    universal_slot: stable collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: nim
+    canonical_transliteration: ya·nim
+    formal_carrier: ya-ma-nu-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -2
+- canonical_id: REP:021
+  canonical_title: manifest shared restoration condition
+  invariant_definition: One correlated acceptable condition that is presently realized
+    across multiple participant entities within a shared system as their restored
+    state.
+  fixed_generated_fields:
+    family: REP
+    address: '021'
+    universal_slot: active collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: nik
+    canonical_transliteration: ya·nik
+    formal_carrier: ya-ma-nu-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - 0
+- canonical_id: REP:022
+  canonical_title: dormant shared restoration condition
+  invariant_definition: One correlated acceptable condition that remains identified
+    across multiple participant entities within a shared system as their restoration
+    standard without being presently realized.
+  fixed_generated_fields:
+    family: REP
+    address: '022'
+    universal_slot: dormant collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 9
+    family_onset: ya
+    local_compact_root: nin
+    canonical_transliteration: ya·nin
+    formal_carrier: ya-ma-nu-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -4
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 198
+  provisional_count_after: 126
+  unreviewed_chunks_after: 14
+  future_change_policy: explicit versioned migration required
+  next_review_packet: REP:100–122
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

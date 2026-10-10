@@ -1,0 +1,224 @@
+---
+metadata:
+  title: ORI:000–022 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.28
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: ORI:000–022
+  recommendation: reviews/ORI_000_022_recommended_spec.yaml
+  review: reviews/ORI_000_022_peer_review.md
+  validation: reviews/ORI_000_022_validation.md
+  soundness: reviews/ORI_000_022_soundness_audit.md
+  collision_report: reviews/ORI_000_022_collision_report.md
+  stress_tests: reviews/ORI_000_022_stress_tests.yaml
+promoted_roots:
+- canonical_id: ORI:000
+  canonical_title: persistent source-ground condition
+  invariant_definition: A persistent ontological condition by which one referent is
+    grounded as a source from which another state of affairs may originate, independently
+    of whether that grounding is presently operative.
+  fixed_generated_fields:
+    family: ORI
+    address: '000'
+    universal_slot: stable inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    family_onset: nu
+    local_compact_root: nam
+    canonical_transliteration: nu·nam
+    formal_carrier: nu-ma-ma-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 0
+- canonical_id: ORI:001
+  canonical_title: operative source-ground condition
+  invariant_definition: An ontological condition by which one referent is grounded
+    as a source from which another state of affairs may originate and that grounding
+    is presently operative.
+  fixed_generated_fields:
+    family: ORI
+    address: '001'
+    universal_slot: active inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    family_onset: nu
+    local_compact_root: nak
+    canonical_transliteration: nu·nak
+    formal_carrier: nu-ma-ma-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 2
+- canonical_id: ORI:002
+  canonical_title: latent source-ground condition
+  invariant_definition: An ontological condition by which one referent is grounded
+    as a source from which another state of affairs may originate and that grounding
+    exists without being presently operative.
+  fixed_generated_fields:
+    family: ORI
+    address: '002'
+    universal_slot: dormant inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    family_onset: nu
+    local_compact_root: nan
+    canonical_transliteration: nu·nan
+    formal_carrier: nu-ma-ma-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - -2
+- canonical_id: ORI:010
+  canonical_title: persistent distinct-existence condition
+  invariant_definition: A persistent ontological condition under which one distinct
+    referent obtains as part of the relevant reality, independently of whether it
+    is presently manifesting or changing.
+  fixed_generated_fields:
+    family: ORI
+    address: '010'
+    universal_slot: stable outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    family_onset: nu
+    local_compact_root: nom
+    canonical_transliteration: nu·nom
+    formal_carrier: nu-ma-ki-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 2
+- canonical_id: ORI:011
+  canonical_title: occurrent distinct-existence condition
+  invariant_definition: An ontological condition under which one distinct referent
+    is presently manifesting or changing as part of the relevant reality.
+  fixed_generated_fields:
+    family: ORI
+    address: '011'
+    universal_slot: active outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    family_onset: nu
+    local_compact_root: nok
+    canonical_transliteration: nu·nok
+    formal_carrier: nu-ma-ki-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 4
+- canonical_id: ORI:012
+  canonical_title: latent distinct-existence condition
+  invariant_definition: An ontological condition under which one distinct referent
+    belongs to the relevant reality without presently manifesting or changing within
+    it.
+  fixed_generated_fields:
+    family: ORI
+    address: '012'
+    universal_slot: dormant outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    family_onset: nu
+    local_compact_root: non
+    canonical_transliteration: nu·non
+    formal_carrier: nu-ma-ki-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 0
+- canonical_id: ORI:020
+  canonical_title: persistent shared-world condition
+  invariant_definition: A persistent ontological condition that jointly constrains
+    what obtains across one shared reality, independently of whether that condition
+    is presently being expressed through change.
+  fixed_generated_fields:
+    family: ORI
+    address: '020'
+    universal_slot: stable collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    family_onset: nu
+    local_compact_root: nim
+    canonical_transliteration: nu·nim
+    formal_carrier: nu-ma-nu-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -2
+- canonical_id: ORI:021
+  canonical_title: occurrent shared-world condition
+  invariant_definition: An ontological condition that is presently being expressed
+    through change across one shared reality.
+  fixed_generated_fields:
+    family: ORI
+    address: '021'
+    universal_slot: active collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    family_onset: nu
+    local_compact_root: nik
+    canonical_transliteration: nu·nik
+    formal_carrier: nu-ma-nu-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - 0
+- canonical_id: ORI:022
+  canonical_title: latent shared-world condition
+  invariant_definition: An ontological condition that belongs to one shared reality
+    without presently being expressed through change across it.
+  fixed_generated_fields:
+    family: ORI
+    address: '022'
+    universal_slot: dormant collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 1
+    - 7
+    family_onset: nu
+    local_compact_root: nin
+    canonical_transliteration: nu·nin
+    formal_carrier: nu-ma-nu-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -4
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 306
+  provisional_count_after: 18
+  unreviewed_chunks_after: 2
+  future_change_policy: explicit versioned migration required
+  next_review_packet: ORI:100–122
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

@@ -1,0 +1,31 @@
+---
+metadata:
+  title: Gate 4A typed compound architecture approval
+  status: applied
+  version: 1.0.0
+  authority: Direct user request to perform the next gated language-completion stage
+  atomic_meanings_changed: false
+  generated_fields_changed: false
+approved_architecture:
+  specification: spec/compound_architecture_1.0.yaml
+  schema: spec/compound_graph_schema.yaml
+  conformance_cases: tests/gate4a_compound_cases.yaml
+  validation: reports/gate4a_validation.md
+  artifact_sha256:
+    spec/compound_architecture_1.0.yaml: ab554be800430d0e171561c8c884db4770f5bfd9a289853e7eff33ebd43b8e71
+    spec/compound_graph_schema.yaml: d1282c36fa788fda67b618914c88ac2f89ea312a653ec046ce216a8d564f00f6
+    tests/gate4a_compound_cases.yaml: 1360f379760c03629e7e70723258208aceabb6bfe5e880adde7f8637bf824235
+    reports/gate4a_validation.md: e7e729bc815dc757599e7c694b4911ff7544c7f00c7b71dadadd5e9593664656
+inventory:
+  canonical_atomic_roots: 324
+  provisional_atomic_roots: 0
+  approved_compound_entries: 0
+boundary:
+  gate4a_complete: true
+  gate4b_started: false
+  english_index_started: false
+  semantic_ir_started: false
+  grammar_implementation_started: false
+  renderer_started: false
+  translator_started: false
+next_authorized_gate: gate4b_high_frequency_compound_dictionary

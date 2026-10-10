@@ -1,0 +1,637 @@
+---
+metadata:
+  title: Era Zero Core Architecture 1.0 with selective reviewed semantic overlay
+  version: 1.0.0
+  status: architecture_fixed_all_324_roots_canonical
+  framework_source: spec/canonical_spec.yaml
+  atomic_lexicon: lexicon/atoms.yaml
+  approval_scope: Architecture, 36 source-developed roots, and 288 roots canonized
+    after detailed review
+  architecture_version: '1.0'
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  audit_history_preserved: true
+  selective_review_approval: MOV:100–122 EXPLICITLY APPROVED AND CANONICAL
+  review_progress: All thirty-two nine-root review packets canonical; semantic review
+    complete
+  gate4a_status: canonical
+  compound_architecture_version: 1.0.0
+  compound_architecture: spec/compound_architecture_1.0.yaml
+authority:
+  source_canonical_roots: LIF:000–222 and MOV:000–022 retain their approved source
+    meanings unchanged.
+  generated_addresses: All 324 addresses retain their accepted algorithmic forms.
+  phase2_semantics: All former Phase 2 candidate meanings have completed detailed
+    semantic review.
+  gate3_record: The earlier promotion record is retained solely as withdrawn audit
+    history.
+  downstream_dependency_policy: No provisional atomic meanings remain; downstream
+    work still requires separately approved compound, grammar, and translator layers.
+  change_control: All 324 canonical meanings require explicit versioned migration
+    for any future change.
+  review_approved_roots: MOV:100–222, MAT:000–222, MIN:000–222, CON:000–222, STR:000–222,
+    WRN:000–222, REP:000–222, LOG:000–222, DAT:000–222, and ORI:000–222 are canonical
+    through explicit or delegated approval after detailed adversarial review.
+  process_1x2_clarification:
+    scope: all lexical addresses of the form 1x2
+    status: canonical_architecture_clarification
+    rule: 'The third lexical trit contributes a nonactualized process: a family-domain
+      process that is not presently active or completed and whose realization is dormant,
+      potential, or unresolved.'
+    does_not_encode:
+    - specification
+    - intention
+    - planning
+    - schedule
+    - queue
+    - permission
+    - readiness
+    - probability
+    - future_time
+    - certainty
+    runtime_distinction: Runtime [2]/num qualifies the current status of a token of
+      the selected lexeme; it does not select the lexical nonactualized-process concept.
+    migration_policy: Future changes require an explicit versioned migration.
+  reviewed_provisional_roots: No completed review packet remains pending user decision.
+inventory:
+  families: 12
+  addresses_per_family: 27
+  atomic_roots: 324
+  canonical_roots: 324
+  provisional_roots: 0
+  missing_roots: 0
+  canonical_chunks: 36
+  provisional_review_chunks: 0
+  reviewed_pending_decision_roots: 0
+  unreviewed_roots: 0
+  reviewed_pending_decision_chunks: 0
+  unreviewed_review_chunks: 0
+resolved_decisions:
+  ORI:002:
+    generated_form: nu·nan
+    generated_form_status: fixed
+    semantic_candidate: latent first condition
+    semantic_status: provisional_pending_detailed_semantic_review
+  runtime_state_2:
+    canonical_name: num
+    role: runtime-state ending
+    distinct_from: ORI:002
+  num_as_atomic_alias:
+    status: unresolved_for_atomic_semantics
+    fixed_fact: num remains the runtime-state 2 name
+    note: No provisional ORI meaning may settle an atomic alias or etymology decision.
+deferred_post_core_layers:
+- Gate 4B compound dictionary and Gate 4C English concept coverage
+- conventional contraction and etymology table
+- formal semantic IR and executable grammar schema
+- negation finalization
+- quantitative rhythm, harmony, and dynamics mappings
+- long-address namespace allocation
+- visual glyph geometry
+- deterministic renderer and decoder
+- controlled and general English interfaces
+- MIDI, SVG, and audio output
+canonical_review_chunks:
+- number: 1
+  family: MOV
+  layer: '1'
+  range: MOV:100–122
+  ids:
+  - MOV:100
+  - MOV:101
+  - MOV:102
+  - MOV:110
+  - MOV:111
+  - MOV:112
+  - MOV:120
+  - MOV:121
+  - MOV:122
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/MOV_100_122_semantic_approval.yaml
+- number: 2
+  family: MOV
+  layer: '2'
+  range: MOV:200–222
+  ids:
+  - MOV:200
+  - MOV:201
+  - MOV:202
+  - MOV:210
+  - MOV:211
+  - MOV:212
+  - MOV:220
+  - MOV:221
+  - MOV:222
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/2026-07-29_pending_review_packets_approval.yaml
+- number: 3
+  family: MAT
+  layer: '0'
+  range: MAT:000–022
+  ids:
+  - MAT:000
+  - MAT:001
+  - MAT:002
+  - MAT:010
+  - MAT:011
+  - MAT:012
+  - MAT:020
+  - MAT:021
+  - MAT:022
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/2026-07-29_pending_review_packets_approval.yaml
+- number: 4
+  family: MAT
+  layer: '1'
+  range: MAT:100–122
+  ids:
+  - MAT:100
+  - MAT:101
+  - MAT:102
+  - MAT:110
+  - MAT:111
+  - MAT:112
+  - MAT:120
+  - MAT:121
+  - MAT:122
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/2026-07-29_pending_review_packets_approval.yaml
+- number: 5
+  family: MAT
+  layer: '2'
+  range: MAT:200–222
+  ids:
+  - MAT:200
+  - MAT:201
+  - MAT:202
+  - MAT:210
+  - MAT:211
+  - MAT:212
+  - MAT:220
+  - MAT:221
+  - MAT:222
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/MAT_200_222_semantic_approval.yaml
+- number: 6
+  family: MIN
+  layer: '0'
+  range: MIN:000–022
+  ids:
+  - MIN:000
+  - MIN:001
+  - MIN:002
+  - MIN:010
+  - MIN:011
+  - MIN:012
+  - MIN:020
+  - MIN:021
+  - MIN:022
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/MIN_000_022_semantic_approval.yaml
+- number: 7
+  family: MIN
+  layer: '1'
+  range: MIN:100–122
+  ids:
+  - MIN:100
+  - MIN:101
+  - MIN:102
+  - MIN:110
+  - MIN:111
+  - MIN:112
+  - MIN:120
+  - MIN:121
+  - MIN:122
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/MIN_100_122_semantic_approval.yaml
+- number: 8
+  family: MIN
+  layer: '2'
+  range: MIN:200–222
+  ids:
+  - MIN:200
+  - MIN:201
+  - MIN:202
+  - MIN:210
+  - MIN:211
+  - MIN:212
+  - MIN:220
+  - MIN:221
+  - MIN:222
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/MIN_200_222_semantic_approval.yaml
+- number: 9
+  family: CON
+  layer: '0'
+  range: CON:000–022
+  ids:
+  - CON:000
+  - CON:001
+  - CON:002
+  - CON:010
+  - CON:011
+  - CON:012
+  - CON:020
+  - CON:021
+  - CON:022
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/CON_000_022_semantic_approval.yaml
+- number: 10
+  family: CON
+  layer: '1'
+  range: CON:100–122
+  ids:
+  - CON:100
+  - CON:101
+  - CON:102
+  - CON:110
+  - CON:111
+  - CON:112
+  - CON:120
+  - CON:121
+  - CON:122
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/CON_100_122_semantic_approval.yaml
+- number: 11
+  family: CON
+  layer: '2'
+  range: CON:200–222
+  ids:
+  - CON:200
+  - CON:201
+  - CON:202
+  - CON:210
+  - CON:211
+  - CON:212
+  - CON:220
+  - CON:221
+  - CON:222
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/CON_200_222_semantic_approval.yaml
+- number: 12
+  family: STR
+  layer: '0'
+  range: STR:000–022
+  ids:
+  - STR:000
+  - STR:001
+  - STR:002
+  - STR:010
+  - STR:011
+  - STR:012
+  - STR:020
+  - STR:021
+  - STR:022
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/STR_000_022_semantic_approval.yaml
+- number: 13
+  family: STR
+  layer: '1'
+  range: STR:100–122
+  ids:
+  - STR:100
+  - STR:101
+  - STR:102
+  - STR:110
+  - STR:111
+  - STR:112
+  - STR:120
+  - STR:121
+  - STR:122
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/STR_100_122_semantic_approval.yaml
+- number: 14
+  family: STR
+  layer: '2'
+  range: STR:200–222
+  ids:
+  - STR:200
+  - STR:201
+  - STR:202
+  - STR:210
+  - STR:211
+  - STR:212
+  - STR:220
+  - STR:221
+  - STR:222
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/STR_200_222_semantic_approval.yaml
+- number: 15
+  family: WRN
+  layer: '0'
+  range: WRN:000–022
+  ids:
+  - WRN:000
+  - WRN:001
+  - WRN:002
+  - WRN:010
+  - WRN:011
+  - WRN:012
+  - WRN:020
+  - WRN:021
+  - WRN:022
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/WRN_000_022_semantic_approval.yaml
+- number: 16
+  family: WRN
+  layer: '1'
+  range: WRN:100–122
+  ids:
+  - WRN:100
+  - WRN:101
+  - WRN:102
+  - WRN:110
+  - WRN:111
+  - WRN:112
+  - WRN:120
+  - WRN:121
+  - WRN:122
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/WRN_100_122_semantic_approval.yaml
+- number: 17
+  family: WRN
+  layer: '2'
+  range: WRN:200–222
+  ids:
+  - WRN:200
+  - WRN:201
+  - WRN:202
+  - WRN:210
+  - WRN:211
+  - WRN:212
+  - WRN:220
+  - WRN:221
+  - WRN:222
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/WRN_200_222_semantic_approval.yaml
+- number: 18
+  family: REP
+  layer: '0'
+  range: REP:000–022
+  ids:
+  - REP:000
+  - REP:001
+  - REP:002
+  - REP:010
+  - REP:011
+  - REP:012
+  - REP:020
+  - REP:021
+  - REP:022
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/REP_000_022_semantic_approval.yaml
+- number: 19
+  family: REP
+  layer: '1'
+  range: REP:100–122
+  ids:
+  - REP:100
+  - REP:101
+  - REP:102
+  - REP:110
+  - REP:111
+  - REP:112
+  - REP:120
+  - REP:121
+  - REP:122
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/REP_100_122_semantic_approval.yaml
+- number: 20
+  family: REP
+  layer: '2'
+  range: REP:200–222
+  ids:
+  - REP:200
+  - REP:201
+  - REP:202
+  - REP:210
+  - REP:211
+  - REP:212
+  - REP:220
+  - REP:221
+  - REP:222
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/REP_200_222_semantic_approval.yaml
+- number: 21
+  family: LOG
+  layer: '0'
+  range: LOG:000–022
+  ids:
+  - LOG:000
+  - LOG:001
+  - LOG:002
+  - LOG:010
+  - LOG:011
+  - LOG:012
+  - LOG:020
+  - LOG:021
+  - LOG:022
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/LOG_000_022_semantic_approval.yaml
+- number: 22
+  family: LOG
+  layer: '1'
+  range: LOG:100–122
+  ids:
+  - LOG:100
+  - LOG:101
+  - LOG:102
+  - LOG:110
+  - LOG:111
+  - LOG:112
+  - LOG:120
+  - LOG:121
+  - LOG:122
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/LOG_100_122_semantic_approval.yaml
+- number: 23
+  family: LOG
+  layer: '2'
+  range: LOG:200–222
+  ids:
+  - LOG:200
+  - LOG:201
+  - LOG:202
+  - LOG:210
+  - LOG:211
+  - LOG:212
+  - LOG:220
+  - LOG:221
+  - LOG:222
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/LOG_200_222_semantic_approval.yaml
+- number: 24
+  family: DAT
+  layer: '0'
+  range: DAT:000–022
+  ids:
+  - DAT:000
+  - DAT:001
+  - DAT:002
+  - DAT:010
+  - DAT:011
+  - DAT:012
+  - DAT:020
+  - DAT:021
+  - DAT:022
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/DAT_000_022_semantic_approval.yaml
+- number: 25
+  family: DAT
+  layer: '1'
+  range: DAT:100–122
+  ids:
+  - DAT:100
+  - DAT:101
+  - DAT:102
+  - DAT:110
+  - DAT:111
+  - DAT:112
+  - DAT:120
+  - DAT:121
+  - DAT:122
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/DAT_100_122_semantic_approval.yaml
+- number: 26
+  family: DAT
+  layer: '2'
+  range: DAT:200–222
+  ids:
+  - DAT:200
+  - DAT:201
+  - DAT:202
+  - DAT:210
+  - DAT:211
+  - DAT:212
+  - DAT:220
+  - DAT:221
+  - DAT:222
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/DAT_200_222_semantic_approval.yaml
+- number: 27
+  family: CRE
+  layer: '0'
+  range: CRE:000–022
+  ids:
+  - CRE:000
+  - CRE:001
+  - CRE:002
+  - CRE:010
+  - CRE:011
+  - CRE:012
+  - CRE:020
+  - CRE:021
+  - CRE:022
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/CRE_000_022_semantic_approval.yaml
+- number: 28
+  family: CRE
+  layer: '1'
+  range: CRE:100–122
+  ids:
+  - CRE:100
+  - CRE:101
+  - CRE:102
+  - CRE:110
+  - CRE:111
+  - CRE:112
+  - CRE:120
+  - CRE:121
+  - CRE:122
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/CRE_100_122_semantic_approval.yaml
+- number: 29
+  family: CRE
+  layer: '2'
+  range: CRE:200–222
+  ids:
+  - CRE:200
+  - CRE:201
+  - CRE:202
+  - CRE:210
+  - CRE:211
+  - CRE:212
+  - CRE:220
+  - CRE:221
+  - CRE:222
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/CRE_200_222_semantic_approval.yaml
+- number: 30
+  family: ORI
+  layer: '0'
+  range: ORI:000–022
+  ids:
+  - ORI:000
+  - ORI:001
+  - ORI:002
+  - ORI:010
+  - ORI:011
+  - ORI:012
+  - ORI:020
+  - ORI:021
+  - ORI:022
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/ORI_000_022_semantic_approval.yaml
+- number: 31
+  family: ORI
+  layer: '1'
+  range: ORI:100–122
+  ids:
+  - ORI:100
+  - ORI:101
+  - ORI:102
+  - ORI:110
+  - ORI:111
+  - ORI:112
+  - ORI:120
+  - ORI:121
+  - ORI:122
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/ORI_100_122_semantic_approval.yaml
+- number: 32
+  family: ORI
+  layer: '2'
+  range: ORI:200–222
+  ids:
+  - ORI:200
+  - ORI:201
+  - ORI:202
+  - ORI:210
+  - ORI:211
+  - ORI:212
+  - ORI:220
+  - ORI:221
+  - ORI:222
+  status: canonical_by_reviewed_selective_approval
+  gate3_approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  selective_approval_record: migrations/ORI_200_222_semantic_approval.yaml

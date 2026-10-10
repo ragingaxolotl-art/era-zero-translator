@@ -1,0 +1,683 @@
+---
+metadata:
+  version: 1.0.0
+  valid_cases: 16
+  invalid_cases: 17
+  controlled_lexemes: 352
+valid_cases:
+- case_id: simple_assertion
+  input: ASSERT "active care" [1].
+  expected_ir:
+    ir_version: '1.0'
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: LIF:211
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    discourse_constraints: {}
+    utterance_id: UTT:c2b4165e23dfb691feeb116b
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: c2b4165e23dfb691feeb116b4af94f05b44ea7326ce5373d273ace393faf0920
+  expected_formal_id: EZF:45556e433a0cb6e49b7a713b
+  expected_literal_gloss: n002:active care[1]
+- case_id: question
+  input: QUESTION "active destination" [1].
+  expected_ir:
+    ir_version: '1.0'
+    root_clause: n001
+    speech_act: question
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:011
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    discourse_constraints: {}
+    utterance_id: UTT:b94e5447ab8eac6243bccd30
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: b94e5447ab8eac6243bccd30cf8b23374404f7ce0f839efc4aea61719fc3c1cd
+  expected_formal_id: EZF:e316338626289dfee7768f06
+  expected_literal_gloss: n002:active destination[1]
+- case_id: command_roles
+  input: COMMAND "active target restoration" [1] ROLE actor "conscious other" [1]
+    ROLE target "active material object" [1].
+  expected_ir:
+    ir_version: '1.0'
+    root_clause: n001
+    speech_act: command
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: REP:111
+      runtime_state:
+        code: 1
+    - node_id: n003
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: LIF:011
+      runtime_state:
+        code: 1
+    - node_id: n004
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MAT:011
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: fills_role
+      from: n003
+      to: n002
+      role: actor
+    - edge_id: e002
+      type: fills_role
+      from: n004
+      to: n002
+      role: target
+    - edge_id: e003
+      type: centers
+      from: n002
+      to: n001
+    discourse_constraints: {}
+    utterance_id: UTT:b40779c3217b7915154122fd
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: b40779c3217b7915154122fd84f5e6d49be597d8417512b121bb7c0216158d6e
+  expected_formal_id: EZF:ef72a3c4bf790c60ce31c0bf
+  expected_literal_gloss: n002:active target restoration[1] | n003:conscious other[1]
+    | n004:active material object[1]
+- case_id: negation
+  input: ASSERT NOT "active internal formal evaluation" [1].
+  expected_ir:
+    ir_version: '1.0'
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: LOG:101
+      runtime_state:
+        code: 1
+    - node_id: n003
+      kind: scope_operator
+      operator: negation
+    edges:
+    - edge_id: e001
+      type: scopes
+      from: n002
+      to: n003
+    - edge_id: e002
+      type: centers
+      from: n003
+      to: n001
+    discourse_constraints: {}
+    utterance_id: UTT:58658023ede02d4fbfb877cf
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: 58658023ede02d4fbfb877cfc8708f30d4de284ae8d805ba9712429868bb8e03
+  expected_formal_id: EZF:0fc48f7c9c4fb37df6dec13d
+  expected_literal_gloss: n002:active internal formal evaluation[1]
+- case_id: modality
+  input: POSSIBILITY MODAL possible "potential source departure" [2].
+  expected_ir:
+    ir_version: '1.0'
+    root_clause: n001
+    speech_act: possibility
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:102
+      runtime_state:
+        code: 2
+    - node_id: n003
+      kind: scope_operator
+      operator: modality
+      mode: possible
+    edges:
+    - edge_id: e001
+      type: scopes
+      from: n002
+      to: n003
+    - edge_id: e002
+      type: centers
+      from: n003
+      to: n001
+    discourse_constraints: {}
+    utterance_id: UTT:d74cee6246bde925f39d6db5
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: d74cee6246bde925f39d6db57246b963f929e94d8f6fcdacf41e50a8f73aa059
+  expected_formal_id: EZF:912306a81f30c100a40b80cf
+  expected_literal_gloss: n002:potential source departure[2]
+- case_id: aspect
+  input: ASSERT ASPECT ongoing "active artifact generation" [1].
+  expected_ir:
+    ir_version: '1.0'
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: CRE:111
+      runtime_state:
+        code: 1
+    - node_id: n003
+      kind: scope_operator
+      operator: aspect
+      aspect: ongoing
+    edges:
+    - edge_id: e001
+      type: scopes
+      from: n002
+      to: n003
+    - edge_id: e002
+      type: centers
+      from: n003
+      to: n001
+    discourse_constraints: {}
+    utterance_id: UTT:a3155d8559978143a1f0646a
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: a3155d8559978143a1f0646afa311b421c6d7d7ce3c77cd27f501fefb4c2b71a
+  expected_formal_id: EZF:535508bc07c1b097530bc7d5
+  expected_literal_gloss: n002:active artifact generation[1]
+- case_id: time
+  input: ASSERT "completed source departure" [1] TIME before SPEECH_TIME.
+  expected_ir:
+    ir_version: '1.0'
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:100
+      runtime_state:
+        code: 1
+    - node_id: n003
+      kind: time_anchor
+      anchor_type: speech_time
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    - edge_id: e002
+      type: time_relation
+      from: n003
+      to: n001
+      relation: before
+    discourse_constraints: {}
+    utterance_id: UTT:0a03c6d20810d66df3e33fc6
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: 0a03c6d20810d66df3e33fc6acb50acdb7f508308af4f3f438e1baeeeb5f7364
+  expected_formal_id: EZF:7a9324e62117b5b52689d3c5
+  expected_literal_gloss: n002:completed source departure[1]
+- case_id: measurement
+  input: ASSERT "active source departure" [1] MEASURE 5 kilometer.
+  expected_ir:
+    ir_version: '1.0'
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:101
+      runtime_state:
+        code: 1
+    - node_id: n003
+      kind: measurement
+      magnitude: '5'
+      unit: kilometer
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    - edge_id: e002
+      type: fills_role
+      from: n003
+      to: n002
+      role: quantity
+    discourse_constraints: {}
+    utterance_id: UTT:a37c65ba2dc846c79eab63c3
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: a37c65ba2dc846c79eab63c34aa81f49b1d0fbed4cf2fb544b37864ea99320f0
+  expected_formal_id: EZF:2eac25d2cd4d77f6fd22f753
+  expected_literal_gloss: n002:active source departure[1]
+- case_id: quantifier
+  input: ASSERT "conscious other" [1] QUANTIFIER exact 3.
+  expected_ir:
+    ir_version: '1.0'
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: LIF:011
+      runtime_state:
+        code: 1
+    - node_id: n003
+      kind: scope_operator
+      operator: quantifier
+      quantifier: exact
+      value: '3'
+    edges:
+    - edge_id: e001
+      type: scopes
+      from: n002
+      to: n003
+    - edge_id: e002
+      type: centers
+      from: n003
+      to: n001
+    discourse_constraints: {}
+    utterance_id: UTT:670fbb6bc87ef30bd6b05178
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: 670fbb6bc87ef30bd6b05178c7d7ea3b387bae933b5aea41ba32ab90ee8d8e7b
+  expected_formal_id: EZF:4f281c37b7ba5b81631500d9
+  expected_literal_gloss: n002:conscious other[1]
+- case_id: fixed_compound
+  input: ASSERT "living body" [1].
+  expected_ir:
+    ir_version: '1.0'
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: compound
+      target_id: CMP:3122dedcff0f85ad293e2580
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    discourse_constraints: {}
+    utterance_id: UTT:28e8ab0a1ebae236289d3ee4
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: 28e8ab0a1ebae236289d3ee4545c2bb412fc8fb0776e644510e9ac29c375ea23
+  expected_formal_id: EZF:fc4afd622d98866584d5401a
+  expected_literal_gloss: n002.q01:identified other | n002.h:persistent material substrate[1]
+- case_id: slotted_compound
+  input: ASSERT "directed data link" [1] ROLE source "conscious other" [1] ROLE target
+    "active material object" [1].
+  expected_ir:
+    ir_version: '1.0'
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: compound
+      target_id: CMP:742b44d9ead66b451346708a
+      runtime_state:
+        code: 1
+    - node_id: n003
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: LIF:011
+      runtime_state:
+        code: 1
+    - node_id: n004
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MAT:011
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: fills_role
+      from: n003
+      to: n002
+      role: source
+    - edge_id: e002
+      type: fills_role
+      from: n004
+      to: n002
+      role: target
+    - edge_id: e003
+      type: centers
+      from: n002
+      to: n001
+    discourse_constraints: {}
+    utterance_id: UTT:b8f1f16ea820e92732e8f1b7
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: b8f1f16ea820e92732e8f1b75f054c43a109e3f4eaa3248d0841269f5e55106d
+  expected_formal_id: EZF:0ce32f86624558cf3e8bdf58
+  expected_literal_gloss: n002.q01:persistent internal datum | n002.h:established
+    directed communication relation[1] | n003:conscious other[1] | n004:active material
+    object[1]
+- case_id: sequence
+  input: ASSERT SEQUENCE "completed source departure" [1] THEN "completed target arrival"
+    [1].
+  expected_ir:
+    ir_version: '1.0'
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: coordination
+      operator: sequence
+    - node_id: n003
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:100
+      runtime_state:
+        code: 1
+    - node_id: n004
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:110
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    - edge_id: e002
+      type: member_of
+      from: n003
+      to: n002
+      order: 1
+    - edge_id: e003
+      type: member_of
+      from: n004
+      to: n002
+      order: 2
+    discourse_constraints: {}
+    utterance_id: UTT:6421f35a0ac6a3ecfe025763
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: 6421f35a0ac6a3ecfe025763110177f86c072a8b6f852aad35ffd8e4d58efca6
+  expected_formal_id: EZF:af6193786498c768a22ea091
+  expected_literal_gloss: n003:completed source departure[1] | n004:completed target
+    arrival[1]
+- case_id: parallel
+  input: ASSERT PARALLEL "active internal data transformation" [1] AND "active source
+    expression" [1].
+  expected_ir:
+    ir_version: '1.0'
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: coordination
+      operator: parallel
+    - node_id: n003
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: DAT:101
+      runtime_state:
+        code: 1
+    - node_id: n004
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: CON:101
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    - edge_id: e002
+      type: member_of
+      from: n003
+      to: n002
+    - edge_id: e003
+      type: member_of
+      from: n004
+      to: n002
+    discourse_constraints: {}
+    utterance_id: UTT:3291ebd6a2bd18c34b9245ff
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: 3291ebd6a2bd18c34b9245ff6a6bdb8604f625532304d773d7380d97eaa190f7
+  expected_formal_id: EZF:ed7f2159a789867ffc12ab2d
+  expected_literal_gloss: n003:active internal data transformation[1] | n004:active
+    source expression[1]
+- case_id: repetition
+  input: ASSERT REPEAT 3 TIMES "active shared-frame movement" [1].
+  expected_ir:
+    ir_version: '1.0'
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: scope_operator
+      operator: repetition
+      mode: count
+      count: 3
+    - node_id: n003
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:121
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    - edge_id: e002
+      type: scopes
+      from: n003
+      to: n002
+    discourse_constraints: {}
+    utterance_id: UTT:93db3d462ae189facf1ea89b
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: 93db3d462ae189facf1ea89bb4c8a7881b39635b840d0f8b1e9a5e7640acd768
+  expected_formal_id: EZF:e770a3ae8d975a0354f98bf3
+  expected_literal_gloss: n003:active shared-frame movement[1]
+- case_id: conditional
+  input: ASSERT IF "active internal formal evaluation" [1] THEN "active artifact generation"
+    [1].
+  expected_ir:
+    ir_version: '1.0'
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: conditional
+    - node_id: n002
+      kind: clause
+      clause_type: predication
+    - node_id: n003
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: LOG:101
+      runtime_state:
+        code: 1
+    - node_id: n004
+      kind: clause
+      clause_type: predication
+    - node_id: n005
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: CRE:111
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n004
+      to: n001
+    - edge_id: e002
+      type: centers
+      from: n003
+      to: n002
+    - edge_id: e003
+      type: centers
+      from: n005
+      to: n004
+    - edge_id: e004
+      type: condition_of
+      from: n002
+      to: n004
+      condition_status: open
+    discourse_constraints: {}
+    utterance_id: UTT:09ccaeb5f9be2430f4ef45d0
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: '09ccaeb5f9be2430f4ef45d08542c64c6b3cc6fa54944148ac188c5864955fa5'
+  expected_formal_id: EZF:e55d718a7d2b627b38f8780f
+  expected_literal_gloss: n003:active internal formal evaluation[1] | n005:active
+    artifact generation[1]
+- case_id: definition
+  input: DEFINE "program definition" [1].
+  expected_ir:
+    ir_version: '1.0'
+    root_clause: n001
+    speech_act: definition
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: definition
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: compound
+      target_id: CMP:2f350e7d8e5dfba4a802d82d
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    discourse_constraints: {}
+    utterance_id: UTT:bcf0ab56cf0fdc496b2ae969
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: bcf0ab56cf0fdc496b2ae969bc9cc489163eb6450d37004aaf7d86116f98b367
+  expected_formal_id: EZF:80c2a748176a918046fc7a28
+  expected_literal_gloss: n002.q01:persistent internal datum | n002.q02:persistent
+    target-directed formal constraint | n002.h:persistent internal generative pattern[1]
+invalid_cases:
+- case_id: empty
+  input: ''
+  expected_error: empty_input
+- case_id: missing_period
+  input: ASSERT "active care" [1]
+  expected_error: missing_terminal_period
+- case_id: bad_act
+  input: TELL "active care" [1].
+  expected_error: unsupported_speech_act
+- case_id: missing_clause
+  input: ASSERT.
+  expected_error: missing_clause
+- case_id: unquoted
+  input: ASSERT active care [1].
+  expected_error: invalid_lexical_form
+- case_id: bad_runtime
+  input: ASSERT "active care" [num].
+  expected_error: invalid_runtime_state
+- case_id: unknown_label
+  input: ASSERT "imaginary snow motion" [1].
+  expected_error: unknown_lexeme
+- case_id: unsupported_route
+  input: ASSERT "food" [1].
+  expected_error: unsupported_sense_route
+- case_id: bad_modality
+  input: ASSERT MODAL maybe "active care" [1].
+  expected_error: invalid_modality
+- case_id: bad_role
+  input: ASSERT "active care" [1] ROLE owner "conscious other" [1].
+  expected_error: invalid_role
+- case_id: duplicate_role
+  input: ASSERT "active care" [1] ROLE actor "conscious other" [1] ROLE actor "active
+    material object" [1].
+  expected_error: duplicate_role
+- case_id: bad_time
+  input: ASSERT "active care" [1] TIME yesterday SPEECH_TIME.
+  expected_error: invalid_time_relation
+- case_id: bad_unit
+  input: ASSERT "active source departure" [1] MEASURE 5 furlong.
+  expected_error: invalid_unit
+- case_id: missing_compound_slot
+  input: ASSERT "directed data link" [1] ROLE source "conscious other" [1].
+  expected_error: missing_compound_role
+- case_id: unexpected_text
+  input: ASSERT "active care" [1] PLEASE.
+  expected_error: unexpected_token
+- case_id: bad_coordination
+  input: ASSERT SEQUENCE "active care" [1].
+  expected_error: invalid_coordination
+- case_id: bad_repetition
+  input: ASSERT REPEAT zero TIMES "active care" [1].
+  expected_error: invalid_repetition

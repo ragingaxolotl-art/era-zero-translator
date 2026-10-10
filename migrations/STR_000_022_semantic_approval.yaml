@@ -1,0 +1,218 @@
+---
+metadata:
+  title: STR:000–022 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.10
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: STR:000–022
+  recommendation: reviews/STR_000_022_recommended_spec.yaml
+  review: reviews/STR_000_022_peer_review.md
+  validation: reviews/STR_000_022_validation.md
+  soundness: reviews/STR_000_022_soundness_audit.md
+  collision_report: reviews/STR_000_022_collision_report.md
+  stress_tests: reviews/STR_000_022_stress_tests.yaml
+promoted_roots:
+- canonical_id: STR:000
+  canonical_title: persistent constituent position
+  invariant_definition: A position within a structure that remains identified as a
+    place for one constituent independently of its present occupancy.
+  fixed_generated_fields:
+    family: STR
+    address: '000'
+    universal_slot: stable inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: nam
+    canonical_transliteration: do·nam
+    formal_carrier: do-ma-ma-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 0
+- canonical_id: STR:001
+  canonical_title: occupied constituent position
+  invariant_definition: A position within a structure that is presently occupied by
+    a constituent.
+  fixed_generated_fields:
+    family: STR
+    address: '001'
+    universal_slot: active inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: nak
+    canonical_transliteration: do·nak
+    formal_carrier: do-ma-ma-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 2
+- canonical_id: STR:002
+  canonical_title: vacant constituent position
+  invariant_definition: A position within a structure that is defined for a constituent
+    but presently unoccupied.
+  fixed_generated_fields:
+    family: STR
+    address: '002'
+    universal_slot: dormant inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: nan
+    canonical_transliteration: do·nan
+    formal_carrier: do-ma-ma-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - -2
+- canonical_id: STR:010
+  canonical_title: persistent structural interface
+  invariant_definition: A boundary locus of a structure that remains identified for
+    structural engagement by a distinct external target.
+  fixed_generated_fields:
+    family: STR
+    address: '010'
+    universal_slot: stable outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: nom
+    canonical_transliteration: do·nom
+    formal_carrier: do-ma-ki-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 2
+- canonical_id: STR:011
+  canonical_title: engaged structural interface
+  invariant_definition: A boundary locus of a structure that is presently engaged
+    by a distinct external target.
+  fixed_generated_fields:
+    family: STR
+    address: '011'
+    universal_slot: active outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: nok
+    canonical_transliteration: do·nok
+    formal_carrier: do-ma-ki-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 4
+- canonical_id: STR:012
+  canonical_title: unengaged structural interface
+  invariant_definition: A boundary locus of a structure that is defined for engagement
+    by a distinct external target but presently unengaged.
+  fixed_generated_fields:
+    family: STR
+    address: '012'
+    universal_slot: dormant outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: non
+    canonical_transliteration: do·non
+    formal_carrier: do-ma-ki-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 0
+- canonical_id: STR:020
+  canonical_title: persistent composite arrangement
+  invariant_definition: A part–whole arrangement that remains identified as one structure
+    across multiple constituent positions.
+  fixed_generated_fields:
+    family: STR
+    address: '020'
+    universal_slot: stable collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: nim
+    canonical_transliteration: do·nim
+    formal_carrier: do-ma-nu-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -2
+- canonical_id: STR:021
+  canonical_title: instantiated composite arrangement
+  invariant_definition: A part–whole arrangement that is presently realized as one
+    structure by constituents occupying multiple constituent positions.
+  fixed_generated_fields:
+    family: STR
+    address: '021'
+    universal_slot: active collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: nik
+    canonical_transliteration: do·nik
+    formal_carrier: do-ma-nu-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - 0
+- canonical_id: STR:022
+  canonical_title: dormant composite arrangement
+  invariant_definition: A part–whole arrangement that is defined across multiple constituent
+    positions without presently being realized as one structure.
+  fixed_generated_fields:
+    family: STR
+    address: '022'
+    universal_slot: dormant collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: nin
+    canonical_transliteration: do·nin
+    formal_carrier: do-ma-nu-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -4
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 144
+  provisional_count_after: 180
+  unreviewed_chunks_after: 20
+  future_change_policy: explicit versioned migration required
+  next_review_packet: STR:100–122
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

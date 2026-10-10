@@ -1,0 +1,98 @@
+---
+metadata:
+  title: Era Zero Translator Workbench and Local API
+  version: 1.0.0
+  status: canonical
+  date: '2026-10-10'
+  translator_fingerprint: 84712920ccfbd29989cc07b766cd716157f4203b439d1c0af2936dc20f6f4848
+  presentation_fingerprint: 1d409d053cc085a6d27c26439ed966d60a571afcb5d9a4bd7b9d6077d61934cc
+  semantic_authority_changes: 0
+surfaces:
+  web: responsive local browser workbench for analysis, candidate comparison, clarification,
+    resolution, inspection, preview, and export
+  api: JSON and binary localhost endpoints under /api
+  cli: existing controlled/general translator CLIs plus local server launcher
+  exchange: EZB-1 deterministic integrity-checked translation bundle
+api:
+  bind_default: 127.0.0.1
+  port_default: 8787
+  maximum_body_bytes: 1048576
+  endpoints:
+  - GET /api/health
+  - GET /api/meta
+  - POST /api/analyze
+  - POST /api/resolve
+  - POST /api/controlled
+  - POST /api/svg
+  - POST /api/midi
+  - POST /api/bundle/export
+  - POST /api/bundle/import
+  error_contract: JSON status:error with stable code, message, and details; no exception
+    traces or partial translations
+  network_scope: localhost by default; no external service or telemetry
+workbench:
+  general_flow:
+  - enter phrase
+  - rank candidates
+  - inspect evidence
+  - choose runtime/speech act/roles
+  - resolve
+  - inspect meaning/IR/EZF/glyph
+  - preview or export
+  controlled_flow:
+  - enter restricted statement
+  - compile deterministic IR
+  - inspect canonical identity
+  accessibility:
+  - semantic landmarks
+  - keyboard-selectable candidates
+  - live status regions
+  - labeled controls
+  - responsive layout
+  - reduced-motion support
+  safety:
+  - no first-match guess
+  - gaps visible
+  - structural routes visible
+  - roles explicit
+  - runtime explicit
+  - round-trip result visible
+exchange:
+  format: EZB-1
+  identity: SHA-256 over sorted envelope excluding bundle_digest
+  contents:
+  - source
+  - sense_id
+  - target_id
+  - controlled_input
+  - semantic_ir
+  - formal
+  - presentation manifest
+  import_checks:
+  - format and version
+  - bundle digest
+  - IR/EZF exact decode
+  - SVG/MIDI manifest hashes
+audit:
+  evaluation_cases: 97
+  indexed_noncanonical_senses: 84
+  required_checks:
+  - canonical fingerprints
+  - API route contract
+  - structured errors
+  - candidate determinism
+  - indexed sense recall
+  - ambiguity and gap honesty
+  - resolution round trips
+  - bundle integrity
+  - SVG/MIDI export
+  - static UI accessibility markers
+  - JavaScript syntax
+  - local HTTP smoke test
+  - full language regression
+implementation:
+  server: app/server.rb
+  api: app/api.rb
+  web: app/public/
+  exchange: tools/lib/era_zero_exchange.rb
+  launcher: bin/era-zero-workbench

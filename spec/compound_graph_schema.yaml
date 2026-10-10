@@ -1,0 +1,138 @@
+---
+metadata:
+  title: Gate 4A compound graph schema
+  version: 1.0.0
+  status: canonical_gate4a_architecture
+definition:
+  architecture_version:
+    type: string
+    const: '1.0'
+  compound_key:
+    type: string
+    pattern: "\\ADRAFT:[a-z0-9_-]+:[a-z0-9_-]+\\z"
+  definition_version:
+    type: string
+    pattern: "\\A[0-9]+\\.[0-9]+\\.[0-9]+\\z"
+  status:
+    enum:
+    - draft
+    - proposed
+    - approved
+    - deprecated
+    - superseded
+  semantic_head:
+    type: node_reference
+    canonical_node_id: h
+  nodes:
+    type: array
+    minimum: 2
+    unique_by: node_id
+    allowed_kinds:
+    - root
+    - compound_ref
+    - slot
+    - coordination
+  edges:
+    type: array
+    minimum: 1
+    unique_by: edge_id
+    allowed_types:
+    - qualifies
+    - fills_role
+    - member_of
+  lexical_constraints:
+    type: array
+    items: string
+    default: []
+  serialization:
+    type: object
+    required:
+    - canonical_format
+    - content_digest
+forbidden_lexical_fields:
+- runtime_state
+- contour
+- register
+- absolute_pitch
+- statement_type
+- tense
+- negation
+- quantity
+- probability
+- english_word
+- timing
+node_rules:
+  root:
+    required:
+    - node_id
+    - kind
+    - root_id
+    rule: root_id must name one of the 324 canonical atoms
+  compound_ref:
+    required:
+    - node_id
+    - kind
+    - compound_id
+    - definition_version
+    rule: reference must resolve to an approved, non-superseded dictionary entry;
+      unavailable during Gate 4A fixtures
+  slot:
+    required:
+    - node_id
+    - kind
+    - slot_name
+    - slot_type
+    slot_types:
+    - entity
+    - process
+    - relation
+    - condition
+    - value
+    - location
+    - time
+    - quantity
+    rule: slots are typed variables, not lexical meanings
+  coordination:
+    required:
+    - node_id
+    - kind
+    - operator
+    operators:
+    - all_of
+    - any_of
+    - exactly_one
+    rule: coordination groups members but cannot itself be the semantic head
+edge_rules:
+  qualifies:
+    direction: descriptor_to_described
+    role_allowed: false
+    performance: descriptor immediately precedes its target with no gap
+    semantic_effect: narrows or classifies the target without asserting an independent
+      event
+  fills_role:
+    direction: argument_to_predicate
+    role_required: true
+    allowed_roles:
+    - actor
+    - source
+    - cause
+    - experiencer
+    - bearer
+    - predicate
+    - target
+    - result
+    - destination
+    - instrument
+    - material
+    - location
+    - environment
+    - condition
+    - persistent_condition
+    performance: argument uses its role register and a short argument boundary unless
+      simultaneous realization is explicitly selected later
+  member_of:
+    direction: member_to_coordination
+    role_allowed: false
+    performance: members use the fixed enumeration pulse when rendered as one group
+    semantic_effect: collects alternatives or conjunctive members under an explicit
+      coordination operator

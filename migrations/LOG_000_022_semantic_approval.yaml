@@ -1,0 +1,225 @@
+---
+metadata:
+  title: LOG:000–022 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.19
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: LOG:000–022
+  recommendation: reviews/LOG_000_022_recommended_spec.yaml
+  review: reviews/LOG_000_022_peer_review.md
+  validation: reviews/LOG_000_022_validation.md
+  soundness: reviews/LOG_000_022_soundness_audit.md
+  collision_report: reviews/LOG_000_022_collision_report.md
+  stress_tests: reviews/LOG_000_022_stress_tests.yaml
+promoted_roots:
+- canonical_id: LOG:000
+  canonical_title: persistent internal formal criterion
+  invariant_definition: A persistent formal criterion within the logical specification
+    of one reference entity that limits that entity's admissible states independently
+    of whether the criterion is presently operative.
+  fixed_generated_fields:
+    family: LOG
+    address: '000'
+    universal_slot: stable inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: nam
+    canonical_transliteration: te·nam
+    formal_carrier: te-ma-ma-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 0
+- canonical_id: LOG:001
+  canonical_title: operative internal formal criterion
+  invariant_definition: A formal criterion within the logical specification of one
+    reference entity that is presently operative in limiting that entity's admissible
+    states.
+  fixed_generated_fields:
+    family: LOG
+    address: '001'
+    universal_slot: active inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: nak
+    canonical_transliteration: te·nak
+    formal_carrier: te-ma-ma-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 2
+- canonical_id: LOG:002
+  canonical_title: dormant internal formal criterion
+  invariant_definition: A formal criterion within the logical specification of one
+    reference entity that remains defined without presently operating to limit that
+    entity's admissible states.
+  fixed_generated_fields:
+    family: LOG
+    address: '002'
+    universal_slot: dormant inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: nan
+    canonical_transliteration: te·nan
+    formal_carrier: te-ma-ma-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - -2
+- canonical_id: LOG:010
+  canonical_title: persistent target-directed formal constraint
+  invariant_definition: A persistent formal constraint assigned to one distinct reference
+    target that limits the target's admissible states independently of whether the
+    constraint is presently operative.
+  fixed_generated_fields:
+    family: LOG
+    address: '010'
+    universal_slot: stable outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: nom
+    canonical_transliteration: te·nom
+    formal_carrier: te-ma-ki-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 2
+- canonical_id: LOG:011
+  canonical_title: operative target-directed formal constraint
+  invariant_definition: A formal constraint assigned to one distinct reference target
+    that is presently operative in limiting the target's admissible states.
+  fixed_generated_fields:
+    family: LOG
+    address: '011'
+    universal_slot: active outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: nok
+    canonical_transliteration: te·nok
+    formal_carrier: te-ma-ki-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 4
+- canonical_id: LOG:012
+  canonical_title: dormant target-directed formal constraint
+  invariant_definition: A formal constraint assigned to one distinct reference target
+    that remains defined without presently operating to limit the target's admissible
+    states.
+  fixed_generated_fields:
+    family: LOG
+    address: '012'
+    universal_slot: dormant outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: non
+    canonical_transliteration: te·non
+    formal_carrier: te-ma-ki-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 0
+- canonical_id: LOG:020
+  canonical_title: persistent shared formal regime
+  invariant_definition: A persistent formal regime that correlates admissibility criteria
+    across multiple participants in one shared rule domain independently of whether
+    the regime is presently operative.
+  fixed_generated_fields:
+    family: LOG
+    address: '020'
+    universal_slot: stable collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: nim
+    canonical_transliteration: te·nim
+    formal_carrier: te-ma-nu-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -2
+- canonical_id: LOG:021
+  canonical_title: operative shared formal regime
+  invariant_definition: A formal regime that is presently operative in correlating
+    admissibility criteria across multiple participants in one shared rule domain.
+  fixed_generated_fields:
+    family: LOG
+    address: '021'
+    universal_slot: active collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: nik
+    canonical_transliteration: te·nik
+    formal_carrier: te-ma-nu-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - 0
+- canonical_id: LOG:022
+  canonical_title: dormant shared formal regime
+  invariant_definition: A formal regime that remains defined across multiple participants
+    in one shared rule domain without presently operating to correlate their admissibility
+    criteria.
+  fixed_generated_fields:
+    family: LOG
+    address: '022'
+    universal_slot: dormant collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: nin
+    canonical_transliteration: te·nin
+    formal_carrier: te-ma-nu-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -4
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 225
+  provisional_count_after: 99
+  unreviewed_chunks_after: 11
+  future_change_policy: explicit versioned migration required
+  next_review_packet: LOG:100–122
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

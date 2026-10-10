@@ -1,0 +1,218 @@
+---
+metadata:
+  title: STR:100–122 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.11
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: STR:100–122
+  recommendation: reviews/STR_100_122_recommended_spec.yaml
+  review: reviews/STR_100_122_peer_review.md
+  validation: reviews/STR_100_122_validation.md
+  soundness: reviews/STR_000_122_soundness_audit.md
+  collision_report: reviews/STR_100_122_collision_report.md
+  stress_tests: reviews/STR_100_122_stress_tests.yaml
+promoted_roots:
+- canonical_id: STR:100
+  canonical_title: completed internal reconfiguration
+  invariant_definition: Completion of a structural transformation that changes how
+    a reference structure's own constituents occupy its internal positions.
+  fixed_generated_fields:
+    family: STR
+    address: '100'
+    universal_slot: completed inward process
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: kam
+    canonical_transliteration: do·kam
+    formal_carrier: do-ki-ma-ma
+    note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 2
+- canonical_id: STR:101
+  canonical_title: active internal reconfiguration
+  invariant_definition: An ongoing structural transformation that changes how a reference
+    structure's own constituents occupy its internal positions.
+  fixed_generated_fields:
+    family: STR
+    address: '101'
+    universal_slot: active inward process
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: kak
+    canonical_transliteration: do·kak
+    formal_carrier: do-ki-ma-ki
+    note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 4
+- canonical_id: STR:102
+  canonical_title: potential internal reconfiguration
+  invariant_definition: A nonactualized structural transformation that would change
+    how a reference structure's own constituents occupy its internal positions.
+  fixed_generated_fields:
+    family: STR
+    address: '102'
+    universal_slot: pending inward process
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: kan
+    canonical_transliteration: do·kan
+    formal_carrier: do-ki-ma-nu
+    note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 0
+- canonical_id: STR:110
+  canonical_title: completed target incorporation
+  invariant_definition: Completion of a structural transformation by which a distinct
+    target becomes incorporated into a reference structure.
+  fixed_generated_fields:
+    family: STR
+    address: '110'
+    universal_slot: completed outward process
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: kom
+    canonical_transliteration: do·kom
+    formal_carrier: do-ki-ki-ma
+    note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 4
+- canonical_id: STR:111
+  canonical_title: active target incorporation
+  invariant_definition: An ongoing structural transformation by which a distinct target
+    becomes incorporated into a reference structure.
+  fixed_generated_fields:
+    family: STR
+    address: '111'
+    universal_slot: active outward process
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: kok
+    canonical_transliteration: do·kok
+    formal_carrier: do-ki-ki-ki
+    note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 6
+- canonical_id: STR:112
+  canonical_title: potential target incorporation
+  invariant_definition: A nonactualized structural transformation by which a distinct
+    target would become incorporated into a reference structure.
+  fixed_generated_fields:
+    family: STR
+    address: '112'
+    universal_slot: pending outward process
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: kon
+    canonical_transliteration: do·kon
+    formal_carrier: do-ki-ki-nu
+    note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 2
+- canonical_id: STR:120
+  canonical_title: completed systemic integration
+  invariant_definition: Completion of a structural transformation by which multiple
+    structures become organized as constituents of one composite arrangement.
+  fixed_generated_fields:
+    family: STR
+    address: '120'
+    universal_slot: completed systemic process
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: kim
+    canonical_transliteration: do·kim
+    formal_carrier: do-ki-nu-ma
+    note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 0
+- canonical_id: STR:121
+  canonical_title: active systemic integration
+  invariant_definition: An ongoing structural transformation by which multiple structures
+    become organized as constituents of one composite arrangement.
+  fixed_generated_fields:
+    family: STR
+    address: '121'
+    universal_slot: active systemic process
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: kik
+    canonical_transliteration: do·kik
+    formal_carrier: do-ki-nu-ki
+    note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 2
+- canonical_id: STR:122
+  canonical_title: potential systemic integration
+  invariant_definition: A nonactualized structural transformation by which multiple
+    structures would become organized as constituents of one composite arrangement.
+  fixed_generated_fields:
+    family: STR
+    address: '122'
+    universal_slot: pending systemic process
+    harmonic_signature_semitones:
+    - 0
+    - 5
+    - 7
+    family_onset: do
+    local_compact_root: kin
+    canonical_transliteration: do·kin
+    formal_carrier: do-ki-nu-nu
+    note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - -2
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 153
+  provisional_count_after: 171
+  unreviewed_chunks_after: 19
+  future_change_policy: explicit versioned migration required
+  next_review_packet: STR:200–222
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

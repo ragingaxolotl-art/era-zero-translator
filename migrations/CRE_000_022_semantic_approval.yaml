@@ -1,0 +1,233 @@
+---
+metadata:
+  title: CRE:000–022 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.25
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: CRE:000–022
+  recommendation: reviews/CRE_000_022_recommended_spec.yaml
+  review: reviews/CRE_000_022_peer_review.md
+  validation: reviews/CRE_000_022_validation.md
+  soundness: reviews/CRE_000_022_soundness_audit.md
+  collision_report: reviews/CRE_000_022_collision_report.md
+  stress_tests: reviews/CRE_000_022_stress_tests.yaml
+promoted_roots:
+- canonical_id: CRE:000
+  canonical_title: persistent internal generative pattern
+  invariant_definition: A persistent bounded form-specifying pattern maintained within
+    one reference entity as a source for production, independently of whether that
+    pattern is presently expressed.
+  fixed_generated_fields:
+    family: CRE
+    address: '000'
+    universal_slot: stable inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 11
+    family_onset: ga
+    local_compact_root: nam
+    canonical_transliteration: ga·nam
+    formal_carrier: ga-ma-ma-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 0
+- canonical_id: CRE:001
+  canonical_title: manifest internal generative pattern
+  invariant_definition: A bounded form-specifying pattern maintained within one reference
+    entity that is presently expressed as a source for production.
+  fixed_generated_fields:
+    family: CRE
+    address: '001'
+    universal_slot: active inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 11
+    family_onset: ga
+    local_compact_root: nak
+    canonical_transliteration: ga·nak
+    formal_carrier: ga-ma-ma-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 2
+- canonical_id: CRE:002
+  canonical_title: dormant internal generative pattern
+  invariant_definition: A bounded form-specifying pattern maintained within one reference
+    entity as a source for production without being presently expressed.
+  fixed_generated_fields:
+    family: CRE
+    address: '002'
+    universal_slot: dormant inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 11
+    family_onset: ga
+    local_compact_root: nan
+    canonical_transliteration: ga·nan
+    formal_carrier: ga-ma-ma-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - -2
+- canonical_id: CRE:010
+  canonical_title: persistent generated artifact
+  invariant_definition: A persistent bounded product whose identity derives from a
+    productive transformation directed outward from a source, independently of whether
+    that product is presently manifest.
+  fixed_generated_fields:
+    family: CRE
+    address: '010'
+    universal_slot: stable outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 11
+    family_onset: ga
+    local_compact_root: nom
+    canonical_transliteration: ga·nom
+    formal_carrier: ga-ma-ki-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 2
+- canonical_id: CRE:011
+  canonical_title: manifest generated artifact
+  invariant_definition: A bounded product of a productive transformation directed
+    outward from a source that is presently manifest.
+  fixed_generated_fields:
+    family: CRE
+    address: '011'
+    universal_slot: active outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 11
+    family_onset: ga
+    local_compact_root: nok
+    canonical_transliteration: ga·nok
+    formal_carrier: ga-ma-ki-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 4
+- canonical_id: CRE:012
+  canonical_title: dormant generated artifact
+  invariant_definition: A bounded product whose identity derives from a productive
+    transformation directed outward from a source and remains maintained without being
+    presently manifest.
+  fixed_generated_fields:
+    family: CRE
+    address: '012'
+    universal_slot: dormant outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 11
+    family_onset: ga
+    local_compact_root: non
+    canonical_transliteration: ga·non
+    formal_carrier: ga-ma-ki-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 0
+- canonical_id: CRE:020
+  canonical_title: persistent shared generative repertoire
+  invariant_definition: A persistent coordinated collection of generative patterns
+    maintained across multiple participants as one shared production resource, independently
+    of whether that repertoire is presently expressed.
+  fixed_generated_fields:
+    family: CRE
+    address: '020'
+    universal_slot: stable collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 11
+    family_onset: ga
+    local_compact_root: nim
+    canonical_transliteration: ga·nim
+    formal_carrier: ga-ma-nu-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -2
+- canonical_id: CRE:021
+  canonical_title: manifest shared generative repertoire
+  invariant_definition: A coordinated collection of generative patterns maintained
+    across multiple participants as one shared production resource that is presently
+    expressed.
+  fixed_generated_fields:
+    family: CRE
+    address: '021'
+    universal_slot: active collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 11
+    family_onset: ga
+    local_compact_root: nik
+    canonical_transliteration: ga·nik
+    formal_carrier: ga-ma-nu-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - 0
+- canonical_id: CRE:022
+  canonical_title: dormant shared generative repertoire
+  invariant_definition: A coordinated collection of generative patterns maintained
+    across multiple participants as one shared production resource without being presently
+    expressed.
+  fixed_generated_fields:
+    family: CRE
+    address: '022'
+    universal_slot: dormant collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 7
+    - 11
+    family_onset: ga
+    local_compact_root: nin
+    canonical_transliteration: ga·nin
+    formal_carrier: ga-ma-nu-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -4
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 279
+  provisional_count_after: 45
+  unreviewed_chunks_after: 5
+  future_change_policy: explicit versioned migration required
+  next_review_packet: CRE:100–122
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

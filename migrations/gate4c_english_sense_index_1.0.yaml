@@ -1,0 +1,17 @@
+---
+migration_id: gate4c_english_sense_index_1.0
+date: '2026-10-09'
+status: applied
+from:
+  gate4c_status: not_started
+  sense_records: 0
+to:
+  gate4c_status: complete
+  sense_records: 436
+  lemmas: 419
+  version: 1.0.0
+atomic_lexicon_fingerprint: 9b2e6047a5bbd39f0b54ff2f49b569cf7e4726b361b51a62070804727efce26f
+compound_dictionary_fingerprint: 7fe378e505f032fd58681c2bdf1f41195a1428075d20e46f66330466a4d983b5
+atomic_changes: []
+compound_changes: []
+next_gate: gate4d_coverage_and_ambiguity_report

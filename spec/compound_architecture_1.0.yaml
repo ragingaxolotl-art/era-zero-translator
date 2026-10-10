@@ -1,0 +1,350 @@
+---
+metadata:
+  title: Era Zero Gate 4A Typed Compound Architecture
+  version: 1.0.0
+  status: canonical_gate4a_architecture
+  architecture_version: '1.0'
+  atomic_lexicon: lexicon/atoms.yaml
+  atomic_lexicon_fingerprint: 9b2e6047a5bbd39f0b54ff2f49b569cf7e4726b361b51a62070804727efce26f
+  atomic_authority: 324 canonical roots; 0 provisional roots
+  authority_basis: User instruction to perform the next translator-readiness stage
+    after atomic semantic completion
+  generated_fields_changed: false
+  atomic_meanings_changed: false
+  compound_dictionary_started: false
+  english_index_started: false
+  semantic_ir_started: false
+  translator_started: false
+scope:
+  owns:
+  - the machine-readable shape of a compound definition
+  - explicit semantic-head selection
+  - modifier attachment and scope
+  - typed argument binding
+  - coordination inside a lexical compound template
+  - nesting by versioned compound reference
+  - canonical compound serialization and identity
+  - surface-order and performance defaults for compounds
+  - validation and change-control rules
+  does_not_own:
+  - any approved lexical compound meaning
+  - an English word-to-compound mapping
+  - etymology or conventional shortening
+  - clause-level negation, modality, tense, quantity, or discourse scope
+  - the general utterance IR or executable grammar
+  - renderer, decoder, or translator implementation
+source_grounded_invariants:
+  describer_before_head: A describing root is realized before the main root.
+  modifier_timing: A no-gap boundary marks modifier attachment inside a compound.
+  argument_timing: A short gap separates a typed argument from its predicate or relation
+    head.
+  head_role_contour: Only the semantic head normally receives the compound's external
+    noun-role contour.
+  independent_roots: Every component root retains its own atomic meaning and may be
+    separately emphasized.
+  register_roles:
+    low:
+    - actor
+    - source
+    - cause
+    middle:
+    - process
+    - relationship
+    high:
+    - target
+    - result
+    - destination
+    sustained_background:
+    - environment
+    - persistent_condition
+  atomic_immutability: Composition never changes a root's canonical ID, lexical definition,
+    generated forms, or third-trit meaning.
+  runtime_separation: Runtime state belongs to an utterance occurrence and is never
+    stored as part of a lexical compound identity.
+definition_model:
+  required_fields:
+  - architecture_version
+  - compound_key
+  - definition_version
+  - status
+  - semantic_head
+  - nodes
+  - edges
+  - serialization
+  compound_key_policy: Draft keys use DRAFT:<namespace>:<slug>. Approved dictionary
+    entries will receive a content-derived CMP identifier during Gate 4B.
+  statuses:
+  - draft
+  - proposed
+  - approved
+  - deprecated
+  - superseded
+  semantic_head: Exactly one root or approved compound reference is the semantic center.
+    A slot or coordination node cannot be the head.
+  graph_shape: A finite connected directed acyclic graph. Every non-head node must
+    have a directed path to the semantic head.
+  lexical_center_rule: A compound expresses one compositional semantic center. Multiple
+    independent assertions belong in the later utterance IR, not in one lexical compound.
+  open_template_rule: A proposed dictionary item may expose typed slot nodes, but
+    every slot must bind through one explicit fills_role edge.
+  no_silent_inference: Machine meaning comes from explicit nodes, edges, roles, and
+    scope—not from English gloss order or adjacency alone.
+node_types:
+  root:
+    required:
+    - node_id
+    - kind
+    - root_id
+    rule: root_id must name one of the 324 canonical atoms
+  compound_ref:
+    required:
+    - node_id
+    - kind
+    - compound_id
+    - definition_version
+    rule: reference must resolve to an approved, non-superseded dictionary entry;
+      unavailable during Gate 4A fixtures
+  slot:
+    required:
+    - node_id
+    - kind
+    - slot_name
+    - slot_type
+    slot_types:
+    - entity
+    - process
+    - relation
+    - condition
+    - value
+    - location
+    - time
+    - quantity
+    rule: slots are typed variables, not lexical meanings
+  coordination:
+    required:
+    - node_id
+    - kind
+    - operator
+    operators:
+    - all_of
+    - any_of
+    - exactly_one
+    rule: coordination groups members but cannot itself be the semantic head
+edge_types:
+  qualifies:
+    direction: descriptor_to_described
+    role_allowed: false
+    performance: descriptor immediately precedes its target with no gap
+    semantic_effect: narrows or classifies the target without asserting an independent
+      event
+  fills_role:
+    direction: argument_to_predicate
+    role_required: true
+    allowed_roles:
+    - actor
+    - source
+    - cause
+    - experiencer
+    - bearer
+    - predicate
+    - target
+    - result
+    - destination
+    - instrument
+    - material
+    - location
+    - environment
+    - condition
+    - persistent_condition
+    performance: argument uses its role register and a short argument boundary unless
+      simultaneous realization is explicitly selected later
+  member_of:
+    direction: member_to_coordination
+    role_allowed: false
+    performance: members use the fixed enumeration pulse when rendered as one group
+    semantic_effect: collects alternatives or conjunctive members under an explicit
+      coordination operator
+role_inventory:
+  actor:
+    semantic_function: entity initiating or controlling a process
+    register: low
+    source_status: fixed_core_role
+  source:
+    semantic_function: origin endpoint, input, or grounding referent
+    register: low
+    source_status: fixed_core_role
+  cause:
+    semantic_function: separately asserted cause of a process or relation
+    register: low
+    source_status: fixed_core_role
+  experiencer:
+    semantic_function: entity undergoing a mental, sensory, or affective state
+    register: low
+    source_status: typed_gate4a_extension
+  bearer:
+    semantic_function: entity in which a condition, property, or state inheres
+    register: low
+    source_status: typed_gate4a_extension
+  predicate:
+    semantic_function: process or relationship serving as semantic center
+    register: middle
+    source_status: fixed_core_role
+  target:
+    semantic_function: distinct entity toward which a process or relation is directed
+    register: high
+    source_status: fixed_core_role
+  result:
+    semantic_function: state, entity, or value produced as the semantic result
+    register: high
+    source_status: fixed_core_role
+  destination:
+    semantic_function: endpoint of directed movement or transfer
+    register: high
+    source_status: fixed_core_role
+  instrument:
+    semantic_function: means used by an actor without becoming the actor or result
+    register: sustained_background
+    source_status: typed_gate4a_extension
+  material:
+    semantic_function: substance or informational content from which a result is constituted
+    register: sustained_background
+    source_status: typed_gate4a_extension
+  location:
+    semantic_function: spatial or model-relative setting of a process or entity
+    register: sustained_background
+    source_status: typed_gate4a_extension
+  environment:
+    semantic_function: shared setting that remains backgrounded across the compound
+    register: sustained_background
+    source_status: fixed_core_role
+  condition:
+    semantic_function: condition under which the head relation or process is applicable
+    register: sustained_background
+    source_status: fixed_core_role
+  persistent_condition:
+    semantic_function: background condition maintained across the relevant reference
+      span
+    register: sustained_background
+    source_status: fixed_core_role
+attachment_and_scope:
+  explicit_target: Every qualifies or fills_role edge names exactly one target node.
+  nearest_surface_attachment: Surface adjacency is a rendering consequence of the
+    graph; it never overrides the explicit target.
+  modifier_scope: A modifier affects only its target and descendants contained in
+    that referenced compound, never an adjacent sibling by implication.
+  argument_scope: An argument fills one named role of one predicate head. Reuse across
+    heads requires separate edges.
+  coordination_scope: The coordination operator applies only to nodes connected by
+    member_of edges.
+  external_attachment: A containing compound attaches to a referenced compound as
+    a single node unless the referenced definition explicitly exposes a slot.
+head_selection:
+  entity_center: Use the entity or condition whose subtype is being named as head.
+  process_center: Use the process whose participants or circumstances are being bound
+    as head.
+  relation_center: Use the relation or affordance whose endpoints or conditions are
+    being bound as head.
+  tie_breaker: If two roots would each remain independent predicates, reject the lexical
+    compound and route the expression to the later utterance IR.
+  surface_default: Qualifiers are emitted before the head; the head is emitted last
+    within its modifier chain.
+compound_classes:
+  attributive: one head with one or more qualifies edges
+  relational: a relationship or affordance head with typed endpoint or condition roles
+  eventive: a process head with typed actor, target, result, destination, or background
+    roles
+  configurational: an entity or condition head with multiple separately attached facets
+  template: any of the above with one or more typed slot nodes
+surface_realization:
+  formal_notation: Graph notation is authoritative; a linear performance is one deterministic
+    realization of it.
+  modifier_order: Render modifier subtrees before their target with no gap. More deeply
+    nested modifiers render before less deeply nested modifiers.
+  sibling_order: Sort same-target qualifiers by canonical expanded-graph hash, then
+    by canonical root or compound ID.
+  head_marking: Apply the compound's external role contour to the semantic head only
+    unless a later grammar rule explicitly scopes a contour to another node.
+  argument_realization: Render arguments in their assigned register with a short gap
+    from the predicate; simultaneous arguments may occupy parallel voices only under
+    a later utterance rule.
+  state_realization: Runtime [0], [1], or [2]/num is supplied by the utterance occurrence.
+    It is omitted from the dictionary identity and content hash.
+  statement_boundary: Medium or long gaps terminate compound binding and therefore
+    cannot occur inside one lexical modifier chain.
+canonical_serialization:
+  encoding: UTF-8 JSON
+  unicode: NFC
+  object_keys: lexicographic order
+  arrays:
+    nodes: canonical node_id order
+    edges: edge_type rank, target node_id, role rank, source node_id
+    other_sets: lexicographic order unless the schema declares sequence semantics
+  canonical_node_ids:
+    h: semantic head
+    qNN: qualifier nodes in canonical sibling order
+    a-ROLE-NN: argument nodes grouped by canonical role order
+    gNN: coordination nodes
+    sNN: slot nodes when not already an argument
+  excluded_from_identity:
+  - display_title
+  - english_gloss
+  - translation_candidates
+  - examples
+  - notes
+  - approval_history
+  - runtime_state
+  - contour
+  - register
+  - absolute_pitch
+  content_identity: SHA-256 over the canonical semantic payload; approved compound
+    ID is CMP:<first-24-lowercase-hex>, with the full digest retained.
+  semantic_payload:
+  - architecture_version
+  - semantic_head
+  - nodes
+  - edges
+  - lexical_constraints
+  versioning: A semantic-payload change creates a new definition version and content
+    digest. Editorial metadata may change without semantic migration.
+change_control:
+  approval_required: Every Gate 4B dictionary entry requires explicit or delegated
+    semantic approval plus validation.
+  atomic_collision_check: Reject a compound that merely duplicates one atomic invariant
+    unless its additional compositional distinction is explicit.
+  semantic_change: Changing head, nodes, edges, roles, scope, slot types, or lexical
+    constraints requires a versioned migration.
+  deprecation: Never silently rewrite an approved compound. Mark it deprecated or
+    superseded and identify its successor.
+  english_independence: English labels and glosses are indexing metadata, never compound
+    identity or proof of meaning.
+reserved_for_later_gates:
+  gate4b:
+  - approved compound entries
+  - high-frequency compound dictionary
+  - compound-specific collisions and coverage
+  gate4c:
+  - English sense index
+  - sense disambiguation
+  - ordinary-language coverage
+  semantic_ir:
+  - clause structure
+  - negation scope
+  - tense and aspect
+  - quantity and measurement
+  - modality
+  - conditionals
+  - coreference
+  - discourse binding
+  - parallel and serial assertions
+  renderer:
+  - absolute pitch
+  - voice allocation
+  - timing values
+  - MIDI
+  - glyph layout
+  - round-trip decoder
+  translator:
+  - English parsing
+  - ranking
+  - clarification
+  - unsupported-input behavior

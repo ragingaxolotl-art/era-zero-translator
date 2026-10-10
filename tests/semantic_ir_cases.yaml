@@ -1,0 +1,1015 @@
+---
+metadata:
+  version: 1.0.0
+  valid_cases: 16
+  invalid_cases: 13
+valid_cases:
+- case_id: assertion
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:fb5fa20a07e73e490cff9ce4
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: LIF:001
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: fb5fa20a07e73e490cff9ce49d1457e528dabd7cc3a52587024d34a5a9abe279
+- case_id: question
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:e4bd85cd56dfca63055c87ef
+    root_clause: n001
+    speech_act: question
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:211
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: e4bd85cd56dfca63055c87ef7137ff4c00bd51e3409fa758daeaa0257b2c10f2
+- case_id: command_with_actor_target
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:c7bb7ff44391ceb573195eb0
+    root_clause: n001
+    speech_act: command
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: REP:111
+      runtime_state:
+        code: 1
+    - node_id: n003
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: LIF:011
+      runtime_state:
+        code: 1
+    - node_id: n004
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MAT:011
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    - edge_id: e002
+      type: fills_role
+      from: n003
+      to: n002
+      role: actor
+    - edge_id: e003
+      type: fills_role
+      from: n004
+      to: n002
+      role: target
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: c7bb7ff44391ceb573195eb0c9c03fc30bc93111525269fae2cf76813ae7f5f3
+- case_id: negated_clause
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:9447183fec30042d320b65e6
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:121
+      runtime_state:
+        code: 1
+    - node_id: n003
+      kind: scope_operator
+      operator: negation
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n003
+      to: n001
+    - edge_id: e002
+      type: scopes
+      from: n002
+      to: n003
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: 9447183fec30042d320b65e621c8d2e417ace94f96a4a48ab1284f7232de9909
+- case_id: possible_clause
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:f5f9a2c070f878ee0c7109c8
+    root_clause: n001
+    speech_act: possibility
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:122
+      runtime_state:
+        code: 2
+    - node_id: n003
+      kind: scope_operator
+      operator: modality
+      mode: possible
+      strength: '0.7'
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n003
+      to: n001
+    - edge_id: e002
+      type: scopes
+      from: n002
+      to: n003
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: f5f9a2c070f878ee0c7109c8af817a0648cfbaa73ee811529dce3396419c9e14
+- case_id: exact_quantity
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:e64a27d866acdabe8c3c1ba5
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: LIF:021
+      runtime_state:
+        code: 1
+    - node_id: n003
+      kind: scope_operator
+      operator: quantifier
+      quantifier: exact
+      value: '3'
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n003
+      to: n001
+    - edge_id: e002
+      type: scopes
+      from: n002
+      to: n003
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: e64a27d866acdabe8c3c1ba52e58f516aeeaf119875ad4600fb9f540d5fa384f
+- case_id: measurement
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:eacf904acfd187bd2e2888ae
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:210
+      runtime_state:
+        code: 1
+    - node_id: n003
+      kind: measurement
+      magnitude: '5'
+      unit: kilometer
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    - edge_id: e002
+      type: fills_role
+      from: n003
+      to: n002
+      role: quantity
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: eacf904acfd187bd2e2888ae5376a20dc9006f704850fc24c65e03d816368d76
+- case_id: temporal_before
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:0a03c6d20810d66df3e33fc6
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:100
+      runtime_state:
+        code: 1
+    - node_id: n003
+      kind: time_anchor
+      anchor_type: speech_time
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    - edge_id: e002
+      type: time_relation
+      from: n003
+      to: n001
+      relation: before
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: 0a03c6d20810d66df3e33fc6acb50acdb7f508308af4f3f438e1baeeeb5f7364
+- case_id: conditional
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:09ccaeb5f9be2430f4ef45d0
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: conditional
+    - node_id: n002
+      kind: clause
+      clause_type: predication
+    - node_id: n003
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: LOG:101
+      runtime_state:
+        code: 1
+    - node_id: n004
+      kind: clause
+      clause_type: predication
+    - node_id: n005
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: CRE:111
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n004
+      to: n001
+    - edge_id: e002
+      type: centers
+      from: n003
+      to: n002
+    - edge_id: e003
+      type: centers
+      from: n005
+      to: n004
+    - edge_id: e004
+      type: condition_of
+      from: n002
+      to: n004
+      condition_status: open
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: '09ccaeb5f9be2430f4ef45d08542c64c6b3cc6fa54944148ac188c5864955fa5'
+- case_id: sequence
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:6421f35a0ac6a3ecfe025763
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: coordination
+      operator: sequence
+    - node_id: n003
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:100
+      runtime_state:
+        code: 1
+    - node_id: n004
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:110
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    - edge_id: e002
+      type: member_of
+      from: n003
+      to: n002
+      order: 1
+    - edge_id: e003
+      type: member_of
+      from: n004
+      to: n002
+      order: 2
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: 6421f35a0ac6a3ecfe025763110177f86c072a8b6f852aad35ffd8e4d58efca6
+- case_id: parallel
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:532f44fe74e4fcb1721acefc
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: coordination
+      operator: parallel
+    - node_id: n003
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: CON:101
+      runtime_state:
+        code: 1
+    - node_id: n004
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: DAT:101
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    - edge_id: e002
+      type: member_of
+      from: n003
+      to: n002
+    - edge_id: e003
+      type: member_of
+      from: n004
+      to: n002
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: 532f44fe74e4fcb1721acefcb9277467e148b3c3219c06b5c84622db455fc666
+- case_id: finite_repetition
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:b16e1a6846a58eb48893a5ae
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: scope_operator
+      operator: repetition
+      mode: count
+      count: 3
+    - node_id: n003
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:120
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    - edge_id: e002
+      type: scopes
+      from: n003
+      to: n002
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: b16e1a6846a58eb48893a5aee64e8d158058292a629ba45d15b1283ed663c425
+- case_id: transition
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:dc8d9c3e0a7bce8ff8d80c91
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: transition
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: STR:101
+      runtime_state:
+        code: 1
+    - node_id: n003
+      kind: state_snapshot
+      bearer: r:x
+      state_value: old
+    - node_id: n004
+      kind: state_snapshot
+      bearer: r:x
+      state_value: new
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    - edge_id: e002
+      type: before_state
+      from: n003
+      to: n001
+    - edge_id: e003
+      type: after_state
+      from: n004
+      to: n001
+    discourse_constraints:
+      declared_referents:
+      - r:x
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: dc8d9c3e0a7bce8ff8d80c915d85686cd4327d19087a2f8497ee2fc0071bc8f5
+- case_id: coreference
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:247536c2bfa8ed15a44e23dc
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MIN:211
+      runtime_state:
+        code: 1
+    - node_id: n003
+      kind: variable
+      variable_id: v:observer
+      value_type: entity
+      referent_id: r:observer
+    - node_id: n004
+      kind: reference
+      referent_id: r:observer
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    - edge_id: e002
+      type: fills_role
+      from: n003
+      to: n002
+      role: experiencer
+    - edge_id: e003
+      type: corefers_with
+      from: n004
+      to: n003
+    discourse_constraints:
+      declared_referents:
+      - r:observer
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: 247536c2bfa8ed15a44e23dcbbf34b977ac32f371f911d41c73e14cc3dca74f4
+- case_id: compound_occurrence
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:2112b91ea3fd302cc3a3ad87
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: compound
+      target_id: CMP:111b772027accab2054f0415
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: 2112b91ea3fd302cc3a3ad87766f942c296695ea1ce3c99a8a3801e71eb36ace
+- case_id: state_two_num
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:68880720c814908190d1c15e
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:212
+      runtime_state:
+        code: 2
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: 68880720c814908190d1c15e6eb132550593b48b8252b1e3a4783c0bfd6714f3
+invalid_cases:
+- case_id: unknown_target
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:201beb4b6811c2414d4a1508
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: FAK:999
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: 201beb4b6811c2414d4a15085d9c0580f69a46486a6f4e7ccf449e650e571906
+  expected_errors:
+  - unknown_target
+- case_id: bad_runtime
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:4de43dbd8396b486f9d37cdb
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: LIF:001
+      runtime_state:
+        code: 3
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: 4de43dbd8396b486f9d37cdb35f3753eae7256a3db56c8af9d07eed550cebf2c
+  expected_errors:
+  - invalid_runtime_state
+- case_id: num_wrong_state
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:f137d84dfddbf1e822a8d4cf
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: LIF:001
+      runtime_state:
+        code: 1
+        num: 2
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: f137d84dfddbf1e822a8d4cf7deb94f5a956bad68daae66f71adee0fcf5c3430
+  expected_errors:
+  - invalid_runtime_parameter
+- case_id: missing_center
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:dc4dee7de1eb29a188a2072a
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: LIF:001
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: fills_role
+      from: n002
+      to: n001
+      role: actor
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: dc4dee7de1eb29a188a2072acfad8399feab7c4b9bdddb2e515162b38cf65ea2
+  expected_errors:
+  - clause_center_cardinality
+- case_id: double_center
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:8e71b1c90ddec8e09fb0b461
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: LIF:001
+      runtime_state:
+        code: 1
+    - node_id: n003
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:001
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    - edge_id: e002
+      type: centers
+      from: n003
+      to: n001
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: 8e71b1c90ddec8e09fb0b46185ae389846e019cbecd47dd76493cce8d08e9b55
+  expected_errors:
+  - clause_center_cardinality
+- case_id: scope_missing
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:6f122ddf4f3dca8645b19576
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: scope_operator
+      operator: negation
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: 6f122ddf4f3dca8645b195764e34c5165d69226df55dcbd71659a2518cf4da50
+  expected_errors:
+  - scope_cardinality
+- case_id: unknown_role
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:6e4960ac8b57eb83bd5953a1
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:121
+      runtime_state:
+        code: 1
+    - node_id: n003
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: LIF:011
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    - edge_id: e002
+      type: fills_role
+      from: n003
+      to: n002
+      role: owner
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: 6e4960ac8b57eb83bd5953a12c7817e147cf19b220fb13f6193f41f9d47b35d0
+  expected_errors:
+  - unknown_role
+- case_id: sequence_gap
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:9f63e63cb93dec7cc3a84c86
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: coordination
+      operator: sequence
+    - node_id: n003
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:100
+      runtime_state:
+        code: 1
+    - node_id: n004
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:110
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    - edge_id: e002
+      type: member_of
+      from: n003
+      to: n002
+      order: 1
+    - edge_id: e003
+      type: member_of
+      from: n004
+      to: n002
+      order: 3
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: 9f63e63cb93dec7cc3a84c86b61551df7e2d39c548c553f91eb6fc1e26982436
+  expected_errors:
+  - invalid_coordination
+- case_id: parallel_ordered
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:14cda7f82afcc2b1c7ab1a9f
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: coordination
+      operator: parallel
+    - node_id: n003
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:100
+      runtime_state:
+        code: 1
+    - node_id: n004
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:110
+      runtime_state:
+        code: 1
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    - edge_id: e002
+      type: member_of
+      from: n003
+      to: n002
+      order: 1
+    - edge_id: e003
+      type: member_of
+      from: n004
+      to: n002
+      order: 2
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: 14cda7f82afcc2b1c7ab1a9fbe881aec53a1b78672b4aa50aeada4c9a1ff1a1d
+  expected_errors:
+  - invalid_coordination
+- case_id: bad_unit
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:27efc356d60381617e891fb0
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MOV:210
+      runtime_state:
+        code: 1
+    - node_id: n003
+      kind: measurement
+      magnitude: '5'
+      unit: furlong
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    - edge_id: e002
+      type: fills_role
+      from: n003
+      to: n002
+      role: quantity
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: 27efc356d60381617e891fb0c9af017dd9f96b3bec0bbcc691a8ff4e9c8342a6
+  expected_errors:
+  - invalid_unit
+- case_id: transition_missing_after
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:0885b8fb7ded5ed7940e9a7b
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: transition
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: STR:101
+      runtime_state:
+        code: 1
+    - node_id: n003
+      kind: state_snapshot
+      bearer: r:x
+      state_value: old
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    - edge_id: e002
+      type: before_state
+      from: n003
+      to: n001
+    discourse_constraints:
+      declared_referents:
+      - r:x
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: '0885b8fb7ded5ed7940e9a7bfe188f2161b0c2aaeeb95c182c79658a8668f843'
+  expected_errors:
+  - invalid_transition
+- case_id: unresolved_reference
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:d8326b51ff76a25bebabe397
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: MIN:211
+      runtime_state:
+        code: 1
+    - node_id: n003
+      kind: reference
+      referent_id: r:missing
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    - edge_id: e002
+      type: fills_role
+      from: n003
+      to: n002
+      role: experiencer
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: d8326b51ff76a25bebabe397daa14c3e3760e478867704b793b7d50f51d71e60
+  expected_errors:
+  - unresolved_reference
+- case_id: surface_field
+  ir:
+    ir_version: '1.0'
+    utterance_id: UTT:bfd918235f3e06fe7ba77419
+    root_clause: n001
+    speech_act: assertion
+    nodes:
+    - node_id: n001
+      kind: clause
+      clause_type: predication
+    - node_id: n002
+      kind: lexical_occurrence
+      target_type: atom
+      target_id: LIF:001
+      runtime_state:
+        code: 1
+      absolute_pitch: 60
+    edges:
+    - edge_id: e001
+      type: centers
+      from: n002
+      to: n001
+    discourse_constraints: {}
+    serialization:
+      canonical_format: EZIR-JSON-1
+      content_digest: bfd918235f3e06fe7ba7741940c7622cea0b9f6985946e4a30637810480ddc1c
+  expected_errors:
+  - forbidden_surface_field

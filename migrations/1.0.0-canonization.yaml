@@ -1,0 +1,366 @@
+---
+migration_id: EZ-MIG-1.0.0-CANONIZATION
+from: Phase 2 provisional lexicon
+to: Era Zero Core Standard 1.0.0
+authorization: Direct user instruction to perform the recommended audit-and-freeze step.
+promoted_records:
+- MOV:100
+- MOV:101
+- MOV:102
+- MOV:110
+- MOV:111
+- MOV:112
+- MOV:120
+- MOV:121
+- MOV:122
+- MOV:200
+- MOV:201
+- MOV:202
+- MOV:210
+- MOV:211
+- MOV:212
+- MOV:220
+- MOV:221
+- MOV:222
+- MAT:000
+- MAT:001
+- MAT:002
+- MAT:010
+- MAT:011
+- MAT:012
+- MAT:020
+- MAT:021
+- MAT:022
+- MAT:100
+- MAT:101
+- MAT:102
+- MAT:110
+- MAT:111
+- MAT:112
+- MAT:120
+- MAT:121
+- MAT:122
+- MAT:200
+- MAT:201
+- MAT:202
+- MAT:210
+- MAT:211
+- MAT:212
+- MAT:220
+- MAT:221
+- MAT:222
+- MIN:000
+- MIN:001
+- MIN:002
+- MIN:010
+- MIN:011
+- MIN:012
+- MIN:020
+- MIN:021
+- MIN:022
+- MIN:100
+- MIN:101
+- MIN:102
+- MIN:110
+- MIN:111
+- MIN:112
+- MIN:120
+- MIN:121
+- MIN:122
+- MIN:200
+- MIN:201
+- MIN:202
+- MIN:210
+- MIN:211
+- MIN:212
+- MIN:220
+- MIN:221
+- MIN:222
+- CON:000
+- CON:001
+- CON:002
+- CON:010
+- CON:011
+- CON:012
+- CON:020
+- CON:021
+- CON:022
+- CON:100
+- CON:101
+- CON:102
+- CON:110
+- CON:111
+- CON:112
+- CON:120
+- CON:121
+- CON:122
+- CON:200
+- CON:201
+- CON:202
+- CON:210
+- CON:211
+- CON:212
+- CON:220
+- CON:221
+- CON:222
+- STR:000
+- STR:001
+- STR:002
+- STR:010
+- STR:011
+- STR:012
+- STR:020
+- STR:021
+- STR:022
+- STR:100
+- STR:101
+- STR:102
+- STR:110
+- STR:111
+- STR:112
+- STR:120
+- STR:121
+- STR:122
+- STR:200
+- STR:201
+- STR:202
+- STR:210
+- STR:211
+- STR:212
+- STR:220
+- STR:221
+- STR:222
+- WRN:000
+- WRN:001
+- WRN:002
+- WRN:010
+- WRN:011
+- WRN:012
+- WRN:020
+- WRN:021
+- WRN:022
+- WRN:100
+- WRN:101
+- WRN:102
+- WRN:110
+- WRN:111
+- WRN:112
+- WRN:120
+- WRN:121
+- WRN:122
+- WRN:200
+- WRN:201
+- WRN:202
+- WRN:210
+- WRN:211
+- WRN:212
+- WRN:220
+- WRN:221
+- WRN:222
+- REP:000
+- REP:001
+- REP:002
+- REP:010
+- REP:011
+- REP:012
+- REP:020
+- REP:021
+- REP:022
+- REP:100
+- REP:101
+- REP:102
+- REP:110
+- REP:111
+- REP:112
+- REP:120
+- REP:121
+- REP:122
+- REP:200
+- REP:201
+- REP:202
+- REP:210
+- REP:211
+- REP:212
+- REP:220
+- REP:221
+- REP:222
+- LOG:000
+- LOG:001
+- LOG:002
+- LOG:010
+- LOG:011
+- LOG:012
+- LOG:020
+- LOG:021
+- LOG:022
+- LOG:100
+- LOG:101
+- LOG:102
+- LOG:110
+- LOG:111
+- LOG:112
+- LOG:120
+- LOG:121
+- LOG:122
+- LOG:200
+- LOG:201
+- LOG:202
+- LOG:210
+- LOG:211
+- LOG:212
+- LOG:220
+- LOG:221
+- LOG:222
+- DAT:000
+- DAT:001
+- DAT:002
+- DAT:010
+- DAT:011
+- DAT:012
+- DAT:020
+- DAT:021
+- DAT:022
+- DAT:100
+- DAT:101
+- DAT:102
+- DAT:110
+- DAT:111
+- DAT:112
+- DAT:120
+- DAT:121
+- DAT:122
+- DAT:200
+- DAT:201
+- DAT:202
+- DAT:210
+- DAT:211
+- DAT:212
+- DAT:220
+- DAT:221
+- DAT:222
+- CRE:000
+- CRE:001
+- CRE:002
+- CRE:010
+- CRE:011
+- CRE:012
+- CRE:020
+- CRE:021
+- CRE:022
+- CRE:100
+- CRE:101
+- CRE:102
+- CRE:110
+- CRE:111
+- CRE:112
+- CRE:120
+- CRE:121
+- CRE:122
+- CRE:200
+- CRE:201
+- CRE:202
+- CRE:210
+- CRE:211
+- CRE:212
+- CRE:220
+- CRE:221
+- CRE:222
+- ORI:000
+- ORI:001
+- ORI:002
+- ORI:010
+- ORI:011
+- ORI:012
+- ORI:020
+- ORI:021
+- ORI:022
+- ORI:100
+- ORI:101
+- ORI:102
+- ORI:110
+- ORI:111
+- ORI:112
+- ORI:120
+- ORI:121
+- ORI:122
+- ORI:200
+- ORI:201
+- ORI:202
+- ORI:210
+- ORI:211
+- ORI:212
+- ORI:220
+- ORI:221
+- ORI:222
+semantic_definition_changes: []
+title_clarifications:
+- canonical_id: CON:111
+  from: transmission
+  to: active transmission
+  reason: Make the address-slot distinction explicit without changing the approved core meaning.
+- canonical_id: STR:101
+  from: self-organization
+  to: active self-organization
+  reason: Make the address-slot distinction explicit without changing the approved core meaning.
+- canonical_id: STR:111
+  from: construction
+  to: active construction
+  reason: Make the address-slot distinction explicit without changing the approved core meaning.
+- canonical_id: WRN:111
+  from: warn or isolate
+  to: active warning or isolation
+  reason: Make the address-slot distinction explicit without changing the approved core meaning.
+- canonical_id: REP:101
+  from: self-repair
+  to: active self-repair
+  reason: Make the address-slot distinction explicit without changing the approved core meaning.
+- canonical_id: REP:111
+  from: repair target
+  to: active target repair
+  reason: Make the address-slot distinction explicit without changing the approved core meaning.
+- canonical_id: LOG:101
+  from: computation
+  to: active computation
+  reason: Make the address-slot distinction explicit without changing the approved core meaning.
+- canonical_id: DAT:101
+  from: read or decode
+  to: active local decoding
+  reason: Make the address-slot distinction explicit without changing the approved core meaning.
+- canonical_id: DAT:111
+  from: write or transmit
+  to: active data transfer
+  reason: Make the address-slot distinction explicit without changing the approved core meaning.
+- canonical_id: CRE:101
+  from: ideation
+  to: active ideation
+  reason: Make the address-slot distinction explicit without changing the approved core meaning.
+- canonical_id: CRE:111
+  from: create artifact
+  to: active artifact creation
+  reason: Make the address-slot distinction explicit without changing the approved core meaning.
+- canonical_id: ORI:101
+  from: becoming
+  to: active becoming
+  reason: Make the address-slot distinction explicit without changing the approved core meaning.
+- canonical_id: ORI:111
+  from: manifest
+  to: active manifestation
+  reason: Make the address-slot distinction explicit without changing the approved core meaning.
+resolved_decisions:
+- ORI:002 is nu·nan, latent first condition.
+- num is the runtime-state 2 name and is not an alternative canonical ORI:002 form.
+preserved_history:
+- lexicon/provisional_atoms.yaml
+- lexicon/all_atoms.yaml
+- reports/phase2_chunk_review.md
+- reports/phase2_chunks/
+approval_status: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+effective_as_semantic_authority: false
+audit_history_only: true
+downstream_implementation_occurred: false
+withdrawal:
+  authority: direct user correction
+  effect: All 288 promoted semantic titles and definitions revert to provisional status; fixed generated fields are unchanged.
+  canonical_roots_after_withdrawal: 36
+  provisional_roots_after_withdrawal: 288
+  record: gate3_withdrawal_record.md

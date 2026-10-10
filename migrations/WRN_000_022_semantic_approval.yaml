@@ -1,0 +1,222 @@
+---
+metadata:
+  title: WRN:000–022 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.13
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: WRN:000–022
+  recommendation: reviews/WRN_000_022_recommended_spec.yaml
+  review: reviews/WRN_000_022_peer_review.md
+  validation: reviews/WRN_000_022_validation.md
+  soundness: reviews/WRN_000_022_soundness_audit.md
+  collision_report: reviews/WRN_000_022_collision_report.md
+  stress_tests: reviews/WRN_000_022_stress_tests.yaml
+promoted_roots:
+- canonical_id: WRN:000
+  canonical_title: persistent internal fault
+  invariant_definition: An intrinsic adverse condition that remains identified within
+    one reference entity independently of whether it is presently producing harmful
+    deviation.
+  fixed_generated_fields:
+    family: WRN
+    address: '000'
+    universal_slot: stable inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: nam
+    canonical_transliteration: da·nam
+    formal_carrier: da-ma-ma-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 0
+- canonical_id: WRN:001
+  canonical_title: manifest internal fault
+  invariant_definition: An intrinsic adverse condition within one reference entity
+    that is presently producing harmful deviation from that entity's accepted state.
+  fixed_generated_fields:
+    family: WRN
+    address: '001'
+    universal_slot: active inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: nak
+    canonical_transliteration: da·nak
+    formal_carrier: da-ma-ma-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 2
+- canonical_id: WRN:002
+  canonical_title: latent internal fault
+  invariant_definition: An intrinsic adverse condition within one reference entity
+    that is present without presently producing harmful deviation.
+  fixed_generated_fields:
+    family: WRN
+    address: '002'
+    universal_slot: dormant inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: nan
+    canonical_transliteration: da·nan
+    formal_carrier: da-ma-ma-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - -2
+- canonical_id: WRN:010
+  canonical_title: persistent external hazard
+  invariant_definition: A distinct external condition that remains identified as capable
+    of adversely affecting one reference target independently of current contact or
+    effect.
+  fixed_generated_fields:
+    family: WRN
+    address: '010'
+    universal_slot: stable outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: nom
+    canonical_transliteration: da·nom
+    formal_carrier: da-ma-ki-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 2
+- canonical_id: WRN:011
+  canonical_title: manifest external hazard
+  invariant_definition: A distinct external condition that is presently expressing
+    the harmful potential by which it can adversely affect one reference target.
+  fixed_generated_fields:
+    family: WRN
+    address: '011'
+    universal_slot: active outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: nok
+    canonical_transliteration: da·nok
+    formal_carrier: da-ma-ki-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 4
+- canonical_id: WRN:012
+  canonical_title: dormant external hazard
+  invariant_definition: A distinct external condition capable of adversely affecting
+    one reference target that is present without presently expressing that harmful
+    potential.
+  fixed_generated_fields:
+    family: WRN
+    address: '012'
+    universal_slot: dormant outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: non
+    canonical_transliteration: da·non
+    formal_carrier: da-ma-ki-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 0
+- canonical_id: WRN:020
+  canonical_title: persistent distributed fault
+  invariant_definition: One correlated adverse condition that remains identified across
+    multiple participant entities within a shared system independently of its present
+    manifestation pattern.
+  fixed_generated_fields:
+    family: WRN
+    address: '020'
+    universal_slot: stable collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: nim
+    canonical_transliteration: da·nim
+    formal_carrier: da-ma-nu-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -2
+- canonical_id: WRN:021
+  canonical_title: manifest distributed fault
+  invariant_definition: One correlated adverse condition that is presently producing
+    harmful deviation across multiple participant entities within a shared system.
+  fixed_generated_fields:
+    family: WRN
+    address: '021'
+    universal_slot: active collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: nik
+    canonical_transliteration: da·nik
+    formal_carrier: da-ma-nu-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - 0
+- canonical_id: WRN:022
+  canonical_title: latent distributed fault
+  invariant_definition: One correlated adverse condition present across multiple participant
+    entities within a shared system without presently producing harmful deviation.
+  fixed_generated_fields:
+    family: WRN
+    address: '022'
+    universal_slot: dormant collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 3
+    - 6
+    family_onset: da
+    local_compact_root: nin
+    canonical_transliteration: da·nin
+    formal_carrier: da-ma-nu-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -4
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 171
+  provisional_count_after: 153
+  unreviewed_chunks_after: 17
+  future_change_policy: explicit versioned migration required
+  next_review_packet: WRN:100–122
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

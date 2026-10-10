@@ -1,0 +1,221 @@
+---
+metadata:
+  title: LOG:100–122 delegated semantic approval
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.20
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packet:
+  range: LOG:100–122
+  recommendation: reviews/LOG_100_122_recommended_spec.yaml
+  review: reviews/LOG_100_122_peer_review.md
+  validation: reviews/LOG_100_122_validation.md
+  soundness: reviews/LOG_000_122_soundness_audit.md
+  collision_report: reviews/LOG_100_122_collision_report.md
+  stress_tests: reviews/LOG_100_122_stress_tests.yaml
+promoted_roots:
+- canonical_id: LOG:100
+  canonical_title: completed internal formal evaluation
+  invariant_definition: Completion of a formal evaluation that determines the admissibility
+    of one reference entity under its applicable internal criterion.
+  fixed_generated_fields:
+    family: LOG
+    address: '100'
+    universal_slot: completed inward process
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: kam
+    canonical_transliteration: te·kam
+    formal_carrier: te-ki-ma-ma
+    note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 2
+- canonical_id: LOG:101
+  canonical_title: active internal formal evaluation
+  invariant_definition: An ongoing formal evaluation that is determining the admissibility
+    of one reference entity under its applicable internal criterion.
+  fixed_generated_fields:
+    family: LOG
+    address: '101'
+    universal_slot: active inward process
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: kak
+    canonical_transliteration: te·kak
+    formal_carrier: te-ki-ma-ki
+    note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 4
+- canonical_id: LOG:102
+  canonical_title: nonactualized internal formal evaluation
+  invariant_definition: A nonactualized formal evaluation that would determine the
+    admissibility of one reference entity under its applicable internal criterion.
+  fixed_generated_fields:
+    family: LOG
+    address: '102'
+    universal_slot: pending inward process
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: kan
+    canonical_transliteration: te·kan
+    formal_carrier: te-ki-ma-nu
+    note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 0
+- canonical_id: LOG:110
+  canonical_title: completed target constraint application
+  invariant_definition: Completion of a formal evaluation that applies one specified
+    constraint to one distinct reference target and determines that target's admissibility
+    under the constraint.
+  fixed_generated_fields:
+    family: LOG
+    address: '110'
+    universal_slot: completed outward process
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: kom
+    canonical_transliteration: te·kom
+    formal_carrier: te-ki-ki-ma
+    note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 4
+- canonical_id: LOG:111
+  canonical_title: active target constraint application
+  invariant_definition: An ongoing formal evaluation that applies one specified constraint
+    to one distinct reference target and is determining that target's admissibility
+    under the constraint.
+  fixed_generated_fields:
+    family: LOG
+    address: '111'
+    universal_slot: active outward process
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: kok
+    canonical_transliteration: te·kok
+    formal_carrier: te-ki-ki-ki
+    note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 6
+- canonical_id: LOG:112
+  canonical_title: nonactualized target constraint application
+  invariant_definition: A nonactualized formal evaluation that would apply one specified
+    constraint to one distinct reference target and determine that target's admissibility
+    under the constraint.
+  fixed_generated_fields:
+    family: LOG
+    address: '112'
+    universal_slot: pending outward process
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: kon
+    canonical_transliteration: te·kon
+    formal_carrier: te-ki-ki-nu
+    note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 2
+- canonical_id: LOG:120
+  canonical_title: completed systemic regime evaluation
+  invariant_definition: Completion of a coordinated formal evaluation that determines
+    the joint admissibility of multiple participants under one shared formal regime.
+  fixed_generated_fields:
+    family: LOG
+    address: '120'
+    universal_slot: completed systemic process
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: kim
+    canonical_transliteration: te·kim
+    formal_carrier: te-ki-nu-ma
+    note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 0
+- canonical_id: LOG:121
+  canonical_title: active systemic regime evaluation
+  invariant_definition: An ongoing coordinated formal evaluation that is determining
+    the joint admissibility of multiple participants under one shared formal regime.
+  fixed_generated_fields:
+    family: LOG
+    address: '121'
+    universal_slot: active systemic process
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: kik
+    canonical_transliteration: te·kik
+    formal_carrier: te-ki-nu-ki
+    note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 2
+- canonical_id: LOG:122
+  canonical_title: nonactualized systemic regime evaluation
+  invariant_definition: A nonactualized coordinated formal evaluation that would determine
+    the joint admissibility of multiple participants under one shared formal regime.
+  fixed_generated_fields:
+    family: LOG
+    address: '122'
+    universal_slot: pending systemic process
+    harmonic_signature_semitones:
+    - 0
+    - 4
+    - 8
+    family_onset: te
+    local_compact_root: kin
+    canonical_transliteration: te·kin
+    formal_carrier: te-ki-nu-nu
+    note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - -2
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 234
+  provisional_count_after: 90
+  unreviewed_chunks_after: 10
+  future_change_policy: explicit versioned migration required
+  next_review_packet: LOG:200–222
+  next_review_packet_begun: false
+  gate4_started: false
+  translator_implementation_started: false

@@ -1,0 +1,34 @@
+---
+metadata:
+  title: Era Zero etymology table schema
+  version: 1.0.0
+  status: canonical_gate4e
+target_types:
+- atom
+- compound
+required_common_fields:
+- etymology_id
+- target_type
+- target_id
+- status
+- english_label
+- english_label_status
+- formation_type
+- semantic_derivation
+- historical_claim
+atom_required_fields:
+- family_derivation
+- address_derivation
+- form_derivation
+compound_required_fields:
+- head
+- components
+- relations
+- identity_derivation
+- surface_derivation
+- provenance
+prohibitions:
+- invented proto-language ancestry
+- unstated English calque identity
+- silent semantic revision
+- runtime state inside lexical derivation

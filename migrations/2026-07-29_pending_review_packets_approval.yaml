@@ -1,0 +1,596 @@
+---
+metadata:
+  title: Delegated approval of three completed semantic review packets
+  status: applied
+  architecture_version: '1.0'
+  semantic_overlay_version: 1.0.2
+  authority: Explicit user delegation to approve reviewed roots
+  broad_gate3_history: WITHDRAWN BEFORE DOWNSTREAM IMPLEMENTATION BY USER DIRECTION
+  generated_fields_changed: false
+approved_packets:
+- range: MOV:200–222
+  recommendation: reviews/MOV_200_222_recommended_spec.yaml
+  review: reviews/MOV_200_222_peer_review.md
+  validation: reviews/MOV_200_222_validation.md
+- range: MAT:000–022
+  recommendation: reviews/MAT_000_022_recommended_spec.yaml
+  review: reviews/MAT_000_022_peer_review.md
+  validation: reviews/MAT_000_022_validation.md
+- range: MAT:100–122
+  recommendation: reviews/MAT_100_122_recommended_spec.yaml
+  review: reviews/MAT_100_122_peer_review.md
+  validation: reviews/MAT_100_122_validation.md
+promoted_roots:
+- canonical_id: MOV:200
+  canonical_title: enduring self-mobility
+  invariant_definition: An enduring capacity of a mover to change its own position.
+  fixed_generated_fields:
+    family: MOV
+    address: '200'
+    universal_slot: stable inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    family_onset: gi
+    local_compact_root: mam
+    canonical_transliteration: gi·mam
+    formal_carrier: gi-nu-ma-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -2
+- canonical_id: MOV:201
+  canonical_title: available self-mobility
+  invariant_definition: A mover's capacity to change its own position that is presently
+    available for exercise.
+  fixed_generated_fields:
+    family: MOV
+    address: '201'
+    universal_slot: active inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    family_onset: gi
+    local_compact_root: mak
+    canonical_transliteration: gi·mak
+    formal_carrier: gi-nu-ma-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - 0
+- canonical_id: MOV:202
+  canonical_title: latent self-mobility
+  invariant_definition: A mover's capacity to change its own position that exists
+    without being presently available for exercise.
+  fixed_generated_fields:
+    family: MOV
+    address: '202'
+    universal_slot: dormant inward capacity
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    family_onset: gi
+    local_compact_root: man
+    canonical_transliteration: gi·man
+    formal_carrier: gi-nu-ma-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - -2
+    - -4
+- canonical_id: MOV:210
+  canonical_title: established target-relative position
+  invariant_definition: An established positional relation of a mover to a target
+    position.
+  fixed_generated_fields:
+    family: MOV
+    address: '210'
+    universal_slot: stable outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    family_onset: gi
+    local_compact_root: mom
+    canonical_transliteration: gi·mom
+    formal_carrier: gi-nu-ki-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 0
+- canonical_id: MOV:211
+  canonical_title: live target-relative position
+  invariant_definition: A positional relation of a mover to a target position that
+    is currently maintained or updated.
+  fixed_generated_fields:
+    family: MOV
+    address: '211'
+    universal_slot: active outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    family_onset: gi
+    local_compact_root: mok
+    canonical_transliteration: gi·mok
+    formal_carrier: gi-nu-ki-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - 2
+- canonical_id: MOV:212
+  canonical_title: unresolved target-relative position
+  invariant_definition: An unresolved relation between a mover's position and a target
+    position.
+  fixed_generated_fields:
+    family: MOV
+    address: '212'
+    universal_slot: unresolved outward relationship
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    family_onset: gi
+    local_compact_root: mon
+    canonical_transliteration: gi·mon
+    formal_carrier: gi-nu-ki-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - 0
+    - -2
+- canonical_id: MOV:220
+  canonical_title: established shared-frame configuration
+  invariant_definition: An established positional configuration among loci within
+    a shared reference frame.
+  fixed_generated_fields:
+    family: MOV
+    address: '220'
+    universal_slot: stable systemic relationship
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    family_onset: gi
+    local_compact_root: mim
+    canonical_transliteration: gi·mim
+    formal_carrier: gi-nu-nu-ma
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -4
+- canonical_id: MOV:221
+  canonical_title: live shared-frame configuration
+  invariant_definition: A positional configuration among loci that is currently maintained
+    or updated within a shared reference frame.
+  fixed_generated_fields:
+    family: MOV
+    address: '221'
+    universal_slot: active systemic relationship
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    family_onset: gi
+    local_compact_root: mik
+    canonical_transliteration: gi·mik
+    formal_carrier: gi-nu-nu-ki
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -2
+- canonical_id: MOV:222
+  canonical_title: potential shared-frame configuration
+  invariant_definition: An unrealized possible positional configuration among loci
+    within a shared reference frame.
+  fixed_generated_fields:
+    family: MOV
+    address: '222'
+    universal_slot: unrealized systemic possibility
+    harmonic_signature_semitones:
+    - 0
+    - 2
+    - 7
+    family_onset: gi
+    local_compact_root: min
+    canonical_transliteration: gi·min
+    formal_carrier: gi-nu-nu-nu
+    note_path_semitones:
+    - 0
+    - -2
+    - -4
+    - -6
+- canonical_id: MAT:000
+  canonical_title: persistent material substrate
+  invariant_definition: The enduring matter that constitutes a focal entity's physical
+    body.
+  fixed_generated_fields:
+    family: MAT
+    address: '000'
+    universal_slot: stable inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: nam
+    canonical_transliteration: ba·nam
+    formal_carrier: ba-ma-ma-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 0
+- canonical_id: MAT:001
+  canonical_title: active material substrate
+  invariant_definition: A focal entity's material substrate in a presently energized
+    physical state.
+  fixed_generated_fields:
+    family: MAT
+    address: '001'
+    universal_slot: active inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: nak
+    canonical_transliteration: ba·nak
+    formal_carrier: ba-ma-ma-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - 2
+- canonical_id: MAT:002
+  canonical_title: dormant material substrate
+  invariant_definition: A focal entity's material substrate persisting without presently
+    expressed physical activity.
+  fixed_generated_fields:
+    family: MAT
+    address: '002'
+    universal_slot: dormant inward entity
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: nan
+    canonical_transliteration: ba·nan
+    formal_carrier: ba-ma-ma-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - 0
+    - -2
+- canonical_id: MAT:010
+  canonical_title: distinct material object
+  invariant_definition: A materially bounded body treated as a distinct external object.
+  fixed_generated_fields:
+    family: MAT
+    address: '010'
+    universal_slot: stable outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: nom
+    canonical_transliteration: ba·nom
+    formal_carrier: ba-ma-ki-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 2
+- canonical_id: MAT:011
+  canonical_title: active material object
+  invariant_definition: A distinct external material object in a presently energized
+    physical state.
+  fixed_generated_fields:
+    family: MAT
+    address: '011'
+    universal_slot: active outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: nok
+    canonical_transliteration: ba·nok
+    formal_carrier: ba-ma-ki-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 4
+- canonical_id: MAT:012
+  canonical_title: dormant material object
+  invariant_definition: A distinct external material object persisting without presently
+    expressed physical activity.
+  fixed_generated_fields:
+    family: MAT
+    address: '012'
+    universal_slot: dormant outward entity
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: non
+    canonical_transliteration: ba·non
+    formal_carrier: ba-ma-ki-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - 2
+    - 0
+- canonical_id: MAT:020
+  canonical_title: stable material aggregate
+  invariant_definition: A collection of material constituents treated as one persistent
+    physical aggregate.
+  fixed_generated_fields:
+    family: MAT
+    address: '020'
+    universal_slot: stable collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: nim
+    canonical_transliteration: ba·nim
+    formal_carrier: ba-ma-nu-ma
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -2
+- canonical_id: MAT:021
+  canonical_title: active material aggregate
+  invariant_definition: A material aggregate whose constituents are presently in collective
+    energetic interaction.
+  fixed_generated_fields:
+    family: MAT
+    address: '021'
+    universal_slot: active collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: nik
+    canonical_transliteration: ba·nik
+    formal_carrier: ba-ma-nu-ki
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - 0
+- canonical_id: MAT:022
+  canonical_title: dormant material aggregate
+  invariant_definition: A material aggregate persisting without presently expressed
+    collective physical activity.
+  fixed_generated_fields:
+    family: MAT
+    address: '022'
+    universal_slot: dormant collective entity
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: nin
+    canonical_transliteration: ba·nin
+    formal_carrier: ba-ma-nu-nu
+    note_path_semitones:
+    - 0
+    - 0
+    - -2
+    - -4
+- canonical_id: MAT:100
+  canonical_title: completed focal material change
+  invariant_definition: Completion of a physical-state change localized within the
+    focal material bearer.
+  fixed_generated_fields:
+    family: MAT
+    address: '100'
+    universal_slot: completed inward process
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: kam
+    canonical_transliteration: ba·kam
+    formal_carrier: ba-ki-ma-ma
+    note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 2
+- canonical_id: MAT:101
+  canonical_title: active focal material change
+  invariant_definition: An ongoing physical-state change localized within the focal
+    material bearer.
+  fixed_generated_fields:
+    family: MAT
+    address: '101'
+    universal_slot: active inward process
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: kak
+    canonical_transliteration: ba·kak
+    formal_carrier: ba-ki-ma-ki
+    note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 4
+- canonical_id: MAT:102
+  canonical_title: potential focal material change
+  invariant_definition: A possible physical-state change localized within the focal
+    material bearer that is not active or completed.
+  fixed_generated_fields:
+    family: MAT
+    address: '102'
+    universal_slot: pending inward process
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: kan
+    canonical_transliteration: ba·kan
+    formal_carrier: ba-ki-ma-nu
+    note_path_semitones:
+    - 0
+    - 2
+    - 2
+    - 0
+- canonical_id: MAT:110
+  canonical_title: completed target material change
+  invariant_definition: Completion of a physical-state change localized in a distinct
+    material target.
+  fixed_generated_fields:
+    family: MAT
+    address: '110'
+    universal_slot: completed outward process
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: kom
+    canonical_transliteration: ba·kom
+    formal_carrier: ba-ki-ki-ma
+    note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 4
+- canonical_id: MAT:111
+  canonical_title: active target material change
+  invariant_definition: An ongoing physical-state change localized in a distinct material
+    target.
+  fixed_generated_fields:
+    family: MAT
+    address: '111'
+    universal_slot: active outward process
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: kok
+    canonical_transliteration: ba·kok
+    formal_carrier: ba-ki-ki-ki
+    note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 6
+- canonical_id: MAT:112
+  canonical_title: potential target material change
+  invariant_definition: A possible physical-state change localized in a distinct material
+    target that is not active or completed.
+  fixed_generated_fields:
+    family: MAT
+    address: '112'
+    universal_slot: pending outward process
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: kon
+    canonical_transliteration: ba·kon
+    formal_carrier: ba-ki-ki-nu
+    note_path_semitones:
+    - 0
+    - 2
+    - 4
+    - 2
+- canonical_id: MAT:120
+  canonical_title: completed systemic material change
+  invariant_definition: Completion of a physical-state change distributed across materially
+    interacting parts of a shared system.
+  fixed_generated_fields:
+    family: MAT
+    address: '120'
+    universal_slot: completed systemic process
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: kim
+    canonical_transliteration: ba·kim
+    formal_carrier: ba-ki-nu-ma
+    note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 0
+- canonical_id: MAT:121
+  canonical_title: active systemic material change
+  invariant_definition: An ongoing physical-state change distributed across materially
+    interacting parts of a shared system.
+  fixed_generated_fields:
+    family: MAT
+    address: '121'
+    universal_slot: active systemic process
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: kik
+    canonical_transliteration: ba·kik
+    formal_carrier: ba-ki-nu-ki
+    note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - 2
+- canonical_id: MAT:122
+  canonical_title: potential systemic material change
+  invariant_definition: A possible physical-state change distributed across materially
+    interacting parts of a shared system that is not active or completed.
+  fixed_generated_fields:
+    family: MAT
+    address: '122'
+    universal_slot: pending systemic process
+    harmonic_signature_semitones:
+    - 0
+    - 7
+    - 12
+    family_onset: ba
+    local_compact_root: kin
+    canonical_transliteration: ba·kin
+    formal_carrier: ba-ki-nu-nu
+    note_path_semitones:
+    - 0
+    - 2
+    - 0
+    - -2
+audit:
+  source_canonical_roots_changed: false
+  previous_review_approved_roots_changed: false
+  canonical_count_after: 72
+  provisional_count_after: 252
+  future_change_policy: explicit versioned migration required
+  gate4_started: false
+  translator_implementation_started: false
