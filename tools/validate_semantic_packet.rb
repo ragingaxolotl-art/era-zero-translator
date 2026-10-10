@@ -110,7 +110,7 @@ checks = EraZeroValidation::CheckSet.new
 yaml_files = Dir[File.join(ROOT, "{lexicon,spec,reviews,migrations,extraction}/**/*.{yaml,yml}")]
 syntax_errors = yaml_files.map do |path|
   begin
-    YAML.load_file(path)
+    EraZeroValidation.load_yaml(path.delete_prefix("#{ROOT}/"))
     nil
   rescue StandardError => error
     "#{path.delete_prefix("#{ROOT}/")}: #{error.message}"

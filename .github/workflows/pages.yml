@@ -28,6 +28,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - name: Install HTTP smoke dependency
+        run: gem install webrick --no-document
       - name: Build deterministic browser release
         run: ruby tools/build_pages_release.rb
       - name: Audit browser release
