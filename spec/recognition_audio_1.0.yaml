@@ -1,0 +1,6186 @@
+---
+metadata:
+  format: EZRP-1
+  version: 1.0.0
+  status: presentation_only_optional_identity_checksum
+  record_count: 324
+  note_count_range:
+  - 2
+  - 5
+  length_distribution:
+    2: 28
+    3: 148
+    4: 112
+    5: 36
+  placement: after_address_before_runtime
+  decoder_rule: absence is valid strict presentation; presence must match target_id;
+    recognition data never contributes semantic content
+  canonical_note_channels_changed: false
+  semantic_authority_changes: 0
+  generation_algorithm: EZRP-1 deterministic SHA-256 ordered allocation
+family_palettes_relative_semitones:
+  LIF:
+  - 0
+  - 2
+  - 4
+  - 5
+  - 7
+  - 9
+  - 11
+  - 12
+  MOV:
+  - 0
+  - 2
+  - 4
+  - 5
+  - 7
+  - 9
+  - 10
+  - 12
+  MAT:
+  - 0
+  - 2
+  - 4
+  - 5
+  - 7
+  - 9
+  - 11
+  - 12
+  MIN:
+  - 0
+  - 2
+  - 3
+  - 5
+  - 7
+  - 8
+  - 10
+  - 12
+  CON:
+  - 0
+  - 2
+  - 4
+  - 5
+  - 7
+  - 9
+  - 11
+  - 12
+  STR:
+  - 0
+  - 2
+  - 5
+  - 7
+  - 9
+  - 10
+  - 11
+  - 12
+  WRN:
+  - 0
+  - 1
+  - 3
+  - 5
+  - 6
+  - 8
+  - 10
+  - 12
+  REP:
+  - 0
+  - 2
+  - 3
+  - 5
+  - 7
+  - 9
+  - 10
+  - 12
+  LOG:
+  - 0
+  - 2
+  - 4
+  - 6
+  - 8
+  - 10
+  - 11
+  - 12
+  DAT:
+  - 0
+  - 2
+  - 4
+  - 6
+  - 7
+  - 9
+  - 11
+  - 12
+  CRE:
+  - 0
+  - 2
+  - 3
+  - 5
+  - 7
+  - 8
+  - 11
+  - 12
+  ORI:
+  - 0
+  - 1
+  - 3
+  - 5
+  - 7
+  - 8
+  - 10
+  - 12
+timing:
+  seconds_per_beat: 0.24
+  inter_note_seconds: 0.04
+  separation_before_seconds: 0.14
+  separation_after_seconds: 0.12
+records:
+- target_id: CON:000
+  note_count: 4
+  degree_indices:
+  - 6
+  - 2
+  - 4
+  - 3
+  relative_semitones:
+  - 11
+  - 4
+  - 7
+  - 5
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: d79496830f82a0f4
+  semantic_content: false
+- target_id: CON:001
+  note_count: 3
+  degree_indices:
+  - 3
+  - 4
+  - 6
+  relative_semitones:
+  - 5
+  - 7
+  - 11
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: 4bd639fafabe3060
+  semantic_content: false
+- target_id: CON:002
+  note_count: 3
+  degree_indices:
+  - 0
+  - 2
+  - 5
+  relative_semitones:
+  - 0
+  - 4
+  - 9
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: e06199767452b6d7
+  semantic_content: false
+- target_id: CON:010
+  note_count: 3
+  degree_indices:
+  - 0
+  - 2
+  - 6
+  relative_semitones:
+  - 0
+  - 4
+  - 11
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: 0ca47b45fec5a053
+  semantic_content: false
+- target_id: CON:011
+  note_count: 3
+  degree_indices:
+  - 0
+  - 4
+  - 1
+  relative_semitones:
+  - 0
+  - 7
+  - 2
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: 9cc8f77cacd110e8
+  semantic_content: false
+- target_id: CON:012
+  note_count: 3
+  degree_indices:
+  - 0
+  - 4
+  - 5
+  relative_semitones:
+  - 0
+  - 7
+  - 9
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: 86f26173ff15a183
+  semantic_content: false
+- target_id: CON:020
+  note_count: 3
+  degree_indices:
+  - 4
+  - 7
+  - 5
+  relative_semitones:
+  - 7
+  - 12
+  - 9
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.0
+  octave_positions:
+  - 1
+  checksum: ece665cd6c25b3be
+  semantic_content: false
+- target_id: CON:021
+  note_count: 5
+  degree_indices:
+  - 2
+  - 1
+  - 5
+  - 6
+  - 4
+  relative_semitones:
+  - 4
+  - 2
+  - 9
+  - 11
+  - 7
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 1.25
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: b26f2d7301e846bb
+  semantic_content: false
+- target_id: CON:022
+  note_count: 2
+  degree_indices:
+  - 5
+  - 2
+  relative_semitones:
+  - 9
+  - 4
+  duration_beats:
+  - 0.75
+  - 1.25
+  octave_positions: []
+  checksum: 87b271028f4b1038
+  semantic_content: false
+- target_id: CON:100
+  note_count: 3
+  degree_indices:
+  - 6
+  - 3
+  - 6
+  relative_semitones:
+  - 11
+  - 5
+  - 11
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 75d1b11a35a969a8
+  semantic_content: false
+- target_id: CON:101
+  note_count: 4
+  degree_indices:
+  - 5
+  - 2
+  - 0
+  - 3
+  relative_semitones:
+  - 9
+  - 4
+  - 0
+  - 5
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: 3cda826328ce2701
+  semantic_content: false
+- target_id: CON:102
+  note_count: 2
+  degree_indices:
+  - 1
+  - 4
+  relative_semitones:
+  - 2
+  - 7
+  duration_beats:
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: 308a66b12951544c
+  semantic_content: false
+- target_id: CON:110
+  note_count: 3
+  degree_indices:
+  - 5
+  - 3
+  - 4
+  relative_semitones:
+  - 9
+  - 5
+  - 7
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 1.25
+  octave_positions: []
+  checksum: c98ee019b9d28653
+  semantic_content: false
+- target_id: CON:111
+  note_count: 4
+  degree_indices:
+  - 5
+  - 1
+  - 2
+  - 5
+  relative_semitones:
+  - 9
+  - 2
+  - 4
+  - 9
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: 7bd8d1d2e2901db6
+  semantic_content: false
+- target_id: CON:112
+  note_count: 2
+  degree_indices:
+  - 3
+  - 4
+  relative_semitones:
+  - 5
+  - 7
+  duration_beats:
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: 8658329f09fcda70
+  semantic_content: false
+- target_id: CON:120
+  note_count: 2
+  degree_indices:
+  - 7
+  - 4
+  relative_semitones:
+  - 12
+  - 7
+  duration_beats:
+  - 1.0
+  - 0.75
+  octave_positions:
+  - 0
+  checksum: a9c007bcfd4a97cf
+  semantic_content: false
+- target_id: CON:121
+  note_count: 2
+  degree_indices:
+  - 4
+  - 7
+  relative_semitones:
+  - 7
+  - 12
+  duration_beats:
+  - 0.75
+  - 0.75
+  octave_positions:
+  - 1
+  checksum: 9df08ac48b78ed78
+  semantic_content: false
+- target_id: CON:122
+  note_count: 3
+  degree_indices:
+  - 6
+  - 4
+  - 6
+  relative_semitones:
+  - 11
+  - 7
+  - 11
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: c88183e26b3d7aa9
+  semantic_content: false
+- target_id: CON:200
+  note_count: 3
+  degree_indices:
+  - 0
+  - 4
+  - 3
+  relative_semitones:
+  - 0
+  - 7
+  - 5
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: e14800853706fe22
+  semantic_content: false
+- target_id: CON:201
+  note_count: 3
+  degree_indices:
+  - 5
+  - 1
+  - 3
+  relative_semitones:
+  - 9
+  - 2
+  - 5
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: 053c727ed8f3cf11
+  semantic_content: false
+- target_id: CON:202
+  note_count: 3
+  degree_indices:
+  - 4
+  - 3
+  - 4
+  relative_semitones:
+  - 7
+  - 5
+  - 7
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: ed1693a21938c699
+  semantic_content: false
+- target_id: CON:210
+  note_count: 3
+  degree_indices:
+  - 4
+  - 6
+  - 3
+  relative_semitones:
+  - 7
+  - 11
+  - 5
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: 72e9b5fff0a9e679
+  semantic_content: false
+- target_id: CON:211
+  note_count: 4
+  degree_indices:
+  - 1
+  - 0
+  - 3
+  - 6
+  relative_semitones:
+  - 2
+  - 0
+  - 5
+  - 11
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 3057d840dbf40631
+  semantic_content: false
+- target_id: CON:212
+  note_count: 4
+  degree_indices:
+  - 5
+  - 4
+  - 5
+  - 1
+  relative_semitones:
+  - 9
+  - 7
+  - 9
+  - 2
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: 8d0f96626f84d398
+  semantic_content: false
+- target_id: CON:220
+  note_count: 4
+  degree_indices:
+  - 3
+  - 4
+  - 1
+  - 0
+  relative_semitones:
+  - 5
+  - 7
+  - 2
+  - 0
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: 537756643c10b49e
+  semantic_content: false
+- target_id: CON:221
+  note_count: 3
+  degree_indices:
+  - 1
+  - 5
+  - 7
+  relative_semitones:
+  - 2
+  - 9
+  - 12
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 1.0
+  octave_positions:
+  - 2
+  checksum: 0be1cd5bcb17a3b8
+  semantic_content: false
+- target_id: CON:222
+  note_count: 4
+  degree_indices:
+  - 3
+  - 0
+  - 2
+  - 3
+  relative_semitones:
+  - 5
+  - 0
+  - 4
+  - 5
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: c75b8fa8c74132f4
+  semantic_content: false
+- target_id: CRE:000
+  note_count: 3
+  degree_indices:
+  - 2
+  - 3
+  - 1
+  relative_semitones:
+  - 3
+  - 5
+  - 2
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: de122d11a080a207
+  semantic_content: false
+- target_id: CRE:001
+  note_count: 4
+  degree_indices:
+  - 2
+  - 5
+  - 3
+  - 4
+  relative_semitones:
+  - 3
+  - 8
+  - 5
+  - 7
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 611696a2285c0e70
+  semantic_content: false
+- target_id: CRE:002
+  note_count: 3
+  degree_indices:
+  - 3
+  - 2
+  - 5
+  relative_semitones:
+  - 5
+  - 3
+  - 8
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: 40f333b42466ae45
+  semantic_content: false
+- target_id: CRE:010
+  note_count: 3
+  degree_indices:
+  - 3
+  - 6
+  - 4
+  relative_semitones:
+  - 5
+  - 11
+  - 7
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: f05bf02bb8168062
+  semantic_content: false
+- target_id: CRE:011
+  note_count: 4
+  degree_indices:
+  - 3
+  - 1
+  - 0
+  - 1
+  relative_semitones:
+  - 5
+  - 2
+  - 0
+  - 2
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: 8ce7ccc07e2f1895
+  semantic_content: false
+- target_id: CRE:012
+  note_count: 3
+  degree_indices:
+  - 3
+  - 7
+  - 3
+  relative_semitones:
+  - 5
+  - 12
+  - 5
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.25
+  octave_positions:
+  - 1
+  checksum: a56f24e136807b7b
+  semantic_content: false
+- target_id: CRE:020
+  note_count: 3
+  degree_indices:
+  - 0
+  - 2
+  - 5
+  relative_semitones:
+  - 0
+  - 3
+  - 8
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 1.25
+  octave_positions: []
+  checksum: aae6ca5951a60cfb
+  semantic_content: false
+- target_id: CRE:021
+  note_count: 2
+  degree_indices:
+  - 7
+  - 6
+  relative_semitones:
+  - 12
+  - 11
+  duration_beats:
+  - 0.75
+  - 0.75
+  octave_positions:
+  - 0
+  checksum: a3d4faac6b7c2d32
+  semantic_content: false
+- target_id: CRE:022
+  note_count: 4
+  degree_indices:
+  - 2
+  - 0
+  - 1
+  - 5
+  relative_semitones:
+  - 3
+  - 0
+  - 2
+  - 8
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 71ab62a8af64b021
+  semantic_content: false
+- target_id: CRE:100
+  note_count: 2
+  degree_indices:
+  - 6
+  - 4
+  relative_semitones:
+  - 11
+  - 7
+  duration_beats:
+  - 0.75
+  - 1.25
+  octave_positions: []
+  checksum: e880f25d4856a3fb
+  semantic_content: false
+- target_id: CRE:101
+  note_count: 3
+  degree_indices:
+  - 3
+  - 6
+  - 3
+  relative_semitones:
+  - 5
+  - 11
+  - 5
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: 9a71acbf4ea4a49d
+  semantic_content: false
+- target_id: CRE:102
+  note_count: 3
+  degree_indices:
+  - 3
+  - 5
+  - 4
+  relative_semitones:
+  - 5
+  - 8
+  - 7
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: 463df3481163a570
+  semantic_content: false
+- target_id: CRE:110
+  note_count: 3
+  degree_indices:
+  - 3
+  - 5
+  - 2
+  relative_semitones:
+  - 5
+  - 8
+  - 3
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: d370d3f7163ffbb8
+  semantic_content: false
+- target_id: CRE:111
+  note_count: 4
+  degree_indices:
+  - 6
+  - 5
+  - 1
+  - 2
+  relative_semitones:
+  - 11
+  - 8
+  - 2
+  - 3
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: 4375e2d0aada2d4b
+  semantic_content: false
+- target_id: CRE:112
+  note_count: 4
+  degree_indices:
+  - 0
+  - 4
+  - 3
+  - 5
+  relative_semitones:
+  - 0
+  - 7
+  - 5
+  - 8
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 8de92760d74751cb
+  semantic_content: false
+- target_id: CRE:120
+  note_count: 3
+  degree_indices:
+  - 6
+  - 3
+  - 5
+  relative_semitones:
+  - 11
+  - 5
+  - 8
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: 57e93e38c8992f66
+  semantic_content: false
+- target_id: CRE:121
+  note_count: 3
+  degree_indices:
+  - 4
+  - 5
+  - 2
+  relative_semitones:
+  - 7
+  - 8
+  - 3
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: 12b0fab28203c85c
+  semantic_content: false
+- target_id: CRE:122
+  note_count: 2
+  degree_indices:
+  - 1
+  - 2
+  relative_semitones:
+  - 2
+  - 3
+  duration_beats:
+  - 0.75
+  - 1.25
+  octave_positions: []
+  checksum: b7038f5175929a1e
+  semantic_content: false
+- target_id: CRE:200
+  note_count: 5
+  degree_indices:
+  - 6
+  - 4
+  - 0
+  - 2
+  - 0
+  relative_semitones:
+  - 11
+  - 7
+  - 0
+  - 3
+  - 0
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 1.25
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: 1bd80cfc3af95dcb
+  semantic_content: false
+- target_id: CRE:201
+  note_count: 3
+  degree_indices:
+  - 7
+  - 5
+  - 3
+  relative_semitones:
+  - 12
+  - 8
+  - 5
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.25
+  octave_positions:
+  - 0
+  checksum: 1eade3e9c43a153c
+  semantic_content: false
+- target_id: CRE:202
+  note_count: 3
+  degree_indices:
+  - 7
+  - 3
+  - 1
+  relative_semitones:
+  - 12
+  - 5
+  - 2
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 0.75
+  octave_positions:
+  - 0
+  checksum: 2e4ccf4ddc6941ad
+  semantic_content: false
+- target_id: CRE:210
+  note_count: 5
+  degree_indices:
+  - 6
+  - 3
+  - 7
+  - 6
+  - 4
+  relative_semitones:
+  - 11
+  - 5
+  - 12
+  - 11
+  - 7
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 1.25
+  - 1.25
+  - 1.25
+  octave_positions:
+  - 2
+  checksum: fd4ca6a9b53076ad
+  semantic_content: false
+- target_id: CRE:211
+  note_count: 3
+  degree_indices:
+  - 5
+  - 1
+  - 5
+  relative_semitones:
+  - 8
+  - 2
+  - 8
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: a97b95b626655eb0
+  semantic_content: false
+- target_id: CRE:212
+  note_count: 5
+  degree_indices:
+  - 0
+  - 4
+  - 2
+  - 5
+  - 1
+  relative_semitones:
+  - 0
+  - 7
+  - 3
+  - 8
+  - 2
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 0.75
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: 067faa95f1045d86
+  semantic_content: false
+- target_id: CRE:220
+  note_count: 4
+  degree_indices:
+  - 5
+  - 7
+  - 5
+  - 1
+  relative_semitones:
+  - 8
+  - 12
+  - 8
+  - 2
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions:
+  - 1
+  checksum: d3d54f81f3b03e9d
+  semantic_content: false
+- target_id: CRE:221
+  note_count: 3
+  degree_indices:
+  - 3
+  - 7
+  - 6
+  relative_semitones:
+  - 5
+  - 12
+  - 11
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 0.75
+  octave_positions:
+  - 1
+  checksum: 186fe3d39a3ccc3d
+  semantic_content: false
+- target_id: CRE:222
+  note_count: 3
+  degree_indices:
+  - 6
+  - 4
+  - 7
+  relative_semitones:
+  - 11
+  - 7
+  - 12
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 0.75
+  octave_positions:
+  - 2
+  checksum: efb4d6703f024a37
+  semantic_content: false
+- target_id: DAT:000
+  note_count: 3
+  degree_indices:
+  - 2
+  - 5
+  - 1
+  relative_semitones:
+  - 4
+  - 9
+  - 2
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: bc098b2564d10251
+  semantic_content: false
+- target_id: DAT:001
+  note_count: 3
+  degree_indices:
+  - 5
+  - 4
+  - 6
+  relative_semitones:
+  - 9
+  - 7
+  - 11
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: dc7cdfb1b9371715
+  semantic_content: false
+- target_id: DAT:002
+  note_count: 3
+  degree_indices:
+  - 7
+  - 5
+  - 6
+  relative_semitones:
+  - 12
+  - 9
+  - 11
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.25
+  octave_positions:
+  - 0
+  checksum: dcfa36149b660a01
+  semantic_content: false
+- target_id: DAT:010
+  note_count: 3
+  degree_indices:
+  - 3
+  - 6
+  - 3
+  relative_semitones:
+  - 6
+  - 11
+  - 6
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: 48dc762350f4555a
+  semantic_content: false
+- target_id: DAT:011
+  note_count: 2
+  degree_indices:
+  - 4
+  - 0
+  relative_semitones:
+  - 7
+  - 0
+  duration_beats:
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 89268f625e5e1097
+  semantic_content: false
+- target_id: DAT:012
+  note_count: 4
+  degree_indices:
+  - 6
+  - 3
+  - 5
+  - 6
+  relative_semitones:
+  - 11
+  - 6
+  - 9
+  - 11
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: cead11421edc91cf
+  semantic_content: false
+- target_id: DAT:020
+  note_count: 3
+  degree_indices:
+  - 2
+  - 3
+  - 4
+  relative_semitones:
+  - 4
+  - 6
+  - 7
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: 0c8f59a87a1d73fa
+  semantic_content: false
+- target_id: DAT:021
+  note_count: 4
+  degree_indices:
+  - 1
+  - 2
+  - 4
+  - 5
+  relative_semitones:
+  - 2
+  - 4
+  - 7
+  - 9
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: 13383300a2b93160
+  semantic_content: false
+- target_id: DAT:022
+  note_count: 4
+  degree_indices:
+  - 4
+  - 5
+  - 4
+  - 1
+  relative_semitones:
+  - 7
+  - 9
+  - 7
+  - 2
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: 5ee9a36ed3a242b1
+  semantic_content: false
+- target_id: DAT:100
+  note_count: 3
+  degree_indices:
+  - 7
+  - 4
+  - 5
+  relative_semitones:
+  - 12
+  - 7
+  - 9
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions:
+  - 0
+  checksum: 766ffbb91b5514a7
+  semantic_content: false
+- target_id: DAT:101
+  note_count: 3
+  degree_indices:
+  - 4
+  - 0
+  - 4
+  relative_semitones:
+  - 7
+  - 0
+  - 7
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: 4610e58293365dd2
+  semantic_content: false
+- target_id: DAT:102
+  note_count: 4
+  degree_indices:
+  - 3
+  - 6
+  - 2
+  - 3
+  relative_semitones:
+  - 6
+  - 11
+  - 4
+  - 6
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: 3b2f651a81a1fc3a
+  semantic_content: false
+- target_id: DAT:110
+  note_count: 3
+  degree_indices:
+  - 6
+  - 5
+  - 6
+  relative_semitones:
+  - 11
+  - 9
+  - 11
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 59b2e15b798961a0
+  semantic_content: false
+- target_id: DAT:111
+  note_count: 2
+  degree_indices:
+  - 3
+  - 6
+  relative_semitones:
+  - 6
+  - 11
+  duration_beats:
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: 1cc7eca59b122290
+  semantic_content: false
+- target_id: DAT:112
+  note_count: 3
+  degree_indices:
+  - 2
+  - 1
+  - 3
+  relative_semitones:
+  - 4
+  - 2
+  - 6
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: 9e610d0913b9d443
+  semantic_content: false
+- target_id: DAT:120
+  note_count: 4
+  degree_indices:
+  - 1
+  - 4
+  - 2
+  - 4
+  relative_semitones:
+  - 2
+  - 7
+  - 4
+  - 7
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: 7015eb54d4363950
+  semantic_content: false
+- target_id: DAT:121
+  note_count: 2
+  degree_indices:
+  - 0
+  - 4
+  relative_semitones:
+  - 0
+  - 7
+  duration_beats:
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: a918250b18f2c7f1
+  semantic_content: false
+- target_id: DAT:122
+  note_count: 3
+  degree_indices:
+  - 2
+  - 1
+  - 4
+  relative_semitones:
+  - 4
+  - 2
+  - 7
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: dc7a3545f8563887
+  semantic_content: false
+- target_id: DAT:200
+  note_count: 4
+  degree_indices:
+  - 6
+  - 2
+  - 4
+  - 3
+  relative_semitones:
+  - 11
+  - 4
+  - 7
+  - 6
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: 72d630618abb219c
+  semantic_content: false
+- target_id: DAT:201
+  note_count: 3
+  degree_indices:
+  - 3
+  - 1
+  - 2
+  relative_semitones:
+  - 6
+  - 2
+  - 4
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: 01505f07602b4bb2
+  semantic_content: false
+- target_id: DAT:202
+  note_count: 3
+  degree_indices:
+  - 7
+  - 5
+  - 2
+  relative_semitones:
+  - 12
+  - 9
+  - 4
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.25
+  octave_positions:
+  - 0
+  checksum: b2186213e6de8013
+  semantic_content: false
+- target_id: DAT:210
+  note_count: 2
+  degree_indices:
+  - 3
+  - 5
+  relative_semitones:
+  - 6
+  - 9
+  duration_beats:
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: 8b4b6d1995cd9d73
+  semantic_content: false
+- target_id: DAT:211
+  note_count: 2
+  degree_indices:
+  - 4
+  - 1
+  relative_semitones:
+  - 7
+  - 2
+  duration_beats:
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: b721d0f2d8bc163b
+  semantic_content: false
+- target_id: DAT:212
+  note_count: 4
+  degree_indices:
+  - 6
+  - 2
+  - 4
+  - 1
+  relative_semitones:
+  - 11
+  - 4
+  - 7
+  - 2
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: 82befab79eee03ce
+  semantic_content: false
+- target_id: DAT:220
+  note_count: 3
+  degree_indices:
+  - 6
+  - 2
+  - 5
+  relative_semitones:
+  - 11
+  - 4
+  - 9
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 65b028d668de455e
+  semantic_content: false
+- target_id: DAT:221
+  note_count: 4
+  degree_indices:
+  - 3
+  - 6
+  - 4
+  - 0
+  relative_semitones:
+  - 6
+  - 11
+  - 7
+  - 0
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: 8495399b1e1a2ce6
+  semantic_content: false
+- target_id: DAT:222
+  note_count: 5
+  degree_indices:
+  - 3
+  - 4
+  - 6
+  - 7
+  - 5
+  relative_semitones:
+  - 6
+  - 7
+  - 11
+  - 12
+  - 9
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 1.0
+  - 1.0
+  - 1.0
+  octave_positions:
+  - 3
+  checksum: b0d699a00b686c95
+  semantic_content: false
+- target_id: LIF:000
+  note_count: 5
+  degree_indices:
+  - 5
+  - 7
+  - 5
+  - 6
+  - 4
+  relative_semitones:
+  - 9
+  - 12
+  - 9
+  - 11
+  - 7
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 1.25
+  - 1.25
+  - 1.0
+  octave_positions:
+  - 1
+  checksum: f62140ac073ce8a5
+  semantic_content: false
+- target_id: LIF:001
+  note_count: 3
+  degree_indices:
+  - 3
+  - 7
+  - 5
+  relative_semitones:
+  - 5
+  - 12
+  - 9
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 0.75
+  octave_positions:
+  - 1
+  checksum: e45e6976804443c4
+  semantic_content: false
+- target_id: LIF:002
+  note_count: 3
+  degree_indices:
+  - 4
+  - 1
+  - 5
+  relative_semitones:
+  - 7
+  - 2
+  - 9
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: 95e1da1438e2f116
+  semantic_content: false
+- target_id: LIF:010
+  note_count: 3
+  degree_indices:
+  - 2
+  - 6
+  - 2
+  relative_semitones:
+  - 4
+  - 11
+  - 4
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: e60d5ce3c42e506d
+  semantic_content: false
+- target_id: LIF:011
+  note_count: 3
+  degree_indices:
+  - 0
+  - 2
+  - 0
+  relative_semitones:
+  - 0
+  - 4
+  - 0
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: 7b1daa4ee3c1c5e7
+  semantic_content: false
+- target_id: LIF:012
+  note_count: 4
+  degree_indices:
+  - 4
+  - 1
+  - 2
+  - 0
+  relative_semitones:
+  - 7
+  - 2
+  - 4
+  - 0
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: 724923688ec33d2f
+  semantic_content: false
+- target_id: LIF:020
+  note_count: 3
+  degree_indices:
+  - 1
+  - 4
+  - 0
+  relative_semitones:
+  - 2
+  - 7
+  - 0
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: b1f6b3a98d675de6
+  semantic_content: false
+- target_id: LIF:021
+  note_count: 4
+  degree_indices:
+  - 1
+  - 2
+  - 3
+  - 6
+  relative_semitones:
+  - 2
+  - 4
+  - 5
+  - 11
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: 31d1fbe86782f7ab
+  semantic_content: false
+- target_id: LIF:022
+  note_count: 4
+  degree_indices:
+  - 5
+  - 4
+  - 2
+  - 5
+  relative_semitones:
+  - 9
+  - 7
+  - 4
+  - 9
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: a88285a45fe5b7d1
+  semantic_content: false
+- target_id: LIF:100
+  note_count: 3
+  degree_indices:
+  - 1
+  - 4
+  - 7
+  relative_semitones:
+  - 2
+  - 7
+  - 12
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 0.75
+  octave_positions:
+  - 2
+  checksum: 2b4e076f035e1782
+  semantic_content: false
+- target_id: LIF:101
+  note_count: 4
+  degree_indices:
+  - 2
+  - 3
+  - 2
+  - 4
+  relative_semitones:
+  - 4
+  - 5
+  - 4
+  - 7
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: d4bf2c556156267f
+  semantic_content: false
+- target_id: LIF:102
+  note_count: 4
+  degree_indices:
+  - 5
+  - 3
+  - 5
+  - 6
+  relative_semitones:
+  - 9
+  - 5
+  - 9
+  - 11
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: d813783c85126e35
+  semantic_content: false
+- target_id: LIF:110
+  note_count: 3
+  degree_indices:
+  - 6
+  - 4
+  - 0
+  relative_semitones:
+  - 11
+  - 7
+  - 0
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: da29c382f2056621
+  semantic_content: false
+- target_id: LIF:111
+  note_count: 4
+  degree_indices:
+  - 0
+  - 3
+  - 4
+  - 6
+  relative_semitones:
+  - 0
+  - 5
+  - 7
+  - 11
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: d2c0edb1a8c5d3f8
+  semantic_content: false
+- target_id: LIF:112
+  note_count: 5
+  degree_indices:
+  - 5
+  - 4
+  - 0
+  - 3
+  - 5
+  relative_semitones:
+  - 9
+  - 7
+  - 0
+  - 5
+  - 9
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 0.75
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: 5c06791fd6569afb
+  semantic_content: false
+- target_id: LIF:120
+  note_count: 4
+  degree_indices:
+  - 7
+  - 3
+  - 1
+  - 2
+  relative_semitones:
+  - 12
+  - 5
+  - 2
+  - 4
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 0.75
+  - 0.75
+  octave_positions:
+  - 0
+  checksum: b3830b1365682107
+  semantic_content: false
+- target_id: LIF:121
+  note_count: 3
+  degree_indices:
+  - 7
+  - 3
+  - 0
+  relative_semitones:
+  - 12
+  - 5
+  - 0
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions:
+  - 0
+  checksum: 2d559d93a7f94093
+  semantic_content: false
+- target_id: LIF:122
+  note_count: 3
+  degree_indices:
+  - 1
+  - 2
+  - 3
+  relative_semitones:
+  - 2
+  - 4
+  - 5
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: 170f93706bf87cce
+  semantic_content: false
+- target_id: LIF:200
+  note_count: 3
+  degree_indices:
+  - 1
+  - 2
+  - 4
+  relative_semitones:
+  - 2
+  - 4
+  - 7
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: d6e88f49976e28e0
+  semantic_content: false
+- target_id: LIF:201
+  note_count: 4
+  degree_indices:
+  - 6
+  - 4
+  - 2
+  - 1
+  relative_semitones:
+  - 11
+  - 7
+  - 4
+  - 2
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: 134a5780346d2365
+  semantic_content: false
+- target_id: LIF:202
+  note_count: 4
+  degree_indices:
+  - 3
+  - 5
+  - 1
+  - 3
+  relative_semitones:
+  - 5
+  - 9
+  - 2
+  - 5
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: 9747533a94432d2c
+  semantic_content: false
+- target_id: LIF:210
+  note_count: 3
+  degree_indices:
+  - 2
+  - 0
+  - 3
+  relative_semitones:
+  - 4
+  - 0
+  - 5
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: 4df51146423e9916
+  semantic_content: false
+- target_id: LIF:211
+  note_count: 3
+  degree_indices:
+  - 1
+  - 0
+  - 2
+  relative_semitones:
+  - 2
+  - 0
+  - 4
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: 54023de356b815b0
+  semantic_content: false
+- target_id: LIF:212
+  note_count: 5
+  degree_indices:
+  - 3
+  - 0
+  - 3
+  - 5
+  - 1
+  relative_semitones:
+  - 5
+  - 0
+  - 5
+  - 9
+  - 2
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 0.75
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: d3a95c2aaecbc627
+  semantic_content: false
+- target_id: LIF:220
+  note_count: 3
+  degree_indices:
+  - 5
+  - 2
+  - 1
+  relative_semitones:
+  - 9
+  - 4
+  - 2
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: '0808d93ba45e59a0'
+  semantic_content: false
+- target_id: LIF:221
+  note_count: 2
+  degree_indices:
+  - 2
+  - 4
+  relative_semitones:
+  - 4
+  - 7
+  duration_beats:
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: aab24d775a4d0d28
+  semantic_content: false
+- target_id: LIF:222
+  note_count: 3
+  degree_indices:
+  - 3
+  - 2
+  - 0
+  relative_semitones:
+  - 5
+  - 4
+  - 0
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: b1364d7608f989e4
+  semantic_content: false
+- target_id: LOG:000
+  note_count: 4
+  degree_indices:
+  - 6
+  - 5
+  - 3
+  - 5
+  relative_semitones:
+  - 11
+  - 10
+  - 6
+  - 10
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 22bec0ee1b5b333e
+  semantic_content: false
+- target_id: LOG:001
+  note_count: 3
+  degree_indices:
+  - 3
+  - 5
+  - 7
+  relative_semitones:
+  - 6
+  - 10
+  - 12
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.25
+  octave_positions:
+  - 2
+  checksum: 9dc353b372c1961a
+  semantic_content: false
+- target_id: LOG:002
+  note_count: 3
+  degree_indices:
+  - 5
+  - 4
+  - 5
+  relative_semitones:
+  - 10
+  - 8
+  - 10
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: e8e5ee00ba8e605e
+  semantic_content: false
+- target_id: LOG:010
+  note_count: 4
+  degree_indices:
+  - 6
+  - 7
+  - 4
+  - 5
+  relative_semitones:
+  - 11
+  - 12
+  - 8
+  - 10
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.0
+  - 1.0
+  octave_positions:
+  - 1
+  checksum: 1a3663aa10c5afe4
+  semantic_content: false
+- target_id: LOG:011
+  note_count: 4
+  degree_indices:
+  - 6
+  - 3
+  - 1
+  - 4
+  relative_semitones:
+  - 11
+  - 6
+  - 2
+  - 8
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: 8c67caa38b628442
+  semantic_content: false
+- target_id: LOG:012
+  note_count: 3
+  degree_indices:
+  - 2
+  - 3
+  - 0
+  relative_semitones:
+  - 4
+  - 6
+  - 0
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: 79e83ec09730af65
+  semantic_content: false
+- target_id: LOG:020
+  note_count: 3
+  degree_indices:
+  - 3
+  - 2
+  - 1
+  relative_semitones:
+  - 6
+  - 4
+  - 2
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: 8a9cf3317be4347b
+  semantic_content: false
+- target_id: LOG:021
+  note_count: 3
+  degree_indices:
+  - 5
+  - 7
+  - 3
+  relative_semitones:
+  - 10
+  - 12
+  - 6
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.25
+  octave_positions:
+  - 1
+  checksum: d02876f00d82009c
+  semantic_content: false
+- target_id: LOG:022
+  note_count: 4
+  degree_indices:
+  - 4
+  - 6
+  - 2
+  - 4
+  relative_semitones:
+  - 8
+  - 11
+  - 4
+  - 8
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: fb049f77ec1a6114
+  semantic_content: false
+- target_id: LOG:100
+  note_count: 3
+  degree_indices:
+  - 1
+  - 2
+  - 0
+  relative_semitones:
+  - 2
+  - 4
+  - 0
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: 0d4207119b51cce6
+  semantic_content: false
+- target_id: LOG:101
+  note_count: 3
+  degree_indices:
+  - 4
+  - 2
+  - 5
+  relative_semitones:
+  - 8
+  - 4
+  - 10
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: dcffaa7abf4076bf
+  semantic_content: false
+- target_id: LOG:102
+  note_count: 2
+  degree_indices:
+  - 4
+  - 1
+  relative_semitones:
+  - 8
+  - 2
+  duration_beats:
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: c637fd2958430e6b
+  semantic_content: false
+- target_id: LOG:110
+  note_count: 4
+  degree_indices:
+  - 5
+  - 2
+  - 3
+  - 1
+  relative_semitones:
+  - 10
+  - 4
+  - 6
+  - 2
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: 4dea8f73eec15dcd
+  semantic_content: false
+- target_id: LOG:111
+  note_count: 3
+  degree_indices:
+  - 6
+  - 4
+  - 2
+  relative_semitones:
+  - 11
+  - 8
+  - 4
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: 24caf352c5f65ce7
+  semantic_content: false
+- target_id: LOG:112
+  note_count: 4
+  degree_indices:
+  - 6
+  - 2
+  - 6
+  - 4
+  relative_semitones:
+  - 11
+  - 4
+  - 11
+  - 8
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: 9e64b9bc96891719
+  semantic_content: false
+- target_id: LOG:120
+  note_count: 3
+  degree_indices:
+  - 5
+  - 2
+  - 3
+  relative_semitones:
+  - 10
+  - 4
+  - 6
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: cd4c3debad90237c
+  semantic_content: false
+- target_id: LOG:121
+  note_count: 3
+  degree_indices:
+  - 2
+  - 4
+  - 2
+  relative_semitones:
+  - 4
+  - 8
+  - 4
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 5c59ef80e10440a7
+  semantic_content: false
+- target_id: LOG:122
+  note_count: 3
+  degree_indices:
+  - 0
+  - 3
+  - 7
+  relative_semitones:
+  - 0
+  - 6
+  - 12
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.0
+  octave_positions:
+  - 2
+  checksum: b0814c7d721b1c3d
+  semantic_content: false
+- target_id: LOG:200
+  note_count: 5
+  degree_indices:
+  - 6
+  - 3
+  - 5
+  - 7
+  - 6
+  relative_semitones:
+  - 11
+  - 6
+  - 10
+  - 12
+  - 11
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.25
+  - 1.0
+  - 1.25
+  octave_positions:
+  - 3
+  checksum: 9f21570058ac3511
+  semantic_content: false
+- target_id: LOG:201
+  note_count: 4
+  degree_indices:
+  - 4
+  - 1
+  - 3
+  - 7
+  relative_semitones:
+  - 8
+  - 2
+  - 6
+  - 12
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 1.25
+  - 0.75
+  octave_positions:
+  - 3
+  checksum: 86a7b5e01408ec6a
+  semantic_content: false
+- target_id: LOG:202
+  note_count: 3
+  degree_indices:
+  - 2
+  - 5
+  - 2
+  relative_semitones:
+  - 4
+  - 10
+  - 4
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 1.25
+  octave_positions: []
+  checksum: 546f2197a0c6c785
+  semantic_content: false
+- target_id: LOG:210
+  note_count: 3
+  degree_indices:
+  - 3
+  - 5
+  - 6
+  relative_semitones:
+  - 6
+  - 10
+  - 11
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: 3ae8b54f41fe4b89
+  semantic_content: false
+- target_id: LOG:211
+  note_count: 4
+  degree_indices:
+  - 6
+  - 4
+  - 2
+  - 1
+  relative_semitones:
+  - 11
+  - 8
+  - 4
+  - 2
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: b15f5615bc24cf41
+  semantic_content: false
+- target_id: LOG:212
+  note_count: 3
+  degree_indices:
+  - 6
+  - 5
+  - 3
+  relative_semitones:
+  - 11
+  - 10
+  - 6
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: d5ed3faef58df609
+  semantic_content: false
+- target_id: LOG:220
+  note_count: 3
+  degree_indices:
+  - 4
+  - 5
+  - 7
+  relative_semitones:
+  - 8
+  - 10
+  - 12
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 1.25
+  octave_positions:
+  - 2
+  checksum: 00ab1950acc61fc7
+  semantic_content: false
+- target_id: LOG:221
+  note_count: 4
+  degree_indices:
+  - 3
+  - 1
+  - 3
+  - 1
+  relative_semitones:
+  - 6
+  - 2
+  - 6
+  - 2
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: c4f8f57dee96fcd3
+  semantic_content: false
+- target_id: LOG:222
+  note_count: 2
+  degree_indices:
+  - 4
+  - 6
+  relative_semitones:
+  - 8
+  - 11
+  duration_beats:
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: 67559715daf6a551
+  semantic_content: false
+- target_id: MAT:000
+  note_count: 5
+  degree_indices:
+  - 2
+  - 3
+  - 2
+  - 4
+  - 7
+  relative_semitones:
+  - 4
+  - 5
+  - 4
+  - 7
+  - 12
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.0
+  - 0.75
+  - 0.75
+  octave_positions:
+  - 4
+  checksum: 004c9f069001a031
+  semantic_content: false
+- target_id: MAT:001
+  note_count: 4
+  degree_indices:
+  - 6
+  - 2
+  - 4
+  - 2
+  relative_semitones:
+  - 11
+  - 4
+  - 7
+  - 4
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: cc2670639a531b1e
+  semantic_content: false
+- target_id: MAT:002
+  note_count: 3
+  degree_indices:
+  - 6
+  - 3
+  - 5
+  relative_semitones:
+  - 11
+  - 5
+  - 9
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: 11435a955c6faa95
+  semantic_content: false
+- target_id: MAT:010
+  note_count: 5
+  degree_indices:
+  - 4
+  - 6
+  - 4
+  - 5
+  - 4
+  relative_semitones:
+  - 7
+  - 11
+  - 7
+  - 9
+  - 7
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.25
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: 1e1cf963bbf08af8
+  semantic_content: false
+- target_id: MAT:011
+  note_count: 4
+  degree_indices:
+  - 3
+  - 6
+  - 2
+  - 1
+  relative_semitones:
+  - 5
+  - 11
+  - 4
+  - 2
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: ff05c2b0a2b648b1
+  semantic_content: false
+- target_id: MAT:012
+  note_count: 4
+  degree_indices:
+  - 5
+  - 3
+  - 2
+  - 4
+  relative_semitones:
+  - 9
+  - 5
+  - 4
+  - 7
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: 2768888a24d13f77
+  semantic_content: false
+- target_id: MAT:020
+  note_count: 3
+  degree_indices:
+  - 4
+  - 7
+  - 3
+  relative_semitones:
+  - 7
+  - 12
+  - 5
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions:
+  - 1
+  checksum: 66b05c743051fd61
+  semantic_content: false
+- target_id: MAT:021
+  note_count: 4
+  degree_indices:
+  - 0
+  - 1
+  - 5
+  - 4
+  relative_semitones:
+  - 0
+  - 2
+  - 9
+  - 7
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: 641e510542547e46
+  semantic_content: false
+- target_id: MAT:022
+  note_count: 4
+  degree_indices:
+  - 5
+  - 3
+  - 6
+  - 3
+  relative_semitones:
+  - 9
+  - 5
+  - 11
+  - 5
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: 7f1969386836051a
+  semantic_content: false
+- target_id: MAT:100
+  note_count: 4
+  degree_indices:
+  - 1
+  - 0
+  - 4
+  - 2
+  relative_semitones:
+  - 2
+  - 0
+  - 7
+  - 4
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 0.75
+  - 1.25
+  octave_positions: []
+  checksum: af546f9f791f41ec
+  semantic_content: false
+- target_id: MAT:101
+  note_count: 3
+  degree_indices:
+  - 2
+  - 5
+  - 2
+  relative_semitones:
+  - 4
+  - 9
+  - 4
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: bfb6ebfdf0666930
+  semantic_content: false
+- target_id: MAT:102
+  note_count: 3
+  degree_indices:
+  - 2
+  - 1
+  - 0
+  relative_semitones:
+  - 4
+  - 2
+  - 0
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: 73e929a1b0d1c448
+  semantic_content: false
+- target_id: MAT:110
+  note_count: 3
+  degree_indices:
+  - 5
+  - 7
+  - 6
+  relative_semitones:
+  - 9
+  - 12
+  - 11
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 0.75
+  octave_positions:
+  - 1
+  checksum: 4fce30e4b609cd26
+  semantic_content: false
+- target_id: MAT:111
+  note_count: 5
+  degree_indices:
+  - 0
+  - 2
+  - 3
+  - 7
+  - 5
+  relative_semitones:
+  - 0
+  - 4
+  - 5
+  - 12
+  - 9
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 0.75
+  - 1.25
+  - 0.75
+  octave_positions:
+  - 3
+  checksum: 66f60a1cae44fb3f
+  semantic_content: false
+- target_id: MAT:112
+  note_count: 4
+  degree_indices:
+  - 6
+  - 4
+  - 6
+  - 5
+  relative_semitones:
+  - 11
+  - 7
+  - 11
+  - 9
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: 81ebc74507c6aa5e
+  semantic_content: false
+- target_id: MAT:120
+  note_count: 3
+  degree_indices:
+  - 1
+  - 2
+  - 1
+  relative_semitones:
+  - 2
+  - 4
+  - 2
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: 7405eaa7792ad4d4
+  semantic_content: false
+- target_id: MAT:121
+  note_count: 4
+  degree_indices:
+  - 5
+  - 6
+  - 3
+  - 5
+  relative_semitones:
+  - 9
+  - 11
+  - 5
+  - 9
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: 140260cfd73ed8d2
+  semantic_content: false
+- target_id: MAT:122
+  note_count: 4
+  degree_indices:
+  - 1
+  - 5
+  - 1
+  - 4
+  relative_semitones:
+  - 2
+  - 9
+  - 2
+  - 7
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: 3765f43e6435cd78
+  semantic_content: false
+- target_id: MAT:200
+  note_count: 3
+  degree_indices:
+  - 6
+  - 7
+  - 5
+  relative_semitones:
+  - 11
+  - 12
+  - 9
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions:
+  - 1
+  checksum: edad1cde1ad6973c
+  semantic_content: false
+- target_id: MAT:201
+  note_count: 3
+  degree_indices:
+  - 1
+  - 5
+  - 6
+  relative_semitones:
+  - 2
+  - 9
+  - 11
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: 0035a684359d2106
+  semantic_content: false
+- target_id: MAT:202
+  note_count: 3
+  degree_indices:
+  - 0
+  - 3
+  - 5
+  relative_semitones:
+  - 0
+  - 5
+  - 9
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 16250a6ae09d99c6
+  semantic_content: false
+- target_id: MAT:210
+  note_count: 3
+  degree_indices:
+  - 4
+  - 1
+  - 0
+  relative_semitones:
+  - 7
+  - 2
+  - 0
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: 17c1c232a9d279c5
+  semantic_content: false
+- target_id: MAT:211
+  note_count: 5
+  degree_indices:
+  - 6
+  - 5
+  - 3
+  - 5
+  - 6
+  relative_semitones:
+  - 11
+  - 9
+  - 5
+  - 9
+  - 11
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 1.25
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: e6c02bc1912cc41c
+  semantic_content: false
+- target_id: MAT:212
+  note_count: 4
+  degree_indices:
+  - 2
+  - 5
+  - 3
+  - 0
+  relative_semitones:
+  - 4
+  - 9
+  - 5
+  - 0
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: 7abbe721f27cd02d
+  semantic_content: false
+- target_id: MAT:220
+  note_count: 4
+  degree_indices:
+  - 4
+  - 0
+  - 3
+  - 4
+  relative_semitones:
+  - 7
+  - 0
+  - 5
+  - 7
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: eb4fd1deec150b13
+  semantic_content: false
+- target_id: MAT:221
+  note_count: 3
+  degree_indices:
+  - 5
+  - 3
+  - 2
+  relative_semitones:
+  - 9
+  - 5
+  - 4
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: b67fe53d4990790a
+  semantic_content: false
+- target_id: MAT:222
+  note_count: 4
+  degree_indices:
+  - 5
+  - 2
+  - 5
+  - 2
+  relative_semitones:
+  - 9
+  - 4
+  - 9
+  - 4
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: 324dc689f1cfa53b
+  semantic_content: false
+- target_id: MIN:000
+  note_count: 3
+  degree_indices:
+  - 0
+  - 4
+  - 7
+  relative_semitones:
+  - 0
+  - 7
+  - 12
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 0.75
+  octave_positions:
+  - 2
+  checksum: d0502dba207297cd
+  semantic_content: false
+- target_id: MIN:001
+  note_count: 3
+  degree_indices:
+  - 0
+  - 1
+  - 5
+  relative_semitones:
+  - 0
+  - 2
+  - 8
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 7cbd7f656a77ead7
+  semantic_content: false
+- target_id: MIN:002
+  note_count: 2
+  degree_indices:
+  - 5
+  - 3
+  relative_semitones:
+  - 8
+  - 5
+  duration_beats:
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: fcac1503b7a4fe3d
+  semantic_content: false
+- target_id: MIN:010
+  note_count: 4
+  degree_indices:
+  - 4
+  - 6
+  - 7
+  - 5
+  relative_semitones:
+  - 7
+  - 10
+  - 12
+  - 8
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 1.25
+  - 1.25
+  octave_positions:
+  - 2
+  checksum: bb49dc1fe5aac98d
+  semantic_content: false
+- target_id: MIN:011
+  note_count: 3
+  degree_indices:
+  - 6
+  - 3
+  - 1
+  relative_semitones:
+  - 10
+  - 5
+  - 2
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: 16a13a67d489b47c
+  semantic_content: false
+- target_id: MIN:012
+  note_count: 2
+  degree_indices:
+  - 5
+  - 2
+  relative_semitones:
+  - 8
+  - 3
+  duration_beats:
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: 169d9a092085a416
+  semantic_content: false
+- target_id: MIN:020
+  note_count: 3
+  degree_indices:
+  - 3
+  - 0
+  - 4
+  relative_semitones:
+  - 5
+  - 0
+  - 7
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: a11f539496a6b4e4
+  semantic_content: false
+- target_id: MIN:021
+  note_count: 4
+  degree_indices:
+  - 4
+  - 2
+  - 5
+  - 7
+  relative_semitones:
+  - 7
+  - 3
+  - 8
+  - 12
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  octave_positions:
+  - 3
+  checksum: b2dc4a267c761357
+  semantic_content: false
+- target_id: MIN:022
+  note_count: 4
+  degree_indices:
+  - 1
+  - 5
+  - 6
+  - 4
+  relative_semitones:
+  - 2
+  - 8
+  - 10
+  - 7
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: 78d6c316997dc49b
+  semantic_content: false
+- target_id: MIN:100
+  note_count: 4
+  degree_indices:
+  - 5
+  - 4
+  - 3
+  - 5
+  relative_semitones:
+  - 8
+  - 7
+  - 5
+  - 8
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: 9faa7e9a756a6d22
+  semantic_content: false
+- target_id: MIN:101
+  note_count: 3
+  degree_indices:
+  - 4
+  - 2
+  - 1
+  relative_semitones:
+  - 7
+  - 3
+  - 2
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: 3edd9cd4283ede92
+  semantic_content: false
+- target_id: MIN:102
+  note_count: 4
+  degree_indices:
+  - 0
+  - 4
+  - 3
+  - 7
+  relative_semitones:
+  - 0
+  - 7
+  - 5
+  - 12
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 1.0
+  - 0.75
+  octave_positions:
+  - 3
+  checksum: 9509030c024e6823
+  semantic_content: false
+- target_id: MIN:110
+  note_count: 2
+  degree_indices:
+  - 4
+  - 5
+  relative_semitones:
+  - 7
+  - 8
+  duration_beats:
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: '04617924e8aeb289'
+  semantic_content: false
+- target_id: MIN:111
+  note_count: 3
+  degree_indices:
+  - 5
+  - 1
+  - 4
+  relative_semitones:
+  - 8
+  - 2
+  - 7
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: 1347f141f1a3b6cb
+  semantic_content: false
+- target_id: MIN:112
+  note_count: 3
+  degree_indices:
+  - 5
+  - 4
+  - 5
+  relative_semitones:
+  - 8
+  - 7
+  - 8
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: 00423fe6a71d53a9
+  semantic_content: false
+- target_id: MIN:120
+  note_count: 3
+  degree_indices:
+  - 3
+  - 6
+  - 7
+  relative_semitones:
+  - 5
+  - 10
+  - 12
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 0.75
+  octave_positions:
+  - 2
+  checksum: acd7932124c3dfeb
+  semantic_content: false
+- target_id: MIN:121
+  note_count: 5
+  degree_indices:
+  - 5
+  - 3
+  - 6
+  - 2
+  - 3
+  relative_semitones:
+  - 8
+  - 5
+  - 10
+  - 3
+  - 5
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 765aeb837924b457
+  semantic_content: false
+- target_id: MIN:122
+  note_count: 3
+  degree_indices:
+  - 0
+  - 3
+  - 6
+  relative_semitones:
+  - 0
+  - 5
+  - 10
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: a4dd172031bf588c
+  semantic_content: false
+- target_id: MIN:200
+  note_count: 4
+  degree_indices:
+  - 0
+  - 2
+  - 5
+  - 6
+  relative_semitones:
+  - 0
+  - 3
+  - 8
+  - 10
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 5bc5acb93e806df9
+  semantic_content: false
+- target_id: MIN:201
+  note_count: 2
+  degree_indices:
+  - 5
+  - 6
+  relative_semitones:
+  - 8
+  - 10
+  duration_beats:
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: e5f5a78a5061a252
+  semantic_content: false
+- target_id: MIN:202
+  note_count: 4
+  degree_indices:
+  - 4
+  - 3
+  - 7
+  - 4
+  relative_semitones:
+  - 7
+  - 5
+  - 12
+  - 7
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.25
+  - 0.75
+  octave_positions:
+  - 2
+  checksum: fcd65a014944db10
+  semantic_content: false
+- target_id: MIN:210
+  note_count: 4
+  degree_indices:
+  - 3
+  - 0
+  - 3
+  - 6
+  relative_semitones:
+  - 5
+  - 0
+  - 5
+  - 10
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: bfc030eaec017f21
+  semantic_content: false
+- target_id: MIN:211
+  note_count: 4
+  degree_indices:
+  - 0
+  - 1
+  - 5
+  - 7
+  relative_semitones:
+  - 0
+  - 2
+  - 8
+  - 12
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions:
+  - 3
+  checksum: e826fca4420a2882
+  semantic_content: false
+- target_id: MIN:212
+  note_count: 3
+  degree_indices:
+  - 4
+  - 3
+  - 6
+  relative_semitones:
+  - 7
+  - 5
+  - 10
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: 1aefa28fd78a46b4
+  semantic_content: false
+- target_id: MIN:220
+  note_count: 3
+  degree_indices:
+  - 6
+  - 4
+  - 1
+  relative_semitones:
+  - 10
+  - 7
+  - 2
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: 239cc289015ec3ac
+  semantic_content: false
+- target_id: MIN:221
+  note_count: 4
+  degree_indices:
+  - 4
+  - 2
+  - 5
+  - 6
+  relative_semitones:
+  - 7
+  - 3
+  - 8
+  - 10
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 0.75
+  - 1.25
+  octave_positions: []
+  checksum: b8f9d5957f1904ff
+  semantic_content: false
+- target_id: MIN:222
+  note_count: 4
+  degree_indices:
+  - 0
+  - 2
+  - 6
+  - 3
+  relative_semitones:
+  - 0
+  - 3
+  - 10
+  - 5
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: 93920f70d26f3479
+  semantic_content: false
+- target_id: MOV:000
+  note_count: 3
+  degree_indices:
+  - 5
+  - 4
+  - 1
+  relative_semitones:
+  - 9
+  - 7
+  - 2
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: 474735d3b94c0035
+  semantic_content: false
+- target_id: MOV:001
+  note_count: 4
+  degree_indices:
+  - 7
+  - 5
+  - 2
+  - 0
+  relative_semitones:
+  - 12
+  - 9
+  - 4
+  - 0
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 0.75
+  - 0.75
+  octave_positions:
+  - 0
+  checksum: 36722373896e807c
+  semantic_content: false
+- target_id: MOV:002
+  note_count: 4
+  degree_indices:
+  - 2
+  - 6
+  - 2
+  - 5
+  relative_semitones:
+  - 4
+  - 10
+  - 4
+  - 9
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: 40d82b53cf8871b9
+  semantic_content: false
+- target_id: MOV:010
+  note_count: 4
+  degree_indices:
+  - 5
+  - 6
+  - 2
+  - 3
+  relative_semitones:
+  - 9
+  - 10
+  - 4
+  - 5
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 18f4a765bda4a59f
+  semantic_content: false
+- target_id: MOV:011
+  note_count: 3
+  degree_indices:
+  - 4
+  - 2
+  - 3
+  relative_semitones:
+  - 7
+  - 4
+  - 5
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 516159299101e746
+  semantic_content: false
+- target_id: MOV:012
+  note_count: 3
+  degree_indices:
+  - 5
+  - 4
+  - 2
+  relative_semitones:
+  - 9
+  - 7
+  - 4
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: 87bad321221f143b
+  semantic_content: false
+- target_id: MOV:020
+  note_count: 4
+  degree_indices:
+  - 2
+  - 6
+  - 2
+  - 6
+  relative_semitones:
+  - 4
+  - 10
+  - 4
+  - 10
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 07c3653c16bdeb77
+  semantic_content: false
+- target_id: MOV:021
+  note_count: 4
+  degree_indices:
+  - 5
+  - 1
+  - 4
+  - 7
+  relative_semitones:
+  - 9
+  - 2
+  - 7
+  - 12
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.0
+  - 1.25
+  octave_positions:
+  - 3
+  checksum: 6ab89737c91d8e9f
+  semantic_content: false
+- target_id: MOV:022
+  note_count: 5
+  degree_indices:
+  - 3
+  - 4
+  - 5
+  - 2
+  - 1
+  relative_semitones:
+  - 5
+  - 7
+  - 9
+  - 4
+  - 2
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 1.0
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 1322d0dcc313b592
+  semantic_content: false
+- target_id: MOV:100
+  note_count: 4
+  degree_indices:
+  - 7
+  - 4
+  - 2
+  - 0
+  relative_semitones:
+  - 12
+  - 7
+  - 4
+  - 0
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 0.75
+  - 1.0
+  octave_positions:
+  - 0
+  checksum: 4161e495d1f97560
+  semantic_content: false
+- target_id: MOV:101
+  note_count: 3
+  degree_indices:
+  - 2
+  - 3
+  - 7
+  relative_semitones:
+  - 4
+  - 5
+  - 12
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 0.75
+  octave_positions:
+  - 2
+  checksum: bf56ad4b1b836b48
+  semantic_content: false
+- target_id: MOV:102
+  note_count: 4
+  degree_indices:
+  - 5
+  - 4
+  - 0
+  - 3
+  relative_semitones:
+  - 9
+  - 7
+  - 0
+  - 5
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 0.75
+  - 1.25
+  octave_positions: []
+  checksum: 392266831c34f3a1
+  semantic_content: false
+- target_id: MOV:110
+  note_count: 3
+  degree_indices:
+  - 4
+  - 2
+  - 1
+  relative_semitones:
+  - 7
+  - 4
+  - 2
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 1.25
+  octave_positions: []
+  checksum: 2e4d5ceeaaeb1531
+  semantic_content: false
+- target_id: MOV:111
+  note_count: 2
+  degree_indices:
+  - 5
+  - 6
+  relative_semitones:
+  - 9
+  - 10
+  duration_beats:
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: 3ca323991ee50888
+  semantic_content: false
+- target_id: MOV:112
+  note_count: 4
+  degree_indices:
+  - 2
+  - 1
+  - 2
+  - 1
+  relative_semitones:
+  - 4
+  - 2
+  - 4
+  - 2
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: dd7f1efaa5da0ad9
+  semantic_content: false
+- target_id: MOV:120
+  note_count: 4
+  degree_indices:
+  - 1
+  - 2
+  - 4
+  - 3
+  relative_semitones:
+  - 2
+  - 4
+  - 7
+  - 5
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: f3ce1291eaff6c92
+  semantic_content: false
+- target_id: MOV:121
+  note_count: 2
+  degree_indices:
+  - 4
+  - 2
+  relative_semitones:
+  - 7
+  - 4
+  duration_beats:
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: 5f6ddac33fe9bc07
+  semantic_content: false
+- target_id: MOV:122
+  note_count: 5
+  degree_indices:
+  - 5
+  - 4
+  - 5
+  - 4
+  - 3
+  relative_semitones:
+  - 9
+  - 7
+  - 9
+  - 7
+  - 5
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: 4b01bbf4e71cdf05
+  semantic_content: false
+- target_id: MOV:200
+  note_count: 4
+  degree_indices:
+  - 4
+  - 6
+  - 2
+  - 5
+  relative_semitones:
+  - 7
+  - 10
+  - 4
+  - 9
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: 63f4136e1bf08a07
+  semantic_content: false
+- target_id: MOV:201
+  note_count: 4
+  degree_indices:
+  - 1
+  - 5
+  - 6
+  - 4
+  relative_semitones:
+  - 2
+  - 9
+  - 10
+  - 7
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: b9ac7e773a611f6d
+  semantic_content: false
+- target_id: MOV:202
+  note_count: 4
+  degree_indices:
+  - 2
+  - 6
+  - 5
+  - 6
+  relative_semitones:
+  - 4
+  - 10
+  - 9
+  - 10
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: 43fde51f04bda82b
+  semantic_content: false
+- target_id: MOV:210
+  note_count: 3
+  degree_indices:
+  - 5
+  - 4
+  - 7
+  relative_semitones:
+  - 9
+  - 7
+  - 12
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 0.75
+  octave_positions:
+  - 2
+  checksum: 256a70f314a245da
+  semantic_content: false
+- target_id: MOV:211
+  note_count: 5
+  degree_indices:
+  - 2
+  - 3
+  - 1
+  - 3
+  - 2
+  relative_semitones:
+  - 4
+  - 5
+  - 2
+  - 5
+  - 4
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 0.75
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: 321339e1a9434d6d
+  semantic_content: false
+- target_id: MOV:212
+  note_count: 2
+  degree_indices:
+  - 3
+  - 6
+  relative_semitones:
+  - 5
+  - 10
+  duration_beats:
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: b9d3815b9c46b0fb
+  semantic_content: false
+- target_id: MOV:220
+  note_count: 3
+  degree_indices:
+  - 3
+  - 7
+  - 4
+  relative_semitones:
+  - 5
+  - 12
+  - 7
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.25
+  octave_positions:
+  - 1
+  checksum: 36ed58fb89157b5a
+  semantic_content: false
+- target_id: MOV:221
+  note_count: 4
+  degree_indices:
+  - 6
+  - 3
+  - 4
+  - 1
+  relative_semitones:
+  - 10
+  - 5
+  - 7
+  - 2
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 30ea91b0e846ea87
+  semantic_content: false
+- target_id: MOV:222
+  note_count: 3
+  degree_indices:
+  - 1
+  - 3
+  - 1
+  relative_semitones:
+  - 2
+  - 5
+  - 2
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: 91d69b598987dbfe
+  semantic_content: false
+- target_id: ORI:000
+  note_count: 5
+  degree_indices:
+  - 3
+  - 1
+  - 4
+  - 6
+  - 7
+  relative_semitones:
+  - 5
+  - 1
+  - 7
+  - 10
+  - 12
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.25
+  - 0.75
+  - 1.25
+  octave_positions:
+  - 4
+  checksum: e46519ef0daa4b79
+  semantic_content: false
+- target_id: ORI:001
+  note_count: 3
+  degree_indices:
+  - 2
+  - 3
+  - 6
+  relative_semitones:
+  - 3
+  - 5
+  - 10
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: 7b66b790b574b6d0
+  semantic_content: false
+- target_id: ORI:002
+  note_count: 4
+  degree_indices:
+  - 5
+  - 4
+  - 3
+  - 1
+  relative_semitones:
+  - 8
+  - 7
+  - 5
+  - 1
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: 2c0c60de127102fb
+  semantic_content: false
+- target_id: ORI:010
+  note_count: 3
+  degree_indices:
+  - 7
+  - 6
+  - 3
+  relative_semitones:
+  - 12
+  - 10
+  - 5
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 0.75
+  octave_positions:
+  - 0
+  checksum: e6ed15fbc9b6aa0d
+  semantic_content: false
+- target_id: ORI:011
+  note_count: 4
+  degree_indices:
+  - 1
+  - 3
+  - 5
+  - 1
+  relative_semitones:
+  - 1
+  - 5
+  - 8
+  - 1
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: 00d96614c6065bd4
+  semantic_content: false
+- target_id: ORI:012
+  note_count: 4
+  degree_indices:
+  - 2
+  - 5
+  - 3
+  - 2
+  relative_semitones:
+  - 3
+  - 8
+  - 5
+  - 3
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: b383fddb8ef601c6
+  semantic_content: false
+- target_id: ORI:020
+  note_count: 3
+  degree_indices:
+  - 3
+  - 2
+  - 6
+  relative_semitones:
+  - 5
+  - 3
+  - 10
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: 15fb6fbd375d339c
+  semantic_content: false
+- target_id: ORI:021
+  note_count: 4
+  degree_indices:
+  - 1
+  - 2
+  - 5
+  - 6
+  relative_semitones:
+  - 1
+  - 3
+  - 8
+  - 10
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: 3fb9ccf005d11611
+  semantic_content: false
+- target_id: ORI:022
+  note_count: 3
+  degree_indices:
+  - 0
+  - 2
+  - 4
+  relative_semitones:
+  - 0
+  - 3
+  - 7
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: 8e985e5e3b275b56
+  semantic_content: false
+- target_id: ORI:100
+  note_count: 3
+  degree_indices:
+  - 4
+  - 5
+  - 7
+  relative_semitones:
+  - 7
+  - 8
+  - 12
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 1.0
+  octave_positions:
+  - 2
+  checksum: c423b0402dd83be0
+  semantic_content: false
+- target_id: ORI:101
+  note_count: 2
+  degree_indices:
+  - 7
+  - 6
+  relative_semitones:
+  - 12
+  - 10
+  duration_beats:
+  - 0.75
+  - 0.75
+  octave_positions:
+  - 0
+  checksum: 73edb9262f9c4c34
+  semantic_content: false
+- target_id: ORI:102
+  note_count: 3
+  degree_indices:
+  - 5
+  - 4
+  - 1
+  relative_semitones:
+  - 8
+  - 7
+  - 1
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: 4909e2761492e8c9
+  semantic_content: false
+- target_id: ORI:110
+  note_count: 5
+  degree_indices:
+  - 3
+  - 0
+  - 3
+  - 0
+  - 4
+  relative_semitones:
+  - 5
+  - 0
+  - 5
+  - 0
+  - 7
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 1.25
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: 6076d8f6c7f24e2a
+  semantic_content: false
+- target_id: ORI:111
+  note_count: 3
+  degree_indices:
+  - 6
+  - 7
+  - 3
+  relative_semitones:
+  - 10
+  - 12
+  - 5
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 0.75
+  octave_positions:
+  - 1
+  checksum: c20c66eb78ff0d65
+  semantic_content: false
+- target_id: ORI:112
+  note_count: 4
+  degree_indices:
+  - 1
+  - 5
+  - 4
+  - 7
+  relative_semitones:
+  - 1
+  - 8
+  - 7
+  - 12
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.25
+  - 1.0
+  octave_positions:
+  - 3
+  checksum: d95e2cfa31f0e555
+  semantic_content: false
+- target_id: ORI:120
+  note_count: 3
+  degree_indices:
+  - 1
+  - 4
+  - 6
+  relative_semitones:
+  - 1
+  - 7
+  - 10
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: 478f2e6fef26d61a
+  semantic_content: false
+- target_id: ORI:121
+  note_count: 4
+  degree_indices:
+  - 4
+  - 5
+  - 2
+  - 1
+  relative_semitones:
+  - 7
+  - 8
+  - 3
+  - 1
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 2ca1f28b90cd05f1
+  semantic_content: false
+- target_id: ORI:122
+  note_count: 5
+  degree_indices:
+  - 6
+  - 3
+  - 4
+  - 7
+  - 5
+  relative_semitones:
+  - 10
+  - 5
+  - 7
+  - 12
+  - 8
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 1.25
+  - 0.75
+  - 1.0
+  octave_positions:
+  - 3
+  checksum: bccf9e134a023927
+  semantic_content: false
+- target_id: ORI:200
+  note_count: 4
+  degree_indices:
+  - 3
+  - 4
+  - 3
+  - 4
+  relative_semitones:
+  - 5
+  - 7
+  - 5
+  - 7
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: 572fdcf920de17a1
+  semantic_content: false
+- target_id: ORI:201
+  note_count: 5
+  degree_indices:
+  - 5
+  - 2
+  - 5
+  - 3
+  - 5
+  relative_semitones:
+  - 8
+  - 3
+  - 8
+  - 5
+  - 8
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 1.25
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: b64fbdef428d966e
+  semantic_content: false
+- target_id: ORI:202
+  note_count: 3
+  degree_indices:
+  - 3
+  - 2
+  - 4
+  relative_semitones:
+  - 5
+  - 3
+  - 7
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: 57549316d1b814e3
+  semantic_content: false
+- target_id: ORI:210
+  note_count: 3
+  degree_indices:
+  - 1
+  - 2
+  - 6
+  relative_semitones:
+  - 1
+  - 3
+  - 10
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: 861c3264225d6961
+  semantic_content: false
+- target_id: ORI:211
+  note_count: 3
+  degree_indices:
+  - 1
+  - 0
+  - 4
+  relative_semitones:
+  - 1
+  - 0
+  - 7
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: ac7238c958c7f303
+  semantic_content: false
+- target_id: ORI:212
+  note_count: 5
+  degree_indices:
+  - 0
+  - 1
+  - 0
+  - 1
+  - 0
+  relative_semitones:
+  - 0
+  - 1
+  - 0
+  - 1
+  - 0
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 0.75
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: '0084bf624cf104ae'
+  semantic_content: false
+- target_id: ORI:220
+  note_count: 2
+  degree_indices:
+  - 2
+  - 3
+  relative_semitones:
+  - 3
+  - 5
+  duration_beats:
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: 8b6ba355d1c728e3
+  semantic_content: false
+- target_id: ORI:221
+  note_count: 4
+  degree_indices:
+  - 3
+  - 1
+  - 0
+  - 2
+  relative_semitones:
+  - 5
+  - 1
+  - 0
+  - 3
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: cd6d83db62e6144e
+  semantic_content: false
+- target_id: ORI:222
+  note_count: 5
+  degree_indices:
+  - 3
+  - 2
+  - 1
+  - 2
+  - 0
+  relative_semitones:
+  - 5
+  - 3
+  - 1
+  - 3
+  - 0
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.0
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: 7797b5e36c79d7cd
+  semantic_content: false
+- target_id: REP:000
+  note_count: 4
+  degree_indices:
+  - 3
+  - 2
+  - 4
+  - 2
+  relative_semitones:
+  - 5
+  - 3
+  - 7
+  - 3
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: 200e998873972341
+  semantic_content: false
+- target_id: REP:001
+  note_count: 3
+  degree_indices:
+  - 7
+  - 3
+  - 6
+  relative_semitones:
+  - 12
+  - 5
+  - 10
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 0.75
+  octave_positions:
+  - 0
+  checksum: 1da41278432a5bd1
+  semantic_content: false
+- target_id: REP:002
+  note_count: 4
+  degree_indices:
+  - 6
+  - 5
+  - 6
+  - 5
+  relative_semitones:
+  - 10
+  - 9
+  - 10
+  - 9
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: 6d5123db40b8baf6
+  semantic_content: false
+- target_id: REP:010
+  note_count: 4
+  degree_indices:
+  - 4
+  - 2
+  - 1
+  - 4
+  relative_semitones:
+  - 7
+  - 3
+  - 2
+  - 7
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: 015ea5c1651ccc4a
+  semantic_content: false
+- target_id: REP:011
+  note_count: 4
+  degree_indices:
+  - 3
+  - 2
+  - 0
+  - 1
+  relative_semitones:
+  - 5
+  - 3
+  - 0
+  - 2
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: b84fc57ae46d253d
+  semantic_content: false
+- target_id: REP:012
+  note_count: 3
+  degree_indices:
+  - 7
+  - 4
+  - 2
+  relative_semitones:
+  - 12
+  - 7
+  - 3
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 1.0
+  octave_positions:
+  - 0
+  checksum: e2d83327801a5c95
+  semantic_content: false
+- target_id: REP:020
+  note_count: 3
+  degree_indices:
+  - 0
+  - 4
+  - 6
+  relative_semitones:
+  - 0
+  - 7
+  - 10
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: d8e140767b99f443
+  semantic_content: false
+- target_id: REP:021
+  note_count: 4
+  degree_indices:
+  - 7
+  - 3
+  - 5
+  - 6
+  relative_semitones:
+  - 12
+  - 5
+  - 9
+  - 10
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 1.0
+  - 0.75
+  octave_positions:
+  - 0
+  checksum: f030172b18e0fa5e
+  semantic_content: false
+- target_id: REP:022
+  note_count: 4
+  degree_indices:
+  - 1
+  - 3
+  - 2
+  - 5
+  relative_semitones:
+  - 2
+  - 5
+  - 3
+  - 9
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: 19c7740b4bdffded
+  semantic_content: false
+- target_id: REP:100
+  note_count: 2
+  degree_indices:
+  - 1
+  - 3
+  relative_semitones:
+  - 2
+  - 5
+  duration_beats:
+  - 0.75
+  - 1.25
+  octave_positions: []
+  checksum: 917f556940179136
+  semantic_content: false
+- target_id: REP:101
+  note_count: 3
+  degree_indices:
+  - 7
+  - 3
+  - 5
+  relative_semitones:
+  - 12
+  - 5
+  - 9
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.25
+  octave_positions:
+  - 0
+  checksum: 2f9820aeb4765e07
+  semantic_content: false
+- target_id: REP:102
+  note_count: 3
+  degree_indices:
+  - 7
+  - 5
+  - 3
+  relative_semitones:
+  - 12
+  - 9
+  - 5
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 0.75
+  octave_positions:
+  - 0
+  checksum: 031e74722342bce6
+  semantic_content: false
+- target_id: REP:110
+  note_count: 5
+  degree_indices:
+  - 5
+  - 6
+  - 3
+  - 2
+  - 3
+  relative_semitones:
+  - 9
+  - 10
+  - 5
+  - 3
+  - 5
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.25
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: 7490c02869ef178f
+  semantic_content: false
+- target_id: REP:111
+  note_count: 4
+  degree_indices:
+  - 3
+  - 1
+  - 5
+  - 3
+  relative_semitones:
+  - 5
+  - 2
+  - 9
+  - 5
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: f0f4442bfe98380b
+  semantic_content: false
+- target_id: REP:112
+  note_count: 4
+  degree_indices:
+  - 2
+  - 0
+  - 3
+  - 6
+  relative_semitones:
+  - 3
+  - 0
+  - 5
+  - 10
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: e3eb5ab2ddb6715a
+  semantic_content: false
+- target_id: REP:120
+  note_count: 3
+  degree_indices:
+  - 0
+  - 3
+  - 0
+  relative_semitones:
+  - 0
+  - 5
+  - 0
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: 28bd95f2ba695120
+  semantic_content: false
+- target_id: REP:121
+  note_count: 3
+  degree_indices:
+  - 7
+  - 5
+  - 4
+  relative_semitones:
+  - 12
+  - 9
+  - 7
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.0
+  octave_positions:
+  - 0
+  checksum: f311cbe92b0858c0
+  semantic_content: false
+- target_id: REP:122
+  note_count: 3
+  degree_indices:
+  - 6
+  - 3
+  - 5
+  relative_semitones:
+  - 10
+  - 5
+  - 9
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 1.25
+  octave_positions: []
+  checksum: 14b83219f4577be3
+  semantic_content: false
+- target_id: REP:200
+  note_count: 4
+  degree_indices:
+  - 2
+  - 6
+  - 4
+  - 5
+  relative_semitones:
+  - 3
+  - 10
+  - 7
+  - 9
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: 266581004d65578d
+  semantic_content: false
+- target_id: REP:201
+  note_count: 3
+  degree_indices:
+  - 2
+  - 5
+  - 1
+  relative_semitones:
+  - 3
+  - 9
+  - 2
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: c316dc0404ce40f2
+  semantic_content: false
+- target_id: REP:202
+  note_count: 5
+  degree_indices:
+  - 1
+  - 2
+  - 3
+  - 0
+  - 3
+  relative_semitones:
+  - 2
+  - 3
+  - 5
+  - 0
+  - 5
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 1.25
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: ce5d3c14e79e9052
+  semantic_content: false
+- target_id: REP:210
+  note_count: 5
+  degree_indices:
+  - 4
+  - 2
+  - 0
+  - 1
+  - 4
+  relative_semitones:
+  - 7
+  - 3
+  - 0
+  - 2
+  - 7
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 0.75
+  - 0.75
+  - 1.25
+  octave_positions: []
+  checksum: 91c6730c17807789
+  semantic_content: false
+- target_id: REP:211
+  note_count: 3
+  degree_indices:
+  - 1
+  - 5
+  - 4
+  relative_semitones:
+  - 2
+  - 9
+  - 7
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: 3ea50f1cc5158a31
+  semantic_content: false
+- target_id: REP:212
+  note_count: 4
+  degree_indices:
+  - 4
+  - 2
+  - 4
+  - 2
+  relative_semitones:
+  - 7
+  - 3
+  - 7
+  - 3
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: 146c26b9215f29ca
+  semantic_content: false
+- target_id: REP:220
+  note_count: 3
+  degree_indices:
+  - 3
+  - 4
+  - 6
+  relative_semitones:
+  - 5
+  - 7
+  - 10
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: e702f39d8d31da70
+  semantic_content: false
+- target_id: REP:221
+  note_count: 5
+  degree_indices:
+  - 7
+  - 4
+  - 6
+  - 4
+  - 5
+  relative_semitones:
+  - 12
+  - 7
+  - 10
+  - 7
+  - 9
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 0.75
+  - 1.25
+  - 1.25
+  octave_positions:
+  - 0
+  checksum: 7f1f3f9d826520ba
+  semantic_content: false
+- target_id: REP:222
+  note_count: 3
+  degree_indices:
+  - 2
+  - 5
+  - 7
+  relative_semitones:
+  - 3
+  - 9
+  - 12
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.25
+  octave_positions:
+  - 2
+  checksum: 902fde125cec262a
+  semantic_content: false
+- target_id: STR:000
+  note_count: 3
+  degree_indices:
+  - 6
+  - 4
+  - 3
+  relative_semitones:
+  - 11
+  - 9
+  - 7
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: a2ade31b05e71db1
+  semantic_content: false
+- target_id: STR:001
+  note_count: 4
+  degree_indices:
+  - 4
+  - 6
+  - 4
+  - 1
+  relative_semitones:
+  - 9
+  - 11
+  - 9
+  - 2
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: f357a06f59bc42d5
+  semantic_content: false
+- target_id: STR:002
+  note_count: 4
+  degree_indices:
+  - 2
+  - 3
+  - 7
+  - 5
+  relative_semitones:
+  - 5
+  - 7
+  - 12
+  - 10
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.25
+  octave_positions:
+  - 2
+  checksum: 5b095e2044ca2564
+  semantic_content: false
+- target_id: STR:010
+  note_count: 4
+  degree_indices:
+  - 6
+  - 3
+  - 5
+  - 7
+  relative_semitones:
+  - 11
+  - 7
+  - 10
+  - 12
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.0
+  - 1.25
+  octave_positions:
+  - 3
+  checksum: 0a6390cb9de7349d
+  semantic_content: false
+- target_id: STR:011
+  note_count: 3
+  degree_indices:
+  - 7
+  - 6
+  - 4
+  relative_semitones:
+  - 12
+  - 11
+  - 9
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.25
+  octave_positions:
+  - 0
+  checksum: 651a13c5ac8ff45d
+  semantic_content: false
+- target_id: STR:012
+  note_count: 5
+  degree_indices:
+  - 6
+  - 2
+  - 0
+  - 2
+  - 4
+  relative_semitones:
+  - 11
+  - 5
+  - 0
+  - 5
+  - 9
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 0.75
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: '01084dd162869475'
+  semantic_content: false
+- target_id: STR:020
+  note_count: 4
+  degree_indices:
+  - 2
+  - 4
+  - 3
+  - 5
+  relative_semitones:
+  - 5
+  - 9
+  - 7
+  - 10
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: 8f3acd672138ca91
+  semantic_content: false
+- target_id: STR:021
+  note_count: 4
+  degree_indices:
+  - 6
+  - 4
+  - 6
+  - 3
+  relative_semitones:
+  - 11
+  - 9
+  - 11
+  - 7
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: 633702c4d909aa2b
+  semantic_content: false
+- target_id: STR:022
+  note_count: 3
+  degree_indices:
+  - 3
+  - 7
+  - 3
+  relative_semitones:
+  - 7
+  - 12
+  - 7
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.25
+  octave_positions:
+  - 1
+  checksum: 5c2b41c15e9e02bf
+  semantic_content: false
+- target_id: STR:100
+  note_count: 5
+  degree_indices:
+  - 6
+  - 2
+  - 7
+  - 5
+  - 3
+  relative_semitones:
+  - 11
+  - 5
+  - 12
+  - 10
+  - 7
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 1.0
+  - 1.0
+  - 1.0
+  octave_positions:
+  - 2
+  checksum: 4e894697b72ad700
+  semantic_content: false
+- target_id: STR:101
+  note_count: 5
+  degree_indices:
+  - 2
+  - 3
+  - 2
+  - 4
+  - 2
+  relative_semitones:
+  - 5
+  - 7
+  - 5
+  - 9
+  - 5
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 0.75
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: 6e94298545967f16
+  semantic_content: false
+- target_id: STR:102
+  note_count: 5
+  degree_indices:
+  - 4
+  - 6
+  - 2
+  - 1
+  - 4
+  relative_semitones:
+  - 9
+  - 11
+  - 5
+  - 2
+  - 9
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.0
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: c6a04b5c20d17977
+  semantic_content: false
+- target_id: STR:110
+  note_count: 2
+  degree_indices:
+  - 4
+  - 7
+  relative_semitones:
+  - 9
+  - 12
+  duration_beats:
+  - 1.25
+  - 1.25
+  octave_positions:
+  - 1
+  checksum: 445fb73775cf09a1
+  semantic_content: false
+- target_id: STR:111
+  note_count: 3
+  degree_indices:
+  - 5
+  - 4
+  - 6
+  relative_semitones:
+  - 10
+  - 9
+  - 11
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 8a7fa899fb996e91
+  semantic_content: false
+- target_id: STR:112
+  note_count: 4
+  degree_indices:
+  - 0
+  - 1
+  - 3
+  - 5
+  relative_semitones:
+  - 0
+  - 2
+  - 7
+  - 10
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: e2123f6afd9213f5
+  semantic_content: false
+- target_id: STR:120
+  note_count: 3
+  degree_indices:
+  - 5
+  - 7
+  - 6
+  relative_semitones:
+  - 10
+  - 12
+  - 11
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.25
+  octave_positions:
+  - 1
+  checksum: 88d9618ec68cda97
+  semantic_content: false
+- target_id: STR:121
+  note_count: 3
+  degree_indices:
+  - 5
+  - 4
+  - 3
+  relative_semitones:
+  - 10
+  - 9
+  - 7
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: 051055d431aa617a
+  semantic_content: false
+- target_id: STR:122
+  note_count: 3
+  degree_indices:
+  - 3
+  - 5
+  - 6
+  relative_semitones:
+  - 7
+  - 10
+  - 11
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: 0d3d0ba715e7f11b
+  semantic_content: false
+- target_id: STR:200
+  note_count: 3
+  degree_indices:
+  - 1
+  - 2
+  - 4
+  relative_semitones:
+  - 2
+  - 5
+  - 9
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: 204e76f169999ebd
+  semantic_content: false
+- target_id: STR:201
+  note_count: 3
+  degree_indices:
+  - 1
+  - 4
+  - 1
+  relative_semitones:
+  - 2
+  - 9
+  - 2
+  duration_beats:
+  - 1.25
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: e594f3ecc410954d
+  semantic_content: false
+- target_id: STR:202
+  note_count: 3
+  degree_indices:
+  - 6
+  - 2
+  - 5
+  relative_semitones:
+  - 11
+  - 5
+  - 10
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 1.25
+  octave_positions: []
+  checksum: 0443a41c646701e6
+  semantic_content: false
+- target_id: STR:210
+  note_count: 4
+  degree_indices:
+  - 2
+  - 7
+  - 2
+  - 1
+  relative_semitones:
+  - 5
+  - 12
+  - 5
+  - 2
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.0
+  - 1.0
+  octave_positions:
+  - 1
+  checksum: 663851028b1822ba
+  semantic_content: false
+- target_id: STR:211
+  note_count: 3
+  degree_indices:
+  - 3
+  - 2
+  - 1
+  relative_semitones:
+  - 7
+  - 5
+  - 2
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: b8dc53c6afcf3467
+  semantic_content: false
+- target_id: STR:212
+  note_count: 3
+  degree_indices:
+  - 4
+  - 5
+  - 7
+  relative_semitones:
+  - 9
+  - 10
+  - 12
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 0.75
+  octave_positions:
+  - 2
+  checksum: 443d3c0d24ec9229
+  semantic_content: false
+- target_id: STR:220
+  note_count: 4
+  degree_indices:
+  - 3
+  - 2
+  - 1
+  - 0
+  relative_semitones:
+  - 7
+  - 5
+  - 2
+  - 0
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 91b01c6038a5212d
+  semantic_content: false
+- target_id: STR:221
+  note_count: 3
+  degree_indices:
+  - 1
+  - 2
+  - 0
+  relative_semitones:
+  - 2
+  - 5
+  - 0
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: 5dbf7500df4dd1bc
+  semantic_content: false
+- target_id: STR:222
+  note_count: 3
+  degree_indices:
+  - 5
+  - 3
+  - 6
+  relative_semitones:
+  - 10
+  - 7
+  - 11
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: 8c025d4f527732bf
+  semantic_content: false
+- target_id: WRN:000
+  note_count: 4
+  degree_indices:
+  - 5
+  - 3
+  - 1
+  - 4
+  relative_semitones:
+  - 8
+  - 5
+  - 1
+  - 6
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: e22746ad61e03e3d
+  semantic_content: false
+- target_id: WRN:001
+  note_count: 5
+  degree_indices:
+  - 7
+  - 3
+  - 0
+  - 4
+  - 3
+  relative_semitones:
+  - 12
+  - 5
+  - 0
+  - 6
+  - 5
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 1.25
+  - 1.25
+  - 1.0
+  octave_positions:
+  - 0
+  checksum: edf78e7ac1844864
+  semantic_content: false
+- target_id: WRN:002
+  note_count: 3
+  degree_indices:
+  - 2
+  - 5
+  - 1
+  relative_semitones:
+  - 3
+  - 8
+  - 1
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: 7afee32151f1c1ab
+  semantic_content: false
+- target_id: WRN:010
+  note_count: 3
+  degree_indices:
+  - 5
+  - 1
+  - 5
+  relative_semitones:
+  - 8
+  - 1
+  - 8
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 1.25
+  octave_positions: []
+  checksum: e5fc44956e14e129
+  semantic_content: false
+- target_id: WRN:011
+  note_count: 4
+  degree_indices:
+  - 4
+  - 3
+  - 2
+  - 3
+  relative_semitones:
+  - 6
+  - 5
+  - 3
+  - 5
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: d7e6cb8bb819c41f
+  semantic_content: false
+- target_id: WRN:012
+  note_count: 3
+  degree_indices:
+  - 7
+  - 3
+  - 4
+  relative_semitones:
+  - 12
+  - 5
+  - 6
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 0.75
+  octave_positions:
+  - 0
+  checksum: 581cb773eea7d4ac
+  semantic_content: false
+- target_id: WRN:020
+  note_count: 4
+  degree_indices:
+  - 5
+  - 3
+  - 5
+  - 2
+  relative_semitones:
+  - 8
+  - 5
+  - 8
+  - 3
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: ef705ee6ccc0805a
+  semantic_content: false
+- target_id: WRN:021
+  note_count: 4
+  degree_indices:
+  - 5
+  - 1
+  - 4
+  - 2
+  relative_semitones:
+  - 8
+  - 1
+  - 6
+  - 3
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 851cf215be5f9742
+  semantic_content: false
+- target_id: WRN:022
+  note_count: 3
+  degree_indices:
+  - 4
+  - 7
+  - 6
+  relative_semitones:
+  - 6
+  - 12
+  - 10
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.0
+  octave_positions:
+  - 1
+  checksum: ed273aa4785b803c
+  semantic_content: false
+- target_id: WRN:100
+  note_count: 3
+  degree_indices:
+  - 4
+  - 5
+  - 6
+  relative_semitones:
+  - 6
+  - 8
+  - 10
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: 54139ec67d1b144d
+  semantic_content: false
+- target_id: WRN:101
+  note_count: 3
+  degree_indices:
+  - 4
+  - 5
+  - 4
+  relative_semitones:
+  - 6
+  - 8
+  - 6
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: f760cfa24dd3673d
+  semantic_content: false
+- target_id: WRN:102
+  note_count: 4
+  degree_indices:
+  - 5
+  - 7
+  - 6
+  - 2
+  relative_semitones:
+  - 8
+  - 12
+  - 10
+  - 3
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 1.0
+  - 1.0
+  octave_positions:
+  - 1
+  checksum: d38b94e463cb1d81
+  semantic_content: false
+- target_id: WRN:110
+  note_count: 3
+  degree_indices:
+  - 3
+  - 0
+  - 4
+  relative_semitones:
+  - 5
+  - 0
+  - 6
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.0
+  octave_positions: []
+  checksum: 0ffde2903d1a3a13
+  semantic_content: false
+- target_id: WRN:111
+  note_count: 2
+  degree_indices:
+  - 4
+  - 2
+  relative_semitones:
+  - 6
+  - 3
+  duration_beats:
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: 7f4f52dc5ab0e984
+  semantic_content: false
+- target_id: WRN:112
+  note_count: 5
+  degree_indices:
+  - 5
+  - 4
+  - 1
+  - 5
+  - 1
+  relative_semitones:
+  - 8
+  - 6
+  - 1
+  - 8
+  - 1
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: 7a65dea756f10246
+  semantic_content: false
+- target_id: WRN:120
+  note_count: 4
+  degree_indices:
+  - 5
+  - 3
+  - 1
+  - 0
+  relative_semitones:
+  - 8
+  - 5
+  - 1
+  - 0
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 1.25
+  - 1.25
+  octave_positions: []
+  checksum: 108e7009e0a01061
+  semantic_content: false
+- target_id: WRN:121
+  note_count: 4
+  degree_indices:
+  - 5
+  - 6
+  - 2
+  - 0
+  relative_semitones:
+  - 8
+  - 10
+  - 3
+  - 0
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: ea98d6f2f57f6aae
+  semantic_content: false
+- target_id: WRN:122
+  note_count: 5
+  degree_indices:
+  - 2
+  - 3
+  - 0
+  - 1
+  - 5
+  relative_semitones:
+  - 3
+  - 5
+  - 0
+  - 1
+  - 8
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 1.25
+  - 1.0
+  - 1.25
+  octave_positions: []
+  checksum: f1ceff41409f7f4f
+  semantic_content: false
+- target_id: WRN:200
+  note_count: 5
+  degree_indices:
+  - 4
+  - 3
+  - 4
+  - 1
+  - 0
+  relative_semitones:
+  - 6
+  - 5
+  - 6
+  - 1
+  - 0
+  duration_beats:
+  - 1.0
+  - 1.0
+  - 1.25
+  - 1.0
+  - 0.75
+  octave_positions: []
+  checksum: 8180428824910e06
+  semantic_content: false
+- target_id: WRN:201
+  note_count: 5
+  degree_indices:
+  - 0
+  - 3
+  - 0
+  - 3
+  - 2
+  relative_semitones:
+  - 0
+  - 5
+  - 0
+  - 5
+  - 3
+  duration_beats:
+  - 0.75
+  - 0.75
+  - 0.75
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: 41e8cb0477b8996a
+  semantic_content: false
+- target_id: WRN:202
+  note_count: 3
+  degree_indices:
+  - 3
+  - 1
+  - 0
+  relative_semitones:
+  - 5
+  - 1
+  - 0
+  duration_beats:
+  - 1.25
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: 013114536e1e1d0b
+  semantic_content: false
+- target_id: WRN:210
+  note_count: 4
+  degree_indices:
+  - 2
+  - 6
+  - 4
+  - 1
+  relative_semitones:
+  - 3
+  - 10
+  - 6
+  - 1
+  duration_beats:
+  - 1.25
+  - 1.0
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: aabeba4c273688cb
+  semantic_content: false
+- target_id: WRN:211
+  note_count: 3
+  degree_indices:
+  - 6
+  - 4
+  - 0
+  relative_semitones:
+  - 10
+  - 6
+  - 0
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 1.0
+  octave_positions: []
+  checksum: 0cbe8151b30bca05
+  semantic_content: false
+- target_id: WRN:212
+  note_count: 4
+  degree_indices:
+  - 3
+  - 5
+  - 3
+  - 1
+  relative_semitones:
+  - 5
+  - 8
+  - 5
+  - 1
+  duration_beats:
+  - 1.0
+  - 1.25
+  - 0.75
+  - 0.75
+  octave_positions: []
+  checksum: 3cdaadb39003693e
+  semantic_content: false
+- target_id: WRN:220
+  note_count: 4
+  degree_indices:
+  - 7
+  - 6
+  - 4
+  - 0
+  relative_semitones:
+  - 12
+  - 10
+  - 6
+  - 0
+  duration_beats:
+  - 0.75
+  - 1.0
+  - 1.0
+  - 1.25
+  octave_positions:
+  - 0
+  checksum: 38e259b5b7473af2
+  semantic_content: false
+- target_id: WRN:221
+  note_count: 3
+  degree_indices:
+  - 1
+  - 3
+  - 6
+  relative_semitones:
+  - 1
+  - 5
+  - 10
+  duration_beats:
+  - 0.75
+  - 1.25
+  - 0.75
+  octave_positions: []
+  checksum: 150e812296786ba8
+  semantic_content: false
+- target_id: WRN:222
+  note_count: 4
+  degree_indices:
+  - 2
+  - 3
+  - 5
+  - 6
+  relative_semitones:
+  - 3
+  - 5
+  - 8
+  - 10
+  duration_beats:
+  - 1.0
+  - 0.75
+  - 1.25
+  - 1.0
+  octave_positions: []
+  checksum: ce81894c33434a76
+  semantic_content: false

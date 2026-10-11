@@ -1,0 +1,43 @@
+format: EZ-CONCEPT-INTAKE-1
+version: 1.0.0
+status: canonical_workflow_nonsemantic
+canonical_semantic_changes: 0
+purpose: Route unfamiliar ordinary-language concepts without silently broadening, inventing, or canonizing Era Zero meanings.
+principles:
+  - Meaning is reviewed before a convenient English word is assigned authority.
+  - Existing invariant definitions and boundaries control consolidation.
+  - A new English surface form is preferred when it exactly expresses an existing sense.
+  - Compounds are preferred when independent canonical centers must be combined.
+  - Semantic IR or grammar handles structure that is not lexical content.
+  - A gap is honest output; phonemic labels may identify nouns but never replace predicates or descriptors.
+decision_order:
+  - id: existing_surface
+    result: consolidate_with_reviewed_english_sense
+    criterion: A reviewed sense already entails the submitted meaning without lost distinctions.
+  - id: existing_atom
+    result: propose_noncanonical_surface_mapping
+    criterion: One canonical invariant definition entails the concept, but its English surface form is not indexed.
+  - id: existing_compound
+    result: consolidate_with_approved_compound
+    criterion: An approved compound graph entails the concept.
+  - id: proposed_compound
+    result: open_compound_semantic_review
+    criterion: Multiple canonical atoms jointly express the concept and the graph relation is stable.
+  - id: semantic_ir
+    result: route_to_semantic_ir_template
+    criterion: The concept is an event structure, role binding, transition, scope, quantity, or other utterance structure.
+  - id: grammar
+    result: route_to_grammar
+    criterion: The concept is primarily a grammatical relation or operator.
+  - id: documented_gap
+    result: retain_explicit_vocabulary_gap
+    criterion: No approved representation is sufficient and no permanent root decision has been made.
+  - id: future_era
+    result: open_atomic_semantic_design_review
+    criterion: The concept appears irreducible, high-value, family-coherent, cross-family distinct, and repeatedly needed after corpus review.
+proposal_states: [observed, triaged, consolidated, semantic_review, approved, rejected, superseded, future_era]
+required_fields: [proposal_id, submitted_form, intended_meaning, example_context, proposed_part_of_speech, corpus_frequency, candidate_routes, collision_notes, reviewer_decision, status]
+prohibitions:
+  - No proposal becomes canonical from automated matching.
+  - No unfamiliar verb, adjective, or semantic descriptor becomes an EZNAME phonemic label.
+  - No new atom is allocated until family fit, address fit, atomicity, neighbor separation, cross-family separation, and compound alternatives are reviewed.

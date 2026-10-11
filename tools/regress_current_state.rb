@@ -74,6 +74,14 @@ commands = [
     [node, File.join(ROOT, "tools/validate_viseme_performance.mjs")]
   ],
   [
+    "validate optional recognition audio checksums",
+    [node, File.join(ROOT, "tools/validate_recognition_audio.mjs")]
+  ],
+  [
+    "validate recognition controls, meaning-rich dictionary, and concept intake UI",
+    [node, File.join(ROOT, "tools/validate_recognition_and_dictionary_ui.mjs")]
+  ],
+  [
     "validate selectable audio voice envelopes",
     [node, File.join(ROOT, "tools/validate_audio_voices.mjs")]
   ],
@@ -92,6 +100,10 @@ commands = [
   [
     "validate complete plain-English discovery and matching layer",
     [node, File.join(ROOT, "tools/validate_plain_english_index.mjs")]
+  ],
+  [
+    "validate lexical/POS audit and DBA concept-intake workflow",
+    [ruby, File.join(ROOT, "tools/validate_lexical_and_concept_intake.rb")]
   ],
   [
     "validate translator workbench product application",

@@ -6,7 +6,7 @@
   <meta name="description" content="Browser workbench for conservative English-to-Era-Zero translation, clarification, formal notation, SVG, and MIDI export.">
   <title>Era Zero Translator Workbench</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1420'/%3E%3Cpath d='M14 10h36v8H24v10h22v8H24v10h26v8H14z' fill='%2361e1d2'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="./styles.css?v=1.13.0">
+  <link rel="stylesheet" href="./styles.css?v=1.14.0">
 </head>
 <body>
   <div class="shell">
@@ -15,7 +15,7 @@
         <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
         <span><strong>ERA ZERO</strong><small>Translator Workbench</small></span>
       </a>
-      <div class="release"><span class="status-dot"></span><span id="serviceStatus">Checking engine</span><b>v1.13.0</b></div>
+      <div class="release"><span class="status-dot"></span><span id="serviceStatus">Checking engine</span><b>v1.14.0</b></div>
     </header>
     <nav class="app-tabs" role="tablist" aria-label="Workbench view">
       <button class="app-tab active" data-app-tab="translator" role="tab" aria-selected="true">Translator</button>
@@ -57,6 +57,14 @@
               </select>
               <small id="soundVoiceDescription">The original clear reference-tone voice.</small>
             </label>
+            <label class="voice-picker" for="soundMode">Sound detail
+              <select id="soundMode">
+                <option value="recognition">Recognition phrase</option>
+                <option value="strict">Strict canonical only</option>
+                <option value="learning">Slower learning phrase</option>
+              </select>
+              <small id="soundModeDescription">Adds an optional identity checksum; meaning and grammar stay unchanged.</small>
+            </label>
             <p id="inputHint">Any phrase may be analyzed. Known meanings translate; unfamiliar nouns may use sound labels, while unknown verbs and descriptors remain visible gaps.</p>
             <button id="analyzeButton" class="primary">Translate English <span>→</span></button>
           </div>
@@ -86,9 +94,16 @@
         </div>
         <div class="catalog-controls">
           <label>Search the full language<input id="catalogSearch" type="search" placeholder="word, definition, family, address, or sense ID"></label>
+          <label>Jump to meaning<select id="catalogJump"><option value="">Choose a root or compound</option></select></label>
           <label>Route<select id="catalogRoute"><option value="all">All routes</option><option value="atom">Atomic roots</option><option value="compound">Compounds</option><option value="semantic_ir">Semantic IR</option><option value="grammar">Grammar</option><option value="gap">Documented gaps</option></select></label>
           <label>Family<select id="catalogFamily"><option value="all">All families</option><option>LIF</option><option>MOV</option><option>MAT</option><option>MIN</option><option>CON</option><option>STR</option><option>WRN</option><option>REP</option><option>LOG</option><option>DAT</option><option>CRE</option><option>ORI</option><option value="CMP">Compounds</option></select></label>
         </div>
+        <section class="concept-intake" aria-labelledby="conceptIntakeTitle">
+          <div><p class="eyebrow">DBA concept intake</p><h3 id="conceptIntakeTitle">Check a missing word before proposing anything new.</h3><p>The analyzer first tries an existing surface, atom, compound, Semantic IR, grammar, or documented gap. It never canonizes a new meaning automatically.</p></div>
+          <label>Word or concept<input id="conceptInput" placeholder="e.g. teleport, programmer, compress a file"></label>
+          <button id="analyzeConcept">Check concept route</button>
+          <output id="conceptResult" class="hidden" aria-live="polite"></output>
+        </section>
         <div class="dictionary-body">
           <div>
             <p id="catalogSummary" class="catalog-summary"></p>
@@ -165,7 +180,7 @@
         </nav>
         <div class="output-card card">
           <div id="panel-meaning" class="output-panel active">
-            <div class="meaning-summary"><span id="targetBadge"></span><h3 id="meaningTitle"></h3><p class="translation-line"><b>Your English</b><q id="sourceEcho"></q></p><p class="translation-line"><b>Era Zero canonical form</b><code id="controlledText"></code></p><div class="translation-actions"><button id="hearTranslation">▶ Hear Era Zero</button><button id="showCharacter">◉ Character close-up</button><button id="downloadViseme">Download viseme file</button><span>Hear the complete performance or use its synchronized character file.</span></div><div class="sound-components" aria-label="Complete sound construction"><div><span>Family prefix</span><code id="prefixText"></code></div><div><span>Full sung carrier</span><code id="carrierText"></code></div><div><span>Family opening notes</span><code id="familyNotes"></code></div><div><span>Address path</span><code id="addressNotes"></code></div><div><span>Runtime ending</span><code id="runtimeNote"></code></div><div><span>Sentence contour</span><code id="contourNotes"></code></div></div></div>
+            <div class="meaning-summary"><span id="targetBadge"></span><h3 id="meaningTitle"></h3><p class="translation-line"><b>Your English</b><q id="sourceEcho"></q></p><p class="translation-line"><b>Era Zero canonical form</b><code id="controlledText"></code></p><div class="translation-actions"><button id="hearTranslation">▶ Hear Era Zero</button><button id="showCharacter">◉ Character close-up</button><button id="downloadViseme">Download viseme file</button><span>Hear the complete performance or use its synchronized character file.</span></div><div class="sound-components" aria-label="Complete sound construction"><div><span>Family prefix</span><code id="prefixText"></code></div><div><span>Full sung carrier</span><code id="carrierText"></code></div><div><span>Family opening notes</span><code id="familyNotes"></code></div><div><span>Address path</span><code id="addressNotes"></code></div><div><span>Recognition checksum</span><code id="recognitionNotes"></code></div><div><span>Runtime ending</span><code id="runtimeNote"></code></div><div><span>Sentence contour</span><code id="contourNotes"></code></div></div></div>
             <div class="identity-grid"><div><span>Utterance</span><code id="utteranceId"></code></div><div><span>Formal identity</span><code id="formalId"></code></div><div><span>Round trip</span><strong id="roundTrip"></strong></div></div>
           </div>
           <div id="panel-glyph" class="output-panel">
@@ -262,6 +277,6 @@
     </section>
   </div>
   <div id="toast" role="status" aria-live="polite"></div>
-  <script type="module" src="./app.js?v=1.13.0"></script>
+  <script type="module" src="./app.js?v=1.14.0"></script>
 </body>
 </html>

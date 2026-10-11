@@ -1,0 +1,24 @@
+format: EZ-CONCEPT-INTAKE-EXAMPLES-1
+version: 1.0.0
+examples:
+  - submitted_form: programmer
+    intended_meaning: a person whose characteristic role is creating or maintaining executable programs
+    proposed_part_of_speech: noun
+    decision: proposed_compound
+    rationale: Preserve the person as a living referent and represent the programming role compositionally; use a phonemic label only for the individual's name.
+  - submitted_form: found
+    intended_meaning: completed discovery of a target
+    proposed_part_of_speech: verb
+    decision: existing_surface
+    target_id: MIN:110
+    rationale: The reviewed game/story surface profile already preserves the completed target-model change and discloses the generalization.
+  - submitted_form: delete a file
+    intended_meaning: cause represented information to cease being available as that record
+    proposed_part_of_speech: verb_phrase
+    decision: semantic_ir
+    rationale: The reviewed profile preserves deletion as an operation template; no existing Data atom is allowed to pretend that it inherently means deletion.
+  - submitted_form: teleport
+    intended_meaning: change physical position without occupying intermediate positions
+    proposed_part_of_speech: verb
+    decision: documented_gap
+    rationale: Existing movement and physical-displacement meanings do not entail absence of an intermediate path; do not erase that distinction.

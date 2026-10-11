@@ -112,6 +112,18 @@ Checks passed: 10; checks failed: 0
 Viseme performance: PASS · 5265 variants · 60051 cues · 80601 assertions
 ```
 
+## PASS — validate optional recognition audio checksums
+
+```text
+Recognition audio: PASS · 5265 variants · 28596 assertions
+```
+
+## PASS — validate recognition controls, meaning-rich dictionary, and concept intake UI
+
+```text
+Recognition/dictionary UI: PASS · 6 intake probes
+```
+
 ## PASS — validate selectable audio voice envelopes
 
 ```text
@@ -143,6 +155,12 @@ Checks passed: 86; failed: 0; phrases: 69
 Plain-English matching: PASS (352/352 labels; 352 complete mappings)
 ```
 
+## PASS — validate lexical/POS audit and DBA concept-intake workflow
+
+```text
+Lexical/concept intake: PASS · 7 checks
+```
+
 ## PASS — validate translator workbench product application
 
 ```text
@@ -159,7 +177,7 @@ Product frontend syntax: PASS (local source, browser release, viseme compiler)
 ## PASS — validate translator workbench over real localhost HTTP
 
 ```text
-Product HTTP smoke: PASS (v1.13.0 complete plain-English matching, keyed lore conversations, two-being conversation workbench and MP3, computer translation profile, selectable voices, layered character rig, health, analyze, exact round trip)
+Product HTTP smoke: PASS (v1.14.0 recognition audio, meaning-rich dictionary, concept intake, complete plain-English matching, conversations, selectable voices, layered character rig, health, analyze, exact round trip)
 ```
 
 ## PASS — validate the complete REP:000–222 family
