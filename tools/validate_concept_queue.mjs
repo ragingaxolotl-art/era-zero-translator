@@ -1,0 +1,44 @@
+#!/usr/bin/env node
+import fs from'node:fs/promises';
+import path from'node:path';
+import{fileURLToPath}from'node:url';
+import{createProposal,emptyQueue,addProposal,reviewProposal,approvedLocalSenses,loadQueue,saveQueue,validateQueue}from'../pages/concept_intake.mjs';
+import{analyzeEnglish}from'../pages/english.mjs';
+
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const data=JSON.parse(await fs.readFile(path.join(root,'pages/data/index.json'),'utf8'));
+const html=await fs.readFile(path.join(root,'pages/index.html'),'utf8');
+const app=await fs.readFile(path.join(root,'pages/app.js'),'utf8');
+const failures=[];let assertions=0;
+const check=(value,message)=>{assertions++;if(!value)failures.push(message)};
+const rejected=(action,message)=>{let threw=false;try{action()}catch{threw=true}check(threw,message)};
+const memory=new Map(),storage={getItem:key=>memory.get(key)||null,setItem:(key,value)=>memory.set(key,value)};
+for(const id of['conceptMeaning','conceptContext','conceptPos','saveConcept','exportConcepts','importConcepts','conceptQueue'])check(html.includes(`id="${id}"`),`missing ${id} control`);
+check(app.includes('approvedLocalSenses(state.conceptQueue,state.data)')&&app.includes('commitConceptQueue'),'local review integration');
+const proposal=createProposal({submitted_form:'vowlink',intended_meaning:'The obtaining of one thing presently depends on a distinct ground.',example_context:'The quest gate vowlinks to a key.',proposed_part_of_speech:'verb',candidate_routes:['existing_atom:ORI:211'],candidate_target:'ORI:211'},{id:'EZC:00000001',now:'2026-10-10T00:00:00Z'});
+let queue=addProposal(emptyQueue(),proposal,data);
+saveQueue(storage,queue,data);
+check(loadQueue(storage,data).proposals.length===1,'persistence round trip');
+check(approvedLocalSenses(queue,data).length===0,'unreviewed proposal is not active');
+rejected(()=>reviewProposal(queue,proposal.proposal_id,{status:'approved',reviewed_target:'ORI:211',reviewer_name:'reviewer',reviewer_decision:'Entailed',collision_notes:'Checked'},data),'approval requires explicit entailment');
+rejected(()=>reviewProposal(queue,proposal.proposal_id,{status:'approved',reviewed_target:'ORI:999',reviewer_name:'reviewer',reviewer_decision:'Entailed',collision_notes:'Checked',entailment_confirmed:true},data),'approval rejects nonexistent target');
+queue=reviewProposal(queue,proposal.proposal_id,{status:'approved',reviewed_target:'ORI:211',reviewer_name:'Test reviewer',reviewer_decision:'The invariant covers this exact dependence.',collision_notes:'Not desire or possession.',entailment_confirmed:true},data,{now:'2026-10-11T00:00:00Z'});
+check(queue.proposals[0].history.length===2,'review history retained');
+check(queue.proposals[0].entailment_confirmed===true,'entailment attestation retained for export');
+const overlay=approvedLocalSenses(queue,data);
+check(overlay.length===1&&overlay[0].fidelity==='reviewed_local_mapping','reviewed noncanonical overlay created');
+const before=analyzeEnglish('vowlink',data),after=analyzeEnglish('vowlink',{...data,local_senses:overlay});
+check(!before.decision.auto_resolution_allowed&&after.candidates[0]?.target_id==='ORI:211'&&after.decision.auto_resolution_allowed,'local reviewed surface becomes usable, without a new root');
+check(data.atoms.length===324&&data.compounds.length===28,'canonical inventory unchanged');
+const tampered=structuredClone(queue);tampered.proposals[0].reviewed_target='ORI:999';
+rejected(()=>validateQueue(tampered,data),'import rejects unrecognized approved target');
+const unconfirmed=structuredClone(queue);unconfirmed.proposals[0].entailment_confirmed=false;
+rejected(()=>validateQueue(unconfirmed,data),'import rejects missing entailment attestation');
+const reopened=reviewProposal(queue,proposal.proposal_id,{status:'semantic_review',reviewer_name:'Test reviewer',reviewer_decision:'Reopen collision audit.',collision_notes:'Needs more comparison.'},data);
+check(approvedLocalSenses(reopened,data).length===0,'reopened mapping becomes inactive');
+rejected(()=>createProposal({submitted_form:'x',intended_meaning:'y',example_context:'',proposed_part_of_speech:'verb'}),'incomplete evidence rejected');
+const status=failures.length?'FAIL':'PASS';
+const report=`# Persistent concept review validation\n\nStatus: **${status}**\n\n- Assertions: **${assertions}**\n- Local queue persistence and import validation: tested\n- Reviewed existing-target mapping: usable only after attested review\n- Reopened mapping: inactive\n- Canonical semantic additions: **0**\n- Failures: **${failures.length}**\n${failures.length?'\n'+failures.map(x=>`- ${x}`).join('\n')+'\n':''}`;
+await fs.writeFile(path.join(root,'reports/concept_queue_validation.md'),report);
+console.log(`Concept queue: ${status} · ${assertions} assertions`);
+if(failures.length){console.error(failures.join('\n'));process.exit(1)}

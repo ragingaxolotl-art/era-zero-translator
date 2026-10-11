@@ -115,13 +115,25 @@ Viseme performance: PASS · 5265 variants · 60051 cues · 80601 assertions
 ## PASS — validate optional recognition audio checksums
 
 ```text
-Recognition audio: PASS · 5265 variants · 28596 assertions
+Recognition audio: PASS · 5265 variants · 31755 assertions
+```
+
+## PASS — validate recorded-waveform recognition checks against canonical form
+
+```text
+Recognition waveform: PASS · 108 performances · 327 assertions
 ```
 
 ## PASS — validate recognition controls, meaning-rich dictionary, and concept intake UI
 
 ```text
 Recognition/dictionary UI: PASS · 6 intake probes
+```
+
+## PASS — validate persistent DBA concept review queue and noncanonical surface approvals
+
+```text
+Concept queue: PASS · 21 assertions
 ```
 
 ## PASS — validate selectable audio voice envelopes
@@ -147,6 +159,12 @@ Lore conversation validation: PASS · 61 passed · 0 failed · 5 presets · 22 t
 ```text
 Game/story translation audit: PASS
 Checks passed: 86; failed: 0; phrases: 69
+```
+
+## PASS — audit ordinary-language, game, and lore phrase coverage
+
+```text
+Ordinary-language corpus: PASS · 144 phrases · 0 failures
 ```
 
 ## PASS — validate complete plain-English discovery and matching layer
@@ -177,7 +195,7 @@ Product frontend syntax: PASS (local source, browser release, viseme compiler)
 ## PASS — validate translator workbench over real localhost HTTP
 
 ```text
-Product HTTP smoke: PASS (v1.14.0 recognition audio, meaning-rich dictionary, concept intake, complete plain-English matching, conversations, selectable voices, layered character rig, health, analyze, exact round trip)
+Product HTTP smoke: PASS (v1.15.0 recognition performance decoding, meaning-rich dictionary, persistent concept review, complete plain-English matching, conversations, selectable voices, layered character rig, health, analyze, exact round trip)
 ```
 
 ## PASS — validate the complete REP:000–222 family

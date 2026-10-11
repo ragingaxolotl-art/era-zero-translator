@@ -2,13 +2,13 @@
 
 Status: **PASS**
 
-- Checks passed: **92**
+- Checks passed: **93**
 - Checks failed: **0**
 - Phrase cases: **75**
 - Dictionary roots: **324**
 - Compounds: **28**
 - Indexed senses: **436**
-- Public document records: **339**
+- Public document records: **343**
 
 ## Phrase matrix
 
@@ -21,7 +21,7 @@ Status: **PASS**
 | Receive the data. | DAT:110 | yes | 1 | command | receive:canonical, the:function_word, data:canonical | PASS |
 | Receive the warning. | CON:111 | yes | 1 | command | receive:canonical, the:function_word, warning:phonemic_label | PASS |
 | Change my mind. | MIN:101 | yes | 1 | command | change:canonical, my:participant_reference, mind:phonemic_label | PASS |
-| Change the file. | DAT:101 | yes | 1 | command | change:canonical, the:function_word, file:canonical | PASS |
+| Change the file. | DAT:101 | no | 1 | command | change:canonical, the:function_word, file:canonical | PASS |
 | Change the layout. | STR:101 | yes | 1 | command | change:canonical, the:function_word, layout:canonical | PASS |
 | Run the program. | program_execution | no | 1 | assertion | run:structural, the:function_word, program:canonical | PASS |
 | Run the engine. | machine_operation | no | 1 | assertion | run:structural, the:function_word, engine:phonemic_label | PASS |
@@ -92,12 +92,13 @@ Status: **PASS**
 
 ## Non-phrase checks
 
+- **PASS** — underspecified file change requires domain clarification
 - **PASS** — 324 canonical dictionary roots
 - **PASS** — 12 complete 27-root families
 - **PASS** — all generated root fields available
 - **PASS** — 28 complete compound records
 - **PASS** — 436 indexed dictionary options
-- **PASS** — document manifest count is exact: 339 records
+- **PASS** — document manifest count is exact: 343 records
 - **PASS** — every document path exists
 - **PASS** — required authority documents are public
 - **PASS** — all evidence categories available

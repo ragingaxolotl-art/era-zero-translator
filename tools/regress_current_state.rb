@@ -78,8 +78,16 @@ commands = [
     [node, File.join(ROOT, "tools/validate_recognition_audio.mjs")]
   ],
   [
+    "validate recorded-waveform recognition checks against canonical form",
+    [node, File.join(ROOT, "tools/validate_performance_audio.mjs")]
+  ],
+  [
     "validate recognition controls, meaning-rich dictionary, and concept intake UI",
     [node, File.join(ROOT, "tools/validate_recognition_and_dictionary_ui.mjs")]
+  ],
+  [
+    "validate persistent DBA concept review queue and noncanonical surface approvals",
+    [node, File.join(ROOT, "tools/validate_concept_queue.mjs")]
   ],
   [
     "validate selectable audio voice envelopes",
@@ -96,6 +104,10 @@ commands = [
   [
     "audit game and story English translation profile",
     [node, File.join(ROOT, "tools/audit_game_story_translation.mjs")]
+  ],
+  [
+    "audit ordinary-language, game, and lore phrase coverage",
+    [node, File.join(ROOT, "tools/audit_ordinary_language_coverage.mjs")]
   ],
   [
     "validate complete plain-English discovery and matching layer",

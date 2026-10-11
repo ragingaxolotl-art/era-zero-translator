@@ -8,6 +8,8 @@ const pages=path.join(root,'pages');
 const index=JSON.parse(await fs.readFile(path.join(pages,'data/index.json'),'utf8'));
 const{recognitionForTarget,verifyRecognition}=await import(path.join(pages,'recognition.mjs'));
 const{visemePlanFromFormal}=await import(path.join(pages,'visemes.mjs'));
+const{midiFromPerformance,notesFromMidi,verifyPerformanceMidi,verifyPerformanceNotes}=await import(path.join(pages,'performance_codec.mjs'));
+const{midiFromFormal}=await import(path.join(pages,'engine.mjs'));
 const registry=index.recognition_audio,failures=[];
 let assertions=0,variants=0;
 const check=(condition,message)=>{assertions++;if(!condition)failures.push(message)};
@@ -26,6 +28,19 @@ for(const record of registry.records){
 }
 for(const[canonicalId,relative]of Object.entries(index.resolution_files)){
   const document=JSON.parse(await fs.readFile(path.join(pages,relative.replace(/^\.\//,'')),'utf8'));
+  const reference=document.variants['assertion:1'].formal;
+  for(const mode of ['strict','recognition','learning']){
+    const bytes=midiFromPerformance(reference,registry,mode),parsed=notesFromMidi(bytes),verified=verifyPerformanceMidi(reference,registry,bytes);
+    check(parsed.notes.length>0&&verified.status===(mode==='strict'?'valid_strict_absence':'valid_checksum'),`${canonicalId} ${mode} performance MIDI round trip`);
+    check(verified.semantic_content===false&&verified.semantic_identity_changed===false,`${canonicalId} ${mode} nonsemantic performance boundary`);
+    if(mode==='recognition'){
+      const changed=parsed.notes.map(note=>note.midi),phrase=visemePlanFromFormal(reference,{mode:'recognition',recognitionRegistry:registry}).cues.findIndex(cue=>cue.section==='recognition_phrase');
+      changed[phrase]=changed[phrase]===127?126:changed[phrase]+1;
+      check(verifyPerformanceNotes(reference,registry,changed).status==='checksum_or_path_mismatch',`${canonicalId} corrupted identity phrase rejected`);
+      check(verifyPerformanceNotes(reference,registry,parsed.notes.slice(0,-1)).status==='checksum_or_path_mismatch',`${canonicalId} missing contour note rejected`);
+    }
+  }
+  check(verifyPerformanceMidi(reference,registry,midiFromFormal(reference)).status==='valid_strict_absence',`${canonicalId} canonical MIDI is valid strict absence`);
   for(const[key,result]of Object.entries(document.variants)){
     variants++;
     const strict=visemePlanFromFormal(result.formal);
@@ -42,7 +57,7 @@ for(const[canonicalId,relative]of Object.entries(index.resolution_files)){
   }
 }
 const status=failures.length?'FAIL':'PASS';
-const report=`# Recognition audio validation\n\nStatus: **${status}**\n\n- Registry records: **${registry.records.length}**\n- Hosted formal variants: **${variants}**\n- Assertions: **${assertions}**\n- Globally unique pitch signatures: **${signatures.size}**\n- Note-count range: **2–5**\n- Strict canonical presentation changed: **no**\n- Semantic authority changed: **no**\n- Failures: **${failures.length}**\n\n${failures.length?'## Failures\n\n'+failures.map(item=>`- ${item}`).join('\n')+'\n':'Every optional recognition phrase is deterministic, unique, musically bounded, checksum-verifiable, and cleanly separated from address, runtime, and contour channels.\n'}`;
+const report=`# Recognition audio validation\n\nStatus: **${status}**\n\n- Registry records: **${registry.records.length}**\n- Hosted formal variants: **${variants}**\n- Assertions: **${assertions}**\n- Globally unique pitch signatures: **${signatures.size}**\n- Note-count range: **2–5**\n- Performance MIDI: strict, recognition, and learning round-trips for every hosted target\n- Corrupt identity notes and missing contour notes: rejected\n- Canonical MIDI: accepted as strict absence\n- Strict canonical presentation changed: **no**\n- Semantic authority changed: **no**\n- Failures: **${failures.length}**\n\n${failures.length?'## Failures\n\n'+failures.map(item=>`- ${item}`).join('\n')+'\n':'Every optional recognition phrase is deterministic, unique, musically bounded, checksum-verifiable from a real MIDI performance, and cleanly separated from address, runtime, and contour channels.\n'}`;
 await fs.writeFile(path.join(root,'reports/recognition_audio_validation.md'),report);
 console.log(`Recognition audio: ${status} · ${variants} variants · ${assertions} assertions`);
 if(failures.length){console.error(failures.slice(0,30).join('\n'));process.exit(1)}

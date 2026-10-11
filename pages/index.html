@@ -6,7 +6,7 @@
   <meta name="description" content="Browser workbench for conservative English-to-Era-Zero translation, clarification, formal notation, SVG, and MIDI export.">
   <title>Era Zero Translator Workbench</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1420'/%3E%3Cpath d='M14 10h36v8H24v10h22v8H24v10h26v8H14z' fill='%2361e1d2'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="./styles.css?v=1.14.0">
+    <link rel="stylesheet" href="./styles.css?v=1.15.0">
 </head>
 <body>
   <div class="shell">
@@ -15,7 +15,7 @@
         <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
         <span><strong>ERA ZERO</strong><small>Translator Workbench</small></span>
       </a>
-      <div class="release"><span class="status-dot"></span><span id="serviceStatus">Checking engine</span><b>v1.14.0</b></div>
+      <div class="release"><span class="status-dot"></span><span id="serviceStatus">Checking engine</span><b>v1.15.0</b></div>
     </header>
     <nav class="app-tabs" role="tablist" aria-label="Workbench view">
       <button class="app-tab active" data-app-tab="translator" role="tab" aria-selected="true">Translator</button>
@@ -103,6 +103,7 @@
           <label>Word or concept<input id="conceptInput" placeholder="e.g. teleport, programmer, compress a file"></label>
           <button id="analyzeConcept">Check concept route</button>
           <output id="conceptResult" class="hidden" aria-live="polite"></output>
+          <div class="concept-review"><h4>Save a noncanonical concept review</h4><p>Local to this browser until exported. Approval below can add an English surface for an existing canonical target; it cannot create a root or compound.</p><label>Intended meaning<textarea id="conceptMeaning" placeholder="What exactly do you mean?"></textarea></label><label>Example context<textarea id="conceptContext" placeholder="A sentence from your story, game, or programming use"></textarea></label><label>Part of speech<select id="conceptPos"><option value="verb">Verb</option><option value="noun">Noun</option><option value="adjective">Adjective</option><option value="verb_phrase">Verb phrase</option><option value="noun_phrase">Noun phrase</option><option value="adverb">Adverb</option><option value="other">Other / undecided</option></select></label><button id="saveConcept">Save proposal</button><button id="exportConcepts">Export review queue</button><label class="file-button">Import review queue<input id="importConcepts" type="file" accept="application/json,.json"></label><p id="conceptQueueSummary"></p><div id="conceptQueue" class="concept-queue"></div></div>
         </section>
         <div class="dictionary-body">
           <div>
@@ -180,7 +181,8 @@
         </nav>
         <div class="output-card card">
           <div id="panel-meaning" class="output-panel active">
-            <div class="meaning-summary"><span id="targetBadge"></span><h3 id="meaningTitle"></h3><p class="translation-line"><b>Your English</b><q id="sourceEcho"></q></p><p class="translation-line"><b>Era Zero canonical form</b><code id="controlledText"></code></p><div class="translation-actions"><button id="hearTranslation">▶ Hear Era Zero</button><button id="showCharacter">◉ Character close-up</button><button id="downloadViseme">Download viseme file</button><span>Hear the complete performance or use its synchronized character file.</span></div><div class="sound-components" aria-label="Complete sound construction"><div><span>Family prefix</span><code id="prefixText"></code></div><div><span>Full sung carrier</span><code id="carrierText"></code></div><div><span>Family opening notes</span><code id="familyNotes"></code></div><div><span>Address path</span><code id="addressNotes"></code></div><div><span>Recognition checksum</span><code id="recognitionNotes"></code></div><div><span>Runtime ending</span><code id="runtimeNote"></code></div><div><span>Sentence contour</span><code id="contourNotes"></code></div></div></div>
+            <div class="meaning-summary"><span id="targetBadge"></span><h3 id="meaningTitle"></h3><p class="translation-line"><b>Your English</b><q id="sourceEcho"></q></p><p class="translation-line"><b>Era Zero canonical form</b><code id="controlledText"></code></p><div class="translation-actions"><button id="hearTranslation">▶ Hear Era Zero</button><button id="showCharacter">◉ Character close-up</button><button id="downloadViseme">Download viseme file</button><span>Hear the complete performance or use its synchronized character file.</span></div><div class="translation-actions"><button id="downloadPerformanceMidi">Download audible performance MIDI</button><label class="file-button">Check performance MIDI<input id="verifyPerformanceMidi" type="file" accept=".mid,.midi,audio/midi,audio/x-midi"></label><span>Checks family, address, optional identity phrase, runtime, and contour against this canonical form. This is a pitch-exact MIDI check, not microphone recognition.</span></div><output id="performanceCheck" aria-live="polite"></output><div class="sound-components" aria-label="Complete sound construction"><div><span>Family prefix</span><code id="prefixText"></code></div><div><span>Full sung carrier</span><code id="carrierText"></code></div><div><span>Family opening notes</span><code id="familyNotes"></code></div><div><span>Address path</span><code id="addressNotes"></code></div><div><span>Recognition checksum</span><code id="recognitionNotes"></code></div><div><span>Runtime ending</span><code id="runtimeNote"></code></div><div><span>Sentence contour</span><code id="contourNotes"></code></div></div></div>
+            <div class="translation-actions"><button id="downloadPerformanceWav">Download reference WAV</button><button id="selfCheckAudio">Self-check reference audio</button><label class="file-button">Check recorded audio<input id="verifyPerformanceAudio" type="file" accept="audio/*,.wav,.mp3,.m4a"></label><span>Audio verification works best for clean, monophonic tones. It checks the selected canonical form; noisy, overlapping, or unrelated recordings are not decoded as new meanings.</span></div><output id="audioCheck" aria-live="polite"></output>
             <div class="identity-grid"><div><span>Utterance</span><code id="utteranceId"></code></div><div><span>Formal identity</span><code id="formalId"></code></div><div><span>Round trip</span><strong id="roundTrip"></strong></div></div>
           </div>
           <div id="panel-glyph" class="output-panel">
@@ -277,6 +279,6 @@
     </section>
   </div>
   <div id="toast" role="status" aria-live="polite"></div>
-  <script type="module" src="./app.js?v=1.14.0"></script>
+    <script type="module" src="./app.js?v=1.15.0"></script>
 </body>
 </html>

@@ -10,11 +10,13 @@ const app=await fs.readFile(path.join(root,'pages/app.js'),'utf8');
 const data=JSON.parse(await fs.readFile(path.join(root,'pages/data/index.json'),'utf8'));
 const failures=[];
 const check=(value,message)=>{if(!value)failures.push(message)};
-for(const id of['soundMode','recognitionNotes','catalogJump','conceptInput','analyzeConcept','conceptResult'])check(html.includes(`id="${id}"`),`missing UI control ${id}`);
+for(const id of['soundMode','recognitionNotes','catalogJump','conceptInput','analyzeConcept','conceptResult','downloadPerformanceMidi','verifyPerformanceMidi','performanceCheck','downloadPerformanceWav','selfCheckAudio','verifyPerformanceAudio','audioCheck','saveConcept','exportConcepts','importConcepts','conceptQueue'])check(html.includes(`id="${id}"`),`missing UI control ${id}`);
 for(const mode of['strict','recognition','learning'])check(html.includes(`value="${mode}"`),`missing sound mode ${mode}`);
 check(app.includes('matchOptionLabel(match)')&&app.includes('record?.core_definition||record?.invariant_definition'),'word selector lacks ID/title/meaning labels');
 check(app.includes('renderRootJump()')&&app.includes('item.id} — ${item.title} — ${item.definition}'),'dictionary jump lacks ID/title/meaning labels');
 check(app.includes("section==='recognition_phrase'")&&app.includes('recognitionOptions()'),'optional recognition audio is not wired into playback');
+check(app.includes('verifyPerformanceMidi(state.resolution.formal')&&app.includes('midiFromPerformance(state.resolution.formal'),'performance MIDI verification not connected');
+check(app.includes('verifyPerformancePcm(state.resolution.formal')&&app.includes('wavFromPerformance(state.resolution.formal'),'performance waveform verification not connected');
 check(data.recognition_audio?.records?.length===324,'browser recognition registry incomplete');
 check(data.lexical_pos_audit?.roots?.length===324&&data.lexical_pos_audit?.senses?.length===484,'browser lexical/POS audit incomplete');
 const probes=[

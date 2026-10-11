@@ -2,6 +2,7 @@ const STOPWORDS=new Set('a an the to of in on at for from with am is are was wer
 const DIRECT=new Set(['atom','compound']);
 const INHERENTLY_POLYSEMOUS=new Set(['know','have','exist','receive','send','share','change','return','run','home']);
 const PARTICIPANTS=new Map(Object.entries({i:'speaker',me:'speaker',my:'speaker',myself:'speaker',we:'speaker_group',us:'speaker_group',our:'speaker_group',ourselves:'speaker_group',you:'addressee',your:'addressee',yourself:'addressee',he:'other_person',him:'other_person',his:'other_person',she:'other_person',her:'other_person',hers:'other_person',they:'other_group',them:'other_group',their:'other_group',it:'other_referent',its:'other_referent'}));
+const PHRASAL_VERBS=new Set(['pick up','back up','shut down','log in','log out','power on','turn off','turn on','set up','break down']);
 
 const IRREGULAR={
   am:['be'],are:['be'],is:['be'],was:['be'],were:['be'],been:['be'],
@@ -151,6 +152,7 @@ function plainMappedSenses(data){
 
 function unknownSemanticKind(words,index){
   const word=words[index],previous=words[index-1]||'',beforePrevious=words[index-2]||'',next=words[index+1]||'';
+  if(PHRASAL_VERBS.has(`${word} ${next}`))return'verb';
   if(['a','an','the','this','that','these','those','my','your','his','her','its','our','their'].includes(previous))return null;
   if(/(?:ed|ing)$/.test(word)||['do','does','did','can','could','will','would','should','may','might','must'].includes(previous)||(previous==='to'&&['want','wants','wanted','need','needs','needed','try','tries','tried','plan','plans','planned'].includes(beforePrevious)))return'verb';
   if(['am','is','are','was','were','be','being','been','feel','feels','felt','seem','seems','look','looks'].includes(previous))return'descriptor';
@@ -170,7 +172,8 @@ function termCoverage(normalized,data,ranked,allSenses){
     const gaps=authoritative.filter(match=>match.route==='gap');
     const labels=authoritative.filter(match=>match.route==='label');
     const participant=PARTICIPANTS.get(word),semanticKind=unknownSemanticKind(words,tokenIndex);
-    const status=participant?'participant_reference':direct.length?'canonical':gaps.length?'documented_gap':labels.length?'labeled_entity':authoritative.length?'structural':STOPWORDS.has(word)?'function_word':semanticKind?'unresolved_semantic':'phonemic_label';
+    const particle=PHRASAL_VERBS.has(`${words[tokenIndex-1]||''} ${word}`);
+    const status=participant?'participant_reference':direct.length?'canonical':gaps.length?'documented_gap':labels.length?'labeled_entity':authoritative.length?'structural':STOPWORDS.has(word)||particle?'function_word':semanticKind?'unresolved_semantic':'phonemic_label';
     const label=labels[0];
     return{token_index:tokenIndex,term:word,status,semantic_kind:semanticKind,participant_role:participant||null,semantic_class_target_id:label?.semantic_class_target_id||null,recommended_sense_id:matches[0]?.sense_id??null,matches};
   });
@@ -181,7 +184,7 @@ export function analyzeEnglish(raw,data,{limit=Number.POSITIVE_INFINITY}={}){
   const normalized=normalize(text);
   if(!normalized)throw{code:'empty_input',message:'Write an English word, phrase, or sentence to translate.'};
   const intent=inferEnglishIntent(text,explicitRuntime),inputTokens=lexicalTokens(normalized);
-  const allSenses=[...data.senses,...(data.game_story_senses||[]),...plainMappedSenses(data)],candidateSenses=allSenses.filter(sense=>sense.route!=='label');
+  const allSenses=[...data.senses,...(data.game_story_senses||[]),...(data.local_senses||[]),...plainMappedSenses(data)],candidateSenses=allSenses.filter(sense=>sense.route!=='label');
   const ranked=candidateSenses.map(sense=>scoreSense(sense,normalized,inputTokens)).filter(Boolean).sort((a,b)=>b.score-a.score||b.specificity-a.specificity||a.sense_id.localeCompare(b.sense_id)).slice(0,limit);
   const coverage=termCoverage(normalized,data,ranked,allSenses);
   const unresolvedSemantic=coverage.some(item=>item.status==='unresolved_semantic');
@@ -194,7 +197,9 @@ export function analyzeEnglish(raw,data,{limit=Number.POSITIVE_INFINITY}={}){
   const nextSameHead=ranked.slice(1).find(competesForSameHead);
   const confident=top.score>=.76&&(top.contextual_hint||!nextSameHead||top.score-nextSameHead.score>=.14);
   const hasUnfamiliarTerms=coverage.some(item=>item.status==='phonemic_label');
-  const auto=Boolean(confident&&!material&&direct&&!missingRoles&&hosted&&!unresolvedSemantic);
+  const crossDomainObject=/(?:\bfiles?\b|\bdocuments?\b|\brecords?\b)/.test(normalized);
+  const underspecifiedChange=crossDomainObject&&(/\b(?:move|moves|moving|moved)\b/.test(normalized)||(/\b(?:change|changes|changing|changed)\b/.test(normalized)&&!/\b(?:contents?|represented information)\b/.test(normalized)));
+  const auto=Boolean(confident&&!material&&direct&&!missingRoles&&hosted&&!unresolvedSemantic&&!underspecifiedChange);
   const reasons=[];
   if(material)reasons.push('material_sense_ambiguity');
   if(missingRoles)reasons.push('required_roles_missing');
@@ -203,6 +208,7 @@ export function analyzeEnglish(raw,data,{limit=Number.POSITIVE_INFINITY}={}){
   if(!confident&&!material)reasons.push('low_confidence_english');
   if(direct&&!hosted)reasons.push('local_api_required');
   if(unresolvedSemantic)reasons.push('unresolved_semantic_content');
+  if(underspecifiedChange)reasons.push('cross_domain_action_underspecified');
   if(hasUnfamiliarTerms&&!auto)reasons.push('phonemic_labels_present');
   return{status:'ok',input:raw,normalized_input:normalized,speech_act_proposal:intent.speechAct,explicit_runtime_state:intent.runtime,runtime_inference:intent.runtimeSource,candidates:ranked,candidate_count:ranked.length,term_coverage:coverage,decision:{auto_resolution_allowed:auto,requires_clarification:!auto,reasons,competing_sense_ids:competing.map(item=>item.sense_id)}};
 }

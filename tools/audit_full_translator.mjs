@@ -20,7 +20,7 @@ const cases=[
   {phrase:'Receive the data.',target:'DAT:110',key:'data_transfer_completion',auto:true},
   {phrase:'Receive the warning.',target:'CON:111',key:'communicative_reception',auto:true},
   {phrase:'Change my mind.',target:'MIN:101',key:'mental_revision',auto:true},
-  {phrase:'Change the file.',target:'DAT:101',key:'data_transformation',auto:true},
+  {phrase:'Change the file.',target:'DAT:101',key:'data_transformation',auto:false},
   {phrase:'Change the layout.',target:'STR:101',key:'structural_reconfiguration',auto:true},
   {phrase:'Run the program.',key:'program_execution',route:'semantic_ir',auto:false},
   {phrase:'Run the engine.',key:'machine_operation',route:'semantic_ir',auto:false},
@@ -108,6 +108,7 @@ for(const test of cases){
   phraseRows.push({test,result,top,unknown,ok});
   check(`phrase: ${test.phrase}`,ok,`${top?.target_id||top?.sense_key||'no semantic candidate'}; ${result.candidate_count} candidates; ${unknown} labels`);
 }
+check('underspecified file change requires domain clarification',analyzeEnglish('Change the file.',data).decision.reasons.includes('cross_domain_action_underspecified'));
 
 const familyCounts=Object.groupBy(data.atoms,atom=>atom.family);
 check('324 canonical dictionary roots',data.atoms.length===324&&new Set(data.atoms.map(atom=>atom.canonical_id)).size===324);

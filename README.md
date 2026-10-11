@@ -10,13 +10,15 @@ The Pages build runs entirely in the browser. Its default interface accepts ordi
 
 Strong contextual cues choose the applicable indexed sense automatically—for example, spatial `go` in “Go home,” data transfer in “Send the file,” and communicative expression in “Send the message.” A resolved result exposes and plays its complete sound construction: family prefix/opening, full carrier, address path, optional recognition checksum, runtime ending, and sentence contour. Recognition and slower-learning modes add a deterministic 2–5-note root identity phrase; strict mode preserves the original canonical performance byte-for-byte.
 
+The optional phrase now has a real performance check: export/import Standard MIDI or a reference WAV, or import clean monophonic audio, and verify the observed notes against the selected canonical form. Absence is valid in strict mode; a present wrong phrase fails. This is a nonsemantic identity check, not unrestricted speech recognition.
+
 The **EZVISEME-1** character view turns that same canonical performance into a synchronized close-up. Its downloadable `.ezviseme.json` rig has a fixed head layer, an independently selectable happy/sad/angry eye layer, and a timed mouth-sound layer. Changing the eyes never changes the sound or mouth sequence. The player sees only the current viseme sound. The rig is presentation-only and does not participate in Semantic IR or formal identity. See [docs/VISEME_PERFORMANCE_LAYER.md](docs/VISEME_PERFORMANCE_LAYER.md).
 
 One approved compound has open semantic slots. Because its arguments are arbitrary canonical lexical occurrences, the static release reports that boundary explicitly and routes full role binding to the Ruby API rather than fabricating or constraining an argument. Advanced controlled-English structural templates also remain in the full local compiler.
 
 The browser also includes the experimental **EZNAME-0.1** channel for unfamiliar nouns and proper names. It estimates an editable phoneme sequence, maps every phoneme to a framed deterministic tone pair, and can add an optional instance signature so two specific objects with the same label remain distinct. EZNAME is a nonsemantic label and never creates or modifies a canonical Era Zero meaning.
 
-The Dictionary now includes a meaning-rich root/compound selector and DBA concept-intake checker. Every root and indexed/game-story sense is covered by the lexical/POS audit: English senses carry parts of speech, while roots retain entity-, process-, or relationship-like semantic affordances. See [docs/RECOGNITION_AUDIO_AND_CONCEPT_INTAKE.md](docs/RECOGNITION_AUDIO_AND_CONCEPT_INTAKE.md).
+The Dictionary now includes a meaning-rich root/compound selector and a persistent, exportable DBA concept-review queue. Reviewed local English surface mappings may point to existing canonical targets, but no browser action can canonize a new root or compound. Every root and indexed/game-story sense is covered by the lexical/POS audit: English senses carry parts of speech, while roots retain entity-, process-, or relationship-like semantic affordances. A 144-phrase ordinary-language/game/lore audit reports safe readings, structural routes, and explicit vocabulary gaps. See [docs/RECOGNITION_AUDIO_AND_CONCEPT_INTAKE.md](docs/RECOGNITION_AUDIO_AND_CONCEPT_INTAKE.md) and [the corpus audit](reports/ordinary_language_coverage_audit.md).
 
 The **Game and Story profile 0.1** adds conservative routes for Cyber Pet and narrative language without changing the canonical lexicon. Unknown nouns may retain EZNAME labels, pronouns become participant references, and unknown verbs or descriptors now block automatic translation instead of being disguised as names. Narrow English words such as `found`, `hungry`, `tired`, `feed`, and `hurt` may use an existing broader canonical center only with the lost detail shown explicitly. Emotion, play, ingestion, and game-meter concepts remain honest gaps where Era Zero has no approved meaning. See [docs/GAME_STORY_TRANSLATION_PROFILE.md](docs/GAME_STORY_TRANSLATION_PROFILE.md).
 
@@ -26,6 +28,9 @@ Rebuild and audit the Pages artifact:
 ruby tools/build_pages_release.rb
 node tools/validate_pages_release.mjs
 node tools/validate_viseme_performance.mjs
+node tools/validate_recognition_audio.mjs
+node tools/validate_concept_queue.mjs
+node tools/audit_ordinary_language_coverage.mjs
 ```
 
 GitHub Actions reruns the browser audit, the canonical product audit, and then deploys `pages/`.
