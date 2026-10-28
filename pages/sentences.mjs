@@ -22,6 +22,8 @@ const ACTIONS = [
   {pattern:'is physically repairing', predicate:'CMP:2816a7eeb356c2148b26beca', key:'ongoing_physical_repair', wording:'is physically repairing'}
 ];
 const DESCRIPTIONS = [
+  {pattern:'(?:damaged|impaired)', predicate:'WRN:001', key:'present_internal_impairment', wording:'is impaired', semanticNote:'Damaged or impaired describes a present intrinsic adverse condition relative to the bearer’s accepted state. It does not identify a damaging agent, mechanism, or ongoing damaging event.'},
+  {pattern:'restored', predicate:'REP:001', key:'present_internal_restored_state', wording:'is restored', semanticNote:'Restored describes the bearer’s applicable internal restoration condition as presently realized. It does not identify a restorer or assert that restoration is still in progress.'},
   {pattern:'able to pay attention', predicate:'MIN:201', key:'available_attentional_capacity', wording:'is able to pay attention'},
   {pattern:'conscious', predicate:'LIF:011', key:'conscious_other', wording:'is conscious'},
   {pattern:'dormant', predicate:'LIF:012', key:'dormant_other', wording:'is dormant'}
@@ -170,7 +172,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return (/^[Ii]f\b/.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant)\b/i.test(String(input))) && !parseNamedSentence(input);
+  return (/^[Ii]f\b/.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored)\b/i.test(String(input))) && !parseNamedSentence(input);
 }
 
 // Explicit comma/then boundary keeps condition scope unambiguous.

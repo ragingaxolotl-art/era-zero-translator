@@ -672,3 +672,7 @@ Conditional IR now sounds the antecedent before the consequent inside an explici
 ### English conditional composition
 
 Explicit `If <supported assertion>, then <supported assertion>` now composes into two clause graphs joined by an open `condition_of` edge. Each clause preserves its own roles, negation, temporal scope, and runtime endings. The UI routes this construction before dictionary fallback. Five examples compare complete formal output and MIDI against Ruby, with an additional reversed-condition sound contrast. Unsupported or ambiguous clauses remain incomplete; conditional commands, anaphoric “it,” nested conditionals, and omitted-then forms still need implementation. This grammar adds no roots and assigns no new meaning to lexical 0/1/2.
+
+### Impairment and restoration adjectives
+
+Reviewed existing-sense constructions now map present “damaged/impaired” to WRN:001 and “restored” to REP:001, with the described entity as bearer and explicit sense notes. These condition meanings remain distinct from ongoing and completed damaging/restoring events. The review in `reviews/impairment_restoration_adjectives.md` records boundaries and counterexamples. Fifteen reference-renderer comparisons cover questions, negation, past time, quantities, and runtime endings; conditional composition also preserves the condition as antecedent. No root or compound definitions changed. This does not supply missing sensory or affective foundations.
