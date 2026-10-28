@@ -75,13 +75,15 @@ export function needsSentenceComposition(input) {
   return /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant)\b/i.test(String(input)) && !parseNamedSentence(input);
 }
 
-export function parseSentenceSequence(input) {
+export function parseSentenceSequence(input) { return parseClauseGroup(input,/^(?:,\s*|\s+)then\s+/); }
+export function parseSentenceConjunction(input) { return parseClauseGroup(input,/^(?:,\s*|\s+)and\s+/); }
+function parseClauseGroup(input,delimiter) {
   const text=String(input).trim().replace(/\.$/,'');
   let quoted=false,start=0;const clauses=[];
   for(let i=0;i<text.length;i++){
     if(text[i]==='"')quoted=!quoted;
     if(!quoted){
-      const match=text.slice(i).match(/^(?:,\s*|\s+)then\s+/);
+      const match=text.slice(i).match(delimiter);
       if(match){clauses.push(text.slice(start,i).trim());i+=match[0].length-1;start=i+1;}
     }
   }
@@ -90,22 +92,32 @@ export function parseSentenceSequence(input) {
   // entire sequence. Do not guess that attachment.
   if(/^(?:[Ii]t is (?:not )?(?:possible|necessary) that |[Ww]ith [0-9.]+% confidence, )/.test(text))return null;
   clauses.push(text.slice(start).trim());
+  if(clauses.slice(0,-1).some(clause=>/^(?:[Ii]t is (?:not )?(?:possible|necessary) that |[Ww]ith [0-9.]+% confidence, )/.test(clause)))return null;
   if(clauses.length>32||clauses.some(clause=>!parseNamedSentence(clause)))return null;
   return clauses;
 }
 
 export async function composeSentenceSequence(input,loadTemplate) {
   const clauses=parseSentenceSequence(input);
-  if(!clauses)throw new Error('Every clause in the sequence must have a complete interpretation.');
+  return composeClauseGroup(input,clauses,'sequence',loadTemplate);
+}
+
+export async function composeSentenceConjunction(input,loadTemplate) {
+  return composeClauseGroup(input,parseSentenceConjunction(input),'all_of',loadTemplate);
+}
+
+async function composeClauseGroup(input,clauses,operator,loadTemplate) {
+  if(!clauses)throw new Error('Every clause must have a complete, unambiguous interpretation.');
+  const groupId=operator==='sequence'?'sequence':'conjunction';
   const parts=await Promise.all(clauses.map(async clause=>composeNamedSentence(clause,await loadTemplate(parseNamedSentence(clause).predicate))));
-  const ir={ir_version:'1.0',root_clause:'c',speech_act:'assertion',nodes:[{node_id:'c',kind:'clause',clause_type:'predication'},{node_id:'sequence',kind:'coordination',operator:'sequence'}],
-    edges:[{edge_id:'e0',type:'centers',from:'sequence',to:'c'}],discourse_constraints:{}};
+  const ir={ir_version:'1.0',root_clause:'c',speech_act:'assertion',nodes:[{node_id:'c',kind:'clause',clause_type:'predication'},{node_id:groupId,kind:'coordination',operator}],
+    edges:[{edge_id:'e0',type:'centers',from:groupId,to:'c'}],discourse_constraints:{}};
   const events=[],gloss=[];
   parts.forEach((part,index)=>{
     const prefix=`s${String(index).padStart(3,'0')}_`;
     ir.nodes.push(...part.semantic_ir.nodes.map(node=>({...structuredClone(node),node_id:prefix+node.node_id})));
     ir.edges.push(...part.semantic_ir.edges.map(edge=>({...edge,edge_id:prefix+edge.edge_id,from:prefix+edge.from,to:prefix+edge.to})));
-    ir.edges.push({edge_id:`member${index}`,type:'member_of',from:prefix+'c',to:'sequence',order:index+1});
+    ir.edges.push({edge_id:`member${index}`,type:'member_of',from:prefix+'c',to:groupId,...(operator==='sequence'?{order:index+1}:{})});
     events.push(...part.formal.performance.lexical_events.map(event=>({...structuredClone(event),occurrence_id:prefix+event.occurrence_id})));
     gloss.push(part.formal.literal_gloss.split(' | ').map(value=>prefix+value).join(' | '));
   });
@@ -121,7 +133,7 @@ export async function composeSentenceSequence(input,loadTemplate) {
   const relativePlan={primary_contour:performance.primary_contour,contour_relative_semitones:performance.contour_relative_semitones,secondary_contours:performance.secondary_contours,lexical_events:relative,structural_events:structural,statement_boundary:performance.statement_boundary,statement_boundary_beats:performance.statement_boundary_beats};
   const formalDigest=await canonicalDigest({semantic_digest:digest,relative_plan:relativePlan});
   const formal={format:'EZF-1',renderer_version:'1.0.0',formal_id:`EZF:${formalDigest.slice(0,24)}`,formal_digest:formalDigest,semantic_digest:digest,semantic_ir:ir,performance,literal_gloss:gloss.join(' | ')};
-  return {source_input:input,target_id:'sequence',sense_id:'construction:explicit_sequence',surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,construction:'explicit_sequence',interpretation:parts.map(part=>part.interpretation.replace(/\.$/,'')).join(', then ')+'.'};
+  return {source_input:input,target_id:operator,sense_id:`construction:explicit_${groupId}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,construction:`explicit_${groupId}`,interpretation:parts.map(part=>part.interpretation.replace(/\.$/,'')).join(operator==='sequence'?', then ':' and ')+'.'};
 }
 
 export async function composeNamedSentence(input,template) {

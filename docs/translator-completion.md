@@ -381,3 +381,13 @@ with sequence-order fields are rejected. Existing then-sequence timing stays
 unchanged. Ruby/browser MIDI and SVG match, and all four interpretations produce
 different sound. Parallel coordination remains unsupported pending voice scheduling.
 English conjunction parsing and broader nested-scope decoding remain incomplete.
+
+### Complete clauses joined by and
+
+The browser now composes supported complete clauses joined by `and` as all-of
+coordination, distinct from `then` sequences. Both use a shared clause-group
+composer while preserving previous sequence identities. Quotes shield embedded
+and/then text in noun labels. Conjunction requires every clause to parse fully;
+noun lists, unsupported additions, bare or, and modal clauses with ambiguous scope
+over later members remain partial. Tests compare complete Ruby/browser artifacts,
+local negation, quoted labels, and the musical and-versus-then distinction.
