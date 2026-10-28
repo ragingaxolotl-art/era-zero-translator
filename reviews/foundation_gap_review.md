@@ -104,3 +104,11 @@ target is called a radio, nor should its use require the speaker to add an adjec
 that was not in the source sentence. Inspection, maintenance, replacement and
 planning remain excluded by the REP definitions unless restoration is also asserted.
 This is an existing-sense sentence mapping, not a new primitive or compound.
+
+
+## Ternary preservation requirement
+
+The [ternary foundation contract](ternary_foundation_contract.md) records the full
+source ranges for runtime 0/1/2 and distinguishes them from lexical trits. New
+foundations must keep sensory channel, magnitude, valence, desire and tense separate
+from those states; compound dependencies retain their original addresses.
