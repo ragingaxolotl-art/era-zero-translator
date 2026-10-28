@@ -178,8 +178,30 @@ class CompoundExpansionTest < Minitest::Test
     expander = Expander.new(entries)
     entries.each do |entry|
       result = expander.expand(entry["compound_id"], entry["definition_version"])
-      assert_equal entry["nodes"].length, result["nodes"].length
-      assert_equal [entry["semantic_head"]], result["semantic_head"]
+      # Read expected leaves directly from pinned dictionary references, rather
+      # than assuming every current entry is a flat list of roots.
+      registry = entries.to_h { |item| [[item["compound_id"], item["definition_version"]], item] }
+      pending = entry["nodes"].map { |node| [node, []] }
+      expected = []
+      until pending.empty?
+        node, scope = pending.pop
+        path = scope + [node["node_id"]]
+        if node["kind"] == "compound_ref"
+          dependency = registry.fetch([node["compound_id"], node["definition_version"]])
+          pending.concat(dependency["nodes"].map { |child| [child, path] })
+        else
+          expected << node.merge("path" => path, "scope_path" => scope)
+        end
+      end
+      assert_equal expected.sort_by { |node| node["path"] }, result["nodes"].sort_by { |node| node["path"] }
+      head_path, current = [], entry
+      loop do
+        head = current["nodes"].find { |node| node["node_id"] == current["semantic_head"] }
+        head_path << head["node_id"]
+        break unless head["kind"] == "compound_ref"
+        current = registry.fetch([head["compound_id"], head["definition_version"]])
+      end
+      assert_equal head_path, result["semantic_head"]
     end
   end
 end

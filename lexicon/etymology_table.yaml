@@ -4,12 +4,12 @@ metadata:
   version: 1.0.0
   status: canonical_gate4e
   atom_entries: 324
-  compound_entries: 33
-  total_entries: 357
+  compound_entries: 35
+  total_entries: 359
   scope: Auditable synchronic derivation and authority provenance; no invented natural-language
     ancestry.
   atomic_lexicon_fingerprint: e25dda6b8e84866f9bf2b3ba012aa0e9538cc711830fcbfc2fc1179f615f443e
-  compound_dictionary_fingerprint: '0778d040a63fc4e06d972a0dd13b620cbecc4477fdd3de664145dbea6f28dd66'
+  compound_dictionary_fingerprint: 2403de0026d7c8f2b6ce5c99e3e7b66e157f421e5e2add85affd02493541d790
 principles:
   synchronic_not_fictional: Era Zero forms are engineered encodings. The table records
     actual construction rules and approval history rather than inventing ancestors
@@ -17726,6 +17726,62 @@ entries:
     approval_date: '2026-10-09'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
+- etymology_id: ETY:462932f7ebafd9ba3edc1b00
+  target_type: compound
+  target_id: CMP:42e9bd596b35612ed6cbe3ce
+  status: canonical
+  english_label: ongoing acoustic sensory registration
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: compound_ref
+    target_id: CMP:ade73037114406a2cd91ce13
+  components:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:ade73037114406a2cd91ce13
+    definition_version: 1.0.0
+  relations: []
+  semantic_derivation:
+    invariant_definition: 'An instance of ongoing sensory registration, as defined
+      by CMP:ade73037114406a2cd91ce13 version 1.0.0, with the additional channel commitment:
+      The sensory transduction registers information carried by a propagating mechanical
+      pressure or elastic vibration signal from the source through a material medium.
+      No conscious auditory experience, speech comprehension, source recognition or
+      attention is entailed.'
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: ongoing_acoustic_registration
+      sound_code: 2
+      added_definition: The sensory transduction registers information carried by
+        a propagating mechanical pressure or elastic vibration signal from the source
+        through a material medium. No conscious auditory experience, speech comprehension,
+        source recognition or attention is entailed.
+      excludes:
+      - static contact alone, optical-only input, remembered sounds, and conscious
+        hearing inferred from registration
+      - Inferring the channel from the source noun alone
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 42e9bd596b35612ed6cbe3cee5bbe04bfd416e94797059002a2add8cc839ab21
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/registration_channels_2026_10_28.yaml
+    approval_date: '2026-10-28'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
 - etymology_id: ETY:52c41b8e830d31c727021066
   target_type: compound
   target_id: CMP:44173561806bc8f334a0b7c9
@@ -18469,6 +18525,61 @@ entries:
     authority: gate4b_reviewed_compound
     record: migrations/gate4b_compound_dictionary_1.0.yaml
     approval_date: '2026-10-09'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:772f6b3050d120437fca5651
+  target_type: compound
+  target_id: CMP:bcfd189eb305cf364ada975a
+  status: canonical
+  english_label: ongoing optical sensory registration
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: compound_ref
+    target_id: CMP:ade73037114406a2cd91ce13
+  components:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:ade73037114406a2cd91ce13
+    definition_version: 1.0.0
+  relations: []
+  semantic_derivation:
+    invariant_definition: 'An instance of ongoing sensory registration, as defined
+      by CMP:ade73037114406a2cd91ce13 version 1.0.0, with the additional channel commitment:
+      The sensory transduction registers information carried by light from the source,
+      including visible, infrared or ultraviolet light. No conscious visual experience,
+      color judgment, object recognition or attention is entailed.'
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: ongoing_optical_registration
+      sound_code: 1
+      added_definition: The sensory transduction registers information carried by
+        light from the source, including visible, infrared or ultraviolet light. No
+        conscious visual experience, color judgment, object recognition or attention
+        is entailed.
+      excludes:
+      - radio data transfer, acoustic-only input, visual imagination, and conscious
+        seeing inferred from registration
+      - Inferring the channel from the source noun alone
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: bcfd189eb305cf364ada975a962b89ff5917d5afff28049b8cd30e3817285f7e
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/registration_channels_2026_10_28.yaml
+    approval_date: '2026-10-28'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
 - etymology_id: ETY:637d7b3d5694c78a7337e7d5

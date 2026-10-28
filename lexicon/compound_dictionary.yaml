@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 33
+  entry_count: 35
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -491,6 +491,70 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 4144fad413b8ce5012088c6193969cb6f73701fe8a61e005e8c66bb6ef90deaa
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:ade73037114406a2cd91ce13
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - The channel restriction applies to the same registration event and its source-to-receiver
+    transfer. All inherited registration commitments remain true.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_acoustic_registration
+    sound_code: 2
+    added_definition: The sensory transduction registers information carried by a
+      propagating mechanical pressure or elastic vibration signal from the source
+      through a material medium. No conscious auditory experience, speech comprehension,
+      source recognition or attention is entailed.
+    excludes:
+    - static contact alone, optical-only input, remembered sounds, and conscious hearing
+      inferred from registration
+    - Inferring the channel from the source noun alone
+  compound_id: CMP:42e9bd596b35612ed6cbe3ce
+  content_digest: 42e9bd596b35612ed6cbe3cee5bbe04bfd416e94797059002a2add8cc839ab21
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: ongoing acoustic sensory registration
+  english_glosses:
+  - ongoing acoustic sensory registration
+  invariant_definition: 'An instance of ongoing sensory registration, as defined by
+    CMP:ade73037114406a2cd91ce13 version 1.0.0, with the additional channel commitment:
+    The sensory transduction registers information carried by a propagating mechanical
+    pressure or elastic vibration signal from the source through a material medium.
+    No conscious auditory experience, speech comprehension, source recognition or
+    attention is entailed.'
+  boundaries:
+    includes: sensory registration of an acoustic vibration signal in a biological
+      or device receiver
+    excludes: static contact alone, optical-only input, remembered sounds, and conscious
+      hearing inferred from registration
+  collision_audit: The exact registration foundation is reused through a versioned
+    reference. A distinct conventional frame adds the channel restriction; it is not
+    inferred from root adjacency, source noun, or runtime state.
+  confidence: high
+  approval_record: migrations/registration_channels_2026_10_28.yaml
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/registration_channels.md
+  examples:
+    ordinary: The sensor is registering acoustic input from the bell.
+    technical: The sensory transduction registers information carried by a propagating
+      mechanical pressure or elastic vibration signal from the source through a material
+      medium. No conscious auditory experience, speech comprehension, source recognition
+      or attention is entailed.
+    future_compound: Reuse the exact registration/channel meaning where the derived
+      definition entails it; conscious experience and recognition require additional
+      foundations.
+    counterexample: Do not infer this channel from the noun bell; exclude static contact
+      alone, optical-only input, remembered sounds, and conscious hearing inferred
+      from registration.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 42e9bd596b35612ed6cbe3cee5bbe04bfd416e94797059002a2add8cc839ab21
 - architecture_version: '1.0'
   compound_id: CMP:44173561806bc8f334a0b7c9
   content_digest: 44173561806bc8f334a0b7c9a87b29ba2bc84d18360e234eaa701c7e5eae8370
@@ -1240,6 +1304,66 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: b518a324d776e46e9d0ff041bb5acc721a256348465cf4ee2965c6a770b04521
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:ade73037114406a2cd91ce13
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - The channel restriction applies to the same registration event and its source-to-receiver
+    transfer. All inherited registration commitments remain true.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_optical_registration
+    sound_code: 1
+    added_definition: The sensory transduction registers information carried by light
+      from the source, including visible, infrared or ultraviolet light. No conscious
+      visual experience, color judgment, object recognition or attention is entailed.
+    excludes:
+    - radio data transfer, acoustic-only input, visual imagination, and conscious
+      seeing inferred from registration
+    - Inferring the channel from the source noun alone
+  compound_id: CMP:bcfd189eb305cf364ada975a
+  content_digest: bcfd189eb305cf364ada975a962b89ff5917d5afff28049b8cd30e3817285f7e
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: ongoing optical sensory registration
+  english_glosses:
+  - ongoing optical sensory registration
+  invariant_definition: 'An instance of ongoing sensory registration, as defined by
+    CMP:ade73037114406a2cd91ce13 version 1.0.0, with the additional channel commitment:
+    The sensory transduction registers information carried by light from the source,
+    including visible, infrared or ultraviolet light. No conscious visual experience,
+    color judgment, object recognition or attention is entailed.'
+  boundaries:
+    includes: light-mediated sensory registration in a biological or device receiver
+    excludes: radio data transfer, acoustic-only input, visual imagination, and conscious
+      seeing inferred from registration
+  collision_audit: The exact registration foundation is reused through a versioned
+    reference. A distinct conventional frame adds the channel restriction; it is not
+    inferred from root adjacency, source noun, or runtime state.
+  confidence: high
+  approval_record: migrations/registration_channels_2026_10_28.yaml
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/registration_channels.md
+  examples:
+    ordinary: The sensor is registering optical input from the bell.
+    technical: The sensory transduction registers information carried by light from
+      the source, including visible, infrared or ultraviolet light. No conscious visual
+      experience, color judgment, object recognition or attention is entailed.
+    future_compound: Reuse the exact registration/channel meaning where the derived
+      definition entails it; conscious experience and recognition require additional
+      foundations.
+    counterexample: Do not infer this channel from the noun bell; exclude radio data
+      transfer, acoustic-only input, visual imagination, and conscious seeing inferred
+      from registration.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: bcfd189eb305cf364ada975a962b89ff5917d5afff28049b8cd30e3817285f7e
 - architecture_version: '1.0'
   compound_id: CMP:cb0812face56f90b7ba139c5
   content_digest: cb0812face56f90b7ba139c53a0c4b69820830bde14c60bcd0160122199daa8b

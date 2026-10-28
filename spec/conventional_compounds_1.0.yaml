@@ -23,6 +23,11 @@ identity:
   - A code or sense key cannot identify conflicting convention records, including across retained versions.
   - Reuse the versioned compound reference rather than restating its convention in consumers.
   - Runtime state, role, absolute pitch and English aliases remain outside lexical identity.
+graph_extension:
+  - For this exact specialization shape, the base graph-schema minima are overridden to one node and zero edges. All other base requirements remain in force.
+  - A single version-pinned compound_ref head with explicit conventional_meaning may specialize an existing compound without redundant roots or edges.
+  - A single unmarked reference is only an alias and is not a distinct approved meaning.
+  - The exception does not admit a lone root; approved entries still expand to at least two roots.
 expansion:
   - Each convention stays attached to its exact expanded compound scope.
   - Consumers inherit a referenced convention without widening it to unrelated sibling roots.

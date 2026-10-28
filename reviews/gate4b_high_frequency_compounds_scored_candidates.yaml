@@ -2043,3 +2043,137 @@ reviews:
     decision: 'rejected: wrong receiver and experience commitments'
   recommendation: approve explicit_transduction
   confidence: high
+- compound_id: CMP:bcfd189eb305cf364ada975a
+  display_title: ongoing optical sensory registration
+  current_choice_reason: Review in reviews/registration_channels.md; scores are author
+    judgments, not independent validation.
+  candidates:
+  - candidate_id: versioned_specialization
+    direction: Reuse registration exactly and add an explicit, audible channel restriction.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 76
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:ade73037114406a2cd91ce13
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ongoing_optical_registration
+        sound_code: 1
+        added_definition: The sensory transduction registers information carried by
+          light from the source, including visible, infrared or ultraviolet light.
+          No conscious visual experience, color judgment, object recognition or attention
+          is entailed.
+        excludes:
+        - radio data transfer, acoustic-only input, visual imagination, and conscious
+          seeing inferred from registration
+        - Inferring the channel from the source noun alone
+  - candidate_id: unmarked_reference
+    direction: A reference alone repeats registration without distinguishing a channel.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 1
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 45
+    decision: 'rejected: missing channel'
+  - candidate_id: noun_inference
+    direction: Guessing the channel from a source name loses meaning and fails cross-channel
+      cases.
+    scores:
+      atomicity: 3
+      address_fit: 3
+      family_fit: 3
+      neighbor_separation: 1
+      cross_family_separation: 2
+      compound_usefulness: 3
+      everyday_language_coverage: 3
+      technical_coverage: 2
+    total: 20
+    decision: 'rejected: source noun is not a channel'
+  recommendation: approve versioned_specialization
+  confidence: high
+- compound_id: CMP:42e9bd596b35612ed6cbe3ce
+  display_title: ongoing acoustic sensory registration
+  current_choice_reason: Review in reviews/registration_channels.md; scores are author
+    judgments, not independent validation.
+  candidates:
+  - candidate_id: versioned_specialization
+    direction: Reuse registration exactly and add an explicit, audible channel restriction.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 76
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:ade73037114406a2cd91ce13
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ongoing_acoustic_registration
+        sound_code: 2
+        added_definition: The sensory transduction registers information carried by
+          a propagating mechanical pressure or elastic vibration signal from the source
+          through a material medium. No conscious auditory experience, speech comprehension,
+          source recognition or attention is entailed.
+        excludes:
+        - static contact alone, optical-only input, remembered sounds, and conscious
+          hearing inferred from registration
+        - Inferring the channel from the source noun alone
+  - candidate_id: unmarked_reference
+    direction: A reference alone repeats registration without distinguishing a channel.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 1
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 45
+    decision: 'rejected: missing channel'
+  - candidate_id: noun_inference
+    direction: Guessing the channel from a source name loses meaning and fails cross-channel
+      cases.
+    scores:
+      atomicity: 3
+      address_fit: 3
+      family_fit: 3
+      neighbor_separation: 1
+      cross_family_separation: 2
+      compound_usefulness: 3
+      everyday_language_coverage: 3
+      technical_coverage: 2
+    total: 20
+    decision: 'rejected: source noun is not a channel'
+  recommendation: approve versioned_specialization
+  confidence: high

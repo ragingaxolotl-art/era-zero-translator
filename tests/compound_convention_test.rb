@@ -23,6 +23,15 @@ class CompoundConventionTest < Minitest::Test
     assert_raises(ArgumentError){EraZeroCompoundConventions.validate!([{'conventional_meaning'=>meaning},{'conventional_meaning'=>meaning.merge('sound_code'=>1)}])}
     assert EraZeroCompoundConventions.validate!([{'conventional_meaning'=>meaning},{'conventional_meaning'=>meaning}])
   end
+  def test_single_reference_specialization_requires_added_meaning
+    expanded={'nodes'=>[{'kind'=>'root'},{'kind'=>'root'}]}
+    wrapper={'nodes'=>[{'kind'=>'compound_ref'}],'conventional_meaning'=>meaning}
+    assert EraZeroCompoundConventions.distinct_dictionary_graph?(wrapper,expanded)
+    refute EraZeroCompoundConventions.distinct_dictionary_graph?(wrapper.reject{|key,_|key=='conventional_meaning'},expanded)
+    refute EraZeroCompoundConventions.distinct_dictionary_graph?(wrapper.merge('nodes'=>[{'kind'=>'root'}]),expanded)
+    refute EraZeroCompoundConventions.distinct_dictionary_graph?(wrapper,{'nodes'=>[{'kind'=>'root'}]})
+  end
+
   def test_all_available_sound_codes_are_unique
     openings=(0..6560).map{|code| EraZeroCompoundConventions.pitches(meaning(code),'open')}
     assert_equal 6561, openings.uniq.length

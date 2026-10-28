@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 441
-  lemma_count: 424
+  sense_count: 443
+  lemma_count: 426
   canonical_atom_senses: 324
-  canonical_compound_senses: 33
+  canonical_compound_senses: 35
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: 9b2e6047a5bbd39f0b54ff2f49b569cf7e4726b361b51a62070804727efce26f
-  compound_dictionary_fingerprint: '0778d040a63fc4e06d972a0dd13b620cbecc4477fdd3de664145dbea6f28dd66'
+  compound_dictionary_fingerprint: 2403de0026d7c8f2b6ce5c99e3e7b66e157f421e5e2add85affd02493541d790
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -5048,6 +5048,27 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: ongoing acoustic sensory registration
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:42e9bd596b35612ed6cbe3ce
+  definition: 'An instance of ongoing sensory registration, as defined by CMP:ade73037114406a2cd91ce13
+    version 1.0.0, with the additional channel commitment: The sensory transduction
+    registers information carried by a propagating mechanical pressure or elastic
+    vibration signal from the source through a material medium. No conscious auditory
+    experience, speech comprehension, source recognition or attention is entailed.'
+  sense_id: ENS:a14e8a449378f9e4a12933a0
+  display_form: ongoing acoustic sensory registration
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - static contact alone, optical-only input, remembered sounds, and conscious hearing
+    inferred from registration
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - lemma: ongoing internal data repair
   part_of_speech: noun_phrase
   sense_key: canonical_compound_label
@@ -5083,6 +5104,27 @@ senses:
   excluded_readings:
   - arbitrary rearrangement, incorporation of a distinct target, formation of a peer
     composite, and completed or merely possible restoration
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: ongoing optical sensory registration
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:bcfd189eb305cf364ada975a
+  definition: 'An instance of ongoing sensory registration, as defined by CMP:ade73037114406a2cd91ce13
+    version 1.0.0, with the additional channel commitment: The sensory transduction
+    registers information carried by light from the source, including visible, infrared
+    or ultraviolet light. No conscious visual experience, color judgment, object recognition
+    or attention is entailed.'
+  sense_id: ENS:0b350b247d38dcfae9be03cc
+  display_form: ongoing optical sensory registration
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - radio data transfer, acoustic-only input, visual imagination, and conscious seeing
+    inferred from registration
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
@@ -9668,6 +9710,13 @@ lemma_index:
     direct_target_count: 0
     routes:
     - grammar
+  ongoing acoustic sensory registration:
+    sense_ids:
+    - ENS:a14e8a449378f9e4a12933a0
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   ongoing internal data repair:
     sense_ids:
     - ENS:ecf20535faf8573d4ebdfdfd
@@ -9678,6 +9727,13 @@ lemma_index:
   ongoing internal structural repair:
     sense_ids:
     - ENS:c4d39b1091ab744d47f626c9
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  ongoing optical sensory registration:
+    sense_ids:
+    - ENS:0b350b247d38dcfae9be03cc
     requires_disambiguation: false
     direct_target_count: 1
     routes:

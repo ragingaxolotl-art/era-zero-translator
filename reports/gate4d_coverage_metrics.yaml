@@ -4,23 +4,23 @@ metadata:
   version: 1.0.0
   status: canonical_measurement_release
   benchmark: Gate 4C exact canonical labels plus reviewed high-frequency senses
-  sense_index_fingerprint: 931df5f1ee9b39f28b5c427b6f288198b1a3e1712fa54b4d4a23e3499710ecfe
+  sense_index_fingerprint: 122bb913711b0ffdbb723c6fbce395dfadfdfc4db136056fab8dfd661662be75
   translator_started: false
 inventory:
-  total_senses: 441
-  total_lemmas: 424
+  total_senses: 443
+  total_lemmas: 426
   canonical_atom_targets: 324
-  canonical_compound_targets: 33
+  canonical_compound_targets: 35
   reviewed_high_frequency_senses: 84
 route_coverage:
   direct_atom: 358
-  direct_compound: 40
+  direct_compound: 42
   future_grammar: 8
   future_semantic_ir: 24
   unsupported_gap: 11
-  direct_lexical_percent: 90.25
-  structurally_routed_percent: 97.51
-  explicit_gap_percent: 2.49
+  direct_lexical_percent: 90.29
+  structurally_routed_percent: 97.52
+  explicit_gap_percent: 2.48
 high_frequency_benchmark:
   senses: 84
   by_route:
@@ -34,7 +34,7 @@ high_frequency_benchmark:
   gap_percent: 13.1
 ambiguity:
   lemmas_requiring_disambiguation: 41
-  lemma_ambiguity_percent: 9.67
+  lemma_ambiguity_percent: 9.62
   lemmas_with_multiple_direct_targets:
   - change
   - exist

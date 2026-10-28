@@ -3,7 +3,7 @@
 Status: initial inventory review with an implemented registration follow-up.
 Existing root and compound meanings and sounds are unchanged. Evidence is pinned in
 [the complete inventory snapshot](../reports/foundation_inventory_audit.json),
-covering all 324 runtime roots and the current 33 approved compounds. The initial
+covering all 324 runtime roots and the current 35 approved compounds. The initial
 review below covered the 32 compounds that preceded sensory registration. Regenerate with
 `ruby tools/audit_foundation_inventory.rb`; check freshness with `--check`.
 The snapshot makes the scope reproducible; its hashes are not semantic proof.
@@ -12,7 +12,7 @@ The snapshot makes the scope reproducible; its hashes are not semantic proof.
 
 No reviewed root definition identifies a sensory modality. The present inventory
 also does not directly define sensory experience or perceptual access. The later
-registration extension does not claim either. Mental
+registration and optical/acoustic channel extensions do not claim either. Mental
 representation, attention, information transfer, consciousness, and physical
 influence are useful ingredients but are not interchangeable with perception.
 This review supports an explicit new lexical distinction. It does **not** establish
@@ -128,8 +128,9 @@ for these foundations. The implemented extension in
 identity and gives it a distinct ternary frame around its exact expanded scope.
 Nested dependency reuse, argument bindings and runtime endings are tested.
 Ongoing sensory registration is now approved in
-`reviews/sensory_registration_foundation.md`; experience and channel-specific
-perception remain unfinished. See
+`reviews/sensory_registration_foundation.md`; optical/acoustic registration now reuse it via
+`reviews/registration_channels.md`. Experience and higher-level perception remain
+unfinished. See
 `reviews/conventional_compound_foundations.md` for the definition and contrast work
 that must precede seeing/hearing vocabulary. A compound must not silently gain a
 new sense merely through an English alias.

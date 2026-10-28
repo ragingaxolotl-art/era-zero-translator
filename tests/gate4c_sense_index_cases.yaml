@@ -1,8 +1,8 @@
 ---
 metadata:
   version: 1.0.0
-  sense_count: 441
-  lemma_count: 424
+  sense_count: 443
+  lemma_count: 426
 exact_atom_labels:
 - input: continuous self
   expected_route: atom
@@ -1010,6 +1010,9 @@ exact_compound_labels:
 - input: material biosystem
   expected_route: compound
   expected_target: CMP:4144fad413b8ce5012088c61
+- input: ongoing acoustic sensory registration
+  expected_route: compound
+  expected_target: CMP:42e9bd596b35612ed6cbe3ce
 - input: shared knowledge base
   expected_route: compound
   expected_target: CMP:44173561806bc8f334a0b7c9
@@ -1058,6 +1061,9 @@ exact_compound_labels:
 - input: data repair
   expected_route: compound
   expected_target: CMP:b518a324d776e46e9d0ff041
+- input: ongoing optical sensory registration
+  expected_route: compound
+  expected_target: CMP:bcfd189eb305cf364ada975a
 - input: material hazard
   expected_route: compound
   expected_target: CMP:cb0812face56f90b7ba139c5

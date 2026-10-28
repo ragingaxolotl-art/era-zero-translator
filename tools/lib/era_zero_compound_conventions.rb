@@ -30,6 +30,12 @@ module EraZeroCompoundConventions
     true
   end
 
+  def distinct_dictionary_graph?(entry, expanded)
+    return false unless expanded.fetch('nodes').count { |node| node['kind'] == 'root' } >= 2
+    nodes = entry.fetch('nodes')
+    nodes.length > 1 || (nodes.length == 1 && nodes.first['kind'] == 'compound_ref' && entry['conventional_meaning'].is_a?(Hash))
+  end
+
   def semantic_payload(entry)
     fields = %w[architecture_version semantic_head nodes edges lexical_constraints conventional_meaning]
     entry.select { |key, _| fields.include?(key) }
