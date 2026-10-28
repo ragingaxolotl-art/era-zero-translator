@@ -556,3 +556,16 @@ uses completed target restoration REP:110. Commands and past questions share tho
 mappings. Explicit physical repair retains its more specific compound and different
 music. This closes the audited unquoted-radio repair sentence without treating all
 repair as physical or using phonemic noun labels to infer unspoken mechanisms.
+
+### Capability and ternary-state preservation
+
+“Can repair/restore” and “is able to repair/restore” use REP:211 in its reviewed
+currently enabled source-to-target restoration sense. The interpretation explicitly
+excludes permission, an ongoing repair event, and guaranteed success. Negative
+forms negate that relation rather than selecting runtime zero.
+
+The user's reminder to preserve 0/1/2 applies to both lexical addresses and runtime
+endings. Tests keep the REP:211 address unchanged while checking each explicit
+runtime code, distinct emitted music, and the difference between inactive and
+negated-active. The poetic never-finished-becoming interpretation remains confined
+to the approved love construction; other num endings do not inherit that gloss.

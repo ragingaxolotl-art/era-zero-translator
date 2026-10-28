@@ -6,19 +6,19 @@
       "test": "tests/compound_dependencies_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 5228\n\n# Running:\n\n......\n\nFinished in 0.010235s, 586.2237 runs/s, 1465.5593 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 19443\n\n# Running:\n\n......\n\nFinished in 0.008642s, 694.2837 runs/s, 1735.7093 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_expansion_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 20376\n\n# Running:\n\n..........\n\nFinished in 0.232350s, 43.0385 runs/s, 542.2853 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 50028\n\n# Running:\n\n..........\n\nFinished in 0.234435s, 42.6557 runs/s, 537.4624 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/dictionary_musical_identity_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 38758\n\n# Running:\n\n.\n\nFinished in 0.221021s, 4.5245 runs/s, 27.1467 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 42112\n\n# Running:\n\n.\n\nFinished in 0.220020s, 4.5450 runs/s, 27.2702 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/audit_dictionary_musical_identity.rb",
@@ -30,7 +30,7 @@
       "test": "tests/semantic_reference_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 28566\n\n# Running:\n\n.......\n\nFinished in 0.217834s, 32.1346 runs/s, 146.9009 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 33145\n\n# Running:\n\n.......\n\nFinished in 0.218913s, 31.9762 runs/s, 146.1768 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_semantic_ir_and_grammar.rb",
@@ -42,13 +42,13 @@
       "test": "tests/foundation_process_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 4454\n\n# Running:\n\n...\n\nFinished in 0.396524s, 7.5657 runs/s, 70.6136 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 42471\n\n# Running:\n\n...\n\nFinished in 0.399243s, 7.5142 runs/s, 70.1327 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/repetition_performance_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 55136\n\n# Running:\n\n...\n\nFinished in 0.447029s, 6.7110 runs/s, 17.8959 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 20662\n\n# Running:\n\n...\n\nFinished in 0.485377s, 6.1808 runs/s, 16.4820 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_gate4b_compound_dictionary.rb",
@@ -91,6 +91,12 @@
       "passed": true,
       "exit_code": 0,
       "output": "Definite noun references: ten full compositions preserve reference frames, names remain distinct, Ruby/browser output agrees, malformed references fail.\n"
+    },
+    {
+      "test": "tests/capability_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Capability statements preserve REP:211 and all three runtime endings; inactive and negated-active remain musically distinct.\n"
     },
     {
       "test": "tests/discourse_reference_test.mjs",
