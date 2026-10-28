@@ -1784,3 +1784,186 @@ reviews:
     decision: 'rejected: loses both self-awakening and preserved potential'
   recommendation: approve selected bond head
   confidence: high
+- compound_id: CMP:2816a7eeb356c2148b26beca
+  display_title: ongoing physical repair
+  current_choice_reason: Review in reviews/foundation_process_compounds.md; scores
+    are implementation-author judgments, not independent review or measured coverage.
+  candidates:
+  - candidate_id: active_graph
+    direction: Both domain and restoration are ongoing; preserves all required distinctions.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 74
+    decision: winner
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: MAT:111
+      - node_id: h
+        kind: root
+        root_id: REP:111
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+  - candidate_id: head_only
+    direction: Using only the restorative head loses the domain restriction.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 51
+    decision: 'rejected: domain distinction is missing'
+  - candidate_id: completed_with_runtime
+    direction: Changing runtime on the completed foundation does not change its lexical
+      phase.
+    scores:
+      atomicity: 8
+      address_fit: 2
+      family_fit: 8
+      neighbor_separation: 1
+      cross_family_separation: 7
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 32
+    decision: 'rejected: completed process is not ongoing'
+  recommendation: approve active_graph
+  confidence: high
+- compound_id: CMP:9ddb5e2cfc285515c799462e
+  display_title: ongoing internal data repair
+  current_choice_reason: Review in reviews/foundation_process_compounds.md; scores
+    are implementation-author judgments, not independent review or measured coverage.
+  candidates:
+  - candidate_id: active_graph
+    direction: Both domain and restoration are ongoing; preserves all required distinctions.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 74
+    decision: winner
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: DAT:101
+      - node_id: h
+        kind: root
+        root_id: REP:101
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+  - candidate_id: head_only
+    direction: Using only the restorative head loses the domain restriction.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 51
+    decision: 'rejected: domain distinction is missing'
+  - candidate_id: completed_with_runtime
+    direction: Changing runtime on the completed foundation does not change its lexical
+      phase.
+    scores:
+      atomicity: 8
+      address_fit: 2
+      family_fit: 8
+      neighbor_separation: 1
+      cross_family_separation: 7
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 32
+    decision: 'rejected: completed process is not ongoing'
+  recommendation: approve active_graph
+  confidence: high
+- compound_id: CMP:1b987e04bf47840f9e82ecd3
+  display_title: ongoing internal structural repair
+  current_choice_reason: Review in reviews/foundation_process_compounds.md; scores
+    are implementation-author judgments, not independent review or measured coverage.
+  candidates:
+  - candidate_id: active_graph
+    direction: Both domain and restoration are ongoing; preserves all required distinctions.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 74
+    decision: winner
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: STR:101
+      - node_id: h
+        kind: root
+        root_id: REP:101
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+  - candidate_id: head_only
+    direction: Using only the restorative head loses the domain restriction.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 51
+    decision: 'rejected: domain distinction is missing'
+  - candidate_id: completed_with_runtime
+    direction: Changing runtime on the completed foundation does not change its lexical
+      phase.
+    scores:
+      atomicity: 8
+      address_fit: 2
+      family_fit: 8
+      neighbor_separation: 1
+      cross_family_separation: 7
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 32
+    decision: 'rejected: completed process is not ongoing'
+  recommendation: approve active_graph
+  confidence: high

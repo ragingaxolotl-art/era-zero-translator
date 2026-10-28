@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 29
+  entry_count: 32
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -55,6 +55,57 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 111b772027accab2054f04158521688548f4899eb5feda420f7ace4ebefba396
+- architecture_version: '1.0'
+  compound_id: CMP:1b987e04bf47840f9e82ecd3
+  content_digest: 1b987e04bf47840f9e82ecd31caef82cd850e4b6ac0d169e7df593ac36089663
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: ongoing internal structural repair
+  english_glosses:
+  - ongoing internal structural repair
+  semantic_head: h
+  invariant_definition: An ongoing restorative transformation originating within one
+    reference structure whose restorative transformation changes how that structure's
+    constituents occupy its internal positions.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: STR:101
+  - node_id: h
+    kind: root
+    root_id: REP:101
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: ongoing internal structural reconfiguration toward the applicable restoration
+      standard
+    excludes: arbitrary rearrangement, incorporation of a distinct target, formation
+      of a peer composite, and completed or merely possible restoration
+  collision_audit: The restorative head and domain qualifier both encode an ongoing
+    process. Runtime status does not replace lexical phase. The completed foundation
+    remains unchanged.
+  confidence: high
+  examples:
+    ordinary: ongoing internal structural reconfiguration toward the applicable restoration
+      standard
+    technical: An ongoing restorative transformation originating within one reference
+      structure whose restorative transformation changes how that structure's constituents
+      occupy its internal positions.
+    future_compound: May be reused as an ongoing restorative process with explicit
+      participants and domain restrictions.
+    counterexample: Do not use for arbitrary rearrangement, incorporation of a distinct
+      target, formation of a peer composite, and completed or merely possible restoration.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 1b987e04bf47840f9e82ecd31caef82cd850e4b6ac0d169e7df593ac36089663
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/foundation_process_compounds.md
 - architecture_version: '1.0'
   compound_id: CMP:218a5578a2274b92ba3d72db
   content_digest: 218a5578a2274b92ba3d72db291d07498972eeb4a076cd232ffb798e0e862989
@@ -136,6 +187,58 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 22f8ddc4d9b2d1a818d38e9fa1dc82343d7588ea825c12c9b5ae17856d9dc38a
+- architecture_version: '1.0'
+  compound_id: CMP:2816a7eeb356c2148b26beca
+  content_digest: 2816a7eeb356c2148b26becacdd6b0ff071eb2846e2936166bc2c692907c9ecc
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: ongoing physical repair
+  english_glosses:
+  - ongoing physical repair
+  semantic_head: h
+  invariant_definition: An ongoing source-to-target restorative transformation whose
+    restorative transformation is an ongoing physical-state change localized in that
+    distinct material target.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: MAT:111
+  - node_id: h
+    kind: root
+    root_id: REP:111
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: actively restoring a distinct physical target toward its applicable
+      restoration standard
+    excludes: completed or merely possible repair, arbitrary physical change, internal
+      self-restoration, and future intention without ongoing repair
+  collision_audit: The restorative head and domain qualifier both encode an ongoing
+    process. Runtime status does not replace lexical phase. The completed foundation
+    remains unchanged.
+  confidence: high
+  examples:
+    ordinary: actively restoring a distinct physical target toward its applicable
+      restoration standard
+    technical: An ongoing source-to-target restorative transformation whose restorative
+      transformation is an ongoing physical-state change localized in that distinct
+      material target.
+    future_compound: May be reused as an ongoing restorative process with explicit
+      participants and domain restrictions.
+    counterexample: Do not use for completed or merely possible repair, arbitrary
+      physical change, internal self-restoration, and future intention without ongoing
+      repair.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 2816a7eeb356c2148b26becacdd6b0ff071eb2846e2936166bc2c692907c9ecc
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/foundation_process_compounds.md
 - architecture_version: '1.0'
   compound_id: CMP:2d26353b47b531bd3f5ae090
   content_digest: 2d26353b47b531bd3f5ae0901bf01e4ce43f5223e70b70cdd716b295e0beac27
@@ -884,6 +987,60 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 99a87c8869d58498f524f1cc2782321e356f26bf94b14c405077c92a58ff97a7
+- architecture_version: '1.0'
+  compound_id: CMP:9ddb5e2cfc285515c799462e
+  content_digest: 9ddb5e2cfc285515c799462ec538f0f410adc3eadca8d90c7db041d998369e45
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: ongoing internal data repair
+  english_glosses:
+  - ongoing internal data repair
+  semantic_head: h
+  invariant_definition: An ongoing restorative transformation originating within one
+    reference entity whose restorative transformation is an ongoing bounded transformation
+    of represented information within that entity, without transfer to a distinct
+    target.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: DAT:101
+  - node_id: h
+    kind: root
+    root_id: REP:101
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: internal restoration of damaged represented information by an ongoing
+      internal information transformation
+    excludes: arbitrary editing, transfer to another target, completed restoration,
+      and restoration originating from a distinct external source
+  collision_audit: The restorative head and domain qualifier both encode an ongoing
+    process. Runtime status does not replace lexical phase. The completed foundation
+    remains unchanged.
+  confidence: high
+  examples:
+    ordinary: internal restoration of damaged represented information by an ongoing
+      internal information transformation
+    technical: An ongoing restorative transformation originating within one reference
+      entity whose restorative transformation is an ongoing bounded transformation
+      of represented information within that entity, without transfer to a distinct
+      target.
+    future_compound: May be reused as an ongoing restorative process with explicit
+      participants and domain restrictions.
+    counterexample: Do not use for arbitrary editing, transfer to another target,
+      completed restoration, and restoration originating from a distinct external
+      source.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 9ddb5e2cfc285515c799462ec538f0f410adc3eadca8d90c7db041d998369e45
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/foundation_process_compounds.md
 - architecture_version: '1.0'
   compound_id: CMP:9e8b36f50570a0c3c362a968
   content_digest: 9e8b36f50570a0c3c362a968c9a99eff8df12285e44484758641ad7e2b47f247

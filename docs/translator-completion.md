@@ -83,7 +83,7 @@ gates. The translator remains unfinished until all gates have direct evidence.
 
 `tools/lib/era_zero_compound_dependencies.rb` resolves exact approved versions,
 orders dependencies before consumers, and rejects missing pins and cycles.
-`tools/audit_compound_dependencies.rb` emits the current inventory: 29 compounds,
+`tools/audit_compound_dependencies.rb` emits the current inventory: 32 compounds,
 all presently built directly from atoms, with no nested dictionary entries yet.
 
 `tools/lib/era_zero_compound_expansion.rb` expands nested occurrences into unique
@@ -103,8 +103,13 @@ Expanded sibling ordering now uses semantic subtree hashes rather than local nod
 names; a renaming/storage-order test verifies that invariant. Existing flat output
 still uses its historical order pending a versioned renderer migration.
 
-The first three proposed process foundations and their exclusions are reviewed in
-`reviews/foundation_process_compounds.md`; they are not yet dictionary entries.
+The first three process foundations and their exclusions are reviewed in
+`reviews/foundation_process_compounds.md` and entered through
+`migrations/foundation_process_compounds_2026_10_28.yaml`. Their exact-label lookup,
+controlled target roles, runtime/phase separation and MIDI phase contrasts pass.
+The browser inventory now has 32 compounds and 440 canonical English senses.
+General English verb routing remains incomplete. Existing release checks still
+cover their bounded legacy scope, not the overall completion goal.
 
 Still required: scoped slot binding, complete compound
 timing and contour scheduling, grammar-aware MIDI, and browser integration.

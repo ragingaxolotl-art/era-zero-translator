@@ -1,5 +1,5 @@
 {
-  "compound_count": 29,
+  "compound_count": 32,
   "maximum_dependency_depth": 0,
   "scope": "Dependency integrity only; not semantic coverage or renderer readiness.",
   "dependency_order": [
@@ -14,6 +14,19 @@
       "direct_roots": [
         "CRE:010",
         "MAT:200"
+      ]
+    },
+    {
+      "compound_id": "CMP:1b987e04bf47840f9e82ecd3",
+      "definition_version": "1.0.0",
+      "title": "ongoing internal structural repair",
+      "depth": 0,
+      "dependencies": [
+
+      ],
+      "direct_roots": [
+        "REP:101",
+        "STR:101"
       ]
     },
     {
@@ -40,6 +53,19 @@
       "direct_roots": [
         "MAT:110",
         "REP:110"
+      ]
+    },
+    {
+      "compound_id": "CMP:2816a7eeb356c2148b26beca",
+      "definition_version": "1.0.0",
+      "title": "ongoing physical repair",
+      "depth": 0,
+      "dependencies": [
+
+      ],
+      "direct_roots": [
+        "MAT:111",
+        "REP:111"
       ]
     },
     {
@@ -264,6 +290,19 @@
       "direct_roots": [
         "CON:020",
         "DAT:020"
+      ]
+    },
+    {
+      "compound_id": "CMP:9ddb5e2cfc285515c799462e",
+      "definition_version": "1.0.0",
+      "title": "ongoing internal data repair",
+      "depth": 0,
+      "dependencies": [
+
+      ],
+      "direct_roots": [
+        "DAT:101",
+        "REP:101"
       ]
     },
     {

@@ -1,7 +1,9 @@
 # First foundation batch: ongoing restoration
 
-Status: semantic review complete for the proposals below; dictionary insertion,
-release migration, English routing, and sentence tests remain outstanding.
+Status: three compounds inserted by the versioned October 28 migration. Exact-label
+lookup and controlled compilation, target-role preservation, runtime/phase
+separation, and completed/ongoing MIDI contrasts pass. General English routing and
+novel full-sentence tests remain outstanding; this is not a complete verb translator.
 Authority: user-directed translator-completion goal, October 28, 2026.
 No canonical root or existing compound is changed by this review.
 

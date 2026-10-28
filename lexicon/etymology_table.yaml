@@ -4,12 +4,12 @@ metadata:
   version: 1.0.0
   status: canonical_gate4e
   atom_entries: 324
-  compound_entries: 29
-  total_entries: 353
+  compound_entries: 32
+  total_entries: 356
   scope: Auditable synchronic derivation and authority provenance; no invented natural-language
     ancestry.
   atomic_lexicon_fingerprint: 9b2e6047a5bbd39f0b54ff2f49b569cf7e4726b361b51a62070804727efce26f
-  compound_dictionary_fingerprint: 487aa867eebac76558fcba8302ea4331ea1e4a8226bfc02c93efc46494f9115f
+  compound_dictionary_fingerprint: a15ba41e54bb4742dbaff06bde58b02374bbc4d61017b957cb1eeceefb51677a
 principles:
   synchronic_not_fictional: Era Zero forms are engineered encodings. The table records
     actual construction rules and approval history rather than inventing ancestors
@@ -17287,6 +17287,50 @@ entries:
     approval_date: '2026-10-09'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
+- etymology_id: ETY:a82ccab8f1d1b8464dc50bdb
+  target_type: compound
+  target_id: CMP:1b987e04bf47840f9e82ecd3
+  status: canonical
+  english_label: ongoing internal structural repair
+  english_label_status: indexing_gloss_not_identity
+  formation_type: typed_semantic_graph_composition
+  head:
+    node_id: h
+    kind: root
+    target_id: REP:101
+  components:
+  - node_id: q01
+    kind: root
+    root_id: STR:101
+  - node_id: h
+    kind: root
+    root_id: REP:101
+  relations:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  semantic_derivation:
+    invariant_definition: An ongoing restorative transformation originating within
+      one reference structure whose restorative transformation changes how that structure's
+      constituents occupy its internal positions.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 1b987e04bf47840f9e82ecd31caef82cd850e4b6ac0d169e7df593ac36089663
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/gate4b_compound_dictionary_1.0.yaml
+    approval_date: '2026-10-28'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
 - etymology_id: ETY:c5c9d4f7515ea20f76b73896
   target_type: compound
   target_id: CMP:218a5578a2274b92ba3d72db
@@ -17371,6 +17415,50 @@ entries:
     authority: gate4b_reviewed_compound
     record: migrations/gate4b_compound_dictionary_1.0.yaml
     approval_date: '2026-10-09'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:a1e80f2655bb81002282f42f
+  target_type: compound
+  target_id: CMP:2816a7eeb356c2148b26beca
+  status: canonical
+  english_label: ongoing physical repair
+  english_label_status: indexing_gloss_not_identity
+  formation_type: typed_semantic_graph_composition
+  head:
+    node_id: h
+    kind: root
+    target_id: REP:111
+  components:
+  - node_id: q01
+    kind: root
+    root_id: MAT:111
+  - node_id: h
+    kind: root
+    root_id: REP:111
+  relations:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  semantic_derivation:
+    invariant_definition: An ongoing source-to-target restorative transformation whose
+      restorative transformation is an ongoing physical-state change localized in
+      that distinct material target.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 2816a7eeb356c2148b26becacdd6b0ff071eb2846e2936166bc2c692907c9ecc
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/gate4b_compound_dictionary_1.0.yaml
+    approval_date: '2026-10-28'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
 - etymology_id: ETY:e658e61b073671896a2db6a2
@@ -18139,6 +18227,51 @@ entries:
     authority: gate4b_reviewed_compound
     record: migrations/gate4b_compound_dictionary_1.0.yaml
     approval_date: '2026-10-09'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:532ca8baddedfa426c437432
+  target_type: compound
+  target_id: CMP:9ddb5e2cfc285515c799462e
+  status: canonical
+  english_label: ongoing internal data repair
+  english_label_status: indexing_gloss_not_identity
+  formation_type: typed_semantic_graph_composition
+  head:
+    node_id: h
+    kind: root
+    target_id: REP:101
+  components:
+  - node_id: q01
+    kind: root
+    root_id: DAT:101
+  - node_id: h
+    kind: root
+    root_id: REP:101
+  relations:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  semantic_derivation:
+    invariant_definition: An ongoing restorative transformation originating within
+      one reference entity whose restorative transformation is an ongoing bounded
+      transformation of represented information within that entity, without transfer
+      to a distinct target.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 9ddb5e2cfc285515c799462ec538f0f410adc3eadca8d90c7db041d998369e45
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/gate4b_compound_dictionary_1.0.yaml
+    approval_date: '2026-10-28'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
 - etymology_id: ETY:5bf55946b285a97b7e12d175

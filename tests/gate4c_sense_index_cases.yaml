@@ -1,8 +1,8 @@
 ---
 metadata:
   version: 1.0.0
-  sense_count: 437
-  lemma_count: 420
+  sense_count: 440
+  lemma_count: 423
 exact_atom_labels:
 - input: continuous self
   expected_route: atom
@@ -980,12 +980,18 @@ exact_compound_labels:
 - input: physical tool
   expected_route: compound
   expected_target: CMP:111b772027accab2054f0415
+- input: ongoing internal structural repair
+  expected_route: compound
+  expected_target: CMP:1b987e04bf47840f9e82ecd3
 - input: living communication network
   expected_route: compound
   expected_target: CMP:218a5578a2274b92ba3d72db
 - input: physical repair
   expected_route: compound
   expected_target: CMP:22f8ddc4d9b2d1a818d38e9f
+- input: ongoing physical repair
+  expected_route: compound
+  expected_target: CMP:2816a7eeb356c2148b26beca
 - input: shared-world law
   expected_route: compound
   expected_target: CMP:2d26353b47b531bd3f5ae090
@@ -1037,6 +1043,9 @@ exact_compound_labels:
 - input: shared message collection
   expected_route: compound
   expected_target: CMP:99a87c8869d58498f524f1cc
+- input: ongoing internal data repair
+  expected_route: compound
+  expected_target: CMP:9ddb5e2cfc285515c799462e
 - input: dormant program
   expected_route: compound
   expected_target: CMP:9e8b36f50570a0c3c362a968

@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 437
-  lemma_count: 420
+  sense_count: 440
+  lemma_count: 423
   canonical_atom_senses: 324
-  canonical_compound_senses: 29
+  canonical_compound_senses: 32
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: 9b2e6047a5bbd39f0b54ff2f49b569cf7e4726b361b51a62070804727efce26f
-  compound_dictionary_fingerprint: 487aa867eebac76558fcba8302ea4331ea1e4a8226bfc02c93efc46494f9115f
+  compound_dictionary_fingerprint: a15ba41e54bb4742dbaff06bde58b02374bbc4d61017b957cb1eeceefb51677a
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -5048,6 +5048,63 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: ongoing internal data repair
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:9ddb5e2cfc285515c799462e
+  definition: An ongoing restorative transformation originating within one reference
+    entity whose restorative transformation is an ongoing bounded transformation of
+    represented information within that entity, without transfer to a distinct target.
+  sense_id: ENS:ecf20535faf8573d4ebdfdfd
+  display_form: ongoing internal data repair
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - arbitrary editing, transfer to another target, completed restoration, and restoration
+    originating from a distinct external source
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: ongoing internal structural repair
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:1b987e04bf47840f9e82ecd3
+  definition: An ongoing restorative transformation originating within one reference
+    structure whose restorative transformation changes how that structure's constituents
+    occupy its internal positions.
+  sense_id: ENS:c4d39b1091ab744d47f626c9
+  display_form: ongoing internal structural repair
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - arbitrary rearrangement, incorporation of a distinct target, formation of a peer
+    composite, and completed or merely possible restoration
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: ongoing physical repair
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:2816a7eeb356c2148b26beca
+  definition: An ongoing source-to-target restorative transformation whose restorative
+    transformation is an ongoing physical-state change localized in that distinct
+    material target.
+  sense_id: ENS:96ddcc4f67e0aae5b8a8b130
+  display_form: ongoing physical repair
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - completed or merely possible repair, arbitrary physical change, internal self-restoration,
+    and future intention without ongoing repair
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:fde92fc69d8d1aeff6000ad0
   lemma: operative constraint-target applicability
   display_form: operative constraint-target applicability
@@ -9590,6 +9647,27 @@ lemma_index:
     direct_target_count: 0
     routes:
     - grammar
+  ongoing internal data repair:
+    sense_ids:
+    - ENS:ecf20535faf8573d4ebdfdfd
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  ongoing internal structural repair:
+    sense_ids:
+    - ENS:c4d39b1091ab744d47f626c9
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  ongoing physical repair:
+    sense_ids:
+    - ENS:96ddcc4f67e0aae5b8a8b130
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   operative constraint-target applicability:
     sense_ids:
     - ENS:fde92fc69d8d1aeff6000ad0

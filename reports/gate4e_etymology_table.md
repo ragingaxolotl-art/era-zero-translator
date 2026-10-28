@@ -5,7 +5,7 @@ Version: **1.0.0**
 
 ## Result
 
-The table contains **324 atomic derivations** and **29 compound derivations**. It records the real synchronic construction of Era Zero forms: family onset and harmony, three-trit address axes, compact-root segments, formal-carrier segments, relative note path, semantic authority, compound graph, and content-derived identity.
+The table contains **324 atomic derivations** and **32 compound derivations**. It records the real synchronic construction of Era Zero forms: family onset and harmony, three-trit address axes, compact-root segments, formal-carrier segments, relative note path, semantic authority, compound graph, and content-derived identity.
 
 This standard does not invent a proto-language, borrowing history, or English cognate story. Era Zero is engineered. Its valid “etymology” is the auditable derivation from architecture, address, semantic review, and graph composition.
 
@@ -13,7 +13,7 @@ This standard does not invent a proto-language, borrowing history, or English co
 
 - **36 source-canonical atoms:** all `LIF:000–222` and `MOV:000–022`, traced to the source record without semantic rewriting.
 - **288 reviewed-canonical atoms:** traced to the exact effective approval migration that promoted each invariant.
-- **29 reviewed compounds:** traced to Gate 4B, with head, nodes, edges, architecture version, SHA-256 digest, and CMP identity rule.
+- **32 reviewed compounds:** traced to Gate 4B, with head, nodes, edges, architecture version, SHA-256 digest, and CMP identity rule.
 
 ## Linguistic boundary
 

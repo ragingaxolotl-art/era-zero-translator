@@ -47,7 +47,7 @@ end
 index['metadata'].merge!('sense_count'=>index['senses'].length,'lemma_count'=>index['lemma_index'].length,'canonical_compound_senses'=>compounds.length,'compound_dictionary_fingerprint'=>V.fingerprint(compounds));save('lexicon/english_sense_index.yaml',index)
 cases=V.load_yaml('tests/gate4b_compound_cases.yaml');cases['metadata']['approved_entries']=compounds.length;cases['accepted']=compounds.map { |c| {'case_id'=>c['display_title'].tr(' ','_'),'compound_id'=>c['compound_id'],'expected'=>'valid_approved_entry'} };save('tests/gate4b_compound_cases.yaml',cases)
 cases=V.load_yaml('tests/gate4c_sense_index_cases.yaml');cases['metadata'].merge!('sense_count'=>index['senses'].length,'lemma_count'=>index['lemma_index'].length);cases['exact_compound_labels']=compounds.map { |c| {'input'=>c['display_title'],'expected_route'=>'compound','expected_target'=>c['compound_id']} };save('tests/gate4c_sense_index_cases.yaml',cases)
-version=V.load_yaml('spec/version.yaml');version['compound_dictionary_entries']=compounds.length;save('spec/version.yaml',version)
+version=V.load_yaml('spec/version.yaml');version.merge!('compound_dictionary_entries'=>compounds.length,'english_sense_records'=>index['senses'].length,'english_lemmas'=>index['lemma_index'].length,'etymology_entries'=>atoms.length+compounds.length);save('spec/version.yaml',version)
 ready=V.load_yaml('spec/translator_readiness.yaml');ready['gate4a']['dictionary_entries']=compounds.length;save('spec/translator_readiness.yaml',ready)
 run('validate_gate4b_compound_dictionary.rb');run('validate_gate4c_english_sense_index.rb')
 run('build_gate4d_coverage_report.rb','--inventory-only');run('build_gate4e_etymology_table.rb','--inventory-only')
