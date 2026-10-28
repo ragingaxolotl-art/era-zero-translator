@@ -16,6 +16,10 @@ module EraZeroSemanticValidation
   end
 
 
+  def canonical_decimal?(value)
+    value.is_a?(String) && value.length <= 1024 && value != "-0" && value.match?(/\A-?(?:0|[1-9][0-9]*)(?:\.[0-9]*[1-9])?\z/)
+  end
+
   def authority_documents
     paths = %w[spec/semantic_ir_1.0.yaml spec/semantic_ir_schema.yaml lexicon/atoms.yaml lexicon/compound_dictionary.yaml]
     signature = paths.map { |path| stat = File.stat(File.join(EraZeroValidation::ROOT, path)); [stat.mtime.to_f, stat.size] }
@@ -80,7 +84,13 @@ module EraZeroSemanticValidation
         errors << "invalid_time_anchor" unless spec.dig("node_types", "time_anchor", "anchor_types").include?(n["anchor_type"])
       elsif n["kind"] == "measurement"
         errors << "invalid_unit" unless units.include?(n["unit"])
-        errors << "invalid_quantity" unless n["magnitude"].to_s.match?(/\A-?(?:0|[1-9]\d*)(?:\.\d+)?\z/)
+        errors << "invalid_quantity" unless canonical_decimal?(n["magnitude"])
+      elsif n["kind"] == "scope_operator" && n["operator"] == "quantifier"
+        counted = %w[exact at_least at_most].include?(n["quantifier"])
+        allowed = %w[node_id kind operator quantifier] + (counted ? ["value"] : [])
+        valid = %w[exact at_least at_most all some none].include?(n["quantifier"]) && (n.keys - allowed).empty?
+        valid &&= n["value"].is_a?(String) && n["value"].length <= 1024 && n["value"].match?(/\A(?:0|[1-9][0-9]*)\z/) if counted
+        errors << "invalid_quantifier" unless valid
       elsif n["kind"] == "reference"
         declared = Array(ir.dig("discourse_constraints", "declared_referents"))
         errors << "unresolved_reference" unless declared.include?(n["referent_id"])

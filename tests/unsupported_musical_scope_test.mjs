@@ -24,7 +24,12 @@ ir=JSON.parse(STDIN.read).fetch('semantic_ir')
 digest=EraZeroRenderer.semantic_digest(ir)
 ir['utterance_id']='UTT:'+digest[0,24]
 ir['serialization']['content_digest']=digest
-f=EraZeroRenderer.render(ir)
+begin
+ f=EraZeroRenderer.render(ir)
+rescue EraZeroRenderer::RenderError => e
+ abort e.message unless e.message.include?('invalid_quantifier')
+ puts 'rejected';exit
+end
 [:midi,:svg].each do |method|
   begin
     EraZeroPresentation.send(method,f)

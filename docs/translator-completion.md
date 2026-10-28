@@ -605,3 +605,12 @@ The exact-quantity fixture now has sound-preserving presentation hashes at all
 three reference anchors. Eight numerical/operator contrasts agree across Ruby and
 browser MIDI/SVG. This establishes the musical representation; plural English
 noun phrases and quantifier attachment still require parser and referent work.
+
+Quantity validation now rejects malformed meanings before formal rendering. Exact,
+minimum and maximum counts require canonical nonnegative integer strings; all,
+some and none carry no numeric value. Unimplemented range/proportional shapes and
+unrepresented parameters are rejected at this boundary. Measurements require exact
+canonical decimal strings, preserving large values without floating-point coercion.
+Negative zero, redundant zeros, exponents and JSON numeric values are rejected;
+future English normalization must convert input to this explicit canonical form.
+The 1,024-character implementation limit matches musical export.
