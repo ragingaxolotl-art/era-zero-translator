@@ -70,6 +70,17 @@ fill a grid, or silently broaden existing roots. Any family proposal must docume
 its distinctions, boundaries with current families, sound encoding, migration and
 minimal-pair tests. Existing melodies and meanings remain stable.
 
+### Existing-root descriptions
+
+The complete sentence composer now supports named or quoted bearers with `is
+conscious` (LIF:011) and `is dormant` (LIF:012), including explicit `is not` scope.
+These are unary descriptions with a bearer role, not actor/target actions and not
+phonemic adjective labels. Dormant retains identity-preserved, unexpressed meaning;
+it is not a synonym for tired or asleep. Bearer rendering uses the renderer's
+existing middle-register fallback. Tests compare complete browser and Ruby formal
+outputs and distinguish conscious, dormant, and not-conscious MIDI. This bounded
+construction does not establish general adjective coverage.
+
 ## Implementation gates
 
 - Source manifest and reproducible semantic-gap/dependency report.

@@ -9,6 +9,10 @@ const ACTIONS = [
   {pattern:'is damaging', predicate:'WRN:111', key:'active_target_impairment', gloss:'active target impairment', wording:'is damaging'},
   {pattern:'is physically repairing', predicate:'CMP:2816a7eeb356c2148b26beca', key:'ongoing_physical_repair', wording:'is physically repairing'}
 ];
+const DESCRIPTIONS = [
+  {pattern:'conscious', predicate:'LIF:011', key:'conscious_other', wording:'is conscious'},
+  {pattern:'dormant', predicate:'LIF:012', key:'dormant_other', wording:'is dormant'}
+];
 export function parseNamedSentence(input) {
   const participant='([A-Z][a-z]+|"[A-Za-z]+(?:[ -][A-Za-z]+)*")';
   for(const action of ACTIONS){
@@ -18,6 +22,10 @@ export function parseNamedSentence(input) {
       if(match)return {actor:match[1].replaceAll('"',''),target:match[2].replaceAll('"',''),actorText:match[1],targetText:match[2],...action,negated,construction:`named_${action.key}${negated?'_negated':''}`};
     }
   }
+  for(const description of DESCRIPTIONS){
+    const match=String(input).trim().match(new RegExp(`^${participant} is (not )?${description.pattern}[.]?$`));
+    if(match)return {actor:match[1].replaceAll('"',''),actorText:match[1],...description,role:'bearer',negated:!!match[2],construction:`named_${description.key}${match[2]?'_negated':''}`};
+  }
   return null;
 }
 
@@ -25,7 +33,7 @@ export function parseNamedSentence(input) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return /\b(?:(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing)\b/i.test(String(input)) && !parseNamedSentence(input);
+  return /\b(?:(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|conscious|dormant)\b/i.test(String(input)) && !parseNamedSentence(input);
 }
 
 export function parseSentenceSequence(input) {
@@ -81,11 +89,11 @@ export async function composeNamedSentence(input,template) {
   const predicates=source.semantic_ir.nodes.filter(node=>node.kind==='lexical_occurrence');
   if(source.semantic_ir.speech_act!=='assertion' || source.semantic_ir.nodes.length!==2 || source.semantic_ir.edges.length!==1 || source.semantic_ir.edges[0].type!=='centers' || source.performance.anchor_midi!==60 || predicates.length!==1 || predicates[0].target_id!==parsed.predicate || predicates[0].runtime_state?.code!==1)
     throw new Error('Expected the matching canonical action assertion template at anchor 60.');
-  const names=await Promise.all([encodeName(parsed.actor),encodeName(parsed.target)]);
+  const names=await Promise.all([parsed.actor,...(parsed.target?[parsed.target]:[])].map(label=>encodeName(label)));
   const references=names.map((name,index)=>({node_id:index?'b':'a',kind:'phonemic_reference',referent_id:name.name_id,value_type:'entity',name}));
   const ir={ir_version:'1.0',root_clause:'c',speech_act:'assertion',nodes:[{node_id:'c',kind:'clause',clause_type:'predication'},
     {node_id:'p',kind:'lexical_occurrence',target_type:predicates[0].target_type,target_id:parsed.predicate,runtime_state:{code:1}},...references],
-    edges:[{edge_id:'e0',type:'centers',from:'p',to:'c'},{edge_id:'e1',type:'fills_role',from:'a',to:'p',role:'actor'},{edge_id:'e2',type:'fills_role',from:'b',to:'p',role:'target'}],discourse_constraints:{}};
+    edges:[{edge_id:'e0',type:'centers',from:'p',to:'c'},{edge_id:'e1',type:'fills_role',from:'a',to:'p',role:parsed.role||'actor'},...(parsed.target?[{edge_id:'e2',type:'fills_role',from:'b',to:'p',role:'target'}]:[])],discourse_constraints:{}};
   if(parsed.negated){
     ir.nodes.push({node_id:'neg',kind:'scope_operator',operator:'negation'});
     ir.edges[0].from='neg';
@@ -95,9 +103,9 @@ export async function composeNamedSentence(input,template) {
   ir.utterance_id=`UTT:${digest.slice(0,24)}`;
   ir.serialization={canonical_format:'EZIR-JSON-1',content_digest:digest};
   const events=names.map((name,index)=>{
-    const offset=index?12:-12,notes=notesForName(name);
+    const offset=index?12:(parsed.role==='bearer'?0:-12),notes=notesForName(name);
     return {kind:'phonemic_label',occurrence_id:index?'b':'a',target_id:name.name_id,referent_id:name.name_id,label:name.normalized_label,semantic_claim:false,
-      register:index?'high':'low',base_midi:60+offset,family_qualified_transliteration:name.normalized_label,formal_carrier:'',
+      register:index?'high':(parsed.role==='bearer'?'middle':'low'),base_midi:60+offset,family_qualified_transliteration:name.normalized_label,formal_carrier:'',
       family_opening_relative_semitones:[],family_opening_absolute_midi:[],address_relative_semitones:notes.map(note=>note-60),address_absolute_midi:notes.map(note=>note+offset),note_duration_beats:1};
   });
   events.push(...source.performance.lexical_events.map(event=>({...structuredClone(event),occurrence_id:'p'})));
@@ -112,7 +120,7 @@ export async function composeNamedSentence(input,template) {
     lexical_events:relative,structural_events:structural,statement_boundary:performance.statement_boundary,statement_boundary_beats:performance.statement_boundary_beats};
   const formalDigest=await canonicalDigest({semantic_digest:digest,relative_plan:relativePlan});
   const formal={format:'EZF-1',renderer_version:'1.0.0',formal_id:`EZF:${formalDigest.slice(0,24)}`,formal_digest:formalDigest,semantic_digest:digest,semantic_ir:ir,performance,
-    literal_gloss:`a:name(${names[0].normalized_label}) | b:name(${names[1].normalized_label}) | ${source.literal_gloss.replaceAll(`${predicates[0].node_id}:`,'p:').replaceAll(`${predicates[0].node_id}.`,'p.')}`};
+    literal_gloss:`${names.map((name,index)=>`${index?'b':'a'}:name(${name.normalized_label})`).join(' | ')} | ${source.literal_gloss.replaceAll(`${predicates[0].node_id}:`,'p:').replaceAll(`${predicates[0].node_id}.`,'p.')}`};
   return {source_input:input,target_id:parsed.predicate,sense_id:`construction:${parsed.construction}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,
-    construction:parsed.construction,interpretation:`${parsed.actorText} ${parsed.negated?(parsed.key==='active_care'?'does not actively care for':parsed.wording.replace('is ','is not ')):parsed.wording} ${parsed.targetText}.`};
+    construction:parsed.construction,interpretation:`${parsed.actorText} ${parsed.negated?(parsed.key==='active_care'?'does not actively care for':parsed.wording.replace('is ','is not ')):parsed.wording}${parsed.targetText?' '+parsed.targetText:''}.`};
 }
