@@ -512,3 +512,18 @@ which contain no semantic IDs, so that case fails the collision criterion. New
 conventional compounds must pass this gate before joining the approved inventory;
 semantic hashes alone cannot establish listener recoverability. General inverse
 interpretation and scoped compound sound encoding remain unfinished.
+
+
+### Past reference and completed target processes
+
+Past copular and progressive statements now compose with an explicit before-speech
+relation. “Nora was restoring Eli” retains REP:111; “Nora restored Eli” uses the
+existing completed target-restoration root REP:110. Equivalent reviewed mappings
+cover awakening, damage and physical repair, including negative statements.
+“Did not restore” negates completed restoration; it does not assert that no
+restorative activity ever occurred. Runtime state remains independent of tense.
+
+Yesterday can qualify these past statements. A past event today retains both its
+current-calendar-day interval and its before-speech relation. Quoted names are
+not rewritten, unsupported additions are not dropped, and combinations with modal
+scope still decline until their clause structure is represented faithfully.

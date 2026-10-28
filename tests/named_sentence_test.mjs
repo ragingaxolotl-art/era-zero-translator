@@ -7,6 +7,14 @@ import {midiFromFormal} from '../pages/engine.mjs';
 const data=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url)));
 const outputs=[];
 const calendarCases=[['Nora cared for Eli yesterday.','LIF:211'],['Nora did not care for Eli yesterday.','LIF:211'],['I was conscious yesterday.','LIF:001'],['Nora will care for Eli tomorrow.','LIF:211'],['Nora is conscious today.','LIF:011']];
+const pastCases=[
+ ['Nora was restoring Eli.','REP:111'],['Nora restored Eli.','REP:110'],
+ ['Nora was physically repairing "the radio".','CMP:2816a7eeb356c2148b26beca'],
+ ['Nora physically repaired "the radio".','CMP:22f8ddc4d9b2d1a818d38e9f'],
+ ['Nora did not restore Eli.','REP:110'],['Nora was not restoring Eli.','REP:111'],
+ ['Nora awakened Eli yesterday.','LIF:110'],['Nora damaged "the radio" today.','WRN:110'],
+ ['I was conscious.','LIF:001'],['You were dormant.','LIF:012'],['Pip was awakening Ada.','LIF:111'],['Pip was dormant.','LIF:012']
+];
 const cases=[['Pip cares for Ada.','LIF:211'],['Ada cares for Pip.','LIF:211'],['Mira is caring for Sol.','LIF:211'],['Jun cares for Tavi.','LIF:211'],
   ['Pip is awakening Ada.','LIF:111'],['Mira is restoring Sol.','REP:111'],['Jun is damaging Tavi.','WRN:111'],
   ['Pip is physically repairing "the machine".','CMP:2816a7eeb356c2148b26beca'],
@@ -44,7 +52,7 @@ const cases=[['Pip cares for Ada.','LIF:211'],['Ada cares for Pip.','LIF:211'],[
   ['I love you.','CMP:44718c92b66443c0c0f03ad7'],['You love me.','CMP:44718c92b66443c0c0f03ad7'],
   ['Nora loves Eli.','CMP:44718c92b66443c0c0f03ad7'],['I love you [2].','CMP:44718c92b66443c0c0f03ad7'],
   ['I do not love you.','CMP:44718c92b66443c0c0f03ad7'],['I care for you [0].','LIF:211'],['I care for you [2].','LIF:211']];
-for(const [text,target] of [...cases,...calendarCases]){
+for(const [text,target] of [...cases,...calendarCases,...pastCases]){
   assert.equal(parseNamedSentence(text).predicate,target);
   const file=data.resolution_files[target];
   const document=JSON.parse(fs.readFileSync(new URL(`../pages/${file}`,import.meta.url)));
@@ -57,11 +65,11 @@ assert.notEqual(outputs[0].semantic_ir.utterance_id,outputs[1].semantic_ir.utter
 assert.notDeepEqual(midiFromFormal(outputs[0].formal),midiFromFormal(outputs[1].formal));
 assert.equal(outputs[7].semantic_ir.nodes.find(node=>node.node_id==='p').target_type,'compound');
 assert.deepEqual(outputs[7].formal.performance.lexical_events.filter(event=>event.occurrence_id==='p').map(event=>event.target_id),['MAT:111','REP:111']);
-for(const text of ['Pip never cares for Ada.','Pip cares for Ada and Sol.','Pip barely cares for Ada.','Pip cares for a curious Ada.','Pip cares for Ada tomorrow.','Pip is not restoring Ada tomorrow.','Pip is damaging Ada and Sol.','Pip was awakening Ada.','Pip is physically repairing the broken machine.','Pip is physically repairing "pump" tomorrow.']){
+for(const text of ['Pip never cares for Ada.','Pip cares for Ada and Sol.','Pip barely cares for Ada.','Pip cares for a curious Ada.','Pip cares for Ada tomorrow.','Pip is not restoring Ada tomorrow.','Pip is damaging Ada and Sol.','Pip is physically repairing the broken machine.','Pip is physically repairing "pump" tomorrow.']){
   assert.equal(parseNamedSentence(text),null,text);
   assert.equal(needsSentenceComposition(text),true,text);
 }
-for(const text of ['Pip is very conscious.','Pip was dormant.','Pip is dormant tomorrow.']){
+for(const text of ['Pip is very conscious.','Pip is dormant tomorrow.']){
   assert.equal(parseNamedSentence(text),null);
   assert.equal(needsSentenceComposition(text),true);
 }
@@ -140,7 +148,7 @@ assert.notDeepEqual(midiFromFormal(outputs[42].formal),midiFromFormal(outputs[58
 for(const input of ['I love "coffee".','I like you.','I love me.','I love you [2] [1].'])assert.equal(parseNamedSentence(input),null);
 assert.equal(needsSentenceComposition('active care'),false);
 assert.equal(needsSentenceComposition('Pip cares for Ada.'),false);
-console.log(`Named sentences: ${cases.length+calendarCases.length} full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.`);
+console.log(`Named sentences: ${cases.length+calendarCases.length+pastCases.length} full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.`);
 
 for(const [text] of calendarCases){
  const parsed=parseNamedSentence(text);
@@ -152,7 +160,7 @@ assert.equal(parseNamedSentence('Nora cared for Eli tomorrow.'),null);
 
 assert.equal(parseNamedSentence('"He was conscious" is conscious yesterday.'),null);
 assert.match(parseNamedSentence('Nora will care for Eli tomorrow.').semanticNote,/future assertion/);
-const calendarOutputs=outputs.slice(cases.length);
+const calendarOutputs=outputs.slice(cases.length,cases.length+calendarCases.length);
 for(const [index,result] of calendarOutputs.entries()){
  const day=parseNamedSentence(calendarCases[index][0]).calendarDay;
  const marker={ '-1':'previous_day','0':'current_day','1':'next_day' }[day];
@@ -162,3 +170,13 @@ for(const [index,result] of calendarOutputs.entries()){
  assert.equal(result.semantic_ir.nodes.find(n=>n.kind==='lexical_occurrence').runtime_state.code,1);
 }
 assert.notDeepEqual(midiFromFormal(calendarOutputs[0].formal),midiFromFormal(calendarOutputs[3].formal));
+
+const pastOutputs=outputs.slice(cases.length+calendarCases.length);
+for(const result of pastOutputs){
+ assert.equal(result.semantic_ir.nodes.find(n=>n.kind==='lexical_occurrence').runtime_state.code,1);
+ assert.equal(result.semantic_ir.edges.filter(e=>e.type==='time_relation').length,result.semantic_ir.nodes.some(n=>n.day_offset==='0')?2:1);
+}
+assert.notDeepEqual(midiFromFormal(pastOutputs[0].formal),midiFromFormal(pastOutputs[1].formal));
+assert.notDeepEqual(midiFromFormal(pastOutputs[2].formal),midiFromFormal(pastOutputs[3].formal));
+assert.equal(parseNamedSentence('It is possible that Nora restored Eli.'),null);
+assert.equal(parseNamedSentence('"Nora was" is conscious yesterday.'),null);

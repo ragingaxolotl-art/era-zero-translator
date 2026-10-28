@@ -76,7 +76,7 @@ export function parseNamedSentence(input, depth=0) {
   const modal=String(input).trim().match(/^[Ii]t is (not )?(possible|necessary) that (.+)$/);
   if(modal){
     const inner=parseNamedSentence(modal[3],depth+1);
-    if(!inner||inner.calendarDay!==undefined)return null;
+    if(!inner||inner.calendarDay!==undefined||inner.speechTime!==undefined)return null;
     const scopes=[...(inner.scopes||[]),{operator:'modality',mode:modal[2]}];
     if(modal[1])scopes.push({operator:'negation'});
     return {...inner,scopes,construction:`scoped_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
@@ -93,12 +93,26 @@ export function parseNamedSentence(input, depth=0) {
       }
       return null;
     };
-    if(day==='yesterday')clause=rewrite([['was','is'],['were','is'],['did not care for','does not care for'],['cared for','cares for']]);
-    else if(day==='tomorrow')clause=rewrite([['will not be','is not'],['will be','is'],['will not care for','does not care for'],['will care for','cares for']]);
+    if(day==='tomorrow')clause=rewrite([['will not be','is not'],['will be','is'],['will not care for','does not care for'],['will care for','cares for']]);
     if(clause===null)return null;
     const inner=parseNamedSentence(clause,depth+1);
-    if(!inner||inner.calendarDay!==undefined||inner.scopes?.length||inner.speechAct)return null;
-    return {...inner,...(day==='tomorrow'?{semanticNote:[inner.semanticNote,'Interprets will as a future assertion; promise, intention, and willingness are not inferred.'].filter(Boolean).join(' ')}:{}),calendarDay:{yesterday:'-1',today:'0',tomorrow:'1'}[day],construction:`calendar_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+    if(!inner||inner.calendarDay!==undefined||inner.scopes?.length||inner.speechAct||(day==='yesterday'&&inner.speechTime!=='before')||(day==='tomorrow'&&inner.speechTime!==undefined))return null;
+    return {...inner,...(day==='yesterday'?{speechTime:undefined}:{}),...(day==='tomorrow'?{semanticNote:[inner.semanticNote,'Interprets will as a future assertion; promise, intention, and willingness are not inferred.'].filter(Boolean).join(' ')}:{}),calendarDay:{yesterday:'-1',today:'0',tomorrow:'1'}[day],construction:`calendar_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
+  const pastForms=[
+    ['was','is'],['were','is'],['cared for','cares for'],['did not care for','does not care for'],
+    ['restored','is restoring','REP:110'],['did not restore','is not restoring','REP:110'],
+    ['awakened','is awakening','LIF:110'],['did not awaken','is not awakening','LIF:110'],
+    ['damaged','is damaging','WRN:110'],['did not damage','is not damaging','WRN:110'],
+    ['physically repaired','is physically repairing','CMP:22f8ddc4d9b2d1a818d38e9f'],
+    ['did not physically repair','is not physically repairing','CMP:22f8ddc4d9b2d1a818d38e9f']
+  ];
+  for(const [surface,replacement,completedPredicate] of pastForms){
+    const match=String(input).trim().match(new RegExp(`^${participant} ${surface} (.+)$`));
+    if(!match)continue;
+    const inner=parseNamedSentence(`${match[1]} ${replacement} ${match[2]}`,depth+1);
+    if(!inner||inner.calendarDay!==undefined||inner.speechTime!==undefined||inner.scopes?.length||inner.speechAct)return null;
+    return {...inner,...(completedPredicate?{predicate:completedPredicate}:{}),speechTime:'before',construction:`past_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
   const transfer=String(input).trim().match(new RegExp(`^[Dd]ata ${participant} is (not )?being transferred from ${participant} to ${participant}[.]?$`));
   if(transfer){
@@ -222,6 +236,10 @@ export async function composeNamedSentence(input,template) {
   if(parsed.calendarDay!==undefined){
     ir.nodes.push({node_id:'time',kind:'time_anchor',anchor_type:'interval',calendar_unit:'day',relative_to:'speech_date',day_offset:parsed.calendarDay});
     ir.edges.push({edge_id:'time0',type:'time_relation',from:'time',to:'c',relation:'during'});
+  }
+  if(parsed.speechTime!==undefined){
+    ir.nodes.push({node_id:'speech_time',kind:'time_anchor',anchor_type:'speech_time'});
+    ir.edges.push({edge_id:'time1',type:'time_relation',from:'speech_time',to:'c',relation:parsed.speechTime});
   }
   const digest=await canonicalDigest(ir);
   ir.utterance_id=`UTT:${digest.slice(0,24)}`;
