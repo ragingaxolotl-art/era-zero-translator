@@ -161,3 +161,11 @@ Care-construction fallback now stays nonautomatic when the complete parser
 declines added meaning. Manual dictionary inspection is labeled “Partial reading”
 and its source echo identifies it as partial. This specifically protects the new
 care-construction boundary; broader legacy keyword fallback remains audit work.
+
+The composition path now also accepts ongoing physical repair and explicitly
+quoted phonemic participant labels, including multiword labels. For example,
+`Pip is physically repairing "the machine".` preserves both MAT:111 and REP:111
+and the complete label's phonemes. Quotes explicitly request a label: adjectives
+or articles inside it are not claimed as separately translated semantics. Nine
+sentence cases match Ruby rendering. Unquoted descriptive noun phrases, pronouns,
+and scope additions still need grammatical interpretation.
