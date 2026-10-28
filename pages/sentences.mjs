@@ -127,6 +127,14 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     if(!inner||inner.calendarDay!==undefined||inner.speechTime!==undefined||inner.scopes?.length||inner.speechAct)return null;
     return {...inner,...(completedPredicate?{predicate:completedPredicate}:{}),speechTime:'before',construction:`past_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
+  const path=String(input).trim().match(new RegExp(`^${participant} (?:is|am|are) (not )?moving from ${participant} (?:to|toward) ${participant}[.]?$`));
+  if(path){
+    const texts=[path[1],path[3],path[4]],counted=texts.filter(text=>parseNominal(text)?.quantifier);
+    if(new Set(texts.map(participantIdentity)).size!==3||(counted.length&&(path[2]||counted.length>1)))return null;
+    return {...(counted.length?{quantifiedParticipants:true}:{}),predicate:'MOV:111',key:'active_path_approach',construction:`named_active_path_approach${path[2]?'_negated':''}`,negated:!!path[2],
+      participants:texts.map((text,index)=>({text,label:text.replaceAll('"',''),role:['actor','source','destination'][index]})),
+      explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
   const transfer=String(input).trim().match(new RegExp(`^[Dd]ata ${participant} is (not )?being transferred from ${participant} to ${participant}[.]?$`));
   if(transfer){
     const counted=[transfer[1],transfer[3],transfer[4]].filter(text=>parseNominal(text)?.quantifier);

@@ -6,19 +6,19 @@
       "test": "tests/compound_dependencies_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 25811\n\n# Running:\n\n......\n\nFinished in 0.026880s, 223.2143 runs/s, 558.0357 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 63646\n\n# Running:\n\n......\n\nFinished in 0.008304s, 722.5434 runs/s, 1806.3584 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_expansion_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 2584\n\n# Running:\n\n..........\n\nFinished in 0.496383s, 20.1457 runs/s, 253.8363 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 8967\n\n# Running:\n\n..........\n\nFinished in 0.231316s, 43.2309 runs/s, 544.7094 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/dictionary_musical_identity_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 37636\n\n# Running:\n\n.\n\nFinished in 0.288014s, 3.4721 runs/s, 20.8323 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 64629\n\n# Running:\n\n.\n\nFinished in 0.217358s, 4.6007 runs/s, 27.6042 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/audit_dictionary_musical_identity.rb",
@@ -30,13 +30,13 @@
       "test": "tests/semantic_reference_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 47301\n\n# Running:\n\n.......\n\nFinished in 0.355571s, 19.6866 runs/s, 89.9961 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 2898\n\n# Running:\n\n.......\n\nFinished in 0.219294s, 31.9206 runs/s, 145.9228 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/quantity_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 13663\n\n# Running:\n\n..\n\nFinished in 0.516695s, 3.8708 runs/s, 150.9595 assertions/s.\n\n2 runs, 78 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 18270\n\n# Running:\n\n..\n\nFinished in 0.363034s, 5.5091 runs/s, 214.8559 assertions/s.\n\n2 runs, 78 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_semantic_ir_and_grammar.rb",
@@ -48,13 +48,13 @@
       "test": "tests/foundation_process_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 28991\n\n# Running:\n\n...\n\nFinished in 0.658442s, 4.5562 runs/s, 42.5246 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 55060\n\n# Running:\n\n...\n\nFinished in 0.399819s, 7.5034 runs/s, 70.0317 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/repetition_performance_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 56322\n\n# Running:\n\n...\n\nFinished in 0.751092s, 3.9942 runs/s, 10.6512 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 7165\n\n# Running:\n\n...\n\nFinished in 0.472748s, 6.3459 runs/s, 16.9223 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_gate4b_compound_dictionary.rb",
@@ -162,7 +162,7 @@
       "test": "tools/audit_ordinary_phrase_coverage.mjs",
       "passed": true,
       "exit_code": 0,
-      "output": "{\"case_count\":40,\"counts\":{\"verified_for_declared_checks\":17,\"not_composed\":22,\"composed_needs_semantic_review\":1},\"completion_proven\":false}\n"
+      "output": "{\"case_count\":40,\"counts\":{\"verified_for_declared_checks\":18,\"not_composed\":21,\"composed_needs_semantic_review\":1},\"completion_proven\":false}\n"
     },
     {
       "test": "tests/negation_performance_test.mjs",
@@ -217,6 +217,12 @@
       "passed": true,
       "exit_code": 0,
       "output": "Counted noun phrases preserve quantifier, cardinality, noun label and participant role without repeating the predicate; Ruby/browser parity verified.\n"
+    },
+    {
+      "test": "tests/path_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Movement paths retain mover, source and destination; reversal changes music, with negation, num and past-question scope preserved.\n"
     },
     {
       "test": "tests/unsupported_musical_scope_test.mjs",

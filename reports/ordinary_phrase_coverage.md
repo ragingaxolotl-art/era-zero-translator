@@ -2,7 +2,7 @@
 
 Fresh phrase coverage audit authored during implementation; not a blind or representative English benchmark.
 
-Full translator completion: **not established**. 17 of 40 cases pass their declared semantic checks; 22 have no complete composition. These counts do not estimate coverage of English generally.
+Full translator completion: **not established**. 18 of 40 cases pass their declared semantic checks; 21 have no complete composition. These counts do not estimate coverage of English generally.
 
 | Area | Checked compositions | Cases |
 |---|---:|---:|
@@ -10,7 +10,7 @@ Full translator completion: **not established**. 17 of 40 cases pass their decla
 | scope | 2 | 2 |
 | adjectives | 1 | 1 |
 | compounds | 1 | 1 |
-| movement | 2 | 3 |
+| movement | 3 | 3 |
 | cognition | 1 | 4 |
 | coordination | 2 | 3 |
 | quantity | 1 | 2 |
@@ -32,7 +32,6 @@ Full translator completion: **not established**. 17 of 40 cases pass their decla
 - **She cares for him.** — Resolve both pronouns from discourse or request referents (not_composed)
 - **Nora will care for Eli tomorrow.** — Preserve future time and commitment ambiguity (composed_needs_semantic_review)
 - **Nora cares for Eli and Orin.** — Both objects belong to the care relation (not_composed)
-- **Eli is moving from the archive to the gate.** — Bind both path endpoints and the mover (not_composed)
 - **The radio is hot.** — Temperature is not generic activity (not_composed)
 - **The radio is heavy.** — Mass or weight must not collapse into size (not_composed)
 - **The lamp is bright.** — Express visual intensity (not_composed)

@@ -19,6 +19,7 @@ for(const item of corpus.cases){
  if(result&&item.expected){
   const ir=result.semantic_ir,actual={
    speech_acts:[ir.speech_act],
+   role_labels:ir.edges.filter(e=>e.type==='fills_role').map(e=>`${e.role}:${ir.nodes.find(n=>n.node_id===e.from)?.name?.normalized_label||''}`),
    reference_modes:ir.nodes.filter(n=>n.reference_mode).map(n=>n.reference_mode),
    calendar_days:ir.nodes.filter(n=>n.kind==='time_anchor').map(n=>[n.anchor_type,n.calendar_unit,n.relative_to,n.day_offset].join(':')),
    time_relations:ir.edges.filter(e=>e.type==='time_relation').map(e=>e.relation),

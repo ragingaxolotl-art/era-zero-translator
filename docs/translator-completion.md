@@ -11,7 +11,7 @@ is the starting evidence, not a completion certificate.
 ## Current coverage evidence
 
 The [ordinary phrase audit](../reports/ordinary_phrase_coverage.md) currently has
-17 checked compositions, 22 uncomposed phrases, and one composed phrase awaiting
+18 checked compositions, 21 uncomposed phrases, and one composed phrase awaiting
 semantic review out of 40 deliberately varied cases. This is an implementation-authored diagnostic set, not a blind evaluation
 or a statistical measure of English coverage. Green regression suites do not
 override these missing constructions. The corpus records the intended distinctions
@@ -638,3 +638,14 @@ or a more specific collective/distributive reading. Negative combinations,
 multiple quantified arguments and adjective-modified nouns still decline where
 scope or meaning is not yet preserved. Quoted names and definite noun references
 keep their existing distinct frames. Full counted-language coverage remains open.
+
+
+### Movement with both path endpoints
+
+“Moving from … to/toward …” now binds mover, source and destination to the existing
+ongoing target-approach sense MOV:111. This does not assert arrival or completion.
+The scoped construction supports negation, runtime selection and existing past
+question/calendar handling. Endpoint reversal changes the output, and the coverage
+audit checks each role-to-label binding rather than only the set of noun labels.
+Same-endpoint round trips and extra manner descriptions still need their own
+semantics and are not silently flattened into this construction.

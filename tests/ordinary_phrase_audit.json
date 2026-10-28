@@ -414,7 +414,32 @@
       "area": "movement",
       "requirements": [
         "Bind both path endpoints and the mover"
-      ]
+      ],
+      "expected": {
+        "targets": [
+          "MOV:111"
+        ],
+        "roles": [
+          "actor",
+          "source",
+          "destination"
+        ],
+        "labels": [
+          "eli",
+          "archive",
+          "gate"
+        ],
+        "reference_modes": [
+          "definite_nominal",
+          "definite_nominal"
+        ],
+        "role_labels": [
+          "actor:eli",
+          "source:archive",
+          "destination:gate"
+        ],
+        "operators": []
+      }
     },
     {
       "id": "hot",

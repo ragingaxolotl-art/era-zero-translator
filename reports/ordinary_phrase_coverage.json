@@ -3,8 +3,8 @@
   "completion_proven": false,
   "case_count": 40,
   "counts": {
-    "verified_for_declared_checks": 17,
-    "not_composed": 22,
+    "verified_for_declared_checks": 18,
+    "not_composed": 21,
     "composed_needs_semantic_review": 1
   },
   "areas": {
@@ -26,7 +26,7 @@
     },
     "movement": {
       "total": 3,
-      "verified": 2
+      "verified": 3
     },
     "cognition": {
       "total": 4,
@@ -559,8 +559,34 @@
       "requirements": [
         "Bind both path endpoints and the mover"
       ],
-      "status": "not_composed",
-      "failures": []
+      "expected": {
+        "targets": [
+          "MOV:111"
+        ],
+        "roles": [
+          "actor",
+          "source",
+          "destination"
+        ],
+        "labels": [
+          "eli",
+          "archive",
+          "gate"
+        ],
+        "reference_modes": [
+          "definite_nominal",
+          "definite_nominal"
+        ],
+        "role_labels": [
+          "actor:eli",
+          "source:archive",
+          "destination:gate"
+        ],
+        "operators": []
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "67d55b197d93b1d294753416b3385786ef1b239573fa1512860948948b4a9a2c"
     },
     {
       "id": "hot",
