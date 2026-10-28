@@ -342,7 +342,26 @@
       "area": "speech_act",
       "requirements": [
         "Command an addressee to care for Eli"
-      ]
+      ],
+      "expected": {
+        "targets": [
+          "LIF:211"
+        ],
+        "roles": [
+          "actor",
+          "target"
+        ],
+        "labels": [
+          "eli"
+        ],
+        "operators": [],
+        "speech_acts": [
+          "command"
+        ],
+        "deictic_roles": [
+          "addressee"
+        ]
+      }
     },
     {
       "id": "two_objects",

@@ -19,6 +19,7 @@ for(const item of corpus.cases){
  if(result&&item.expected){
   const ir=result.semantic_ir,actual={
    speech_acts:[ir.speech_act],
+   deictic_roles:ir.nodes.filter(n=>n.kind==='deictic_reference').map(n=>n.deictic_role),
    targets:ir.nodes.filter(n=>n.kind==='lexical_occurrence').map(n=>n.target_id),
    roles:ir.edges.filter(e=>e.type==='fills_role').map(e=>e.role),
    labels:ir.nodes.filter(n=>n.kind==='phonemic_reference').map(n=>n.name.normalized_label),

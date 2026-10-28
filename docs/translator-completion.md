@@ -11,7 +11,7 @@ is the starting evidence, not a completion certificate.
 ## Current coverage evidence
 
 The [ordinary phrase audit](../reports/ordinary_phrase_coverage.md) currently has
-13 checked compositions and 27 uncomposed phrases out of 40 deliberately varied
+14 checked compositions and 26 uncomposed phrases out of 40 deliberately varied
 cases. This is an implementation-authored diagnostic set, not a blind evaluation
 or a statistical measure of English coverage. Green regression suites do not
 override these missing constructions. The corpus records the intended distinctions
@@ -430,3 +430,16 @@ runtime states. Ruby rendering/validation and browser scheduling/MIDI/neutral mo
 cues support them. Tests reverse speaker/addressee roles and verify exact event and
 MIDI parity. These anchors are context-relative and do not identify a persistent
 person; third-person resolution and English pronoun/command parsing remain pending.
+
+
+### Pronouns and direct commands
+
+Supported clauses now map unquoted I/me to the speaker and you to the addressee;
+quoted forms remain phonemic names. First-person conscious/dormant descriptions use
+LIF:001/002 rather than the other-person roots. Direct imperatives for supported
+care, repair, restoration, awakening, damage, movement, attention, and revision
+processes bind the addressee and use the existing command contour. Negative commands
+preserve explicit negation. Questions support pronoun agreement forms as well.
+Distinct-target constructions reject identical referents rather than misusing an
+other-target root for a reflexive meaning. Third-person pronouns, broader discourse
+resolution, reflexive root selection, and unsupported modifiers remain unfinished.

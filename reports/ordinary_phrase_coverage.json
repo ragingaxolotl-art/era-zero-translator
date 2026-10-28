@@ -3,8 +3,8 @@
   "completion_proven": false,
   "case_count": 40,
   "counts": {
-    "verified_for_declared_checks": 13,
-    "not_composed": 27
+    "verified_for_declared_checks": 14,
+    "not_composed": 26
   },
   "areas": {
     "participants": {
@@ -53,7 +53,7 @@
     },
     "speech_act": {
       "total": 2,
-      "verified": 1
+      "verified": 2
     },
     "sensory_dimensions": {
       "total": 4,
@@ -478,8 +478,28 @@
       "requirements": [
         "Command an addressee to care for Eli"
       ],
-      "status": "not_composed",
-      "failures": []
+      "expected": {
+        "targets": [
+          "LIF:211"
+        ],
+        "roles": [
+          "actor",
+          "target"
+        ],
+        "labels": [
+          "eli"
+        ],
+        "operators": [],
+        "speech_acts": [
+          "command"
+        ],
+        "deictic_roles": [
+          "addressee"
+        ]
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "770e8c5c45642f39629a9e60cdb3443105aabbc15786ba53fb199d135675e6ed"
     },
     {
       "id": "two_objects",

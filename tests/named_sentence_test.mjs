@@ -35,7 +35,11 @@ const cases=[['Pip cares for Ada.','LIF:211'],['Ada cares for Pip.','LIF:211'],[
   ['Pip is not paying attention to Ada.','MIN:211'],
   ['It is possible that Pip is revising a mental representation of Ada.','MIN:111'],
   ['Is Orin conscious?','LIF:011'],['Does Nora care for Eli?','LIF:211'],
-  ['Is Pip not moving toward Ada?','MOV:111'],['Does Nora not care for Eli?','LIF:211']];
+  ['Is Pip not moving toward Ada?','MOV:111'],['Does Nora not care for Eli?','LIF:211'],
+  ['I care for you.','LIF:211'],['You care for me.','LIF:211'],['I am conscious.','LIF:001'],['You are conscious.','LIF:011'],
+  ['Care for Eli.','LIF:211'],['Do not care for Eli.','LIF:211'],['Physically repair "the radio".','CMP:2816a7eeb356c2148b26beca'],
+  ['Do you care for me?','LIF:211'],['"you" cares for "me".','LIF:211'],['I care for "you".','LIF:211'],
+  ['Data "the map" is being transferred from me to you.','DAT:111']];
 for(const [text,target] of cases){
   assert.equal(parseNamedSentence(text).predicate,target);
   const file=data.resolution_files[target];
@@ -101,7 +105,7 @@ assert.equal(outputs[34].semantic_ir.edges.find(edge=>edge.from==='a').role,'exp
 assert.equal(outputs[35].semantic_ir.edges.find(edge=>edge.from==='a').role,'bearer');
 assert.equal(new Set(outputs.slice(33,36).map(result=>Buffer.from(midiFromFormal(result.formal)).toString('base64'))).size,3);
 for(const input of ['Pip is curious about Ada.','Pip is learning about Ada.','Pip is understanding Ada.','Pip is paying attention to Ada carefully.'])assert.equal(parseNamedSentence(input),null);
-for(const result of outputs.slice(38)){
+for(const result of outputs.slice(38,42)){
   assert.equal(result.semantic_ir.speech_act,'question');
   assert.equal(result.formal.performance.primary_contour,'rising');
   assert.deepEqual(result.formal.performance.contour_relative_semitones,[0,2]);
@@ -110,6 +114,16 @@ const statement=await composeNamedSentence('Orin is conscious.',JSON.parse(fs.re
 assert.deepEqual(statement.formal.performance.lexical_events,outputs[38].formal.performance.lexical_events);
 assert.notDeepEqual(midiFromFormal(statement.formal),midiFromFormal(outputs[38].formal));
 for(const input of ['Is Orin conscious tomorrow?','Why is Orin conscious?','It is possible that Is Orin conscious?'])assert.equal(parseNamedSentence(input),null);
+assert.deepEqual(outputs[42].semantic_ir.nodes.filter(node=>node.kind==='deictic_reference').map(node=>node.deictic_role),['speaker','addressee']);
+assert.deepEqual(outputs[43].semantic_ir.nodes.filter(node=>node.kind==='deictic_reference').map(node=>node.deictic_role),['addressee','speaker']);
+assert.notDeepEqual(midiFromFormal(outputs[42].formal),midiFromFormal(outputs[43].formal));
+for(const result of outputs.slice(46,49)){
+ assert.equal(result.semantic_ir.speech_act,'command');assert.equal(result.formal.performance.primary_contour,'sharply_falling');
+ assert.equal(result.semantic_ir.nodes.find(node=>node.node_id==='a').deictic_role,'addressee');
+}
+assert.equal(outputs[50].semantic_ir.nodes.filter(node=>node.kind==='deictic_reference').length,0);
+assert.equal(outputs[51].semantic_ir.nodes.filter(node=>node.kind==='deictic_reference').length,1);
+for(const input of ['I care for me.','You are awakening you.','She cares for him.','She cares for Eli.','They are conscious.','Care for Eli tomorrow.'])assert.equal(parseNamedSentence(input),null);
 assert.equal(needsSentenceComposition('active care'),false);
 assert.equal(needsSentenceComposition('Pip cares for Ada.'),false);
 console.log(`Named sentences: ${cases.length} full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.`);
