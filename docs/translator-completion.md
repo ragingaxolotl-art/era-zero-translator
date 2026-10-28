@@ -78,3 +78,21 @@ minimal-pair tests. Existing melodies and meanings remain stable.
 
 Existing keyword, dictionary-count and static-render tests alone cannot close these
 gates. The translator remains unfinished until all gates have direct evidence.
+
+## Current implementation evidence
+
+`tools/lib/era_zero_compound_dependencies.rb` resolves exact approved versions,
+orders dependencies before consumers, and rejects missing pins and cycles.
+`tools/audit_compound_dependencies.rb` emits the current inventory: 29 compounds,
+all presently built directly from atoms, with no nested dictionary entries yet.
+
+`tools/lib/era_zero_compound_expansion.rb` expands nested occurrences into unique
+array paths and retains scope records, local constraints, scoped slot identities,
+and both reference-boundary and resolved-head edge endpoints. Configurable depth
+and node limits fail explicitly. Dictionary inputs are not mutated.
+
+Tests include repeated references, three-level nesting, version failures, cycles,
+modifier scope, repeated slot names, limits, and preservation of existing entries.
+These modules do not yet drive renderer playback or browser translation. Next:
+consume expanded scopes in performance scheduling, bind nested slots explicitly,
+and verify external runtime endings apply only to the resolved semantic head.
