@@ -34,6 +34,6 @@ inverse_profile:
   recovers: Mass relation, participant phonemes or deictic roles, material root, runtime ending and speech contour
   limitations:
     - Exact symbolic MIDI timing, not acoustic transcription
-    - No modal or other enclosing scopes in this initial inverse
+    - Negation and unqualified modality scopes recover in outer-to-inner order; confidence and other enclosing scopes remain unsupported
     - Untagged phonemic labels do not recover original spelling or unique external identity
     - Tagged names and arbitrary compound payloads are outside this inverse profile

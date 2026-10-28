@@ -27,11 +27,29 @@ assert.deepEqual(decoded.participants.bearer,{kind:'deictic',role:'speaker'});
 assert.deepEqual(decoded.participants.comparison_standard,{kind:'deictic',role:'addressee'});
 assert.equal(decoded.material_root,'MAT:000');assert.equal(decoded.runtime_state,2);
 const wrapped=await composeNamedSentence('It is possible that the box has more mass than the radio.',load('MAT:010'));
-assert.throws(()=>decodeMassComparisonMidi(midiFromFormal(wrapped.formal)),/Unsupported/);
+assert.deepEqual(decodeMassComparisonMidi(midiFromFormal(wrapped.formal)).scopes,[{operator:'modality',mode:'possible'}]);
+for(const state of [0,1,2]){
+ const outer=await composeNamedSentence(`It is not possible that the box has more mass than the radio [${state}].`,load('MAT:010'));
+ const result=decodeMassComparisonMidi(midiFromFormal(outer.formal));
+ assert.equal(result.runtime_state,state);
+ assert.deepEqual(result.scopes,[{operator:'negation'},{operator:'modality',mode:'possible'}]);
+ const inner=structuredClone(outer.formal);
+ const modal=inner.semantic_ir.nodes.find(n=>n.operator==='modality'),negative=inner.semantic_ir.nodes.find(n=>n.operator==='negation');
+ Object.assign(modal,{operator:'negation'});delete modal.mode;
+ Object.assign(negative,{operator:'modality',mode:'possible'});
+ const innerBytes=midiFromFormal(inner);
+ assert.notDeepEqual(innerBytes,midiFromFormal(outer.formal));
+ assert.deepEqual(decodeMassComparisonMidi(innerBytes).scopes,[{operator:'modality',mode:'possible'},{operator:'negation'}]);
+ assert.equal(decodeMassComparisonMidi(innerBytes).runtime_state,state);
+}
+
+const confidence=structuredClone(wrapped.formal);
+confidence.semantic_ir.nodes.find(n=>n.operator==='modality').strength='0.5';
+assert.throws(()=>decodeMassComparisonMidi(midiFromFormal(confidence)),/Unsupported/);
 const kay=await composeNamedSentence('Kay has more mass than the radio.',load('MAT:010'));
 const cay=await composeNamedSentence('Cay has more mass than the radio.',load('MAT:010'));
 assert.notEqual(kay.semantic_ir.nodes.find(n=>n.node_id==='a').referent_id,cay.semantic_ir.nodes.find(n=>n.node_id==='a').referent_id);
 assert.deepEqual(midiFromFormal(kay.formal),midiFromFormal(cay.formal));
 assert.deepEqual(decodeMassComparisonMidi(midiFromFormal(kay.formal)),decodeMassComparisonMidi(midiFromFormal(cay.formal)));
 assert.match(decoded.reference_resolution,/not original spelling or external referent identity/);
-console.log(`Independent MIDI inverse: ${count} relation/runtime/direction cases plus deictic operands; octave transposition preserves decoding, corruption/truncation fail, unsupported modal scope is explicit. No source IR or formal plan is supplied to the decoder.`);
+console.log(`Independent MIDI inverse: ${count} relation/runtime/direction cases plus deictic operands; octave transposition preserves decoding, corruption/truncation fail, negated possibility preserves scope independently of all three runtime states. No source IR or formal plan is supplied to the decoder.`);

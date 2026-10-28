@@ -2,6 +2,7 @@ import {notesFromMidi} from './performance_codec.mjs';
 
 // Independent inverse of the strict EZPROPERTYCOMPARE-1 mass profile.
 // Accepts MIDI bytes only: no source sentence, formal plan, or semantic IR.
+const MODES=['possible','necessary','permitted','obligated','intended','predicted','counterfactual'];
 const RELATIONS=['equal','greater_than','less_than','at_least','at_most','not_equal'];
 const PHONEMES=['AA','AE','AH','AO','AW','AY','B','CH','D','DH','EH','ER','EY','F','G','HH','IH','IY','JH','K','L','M','N','NG','OW','OY','P','R','S','SH','T','TH','UH','UW','V','W','Y','Z','ZH','WB'];
 const ROLES=['actor','source','cause','experiencer','bearer','predicate','target','result','destination','instrument','material','content','recipient','location','environment','condition','persistent_condition','time','manner','quantity','comparison_standard','beneficiary'];
@@ -23,7 +24,15 @@ export function decodeMassComparisonMidi(bytes){
  const take=()=>segments[cursor++]||fail();
  const relative=(segment,anchor)=>segment.map(n=>n.midi-anchor);
  const duration=(segment,beats)=>segment.every(n=>n.end_tick-n.start_tick===division*beats);
- const first=take(),anchor=first[0].midi,opening=relative(first,anchor);
+ let first=take();const anchor=first[0].midi,scopes=[],closings=[];
+ while(true){
+  const pitches=relative(first,anchor),distance=-pitches[1];
+  if(!duration(first,.25)||pitches.length!==4||!same(pitches,[0,-distance,-distance,0])||!Number.isInteger(distance)||distance<1||distance>8)break;
+  if(scopes.length>=128)fail();
+  scopes.push(distance===1?{operator:'negation'}:{operator:'modality',mode:MODES[distance-2]});
+  closings.push([0,distance,distance,0]);first=take();
+ }
+ const opening=relative(first,anchor);
  if(!duration(first,.25)||opening.length!==5||!same([opening[0],opening[1],opening[2],opening[4]],[0,-18,1,0])||!RELATIONS[opening[3]])fail();
  const relation=RELATIONS[opening[3]];
  const roleFrame=(segment,side)=>{
@@ -61,9 +70,10 @@ export function decodeMassComparisonMidi(bytes){
  const last=lexical.at(-1),ending=path.at(-1),lastAddress=address.at(-1),beats=(last.end_tick-last.start_tick)/division;
  const runtime=ending===lastAddress-1&&beats===.25?0:ending===0&&beats===.5?1:ending===lastAddress+7&&beats===2?2:fail();
  const close=take();if(!duration(close,.25)||!same(relative(close,anchor),[0,18,1,opening[3],0]))fail();
+ for(const expected of closings.reverse()){const segment=take();if(!duration(segment,.25)||!same(relative(segment,anchor),expected))fail();}
  const contour=take(),contours={assertion:[0,0],question:[0,2],command:[0,-4],definition:[0,2,0],possibility:[0,-2,2]};
  const speechAct=Object.entries(contours).find(([,p])=>same(relative(contour,anchor),p))?.[0];
  if(!speechAct||!duration(contour,.5)||cursor!==segments.length)fail();
- return {profile:'EZPROPERTYCOMPARE-1',dimension:'mass',relation,participants,material_root:root,runtime_state:runtime,speech_act:speechAct,
+ return {profile:'EZPROPERTYCOMPARE-1',dimension:'mass',relation,scopes,participants,material_root:root,runtime_state:runtime,speech_act:speechAct,
    reference_resolution:'Phonemes recover audible labels, not original spelling or external referent identity.'};
 }
