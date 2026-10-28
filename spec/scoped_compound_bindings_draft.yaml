@@ -19,7 +19,7 @@ tests: tests/compound_expansion_test.rb
 renderer_integration:
   compound_occurrence_field: compound_bindings
   argument_table: IR nodes keyed by node_id, each with explicit value_type
-  supported_arguments: lexical_occurrence targeting a canonical atom or compound
+  supported_arguments: lexical_occurrence targeting a canonical atom or compound, or phonemic_reference carrying a validated EZNAME-0.1 label
   placement: Argument events appear at the slot position with the declared role register
   identity: Bindings are inside semantic IR nodes and therefore included in the utterance digest
   runtime: Each argument keeps its runtime; only the containing compound head gets its external ending
@@ -27,6 +27,14 @@ renderer_integration:
   recursion: Cycles and more than 64 participant-binding levels raise a render error
 remaining:
   - Integrate occurrence bindings into the general semantic IR validator
-  - Interpret participant names into declared typed referents
+  - Interpret ordinary English participant names into declared typed referents
   - Complete boundary timing for bound participants and modifiers
   - Connect browser sentence composition and sound output
+phonemic_reference:
+  fields: node_id, kind, referent_id, value_type, name
+  value_type: entity
+  name: Existing EZNAME-0.1 encoded label with pronunciation and optional instance tag
+  validation: Recompute phoneme notes and name identity; reject unknown phonemes or digest mismatch
+  performance: Preserve the label frame and transpose it by sentence anchor and participant register
+  semantic_claim: The label does not define a lexical meaning
+  articulation: Neutral mouth during label tones until a phoneme articulation mapping is defined

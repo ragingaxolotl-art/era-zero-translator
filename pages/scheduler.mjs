@@ -38,7 +38,7 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
       if (members.some(edge => !Number.isSafeInteger(edge.order)) || new Set(members.map(edge => edge.order)).size !== members.length)
         throw new Error('Repeated sequence requires distinct explicit member order.');
       result = members.sort((a,b) => a.order-b.order).flatMap(edge => walk(edge.from));
-    } else if (node.kind === 'lexical_occurrence') {
+    } else if (['lexical_occurrence','phonemic_reference'].includes(node.kind)) {
       result = edges.filter(edge => ['fills_role','qualifies'].includes(edge.type))
         .sort((a,b) => a.edge_id < b.edge_id ? -1 : a.edge_id > b.edge_id ? 1 : 0)
         .flatMap(edge => walk(edge.from)).concat(events.filter(event => event.occurrence_id === id));

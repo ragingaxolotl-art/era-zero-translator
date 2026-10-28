@@ -119,10 +119,13 @@ Ruby rendering now consumes explicit `compound_bindings` on lexical occurrences.
 Bound lexical participants appear at their scoped slots with role registers,
 independent runtime endings, and a binding chain. Argument-only nodes are not
 duplicated as standalone sounds. Rendering/decode tests preserve the bindings.
-Phonemic referents, general IR validation, browser interpretation and boundary
-timing remain outstanding.
+Phonemic referents now render using validated existing EZNAME-0.1 phonemes and
+frames, preserving actor/target registers without assigning root meanings.
+Cross-language tests verify name notes, participant reversal, formal roundtrip,
+MIDI parity and neutral-mouth label cues. Ordinary English interpretation, general
+IR validation and boundary timing remain outstanding.
 
-Still required: phonemic participant integration, complete compound
+Still required: ordinary English participant integration, complete compound
 timing and contour scheduling, grammar-aware MIDI, and browser integration.
 Formal round-trip preservation is not proof of audible semantic completeness.
 

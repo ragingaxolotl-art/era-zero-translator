@@ -7,6 +7,7 @@ require "digest"
 require "set"
 require_relative "era_zero_validation"
 require_relative "era_zero_compound_expansion"
+require_relative "era_zero_names"
 
 module EraZeroRenderer
   ROOT = EraZeroValidation::ROOT
@@ -114,6 +115,19 @@ module EraZeroRenderer
     id = node.fetch("node_id")
     raise RenderError, "cyclic compound participant binding" if ancestors.include?(id)
     raise RenderError, "participant binding depth exceeds 64" if ancestors.length >= 64
+    if node["kind"] == "phonemic_reference"
+      name = node.fetch("name")
+      notes = EraZeroNames.notes(name)
+      offset = anchor_midi - 60 + REGISTER_OFFSETS.fetch(register)
+      return [{ "kind" => "phonemic_label", "occurrence_id" => id,
+        "target_id" => name.fetch("name_id"), "referent_id" => node.fetch("referent_id"),
+        "label" => name.fetch("normalized_label"), "semantic_claim" => false,
+        "register" => register, "base_midi" => anchor_midi + REGISTER_OFFSETS.fetch(register),
+        "family_qualified_transliteration" => name.fetch("normalized_label"), "formal_carrier" => "",
+        "family_opening_relative_semitones" => [], "family_opening_absolute_midi" => [],
+        "address_relative_semitones" => notes.map { |note| note - 60 },
+        "address_absolute_midi" => notes.map { |note| note + offset }, "note_duration_beats" => 1.0 }]
+    end
     state = node.fetch("runtime_state").fetch("code")
     if node["target_type"] == "atom"
       raise RenderError, "an atom cannot declare compound bindings" if node.key?("compound_bindings")
@@ -136,7 +150,7 @@ module EraZeroRenderer
       if component["kind"] == "slot"
         binding = bindings.fetch(component.fetch("path"))
         argument = arguments.fetch(binding.fetch("argument_id"))
-        raise RenderError, "bound participant must be a renderable lexical occurrence" unless argument["kind"] == "lexical_occurrence"
+        raise RenderError, "bound participant must be a renderable occurrence" unless %w[lexical_occurrence phonemic_reference].include?(argument["kind"])
         role_register = ROLE_REGISTERS.fetch(binding.fetch("role"), "middle")
         occurrence_events(argument, ir, atoms, compounds, anchor_midi, role_register, ancestors + [id]).map do |event|
           event.merge("occurrence_id" => id, "argument_node_id" => argument.fetch("node_id"),
@@ -154,7 +168,7 @@ module EraZeroRenderer
           component_role: is_head ? "head" : component["component_role"] || "qualifier")]
       end
     end
-  rescue EraZeroCompoundExpansion::ExpansionError, KeyError => error
+  rescue EraZeroCompoundExpansion::ExpansionError, EraZeroNames::NameError, KeyError => error
     raise RenderError, error.message
   end
 
@@ -167,7 +181,7 @@ module EraZeroRenderer
     speech_act = ir.fetch("speech_act")
     contour = CONTOURS.fetch(speech_act) { raise RenderError, "unknown speech act #{speech_act}" }
     lexical_events = []
-    lexical_nodes = ir.fetch("nodes").select { |node| node["kind"] == "lexical_occurrence" }
+    lexical_nodes = ir.fetch("nodes").select { |node| %w[lexical_occurrence phonemic_reference].include?(node["kind"]) }
     bound_ids = lexical_nodes.flat_map { |node| node.fetch("compound_bindings", []).map { |binding| binding.fetch("argument_id") } }.to_set
     independent_ids = ir.fetch("edges").map { |edge| edge["from"] }.to_set
     lexical_nodes.sort_by { |node| node["node_id"] }.each do |node|
@@ -204,6 +218,7 @@ module EraZeroRenderer
     }
     formal_digest = Digest::SHA256.hexdigest(JSON.generate(EraZeroValidation.deep_sort({ "semantic_digest" => digest, "relative_plan" => relative_plan })))
     gloss_parts = lexical_events.map do |event|
+      next "#{event['occurrence_id']}:name(#{event['label']})" if event["kind"] == "phonemic_label"
       atom = atoms.fetch(event["target_id"])
       tail = event["runtime_tail"]
       "#{event['occurrence_id']}#{event['component_node_id'] ? ".#{event['component_node_id']}" : ''}:#{atom['title']}#{tail ? "[#{tail['code']}]" : ''}"

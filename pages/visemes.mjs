@@ -42,6 +42,16 @@ export function visemePlanFromFormal(formal,options={}){
   const sound=soundPlanFromFormal(formal),cues=[];
   let at=.08,lastSyllable='ma';
   sound.lexical_events.forEach((event,eventIndex)=>{
+    if(event.kind==='phonemic_label'){
+      // EZNAME is a framed label channel, not four DBA carrier syllables.
+      // Keep the mouth neutral until phoneme-specific articulation is defined.
+      event.address_path.forEach((note,noteIndex)=>{
+        cues.push({section:'phonemic_label',note,start:Number(at.toFixed(4)),duration:.24,syllable:null,target_id:event.target_id,event_index:eventIndex,note_index:noteIndex,onset_viseme:'REST',nucleus_viseme:'REST',onset_duration:0,sustain_only:true});
+        at+=.28;
+      });
+      at+=.16;
+      return;
+    }
     const carrier=event.formal_carrier.split('-');
     const lexicalDuration=(event.note_duration_beats||1)*.24;
     if(carrier.length!==4)throw new Error(`Expected four carrier syllables for ${event.target_id}.`);

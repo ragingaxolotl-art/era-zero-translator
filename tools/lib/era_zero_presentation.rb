@@ -113,7 +113,7 @@ module EraZeroPresentation
                    raise PresentationError, "repeated sequence requires distinct explicit member order"
                  end
                  members.sort_by { |edge| edge.fetch("order") }.flat_map { |edge| walk.call(edge.fetch("from")) }
-               when "lexical_occurrence"
+               when "lexical_occurrence", "phonemic_reference"
                  arguments = edges.select { |edge| %w[fills_role qualifies].include?(edge["type"]) }
                  arguments.sort_by { |edge| edge.fetch("edge_id") }.flat_map { |edge| walk.call(edge.fetch("from")) } + by_occurrence.fetch(id, [])
                else
