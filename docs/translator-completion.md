@@ -527,3 +527,9 @@ Yesterday can qualify these past statements. A past event today retains both its
 current-calendar-day interval and its before-speech relation. Quoted names are
 not rewritten, unsupported additions are not dropped, and combinations with modal
 scope still decline until their clause structure is represented faithfully.
+
+Past yes/no questions use the same temporal and completion mappings as statements.
+“Did Nora restore Eli?” asks about completed restoration; “Was Nora restoring Eli?”
+asks about ongoing restorative activity in the past. Negative questions retain
+negation, calendar modifiers remain explicit, and the question contour is emitted.
+This does not yet cover wh-questions, indirect questions, or arbitrary auxiliaries.

@@ -57,7 +57,10 @@ export function parseNamedSentence(input, depth=0) {
     }
     const question=String(input).trim().match(new RegExp(`^(?:[Ii]s|[Aa]re|[Aa]m) ${participant} (.+)\\?$`));
     const careQuestion=String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?care for ${participant}\\?$`));
-    const statement=question?`${question[1]} is ${question[2]}.`:careQuestion?`${careQuestion[1]} ${careQuestion[2]?'does not care for':'cares for'} ${careQuestion[3]}.`:null;
+    const pastQuestion=String(input).trim().match(new RegExp(`^(?:[Ww]as|[Ww]ere) ${participant} (.+)\\?$`));
+    const didQuestion=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?(care for|restore|awaken|damage|physically repair) ${participant}( (?:yesterday|today))?\\?$`));
+    const pastVerbs={'care for':'cared for',restore:'restored',awaken:'awakened',damage:'damaged','physically repair':'physically repaired'};
+    const statement=question?`${question[1]} is ${question[2]}.`:careQuestion?`${careQuestion[1]} ${careQuestion[2]?'does not care for':'cares for'} ${careQuestion[3]}.`:pastQuestion?`${pastQuestion[1]} was ${pastQuestion[2]}.`:didQuestion?`${didQuestion[1]} ${didQuestion[2]?'did not '+didQuestion[3]:pastVerbs[didQuestion[3]]} ${didQuestion[4]}${didQuestion[5]||''}.`:null;
     if(statement){
       const inner=parseNamedSentence(statement,depth+1);
       if(!inner)return null;

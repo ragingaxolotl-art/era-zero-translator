@@ -13,7 +13,9 @@ const pastCases=[
  ['Nora physically repaired "the radio".','CMP:22f8ddc4d9b2d1a818d38e9f'],
  ['Nora did not restore Eli.','REP:110'],['Nora was not restoring Eli.','REP:111'],
  ['Nora awakened Eli yesterday.','LIF:110'],['Nora damaged "the radio" today.','WRN:110'],
- ['I was conscious.','LIF:001'],['You were dormant.','LIF:012'],['Pip was awakening Ada.','LIF:111'],['Pip was dormant.','LIF:012']
+ ['I was conscious.','LIF:001'],['You were dormant.','LIF:012'],['Pip was awakening Ada.','LIF:111'],['Pip was dormant.','LIF:012'],
+ ['Did Nora restore Eli?','REP:110'],['Was Nora restoring Eli?','REP:111'],
+ ['Did Nora not restore Eli yesterday?','REP:110'],['Were you conscious today?','LIF:011']
 ];
 const cases=[['Pip cares for Ada.','LIF:211'],['Ada cares for Pip.','LIF:211'],['Mira is caring for Sol.','LIF:211'],['Jun cares for Tavi.','LIF:211'],
   ['Pip is awakening Ada.','LIF:111'],['Mira is restoring Sol.','REP:111'],['Jun is damaging Tavi.','WRN:111'],
@@ -180,3 +182,12 @@ assert.notDeepEqual(midiFromFormal(pastOutputs[0].formal),midiFromFormal(pastOut
 assert.notDeepEqual(midiFromFormal(pastOutputs[2].formal),midiFromFormal(pastOutputs[3].formal));
 assert.equal(parseNamedSentence('It is possible that Nora restored Eli.'),null);
 assert.equal(parseNamedSentence('"Nora was" is conscious yesterday.'),null);
+
+const pastQuestions=pastOutputs.slice(-4);
+for(const result of pastQuestions){
+ assert.equal(result.semantic_ir.speech_act,'question');
+ assert.equal(result.formal.performance.primary_contour,'rising');
+}
+assert.notDeepEqual(midiFromFormal(pastQuestions[0].formal),midiFromFormal(pastQuestions[1].formal));
+assert.equal(parseNamedSentence('Did Nora restore Eli and Sol?'),null);
+assert.equal(parseNamedSentence('Did Nora restore Eli tomorrow?'),null);
