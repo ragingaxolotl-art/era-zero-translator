@@ -99,7 +99,13 @@ A three-level render/decode/transposition case verifies this path. Existing flat
 dictionary output is preserved. Nested slots explicitly fail pending scoped
 binding; they are never silently omitted.
 
-Still required: canonical expanded-subgraph hashing for sibling ordering (current
-traversal uses deterministic local IDs), scoped slot binding, complete compound
+Expanded sibling ordering now uses semantic subtree hashes rather than local node
+names; a renaming/storage-order test verifies that invariant. Existing flat output
+still uses its historical order pending a versioned renderer migration.
+
+The first three proposed process foundations and their exclusions are reviewed in
+`reviews/foundation_process_compounds.md`; they are not yet dictionary entries.
+
+Still required: scoped slot binding, complete compound
 timing and contour scheduling, grammar-aware MIDI, and browser integration.
 Formal round-trip preservation is not proof of audible semantic completeness.

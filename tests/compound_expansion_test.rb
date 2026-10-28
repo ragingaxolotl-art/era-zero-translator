@@ -67,6 +67,17 @@ class CompoundExpansionTest < Minitest::Test
     end
   end
 
+  def test_sibling_order_is_independent_of_node_names_and_storage_order
+    original = entry("same", [root("first", "MAT:200"), root("second", "STR:020"), root("h", "CRE:010")], "h", [["first", "h"], ["second", "h"]])
+    renamed = entry("same", [root("z", "MAT:200"), root("a", "STR:020"), root("head", "CRE:010")].reverse, "head", [["a", "head"], ["z", "head"]])
+    sequences = [original, renamed].map do |definition|
+      expander = Expander.new([definition])
+      expander.ordered_roots(expander.expand("same", "1.0.0")).map { |node| node["root_id"] }
+    end
+    assert_equal sequences.first, sequences.last
+    assert_equal "CRE:010", sequences.first.last
+  end
+
   def test_slots_are_occurrence_scoped_and_input_is_not_modified
     base = entry("slotted", [{ "node_id" => "s", "kind" => "slot", "slot_name" => "target", "slot_type" => "entity" }, root("h", "REP:111")], "h", [])
     base["edges"] << { "from" => "s", "to" => "h", "type" => "fills_role", "role" => "target" }

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 require_relative "era_zero_compound_dependencies"
 require "json"
+require "digest"
 
 module EraZeroCompoundExpansion
   class ExpansionError < StandardError; end
@@ -31,11 +32,30 @@ module EraZeroCompoundExpansion
       scopes = expanded.fetch("scopes").to_h { |scope| [scope.fetch("path"), scope] }
       nodes = expanded.fetch("nodes").to_h { |node| [node.fetch("path"), node] }
       edges = expanded.fetch("edges").group_by { |edge| edge.fetch("to_scope_target") }
+      hashes = {}
+      subtree_hash = nil
+      subtree_hash = lambda do |path|
+        hashes[path] ||= begin
+          incoming = edges.fetch(path, []).map do |edge|
+            [edge.fetch("type"), edge["role"], subtree_hash.call(edge.fetch("from_scope_target"))]
+          end.sort_by { |value| JSON.generate(value) }
+          meaning = if scopes.key?(path)
+                      scope = scopes.fetch(path)
+                      local_head = scope.fetch("semantic_head").take(path.length + 1)
+                      ["compound", scope.fetch("lexical_constraints"), subtree_hash.call(local_head)]
+                    else
+                      node = nodes.fetch(path)
+                      # Internal identifiers are not semantic ordering keys.
+                      node.reject { |key, _| %w[node_id path scope_path slot_name].include?(key) }.sort.to_h
+                    end
+          Digest::SHA256.hexdigest(JSON.generate([meaning, incoming]))
+        end
+      end
       result = []
       walk = nil
       walk = lambda do |path, role|
         incoming = edges.fetch(path, [])
-        incoming.sort_by { |edge| [edge.fetch("type"), edge.fetch("role", ""), JSON.generate(edge.fetch("from_scope_target"))] }.each do |edge|
+        incoming.sort_by { |edge| [edge.fetch("type"), edge.fetch("role", ""), subtree_hash.call(edge.fetch("from_scope_target"))] }.each do |edge|
           walk.call(edge.fetch("from_scope_target"), edge["role"] || role)
         end
         if scopes.key?(path)
