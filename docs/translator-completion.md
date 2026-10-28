@@ -468,3 +468,17 @@ anchors, relations, and extra anchor parameters rather than ignoring them. Tests
 compare all three relations across Ruby/browser output. Calendar offsets such as
 yesterday, absolute dates, intervals, aspect, and English tense parsing remain
 unfinished and must not be approximated by these three relations alone.
+
+
+### Calendar-day musical anchors
+
+The implementation now distinguishes the previous, current, and next calendar day
+from generic before/at/after speech time. These are new implementation conventions,
+not newly discovered historical DBA rules. An interval time-anchor uses
+`calendar_unit: day`, `relative_to: speech_date`, and a string `day_offset` of
+`-1`, `0`, or `1`, with a `during` edge to its clause. Resolution requires the
+utterance's calendar and timezone context; no fixed duration or date is invented.
+Ruby and browser rendering preserve these distinctions without changing roots or
+runtime state. Other offsets, units, relations, and extra parameters are rejected
+by musical export. English tense/day parsing remains unfinished; this milestone
+only establishes the semantic and musical representation.

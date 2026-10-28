@@ -6,19 +6,19 @@
       "test": "tests/compound_dependencies_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 7272\n\n# Running:\n\n......\n\nFinished in 0.008371s, 716.7602 runs/s, 1791.9006 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 39004\n\n# Running:\n\n......\n\nFinished in 0.008069s, 743.5866 runs/s, 1858.9664 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_expansion_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 37657\n\n# Running:\n\n..........\n\nFinished in 0.228703s, 43.7248 runs/s, 550.9329 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 48702\n\n# Running:\n\n..........\n\nFinished in 0.226852s, 44.0816 runs/s, 555.4282 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/semantic_reference_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 63174\n\n# Running:\n\n.......\n\nFinished in 0.217647s, 32.1622 runs/s, 147.0271 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 12721\n\n# Running:\n\n.......\n\nFinished in 0.217514s, 32.1818 runs/s, 147.1170 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_semantic_ir_and_grammar.rb",
@@ -30,13 +30,13 @@
       "test": "tests/foundation_process_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 58210\n\n# Running:\n\n...\n\nFinished in 0.393207s, 7.6296 runs/s, 71.2093 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 30849\n\n# Running:\n\n...\n\nFinished in 0.395739s, 7.5808 runs/s, 70.7537 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/repetition_performance_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 19713\n\n# Running:\n\n...\n\nFinished in 0.448993s, 6.6816 runs/s, 17.8176 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 1454\n\n# Running:\n\n...\n\nFinished in 0.449304s, 6.6770 runs/s, 17.8053 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_gate4b_compound_dictionary.rb",
@@ -156,7 +156,7 @@
       "test": "tests/temporal_performance_test.mjs",
       "passed": true,
       "exit_code": 0,
-      "output": "Temporal music: before/at/after speech time remain distinct, lexical state is unchanged, Ruby/browser output agrees, and unsounded anchor details fail.\n"
+      "output": "Temporal music: before/at/after speech time remain distinct, lexical state is unchanged, Ruby/browser output agrees, and unsounded anchor details fail.\nCalendar-day music: previous/current/next calendar days are distinct from speech-time relations, with Ruby/browser parity and strict anchor checks.\n"
     },
     {
       "test": "tests/unsupported_musical_scope_test.mjs",

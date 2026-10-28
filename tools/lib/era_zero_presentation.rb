@@ -89,12 +89,7 @@ module EraZeroPresentation
     end
     time_edges = ir.fetch("edges").select { |edge| edge["type"] == "time_relation" }
     time_nodes = ir.fetch("nodes").to_h { |node| [node["node_id"], node] }
-    time_edges.each do |edge|
-      anchor = time_nodes[edge["from"]]; clause = time_nodes[edge["to"]]
-      unless anchor && anchor["kind"] == "time_anchor" && anchor["anchor_type"] == "speech_time" && (anchor.keys - %w[node_id kind anchor_type]).empty? && clause && clause["kind"] == "clause" && %w[before at after].include?(edge["relation"])
-        raise PresentationError, "unsupported musical time relation or anchor"
-      end
-    end
+    time_edges.each { |edge| time_frame(edge, time_nodes) }
     return events unless !time_edges.empty? || ir.fetch("nodes").any? { |node| %w[repetition sequence negation modality all_of any_of exactly_one].include?(node["operator"]) }
     nodes = ir.fetch("nodes").to_h { |node| [node.fetch("node_id"), node] }
     incoming = ir.fetch("edges").group_by { |edge| edge.fetch("to") }
@@ -129,7 +124,7 @@ module EraZeroPresentation
                  raise PresentationError, "repetition clause requires one center" unless centers.length == 1
                  phrase = walk.call(centers.first.fetch("from"))
                  edges.select { |edge| edge["type"] == "time_relation" }.sort_by { |edge| edge.fetch("edge_id") }.reverse_each do |edge|
-                   phrase = [grammar_marker(formal, id, "time_#{edge['relation']}_speech_open")] + phrase + [grammar_marker(formal, id, "time_#{edge['relation']}_speech_close")]
+                   phrase = [grammar_marker(formal, id, "#{time_frame(edge, nodes)}_open")] + phrase + [grammar_marker(formal, id, "#{time_frame(edge, nodes)}_close")]
                  end
                  phrase
                when "coordination"
@@ -172,6 +167,20 @@ module EraZeroPresentation
     scheduled
   end
 
+  def time_frame(edge, nodes)
+    anchor = nodes[edge["from"]]; clause = nodes[edge["to"]]
+    if anchor && anchor["kind"] == "time_anchor" && clause && clause["kind"] == "clause"
+      if anchor["anchor_type"] == "speech_time" && (anchor.keys - %w[node_id kind anchor_type]).empty? && %w[before at after].include?(edge["relation"])
+        return "time_#{edge['relation']}_speech"
+      end
+      days = { "-1" => "previous_day", "0" => "current_day", "1" => "next_day" }
+      if anchor["anchor_type"] == "interval" && anchor["calendar_unit"] == "day" && anchor["relative_to"] == "speech_date" && days.key?(anchor["day_offset"]) && (anchor.keys - %w[node_id kind anchor_type calendar_unit relative_to day_offset]).empty? && edge["relation"] == "during"
+        return "time_#{days.fetch(anchor['day_offset'])}"
+      end
+    end
+    raise PresentationError, "unsupported musical time relation or anchor"
+  end
+
   def confidence_markers(formal, id, strength)
     return [] if strength.nil?
     (["confidence_open"] + strength.chars.map { |char| char == "." ? "decimal_point" : "digit_#{char}" } + ["confidence_close"]).map { |marker| grammar_marker(formal, id, marker) }
@@ -201,6 +210,11 @@ module EraZeroPresentation
     if (time = marker.match(/\Atime_(before|at|after)_speech_(open|close)\z/))
       code = { "before" => -1, "at" => 0, "after" => 1 }.fetch(time[1])
       sign = time[2] == "open" ? -1 : 1
+      relative = [0, 12 * sign, code, 12 * sign, 0]
+    end
+    if (day = marker.match(/\Atime_(previous_day|current_day|next_day)_(open|close)\z/))
+      code = { "previous_day" => -2, "current_day" => 2, "next_day" => 3 }.fetch(day[1])
+      sign = day[2] == "open" ? -1 : 1
       relative = [0, 12 * sign, code, 12 * sign, 0]
     end
     base = formal.dig("performance", "anchor_midi")

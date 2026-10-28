@@ -48,7 +48,7 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
       if (centers.length !== 1) throw new Error('Repetition clause requires one center.');
       result = walk(centers[0].from);
       const times=edges.filter(edge=>edge.type==='time_relation').sort((a,b)=>a.edge_id<b.edge_id?-1:a.edge_id>b.edge_id?1:0);
-      for(const time of times.slice().reverse())result=[grammarMarker(formal,id,`time_${time.relation}_speech_open`),...result,grammarMarker(formal,id,`time_${time.relation}_speech_close`)];
+      for(const time of times.slice().reverse())result=[grammarMarker(formal,id,`${timeFrame(time,nodes)}_open`),...result,grammarMarker(formal,id,`${timeFrame(time,nodes)}_close`)];
     } else if (node.kind === 'coordination') {
       const members = edges.filter(edge => edge.type === 'member_of');
       if(members.length<2)throw new Error('Coordination requires at least two members.');
@@ -80,11 +80,18 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
   return scheduled;
 }
 
+function timeFrame(edge,nodes){
+  const anchor=nodes.get(edge.from),clause=nodes.get(edge.to);
+  if(anchor?.kind==='time_anchor'&&clause?.kind==='clause'){
+    if(anchor.anchor_type==='speech_time'&&Object.keys(anchor).every(key=>['node_id','kind','anchor_type'].includes(key))&&['before','at','after'].includes(edge.relation))return `time_${edge.relation}_speech`;
+    const days={'-1':'previous_day','0':'current_day','1':'next_day'};
+    if(anchor.anchor_type==='interval'&&anchor.calendar_unit==='day'&&anchor.relative_to==='speech_date'&&typeof anchor.day_offset==='string'&&Object.hasOwn(days,anchor.day_offset)&&Object.keys(anchor).every(key=>['node_id','kind','anchor_type','calendar_unit','relative_to','day_offset'].includes(key))&&edge.relation==='during')return `time_${days[anchor.day_offset]}`;
+  }
+  throw new Error('Unsupported musical time relation or anchor.');
+}
 function validateTimeRelations(ir){
   const nodes=new Map(ir.nodes.map(node=>[node.node_id,node]));
-  for(const edge of ir.edges.filter(edge=>edge.type==='time_relation')){
-    if(nodes.get(edge.from)?.kind!=='time_anchor'||nodes.get(edge.from)?.anchor_type!=='speech_time'||Object.keys(nodes.get(edge.from)||{}).some(key=>!['node_id','kind','anchor_type'].includes(key))||nodes.get(edge.to)?.kind!=='clause'||!['before','at','after'].includes(edge.relation))throw new Error('Unsupported musical time relation or anchor.');
-  }
+  for(const edge of ir.edges.filter(edge=>edge.type==='time_relation'))timeFrame(edge,nodes);
 }
 function confidenceMarkers(formal,id,strength){
   if(strength===undefined)return [];
@@ -103,6 +110,8 @@ function grammarMarker(formal,scopeId,marker){
   else if(marker==='coord_member')relative=[0,11,0,11];
   const time=marker.match(/^time_(before|at|after)_speech_(open|close)$/);
   if(time){const code={before:-1,at:0,after:1}[time[1]],sign=time[2]==='open'?-1:1;relative=[0,12*sign,code,12*sign,0]}
+  const day=marker.match(/^time_(previous_day|current_day|next_day)_(open|close)$/);
+  if(day){const code={previous_day:-2,current_day:2,next_day:3}[day[1]],sign=day[2]==='open'?-1:1;relative=[0,12*sign,code,12*sign,0]}
   const base=formal.performance.anchor_midi;
   return {kind:'grammar_marker',grammar_profile:'EZGRAM-1',marker,occurrence_id:scopeId,target_id:`EZGRAM:${marker}`,register:'middle',base_midi:base,
     family_qualified_transliteration:marker,formal_carrier:'',family_opening_relative_semitones:[],family_opening_absolute_midi:[],
