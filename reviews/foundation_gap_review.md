@@ -112,3 +112,7 @@ The [ternary foundation contract](ternary_foundation_contract.md) records the fu
 source ranges for runtime 0/1/2 and distinguishes them from lexical trits. New
 foundations must keep sensory channel, magnitude, valence, desire and tense separate
 from those states; compound dependencies retain their original addresses.
+
+## Dimension review refinement
+
+The [dimensional foundation review](dimensional_foundations.md) distinguishes the existing IR unit conventions from missing lexical roots. Explicit mass statements now use the existing mass units and quantity role with a material bearer; this needs no new primitive. Property axes, ratios, comparisons and contextual adjectives remain separate dependencies. Absence of a root gloss is not proof that the broader language lacks the dimension.

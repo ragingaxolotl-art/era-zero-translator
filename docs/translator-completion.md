@@ -688,3 +688,7 @@ Eighteen provisional pointers in nine MIN:0xx records now reflect the later cano
 ### Conditional commands and local it reference
 
 The audited phrase “If the radio is damaged, repair it” now composes with WRN:001 in the condition, REP:111 in the consequent and command contour over the utterance. A trailing “it” may resolve to a single definite nominal bearer in the antecedent; both occurrences retain the same referent identity. Multiple participants, quantified classes and other unresolved pronouns are declined. Explicit “then” is optional for imperative consequents. Eight full renderer/MIDI comparisons cover paraphrase equivalence, role identity, separate negation scopes and runtime endings. The ordinary-phrase audit now checks this original case's direction and object identity explicitly. This is bounded local reference resolution, not general discourse anaphora.
+
+### Explicit mass statements
+
+“The box has a mass of 5 kilograms” now binds the mass measurement to a material bearer using the existing semantic IR units and quantity role. Gram input normalizes exactly to kilograms, so equivalent unit expressions share formal and musical output. Eight reference-renderer comparisons cover decimal precision, bearer identity, modal scope and runtime endings. The dimensional review distinguishes this existing foundation from still-missing comparison standards, property axes, temperature identity and contextual adjectives. No new root or compound was introduced.
