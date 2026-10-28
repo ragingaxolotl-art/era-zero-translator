@@ -75,7 +75,7 @@ module EraZeroSemanticValidation
           raise EraZeroNames::NameError, "missing name" unless n["name"].is_a?(Hash)
           EraZeroNames.notes(n["name"])
           if n.key?("reference_mode")
-            errors << "invalid_nominal_reference" unless n["reference_mode"] == "definite_nominal" && n["referent_id"] == "nominal:definite:#{n['name']['name_id']}" && n['name']['normalized_label'].match?(/\A[a-z]+\z/)
+            errors << "invalid_nominal_reference" unless %w[definite_nominal nominal_class].include?(n["reference_mode"]) && n["referent_id"] == "nominal:#{n['reference_mode'] == 'definite_nominal' ? 'definite' : 'class'}:#{n['name']['name_id']}" && n['name']['normalized_label'].match?(/\A[a-z]+\z/)
           end
         rescue EraZeroNames::NameError
           errors << "invalid_phonemic_name"

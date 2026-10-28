@@ -623,3 +623,18 @@ visited set to bound malformed cycles. The enclosing predicate does not inherit
 its argument's register. Actor, target, environment and experiencer contrasts are
 checked against emitted MIDI. This prepares counted noun arguments without yet
 claiming a choice between collective and distributive English readings.
+
+### Counted English noun phrases
+
+Explicit “exactly,” “at least,” and “at most” counts now compose with a bounded set
+of plural noun heads, including irregular children/child and people/person forms.
+Counts accept decimal digits or zero-through-ten words. A nominal-class reference
+carries the singular sound label, and a separate quantity scope fills the argument
+role. Counted subjects retain subject agreement during parsing. The predicate is
+rendered once, with its independently selected runtime ending.
+
+This represents participant cardinality without inventing separate repeated events
+or a more specific collective/distributive reading. Negative combinations,
+multiple quantified arguments and adjective-modified nouns still decline where
+scope or meaning is not yet preserved. Quoted names and definite noun references
+keep their existing distinct frames. Full counted-language coverage remains open.

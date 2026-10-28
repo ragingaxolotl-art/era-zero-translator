@@ -150,12 +150,13 @@ module EraZeroRenderer
         "family_opening_relative_semitones" => [], "family_opening_absolute_midi" => [],
         "address_relative_semitones" => notes.map { |note| note - 60 },
         "address_absolute_midi" => notes.map { |note| note + offset }, "note_duration_beats" => 1.0 }]
-      if node["reference_mode"] == "definite_nominal"
+      if %w[definite_nominal nominal_class].include?(node["reference_mode"])
         base = anchor_midi + REGISTER_OFFSETS.fetch(register)
-        relative = [0, 12, 2, 0]
-        marker = { "kind" => "reference_marker", "occurrence_id" => id, "target_id" => "EZREF:definite_nominal", "referent_id" => node.fetch("referent_id"),
-          "reference_mode" => "definite_nominal", "label" => "definite_nominal", "register" => register, "base_midi" => base,
-          "family_qualified_transliteration" => "definite_nominal", "formal_carrier" => "", "family_opening_relative_semitones" => [], "family_opening_absolute_midi" => [],
+        mode = node["reference_mode"]
+        relative = [0, 12, mode == "definite_nominal" ? 2 : 3, 0]
+        marker = { "kind" => "reference_marker", "occurrence_id" => id, "target_id" => "EZREF:#{mode}", "referent_id" => node.fetch("referent_id"),
+          "reference_mode" => mode, "label" => mode, "register" => register, "base_midi" => base,
+          "family_qualified_transliteration" => mode, "formal_carrier" => "", "family_opening_relative_semitones" => [], "family_opening_absolute_midi" => [],
           "address_relative_semitones" => relative, "address_absolute_midi" => relative.map { |note| base + note }, "note_duration_beats" => 0.25 }
         label_events.unshift(marker)
       end

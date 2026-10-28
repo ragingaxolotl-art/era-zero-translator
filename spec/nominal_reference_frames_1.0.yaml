@@ -29,3 +29,19 @@ remaining:
   - Context resolution, multiple same-class referents and anaphoric binding
   - Indefinite and quantified noun phrases with scope
   - Semantic adjective composition and broader noun-head recognition
+counted_nominal_extension:
+  reference_mode: nominal_class
+  referent_id: 'nominal:class:<name.name_id>'
+  name: Singular noun-class label, not a globally identified individual
+  marker_target: EZREF:nominal_class
+  relative_semitones: [0, 12, 3, 0]
+  quantity_binding: The noun reference scopes into a quantifier which fills the predicate's participant role
+  meaning: Cardinality of participants designated by the noun class; no added assertion of separate repeated events
+  surface_scope:
+    - Exactly, at least or at most followed by decimal digits or number words zero through ten
+    - A bounded plural-to-singular noun map including children and people
+    - One quantified participant per positive construction
+  limitations:
+    - Collective versus distributive event realization is not further specified
+    - Negated quantified constructions require explicit scope work
+    - Multiple quantified participants, modified nouns and arbitrary plural forms remain unsupported
