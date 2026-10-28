@@ -71,11 +71,69 @@ module EraZeroPresentation
     bytes.pack("C*")
   end
 
+  # Expand explicit counted scopes as whole phrases, not per-root multipliers.
+  # Bounds protect export size; they are implementation limits, not language rules.
+  def scheduled_lexical_events(formal, max_events: 100_000)
+    events = formal.dig("performance", "lexical_events")
+    ir = formal.fetch("semantic_ir")
+    return events unless ir.fetch("nodes").any? { |node| node["operator"] == "repetition" }
+    nodes = ir.fetch("nodes").to_h { |node| [node.fetch("node_id"), node] }
+    incoming = ir.fetch("edges").group_by { |edge| edge.fetch("to") }
+    by_occurrence = events.group_by { |event| event.fetch("occurrence_id") }
+    active = []
+    walk = nil
+    walk = lambda do |id|
+      raise PresentationError, "cyclic repetition scope" if active.include?(id)
+      raise PresentationError, "performance scope exceeds nesting limit 128" if active.length >= 128
+      active << id
+      node = nodes.fetch(id) { raise PresentationError, "unknown performance scope #{id}" }
+      edges = incoming.fetch(id, [])
+      result = case node["kind"]
+               when "scope_operator"
+                 unless node["operator"] == "repetition" && node["mode"] == "count" && node["count"].is_a?(Integer) && node["count"].positive?
+                   raise PresentationError, "counted repetition export requires a positive count and supported nested scopes"
+                 end
+                 scoped = edges.select { |edge| edge["type"] == "scopes" }
+                 raise PresentationError, "repetition must have exactly one scope" unless scoped.length == 1
+                 phrase = walk.call(scoped.first.fetch("from"))
+                 raise PresentationError, "repetition exceeds event limit #{max_events}" if phrase.length * node["count"] > max_events
+                 phrase * node["count"]
+               when "clause"
+                 centers = edges.select { |edge| edge["type"] == "centers" }
+                 raise PresentationError, "repetition clause requires one center" unless centers.length == 1
+                 walk.call(centers.first.fetch("from"))
+               when "coordination"
+                 unless node["operator"] == "sequence"
+                   raise PresentationError, "repeated parallel or alternative coordination requires a voice scheduler"
+                 end
+                 members = edges.select { |edge| edge["type"] == "member_of" }
+                 orders = members.map { |edge| edge["order"] }
+                 unless orders.all? { |order| order.is_a?(Integer) } && orders.uniq.length == orders.length
+                   raise PresentationError, "repeated sequence requires distinct explicit member order"
+                 end
+                 members.sort_by { |edge| edge.fetch("order") }.flat_map { |edge| walk.call(edge.fetch("from")) }
+               when "lexical_occurrence"
+                 arguments = edges.select { |edge| %w[fills_role qualifies].include?(edge["type"]) }
+                 arguments.sort_by { |edge| edge.fetch("edge_id") }.flat_map { |edge| walk.call(edge.fetch("from")) } + by_occurrence.fetch(id, [])
+               else
+                 raise PresentationError, "unsupported node in repetition scope: #{node['kind']}"
+               end
+      active.pop
+      raise PresentationError, "repetition exceeds event limit #{max_events}" if result.length > max_events
+      result
+    end
+    scheduled = walk.call(ir.fetch("root_clause"))
+    unless scheduled.map { |event| event["occurrence_id"] }.uniq.sort == by_occurrence.keys.sort
+      raise PresentationError, "repetition schedule would omit lexical occurrences"
+    end
+    scheduled
+  end
+
   def midi(formal)
     validate_formal!(formal)
     absolute_events = []
     tick = 0
-    formal.dig("performance", "lexical_events").each do |event|
+    scheduled_lexical_events(formal).each do |event|
       notes = note_sequence(event)
       notes.each_with_index do |note, index|
         raise PresentationError, "MIDI note outside 0..127" unless note.between?(0, 127)

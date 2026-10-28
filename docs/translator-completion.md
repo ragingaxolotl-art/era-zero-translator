@@ -114,3 +114,9 @@ cover their bounded legacy scope, not the overall completion goal.
 Still required: scoped slot binding, complete compound
 timing and contour scheduling, grammar-aware MIDI, and browser integration.
 Formal round-trip preservation is not proof of audible semantic completeness.
+
+Ruby MIDI export now schedules counted repetition as whole phrases. Parsed MIDI
+tests verify two versus three repetitions, compound integrity, sequence order,
+and bounded expansion. Only repetition fixture MIDI hashes changed in the legacy
+presentation matrix. SVG and browser playback still need the shared scheduler;
+negation and other scopes remain unresolved musical-fidelity work.

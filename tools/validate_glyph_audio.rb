@@ -62,13 +62,13 @@ end
 checks.add("invalid input rejection", "presentation refuses corrupted EZF-1 instead of drawing unverified data", rejected)
 checks.add("audio scope", "MIDI is canonical while waveform synthesis remains explicitly optional and nonsemantic", spec.dig("audio", "status").include?("optional") && spec.dig("metadata", "synthesized_waveform_audio") == "optional_not_implemented")
 checks.add("examples", "three SVG/MIDI example pairs exist", ir_cases.first(3).all? { |item| %w[svg mid].all? { |extension| File.file?(File.join(EraZeroValidation::ROOT, "examples/presentation/#{item['case_id']}.#{extension}")) } })
-checks.add("authority integration", "all seven gates are complete and no further gate is authorized", begin
+checks.add("legacy authority integration", "historical release gate metadata and presentation permissions remain consistent", begin
   version = EraZeroValidation.load_yaml("spec/version.yaml")
   readiness = EraZeroValidation.load_yaml("spec/translator_readiness.yaml")
   version["glyph_audio_status"] == "canonical" && version["translator_release_status"] == "complete" && version["next_gate_authorized"].nil? && readiness["next_authorized_gate"].nil? && readiness.fetch("required_gates").all? { |gate| gate["status"] == "complete" } && readiness.dig("safe_now", "svg_generation") == true && readiness.dig("safe_now", "midi_generation") == true
 end)
 
-report = checks.markdown(title: "Glyph and MIDI Presentation Validation", pass_status: "PASS — ALL TRANSLATOR-READINESS GATES COMPLETE", summary: ["IR fixtures: **#{ir_cases.length}**", "Transposed presentation cases: **#{ir_cases.length * 3}**", "Atomic state presentations: **972**", "Example SVG/MIDI pairs: **3**", "Waveform synthesis: **optional, not implemented**", "Next required gate: **none**"])
+report = checks.markdown(title: "Glyph and MIDI Presentation Validation", pass_status: "PASS — BOUNDED PRESENTATION REGRESSION", summary: ["IR fixtures: **#{ir_cases.length}**", "Transposed presentation cases: **#{ir_cases.length * 3}**", "Atomic state presentations: **972**", "Example SVG/MIDI pairs: **3**", "Waveform synthesis: **optional, not implemented**", "This check does not establish full sentence or audible semantic completeness. See docs/translator-completion.md."])
 EraZeroValidation.write("reports/glyph_audio_validation.md", report)
 puts "Glyph/audio validation: #{checks.success? ? 'PASS' : 'FAIL'}"
 puts "Checks passed: #{checks.passed}; checks failed: #{checks.failed}"

@@ -1,0 +1,19 @@
+date: '2026-10-28'
+authority: User-directed translator completion goal
+change: Export counted repetition as whole scoped lexical phrases in Ruby MIDI output.
+preserved:
+  - Root melodies, dictionary identities, runtime endings and formal identities
+  - Existing output for inputs without repetition
+validation:
+  - tests/repetition_performance_test.rb parses exported MIDI note events
+  - Two and three repetitions of a compound include every component in each repetition
+  - Sequence order survives repetition of a multi-part scope
+limits:
+  maximum_scheduled_lexical_events: 100000
+  maximum_scope_depth: 128
+  excessive_requests: Explicit export error before repeated output allocation
+remaining:
+  - Negation and other scope operators need meaning-preserving musical realization
+  - Repeated parallel structures need voice scheduling
+  - SVG and browser audio do not yet consume this repetition scheduler
+  - Compound and sentence timing need the complete shared scheduler
