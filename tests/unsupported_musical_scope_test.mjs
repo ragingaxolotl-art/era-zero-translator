@@ -9,6 +9,13 @@ for(const [kind,operator] of cases){
   const formal=structuredClone(base);
   const node=formal.semantic_ir.nodes.find(node=>node.operator==='negation');
   Object.assign(node,{kind,operator});
+  if(kind==='coordination'){
+    const member=formal.semantic_ir.edges.find(edge=>edge.type==='scopes');
+    member.type='member_of';
+    const second=structuredClone(formal.semantic_ir.nodes.find(node=>node.kind==='lexical_occurrence'));
+    second.node_id='second_member';formal.semantic_ir.nodes.push(second);
+    formal.semantic_ir.edges.push({edge_id:'second_member_edge',type:'member_of',from:second.node_id,to:node.node_id});
+  }
   // No supported operator remains to activate the old scheduling path.
   for(const render of [scheduledLexicalEvents,midiFromFormal,svgFromFormal])
     assert.throws(()=>render(formal),/Unsupported musical/,operator);

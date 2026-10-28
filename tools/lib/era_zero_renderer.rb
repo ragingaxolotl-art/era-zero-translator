@@ -8,6 +8,7 @@ require "set"
 require_relative "era_zero_validation"
 require_relative "era_zero_compound_expansion"
 require_relative "era_zero_names"
+require_relative "era_zero_semantic_validation"
 
 module EraZeroRenderer
   ROOT = EraZeroValidation::ROOT
@@ -174,6 +175,8 @@ module EraZeroRenderer
 
   def render(ir, anchor_midi: 60)
     atoms, compounds = load_authority
+    errors = EraZeroSemanticValidation.validate(ir, compound_entries: compounds.values)
+    raise RenderError, "invalid semantic IR: #{errors.join(", ")}" unless errors.empty?
     raise RenderError, "anchor_midi must be an integer from 24 through 96" unless anchor_midi.is_a?(Integer) && anchor_midi.between?(24, 96)
     digest = semantic_digest(ir)
     expected_id = "UTT:#{digest[0, 24]}"

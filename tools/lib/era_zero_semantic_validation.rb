@@ -16,14 +16,23 @@ module EraZeroSemanticValidation
   end
 
 
+  def authority_documents
+    paths = %w[spec/semantic_ir_1.0.yaml spec/semantic_ir_schema.yaml lexicon/atoms.yaml lexicon/compound_dictionary.yaml]
+    signature = paths.map { |path| stat = File.stat(File.join(EraZeroValidation::ROOT, path)); [stat.mtime.to_f, stat.size] }
+    if !@authority_documents || @authority_signature != signature
+      @authority_documents = paths.map { |path| EraZeroValidation.load_yaml(path) }
+      @authority_signature = signature
+    end
+    @authority_documents
+  end
+
   def validate(ir, compound_entries: nil)
     return ["invalid_document"] unless ir.is_a?(Hash)
     return ["invalid_nodes"] unless ir["nodes"].is_a?(Array) && ir["nodes"].all? { |n| n.is_a?(Hash) && n["node_id"].is_a?(String) }
     return ["invalid_edges"] unless ir["edges"].is_a?(Array) && ir["edges"].all? { |e| e.is_a?(Hash) && e["edge_id"].is_a?(String) }
-    spec = EraZeroValidation.load_yaml("spec/semantic_ir_1.0.yaml")
-    schema = EraZeroValidation.load_yaml("spec/semantic_ir_schema.yaml")
-    atoms_doc = EraZeroValidation.load_yaml("lexicon/atoms.yaml")
-    compounds_doc = EraZeroValidation.load_yaml("lexicon/compound_dictionary.yaml")
+    return ["invalid_serialization"] if ir.key?("serialization") && !ir["serialization"].is_a?(Hash)
+    return ["invalid_discourse_constraints"] if ir.key?("discourse_constraints") && !ir["discourse_constraints"].is_a?(Hash)
+    spec, schema, atoms_doc, compounds_doc = authority_documents
     atom_ids = atoms_doc.fetch("atoms").map { |a| a["canonical_id"] }.to_set
     entries = compound_entries || compounds_doc.fetch("entries")
     compound_ids = entries.map { |c| c["compound_id"] }.to_set
@@ -49,7 +58,7 @@ module EraZeroSemanticValidation
       if n["kind"] == "lexical_occurrence"
         valid_target = n["target_type"] == "atom" ? atom_ids.include?(n["target_id"]) : n["target_type"] == "compound" && compound_ids.include?(n["target_id"])
         errors << "unknown_target" unless valid_target
-        state = n["runtime_state"] || {}
+        state = n["runtime_state"].is_a?(Hash) ? n["runtime_state"] : {}
         errors << "invalid_runtime_state" unless [0, 1, 2].include?(state["code"])
         errors << "invalid_runtime_parameter" if state.key?("num")
       elsif n["kind"] == "phonemic_reference"
@@ -116,7 +125,8 @@ module EraZeroSemanticValidation
       members = edges.select { |e| e["type"] == "member_of" && e["to"] == n["node_id"] }
       bad = members.length < 2
       if n["operator"] == "sequence"
-        bad ||= members.map { |e| e["order"] }.sort != (1..members.length).to_a
+        orders = members.map { |e| e["order"] }
+        bad ||= !orders.all? { |order| order.is_a?(Integer) } || orders.sort != (1..members.length).to_a
       elsif n["operator"] == "parallel"
         bad ||= members.any? { |e| e.key?("order") }
       end

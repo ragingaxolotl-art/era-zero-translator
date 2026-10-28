@@ -314,3 +314,15 @@ are rejected. Nested fixtures include adversarial missing, duplicate, wrong-path
 wrong-role, wrong-type, unknown-argument, malformed-container and self-cycle cases.
 This validates explicitly provided bindings; legacy role-only compounds and full
 runtime enforcement still need integration review.
+
+### Runtime semantic validation
+
+The Ruby renderer now invokes the shared validator before producing formal output;
+its decoder also reaches this check when regenerating a formal artifact. Unknown
+or disconnected participants, duplicate node IDs, malformed runtime containers,
+and invalid explicit nested bindings therefore fail during use as well as tests.
+Schema and authority documents are cached with file timestamp/size invalidation
+to avoid repeatedly parsing the lexicon for each render. Existing valid legacy,
+name, nested-compound, and sentence fixtures remain supported. Browser-generated
+sentences are cross-validated in tests; this does not yet add a general browser IR
+validator or complete validation of every legacy grammar construct.

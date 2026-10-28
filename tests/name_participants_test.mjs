@@ -35,5 +35,5 @@ const nameCues=visemePlanFromFormal(forward.formal).cues.filter(cue=>cue.section
 assert.equal(nameCues.length,events.reduce((n,event)=>n+event.address_absolute_midi.length,0));
 assert(nameCues.every(cue=>cue.nucleus_viseme==='REST'));
 const corrupt=structuredClone(names);corrupt[0].phonemes=['UNKNOWN'];
-assert.throws(()=>run(corrupt),/invalid phonemic label/);
+assert.throws(()=>run(corrupt),/invalid_phonemic_name/);
 console.log('Name participants: existing EZNAME notes, role reversal, nonsemantic labels, roundtrip and MIDI parity pass.');

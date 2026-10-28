@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 require_relative '../tools/lib/era_zero_semantic_validation'
+require_relative '../tools/lib/era_zero_renderer'
 
 class SemanticReferenceValidationTest < Minitest::Test
   def fixture
@@ -46,6 +47,23 @@ class SemanticReferenceValidationTest < Minitest::Test
     errors=EraZeroSemanticValidation.validate(identify(ir))
     assert_includes errors,'invalid_phonemic_reference'
     assert_includes errors,'disconnected_node'
+  end
+
+  def test_renderer_enforces_structure_before_sound
+    assert_equal 'EZF-1', EraZeroRenderer.render(fixture)['format']
+    disconnected=fixture
+    disconnected['edges'].pop
+    error=assert_raises(EraZeroRenderer::RenderError) { EraZeroRenderer.render(identify(disconnected)) }
+    assert_includes error.message,'disconnected_node'
+    duplicate=fixture
+    duplicate['nodes'] << duplicate['nodes'].last.dup
+    error=assert_raises(EraZeroRenderer::RenderError) { EraZeroRenderer.render(identify(duplicate)) }
+    assert_includes error.message,'duplicate_node'
+    assert_raises(EraZeroRenderer::RenderError) { EraZeroRenderer.render(nil) }
+    malformed=fixture
+    malformed['nodes'][1]['runtime_state']='active'
+    error=assert_raises(EraZeroRenderer::RenderError) { EraZeroRenderer.render(identify(malformed)) }
+    assert_includes error.message,'invalid_runtime_state'
   end
 
   def test_malformed_containers_return_diagnostics
