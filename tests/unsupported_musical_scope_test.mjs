@@ -38,4 +38,4 @@ puts 'rejected'
   assert.equal(ruby.trim(),'rejected');
 }
 assert(scheduledLexicalEvents(base).some(event=>event.marker==='negation_open'));
-console.log(`Unsupported music scopes: ${cases.length} operators rejected by browser schedule/MIDI/SVG and Ruby MIDI/SVG; supported negation preserved.`);
+console.log(`Unsupported music configurations: ${cases.length} invalid or unsupported scopes rejected by browser schedule/MIDI/SVG and Ruby MIDI/SVG; supported negation preserved.`);

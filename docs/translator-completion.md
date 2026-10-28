@@ -592,3 +592,16 @@ measurement parsing or degree adjectives. A unit does not by itself specify a
 property such as height versus width, or distance traveled versus distance to a
 target. Temperature units, dimensional comparisons and contextual standards for
 hot/heavy/fast still need explicit definitions. None uses 0/1/2 as a magnitude scale.
+
+### Scoped quantity music
+
+Musical export now supports exact, at-least and at-most cardinalities plus all,
+some and none quantifiers. Each has an opening/closing frame around its semantic
+scope. Counts use exact nonnegative integer strings; they do not repeat the scoped
+phrase or alter runtime state. All/some/none reject numeric or other unrepresented
+parameters. Range and proportional quantifiers remain explicitly unsupported.
+
+The exact-quantity fixture now has sound-preserving presentation hashes at all
+three reference anchors. Eight numerical/operator contrasts agree across Ruby and
+browser MIDI/SVG. This establishes the musical representation; plural English
+noun phrases and quantifier attachment still require parser and referent work.

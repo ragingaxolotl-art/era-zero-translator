@@ -209,6 +209,42 @@ frames:
     unit: "byte"
     relative_semitones: [0, 13, 13, 13, 0]
     note_duration_beats: 0.25
+  quantifier_exact_open:
+    relative_semitones: [0, -14, 1, 0]
+    note_duration_beats: 0.25
+  quantifier_exact_close:
+    relative_semitones: [0, 14, 1, 0]
+    note_duration_beats: 0.25
+  quantifier_at_least_open:
+    relative_semitones: [0, -14, 2, 0]
+    note_duration_beats: 0.25
+  quantifier_at_least_close:
+    relative_semitones: [0, 14, 2, 0]
+    note_duration_beats: 0.25
+  quantifier_at_most_open:
+    relative_semitones: [0, -14, 3, 0]
+    note_duration_beats: 0.25
+  quantifier_at_most_close:
+    relative_semitones: [0, 14, 3, 0]
+    note_duration_beats: 0.25
+  quantifier_all_open:
+    relative_semitones: [0, -14, 4, 0]
+    note_duration_beats: 0.25
+  quantifier_all_close:
+    relative_semitones: [0, 14, 4, 0]
+    note_duration_beats: 0.25
+  quantifier_some_open:
+    relative_semitones: [0, -14, 5, 0]
+    note_duration_beats: 0.25
+  quantifier_some_close:
+    relative_semitones: [0, 14, 5, 0]
+    note_duration_beats: 0.25
+  quantifier_none_open:
+    relative_semitones: [0, -14, 6, 0]
+    note_duration_beats: 0.25
+  quantifier_none_close:
+    relative_semitones: [0, 14, 6, 0]
+    note_duration_beats: 0.25
 anchor: Utterance anchor, independent of the role registers inside the scope
 boundary_after_beats: 0.5
 rules:
@@ -225,6 +261,8 @@ rules:
   - Before/at/after speech-time frames enclose the time-related clause without changing lexical or runtime state
   - Calendar-day interval frames use during relations and day offsets -1, 0 or 1 relative to the contextual speech date
   - Calendar days require the discourse calendar and timezone; they do not assert fixed 24-hour durations
+  - Quantifier frames enclose their exact scope; exact/at-least/at-most cardinalities use canonical nonnegative integer digits after the opening
+  - All/some/none quantifiers carry no numeric value and do not replace clause negation or lexical runtime
   - Measurement frames enclose optional minus, exact decimal digits, and an explicit unit frame
   - Measurement digits reuse decimal digit frames; no runtime state is used for magnitude or sign
   - Unsupported anchors and extra anchor parameters must not be silently omitted
@@ -236,5 +274,5 @@ compatibility:
   semantic_ir: Existing negation nodes retain their identities
   consumers: Ruby and browser MIDI, SVG, browser sound and viseme schedules
 remaining:
-  - Musical conventions for tense, quantifiers and other unsounded operators
+  - Musical conventions for range/proportional quantifiers, aspect and other unsounded operators
   - Independent listener recognition and broader end-to-end semantic decoding

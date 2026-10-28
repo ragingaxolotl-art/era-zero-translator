@@ -6,19 +6,19 @@
       "test": "tests/compound_dependencies_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 18380\n\n# Running:\n\n......\n\nFinished in 0.007835s, 765.7945 runs/s, 1914.4863 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 33743\n\n# Running:\n\n......\n\nFinished in 0.008271s, 725.4262 runs/s, 1813.5655 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_expansion_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 37200\n\n# Running:\n\n..........\n\nFinished in 0.228227s, 43.8160 runs/s, 552.0819 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 52274\n\n# Running:\n\n..........\n\nFinished in 0.228899s, 43.6874 runs/s, 550.4611 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/dictionary_musical_identity_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 39601\n\n# Running:\n\n.\n\nFinished in 0.219397s, 4.5579 runs/s, 27.3477 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 40544\n\n# Running:\n\n.\n\nFinished in 0.223892s, 4.4664 runs/s, 26.7986 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/audit_dictionary_musical_identity.rb",
@@ -30,7 +30,7 @@
       "test": "tests/semantic_reference_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 62483\n\n# Running:\n\n.......\n\nFinished in 0.218203s, 32.0802 runs/s, 146.6524 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 11422\n\n# Running:\n\n.......\n\nFinished in 0.218704s, 32.0067 runs/s, 146.3165 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_semantic_ir_and_grammar.rb",
@@ -42,13 +42,13 @@
       "test": "tests/foundation_process_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 32653\n\n# Running:\n\n...\n\nFinished in 0.397663s, 7.5441 runs/s, 70.4114 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 60510\n\n# Running:\n\n...\n\nFinished in 0.395505s, 7.5852 runs/s, 70.7956 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/repetition_performance_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 62479\n\n# Running:\n\n...\n\nFinished in 0.450167s, 6.6642 runs/s, 17.7712 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 33657\n\n# Running:\n\n...\n\nFinished in 0.451344s, 6.6468 runs/s, 17.7248 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_gate4b_compound_dictionary.rb",
@@ -195,10 +195,16 @@
       "output": "Measurement music preserves sign, exact decimal value and unit; eight contrasts match Ruby/browser output without changing lexical state.\n"
     },
     {
+      "test": "tests/quantifier_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Quantifier music: six scoped operators and exact cardinalities remain distinct, preserve runtime, and match Ruby/browser output.\n"
+    },
+    {
       "test": "tests/unsupported_musical_scope_test.mjs",
       "passed": true,
       "exit_code": 0,
-      "output": "Unsupported music scopes: 4 operators rejected by browser schedule/MIDI/SVG and Ruby MIDI/SVG; supported negation preserved.\n"
+      "output": "Unsupported music configurations: 4 invalid or unsupported scopes rejected by browser schedule/MIDI/SVG and Ruby MIDI/SVG; supported negation preserved.\n"
     },
     {
       "test": "tools/validate_pages_release.mjs",

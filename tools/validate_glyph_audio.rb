@@ -22,7 +22,7 @@ matrix_ok = ir_cases.all? do |item|
     formal = EraZeroRenderer.render(item.fetch("ir"), anchor_midi: anchor)
     # Historical bytes for these fixtures omitted their operator semantics.
     # Keep those manifests as historical evidence, never as accepted output.
-    if %w[exact_quantity parallel].include?(item.fetch("case_id"))
+    if %w[parallel].include?(item.fetch("case_id"))
       next [:svg, :midi].all? do |method|
         begin
           EraZeroPresentation.send(method, formal)
@@ -38,7 +38,7 @@ matrix_ok = ir_cases.all? do |item|
     svg1 == svg2 && midi1 == midi2 && manifest["svg_sha256"] == Digest::SHA256.hexdigest(svg1) && manifest["midi_sha256"] == Digest::SHA256.hexdigest(midi1) && EraZeroRenderer.decode(formal) == item["ir"]
   end
 end
-checks.add("presentation matrix", "supported fixtures match recorded SVG/MIDI at three anchors; quantity and parallel fixtures explicitly refuse semantically incomplete output", matrix_ok && tests.fetch("manifests").length == ir_cases.length * 3)
+checks.add("presentation matrix", "supported fixtures match recorded SVG/MIDI at three anchors; parallel fixtures explicitly refuse semantically incomplete output", matrix_ok && tests.fetch("manifests").length == ir_cases.length * 3)
 
 sample_formal = EraZeroRenderer.render(ir_cases.first.fetch("ir"))
 sample_svg = EraZeroPresentation.svg(sample_formal)

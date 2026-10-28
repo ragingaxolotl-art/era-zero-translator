@@ -6,6 +6,7 @@ require_relative "era_zero_renderer"
 
 module EraZeroPresentation
   MEASUREMENT_UNITS = %w[1 second minute hour day meter kilometer gram kilogram degree radian bit byte].freeze
+  QUANTIFIERS = %w[exact at_least at_most all some none].freeze
   VERSION = "1.0.0"
   TICKS_PER_BEAT = 480
   TEMPO_MICROSECONDS = 500_000
@@ -78,7 +79,7 @@ module EraZeroPresentation
     events = formal.dig("performance", "lexical_events")
     ir = formal.fetch("semantic_ir")
     ir.fetch("nodes").each do |node|
-      if (node["kind"] == "scope_operator" && !%w[negation repetition modality].include?(node["operator"])) ||
+      if (node["kind"] == "scope_operator" && !%w[negation repetition modality quantifier].include?(node["operator"])) ||
          (node["kind"] == "coordination" && !%w[sequence all_of any_of exactly_one].include?(node["operator"]))
         raise PresentationError, "unsupported musical operator: #{node['operator']}"
       end
@@ -91,7 +92,7 @@ module EraZeroPresentation
     time_edges = ir.fetch("edges").select { |edge| edge["type"] == "time_relation" }
     time_nodes = ir.fetch("nodes").to_h { |node| [node["node_id"], node] }
     time_edges.each { |edge| time_frame(edge, time_nodes) }
-    return events unless ir.fetch("nodes").any? { |node| node["kind"] == "measurement" } || !time_edges.empty? || ir.fetch("nodes").any? { |node| %w[repetition sequence negation modality all_of any_of exactly_one].include?(node["operator"]) }
+    return events unless ir.fetch("nodes").any? { |node| node["kind"] == "measurement" } || !time_edges.empty? || ir.fetch("nodes").any? { |node| %w[repetition sequence negation modality quantifier all_of any_of exactly_one].include?(node["operator"]) }
     nodes = ir.fetch("nodes").to_h { |node| [node.fetch("node_id"), node] }
     incoming = ir.fetch("edges").group_by { |edge| edge.fetch("to") }
     by_occurrence = events.group_by { |event| event.fetch("occurrence_id") }
@@ -105,7 +106,7 @@ module EraZeroPresentation
       edges = incoming.fetch(id, [])
       result = case node["kind"]
                when "scope_operator"
-                 unless %w[negation modality].include?(node["operator"]) || (node["operator"] == "repetition" && node["mode"] == "count" && node["count"].is_a?(Integer) && node["count"].positive?)
+                 unless %w[negation modality quantifier].include?(node["operator"]) || (node["operator"] == "repetition" && node["mode"] == "count" && node["count"].is_a?(Integer) && node["count"].positive?)
                    raise PresentationError, "counted repetition export requires a positive count and supported nested scopes"
                  end
                  scoped = edges.select { |edge| edge["type"] == "scopes" }
@@ -114,6 +115,8 @@ module EraZeroPresentation
                  raise PresentationError, "repetition scope has no sound events" if phrase.empty?
                  if node["operator"] == "negation"
                    [grammar_marker(formal, id, "negation_open")] + phrase + [grammar_marker(formal, id, "negation_close")]
+                 elsif node["operator"] == "quantifier"
+                   quantifier_markers(formal, node) + phrase + [grammar_marker(formal, id, "quantifier_#{node['quantifier']}_close")]
                  elsif node["operator"] == "modality"
                    [grammar_marker(formal, id, "modality_#{node.fetch('mode')}_open")] + confidence_markers(formal, id, node["strength"]) + phrase + [grammar_marker(formal, id, "modality_#{node.fetch('mode')}_close")]
                  else
@@ -168,6 +171,16 @@ module EraZeroPresentation
       raise PresentationError, "repetition schedule would omit lexical occurrences"
     end
     scheduled
+  end
+
+  def quantifier_markers(formal, node)
+    counted = %w[exact at_least at_most].include?(node["quantifier"])
+    allowed = %w[node_id kind operator quantifier] + (counted ? ["value"] : [])
+    unless QUANTIFIERS.include?(node["quantifier"]) && (node.keys - allowed).empty? && (!counted || (node["value"].is_a?(String) && node["value"].length <= 1024 && node["value"].match?(/\A(?:0|[1-9][0-9]*)\z/)))
+      raise PresentationError, "unsupported musical quantifier"
+    end
+    markers = ["quantifier_#{node['quantifier']}_open"] + (counted ? node['value'].chars.map { |char| "digit_#{char}" } : [])
+    markers.map { |marker| grammar_marker(formal, node.fetch("node_id"), marker) }
   end
 
   def measurement_markers(formal, node)
@@ -234,6 +247,8 @@ module EraZeroPresentation
     relative = [0, -13, 0, -13] if marker == "measurement_negative"
     unit = marker.match(/\Ameasurement_unit_(\d+)\z/)
     relative = [0, 13, unit[1].to_i, 13, 0] if unit
+    quantifier = marker.match(/\Aquantifier_(exact|at_least|at_most|all|some|none)_(open|close)\z/)
+    relative = [0, quantifier[2] == "open" ? -14 : 14, QUANTIFIERS.index(quantifier[1]) + 1, 0] if quantifier
     base = formal.dig("performance", "anchor_midi")
     { "kind" => "grammar_marker", "grammar_profile" => "EZGRAM-1", "marker" => marker,
       "occurrence_id" => scope_id, "target_id" => "EZGRAM:#{marker}", "register" => "middle", "base_midi" => base,
