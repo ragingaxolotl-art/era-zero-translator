@@ -1967,3 +1967,79 @@ reviews:
     decision: 'rejected: completed process is not ongoing'
   recommendation: approve active_graph
   confidence: high
+- compound_id: CMP:ade73037114406a2cd91ce13
+  display_title: ongoing sensory registration
+  current_choice_reason: Semantic analysis in reviews/sensory_registration_foundation.md.
+    Scores are implementation-author judgments, not independent evidence.
+  candidates:
+  - candidate_id: explicit_transduction
+    direction: Retains both physical coupling and information transfer; names the
+      additional transduction commitment explicitly.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: MAT:211
+      - node_id: h
+        kind: root
+        root_id: DAT:111
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ongoing_sensory_registration
+        sound_code: 0
+        added_definition: 'The transfer is realized by physical sensory transduction:
+          the target receiver registers information carried by a physical stimulus
+          from the distinct source. Registration does not by itself assert conscious
+          experience, attention, identification or understanding.'
+        excludes:
+        - Mere physical influence without informational registration
+        - Generic data copying without sensory transduction
+        - Conscious experience or understanding inferred from registration
+        - A specified sensory channel inferred without a channel distinction
+  - candidate_id: unmarked_transfer
+    direction: Information transfer plus physical coupling does not select sensory
+      registration.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 6
+      everyday_language_coverage: 4
+      technical_coverage: 6
+    total: 50
+    decision: 'rejected: sensory commitment absent'
+  - candidate_id: conscious_representation
+    direction: Conscious mental representation excludes nonconscious sensors and adds
+      an unsupported experiential claim.
+    scores:
+      atomicity: 6
+      address_fit: 6
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 5
+      everyday_language_coverage: 4
+      technical_coverage: 4
+    total: 39
+    decision: 'rejected: wrong receiver and experience commitments'
+  recommendation: approve explicit_transduction
+  confidence: high

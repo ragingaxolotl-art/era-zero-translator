@@ -3,8 +3,8 @@
 Status: **PASS**
 
 - Registry records: **324**
-- Hosted formal variants: **5325**
-- Assertions: **32091**
+- Hosted formal variants: **5340**
+- Assertions: **32175**
 - Globally unique pitch signatures: **324**
 - Note-count range: **2–5**
 - Performance MIDI: strict, recognition, and learning round-trips for every hosted target

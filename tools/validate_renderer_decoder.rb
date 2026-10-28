@@ -62,7 +62,14 @@ compound_ok = compounds.all? do |compound|
     formal = EraZeroRenderer.render(ir)
     events = formal.dig("performance", "lexical_events")
     compound_events = events.select { |event| event["occurrence_id"] == "n002" }
-    compound_events.count { |event| event["runtime_tail"] } == 1 && compound_events.count == compound.fetch("nodes").count { |n| n["kind"] == "root" } && EraZeroRenderer.decode(formal) == ir
+    expanded = EraZeroCompoundExpansion::Expander.new(compounds).expand(compound.fetch("compound_id"), compound.fetch("definition_version"))
+    roots = compound_events.reject { |event| event["kind"] == "grammar_marker" }
+    expected_roots = expanded.fetch("nodes").select { |node| node["kind"] == "root" }.map { |node| node.fetch("root_id") }.sort
+    expected_markers = expanded.fetch("scopes").select { |scope| scope.key?("conventional_meaning") }.flat_map do |scope|
+      %w[open close].map { |side| EraZeroCompoundConventions.event(scope.fetch("conventional_meaning"), side, "n002", 60, scope.fetch("path")) }
+    end
+    markers = compound_events.select { |event| event["kind"] == "grammar_marker" }
+    roots.count { |event| event["runtime_tail"] } == 1 && roots.map { |event| event["target_id"] }.sort == expected_roots && markers.sort_by { |event| JSON.generate(event) } == expected_markers.sort_by { |event| JSON.generate(event) } && EraZeroRenderer.decode(formal) == ir
   end
 end
 checks.add("compound rendering", "all approved compounds render every root and place runtime state on the head only", compound_ok && tests.dig("compound_matrix", "assertions") == compounds.length * 3)

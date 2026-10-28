@@ -1,5 +1,5 @@
 profile: EZLEX-1
-status: implemented_extension_no_approved_senses_yet
+status: implemented_extension_with_reviewed_sensory_registration
 extends: spec/compound_architecture_1.0.yaml
 purpose: Identify explicit conventional lexical specialization without changing canonical atoms
 meaning_contract:
@@ -47,7 +47,7 @@ validation:
   - Nested scope, bound participants and runtime 0/1/2 survive MIDI and SVG export
   - Independent reading recovers the convention code from MIDI note frames
 limitations:
-  - This extension does not itself approve seeing, hearing or other new vocabulary.
+  - Sensory registration is approved separately in reviews/sensory_registration_foundation.md; seeing and hearing remain unimplemented.
   - A code recovers a registered lexical distinction, not arbitrary natural-language semantics without its dictionary.
   - Independent frame decoding is not a complete inverse of the enclosed compound or sentence.
   - Acoustic recognition and listener perception remain unverified.

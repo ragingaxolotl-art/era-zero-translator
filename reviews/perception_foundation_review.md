@@ -1,16 +1,18 @@
 # Perception foundations: inventory review and dependency decision
 
-Status: design review, not a canonical lexicon extension. Existing meanings and
-sounds are unchanged. Evidence is pinned in
+Status: initial inventory review with an implemented registration follow-up.
+Existing root and compound meanings and sounds are unchanged. Evidence is pinned in
 [the complete inventory snapshot](../reports/foundation_inventory_audit.json),
-covering all 324 runtime roots and all 32 approved compounds. Regenerate with
+covering all 324 runtime roots and the current 33 approved compounds. The initial
+review below covered the 32 compounds that preceded sensory registration. Regenerate with
 `ruby tools/audit_foundation_inventory.rb`; check freshness with `--check`.
 The snapshot makes the scope reproducible; its hashes are not semantic proof.
 
 ## Finding
 
 No reviewed root definition identifies a sensory modality. The present inventory
-also does not directly define sensory experience or perceptual access. Mental
+also does not directly define sensory experience or perceptual access. The later
+registration extension does not claim either. Mental
 representation, attention, information transfer, consciousness, and physical
 influence are useful ingredients but are not interchangeable with perception.
 This review supports an explicit new lexical distinction. It does **not** establish
@@ -64,7 +66,7 @@ to supply a missing sensory distinction, not every possible use of its roots.
 | CRE | Generative patterns, products and production | Production can create a stimulus or a model, but does not assert perception; subjective imagination is also explicitly excluded. |
 | ORI | Existence, grounding, ontological transitions and dependence | Grounding does not select causal sensory access; observation and evidence are explicitly excluded. |
 
-All 32 approved compound invariants were also inspected. They cover artifacts,
+All 32 pre-extension compound invariants were also inspected. They cover artifacts,
 living/material systems, repair, information/communication structures, formal
 relations, hazards, and the approved poetic love meaning. None adds sensory
 modality or a sensory-experience relation. This is a review of their definitions,
@@ -124,8 +126,10 @@ Preserve the 324-root inventory while defining explicitly conventional compounds
 for these foundations. The implemented extension in
 `spec/conventional_compounds_1.0.yaml` records additional meaning in compound
 identity and gives it a distinct ternary frame around its exact expanded scope.
-Nested dependency reuse, argument bindings and runtime endings are tested. No
-sensory convention has yet been approved; see
+Nested dependency reuse, argument bindings and runtime endings are tested.
+Ongoing sensory registration is now approved in
+`reviews/sensory_registration_foundation.md`; experience and channel-specific
+perception remain unfinished. See
 `reviews/conventional_compound_foundations.md` for the definition and contrast work
 that must precede seeing/hearing vocabulary. A compound must not silently gain a
 new sense merely through an English alias.

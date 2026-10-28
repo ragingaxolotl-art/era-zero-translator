@@ -39,7 +39,9 @@ The next vocabulary work follows dependencies:
    currently perceived targets, hallucinated appearance versus actual access,
    and all three runtime endings.
 
-At this stage the registry has **no approved conventional senses**. The tests use
-explicitly artificial records to prove identity, scope and musical distinctions;
-they do not certify the semantics of perception. The unchanged lexical inventory
-remains 324 roots and 32 approved compounds.
+The registry now has **one approved conventional sense**, ongoing sensory
+registration, reviewed in `sensory_registration_foundation.md`. Separate artificial
+records test the general convention machinery; full-sentence tests exercise the
+actual approved registration entry. The inventory is 324 unchanged roots and 33
+approved compounds. Experience, perceptual access and channel-specific vocabulary
+remain unfinished.

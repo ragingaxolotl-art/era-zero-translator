@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 440
-  lemma_count: 423
+  sense_count: 441
+  lemma_count: 424
   canonical_atom_senses: 324
-  canonical_compound_senses: 32
+  canonical_compound_senses: 33
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: 9b2e6047a5bbd39f0b54ff2f49b569cf7e4726b361b51a62070804727efce26f
-  compound_dictionary_fingerprint: a15ba41e54bb4742dbaff06bde58b02374bbc4d61017b957cb1eeceefb51677a
+  compound_dictionary_fingerprint: '0778d040a63fc4e06d972a0dd13b620cbecc4477fdd3de664145dbea6f28dd66'
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -5105,6 +5105,27 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: ongoing sensory registration
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:ade73037114406a2cd91ce13
+  definition: An ongoing information transfer from one distinct physical source to
+    a receiving target, physically realized by active material coupling in which sensory
+    transduction causes the receiver to register information carried by the source
+    stimulus.
+  sense_id: ENS:9e8742cd2cda8a3dcd4c2a66
+  display_form: ongoing sensory registration
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Mere physical influence without informational registration; Generic data copying
+    without sensory transduction; Conscious experience or understanding inferred from
+    registration; A specified sensory channel inferred without a channel distinction
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:fde92fc69d8d1aeff6000ad0
   lemma: operative constraint-target applicability
   display_form: operative constraint-target applicability
@@ -9664,6 +9685,13 @@ lemma_index:
   ongoing physical repair:
     sense_ids:
     - ENS:96ddcc4f67e0aae5b8a8b130
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  ongoing sensory registration:
+    sense_ids:
+    - ENS:9e8742cd2cda8a3dcd4c2a66
     requires_disambiguation: false
     direct_target_count: 1
     routes:

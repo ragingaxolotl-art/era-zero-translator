@@ -6,6 +6,7 @@ import {deicticReference,deicticEvent,nominalMarker} from './references.mjs';
 
 // Reviewed constructions use exact process senses, never a generic synonym pool.
 const ACTIONS = [
+  {pattern:'is registering sensory input from',predicate:'CMP:ade73037114406a2cd91ce13',key:'ongoing_sensory_registration',wording:'is registering sensory input from',role:'target',targetRole:'source',semanticNote:'Sensory registration is physical sensory transduction of information from this source into this receiver. It does not by itself assert consciousness, attention, recognition, understanding, or a particular sensory channel.'},
   {pattern:'(?:can repair|is able to repair)',negativePattern:'(?:cannot repair|can not repair|is not able to repair|is unable to repair)',predicate:'REP:211',key:'available_target_repair',wording:'can repair',semanticNote:'Can means currently enabled to restore this target under applicable conditions; it does not assert permission, ongoing repair, or guaranteed success.'},
   {pattern:'(?:can restore|is able to restore)',negativePattern:'(?:cannot restore|can not restore|is not able to restore|is unable to restore)',predicate:'REP:211',key:'available_target_restoration',wording:'can restore',semanticNote:'Can means currently enabled to restore this target under applicable conditions; it does not assert permission, ongoing restoration, or guaranteed success.'},
   {pattern:'(?:loves|is loving)', negativePattern:'(?:does not love|is not loving)', predicate:'CMP:44718c92b66443c0c0f03ad7', key:'approved_poetic_love', wording:'loves', semanticNote:'DBA poetic love: an established life-bond characterized by self-awakening and the preserved, not-yet-expressed self.'},
@@ -192,7 +193,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return (/^[Ii]f\b/.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored)\b/i.test(String(input))) && !parseNamedSentence(input);
+  return (/^[Ii]f\b/.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering)\b/i.test(String(input))) && !parseNamedSentence(input);
 }
 
 // A complete antecedent and a comma establish conditional scope. Without
@@ -370,7 +371,7 @@ export async function composeNamedSentence(input,template) {
     lexical_events:relative,structural_events:structural,statement_boundary:performance.statement_boundary,statement_boundary_beats:performance.statement_boundary_beats};
   const formalDigest=await canonicalDigest({semantic_digest:digest,relative_plan:relativePlan});
   const formal={format:'EZF-1',renderer_version:'1.0.0',formal_id:`EZF:${formalDigest.slice(0,24)}`,formal_digest:formalDigest,semantic_digest:digest,semantic_ir:ir,performance,
-    literal_gloss:`${names.map((name,index)=>deicticRoles[index]?`${participantIds[index]}:reference(${deicticRoles[index]})`:`${nominal[index]?`${participantIds[index]}:reference(${nominal[index].mode}) | `:''}${participantIds[index]}:name(${name.normalized_label})`).join(' | ')} | ${source.literal_gloss.replaceAll(`${predicates[0].node_id}:`,'p:').replaceAll(`${predicates[0].node_id}.`,'p.').replace(/\[1\]$/,`[${parsed.runtimeState??1}]`)}`};
+    literal_gloss:`${names.map((name,index)=>deicticRoles[index]?`${participantIds[index]}:reference(${deicticRoles[index]})`:`${nominal[index]?`${participantIds[index]}:reference(${nominal[index].mode}) | `:''}${participantIds[index]}:name(${name.normalized_label})`).join(' | ')} | ${source.literal_gloss.replaceAll(`${predicates[0].node_id}:`,'p:').replaceAll(`${predicates[0].node_id}.`,'p.').replace(/\[1\](?= \| |$)/g,`[${parsed.runtimeState??1}]`)}`};
   return {source_input:input,target_id:parsed.predicate,sense_id:`construction:${parsed.construction}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,
     semantic_note:parsed.semanticNote?(parsed.semanticNote+(parsed.runtimeState===2&&parsed.key==='approved_poetic_love'?' The num ending carries the approved never-finished-becoming reading.':'')):null,construction:parsed.construction,interpretation:parsed.explicitInterpretation||((deicticRoles.some(Boolean)||parsed.semanticNote)?String(input).trim():null)||`${parsed.actorText} ${parsed.negated?(parsed.key==='active_care'?'does not actively care for':parsed.wording.replace('is ','is not ')):parsed.wording}${parsed.targetText?' '+parsed.targetText:''}.`};
 }

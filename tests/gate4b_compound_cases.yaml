@@ -2,7 +2,7 @@
 metadata:
   title: Gate 4B dictionary conformance and routing cases
   version: 1.0.0
-  approved_entries: 32
+  approved_entries: 33
 accepted:
 - case_id: physical_tool
   compound_id: CMP:111b772027accab2054f0415
@@ -78,6 +78,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: composite_artifact
   compound_id: CMP:a7fc0ca38a6f95a40cdb87b1
+  expected: valid_approved_entry
+- case_id: ongoing_sensory_registration
+  compound_id: CMP:ade73037114406a2cd91ce13
   expected: valid_approved_entry
 - case_id: data_repair
   compound_id: CMP:b518a324d776e46e9d0ff041

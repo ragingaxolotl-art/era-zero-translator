@@ -12,8 +12,8 @@ policy:
     authorize automatic semantic resolution.
 counts:
   atoms: 324
-  compounds: 32
-  entries: 356
+  compounds: 33
+  entries: 357
 entries:
 - target_id: CMP:111b772027accab2054f0415
   target_type: compound
@@ -460,6 +460,24 @@ entries:
   - composite artifact
   example_searches:
   - composite artifact
+  mapping_status: discovery_only_noncanonical
+  authority_note: These words help people find the compound. They do not replace or
+    broaden its canonical graph.
+- target_id: CMP:ade73037114406a2cd91ce13
+  target_type: compound
+  canonical_title: ongoing sensory registration
+  plain_label: ongoing sensory registration
+  plain_explanation: An everyday discovery label for the approved compound “ongoing
+    sensory registration”; the compound graph controls its exact meaning.
+  ordinary_terms:
+  - ongoing
+  - sensory
+  - registration
+  - ongoing sensory registration
+  match_phrases:
+  - ongoing sensory registration
+  example_searches:
+  - ongoing sensory registration
   mapping_status: discovery_only_noncanonical
   authority_note: These words help people find the compound. They do not replace or
     broaden its canonical graph.

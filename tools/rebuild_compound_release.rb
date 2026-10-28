@@ -5,6 +5,7 @@ require 'json'
 require 'digest'
 require 'rbconfig'
 require_relative 'lib/era_zero_validation'
+require_relative 'lib/era_zero_compound_conventions'
 V = EraZeroValidation
 Dir.chdir(V::ROOT)
 def save(path, value); File.write(path, YAML.dump(value)); end
@@ -20,8 +21,9 @@ compounds=dictionary.fetch('entries')
 # Preflight before changing derived records. Approval and semantic review are author inputs.
 ids=compounds.map { |c| c.fetch('compound_id') }
 abort 'Duplicate compound identities' unless ids.uniq.length==ids.length
+EraZeroCompoundConventions.validate!(compounds)
 compounds.each do |entry|
-  payload=entry.slice('architecture_version','semantic_head','nodes','edges','lexical_constraints')
+  payload=EraZeroCompoundConventions.semantic_payload(entry)
   hash=V.fingerprint(payload)
   abort "Unapproved or invalid identity: #{entry['display_title']}" unless entry['status']=='approved' && entry['content_digest']==hash && entry['compound_id']=="CMP:#{hash[0,24]}" && entry.dig('serialization','content_digest')==hash
 end
