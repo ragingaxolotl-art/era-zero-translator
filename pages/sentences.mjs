@@ -13,7 +13,16 @@ const DESCRIPTIONS = [
   {pattern:'conscious', predicate:'LIF:011', key:'conscious_other', wording:'is conscious'},
   {pattern:'dormant', predicate:'LIF:012', key:'dormant_other', wording:'is dormant'}
 ];
-export function parseNamedSentence(input) {
+export function parseNamedSentence(input, depth=0) {
+  if(depth>16)return null;
+  const modal=String(input).trim().match(/^[Ii]t is (not )?(possible|necessary) that (.+)$/);
+  if(modal){
+    const inner=parseNamedSentence(modal[3],depth+1);
+    if(!inner)return null;
+    const scopes=[...(inner.scopes||[]),{operator:'modality',mode:modal[2]}];
+    if(modal[1])scopes.push({operator:'negation'});
+    return {...inner,scopes,construction:`scoped_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
   const participant='([A-Z][a-z]+|"[A-Za-z]+(?:[ -][A-Za-z]+)*")';
   for(const action of ACTIONS){
     for(const negated of [false,true]){
@@ -33,7 +42,7 @@ export function parseNamedSentence(input) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return /\b(?:(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|conscious|dormant)\b/i.test(String(input)) && !parseNamedSentence(input);
+  return /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|conscious|dormant)\b/i.test(String(input)) && !parseNamedSentence(input);
 }
 
 export function parseSentenceSequence(input) {
@@ -47,6 +56,9 @@ export function parseSentenceSequence(input) {
     }
   }
   if(quoted||!clauses.length)return null;
+  // Without explicit grouping a leading modal can scope one clause or the
+  // entire sequence. Do not guess that attachment.
+  if(/^[Ii]t is (?:not )?(?:possible|necessary) that /.test(text))return null;
   clauses.push(text.slice(start).trim());
   if(clauses.length>32||clauses.some(clause=>!parseNamedSentence(clause)))return null;
   return clauses;
@@ -99,6 +111,12 @@ export async function composeNamedSentence(input,template) {
     ir.edges[0].from='neg';
     ir.edges.push({edge_id:'e3',type:'scopes',from:'p',to:'neg'});
   }
+  for(const [index,scope] of (parsed.scopes||[]).entries()){
+    const id=`scope${String(index).padStart(2,'0')}`;
+    ir.nodes.push({node_id:id,kind:'scope_operator',...scope});
+    ir.edges.push({edge_id:`zscope${String(index).padStart(2,'0')}`,type:'scopes',from:ir.edges[0].from,to:id});
+    ir.edges[0].from=id;
+  }
   const digest=await canonicalDigest(ir);
   ir.utterance_id=`UTT:${digest.slice(0,24)}`;
   ir.serialization={canonical_format:'EZIR-JSON-1',content_digest:digest};
@@ -122,5 +140,5 @@ export async function composeNamedSentence(input,template) {
   const formal={format:'EZF-1',renderer_version:'1.0.0',formal_id:`EZF:${formalDigest.slice(0,24)}`,formal_digest:formalDigest,semantic_digest:digest,semantic_ir:ir,performance,
     literal_gloss:`${names.map((name,index)=>`${index?'b':'a'}:name(${name.normalized_label})`).join(' | ')} | ${source.literal_gloss.replaceAll(`${predicates[0].node_id}:`,'p:').replaceAll(`${predicates[0].node_id}.`,'p.')}`};
   return {source_input:input,target_id:parsed.predicate,sense_id:`construction:${parsed.construction}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,
-    construction:parsed.construction,interpretation:`${parsed.actorText} ${parsed.negated?(parsed.key==='active_care'?'does not actively care for':parsed.wording.replace('is ','is not ')):parsed.wording}${parsed.targetText?' '+parsed.targetText:''}.`};
+    construction:parsed.construction,interpretation:parsed.explicitInterpretation||`${parsed.actorText} ${parsed.negated?(parsed.key==='active_care'?'does not actively care for':parsed.wording.replace('is ','is not ')):parsed.wording}${parsed.targetText?' '+parsed.targetText:''}.`};
 }

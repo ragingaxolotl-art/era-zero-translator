@@ -243,3 +243,15 @@ historical rule. Ruby and browser MIDI/SVG agree for all seven modes. Numeric
 confidence remains explicitly unsupported, including the historical possible
 fixture with strength 0.7. Ordinary-English modal parsing and listener decoding
 remain unfinished; this change supplies the musical representation they need.
+
+
+### Explicit modal sentence input
+
+Named action and description clauses accept `It is possible that ...` and `It is
+necessary that ...`, including `It is not possible/necessary that ...` and nested
+wrappers up to 16 levels. Negation inside the clause stays inside the modality;
+negation on the wrapper stays outside. Tests compare full browser/Ruby formal
+representations and distinguish the scope orders in MIDI. A leading modal before
+an explicit then-sequence is declined because its scope is ambiguous without
+grouping. Bare may/must forms, other modal English constructions, and numeric
+confidence remain incomplete. These wrappers introduce no lexical roots.

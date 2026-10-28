@@ -19,4 +19,5 @@ assert.notDeepEqual(midiFromFormal(result.formal),midiFromFormal(reverse.formal)
 assert.equal(parseSentenceSequence('Pip cares for Ada and Ada is restoring Sol.'),null);
 assert.equal(parseSentenceSequence('Pip cares for Ada, then Ada is not restoring Sol tomorrow.'),null);
 assert.equal(parseSentenceSequence('Pip cares for "then Ada".'),null);
+assert.equal(parseSentenceSequence('It is possible that Pip cares for Ada, then Ada is restoring Sol.'),null);
 console.log('Explicit sequences: whole-IR Ruby parity, exact MIDI parity, action order, clause boundary and unsupported-clause rejection pass.');
