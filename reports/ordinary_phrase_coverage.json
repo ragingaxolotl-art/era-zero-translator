@@ -3,8 +3,8 @@
   "completion_proven": false,
   "case_count": 40,
   "counts": {
-    "verified_for_declared_checks": 12,
-    "not_composed": 28
+    "verified_for_declared_checks": 13,
+    "not_composed": 27
   },
   "areas": {
     "participants": {
@@ -53,7 +53,7 @@
     },
     "speech_act": {
       "total": 2,
-      "verified": 0
+      "verified": 1
     },
     "sensory_dimensions": {
       "total": 4,
@@ -452,8 +452,24 @@
       "requirements": [
         "Ask about the state with the same bearer"
       ],
-      "status": "not_composed",
-      "failures": []
+      "expected": {
+        "targets": [
+          "LIF:011"
+        ],
+        "roles": [
+          "bearer"
+        ],
+        "labels": [
+          "orin"
+        ],
+        "operators": [],
+        "speech_acts": [
+          "question"
+        ]
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "ad0f58bacaa103f5c240321f4ceaa8e8c5b5b2972e5a099601541585e1b512fd"
     },
     {
       "id": "command",

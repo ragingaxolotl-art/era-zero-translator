@@ -11,7 +11,7 @@ is the starting evidence, not a completion certificate.
 ## Current coverage evidence
 
 The [ordinary phrase audit](../reports/ordinary_phrase_coverage.md) currently has
-12 checked compositions and 28 uncomposed phrases out of 40 deliberately varied
+13 checked compositions and 27 uncomposed phrases out of 40 deliberately varied
 cases. This is an implementation-authored diagnostic set, not a blind evaluation
 or a statistical measure of English coverage. Green regression suites do not
 override these missing constructions. The corpus records the intended distinctions
@@ -407,3 +407,16 @@ and/then text in noun labels. Conjunction requires every clause to parse fully;
 noun lists, unsupported additions, bare or, and modal clauses with ambiguous scope
 over later members remain partial. Tests compare complete Ruby/browser artifacts,
 local negation, quoted labels, and the musical and-versus-then distinction.
+
+
+### Yes/no questions
+
+Supported named descriptions and progressive actions now accept subject–auxiliary
+inversion (`Is Orin conscious?`, `Is Pip moving toward Ada?`), and care accepts
+`Does Nora care for Eli?`. Explicit negative questions retain negation scope.
+Question composition preserves lexical events and participant bindings while
+setting the existing rising question contour and question speech act. Ruby/browser
+formal equality and assertion-versus-question MIDI distinctions are checked.
+Wh-questions, unsupported modifiers, embedded questions, and mixed question/assertion
+coordination remain incomplete. The ordinary phrase audit now checks speech acts
+explicitly and counts its question case as supported.

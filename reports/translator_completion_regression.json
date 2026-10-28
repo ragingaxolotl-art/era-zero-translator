@@ -6,19 +6,19 @@
       "test": "tests/compound_dependencies_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 16220\n\n# Running:\n\n......\n\nFinished in 0.008024s, 747.7567 runs/s, 1869.3918 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 35572\n\n# Running:\n\n......\n\nFinished in 0.008079s, 742.6662 runs/s, 1856.6654 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_expansion_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 31647\n\n# Running:\n\n..........\n\nFinished in 0.232327s, 43.0428 runs/s, 542.3390 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 44423\n\n# Running:\n\n..........\n\nFinished in 0.230724s, 43.3418 runs/s, 546.1070 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/semantic_reference_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 10340\n\n# Running:\n\n......\n\nFinished in 0.219318s, 27.3575 runs/s, 118.5493 assertions/s.\n\n6 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 23830\n\n# Running:\n\n......\n\nFinished in 0.218782s, 27.4246 runs/s, 118.8398 assertions/s.\n\n6 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_semantic_ir_and_grammar.rb",
@@ -30,13 +30,13 @@
       "test": "tests/foundation_process_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 49477\n\n# Running:\n\n...\n\nFinished in 0.395503s, 7.5853 runs/s, 70.7959 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 15649\n\n# Running:\n\n...\n\nFinished in 0.396184s, 7.5722 runs/s, 70.6742 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/repetition_performance_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 12166\n\n# Running:\n\n...\n\nFinished in 0.448807s, 6.6844 runs/s, 17.8250 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 57786\n\n# Running:\n\n...\n\nFinished in 0.450077s, 6.6655 runs/s, 17.7747 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_gate4b_compound_dictionary.rb",
@@ -78,7 +78,7 @@
       "test": "tests/named_sentence_test.mjs",
       "passed": true,
       "exit_code": 0,
-      "output": "Named sentences: 38 full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.\n"
+      "output": "Named sentences: 42 full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.\n"
     },
     {
       "test": "tests/dictionary_fidelity_test.mjs",
@@ -115,6 +115,12 @@
       "passed": true,
       "exit_code": 0,
       "output": "Conjoined sentences: full Ruby/browser parity, quoted conjunctions, local negation, and-versus-then sound contrast, and ambiguous-scope rejection pass.\n"
+    },
+    {
+      "test": "tools/audit_ordinary_phrase_coverage.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "{\"case_count\":40,\"counts\":{\"verified_for_declared_checks\":13,\"not_composed\":27},\"completion_proven\":false}\n"
     },
     {
       "test": "tests/negation_performance_test.mjs",

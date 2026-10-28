@@ -18,6 +18,7 @@ for(const item of corpus.cases){
  const failures=[];
  if(result&&item.expected){
   const ir=result.semantic_ir,actual={
+   speech_acts:[ir.speech_act],
    targets:ir.nodes.filter(n=>n.kind==='lexical_occurrence').map(n=>n.target_id),
    roles:ir.edges.filter(e=>e.type==='fills_role').map(e=>e.role),
    labels:ir.nodes.filter(n=>n.kind==='phonemic_reference').map(n=>n.name.normalized_label),
@@ -25,6 +26,7 @@ for(const item of corpus.cases){
    strengths:ir.nodes.filter(n=>n.strength!==undefined).map(n=>n.strength)
   };
   for(const [key,expected] of Object.entries(item.expected))if(!equal(actual[key]||[],expected))failures.push(key);
+  if(ir.speech_act!==(item.expected.speech_acts?.[0]||'assertion'))failures.push('speech_act');
   if(ir.nodes.some(n=>n.kind==='lexical_occurrence'&&n.runtime_state.code!==1))failures.push('runtime');
   if(item.id==='modal_negation'){
    const center=ir.edges.find(e=>e.type==='centers'&&e.to===ir.root_clause).from;

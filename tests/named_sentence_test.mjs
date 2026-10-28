@@ -33,7 +33,9 @@ const cases=[['Pip cares for Ada.','LIF:211'],['Ada cares for Pip.','LIF:211'],[
   ['Pip is revising a mental representation of Ada.','MIN:111'],
   ['Pip is able to pay attention.','MIN:201'],
   ['Pip is not paying attention to Ada.','MIN:211'],
-  ['It is possible that Pip is revising a mental representation of Ada.','MIN:111']];
+  ['It is possible that Pip is revising a mental representation of Ada.','MIN:111'],
+  ['Is Orin conscious?','LIF:011'],['Does Nora care for Eli?','LIF:211'],
+  ['Is Pip not moving toward Ada?','MOV:111'],['Does Nora not care for Eli?','LIF:211']];
 for(const [text,target] of cases){
   assert.equal(parseNamedSentence(text).predicate,target);
   const file=data.resolution_files[target];
@@ -99,6 +101,15 @@ assert.equal(outputs[34].semantic_ir.edges.find(edge=>edge.from==='a').role,'exp
 assert.equal(outputs[35].semantic_ir.edges.find(edge=>edge.from==='a').role,'bearer');
 assert.equal(new Set(outputs.slice(33,36).map(result=>Buffer.from(midiFromFormal(result.formal)).toString('base64'))).size,3);
 for(const input of ['Pip is curious about Ada.','Pip is learning about Ada.','Pip is understanding Ada.','Pip is paying attention to Ada carefully.'])assert.equal(parseNamedSentence(input),null);
+for(const result of outputs.slice(38)){
+  assert.equal(result.semantic_ir.speech_act,'question');
+  assert.equal(result.formal.performance.primary_contour,'rising');
+  assert.deepEqual(result.formal.performance.contour_relative_semitones,[0,2]);
+}
+const statement=await composeNamedSentence('Orin is conscious.',JSON.parse(fs.readFileSync(new URL(`../pages/${data.resolution_files['LIF:011']}`,import.meta.url))).variants['assertion:1']);
+assert.deepEqual(statement.formal.performance.lexical_events,outputs[38].formal.performance.lexical_events);
+assert.notDeepEqual(midiFromFormal(statement.formal),midiFromFormal(outputs[38].formal));
+for(const input of ['Is Orin conscious tomorrow?','Why is Orin conscious?','It is possible that Is Orin conscious?'])assert.equal(parseNamedSentence(input),null);
 assert.equal(needsSentenceComposition('active care'),false);
 assert.equal(needsSentenceComposition('Pip cares for Ada.'),false);
 console.log(`Named sentences: ${cases.length} full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.`);

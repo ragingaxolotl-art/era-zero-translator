@@ -29,6 +29,17 @@ export function confidenceFromPercent(value) {
 }
 export function parseNamedSentence(input, depth=0) {
   if(depth>16)return null;
+  const participant='([A-Z][a-z]+|"[A-Za-z]+(?:[ -][A-Za-z]+)*")';
+  if(depth===0){
+    const question=String(input).trim().match(new RegExp(`^[Ii]s ${participant} (.+)\\?$`));
+    const careQuestion=String(input).trim().match(new RegExp(`^[Dd]oes ${participant} (not )?care for ${participant}\\?$`));
+    const statement=question?`${question[1]} is ${question[2]}.`:careQuestion?`${careQuestion[1]} ${careQuestion[2]?'does not care for':'cares for'} ${careQuestion[3]}.`:null;
+    if(statement){
+      const inner=parseNamedSentence(statement,depth+1);
+      if(!inner)return null;
+      return {...inner,speechAct:'question',construction:`question_${inner.construction}`,explicitInterpretation:String(input).trim()};
+    }
+  }
   const confidence=String(input).trim().match(/^[Ww]ith ([0-9]+(?:\.[0-9]+)?)% confidence, (.+)$/);
   if(confidence){
     const strength=confidenceFromPercent(confidence[1]),inner=parseNamedSentence(confidence[2],depth+1);
@@ -46,7 +57,6 @@ export function parseNamedSentence(input, depth=0) {
     if(modal[1])scopes.push({operator:'negation'});
     return {...inner,scopes,construction:`scoped_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
-  const participant='([A-Z][a-z]+|"[A-Za-z]+(?:[ -][A-Za-z]+)*")';
   const transfer=String(input).trim().match(new RegExp(`^[Dd]ata ${participant} is (not )?being transferred from ${participant} to ${participant}[.]?$`));
   if(transfer){
     const label=value=>value.replaceAll('"','');
@@ -93,7 +103,7 @@ function parseClauseGroup(input,delimiter) {
   if(/^(?:[Ii]t is (?:not )?(?:possible|necessary) that |[Ww]ith [0-9.]+% confidence, )/.test(text))return null;
   clauses.push(text.slice(start).trim());
   if(clauses.slice(0,-1).some(clause=>/^(?:[Ii]t is (?:not )?(?:possible|necessary) that |[Ww]ith [0-9.]+% confidence, )/.test(clause)))return null;
-  if(clauses.length>32||clauses.some(clause=>!parseNamedSentence(clause)))return null;
+  if(clauses.length>32||clauses.some(clause=>{const parsed=parseNamedSentence(clause);return !parsed||parsed.speechAct==='question'}))return null;
   return clauses;
 }
 
@@ -147,7 +157,7 @@ export async function composeNamedSentence(input,template) {
   const participantIds=participants.map((_,index)=>index<2?['a','b'][index]:`d${index}`);
   const names=await Promise.all(participants.map(({label})=>encodeName(label)));
   const references=names.map((name,index)=>({node_id:participantIds[index],kind:'phonemic_reference',referent_id:name.name_id,value_type:'entity',name}));
-  const ir={ir_version:'1.0',root_clause:'c',speech_act:'assertion',nodes:[{node_id:'c',kind:'clause',clause_type:'predication'},
+  const ir={ir_version:'1.0',root_clause:'c',speech_act:parsed.speechAct||'assertion',nodes:[{node_id:'c',kind:'clause',clause_type:'predication'},
     {node_id:'p',kind:'lexical_occurrence',target_type:predicates[0].target_type,target_id:parsed.predicate,runtime_state:{code:1}},...references],
     edges:[{edge_id:'e0',type:'centers',from:'p',to:'c'},...participants.map((participant,index)=>({edge_id:`e${index+1}`,type:'fills_role',from:participantIds[index],to:'p',role:participant.role}))],discourse_constraints:{}};
   if(parsed.negated){
@@ -175,6 +185,7 @@ export async function composeNamedSentence(input,template) {
   events.push(...source.performance.lexical_events.map(event=>({...structuredClone(event),occurrence_id:'p'})));
   const structural=ir.edges.map(edge=>({edge_id:edge.edge_id,edge_type:edge.type,from:edge.from,to:edge.to,...(edge.role?{role:edge.role}:{}),boundary:edge.type==='fills_role'?'short_gap':'medium_gap',boundary_beats:edge.type==='fills_role'?.5:1}));
   const performance={...structuredClone(source.performance),lexical_events:events,structural_events:structural};
+  if(parsed.speechAct==='question'){performance.primary_contour='rising';performance.contour_relative_semitones=[0,2]}
   const relative=events.map(event=>{
     const {base_midi,family_opening_absolute_midi,address_absolute_midi,...copy}=event;
     copy.runtime_tail=event.runtime_tail?Object.fromEntries(Object.entries(event.runtime_tail).filter(([key])=>key!=='absolute_note')):null;

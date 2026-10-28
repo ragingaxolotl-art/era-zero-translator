@@ -319,7 +319,22 @@
       "area": "speech_act",
       "requirements": [
         "Ask about the state with the same bearer"
-      ]
+      ],
+      "expected": {
+        "targets": [
+          "LIF:011"
+        ],
+        "roles": [
+          "bearer"
+        ],
+        "labels": [
+          "orin"
+        ],
+        "operators": [],
+        "speech_acts": [
+          "question"
+        ]
+      }
     },
     {
       "id": "command",
