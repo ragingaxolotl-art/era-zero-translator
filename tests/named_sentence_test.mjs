@@ -21,7 +21,11 @@ const cases=[['Pip cares for Ada.','LIF:211'],['Ada cares for Pip.','LIF:211'],[
   ['Pip is moving away from Ada.','MOV:101'],
   ['Pip is moving relative to Ada.','MOV:121'],
   ['Pip is not moving toward "the station".','MOV:111'],
-  ['It is possible that Pip is moving away from "the station".','MOV:101']];
+  ['It is possible that Pip is moving away from "the station".','MOV:101'],
+  ['Data "the record" is being transferred from Pip to Ada.','DAT:111'],
+  ['Data "the record" is being transferred from Ada to Pip.','DAT:111'],
+  ['Data "the record" is not being transferred from Pip to Ada.','DAT:111'],
+  ['It is possible that data "the record" is being transferred from Pip to Ada.','DAT:111']];
 for(const [text,target] of cases){
   assert.equal(parseNamedSentence(text).predicate,target);
   const file=data.resolution_files[target];
@@ -71,6 +75,11 @@ for(const input of ['Pip is moving toward Ada quickly.','Pip is moving away from
   assert.equal(parseNamedSentence(input),null);
   assert.equal(needsSentenceComposition(input),true);
 }
+const transfer=outputs[26];
+assert.deepEqual(transfer.semantic_ir.edges.filter(edge=>edge.type==='fills_role').map(edge=>edge.role),['source','content','target']);
+assert.deepEqual(transfer.formal.performance.lexical_events.filter(event=>event.kind==='phonemic_label').map(event=>[event.label,event.register]),[['pip','low'],['the record','middle'],['ada','high']]);
+assert.notDeepEqual(midiFromFormal(transfer.formal),midiFromFormal(outputs[27].formal));
+assert.notDeepEqual(midiFromFormal(transfer.formal),midiFromFormal(outputs[28].formal));
 assert.equal(needsSentenceComposition('active care'),false);
 assert.equal(needsSentenceComposition('Pip cares for Ada.'),false);
 console.log(`Named sentences: ${cases.length} full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.`);

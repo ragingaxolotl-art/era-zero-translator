@@ -280,3 +280,15 @@ retain the mover as actor; tests verify full Ruby/browser formal equality and
 distinct MIDI. Negation and explicit modal wrappers compose with these clauses.
 This adds no roots and does not equate moving with carrying, running, or swimming.
 Multiple path endpoints and manner modifiers remain unimplemented.
+
+
+### Three-participant data transfer
+
+The sentence composer now builds participants from explicit role records rather
+than a fixed actor/target pair. `Data "the record" is being transferred from Pip
+to Ada` uses DAT:111 with source, content, and target, preserving all three labels
+in low, middle, and high registers. Negation, modal wrappers, and existing sequence
+composition remain available. Tests reverse source/target and compare complete
+Ruby/browser formal output and MIDI distinctions. This does not assert message
+understanding, communicative intent, successful completion, or a physical transfer.
+Existing unary/binary participant and edge IDs are retained.
