@@ -136,3 +136,19 @@ the equivalent JavaScript schedule; Ruby SVG also consumes the schedule. Cross-l
 tests compare exact MIDI bytes, SVG and parsed notes. Only repetition fixture
 hashes changed in the legacy presentation matrix. Negation and other scopes remain
 unresolved musical-fidelity work; this does not complete general sentence playback.
+
+## First browser sentence construction
+
+`pages/sentences.mjs` composes complete named active-care clauses: “Pip cares for
+Ada” and “Mira is caring for Sol.” It binds both names and generates a new semantic
+IR and formal performance rather than returning the static predicate template.
+The browser translation action uses this route before keyword lookup. Four novel
+name combinations match Ruby formal rendering exactly; reversed roles change
+MIDI. Unsupported negation, descriptors, temporal additions and extra clauses do
+not match this construction. They still require the broader interpreter work.
+
+This initial parser accepts single capitalized alphabetic names only. Pronouns,
+multiword names, noun phrases, additional predicates, questions and grammar are
+not covered. The interface labels these results “Composed sentence” rather than
+claiming an independently executed inverse roundtrip. Browser DOM interaction
+has not yet been verified for this new route; module, syntax and release tests pass.
