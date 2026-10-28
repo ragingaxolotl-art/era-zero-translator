@@ -25,6 +25,52 @@ export function needsSentenceComposition(input) {
   return /\b(?:(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing)\b/i.test(String(input)) && !parseNamedSentence(input);
 }
 
+export function parseSentenceSequence(input) {
+  const text=String(input).trim().replace(/\.$/,'');
+  let quoted=false,start=0;const clauses=[];
+  for(let i=0;i<text.length;i++){
+    if(text[i]==='"')quoted=!quoted;
+    if(!quoted){
+      const match=text.slice(i).match(/^(?:,\s*|\s+)then\s+/);
+      if(match){clauses.push(text.slice(start,i).trim());i+=match[0].length-1;start=i+1;}
+    }
+  }
+  if(quoted||!clauses.length)return null;
+  clauses.push(text.slice(start).trim());
+  if(clauses.length>32||clauses.some(clause=>!parseNamedSentence(clause)))return null;
+  return clauses;
+}
+
+export async function composeSentenceSequence(input,loadTemplate) {
+  const clauses=parseSentenceSequence(input);
+  if(!clauses)throw new Error('Every clause in the sequence must have a complete interpretation.');
+  const parts=await Promise.all(clauses.map(async clause=>composeNamedSentence(clause,await loadTemplate(parseNamedSentence(clause).predicate))));
+  const ir={ir_version:'1.0',root_clause:'c',speech_act:'assertion',nodes:[{node_id:'c',kind:'clause',clause_type:'predication'},{node_id:'sequence',kind:'coordination',operator:'sequence'}],
+    edges:[{edge_id:'e0',type:'centers',from:'sequence',to:'c'}],discourse_constraints:{}};
+  const events=[],gloss=[];
+  parts.forEach((part,index)=>{
+    const prefix=`s${String(index).padStart(3,'0')}_`;
+    ir.nodes.push(...part.semantic_ir.nodes.map(node=>({...structuredClone(node),node_id:prefix+node.node_id})));
+    ir.edges.push(...part.semantic_ir.edges.map(edge=>({...edge,edge_id:prefix+edge.edge_id,from:prefix+edge.from,to:prefix+edge.to})));
+    ir.edges.push({edge_id:`member${index}`,type:'member_of',from:prefix+'c',to:'sequence',order:index+1});
+    events.push(...part.formal.performance.lexical_events.map(event=>({...structuredClone(event),occurrence_id:prefix+event.occurrence_id})));
+    gloss.push(part.formal.literal_gloss.split(' | ').map(value=>prefix+value).join(' | '));
+  });
+  const digest=await canonicalDigest(ir);
+  ir.utterance_id=`UTT:${digest.slice(0,24)}`;ir.serialization={canonical_format:'EZIR-JSON-1',content_digest:digest};
+  const structural=ir.edges.slice().sort((a,b)=>a.edge_id<b.edge_id?-1:a.edge_id>b.edge_id?1:0).map(edge=>({edge_id:edge.edge_id,edge_type:edge.type,from:edge.from,to:edge.to,...(edge.role?{role:edge.role}:{}),boundary:edge.type==='fills_role'?'short_gap':'medium_gap',boundary_beats:edge.type==='fills_role'?.5:1}));
+  const performance={...structuredClone(parts[0].formal.performance),lexical_events:events,structural_events:structural};
+  const relative=events.map(event=>{
+    const {base_midi,family_opening_absolute_midi,address_absolute_midi,...copy}=event;
+    copy.runtime_tail=event.runtime_tail?Object.fromEntries(Object.entries(event.runtime_tail).filter(([key])=>key!=='absolute_note')):null;
+    return copy;
+  });
+  const relativePlan={primary_contour:performance.primary_contour,contour_relative_semitones:performance.contour_relative_semitones,secondary_contours:performance.secondary_contours,lexical_events:relative,structural_events:structural,statement_boundary:performance.statement_boundary,statement_boundary_beats:performance.statement_boundary_beats};
+  const formalDigest=await canonicalDigest({semantic_digest:digest,relative_plan:relativePlan});
+  const formal={format:'EZF-1',renderer_version:'1.0.0',formal_id:`EZF:${formalDigest.slice(0,24)}`,formal_digest:formalDigest,semantic_digest:digest,semantic_ir:ir,performance,literal_gloss:gloss.join(' | ')};
+  return {source_input:input,target_id:'sequence',sense_id:'construction:explicit_sequence',surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,construction:'explicit_sequence',interpretation:parts.map(part=>part.interpretation.replace(/\.$/,'')).join(', then ')+'.'};
+}
+
 export async function composeNamedSentence(input,template) {
   const parsed=parseNamedSentence(input);
   if(!parsed)throw new Error('The complete sentence does not match this construction.');

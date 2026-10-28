@@ -2,7 +2,7 @@
 export function scheduledLexicalEvents(formal, maxEvents = 100000) {
   const events = formal.performance.lexical_events;
   const ir = formal.semantic_ir;
-  if (!ir.nodes.some(node => node.operator === 'repetition')) return events;
+  if (!ir.nodes.some(node => ['repetition','sequence'].includes(node.operator))) return events;
   const nodes = new Map(ir.nodes.map(node => [node.node_id, node]));
   const incoming = new Map();
   for (const edge of ir.edges) {
@@ -37,7 +37,7 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
       const members = edges.filter(edge => edge.type === 'member_of');
       if (members.some(edge => !Number.isSafeInteger(edge.order)) || new Set(members.map(edge => edge.order)).size !== members.length)
         throw new Error('Repeated sequence requires distinct explicit member order.');
-      result = members.sort((a,b) => a.order-b.order).flatMap(edge => walk(edge.from));
+      result = members.sort((a,b) => a.order-b.order).flatMap((edge,index) => {const phrase=walk(edge.from);if(index<members.length-1&&phrase.length)phrase[phrase.length-1]={...phrase.at(-1),boundary_after_beats:1};return phrase;});
     } else if (['lexical_occurrence','phonemic_reference'].includes(node.kind)) {
       result = edges.filter(edge => ['fills_role','qualifies'].includes(edge.type))
         .sort((a,b) => a.edge_id < b.edge_id ? -1 : a.edge_id > b.edge_id ? 1 : 0)

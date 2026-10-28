@@ -169,3 +169,18 @@ and the complete label's phonemes. Quotes explicitly request a label: adjectives
 or articles inside it are not claimed as separately translated semantics. Nine
 sentence cases match Ruby rendering. Unquoted descriptive noun phrases, pronouns,
 and scope additions still need grammatical interpretation.
+
+## Explicit multi-clause sequences
+
+The browser composes complete supported clauses connected by `then`, including
+`Pip cares for Ada, then Ada is restoring Sol.` Each clause retains its own
+participants and predicate; coordination edges record explicit order. Quoted
+labels containing “then” do not split the sentence. Any unsupported clause causes
+the complete sequence parser to decline. `and` is not treated as temporal order.
+
+Ruby and browser schedules now traverse explicit sequence order even outside
+repetition and insert a medium one-beat boundary between clauses. Formal and MIDI
+parity tests verify both actions, reversal, boundary placement and rejected partial
+sequences. Only the legacy sequence MIDI fixture hashes changed. The parser has a
+32-clause implementation bound; this is not a language limit. Parallel conjunction,
+pronouns, modifiers and additional predicate frames remain outstanding.

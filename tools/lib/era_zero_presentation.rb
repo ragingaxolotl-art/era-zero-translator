@@ -76,7 +76,7 @@ module EraZeroPresentation
   def scheduled_lexical_events(formal, max_events: 100_000)
     events = formal.dig("performance", "lexical_events")
     ir = formal.fetch("semantic_ir")
-    return events unless ir.fetch("nodes").any? { |node| node["operator"] == "repetition" }
+    return events unless ir.fetch("nodes").any? { |node| %w[repetition sequence].include?(node["operator"]) }
     nodes = ir.fetch("nodes").to_h { |node| [node.fetch("node_id"), node] }
     incoming = ir.fetch("edges").group_by { |edge| edge.fetch("to") }
     by_occurrence = events.group_by { |event| event.fetch("occurrence_id") }
@@ -112,7 +112,11 @@ module EraZeroPresentation
                  unless orders.all? { |order| order.is_a?(Integer) } && orders.uniq.length == orders.length
                    raise PresentationError, "repeated sequence requires distinct explicit member order"
                  end
-                 members.sort_by { |edge| edge.fetch("order") }.flat_map { |edge| walk.call(edge.fetch("from")) }
+                 members.sort_by { |edge| edge.fetch("order") }.each_with_index.flat_map do |edge, index|
+                   phrase = walk.call(edge.fetch("from"))
+                   phrase[-1] = phrase.last.merge("boundary_after_beats" => 1) if index < members.length - 1 && !phrase.empty?
+                   phrase
+                 end
                when "lexical_occurrence", "phonemic_reference"
                  arguments = edges.select { |edge| %w[fills_role qualifies].include?(edge["type"]) }
                  arguments.sort_by { |edge| edge.fetch("edge_id") }.flat_map { |edge| walk.call(edge.fetch("from")) } + by_occurrence.fetch(id, [])
@@ -147,7 +151,7 @@ module EraZeroPresentation
         absolute_events << [tick + duration, 0, [0x80, note, 0]]
         tick += duration
       end
-      tick += (0.5 * TICKS_PER_BEAT).round
+      tick += (event.fetch("boundary_after_beats", 0.5) * TICKS_PER_BEAT).round
     end
     contour_base = formal.dig("performance", "anchor_midi")
     formal.dig("performance", "contour_relative_semitones").each do |offset|
