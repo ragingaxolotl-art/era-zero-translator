@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
-import {parseNamedCareSentence,composeNamedCareSentence} from '../pages/sentences.mjs';
+import {parseNamedCareSentence,composeNamedCareSentence,needsCareSentenceComposition} from '../pages/sentences.mjs';
 import {midiFromFormal} from '../pages/engine.mjs';
 const data=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url)));
 const file=data.resolution_files['LIF:211'];
@@ -16,5 +16,10 @@ for(const text of ['Pip cares for Ada.','Ada cares for Pip.','Mira is caring for
 }
 assert.notEqual(outputs[0].semantic_ir.utterance_id,outputs[1].semantic_ir.utterance_id);
 assert.notDeepEqual(midiFromFormal(outputs[0].formal),midiFromFormal(outputs[1].formal));
-for(const text of ['Pip does not care for Ada.','Pip cares for Ada and Sol.','Pip barely cares for Ada.','Pip cares for a curious Ada.','Pip cares for Ada tomorrow.'])assert.equal(parseNamedCareSentence(text),null,text);
+for(const text of ['Pip does not care for Ada.','Pip cares for Ada and Sol.','Pip barely cares for Ada.','Pip cares for a curious Ada.','Pip cares for Ada tomorrow.']){
+  assert.equal(parseNamedCareSentence(text),null,text);
+  assert.equal(needsCareSentenceComposition(text),true,text);
+}
+assert.equal(needsCareSentenceComposition('active care'),false);
+assert.equal(needsCareSentenceComposition('Pip cares for Ada.'),false);
 console.log('Named sentences: four full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.');

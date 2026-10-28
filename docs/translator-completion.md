@@ -152,3 +152,8 @@ multiword names, noun phrases, additional predicates, questions and grammar are
 not covered. The interface labels these results “Composed sentence” rather than
 claiming an independently executed inverse roundtrip. Browser DOM interaction
 has not yet been verified for this new route; module, syntax and release tests pass.
+
+Care-construction fallback now stays nonautomatic when the complete parser
+declines added meaning. Manual dictionary inspection is labeled “Partial reading”
+and its source echo identifies it as partial. This specifically protects the new
+care-construction boundary; broader legacy keyword fallback remains audit work.

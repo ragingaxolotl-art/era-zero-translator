@@ -9,6 +9,13 @@ export function parseNamedCareSentence(input) {
   return {actor:match[1],target:match[2],predicate:'LIF:211',construction:'named_active_care'};
 }
 
+// Recognize the construction family even when additional meaning makes its
+// current complete parser decline. The legacy keyword path may still offer
+// dictionary readings, but must not present one as the complete sentence.
+export function needsCareSentenceComposition(input) {
+  return /\b(?:care|cares|caring)\s+for\b/i.test(String(input)) && !parseNamedCareSentence(input);
+}
+
 export async function composeNamedCareSentence(input,template) {
   const parsed=parseNamedCareSentence(input);
   if(!parsed)throw new Error('The complete sentence does not match this construction.');
