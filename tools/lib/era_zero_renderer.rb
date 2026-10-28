@@ -110,6 +110,54 @@ module EraZeroRenderer
     raise RenderError, "compound #{compound.fetch('compound_id')} is missing required roles: #{missing.join(', ')}" unless missing.empty?
   end
 
+  def occurrence_events(node, ir, atoms, compounds, anchor_midi, register, ancestors = [])
+    id = node.fetch("node_id")
+    raise RenderError, "cyclic compound participant binding" if ancestors.include?(id)
+    raise RenderError, "participant binding depth exceeds 64" if ancestors.length >= 64
+    state = node.fetch("runtime_state").fetch("code")
+    if node["target_type"] == "atom"
+      raise RenderError, "an atom cannot declare compound bindings" if node.key?("compound_bindings")
+      atom = atoms[node["target_id"]] or raise RenderError, "unknown atom #{node['target_id']}"
+      return [atom_event(atom, occurrence_id: id, register: register, anchor_midi: anchor_midi, runtime_code: state)]
+    end
+    raise RenderError, "invalid lexical target type" unless node["target_type"] == "compound"
+    compound = compounds[node["target_id"]] or raise RenderError, "unknown compound #{node['target_id']}"
+    if node.key?("compound_bindings")
+      expander = EraZeroCompoundExpansion::Expander.new(compounds.values)
+      expanded = expander.expand(compound.fetch("compound_id"), compound.fetch("definition_version"))
+      arguments = ir.fetch("nodes").to_h { |argument| [argument.fetch("node_id"), argument] }
+      bindings = expander.bind_slots(expanded, bindings: node.fetch("compound_bindings"), arguments: arguments).to_h { |binding| [binding.fetch("slot_path"), binding] }
+      components = expander.ordered_roots(expanded, include_slots: true)
+    else
+      validate_compound_roles!(compound, node, ir)
+      components = compound_root_order(compound, compounds: compounds)
+    end
+    components.flat_map do |component|
+      if component["kind"] == "slot"
+        binding = bindings.fetch(component.fetch("path"))
+        argument = arguments.fetch(binding.fetch("argument_id"))
+        raise RenderError, "bound participant must be a renderable lexical occurrence" unless argument["kind"] == "lexical_occurrence"
+        role_register = ROLE_REGISTERS.fetch(binding.fetch("role"), "middle")
+        occurrence_events(argument, ir, atoms, compounds, anchor_midi, role_register, ancestors + [id]).map do |event|
+          event.merge("occurrence_id" => id, "argument_node_id" => argument.fetch("node_id"),
+            "binding_path" => component.fetch("path"), "binding_role" => binding.fetch("role"),
+            "binding_predicate_path" => binding.fetch("predicate_path"),
+            "binding_chain" => [{ "compound_occurrence_id" => id, "slot_path" => component.fetch("path"), "argument_id" => argument.fetch("node_id") }] + event.fetch("binding_chain", []))
+        end
+      else
+        atom = atoms.fetch(component.fetch("root_id"))
+        is_head = component.fetch("external_head", component["node_id"] == compound["semantic_head"])
+        component_register = component["component_role"] ? ROLE_REGISTERS.fetch(component["component_role"], "middle") : register
+        [atom_event(atom, occurrence_id: id, register: component_register, anchor_midi: anchor_midi,
+          runtime_code: is_head ? state : nil,
+          component_node_id: component["path"] ? JSON.generate(component["path"]) : component["node_id"],
+          component_role: is_head ? "head" : component["component_role"] || "qualifier")]
+      end
+    end
+  rescue EraZeroCompoundExpansion::ExpansionError, KeyError => error
+    raise RenderError, error.message
+  end
+
   def render(ir, anchor_midi: 60)
     atoms, compounds = load_authority
     raise RenderError, "anchor_midi must be an integer from 24 through 96" unless anchor_midi.is_a?(Integer) && anchor_midi.between?(24, 96)
@@ -119,25 +167,14 @@ module EraZeroRenderer
     speech_act = ir.fetch("speech_act")
     contour = CONTOURS.fetch(speech_act) { raise RenderError, "unknown speech act #{speech_act}" }
     lexical_events = []
-    ir.fetch("nodes").select { |n| n["kind"] == "lexical_occurrence" }.sort_by { |n| n["node_id"] }.each do |node|
-      register = register_for(node["node_id"], ir)
-      state = node.fetch("runtime_state").fetch("code")
-      if node["target_type"] == "atom"
-        atom = atoms[node["target_id"]] or raise RenderError, "unknown atom #{node['target_id']}"
-        lexical_events << atom_event(atom, occurrence_id: node["node_id"], register: register, anchor_midi: anchor_midi, runtime_code: state)
-      elsif node["target_type"] == "compound"
-        compound = compounds[node["target_id"]] or raise RenderError, "unknown compound #{node['target_id']}"
-        validate_compound_roles!(compound, node, ir)
-        compound_root_order(compound, compounds: compounds).each do |component|
-          atom = atoms.fetch(component.fetch("root_id"))
-          is_head = component.fetch("external_head", component["node_id"] == compound["semantic_head"])
-          component_register = component["component_role"] ? ROLE_REGISTERS.fetch(component["component_role"], "middle") : register
-          lexical_events << atom_event(atom, occurrence_id: node["node_id"], register: component_register, anchor_midi: anchor_midi, runtime_code: is_head ? state : nil, component_node_id: component["node_id"], component_role: is_head ? "head" : component["component_role"] || "qualifier")
-        end
-      else
-        raise RenderError, "invalid lexical target type"
-      end
+    lexical_nodes = ir.fetch("nodes").select { |node| node["kind"] == "lexical_occurrence" }
+    bound_ids = lexical_nodes.flat_map { |node| node.fetch("compound_bindings", []).map { |binding| binding.fetch("argument_id") } }.to_set
+    independent_ids = ir.fetch("edges").map { |edge| edge["from"] }.to_set
+    lexical_nodes.sort_by { |node| node["node_id"] }.each do |node|
+      next if bound_ids.include?(node["node_id"]) && !independent_ids.include?(node["node_id"])
+      lexical_events.concat(occurrence_events(node, ir, atoms, compounds, anchor_midi, register_for(node["node_id"], ir)))
     end
+    raise RenderError, "no independently rooted lexical occurrences" if !lexical_nodes.empty? && lexical_events.empty?
 
     structural_events = ir.fetch("edges").sort_by { |e| e["edge_id"] }.map do |edge|
       timing = case edge["type"]

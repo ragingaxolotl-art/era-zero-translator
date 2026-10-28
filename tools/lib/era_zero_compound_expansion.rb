@@ -28,7 +28,7 @@ module EraZeroCompoundExpansion
 
     # Traverse references as units, so modifiers of a referenced compound precede
     # that complete unit instead of being inserted at its flattened final root.
-    def ordered_roots(expanded)
+    def ordered_roots(expanded, include_slots: false)
       scopes = expanded.fetch("scopes").to_h { |scope| [scope.fetch("path"), scope] }
       nodes = expanded.fetch("nodes").to_h { |node| [node.fetch("path"), node] }
       edges = expanded.fetch("edges").group_by { |edge| edge.fetch("to_scope_target") }
@@ -68,8 +68,7 @@ module EraZeroCompoundExpansion
           if node["kind"] == "root"
             result << node.merge("component_role" => role, "external_head" => path == expanded.fetch("semantic_head"))
           elsif node["kind"] == "slot"
-            # Slots are requirements, not sounded roots; the renderer must bind
-            # them before using this sequence.
+            result << node.merge("component_role" => role, "external_head" => false) if include_slots
           elsif node["kind"] != "coordination"
             raise ExpansionError, "unsupported expanded node kind"
           end

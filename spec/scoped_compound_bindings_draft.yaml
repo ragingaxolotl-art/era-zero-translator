@@ -16,8 +16,17 @@ rules:
   - Unknown paths, unknown arguments and missing types are errors
 implementation: tools/lib/era_zero_compound_expansion.rb
 tests: tests/compound_expansion_test.rb
+renderer_integration:
+  compound_occurrence_field: compound_bindings
+  argument_table: IR nodes keyed by node_id, each with explicit value_type
+  supported_arguments: lexical_occurrence targeting a canonical atom or compound
+  placement: Argument events appear at the slot position with the declared role register
+  identity: Bindings are inside semantic IR nodes and therefore included in the utterance digest
+  runtime: Each argument keeps its runtime; only the containing compound head gets its external ending
+  duplicate_handling: Argument-only nodes are not also emitted as standalone occurrences
+  recursion: Cycles and more than 64 participant-binding levels raise a render error
 remaining:
-  - Integrate occurrence bindings into semantic IR validation and rendering
+  - Integrate occurrence bindings into the general semantic IR validator
   - Interpret participant names into declared typed referents
-  - Render bound arguments at their scoped positions with role registers and timing
+  - Complete boundary timing for bound participants and modifiers
   - Connect browser sentence composition and sound output

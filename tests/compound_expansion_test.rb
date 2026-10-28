@@ -117,6 +117,33 @@ class CompoundExpansionTest < Minitest::Test
     assert_match(/cycle/, assert_raises(Error) { Expander.new([cyclic]).expand("cycle", "1.0.0") }.message)
   end
 
+  def test_bound_nested_participants_render_at_their_slots_without_duplicates
+    base = entry("slotted", [{ "node_id" => "s", "kind" => "slot", "slot_name" => "target", "slot_type" => "entity" }, root("h", "REP:111")], "h", [])
+    base["edges"] << { "from" => "s", "to" => "h", "type" => "fills_role", "role" => "target" }
+    outer = entry("outer", [ref("q", "slotted"), ref("h", "slotted")], "h", [["q", "h"]])
+    atoms, = EraZeroRenderer.load_authority
+    ir = { "ir_version" => "1.0", "root_clause" => "c", "speech_act" => "assertion", "discourse_constraints" => {},
+      "nodes" => [{ "node_id" => "c", "kind" => "clause", "clause_type" => "predication" },
+        { "node_id" => "p", "kind" => "lexical_occurrence", "target_type" => "compound", "target_id" => "outer", "runtime_state" => { "code" => 2 },
+          "compound_bindings" => [{ "slot_path" => ["q", "s"], "argument_id" => "a" }, { "slot_path" => ["h", "s"], "argument_id" => "b" }] },
+        { "node_id" => "a", "kind" => "lexical_occurrence", "target_type" => "atom", "target_id" => "LIF:000", "value_type" => "entity", "runtime_state" => { "code" => 1 } },
+        { "node_id" => "b", "kind" => "lexical_occurrence", "target_type" => "atom", "target_id" => "LIF:010", "value_type" => "entity", "runtime_state" => { "code" => 1 } }],
+      "edges" => [{ "edge_id" => "e", "type" => "centers", "from" => "p", "to" => "c" }] }
+    digest = EraZeroRenderer.semantic_digest(ir)
+    ir.merge!("utterance_id" => "UTT:#{digest[0, 24]}", "serialization" => { "content_digest" => digest })
+    EraZeroRenderer.stub(:load_authority, [atoms, { "slotted" => base, "outer" => outer }]) do
+      formal = EraZeroRenderer.render(ir)
+      events = formal.dig("performance", "lexical_events")
+      assert_equal %w[LIF:000 REP:111 LIF:010 REP:111], events.map { |event| event["target_id"] }
+      assert_equal %w[a b], events.map { |event| event["argument_node_id"] }.compact
+      assert_equal %w[high high], events.select { |event| event["argument_node_id"] }.map { |event| event["register"] }
+      assert_equal [["q", "s"], ["h", "s"]], events.map { |event| event["binding_path"] }.compact
+      assert_equal 2, events.last.dig("runtime_tail", "code")
+      assert_nil events[1]["runtime_tail"]
+      assert_equal ir, EraZeroRenderer.decode(formal)
+    end
+  end
+
   def test_malformed_graph_and_configurable_limits
     disconnected = entry("bad", [root("q", "MAT:200"), root("h", "CRE:010")], "h", [])
     assert_raises(Error) { Expander.new([disconnected]).expand("bad", "1.0.0") }

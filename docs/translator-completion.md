@@ -115,9 +115,14 @@ The expansion API now validates explicit slot-path bindings against declared
 argument types and slot roles. Same-named slots in separate nested occurrences
 can bind different participants, and one participant can be reused only through
 separate explicit bindings. Missing, duplicate and mismatched bindings fail.
-Renderer and browser consumption of these bound arguments remains outstanding.
+Ruby rendering now consumes explicit `compound_bindings` on lexical occurrences.
+Bound lexical participants appear at their scoped slots with role registers,
+independent runtime endings, and a binding chain. Argument-only nodes are not
+duplicated as standalone sounds. Rendering/decode tests preserve the bindings.
+Phonemic referents, general IR validation, browser interpretation and boundary
+timing remain outstanding.
 
-Still required: rendered scoped slot binding, complete compound
+Still required: phonemic participant integration, complete compound
 timing and contour scheduling, grammar-aware MIDI, and browser integration.
 Formal round-trip preservation is not proof of audible semantic completeness.
 
