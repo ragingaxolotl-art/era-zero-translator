@@ -4,7 +4,7 @@ import {midiFromFormal,svgFromFormal} from '../pages/engine.mjs';
 import {scheduledLexicalEvents} from '../pages/scheduler.mjs';
 const cwd=new URL('..',import.meta.url);
 const base=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_controlled_english','-e',`puts JSON.generate(EraZeroRenderer.render(EraZeroControlledEnglish::Compiler.new.compile('ASSERT NOT "active care" [1].').fetch('semantic_ir')))`],{cwd,encoding:'utf8'}));
-const cases=[...['modality','quantifier','aspect'].map(operator=>['scope_operator',operator]),...['all_of','any_of','exactly_one','parallel'].map(operator=>['coordination',operator])];
+const cases=[...['modality','quantifier','aspect'].map(operator=>['scope_operator',operator]),...['parallel'].map(operator=>['coordination',operator])];
 for(const [kind,operator] of cases){
   const formal=structuredClone(base);
   const node=formal.semantic_ir.nodes.find(node=>node.operator==='negation');

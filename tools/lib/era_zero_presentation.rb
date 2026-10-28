@@ -78,7 +78,7 @@ module EraZeroPresentation
     ir = formal.fetch("semantic_ir")
     ir.fetch("nodes").each do |node|
       if (node["kind"] == "scope_operator" && !%w[negation repetition modality].include?(node["operator"])) ||
-         (node["kind"] == "coordination" && node["operator"] != "sequence")
+         (node["kind"] == "coordination" && !%w[sequence all_of any_of exactly_one].include?(node["operator"]))
         raise PresentationError, "unsupported musical operator: #{node['operator']}"
       end
     end
@@ -87,7 +87,7 @@ module EraZeroPresentation
         raise PresentationError, "unsupported musical modality mode or confidence strength"
       end
     end
-    return events unless ir.fetch("nodes").any? { |node| %w[repetition sequence negation modality].include?(node["operator"]) }
+    return events unless ir.fetch("nodes").any? { |node| %w[repetition sequence negation modality all_of any_of exactly_one].include?(node["operator"]) }
     nodes = ir.fetch("nodes").to_h { |node| [node.fetch("node_id"), node] }
     incoming = ir.fetch("edges").group_by { |edge| edge.fetch("to") }
     by_occurrence = events.group_by { |event| event.fetch("occurrence_id") }
@@ -121,10 +121,9 @@ module EraZeroPresentation
                  raise PresentationError, "repetition clause requires one center" unless centers.length == 1
                  walk.call(centers.first.fetch("from"))
                when "coordination"
-                 unless node["operator"] == "sequence"
-                   raise PresentationError, "repeated parallel or alternative coordination requires a voice scheduler"
-                 end
                  members = edges.select { |edge| edge["type"] == "member_of" }
+                 raise PresentationError, "coordination requires at least two members" if members.length < 2
+                 if node["operator"] == "sequence"
                  orders = members.map { |edge| edge["order"] }
                  unless orders.all? { |order| order.is_a?(Integer) } && orders.uniq.length == orders.length
                    raise PresentationError, "repeated sequence requires distinct explicit member order"
@@ -133,6 +132,16 @@ module EraZeroPresentation
                    phrase = walk.call(edge.fetch("from"))
                    phrase[-1] = phrase.last.merge("boundary_after_beats" => 1) if index < members.length - 1 && !phrase.empty?
                    phrase
+                 end
+                 else
+                   raise PresentationError, "unordered coordination cannot declare sequence order" if members.any? { |edge| edge.key?("order") }
+                   coordinated = [grammar_marker(formal, id, "coord_#{node['operator']}_open")]
+                   members.sort_by { |edge| edge.fetch("edge_id") }.each_with_index do |edge, index|
+                     coordinated << grammar_marker(formal, id, "coord_member") if index.positive?
+                     coordinated.concat(walk.call(edge.fetch("from")))
+                   end
+                   coordinated << grammar_marker(formal, id, "coord_#{node['operator']}_close")
+                   coordinated
                  end
                when "lexical_occurrence", "phonemic_reference"
                  arguments = edges.select { |edge| %w[fills_role qualifies].include?(edge["type"]) }
@@ -169,6 +178,13 @@ module EraZeroPresentation
     if marker.match?(/\Adigit_[0-9]\z/)
       digit = marker[-1].to_i
       relative = [0, 10, digit / 4, digit % 4, 0]
+    end
+    if (coordination = marker.match(/\Acoord_(all_of|any_of|exactly_one)_(open|close)\z/))
+      code = %w[all_of any_of exactly_one].index(coordination[1]) + 1
+      sign = coordination[2] == "open" ? -1 : 1
+      relative = [0, 11 * sign, code * sign, 0]
+    elsif marker == "coord_member"
+      relative = [0, 11, 0, 11]
     end
     base = formal.dig("performance", "anchor_midi")
     { "kind" => "grammar_marker", "grammar_profile" => "EZGRAM-1", "marker" => marker,

@@ -371,3 +371,13 @@ binds a bearer without inventing an attention target. Negation and modal wrapper
 remain independent. Tests distinguish all three musical readings and decline
 curiosity, learning, understanding, and unsupported manner additions. The review
 in foundation_gap_review.md records why those broader meanings cannot be aliases.
+
+### Unordered coordination music
+
+All-of, any-of, and exactly-one semantic coordination now render with distinct
+EZGRAM-1 opening/closing frames and an explicit member separator. Members play in
+deterministic edge-ID order without asserting temporal sequence; unordered members
+with sequence-order fields are rejected. Existing then-sequence timing stays
+unchanged. Ruby/browser MIDI and SVG match, and all four interpretations produce
+different sound. Parallel coordination remains unsupported pending voice scheduling.
+English conjunction parsing and broader nested-scope decoding remain incomplete.

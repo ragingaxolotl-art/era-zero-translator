@@ -91,10 +91,33 @@ frames:
   digit_9:
     relative_semitones: [0, 10, 2, 1, 0]
     note_duration_beats: 0.25
+  coord_all_of_open:
+    relative_semitones: [0, -11, -1, 0]
+    note_duration_beats: 0.25
+  coord_all_of_close:
+    relative_semitones: [0, 11, 1, 0]
+    note_duration_beats: 0.25
+  coord_any_of_open:
+    relative_semitones: [0, -11, -2, 0]
+    note_duration_beats: 0.25
+  coord_any_of_close:
+    relative_semitones: [0, 11, 2, 0]
+    note_duration_beats: 0.25
+  coord_exactly_one_open:
+    relative_semitones: [0, -11, -3, 0]
+    note_duration_beats: 0.25
+  coord_exactly_one_close:
+    relative_semitones: [0, 11, 3, 0]
+    note_duration_beats: 0.25
+  coord_member:
+    relative_semitones: [0, 11, 0, 11]
+    note_duration_beats: 0.25
 anchor: Utterance anchor, independent of the role registers inside the scope
 boundary_after_beats: 0.5
 rules:
   - Opening and closing frames surround exactly the negated subtree
+  - All-of, any-of and exactly-one coordination have distinct frames and explicit member separators
+  - Unordered coordination playback order is presentational and does not assert temporal sequence
   - Modal frames surround exactly their scoped subtree and do not change runtime state
   - Explicit confidence uses confidence-open, exact decimal digits, confidence-close before the scoped proposition
   - Confidence supports possible, necessary and predicted modes; it never substitutes for deontic force

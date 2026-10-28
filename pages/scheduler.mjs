@@ -5,14 +5,14 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
   const ir = formal.semantic_ir;
   for (const node of ir.nodes) {
     if ((node.kind === 'scope_operator' && !['negation','repetition','modality'].includes(node.operator)) ||
-        (node.kind === 'coordination' && node.operator !== 'sequence'))
+        (node.kind === 'coordination' && !['sequence','all_of','any_of','exactly_one'].includes(node.operator)))
       throw new Error(`Unsupported musical operator: ${node.operator}.`);
   }
   for (const node of ir.nodes.filter(node=>node.operator==='modality')) {
     if (!MODAL_MODES.includes(node.mode) || (node.strength !== undefined && (!['possible','necessary','predicted'].includes(node.mode) || typeof node.strength!=='string' || node.strength.length>1024 || !/^(?:0|1|0\.[0-9]*[1-9])$/.test(node.strength))))
       throw new Error('Unsupported musical modality mode or confidence strength.');
   }
-  if (!ir.nodes.some(node => ['repetition','sequence','negation','modality'].includes(node.operator))) return events;
+  if (!ir.nodes.some(node => ['repetition','sequence','negation','modality','all_of','any_of','exactly_one'].includes(node.operator))) return events;
   const nodes = new Map(ir.nodes.map(node => [node.node_id, node]));
   const incoming = new Map();
   for (const edge of ir.edges) {
@@ -47,11 +47,21 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
       if (centers.length !== 1) throw new Error('Repetition clause requires one center.');
       result = walk(centers[0].from);
     } else if (node.kind === 'coordination') {
-      if (node.operator !== 'sequence') throw new Error('Repeated parallel or alternative coordination requires a voice scheduler.');
       const members = edges.filter(edge => edge.type === 'member_of');
+      if(members.length<2)throw new Error('Coordination requires at least two members.');
+      if(node.operator==='sequence'){
       if (members.some(edge => !Number.isSafeInteger(edge.order)) || new Set(members.map(edge => edge.order)).size !== members.length)
         throw new Error('Repeated sequence requires distinct explicit member order.');
       result = members.sort((a,b) => a.order-b.order).flatMap((edge,index) => {const phrase=walk(edge.from);if(index<members.length-1&&phrase.length)phrase[phrase.length-1]={...phrase.at(-1),boundary_after_beats:1};return phrase;});
+      }else{
+        if(members.some(edge=>edge.order!==undefined))throw new Error('Unordered coordination cannot declare sequence order.');
+        result=[grammarMarker(formal,id,`coord_${node.operator}_open`)];
+        members.sort((a,b)=>a.edge_id<b.edge_id?-1:a.edge_id>b.edge_id?1:0).forEach((edge,index)=>{
+          if(index)result.push(grammarMarker(formal,id,'coord_member'));
+          result.push(...walk(edge.from));
+        });
+        result.push(grammarMarker(formal,id,`coord_${node.operator}_close`));
+      }
     } else if (['lexical_occurrence','phonemic_reference'].includes(node.kind)) {
       result = edges.filter(edge => ['fills_role','qualifies'].includes(edge.type))
         .sort((a,b) => a.edge_id < b.edge_id ? -1 : a.edge_id > b.edge_id ? 1 : 0)
@@ -79,6 +89,9 @@ function grammarMarker(formal,scopeId,marker){
   else if(marker==='confidence_close')relative=[0,-9,0,-9];
   else if(marker==='decimal_point')relative=[0,10,-1,0];
   else if(/^digit_[0-9]$/.test(marker)){const digit=Number(marker.slice(-1));relative=[0,10,Math.floor(digit/4),digit%4,0]}
+  const coordination=marker.match(/^coord_(all_of|any_of|exactly_one)_(open|close)$/);
+  if(coordination){const code=['all_of','any_of','exactly_one'].indexOf(coordination[1])+1,sign=coordination[2]==='open'?-1:1;relative=[0,11*sign,code*sign,0]}
+  else if(marker==='coord_member')relative=[0,11,0,11];
   const base=formal.performance.anchor_midi;
   return {kind:'grammar_marker',grammar_profile:'EZGRAM-1',marker,occurrence_id:scopeId,target_id:`EZGRAM:${marker}`,register:'middle',base_midi:base,
     family_qualified_transliteration:marker,formal_carrier:'',family_opening_relative_semitones:[],family_opening_absolute_midi:[],
