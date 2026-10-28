@@ -65,11 +65,13 @@ function expectedPatterns(formal,registry){
   const strict=visemePlanFromFormal(formal,{mode:'strict',recognitionRegistry:registry});
   const full=visemePlanFromFormal(formal,{mode:'recognition',recognitionRegistry:registry});
   const events=scheduledLexicalEvents(formal);
+  const group=cues=>{const result=new Map();for(const cue of cues){if(!result.has(cue.event_index))result.set(cue.event_index,[]);result.get(cue.event_index).push(cue)}return result};
+  const strictByEvent=group(strict.cues),fullByEvent=group(full.cues);
   const paths=events.map((event,index)=>{
-    const s=strict.cues.filter(cue=>cue.event_index===index).map(cue=>cue.note);
-    const r=full.cues.filter(cue=>cue.event_index===index&&cue.section==='recognition_phrase').map(cue=>cue.note);
-    const prefix=full.cues.filter(cue=>cue.event_index===index&&cue.section!=='runtime_ending'&&cue.section!=='recognition_phrase').map(cue=>cue.note);
-    const runtime=full.cues.filter(cue=>cue.event_index===index&&cue.section==='runtime_ending').map(cue=>cue.note);
+    const s=(strictByEvent.get(index)||[]).map(cue=>cue.note);
+    const r=(fullByEvent.get(index)||[]).filter(cue=>cue.section==='recognition_phrase').map(cue=>cue.note);
+    const prefix=(fullByEvent.get(index)||[]).filter(cue=>cue.section!=='runtime_ending'&&cue.section!=='recognition_phrase').map(cue=>cue.note);
+    const runtime=(fullByEvent.get(index)||[]).filter(cue=>cue.section==='runtime_ending').map(cue=>cue.note);
     if(s.join(',')!==[...prefix,...runtime].join(','))throw new Error('Strict and recognition note paths disagree.');
     return{target_id:event.target_id,prefix,recognition:r,runtime};
   });
@@ -80,19 +82,41 @@ export function verifyPerformanceNotes(formal,registry,observed){
   const values=observed.map(note=>typeof note==='number'?note:note.midi);
   if(values.some(note=>!Number.isInteger(note)||note<0||note>127))throw new Error('Invalid MIDI pitch in observed performance.');
   const {paths,contour}=expectedPatterns(formal,registry);
-  let best=null;
-  function consider(index,pattern,checksumModes){
-    if(index===paths.length){
-      const expected=[...pattern,...contour],difference=Math.abs(expected.length-values.length)+expected.reduce((sum,note,i)=>sum+(i<values.length&&note!==values[i]?1:0),0);
-      if(!best||difference<best.difference)best={expected,difference,checksumModes};
-      return;
+  // Keep one best path per observed offset rather than enumerate every
+  // checksum-presence combination. Try exact matching first, so long valid
+  // performances need only the offsets consistent with their actual notes.
+  function search(exactOnly){
+    let states=new Map([[0,{cost:0,parent:null,mode:null,segment:[]}]]),work=0;
+    for(const path of paths){
+      const options=[{mode:'absent',notes:[...path.prefix,...path.runtime]}];
+      if(path.recognition.length)options.push({mode:'present',notes:[...path.prefix,...path.recognition,...path.runtime]});
+      const next=new Map();
+      for(const [offset,state] of states){
+        for(const option of options){
+          if(++work>1000000)throw new Error('Performance verification exceeds its search work limit.');
+          let cost=state.cost;
+          for(let i=0;i<option.notes.length;i++)if(values[offset+i]!==option.notes[i])cost++;
+          if(exactOnly&&cost)continue;
+          const end=offset+option.notes.length,previous=next.get(end);
+          if(!previous||cost<previous.cost)next.set(end,{cost,parent:state,mode:option.mode,segment:option.notes});
+        }
+      }
+      states=next;
+      if(!states.size)return null;
     }
-    const path=paths[index];
-    consider(index+1,[...pattern,...path.prefix,...path.runtime],[...checksumModes,'absent']);
-    consider(index+1,[...pattern,...path.prefix,...path.recognition,...path.runtime],[...checksumModes,'present']);
+    let winner=null;
+    for(const [offset,state] of states){
+      let difference=state.cost+Math.max(0,values.length-offset-contour.length);
+      for(let i=0;i<contour.length;i++)if(values[offset+i]!==contour[i])difference++;
+      if(exactOnly&&difference)continue;
+      if(!winner||difference<winner.difference)winner={state,difference};
+    }
+    if(!winner)return null;
+    const segments=[],checksumModes=[];
+    for(let state=winner.state;state.parent;state=state.parent){segments.push(state.segment);checksumModes.push(state.mode)}
+    return{expected:segments.reverse().flat().concat(contour),checksumModes:checksumModes.reverse(),difference:winner.difference};
   }
-  if(paths.length>12)throw new Error('Performance verification supports at most 12 lexical events.');
-  consider(0,[],[]);
+  const best=search(true)||search(false);
   const valid=best.difference===0;
   const mismatch=best.expected.findIndex((note,index)=>values[index]!==note);
   return{format:PERFORMANCE_FORMAT,status:valid?(best.checksumModes.every(mode=>mode==='absent')?'valid_strict_absence':'valid_checksum'):'checksum_or_path_mismatch',semantic_content:false,semantic_identity_changed:false,formal_id:formal.formal_id,targets:paths.map((path,index)=>({target_id:path.target_id,checksum:best.checksumModes[index]})),observed_note_count:values.length,expected_note_count:best.expected.length,first_mismatch:valid?null:mismatch<0?best.expected.length:mismatch};

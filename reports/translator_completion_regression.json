@@ -6,19 +6,19 @@
       "test": "tests/compound_dependencies_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 55186\n\n# Running:\n\n......\n\nFinished in 0.012144s, 494.0711 runs/s, 1235.1779 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 46056\n\n# Running:\n\n......\n\nFinished in 0.008732s, 687.1278 runs/s, 1717.8195 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_expansion_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 42676\n\n# Running:\n\n..........\n\nFinished in 0.366354s, 27.2960 runs/s, 343.9296 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 3517\n\n# Running:\n\n..........\n\nFinished in 0.228677s, 43.7298 runs/s, 550.9955 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/semantic_reference_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 18171\n\n# Running:\n\n......\n\nFinished in 0.307952s, 19.4836 runs/s, 84.4287 assertions/s.\n\n6 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 7349\n\n# Running:\n\n......\n\nFinished in 0.216939s, 27.6575 runs/s, 119.8494 assertions/s.\n\n6 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_semantic_ir_and_grammar.rb",
@@ -30,13 +30,13 @@
       "test": "tests/foundation_process_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 51074\n\n# Running:\n\n...\n\nFinished in 0.558666s, 5.3699 runs/s, 50.1194 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 32830\n\n# Running:\n\n...\n\nFinished in 0.391698s, 7.6590 runs/s, 71.4836 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/repetition_performance_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 6941\n\n# Running:\n\n...\n\nFinished in 0.640812s, 4.6816 runs/s, 12.4842 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 19718\n\n# Running:\n\n...\n\nFinished in 0.449546s, 6.6734 runs/s, 17.7957 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_gate4b_compound_dictionary.rb",
@@ -85,6 +85,24 @@
       "passed": true,
       "exit_code": 0,
       "output": "Dictionary fidelity: uncomposed sentences remain partial, lexical labels remain available, and negation never infers runtime zero.\n"
+    },
+    {
+      "test": "tests/long_performance_verification_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Long performance verification: 96 events accept strict, recognition and mixed paths; changed, missing, extra and empty notes are rejected.\n"
+    },
+    {
+      "test": "tools/validate_recognition_audio.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Recognition audio: PASS \u00b7 5325 variants \u00b7 32091 assertions\n"
+    },
+    {
+      "test": "tools/validate_performance_audio.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Recognition waveform: PASS \u00b7 108 performances \u00b7 327 assertions\n"
     },
     {
       "test": "tests/sentence_sequence_test.mjs",

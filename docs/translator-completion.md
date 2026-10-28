@@ -326,3 +326,15 @@ to avoid repeatedly parsing the lexicon for each render. Existing valid legacy,
 name, nested-compound, and sentence fixtures remain supported. Browser-generated
 sentences are cross-validated in tests; this does not yet add a general browser IR
 validator or complete validation of every legacy grammar construct.
+
+### Longer performance verification
+
+Optional recognition-phrase verification now uses dynamic programming over note
+offsets, with an exact-match pass before mismatch diagnosis. It no longer enumerates
+all checksum-presence combinations or rejects more than 12 events. Empty recognition
+phrases on names/grammar frames do not create fake present-checksum alternatives.
+Cue grouping also avoids rescanning every cue for every event. A 96-event sequence
+passes strict, recognition, and mixed-mode checks; changed, omitted, extra, and
+empty note streams are rejected. Search work remains explicitly bounded at one
+million transitions. This verifies the expected note path against a supplied
+formal artifact, not independent recovery of arbitrary language from audio.
