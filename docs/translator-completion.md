@@ -668,3 +668,7 @@ bindings, lexical valence and independent inverse decoding remain separate work.
 ### Conditional musical scope
 
 Conditional IR now sounds the antecedent before the consequent inside an explicit frame. Open, satisfied, unsatisfied, and counterfactual conditions have distinct frames. Eight direction/status contrasts match browser and Ruby MIDI and SVG output. Unknown statuses, non-clause endpoints, and implicit multiple conditions fail explicitly. These are grammar conventions; existing root trits and runtime 0/1/2 endings are unchanged. Ordinary English conditional parsing and independent sound-to-meaning evaluation remain unfinished.
+
+### English conditional composition
+
+Explicit `If <supported assertion>, then <supported assertion>` now composes into two clause graphs joined by an open `condition_of` edge. Each clause preserves its own roles, negation, temporal scope, and runtime endings. The UI routes this construction before dictionary fallback. Five examples compare complete formal output and MIDI against Ruby, with an additional reversed-condition sound contrast. Unsupported or ambiguous clauses remain incomplete; conditional commands, anaphoric “it,” nested conditionals, and omitted-then forms still need implementation. This grammar adds no roots and assigns no new meaning to lexical 0/1/2.

@@ -6,19 +6,19 @@
       "test": "tests/compound_dependencies_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 41877\n\n# Running:\n\n......\n\nFinished in 0.008403s, 714.0307 runs/s, 1785.0767 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 64170\n\n# Running:\n\n......\n\nFinished in 0.008035s, 746.7330 runs/s, 1866.8326 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_expansion_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 32959\n\n# Running:\n\n..........\n\nFinished in 0.229774s, 43.5210 runs/s, 548.3649 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 26751\n\n# Running:\n\n..........\n\nFinished in 0.229730s, 43.5294 runs/s, 548.4699 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/dictionary_musical_identity_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 7790\n\n# Running:\n\n.\n\nFinished in 0.217663s, 4.5943 runs/s, 27.5655 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 15486\n\n# Running:\n\n.\n\nFinished in 0.224829s, 4.4478 runs/s, 26.6869 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/audit_dictionary_musical_identity.rb",
@@ -36,13 +36,13 @@
       "test": "tests/semantic_reference_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 35593\n\n# Running:\n\n.......\n\nFinished in 0.218270s, 32.0704 runs/s, 146.6074 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 1257\n\n# Running:\n\n.......\n\nFinished in 0.217207s, 32.2273 runs/s, 147.3249 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/quantity_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 54429\n\n# Running:\n\n..\n\nFinished in 0.361615s, 5.5307 runs/s, 215.6990 assertions/s.\n\n2 runs, 78 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 28309\n\n# Running:\n\n..\n\nFinished in 0.359995s, 5.5556 runs/s, 216.6697 assertions/s.\n\n2 runs, 78 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_semantic_ir_and_grammar.rb",
@@ -54,13 +54,13 @@
       "test": "tests/foundation_process_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 11462\n\n# Running:\n\n...\n\nFinished in 0.403939s, 7.4269 runs/s, 69.3174 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 20364\n\n# Running:\n\n...\n\nFinished in 0.401058s, 7.4802 runs/s, 69.8153 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/repetition_performance_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 39562\n\n# Running:\n\n...\n\nFinished in 0.449586s, 6.6728 runs/s, 17.7941 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 38047\n\n# Running:\n\n...\n\nFinished in 0.447992s, 6.6965 runs/s, 17.8575 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_gate4b_compound_dictionary.rb",
@@ -223,6 +223,12 @@
       "passed": true,
       "exit_code": 0,
       "output": "Conditional music preserves antecedent/consequent direction and all four declared statuses; eight contrasts match Ruby/browser output.\n"
+    },
+    {
+      "test": "tests/conditional_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "English conditionals: five full Ruby/browser parity cases, reversed condition contrast, explicit runtime and past scopes, quoted name, and incomplete-clause rejection pass.\n"
     },
     {
       "test": "tests/counted_nominal_test.mjs",

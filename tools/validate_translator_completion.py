@@ -25,7 +25,7 @@ commands = [['ruby', path] for path in [
     'tests/repetition_browser_test.mjs', 'tests/name_participants_test.mjs', 'tests/nominal_reference_test.mjs', 'tests/capability_sentence_test.mjs', 'tests/speech_act_runtime_test.mjs', 'tests/discourse_reference_test.mjs',
     'tests/named_sentence_test.mjs', 'tests/dictionary_fidelity_test.mjs', 'tests/long_performance_verification_test.mjs',
     'tools/validate_recognition_audio.mjs', 'tools/validate_performance_audio.mjs', 'tests/sentence_sequence_test.mjs', 'tests/sentence_conjunction_test.mjs', 'tools/audit_ordinary_phrase_coverage.mjs',
-    'tests/negation_performance_test.mjs', 'tests/modality_performance_test.mjs', 'tests/confidence_performance_test.mjs', 'tests/coordination_performance_test.mjs', 'tests/temporal_performance_test.mjs', 'tests/measurement_performance_test.mjs', 'tests/quantifier_performance_test.mjs', 'tests/quantified_role_test.mjs', 'tests/conditional_performance_test.mjs', 'tests/counted_nominal_test.mjs', 'tests/path_sentence_test.mjs', 'tests/unsupported_musical_scope_test.mjs',
+    'tests/negation_performance_test.mjs', 'tests/modality_performance_test.mjs', 'tests/confidence_performance_test.mjs', 'tests/coordination_performance_test.mjs', 'tests/temporal_performance_test.mjs', 'tests/measurement_performance_test.mjs', 'tests/quantifier_performance_test.mjs', 'tests/quantified_role_test.mjs', 'tests/conditional_performance_test.mjs', 'tests/conditional_sentence_test.mjs', 'tests/counted_nominal_test.mjs', 'tests/path_sentence_test.mjs', 'tests/unsupported_musical_scope_test.mjs',
     'tools/validate_pages_release.mjs',
     'tools/validate_viseme_performance.mjs',
 ]]
