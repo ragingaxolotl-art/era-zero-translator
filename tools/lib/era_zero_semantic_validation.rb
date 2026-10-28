@@ -53,6 +53,7 @@ module EraZeroSemanticValidation
     errors << "duplicate_node" unless ids.uniq.length == ids.length
     errors << "duplicate_edge" unless edges.map { |e| e["edge_id"] }.uniq.length == edges.length
     nodes.each do |n|
+      errors << "invalid_nominal_reference" if n.key?("reference_mode") && n["kind"] != "phonemic_reference"
       errors << "unknown_node_kind" unless node_kinds.include?(n["kind"])
       errors << "forbidden_surface_field" unless (n.keys.to_set & forbidden).empty?
       if n["kind"] == "lexical_occurrence"
@@ -69,6 +70,9 @@ module EraZeroSemanticValidation
         begin
           raise EraZeroNames::NameError, "missing name" unless n["name"].is_a?(Hash)
           EraZeroNames.notes(n["name"])
+          if n.key?("reference_mode")
+            errors << "invalid_nominal_reference" unless n["reference_mode"] == "definite_nominal" && n["referent_id"] == "nominal:definite:#{n['name']['name_id']}" && n['name']['normalized_label'].match?(/\A[a-z]+\z/)
+          end
         rescue EraZeroNames::NameError
           errors << "invalid_phonemic_name"
         end

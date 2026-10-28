@@ -533,3 +533,18 @@ Past yes/no questions use the same temporal and completion mappings as statement
 asks about ongoing restorative activity in the past. Negative questions retain
 negation, calendar modifiers remain explicit, and the question contour is emitted.
 This does not yet cover wh-questions, indirect questions, or arbitrary auxiliaries.
+
+### Unquoted definite noun references
+
+A bounded set of everyday single-word noun heads now accepts “the” without quotes,
+including radio, machine, station, child and robot. Nouns retain their phonemic
+labels, as requested. A separate reference frame marks definite nominal use;
+`the radio` therefore differs from the quoted name `"radio"`. The noun label itself
+does not invent a semantic root. The frame requests a contextually identifiable
+referent; it does not claim to have resolved a unique real-world object.
+
+The representation, role registers, marker and label survive both renderers,
+MIDI/SVG export, and neutral mouth cues. Modifiers, quantities and indefinite
+articles still require their own semantics and are not silently consumed as part
+of a noun. General “repair” sense selection remains separate from this noun-phrase
+work; the reviewed “physically repairing” construction is supported.

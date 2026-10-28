@@ -42,7 +42,7 @@ export function visemePlanFromFormal(formal,options={}){
   const sound=soundPlanFromFormal(formal),cues=[];
   let at=.08,lastSyllable='ma';
   sound.lexical_events.forEach((event,eventIndex)=>{
-    if(['phonemic_label','grammar_marker','deictic_reference'].includes(event.kind)){
+    if(['reference_marker','phonemic_label','grammar_marker','deictic_reference'].includes(event.kind)){
       // EZNAME is a framed label channel, not four DBA carrier syllables.
       // Keep the mouth neutral until phoneme-specific articulation is defined.
       event.address_path.forEach((note,noteIndex)=>{

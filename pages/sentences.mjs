@@ -1,6 +1,6 @@
 import {canonicalDigest} from './engine.mjs';
 import {encodeName, notesForName} from './names.mjs';
-import {deicticReference,deicticEvent} from './references.mjs';
+import {deicticReference,deicticEvent,nominalMarker} from './references.mjs';
 
 // Reviewed constructions use exact process senses, never a generic synonym pool.
 const ACTIONS = [
@@ -30,6 +30,7 @@ export function confidenceFromPercent(value) {
   return integer+(decimal?'.'+decimal:'');
 }
 function participantIdentity(text){
+  if(/^[Tt]he [a-z]+$/.test(text))return 'nominal:definite:'+text.slice(4);
   if(['I','me','Me'].includes(text))return 'discourse:speaker';
   if(['You','you'].includes(text))return 'discourse:addressee';
   return 'name:'+text.replaceAll('"','').toLowerCase();
@@ -42,7 +43,7 @@ export function parseNamedSentence(input, depth=0) {
     if(!inner||inner.runtimeState!==undefined)return null;
     return {...inner,runtimeState:Number(explicitState[2])};
   }
-  const participant='(I|me|you|(?!(?:She|He|It|They|We|Her|Him|Them|Us)\\b)[A-Z][a-z]+|"[A-Za-z]+(?:[ -][A-Za-z]+)*")';
+  const participant='(I|me|you|[Tt]he (?:radio|machine|pump|station|record|map|box|teacher|child|person|creature|robot|door|device|tool|book|sound|tree|house|car|room|table|ball|dog|cat|water|food)|(?!(?:She|He|It|They|We|Her|Him|Them|Us)\\b)[A-Z][a-z]+|"[A-Za-z]+(?:[ -][A-Za-z]+)*")';
   if(depth===0){
     const commands=[['care for','cares for'],['restore','is restoring'],['awaken','is awakening'],['damage','is damaging'],['physically repair','is physically repairing'],['move toward','is moving toward'],['move away from','is moving away from'],['move relative to','is moving relative to'],['pay attention to','is paying attention to'],['revise a mental representation of','is revising a mental representation of']];
     for(const [verb,wording] of commands){
@@ -130,7 +131,7 @@ export function parseNamedSentence(input, depth=0) {
     for(const negated of [false,true]){
       const pattern=negated?(action.negativePattern||(action.key==='active_care'?'(?:does not care for|is not caring for)':action.pattern.replace('is ','is not '))):action.pattern;
       const match=grammaticalText.match(new RegExp(`^${participant} ${pattern} ${participant}[.]?$`));
-      if(match&&action.key==='approved_poetic_love'&&(match[1].startsWith('"')||match[2].startsWith('"')))return null;
+      if(match&&action.key==='approved_poetic_love'&&(match[1].startsWith('"')||match[2].startsWith('"')||/^[Tt]he /.test(match[1])||/^[Tt]he /.test(match[2])))return null;
       if(match&&participantIdentity(match[1])===participantIdentity(match[2]))return null;
       if(match)return {actor:match[1].replaceAll('"',''),target:match[2].replaceAll('"',''),actorText:match[1],targetText:match[2],...action,negated,construction:`named_${action.key}${negated?'_negated':''}`};
     }
@@ -220,8 +221,9 @@ export async function composeNamedSentence(input,template) {
   const participants=parsed.participants||[{label:parsed.actor,text:parsed.actorText,role:parsed.role||'actor'},...(parsed.target?[{label:parsed.target,text:parsed.targetText,role:parsed.targetRole||'target'}]:[])];
   const participantIds=participants.map((_,index)=>index<2?['a','b'][index]:`d${index}`);
   const deicticRoles=participants.map(({text})=>['I','me','Me'].includes(text)?'speaker':['you','You'].includes(text)?'addressee':null);
-  const names=await Promise.all(participants.map(({label},index)=>deicticRoles[index]?null:encodeName(label)));
-  const references=names.map((name,index)=>deicticRoles[index]?deicticReference(deicticRoles[index],participantIds[index]):({node_id:participantIds[index],kind:'phonemic_reference',referent_id:name.name_id,value_type:'entity',name}));
+  const nominal=participants.map(({text})=>/^[Tt]he [a-z]+$/.test(text||''));
+  const names=await Promise.all(participants.map(({label},index)=>deicticRoles[index]?null:encodeName(nominal[index]?label.slice(4):label)));
+  const references=names.map((name,index)=>deicticRoles[index]?deicticReference(deicticRoles[index],participantIds[index]):({node_id:participantIds[index],kind:'phonemic_reference',referent_id:nominal[index]?`nominal:definite:${name.name_id}`:name.name_id,value_type:'entity',name,...(nominal[index]?{reference_mode:'definite_nominal'}:{})}));
   const ir={ir_version:'1.0',root_clause:'c',speech_act:parsed.speechAct||'assertion',nodes:[{node_id:'c',kind:'clause',clause_type:'predication'},
     {node_id:'p',kind:'lexical_occurrence',target_type:predicates[0].target_type,target_id:parsed.predicate,runtime_state:{code:parsed.runtimeState??1}},...references],
     edges:[{edge_id:'e0',type:'centers',from:'p',to:'c'},...participants.map((participant,index)=>({edge_id:`e${index+1}`,type:'fills_role',from:participantIds[index],to:'p',role:participant.role}))],discourse_constraints:{}};
@@ -247,14 +249,15 @@ export async function composeNamedSentence(input,template) {
   const digest=await canonicalDigest(ir);
   ir.utterance_id=`UTT:${digest.slice(0,24)}`;
   ir.serialization={canonical_format:'EZIR-JSON-1',content_digest:digest};
-  const events=names.map((name,index)=>{
+  const events=names.flatMap((name,index)=>{
     const role=participants[index].role;
     const register=role==='environment'?'sustained_background':['bearer','experiencer','content'].includes(role)?'middle':['actor','source'].includes(role)?'low':'high';
-    if(deicticRoles[index])return deicticEvent(references[index],register);
+    if(deicticRoles[index])return [deicticEvent(references[index],register)];
     const offset={low:-12,middle:0,high:12,sustained_background:-5}[register],notes=notesForName(name);
-    return {kind:'phonemic_label',occurrence_id:participantIds[index],target_id:name.name_id,referent_id:name.name_id,label:name.normalized_label,semantic_claim:false,
+    const labelEvent={kind:'phonemic_label',occurrence_id:participantIds[index],target_id:name.name_id,referent_id:references[index].referent_id,label:name.normalized_label,semantic_claim:false,
       register,base_midi:60+offset,family_qualified_transliteration:name.normalized_label,formal_carrier:'',
       family_opening_relative_semitones:[],family_opening_absolute_midi:[],address_relative_semitones:notes.map(note=>note-60),address_absolute_midi:notes.map(note=>note+offset),note_duration_beats:1};
+    return nominal[index]?[nominalMarker(references[index],register),labelEvent]:[labelEvent];
   });
   events.push(...source.performance.lexical_events.map(event=>{
     const copy={...structuredClone(event),occurrence_id:'p'};
@@ -277,7 +280,7 @@ export async function composeNamedSentence(input,template) {
     lexical_events:relative,structural_events:structural,statement_boundary:performance.statement_boundary,statement_boundary_beats:performance.statement_boundary_beats};
   const formalDigest=await canonicalDigest({semantic_digest:digest,relative_plan:relativePlan});
   const formal={format:'EZF-1',renderer_version:'1.0.0',formal_id:`EZF:${formalDigest.slice(0,24)}`,formal_digest:formalDigest,semantic_digest:digest,semantic_ir:ir,performance,
-    literal_gloss:`${names.map((name,index)=>deicticRoles[index]?`${participantIds[index]}:reference(${deicticRoles[index]})`:`${participantIds[index]}:name(${name.normalized_label})`).join(' | ')} | ${source.literal_gloss.replaceAll(`${predicates[0].node_id}:`,'p:').replaceAll(`${predicates[0].node_id}.`,'p.').replace(/\[1\]$/,`[${parsed.runtimeState??1}]`)}`};
+    literal_gloss:`${names.map((name,index)=>deicticRoles[index]?`${participantIds[index]}:reference(${deicticRoles[index]})`:`${nominal[index]?`${participantIds[index]}:reference(definite_nominal) | `:''}${participantIds[index]}:name(${name.normalized_label})`).join(' | ')} | ${source.literal_gloss.replaceAll(`${predicates[0].node_id}:`,'p:').replaceAll(`${predicates[0].node_id}.`,'p.').replace(/\[1\]$/,`[${parsed.runtimeState??1}]`)}`};
   return {source_input:input,target_id:parsed.predicate,sense_id:`construction:${parsed.construction}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,
     semantic_note:parsed.semanticNote?(parsed.semanticNote+(parsed.runtimeState===2?' The num ending carries the approved never-finished-becoming reading.':'')):null,construction:parsed.construction,interpretation:parsed.explicitInterpretation||((deicticRoles.some(Boolean)||parsed.semanticNote)?String(input).trim():null)||`${parsed.actorText} ${parsed.negated?(parsed.key==='active_care'?'does not actively care for':parsed.wording.replace('is ','is not ')):parsed.wording}${parsed.targetText?' '+parsed.targetText:''}.`};
 }

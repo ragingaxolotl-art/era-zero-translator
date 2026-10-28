@@ -12,3 +12,11 @@ export function deicticEvent(reference,register,anchor=60){
   return {kind:'deictic_reference',occurrence_id:reference.node_id,target_id:`EZREF:${role}`,referent_id:reference.referent_id,deictic_role:role,label:role,register,base_midi:base,
     family_qualified_transliteration:role,formal_carrier:'',family_opening_relative_semitones:[],family_opening_absolute_midi:[],address_relative_semitones:[...relative],address_absolute_midi:relative.map(note=>base+note),note_duration_beats:.25};
 }
+
+// A definite nominal identifies a contextually recoverable referent by noun label.
+export function nominalMarker(reference,register,anchor=60){
+  if(reference.reference_mode!=='definite_nominal'||!Object.hasOwn(OFFSETS,register))throw new Error('Invalid nominal reference.');
+  const relative=[0,12,2,0],base=anchor+OFFSETS[register];
+  return {kind:'reference_marker',occurrence_id:reference.node_id,target_id:'EZREF:definite_nominal',referent_id:reference.referent_id,reference_mode:'definite_nominal',label:'definite_nominal',register,base_midi:base,
+    family_qualified_transliteration:'definite_nominal',formal_carrier:'',family_opening_relative_semitones:[],family_opening_absolute_midi:[],address_relative_semitones:relative,address_absolute_midi:relative.map(note=>base+note),note_duration_beats:.25};
+}

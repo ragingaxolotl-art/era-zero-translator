@@ -130,7 +130,7 @@ module EraZeroRenderer
       name = node.fetch("name")
       notes = EraZeroNames.notes(name)
       offset = anchor_midi - 60 + REGISTER_OFFSETS.fetch(register)
-      return [{ "kind" => "phonemic_label", "occurrence_id" => id,
+      label_events = [{ "kind" => "phonemic_label", "occurrence_id" => id,
         "target_id" => name.fetch("name_id"), "referent_id" => node.fetch("referent_id"),
         "label" => name.fetch("normalized_label"), "semantic_claim" => false,
         "register" => register, "base_midi" => anchor_midi + REGISTER_OFFSETS.fetch(register),
@@ -138,6 +138,16 @@ module EraZeroRenderer
         "family_opening_relative_semitones" => [], "family_opening_absolute_midi" => [],
         "address_relative_semitones" => notes.map { |note| note - 60 },
         "address_absolute_midi" => notes.map { |note| note + offset }, "note_duration_beats" => 1.0 }]
+      if node["reference_mode"] == "definite_nominal"
+        base = anchor_midi + REGISTER_OFFSETS.fetch(register)
+        relative = [0, 12, 2, 0]
+        marker = { "kind" => "reference_marker", "occurrence_id" => id, "target_id" => "EZREF:definite_nominal", "referent_id" => node.fetch("referent_id"),
+          "reference_mode" => "definite_nominal", "label" => "definite_nominal", "register" => register, "base_midi" => base,
+          "family_qualified_transliteration" => "definite_nominal", "formal_carrier" => "", "family_opening_relative_semitones" => [], "family_opening_absolute_midi" => [],
+          "address_relative_semitones" => relative, "address_absolute_midi" => relative.map { |note| base + note }, "note_duration_beats" => 0.25 }
+        label_events.unshift(marker)
+      end
+      return label_events
     end
     state = node.fetch("runtime_state").fetch("code")
     if node["target_type"] == "atom"
@@ -231,6 +241,7 @@ module EraZeroRenderer
     }
     formal_digest = Digest::SHA256.hexdigest(JSON.generate(EraZeroValidation.deep_sort({ "semantic_digest" => digest, "relative_plan" => relative_plan })))
     gloss_parts = lexical_events.map do |event|
+      next "#{event['occurrence_id']}:reference(#{event['reference_mode']})" if event["kind"] == "reference_marker"
       next "#{event['occurrence_id']}:reference(#{event['deictic_role']})" if event["kind"] == "deictic_reference"
       next "#{event['occurrence_id']}:name(#{event['label']})" if event["kind"] == "phonemic_label"
       atom = atoms.fetch(event["target_id"])
