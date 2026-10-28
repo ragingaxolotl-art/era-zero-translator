@@ -13,7 +13,7 @@ Status: **PASS — BOUNDED SEMANTIC IR REGRESSION**
 
 ## PASS — lexical immutability
 
-atomic and compound fingerprints remain unchanged
+atomic baseline matches directly or through exact editorial reconciliation; compound fingerprint remains unchanged
 
 ## PASS — complete required scope
 

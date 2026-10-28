@@ -70,7 +70,7 @@ every record has selection cues and excluded readings
 
 ## PASS — atomic immutability
 
-atomic fingerprint and generated forms are unchanged
+atomic records match the baseline or exact editorial reconciliation; generated forms remain unchanged
 
 ## PASS — compound immutability
 

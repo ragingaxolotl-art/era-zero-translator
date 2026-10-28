@@ -70,7 +70,7 @@ all approved entries and critical rejection classes have tests
 
 ## PASS — atomic immutability
 
-atomic fingerprint and all generated forms remain unchanged
+atomic records match the baseline or exact editorial reconciliation; generated forms remain unchanged
 
 ## PASS — authority integration
 

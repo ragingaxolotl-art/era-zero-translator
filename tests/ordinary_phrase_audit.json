@@ -575,7 +575,36 @@
       "area": "conditional",
       "requirements": [
         "Preserve conditional scope and object coreference"
-      ]
+      ],
+      "expected": {
+        "targets": [
+          "WRN:001",
+          "REP:111"
+        ],
+        "roles": [
+          "bearer",
+          "actor",
+          "target"
+        ],
+        "labels": [
+          "radio",
+          "radio"
+        ],
+        "reference_modes": [
+          "definite_nominal",
+          "definite_nominal"
+        ],
+        "deictic_roles": [
+          "addressee"
+        ],
+        "speech_acts": [
+          "command"
+        ],
+        "condition_statuses": [
+          "open"
+        ],
+        "operators": []
+      }
     },
     {
       "id": "permission",

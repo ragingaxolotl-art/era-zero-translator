@@ -2,7 +2,7 @@
 
 Fresh phrase coverage audit authored during implementation; not a blind or representative English benchmark.
 
-Full translator completion: **not established**. 18 of 40 cases pass their declared semantic checks; 21 have no complete composition. These counts do not estimate coverage of English generally.
+Full translator completion: **not established**. 19 of 40 cases pass their declared semantic checks; 20 have no complete composition. These counts do not estimate coverage of English generally.
 
 | Area | Checked compositions | Cases |
 |---|---:|---:|
@@ -23,7 +23,7 @@ Full translator completion: **not established**. 18 of 40 cases pass their decla
 | bodily_need | 0 | 3 |
 | movement_manner | 0 | 2 |
 | comparison | 0 | 1 |
-| conditional | 0 | 1 |
+| conditional | 1 | 1 |
 | modality | 0 | 1 |
 | poetic_meaning | 1 | 1 |
 
@@ -48,6 +48,5 @@ Full translator completion: **not established**. 18 of 40 cases pass their decla
 - **Eli swims across the river.** — Propulsion and medium interaction are not passive transport (not_composed)
 - **Exactly three lamps are active.** — Quantify three bearers, not repetitions of one assertion (not_composed)
 - **This lamp is brighter than that lamp.** — Bind comparison direction, dimension, and both referents (not_composed)
-- **If the radio is damaged, repair it.** — Preserve conditional scope and object coreference (not_composed)
 - **Nora may enter the archive.** — Disambiguate permission versus possibility (not_composed)
 - **Nora cares for Eli or Orin is conscious.** — Resolve inclusive versus exclusive interpretation (not_composed)

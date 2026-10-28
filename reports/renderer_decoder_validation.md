@@ -13,7 +13,7 @@ Status: **PASS — RENDERER/DECODER CANONICAL; CONTROLLED ENGLISH MAY BEGIN**
 
 ## PASS — source immutability
 
-IR, atoms, and compounds match recorded fingerprints
+IR and compounds match recorded fingerprints; atoms match directly or through exact editorial reconciliation
 
 ## PASS — deliverable completeness
 

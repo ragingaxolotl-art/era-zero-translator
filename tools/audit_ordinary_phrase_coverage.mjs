@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
-import {parseNamedSentence,composeNamedSentence,parseSentenceSequence,composeSentenceSequence,parseSentenceConjunction,composeSentenceConjunction} from '../pages/sentences.mjs';
+import {parseSentenceConditional,composeSentenceConditional,parseNamedSentence,composeNamedSentence,parseSentenceSequence,composeSentenceSequence,parseSentenceConjunction,composeSentenceConjunction} from '../pages/sentences.mjs';
 import {midiFromFormal} from '../pages/engine.mjs';
 const root=new URL('..',import.meta.url);
 const read=path=>JSON.parse(fs.readFileSync(new URL(path,root)));
@@ -11,7 +11,8 @@ const results=[];
 for(const item of corpus.cases){
  let result=null,error=null;
  try{
-  if(parseNamedSentence(item.input))result=await composeNamedSentence(item.input,await load(parseNamedSentence(item.input).predicate));
+  if(parseSentenceConditional(item.input))result=await composeSentenceConditional(item.input,load);
+  else if(parseNamedSentence(item.input))result=await composeNamedSentence(item.input,await load(parseNamedSentence(item.input).predicate));
   else if(parseSentenceSequence(item.input))result=await composeSentenceSequence(item.input,load);
   else if(parseSentenceConjunction(item.input))result=await composeSentenceConjunction(item.input,load);
  }catch(caught){error=String(caught)}
@@ -19,6 +20,7 @@ for(const item of corpus.cases){
  if(result&&item.expected){
   const ir=result.semantic_ir,actual={
    speech_acts:[ir.speech_act],
+   condition_statuses:ir.edges.filter(e=>e.type==='condition_of').map(e=>e.condition_status),
    role_labels:ir.edges.filter(e=>e.type==='fills_role').map(e=>`${e.role}:${ir.nodes.find(n=>n.node_id===e.from)?.name?.normalized_label||''}`),
    reference_modes:ir.nodes.filter(n=>n.reference_mode).map(n=>n.reference_mode),
    calendar_days:ir.nodes.filter(n=>n.kind==='time_anchor').map(n=>[n.anchor_type,n.calendar_unit,n.relative_to,n.day_offset].join(':')),
@@ -33,6 +35,14 @@ for(const item of corpus.cases){
   for(const [key,expected] of Object.entries(item.expected))if(!equal(actual[key]||[],expected))failures.push(key);
   if(ir.speech_act!==(item.expected.speech_acts?.[0]||'assertion'))failures.push('speech_act');
   if(ir.nodes.some(n=>n.kind==='lexical_occurrence'&&n.runtime_state.code!==1))failures.push('runtime');
+  if(item.id==='conditional'){
+   const edge=ir.edges.find(e=>e.type==='condition_of');
+   const center=id=>ir.edges.find(e=>e.type==='centers'&&e.to===id)?.from;
+   const target=id=>ir.nodes.find(n=>n.node_id===id)?.target_id;
+   if(!edge||target(center(edge.from))!=='WRN:001'||target(center(edge.to))!=='REP:111')failures.push('conditional_direction');
+   const reference=role=>ir.nodes.find(n=>n.node_id===ir.edges.find(e=>e.type==='fills_role'&&e.role===role)?.from)?.referent_id;
+   if(!reference('bearer')||reference('bearer')!==reference('target'))failures.push('conditional_coreference');
+  }
   if(item.id==='modal_negation'){
    const center=ir.edges.find(e=>e.type==='centers'&&e.to===ir.root_clause).from;
    const outer=ir.nodes.find(n=>n.node_id===center),inside=ir.edges.find(e=>e.type==='scopes'&&e.to===center)?.from;

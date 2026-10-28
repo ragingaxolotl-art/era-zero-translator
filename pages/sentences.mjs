@@ -175,19 +175,34 @@ export function needsSentenceComposition(input) {
   return (/^[Ii]f\b/.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored)\b/i.test(String(input))) && !parseNamedSentence(input);
 }
 
-// Explicit comma/then boundary keeps condition scope unambiguous.
+// A complete antecedent and a comma establish conditional scope. Without
+// explicit "then", currently accept only an imperative consequent.
 export function parseSentenceConditional(input) {
   const text=String(input).trim().replace(/\.$/,'');
   if(!/^[Ii]f /.test(text))return null;
-  let quoted=false;const boundaries=[];
+  let quoted=false;const commas=[],explicitBoundaries=[];
   for(let i=3;i<text.length;i++){
     if(text[i]==='"')quoted=!quoted;
-    if(!quoted&&text.slice(i).startsWith(', then '))boundaries.push(i);
+    if(!quoted&&text[i]===','){commas.push(i);if(/^,\s+then\s+/.test(text.slice(i)))explicitBoundaries.push(i);}
   }
+  const boundaries=explicitBoundaries.length?explicitBoundaries:commas;
   if(quoted||boundaries.length!==1)return null;
-  const i=boundaries[0],clauses=[text.slice(3,i).trim(),text.slice(i+7).trim()];
-  if(clauses.some(clause=>{const parsed=parseNamedSentence(clause);return !parsed||!!parsed.speechAct;}))return null;
-  return clauses;
+  const i=boundaries[0],antecedent=text.slice(3,i).trim();
+  let consequent=text.slice(i+1).trim();
+  const explicitThen=/^then\s+/.test(consequent);
+  if(explicitThen)consequent=consequent.replace(/^then\s+/,'');
+  const condition=parseNamedSentence(antecedent);
+  if(!condition||condition.speechAct)return null;
+  // Local "it" requires a single definite nominal bearer. Multiple participants,
+  // quantified classes and discourse-dependent pronouns need clarification.
+  if(/\bit(?=\s*(?:\[[012]\])?[.!]?$)/i.test(consequent)){
+    const reference=parseNominal(condition.actorText||'');
+    if(condition.role!=='bearer'||condition.target||reference?.mode!=='definite_nominal')return null;
+    consequent=consequent.replace(/\bit(?=\s*(?:\[[012]\])?[.!]?$)/i,condition.actorText);
+  }
+  const result=parseNamedSentence(consequent);
+  if(!result||result.speechAct==='question'||(!explicitThen&&result.speechAct!=='command'))return null;
+  return [antecedent,consequent];
 }
 export async function composeSentenceConditional(input,loadTemplate) {
   return composeClauseGroup(input,parseSentenceConditional(input),'conditional',loadTemplate);
@@ -229,7 +244,7 @@ async function composeClauseGroup(input,clauses,operator,loadTemplate) {
   const conditional=operator==='conditional';
   const groupId=conditional?'conditional':operator==='sequence'?'sequence':'conjunction';
   const parts=await Promise.all(clauses.map(async clause=>composeNamedSentence(clause,await loadTemplate(parseNamedSentence(clause).predicate))));
-  const ir={ir_version:'1.0',root_clause:'c',speech_act:'assertion',nodes:[{node_id:'c',kind:'clause',clause_type:conditional?'conditional':'predication'},...(conditional?[]:[{node_id:groupId,kind:'coordination',operator}])],
+  const ir={ir_version:'1.0',root_clause:'c',speech_act:conditional?parts[1].semantic_ir.speech_act:'assertion',nodes:[{node_id:'c',kind:'clause',clause_type:conditional?'conditional':'predication'},...(conditional?[]:[{node_id:groupId,kind:'coordination',operator}])],
     edges:[{edge_id:'e0',type:'centers',from:conditional?'s001_c':groupId,to:'c'}],discourse_constraints:{}};
   const events=[],gloss=[];
   parts.forEach((part,index)=>{
@@ -244,7 +259,7 @@ async function composeClauseGroup(input,clauses,operator,loadTemplate) {
   const digest=await canonicalDigest(ir);
   ir.utterance_id=`UTT:${digest.slice(0,24)}`;ir.serialization={canonical_format:'EZIR-JSON-1',content_digest:digest};
   const structural=ir.edges.slice().sort((a,b)=>a.edge_id<b.edge_id?-1:a.edge_id>b.edge_id?1:0).map(edge=>({edge_id:edge.edge_id,edge_type:edge.type,from:edge.from,to:edge.to,...(edge.role?{role:edge.role}:{}),...(edge.relation?{relation:edge.relation}:{}),boundary:edge.type==='fills_role'?'short_gap':'medium_gap',boundary_beats:edge.type==='fills_role'?.5:1}));
-  const performance={...structuredClone(parts[0].formal.performance),lexical_events:events,structural_events:structural,...(conditional?{secondary_contours:['unresolved_ending']}:{})};
+  const performance={...structuredClone(parts[conditional?1:0].formal.performance),lexical_events:events,structural_events:structural,...(conditional?{secondary_contours:['unresolved_ending']}:{})};
   const relative=events.map(event=>{
     const {base_midi,family_opening_absolute_midi,address_absolute_midi,...copy}=event;
     copy.runtime_tail=event.runtime_tail?Object.fromEntries(Object.entries(event.runtime_tail).filter(([key])=>key!=='absolute_note')):null;
