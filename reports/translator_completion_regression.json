@@ -6,19 +6,19 @@
       "test": "tests/compound_dependencies_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 15356\n\n# Running:\n\n......\n\nFinished in 0.008307s, 722.2824 runs/s, 1805.7060 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 18380\n\n# Running:\n\n......\n\nFinished in 0.007835s, 765.7945 runs/s, 1914.4863 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_expansion_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 16682\n\n# Running:\n\n..........\n\nFinished in 0.230090s, 43.4613 runs/s, 547.6118 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 37200\n\n# Running:\n\n..........\n\nFinished in 0.228227s, 43.8160 runs/s, 552.0819 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/dictionary_musical_identity_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 6049\n\n# Running:\n\n.\n\nFinished in 0.218184s, 4.5833 runs/s, 27.4997 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 39601\n\n# Running:\n\n.\n\nFinished in 0.219397s, 4.5579 runs/s, 27.3477 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/audit_dictionary_musical_identity.rb",
@@ -30,7 +30,7 @@
       "test": "tests/semantic_reference_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 23780\n\n# Running:\n\n.......\n\nFinished in 0.218103s, 32.0949 runs/s, 146.7197 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 62483\n\n# Running:\n\n.......\n\nFinished in 0.218203s, 32.0802 runs/s, 146.6524 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_semantic_ir_and_grammar.rb",
@@ -42,13 +42,13 @@
       "test": "tests/foundation_process_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 30551\n\n# Running:\n\n...\n\nFinished in 0.400268s, 7.4950 runs/s, 69.9531 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 32653\n\n# Running:\n\n...\n\nFinished in 0.397663s, 7.5441 runs/s, 70.4114 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/repetition_performance_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 44233\n\n# Running:\n\n...\n\nFinished in 0.449741s, 6.6705 runs/s, 17.7880 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 62479\n\n# Running:\n\n...\n\nFinished in 0.450167s, 6.6642 runs/s, 17.7712 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_gate4b_compound_dictionary.rb",
@@ -187,6 +187,12 @@
       "passed": true,
       "exit_code": 0,
       "output": "Temporal music: before/at/after speech time remain distinct, lexical state is unchanged, Ruby/browser output agrees, and unsounded anchor details fail.\nCalendar-day music: previous/current/next calendar days are distinct from speech-time relations, with Ruby/browser parity and strict anchor checks.\n"
+    },
+    {
+      "test": "tests/measurement_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Measurement music preserves sign, exact decimal value and unit; eight contrasts match Ruby/browser output without changing lexical state.\n"
     },
     {
       "test": "tests/unsupported_musical_scope_test.mjs",

@@ -5,6 +5,7 @@ require "digest"
 require_relative "era_zero_renderer"
 
 module EraZeroPresentation
+  MEASUREMENT_UNITS = %w[1 second minute hour day meter kilometer gram kilogram degree radian bit byte].freeze
   VERSION = "1.0.0"
   TICKS_PER_BEAT = 480
   TEMPO_MICROSECONDS = 500_000
@@ -90,7 +91,7 @@ module EraZeroPresentation
     time_edges = ir.fetch("edges").select { |edge| edge["type"] == "time_relation" }
     time_nodes = ir.fetch("nodes").to_h { |node| [node["node_id"], node] }
     time_edges.each { |edge| time_frame(edge, time_nodes) }
-    return events unless !time_edges.empty? || ir.fetch("nodes").any? { |node| %w[repetition sequence negation modality all_of any_of exactly_one].include?(node["operator"]) }
+    return events unless ir.fetch("nodes").any? { |node| node["kind"] == "measurement" } || !time_edges.empty? || ir.fetch("nodes").any? { |node| %w[repetition sequence negation modality all_of any_of exactly_one].include?(node["operator"]) }
     nodes = ir.fetch("nodes").to_h { |node| [node.fetch("node_id"), node] }
     incoming = ir.fetch("edges").group_by { |edge| edge.fetch("to") }
     by_occurrence = events.group_by { |event| event.fetch("occurrence_id") }
@@ -127,6 +128,8 @@ module EraZeroPresentation
                    phrase = [grammar_marker(formal, id, "#{time_frame(edge, nodes)}_open")] + phrase + [grammar_marker(formal, id, "#{time_frame(edge, nodes)}_close")]
                  end
                  phrase
+               when "measurement"
+                 measurement_markers(formal, node)
                when "coordination"
                  members = edges.select { |edge| edge["type"] == "member_of" }
                  raise PresentationError, "coordination requires at least two members" if members.length < 2
@@ -165,6 +168,15 @@ module EraZeroPresentation
       raise PresentationError, "repetition schedule would omit lexical occurrences"
     end
     scheduled
+  end
+
+  def measurement_markers(formal, node)
+    value = node["magnitude"]; unit = MEASUREMENT_UNITS.index(node["unit"])
+    unless value.is_a?(String) && value.length <= 1024 && value != "-0" && value.match?(/\A-?(?:0|[1-9][0-9]*)(?:\.[0-9]*[1-9])?\z/) && unit && (node.keys - %w[node_id kind magnitude unit]).empty?
+      raise PresentationError, "unsupported musical measurement"
+    end
+    markers = ["measurement_open"] + value.chars.map { |char| char == "-" ? "measurement_negative" : char == "." ? "decimal_point" : "digit_#{char}" } + ["measurement_unit_#{unit + 1}", "measurement_close"]
+    markers.map { |marker| grammar_marker(formal, node.fetch("node_id"), marker) }
   end
 
   def time_frame(edge, nodes)
@@ -217,6 +229,11 @@ module EraZeroPresentation
       sign = day[2] == "open" ? -1 : 1
       relative = [0, 12 * sign, code, 12 * sign, 0]
     end
+    relative = [0, -13, -1, 0] if marker == "measurement_open"
+    relative = [0, 13, 1, 0] if marker == "measurement_close"
+    relative = [0, -13, 0, -13] if marker == "measurement_negative"
+    unit = marker.match(/\Ameasurement_unit_(\d+)\z/)
+    relative = [0, 13, unit[1].to_i, 13, 0] if unit
     base = formal.dig("performance", "anchor_midi")
     { "kind" => "grammar_marker", "grammar_profile" => "EZGRAM-1", "marker" => marker,
       "occurrence_id" => scope_id, "target_id" => "EZGRAM:#{marker}", "register" => "middle", "base_midi" => base,

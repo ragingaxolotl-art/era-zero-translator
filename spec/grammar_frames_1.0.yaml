@@ -148,6 +148,67 @@ frames:
   time_next_day_close:
     relative_semitones: [0, 12, 3, 12, 0]
     note_duration_beats: 0.25
+  measurement_open:
+    relative_semitones: [0, -13, -1, 0]
+    note_duration_beats: 0.25
+  measurement_close:
+    relative_semitones: [0, 13, 1, 0]
+    note_duration_beats: 0.25
+  measurement_negative:
+    relative_semitones: [0, -13, 0, -13]
+    note_duration_beats: 0.25
+  measurement_unit_1:
+    unit: "1"
+    relative_semitones: [0, 13, 1, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_2:
+    unit: "second"
+    relative_semitones: [0, 13, 2, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_3:
+    unit: "minute"
+    relative_semitones: [0, 13, 3, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_4:
+    unit: "hour"
+    relative_semitones: [0, 13, 4, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_5:
+    unit: "day"
+    relative_semitones: [0, 13, 5, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_6:
+    unit: "meter"
+    relative_semitones: [0, 13, 6, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_7:
+    unit: "kilometer"
+    relative_semitones: [0, 13, 7, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_8:
+    unit: "gram"
+    relative_semitones: [0, 13, 8, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_9:
+    unit: "kilogram"
+    relative_semitones: [0, 13, 9, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_10:
+    unit: "degree"
+    relative_semitones: [0, 13, 10, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_11:
+    unit: "radian"
+    relative_semitones: [0, 13, 11, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_12:
+    unit: "bit"
+    relative_semitones: [0, 13, 12, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_13:
+    unit: "byte"
+    relative_semitones: [0, 13, 13, 13, 0]
+    note_duration_beats: 0.25
 anchor: Utterance anchor, independent of the role registers inside the scope
 boundary_after_beats: 0.5
 rules:
@@ -164,6 +225,8 @@ rules:
   - Before/at/after speech-time frames enclose the time-related clause without changing lexical or runtime state
   - Calendar-day interval frames use during relations and day offsets -1, 0 or 1 relative to the contextual speech date
   - Calendar days require the discourse calendar and timezone; they do not assert fixed 24-hour durations
+  - Measurement frames enclose optional minus, exact decimal digits, and an explicit unit frame
+  - Measurement digits reuse decimal digit frames; no runtime state is used for magnitude or sign
   - Unsupported anchors and extra anchor parameters must not be silently omitted
   - Existing root melodies, runtime notes, and speech-act contours remain unchanged
   - No carrier syllables are invented for grammar frames; mouth animation is neutral

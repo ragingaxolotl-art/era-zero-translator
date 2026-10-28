@@ -576,3 +576,19 @@ contour and the selected ending. Compound commands place the ending on the exter
 head only. Tests cover every runtime value for affirmative/negative commands and
 ongoing/completed questions. Conflicting punctuation, duplicate markers and nested
 commands inside modal propositions are rejected rather than silently reinterpreted.
+
+### Measurement sound preservation
+
+Measurements previously survived in the semantic IR while export could omit their
+magnitude and unit. Both schedulers now emit a bounded measurement frame containing
+an optional minus sign, exact decimal digits, and a distinct unit frame. All 13
+units currently declared in the IR specification have fixed codes. Redundant decimal
+forms, unknown units and unsounded extra measurement fields are rejected by export.
+The existing measurement fixture's three presentation hashes were updated because
+the old bytes omitted meaning; its semantic identity remains unchanged.
+
+This preserves existing measurement data, but does not yet implement everyday
+measurement parsing or degree adjectives. A unit does not by itself specify a
+property such as height versus width, or distance traveled versus distance to a
+target. Temperature units, dimensional comparisons and contextual standards for
+hot/heavy/fast still need explicit definitions. None uses 0/1/2 as a magnitude scale.

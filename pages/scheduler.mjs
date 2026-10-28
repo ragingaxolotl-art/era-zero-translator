@@ -1,3 +1,4 @@
+const MEASUREMENT_UNITS=['1','second','minute','hour','day','meter','kilometer','gram','kilogram','degree','radian','bit','byte'];
 const MODAL_MODES = ['possible','necessary','permitted','obligated','intended','predicted','counterfactual'];
 // Counted-scope scheduling shared by browser sound, notation and MIDI export.
 export function scheduledLexicalEvents(formal, maxEvents = 100000) {
@@ -13,7 +14,7 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
       throw new Error('Unsupported musical modality mode or confidence strength.');
   }
   validateTimeRelations(ir);
-  if (!ir.edges.some(edge=>edge.type==='time_relation') && !ir.nodes.some(node => ['repetition','sequence','negation','modality','all_of','any_of','exactly_one'].includes(node.operator))) return events;
+  if (!ir.nodes.some(node=>node.kind==='measurement') && !ir.edges.some(edge=>edge.type==='time_relation') && !ir.nodes.some(node => ['repetition','sequence','negation','modality','all_of','any_of','exactly_one'].includes(node.operator))) return events;
   const nodes = new Map(ir.nodes.map(node => [node.node_id, node]));
   const incoming = new Map();
   for (const edge of ir.edges) {
@@ -49,6 +50,8 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
       result = walk(centers[0].from);
       const times=edges.filter(edge=>edge.type==='time_relation').sort((a,b)=>a.edge_id<b.edge_id?-1:a.edge_id>b.edge_id?1:0);
       for(const time of times.slice().reverse())result=[grammarMarker(formal,id,`${timeFrame(time,nodes)}_open`),...result,grammarMarker(formal,id,`${timeFrame(time,nodes)}_close`)];
+    } else if (node.kind === 'measurement') {
+      result=measurementMarkers(formal,node);
     } else if (node.kind === 'coordination') {
       const members = edges.filter(edge => edge.type === 'member_of');
       if(members.length<2)throw new Error('Coordination requires at least two members.');
@@ -80,6 +83,12 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
   return scheduled;
 }
 
+function measurementMarkers(formal,node){
+  const value=node.magnitude,unit=MEASUREMENT_UNITS.indexOf(node.unit);
+  if(typeof value!=='string'||value.length>1024||value==='-0'||!/^-?(?:0|[1-9][0-9]*)(?:\.[0-9]*[1-9])?$/.test(value)||unit<0||Object.keys(node).some(key=>!['node_id','kind','magnitude','unit'].includes(key)))throw new Error('Unsupported musical measurement.');
+  const markers=['measurement_open',...Array.from(value,char=>char==='-'?'measurement_negative':char==='.'?'decimal_point':`digit_${char}`),`measurement_unit_${unit+1}`,'measurement_close'];
+  return markers.map(marker=>grammarMarker(formal,node.node_id,marker));
+}
 function timeFrame(edge,nodes){
   const anchor=nodes.get(edge.from),clause=nodes.get(edge.to);
   if(anchor?.kind==='time_anchor'&&clause?.kind==='clause'){
@@ -112,6 +121,11 @@ function grammarMarker(formal,scopeId,marker){
   if(time){const code={before:-1,at:0,after:1}[time[1]],sign=time[2]==='open'?-1:1;relative=[0,12*sign,code,12*sign,0]}
   const day=marker.match(/^time_(previous_day|current_day|next_day)_(open|close)$/);
   if(day){const code={previous_day:-2,current_day:2,next_day:3}[day[1]],sign=day[2]==='open'?-1:1;relative=[0,12*sign,code,12*sign,0]}
+  if(marker==='measurement_open')relative=[0,-13,-1,0];
+  if(marker==='measurement_close')relative=[0,13,1,0];
+  if(marker==='measurement_negative')relative=[0,-13,0,-13];
+  const unit=marker.match(/^measurement_unit_(\d+)$/);
+  if(unit)relative=[0,13,Number(unit[1]),13,0];
   const base=formal.performance.anchor_midi;
   return {kind:'grammar_marker',grammar_profile:'EZGRAM-1',marker,occurrence_id:scopeId,target_id:`EZGRAM:${marker}`,register:'middle',base_midi:base,
     family_qualified_transliteration:marker,formal_carrier:'',family_opening_relative_semitones:[],family_opening_absolute_midi:[],
