@@ -4,6 +4,7 @@ import {deicticReference,deicticEvent} from './references.mjs';
 
 // Reviewed constructions use exact process senses, never a generic synonym pool.
 const ACTIONS = [
+  {pattern:'(?:loves|is loving)', negativePattern:'(?:does not love|is not loving)', predicate:'CMP:44718c92b66443c0c0f03ad7', key:'approved_poetic_love', wording:'loves', semanticNote:'DBA poetic love: an established life-bond characterized by self-awakening and the preserved, not-yet-expressed self.'},
   {pattern:'is paying attention to', predicate:'MIN:211', key:'active_target_attention', wording:'is paying attention to', role:'experiencer'},
   {pattern:'is revising a mental representation of', predicate:'MIN:111', key:'active_target_model_revision', wording:'is revising a mental representation of', role:'experiencer'},
   {pattern:'is moving toward', predicate:'MOV:111', key:'active_target_approach', wording:'is moving toward', targetRole:'destination'},
@@ -35,6 +36,12 @@ function participantIdentity(text){
 }
 export function parseNamedSentence(input, depth=0) {
   if(depth>16)return null;
+  const explicitState=String(input).trim().match(/^(.*?)\s+\[([012])\][.]?$/);
+  if(explicitState){
+    const inner=parseNamedSentence(explicitState[1],depth+1);
+    if(!inner||inner.runtimeState!==undefined)return null;
+    return {...inner,runtimeState:Number(explicitState[2])};
+  }
   const participant='(I|me|you|(?!(?:She|He|It|They|We|Her|Him|Them|Us)\\b)[A-Z][a-z]+|"[A-Za-z]+(?:[ -][A-Za-z]+)*")';
   if(depth===0){
     const commands=[['care for','cares for'],['restore','is restoring'],['awaken','is awakening'],['damage','is damaging'],['physically repair','is physically repairing'],['move toward','is moving toward'],['move away from','is moving away from'],['move relative to','is moving relative to'],['pay attention to','is paying attention to'],['revise a mental representation of','is revising a mental representation of']];
@@ -82,11 +89,12 @@ export function parseNamedSentence(input, depth=0) {
       participants:[{label:label(transfer[3]),text:transfer[3],role:'source'},{label:label(transfer[1]),text:transfer[1],role:'content'},{label:label(transfer[4]),text:transfer[4],role:'target'}],
       explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
-  const grammaticalText=String(input).trim().replace(/^I am /,'I is ').replace(/^(You|you) are /,'$1 is ').replace(/^(I|You|you) care for /,'$1 cares for ').replace(/^(I|You|you) do not care for /,'$1 does not care for ');
+  const grammaticalText=String(input).trim().replace(/^I am /,'I is ').replace(/^(You|you) are /,'$1 is ').replace(/^(I|You|you) care for /,'$1 cares for ').replace(/^(I|You|you) do not (care for|love) /,'$1 does not $2 ').replace(/^(I|You|you) love /,'$1 loves ');
   for(const action of ACTIONS){
     for(const negated of [false,true]){
-      const pattern=negated?(action.key==='active_care'?'(?:does not care for|is not caring for)':action.pattern.replace('is ','is not ')):action.pattern;
+      const pattern=negated?(action.negativePattern||(action.key==='active_care'?'(?:does not care for|is not caring for)':action.pattern.replace('is ','is not '))):action.pattern;
       const match=grammaticalText.match(new RegExp(`^${participant} ${pattern} ${participant}[.]?$`));
+      if(match&&action.key==='approved_poetic_love'&&(match[1].startsWith('"')||match[2].startsWith('"')))return null;
       if(match&&participantIdentity(match[1])===participantIdentity(match[2]))return null;
       if(match)return {actor:match[1].replaceAll('"',''),target:match[2].replaceAll('"',''),actorText:match[1],targetText:match[2],...action,negated,construction:`named_${action.key}${negated?'_negated':''}`};
     }
@@ -163,7 +171,7 @@ async function composeClauseGroup(input,clauses,operator,loadTemplate) {
   const relativePlan={primary_contour:performance.primary_contour,contour_relative_semitones:performance.contour_relative_semitones,secondary_contours:performance.secondary_contours,lexical_events:relative,structural_events:structural,statement_boundary:performance.statement_boundary,statement_boundary_beats:performance.statement_boundary_beats};
   const formalDigest=await canonicalDigest({semantic_digest:digest,relative_plan:relativePlan});
   const formal={format:'EZF-1',renderer_version:'1.0.0',formal_id:`EZF:${formalDigest.slice(0,24)}`,formal_digest:formalDigest,semantic_digest:digest,semantic_ir:ir,performance,literal_gloss:gloss.join(' | ')};
-  return {source_input:input,target_id:operator,sense_id:`construction:explicit_${groupId}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,construction:`explicit_${groupId}`,interpretation:parts.map(part=>part.interpretation.replace(/\.$/,'')).join(operator==='sequence'?', then ':' and ')+'.'};
+  return {source_input:input,target_id:operator,semantic_note:[...new Set(parts.map(part=>part.semantic_note).filter(Boolean))].join(' ')||null,sense_id:`construction:explicit_${groupId}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,construction:`explicit_${groupId}`,interpretation:parts.map(part=>part.interpretation.replace(/\.$/,'')).join(operator==='sequence'?', then ':' and ')+'.'};
 }
 
 export async function composeNamedSentence(input,template) {
@@ -179,7 +187,7 @@ export async function composeNamedSentence(input,template) {
   const names=await Promise.all(participants.map(({label},index)=>deicticRoles[index]?null:encodeName(label)));
   const references=names.map((name,index)=>deicticRoles[index]?deicticReference(deicticRoles[index],participantIds[index]):({node_id:participantIds[index],kind:'phonemic_reference',referent_id:name.name_id,value_type:'entity',name}));
   const ir={ir_version:'1.0',root_clause:'c',speech_act:parsed.speechAct||'assertion',nodes:[{node_id:'c',kind:'clause',clause_type:'predication'},
-    {node_id:'p',kind:'lexical_occurrence',target_type:predicates[0].target_type,target_id:parsed.predicate,runtime_state:{code:1}},...references],
+    {node_id:'p',kind:'lexical_occurrence',target_type:predicates[0].target_type,target_id:parsed.predicate,runtime_state:{code:parsed.runtimeState??1}},...references],
     edges:[{edge_id:'e0',type:'centers',from:'p',to:'c'},...participants.map((participant,index)=>({edge_id:`e${index+1}`,type:'fills_role',from:participantIds[index],to:'p',role:participant.role}))],discourse_constraints:{}};
   if(parsed.negated){
     ir.nodes.push({node_id:'neg',kind:'scope_operator',operator:'negation'});
@@ -204,7 +212,14 @@ export async function composeNamedSentence(input,template) {
       register,base_midi:60+offset,family_qualified_transliteration:name.normalized_label,formal_carrier:'',
       family_opening_relative_semitones:[],family_opening_absolute_midi:[],address_relative_semitones:notes.map(note=>note-60),address_absolute_midi:notes.map(note=>note+offset),note_duration_beats:1};
   });
-  events.push(...source.performance.lexical_events.map(event=>({...structuredClone(event),occurrence_id:'p'})));
+  events.push(...source.performance.lexical_events.map(event=>{
+    const copy={...structuredClone(event),occurrence_id:'p'};
+    if(copy.runtime_tail&&parsed.runtimeState!==undefined){
+      const code=parsed.runtimeState,last=copy.address_absolute_midi.at(-1),base=copy.base_midi;
+      copy.runtime_tail=code===0?{code,name:'inactive',relative_motion_semitones:-1,absolute_note:last-1,articulation:'sharp_stop',duration_beats:.25}:code===2?{code,name:'num',relative_motion_semitones:7,absolute_note:last+7,articulation:'sustain',duration_beats:2}:{code,name:'active',relative_motion_semitones:(-copy.address_relative_semitones.at(-1)||0),absolute_note:base,articulation:'firm_return',duration_beats:.5};
+    }
+    return copy;
+  }));
   const structural=ir.edges.map(edge=>({edge_id:edge.edge_id,edge_type:edge.type,from:edge.from,to:edge.to,...(edge.role?{role:edge.role}:{}),boundary:edge.type==='fills_role'?'short_gap':'medium_gap',boundary_beats:edge.type==='fills_role'?.5:1}));
   const performance={...structuredClone(source.performance),lexical_events:events,structural_events:structural};
   if(parsed.speechAct==='command'){performance.primary_contour='sharply_falling';performance.contour_relative_semitones=[0,-4]}
@@ -218,7 +233,7 @@ export async function composeNamedSentence(input,template) {
     lexical_events:relative,structural_events:structural,statement_boundary:performance.statement_boundary,statement_boundary_beats:performance.statement_boundary_beats};
   const formalDigest=await canonicalDigest({semantic_digest:digest,relative_plan:relativePlan});
   const formal={format:'EZF-1',renderer_version:'1.0.0',formal_id:`EZF:${formalDigest.slice(0,24)}`,formal_digest:formalDigest,semantic_digest:digest,semantic_ir:ir,performance,
-    literal_gloss:`${names.map((name,index)=>deicticRoles[index]?`${participantIds[index]}:reference(${deicticRoles[index]})`:`${participantIds[index]}:name(${name.normalized_label})`).join(' | ')} | ${source.literal_gloss.replaceAll(`${predicates[0].node_id}:`,'p:').replaceAll(`${predicates[0].node_id}.`,'p.')}`};
+    literal_gloss:`${names.map((name,index)=>deicticRoles[index]?`${participantIds[index]}:reference(${deicticRoles[index]})`:`${participantIds[index]}:name(${name.normalized_label})`).join(' | ')} | ${source.literal_gloss.replaceAll(`${predicates[0].node_id}:`,'p:').replaceAll(`${predicates[0].node_id}.`,'p.').replace(/\[1\]$/,`[${parsed.runtimeState??1}]`)}`};
   return {source_input:input,target_id:parsed.predicate,sense_id:`construction:${parsed.construction}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,
-    construction:parsed.construction,interpretation:parsed.explicitInterpretation||(deicticRoles.some(Boolean)?String(input).trim():null)||`${parsed.actorText} ${parsed.negated?(parsed.key==='active_care'?'does not actively care for':parsed.wording.replace('is ','is not ')):parsed.wording}${parsed.targetText?' '+parsed.targetText:''}.`};
+    semantic_note:parsed.semanticNote?(parsed.semanticNote+(parsed.runtimeState===2?' The num ending carries the approved never-finished-becoming reading.':'')):null,construction:parsed.construction,interpretation:parsed.explicitInterpretation||((deicticRoles.some(Boolean)||parsed.semanticNote)?String(input).trim():null)||`${parsed.actorText} ${parsed.negated?(parsed.key==='active_care'?'does not actively care for':parsed.wording.replace('is ','is not ')):parsed.wording}${parsed.targetText?' '+parsed.targetText:''}.`};
 }

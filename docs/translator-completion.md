@@ -11,7 +11,7 @@ is the starting evidence, not a completion certificate.
 ## Current coverage evidence
 
 The [ordinary phrase audit](../reports/ordinary_phrase_coverage.md) currently has
-14 checked compositions and 26 uncomposed phrases out of 40 deliberately varied
+15 checked compositions and 25 uncomposed phrases out of 40 deliberately varied
 cases. This is an implementation-authored diagnostic set, not a blind evaluation
 or a statistical measure of English coverage. Green regression suites do not
 override these missing constructions. The corpus records the intended distinctions
@@ -443,3 +443,16 @@ preserve explicit negation. Questions support pronoun agreement forms as well.
 Distinct-target constructions reject identical referents rather than misusing an
 other-target root for a reflexive meaning. Third-person pronouns, broader discourse
 resolution, reflexive root selection, and unsupported modifiers remain unfinished.
+
+
+### Approved poetic love in sentences
+
+`I love you`, `You love me`, and named-person equivalents now bind the existing
+CMP:44718c92b66443c0c0f03ad7 compound to their participants. Its LIF:002 and LIF:101
+qualifiers and LIF:210 head remain unchanged. The output explicitly discloses the
+approved poetic bond meaning; quoted-object love, generic liking, and reflexive
+love remain unresolved rather than being coerced into it. Complete single-predicate
+statements also accept explicit [0]/[1]/[2] runtime endings. `I love you [2]` applies
+num only to the compound head and retains the approved never-finished-becoming
+reading. Ordinary unmarked love uses runtime 1; negation remains a separate scope.
+Tests compare reversed roles, active versus num, and all component/root identities.

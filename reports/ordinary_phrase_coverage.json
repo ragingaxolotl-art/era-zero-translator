@@ -3,8 +3,8 @@
   "completion_proven": false,
   "case_count": 40,
   "counts": {
-    "verified_for_declared_checks": 14,
-    "not_composed": 26
+    "verified_for_declared_checks": 15,
+    "not_composed": 25
   },
   "areas": {
     "participants": {
@@ -85,7 +85,7 @@
     },
     "poetic_meaning": {
       "total": 1,
-      "verified": 0
+      "verified": 1
     }
   },
   "results": [
@@ -718,8 +718,24 @@
       "requirements": [
         "Use the approved love meaning and bind speaker/addressee"
       ],
-      "status": "not_composed",
-      "failures": []
+      "expected": {
+        "targets": [
+          "CMP:44718c92b66443c0c0f03ad7"
+        ],
+        "roles": [
+          "actor",
+          "target"
+        ],
+        "labels": [],
+        "operators": [],
+        "deictic_roles": [
+          "speaker",
+          "addressee"
+        ]
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "65b6f0596ddfa703e350519a80bef164c69eb25b502b6659dc0667438f5f4970"
     }
   ]
 }

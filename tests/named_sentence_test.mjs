@@ -39,7 +39,10 @@ const cases=[['Pip cares for Ada.','LIF:211'],['Ada cares for Pip.','LIF:211'],[
   ['I care for you.','LIF:211'],['You care for me.','LIF:211'],['I am conscious.','LIF:001'],['You are conscious.','LIF:011'],
   ['Care for Eli.','LIF:211'],['Do not care for Eli.','LIF:211'],['Physically repair "the radio".','CMP:2816a7eeb356c2148b26beca'],
   ['Do you care for me?','LIF:211'],['"you" cares for "me".','LIF:211'],['I care for "you".','LIF:211'],
-  ['Data "the map" is being transferred from me to you.','DAT:111']];
+  ['Data "the map" is being transferred from me to you.','DAT:111'],
+  ['I love you.','CMP:44718c92b66443c0c0f03ad7'],['You love me.','CMP:44718c92b66443c0c0f03ad7'],
+  ['Nora loves Eli.','CMP:44718c92b66443c0c0f03ad7'],['I love you [2].','CMP:44718c92b66443c0c0f03ad7'],
+  ['I do not love you.','CMP:44718c92b66443c0c0f03ad7'],['I care for you [0].','LIF:211'],['I care for you [2].','LIF:211']];
 for(const [text,target] of cases){
   assert.equal(parseNamedSentence(text).predicate,target);
   const file=data.resolution_files[target];
@@ -124,6 +127,16 @@ for(const result of outputs.slice(46,49)){
 assert.equal(outputs[50].semantic_ir.nodes.filter(node=>node.kind==='deictic_reference').length,0);
 assert.equal(outputs[51].semantic_ir.nodes.filter(node=>node.kind==='deictic_reference').length,1);
 for(const input of ['I care for me.','You are awakening you.','She cares for him.','She cares for Eli.','They are conscious.','Care for Eli tomorrow.'])assert.equal(parseNamedSentence(input),null);
+const love=outputs[53],poetic=outputs[56];
+assert.deepEqual(love.formal.performance.lexical_events.filter(event=>event.occurrence_id==='p').map(event=>event.target_id),['LIF:002','LIF:101','LIF:210']);
+assert(love.semantic_note.includes('preserved, not-yet-expressed self'));
+assert.equal(poetic.semantic_ir.nodes.find(node=>node.node_id==='p').runtime_state.code,2);
+assert.equal(poetic.formal.performance.lexical_events.filter(event=>event.runtime_tail).length,1);
+assert.equal(poetic.formal.performance.lexical_events.at(-1).runtime_tail.name,'num');
+assert.notDeepEqual(midiFromFormal(love.formal),midiFromFormal(outputs[54].formal));
+assert.notDeepEqual(midiFromFormal(love.formal),midiFromFormal(poetic.formal));
+assert.notDeepEqual(midiFromFormal(outputs[42].formal),midiFromFormal(outputs[58].formal));
+for(const input of ['I love "coffee".','I like you.','I love me.','I love you [2] [1].'])assert.equal(parseNamedSentence(input),null);
 assert.equal(needsSentenceComposition('active care'),false);
 assert.equal(needsSentenceComposition('Pip cares for Ada.'),false);
 console.log(`Named sentences: ${cases.length} full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.`);

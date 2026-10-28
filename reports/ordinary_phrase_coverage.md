@@ -2,7 +2,7 @@
 
 Fresh phrase coverage audit authored during implementation; not a blind or representative English benchmark.
 
-Full translator completion: **not established**. 14 of 40 cases pass their declared semantic checks; 26 have no complete composition. These counts do not estimate coverage of English generally.
+Full translator completion: **not established**. 15 of 40 cases pass their declared semantic checks; 25 have no complete composition. These counts do not estimate coverage of English generally.
 
 | Area | Checked compositions | Cases |
 |---|---:|---:|
@@ -25,7 +25,7 @@ Full translator completion: **not established**. 14 of 40 cases pass their decla
 | comparison | 0 | 1 |
 | conditional | 0 | 1 |
 | modality | 0 | 1 |
-| poetic_meaning | 0 | 1 |
+| poetic_meaning | 1 | 1 |
 
 ## Unfinished cases
 
@@ -54,4 +54,3 @@ Full translator completion: **not established**. 14 of 40 cases pass their decla
 - **If the radio is damaged, repair it.** — Preserve conditional scope and object coreference (not_composed)
 - **Nora may enter the archive.** — Disambiguate permission versus possibility (not_composed)
 - **Nora cares for Eli or Orin is conscious.** — Resolve inclusive versus exclusive interpretation (not_composed)
-- **I love you.** — Use the approved love meaning and bind speaker/addressee (not_composed)
