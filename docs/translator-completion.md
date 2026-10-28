@@ -350,3 +350,14 @@ and predicted modes, not deontic force; strings are bounded at 1024 characters.
 The historical possible-clause fixture with strength 0.7 now has accepted updated
 MIDI/SVG hashes at all three anchors. Tests recover five values from notes and
 compare Ruby/browser output. Ordinary-English confidence input remains pending.
+
+### Explicit confidence sentence input
+
+`With 70% confidence, it is possible that Pip cares for Ada` now composes with
+strength 0.7 on the outer modality. Percentage conversion shifts decimal text
+without floating-point arithmetic, including fractional percentages and normalized
+redundant zeros. Inputs above 100%, duplicate confidence declarations, unmodalized
+clauses, and outer negation are declined rather than silently assigning another
+scope. Negation inside the modal proposition remains supported. This is an
+explicit-confidence construction, not a claim that every use of chance, probably,
+or belief has the same meaning. Sentence cases now include numeric sound contrasts.

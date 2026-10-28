@@ -16,8 +16,25 @@ const DESCRIPTIONS = [
   {pattern:'conscious', predicate:'LIF:011', key:'conscious_other', wording:'is conscious'},
   {pattern:'dormant', predicate:'LIF:012', key:'dormant_other', wording:'is dormant'}
 ];
+// Shift a decimal percentage by two places without binary floating point.
+export function confidenceFromPercent(value) {
+  if(typeof value!=='string'||value.length>1000||!/^\d+(?:\.\d+)?$/.test(value))return null;
+  let [whole,fraction='']=value.split('.');whole=whole.replace(/^0+/,'')||'0';
+  if(whole.length>3||Number(whole)>100||(whole==='100'&&/[1-9]/.test(fraction)))return null;
+  const padded=whole.padStart(3,'0'),integer=padded.slice(0,-2),decimal=(padded.slice(-2)+fraction).replace(/0+$/,'');
+  return integer+(decimal?'.'+decimal:'');
+}
 export function parseNamedSentence(input, depth=0) {
   if(depth>16)return null;
+  const confidence=String(input).trim().match(/^[Ww]ith ([0-9]+(?:\.[0-9]+)?)% confidence, (.+)$/);
+  if(confidence){
+    const strength=confidenceFromPercent(confidence[1]),inner=parseNamedSentence(confidence[2],depth+1);
+    if(strength===null||!inner?.scopes?.length)return null;
+    const outer=inner.scopes.at(-1);
+    // Attaching confidence to an outer negation would require a distinct scope.
+    if(outer.operator!=='modality'||!['possible','necessary','predicted'].includes(outer.mode)||outer.strength!==undefined)return null;
+    return {...inner,scopes:[...inner.scopes.slice(0,-1),{...outer,strength}],construction:`confidence_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
   const modal=String(input).trim().match(/^[Ii]t is (not )?(possible|necessary) that (.+)$/);
   if(modal){
     const inner=parseNamedSentence(modal[3],depth+1);
@@ -52,7 +69,7 @@ export function parseNamedSentence(input, depth=0) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|conscious|dormant)\b/i.test(String(input)) && !parseNamedSentence(input);
+  return /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|conscious|dormant)\b/i.test(String(input)) && !parseNamedSentence(input);
 }
 
 export function parseSentenceSequence(input) {
@@ -68,7 +85,7 @@ export function parseSentenceSequence(input) {
   if(quoted||!clauses.length)return null;
   // Without explicit grouping a leading modal can scope one clause or the
   // entire sequence. Do not guess that attachment.
-  if(/^[Ii]t is (?:not )?(?:possible|necessary) that /.test(text))return null;
+  if(/^(?:[Ii]t is (?:not )?(?:possible|necessary) that |[Ww]ith [0-9.]+% confidence, )/.test(text))return null;
   clauses.push(text.slice(start).trim());
   if(clauses.length>32||clauses.some(clause=>!parseNamedSentence(clause)))return null;
   return clauses;

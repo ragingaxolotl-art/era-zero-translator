@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
-import {parseNamedSentence,composeNamedSentence,needsSentenceComposition} from '../pages/sentences.mjs';
+import {parseNamedSentence,composeNamedSentence,needsSentenceComposition,confidenceFromPercent} from '../pages/sentences.mjs';
 import {scheduledLexicalEvents} from '../pages/scheduler.mjs';
 import {midiFromFormal} from '../pages/engine.mjs';
 const data=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url)));
@@ -25,7 +25,10 @@ const cases=[['Pip cares for Ada.','LIF:211'],['Ada cares for Pip.','LIF:211'],[
   ['Data "the record" is being transferred from Pip to Ada.','DAT:111'],
   ['Data "the record" is being transferred from Ada to Pip.','DAT:111'],
   ['Data "the record" is not being transferred from Pip to Ada.','DAT:111'],
-  ['It is possible that data "the record" is being transferred from Pip to Ada.','DAT:111']];
+  ['It is possible that data "the record" is being transferred from Pip to Ada.','DAT:111'],
+  ['With 70% confidence, it is possible that Pip cares for Ada.','LIF:211'],
+  ['With 80% confidence, it is possible that Pip cares for Ada.','LIF:211'],
+  ['With 0.1% confidence, it is possible that Pip does not care for Ada.','LIF:211']];
 for(const [text,target] of cases){
   assert.equal(parseNamedSentence(text).predicate,target);
   const file=data.resolution_files[target];
@@ -80,6 +83,12 @@ assert.deepEqual(transfer.semantic_ir.edges.filter(edge=>edge.type==='fills_role
 assert.deepEqual(transfer.formal.performance.lexical_events.filter(event=>event.kind==='phonemic_label').map(event=>[event.label,event.register]),[['pip','low'],['the record','middle'],['ada','high']]);
 assert.notDeepEqual(midiFromFormal(transfer.formal),midiFromFormal(outputs[27].formal));
 assert.notDeepEqual(midiFromFormal(transfer.formal),midiFromFormal(outputs[28].formal));
+assert.equal(outputs[30].semantic_ir.nodes.find(node=>node.operator==='modality').strength,'0.7');
+assert.equal(outputs[32].semantic_ir.nodes.find(node=>node.operator==='modality').strength,'0.001');
+assert.notDeepEqual(midiFromFormal(outputs[30].formal),midiFromFormal(outputs[31].formal));
+for(const [percent,decimal] of [['0','0'],['100','1'],['100.00','1'],['70','0.7'],['0070.00','0.7'],['0.001','0.00001'],['12.3456789','0.123456789']])assert.equal(confidenceFromPercent(percent),decimal);
+for(const percent of ['101','100.01','-1','1e1','NaN','.7'])assert.equal(confidenceFromPercent(percent),null);
+for(const input of ['With 70% confidence, it is not possible that Pip cares for Ada.','With 101% confidence, it is possible that Pip cares for Ada.','With 70% confidence, Pip cares for Ada.','With 70% confidence, with 80% confidence, it is possible that Pip cares for Ada.'])assert.equal(parseNamedSentence(input),null);
 assert.equal(needsSentenceComposition('active care'),false);
 assert.equal(needsSentenceComposition('Pip cares for Ada.'),false);
 console.log(`Named sentences: ${cases.length} full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.`);
