@@ -31,9 +31,9 @@ remaining:
 inverse_profile:
   implementation: pages/mass_comparison_decoder.mjs
   input: Strict single-voice MIDI bytes without source IR or formal metadata
-  recovers: Mass relation, participant phonemes or deictic roles, material root, runtime ending and speech contour
+  recovers: Mass relation, participant phonemes or deictic roles, material root, runtime ending, speech contour, and ordered negation/modality scopes with exact confidence strings
   limitations:
     - Exact symbolic MIDI timing, not acoustic transcription
-    - Negation and unqualified modality scopes recover in outer-to-inner order; confidence and other enclosing scopes remain unsupported
+    - Negation and modality scopes recover in outer-to-inner order; other enclosing scopes remain unsupported
     - Untagged phonemic labels do not recover original spelling or unique external identity
     - Tagged names and arbitrary compound payloads are outside this inverse profile

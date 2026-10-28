@@ -31,6 +31,23 @@ export function decodeMassComparisonMidi(bytes){
   if(scopes.length>=128)fail();
   scopes.push(distance===1?{operator:'negation'}:{operator:'modality',mode:MODES[distance-2]});
   closings.push([0,distance,distance,0]);first=take();
+  if(same(relative(first,anchor),[0,9,0,9])){
+   if(!duration(first,.25)||distance===1||!['possible','necessary','predicted'].includes(scopes.at(-1).mode))fail();
+   let strength='';
+   while(true){
+    const token=take(),code=relative(token,anchor);
+    if(!duration(token,.25))fail();
+    if(same(code,[0,-9,0,-9]))break;
+    if(same(code,[0,10,-1,0]))strength+='.';
+    else{
+     if(code.length!==5||code[0]!==0||code[1]!==10||code[4]!==0||!Number.isInteger(code[2])||code[2]<0||code[2]>2||!Number.isInteger(code[3])||code[3]<0||code[3]>3||code[2]*4+code[3]>9)fail();
+     strength+=String(code[2]*4+code[3]);
+    }
+    if(strength.length>1024)fail();
+   }
+   if(!/^(?:0|1|0\.[0-9]*[1-9])$/.test(strength))fail();
+   scopes.at(-1).strength=strength;first=take();
+  }
  }
  const opening=relative(first,anchor);
  if(!duration(first,.25)||opening.length!==5||!same([opening[0],opening[1],opening[2],opening[4]],[0,-18,1,0])||!RELATIONS[opening[3]])fail();

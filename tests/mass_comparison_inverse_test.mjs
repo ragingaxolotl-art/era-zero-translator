@@ -45,11 +45,19 @@ for(const state of [0,1,2]){
 
 const confidence=structuredClone(wrapped.formal);
 confidence.semantic_ir.nodes.find(n=>n.operator==='modality').strength='0.5';
-assert.throws(()=>decodeMassComparisonMidi(midiFromFormal(confidence)),/Unsupported/);
+assert.deepEqual(decodeMassComparisonMidi(midiFromFormal(confidence)).scopes,[{operator:'modality',mode:'possible',strength:'0.5'}]);
+for(const mode of ['possible','necessary','predicted'])for(const strength of ['0','1','0.125','0.9999999999999999999999999999999999999'])for(const state of [0,1,2]){
+ const result=await composeNamedSentence(`It is not possible that the box has more mass than the radio [${state}].`,load('MAT:010'));
+ Object.assign(result.formal.semantic_ir.nodes.find(n=>n.operator==='modality'),{mode,strength});
+ const inverse=decodeMassComparisonMidi(midiFromFormal(result.formal));
+ assert.deepEqual(inverse.scopes,[{operator:'negation'},{operator:'modality',mode,strength}]);
+ assert.equal(inverse.runtime_state,state);
+}
+
 const kay=await composeNamedSentence('Kay has more mass than the radio.',load('MAT:010'));
 const cay=await composeNamedSentence('Cay has more mass than the radio.',load('MAT:010'));
 assert.notEqual(kay.semantic_ir.nodes.find(n=>n.node_id==='a').referent_id,cay.semantic_ir.nodes.find(n=>n.node_id==='a').referent_id);
 assert.deepEqual(midiFromFormal(kay.formal),midiFromFormal(cay.formal));
 assert.deepEqual(decodeMassComparisonMidi(midiFromFormal(kay.formal)),decodeMassComparisonMidi(midiFromFormal(cay.formal)));
 assert.match(decoded.reference_resolution,/not original spelling or external referent identity/);
-console.log(`Independent MIDI inverse: ${count} relation/runtime/direction cases plus deictic operands; octave transposition preserves decoding, corruption/truncation fail, negated possibility preserves scope independently of all three runtime states. No source IR or formal plan is supplied to the decoder.`);
+console.log(`Independent MIDI inverse: ${count} relation/runtime/direction cases plus deictic operands; octave transposition preserves decoding, corruption/truncation fail, negated possibility preserves scope independently of all three runtime states. 36 confidence/mode/runtime cases preserve exact decimal strings. No source IR or formal plan is supplied to the decoder.`);
