@@ -1,0 +1,106 @@
+{
+  "scope": "Implementation regression only. Full ordinary-English coverage and musical semantic completeness are not established.",
+  "passed": true,
+  "results": [
+    {
+      "test": "tests/compound_dependencies_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 13107\n\n# Running:\n\n......\n\nFinished in 0.009366s, 640.6150 runs/s, 1601.5375 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/compound_expansion_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 32967\n\n# Running:\n\n..........\n\nFinished in 0.122379s, 81.7134 runs/s, 866.1617 assertions/s.\n\n10 runs, 106 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/foundation_process_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 40204\n\n# Running:\n\n...\n\nFinished in 0.290174s, 10.3386 runs/s, 96.4938 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/repetition_performance_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 11572\n\n# Running:\n\n...\n\nFinished in 0.335103s, 8.9525 runs/s, 23.8733 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tools/validate_gate4b_compound_dictionary.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Gate 4B validation: PASS\nChecks passed: 16; checks failed: 0; entries: 32\n"
+    },
+    {
+      "test": "tools/validate_gate4c_english_sense_index.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Gate 4C validation: PASS\nChecks passed: 17; checks failed: 0; senses: 440; lemmas: 423\n"
+    },
+    {
+      "test": "tools/validate_renderer_decoder.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Renderer/decoder validation: PASS\nChecks passed: 12; checks failed: 0\n"
+    },
+    {
+      "test": "tools/validate_glyph_audio.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Glyph/audio validation: PASS\nChecks passed: 10; checks failed: 0\n"
+    },
+    {
+      "test": "tests/repetition_browser_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Browser repetition: Ruby/JS MIDI and SVG parity, sound-plan counts, and export bounds pass.\n"
+    },
+    {
+      "test": "tests/name_participants_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Name participants: existing EZNAME notes, role reversal, nonsemantic labels, roundtrip and MIDI parity pass.\n"
+    },
+    {
+      "test": "tests/named_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Named sentences: 11 full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.\n"
+    },
+    {
+      "test": "tests/sentence_sequence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Explicit sequences: whole-IR Ruby parity, exact MIDI parity, action order, clause boundary and unsupported-clause rejection pass.\n"
+    },
+    {
+      "test": "tests/negation_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Negation: positive/negative/inactive distinction, grammar framing, marker durations and Ruby/browser parity pass.\n"
+    },
+    {
+      "test": "tools/validate_pages_release.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "GitHub Pages audit: PASS\nChecks passed: 11077; failed: 0; canonical variants: 5325\n"
+    },
+    {
+      "test": "tools/validate_viseme_performance.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Viseme performance: PASS \u00b7 5325 variants \u00b7 61260 cues \u00b7 81501 assertions\n"
+    }
+  ],
+  "remaining_requirements": [
+    "Broad ordinary sentence parsing and unquoted noun phrases",
+    "Pronouns, discourse reference and ambiguity handling",
+    "Adjectives, quantities and sensory/affective foundations",
+    "Tense, modality, quantifier and parallel-scope sound conventions",
+    "General semantic validation of new occurrence bindings and phonemic references",
+    "Recursive compound generation and complete scoped timing in the browser",
+    "Independent held-out meaning and sound decoding",
+    "Source reconciliation, release migration and publication validation"
+  ]
+}
