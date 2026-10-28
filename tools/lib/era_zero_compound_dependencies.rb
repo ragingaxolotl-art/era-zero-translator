@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative "era_zero_compound_conventions"
+
 # Resolve lexical dependencies before expansion or release. This does not infer
 # semantic equivalence from English labels, flatten graphs, or change identities.
 module EraZeroCompoundDependencies
@@ -7,6 +9,7 @@ module EraZeroCompoundDependencies
 
   class Registry
     def initialize(entries)
+      EraZeroCompoundConventions.validate!(entries, error_class: DependencyError)
       @entries = {}
       entries.each do |entry|
         key = [entry.fetch("compound_id"), entry.fetch("definition_version")]

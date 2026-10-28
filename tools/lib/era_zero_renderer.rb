@@ -178,10 +178,26 @@ module EraZeroRenderer
       components = expander.ordered_roots(expanded, include_slots: true)
     else
       validate_compound_roles!(compound, node, ir)
-      components = compound_root_order(compound, compounds: compounds)
+      if compound.key?("conventional_meaning") || compound.fetch("nodes").any? { |item| item["kind"] == "compound_ref" }
+        expander = EraZeroCompoundExpansion::Expander.new(compounds.values)
+        expanded = expander.expand(compound.fetch("compound_id"), compound.fetch("definition_version"))
+        raise RenderError, "nested compound slots require explicit scoped binding" if expanded.fetch("nodes").any? { |item| item["kind"] == "slot" }
+        components = expander.ordered_roots(expanded)
+      else
+        components = compound_root_order(compound, compounds: compounds)
+      end
     end
-    components.flat_map do |component|
-      if component["kind"] == "slot"
+    conventional_scopes = expanded ? expanded.fetch("scopes").select { |scope| scope.key?("conventional_meaning") } : []
+    previous_scopes, result = [], []
+    components.each do |component|
+      path = component["path"] || [component.fetch("node_id")]
+      scopes = conventional_scopes.select { |scope| path.take(scope.fetch("path").length) == scope.fetch("path") }.sort_by { |scope| scope.fetch("path").length }
+      shared = 0
+      shared += 1 while shared < previous_scopes.length && shared < scopes.length && previous_scopes[shared]["path"] == scopes[shared]["path"]
+      previous_scopes.drop(shared).reverse_each { |scope| result << EraZeroCompoundConventions.event(scope.fetch("conventional_meaning"), "close", id, anchor_midi, scope.fetch("path")) }
+      scopes.drop(shared).each { |scope| result << EraZeroCompoundConventions.event(scope.fetch("conventional_meaning"), "open", id, anchor_midi, scope.fetch("path")) }
+      previous_scopes = scopes
+      payload = if component["kind"] == "slot"
         binding = bindings.fetch(component.fetch("path"))
         argument = arguments.fetch(binding.fetch("argument_id"))
         raise RenderError, "bound participant must be a renderable occurrence" unless %w[lexical_occurrence phonemic_reference deictic_reference].include?(argument["kind"])
@@ -201,7 +217,10 @@ module EraZeroRenderer
           component_node_id: component["path"] ? JSON.generate(component["path"]) : component["node_id"],
           component_role: is_head ? "head" : component["component_role"] || "qualifier")]
       end
+      result.concat(payload)
     end
+    previous_scopes.reverse_each { |scope| result << EraZeroCompoundConventions.event(scope.fetch("conventional_meaning"), "close", id, anchor_midi, scope.fetch("path")) }
+    result
   rescue EraZeroCompoundExpansion::ExpansionError, EraZeroNames::NameError, KeyError => error
     raise RenderError, error.message
   end
@@ -254,6 +273,7 @@ module EraZeroRenderer
     }
     formal_digest = Digest::SHA256.hexdigest(JSON.generate(EraZeroValidation.deep_sort({ "semantic_digest" => digest, "relative_plan" => relative_plan })))
     gloss_parts = lexical_events.map do |event|
+      next "#{event['occurrence_id']}:#{event['marker']}" if event["kind"] == "grammar_marker"
       next "#{event['occurrence_id']}:reference(#{event['reference_mode']})" if event["kind"] == "reference_marker"
       next "#{event['occurrence_id']}:reference(#{event['deictic_role']})" if event["kind"] == "deictic_reference"
       next "#{event['occurrence_id']}:name(#{event['label']})" if event["kind"] == "phonemic_label"

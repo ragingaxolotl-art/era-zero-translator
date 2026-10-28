@@ -120,12 +120,15 @@ on the subset their definitions actually require. This prevents early loose
 
 ## Release decision and next work
 
-Prefer preserving the 324-root inventory while evaluating explicitly conventional
-compounds for these foundations. Before choosing that route, define how the
-compound registry records added conventional meaning, versioned dependency reuse,
-argument bindings and a collision-free musical identity. A compound whose ordinary
-expansion is indistinguishable from another meaning must not silently gain a new
-sense without a way for the listener/decoder to distinguish it.
+Preserve the 324-root inventory while defining explicitly conventional compounds
+for these foundations. The implemented extension in
+`spec/conventional_compounds_1.0.yaml` records additional meaning in compound
+identity and gives it a distinct ternary frame around its exact expanded scope.
+Nested dependency reuse, argument bindings and runtime endings are tested. No
+sensory convention has yet been approved; see
+`reviews/conventional_compound_foundations.md` for the definition and contrast work
+that must precede seeing/hearing vocabulary. A compound must not silently gain a
+new sense merely through an English alias.
 
 Compare that design against a small primitive extension only after the exact
 missing distinctions are specified. Do not invent an entire family to fill 27

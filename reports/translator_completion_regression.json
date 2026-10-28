@@ -6,25 +6,31 @@
       "test": "tests/min_cross_reference_migration_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 27471\n\n# Running:\n\n.\n\nFinished in 0.344842s, 2.8999 runs/s, 255.1893 assertions/s.\n\n1 runs, 88 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 6533\n\n# Running:\n\n.\n\nFinished in 0.346594s, 2.8852 runs/s, 253.8994 assertions/s.\n\n1 runs, 88 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_dependencies_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 7996\n\n# Running:\n\n......\n\nFinished in 0.008170s, 734.3941 runs/s, 1835.9853 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 20711\n\n# Running:\n\n......\n\nFinished in 0.008219s, 730.0158 runs/s, 1825.0396 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_expansion_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 48489\n\n# Running:\n\n..........\n\nFinished in 0.231654s, 43.1678 runs/s, 543.9146 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 13895\n\n# Running:\n\n..........\n\nFinished in 0.226664s, 44.1182 runs/s, 555.8889 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/compound_convention_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 21344\n\n# Running:\n\n..\n\nFinished in 0.031099s, 64.3107 runs/s, 707.4182 assertions/s.\n\n2 runs, 22 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/dictionary_musical_identity_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 46861\n\n# Running:\n\n.\n\nFinished in 0.220480s, 4.5356 runs/s, 27.2134 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 31979\n\n# Running:\n\n.\n\nFinished in 0.218089s, 4.5853 runs/s, 27.5117 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/audit_dictionary_musical_identity.rb",
@@ -42,13 +48,13 @@
       "test": "tests/semantic_reference_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 7055\n\n# Running:\n\n.......\n\nFinished in 0.217370s, 32.2032 runs/s, 147.2144 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 47312\n\n# Running:\n\n.......\n\nFinished in 0.217196s, 32.2290 runs/s, 147.3324 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/quantity_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 12931\n\n# Running:\n\n..\n\nFinished in 0.361940s, 5.5258 runs/s, 215.5053 assertions/s.\n\n2 runs, 78 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 53329\n\n# Running:\n\n..\n\nFinished in 0.367343s, 5.4445 runs/s, 212.3356 assertions/s.\n\n2 runs, 78 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_semantic_ir_and_grammar.rb",
@@ -60,13 +66,13 @@
       "test": "tests/foundation_process_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 48747\n\n# Running:\n\n...\n\nFinished in 0.396817s, 7.5602 runs/s, 70.5615 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 8982\n\n# Running:\n\n...\n\nFinished in 0.395999s, 7.5758 runs/s, 70.7072 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/repetition_performance_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 51550\n\n# Running:\n\n...\n\nFinished in 0.452593s, 6.6285 runs/s, 17.6759 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 47224\n\n# Running:\n\n...\n\nFinished in 0.449971s, 6.6671 runs/s, 17.7789 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_gate4b_compound_dictionary.rb",
@@ -277,6 +283,12 @@
       "passed": true,
       "exit_code": 0,
       "output": "Nested bound compounds: 12 role/runtime contrasts retain both binding scopes, no duplicate payload, Ruby/browser MIDI and SVG parity, and event limits. Structural probes do not assert lexical valence.\n"
+    },
+    {
+      "test": "tests/compound_convention_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Explicit compound conventions: 18 nested identity/runtime/binding contrasts preserve roots and head-only endings; Ruby/browser MIDI and SVG agree; independent MIDI frame reading recovers scoped convention codes. Fixtures do not approve vocabulary.\n"
     },
     {
       "test": "tests/counted_nominal_test.mjs",

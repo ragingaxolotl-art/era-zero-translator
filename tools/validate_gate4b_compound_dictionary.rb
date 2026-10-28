@@ -5,6 +5,7 @@ require "yaml"
 require "json"
 require "digest"
 require "set"
+require_relative "lib/era_zero_compound_conventions"
 require_relative "../tools/lib/era_zero_validation"
 
 include EraZeroValidation
@@ -17,6 +18,7 @@ atoms = EraZeroValidation.atoms_by_id(atoms_doc)
 ids = atoms.keys.to_set
 entries = dictionary.fetch("entries")
 checks = EraZeroValidation::CheckSet.new
+EraZeroCompoundConventions.validate!(entries)
 
 checks.add("bounded release", "dictionary declares canonical initial release and a nonzero exact count", dictionary.dig("metadata", "status") == "canonical_initial_release" && dictionary.dig("metadata", "entry_count") == entries.length && entries.length >= 24)
 checks.add("unique content identities", "every entry has a unique CMP id and full digest", entries.map { |e| e["compound_id"] }.uniq.length == entries.length && entries.map { |e| e["content_digest"] }.uniq.length == entries.length)
@@ -30,7 +32,7 @@ checks.add("connected graphs", "every non-head node has a path to h", entries.al
   graph.keys.all? { |node| reach.call(node, Set.new) }
 end)
 checks.add("content hashes", "each CMP id is derived from the canonical semantic payload", entries.all? do |e|
-  payload = e.slice("architecture_version", "semantic_head", "nodes", "edges", "lexical_constraints")
+  payload = EraZeroCompoundConventions.semantic_payload(e)
   payload["architecture_version"] = "1.0"
   digest = Digest::SHA256.hexdigest(JSON.generate(EraZeroValidation.deep_sort(payload)))
   digest == e["content_digest"] && e["compound_id"] == "CMP:#{digest[0, 24]}" && e.dig("serialization", "content_digest") == digest

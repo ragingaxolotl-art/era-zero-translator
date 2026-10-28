@@ -42,7 +42,7 @@ module EraZeroCompoundExpansion
           meaning = if scopes.key?(path)
                       scope = scopes.fetch(path)
                       local_head = scope.fetch("semantic_head").take(path.length + 1)
-                      ["compound", scope.fetch("lexical_constraints"), subtree_hash.call(local_head)]
+                      ["compound", scope.fetch("lexical_constraints"), subtree_hash.call(local_head)] + (scope.key?("conventional_meaning") ? [scope.fetch("conventional_meaning").sort.to_h] : [])
                     else
                       node = nodes.fetch(path)
                       # Internal identifiers are not semantic ordering keys.
@@ -153,6 +153,9 @@ module EraZeroCompoundExpansion
         "semantic_head" => head,
         "lexical_constraints" => Marshal.load(Marshal.dump(entry.fetch("lexical_constraints", [])))
       }
+      if entry.key?("conventional_meaning")
+        output["scopes"].last["conventional_meaning"] = Marshal.load(Marshal.dump(entry.fetch("conventional_meaning")))
+      end
       head
     end
 
