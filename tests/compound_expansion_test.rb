@@ -3,6 +3,7 @@ require "minitest/autorun"
 require_relative "../tools/lib/era_zero_compound_expansion"
 require_relative "../tools/lib/era_zero_validation"
 require_relative "../tools/lib/era_zero_renderer"
+require_relative "../tools/lib/era_zero_semantic_validation"
 
 class CompoundExpansionTest < Minitest::Test
   Expander = EraZeroCompoundExpansion::Expander
@@ -131,6 +132,27 @@ class CompoundExpansionTest < Minitest::Test
       "edges" => [{ "edge_id" => "e", "type" => "centers", "from" => "p", "to" => "c" }] }
     digest = EraZeroRenderer.semantic_digest(ir)
     ir.merge!("utterance_id" => "UTT:#{digest[0, 24]}", "serialization" => { "content_digest" => digest })
+    assert_empty EraZeroSemanticValidation.validate(ir, compound_entries: [base, outer])
+    mutations = [
+      ->(copy) { copy["nodes"][1]["compound_bindings"].pop },
+      ->(copy) { copy["nodes"][1]["compound_bindings"] << copy["nodes"][1]["compound_bindings"].first.dup },
+      ->(copy) { copy["nodes"][1]["compound_bindings"][0]["slot_path"] = ["missing"] },
+      ->(copy) { copy["nodes"][1]["compound_bindings"][0]["role"] = "actor" },
+      ->(copy) { copy["nodes"][1]["compound_bindings"][0]["argument_id"] = "missing" },
+      ->(copy) { copy["nodes"][2]["value_type"] = "quantity" },
+      ->(copy) { copy["nodes"][1]["compound_bindings"] = [nil] }
+    ]
+    mutations.each do |mutation|
+      copy = Marshal.load(Marshal.dump(ir)); mutation.call(copy)
+      assert_includes EraZeroSemanticValidation.validate(copy, compound_entries: [base, outer]), "invalid_compound_bindings"
+    end
+    cyclic = Marshal.load(Marshal.dump(ir))
+    cyclic["nodes"][1]["value_type"] = "entity"
+    cyclic["nodes"][1]["compound_bindings"][0]["argument_id"] = "p"
+    assert_includes EraZeroSemanticValidation.validate(cyclic, compound_entries: [base, outer]), "cyclic_compound_bindings"
+    invalid_atom = Marshal.load(Marshal.dump(ir))
+    invalid_atom["nodes"][2]["compound_bindings"] = []
+    assert_includes EraZeroSemanticValidation.validate(invalid_atom, compound_entries: [base, outer]), "bindings_on_noncompound"
     EraZeroRenderer.stub(:load_authority, [atoms, { "slotted" => base, "outer" => outer }]) do
       formal = EraZeroRenderer.render(ir)
       events = formal.dig("performance", "lexical_events")

@@ -4,6 +4,7 @@ require "digest"
 require "set"
 require_relative "era_zero_validation"
 require_relative "era_zero_names"
+require_relative "era_zero_compound_expansion"
 
 # Shared semantic validation for fixtures and sentence composition.
 module EraZeroSemanticValidation
@@ -15,7 +16,7 @@ module EraZeroSemanticValidation
   end
 
 
-  def validate(ir)
+  def validate(ir, compound_entries: nil)
     return ["invalid_document"] unless ir.is_a?(Hash)
     return ["invalid_nodes"] unless ir["nodes"].is_a?(Array) && ir["nodes"].all? { |n| n.is_a?(Hash) && n["node_id"].is_a?(String) }
     return ["invalid_edges"] unless ir["edges"].is_a?(Array) && ir["edges"].all? { |e| e.is_a?(Hash) && e["edge_id"].is_a?(String) }
@@ -24,13 +25,15 @@ module EraZeroSemanticValidation
     atoms_doc = EraZeroValidation.load_yaml("lexicon/atoms.yaml")
     compounds_doc = EraZeroValidation.load_yaml("lexicon/compound_dictionary.yaml")
     atom_ids = atoms_doc.fetch("atoms").map { |a| a["canonical_id"] }.to_set
-    compound_ids = compounds_doc.fetch("entries").map { |c| c["compound_id"] }.to_set
+    entries = compound_entries || compounds_doc.fetch("entries")
+    compound_ids = entries.map { |c| c["compound_id"] }.to_set
     node_kinds = schema.fetch("node_kinds").to_set
     edge_types = schema.fetch("edge_types").to_set
     roles = schema.fetch("roles").to_set
     forbidden = schema.fetch("forbidden_semantic_fields").to_set
     units = spec.dig("quantity_and_measurement", "units").values.flatten.to_set
     errors = []
+    binding_edges = []
     nodes = ir["nodes"].is_a?(Array) ? ir["nodes"] : []
     edges = ir["edges"].is_a?(Array) ? ir["edges"] : []
     ids = nodes.map { |n| n["node_id"] }
@@ -65,6 +68,35 @@ module EraZeroSemanticValidation
         errors << "unresolved_reference" unless declared.include?(n["referent_id"])
       end
     end
+    nodes.select { |n| n.key?("compound_bindings") }.each do |n|
+      unless n["kind"] == "lexical_occurrence" && n["target_type"] == "compound"
+        errors << "bindings_on_noncompound"
+        next
+      end
+      bindings = n["compound_bindings"]
+      unless bindings.is_a?(Array) && bindings.all? { |b| b.is_a?(Hash) && b["slot_path"].is_a?(Array) && b["slot_path"].all? { |p| p.is_a?(String) } && b["argument_id"].is_a?(String) }
+        errors << "invalid_compound_bindings"
+        next
+      end
+      begin
+        compound = entries.find { |entry| entry["compound_id"] == n["target_id"] }
+        raise EraZeroCompoundExpansion::ExpansionError, "unknown compound" unless compound
+        expander = EraZeroCompoundExpansion::Expander.new(entries)
+        expanded = expander.expand(compound.fetch("compound_id"), compound.fetch("definition_version"))
+        resolved = expander.bind_slots(expanded, bindings: bindings, arguments: map)
+        resolved.each do |binding|
+          errors << "unknown_role" unless roles.include?(binding["role"])
+          binding_edges << [binding["argument_id"], n["node_id"]]
+        end
+      rescue EraZeroCompoundExpansion::ExpansionError, EraZeroCompoundDependencies::DependencyError, KeyError
+        errors << "invalid_compound_bindings"
+      end
+    end
+    # A binding participates in connectivity without inventing a second fills_role
+    # edge that would erase the nested slot path. Binding cycles are never valid.
+    binding_graph = ids.to_h { |id| [id, []] }
+    binding_edges.each { |from, to| binding_graph[from] << to }
+    binding_edges.each { |from, to| errors << "cyclic_compound_bindings" if reaches?(to, from, binding_graph) }
     nodes.select { |n| n["kind"] == "scope_operator" }.each do |n|
       errors << "unknown_scope_operator" unless spec.dig("node_types", "scope_operator", "operators").include?(n["operator"])
     end
@@ -92,6 +124,7 @@ module EraZeroSemanticValidation
     end
     graph = ids.to_h { |id| [id, []] }
     edges.each { |e| graph[e["from"]] << e["to"] if graph.key?(e["from"]) && graph.key?(e["to"]) }
+    binding_edges.each { |from, to| graph[from] << to }
     errors << "disconnected_node" unless map[root] && ids.all? { |id| reaches?(id, root, graph) }
     payload = ir.slice("ir_version", "root_clause", "speech_act", "nodes", "edges", "discourse_constraints")
     digest = Digest::SHA256.hexdigest(JSON.generate(EraZeroValidation.deep_sort(payload)))

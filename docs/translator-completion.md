@@ -302,3 +302,15 @@ composed-sentence regression validates its IR before renderer comparison. Advers
 checks cover forged identities, unknown phonemes, missing referents, disconnected
 names, and malformed containers. This is not yet general validation of compound
 bindings, and runtime renderer enforcement remains pending that integration.
+
+### Scoped compound binding validation
+
+The shared semantic validator now validates explicit compound_bindings through the
+same version-pinned expander used by the renderer. It checks full nested paths,
+slot completeness and uniqueness, argument existence and value type, and declared
+roles. Valid bindings contribute argument-to-compound connectivity without adding
+unscoped duplicate role edges. Binding cycles and bindings on noncompound nodes
+are rejected. Nested fixtures include adversarial missing, duplicate, wrong-path,
+wrong-role, wrong-type, unknown-argument, malformed-container and self-cycle cases.
+This validates explicitly provided bindings; legacy role-only compounds and full
+runtime enforcement still need integration review.
