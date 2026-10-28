@@ -8,7 +8,7 @@ const outputs=[];
 const cases=[['Pip cares for Ada.','LIF:211'],['Ada cares for Pip.','LIF:211'],['Mira is caring for Sol.','LIF:211'],['Jun cares for Tavi.','LIF:211'],
   ['Pip is awakening Ada.','LIF:111'],['Mira is restoring Sol.','REP:111'],['Jun is damaging Tavi.','WRN:111'],
   ['Pip is physically repairing "the machine".','CMP:2816a7eeb356c2148b26beca'],
-  ['"Repair unit" is physically repairing "blue pump".','CMP:2816a7eeb356c2148b26beca']];
+  ['"Repair unit" is physically repairing "blue pump".','CMP:2816a7eeb356c2148b26beca'],['Pip does not care for Ada.','LIF:211'],['Pip is not restoring Ada.','REP:111']];
 for(const [text,target] of cases){
   assert.equal(parseNamedSentence(text).predicate,target);
   const file=data.resolution_files[target];
@@ -22,7 +22,7 @@ assert.notEqual(outputs[0].semantic_ir.utterance_id,outputs[1].semantic_ir.utter
 assert.notDeepEqual(midiFromFormal(outputs[0].formal),midiFromFormal(outputs[1].formal));
 assert.equal(outputs[7].semantic_ir.nodes.find(node=>node.node_id==='p').target_type,'compound');
 assert.deepEqual(outputs[7].formal.performance.lexical_events.filter(event=>event.occurrence_id==='p').map(event=>event.target_id),['MAT:111','REP:111']);
-for(const text of ['Pip does not care for Ada.','Pip cares for Ada and Sol.','Pip barely cares for Ada.','Pip cares for a curious Ada.','Pip cares for Ada tomorrow.','Pip is not restoring Ada.','Pip is damaging Ada and Sol.','Pip was awakening Ada.','Pip is physically repairing the broken machine.','Pip is physically repairing "pump" tomorrow.']){
+for(const text of ['Pip never cares for Ada.','Pip cares for Ada and Sol.','Pip barely cares for Ada.','Pip cares for a curious Ada.','Pip cares for Ada tomorrow.','Pip is not restoring Ada tomorrow.','Pip is damaging Ada and Sol.','Pip was awakening Ada.','Pip is physically repairing the broken machine.','Pip is physically repairing "pump" tomorrow.']){
   assert.equal(parseNamedSentence(text),null,text);
   assert.equal(needsSentenceComposition(text),true,text);
 }

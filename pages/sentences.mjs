@@ -12,8 +12,11 @@ const ACTIONS = [
 export function parseNamedSentence(input) {
   const participant='([A-Z][a-z]+|"[A-Za-z]+(?:[ -][A-Za-z]+)*")';
   for(const action of ACTIONS){
-    const match=String(input).trim().match(new RegExp(`^${participant} ${action.pattern} ${participant}[.]?$`));
-    if(match)return {actor:match[1].replaceAll('"',''),target:match[2].replaceAll('"',''),actorText:match[1],targetText:match[2],...action,construction:`named_${action.key}`};
+    for(const negated of [false,true]){
+      const pattern=negated?(action.key==='active_care'?'(?:does not care for|is not caring for)':action.pattern.replace('is ','is not ')):action.pattern;
+      const match=String(input).trim().match(new RegExp(`^${participant} ${pattern} ${participant}[.]?$`));
+      if(match)return {actor:match[1].replaceAll('"',''),target:match[2].replaceAll('"',''),actorText:match[1],targetText:match[2],...action,negated,construction:`named_${action.key}${negated?'_negated':''}`};
+    }
   }
   return null;
 }
@@ -83,6 +86,11 @@ export async function composeNamedSentence(input,template) {
   const ir={ir_version:'1.0',root_clause:'c',speech_act:'assertion',nodes:[{node_id:'c',kind:'clause',clause_type:'predication'},
     {node_id:'p',kind:'lexical_occurrence',target_type:predicates[0].target_type,target_id:parsed.predicate,runtime_state:{code:1}},...references],
     edges:[{edge_id:'e0',type:'centers',from:'p',to:'c'},{edge_id:'e1',type:'fills_role',from:'a',to:'p',role:'actor'},{edge_id:'e2',type:'fills_role',from:'b',to:'p',role:'target'}],discourse_constraints:{}};
+  if(parsed.negated){
+    ir.nodes.push({node_id:'neg',kind:'scope_operator',operator:'negation'});
+    ir.edges[0].from='neg';
+    ir.edges.push({edge_id:'e3',type:'scopes',from:'p',to:'neg'});
+  }
   const digest=await canonicalDigest(ir);
   ir.utterance_id=`UTT:${digest.slice(0,24)}`;
   ir.serialization={canonical_format:'EZIR-JSON-1',content_digest:digest};
@@ -106,5 +114,5 @@ export async function composeNamedSentence(input,template) {
   const formal={format:'EZF-1',renderer_version:'1.0.0',formal_id:`EZF:${formalDigest.slice(0,24)}`,formal_digest:formalDigest,semantic_digest:digest,semantic_ir:ir,performance,
     literal_gloss:`a:name(${names[0].normalized_label}) | b:name(${names[1].normalized_label}) | ${source.literal_gloss.replaceAll(`${predicates[0].node_id}:`,'p:').replaceAll(`${predicates[0].node_id}.`,'p.')}`};
   return {source_input:input,target_id:parsed.predicate,sense_id:`construction:${parsed.construction}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,
-    construction:parsed.construction,interpretation:`${parsed.actorText} ${parsed.wording} ${parsed.targetText}.`};
+    construction:parsed.construction,interpretation:`${parsed.actorText} ${parsed.negated?(parsed.key==='active_care'?'does not actively care for':parsed.wording.replace('is ','is not ')):parsed.wording} ${parsed.targetText}.`};
 }

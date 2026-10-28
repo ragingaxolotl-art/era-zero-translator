@@ -17,6 +17,6 @@ assert.equal(events[2].boundary_after_beats,1);
 const reverse=await composeSentenceSequence('Ada is restoring Sol, then Pip cares for Ada.',load);
 assert.notDeepEqual(midiFromFormal(result.formal),midiFromFormal(reverse.formal));
 assert.equal(parseSentenceSequence('Pip cares for Ada and Ada is restoring Sol.'),null);
-assert.equal(parseSentenceSequence('Pip cares for Ada, then Ada is not restoring Sol.'),null);
+assert.equal(parseSentenceSequence('Pip cares for Ada, then Ada is not restoring Sol tomorrow.'),null);
 assert.equal(parseSentenceSequence('Pip cares for "then Ada".'),null);
 console.log('Explicit sequences: whole-IR Ruby parity, exact MIDI parity, action order, clause boundary and unsupported-clause rejection pass.');

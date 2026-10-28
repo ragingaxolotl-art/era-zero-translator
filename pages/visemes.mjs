@@ -42,12 +42,13 @@ export function visemePlanFromFormal(formal,options={}){
   const sound=soundPlanFromFormal(formal),cues=[];
   let at=.08,lastSyllable='ma';
   sound.lexical_events.forEach((event,eventIndex)=>{
-    if(event.kind==='phonemic_label'){
+    if(['phonemic_label','grammar_marker'].includes(event.kind)){
       // EZNAME is a framed label channel, not four DBA carrier syllables.
       // Keep the mouth neutral until phoneme-specific articulation is defined.
       event.address_path.forEach((note,noteIndex)=>{
-        cues.push({section:'phonemic_label',note,start:Number(at.toFixed(4)),duration:.24,syllable:null,target_id:event.target_id,event_index:eventIndex,note_index:noteIndex,onset_viseme:'REST',nucleus_viseme:'REST',onset_duration:0,sustain_only:true});
-        at+=.28;
+        const duration=(event.note_duration_beats||1)*.24;
+        cues.push({section:event.kind,note,start:Number(at.toFixed(4)),duration,syllable:null,target_id:event.target_id,event_index:eventIndex,note_index:noteIndex,onset_viseme:'REST',nucleus_viseme:'REST',onset_duration:0,sustain_only:true});
+        at+=duration+.04;
       });
       at+=event.boundary_after_beats===undefined?.16:event.boundary_after_beats*.24;
       return;

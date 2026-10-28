@@ -184,3 +184,23 @@ parity tests verify both actions, reversal, boundary placement and rejected part
 sequences. Only the legacy sequence MIDI fixture hashes changed. The parser has a
 32-clause implementation bound; this is not a language limit. Parallel conjunction,
 pronouns, modifiers and additional predicate frames remain outstanding.
+
+## Negation convention
+
+The original source defines scoped negation but supplies no musical assignment.
+`spec/grammar_frames_1.0.yaml` records the new EZGRAM-1 convention, introduced
+under the completion goal: short opening and closing grammar frames bracket the
+negated subtree without changing roots or runtime endings. These are grammar
+events with neutral articulation, not new roots or recognition checksums.
+
+Positive, negative and inactive-runtime forms now have distinct MIDI. Tests check
+marker pitch and duration, nested negation, Ruby/browser parity and unchanged
+runtime 1 inside a negative clause. The named-action parser accepts explicit
+“does not care for” and “is not” progressive forms, including scoped sequences.
+Only negated-clause fixture hashes changed. This is a new versioned performance
+convention, not a claim about historical DBA phonology. Stored pre-change negative
+presentation checksums require migration before publishing this branch.
+
+Tense, modality, quantities, other operators, broad English parsing and independent
+listener decoding remain unfinished. Passing presentation regressions does not
+prove these remaining meanings are sounded.

@@ -76,7 +76,7 @@ module EraZeroPresentation
   def scheduled_lexical_events(formal, max_events: 100_000)
     events = formal.dig("performance", "lexical_events")
     ir = formal.fetch("semantic_ir")
-    return events unless ir.fetch("nodes").any? { |node| %w[repetition sequence].include?(node["operator"]) }
+    return events unless ir.fetch("nodes").any? { |node| %w[repetition sequence negation].include?(node["operator"]) }
     nodes = ir.fetch("nodes").to_h { |node| [node.fetch("node_id"), node] }
     incoming = ir.fetch("edges").group_by { |edge| edge.fetch("to") }
     by_occurrence = events.group_by { |event| event.fetch("occurrence_id") }
@@ -90,15 +90,19 @@ module EraZeroPresentation
       edges = incoming.fetch(id, [])
       result = case node["kind"]
                when "scope_operator"
-                 unless node["operator"] == "repetition" && node["mode"] == "count" && node["count"].is_a?(Integer) && node["count"].positive?
+                 unless node["operator"] == "negation" || (node["operator"] == "repetition" && node["mode"] == "count" && node["count"].is_a?(Integer) && node["count"].positive?)
                    raise PresentationError, "counted repetition export requires a positive count and supported nested scopes"
                  end
                  scoped = edges.select { |edge| edge["type"] == "scopes" }
                  raise PresentationError, "repetition must have exactly one scope" unless scoped.length == 1
                  phrase = walk.call(scoped.first.fetch("from"))
                  raise PresentationError, "repetition scope has no sound events" if phrase.empty?
-                 raise PresentationError, "repetition exceeds event limit #{max_events}" if phrase.length * node["count"] > max_events
-                 phrase * node["count"]
+                 if node["operator"] == "negation"
+                   [grammar_marker(formal, id, "negation_open")] + phrase + [grammar_marker(formal, id, "negation_close")]
+                 else
+                   raise PresentationError, "repetition exceeds event limit #{max_events}" if phrase.length * node["count"] > max_events
+                   phrase * node["count"]
+                 end
                when "clause"
                  centers = edges.select { |edge| edge["type"] == "centers" }
                  raise PresentationError, "repetition clause requires one center" unless centers.length == 1
@@ -128,10 +132,21 @@ module EraZeroPresentation
       result
     end
     scheduled = walk.call(ir.fetch("root_clause"))
-    unless scheduled.map { |event| event["occurrence_id"] }.uniq.sort == by_occurrence.keys.sort
+    unless scheduled.reject { |event| event["kind"] == "grammar_marker" }.map { |event| event["occurrence_id"] }.uniq.sort == by_occurrence.keys.sort
       raise PresentationError, "repetition schedule would omit lexical occurrences"
     end
     scheduled
+  end
+
+  def grammar_marker(formal, scope_id, marker)
+    relative = marker == "negation_open" ? [0, -1, -1, 0] : [0, 1, 1, 0]
+    base = formal.dig("performance", "anchor_midi")
+    { "kind" => "grammar_marker", "grammar_profile" => "EZGRAM-1", "marker" => marker,
+      "occurrence_id" => scope_id, "target_id" => "EZGRAM:#{marker}", "register" => "middle", "base_midi" => base,
+      "family_qualified_transliteration" => marker, "formal_carrier" => "",
+      "family_opening_relative_semitones" => [], "family_opening_absolute_midi" => [],
+      "address_relative_semitones" => relative, "address_absolute_midi" => relative.map { |note| base + note },
+      "note_duration_beats" => 0.25, "boundary_after_beats" => 0.5 }
   end
 
   def midi(formal)
@@ -145,7 +160,7 @@ module EraZeroPresentation
         duration = if index == notes.length - 1 && event["runtime_tail"]
                      (event.dig("runtime_tail", "duration_beats") * TICKS_PER_BEAT).round
                    else
-                     TICKS_PER_BEAT
+                     (event.fetch("note_duration_beats", 1.0) * TICKS_PER_BEAT).round
                    end
         absolute_events << [tick, 1, [0x90, note, 90]]
         absolute_events << [tick + duration, 0, [0x80, note, 0]]

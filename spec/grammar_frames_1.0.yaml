@@ -1,0 +1,29 @@
+profile: EZGRAM-1
+status: versioned_implementation_convention
+authority: User-directed translator completion goal, October 28, 2026
+provenance: New explicit grammar convention; not recovered from the original language source
+purpose: Sound grammatical scope without changing lexical roots or runtime endings
+frames:
+  negation_open:
+    relative_semitones: [0, -1, -1, 0]
+    note_duration_beats: 0.25
+  negation_close:
+    relative_semitones: [0, 1, 1, 0]
+    note_duration_beats: 0.25
+anchor: Utterance anchor, independent of the role registers inside the scope
+boundary_after_beats: 0.5
+rules:
+  - Opening and closing frames surround exactly the negated subtree
+  - Nested negation remains nested; no silent double-negation cancellation
+  - Markers are grammar events, not atoms, compounds, names or recognition checksums
+  - Runtime zero means inactive; it never substitutes for the negation frame
+  - Existing root melodies, runtime notes, and speech-act contours remain unchanged
+  - No carrier syllables are invented for grammar frames; mouth animation is neutral
+compatibility:
+  positive_output: Unchanged
+  negative_output: New scoped markers replace the previously indistinguishable positive performance
+  semantic_ir: Existing negation nodes retain their identities
+  consumers: Ruby and browser MIDI, SVG, browser sound and viseme schedules
+remaining:
+  - Musical conventions for tense, modality, quantifiers and other unsounded operators
+  - Independent listener recognition and broader end-to-end semantic decoding
