@@ -38,16 +38,18 @@ function participantIdentity(text){
   if(['You','you'].includes(text))return 'discourse:addressee';
   return 'name:'+text.replaceAll('"','').toLowerCase();
 }
-export function parseNamedSentence(input, depth=0) {
+export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
   if(depth>16)return null;
-  const explicitState=String(input).trim().match(/^(.*?)\s+\[([012])\][.]?$/);
+  const explicitState=String(input).trim().match(/^(.*?)\s+\[([012])\]([.!?]?)$/);
   if(explicitState){
-    const inner=parseNamedSentence(explicitState[1],depth+1);
+    const content=explicitState[1].trim(),punctuation=explicitState[3],existing=content.match(/[.!?]$/)?.[0];
+    if(existing&&punctuation&&existing!==punctuation)return null;
+    const inner=parseNamedSentence(content+(existing?'':punctuation),depth+1,speechActs);
     if(!inner||inner.runtimeState!==undefined)return null;
     return {...inner,runtimeState:Number(explicitState[2])};
   }
   const participant='(I|me|you|[Tt]he (?:radio|machine|pump|station|record|map|box|teacher|child|person|creature|robot|door|device|tool|book|sound|tree|house|car|room|table|ball|dog|cat|water|food)|(?!(?:She|He|It|They|We|Her|Him|Them|Us)\\b)[A-Z][a-z]+|"[A-Za-z]+(?:[ -][A-Za-z]+)*")';
-  if(depth===0){
+  if(speechActs){
     const commands=[['care for','cares for'],['restore','is restoring'],['repair','is repairing'],['awaken','is awakening'],['damage','is damaging'],['physically repair','is physically repairing'],['move toward','is moving toward'],['move away from','is moving away from'],['move relative to','is moving relative to'],['pay attention to','is paying attention to'],['revise a mental representation of','is revising a mental representation of']];
     for(const [verb,wording] of commands){
       const command=String(input).trim().match(new RegExp(`^(?:[Dd]o not )?${verb} ${participant}[.!]?$`,'i'));

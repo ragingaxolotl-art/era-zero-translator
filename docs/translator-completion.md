@@ -569,3 +569,10 @@ endings. Tests keep the REP:211 address unchanged while checking each explicit
 runtime code, distinct emitted music, and the difference between inactive and
 negated-active. The poetic never-finished-becoming interpretation remains confined
 to the approved love construction; other num endings do not inherit that gloss.
+
+Explicit runtime markers now preserve top-level question and command recognition.
+Both `Did Nora restore Eli [2]?` and `Did Nora restore Eli? [2]` retain the question
+contour and the selected ending. Compound commands place the ending on the external
+head only. Tests cover every runtime value for affirmative/negative commands and
+ongoing/completed questions. Conflicting punctuation, duplicate markers and nested
+commands inside modal propositions are rejected rather than silently reinterpreted.
