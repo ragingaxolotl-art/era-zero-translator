@@ -1,3 +1,4 @@
+const CONDITION_STATUSES=['open','satisfied','unsatisfied','counterfactual'];
 import {ROLE_ORDER} from './roles.mjs';
 const QUANTIFIERS=['exact','at_least','at_most','all','some','none'];
 const MEASUREMENT_UNITS=['1','second','minute','hour','day','meter','kilometer','gram','kilogram','degree','radian','bit','byte'];
@@ -17,7 +18,10 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
       throw new Error('Unsupported musical modality mode or confidence strength.');
   }
   validateTimeRelations(ir);
-  if (!ir.edges.some(edge=>edge.type==='fills_role') && !ir.nodes.some(node=>node.kind==='measurement') && !ir.edges.some(edge=>edge.type==='time_relation') && !ir.nodes.some(node => ['repetition','sequence','negation','modality','quantifier','all_of','any_of','exactly_one'].includes(node.operator))) return events;
+  for(const edge of ir.edges.filter(edge=>edge.type==='condition_of')){
+    if(!CONDITION_STATUSES.includes(edge.condition_status)||ir.nodes.find(n=>n.node_id===edge.from)?.kind!=='clause'||ir.nodes.find(n=>n.node_id===edge.to)?.kind!=='clause'||Object.keys(edge).some(key=>!['edge_id','type','from','to','condition_status'].includes(key)))throw new Error('Unsupported musical condition.');
+  }
+  if (!ir.edges.some(edge=>edge.type==='condition_of') && !ir.edges.some(edge=>edge.type==='fills_role') && !ir.nodes.some(node=>node.kind==='measurement') && !ir.edges.some(edge=>edge.type==='time_relation') && !ir.nodes.some(node => ['repetition','sequence','negation','modality','quantifier','all_of','any_of','exactly_one'].includes(node.operator))) return events;
   const nodes = new Map(ir.nodes.map(node => [node.node_id, node]));
   const incoming = new Map();
   for (const edge of ir.edges) {
@@ -54,6 +58,9 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
       result = walk(centers[0].from);
       const times=edges.filter(edge=>edge.type==='time_relation').sort((a,b)=>a.edge_id<b.edge_id?-1:a.edge_id>b.edge_id?1:0);
       for(const time of times.slice().reverse())result=[grammarMarker(formal,id,`${timeFrame(time,nodes)}_open`),...result,grammarMarker(formal,id,`${timeFrame(time,nodes)}_close`)];
+      const conditions=edges.filter(edge=>edge.type==='condition_of');
+      if(conditions.length>1)throw new Error('Unsupported musical multiple conditions; use explicit coordination.');
+      if(conditions.length){const condition=conditions[0];result=[grammarMarker(formal,id,`conditional_${condition.condition_status}_open`),...walk(condition.from),grammarMarker(formal,id,'conditional_then'),...result,grammarMarker(formal,id,`conditional_${condition.condition_status}_close`)];}
     } else if (node.kind === 'measurement') {
       result=measurementMarkers(formal,node);
     } else if (node.kind === 'coordination') {
@@ -143,6 +150,9 @@ function grammarMarker(formal,scopeId,marker){
     const digits=code.toString(3).padStart(3,'0').split('').map(trit=>[0,1,-1][Number(trit)]);
     relative=[0,role[2]==='open'?-15:15,...digits,0];
   }
+  const conditional=marker.match(/^conditional_(open|satisfied|unsatisfied|counterfactual)_(open|close)$/);
+  if(conditional)relative=[0,conditional[2]==='open'?-16:16,CONDITION_STATUSES.indexOf(conditional[1]),0];
+  if(marker==='conditional_then')relative=[0,16,0,16];
   const base=formal.performance.anchor_midi;
   return {kind:'grammar_marker',grammar_profile:'EZGRAM-1',marker,occurrence_id:scopeId,target_id:`EZGRAM:${marker}`,register:'middle',base_midi:base,
     family_qualified_transliteration:marker,formal_carrier:'',family_opening_relative_semitones:[],family_opening_absolute_midi:[],

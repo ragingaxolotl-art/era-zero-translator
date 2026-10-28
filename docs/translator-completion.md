@@ -664,3 +664,7 @@ role. Updated fixture hashes reflect restored meaning. Traversing arguments also
 exposed previously unsounded discourse variable/reference nodes; export now rejects
 those explicitly until they have a proper musical representation. Inline compound
 bindings, lexical valence and independent inverse decoding remain separate work.
+
+### Conditional musical scope
+
+Conditional IR now sounds the antecedent before the consequent inside an explicit frame. Open, satisfied, unsatisfied, and counterfactual conditions have distinct frames. Eight direction/status contrasts match browser and Ruby MIDI and SVG output. Unknown statuses, non-clause endpoints, and implicit multiple conditions fail explicitly. These are grammar conventions; existing root trits and runtime 0/1/2 endings are unchanged. Ordinary English conditional parsing and independent sound-to-meaning evaluation remain unfinished.

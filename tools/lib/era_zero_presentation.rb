@@ -8,6 +8,7 @@ module EraZeroPresentation
   MEASUREMENT_UNITS = %w[1 second minute hour day meter kilometer gram kilogram degree radian bit byte].freeze
   QUANTIFIERS = %w[exact at_least at_most all some none].freeze
   ROLE_ORDER = %w[actor source cause experiencer bearer predicate target result destination instrument material content recipient location environment condition persistent_condition time manner quantity comparison_standard beneficiary].freeze
+  CONDITION_STATUSES = %w[open satisfied unsatisfied counterfactual].freeze
   VERSION = "1.0.0"
   TICKS_PER_BEAT = 480
   TEMPO_MICROSECONDS = 500_000
@@ -94,7 +95,12 @@ module EraZeroPresentation
     time_edges = ir.fetch("edges").select { |edge| edge["type"] == "time_relation" }
     time_nodes = ir.fetch("nodes").to_h { |node| [node["node_id"], node] }
     time_edges.each { |edge| time_frame(edge, time_nodes) }
-    return events unless ir.fetch("edges").any? { |edge| edge["type"] == "fills_role" } || ir.fetch("nodes").any? { |node| node["kind"] == "measurement" } || !time_edges.empty? || ir.fetch("nodes").any? { |node| %w[repetition sequence negation modality quantifier all_of any_of exactly_one].include?(node["operator"]) }
+    ir.fetch("edges").select { |edge| edge["type"] == "condition_of" }.each do |edge|
+      unless CONDITION_STATUSES.include?(edge["condition_status"]) && time_nodes.dig(edge["from"], "kind") == "clause" && time_nodes.dig(edge["to"], "kind") == "clause" && (edge.keys - %w[edge_id type from to condition_status]).empty?
+        raise PresentationError, "unsupported musical condition"
+      end
+    end
+    return events unless ir.fetch("edges").any? { |edge| %w[fills_role condition_of].include?(edge["type"]) } || ir.fetch("nodes").any? { |node| node["kind"] == "measurement" } || !time_edges.empty? || ir.fetch("nodes").any? { |node| %w[repetition sequence negation modality quantifier all_of any_of exactly_one].include?(node["operator"]) }
     nodes = ir.fetch("nodes").to_h { |node| [node.fetch("node_id"), node] }
     incoming = ir.fetch("edges").group_by { |edge| edge.fetch("to") }
     by_occurrence = events.group_by { |event| event.fetch("occurrence_id") }
@@ -131,6 +137,12 @@ module EraZeroPresentation
                  phrase = walk.call(centers.first.fetch("from"))
                  edges.select { |edge| edge["type"] == "time_relation" }.sort_by { |edge| edge.fetch("edge_id") }.reverse_each do |edge|
                    phrase = [grammar_marker(formal, id, "#{time_frame(edge, nodes)}_open")] + phrase + [grammar_marker(formal, id, "#{time_frame(edge, nodes)}_close")]
+                 end
+                 conditions = edges.select { |edge| edge["type"] == "condition_of" }
+                 raise PresentationError, "unsupported musical multiple conditions; use explicit coordination" if conditions.length > 1
+                 unless conditions.empty?
+                   condition = conditions.first
+                   phrase = [grammar_marker(formal, id, "conditional_#{condition['condition_status']}_open")] + walk.call(condition.fetch("from")) + [grammar_marker(formal, id, "conditional_then")] + phrase + [grammar_marker(formal, id, "conditional_#{condition['condition_status']}_close")]
                  end
                  phrase
                when "measurement"
@@ -261,6 +273,9 @@ module EraZeroPresentation
       digits = code.to_s(3).rjust(3, '0').chars.map { |trit| [0, 1, -1][trit.to_i] }
       relative = [0, role[2] == "open" ? -15 : 15] + digits + [0]
     end
+    conditional = marker.match(/\Aconditional_(open|satisfied|unsatisfied|counterfactual)_(open|close)\z/)
+    relative = [0, conditional[2] == "open" ? -16 : 16, CONDITION_STATUSES.index(conditional[1]), 0] if conditional
+    relative = [0, 16, 0, 16] if marker == "conditional_then"
     base = formal.dig("performance", "anchor_midi")
     { "kind" => "grammar_marker", "grammar_profile" => "EZGRAM-1", "marker" => marker,
       "occurrence_id" => scope_id, "target_id" => "EZGRAM:#{marker}", "register" => "middle", "base_midi" => base,
