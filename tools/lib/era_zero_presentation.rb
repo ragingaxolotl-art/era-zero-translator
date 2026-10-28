@@ -10,6 +10,7 @@ module EraZeroPresentation
   ROLE_ORDER = %w[actor source cause experiencer bearer predicate target result destination instrument material content recipient location environment condition persistent_condition time manner quantity comparison_standard beneficiary].freeze
   CONDITION_STATUSES = %w[open satisfied unsatisfied counterfactual].freeze
   MEASURE_COMPARISONS = %w[greater_than less_than at_least at_most not_equal].freeze
+  PROPERTY_COMPARISONS = %w[equal greater_than less_than at_least at_most not_equal].freeze
   VERSION = "1.0.0"
   TICKS_PER_BEAT = 480
   TEMPO_MICROSECONDS = 500_000
@@ -103,8 +104,9 @@ module EraZeroPresentation
     events = frame_bound_arguments(formal, max_events)
     ir = formal.fetch("semantic_ir")
     ir.fetch("nodes").each do |node|
+      raise PresentationError, "unsupported musical property comparison" if node["kind"] == "scope_operator" && node["operator"] == "comparison" && !EraZeroSemanticValidation.valid_property_comparison?(node, ir)
       raise PresentationError, "unsupported musical discourse variable/reference" if %w[variable reference].include?(node["kind"])
-      if (node["kind"] == "scope_operator" && !%w[negation repetition modality quantifier].include?(node["operator"])) ||
+      if (node["kind"] == "scope_operator" && !%w[negation repetition modality quantifier comparison].include?(node["operator"])) ||
          (node["kind"] == "coordination" && !%w[sequence all_of any_of exactly_one].include?(node["operator"]))
         raise PresentationError, "unsupported musical operator: #{node['operator']}"
       end
@@ -136,14 +138,17 @@ module EraZeroPresentation
       edges = incoming.fetch(id, [])
       result = case node["kind"]
                when "scope_operator"
-                 unless %w[negation modality quantifier].include?(node["operator"]) || (node["operator"] == "repetition" && node["mode"] == "count" && node["count"].is_a?(Integer) && node["count"].positive?)
+                 unless %w[negation modality quantifier comparison].include?(node["operator"]) || (node["operator"] == "repetition" && node["mode"] == "count" && node["count"].is_a?(Integer) && node["count"].positive?)
                    raise PresentationError, "counted repetition export requires a positive count and supported nested scopes"
                  end
                  scoped = edges.select { |edge| edge["type"] == "scopes" }
                  raise PresentationError, "repetition must have exactly one scope" unless scoped.length == 1
                  phrase = walk.call(scoped.first.fetch("from"))
                  raise PresentationError, "repetition scope has no sound events" if phrase.empty?
-                 if node["operator"] == "negation"
+                 if node["operator"] == "comparison"
+                   raise PresentationError, "unsupported musical property comparison" unless EraZeroSemanticValidation.valid_property_comparison?(node, ir)
+                   [grammar_marker(formal, id, "property_mass_#{node['relation']}_open")] + phrase + [grammar_marker(formal, id, "property_mass_#{node['relation']}_close")]
+                 elsif node["operator"] == "negation"
                    [grammar_marker(formal, id, "negation_open")] + phrase + [grammar_marker(formal, id, "negation_close")]
                  elsif node["operator"] == "quantifier"
                    quantifier_markers(formal, node) + phrase + [grammar_marker(formal, id, "quantifier_#{node['quantifier']}_close")]
@@ -283,6 +288,8 @@ module EraZeroPresentation
       sign = day[2] == "open" ? -1 : 1
       relative = [0, 12 * sign, code, 12 * sign, 0]
     end
+    property = marker.match(/\Aproperty_mass_(equal|greater_than|less_than|at_least|at_most|not_equal)_(open|close)\z/)
+    relative = [0, property[2] == "open" ? -18 : 18, 1, PROPERTY_COMPARISONS.index(property[1]), 0] if property
     comparison = marker.match(/\Ameasure_compare_(greater_than|less_than|at_least|at_most|not_equal)_(open|close)\z/)
     relative = [0, comparison[2] == "open" ? -17 : 17, MEASURE_COMPARISONS.index(comparison[1]) + 1, 0] if comparison
     relative = [0, -13, -1, 0] if marker == "measurement_open"

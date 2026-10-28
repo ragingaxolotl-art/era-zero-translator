@@ -696,3 +696,7 @@ The audited phrase “If the radio is damaged, repair it” now composes with WR
 ### Scalar measurement comparison
 
 The additive measurement comparison profile distinguishes greater-than, less-than, inclusive lower/upper bounds and inequality from exact measurement. Its operand direction is explicit: the bearer's measured quantity is compared with the supplied magnitude/unit. Musical frames preserve the operator around the reference measurement. English mass statements use this extension and retain exact unit normalization. Six comparisons match Ruby/browser formal output and MIDI and have distinct sounds; unsupported comparison names fail shared validation and browser scheduling. Root definitions and runtime meanings are unchanged. Entity-to-entity comparison and context-dependent adjectives remain unfinished.
+
+### Mass comparison between two entities
+
+“The box has more mass than the radio” now binds the box as bearer and the radio as comparison standard under an explicit mass-comparison operator. Six relations have distinct frames; twelve direction/relation examples match Ruby/browser formal output and MIDI. Modal wrappers and runtime endings remain separate. The profile rejects unsupported dimensions, quantified operands and malformed role attachments. No numeric mass is inferred, and no root meaning changes. General property comparison, contextual heavy/light interpretation, and normalization of logically equivalent operand-swapped comparisons remain unfinished.

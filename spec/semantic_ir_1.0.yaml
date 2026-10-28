@@ -132,7 +132,9 @@ node_types:
     - quantifier
     - aspect
     - repetition
+    - comparison
     rule: Every operator has exactly one scopes edge.
+    comparison_profile: spec/property_comparison_1.0.yaml
   coordination:
     required:
     - node_id

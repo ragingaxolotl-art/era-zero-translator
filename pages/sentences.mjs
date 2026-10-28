@@ -147,6 +147,14 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
       participants:[{label:label(transfer[3]),text:transfer[3],role:'source'},{label:label(transfer[1]),text:transfer[1],role:'content'},{label:label(transfer[4]),text:transfer[4],role:'target'}],
       explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
+  const massPair=String(input).trim().match(new RegExp(`^${participant} (?:has|have) (more mass than|greater mass than|less mass than|the same mass as|at least as much mass as|at most as much mass as|a different mass from) ${participant}[.]?$`));
+  if(massPair){
+    if([massPair[1],massPair[3]].some(text=>parseNominal(text)?.quantifier))return null;
+    const relation=({'more mass than':'greater_than','greater mass than':'greater_than','less mass than':'less_than','the same mass as':'equal','at least as much mass as':'at_least','at most as much mass as':'at_most','a different mass from':'not_equal'})[massPair[2]];
+    return {actor:massPair[1].replaceAll('"',''),actorText:massPair[1],target:massPair[3].replaceAll('"',''),targetText:massPair[3],role:'bearer',targetRole:'comparison_standard',predicate:massPair[1]==='I'?'MAT:000':'MAT:010',
+      key:'mass_pair_comparison',construction:'mass_pair_comparison',scopes:[{operator:'comparison',dimension:'mass',relation}],
+      semanticNote:'Compares the first bearer’s physical mass with the second bearer’s mass. No numeric value, weight force, perceived burden, or contextual heavy/light threshold is asserted.'};
+  }
   const mass=String(input).trim().match(new RegExp(`^${participant} (has|have) a mass (?:of )?(?:(more than|greater than|less than|at least|at most|not exactly|exactly) )?([0-9]+(?:\\.[0-9]+)?) (grams?|kilograms?)[.]?$`));
   if(mass){
     const nominal=parseNominal(mass[1]);

@@ -9,6 +9,16 @@ require_relative "era_zero_compound_expansion"
 # Shared semantic validation for fixtures and sentence composition.
 module EraZeroSemanticValidation
   module_function
+  def valid_property_comparison?(node, ir)
+    return false unless node["dimension"] == "mass" && %w[equal greater_than less_than at_least at_most not_equal].include?(node["relation"]) && (node.keys - %w[node_id kind operator dimension relation]).empty?
+    scopes = ir.fetch("edges").select { |e| e["type"] == "scopes" && e["to"] == node["node_id"] }
+    return false unless scopes.length == 1
+    predicate = ir.fetch("nodes").find { |n| n["node_id"] == scopes[0]["from"] }
+    return false unless predicate && predicate["kind"] == "lexical_occurrence" && predicate["target_type"] == "atom" && %w[MAT:000 MAT:010].include?(predicate["target_id"])
+    roles = ir.fetch("edges").select { |e| e["type"] == "fills_role" && e["to"] == predicate["node_id"] }
+    roles.map { |e| e["role"] }.sort == %w[bearer comparison_standard] && roles.all? { |e| ir.fetch("nodes").any? { |n| n["node_id"] == e["from"] && %w[phonemic_reference deictic_reference].include?(n["kind"]) && n["reference_mode"] != "nominal_class" } }
+  end
+
   def reaches?(start, root, graph, seen = Set.new)
     return true if start == root
     return false if seen.include?(start)
@@ -128,6 +138,9 @@ module EraZeroSemanticValidation
     binding_edges.each { |from, to| errors << "cyclic_compound_bindings" if reaches?(to, from, binding_graph) }
     nodes.select { |n| n["kind"] == "scope_operator" }.each do |n|
       errors << "unknown_scope_operator" unless spec.dig("node_types", "scope_operator", "operators").include?(n["operator"])
+    end
+    nodes.select { |n| n["kind"] == "scope_operator" && n["operator"] == "comparison" }.each do |n|
+      errors << "invalid_property_comparison" unless valid_property_comparison?(n, ir)
     end
     edges.each do |e|
       errors << "unknown_edge_type" unless edge_types.include?(e["type"])
