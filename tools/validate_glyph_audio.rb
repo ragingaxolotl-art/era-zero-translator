@@ -28,7 +28,7 @@ matrix_ok = ir_cases.all? do |item|
           EraZeroPresentation.send(method, formal)
           false
         rescue EraZeroPresentation::PresentationError => error
-          error.message.include?("unsupported musical operator")
+          error.message.include?("unsupported musical")
         end
       end
     end

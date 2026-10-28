@@ -22,7 +22,7 @@ commands = [['ruby', path] for path in [
 ]] + [[args.node, path] for path in [
     'tests/repetition_browser_test.mjs', 'tests/name_participants_test.mjs',
     'tests/named_sentence_test.mjs', 'tests/sentence_sequence_test.mjs',
-    'tests/negation_performance_test.mjs', 'tests/unsupported_musical_scope_test.mjs',
+    'tests/negation_performance_test.mjs', 'tests/modality_performance_test.mjs', 'tests/unsupported_musical_scope_test.mjs',
     'tools/validate_pages_release.mjs',
     'tools/validate_viseme_performance.mjs',
 ]]

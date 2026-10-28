@@ -10,10 +10,54 @@ frames:
   negation_close:
     relative_semitones: [0, 1, 1, 0]
     note_duration_beats: 0.25
+  modality_possible_open:
+    relative_semitones: [0, -2, -2, 0]
+    note_duration_beats: 0.25
+  modality_possible_close:
+    relative_semitones: [0, 2, 2, 0]
+    note_duration_beats: 0.25
+  modality_necessary_open:
+    relative_semitones: [0, -3, -3, 0]
+    note_duration_beats: 0.25
+  modality_necessary_close:
+    relative_semitones: [0, 3, 3, 0]
+    note_duration_beats: 0.25
+  modality_permitted_open:
+    relative_semitones: [0, -4, -4, 0]
+    note_duration_beats: 0.25
+  modality_permitted_close:
+    relative_semitones: [0, 4, 4, 0]
+    note_duration_beats: 0.25
+  modality_obligated_open:
+    relative_semitones: [0, -5, -5, 0]
+    note_duration_beats: 0.25
+  modality_obligated_close:
+    relative_semitones: [0, 5, 5, 0]
+    note_duration_beats: 0.25
+  modality_intended_open:
+    relative_semitones: [0, -6, -6, 0]
+    note_duration_beats: 0.25
+  modality_intended_close:
+    relative_semitones: [0, 6, 6, 0]
+    note_duration_beats: 0.25
+  modality_predicted_open:
+    relative_semitones: [0, -7, -7, 0]
+    note_duration_beats: 0.25
+  modality_predicted_close:
+    relative_semitones: [0, 7, 7, 0]
+    note_duration_beats: 0.25
+  modality_counterfactual_open:
+    relative_semitones: [0, -8, -8, 0]
+    note_duration_beats: 0.25
+  modality_counterfactual_close:
+    relative_semitones: [0, 8, 8, 0]
+    note_duration_beats: 0.25
 anchor: Utterance anchor, independent of the role registers inside the scope
 boundary_after_beats: 0.5
 rules:
   - Opening and closing frames surround exactly the negated subtree
+  - Modal frames surround exactly their scoped subtree and do not change runtime state
+  - Numeric modal confidence is rejected until it has an explicit musical encoding
   - Nested negation remains nested; no silent double-negation cancellation
   - Markers are grammar events, not atoms, compounds, names or recognition checksums
   - Runtime zero means inactive; it never substitutes for the negation frame
@@ -25,5 +69,5 @@ compatibility:
   semantic_ir: Existing negation nodes retain their identities
   consumers: Ruby and browser MIDI, SVG, browser sound and viseme schedules
 remaining:
-  - Musical conventions for tense, modality, quantifiers and other unsounded operators
+  - Musical conventions for tense, numeric modal confidence, quantifiers and other unsounded operators
   - Independent listener recognition and broader end-to-end semantic decoding

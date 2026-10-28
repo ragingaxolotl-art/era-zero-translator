@@ -222,8 +222,7 @@ prove these remaining meanings are sounded.
 
 ### Unsupported musical scope is explicit
 
-Browser and Ruby presentation now refuse unsupported scope operators (modality,
-quantifier, aspect) and coordination (all-of, any-of, exactly-one, parallel), even
+Browser and Ruby presentation now refuse unsupported scope operators (quantifier, aspect, and modality with numeric confidence) and coordination (all-of, any-of, exactly-one, parallel), even
 when no supported operator appears alongside them. Previously the scheduler's
 fast path returned lexical notes unchanged, silently losing these meanings.
 This is an interim fidelity correction, not implementation of those operators.
@@ -231,3 +230,16 @@ The historical possible-clause, exact-quantity, and parallel presentation hashes
 remain recorded but are no longer accepted output; regression checks require an
 explicit refusal for these cases. Their eventual musical implementations must
 replace refusal with semantic-contrast tests and a documented sound convention.
+
+
+### Scoped modal music
+
+The versioned EZGRAM-1 implementation convention now defines distinct opening and
+closing frames for possible, necessary, permitted, obligated, intended, predicted,
+and counterfactual modality. These frame the scoped subtree at the utterance
+anchor and preserve lexical runtime, role registers, and speech-act contour.
+This is a new explicit convention under the completion goal, not a recovered
+historical rule. Ruby and browser MIDI/SVG agree for all seven modes. Numeric
+confidence remains explicitly unsupported, including the historical possible
+fixture with strength 0.7. Ordinary-English modal parsing and listener decoding
+remain unfinished; this change supplies the musical representation they need.

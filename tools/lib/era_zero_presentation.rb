@@ -77,12 +77,17 @@ module EraZeroPresentation
     events = formal.dig("performance", "lexical_events")
     ir = formal.fetch("semantic_ir")
     ir.fetch("nodes").each do |node|
-      if (node["kind"] == "scope_operator" && !%w[negation repetition].include?(node["operator"])) ||
+      if (node["kind"] == "scope_operator" && !%w[negation repetition modality].include?(node["operator"])) ||
          (node["kind"] == "coordination" && node["operator"] != "sequence")
         raise PresentationError, "unsupported musical operator: #{node['operator']}"
       end
     end
-    return events unless ir.fetch("nodes").any? { |node| %w[repetition sequence negation].include?(node["operator"]) }
+    ir.fetch("nodes").select { |node| node["operator"] == "modality" }.each do |node|
+      unless %w[possible necessary permitted obligated intended predicted counterfactual].include?(node["mode"]) && !node.key?("strength")
+        raise PresentationError, "unsupported musical modality mode or confidence strength"
+      end
+    end
+    return events unless ir.fetch("nodes").any? { |node| %w[repetition sequence negation modality].include?(node["operator"]) }
     nodes = ir.fetch("nodes").to_h { |node| [node.fetch("node_id"), node] }
     incoming = ir.fetch("edges").group_by { |edge| edge.fetch("to") }
     by_occurrence = events.group_by { |event| event.fetch("occurrence_id") }
@@ -96,7 +101,7 @@ module EraZeroPresentation
       edges = incoming.fetch(id, [])
       result = case node["kind"]
                when "scope_operator"
-                 unless node["operator"] == "negation" || (node["operator"] == "repetition" && node["mode"] == "count" && node["count"].is_a?(Integer) && node["count"].positive?)
+                 unless %w[negation modality].include?(node["operator"]) || (node["operator"] == "repetition" && node["mode"] == "count" && node["count"].is_a?(Integer) && node["count"].positive?)
                    raise PresentationError, "counted repetition export requires a positive count and supported nested scopes"
                  end
                  scoped = edges.select { |edge| edge["type"] == "scopes" }
@@ -105,6 +110,8 @@ module EraZeroPresentation
                  raise PresentationError, "repetition scope has no sound events" if phrase.empty?
                  if node["operator"] == "negation"
                    [grammar_marker(formal, id, "negation_open")] + phrase + [grammar_marker(formal, id, "negation_close")]
+                 elsif node["operator"] == "modality"
+                   [grammar_marker(formal, id, "modality_#{node.fetch('mode')}_open")] + phrase + [grammar_marker(formal, id, "modality_#{node.fetch('mode')}_close")]
                  else
                    raise PresentationError, "repetition exceeds event limit #{max_events}" if phrase.length * node["count"] > max_events
                    phrase * node["count"]
@@ -146,6 +153,11 @@ module EraZeroPresentation
 
   def grammar_marker(formal, scope_id, marker)
     relative = marker == "negation_open" ? [0, -1, -1, 0] : [0, 1, 1, 0]
+    if (modal = marker.match(/\Amodality_(.+)_(open|close)\z/))
+      distance = %w[possible necessary permitted obligated intended predicted counterfactual].index(modal[1]) + 2
+      note = modal[2] == "open" ? -distance : distance
+      relative = [0, note, note, 0]
+    end
     base = formal.dig("performance", "anchor_midi")
     { "kind" => "grammar_marker", "grammar_profile" => "EZGRAM-1", "marker" => marker,
       "occurrence_id" => scope_id, "target_id" => "EZGRAM:#{marker}", "register" => "middle", "base_midi" => base,

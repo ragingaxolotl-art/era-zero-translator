@@ -11,7 +11,7 @@ for(const [kind,operator] of cases){
   Object.assign(node,{kind,operator});
   // No supported operator remains to activate the old scheduling path.
   for(const render of [scheduledLexicalEvents,midiFromFormal,svgFromFormal])
-    assert.throws(()=>render(formal),/Unsupported musical operator/,operator);
+    assert.throws(()=>render(formal),/Unsupported musical/,operator);
   const ruby=execFileSync('ruby',['-Itools/lib','-rera_zero_presentation','-e',`
 ir=JSON.parse(STDIN.read).fetch('semantic_ir')
 digest=EraZeroRenderer.semantic_digest(ir)
@@ -23,7 +23,7 @@ f=EraZeroRenderer.render(ir)
     EraZeroPresentation.send(method,f)
     abort 'silently rendered unsupported operator'
   rescue EraZeroPresentation::PresentationError => e
-    abort e.message unless e.message.include?('unsupported musical operator')
+    abort e.message unless e.message.include?('unsupported musical')
   end
 end
 puts 'rejected'

@@ -6,25 +6,25 @@
       "test": "tests/compound_dependencies_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 21790\n\n# Running:\n\n......\n\nFinished in 0.008243s, 727.8903 runs/s, 1819.7258 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 50814\n\n# Running:\n\n......\n\nFinished in 0.008316s, 721.5007 runs/s, 1803.7518 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_expansion_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 3653\n\n# Running:\n\n..........\n\nFinished in 0.124622s, 80.2427 runs/s, 850.5721 assertions/s.\n\n10 runs, 106 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 51004\n\n# Running:\n\n..........\n\nFinished in 0.121891s, 82.0405 runs/s, 869.6294 assertions/s.\n\n10 runs, 106 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/foundation_process_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 26533\n\n# Running:\n\n...\n\nFinished in 0.277805s, 10.7989 runs/s, 100.7901 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 2746\n\n# Running:\n\n...\n\nFinished in 0.289944s, 10.3468 runs/s, 96.5704 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/repetition_performance_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 61676\n\n# Running:\n\n...\n\nFinished in 0.333180s, 9.0041 runs/s, 24.0110 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 38183\n\n# Running:\n\n...\n\nFinished in 0.348310s, 8.6130 runs/s, 22.9680 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_gate4b_compound_dictionary.rb",
@@ -79,6 +79,12 @@
       "passed": true,
       "exit_code": 0,
       "output": "Negation: positive/negative/inactive distinction, grammar framing, marker durations and Ruby/browser parity pass.\n"
+    },
+    {
+      "test": "tests/modality_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Modality: seven distinct scoped modes preserve runtime and match Ruby/browser MIDI/SVG; unsounded confidence is rejected.\n"
     },
     {
       "test": "tests/unsupported_musical_scope_test.mjs",

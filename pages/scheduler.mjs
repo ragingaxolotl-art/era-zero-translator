@@ -1,13 +1,18 @@
+const MODAL_MODES = ['possible','necessary','permitted','obligated','intended','predicted','counterfactual'];
 // Counted-scope scheduling shared by browser sound, notation and MIDI export.
 export function scheduledLexicalEvents(formal, maxEvents = 100000) {
   const events = formal.performance.lexical_events;
   const ir = formal.semantic_ir;
   for (const node of ir.nodes) {
-    if ((node.kind === 'scope_operator' && !['negation','repetition'].includes(node.operator)) ||
+    if ((node.kind === 'scope_operator' && !['negation','repetition','modality'].includes(node.operator)) ||
         (node.kind === 'coordination' && node.operator !== 'sequence'))
       throw new Error(`Unsupported musical operator: ${node.operator}.`);
   }
-  if (!ir.nodes.some(node => ['repetition','sequence','negation'].includes(node.operator))) return events;
+  for (const node of ir.nodes.filter(node=>node.operator==='modality')) {
+    if (!MODAL_MODES.includes(node.mode) || node.strength !== undefined)
+      throw new Error('Unsupported musical modality mode or confidence strength.');
+  }
+  if (!ir.nodes.some(node => ['repetition','sequence','negation','modality'].includes(node.operator))) return events;
   const nodes = new Map(ir.nodes.map(node => [node.node_id, node]));
   const incoming = new Map();
   for (const edge of ir.edges) {
@@ -24,13 +29,14 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
     const edges = incoming.get(id) || [];
     let result;
     if (node.kind === 'scope_operator') {
-      if (node.operator !== 'negation' && (node.operator !== 'repetition' || node.mode !== 'count' || !Number.isSafeInteger(node.count) || node.count < 1))
+      if (!['negation','modality'].includes(node.operator) && (node.operator !== 'repetition' || node.mode !== 'count' || !Number.isSafeInteger(node.count) || node.count < 1))
         throw new Error('Counted repetition requires a positive count and supported nested scopes.');
       const scoped = edges.filter(edge => edge.type === 'scopes');
       if (scoped.length !== 1) throw new Error('Repetition must have exactly one scope.');
       const phrase = walk(scoped[0].from);
       if (!phrase.length) throw new Error('Repetition scope has no sound events.');
       if(node.operator==='negation')result=[grammarMarker(formal,id,'negation_open'),...phrase,grammarMarker(formal,id,'negation_close')];
+      else if(node.operator==='modality')result=[grammarMarker(formal,id,`modality_${node.mode}_open`),...phrase,grammarMarker(formal,id,`modality_${node.mode}_close`)];
       else{
         if (phrase.length * node.count > maxEvents) throw new Error(`Repetition exceeds event limit ${maxEvents}.`);
         result = [];
@@ -62,7 +68,9 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
 }
 
 function grammarMarker(formal,scopeId,marker){
-  const relative=marker==='negation_open'?[0,-1,-1,0]:[0,1,1,0],base=formal.performance.anchor_midi;
+  const modal=marker.match(/^modality_(.+)_(open|close)$/);
+  const distance=modal?MODAL_MODES.indexOf(modal[1])+2:0;
+  const relative=modal?[0,modal[2]==='open'?-distance:distance,modal[2]==='open'?-distance:distance,0]:(marker==='negation_open'?[0,-1,-1,0]:[0,1,1,0]),base=formal.performance.anchor_midi;
   return {kind:'grammar_marker',grammar_profile:'EZGRAM-1',marker,occurrence_id:scopeId,target_id:`EZGRAM:${marker}`,register:'middle',base_midi:base,
     family_qualified_transliteration:marker,formal_carrier:'',family_opening_relative_semitones:[],family_opening_absolute_midi:[],
     address_relative_semitones:relative,address_absolute_midi:relative.map(note=>base+note),note_duration_beats:.25,boundary_after_beats:.5};
