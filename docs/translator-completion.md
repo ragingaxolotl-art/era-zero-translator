@@ -292,3 +292,13 @@ composition remain available. Tests reverse source/target and compare complete
 Ruby/browser formal output and MIDI distinctions. This does not assert message
 understanding, communicative intent, successful completion, or a physical transfer.
 Existing unary/binary participant and edge IDs are retained.
+
+### Shared participant validation
+
+Semantic IR fixture validation is now a callable shared module. The schema accepts
+phonemic_reference nodes, validates their EZNAME encoding and name identity,
+requires an explicit entity referent, and forbids lexical runtime on names. Every
+composed-sentence regression validates its IR before renderer comparison. Adversarial
+checks cover forged identities, unknown phonemes, missing referents, disconnected
+names, and malformed containers. This is not yet general validation of compound
+bindings, and runtime renderer enforcement remains pending that integration.

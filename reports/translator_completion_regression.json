@@ -6,25 +6,37 @@
       "test": "tests/compound_dependencies_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 57925\n\n# Running:\n\n......\n\nFinished in 0.008258s, 726.5682 runs/s, 1816.4204 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 15703\n\n# Running:\n\n......\n\nFinished in 0.008841s, 678.6563 runs/s, 1696.6406 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_expansion_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 52496\n\n# Running:\n\n..........\n\nFinished in 0.122322s, 81.7514 runs/s, 866.5653 assertions/s.\n\n10 runs, 106 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 43645\n\n# Running:\n\n..........\n\nFinished in 0.128093s, 78.0683 runs/s, 827.5238 assertions/s.\n\n10 runs, 106 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/semantic_reference_validation_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 12985\n\n# Running:\n\n.....\n\nFinished in 0.563183s, 8.8781 runs/s, 26.6343 assertions/s.\n\n5 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tools/validate_semantic_ir_and_grammar.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Semantic IR validation: PASS\nChecks passed: 14; checks failed: 0; valid: 16; invalid: 13\n"
     },
     {
       "test": "tests/foundation_process_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 35003\n\n# Running:\n\n...\n\nFinished in 0.288435s, 10.4010 runs/s, 97.0756 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 160\n\n# Running:\n\n...\n\nFinished in 0.279398s, 10.7374 runs/s, 100.2155 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/repetition_performance_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 5760\n\n# Running:\n\n...\n\nFinished in 0.332114s, 9.0330 runs/s, 24.0881 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 1305\n\n# Running:\n\n...\n\nFinished in 0.333400s, 8.9982 runs/s, 23.9952 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_gate4b_compound_dictionary.rb",

@@ -5,6 +5,7 @@ require "yaml"
 require "json"
 require "digest"
 require "set"
+require_relative "lib/era_zero_semantic_validation"
 require_relative "../tools/lib/era_zero_validation"
 
 include EraZeroValidation
@@ -22,70 +23,7 @@ forbidden = schema.fetch("forbidden_semantic_fields").to_set
 units = spec.dig("quantity_and_measurement", "units").values.flatten.to_set
 checks = EraZeroValidation::CheckSet.new
 
-def reaches?(start, root, graph, seen = Set.new)
-  return true if start == root
-  return false if seen.include?(start)
-  graph.fetch(start, []).any? { |n| reaches?(n, root, graph, seen | [start]) }
-end
-
-validate = lambda do |ir|
-  errors = []
-  nodes = ir["nodes"].is_a?(Array) ? ir["nodes"] : []
-  edges = ir["edges"].is_a?(Array) ? ir["edges"] : []
-  ids = nodes.map { |n| n["node_id"] }
-  root = ir["root_clause"]
-  map = nodes.to_h { |n| [n["node_id"], n] }
-  errors << "missing_required_field" unless schema["required_document_fields"].all? { |f| ir.key?(f) }
-  errors << "invalid_root_clause" unless map[root] && map[root]["kind"] == "clause"
-  errors << "duplicate_node" unless ids.uniq.length == ids.length
-  errors << "duplicate_edge" unless edges.map { |e| e["edge_id"] }.uniq.length == edges.length
-  nodes.each do |n|
-    errors << "unknown_node_kind" unless node_kinds.include?(n["kind"])
-    errors << "forbidden_surface_field" unless (n.keys.to_set & forbidden).empty?
-    if n["kind"] == "lexical_occurrence"
-      valid_target = n["target_type"] == "atom" ? atom_ids.include?(n["target_id"]) : n["target_type"] == "compound" && compound_ids.include?(n["target_id"])
-      errors << "unknown_target" unless valid_target
-      state = n["runtime_state"] || {}
-      errors << "invalid_runtime_state" unless [0, 1, 2].include?(state["code"])
-      errors << "invalid_runtime_parameter" if state.key?("num")
-    elsif n["kind"] == "measurement"
-      errors << "invalid_unit" unless units.include?(n["unit"])
-      errors << "invalid_quantity" unless n["magnitude"].to_s.match?(/\A-?(?:0|[1-9]\d*)(?:\.\d+)?\z/)
-    elsif n["kind"] == "reference"
-      declared = Array(ir.dig("discourse_constraints", "declared_referents"))
-      errors << "unresolved_reference" unless declared.include?(n["referent_id"])
-    end
-  end
-  edges.each do |e|
-    errors << "unknown_edge_type" unless edge_types.include?(e["type"])
-    errors << "edge_endpoint_missing" unless map.key?(e["from"]) && map.key?(e["to"])
-    errors << "unknown_role" if e["type"] == "fills_role" && !roles.include?(e["role"])
-  end
-  nodes.select { |n| n["kind"] == "clause" }.each do |n|
-    errors << "clause_center_cardinality" unless edges.count { |e| e["type"] == "centers" && e["to"] == n["node_id"] } == 1
-    if n["clause_type"] == "transition"
-      errors << "invalid_transition" unless edges.count { |e| e["type"] == "before_state" && e["to"] == n["node_id"] } == 1 && edges.count { |e| e["type"] == "after_state" && e["to"] == n["node_id"] } == 1
-    end
-  end
-  nodes.select { |n| n["kind"] == "scope_operator" }.each { |n| errors << "scope_cardinality" unless edges.count { |e| e["type"] == "scopes" && e["to"] == n["node_id"] } == 1 }
-  nodes.select { |n| n["kind"] == "coordination" }.each do |n|
-    members = edges.select { |e| e["type"] == "member_of" && e["to"] == n["node_id"] }
-    bad = members.length < 2
-    if n["operator"] == "sequence"
-      bad ||= members.map { |e| e["order"] }.sort != (1..members.length).to_a
-    elsif n["operator"] == "parallel"
-      bad ||= members.any? { |e| e.key?("order") }
-    end
-    errors << "invalid_coordination" if bad
-  end
-  graph = ids.to_h { |id| [id, []] }
-  edges.each { |e| graph[e["from"]] << e["to"] if graph.key?(e["from"]) && graph.key?(e["to"]) }
-  errors << "disconnected_node" unless map[root] && ids.all? { |id| reaches?(id, root, graph) }
-  payload = ir.slice("ir_version", "root_clause", "speech_act", "nodes", "edges", "discourse_constraints")
-  digest = Digest::SHA256.hexdigest(JSON.generate(EraZeroValidation.deep_sort(payload)))
-  errors << "invalid_identity" unless ir["utterance_id"] == "UTT:#{digest[0, 24]}" && ir.dig("serialization", "content_digest") == digest
-  errors.uniq
-end
+validate = ->(ir) { EraZeroSemanticValidation.validate(ir) }
 
 valid_results = cases.fetch("valid_cases").to_h { |c| [c["case_id"], validate.call(c["ir"])] }
 invalid_results = cases.fetch("invalid_cases").to_h { |c| [c["case_id"], validate.call(c["ir"])] }
@@ -115,7 +53,7 @@ checks.add("authority integration", "semantic IR remains canonical after orderly
   version["semantic_ir_status"] == "canonical" && migration["next_gate"] == "deterministic_renderer_and_decoder" && gate["status"] == "complete" && downstream_ok && translator_progress_ok
 end)
 
-report = checks.markdown(title: "Semantic IR and Executable Grammar Validation", pass_status: "PASS — SEMANTIC IR CANONICAL; RENDERER/DECODER MAY BEGIN", summary: ["IR version: **#{spec.dig('metadata', 'ir_version')}**", "Valid cases: **#{valid_results.length}**", "Invalid cases: **#{invalid_results.length}**", "Canonical atoms preserved: **#{atom_ids.length}**", "Canonical compounds preserved: **#{compound_ids.length}**", "Translator authorized: **no**"])
+report = checks.markdown(title: "Semantic IR and Executable Grammar Validation", pass_status: "PASS — BOUNDED SEMANTIC IR REGRESSION", summary: ["IR version: **#{spec.dig('metadata', 'ir_version')}**", "Valid cases: **#{valid_results.length}**", "Invalid cases: **#{invalid_results.length}**", "Canonical atoms preserved: **#{atom_ids.length}**", "Canonical compounds preserved: **#{compound_ids.length}**", "This fixture suite does not establish full translator completion."])
 unless valid_results.values.all?(&:empty?)
   report << "\n## Unexpected valid-case failures\n\n"
   valid_results.each { |id, errors| report << "- `#{id}`: #{errors.join(', ')}\n" unless errors.empty? }

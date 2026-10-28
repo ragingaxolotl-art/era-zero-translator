@@ -16,6 +16,7 @@ if not args.node:
 
 commands = [['ruby', path] for path in [
     'tests/compound_dependencies_test.rb', 'tests/compound_expansion_test.rb',
+    'tests/semantic_reference_validation_test.rb', 'tools/validate_semantic_ir_and_grammar.rb',
     'tests/foundation_process_test.rb', 'tests/repetition_performance_test.rb',
     'tools/validate_gate4b_compound_dictionary.rb', 'tools/validate_gate4c_english_sense_index.rb',
     'tools/validate_renderer_decoder.rb', 'tools/validate_glyph_audio.rb',
