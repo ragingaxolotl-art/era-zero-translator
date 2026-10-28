@@ -72,6 +72,8 @@ module EraZeroSemanticValidation
         rescue EraZeroNames::NameError
           errors << "invalid_phonemic_name"
         end
+      elsif n["kind"] == "time_anchor"
+        errors << "invalid_time_anchor" unless spec.dig("node_types", "time_anchor", "anchor_types").include?(n["anchor_type"])
       elsif n["kind"] == "measurement"
         errors << "invalid_unit" unless units.include?(n["unit"])
         errors << "invalid_quantity" unless n["magnitude"].to_s.match?(/\A-?(?:0|[1-9]\d*)(?:\.\d+)?\z/)
@@ -115,6 +117,9 @@ module EraZeroSemanticValidation
     edges.each do |e|
       errors << "unknown_edge_type" unless edge_types.include?(e["type"])
       errors << "edge_endpoint_missing" unless map.key?(e["from"]) && map.key?(e["to"])
+      if e["type"] == "time_relation"
+        errors << "invalid_time_relation" unless map.dig(e["from"], "kind") == "time_anchor" && map.dig(e["to"], "kind") == "clause" && spec.dig("time_and_aspect", "relations").include?(e["relation"])
+      end
       errors << "unknown_role" if e["type"] == "fills_role" && !roles.include?(e["role"])
     end
     nodes.select { |n| n["kind"] == "clause" }.each do |n|

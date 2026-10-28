@@ -87,7 +87,15 @@ module EraZeroPresentation
         raise PresentationError, "unsupported musical modality mode or confidence strength"
       end
     end
-    return events unless ir.fetch("nodes").any? { |node| %w[repetition sequence negation modality all_of any_of exactly_one].include?(node["operator"]) }
+    time_edges = ir.fetch("edges").select { |edge| edge["type"] == "time_relation" }
+    time_nodes = ir.fetch("nodes").to_h { |node| [node["node_id"], node] }
+    time_edges.each do |edge|
+      anchor = time_nodes[edge["from"]]; clause = time_nodes[edge["to"]]
+      unless anchor && anchor["kind"] == "time_anchor" && anchor["anchor_type"] == "speech_time" && (anchor.keys - %w[node_id kind anchor_type]).empty? && clause && clause["kind"] == "clause" && %w[before at after].include?(edge["relation"])
+        raise PresentationError, "unsupported musical time relation or anchor"
+      end
+    end
+    return events unless !time_edges.empty? || ir.fetch("nodes").any? { |node| %w[repetition sequence negation modality all_of any_of exactly_one].include?(node["operator"]) }
     nodes = ir.fetch("nodes").to_h { |node| [node.fetch("node_id"), node] }
     incoming = ir.fetch("edges").group_by { |edge| edge.fetch("to") }
     by_occurrence = events.group_by { |event| event.fetch("occurrence_id") }
@@ -119,7 +127,11 @@ module EraZeroPresentation
                when "clause"
                  centers = edges.select { |edge| edge["type"] == "centers" }
                  raise PresentationError, "repetition clause requires one center" unless centers.length == 1
-                 walk.call(centers.first.fetch("from"))
+                 phrase = walk.call(centers.first.fetch("from"))
+                 edges.select { |edge| edge["type"] == "time_relation" }.sort_by { |edge| edge.fetch("edge_id") }.reverse_each do |edge|
+                   phrase = [grammar_marker(formal, id, "time_#{edge['relation']}_speech_open")] + phrase + [grammar_marker(formal, id, "time_#{edge['relation']}_speech_close")]
+                 end
+                 phrase
                when "coordination"
                  members = edges.select { |edge| edge["type"] == "member_of" }
                  raise PresentationError, "coordination requires at least two members" if members.length < 2
@@ -185,6 +197,11 @@ module EraZeroPresentation
       relative = [0, 11 * sign, code * sign, 0]
     elsif marker == "coord_member"
       relative = [0, 11, 0, 11]
+    end
+    if (time = marker.match(/\Atime_(before|at|after)_speech_(open|close)\z/))
+      code = { "before" => -1, "at" => 0, "after" => 1 }.fetch(time[1])
+      sign = time[2] == "open" ? -1 : 1
+      relative = [0, 12 * sign, code, 12 * sign, 0]
     end
     base = formal.dig("performance", "anchor_midi")
     { "kind" => "grammar_marker", "grammar_profile" => "EZGRAM-1", "marker" => marker,

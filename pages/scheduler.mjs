@@ -12,7 +12,8 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
     if (!MODAL_MODES.includes(node.mode) || (node.strength !== undefined && (!['possible','necessary','predicted'].includes(node.mode) || typeof node.strength!=='string' || node.strength.length>1024 || !/^(?:0|1|0\.[0-9]*[1-9])$/.test(node.strength))))
       throw new Error('Unsupported musical modality mode or confidence strength.');
   }
-  if (!ir.nodes.some(node => ['repetition','sequence','negation','modality','all_of','any_of','exactly_one'].includes(node.operator))) return events;
+  validateTimeRelations(ir);
+  if (!ir.edges.some(edge=>edge.type==='time_relation') && !ir.nodes.some(node => ['repetition','sequence','negation','modality','all_of','any_of','exactly_one'].includes(node.operator))) return events;
   const nodes = new Map(ir.nodes.map(node => [node.node_id, node]));
   const incoming = new Map();
   for (const edge of ir.edges) {
@@ -46,6 +47,8 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
       const centers = edges.filter(edge => edge.type === 'centers');
       if (centers.length !== 1) throw new Error('Repetition clause requires one center.');
       result = walk(centers[0].from);
+      const times=edges.filter(edge=>edge.type==='time_relation').sort((a,b)=>a.edge_id<b.edge_id?-1:a.edge_id>b.edge_id?1:0);
+      for(const time of times.slice().reverse())result=[grammarMarker(formal,id,`time_${time.relation}_speech_open`),...result,grammarMarker(formal,id,`time_${time.relation}_speech_close`)];
     } else if (node.kind === 'coordination') {
       const members = edges.filter(edge => edge.type === 'member_of');
       if(members.length<2)throw new Error('Coordination requires at least two members.');
@@ -77,6 +80,12 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
   return scheduled;
 }
 
+function validateTimeRelations(ir){
+  const nodes=new Map(ir.nodes.map(node=>[node.node_id,node]));
+  for(const edge of ir.edges.filter(edge=>edge.type==='time_relation')){
+    if(nodes.get(edge.from)?.kind!=='time_anchor'||nodes.get(edge.from)?.anchor_type!=='speech_time'||Object.keys(nodes.get(edge.from)||{}).some(key=>!['node_id','kind','anchor_type'].includes(key))||nodes.get(edge.to)?.kind!=='clause'||!['before','at','after'].includes(edge.relation))throw new Error('Unsupported musical time relation or anchor.');
+  }
+}
 function confidenceMarkers(formal,id,strength){
   if(strength===undefined)return [];
   return ['confidence_open',...Array.from(strength,char=>char==='.'?'decimal_point':`digit_${char}`),'confidence_close'].map(marker=>grammarMarker(formal,id,marker));
@@ -92,6 +101,8 @@ function grammarMarker(formal,scopeId,marker){
   const coordination=marker.match(/^coord_(all_of|any_of|exactly_one)_(open|close)$/);
   if(coordination){const code=['all_of','any_of','exactly_one'].indexOf(coordination[1])+1,sign=coordination[2]==='open'?-1:1;relative=[0,11*sign,code*sign,0]}
   else if(marker==='coord_member')relative=[0,11,0,11];
+  const time=marker.match(/^time_(before|at|after)_speech_(open|close)$/);
+  if(time){const code={before:-1,at:0,after:1}[time[1]],sign=time[2]==='open'?-1:1;relative=[0,12*sign,code,12*sign,0]}
   const base=formal.performance.anchor_midi;
   return {kind:'grammar_marker',grammar_profile:'EZGRAM-1',marker,occurrence_id:scopeId,target_id:`EZGRAM:${marker}`,register:'middle',base_midi:base,
     family_qualified_transliteration:marker,formal_carrier:'',family_opening_relative_semitones:[],family_opening_absolute_midi:[],

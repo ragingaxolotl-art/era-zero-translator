@@ -456,3 +456,15 @@ statements also accept explicit [0]/[1]/[2] runtime endings. `I love you [2]` ap
 num only to the compound head and retains the approved never-finished-becoming
 reading. Ordinary unmarked love uses runtime 1; negation remains a separate scope.
 Tests compare reversed roles, active versus num, and all component/root identities.
+
+### Speech-time relations in music
+
+Before, at, and after speech time now frame their related clauses in EZGRAM-1.
+These relations previously disappeared on the scheduler's fast path. The new
+frames preserve lexical identity and runtime unchanged; the temporal-before
+fixture has updated MIDI/SVG hashes at three anchors. Semantic validation checks
+time-anchor types and relation endpoints. Musical export rejects unsupported
+anchors, relations, and extra anchor parameters rather than ignoring them. Tests
+compare all three relations across Ruby/browser output. Calendar offsets such as
+yesterday, absolute dates, intervals, aspect, and English tense parsing remain
+unfinished and must not be approximated by these three relations alone.

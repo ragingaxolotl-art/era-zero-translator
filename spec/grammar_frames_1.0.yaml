@@ -112,6 +112,24 @@ frames:
   coord_member:
     relative_semitones: [0, 11, 0, 11]
     note_duration_beats: 0.25
+  time_before_speech_open:
+    relative_semitones: [0, -12, -1, -12, 0]
+    note_duration_beats: 0.25
+  time_before_speech_close:
+    relative_semitones: [0, 12, -1, 12, 0]
+    note_duration_beats: 0.25
+  time_at_speech_open:
+    relative_semitones: [0, -12, 0, -12, 0]
+    note_duration_beats: 0.25
+  time_at_speech_close:
+    relative_semitones: [0, 12, 0, 12, 0]
+    note_duration_beats: 0.25
+  time_after_speech_open:
+    relative_semitones: [0, -12, 1, -12, 0]
+    note_duration_beats: 0.25
+  time_after_speech_close:
+    relative_semitones: [0, 12, 1, 12, 0]
+    note_duration_beats: 0.25
 anchor: Utterance anchor, independent of the role registers inside the scope
 boundary_after_beats: 0.5
 rules:
@@ -125,6 +143,8 @@ rules:
   - Nested negation remains nested; no silent double-negation cancellation
   - Markers are grammar events, not atoms, compounds, names or recognition checksums
   - Runtime zero means inactive; it never substitutes for the negation frame
+  - Before/at/after speech-time frames enclose the time-related clause without changing lexical or runtime state
+  - Unsupported anchors and extra anchor parameters must not be silently omitted
   - Existing root melodies, runtime notes, and speech-act contours remain unchanged
   - No carrier syllables are invented for grammar frames; mouth animation is neutral
 compatibility:
