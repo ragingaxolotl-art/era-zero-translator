@@ -255,3 +255,17 @@ representations and distinguish the scope orders in MIDI. A leading modal before
 an explicit then-sequence is declined because its scope is ambiguous without
 grouping. Bare may/must forms, other modal English constructions, and numeric
 confidence remain incomplete. These wrappers introduce no lexical roots.
+
+
+### Dictionary ranking is not sentence completion
+
+The browser's legacy English ranker now permits automatic standalone dictionary
+lookup only when the entire normalized input is the selected lemma. Other ranked
+inputs retain their candidates but explicitly report a partial dictionary reading;
+manual selection cannot turn that into an exact sentence claim. Complete sentence
+constructions continue through the separate composer. This intentionally removes
+old automatic “successes” such as Go home with zibble, which never bound their
+participants. The legacy test expectations were corrected to require partial
+status while retaining target-ranking checks. English negation no longer infers
+runtime zero anywhere in the ranker; explicit runtime markers still work. Broad
+sentence parsing remains a required implementation task, not satisfied by refusal.

@@ -2,7 +2,7 @@
 
 Status: **PASS**
 
-- Checks passed: **11077**
+- Checks passed: **11078**
 - Checks failed: **0**
 - Canonical resolution variants: **5325**
 - Indexed senses: **440**

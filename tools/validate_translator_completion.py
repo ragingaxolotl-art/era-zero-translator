@@ -21,7 +21,7 @@ commands = [['ruby', path] for path in [
     'tools/validate_renderer_decoder.rb', 'tools/validate_glyph_audio.rb',
 ]] + [[args.node, path] for path in [
     'tests/repetition_browser_test.mjs', 'tests/name_participants_test.mjs',
-    'tests/named_sentence_test.mjs', 'tests/sentence_sequence_test.mjs',
+    'tests/named_sentence_test.mjs', 'tests/dictionary_fidelity_test.mjs', 'tests/sentence_sequence_test.mjs',
     'tests/negation_performance_test.mjs', 'tests/modality_performance_test.mjs', 'tests/unsupported_musical_scope_test.mjs',
     'tools/validate_pages_release.mjs',
     'tools/validate_viseme_performance.mjs',

@@ -106,8 +106,8 @@ export function inferEnglishIntent(raw,explicitRuntime=null){
   const speechAct=definition?'definition':possibility?'possibility':question?'question':imperative?'command':'assertion';
   let runtime=explicitRuntime,runtimeSource='explicit';
   if(runtime===null){
-    runtime=/\b(?:not|never|no longer|isn t|aren t|wasn t|weren t|don t|doesn t|didn t|cannot|can t)\b/.test(text)?0:1;
-    runtimeSource=runtime===0?'inferred from English negation':'ordinary positive-English default';
+    runtime=1;
+    runtimeSource=/\b(?:not|never|no longer|isn t|aren t|wasn t|weren t|don t|doesn t|didn t|cannot|can t)\b/.test(text)?'negation requires scope; dictionary runtime defaults to active':'ordinary positive-English default';
   }
   return{speechAct,runtime,runtimeSource};
 }
@@ -199,8 +199,12 @@ export function analyzeEnglish(raw,data,{limit=Number.POSITIVE_INFINITY}={}){
   const hasUnfamiliarTerms=coverage.some(item=>item.status==='phonemic_label');
   const crossDomainObject=/(?:\bfiles?\b|\bdocuments?\b|\brecords?\b)/.test(normalized);
   const underspecifiedChange=crossDomainObject&&(/\b(?:move|moves|moving|moved)\b/.test(normalized)||(/\b(?:change|changes|changing|changed)\b/.test(normalized)&&!/\b(?:contents?|represented information)\b/.test(normalized)));
-  const auto=Boolean(confident&&!material&&direct&&!missingRoles&&hosted&&!unresolvedSemantic&&!underspecifiedChange);
+  // Ranking locates dictionary meanings; it does not bind a sentence's roles,
+  // modifiers or scopes. Only a whole lexical label is a standalone lookup.
+  const wholeLexicalLabel=normalized===normalize(top.lemma);
+  const auto=Boolean(wholeLexicalLabel&&confident&&!material&&direct&&!missingRoles&&hosted&&!unresolvedSemantic&&!underspecifiedChange);
   const reasons=[];
+  if(!wholeLexicalLabel)reasons.push('incomplete_sentence_construction');
   if(material)reasons.push('material_sense_ambiguity');
   if(missingRoles)reasons.push('required_roles_missing');
   if(structural)reasons.push('structural_template_required');
@@ -210,5 +214,5 @@ export function analyzeEnglish(raw,data,{limit=Number.POSITIVE_INFINITY}={}){
   if(unresolvedSemantic)reasons.push('unresolved_semantic_content');
   if(underspecifiedChange)reasons.push('cross_domain_action_underspecified');
   if(hasUnfamiliarTerms&&!auto)reasons.push('phonemic_labels_present');
-  return{status:'ok',input:raw,normalized_input:normalized,speech_act_proposal:intent.speechAct,explicit_runtime_state:intent.runtime,runtime_inference:intent.runtimeSource,candidates:ranked,candidate_count:ranked.length,term_coverage:coverage,decision:{auto_resolution_allowed:auto,requires_clarification:!auto,reasons,competing_sense_ids:competing.map(item=>item.sense_id)}};
+  return{status:'ok',complete_sentence_unavailable:!wholeLexicalLabel,interpretation_scope:wholeLexicalLabel?'dictionary_label':'partial_dictionary_reading',input:raw,normalized_input:normalized,speech_act_proposal:intent.speechAct,explicit_runtime_state:intent.runtime,runtime_inference:intent.runtimeSource,candidates:ranked,candidate_count:ranked.length,term_coverage:coverage,decision:{auto_resolution_allowed:auto,requires_clarification:!auto,reasons,competing_sense_ids:competing.map(item=>item.sense_id)}};
 }
