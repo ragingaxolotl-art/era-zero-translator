@@ -6,6 +6,7 @@ require "json"
 require "digest"
 require "set"
 require_relative "era_zero_validation"
+require_relative "era_zero_compound_expansion"
 
 module EraZeroRenderer
   ROOT = EraZeroValidation::ROOT
@@ -78,10 +79,23 @@ module EraZeroRenderer
     event
   end
 
-  def compound_root_order(compound)
+  def compound_root_order(compound, compounds: nil)
+    if compound.fetch("nodes").any? { |node| node["kind"] == "compound_ref" }
+      entries = (compounds || load_authority.last).values
+      expander = EraZeroCompoundExpansion::Expander.new(entries)
+      expanded = expander.expand(compound.fetch("compound_id"), compound.fetch("definition_version"))
+      if expanded.fetch("nodes").any? { |node| node["kind"] == "slot" }
+        raise RenderError, "nested compound slots require explicit scoped binding"
+      end
+      return expander.ordered_roots(expanded).map do |node|
+        node.merge("node_id" => JSON.generate(node.fetch("path")))
+      end
+    end
     roots = compound.fetch("nodes").select { |n| n["kind"] == "root" }
     head = compound.fetch("semantic_head")
     (roots.reject { |n| n["node_id"] == head }.sort_by { |n| n["node_id"] } + roots.select { |n| n["node_id"] == head })
+  rescue EraZeroCompoundExpansion::ExpansionError => error
+    raise RenderError, error.message
   end
 
   def required_compound_roles(compound)
@@ -114,10 +128,11 @@ module EraZeroRenderer
       elsif node["target_type"] == "compound"
         compound = compounds[node["target_id"]] or raise RenderError, "unknown compound #{node['target_id']}"
         validate_compound_roles!(compound, node, ir)
-        compound_root_order(compound).each do |component|
+        compound_root_order(compound, compounds: compounds).each do |component|
           atom = atoms.fetch(component.fetch("root_id"))
-          is_head = component["node_id"] == compound["semantic_head"]
-          lexical_events << atom_event(atom, occurrence_id: node["node_id"], register: register, anchor_midi: anchor_midi, runtime_code: is_head ? state : nil, component_node_id: component["node_id"], component_role: is_head ? "head" : "qualifier")
+          is_head = component.fetch("external_head", component["node_id"] == compound["semantic_head"])
+          component_register = component["component_role"] ? ROLE_REGISTERS.fetch(component["component_role"], "middle") : register
+          lexical_events << atom_event(atom, occurrence_id: node["node_id"], register: component_register, anchor_midi: anchor_midi, runtime_code: is_head ? state : nil, component_node_id: component["node_id"], component_role: is_head ? "head" : component["component_role"] || "qualifier")
         end
       else
         raise RenderError, "invalid lexical target type"

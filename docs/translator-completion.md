@@ -93,6 +93,13 @@ and node limits fail explicitly. Dictionary inputs are not mutated.
 
 Tests include repeated references, three-level nesting, version failures, cycles,
 modifier scope, repeated slot names, limits, and preservation of existing entries.
-These modules do not yet drive renderer playback or browser translation. Next:
-consume expanded scopes in performance scheduling, bind nested slots explicitly,
-and verify external runtime endings apply only to the resolved semantic head.
+Closed nested compounds now reach the Ruby renderer, retain separate occurrence
+paths, and apply the external runtime ending only to the resolved final head.
+A three-level render/decode/transposition case verifies this path. Existing flat
+dictionary output is preserved. Nested slots explicitly fail pending scoped
+binding; they are never silently omitted.
+
+Still required: canonical expanded-subgraph hashing for sibling ordering (current
+traversal uses deterministic local IDs), scoped slot binding, complete compound
+timing and contour scheduling, grammar-aware MIDI, and browser integration.
+Formal round-trip preservation is not proof of audible semantic completeness.

@@ -2,6 +2,7 @@
 require "minitest/autorun"
 require_relative "../tools/lib/era_zero_compound_expansion"
 require_relative "../tools/lib/era_zero_validation"
+require_relative "../tools/lib/era_zero_renderer"
 
 class CompoundExpansionTest < Minitest::Test
   Expander = EraZeroCompoundExpansion::Expander
@@ -43,6 +44,27 @@ class CompoundExpansionTest < Minitest::Test
     assert_equal ["h"], edge["to_scope_target"]
     assert_equal ["h", "h", "h"], edge["to_path"]
     assert_equal ["scope of nested"], expanded["scopes"].find { |s| s["path"] == ["h"] }["lexical_constraints"]
+  end
+
+  def test_nested_compounds_reach_renderer_with_one_external_ending
+    atoms, = EraZeroRenderer.load_authority
+    compounds = fixtures.to_h { |e| [e["compound_id"], e] }
+    ir = { "ir_version" => "1.0", "root_clause" => "c", "speech_act" => "assertion",
+      "nodes" => [{ "node_id" => "c", "kind" => "clause", "clause_type" => "predication" },
+                  { "node_id" => "p", "kind" => "lexical_occurrence", "target_type" => "compound", "target_id" => "outer", "runtime_state" => { "code" => 2 } }],
+      "edges" => [{ "edge_id" => "e", "type" => "centers", "from" => "p", "to" => "c" }], "discourse_constraints" => {} }
+    digest = EraZeroRenderer.semantic_digest(ir)
+    ir.merge!("utterance_id" => "UTT:#{digest[0, 24]}", "serialization" => { "content_digest" => digest })
+    EraZeroRenderer.stub(:load_authority, [atoms, compounds]) do
+      formal = EraZeroRenderer.render(ir)
+      events = formal.dig("performance", "lexical_events")
+      assert_equal %w[MAT:200 CRE:010 STR:020 MAT:200 CRE:010], events.map { |e| e["target_id"] }
+      assert_equal 1, events.count { |e| e.key?("runtime_tail") }
+      assert_equal 2, events.last.dig("runtime_tail", "code")
+      assert_equal '["h","h","h"]', events.last["component_node_id"]
+      assert_equal ir, EraZeroRenderer.decode(formal)
+      assert_equal formal["formal_id"], EraZeroRenderer.render(ir, anchor_midi: 72)["formal_id"]
+    end
   end
 
   def test_slots_are_occurrence_scoped_and_input_is_not_modified

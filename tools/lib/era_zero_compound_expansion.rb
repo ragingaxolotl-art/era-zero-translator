@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 require_relative "era_zero_compound_dependencies"
+require "json"
 
 module EraZeroCompoundExpansion
   class ExpansionError < StandardError; end
@@ -22,6 +23,40 @@ module EraZeroCompoundExpansion
       output
     rescue EraZeroCompoundDependencies::DependencyError, KeyError => error
       raise ExpansionError, error.message
+    end
+
+    # Traverse references as units, so modifiers of a referenced compound precede
+    # that complete unit instead of being inserted at its flattened final root.
+    def ordered_roots(expanded)
+      scopes = expanded.fetch("scopes").to_h { |scope| [scope.fetch("path"), scope] }
+      nodes = expanded.fetch("nodes").to_h { |node| [node.fetch("path"), node] }
+      edges = expanded.fetch("edges").group_by { |edge| edge.fetch("to_scope_target") }
+      result = []
+      walk = nil
+      walk = lambda do |path, role|
+        incoming = edges.fetch(path, [])
+        incoming.sort_by { |edge| [edge.fetch("type"), edge.fetch("role", ""), JSON.generate(edge.fetch("from_scope_target"))] }.each do |edge|
+          walk.call(edge.fetch("from_scope_target"), edge["role"] || role)
+        end
+        if scopes.key?(path)
+          scope = scopes.fetch(path)
+          # The original local head can itself be a reference.
+          local_head_path = scope.fetch("semantic_head").take(path.length + 1)
+          walk.call(local_head_path, role)
+        else
+          node = nodes.fetch(path)
+          if node["kind"] == "root"
+            result << node.merge("component_role" => role, "external_head" => path == expanded.fetch("semantic_head"))
+          elsif node["kind"] == "slot"
+            # Slots are requirements, not sounded roots; the renderer must bind
+            # them before using this sequence.
+          elsif node["kind"] != "coordination"
+            raise ExpansionError, "unsupported expanded node kind"
+          end
+        end
+      end
+      walk.call([], nil)
+      result
     end
 
     private
