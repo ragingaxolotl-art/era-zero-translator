@@ -1,0 +1,23 @@
+profile: EZMEASURECOMPARE-1
+status: versioned_implementation_convention
+provenance: Translator completion goal; dimensional foundation review
+semantics:
+  comparison: Optional field on a measurement node attached through quantity
+  left_operand: The measured quantity of the lexical bearer's property
+  right_operand: The node's magnitude and unit as a scalar reference bound
+  missing_comparison: Exact equality to the stated quantity
+  allowed: [greater_than, less_than, at_least, at_most, not_equal]
+  excludes: Approximate equality, unspecified tolerances, entity-to-entity comparisons, contextual adjective thresholds
+  dimension: Selected by the unit's declared dimension; property axes require separate definitions where units do not select one
+music:
+  code: One-based index in allowed
+  open: '[0, -17, code, 0]'
+  close: '[0, 17, code, 0]'
+  placement: Surround the complete reference measurement frame
+  note_duration_beats: 0.25
+  anchor: Utterance anchor
+compatibility:
+  - Exact measurements without comparison retain their existing output
+  - Comparison fields participate in semantic identity
+  - Unknown comparisons and additional measurement fields fail validation
+  - No root, lexical trit or runtime ending is repurposed

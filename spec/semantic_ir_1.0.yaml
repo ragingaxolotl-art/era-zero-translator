@@ -165,6 +165,9 @@ node_types:
     - magnitude
     - unit
     rule: Magnitude is numeric or a quantity variable and unit is a controlled symbol.
+    optional_fields:
+      comparison: greater_than, less_than, at_least, at_most, or not_equal; absent
+        means exact equality. See spec/measurement_comparison_1.0.yaml
   state_snapshot:
     required:
     - node_id

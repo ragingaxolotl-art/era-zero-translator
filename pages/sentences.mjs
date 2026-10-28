@@ -147,17 +147,17 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
       participants:[{label:label(transfer[3]),text:transfer[3],role:'source'},{label:label(transfer[1]),text:transfer[1],role:'content'},{label:label(transfer[4]),text:transfer[4],role:'target'}],
       explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
-  const mass=String(input).trim().match(new RegExp(`^${participant} (has|have) a mass of ([0-9]+(?:\\.[0-9]+)?) (grams?|kilograms?)[.]?$`));
+  const mass=String(input).trim().match(new RegExp(`^${participant} (has|have) a mass (?:of )?(?:(more than|greater than|less than|at least|at most|not exactly|exactly) )?([0-9]+(?:\\.[0-9]+)?) (grams?|kilograms?)[.]?$`));
   if(mass){
     const nominal=parseNominal(mass[1]);
-    if(nominal?.quantifier||mass[3].length>1000)return null;
+    if(nominal?.quantifier||mass[4].length>1000)return null;
     if(['I','you','You'].includes(mass[1])?(mass[2]!=='have'):(mass[2]!=='has'))return null;
-    let [whole,fraction='']=mass[3].split('.');
-    if(mass[4].startsWith('gram')){whole=whole.padStart(4,'0');fraction=whole.slice(-3)+fraction;whole=whole.slice(0,-3);}
+    let [whole,fraction='']=mass[4].split('.');
+    if(mass[5].startsWith('gram')){whole=whole.padStart(4,'0');fraction=whole.slice(-3)+fraction;whole=whole.slice(0,-3);}
     whole=whole.replace(/^0+/,'')||'0';fraction=fraction.replace(/0+$/,'');
     const magnitude=whole+(fraction?'.'+fraction:'');
     return {actor:mass[1].replaceAll('"',''),actorText:mass[1],role:'bearer',predicate:mass[1]==='I'?'MAT:000':'MAT:010',key:'mass_measurement',construction:'mass_measurement',
-      measurement:{magnitude,unit:'kilogram'},semanticNote:'This states physical mass, normalized exactly to kilograms. It does not state weight as force, size, heaviness relative to a standard, or the result of a weighing event.'};
+      measurement:{magnitude,unit:'kilogram',...((mass[3]&&mass[3]!=='exactly')?{comparison:({'more than':'greater_than','greater than':'greater_than','less than':'less_than','at least':'at_least','at most':'at_most','not exactly':'not_equal'})[mass[3]]}:{})},semanticNote:'This states physical mass, normalized exactly to kilograms. It does not state weight as force, size, heaviness relative to a standard, or the result of a weighing event.'};
   }
   const grammaticalText=String(input).trim().replace(new RegExp(`^(${NOMINAL_PATTERN}) are `),'$1 is ').replace(/^I am /,'I is ').replace(/^(You|you) are /,'$1 is ').replace(/^(I|You|you) care for /,'$1 cares for ').replace(/^(I|You|you) do not (care for|love) /,'$1 does not $2 ').replace(/^(I|You|you) love /,'$1 loves ');
   for(const action of ACTIONS){

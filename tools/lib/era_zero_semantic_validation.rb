@@ -84,7 +84,8 @@ module EraZeroSemanticValidation
         errors << "invalid_time_anchor" unless spec.dig("node_types", "time_anchor", "anchor_types").include?(n["anchor_type"])
       elsif n["kind"] == "measurement"
         errors << "invalid_unit" unless units.include?(n["unit"])
-        errors << "invalid_quantity" unless canonical_decimal?(n["magnitude"])
+        errors << "invalid_quantity" unless canonical_decimal?(n["magnitude"]) && (n.keys - %w[node_id kind magnitude unit comparison]).empty?
+        errors << "invalid_measurement_comparison" if n.key?("comparison") && !%w[greater_than less_than at_least at_most not_equal].include?(n["comparison"])
       elsif n["kind"] == "scope_operator" && n["operator"] == "quantifier"
         counted = %w[exact at_least at_most].include?(n["quantifier"])
         allowed = %w[node_id kind operator quantifier] + (counted ? ["value"] : [])

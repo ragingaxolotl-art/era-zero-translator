@@ -692,3 +692,7 @@ The audited phrase “If the radio is damaged, repair it” now composes with WR
 ### Explicit mass statements
 
 “The box has a mass of 5 kilograms” now binds the mass measurement to a material bearer using the existing semantic IR units and quantity role. Gram input normalizes exactly to kilograms, so equivalent unit expressions share formal and musical output. Eight reference-renderer comparisons cover decimal precision, bearer identity, modal scope and runtime endings. The dimensional review distinguishes this existing foundation from still-missing comparison standards, property axes, temperature identity and contextual adjectives. No new root or compound was introduced.
+
+### Scalar measurement comparison
+
+The additive measurement comparison profile distinguishes greater-than, less-than, inclusive lower/upper bounds and inequality from exact measurement. Its operand direction is explicit: the bearer's measured quantity is compared with the supplied magnitude/unit. Musical frames preserve the operator around the reference measurement. English mass statements use this extension and retain exact unit normalization. Six comparisons match Ruby/browser formal output and MIDI and have distinct sounds; unsupported comparison names fail shared validation and browser scheduling. Root definitions and runtime meanings are unchanged. Entity-to-entity comparison and context-dependent adjectives remain unfinished.

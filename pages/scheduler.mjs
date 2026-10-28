@@ -1,3 +1,4 @@
+const MEASURE_COMPARISONS=['greater_than','less_than','at_least','at_most','not_equal'];
 const CONDITION_STATUSES=['open','satisfied','unsatisfied','counterfactual'];
 import {ROLE_ORDER} from './roles.mjs';
 const QUANTIFIERS=['exact','at_least','at_most','all','some','none'];
@@ -101,8 +102,11 @@ function quantifierMarkers(formal,node){
 }
 function measurementMarkers(formal,node){
   const value=node.magnitude,unit=MEASUREMENT_UNITS.indexOf(node.unit);
-  if(typeof value!=='string'||value.length>1024||value==='-0'||!/^-?(?:0|[1-9][0-9]*)(?:\.[0-9]*[1-9])?$/.test(value)||unit<0||Object.keys(node).some(key=>!['node_id','kind','magnitude','unit'].includes(key)))throw new Error('Unsupported musical measurement.');
+  if(node.comparison!==undefined&&!MEASURE_COMPARISONS.includes(node.comparison))throw new Error('Unsupported musical measurement comparison.');
+  if(typeof value!=='string'||value.length>1024||value==='-0'||!/^-?(?:0|[1-9][0-9]*)(?:\.[0-9]*[1-9])?$/.test(value)||unit<0||Object.keys(node).some(key=>!['node_id','kind','magnitude','unit','comparison'].includes(key)))throw new Error('Unsupported musical measurement.');
   const markers=['measurement_open',...Array.from(value,char=>char==='-'?'measurement_negative':char==='.'?'decimal_point':`digit_${char}`),`measurement_unit_${unit+1}`,'measurement_close'];
+  if(node.comparison)markers.unshift(`measure_compare_${node.comparison}_open`);
+  if(node.comparison)markers.push(`measure_compare_${node.comparison}_close`);
   return markers.map(marker=>grammarMarker(formal,node.node_id,marker));
 }
 function timeFrame(edge,nodes){
@@ -137,6 +141,8 @@ function grammarMarker(formal,scopeId,marker){
   if(time){const code={before:-1,at:0,after:1}[time[1]],sign=time[2]==='open'?-1:1;relative=[0,12*sign,code,12*sign,0]}
   const day=marker.match(/^time_(previous_day|current_day|next_day)_(open|close)$/);
   if(day){const code={previous_day:-2,current_day:2,next_day:3}[day[1]],sign=day[2]==='open'?-1:1;relative=[0,12*sign,code,12*sign,0]}
+  const comparison=marker.match(/^measure_compare_(greater_than|less_than|at_least|at_most|not_equal)_(open|close)$/);
+  if(comparison)relative=[0,comparison[2]==='open'?-17:17,MEASURE_COMPARISONS.indexOf(comparison[1])+1,0];
   if(marker==='measurement_open')relative=[0,-13,-1,0];
   if(marker==='measurement_close')relative=[0,13,1,0];
   if(marker==='measurement_negative')relative=[0,-13,0,-13];

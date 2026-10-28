@@ -9,6 +9,7 @@ module EraZeroPresentation
   QUANTIFIERS = %w[exact at_least at_most all some none].freeze
   ROLE_ORDER = %w[actor source cause experiencer bearer predicate target result destination instrument material content recipient location environment condition persistent_condition time manner quantity comparison_standard beneficiary].freeze
   CONDITION_STATUSES = %w[open satisfied unsatisfied counterfactual].freeze
+  MEASURE_COMPARISONS = %w[greater_than less_than at_least at_most not_equal].freeze
   VERSION = "1.0.0"
   TICKS_PER_BEAT = 480
   TEMPO_MICROSECONDS = 500_000
@@ -222,11 +223,13 @@ module EraZeroPresentation
   end
 
   def measurement_markers(formal, node)
+    raise PresentationError, "unsupported musical measurement comparison" if node.key?("comparison") && !MEASURE_COMPARISONS.include?(node["comparison"])
     value = node["magnitude"]; unit = MEASUREMENT_UNITS.index(node["unit"])
-    unless value.is_a?(String) && value.length <= 1024 && value != "-0" && value.match?(/\A-?(?:0|[1-9][0-9]*)(?:\.[0-9]*[1-9])?\z/) && unit && (node.keys - %w[node_id kind magnitude unit]).empty?
+    unless value.is_a?(String) && value.length <= 1024 && value != "-0" && value.match?(/\A-?(?:0|[1-9][0-9]*)(?:\.[0-9]*[1-9])?\z/) && unit && (node.keys - %w[node_id kind magnitude unit comparison]).empty?
       raise PresentationError, "unsupported musical measurement"
     end
     markers = ["measurement_open"] + value.chars.map { |char| char == "-" ? "measurement_negative" : char == "." ? "decimal_point" : "digit_#{char}" } + ["measurement_unit_#{unit + 1}", "measurement_close"]
+    markers = ["measure_compare_#{node['comparison']}_open"] + markers + ["measure_compare_#{node['comparison']}_close"] if node["comparison"]
     markers.map { |marker| grammar_marker(formal, node.fetch("node_id"), marker) }
   end
 
@@ -280,6 +283,8 @@ module EraZeroPresentation
       sign = day[2] == "open" ? -1 : 1
       relative = [0, 12 * sign, code, 12 * sign, 0]
     end
+    comparison = marker.match(/\Ameasure_compare_(greater_than|less_than|at_least|at_most|not_equal)_(open|close)\z/)
+    relative = [0, comparison[2] == "open" ? -17 : 17, MEASURE_COMPARISONS.index(comparison[1]) + 1, 0] if comparison
     relative = [0, -13, -1, 0] if marker == "measurement_open"
     relative = [0, 13, 1, 0] if marker == "measurement_close"
     relative = [0, -13, 0, -13] if marker == "measurement_negative"

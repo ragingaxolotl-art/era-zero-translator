@@ -37,7 +37,7 @@ burden, heaviness, density, size or temperature. In particular, the familiar ver
 | Exact quantities | Decimal magnitudes; time, length, mass, angle and information units; distinct musical frames | Bind each measure to the property actually asserted, with exact compatible-unit normalization |
 | Property axis | Mass is selected by mass units in the explicit construction | Length alone does not select height, width, depth, distance along a route or displacement |
 | Ratio | Numerator and denominator measures can be represented separately | A ratio relation must connect them; speed must distinguish path length per duration from displacement per duration |
-| Comparison | A comparison operator name and comparison_standard role are reserved | Define ordered operands, dimension, strict/non-strict relation and scope, then encode all of them musically |
+| Comparison | Scalar bounds on a measured quantity now distinguish exact, greater/less, inclusive bounds and inequality | Entity-to-entity comparisons still require explicit property selection and ordered referents |
 | Contextual adjective | No universal threshold follows from a root or unit | “Heavy” needs the intended mass/burden sense, reference class and standard; “fast” needs the relevant rate |
 | New dimension | Material state and energy roots remain available as general ingredients | Temperature identity and scale are not the same as energized material; thermal adjectives require this distinction first |
 
@@ -73,5 +73,7 @@ missing step before adding vocabulary.
 - Hot versus energized; fast versus far: no broad-root substitution.
 
 The explicit-mass sentence tests establish only the first implemented construction
-and its scope. Comparison, temperature, scalar adjective interpretation and general
-measurement noun phrases remain unfinished.
+and its scope. Entity-to-entity comparison, temperature, scalar adjective interpretation and
+general measurement noun phrases remain unfinished. The additive comparison
+profile defines a measurement node’s magnitude as a reference bound when a
+comparison is present; without it, existing exact-measurement semantics remain.
