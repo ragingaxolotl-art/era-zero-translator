@@ -2,91 +2,94 @@
 metadata:
   title: Gate 4B dictionary conformance and routing cases
   version: 1.0.0
-  approved_entries: 28
+  approved_entries: 29
 accepted:
-- case_id: material_artifact
-  compound_id: CMP:61bfb0de7a1e9d7f5b981725
-  expected: valid_approved_entry
-- case_id: composite_artifact
-  compound_id: CMP:a7fc0ca38a6f95a40cdb87b1
-  expected: valid_approved_entry
 - case_id: physical_tool
   compound_id: CMP:111b772027accab2054f0415
-  expected: valid_approved_entry
-- case_id: machine
-  compound_id: CMP:8e5ae722d9e5e31f85ac3c5b
-  expected: valid_approved_entry
-- case_id: dormant_machine
-  compound_id: CMP:e152ea538409460a93b99b90
-  expected: valid_approved_entry
-- case_id: material_route
-  compound_id: CMP:919b714e6201a462756224a2
-  expected: valid_approved_entry
-- case_id: living_body
-  compound_id: CMP:3122dedcff0f85ad293e2580
-  expected: valid_approved_entry
-- case_id: dormant_living_body
-  compound_id: CMP:2d993bb1d93b7d24d303e364
-  expected: valid_approved_entry
-- case_id: material_biosystem
-  compound_id: CMP:4144fad413b8ce5012088c61
-  expected: valid_approved_entry
-- case_id: generated_living_being
-  compound_id: CMP:e2af90ba78681e87e68450e5
   expected: valid_approved_entry
 - case_id: living_communication_network
   compound_id: CMP:218a5578a2274b92ba3d72db
   expected: valid_approved_entry
-- case_id: message_datum
-  compound_id: CMP:608ecb4f3c515a9c9a3443ec
-  expected: valid_approved_entry
-- case_id: addressed_message
-  compound_id: CMP:d98407801d64c085f702c9db
-  expected: valid_approved_entry
-- case_id: shared_message_collection
-  compound_id: CMP:99a87c8869d58498f524f1cc
-  expected: valid_approved_entry
-- case_id: program_definition
-  compound_id: CMP:2f350e7d8e5dfba4a802d82d
-  expected: valid_approved_entry
-- case_id: dormant_program
-  compound_id: CMP:9e8b36f50570a0c3c362a968
-  expected: valid_approved_entry
-- case_id: shared_knowledge_base
-  compound_id: CMP:44173561806bc8f334a0b7c9
-  expected: valid_approved_entry
-- case_id: data_transfer_channel
-  compound_id: CMP:725868579ebb0e2ef83cf708
-  expected: valid_approved_entry
-- case_id: synchronized_data_network
-  compound_id: CMP:8f05a5e16a897935492726fa
-  expected: valid_approved_entry
-- case_id: physical_injury
-  compound_id: CMP:f1abd5eccdf06d92d5690a32
-  expected: valid_approved_entry
-- case_id: material_hazard
-  compound_id: CMP:cb0812face56f90b7ba139c5
-  expected: valid_approved_entry
 - case_id: physical_repair
   compound_id: CMP:22f8ddc4d9b2d1a818d38e9f
-  expected: valid_approved_entry
-- case_id: data_repair
-  compound_id: CMP:b518a324d776e46e9d0ff041
-  expected: valid_approved_entry
-- case_id: structural_repair
-  compound_id: CMP:e799b436d9c5e7d87a5516fa
-  expected: valid_approved_entry
-- case_id: backup_dataset
-  compound_id: CMP:33c135410b0deef525b6770d
   expected: valid_approved_entry
 - case_id: shared-world_law
   compound_id: CMP:2d26353b47b531bd3f5ae090
   expected: valid_approved_entry
+- case_id: dormant_living_body
+  compound_id: CMP:2d993bb1d93b7d24d303e364
+  expected: valid_approved_entry
+- case_id: program_definition
+  compound_id: CMP:2f350e7d8e5dfba4a802d82d
+  expected: valid_approved_entry
+- case_id: living_body
+  compound_id: CMP:3122dedcff0f85ad293e2580
+  expected: valid_approved_entry
+- case_id: backup_dataset
+  compound_id: CMP:33c135410b0deef525b6770d
+  expected: valid_approved_entry
+- case_id: material_biosystem
+  compound_id: CMP:4144fad413b8ce5012088c61
+  expected: valid_approved_entry
+- case_id: shared_knowledge_base
+  compound_id: CMP:44173561806bc8f334a0b7c9
+  expected: valid_approved_entry
+- case_id: love
+  compound_id: CMP:44718c92b66443c0c0f03ad7
+  expected: valid_approved_entry
 - case_id: formal_ontological_dependence
   compound_id: CMP:578fd06e1dec6f91d2b35add
   expected: valid_approved_entry
+- case_id: message_datum
+  compound_id: CMP:608ecb4f3c515a9c9a3443ec
+  expected: valid_approved_entry
+- case_id: material_artifact
+  compound_id: CMP:61bfb0de7a1e9d7f5b981725
+  expected: valid_approved_entry
+- case_id: data_transfer_channel
+  compound_id: CMP:725868579ebb0e2ef83cf708
+  expected: valid_approved_entry
 - case_id: directed_data_link
   compound_id: CMP:742b44d9ead66b451346708a
+  expected: valid_approved_entry
+- case_id: machine
+  compound_id: CMP:8e5ae722d9e5e31f85ac3c5b
+  expected: valid_approved_entry
+- case_id: synchronized_data_network
+  compound_id: CMP:8f05a5e16a897935492726fa
+  expected: valid_approved_entry
+- case_id: material_route
+  compound_id: CMP:919b714e6201a462756224a2
+  expected: valid_approved_entry
+- case_id: shared_message_collection
+  compound_id: CMP:99a87c8869d58498f524f1cc
+  expected: valid_approved_entry
+- case_id: dormant_program
+  compound_id: CMP:9e8b36f50570a0c3c362a968
+  expected: valid_approved_entry
+- case_id: composite_artifact
+  compound_id: CMP:a7fc0ca38a6f95a40cdb87b1
+  expected: valid_approved_entry
+- case_id: data_repair
+  compound_id: CMP:b518a324d776e46e9d0ff041
+  expected: valid_approved_entry
+- case_id: material_hazard
+  compound_id: CMP:cb0812face56f90b7ba139c5
+  expected: valid_approved_entry
+- case_id: addressed_message
+  compound_id: CMP:d98407801d64c085f702c9db
+  expected: valid_approved_entry
+- case_id: dormant_machine
+  compound_id: CMP:e152ea538409460a93b99b90
+  expected: valid_approved_entry
+- case_id: generated_living_being
+  compound_id: CMP:e2af90ba78681e87e68450e5
+  expected: valid_approved_entry
+- case_id: structural_repair
+  compound_id: CMP:e799b436d9c5e7d87a5516fa
+  expected: valid_approved_entry
+- case_id: physical_injury
+  compound_id: CMP:f1abd5eccdf06d92d5690a32
   expected: valid_approved_entry
 routing_tests:
 - english_concept: person

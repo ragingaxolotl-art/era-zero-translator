@@ -1738,3 +1738,49 @@ reviews:
     decision: 'rejected: loses the explicit cross-family distinction'
   recommendation: approve selected_graph
   confidence: high
+- compound_id: CMP:44718c92b66443c0c0f03ad7
+  display_title: love
+  current_choice_reason: The user explicitly approved the poetic bond-centered meaning;
+    the head and both qualifiers retain their existing definitions.
+  candidates:
+  - candidate_id: bond_head
+    direction: Established life-bond qualified by awakening and dormant self.
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 9
+      technical_coverage: 9
+    total: 72
+    decision: winner
+  - candidate_id: awakening_head
+    direction: Awakening characterized by a bond and dormant self.
+    scores:
+      atomicity: 6
+      address_fit: 6
+      family_fit: 6
+      neighbor_separation: 6
+      cross_family_separation: 6
+      compound_usefulness: 6
+      everyday_language_coverage: 6
+      technical_coverage: 6
+    total: 48
+    decision: 'rejected: centers an awakening process rather than a lasting relationship'
+  - candidate_id: bond_only
+    direction: LIF:210 alone.
+    scores:
+      atomicity: 4
+      address_fit: 4
+      family_fit: 4
+      neighbor_separation: 4
+      cross_family_separation: 4
+      compound_usefulness: 4
+      everyday_language_coverage: 4
+      technical_coverage: 4
+    total: 32
+    decision: 'rejected: loses both self-awakening and preserved potential'
+  recommendation: approve selected bond head
+  confidence: high

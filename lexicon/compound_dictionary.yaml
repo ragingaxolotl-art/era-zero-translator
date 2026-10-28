@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 28
+  entry_count: 29
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -428,6 +428,71 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 44173561806bc8f334a0b7c9a87b29ba2bc84d18360e234eaa701c7e5eae8370
+- architecture_version: '1.0'
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: love
+  english_glosses:
+  - love
+  semantic_head: h
+  invariant_definition: An established life-bond characterized by self-awakening and
+    the preserved, not-yet-expressed self.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: LIF:002
+  - node_id: q02
+    kind: root
+    root_id: LIF:101
+  - node_id: h
+    kind: root
+    root_id: LIF:210
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  - edge_id: e02
+    type: qualifies
+    from: q02
+    to: h
+  lexical_constraints:
+  - The head is the established life-bond; both qualifiers characterize that bond
+    rather than asserting separate events.
+  - The dormant-self facet and self-awakening facet describe preserved potential and
+    its expression; they do not require the whole person to be simultaneously asleep
+    and awake.
+  boundaries:
+    includes: The user-approved poetic conception of love as a bond through which
+      a preserved self continues to awaken.
+    excludes: Generic liking, preference, attraction, every possible English sense
+      of love, or an assertion that a person is literally asleep.
+  collision_audit: LIF:210 alone supplies connection but neither self-awakening nor
+    the preserved unexpressed self. Both qualifiers are required for this approved
+    poetic sense.
+  confidence: high
+  examples:
+    ordinary: A lasting bond through which we keep awakening who we have yet to become.
+    technical: ASSERT "love" [2]. — num marks the poetic occurrence as unresolved
+      or still possible.
+    future_compound: May qualify another relation when this specific conception of
+      love is intended.
+    counterexample: Liking a flavor does not establish this bond or its self-awakening
+      facets.
+  poetic_reading: A lasting bond through which we keep awakening who we have yet to
+    become.
+  usage_note: 'Use love [2] for the user-approved poetic num reading: never finished
+    becoming throughout the life course. This is a literary interpretation of unresolved
+    possibility, not a new definition of num. Runtime state remains outside compound
+    identity.'
+  approval_basis: Explicit user request on 2026-10-28 to add the discussed three-LIF-atom
+    love compound to the Atlas and translator.
+  compound_id: CMP:44718c92b66443c0c0f03ad7
+  content_digest: 44718c92b66443c0c0f03ad71a5115f6f051ce91928c9db7becea7453a59e63f
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 44718c92b66443c0c0f03ad71a5115f6f051ce91928c9db7becea7453a59e63f
 - architecture_version: '1.0'
   compound_id: CMP:578fd06e1dec6f91d2b35add
   content_digest: 578fd06e1dec6f91d2b35addea49cab1370912015a72ce2fed948395804930f7

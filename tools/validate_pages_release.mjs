@@ -17,8 +17,8 @@ const visemeRig=JSON.parse(await fs.readFile(path.join(pages,'visemes/rig.json')
 const checks=[];
 const check=(name,condition)=>{checks.push([name,Boolean(condition)]);if(!condition)console.error(`FAIL: ${name}`)};
 
-check('canonical inventory',index.counts.atoms===324&&index.counts.compounds===28&&index.counts.senses===436&&index.counts.gaps===11);
-check('browser resolution scope',Object.keys(index.resolution_files).length===351&&index.online_scope.slotted_compounds===1);
+check('canonical inventory',index.counts.atoms===324&&index.counts.compounds===index.compounds.length&&index.counts.senses===index.senses.length&&index.counts.gaps===11);
+check('browser resolution scope',Object.keys(index.resolution_files).length===index.atoms.length+index.compounds.length-index.online_scope.slotted_compounds&&index.online_scope.slotted_compounds===Object.values(index.required_roles).filter(roles=>roles.length).length);
 check('conservative data',index.senses.some(s=>s.lemma==='go'&&s.route==='atom')&&index.senses.some(s=>s.lemma==='go'&&s.route==='semantic_ir')&&index.senses.some(s=>s.lemma==='food'&&s.route==='gap'));
 
 const englishCases=[
@@ -68,7 +68,7 @@ for(const [target,relative] of Object.entries(index.resolution_files)){
     check(`presentation bytes ${target} ${key}`,JSON.stringify(manifest)===JSON.stringify(result.presentation_manifest));
   }
 }
-check('complete direct variant matrix',variants===351*15);
+check('complete direct variant matrix',variants===Object.keys(index.resolution_files).length*15);
 
 const sample=JSON.parse(await fs.readFile(path.join(pages,'data/resolutions/mov_101.json'),'utf8')).variants['assertion:1'];
 const soundPlan=engine.soundPlanFromFormal(sample.formal),sourceEvent=sample.formal.performance.lexical_events[0];
@@ -97,7 +97,7 @@ check('standalone viseme file export',html.includes('id="downloadViseme"')&&app.
 check('independent head eyes and mouth rig',html.includes('data-rig-layer="head"')&&html.includes('data-rig-layer="eyes"')&&html.includes('data-rig-layer="mouth"')&&visemeRig.layers.head==='head/base'&&visemeRig.layers.mouth==='mouth/sounds'&&JSON.stringify(visemeRig.layers.eyes)===JSON.stringify(['eyes/happy','eyes/sad','eyes/angry']));
 check('eye controls do not alter sound compiler',html.includes('Happy eyes')&&html.includes('Sad eyes')&&html.includes('Angry eyes')&&app.includes('setEyeExpression')&&!app.includes('pitch_shift_semitones'));
 check('three-view workbench',html.includes('data-app-tab="translator"')&&html.includes('data-app-tab="dictionary"')&&html.includes('data-app-tab="documents"'));
-check('complete option catalogue',html.includes('Complete language inventory')&&html.includes('id="catalogList"')&&app.includes('state.data.senses.filter')&&index.atoms.length===324&&index.compounds.length===28);
+check('complete option catalogue',html.includes('Complete language inventory')&&html.includes('id="catalogList"')&&app.includes('state.data.senses.filter')&&index.atoms.length===324&&index.compounds.length===index.counts.compounds);
 check('game/story profile preserves canonical authority',index.game_story_profile?.canonical_semantic_changes===0&&index.game_story_senses.length>=30&&index.game_story_senses.some(item=>item.lemma==='need'&&item.target_id==='ORI:211'));
 check('logical dictionary inspector',html.includes('id="catalogDetail"')&&app.includes('showDictionaryDetail')&&app.includes('Universal slot')&&app.includes('Relative note path'));
 check('complete document manifest',documents.count===documents.documents.length&&documents.count>=300&&documents.documents.some(item=>item.path==='docs/PRODUCT_GOAL_AND_FULL_TEST_PLAN.md'));

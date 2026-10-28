@@ -19,7 +19,7 @@ checks = EraZeroValidation::CheckSet.new
 
 controlled = sense_doc.fetch("senses").select { |sense| sense["controlled_input_allowed"] == true && %w[atom compound].include?(sense["route"]) }
 checks.add("source immutability", "sense index, semantic IR, and renderer match recorded fingerprints", spec.dig("metadata", "sense_index_fingerprint") == EraZeroValidation.fingerprint(sense_doc.fetch("senses")) && spec.dig("metadata", "semantic_ir_fingerprint") == EraZeroValidation.fingerprint(EraZeroValidation.load_yaml("spec/semantic_ir_1.0.yaml")) && spec.dig("metadata", "renderer_fingerprint") == EraZeroValidation.fingerprint(EraZeroValidation.load_yaml("spec/renderer_decoder_1.0.yaml")))
-checks.add("controlled label partition", "all and only 324 atom plus 28 compound canonical labels are controlled", controlled.length == 352 && controlled.count { |sense| sense["route"] == "atom" } == atoms.length && controlled.count { |sense| sense["route"] == "compound" } == compounds.length && controlled.group_by { |sense| sense["lemma"].downcase.gsub(/\s+/, " ").strip }.values.all? { |items| items.length == 1 })
+checks.add("controlled label partition", "all and only canonical atom and compound canonical labels are controlled", controlled.length == atoms.length + compounds.length && controlled.count { |sense| sense["route"] == "atom" } == atoms.length && controlled.count { |sense| sense["route"] == "compound" } == compounds.length && controlled.group_by { |sense| sense["lemma"].downcase.gsub(/\s+/, " ").strip }.values.all? { |items| items.length == 1 })
 
 golden_ok = tests.fetch("valid_cases").all? do |item|
   first = compiler.compile(item.fetch("input"))
@@ -48,7 +48,7 @@ lexical_ok = controlled.all? do |sense|
   formal = EraZeroRenderer.render(result.fetch("semantic_ir"))
   occurrence && occurrence["target_type"] == sense["route"] && EraZeroRenderer.decode(formal) == result["semantic_ir"]
 end
-checks.add("exhaustive lexical translation", "all 352 controlled labels resolve to their one approved atom or compound and round-trip", lexical_ok)
+checks.add("exhaustive lexical translation", "all controlled labels resolve to their one approved atom or compound and round-trip", lexical_ok)
 
 grammar = spec.fetch("grammar")
 checks.add("restricted grammar", "simple, sequence, parallel, repetition, and conditional templates are explicit and ordered", %w[simple sequence parallel repetition conditional ordering_rule].all? { |key| grammar.key?(key) })

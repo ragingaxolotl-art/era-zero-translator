@@ -4,10 +4,10 @@ Status: **PASS — CORE TRANSLATOR PIPELINE CANONICAL**
 
 - Checks passed: **16**
 - Checks failed: **0**
-- Indexed senses: **436**
+- Indexed senses: **437**
 - Analysis fixtures: **13**
 - Resolution fixtures: **4**
-- Exact-lemma sense recall: **436/436**
+- Exact-lemma sense recall: **437/437**
 - Silent first-match selection: **no**
 - Next authorized gate: **glyph and audio**
 
@@ -29,7 +29,7 @@ selected lexical readings resolve through controlled English, IR, EZF-1, and exa
 
 ## PASS — indexed-sense recall
 
-every one of the 436 indexed senses is returned for its exact lemma
+every indexed sense is returned for its exact lemma
 
 ## PASS — conservative auto-resolution
 

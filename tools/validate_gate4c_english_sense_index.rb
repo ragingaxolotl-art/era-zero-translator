@@ -37,9 +37,9 @@ end)
 checks.add("exact atomic coverage", "all 324 canonical atom labels resolve to their exact roots", tests.fetch("exact_atom_labels").all? do |t|
   senses.any? { |s| s["lemma"] == t["input"].downcase && s["route"] == "atom" && s["target_id"] == t["expected_target"] && s["controlled_input_allowed"] }
 end && tests.fetch("exact_atom_labels").length == 324)
-checks.add("exact compound coverage", "all 28 approved compound labels resolve to their exact CMP identities", tests.fetch("exact_compound_labels").all? do |t|
+checks.add("exact compound coverage", "all approved compound labels resolve to their exact CMP identities", tests.fetch("exact_compound_labels").all? do |t|
   senses.any? { |s| s["lemma"] == t["input"].downcase && s["route"] == "compound" && s["target_id"] == t["expected_target"] && s["controlled_input_allowed"] }
-end && tests.fetch("exact_compound_labels").length == 28)
+end && tests.fetch("exact_compound_labels").length == compound_doc.fetch("entries").length)
 checks.add("lemma index integrity", "lemma index names every and only sense under that normalized form", index.all? { |lemma, item| item["sense_ids"].to_set == senses.select { |s| s["lemma"] == lemma }.map { |s| s["sense_id"] }.to_set } && index.keys.to_set == senses.map { |s| s["lemma"] }.to_set)
 checks.add("polysemy explicit", "reviewed ambiguous lemmas require disambiguation and contain multiple senses", tests.fetch("polysemy_tests").all? { |t| index.dig(t["input"], "requires_disambiguation") && index.dig(t["input"], "sense_ids").length >= t["minimum_senses"] })
 checks.add("gaps explicit", "unsupported high-frequency concepts route to gap", tests.fetch("gap_tests").all? { |t| senses.any? { |s| s["lemma"] == t["input"] && s["route"] == "gap" } })

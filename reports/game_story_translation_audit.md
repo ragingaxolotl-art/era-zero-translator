@@ -57,7 +57,7 @@ Status: **PASS**
 | I am sad. | negative_affect | i:participant_reference, am:function_word, sad:documented_gap | no | PASS |
 | I am angry. | anger_affect | i:participant_reference, am:function_word, angry:documented_gap | no | PASS |
 | I am scared. | fear_affect | i:participant_reference, am:function_word, scared:documented_gap | no | PASS |
-| I love you. | affection_or_preference | i:participant_reference, love:documented_gap, you:participant_reference | no | PASS |
+| I love you. | affection_or_preference | i:participant_reference, love:canonical, you:participant_reference | no | PASS |
 | I want the toy. | desire | i:participant_reference, want:documented_gap, the:function_word, toy:documented_gap | no | PASS |
 | Let us play. | recreational_activity | let:structural, us:participant_reference, play:documented_gap | no | PASS |
 | I ate the food. | ingestion | i:participant_reference, ate:documented_gap, the:function_word, food:documented_gap | no | PASS |

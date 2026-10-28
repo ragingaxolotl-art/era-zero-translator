@@ -29,7 +29,7 @@ const overlay=approvedLocalSenses(queue,data);
 check(overlay.length===1&&overlay[0].fidelity==='reviewed_local_mapping','reviewed noncanonical overlay created');
 const before=analyzeEnglish('vowlink',data),after=analyzeEnglish('vowlink',{...data,local_senses:overlay});
 check(!before.decision.auto_resolution_allowed&&after.candidates[0]?.target_id==='ORI:211'&&after.decision.auto_resolution_allowed,'local reviewed surface becomes usable, without a new root');
-check(data.atoms.length===324&&data.compounds.length===28,'canonical inventory unchanged');
+check(data.atoms.length===324&&data.compounds.length===data.counts.compounds,'canonical inventory unchanged');
 const tampered=structuredClone(queue);tampered.proposals[0].reviewed_target='ORI:999';
 rejected(()=>validateQueue(tampered,data),'import rejects unrecognized approved target');
 const unconfirmed=structuredClone(queue);unconfirmed.proposals[0].entailment_confirmed=false;

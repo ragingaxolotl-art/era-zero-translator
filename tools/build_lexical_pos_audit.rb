@@ -87,7 +87,7 @@ report = <<~MARKDOWN
   Status: **PASS — COMPLETE NONCANONICAL METADATA LAYER**
 
   - Canonical roots audited: **#{root_records.length}/324**
-  - Canonical English-index senses audited: **#{senses.length}/436**
+  - Canonical English-index senses audited: **#{senses.length}/#{index.fetch("senses").length}**
   - Game/story surface senses audited: **#{profile_senses.length}/#{profile_senses.length}**
   - Verb or verb-phrase senses: **#{verbs.length}**
   - Canonical meanings changed: **0**

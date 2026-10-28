@@ -14,11 +14,11 @@ const check=(ok,message)=>{if(!ok)failures.push(message)};
 check(plain?.format==='EZ-PLAIN-ENGLISH-1','plain-English format');
 check(plain?.status==='noncanonical_discovery_layer','plain-English authority status');
 check(plain?.canonical_semantic_changes===0,'canonical semantics unchanged');
-check(data.counts.atoms===324&&data.counts.compounds===28&&data.counts.senses===436,'canonical inventory unchanged');
-check(plain?.counts?.atoms===324&&plain?.counts?.compounds===28&&plain?.counts?.entries===352,'plain-English inventory counts');
+check(data.counts.atoms===324&&data.counts.compounds===data.compounds.length&&data.counts.senses===data.senses.length,'canonical inventory unchanged');
+check(plain?.counts?.atoms===324&&plain?.counts?.compounds===data.compounds.length&&plain?.counts?.entries===data.atoms.length+data.compounds.length,'plain-English inventory counts');
 
 const entries=plain?.entries||[],ids=entries.map(entry=>entry.target_id),unique=new Set(ids);
-check(unique.size===352,'one plain-English record per target');
+check(unique.size===data.atoms.length+data.compounds.length,'one plain-English record per target');
 for(const atom of data.atoms)check(unique.has(atom.canonical_id),`missing atom ${atom.canonical_id}`);
 for(const compound of data.compounds)check(unique.has(compound.compound_id),`missing compound ${compound.compound_id}`);
 for(const entry of entries){

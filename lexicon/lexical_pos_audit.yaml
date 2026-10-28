@@ -5,9 +5,9 @@ metadata:
   status: noncanonical_metadata_complete
   canonical_semantic_changes: 0
   root_count: 324
-  indexed_sense_count: 436
+  indexed_sense_count: 437
   game_story_surface_sense_count: 48
-  total_audited_senses: 484
+  total_audited_senses: 485
   part_of_speech_counts:
     adjective: 22
     adverb: 2
@@ -15,7 +15,7 @@ metadata:
     grammar: 1
     interjection: 1
     noun: 29
-    noun_phrase: 244
+    noun_phrase: 245
     number: 1
     preposition: 2
     quantifier: 1
@@ -16485,6 +16485,19 @@ senses:
   fidelity: authoritative
   controlled_input_allowed: true
   authority_layer: english_sense_index
+- sense_id: ENS:d685e99424a4155440ba879b
+  lemma: love
+  part_of_speech: noun_phrase
+  surface_forms:
+  - love
+  route: compound
+  target_id: CMP:44718c92b66443c0c0f03ad7
+  sense_key: canonical_compound_label
+  definition: An established life-bond characterized by self-awakening and the preserved,
+    not-yet-expressed self.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
 - sense_id: ENS:5aabc680ae2a662166b4f678
   lemma: machine
   part_of_speech: noun_phrase
@@ -19556,7 +19569,7 @@ senses:
   controlled_input_allowed: false
   authority_layer: game_story_surface_profile
 - sense_id: GSE:026
-  lemma: love
+  lemma: affection
   part_of_speech: verb
   surface_forms:
   - love

@@ -166,6 +166,8 @@ File.write(File.join(EraZeroValidation::ROOT, "tests/gate4e_etymology_cases.yaml
 File.write(File.join(EraZeroValidation::ROOT, "reports/gate4e_etymology_table.md"), report)
 File.write(File.join(EraZeroValidation::ROOT, "migrations/gate4e_etymology_table_1.0.yaml"), YAML.dump(migration))
 
+exit if ARGV.include?("--inventory-only")
+
 version_path = File.join(EraZeroValidation::ROOT, "spec/version.yaml")
 version = YAML.load_file(version_path)
 version["last_completed_gate"] = "gate4e_etymology_table"

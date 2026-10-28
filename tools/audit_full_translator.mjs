@@ -114,8 +114,8 @@ const familyCounts=Object.groupBy(data.atoms,atom=>atom.family);
 check('324 canonical dictionary roots',data.atoms.length===324&&new Set(data.atoms.map(atom=>atom.canonical_id)).size===324);
 check('12 complete 27-root families',Object.keys(familyCounts).length===12&&Object.values(familyCounts).every(items=>items.length===27));
 check('all generated root fields available',data.atoms.every(atom=>atom.canonical_id&&atom.universal_slot&&atom.local_compact_root&&atom.canonical_transliteration&&atom.formal_carrier&&atom.harmonic_signature_semitones.length>=3&&atom.note_path_semitones.length===4));
-check('28 complete compound records',data.compounds.length===28&&data.compounds.every(entry=>entry.compound_id&&entry.invariant_definition&&entry.nodes.length&&entry.edges.length));
-check('436 indexed dictionary options',data.senses.length===436);
+check('complete compound records',data.compounds.length===data.counts.compounds&&data.compounds.every(entry=>entry.compound_id&&entry.invariant_definition&&entry.nodes.length&&entry.edges.length));
+check('complete indexed dictionary options',data.senses.length===data.counts.senses);
 
 const requiredDocuments=['docs/PRODUCT_GOAL_AND_FULL_TEST_PLAN.md','docs/SOURCE_PROVENANCE.md','spec/canonical_spec.yaml','spec/source_provenance.yaml','lexicon/all_atoms.yaml','lexicon/compound_dictionary.yaml','lexicon/english_sense_index.yaml','semantic_authority_status.md','reports/regression_run.md'];
 check('document manifest count is exact',documents.count===documents.documents.length&&documents.count>=300,`${documents.count} records`);

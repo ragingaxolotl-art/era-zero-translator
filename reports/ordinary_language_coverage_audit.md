@@ -6,9 +6,9 @@ Status: **PASS**
 - Existing game/story phrases: **69**
 - Lore performance turns: **22**
 - Total audited phrases: **144**
-- Canonical roots / indexed and profile senses: **324 / 484**
+- Canonical roots / indexed and profile senses: **324 / 485**
 - Automatic single-target readings: **85** (not full sentence translations)
-- Phrases with documented gaps: **32**
+- Phrases with documented gaps: **30**
 - Phrases with unresolved predicates/descriptors: **20**
 - Assertion failures: **0**
 
@@ -20,9 +20,9 @@ It checks conservative lexical routing and word-level classifications over three
 
 | Domain | Phrases | Auto single-target | With gap | With unresolved semantic word | With structural word |
 |---|---:|---:|---:|---:|---:|
-| care | 13 | 4 | 9 | 4 | 0 |
+| care | 13 | 4 | 8 | 4 | 0 |
 | computer | 21 | 6 | 0 | 8 | 3 |
-| game_story | 69 | 48 | 18 | 3 | 5 |
+| game_story | 69 | 48 | 17 | 3 | 5 |
 | lore | 22 | 18 | 3 | 0 | 2 |
 | motion | 7 | 3 | 1 | 1 | 3 |
 | story | 12 | 6 | 1 | 4 | 4 |
@@ -59,7 +59,6 @@ These require either a defensible reviewed surface route to an existing meaning,
 |---|---:|
 | toy | 4 |
 | home | 3 |
-| love | 2 |
 | want | 2 |
 | happy | 2 |
 | ball | 2 |
@@ -87,7 +86,7 @@ These require either a defensible reviewed surface route to an existing meaning,
 
 | Source / domain | English phrase | Primary route | Auto | Non-function word routes | Result |
 |---|---|---|---:|---|---|
-| curated / care | I love you. | affection_or_preference | no | love:documented_gap | PASS |
+| curated / care | I love you. | affection_or_preference | no | love:canonical | PASS |
 | curated / care | I want to play. | desire | no | want:documented_gap, play:documented_gap | PASS |
 | curated / care | Please feed the pet. | LIF:211 | yes | feed:canonical, pet:phonemic_label | PASS |
 | curated / care | The pet slept. | LIF:002 | yes | pet:phonemic_label, slept:canonical | PASS |
@@ -181,7 +180,7 @@ These require either a defensible reviewed surface route to an existing meaning,
 | game_story / game_story | I am sad. | negative_affect | no | sad:documented_gap | PASS |
 | game_story / game_story | I am angry. | anger_affect | no | angry:documented_gap | PASS |
 | game_story / game_story | I am scared. | fear_affect | no | scared:documented_gap | PASS |
-| game_story / game_story | I love you. | affection_or_preference | no | love:documented_gap | PASS |
+| game_story / game_story | I love you. | affection_or_preference | no | love:canonical | PASS |
 | game_story / game_story | I want the toy. | desire | no | want:documented_gap, toy:documented_gap | PASS |
 | game_story / game_story | Let us play. | recreational_activity | no | let:structural, play:documented_gap | PASS |
 | game_story / game_story | I ate the food. | ingestion | no | ate:documented_gap, food:documented_gap | PASS |

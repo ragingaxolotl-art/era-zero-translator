@@ -4,10 +4,10 @@ Status: **PASS — GATE 4C CORE SENSE INDEX CANONICAL; GATE 4D MAY BEGIN**
 
 - Checks passed: **17**
 - Checks failed: **0**
-- Sense records: **436**
-- Normalized lemmas: **419**
+- Sense records: **437**
+- Normalized lemmas: **420**
 - Atom-label senses: **324**
-- Compound-label senses: **28**
+- Compound-label senses: **29**
 - Explicit gap senses: **11**
 - Semantic-IR routes: **24**
 - Translator authorized: **no**
@@ -38,7 +38,7 @@ all 324 canonical atom labels resolve to their exact roots
 
 ## PASS — exact compound coverage
 
-all 28 approved compound labels resolve to their exact CMP identities
+all approved compound labels resolve to their exact CMP identities
 
 ## PASS — lemma index integrity
 

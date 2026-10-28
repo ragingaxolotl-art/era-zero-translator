@@ -4,12 +4,12 @@ metadata:
   version: 1.0.0
   status: canonical_gate4e
   atom_entries: 324
-  compound_entries: 28
-  total_entries: 352
+  compound_entries: 29
+  total_entries: 353
   scope: Auditable synchronic derivation and authority provenance; no invented natural-language
     ancestry.
   atomic_lexicon_fingerprint: 9b2e6047a5bbd39f0b54ff2f49b569cf7e4726b361b51a62070804727efce26f
-  compound_dictionary_fingerprint: 7fe378e505f032fd58681c2bdf1f41195a1428075d20e46f66330466a4d983b5
+  compound_dictionary_fingerprint: 487aa867eebac76558fcba8302ea4331ea1e4a8226bfc02c93efc46494f9115f
 principles:
   synchronic_not_fictional: Era Zero forms are engineered encodings. The table records
     actual construction rules and approval history rather than inventing ancestors
@@ -17679,6 +17679,56 @@ entries:
     authority: gate4b_reviewed_compound
     record: migrations/gate4b_compound_dictionary_1.0.yaml
     approval_date: '2026-10-09'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:c0ddd57090058cff62fad346
+  target_type: compound
+  target_id: CMP:44718c92b66443c0c0f03ad7
+  status: canonical
+  english_label: love
+  english_label_status: indexing_gloss_not_identity
+  formation_type: typed_semantic_graph_composition
+  head:
+    node_id: h
+    kind: root
+    target_id: LIF:210
+  components:
+  - node_id: q01
+    kind: root
+    root_id: LIF:002
+  - node_id: q02
+    kind: root
+    root_id: LIF:101
+  - node_id: h
+    kind: root
+    root_id: LIF:210
+  relations:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  - edge_id: e02
+    type: qualifies
+    from: q02
+    to: h
+  semantic_derivation:
+    invariant_definition: An established life-bond characterized by self-awakening
+      and the preserved, not-yet-expressed self.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 44718c92b66443c0c0f03ad71a5115f6f051ce91928c9db7becea7453a59e63f
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/gate4b_compound_dictionary_1.0.yaml
+    approval_date: '2026-10-28'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
 - etymology_id: ETY:0c06ea8c81be4e17a1ccc451

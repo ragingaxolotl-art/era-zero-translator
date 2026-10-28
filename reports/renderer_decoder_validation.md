@@ -7,7 +7,7 @@ Status: **PASS — RENDERER/DECODER CANONICAL; CONTROLLED ENGLISH MAY BEGIN**
 - Semantic IR fixtures: **16**
 - Transposed round trips: **48**
 - Atomic state renderings: **972**
-- Compound state renderings: **84**
+- Compound state renderings: **87**
 - Decoder corruption classes tested: **4+**
 - General English authorized: **no**
 

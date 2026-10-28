@@ -6,7 +6,7 @@ This repository contains both the full canonical Ruby application/API and a dete
 
 ## Hosted release
 
-The Pages build runs entirely in the browser. Its default interface accepts ordinary English sentences—no state brackets or controlled syntax required—and infers inflections, questions, commands, negation, and the ordinary positive state. Genuine polysemy is surfaced for the user instead of guessed. It includes all 436 indexed senses and precomputed canonical resolution artifacts for all 324 atoms and every closed approved compound: 351 direct targets × 3 runtime states × 5 speech acts = 5,265 exact variants. Semantic IR, EZF-1, SVG, MIDI, reference-tone preview, and integrity-checked EZB-1 exchange are available without a server.
+The Pages build runs entirely in the browser. Its default interface accepts ordinary English sentences—no state brackets or controlled syntax required—and infers inflections, questions, commands, negation, and the ordinary positive state. Genuine polysemy is surfaced for the user instead of guessed. It includes all 437 indexed senses and precomputed canonical resolution artifacts for all 324 atoms and every closed approved compound: 352 direct targets × 3 runtime states × 5 speech acts = 5,280 exact variants. Semantic IR, EZF-1, SVG, MIDI, reference-tone preview, and integrity-checked EZB-1 exchange are available without a server.
 
 Strong contextual cues choose the applicable indexed sense automatically—for example, spatial `go` in “Go home,” data transfer in “Send the file,” and communicative expression in “Send the message.” A resolved result exposes and plays its complete sound construction: family prefix/opening, full carrier, address path, optional recognition checksum, runtime ending, and sentence contour. Recognition and slower-learning modes add a deterministic 2–5-note root identity phrase; strict mode preserves the original canonical performance byte-for-byte.
 
@@ -85,4 +85,10 @@ The product audit covers API contracts, error paths, all reviewed indexed senses
 
 ## Scope
 
-This is a deterministic indexed translator, not a statistical paraphrase model. English outside the 436-sense index may return no candidate. Structural and grammar senses can require a future richer composition UI. Those outcomes are honest limitations, not failures to be hidden by guessing.
+This is a deterministic indexed translator, not a statistical paraphrase model. English outside the 437-sense index may return no candidate. Structural and grammar senses can require a future richer composition UI. Those outcomes are honest limitations, not failures to be hidden by guessing.
+
+Love is an approved poetic compound of LIF:210, LIF:101, and LIF:002. Select its bond-and-awakening sense, then use `love [2]` for the lifelong, unfinished-becoming reading of num. See [the Atlas word entry](docs/LOVE_ATLAS_ENTRY.html).
+
+Approved compound vocabulary can grow through the [compound authoring workflow](docs/ADDING_COMPOUNDS.md). Run `ruby tools/rebuild_compound_release.rb` after an approved dictionary edit; derived inventories and dependency records update together. The isolated `ruby tools/test_compound_extension.rb` test verifies another compound can be added without changing existing identities.
+
+[Read the love Atlas entry online](https://ragingaxolotl-art.github.io/era-zero-translator/love.html).

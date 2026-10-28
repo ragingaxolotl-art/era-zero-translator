@@ -18,7 +18,7 @@ check(app.includes("section==='recognition_phrase'")&&app.includes('recognitionO
 check(app.includes('verifyPerformanceMidi(state.resolution.formal')&&app.includes('midiFromPerformance(state.resolution.formal'),'performance MIDI verification not connected');
 check(app.includes('verifyPerformancePcm(state.resolution.formal')&&app.includes('wavFromPerformance(state.resolution.formal'),'performance waveform verification not connected');
 check(data.recognition_audio?.records?.length===324,'browser recognition registry incomplete');
-check(data.lexical_pos_audit?.roots?.length===324&&data.lexical_pos_audit?.senses?.length===484,'browser lexical/POS audit incomplete');
+check(data.lexical_pos_audit?.roots?.length===324&&data.lexical_pos_audit?.senses?.length===data.senses.length+data.game_story_senses.length,'browser lexical/POS audit incomplete');
 const probes=[
   {phrase:'found',target:'MIN:110'},
   {phrase:'need',target:'ORI:211'},
@@ -29,7 +29,7 @@ const probes=[
 ];
 for(const probe of probes){const result=analyzeEnglish(probe.phrase,data,{limit:12});if(probe.target)check(result.candidates.some(candidate=>candidate.target_id===probe.target),`${probe.phrase} does not expose ${probe.target}`);if(probe.route)check(result.candidates.some(candidate=>candidate.route===probe.route),`${probe.phrase} does not expose ${probe.route}`);if(probe.noAuto)check(!result.decision.auto_resolution_allowed,`${probe.phrase} must not silently create or choose a canonical meaning`)}
 const status=failures.length?'FAIL':'PASS';
-const report=`# Recognition and dictionary UI validation\n\nStatus: **${status}**\n\n- Sound modes: **strict, recognition, learning**\n- Meaning-rich root/compound options: **352**\n- Lexically audited English senses exposed: **${data.lexical_pos_audit?.senses?.length||0}**\n- Concept-intake probes: **${probes.length}**\n- Automatic canonical additions: **0**\n- Failures: **${failures.length}**\n\n${failures.length?'## Failures\n\n'+failures.map(item=>`- ${item}`).join('\n')+'\n':'Recognition controls, ordinary-language labels, dictionary jump navigation, POS metadata, and conservative concept intake are present in the published browser release.\n'}`;
+const report=`# Recognition and dictionary UI validation\n\nStatus: **${status}**\n\n- Sound modes: **strict, recognition, learning**\n- Meaning-rich root/compound options: **${data.atoms.length+data.compounds.length}**\n- Lexically audited English senses exposed: **${data.lexical_pos_audit?.senses?.length||0}**\n- Concept-intake probes: **${probes.length}**\n- Automatic canonical additions: **0**\n- Failures: **${failures.length}**\n\n${failures.length?'## Failures\n\n'+failures.map(item=>`- ${item}`).join('\n')+'\n':'Recognition controls, ordinary-language labels, dictionary jump navigation, POS metadata, and conservative concept intake are present in the published browser release.\n'}`;
 await fs.writeFile(path.join(root,'reports/recognition_and_dictionary_ui_validation.md'),report);
 console.log(`Recognition/dictionary UI: ${status} · ${probes.length} intake probes`);
 if(failures.length){console.error(failures.join('\n'));process.exit(1)}

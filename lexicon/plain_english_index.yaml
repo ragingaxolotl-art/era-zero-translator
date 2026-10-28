@@ -12,8 +12,8 @@ policy:
     authorize automatic semantic resolution.
 counts:
   atoms: 324
-  compounds: 28
-  entries: 352
+  compounds: 29
+  entries: 353
 entries:
 - target_id: CMP:111b772027accab2054f0415
   target_type: compound
@@ -195,6 +195,23 @@ entries:
   - shared knowledge base
   example_searches:
   - shared knowledge base
+  mapping_status: discovery_only_noncanonical
+  authority_note: These words help people find the compound. They do not replace or
+    broaden its canonical graph.
+- target_id: CMP:44718c92b66443c0c0f03ad7
+  target_type: compound
+  canonical_title: love
+  plain_label: love
+  plain_explanation: 'Use love [2] for the user-approved poetic num reading: never
+    finished becoming throughout the life course. This is a literary interpretation
+    of unresolved possibility, not a new definition of num. Runtime state remains
+    outside compound identity.'
+  ordinary_terms:
+  - love
+  match_phrases:
+  - love
+  example_searches:
+  - love
   mapping_status: discovery_only_noncanonical
   authority_note: These words help people find the compound. They do not replace or
     broaden its canonical graph.

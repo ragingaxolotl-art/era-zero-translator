@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "policy": "These are user-facing phrase probes, not approval for new atomic meanings. Expected gaps and structural routes are successful honest outcomes.",
   "cases": [
-    {"domain":"care","phrase":"I love you.","route":"gap","expected_terms":{"love":"documented_gap"},"must_not_auto":true},
+    {"domain":"care","phrase":"I love you.","route":"gap","expected_terms":{"love":"canonical"},"must_not_auto":true},
     {"domain":"care","phrase":"I want to play.","route":"gap","expected_terms":{"want":"documented_gap","play":"documented_gap"},"must_not_auto":true},
     {"domain":"care","phrase":"Please feed the pet.","target":"LIF:211","expected_terms":{"feed":"canonical"}},
     {"domain":"care","phrase":"The pet slept.","target":"LIF:002","expected_terms":{"slept":"canonical"}},

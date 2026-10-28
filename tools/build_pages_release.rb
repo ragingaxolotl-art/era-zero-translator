@@ -26,6 +26,7 @@ index_html = File.read(File.join(root, "app/public/index.html"))
 File.write(File.join(pages, "index.html"), index_html)
 FileUtils.cp(File.join(root, "app/public/styles.css"), File.join(pages, "styles.css"))
 File.write(File.join(pages, ".nojekyll"), "")
+FileUtils.cp(File.join(root, "docs/LOVE_ATLAS_ENTRY.html"), File.join(pages, "love.html"))
 %w[rig.json head/base.json eyes/happy.json eyes/sad.json eyes/angry.json mouth/sounds.json].each do |relative|
   destination = File.join(pages, "visemes", relative)
   FileUtils.mkdir_p(File.dirname(destination))
@@ -76,7 +77,7 @@ end
 
 browser_index = {
   "format" => "EZ-WEB-1", "version" => "1.0.0", "generated" => "2026-10-10",
-  "counts" => { "atoms" => 324, "compounds" => 28, "senses" => senses.length, "lemmas" => senses.map { |s| s["lemma"].downcase }.uniq.length, "gaps" => senses.count { |s| s["route"] == "gap" }, "plain_language_entries" => plain_english.fetch("entries").length },
+  "counts" => { "atoms" => 324, "compounds" => compounds.length, "senses" => senses.length, "lemmas" => senses.map { |s| s["lemma"].downcase }.uniq.length, "gaps" => senses.count { |s| s["route"] == "gap" }, "plain_language_entries" => plain_english.fetch("entries").length },
   "senses" => senses,
   "game_story_senses" => game_story_senses,
   "plain_english" => plain_english,

@@ -6,9 +6,9 @@ Status: **PASS**
 - Checks failed: **0**
 - Phrase cases: **75**
 - Dictionary roots: **324**
-- Compounds: **28**
-- Indexed senses: **436**
-- Public document records: **343**
+- Compounds: **29**
+- Indexed senses: **437**
+- Public document records: **346**
 
 ## Phrase matrix
 
@@ -96,9 +96,9 @@ Status: **PASS**
 - **PASS** — 324 canonical dictionary roots
 - **PASS** — 12 complete 27-root families
 - **PASS** — all generated root fields available
-- **PASS** — 28 complete compound records
-- **PASS** — 436 indexed dictionary options
-- **PASS** — document manifest count is exact: 343 records
+- **PASS** — complete compound records
+- **PASS** — complete indexed dictionary options
+- **PASS** — document manifest count is exact: 346 records
 - **PASS** — every document path exists
 - **PASS** — required authority documents are public
 - **PASS** — all evidence categories available

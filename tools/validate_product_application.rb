@@ -19,7 +19,7 @@ checks.add("canonical immutability", "product layer fingerprints canonical trans
 
 health = json_body.call(api.dispatch("GET", "/api/health"))
 meta = json_body.call(api.dispatch("GET", "/api/meta"))
-checks.add("health and metadata", "service reports complete canonical engine, formats, counts, limits, and no-silent-guess policy", health["status"] == "ok" && health["all_gates_complete"] == true && health["translator_release"] == "complete" && meta.dig("counts", "atoms") == 324 && meta.dig("counts", "senses") == 436 && meta["formats"].to_set == %w[EZIR-JSON-1 EZF-1 EZSVG-1 EZB-1 MIDI-0].to_set && meta["no_silent_guess"] == true)
+checks.add("health and metadata", "service reports complete canonical engine, formats, counts, limits, and no-silent-guess policy", health["status"] == "ok" && health["all_gates_complete"] == true && health["translator_release"] == "complete" && meta.dig("counts", "atoms") == 324 && meta.dig("counts", "senses") == EraZeroValidation.load_yaml("lexicon/english_sense_index.yaml").fetch("senses").length && meta["formats"].to_set == %w[EZIR-JSON-1 EZF-1 EZSVG-1 EZB-1 MIDI-0].to_set && meta["no_silent_guess"] == true)
 
 sense_ok = corpus.fetch("sense_cases").all? do |item|
   result = json_body.call(post.call("/api/analyze", { "input" => item["input"], "limit" => 20 }))

@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 436
-  lemma_count: 419
+  sense_count: 437
+  lemma_count: 420
   canonical_atom_senses: 324
-  canonical_compound_senses: 28
+  canonical_compound_senses: 29
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: 9b2e6047a5bbd39f0b54ff2f49b569cf7e4726b361b51a62070804727efce26f
-  compound_dictionary_fingerprint: 7fe378e505f032fd58681c2bdf1f41195a1428075d20e46f66330466a4d983b5
+  compound_dictionary_fingerprint: 487aa867eebac76558fcba8302ea4331ea1e4a8226bfc02c93efc46494f9115f
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -4107,6 +4107,24 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: love
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:44718c92b66443c0c0f03ad7
+  definition: An established life-bond characterized by self-awakening and the preserved,
+    not-yet-expressed self.
+  sense_id: ENS:d685e99424a4155440ba879b
+  display_form: love
+  selection_cues:
+  - bond, self-awakening, and the self yet to be expressed
+  - the approved poetic life-course meaning
+  excluded_readings:
+  - Generic liking, preference, attraction, every possible English sense of love,
+    or an assertion that a person is literally asleep.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:5aabc680ae2a662166b4f678
   lemma: machine
   display_form: machine
@@ -9204,6 +9222,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  love:
+    sense_ids:
+    - ENS:d685e99424a4155440ba879b
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   machine:
     sense_ids:
     - ENS:5aabc680ae2a662166b4f678

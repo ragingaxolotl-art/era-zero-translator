@@ -8,7 +8,7 @@ Status: **PASS — SEMANTIC IR CANONICAL; RENDERER/DECODER MAY BEGIN**
 - Valid cases: **16**
 - Invalid cases: **13**
 - Canonical atoms preserved: **324**
-- Canonical compounds preserved: **28**
+- Canonical compounds preserved: **29**
 - Translator authorized: **no**
 
 ## PASS — lexical immutability

@@ -16,17 +16,17 @@ This audit reconciles the browser release with the canonical lexicon, compound d
 
 source corpus preserved separately with immutable source IDs
 
-## PASS — 28 approved compounds
+## PASS — approved compounds
 
-28 approved definitions
+29 approved definitions
 
-## PASS — 436 complete sense options
+## PASS — complete sense options
 
-324 atomic labels / 28 compound labels
+324 atomic labels / 29 compound labels
 
-## PASS — 352 lexical targets
+## PASS — complete lexical targets
 
-352 unique direct targets
+353 unique direct targets
 
 ## PASS — 11 explicit gaps
 

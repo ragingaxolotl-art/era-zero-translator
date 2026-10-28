@@ -6,11 +6,11 @@ This repository contains both the full canonical Ruby application/API and a dete
 
 ## Hosted release
 
-The Pages build runs entirely in the browser. Its default interface accepts ordinary English sentences—no state brackets or controlled syntax required—and infers inflections, questions, commands, negation, and the ordinary positive state. Genuine polysemy is surfaced for the user instead of guessed. It includes all 436 indexed senses and precomputed canonical resolution artifacts for all 324 atoms and every closed approved compound: 351 direct targets × 3 runtime states × 5 speech acts = 5,265 exact variants. Semantic IR, EZF-1, SVG, MIDI, reference-tone preview, and integrity-checked EZB-1 exchange are available without a server.
+The Pages build runs entirely in the browser. Its default interface accepts ordinary English sentences—no state brackets or controlled syntax required—and infers inflections, questions, commands, negation, and the ordinary positive state. Genuine polysemy is surfaced for the user instead of guessed. It includes all 437 indexed senses and precomputed canonical resolution artifacts for all 324 atoms and every closed approved compound: 352 direct targets × 3 runtime states × 5 speech acts = 5,280 exact variants. Semantic IR, EZF-1, SVG, MIDI, reference-tone preview, and integrity-checked EZB-1 exchange are available without a server.
 
 Strong contextual cues choose the applicable indexed sense automatically—for example, spatial `go` in “Go home,” data transfer in “Send the file,” and communicative expression in “Send the message.” A resolved result exposes and plays its complete sound construction: family prefix/opening, full carrier, address path, optional recognition checksum, runtime ending, and sentence contour. Recognition and slower-learning modes add a deterministic 2–5-note root identity phrase; strict mode preserves the original canonical performance byte-for-byte.
 
-The workbench is organized into Translator, Conversation, Dictionary, and Documents views. All 436 indexed options remain present rather than being hidden behind a candidate cutoff. The Dictionary exposes all 324 roots, 28 compounds, structural and grammar routes, and documented gaps through family/type filtering, a meaning-rich jump selector, and a detailed generated-form inspector. Its DBA concept-intake checker routes unfamiliar concepts without silently creating meanings. The Documents view indexes every tracked specification, lexicon, migration, semantic review, report, test, example, and source-provenance record.
+The workbench is organized into Translator, Conversation, Dictionary, and Documents views. All 437 indexed options remain present rather than being hidden behind a candidate cutoff. The Dictionary exposes all 324 roots, 29 compounds, structural and grammar routes, and documented gaps through family/type filtering, a meaning-rich jump selector, and a detailed generated-form inspector. Its DBA concept-intake checker routes unfamiliar concepts without silently creating meanings. The Documents view indexes every tracked specification, lexicon, migration, semantic review, report, test, example, and source-provenance record.
 
 Any English phrase may be entered. The word-matching panel preserves every word in order, recommends the strongest indexed atom, compound, grammar route, Semantic-IR route, or gap, and allows the user to choose another indexed reading. English-only function words make no atomic claim. Unfamiliar content terms are preserved as deterministic EZNAME phonemic labels and are never silently dropped or promoted into fake canonical meanings.
 
@@ -74,6 +74,12 @@ The product audit covers API contracts, error paths, all reviewed indexed senses
 
 ## Scope
 
-This is a deterministic indexed translator, not a statistical paraphrase model. English outside the 436-sense index is retained through the nonsemantic phonemic-label channel, but that fallback is not presented as a semantic translation. Structural and grammar senses can require a future richer composition UI. Those outcomes are honest limitations, not failures to be hidden by guessing.
+This is a deterministic indexed translator, not a statistical paraphrase model. English outside the 437-sense index is retained through the nonsemantic phonemic-label channel, but that fallback is not presented as a semantic translation. Structural and grammar senses can require a future richer composition UI. Those outcomes are honest limitations, not failures to be hidden by guessing.
 
 Source and conversation provenance is recorded in `docs/SOURCE_PROVENANCE.md` and `spec/source_provenance.yaml`.
+
+Love is an approved poetic compound of LIF:210, LIF:101, and LIF:002. Select its bond-and-awakening sense, then use `love [2]` for the lifelong, unfinished-becoming reading of num. See [the Atlas word entry](docs/LOVE_ATLAS_ENTRY.html).
+
+Approved compound vocabulary can grow through the [compound authoring workflow](docs/ADDING_COMPOUNDS.md). Run `ruby tools/rebuild_compound_release.rb` after an approved dictionary edit; derived inventories and dependency records update together. The isolated `ruby tools/test_compound_extension.rb` test verifies another compound can be added without changing existing identities.
+
+[Read the love Atlas entry online](https://ragingaxolotl-art.github.io/era-zero-translator/love.html).

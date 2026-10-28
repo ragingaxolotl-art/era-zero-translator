@@ -66,8 +66,13 @@ module EraZeroApp
       { "status" => "ok", "service" => "era-zero-translator", "version" => VERSION, "translator_release" => @version["translator_release_status"], "all_gates_complete" => @readiness.fetch("required_gates").all? { |gate| gate["status"] == "complete" } }
     end
 
+    def inventory_counts
+      senses = EraZeroValidation.load_yaml("lexicon/english_sense_index.yaml").fetch("senses")
+      { "atoms" => EraZeroValidation.load_yaml("lexicon/atoms.yaml").fetch("atoms").length, "compounds" => EraZeroValidation.load_yaml("lexicon/compound_dictionary.yaml").fetch("entries").length, "senses" => senses.length, "lemmas" => senses.map { |s| s["lemma"] }.uniq.length, "gaps" => senses.count { |s| s["route"] == "gap" } }
+    end
+
     def metadata
-      { "service" => "Era Zero Translator Workbench", "version" => VERSION, "formats" => %w[EZIR-JSON-1 EZF-1 EZSVG-1 EZB-1 MIDI-0], "counts" => { "atoms" => 324, "compounds" => 28, "senses" => 436, "lemmas" => 419, "gaps" => 11 }, "limits" => { "request_bytes" => MAX_BODY_BYTES, "candidate_limit" => 20 }, "no_silent_guess" => true }
+      { "service" => "Era Zero Translator Workbench", "version" => VERSION, "formats" => %w[EZIR-JSON-1 EZF-1 EZSVG-1 EZB-1 MIDI-0], "counts" => inventory_counts, "limits" => { "request_bytes" => MAX_BODY_BYTES, "candidate_limit" => 20 }, "no_silent_guess" => true }
     end
 
     def parse(raw)

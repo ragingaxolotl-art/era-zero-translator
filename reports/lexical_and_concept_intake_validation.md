@@ -5,7 +5,7 @@ Status: **PASS — COMPLETE METADATA AND SAFE INTAKE WORKFLOW**
 - Checks passed: **7**
 - Checks failed: **0**
 - Canonical roots: **324**
-- Audited English senses: **484**
+- Audited English senses: **485**
 - Decision routes: **8**
 - Canonical semantic changes: **0**
 

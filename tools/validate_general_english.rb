@@ -36,7 +36,7 @@ indexed_coverage = senses.all? do |sense|
   result = translator.analyze(sense.fetch("lemma"), limit: 20)
   result["status"] == "ok" && result.fetch("candidates").any? { |candidate| candidate["sense_id"] == sense["sense_id"] }
 end
-checks.add("indexed-sense recall", "every one of the 436 indexed senses is returned for its exact lemma", indexed_coverage && senses.length == 436)
+checks.add("indexed-sense recall", "every indexed sense is returned for its exact lemma", indexed_coverage && senses.length == sense_doc.dig("metadata", "sense_count"))
 
 leave = translator.analyze("leave [1]")
 checks.add("conservative auto-resolution", "unique exact direct sense plus explicit runtime may auto-resolve and round-trip", leave.dig("decision", "auto_resolution_allowed") == true && leave.dig("translation", "round_trip_equal") == true && leave.dig("candidates", 0, "target_id") == "MOV:101")

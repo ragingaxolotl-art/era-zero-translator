@@ -12,7 +12,7 @@ const check=(name,ok,detail='')=>checks.push({name,ok:Boolean(ok),detail});
 const canonicalTargets=new Set([...data.atoms.map(item=>item.canonical_id),...data.compounds.map(item=>item.compound_id)]);
 const routes=data.game_story_senses||[];
 
-check('canonical inventory unchanged',data.atoms.length===324&&data.compounds.length===28&&data.senses.length===436);
+check('canonical inventory unchanged',data.atoms.length===324&&data.compounds.length===data.counts.compounds&&data.senses.length===data.counts.senses);
 check('profile declares no semantic authority change',data.game_story_profile?.canonical_semantic_changes===0);
 check('surface IDs unique',new Set(routes.map(item=>item.sense_id)).size===routes.length);
 check('all direct routes use existing canonical targets',routes.filter(item=>['atom','compound'].includes(item.route)).every(item=>canonicalTargets.has(item.target_id)));

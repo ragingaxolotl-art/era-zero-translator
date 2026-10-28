@@ -122,7 +122,7 @@ entries.concat(compounds.map do |compound|
     "target_type" => "compound",
     "canonical_title" => title,
     "plain_label" => indexed.min_by { |term| [term.to_s.split.length, term.to_s.length] } || title,
-    "plain_explanation" => "An everyday discovery label for the approved compound “#{title}”; the compound graph controls its exact meaning.",
+    "plain_explanation" => compound["usage_note"] || "An everyday discovery label for the approved compound “#{title}”; the compound graph controls its exact meaning.",
     "ordinary_terms" => normalize_tags([title.to_s.split, indexed]),
     "match_phrases" => normalize_tags([indexed, title]),
     "example_searches" => normalize_tags([indexed, title]).first(3),

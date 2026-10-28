@@ -4,10 +4,10 @@ Status: **PASS — CONTROLLED ENGLISH CANONICAL; GENERAL ENGLISH MAY BEGIN**
 
 - Checks passed: **13**
 - Checks failed: **0**
-- Controlled lexemes: **352**
+- Controlled lexemes: **353**
 - Golden valid cases: **16**
 - Golden invalid cases: **17**
-- Exhaustive lexical round trips: **352**
+- Exhaustive lexical round trips: **353**
 - General English authorized next: **yes**
 - General English implemented: **no**
 
@@ -17,7 +17,7 @@ sense index, semantic IR, and renderer match recorded fingerprints
 
 ## PASS — controlled label partition
 
-all and only 324 atom plus 28 compound canonical labels are controlled
+all and only canonical atom and compound canonical labels are controlled
 
 ## PASS — golden translations
 
@@ -29,7 +29,7 @@ invalid and unsupported inputs return exact stable errors without partial IR
 
 ## PASS — exhaustive lexical translation
 
-all 352 controlled labels resolve to their one approved atom or compound and round-trip
+all controlled labels resolve to their one approved atom or compound and round-trip
 
 ## PASS — restricted grammar
 

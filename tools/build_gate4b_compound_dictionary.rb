@@ -108,6 +108,10 @@ entries << {
   "serialization" => { "canonical_format" => "EZC-JSON-1", "content_digest" => digest }
 }
 
+existing = EraZeroValidation.load_yaml("lexicon/compound_dictionary.yaml").fetch("entries")
+initial_ids = entries.map { |entry| entry.fetch("compound_id") }
+entries.concat(existing.reject { |entry| initial_ids.include?(entry.fetch("compound_id")) })
+
 dictionary = {
   "metadata" => {
     "title" => "Era Zero Gate 4B High-Frequency Compound Dictionary", "version" => VERSION,
