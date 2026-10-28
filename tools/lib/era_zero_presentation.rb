@@ -75,10 +75,31 @@ module EraZeroPresentation
     bytes.pack("C*")
   end
 
+  def frame_bound_arguments(formal, max_events)
+    output = []; previous = []; occurrence = nil
+    formal.dig("performance", "lexical_events").each do |event|
+      chain = event.fetch("binding_chain", [])
+      unless chain.is_a?(Array) && chain.all? { |b| b.is_a?(Hash) && ROLE_ORDER.include?(b["role"]) && b["slot_path"].is_a?(Array) && b["predicate_path"].is_a?(Array) }
+        raise PresentationError, "unsupported musical compound binding chain"
+      end
+      shared = 0
+      if occurrence == event["occurrence_id"]
+        shared += 1 while shared < previous.length && shared < chain.length && previous[shared] == chain[shared]
+      end
+      previous[shared..-1].reverse_each { |b| output << grammar_marker(formal, occurrence, "role_#{b['role']}_close") }
+      chain[shared..-1].each { |b| output << grammar_marker(formal, event["occurrence_id"], "role_#{b['role']}_open") }
+      output << event; previous = chain; occurrence = event["occurrence_id"]
+      raise PresentationError, "compound binding exceeds event limit #{max_events}" if output.length > max_events
+    end
+    previous.reverse_each { |b| output << grammar_marker(formal, occurrence, "role_#{b['role']}_close") }
+    raise PresentationError, "compound binding exceeds event limit #{max_events}" if output.length > max_events
+    output
+  end
+
   # Expand explicit counted scopes as whole phrases, not per-root multipliers.
   # Bounds protect export size; they are implementation limits, not language rules.
   def scheduled_lexical_events(formal, max_events: 100_000)
-    events = formal.dig("performance", "lexical_events")
+    events = frame_bound_arguments(formal, max_events)
     ir = formal.fetch("semantic_ir")
     ir.fetch("nodes").each do |node|
       raise PresentationError, "unsupported musical discourse variable/reference" if %w[variable reference].include?(node["kind"])

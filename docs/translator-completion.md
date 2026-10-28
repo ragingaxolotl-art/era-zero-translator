@@ -676,3 +676,7 @@ Explicit `If <supported assertion>, then <supported assertion>` now composes int
 ### Impairment and restoration adjectives
 
 Reviewed existing-sense constructions now map present “damaged/impaired” to WRN:001 and “restored” to REP:001, with the described entity as bearer and explicit sense notes. These condition meanings remain distinct from ongoing and completed damaging/restoring events. The review in `reviews/impairment_restoration_adjectives.md` records boundaries and counterexamples. Fifteen reference-renderer comparisons cover questions, negation, past time, quantities, and runtime endings; conditional composition also preserves the condition as antecedent. No root or compound definitions changed. This does not supply missing sensory or affective foundations.
+
+### Nested compound binding roles in music
+
+Compound participant bindings now carry role and predicate path at every binding-chain level, rather than losing the inner role when an argument is itself a compound. Musical scheduling wraps the complete argument subtree in role frames and closes/reopens frames when binding paths change. Twelve structural role/runtime contrasts match Ruby and browser MIDI/SVG, preserve inner and outer runtime endings, and emit each payload once. These probes check encoding mechanics, not whether the example predicate semantically licenses every tested role. Old bound formal artifacts must be regenerated to include per-level role metadata. Independent decoding of all compound attachment paths and lexical valence validation remain incomplete.

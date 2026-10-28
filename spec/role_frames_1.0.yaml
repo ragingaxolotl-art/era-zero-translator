@@ -2,7 +2,7 @@ profile: EZROLE-1
 status: versioned_implementation_convention
 provenance: New grammar convention under the translator completion goal
 purpose: Preserve distinct argument roles that previously shared only a register
-scope: Explicit fills_role edges in the utterance graph
+scope: Explicit fills_role edges in the utterance graph and scoped compound slot bindings
 role_order: [actor, source, cause, experiencer, bearer, predicate, target, result, destination, instrument, material, content, recipient, location, environment, condition, persistent_condition, time, manner, quantity, comparison_standard, beneficiary]
 code:
   rule: Zero-based role index written as exactly three base-three digits
@@ -22,6 +22,14 @@ compatibility:
   - Bare lexical performances without role edges remain unchanged
   - Variable/reference nodes lacking musical discourse encoding now fail explicitly
 remaining:
-  - Inline compound-binding role frames
   - Independent inverse semantic decoding and perceptual recognition tests
   - Lexical valence validation beyond the general role vocabulary
+
+compound_bindings:
+  metadata: Each binding_chain level retains compound occurrence, slot path, argument identity, role, and predicate path
+  placement: Keep each outer role frame open across the entire bound argument, including its nested binding frames
+  transitions: Close departed levels from inner to outer; open new levels from outer to inner
+  repetition: Repeat the complete framed argument with its containing scope
+  runtime: Argument runtime endings and compound external-head endings remain independent
+  compatibility: Earlier binding chains without per-level roles must be regenerated before musical export
+  limitation: Frames identify roles and nesting; independent inverse recovery of all predicate attachment paths remains unverified

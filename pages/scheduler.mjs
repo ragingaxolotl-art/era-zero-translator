@@ -5,7 +5,7 @@ const MEASUREMENT_UNITS=['1','second','minute','hour','day','meter','kilometer',
 const MODAL_MODES = ['possible','necessary','permitted','obligated','intended','predicted','counterfactual'];
 // Counted-scope scheduling shared by browser sound, notation and MIDI export.
 export function scheduledLexicalEvents(formal, maxEvents = 100000) {
-  const events = formal.performance.lexical_events;
+  const events = frameBoundArguments(formal, maxEvents);
   const ir = formal.semantic_ir;
   for (const node of ir.nodes) {
     if(['variable','reference'].includes(node.kind))throw new Error('Unsupported musical discourse variable/reference.');
@@ -157,4 +157,25 @@ function grammarMarker(formal,scopeId,marker){
   return {kind:'grammar_marker',grammar_profile:'EZGRAM-1',marker,occurrence_id:scopeId,target_id:`EZGRAM:${marker}`,register:'middle',base_midi:base,
     family_qualified_transliteration:marker,formal_carrier:'',family_opening_relative_semitones:[],family_opening_absolute_midi:[],
     address_relative_semitones:relative,address_absolute_midi:relative.map(note=>base+note),note_duration_beats:.25,boundary_after_beats:.5};
+}
+
+// A bound argument may itself contain bound arguments. Keep the outer frame
+// open across its entire payload, opening/closing inner frames at path changes.
+function frameBoundArguments(formal,maxEvents){
+  const output=[];let previous=[];let occurrence=null;
+  const key=b=>JSON.stringify([b.compound_occurrence_id,b.slot_path,b.argument_id,b.role,b.predicate_path]);
+  const emit=(binding,side,id)=>output.push(grammarMarker(formal,id,`role_${binding.role}_${side}`));
+  for(const event of formal.performance.lexical_events){
+    const chain=event.binding_chain||[];
+    if(!Array.isArray(chain)||chain.some(b=>!b||!ROLE_ORDER.includes(b.role)||!Array.isArray(b.slot_path)||!Array.isArray(b.predicate_path)))throw new Error('Unsupported musical compound binding chain.');
+    let shared=0;
+    if(occurrence===event.occurrence_id)while(shared<previous.length&&shared<chain.length&&key(previous[shared])===key(chain[shared]))shared++;
+    for(let i=previous.length-1;i>=shared;i--)emit(previous[i],'close',occurrence);
+    for(let i=shared;i<chain.length;i++)emit(chain[i],'open',event.occurrence_id);
+    output.push(event);previous=chain;occurrence=event.occurrence_id;
+    if(output.length>maxEvents)throw new Error(`Compound binding exceeds event limit ${maxEvents}.`);
+  }
+  for(let i=previous.length-1;i>=0;i--)emit(previous[i],'close',occurrence);
+  if(output.length>maxEvents)throw new Error(`Compound binding exceeds event limit ${maxEvents}.`);
+  return output;
 }

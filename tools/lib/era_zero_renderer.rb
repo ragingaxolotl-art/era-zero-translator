@@ -190,7 +190,7 @@ module EraZeroRenderer
           event.merge("occurrence_id" => id, "argument_node_id" => argument.fetch("node_id"),
             "binding_path" => component.fetch("path"), "binding_role" => binding.fetch("role"),
             "binding_predicate_path" => binding.fetch("predicate_path"),
-            "binding_chain" => [{ "compound_occurrence_id" => id, "slot_path" => component.fetch("path"), "argument_id" => argument.fetch("node_id") }] + event.fetch("binding_chain", []))
+            "binding_chain" => [{ "compound_occurrence_id" => id, "slot_path" => component.fetch("path"), "argument_id" => argument.fetch("node_id"), "role" => binding.fetch("role"), "predicate_path" => binding.fetch("predicate_path") }] + event.fetch("binding_chain", []))
         end
       else
         atom = atoms.fetch(component.fetch("root_id"))
