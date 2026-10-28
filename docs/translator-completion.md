@@ -494,3 +494,21 @@ explicitly disclosed as a future assertion, without inferring promise, intention
 or willingness. The coverage audit therefore leaves its future ambiguity case
 awaiting semantic review. Modal calendar combinations still decline until clause
 scope can be represented faithfully. Quoted names are never tense-rewritten.
+
+
+### Dictionary musical collision gate
+
+`tools/audit_dictionary_musical_identity.rb` checks exact MIDI equality for all
+324 atoms and 32 compounds in each runtime state (1,068 performances). Required
+roles receive deterministic synthetic fillers. At anchor 60 with assertion
+contours, the current dictionary has no exact-output collisions. This is a bounded
+lexical check, not a claim that all sentence roles, recursive structures or
+perceptually similar melodies are distinguishable.
+
+A regression test demonstrates the failure the gate prevents: assigning a new
+compound ID and specialized definition to unchanged component music produces a
+new formal identity but identical MIDI. The audit groups by emitted MIDI bytes,
+which contain no semantic IDs, so that case fails the collision criterion. New
+conventional compounds must pass this gate before joining the approved inventory;
+semantic hashes alone cannot establish listener recoverability. General inverse
+interpretation and scoped compound sound encoding remain unfinished.
