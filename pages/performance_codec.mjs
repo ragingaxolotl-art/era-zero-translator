@@ -1,3 +1,4 @@
+import {scheduledLexicalEvents} from './scheduler.mjs';
 import{visemePlanFromFormal}from'./visemes.mjs';
 
 // EZREC-PERF-1 is an optional performance channel. It never changes the formal IR.
@@ -63,7 +64,7 @@ export function notesFromMidi(input){
 function expectedPatterns(formal,registry){
   const strict=visemePlanFromFormal(formal,{mode:'strict',recognitionRegistry:registry});
   const full=visemePlanFromFormal(formal,{mode:'recognition',recognitionRegistry:registry});
-  const events=formal.performance.lexical_events;
+  const events=scheduledLexicalEvents(formal);
   const paths=events.map((event,index)=>{
     const s=strict.cues.filter(cue=>cue.event_index===index).map(cue=>cue.note);
     const r=full.cues.filter(cue=>cue.event_index===index&&cue.section==='recognition_phrase').map(cue=>cue.note);

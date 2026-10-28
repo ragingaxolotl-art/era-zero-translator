@@ -30,7 +30,7 @@ module EraZeroPresentation
 
   def svg(formal)
     validate_formal!(formal)
-    events = formal.dig("performance", "lexical_events")
+    events = scheduled_lexical_events(formal)
     width = [960, 160 + events.sum { |event| note_sequence(event).length * 34 + 28 }].max
     height = 220 + events.length * 54
     cursor = 100
@@ -96,6 +96,7 @@ module EraZeroPresentation
                  scoped = edges.select { |edge| edge["type"] == "scopes" }
                  raise PresentationError, "repetition must have exactly one scope" unless scoped.length == 1
                  phrase = walk.call(scoped.first.fetch("from"))
+                 raise PresentationError, "repetition scope has no sound events" if phrase.empty?
                  raise PresentationError, "repetition exceeds event limit #{max_events}" if phrase.length * node["count"] > max_events
                  phrase * node["count"]
                when "clause"

@@ -15,5 +15,8 @@ limits:
 remaining:
   - Negation and other scope operators need meaning-preserving musical realization
   - Repeated parallel structures need voice scheduling
-  - SVG and browser audio do not yet consume this repetition scheduler
   - Compound and sentence timing need the complete shared scheduler
+browser_followup:
+  scheduler: pages/scheduler.mjs
+  consumers: Browser sound plan, viseme cues, MIDI export, SVG notation, performance verifier
+  validation: tests/repetition_browser_test.mjs checks Ruby/JS byte parity and parsed MIDI notes

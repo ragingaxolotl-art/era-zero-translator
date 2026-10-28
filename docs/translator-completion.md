@@ -117,6 +117,8 @@ Formal round-trip preservation is not proof of audible semantic completeness.
 
 Ruby MIDI export now schedules counted repetition as whole phrases. Parsed MIDI
 tests verify two versus three repetitions, compound integrity, sequence order,
-and bounded expansion. Only repetition fixture MIDI hashes changed in the legacy
-presentation matrix. SVG and browser playback still need the shared scheduler;
-negation and other scopes remain unresolved musical-fidelity work.
+and bounded expansion. Browser sound plans, viseme cues, MIDI and SVG now consume
+the equivalent JavaScript schedule; Ruby SVG also consumes the schedule. Cross-language
+tests compare exact MIDI bytes, SVG and parsed notes. Only repetition fixture
+hashes changed in the legacy presentation matrix. Negation and other scopes remain
+unresolved musical-fidelity work; this does not complete general sentence playback.

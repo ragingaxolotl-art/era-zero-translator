@@ -58,7 +58,7 @@ export function visemePlanFromFormal(formal,options={}){
       at+=lexicalDuration+.04;
     });
     if(mode!=='strict'){
-      const recognition=recognitionForTarget(event.target_id,registry,formal.performance.lexical_events[eventIndex].base_midi,mode);
+      const recognition=recognitionForTarget(event.target_id,registry,event.base_midi,mode);
       at+=recognition.separation_before_seconds;
       recognition.absolute_midi.forEach((note,noteIndex)=>{
         const duration=recognition.duration_seconds[noteIndex];
