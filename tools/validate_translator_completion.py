@@ -15,7 +15,7 @@ if not args.node:
     parser.error('Node is required; supply --node /path/to/node')
 
 commands = [['ruby', path] for path in [
-    'tests/compound_dependencies_test.rb', 'tests/compound_expansion_test.rb',
+    'tests/min_cross_reference_migration_test.rb', 'tests/compound_dependencies_test.rb', 'tests/compound_expansion_test.rb',
     'tests/dictionary_musical_identity_test.rb', 'tools/audit_dictionary_musical_identity.rb', 'tools/audit_role_musical_contrasts.rb',
     'tests/semantic_reference_validation_test.rb', 'tests/quantity_validation_test.rb', 'tools/validate_semantic_ir_and_grammar.rb',
     'tests/foundation_process_test.rb', 'tests/repetition_performance_test.rb',

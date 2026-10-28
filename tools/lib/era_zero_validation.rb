@@ -124,6 +124,26 @@ module EraZeroValidation
     Digest::SHA256.hexdigest(JSON.generate(deep_sort(value)))
   end
 
+  # Historical fingerprints remain immutable. Accept only the exact documented
+  # editorial migration, and prove its reversal restores the complete old records.
+  def atomic_fingerprint_matches?(atoms, expected)
+    actual = fingerprint(atoms)
+    return true if actual == expected
+    migration = load_yaml("migrations/min_cross_reference_reconciliation_2026_10_28.yaml")
+    return false unless actual == migration.fetch("after_fingerprint") && expected == migration.fetch("before_fingerprint")
+    restored = Marshal.load(Marshal.dump(atoms))
+    targets = restored.select { |atom| migration.fetch("root_ids").include?(atom["canonical_id"]) }
+    return false unless targets.length == 9
+    targets.each do |atom|
+      values = atom.fetch("distinctions_and_exclusions")
+      migration.fetch("replacements").each do |old, corrected|
+        return false unless values.count(corrected) == 1 && values.count(old).zero?
+        values.map! { |text| text == corrected ? old : text }
+      end
+    end
+    fingerprint(restored) == expected
+  end
+
   def normalized_range(value)
     match = value.to_s.upcase.tr("–—", "-").match(/\A([A-Z]{3}):(\d{3})-(\d{3})\z/)
     raise ArgumentError, "range must look like CON:000-022" unless match

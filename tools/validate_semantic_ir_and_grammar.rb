@@ -28,7 +28,7 @@ validate = ->(ir) { EraZeroSemanticValidation.validate(ir) }
 valid_results = cases.fetch("valid_cases").to_h { |c| [c["case_id"], validate.call(c["ir"])] }
 invalid_results = cases.fetch("invalid_cases").to_h { |c| [c["case_id"], validate.call(c["ir"])] }
 
-checks.add("lexical immutability", "atomic and compound fingerprints remain unchanged", spec.dig("metadata", "atomic_lexicon_fingerprint") == EraZeroValidation.fingerprint(atoms_doc.fetch("atoms")) && spec.dig("metadata", "compound_dictionary_fingerprint") == EraZeroValidation.fingerprint(compounds_doc.fetch("entries")))
+checks.add("lexical immutability", "atomic baseline matches directly or through exact editorial reconciliation; compound fingerprint remains unchanged", EraZeroValidation.atomic_fingerprint_matches?(atoms_doc.fetch("atoms"), spec.dig("metadata", "atomic_lexicon_fingerprint")) && spec.dig("metadata", "compound_dictionary_fingerprint") == EraZeroValidation.fingerprint(compounds_doc.fetch("entries")))
 checks.add("complete required scope", "IR covers every required semantic and grammar area", %w[role_system runtime_state polarity_and_scope quantity_and_measurement modality time_and_aspect composition discourse execution_semantics canonical_serialization].all? { |k| spec.key?(k) })
 checks.add("dimension separation", "trit, runtime, polarity, modality, time, and aspect are explicitly independent", spec.dig("design_principles", "dimension_separation").include?("independent") && spec.dig("runtime_state", "separations").length == 4)
 checks.add("role inventory", "core roles and typed extensions are explicit", roles.length >= 20 && %w[actor source cause predicate target result destination content time quantity].all? { |r| roles.include?(r) })

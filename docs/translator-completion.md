@@ -680,3 +680,7 @@ Reviewed existing-sense constructions now map present “damaged/impaired” to 
 ### Nested compound binding roles in music
 
 Compound participant bindings now carry role and predicate path at every binding-chain level, rather than losing the inner role when an argument is itself a compound. Musical scheduling wraps the complete argument subtree in role frames and closes/reopens frames when binding paths change. Twelve structural role/runtime contrasts match Ruby and browser MIDI/SVG, preserve inner and outer runtime endings, and emit each payload once. These probes check encoding mechanics, not whether the example predicate semantically licenses every tested role. Old bound formal artifacts must be regenerated to include per-level role metadata. Independent decoding of all compound attachment paths and lexical valence validation remain incomplete.
+
+### MIN source cross references reconciled
+
+Eighteen provisional pointers in nine MIN:0xx records now reflect the later canonical representational-change and selective-attention definitions. Active inventories, the canonical specification and browser index agree. Historical review packets and their baseline fingerprints remain intact. The migration compatibility check reverses only the two documented strings on the nine named roots and requires the full original record hash; it does not ignore changed definitions or musical fields. The foundation inventory snapshot now reports zero active provisional cross-references. Google and other external historical snapshots remain separate reconciliation work.

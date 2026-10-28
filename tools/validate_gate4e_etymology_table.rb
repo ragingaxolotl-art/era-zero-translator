@@ -41,7 +41,7 @@ checks.add("compound graphs exact", "head, components, relations, digest, and de
 end)
 checks.add("English independence", "every English label is explicitly non-identifying metadata", rows.all? { |r| r["english_label_status"].include?("not_") })
 checks.add("no fictional ancestry", "every row rejects invented historical claims", rows.all? { |r| r["historical_claim"].include?("No ") })
-checks.add("fingerprint immutability", "atomic and compound fingerprints remain exact", table.dig("metadata", "atomic_lexicon_fingerprint") == EraZeroValidation.fingerprint(atoms) && table.dig("metadata", "compound_dictionary_fingerprint") == EraZeroValidation.fingerprint(compounds))
+checks.add("fingerprint immutability", "atomic baseline matches directly or through exact editorial reconciliation; compound fingerprint remains exact", EraZeroValidation.atomic_fingerprint_matches?(atoms, table.dig("metadata", "atomic_lexicon_fingerprint")) && table.dig("metadata", "compound_dictionary_fingerprint") == EraZeroValidation.fingerprint(compounds))
 checks.add("authority integration", "Gate 4 remains complete, its migration records the semantic-IR handoff, and later translation is orderly", begin
   version = EraZeroValidation.load_yaml("spec/version.yaml")
   readiness = EraZeroValidation.load_yaml("spec/translator_readiness.yaml")

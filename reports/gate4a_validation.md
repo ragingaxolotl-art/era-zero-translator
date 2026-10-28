@@ -17,7 +17,7 @@ all 324 referenced atoms are canonical and generated forms remain valid
 
 ## PASS — atomic immutability
 
-Gate 4A records the unchanged full atomic fingerprint
+Gate 4A baseline matches directly or through exact editorial reconciliation
 
 ## PASS — scope boundary
 

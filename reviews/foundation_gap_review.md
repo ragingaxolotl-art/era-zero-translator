@@ -84,8 +84,8 @@ additional ingredients are established.
 ## Full perception inventory review
 
 The [perception foundation review](perception_foundation_review.md) now checks all
-324 current root definitions and 32 compound invariants. It identifies 18 stale
-provisional cross-references in nine MIN entries, distinguishes their historical
+324 current root definitions and 32 compound invariants. It identified 18 stale
+provisional cross-references in nine MIN entries (now editorially reconciled), distinguishes their historical
 wording from later approved definitions, and specifies registration, experience,
 access and channel identities before derived perception vocabulary. The pinned
 inventory report supports reproducibility, not an automatic expressibility proof.

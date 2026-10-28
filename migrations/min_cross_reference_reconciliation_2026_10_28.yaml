@@ -1,0 +1,33 @@
+---
+type: editorial_cross_reference_reconciliation
+authority: User-directed source reconciliation; later canonical MIN definitions override
+  earlier provisional pointers
+scope: Only two distinctions_and_exclusions strings on nine MIN:0xx entries; invariant
+  definitions, lexical trits and generated sounds unchanged
+root_ids:
+- MIN:000
+- MIN:001
+- MIN:002
+- MIN:010
+- MIN:011
+- MIN:012
+- MIN:020
+- MIN:021
+- MIN:022
+replacements:
+  ? The act of perceiving, remembering, learning, interpreting, or reasoning belongs
+    to MIN:1xx and remains provisional until separately reviewed.
+  : MIN:1xx specifies changes to mental representations. Perception, remembering,
+    learning, interpreting, and reasoning are not established merely by selecting
+    a representational-change root.
+  ? Competence, attention capacity, belief relation, uncertainty, and distributed
+    intelligence belong to MIN:2xx and remain provisional until separately reviewed.
+  : MIN:2xx specifies selective-attention capacities and relations. Belief, uncertainty,
+    general competence, and distributed intelligence are not established merely by
+    selecting an attention root.
+before_fingerprint: 9b2e6047a5bbd39f0b54ff2f49b569cf7e4726b361b51a62070804727efce26f
+after_fingerprint: e25dda6b8e84866f9bf2b3ba012aa0e9538cc711830fcbfc2fc1179f615f443e
+historical_sources_preserved:
+- reviews/MIN_000_022_recommended_spec.yaml
+- reviews/MIN_000_022_peer_review.md
+- tools/build_min_000_022_review.rb

@@ -17,7 +17,7 @@ compounds_doc = EraZeroValidation.load_yaml("lexicon/compound_dictionary.yaml")
 compounds = compounds_doc.fetch("entries")
 checks = EraZeroValidation::CheckSet.new
 
-checks.add("source immutability", "IR, atoms, and compounds match recorded fingerprints", spec.dig("metadata", "semantic_ir_fingerprint") == EraZeroValidation.fingerprint(EraZeroValidation.load_yaml("spec/semantic_ir_1.0.yaml")) && spec.dig("metadata", "atomic_lexicon_fingerprint") == EraZeroValidation.fingerprint(atoms) && spec.dig("metadata", "compound_dictionary_fingerprint") == EraZeroValidation.fingerprint(compounds))
+checks.add("source immutability", "IR and compounds match recorded fingerprints; atoms match directly or through exact editorial reconciliation", spec.dig("metadata", "semantic_ir_fingerprint") == EraZeroValidation.fingerprint(EraZeroValidation.load_yaml("spec/semantic_ir_1.0.yaml")) && EraZeroValidation.atomic_fingerprint_matches?(atoms, spec.dig("metadata", "atomic_lexicon_fingerprint")) && spec.dig("metadata", "compound_dictionary_fingerprint") == EraZeroValidation.fingerprint(compounds))
 checks.add("deliverable completeness", "formal notation, forms, notes, state, contour, timing, register, gloss, decoder, and round trip are specified", %w[formal_document reference_pitch_profile runtime_endings contours timing registers decoder round_trip_contract implementation].all? { |k| spec.key?(k) })
 
 round_trip_ok = true

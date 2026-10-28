@@ -23,7 +23,7 @@ and conventional specialization must remain separately identified in the registr
 
 ## Authority reconciliation
 
-Nine MIN:0xx entries retain two historical cross-references each, saying that
+Nine MIN:0xx entries previously retained two historical cross-references each, saying that
 perception/learning belong to provisional MIN:1xx and belief/uncertainty belong to
 provisional MIN:2xx. The later reviewed MIN:1xx definitions specify representational
 change; MIN:2xx specifies selective attention. In particular:
@@ -37,9 +37,11 @@ change; MIN:2xx specifies selective attention. In particular:
 
 The earlier pointers are not approval to translate “see” as MIN:111, “believe” as
 MIN:210, or “uncertain” as MIN:212. Preserve their historical provenance, but resolve
-runtime senses from the later invariant definitions. A future editorial migration
-should replace stale cross-references consistently across canonical source files,
-compiled inventories, and browser artifacts without changing those invariants.
+runtime senses from the later invariant definitions. The editorial migration in `migrations/min_cross_reference_reconciliation_2026_10_28.yaml`
+now corrects those pointers across active inventories, the canonical specification
+and browser index. Historical review packets remain intact. The compatibility
+validator reverses exactly the documented edits and requires the complete original
+record fingerprint; changes to other fields cannot pass as this migration.
 
 ## Full-family review
 
