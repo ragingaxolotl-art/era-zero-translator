@@ -45,7 +45,19 @@ module EraZeroRenderer
   end
 
   def register_for(node_id, ir)
-    role_edges = ir.fetch("edges").select { |e| e["type"] == "fills_role" && e["from"] == node_id }
+    # A cardinality wrapper retains the argument role of the referent it scopes.
+    nodes = ir.fetch("nodes").to_h { |node| [node["node_id"], node] }
+    pending = [node_id]; scoped_ids = Set.new
+    until pending.empty?
+      current = pending.pop
+      next if scoped_ids.include?(current)
+      scoped_ids << current
+      ir.fetch("edges").each do |edge|
+        parent = nodes[edge["to"]]
+        pending << edge["to"] if edge["type"] == "scopes" && edge["from"] == current && parent && parent["kind"] == "scope_operator" && parent["operator"] == "quantifier"
+      end
+    end
+    role_edges = ir.fetch("edges").select { |e| e["type"] == "fills_role" && scoped_ids.include?(e["from"]) }
     registers = role_edges.map { |e| ROLE_REGISTERS.fetch(e["role"], "middle") }
     return "high" if registers.include?("high")
     return "low" if registers.include?("low")

@@ -1,3 +1,4 @@
+import {registerFor} from './roles.mjs';
 import {canonicalDigest} from './engine.mjs';
 import {encodeName, notesForName} from './names.mjs';
 import {deicticReference,deicticEvent,nominalMarker} from './references.mjs';
@@ -256,8 +257,7 @@ export async function composeNamedSentence(input,template) {
   ir.utterance_id=`UTT:${digest.slice(0,24)}`;
   ir.serialization={canonical_format:'EZIR-JSON-1',content_digest:digest};
   const events=names.flatMap((name,index)=>{
-    const role=participants[index].role;
-    const register=role==='environment'?'sustained_background':['bearer','experiencer','content'].includes(role)?'middle':['actor','source'].includes(role)?'low':'high';
+    const register=registerFor(participantIds[index],ir);
     if(deicticRoles[index])return [deicticEvent(references[index],register)];
     const offset={low:-12,middle:0,high:12,sustained_background:-5}[register],notes=notesForName(name);
     const labelEvent={kind:'phonemic_label',occurrence_id:participantIds[index],target_id:name.name_id,referent_id:references[index].referent_id,label:name.normalized_label,semantic_claim:false,

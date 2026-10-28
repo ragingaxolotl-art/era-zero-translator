@@ -614,3 +614,12 @@ canonical decimal strings, preserving large values without floating-point coerci
 Negative zero, redundant zeros, exponents and JSON numeric values are rejected;
 future English normalization must convert input to this explicit canonical form.
 The 1,024-character implementation limit matches musical export.
+
+Quantified participant occurrences now inherit the role register carried by their
+quantity wrapper. Previously, a target inside an exact-count scope could fall back
+to the middle register because only the wrapper had the target edge. Ruby and
+browser composition now follow quantifier scopes to recover the role, with a
+visited set to bound malformed cycles. The enclosing predicate does not inherit
+its argument's register. Actor, target, environment and experiencer contrasts are
+checked against emitted MIDI. This prepares counted noun arguments without yet
+claiming a choice between collective and distributive English readings.

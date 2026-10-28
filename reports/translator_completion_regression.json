@@ -6,19 +6,19 @@
       "test": "tests/compound_dependencies_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 51728\n\n# Running:\n\n......\n\nFinished in 0.008606s, 697.1880 runs/s, 1742.9700 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 24877\n\n# Running:\n\n......\n\nFinished in 0.009303s, 644.9532 runs/s, 1612.3831 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_expansion_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 7543\n\n# Running:\n\n..........\n\nFinished in 0.230373s, 43.4079 runs/s, 546.9391 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 47249\n\n# Running:\n\n..........\n\nFinished in 0.234060s, 42.7241 runs/s, 538.3235 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/dictionary_musical_identity_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 26\n\n# Running:\n\n.\n\nFinished in 0.222349s, 4.4974 runs/s, 26.9846 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 3290\n\n# Running:\n\n.\n\nFinished in 0.230115s, 4.3457 runs/s, 26.0739 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/audit_dictionary_musical_identity.rb",
@@ -30,13 +30,13 @@
       "test": "tests/semantic_reference_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 16557\n\n# Running:\n\n.......\n\nFinished in 0.217102s, 32.2429 runs/s, 147.3962 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 488\n\n# Running:\n\n.......\n\nFinished in 0.218516s, 32.0343 runs/s, 146.4424 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/quantity_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 31622\n\n# Running:\n\n..\n\nFinished in 0.362689s, 5.5144 runs/s, 215.0603 assertions/s.\n\n2 runs, 78 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 5352\n\n# Running:\n\n..\n\nFinished in 0.366948s, 5.4504 runs/s, 212.5642 assertions/s.\n\n2 runs, 78 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_semantic_ir_and_grammar.rb",
@@ -48,13 +48,13 @@
       "test": "tests/foundation_process_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 1750\n\n# Running:\n\n...\n\nFinished in 0.398401s, 7.5301 runs/s, 70.2809 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 38258\n\n# Running:\n\n...\n\nFinished in 0.399721s, 7.5052 runs/s, 70.0489 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/repetition_performance_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 54020\n\n# Running:\n\n...\n\nFinished in 0.549259s, 5.4619 runs/s, 14.5651 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 62812\n\n# Running:\n\n...\n\nFinished in 0.451339s, 6.6469 runs/s, 17.7250 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_gate4b_compound_dictionary.rb",
@@ -205,6 +205,12 @@
       "passed": true,
       "exit_code": 0,
       "output": "Quantifier music: six scoped operators and exact cardinalities remain distinct, preserve runtime, and match Ruby/browser output.\n"
+    },
+    {
+      "test": "tests/quantified_role_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Quantified participants keep actor/target/background/experiencer registers; browser and Ruby agree and scope does not repeat the participant.\n"
     },
     {
       "test": "tests/unsupported_musical_scope_test.mjs",
