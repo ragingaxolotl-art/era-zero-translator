@@ -269,3 +269,14 @@ participants. The legacy test expectations were corrected to require partial
 status while retaining target-ranking checks. English negation no longer infers
 runtime zero anywhere in the ranker; explicit runtime markers still work. Broad
 sentence parsing remains a required implementation task, not satisfied by refusal.
+
+### Movement foundations in sentence composition
+
+The named/quoted-participant composer now binds `is moving toward` to MOV:111
+with a destination, `is moving away from` to MOV:101 with a source, and `is moving
+relative to` to MOV:121 with an environment/reference frame. Existing role
+registers remain high, low, and sustained-background respectively. All three
+retain the mover as actor; tests verify full Ruby/browser formal equality and
+distinct MIDI. Negation and explicit modal wrappers compose with these clauses.
+This adds no roots and does not equate moving with carrying, running, or swimming.
+Multiple path endpoints and manner modifiers remain unimplemented.

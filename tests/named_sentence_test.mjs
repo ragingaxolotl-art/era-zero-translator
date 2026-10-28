@@ -16,7 +16,12 @@ const cases=[['Pip cares for Ada.','LIF:211'],['Ada cares for Pip.','LIF:211'],[
   ['It is possible that Pip does not care for Ada.','LIF:211'],
   ['It is not possible that Pip cares for Ada.','LIF:211'],
   ['It is possible that Pip is conscious.','LIF:011'],
-  ['It is possible that it is necessary that Pip cares for Ada.','LIF:211']];
+  ['It is possible that it is necessary that Pip cares for Ada.','LIF:211'],
+  ['Pip is moving toward Ada.','MOV:111'],
+  ['Pip is moving away from Ada.','MOV:101'],
+  ['Pip is moving relative to Ada.','MOV:121'],
+  ['Pip is not moving toward "the station".','MOV:111'],
+  ['It is possible that Pip is moving away from "the station".','MOV:101']];
 for(const [text,target] of cases){
   assert.equal(parseNamedSentence(text).predicate,target);
   const file=data.resolution_files[target];
@@ -56,6 +61,16 @@ assert.deepEqual(modalMarkers(outputs[20]),['modality_possible_open','modality_n
 assert.equal(parseNamedSentence('It is possible that '.repeat(18)+'Pip cares for Ada.'),null);
 assert.equal(parseNamedSentence('It is possible that Pip cares for Ada tomorrow.'),null);
 assert.equal(needsSentenceComposition('It is possible that Pip moves.'),true);
+for(const [index,role,register] of [[21,'destination','high'],[22,'source','low'],[23,'environment','sustained_background']]){
+  const result=outputs[index];
+  assert.equal(result.semantic_ir.edges.find(edge=>edge.from==='b').role,role);
+  assert.equal(result.formal.performance.lexical_events.find(event=>event.occurrence_id==='b').register,register);
+}
+assert.equal(new Set(outputs.slice(21,24).map(result=>Buffer.from(midiFromFormal(result.formal)).toString('base64'))).size,3);
+for(const input of ['Pip is moving toward Ada quickly.','Pip is moving away from Ada toward Sol.','Pip is moving toward Ada and Sol.']){
+  assert.equal(parseNamedSentence(input),null);
+  assert.equal(needsSentenceComposition(input),true);
+}
 assert.equal(needsSentenceComposition('active care'),false);
 assert.equal(needsSentenceComposition('Pip cares for Ada.'),false);
 console.log(`Named sentences: ${cases.length} full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.`);

@@ -3,6 +3,9 @@ import {encodeName, notesForName} from './names.mjs';
 
 // Reviewed constructions use exact process senses, never a generic synonym pool.
 const ACTIONS = [
+  {pattern:'is moving toward', predicate:'MOV:111', key:'active_target_approach', wording:'is moving toward', targetRole:'destination'},
+  {pattern:'is moving away from', predicate:'MOV:101', key:'active_source_departure', wording:'is moving away from', targetRole:'source'},
+  {pattern:'is moving relative to', predicate:'MOV:121', key:'active_shared_frame_movement', wording:'is moving relative to', targetRole:'environment'},
   {pattern:'(?:cares for|is caring for)', predicate:'LIF:211', key:'active_care', gloss:'active care', wording:'actively cares for'},
   {pattern:'is awakening', predicate:'LIF:111', key:'active_other_awakening', gloss:'actively awaken another', wording:'is awakening'},
   {pattern:'is restoring', predicate:'REP:111', key:'active_target_restoration', gloss:'active target restoration', wording:'is restoring'},
@@ -42,7 +45,7 @@ export function parseNamedSentence(input, depth=0) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|conscious|dormant)\b/i.test(String(input)) && !parseNamedSentence(input);
+  return /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|conscious|dormant)\b/i.test(String(input)) && !parseNamedSentence(input);
 }
 
 export function parseSentenceSequence(input) {
@@ -105,7 +108,7 @@ export async function composeNamedSentence(input,template) {
   const references=names.map((name,index)=>({node_id:index?'b':'a',kind:'phonemic_reference',referent_id:name.name_id,value_type:'entity',name}));
   const ir={ir_version:'1.0',root_clause:'c',speech_act:'assertion',nodes:[{node_id:'c',kind:'clause',clause_type:'predication'},
     {node_id:'p',kind:'lexical_occurrence',target_type:predicates[0].target_type,target_id:parsed.predicate,runtime_state:{code:1}},...references],
-    edges:[{edge_id:'e0',type:'centers',from:'p',to:'c'},{edge_id:'e1',type:'fills_role',from:'a',to:'p',role:parsed.role||'actor'},...(parsed.target?[{edge_id:'e2',type:'fills_role',from:'b',to:'p',role:'target'}]:[])],discourse_constraints:{}};
+    edges:[{edge_id:'e0',type:'centers',from:'p',to:'c'},{edge_id:'e1',type:'fills_role',from:'a',to:'p',role:parsed.role||'actor'},...(parsed.target?[{edge_id:'e2',type:'fills_role',from:'b',to:'p',role:parsed.targetRole||'target'}]:[])],discourse_constraints:{}};
   if(parsed.negated){
     ir.nodes.push({node_id:'neg',kind:'scope_operator',operator:'negation'});
     ir.edges[0].from='neg';
@@ -121,9 +124,11 @@ export async function composeNamedSentence(input,template) {
   ir.utterance_id=`UTT:${digest.slice(0,24)}`;
   ir.serialization={canonical_format:'EZIR-JSON-1',content_digest:digest};
   const events=names.map((name,index)=>{
-    const offset=index?12:(parsed.role==='bearer'?0:-12),notes=notesForName(name);
+    const role=index?(parsed.targetRole||'target'):(parsed.role||'actor');
+    const register=role==='environment'?'sustained_background':role==='bearer'?'middle':['actor','source'].includes(role)?'low':'high';
+    const offset={low:-12,middle:0,high:12,sustained_background:-5}[register],notes=notesForName(name);
     return {kind:'phonemic_label',occurrence_id:index?'b':'a',target_id:name.name_id,referent_id:name.name_id,label:name.normalized_label,semantic_claim:false,
-      register:index?'high':(parsed.role==='bearer'?'middle':'low'),base_midi:60+offset,family_qualified_transliteration:name.normalized_label,formal_carrier:'',
+      register,base_midi:60+offset,family_qualified_transliteration:name.normalized_label,formal_carrier:'',
       family_opening_relative_semitones:[],family_opening_absolute_midi:[],address_relative_semitones:notes.map(note=>note-60),address_absolute_midi:notes.map(note=>note+offset),note_duration_beats:1};
   });
   events.push(...source.performance.lexical_events.map(event=>({...structuredClone(event),occurrence_id:'p'})));
