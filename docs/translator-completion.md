@@ -52,6 +52,10 @@ already expressible.
 
 ## Do we need more families?
 
+See [the foundation gap review](../reviews/foundation_gap_review.md) for specific
+root definitions, counterexamples, and the dependency order required before broad
+vocabulary expansion. That review proposes no canonical new family or meaning.
+
 Not established. The root inventory is complete relative to its 12-by-27 address
 scheme, not proven complete relative to everyday meanings. Generic operators over
 generic roots cannot by themselves identify an unrepresented sensory quality or
