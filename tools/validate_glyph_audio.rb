@@ -20,13 +20,25 @@ checks.add("source immutability", "renderer matches the recorded fingerprint and
 matrix_ok = ir_cases.all? do |item|
   [48, 60, 72].all? do |anchor|
     formal = EraZeroRenderer.render(item.fetch("ir"), anchor_midi: anchor)
+    # Historical bytes for these fixtures omitted their operator semantics.
+    # Keep those manifests as historical evidence, never as accepted output.
+    if %w[possible_clause exact_quantity parallel].include?(item.fetch("case_id"))
+      next [:svg, :midi].all? do |method|
+        begin
+          EraZeroPresentation.send(method, formal)
+          false
+        rescue EraZeroPresentation::PresentationError => error
+          error.message.include?("unsupported musical operator")
+        end
+      end
+    end
     svg1 = EraZeroPresentation.svg(formal); svg2 = EraZeroPresentation.svg(formal)
     midi1 = EraZeroPresentation.midi(formal); midi2 = EraZeroPresentation.midi(formal)
     manifest = tests.fetch("manifests").find { |entry| entry["case_id"] == item["case_id"] && entry["anchor_midi"] == anchor }
     svg1 == svg2 && midi1 == midi2 && manifest["svg_sha256"] == Digest::SHA256.hexdigest(svg1) && manifest["midi_sha256"] == Digest::SHA256.hexdigest(midi1) && EraZeroRenderer.decode(formal) == item["ir"]
   end
 end
-checks.add("presentation matrix", "all Semantic-IR fixtures produce deterministic recorded SVG/MIDI at three anchors and preserve exact IR", matrix_ok && tests.fetch("manifests").length == ir_cases.length * 3)
+checks.add("presentation matrix", "supported fixtures match recorded SVG/MIDI at three anchors; modality, quantity and parallel fixtures explicitly refuse semantically incomplete output", matrix_ok && tests.fetch("manifests").length == ir_cases.length * 3)
 
 sample_formal = EraZeroRenderer.render(ir_cases.first.fetch("ir"))
 sample_svg = EraZeroPresentation.svg(sample_formal)

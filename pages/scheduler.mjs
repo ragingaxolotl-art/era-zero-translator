@@ -2,6 +2,11 @@
 export function scheduledLexicalEvents(formal, maxEvents = 100000) {
   const events = formal.performance.lexical_events;
   const ir = formal.semantic_ir;
+  for (const node of ir.nodes) {
+    if ((node.kind === 'scope_operator' && !['negation','repetition'].includes(node.operator)) ||
+        (node.kind === 'coordination' && node.operator !== 'sequence'))
+      throw new Error(`Unsupported musical operator: ${node.operator}.`);
+  }
   if (!ir.nodes.some(node => ['repetition','sequence','negation'].includes(node.operator))) return events;
   const nodes = new Map(ir.nodes.map(node => [node.node_id, node]));
   const incoming = new Map();

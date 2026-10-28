@@ -76,6 +76,12 @@ module EraZeroPresentation
   def scheduled_lexical_events(formal, max_events: 100_000)
     events = formal.dig("performance", "lexical_events")
     ir = formal.fetch("semantic_ir")
+    ir.fetch("nodes").each do |node|
+      if (node["kind"] == "scope_operator" && !%w[negation repetition].include?(node["operator"])) ||
+         (node["kind"] == "coordination" && node["operator"] != "sequence")
+        raise PresentationError, "unsupported musical operator: #{node['operator']}"
+      end
+    end
     return events unless ir.fetch("nodes").any? { |node| %w[repetition sequence negation].include?(node["operator"]) }
     nodes = ir.fetch("nodes").to_h { |node| [node.fetch("node_id"), node] }
     incoming = ir.fetch("edges").group_by { |edge| edge.fetch("to") }

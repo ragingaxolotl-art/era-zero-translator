@@ -6,25 +6,25 @@
       "test": "tests/compound_dependencies_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 3475\n\n# Running:\n\n......\n\nFinished in 0.008145s, 736.6483 runs/s, 1841.6206 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 21790\n\n# Running:\n\n......\n\nFinished in 0.008243s, 727.8903 runs/s, 1819.7258 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_expansion_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 61293\n\n# Running:\n\n..........\n\nFinished in 0.120856s, 82.7431 runs/s, 877.0769 assertions/s.\n\n10 runs, 106 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 3653\n\n# Running:\n\n..........\n\nFinished in 0.124622s, 80.2427 runs/s, 850.5721 assertions/s.\n\n10 runs, 106 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/foundation_process_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 38273\n\n# Running:\n\n...\n\nFinished in 0.279957s, 10.7159 runs/s, 100.0154 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 26533\n\n# Running:\n\n...\n\nFinished in 0.277805s, 10.7989 runs/s, 100.7901 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/repetition_performance_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 59717\n\n# Running:\n\n...\n\nFinished in 0.341066s, 8.7960 runs/s, 23.4559 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 61676\n\n# Running:\n\n...\n\nFinished in 0.333180s, 9.0041 runs/s, 24.0110 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_gate4b_compound_dictionary.rb",
@@ -79,6 +79,12 @@
       "passed": true,
       "exit_code": 0,
       "output": "Negation: positive/negative/inactive distinction, grammar framing, marker durations and Ruby/browser parity pass.\n"
+    },
+    {
+      "test": "tests/unsupported_musical_scope_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Unsupported music scopes: 7 operators rejected by browser schedule/MIDI/SVG and Ruby MIDI/SVG; supported negation preserved.\n"
     },
     {
       "test": "tools/validate_pages_release.mjs",

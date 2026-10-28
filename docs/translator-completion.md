@@ -219,3 +219,15 @@ presentation checksums require migration before publishing this branch.
 Tense, modality, quantities, other operators, broad English parsing and independent
 listener decoding remain unfinished. Passing presentation regressions does not
 prove these remaining meanings are sounded.
+
+### Unsupported musical scope is explicit
+
+Browser and Ruby presentation now refuse unsupported scope operators (modality,
+quantifier, aspect) and coordination (all-of, any-of, exactly-one, parallel), even
+when no supported operator appears alongside them. Previously the scheduler's
+fast path returned lexical notes unchanged, silently losing these meanings.
+This is an interim fidelity correction, not implementation of those operators.
+The historical possible-clause, exact-quantity, and parallel presentation hashes
+remain recorded but are no longer accepted output; regression checks require an
+explicit refusal for these cases. Their eventual musical implementations must
+replace refusal with semantic-contrast tests and a documented sound convention.

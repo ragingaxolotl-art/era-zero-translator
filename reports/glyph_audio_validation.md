@@ -17,7 +17,7 @@ renderer matches the recorded fingerprint and semantic identity is unchanged
 
 ## PASS — presentation matrix
 
-all Semantic-IR fixtures produce deterministic recorded SVG/MIDI at three anchors and preserve exact IR
+supported fixtures match recorded SVG/MIDI at three anchors; modality, quantity and parallel fixtures explicitly refuse semantically incomplete output
 
 ## PASS — SVG conformance
 
