@@ -19,6 +19,8 @@ for(const item of corpus.cases){
  if(result&&item.expected){
   const ir=result.semantic_ir,actual={
    speech_acts:[ir.speech_act],
+   calendar_days:ir.nodes.filter(n=>n.kind==='time_anchor').map(n=>[n.anchor_type,n.calendar_unit,n.relative_to,n.day_offset].join(':')),
+   time_relations:ir.edges.filter(e=>e.type==='time_relation').map(e=>e.relation),
    deictic_roles:ir.nodes.filter(n=>n.kind==='deictic_reference').map(n=>n.deictic_role),
    targets:ir.nodes.filter(n=>n.kind==='lexical_occurrence').map(n=>n.target_id),
    roles:ir.edges.filter(e=>e.type==='fills_role').map(e=>e.role),

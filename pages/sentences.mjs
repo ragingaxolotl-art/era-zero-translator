@@ -76,10 +76,29 @@ export function parseNamedSentence(input, depth=0) {
   const modal=String(input).trim().match(/^[Ii]t is (not )?(possible|necessary) that (.+)$/);
   if(modal){
     const inner=parseNamedSentence(modal[3],depth+1);
-    if(!inner)return null;
+    if(!inner||inner.calendarDay!==undefined)return null;
     const scopes=[...(inner.scopes||[]),{operator:'modality',mode:modal[2]}];
     if(modal[1])scopes.push({operator:'negation'});
     return {...inner,scopes,construction:`scoped_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
+  // Calendar-day statements retain their interval; tense is not runtime state.
+  const calendar=String(input).trim().match(/^(.*?) (yesterday|today|tomorrow)[.]?$/);
+  if(calendar){
+    let clause=calendar[1];
+    const day=calendar[2];
+    const rewrite=(forms)=>{
+      for(const [surface,replacement] of forms){
+        const match=clause.match(new RegExp(`^${participant} ${surface} (.+)$`));
+        if(match)return `${match[1]} ${replacement} ${match[2]}`;
+      }
+      return null;
+    };
+    if(day==='yesterday')clause=rewrite([['was','is'],['were','is'],['did not care for','does not care for'],['cared for','cares for']]);
+    else if(day==='tomorrow')clause=rewrite([['will not be','is not'],['will be','is'],['will not care for','does not care for'],['will care for','cares for']]);
+    if(clause===null)return null;
+    const inner=parseNamedSentence(clause,depth+1);
+    if(!inner||inner.calendarDay!==undefined||inner.scopes?.length||inner.speechAct)return null;
+    return {...inner,...(day==='tomorrow'?{semanticNote:[inner.semanticNote,'Interprets will as a future assertion; promise, intention, and willingness are not inferred.'].filter(Boolean).join(' ')}:{}),calendarDay:{yesterday:'-1',today:'0',tomorrow:'1'}[day],construction:`calendar_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
   const transfer=String(input).trim().match(new RegExp(`^[Dd]ata ${participant} is (not )?being transferred from ${participant} to ${participant}[.]?$`));
   if(transfer){
@@ -161,7 +180,7 @@ async function composeClauseGroup(input,clauses,operator,loadTemplate) {
   });
   const digest=await canonicalDigest(ir);
   ir.utterance_id=`UTT:${digest.slice(0,24)}`;ir.serialization={canonical_format:'EZIR-JSON-1',content_digest:digest};
-  const structural=ir.edges.slice().sort((a,b)=>a.edge_id<b.edge_id?-1:a.edge_id>b.edge_id?1:0).map(edge=>({edge_id:edge.edge_id,edge_type:edge.type,from:edge.from,to:edge.to,...(edge.role?{role:edge.role}:{}),boundary:edge.type==='fills_role'?'short_gap':'medium_gap',boundary_beats:edge.type==='fills_role'?.5:1}));
+  const structural=ir.edges.slice().sort((a,b)=>a.edge_id<b.edge_id?-1:a.edge_id>b.edge_id?1:0).map(edge=>({edge_id:edge.edge_id,edge_type:edge.type,from:edge.from,to:edge.to,...(edge.role?{role:edge.role}:{}),...(edge.relation?{relation:edge.relation}:{}),boundary:edge.type==='fills_role'?'short_gap':'medium_gap',boundary_beats:edge.type==='fills_role'?.5:1}));
   const performance={...structuredClone(parts[0].formal.performance),lexical_events:events,structural_events:structural};
   const relative=events.map(event=>{
     const {base_midi,family_opening_absolute_midi,address_absolute_midi,...copy}=event;
@@ -200,6 +219,10 @@ export async function composeNamedSentence(input,template) {
     ir.edges.push({edge_id:`zscope${String(index).padStart(2,'0')}`,type:'scopes',from:ir.edges[0].from,to:id});
     ir.edges[0].from=id;
   }
+  if(parsed.calendarDay!==undefined){
+    ir.nodes.push({node_id:'time',kind:'time_anchor',anchor_type:'interval',calendar_unit:'day',relative_to:'speech_date',day_offset:parsed.calendarDay});
+    ir.edges.push({edge_id:'time0',type:'time_relation',from:'time',to:'c',relation:'during'});
+  }
   const digest=await canonicalDigest(ir);
   ir.utterance_id=`UTT:${digest.slice(0,24)}`;
   ir.serialization={canonical_format:'EZIR-JSON-1',content_digest:digest};
@@ -220,7 +243,7 @@ export async function composeNamedSentence(input,template) {
     }
     return copy;
   }));
-  const structural=ir.edges.map(edge=>({edge_id:edge.edge_id,edge_type:edge.type,from:edge.from,to:edge.to,...(edge.role?{role:edge.role}:{}),boundary:edge.type==='fills_role'?'short_gap':'medium_gap',boundary_beats:edge.type==='fills_role'?.5:1}));
+  const structural=ir.edges.map(edge=>({edge_id:edge.edge_id,edge_type:edge.type,from:edge.from,to:edge.to,...(edge.role?{role:edge.role}:{}),...(edge.relation?{relation:edge.relation}:{}),boundary:edge.type==='fills_role'?'short_gap':'medium_gap',boundary_beats:edge.type==='fills_role'?.5:1}));
   const performance={...structuredClone(source.performance),lexical_events:events,structural_events:structural};
   if(parsed.speechAct==='command'){performance.primary_contour='sharply_falling';performance.contour_relative_semitones=[0,-4]}
   if(parsed.speechAct==='question'){performance.primary_contour='rising';performance.contour_relative_semitones=[0,2]}

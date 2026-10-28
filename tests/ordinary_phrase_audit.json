@@ -303,7 +303,27 @@
       "area": "time",
       "requirements": [
         "Preserve past time separately from care activity"
-      ]
+      ],
+      "expected": {
+        "targets": [
+          "LIF:211"
+        ],
+        "roles": [
+          "actor",
+          "target"
+        ],
+        "labels": [
+          "nora",
+          "eli"
+        ],
+        "operators": [],
+        "calendar_days": [
+          "interval:day:speech_date:-1"
+        ],
+        "time_relations": [
+          "during"
+        ]
+      }
     },
     {
       "id": "future",

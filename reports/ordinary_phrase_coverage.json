@@ -3,8 +3,9 @@
   "completion_proven": false,
   "case_count": 40,
   "counts": {
-    "verified_for_declared_checks": 15,
-    "not_composed": 25
+    "verified_for_declared_checks": 16,
+    "not_composed": 23,
+    "composed_needs_semantic_review": 1
   },
   "areas": {
     "participants": {
@@ -49,7 +50,7 @@
     },
     "time": {
       "total": 2,
-      "verified": 0
+      "verified": 1
     },
     "speech_act": {
       "total": 2,
@@ -432,8 +433,29 @@
       "requirements": [
         "Preserve past time separately from care activity"
       ],
-      "status": "not_composed",
-      "failures": []
+      "expected": {
+        "targets": [
+          "LIF:211"
+        ],
+        "roles": [
+          "actor",
+          "target"
+        ],
+        "labels": [
+          "nora",
+          "eli"
+        ],
+        "operators": [],
+        "calendar_days": [
+          "interval:day:speech_date:-1"
+        ],
+        "time_relations": [
+          "during"
+        ]
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "f320d0bdc7570f6ca1cdc584301d754c3a5725485fb452bed36c7170f61b075a"
     },
     {
       "id": "future",
@@ -442,8 +464,9 @@
       "requirements": [
         "Preserve future time and commitment ambiguity"
       ],
-      "status": "not_composed",
-      "failures": []
+      "status": "composed_needs_semantic_review",
+      "failures": [],
+      "midi_sha256": "4e2388c76275706292287ce3452e909d330607d54c8c617bca7f9f27a5f27189"
     },
     {
       "id": "question",

@@ -11,8 +11,8 @@ is the starting evidence, not a completion certificate.
 ## Current coverage evidence
 
 The [ordinary phrase audit](../reports/ordinary_phrase_coverage.md) currently has
-15 checked compositions and 25 uncomposed phrases out of 40 deliberately varied
-cases. This is an implementation-authored diagnostic set, not a blind evaluation
+16 checked compositions, 23 uncomposed phrases, and one composed phrase awaiting
+semantic review out of 40 deliberately varied cases. This is an implementation-authored diagnostic set, not a blind evaluation
 or a statistical measure of English coverage. Green regression suites do not
 override these missing constructions. The corpus records the intended distinctions
 even for cases that cannot yet be composed; future support must receive explicit
@@ -482,3 +482,15 @@ Ruby and browser rendering preserve these distinctions without changing roots or
 runtime state. Other offsets, units, relations, and extra parameters are rejected
 by musical export. English tense/day parsing remains unfinished; this milestone
 only establishes the semantic and musical representation.
+
+
+### Calendar-day English composition
+
+Basic past copular/progressive statements and past care statements now accept
+“yesterday”; present statements accept “today”; future “will be” and “will care
+for” statements accept “tomorrow”. Each creates a calendar interval and a during
+relation to its clause, retaining lexical runtime state. Future wording is
+explicitly disclosed as a future assertion, without inferring promise, intention,
+or willingness. The coverage audit therefore leaves its future ambiguity case
+awaiting semantic review. Modal calendar combinations still decline until clause
+scope can be represented faithfully. Quoted names are never tense-rewritten.

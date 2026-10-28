@@ -6,6 +6,7 @@ import {scheduledLexicalEvents} from '../pages/scheduler.mjs';
 import {midiFromFormal} from '../pages/engine.mjs';
 const data=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url)));
 const outputs=[];
+const calendarCases=[['Nora cared for Eli yesterday.','LIF:211'],['Nora did not care for Eli yesterday.','LIF:211'],['I was conscious yesterday.','LIF:001'],['Nora will care for Eli tomorrow.','LIF:211'],['Nora is conscious today.','LIF:011']];
 const cases=[['Pip cares for Ada.','LIF:211'],['Ada cares for Pip.','LIF:211'],['Mira is caring for Sol.','LIF:211'],['Jun cares for Tavi.','LIF:211'],
   ['Pip is awakening Ada.','LIF:111'],['Mira is restoring Sol.','REP:111'],['Jun is damaging Tavi.','WRN:111'],
   ['Pip is physically repairing "the machine".','CMP:2816a7eeb356c2148b26beca'],
@@ -43,7 +44,7 @@ const cases=[['Pip cares for Ada.','LIF:211'],['Ada cares for Pip.','LIF:211'],[
   ['I love you.','CMP:44718c92b66443c0c0f03ad7'],['You love me.','CMP:44718c92b66443c0c0f03ad7'],
   ['Nora loves Eli.','CMP:44718c92b66443c0c0f03ad7'],['I love you [2].','CMP:44718c92b66443c0c0f03ad7'],
   ['I do not love you.','CMP:44718c92b66443c0c0f03ad7'],['I care for you [0].','LIF:211'],['I care for you [2].','LIF:211']];
-for(const [text,target] of cases){
+for(const [text,target] of [...cases,...calendarCases]){
   assert.equal(parseNamedSentence(text).predicate,target);
   const file=data.resolution_files[target];
   const document=JSON.parse(fs.readFileSync(new URL(`../pages/${file}`,import.meta.url)));
@@ -139,4 +140,25 @@ assert.notDeepEqual(midiFromFormal(outputs[42].formal),midiFromFormal(outputs[58
 for(const input of ['I love "coffee".','I like you.','I love me.','I love you [2] [1].'])assert.equal(parseNamedSentence(input),null);
 assert.equal(needsSentenceComposition('active care'),false);
 assert.equal(needsSentenceComposition('Pip cares for Ada.'),false);
-console.log(`Named sentences: ${cases.length} full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.`);
+console.log(`Named sentences: ${cases.length+calendarCases.length} full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.`);
+
+for(const [text] of calendarCases){
+ const parsed=parseNamedSentence(text);
+ assert.equal(parsed.calendarDay,text.includes('yesterday')?'-1':text.includes('tomorrow')?'1':'0');
+}
+assert.equal(parseNamedSentence('It is possible that Nora cared for Eli yesterday.'),null);
+assert.equal(parseNamedSentence('Nora cares for Eli yesterday.'),null);
+assert.equal(parseNamedSentence('Nora cared for Eli tomorrow.'),null);
+
+assert.equal(parseNamedSentence('"He was conscious" is conscious yesterday.'),null);
+assert.match(parseNamedSentence('Nora will care for Eli tomorrow.').semanticNote,/future assertion/);
+const calendarOutputs=outputs.slice(cases.length);
+for(const [index,result] of calendarOutputs.entries()){
+ const day=parseNamedSentence(calendarCases[index][0]).calendarDay;
+ const marker={ '-1':'previous_day','0':'current_day','1':'next_day' }[day];
+ const events=scheduledLexicalEvents(result.formal);
+ assert.equal(events[0].marker,`time_${marker}_open`);
+ assert.equal(events.at(-1).marker,`time_${marker}_close`);
+ assert.equal(result.semantic_ir.nodes.find(n=>n.kind==='lexical_occurrence').runtime_state.code,1);
+}
+assert.notDeepEqual(midiFromFormal(calendarOutputs[0].formal),midiFromFormal(calendarOutputs[3].formal));

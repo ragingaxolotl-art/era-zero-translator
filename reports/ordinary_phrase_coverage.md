@@ -2,7 +2,7 @@
 
 Fresh phrase coverage audit authored during implementation; not a blind or representative English benchmark.
 
-Full translator completion: **not established**. 15 of 40 cases pass their declared semantic checks; 25 have no complete composition. These counts do not estimate coverage of English generally.
+Full translator completion: **not established**. 16 of 40 cases pass their declared semantic checks; 23 have no complete composition. These counts do not estimate coverage of English generally.
 
 | Area | Checked compositions | Cases |
 |---|---:|---:|
@@ -16,7 +16,7 @@ Full translator completion: **not established**. 15 of 40 cases pass their decla
 | quantity | 1 | 2 |
 | noun_phrases | 0 | 2 |
 | discourse | 0 | 1 |
-| time | 0 | 2 |
+| time | 1 | 2 |
 | speech_act | 2 | 2 |
 | sensory_dimensions | 0 | 4 |
 | affect | 0 | 2 |
@@ -31,8 +31,7 @@ Full translator completion: **not established**. 15 of 40 cases pass their decla
 
 - **Nora is repairing the radio.** — Recognize an unquoted common noun and repair sense (not_composed)
 - **She cares for him.** — Resolve both pronouns from discourse or request referents (not_composed)
-- **Nora cared for Eli yesterday.** — Preserve past time separately from care activity (not_composed)
-- **Nora will care for Eli tomorrow.** — Preserve future time and commitment ambiguity (not_composed)
+- **Nora will care for Eli tomorrow.** — Preserve future time and commitment ambiguity (composed_needs_semantic_review)
 - **Nora cares for Eli and Orin.** — Both objects belong to the care relation (not_composed)
 - **Eli is moving from the archive to the gate.** — Bind both path endpoints and the mover (not_composed)
 - **The radio is hot.** — Temperature is not generic activity (not_composed)
