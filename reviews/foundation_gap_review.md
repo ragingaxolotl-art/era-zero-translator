@@ -60,3 +60,23 @@ the missing distinctions must wait for their definitions. In particular, do not
 map hot to active, liking to care, curiosity to attention, or tired to dormant.
 Noun and proper-name sound labels remain identifiers, not substitute meanings for
 verbs or adjectives.
+
+## Cognitive meanings that do not need new primitives
+
+The reviewed MIN definitions support three separate sentence foundations:
+
+- MIN:211: presently directing cognitive processing toward a target → paying
+  attention to that target. The cognizer fills experiencer, and the object of
+  attention fills target.
+- MIN:111: actively changing a mental representation of a target → revising a
+  mental representation of that target. This does not entail learning a truth,
+  understanding it, or correcting an error.
+- MIN:201: presently available capacity to allocate processing selectively →
+  being able to pay attention. This does not assert that attention is currently
+  directed to any particular target.
+
+These mappings reuse definitions and add sentence composition, not new roots.
+Curiosity, learning, and understanding remain distinct review items. In particular,
+attention plus a target alone supplies neither a desire to know nor a truth or
+success condition. The broader cognitive compounds must be built only after those
+additional ingredients are established.

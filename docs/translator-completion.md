@@ -361,3 +361,13 @@ clauses, and outer negation are declined rather than silently assigning another
 scope. Negation inside the modal proposition remains supported. This is an
 explicit-confidence construction, not a claim that every use of chance, probably,
 or belief has the same meaning. Sentence cases now include numeric sound contrasts.
+
+### Cognitive sentence foundations
+
+Existing MIN roots now compose `Pip is paying attention to Ada` (MIN:211), `Pip is
+revising a mental representation of Ada` (MIN:111), and `Pip is able to pay
+attention` (MIN:201). The first two bind a cognizer/experiencer and target; capacity
+binds a bearer without inventing an attention target. Negation and modal wrappers
+remain independent. Tests distinguish all three musical readings and decline
+curiosity, learning, understanding, and unsupported manner additions. The review
+in foundation_gap_review.md records why those broader meanings cannot be aliases.

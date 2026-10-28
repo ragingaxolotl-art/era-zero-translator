@@ -28,7 +28,12 @@ const cases=[['Pip cares for Ada.','LIF:211'],['Ada cares for Pip.','LIF:211'],[
   ['It is possible that data "the record" is being transferred from Pip to Ada.','DAT:111'],
   ['With 70% confidence, it is possible that Pip cares for Ada.','LIF:211'],
   ['With 80% confidence, it is possible that Pip cares for Ada.','LIF:211'],
-  ['With 0.1% confidence, it is possible that Pip does not care for Ada.','LIF:211']];
+  ['With 0.1% confidence, it is possible that Pip does not care for Ada.','LIF:211'],
+  ['Pip is paying attention to Ada.','MIN:211'],
+  ['Pip is revising a mental representation of Ada.','MIN:111'],
+  ['Pip is able to pay attention.','MIN:201'],
+  ['Pip is not paying attention to Ada.','MIN:211'],
+  ['It is possible that Pip is revising a mental representation of Ada.','MIN:111']];
 for(const [text,target] of cases){
   assert.equal(parseNamedSentence(text).predicate,target);
   const file=data.resolution_files[target];
@@ -89,6 +94,11 @@ assert.notDeepEqual(midiFromFormal(outputs[30].formal),midiFromFormal(outputs[31
 for(const [percent,decimal] of [['0','0'],['100','1'],['100.00','1'],['70','0.7'],['0070.00','0.7'],['0.001','0.00001'],['12.3456789','0.123456789']])assert.equal(confidenceFromPercent(percent),decimal);
 for(const percent of ['101','100.01','-1','1e1','NaN','.7'])assert.equal(confidenceFromPercent(percent),null);
 for(const input of ['With 70% confidence, it is not possible that Pip cares for Ada.','With 101% confidence, it is possible that Pip cares for Ada.','With 70% confidence, Pip cares for Ada.','With 70% confidence, with 80% confidence, it is possible that Pip cares for Ada.'])assert.equal(parseNamedSentence(input),null);
+assert.equal(outputs[33].semantic_ir.edges.find(edge=>edge.from==='a').role,'experiencer');
+assert.equal(outputs[34].semantic_ir.edges.find(edge=>edge.from==='a').role,'experiencer');
+assert.equal(outputs[35].semantic_ir.edges.find(edge=>edge.from==='a').role,'bearer');
+assert.equal(new Set(outputs.slice(33,36).map(result=>Buffer.from(midiFromFormal(result.formal)).toString('base64'))).size,3);
+for(const input of ['Pip is curious about Ada.','Pip is learning about Ada.','Pip is understanding Ada.','Pip is paying attention to Ada carefully.'])assert.equal(parseNamedSentence(input),null);
 assert.equal(needsSentenceComposition('active care'),false);
 assert.equal(needsSentenceComposition('Pip cares for Ada.'),false);
 console.log(`Named sentences: ${cases.length} full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.`);

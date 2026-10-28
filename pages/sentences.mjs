@@ -3,6 +3,8 @@ import {encodeName, notesForName} from './names.mjs';
 
 // Reviewed constructions use exact process senses, never a generic synonym pool.
 const ACTIONS = [
+  {pattern:'is paying attention to', predicate:'MIN:211', key:'active_target_attention', wording:'is paying attention to', role:'experiencer'},
+  {pattern:'is revising a mental representation of', predicate:'MIN:111', key:'active_target_model_revision', wording:'is revising a mental representation of', role:'experiencer'},
   {pattern:'is moving toward', predicate:'MOV:111', key:'active_target_approach', wording:'is moving toward', targetRole:'destination'},
   {pattern:'is moving away from', predicate:'MOV:101', key:'active_source_departure', wording:'is moving away from', targetRole:'source'},
   {pattern:'is moving relative to', predicate:'MOV:121', key:'active_shared_frame_movement', wording:'is moving relative to', targetRole:'environment'},
@@ -13,6 +15,7 @@ const ACTIONS = [
   {pattern:'is physically repairing', predicate:'CMP:2816a7eeb356c2148b26beca', key:'ongoing_physical_repair', wording:'is physically repairing'}
 ];
 const DESCRIPTIONS = [
+  {pattern:'able to pay attention', predicate:'MIN:201', key:'available_attentional_capacity', wording:'is able to pay attention'},
   {pattern:'conscious', predicate:'LIF:011', key:'conscious_other', wording:'is conscious'},
   {pattern:'dormant', predicate:'LIF:012', key:'dormant_other', wording:'is dormant'}
 ];
@@ -69,7 +72,7 @@ export function parseNamedSentence(input, depth=0) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|conscious|dormant)\b/i.test(String(input)) && !parseNamedSentence(input);
+  return /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant)\b/i.test(String(input)) && !parseNamedSentence(input);
 }
 
 export function parseSentenceSequence(input) {
@@ -151,7 +154,7 @@ export async function composeNamedSentence(input,template) {
   ir.serialization={canonical_format:'EZIR-JSON-1',content_digest:digest};
   const events=names.map((name,index)=>{
     const role=participants[index].role;
-    const register=role==='environment'?'sustained_background':['bearer','content'].includes(role)?'middle':['actor','source'].includes(role)?'low':'high';
+    const register=role==='environment'?'sustained_background':['bearer','experiencer','content'].includes(role)?'middle':['actor','source'].includes(role)?'low':'high';
     const offset={low:-12,middle:0,high:12,sustained_background:-5}[register],notes=notesForName(name);
     return {kind:'phonemic_label',occurrence_id:participantIds[index],target_id:name.name_id,referent_id:name.name_id,label:name.normalized_label,semantic_claim:false,
       register,base_midi:60+offset,family_qualified_transliteration:name.normalized_label,formal_carrier:'',
