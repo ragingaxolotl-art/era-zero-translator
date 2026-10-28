@@ -6,19 +6,19 @@
       "test": "tests/compound_dependencies_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 46056\n\n# Running:\n\n......\n\nFinished in 0.008732s, 687.1278 runs/s, 1717.8195 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 62055\n\n# Running:\n\n......\n\nFinished in 0.008222s, 729.7495 runs/s, 1824.3736 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_expansion_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 3517\n\n# Running:\n\n..........\n\nFinished in 0.228677s, 43.7298 runs/s, 550.9955 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 60565\n\n# Running:\n\n..........\n\nFinished in 0.231416s, 43.2122 runs/s, 544.4740 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/semantic_reference_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 7349\n\n# Running:\n\n......\n\nFinished in 0.216939s, 27.6575 runs/s, 119.8494 assertions/s.\n\n6 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 11334\n\n# Running:\n\n......\n\nFinished in 0.215997s, 27.7782 runs/s, 120.3720 assertions/s.\n\n6 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_semantic_ir_and_grammar.rb",
@@ -30,13 +30,13 @@
       "test": "tests/foundation_process_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 32830\n\n# Running:\n\n...\n\nFinished in 0.391698s, 7.6590 runs/s, 71.4836 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 22153\n\n# Running:\n\n...\n\nFinished in 0.396863s, 7.5593 runs/s, 70.5533 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/repetition_performance_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 19718\n\n# Running:\n\n...\n\nFinished in 0.449546s, 6.6734 runs/s, 17.7957 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 13587\n\n# Running:\n\n...\n\nFinished in 0.447073s, 6.7103 runs/s, 17.8942 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_gate4b_compound_dictionary.rb",
@@ -121,6 +121,12 @@
       "passed": true,
       "exit_code": 0,
       "output": "Modality: seven distinct scoped modes preserve runtime and match Ruby/browser MIDI/SVG; unsounded confidence is rejected.\n"
+    },
+    {
+      "test": "tests/confidence_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Confidence: five exact decimal values recover from note frames; Ruby/browser output agrees; noncanonical or out-of-range strengths fail.\n"
     },
     {
       "test": "tests/unsupported_musical_scope_test.mjs",

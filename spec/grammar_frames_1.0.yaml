@@ -52,12 +52,53 @@ frames:
   modality_counterfactual_close:
     relative_semitones: [0, 8, 8, 0]
     note_duration_beats: 0.25
+  confidence_open:
+    relative_semitones: [0, 9, 0, 9]
+    note_duration_beats: 0.25
+  confidence_close:
+    relative_semitones: [0, -9, 0, -9]
+    note_duration_beats: 0.25
+  decimal_point:
+    relative_semitones: [0, 10, -1, 0]
+    note_duration_beats: 0.25
+  digit_0:
+    relative_semitones: [0, 10, 0, 0, 0]
+    note_duration_beats: 0.25
+  digit_1:
+    relative_semitones: [0, 10, 0, 1, 0]
+    note_duration_beats: 0.25
+  digit_2:
+    relative_semitones: [0, 10, 0, 2, 0]
+    note_duration_beats: 0.25
+  digit_3:
+    relative_semitones: [0, 10, 0, 3, 0]
+    note_duration_beats: 0.25
+  digit_4:
+    relative_semitones: [0, 10, 1, 0, 0]
+    note_duration_beats: 0.25
+  digit_5:
+    relative_semitones: [0, 10, 1, 1, 0]
+    note_duration_beats: 0.25
+  digit_6:
+    relative_semitones: [0, 10, 1, 2, 0]
+    note_duration_beats: 0.25
+  digit_7:
+    relative_semitones: [0, 10, 1, 3, 0]
+    note_duration_beats: 0.25
+  digit_8:
+    relative_semitones: [0, 10, 2, 0, 0]
+    note_duration_beats: 0.25
+  digit_9:
+    relative_semitones: [0, 10, 2, 1, 0]
+    note_duration_beats: 0.25
 anchor: Utterance anchor, independent of the role registers inside the scope
 boundary_after_beats: 0.5
 rules:
   - Opening and closing frames surround exactly the negated subtree
   - Modal frames surround exactly their scoped subtree and do not change runtime state
-  - Numeric modal confidence is rejected until it has an explicit musical encoding
+  - Explicit confidence uses confidence-open, exact decimal digits, confidence-close before the scoped proposition
+  - Confidence supports possible, necessary and predicted modes; it never substitutes for deontic force
+  - Confidence strings must be canonical decimals from 0 through 1, with at most 1024 characters
   - Nested negation remains nested; no silent double-negation cancellation
   - Markers are grammar events, not atoms, compounds, names or recognition checksums
   - Runtime zero means inactive; it never substitutes for the negation frame
@@ -69,5 +110,5 @@ compatibility:
   semantic_ir: Existing negation nodes retain their identities
   consumers: Ruby and browser MIDI, SVG, browser sound and viseme schedules
 remaining:
-  - Musical conventions for tense, numeric modal confidence, quantifiers and other unsounded operators
+  - Musical conventions for tense, quantifiers and other unsounded operators
   - Independent listener recognition and broader end-to-end semantic decoding

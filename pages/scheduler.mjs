@@ -9,7 +9,7 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
       throw new Error(`Unsupported musical operator: ${node.operator}.`);
   }
   for (const node of ir.nodes.filter(node=>node.operator==='modality')) {
-    if (!MODAL_MODES.includes(node.mode) || node.strength !== undefined)
+    if (!MODAL_MODES.includes(node.mode) || (node.strength !== undefined && (!['possible','necessary','predicted'].includes(node.mode) || typeof node.strength!=='string' || node.strength.length>1024 || !/^(?:0|1|0\.[0-9]*[1-9])$/.test(node.strength))))
       throw new Error('Unsupported musical modality mode or confidence strength.');
   }
   if (!ir.nodes.some(node => ['repetition','sequence','negation','modality'].includes(node.operator))) return events;
@@ -36,7 +36,7 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
       const phrase = walk(scoped[0].from);
       if (!phrase.length) throw new Error('Repetition scope has no sound events.');
       if(node.operator==='negation')result=[grammarMarker(formal,id,'negation_open'),...phrase,grammarMarker(formal,id,'negation_close')];
-      else if(node.operator==='modality')result=[grammarMarker(formal,id,`modality_${node.mode}_open`),...phrase,grammarMarker(formal,id,`modality_${node.mode}_close`)];
+      else if(node.operator==='modality')result=[grammarMarker(formal,id,`modality_${node.mode}_open`),...confidenceMarkers(formal,id,node.strength),...phrase,grammarMarker(formal,id,`modality_${node.mode}_close`)];
       else{
         if (phrase.length * node.count > maxEvents) throw new Error(`Repetition exceeds event limit ${maxEvents}.`);
         result = [];
@@ -67,10 +67,19 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
   return scheduled;
 }
 
+function confidenceMarkers(formal,id,strength){
+  if(strength===undefined)return [];
+  return ['confidence_open',...Array.from(strength,char=>char==='.'?'decimal_point':`digit_${char}`),'confidence_close'].map(marker=>grammarMarker(formal,id,marker));
+}
 function grammarMarker(formal,scopeId,marker){
   const modal=marker.match(/^modality_(.+)_(open|close)$/);
   const distance=modal?MODAL_MODES.indexOf(modal[1])+2:0;
-  const relative=modal?[0,modal[2]==='open'?-distance:distance,modal[2]==='open'?-distance:distance,0]:(marker==='negation_open'?[0,-1,-1,0]:[0,1,1,0]),base=formal.performance.anchor_midi;
+  let relative=modal?[0,modal[2]==='open'?-distance:distance,modal[2]==='open'?-distance:distance,0]:(marker==='negation_open'?[0,-1,-1,0]:[0,1,1,0]);
+  if(marker==='confidence_open')relative=[0,9,0,9];
+  else if(marker==='confidence_close')relative=[0,-9,0,-9];
+  else if(marker==='decimal_point')relative=[0,10,-1,0];
+  else if(/^digit_[0-9]$/.test(marker)){const digit=Number(marker.slice(-1));relative=[0,10,Math.floor(digit/4),digit%4,0]}
+  const base=formal.performance.anchor_midi;
   return {kind:'grammar_marker',grammar_profile:'EZGRAM-1',marker,occurrence_id:scopeId,target_id:`EZGRAM:${marker}`,register:'middle',base_midi:base,
     family_qualified_transliteration:marker,formal_carrier:'',family_opening_relative_semitones:[],family_opening_absolute_midi:[],
     address_relative_semitones:relative,address_absolute_midi:relative.map(note=>base+note),note_duration_beats:.25,boundary_after_beats:.5};

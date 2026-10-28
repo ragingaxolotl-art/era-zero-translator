@@ -83,7 +83,7 @@ module EraZeroPresentation
       end
     end
     ir.fetch("nodes").select { |node| node["operator"] == "modality" }.each do |node|
-      unless %w[possible necessary permitted obligated intended predicted counterfactual].include?(node["mode"]) && !node.key?("strength")
+      unless %w[possible necessary permitted obligated intended predicted counterfactual].include?(node["mode"]) && (!node.key?("strength") || (%w[possible necessary predicted].include?(node["mode"]) && node["strength"].is_a?(String) && node["strength"].length <= 1024 && node["strength"].match?(/\A(?:0|1|0\.[0-9]*[1-9])\z/)))
         raise PresentationError, "unsupported musical modality mode or confidence strength"
       end
     end
@@ -111,7 +111,7 @@ module EraZeroPresentation
                  if node["operator"] == "negation"
                    [grammar_marker(formal, id, "negation_open")] + phrase + [grammar_marker(formal, id, "negation_close")]
                  elsif node["operator"] == "modality"
-                   [grammar_marker(formal, id, "modality_#{node.fetch('mode')}_open")] + phrase + [grammar_marker(formal, id, "modality_#{node.fetch('mode')}_close")]
+                   [grammar_marker(formal, id, "modality_#{node.fetch('mode')}_open")] + confidence_markers(formal, id, node["strength"]) + phrase + [grammar_marker(formal, id, "modality_#{node.fetch('mode')}_close")]
                  else
                    raise PresentationError, "repetition exceeds event limit #{max_events}" if phrase.length * node["count"] > max_events
                    phrase * node["count"]
@@ -151,12 +151,24 @@ module EraZeroPresentation
     scheduled
   end
 
+  def confidence_markers(formal, id, strength)
+    return [] if strength.nil?
+    (["confidence_open"] + strength.chars.map { |char| char == "." ? "decimal_point" : "digit_#{char}" } + ["confidence_close"]).map { |marker| grammar_marker(formal, id, marker) }
+  end
+
   def grammar_marker(formal, scope_id, marker)
     relative = marker == "negation_open" ? [0, -1, -1, 0] : [0, 1, 1, 0]
     if (modal = marker.match(/\Amodality_(.+)_(open|close)\z/))
       distance = %w[possible necessary permitted obligated intended predicted counterfactual].index(modal[1]) + 2
       note = modal[2] == "open" ? -distance : distance
       relative = [0, note, note, 0]
+    end
+    relative = [0, 9, 0, 9] if marker == "confidence_open"
+    relative = [0, -9, 0, -9] if marker == "confidence_close"
+    relative = [0, 10, -1, 0] if marker == "decimal_point"
+    if marker.match?(/\Adigit_[0-9]\z/)
+      digit = marker[-1].to_i
+      relative = [0, 10, digit / 4, digit % 4, 0]
     end
     base = formal.dig("performance", "anchor_midi")
     { "kind" => "grammar_marker", "grammar_profile" => "EZGRAM-1", "marker" => marker,

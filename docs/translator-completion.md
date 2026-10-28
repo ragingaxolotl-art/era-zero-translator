@@ -338,3 +338,15 @@ passes strict, recognition, and mixed-mode checks; changed, omitted, extra, and
 empty note streams are rejected. Search work remains explicitly bounded at one
 million transitions. This verifies the expected note path against a supplied
 formal artifact, not independent recovery of arbitrary language from audio.
+
+### Exact modal confidence in music
+
+EZGRAM-1 now frames an explicit confidence value immediately after its modal
+opening. Decimal digits and the point have distinct note patterns, preserving the
+canonical string exactly without floating-point conversion. Values range from 0
+to 1; redundant zeros, exponent forms, numeric JSON values, and out-of-range values
+are rejected. This implementation supports confidence on possible, necessary,
+and predicted modes, not deontic force; strings are bounded at 1024 characters.
+The historical possible-clause fixture with strength 0.7 now has accepted updated
+MIDI/SVG hashes at all three anchors. Tests recover five values from notes and
+compare Ruby/browser output. Ordinary-English confidence input remains pending.

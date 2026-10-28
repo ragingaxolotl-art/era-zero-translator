@@ -24,7 +24,7 @@ for(const [index,sample] of samples.entries()){
   assert.equal(events[1].runtime_tail.code,1);
   assert.deepEqual(events[0].address_relative_semitones,[0,-(index+2),-(index+2),0]);
   const withStrength=structuredClone(sample.formal);
-  withStrength.semantic_ir.nodes.find(n=>n.operator==='modality').strength='0.7';
+  withStrength.semantic_ir.nodes.find(n=>n.operator==='modality').strength='0.70';
   assert.throws(()=>scheduledLexicalEvents(withStrength),/confidence strength/);
 }
 assert.equal(new Set(samples.map(s=>s.midi)).size,modes.length);
