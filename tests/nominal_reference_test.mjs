@@ -6,7 +6,7 @@ import {midiFromFormal,svgFromFormal} from '../pages/engine.mjs';
 import {visemePlanFromFormal} from '../pages/visemes.mjs';
 import {scheduledLexicalEvents} from '../pages/scheduler.mjs';
 const root=new URL('..',import.meta.url),index=JSON.parse(fs.readFileSync(new URL('pages/data/index.json',root)));
-const cases=['Nora is physically repairing the radio.','Nora is physically repairing "radio".','The robot is moving toward the station.','Did Nora physically repair the radio yesterday?','I care for the child.','Nora does not care for the child.'];
+const cases=['Nora is physically repairing the radio.','Nora is physically repairing "radio".','The robot is moving toward the station.','Did Nora physically repair the radio yesterday?','I care for the child.','Nora does not care for the child.','Nora is repairing the radio.','Nora repaired the radio yesterday.','Did Nora repair the radio?','Repair the radio.'];
 const results=[];
 for(const input of cases){
  const parsed=parseNamedSentence(input);assert.ok(parsed,input);
@@ -22,6 +22,11 @@ for(const input of cases){
  assert.equal(cues.length,nominals.length*4);assert(cues.every(c=>c.nucleus_viseme==='REST'));
  results.push(result);
 }
+assert.equal(results[6].target_id,'REP:111');
+assert.equal(results[7].target_id,'REP:110');
+assert.equal(results[8].semantic_ir.speech_act,'question');
+assert.equal(results[9].semantic_ir.speech_act,'command');
+assert.notDeepEqual(midiFromFormal(results[0].formal),midiFromFormal(results[6].formal));
 assert.equal(results[0].semantic_ir.nodes.find(n=>n.reference_mode).name.normalized_label,'radio');
 assert.notDeepEqual(midiFromFormal(results[0].formal),midiFromFormal(results[1].formal));
 assert.equal(results[2].semantic_ir.nodes.filter(n=>n.reference_mode).length,2);
@@ -31,4 +36,4 @@ for(const patch of [{kind:'deictic_reference'},{reference_mode:'indefinite_nomin
  const errors=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_semantic_validation','-e','puts JSON.generate(EraZeroSemanticValidation.validate(JSON.parse(STDIN.read)))'],{cwd:root,input:JSON.stringify(ir),encoding:'utf8'}));
  assert.ok(errors.includes('invalid_nominal_reference'));
 }
-console.log('Definite noun references: six full compositions preserve reference frames, names remain distinct, Ruby/browser output agrees, malformed references fail.');
+console.log('Definite noun references: ten full compositions preserve reference frames, names remain distinct, Ruby/browser output agrees, malformed references fail.');

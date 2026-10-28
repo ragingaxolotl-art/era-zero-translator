@@ -3,8 +3,8 @@
   "completion_proven": false,
   "case_count": 40,
   "counts": {
-    "verified_for_declared_checks": 16,
-    "not_composed": 23,
+    "verified_for_declared_checks": 17,
+    "not_composed": 22,
     "composed_needs_semantic_review": 1
   },
   "areas": {
@@ -42,7 +42,7 @@
     },
     "noun_phrases": {
       "total": 2,
-      "verified": 0
+      "verified": 1
     },
     "discourse": {
       "total": 1,
@@ -413,8 +413,26 @@
       "requirements": [
         "Recognize an unquoted common noun and repair sense"
       ],
-      "status": "not_composed",
-      "failures": []
+      "expected": {
+        "targets": [
+          "REP:111"
+        ],
+        "roles": [
+          "actor",
+          "target"
+        ],
+        "labels": [
+          "nora",
+          "radio"
+        ],
+        "reference_modes": [
+          "definite_nominal"
+        ],
+        "operators": []
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "dfc8ff9e0b0f0f859f71c4d7c5b3cae8057ac27c9b01e48af013a2a13ddfdcd7"
     },
     {
       "id": "pronoun",

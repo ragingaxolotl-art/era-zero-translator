@@ -14,6 +14,7 @@ const ACTIONS = [
   {pattern:'is awakening', predicate:'LIF:111', key:'active_other_awakening', gloss:'actively awaken another', wording:'is awakening'},
   {pattern:'is restoring', predicate:'REP:111', key:'active_target_restoration', gloss:'active target restoration', wording:'is restoring'},
   {pattern:'is damaging', predicate:'WRN:111', key:'active_target_impairment', gloss:'active target impairment', wording:'is damaging'},
+  {pattern:'is repairing', predicate:'REP:111', key:'ongoing_target_repair', wording:'is repairing'},
   {pattern:'is physically repairing', predicate:'CMP:2816a7eeb356c2148b26beca', key:'ongoing_physical_repair', wording:'is physically repairing'}
 ];
 const DESCRIPTIONS = [
@@ -45,7 +46,7 @@ export function parseNamedSentence(input, depth=0) {
   }
   const participant='(I|me|you|[Tt]he (?:radio|machine|pump|station|record|map|box|teacher|child|person|creature|robot|door|device|tool|book|sound|tree|house|car|room|table|ball|dog|cat|water|food)|(?!(?:She|He|It|They|We|Her|Him|Them|Us)\\b)[A-Z][a-z]+|"[A-Za-z]+(?:[ -][A-Za-z]+)*")';
   if(depth===0){
-    const commands=[['care for','cares for'],['restore','is restoring'],['awaken','is awakening'],['damage','is damaging'],['physically repair','is physically repairing'],['move toward','is moving toward'],['move away from','is moving away from'],['move relative to','is moving relative to'],['pay attention to','is paying attention to'],['revise a mental representation of','is revising a mental representation of']];
+    const commands=[['care for','cares for'],['restore','is restoring'],['repair','is repairing'],['awaken','is awakening'],['damage','is damaging'],['physically repair','is physically repairing'],['move toward','is moving toward'],['move away from','is moving away from'],['move relative to','is moving relative to'],['pay attention to','is paying attention to'],['revise a mental representation of','is revising a mental representation of']];
     for(const [verb,wording] of commands){
       const command=String(input).trim().match(new RegExp(`^(?:[Dd]o not )?${verb} ${participant}[.!]?$`,'i'));
       if(command){
@@ -59,8 +60,8 @@ export function parseNamedSentence(input, depth=0) {
     const question=String(input).trim().match(new RegExp(`^(?:[Ii]s|[Aa]re|[Aa]m) ${participant} (.+)\\?$`));
     const careQuestion=String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?care for ${participant}\\?$`));
     const pastQuestion=String(input).trim().match(new RegExp(`^(?:[Ww]as|[Ww]ere) ${participant} (.+)\\?$`));
-    const didQuestion=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?(care for|restore|awaken|damage|physically repair) ${participant}( (?:yesterday|today))?\\?$`));
-    const pastVerbs={'care for':'cared for',restore:'restored',awaken:'awakened',damage:'damaged','physically repair':'physically repaired'};
+    const didQuestion=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?(care for|restore|repair|awaken|damage|physically repair) ${participant}( (?:yesterday|today))?\\?$`));
+    const pastVerbs={'care for':'cared for',restore:'restored',repair:'repaired',awaken:'awakened',damage:'damaged','physically repair':'physically repaired'};
     const statement=question?`${question[1]} is ${question[2]}.`:careQuestion?`${careQuestion[1]} ${careQuestion[2]?'does not care for':'cares for'} ${careQuestion[3]}.`:pastQuestion?`${pastQuestion[1]} was ${pastQuestion[2]}.`:didQuestion?`${didQuestion[1]} ${didQuestion[2]?'did not '+didQuestion[3]:pastVerbs[didQuestion[3]]} ${didQuestion[4]}${didQuestion[5]||''}.`:null;
     if(statement){
       const inner=parseNamedSentence(statement,depth+1);
@@ -105,6 +106,7 @@ export function parseNamedSentence(input, depth=0) {
   }
   const pastForms=[
     ['was','is'],['were','is'],['cared for','cares for'],['did not care for','does not care for'],
+    ['repaired','is repairing','REP:110'],['did not repair','is not repairing','REP:110'],
     ['restored','is restoring','REP:110'],['did not restore','is not restoring','REP:110'],
     ['awakened','is awakening','LIF:110'],['did not awaken','is not awakening','LIF:110'],
     ['damaged','is damaging','WRN:110'],['did not damage','is not damaging','WRN:110'],

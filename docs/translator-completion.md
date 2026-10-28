@@ -11,7 +11,7 @@ is the starting evidence, not a completion certificate.
 ## Current coverage evidence
 
 The [ordinary phrase audit](../reports/ordinary_phrase_coverage.md) currently has
-16 checked compositions, 23 uncomposed phrases, and one composed phrase awaiting
+17 checked compositions, 22 uncomposed phrases, and one composed phrase awaiting
 semantic review out of 40 deliberately varied cases. This is an implementation-authored diagnostic set, not a blind evaluation
 or a statistical measure of English coverage. Green regression suites do not
 override these missing constructions. The corpus records the intended distinctions
@@ -546,5 +546,13 @@ referent; it does not claim to have resolved a unique real-world object.
 The representation, role registers, marker and label survive both renderers,
 MIDI/SVG export, and neutral mouth cues. Modifiers, quantities and indefinite
 articles still require their own semantics and are not silently consumed as part
-of a noun. General “repair” sense selection remains separate from this noun-phrase
-work; the reviewed “physically repairing” construction is supported.
+of a noun. Generic repair uses the reviewed restoration sense; explicit physical repair
+retains its more specific compound.
+
+### Generic repair construction
+
+Ordinary “is repairing” now uses ongoing target restoration REP:111, and “repaired”
+uses completed target restoration REP:110. Commands and past questions share those
+mappings. Explicit physical repair retains its more specific compound and different
+music. This closes the audited unquoted-radio repair sentence without treating all
+repair as physical or using phonemic noun labels to infer unspoken mechanisms.

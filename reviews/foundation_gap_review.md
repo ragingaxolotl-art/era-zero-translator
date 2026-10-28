@@ -89,3 +89,18 @@ provisional cross-references in nine MIN entries, distinguishes their historical
 wording from later approved definitions, and specifies registration, experience,
 access and channel identities before derived perception vocabulary. The pinned
 inventory report supports reproducibility, not an automatic expressibility proof.
+
+## Generic repair versus physical repair
+
+The ordinary repair construction now reuses REP:111 for ongoing target restoration
+and REP:110 for completed target restoration. Its intended sense is bringing a
+target back toward its applicable acceptable condition. It does not select a
+material, structural, data, biological or social mechanism. The noun label supplies
+the referenced target without inventing a mechanism from the label's spelling.
+
+Explicit “physically repairing” continues to use its more specific MAT-qualified
+compound. General repair must not acquire physical specificity merely because the
+target is called a radio, nor should its use require the speaker to add an adjective
+that was not in the source sentence. Inspection, maintenance, replacement and
+planning remain excluded by the REP definitions unless restoration is also asserted.
+This is an existing-sense sentence mapping, not a new primitive or compound.

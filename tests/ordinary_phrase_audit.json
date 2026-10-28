@@ -287,7 +287,24 @@
       "area": "noun_phrases",
       "requirements": [
         "Recognize an unquoted common noun and repair sense"
-      ]
+      ],
+      "expected": {
+        "targets": [
+          "REP:111"
+        ],
+        "roles": [
+          "actor",
+          "target"
+        ],
+        "labels": [
+          "nora",
+          "radio"
+        ],
+        "reference_modes": [
+          "definite_nominal"
+        ],
+        "operators": []
+      }
     },
     {
       "id": "pronoun",
