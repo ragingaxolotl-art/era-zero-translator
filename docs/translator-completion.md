@@ -700,3 +700,9 @@ The additive measurement comparison profile distinguishes greater-than, less-tha
 ### Mass comparison between two entities
 
 “The box has more mass than the radio” now binds the box as bearer and the radio as comparison standard under an explicit mass-comparison operator. Six relations have distinct frames; twelve direction/relation examples match Ruby/browser formal output and MIDI. Modal wrappers and runtime endings remain separate. The profile rejects unsupported dimensions, quantified operands and malformed role attachments. No numeric mass is inferred, and no root meaning changes. General property comparison, contextual heavy/light interpretation, and normalization of logically equivalent operand-swapped comparisons remain unfinished.
+
+### Independent inverse for strict mass comparison music
+
+`pages/mass_comparison_decoder.mjs` accepts MIDI bytes only and recovers the supported mass-comparison relation, ordered participant phonemes/deictic roles, material root, runtime ending and speech contour. It does not receive the source sentence, semantic IR or formal event plan. Thirty-six relation/runtime/direction cases plus a deictic case pass; octave transposition preserves the result, corruption/truncation fail, and modal wrappers outside this decoder's profile fail explicitly. This is a first independent inverse profile, not general audio recognition or full translator decoding.
+
+The inverse audit also confirms a reference limitation: Kay and Cay have different source name IDs but identical default phonemic music. The decoder returns the audible phonemes and explicitly leaves spelling/external identity unresolved. General decoding needs an ambiguity policy or disambiguating identity mechanism; source name hashes alone do not make the audio identities unique. Preserve the phonemic label channel while resolving that distinction.

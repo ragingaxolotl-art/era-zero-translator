@@ -26,4 +26,14 @@ compatibility:
   - Other dimensions and attachment shapes fail explicitly
 remaining:
   - General comparison property axes and context-dependent adjectives
-  - Independent musical interpretation and perceptual validation
+  - General inverse interpretation beyond the strict MIDI profile and perceptual validation
+
+inverse_profile:
+  implementation: pages/mass_comparison_decoder.mjs
+  input: Strict single-voice MIDI bytes without source IR or formal metadata
+  recovers: Mass relation, participant phonemes or deictic roles, material root, runtime ending and speech contour
+  limitations:
+    - Exact symbolic MIDI timing, not acoustic transcription
+    - No modal or other enclosing scopes in this initial inverse
+    - Untagged phonemic labels do not recover original spelling or unique external identity
+    - Tagged names and arbitrary compound payloads are outside this inverse profile
