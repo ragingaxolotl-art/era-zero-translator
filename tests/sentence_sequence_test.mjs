@@ -12,8 +12,8 @@ const ruby=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_renderer','
 assert.deepEqual(result.formal,ruby.formal);
 assert.deepEqual(Buffer.from(midiFromFormal(result.formal)),Buffer.from(ruby.midi,'base64'));
 const events=scheduledLexicalEvents(result.formal);
-assert.deepEqual(events.filter(event=>event.kind!=='phonemic_label').map(event=>event.target_id),['LIF:211','REP:111']);
-assert.equal(events[2].boundary_after_beats,1);
+assert.deepEqual(events.filter(event=>event.kind!=='phonemic_label'&&event.kind!=='grammar_marker').map(event=>event.target_id),['LIF:211','REP:111']);
+assert.equal(events.find(event=>event.target_id==='LIF:211').boundary_after_beats,1);
 const reverse=await composeSentenceSequence('Ada is restoring Sol, then Pip cares for Ada.',load);
 assert.notDeepEqual(midiFromFormal(result.formal),midiFromFormal(reverse.formal));
 assert.equal(parseSentenceSequence('Pip cares for Ada and Ada is restoring Sol.'),null);

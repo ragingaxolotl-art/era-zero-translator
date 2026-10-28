@@ -6,19 +6,19 @@
       "test": "tests/compound_dependencies_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 63646\n\n# Running:\n\n......\n\nFinished in 0.008304s, 722.5434 runs/s, 1806.3584 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 28663\n\n# Running:\n\n......\n\nFinished in 0.008285s, 724.2004 runs/s, 1810.5009 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_expansion_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 8967\n\n# Running:\n\n..........\n\nFinished in 0.231316s, 43.2309 runs/s, 544.7094 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 39976\n\n# Running:\n\n..........\n\nFinished in 0.235283s, 42.5020 runs/s, 535.5253 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/dictionary_musical_identity_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 64629\n\n# Running:\n\n.\n\nFinished in 0.217358s, 4.6007 runs/s, 27.6042 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 10246\n\n# Running:\n\n.\n\nFinished in 0.219560s, 4.5546 runs/s, 27.3274 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/audit_dictionary_musical_identity.rb",
@@ -27,16 +27,22 @@
       "output": "{\"dictionary_entries\":356,\"performance_count\":1068,\"collisions\":[],\"completion_proven\":false}\n"
     },
     {
+      "test": "tools/audit_role_musical_contrasts.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "{\"roles\":22,\"collisions\":[]}\n"
+    },
+    {
       "test": "tests/semantic_reference_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 2898\n\n# Running:\n\n.......\n\nFinished in 0.219294s, 31.9206 runs/s, 145.9228 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 35880\n\n# Running:\n\n.......\n\nFinished in 0.219787s, 31.8490 runs/s, 145.5955 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/quantity_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 18270\n\n# Running:\n\n..\n\nFinished in 0.363034s, 5.5091 runs/s, 214.8559 assertions/s.\n\n2 runs, 78 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 30005\n\n# Running:\n\n..\n\nFinished in 0.359730s, 5.5597 runs/s, 216.8293 assertions/s.\n\n2 runs, 78 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_semantic_ir_and_grammar.rb",
@@ -48,13 +54,13 @@
       "test": "tests/foundation_process_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 55060\n\n# Running:\n\n...\n\nFinished in 0.399819s, 7.5034 runs/s, 70.0317 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 19042\n\n# Running:\n\n...\n\nFinished in 0.408708s, 7.3402 runs/s, 68.5086 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/repetition_performance_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 7165\n\n# Running:\n\n...\n\nFinished in 0.472748s, 6.3459 runs/s, 16.9223 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 29298\n\n# Running:\n\n...\n\nFinished in 0.460138s, 6.5198 runs/s, 17.3861 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_gate4b_compound_dictionary.rb",
@@ -132,7 +138,7 @@
       "test": "tests/long_performance_verification_test.mjs",
       "passed": true,
       "exit_code": 0,
-      "output": "Long performance verification: 96 events accept strict, recognition and mixed paths; changed, missing, extra and empty notes are rejected.\n"
+      "output": "Long performance verification: 96 lexical events plus 128 role frames accept strict, recognition and mixed paths; changed, missing, extra and empty notes are rejected.\n"
     },
     {
       "test": "tools/validate_recognition_audio.mjs",

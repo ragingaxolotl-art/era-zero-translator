@@ -17,7 +17,7 @@ renderer matches the recorded fingerprint and semantic identity is unchanged
 
 ## PASS — presentation matrix
 
-supported fixtures match recorded SVG/MIDI at three anchors; parallel fixtures explicitly refuse semantically incomplete output
+supported fixtures match recorded SVG/MIDI at three anchors; parallel and unresolved-discourse fixtures explicitly refuse semantically incomplete output
 
 ## PASS — SVG conformance
 

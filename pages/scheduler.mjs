@@ -1,3 +1,4 @@
+import {ROLE_ORDER} from './roles.mjs';
 const QUANTIFIERS=['exact','at_least','at_most','all','some','none'];
 const MEASUREMENT_UNITS=['1','second','minute','hour','day','meter','kilometer','gram','kilogram','degree','radian','bit','byte'];
 const MODAL_MODES = ['possible','necessary','permitted','obligated','intended','predicted','counterfactual'];
@@ -6,6 +7,7 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
   const events = formal.performance.lexical_events;
   const ir = formal.semantic_ir;
   for (const node of ir.nodes) {
+    if(['variable','reference'].includes(node.kind))throw new Error('Unsupported musical discourse variable/reference.');
     if ((node.kind === 'scope_operator' && !['negation','repetition','modality','quantifier'].includes(node.operator)) ||
         (node.kind === 'coordination' && !['sequence','all_of','any_of','exactly_one'].includes(node.operator)))
       throw new Error(`Unsupported musical operator: ${node.operator}.`);
@@ -15,7 +17,7 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
       throw new Error('Unsupported musical modality mode or confidence strength.');
   }
   validateTimeRelations(ir);
-  if (!ir.nodes.some(node=>node.kind==='measurement') && !ir.edges.some(edge=>edge.type==='time_relation') && !ir.nodes.some(node => ['repetition','sequence','negation','modality','quantifier','all_of','any_of','exactly_one'].includes(node.operator))) return events;
+  if (!ir.edges.some(edge=>edge.type==='fills_role') && !ir.nodes.some(node=>node.kind==='measurement') && !ir.edges.some(edge=>edge.type==='time_relation') && !ir.nodes.some(node => ['repetition','sequence','negation','modality','quantifier','all_of','any_of','exactly_one'].includes(node.operator))) return events;
   const nodes = new Map(ir.nodes.map(node => [node.node_id, node]));
   const incoming = new Map();
   for (const edge of ir.edges) {
@@ -73,7 +75,7 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
     } else if (['lexical_occurrence','phonemic_reference','deictic_reference'].includes(node.kind)) {
       result = edges.filter(edge => ['fills_role','qualifies'].includes(edge.type))
         .sort((a,b) => a.edge_id < b.edge_id ? -1 : a.edge_id > b.edge_id ? 1 : 0)
-        .flatMap(edge => walk(edge.from)).concat(events.filter(event => event.occurrence_id === id));
+        .flatMap(edge => {const phrase=walk(edge.from);return edge.type==='fills_role'?[grammarMarker(formal,edge.edge_id,`role_${edge.role}_open`),...phrase,grammarMarker(formal,edge.edge_id,`role_${edge.role}_close`)]:phrase;}).concat(events.filter(event => event.occurrence_id === id));
     } else throw new Error(`Unsupported node in repetition scope: ${node.kind}.`);
     active.delete(id);
     if (result.length > maxEvents) throw new Error(`Repetition exceeds event limit ${maxEvents}.`);
@@ -135,6 +137,12 @@ function grammarMarker(formal,scopeId,marker){
   if(unit)relative=[0,13,Number(unit[1]),13,0];
   const quantifier=marker.match(/^quantifier_(exact|at_least|at_most|all|some|none)_(open|close)$/);
   if(quantifier)relative=[0,quantifier[2]==='open'?-14:14,QUANTIFIERS.indexOf(quantifier[1])+1,0];
+  const role=marker.match(/^role_(.+)_(open|close)$/);
+  if(role){
+    const code=ROLE_ORDER.indexOf(role[1]);if(code<0)throw new Error('Unsupported musical role.');
+    const digits=code.toString(3).padStart(3,'0').split('').map(trit=>[0,1,-1][Number(trit)]);
+    relative=[0,role[2]==='open'?-15:15,...digits,0];
+  }
   const base=formal.performance.anchor_midi;
   return {kind:'grammar_marker',grammar_profile:'EZGRAM-1',marker,occurrence_id:scopeId,target_id:`EZGRAM:${marker}`,register:'middle',base_midi:base,
     family_qualified_transliteration:marker,formal_carrier:'',family_opening_relative_semitones:[],family_opening_absolute_midi:[],

@@ -12,13 +12,13 @@ const registry=data.recognition_audio;
 for(const [mode,status] of [['strict','valid_strict_absence'],['recognition','valid_checksum']]){
   const result=verifyPerformanceMidi(formal,registry,midiFromPerformance(formal,registry,mode));
   assert.equal(result.status,status);
-  assert.equal(result.targets.length,96);
+  assert.equal(result.targets.length,224);
   assert.equal(result.first_mismatch,null);
 }
 const strict=visemePlanFromFormal(formal,{mode:'strict',recognitionRegistry:registry});
 const recognized=visemePlanFromFormal(formal,{mode:'recognition',recognitionRegistry:registry});
 const mixed=[];
-for(let i=0;i<96;i++)mixed.push(...(i%2?recognized:strict).cues.filter(cue=>cue.event_index===i).map(cue=>cue.note));
+for(let i=0;i<224;i++)mixed.push(...(i%2?recognized:strict).cues.filter(cue=>cue.event_index===i).map(cue=>cue.note));
 mixed.push(...strict.cues.filter(cue=>cue.section==='sentence_contour').map(cue=>cue.note));
 assert.equal(verifyPerformanceNotes(formal,registry,mixed).status,'valid_checksum');
 const corrupted=mixed.slice();corrupted[10]=(corrupted[10]+1)%128;
@@ -26,4 +26,4 @@ assert.equal(verifyPerformanceNotes(formal,registry,corrupted).status,'checksum_
 assert.equal(verifyPerformanceNotes(formal,registry,mixed.slice(0,-1)).status,'checksum_or_path_mismatch');
 assert.equal(verifyPerformanceNotes(formal,registry,[...mixed,127]).status,'checksum_or_path_mismatch');
 assert.equal(verifyPerformanceNotes(formal,registry,[]).status,'checksum_or_path_mismatch');
-console.log('Long performance verification: 96 events accept strict, recognition and mixed paths; changed, missing, extra and empty notes are rejected.');
+console.log('Long performance verification: 96 lexical events plus 128 role frames accept strict, recognition and mixed paths; changed, missing, extra and empty notes are rejected.');

@@ -1,0 +1,27 @@
+profile: EZROLE-1
+status: versioned_implementation_convention
+provenance: New grammar convention under the translator completion goal
+purpose: Preserve distinct argument roles that previously shared only a register
+scope: Explicit fills_role edges in the utterance graph
+role_order: [actor, source, cause, experiencer, bearer, predicate, target, result, destination, instrument, material, content, recipient, location, environment, condition, persistent_condition, time, manner, quantity, comparison_standard, beneficiary]
+code:
+  rule: Zero-based role index written as exactly three base-three digits
+  trit_pitches: [0, 1, -1]
+  open: '[0, -15, pitch(trit1), pitch(trit2), pitch(trit3), 0]'
+  close: '[0, 15, pitch(trit1), pitch(trit2), pitch(trit3), 0]'
+  note_duration_beats: 0.25
+  anchor: Utterance anchor
+placement: Surround the entire argument subtree, including any quantity scope
+preserved:
+  - Existing participant register remains on the argument payload
+  - Existing root melodies and all runtime endings remain unchanged
+  - Role codes are grammar identifiers, not new roots or runtime meanings
+  - Roles do not add repeated events or change scope
+compatibility:
+  - Role-bearing musical output changes to restore previously omitted distinctions
+  - Bare lexical performances without role edges remain unchanged
+  - Variable/reference nodes lacking musical discourse encoding now fail explicitly
+remaining:
+  - Inline compound-binding role frames
+  - Independent inverse semantic decoding and perceptual recognition tests
+  - Lexical valence validation beyond the general role vocabulary

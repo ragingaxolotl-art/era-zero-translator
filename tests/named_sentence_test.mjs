@@ -84,7 +84,7 @@ assert.notDeepEqual(midiFromFormal(conscious.formal),midiFromFormal(dormant.form
 assert.notDeepEqual(midiFromFormal(notConscious.formal),midiFromFormal(dormant.formal));
 assert.equal(parseNamedSentence('Pip is tired.'),null);
 assert.equal(parseNamedSentence('Pip is asleep.'),null);
-const modalMarkers=result=>scheduledLexicalEvents(result.formal).filter(event=>event.kind==='grammar_marker').map(event=>event.marker);
+const modalMarkers=result=>scheduledLexicalEvents(result.formal).filter(event=>event.kind==='grammar_marker'&&!event.marker.startsWith('role_')).map(event=>event.marker);
 assert.deepEqual(modalMarkers(outputs[17]),['modality_possible_open','negation_open','negation_close','modality_possible_close']);
 assert.deepEqual(modalMarkers(outputs[18]),['negation_open','modality_possible_open','modality_possible_close','negation_close']);
 assert.notDeepEqual(midiFromFormal(outputs[17].formal),midiFromFormal(outputs[18].formal));
@@ -191,3 +191,5 @@ for(const result of pastQuestions){
 assert.notDeepEqual(midiFromFormal(pastQuestions[0].formal),midiFromFormal(pastQuestions[1].formal));
 assert.equal(parseNamedSentence('Did Nora restore Eli and Sol?'),null);
 assert.equal(parseNamedSentence('Did Nora restore Eli tomorrow?'),null);
+
+assert.deepEqual(scheduledLexicalEvents(outputs[0].formal).filter(e=>e.marker?.startsWith('role_')).map(e=>e.marker),['role_actor_open','role_actor_close','role_target_open','role_target_close']);

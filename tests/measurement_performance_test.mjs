@@ -13,7 +13,7 @@ end)
 for(const sample of samples){
  assert.deepEqual(Buffer.from(midiFromFormal(sample.formal)),Buffer.from(sample.midi,'base64'));
  assert.equal(svgFromFormal(sample.formal),sample.svg);
- const events=scheduledLexicalEvents(sample.formal),markers=events.filter(e=>e.kind==='grammar_marker').map(e=>e.marker);
+ const events=scheduledLexicalEvents(sample.formal),markers=events.filter(e=>e.kind==='grammar_marker'&&!e.marker.startsWith('role_')).map(e=>e.marker);
  assert.equal(markers[0],'measurement_open');assert.equal(markers.at(-1),'measurement_close');
  assert.equal(markers.includes('measurement_negative'),sample.value.startsWith('-'));
  assert(markers.includes(sample.unit==='meter'?'measurement_unit_6':'measurement_unit_7'));

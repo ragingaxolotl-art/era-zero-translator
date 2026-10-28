@@ -649,3 +649,18 @@ question/calendar handling. Endpoint reversal changes the output, and the covera
 audit checks each role-to-label binding rather than only the set of noun labels.
 Same-endpoint round trips and extra manner descriptions still need their own
 semantics and are not silently flattened into this construction.
+
+### Distinct musical argument roles
+
+A structural audit found that all 22 declared role names collapsed into four exact
+MIDI groups when only register distinguished them. Actor/source/cause were identical;
+target/destination/result and other role families also collided. The before/after
+reports retain that evidence. Explicit role frames now enclose each `fills_role`
+argument subtree, using a fixed three-trit grammar code while preserving the
+argument's register, root melody and runtime ending. All 22 probes now differ.
+
+The probe tests role encoding, not whether a single lexical predicate licenses every
+role. Updated fixture hashes reflect restored meaning. Traversing arguments also
+exposed previously unsounded discourse variable/reference nodes; export now rejects
+those explicitly until they have a proper musical representation. Inline compound
+bindings, lexical valence and independent inverse decoding remain separate work.

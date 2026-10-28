@@ -1,3 +1,4 @@
+export const ROLE_ORDER=["actor", "source", "cause", "experiencer", "bearer", "predicate", "target", "result", "destination", "instrument", "material", "content", "recipient", "location", "environment", "condition", "persistent_condition", "time", "manner", "quantity", "comparison_standard", "beneficiary"];
 // Quantification changes cardinality, not the scoped participant's argument role.
 const REGISTERS={actor:'low',source:'low',cause:'low',target:'high',result:'high',destination:'high',recipient:'high',beneficiary:'high',environment:'sustained_background',persistent_condition:'sustained_background',location:'sustained_background',time:'sustained_background'};
 export function registerFor(nodeId,ir){
