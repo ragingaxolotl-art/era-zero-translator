@@ -111,7 +111,13 @@ The browser inventory now has 32 compounds and 440 canonical English senses.
 General English verb routing remains incomplete. Existing release checks still
 cover their bounded legacy scope, not the overall completion goal.
 
-Still required: scoped slot binding, complete compound
+The expansion API now validates explicit slot-path bindings against declared
+argument types and slot roles. Same-named slots in separate nested occurrences
+can bind different participants, and one participant can be reused only through
+separate explicit bindings. Missing, duplicate and mismatched bindings fail.
+Renderer and browser consumption of these bound arguments remains outstanding.
+
+Still required: rendered scoped slot binding, complete compound
 timing and contour scheduling, grammar-aware MIDI, and browser integration.
 Formal round-trip preservation is not proof of audible semantic completeness.
 

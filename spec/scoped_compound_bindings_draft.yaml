@@ -1,0 +1,23 @@
+status: implementation_draft
+authority: User-directed translator completion goal
+scope: Occurrence-level binding; does not change lexical compound identity
+binding_fields:
+  slot_path: Array of local node IDs from the outer compound to the expanded slot
+  argument_id: Exact ID in the interpreted argument table
+  role: Optional assertion; must equal the slot's declared role when present
+argument_fields:
+  value_type: Explicit semantic type; must equal the slot_type
+rules:
+  - Bind every slot exactly once by its full occurrence path
+  - Never bind by slot_name alone
+  - Each slot must have exactly one outgoing fills_role edge
+  - Preserve both resolved predicate head and compound attachment scope
+  - Multiple slots may share an argument only through explicit separate bindings
+  - Unknown paths, unknown arguments and missing types are errors
+implementation: tools/lib/era_zero_compound_expansion.rb
+tests: tests/compound_expansion_test.rb
+remaining:
+  - Integrate occurrence bindings into semantic IR validation and rendering
+  - Interpret participant names into declared typed referents
+  - Render bound arguments at their scoped positions with role registers and timing
+  - Connect browser sentence composition and sound output

@@ -90,6 +90,27 @@ class CompoundExpansionTest < Minitest::Test
     assert_equal original, Marshal.dump(input)
   end
 
+  def test_same_named_nested_slots_bind_to_different_participants
+    base = entry("slotted", [{ "node_id" => "s", "kind" => "slot", "slot_name" => "target", "slot_type" => "entity" }, root("h", "REP:111")], "h", [])
+    base["edges"] << { "from" => "s", "to" => "h", "type" => "fills_role", "role" => "target" }
+    outer = entry("outer", [ref("q", "slotted"), ref("h", "slotted")], "h", [["q", "h"]])
+    expander = Expander.new([base, outer])
+    expanded = expander.expand("outer", "1.0.0")
+    bindings = [{ "slot_path" => ["q", "s"], "argument_id" => "Pip" }, { "slot_path" => ["h", "s"], "argument_id" => "Ada" }]
+    arguments = { "Pip" => { "value_type" => "entity" }, "Ada" => { "value_type" => "entity" } }
+    result = expander.bind_slots(expanded, bindings: bindings, arguments: arguments)
+    assert_equal({ "Pip" => ["q", "h"], "Ada" => ["h", "h"] }, result.to_h { |binding| [binding["argument_id"], binding["predicate_path"]] })
+    assert_raises(Error) { expander.bind_slots(expanded, bindings: bindings.take(1), arguments: arguments) }
+    assert_raises(Error) { expander.bind_slots(expanded, bindings: bindings + bindings.take(1), arguments: arguments) }
+    assert_raises(Error) { expander.bind_slots(expanded, bindings: bindings, arguments: arguments.merge("Ada" => { "value_type" => "quantity" })) }
+    assert_raises(Error) { expander.bind_slots(expanded, bindings: bindings.map { |b| b.merge("role" => "actor") }, arguments: arguments) }
+    assert_raises(Error) { expander.bind_slots(expanded, bindings: bindings, arguments: {}) }
+    # Sharing one referent is legal only through two explicit bindings.
+    shared = expander.bind_slots(expanded, bindings: bindings.map { |b| b.merge("argument_id" => "Pip") }, arguments: arguments)
+    assert_equal 2, shared.length
+    assert_equal ["Pip"], shared.map { |b| b["argument_id"] }.uniq
+  end
+
   def test_missing_version_and_dependency_cycle_are_rejected
     assert_raises(Error) { Expander.new(fixtures).expand("outer", "2.0.0") }
     cyclic = entry("cycle", [ref("h", "cycle")], "h", [])

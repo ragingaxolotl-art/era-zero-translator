@@ -79,6 +79,43 @@ module EraZeroCompoundExpansion
       result
     end
 
+    # Bind by occurrence path, never by the display name of a slot. Argument
+    # value types must come from semantic interpretation, not guessed noun text.
+    # Returns bindings without mutating dictionary or expanded graph data.
+    def bind_slots(expanded, bindings:, arguments:)
+      slots = expanded.fetch("nodes").select { |node| node["kind"] == "slot" }.to_h { |node| [node.fetch("path"), node] }
+      resolved = {}
+      bindings.each do |binding|
+        path = binding.fetch("slot_path")
+        slot = slots[path] or raise ExpansionError, "unknown compound slot path #{path.inspect}"
+        raise ExpansionError, "duplicate binding for compound slot #{path.inspect}" if resolved.key?(path)
+        argument_id = binding.fetch("argument_id")
+        argument = arguments[argument_id] or raise ExpansionError, "unknown argument #{argument_id}"
+        unless argument["value_type"] == slot.fetch("slot_type")
+          raise ExpansionError, "slot #{path.inspect} requires #{slot['slot_type']}, received #{argument['value_type'].inspect}"
+        end
+        edges = expanded.fetch("edges").select { |edge| edge["from_path"] == path }
+        unless edges.length == 1 && edges.first["type"] == "fills_role" && edges.first["role"].is_a?(String)
+          raise ExpansionError, "compound slot must fill exactly one explicit role"
+        end
+        edge = edges.first
+        if binding.key?("role") && binding["role"] != edge["role"]
+          raise ExpansionError, "binding role does not match the declared slot role"
+        end
+        resolved[path] = {
+          "slot_path" => path.dup, "argument_id" => argument_id,
+          "value_type" => argument.fetch("value_type"), "role" => edge.fetch("role"),
+          "predicate_path" => edge.fetch("to_path").dup,
+          "predicate_scope_target" => edge.fetch("to_scope_target").dup
+        }
+      end
+      missing = slots.keys - resolved.keys
+      raise ExpansionError, "unbound compound slots: #{missing.inspect}" unless missing.empty?
+      resolved.values.sort_by { |binding| JSON.generate(binding.fetch("slot_path")) }
+    rescue KeyError => error
+      raise ExpansionError, "incomplete compound binding: #{error.message}"
+    end
+
     private
 
     # Array paths avoid collisions when a local node ID contains '/' or '.'.
