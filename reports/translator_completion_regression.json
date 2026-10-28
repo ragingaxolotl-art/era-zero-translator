@@ -6,19 +6,19 @@
       "test": "tests/compound_dependencies_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 35572\n\n# Running:\n\n......\n\nFinished in 0.008079s, 742.6662 runs/s, 1856.6654 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 40668\n\n# Running:\n\n......\n\nFinished in 0.008058s, 744.6016 runs/s, 1861.5041 assertions/s.\n\n6 runs, 15 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_expansion_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 44423\n\n# Running:\n\n..........\n\nFinished in 0.230724s, 43.3418 runs/s, 546.1070 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 49987\n\n# Running:\n\n..........\n\nFinished in 0.231034s, 43.2837 runs/s, 545.3743 assertions/s.\n\n10 runs, 126 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/semantic_reference_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 23830\n\n# Running:\n\n......\n\nFinished in 0.218782s, 27.4246 runs/s, 118.8398 assertions/s.\n\n6 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 24885\n\n# Running:\n\n......\n\nFinished in 0.218115s, 27.5084 runs/s, 119.2032 assertions/s.\n\n6 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_semantic_ir_and_grammar.rb",
@@ -30,13 +30,13 @@
       "test": "tests/foundation_process_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 15649\n\n# Running:\n\n...\n\nFinished in 0.396184s, 7.5722 runs/s, 70.6742 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 43209\n\n# Running:\n\n...\n\nFinished in 0.395685s, 7.5818 runs/s, 70.7634 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/repetition_performance_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 57786\n\n# Running:\n\n...\n\nFinished in 0.450077s, 6.6655 runs/s, 17.7747 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 9515\n\n# Running:\n\n...\n\nFinished in 0.446596s, 6.7175 runs/s, 17.9133 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_gate4b_compound_dictionary.rb",
@@ -73,6 +73,12 @@
       "passed": true,
       "exit_code": 0,
       "output": "Name participants: existing EZNAME notes, role reversal, nonsemantic labels, roundtrip and MIDI parity pass.\n"
+    },
+    {
+      "test": "tests/discourse_reference_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Discourse references: speaker/addressee anchors retain distinct roles and sound, match Ruby events/MIDI, and use neutral mouth cues without lexical runtime.\n"
     },
     {
       "test": "tests/named_sentence_test.mjs",

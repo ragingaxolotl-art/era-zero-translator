@@ -66,6 +66,16 @@ class SemanticReferenceValidationTest < Minitest::Test
     assert_includes error.message,'invalid_runtime_state'
   end
 
+  def test_deictic_reference_requires_matching_context_role
+    ir=fixture
+    ir['nodes'][2]={'node_id'=>'a','kind'=>'deictic_reference','deictic_role'=>'speaker','referent_id'=>'discourse:speaker','value_type'=>'entity'}
+    assert_empty EraZeroSemanticValidation.validate(identify(ir))
+    ir['nodes'][2]['referent_id']='discourse:addressee'
+    assert_includes EraZeroSemanticValidation.validate(identify(ir)),'invalid_deictic_reference'
+    ir['nodes'][2]['deictic_role']='she'
+    assert_includes EraZeroSemanticValidation.validate(identify(ir)),'invalid_deictic_reference'
+  end
+
   def test_malformed_containers_return_diagnostics
     assert_equal ['invalid_document'],EraZeroSemanticValidation.validate(nil)
     assert_equal ['invalid_nodes'],EraZeroSemanticValidation.validate({'nodes'=>[nil]})

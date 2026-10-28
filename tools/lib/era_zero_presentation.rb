@@ -143,7 +143,7 @@ module EraZeroPresentation
                    coordinated << grammar_marker(formal, id, "coord_#{node['operator']}_close")
                    coordinated
                  end
-               when "lexical_occurrence", "phonemic_reference"
+               when "lexical_occurrence", "phonemic_reference", "deictic_reference"
                  arguments = edges.select { |edge| %w[fills_role qualifies].include?(edge["type"]) }
                  arguments.sort_by { |edge| edge.fetch("edge_id") }.flat_map { |edge| walk.call(edge.fetch("from")) } + by_occurrence.fetch(id, [])
                else

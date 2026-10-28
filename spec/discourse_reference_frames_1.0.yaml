@@ -1,0 +1,28 @@
+profile: EZREF-1
+status: versioned_implementation_convention
+provenance: New grammar convention under the user-directed translator completion goal
+purpose: Express utterance-relative speaker and addressee without creating lexical roots or pretending pronouns are names
+node_kind: deictic_reference
+required_fields: [node_id, kind, deictic_role, referent_id, value_type]
+value_type: entity
+roles:
+  speaker:
+    referent_id: discourse:speaker
+    relative_semitones: [0, 12, -1, 0]
+  addressee:
+    referent_id: discourse:addressee
+    relative_semitones: [0, 12, 1, 0]
+note_duration_beats: 0.25
+anchor: Utterance anchor plus the participant role register
+runtime_ending: forbidden
+formal_carrier: none
+mouth_cues: neutral
+constraints:
+  - The discourse role is relative to the utterance, not a person's proper name
+  - These anchors do not establish a persistent real-world person identity
+  - Ordinary third-person reference still requires explicit resolution
+  - Existing reference nodes and their corefers_with rules remain separate
+  - Root inventories and existing root melodies are unchanged
+remaining:
+  - Ordinary-English pronoun and command parsing
+  - Context binding to explicit real-world or fictional referents

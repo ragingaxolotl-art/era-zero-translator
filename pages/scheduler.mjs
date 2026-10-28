@@ -62,7 +62,7 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
         });
         result.push(grammarMarker(formal,id,`coord_${node.operator}_close`));
       }
-    } else if (['lexical_occurrence','phonemic_reference'].includes(node.kind)) {
+    } else if (['lexical_occurrence','phonemic_reference','deictic_reference'].includes(node.kind)) {
       result = edges.filter(edge => ['fills_role','qualifies'].includes(edge.type))
         .sort((a,b) => a.edge_id < b.edge_id ? -1 : a.edge_id > b.edge_id ? 1 : 0)
         .flatMap(edge => walk(edge.from)).concat(events.filter(event => event.occurrence_id === id));

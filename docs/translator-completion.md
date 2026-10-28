@@ -420,3 +420,13 @@ formal equality and assertion-versus-question MIDI distinctions are checked.
 Wh-questions, unsupported modifiers, embedded questions, and mixed question/assertion
 coordination remain incomplete. The ordinary phrase audit now checks speech acts
 explicitly and counts its question case as supported.
+
+### Speaker and addressee references
+
+A separate deictic_reference node now anchors the utterance's speaker or addressee.
+The EZREF-1 implementation convention gives each a distinct short musical frame in
+its participant-role register. These are not phonemic names, lexical roots, or
+runtime states. Ruby rendering/validation and browser scheduling/MIDI/neutral mouth
+cues support them. Tests reverse speaker/addressee roles and verify exact event and
+MIDI parity. These anchors are context-relative and do not identify a persistent
+person; third-person resolution and English pronoun/command parsing remain pending.

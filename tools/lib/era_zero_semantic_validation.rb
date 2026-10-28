@@ -61,6 +61,9 @@ module EraZeroSemanticValidation
         state = n["runtime_state"].is_a?(Hash) ? n["runtime_state"] : {}
         errors << "invalid_runtime_state" unless [0, 1, 2].include?(state["code"])
         errors << "invalid_runtime_parameter" if state.key?("num")
+      elsif n["kind"] == "deictic_reference"
+        role = n["deictic_role"]
+        errors << "invalid_deictic_reference" unless %w[speaker addressee].include?(role) && n["referent_id"] == "discourse:#{role}" && n["value_type"] == "entity" && !n.key?("runtime_state")
       elsif n["kind"] == "phonemic_reference"
         errors << "invalid_phonemic_reference" unless n["value_type"] == "entity" && n["referent_id"].is_a?(String) && !n["referent_id"].empty? && !n.key?("runtime_state")
         begin
