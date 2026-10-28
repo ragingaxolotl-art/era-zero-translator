@@ -1,0 +1,59 @@
+# Ordinary phrase coverage audit
+
+Fresh phrase coverage audit authored during implementation; not a blind or representative English benchmark.
+
+Full translator completion: **not established**. 12 of 40 cases pass their declared semantic checks; 28 have no complete composition. These counts do not estimate coverage of English generally.
+
+| Area | Checked compositions | Cases |
+|---|---:|---:|
+| participants | 2 | 2 |
+| scope | 2 | 2 |
+| adjectives | 1 | 1 |
+| compounds | 1 | 1 |
+| movement | 2 | 3 |
+| cognition | 1 | 4 |
+| coordination | 2 | 3 |
+| quantity | 1 | 2 |
+| noun_phrases | 0 | 2 |
+| discourse | 0 | 1 |
+| time | 0 | 2 |
+| speech_act | 0 | 2 |
+| sensory_dimensions | 0 | 4 |
+| affect | 0 | 2 |
+| bodily_need | 0 | 3 |
+| movement_manner | 0 | 2 |
+| comparison | 0 | 1 |
+| conditional | 0 | 1 |
+| modality | 0 | 1 |
+| poetic_meaning | 0 | 1 |
+
+## Unfinished cases
+
+- **Nora is repairing the radio.** — Recognize an unquoted common noun and repair sense (not_composed)
+- **She cares for him.** — Resolve both pronouns from discourse or request referents (not_composed)
+- **Nora cared for Eli yesterday.** — Preserve past time separately from care activity (not_composed)
+- **Nora will care for Eli tomorrow.** — Preserve future time and commitment ambiguity (not_composed)
+- **Is Orin conscious?** — Ask about the state with the same bearer (not_composed)
+- **Care for Eli.** — Command an addressee to care for Eli (not_composed)
+- **Nora cares for Eli and Orin.** — Both objects belong to the care relation (not_composed)
+- **Eli is moving from the archive to the gate.** — Bind both path endpoints and the mover (not_composed)
+- **The radio is hot.** — Temperature is not generic activity (not_composed)
+- **The radio is heavy.** — Mass or weight must not collapse into size (not_composed)
+- **The lamp is bright.** — Express visual intensity (not_composed)
+- **The stone is rough.** — Express surface texture (not_composed)
+- **Nora is happy.** — Express positive felt affect, not care behavior (not_composed)
+- **Nora prefers tea to coffee.** — Preserve preference direction and both alternatives (not_composed)
+- **Eli is hungry.** — Distinguish food deficit from thirst and dormancy (not_composed)
+- **Eli is thirsty.** — Express water-related bodily need (not_composed)
+- **Orin is tired.** — Distinguish fatigue from dormant identity (not_composed)
+- **Orin is curious about the map.** — Interest in knowing is not merely attention (not_composed)
+- **Nora learned the route.** — Represent learning and its result without equating every revision with truth (not_composed)
+- **Eli understands Nora.** — Preserve interpretation or understanding beyond receiving communication (not_composed)
+- **Nora runs to the gate.** — Running manner is not any fast movement (not_composed)
+- **Eli swims across the river.** — Propulsion and medium interaction are not passive transport (not_composed)
+- **Exactly three lamps are active.** — Quantify three bearers, not repetitions of one assertion (not_composed)
+- **This lamp is brighter than that lamp.** — Bind comparison direction, dimension, and both referents (not_composed)
+- **If the radio is damaged, repair it.** — Preserve conditional scope and object coreference (not_composed)
+- **Nora may enter the archive.** — Disambiguate permission versus possibility (not_composed)
+- **Nora cares for Eli or Orin is conscious.** — Resolve inclusive versus exclusive interpretation (not_composed)
+- **I love you.** — Use the approved love meaning and bind speaker/addressee (not_composed)

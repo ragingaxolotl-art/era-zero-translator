@@ -8,6 +8,22 @@ performance, keeping existing roots, sounds, names, and approved poetic meanings
 The [source audit](https://chatgpt.com/space/page_21c6ce0da1a88191abff53c0b13441f3)
 is the starting evidence, not a completion certificate.
 
+## Current coverage evidence
+
+The [ordinary phrase audit](../reports/ordinary_phrase_coverage.md) currently has
+12 checked compositions and 28 uncomposed phrases out of 40 deliberately varied
+cases. This is an implementation-authored diagnostic set, not a blind evaluation
+or a statistical measure of English coverage. Green regression suites do not
+override these missing constructions. The corpus records the intended distinctions
+even for cases that cannot yet be composed; future support must receive explicit
+semantic expectations before it counts as checked.
+
+The next broad usability priorities are ordinary noun phrases, questions and
+commands, and time/discourse handling. Sensory dimensions, affect, bodily needs,
+and movement manner still need foundation review before vocabulary expansion.
+Both kinds of gap matter: adding roots alone cannot repair missing clause structure,
+and expanding grammar cannot supply an absent temperature or desire distinction.
+
 ## Dependency order
 
 Choose foundations by semantic usefulness and actual dependencies. Creation date,

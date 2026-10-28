@@ -1,0 +1,509 @@
+{
+  "purpose": "Fresh phrase coverage audit authored during implementation; not a blind or representative English benchmark.",
+  "cases": [
+    {
+      "id": "care",
+      "input": "Nora cares for Eli.",
+      "area": "participants",
+      "requirements": [
+        "Preserve caregiver and beneficiary"
+      ],
+      "expected": {
+        "targets": [
+          "LIF:211"
+        ],
+        "roles": [
+          "actor",
+          "target"
+        ],
+        "labels": [
+          "nora",
+          "eli"
+        ],
+        "operators": []
+      }
+    },
+    {
+      "id": "care_negative",
+      "input": "Nora does not care for Eli.",
+      "area": "scope",
+      "requirements": [
+        "Negate care without changing runtime"
+      ],
+      "expected": {
+        "targets": [
+          "LIF:211"
+        ],
+        "roles": [
+          "actor",
+          "target"
+        ],
+        "labels": [
+          "nora",
+          "eli"
+        ],
+        "operators": [
+          "negation"
+        ]
+      }
+    },
+    {
+      "id": "description",
+      "input": "Orin is conscious.",
+      "area": "adjectives",
+      "requirements": [
+        "Bind the conscious condition to Orin"
+      ],
+      "expected": {
+        "targets": [
+          "LIF:011"
+        ],
+        "roles": [
+          "bearer"
+        ],
+        "labels": [
+          "orin"
+        ],
+        "operators": []
+      }
+    },
+    {
+      "id": "repair",
+      "input": "Nora is physically repairing \"the radio\".",
+      "area": "compounds",
+      "requirements": [
+        "Physical repair in progress, with actor and object"
+      ],
+      "expected": {
+        "targets": [
+          "CMP:2816a7eeb356c2148b26beca"
+        ],
+        "roles": [
+          "actor",
+          "target"
+        ],
+        "labels": [
+          "nora",
+          "the radio"
+        ],
+        "operators": []
+      }
+    },
+    {
+      "id": "destination",
+      "input": "Eli is moving toward \"the gate\".",
+      "area": "movement",
+      "requirements": [
+        "Mover and destination are distinct"
+      ],
+      "expected": {
+        "targets": [
+          "MOV:111"
+        ],
+        "roles": [
+          "actor",
+          "destination"
+        ],
+        "labels": [
+          "eli",
+          "the gate"
+        ],
+        "operators": []
+      }
+    },
+    {
+      "id": "source",
+      "input": "Eli is moving away from \"the gate\".",
+      "area": "movement",
+      "requirements": [
+        "Mover and source are distinct"
+      ],
+      "expected": {
+        "targets": [
+          "MOV:101"
+        ],
+        "roles": [
+          "actor",
+          "source"
+        ],
+        "labels": [
+          "eli",
+          "the gate"
+        ],
+        "operators": []
+      }
+    },
+    {
+      "id": "attention",
+      "input": "Orin is paying attention to Nora.",
+      "area": "cognition",
+      "requirements": [
+        "Cognizer and attended target; no claim of learning"
+      ],
+      "expected": {
+        "targets": [
+          "MIN:211"
+        ],
+        "roles": [
+          "experiencer",
+          "target"
+        ],
+        "labels": [
+          "orin",
+          "nora"
+        ],
+        "operators": []
+      }
+    },
+    {
+      "id": "transfer",
+      "input": "Data \"the map\" is being transferred from \"the archive\" to \"the console\".",
+      "area": "participants",
+      "requirements": [
+        "Source, content, and target all survive"
+      ],
+      "expected": {
+        "targets": [
+          "DAT:111"
+        ],
+        "roles": [
+          "source",
+          "content",
+          "target"
+        ],
+        "labels": [
+          "the archive",
+          "the map",
+          "the console"
+        ],
+        "operators": []
+      }
+    },
+    {
+      "id": "sequence",
+      "input": "Nora cares for Eli, then Orin is conscious.",
+      "area": "coordination",
+      "requirements": [
+        "Care precedes the conscious-state assertion"
+      ],
+      "expected": {
+        "targets": [
+          "LIF:211",
+          "LIF:011"
+        ],
+        "roles": [
+          "actor",
+          "target",
+          "bearer"
+        ],
+        "labels": [
+          "nora",
+          "eli",
+          "orin"
+        ],
+        "operators": [
+          "sequence"
+        ]
+      }
+    },
+    {
+      "id": "conjunction",
+      "input": "Nora cares for Eli and Orin is conscious.",
+      "area": "coordination",
+      "requirements": [
+        "Assert both clauses without temporal order"
+      ],
+      "expected": {
+        "targets": [
+          "LIF:211",
+          "LIF:011"
+        ],
+        "roles": [
+          "actor",
+          "target",
+          "bearer"
+        ],
+        "labels": [
+          "nora",
+          "eli",
+          "orin"
+        ],
+        "operators": [
+          "all_of"
+        ]
+      }
+    },
+    {
+      "id": "modal_negation",
+      "input": "It is possible that Orin is not conscious.",
+      "area": "scope",
+      "requirements": [
+        "Possibility contains negation, not its reverse"
+      ],
+      "expected": {
+        "targets": [
+          "LIF:011"
+        ],
+        "roles": [
+          "bearer"
+        ],
+        "labels": [
+          "orin"
+        ],
+        "operators": [
+          "modality",
+          "negation"
+        ]
+      }
+    },
+    {
+      "id": "confidence",
+      "input": "With 62.5% confidence, it is possible that Orin is conscious.",
+      "area": "quantity",
+      "requirements": [
+        "Encode exact confidence 0.625"
+      ],
+      "expected": {
+        "targets": [
+          "LIF:011"
+        ],
+        "roles": [
+          "bearer"
+        ],
+        "labels": [
+          "orin"
+        ],
+        "operators": [
+          "modality"
+        ],
+        "strengths": [
+          "0.625"
+        ]
+      }
+    },
+    {
+      "id": "common_noun",
+      "input": "Nora is repairing the radio.",
+      "area": "noun_phrases",
+      "requirements": [
+        "Recognize an unquoted common noun and repair sense"
+      ]
+    },
+    {
+      "id": "pronoun",
+      "input": "She cares for him.",
+      "area": "discourse",
+      "requirements": [
+        "Resolve both pronouns from discourse or request referents"
+      ]
+    },
+    {
+      "id": "past",
+      "input": "Nora cared for Eli yesterday.",
+      "area": "time",
+      "requirements": [
+        "Preserve past time separately from care activity"
+      ]
+    },
+    {
+      "id": "future",
+      "input": "Nora will care for Eli tomorrow.",
+      "area": "time",
+      "requirements": [
+        "Preserve future time and commitment ambiguity"
+      ]
+    },
+    {
+      "id": "question",
+      "input": "Is Orin conscious?",
+      "area": "speech_act",
+      "requirements": [
+        "Ask about the state with the same bearer"
+      ]
+    },
+    {
+      "id": "command",
+      "input": "Care for Eli.",
+      "area": "speech_act",
+      "requirements": [
+        "Command an addressee to care for Eli"
+      ]
+    },
+    {
+      "id": "two_objects",
+      "input": "Nora cares for Eli and Orin.",
+      "area": "noun_phrases",
+      "requirements": [
+        "Both objects belong to the care relation"
+      ]
+    },
+    {
+      "id": "path",
+      "input": "Eli is moving from the archive to the gate.",
+      "area": "movement",
+      "requirements": [
+        "Bind both path endpoints and the mover"
+      ]
+    },
+    {
+      "id": "hot",
+      "input": "The radio is hot.",
+      "area": "sensory_dimensions",
+      "requirements": [
+        "Temperature is not generic activity"
+      ]
+    },
+    {
+      "id": "heavy",
+      "input": "The radio is heavy.",
+      "area": "sensory_dimensions",
+      "requirements": [
+        "Mass or weight must not collapse into size"
+      ]
+    },
+    {
+      "id": "bright",
+      "input": "The lamp is bright.",
+      "area": "sensory_dimensions",
+      "requirements": [
+        "Express visual intensity"
+      ]
+    },
+    {
+      "id": "rough",
+      "input": "The stone is rough.",
+      "area": "sensory_dimensions",
+      "requirements": [
+        "Express surface texture"
+      ]
+    },
+    {
+      "id": "happy",
+      "input": "Nora is happy.",
+      "area": "affect",
+      "requirements": [
+        "Express positive felt affect, not care behavior"
+      ]
+    },
+    {
+      "id": "prefers",
+      "input": "Nora prefers tea to coffee.",
+      "area": "affect",
+      "requirements": [
+        "Preserve preference direction and both alternatives"
+      ]
+    },
+    {
+      "id": "hungry",
+      "input": "Eli is hungry.",
+      "area": "bodily_need",
+      "requirements": [
+        "Distinguish food deficit from thirst and dormancy"
+      ]
+    },
+    {
+      "id": "thirsty",
+      "input": "Eli is thirsty.",
+      "area": "bodily_need",
+      "requirements": [
+        "Express water-related bodily need"
+      ]
+    },
+    {
+      "id": "tired",
+      "input": "Orin is tired.",
+      "area": "bodily_need",
+      "requirements": [
+        "Distinguish fatigue from dormant identity"
+      ]
+    },
+    {
+      "id": "curious",
+      "input": "Orin is curious about the map.",
+      "area": "cognition",
+      "requirements": [
+        "Interest in knowing is not merely attention"
+      ]
+    },
+    {
+      "id": "learn",
+      "input": "Nora learned the route.",
+      "area": "cognition",
+      "requirements": [
+        "Represent learning and its result without equating every revision with truth"
+      ]
+    },
+    {
+      "id": "understand",
+      "input": "Eli understands Nora.",
+      "area": "cognition",
+      "requirements": [
+        "Preserve interpretation or understanding beyond receiving communication"
+      ]
+    },
+    {
+      "id": "run",
+      "input": "Nora runs to the gate.",
+      "area": "movement_manner",
+      "requirements": [
+        "Running manner is not any fast movement"
+      ]
+    },
+    {
+      "id": "swim",
+      "input": "Eli swims across the river.",
+      "area": "movement_manner",
+      "requirements": [
+        "Propulsion and medium interaction are not passive transport"
+      ]
+    },
+    {
+      "id": "count",
+      "input": "Exactly three lamps are active.",
+      "area": "quantity",
+      "requirements": [
+        "Quantify three bearers, not repetitions of one assertion"
+      ]
+    },
+    {
+      "id": "compare",
+      "input": "This lamp is brighter than that lamp.",
+      "area": "comparison",
+      "requirements": [
+        "Bind comparison direction, dimension, and both referents"
+      ]
+    },
+    {
+      "id": "conditional",
+      "input": "If the radio is damaged, repair it.",
+      "area": "conditional",
+      "requirements": [
+        "Preserve conditional scope and object coreference"
+      ]
+    },
+    {
+      "id": "permission",
+      "input": "Nora may enter the archive.",
+      "area": "modality",
+      "requirements": [
+        "Disambiguate permission versus possibility"
+      ]
+    },
+    {
+      "id": "or",
+      "input": "Nora cares for Eli or Orin is conscious.",
+      "area": "coordination",
+      "requirements": [
+        "Resolve inclusive versus exclusive interpretation"
+      ]
+    },
+    {
+      "id": "love",
+      "input": "I love you.",
+      "area": "poetic_meaning",
+      "requirements": [
+        "Use the approved love meaning and bind speaker/addressee"
+      ]
+    }
+  ]
+}
