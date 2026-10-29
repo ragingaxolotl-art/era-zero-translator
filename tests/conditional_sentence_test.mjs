@@ -16,8 +16,10 @@ for(const input of ['If Pip cares for Ada, then Ada cares for Sol.','If Pip does
  assert.equal(result.semantic_ir.edges.find(edge=>edge.type==='condition_of').condition_status,'open');
  assert.equal(scheduledLexicalEvents(result.formal)[0].marker,'conditional_open_open');
 }
-for(const input of ['If Pip cares for Ada, then repair it.','If Pip cares for Ada then Ada is conscious.','If Pip cares for Ada, then Ada is conscious, then Jun is dormant.','If Pip cares for Ada, then is Ada conscious?','If Pip cares for Ada, then Ada is hot.'])assert.equal(parseSentenceConditional(input),null,input);
+for(const input of ['If Pip cares for Ada, then repair it.','If Pip cares for Ada then Ada is conscious.','If Pip cares for Ada, then Ada is conscious, then Jun is dormant.','If Pip cares for Ada, then is Ada conscious?'])assert.equal(parseSentenceConditional(input),null,input);
 const forward=await composeSentenceConditional('If Pip is conscious, then Ada is dormant.',load);
 const reverse=await composeSentenceConditional('If Ada is dormant, then Pip is conscious.',load);
 assert.notDeepEqual(midiFromFormal(forward.formal),midiFromFormal(reverse.formal));
 console.log('English conditionals: five full Ruby/browser parity cases, reversed condition contrast, explicit runtime and past scopes, quoted name, and incomplete-clause rejection pass.');
+
+await assert.rejects(()=>composeSentenceConditional('If Pip cares for Ada, then Ada is hot.',load),e=>e.code==='thermal_standard_required');

@@ -4,8 +4,8 @@
   "case_count": 40,
   "counts": {
     "verified_for_declared_checks": 19,
-    "not_composed": 20,
-    "requires_interpretation": 1
+    "not_composed": 19,
+    "requires_interpretation": 2
   },
   "areas": {
     "participants": {
@@ -595,8 +595,9 @@
       "requirements": [
         "Temperature is not generic activity"
       ],
-      "status": "not_composed",
-      "failures": []
+      "status": "requires_interpretation",
+      "failures": [],
+      "clarification": "thermal_standard_required"
     },
     {
       "id": "heavy",

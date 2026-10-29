@@ -11,7 +11,7 @@ is the starting evidence, not a completion certificate.
 ## Current coverage evidence
 
 The [ordinary phrase audit](../reports/ordinary_phrase_coverage.md) currently has
-19 checked compositions, 20 uncomposed phrases, and one phrase requiring an explicit future interpretation out of 40 deliberately varied cases. This is an implementation-authored diagnostic set, not a blind evaluation
+19 checked compositions, 19 uncomposed phrases, and two phrases requiring an explicit interpretation or contextual standard out of 40 deliberately varied cases. This is an implementation-authored diagnostic set, not a blind evaluation
 or a statistical measure of English coverage. Green regression suites do not
 override these missing constructions. The corpus records the intended distinctions
 even for cases that cannot yet be composed; future support must receive explicit
@@ -779,3 +779,11 @@ Thirty-four sentence contrasts match Ruby/browser formal and MIDI output, includ
 “The radio has a higher temperature than the box” now binds the radio as bearer and the box as comparison standard under the thermodynamic-temperature dimension. Six relations reuse the existing comparison grammar with dimension code 2; mass retains code 1 and its existing sounds. No numeric temperature, heat content or contextual hot/cold threshold is inferred.
 
 The independent property-comparison decoder accepts MIDI bytes alone and recovers mass or temperature, comparison direction, participant phonemes/deictics, material root, runtime and supported scope. The previous mass-only API remains available and rejects temperature. Thirty-eight temperature cases cover all six relations, reversed operands, 0/1/2, deictics and modal scope, with Ruby/browser parity, octave-transposition invariance and corruption rejection. Full waveform recognition and general inverse interpretation remain unfinished.
+
+### Contextual hot/cold with a supplied temperature standard
+
+“The radio is hot” now requests the intended thermal sense and a numeric contextual threshold. Selecting thermodynamic temperature with a supplied threshold defines hot as strictly above that standard and cold as strictly below it for this translation. There is no default cutoff. The selected standard is recorded outside the semantic IR as interpretation provenance; its normalized numeric bound is included in the IR and music. This reuses temperature measurement and comparison rather than assigning arbitrary new meanings to roots.
+
+Seventeen affirmative/negative/state/question/modal/deictic/calendar cases match Ruby/browser formal and MIDI output. Equivalent Celsius/Kelvin standards produce the same performance; changing the standard changes it. Negation remains distinct from runtime 0/1/2 and from reversing hot/cold. The UI requires a threshold, retains invalid entries for correction, and rejects stale input. Bare thermal adjectives remain unresolved until selection; future or multi-clause contextual-standard combinations, felt warmth, spiciness, emotional meanings and reference-class inference remain unfinished.
+
+The original diagnostic now has 19 verified compositions, 19 uncomposed phrases and two requiring interpretation/standard selection. Requests for clarification are not counted as completed translations.

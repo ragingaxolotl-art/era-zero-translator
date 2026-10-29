@@ -35,7 +35,7 @@ assert.notDeepEqual(midiFromFormal(results[0].formal),midiFromFormal(results[cas
 const mass=await composeNamedSentence('The radio has a mass of 293.15 kilograms.',load('MAT:010'));
 assert.notDeepEqual(midiFromFormal(mass.formal),midiFromFormal(results[cases.length].formal));
 for(const input of ['The radio has a temperature of 20 degrees Fahrenheit.','The radio has a temperature difference of 20 degrees Celsius.','The radio has a temperature of 20 kilograms.','The radio has a temperature of 2e2 kelvins.','Exactly two radios have a temperature of 20 degrees Celsius.']){assert.equal(parseNamedSentence(input),null,input);assert(needsSentenceComposition(input));}
-assert.equal(parseNamedSentence('The radio is hot.'),null);
+assert.equal(parseNamedSentence('The radio is hot.').requiredInterpretation,'thermal_standard');
 assert.equal(temperaturePointKelvin('1'.repeat(1001),'kelvin'),null);
 assert.equal(temperaturePointKelvin('1','fahrenheit'),null);
 const controlled=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_controlled_english','-e',`r=EraZeroControlledEnglish::Compiler.new.compile('ASSERT "distinct material object" [2] MEASURE 293.15 kelvin.');raise r.inspect unless r['status']=='ok';puts JSON.generate(EraZeroRenderer.render(r['semantic_ir']))`],{cwd:root,encoding:'utf8'}));

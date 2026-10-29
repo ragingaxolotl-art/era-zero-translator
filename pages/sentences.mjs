@@ -125,7 +125,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     if(day==='tomorrow')clause=rewrite([['will not be','is not'],['will be','is'],['will not care for','does not care for'],['will care for','cares for']]);
     if(clause===null)return null;
     const inner=parseNamedSentence(clause,depth+1);
-    if(!inner||inner.calendarDay!==undefined||inner.scopes?.length||inner.speechAct||(day==='yesterday'&&inner.speechTime!=='before')||(day==='tomorrow'&&inner.speechTime!==undefined))return null;
+    if(!inner||inner.calendarDay!==undefined||inner.scopes?.length||inner.speechAct||(day==='tomorrow'&&inner.requiredInterpretation==='thermal_standard')||(day==='yesterday'&&inner.speechTime!=='before')||(day==='tomorrow'&&inner.speechTime!==undefined))return null;
     return {...inner,...(day==='yesterday'?{speechTime:undefined}:{}),...(day==='tomorrow'?{requiredInterpretation:'future_assertion',semanticNote:[inner.semanticNote,'Interprets will as a future assertion; promise, intention, and willingness are not inferred.'].filter(Boolean).join(' ')}:{}),calendarDay:{yesterday:'-1',today:'0',tomorrow:'1'}[day],construction:`calendar_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
   const pastForms=[
@@ -210,6 +210,12 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
       measurement:{magnitude,unit:'kilogram',...((mass[3]&&mass[3]!=='exactly')?{comparison:({'more than':'greater_than','greater than':'greater_than','less than':'less_than','at least':'at_least','at most':'at_most','not exactly':'not_equal'})[mass[3]]}:{})},semanticNote:'This states physical mass, normalized exactly to kilograms. It does not state weight as force, size, heaviness relative to a standard, or the result of a weighing event.'};
   }
   const grammaticalText=String(input).trim().replace(new RegExp(`^(${NOMINAL_PATTERN}) are `),'$1 is ').replace(/^I am /,'I is ').replace(/^(You|you) are /,'$1 is ').replace(/^(I|You|you) care for /,'$1 cares for ').replace(/^(I|You|you) do not (care for|love|have a directed data link to) /,'$1 does not $2 ').replace(/^(I|You|you) have a directed data link to /,'$1 has a directed data link to ').replace(/^(I|You|you) love /,'$1 loves ');
+  const thermal=grammaticalText.match(new RegExp(`^${participant} is (not )?(hot|cold)[.]?$`));
+  if(thermal){
+    const nominal=parseNominal(thermal[1]);
+    if(nominal?.quantifier||nominal?.mode==='nominal_class')return null;
+    return {actor:thermal[1].replaceAll('"',''),actorText:thermal[1],role:'bearer',predicate:thermal[1]==='I'?'MAT:000':'MAT:010',key:'contextual_thermal_adjective',construction:'contextual_thermal_adjective',adjective:thermal[3],negated:!!thermal[2],requiredInterpretation:'thermal_standard'};
+  }
   for(const action of ACTIONS){
     for(const negated of [false,true]){
       const pattern=negated?(action.negativePattern||(action.key==='active_care'?'(?:does not care for|is not caring for)':action.pattern.replace('is ','is not '))):action.pattern;
@@ -234,7 +240,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return (/^[Ii]f\b/.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|carry|carrying|support|supporting|temperature)\b/i.test(String(input))) && !parseNamedSentence(input);
+  return (/^[Ii]f\b/.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|carry|carrying|support|supporting|temperature|hot|cold)\b/i.test(String(input))) && !parseNamedSentence(input);
 }
 
 // A complete antecedent and a comma establish conditional scope. Without
@@ -335,14 +341,23 @@ async function composeClauseGroup(input,clauses,operator,loadTemplate) {
   return {source_input:input,target_id:operator,semantic_note:[...new Set(parts.map(part=>part.semantic_note).filter(Boolean))].join(' ')||null,sense_id:`construction:explicit_${groupId}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,construction:`explicit_${groupId}`,interpretation:(conditional?'If ':'')+parts.map(part=>part.interpretation.replace(/\.$/,'')).join(conditional||operator==='sequence'?', then ':' and ')+'.'};
 }
 
-export async function composeNamedSentence(input,template,{interpretation}={}) {
+export async function composeNamedSentence(input,template,{interpretation,standard}={}) {
   const parsed=parseNamedSentence(input);
   if(!parsed)throw new Error('The complete sentence does not match this construction.');
   if(interpretation!==undefined&&interpretation!==parsed.requiredInterpretation)throw new Error('This interpretation is not available for this sentence.');
   if(parsed.requiredInterpretation&&interpretation!==parsed.requiredInterpretation){
-    const error=new Error('Choose whether this is a future statement. Promise, intention and willingness require different meanings.');
-    error.code='future_interpretation_required';throw error;
+    const thermal=parsed.requiredInterpretation==='thermal_standard';
+    const error=new Error(thermal?'Choose the thermal sense and its contextual temperature threshold before translating.':'Choose whether this is a future statement. Promise, intention and willingness require different meanings.');
+    error.code=thermal?'thermal_standard_required':'future_interpretation_required';throw error;
   }
+  let selectedStandard;
+  if(parsed.requiredInterpretation==='thermal_standard'){
+    const threshold=standard?.dimension==='thermodynamic_temperature'&&Object.keys(standard).sort().join(',')==='dimension,scale,threshold'?temperaturePointKelvin(standard.threshold,standard.scale):null;
+    if(threshold===null)throw new Error('Provide a thermodynamic-temperature threshold as an exact decimal in celsius or kelvin.');
+    parsed.measurement={magnitude:threshold,unit:'kelvin',comparison:parsed.adjective==='hot'?'greater_than':'less_than'};
+    selectedStandard={dimension:'thermodynamic_temperature',threshold,unit:'kelvin',relation:parsed.measurement.comparison};
+    parsed.semanticNote=`For this translation, ${parsed.adjective} means a thermodynamic temperature ${parsed.adjective==='hot'?'above':'below'} ${threshold} kelvins, using your supplied standard. This is not a universal cutoff or a claim about felt warmth, spiciness, or emotional tone.`;
+  }else if(standard!==undefined)throw new Error('This sentence does not take a thermal adjective standard.');
   const bound=!!parsed.compoundSlots;
   if(bound&&!template.authority)throw new Error('Bound construction requires the compiled dictionary authority.');
   const source=bound?{semantic_ir:{speech_act:'assertion',nodes:[{node_id:'c',kind:'clause'},{node_id:'p',kind:'lexical_occurrence',target_type:'compound',target_id:parsed.predicate,runtime_state:{code:1}}],edges:[{type:'centers'}]},performance:{profile:'reference-midi-v1',anchor_midi:60,transposition_semantically_significant:false,primary_contour:'level',contour_relative_semitones:[0,0],secondary_contours:[],statement_boundary:'long_gap',statement_boundary_beats:2}}:template.formal;
@@ -432,6 +447,6 @@ export async function composeNamedSentence(input,template,{interpretation}={}) {
   const formalDigest=await canonicalDigest({semantic_digest:digest,relative_plan:relativePlan});
   const formal={format:'EZF-1',renderer_version:'1.0.0',formal_id:`EZF:${formalDigest.slice(0,24)}`,formal_digest:formalDigest,semantic_digest:digest,semantic_ir:ir,performance,
     literal_gloss:bound?lexicalGloss(events,template.authority):`${names.map((name,index)=>deicticRoles[index]?`${participantIds[index]}:reference(${deicticRoles[index]})`:`${nominal[index]?`${participantIds[index]}:reference(${nominal[index].mode}) | `:''}${participantIds[index]}:name(${name.normalized_label})`).join(' | ')} | ${source.literal_gloss.replaceAll(`${predicates[0].node_id}:`,'p:').replaceAll(`${predicates[0].node_id}.`,'p.').replace(/\[1\](?= \| |$)/g,`[${parsed.runtimeState??1}]`)}`};
-  return {source_input:input,...(interpretation?{selected_interpretation:interpretation}:{}),target_id:parsed.predicate,sense_id:`construction:${parsed.construction}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,
+  return {source_input:input,...(interpretation?{selected_interpretation:interpretation}:{}),...(selectedStandard?{selected_standard:selectedStandard}:{}),target_id:parsed.predicate,sense_id:`construction:${parsed.construction}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,
     semantic_note:parsed.semanticNote?(parsed.semanticNote+(parsed.runtimeState===2&&parsed.key==='approved_poetic_love'?' The num ending carries the approved never-finished-becoming reading.':'')):null,construction:parsed.construction,interpretation:parsed.explicitInterpretation||((deicticRoles.some(Boolean)||parsed.semanticNote)?String(input).trim():null)||`${parsed.actorText} ${parsed.negated?(parsed.key==='active_care'?'does not actively care for':parsed.wording.replace('is ','is not ')):parsed.wording}${parsed.targetText?' '+parsed.targetText:''}.`};
 }

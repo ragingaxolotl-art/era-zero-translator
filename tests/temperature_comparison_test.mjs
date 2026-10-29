@@ -31,7 +31,7 @@ for(const [i,r] of results.entries()){assert.deepEqual(r.formal,expected[i].form
 assert.equal(new Set(results.map(r=>Buffer.from(midiFromFormal(r.formal)).toString('base64'))).size,results.length);
 const mass=await composeNamedSentence('The radio has the same mass as the box [0].',load('MAT:010'));
 assert.equal(decodePropertyComparisonMidi(midiFromFormal(mass.formal)).dimension,'mass');assert.notDeepEqual(midiFromFormal(mass.formal),midiFromFormal(results[0].formal));
-for(const input of ['A radio has a higher temperature than the box.','Exactly two radios have a higher temperature than the box.','The radio is hot.','The radio has a higher temperature than it.'])assert.equal(parseNamedSentence(input),null,input);
+for(const input of ['A radio has a higher temperature than the box.','Exactly two radios have a higher temperature than the box.','The radio has a higher temperature than it.'])assert.equal(parseNamedSentence(input),null,input);
 // Corruption, truncation and transposition are checked by the inherited mass inverse suite.
 const bytes=midiFromFormal(results[0].formal);assert.throws(()=>decodePropertyComparisonMidi(bytes.slice(0,-1)));
 console.log(`Temperature comparison: ${results.length} six-relation/runtime/direction/deictic/scope cases match Ruby formal and MIDI; independent inverse recovers dimension, relation, ordered participants and state. Mass API remains mass-only.`);
