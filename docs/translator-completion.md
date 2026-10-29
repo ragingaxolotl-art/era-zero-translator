@@ -42,14 +42,14 @@ October 29, 2026. The linked Page now reflects that implementation revision
 (Page sequence 5); its historical source observations remain dated evidence.
 All 104 Page blocks and all seven original exit requirements were preserved.
 The linked Page records the 80-check baseline and its targeted follow-up. The
-repository now records a fresh 82-check passing run after the custody foundation,
+repository now records a fresh 83-check passing run after the custody inverse,
 including the MAT example reconciliation and per-clause correction. The ordinary diagnostic
 still has 19 checked compositions out of 40. Neither closes the gates below.
 
 | Original gate | Current evidence | Outstanding requirement; gate remains open |
 |---|---|---|
 | 1. One baseline and accurate status | Pinned baseline, local source manifest, editorial migration and source reconciliation records | Recover the full historical provenance ledger and reconcile external snapshots, with authority/conflicts recorded; do not claim every storage was audited |
-| 2. Meaning survives rendering | Scoped grammar, participant frames, state contrasts, strict MIDI structure observer, bounded property inverses and a destination-carrying semantic projection | General attachment and discourse recovery, parallel performance, and independent meaning recovery for the claimed supported scope |
+| 2. Meaning survives rendering | Scoped grammar, participant frames, state contrasts, strict MIDI structure observer, bounded property inverses and destination-carrying and custody semantic projections | General attachment and discourse recovery, parallel performance, and independent meaning recovery for the claimed supported scope |
 | 3. Recursive compounds and reference binding | Versioned expansion, scoped slots, browser plans, nested carrying/support and participant constraints | Broader English compound discovery/reference forms and end-to-end semantic round trips; token recovery alone is insufficient |
 | 4. Complete small vertical slice | The exact mandatory phrase composes after explicit spatial-destination, viewpoint and mass choices; nested same-event carrying, selected tense/negation/question variants | Receipt/delivery interpretation, broader participant frames, nested grammar, remaining original variants and independent meaning validation |
 | 5. Coherent vocabulary batches | Reviewed bounded compounds and contrasts; preservation of existing roots and poetic love | Missing ordinary senses and all required frames, novel combinations, dictionary discovery and pronunciation evidence for each approved batch |
@@ -75,6 +75,14 @@ both lexical meaning and audible state preservation. Preserve existing melodies
 and do not create new LIF/STR-like families merely to fill the address grid.
 
 ### Next dependency milestone
+
+The [custody MIDI inverse](../reviews/custody_musical_inverse.md) now recovers the
+bounded custody meaning, holder/object, ordered scope, selected mass restrictions
+and independent runtime states from MIDI and root sounds alone. Thirty-six
+sentence/state cases and nine controlled performances check the semantic result;
+balanced wrong conventions, roles and roots are rejected. The shared strict grammar
+reader preserves the carrying inverse. General nested/discourse meaning recovery
+and custody-transfer events remain open.
 
 [Practical physical custody](../reviews/physical_custody_foundation.md) now has an
 explicit conventional compound and the sentence construction “Ada has physical

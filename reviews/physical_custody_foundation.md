@@ -92,7 +92,9 @@ A local browser check translated “Ada does not have physical custody of the bo
 plus the qualified object and custodian. This verifies the real result path;
 it is not a listening test or deployed-release check.
 
-Remaining work includes broader inflection and participant forms, independent
-custody meaning recovery, explicit custody-transfer events, receipt and delivery.
+The [custody inverse](custody_musical_inverse.md) subsequently adds bounded
+independent meaning recovery. Remaining work includes broader inflection and
+participant forms, general nested/discourse recovery, explicit custody-transfer
+events, receipt and delivery.
 The original seven completion gates remain open. Nested fixtures exercise reuse;
 they do not approve an additional compound or a transfer meaning.

@@ -81,3 +81,33 @@ corrects nine related examples without changing root definitions or sounds.
 Its review also checks the CON domain pointer: current communicative meanings do
 not supply ownership or material receipt. Do not build a custody alias from the
 old example or treat the pointer as a missing definition already implemented.
+
+## Acquisition before sourced transfer: next candidate review
+
+The custody inverse now independently recovers the bounded relation. The next
+semantic dependency should distinguish acquisition of that relation from having
+it, before adding a prior holder or a sourced transfer. The existing ORI:110
+invariant describes completion of a bounded transition in which one distinct
+referent comes to obtain. It is a candidate head for actualization of a specified
+custody relation, not an automatic acquisition alias. The material object itself
+must not be treated as newly created, and the exact holder/object arguments must
+remain inside the referenced custody relation.
+
+The approved ORI:110 exclusions expressly separate causal mechanisms, physical
+transformation, productive acts, permission and result persistence. Its retained
+normal example mentions producing a result; use the applied invariant and
+`reviews/ORI_100_122_peer_review.md`, not that broader example, to assess this
+candidate. The cited `reviews/ORI_000_122_soundness_audit.md` is absent at its
+repository path; this observation does not establish that approval was absent.
+No ORI root or example is changed by this review.
+
+Before approval, demonstrate that a relation's coming to obtain is within the
+approved distinct-actualization referent scope, specify pre/post conditions and
+reference time, and state why the custody qualifier identifies that relation.
+Contrast newly acquiring custody with already having it, owning without control,
+receiving information, and an object arriving while its prior holder retains
+control. Acquisition need not imply a previous custodian or loss of another
+holder's control. A sourced transfer needs additional same-object and event
+linkage; loss, willingness and exclusivity must not be silently inferred.
+Runtime 0/1/2 remains independent of acquisition and transfer phase. This is a
+candidate review and dependency refinement, not an approved event compound.

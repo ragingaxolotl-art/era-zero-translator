@@ -1,0 +1,41 @@
+profile: EZCUSTODY-INVERSE-1
+status: bounded_strict_midi_semantic_projection
+inputs:
+  - performed MIDI bytes
+  - root sound inventory
+excluded_inputs:
+  - original English
+  - semantic IR
+  - formal event plan
+  - expected participant list
+lexical_convention:
+  sound_code: 7
+  predicate: practical_physical_custody
+  head: MAT:210
+  holder: low-register source role
+  object: high-register target role qualified by MAT:010
+  child_order: [source, qualified_target, head]
+supported:
+  - runtime 0/1/2 on the complete custody occurrence
+  - independent lexical participant runtime states
+  - phonemic labels and instance codes
+  - definite nominal and nominal-class labels
+  - speaker/addressee references
+  - selected exact nominal mass bounds
+  - ordered negation, aspect, relative-time and modality scopes
+  - exact supported modal confidence
+  - recovered speech-act contour
+requirements:
+  - Consume the entire token tree; never return a successful partial reading.
+  - Require exact convention, child count/order, role, register, qualifier and head.
+  - Custody, scope and speech act must not be flattened into an assertion of current control.
+  - Equal phonemes are not proof that external referents are identical.
+  - Do not infer receipt, ownership, exclusivity or a prior transfer.
+limitations:
+  - No arbitrary sentence, discourse or nested-compound semantic recovery.
+  - No reconstruction of original spelling or IR node identity.
+  - No recognition of recorded or human-played audio.
+  - No inference of custody from a physical-world observation.
+implementation: pages/custody_decoder.mjs
+shared_reader: pages/strict_semantic_reader.mjs
+validation: tests/custody_inverse_test.mjs
