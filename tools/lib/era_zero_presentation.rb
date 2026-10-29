@@ -147,7 +147,7 @@ module EraZeroPresentation
                  raise PresentationError, "repetition scope has no sound events" if phrase.empty?
                  if node["operator"] == "comparison"
                    raise PresentationError, "unsupported musical property comparison" unless EraZeroSemanticValidation.valid_property_comparison?(node, ir)
-                   [grammar_marker(formal, id, "property_mass_#{node['relation']}_open")] + phrase + [grammar_marker(formal, id, "property_mass_#{node['relation']}_close")]
+                   [grammar_marker(formal, id, "property_#{node['dimension']}_#{node['relation']}_open")] + phrase + [grammar_marker(formal, id, "property_#{node['dimension']}_#{node['relation']}_close")]
                  elsif node["operator"] == "negation"
                    [grammar_marker(formal, id, "negation_open")] + phrase + [grammar_marker(formal, id, "negation_close")]
                  elsif node["operator"] == "quantifier"
@@ -295,8 +295,8 @@ module EraZeroPresentation
       sign = day[2] == "open" ? -1 : 1
       relative = [0, 12 * sign, code, 12 * sign, 0]
     end
-    property = marker.match(/\Aproperty_mass_(equal|greater_than|less_than|at_least|at_most|not_equal)_(open|close)\z/)
-    relative = [0, property[2] == "open" ? -18 : 18, 1, PROPERTY_COMPARISONS.index(property[1]), 0] if property
+    property = marker.match(/\Aproperty_(mass|thermodynamic_temperature)_(equal|greater_than|less_than|at_least|at_most|not_equal)_(open|close)\z/)
+    relative = [0, property[3] == "open" ? -18 : 18, {"mass"=>1,"thermodynamic_temperature"=>2}.fetch(property[1]), PROPERTY_COMPARISONS.index(property[2]), 0] if property
     comparison = marker.match(/\Ameasure_compare_(greater_than|less_than|at_least|at_most|not_equal)_(open|close)\z/)
     relative = [0, comparison[2] == "open" ? -17 : 17, MEASURE_COMPARISONS.index(comparison[1]) + 1, 0] if comparison
     relative = [0, -13, -1, 0] if marker == "measurement_open"

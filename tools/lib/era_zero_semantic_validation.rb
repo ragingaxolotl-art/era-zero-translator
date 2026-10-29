@@ -10,7 +10,7 @@ require_relative "era_zero_compound_expansion"
 module EraZeroSemanticValidation
   module_function
   def valid_property_comparison?(node, ir)
-    return false unless node["dimension"] == "mass" && %w[equal greater_than less_than at_least at_most not_equal].include?(node["relation"]) && (node.keys - %w[node_id kind operator dimension relation]).empty?
+    return false unless %w[mass thermodynamic_temperature].include?(node["dimension"]) && %w[equal greater_than less_than at_least at_most not_equal].include?(node["relation"]) && (node.keys - %w[node_id kind operator dimension relation]).empty?
     scopes = ir.fetch("edges").select { |e| e["type"] == "scopes" && e["to"] == node["node_id"] }
     return false unless scopes.length == 1
     predicate = ir.fetch("nodes").find { |n| n["node_id"] == scopes[0]["from"] }

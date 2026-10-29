@@ -172,6 +172,13 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
       participants:[{label:label(transfer[3]),text:transfer[3],role:'source'},{label:label(transfer[1]),text:transfer[1],role:'content'},{label:label(transfer[4]),text:transfer[4],role:'target'}],
       explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
+  const temperaturePair=String(input).trim().match(new RegExp(`^${participant} (?:has|have) (a higher temperature than|a lower temperature than|the same temperature as|at least as high a temperature as|at most as high a temperature as|a different temperature from) ${participant}[.]?$`));
+  if(temperaturePair){
+    if([temperaturePair[1],temperaturePair[3]].some(text=>{const n=parseNominal(text);return n?.quantifier||n?.mode==='nominal_class'}))return null;
+    const relation=({'a higher temperature than':'greater_than','a lower temperature than':'less_than','the same temperature as':'equal','at least as high a temperature as':'at_least','at most as high a temperature as':'at_most','a different temperature from':'not_equal'})[temperaturePair[2]];
+    return {actor:temperaturePair[1].replaceAll('"',''),actorText:temperaturePair[1],target:temperaturePair[3].replaceAll('"',''),targetText:temperaturePair[3],role:'bearer',targetRole:'comparison_standard',predicate:temperaturePair[1]==='I'?'MAT:000':'MAT:010',key:'temperature_pair_comparison',construction:'temperature_pair_comparison',scopes:[{operator:'comparison',dimension:'thermodynamic_temperature',relation}],
+      semanticNote:'Compares the first material bearer’s thermodynamic temperature with the second bearer’s temperature. No numeric temperature, heat content, felt warmth, or contextual hot/cold threshold is asserted.'};
+  }
   const temperature=String(input).trim().match(new RegExp(`^${participant} (has|have) a (?:thermodynamic )?temperature (?:of )?(?:(more than|greater than|less than|at least|at most|not exactly|exactly) )?(-?[0-9]+(?:\\.[0-9]+)?) (kelvins?|degrees? Celsius)[.]?$`));
   if(temperature){
     if(parseNominal(temperature[1])?.quantifier)return null;

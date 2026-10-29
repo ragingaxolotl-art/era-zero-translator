@@ -1,18 +1,18 @@
 profile: EZPROPERTYCOMPARE-1
 status: versioned_implementation_convention
-purpose: Compare one bearer's physical mass with a second bearer's physical mass
+purpose: Compare one material bearer's declared physical property with a second bearer's same property
 operator:
   kind: scope_operator
   operator: comparison
-  dimension: mass
+  dimensions: [mass, thermodynamic_temperature]
   relations: [equal, greater_than, less_than, at_least, at_most, not_equal]
   scope: Exactly one material occurrence MAT:000 or MAT:010
   arguments: Exactly one bearer and one comparison_standard, each a phonemic or deictic entity reference
-  left_operand: Mass of bearer
-  right_operand: Mass of comparison_standard
+  left_operand: Declared property of bearer
+  right_operand: Same declared property of comparison_standard
   excludes: Numeric values, weight as force, carrying effort, context-dependent heaviness, group or quantified operands
 music:
-  dimension_code: 1
+  dimension_codes: {mass: 1, thermodynamic_temperature: 2}
   relation_code: Zero-based index in relations
   open: '[0, -18, dimension_code, relation_code, 0]'
   close: '[0, 18, dimension_code, relation_code, 0]'
@@ -21,17 +21,18 @@ music:
   note_duration_beats: 0.25
 compatibility:
   - Existing statements without this operator retain their output
-  - The comparison does not assign a numeric mass or alter a runtime ending
-  - Only the mass dimension is implemented by this profile
+  - The comparison does not assign a numeric magnitude or alter a runtime ending
+  - Mass and thermodynamic temperature are implemented; temperature is not heat content or felt warmth
   - Other dimensions and attachment shapes fail explicitly
 remaining:
   - General comparison property axes and context-dependent adjectives
   - General inverse interpretation beyond the strict MIDI profile and perceptual validation
 
 inverse_profile:
-  implementation: pages/mass_comparison_decoder.mjs
+  implementation: pages/property_comparison_decoder.mjs
+  mass_only_compatibility_api: pages/mass_comparison_decoder.mjs
   input: Strict single-voice MIDI bytes without source IR or formal metadata
-  recovers: Mass relation, participant phonemes or deictic roles, material root, runtime ending, speech contour, and ordered negation/modality scopes with exact confidence strings
+  recovers: Property dimension and relation, participant phonemes or deictic roles, material root, runtime ending, speech contour, and ordered negation/modality scopes with exact confidence strings
   limitations:
     - Exact symbolic MIDI timing, not acoustic transcription
     - Negation and modality scopes recover in outer-to-inner order; other enclosing scopes remain unsupported

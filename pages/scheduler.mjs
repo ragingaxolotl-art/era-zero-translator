@@ -47,7 +47,7 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
       if (scoped.length !== 1) throw new Error('Repetition must have exactly one scope.');
       const phrase = walk(scoped[0].from);
       if (!phrase.length) throw new Error('Repetition scope has no sound events.');
-      if(node.operator==='comparison'){validatePropertyComparison(node,ir);result=[grammarMarker(formal,id,`property_mass_${node.relation}_open`),...phrase,grammarMarker(formal,id,`property_mass_${node.relation}_close`)];}
+      if(node.operator==='comparison'){validatePropertyComparison(node,ir);result=[grammarMarker(formal,id,`property_${node.dimension}_${node.relation}_open`),...phrase,grammarMarker(formal,id,`property_${node.dimension}_${node.relation}_close`)];}
       else if(node.operator==='negation')result=[grammarMarker(formal,id,'negation_open'),...phrase,grammarMarker(formal,id,'negation_close')];
       else if(node.operator==='quantifier')result=[...quantifierMarkers(formal,node),...phrase,grammarMarker(formal,id,`quantifier_${node.quantifier}_close`)];
       else if(node.operator==='modality')result=[grammarMarker(formal,id,`modality_${node.mode}_open`),...confidenceMarkers(formal,id,node.strength),...phrase,grammarMarker(formal,id,`modality_${node.mode}_close`)];
@@ -150,8 +150,8 @@ function grammarMarker(formal,scopeId,marker){
   if(time){const code={before:-1,at:0,after:1}[time[1]],sign=time[2]==='open'?-1:1;relative=[0,12*sign,code,12*sign,0]}
   const day=marker.match(/^time_(previous_day|current_day|next_day)_(open|close)$/);
   if(day){const code={previous_day:-2,current_day:2,next_day:3}[day[1]],sign=day[2]==='open'?-1:1;relative=[0,12*sign,code,12*sign,0]}
-  const property=marker.match(/^property_mass_(equal|greater_than|less_than|at_least|at_most|not_equal)_(open|close)$/);
-  if(property)relative=[0,property[2]==='open'?-18:18,1,PROPERTY_COMPARISONS.indexOf(property[1]),0];
+  const property=marker.match(/^property_(mass|thermodynamic_temperature)_(equal|greater_than|less_than|at_least|at_most|not_equal)_(open|close)$/);
+  if(property)relative=[0,property[3]==='open'?-18:18,({mass:1,thermodynamic_temperature:2})[property[1]],PROPERTY_COMPARISONS.indexOf(property[2]),0];
   const comparison=marker.match(/^measure_compare_(greater_than|less_than|at_least|at_most|not_equal)_(open|close)$/);
   if(comparison)relative=[0,comparison[2]==='open'?-17:17,MEASURE_COMPARISONS.indexOf(comparison[1])+1,0];
   if(marker==='measurement_open')relative=[0,-13,-1,0];
@@ -202,5 +202,5 @@ function frameBoundArguments(formal,maxEvents){
 function validatePropertyComparison(node,ir){
  const scopes=ir.edges.filter(e=>e.type==='scopes'&&e.to===node.node_id),predicate=scopes.length===1?ir.nodes.find(n=>n.node_id===scopes[0].from):null;
  const roles=predicate?ir.edges.filter(e=>e.type==='fills_role'&&e.to===predicate.node_id):[];
- if(node.dimension!=='mass'||!PROPERTY_COMPARISONS.includes(node.relation)||Object.keys(node).some(k=>!['node_id','kind','operator','dimension','relation'].includes(k))||predicate?.kind!=='lexical_occurrence'||predicate?.target_type!=='atom'||!['MAT:000','MAT:010'].includes(predicate?.target_id)||roles.map(e=>e.role).sort().join(',')!=='bearer,comparison_standard'||!roles.every(e=>ir.nodes.some(n=>n.node_id===e.from&&['phonemic_reference','deictic_reference'].includes(n.kind)&&n.reference_mode!=='nominal_class')))throw new Error('Unsupported musical property comparison.');
+ if(!['mass','thermodynamic_temperature'].includes(node.dimension)||!PROPERTY_COMPARISONS.includes(node.relation)||Object.keys(node).some(k=>!['node_id','kind','operator','dimension','relation'].includes(k))||predicate?.kind!=='lexical_occurrence'||predicate?.target_type!=='atom'||!['MAT:000','MAT:010'].includes(predicate?.target_id)||roles.map(e=>e.role).sort().join(',')!=='bearer,comparison_standard'||!roles.every(e=>ir.nodes.some(n=>n.node_id===e.from&&['phonemic_reference','deictic_reference'].includes(n.kind)&&n.reference_mode!=='nominal_class')))throw new Error('Unsupported musical property comparison.');
 }

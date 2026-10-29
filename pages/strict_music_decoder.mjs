@@ -24,7 +24,7 @@ for(const side of ['open','close']){
  ROLE_ORDER.forEach((role,i)=>frame(`role_${role}_${side}`,[0,sign*15,...i.toString(3).padStart(3,'0').split('').map(d=>[0,1,-1][Number(d)]),0]));
  CONDITIONS.forEach((name,i)=>frame(`conditional_${name}_${side}`,[0,sign*16,i,0]));
  COMPARISONS.slice(1).forEach((name,i)=>frame(`measure_compare_${name}_${side}`,[0,sign*17,i+1,0]));
- COMPARISONS.forEach((name,i)=>frame(`property_mass_${name}_${side}`,[0,sign*18,1,i,0]));
+ for(const [dimension,code] of [["mass",1],["thermodynamic_temperature",2]])COMPARISONS.forEach((name,i)=>frame(`property_${dimension}_${name}_${side}`,[0,sign*18,code,i,0]));
 }
 ROLE_ORDER.forEach((role,i)=>frame(`role_reference_${role}`,[0,-20,...i.toString(3).padStart(3,'0').split('').map(d=>[0,1,-1][Number(d)]),0]));
 frame('confidence_open',[0,9,0,9]);frame('confidence_close',[0,-9,0,-9]);
