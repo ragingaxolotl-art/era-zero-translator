@@ -40,8 +40,9 @@ could define the needed relation.
 
 ## Dependency order and implementation obligations
 
-1. Finish spatial carrying-to-endpoint composition using the reviewed arrival
-   foundation. It must remain available without any recipient assertion.
+1. Spatial carrying-to-endpoint composition now uses the reviewed arrival
+   foundation in the 39-compound draft. Preserve it without any recipient
+   assertion; see [destination carrying](destination_carrying.md).
 2. Define practical custody separately from ownership. A proposed convention must
    specify the holder, the held object, the contextual access/control criterion,
    and exclusions. Physical touch or support alone is insufficient. Assess an
@@ -63,7 +64,8 @@ recover the distinguishing relation and participant bindings, not merely produce
 different hashes. Do not count a clarification prompt as completed translation.
 
 Current classification: arrival is an existing root plus sentence grammar;
-carrying-to-endpoint needs event composition; custody/receipt is an unresolved
+carrying-to-endpoint now has reviewed event compounds and bounded sentence
+composition; custody/receipt is an unresolved
 foundation candidate. This review does not justify adding a 27-root family or
 redefining an existing root. An explicitly reviewed conventional compound remains
 an option if the additional meaning is documented and audibly represented.

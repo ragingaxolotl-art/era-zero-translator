@@ -37,10 +37,14 @@ source recovery, not an inference that approval never occurred. The
 corrects stale examples using the existing applied approval migration, preserving
 root meanings and both lexical and runtime 0/1/2 distinctions.
 
-Reviewed against the source audit's seven original phases at draft `8f4da2b`.
-The recorded regression report has 71 passing checks; the ordinary diagnostic
-still has 19 checked compositions out of 40. Neither closes the gates below.
-The source audit is a historical snapshot, not a description of the latest draft.
+Reconciled with the source audit's seven original phases at draft `0f10d62` on
+October 29, 2026. The linked Page now reflects that implementation revision
+(Page sequence 5); its historical source observations remain dated evidence.
+All 104 Page blocks and all seven original exit requirements were preserved.
+The regression report records an 80-check passing run and four targeted passing
+suites after the final per-clause error-handling correction, not a fresh full
+run after that correction. The ordinary diagnostic still has 19 checked
+compositions out of 40. Neither closes the gates below.
 
 | Original gate | Current evidence | Outstanding requirement; gate remains open |
 |---|---|---|
@@ -104,8 +108,8 @@ The 45 sentence/state cases include properties, role reversal, past, negation an
 questions, with Ruby/browser formal and MIDI parity. Six controlled-syntax cases
 exercise shared roles through nested identity constraints.
 
-Receipt/delivery is still unsupported. Broader participant forms, nested
-clause interpretation and the original acceptance variants
+Receipt/delivery is still unsupported. Broader participant forms, general nested
+grammar beyond the implemented per-clause choices, and the original acceptance variants
 remain open. Clarification alone is not an exact translation, and this milestone
 does not establish general independent semantic recovery or close gate 4.
 
