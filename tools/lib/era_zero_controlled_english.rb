@@ -7,6 +7,7 @@ require "digest"
 require "set"
 require_relative "era_zero_validation"
 require_relative "era_zero_renderer"
+require_relative "era_zero_compound_role_binding"
 
 module EraZeroControlledEnglish
   ROOT = EraZeroValidation::ROOT
@@ -116,6 +117,11 @@ module EraZeroControlledEnglish
     end
 
     def finalize(nodes, edges, speech_act, root = "n001")
+      begin
+        EraZeroCompoundRoleBinding.bind_unique_roles!(nodes, edges, @compounds)
+      rescue ArgumentError => error
+        raise CompileError.new("ambiguous_compound_binding", error.message)
+      end
       nodes = nodes.sort_by { |node| node.fetch("node_id") }
       edges = edges.sort_by { |edge| edge.fetch("edge_id") }
       payload = { "ir_version" => "1.0", "root_clause" => root, "speech_act" => speech_act, "nodes" => nodes, "edges" => edges, "discourse_constraints" => {} }

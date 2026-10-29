@@ -8,7 +8,7 @@ Status: **PASS — BOUNDED SEMANTIC IR REGRESSION**
 - Valid cases: **16**
 - Invalid cases: **13**
 - Canonical atoms preserved: **324**
-- Canonical compounds preserved: **35**
+- Canonical compounds preserved: **36**
 - This fixture suite does not establish full translator completion.
 
 ## PASS — lexical immutability

@@ -3,10 +3,10 @@ metadata:
   title: Era Zero Controlled English Compiler
   version: 1.0.0
   status: canonical
-  sense_index_fingerprint: 2c9549103b8e0dcd9e1ba00d18b056ae154ee71265648a7f162e5a39187ce153
-  semantic_ir_fingerprint: 6e56bd349e3f28b5a53d67496f663a75eb796a13cd8075179e74fbaa8e860269
-  renderer_fingerprint: b99b82330114db1336ecb845a6b763ccbaa9d77cdf30107a6c4a93acf2b35f83
-  controlled_lexeme_count: 359
+  sense_index_fingerprint: 4339b33ebb8268d7a567584993a99f5796c1af049c2b61a8ece39f995db806e4
+  semantic_ir_fingerprint: 9e20aa3f9a81efb5b68aed599aeab8230c4f00f37f50b29a7f24685ac79f3d15
+  renderer_fingerprint: bf7b9e06824d5fd75f7c30ec2aae6eaf785cb50c20379ac2ef10332d2b787e47
+  controlled_lexeme_count: 360
   general_english_started: false
 boundary:
   purpose: A deterministic, auditable input language for canonical labels and explicit
@@ -146,6 +146,7 @@ errors:
 - invalid_repetition
 - invalid_conditional
 - unexpected_token
+- ambiguous_compound_binding
 pipeline:
 - controlled input
 - deterministic compiler

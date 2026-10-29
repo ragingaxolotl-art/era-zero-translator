@@ -3,7 +3,7 @@
 Status: initial inventory review with an implemented registration follow-up.
 Existing root and compound meanings and sounds are unchanged. Evidence is pinned in
 [the complete inventory snapshot](../reports/foundation_inventory_audit.json),
-covering all 324 runtime roots and the current 35 approved compounds. The initial
+covering all 324 runtime roots and the current 36 approved compounds. The initial
 review below covered the 32 compounds that preceded sensory registration. Regenerate with
 `ruby tools/audit_foundation_inventory.rb`; check freshness with `--check`.
 The snapshot makes the scope reproducible; its hashes are not semantic proof.

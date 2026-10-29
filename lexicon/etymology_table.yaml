@@ -4,12 +4,12 @@ metadata:
   version: 1.0.0
   status: canonical_gate4e
   atom_entries: 324
-  compound_entries: 35
-  total_entries: 359
+  compound_entries: 36
+  total_entries: 360
   scope: Auditable synchronic derivation and authority provenance; no invented natural-language
     ancestry.
   atomic_lexicon_fingerprint: e25dda6b8e84866f9bf2b3ba012aa0e9538cc711830fcbfc2fc1179f615f443e
-  compound_dictionary_fingerprint: 2403de0026d7c8f2b6ce5c99e3e7b66e157f421e5e2add85affd02493541d790
+  compound_dictionary_fingerprint: fb2fe53772c67deb8ede5af40c1a0242cd68d1e0731834472c55b5c08e58f46b
 principles:
   synchronic_not_fictional: Era Zero forms are engineered encodings. The table records
     actual construction rules and approval history rather than inventing ancestors
@@ -18802,6 +18802,84 @@ entries:
     authority: gate4b_reviewed_compound
     record: migrations/gate4b_compound_dictionary_1.0.yaml
     approval_date: '2026-10-09'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:9eb8f1e545783a2a1504c711
+  target_type: compound
+  target_id: CMP:eef9fff8ac6618ce60927f18
+  status: canonical
+  english_label: active physical load support
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: MAT:211
+  components:
+  - node_id: q-load
+    kind: root
+    root_id: MAT:010
+  - node_id: s-source
+    kind: slot
+    slot_name: supporter
+    slot_type: entity
+  - node_id: s-target
+    kind: slot
+    slot_name: load
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MAT:211
+  relations:
+  - type: qualifies
+    from: q-load
+    to: s-target
+  - type: fills_role
+    from: s-source
+    to: h
+    role: source
+  - type: fills_role
+    from: s-target
+    to: h
+    role: target
+  semantic_derivation:
+    invariant_definition: The same material source bears at least part of the distinct
+      material target load through physical influence that resists displacement under
+      an applied force. This load-bearing support may be contact-mediated or field-mediated,
+      need not bear the entire load, and does not require rest, movement, intention
+      or consciousness.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: active_physical_load_support
+      sound_code: 3
+      added_definition: The same material source bears at least part of the distinct
+        material target load through physical influence that resists displacement
+        under an applied force. This load-bearing support may be contact-mediated
+        or field-mediated, need not bear the entire load, and does not require rest,
+        movement, intention or consciousness.
+      excludes:
+      - Physical influence without load-bearing support
+      - Emotional, evidential, financial or computational support
+      - Carrying or transport inferred from support alone
+      - Grasping or holding without the load-bearing commitment
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: eef9fff8ac6618ce60927f183e2c9d4f8cd5a8aa0335ae1dd4542f2f48f4b214
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/physical_support_2026_10_28.yaml
+    approval_date: '2026-10-28'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
 - etymology_id: ETY:1228031b3ce0428e40966ae4

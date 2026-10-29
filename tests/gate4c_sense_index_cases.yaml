@@ -1,8 +1,8 @@
 ---
 metadata:
   version: 1.0.0
-  sense_count: 443
-  lemma_count: 426
+  sense_count: 444
+  lemma_count: 427
 exact_atom_labels:
 - input: continuous self
   expected_route: atom
@@ -1079,6 +1079,9 @@ exact_compound_labels:
 - input: structural repair
   expected_route: compound
   expected_target: CMP:e799b436d9c5e7d87a5516fa
+- input: active physical load support
+  expected_route: compound
+  expected_target: CMP:eef9fff8ac6618ce60927f18
 - input: physical injury
   expected_route: compound
   expected_target: CMP:f1abd5eccdf06d92d5690a32

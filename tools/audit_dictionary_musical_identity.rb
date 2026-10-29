@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require_relative 'lib/era_zero_musical_identity'
+require_relative 'lib/era_zero_compound_role_binding'
 atoms, compounds = EraZeroRenderer.load_authority
 records = []
 (atoms.keys + compounds.keys).sort.each do |id|
@@ -15,6 +16,7 @@ records = []
       ir['nodes'] << { 'node_id' => node_id, 'kind' => 'lexical_occurrence', 'target_type' => 'atom', 'target_id' => 'ORI:000', 'runtime_state' => { 'code' => 1 } }
       ir['edges'] << { 'edge_id' => "e#{index + 1}", 'type' => 'fills_role', 'from' => node_id, 'to' => 'p', 'role' => role }
     end
+    EraZeroCompoundRoleBinding.bind_unique_roles!(ir['nodes'],ir['edges'],compounds)
     digest = EraZeroRenderer.semantic_digest(ir)
     ir.merge!('utterance_id' => "UTT:#{digest[0,24]}", 'serialization' => { 'canonical_format' => 'EZIR-JSON-1', 'content_digest' => digest })
     formal = EraZeroRenderer.render(ir)

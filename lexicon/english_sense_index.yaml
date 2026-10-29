@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 443
-  lemma_count: 426
+  sense_count: 444
+  lemma_count: 427
   canonical_atom_senses: 324
-  canonical_compound_senses: 35
+  canonical_compound_senses: 36
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: 9b2e6047a5bbd39f0b54ff2f49b569cf7e4726b361b51a62070804727efce26f
-  compound_dictionary_fingerprint: 2403de0026d7c8f2b6ce5c99e3e7b66e157f421e5e2add85affd02493541d790
+  compound_dictionary_fingerprint: fb2fe53772c67deb8ede5af40c1a0242cd68d1e0731834472c55b5c08e58f46b
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -341,6 +341,27 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: active physical load support
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:eef9fff8ac6618ce60927f18
+  definition: The same material source bears at least part of the distinct material
+    target load through physical influence that resists displacement under an applied
+    force. This load-bearing support may be contact-mediated or field-mediated, need
+    not bear the entire load, and does not require rest, movement, intention or consciousness.
+  sense_id: ENS:5fd86c6d287121a13af9583b
+  display_form: active physical load support
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Physical influence without load-bearing support; Emotional, evidential, financial
+    or computational support; Carrying or transport inferred from support alone; Grasping
+    or holding without the load-bearing commitment
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:c3ae71f28740b0294729dee7
   lemma: active self-model revision
   display_form: active self-model revision
@@ -7866,6 +7887,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  active physical load support:
+    sense_ids:
+    - ENS:5fd86c6d287121a13af9583b
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   active self-model revision:
     sense_ids:
     - ENS:c3ae71f28740b0294729dee7

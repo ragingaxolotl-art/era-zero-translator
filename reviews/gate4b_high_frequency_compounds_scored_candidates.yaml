@@ -2177,3 +2177,94 @@ reviews:
     decision: 'rejected: source noun is not a channel'
   recommendation: approve versioned_specialization
   confidence: high
+- compound_id: CMP:eef9fff8ac6618ce60927f18
+  display_title: active physical load support
+  current_choice_reason: Review in reviews/physical_support_foundation.md; scores
+    are author judgments, not independent semantic validation.
+  candidates:
+  - candidate_id: explicit_load_support
+    direction: Bind the same source and material load; explicitly mark the extra load-bearing
+      commitment.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-load
+        kind: root
+        root_id: MAT:010
+      - node_id: s-source
+        kind: slot
+        slot_name: supporter
+        slot_type: entity
+      - node_id: s-target
+        kind: slot
+        slot_name: load
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MAT:211
+      edges:
+      - type: qualifies
+        from: q-load
+        to: s-target
+      - type: fills_role
+        from: s-source
+        to: h
+        role: source
+      - type: fills_role
+        from: s-target
+        to: h
+        role: target
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: active_physical_load_support
+        sound_code: 3
+        added_definition: The same material source bears at least part of the distinct
+          material target load through physical influence that resists displacement
+          under an applied force. This load-bearing support may be contact-mediated
+          or field-mediated, need not bear the entire load, and does not require rest,
+          movement, intention or consciousness.
+        excludes:
+        - Physical influence without load-bearing support
+        - Emotional, evidential, financial or computational support
+        - Carrying or transport inferred from support alone
+        - Grasping or holding without the load-bearing commitment
+  - candidate_id: unmarked_coupling
+    direction: Physical influence alone includes heating and other non-supporting
+      interactions.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: load bearing absent'
+  - candidate_id: movement_substitution
+    direction: Movement can be unsupported; support can occur without movement.
+    scores:
+      atomicity: 5
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 32
+    decision: 'rejected: wrong invariant'
+  recommendation: approve explicit_load_support
+  confidence: high

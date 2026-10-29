@@ -37,11 +37,10 @@ end
 checks.add("structured failures", "invalid and unsupported inputs return exact stable errors without partial IR", negative_ok && tests.fetch("invalid_cases").length >= 15)
 
 lexical_ok = controlled.all? do |sense|
-  input = if sense["target_id"] == "CMP:742b44d9ead66b451346708a"
-            %(ASSERT "#{sense['lemma']}" [1] ROLE source "conscious other" [1] ROLE target "active material object" [1].)
-          else
-            %(ASSERT "#{sense['lemma']}" [1].)
-          end
+  compound = compounds.find { |entry| entry['compound_id']==sense['target_id'] }
+  roles = compound ? EraZeroRenderer.required_compound_roles(compound) : []
+  bindings = roles.map { |role| %( ROLE #{role} "distinct material object" [1]) }.join
+  input = %(ASSERT "#{sense['lemma']}" [1]#{bindings}.)
   result = compiler.compile(input)
   next false unless result["status"] == "ok"
   occurrence = result.dig("semantic_ir", "nodes").find { |node| node["kind"] == "lexical_occurrence" && node["target_id"] == sense["target_id"] }

@@ -12,8 +12,8 @@ policy:
     authorize automatic semantic resolution.
 counts:
   atoms: 324
-  compounds: 35
-  entries: 359
+  compounds: 36
+  entries: 360
 entries:
 - target_id: CMP:111b772027accab2054f0415
   target_type: compound
@@ -619,6 +619,25 @@ entries:
   - structural repair
   example_searches:
   - structural repair
+  mapping_status: discovery_only_noncanonical
+  authority_note: These words help people find the compound. They do not replace or
+    broaden its canonical graph.
+- target_id: CMP:eef9fff8ac6618ce60927f18
+  target_type: compound
+  canonical_title: active physical load support
+  plain_label: active physical load support
+  plain_explanation: An everyday discovery label for the approved compound “active
+    physical load support”; the compound graph controls its exact meaning.
+  ordinary_terms:
+  - active
+  - physical
+  - load
+  - support
+  - active physical load support
+  match_phrases:
+  - active physical load support
+  example_searches:
+  - active physical load support
   mapping_status: discovery_only_noncanonical
   authority_note: These words help people find the compound. They do not replace or
     broaden its canonical graph.
