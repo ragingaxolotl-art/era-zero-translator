@@ -5341,8 +5341,8 @@ atoms:
   - MAT:202
   - MAT:210
   - MAT:220
-  normal_example: MAT:200 [1] — An entity has a stable inward capacity to bear load,
-    retain form, or resist material disruption.
+  normal_example: MAT:200 [1] — A battery has a persistent capacity to supply energy
+    for physical change; current availability or use is not asserted.
   technical_example: ba·mam / ba-nu-ma-ma / path 0, -2, -2, -2 semitones.
   runtime_state_examples:
     '0': MAT:200 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -5436,8 +5436,8 @@ atoms:
   - MAT:202
   - MAT:211
   - MAT:221
-  normal_example: MAT:201 [1] — An entity is actively able to exert force, release
-    energy, or perform physical work.
+  normal_example: MAT:201 [1] — A battery's capacity to supply energy for physical
+    change is presently available; actual discharge is not asserted.
   technical_example: ba·mak / ba-nu-ma-ki / path 0, -2, -2, 0 semitones.
   runtime_state_examples:
     '0': MAT:201 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -5531,8 +5531,9 @@ atoms:
   - MAT:202
   - MAT:212
   - MAT:222
-  normal_example: MAT:202 [1] — An entity contains material or energy potential that
-    is not presently accessible or expressed.
+  normal_example: MAT:202 [1] — A material bearer's energy-supplying capacity exists
+    but is not presently available for exercise; runtime [1] affirms this latent-capacity
+    meaning.
   technical_example: ba·man / ba-nu-ma-nu / path 0, -2, -2, -4 semitones.
   runtime_state_examples:
     '0': MAT:202 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -5626,8 +5627,9 @@ atoms:
   - MAT:212
   - MAT:200
   - MAT:220
-  normal_example: MAT:210 [1] — An object has a stable physical connection, fit, ownership,
-    or resource relation to a target.
+  normal_example: MAT:210 [1] — An established material coupling allows a bearer to
+    transmit physical influence to a distinct target; ownership, custody and permission
+    are not asserted.
   technical_example: ba·mom / ba-nu-ki-ma / path 0, -2, 0, 0 semitones.
   runtime_state_examples:
     '0': MAT:210 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -5721,8 +5723,8 @@ atoms:
   - MAT:212
   - MAT:201
   - MAT:221
-  normal_example: MAT:211 [1] — Two material entities are actively touching, exchanging
-    force, or transferring energy.
+  normal_example: MAT:211 [1] — A material bearer is presently transmitting physical
+    influence to a distinct target; mere contact without influence is insufficient.
   technical_example: ba·mok / ba-nu-ki-ki / path 0, -2, 0, 2 semitones.
   runtime_state_examples:
     '0': MAT:211 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -5816,8 +5818,9 @@ atoms:
   - MAT:212
   - MAT:202
   - MAT:222
-  normal_example: MAT:212 [1] — A physical attachment, transfer, or resource relation
-    may be viable but remains unconfirmed.
+  normal_example: MAT:212 [1] — Whether a material bearer can transmit physical influence
+    to a distinct target is unresolved; transfer, intention and future occurrence
+    are not asserted.
   technical_example: ba·mon / ba-nu-ki-nu / path 0, -2, 0, -2 semitones.
   runtime_state_examples:
     '0': MAT:212 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -5911,8 +5914,9 @@ atoms:
   - MAT:222
   - MAT:200
   - MAT:210
-  normal_example: MAT:220 [1] — A material system has a stable relationship among
-    its matter, energy, inputs, and outputs.
+  normal_example: MAT:220 [1] — Material parts of a shared system stand in a stable
+    relation of mutual constraint on their physical states; shared membership alone
+    is insufficient.
   technical_example: ba·mim / ba-nu-nu-ma / path 0, -2, -4, -4 semitones.
   runtime_state_examples:
     '0': MAT:220 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -6006,8 +6010,8 @@ atoms:
   - MAT:222
   - MAT:201
   - MAT:211
-  normal_example: MAT:221 [1] — A distributed system is actively exchanging matter,
-    energy, or resources among its parts.
+  normal_example: MAT:221 [1] — Material parts of a shared system are presently exerting
+    reciprocal physical influence; one-way exchange alone is insufficient.
   technical_example: ba·mik / ba-nu-nu-ki / path 0, -2, -4, -2 semitones.
   runtime_state_examples:
     '0': MAT:221 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -6101,8 +6105,9 @@ atoms:
   - MAT:222
   - MAT:202
   - MAT:212
-  normal_example: MAT:222 [1] — A physically valid arrangement or resource state could
-    exist at system scale but has not been produced.
+  normal_example: MAT:222 [1] — A possible relation of mutual physical constraint
+    among parts of a shared system remains unrealized; current interdependence is
+    not asserted.
   technical_example: ba·min / ba-nu-nu-nu / path 0, -2, -4, -6 semitones.
   runtime_state_examples:
     '0': MAT:222 [0] — this lexical concept is currently inactive, false, ended, unavailable,

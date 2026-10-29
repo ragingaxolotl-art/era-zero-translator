@@ -5,7 +5,7 @@ class MovProcessExampleMigrationTest < Minitest::Test
  def test_exact_editorial_delta_and_unchanged_approved_roots
   atoms=V.load_yaml('lexicon/atoms.yaml').fetch('atoms')
   migration=V.load_yaml('migrations/mov_process_example_reconciliation_2026_10_28.yaml')
-  assert_equal migration.fetch('after_fingerprint'),V.fingerprint(atoms)
+  assert V.atomic_fingerprint_matches?(atoms,migration.fetch('after_fingerprint'))
   assert V.atomic_fingerprint_matches?(atoms,migration.fetch('before_fingerprint'))
   assert V.atomic_fingerprint_matches?(atoms,V.load_yaml('migrations/min_cross_reference_reconciliation_2026_10_28.yaml').fetch('before_fingerprint'))
   assert_equal 14,migration.fetch('changes').length

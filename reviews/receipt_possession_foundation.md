@@ -1,7 +1,7 @@
 # Receipt and possession before delivery
 
 Status: dependency review, not a canonical new meaning. Reviewed against the root
-definitions and all 37 compound invariants in `reports/foundation_inventory_audit.json`,
+definitions and the original 37 compound invariants in `reports/foundation_inventory_audit.json`,
 plus the current role specification and carrying/support definitions. No dictionary
 entry, root, musical code or automatic English mapping changes here.
 
@@ -69,3 +69,13 @@ composition; custody/receipt is an unresolved
 foundation candidate. This review does not justify adding a 27-root family or
 redefining an existing root. An explicitly reviewed conventional compound remains
 an option if the additional meaning is documented and audibly represented.
+
+## Source correction discovered during custody design
+
+The current 39-compound draft still has no custody invariant. A follow-up check
+found MAT:210's normal example retained an ownership claim excluded by its applied
+semantic approval. The [MAT source reconciliation](mat_capacity_source_reconciliation.md)
+corrects nine related examples without changing root definitions or sounds.
+Its review also checks the CON domain pointer: current communicative meanings do
+not supply ownership or material receipt. Do not build a custody alias from the
+old example or treat the pointer as a missing definition already implemented.

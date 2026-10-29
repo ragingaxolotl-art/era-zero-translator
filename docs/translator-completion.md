@@ -41,10 +41,10 @@ Reconciled with the source audit's seven original phases at draft `0f10d62` on
 October 29, 2026. The linked Page now reflects that implementation revision
 (Page sequence 5); its historical source observations remain dated evidence.
 All 104 Page blocks and all seven original exit requirements were preserved.
-The regression report records an 80-check passing run and four targeted passing
-suites after the final per-clause error-handling correction, not a fresh full
-run after that correction. The ordinary diagnostic still has 19 checked
-compositions out of 40. Neither closes the gates below.
+The linked Page records the 80-check baseline and its targeted follow-up. The
+repository now records a fresh 81-check passing run after the MAT example
+reconciliation, including the per-clause correction. The ordinary diagnostic
+still has 19 checked compositions out of 40. Neither closes the gates below.
 
 | Original gate | Current evidence | Outstanding requirement; gate remains open |
 |---|---|---|
@@ -75,6 +75,14 @@ both lexical meaning and audible state preservation. Preserve existing melodies
 and do not create new LIF/STR-like families merely to fill the address grid.
 
 ### Next dependency milestone
+
+The [MAT capacity/coupling reconciliation](../reviews/mat_capacity_source_reconciliation.md)
+corrects nine examples retained from broader proposals. MAT:210's old ownership
+example contradicted its approved physical-coupling invariant. All definitions,
+root sounds and lexical/runtime states are preserved; custody still requires an
+explicit foundation and cannot be inferred from physical influence or a CON
+cross-reference.
+
 
 [Per-clause interpretation choices](../reviews/clause_interpretations.md) now
 compose existing sequences, conjunctions and conditions with different viewpoints,
