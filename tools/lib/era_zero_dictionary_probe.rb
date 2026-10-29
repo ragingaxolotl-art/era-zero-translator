@@ -7,13 +7,7 @@ module EraZeroDictionaryProbe
   def role_aliases(compound, compounds)
     entries=compounds.is_a?(Hash) ? compounds.values : compounds
     expanded=EraZeroCompoundExpansion::Expander.new(entries).expand(compound.fetch('compound_id'),compound.fetch('definition_version'))
-    slots=expanded.fetch('nodes').select { |n| n['kind']=='slot' }
-    by_path=slots.to_h do |slot|
-      edges=expanded['edges'].select { |e| e['from_path']==slot['path'] && e['type']=='fills_role' }
-      raise ArgumentError,'Probe slot needs one role' unless edges.length==1
-      [slot['path'],edges.first['role']]
-    end
-    raise ArgumentError,'Repeated roles require explicit scoped probe inputs' unless by_path.values.uniq.length==by_path.length
+    by_path=EraZeroCompoundBindingConstraints.unambiguous_role_paths(expanded)
     parents=by_path.values.to_h { |role| [role,role] }
     find=lambda { |role| role=parents[role] while parents[role]!=role;role }
     expanded.fetch('binding_constraints',[]).select { |c| c['relation']=='same_argument' }.each do |constraint|

@@ -30,5 +30,7 @@ for(const [i,result] of results.entries()){assert.deepEqual(result.formal,expect
 assert.equal(new Set(results.map(r=>Buffer.from(midiFromFormal(r.formal)).toString('base64'))).size,results.length);
 assert.equal(results[15].semantic_ir.speech_act,'question');
 assert.equal(results[15].semantic_ir.nodes.find(n=>n.kind==='time_anchor').day_offset,'-1');
-for(const input of ['Ada is carrying the box toward the gate quickly.','Ada is carrying the box toward the box.','Ada is carrying exactly two boxes toward the gate.','Ada is carrying the box to the gate.','Ada is carrying the box toward the gate and the shelf.']){assert.equal(parseNamedSentence(input),null,input);assert(needsSentenceComposition(input),input);}
+for(const input of ['Ada is carrying the box toward the gate quickly.','Ada is carrying the box toward the box.','Ada is carrying exactly two boxes toward the gate.','Ada is carrying the box toward the gate and the shelf.']){assert.equal(parseNamedSentence(input),null,input);assert(needsSentenceComposition(input),input);}
 console.log(`Carrying goals: ${results.length} role/runtime/negation/modality/past-question/conditional cases match reference formal and MIDI. Destination differs from load and remains audible; arrival is not inferred; unsupported additions stay incomplete.`);
+
+assert.equal(parseNamedSentence('Ada is carrying the box to the gate.').requiredDestination,true);

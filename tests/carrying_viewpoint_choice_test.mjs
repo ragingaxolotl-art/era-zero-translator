@@ -36,7 +36,7 @@ await assert.rejects(()=>composeNamedSentence('Pip carries the heavy box.',templ
 for(const viewpoint of ['future','inactive','2',null])await assert.rejects(()=>composeNamedSentence('Pip carries the box.',template,{viewpoint}),e=>e.code==='carrying_viewpoint_required');
 await assert.rejects(()=>composeNamedSentence('Pip carried the box.',template,{viewpoint:'habitual'}),/does not require/);
 await assert.rejects(()=>composeSentenceSequence('Pip carries the box, then Ada is conscious.',async()=>template),e=>e.code==='carrying_viewpoint_required');
-assert.equal(parseNamedSentence('Pip carries the heavy box to Ada.'),null);
+assert.equal(parseNamedSentence('Pip carries the heavy box to Ada.').requiredDestination,true);
 // Exercise the actual UI: two independent choices must be complete, with no
 // preselected viewpoint and no stale asynchronous result or error publication.
 const app=fs.readFileSync(new URL('pages/app.js',root),'utf8');

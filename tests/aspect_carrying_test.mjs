@@ -57,7 +57,9 @@ assert.notDeepEqual(midiFromFormal(noHabit.formal),midiFromFormal(contrast));
 const openings=f=>decodeStrictMusicMidi(midiFromFormal(f),authority.atoms).tokens.filter(t=>['negation_open','aspect_habitual_open'].includes(t.marker)).map(t=>t.marker);
 assert.deepEqual(openings(noHabit.formal),['negation_open','aspect_habitual_open']);assert.deepEqual(openings(contrast),['aspect_habitual_open','negation_open']);
 const command=await composeNamedSentence('Carry the box.',{authority});assert(!command.semantic_ir.nodes.some(n=>n.operator==='aspect'));
-for(const input of ['Pip carried the box to Ada.','Pip has carried the box.','Pip will carry the box tomorrow.','Pip habitually carries the box every day.'])assert.equal(parseNamedSentence(input),null,input);
+for(const input of ['Pip has carried the box.','Pip will carry the box tomorrow.','Pip habitually carries the box every day.'])assert.equal(parseNamedSentence(input),null,input);
 assert.equal(parseNamedSentence('Pip carries the box.').requiredViewpoint,true);
 await assert.rejects(()=>composeNamedSentence('Pip carries the box.',{authority}),e=>e.code==='carrying_viewpoint_required');
 console.log(`Aspect: ${results.length} carrying/negation/past/question/nominal-property/runtime cases have Ruby/browser formal and MIDI parity; 9 controlled aspect/state cases preserve distinct audible frames without participant roles. Bounded, ongoing and habitual stay separate from tense, arrival and runtime.`);
+
+assert.equal(parseNamedSentence('Pip carried the box to Ada.').requiredDestination,true);

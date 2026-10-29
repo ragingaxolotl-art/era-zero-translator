@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 37
+  entry_count: 39
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -883,6 +883,212 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 742b44d9ead66b451346708a55701f9e55d12b6359366cddec873c6537829129
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-path
+    kind: compound_ref
+    compound_id: CMP:763faa4465065477220f6f06
+    definition_version: 1.0.0
+  - node_id: s-load
+    kind: slot
+    slot_name: moving_load
+    slot_type: entity
+  - node_id: s-destination
+    kind: slot
+    slot_name: destination
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:110
+  edges:
+  - type: qualifies
+    from: q-path
+    to: h
+  - type: fills_role
+    from: s-load
+    to: h
+    role: actor
+  - type: fills_role
+    from: s-destination
+    to: h
+    role: destination
+  binding_constraints:
+  - relation: same_argument
+    slot_paths:
+    - - q-path
+      - s-load
+    - - s-load
+  - relation: same_argument
+    slot_paths:
+    - - q-path
+      - s-destination
+    - - s-destination
+  lexical_constraints:
+  - The same-argument constraints bind the exact load throughout the nested carrying
+    and movement.
+  - The nested approach culminates at this arrival in the same event, with one shared
+    destination.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: completed_destination_carrying
+    sound_code: 6
+    added_definition: 'Completion of one destination-directed physical carrying event:
+      the same load conveyed by the same supporting source reaches the same specified
+      destination position as the culmination of that carrying conveyance. The ongoing
+      carrying and approach are internal phases of this completed event, not separate
+      current assertions. Arrival after the load is released and travels independently
+      is excluded. Receipt, ownership transfer, intention and continued presence after
+      arrival are not asserted.'
+    excludes:
+    - A carrying episode that ends short of the destination
+    - Arrival during a separate event or by a different load
+    - Arrival after unsupported flight or independent displacement following release
+    - Receipt, ownership transfer or continued presence inferred from arrival
+  compound_id: CMP:74d98d19808f74d0b8196951
+  content_digest: 74d98d19808f74d0b8196951e12acf2846fa3ae296dcd750251cf933207dccf9
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: completed physical carrying to a destination
+  english_glosses:
+  - completed physical carrying to a destination
+  invariant_definition: 'Completion of one destination-directed physical carrying
+    event: the same load conveyed by the same supporting source reaches the same specified
+    destination position as the culmination of that carrying conveyance. The ongoing
+    carrying and approach are internal phases of this completed event, not separate
+    current assertions. Arrival after the load is released and travels independently
+    is excluded. Receipt, ownership transfer, intention and continued presence after
+    arrival are not asserted.'
+  boundaries:
+    includes: 'Completion of one destination-directed physical carrying event: the
+      same load conveyed by the same supporting source reaches the same specified
+      destination position as the culmination of that carrying conveyance. The ongoing
+      carrying and approach are internal phases of this completed event, not separate
+      current assertions. Arrival after the load is released and travels independently
+      is excluded. Receipt, ownership transfer, intention and continued presence after
+      arrival are not asserted.'
+    excludes: A carrying episode that ends short of the destination; Arrival during
+      a separate event or by a different load; Arrival after unsupported flight or
+      independent displacement following release; Receipt, ownership transfer or continued
+      presence inferred from arrival
+  collision_audit: Version-pinned dependency CMP:763faa4465065477220f6f06 plus MOV:110
+    supplies the ingredients; convention 6 explicitly adds same-event linkage, and
+    the completed convention adds culmination. Neither is asserted to follow from
+    conjunction alone.
+  confidence: high
+  approval_record: migrations/destination_carrying_2026_10_28.yaml
+  approval_basis: Delegated semantic review under the user-directed translator-completion
+    goal; reviews/destination_carrying.md. Author review, not independent validation.
+  examples:
+    ordinary: Ada carried the box to the gate (completed spatial destination reading).
+    technical: One load, one carrier and one carrying event; destination denotes a
+      contextual position, not a recipient.
+    future_compound: Reuse this spatial foundation before adding receipt or specialized
+      delivery.
+    counterexample: Ada carries the box partway, then throws it through the gate.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 74d98d19808f74d0b8196951e12acf2846fa3ae296dcd750251cf933207dccf9
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-carry
+    kind: compound_ref
+    compound_id: CMP:7a6749aaf61cd6181e544bd6
+    definition_version: 1.0.0
+  - node_id: s-load
+    kind: slot
+    slot_name: moving_load
+    slot_type: entity
+  - node_id: s-destination
+    kind: slot
+    slot_name: destination
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:111
+  edges:
+  - type: qualifies
+    from: q-carry
+    to: h
+  - type: fills_role
+    from: s-load
+    to: h
+    role: actor
+  - type: fills_role
+    from: s-destination
+    to: h
+    role: destination
+  binding_constraints:
+  - relation: same_argument
+    slot_paths:
+    - - q-carry
+      - q-support
+      - s-target
+    - - q-carry
+      - s-load
+    - - s-load
+  lexical_constraints:
+  - The same-argument constraints bind the exact load throughout the nested carrying
+    and movement.
+  - The carrying conveyance is the approach event, not a separate simultaneous occurrence.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_destination_carrying
+    sound_code: 5
+    added_definition: An instance of ongoing physical carrying in which that same
+      supported load is undergoing displacement toward the specified destination position
+      during the same carrying event. The supporting conveyance constitutes this approach;
+      unrelated simultaneous approach does not qualify. The destination may be specified
+      by a contextual location associated with a referent. Arrival, receipt, ownership
+      transfer, intention and continued presence are not asserted.
+    excludes:
+    - Carrying and unrelated approach by another load or during another event
+    - Arrival or receipt inferred merely from directed carrying
+    - Recipient or ownership inferred from a destination label
+  compound_id: CMP:763faa4465065477220f6f06
+  content_digest: 763faa4465065477220f6f06f1706db8324949b39f70c72c6705a6ef8d227190
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: ongoing destination-directed physical carrying
+  english_glosses:
+  - ongoing destination-directed physical carrying
+  invariant_definition: An instance of ongoing physical carrying in which that same
+    supported load is undergoing displacement toward the specified destination position
+    during the same carrying event. The supporting conveyance constitutes this approach;
+    unrelated simultaneous approach does not qualify. The destination may be specified
+    by a contextual location associated with a referent. Arrival, receipt, ownership
+    transfer, intention and continued presence are not asserted.
+  boundaries:
+    includes: An instance of ongoing physical carrying in which that same supported
+      load is undergoing displacement toward the specified destination position during
+      the same carrying event. The supporting conveyance constitutes this approach;
+      unrelated simultaneous approach does not qualify. The destination may be specified
+      by a contextual location associated with a referent. Arrival, receipt, ownership
+      transfer, intention and continued presence are not asserted.
+    excludes: Carrying and unrelated approach by another load or during another event;
+      Arrival or receipt inferred merely from directed carrying; Recipient or ownership
+      inferred from a destination label
+  collision_audit: Version-pinned dependency CMP:7a6749aaf61cd6181e544bd6 plus MOV:111
+    supplies the ingredients; convention 5 explicitly adds same-event linkage, and
+    the completed convention adds culmination. Neither is asserted to follow from
+    conjunction alone.
+  confidence: high
+  approval_record: migrations/destination_carrying_2026_10_28.yaml
+  approval_basis: Delegated semantic review under the user-directed translator-completion
+    goal; reviews/destination_carrying.md. Author review, not independent validation.
+  examples:
+    ordinary: Ada is carrying the box to the gate (spatial destination reading).
+    technical: One load, one carrier and one carrying event; destination denotes a
+      contextual position, not a recipient.
+    future_compound: Reuse this spatial foundation before adding receipt or specialized
+      delivery.
+    counterexample: Ada carries the box away while another object approaches the gate.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 763faa4465065477220f6f06f1706db8324949b39f70c72c6705a6ef8d227190
 - architecture_version: '1.0'
   semantic_head: h
   nodes:

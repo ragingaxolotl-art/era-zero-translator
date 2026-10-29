@@ -2,10 +2,10 @@
   "purpose": "Pin the complete runtime authority used by the foundation review; counts and hashes do not prove semantic coverage.",
   "authority": {
     "lexicon/atoms.yaml": "e76365deca0f3a48dac183b92f864cd8f1d6f536250c3241d1a1922983de1f0b",
-    "lexicon/compound_dictionary.yaml": "03752bf37a2d6acd65d16ec78ca93b5f7aed446a17c3a76be2b989f1f6ebe557"
+    "lexicon/compound_dictionary.yaml": "eec819391f7d943077ce11d82eb344c0c7510787a56db5e03cb07b84de749e4b"
   },
   "root_count": 324,
-  "compound_count": 37,
+  "compound_count": 39,
   "families": {
     "LIF": [
       {
@@ -1766,6 +1766,18 @@
       "title": "directed data link",
       "definition": "An established directed communication relation between open source and target participants whose exchanged content is a bounded datum.",
       "entry_sha256": "3b8fcf8adf8260e551e519940d44551f0e4d106090a0ca332bed5db08740d7a9"
+    },
+    {
+      "id": "CMP:74d98d19808f74d0b8196951",
+      "title": "completed physical carrying to a destination",
+      "definition": "Completion of one destination-directed physical carrying event: the same load conveyed by the same supporting source reaches the same specified destination position as the culmination of that carrying conveyance. The ongoing carrying and approach are internal phases of this completed event, not separate current assertions. Arrival after the load is released and travels independently is excluded. Receipt, ownership transfer, intention and continued presence after arrival are not asserted.",
+      "entry_sha256": "7805abefc9f0c0675cc9d2b2ab0df7fd1724a1adc2c914d539182f83a1a9e550"
+    },
+    {
+      "id": "CMP:763faa4465065477220f6f06",
+      "title": "ongoing destination-directed physical carrying",
+      "definition": "An instance of ongoing physical carrying in which that same supported load is undergoing displacement toward the specified destination position during the same carrying event. The supporting conveyance constitutes this approach; unrelated simultaneous approach does not qualify. The destination may be specified by a contextual location associated with a referent. Arrival, receipt, ownership transfer, intention and continued presence are not asserted.",
+      "entry_sha256": "978bdc2662272ed57f591572c9282c121521b240e71c25f71831f302009a5b9e"
     },
     {
       "id": "CMP:7a6749aaf61cd6181e544bd6",

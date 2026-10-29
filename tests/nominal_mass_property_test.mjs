@@ -38,7 +38,7 @@ const b=await composeNamedSentence(input,template,{interpretation:'mass_standard
 const c=await composeNamedSentence(input,template,{interpretation:'mass_standard',standard:{...standard,threshold:'25'}});assert.notDeepEqual(midiFromFormal(a.formal),midiFromFormal(c.formal));
 const transposed=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_renderer','-rera_zero_presentation','-rbase64','-e','ir=JSON.parse(STDIN.read);puts JSON.generate([48,72].map{|anchor|Base64.strict_encode64(EraZeroPresentation.midi(EraZeroRenderer.render(ir,anchor_midi:anchor)))})'],{cwd:root,input:JSON.stringify(a.semantic_ir),encoding:'utf8'}));
 for(const midi of transposed)assert.deepEqual(decodeNominalMassRestrictions(Buffer.from(midi,'base64'),authority.atoms),decodeNominalMassRestrictions(midiFromFormal(a.formal),authority.atoms));
-for(const input of ['Pip carries the heavy box to Ada.','Pip is carrying the heavy box to Ada.','Pip is carrying the heavy box toward the light robot.','The heavy box is carrying the box.','Pip is carrying the very heavy box.','Pip is carrying the heavy box tomorrow.'])assert.equal(parseNamedSentence(input),null,input);
+for(const input of ['Pip is carrying the heavy box toward the light robot.','The heavy box is carrying the box.','Pip is carrying the very heavy box.','Pip is carrying the heavy box tomorrow.'])assert.equal(parseNamedSentence(input),null,input);
 const invalids=[];
 for(const change of [p=>p.dimension='effort',p=>p.unit='gram',p=>p.magnitude='-1',p=>p.magnitude='20.0',p=>p.comparison='equal',p=>p.runtime_state=2]){
  const ir=structuredClone(a.semantic_ir);change(ir.nodes.find(n=>n.property_restriction).property_restriction);invalids.push(ir);
@@ -64,3 +64,6 @@ assert.equal(threshold.value,'');assert.equal(shown,null);threshold.value='20.5'
 assert.equal(shown.semantic_ir.nodes.find(n=>n.property_restriction).name.normalized_label,'box');
 assert.equal(shown.selected_standard.threshold,'20.5');
 console.log(`Nominal mass restrictions: ${results.length} adjective/participant/negation/question/command/past/runtime cases match Ruby formal and MIDI. Independent performance decoding retains the restriction on its noun; equivalent units match, different thresholds differ, and unsupported senses/frames remain incomplete.`);
+
+assert.equal(parseNamedSentence('Pip carries the heavy box to Ada.').requiredDestination,true);
+assert.equal(parseNamedSentence('Pip is carrying the heavy box to Ada.').requiredDestination,true);

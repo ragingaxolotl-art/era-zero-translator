@@ -5,6 +5,31 @@ module EraZeroCompoundBindingConstraints
   class ConstraintError < ArgumentError; end
   module_function
 
+  # One explicit role argument may fill several slots only when the dictionary
+  # requires all of them to denote the same argument. Repeated names or roles
+  # without that declared identity remain ambiguous.
+  def unambiguous_role_paths(expanded)
+    slots=expanded.fetch('nodes').select { |node| node['kind']=='slot' }
+    by_path=slots.to_h do |slot|
+      edges=expanded.fetch('edges').select { |edge| edge['from_path']==slot['path'] }
+      raise ArgumentError,'Scoped slots require one explicit role each' unless edges.length==1 && edges.first['type']=='fills_role'
+      [slot.fetch('path'),edges.first.fetch('role')]
+    end
+    parents=by_path.keys.to_h { |path| [path,path] }
+    find=lambda do |path|
+      path=parents.fetch(path) while parents.fetch(path)!=path
+      path
+    end
+    expanded.fetch('binding_constraints',[]).select { |c| c['relation']=='same_argument' }.each do |constraint|
+      representative=find.call(constraint['slot_paths'].first)
+      constraint['slot_paths'].drop(1).each { |path| parents[find.call(path)]=representative }
+    end
+    by_path.group_by { |_path,role| role }.each_value do |pairs|
+      raise ArgumentError,'Repeated scoped roles require explicit slot-path bindings' unless pairs.map { |path,_role| find.call(path) }.uniq.length==1
+    end
+    by_path
+  end
+
   def expand(scopes, nodes)
     slots=nodes.select { |n| n['kind']=='slot' }.to_h { |n| [n.fetch('path'),n] }
     result=[]

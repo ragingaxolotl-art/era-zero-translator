@@ -33,6 +33,6 @@ compatibility:
 not_yet_approved:
   - The synthetic support/movement test graph is not a carrying definition.
   - Carrying still requires a reviewed transport invariant and explicit temporal and participant relationships.
-  - The convenience controlled role adapter cannot guess shared identities from repeated lexical labels; explicit reference syntax remains future work.
+  - The controlled role adapter cannot guess shared identities from repeated lexical labels. ROLE REF explicitly shares arguments; repeated slots for one role are accepted only when declared same-argument constraints join every such slot.
 tests:
   - tests/compound_binding_constraints_test.mjs

@@ -56,3 +56,6 @@ The independent MIDI decoder observes MOV:110 versus MOV:111, runtime, actor and
 destination roles, negation and time markers; it verifies the mover's sound label.
 It does not yet recover a general sentence meaning independently or constitute a
 held-out English benchmark. No listening test is claimed.
+
+Follow-up: [destination carrying](destination_carrying.md) now implements the
+same-event spatial dependency described above. Receipt/custody remains separate.

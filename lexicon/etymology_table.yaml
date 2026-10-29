@@ -4,12 +4,12 @@ metadata:
   version: 1.0.0
   status: canonical_gate4e
   atom_entries: 324
-  compound_entries: 37
-  total_entries: 361
+  compound_entries: 39
+  total_entries: 363
   scope: Auditable synchronic derivation and authority provenance; no invented natural-language
     ancestry.
   atomic_lexicon_fingerprint: 553dce6a29aa108d00e16ed38f253fcf615bee6f746d7e02311c7ad33f25f86c
-  compound_dictionary_fingerprint: e0aee17cffb834903f867614c1a775289e723648fc52bfd032bd6bbb79a03252
+  compound_dictionary_fingerprint: 2c70e9109b705c1301701018e1c3ea10bcacf5fbaaaaedb60dbf3b90d3ff1063
 principles:
   synchronic_not_fictional: Era Zero forms are engineered encodings. The table records
     actual construction rules and approval history rather than inventing ancestors
@@ -18105,6 +18105,189 @@ entries:
     authority: gate4b_reviewed_compound
     record: migrations/gate4b_compound_dictionary_1.0.yaml
     approval_date: '2026-10-09'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:af8b4d8e2e4f1e30a35499f8
+  target_type: compound
+  target_id: CMP:74d98d19808f74d0b8196951
+  status: canonical
+  english_label: completed physical carrying to a destination
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: MOV:110
+  components:
+  - node_id: q-path
+    kind: compound_ref
+    compound_id: CMP:763faa4465065477220f6f06
+    definition_version: 1.0.0
+  - node_id: s-load
+    kind: slot
+    slot_name: moving_load
+    slot_type: entity
+  - node_id: s-destination
+    kind: slot
+    slot_name: destination
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:110
+  relations:
+  - type: qualifies
+    from: q-path
+    to: h
+  - type: fills_role
+    from: s-load
+    to: h
+    role: actor
+  - type: fills_role
+    from: s-destination
+    to: h
+    role: destination
+  semantic_derivation:
+    invariant_definition: 'Completion of one destination-directed physical carrying
+      event: the same load conveyed by the same supporting source reaches the same
+      specified destination position as the culmination of that carrying conveyance.
+      The ongoing carrying and approach are internal phases of this completed event,
+      not separate current assertions. Arrival after the load is released and travels
+      independently is excluded. Receipt, ownership transfer, intention and continued
+      presence after arrival are not asserted.'
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    binding_constraints:
+    - relation: same_argument
+      slot_paths:
+      - - q-path
+        - s-load
+      - - s-load
+    - relation: same_argument
+      slot_paths:
+      - - q-path
+        - s-destination
+      - - s-destination
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: completed_destination_carrying
+      sound_code: 6
+      added_definition: 'Completion of one destination-directed physical carrying
+        event: the same load conveyed by the same supporting source reaches the same
+        specified destination position as the culmination of that carrying conveyance.
+        The ongoing carrying and approach are internal phases of this completed event,
+        not separate current assertions. Arrival after the load is released and travels
+        independently is excluded. Receipt, ownership transfer, intention and continued
+        presence after arrival are not asserted.'
+      excludes:
+      - A carrying episode that ends short of the destination
+      - Arrival during a separate event or by a different load
+      - Arrival after unsupported flight or independent displacement following release
+      - Receipt, ownership transfer or continued presence inferred from arrival
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 74d98d19808f74d0b8196951e12acf2846fa3ae296dcd750251cf933207dccf9
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/destination_carrying_2026_10_28.yaml
+    approval_date: '2026-10-28'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:91936d355a5821042778cf28
+  target_type: compound
+  target_id: CMP:763faa4465065477220f6f06
+  status: canonical
+  english_label: ongoing destination-directed physical carrying
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: MOV:111
+  components:
+  - node_id: q-carry
+    kind: compound_ref
+    compound_id: CMP:7a6749aaf61cd6181e544bd6
+    definition_version: 1.0.0
+  - node_id: s-load
+    kind: slot
+    slot_name: moving_load
+    slot_type: entity
+  - node_id: s-destination
+    kind: slot
+    slot_name: destination
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:111
+  relations:
+  - type: qualifies
+    from: q-carry
+    to: h
+  - type: fills_role
+    from: s-load
+    to: h
+    role: actor
+  - type: fills_role
+    from: s-destination
+    to: h
+    role: destination
+  semantic_derivation:
+    invariant_definition: An instance of ongoing physical carrying in which that same
+      supported load is undergoing displacement toward the specified destination position
+      during the same carrying event. The supporting conveyance constitutes this approach;
+      unrelated simultaneous approach does not qualify. The destination may be specified
+      by a contextual location associated with a referent. Arrival, receipt, ownership
+      transfer, intention and continued presence are not asserted.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    binding_constraints:
+    - relation: same_argument
+      slot_paths:
+      - - q-carry
+        - q-support
+        - s-target
+      - - q-carry
+        - s-load
+      - - s-load
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: ongoing_destination_carrying
+      sound_code: 5
+      added_definition: An instance of ongoing physical carrying in which that same
+        supported load is undergoing displacement toward the specified destination
+        position during the same carrying event. The supporting conveyance constitutes
+        this approach; unrelated simultaneous approach does not qualify. The destination
+        may be specified by a contextual location associated with a referent. Arrival,
+        receipt, ownership transfer, intention and continued presence are not asserted.
+      excludes:
+      - Carrying and unrelated approach by another load or during another event
+      - Arrival or receipt inferred merely from directed carrying
+      - Recipient or ownership inferred from a destination label
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 763faa4465065477220f6f06f1706db8324949b39f70c72c6705a6ef8d227190
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/destination_carrying_2026_10_28.yaml
+    approval_date: '2026-10-28'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
 - etymology_id: ETY:f66aedf2c01eb18db7be8959

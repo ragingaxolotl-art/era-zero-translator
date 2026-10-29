@@ -2,7 +2,8 @@
 require_relative 'era_zero_compound_expansion'
 
 # Adapt explicit role arguments to scoped slots only when the role identifies
-# exactly one slot. Never guess among repeated roles in nested definitions.
+# one slot or an explicitly identity-linked group. Never guess among independent
+# repeated roles in nested definitions.
 module EraZeroCompoundRoleBinding
   module_function
   def bind_unique_roles!(nodes, edges, compounds)
@@ -14,12 +15,8 @@ module EraZeroCompoundRoleBinding
       expanded=expander.expand(definition.fetch('compound_id'),definition.fetch('definition_version'))
       slots=expanded.fetch('nodes').select { |n| n['kind']=='slot' }
       next if slots.empty?
-      roles=slots.map do |slot|
-        outgoing=expanded.fetch('edges').select { |e| e['from_path']==slot['path'] }
-        raise ArgumentError,'Scoped slots require one explicit role each' unless outgoing.length==1 && outgoing.first['type']=='fills_role'
-        outgoing.first.fetch('role')
-      end
-      raise ArgumentError,'Repeated scoped roles require explicit slot-path bindings' unless roles.uniq.length==roles.length
+      by_path=EraZeroCompoundBindingConstraints.unambiguous_role_paths(expanded)
+      roles=slots.map { |slot| by_path.fetch(slot.fetch('path')) }
       consumed=[]
       bindings=slots.zip(roles).map do |slot,role|
         incoming=edges.select { |e| e['type']=='fills_role' && e['to']==node['node_id'] && e['role']==role }

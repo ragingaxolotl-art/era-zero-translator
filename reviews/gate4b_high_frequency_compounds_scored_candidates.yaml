@@ -2368,3 +2368,211 @@ reviews:
     decision: 'rejected: wrong invariant'
   recommendation: approve explicit_supported_conveyance
   confidence: high
+- compound_id: CMP:763faa4465065477220f6f06
+  display_title: ongoing destination-directed physical carrying
+  current_choice_reason: reviews/destination_carrying.md; author-scored candidates,
+    not independent semantic validation.
+  candidates:
+  - candidate_id: explicit_same_event
+    direction: Reuse the exact prior foundation, share load and destination as applicable,
+      and state the same-event relation audibly.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-carry
+        kind: compound_ref
+        compound_id: CMP:7a6749aaf61cd6181e544bd6
+        definition_version: 1.0.0
+      - node_id: s-load
+        kind: slot
+        slot_name: moving_load
+        slot_type: entity
+      - node_id: s-destination
+        kind: slot
+        slot_name: destination
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MOV:111
+      edges:
+      - type: qualifies
+        from: q-carry
+        to: h
+      - type: fills_role
+        from: s-load
+        to: h
+        role: actor
+      - type: fills_role
+        from: s-destination
+        to: h
+        role: destination
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ongoing_destination_carrying
+        sound_code: 5
+        added_definition: An instance of ongoing physical carrying in which that same
+          supported load is undergoing displacement toward the specified destination
+          position during the same carrying event. The supporting conveyance constitutes
+          this approach; unrelated simultaneous approach does not qualify. The destination
+          may be specified by a contextual location associated with a referent. Arrival,
+          receipt, ownership transfer, intention and continued presence are not asserted.
+        excludes:
+        - Carrying and unrelated approach by another load or during another event
+        - Arrival or receipt inferred merely from directed carrying
+        - Recipient or ownership inferred from a destination label
+      binding_constraints:
+      - relation: same_argument
+        slot_paths:
+        - - q-carry
+          - q-support
+          - s-target
+        - - q-carry
+          - s-load
+        - - s-load
+  - candidate_id: unlinked_conjunction
+    direction: Conjunction permits different events and cannot establish this carrying
+      culmination.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 44
+    decision: 'rejected: event identity missing'
+  - candidate_id: runtime_as_completion
+    direction: Using runtime 0 or 2 to express arrival corrupts the independent ternary
+      state.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: runtime semantic loss'
+  recommendation: approve explicit_same_event
+  confidence: high
+- compound_id: CMP:74d98d19808f74d0b8196951
+  display_title: completed physical carrying to a destination
+  current_choice_reason: reviews/destination_carrying.md; author-scored candidates,
+    not independent semantic validation.
+  candidates:
+  - candidate_id: explicit_same_event
+    direction: Reuse the exact prior foundation, share load and destination as applicable,
+      and state the same-event relation audibly.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-path
+        kind: compound_ref
+        compound_id: CMP:763faa4465065477220f6f06
+        definition_version: 1.0.0
+      - node_id: s-load
+        kind: slot
+        slot_name: moving_load
+        slot_type: entity
+      - node_id: s-destination
+        kind: slot
+        slot_name: destination
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MOV:110
+      edges:
+      - type: qualifies
+        from: q-path
+        to: h
+      - type: fills_role
+        from: s-load
+        to: h
+        role: actor
+      - type: fills_role
+        from: s-destination
+        to: h
+        role: destination
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: completed_destination_carrying
+        sound_code: 6
+        added_definition: 'Completion of one destination-directed physical carrying
+          event: the same load conveyed by the same supporting source reaches the
+          same specified destination position as the culmination of that carrying
+          conveyance. The ongoing carrying and approach are internal phases of this
+          completed event, not separate current assertions. Arrival after the load
+          is released and travels independently is excluded. Receipt, ownership transfer,
+          intention and continued presence after arrival are not asserted.'
+        excludes:
+        - A carrying episode that ends short of the destination
+        - Arrival during a separate event or by a different load
+        - Arrival after unsupported flight or independent displacement following release
+        - Receipt, ownership transfer or continued presence inferred from arrival
+      binding_constraints:
+      - relation: same_argument
+        slot_paths:
+        - - q-path
+          - s-load
+        - - s-load
+      - relation: same_argument
+        slot_paths:
+        - - q-path
+          - s-destination
+        - - s-destination
+  - candidate_id: unlinked_conjunction
+    direction: Conjunction permits different events and cannot establish this carrying
+      culmination.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 44
+    decision: 'rejected: event identity missing'
+  - candidate_id: runtime_as_completion
+    direction: Using runtime 0 or 2 to express arrival corrupts the independent ternary
+      state.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: runtime semantic loss'
+  recommendation: approve explicit_same_event
+  confidence: high

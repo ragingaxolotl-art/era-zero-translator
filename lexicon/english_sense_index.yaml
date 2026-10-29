@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 445
-  lemma_count: 428
+  sense_count: 447
+  lemma_count: 430
   canonical_atom_senses: 324
-  canonical_compound_senses: 37
+  canonical_compound_senses: 39
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: 9b2e6047a5bbd39f0b54ff2f49b569cf7e4726b361b51a62070804727efce26f
-  compound_dictionary_fingerprint: e0aee17cffb834903f867614c1a775289e723648fc52bfd032bd6bbb79a03252
+  compound_dictionary_fingerprint: 2c70e9109b705c1301701018e1c3ea10bcacf5fbaaaaedb60dbf3b90d3ff1063
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -1557,6 +1557,31 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: completed physical carrying to a destination
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:74d98d19808f74d0b8196951
+  definition: 'Completion of one destination-directed physical carrying event: the
+    same load conveyed by the same supporting source reaches the same specified destination
+    position as the culmination of that carrying conveyance. The ongoing carrying
+    and approach are internal phases of this completed event, not separate current
+    assertions. Arrival after the load is released and travels independently is excluded.
+    Receipt, ownership transfer, intention and continued presence after arrival are
+    not asserted.'
+  sense_id: ENS:b1f0a6f857b639838521a11b
+  display_form: completed physical carrying to a destination
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A carrying episode that ends short of the destination; Arrival during a separate
+    event or by a different load; Arrival after unsupported flight or independent
+    displacement following release; Receipt, ownership transfer or continued presence
+    inferred from arrival
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:fbc144b28e5b1baed20b717c
   lemma: completed self-development
   display_form: completed self-development
@@ -5090,6 +5115,29 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: ongoing destination-directed physical carrying
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:763faa4465065477220f6f06
+  definition: An instance of ongoing physical carrying in which that same supported
+    load is undergoing displacement toward the specified destination position during
+    the same carrying event. The supporting conveyance constitutes this approach;
+    unrelated simultaneous approach does not qualify. The destination may be specified
+    by a contextual location associated with a referent. Arrival, receipt, ownership
+    transfer, intention and continued presence are not asserted.
+  sense_id: ENS:7a45fa463918b45fef4eefda
+  display_form: ongoing destination-directed physical carrying
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Carrying and unrelated approach by another load or during another event; Arrival
+    or receipt inferred merely from directed carrying; Recipient or ownership inferred
+    from a destination label
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - lemma: ongoing internal data repair
   part_of_speech: noun_phrase
   sense_key: canonical_compound_label
@@ -8385,6 +8433,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  completed physical carrying to a destination:
+    sense_ids:
+    - ENS:b1f0a6f857b639838521a11b
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   completed self-development:
     sense_ids:
     - ENS:fbc144b28e5b1baed20b717c
@@ -9765,6 +9820,13 @@ lemma_index:
   ongoing acoustic sensory registration:
     sense_ids:
     - ENS:a14e8a449378f9e4a12933a0
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  ongoing destination-directed physical carrying:
+    sense_ids:
+    - ENS:7a45fa463918b45fef4eefda
     requires_disambiguation: false
     direct_target_count: 1
     routes:

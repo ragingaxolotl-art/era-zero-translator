@@ -47,7 +47,7 @@ The source audit is a historical snapshot, not a description of the latest draft
 | 1. One baseline and accurate status | Pinned baseline, local source manifest, editorial migration and source reconciliation records | Recover the full historical provenance ledger and reconcile external snapshots, with authority/conflicts recorded; do not claim every storage was audited |
 | 2. Meaning survives rendering | Scoped grammar, participant frames, state contrasts, strict MIDI structure observer and bounded mass/temperature comparison inverse | General attachment and discourse recovery, parallel performance, and independent meaning recovery for the claimed supported scope |
 | 3. Recursive compounds and reference binding | Versioned expansion, scoped slots, browser plans, nested carrying/support and participant constraints | Broader English compound discovery/reference forms and end-to-end semantic round trips; token recovery alone is insufficient |
-| 4. Complete small vertical slice | Progressive carrying, load/carrier identity, toward-destination and selected commands; predicate heavy/light with explicit mass standard | The exact mandatory phrase “Pip carries the heavy box to Ada”, including attributive heavy, simple-present meaning, destination/recipient distinction, tense and negation variants |
+| 4. Complete small vertical slice | The exact mandatory phrase composes after explicit spatial-destination, viewpoint and mass choices; nested same-event carrying, selected tense/negation/question variants | Receipt/delivery interpretation, broader participant frames, commands with “to”, remaining original variants and independent meaning validation |
 | 5. Coherent vocabulary batches | Reviewed bounded compounds and contrasts; preservation of existing roots and poetic love | Missing ordinary senses and all required frames, novel combinations, dictionary discovery and pronunciation evidence for each approved batch |
 | 6. Sentence grammar and dialogue | Selected questions, commands, conditions, time, quantities and explicit interpretation choices | Relative clauses, broader pronouns/discourse, quantifier/modal scope and held-out construction tests with local/browser agreement |
 | 7. Actual-use validation and release | Draft regression and diagnostic reports | All mandatory acceptance cases, an agreed held-out scope/target, listening/accessibility/browser checks and deployed-build verification; no release is authorized by this ledger |
@@ -72,38 +72,34 @@ and do not create new LIF/STR-like families merely to fill the address grid.
 
 ### Next dependency milestone
 
-The [arrival foundation](../reviews/arrival_foundation.md) reuses MOV:110 for
-explicit past spatial arrival, separately from approach, calendar time and runtime
-0/1/2. Its 27 sentence/state cases preserve actor and destination roles in music.
-Completed carrying still needs same-event load/endpoint binding; arrival alone
-does not establish delivery or receipt.
+The [destination carrying implementation](../reviews/destination_carrying.md) now
+composes the exact phrase “Pip carries the heavy box to Ada” for an explicitly
+selected spatial reading, viewpoint and mass standard. Versioned compounds add
+same-event approach and completed arrival in dependency order, preserving the
+same load and destination. Ongoing reading does not assert arrival; habitual
+reading scopes the completed event type without asserting one current occurrence.
+The 45 sentence/state cases include properties, role reversal, past, negation and
+questions, with Ruby/browser formal and MIDI parity. Six controlled-syntax cases
+exercise shared roles through nested identity constraints.
 
-The [simple-present carrying choice](../reviews/carrying_viewpoint_choice.md) now
-allows “carries” after an explicit viewpoint selection, including simultaneous
-selection of a heavy/light noun's mass standard. The two choices are independent;
-the chosen ongoing/habitual meanings equal their explicit paraphrases. Destination
-culmination with “to Ada” and the other original acceptance variants remain open.
+Receipt/delivery is still unsupported. Commands with “to”, broader participant
+forms, per-clause interpretation choices and the original acceptance variants
+remain open. Clarification alone is not an exact translation, and this milestone
+does not establish general independent semantic recovery or close gate 4.
 
-The [carrying aspect implementation](../reviews/carrying_aspect.md) now distinguishes
-ongoing carrying, a bounded past carrying episode, and explicit habitual carrying.
-Past/habitual questions, negation scope and existing noun restrictions compose
-with the independent 0/1/2 runtime ending. Bare “carries” now uses the explicit choice above; culmination with “to”
-remains unresolved. This does not close the original carrying milestone.
-
-The [nominal mass restriction implementation](../reviews/nominal_mass_properties.md)
-now composes one heavy/light definite noun with a user-selected standard inside
-supported constructions, including nested carrying. The property stays attached
-to its noun in the IR and audible framing, independently of action runtime 0/1/2.
-Tests cover 36 sentence variants and a bounded MIDI-only property inverse.
-This advances the property portion of gate 4. Simple-present viewpoint now has
-an explicit choice; the meaning of “to Ada” still prevents the exact mandatory
-phrase from passing.
+The [arrival foundation](../reviews/arrival_foundation.md),
+[viewpoint selection](../reviews/carrying_viewpoint_choice.md),
+[aspect implementation](../reviews/carrying_aspect.md) and
+[nominal mass restrictions](../reviews/nominal_mass_properties.md) remain the
+reused dependencies. Existing “toward” phrases and all prior compound meanings
+retain their identities; the new “to” conventions are additive.
 
 Finish the mandatory carrying/property vertical slice before counting further
 vocabulary growth as completion: reuse the reviewed carrying and mass foundations,
 extend the implemented noun-phrase restriction to the remaining required frames,
 and resolve the distinction between motion toward a place and delivery to a person.
-Then test the original phrase and unseen participant/property/tense variants.
+Extend the original phrase tests with unseen participant/property/tense variants
+and the still-missing recipient reading.
 Do not silently treat “toward Ada” as equivalent to “to Ada”.
 
 Alongside this milestone, review sensory, bodily-need and affect foundations by

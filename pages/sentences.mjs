@@ -201,6 +201,15 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
       semanticNote:'Spatial arrival: completion of this mover’s displacement to the destination before speech time. This does not assert continued presence there, transfer of possession, a recipient, intention, or carriage of another entity. Negation denies that completed arrival; it does not assert that an approach occurred.',
       explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
+  const carryingTo=String(input).trim().match(new RegExp(`^${participant} (?:is|am|are) (not )?carrying ${participant} to ${participant}[.]?$`));
+  if(carryingTo){
+    const texts=[carryingTo[1],carryingTo[3],carryingTo[4]];
+    if(texts.some(text=>parseNominal(text)?.quantifier)||new Set(texts.map(participantIdentity)).size!==3)return null;
+    const carrying=ACTIONS.find(action=>action.key==='ongoing_physical_carrying');
+    return {...carrying,predicate:'CMP:763faa4465065477220f6f06',requiredDestination:true,destinationCarrying:true,negated:!!carryingTo[2],construction:'destination_physical_carrying',
+      participants:texts.map((text,index)=>({text,label:text.replaceAll('"',''),role:['source','target','destination'][index]})),
+      explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
   const carryingGoal=String(input).trim().match(new RegExp(`^${participant} (?:is|am|are) (not )?carrying ${participant} toward ${participant}[.]?$`));
   if(carryingGoal){
     const texts=[carryingGoal[1],carryingGoal[3],carryingGoal[4]];
@@ -396,7 +405,7 @@ async function composeClauseGroup(input,clauses,operator,loadTemplate) {
   return {source_input:input,target_id:operator,semantic_note:[...new Set(parts.map(part=>part.semantic_note).filter(Boolean))].join(' ')||null,sense_id:`construction:explicit_${groupId}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,construction:`explicit_${groupId}`,interpretation:(conditional?'If ':'')+parts.map(part=>part.interpretation.replace(/\.$/,'')).join(conditional||operator==='sequence'?', then ':' and ')+'.'};
 }
 
-export async function composeNamedSentence(input,template,{interpretation,standard,viewpoint}={}) {
+export async function composeNamedSentence(input,template,{interpretation,standard,viewpoint,destination}={}) {
   const parsed=parseNamedSentence(input);
   if(!parsed)throw new Error('The complete sentence does not match this construction.');
   if(parsed.requiredViewpoint){
@@ -408,6 +417,18 @@ export async function composeNamedSentence(input,template,{interpretation,standa
     const note={bounded:'Interprets simple-present carrying as one bounded narrated episode in the contextual reference interval, without asserting arrival, delivery or future time.',ongoing:'Interprets simple-present carrying as an unfolding action in the contextual reference interval, without asserting its endpoint.',habitual:'Interprets simple-present carrying as a recurring practice in the contextual reference interval, without asserting a particular occurrence, frequency or schedule.'}[viewpoint];
     parsed.semanticNote=[parsed.semanticNote,note].filter(Boolean).join(' ');
   }else if(viewpoint!==undefined)throw new Error('This sentence does not require a carrying viewpoint choice.');
+  if(parsed.requiredDestination){
+    if(destination!=='spatial'){
+      const error=new Error('Choose a spatial destination reading for “to”. Receipt or delivery to a recipient is a different meaning and is not implemented yet.');
+      error.code='carrying_destination_required';throw error;
+    }
+    const completed=parsed.aspect!=='ongoing',prefix=completed?['q-path','q-carry']:['q-carry'];
+    parsed.predicate=completed?'CMP:74d98d19808f74d0b8196951':'CMP:763faa4465065477220f6f06';
+    parsed.compoundSlots={source:[...prefix,'q-support','s-source'],target:[[...prefix,'q-support','s-target'],[...prefix,'s-load'],...(completed?[['q-path','s-load']]:[]),['s-load']],destination:completed?[['q-path','s-destination'],['s-destination']]:['s-destination']};
+    parsed.semanticNote='Interprets “to” as a spatial destination, possibly the contextual location of the named referent; no receipt, ownership transfer, intention or continued presence is asserted. '+
+      (parsed.aspect==='ongoing'?'The same supported load is being conveyed toward that destination in this carrying event; arrival is not asserted.':parsed.aspect==='habitual'?'The recurring practice consists of carrying events that culminate in the same load reaching the same destination through that supporting conveyance. No particular current occurrence, frequency or schedule is asserted.':'This carrying event culminates in its supported load reaching the same destination through that supporting conveyance; separate later arrival or unsupported flight does not qualify.')+
+      (parsed.negated?' Negation applies to this whole carrying proposition; it does not assert an incomplete approach.':'');
+  }else if(destination!==undefined)throw new Error('This sentence does not require a destination reading choice.');
   if(interpretation!==undefined&&interpretation!==parsed.requiredInterpretation)throw new Error('This interpretation is not available for this sentence.');
   if(parsed.requiredInterpretation&&interpretation!==parsed.requiredInterpretation){
     const thermal=['thermal_standard','mass_standard'].includes(parsed.requiredInterpretation);
@@ -523,6 +544,6 @@ export async function composeNamedSentence(input,template,{interpretation,standa
   const formalDigest=await canonicalDigest({semantic_digest:digest,relative_plan:relativePlan});
   const formal={format:'EZF-1',renderer_version:'1.0.0',formal_id:`EZF:${formalDigest.slice(0,24)}`,formal_digest:formalDigest,semantic_digest:digest,semantic_ir:ir,performance,
     literal_gloss:graphRendered?lexicalGloss(events,template.authority):`${names.map((name,index)=>deicticRoles[index]?`${participantIds[index]}:reference(${deicticRoles[index]})`:`${nominal[index]?`${participantIds[index]}:reference(${nominal[index].mode}) | `:''}${participantIds[index]}:name(${name.normalized_label})`).join(' | ')} | ${source.literal_gloss.replaceAll(`${predicates[0].node_id}:`,'p:').replaceAll(`${predicates[0].node_id}.`,'p.').replace(/\[1\](?= \| |$)/g,`[${parsed.runtimeState??1}]`)}`};
-  return {source_input:input,...(viewpoint?{selected_viewpoint:viewpoint}:{}),...(interpretation?{selected_interpretation:interpretation}:{}),...(selectedStandard?{selected_standard:selectedStandard}:{}),target_id:parsed.predicate,sense_id:`construction:${parsed.construction}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,
+  return {source_input:input,...(destination?{selected_destination:destination}:{}),...(viewpoint?{selected_viewpoint:viewpoint}:{}),...(interpretation?{selected_interpretation:interpretation}:{}),...(selectedStandard?{selected_standard:selectedStandard}:{}),target_id:parsed.predicate,sense_id:`construction:${parsed.construction}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,
     semantic_note:parsed.semanticNote?(parsed.semanticNote+(parsed.runtimeState===2&&parsed.key==='approved_poetic_love'?' The num ending carries the approved never-finished-becoming reading.':'')):null,construction:parsed.construction,interpretation:parsed.explicitInterpretation||((deicticRoles.some(Boolean)||parsed.semanticNote)?String(input).trim():null)||`${parsed.actorText} ${parsed.negated?(parsed.key==='active_care'?'does not actively care for':parsed.wording.replace('is ','is not ')):parsed.wording}${parsed.targetText?' '+parsed.targetText:''}.`};
 }

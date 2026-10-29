@@ -5,9 +5,9 @@ metadata:
   status: noncanonical_metadata_complete
   canonical_semantic_changes: 0
   root_count: 324
-  indexed_sense_count: 445
+  indexed_sense_count: 447
   game_story_surface_sense_count: 48
-  total_audited_senses: 493
+  total_audited_senses: 495
   part_of_speech_counts:
     adjective: 22
     adverb: 2
@@ -15,7 +15,7 @@ metadata:
     grammar: 1
     interjection: 1
     noun: 29
-    noun_phrase: 253
+    noun_phrase: 255
     number: 1
     preposition: 2
     quantifier: 1
@@ -14590,6 +14590,24 @@ senses:
   fidelity: authoritative
   controlled_input_allowed: true
   authority_layer: english_sense_index
+- sense_id: ENS:b1f0a6f857b639838521a11b
+  lemma: completed physical carrying to a destination
+  part_of_speech: noun_phrase
+  surface_forms:
+  - completed physical carrying to a destination
+  route: compound
+  target_id: CMP:74d98d19808f74d0b8196951
+  sense_key: canonical_compound_label
+  definition: 'Completion of one destination-directed physical carrying event: the
+    same load conveyed by the same supporting source reaches the same specified destination
+    position as the culmination of that carrying conveyance. The ongoing carrying
+    and approach are internal phases of this completed event, not separate current
+    assertions. Arrival after the load is released and travels independently is excluded.
+    Receipt, ownership transfer, intention and continued presence after arrival are
+    not asserted.'
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
 - sense_id: ENS:fbc144b28e5b1baed20b717c
   lemma: completed self-development
   part_of_speech: verb_phrase
@@ -17211,6 +17229,23 @@ senses:
     registers information carried by a propagating mechanical pressure or elastic
     vibration signal from the source through a material medium. No conscious auditory
     experience, speech comprehension, source recognition or attention is entailed.'
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:7a45fa463918b45fef4eefda
+  lemma: ongoing destination-directed physical carrying
+  part_of_speech: noun_phrase
+  surface_forms:
+  - ongoing destination-directed physical carrying
+  route: compound
+  target_id: CMP:763faa4465065477220f6f06
+  sense_key: canonical_compound_label
+  definition: An instance of ongoing physical carrying in which that same supported
+    load is undergoing displacement toward the specified destination position during
+    the same carrying event. The supporting conveyance constitutes this approach;
+    unrelated simultaneous approach does not qualify. The destination may be specified
+    by a contextual location associated with a referent. Arrival, receipt, ownership
+    transfer, intention and continued presence are not asserted.
   fidelity: high
   controlled_input_allowed: true
   authority_layer: english_sense_index
