@@ -27,6 +27,7 @@ for(const side of ['open','close']){
  for(const [dimension,code] of [["mass",1],["thermodynamic_temperature",2]])COMPARISONS.forEach((name,i)=>frame(`property_${dimension}_${name}_${side}`,[0,sign*18,code,i,0]));
 }
 ROLE_ORDER.forEach((role,i)=>frame(`role_reference_${role}`,[0,-20,...i.toString(3).padStart(3,'0').split('').map(d=>[0,1,-1][Number(d)]),0]));
+frame('nominal_mass_open',[0,-21,1,0]);frame('nominal_mass_close',[0,21,1,0]);frame('nominal_property_head',[0,21,0,21]);
 frame('confidence_open',[0,9,0,9]);frame('confidence_close',[0,-9,0,-9]);
 frame('decimal_point',[0,10,-1,0]);frame('coord_member',[0,11,0,11]);frame('conditional_then',[0,16,0,16]);frame('measurement_negative',[0,-13,0,-13]);
 for(let digit=0;digit<10;digit++)frame(`digit_${digit}`,[0,10,Math.floor(digit/4),digit%4,0]);

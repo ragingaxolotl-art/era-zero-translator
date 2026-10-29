@@ -166,7 +166,7 @@ module EraZeroRenderer
           "address_relative_semitones" => relative, "address_absolute_midi" => relative.map { |note| base + note }, "note_duration_beats" => 0.25 }
         label_events.unshift(marker)
       end
-      return label_events
+      return EraZeroReferenceProperties.restrict(node, label_events, anchor_midi)
     end
     state = node.fetch("runtime_state").fetch("code")
     if node["target_type"] == "atom"

@@ -1,4 +1,5 @@
 import {canonicalDigest,deepSort} from './engine.mjs';
+import {restrictReferenceEvents,validReferenceProperty} from './reference_properties.mjs';
 import {encodeName,notesForName} from './names.mjs';
 import {deicticEvent,nominalMarker} from './references.mjs';
 import {registerFor,ROLE_ORDER} from './roles.mjs';
@@ -36,6 +37,7 @@ export async function renderLexicalOccurrences(ir,authority,{anchor=60,maxEvents
  if(!Number.isInteger(anchor)||anchor<24||anchor>96||!Number.isInteger(maxEvents)||maxEvents<1)fail('invalid rendering limits');
  const atoms=new Map(authority.atoms.map(a=>[a.canonical_id,a])),compounds=new Map(authority.compounds.map(c=>[c.compound_id,c]));
  const nodes=new Map(ir.nodes.map(n=>[n.node_id,n]));if(nodes.size!==ir.nodes.length)fail('duplicate node ID');
+ for(const node of ir.nodes)if(Object.hasOwn(node,'property_restriction')&&!validReferenceProperty(node))fail('invalid nominal property restriction');
  const verified=new Map();let emitted=0;
  const count=events=>{emitted+=events.length;if(emitted>maxEvents)fail('event limit exceeded');return events};
  async function planFor(id){
@@ -59,7 +61,7 @@ export async function renderLexicalOccurrences(ir,authority,{anchor=60,maxEvents
   if(node.reference_mode){
    const mode=node.reference_mode==='definite_nominal'?'definite':node.reference_mode==='nominal_class'?'class':null;
    if(!mode||node.referent_id!==`nominal:${mode}:${name.name_id}`||!/^[a-z]+$/.test(name.normalized_label))fail('invalid nominal reference');
-   return count([nominalMarker(node,register,anchor),event]);
+   return count(restrictReferenceEvents(node,[nominalMarker(node,register,anchor),event],anchor));
   }
   return count([event]);
  }

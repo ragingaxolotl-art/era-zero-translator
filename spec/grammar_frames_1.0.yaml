@@ -4,6 +4,15 @@ authority: User-directed translator completion goal, October 28, 2026
 provenance: New explicit grammar convention; not recovered from the original language source
 purpose: Sound grammatical scope without changing lexical roots or runtime endings
 frames:
+  nominal_mass_open:
+    relative_semitones: [0, -21, 1, 0]
+    note_duration_beats: 0.25
+  nominal_property_head:
+    relative_semitones: [0, 21, 0, 21]
+    note_duration_beats: 0.25
+  nominal_mass_close:
+    relative_semitones: [0, 21, 1, 0]
+    note_duration_beats: 0.25
   negation_open:
     relative_semitones: [0, -1, -1, 0]
     note_duration_beats: 0.25

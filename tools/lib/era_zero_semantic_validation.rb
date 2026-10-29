@@ -5,6 +5,7 @@ require "set"
 require_relative "era_zero_validation"
 require_relative "era_zero_names"
 require_relative "era_zero_compound_expansion"
+require_relative "era_zero_reference_properties"
 
 # Shared semantic validation for fixtures and sentence composition.
 module EraZeroSemanticValidation
@@ -67,6 +68,7 @@ module EraZeroSemanticValidation
     errors << "duplicate_node" unless ids.uniq.length == ids.length
     errors << "duplicate_edge" unless edges.map { |e| e["edge_id"] }.uniq.length == edges.length
     nodes.each do |n|
+      errors << "invalid_nominal_property" if n.key?("property_restriction") && !EraZeroReferenceProperties.valid?(n)
       errors << "invalid_nominal_reference" if n.key?("reference_mode") && n["kind"] != "phonemic_reference"
       errors << "unknown_node_kind" unless node_kinds.include?(n["kind"])
       errors << "forbidden_surface_field" unless (n.keys.to_set & forbidden).empty?

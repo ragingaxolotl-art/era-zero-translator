@@ -468,6 +468,10 @@ canonical_serialization:
   - audio
   versioning: A payload-semantic change produces a new utterance identity. Editorial
     metadata never changes identity.
+nominal_property_restrictions:
+  profile: spec/nominal_property_restrictions_1.0.yaml
+  field: property_restriction
+  node_scope: Definite phonemic nominal references only
 surface_contract_for_later_renderer:
   speech_act_to_contour:
     assertion: level

@@ -63,10 +63,18 @@ and do not create new LIF/STR-like families merely to fill the address grid.
 
 ### Next dependency milestone
 
+The [nominal mass restriction implementation](../reviews/nominal_mass_properties.md)
+now composes one heavy/light definite noun with a user-selected standard inside
+supported constructions, including nested carrying. The property stays attached
+to its noun in the IR and audible framing, independently of action runtime 0/1/2.
+Tests cover 36 sentence variants and a bounded MIDI-only property inverse.
+This advances the property portion of gate 4; simple-present/aspect and the
+meaning of “to Ada” still prevent the exact mandatory phrase from passing.
+
 Finish the mandatory carrying/property vertical slice before counting further
 vocabulary growth as completion: reuse the reviewed carrying and mass foundations,
-compose a property inside a noun phrase, preserve its selected standard, and
-resolve the distinction between motion toward a place and delivery to a person.
+extend the implemented noun-phrase restriction to the remaining required frames,
+and resolve the distinction between motion toward a place and delivery to a person.
 Then test the original phrase and unseen participant/property/tense variants.
 Do not silently treat “toward Ada” as equivalent to “to Ada”.
 

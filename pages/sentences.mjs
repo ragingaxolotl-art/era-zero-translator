@@ -62,6 +62,20 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     if(!inner||inner.runtimeState!==undefined)return null;
     return {...inner,runtimeState:Number(explicitState[2])};
   }
+  // Resolve the adjective as a semantic restriction, never part of a noun's
+  // sound label. One explicit standard per sentence is currently selectable.
+  const propertyPhrases=[...String(input).matchAll(/\b([Tt]he) (heavy|light) ([a-z]+)\b/g)].filter(match=>String(input).slice(0,match.index).split('"').length%2===1);
+  if(propertyPhrases.length){
+    if(propertyPhrases.length!==1)return null;
+    const match=propertyPhrases[0],plain=`${match[1]} ${match[3]}`;
+    if(!parseNominal(plain))return null;
+    const inner=parseNamedSentence(String(input).slice(0,match.index)+plain+String(input).slice(match.index+match[0].length),depth+1,speechActs);
+    if(!inner||inner.requiredInterpretation||inner.nominalProperty)return null;
+    const participants=inner.participants||[{text:inner.actorText},...(inner.target?[{text:inner.targetText}]:[])];
+    const indices=participants.flatMap((p,i)=>p.text?.toLowerCase()===plain.toLowerCase()?[i]:[]);
+    if(indices.length!==1)return null;
+    return {...inner,adjective:match[2],requiredInterpretation:'mass_standard',nominalProperty:{participantIndex:indices[0]},construction:`nominal_mass_${inner.construction}`,explicitInterpretation:String(input).trim()};
+  }
   const participant='(I|me|you|'+NOMINAL_PATTERN+'|(?!(?:She|He|It|They|We|Her|Him|Them|Us)\\b)[A-Z][a-z]+|"[A-Za-z]+(?:[ -][A-Za-z]+)*")';
   if(speechActs){
     const carryingCommand=String(input).trim().match(new RegExp(`^(?:[Dd]o not )?[Cc]arry ${participant}(?: toward ${participant})?[.!]?$`));
@@ -239,7 +253,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|carry|carrying|support|supporting|temperature)\b/i.test(String(input))) && !parseNamedSentence(input);
+  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|carry|carries|carried|carrying|support|supporting|temperature)\b/i.test(String(input))) && !parseNamedSentence(input);
 }
 
 // A complete antecedent and a comma establish conditional scope. Without
@@ -356,12 +370,15 @@ export async function composeNamedSentence(input,template,{interpretation,standa
     const threshold=standard?.dimension===dimension&&Object.keys(standard).sort().join(',')==='dimension,scale,threshold'?(massStandard?massKilograms(standard.threshold,standard.scale):temperaturePointKelvin(standard.threshold,standard.scale)):null;
     if(threshold===null)throw new Error(massStandard?'Provide a nonnegative mass threshold as an exact decimal in gram or kilogram.':'Provide a thermodynamic-temperature threshold as an exact decimal in celsius or kelvin.');
     const above=['hot','heavy'].includes(parsed.adjective);
-    parsed.measurement={magnitude:threshold,unit,comparison:above?'greater_than':'less_than'};
-    selectedStandard={dimension,threshold,unit,relation:parsed.measurement.comparison};
-    parsed.semanticNote=`For this translation, ${parsed.adjective} means ${massStandard?'mass':'a thermodynamic temperature'} ${above?'above':'below'} ${threshold} ${unit}s, using your supplied standard. This is not a universal cutoff or a claim about ${massStandard?'weight force, carrying effort, size, or brightness':'felt warmth, spiciness, or emotional tone'}.`;
+    const measurement={magnitude:threshold,unit,comparison:above?'greater_than':'less_than'};
+    if(parsed.nominalProperty)parsed.nominalProperty.restriction={dimension,...measurement};
+    else parsed.measurement=measurement;
+    selectedStandard={dimension,threshold,unit,relation:measurement.comparison};
+    parsed.semanticNote=[parsed.semanticNote,`For this translation, ${parsed.adjective} means ${massStandard?'mass':'a thermodynamic temperature'} ${above?'above':'below'} ${threshold} ${unit}s, using your supplied standard. This is not a universal cutoff or a claim about ${massStandard?'weight force, carrying effort, size, or brightness':'felt warmth, spiciness, or emotional tone'}.`].filter(Boolean).join(' ');
   }else if(standard!==undefined)throw new Error('This sentence does not take an adjective standard.');
   const bound=!!parsed.compoundSlots;
-  if(bound&&!template.authority)throw new Error('Bound construction requires the compiled dictionary authority.');
+  const graphRendered=bound||!!parsed.nominalProperty;
+  if(graphRendered&&!template.authority)throw new Error('This construction requires the compiled dictionary authority.');
   const source=bound?{semantic_ir:{speech_act:'assertion',nodes:[{node_id:'c',kind:'clause'},{node_id:'p',kind:'lexical_occurrence',target_type:'compound',target_id:parsed.predicate,runtime_state:{code:1}}],edges:[{type:'centers'}]},performance:{profile:'reference-midi-v1',anchor_midi:60,transposition_semantically_significant:false,primary_contour:'level',contour_relative_semitones:[0,0],secondary_contours:[],statement_boundary:'long_gap',statement_boundary_beats:2}}:template.formal;
   const predicates=source.semantic_ir.nodes.filter(node=>node.kind==='lexical_occurrence');
   if(source.semantic_ir.speech_act!=='assertion' || source.semantic_ir.nodes.length!==2 || source.semantic_ir.edges.length!==1 || source.semantic_ir.edges[0].type!=='centers' || source.performance.anchor_midi!==60 || predicates.length!==1 || predicates[0].target_id!==parsed.predicate || predicates[0].runtime_state?.code!==1)
@@ -372,6 +389,7 @@ export async function composeNamedSentence(input,template,{interpretation,standa
   const nominal=participants.map(({text})=>parseNominal(text));
   const names=await Promise.all(participants.map(({label},index)=>deicticRoles[index]?null:encodeName(nominal[index]?nominal[index].head:label)));
   const references=names.map((name,index)=>deicticRoles[index]?deicticReference(deicticRoles[index],participantIds[index]):({node_id:participantIds[index],kind:'phonemic_reference',referent_id:nominal[index]?`nominal:${nominal[index].mode==='definite_nominal'?'definite':'class'}:${name.name_id}`:name.name_id,value_type:'entity',name,...(nominal[index]?{reference_mode:nominal[index].mode}:{})}));
+  if(parsed.nominalProperty)references[parsed.nominalProperty.participantIndex].property_restriction=parsed.nominalProperty.restriction;
   const ir={ir_version:'1.0',root_clause:'c',speech_act:parsed.speechAct||'assertion',nodes:[{node_id:'c',kind:'clause',clause_type:'predication'},
     {node_id:'p',kind:'lexical_occurrence',target_type:predicates[0].target_type,target_id:parsed.predicate,runtime_state:{code:parsed.runtimeState??1}},...references],
     edges:[{edge_id:'e0',type:'centers',from:'p',to:'c'},...participants.map((participant,index)=>({edge_id:`e${index+1}`,type:'fills_role',from:participantIds[index],to:'p',role:participant.role}))],discourse_constraints:{}};
@@ -418,7 +436,7 @@ export async function composeNamedSentence(input,template,{interpretation,standa
   const digest=await canonicalDigest(ir);
   ir.utterance_id=`UTT:${digest.slice(0,24)}`;
   ir.serialization={canonical_format:'EZIR-JSON-1',content_digest:digest};
-  const events=bound?await renderLexicalOccurrences(ir,template.authority):names.flatMap((name,index)=>{
+  const events=graphRendered?await renderLexicalOccurrences(ir,template.authority):names.flatMap((name,index)=>{
     const register=registerFor(participantIds[index],ir);
     if(deicticRoles[index])return [deicticEvent(references[index],register)];
     const offset={low:-12,middle:0,high:12,sustained_background:-5}[register],notes=notesForName(name);
@@ -427,7 +445,7 @@ export async function composeNamedSentence(input,template,{interpretation,standa
       family_opening_relative_semitones:[],family_opening_absolute_midi:[],address_relative_semitones:notes.map(note=>note-60),address_absolute_midi:notes.map(note=>note+offset),note_duration_beats:1};
     return nominal[index]?[nominalMarker(references[index],register),labelEvent]:[labelEvent];
   });
-  if(!bound)events.push(...source.performance.lexical_events.map(event=>{
+  if(!graphRendered)events.push(...source.performance.lexical_events.map(event=>{
     const copy={...structuredClone(event),occurrence_id:'p'};
     if(copy.runtime_tail&&parsed.runtimeState!==undefined){
       const code=parsed.runtimeState,last=copy.address_absolute_midi.at(-1),base=copy.base_midi;
@@ -448,7 +466,7 @@ export async function composeNamedSentence(input,template,{interpretation,standa
     lexical_events:relative,structural_events:structural,statement_boundary:performance.statement_boundary,statement_boundary_beats:performance.statement_boundary_beats};
   const formalDigest=await canonicalDigest({semantic_digest:digest,relative_plan:relativePlan});
   const formal={format:'EZF-1',renderer_version:'1.0.0',formal_id:`EZF:${formalDigest.slice(0,24)}`,formal_digest:formalDigest,semantic_digest:digest,semantic_ir:ir,performance,
-    literal_gloss:bound?lexicalGloss(events,template.authority):`${names.map((name,index)=>deicticRoles[index]?`${participantIds[index]}:reference(${deicticRoles[index]})`:`${nominal[index]?`${participantIds[index]}:reference(${nominal[index].mode}) | `:''}${participantIds[index]}:name(${name.normalized_label})`).join(' | ')} | ${source.literal_gloss.replaceAll(`${predicates[0].node_id}:`,'p:').replaceAll(`${predicates[0].node_id}.`,'p.').replace(/\[1\](?= \| |$)/g,`[${parsed.runtimeState??1}]`)}`};
+    literal_gloss:graphRendered?lexicalGloss(events,template.authority):`${names.map((name,index)=>deicticRoles[index]?`${participantIds[index]}:reference(${deicticRoles[index]})`:`${nominal[index]?`${participantIds[index]}:reference(${nominal[index].mode}) | `:''}${participantIds[index]}:name(${name.normalized_label})`).join(' | ')} | ${source.literal_gloss.replaceAll(`${predicates[0].node_id}:`,'p:').replaceAll(`${predicates[0].node_id}.`,'p.').replace(/\[1\](?= \| |$)/g,`[${parsed.runtimeState??1}]`)}`};
   return {source_input:input,...(interpretation?{selected_interpretation:interpretation}:{}),...(selectedStandard?{selected_standard:selectedStandard}:{}),target_id:parsed.predicate,sense_id:`construction:${parsed.construction}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,
     semantic_note:parsed.semanticNote?(parsed.semanticNote+(parsed.runtimeState===2&&parsed.key==='approved_poetic_love'?' The num ending carries the approved never-finished-becoming reading.':'')):null,construction:parsed.construction,interpretation:parsed.explicitInterpretation||((deicticRoles.some(Boolean)||parsed.semanticNote)?String(input).trim():null)||`${parsed.actorText} ${parsed.negated?(parsed.key==='active_care'?'does not actively care for':parsed.wording.replace('is ','is not ')):parsed.wording}${parsed.targetText?' '+parsed.targetText:''}.`};
 }
