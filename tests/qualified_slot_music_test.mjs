@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import {renderLexicalOccurrences,lexicalGloss} from '../pages/bound_compounds.mjs';
 import {execFileSync} from 'node:child_process';
 import {scheduledLexicalEvents} from '../pages/scheduler.mjs';
 import {midiFromFormal,svgFromFormal} from '../pages/engine.mjs';
@@ -8,6 +9,7 @@ const ruby=String.raw`
 require 'minitest/mock'
 require 'era_zero_renderer'
 require 'era_zero_presentation'
+require 'era_zero_browser_compounds'
 require 'base64'
 atoms, = EraZeroRenderer.load_authority
 meaning=lambda{|code|{'profile'=>'EZLEX-1','sense_key'=>"fixture_#{code}",'sound_code'=>code,'added_definition'=>'Test-only conventional meaning; no vocabulary is approved.','excludes'=>['Unmarked interpretation']}}
@@ -30,15 +32,19 @@ results=[]
   ir['nodes'][1]['compound_bindings']<<{'slot_path'=>['q','s'],'argument_id'=>'d'}
   ir['nodes']<<{'node_id'=>'d','kind'=>'lexical_occurrence','target_type'=>'atom','target_id'=>'DAT:010','runtime_state'=>{'code'=>1},'value_type'=>'entity'}
  end
+ [entry,inner].each{|definition|definition['content_digest']=EraZeroValidation.fingerprint(definition)}
  digest=EraZeroRenderer.semantic_digest(ir);ir.merge!('utterance_id'=>"UTT:#{digest[0,24]}",'serialization'=>{'content_digest'=>digest})
  EraZeroRenderer.stub(:load_authority,[atoms,{'outer'=>entry,'inner'=>inner}]) do
-  f=EraZeroRenderer.render(ir);results<<{nested:nested,bound:bound,role:role,state:state,formal:f,midi:Base64.strict_encode64(EraZeroPresentation.midi(f)),svg:EraZeroPresentation.svg(f)}
+  f=EraZeroRenderer.render(ir);results<<{nested:nested,bound:bound,role:role,state:state,authority:{atoms:atoms.values.map{|a|a.slice("canonical_id","title","note_path_semitones","harmonic_signature_semitones","canonical_transliteration","formal_carrier")},compounds:[entry,inner],compound_plans:EraZeroBrowserCompounds.plans([entry,inner])},formal:f,midi:Base64.strict_encode64(EraZeroPresentation.midi(f)),svg:EraZeroPresentation.svg(f)}
  end
 end
 puts JSON.generate(results)
 `;
 const cases=JSON.parse(execFileSync('ruby',['-Itools/lib','-e',ruby],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:20_000_000}));
-for(const {nested,bound,role,state,formal,midi,svg} of cases){
+for(const {nested,bound,role,state,authority,formal,midi,svg} of cases){
+ const rendered=await renderLexicalOccurrences(formal.semantic_ir,authority);
+ assert.deepEqual(rendered,formal.performance.lexical_events);
+ assert.equal(lexicalGloss(rendered,authority),formal.literal_gloss);
  const events=scheduledLexicalEvents(formal),keys=events.map(e=>e.marker||e.target_id);
  const modifier=nested?['convention_101_open',...(bound?['role_content_open','DAT:010','role_content_close']:[]),'MIN:011','LIF:011','convention_101_close']:['LIF:011'];
  assert.deepEqual(keys,['convention_100_open','role_experiencer_open',...(role==='experiencer'?modifier:[]),'LIF:010','role_experiencer_close','role_target_open',...(role==='target'?modifier:[]),'MAT:010','role_target_close','REP:111','convention_100_close']);

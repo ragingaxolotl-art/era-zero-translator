@@ -1,3 +1,4 @@
+import {renderLexicalOccurrences,lexicalGloss} from './bound_compounds.mjs';
 import {NOMINAL_PATTERN,parseNominal} from './nominals.mjs';
 import {registerFor} from './roles.mjs';
 import {canonicalDigest} from './engine.mjs';
@@ -6,6 +7,7 @@ import {deicticReference,deicticEvent,nominalMarker} from './references.mjs';
 
 // Reviewed constructions use exact process senses, never a generic synonym pool.
 const ACTIONS = [
+  {pattern:'has a directed data link to',negativePattern:'does not have a directed data link to',predicate:'CMP:742b44d9ead66b451346708a',key:'directed_data_link',wording:'has a directed data link to',role:'source',targetRole:'target',compoundSlots:{source:['a-source-01'],target:['a-target-01']},semanticNote:'An established directed communication relation with bounded data content; it does not assert an ongoing transfer.'},
   {pattern:'is registering optical input from',predicate:'CMP:bcfd189eb305cf364ada975a',key:'ongoing_optical_registration',wording:'is registering optical input from',role:'target',targetRole:'source',semanticNote:'Optical sensory registration uses a light-carried input. It does not by itself assert conscious seeing, attention, recognition, color, or understanding.'},
   {pattern:'is registering acoustic input from',predicate:'CMP:42e9bd596b35612ed6cbe3ce',key:'ongoing_acoustic_registration',wording:'is registering acoustic input from',role:'target',targetRole:'source',semanticNote:'Acoustic sensory registration uses a propagating mechanical pressure or elastic vibration signal. It does not by itself assert conscious hearing, attention, recognition, speech comprehension, or understanding.'},
   {pattern:'is registering sensory input from',predicate:'CMP:ade73037114406a2cd91ce13',key:'ongoing_sensory_registration',wording:'is registering sensory input from',role:'target',targetRole:'source',semanticNote:'Sensory registration is physical sensory transduction of information from this source into this receiver. It does not by itself assert consciousness, attention, recognition, understanding, or a particular sensory channel.'},
@@ -170,14 +172,14 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     return {actor:mass[1].replaceAll('"',''),actorText:mass[1],role:'bearer',predicate:mass[1]==='I'?'MAT:000':'MAT:010',key:'mass_measurement',construction:'mass_measurement',
       measurement:{magnitude,unit:'kilogram',...((mass[3]&&mass[3]!=='exactly')?{comparison:({'more than':'greater_than','greater than':'greater_than','less than':'less_than','at least':'at_least','at most':'at_most','not exactly':'not_equal'})[mass[3]]}:{})},semanticNote:'This states physical mass, normalized exactly to kilograms. It does not state weight as force, size, heaviness relative to a standard, or the result of a weighing event.'};
   }
-  const grammaticalText=String(input).trim().replace(new RegExp(`^(${NOMINAL_PATTERN}) are `),'$1 is ').replace(/^I am /,'I is ').replace(/^(You|you) are /,'$1 is ').replace(/^(I|You|you) care for /,'$1 cares for ').replace(/^(I|You|you) do not (care for|love) /,'$1 does not $2 ').replace(/^(I|You|you) love /,'$1 loves ');
+  const grammaticalText=String(input).trim().replace(new RegExp(`^(${NOMINAL_PATTERN}) are `),'$1 is ').replace(/^I am /,'I is ').replace(/^(You|you) are /,'$1 is ').replace(/^(I|You|you) care for /,'$1 cares for ').replace(/^(I|You|you) do not (care for|love|have a directed data link to) /,'$1 does not $2 ').replace(/^(I|You|you) have a directed data link to /,'$1 has a directed data link to ').replace(/^(I|You|you) love /,'$1 loves ');
   for(const action of ACTIONS){
     for(const negated of [false,true]){
       const pattern=negated?(action.negativePattern||(action.key==='active_care'?'(?:does not care for|is not caring for)':action.pattern.replace('is ','is not '))):action.pattern;
       const match=grammaticalText.match(new RegExp(`^${participant} ${pattern} ${participant}[.]?$`));
       if(match&&action.key==='approved_poetic_love'&&(match[1].startsWith('"')||match[2].startsWith('"')||parseNominal(match[1])||parseNominal(match[2])))return null;
       const quantified=match&&[match[1],match[2]].some(text=>parseNominal(text)?.quantifier);
-      if(quantified&&(negated||[match[1],match[2]].filter(text=>parseNominal(text)?.quantifier).length>1))return null;
+      if(quantified&&(action.compoundSlots||negated||[match[1],match[2]].filter(text=>parseNominal(text)?.quantifier).length>1))return null;
       if(match&&participantIdentity(match[1])===participantIdentity(match[2]))return null;
       if(match)return {...(quantified?{quantifiedParticipants:true}:{}),actor:match[1].replaceAll('"',''),target:match[2].replaceAll('"',''),actorText:match[1],targetText:match[2],...action,negated,construction:`named_${action.key}${negated?'_negated':''}`};
     }
@@ -272,10 +274,10 @@ async function composeClauseGroup(input,clauses,operator,loadTemplate) {
   const events=[],gloss=[];
   parts.forEach((part,index)=>{
     const prefix=`s${String(index).padStart(3,'0')}_`;
-    ir.nodes.push(...part.semantic_ir.nodes.map(node=>({...structuredClone(node),node_id:prefix+node.node_id})));
+    ir.nodes.push(...part.semantic_ir.nodes.map(node=>({...structuredClone(node),node_id:prefix+node.node_id,...(node.compound_bindings?{compound_bindings:node.compound_bindings.map(binding=>({...binding,argument_id:prefix+binding.argument_id}))}:{})})));
     ir.edges.push(...part.semantic_ir.edges.map(edge=>({...edge,edge_id:prefix+edge.edge_id,from:prefix+edge.from,to:prefix+edge.to})));
     if(!conditional)ir.edges.push({edge_id:`member${index}`,type:'member_of',from:prefix+'c',to:groupId,...(operator==='sequence'?{order:index+1}:{})});
-    events.push(...part.formal.performance.lexical_events.map(event=>({...structuredClone(event),occurrence_id:prefix+event.occurrence_id})));
+    events.push(...part.formal.performance.lexical_events.map(event=>({...structuredClone(event),occurrence_id:prefix+event.occurrence_id,...(event.argument_node_id?{argument_node_id:prefix+event.argument_node_id}:{}),...(event.binding_chain?{binding_chain:event.binding_chain.map(binding=>({...binding,compound_occurrence_id:prefix+binding.compound_occurrence_id,argument_id:prefix+binding.argument_id}))}:{})})));
     gloss.push(part.formal.literal_gloss.split(' | ').map(value=>prefix+value).join(' | '));
   });
   if(conditional)ir.edges.push({edge_id:'condition',type:'condition_of',from:'s000_c',to:'s001_c',condition_status:'open'});
@@ -297,7 +299,9 @@ async function composeClauseGroup(input,clauses,operator,loadTemplate) {
 export async function composeNamedSentence(input,template) {
   const parsed=parseNamedSentence(input);
   if(!parsed)throw new Error('The complete sentence does not match this construction.');
-  const source=template.formal;
+  const bound=!!parsed.compoundSlots;
+  if(bound&&!template.authority)throw new Error('Bound construction requires the compiled dictionary authority.');
+  const source=bound?{semantic_ir:{speech_act:'assertion',nodes:[{node_id:'c',kind:'clause'},{node_id:'p',kind:'lexical_occurrence',target_type:'compound',target_id:parsed.predicate,runtime_state:{code:1}}],edges:[{type:'centers'}]},performance:{profile:'reference-midi-v1',anchor_midi:60,transposition_semantically_significant:false,primary_contour:'level',contour_relative_semitones:[0,0],secondary_contours:[],statement_boundary:'long_gap',statement_boundary_beats:2}}:template.formal;
   const predicates=source.semantic_ir.nodes.filter(node=>node.kind==='lexical_occurrence');
   if(source.semantic_ir.speech_act!=='assertion' || source.semantic_ir.nodes.length!==2 || source.semantic_ir.edges.length!==1 || source.semantic_ir.edges[0].type!=='centers' || source.performance.anchor_midi!==60 || predicates.length!==1 || predicates[0].target_id!==parsed.predicate || predicates[0].runtime_state?.code!==1)
     throw new Error('Expected the matching canonical action assertion template at anchor 60.');
@@ -310,6 +314,11 @@ export async function composeNamedSentence(input,template) {
   const ir={ir_version:'1.0',root_clause:'c',speech_act:parsed.speechAct||'assertion',nodes:[{node_id:'c',kind:'clause',clause_type:'predication'},
     {node_id:'p',kind:'lexical_occurrence',target_type:predicates[0].target_type,target_id:parsed.predicate,runtime_state:{code:parsed.runtimeState??1}},...references],
     edges:[{edge_id:'e0',type:'centers',from:'p',to:'c'},...participants.map((participant,index)=>({edge_id:`e${index+1}`,type:'fills_role',from:participantIds[index],to:'p',role:participant.role}))],discourse_constraints:{}};
+  if(bound){
+    if(nominal.some(description=>description?.quantifier))throw new Error('Quantified compound participants are not supported by this construction.');
+    ir.nodes[1].compound_bindings=participants.map((participant,index)=>({slot_path:parsed.compoundSlots[participant.role],argument_id:participantIds[index]}));
+    ir.edges=ir.edges.filter(edge=>edge.type!=='fills_role');
+  }
   nominal.forEach((description,index)=>{
     if(!description?.quantifier)return;
     const id=`quantity${index}`;
@@ -343,7 +352,7 @@ export async function composeNamedSentence(input,template) {
   const digest=await canonicalDigest(ir);
   ir.utterance_id=`UTT:${digest.slice(0,24)}`;
   ir.serialization={canonical_format:'EZIR-JSON-1',content_digest:digest};
-  const events=names.flatMap((name,index)=>{
+  const events=bound?await renderLexicalOccurrences(ir,template.authority):names.flatMap((name,index)=>{
     const register=registerFor(participantIds[index],ir);
     if(deicticRoles[index])return [deicticEvent(references[index],register)];
     const offset={low:-12,middle:0,high:12,sustained_background:-5}[register],notes=notesForName(name);
@@ -352,7 +361,7 @@ export async function composeNamedSentence(input,template) {
       family_opening_relative_semitones:[],family_opening_absolute_midi:[],address_relative_semitones:notes.map(note=>note-60),address_absolute_midi:notes.map(note=>note+offset),note_duration_beats:1};
     return nominal[index]?[nominalMarker(references[index],register),labelEvent]:[labelEvent];
   });
-  events.push(...source.performance.lexical_events.map(event=>{
+  if(!bound)events.push(...source.performance.lexical_events.map(event=>{
     const copy={...structuredClone(event),occurrence_id:'p'};
     if(copy.runtime_tail&&parsed.runtimeState!==undefined){
       const code=parsed.runtimeState,last=copy.address_absolute_midi.at(-1),base=copy.base_midi;
@@ -373,7 +382,7 @@ export async function composeNamedSentence(input,template) {
     lexical_events:relative,structural_events:structural,statement_boundary:performance.statement_boundary,statement_boundary_beats:performance.statement_boundary_beats};
   const formalDigest=await canonicalDigest({semantic_digest:digest,relative_plan:relativePlan});
   const formal={format:'EZF-1',renderer_version:'1.0.0',formal_id:`EZF:${formalDigest.slice(0,24)}`,formal_digest:formalDigest,semantic_digest:digest,semantic_ir:ir,performance,
-    literal_gloss:`${names.map((name,index)=>deicticRoles[index]?`${participantIds[index]}:reference(${deicticRoles[index]})`:`${nominal[index]?`${participantIds[index]}:reference(${nominal[index].mode}) | `:''}${participantIds[index]}:name(${name.normalized_label})`).join(' | ')} | ${source.literal_gloss.replaceAll(`${predicates[0].node_id}:`,'p:').replaceAll(`${predicates[0].node_id}.`,'p.').replace(/\[1\](?= \| |$)/g,`[${parsed.runtimeState??1}]`)}`};
+    literal_gloss:bound?lexicalGloss(events,template.authority):`${names.map((name,index)=>deicticRoles[index]?`${participantIds[index]}:reference(${deicticRoles[index]})`:`${nominal[index]?`${participantIds[index]}:reference(${nominal[index].mode}) | `:''}${participantIds[index]}:name(${name.normalized_label})`).join(' | ')} | ${source.literal_gloss.replaceAll(`${predicates[0].node_id}:`,'p:').replaceAll(`${predicates[0].node_id}.`,'p.').replace(/\[1\](?= \| |$)/g,`[${parsed.runtimeState??1}]`)}`};
   return {source_input:input,target_id:parsed.predicate,sense_id:`construction:${parsed.construction}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,
     semantic_note:parsed.semanticNote?(parsed.semanticNote+(parsed.runtimeState===2&&parsed.key==='approved_poetic_love'?' The num ending carries the approved never-finished-becoming reading.':'')):null,construction:parsed.construction,interpretation:parsed.explicitInterpretation||((deicticRoles.some(Boolean)||parsed.semanticNote)?String(input).trim():null)||`${parsed.actorText} ${parsed.negated?(parsed.key==='active_care'?'does not actively care for':parsed.wording.replace('is ','is not ')):parsed.wording}${parsed.targetText?' '+parsed.targetText:''}.`};
 }

@@ -31,8 +31,13 @@ qualified_participants:
   - Convention frames inside the qualifier stay inside the participant role frame; a convention around the predicate remains outside it.
   - Modifier-to-argument attachment has zero additional boundary beats, including after a nested qualifier's closing frame.
   migration: migrations/compound_attachment_rendering_2026_10_28.yaml
+browser_integration:
+  renderer: pages/bound_compounds.mjs
+  compiled_plans: spec/browser_compound_plans_1.0.yaml
+  ordinary_construction: Directed data link binds source and target for names, discourse references and definite nouns.
+  clause_composition: Prefix occurrence and argument IDs while preserving dictionary-local slot paths.
 remaining:
-  - Interpret ordinary English directly into general explicitly bound compound templates in the browser.
+  - Extend ordinary-English binding beyond the reviewed directed-data-link construction; resolve quantified participants and broader ambiguity.
   - Complete independent sentence decoding and broader scope/ambiguity handling.
 phonemic_reference:
   fields: node_id, kind, referent_id, value_type, name

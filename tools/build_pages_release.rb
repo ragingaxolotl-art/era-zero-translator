@@ -9,6 +9,7 @@ require_relative "lib/era_zero_validation"
 require_relative "lib/era_zero_general_english"
 require_relative "lib/era_zero_renderer"
 require_relative "lib/era_zero_presentation"
+require_relative "lib/era_zero_browser_compounds"
 
 root = EraZeroValidation::ROOT
 pages = File.join(root, "pages")
@@ -86,6 +87,7 @@ browser_index = {
   "lore_conversations" => lore_conversations,
   "atoms" => atoms,
   "compounds" => compounds,
+  "compound_plans" => EraZeroBrowserCompounds.plans(compounds),
   "controlled" => allowed.map { |sense| sense.slice("sense_id", "lemma", "route", "target_id") },
   "required_roles" => required_roles,
   "resolution_files" => resolution_files,
