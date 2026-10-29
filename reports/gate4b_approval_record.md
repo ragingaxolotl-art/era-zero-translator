@@ -2,7 +2,7 @@
 
 Status: **APPROVED — CANONICAL INITIAL RELEASE**  
 Version: **1.0.0**  
-Approved entries: **39**
+Approved entries: **40**
 
 The user authorized the next translator-readiness stage and delegated approval authority. This record approves only the compound graphs whose identifiers appear in `lexicon/compound_dictionary.yaml`. It changes no atomic meaning or generated form.
 

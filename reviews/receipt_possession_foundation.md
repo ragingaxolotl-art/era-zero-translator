@@ -65,14 +65,16 @@ different hashes. Do not count a clarification prompt as completed translation.
 
 Current classification: arrival is an existing root plus sentence grammar;
 carrying-to-endpoint now has reviewed event compounds and bounded sentence
-composition; custody/receipt is an unresolved
-foundation candidate. This review does not justify adding a 27-root family or
+composition; practical physical custody now has an explicit conventional foundation;
+transfer and receipt remain unresolved event definitions. This review does not justify adding a 27-root family or
 redefining an existing root. An explicitly reviewed conventional compound remains
 an option if the additional meaning is documented and audibly represented.
 
 ## Source correction discovered during custody design
 
-The current 39-compound draft still has no custody invariant. A follow-up check
+At the 39-compound revision, no custody invariant was present. The subsequent
+[practical physical custody foundation](physical_custody_foundation.md) adds that
+relation in the 40-compound draft; transfer and receipt remain separate. A follow-up check
 found MAT:210's normal example retained an ownership claim excluded by its applied
 semantic approval. The [MAT source reconciliation](mat_capacity_source_reconciliation.md)
 corrects nine related examples without changing root definitions or sounds.

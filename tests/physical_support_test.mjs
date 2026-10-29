@@ -30,7 +30,7 @@ const audit=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_controlled
  id='CMP:eef9fff8ac6618ce60927f18'
  dictionary=EraZeroValidation.load_yaml('lexicon/compound_dictionary.yaml')['entries']
  migration=EraZeroValidation.load_yaml('migrations/physical_support_2026_10_28.yaml')
- raise 'Old compound definitions changed' unless EraZeroValidation.fingerprint(dictionary.reject{|e|['CMP:763faa4465065477220f6f06','CMP:74d98d19808f74d0b8196951'].include?(e['compound_id']) || [id,'CMP:7a6749aaf61cd6181e544bd6'].include?(e['compound_id'])})==migration['before_dictionary_fingerprint']
+ raise 'Old compound definitions changed' unless EraZeroValidation.fingerprint(dictionary.reject{|e|['CMP:763faa4465065477220f6f06','CMP:74d98d19808f74d0b8196951','CMP:0aca609416668978e1527dac'].include?(e['compound_id']) || [id,'CMP:7a6749aaf61cd6181e544bd6'].include?(e['compound_id'])})==migration['before_dictionary_fingerprint']
  c=EraZeroControlledEnglish::Compiler.new
  ir=c.compile('ASSERT "active physical load support" [2] ROLE source "distinct material object" [1] ROLE target "distinct material object" [0].')['semantic_ir']
  formal=EraZeroRenderer.render(ir)

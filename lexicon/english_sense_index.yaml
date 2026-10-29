@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 447
-  lemma_count: 430
+  sense_count: 448
+  lemma_count: 431
   canonical_atom_senses: 324
-  canonical_compound_senses: 39
+  canonical_compound_senses: 40
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: 9b2e6047a5bbd39f0b54ff2f49b569cf7e4726b361b51a62070804727efce26f
-  compound_dictionary_fingerprint: 2c70e9109b705c1301701018e1c3ea10bcacf5fbaaaaedb60dbf3b90d3ff1063
+  compound_dictionary_fingerprint: befc078d9883ca2d36b3901b5b3da3846e57c5ffa0b0d2a6acdd94b8acc9b6f9
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -7061,6 +7061,32 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: practical physical custody
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:0aca609416668978e1527dac
+  definition: An established material relation in which a holder has effective practical
+    control over access to and physical handling of a distinct material object, through
+    an arrangement the holder can operate directly or through a controlled physical
+    intermediary. Mere ability to approach, touch, influence or seize the object does
+    not establish this relation. Control need not be exclusive, lawful, conscious,
+    voluntary, continuously exercised or accompanied by ownership, load bearing, movement
+    or a prior transfer.
+  sense_id: ENS:60adbee4ad9e95f983c0d81d
+  display_form: practical physical custody
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Ownership, permission or entitlement without practical control; Proximity, touch,
+    load support or physical influence alone; Hypothetical ability to seize an object
+    not already under practical control; Legal guardianship, information access or
+    ownership of an abstract asset; Receipt or transfer inferred from a custody state
+    alone
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:cc6e2c71bc5a9bd882ff0e58
   lemma: prepare another for awakening
   display_form: prepare another for awakening
@@ -10566,6 +10592,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  practical physical custody:
+    sense_ids:
+    - ENS:60adbee4ad9e95f983c0d81d
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   prepare another for awakening:
     sense_ids:
     - ENS:cc6e2c71bc5a9bd882ff0e58

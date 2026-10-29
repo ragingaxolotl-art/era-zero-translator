@@ -42,8 +42,8 @@ October 29, 2026. The linked Page now reflects that implementation revision
 (Page sequence 5); its historical source observations remain dated evidence.
 All 104 Page blocks and all seven original exit requirements were preserved.
 The linked Page records the 80-check baseline and its targeted follow-up. The
-repository now records a fresh 81-check passing run after the MAT example
-reconciliation, including the per-clause correction. The ordinary diagnostic
+repository now records a fresh 82-check passing run after the custody foundation,
+including the MAT example reconciliation and per-clause correction. The ordinary diagnostic
 still has 19 checked compositions out of 40. Neither closes the gates below.
 
 | Original gate | Current evidence | Outstanding requirement; gate remains open |
@@ -75,6 +75,17 @@ both lexical meaning and audible state preservation. Preserve existing melodies
 and do not create new LIF/STR-like families merely to fill the address grid.
 
 ### Next dependency milestone
+
+[Practical physical custody](../reviews/physical_custody_foundation.md) now has an
+explicit conventional compound and the sentence construction “Ada has physical
+custody of the box.” It preserves a distinct holder/object relation, qualified
+material target, independent runtime states, negation, questions and selected
+clause scopes. Custody is established practical control, not ownership, mere
+support or arrival. Controlled intermediaries and nonexclusive control are
+permitted; legal custody and abstract possession are separate meanings. Transfer
+must still define the same object's before/after custody under one event before
+receipt/delivery can reuse this foundation. This addition does not close gate 4.
+
 
 The [MAT capacity/coupling reconciliation](../reviews/mat_capacity_source_reconciliation.md)
 corrects nine examples retained from broader proposals. MAT:210's old ownership

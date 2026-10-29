@@ -33,7 +33,7 @@ const audit=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_controlled
  id='CMP:7a6749aaf61cd6181e544bd6';entry=dictionary.find{|e|e['compound_id']==id}
  raise 'Versioned support missing' unless entry['nodes'].any?{|n|n['kind']=='compound_ref'&&n['compound_id']=='CMP:eef9fff8ac6618ce60927f18'&&n['definition_version']=='1.0.0'}
  migration=EraZeroValidation.load_yaml('migrations/physical_carrying_2026_10_28.yaml')
- raise 'Old compounds changed' unless EraZeroValidation.fingerprint(dictionary.reject{|e|['CMP:763faa4465065477220f6f06','CMP:74d98d19808f74d0b8196951'].include?(e['compound_id']) || e['compound_id']==id})==migration['before_dictionary_fingerprint']
+ raise 'Old compounds changed' unless EraZeroValidation.fingerprint(dictionary.reject{|e|['CMP:763faa4465065477220f6f06','CMP:74d98d19808f74d0b8196951','CMP:0aca609416668978e1527dac'].include?(e['compound_id']) || e['compound_id']==id})==migration['before_dictionary_fingerprint']
  JSON.parse(STDIN.read).each do |bad|
   begin; EraZeroRenderer.render(bad);raise 'Invalid carrying accepted';rescue EraZeroRenderer::RenderError => error;raise unless error.message.include?('invalid_compound_bindings');end
  end

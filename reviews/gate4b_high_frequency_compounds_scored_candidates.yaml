@@ -2576,3 +2576,102 @@ reviews:
     decision: 'rejected: runtime semantic loss'
   recommendation: approve explicit_same_event
   confidence: high
+- compound_id: CMP:0aca609416668978e1527dac
+  display_title: practical physical custody
+  current_choice_reason: Review in reviews/physical_custody_foundation.md; scores
+    are author judgments, not independent semantic validation.
+  candidates:
+  - candidate_id: explicit_practical_custody
+    direction: Conventional practical control specializes the established material
+      relation and keeps a distinct object.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-load
+        kind: root
+        root_id: MAT:010
+      - node_id: s-source
+        kind: slot
+        slot_name: custodian
+        slot_type: entity
+      - node_id: s-target
+        kind: slot
+        slot_name: held_object
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MAT:210
+      edges:
+      - type: qualifies
+        from: q-load
+        to: s-target
+      - type: fills_role
+        from: s-source
+        to: h
+        role: source
+      - type: fills_role
+        from: s-target
+        to: h
+        role: target
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: practical_physical_custody
+        sound_code: 7
+        added_definition: An established material relation in which a holder has effective
+          practical control over access to and physical handling of a distinct material
+          object, through an arrangement the holder can operate directly or through
+          a controlled physical intermediary. Mere ability to approach, touch, influence
+          or seize the object does not establish this relation. Control need not be
+          exclusive, lawful, conscious, voluntary, continuously exercised or accompanied
+          by ownership, load bearing, movement or a prior transfer.
+        excludes:
+        - Ownership, permission or entitlement without practical control
+        - Proximity, touch, load support or physical influence alone
+        - Hypothetical ability to seize an object not already under practical control
+        - Legal guardianship, information access or ownership of an abstract asset
+        - Receipt or transfer inferred from a custody state alone
+      binding_constraints:
+      - relation: distinct_arguments
+        slot_paths:
+        - - s-source
+        - - s-target
+  - candidate_id: unmarked_coupling
+    direction: Heating or illumination can influence an object without custody.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: practical control absent'
+  - candidate_id: load_support_substitution
+    direction: A table may bear the load without controlling access; custody may use
+      a controlled enclosure.
+    scores:
+      atomicity: 7
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 43
+    decision: 'rejected: wrong relation'
+  recommendation: approve explicit_practical_custody
+  confidence: high

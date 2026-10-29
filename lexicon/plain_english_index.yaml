@@ -12,9 +12,27 @@ policy:
     authorize automatic semantic resolution.
 counts:
   atoms: 324
-  compounds: 39
-  entries: 363
+  compounds: 40
+  entries: 364
 entries:
+- target_id: CMP:0aca609416668978e1527dac
+  target_type: compound
+  canonical_title: practical physical custody
+  plain_label: practical physical custody
+  plain_explanation: An everyday discovery label for the approved compound “practical
+    physical custody”; the compound graph controls its exact meaning.
+  ordinary_terms:
+  - practical
+  - physical
+  - custody
+  - practical physical custody
+  match_phrases:
+  - practical physical custody
+  example_searches:
+  - practical physical custody
+  mapping_status: discovery_only_noncanonical
+  authority_note: These words help people find the compound. They do not replace or
+    broaden its canonical graph.
 - target_id: CMP:111b772027accab2054f0415
   target_type: compound
   canonical_title: physical tool
