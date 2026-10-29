@@ -26,6 +26,7 @@ for(const side of ['open','close']){
  COMPARISONS.slice(1).forEach((name,i)=>frame(`measure_compare_${name}_${side}`,[0,sign*17,i+1,0]));
  COMPARISONS.forEach((name,i)=>frame(`property_mass_${name}_${side}`,[0,sign*18,1,i,0]));
 }
+ROLE_ORDER.forEach((role,i)=>frame(`role_reference_${role}`,[0,-20,...i.toString(3).padStart(3,'0').split('').map(d=>[0,1,-1][Number(d)]),0]));
 frame('confidence_open',[0,9,0,9]);frame('confidence_close',[0,-9,0,-9]);
 frame('decimal_point',[0,10,-1,0]);frame('coord_member',[0,11,0,11]);frame('conditional_then',[0,16,0,16]);frame('measurement_negative',[0,-13,0,-13]);
 for(let digit=0;digit<10;digit++)frame(`digit_${digit}`,[0,10,Math.floor(digit/4),digit%4,0]);

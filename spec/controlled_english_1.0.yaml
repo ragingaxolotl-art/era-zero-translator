@@ -29,14 +29,17 @@ grammar:
   terminal: Every input ends in exactly one period.
   speech_act: ASSERT | QUESTION | COMMAND | DEFINE | POSSIBILITY
   lexical: '"<controlled label>" [0|1|2]'
-  simple: ACT [NOT] [MODAL mode] [ASPECT aspect] LEXICAL {ROLE role LEXICAL} [TIME
-    relation SPEECH_TIME] [MEASURE decimal unit] [QUANTIFIER kind [decimal]] .
+  simple: ACT [NOT] [MODAL mode] [ASPECT aspect] LEXICAL {ROLE role (LEXICAL | REF
+    earlier_role)} [TIME relation SPEECH_TIME] [MEASURE decimal unit] [QUANTIFIER
+    kind [decimal]] .
   sequence: ACT SEQUENCE LEXICAL THEN LEXICAL {THEN LEXICAL} .
   parallel: ACT PARALLEL LEXICAL AND LEXICAL {AND LEXICAL} .
   repetition: ACT REPEAT positive_integer TIMES LEXICAL .
   conditional: ACT IF LEXICAL THEN LEXICAL .
   ordering_rule: Keywords and modifiers occur only in the documented order; reordering
     is an error, not an alternative parse.
+  role_reference: REF reuses the exact argument occurrence of an earlier role in the
+    same clause; it does not infer identity from equal lexical labels.
 inventories:
   speech_acts:
     ASSERT: assertion
@@ -147,6 +150,7 @@ errors:
 - invalid_conditional
 - unexpected_token
 - ambiguous_compound_binding
+- unknown_role_reference
 pipeline:
 - controlled input
 - deterministic compiler

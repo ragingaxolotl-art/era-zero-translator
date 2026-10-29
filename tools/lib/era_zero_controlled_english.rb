@@ -158,6 +158,7 @@ module EraZeroControlledEnglish
       next_node = 3
       next_edge = 1
       roles = Set.new
+      role_arguments = {}
       time_spec = nil
       measurement = nil
       quantifier = nil
@@ -168,9 +169,20 @@ module EraZeroControlledEnglish
           role = match[1]
           raise CompileError.new("invalid_role", "Unknown controlled role.", { "role" => role, "allowed" => ROLES }) unless ROLES.include?(role)
           raise CompileError.new("duplicate_role", "A singular controlled role may occur only once.", { "role" => role }) if roles.include?(role)
-          argument, tail = parse_lexical_prefix(rest[match.end(0)..])
-          id = node_id(next_node); next_node += 1
-          nodes << lexical_node(id, argument)
+          argument_text = rest[match.end(0)..]
+          if (reference = /\AREF\s+(\S+)(?=\s|\z)/.match(argument_text))
+            referenced_role = reference[1]
+            id = role_arguments[referenced_role]
+            unless id
+              raise CompileError.new("unknown_role_reference", "REF must name an earlier role in this clause.", { "role" => referenced_role })
+            end
+            tail = argument_text[reference.end(0)..]
+          else
+            argument, tail = parse_lexical_prefix(argument_text)
+            id = node_id(next_node); next_node += 1
+            nodes << lexical_node(id, argument)
+          end
+          role_arguments[role] = id
           edges << { "edge_id" => edge_id(next_edge), "type" => "fills_role", "from" => id, "to" => "n002", "role" => role }; next_edge += 1
           roles << role
           rest = tail

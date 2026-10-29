@@ -84,9 +84,15 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
         result.push(grammarMarker(formal,id,`coord_${node.operator}_close`));
       }
     } else if (['lexical_occurrence','phonemic_reference','deictic_reference'].includes(node.kind)) {
-      result = edges.filter(edge => ['fills_role','qualifies'].includes(edge.type))
-        .sort((a,b) => a.edge_id < b.edge_id ? -1 : a.edge_id > b.edge_id ? 1 : 0)
-        .flatMap(edge => {const phrase=walk(edge.from);return edge.type==='fills_role'?[grammarMarker(formal,edge.edge_id,`role_${edge.role}_open`),...phrase,grammarMarker(formal,edge.edge_id,`role_${edge.role}_close`)]:phrase;}).concat(events.filter(event => event.occurrence_id === id));
+      const argumentsInOrder=edges.filter(edge=>['fills_role','qualifies'].includes(edge.type)).sort((a,b)=>a.edge_id<b.edge_id?-1:a.edge_id>b.edge_id?1:0),seenArguments=new Map();
+      result=argumentsInOrder.flatMap(edge=>{
+        if(edge.type!=='fills_role')return walk(edge.from);
+        const previousRole=seenArguments.get(edge.from);
+        if(previousRole&&argumentsInOrder.filter(e=>e.type==='fills_role'&&e.role===previousRole).length!==1)throw new Error('Ambiguous musical role reference.');
+        const phrase=previousRole?[grammarMarker(formal,edge.edge_id,`role_reference_${previousRole}`)]:walk(edge.from);
+        if(!previousRole)seenArguments.set(edge.from,edge.role);
+        return [grammarMarker(formal,edge.edge_id,`role_${edge.role}_open`),...phrase,grammarMarker(formal,edge.edge_id,`role_${edge.role}_close`)];
+      }).concat(events.filter(event=>event.occurrence_id===id));
     } else throw new Error(`Unsupported node in repetition scope: ${node.kind}.`);
     active.delete(id);
     if (result.length > maxEvents) throw new Error(`Repetition exceeds event limit ${maxEvents}.`);
@@ -161,6 +167,8 @@ function grammarMarker(formal,scopeId,marker){
     const digits=code.toString(3).padStart(3,'0').split('').map(trit=>[0,1,-1][Number(trit)]);
     relative=[0,role[2]==='open'?-15:15,...digits,0];
   }
+  const reference=marker.match(/^role_reference_(.+)$/);
+  if(reference){const code=ROLE_ORDER.indexOf(reference[1]);if(code<0)throw new Error('Unsupported musical role reference.');relative=[0,-20,...code.toString(3).padStart(3,'0').split('').map(d=>[0,1,-1][Number(d)]),0]}
   const conditional=marker.match(/^conditional_(open|satisfied|unsatisfied|counterfactual)_(open|close)$/);
   if(conditional)relative=[0,conditional[2]==='open'?-16:16,CONDITION_STATUSES.indexOf(conditional[1]),0];
   if(marker==='conditional_then')relative=[0,16,0,16];

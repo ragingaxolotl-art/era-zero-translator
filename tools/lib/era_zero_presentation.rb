@@ -199,9 +199,16 @@ module EraZeroPresentation
                  end
                when "lexical_occurrence", "phonemic_reference", "deictic_reference"
                  arguments = edges.select { |edge| %w[fills_role qualifies].include?(edge["type"]) }
+                 seen_arguments = {}
                  arguments.sort_by { |edge| edge.fetch("edge_id") }.flat_map do |edge|
-                   phrase = walk.call(edge.fetch("from"))
-                   edge["type"] == "fills_role" ? [grammar_marker(formal, edge.fetch("edge_id"), "role_#{edge['role']}_open")] + phrase + [grammar_marker(formal, edge.fetch("edge_id"), "role_#{edge['role']}_close")] : phrase
+                   next walk.call(edge.fetch("from")) unless edge['type']=='fills_role'
+                   previous_role=seen_arguments[edge.fetch('from')]
+                   if previous_role && arguments.count { |e| e['type']=='fills_role' && e['role']==previous_role }!=1
+                     raise PresentationError, 'ambiguous musical role reference'
+                   end
+                   phrase=previous_role ? [grammar_marker(formal,edge.fetch('edge_id'),"role_reference_#{previous_role}")] : walk.call(edge.fetch('from'))
+                   seen_arguments[edge.fetch('from')] ||= edge.fetch('role')
+                   [grammar_marker(formal, edge.fetch("edge_id"), "role_#{edge['role']}_open")] + phrase + [grammar_marker(formal, edge.fetch("edge_id"), "role_#{edge['role']}_close")]
                  end + by_occurrence.fetch(id, [])
                else
                  raise PresentationError, "unsupported node in repetition scope: #{node['kind']}"
@@ -305,6 +312,12 @@ module EraZeroPresentation
       raise PresentationError, "unsupported musical role" unless code
       digits = code.to_s(3).rjust(3, '0').chars.map { |trit| [0, 1, -1][trit.to_i] }
       relative = [0, role[2] == "open" ? -15 : 15] + digits + [0]
+    end
+    reference = marker.match(/\Arole_reference_(.+)\z/)
+    if reference
+      code=ROLE_ORDER.index(reference[1])
+      raise PresentationError,'unsupported musical role reference' unless code
+      relative=[0,-20]+code.to_s(3).rjust(3,'0').chars.map{|d|[0,1,-1][d.to_i]}+[0]
     end
     conditional = marker.match(/\Aconditional_(open|satisfied|unsatisfied|counterfactual)_(open|close)\z/)
     relative = [0, conditional[2] == "open" ? -16 : 16, CONDITION_STATUSES.index(conditional[1]), 0] if conditional
