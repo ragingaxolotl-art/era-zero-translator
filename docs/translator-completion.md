@@ -72,19 +72,26 @@ and do not create new LIF/STR-like families merely to fill the address grid.
 
 ### Next dependency milestone
 
+The [simple-present carrying choice](../reviews/carrying_viewpoint_choice.md) now
+allows “carries” after an explicit viewpoint selection, including simultaneous
+selection of a heavy/light noun's mass standard. The two choices are independent;
+the chosen ongoing/habitual meanings equal their explicit paraphrases. Destination
+culmination with “to Ada” and the other original acceptance variants remain open.
+
 The [carrying aspect implementation](../reviews/carrying_aspect.md) now distinguishes
 ongoing carrying, a bounded past carrying episode, and explicit habitual carrying.
 Past/habitual questions, negation scope and existing noun restrictions compose
-with the independent 0/1/2 runtime ending. Bare “carries” and culmination with “to”
-remain unresolved; this does not close the original carrying milestone.
+with the independent 0/1/2 runtime ending. Bare “carries” now uses the explicit choice above; culmination with “to”
+remains unresolved. This does not close the original carrying milestone.
 
 The [nominal mass restriction implementation](../reviews/nominal_mass_properties.md)
 now composes one heavy/light definite noun with a user-selected standard inside
 supported constructions, including nested carrying. The property stays attached
 to its noun in the IR and audible framing, independently of action runtime 0/1/2.
 Tests cover 36 sentence variants and a bounded MIDI-only property inverse.
-This advances the property portion of gate 4; simple-present/aspect and the
-meaning of “to Ada” still prevent the exact mandatory phrase from passing.
+This advances the property portion of gate 4. Simple-present viewpoint now has
+an explicit choice; the meaning of “to Ada” still prevents the exact mandatory
+phrase from passing.
 
 Finish the mandatory carrying/property vertical slice before counting further
 vocabulary growth as completion: reuse the reviewed carrying and mass foundations,

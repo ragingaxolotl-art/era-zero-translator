@@ -23,7 +23,7 @@ for(const [i,result] of results.entries()){assert.deepEqual(result.formal,refere
 assert.equal(new Set(results.map(r=>Buffer.from(midiFromFormal(r.formal)).toString('base64'))).size,results.length);
 const support=await composeNamedSentence('Ada is physically supporting the box [0].',template);
 assert.notDeepEqual(midiFromFormal(support.formal),midiFromFormal(results[0].formal));
-for(const phrase of ['Ada carries the box.','Ada is pushing the box.','Ada is carrying Ada.','Ada is carrying responsibility.','Exactly two shelves are carrying the box.'])assert.equal(parseNamedSentence(phrase),null);
+for(const phrase of ['Ada is pushing the box.','Ada is carrying Ada.','Ada is carrying responsibility.','Exactly two shelves are carrying the box.'])assert.equal(parseNamedSentence(phrase),null);
 const badInputs=[];
 for(const mutate of [p=>p.compound_bindings[2].argument_id='a',p=>p.compound_bindings[0].argument_id='b']){
  const bad=structuredClone(results[0].semantic_ir);mutate(bad.nodes.find(n=>n.target_id===id));badInputs.push(bad);await assert.rejects(()=>renderLexicalOccurrences(bad,authority));
@@ -50,4 +50,6 @@ const decoded=decodeStrictMusicMidi(midiFromFormal(audit.formal),authority.atoms
 assert.equal(decoded.tokens.find(t=>t.root_id==='MOV:121').runtime_state,2);
 assert(decoded.tokens.some(t=>t.root_id==='MAT:010'&&t.runtime_state===0));
 assert(decoded.tokens.some(t=>t.root_id==='MAT:010'&&t.runtime_state===1));
+assert.equal(parseNamedSentence('Ada carries the box.').requiredViewpoint,true);
+await assert.rejects(()=>composeNamedSentence('Ada carries the box.',template),e=>e.code==='carrying_viewpoint_required');
 console.log(`Physical carrying: ${results.length} ordinary state/role/scope/clause cases match Ruby formal and MIDI; conventions 3/4 and runtime decode independently. Shared load, distinct carrier, exact dependency and unchanged prior compounds verified.`);

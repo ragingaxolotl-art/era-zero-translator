@@ -37,7 +37,9 @@ aspect is audible even without participant roles. Invalid aspect fields and aspe
 over a noun reference are rejected. General semantic inverse and listening review
 remain separate completion requirements.
 
-Bare “carries” is still unresolved: it may be habitual or a single narrated event.
+Bare “carries” requires a choice: it may be habitual, ongoing or a narrated episode.
+The later [viewpoint selection flow](carrying_viewpoint_choice.md) supplies that choice
+without changing the aspect encoding or choosing automatically.
 “Carried … to Ada” additionally needs destination culmination semantics. Perfect,
 prospective, scheduled repetition and broad ordinary tense coverage remain open.
 These requirements still belong to the mandatory carrying milestone.

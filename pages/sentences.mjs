@@ -103,7 +103,8 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     const pastVerbs={'care for':'cared for',restore:'restored',repair:'repaired',awaken:'awakened',damage:'damaged','physically repair':'physically repaired'};
     const carryDid=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?(habitually )?carry (.+)\\?$`));
     const carryHabit=String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?habitually carry (.+)\\?$`));
-    const statement=carryDid?`${carryDid[1]} ${carryDid[2]?'did not '+(carryDid[3]||'')+'carry':(carryDid[3]||'')+'carried'} ${carryDid[4]}.`:carryHabit?`${carryHabit[1]} ${carryHabit[2]?'does not habitually carry':'habitually carries'} ${carryHabit[3]}.`:question?`${question[1]} is ${question[2]}.`:careQuestion?`${careQuestion[1]} ${careQuestion[2]?'does not care for':'cares for'} ${careQuestion[3]}.`:pastQuestion?`${pastQuestion[1]} was ${pastQuestion[2]}.`:didQuestion?`${didQuestion[1]} ${didQuestion[2]?'did not '+didQuestion[3]:pastVerbs[didQuestion[3]]} ${didQuestion[4]}${didQuestion[5]||''}.`:null;
+    const carrySimple=String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?carry (.+)\\?$`));
+    const statement=carrySimple?`${carrySimple[1]} ${carrySimple[2]?'does not carry':'carries'} ${carrySimple[3]}.`:carryDid?`${carryDid[1]} ${carryDid[2]?'did not '+(carryDid[3]||'')+'carry':(carryDid[3]||'')+'carried'} ${carryDid[4]}.`:carryHabit?`${carryHabit[1]} ${carryHabit[2]?'does not habitually carry':'habitually carries'} ${carryHabit[3]}.`:question?`${question[1]} is ${question[2]}.`:careQuestion?`${careQuestion[1]} ${careQuestion[2]?'does not care for':'cares for'} ${careQuestion[3]}.`:pastQuestion?`${pastQuestion[1]} was ${pastQuestion[2]}.`:didQuestion?`${didQuestion[1]} ${didQuestion[2]?'did not '+didQuestion[3]:pastVerbs[didQuestion[3]]} ${didQuestion[4]}${didQuestion[5]||''}.`:null;
     if(statement){
       const inner=parseNamedSentence(statement,depth+1);
       if(!inner)return null;
@@ -144,6 +145,12 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     const inner=parseNamedSentence(clause,depth+1);
     if(!inner||inner.calendarDay!==undefined||inner.scopes?.length||inner.speechAct||(day==='tomorrow'&&['thermal_standard','mass_standard'].includes(inner.requiredInterpretation))||(day==='yesterday'&&inner.speechTime!=='before')||(day==='tomorrow'&&inner.speechTime!==undefined))return null;
     return {...inner,...(day==='yesterday'?{speechTime:undefined}:{}),...(day==='tomorrow'?{requiredInterpretation:'future_assertion',semanticNote:[inner.semanticNote,'Interprets will as a future assertion; promise, intention, and willingness are not inferred.'].filter(Boolean).join(' ')}:{}),calendarDay:{yesterday:'-1',today:'0',tomorrow:'1'}[day],construction:`calendar_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
+  const simpleCarrying=String(input).trim().match(new RegExp(`^${participant} (does not carry|do not carry|carries|carry) (.+)$`));
+  if(simpleCarrying){
+    const inner=parseNamedSentence(`${simpleCarrying[1]} is ${simpleCarrying[2].includes('not')?'not ':''}carrying ${simpleCarrying[3]}`,depth+1);
+    if(!inner||inner.key!=='ongoing_physical_carrying'||inner.requiredViewpoint||inner.requiredInterpretation||inner.speechAct||inner.scopes?.length||inner.calendarDay!==undefined||inner.speechTime!==undefined)return null;
+    return {...inner,aspect:undefined,requiredViewpoint:true,construction:`simple_present_${inner.construction}`,explicitInterpretation:String(input).trim()};
   }
   // Viewpoint is separate from lexical phase, tense and runtime status. A
   // bounded carrying episode does not imply reaching a destination.
@@ -377,9 +384,18 @@ async function composeClauseGroup(input,clauses,operator,loadTemplate) {
   return {source_input:input,target_id:operator,semantic_note:[...new Set(parts.map(part=>part.semantic_note).filter(Boolean))].join(' ')||null,sense_id:`construction:explicit_${groupId}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,construction:`explicit_${groupId}`,interpretation:(conditional?'If ':'')+parts.map(part=>part.interpretation.replace(/\.$/,'')).join(conditional||operator==='sequence'?', then ':' and ')+'.'};
 }
 
-export async function composeNamedSentence(input,template,{interpretation,standard}={}) {
+export async function composeNamedSentence(input,template,{interpretation,standard,viewpoint}={}) {
   const parsed=parseNamedSentence(input);
   if(!parsed)throw new Error('The complete sentence does not match this construction.');
+  if(parsed.requiredViewpoint){
+    if(!['bounded','ongoing','habitual'].includes(viewpoint)){
+      const error=new Error('Choose whether carrying describes one narrated episode, an unfolding action, or a recurring practice.');
+      error.code='carrying_viewpoint_required';throw error;
+    }
+    parsed.aspect=viewpoint;
+    const note={bounded:'Interprets simple-present carrying as one bounded narrated episode in the contextual reference interval, without asserting arrival, delivery or future time.',ongoing:'Interprets simple-present carrying as an unfolding action in the contextual reference interval, without asserting its endpoint.',habitual:'Interprets simple-present carrying as a recurring practice in the contextual reference interval, without asserting a particular occurrence, frequency or schedule.'}[viewpoint];
+    parsed.semanticNote=[parsed.semanticNote,note].filter(Boolean).join(' ');
+  }else if(viewpoint!==undefined)throw new Error('This sentence does not require a carrying viewpoint choice.');
   if(interpretation!==undefined&&interpretation!==parsed.requiredInterpretation)throw new Error('This interpretation is not available for this sentence.');
   if(parsed.requiredInterpretation&&interpretation!==parsed.requiredInterpretation){
     const thermal=['thermal_standard','mass_standard'].includes(parsed.requiredInterpretation);
@@ -495,6 +511,6 @@ export async function composeNamedSentence(input,template,{interpretation,standa
   const formalDigest=await canonicalDigest({semantic_digest:digest,relative_plan:relativePlan});
   const formal={format:'EZF-1',renderer_version:'1.0.0',formal_id:`EZF:${formalDigest.slice(0,24)}`,formal_digest:formalDigest,semantic_digest:digest,semantic_ir:ir,performance,
     literal_gloss:graphRendered?lexicalGloss(events,template.authority):`${names.map((name,index)=>deicticRoles[index]?`${participantIds[index]}:reference(${deicticRoles[index]})`:`${nominal[index]?`${participantIds[index]}:reference(${nominal[index].mode}) | `:''}${participantIds[index]}:name(${name.normalized_label})`).join(' | ')} | ${source.literal_gloss.replaceAll(`${predicates[0].node_id}:`,'p:').replaceAll(`${predicates[0].node_id}.`,'p.').replace(/\[1\](?= \| |$)/g,`[${parsed.runtimeState??1}]`)}`};
-  return {source_input:input,...(interpretation?{selected_interpretation:interpretation}:{}),...(selectedStandard?{selected_standard:selectedStandard}:{}),target_id:parsed.predicate,sense_id:`construction:${parsed.construction}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,
+  return {source_input:input,...(viewpoint?{selected_viewpoint:viewpoint}:{}),...(interpretation?{selected_interpretation:interpretation}:{}),...(selectedStandard?{selected_standard:selectedStandard}:{}),target_id:parsed.predicate,sense_id:`construction:${parsed.construction}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,
     semantic_note:parsed.semanticNote?(parsed.semanticNote+(parsed.runtimeState===2&&parsed.key==='approved_poetic_love'?' The num ending carries the approved never-finished-becoming reading.':'')):null,construction:parsed.construction,interpretation:parsed.explicitInterpretation||((deicticRoles.some(Boolean)||parsed.semanticNote)?String(input).trim():null)||`${parsed.actorText} ${parsed.negated?(parsed.key==='active_care'?'does not actively care for':parsed.wording.replace('is ','is not ')):parsed.wording}${parsed.targetText?' '+parsed.targetText:''}.`};
 }
