@@ -5,7 +5,7 @@ require "digest"
 require_relative "era_zero_renderer"
 
 module EraZeroPresentation
-  MEASUREMENT_UNITS = %w[1 second minute hour day meter kilometer gram kilogram degree radian bit byte].freeze
+  MEASUREMENT_UNITS = %w[1 second minute hour day meter kilometer gram kilogram degree radian bit byte kelvin].freeze
   QUANTIFIERS = %w[exact at_least at_most all some none].freeze
   ROLE_ORDER = %w[actor source cause experiencer bearer predicate target result destination instrument material content recipient location environment condition persistent_condition time manner quantity comparison_standard beneficiary].freeze
   CONDITION_STATUSES = %w[open satisfied unsatisfied counterfactual].freeze

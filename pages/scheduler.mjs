@@ -3,7 +3,7 @@ const MEASURE_COMPARISONS=['greater_than','less_than','at_least','at_most','not_
 const CONDITION_STATUSES=['open','satisfied','unsatisfied','counterfactual'];
 import {ROLE_ORDER} from './roles.mjs';
 const QUANTIFIERS=['exact','at_least','at_most','all','some','none'];
-const MEASUREMENT_UNITS=['1','second','minute','hour','day','meter','kilometer','gram','kilogram','degree','radian','bit','byte'];
+const MEASUREMENT_UNITS=['1','second','minute','hour','day','meter','kilometer','gram','kilogram','degree','radian','bit','byte','kelvin'];
 const MODAL_MODES = ['possible','necessary','permitted','obligated','intended','predicted','counterfactual'];
 // Counted-scope scheduling shared by browser sound, notation and MIDI export.
 export function scheduledLexicalEvents(formal, maxEvents = 100000) {

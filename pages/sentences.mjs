@@ -1,3 +1,4 @@
+import {temperaturePointKelvin} from './temperature.mjs';
 import {renderLexicalOccurrences,lexicalGloss} from './bound_compounds.mjs';
 import {NOMINAL_PATTERN,parseNominal} from './nominals.mjs';
 import {registerFor} from './roles.mjs';
@@ -171,6 +172,16 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
       participants:[{label:label(transfer[3]),text:transfer[3],role:'source'},{label:label(transfer[1]),text:transfer[1],role:'content'},{label:label(transfer[4]),text:transfer[4],role:'target'}],
       explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
+  const temperature=String(input).trim().match(new RegExp(`^${participant} (has|have) a (?:thermodynamic )?temperature (?:of )?(?:(more than|greater than|less than|at least|at most|not exactly|exactly) )?(-?[0-9]+(?:\\.[0-9]+)?) (kelvins?|degrees? Celsius)[.]?$`));
+  if(temperature){
+    if(parseNominal(temperature[1])?.quantifier)return null;
+    if(['I','you','You'].includes(temperature[1])?(temperature[2]!=='have'):(temperature[2]!=='has'))return null;
+    const magnitude=temperaturePointKelvin(temperature[4],temperature[5].includes('Celsius')?'celsius':'kelvin');
+    if(magnitude===null)return null;
+    return {actor:temperature[1].replaceAll('"',''),actorText:temperature[1],role:'bearer',predicate:temperature[1]==='I'?'MAT:000':'MAT:010',key:'temperature_measurement',construction:'temperature_measurement',
+      measurement:{magnitude,unit:'kelvin',...((temperature[3]&&temperature[3]!=='exactly')?{comparison:({'more than':'greater_than','greater than':'greater_than','less than':'less_than','at least':'at_least','at most':'at_most','not exactly':'not_equal'})[temperature[3]]}:{})},
+      semanticNote:'This states the material bearer’s thermodynamic temperature, normalized exactly to kelvins. It is a temperature point, not a temperature difference, heat content, felt warmth, or a contextual hot/cold judgment.'};
+  }
   const massPair=String(input).trim().match(new RegExp(`^${participant} (?:has|have) (more mass than|greater mass than|less mass than|the same mass as|at least as much mass as|at most as much mass as|a different mass from) ${participant}[.]?$`));
   if(massPair){
     if([massPair[1],massPair[3]].some(text=>parseNominal(text)?.quantifier))return null;
@@ -216,7 +227,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return (/^[Ii]f\b/.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|carry|carrying|support|supporting)\b/i.test(String(input))) && !parseNamedSentence(input);
+  return (/^[Ii]f\b/.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|carry|carrying|support|supporting|temperature)\b/i.test(String(input))) && !parseNamedSentence(input);
 }
 
 // A complete antecedent and a comma establish conditional scope. Without

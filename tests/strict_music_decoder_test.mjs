@@ -44,7 +44,7 @@ puts JSON.generate(units.product([0,1,2]).map do |unit,state|
  {unit:unit,state:state,formal:EraZeroRenderer.render(ir)}
 end)
 `],{cwd:root,encoding:'utf8',maxBuffer:8_000_000}));
-const unitOrder=['1','second','minute','hour','day','meter','kilometer','gram','kilogram','degree','radian','bit','byte'];
+const unitOrder=['1','second','minute','hour','day','meter','kilometer','gram','kilogram','degree','radian','bit','byte','kelvin'];
 assert.deepEqual([...new Set(unitSamples.map(s=>s.unit))],unitOrder);
 for(const sample of unitSamples){
  let decoded;assert.doesNotThrow(()=>{decoded=check(sample.formal)},`${sample.unit} runtime ${sample.state}`);
@@ -53,7 +53,7 @@ for(const sample of unitSamples){
 }
 const unitMidi=midiFromFormal(unitSamples[0].formal),unitNotes=notesFromMidi(unitMidi);
 const unitToken=decodeStrictMusicMidi(unitMidi,authority.atoms).tokens.find(t=>t.marker==='measurement_unit_1');
-for(const invalidCode of [0,14]){
+for(const invalidCode of [0,unitOrder.length+1]){
  const notes=structuredClone(unitNotes.notes);
  const codeNote=notes.find(n=>n.start_tick===unitToken.start_tick+unitNotes.division/2);
  assert(codeNote);codeNote.midi=60+invalidCode;

@@ -17,7 +17,7 @@ module EraZeroControlledEnglish
   ASPECTS = %w[bounded ongoing habitual iterative perfect prospective].freeze
   TIME_RELATIONS = %w[before at after during starts ends overlaps].freeze
   ROLES = %w[actor source cause experiencer bearer predicate target result destination instrument material content recipient location environment condition persistent_condition time manner quantity comparison_standard beneficiary].freeze
-  UNITS = %w[1 second minute hour day meter kilometer gram kilogram degree radian bit byte].freeze
+  UNITS = %w[1 second minute hour day meter kilometer gram kilogram degree radian bit byte kelvin].freeze
 
   class CompileError < StandardError
     attr_reader :code, :details

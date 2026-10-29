@@ -767,3 +767,9 @@ Nine affirmative/negative/bound-compound examples preserve tomorrow independentl
 A fresh full run at e78d0f1 passed 67 checks. A subsequent boundary audit found that the independent strict MIDI decoder's unit table started at zero although the encoder uses unit codes 1–13. Correcting the decoder restores byte (13) and rejects unused zero without changing any existing performance. The expanded inverse test passes 5,423 examples, including 39 unit/runtime probes and rejection of invalid codes; this actual targeted rerun is recorded alongside the full baseline results.
 
 The dimensional review now specifies temperature measurement, exact Celsius normalization, comparison and contextual adjective work in that dependency order. This is pending implementation, not evidence that hot/cold or broad adjective translation is finished.
+
+### Explicit temperature points and scalar bounds
+
+The temperature foundation now appends kelvin as unit code 14 without renumbering the existing thirteen units. “The radio has a temperature of 20 degrees Celsius” and “The radio has a temperature of 293.15 kelvins” share the same material-bearer measurement and performance. Signed decimal point values and scalar bounds normalize exactly, without floating-point conversion. Runtime 0/1/2 is independent of temperature magnitude.
+
+Thirty-four sentence contrasts match Ruby/browser formal and MIDI output, including negative Celsius, exact zero, large decimals, bound comparisons, speaker-body reference and modality. The controlled compiler and independent MIDI observer also recognize kelvin. This extends measurement grammar rather than adding roots or compounds. Temperature differences, Fahrenheit, entity comparisons and contextual hot/cold judgments remain unfinished; numerical acceptance is not a physical-feasibility assessment.

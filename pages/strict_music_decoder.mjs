@@ -6,7 +6,7 @@ import {ROLE_ORDER} from './roles.mjs';
 const MODES=['possible','necessary','permitted','obligated','intended','predicted','counterfactual'];
 const QUANTIFIERS=['exact','at_least','at_most','all','some','none'];
 const COMPARISONS=['equal','greater_than','less_than','at_least','at_most','not_equal'];
-const UNITS=['1','second','minute','hour','day','meter','kilometer','gram','kilogram','degree','radian','bit','byte'];
+const UNITS=['1','second','minute','hour','day','meter','kilometer','gram','kilogram','degree','radian','bit','byte','kelvin'];
 const CONDITIONS=['open','satisfied','unsatisfied','counterfactual'];
 const OFFSETS=new Map([[-12,'low'],[0,'middle'],[12,'high'],[-5,'sustained_background']]);
 const equal=(a,b)=>a.length===b.length&&a.every((n,i)=>n===b[i]);
