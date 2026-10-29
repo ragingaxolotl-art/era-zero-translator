@@ -41,6 +41,7 @@ music:
   close: '[0, 19, the same eight trit pitches, 0]'
   note_duration_beats: 0.25
   boundary_after_beats: 0.5
+  attachment_exception: The closing frame of a compound that qualifies a following unit has zero additional boundary beats, preserving modifier attachment.
   nesting: Open outer to inner, close inner to outer; close before leaving the referenced compound scope
   runtime: Markers have no runtime tail; preserve the existing head-only compound ending and argument endings
   style: Reuses the ternary note vocabulary; no new atomic family or root address

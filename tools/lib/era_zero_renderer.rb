@@ -184,19 +184,40 @@ module EraZeroRenderer
         raise RenderError, "nested compound slots require explicit scoped binding" if expanded.fetch("nodes").any? { |item| item["kind"] == "slot" }
         components = expander.ordered_roots(expanded)
       else
-        components = compound_root_order(compound, compounds: compounds)
+        components = compound_root_order(compound, compounds: compounds).map do |component|
+          compound.fetch("edges").any? { |edge| edge["type"] == "qualifies" && edge["from"] == component["node_id"] } ? component.merge("boundary_after_beats" => 0) : component
+        end
       end
     end
     conventional_scopes = expanded ? expanded.fetch("scopes").select { |scope| scope.key?("conventional_meaning") } : []
-    previous_scopes, result = [], []
+    previous_scopes, result, previous_contexts, previous_boundary = [], [], {}, nil
     components.each do |component|
       path = component["path"] || [component.fetch("node_id")]
+      chain_for = lambda do |paths|
+        paths.map do |slot_path|
+          binding = bindings.fetch(slot_path)
+          { "compound_occurrence_id" => id, "slot_path" => slot_path, "argument_id" => binding.fetch("argument_id"), "role" => binding.fetch("role"), "predicate_path" => binding.fetch("predicate_path") }
+        end
+      end
+      qualified_chain = chain_for.call(component.fetch("qualified_slot_paths", []))
+      contexts = component.fetch("convention_slot_contexts", []).to_h { |context| [context.fetch("scope_path"), chain_for.call(context.fetch("qualified_slot_paths"))] }
       scopes = conventional_scopes.select { |scope| path.take(scope.fetch("path").length) == scope.fetch("path") }.sort_by { |scope| scope.fetch("path").length }
       shared = 0
       shared += 1 while shared < previous_scopes.length && shared < scopes.length && previous_scopes[shared]["path"] == scopes[shared]["path"]
-      previous_scopes.drop(shared).reverse_each { |scope| result << EraZeroCompoundConventions.event(scope.fetch("conventional_meaning"), "close", id, anchor_midi, scope.fetch("path")) }
-      scopes.drop(shared).each { |scope| result << EraZeroCompoundConventions.event(scope.fetch("conventional_meaning"), "open", id, anchor_midi, scope.fetch("path")) }
-      previous_scopes = scopes
+      previous_scopes.drop(shared).reverse_each do |scope|
+        marker = EraZeroCompoundConventions.event(scope.fetch("conventional_meaning"), "close", id, anchor_midi, scope.fetch("path"))
+        chain = previous_contexts.fetch(scope.fetch("path"), [])
+        marker["binding_chain"] = chain unless chain.empty?
+        result << marker
+      end
+      result.last["boundary_after_beats"] = previous_boundary if !previous_boundary.nil? && !result.empty?
+      scopes.drop(shared).each do |scope|
+        marker = EraZeroCompoundConventions.event(scope.fetch("conventional_meaning"), "open", id, anchor_midi, scope.fetch("path"))
+        chain = contexts.fetch(scope.fetch("path"), [])
+        marker["binding_chain"] = chain unless chain.empty?
+        result << marker
+      end
+      previous_scopes, previous_contexts, previous_boundary = scopes, contexts, component["boundary_after_beats"]
       payload = if component["kind"] == "slot"
         binding = bindings.fetch(component.fetch("path"))
         argument = arguments.fetch(binding.fetch("argument_id"))
@@ -217,9 +238,16 @@ module EraZeroRenderer
           component_node_id: component["path"] ? JSON.generate(component["path"]) : component["node_id"],
           component_role: is_head ? "head" : component["component_role"] || "qualifier")]
       end
+      payload = payload.map { |event| event.merge("binding_chain" => qualified_chain + event.fetch("binding_chain", [])) } unless qualified_chain.empty?
       result.concat(payload)
     end
-    previous_scopes.reverse_each { |scope| result << EraZeroCompoundConventions.event(scope.fetch("conventional_meaning"), "close", id, anchor_midi, scope.fetch("path")) }
+    previous_scopes.reverse_each do |scope|
+      marker = EraZeroCompoundConventions.event(scope.fetch("conventional_meaning"), "close", id, anchor_midi, scope.fetch("path"))
+      chain = previous_contexts.fetch(scope.fetch("path"), [])
+      marker["binding_chain"] = chain unless chain.empty?
+      result << marker
+    end
+    result.last["boundary_after_beats"] = previous_boundary unless previous_boundary.nil?
     result
   rescue EraZeroCompoundExpansion::ExpansionError, EraZeroNames::NameError, KeyError => error
     raise RenderError, error.message

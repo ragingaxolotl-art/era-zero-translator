@@ -25,11 +25,15 @@ renderer_integration:
   runtime: Each argument keeps its runtime; only the containing compound head gets its external ending
   duplicate_handling: Argument-only nodes are not also emitted as standalone occurrences
   recursion: Cycles and more than 64 participant-binding levels raise a render error
+qualified_participants:
+  rules:
+  - A qualifier subtree attached to a slot inherits that slot's exact participant binding chain.
+  - Convention frames inside the qualifier stay inside the participant role frame; a convention around the predicate remains outside it.
+  - Modifier-to-argument attachment has zero additional boundary beats, including after a nested qualifier's closing frame.
+  migration: migrations/compound_attachment_rendering_2026_10_28.yaml
 remaining:
-  - Integrate occurrence bindings into the general semantic IR validator
-  - Interpret ordinary English participant names into declared typed referents
-  - Complete boundary timing for bound participants and modifiers
-  - Connect browser sentence composition and sound output
+  - Interpret ordinary English directly into general explicitly bound compound templates in the browser.
+  - Complete independent sentence decoding and broader scope/ambiguity handling.
 phonemic_reference:
   fields: node_id, kind, referent_id, value_type, name
   value_type: entity

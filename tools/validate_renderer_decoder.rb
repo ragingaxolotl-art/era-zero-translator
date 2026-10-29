@@ -25,6 +25,10 @@ transposition_ok = true
 ir_cases.each do |item|
   rendered = [48, 60, 72].map { |anchor| EraZeroRenderer.render(item.fetch("ir"), anchor_midi: anchor) }
   round_trip_ok &&= rendered.all? { |formal| EraZeroRenderer.decode(formal) == item.fetch("ir") }
+  round_trip_ok &&= [48, 60, 72].zip(rendered).all? do |anchor, formal|
+    snapshot = tests.fetch("round_trips").find { |row| row["source_case"] == item["case_id"] && row["anchor_midi"] == anchor }
+    snapshot && snapshot["formal_id"] == formal["formal_id"] && snapshot["utterance_id"] == item.fetch("ir")["utterance_id"] && snapshot["lexical_event_count"] == formal.dig("performance", "lexical_events").length
+  end
   transposition_ok &&= rendered.map { |f| f["formal_id"] }.uniq.length == 1
   relative = rendered.map { |f| f.dig("performance", "lexical_events").map { |e| [e["target_id"], e["address_relative_semitones"], e.dig("runtime_tail", "relative_motion_semitones")] } }
   transposition_ok &&= relative.uniq.length == 1

@@ -52,19 +52,30 @@ module EraZeroCompoundExpansion
         end
       end
       result = []
+      scope_contexts = {}
       walk = nil
-      walk = lambda do |path, role|
+      walk = lambda do |path, role, qualified_slots|
+        scope_contexts[path] = qualified_slots if scopes.key?(path)
         incoming = edges.fetch(path, [])
         incoming.sort_by { |edge| [edge.fetch("type"), edge.fetch("role", ""), subtree_hash.call(edge.fetch("from_scope_target"))] }.each do |edge|
-          walk.call(edge.fetch("from_scope_target"), edge["role"] || role)
+          qualifier_slots = qualified_slots
+          if edge["type"] == "qualifies" && nodes[path] && nodes[path]["kind"] == "slot"
+            qualifier_slots = qualified_slots + [path]
+          end
+          before = result.length
+          walk.call(edge.fetch("from_scope_target"), edge["role"] || role, qualifier_slots)
+          result.last["boundary_after_beats"] = 0 if edge["type"] == "qualifies" && result.length > before
         end
         if scopes.key?(path)
           scope = scopes.fetch(path)
           # The original local head can itself be a reference.
           local_head_path = scope.fetch("semantic_head").take(path.length + 1)
-          walk.call(local_head_path, role)
+          walk.call(local_head_path, role, qualified_slots)
         else
           node = nodes.fetch(path)
+          node = node.merge("qualified_slot_paths" => qualified_slots) unless qualified_slots.empty?
+          contexts = scope_contexts.select { |scope, slots| !slots.empty? && path.take(scope.length) == scope }.map { |scope, slots| { "scope_path" => scope, "qualified_slot_paths" => slots } }
+          node = node.merge("convention_slot_contexts" => contexts) unless contexts.empty?
           if node["kind"] == "root"
             result << node.merge("component_role" => role, "external_head" => path == expanded.fetch("semantic_head"))
           elsif node["kind"] == "slot"
@@ -74,7 +85,7 @@ module EraZeroCompoundExpansion
           end
         end
       end
-      walk.call([], nil)
+      walk.call([], nil, [])
       result
     end
 

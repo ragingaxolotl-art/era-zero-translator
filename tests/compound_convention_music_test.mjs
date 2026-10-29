@@ -3,7 +3,7 @@ import {execFileSync} from 'node:child_process';
 import {midiFromFormal,svgFromFormal} from '../pages/engine.mjs';
 import {scheduledLexicalEvents} from '../pages/scheduler.mjs';
 import {notesFromMidi} from '../pages/performance_codec.mjs';
-import {decodeConventionFrame} from '../pages/compound_conventions.mjs';
+import {decodeConventionFrame,conventionFramesFromNotes} from '../pages/compound_conventions.mjs';
 const ruby=String.raw`
 require 'minitest/mock'
 require 'era_zero_renderer'
@@ -47,13 +47,8 @@ for(const {code,state,bound,formal,midi,svg} of cases){
  assert.deepEqual(Buffer.from(midiFromFormal(formal)),Buffer.from(midi,'base64'));
  assert.equal(svgFromFormal(formal),svg);
  // Read MIDI notes without the source IR or formal event labels.
- const {notes,division}=notesFromMidi(Buffer.from(midi,'base64')),segments=[];
- for(const note of notes){if(!segments.length||note.start_tick>segments.at(-1).at(-1).end_tick)segments.push([]);segments.at(-1).push(note);}
- const frames=segments.map(segment=>{
-  const decoded=decodeConventionFrame(segment.map(n=>n.midi-notes[0].midi));
-  if(decoded)assert(segment.every(n=>n.end_tick-n.start_tick===division/4));
-  return decoded;
- }).filter(Boolean);
+ const {notes,division}=notesFromMidi(Buffer.from(midi,'base64'));
+ const frames=conventionFramesFromNotes(notes,division,notes[0].midi);
  assert.deepEqual(frames.map(f=>[f.side,f.sound_code]),[['open',6560],['open',code],['close',code],['close',6560]]);
 }
 assert.equal(new Set(cases.map(c=>c.midi)).size,18);
