@@ -45,7 +45,7 @@ The source audit is a historical snapshot, not a description of the latest draft
 | Original gate | Current evidence | Outstanding requirement; gate remains open |
 |---|---|---|
 | 1. One baseline and accurate status | Pinned baseline, local source manifest, editorial migration and source reconciliation records | Recover the full historical provenance ledger and reconcile external snapshots, with authority/conflicts recorded; do not claim every storage was audited |
-| 2. Meaning survives rendering | Scoped grammar, participant frames, state contrasts, strict MIDI structure observer and bounded mass/temperature comparison inverse | General attachment and discourse recovery, parallel performance, and independent meaning recovery for the claimed supported scope |
+| 2. Meaning survives rendering | Scoped grammar, participant frames, state contrasts, strict MIDI structure observer, bounded property inverses and a destination-carrying semantic projection | General attachment and discourse recovery, parallel performance, and independent meaning recovery for the claimed supported scope |
 | 3. Recursive compounds and reference binding | Versioned expansion, scoped slots, browser plans, nested carrying/support and participant constraints | Broader English compound discovery/reference forms and end-to-end semantic round trips; token recovery alone is insufficient |
 | 4. Complete small vertical slice | The exact mandatory phrase composes after explicit spatial-destination, viewpoint and mass choices; nested same-event carrying, selected tense/negation/question variants | Receipt/delivery interpretation, broader participant frames, commands with “to”, remaining original variants and independent meaning validation |
 | 5. Coherent vocabulary batches | Reviewed bounded compounds and contrasts; preservation of existing roots and poetic love | Missing ordinary senses and all required frames, novel combinations, dictionary discovery and pronunciation evidence for each approved batch |
@@ -71,6 +71,13 @@ both lexical meaning and audible state preservation. Preserve existing melodies
 and do not create new LIF/STR-like families merely to fill the address grid.
 
 ### Next dependency milestone
+
+The [destination-carrying MIDI inverse](../reviews/carrying_musical_inverse.md)
+now recovers the bounded event type, ordered scope, carrier/load/destination,
+nominal mass restriction and independent runtime states from performed MIDI.
+It rejects inconsistent nested references and semantically wrong but balanced
+frames. It does not recover arbitrary sentence IR, English spelling, external
+object identity or general audio; gates 2, 3, 4 and 7 remain open.
 
 The [destination carrying implementation](../reviews/destination_carrying.md) now
 composes the exact phrase “Pip carries the heavy box to Ada” for an explicitly
