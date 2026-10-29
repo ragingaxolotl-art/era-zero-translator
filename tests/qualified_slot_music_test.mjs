@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import {decodeStrictMusicMidi} from '../pages/strict_music_decoder.mjs';
 import {renderLexicalOccurrences,lexicalGloss} from '../pages/bound_compounds.mjs';
 import {execFileSync} from 'node:child_process';
 import {scheduledLexicalEvents} from '../pages/scheduler.mjs';
@@ -55,6 +56,9 @@ for(const {nested,bound,role,state,authority,formal,midi,svg} of cases){
  const count=e=>e.family_opening_absolute_midi.length+e.address_absolute_midi.length+(e.runtime_tail?1:0);
  const preceding=events.slice(0,lastModifier+1).reduce((n,e)=>n+count(e),0);
  assert.equal(notes[preceding-1].end_tick,notes[preceding].start_tick);
+ const inverse=decodeStrictMusicMidi(Buffer.from(midi,'base64'),authority.atoms);
+ assert.deepEqual(inverse.tokens.map(t=>t.marker||t.root_id),keys);
+ assert.deepEqual(inverse.tokens.filter(t=>t.kind==='root').map(t=>t.runtime_state),events.filter(e=>!e.marker).map(e=>e.runtime_tail?.code??null));
  const frames=conventionFramesFromNotes(notes,division,60);
  const badTiming=structuredClone(notes);badTiming[0].end_tick++;
  assert.throws(()=>conventionFramesFromNotes(badTiming,division,60),/timing/);
