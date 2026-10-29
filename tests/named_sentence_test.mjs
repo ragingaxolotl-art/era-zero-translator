@@ -58,7 +58,7 @@ for(const [text,target] of [...cases,...calendarCases,...pastCases]){
   assert.equal(parseNamedSentence(text).predicate,target);
   const file=data.resolution_files[target];
   const document=JSON.parse(fs.readFileSync(new URL(`../pages/${file}`,import.meta.url)));
-  const result=await composeNamedSentence(text,document.variants['assertion:1']);
+  const result=await composeNamedSentence(text,document.variants['assertion:1'],parseNamedSentence(text).requiredInterpretation?{interpretation:'future_assertion'}:{});
   const ruby=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_renderer','-rera_zero_semantic_validation','-e','ir=JSON.parse(STDIN.read);errors=EraZeroSemanticValidation.validate(ir);abort errors.join(",") unless errors.empty?;puts JSON.generate(EraZeroRenderer.render(ir))'],{cwd:new URL('..',import.meta.url),input:JSON.stringify(result.semantic_ir),encoding:'utf8',stdio:['pipe','pipe','pipe']}));
   assert.deepEqual(result.formal,ruby);
   outputs.push(result);

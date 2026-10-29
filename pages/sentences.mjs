@@ -125,7 +125,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     if(clause===null)return null;
     const inner=parseNamedSentence(clause,depth+1);
     if(!inner||inner.calendarDay!==undefined||inner.scopes?.length||inner.speechAct||(day==='yesterday'&&inner.speechTime!=='before')||(day==='tomorrow'&&inner.speechTime!==undefined))return null;
-    return {...inner,...(day==='yesterday'?{speechTime:undefined}:{}),...(day==='tomorrow'?{semanticNote:[inner.semanticNote,'Interprets will as a future assertion; promise, intention, and willingness are not inferred.'].filter(Boolean).join(' ')}:{}),calendarDay:{yesterday:'-1',today:'0',tomorrow:'1'}[day],construction:`calendar_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+    return {...inner,...(day==='yesterday'?{speechTime:undefined}:{}),...(day==='tomorrow'?{requiredInterpretation:'future_assertion',semanticNote:[inner.semanticNote,'Interprets will as a future assertion; promise, intention, and willingness are not inferred.'].filter(Boolean).join(' ')}:{}),calendarDay:{yesterday:'-1',today:'0',tomorrow:'1'}[day],construction:`calendar_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
   const pastForms=[
     ['was','is'],['were','is'],['cared for','cares for'],['did not care for','does not care for'],
@@ -317,9 +317,14 @@ async function composeClauseGroup(input,clauses,operator,loadTemplate) {
   return {source_input:input,target_id:operator,semantic_note:[...new Set(parts.map(part=>part.semantic_note).filter(Boolean))].join(' ')||null,sense_id:`construction:explicit_${groupId}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,construction:`explicit_${groupId}`,interpretation:(conditional?'If ':'')+parts.map(part=>part.interpretation.replace(/\.$/,'')).join(conditional||operator==='sequence'?', then ':' and ')+'.'};
 }
 
-export async function composeNamedSentence(input,template) {
+export async function composeNamedSentence(input,template,{interpretation}={}) {
   const parsed=parseNamedSentence(input);
   if(!parsed)throw new Error('The complete sentence does not match this construction.');
+  if(interpretation!==undefined&&interpretation!==parsed.requiredInterpretation)throw new Error('This interpretation is not available for this sentence.');
+  if(parsed.requiredInterpretation&&interpretation!==parsed.requiredInterpretation){
+    const error=new Error('Choose whether this is a future statement. Promise, intention and willingness require different meanings.');
+    error.code='future_interpretation_required';throw error;
+  }
   const bound=!!parsed.compoundSlots;
   if(bound&&!template.authority)throw new Error('Bound construction requires the compiled dictionary authority.');
   const source=bound?{semantic_ir:{speech_act:'assertion',nodes:[{node_id:'c',kind:'clause'},{node_id:'p',kind:'lexical_occurrence',target_type:'compound',target_id:parsed.predicate,runtime_state:{code:1}}],edges:[{type:'centers'}]},performance:{profile:'reference-midi-v1',anchor_midi:60,transposition_semantically_significant:false,primary_contour:'level',contour_relative_semitones:[0,0],secondary_contours:[],statement_boundary:'long_gap',statement_boundary_beats:2}}:template.formal;
@@ -409,6 +414,6 @@ export async function composeNamedSentence(input,template) {
   const formalDigest=await canonicalDigest({semantic_digest:digest,relative_plan:relativePlan});
   const formal={format:'EZF-1',renderer_version:'1.0.0',formal_id:`EZF:${formalDigest.slice(0,24)}`,formal_digest:formalDigest,semantic_digest:digest,semantic_ir:ir,performance,
     literal_gloss:bound?lexicalGloss(events,template.authority):`${names.map((name,index)=>deicticRoles[index]?`${participantIds[index]}:reference(${deicticRoles[index]})`:`${nominal[index]?`${participantIds[index]}:reference(${nominal[index].mode}) | `:''}${participantIds[index]}:name(${name.normalized_label})`).join(' | ')} | ${source.literal_gloss.replaceAll(`${predicates[0].node_id}:`,'p:').replaceAll(`${predicates[0].node_id}.`,'p.').replace(/\[1\](?= \| |$)/g,`[${parsed.runtimeState??1}]`)}`};
-  return {source_input:input,target_id:parsed.predicate,sense_id:`construction:${parsed.construction}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,
+  return {source_input:input,...(interpretation?{selected_interpretation:interpretation}:{}),target_id:parsed.predicate,sense_id:`construction:${parsed.construction}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,
     semantic_note:parsed.semanticNote?(parsed.semanticNote+(parsed.runtimeState===2&&parsed.key==='approved_poetic_love'?' The num ending carries the approved never-finished-becoming reading.':'')):null,construction:parsed.construction,interpretation:parsed.explicitInterpretation||((deicticRoles.some(Boolean)||parsed.semanticNote)?String(input).trim():null)||`${parsed.actorText} ${parsed.negated?(parsed.key==='active_care'?'does not actively care for':parsed.wording.replace('is ','is not ')):parsed.wording}${parsed.targetText?' '+parsed.targetText:''}.`};
 }

@@ -9,13 +9,13 @@ const load=async target=>read(`pages/${data.resolution_files[target]}`).variants
 const equal=(a,b)=>JSON.stringify([...a].sort())===JSON.stringify([...b].sort());
 const results=[];
 for(const item of corpus.cases){
- let result=null,error=null;
+ let result=null,error=null,clarification=null;
  try{
   if(parseSentenceConditional(item.input))result=await composeSentenceConditional(item.input,load);
   else if(parseNamedSentence(item.input))result=await composeNamedSentence(item.input,await load(parseNamedSentence(item.input).predicate));
   else if(parseSentenceSequence(item.input))result=await composeSentenceSequence(item.input,load);
   else if(parseSentenceConjunction(item.input))result=await composeSentenceConjunction(item.input,load);
- }catch(caught){error=String(caught)}
+ }catch(caught){if(caught.code==='future_interpretation_required')clarification=caught.code;else error=String(caught)}
  const failures=[];
  if(result&&item.expected){
   const ir=result.semantic_ir,actual={
@@ -49,12 +49,12 @@ for(const item of corpus.cases){
    if(outer.operator!=='modality'||ir.nodes.find(n=>n.node_id===inside)?.operator!=='negation')failures.push('scope_order');
   }
  }
- results.push({...item,status:error?'error':!result?'not_composed':!item.expected?'composed_needs_semantic_review':failures.length?'semantic_check_failed':'verified_for_declared_checks',failures,...(error?{error}:{}),...(result?{midi_sha256:createHash('sha256').update(midiFromFormal(result.formal)).digest('hex')}: {})});
+ results.push({...item,status:clarification?'requires_interpretation':error?'error':!result?'not_composed':!item.expected?'composed_needs_semantic_review':failures.length?'semantic_check_failed':'verified_for_declared_checks',failures,...(clarification?{clarification}:{}),...(error?{error}:{}),...(result?{midi_sha256:createHash('sha256').update(midiFromFormal(result.formal)).digest('hex')}: {})});
 }
 const counts={};for(const result of results)counts[result.status]=(counts[result.status]||0)+1;
 const areas={};for(const result of results){const area=areas[result.area]??={total:0,verified:0};area.total++;if(result.status==='verified_for_declared_checks')area.verified++}
 const report={scope:corpus.purpose,completion_proven:false,case_count:results.length,counts,areas,results};
 fs.writeFileSync(new URL('reports/ordinary_phrase_coverage.json',root),JSON.stringify(report,null,2)+'\n');
-fs.writeFileSync(new URL('reports/ordinary_phrase_coverage.md',root),`# Ordinary phrase coverage audit\n\n${corpus.purpose}\n\nFull translator completion: **not established**. ${counts.verified_for_declared_checks||0} of ${results.length} cases pass their declared semantic checks; ${counts.not_composed||0} have no complete composition. These counts do not estimate coverage of English generally.\n\n| Area | Checked compositions | Cases |\n|---|---:|---:|\n${Object.entries(areas).map(([name,area])=>`| ${name} | ${area.verified} | ${area.total} |`).join('\n')}\n\n## Unfinished cases\n\n${results.filter(r=>r.status!=='verified_for_declared_checks').map(r=>`- **${r.input}** — ${r.requirements.join('; ')} (${r.status})`).join('\n')}\n`);
+fs.writeFileSync(new URL('reports/ordinary_phrase_coverage.md',root),`# Ordinary phrase coverage audit\n\n${corpus.purpose}\n\nFull translator completion: **not established**. ${counts.verified_for_declared_checks||0} of ${results.length} cases pass their declared semantic checks; ${counts.not_composed||0} have no complete composition; ${counts.requires_interpretation||0} require an explicit interpretation. These counts do not estimate coverage of English generally.\n\n| Area | Checked compositions | Cases |\n|---|---:|---:|\n${Object.entries(areas).map(([name,area])=>`| ${name} | ${area.verified} | ${area.total} |`).join('\n')}\n\n## Unfinished cases\n\n${results.filter(r=>r.status!=='verified_for_declared_checks').map(r=>`- **${r.input}** — ${r.requirements.join('; ')} (${r.status})`).join('\n')}\n`);
 console.log(JSON.stringify({case_count:results.length,counts,completion_proven:false}));
 if(results.some(r=>r.status==='error'||r.status==='semantic_check_failed'))process.exitCode=1;

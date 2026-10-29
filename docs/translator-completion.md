@@ -11,8 +11,7 @@ is the starting evidence, not a completion certificate.
 ## Current coverage evidence
 
 The [ordinary phrase audit](../reports/ordinary_phrase_coverage.md) currently has
-19 checked compositions, 20 uncomposed phrases, and one composed phrase awaiting
-semantic review out of 40 deliberately varied cases. This is an implementation-authored diagnostic set, not a blind evaluation
+19 checked compositions, 20 uncomposed phrases, and one phrase requiring an explicit future interpretation out of 40 deliberately varied cases. This is an implementation-authored diagnostic set, not a blind evaluation
 or a statistical measure of English coverage. Green regression suites do not
 override these missing constructions. The corpus records the intended distinctions
 even for cases that cannot yet be composed; future support must receive explicit
@@ -756,3 +755,9 @@ Seventeen runtime, role-reversal, deictic, negated, modal, past-question and con
 “Carry the box,” “Carry the box toward the gate” and “Physically support the box” now reuse their reviewed predicates with an explicit addressee carrier/supporter and command contour. Negative commands retain grammatical negation separately from runtime 0/1/2. Conditional commands can resolve “carry it toward the gate” only from the same single definite nominal bearer already required by the local-pronoun rule; multi-participant and indefinite antecedents remain unresolved.
 
 Twenty-one command/state/negation/destination/conditional examples match reference formal and MIDI output. Independent MIDI observation recovers command contour and the addressee inside the source-role frame. These commands add no roots or compound definitions; bare “support,” unreviewed arrival wording, quantities and extra manner remain incomplete.
+
+### Future statements require an explicit interpretation
+
+The browser no longer automatically translates “Nora will care for Eli tomorrow” as an ordinary future assertion. It asks the user to select that reading before generating sound, and records the selection outside the semantic IR. Promise, intention and willingness are not supplied by the selected future-statement meaning. Unsupported readings remain unresolved. The local sentence API enforces the same requirement; multi-clause inputs cannot bypass it.
+
+Nine affirmative/negative/bound-compound examples preserve tomorrow independently of runtime 0/1/2 after selection, with Ruby/browser formal and MIDI parity and independent time/runtime observation. The UI handler is tested for no composition before selection and stale-input rejection. Error and clarification views clear previous translation output. The original diagnostic now records 19 checked compositions, 20 uncomposed phrases and one requiring interpretation; the clarification is not counted as a completed translation.
