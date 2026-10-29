@@ -7,7 +7,7 @@ class MinCrossReferenceMigrationTest < Minitest::Test
     migration=V.load_yaml('migrations/min_cross_reference_reconciliation_2026_10_28.yaml')
     baseline=migration.fetch('before_fingerprint')
     assert V.atomic_fingerprint_matches?(atoms,baseline)
-    assert_equal migration.fetch('after_fingerprint'),V.fingerprint(atoms)
+    assert V.atomic_fingerprint_matches?(atoms,migration.fetch('after_fingerprint'))
     [
       ->(rows){rows.find{|r|r['canonical_id']=='MIN:001'}['core_definition']='seeing'},
       ->(rows){rows.find{|r|r['canonical_id']=='MIN:001'}['distinctions_and_exclusions'] << 'extra meaning'},

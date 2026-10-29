@@ -28,6 +28,15 @@ general sensory adjective coverage.
 
 ## Original completion-gate reconciliation
 
+The [root review provenance audit](../reports/root_review_provenance_audit.json)
+now inventories all review-history citations in the current roots: 198 unique
+cited paths across 288 roots, with 47 missing at their cited repository locations.
+The other 36 roots have no such review-path field. These findings require external
+source recovery, not an inference that approval never occurred. The
+[MOV process reconciliation](../reviews/mov_process_source_reconciliation.md)
+corrects stale examples using the existing applied approval migration, preserving
+root meanings and both lexical and runtime 0/1/2 distinctions.
+
 Reviewed against the source audit's seven original phases at draft `8f4da2b`.
 The recorded regression report has 71 passing checks; the ordinary diagnostic
 still has 19 checked compositions out of 40. Neither closes the gates below.

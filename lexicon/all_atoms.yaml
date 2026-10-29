@@ -2388,8 +2388,8 @@ atoms:
   - MOV:000
   - MOV:001
   - MOV:002
-  normal_example: MOV:102 [1] — An entity is prepared to leave its source, but outward
-    motion has not yet begun.
+  normal_example: MOV:102 [1] — Displacement away from the source is potential, not
+    presently active or completed; readiness or a departure plan is not asserted.
   technical_example: gi·kan / gi-ki-ma-nu / path 0, 2, 2, 0 semitones.
   runtime_state_examples:
     '0': MOV:102 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -2631,8 +2631,9 @@ atoms:
   - MOV:010
   - MOV:011
   - MOV:012
-  normal_example: MOV:112 [1] — Movement toward a destination is intended or queued,
-    but arrival is not yet in progress.
+  normal_example: MOV:112 [1] — Displacement toward the target position is potential,
+    not presently active or completed; intention, queuing and future time are not
+    asserted.
   technical_example: gi·kon / gi-ki-ki-nu / path 0, 2, 4, 2 semitones.
   runtime_state_examples:
     '0': MOV:112 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -2713,8 +2714,9 @@ atoms:
   - MOV:020
   - MOV:021
   - MOV:022
-  normal_example: MOV:120 [1] — A route-wide transfer, circulation step, or temporal
-    transition has reached its defined end state.
+  normal_example: MOV:120 [1] — The mover's change of position relative to the shared
+    reference frame is complete; route traversal and nonpositional transitions are
+    not asserted.
   technical_example: gi·kim / gi-ki-nu-ma / path 0, 2, 0, 0 semitones.
   runtime_state_examples:
     '0': MOV:120 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -2795,8 +2797,8 @@ atoms:
   - MOV:020
   - MOV:021
   - MOV:022
-  normal_example: MOV:121 [1] — Entities, signals, or time-indexed states are actively
-    moving through a shared route system.
+  normal_example: MOV:121 [1] — The mover's position is changing relative to the shared
+    reference frame; a route, schedule or temporal transition is not asserted.
   technical_example: gi·kik / gi-ki-nu-ki / path 0, 2, 0, 2 semitones.
   runtime_state_examples:
     '0': MOV:121 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -2877,8 +2879,9 @@ atoms:
   - MOV:020
   - MOV:021
   - MOV:022
-  normal_example: MOV:122 [1] — A route-wide transfer or temporal transition is staged
-    but has not started.
+  normal_example: MOV:122 [1] — A change of the mover's position relative to the shared
+    reference frame is potential, not presently active or completed; staging or scheduling
+    is not asserted.
   technical_example: gi·kin / gi-ki-nu-nu / path 0, 2, 0, -2 semitones.
   runtime_state_examples:
     '0': MOV:122 [0] — this lexical concept is currently inactive, false, ended, unavailable,

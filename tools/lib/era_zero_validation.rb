@@ -129,6 +129,23 @@ module EraZeroValidation
   def atomic_fingerprint_matches?(atoms, expected)
     actual = fingerprint(atoms)
     return true if actual == expected
+    # Reverse only the exact additional prose migration, then check the older
+    # authority (including the preceding MIN migration) without changing its pins.
+    mov_path = "migrations/mov_process_example_reconciliation_2026_10_28.yaml"
+    if File.exist?(File.join(ROOT, mov_path))
+      mov = load_yaml(mov_path)
+      if actual == mov.fetch("after_fingerprint") && actual != mov.fetch("before_fingerprint")
+        restored = Marshal.load(Marshal.dump(atoms))
+        mov.fetch("changes").each do |change|
+          return false unless %w[normal_example neighbor_contrast_notes].include?(change["field"]) && change.fetch("root_id").match?(/\AMOV:1[012][012]\z/)
+          row = restored.find { |r| r["canonical_id"] == change.fetch("root_id") }
+          return false unless row && row[change.fetch("field")] == change.fetch("after")
+          row[change.fetch("field")] = change.fetch("before")
+        end
+        return false unless fingerprint(restored) == mov.fetch("before_fingerprint")
+        return atomic_fingerprint_matches?(restored, expected)
+      end
+    end
     migration = load_yaml("migrations/min_cross_reference_reconciliation_2026_10_28.yaml")
     return false unless actual == migration.fetch("after_fingerprint") && expected == migration.fetch("before_fingerprint")
     restored = Marshal.load(Marshal.dump(atoms))

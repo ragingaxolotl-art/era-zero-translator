@@ -2558,10 +2558,11 @@ lexicon:
         definition are new proposals
     canonical_version: 1.0.1-semantic-overlay
     neighbor_contrast_notes:
-    - MOV:101 (self-departure) occupies active inward process; do not merge it with
-      MOV:100.
-    - MOV:102 (departure readiness) occupies pending inward process; do not merge
-      it with MOV:100.
+    - 'MOV:101 (active source departure): Ongoing displacement of a mover away from
+      a source position. Do not merge it with MOV:100.'
+    - 'MOV:102 (potential source departure): A potential displacement away from a
+      source position that is not presently active or completed. Do not merge it with
+      MOV:100.'
     canonization:
       standard: Era Zero Core Architecture 1.0 selective semantic overlay
       approval_basis: Explicit user approval of the final challenge meanings and the
@@ -2647,10 +2648,11 @@ lexicon:
         definition are new proposals
     canonical_version: 1.0.1-semantic-overlay
     neighbor_contrast_notes:
-    - MOV:100 (departure complete) occupies completed inward process; do not merge
-      it with MOV:101.
-    - MOV:102 (departure readiness) occupies pending inward process; do not merge
-      it with MOV:101.
+    - 'MOV:100 (completed source departure): Completion of a mover''s displacement
+      away from a source position. Do not merge it with MOV:101.'
+    - 'MOV:102 (potential source departure): A potential displacement away from a
+      source position that is not presently active or completed. Do not merge it with
+      MOV:101.'
     canonization:
       standard: Era Zero Core Architecture 1.0 selective semantic overlay
       approval_basis: Explicit user approval of the final challenge meanings and the
@@ -2715,8 +2717,8 @@ lexicon:
     - MOV:000
     - MOV:001
     - MOV:002
-    normal_example: MOV:102 [1] — An entity is prepared to leave its source, but outward
-      motion has not yet begun.
+    normal_example: MOV:102 [1] — Displacement away from the source is potential,
+      not presently active or completed; readiness or a departure plan is not asserted.
     technical_example: gi·kan / gi-ki-ma-nu / path 0, 2, 2, 0 semitones.
     runtime_state_examples:
       '0': MOV:102 [0] — this lexical concept is currently inactive, false, ended,
@@ -2737,10 +2739,10 @@ lexicon:
         definition are new proposals
     canonical_version: 1.0.1-semantic-overlay
     neighbor_contrast_notes:
-    - MOV:100 (departure complete) occupies completed inward process; do not merge
-      it with MOV:102.
-    - MOV:101 (self-departure) occupies active inward process; do not merge it with
-      MOV:102.
+    - 'MOV:100 (completed source departure): Completion of a mover''s displacement
+      away from a source position. Do not merge it with MOV:102.'
+    - 'MOV:101 (active source departure): Ongoing displacement of a mover away from
+      a source position. Do not merge it with MOV:102.'
     canonization:
       standard: Era Zero Core Architecture 1.0 selective semantic overlay
       approval_basis: Explicit user approval of the final challenge meanings and the
@@ -2826,10 +2828,10 @@ lexicon:
         definition are new proposals
     canonical_version: 1.0.1-semantic-overlay
     neighbor_contrast_notes:
-    - MOV:111 (destination approach) occupies active outward process; do not merge
-      it with MOV:110.
-    - MOV:112 (pending arrival) occupies pending outward process; do not merge it
-      with MOV:110.
+    - 'MOV:111 (active target approach): Ongoing displacement of a mover toward a
+      target position. Do not merge it with MOV:110.'
+    - 'MOV:112 (potential target approach): A potential displacement toward a target
+      position that is not presently active or completed. Do not merge it with MOV:110.'
     canonization:
       standard: Era Zero Core Architecture 1.0 selective semantic overlay
       approval_basis: Explicit user approval of the final challenge meanings and the
@@ -2914,10 +2916,10 @@ lexicon:
         definition are new proposals
     canonical_version: 1.0.1-semantic-overlay
     neighbor_contrast_notes:
-    - MOV:110 (arrival complete) occupies completed outward process; do not merge
-      it with MOV:111.
-    - MOV:112 (pending arrival) occupies pending outward process; do not merge it
-      with MOV:111.
+    - 'MOV:110 (completed target arrival): Completion of a mover''s displacement to
+      a target position. Do not merge it with MOV:111.'
+    - 'MOV:112 (potential target approach): A potential displacement toward a target
+      position that is not presently active or completed. Do not merge it with MOV:111.'
     canonization:
       standard: Era Zero Core Architecture 1.0 selective semantic overlay
       approval_basis: Explicit user approval of the final challenge meanings and the
@@ -2982,8 +2984,9 @@ lexicon:
     - MOV:010
     - MOV:011
     - MOV:012
-    normal_example: MOV:112 [1] — Movement toward a destination is intended or queued,
-      but arrival is not yet in progress.
+    normal_example: MOV:112 [1] — Displacement toward the target position is potential,
+      not presently active or completed; intention, queuing and future time are not
+      asserted.
     technical_example: gi·kon / gi-ki-ki-nu / path 0, 2, 4, 2 semitones.
     runtime_state_examples:
       '0': MOV:112 [0] — this lexical concept is currently inactive, false, ended,
@@ -3004,10 +3007,10 @@ lexicon:
         definition are new proposals
     canonical_version: 1.0.1-semantic-overlay
     neighbor_contrast_notes:
-    - MOV:110 (arrival complete) occupies completed outward process; do not merge
-      it with MOV:112.
-    - MOV:111 (destination approach) occupies active outward process; do not merge
-      it with MOV:112.
+    - 'MOV:110 (completed target arrival): Completion of a mover''s displacement to
+      a target position. Do not merge it with MOV:112.'
+    - 'MOV:111 (active target approach): Ongoing displacement of a mover toward a
+      target position. Do not merge it with MOV:112.'
     canonization:
       standard: Era Zero Core Architecture 1.0 selective semantic overlay
       approval_basis: Explicit user approval of the final challenge meanings and the
@@ -3072,8 +3075,9 @@ lexicon:
     - MOV:020
     - MOV:021
     - MOV:022
-    normal_example: MOV:120 [1] — A route-wide transfer, circulation step, or temporal
-      transition has reached its defined end state.
+    normal_example: MOV:120 [1] — The mover's change of position relative to the shared
+      reference frame is complete; route traversal and nonpositional transitions are
+      not asserted.
     technical_example: gi·kim / gi-ki-nu-ma / path 0, 2, 0, 0 semitones.
     runtime_state_examples:
       '0': MOV:120 [0] — this lexical concept is currently inactive, false, ended,
@@ -3094,10 +3098,12 @@ lexicon:
         definition are new proposals
     canonical_version: 1.0.1-semantic-overlay
     neighbor_contrast_notes:
-    - MOV:121 (system flow) occupies active systemic process; do not merge it with
-      MOV:120.
-    - MOV:122 (pending system transition) occupies pending systemic process; do not
-      merge it with MOV:120.
+    - 'MOV:121 (active shared-frame movement): Ongoing change of a mover''s position
+      relative to a shared or environmental reference frame. Do not merge it with
+      MOV:120.'
+    - 'MOV:122 (potential shared-frame movement): A potential change of a mover''s
+      position relative to a shared or environmental reference frame that is not presently
+      active or completed. Do not merge it with MOV:120.'
     canonization:
       standard: Era Zero Core Architecture 1.0 selective semantic overlay
       approval_basis: Explicit user approval of the final challenge meanings and the
@@ -3162,8 +3168,8 @@ lexicon:
     - MOV:020
     - MOV:021
     - MOV:022
-    normal_example: MOV:121 [1] — Entities, signals, or time-indexed states are actively
-      moving through a shared route system.
+    normal_example: MOV:121 [1] — The mover's position is changing relative to the
+      shared reference frame; a route, schedule or temporal transition is not asserted.
     technical_example: gi·kik / gi-ki-nu-ki / path 0, 2, 0, 2 semitones.
     runtime_state_examples:
       '0': MOV:121 [0] — this lexical concept is currently inactive, false, ended,
@@ -3184,10 +3190,12 @@ lexicon:
         definition are new proposals
     canonical_version: 1.0.1-semantic-overlay
     neighbor_contrast_notes:
-    - MOV:120 (system transition complete) occupies completed systemic process; do
-      not merge it with MOV:121.
-    - MOV:122 (pending system transition) occupies pending systemic process; do not
-      merge it with MOV:121.
+    - 'MOV:120 (completed shared-frame movement): Completion of a mover''s change
+      of position relative to a shared or environmental reference frame. Do not merge
+      it with MOV:121.'
+    - 'MOV:122 (potential shared-frame movement): A potential change of a mover''s
+      position relative to a shared or environmental reference frame that is not presently
+      active or completed. Do not merge it with MOV:121.'
     canonization:
       standard: Era Zero Core Architecture 1.0 selective semantic overlay
       approval_basis: Explicit user approval of the final challenge meanings and the
@@ -3252,8 +3260,9 @@ lexicon:
     - MOV:020
     - MOV:021
     - MOV:022
-    normal_example: MOV:122 [1] — A route-wide transfer or temporal transition is
-      staged but has not started.
+    normal_example: MOV:122 [1] — A change of the mover's position relative to the
+      shared reference frame is potential, not presently active or completed; staging
+      or scheduling is not asserted.
     technical_example: gi·kin / gi-ki-nu-nu / path 0, 2, 0, -2 semitones.
     runtime_state_examples:
       '0': MOV:122 [0] — this lexical concept is currently inactive, false, ended,
@@ -3274,10 +3283,12 @@ lexicon:
         definition are new proposals
     canonical_version: 1.0.1-semantic-overlay
     neighbor_contrast_notes:
-    - MOV:120 (system transition complete) occupies completed systemic process; do
-      not merge it with MOV:122.
-    - MOV:121 (system flow) occupies active systemic process; do not merge it with
-      MOV:122.
+    - 'MOV:120 (completed shared-frame movement): Completion of a mover''s change
+      of position relative to a shared or environmental reference frame. Do not merge
+      it with MOV:122.'
+    - 'MOV:121 (active shared-frame movement): Ongoing change of a mover''s position
+      relative to a shared or environmental reference frame. Do not merge it with
+      MOV:122.'
     canonization:
       standard: Era Zero Core Architecture 1.0 selective semantic overlay
       approval_basis: Explicit user approval of the final challenge meanings and the

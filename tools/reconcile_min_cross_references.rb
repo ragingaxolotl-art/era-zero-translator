@@ -31,7 +31,7 @@ unless record
  'historical_sources_preserved'=>['reviews/MIN_000_022_recommended_spec.yaml','reviews/MIN_000_022_peer_review.md','tools/build_min_000_022_review.rb']}
  V.write(path,YAML.dump(record))
 end
-abort 'Unexpected authority after migration' unless V.fingerprint(after)==record['after_fingerprint']
+abort 'Unexpected authority after migration' unless V.atomic_fingerprint_matches?(after,record['after_fingerprint'])
 # The browser index copies these exact records; avoid rebuilding unrelated artifacts.
 p=File.join(V::ROOT,'pages/data/index.json');index=JSON.parse(File.read(p));lookup=after.to_h{|a|[a['canonical_id'],a]}
 index['atoms'].each{|a|a['distinctions_and_exclusions']=lookup.fetch(a['canonical_id']).fetch('distinctions_and_exclusions') if ids.include?(a['canonical_id'])}
