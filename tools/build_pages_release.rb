@@ -55,7 +55,7 @@ required_roles = {}
 
 canonical_by_target.sort.each do |target_id, sense|
   roles = if sense.fetch("route") == "compound"
-            EraZeroRenderer.required_compound_roles(compound_by_id.fetch(target_id))
+            EraZeroRenderer.required_compound_roles(compound_by_id.fetch(target_id), compounds: compound_by_id)
           else
             []
           end
@@ -100,7 +100,7 @@ browser_index = {
   "online_scope" => {
     "direct_targets" => resolution_files.length,
     "slotted_compounds" => required_roles.count { |_id, roles| !roles.empty? },
-    "note" => "The static release resolves every atom and closed compound exactly. Open-slot compound role binding remains available in the local Ruby API."
+    "note" => "Static templates resolve atoms and closed compounds. Reviewed browser sentence constructions bind open slots through compiled plans; advanced controlled role binding remains available in the local Ruby API."
   }
 }
 File.write(File.join(data_dir, "index.json"), JSON.generate(browser_index))

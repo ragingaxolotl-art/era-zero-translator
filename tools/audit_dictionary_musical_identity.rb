@@ -1,19 +1,23 @@
 #!/usr/bin/env ruby
 require_relative 'lib/era_zero_musical_identity'
 require_relative 'lib/era_zero_compound_role_binding'
+require_relative 'lib/era_zero_dictionary_probe'
 atoms, compounds = EraZeroRenderer.load_authority
 records = []
 (atoms.keys + compounds.keys).sort.each do |id|
   type = atoms.key?(id) ? 'atom' : 'compound'
-  roles = type == 'compound' ? EraZeroRenderer.required_compound_roles(compounds.fetch(id)) : []
+  roles = type == 'compound' ? EraZeroRenderer.required_compound_roles(compounds.fetch(id), compounds: compounds) : []
   [0, 1, 2].each do |state|
     ir = { 'ir_version' => '1.0', 'root_clause' => 'c', 'speech_act' => 'assertion',
       'nodes' => [{ 'node_id' => 'c', 'kind' => 'clause', 'clause_type' => 'predication' },
                   { 'node_id' => 'p', 'kind' => 'lexical_occurrence', 'target_type' => type, 'target_id' => id, 'runtime_state' => { 'code' => state } }],
       'edges' => [{ 'edge_id' => 'e0', 'type' => 'centers', 'from' => 'p', 'to' => 'c' }], 'discourse_constraints' => {} }
+    aliases=type=='compound' ? EraZeroDictionaryProbe.role_aliases(compounds.fetch(id),compounds) : {}
+    role_nodes={}
     roles.each_with_index do |role, index|
-      node_id = "a#{index}"
-      ir['nodes'] << { 'node_id' => node_id, 'kind' => 'lexical_occurrence', 'target_type' => 'atom', 'target_id' => 'ORI:000', 'runtime_state' => { 'code' => 1 } }
+      node_id = aliases.key?(role) ? role_nodes.fetch(aliases[role]) : "a#{index}"
+      role_nodes[role]=node_id
+      ir['nodes'] << { 'node_id' => node_id, 'kind' => 'lexical_occurrence', 'target_type' => 'atom', 'target_id' => 'ORI:000', 'runtime_state' => { 'code' => 1 } } unless aliases.key?(role)
       ir['edges'] << { 'edge_id' => "e#{index + 1}", 'type' => 'fills_role', 'from' => node_id, 'to' => 'p', 'role' => role }
     end
     EraZeroCompoundRoleBinding.bind_unique_roles!(ir['nodes'],ir['edges'],compounds)

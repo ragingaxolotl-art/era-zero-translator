@@ -1,8 +1,8 @@
 ---
 metadata:
   version: 1.0.0
-  sense_count: 444
-  lemma_count: 427
+  sense_count: 445
+  lemma_count: 428
 exact_atom_labels:
 - input: continuous self
   expected_route: atom
@@ -1034,6 +1034,9 @@ exact_compound_labels:
 - input: directed data link
   expected_route: compound
   expected_target: CMP:742b44d9ead66b451346708a
+- input: ongoing physical carrying
+  expected_route: compound
+  expected_target: CMP:7a6749aaf61cd6181e544bd6
 - input: machine
   expected_route: compound
   expected_target: CMP:8e5ae722d9e5e31f85ac3c5b

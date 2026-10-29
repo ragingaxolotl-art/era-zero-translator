@@ -6,6 +6,7 @@ require "json"
 require "set"
 require_relative "../tools/lib/era_zero_validation"
 require_relative "../tools/lib/era_zero_renderer"
+require_relative "lib/era_zero_dictionary_probe"
 require_relative "../tools/lib/era_zero_controlled_english"
 
 include EraZeroValidation
@@ -38,8 +39,9 @@ checks.add("structured failures", "invalid and unsupported inputs return exact s
 
 lexical_ok = controlled.all? do |sense|
   compound = compounds.find { |entry| entry['compound_id']==sense['target_id'] }
-  roles = compound ? EraZeroRenderer.required_compound_roles(compound) : []
-  bindings = roles.map { |role| %( ROLE #{role} "distinct material object" [1]) }.join
+  roles = compound ? EraZeroRenderer.required_compound_roles(compound, compounds: compounds) : []
+  aliases=compound ? EraZeroDictionaryProbe.role_aliases(compound,compounds) : {}
+  bindings = roles.map { |role| aliases.key?(role) ? %( ROLE #{role} REF #{aliases[role]}) : %( ROLE #{role} "distinct material object" [1]) }.join
   input = %(ASSERT "#{sense['lemma']}" [1]#{bindings}.)
   result = compiler.compile(input)
   next false unless result["status"] == "ok"

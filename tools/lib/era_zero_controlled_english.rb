@@ -131,7 +131,7 @@ module EraZeroControlledEnglish
 
     def required_roles(lexical)
       return [] unless lexical["target_type"] == "compound"
-      EraZeroRenderer.required_compound_roles(@compounds.fetch(lexical.fetch("target_id")))
+      EraZeroRenderer.required_compound_roles(@compounds.fetch(lexical.fetch("target_id")), compounds: @compounds)
     end
 
     def compile_simple(text, speech_act)

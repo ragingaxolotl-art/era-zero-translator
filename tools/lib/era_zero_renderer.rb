@@ -112,7 +112,13 @@ module EraZeroRenderer
     raise RenderError, error.message
   end
 
-  def required_compound_roles(compound)
+  def required_compound_roles(compound, compounds: nil)
+    if compound.fetch("nodes").any? { |node| node["kind"]=="compound_ref" }
+      registry=compounds || load_authority.last
+      expanded=EraZeroCompoundExpansion::Expander.new(registry.is_a?(Hash) ? registry.values : registry).expand(compound.fetch('compound_id'),compound.fetch('definition_version'))
+      paths=expanded.fetch('nodes').select { |node| node['kind']=='slot' }.map { |node| node['path'] }
+      return expanded.fetch('edges').select { |edge| edge['type']=='fills_role' && paths.include?(edge['from_path']) }.map { |edge| edge.fetch('role') }.uniq.sort
+    end
     slot_ids = compound.fetch("nodes").select { |node| node["kind"] == "slot" }.map { |node| node.fetch("node_id") }.to_set
     compound.fetch("edges").select { |edge| edge["type"] == "fills_role" && slot_ids.include?(edge["from"]) }.map { |edge| edge.fetch("role") }.uniq.sort
   end

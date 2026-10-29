@@ -7,6 +7,7 @@ import {deicticReference,deicticEvent,nominalMarker} from './references.mjs';
 
 // Reviewed constructions use exact process senses, never a generic synonym pool.
 const ACTIONS = [
+  {pattern:'is carrying',predicate:'CMP:7a6749aaf61cd6181e544bd6',key:'ongoing_physical_carrying',wording:'is carrying',role:'source',targetRole:'target',compoundSlots:{source:['q-support','s-source'],target:[['q-support','s-target'],['s-load']]},semanticNote:'Physical conveyance of a distinct material load borne upon, within or suspended from the carrier’s moving support; support and movement concern that same load and interval.'},
   {pattern:'is physically supporting',predicate:'CMP:eef9fff8ac6618ce60927f18',key:'active_physical_load_support',wording:'is physically supporting',role:'source',targetRole:'target',compoundSlots:{source:['s-source'],target:['s-target']},semanticNote:'Physical load-bearing support: this source bears at least part of the distinct material load. This does not assert carrying, movement, intention, or emotional support.'},
   {pattern:'has a directed data link to',negativePattern:'does not have a directed data link to',predicate:'CMP:742b44d9ead66b451346708a',key:'directed_data_link',wording:'has a directed data link to',role:'source',targetRole:'target',compoundSlots:{source:['a-source-01'],target:['a-target-01']},semanticNote:'An established directed communication relation with bounded data content; it does not assert an ongoing transfer.'},
   {pattern:'is registering optical input from',predicate:'CMP:bcfd189eb305cf364ada975a',key:'ongoing_optical_registration',wording:'is registering optical input from',role:'target',targetRole:'source',semanticNote:'Optical sensory registration uses a light-carried input. It does not by itself assert conscious seeing, attention, recognition, color, or understanding.'},
@@ -317,7 +318,7 @@ export async function composeNamedSentence(input,template) {
     edges:[{edge_id:'e0',type:'centers',from:'p',to:'c'},...participants.map((participant,index)=>({edge_id:`e${index+1}`,type:'fills_role',from:participantIds[index],to:'p',role:participant.role}))],discourse_constraints:{}};
   if(bound){
     if(nominal.some(description=>description?.quantifier))throw new Error('Quantified compound participants are not supported by this construction.');
-    ir.nodes[1].compound_bindings=participants.map((participant,index)=>({slot_path:parsed.compoundSlots[participant.role],argument_id:participantIds[index]}));
+    ir.nodes[1].compound_bindings=participants.flatMap((participant,index)=>{const paths=parsed.compoundSlots[participant.role];return (Array.isArray(paths[0])?paths:[paths]).map(slot_path=>({slot_path,argument_id:participantIds[index]}));});
     ir.edges=ir.edges.filter(edge=>edge.type!=='fills_role');
   }
   nominal.forEach((description,index)=>{

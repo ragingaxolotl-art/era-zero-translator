@@ -19,7 +19,7 @@ module EraZeroBrowserCompounds
       end
       plan={'profile'=>'EZCOMPOUNDPLAN-1','compound_id'=>entry['compound_id'],'definition_version'=>entry['definition_version'],'content_digest'=>entry['content_digest'],
         'expanded'=>expanded,'bound_components'=>expander.ordered_roots(expanded,include_slots:true),'unbound_components'=>unbound,
-        'unbound_scopes'=>scoped ? expanded['scopes'] : [],'required_roles'=>EraZeroRenderer.required_compound_roles(entry)}
+        'unbound_scopes'=>scoped ? expanded['scopes'] : [],'required_roles'=>EraZeroRenderer.required_compound_roles(entry, compounds: registry)}
       plan['plan_digest']=EraZeroValidation.fingerprint(plan)
       [entry['compound_id'],plan]
     end

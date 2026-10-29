@@ -88,6 +88,7 @@ compound_rows = compounds.map do |c|
     "provenance" => { "authority" => "gate4b_reviewed_compound", "record" => c.fetch("approval_record", "migrations/gate4b_compound_dictionary_1.0.yaml"), "approval_date" => c.fetch("approval_date") },
     "historical_claim" => "No English calque history is asserted. The English title labels the approved compositional graph."
   }.tap do |row|
+    row["semantic_derivation"]["binding_constraints"] = c["binding_constraints"] if c.key?("binding_constraints")
     if c.key?("conventional_meaning")
       row["semantic_derivation"]["conventional_meaning"] = c.fetch("conventional_meaning")
       row["semantic_derivation"]["rule"] += " The explicit conventional definition adds a separately identified commitment not entailed by that graph."

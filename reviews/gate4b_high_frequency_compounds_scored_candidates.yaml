@@ -2268,3 +2268,103 @@ reviews:
     decision: 'rejected: wrong invariant'
   recommendation: approve explicit_load_support
   confidence: high
+- compound_id: CMP:7a6749aaf61cd6181e544bd6
+  display_title: ongoing physical carrying
+  current_choice_reason: Review in reviews/physical_carrying.md; scores are author
+    judgments, not independent semantic validation.
+  candidates:
+  - candidate_id: explicit_supported_conveyance
+    direction: Reuse support first, bind its load to the mover, and mark conveyance
+      by that supporting engagement.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-support
+        kind: compound_ref
+        compound_id: CMP:eef9fff8ac6618ce60927f18
+        definition_version: 1.0.0
+      - node_id: s-load
+        kind: slot
+        slot_name: moving_load
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MOV:121
+      edges:
+      - type: qualifies
+        from: q-support
+        to: h
+      - type: fills_role
+        from: s-load
+        to: h
+        role: actor
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ongoing_physical_carrying
+        sound_code: 4
+        added_definition: A material source conveys the same distinct material load
+          that it physically supports, relative to the contextually relevant movement
+          frame during the same ongoing interval. The load is borne upon, within,
+          or suspended from a moving supporting part or field maintained by the source;
+          that load-bearing engagement is the means of conveyance. The whole source
+          need not translate, as with a conveyor belt. No intention, destination or
+          recipient is asserted.
+        excludes:
+        - Stationary support without conveyance
+        - Support and unrelated simultaneous movement
+        - Pushing or dragging a load across an independently supporting surface without
+          bearing it upon, within or suspended from the carrier
+        - Throwing or falling after support ends
+        - Abstract carrying of information, responsibility or disease
+      binding_constraints:
+      - relation: same_argument
+        slot_paths:
+        - - q-support
+          - s-target
+        - - s-load
+      - relation: distinct_arguments
+        slot_paths:
+        - - q-support
+          - s-source
+        - - q-support
+          - s-target
+  - candidate_id: mere_conjunction
+    direction: Support plus simultaneous movement does not entail conveyance by that
+      support.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: conveyance linkage absent'
+  - candidate_id: unshared_mover
+    direction: A carrier can support one object while a different object moves.
+    scores:
+      atomicity: 5
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 32
+    decision: 'rejected: wrong invariant'
+  recommendation: approve explicit_supported_conveyance
+  confidence: high

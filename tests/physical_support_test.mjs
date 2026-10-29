@@ -25,12 +25,12 @@ results.push(await composeSentenceConditional('If Ada is physically supporting t
 const references=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_renderer','-rera_zero_presentation','-rbase64','-e','puts JSON.generate(JSON.parse(STDIN.read).map{|ir|f=EraZeroRenderer.render(ir);{formal:f,midi:Base64.strict_encode64(EraZeroPresentation.midi(f))}})'],{cwd:root,input:JSON.stringify(results.map(r=>r.semantic_ir)),encoding:'utf8',maxBuffer:10_000_000}));
 for(const [i,result] of results.entries()){assert.deepEqual(result.formal,references[i].formal);assert.deepEqual(Buffer.from(midiFromFormal(result.formal)),Buffer.from(references[i].midi,'base64'));}
 assert.equal(new Set(results.map(r=>Buffer.from(midiFromFormal(r.formal)).toString('base64'))).size,results.length);
-for(const phrase of ['Ada supports the box.','Ada is carrying the box.','Ada is pushing the box.','Ada is emotionally supporting Ben.','Ada is physically supporting Ada.','Exactly two shelves are physically supporting the box.'])assert.equal(parseNamedSentence(phrase),null);
+for(const phrase of ['Ada supports the box.','Ada is pushing the box.','Ada is emotionally supporting Ben.','Ada is physically supporting Ada.','Exactly two shelves are physically supporting the box.'])assert.equal(parseNamedSentence(phrase),null);
 const audit=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_controlled_english','-e',String.raw`
  id='CMP:eef9fff8ac6618ce60927f18'
  dictionary=EraZeroValidation.load_yaml('lexicon/compound_dictionary.yaml')['entries']
  migration=EraZeroValidation.load_yaml('migrations/physical_support_2026_10_28.yaml')
- raise 'Old compound definitions changed' unless EraZeroValidation.fingerprint(dictionary.reject{|e|e['compound_id']==id})==migration['before_dictionary_fingerprint']
+ raise 'Old compound definitions changed' unless EraZeroValidation.fingerprint(dictionary.reject{|e|[id,'CMP:7a6749aaf61cd6181e544bd6'].include?(e['compound_id'])})==migration['before_dictionary_fingerprint']
  c=EraZeroControlledEnglish::Compiler.new
  ir=c.compile('ASSERT "active physical load support" [2] ROLE source "distinct material object" [1] ROLE target "distinct material object" [0].')['semantic_ir']
  formal=EraZeroRenderer.render(ir)

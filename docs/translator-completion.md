@@ -11,7 +11,7 @@ is the starting evidence, not a completion certificate.
 ## Current coverage evidence
 
 The [ordinary phrase audit](../reports/ordinary_phrase_coverage.md) currently has
-18 checked compositions, 21 uncomposed phrases, and one composed phrase awaiting
+19 checked compositions, 20 uncomposed phrases, and one composed phrase awaiting
 semantic review out of 40 deliberately varied cases. This is an implementation-authored diagnostic set, not a blind evaluation
 or a statistical measure of English coverage. Green regression suites do not
 override these missing constructions. The corpus records the intended distinctions
@@ -31,7 +31,7 @@ English spelling, and the first plausible synonym must not determine meaning.
 Reuse an existing term only when its invariant and exclusions match. Distinguish
 lexical dependency order from the separately specified performance order.
 
-1. Reuse the canonical roots and 29 compounds with their exact meanings.
+1. Reuse the canonical 324 roots and currently approved compounds with their exact meanings.
 2. Establish referents, participant roles, scope, and recursive compound resolution.
 3. Add high-confidence process variants of existing domain-specific compounds.
 4. Establish missing property scales, manner distinctions, and sensory/affective
@@ -736,3 +736,11 @@ A synthetic support/movement graph tests a load reused as the mover in all three
 The local controlled grammar now accepts `ROLE beneficiary REF actor`, reusing the earlier role's exact argument occurrence. References are clause-local and backward-only; equal lexical labels still create separate occurrences. Scoped compound identity constraints receive the actual shared node rather than an inferred alias.
 
 Testing exposed a musical collision: the old scheduler repeated a shared argument's lexical payload, making it sound like two independent identical occurrences. EZROLE-REF-1 now uses an audible pointer to the first role, inside the later role frame. Sixty-six role/runtime probes distinguish shared from separate occurrences and match Ruby/browser MIDI and SVG; the independent MIDI observer recovers the reference token. Existing dictionary performances without shared direct-role arguments remain unchanged. Cross-clause coreference, unconstrained nested binding identity and complete semantic decoding remain unfinished.
+
+### Physical carrying reuses physical support
+
+The draft now has 37 compounds and 445 canonical senses, with the same 324 roots. “Ada is carrying the box” reuses physical support 1.0.0 and MOV:121. Explicit convention 4 adds conveyance by the moving load-bearing engagement during the same interval; convention 3 remains audible within it. The support target and movement actor must be the same argument, distinct from the carrier. Mere simultaneous support and movement is insufficient.
+
+Twenty ordinary state/role/scope/clause cases match Ruby and browser formal output and MIDI. Independent MIDI observation recovers both conventions and the whole-compound 0/1/2 ending; controlled lexical arguments retain their separate states. Wrong-mover bindings, self-carriers and inferred sharing from equal labels fail. The existing compound records remain unchanged. The canonical-label audit now supplies explicit REF arguments where dictionary equality constraints require them; it does not infer identity for user input.
+
+This implements the carrying dependency left pending in the preceding dated work records. Simple-present habitual carrying, destinations, manner, quantified carriers and metaphorical senses remain unfinished. The broader ordinary phrase diagnostic remains 19 checked, 20 uncomposed and one needing semantic review out of 40 authored cases. Neither dictionary counts nor these regression tests establish full translator completion.

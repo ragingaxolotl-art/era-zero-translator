@@ -12,8 +12,8 @@ policy:
     authorize automatic semantic resolution.
 counts:
   atoms: 324
-  compounds: 36
-  entries: 360
+  compounds: 37
+  entries: 361
 entries:
 - target_id: CMP:111b772027accab2054f0415
   target_type: compound
@@ -358,6 +358,24 @@ entries:
   - directed data link
   example_searches:
   - directed data link
+  mapping_status: discovery_only_noncanonical
+  authority_note: These words help people find the compound. They do not replace or
+    broaden its canonical graph.
+- target_id: CMP:7a6749aaf61cd6181e544bd6
+  target_type: compound
+  canonical_title: ongoing physical carrying
+  plain_label: ongoing physical carrying
+  plain_explanation: An everyday discovery label for the approved compound “ongoing
+    physical carrying”; the compound graph controls its exact meaning.
+  ordinary_terms:
+  - ongoing
+  - physical
+  - carrying
+  - ongoing physical carrying
+  match_phrases:
+  - ongoing physical carrying
+  example_searches:
+  - ongoing physical carrying
   mapping_status: discovery_only_noncanonical
   authority_note: These words help people find the compound. They do not replace or
     broaden its canonical graph.

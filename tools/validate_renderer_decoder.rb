@@ -5,6 +5,7 @@ require "yaml"
 require "json"
 require "set"
 require_relative 'lib/era_zero_compound_role_binding'
+require_relative 'lib/era_zero_dictionary_probe'
 require_relative "../tools/lib/era_zero_validation"
 require_relative "../tools/lib/era_zero_renderer"
 
@@ -58,9 +59,12 @@ checks.add("exhaustive atomic rendering", "all 324 atoms in all three runtime st
 
 compound_ok = compounds.all? do |compound|
   [0, 1, 2].all? do |state|
-    required_roles = EraZeroRenderer.required_compound_roles(compound)
+    required_roles = EraZeroRenderer.required_compound_roles(compound, compounds: compounds)
     filler_nodes = required_roles.each_with_index.map { |_role, index| { "node_id" => format("n%03d", index + 3), "kind" => "lexical_occurrence", "target_type" => "atom", "target_id" => "ORI:000", "runtime_state" => { "code" => 1 } } }
     role_edges = required_roles.each_with_index.map { |role, index| { "edge_id" => format("e%03d", index + 2), "type" => "fills_role", "from" => filler_nodes[index]["node_id"], "to" => "n002", "role" => role } }
+    aliases=EraZeroDictionaryProbe.role_aliases(compound,compounds)
+    aliases.each { |role,first| role_edges.find { |e| e['role']==role }['from']=role_edges.find { |e| e['role']==first }['from'] }
+    filler_nodes.select! { |node| role_edges.any? { |edge| edge['from']==node['node_id'] } }
     payload = { "ir_version" => "1.0", "root_clause" => "n001", "speech_act" => "assertion", "nodes" => [{ "node_id" => "n001", "kind" => "clause", "clause_type" => "predication" }, { "node_id" => "n002", "kind" => "lexical_occurrence", "target_type" => "compound", "target_id" => compound["compound_id"], "runtime_state" => { "code" => state } }] + filler_nodes, "edges" => [{ "edge_id" => "e001", "type" => "centers", "from" => "n002", "to" => "n001" }] + role_edges, "discourse_constraints" => {} }
     EraZeroCompoundRoleBinding.bind_unique_roles!(payload['nodes'],payload['edges'],compounds.to_h{|c|[c['compound_id'],c]})
     digest = Digest::SHA256.hexdigest(JSON.generate(EraZeroValidation.deep_sort(payload)))
@@ -72,7 +76,14 @@ compound_ok = compounds.all? do |compound|
     roots = compound_events.reject { |event| event["kind"] == "grammar_marker" || event.key?("argument_node_id") }
     expected_roots = expanded.fetch("nodes").select { |node| node["kind"] == "root" }.map { |node| node.fetch("root_id") }.sort
     expected_markers = expanded.fetch("scopes").select { |scope| scope.key?("conventional_meaning") }.flat_map do |scope|
-      %w[open close].map { |side| EraZeroCompoundConventions.event(scope.fetch("conventional_meaning"), side, "n002", 60, scope.fetch("path")) }
+      %w[open close].map do |side|
+        marker=EraZeroCompoundConventions.event(scope.fetch("conventional_meaning"),side,"n002",60,scope.fetch("path"))
+        # A qualifying nested compound closes without a gap before its target.
+        if side=='close' && expanded['edges'].any? { |e| e['type']=='qualifies' && e['from_scope_target']==scope['path'] }
+          marker['boundary_after_beats']=0
+        end
+        marker
+      end
     end
     markers = compound_events.select { |event| event["kind"] == "grammar_marker" }
     roots.count { |event| event["runtime_tail"] } == 1 && roots.map { |event| event["target_id"] }.sort == expected_roots && markers.sort_by { |event| JSON.generate(event) } == expected_markers.sort_by { |event| JSON.generate(event) } && EraZeroRenderer.decode(formal) == ir

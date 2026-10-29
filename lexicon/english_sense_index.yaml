@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 444
-  lemma_count: 427
+  sense_count: 445
+  lemma_count: 428
   canonical_atom_senses: 324
-  canonical_compound_senses: 36
+  canonical_compound_senses: 37
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: 9b2e6047a5bbd39f0b54ff2f49b569cf7e4726b361b51a62070804727efce26f
-  compound_dictionary_fingerprint: fb2fe53772c67deb8ede5af40c1a0242cd68d1e0731834472c55b5c08e58f46b
+  compound_dictionary_fingerprint: e0aee17cffb834903f867614c1a775289e723648fc52bfd032bd6bbb79a03252
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -5149,6 +5149,30 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: ongoing physical carrying
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:7a6749aaf61cd6181e544bd6
+  definition: A material source conveys the same distinct material load that it physically
+    supports, relative to the contextually relevant movement frame during the same
+    ongoing interval. The load is borne upon, within, or suspended from a moving supporting
+    part or field maintained by the source; that load-bearing engagement is the means
+    of conveyance. The whole source need not translate, as with a conveyor belt. No
+    intention, destination or recipient is asserted.
+  sense_id: ENS:5d7cc34cdb22ccb9a0c41baa
+  display_form: ongoing physical carrying
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Stationary support without conveyance; Support and unrelated simultaneous movement;
+    Pushing or dragging a load across an independently supporting surface without
+    bearing it upon, within or suspended from the carrier; Throwing or falling after
+    support ends; Abstract carrying of information, responsibility or disease
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - lemma: ongoing physical repair
   part_of_speech: noun_phrase
   sense_key: canonical_compound_label
@@ -9762,6 +9786,13 @@ lemma_index:
   ongoing optical sensory registration:
     sense_ids:
     - ENS:0b350b247d38dcfae9be03cc
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  ongoing physical carrying:
+    sense_ids:
+    - ENS:5d7cc34cdb22ccb9a0c41baa
     requires_disambiguation: false
     direct_target_count: 1
     routes:

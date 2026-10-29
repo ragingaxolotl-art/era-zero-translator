@@ -4,12 +4,12 @@ metadata:
   version: 1.0.0
   status: canonical_gate4e
   atom_entries: 324
-  compound_entries: 36
-  total_entries: 360
+  compound_entries: 37
+  total_entries: 361
   scope: Auditable synchronic derivation and authority provenance; no invented natural-language
     ancestry.
   atomic_lexicon_fingerprint: e25dda6b8e84866f9bf2b3ba012aa0e9538cc711830fcbfc2fc1179f615f443e
-  compound_dictionary_fingerprint: fb2fe53772c67deb8ede5af40c1a0242cd68d1e0731834472c55b5c08e58f46b
+  compound_dictionary_fingerprint: e0aee17cffb834903f867614c1a775289e723648fc52bfd032bd6bbb79a03252
 principles:
   synchronic_not_fictional: Era Zero forms are engineered encodings. The table records
     actual construction rules and approval history rather than inventing ancestors
@@ -18105,6 +18105,94 @@ entries:
     authority: gate4b_reviewed_compound
     record: migrations/gate4b_compound_dictionary_1.0.yaml
     approval_date: '2026-10-09'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:f66aedf2c01eb18db7be8959
+  target_type: compound
+  target_id: CMP:7a6749aaf61cd6181e544bd6
+  status: canonical
+  english_label: ongoing physical carrying
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: MOV:121
+  components:
+  - node_id: q-support
+    kind: compound_ref
+    compound_id: CMP:eef9fff8ac6618ce60927f18
+    definition_version: 1.0.0
+  - node_id: s-load
+    kind: slot
+    slot_name: moving_load
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:121
+  relations:
+  - type: qualifies
+    from: q-support
+    to: h
+  - type: fills_role
+    from: s-load
+    to: h
+    role: actor
+  semantic_derivation:
+    invariant_definition: A material source conveys the same distinct material load
+      that it physically supports, relative to the contextually relevant movement
+      frame during the same ongoing interval. The load is borne upon, within, or suspended
+      from a moving supporting part or field maintained by the source; that load-bearing
+      engagement is the means of conveyance. The whole source need not translate,
+      as with a conveyor belt. No intention, destination or recipient is asserted.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    binding_constraints:
+    - relation: same_argument
+      slot_paths:
+      - - q-support
+        - s-target
+      - - s-load
+    - relation: distinct_arguments
+      slot_paths:
+      - - q-support
+        - s-source
+      - - q-support
+        - s-target
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: ongoing_physical_carrying
+      sound_code: 4
+      added_definition: A material source conveys the same distinct material load
+        that it physically supports, relative to the contextually relevant movement
+        frame during the same ongoing interval. The load is borne upon, within, or
+        suspended from a moving supporting part or field maintained by the source;
+        that load-bearing engagement is the means of conveyance. The whole source
+        need not translate, as with a conveyor belt. No intention, destination or
+        recipient is asserted.
+      excludes:
+      - Stationary support without conveyance
+      - Support and unrelated simultaneous movement
+      - Pushing or dragging a load across an independently supporting surface without
+        bearing it upon, within or suspended from the carrier
+      - Throwing or falling after support ends
+      - Abstract carrying of information, responsibility or disease
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 7a6749aaf61cd6181e544bd606dbec63769da2c86a57ab40964de4c137fff030
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/physical_carrying_2026_10_28.yaml
+    approval_date: '2026-10-28'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
 - etymology_id: ETY:d1a2957b48748e4925fdaab0
