@@ -30,5 +30,7 @@ assert.equal(new Set(results.map(r=>Buffer.from(midiFromFormal(r.formal)).toStri
 for(const text of ['If Ada is carrying the box, carry it toward the gate.','If a box is damaged, carry it toward the gate.','If exactly two boxes are damaged, carry it toward the gate.','If the box is damaged, carry the shelf toward it quickly.'])assert.equal(parseSentenceConditional(text),null,text);
 const statement=await composeNamedSentence('you are carrying the box [0].',template);
 assert.notDeepEqual(midiFromFormal(statement.formal),midiFromFormal(results[0].formal));
-for(const text of ['Carry you.','Carry the box to the gate.','Carry the box quickly.','Support the box.','Carry exactly two boxes.','Carry the box toward the gate and the shelf.']){assert.equal(parseNamedSentence(text),null,text);assert(needsSentenceComposition(text),text);}
+for(const text of ['Carry you.','Carry the box quickly.','Support the box.','Carry exactly two boxes.','Carry the box toward the gate and the shelf.']){assert.equal(parseNamedSentence(text),null,text);assert(needsSentenceComposition(text),text);}
 console.log(`Carrying/support commands: ${results.length} runtime/negation/destination/conditional cases match reference formal and MIDI; addressee and command contour decode independently, and local it retains its antecedent.`);
+
+assert.equal(parseNamedSentence('Carry the box to the gate.').requiredDestination,true);

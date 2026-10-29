@@ -78,10 +78,10 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
   }
   const participant='(I|me|you|'+NOMINAL_PATTERN+'|(?!(?:She|He|It|They|We|Her|Him|Them|Us)\\b)[A-Z][a-z]+|"[A-Za-z]+(?:[ -][A-Za-z]+)*")';
   if(speechActs){
-    const carryingCommand=String(input).trim().match(new RegExp(`^(?:[Dd]o not )?[Cc]arry ${participant}(?: toward ${participant})?[.!]?$`));
+    const carryingCommand=String(input).trim().match(new RegExp(`^(?:[Dd]o not )?[Cc]arry ${participant}(?: (toward|to) ${participant})?[.!]?$`));
     if(carryingCommand){
       const negative=/^[Dd]o not /.test(String(input).trim());
-      const inner=parseNamedSentence(`you are ${negative?'not ':''}carrying ${carryingCommand[1]}${carryingCommand[2]?' toward '+carryingCommand[2]:''}.`,depth+1);
+      const inner=parseNamedSentence(`you are ${negative?'not ':''}carrying ${carryingCommand[1]}${carryingCommand[3]?' '+carryingCommand[2]+' '+carryingCommand[3]:''}.`,depth+1);
       if(!inner)return null;
       return {...inner,aspect:undefined,speechAct:'command',construction:`command_${inner.construction}`,explicitInterpretation:String(input).trim()};
     }
@@ -427,7 +427,8 @@ export async function composeNamedSentence(input,template,{interpretation,standa
     parsed.compoundSlots={source:[...prefix,'q-support','s-source'],target:[[...prefix,'q-support','s-target'],[...prefix,'s-load'],...(completed?[['q-path','s-load']]:[]),['s-load']],destination:completed?[['q-path','s-destination'],['s-destination']]:['s-destination']};
     parsed.semanticNote='Interprets “to” as a spatial destination, possibly the contextual location of the named referent; no receipt, ownership transfer, intention or continued presence is asserted. '+
       (parsed.aspect==='ongoing'?'The same supported load is being conveyed toward that destination in this carrying event; arrival is not asserted.':parsed.aspect==='habitual'?'The recurring practice consists of carrying events that culminate in the same load reaching the same destination through that supporting conveyance. No particular current occurrence, frequency or schedule is asserted.':'This carrying event culminates in its supported load reaching the same destination through that supporting conveyance; separate later arrival or unsupported flight does not qualify.')+
-      (parsed.negated?' Negation applies to this whole carrying proposition; it does not assert an incomplete approach.':'');
+      (parsed.negated?' Negation applies to this whole carrying proposition; it does not assert an incomplete approach.':'')+
+      (parsed.speechAct==='command'?' This is a command about that event type, not an assertion that carrying or arrival has occurred.':'');
   }else if(destination!==undefined)throw new Error('This sentence does not require a destination reading choice.');
   if(interpretation!==undefined&&interpretation!==parsed.requiredInterpretation)throw new Error('This interpretation is not available for this sentence.');
   if(parsed.requiredInterpretation&&interpretation!==parsed.requiredInterpretation){

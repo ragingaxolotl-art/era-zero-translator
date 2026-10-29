@@ -97,7 +97,8 @@ export function decodeDestinationCarryingMidi(bytes,atoms){
   predicate:completed?'completed_destination_carrying':'ongoing_destination_carrying',runtime_state:runtime,participants,
   convention_codes:completed?[6,5,4,3]:[5,4,3],
   meaning:{destination:'spatial',same_load:true,same_carrying_event:true,carrier_distinct_from_load:true,culmination_part_of_event_type:completed,receipt_asserted:false},
-  limitations:['The predicate and its commitments are inside the recovered scope operators; negation, modality, ongoing and habitual scope do not by themselves assert a current completed event.',
+  limitations:['The recovered speech act distinguishes assertions from commands; a command does not assert that the requested event occurred.',
+   'The predicate and its commitments are inside the recovered scope operators; negation, modality, ongoing and habitual scope do not by themselves assert a current completed event.',
    'Recovers this bounded convention profile, not arbitrary sentences, original IR node IDs or English spelling.',
    'Repeated reference sounds are checked for consistency; shared identity is asserted by the learned convention, not proved about external objects. Homophones and untagged referents can remain ambiguous.',
    'This is a strict MIDI inverse, not recognition of arbitrary recorded or human-played audio.']};
