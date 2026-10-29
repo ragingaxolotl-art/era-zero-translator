@@ -15,6 +15,7 @@ const frames=[];
 const frame=(marker,path)=>frames.push({marker,path});
 for(const side of ['open','close']){
  const sign=side==='open'?-1:1;
+ ['bounded','ongoing','habitual'].forEach((mode,i)=>frame(`aspect_${mode}_${side}`,[0,sign*22,i,0]));
  frame(`negation_${side}`,[0,sign,sign,0]);
  MODES.forEach((mode,i)=>frame(`modality_${mode}_${side}`,[0,sign*(i+2),sign*(i+2),0]));
  ['all_of','any_of','exactly_one'].forEach((mode,i)=>frame(`coord_${mode}_${side}`,[0,sign*11,sign*(i+1),0]));

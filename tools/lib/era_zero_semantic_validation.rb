@@ -104,6 +104,11 @@ module EraZeroSemanticValidation
         valid = %w[exact at_least at_most all some none].include?(n["quantifier"]) && (n.keys - allowed).empty?
         valid &&= n["value"].is_a?(String) && n["value"].length <= 1024 && n["value"].match?(/\A(?:0|[1-9][0-9]*)\z/) if counted
         errors << "invalid_quantifier" unless valid
+      elsif n["kind"] == "scope_operator" && n["operator"] == "aspect"
+        scoped = edges.select { |e| e["type"] == "scopes" && e["to"] == n["node_id"] }
+        valid = spec.dig("time_and_aspect", "aspects").include?(n["aspect"]) && (n.keys - %w[node_id kind operator aspect]).empty?
+        valid &&= scoped.length == 1 && %w[lexical_occurrence clause scope_operator coordination].include?(map.dig(scoped[0]["from"], "kind"))
+        errors << "invalid_aspect" unless valid
       elsif n["kind"] == "reference"
         declared = Array(ir.dig("discourse_constraints", "declared_referents"))
         errors << "unresolved_reference" unless declared.include?(n["referent_id"])

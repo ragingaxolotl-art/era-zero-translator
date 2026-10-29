@@ -27,7 +27,7 @@ ir['serialization']['content_digest']=digest
 begin
  f=EraZeroRenderer.render(ir)
 rescue EraZeroRenderer::RenderError => e
- abort e.message unless e.message.include?('invalid_quantifier')
+ abort e.message unless e.message.include?('invalid_quantifier') || e.message.include?('invalid_aspect')
  puts 'rejected';exit
 end
 [:midi,:svg].each do |method|

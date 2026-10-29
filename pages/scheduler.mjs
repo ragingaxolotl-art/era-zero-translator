@@ -1,3 +1,4 @@
+const ASPECTS=['bounded','ongoing','habitual'];
 const PROPERTY_COMPARISONS=['equal','greater_than','less_than','at_least','at_most','not_equal'];
 const MEASURE_COMPARISONS=['greater_than','less_than','at_least','at_most','not_equal'];
 const CONDITION_STATUSES=['open','satisfied','unsatisfied','counterfactual'];
@@ -11,8 +12,12 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
   const ir = formal.semantic_ir;
   for (const node of ir.nodes) {
     if(node.kind==='scope_operator'&&node.operator==='comparison')validatePropertyComparison(node,ir);
+    if(node.kind==='scope_operator'&&node.operator==='aspect'){
+      const scoped=ir.edges.filter(e=>e.type==='scopes'&&e.to===node.node_id);
+      if(!ASPECTS.includes(node.aspect)||Object.keys(node).some(k=>!['node_id','kind','operator','aspect'].includes(k))||scoped.length!==1||!['lexical_occurrence','clause','scope_operator','coordination'].includes(ir.nodes.find(n=>n.node_id===scoped[0]?.from)?.kind))throw new Error('Unsupported musical aspect.');
+    }
     if(['variable','reference'].includes(node.kind))throw new Error('Unsupported musical discourse variable/reference.');
-    if ((node.kind === 'scope_operator' && !['negation','repetition','modality','quantifier','comparison'].includes(node.operator)) ||
+    if ((node.kind === 'scope_operator' && !['negation','repetition','modality','quantifier','comparison','aspect'].includes(node.operator)) ||
         (node.kind === 'coordination' && !['sequence','all_of','any_of','exactly_one'].includes(node.operator)))
       throw new Error(`Unsupported musical operator: ${node.operator}.`);
   }
@@ -24,7 +29,7 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
   for(const edge of ir.edges.filter(edge=>edge.type==='condition_of')){
     if(!CONDITION_STATUSES.includes(edge.condition_status)||ir.nodes.find(n=>n.node_id===edge.from)?.kind!=='clause'||ir.nodes.find(n=>n.node_id===edge.to)?.kind!=='clause'||Object.keys(edge).some(key=>!['edge_id','type','from','to','condition_status'].includes(key)))throw new Error('Unsupported musical condition.');
   }
-  if (!ir.edges.some(edge=>edge.type==='condition_of') && !ir.edges.some(edge=>edge.type==='fills_role') && !ir.nodes.some(node=>node.kind==='measurement') && !ir.edges.some(edge=>edge.type==='time_relation') && !ir.nodes.some(node => ['repetition','sequence','negation','modality','quantifier','all_of','any_of','exactly_one'].includes(node.operator))) return events;
+  if (!ir.edges.some(edge=>edge.type==='condition_of') && !ir.edges.some(edge=>edge.type==='fills_role') && !ir.nodes.some(node=>node.kind==='measurement') && !ir.edges.some(edge=>edge.type==='time_relation') && !ir.nodes.some(node => ['repetition','sequence','negation','modality','quantifier','aspect','all_of','any_of','exactly_one'].includes(node.operator))) return events;
   const nodes = new Map(ir.nodes.map(node => [node.node_id, node]));
   const incoming = new Map();
   for (const edge of ir.edges) {
@@ -41,13 +46,14 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
     const edges = incoming.get(id) || [];
     let result;
     if (node.kind === 'scope_operator') {
-      if (!['negation','modality','quantifier','comparison'].includes(node.operator) && (node.operator !== 'repetition' || node.mode !== 'count' || !Number.isSafeInteger(node.count) || node.count < 1))
+      if (!['negation','modality','quantifier','comparison','aspect'].includes(node.operator) && (node.operator !== 'repetition' || node.mode !== 'count' || !Number.isSafeInteger(node.count) || node.count < 1))
         throw new Error('Counted repetition requires a positive count and supported nested scopes.');
       const scoped = edges.filter(edge => edge.type === 'scopes');
       if (scoped.length !== 1) throw new Error('Repetition must have exactly one scope.');
       const phrase = walk(scoped[0].from);
       if (!phrase.length) throw new Error('Repetition scope has no sound events.');
-      if(node.operator==='comparison'){validatePropertyComparison(node,ir);result=[grammarMarker(formal,id,`property_${node.dimension}_${node.relation}_open`),...phrase,grammarMarker(formal,id,`property_${node.dimension}_${node.relation}_close`)];}
+      if(node.operator==='aspect')result=[grammarMarker(formal,id,`aspect_${node.aspect}_open`),...phrase,grammarMarker(formal,id,`aspect_${node.aspect}_close`)];
+      else if(node.operator==='comparison'){validatePropertyComparison(node,ir);result=[grammarMarker(formal,id,`property_${node.dimension}_${node.relation}_open`),...phrase,grammarMarker(formal,id,`property_${node.dimension}_${node.relation}_close`)];}
       else if(node.operator==='negation')result=[grammarMarker(formal,id,'negation_open'),...phrase,grammarMarker(formal,id,'negation_close')];
       else if(node.operator==='quantifier')result=[...quantifierMarkers(formal,node),...phrase,grammarMarker(formal,id,`quantifier_${node.quantifier}_close`)];
       else if(node.operator==='modality')result=[grammarMarker(formal,id,`modality_${node.mode}_open`),...confidenceMarkers(formal,id,node.strength),...phrase,grammarMarker(formal,id,`modality_${node.mode}_close`)];
@@ -150,6 +156,8 @@ function grammarMarker(formal,scopeId,marker){
   if(time){const code={before:-1,at:0,after:1}[time[1]],sign=time[2]==='open'?-1:1;relative=[0,12*sign,code,12*sign,0]}
   const day=marker.match(/^time_(previous_day|current_day|next_day)_(open|close)$/);
   if(day){const code={previous_day:-2,current_day:2,next_day:3}[day[1]],sign=day[2]==='open'?-1:1;relative=[0,12*sign,code,12*sign,0]}
+  const aspect=marker.match(/^aspect_(bounded|ongoing|habitual)_(open|close)$/);
+  if(aspect)relative=[0,aspect[2]==='open'?-22:22,ASPECTS.indexOf(aspect[1]),0];
   const property=marker.match(/^property_(mass|thermodynamic_temperature)_(equal|greater_than|less_than|at_least|at_most|not_equal)_(open|close)$/);
   if(property)relative=[0,property[3]==='open'?-18:18,({mass:1,thermodynamic_temperature:2})[property[1]],PROPERTY_COMPARISONS.indexOf(property[2]),0];
   const comparison=marker.match(/^measure_compare_(greater_than|less_than|at_least|at_most|not_equal)_(open|close)$/);

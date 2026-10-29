@@ -6,42 +6,37 @@
       "test": "tests/min_cross_reference_migration_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 38343\n\n# Running:\n\n.\n\nFinished in 0.488393s, 2.0475 runs/s, 180.1828 assertions/s.\n\n1 runs, 88 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 31087\n\n# Running:\n\n.\n\nFinished in 0.490396s, 2.0392 runs/s, 179.4468 assertions/s.\n\n1 runs, 88 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/mov_process_example_migration_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 12684\n\n# Running:\n\n.\n\nFinished in 0.849681s, 1.1769 runs/s, 209.4904 assertions/s.\n\n1 runs, 178 assertions, 0 failures, 0 errors, 0 skips\n",
-      "follow_up_verification": {
-        "reason": "Corrected the test to verify that the compact browser inventory omits neighbor notes, matching all_atoms and the existing release builder. Production meaning and rendering code were unchanged after the full run.",
-        "previous_exit_code": 1,
-        "previous_output": "Run options: --seed 12342\n\n# Running:\n\nE\n\nFinished in 0.733500s, 1.3633 runs/s, 218.1322 assertions/s.\n\n  1) Error:\nMovProcessExampleMigrationTest#test_exact_editorial_delta_and_unchanged_approved_roots:\nKeyError: key not found: \"neighbor_contrast_notes\"\nDid you mean?  \"neighbor_contrasts\"\n    tests/mov_process_example_migration_test.rb:30:in `fetch'\n    tests/mov_process_example_migration_test.rb:30:in `block (2 levels) in test_exact_editorial_delta_and_unchanged_approved_roots'\n    tests/mov_process_example_migration_test.rb:25:in `each'\n    tests/mov_process_example_migration_test.rb:25:in `block in test_exact_editorial_delta_and_unchanged_approved_roots'\n    tests/mov_process_example_migration_test.rb:24:in `each'\n    tests/mov_process_example_migration_test.rb:24:in `test_exact_editorial_delta_and_unchanged_approved_roots'\n\n1 runs, 160 assertions, 0 failures, 1 errors, 0 skips\n"
-      }
+      "output": "Run options: --seed 32055\n\n# Running:\n\n.\n\nFinished in 0.936298s, 1.0680 runs/s, 190.1104 assertions/s.\n\n1 runs, 178 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_dependencies_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 38239\n\n# Running:\n\n......\n\nFinished in 0.011528s, 520.4719 runs/s, 1821.6516 assertions/s.\n\n6 runs, 21 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 14665\n\n# Running:\n\n......\n\nFinished in 0.012741s, 470.9207 runs/s, 1648.2223 assertions/s.\n\n6 runs, 21 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_expansion_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 838\n\n# Running:\n\n..........\n\nFinished in 0.235169s, 42.5226 runs/s, 578.3075 assertions/s.\n\n10 runs, 136 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 46832\n\n# Running:\n\n..........\n\nFinished in 0.253606s, 39.4312 runs/s, 536.2649 assertions/s.\n\n10 runs, 136 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_convention_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 38012\n\n# Running:\n\n...\n\nFinished in 0.031066s, 96.5686 runs/s, 836.9278 assertions/s.\n\n3 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 2594\n\n# Running:\n\n...\n\nFinished in 0.040057s, 74.8933 runs/s, 649.0751 assertions/s.\n\n3 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/dictionary_musical_identity_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 47719\n\n# Running:\n\n.\n\nFinished in 0.219968s, 4.5461 runs/s, 27.2767 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 18760\n\n# Running:\n\n.\n\nFinished in 0.239359s, 4.1778 runs/s, 25.0669 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/audit_dictionary_musical_identity.rb",
@@ -59,13 +54,13 @@
       "test": "tests/semantic_reference_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 59734\n\n# Running:\n\n.......\n\nFinished in 0.219888s, 31.8344 runs/s, 145.5286 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 41838\n\n# Running:\n\n.......\n\nFinished in 0.228334s, 30.6568 runs/s, 140.1456 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/quantity_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 38409\n\n# Running:\n\n..\n\nFinished in 0.372273s, 5.3724 runs/s, 209.5237 assertions/s.\n\n2 runs, 78 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 57059\n\n# Running:\n\n..\n\nFinished in 0.383378s, 5.2168 runs/s, 203.4546 assertions/s.\n\n2 runs, 78 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_semantic_ir_and_grammar.rb",
@@ -77,19 +72,19 @@
       "test": "tests/foundation_process_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 13716\n\n# Running:\n\n...\n\nFinished in 0.409175s, 7.3318 runs/s, 68.4304 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 20979\n\n# Running:\n\n...\n\nFinished in 0.425319s, 7.0535 runs/s, 65.8329 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/repetition_performance_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 23063\n\n# Running:\n\n...\n\nFinished in 0.460100s, 6.5203 runs/s, 17.3875 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 5478\n\n# Running:\n\n...\n\nFinished in 0.476498s, 6.2959 runs/s, 16.7892 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/controlled_role_reference_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 2469\n\n# Running:\n\n...\n\nFinished in 0.404737s, 7.4122 runs/s, 93.8881 assertions/s.\n\n3 runs, 38 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 61113\n\n# Running:\n\n...\n\nFinished in 0.420284s, 7.1380 runs/s, 90.4151 assertions/s.\n\n3 runs, 38 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_gate4b_compound_dictionary.rb",
@@ -270,6 +265,12 @@
       "passed": true,
       "exit_code": 0,
       "output": "Nominal mass restrictions: 36 adjective/participant/negation/question/command/past/runtime cases match Ruby formal and MIDI. Independent performance decoding retains the restriction on its noun; equivalent units match, different thresholds differ, and unsupported senses/frames remain incomplete.\n"
+    },
+    {
+      "test": "tests/aspect_carrying_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Aspect: 45 carrying/negation/past/question/nominal-property/runtime cases have Ruby/browser formal and MIDI parity; 9 controlled aspect/state cases preserve distinct audible frames without participant roles. Bounded, ongoing and habitual stay separate from tense, arrival and runtime.\n"
     },
     {
       "test": "tests/measurement_comparison_test.mjs",

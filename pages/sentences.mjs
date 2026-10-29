@@ -9,7 +9,7 @@ import {deicticReference,deicticEvent,nominalMarker} from './references.mjs';
 
 // Reviewed constructions use exact process senses, never a generic synonym pool.
 const ACTIONS = [
-  {pattern:'is carrying',predicate:'CMP:7a6749aaf61cd6181e544bd6',key:'ongoing_physical_carrying',wording:'is carrying',role:'source',targetRole:'target',compoundSlots:{source:['q-support','s-source'],target:[['q-support','s-target'],['s-load']]},semanticNote:'Physical conveyance of a distinct material load borne upon, within or suspended from the carrier’s moving support; support and movement concern that same load and interval.'},
+  {pattern:'is carrying',predicate:'CMP:7a6749aaf61cd6181e544bd6',key:'ongoing_physical_carrying',aspect:'ongoing',wording:'is carrying',role:'source',targetRole:'target',compoundSlots:{source:['q-support','s-source'],target:[['q-support','s-target'],['s-load']]},semanticNote:'Physical conveyance of a distinct material load borne upon, within or suspended from the carrier’s moving support; support and movement concern that same load and interval.'},
   {pattern:'is physically supporting',predicate:'CMP:eef9fff8ac6618ce60927f18',key:'active_physical_load_support',wording:'is physically supporting',role:'source',targetRole:'target',compoundSlots:{source:['s-source'],target:['s-target']},semanticNote:'Physical load-bearing support: this source bears at least part of the distinct material load. This does not assert carrying, movement, intention, or emotional support.'},
   {pattern:'has a directed data link to',negativePattern:'does not have a directed data link to',predicate:'CMP:742b44d9ead66b451346708a',key:'directed_data_link',wording:'has a directed data link to',role:'source',targetRole:'target',compoundSlots:{source:['a-source-01'],target:['a-target-01']},semanticNote:'An established directed communication relation with bounded data content; it does not assert an ongoing transfer.'},
   {pattern:'is registering optical input from',predicate:'CMP:bcfd189eb305cf364ada975a',key:'ongoing_optical_registration',wording:'is registering optical input from',role:'target',targetRole:'source',semanticNote:'Optical sensory registration uses a light-carried input. It does not by itself assert conscious seeing, attention, recognition, color, or understanding.'},
@@ -83,7 +83,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
       const negative=/^[Dd]o not /.test(String(input).trim());
       const inner=parseNamedSentence(`you are ${negative?'not ':''}carrying ${carryingCommand[1]}${carryingCommand[2]?' toward '+carryingCommand[2]:''}.`,depth+1);
       if(!inner)return null;
-      return {...inner,speechAct:'command',construction:`command_${inner.construction}`,explicitInterpretation:String(input).trim()};
+      return {...inner,aspect:undefined,speechAct:'command',construction:`command_${inner.construction}`,explicitInterpretation:String(input).trim()};
     }
     const commands=[['care for','cares for'],['restore','is restoring'],['repair','is repairing'],['awaken','is awakening'],['damage','is damaging'],['physically repair','is physically repairing'],['physically support','is physically supporting'],['move toward','is moving toward'],['move away from','is moving away from'],['move relative to','is moving relative to'],['pay attention to','is paying attention to'],['revise a mental representation of','is revising a mental representation of']];
     for(const [verb,wording] of commands){
@@ -101,7 +101,9 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     const pastQuestion=String(input).trim().match(new RegExp(`^(?:[Ww]as|[Ww]ere) ${participant} (.+)\\?$`));
     const didQuestion=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?(care for|restore|repair|awaken|damage|physically repair) ${participant}( (?:yesterday|today))?\\?$`));
     const pastVerbs={'care for':'cared for',restore:'restored',repair:'repaired',awaken:'awakened',damage:'damaged','physically repair':'physically repaired'};
-    const statement=question?`${question[1]} is ${question[2]}.`:careQuestion?`${careQuestion[1]} ${careQuestion[2]?'does not care for':'cares for'} ${careQuestion[3]}.`:pastQuestion?`${pastQuestion[1]} was ${pastQuestion[2]}.`:didQuestion?`${didQuestion[1]} ${didQuestion[2]?'did not '+didQuestion[3]:pastVerbs[didQuestion[3]]} ${didQuestion[4]}${didQuestion[5]||''}.`:null;
+    const carryDid=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?(habitually )?carry (.+)\\?$`));
+    const carryHabit=String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?habitually carry (.+)\\?$`));
+    const statement=carryDid?`${carryDid[1]} ${carryDid[2]?'did not '+(carryDid[3]||'')+'carry':(carryDid[3]||'')+'carried'} ${carryDid[4]}.`:carryHabit?`${carryHabit[1]} ${carryHabit[2]?'does not habitually carry':'habitually carries'} ${carryHabit[3]}.`:question?`${question[1]} is ${question[2]}.`:careQuestion?`${careQuestion[1]} ${careQuestion[2]?'does not care for':'cares for'} ${careQuestion[3]}.`:pastQuestion?`${pastQuestion[1]} was ${pastQuestion[2]}.`:didQuestion?`${didQuestion[1]} ${didQuestion[2]?'did not '+didQuestion[3]:pastVerbs[didQuestion[3]]} ${didQuestion[4]}${didQuestion[5]||''}.`:null;
     if(statement){
       const inner=parseNamedSentence(statement,depth+1);
       if(!inner)return null;
@@ -142,6 +144,27 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     const inner=parseNamedSentence(clause,depth+1);
     if(!inner||inner.calendarDay!==undefined||inner.scopes?.length||inner.speechAct||(day==='tomorrow'&&['thermal_standard','mass_standard'].includes(inner.requiredInterpretation))||(day==='yesterday'&&inner.speechTime!=='before')||(day==='tomorrow'&&inner.speechTime!==undefined))return null;
     return {...inner,...(day==='yesterday'?{speechTime:undefined}:{}),...(day==='tomorrow'?{requiredInterpretation:'future_assertion',semanticNote:[inner.semanticNote,'Interprets will as a future assertion; promise, intention, and willingness are not inferred.'].filter(Boolean).join(' ')}:{}),calendarDay:{yesterday:'-1',today:'0',tomorrow:'1'}[day],construction:`calendar_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
+  // Viewpoint is separate from lexical phase, tense and runtime status. A
+  // bounded carrying episode does not imply reaching a destination.
+  const carryingViews=[
+    ['habitually carries','is carrying','habitual'],
+    ['habitually carry','is carrying','habitual'],
+    ['does not habitually carry','is not carrying','habitual'],
+    ['do not habitually carry','is not carrying','habitual'],
+    ['habitually carried','is carrying','habitual','before'],
+    ['did not habitually carry','is not carrying','habitual','before'],
+    ['carried','is carrying','bounded','before'],
+    ['did not carry','is not carrying','bounded','before']
+  ];
+  for(const [surface,replacement,aspect,speechTime] of carryingViews){
+    const match=String(input).trim().match(new RegExp(`^${participant} ${surface} (.+)$`));
+    if(!match)continue;
+    const inner=parseNamedSentence(`${match[1]} ${replacement} ${match[2]}`,depth+1);
+    if(!inner||inner.key!=='ongoing_physical_carrying'||(inner.aspect&&inner.aspect!=='ongoing')||inner.speechAct||inner.scopes?.length||inner.calendarDay!==undefined||inner.speechTime!==undefined)return null;
+    return {...inner,aspect,...(speechTime?{speechTime}:{}),construction:`${aspect}_${inner.construction}`,
+      semanticNote:inner.semanticNote+(aspect==='bounded'?' This presents a bounded carrying episode before speech time; it does not assert arrival or delivery.':' This describes a recurring carrying practice over the contextual reference interval; it does not assert carrying at this instant, a frequency, or a schedule.'),
+      explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
   const pastForms=[
     ['was','is'],['were','is'],['cared for','cares for'],['did not care for','does not care for'],
@@ -414,10 +437,15 @@ export async function composeNamedSentence(input,template,{interpretation,standa
     ir.nodes.push({node_id:'measure',kind:'measurement',...parsed.measurement});
     ir.edges.push({edge_id:'measurement',type:'fills_role',from:'measure',to:'p',role:'quantity'});
   }
+  if(parsed.aspect){
+    ir.nodes.push({node_id:'aspect',kind:'scope_operator',operator:'aspect',aspect:parsed.aspect});
+    ir.edges[0].from='aspect';
+    ir.edges.push({edge_id:'aspect',type:'scopes',from:'p',to:'aspect'});
+  }
   if(parsed.negated){
     ir.nodes.push({node_id:'neg',kind:'scope_operator',operator:'negation'});
-    ir.edges[0].from='neg';
-    ir.edges.push({edge_id:`e${Math.max(3,participants.length+1)}`,type:'scopes',from:'p',to:'neg'});
+    const inner=ir.edges[0].from;ir.edges[0].from='neg';
+    ir.edges.push({edge_id:`e${Math.max(3,participants.length+1)}`,type:'scopes',from:inner,to:'neg'});
   }
   for(const [index,scope] of (parsed.scopes||[]).entries()){
     const id=`scope${String(index).padStart(2,'0')}`;

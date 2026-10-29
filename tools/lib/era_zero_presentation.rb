@@ -5,6 +5,7 @@ require "digest"
 require_relative "era_zero_renderer"
 
 module EraZeroPresentation
+  ASPECTS = %w[bounded ongoing habitual].freeze
   MEASUREMENT_UNITS = %w[1 second minute hour day meter kilometer gram kilogram degree radian bit byte kelvin].freeze
   QUANTIFIERS = %w[exact at_least at_most all some none].freeze
   ROLE_ORDER = %w[actor source cause experiencer bearer predicate target result destination instrument material content recipient location environment condition persistent_condition time manner quantity comparison_standard beneficiary].freeze
@@ -105,8 +106,9 @@ module EraZeroPresentation
     ir = formal.fetch("semantic_ir")
     ir.fetch("nodes").each do |node|
       raise PresentationError, "unsupported musical property comparison" if node["kind"] == "scope_operator" && node["operator"] == "comparison" && !EraZeroSemanticValidation.valid_property_comparison?(node, ir)
+      raise PresentationError, "unsupported musical aspect" if node["operator"] == "aspect" && (!ASPECTS.include?(node["aspect"]) || !(node.keys - %w[node_id kind operator aspect]).empty?)
       raise PresentationError, "unsupported musical discourse variable/reference" if %w[variable reference].include?(node["kind"])
-      if (node["kind"] == "scope_operator" && !%w[negation repetition modality quantifier comparison].include?(node["operator"])) ||
+      if (node["kind"] == "scope_operator" && !%w[negation repetition modality quantifier comparison aspect].include?(node["operator"])) ||
          (node["kind"] == "coordination" && !%w[sequence all_of any_of exactly_one].include?(node["operator"]))
         raise PresentationError, "unsupported musical operator: #{node['operator']}"
       end
@@ -124,7 +126,7 @@ module EraZeroPresentation
         raise PresentationError, "unsupported musical condition"
       end
     end
-    return events unless ir.fetch("edges").any? { |edge| %w[fills_role condition_of].include?(edge["type"]) } || ir.fetch("nodes").any? { |node| node["kind"] == "measurement" } || !time_edges.empty? || ir.fetch("nodes").any? { |node| %w[repetition sequence negation modality quantifier all_of any_of exactly_one].include?(node["operator"]) }
+    return events unless ir.fetch("edges").any? { |edge| %w[fills_role condition_of].include?(edge["type"]) } || ir.fetch("nodes").any? { |node| node["kind"] == "measurement" } || !time_edges.empty? || ir.fetch("nodes").any? { |node| %w[repetition sequence negation modality quantifier aspect all_of any_of exactly_one].include?(node["operator"]) }
     nodes = ir.fetch("nodes").to_h { |node| [node.fetch("node_id"), node] }
     incoming = ir.fetch("edges").group_by { |edge| edge.fetch("to") }
     by_occurrence = events.group_by { |event| event.fetch("occurrence_id") }
@@ -138,14 +140,16 @@ module EraZeroPresentation
       edges = incoming.fetch(id, [])
       result = case node["kind"]
                when "scope_operator"
-                 unless %w[negation modality quantifier comparison].include?(node["operator"]) || (node["operator"] == "repetition" && node["mode"] == "count" && node["count"].is_a?(Integer) && node["count"].positive?)
+                 unless %w[negation modality quantifier comparison aspect].include?(node["operator"]) || (node["operator"] == "repetition" && node["mode"] == "count" && node["count"].is_a?(Integer) && node["count"].positive?)
                    raise PresentationError, "counted repetition export requires a positive count and supported nested scopes"
                  end
                  scoped = edges.select { |edge| edge["type"] == "scopes" }
                  raise PresentationError, "repetition must have exactly one scope" unless scoped.length == 1
                  phrase = walk.call(scoped.first.fetch("from"))
                  raise PresentationError, "repetition scope has no sound events" if phrase.empty?
-                 if node["operator"] == "comparison"
+                 if node["operator"] == "aspect"
+                   [grammar_marker(formal, id, "aspect_#{node['aspect']}_open")] + phrase + [grammar_marker(formal, id, "aspect_#{node['aspect']}_close")]
+                 elsif node["operator"] == "comparison"
                    raise PresentationError, "unsupported musical property comparison" unless EraZeroSemanticValidation.valid_property_comparison?(node, ir)
                    [grammar_marker(formal, id, "property_#{node['dimension']}_#{node['relation']}_open")] + phrase + [grammar_marker(formal, id, "property_#{node['dimension']}_#{node['relation']}_close")]
                  elsif node["operator"] == "negation"
@@ -295,6 +299,8 @@ module EraZeroPresentation
       sign = day[2] == "open" ? -1 : 1
       relative = [0, 12 * sign, code, 12 * sign, 0]
     end
+    aspect = marker.match(/\Aaspect_(bounded|ongoing|habitual)_(open|close)\z/)
+    relative = [0, aspect[2] == "open" ? -22 : 22, ASPECTS.index(aspect[1]), 0] if aspect
     property = marker.match(/\Aproperty_(mass|thermodynamic_temperature)_(equal|greater_than|less_than|at_least|at_most|not_equal)_(open|close)\z/)
     relative = [0, property[3] == "open" ? -18 : 18, {"mass"=>1,"thermodynamic_temperature"=>2}.fetch(property[1]), PROPERTY_COMPARISONS.index(property[2]), 0] if property
     comparison = marker.match(/\Ameasure_compare_(greater_than|less_than|at_least|at_most|not_equal)_(open|close)\z/)

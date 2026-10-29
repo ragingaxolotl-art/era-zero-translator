@@ -72,6 +72,12 @@ and do not create new LIF/STR-like families merely to fill the address grid.
 
 ### Next dependency milestone
 
+The [carrying aspect implementation](../reviews/carrying_aspect.md) now distinguishes
+ongoing carrying, a bounded past carrying episode, and explicit habitual carrying.
+Past/habitual questions, negation scope and existing noun restrictions compose
+with the independent 0/1/2 runtime ending. Bare “carries” and culmination with “to”
+remain unresolved; this does not close the original carrying milestone.
+
 The [nominal mass restriction implementation](../reviews/nominal_mass_properties.md)
 now composes one heavy/light definite noun with a user-selected standard inside
 supported constructions, including nested carrying. The property stays attached

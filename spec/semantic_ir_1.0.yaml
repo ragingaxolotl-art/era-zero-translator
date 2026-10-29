@@ -135,6 +135,7 @@ node_types:
     - comparison
     rule: Every operator has exactly one scopes edge.
     comparison_profile: spec/property_comparison_1.0.yaml
+    aspect_performance_profile: spec/aspect_performance_1.0.yaml
   coordination:
     required:
     - node_id
