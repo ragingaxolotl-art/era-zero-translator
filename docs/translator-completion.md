@@ -21,7 +21,62 @@ The next broad usability priorities are ordinary noun phrases, questions and
 commands, and time/discourse handling. Sensory dimensions, affect, bodily needs,
 and movement manner still need foundation review before vocabulary expansion.
 Both kinds of gap matter: adding roots alone cannot repair missing clause structure,
-and expanding grammar cannot supply an absent temperature or desire distinction.
+and expanding grammar cannot supply an absent sensory or desire distinction.
+Exact temperature measurements, temperature comparisons, and user-selected
+mass/temperature standards now have bounded implementations. They do not establish
+general sensory adjective coverage.
+
+## Original completion-gate reconciliation
+
+Reviewed against the source audit's seven original phases at draft `8f4da2b`.
+The recorded regression report has 71 passing checks; the ordinary diagnostic
+still has 19 checked compositions out of 40. Neither closes the gates below.
+The source audit is a historical snapshot, not a description of the latest draft.
+
+| Original gate | Current evidence | Outstanding requirement; gate remains open |
+|---|---|---|
+| 1. One baseline and accurate status | Pinned baseline, local source manifest, editorial migration and source reconciliation records | Recover the full historical provenance ledger and reconcile external snapshots, with authority/conflicts recorded; do not claim every storage was audited |
+| 2. Meaning survives rendering | Scoped grammar, participant frames, state contrasts, strict MIDI structure observer and bounded mass/temperature comparison inverse | General attachment and discourse recovery, parallel performance, and independent meaning recovery for the claimed supported scope |
+| 3. Recursive compounds and reference binding | Versioned expansion, scoped slots, browser plans, nested carrying/support and participant constraints | Broader English compound discovery/reference forms and end-to-end semantic round trips; token recovery alone is insufficient |
+| 4. Complete small vertical slice | Progressive carrying, load/carrier identity, toward-destination and selected commands; predicate heavy/light with explicit mass standard | The exact mandatory phrase “Pip carries the heavy box to Ada”, including attributive heavy, simple-present meaning, destination/recipient distinction, tense and negation variants |
+| 5. Coherent vocabulary batches | Reviewed bounded compounds and contrasts; preservation of existing roots and poetic love | Missing ordinary senses and all required frames, novel combinations, dictionary discovery and pronunciation evidence for each approved batch |
+| 6. Sentence grammar and dialogue | Selected questions, commands, conditions, time, quantities and explicit interpretation choices | Relative clauses, broader pronouns/discourse, quantifier/modal scope and held-out construction tests with local/browser agreement |
+| 7. Actual-use validation and release | Draft regression and diagnostic reports | All mandatory acceptance cases, an agreed held-out scope/target, listening/accessibility/browser checks and deployed-build verification; no release is authorized by this ledger |
+
+The audit's proposed 95% held-out target remains a proposal, not a measured score.
+Correctly reported gaps are successful diagnostics and unsuccessful translations.
+Clarifications and exact translations must be reported separately.
+
+### Preserve 0, 1, and 2 at both levels
+
+Lexical trits in root addresses and runtime states are separate semantic layers.
+Keep every root's address-specific definition; do not replace it with a generic
+three-state gloss. Runtime 0, 1, and 2 retain their specified inactive/ended,
+active/expressed, and dormant/pending distinctions and musical endings. Runtime
+state is not a substitute for grammatical negation, tense, permission, fatigue,
+or uncertainty. In particular, 2 does not make “tired” or “will” expressible.
+
+Every new foundational compound needs positive and contrasting examples across
+all three runtime states, including nested use and participant changes. Check
+both lexical meaning and audible state preservation. Preserve existing melodies
+and do not create new LIF/STR-like families merely to fill the address grid.
+
+### Next dependency milestone
+
+Finish the mandatory carrying/property vertical slice before counting further
+vocabulary growth as completion: reuse the reviewed carrying and mass foundations,
+compose a property inside a noun phrase, preserve its selected standard, and
+resolve the distinction between motion toward a place and delivery to a person.
+Then test the original phrase and unseen participant/property/tense variants.
+Do not silently treat “toward Ada” as equivalent to “to Ada”.
+
+Alongside this milestone, review sensory, bodily-need and affect foundations by
+explicit definitions and counterexamples before proposing new primitives. The
+original acceptance suite remains required: swimming and curiosity; hunger,
+thirst and fatigue; directed helping; opening doors versus files; repair phase,
+tense, ability and obligation; quantifier scope; audible negation, repetition and
+simultaneity; shared participants and relative clauses; nested compound/version
+failures; poetic love versus preference; and the two demanding lore phrases.
 
 ## Dependency order
 
@@ -58,7 +113,7 @@ already expressible.
 | Artifact generation | CRE:111; material artifact, composite artifact, machine | Reuse generation with result reference; do not assume every machine is a material artifact | Make, build, assemble |
 | Attention and learning | MIN:211 and MIN:111 | Reuse exact senses; attention is not curiosity, and model revision is not necessarily learning a truth | Study, investigate, teach |
 | Dependence and need | ORI:210/211 | Conditional dependence alone lacks desire, felt deficit and resource kind; review those separately | Hungry, thirsty, tired, require |
-| Physical quantities and comparison | MAT defines physical states and work capacity; no temperature-specific invariant | Review quantity dimensions, units and comparison semantics; no hot=active shortcut | Hot/cold, heavy/light, fast/slow, large/small |
+| Physical quantities and comparison | Exact mass/temperature units and comparisons; explicit user-selected hot/cold and heavy/light standards | Extend noun-phrase properties and review further dimensions; no hot=active shortcut or universal adjective threshold | Attributive heavy/light, fast/slow, large/small |
 | Sensory modalities | MIN representations do not distinguish sight, hearing, touch, taste or smell | Unresolved semantic foundation; evaluate conventional definitions or architecture extension | See/hear, bright/dark, loud/quiet, rough/smooth |
 | Affect and preference | LIF:211 care; approved love; MIN attention | No generic happiness, liking or curiosity follows from these alone | Happy/sad, enjoy, prefer, curious |
 | Locomotion manner | MOV movement and MAT physical body | Missing manner distinctions; explicit environment labels alone do not distinguish swimming from being carried in water | Walk, run, swim, jump |
@@ -109,7 +164,7 @@ construction does not establish general adjective coverage.
 Existing keyword, dictionary-count and static-render tests alone cannot close these
 gates. The translator remains unfinished until all gates have direct evidence.
 
-## Current implementation evidence
+## Initial implementation evidence (historical)
 
 `tools/lib/era_zero_compound_dependencies.rb` resolves exact approved versions,
 orders dependencies before consumers, and rejects missing pins and cycles.
