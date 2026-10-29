@@ -72,6 +72,12 @@ and do not create new LIF/STR-like families merely to fill the address grid.
 
 ### Next dependency milestone
 
+The [arrival foundation](../reviews/arrival_foundation.md) reuses MOV:110 for
+explicit past spatial arrival, separately from approach, calendar time and runtime
+0/1/2. Its 27 sentence/state cases preserve actor and destination roles in music.
+Completed carrying still needs same-event load/endpoint binding; arrival alone
+does not establish delivery or receipt.
+
 The [simple-present carrying choice](../reviews/carrying_viewpoint_choice.md) now
 allows “carries” after an explicit viewpoint selection, including simultaneous
 selection of a heavy/light noun's mass standard. The two choices are independent;

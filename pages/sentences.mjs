@@ -99,8 +99,8 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     const question=String(input).trim().match(new RegExp(`^(?:[Ii]s|[Aa]re|[Aa]m) ${participant} (.+)\\?$`));
     const careQuestion=String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?care for ${participant}\\?$`));
     const pastQuestion=String(input).trim().match(new RegExp(`^(?:[Ww]as|[Ww]ere) ${participant} (.+)\\?$`));
-    const didQuestion=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?(care for|restore|repair|awaken|damage|physically repair) ${participant}( (?:yesterday|today))?\\?$`));
-    const pastVerbs={'care for':'cared for',restore:'restored',repair:'repaired',awaken:'awakened',damage:'damaged','physically repair':'physically repaired'};
+    const didQuestion=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?(care for|restore|repair|awaken|damage|physically repair|arrive at) ${participant}( (?:yesterday|today))?\\?$`));
+    const pastVerbs={'care for':'cared for',restore:'restored',repair:'repaired',awaken:'awakened',damage:'damaged','physically repair':'physically repaired','arrive at':'arrived at'};
     const carryDid=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?(habitually )?carry (.+)\\?$`));
     const carryHabit=String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?habitually carry (.+)\\?$`));
     const carrySimple=String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?carry (.+)\\?$`));
@@ -188,6 +188,18 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     const inner=parseNamedSentence(`${match[1]} ${replacement} ${match[2]}`,depth+1);
     if(!inner||inner.calendarDay!==undefined||inner.speechTime!==undefined||inner.scopes?.length||inner.speechAct)return null;
     return {...inner,...(completedPredicate?{predicate:completedPredicate}:{}),speechTime:'before',construction:`past_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
+  // Arrival commits to completed displacement, not merely a bounded period of
+  // approach. Its lexical completion remains independent of runtime 0/1/2.
+  const arrival=String(input).trim().match(new RegExp(`^${participant} (arrived at|did not arrive at) ${participant}[.]?$`));
+  if(arrival){
+    const texts=[arrival[1],arrival[3]];
+    if(texts.some(text=>parseNominal(text)?.quantifier)||participantIdentity(texts[0])===participantIdentity(texts[1]))return null;
+    return {actor:texts[0].replaceAll('"',''),actorText:texts[0],target:texts[1].replaceAll('"',''),targetText:texts[1],
+      predicate:'MOV:110',key:'completed_target_arrival',role:'actor',targetRole:'destination',speechTime:'before',
+      negated:arrival[2]==='did not arrive at',construction:'completed_target_arrival',
+      semanticNote:'Spatial arrival: completion of this mover’s displacement to the destination before speech time. This does not assert continued presence there, transfer of possession, a recipient, intention, or carriage of another entity. Negation denies that completed arrival; it does not assert that an approach occurred.',
+      explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
   const carryingGoal=String(input).trim().match(new RegExp(`^${participant} (?:is|am|are) (not )?carrying ${participant} toward ${participant}[.]?$`));
   if(carryingGoal){
@@ -283,7 +295,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|carry|carries|carried|carrying|support|supporting|temperature)\b/i.test(String(input))) && !parseNamedSentence(input);
+  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|arrive|arrives|arrived|arriving|carry|carries|carried|carrying|support|supporting|temperature)\b/i.test(String(input))) && !parseNamedSentence(input);
 }
 
 // A complete antecedent and a comma establish conditional scope. Without
