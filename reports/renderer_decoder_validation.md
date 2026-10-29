@@ -7,13 +7,13 @@ Status: **PASS — RENDERER/DECODER CANONICAL; CONTROLLED ENGLISH MAY BEGIN**
 - Semantic IR fixtures: **16**
 - Transposed round trips: **48**
 - Atomic state renderings: **972**
-- Compound state renderings: **87**
+- Compound state renderings: **120**
 - Decoder corruption classes tested: **4+**
 - General English authorized: **no**
 
 ## PASS — source immutability
 
-IR, atoms, and compounds match recorded fingerprints
+IR and compounds match recorded fingerprints; atoms match directly or through exact editorial reconciliation
 
 ## PASS — deliverable completeness
 

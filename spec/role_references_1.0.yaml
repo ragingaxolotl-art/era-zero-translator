@@ -1,0 +1,40 @@
+profile: EZROLE-REF-1
+status: implementation_draft
+purpose: Distinguish a reused participant from separate occurrences with identical lexical contents.
+controlled_syntax: ROLE role REF earlier_role
+interpretation:
+  - The referenced role must already exist in the same simple clause.
+  - Reuse its exact argument node ID; do not create a second lexical occurrence.
+  - Reference chains resolve to the same original argument occurrence.
+  - Forward references, self references and references to absent roles fail explicitly.
+  - Matching lexical text alone never establishes participant identity.
+performance:
+  trigger: Two explicit fills_role edges of the same predicate share their source argument node ID.
+  order: Existing edge_id order determines which role first renders the argument.
+  first_use: Render the complete argument inside its normal role frame.
+  later_use: Render a role-reference marker inside the later role frame, pointing to the first role.
+  marker: role_reference_<earlier role>
+  relative_notes: '[0, -20, role trit 1, role trit 2, role trit 3, 0]'
+  role_code: Existing zero-based 22-role ordinal encoded in three base-3 digits; trit pitches are 0, +1 and -1.
+  note_duration_beats: 0.25
+  boundary_after_beats: 0.5
+  runtime: The pointer has no runtime ending; the referenced argument retains its own ending at first use.
+  ambiguity: Reject a pointer if the earlier role is not unique among this predicate's explicit role edges.
+  scope: Earlier roles of the same predicate, not an arbitrary earlier sound or a role inside another clause.
+compatibility:
+  - Semantic IR gains no new node type: shared edge endpoints already express identity.
+  - Existing performances with no repeated argument across direct roles are unchanged.
+  - Older performances that duplicated a shared argument must be regenerated to retain the distinction from independent identical occurrences.
+  - Root melodies and all 0/1/2 state meanings remain unchanged.
+limits:
+  - Ordinary-English pronoun resolution is separate work.
+  - Arbitrary coreference across clauses and unconstrained nested compound bindings remain unfinished.
+  - The general MIDI observer recovers reference tokens; full predicate-scope reconstruction remains unfinished.
+implementation:
+  - tools/lib/era_zero_controlled_english.rb
+  - tools/lib/era_zero_presentation.rb
+  - pages/scheduler.mjs
+  - pages/strict_music_decoder.mjs
+tests:
+  - tests/controlled_role_reference_test.rb
+  - tests/role_reference_music_test.mjs

@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 29
+  entry_count: 40
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -15,6 +15,104 @@ metadata:
   semantic_ir_started: false
   translator_started: false
 entries:
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-load
+    kind: root
+    root_id: MAT:010
+  - node_id: s-source
+    kind: slot
+    slot_name: custodian
+    slot_type: entity
+  - node_id: s-target
+    kind: slot
+    slot_name: held_object
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MAT:210
+  edges:
+  - type: qualifies
+    from: q-load
+    to: s-target
+  - type: fills_role
+    from: s-source
+    to: h
+    role: source
+  - type: fills_role
+    from: s-target
+    to: h
+    role: target
+  binding_constraints:
+  - relation: distinct_arguments
+    slot_paths:
+    - - s-source
+    - - s-target
+  lexical_constraints:
+  - The custodian and material object are distinct participants.
+  - The established coupling and practical control concern the same holder-to-object
+    relation; the material qualifier applies to the bound target object.
+  - Controlled mediation does not imply ownership of the intermediary or object; control
+    itself must be established rather than merely achievable.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: practical_physical_custody
+    sound_code: 7
+    added_definition: An established material relation in which a holder has effective
+      practical control over access to and physical handling of a distinct material
+      object, through an arrangement the holder can operate directly or through a
+      controlled physical intermediary. Mere ability to approach, touch, influence
+      or seize the object does not establish this relation. Control need not be exclusive,
+      lawful, conscious, voluntary, continuously exercised or accompanied by ownership,
+      load bearing, movement or a prior transfer.
+    excludes:
+    - Ownership, permission or entitlement without practical control
+    - Proximity, touch, load support or physical influence alone
+    - Hypothetical ability to seize an object not already under practical control
+    - Legal guardianship, information access or ownership of an abstract asset
+    - Receipt or transfer inferred from a custody state alone
+  compound_id: CMP:0aca609416668978e1527dac
+  content_digest: 0aca609416668978e1527dac3aeac18d202b9b5615f5e15134d637682a39fa8d
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-29'
+  display_title: practical physical custody
+  english_glosses:
+  - practical physical custody
+  invariant_definition: An established material relation in which a holder has effective
+    practical control over access to and physical handling of a distinct material
+    object, through an arrangement the holder can operate directly or through a controlled
+    physical intermediary. Mere ability to approach, touch, influence or seize the
+    object does not establish this relation. Control need not be exclusive, lawful,
+    conscious, voluntary, continuously exercised or accompanied by ownership, load
+    bearing, movement or a prior transfer.
+  boundaries:
+    includes: Established practical control of physical access and handling, directly
+      or through a controlled material arrangement; shared custody is permitted.
+    excludes: Ownership, permission or entitlement without practical control; Proximity,
+      touch, load support or physical influence alone; Hypothetical ability to seize
+      an object not already under practical control; Legal guardianship, information
+      access or ownership of an abstract asset; Receipt or transfer inferred from
+      a custody state alone
+  collision_audit: MAT:210 supplies established material coupling and MAT:010 constrains
+    its target object. Convention code 7 adds effective practical control of access
+    and handling; no root graph alone is claimed to entail that commitment.
+  confidence: high
+  approval_record: migrations/physical_custody_2026_10_29.yaml
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/physical_custody_foundation.md
+  examples:
+    ordinary: Ada has physical custody of the box.
+    technical: A controlled locker can mediate custody without continuous touch or
+      load bearing by the holder.
+    future_compound: Reuse this exact relation as the before/after state of a custody
+      transfer, preserving object identity.
+    counterexample: A table bears a box without controlling access; an owner can lack
+      custody; a custodian can lack ownership.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 0aca609416668978e1527dac3aeac18d202b9b5615f5e15134d637682a39fa8d
 - architecture_version: '1.0'
   compound_id: CMP:111b772027accab2054f0415
   content_digest: 111b772027accab2054f04158521688548f4899eb5feda420f7ace4ebefba396
@@ -55,6 +153,57 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 111b772027accab2054f04158521688548f4899eb5feda420f7ace4ebefba396
+- architecture_version: '1.0'
+  compound_id: CMP:1b987e04bf47840f9e82ecd3
+  content_digest: 1b987e04bf47840f9e82ecd31caef82cd850e4b6ac0d169e7df593ac36089663
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: ongoing internal structural repair
+  english_glosses:
+  - ongoing internal structural repair
+  semantic_head: h
+  invariant_definition: An ongoing restorative transformation originating within one
+    reference structure whose restorative transformation changes how that structure's
+    constituents occupy its internal positions.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: STR:101
+  - node_id: h
+    kind: root
+    root_id: REP:101
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: ongoing internal structural reconfiguration toward the applicable restoration
+      standard
+    excludes: arbitrary rearrangement, incorporation of a distinct target, formation
+      of a peer composite, and completed or merely possible restoration
+  collision_audit: The restorative head and domain qualifier both encode an ongoing
+    process. Runtime status does not replace lexical phase. The completed foundation
+    remains unchanged.
+  confidence: high
+  examples:
+    ordinary: ongoing internal structural reconfiguration toward the applicable restoration
+      standard
+    technical: An ongoing restorative transformation originating within one reference
+      structure whose restorative transformation changes how that structure's constituents
+      occupy its internal positions.
+    future_compound: May be reused as an ongoing restorative process with explicit
+      participants and domain restrictions.
+    counterexample: Do not use for arbitrary rearrangement, incorporation of a distinct
+      target, formation of a peer composite, and completed or merely possible restoration.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 1b987e04bf47840f9e82ecd31caef82cd850e4b6ac0d169e7df593ac36089663
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/foundation_process_compounds.md
 - architecture_version: '1.0'
   compound_id: CMP:218a5578a2274b92ba3d72db
   content_digest: 218a5578a2274b92ba3d72db291d07498972eeb4a076cd232ffb798e0e862989
@@ -136,6 +285,58 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 22f8ddc4d9b2d1a818d38e9fa1dc82343d7588ea825c12c9b5ae17856d9dc38a
+- architecture_version: '1.0'
+  compound_id: CMP:2816a7eeb356c2148b26beca
+  content_digest: 2816a7eeb356c2148b26becacdd6b0ff071eb2846e2936166bc2c692907c9ecc
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: ongoing physical repair
+  english_glosses:
+  - ongoing physical repair
+  semantic_head: h
+  invariant_definition: An ongoing source-to-target restorative transformation whose
+    restorative transformation is an ongoing physical-state change localized in that
+    distinct material target.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: MAT:111
+  - node_id: h
+    kind: root
+    root_id: REP:111
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: actively restoring a distinct physical target toward its applicable
+      restoration standard
+    excludes: completed or merely possible repair, arbitrary physical change, internal
+      self-restoration, and future intention without ongoing repair
+  collision_audit: The restorative head and domain qualifier both encode an ongoing
+    process. Runtime status does not replace lexical phase. The completed foundation
+    remains unchanged.
+  confidence: high
+  examples:
+    ordinary: actively restoring a distinct physical target toward its applicable
+      restoration standard
+    technical: An ongoing source-to-target restorative transformation whose restorative
+      transformation is an ongoing physical-state change localized in that distinct
+      material target.
+    future_compound: May be reused as an ongoing restorative process with explicit
+      participants and domain restrictions.
+    counterexample: Do not use for completed or merely possible repair, arbitrary
+      physical change, internal self-restoration, and future intention without ongoing
+      repair.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 2816a7eeb356c2148b26becacdd6b0ff071eb2846e2936166bc2c692907c9ecc
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/foundation_process_compounds.md
 - architecture_version: '1.0'
   compound_id: CMP:2d26353b47b531bd3f5ae090
   content_digest: 2d26353b47b531bd3f5ae0901bf01e4ce43f5223e70b70cdd716b295e0beac27
@@ -388,6 +589,70 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 4144fad413b8ce5012088c6193969cb6f73701fe8a61e005e8c66bb6ef90deaa
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:ade73037114406a2cd91ce13
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - The channel restriction applies to the same registration event and its source-to-receiver
+    transfer. All inherited registration commitments remain true.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_acoustic_registration
+    sound_code: 2
+    added_definition: The sensory transduction registers information carried by a
+      propagating mechanical pressure or elastic vibration signal from the source
+      through a material medium. No conscious auditory experience, speech comprehension,
+      source recognition or attention is entailed.
+    excludes:
+    - static contact alone, optical-only input, remembered sounds, and conscious hearing
+      inferred from registration
+    - Inferring the channel from the source noun alone
+  compound_id: CMP:42e9bd596b35612ed6cbe3ce
+  content_digest: 42e9bd596b35612ed6cbe3cee5bbe04bfd416e94797059002a2add8cc839ab21
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: ongoing acoustic sensory registration
+  english_glosses:
+  - ongoing acoustic sensory registration
+  invariant_definition: 'An instance of ongoing sensory registration, as defined by
+    CMP:ade73037114406a2cd91ce13 version 1.0.0, with the additional channel commitment:
+    The sensory transduction registers information carried by a propagating mechanical
+    pressure or elastic vibration signal from the source through a material medium.
+    No conscious auditory experience, speech comprehension, source recognition or
+    attention is entailed.'
+  boundaries:
+    includes: sensory registration of an acoustic vibration signal in a biological
+      or device receiver
+    excludes: static contact alone, optical-only input, remembered sounds, and conscious
+      hearing inferred from registration
+  collision_audit: The exact registration foundation is reused through a versioned
+    reference. A distinct conventional frame adds the channel restriction; it is not
+    inferred from root adjacency, source noun, or runtime state.
+  confidence: high
+  approval_record: migrations/registration_channels_2026_10_28.yaml
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/registration_channels.md
+  examples:
+    ordinary: The sensor is registering acoustic input from the bell.
+    technical: The sensory transduction registers information carried by a propagating
+      mechanical pressure or elastic vibration signal from the source through a material
+      medium. No conscious auditory experience, speech comprehension, source recognition
+      or attention is entailed.
+    future_compound: Reuse the exact registration/channel meaning where the derived
+      definition entails it; conscious experience and recognition require additional
+      foundations.
+    counterexample: Do not infer this channel from the noun bell; exclude static contact
+      alone, optical-only input, remembered sounds, and conscious hearing inferred
+      from registration.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 42e9bd596b35612ed6cbe3cee5bbe04bfd416e94797059002a2add8cc839ab21
 - architecture_version: '1.0'
   compound_id: CMP:44173561806bc8f334a0b7c9
   content_digest: 44173561806bc8f334a0b7c9a87b29ba2bc84d18360e234eaa701c7e5eae8370
@@ -717,6 +982,306 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: 742b44d9ead66b451346708a55701f9e55d12b6359366cddec873c6537829129
 - architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-path
+    kind: compound_ref
+    compound_id: CMP:763faa4465065477220f6f06
+    definition_version: 1.0.0
+  - node_id: s-load
+    kind: slot
+    slot_name: moving_load
+    slot_type: entity
+  - node_id: s-destination
+    kind: slot
+    slot_name: destination
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:110
+  edges:
+  - type: qualifies
+    from: q-path
+    to: h
+  - type: fills_role
+    from: s-load
+    to: h
+    role: actor
+  - type: fills_role
+    from: s-destination
+    to: h
+    role: destination
+  binding_constraints:
+  - relation: same_argument
+    slot_paths:
+    - - q-path
+      - s-load
+    - - s-load
+  - relation: same_argument
+    slot_paths:
+    - - q-path
+      - s-destination
+    - - s-destination
+  lexical_constraints:
+  - The same-argument constraints bind the exact load throughout the nested carrying
+    and movement.
+  - The nested approach culminates at this arrival in the same event, with one shared
+    destination.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: completed_destination_carrying
+    sound_code: 6
+    added_definition: 'Completion of one destination-directed physical carrying event:
+      the same load conveyed by the same supporting source reaches the same specified
+      destination position as the culmination of that carrying conveyance. The ongoing
+      carrying and approach are internal phases of this completed event, not separate
+      current assertions. Arrival after the load is released and travels independently
+      is excluded. Receipt, ownership transfer, intention and continued presence after
+      arrival are not asserted.'
+    excludes:
+    - A carrying episode that ends short of the destination
+    - Arrival during a separate event or by a different load
+    - Arrival after unsupported flight or independent displacement following release
+    - Receipt, ownership transfer or continued presence inferred from arrival
+  compound_id: CMP:74d98d19808f74d0b8196951
+  content_digest: 74d98d19808f74d0b8196951e12acf2846fa3ae296dcd750251cf933207dccf9
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: completed physical carrying to a destination
+  english_glosses:
+  - completed physical carrying to a destination
+  invariant_definition: 'Completion of one destination-directed physical carrying
+    event: the same load conveyed by the same supporting source reaches the same specified
+    destination position as the culmination of that carrying conveyance. The ongoing
+    carrying and approach are internal phases of this completed event, not separate
+    current assertions. Arrival after the load is released and travels independently
+    is excluded. Receipt, ownership transfer, intention and continued presence after
+    arrival are not asserted.'
+  boundaries:
+    includes: 'Completion of one destination-directed physical carrying event: the
+      same load conveyed by the same supporting source reaches the same specified
+      destination position as the culmination of that carrying conveyance. The ongoing
+      carrying and approach are internal phases of this completed event, not separate
+      current assertions. Arrival after the load is released and travels independently
+      is excluded. Receipt, ownership transfer, intention and continued presence after
+      arrival are not asserted.'
+    excludes: A carrying episode that ends short of the destination; Arrival during
+      a separate event or by a different load; Arrival after unsupported flight or
+      independent displacement following release; Receipt, ownership transfer or continued
+      presence inferred from arrival
+  collision_audit: Version-pinned dependency CMP:763faa4465065477220f6f06 plus MOV:110
+    supplies the ingredients; convention 6 explicitly adds same-event linkage, and
+    the completed convention adds culmination. Neither is asserted to follow from
+    conjunction alone.
+  confidence: high
+  approval_record: migrations/destination_carrying_2026_10_28.yaml
+  approval_basis: Delegated semantic review under the user-directed translator-completion
+    goal; reviews/destination_carrying.md. Author review, not independent validation.
+  examples:
+    ordinary: Ada carried the box to the gate (completed spatial destination reading).
+    technical: One load, one carrier and one carrying event; destination denotes a
+      contextual position, not a recipient.
+    future_compound: Reuse this spatial foundation before adding receipt or specialized
+      delivery.
+    counterexample: Ada carries the box partway, then throws it through the gate.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 74d98d19808f74d0b8196951e12acf2846fa3ae296dcd750251cf933207dccf9
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-carry
+    kind: compound_ref
+    compound_id: CMP:7a6749aaf61cd6181e544bd6
+    definition_version: 1.0.0
+  - node_id: s-load
+    kind: slot
+    slot_name: moving_load
+    slot_type: entity
+  - node_id: s-destination
+    kind: slot
+    slot_name: destination
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:111
+  edges:
+  - type: qualifies
+    from: q-carry
+    to: h
+  - type: fills_role
+    from: s-load
+    to: h
+    role: actor
+  - type: fills_role
+    from: s-destination
+    to: h
+    role: destination
+  binding_constraints:
+  - relation: same_argument
+    slot_paths:
+    - - q-carry
+      - q-support
+      - s-target
+    - - q-carry
+      - s-load
+    - - s-load
+  lexical_constraints:
+  - The same-argument constraints bind the exact load throughout the nested carrying
+    and movement.
+  - The carrying conveyance is the approach event, not a separate simultaneous occurrence.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_destination_carrying
+    sound_code: 5
+    added_definition: An instance of ongoing physical carrying in which that same
+      supported load is undergoing displacement toward the specified destination position
+      during the same carrying event. The supporting conveyance constitutes this approach;
+      unrelated simultaneous approach does not qualify. The destination may be specified
+      by a contextual location associated with a referent. Arrival, receipt, ownership
+      transfer, intention and continued presence are not asserted.
+    excludes:
+    - Carrying and unrelated approach by another load or during another event
+    - Arrival or receipt inferred merely from directed carrying
+    - Recipient or ownership inferred from a destination label
+  compound_id: CMP:763faa4465065477220f6f06
+  content_digest: 763faa4465065477220f6f06f1706db8324949b39f70c72c6705a6ef8d227190
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: ongoing destination-directed physical carrying
+  english_glosses:
+  - ongoing destination-directed physical carrying
+  invariant_definition: An instance of ongoing physical carrying in which that same
+    supported load is undergoing displacement toward the specified destination position
+    during the same carrying event. The supporting conveyance constitutes this approach;
+    unrelated simultaneous approach does not qualify. The destination may be specified
+    by a contextual location associated with a referent. Arrival, receipt, ownership
+    transfer, intention and continued presence are not asserted.
+  boundaries:
+    includes: An instance of ongoing physical carrying in which that same supported
+      load is undergoing displacement toward the specified destination position during
+      the same carrying event. The supporting conveyance constitutes this approach;
+      unrelated simultaneous approach does not qualify. The destination may be specified
+      by a contextual location associated with a referent. Arrival, receipt, ownership
+      transfer, intention and continued presence are not asserted.
+    excludes: Carrying and unrelated approach by another load or during another event;
+      Arrival or receipt inferred merely from directed carrying; Recipient or ownership
+      inferred from a destination label
+  collision_audit: Version-pinned dependency CMP:7a6749aaf61cd6181e544bd6 plus MOV:111
+    supplies the ingredients; convention 5 explicitly adds same-event linkage, and
+    the completed convention adds culmination. Neither is asserted to follow from
+    conjunction alone.
+  confidence: high
+  approval_record: migrations/destination_carrying_2026_10_28.yaml
+  approval_basis: Delegated semantic review under the user-directed translator-completion
+    goal; reviews/destination_carrying.md. Author review, not independent validation.
+  examples:
+    ordinary: Ada is carrying the box to the gate (spatial destination reading).
+    technical: One load, one carrier and one carrying event; destination denotes a
+      contextual position, not a recipient.
+    future_compound: Reuse this spatial foundation before adding receipt or specialized
+      delivery.
+    counterexample: Ada carries the box away while another object approaches the gate.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 763faa4465065477220f6f06f1706db8324949b39f70c72c6705a6ef8d227190
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-support
+    kind: compound_ref
+    compound_id: CMP:eef9fff8ac6618ce60927f18
+    definition_version: 1.0.0
+  - node_id: s-load
+    kind: slot
+    slot_name: moving_load
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:121
+  edges:
+  - type: qualifies
+    from: q-support
+    to: h
+  - type: fills_role
+    from: s-load
+    to: h
+    role: actor
+  binding_constraints:
+  - relation: same_argument
+    slot_paths:
+    - - q-support
+      - s-target
+    - - s-load
+  - relation: distinct_arguments
+    slot_paths:
+    - - q-support
+      - s-source
+    - - q-support
+      - s-target
+  lexical_constraints:
+  - The supported load is exactly the moving participant, distinct from its carrier.
+  - Support and conveyance concern the same ongoing interval and the load-bearing
+    engagement is the means of conveyance.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_physical_carrying
+    sound_code: 4
+    added_definition: A material source conveys the same distinct material load that
+      it physically supports, relative to the contextually relevant movement frame
+      during the same ongoing interval. The load is borne upon, within, or suspended
+      from a moving supporting part or field maintained by the source; that load-bearing
+      engagement is the means of conveyance. The whole source need not translate,
+      as with a conveyor belt. No intention, destination or recipient is asserted.
+    excludes:
+    - Stationary support without conveyance
+    - Support and unrelated simultaneous movement
+    - Pushing or dragging a load across an independently supporting surface without
+      bearing it upon, within or suspended from the carrier
+    - Throwing or falling after support ends
+    - Abstract carrying of information, responsibility or disease
+  compound_id: CMP:7a6749aaf61cd6181e544bd6
+  content_digest: 7a6749aaf61cd6181e544bd606dbec63769da2c86a57ab40964de4c137fff030
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: ongoing physical carrying
+  english_glosses:
+  - ongoing physical carrying
+  invariant_definition: A material source conveys the same distinct material load
+    that it physically supports, relative to the contextually relevant movement frame
+    during the same ongoing interval. The load is borne upon, within, or suspended
+    from a moving supporting part or field maintained by the source; that load-bearing
+    engagement is the means of conveyance. The whole source need not translate, as
+    with a conveyor belt. No intention, destination or recipient is asserted.
+  boundaries:
+    includes: A person, vehicle, tray or conveyor conveying a distinct material load
+      borne by its moving support.
+    excludes: Stationary support without conveyance; Support and unrelated simultaneous
+      movement; Pushing or dragging a load across an independently supporting surface
+      without bearing it upon, within or suspended from the carrier; Throwing or falling
+      after support ends; Abstract carrying of information, responsibility or disease
+  collision_audit: Exact support version 1.0.0 supplies load bearing; MOV:121 supplies
+    shared-frame movement. Neither entails conveyance by that support. Convention
+    code 4 adds the transport linkage and explicit participant constraints.
+  confidence: high
+  approval_record: migrations/physical_carrying_2026_10_28.yaml
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/physical_carrying.md
+  examples:
+    ordinary: Ada is carrying the box.
+    technical: The supported target and moving actor are the same load, conveyed by
+      its carrier during the same interval.
+    future_compound: Reuse this exact transport relation before adding destinations,
+      recipients or manner.
+    counterexample: A shelf supports a stationary box; a person pushes a box across
+      a floor that bears its load.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 7a6749aaf61cd6181e544bd606dbec63769da2c86a57ab40964de4c137fff030
+- architecture_version: '1.0'
   compound_id: CMP:8e5ae722d9e5e31f85ac3c5b
   content_digest: 8e5ae722d9e5e31f85ac3c5b465d536e077c3fa205ea3ab6e31f75f6948b8b14
   definition_version: 1.0.0
@@ -885,6 +1450,60 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: 99a87c8869d58498f524f1cc2782321e356f26bf94b14c405077c92a58ff97a7
 - architecture_version: '1.0'
+  compound_id: CMP:9ddb5e2cfc285515c799462e
+  content_digest: 9ddb5e2cfc285515c799462ec538f0f410adc3eadca8d90c7db041d998369e45
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: ongoing internal data repair
+  english_glosses:
+  - ongoing internal data repair
+  semantic_head: h
+  invariant_definition: An ongoing restorative transformation originating within one
+    reference entity whose restorative transformation is an ongoing bounded transformation
+    of represented information within that entity, without transfer to a distinct
+    target.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: DAT:101
+  - node_id: h
+    kind: root
+    root_id: REP:101
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: internal restoration of damaged represented information by an ongoing
+      internal information transformation
+    excludes: arbitrary editing, transfer to another target, completed restoration,
+      and restoration originating from a distinct external source
+  collision_audit: The restorative head and domain qualifier both encode an ongoing
+    process. Runtime status does not replace lexical phase. The completed foundation
+    remains unchanged.
+  confidence: high
+  examples:
+    ordinary: internal restoration of damaged represented information by an ongoing
+      internal information transformation
+    technical: An ongoing restorative transformation originating within one reference
+      entity whose restorative transformation is an ongoing bounded transformation
+      of represented information within that entity, without transfer to a distinct
+      target.
+    future_compound: May be reused as an ongoing restorative process with explicit
+      participants and domain restrictions.
+    counterexample: Do not use for arbitrary editing, transfer to another target,
+      completed restoration, and restoration originating from a distinct external
+      source.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 9ddb5e2cfc285515c799462ec538f0f410adc3eadca8d90c7db041d998369e45
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/foundation_process_compounds.md
+- architecture_version: '1.0'
   compound_id: CMP:9e8b36f50570a0c3c362a968
   content_digest: 9e8b36f50570a0c3c362a968c9a99eff8df12285e44484758641ad7e2b47f247
   definition_version: 1.0.0
@@ -973,6 +1592,76 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: a7fc0ca38a6f95a40cdb87b1966435f90b824e57edd04c7cdc8e76beedcdacfb
 - architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: MAT:211
+  - node_id: h
+    kind: root
+    root_id: DAT:111
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - The qualifier describes the physical realization of the same source-to-target
+    information transfer, not an unrelated simultaneous coupling.
+  - The source is distinct from the receiving target. Neither consciousness nor communication
+    intent is required.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_sensory_registration
+    sound_code: 0
+    added_definition: 'The transfer is realized by physical sensory transduction:
+      the target receiver registers information carried by a physical stimulus from
+      the distinct source. Registration does not by itself assert conscious experience,
+      attention, identification or understanding.'
+    excludes:
+    - Mere physical influence without informational registration
+    - Generic data copying without sensory transduction
+    - Conscious experience or understanding inferred from registration
+    - A specified sensory channel inferred without a channel distinction
+  compound_id: CMP:ade73037114406a2cd91ce13
+  content_digest: ade73037114406a2cd91ce13ab20c3d9ac540127d75abd06aa73c8b2c9d13cab
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: ongoing sensory registration
+  english_glosses:
+  - ongoing sensory registration
+  invariant_definition: An ongoing information transfer from one distinct physical
+    source to a receiving target, physically realized by active material coupling
+    in which sensory transduction causes the receiver to register information carried
+    by the source stimulus.
+  boundaries:
+    includes: physical sensory registration by a biological receiver or a sensing
+      device, with no required conscious experience
+    excludes: Mere physical influence without informational registration; Generic
+      data copying without sensory transduction; Conscious experience or understanding
+      inferred from registration; A specified sensory channel inferred without a channel
+      distinction
+  collision_audit: MAT:211 supplies active physical coupling and DAT:111 supplies
+    ongoing source-to-target information transfer. Their graph alone does not entail
+    sensory transduction. EZLEX-1 code 0 explicitly contributes that additional conventional
+    distinction; the unmarked graph remains broader.
+  confidence: high
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/sensory_registration_foundation.md
+  examples:
+    ordinary: The sensor is registering sensory input from the bell.
+    technical: A receiver transduces a physical stimulus into received information
+      without asserting a conscious experience.
+    future_compound: Reuse as the registration component of channel-specific sensing;
+      experience and successful perception require separate definitions.
+    counterexample: A body is warmed without registering information, or a stored
+      file is copied without sensory transduction.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: ade73037114406a2cd91ce13ab20c3d9ac540127d75abd06aa73c8b2c9d13cab
+  approval_record: migrations/sensory_registration_2026_10_28.yaml
+- architecture_version: '1.0'
   compound_id: CMP:b518a324d776e46e9d0ff041
   content_digest: b518a324d776e46e9d0ff041bb5acc721a256348465cf4ee2965c6a770b04521
   definition_version: 1.0.0
@@ -1013,6 +1702,66 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: b518a324d776e46e9d0ff041bb5acc721a256348465cf4ee2965c6a770b04521
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:ade73037114406a2cd91ce13
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - The channel restriction applies to the same registration event and its source-to-receiver
+    transfer. All inherited registration commitments remain true.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_optical_registration
+    sound_code: 1
+    added_definition: The sensory transduction registers information carried by light
+      from the source, including visible, infrared or ultraviolet light. No conscious
+      visual experience, color judgment, object recognition or attention is entailed.
+    excludes:
+    - radio data transfer, acoustic-only input, visual imagination, and conscious
+      seeing inferred from registration
+    - Inferring the channel from the source noun alone
+  compound_id: CMP:bcfd189eb305cf364ada975a
+  content_digest: bcfd189eb305cf364ada975a962b89ff5917d5afff28049b8cd30e3817285f7e
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: ongoing optical sensory registration
+  english_glosses:
+  - ongoing optical sensory registration
+  invariant_definition: 'An instance of ongoing sensory registration, as defined by
+    CMP:ade73037114406a2cd91ce13 version 1.0.0, with the additional channel commitment:
+    The sensory transduction registers information carried by light from the source,
+    including visible, infrared or ultraviolet light. No conscious visual experience,
+    color judgment, object recognition or attention is entailed.'
+  boundaries:
+    includes: light-mediated sensory registration in a biological or device receiver
+    excludes: radio data transfer, acoustic-only input, visual imagination, and conscious
+      seeing inferred from registration
+  collision_audit: The exact registration foundation is reused through a versioned
+    reference. A distinct conventional frame adds the channel restriction; it is not
+    inferred from root adjacency, source noun, or runtime state.
+  confidence: high
+  approval_record: migrations/registration_channels_2026_10_28.yaml
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/registration_channels.md
+  examples:
+    ordinary: The sensor is registering optical input from the bell.
+    technical: The sensory transduction registers information carried by light from
+      the source, including visible, infrared or ultraviolet light. No conscious visual
+      experience, color judgment, object recognition or attention is entailed.
+    future_compound: Reuse the exact registration/channel meaning where the derived
+      definition entails it; conscious experience and recognition require additional
+      foundations.
+    counterexample: Do not infer this channel from the noun bell; exclude radio data
+      transfer, acoustic-only input, visual imagination, and conscious seeing inferred
+      from registration.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: bcfd189eb305cf364ada975a962b89ff5917d5afff28049b8cd30e3817285f7e
 - architecture_version: '1.0'
   compound_id: CMP:cb0812face56f90b7ba139c5
   content_digest: cb0812face56f90b7ba139c53a0c4b69820830bde14c60bcd0160122199daa8b
@@ -1222,6 +1971,90 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: e799b436d9c5e7d87a5516fa59156bbbd5017b752d3de5056e1ba3425da670ed
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-load
+    kind: root
+    root_id: MAT:010
+  - node_id: s-source
+    kind: slot
+    slot_name: supporter
+    slot_type: entity
+  - node_id: s-target
+    kind: slot
+    slot_name: load
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MAT:211
+  edges:
+  - type: qualifies
+    from: q-load
+    to: s-target
+  - type: fills_role
+    from: s-source
+    to: h
+    role: source
+  - type: fills_role
+    from: s-target
+    to: h
+    role: target
+  lexical_constraints:
+  - The supporting source and material load are distinct participants.
+  - The physical influence and load-bearing commitment concern the same source-to-target
+    relation; the material qualifier applies to the bound target load.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: active_physical_load_support
+    sound_code: 3
+    added_definition: The same material source bears at least part of the distinct
+      material target load through physical influence that resists displacement under
+      an applied force. This load-bearing support may be contact-mediated or field-mediated,
+      need not bear the entire load, and does not require rest, movement, intention
+      or consciousness.
+    excludes:
+    - Physical influence without load-bearing support
+    - Emotional, evidential, financial or computational support
+    - Carrying or transport inferred from support alone
+    - Grasping or holding without the load-bearing commitment
+  compound_id: CMP:eef9fff8ac6618ce60927f18
+  content_digest: eef9fff8ac6618ce60927f183e2c9d4f8cd5a8aa0335ae1dd4542f2f48f4b214
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: active physical load support
+  english_glosses:
+  - active physical load support
+  invariant_definition: The same material source bears at least part of the distinct
+    material target load through physical influence that resists displacement under
+    an applied force. This load-bearing support may be contact-mediated or field-mediated,
+    need not bear the entire load, and does not require rest, movement, intention
+    or consciousness.
+  boundaries:
+    includes: A person, structure or device physically bearing all or part of a distinct
+      material load, through contact or a field.
+    excludes: Physical influence without load-bearing support; Emotional, evidential,
+      financial or computational support; Carrying or transport inferred from support
+      alone; Grasping or holding without the load-bearing commitment
+  collision_audit: MAT:211 supplies physical influence and MAT:010 constrains the
+    bound load. Neither entails load bearing. Convention code 3 contributes that additional
+    commitment without changing either root.
+  confidence: high
+  approval_record: migrations/physical_support_2026_10_28.yaml
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/physical_support_foundation.md
+  examples:
+    ordinary: Ada is physically supporting the box.
+    technical: The supporting source bears part of the target load through physical
+      influence resisting displacement under an applied force.
+    future_compound: Reuse the exact versioned support relation for carrying, with
+      explicit movement and shared participant constraints.
+    counterexample: A lamp heats a box without bearing its load; a shelf supports
+      a box without transporting it.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: eef9fff8ac6618ce60927f183e2c9d4f8cd5a8aa0335ae1dd4542f2f48f4b214
 - architecture_version: '1.0'
   compound_id: CMP:f1abd5eccdf06d92d5690a32
   content_digest: f1abd5eccdf06d92d5690a32fdd15868b95af51fb4273e9e53304bbf082107cc

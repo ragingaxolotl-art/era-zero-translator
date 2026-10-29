@@ -1,0 +1,52 @@
+status: implementation_draft
+authority: User-directed translator completion goal
+scope: Occurrence-level binding; does not change lexical compound identity
+binding_fields:
+  slot_path: Array of local node IDs from the outer compound to the expanded slot
+  argument_id: Exact ID in the interpreted argument table
+  role: Optional assertion; must equal the slot's declared role when present
+argument_fields:
+  value_type: Explicit semantic type; must equal the slot_type
+rules:
+  - Bind every slot exactly once by its full occurrence path
+  - Never bind by slot_name alone
+  - Each slot must have exactly one outgoing fills_role edge
+  - Preserve both resolved predicate head and compound attachment scope
+  - Multiple slots may share an argument only through explicit separate bindings
+  - Unknown paths, unknown arguments and missing types are errors
+implementation: tools/lib/era_zero_compound_expansion.rb
+tests: tests/compound_expansion_test.rb
+renderer_integration:
+  compound_occurrence_field: compound_bindings
+  argument_table: IR nodes keyed by node_id, each with explicit value_type
+  supported_arguments: lexical_occurrence targeting a canonical atom or compound, or phonemic_reference carrying a validated EZNAME-0.1 label
+  placement: Argument events appear at the slot position with the declared role register
+  identity: Bindings are inside semantic IR nodes and therefore included in the utterance digest
+  runtime: Each argument keeps its runtime; only the containing compound head gets its external ending
+  duplicate_handling: Argument-only nodes are not also emitted as standalone occurrences
+  recursion: Cycles and more than 64 participant-binding levels raise a render error
+participant_identity_constraints:
+  contract: spec/compound_binding_constraints_1.0.yaml
+  behavior: Same-argument and distinct-argument requirements are expanded by scope and checked before rendering.
+qualified_participants:
+  rules:
+  - A qualifier subtree attached to a slot inherits that slot's exact participant binding chain.
+  - Convention frames inside the qualifier stay inside the participant role frame; a convention around the predicate remains outside it.
+  - Modifier-to-argument attachment has zero additional boundary beats, including after a nested qualifier's closing frame.
+  migration: migrations/compound_attachment_rendering_2026_10_28.yaml
+browser_integration:
+  renderer: pages/bound_compounds.mjs
+  compiled_plans: spec/browser_compound_plans_1.0.yaml
+  ordinary_construction: Directed data link binds source and target for names, discourse references and definite nouns.
+  clause_composition: Prefix occurrence and argument IDs while preserving dictionary-local slot paths.
+remaining:
+  - Extend ordinary-English binding beyond the reviewed directed-data-link construction; resolve quantified participants and broader ambiguity.
+  - Complete independent sentence decoding and broader scope/ambiguity handling.
+phonemic_reference:
+  fields: node_id, kind, referent_id, value_type, name
+  value_type: entity
+  name: Existing EZNAME-0.1 encoded label with pronunciation and optional instance tag
+  validation: Recompute phoneme notes and name identity; reject unknown phonemes or digest mismatch
+  performance: Preserve the label frame and transpose it by sentence anchor and participant register
+  semantic_claim: The label does not define a lexical meaning
+  articulation: Neutral mouth during label tones until a phoneme articulation mapping is defined

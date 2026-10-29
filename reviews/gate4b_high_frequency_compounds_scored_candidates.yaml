@@ -1784,3 +1784,894 @@ reviews:
     decision: 'rejected: loses both self-awakening and preserved potential'
   recommendation: approve selected bond head
   confidence: high
+- compound_id: CMP:2816a7eeb356c2148b26beca
+  display_title: ongoing physical repair
+  current_choice_reason: Review in reviews/foundation_process_compounds.md; scores
+    are implementation-author judgments, not independent review or measured coverage.
+  candidates:
+  - candidate_id: active_graph
+    direction: Both domain and restoration are ongoing; preserves all required distinctions.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 74
+    decision: winner
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: MAT:111
+      - node_id: h
+        kind: root
+        root_id: REP:111
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+  - candidate_id: head_only
+    direction: Using only the restorative head loses the domain restriction.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 51
+    decision: 'rejected: domain distinction is missing'
+  - candidate_id: completed_with_runtime
+    direction: Changing runtime on the completed foundation does not change its lexical
+      phase.
+    scores:
+      atomicity: 8
+      address_fit: 2
+      family_fit: 8
+      neighbor_separation: 1
+      cross_family_separation: 7
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 32
+    decision: 'rejected: completed process is not ongoing'
+  recommendation: approve active_graph
+  confidence: high
+- compound_id: CMP:9ddb5e2cfc285515c799462e
+  display_title: ongoing internal data repair
+  current_choice_reason: Review in reviews/foundation_process_compounds.md; scores
+    are implementation-author judgments, not independent review or measured coverage.
+  candidates:
+  - candidate_id: active_graph
+    direction: Both domain and restoration are ongoing; preserves all required distinctions.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 74
+    decision: winner
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: DAT:101
+      - node_id: h
+        kind: root
+        root_id: REP:101
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+  - candidate_id: head_only
+    direction: Using only the restorative head loses the domain restriction.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 51
+    decision: 'rejected: domain distinction is missing'
+  - candidate_id: completed_with_runtime
+    direction: Changing runtime on the completed foundation does not change its lexical
+      phase.
+    scores:
+      atomicity: 8
+      address_fit: 2
+      family_fit: 8
+      neighbor_separation: 1
+      cross_family_separation: 7
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 32
+    decision: 'rejected: completed process is not ongoing'
+  recommendation: approve active_graph
+  confidence: high
+- compound_id: CMP:1b987e04bf47840f9e82ecd3
+  display_title: ongoing internal structural repair
+  current_choice_reason: Review in reviews/foundation_process_compounds.md; scores
+    are implementation-author judgments, not independent review or measured coverage.
+  candidates:
+  - candidate_id: active_graph
+    direction: Both domain and restoration are ongoing; preserves all required distinctions.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 74
+    decision: winner
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: STR:101
+      - node_id: h
+        kind: root
+        root_id: REP:101
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+  - candidate_id: head_only
+    direction: Using only the restorative head loses the domain restriction.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 51
+    decision: 'rejected: domain distinction is missing'
+  - candidate_id: completed_with_runtime
+    direction: Changing runtime on the completed foundation does not change its lexical
+      phase.
+    scores:
+      atomicity: 8
+      address_fit: 2
+      family_fit: 8
+      neighbor_separation: 1
+      cross_family_separation: 7
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 32
+    decision: 'rejected: completed process is not ongoing'
+  recommendation: approve active_graph
+  confidence: high
+- compound_id: CMP:ade73037114406a2cd91ce13
+  display_title: ongoing sensory registration
+  current_choice_reason: Semantic analysis in reviews/sensory_registration_foundation.md.
+    Scores are implementation-author judgments, not independent evidence.
+  candidates:
+  - candidate_id: explicit_transduction
+    direction: Retains both physical coupling and information transfer; names the
+      additional transduction commitment explicitly.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: MAT:211
+      - node_id: h
+        kind: root
+        root_id: DAT:111
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ongoing_sensory_registration
+        sound_code: 0
+        added_definition: 'The transfer is realized by physical sensory transduction:
+          the target receiver registers information carried by a physical stimulus
+          from the distinct source. Registration does not by itself assert conscious
+          experience, attention, identification or understanding.'
+        excludes:
+        - Mere physical influence without informational registration
+        - Generic data copying without sensory transduction
+        - Conscious experience or understanding inferred from registration
+        - A specified sensory channel inferred without a channel distinction
+  - candidate_id: unmarked_transfer
+    direction: Information transfer plus physical coupling does not select sensory
+      registration.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 6
+      everyday_language_coverage: 4
+      technical_coverage: 6
+    total: 50
+    decision: 'rejected: sensory commitment absent'
+  - candidate_id: conscious_representation
+    direction: Conscious mental representation excludes nonconscious sensors and adds
+      an unsupported experiential claim.
+    scores:
+      atomicity: 6
+      address_fit: 6
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 5
+      everyday_language_coverage: 4
+      technical_coverage: 4
+    total: 39
+    decision: 'rejected: wrong receiver and experience commitments'
+  recommendation: approve explicit_transduction
+  confidence: high
+- compound_id: CMP:bcfd189eb305cf364ada975a
+  display_title: ongoing optical sensory registration
+  current_choice_reason: Review in reviews/registration_channels.md; scores are author
+    judgments, not independent validation.
+  candidates:
+  - candidate_id: versioned_specialization
+    direction: Reuse registration exactly and add an explicit, audible channel restriction.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 76
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:ade73037114406a2cd91ce13
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ongoing_optical_registration
+        sound_code: 1
+        added_definition: The sensory transduction registers information carried by
+          light from the source, including visible, infrared or ultraviolet light.
+          No conscious visual experience, color judgment, object recognition or attention
+          is entailed.
+        excludes:
+        - radio data transfer, acoustic-only input, visual imagination, and conscious
+          seeing inferred from registration
+        - Inferring the channel from the source noun alone
+  - candidate_id: unmarked_reference
+    direction: A reference alone repeats registration without distinguishing a channel.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 1
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 45
+    decision: 'rejected: missing channel'
+  - candidate_id: noun_inference
+    direction: Guessing the channel from a source name loses meaning and fails cross-channel
+      cases.
+    scores:
+      atomicity: 3
+      address_fit: 3
+      family_fit: 3
+      neighbor_separation: 1
+      cross_family_separation: 2
+      compound_usefulness: 3
+      everyday_language_coverage: 3
+      technical_coverage: 2
+    total: 20
+    decision: 'rejected: source noun is not a channel'
+  recommendation: approve versioned_specialization
+  confidence: high
+- compound_id: CMP:42e9bd596b35612ed6cbe3ce
+  display_title: ongoing acoustic sensory registration
+  current_choice_reason: Review in reviews/registration_channels.md; scores are author
+    judgments, not independent validation.
+  candidates:
+  - candidate_id: versioned_specialization
+    direction: Reuse registration exactly and add an explicit, audible channel restriction.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 76
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:ade73037114406a2cd91ce13
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ongoing_acoustic_registration
+        sound_code: 2
+        added_definition: The sensory transduction registers information carried by
+          a propagating mechanical pressure or elastic vibration signal from the source
+          through a material medium. No conscious auditory experience, speech comprehension,
+          source recognition or attention is entailed.
+        excludes:
+        - static contact alone, optical-only input, remembered sounds, and conscious
+          hearing inferred from registration
+        - Inferring the channel from the source noun alone
+  - candidate_id: unmarked_reference
+    direction: A reference alone repeats registration without distinguishing a channel.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 1
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 45
+    decision: 'rejected: missing channel'
+  - candidate_id: noun_inference
+    direction: Guessing the channel from a source name loses meaning and fails cross-channel
+      cases.
+    scores:
+      atomicity: 3
+      address_fit: 3
+      family_fit: 3
+      neighbor_separation: 1
+      cross_family_separation: 2
+      compound_usefulness: 3
+      everyday_language_coverage: 3
+      technical_coverage: 2
+    total: 20
+    decision: 'rejected: source noun is not a channel'
+  recommendation: approve versioned_specialization
+  confidence: high
+- compound_id: CMP:eef9fff8ac6618ce60927f18
+  display_title: active physical load support
+  current_choice_reason: Review in reviews/physical_support_foundation.md; scores
+    are author judgments, not independent semantic validation.
+  candidates:
+  - candidate_id: explicit_load_support
+    direction: Bind the same source and material load; explicitly mark the extra load-bearing
+      commitment.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-load
+        kind: root
+        root_id: MAT:010
+      - node_id: s-source
+        kind: slot
+        slot_name: supporter
+        slot_type: entity
+      - node_id: s-target
+        kind: slot
+        slot_name: load
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MAT:211
+      edges:
+      - type: qualifies
+        from: q-load
+        to: s-target
+      - type: fills_role
+        from: s-source
+        to: h
+        role: source
+      - type: fills_role
+        from: s-target
+        to: h
+        role: target
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: active_physical_load_support
+        sound_code: 3
+        added_definition: The same material source bears at least part of the distinct
+          material target load through physical influence that resists displacement
+          under an applied force. This load-bearing support may be contact-mediated
+          or field-mediated, need not bear the entire load, and does not require rest,
+          movement, intention or consciousness.
+        excludes:
+        - Physical influence without load-bearing support
+        - Emotional, evidential, financial or computational support
+        - Carrying or transport inferred from support alone
+        - Grasping or holding without the load-bearing commitment
+  - candidate_id: unmarked_coupling
+    direction: Physical influence alone includes heating and other non-supporting
+      interactions.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: load bearing absent'
+  - candidate_id: movement_substitution
+    direction: Movement can be unsupported; support can occur without movement.
+    scores:
+      atomicity: 5
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 32
+    decision: 'rejected: wrong invariant'
+  recommendation: approve explicit_load_support
+  confidence: high
+- compound_id: CMP:7a6749aaf61cd6181e544bd6
+  display_title: ongoing physical carrying
+  current_choice_reason: Review in reviews/physical_carrying.md; scores are author
+    judgments, not independent semantic validation.
+  candidates:
+  - candidate_id: explicit_supported_conveyance
+    direction: Reuse support first, bind its load to the mover, and mark conveyance
+      by that supporting engagement.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-support
+        kind: compound_ref
+        compound_id: CMP:eef9fff8ac6618ce60927f18
+        definition_version: 1.0.0
+      - node_id: s-load
+        kind: slot
+        slot_name: moving_load
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MOV:121
+      edges:
+      - type: qualifies
+        from: q-support
+        to: h
+      - type: fills_role
+        from: s-load
+        to: h
+        role: actor
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ongoing_physical_carrying
+        sound_code: 4
+        added_definition: A material source conveys the same distinct material load
+          that it physically supports, relative to the contextually relevant movement
+          frame during the same ongoing interval. The load is borne upon, within,
+          or suspended from a moving supporting part or field maintained by the source;
+          that load-bearing engagement is the means of conveyance. The whole source
+          need not translate, as with a conveyor belt. No intention, destination or
+          recipient is asserted.
+        excludes:
+        - Stationary support without conveyance
+        - Support and unrelated simultaneous movement
+        - Pushing or dragging a load across an independently supporting surface without
+          bearing it upon, within or suspended from the carrier
+        - Throwing or falling after support ends
+        - Abstract carrying of information, responsibility or disease
+      binding_constraints:
+      - relation: same_argument
+        slot_paths:
+        - - q-support
+          - s-target
+        - - s-load
+      - relation: distinct_arguments
+        slot_paths:
+        - - q-support
+          - s-source
+        - - q-support
+          - s-target
+  - candidate_id: mere_conjunction
+    direction: Support plus simultaneous movement does not entail conveyance by that
+      support.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: conveyance linkage absent'
+  - candidate_id: unshared_mover
+    direction: A carrier can support one object while a different object moves.
+    scores:
+      atomicity: 5
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 32
+    decision: 'rejected: wrong invariant'
+  recommendation: approve explicit_supported_conveyance
+  confidence: high
+- compound_id: CMP:763faa4465065477220f6f06
+  display_title: ongoing destination-directed physical carrying
+  current_choice_reason: reviews/destination_carrying.md; author-scored candidates,
+    not independent semantic validation.
+  candidates:
+  - candidate_id: explicit_same_event
+    direction: Reuse the exact prior foundation, share load and destination as applicable,
+      and state the same-event relation audibly.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-carry
+        kind: compound_ref
+        compound_id: CMP:7a6749aaf61cd6181e544bd6
+        definition_version: 1.0.0
+      - node_id: s-load
+        kind: slot
+        slot_name: moving_load
+        slot_type: entity
+      - node_id: s-destination
+        kind: slot
+        slot_name: destination
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MOV:111
+      edges:
+      - type: qualifies
+        from: q-carry
+        to: h
+      - type: fills_role
+        from: s-load
+        to: h
+        role: actor
+      - type: fills_role
+        from: s-destination
+        to: h
+        role: destination
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ongoing_destination_carrying
+        sound_code: 5
+        added_definition: An instance of ongoing physical carrying in which that same
+          supported load is undergoing displacement toward the specified destination
+          position during the same carrying event. The supporting conveyance constitutes
+          this approach; unrelated simultaneous approach does not qualify. The destination
+          may be specified by a contextual location associated with a referent. Arrival,
+          receipt, ownership transfer, intention and continued presence are not asserted.
+        excludes:
+        - Carrying and unrelated approach by another load or during another event
+        - Arrival or receipt inferred merely from directed carrying
+        - Recipient or ownership inferred from a destination label
+      binding_constraints:
+      - relation: same_argument
+        slot_paths:
+        - - q-carry
+          - q-support
+          - s-target
+        - - q-carry
+          - s-load
+        - - s-load
+  - candidate_id: unlinked_conjunction
+    direction: Conjunction permits different events and cannot establish this carrying
+      culmination.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 44
+    decision: 'rejected: event identity missing'
+  - candidate_id: runtime_as_completion
+    direction: Using runtime 0 or 2 to express arrival corrupts the independent ternary
+      state.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: runtime semantic loss'
+  recommendation: approve explicit_same_event
+  confidence: high
+- compound_id: CMP:74d98d19808f74d0b8196951
+  display_title: completed physical carrying to a destination
+  current_choice_reason: reviews/destination_carrying.md; author-scored candidates,
+    not independent semantic validation.
+  candidates:
+  - candidate_id: explicit_same_event
+    direction: Reuse the exact prior foundation, share load and destination as applicable,
+      and state the same-event relation audibly.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-path
+        kind: compound_ref
+        compound_id: CMP:763faa4465065477220f6f06
+        definition_version: 1.0.0
+      - node_id: s-load
+        kind: slot
+        slot_name: moving_load
+        slot_type: entity
+      - node_id: s-destination
+        kind: slot
+        slot_name: destination
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MOV:110
+      edges:
+      - type: qualifies
+        from: q-path
+        to: h
+      - type: fills_role
+        from: s-load
+        to: h
+        role: actor
+      - type: fills_role
+        from: s-destination
+        to: h
+        role: destination
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: completed_destination_carrying
+        sound_code: 6
+        added_definition: 'Completion of one destination-directed physical carrying
+          event: the same load conveyed by the same supporting source reaches the
+          same specified destination position as the culmination of that carrying
+          conveyance. The ongoing carrying and approach are internal phases of this
+          completed event, not separate current assertions. Arrival after the load
+          is released and travels independently is excluded. Receipt, ownership transfer,
+          intention and continued presence after arrival are not asserted.'
+        excludes:
+        - A carrying episode that ends short of the destination
+        - Arrival during a separate event or by a different load
+        - Arrival after unsupported flight or independent displacement following release
+        - Receipt, ownership transfer or continued presence inferred from arrival
+      binding_constraints:
+      - relation: same_argument
+        slot_paths:
+        - - q-path
+          - s-load
+        - - s-load
+      - relation: same_argument
+        slot_paths:
+        - - q-path
+          - s-destination
+        - - s-destination
+  - candidate_id: unlinked_conjunction
+    direction: Conjunction permits different events and cannot establish this carrying
+      culmination.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 44
+    decision: 'rejected: event identity missing'
+  - candidate_id: runtime_as_completion
+    direction: Using runtime 0 or 2 to express arrival corrupts the independent ternary
+      state.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: runtime semantic loss'
+  recommendation: approve explicit_same_event
+  confidence: high
+- compound_id: CMP:0aca609416668978e1527dac
+  display_title: practical physical custody
+  current_choice_reason: Review in reviews/physical_custody_foundation.md; scores
+    are author judgments, not independent semantic validation.
+  candidates:
+  - candidate_id: explicit_practical_custody
+    direction: Conventional practical control specializes the established material
+      relation and keeps a distinct object.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-load
+        kind: root
+        root_id: MAT:010
+      - node_id: s-source
+        kind: slot
+        slot_name: custodian
+        slot_type: entity
+      - node_id: s-target
+        kind: slot
+        slot_name: held_object
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MAT:210
+      edges:
+      - type: qualifies
+        from: q-load
+        to: s-target
+      - type: fills_role
+        from: s-source
+        to: h
+        role: source
+      - type: fills_role
+        from: s-target
+        to: h
+        role: target
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: practical_physical_custody
+        sound_code: 7
+        added_definition: An established material relation in which a holder has effective
+          practical control over access to and physical handling of a distinct material
+          object, through an arrangement the holder can operate directly or through
+          a controlled physical intermediary. Mere ability to approach, touch, influence
+          or seize the object does not establish this relation. Control need not be
+          exclusive, lawful, conscious, voluntary, continuously exercised or accompanied
+          by ownership, load bearing, movement or a prior transfer.
+        excludes:
+        - Ownership, permission or entitlement without practical control
+        - Proximity, touch, load support or physical influence alone
+        - Hypothetical ability to seize an object not already under practical control
+        - Legal guardianship, information access or ownership of an abstract asset
+        - Receipt or transfer inferred from a custody state alone
+      binding_constraints:
+      - relation: distinct_arguments
+        slot_paths:
+        - - s-source
+        - - s-target
+  - candidate_id: unmarked_coupling
+    direction: Heating or illumination can influence an object without custody.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: practical control absent'
+  - candidate_id: load_support_substitution
+    direction: A table may bear the load without controlling access; custody may use
+      a controlled enclosure.
+    scores:
+      atomicity: 7
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 43
+    decision: 'rejected: wrong relation'
+  recommendation: approve explicit_practical_custody
+  confidence: high

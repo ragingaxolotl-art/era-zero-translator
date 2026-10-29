@@ -1,0 +1,45 @@
+profile: EZSTRICT-OBSERVATION-1
+status: implementation_draft
+implementation: pages/strict_music_decoder.mjs
+purpose: Recover audible lexical and framed structure independently of source utterance data.
+inputs:
+  - Strict single-voice MIDI bytes.
+  - Shared atom dictionary containing canonical root IDs, family harmonies and address paths.
+not_inputs:
+  - Original English text, semantic IR, formal event plan or expected utterance digest.
+  - Per-utterance templates or a forward-rendered candidate sentence.
+recovered:
+  - Utterance anchor and final speech-act contour.
+  - Root IDs, role registers and separately encoded runtime endings 0, 1 and 2.
+  - Phonemic label sequences and optional eight-hex-digit instance fingerprint fragment.
+  - Speaker/addressee references and definite/class reference markers.
+  - Grammar marker tokens for negation, modality, exact confidence digits, coordination, time, measurement, quantification, roles, conditionals and comparisons.
+  - Same-predicate backward role-reference tokens from EZROLE-REF-1.
+  - Conventional-meaning codes with nested opening/closing matches.
+  - Exact note tick ranges and zero, half-beat or one-beat inter-token boundaries.
+algorithm:
+  - Infer anchor and speech act from the separated final contour.
+  - Match fixed grammar frames, variable phonemic labels and shared dictionary root codewords by pitch and duration.
+  - Use bounded suffix parsing when a possible runtime ending competes with a following token.
+  - Reject zero parses and ambiguous parses; never select the first matching identity.
+  - Validate balanced nested frames after tokenization.
+limits:
+  default_max_notes: 100000
+  default_max_tokens: 100000
+  max_scope_depth: 128
+  input_audio: MIDI only; no waveform transcription or polyphony.
+output_semantics:
+  status: audible_structure_only
+  scope_indices: enclosing_scopes records the open-frame stack after processing this token; paired frames name opening_token or closing_token.
+  not_claimed:
+    - Complete reconstruction of semantic IR, original node IDs or original English.
+    - Unique compound identity or predicate attachment from root order and timing alone.
+    - Unique spelling or external referent identity from a phonemic label or short fingerprint.
+    - Validation of all grammatical combinations merely because their frames balance.
+    - Recovery of repetition intent versus an equivalent repeated event sequence.
+  existing_semantic_inverse: pages/mass_comparison_decoder.mjs continues to validate and interpret the narrower mass-comparison profile.
+compatibility: No forward sound, root, compound, runtime or grammar encoding changes.
+verification:
+  - tests/strict_music_decoder_test.mjs
+  - tests/qualified_slot_music_test.mjs
+  - reports/strict_music_inverse.json

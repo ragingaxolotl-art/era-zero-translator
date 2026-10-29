@@ -2,7 +2,7 @@
 metadata:
   title: Era Zero source and conversation provenance
   version: 1.0.0
-  status: current
+  status: historical_release_snapshot_with_draft_reconciliation
   audited: '2026-10-10'
 authority_order:
 - explicit user corrections
@@ -15,6 +15,8 @@ sources:
     decoded_sha256: 5a89af8cda717ce223e252348e0cf2f7735cd2d1f58c7b7655094a3d13862475
     decoded_source_nodes: 313
     visible_speaker_turns: 129
+    fingerprint_verification: recorded_historical_value_not_recomputed_from_full_capture
+    complete_transcript_status: not_present_in_repository
     preserved_record: lexicon/completed_atoms_source.md
     scope: Core architecture and the 36 source-developed LIF:000-222 and MOV:000-022 records.
   current_google_document:
@@ -47,6 +49,7 @@ authority_artifacts:
   migrations: migrations/
   validation_reports: reports/
 release_inventory:
+  scope: Historical October 10 integrated release, not the active completion draft
   canonical_atoms: 324
   source_developed_atoms: 36
   selectively_reviewed_atoms: 288
@@ -55,3 +58,17 @@ release_inventory:
   indexed_lemmas: 419
   direct_lexical_targets: 352
   documented_gaps: 11
+
+draft_reconciliation:
+  implementation_revision: b58b18071debe17e699f338ccc82389c876066bc
+  publication_status: draft_not_merged_or_deployed
+  audit_page: https://chatgpt.com/space/page_21c6ce0da1a88191abff53c0b13441f3
+  audit_page_verification: reports/audit_page_reconciliation.json
+  inventory_authority: pages/data/index.json
+  regression_evidence: reports/translator_completion_regression.json
+  completion_plan: docs/translator-completion.md
+  atomic_cross_reference_migration: migrations/min_cross_reference_reconciliation_2026_10_28.yaml
+  remaining:
+  - Recover and verify the complete original source capture and speaker-turn ledger.
+  - Reconcile external Google and storage snapshots without presenting the draft as a released standard.
+  - Meet all seven original translator completion gates; implementation checks alone do not establish completion.

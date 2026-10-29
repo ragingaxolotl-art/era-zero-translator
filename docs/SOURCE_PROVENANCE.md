@@ -1,6 +1,10 @@
 # Era Zero Source and Conversation Provenance
 
-This release is not an isolated rewrite. It is the current executable layer of a traceable authority chain.
+This document records the October 10 release's source chain. Its counts and observed timestamps below are historical observations, not the current completion draft's status.
+
+The active draft is tracked in [the completion plan](translator-completion.md) and [the audit Page](https://chatgpt.com/space/page_21c6ce0da1a88191abff53c0b13441f3). Its inventory comes from `pages/data/index.json`; its implementation checks come from `reports/translator_completion_regression.json`. The draft has not replaced the published release or Google reference. The audit Page was reconciled to revision `b58b180`, with all seven original exit gates retained.
+
+The full decoded capture and 129-turn ledger are not present in this repository. The hash and extent below are recorded historical values, not a newly reproduced verification. Preserved atomic passages establish narrower evidence and must not be described as the complete conversation.
 
 ## Primary conversation source
 
@@ -44,4 +48,4 @@ These product decisions change no atomic meaning, compound definition, address, 
 4. Superseded records remain audit history.
 5. A conflict without provable precedence remains unresolved.
 
-The machine-readable counterpart is `spec/source_provenance.yaml`. The current completeness report is `reports/full_project_completeness_audit.md`.
+The machine-readable counterpart is `spec/source_provenance.yaml`. The historical inventory/provenance report is `reports/full_project_completeness_audit.md`; its checks do not certify full sentence translation. Use the completion plan and its seven gates for current product completion.

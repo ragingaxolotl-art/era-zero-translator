@@ -6,7 +6,7 @@ metadata:
   ir_version: '1.0'
   grammar_version: '1.0'
   atomic_lexicon_fingerprint: 9b2e6047a5bbd39f0b54ff2f49b569cf7e4726b361b51a62070804727efce26f
-  compound_dictionary_fingerprint: 487aa867eebac76558fcba8302ea4331ea1e4a8226bfc02c93efc46494f9115f
+  compound_dictionary_fingerprint: befc078d9883ca2d36b3901b5b3da3846e57c5ffa0b0d2a6acdd94b8acc9b6f9
   renderer_started: false
   decoder_started: false
   translator_started: false
@@ -132,7 +132,10 @@ node_types:
     - quantifier
     - aspect
     - repetition
+    - comparison
     rule: Every operator has exactly one scopes edge.
+    comparison_profile: spec/property_comparison_1.0.yaml
+    aspect_performance_profile: spec/aspect_performance_1.0.yaml
   coordination:
     required:
     - node_id
@@ -165,6 +168,9 @@ node_types:
     - magnitude
     - unit
     rule: Magnitude is numeric or a quantity variable and unit is a controlled symbol.
+    optional_fields:
+      comparison: greater_than, less_than, at_least, at_most, or not_equal; absent
+        means exact equality. See spec/measurement_comparison_1.0.yaml
   state_snapshot:
     required:
     - node_id
@@ -338,6 +344,8 @@ quantity_and_measurement:
     information:
     - bit
     - byte
+    thermodynamic_temperature:
+    - kelvin
   scope: A quantifier scopes exactly one variable, reference, lexical occurrence,
     or coordination. Measurement binds through quantity or another explicit semantic
     role.
@@ -461,6 +469,10 @@ canonical_serialization:
   - audio
   versioning: A payload-semantic change produces a new utterance identity. Editorial
     metadata never changes identity.
+nominal_property_restrictions:
+  profile: spec/nominal_property_restrictions_1.0.yaml
+  field: property_restriction
+  node_scope: Definite phonemic nominal references only
 surface_contract_for_later_renderer:
   speech_act_to_contour:
     assertion: level

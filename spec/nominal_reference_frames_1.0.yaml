@@ -1,0 +1,47 @@
+profile: EZREF-1
+status: versioned_implementation_convention
+provenance: New grammar convention under the user-directed translator completion goal
+purpose: Preserve definite common-noun reference while retaining phonemic noun labels
+node_kind: phonemic_reference
+reference_mode: definite_nominal
+referent_id: 'nominal:definite:<name.name_id>'
+name: EZNAME-0.1 encoding of the noun head, excluding the article
+value_type: entity
+performance:
+  marker_kind: reference_marker
+  marker_target: EZREF:definite_nominal
+  relative_semitones: [0, 12, 2, 0]
+  note_duration_beats: 0.25
+  position: Immediately before the noun label within its participant occurrence
+  anchor: Utterance anchor plus participant role register
+  runtime_ending: forbidden
+  mouth_cues: neutral
+meaning:
+  - Request the contextually identifiable referent described by the noun label
+  - The definite marker preserves the presupposition; it does not prove uniqueness or resolve a real-world object
+  - The phonemic noun label does not invent a canonical root definition
+  - Referent identity is discourse-relative, not a globally unique object identifier
+  - A quoted label retains its previous name treatment and has no definite-nominal marker
+surface_scope:
+  - A bounded list of single-word noun heads introduced by the
+  - No adjective, plural, possessive, indefinite article, quantity or relative clause is discarded
+remaining:
+  - Context resolution, multiple same-class referents and anaphoric binding
+  - Indefinite and quantified noun phrases with scope
+  - Semantic adjective composition and broader noun-head recognition
+counted_nominal_extension:
+  reference_mode: nominal_class
+  referent_id: 'nominal:class:<name.name_id>'
+  name: Singular noun-class label, not a globally identified individual
+  marker_target: EZREF:nominal_class
+  relative_semitones: [0, 12, 3, 0]
+  quantity_binding: The noun reference scopes into a quantifier which fills the predicate's participant role
+  meaning: Cardinality of participants designated by the noun class; no added assertion of separate repeated events
+  surface_scope:
+    - Exactly, at least or at most followed by decimal digits or number words zero through ten
+    - A bounded plural-to-singular noun map including children and people
+    - One quantified participant per positive construction
+  limitations:
+    - Collective versus distributive event realization is not further specified
+    - Negated quantified constructions require explicit scope work
+    - Multiple quantified participants, modified nouns and arbitrary plural forms remain unsupported

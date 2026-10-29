@@ -1,0 +1,11 @@
+authority: User-directed translator-completion goal
+review: reviews/temperature_measurement.md
+change: Append kelvin to the measurement-unit inventory and add explicit temperature-point sentences
+unit: kelvin
+unit_code: 14
+previous_unit_codes_preserved: true
+atomic_meanings_changed: false
+compound_meanings_changed: false
+normalization: Celsius temperature points add exactly 273.15 to obtain kelvins; intervals are not accepted by this construction
+runtime_states_unchanged: true
+required_validation: Exact point equivalence, sign and precision, scalar comparisons, bearer identity, 0/1/2, independent MIDI decoding, existing-unit and static-performance regression

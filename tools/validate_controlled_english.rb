@@ -6,6 +6,7 @@ require "json"
 require "set"
 require_relative "../tools/lib/era_zero_validation"
 require_relative "../tools/lib/era_zero_renderer"
+require_relative "lib/era_zero_dictionary_probe"
 require_relative "../tools/lib/era_zero_controlled_english"
 
 include EraZeroValidation
@@ -37,11 +38,11 @@ end
 checks.add("structured failures", "invalid and unsupported inputs return exact stable errors without partial IR", negative_ok && tests.fetch("invalid_cases").length >= 15)
 
 lexical_ok = controlled.all? do |sense|
-  input = if sense["target_id"] == "CMP:742b44d9ead66b451346708a"
-            %(ASSERT "#{sense['lemma']}" [1] ROLE source "conscious other" [1] ROLE target "active material object" [1].)
-          else
-            %(ASSERT "#{sense['lemma']}" [1].)
-          end
+  compound = compounds.find { |entry| entry['compound_id']==sense['target_id'] }
+  roles = compound ? EraZeroRenderer.required_compound_roles(compound, compounds: compounds) : []
+  aliases=compound ? EraZeroDictionaryProbe.role_aliases(compound,compounds) : {}
+  bindings = roles.map { |role| aliases.key?(role) ? %( ROLE #{role} REF #{aliases[role]}) : %( ROLE #{role} "distinct material object" [1]) }.join
+  input = %(ASSERT "#{sense['lemma']}" [1]#{bindings}.)
   result = compiler.compile(input)
   next false unless result["status"] == "ok"
   occurrence = result.dig("semantic_ir", "nodes").find { |node| node["kind"] == "lexical_occurrence" && node["target_id"] == sense["target_id"] }

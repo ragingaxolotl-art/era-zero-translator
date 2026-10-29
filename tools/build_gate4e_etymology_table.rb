@@ -76,7 +76,7 @@ compound_rows = compounds.map do |c|
     "etymology_id" => "ETY:#{Digest::SHA256.hexdigest(JSON.generate(EraZeroValidation.deep_sort(payload)))[0, 24]}",
     "target_type" => "compound", "target_id" => c.fetch("compound_id"), "status" => "canonical",
     "english_label" => c.fetch("display_title"), "english_label_status" => "indexing_gloss_not_identity",
-    "formation_type" => "typed_semantic_graph_composition",
+    "formation_type" => c.key?("conventional_meaning") ? "explicit_conventional_graph_specialization" : "typed_semantic_graph_composition",
     "head" => { "node_id" => c.fetch("semantic_head"), "kind" => head.fetch("kind"), "target_id" => head["root_id"] || head["compound_id"] },
     "components" => c.fetch("nodes"), "relations" => c.fetch("edges"),
     "semantic_derivation" => {
@@ -85,9 +85,16 @@ compound_rows = compounds.map do |c|
     },
     "identity_derivation" => { "architecture_version" => c.fetch("architecture_version"), "canonical_format" => c.dig("serialization", "canonical_format"), "content_digest" => c.fetch("content_digest"), "compound_id_rule" => "CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload SHA-256 digest" },
     "surface_derivation" => "Qualifiers precede their targets with no gap; typed arguments use role register and short-gap binding; runtime state is occurrence metadata and is not etymology.",
-    "provenance" => { "authority" => "gate4b_reviewed_compound", "record" => "migrations/gate4b_compound_dictionary_1.0.yaml", "approval_date" => c.fetch("approval_date") },
+    "provenance" => { "authority" => "gate4b_reviewed_compound", "record" => c.fetch("approval_record", "migrations/gate4b_compound_dictionary_1.0.yaml"), "approval_date" => c.fetch("approval_date") },
     "historical_claim" => "No English calque history is asserted. The English title labels the approved compositional graph."
-  }
+  }.tap do |row|
+    row["semantic_derivation"]["binding_constraints"] = c["binding_constraints"] if c.key?("binding_constraints")
+    if c.key?("conventional_meaning")
+      row["semantic_derivation"]["conventional_meaning"] = c.fetch("conventional_meaning")
+      row["semantic_derivation"]["rule"] += " The explicit conventional definition adds a separately identified commitment not entailed by that graph."
+      row["surface_derivation"] += " EZLEX-1 ternary frames identify the conventional meaning around its exact compound scope."
+    end
+  end
 end
 
 table = {

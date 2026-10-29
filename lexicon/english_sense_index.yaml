@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 437
-  lemma_count: 420
+  sense_count: 448
+  lemma_count: 431
   canonical_atom_senses: 324
-  canonical_compound_senses: 29
+  canonical_compound_senses: 40
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: 9b2e6047a5bbd39f0b54ff2f49b569cf7e4726b361b51a62070804727efce26f
-  compound_dictionary_fingerprint: 487aa867eebac76558fcba8302ea4331ea1e4a8226bfc02c93efc46494f9115f
+  compound_dictionary_fingerprint: befc078d9883ca2d36b3901b5b3da3846e57c5ffa0b0d2a6acdd94b8acc9b6f9
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -341,6 +341,27 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: active physical load support
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:eef9fff8ac6618ce60927f18
+  definition: The same material source bears at least part of the distinct material
+    target load through physical influence that resists displacement under an applied
+    force. This load-bearing support may be contact-mediated or field-mediated, need
+    not bear the entire load, and does not require rest, movement, intention or consciousness.
+  sense_id: ENS:5fd86c6d287121a13af9583b
+  display_form: active physical load support
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Physical influence without load-bearing support; Emotional, evidential, financial
+    or computational support; Carrying or transport inferred from support alone; Grasping
+    or holding without the load-bearing commitment
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:c3ae71f28740b0294729dee7
   lemma: active self-model revision
   display_form: active self-model revision
@@ -1536,6 +1557,31 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: completed physical carrying to a destination
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:74d98d19808f74d0b8196951
+  definition: 'Completion of one destination-directed physical carrying event: the
+    same load conveyed by the same supporting source reaches the same specified destination
+    position as the culmination of that carrying conveyance. The ongoing carrying
+    and approach are internal phases of this completed event, not separate current
+    assertions. Arrival after the load is released and travels independently is excluded.
+    Receipt, ownership transfer, intention and continued presence after arrival are
+    not asserted.'
+  sense_id: ENS:b1f0a6f857b639838521a11b
+  display_form: completed physical carrying to a destination
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A carrying episode that ends short of the destination; Arrival during a separate
+    event or by a different load; Arrival after unsupported flight or independent
+    displacement following release; Receipt, ownership transfer or continued presence
+    inferred from arrival
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:fbc144b28e5b1baed20b717c
   lemma: completed self-development
   display_form: completed self-development
@@ -5048,6 +5094,173 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: ongoing acoustic sensory registration
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:42e9bd596b35612ed6cbe3ce
+  definition: 'An instance of ongoing sensory registration, as defined by CMP:ade73037114406a2cd91ce13
+    version 1.0.0, with the additional channel commitment: The sensory transduction
+    registers information carried by a propagating mechanical pressure or elastic
+    vibration signal from the source through a material medium. No conscious auditory
+    experience, speech comprehension, source recognition or attention is entailed.'
+  sense_id: ENS:a14e8a449378f9e4a12933a0
+  display_form: ongoing acoustic sensory registration
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - static contact alone, optical-only input, remembered sounds, and conscious hearing
+    inferred from registration
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: ongoing destination-directed physical carrying
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:763faa4465065477220f6f06
+  definition: An instance of ongoing physical carrying in which that same supported
+    load is undergoing displacement toward the specified destination position during
+    the same carrying event. The supporting conveyance constitutes this approach;
+    unrelated simultaneous approach does not qualify. The destination may be specified
+    by a contextual location associated with a referent. Arrival, receipt, ownership
+    transfer, intention and continued presence are not asserted.
+  sense_id: ENS:7a45fa463918b45fef4eefda
+  display_form: ongoing destination-directed physical carrying
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Carrying and unrelated approach by another load or during another event; Arrival
+    or receipt inferred merely from directed carrying; Recipient or ownership inferred
+    from a destination label
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: ongoing internal data repair
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:9ddb5e2cfc285515c799462e
+  definition: An ongoing restorative transformation originating within one reference
+    entity whose restorative transformation is an ongoing bounded transformation of
+    represented information within that entity, without transfer to a distinct target.
+  sense_id: ENS:ecf20535faf8573d4ebdfdfd
+  display_form: ongoing internal data repair
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - arbitrary editing, transfer to another target, completed restoration, and restoration
+    originating from a distinct external source
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: ongoing internal structural repair
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:1b987e04bf47840f9e82ecd3
+  definition: An ongoing restorative transformation originating within one reference
+    structure whose restorative transformation changes how that structure's constituents
+    occupy its internal positions.
+  sense_id: ENS:c4d39b1091ab744d47f626c9
+  display_form: ongoing internal structural repair
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - arbitrary rearrangement, incorporation of a distinct target, formation of a peer
+    composite, and completed or merely possible restoration
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: ongoing optical sensory registration
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:bcfd189eb305cf364ada975a
+  definition: 'An instance of ongoing sensory registration, as defined by CMP:ade73037114406a2cd91ce13
+    version 1.0.0, with the additional channel commitment: The sensory transduction
+    registers information carried by light from the source, including visible, infrared
+    or ultraviolet light. No conscious visual experience, color judgment, object recognition
+    or attention is entailed.'
+  sense_id: ENS:0b350b247d38dcfae9be03cc
+  display_form: ongoing optical sensory registration
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - radio data transfer, acoustic-only input, visual imagination, and conscious seeing
+    inferred from registration
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: ongoing physical carrying
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:7a6749aaf61cd6181e544bd6
+  definition: A material source conveys the same distinct material load that it physically
+    supports, relative to the contextually relevant movement frame during the same
+    ongoing interval. The load is borne upon, within, or suspended from a moving supporting
+    part or field maintained by the source; that load-bearing engagement is the means
+    of conveyance. The whole source need not translate, as with a conveyor belt. No
+    intention, destination or recipient is asserted.
+  sense_id: ENS:5d7cc34cdb22ccb9a0c41baa
+  display_form: ongoing physical carrying
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Stationary support without conveyance; Support and unrelated simultaneous movement;
+    Pushing or dragging a load across an independently supporting surface without
+    bearing it upon, within or suspended from the carrier; Throwing or falling after
+    support ends; Abstract carrying of information, responsibility or disease
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: ongoing physical repair
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:2816a7eeb356c2148b26beca
+  definition: An ongoing source-to-target restorative transformation whose restorative
+    transformation is an ongoing physical-state change localized in that distinct
+    material target.
+  sense_id: ENS:96ddcc4f67e0aae5b8a8b130
+  display_form: ongoing physical repair
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - completed or merely possible repair, arbitrary physical change, internal self-restoration,
+    and future intention without ongoing repair
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: ongoing sensory registration
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:ade73037114406a2cd91ce13
+  definition: An ongoing information transfer from one distinct physical source to
+    a receiving target, physically realized by active material coupling in which sensory
+    transduction causes the receiver to register information carried by the source
+    stimulus.
+  sense_id: ENS:9e8742cd2cda8a3dcd4c2a66
+  display_form: ongoing sensory registration
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Mere physical influence without informational registration; Generic data copying
+    without sensory transduction; Conscious experience or understanding inferred from
+    registration; A specified sensory channel inferred without a channel distinction
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:fde92fc69d8d1aeff6000ad0
   lemma: operative constraint-target applicability
   display_form: operative constraint-target applicability
@@ -6848,6 +7061,32 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: practical physical custody
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:0aca609416668978e1527dac
+  definition: An established material relation in which a holder has effective practical
+    control over access to and physical handling of a distinct material object, through
+    an arrangement the holder can operate directly or through a controlled physical
+    intermediary. Mere ability to approach, touch, influence or seize the object does
+    not establish this relation. Control need not be exclusive, lawful, conscious,
+    voluntary, continuously exercised or accompanied by ownership, load bearing, movement
+    or a prior transfer.
+  sense_id: ENS:60adbee4ad9e95f983c0d81d
+  display_form: practical physical custody
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Ownership, permission or entitlement without practical control; Proximity, touch,
+    load support or physical influence alone; Hypothetical ability to seize an object
+    not already under practical control; Legal guardianship, information access or
+    ownership of an abstract asset; Receipt or transfer inferred from a custody state
+    alone
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:cc6e2c71bc5a9bd882ff0e58
   lemma: prepare another for awakening
   display_form: prepare another for awakening
@@ -7746,6 +7985,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  active physical load support:
+    sense_ids:
+    - ENS:5fd86c6d287121a13af9583b
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   active self-model revision:
     sense_ids:
     - ENS:c3ae71f28740b0294729dee7
@@ -8213,6 +8459,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  completed physical carrying to a destination:
+    sense_ids:
+    - ENS:b1f0a6f857b639838521a11b
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   completed self-development:
     sense_ids:
     - ENS:fbc144b28e5b1baed20b717c
@@ -9590,6 +9843,62 @@ lemma_index:
     direct_target_count: 0
     routes:
     - grammar
+  ongoing acoustic sensory registration:
+    sense_ids:
+    - ENS:a14e8a449378f9e4a12933a0
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  ongoing destination-directed physical carrying:
+    sense_ids:
+    - ENS:7a45fa463918b45fef4eefda
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  ongoing internal data repair:
+    sense_ids:
+    - ENS:ecf20535faf8573d4ebdfdfd
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  ongoing internal structural repair:
+    sense_ids:
+    - ENS:c4d39b1091ab744d47f626c9
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  ongoing optical sensory registration:
+    sense_ids:
+    - ENS:0b350b247d38dcfae9be03cc
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  ongoing physical carrying:
+    sense_ids:
+    - ENS:5d7cc34cdb22ccb9a0c41baa
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  ongoing physical repair:
+    sense_ids:
+    - ENS:96ddcc4f67e0aae5b8a8b130
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  ongoing sensory registration:
+    sense_ids:
+    - ENS:9e8742cd2cda8a3dcd4c2a66
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   operative constraint-target applicability:
     sense_ids:
     - ENS:fde92fc69d8d1aeff6000ad0
@@ -10283,6 +10592,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  practical physical custody:
+    sense_ids:
+    - ENS:60adbee4ad9e95f983c0d81d
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   prepare another for awakening:
     sense_ids:
     - ENS:cc6e2c71bc5a9bd882ff0e58

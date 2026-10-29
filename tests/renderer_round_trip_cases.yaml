@@ -306,21 +306,21 @@ round_trips:
   source_case: compound_occurrence
   anchor_midi: 48
   utterance_id: UTT:2112b91ea3fd302cc3a3ad87
-  formal_id: EZF:e0f12c12804c77af6241ccaf
+  formal_id: EZF:20c1fba4e5d270abd855399a
   lexical_event_count: 2
   round_trip_equal: true
 - case_id: compound_occurrence@60
   source_case: compound_occurrence
   anchor_midi: 60
   utterance_id: UTT:2112b91ea3fd302cc3a3ad87
-  formal_id: EZF:e0f12c12804c77af6241ccaf
+  formal_id: EZF:20c1fba4e5d270abd855399a
   lexical_event_count: 2
   round_trip_equal: true
 - case_id: compound_occurrence@72
   source_case: compound_occurrence
   anchor_midi: 72
   utterance_id: UTT:2112b91ea3fd302cc3a3ad87
-  formal_id: EZF:e0f12c12804c77af6241ccaf
+  formal_id: EZF:20c1fba4e5d270abd855399a
   lexical_event_count: 2
   round_trip_equal: true
 - case_id: state_two_num@48
@@ -362,12 +362,12 @@ exhaustive_atomic_matrix:
   - note_path_semitones
   - runtime_ending
 compound_matrix:
-  compounds: 29
+  compounds: 40
   runtime_states:
   - 0
   - 1
   - 2
-  assertions: 87
+  assertions: 120
   rule: all component roots render; runtime tail appears on head only; open slots
     require explicit role bindings
 corruption_cases:

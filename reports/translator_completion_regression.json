@@ -1,0 +1,514 @@
+{
+  "scope": "Implementation regression only. Full ordinary-English coverage and musical semantic completeness are not established.",
+  "passed": true,
+  "results": [
+    {
+      "test": "tests/min_cross_reference_migration_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 2084\n\n# Running:\n\n.\n\nFinished in 0.663012s, 1.5083 runs/s, 132.7276 assertions/s.\n\n1 runs, 88 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/mov_process_example_migration_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 56030\n\n# Running:\n\n.\n\nFinished in 1.024729s, 0.9759 runs/s, 173.7045 assertions/s.\n\n1 runs, 178 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/mat_capacity_example_migration_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 45457\n\n# Running:\n\n.\n\nFinished in 0.934884s, 1.0697 runs/s, 175.4228 assertions/s.\n\n1 runs, 164 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/compound_dependencies_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 13614\n\n# Running:\n\n......\n\nFinished in 0.012830s, 467.6539 runs/s, 1948.5581 assertions/s.\n\n6 runs, 25 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/compound_expansion_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 44827\n\n# Running:\n\n..........\n\nFinished in 0.244380s, 40.9199 runs/s, 581.0623 assertions/s.\n\n10 runs, 142 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/compound_convention_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 13916\n\n# Running:\n\n...\n\nFinished in 0.031242s, 96.0246 runs/s, 832.2130 assertions/s.\n\n3 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/dictionary_musical_identity_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 2059\n\n# Running:\n\n.\n\nFinished in 0.221726s, 4.5101 runs/s, 27.0604 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tools/audit_dictionary_musical_identity.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "{\"dictionary_entries\":364,\"performance_count\":1092,\"collisions\":[],\"completion_proven\":false}\n"
+    },
+    {
+      "test": "tools/audit_role_musical_contrasts.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "{\"roles\":22,\"collisions\":[]}\n"
+    },
+    {
+      "test": "tests/semantic_reference_validation_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 42161\n\n# Running:\n\n.......\n\nFinished in 0.220353s, 31.7672 runs/s, 145.2215 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/quantity_validation_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 36746\n\n# Running:\n\n..\n\nFinished in 0.370744s, 5.3946 runs/s, 210.3878 assertions/s.\n\n2 runs, 78 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tools/validate_semantic_ir_and_grammar.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Semantic IR validation: PASS\nChecks passed: 14; checks failed: 0; valid: 16; invalid: 13\n"
+    },
+    {
+      "test": "tests/foundation_process_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 44269\n\n# Running:\n\n...\n\nFinished in 0.415639s, 7.2178 runs/s, 67.3662 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/repetition_performance_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 23596\n\n# Running:\n\n...\n\nFinished in 0.465549s, 6.4440 runs/s, 17.1840 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/controlled_role_reference_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 17300\n\n# Running:\n\n...\n\nFinished in 0.418502s, 7.1684 runs/s, 90.8000 assertions/s.\n\n3 runs, 38 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tools/validate_gate4b_compound_dictionary.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Gate 4B validation: PASS\nChecks passed: 16; checks failed: 0; entries: 40\n"
+    },
+    {
+      "test": "tools/validate_gate4c_english_sense_index.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Gate 4C validation: PASS\nChecks passed: 17; checks failed: 0; senses: 448; lemmas: 431\n"
+    },
+    {
+      "test": "tools/validate_renderer_decoder.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Renderer/decoder validation: PASS\nChecks passed: 12; checks failed: 0\n"
+    },
+    {
+      "test": "tools/validate_glyph_audio.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Glyph/audio validation: PASS\nChecks passed: 10; checks failed: 0\n"
+    },
+    {
+      "test": "tests/repetition_browser_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Browser repetition: Ruby/JS MIDI and SVG parity, sound-plan counts, and export bounds pass.\n"
+    },
+    {
+      "test": "tests/name_participants_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Name participants: existing EZNAME notes, role reversal, nonsemantic labels, roundtrip and MIDI parity pass.\n"
+    },
+    {
+      "test": "tests/nominal_reference_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Definite noun references: ten full compositions preserve reference frames, names remain distinct, Ruby/browser output agrees, malformed references fail.\n"
+    },
+    {
+      "test": "tests/capability_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Capability statements preserve REP:211 and all three runtime endings; inactive and negated-active remain musically distinct.\n"
+    },
+    {
+      "test": "tests/speech_act_runtime_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Questions and commands retain all three runtime states, independent contours, and exactly one compound-head ending.\n"
+    },
+    {
+      "test": "tests/discourse_reference_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Discourse references: speaker/addressee anchors retain distinct roles and sound, match Ruby events/MIDI, and use neutral mouth cues without lexical runtime.\n"
+    },
+    {
+      "test": "tests/named_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Named sentences: 81 full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.\n"
+    },
+    {
+      "test": "tests/dictionary_fidelity_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Dictionary fidelity: uncomposed sentences remain partial, lexical labels remain available, and negation never infers runtime zero.\n"
+    },
+    {
+      "test": "tests/long_performance_verification_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Long performance verification: 96 lexical events plus 128 role frames accept strict, recognition and mixed paths; changed, missing, extra and empty notes are rejected.\n"
+    },
+    {
+      "test": "tools/validate_recognition_audio.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Recognition audio: PASS \u00b7 5370 variants \u00b7 32343 assertions\n"
+    },
+    {
+      "test": "tools/validate_performance_audio.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Recognition waveform: PASS \u00b7 108 performances \u00b7 327 assertions\n"
+    },
+    {
+      "test": "tests/sentence_sequence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Explicit sequences: whole-IR Ruby parity, exact MIDI parity, action order, clause boundary and unsupported-clause rejection pass.\n"
+    },
+    {
+      "test": "tests/sentence_conjunction_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Conjoined sentences: full Ruby/browser parity, quoted conjunctions, local negation, and-versus-then sound contrast, and ambiguous-scope rejection pass.\n"
+    },
+    {
+      "test": "tools/audit_ordinary_phrase_coverage.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "{\"case_count\":40,\"counts\":{\"verified_for_declared_checks\":19,\"not_composed\":18,\"requires_interpretation\":3},\"completion_proven\":false}\n"
+    },
+    {
+      "test": "tests/negation_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Negation: positive/negative/inactive distinction, grammar framing, marker durations and Ruby/browser parity pass.\n"
+    },
+    {
+      "test": "tests/modality_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Modality: seven distinct scoped modes preserve runtime and match Ruby/browser MIDI/SVG; unsounded confidence is rejected.\n"
+    },
+    {
+      "test": "tests/confidence_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Confidence: five exact decimal values recover from note frames; Ruby/browser output agrees; noncanonical or out-of-range strengths fail.\n"
+    },
+    {
+      "test": "tests/coordination_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Coordination: sequence, all-of, any-of and exactly-one sound distinct; Ruby/browser MIDI/SVG agree and unordered members retain boundaries.\n"
+    },
+    {
+      "test": "tests/temporal_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Temporal music: before/at/after speech time remain distinct, lexical state is unchanged, Ruby/browser output agrees, and unsounded anchor details fail.\nCalendar-day music: previous/current/next calendar days are distinct from speech-time relations, with Ruby/browser parity and strict anchor checks.\n"
+    },
+    {
+      "test": "tests/future_interpretation_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Future interpretation: 9 state/negation/bound-compound cases require explicit selection, then preserve tomorrow and runtime independently with reference/MIDI parity. UI does not compose before selection and rejects stale input; unresolved clause groups produce no partial translation.\n"
+    },
+    {
+      "test": "tests/measurement_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Measurement music preserves sign, exact decimal value and unit; eight contrasts match Ruby/browser output without changing lexical state.\n"
+    },
+    {
+      "test": "tests/mass_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Mass statements: eight reference-renderer/MIDI parity cases, exact gram/kilogram normalization beyond floating-point precision, bearer/quantity binding, modal and runtime preservation, and unsupported-dimension rejection.\n"
+    },
+    {
+      "test": "tests/temperature_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Temperature: 34 exact point/state/bound/bearer/modal cases match Ruby formal and MIDI; Celsius/Kelvin equivalents share meaning and sound, temperature differs from mass, controlled kelvin and independent unit/runtime decoding pass.\n"
+    },
+    {
+      "test": "tests/thermal_standard_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Thermal standards: 17 hot/cold/negation/runtime/question/modal/deictic cases preserve the chosen threshold in meaning and MIDI. Missing sense/standard is unresolved; equivalent scales match; changed standards change sound. UI requires a supplied threshold and rejects stale input.\n"
+    },
+    {
+      "test": "tests/mass_standard_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Mass standards: 17 heavy/light/negation/runtime/question/modal/deictic cases preserve the chosen threshold in meaning and MIDI. Missing sense/standard is unresolved; equivalent scales match; changed standards change sound. UI requires a supplied threshold and rejects stale input.\n"
+    },
+    {
+      "test": "tests/nominal_mass_property_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Nominal mass restrictions: 36 adjective/participant/negation/question/command/past/runtime cases match Ruby formal and MIDI. Independent performance decoding retains the restriction on its noun; equivalent units match, different thresholds differ, and unsupported senses/frames remain incomplete.\n"
+    },
+    {
+      "test": "tests/aspect_carrying_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Aspect: 45 carrying/negation/past/question/nominal-property/runtime cases have Ruby/browser formal and MIDI parity; 9 controlled aspect/state cases preserve distinct audible frames without participant roles. Bounded, ongoing and habitual stay separate from tense, arrival and runtime.\n"
+    },
+    {
+      "test": "tests/carrying_viewpoint_choice_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Carrying viewpoint choice: 63 interpretation/runtime/participant/question/modal/property cases match Ruby formal and MIDI; chosen ongoing/habitual readings equal explicit paraphrases. UI requires both viewpoint and applicable mass standard and discards stale results/errors.\n"
+    },
+    {
+      "test": "tests/measurement_comparison_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Six scalar comparison meanings produce distinct music with Ruby/browser formal and MIDI parity; exact and compatible-unit paraphrases normalize, and unknown comparisons fail validation.\n"
+    },
+    {
+      "test": "tests/property_comparison_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Entity mass comparison: 12 reference-renderer/MIDI cases preserve six relations and operand direction; explicit paraphrases normalize, invalid dimensions/roles fail, and modal/runtime scope remains separate.\n"
+    },
+    {
+      "test": "tests/temperature_comparison_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Temperature comparison: 38 six-relation/runtime/direction/deictic/scope cases match Ruby formal and MIDI; independent inverse recovers dimension, relation, ordered participants and state. Mass API remains mass-only.\n"
+    },
+    {
+      "test": "tests/mass_comparison_inverse_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Independent MIDI inverse: 36 relation/runtime/direction cases plus deictic operands; octave transposition preserves decoding, corruption/truncation fail, negated possibility preserves scope independently of all three runtime states. 36 confidence/mode/runtime cases preserve exact decimal strings. No source IR or formal plan is supplied to the decoder.\n"
+    },
+    {
+      "test": "tests/strict_music_decoder_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Independent strict music inverse: 5426 dictionary and sentence performances recover audible lexical/reference/grammar tokens and exact boundaries, without source IR or a formal plan.\n"
+    },
+    {
+      "test": "tests/quantifier_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Quantifier music: six scoped operators and exact cardinalities remain distinct, preserve runtime, and match Ruby/browser output.\n"
+    },
+    {
+      "test": "tests/quantified_role_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Quantified participants keep actor/target/background/experiencer registers; browser and Ruby agree and scope does not repeat the participant.\n"
+    },
+    {
+      "test": "tests/conditional_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Conditional music preserves antecedent/consequent direction and all four declared statuses; eight contrasts match Ruby/browser output.\n"
+    },
+    {
+      "test": "tests/conditional_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "English conditionals: five full Ruby/browser parity cases, reversed condition contrast, explicit runtime and past scopes, quoted name, and incomplete-clause rejection pass.\n"
+    },
+    {
+      "test": "tests/conditional_command_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Conditional commands: eight full renderer/MIDI parity cases, local definite-reference identity, explicit-reference paraphrase equivalence, command/assertion contrast, negation scope and independent runtime endings.\n"
+    },
+    {
+      "test": "tests/condition_adjective_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Condition adjectives: 15 reference-renderer parity cases; impairment/restoration state versus event, bearer roles, negation, questions, quantities, conditional scope, and all runtime endings pass.\n"
+    },
+    {
+      "test": "tests/compound_binding_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Nested bound compounds: 12 role/runtime contrasts retain both binding scopes, no duplicate payload, Ruby/browser MIDI and SVG parity, and event limits. Structural probes do not assert lexical valence.\n"
+    },
+    {
+      "test": "tests/compound_binding_constraints_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Compound identity constraints: scoped equality and distinctness reject wrong participants and known aliases in Ruby/browser; inherited paths and transitive contradictions are checked. Three runtime states preserve reference music. Fixtures do not approve carrying.\n"
+    },
+    {
+      "test": "tests/role_reference_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Role-reference music: 66 role/runtime structural cases distinguish a shared argument from identical separate lexical occurrences, preserve Ruby/browser MIDI and SVG, and recover the reference token without source IR. These probes do not approve arbitrary lexical valence.\n"
+    },
+    {
+      "test": "tests/qualified_slot_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Qualified slots: 18 attachment/runtime contrasts keep modifiers inside the correct participant role frame, including nested conventions; exact no-gap MIDI attachment, argument endings and Ruby/browser parity hold. Fixtures are structural, not approved experience vocabulary.\n"
+    },
+    {
+      "test": "tests/browser_compound_plans_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Browser compiled plans: 5370 released forms preserve exact reference lexical events and glosses.\n"
+    },
+    {
+      "test": "tests/bound_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Bound sentences: 21 name/deictic/nominal/state/scope/clause cases match reference formal and MIDI; invalid bindings, references, plans and event limits are rejected.\n"
+    },
+    {
+      "test": "tests/compound_convention_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Explicit compound conventions: 18 nested identity/runtime/binding contrasts preserve roots and head-only endings; Ruby/browser MIDI and SVG agree; independent MIDI frame reading recovers scoped convention codes. Fixtures do not approve vocabulary.\n"
+    },
+    {
+      "test": "tests/sensory_registration_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Sensory registration: 24 sentence/runtime cases preserve receiver versus source, negation/modality/confidence, exact Ruby/browser formal and MIDI parity, and independently readable convention code 0. No hearing, seeing or understanding alias is inferred.\n"
+    },
+    {
+      "test": "tests/registration_channels_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Registration channels: 18 channel/runtime/scope cases reuse one exact versioned foundation, retain source and receiver roles, preserve nested convention codes in MIDI, and match Ruby/browser formal output. Generic registration and conscious perception remain distinct.\n"
+    },
+    {
+      "test": "tests/physical_support_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Physical support: 20 role/runtime/scope sentences match Ruby formal and MIDI; target qualification and convention decode independently. Prior compound definitions are unchanged. Controlled role bindings become explicit paths. Carrying and metaphorical support remain distinct.\n"
+    },
+    {
+      "test": "tests/physical_custody_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Physical custody: 34 role/state/negation/question/modal/conditional sentences match Ruby/browser formal and MIDI; independent audible structure distinguishes custody from support and arrival. Three controlled and three nested performances preserve independent runtime states. Prior 39 compounds and distinct-participant constraints are checked; receipt is not inferred.\n"
+    },
+    {
+      "test": "tests/physical_carrying_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Physical carrying: 20 ordinary state/role/scope/clause cases match Ruby formal and MIDI; conventions 3/4 and runtime decode independently. Shared load, distinct carrier, exact dependency and unchanged prior compounds verified.\n"
+    },
+    {
+      "test": "tests/carrying_goal_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Carrying goals: 17 role/runtime/negation/modality/past-question/conditional cases match reference formal and MIDI. Destination differs from load and remains audible; arrival is not inferred; unsupported additions stay incomplete.\n"
+    },
+    {
+      "test": "tests/arrival_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Arrival: 27 participant/negation/question/calendar/property/runtime cases match Ruby formal and MIDI. Independent tokens distinguish completed arrival from approach without recipient or carrying inference.\n"
+    },
+    {
+      "test": "tests/destination_carrying_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Destination carrying: 45 sentence/runtime variants preserve nested event conventions, load/destination identity, aspect and mass restrictions with Ruby/browser formal/MIDI parity. Missing choices and wrong bindings reject; all prior compounds remain exact.\n"
+    },
+    {
+      "test": "tests/carrying_inverse_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Carrying MIDI inverse: 36 full supported performances recover predicate, ordered scope, participants, property and runtime from MIDI alone. Transposition, role reversal, malformed-but-balanced conventions/roles/bindings/roots, truncation and unsupported extra content are checked.\n"
+    },
+    {
+      "test": "tests/custody_inverse_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Custody MIDI inverse: 36 sentence/state/scope/property cases and nine reference-rendered speech-act/state cases recover custody, participants and independent runtime states from MIDI alone. Transposition, role reversal, homophone limits, balanced semantic corruptions, truncation and unsupported extra clauses are checked.\n"
+    },
+    {
+      "test": "tests/carrying_command_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Carrying/support commands: 21 runtime/negation/destination/conditional cases match reference formal and MIDI; addressee and command contour decode independently, and local it retains its antecedent.\n"
+    },
+    {
+      "test": "tests/destination_command_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Destination commands: 18 runtime/negation/property/participant variants match Ruby formal and MIDI; MIDI-only inverse recovers imperative contour and addressee without tense/aspect or actual-arrival inference. Form requires destination and property choices only.\n"
+    },
+    {
+      "test": "tests/clause_interpretation_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Clause interpretations: 15 sequence/conjunction/conditional/runtime cases preserve per-clause viewpoints, destinations, mass/temperature standards and future readings with Ruby/browser formal/MIDI parity. Complete choices, local it, caller snapshots and stale UI results/errors are checked.\n"
+    },
+    {
+      "test": "tests/counted_nominal_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Counted noun phrases preserve quantifier, cardinality, noun label and participant role without repeating the predicate; Ruby/browser parity verified.\n"
+    },
+    {
+      "test": "tests/path_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Movement paths retain mover, source and destination; reversal changes music, with negation, num and past-question scope preserved.\n"
+    },
+    {
+      "test": "tests/unsupported_musical_scope_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Unsupported music configurations: 4 invalid or unsupported scopes rejected by browser schedule/MIDI/SVG and Ruby MIDI/SVG; supported negation preserved.\n"
+    },
+    {
+      "test": "tools/validate_pages_release.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "GitHub Pages audit: PASS\nChecks passed: 11171; failed: 0; canonical variants: 5370\n"
+    },
+    {
+      "test": "tools/validate_viseme_performance.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Viseme performance: PASS \u00b7 5370 variants \u00b7 63738 cues \u00b7 87546 assertions\n"
+    }
+  ],
+  "remaining_requirements": [
+    "Broad ordinary sentence parsing and unquoted noun phrases",
+    "Pronouns, discourse reference and ambiguity handling",
+    "Adjectives, quantities and sensory/affective foundations",
+    "Tense, modality, quantifier and parallel-scope sound conventions",
+    "General semantic validation of new occurrence bindings and phonemic references",
+    "Recursive compound generation and complete scoped timing in the browser",
+    "Independent held-out meaning and sound decoding",
+    "Source reconciliation, release migration and publication validation"
+  ]
+}

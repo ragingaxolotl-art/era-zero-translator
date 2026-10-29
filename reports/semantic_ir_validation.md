@@ -1,6 +1,6 @@
 # Semantic IR and Executable Grammar Validation
 
-Status: **PASS — SEMANTIC IR CANONICAL; RENDERER/DECODER MAY BEGIN**
+Status: **PASS — BOUNDED SEMANTIC IR REGRESSION**
 
 - Checks passed: **14**
 - Checks failed: **0**
@@ -8,12 +8,12 @@ Status: **PASS — SEMANTIC IR CANONICAL; RENDERER/DECODER MAY BEGIN**
 - Valid cases: **16**
 - Invalid cases: **13**
 - Canonical atoms preserved: **324**
-- Canonical compounds preserved: **29**
-- Translator authorized: **no**
+- Canonical compounds preserved: **40**
+- This fixture suite does not establish full translator completion.
 
 ## PASS — lexical immutability
 
-atomic and compound fingerprints remain unchanged
+atomic baseline matches directly or through exact editorial reconciliation; compound fingerprint remains unchanged
 
 ## PASS — complete required scope
 

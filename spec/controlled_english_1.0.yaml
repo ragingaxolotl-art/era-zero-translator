@@ -3,10 +3,10 @@ metadata:
   title: Era Zero Controlled English Compiler
   version: 1.0.0
   status: canonical
-  sense_index_fingerprint: c8697b27f7594ee2dea6af2d7b3acae0812874f51081ee9f1d9e7951b961d47f
-  semantic_ir_fingerprint: '089c3095f8ad3007f9375cdc0b5327c226106dcec5923165d81e1fedf07e4e97'
-  renderer_fingerprint: ec460c5a0f9c7a1a2323d60529c5ba98b8d091fb6880e505397245a656ee1496
-  controlled_lexeme_count: 353
+  sense_index_fingerprint: 6ce347c11612516fd5a06befc258ee0053e584627f7f79711728b04193f78fe5
+  semantic_ir_fingerprint: 591a0998648cef989de4c6d6ebe52bd2048e9aeedbcf3937628df88e73da945c
+  renderer_fingerprint: 5d236fdcc577fb0899498f45a6374c4214c5c9fb4ef7f26cd3bb88ff781dfb9f
+  controlled_lexeme_count: 364
   general_english_started: false
 boundary:
   purpose: A deterministic, auditable input language for canonical labels and explicit
@@ -29,14 +29,17 @@ grammar:
   terminal: Every input ends in exactly one period.
   speech_act: ASSERT | QUESTION | COMMAND | DEFINE | POSSIBILITY
   lexical: '"<controlled label>" [0|1|2]'
-  simple: ACT [NOT] [MODAL mode] [ASPECT aspect] LEXICAL {ROLE role LEXICAL} [TIME
-    relation SPEECH_TIME] [MEASURE decimal unit] [QUANTIFIER kind [decimal]] .
+  simple: ACT [NOT] [MODAL mode] [ASPECT aspect] LEXICAL {ROLE role (LEXICAL | REF
+    earlier_role)} [TIME relation SPEECH_TIME] [MEASURE decimal unit] [QUANTIFIER
+    kind [decimal]] .
   sequence: ACT SEQUENCE LEXICAL THEN LEXICAL {THEN LEXICAL} .
   parallel: ACT PARALLEL LEXICAL AND LEXICAL {AND LEXICAL} .
   repetition: ACT REPEAT positive_integer TIMES LEXICAL .
   conditional: ACT IF LEXICAL THEN LEXICAL .
   ordering_rule: Keywords and modifiers occur only in the documented order; reordering
     is an error, not an alternative parse.
+  role_reference: REF reuses the exact argument occurrence of an earlier role in the
+    same clause; it does not infer identity from equal lexical labels.
 inventories:
   speech_acts:
     ASSERT: assertion
@@ -104,6 +107,7 @@ inventories:
   - radian
   - bit
   - byte
+  - kelvin
   runtime_states:
     0: state zero
     1: state one
@@ -146,6 +150,8 @@ errors:
 - invalid_repetition
 - invalid_conditional
 - unexpected_token
+- ambiguous_compound_binding
+- unknown_role_reference
 pipeline:
 - controlled input
 - deterministic compiler

@@ -1,6 +1,6 @@
 # Glyph and MIDI Presentation Validation
 
-Status: **PASS — ALL TRANSLATOR-READINESS GATES COMPLETE**
+Status: **PASS — BOUNDED PRESENTATION REGRESSION**
 
 - Checks passed: **10**
 - Checks failed: **0**
@@ -9,7 +9,7 @@ Status: **PASS — ALL TRANSLATOR-READINESS GATES COMPLETE**
 - Atomic state presentations: **972**
 - Example SVG/MIDI pairs: **3**
 - Waveform synthesis: **optional, not implemented**
-- Next required gate: **none**
+- This check does not establish full sentence or audible semantic completeness. See docs/translator-completion.md.
 
 ## PASS — source immutability
 
@@ -17,7 +17,7 @@ renderer matches the recorded fingerprint and semantic identity is unchanged
 
 ## PASS — presentation matrix
 
-all Semantic-IR fixtures produce deterministic recorded SVG/MIDI at three anchors and preserve exact IR
+supported fixtures match recorded SVG/MIDI at three anchors; parallel and unresolved-discourse fixtures explicitly refuse semantically incomplete output
 
 ## PASS — SVG conformance
 
@@ -47,7 +47,7 @@ MIDI is canonical while waveform synthesis remains explicitly optional and nonse
 
 three SVG/MIDI example pairs exist
 
-## PASS — authority integration
+## PASS — legacy authority integration
 
-all seven gates are complete and no further gate is authorized
+historical release gate metadata and presentation permissions remain consistent
 

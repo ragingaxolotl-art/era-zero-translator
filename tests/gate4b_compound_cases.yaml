@@ -2,16 +2,25 @@
 metadata:
   title: Gate 4B dictionary conformance and routing cases
   version: 1.0.0
-  approved_entries: 29
+  approved_entries: 40
 accepted:
+- case_id: practical_physical_custody
+  compound_id: CMP:0aca609416668978e1527dac
+  expected: valid_approved_entry
 - case_id: physical_tool
   compound_id: CMP:111b772027accab2054f0415
+  expected: valid_approved_entry
+- case_id: ongoing_internal_structural_repair
+  compound_id: CMP:1b987e04bf47840f9e82ecd3
   expected: valid_approved_entry
 - case_id: living_communication_network
   compound_id: CMP:218a5578a2274b92ba3d72db
   expected: valid_approved_entry
 - case_id: physical_repair
   compound_id: CMP:22f8ddc4d9b2d1a818d38e9f
+  expected: valid_approved_entry
+- case_id: ongoing_physical_repair
+  compound_id: CMP:2816a7eeb356c2148b26beca
   expected: valid_approved_entry
 - case_id: shared-world_law
   compound_id: CMP:2d26353b47b531bd3f5ae090
@@ -30,6 +39,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: material_biosystem
   compound_id: CMP:4144fad413b8ce5012088c61
+  expected: valid_approved_entry
+- case_id: ongoing_acoustic_sensory_registration
+  compound_id: CMP:42e9bd596b35612ed6cbe3ce
   expected: valid_approved_entry
 - case_id: shared_knowledge_base
   compound_id: CMP:44173561806bc8f334a0b7c9
@@ -52,6 +64,15 @@ accepted:
 - case_id: directed_data_link
   compound_id: CMP:742b44d9ead66b451346708a
   expected: valid_approved_entry
+- case_id: completed_physical_carrying_to_a_destination
+  compound_id: CMP:74d98d19808f74d0b8196951
+  expected: valid_approved_entry
+- case_id: ongoing_destination-directed_physical_carrying
+  compound_id: CMP:763faa4465065477220f6f06
+  expected: valid_approved_entry
+- case_id: ongoing_physical_carrying
+  compound_id: CMP:7a6749aaf61cd6181e544bd6
+  expected: valid_approved_entry
 - case_id: machine
   compound_id: CMP:8e5ae722d9e5e31f85ac3c5b
   expected: valid_approved_entry
@@ -64,14 +85,23 @@ accepted:
 - case_id: shared_message_collection
   compound_id: CMP:99a87c8869d58498f524f1cc
   expected: valid_approved_entry
+- case_id: ongoing_internal_data_repair
+  compound_id: CMP:9ddb5e2cfc285515c799462e
+  expected: valid_approved_entry
 - case_id: dormant_program
   compound_id: CMP:9e8b36f50570a0c3c362a968
   expected: valid_approved_entry
 - case_id: composite_artifact
   compound_id: CMP:a7fc0ca38a6f95a40cdb87b1
   expected: valid_approved_entry
+- case_id: ongoing_sensory_registration
+  compound_id: CMP:ade73037114406a2cd91ce13
+  expected: valid_approved_entry
 - case_id: data_repair
   compound_id: CMP:b518a324d776e46e9d0ff041
+  expected: valid_approved_entry
+- case_id: ongoing_optical_sensory_registration
+  compound_id: CMP:bcfd189eb305cf364ada975a
   expected: valid_approved_entry
 - case_id: material_hazard
   compound_id: CMP:cb0812face56f90b7ba139c5
@@ -87,6 +117,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: structural_repair
   compound_id: CMP:e799b436d9c5e7d87a5516fa
+  expected: valid_approved_entry
+- case_id: active_physical_load_support
+  compound_id: CMP:eef9fff8ac6618ce60927f18
   expected: valid_approved_entry
 - case_id: physical_injury
   compound_id: CMP:f1abd5eccdf06d92d5690a32

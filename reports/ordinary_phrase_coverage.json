@@ -1,0 +1,840 @@
+{
+  "scope": "Fresh phrase coverage audit authored during implementation; not a blind or representative English benchmark.",
+  "completion_proven": false,
+  "case_count": 40,
+  "counts": {
+    "verified_for_declared_checks": 19,
+    "not_composed": 18,
+    "requires_interpretation": 3
+  },
+  "areas": {
+    "participants": {
+      "total": 2,
+      "verified": 2
+    },
+    "scope": {
+      "total": 2,
+      "verified": 2
+    },
+    "adjectives": {
+      "total": 1,
+      "verified": 1
+    },
+    "compounds": {
+      "total": 1,
+      "verified": 1
+    },
+    "movement": {
+      "total": 3,
+      "verified": 3
+    },
+    "cognition": {
+      "total": 4,
+      "verified": 1
+    },
+    "coordination": {
+      "total": 3,
+      "verified": 2
+    },
+    "quantity": {
+      "total": 2,
+      "verified": 1
+    },
+    "noun_phrases": {
+      "total": 2,
+      "verified": 1
+    },
+    "discourse": {
+      "total": 1,
+      "verified": 0
+    },
+    "time": {
+      "total": 2,
+      "verified": 1
+    },
+    "speech_act": {
+      "total": 2,
+      "verified": 2
+    },
+    "sensory_dimensions": {
+      "total": 4,
+      "verified": 0
+    },
+    "affect": {
+      "total": 2,
+      "verified": 0
+    },
+    "bodily_need": {
+      "total": 3,
+      "verified": 0
+    },
+    "movement_manner": {
+      "total": 2,
+      "verified": 0
+    },
+    "comparison": {
+      "total": 1,
+      "verified": 0
+    },
+    "conditional": {
+      "total": 1,
+      "verified": 1
+    },
+    "modality": {
+      "total": 1,
+      "verified": 0
+    },
+    "poetic_meaning": {
+      "total": 1,
+      "verified": 1
+    }
+  },
+  "results": [
+    {
+      "id": "care",
+      "input": "Nora cares for Eli.",
+      "area": "participants",
+      "requirements": [
+        "Preserve caregiver and beneficiary"
+      ],
+      "expected": {
+        "targets": [
+          "LIF:211"
+        ],
+        "roles": [
+          "actor",
+          "target"
+        ],
+        "labels": [
+          "nora",
+          "eli"
+        ],
+        "operators": []
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "5653cb411b907545a6a7c8a2422120dfa58d7b00eb4865a1ccfd63d8d4472077"
+    },
+    {
+      "id": "care_negative",
+      "input": "Nora does not care for Eli.",
+      "area": "scope",
+      "requirements": [
+        "Negate care without changing runtime"
+      ],
+      "expected": {
+        "targets": [
+          "LIF:211"
+        ],
+        "roles": [
+          "actor",
+          "target"
+        ],
+        "labels": [
+          "nora",
+          "eli"
+        ],
+        "operators": [
+          "negation"
+        ]
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "f00ce8e280d698aacba1c14313e0886406cbcc8c4897d6119eb9cbeb6e9ea23b"
+    },
+    {
+      "id": "description",
+      "input": "Orin is conscious.",
+      "area": "adjectives",
+      "requirements": [
+        "Bind the conscious condition to Orin"
+      ],
+      "expected": {
+        "targets": [
+          "LIF:011"
+        ],
+        "roles": [
+          "bearer"
+        ],
+        "labels": [
+          "orin"
+        ],
+        "operators": []
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "fc06e5170686436e32344f842d90b6dd493dfad422a9e403a31bdbe221bfa954"
+    },
+    {
+      "id": "repair",
+      "input": "Nora is physically repairing \"the radio\".",
+      "area": "compounds",
+      "requirements": [
+        "Physical repair in progress, with actor and object"
+      ],
+      "expected": {
+        "targets": [
+          "CMP:2816a7eeb356c2148b26beca"
+        ],
+        "roles": [
+          "actor",
+          "target"
+        ],
+        "labels": [
+          "nora",
+          "the radio"
+        ],
+        "operators": []
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "da080a86f8d8994a87c1196a069e7fa01123c5b045504699e5ce967afe59c032"
+    },
+    {
+      "id": "destination",
+      "input": "Eli is moving toward \"the gate\".",
+      "area": "movement",
+      "requirements": [
+        "Mover and destination are distinct"
+      ],
+      "expected": {
+        "targets": [
+          "MOV:111"
+        ],
+        "roles": [
+          "actor",
+          "destination"
+        ],
+        "labels": [
+          "eli",
+          "the gate"
+        ],
+        "operators": []
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "0a5f7fd6c884726333b92af35fb285ad162cfc4ce5cd38cc4222a32682256095"
+    },
+    {
+      "id": "source",
+      "input": "Eli is moving away from \"the gate\".",
+      "area": "movement",
+      "requirements": [
+        "Mover and source are distinct"
+      ],
+      "expected": {
+        "targets": [
+          "MOV:101"
+        ],
+        "roles": [
+          "actor",
+          "source"
+        ],
+        "labels": [
+          "eli",
+          "the gate"
+        ],
+        "operators": []
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "b4118203df38a7d987fed1d10716838ee43b806d7c43526d0fa050e2e7f25ca4"
+    },
+    {
+      "id": "attention",
+      "input": "Orin is paying attention to Nora.",
+      "area": "cognition",
+      "requirements": [
+        "Cognizer and attended target; no claim of learning"
+      ],
+      "expected": {
+        "targets": [
+          "MIN:211"
+        ],
+        "roles": [
+          "experiencer",
+          "target"
+        ],
+        "labels": [
+          "orin",
+          "nora"
+        ],
+        "operators": []
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "a059c7084ba995ae0c8f1b94300d6c6721bb4885f3a49c5d29848679d0a47da9"
+    },
+    {
+      "id": "transfer",
+      "input": "Data \"the map\" is being transferred from \"the archive\" to \"the console\".",
+      "area": "participants",
+      "requirements": [
+        "Source, content, and target all survive"
+      ],
+      "expected": {
+        "targets": [
+          "DAT:111"
+        ],
+        "roles": [
+          "source",
+          "content",
+          "target"
+        ],
+        "labels": [
+          "the archive",
+          "the map",
+          "the console"
+        ],
+        "operators": []
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "6a5f343ce8652910a25c281d8e1309e1729335dae888bacc21659368126fc5c9"
+    },
+    {
+      "id": "sequence",
+      "input": "Nora cares for Eli, then Orin is conscious.",
+      "area": "coordination",
+      "requirements": [
+        "Care precedes the conscious-state assertion"
+      ],
+      "expected": {
+        "targets": [
+          "LIF:211",
+          "LIF:011"
+        ],
+        "roles": [
+          "actor",
+          "target",
+          "bearer"
+        ],
+        "labels": [
+          "nora",
+          "eli",
+          "orin"
+        ],
+        "operators": [
+          "sequence"
+        ]
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "3dd0cec7c451e3b1eba7966011e06f828b739846131a140624a9a9d6e6277fe1"
+    },
+    {
+      "id": "conjunction",
+      "input": "Nora cares for Eli and Orin is conscious.",
+      "area": "coordination",
+      "requirements": [
+        "Assert both clauses without temporal order"
+      ],
+      "expected": {
+        "targets": [
+          "LIF:211",
+          "LIF:011"
+        ],
+        "roles": [
+          "actor",
+          "target",
+          "bearer"
+        ],
+        "labels": [
+          "nora",
+          "eli",
+          "orin"
+        ],
+        "operators": [
+          "all_of"
+        ]
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "24abb0fa9547501822577c59f0aef4441b4a801e7d24e4fba03a69fdef05d699"
+    },
+    {
+      "id": "modal_negation",
+      "input": "It is possible that Orin is not conscious.",
+      "area": "scope",
+      "requirements": [
+        "Possibility contains negation, not its reverse"
+      ],
+      "expected": {
+        "targets": [
+          "LIF:011"
+        ],
+        "roles": [
+          "bearer"
+        ],
+        "labels": [
+          "orin"
+        ],
+        "operators": [
+          "modality",
+          "negation"
+        ]
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "7cb1f97e46a12432ba0708ee840592a823c1099fcf919f5c60b271a9f643477d"
+    },
+    {
+      "id": "confidence",
+      "input": "With 62.5% confidence, it is possible that Orin is conscious.",
+      "area": "quantity",
+      "requirements": [
+        "Encode exact confidence 0.625"
+      ],
+      "expected": {
+        "targets": [
+          "LIF:011"
+        ],
+        "roles": [
+          "bearer"
+        ],
+        "labels": [
+          "orin"
+        ],
+        "operators": [
+          "modality"
+        ],
+        "strengths": [
+          "0.625"
+        ]
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "5a30a3e88b01ef9fe09832dfdd9d18831db6c574fccd4fb63aea17c135edf9e8"
+    },
+    {
+      "id": "common_noun",
+      "input": "Nora is repairing the radio.",
+      "area": "noun_phrases",
+      "requirements": [
+        "Recognize an unquoted common noun and repair sense"
+      ],
+      "expected": {
+        "targets": [
+          "REP:111"
+        ],
+        "roles": [
+          "actor",
+          "target"
+        ],
+        "labels": [
+          "nora",
+          "radio"
+        ],
+        "reference_modes": [
+          "definite_nominal"
+        ],
+        "operators": []
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "0c8627ce116c8f8bdd4a51a022c3ff80f51d212d01f06ff54001f25efd082a0d"
+    },
+    {
+      "id": "pronoun",
+      "input": "She cares for him.",
+      "area": "discourse",
+      "requirements": [
+        "Resolve both pronouns from discourse or request referents"
+      ],
+      "status": "not_composed",
+      "failures": []
+    },
+    {
+      "id": "past",
+      "input": "Nora cared for Eli yesterday.",
+      "area": "time",
+      "requirements": [
+        "Preserve past time separately from care activity"
+      ],
+      "expected": {
+        "targets": [
+          "LIF:211"
+        ],
+        "roles": [
+          "actor",
+          "target"
+        ],
+        "labels": [
+          "nora",
+          "eli"
+        ],
+        "operators": [],
+        "calendar_days": [
+          "interval:day:speech_date:-1"
+        ],
+        "time_relations": [
+          "during"
+        ]
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "fcf404c0c4ed4736371735a04a47a304ec2cc9691fbfadfc02a30406fac5d02f"
+    },
+    {
+      "id": "future",
+      "input": "Nora will care for Eli tomorrow.",
+      "area": "time",
+      "requirements": [
+        "Preserve future time and commitment ambiguity"
+      ],
+      "status": "requires_interpretation",
+      "failures": [],
+      "clarification": "future_interpretation_required"
+    },
+    {
+      "id": "question",
+      "input": "Is Orin conscious?",
+      "area": "speech_act",
+      "requirements": [
+        "Ask about the state with the same bearer"
+      ],
+      "expected": {
+        "targets": [
+          "LIF:011"
+        ],
+        "roles": [
+          "bearer"
+        ],
+        "labels": [
+          "orin"
+        ],
+        "operators": [],
+        "speech_acts": [
+          "question"
+        ]
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "82d9c0edf7335ca9db4c7e0522d43195be3f56f09e54a08a867cda5cbe25c967"
+    },
+    {
+      "id": "command",
+      "input": "Care for Eli.",
+      "area": "speech_act",
+      "requirements": [
+        "Command an addressee to care for Eli"
+      ],
+      "expected": {
+        "targets": [
+          "LIF:211"
+        ],
+        "roles": [
+          "actor",
+          "target"
+        ],
+        "labels": [
+          "eli"
+        ],
+        "operators": [],
+        "speech_acts": [
+          "command"
+        ],
+        "deictic_roles": [
+          "addressee"
+        ]
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "50bb2c0be10787a9d270b455a6400fb2d2b2fc20bba161f3bd40ff3a7cad6a5e"
+    },
+    {
+      "id": "two_objects",
+      "input": "Nora cares for Eli and Orin.",
+      "area": "noun_phrases",
+      "requirements": [
+        "Both objects belong to the care relation"
+      ],
+      "status": "not_composed",
+      "failures": []
+    },
+    {
+      "id": "path",
+      "input": "Eli is moving from the archive to the gate.",
+      "area": "movement",
+      "requirements": [
+        "Bind both path endpoints and the mover"
+      ],
+      "expected": {
+        "targets": [
+          "MOV:111"
+        ],
+        "roles": [
+          "actor",
+          "source",
+          "destination"
+        ],
+        "labels": [
+          "eli",
+          "archive",
+          "gate"
+        ],
+        "reference_modes": [
+          "definite_nominal",
+          "definite_nominal"
+        ],
+        "role_labels": [
+          "actor:eli",
+          "source:archive",
+          "destination:gate"
+        ],
+        "operators": []
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "ba90ba44781c7d5cd7bf9e0dca8fa894533a91f437b366e3cdb0ecc94ad165bb"
+    },
+    {
+      "id": "hot",
+      "input": "The radio is hot.",
+      "area": "sensory_dimensions",
+      "requirements": [
+        "Temperature is not generic activity"
+      ],
+      "status": "requires_interpretation",
+      "failures": [],
+      "clarification": "thermal_standard_required"
+    },
+    {
+      "id": "heavy",
+      "input": "The radio is heavy.",
+      "area": "sensory_dimensions",
+      "requirements": [
+        "Mass or weight must not collapse into size"
+      ],
+      "status": "requires_interpretation",
+      "failures": [],
+      "clarification": "mass_standard_required"
+    },
+    {
+      "id": "bright",
+      "input": "The lamp is bright.",
+      "area": "sensory_dimensions",
+      "requirements": [
+        "Express visual intensity"
+      ],
+      "status": "not_composed",
+      "failures": []
+    },
+    {
+      "id": "rough",
+      "input": "The stone is rough.",
+      "area": "sensory_dimensions",
+      "requirements": [
+        "Express surface texture"
+      ],
+      "status": "not_composed",
+      "failures": []
+    },
+    {
+      "id": "happy",
+      "input": "Nora is happy.",
+      "area": "affect",
+      "requirements": [
+        "Express positive felt affect, not care behavior"
+      ],
+      "status": "not_composed",
+      "failures": []
+    },
+    {
+      "id": "prefers",
+      "input": "Nora prefers tea to coffee.",
+      "area": "affect",
+      "requirements": [
+        "Preserve preference direction and both alternatives"
+      ],
+      "status": "not_composed",
+      "failures": []
+    },
+    {
+      "id": "hungry",
+      "input": "Eli is hungry.",
+      "area": "bodily_need",
+      "requirements": [
+        "Distinguish food deficit from thirst and dormancy"
+      ],
+      "status": "not_composed",
+      "failures": []
+    },
+    {
+      "id": "thirsty",
+      "input": "Eli is thirsty.",
+      "area": "bodily_need",
+      "requirements": [
+        "Express water-related bodily need"
+      ],
+      "status": "not_composed",
+      "failures": []
+    },
+    {
+      "id": "tired",
+      "input": "Orin is tired.",
+      "area": "bodily_need",
+      "requirements": [
+        "Distinguish fatigue from dormant identity"
+      ],
+      "status": "not_composed",
+      "failures": []
+    },
+    {
+      "id": "curious",
+      "input": "Orin is curious about the map.",
+      "area": "cognition",
+      "requirements": [
+        "Interest in knowing is not merely attention"
+      ],
+      "status": "not_composed",
+      "failures": []
+    },
+    {
+      "id": "learn",
+      "input": "Nora learned the route.",
+      "area": "cognition",
+      "requirements": [
+        "Represent learning and its result without equating every revision with truth"
+      ],
+      "status": "not_composed",
+      "failures": []
+    },
+    {
+      "id": "understand",
+      "input": "Eli understands Nora.",
+      "area": "cognition",
+      "requirements": [
+        "Preserve interpretation or understanding beyond receiving communication"
+      ],
+      "status": "not_composed",
+      "failures": []
+    },
+    {
+      "id": "run",
+      "input": "Nora runs to the gate.",
+      "area": "movement_manner",
+      "requirements": [
+        "Running manner is not any fast movement"
+      ],
+      "status": "not_composed",
+      "failures": []
+    },
+    {
+      "id": "swim",
+      "input": "Eli swims across the river.",
+      "area": "movement_manner",
+      "requirements": [
+        "Propulsion and medium interaction are not passive transport"
+      ],
+      "status": "not_composed",
+      "failures": []
+    },
+    {
+      "id": "count",
+      "input": "Exactly three lamps are active.",
+      "area": "quantity",
+      "requirements": [
+        "Quantify three bearers, not repetitions of one assertion"
+      ],
+      "status": "not_composed",
+      "failures": []
+    },
+    {
+      "id": "compare",
+      "input": "This lamp is brighter than that lamp.",
+      "area": "comparison",
+      "requirements": [
+        "Bind comparison direction, dimension, and both referents"
+      ],
+      "status": "not_composed",
+      "failures": []
+    },
+    {
+      "id": "conditional",
+      "input": "If the radio is damaged, repair it.",
+      "area": "conditional",
+      "requirements": [
+        "Preserve conditional scope and object coreference"
+      ],
+      "expected": {
+        "targets": [
+          "WRN:001",
+          "REP:111"
+        ],
+        "roles": [
+          "bearer",
+          "actor",
+          "target"
+        ],
+        "labels": [
+          "radio",
+          "radio"
+        ],
+        "reference_modes": [
+          "definite_nominal",
+          "definite_nominal"
+        ],
+        "deictic_roles": [
+          "addressee"
+        ],
+        "speech_acts": [
+          "command"
+        ],
+        "condition_statuses": [
+          "open"
+        ],
+        "operators": []
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "2e150a4e371ae4e159f1402b0ea54b0930f71f68e281325b614b306ed207a06b"
+    },
+    {
+      "id": "permission",
+      "input": "Nora may enter the archive.",
+      "area": "modality",
+      "requirements": [
+        "Disambiguate permission versus possibility"
+      ],
+      "status": "not_composed",
+      "failures": []
+    },
+    {
+      "id": "or",
+      "input": "Nora cares for Eli or Orin is conscious.",
+      "area": "coordination",
+      "requirements": [
+        "Resolve inclusive versus exclusive interpretation"
+      ],
+      "status": "not_composed",
+      "failures": []
+    },
+    {
+      "id": "love",
+      "input": "I love you.",
+      "area": "poetic_meaning",
+      "requirements": [
+        "Use the approved love meaning and bind speaker/addressee"
+      ],
+      "expected": {
+        "targets": [
+          "CMP:44718c92b66443c0c0f03ad7"
+        ],
+        "roles": [
+          "actor",
+          "target"
+        ],
+        "labels": [],
+        "operators": [],
+        "deictic_roles": [
+          "speaker",
+          "addressee"
+        ]
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "3be13d6bfb8144bb26ea6725479049c0cd0391e65371a69b61a423e4e0eb3ccc"
+    }
+  ]
+}

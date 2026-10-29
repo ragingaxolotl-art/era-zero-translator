@@ -124,6 +124,60 @@ module EraZeroValidation
     Digest::SHA256.hexdigest(JSON.generate(deep_sort(value)))
   end
 
+  # Historical fingerprints remain immutable. Accept only the exact documented
+  # editorial migration, and prove its reversal restores the complete old records.
+  def atomic_fingerprint_matches?(atoms, expected)
+    actual = fingerprint(atoms)
+    return true if actual == expected
+    mat_path = "migrations/mat_capacity_example_reconciliation_2026_10_29.yaml"
+    if File.exist?(File.join(ROOT, mat_path))
+      mat = load_yaml(mat_path)
+      if actual == mat.fetch("after_fingerprint") && actual != mat.fetch("before_fingerprint")
+        changes = mat.fetch("changes")
+        return false unless changes.length == 9 && changes.map { |c| c["root_id"] }.sort == ids_for_range("MAT:200-222").sort
+        restored = Marshal.load(Marshal.dump(atoms))
+        changes.each do |change|
+          return false unless change["field"] == "normal_example"
+          row = restored.find { |r| r["canonical_id"] == change.fetch("root_id") }
+          return false unless row && row["normal_example"] == change.fetch("after")
+          row["normal_example"] = change.fetch("before")
+        end
+        return false unless fingerprint(restored) == mat.fetch("before_fingerprint")
+        return atomic_fingerprint_matches?(restored, expected)
+      end
+    end
+    # Reverse only the exact additional prose migration, then check the older
+    # authority (including the preceding MIN migration) without changing its pins.
+    mov_path = "migrations/mov_process_example_reconciliation_2026_10_28.yaml"
+    if File.exist?(File.join(ROOT, mov_path))
+      mov = load_yaml(mov_path)
+      if actual == mov.fetch("after_fingerprint") && actual != mov.fetch("before_fingerprint")
+        restored = Marshal.load(Marshal.dump(atoms))
+        mov.fetch("changes").each do |change|
+          return false unless %w[normal_example neighbor_contrast_notes].include?(change["field"]) && change.fetch("root_id").match?(/\AMOV:1[012][012]\z/)
+          row = restored.find { |r| r["canonical_id"] == change.fetch("root_id") }
+          return false unless row && row[change.fetch("field")] == change.fetch("after")
+          row[change.fetch("field")] = change.fetch("before")
+        end
+        return false unless fingerprint(restored) == mov.fetch("before_fingerprint")
+        return atomic_fingerprint_matches?(restored, expected)
+      end
+    end
+    migration = load_yaml("migrations/min_cross_reference_reconciliation_2026_10_28.yaml")
+    return false unless actual == migration.fetch("after_fingerprint") && expected == migration.fetch("before_fingerprint")
+    restored = Marshal.load(Marshal.dump(atoms))
+    targets = restored.select { |atom| migration.fetch("root_ids").include?(atom["canonical_id"]) }
+    return false unless targets.length == 9
+    targets.each do |atom|
+      values = atom.fetch("distinctions_and_exclusions")
+      migration.fetch("replacements").each do |old, corrected|
+        return false unless values.count(corrected) == 1 && values.count(old).zero?
+        values.map! { |text| text == corrected ? old : text }
+      end
+    end
+    fingerprint(restored) == expected
+  end
+
   def normalized_range(value)
     match = value.to_s.upcase.tr("–—", "-").match(/\A([A-Z]{3}):(\d{3})-(\d{3})\z/)
     raise ArgumentError, "range must look like CON:000-022" unless match

@@ -1,0 +1,23 @@
+profile: EZCONDITION-1
+status: versioned_implementation_convention
+provenance: New grammar convention under the translator completion goal
+purpose: Preserve condition status and antecedent/consequent direction
+statuses: [open, satisfied, unsatisfied, counterfactual]
+code:
+  status: Zero-based index in statuses
+  open: '[0, -16, status, 0]'
+  then: '[0, 16, 0, 16]'
+  close: '[0, 16, status, 0]'
+  note_duration_beats: 0.25
+  anchor: Utterance anchor
+placement: Open, antecedent clause, then, consequent clause, close
+constraints:
+  - Exactly one incoming condition_of edge per consequent; combine conditions with explicit coordination
+  - Both endpoints must be clauses
+  - Unknown statuses and additional edge fields are rejected
+preserved:
+  - Lexical root trits and runtime 0/1/2 endings remain unchanged
+  - Condition status is independent of runtime state
+remaining:
+  - Ordinary English conditional parsing
+  - Independent inverse semantic decoding and perceptual validation

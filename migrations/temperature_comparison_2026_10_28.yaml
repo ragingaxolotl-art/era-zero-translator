@@ -1,0 +1,12 @@
+authority: User-directed translator-completion goal
+profile: EZPROPERTYCOMPARE-1
+added_dimension: thermodynamic_temperature
+added_dimension_code: 2
+preserved_mass_dimension_code: 1
+semantic_commitment: Compare the thermodynamic temperatures of the bearer and comparison standard without supplying numeric magnitudes or a contextual hot/cold threshold
+root_meanings_changed: false
+compound_meanings_changed: false
+prior_performances_changed: false
+independent_inverse: pages/property_comparison_decoder.mjs
+compatibility_api: Existing mass decoder remains mass-only and rejects temperature
+validation: Six relations, reversed operands, all runtime states, deictics, scope, exact Ruby/browser parity, independent MIDI meaning recovery, transposition and corruption

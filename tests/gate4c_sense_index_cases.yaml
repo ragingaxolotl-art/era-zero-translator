@@ -1,8 +1,8 @@
 ---
 metadata:
   version: 1.0.0
-  sense_count: 437
-  lemma_count: 420
+  sense_count: 448
+  lemma_count: 431
 exact_atom_labels:
 - input: continuous self
   expected_route: atom
@@ -977,15 +977,24 @@ exact_atom_labels:
   expected_route: atom
   expected_target: ORI:222
 exact_compound_labels:
+- input: practical physical custody
+  expected_route: compound
+  expected_target: CMP:0aca609416668978e1527dac
 - input: physical tool
   expected_route: compound
   expected_target: CMP:111b772027accab2054f0415
+- input: ongoing internal structural repair
+  expected_route: compound
+  expected_target: CMP:1b987e04bf47840f9e82ecd3
 - input: living communication network
   expected_route: compound
   expected_target: CMP:218a5578a2274b92ba3d72db
 - input: physical repair
   expected_route: compound
   expected_target: CMP:22f8ddc4d9b2d1a818d38e9f
+- input: ongoing physical repair
+  expected_route: compound
+  expected_target: CMP:2816a7eeb356c2148b26beca
 - input: shared-world law
   expected_route: compound
   expected_target: CMP:2d26353b47b531bd3f5ae090
@@ -1004,6 +1013,9 @@ exact_compound_labels:
 - input: material biosystem
   expected_route: compound
   expected_target: CMP:4144fad413b8ce5012088c61
+- input: ongoing acoustic sensory registration
+  expected_route: compound
+  expected_target: CMP:42e9bd596b35612ed6cbe3ce
 - input: shared knowledge base
   expected_route: compound
   expected_target: CMP:44173561806bc8f334a0b7c9
@@ -1025,6 +1037,15 @@ exact_compound_labels:
 - input: directed data link
   expected_route: compound
   expected_target: CMP:742b44d9ead66b451346708a
+- input: completed physical carrying to a destination
+  expected_route: compound
+  expected_target: CMP:74d98d19808f74d0b8196951
+- input: ongoing destination-directed physical carrying
+  expected_route: compound
+  expected_target: CMP:763faa4465065477220f6f06
+- input: ongoing physical carrying
+  expected_route: compound
+  expected_target: CMP:7a6749aaf61cd6181e544bd6
 - input: machine
   expected_route: compound
   expected_target: CMP:8e5ae722d9e5e31f85ac3c5b
@@ -1037,15 +1058,24 @@ exact_compound_labels:
 - input: shared message collection
   expected_route: compound
   expected_target: CMP:99a87c8869d58498f524f1cc
+- input: ongoing internal data repair
+  expected_route: compound
+  expected_target: CMP:9ddb5e2cfc285515c799462e
 - input: dormant program
   expected_route: compound
   expected_target: CMP:9e8b36f50570a0c3c362a968
 - input: composite artifact
   expected_route: compound
   expected_target: CMP:a7fc0ca38a6f95a40cdb87b1
+- input: ongoing sensory registration
+  expected_route: compound
+  expected_target: CMP:ade73037114406a2cd91ce13
 - input: data repair
   expected_route: compound
   expected_target: CMP:b518a324d776e46e9d0ff041
+- input: ongoing optical sensory registration
+  expected_route: compound
+  expected_target: CMP:bcfd189eb305cf364ada975a
 - input: material hazard
   expected_route: compound
   expected_target: CMP:cb0812face56f90b7ba139c5
@@ -1061,6 +1091,9 @@ exact_compound_labels:
 - input: structural repair
   expected_route: compound
   expected_target: CMP:e799b436d9c5e7d87a5516fa
+- input: active physical load support
+  expected_route: compound
+  expected_target: CMP:eef9fff8ac6618ce60927f18
 - input: physical injury
   expected_route: compound
   expected_target: CMP:f1abd5eccdf06d92d5690a32

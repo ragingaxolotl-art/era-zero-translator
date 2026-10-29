@@ -5,8 +5,8 @@ Status: **PASS — GATE 4B INITIAL DICTIONARY CANONICAL; GATE 4C MAY BEGIN**
 - Checks passed: **16**
 - Checks failed: **0**
 - Dictionary version: **1.0.0**
-- Approved compounds: **29**
-- Candidate reviews: **29**
+- Approved compounds: **40**
+- Candidate reviews: **40**
 - Routing tests: **20**
 - Rejected/unsupported tests: **5**
 - Atomic roots changed: **0**
@@ -54,7 +54,7 @@ each approved entry has three scored semantic directions and one winner
 
 ## PASS — atom collision discipline
 
-every accepted graph contains a real cross-atom distinction
+graphs expand to at least two roots; single-reference specializations require explicit added meaning
 
 ## PASS — gap honesty
 
@@ -70,7 +70,7 @@ all approved entries and critical rejection classes have tests
 
 ## PASS — atomic immutability
 
-atomic fingerprint and all generated forms remain unchanged
+atomic records match the baseline or exact editorial reconciliation; generated forms remain unchanged
 
 ## PASS — authority integration
 

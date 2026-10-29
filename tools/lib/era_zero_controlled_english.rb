@@ -7,6 +7,7 @@ require "digest"
 require "set"
 require_relative "era_zero_validation"
 require_relative "era_zero_renderer"
+require_relative "era_zero_compound_role_binding"
 
 module EraZeroControlledEnglish
   ROOT = EraZeroValidation::ROOT
@@ -16,7 +17,7 @@ module EraZeroControlledEnglish
   ASPECTS = %w[bounded ongoing habitual iterative perfect prospective].freeze
   TIME_RELATIONS = %w[before at after during starts ends overlaps].freeze
   ROLES = %w[actor source cause experiencer bearer predicate target result destination instrument material content recipient location environment condition persistent_condition time manner quantity comparison_standard beneficiary].freeze
-  UNITS = %w[1 second minute hour day meter kilometer gram kilogram degree radian bit byte].freeze
+  UNITS = %w[1 second minute hour day meter kilometer gram kilogram degree radian bit byte kelvin].freeze
 
   class CompileError < StandardError
     attr_reader :code, :details
@@ -116,6 +117,11 @@ module EraZeroControlledEnglish
     end
 
     def finalize(nodes, edges, speech_act, root = "n001")
+      begin
+        EraZeroCompoundRoleBinding.bind_unique_roles!(nodes, edges, @compounds)
+      rescue ArgumentError => error
+        raise CompileError.new("ambiguous_compound_binding", error.message)
+      end
       nodes = nodes.sort_by { |node| node.fetch("node_id") }
       edges = edges.sort_by { |edge| edge.fetch("edge_id") }
       payload = { "ir_version" => "1.0", "root_clause" => root, "speech_act" => speech_act, "nodes" => nodes, "edges" => edges, "discourse_constraints" => {} }
@@ -125,7 +131,7 @@ module EraZeroControlledEnglish
 
     def required_roles(lexical)
       return [] unless lexical["target_type"] == "compound"
-      EraZeroRenderer.required_compound_roles(@compounds.fetch(lexical.fetch("target_id")))
+      EraZeroRenderer.required_compound_roles(@compounds.fetch(lexical.fetch("target_id")), compounds: @compounds)
     end
 
     def compile_simple(text, speech_act)
@@ -152,6 +158,7 @@ module EraZeroControlledEnglish
       next_node = 3
       next_edge = 1
       roles = Set.new
+      role_arguments = {}
       time_spec = nil
       measurement = nil
       quantifier = nil
@@ -162,9 +169,20 @@ module EraZeroControlledEnglish
           role = match[1]
           raise CompileError.new("invalid_role", "Unknown controlled role.", { "role" => role, "allowed" => ROLES }) unless ROLES.include?(role)
           raise CompileError.new("duplicate_role", "A singular controlled role may occur only once.", { "role" => role }) if roles.include?(role)
-          argument, tail = parse_lexical_prefix(rest[match.end(0)..])
-          id = node_id(next_node); next_node += 1
-          nodes << lexical_node(id, argument)
+          argument_text = rest[match.end(0)..]
+          if (reference = /\AREF\s+(\S+)(?=\s|\z)/.match(argument_text))
+            referenced_role = reference[1]
+            id = role_arguments[referenced_role]
+            unless id
+              raise CompileError.new("unknown_role_reference", "REF must name an earlier role in this clause.", { "role" => referenced_role })
+            end
+            tail = argument_text[reference.end(0)..]
+          else
+            argument, tail = parse_lexical_prefix(argument_text)
+            id = node_id(next_node); next_node += 1
+            nodes << lexical_node(id, argument)
+          end
+          role_arguments[role] = id
           edges << { "edge_id" => edge_id(next_edge), "type" => "fills_role", "from" => id, "to" => "n002", "role" => role }; next_edge += 1
           roles << role
           rest = tail

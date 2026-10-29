@@ -4,10 +4,10 @@ Status: **PASS — GATE 4C CORE SENSE INDEX CANONICAL; GATE 4D MAY BEGIN**
 
 - Checks passed: **17**
 - Checks failed: **0**
-- Sense records: **437**
-- Normalized lemmas: **420**
+- Sense records: **448**
+- Normalized lemmas: **431**
 - Atom-label senses: **324**
-- Compound-label senses: **29**
+- Compound-label senses: **40**
 - Explicit gap senses: **11**
 - Semantic-IR routes: **24**
 - Translator authorized: **no**
@@ -70,7 +70,7 @@ every record has selection cues and excluded readings
 
 ## PASS — atomic immutability
 
-atomic fingerprint and generated forms are unchanged
+atomic records match the baseline or exact editorial reconciliation; generated forms remain unchanged
 
 ## PASS — compound immutability
 
