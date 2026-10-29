@@ -47,7 +47,7 @@ The source audit is a historical snapshot, not a description of the latest draft
 | 1. One baseline and accurate status | Pinned baseline, local source manifest, editorial migration and source reconciliation records | Recover the full historical provenance ledger and reconcile external snapshots, with authority/conflicts recorded; do not claim every storage was audited |
 | 2. Meaning survives rendering | Scoped grammar, participant frames, state contrasts, strict MIDI structure observer, bounded property inverses and a destination-carrying semantic projection | General attachment and discourse recovery, parallel performance, and independent meaning recovery for the claimed supported scope |
 | 3. Recursive compounds and reference binding | Versioned expansion, scoped slots, browser plans, nested carrying/support and participant constraints | Broader English compound discovery/reference forms and end-to-end semantic round trips; token recovery alone is insufficient |
-| 4. Complete small vertical slice | The exact mandatory phrase composes after explicit spatial-destination, viewpoint and mass choices; nested same-event carrying, selected tense/negation/question variants | Receipt/delivery interpretation, broader participant frames, per-clause choices, remaining original variants and independent meaning validation |
+| 4. Complete small vertical slice | The exact mandatory phrase composes after explicit spatial-destination, viewpoint and mass choices; nested same-event carrying, selected tense/negation/question variants | Receipt/delivery interpretation, broader participant frames, nested grammar, remaining original variants and independent meaning validation |
 | 5. Coherent vocabulary batches | Reviewed bounded compounds and contrasts; preservation of existing roots and poetic love | Missing ordinary senses and all required frames, novel combinations, dictionary discovery and pronunciation evidence for each approved batch |
 | 6. Sentence grammar and dialogue | Selected questions, commands, conditions, time, quantities and explicit interpretation choices | Relative clauses, broader pronouns/discourse, quantifier/modal scope and held-out construction tests with local/browser agreement |
 | 7. Actual-use validation and release | Draft regression and diagnostic reports | All mandatory acceptance cases, an agreed held-out scope/target, listening/accessibility/browser checks and deployed-build verification; no release is authorized by this ledger |
@@ -72,12 +72,20 @@ and do not create new LIF/STR-like families merely to fill the address grid.
 
 ### Next dependency milestone
 
+[Per-clause interpretation choices](../reviews/clause_interpretations.md) now
+compose existing sequences, conjunctions and conditions with different viewpoints,
+spatial readings, adjective standards and future readings. The browser keeps the
+choices visibly attached to each clause. “If the box is heavy, carry it to Ada”
+uses the existing bounded local-reference rule. Fifteen group/runtime cases match
+Ruby formal and MIDI, with missing-choice and stale-form checks. General nested
+grammar, discourse and independent multi-clause meaning recovery remain open.
+
 [Spatial destination commands](../reviews/destination_carrying_commands.md) now
 reuse the completed carrying event type under a command contour. “Carry the heavy
 box to Ada” requires spatial and mass choices but no present-tense viewpoint
 selection. Eighteen state/negation/property/participant cases have Ruby/browser
 formal/MIDI parity and independent MIDI semantic projection. Commands do not
-assert actual arrival; per-clause choices and receipt/delivery remain open.
+assert actual arrival; broader clause grammar and receipt/delivery remain open.
 
 The [destination-carrying MIDI inverse](../reviews/carrying_musical_inverse.md)
 now recovers the bounded event type, ordered scope, carrier/load/destination,
@@ -96,8 +104,8 @@ The 45 sentence/state cases include properties, role reversal, past, negation an
 questions, with Ruby/browser formal and MIDI parity. Six controlled-syntax cases
 exercise shared roles through nested identity constraints.
 
-Receipt/delivery is still unsupported. Broader participant forms, conditional
-commands with choices, per-clause interpretation and the original acceptance variants
+Receipt/delivery is still unsupported. Broader participant forms, nested
+clause interpretation and the original acceptance variants
 remain open. Clarification alone is not an exact translation, and this milestone
 does not establish general independent semantic recovery or close gate 4.
 

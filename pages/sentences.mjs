@@ -328,7 +328,7 @@ export function parseSentenceConditional(input) {
   // Local "it" requires a single definite nominal bearer. Multiple participants,
   // quantified classes and discourse-dependent pronouns need clarification.
   const finalIt=/\bit(?=\s*(?:\[[012]\])?[.!]?$)/i;
-  const carriedIt=/^((?:do not )?carry )it(?= toward )/i;
+  const carriedIt=/^((?:do not )?carry )it(?= (?:toward|to) )/i;
   if(finalIt.test(consequent)||carriedIt.test(consequent)){
     const reference=parseNominal(condition.actorText||'');
     if(condition.role!=='bearer'||condition.target||reference?.mode!=='definite_nominal')return null;
@@ -338,8 +338,8 @@ export function parseSentenceConditional(input) {
   if(!result||result.speechAct==='question'||(!explicitThen&&result.speechAct!=='command'))return null;
   return [antecedent,consequent];
 }
-export async function composeSentenceConditional(input,loadTemplate) {
-  return composeClauseGroup(input,parseSentenceConditional(input),'conditional',loadTemplate);
+export async function composeSentenceConditional(input,loadTemplate,clauseOptions) {
+  return composeClauseGroup(input,parseSentenceConditional(input),'conditional',loadTemplate,clauseOptions);
 }
 
 export function parseSentenceSequence(input) { return parseClauseGroup(input,/^(?:,\s*|\s+)then\s+/); }
@@ -364,20 +364,33 @@ function parseClauseGroup(input,delimiter) {
   return clauses;
 }
 
-export async function composeSentenceSequence(input,loadTemplate) {
+export async function composeSentenceSequence(input,loadTemplate,clauseOptions) {
   const clauses=parseSentenceSequence(input);
-  return composeClauseGroup(input,clauses,'sequence',loadTemplate);
+  return composeClauseGroup(input,clauses,'sequence',loadTemplate,clauseOptions);
 }
 
-export async function composeSentenceConjunction(input,loadTemplate) {
-  return composeClauseGroup(input,parseSentenceConjunction(input),'all_of',loadTemplate);
+export async function composeSentenceConjunction(input,loadTemplate,clauseOptions) {
+  return composeClauseGroup(input,parseSentenceConjunction(input),'all_of',loadTemplate,clauseOptions);
 }
 
-async function composeClauseGroup(input,clauses,operator,loadTemplate) {
+export function clauseInterpretationPlan(input) {
+  for(const [operator,parse] of [['conditional',parseSentenceConditional],['all_of',parseSentenceConjunction],['sequence',parseSentenceSequence]]){
+    const clauses=parse(input);
+    if(clauses)return {operator,clauses:clauses.map(text=>({text,parsed:parseNamedSentence(text)}))};
+  }
+  return null;
+}
+
+async function composeClauseGroup(input,clauses,operator,loadTemplate,clauseOptions) {
   if(!clauses)throw new Error('Every clause must have a complete, unambiguous interpretation.');
   const conditional=operator==='conditional';
   const groupId=conditional?'conditional':operator==='sequence'?'sequence':'conjunction';
-  const parts=await Promise.all(clauses.map(async clause=>composeNamedSentence(clause,await loadTemplate(parseNamedSentence(clause).predicate))));
+  if(clauseOptions!==undefined&&(!Array.isArray(clauseOptions)||clauseOptions.length!==clauses.length||clauseOptions.some(options=>!options||typeof options!=='object'||Array.isArray(options)||Object.keys(options).some(key=>!['interpretation','standard','viewpoint','destination'].includes(key)))))throw new Error('Provide exactly one interpretation-options object per clause.');
+  const choices=clauseOptions===undefined?clauses.map(()=>({})):structuredClone(clauseOptions);
+  const parts=await Promise.all(clauses.map(async (clause,index)=>{
+    try{return await composeNamedSentence(clause,await loadTemplate(parseNamedSentence(clause).predicate),choices[index]);}
+    catch(error){const failure=new Error(`Clause ${index+1}: ${error?.message||String(error)}`);if(error?.code!==undefined)failure.code=error.code;failure.clause_index=index;throw failure;}
+  }));
   const ir={ir_version:'1.0',root_clause:'c',speech_act:conditional?parts[1].semantic_ir.speech_act:'assertion',nodes:[{node_id:'c',kind:'clause',clause_type:conditional?'conditional':'predication'},...(conditional?[]:[{node_id:groupId,kind:'coordination',operator}])],
     edges:[{edge_id:'e0',type:'centers',from:conditional?'s001_c':groupId,to:'c'}],discourse_constraints:{}};
   const events=[],gloss=[];
@@ -402,7 +415,7 @@ async function composeClauseGroup(input,clauses,operator,loadTemplate) {
   const relativePlan={primary_contour:performance.primary_contour,contour_relative_semitones:performance.contour_relative_semitones,secondary_contours:performance.secondary_contours,lexical_events:relative,structural_events:structural,statement_boundary:performance.statement_boundary,statement_boundary_beats:performance.statement_boundary_beats};
   const formalDigest=await canonicalDigest({semantic_digest:digest,relative_plan:relativePlan});
   const formal={format:'EZF-1',renderer_version:'1.0.0',formal_id:`EZF:${formalDigest.slice(0,24)}`,formal_digest:formalDigest,semantic_digest:digest,semantic_ir:ir,performance,literal_gloss:gloss.join(' | ')};
-  return {source_input:input,target_id:operator,semantic_note:[...new Set(parts.map(part=>part.semantic_note).filter(Boolean))].join(' ')||null,sense_id:`construction:explicit_${groupId}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,construction:`explicit_${groupId}`,interpretation:(conditional?'If ':'')+parts.map(part=>part.interpretation.replace(/\.$/,'')).join(conditional||operator==='sequence'?', then ':' and ')+'.'};
+  return {source_input:input,...(clauseOptions!==undefined?{selected_clauses:clauses.map((text,index)=>({input:text,options:choices[index]}))}:{}),target_id:operator,semantic_note:(clauseOptions===undefined?[...new Set(parts.map(part=>part.semantic_note).filter(Boolean))]:parts.map((part,index)=>part.semantic_note?`Clause ${index+1}: ${part.semantic_note}`:null).filter(Boolean)).join(' ')||null,sense_id:`construction:explicit_${groupId}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,construction:`explicit_${groupId}`,interpretation:(conditional?'If ':'')+parts.map(part=>part.interpretation.replace(/\.$/,'')).join(conditional||operator==='sequence'?', then ':' and ')+'.'};
 }
 
 export async function composeNamedSentence(input,template,{interpretation,standard,viewpoint,destination}={}) {
