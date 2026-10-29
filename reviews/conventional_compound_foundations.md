@@ -39,10 +39,10 @@ The next vocabulary work follows dependencies:
    currently perceived targets, hallucinated appearance versus actual access,
    and all three runtime endings.
 
-The registry now has **four approved conventional senses**: ongoing sensory
-registration, its optical/acoustic specializations, and physical load support, reviewed in
-`sensory_registration_foundation.md`, `registration_channels.md`, and `physical_support_foundation.md`. Separate artificial
+The registry now has **five approved conventional senses**: ongoing sensory
+registration, its optical/acoustic specializations, physical load support, and physical carrying, reviewed in
+`sensory_registration_foundation.md`, `registration_channels.md`, `physical_support_foundation.md`, and `physical_carrying.md`. Separate artificial
 records test the general convention machinery; full-sentence tests exercise the
-actual approved registration entry. The inventory is 324 unchanged roots and 36
+actual approved registration entry. The inventory is 324 unchanged roots and 37
 approved compounds. Experience, perceptual access and higher-level perception vocabulary
 remain unfinished.

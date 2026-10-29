@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {execFileSync} from 'node:child_process';
 import {encodeName,notesForName} from '../pages/names.mjs';
 import {decodeStrictMusicMidi} from '../pages/strict_music_decoder.mjs';
 import {notesFromMidi} from '../pages/performance_codec.mjs';
@@ -30,6 +31,33 @@ function check(formal){
 for(const relative of Object.values(authority.resolution_files)){
  const document=JSON.parse(fs.readFileSync(new URL('pages/'+relative,root)));
  for(const resolution of Object.values(document.variants))check(resolution.formal);
+}
+// All published unit codes, including the last code, must independently decode.
+// These are structural measurement probes, not approvals of every predicate/unit pairing.
+const unitSamples=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_renderer','-e',`
+base=YAML.load_file('tests/semantic_ir_cases.yaml')['valid_cases'].find{|c|c['case_id']=='measurement'}['ir']
+units=EraZeroValidation.load_yaml('spec/semantic_ir_1.0.yaml').fetch('quantity_and_measurement').fetch('units').values.flatten
+puts JSON.generate(units.product([0,1,2]).map do |unit,state|
+ ir=Marshal.load(Marshal.dump(base));ir['nodes'].find{|n|n['kind']=='measurement'}.merge!('unit'=>unit,'magnitude'=>'0.5')
+ ir['nodes'].select{|n|n['kind']=='lexical_occurrence'}.each{|n|n['runtime_state']['code']=state}
+ digest=EraZeroRenderer.semantic_digest(ir);ir['utterance_id']='UTT:'+digest[0,24];ir['serialization']['content_digest']=digest
+ {unit:unit,state:state,formal:EraZeroRenderer.render(ir)}
+end)
+`],{cwd:root,encoding:'utf8',maxBuffer:8_000_000}));
+const unitOrder=['1','second','minute','hour','day','meter','kilometer','gram','kilogram','degree','radian','bit','byte'];
+assert.deepEqual([...new Set(unitSamples.map(s=>s.unit))],unitOrder);
+for(const sample of unitSamples){
+ let decoded;assert.doesNotThrow(()=>{decoded=check(sample.formal)},`${sample.unit} runtime ${sample.state}`);
+ assert(decoded.tokens.some(t=>t.marker===`measurement_unit_${unitOrder.indexOf(sample.unit)+1}`));
+ assert(decoded.tokens.filter(t=>t.kind==='root'&&t.runtime_state!==null).every(t=>t.runtime_state===sample.state));
+}
+const unitMidi=midiFromFormal(unitSamples[0].formal),unitNotes=notesFromMidi(unitMidi);
+const unitToken=decodeStrictMusicMidi(unitMidi,authority.atoms).tokens.find(t=>t.marker==='measurement_unit_1');
+for(const invalidCode of [0,14]){
+ const notes=structuredClone(unitNotes.notes);
+ const codeNote=notes.find(n=>n.start_tick===unitToken.start_tick+unitNotes.division/2);
+ assert(codeNote);codeNote.midi=60+invalidCode;
+ assert.throws(()=>decodeStrictMusicMidi(notesMidi(notes,unitNotes.division),authority.atoms));
 }
 const examples=[
  'Ada has a directed data link to Ben [2].',

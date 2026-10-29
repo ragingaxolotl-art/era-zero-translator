@@ -78,3 +78,11 @@ and musical frame. Temperature, contextual adjective interpretation, other
 property axes and general measurement noun phrases remain unfinished. The additive comparison
 profile defines a measurement node’s magnitude as a reference bound when a
 comparison is present; without it, existing exact-measurement semantics remain.
+
+## Next temperature foundation
+
+Use an explicit thermodynamic-temperature measurement before contextual hot/cold adjectives. The [BIPM kelvin definition](https://www.bipm.org/en/si-base-units/kelvin) establishes the dimension, and the [BIPM temperature realization appendix](https://www.bipm.org/documents/20126/237262613/SI-App2-kelvin-2024-TG-Dig-revision/1444eda0-9ec1-7917-9eb7-41bc0d73e23a) states the Celsius offset from 273.15 K. This supplies a documented dimension convention; MAT:011 alone still does not supply temperature.
+
+Implementation order: append a new unit identity without renumbering published units; bind temperature to a material bearer; normalize Celsius offsets with exact decimal arithmetic; preserve magnitude sign and runtime independently; add comparisons; only then review hot/cold with an explicit contextual standard. Temperature points and temperature differences must not share the same affine conversion rule. Spatially nonuniform objects and metaphorical temperature require separate interpretation. No thermal adjective or additional root is approved by this plan.
+
+Before adding a unit, test the entire published unit range. The strict inverse previously enumerated codes from zero while the encoder used one through thirteen, so byte was missing and unused zero was admitted. The corrected inverse retains the existing unit sounds and now tests all thirteen units in each runtime state, plus rejection of zero and the next unassigned code. Those tests establish musical token recovery, not the semantic validity of arbitrary predicate/unit pairings.

@@ -30,7 +30,7 @@ ROLE_ORDER.forEach((role,i)=>frame(`role_reference_${role}`,[0,-20,...i.toString
 frame('confidence_open',[0,9,0,9]);frame('confidence_close',[0,-9,0,-9]);
 frame('decimal_point',[0,10,-1,0]);frame('coord_member',[0,11,0,11]);frame('conditional_then',[0,16,0,16]);frame('measurement_negative',[0,-13,0,-13]);
 for(let digit=0;digit<10;digit++)frame(`digit_${digit}`,[0,10,Math.floor(digit/4),digit%4,0]);
-UNITS.forEach((_,i)=>frame(`measurement_unit_${i}`,[0,13,i,13,0]));
+UNITS.forEach((_,i)=>frame(`measurement_unit_${i+1}`,[0,13,i+1,13,0]));
 
 export function decodeStrictMusicMidi(bytes,atoms,{maxNotes=100000,maxTokens=100000}={}){
  if(!Number.isInteger(maxNotes)||maxNotes<1||!Number.isInteger(maxTokens)||maxTokens<1)fail('invalid limits');

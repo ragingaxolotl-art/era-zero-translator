@@ -761,3 +761,9 @@ Twenty-one command/state/negation/destination/conditional examples match referen
 The browser no longer automatically translates “Nora will care for Eli tomorrow” as an ordinary future assertion. It asks the user to select that reading before generating sound, and records the selection outside the semantic IR. Promise, intention and willingness are not supplied by the selected future-statement meaning. Unsupported readings remain unresolved. The local sentence API enforces the same requirement; multi-clause inputs cannot bypass it.
 
 Nine affirmative/negative/bound-compound examples preserve tomorrow independently of runtime 0/1/2 after selection, with Ruby/browser formal and MIDI parity and independent time/runtime observation. The UI handler is tested for no composition before selection and stale-input rejection. Error and clarification views clear previous translation output. The original diagnostic now records 19 checked compositions, 20 uncomposed phrases and one requiring interpretation; the clarification is not counted as a completed translation.
+
+### Complete published measurement-unit range in the inverse
+
+A fresh full run at e78d0f1 passed 67 checks. A subsequent boundary audit found that the independent strict MIDI decoder's unit table started at zero although the encoder uses unit codes 1–13. Correcting the decoder restores byte (13) and rejects unused zero without changing any existing performance. The expanded inverse test passes 5,423 examples, including 39 unit/runtime probes and rejection of invalid codes; this actual targeted rerun is recorded alongside the full baseline results.
+
+The dimensional review now specifies temperature measurement, exact Celsius normalization, comparison and contextual adjective work in that dependency order. This is pending implementation, not evidence that hot/cold or broad adjective translation is finished.
