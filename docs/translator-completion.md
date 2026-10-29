@@ -750,3 +750,9 @@ This implements the carrying dependency left pending in the preceding dated work
 “Ada is carrying the box toward the gate” now retains the carrier and shared supported/moving load inside the carrying compound, with a separate destination role on the whole carrying occurrence. The destination is not substituted for the load or interpreted as a recipient. This construction expresses goal-directed ongoing conveyance without asserting arrival or completed delivery. It adds no dictionary meaning or root.
 
 Seventeen runtime, role-reversal, deictic, negated, modal, past-question and conditional cases match Ruby/browser formal output and MIDI. Independent MIDI observation locates the destination phonemes or deictic reference inside its high-register destination frame. Unsupported additions, quantified participants and unreviewed “to” wording remain incomplete. Carrying/supporting phrases now trigger the incomplete-sentence guard, preventing a keyword result from being presented as the whole sentence.
+
+### Carrying and physical-support commands
+
+“Carry the box,” “Carry the box toward the gate” and “Physically support the box” now reuse their reviewed predicates with an explicit addressee carrier/supporter and command contour. Negative commands retain grammatical negation separately from runtime 0/1/2. Conditional commands can resolve “carry it toward the gate” only from the same single definite nominal bearer already required by the local-pronoun rule; multi-participant and indefinite antecedents remain unresolved.
+
+Twenty-one command/state/negation/destination/conditional examples match reference formal and MIDI output. Independent MIDI observation recovers command contour and the addressee inside the source-role frame. These commands add no roots or compound definitions; bare “support,” unreviewed arrival wording, quantities and extra manner remain incomplete.

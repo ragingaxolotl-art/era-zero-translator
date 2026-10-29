@@ -62,7 +62,14 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
   }
   const participant='(I|me|you|'+NOMINAL_PATTERN+'|(?!(?:She|He|It|They|We|Her|Him|Them|Us)\\b)[A-Z][a-z]+|"[A-Za-z]+(?:[ -][A-Za-z]+)*")';
   if(speechActs){
-    const commands=[['care for','cares for'],['restore','is restoring'],['repair','is repairing'],['awaken','is awakening'],['damage','is damaging'],['physically repair','is physically repairing'],['move toward','is moving toward'],['move away from','is moving away from'],['move relative to','is moving relative to'],['pay attention to','is paying attention to'],['revise a mental representation of','is revising a mental representation of']];
+    const carryingCommand=String(input).trim().match(new RegExp(`^(?:[Dd]o not )?[Cc]arry ${participant}(?: toward ${participant})?[.!]?$`));
+    if(carryingCommand){
+      const negative=/^[Dd]o not /.test(String(input).trim());
+      const inner=parseNamedSentence(`you are ${negative?'not ':''}carrying ${carryingCommand[1]}${carryingCommand[2]?' toward '+carryingCommand[2]:''}.`,depth+1);
+      if(!inner)return null;
+      return {...inner,speechAct:'command',construction:`command_${inner.construction}`,explicitInterpretation:String(input).trim()};
+    }
+    const commands=[['care for','cares for'],['restore','is restoring'],['repair','is repairing'],['awaken','is awakening'],['damage','is damaging'],['physically repair','is physically repairing'],['physically support','is physically supporting'],['move toward','is moving toward'],['move away from','is moving away from'],['move relative to','is moving relative to'],['pay attention to','is paying attention to'],['revise a mental representation of','is revising a mental representation of']];
     for(const [verb,wording] of commands){
       const command=String(input).trim().match(new RegExp(`^(?:[Dd]o not )?${verb} ${participant}[.!]?$`,'i'));
       if(command){
@@ -209,7 +216,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return (/^[Ii]f\b/.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|carrying|supporting)\b/i.test(String(input))) && !parseNamedSentence(input);
+  return (/^[Ii]f\b/.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|carry|carrying|support|supporting)\b/i.test(String(input))) && !parseNamedSentence(input);
 }
 
 // A complete antecedent and a comma establish conditional scope. Without
@@ -232,10 +239,12 @@ export function parseSentenceConditional(input) {
   if(!condition||condition.speechAct)return null;
   // Local "it" requires a single definite nominal bearer. Multiple participants,
   // quantified classes and discourse-dependent pronouns need clarification.
-  if(/\bit(?=\s*(?:\[[012]\])?[.!]?$)/i.test(consequent)){
+  const finalIt=/\bit(?=\s*(?:\[[012]\])?[.!]?$)/i;
+  const carriedIt=/^((?:do not )?carry )it(?= toward )/i;
+  if(finalIt.test(consequent)||carriedIt.test(consequent)){
     const reference=parseNominal(condition.actorText||'');
     if(condition.role!=='bearer'||condition.target||reference?.mode!=='definite_nominal')return null;
-    consequent=consequent.replace(/\bit(?=\s*(?:\[[012]\])?[.!]?$)/i,condition.actorText);
+    consequent=carriedIt.test(consequent)?consequent.replace(carriedIt,(_match,prefix)=>prefix+condition.actorText):consequent.replace(finalIt,()=>condition.actorText);
   }
   const result=parseNamedSentence(consequent);
   if(!result||result.speechAct==='question'||(!explicitThen&&result.speechAct!=='command'))return null;
