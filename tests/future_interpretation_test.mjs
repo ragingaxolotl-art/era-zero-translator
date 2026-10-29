@@ -40,6 +40,16 @@ const button=elements.candidateList.children[0].children[1];
 elements.sourceInput.value='Changed';await button.click();assert.equal(calls,0);
 elements.sourceInput.value=input;await button.click();assert.equal(calls,1);assert.equal(shown.selected_interpretation,'future_assertion');
 assert(app.includes('if(parseNamedSentence(input)?.requiredInterpretation){showFutureInterpretation(input);return}'));
+for(const outcome of ['success','failure']){
+ vm.runInContext('showFutureInterpretation('+JSON.stringify(input)+');',context);
+ const oldCard=elements.candidateList.children.at(-1),oldButton=oldCard.children[1];
+ let complete;context.sentenceTemplate=()=>new Promise((resolve,reject)=>{complete=outcome==='success'?resolve:reject});
+ const pending=oldButton.click();oldCard.isConnected=false;
+ const newer={newer:true};state.resolution=newer;shown=newer;
+ complete(outcome==='success'?await load('LIF:211'):new Error('Late request failed'));
+ await pending;assert(state.resolution===newer);assert(shown===newer);
+}
+
 state.resolution={old:true};state.selected={old:true};state.phraseNames=['old'];
 vm.runInContext(app.split('\n').find(line=>line.startsWith('function showError('))+";showError({code:'future_interpretation_required',message:'Choose an interpretation.'});",context);
 assert.equal(state.resolution,null);assert.equal(state.selected,null);assert.equal(state.phraseNames.length,0);

@@ -787,3 +787,7 @@ The independent property-comparison decoder accepts MIDI bytes alone and recover
 Seventeen affirmative/negative/state/question/modal/deictic/calendar cases match Ruby/browser formal and MIDI output. Equivalent Celsius/Kelvin standards produce the same performance; changing the standard changes it. Negation remains distinct from runtime 0/1/2 and from reversing hot/cold. The UI requires a threshold, retains invalid entries for correction, and rejects stale input. Bare thermal adjectives remain unresolved until selection; future or multi-clause contextual-standard combinations, felt warmth, spiciness, emotional meanings and reference-class inference remain unfinished.
 
 The original diagnostic now has 19 verified compositions, 19 uncomposed phrases and two requiring interpretation/standard selection. Requests for clarification are not counted as completed translations.
+
+### Replaced interpretation panels cannot overwrite newer results
+
+A delayed future-interpretation result could overwrite a newer analysis of the same source text because checking input text alone did not identify the replaced choice panel. Future selection now discards results and errors from detached panels. A regression reproduces both late success and late failure while preserving a newer result. This changes UI request handling only; meanings and music are unchanged.

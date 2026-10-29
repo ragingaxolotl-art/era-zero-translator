@@ -76,14 +76,16 @@ function showFutureInterpretation(input){
   const button=document.createElement('button');button.textContent='Translate as a future statement';
   button.addEventListener('click',async()=>{
     if($('sourceInput').value.trim()!==input||state.mode==='controlled'){toast('The input changed. Analyze it again.');return}
+    if(card.isConnected===false)return;
     button.disabled=true;
     try{
       const parsed=parseNamedSentence(input);
       const composed=await composeNamedSentence(input,await sentenceTemplate(parsed.predicate),{interpretation:'future_assertion'});
       if($('sourceInput').value.trim()!==input||state.mode==='controlled'){toast('The input changed. Analyze it again.');return}
+      if(card.isConnected===false)return;
       state.resolution=composed;$('results').classList.add('hidden');
       await showResolution(composed,{definition:[composed.interpretation,composed.semantic_note].filter(Boolean).join(' ')});
-    }catch(error){showError(error)}finally{button.disabled=false}
+    }catch(error){if(card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled')showError(error)}finally{button.disabled=false}
   });
   card.append(description,button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
 }
