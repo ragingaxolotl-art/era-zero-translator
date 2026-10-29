@@ -30,17 +30,17 @@ await assert.rejects(()=>composeSentenceSequence('The radio is hot, then Ada is 
 // Actual UI handler: no default threshold, no audio before explicit selection,
 // invalid values remain editable, and changed input cannot receive old results.
 const app=fs.readFileSync(new URL('pages/app.js',root),'utf8');
-const source=app.slice(app.indexOf('function showThermalStandard('),app.indexOf('function showFutureInterpretation('));
+const source=app.slice(app.indexOf('function showAdjectiveStandard('),app.indexOf('function showFutureInterpretation('));
 const element=()=>({value:'',children:[],classList:{add(){},remove(){}},append(...nodes){this.children.push(...nodes)},setAttribute(){},addEventListener(type,fn){this[type]=fn},scrollIntoView(){}});
 const elements=Object.fromEntries(['sourceInput','output','phraseCoverage','resolutionPanel','results','candidateList','decisionSummary'].map(id=>[id,element()]));elements.sourceInput.value=input;
 const state={mode:'english',wordSelections:new Map(),resolution:{old:true}};let shown=null,calls=0;
 const ctx=vm.createContext({state,$:id=>elements[id],document:{createElement:element},parseNamedSentence,sentenceTemplate:load,composeNamedSentence:async(...args)=>{calls++;return composeNamedSentence(...args)},showResolution:async r=>shown=r,toast(){}});
-vm.runInContext(source+';showThermalStandard('+JSON.stringify(input)+');',ctx);assert.equal(calls,0);assert.equal(state.resolution,null);
+vm.runInContext(source+';showAdjectiveStandard('+JSON.stringify(input)+');',ctx);assert.equal(calls,0);assert.equal(state.resolution,null);
 const card=elements.candidateList.children[0],threshold=card.children[1].children[0],button=card.children[4];assert.equal(threshold.value,'');
 await button.click();assert.equal(shown,null);assert(card.children[3].textContent.includes('threshold'));
 threshold.value='20';elements.sourceInput.value='Changed';await button.click();assert.equal(calls,1);
 elements.sourceInput.value=input;await button.click();assert.equal(shown.selected_standard.threshold,'293.15');assert.equal(shown.source_input,input);
-shown=null;vm.runInContext('showThermalStandard('+JSON.stringify(input)+');',ctx);
+shown=null;vm.runInContext('showAdjectiveStandard('+JSON.stringify(input)+');',ctx);
 const nextCard=elements.candidateList.children.at(-1),nextThreshold=nextCard.children[1].children[0],nextButton=nextCard.children[4];nextThreshold.value='20';
 let release;ctx.sentenceTemplate=()=>new Promise(resolve=>{release=resolve});
 const pending=nextButton.click();nextThreshold.value='30';release(template);await pending;assert.equal(shown,null);

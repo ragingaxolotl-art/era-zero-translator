@@ -4,8 +4,8 @@
   "case_count": 40,
   "counts": {
     "verified_for_declared_checks": 19,
-    "not_composed": 19,
-    "requires_interpretation": 2
+    "not_composed": 18,
+    "requires_interpretation": 3
   },
   "areas": {
     "participants": {
@@ -606,8 +606,9 @@
       "requirements": [
         "Mass or weight must not collapse into size"
       ],
-      "status": "not_composed",
-      "failures": []
+      "status": "requires_interpretation",
+      "failures": [],
+      "clarification": "mass_standard_required"
     },
     {
       "id": "bright",

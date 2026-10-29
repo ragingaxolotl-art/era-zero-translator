@@ -1,3 +1,4 @@
+import {massKilograms} from './mass.mjs';
 import {temperaturePointKelvin} from './temperature.mjs';
 import {renderLexicalOccurrences,lexicalGloss} from './bound_compounds.mjs';
 import {NOMINAL_PATTERN,parseNominal} from './nominals.mjs';
@@ -125,7 +126,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     if(day==='tomorrow')clause=rewrite([['will not be','is not'],['will be','is'],['will not care for','does not care for'],['will care for','cares for']]);
     if(clause===null)return null;
     const inner=parseNamedSentence(clause,depth+1);
-    if(!inner||inner.calendarDay!==undefined||inner.scopes?.length||inner.speechAct||(day==='tomorrow'&&inner.requiredInterpretation==='thermal_standard')||(day==='yesterday'&&inner.speechTime!=='before')||(day==='tomorrow'&&inner.speechTime!==undefined))return null;
+    if(!inner||inner.calendarDay!==undefined||inner.scopes?.length||inner.speechAct||(day==='tomorrow'&&['thermal_standard','mass_standard'].includes(inner.requiredInterpretation))||(day==='yesterday'&&inner.speechTime!=='before')||(day==='tomorrow'&&inner.speechTime!==undefined))return null;
     return {...inner,...(day==='yesterday'?{speechTime:undefined}:{}),...(day==='tomorrow'?{requiredInterpretation:'future_assertion',semanticNote:[inner.semanticNote,'Interprets will as a future assertion; promise, intention, and willingness are not inferred.'].filter(Boolean).join(' ')}:{}),calendarDay:{yesterday:'-1',today:'0',tomorrow:'1'}[day],construction:`calendar_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
   const pastForms=[
@@ -202,19 +203,17 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     const nominal=parseNominal(mass[1]);
     if(nominal?.quantifier||mass[4].length>1000)return null;
     if(['I','you','You'].includes(mass[1])?(mass[2]!=='have'):(mass[2]!=='has'))return null;
-    let [whole,fraction='']=mass[4].split('.');
-    if(mass[5].startsWith('gram')){whole=whole.padStart(4,'0');fraction=whole.slice(-3)+fraction;whole=whole.slice(0,-3);}
-    whole=whole.replace(/^0+/,'')||'0';fraction=fraction.replace(/0+$/,'');
-    const magnitude=whole+(fraction?'.'+fraction:'');
+    const magnitude=massKilograms(mass[4],mass[5].startsWith('gram')?'gram':'kilogram');
     return {actor:mass[1].replaceAll('"',''),actorText:mass[1],role:'bearer',predicate:mass[1]==='I'?'MAT:000':'MAT:010',key:'mass_measurement',construction:'mass_measurement',
       measurement:{magnitude,unit:'kilogram',...((mass[3]&&mass[3]!=='exactly')?{comparison:({'more than':'greater_than','greater than':'greater_than','less than':'less_than','at least':'at_least','at most':'at_most','not exactly':'not_equal'})[mass[3]]}:{})},semanticNote:'This states physical mass, normalized exactly to kilograms. It does not state weight as force, size, heaviness relative to a standard, or the result of a weighing event.'};
   }
   const grammaticalText=String(input).trim().replace(new RegExp(`^(${NOMINAL_PATTERN}) are `),'$1 is ').replace(/^I am /,'I is ').replace(/^(You|you) are /,'$1 is ').replace(/^(I|You|you) care for /,'$1 cares for ').replace(/^(I|You|you) do not (care for|love|have a directed data link to) /,'$1 does not $2 ').replace(/^(I|You|you) have a directed data link to /,'$1 has a directed data link to ').replace(/^(I|You|you) love /,'$1 loves ');
-  const thermal=grammaticalText.match(new RegExp(`^${participant} is (not )?(hot|cold)[.]?$`));
+  const thermal=grammaticalText.match(new RegExp(`^${participant} is (not )?(hot|cold|heavy|light)[.]?$`));
   if(thermal){
     const nominal=parseNominal(thermal[1]);
     if(nominal?.quantifier||nominal?.mode==='nominal_class')return null;
-    return {actor:thermal[1].replaceAll('"',''),actorText:thermal[1],role:'bearer',predicate:thermal[1]==='I'?'MAT:000':'MAT:010',key:'contextual_thermal_adjective',construction:'contextual_thermal_adjective',adjective:thermal[3],negated:!!thermal[2],requiredInterpretation:'thermal_standard'};
+    const massStandard=['heavy','light'].includes(thermal[3]);
+    return {actor:thermal[1].replaceAll('"',''),actorText:thermal[1],role:'bearer',predicate:thermal[1]==='I'?'MAT:000':'MAT:010',key:massStandard?'contextual_mass_adjective':'contextual_thermal_adjective',construction:massStandard?'contextual_mass_adjective':'contextual_thermal_adjective',adjective:thermal[3],negated:!!thermal[2],requiredInterpretation:massStandard?'mass_standard':'thermal_standard'};
   }
   for(const action of ACTIONS){
     for(const negated of [false,true]){
@@ -240,7 +239,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return (/^[Ii]f\b/.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|carry|carrying|support|supporting|temperature|hot|cold)\b/i.test(String(input))) && !parseNamedSentence(input);
+  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|carry|carrying|support|supporting|temperature)\b/i.test(String(input))) && !parseNamedSentence(input);
 }
 
 // A complete antecedent and a comma establish conditional scope. Without
@@ -346,18 +345,21 @@ export async function composeNamedSentence(input,template,{interpretation,standa
   if(!parsed)throw new Error('The complete sentence does not match this construction.');
   if(interpretation!==undefined&&interpretation!==parsed.requiredInterpretation)throw new Error('This interpretation is not available for this sentence.');
   if(parsed.requiredInterpretation&&interpretation!==parsed.requiredInterpretation){
-    const thermal=parsed.requiredInterpretation==='thermal_standard';
-    const error=new Error(thermal?'Choose the thermal sense and its contextual temperature threshold before translating.':'Choose whether this is a future statement. Promise, intention and willingness require different meanings.');
-    error.code=thermal?'thermal_standard_required':'future_interpretation_required';throw error;
+    const thermal=['thermal_standard','mass_standard'].includes(parsed.requiredInterpretation);
+    const error=new Error(thermal?'Choose the property sense and its contextual threshold before translating.':'Choose whether this is a future statement. Promise, intention and willingness require different meanings.');
+    error.code=thermal?(parsed.requiredInterpretation==='mass_standard'?'mass_standard_required':'thermal_standard_required'):'future_interpretation_required';throw error;
   }
   let selectedStandard;
-  if(parsed.requiredInterpretation==='thermal_standard'){
-    const threshold=standard?.dimension==='thermodynamic_temperature'&&Object.keys(standard).sort().join(',')==='dimension,scale,threshold'?temperaturePointKelvin(standard.threshold,standard.scale):null;
-    if(threshold===null)throw new Error('Provide a thermodynamic-temperature threshold as an exact decimal in celsius or kelvin.');
-    parsed.measurement={magnitude:threshold,unit:'kelvin',comparison:parsed.adjective==='hot'?'greater_than':'less_than'};
-    selectedStandard={dimension:'thermodynamic_temperature',threshold,unit:'kelvin',relation:parsed.measurement.comparison};
-    parsed.semanticNote=`For this translation, ${parsed.adjective} means a thermodynamic temperature ${parsed.adjective==='hot'?'above':'below'} ${threshold} kelvins, using your supplied standard. This is not a universal cutoff or a claim about felt warmth, spiciness, or emotional tone.`;
-  }else if(standard!==undefined)throw new Error('This sentence does not take a thermal adjective standard.');
+  if(['thermal_standard','mass_standard'].includes(parsed.requiredInterpretation)){
+    const massStandard=parsed.requiredInterpretation==='mass_standard';
+    const dimension=massStandard?'mass':'thermodynamic_temperature',unit=massStandard?'kilogram':'kelvin';
+    const threshold=standard?.dimension===dimension&&Object.keys(standard).sort().join(',')==='dimension,scale,threshold'?(massStandard?massKilograms(standard.threshold,standard.scale):temperaturePointKelvin(standard.threshold,standard.scale)):null;
+    if(threshold===null)throw new Error(massStandard?'Provide a nonnegative mass threshold as an exact decimal in gram or kilogram.':'Provide a thermodynamic-temperature threshold as an exact decimal in celsius or kelvin.');
+    const above=['hot','heavy'].includes(parsed.adjective);
+    parsed.measurement={magnitude:threshold,unit,comparison:above?'greater_than':'less_than'};
+    selectedStandard={dimension,threshold,unit,relation:parsed.measurement.comparison};
+    parsed.semanticNote=`For this translation, ${parsed.adjective} means ${massStandard?'mass':'a thermodynamic temperature'} ${above?'above':'below'} ${threshold} ${unit}s, using your supplied standard. This is not a universal cutoff or a claim about ${massStandard?'weight force, carrying effort, size, or brightness':'felt warmth, spiciness, or emotional tone'}.`;
+  }else if(standard!==undefined)throw new Error('This sentence does not take an adjective standard.');
   const bound=!!parsed.compoundSlots;
   if(bound&&!template.authority)throw new Error('Bound construction requires the compiled dictionary authority.');
   const source=bound?{semantic_ir:{speech_act:'assertion',nodes:[{node_id:'c',kind:'clause'},{node_id:'p',kind:'lexical_occurrence',target_type:'compound',target_id:parsed.predicate,runtime_state:{code:1}}],edges:[{type:'centers'}]},performance:{profile:'reference-midi-v1',anchor_midi:60,transposition_semantically_significant:false,primary_contour:'level',contour_relative_semitones:[0,0],secondary_contours:[],statement_boundary:'long_gap',statement_boundary_beats:2}}:template.formal;

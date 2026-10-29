@@ -15,7 +15,7 @@ for(const item of corpus.cases){
   else if(parseNamedSentence(item.input))result=await composeNamedSentence(item.input,await load(parseNamedSentence(item.input).predicate));
   else if(parseSentenceSequence(item.input))result=await composeSentenceSequence(item.input,load);
   else if(parseSentenceConjunction(item.input))result=await composeSentenceConjunction(item.input,load);
- }catch(caught){if(['future_interpretation_required','thermal_standard_required'].includes(caught.code))clarification=caught.code;else error=String(caught)}
+ }catch(caught){if(['future_interpretation_required','thermal_standard_required','mass_standard_required'].includes(caught.code))clarification=caught.code;else error=String(caught)}
  const failures=[];
  if(result&&item.expected){
   const ir=result.semantic_ir,actual={

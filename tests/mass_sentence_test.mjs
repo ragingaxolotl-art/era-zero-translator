@@ -30,5 +30,7 @@ assert.deepEqual(outputs[0].formal,outputs[3].formal);
 assert.notDeepEqual(midiFromFormal(outputs[0].formal),midiFromFormal(outputs[2].formal));
 assert.equal(outputs[4].semantic_ir.nodes.find(n=>n.node_id==='p').target_id,'MAT:000');
 assert.equal(outputs[5].semantic_ir.nodes.find(n=>n.node_id==='p').runtime_state.code,2);
-for(const input of ['The box has a mass of -5 kilograms.','The box has a mass of 5 meters.','The box weighs 5 kilograms.','The box is heavy.','Exactly three boxes have a mass of 5 kilograms.','The box has a mass of 5e3 grams.'])assert.equal(parseNamedSentence(input),null,input);
+for(const input of ['The box has a mass of -5 kilograms.','The box has a mass of 5 meters.','The box weighs 5 kilograms.','Exactly three boxes have a mass of 5 kilograms.','The box has a mass of 5e3 grams.'])assert.equal(parseNamedSentence(input),null,input);
 console.log('Mass statements: eight reference-renderer/MIDI parity cases, exact gram/kilogram normalization beyond floating-point precision, bearer/quantity binding, modal and runtime preservation, and unsupported-dimension rejection.');
+
+assert.equal(parseNamedSentence('The box is heavy.').requiredInterpretation,'mass_standard');

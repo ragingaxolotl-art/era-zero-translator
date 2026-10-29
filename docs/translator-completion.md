@@ -11,7 +11,7 @@ is the starting evidence, not a completion certificate.
 ## Current coverage evidence
 
 The [ordinary phrase audit](../reports/ordinary_phrase_coverage.md) currently has
-19 checked compositions, 19 uncomposed phrases, and two phrases requiring an explicit interpretation or contextual standard out of 40 deliberately varied cases. This is an implementation-authored diagnostic set, not a blind evaluation
+19 checked compositions, 18 uncomposed phrases, and three phrases requiring an explicit interpretation or contextual standard out of 40 deliberately varied cases. This is an implementation-authored diagnostic set, not a blind evaluation
 or a statistical measure of English coverage. Green regression suites do not
 override these missing constructions. The corpus records the intended distinctions
 even for cases that cannot yet be composed; future support must receive explicit
@@ -791,3 +791,9 @@ The original diagnostic now has 19 verified compositions, 19 uncomposed phrases 
 ### Replaced interpretation panels cannot overwrite newer results
 
 A delayed future-interpretation result could overwrite a newer analysis of the same source text because checking input text alone did not identify the replaced choice panel. Future selection now discards results and errors from detached panels. A regression reproduces both late success and late failure while preserving a newer result. This changes UI request handling only; meanings and music are unchanged.
+
+### Contextual heavy/light in the selected mass sense
+
+The adjective-standard workflow now also accepts heavy/light when the user explicitly chooses mass and supplies a nonnegative gram/kilogram threshold. Heavy means strictly above that standard and light strictly below it for the selected translation. It does not substitute mass for weight force, carrying effort, size or brightness. The same UI and selection guards serve thermal and mass standards; no threshold is prefilled.
+
+Exact mass normalization is shared with existing numeric mass sentences. Seventeen adjective cases cover relation direction, negation, runtime states, questions, modality, deictics and current/past calendar context with Ruby/browser formal and MIDI parity. Equivalent units preserve output; a different standard changes the sound. Missing standards, wrong senses/units, negative thresholds and stale selections are rejected. The original phrase diagnostic now records 19 verified compositions, 18 uncomposed and three requiring selection; clarification is not counted as a completed translation.
