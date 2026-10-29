@@ -31,6 +31,7 @@ module EraZeroCompoundRoleBinding
         argument['value_type']='entity';consumed<<edge
         { 'slot_path'=>slot['path'], 'argument_id'=>argument['node_id'] }
       end
+      EraZeroCompoundBindingConstraints.validate_bindings!(expanded.fetch('binding_constraints',[]),bindings,nodes.to_h { |n| [n['node_id'],n] })
       node['compound_bindings']=bindings
       edges.reject! { |e| consumed.include?(e) }
     end

@@ -37,7 +37,7 @@ module EraZeroCompoundConventions
   end
 
   def semantic_payload(entry)
-    fields = %w[architecture_version semantic_head nodes edges lexical_constraints conventional_meaning]
+    fields = %w[architecture_version semantic_head nodes edges lexical_constraints conventional_meaning binding_constraints]
     entry.select { |key, _| fields.include?(key) }
   end
 

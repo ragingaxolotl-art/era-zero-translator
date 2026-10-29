@@ -1,0 +1,38 @@
+profile: EZBIND-1
+status: implementation_draft
+purpose: Enforce participant identity relationships across scoped compound slots before rendering.
+dictionary_field: binding_constraints
+constraint_shape:
+  relation: same_argument or distinct_arguments
+  slot_paths: Two to 128 distinct nonempty arrays of local node IDs; paths may enter versioned compound references.
+requirements:
+  - The defining compound must have an explicit conventional_meaning. Its learned audible convention must include the identity commitment; constraint metadata alone is not a new musical distinction.
+  - The optional field is part of the compound semantic identity payload. Adding or changing it changes the compound content digest and ID.
+  - A semantic change to a released conventional meaning requires a new convention code and versioned migration; do not recycle an old sound code.
+  - All paths resolve to slots inside the defining scope. Same-argument slots have equal value types.
+  - Expansion prefixes each inherited constraint with its exact occurrence scope.
+  - Direct or transitive conflicts between same_argument and distinct_arguments are rejected before occurrence binding.
+occurrence_checks:
+  same_argument: Every named slot binds the exact same argument node ID. Separate nodes with equal lexical contents are not silently merged.
+  distinct_arguments: The slots use different node IDs and do not share an explicitly known referent_id. For nodes without referent_id, distinctness is limited to occurrence identity.
+  nonidentity_limit: Different spellings, phonemes, hashes or occurrence IDs do not independently prove real-world nonidentity. Reference resolution remains responsible for the intended entities.
+limits:
+  expanded_constraints: 10000
+  paths_per_constraint: 128
+  scope_expansion: Existing compound node and depth limits apply.
+implementations:
+  expansion_and_reference_validation: tools/lib/era_zero_compound_binding_constraints.rb
+  binding: tools/lib/era_zero_compound_expansion.rb
+  controlled_role_adapter: tools/lib/era_zero_compound_role_binding.rb
+  browser: pages/bound_compounds.mjs
+compatibility:
+  - Existing entries without binding_constraints retain their semantic payload and expansion exactly.
+  - The browser receives scope-resolved rules inside its digest-checked compiled plan.
+  - Runtime endings remain occurrence state; they do not encode participant equality.
+  - Existing conventions and dictionary meanings are unchanged by this mechanism.
+not_yet_approved:
+  - The synthetic support/movement test graph is not a carrying definition.
+  - Carrying still requires a reviewed transport invariant and explicit temporal and participant relationships.
+  - The convenience controlled role adapter cannot guess shared identities from repeated lexical labels; explicit reference syntax remains future work.
+tests:
+  - tests/compound_binding_constraints_test.mjs

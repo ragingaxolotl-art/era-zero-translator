@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 require_relative "era_zero_compound_dependencies"
+require_relative "era_zero_compound_binding_constraints"
 require "json"
 require "digest"
 
@@ -21,8 +22,10 @@ module EraZeroCompoundExpansion
     def expand(id, version)
       output = { "nodes" => [], "edges" => [], "scopes" => [] }
       output["semantic_head"] = visit(id, version, [], [], output)
+      constraints=EraZeroCompoundBindingConstraints.expand(output["scopes"],output["nodes"])
+      output["binding_constraints"]=constraints unless constraints.empty?
       output
-    rescue EraZeroCompoundDependencies::DependencyError, KeyError => error
+    rescue EraZeroCompoundDependencies::DependencyError, EraZeroCompoundBindingConstraints::ConstraintError, KeyError => error
       raise ExpansionError, error.message
     end
 
@@ -121,7 +124,10 @@ module EraZeroCompoundExpansion
       end
       missing = slots.keys - resolved.keys
       raise ExpansionError, "unbound compound slots: #{missing.inspect}" unless missing.empty?
+      EraZeroCompoundBindingConstraints.validate_bindings!(expanded.fetch("binding_constraints",[]),resolved.values,arguments)
       resolved.values.sort_by { |binding| JSON.generate(binding.fetch("slot_path")) }
+    rescue EraZeroCompoundBindingConstraints::ConstraintError => error
+      raise ExpansionError, error.message
     rescue KeyError => error
       raise ExpansionError, "incomplete compound binding: #{error.message}"
     end
@@ -166,6 +172,9 @@ module EraZeroCompoundExpansion
       }
       if entry.key?("conventional_meaning")
         output["scopes"].last["conventional_meaning"] = Marshal.load(Marshal.dump(entry.fetch("conventional_meaning")))
+      end
+      if entry.key?("binding_constraints")
+        output["scopes"].last["binding_constraints"]=Marshal.load(Marshal.dump(entry["binding_constraints"]))
       end
       head
     end

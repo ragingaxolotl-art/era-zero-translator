@@ -87,6 +87,16 @@ export async function renderLexicalOccurrences(ir,authority,{anchor=60,maxEvents
     bindings.set(key(binding.slot_path),{slot_path:binding.slot_path,argument_id:binding.argument_id,role:edges[0].role,predicate_path:edges[0].to_path});
    }
    if(bindings.size!==slots.size)fail('unbound compound slots');
+   for(const constraint of plan.expanded.binding_constraints||[]){
+    const ids=constraint.slot_paths.map(path=>bindings.get(key(path))?.argument_id);
+    if(ids.some(id=>id===undefined))fail('constraint names an unbound slot');
+    if(constraint.relation==='same_argument'){
+     if(new Set(ids).size!==1)fail('compound slots must share the same argument occurrence');
+    }else if(constraint.relation==='distinct_arguments'){
+     const identities=ids.map(id=>Object.hasOwn(nodes.get(id),'referent_id')?key(['referent',nodes.get(id).referent_id]):key(['occurrence',id]));
+     if(new Set(identities).size!==identities.length)fail('compound slots require distinct arguments');
+    }else fail('unknown binding constraint');
+   }
    components=plan.bound_components;scopes=plan.expanded.scopes;
   }else{
    const roles=ir.edges.filter(e=>e.type==='fills_role'&&e.to===id).map(e=>e.role);

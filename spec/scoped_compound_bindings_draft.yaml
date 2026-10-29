@@ -25,6 +25,9 @@ renderer_integration:
   runtime: Each argument keeps its runtime; only the containing compound head gets its external ending
   duplicate_handling: Argument-only nodes are not also emitted as standalone occurrences
   recursion: Cycles and more than 64 participant-binding levels raise a render error
+participant_identity_constraints:
+  contract: spec/compound_binding_constraints_1.0.yaml
+  behavior: Same-argument and distinct-argument requirements are expanded by scope and checked before rendering.
 qualified_participants:
   rules:
   - A qualifier subtree attached to a slot inherits that slot's exact participant binding chain.
