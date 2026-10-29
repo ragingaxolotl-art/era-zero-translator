@@ -136,6 +136,16 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     if(!inner||inner.calendarDay!==undefined||inner.speechTime!==undefined||inner.scopes?.length||inner.speechAct)return null;
     return {...inner,...(completedPredicate?{predicate:completedPredicate}:{}),speechTime:'before',construction:`past_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
+  const carryingGoal=String(input).trim().match(new RegExp(`^${participant} (?:is|am|are) (not )?carrying ${participant} toward ${participant}[.]?$`));
+  if(carryingGoal){
+    const texts=[carryingGoal[1],carryingGoal[3],carryingGoal[4]];
+    if(texts.some(text=>parseNominal(text)?.quantifier)||new Set(texts.map(participantIdentity)).size!==3)return null;
+    const carrying=ACTIONS.find(action=>action.key==='ongoing_physical_carrying');
+    return {...carrying,negated:!!carryingGoal[2],construction:`named_physical_carrying_goal${carryingGoal[2]?'_negated':''}`,
+      participants:texts.map((text,index)=>({text,label:text.replaceAll('"',''),role:['source','target','destination'][index]})),
+      semanticNote:carrying.semanticNote+' The destination is the goal of this carrying movement; arrival, delivery and a recipient are not asserted.',
+      explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
   const path=String(input).trim().match(new RegExp(`^${participant} (?:is|am|are) (not )?moving from ${participant} (?:to|toward) ${participant}[.]?$`));
   if(path){
     const texts=[path[1],path[3],path[4]],counted=texts.filter(text=>parseNominal(text)?.quantifier);
@@ -199,7 +209,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return (/^[Ii]f\b/.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering)\b/i.test(String(input))) && !parseNamedSentence(input);
+  return (/^[Ii]f\b/.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|carrying|supporting)\b/i.test(String(input))) && !parseNamedSentence(input);
 }
 
 // A complete antecedent and a comma establish conditional scope. Without
@@ -318,8 +328,13 @@ export async function composeNamedSentence(input,template) {
     edges:[{edge_id:'e0',type:'centers',from:'p',to:'c'},...participants.map((participant,index)=>({edge_id:`e${index+1}`,type:'fills_role',from:participantIds[index],to:'p',role:participant.role}))],discourse_constraints:{}};
   if(bound){
     if(nominal.some(description=>description?.quantifier))throw new Error('Quantified compound participants are not supported by this construction.');
-    ir.nodes[1].compound_bindings=participants.flatMap((participant,index)=>{const paths=parsed.compoundSlots[participant.role];return (Array.isArray(paths[0])?paths:[paths]).map(slot_path=>({slot_path,argument_id:participantIds[index]}));});
-    ir.edges=ir.edges.filter(edge=>edge.type!=='fills_role');
+    ir.nodes[1].compound_bindings=participants.flatMap((participant,index)=>{
+      const paths=parsed.compoundSlots[participant.role];
+      // Whole-predicate roles, such as a destination, remain external edges.
+      if(!paths)return [];
+      return (Array.isArray(paths[0])?paths:[paths]).map(slot_path=>({slot_path,argument_id:participantIds[index]}));
+    });
+    ir.edges=ir.edges.filter(edge=>edge.type!=='fills_role'||!parsed.compoundSlots[edge.role]);
   }
   nominal.forEach((description,index)=>{
     if(!description?.quantifier)return;
