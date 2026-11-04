@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import {execFileSync} from 'node:child_process';
-import {clauseInterpretationPlan,composeSentenceConditional,composeSentenceSequence,composeSentenceConjunction} from '../pages/sentences.mjs';
+import {clauseInterpretationPlan,composeSentenceDisjunction,composeSentenceConditional,composeSentenceSequence,composeSentenceConjunction} from '../pages/sentences.mjs';
 import {midiFromFormal} from '../pages/engine.mjs';
 import {decodeStrictMusicMidi} from '../pages/strict_music_decoder.mjs';
 import {decodeNominalMassRestrictions} from '../pages/reference_property_decoder.mjs';
@@ -62,3 +62,42 @@ for(const change of ['choice','input','detached']){
 }
 ui=show();fill(ui);let fail;const failure=new Promise((_,reject)=>fail=reject);ctx.sentenceTemplate=()=>failure;const bad=ui.button.click();ui.card.isConnected=false;fail(new Error('late failure'));await bad;assert.equal(ui.status.textContent,'');
 console.log(`Clause interpretations: ${results.length} sequence/conjunction/conditional/runtime cases preserve per-clause viewpoints, destinations, mass/temperature standards and future readings with Ruby/browser formal/MIDI parity. Complete choices, local it, caller snapshots and stale UI results/errors are checked.`);
+// Novel combinations: every clause retains its own selected physical standard.
+const contextualChoices=[{interpretation:'luminance_standard',standard:{kind:'contextual',dimension:'luminance'}},{interpretation:'mass_standard',standard:{kind:'contextual',dimension:'mass'}}];
+for(const state of [0,1,2])for(const [text,compose] of [
+ [`The lamp is bright [${state}] and the box is heavy [${(state+1)%3}].`,composeSentenceConjunction],
+ [`The lamp is bright [${state}], then the box is heavy [${(state+1)%3}].`,composeSentenceSequence],
+ [`If the lamp is bright [${state}], then the box is heavy [${(state+1)%3}].`,composeSentenceConditional]]){
+ const r=await compose(text,load,contextualChoices),decoded=decodeStrictMusicMidi(midiFromFormal(r.formal),authority.atoms);
+ assert.deepEqual(decoded.tokens.filter(t=>/^contextual_.*_open$/.test(t.marker||'')).map(t=>t.marker),['contextual_bright_open','contextual_heavy_open']);
+ assert.deepEqual(r.semantic_ir.nodes.filter(n=>n.kind==='lexical_occurrence').map(n=>n.runtime_state.code),[state,(state+1)%3]);
+ assert(!r.semantic_ir.nodes.some(n=>n.kind==='measurement'));
+ const ruby=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_presentation','-rbase64','-e','f=EraZeroRenderer.render(JSON.parse(STDIN.read));puts JSON.generate({formal:f,midi:Base64.strict_encode64(EraZeroPresentation.midi(f))})'],{cwd:root,input:JSON.stringify(r.semantic_ir),encoding:'utf8'}));
+ assert.deepEqual(r.formal,ruby.formal);assert.equal(Buffer.from(midiFromFormal(r.formal)).toString('base64'),ruby.midi);
+}
+const combination='The lamp is bright and the box is heavy.';
+elements.sourceInput.value=combination;ctx.sentenceTemplate=load;ctx.plan=clauseInterpretationPlan(combination);shown=null;
+vm.runInContext(handler+';showClauseInterpretations('+JSON.stringify(combination)+',plan);',ctx);
+const combinedCard=elements.candidateList.children.at(-1),sections=combinedCard.children.slice(0,2);
+for(const [i,section] of sections.entries()){
+ const fields=Object.fromEntries(section.children.filter(c=>c.tag==='label').map(c=>[c.textContent,c.children[0]]));
+ fields[`Clause ${i+1} standard type`].value='contextual';fields[`Clause ${i+1} standard type`].change();
+ assert.equal(fields[`Clause ${i+1} ${i?'mass':'luminance'} threshold`].disabled,true);
+}
+await combinedCard.children.at(-1).click();assert.ok(shown);assert.equal(shown.selected_clauses[0].options.standard.dimension,'luminance');assert.equal(shown.selected_clauses[1].options.standard.kind,'contextual');
+console.log('PASS 9 contextual multi-clause runtime combinations, Ruby/MIDI parity and actual per-clause no-number UI.');
+
+for(const disjunction of ['any_of','exactly_one']){
+ const r=await composeSentenceDisjunction('The lamp is dim or the box is heavy.',load,[contextualChoices[0],{interpretation:'mass_standard',standard:standard(7)}],{disjunction});
+ const decoded=decodeStrictMusicMidi(midiFromFormal(r.formal),authority.atoms);
+ assert(decoded.tokens.some(t=>t.marker==='contextual_dim_open'));
+ assert(r.semantic_ir.nodes.some(n=>n.kind==='measurement'&&n.magnitude==='7'));
+ assert.equal(r.selected_clauses[0].options.standard.kind,'contextual');
+}
+// Changing the standard mode while loading must invalidate the pending UI result.
+let resumeContext;const contextualGate=new Promise(resolve=>resumeContext=resolve);
+ctx.sentenceTemplate=async id=>{await contextualGate;return load(id)};
+shown=null;const pendingContext=combinedCard.children.at(-1).click();
+const firstMode=sections[0].children.find(c=>c.textContent==='Clause 1 standard type').children[0];firstMode.value='numeric';firstMode.change();
+resumeContext();await pendingContext;assert.equal(shown,null);
+console.log('PASS mixed numeric/contextual disjunctions and stale standard-mode UI protection.');

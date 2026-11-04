@@ -71,17 +71,21 @@ function showClauseInterpretations(input,plan){
   const disjunction=plan.requiredDisjunction?select(card,'Meaning of or',[['','Choose an alternative meaning'],['any_of','At least one; both may hold'],['exactly_one','Exactly one; both cannot hold']]):null;
   plan.clauses.forEach(({text,parsed},index)=>{
     const section=document.createElement('fieldset'),title=document.createElement('legend');title.textContent=`Clause ${index+1}: ${text}`;section.append(title);
-    let view,destination,interpretation,threshold,scale;
+    let view,destination,interpretation,threshold,scale,standardMode;
     if(parsed.requiredViewpoint)view=select(section,`Clause ${index+1} carrying meaning`,[['','Choose a meaning'],['habitual','A recurring practice'],['ongoing','An unfolding action'],['bounded','One narrated episode']]);
     if(parsed.requiredDestination){destination=select(section,`Clause ${index+1} meaning of to`,[['','Choose a destination meaning'],['spatial','Spatial destination; no receipt asserted'],['custody_delivery','Carry and transfer physical custody to the recipient']]);const note=document.createElement('p');note.textContent='Custody delivery means carrying arrival culminates in transfer from the carrier to the recipient. It does not mean ownership or willing acceptance.';section.append(note)}
-    const property=['mass_standard','thermal_standard'].includes(parsed.requiredInterpretation);
+    const property=['mass_standard','thermal_standard','luminance_standard'].includes(parsed.requiredInterpretation);
+    const dimension=({mass_standard:'mass',thermal_standard:'thermodynamic_temperature',luminance_standard:'luminance'})[parsed.requiredInterpretation];
     if(property){
-      const mass=parsed.requiredInterpretation==='mass_standard',note=document.createElement('p');note.textContent=`For “${parsed.adjective}”, use ${mass?'mass':'thermodynamic temperature'} ${['heavy','hot'].includes(parsed.adjective)?'above':'below'} this clause’s threshold.`;section.append(note);
-      const label=document.createElement('label');label.textContent=`Clause ${index+1} ${mass?'mass':'temperature'} threshold`;threshold=document.createElement('input');threshold.type='text';threshold.inputMode='decimal';threshold.maxLength=1000;threshold.placeholder='Enter your contextual threshold';label.append(threshold);section.append(label);
-      scale=select(section,`Clause ${index+1} ${mass?'mass unit':'temperature scale'}`,mass?[['kilogram','Kilograms'],['gram','Grams']]:[['celsius','Degrees Celsius'],['kelvin','Kelvins']]);
+      const mass=dimension==='mass',luminance=dimension==='luminance',propertyLabel=luminance?'luminance':mass?'mass':'temperature';
+      const note=document.createElement('p');note.textContent=`For “${parsed.adjective}”, select the physical ${propertyLabel} meaning. Contextual standards stay local to this clause; no shared numerical cutoff is inferred.`;section.append(note);
+      if(!parsed.nominalProperty)standardMode=select(section,`Clause ${index+1} standard type`,[['numeric','Numerical threshold'],['contextual','Contextual standard; no number']]);
+      const label=document.createElement('label');label.textContent=`Clause ${index+1} ${propertyLabel} threshold`;threshold=document.createElement('input');threshold.type='text';threshold.inputMode='decimal';threshold.maxLength=1000;threshold.placeholder='Enter your numerical threshold';label.append(threshold);section.append(label);
+      scale=select(section,`Clause ${index+1} ${luminance?'luminance unit':mass?'mass unit':'temperature scale'}`,luminance?[['candela_per_square_meter','Candelas per square metre (cd/m²)']]:mass?[['kilogram','Kilograms'],['gram','Grams']]:[['celsius','Degrees Celsius'],['kelvin','Kelvins']]);
+      if(standardMode)standardMode.addEventListener('change',()=>{threshold.disabled=scale.disabled=standardMode.value==='contextual'});
     }else if(parsed.requiredInterpretation==='future_assertion')interpretation=select(section,`Clause ${index+1} future meaning`,[['','Choose a future meaning'],['future_assertion','Future statement; no promise or intention added']]);
     if(!view&&!destination&&!property&&!interpretation){const note=document.createElement('p');note.textContent='No additional interpretation choice is needed for this clause.';section.append(note)}
-    read.push(()=>({...view?{viewpoint:view.value}:{},...destination?{destination:destination.value}:{},...property?{interpretation:parsed.requiredInterpretation,standard:{dimension:parsed.requiredInterpretation==='mass_standard'?'mass':'thermodynamic_temperature',threshold:threshold.value.trim(),scale:scale.value}}:interpretation?{interpretation:interpretation.value}:{}}));
+    read.push(()=>({...view?{viewpoint:view.value}:{},...destination?{destination:destination.value}:{},...property?{interpretation:parsed.requiredInterpretation,standard:standardMode?.value==='contextual'?{kind:'contextual',dimension}:{dimension,threshold:threshold.value.trim(),scale:scale.value}}:interpretation?{interpretation:interpretation.value}:{}}));
     card.append(section);
   });
   const status=document.createElement('p');status.setAttribute('role','status');const button=document.createElement('button');button.textContent='Translate all clauses';

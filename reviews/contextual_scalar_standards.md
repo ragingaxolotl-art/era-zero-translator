@@ -62,3 +62,13 @@ MIDI recovery. Additional cases cover questions, possibility, current-day scope,
 octave transposition, numeric-versus-contextual decoding, invalid standards and
 the actual no-number UI handler. These authored cases are implementation evidence,
 not a held-out language-coverage or listening evaluation.
+
+## Multi-clause composition
+
+Per-clause interpretation controls now include luminance and a choice between
+local contextual standards and numeric thresholds. A contextual selection disables
+the unused numeric fields and survives conjunction, sequence, conditional and
+disjunction composition. Different clauses can use different standard types; no
+shared threshold is inferred. Restricted nominal properties still require their
+existing numeric standard. The clause tests cover mixed standards, independent
+runtime endings, musical frames, Ruby parity and stale mode changes.
