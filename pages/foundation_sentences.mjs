@@ -44,14 +44,16 @@ export async function composeFoundationSentence(input,authority,records,loadTemp
   ir.nodes.push(await reference(parsed.target,'preferred',true),await reference(parsed.standard,'standard',true));
   for(const [id,role] of [['preferred','target'],['standard','comparison_standard']])ir.edges.push({edge_id:id,type:'fills_role',from:id,to:'p',role});
  }else{
-  const infinitiveBody='(?:care for .+|be (?:not )?able to move(?: \\[([012])\\])?)';
-  const controlled=parsed.content.match(new RegExp(`^to (${infinitiveBody})$`));
-  const desiredText=controlled?`${parsed.holder} to ${controlled[1]}`:parsed.content;
-  const infinitive=desiredText.match(new RegExp(`^(${HOLDER}) to (${infinitiveBody})$`));
+  const infinitiveBody='(?:care for .+|be (?:not )?able to move(?: \\[[012]\\])?)';
+  const infinitive=parsed.content.match(new RegExp(`^(?:(${HOLDER}) )?(not )?to (not )?(${infinitiveBody})$`));
+  const controlled=!!infinitive&&!infinitive[1];
   let content=parsed.content;
   if(infinitive){
-   const holder=infinitive[1],body=infinitive[2];
-   content=body.startsWith('be ')?`${holder} ${holder==='I'?'am':/^[Yy]ou$/.test(holder)?'are':'is'} ${body.slice(3)}`:`${holder} ${/^(?:I|[Yy]ou)$/.test(holder)?'care':'cares'}${body.slice(4)}`;
+   const holder=infinitive[1]||parsed.holder,body=infinitive[4];
+   const negations=Number(!!infinitive[2])+Number(!!infinitive[3])+Number(body.startsWith('be not '));
+   if(negations>1)throw new Error('Repeated infinitival negation needs an explicit scope interpretation.');
+   const negative=negations===1,firstOrSecond=/^(?:I|[Yy]ou)$/.test(holder);
+   content=body.startsWith('be ')?`${holder} ${holder==='I'?'am':/^[Yy]ou$/.test(holder)?'are':'is'} ${negative?'not ':''}${body.replace(/^be (?:not )?/,'')}`:`${holder} ${negative?(firstOrSecond?'do not care':'does not care'):(firstOrSecond?'care':'cares')}${body.slice(4)}`;
   }
   const inner=parseNamedSentence(content);
   if(!inner||inner.speechAct==='question'||inner.speechAct==='command')throw new Error('Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else.');

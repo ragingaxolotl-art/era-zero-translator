@@ -208,3 +208,16 @@ the capacity, intensional boundary, binding, separate endings and negation. Furt
 cases cover deictics, questions, outer negation, explicit subjects, invalid roles,
 unsupported complements and draft bundle identity. The existing care tests still
 pass. Candidate vocabulary and listening-review limits remain in force.
+
+### Negated infinitival content
+
+“Wants not to care” and “wants to not care” now place negation inside the desired
+proposition. “Does not want to care” places it outside desire. The same distinction
+applies to desired mobility capacity, including a separately named embedded
+subject. No negative desire or capacity is encoded by substituting runtime zero.
+
+Twenty-four scope/runtime cases distinguish the four outer/inner negation
+combinations for care and available mobility. Equivalent infinitive word orders
+produce the same IR and music. Ruby/browser parity and independent MIDI decoding
+verify the boundary. Repeated infinitival negation and unsupported adverbs remain
+unresolved instead of having words discarded. Candidate vocabulary remains opt-in.
