@@ -1459,3 +1459,16 @@ manner-specific and modal entry. Existing possible/permitted frames can be reuse
 no new modal root or family is justified. The English phrase remains uncomposed.
 The review specifies counterexamples and independent musical recovery obligations,
 but does not itself add a lexical sense or close a completion gate.
+
+### Consolidated regression after interpretation changes
+
+The suite at implementation revision `5a5a427` completed with 156/157 checks
+passing. The sole failure was the glyph presentation spec's renderer fingerprint:
+it still pointed to the pre-running-migration renderer specification. An exact
+historical comparison found only the already migrated semantic-IR and compound
+source references changed. `migrations/glyph_renderer_pin_2026_11_04.yaml` records
+that comparison and pin update. Glyph/MIDI validation then passed all 10 checks;
+the preserved-vocabulary test passed 24 assertions. The regression report retains
+the original failed run and records these targeted follow-ups separately.
+This evidence does not close the ordinary-English, source reconciliation, held-out
+meaning, live UI, listening or publication requirements.

@@ -1,0 +1,12 @@
+---
+baseline_revision: 5e29441
+source: spec/renderer_decoder_1.0.yaml
+before_fingerprint: 2dbf80f5c3372c1422ff70bca4b07d002079df4195aa38ad73f14cdc941e0335
+after_fingerprint: 1f20c42fea82ad271da4432654e69d4a33f3027dca6ab1786def26b5c95a09e7
+changed_fields:
+- metadata.semantic_ir_fingerprint
+- metadata.compound_dictionary_fingerprint
+remaining_renderer_spec_exactly_preserved: true
+vocabulary_evidence: migrations/running_vocabulary_source_pins_2026_11_04.yaml
+reason: Follow renderer metadata references after the verified additive running vocabulary
+  migration; no glyph or MIDI rule changes.
