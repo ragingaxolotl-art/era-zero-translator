@@ -33,3 +33,13 @@ a destination and runs toward keep their activity/approach meaning under all thr
 viewpoints. Explicit habitually forms compose directly. Per-clause choices preserve
 these distinctions in mixed sequences, conjunctions and conditionals. This supersedes
 the earlier simple-present limitation; nested temporal modality remains unresolved.
+
+## Temporal proposition composition follow-up
+
+The previously rejected past-running examples under possibility and proposition
+negation now compose through a timed nested clause. This preserves the original
+running journey definition and existing time/modality frames. The dedicated
+44-case temporal test includes independent scope recovery, full formal/music
+parity and an order-sensitive countermodel. Earlier temporal-modality rejection
+statements above are superseded for these supported constructions; broad temporal
+English and listening verification remain open.

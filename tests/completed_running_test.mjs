@@ -31,7 +31,7 @@ const ruby=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_presentatio
 for(const [i,r] of results.entries()){assert.deepEqual(r.formal,ruby[i].formal);assert.equal(Buffer.from(midiFromFormal(r.formal)).toString('base64'),ruby[i].midi);}
 assert.equal(new Set(ruby.map(r=>r.midi)).size,27);
 execFileSync('ruby',['-Itools/lib','-rera_zero_validation','-e',"v=EraZeroValidation;d=v.load_yaml('lexicon/compound_dictionary.yaml')['entries'];m=v.load_yaml('migrations/completed_running_2026_11_04.yaml');old=d.select{|e|m['previous_compound_ids'].include?(e['compound_id'])};raise 'Prior meanings changed' unless old.length==57&&v.fingerprint(old)==m['before_dictionary_fingerprint']"],{cwd:root});
-for(const text of ['Nora ran the program.','Nora ran to the conclusion.','It is possible that Nora ran to the gate.'])assert.equal(parseNamedSentence(text),null);
+for(const text of ['Nora ran the program.','Nora ran to the conclusion.'])assert.equal(parseNamedSentence(text),null);
 const corrupt=structuredClone(results[0].formal),approach=corrupt.performance.lexical_events.find(e=>e.target_id==='MOV:110'),arrival=authority.atoms.find(a=>a.canonical_id==='MOV:111');
 approach.address_absolute_midi=arrival.note_path_semitones.map(n=>n+approach.base_midi);
 assert.throws(()=>decodeRunningMidi(midiFromFormal(corrupt),authority.atoms));

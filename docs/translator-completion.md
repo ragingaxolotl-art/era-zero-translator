@@ -1350,3 +1350,22 @@ root, grammar operator or musical frame is needed for this example. The next fix
 belongs in English composition: nest its timed clause before applying outer
 modality or proposition negation, retaining existing clause-level time behavior
 for ordinary sentences. The probe does not mean English parsing is implemented.
+
+### English temporal clauses under proposition operators
+
+English composition now reuses nested predication clauses for past or calendar
+time inside possibility, necessity and whole-proposition negation. It preserves
+inner negation, confidence, participants and runtime 0/1/2. Existing untimed
+sentences and ordinary clause-level time keep their previous representation. No
+new root, lexical definition, semantic operator or musical frame was introduced.
+Future assertions retain their explicit interpretation requirement.
+
+`tests/temporal_proposition_scope_test.mjs` checks 44 running, care, restoration,
+consciousness and future-care cases with Ruby/browser formal and MIDI parity and
+independent recovery of scope order. Reversing time and possibility changes music
+and truth in an explicit finite countermodel whose available possibilities vary
+with time. The report is `reports/temporal_proposition_scope_validation.json`.
+This supersedes the earlier unsupported examples using “It is possible that Nora
+ran to the gate” and “It is not the case that Nora ran to the gate.” It does not
+establish arbitrary temporal expressions, all modal meanings, live-browser behavior
+or listening validation, and does not close the original completion gates.

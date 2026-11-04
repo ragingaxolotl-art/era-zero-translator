@@ -68,6 +68,13 @@ function participantIdentity(text){
   if(['You','you'].includes(text))return 'discourse:addressee';
   return 'name:'+text.replaceAll('"','').toLowerCase();
 }
+// Parser-only instruction: preserve the inner clause's temporal scope before
+// adding a surrounding proposition operator. It becomes an ordinary nested
+// clause with existing time anchors, never a new semantic operator or sound.
+function nestParsedTime(inner){
+ if(inner.calendarDay===undefined&&inner.speechTime===undefined)return inner;
+ return {...inner,calendarDay:undefined,speechTime:undefined,scopes:[...(inner.scopes||[]),{temporalClause:true,...(inner.calendarDay!==undefined?{calendarDay:inner.calendarDay}:{}),...(inner.speechTime!==undefined?{speechTime:inner.speechTime}:{})}]};
+}
 export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
   if(depth>16)return null;
   const explicitState=String(input).trim().match(/^(.*?)\s+\[([012])\]([.!?]?)$/);
@@ -156,8 +163,9 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
   }
   const propositionNegation=String(input).trim().match(/^[Ii]t is not the case that (.+)$/);
   if(propositionNegation){
-    const inner=parseNamedSentence(propositionNegation[1],depth+1,false);
-    if(!inner||inner.speechAct||inner.calendarDay!==undefined||inner.speechTime!==undefined)return null;
+    let inner=parseNamedSentence(propositionNegation[1],depth+1,false);
+    if(!inner||inner.speechAct)return null;
+    inner=nestParsedTime(inner);
     return {...inner,scopes:[...(inner.scopes||[]),{operator:'negation'}],construction:`proposition_negation_${inner.construction}`,explicitInterpretation:String(input).trim(),semanticNote:[inner.semanticNote,'Negates the complete following proposition, including its participant count; it does not count participants satisfying a negated property.'].filter(Boolean).join(' ')};
   }
   const confidence=String(input).trim().match(/^[Ww]ith ([0-9]+(?:\.[0-9]+)?)% confidence, (.+)$/);
@@ -171,8 +179,9 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
   }
   const modal=String(input).trim().match(/^[Ii]t is (not )?(possible|necessary) that (.+)$/);
   if(modal){
-    const inner=parseNamedSentence(modal[3],depth+1);
-    if(!inner||inner.calendarDay!==undefined||inner.speechTime!==undefined)return null;
+    let inner=parseNamedSentence(modal[3],depth+1);
+    if(!inner||inner.speechAct)return null;
+    inner=nestParsedTime(inner);
     const scopes=[...(inner.scopes||[]),{operator:'modality',mode:modal[2]}];
     if(modal[1])scopes.push({operator:'negation'});
     return {...inner,scopes,construction:`scoped_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
@@ -701,6 +710,20 @@ export async function composeNamedSentence(input,template,{interpretation,standa
   }
   for(const [index,scope] of (parsed.scopes||[]).entries()){
     const id=`scope${String(index).padStart(2,'0')}`;
+    if(scope.temporalClause){
+      ir.nodes.push({node_id:id,kind:'clause',clause_type:'predication'});
+      ir.edges.push({edge_id:`${id}:center`,type:'centers',from:ir.edges[0].from,to:id});
+      if(scope.calendarDay!==undefined){
+        ir.nodes.push({node_id:`${id}:day`,kind:'time_anchor',anchor_type:'interval',calendar_unit:'day',relative_to:'speech_date',day_offset:scope.calendarDay});
+        ir.edges.push({edge_id:`${id}:time0`,type:'time_relation',from:`${id}:day`,to:id,relation:'during'});
+      }
+      if(scope.speechTime!==undefined){
+        ir.nodes.push({node_id:`${id}:speech`,kind:'time_anchor',anchor_type:'speech_time'});
+        ir.edges.push({edge_id:`${id}:time1`,type:'time_relation',from:`${id}:speech`,to:id,relation:scope.speechTime});
+      }
+      ir.edges[0].from=id;
+      continue;
+    }
     ir.nodes.push({node_id:id,kind:'scope_operator',...scope});
     ir.edges.push({edge_id:`zscope${String(index).padStart(2,'0')}`,type:'scopes',from:ir.edges[0].from,to:id});
     ir.edges[0].from=id;

@@ -156,7 +156,7 @@ for(const [text] of calendarCases){
  const parsed=parseNamedSentence(text);
  assert.equal(parsed.calendarDay,text.includes('yesterday')?'-1':text.includes('tomorrow')?'1':'0');
 }
-assert.equal(parseNamedSentence('It is possible that Nora cared for Eli yesterday.'),null);
+assert(parseNamedSentence('It is possible that Nora cared for Eli yesterday.')); // Full temporal scope checked in temporal_proposition_scope_test.
 assert.equal(parseNamedSentence('Nora cares for Eli yesterday.'),null);
 assert.equal(parseNamedSentence('Nora cared for Eli tomorrow.'),null);
 
@@ -180,7 +180,7 @@ for(const result of pastOutputs){
 }
 assert.notDeepEqual(midiFromFormal(pastOutputs[0].formal),midiFromFormal(pastOutputs[1].formal));
 assert.notDeepEqual(midiFromFormal(pastOutputs[2].formal),midiFromFormal(pastOutputs[3].formal));
-assert.equal(parseNamedSentence('It is possible that Nora restored Eli.'),null);
+assert(parseNamedSentence('It is possible that Nora restored Eli.')); // Independently checked in temporal_proposition_scope_test.
 assert.equal(parseNamedSentence('"Nora was" is conscious yesterday.'),null);
 
 const pastQuestions=pastOutputs.slice(-4);
