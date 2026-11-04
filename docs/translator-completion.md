@@ -37,7 +37,7 @@ admission remain open.
 The full translator goal remains **incomplete**. There are 324 preserved roots,
 63 approved compounds and 471 canonical senses. Desire/preference and polar-answer
 knowledge foundations remain opt-in candidate vocabulary and are excluded from
-those canonical counts. The consolidated regression at `c294562` passed **172/172**
+those canonical counts. The consolidated regression at `1912afd` passed **187/187**
 checks, including the opt-in blind synthetic-audio suites; see `reports/translator_completion_regression.json`. Earlier failures and
 repairs remain documented in the historical work log and Git history. This clean
 run began from a clean checkout and records its exact revision and timestamps.
@@ -1687,3 +1687,19 @@ remain unfinished;
 these draft cases do not alter the canonical-path
 coverage diagnostic or close any completion gate. The consolidated report above
 remains evidence for its recorded revision, not this later work.
+
+## Consolidated cognitive and audio checkpoint
+
+At `1912afdf2459094122db4ec69c0a7e1f551fe667`, the complete runner with
+`--include-acoustic` passed 187/187 checks from a clean checkout. The recorded run
+started 2026-11-04 23:12:11 UTC and completed 23:18:57 UTC. This adds the recent
+neutral-pronoun, spoken-content, comprehension-acquisition, route-learning,
+contextual-inquiry and curiosity checks to the earlier 172-check baseline. The
+report records exact commands and outputs; it is not a general-English benchmark.
+
+The acoustic checks include clean synthetic WAV recovery and the existing bounded
+noise/speed/echo simulations and damaged-payload rejection tests. Physical
+speaker-to-microphone recordings tested: zero. The new low-frequency search has
+112 authored pitch/duration cases; reproduction by physical speakers is unverified.
+The canonical 40-phrase diagnostic remains separate from draft vocabulary previews.
+All seven original completion gates remain open.
