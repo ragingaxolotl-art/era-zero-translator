@@ -1,3 +1,4 @@
+import {validContentSelection} from './content_selection.mjs';
 // Contextual content is a reference, never proof of a cognitive predicate.
 import {canonicalDigest} from './engine.mjs';
 import {encodeName} from './names.mjs';
@@ -18,7 +19,7 @@ export async function contextualContentReference(text){
 export async function validateContextualContent(document,{allowDraft=false}={}){
  if(!allowDraft)throw new Error('Contextual content requires explicit draft opt-in.');
  document=structuredClone(document);
- if(!exact(document,['profile','status','content_kind','anchor','resolution_scope','assertion_commitment','content_id','content_digest']))fail();
+ if(!exact(document,['profile','status','content_kind','anchor','resolution_scope','assertion_commitment','content_id','content_digest',...(Object.hasOwn(document,'selection')?['selection']:[])]))fail();
  const {content_id,content_digest,...body}=document,r=body.anchor;
  if(body.profile!=='EZCONTEXTUAL-CONTENT-1'||body.status!=='draft'||!CONTEXTUAL_CONTENT_KINDS.includes(body.content_kind)||body.resolution_scope!=='local_context'||body.assertion_commitment!=='none'||r?.node_id!=='anchor'||r.value_type!=='entity')fail();
  if(r.kind==='deictic_reference'){
@@ -33,12 +34,13 @@ export async function validateContextualContent(document,{allowDraft=false}={}){
    if(!mode||r.reference_mode==='nominal_class'||!/^[a-z]+$/.test(n.normalized_label)||r.referent_id!==`nominal:${mode.id}:${n.name_id}`)fail();
   }else if(r.referent_id!==`name:${n.name_id}`)fail();
  }else fail();
+ if(Object.hasOwn(body,'selection')&&!validContentSelection(body.content_kind,body.selection))fail();
  const digest=await canonicalDigest(body);
  if(content_digest!==digest||content_id!==`EZCTX:${digest.slice(0,24)}`)fail();
  return document;
 }
-export async function createContextualContent(kind,anchor,{allowDraft=false}={}){
+export async function createContextualContent(kind,anchor,{allowDraft=false,selection}={}){
  if(!allowDraft)throw new Error('Contextual content requires explicit draft opt-in.');
- const body={profile:'EZCONTEXTUAL-CONTENT-1',status:'draft',content_kind:kind,anchor:structuredClone(anchor),resolution_scope:'local_context',assertion_commitment:'none'},digest=await canonicalDigest(body);
+ const body={profile:'EZCONTEXTUAL-CONTENT-1',status:'draft',content_kind:kind,anchor:structuredClone(anchor),resolution_scope:'local_context',assertion_commitment:'none',...(selection!==undefined?{selection:structuredClone(selection)}:{})},digest=await canonicalDigest(body);
  return validateContextualContent({...body,content_digest:digest,content_id:`EZCTX:${digest.slice(0,24)}`},{allowDraft:true});
 }

@@ -80,8 +80,9 @@ communicated-content, explanatory-reasons and perspective readings, with explici
 choices for bare person objects. It has 27 MIDI-only semantic checks and three
 clean WAV-only meaning recoveries. Full Ruby sentence parity now passes 29 cases. A main-UI draft card now provides
 reading choices, playback and MIDI/meaning exports with stale-output protection.
-Live UI/listening, embedded communication time and physical-channel validation
-remain open.
+Past spoken-content selection now preserves “what Nora said” separately from
+matrix scope, with nine Ruby/MIDI cases and one clean WAV recovery. Live UI/listening,
+broader communication tense/channel grammar and physical-channel validation remain open.
 
 Recent completed implementation work:
 

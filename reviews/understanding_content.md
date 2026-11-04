@@ -18,12 +18,13 @@ All content stays contextually selected; no specific message, explanation or
 experience is invented. The matrix predicate is separately negatable and may
 be questioned. Past placement and runtime 0/1/2 are independent.
 
-The current parser deliberately rejects “what Nora said”: a complete treatment
-must preserve the past communication reference, not erase “said” into a generic
-content selector. It also rejects why-clauses, propositional factive understanding,
-degree modifiers and plural/possessive pronoun constructions pending their
-respective bindings.
-These remain requirements, not exclusions from the final translator goal.
+The parser now supports “what Nora said” as communicated content selected from
+speech before speech time. This is a source restriction inside the content, not
+a new matrix assertion or a claim that its statements are true. It does not infer
+an ordering between that speech and a past understanding event. Why-clauses,
+propositional factive understanding, degree modifiers and plural/possessive pronoun
+constructions still need their own bindings. These remain requirements, not
+exclusions from the final translator goal.
 
 Validation includes 27 cross-products of content reading, runtime and
 assertion/negated past/question forms, plus explicit selectors, contraction
@@ -95,3 +96,19 @@ prevents that for past and modal questions. Twenty-one contracted/past-question
 meaning/MIDI comparisons pass, plus understanding contraction, modal-entry and
 first-person am-not checks. Existing 24 ordinary, 15 cognitive and 27 understanding
 neutral-reference comparisons still pass. No lexical definition or sound changes.
+
+## Past spoken content
+
+An optional contextual-content `selection` field specifies `channel: speech` and
+`time: before_speech`. Old documents and sounds remain unchanged when absent.
+The existing before-speech time frame is nested inside an opt-in spoken-source
+frame (±35), within the content selector. This keeps matrix time/negation separate
+from the source restriction. The foundation definition/address is unchanged.
+Context must still identify the relevant past speech; no utterance or truth of
+its claims is fabricated. Unsupported channel/time combinations reject.
+
+Nine full-sentence MIDI/Ruby cases preserve this distinction across runtime,
+negated past and questions. One clean synthetic WAV-only case recovers the full
+meaning. Source-frame omission and a rehashed unsupported channel reject. Existing
+28 contextual documents, 72 selector inverses, 27 understanding meanings and 29
+Ruby/browser sentence comparisons remain passing. No physical recording tested.

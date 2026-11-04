@@ -17,9 +17,9 @@ for(const [phrase,kind] of [["Eli understands Nora’s communicated content.",'c
  await assert.rejects(()=>compose(phrase,{allowDraft:true,interpretation:kind==='reasons'?'perspective':'reasons'}));
 }
 const a=await compose("Eli didn't understand Nora.",{allowDraft:true,interpretation:'perspective'}),b=await compose('Eli did not understand Nora.',{allowDraft:true,interpretation:'perspective'});assert.deepEqual(a,b);
-for(const input of ['Eli understands what Nora said.','Eli understands why Nora left.','Eli understands Nora completely.','Eli understands that Nora is conscious.'])assert.equal(plan(input),null);
+for(const input of ['Eli understands why Nora left.','Eli understands Nora completely.','Eli understands that Nora is conscious.'])assert.equal(plan(input),null);
 await assert.rejects(()=>compose('Eli understands Nora.',{interpretation:'reasons'}));
 for(const mutate of [d=>d.criterion='Attention is sufficient',d=>d.content.assertion_commitment='true',d=>d.experiencer.runtime_state=1,d=>d.runtime_state=3,d=>d.scopes.push({operator:'certainty'})]){
  const d=structuredClone(a);mutate(d);const {content_id,content_digest,...body}=d,digest=await canonicalDigest(body);d.content_digest=digest;d.content_id=`EZUND:${digest.slice(0,24)}`;await assert.rejects(()=>validate(d,{allowDraft:true}));
 }
-console.log(`PASS ${count} understanding interpretation contracts; three content readings, temporal/negation scope, runtime, questions, exact references and corrupted semantic rejection. Musical predicate remains pending.`);
+console.log(`PASS ${count} understanding interpretation contracts; three content readings, temporal/negation scope, runtime, questions, exact references and corrupted semantic rejection. Musical predicate is tested separately.`);

@@ -21,14 +21,16 @@ export function understandingInterpretationPlan(input){
  let m=text.match(new RegExp(`^(${REF}) (understands|understand|understood|does not understand|do not understand|did not understand) (.+)$`));
  if(question){const q=text.match(new RegExp(`^([Dd]oes|[Dd]o|[Dd]id) (${REF}) (not )?understand (.+)$`));if(q)m=[q[0],q[2],q[1].toLowerCase()==='did'?(q[3]?'did not understand':'understood'):(q[3]?'does not understand':'understand'),q[4]];}
  if(!m)return null;
- let target=m[3],kind=null;
+ let target=m[3],kind=null,selection;
+ const spoken=target.match(new RegExp(`^what (${REF}) said$`));
  const expressed=target.match(new RegExp(`^(${REF})['’]s communicated content$`));
  const explicit=target.match(new RegExp(`^(${REF})['’]s (reasons|perspective)$`));
- if(expressed){target=expressed[1];kind='communicated_content';}
+ if(spoken){target=spoken[1];kind='communicated_content';selection={channel:'speech',time:'before_speech'};}
+ else if(expressed){target=expressed[1];kind='communicated_content';}
  else if(explicit){target=explicit[1];kind=explicit[2];}
  else if(!new RegExp(`^${REF}$`).test(target))return null;
  const scopes=[];if(/^(understood|did)/.test(m[2]))scopes.push({operator:'time',relation:'before_speech'});if(m[2].includes('not'))scopes.push({operator:'negation'});
- return {profile:'EZUNDERSTANDING-INTERPRETATION-1',status:'draft',experiencer:m[1],anchor:target,runtime_state:runtime,speech_act:question?'question':'assertion',scopes,selected_reading:kind,choices:kind?[]:Object.entries(UNDERSTANDING_READINGS).map(([id,description])=>({id,description})),requires_interpretation:!kind};
+ return {profile:'EZUNDERSTANDING-INTERPRETATION-1',status:'draft',experiencer:m[1],anchor:target,runtime_state:runtime,speech_act:question?'question':'assertion',scopes,selected_reading:kind,...(selection?{selection}:{}),choices:kind?[]:Object.entries(UNDERSTANDING_READINGS).map(([id,description])=>({id,description})),requires_interpretation:!kind};
 }
 const exact=(v,fields)=>v&&typeof v==='object'&&!Array.isArray(v)&&Object.keys(v).length===fields.length&&fields.every(k=>Object.hasOwn(v,k));
 export async function validateUnderstandingContent(document,{allowDraft=false}={}){
@@ -62,7 +64,7 @@ export async function composeUnderstandingContent(input,{allowDraft=false,interp
  if(!Object.hasOwn(UNDERSTANDING_READINGS,kind)||(plan.selected_reading&&interpretation&&plan.selected_reading!==interpretation)){
   const error=new Error('Choose communicated meaning, explanatory reasons, or perspective understanding.');error.code='understanding_interpretation_required';error.plan=plan;throw error;
  }
- const experiencer=await contextualContentReference(plan.experiencer),content=await createContextualContent(kind,await contextualContentReference(plan.anchor),{allowDraft:true});
+ const experiencer=await contextualContentReference(plan.experiencer),content=await createContextualContent(kind,await contextualContentReference(plan.anchor),{allowDraft:true,...(plan.selection?{selection:plan.selection}:{})});
  const body={profile:'EZUNDERSTANDING-CONTENT-1',status:'draft',predicate:'content_comprehension',criterion:UNDERSTANDING_READINGS[kind],experiencer,content,speech_act:plan.speech_act,scopes:plan.scopes,runtime_state:plan.runtime_state},digest=await canonicalDigest(body);
  return validateUnderstandingContent({...body,content_digest:digest,content_id:`EZUND:${digest.slice(0,24)}`},{allowDraft:true});
 }

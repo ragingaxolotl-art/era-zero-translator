@@ -1,3 +1,4 @@
+import {selectedContentEvents,readSelectedContent} from './content_selection.mjs';
 import {canonicalDigest,midiFromScheduledEvents} from './engine.mjs';
 import {UNDERSTANDING_READINGS,validateUnderstandingContent} from './understanding_content.mjs';
 import {foundationPayload,validateFoundations,foundationEvent,foundationPath} from './foundations.mjs';
@@ -13,7 +14,7 @@ export async function understandingMusicEvents(document,authority,{allowDraft=fa
  const doc=await validateUnderstandingContent(document,{allowDraft}),record=await understandingFoundation();
  const formal={performance:{anchor_midi:anchor}},mark=name=>grammarMarker(formal,'understanding',name);
  const refs=async reference=>renderLexicalOccurrences({nodes:[reference],edges:[]},authority,{anchor});
- let events=[mark('role_experiencer_open'),...await refs(doc.experiencer),mark('role_experiencer_close'),mark('role_content_open'),contextualContentMusicEvent(doc.content.content_kind,'open',anchor),...await refs(doc.content.anchor),contextualContentMusicEvent(doc.content.content_kind,'close',anchor),mark('role_content_close'),await foundationEvent(record,{anchor,runtimeState:doc.runtime_state,allowDraft:true})];
+ let events=[mark('role_experiencer_open'),...await refs(doc.experiencer),mark('role_experiencer_close'),mark('role_content_open'),contextualContentMusicEvent(doc.content.content_kind,'open',anchor),...selectedContentEvents(doc.content,await refs(doc.content.anchor),anchor),contextualContentMusicEvent(doc.content.content_kind,'close',anchor),mark('role_content_close'),await foundationEvent(record,{anchor,runtimeState:doc.runtime_state,allowDraft:true})];
  for(const scope of [...doc.scopes].reverse()){
   const key=scope.operator==='negation'?'negation':`time_${scope.relation}`;
   events=[mark(`${key}_open`),...events,mark(`${key}_close`)];
@@ -38,7 +39,7 @@ export async function decodeUnderstandingMidi(bytes,atoms,{allowDraft=false}={})
  const experiencer=reader.role(holder,'experiencer','middle');
  if(content.marker!=='role_content_open'||content.children?.length!==1)fail();
  const frame=content.children[0],kind=Object.keys(UNDERSTANDING_READINGS).find(k=>frame.marker===`content_${k}_open`);if(!kind)fail();
- const reference=reader.reference(frame.children,'middle');
+ const selected=readSelectedContent(frame.children,kind,reader),reference=selected.anchor;
  for(const ref of [experiencer,reference])if(!['phonemic','deictic'].includes(ref.kind)||ref.property||ref.reference_mode==='nominal_class')fail();
- return {profile:'EZUNDERSTANDING-MUSIC-INVERSE-1',status:'draft',speech_act:reader.observed.speech_act,predicate:'content_comprehension',foundation_id:record.foundation_id,runtime_state:head.runtime_state,scopes,experiencer,content:{content_kind:kind,anchor:reference,resolution_scope:'local_context',assertion_commitment:'none'},criterion:UNDERSTANDING_READINGS[kind],limitations:['Contextually selected content is not supplied or verified as a real-world fact.','No original spelling or external referent identity is recovered from phonemes.','Draft comprehension predicate; broader cognitive grammar and canonical admission remain open.']};
+ return {profile:'EZUNDERSTANDING-MUSIC-INVERSE-1',status:'draft',speech_act:reader.observed.speech_act,predicate:'content_comprehension',foundation_id:record.foundation_id,runtime_state:head.runtime_state,scopes,experiencer,content:{content_kind:kind,...selected,resolution_scope:'local_context',assertion_commitment:'none'},criterion:UNDERSTANDING_READINGS[kind],limitations:['Contextually selected content is not supplied or verified as a real-world fact.','No original spelling or external referent identity is recovered from phonemes.','Draft comprehension predicate; broader cognitive grammar and canonical admission remain open.']};
 }

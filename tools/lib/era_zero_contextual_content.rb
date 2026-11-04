@@ -14,9 +14,12 @@ module EraZeroContextualContent
   end
   def validate!(document, allow_draft: false)
     raise ArgumentError, 'Contextual content requires draft opt-in' unless allow_draft
-    exact!(document, %w[profile status content_kind anchor resolution_scope assertion_commitment content_id content_digest])
+    exact!(document, %w[profile status content_kind anchor resolution_scope assertion_commitment content_id content_digest]+(document.key?('selection') ? ['selection'] : []))
     unless document['profile']=='EZCONTEXTUAL-CONTENT-1' && document['status']=='draft' && KINDS.include?(document['content_kind']) && document['resolution_scope']=='local_context' && document['assertion_commitment']=='none'
       raise ArgumentError, 'Invalid contextual content contract'
+    end
+    if document.key?('selection')
+      raise ArgumentError, 'Invalid content source selection' unless document['content_kind']=='communicated_content' && document['selection']=={'channel'=>'speech','time'=>'before_speech'}
     end
     r=document['anchor']
     raise ArgumentError, 'Invalid content anchor' unless r.is_a?(Hash) && r['node_id']=='anchor' && r['value_type']=='entity'
@@ -59,11 +62,20 @@ module EraZeroContextualContent
     raise ArgumentError, 'Invalid contextual frame' unless code && %w[open close].include?(side) && anchor.is_a?(Integer) && anchor.between?(34,93)
     {'kind'=>'grammar_marker','grammar_profile'=>'EZCONTEXTUAL-CONTENT-MUSIC-1','marker'=>"content_#{kind}_#{side}",'register'=>'middle','base_midi'=>anchor,'family_opening_absolute_midi'=>[],'address_absolute_midi'=>[0,side=='open' ? -34 : 34,code,0].map{|n|anchor+n},'note_duration_beats'=>0.25,'boundary_after_beats'=>0.5}
   end
+  def selected_events(document, refs, anchor)
+    return refs unless document.key?('selection')
+    raise ArgumentError, 'Invalid content source selection' unless document['content_kind']=='communicated_content' && document['selection']=={'channel'=>'speech','time'=>'before_speech'} && anchor.is_a?(Integer) && anchor.between?(35,92)
+    marker=lambda do |side|
+      {'kind'=>'grammar_marker','grammar_profile'=>'EZCONTENT-SELECTION-1','marker'=>"spoken_source_#{side}",'register'=>'middle','base_midi'=>anchor,'family_opening_absolute_midi'=>[],'address_absolute_midi'=>[0,side=='open' ? -35 : 35,0,0].map{|n|anchor+n},'note_duration_beats'=>0.25,'boundary_after_beats'=>0.5}
+    end
+    formal={'performance'=>{'anchor_midi'=>anchor}}
+    [marker.call('open'),EraZeroPresentation.grammar_marker(formal,'content-source','time_before_speech_open')]+refs+[EraZeroPresentation.grammar_marker(formal,'content-source','time_before_speech_close'),marker.call('close')]
+  end
   def midi(document, anchor_midi: 60, allow_draft: false)
     validate!(document, allow_draft: allow_draft)
     kind=document['content_kind']
     opening=event(kind,'open',anchor_midi)
     refs=EraZeroRenderer.occurrence_events(document['anchor'],{'nodes'=>[document['anchor']],'edges'=>[]},{},{},anchor_midi,'middle')
-    EraZeroPresentation.midi_from_scheduled_events([opening]+refs+[event(kind,'close',anchor_midi)],anchor_midi,[0,0])
+    EraZeroPresentation.midi_from_scheduled_events([opening]+selected_events(document,refs,anchor_midi)+[event(kind,'close',anchor_midi)],anchor_midi,[0,0])
   end
 end

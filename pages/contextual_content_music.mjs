@@ -1,3 +1,4 @@
+import {selectedContentEvents,readSelectedContent} from './content_selection.mjs';
 // Draft contextual selectors. These select content; they do not assert a
 // communication, a true answer, understanding, empathy, or successful learning.
 import {midiFromScheduledEvents} from './engine.mjs';
@@ -9,9 +10,8 @@ export function readContextualContentMusic(bytes,atoms,{allowDraft=false}={}){
  const reader=strictSemanticReader(bytes,atoms,'Malformed contextual content music.',{allowDraftContextualContent:true}),tree=reader.readTree();
  const kind=CONTEXTUAL_CONTENT_KINDS.find(k=>tree[0]?.marker===`content_${k}_open`);
  if(reader.observed.speech_act!=='assertion'||tree.length!==1||!kind)throw new Error('Expected one contextual selector and neutral termination.');
- const reference=reader.reference(tree[0].children,'middle');
- if(reference.kind==='lexical'||reference.property||reference.reference_mode==='nominal_class')throw new Error('Contextual selector requires a singular entity reference.');
- return {profile:'EZCONTEXTUAL-CONTENT-MUSIC-1',status:'draft',content_kind:kind,anchor:reference,resolution_scope:'local_context',assertion_commitment:'none',limitations:['Context selects the content; no particular proposition, answer, explanation or experience is supplied.','Phonemes do not prove external identity. Multiple contents associated with the same anchor require further contextual resolution.','No matrix cognitive predicate or successful acquisition is asserted.']};
+ const reference=readSelectedContent(tree[0].children,kind,reader);
+ return {profile:'EZCONTEXTUAL-CONTENT-MUSIC-1',status:'draft',content_kind:kind,...reference,resolution_scope:'local_context',assertion_commitment:'none',limitations:['Context selects the content; no particular proposition, answer, explanation or experience is supplied.','Phonemes do not prove external identity. Multiple contents associated with the same anchor require further contextual resolution.','No matrix cognitive predicate or successful acquisition is asserted.']};
 }
 export function midiFromContextualContent(kind,referenceEvents,atoms,{allowDraft=false,anchor=60}={}){
  if(!allowDraft)throw new Error('Contextual content requires explicit draft opt-in.');
@@ -28,5 +28,5 @@ export async function midiFromContextualContentDocument(document,authority,{allo
  const {renderLexicalOccurrences}=await import('./bound_compounds.mjs');
  const checked=await validateContextualContent(document,{allowDraft});
  const events=await renderLexicalOccurrences({nodes:[checked.anchor],edges:[]},authority,{anchor});
- return midiFromContextualContent(checked.content_kind,events,authority.atoms,{allowDraft,anchor});
+ return midiFromContextualContent(checked.content_kind,selectedContentEvents(checked,events,anchor),authority.atoms,{allowDraft,anchor});
 }

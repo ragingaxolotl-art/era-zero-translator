@@ -38,7 +38,7 @@ module EraZeroUnderstanding
     marker=lambda{|name|EraZeroPresentation.grammar_marker(formal,'understanding',name)}
     reference=lambda{|r|EraZeroRenderer.occurrence_events(r,{'nodes'=>[r],'edges'=>[]},{},{},anchor_midi,'middle')}
     kind=document['content']['content_kind']
-    notes=[marker.call('role_experiencer_open')]+reference.call(document['experiencer'])+[marker.call('role_experiencer_close'),marker.call('role_content_open'),EraZeroContextualContent.event(kind,'open',anchor_midi)]+reference.call(document['content']['anchor'])+[EraZeroContextualContent.event(kind,'close',anchor_midi),marker.call('role_content_close'),EraZeroFoundations.event(foundation,anchor:anchor_midi,runtime_state:document['runtime_state'],allow_draft:true)]
+    notes=[marker.call('role_experiencer_open')]+reference.call(document['experiencer'])+[marker.call('role_experiencer_close'),marker.call('role_content_open'),EraZeroContextualContent.event(kind,'open',anchor_midi)]+EraZeroContextualContent.selected_events(document['content'],reference.call(document['content']['anchor']),anchor_midi)+[EraZeroContextualContent.event(kind,'close',anchor_midi),marker.call('role_content_close'),EraZeroFoundations.event(foundation,anchor:anchor_midi,runtime_state:document['runtime_state'],allow_draft:true)]
     document['scopes'].reverse_each do |scope|
       key=scope['operator']=='negation' ? 'negation' : "time_#{scope['relation']}"
       notes=[marker.call(key+'_open')]+notes+[marker.call(key+'_close')]

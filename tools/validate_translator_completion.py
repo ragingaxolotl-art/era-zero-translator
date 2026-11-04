@@ -34,7 +34,7 @@ commands = [['ruby', path] for path in [
 ]]
 if args.include_acoustic:
     commands += [[sys.executable, 'tests/acoustic_low_pitch_test.py']]
-    commands += [[args.node, path] for path in ['tests/acoustic_transport_test.mjs', 'tests/cognitive_acoustic_test.mjs', 'tests/understanding_acoustic_test.mjs']]
+    commands += [[args.node, path] for path in ['tests/acoustic_transport_test.mjs', 'tests/cognitive_acoustic_test.mjs', 'tests/understanding_acoustic_test.mjs', 'tests/understanding_spoken_content_test.mjs']]
 started_at = datetime.now(timezone.utc).isoformat()
 tested_revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
 initial_worktree_status = subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT, text=True).strip()
