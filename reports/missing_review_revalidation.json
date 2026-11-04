@@ -1,7 +1,7 @@
 {
   "scope": "Missing root-review citations in available local Git history, plus fresh reusable packet checks. Not full source reconciliation.",
   "observed_date": "2026-11-04",
-  "implementation_revision": "4d7be3d64db87b88ae18d80f62e455c538294059",
+  "implementation_revision": "5ef377d376fbea8f93337cb825dc8cebfb47b56f",
   "shallow_repository": "false",
   "root_inventory_sha256": "8663e78a20f7badd76e26ac1ea1f359c843dbac96041895801672d8144ee46ea",
   "missing_paths": 47,
@@ -257,9 +257,9 @@
         "reports/packet_revalidation_2026_11_04/MAT_000_022.md"
       ],
       "exit_code": 1,
-      "output": "MAT:000\u2013022: FAIL\nMode: canonical; checks passed: 16; checks failed: 2\nCandidates: 36; score assertions: 360; stress tests: 75\nfixed generated fields: all packet fields match the immutable address algorithms\nexample coverage: every root has at least six ordinary, technical, compound, or counterexamples\n",
+      "output": "MAT:000\u2013022: FAIL\nMode: canonical; checks passed: 17; checks failed: 1\nCandidates: 36; score assertions: 360; stress tests: 75\nexample coverage: every root has at least six ordinary, technical, compound, or counterexamples\n",
       "current_report": "reports/packet_revalidation_2026_11_04/MAT_000_022.md",
-      "report_sha256": "88adc81f4e31470243cc5a503cdc4f93719e46e5b56f78c97dad437aa0ba8346"
+      "report_sha256": "785302e9cf60bc0732aa5a742c78104212dc899d460fdaf96bd5b11a669497e8"
     },
     {
       "missing_citation": "reviews/MAT_100_122_validation.md",
@@ -369,9 +369,9 @@
         "reports/packet_revalidation_2026_11_04/MOV_200_222.md"
       ],
       "exit_code": 1,
-      "output": "MOV:200\u2013222: FAIL\nMode: canonical; checks passed: 15; checks failed: 3\nCandidates: 36; score assertions: 324; stress tests: 45\nfixed generated fields: all packet fields match the immutable address algorithms\ncross-family collision audit: every root distinguishes all eleven competing families\nexample coverage: every root has at least six ordinary, technical, compound, or counterexamples\n",
+      "output": "MOV:200\u2013222: FAIL\nMode: canonical; checks passed: 16; checks failed: 2\nCandidates: 36; score assertions: 324; stress tests: 45\ncross-family collision audit: every root distinguishes all eleven competing families\nexample coverage: every root has at least six ordinary, technical, compound, or counterexamples\n",
       "current_report": "reports/packet_revalidation_2026_11_04/MOV_200_222.md",
-      "report_sha256": "2183d80805b15c25a8481b06fec473b848b49f054418c2f805e7aa92e3036979"
+      "report_sha256": "88bc060595ab94e6d20c02dbbe3d985707f5fa0624dfb20cc49fb6548c3ef191"
     },
     {
       "missing_citation": "reviews/ORI_000_022_soundness_audit.md",

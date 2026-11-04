@@ -169,8 +169,10 @@ checks.add("fixed generated fields", "all packet fields match the immutable addr
              atom = atoms.fetch(id)
              scored_root = scored_roots.find { |root| root.fetch("canonical_id") == id }
              spec_root = recommended_roots.find { |root| root_id.call(root) == id }
-             scored_root.fetch("fixed_generated_fields") == EraZeroValidation.packet_fixed_projection(atom) &&
-               fixed_fields.call(spec_root) == EraZeroValidation.packet_fixed_projection(atom)
+             required = EraZeroValidation.packet_fixed_projection(atom)
+             optional = atom.slice("family", "address", "family_onset")
+             EraZeroPacketEvidence.fixed_fields?(scored_root.fetch("fixed_generated_fields"), required, optional) &&
+               EraZeroPacketEvidence.fixed_fields?(fixed_fields.call(spec_root), required, optional)
            end)
 
 checks.add("invariant specifications", "all roots have one nonempty title and invariant definition",

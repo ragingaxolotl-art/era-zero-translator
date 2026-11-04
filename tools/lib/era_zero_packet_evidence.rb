@@ -10,4 +10,12 @@ module EraZeroPacketEvidence
     value = values.first
     value.is_a?(String) && !value.strip.empty? ? value : nil
   end
+
+  def fixed_fields?(record, required, optional)
+    return false unless record.is_a?(Hash)
+    allowed = required.merge(optional)
+    (record.keys - allowed.keys).empty? &&
+      required.all? { |key, value| record.key?(key) && record[key] == value } &&
+      record.all? { |key, value| allowed[key] == value }
+  end
 end

@@ -49,3 +49,13 @@ MIN:0xx/1xx/2xx). MAT:0xx and MOV:2xx fail generated-field/example checks, with
 MOV:2xx also failing collision coverage. Legacy field shapes may account for
 some of these remaining failures; inspect the specific fields before treating
 them as semantic discrepancies. All 47 historical citations remain missing.
+
+### Generated-field follow-up
+
+MAT:0xx and MOV:2xx include correct `family`, `address` and `family_onset`
+metadata in their fixed fields. The validator now verifies these optional fields
+against the root rather than rejecting their presence. Required fields remain
+mandatory, and incorrect or unknown extra fields fail. Their remaining failures
+are example count (five versus the validator's six) and, for MOV:2xx, only eight
+of eleven cross-family comparisons. These are recorded review-coverage gaps,
+not demonstrated changes in their generated sounds.
