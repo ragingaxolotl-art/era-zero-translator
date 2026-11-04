@@ -1,3 +1,4 @@
+import {subjectControlEvent} from './subject_control.mjs';
 import {validateFoundationIR} from './foundation_ir.mjs';
 import {foundationEvent} from './foundations.mjs';
 import {canonicalDigest,deepSort} from './engine.mjs';
@@ -73,6 +74,7 @@ export async function renderLexicalOccurrences(ir,authority,{anchor=60,maxEvents
   const id=node.node_id;
   if(ancestors.includes(id)||ancestors.length>=64)fail('cyclic or excessively deep participant binding');
   if(!Object.hasOwn(OFFSETS,register))fail('unknown register');
+  if(node.kind==='reference')return count([subjectControlEvent(node,anchor)]);
   if(['phonemic_reference','deictic_reference'].includes(node.kind))return reference(node,register);
   if(node.kind!=='lexical_occurrence')fail('participant is not renderable');
   const state=node.runtime_state?.code;if(![0,1,2].includes(state))fail('invalid runtime state');
@@ -137,7 +139,7 @@ export async function renderLexicalOccurrences(ir,authority,{anchor=60,maxEvents
   if(previousBoundary!==undefined)result.at(-1).boundary_after_beats=previousBoundary;
   return result;
  }
- const lexical=ir.nodes.filter(n=>['lexical_occurrence','phonemic_reference','deictic_reference'].includes(n.kind));
+ const lexical=ir.nodes.filter(n=>['lexical_occurrence','phonemic_reference','deictic_reference','reference'].includes(n.kind));
  const boundIds=new Set(lexical.flatMap(n=>(n.compound_bindings||[]).map(b=>b.argument_id))),independent=new Set(ir.edges.map(e=>e.from)),events=[];
  for(const node of lexical.slice().sort((a,b)=>a.node_id<b.node_id?-1:a.node_id>b.node_id?1:0)){
   if(boundIds.has(node.node_id)&&!independent.has(node.node_id))continue;
@@ -151,6 +153,7 @@ export function lexicalGloss(events,authority){
  const atoms=new Map(authority.atoms.map(a=>[a.canonical_id,a]));
  return events.map(event=>{
   const id=event.occurrence_id;
+  if(event.kind==='discourse_reference')return `${id}:reference(desire_subject)`;
   if(event.kind==='grammar_marker')return `${id}:${event.marker}`;
   if(event.kind==='reference_marker')return `${id}:reference(${event.reference_mode})`;
   if(event.kind==='deictic_reference')return `${id}:reference(${event.deictic_role})`;

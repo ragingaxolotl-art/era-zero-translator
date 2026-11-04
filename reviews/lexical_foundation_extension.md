@@ -170,3 +170,26 @@ the same scopes from MIDI alone. No tense is encoded as runtime 0 or 2.
 Carrier alignment validation covers both candidates across 72 performances; all
 syllables use the existing inventory, and the 5,370 canonical viseme variants still
 pass. This supersedes the neutral-mouth preview workaround documented above.
+
+### Desire subject control
+
+“I want to care for Nora,” “Nora wants to care for Eli,” and the corresponding
+negative/question forms now bind the embedded caregiver to the desire holder.
+This uses the existing semantic-IR reference/corefers_with mechanism, with an exact
+declared referent and a validated link to the immediate desire's experiencer.
+Equal name labels alone never create this link. The supported construction is
+currently care; other infinitive meanings still require their own validated route.
+
+An audible `EZCONTROL:desire_subject` pointer uses `[0,-25,0,0]` at quarter beats,
+inside the embedded actor role. It denotes the immediately enclosing desire's
+experiencer, not an arbitrary earlier name. Both renderers validate the enclosing
+content, exact target identity and actor role. The MIDI-only inverse recovers the
+binding even when the outer holder is sounded later. This new candidate grammar
+frame remains subject to the same listening review as the other extension frames.
+
+Eighteen subject-control/runtime/question/negation cases match complete Ruby and
+browser formals/MIDI and recover the binding independently from MIDI. Invalid
+identity links reject in both validators. Sound/animation preserves all notes and
+bundle exports retain the declared identity. Existing ordinary deictic reference,
+unsupported-scope and 39 candidate-English checks pass. A separately named embedded
+subject produces a different musical reference and does not imply shared identity.

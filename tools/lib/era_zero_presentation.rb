@@ -104,10 +104,11 @@ module EraZeroPresentation
   def scheduled_lexical_events(formal, max_events: 100_000)
     events = frame_bound_arguments(formal, max_events)
     ir = formal.fetch("semantic_ir")
+    EraZeroSubjectControl.validate!(ir)
     ir.fetch("nodes").each do |node|
       raise PresentationError, "unsupported musical property comparison" if node["kind"] == "scope_operator" && node["operator"] == "comparison" && !EraZeroSemanticValidation.valid_property_comparison?(node, ir)
       raise PresentationError, "unsupported musical aspect" if node["operator"] == "aspect" && (!ASPECTS.include?(node["aspect"]) || !(node.keys - %w[node_id kind operator aspect]).empty?)
-      raise PresentationError, "unsupported musical discourse variable/reference" if %w[variable reference].include?(node["kind"])
+      raise PresentationError, "unsupported musical discourse variable/reference" if node["kind"] == "variable" || (node["kind"] == "reference" && node["reference_type"] != "desire_subject")
       if (node["kind"] == "scope_operator" && !%w[negation repetition modality quantifier comparison aspect].include?(node["operator"])) ||
          (node["kind"] == "coordination" && !%w[sequence all_of any_of exactly_one].include?(node["operator"]))
         raise PresentationError, "unsupported musical operator: #{node['operator']}"
@@ -205,7 +206,7 @@ module EraZeroPresentation
                    coordinated << grammar_marker(formal, id, "coord_#{node['operator']}_close")
                    coordinated
                  end
-               when "lexical_occurrence", "phonemic_reference", "deictic_reference"
+               when "lexical_occurrence", "phonemic_reference", "deictic_reference", "reference"
                  arguments = edges.select { |edge| %w[fills_role qualifies].include?(edge["type"]) }
                  seen_arguments = {}
                  arguments.sort_by { |edge| edge.fetch("edge_id") }.flat_map do |edge|

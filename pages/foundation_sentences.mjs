@@ -44,7 +44,9 @@ export async function composeFoundationSentence(input,authority,records,loadTemp
   ir.nodes.push(await reference(parsed.target,'preferred',true),await reference(parsed.standard,'standard',true));
   for(const [id,role] of [['preferred','target'],['standard','comparison_standard']])ir.edges.push({edge_id:id,type:'fills_role',from:id,to:'p',role});
  }else{
-  const infinitive=parsed.content.match(new RegExp(`^(${HOLDER}) to care for (.+)$`));
+  const controlled=parsed.content.match(/^to care for (.+)$/);
+  const desiredText=controlled?`${parsed.holder} to care for ${controlled[1]}`:parsed.content;
+  const infinitive=desiredText.match(new RegExp(`^(${HOLDER}) to care for (.+)$`));
   const content=infinitive?`${infinitive[1]} ${/^(?:I|[Yy]ou)$/.test(infinitive[1])?'care':'cares'} for ${infinitive[2]}`:parsed.content;
   const inner=parseNamedSentence(content);
   if(!inner||inner.speechAct==='question'||inner.speechAct==='command')throw new Error('Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else.');
@@ -53,6 +55,14 @@ export async function composeFoundationSentence(input,authority,records,loadTemp
   for(const n of source.nodes){const copy=structuredClone(n);copy.node_id='desired:'+n.node_id;if(copy.compound_bindings)copy.compound_bindings=copy.compound_bindings.map(b=>({...b,argument_id:'desired:'+b.argument_id}));if(n.node_id===source.root_clause)Object.assign(copy,{clause_type:'content',content_status:'intensional',value_type:'proposition'});ir.nodes.push(copy);}
   for(const e of source.edges)ir.edges.push({...e,edge_id:'desired:'+e.edge_id,from:'desired:'+e.from,to:'desired:'+e.to});
   ir.edges.push({edge_id:'content',type:'fills_role',from:'desired:'+source.root_clause,to:'p',role:'content'});
+  if(controlled){
+   const actor=ir.nodes.find(n=>n.node_id==='desired:a'),holder=ir.nodes.find(n=>n.node_id==='holder');
+   if(!actor)throw new Error('Missing controlled subject.');
+   ir.nodes[ir.nodes.indexOf(actor)]={node_id:actor.node_id,kind:'reference',reference_type:'desire_subject',referent_id:holder.referent_id,value_type:'entity'};
+   ir.discourse_constraints.declared_referents=[holder.referent_id];
+   ir.edges.push({edge_id:'subject_identity',type:'corefers_with',from:actor.node_id,to:'holder'});
+  }
+
  }
  if(parsed.negated){ir.nodes.push({node_id:'neg',kind:'scope_operator',operator:'negation'});ir.edges[0].from='neg';ir.edges.push({edge_id:'neg',type:'scopes',from:'p',to:'neg'});}
  if(parsed.calendarDay!==undefined){

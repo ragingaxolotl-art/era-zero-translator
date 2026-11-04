@@ -1,3 +1,4 @@
+import {validateSubjectControl} from './subject_control.mjs';
 // Typed argument and intensional-content validation for the opt-in EZFOUND-1 profile.
 // This supplements (and does not replace) the ordinary semantic IR validator.
 import {validateFoundations} from './foundations.mjs';
@@ -15,6 +16,7 @@ export async function validateFoundationIR(input, records, {allowDraft=false}={}
   if(!e||typeof e.edge_id!=='string'||!e.edge_id||edgeIds.has(e.edge_id)||!nodes.has(e.from)||!nodes.has(e.to))throw new Error('Invalid or duplicate edge.');
   edgeIds.add(e.edge_id);
  }
+ validateSubjectControl(ir);
  const definitions=new Map(registry.map(r=>[r.foundation_id,r]));
  const foundations=ir.nodes.filter(n=>n.target_type==='foundation');
  const content=ir.nodes.filter(n=>n.kind==='clause'&&(n.clause_type==='content'||Object.hasOwn(n,'content_status')));

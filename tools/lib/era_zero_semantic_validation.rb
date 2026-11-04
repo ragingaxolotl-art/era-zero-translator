@@ -49,7 +49,7 @@ module EraZeroSemanticValidation
     return ["invalid_serialization"] if ir.key?("serialization") && !ir["serialization"].is_a?(Hash)
     return ["invalid_discourse_constraints"] if ir.key?("discourse_constraints") && !ir["discourse_constraints"].is_a?(Hash)
     begin
-      if !foundation_records.empty? || ir["nodes"].any? { |n| n["target_type"] == "foundation" || n["clause_type"] == "content" || n.key?("content_status") }
+      if !foundation_records.empty? || ir["nodes"].any? { |n| n["target_type"] == "foundation" || n["clause_type"] == "content" || n.key?("content_status") || n["reference_type"] == "desire_subject" }
         EraZeroFoundationIR.validate!(ir, foundation_records, allow_draft: allow_draft_foundations)
       end
     rescue ArgumentError, KeyError, TypeError

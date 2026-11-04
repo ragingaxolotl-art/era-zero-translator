@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 require_relative 'era_zero_foundations'
+require_relative 'era_zero_subject_control'
 module EraZeroFoundationIR
   module_function
   def argument_type(n)
@@ -13,6 +14,7 @@ module EraZeroFoundationIR
     nodes=ir.fetch('nodes'); edges=ir.fetch('edges'); map=nodes.to_h{|n|[n.fetch('node_id'),n]}
     raise ArgumentError,'Duplicate nodes or edges.' unless map.length==nodes.length && edges.map{|e|e['edge_id']}.uniq.length==edges.length
     raise ArgumentError,'Unknown edge endpoint.' unless edges.all?{|e|map.key?(e['from'])&&map.key?(e['to'])}
+    EraZeroSubjectControl.validate!(ir)
     definitions=records.to_h{|r|[r['foundation_id'],r]}
     foundations=nodes.select{|n|n['target_type']=='foundation'}
     foundations.each do |n|

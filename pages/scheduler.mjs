@@ -1,3 +1,4 @@
+import {validateSubjectControl} from './subject_control.mjs';
 const ASPECTS=['bounded','ongoing','habitual'];
 const PROPERTY_COMPARISONS=['equal','greater_than','less_than','at_least','at_most','not_equal'];
 const MEASURE_COMPARISONS=['greater_than','less_than','at_least','at_most','not_equal'];
@@ -10,13 +11,14 @@ const MODAL_MODES = ['possible','necessary','permitted','obligated','intended','
 export function scheduledLexicalEvents(formal, maxEvents = 100000) {
   const events = frameBoundArguments(formal, maxEvents);
   const ir = formal.semantic_ir;
+  validateSubjectControl(ir);
   for (const node of ir.nodes) {
     if(node.kind==='scope_operator'&&node.operator==='comparison')validatePropertyComparison(node,ir);
     if(node.kind==='scope_operator'&&node.operator==='aspect'){
       const scoped=ir.edges.filter(e=>e.type==='scopes'&&e.to===node.node_id);
       if(!ASPECTS.includes(node.aspect)||Object.keys(node).some(k=>!['node_id','kind','operator','aspect'].includes(k))||scoped.length!==1||!['lexical_occurrence','clause','scope_operator','coordination'].includes(ir.nodes.find(n=>n.node_id===scoped[0]?.from)?.kind))throw new Error('Unsupported musical aspect.');
     }
-    if(['variable','reference'].includes(node.kind))throw new Error('Unsupported musical discourse variable/reference.');
+    if(node.kind==='variable'||(node.kind==='reference'&&node.reference_type!=='desire_subject'))throw new Error('Unsupported musical discourse variable/reference.');
     if ((node.kind === 'scope_operator' && !['negation','repetition','modality','quantifier','comparison','aspect'].includes(node.operator)) ||
         (node.kind === 'coordination' && !['sequence','all_of','any_of','exactly_one'].includes(node.operator)))
       throw new Error(`Unsupported musical operator: ${node.operator}.`);
@@ -93,7 +95,7 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
         });
         result.push(grammarMarker(formal,id,`coord_${node.operator}_close`));
       }
-    } else if (['lexical_occurrence','phonemic_reference','deictic_reference'].includes(node.kind)) {
+    } else if (['lexical_occurrence','phonemic_reference','deictic_reference','reference'].includes(node.kind)) {
       const argumentsInOrder=edges.filter(edge=>['fills_role','qualifies'].includes(edge.type)).sort((a,b)=>a.edge_id<b.edge_id?-1:a.edge_id>b.edge_id?1:0),seenArguments=new Map();
       result=argumentsInOrder.flatMap(edge=>{
         if(edge.type!=='fills_role')return walk(edge.from);

@@ -135,6 +135,7 @@ module EraZeroRenderer
     id = node.fetch("node_id")
     raise RenderError, "cyclic compound participant binding" if ancestors.include?(id)
     raise RenderError, "participant binding depth exceeds 64" if ancestors.length >= 64
+    return [EraZeroSubjectControl.event(node, anchor_midi)] if node["kind"] == "reference"
     if node["kind"] == "deictic_reference"
       role = node.fetch("deictic_role")
       relative = { "speaker" => [0, 12, -1, 0], "addressee" => [0, 12, 1, 0] }.fetch(role)
@@ -231,7 +232,7 @@ module EraZeroRenderer
       payload = if component["kind"] == "slot"
         binding = bindings.fetch(component.fetch("path"))
         argument = arguments.fetch(binding.fetch("argument_id"))
-        raise RenderError, "bound participant must be a renderable occurrence" unless %w[lexical_occurrence phonemic_reference deictic_reference].include?(argument["kind"])
+        raise RenderError, "bound participant must be a renderable occurrence" unless %w[lexical_occurrence phonemic_reference deictic_reference reference].include?(argument["kind"])
         role_register = ROLE_REGISTERS.fetch(binding.fetch("role"), "middle")
         occurrence_events(argument, ir, atoms, compounds, anchor_midi, role_register, ancestors + [id], foundations: foundations, allow_draft_foundations: allow_draft_foundations).map do |event|
           event.merge("occurrence_id" => id, "argument_node_id" => argument.fetch("node_id"),
@@ -259,7 +260,7 @@ module EraZeroRenderer
     end
     result.last["boundary_after_beats"] = previous_boundary unless previous_boundary.nil?
     result
-  rescue EraZeroCompoundExpansion::ExpansionError, EraZeroNames::NameError, KeyError => error
+  rescue EraZeroCompoundExpansion::ExpansionError, EraZeroNames::NameError, KeyError, ArgumentError => error
     raise RenderError, error.message
   end
 
@@ -275,7 +276,7 @@ module EraZeroRenderer
     speech_act = ir.fetch("speech_act")
     contour = CONTOURS.fetch(speech_act) { raise RenderError, "unknown speech act #{speech_act}" }
     lexical_events = []
-    lexical_nodes = ir.fetch("nodes").select { |node| %w[lexical_occurrence phonemic_reference deictic_reference].include?(node["kind"]) }
+    lexical_nodes = ir.fetch("nodes").select { |node| %w[lexical_occurrence phonemic_reference deictic_reference reference].include?(node["kind"]) }
     bound_ids = lexical_nodes.flat_map { |node| node.fetch("compound_bindings", []).map { |binding| binding.fetch("argument_id") } }.to_set
     independent_ids = ir.fetch("edges").map { |edge| edge["from"] }.to_set
     lexical_nodes.sort_by { |node| node["node_id"] }.each do |node|
@@ -313,6 +314,7 @@ module EraZeroRenderer
     formal_digest = Digest::SHA256.hexdigest(JSON.generate(EraZeroValidation.deep_sort({ "semantic_digest" => digest, "relative_plan" => relative_plan })))
     gloss_parts = lexical_events.map do |event|
       next "#{event['occurrence_id']}:#{event['marker']}" if event["kind"] == "grammar_marker"
+      next "#{event['occurrence_id']}:reference(desire_subject)" if event["kind"] == "discourse_reference"
       next "#{event['occurrence_id']}:reference(#{event['reference_mode']})" if event["kind"] == "reference_marker"
       next "#{event['occurrence_id']}:reference(#{event['deictic_role']})" if event["kind"] == "deictic_reference"
       next "#{event['occurrence_id']}:name(#{event['label']})" if event["kind"] == "phonemic_label"

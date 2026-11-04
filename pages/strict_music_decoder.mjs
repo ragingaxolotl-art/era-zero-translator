@@ -13,6 +13,7 @@ const equal=(a,b)=>a.length===b.length&&a.every((n,i)=>n===b[i]);
 const fail=message=>{throw new Error(`Strict music inverse: ${message}`)};
 const frames=[];
 const frame=(marker,path)=>frames.push({marker,path});
+frame('desire_subject_reference',[0,-25,0,0]);
 for(const side of ['open','close']){
  const sign=side==='open'?-1:1;
  frame(`proposition_content_${side}`,[0,sign*24,0,0]);

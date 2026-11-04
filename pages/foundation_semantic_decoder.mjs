@@ -9,7 +9,7 @@ export async function decodeFoundationSentenceMidi(bytes,atoms,records,{allowDra
  const fail=()=>{throw new Error('Unsupported or malformed foundation sentence music.');};
  const {observed,readTree,reference}=strictSemanticReader(bytes,dictionary,'Malformed foundation sentence framing.');
  const registers={actor:'low',target:'high',experiencer:'middle',comparison_standard:'middle',content:'middle'};
- function proposition(children,depth=0){
+ function proposition(children,depth=0,parent=null){
   if(depth>32)fail();const scopes=[];
   while(children.length===1&&children[0].kind==='grammar'){
    const n=children[0],m=n.marker;let scope;
@@ -30,7 +30,10 @@ export async function decodeFoundationSentenceMidi(bytes,atoms,records,{allowDra
    if(!role||!Object.hasOwn(required,role)||Object.hasOwn(args,role)||!frame.children)fail();
    let value;
    if(frame.children.length===1&&frame.children[0].marker==='proposition_content_open'){
-    value={type:'proposition',content_status:'intensional',proposition:proposition(frame.children[0].children,depth+1)};
+    value={type:'proposition',content_status:'intensional',proposition:proposition(frame.children[0].children,depth+1,d)};
+   }else if(frame.children.length===1&&frame.children[0].marker==='desire_subject_reference'){
+    if(parent?.sound_code!==0||role!=='actor'||head.root_id!=='LIF:211')fail();
+    value={type:'entity',reference:{kind:'bound',binding:'parent_desire_experiencer'}};
    }else{
     const ref=reference(frame.children,registers[role]);
     if(!['phonemic','deictic'].includes(ref.kind))fail();
