@@ -80,10 +80,11 @@ function showClauseInterpretations(input,plan){
       const texture=dimension==='surface_texture',mass=dimension==='mass',luminance=dimension==='luminance',propertyLabel=texture?'surface texture':luminance?'luminance':mass?'mass':'temperature';
       const note=document.createElement('p');note.textContent=`For “${parsed.adjective}”, select the physical ${propertyLabel} meaning. Contextual standards stay local to this clause; no shared numerical cutoff is inferred.`;section.append(note);
       if(!parsed.nominalProperty)standardMode=select(section,`Clause ${index+1} standard type`,texture?[['contextual','Physical texture at the contextual surface region and scale']]:[['numeric','Numerical threshold'],['contextual','Contextual standard; no number']]);
+      if(!texture){
       const label=document.createElement('label');label.textContent=`Clause ${index+1} ${propertyLabel} threshold`;threshold=document.createElement('input');threshold.type='text';threshold.inputMode='decimal';threshold.maxLength=1000;threshold.placeholder='Enter your numerical threshold';label.append(threshold);section.append(label);
       scale=select(section,`Clause ${index+1} ${luminance?'luminance unit':mass?'mass unit':'temperature scale'}`,luminance?[['candela_per_square_meter','Candelas per square metre (cd/m²)']]:mass?[['kilogram','Kilograms'],['gram','Grams']]:[['celsius','Degrees Celsius'],['kelvin','Kelvins']]);
-      if(texture){label.hidden=true;scale.parentElement.hidden=true;threshold.disabled=scale.disabled=true;}
       if(standardMode)standardMode.addEventListener('change',()=>{threshold.disabled=scale.disabled=standardMode.value==='contextual'});
+      }
     }else if(parsed.requiredInterpretation==='future_assertion')interpretation=select(section,`Clause ${index+1} future meaning`,[['','Choose a future meaning'],['future_assertion','Future statement; no promise or intention added']]);
     if(!view&&!destination&&!property&&!interpretation){const note=document.createElement('p');note.textContent='No additional interpretation choice is needed for this clause.';section.append(note)}
     read.push(()=>({...view?{viewpoint:view.value}:{},...destination?{destination:destination.value}:{},...property?{interpretation:parsed.requiredInterpretation,standard:standardMode?.value==='contextual'?{kind:'contextual',dimension}:{dimension,threshold:threshold.value.trim(),scale:scale.value}}:interpretation?{interpretation:interpretation.value}:{}}));

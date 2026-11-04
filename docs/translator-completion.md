@@ -30,6 +30,12 @@ texture measurements, noun modifiers and shared-standard comparisons remain open
 The targeted 48-adjective suite includes rough/smooth and checks Ruby/MIDI inverse
 parity; the full 111-check baseline predates both texture additions.
 
+The mixed texture/luminance UI test now executes the actual clause-selection
+handler, verifies separate physical contexts, and rejects results after input or
+panel replacement. Texture clauses no longer construct unused numerical or
+temperature-scale controls. Existing multi-clause and 48-adjective targeted checks
+pass. These handler tests are not live-browser layout or listening validation.
+
 [Preference between propositions](../reviews/preference_propositions.md) now
 connects explicit finite alternatives to the existing candidate preference roles.
 Separate subjects, intensional status, nested compounds, inner/outer states,

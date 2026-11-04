@@ -101,3 +101,24 @@ shown=null;const pendingContext=combinedCard.children.at(-1).click();
 const firstMode=sections[0].children.find(c=>c.textContent==='Clause 1 standard type').children[0];firstMode.value='numeric';firstMode.change();
 resumeContext();await pendingContext;assert.equal(shown,null);
 console.log('PASS mixed numeric/contextual disjunctions and stale standard-mode UI protection.');
+
+// Texture has a contextual physical reading only: no fake numerical or Celsius fields.
+const textureInput='The stone is rough and the lamp is bright.';
+elements.sourceInput.value=textureInput;ctx.sentenceTemplate=load;ctx.plan=clauseInterpretationPlan(textureInput);shown=null;
+vm.runInContext(handler+';showClauseInterpretations('+JSON.stringify(textureInput)+',plan);',ctx);
+const textureCard=elements.candidateList.children.at(-1),textureSection=textureCard.children[0],lightSection=textureCard.children[1];
+assert.equal(textureSection.children.filter(c=>c.tag==='label').length,1);
+assert.equal(textureSection.children.find(c=>c.tag==='label').children[0].value,'contextual');
+assert(!textureSection.children.some(c=>/threshold|temperature scale/.test(c.textContent||'')));
+const lightMode=lightSection.children.find(c=>c.textContent==='Clause 2 standard type').children[0];lightMode.value='contextual';lightMode.change();
+await textureCard.children.at(-1).click();
+assert.equal(shown.selected_clauses[0].options.standard.dimension,'surface_texture');
+assert.deepEqual(shown.semantic_ir.nodes.filter(n=>n.standard==='contextual').map(n=>n.norm),['rough','bright']);
+for(const stale of ['input','detached']){
+ let release;const gate=new Promise(r=>release=r);ctx.sentenceTemplate=async id=>{await gate;return load(id)};
+ shown=null;textureCard.isConnected=true;elements.sourceInput.value=textureInput;
+ const pending=textureCard.children.at(-1).click();
+ if(stale==='input')elements.sourceInput.value='The stone is smooth.';else textureCard.isConnected=false;
+ release();await pending;assert.equal(shown,null);
+}
+console.log('PASS mixed texture/luminance UI has no spurious numerical texture controls and rejects stale input/detached results.');
