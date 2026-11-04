@@ -187,3 +187,23 @@ This check does not establish general formal regeneration for all bundle types.
 The 18 English meaning/music cases and existing foundation preview/export checks
 pass. Nested and compound counted predicates, broad English coverage, source
 reconciliation and the original completion gates remain open.
+
+## Counted contractions and singular noun labels
+
+Counted-property parsing now reuses the shared negative auxiliary expansion
+outside quoted labels, after runtime-tag extraction. Inverted “aren't/isn't”
+questions place negation inside the counted predicate; “it isn't the case that”
+continues to negate the entire count. Nested uses preserve both negations.
+The explicit count requirement remains: bare English numbers are not silently
+assigned exact-count semantics. Unsupported tense and predicate meanings still
+fail admission.
+
+Shared nominal parsing now accepts existing singular noun labels with numerical
+value one, including irregular child/person forms and zero-padded 1. Other
+counts do not admit singular forms. Existing plural spellings remain compatible;
+no roots, noun sounds or runtime semantics change. Eighteen contraction/state
+and singular wording cases preserve full formal and MIDI equivalence, and the
+independent music inverse recovers both negation positions and runtime state.
+Ordinary subject/object counted composition and focused nominal, quantifier,
+contraction and preview regressions also pass. These additions postdate the
+133-check consolidated baseline and are registered for its next full run.

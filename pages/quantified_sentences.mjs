@@ -1,3 +1,4 @@
+import {expandNegativeContractions} from './contractions.mjs';
 import {parseNamedSentence,composeNamedSentence} from './sentences.mjs';
 import {NOMINAL_PATTERN,parseNominal} from './nominals.mjs';
 import {validateQuantifiedBindings} from './quantified_binding.mjs';
@@ -7,9 +8,10 @@ export function parseQuantifiedPropertySentence(input){
  if(typeof input!=='string')return null;
  let text=input.trim(),state='';const runtime=text.match(/\s+\[([012])\]([.!?]?)$/);
  if(runtime){const punctuation=text.slice(0,runtime.index).match(/[.!?]$/)?.[0];if(punctuation&&runtime[2]&&punctuation!==runtime[2])return null;state=` [${runtime[1]}]`;text=text.slice(0,runtime.index)+(punctuation?'':runtime[2]);}
+ text=expandNegativeContractions(text,`(${NOMINAL_PATTERN})`);
  const outer=text.match(/^[Ii]t is not the case that (.+)$/);if(outer)text=outer[1];
  const question=text.endsWith('?');
- const m=text.match(new RegExp(question?`^[Aa]re (${NOMINAL_PATTERN}) (not )?(${properties})[?]$`:`^(${NOMINAL_PATTERN}) (?:is|are) (not )?(${properties})[.]?$`));
+ const m=text.match(new RegExp(question?`^(?:[Aa]re|[Ii]s) (${NOMINAL_PATTERN}) (not )?(${properties})[?]$`:`^(${NOMINAL_PATTERN}) (?:is|are) (not )?(${properties})[.]?$`));
  if(!m||!parseNominal(m[1])?.quantifier||outer&&question)return null;
  const baseInput=(question?`Are ${m[1]} ${m[3]}?`:`${m[1]} are ${m[3]}.`)+state,parsed=parseNamedSentence(baseInput);
  if(!parsed||parsed.role!=='bearer'||parsed.compoundSlots)return null;

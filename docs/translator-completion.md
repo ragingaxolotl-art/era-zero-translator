@@ -26,7 +26,9 @@ Recent completed implementation work:
   domains. Draft typed binding, unary English composition, browser/Ruby musical
   parity, independent unary sound recovery and an explicit UI preview are now
   implemented. Nested/compound coverage and canonical admission remain open.
-  These changes are included in the current regression baseline.
+  These changes are included in the current regression baseline. Subsequent
+  focused checks add counted negative contractions and singular count-one noun
+  labels; these additions postdate that consolidated run.
 
 - Swimming supports explicit simple-present viewpoint choices, explicit habits
   and mixed-clause composition. Across-region swimming preserves the region and
