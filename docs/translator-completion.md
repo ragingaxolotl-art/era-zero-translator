@@ -12,6 +12,13 @@ is the starting evidence, not a completion certificate.
 
 ## Current coverage evidence
 
+The [locomotion foundation review](../reviews/locomotion_foundations.md) now
+separates body-local locomotor activity from environmental displacement, then
+running/swimming manner, then path and completion. It rejects speed-only and
+mandatory-flight running definitions and passive-water-transport substitutions.
+The candidate graph and twelve acceptance obligations are recorded; no new
+root or movement translation is claimed by this review.
+
 [Dictionary discovery fidelity](../reviews/discovery_label_fidelity.md) now uses
 reviewed atom titles and definitions instead of address-wide paraphrases that
 overstated learning or planning. Exact reviewed labels outrank heuristic tense
