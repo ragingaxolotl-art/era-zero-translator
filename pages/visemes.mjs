@@ -53,24 +53,10 @@ export function visemePlanFromFormal(formal,options={}){
       at+=event.boundary_after_beats===undefined?.16:event.boundary_after_beats*.24;
       return;
     }
-    if(event.kind==='foundation'){
-      if(mode!=='strict')throw new Error('Draft foundations currently support strict sound only.');
-      // The candidate carrier has no approved articulation mapping yet.
-      // Preserve every musical section with a neutral mouth instead of guessing it.
-      const emit=(section,notes,duration)=>notes.forEach((note,noteIndex)=>{
-        cues.push({section,note,start:Number(at.toFixed(4)),duration,syllable:null,target_id:event.target_id,event_index:eventIndex,note_index:noteIndex,onset_viseme:'REST',nucleus_viseme:'REST',onset_duration:0,sustain_only:true});
-        at+=duration+.04;
-      });
-      const duration=(event.note_duration_beats||1)*.24;
-      emit('family_opening',event.family_opening,duration);at+=.10;
-      emit('address_path',event.address_path,duration);at+=.08;
-      emit('runtime_ending',event.runtime_ending,(event.runtime?.duration_beats||.5)*.24);
-      at+=event.boundary_after_beats===undefined?.16:event.boundary_after_beats*.24;
-      return;
-    }
+    if(event.kind==='foundation'&&mode!=='strict')throw new Error('Draft foundations currently support strict sound only.');
     const carrier=event.formal_carrier.split('-');
     const lexicalDuration=(event.note_duration_beats||1)*.24;
-    if(carrier.length!==4)throw new Error(`Expected four carrier syllables for ${event.target_id}.`);
+    if(carrier.length!==(event.kind==='foundation'?12:4)||carrier.length!==event.address_path.length)throw new Error(`Carrier syllables do not match the lexical address for ${event.target_id}.`);
     carrier.forEach(visemesForSyllable);
     event.family_opening.forEach((note,noteIndex)=>{
       cues.push(cue({section:'family_opening',note,start:at,duration:lexicalDuration,syllable:carrier[0],targetId:event.target_id,eventIndex,noteIndex}));

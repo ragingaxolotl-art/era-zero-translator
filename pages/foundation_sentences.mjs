@@ -11,9 +11,14 @@ export function parseFoundationSentence(input){
  let text=input.trim(),state=1;const question=text.endsWith('?');const runtime=text.match(/\s*\[([012])\][.!?]?$/);
  if(runtime){state=Number(runtime[1]);text=text.slice(0,runtime.index).trim();}
  text=text.replace(/[.!?]$/,'').trim();
- let m=text.match(new RegExp(`^(${HOLDER}) (prefers|prefer|does not prefer|do not prefer) (.+) to (.+)$`));
- if(!m&&question){const q=text.match(new RegExp(`^(?:Does|Do) (${HOLDER}) (not )?prefer (.+) to (.+)$`));if(q)m=[q[0],q[1],q[2]?'does not prefer':'prefer',q[3],q[4]];}
- if(m)return {type:'preference',holder:m[1],target:m[3],standard:m[4],negated:m[2].includes('not'),speechAct:question?'question':'assertion',state};
+ const day=text.match(/ (yesterday|today)$/)?.[1],preferenceText=day?text.slice(0,-day.length-1):text;
+ let m=preferenceText.match(new RegExp(`^(${HOLDER}) (prefers|prefer|preferred|does not prefer|do not prefer|did not prefer) (.+) to (.+)$`));
+ if(!m&&question){const q=preferenceText.match(new RegExp(`^(Does|Do|Did) (${HOLDER}) (not )?prefer (.+) to (.+)$`));if(q)m=[q[0],q[2],q[1]==='Did'?(q[3]?'did not prefer':'preferred'):(q[3]?'does not prefer':'prefer'),q[4],q[5]];}
+ if(m){
+  const past=/^(?:preferred|did)/.test(m[2]);
+  if(day==='yesterday'&&!past)return null;
+  return {type:'preference',holder:m[1],target:m[3],standard:m[4],negated:m[2].includes('not'),speechAct:question?'question':'assertion',state,...(past&&day!=='yesterday'?{speechTime:'before'}:{}),...(day?{calendarDay:day==='yesterday'?'-1':'0'}:{})};
+ }
  m=text.match(new RegExp(`^(${HOLDER}) (wants|want|does not want|do not want) (?:that )?(.+)$`));
  if(!m&&question){const q=text.match(new RegExp(`^(?:Does|Do) (${HOLDER}) (not )?want (.+)$`));if(q)m=[q[0],q[1],q[2]?'does not want':'want',q[3]];}
  if(m)return {type:'desire',holder:m[1],content:m[3],negated:m[2].includes('not'),speechAct:question?'question':'assertion',state};
@@ -50,6 +55,14 @@ export async function composeFoundationSentence(input,authority,records,loadTemp
   ir.edges.push({edge_id:'content',type:'fills_role',from:'desired:'+source.root_clause,to:'p',role:'content'});
  }
  if(parsed.negated){ir.nodes.push({node_id:'neg',kind:'scope_operator',operator:'negation'});ir.edges[0].from='neg';ir.edges.push({edge_id:'neg',type:'scopes',from:'p',to:'neg'});}
+ if(parsed.calendarDay!==undefined){
+  ir.nodes.push({node_id:'time',kind:'time_anchor',anchor_type:'interval',calendar_unit:'day',relative_to:'speech_date',day_offset:parsed.calendarDay});
+  ir.edges.push({edge_id:'time0',type:'time_relation',from:'time',to:'c',relation:'during'});
+ }
+ if(parsed.speechTime){
+  ir.nodes.push({node_id:'speech_time',kind:'time_anchor',anchor_type:'speech_time'});
+  ir.edges.push({edge_id:'time1',type:'time_relation',from:'speech_time',to:'c',relation:parsed.speechTime});
+ }
  const digest=await canonicalDigest(ir);ir.utterance_id='UTT:'+digest.slice(0,24);ir.serialization={canonical_format:'EZIR-JSON-1',content_digest:digest};
  const events=await renderLexicalOccurrences(ir,authority,{foundationRecords:records,allowDraftFoundations:allowDraft});
  const structural=ir.edges.slice().sort((a,b)=>a.edge_id<b.edge_id?-1:a.edge_id>b.edge_id?1:0).map(e=>({edge_id:e.edge_id,edge_type:e.type,from:e.from,to:e.to,...(e.role?{role:e.role}:{}),...(e.relation?{relation:e.relation}:{}),boundary:e.type==='fills_role'?'short_gap':'medium_gap',boundary_beats:e.type==='fills_role'?.5:1}));

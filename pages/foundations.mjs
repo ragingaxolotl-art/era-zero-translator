@@ -29,6 +29,6 @@ export async function foundationEvent(record,{occurrenceId='p',register='middle'
  const tail=runtimeState===0?{code:0,name:'inactive',relative_motion_semitones:-1,absolute_note:last-1,articulation:'sharp_stop',duration_beats:.25}:runtimeState===1?{code:1,name:'active',relative_motion_semitones:0,absolute_note:base,articulation:'firm_return',duration_beats:.5}:{code:2,name:'num',relative_motion_semitones:7,absolute_note:last+7,articulation:'sustain',duration_beats:2};
  if([...opening,...relative].some(n=>base+n<0||base+n>127)||tail.absolute_note<0||tail.absolute_note>127)throw new Error('Foundation pitch outside MIDI range.');
  return {kind:'foundation',occurrence_id:occurrenceId,target_id:record.foundation_id,register,base_midi:base,
-  family_qualified_transliteration:`MIN·foundation-${record.sound_code}`,formal_carrier:`si-fen-${record.sound_code.toString(3).padStart(8,'0').split('').map(d=>['ma','ki','nu'][Number(d)]).join('-')}`,
+  family_qualified_transliteration:`MIN·foundation-${record.sound_code}`,formal_carrier:`si-si-si-${record.sound_code.toString(3).padStart(8,'0').split('').map(d=>['ma','ki','nu'][Number(d)]).join('-')}-si`,
   family_opening_relative_semitones:opening,family_opening_absolute_midi:opening.map(n=>base+n),address_relative_semitones:relative,address_absolute_midi:relative.map(n=>base+n),note_duration_beats:1,runtime_tail:tail};
 }

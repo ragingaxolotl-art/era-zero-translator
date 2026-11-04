@@ -39,10 +39,18 @@ not reinterpret the semantic trits in the existing three-trit root grid.
 Runtime remains a separate last-note ending: 0 drops a semitone for a quarter beat,
 1 returns to base for half a beat, and 2 rises seven semitones for two beats. Register
 and anchor transpose the token together. Every pitch must stay within MIDI range.
-The candidate text carrier uses `si-fen-` followed by eight ma/ki/nu syllables. The
-new vocal delimiter and the 23-semitone musical delimiter still require
-phonotactic, pronunciation, listening and accessibility review; token separation
-and exact MIDI recognition alone do not validate their usability or style.
+The candidate text carrier now uses `si-si-si-`, eight ma/ki/nu address
+syllables, and a closing `si`. Its twelve existing CV syllables align one-to-one
+with the twelve address notes. This replaces the earlier experimental `si-fen-`
+carrier, whose `fen` was absent from the established syllable inventory and whose
+length did not match its address. Harmonic opening, MIDI notes, runtime endings,
+semantic definitions and foundation IDs are unchanged. Existing experimental
+formal artifacts should be recomposed to obtain the corrected carrier and digest.
+
+The carrier now uses the established viseme mappings rather than a neutral-mouth
+fallback. The repeated-si frame, long address and 23-semitone delimiter still need
+listening/accessibility review; inventory compatibility does not prove usability
+or final stylistic acceptance. No existing canonical root carrier is changed.
 
 The 6,561-address space is a capacity bound, not an instruction to fill it or an
 approval of 6,561 meanings. Draft entries require explicit `allowDraft` or
@@ -149,3 +157,16 @@ outputs and records this distinction; it is not a completion certificate.
 The normal English input now offers an explicit draft-preview action for recognized desire/preference sentences. It loads a separate candidate registry, preserves canonical dictionary counts, labels output as draft, and rejects results arriving after input or panel replacement. Playback uses the strict musical sequence. Candidate articulation has not been approved, so foundation events retain a neutral mouth while preserving their opening, address, runtime and timing; no four-syllable carrier is fabricated. Canonical viseme regression remains unchanged (5,370 variants).
 
 Exported bundles retain the candidate vocabulary definitions and status. Bundle verification checks foundation IR against that registry and rejects missing provenance. This is not an approval or a full semantic proof of arbitrary imported music. UI handler tests cover explicit opt-in, stale success/failure, strict mode, data consistency, sound-plan generation and export provenance. Live visual/audio browser testing remains unavailable in this environment; no deployment or pronunciation approval is claimed.
+
+
+### Past preference and calendar scope
+
+The candidate English route now accepts preferred/did-not-prefer and past questions,
+with yesterday/today when grammatically supported. Past tense uses a before-speech
+relation; yesterday uses its calendar frame, and past-today retains both constraints.
+Eighteen runtime/time/negation cases match reference formal and MIDI and recover
+the same scopes from MIDI alone. No tense is encoded as runtime 0 or 2.
+
+Carrier alignment validation covers both candidates across 72 performances; all
+syllables use the existing inventory, and the 5,370 canonical viseme variants still
+pass. This supersedes the neutral-mouth preview workaround documented above.

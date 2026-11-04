@@ -1,3 +1,4 @@
+import {visemesForSyllable} from '../pages/visemes.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
@@ -17,7 +18,7 @@ for(const r of registry.records)for(const register of ['low','middle','high','su
 const ruby=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_foundations','-rjson','-e','puts JSON.generate(JSON.parse(STDIN.read).map{|s|o=s["options"];e=EraZeroFoundations.event(s["r"],register:o["register"],runtime_state:o["runtimeState"],anchor:o["anchor"],allow_draft:true);{event:e,digest:EraZeroValidation.fingerprint(e)}})'],{cwd:root,input:JSON.stringify(samples),encoding:'utf8',maxBuffer:8_000_000}));
 const sounds=[];
 for(const [i,s] of samples.entries()){
- const event=await foundationEvent(s.r,s.options);assert.deepEqual(event,ruby[i].event);assert.equal(await canonicalDigest(event),ruby[i].digest);
+ const event=await foundationEvent(s.r,s.options);assert.equal(event.formal_carrier.split('-').length,event.address_relative_semitones.length);event.formal_carrier.split('-').forEach(visemesForSyllable);assert.deepEqual(event,ruby[i].event);assert.equal(await canonicalDigest(event),ruby[i].digest);
  // Transport probe only. This empty-IR harness is deliberately NOT an EZF semantic utterance.
  const harness={semantic_ir:{nodes:[],edges:[]},performance:{lexical_events:[event],anchor_midi:s.options.anchor,contour_relative_semitones:[0,0]}};
  const midi=midiFromFormal(harness);sounds.push(Buffer.from(midi).toString('base64'));

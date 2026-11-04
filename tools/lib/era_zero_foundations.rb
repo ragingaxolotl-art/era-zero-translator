@@ -33,6 +33,6 @@ module EraZeroFoundations
     when 2 then {'code'=>2,'name'=>'num','relative_motion_semitones'=>7,'absolute_note'=>last+7,'articulation'=>'sustain','duration_beats'=>2.0}
     end
     raise ArgumentError,'Foundation pitch outside MIDI range.' unless (opening+relative).all?{|n|(base+n).between?(0,127)}&&tail['absolute_note'].between?(0,127)
-    {'kind'=>'foundation','occurrence_id'=>occurrence_id,'target_id'=>record['foundation_id'],'register'=>register,'base_midi'=>base,'family_qualified_transliteration'=>"MIN·foundation-#{record['sound_code']}",'formal_carrier'=>"si-fen-#{record['sound_code'].to_s(3).rjust(8,'0').chars.map{|d|%w[ma ki nu][d.to_i]}.join('-')}",'family_opening_relative_semitones'=>opening,'family_opening_absolute_midi'=>opening.map{|n|base+n},'address_relative_semitones'=>relative,'address_absolute_midi'=>relative.map{|n|base+n},'note_duration_beats'=>1.0,'runtime_tail'=>tail}
+    {'kind'=>'foundation','occurrence_id'=>occurrence_id,'target_id'=>record['foundation_id'],'register'=>register,'base_midi'=>base,'family_qualified_transliteration'=>"MIN·foundation-#{record['sound_code']}",'formal_carrier'=>"si-si-si-#{record['sound_code'].to_s(3).rjust(8,'0').chars.map{|d|%w[ma ki nu][d.to_i]}.join('-')}-si",'family_opening_relative_semitones'=>opening,'family_opening_absolute_midi'=>opening.map{|n|base+n},'address_relative_semitones'=>relative,'address_absolute_midi'=>relative.map{|n|base+n},'note_duration_beats'=>1.0,'runtime_tail'=>tail}
   end
 end
