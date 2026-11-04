@@ -24,3 +24,13 @@ with explicit-reference wording across runtime states and both destination
 forms, with Ruby/MIDI parity. Quantified, multi-participant and unresolved
 antecedents still fail instead of guessing an identity. The existing contraction
 and conditional-command regression checks also pass.
+
+Negative auxiliary expansion is now shared with the candidate desire/preference
+parser through contractions.mjs. Candidate expansion runs after runtime suffix
+handling, preserving negative question inversion and both punctuation placements.
+Twenty-one candidate cases compare complete formal/MIDI output against expanded
+paraphrases and recover speech act/runtime independently. They include outer
+negation, past preference, desire, questions and negated preference alternatives.
+An explicit pronoun-binding example composes equivalently to named references.
+Main-parser contraction, contracted conditional-reference, candidate binding and
+question/runtime tests continue to pass. This does not promote draft vocabulary.

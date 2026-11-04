@@ -1,3 +1,4 @@
+import {expandNegativeContractions} from './contractions.mjs';
 import {SWIMMING,SWIMMING_ACROSS} from './swimming.mjs';
 import {CONTEXTUAL_NORMS} from './contextual_standards.mjs';
 import {luminanceValue} from './luminance.mjs';
@@ -87,19 +88,8 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     return {...inner,adjective:match[2],requiredInterpretation:'mass_standard',nominalProperty:{participantIndex:indices[0]},construction:`nominal_mass_${inner.construction}`,explicitInterpretation:String(input).trim()};
   }
   const participant='(I|me|you|'+NOMINAL_PATTERN+'|(?!(?:She|He|It|They|We|Her|Him|Them|Us)\\b)[A-Z][a-z]+|"[A-Za-z]+(?:[ -][A-Za-z]+)*")';
-  // Expand only unambiguous negative auxiliaries outside quoted sound labels.
-  // Possessive/ambiguous 's and 'd are deliberately not expanded.
-  const contractions={"isn't":"is not","aren't":"are not","wasn't":"was not","weren't":"were not","doesn't":"does not","don't":"do not","didn't":"did not","can't":"cannot","couldn't":"could not","won't":"will not","wouldn't":"would not","shouldn't":"should not","mustn't":"must not","hasn't":"has not","haven't":"have not","hadn't":"had not"};
-  const original=String(input),segments=original.split('"');
-  const expanded=segments.map((part,index)=>index%2?part:part.replace(/\b(?:isn|aren|wasn|weren|doesn|don|didn|can|couldn|won|wouldn|shouldn|mustn|hasn|haven|hadn)['’]t\b/gi,word=>{
-    const value=contractions[word.toLowerCase().replace('’',"'")];
-    return /^[A-Z]/.test(word)?value[0].toUpperCase()+value.slice(1):value;
-  })).join('"');
-  if(expanded!==original){
-    // In inverted negative questions, negation follows the subject in the
-    // expanded construction: “Isn't Eli …?” -> “Is Eli not …?”
-    const inverted=expanded.match(new RegExp(`^([Ii]s|[Aa]re|[Ww]as|[Ww]ere|[Dd]oes|[Dd]o|[Dd]id) not ${participant} (.+[?])$`));
-    const normalized=inverted?`${inverted[1]} ${inverted[2]} not ${inverted[3]}`:expanded;
+  const normalized=expandNegativeContractions(String(input),participant);
+  if(normalized!==String(input)){
     const inner=parseNamedSentence(normalized,depth+1,speechActs);
     return inner?{...inner,explicitInterpretation:inner.explicitInterpretation||normalized.trim()}:null;
   }

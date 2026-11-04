@@ -1,3 +1,4 @@
+import {expandNegativeContractions} from './contractions.mjs';
 import {validReferent} from './pronouns.mjs';
 import {canonicalDigest} from './engine.mjs';
 import {encodeName} from './names.mjs';
@@ -16,6 +17,7 @@ export function parseFoundationSentence(input){
   if(before&&after&&before!==after)return null;
   if(!before&&after)text+=after;
  }
+ text=expandNegativeContractions(text,`(${HOLDER})`);
  const question=text.endsWith('?');
  text=text.replace(/[.!?]$/,'').trim();
  const prefix=text.match(/^(Yesterday|Today),\s+(.+)$/),frontedDay=prefix?.[1].toLowerCase();
