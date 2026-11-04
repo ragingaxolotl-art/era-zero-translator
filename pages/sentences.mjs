@@ -364,6 +364,12 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
       participants:[{label:label(transfer[3]),text:transfer[3],role:'source'},{label:label(transfer[1]),text:transfer[1],role:'content'},{label:label(transfer[4]),text:transfer[4],role:'target'}],
       explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
+  const brightnessComparison=String(input).trim().match(new RegExp(`^${participant} (?:is|am|are) (not )?(brighter|dimmer) than ${participant}[.]?$`));
+  if(brightnessComparison){
+    const inner=parseNamedSentence(`${brightnessComparison[1]} has a ${brightnessComparison[3]==='brighter'?'higher':'lower'} luminance than ${brightnessComparison[4]}.`,depth+1,false);
+    if(!inner||inner.key!=='luminance_pair_comparison')return null;
+    return {...inner,adjective:brightnessComparison[3],requiredInterpretation:'luminance_comparison',scopes:[...inner.scopes,...(brightnessComparison[2]?[{operator:'negation'}]:[])],construction:'brightness_pair_comparison',explicitInterpretation:String(input).trim()};
+  }
   const luminancePair=String(input).trim().match(new RegExp(`^${participant} (?:has|have) (a higher luminance than|a lower luminance than|the same luminance as|at least as high a luminance as|at most as high a luminance as|a different luminance from) ${participant}[.]?$`));
   if(luminancePair){
     if([luminancePair[1],luminancePair[3]].some(text=>{const n=parseNominal(text);return n?.quantifier||n?.mode==='nominal_class'}))return null;
@@ -459,7 +465,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light|bright|dim|rough|smooth)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|able to move|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|arrive|arrives|arrived|arriving|carry|carries|carried|carrying|support|supporting|custody|acquire|acquired|acquiring|deliver|delivers|delivered|delivering|run|runs|running|swim|swims|swimming|happy|sad|hungry|thirsty|tired|temperature|luminance)\b/i.test(String(input))) && !parseNamedSentence(input);
+  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light|bright|dim|brighter|dimmer|rough|smooth)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|able to move|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|arrive|arrives|arrived|arriving|carry|carries|carried|carrying|support|supporting|custody|acquire|acquired|acquiring|deliver|delivers|delivered|delivering|run|runs|running|swim|swims|swimming|happy|sad|hungry|thirsty|tired|temperature|luminance)\b/i.test(String(input))) && !parseNamedSentence(input);
 }
 
 // A complete antecedent and a comma establish conditional scope. Without
@@ -633,8 +639,9 @@ export async function composeNamedSentence(input,template,{interpretation,standa
   if(interpretation!==undefined&&interpretation!==parsed.requiredInterpretation)throw new Error('This interpretation is not available for this sentence.');
   if(parsed.requiredInterpretation&&interpretation!==parsed.requiredInterpretation){
     const thermal=['thermal_standard','mass_standard','luminance_standard','texture_standard'].includes(parsed.requiredInterpretation);
-    const error=new Error(thermal?'Choose the property sense and its contextual threshold before translating.':'Choose whether this is a future statement. Promise, intention and willingness require different meanings.');
-    error.code=thermal?`${parsed.requiredInterpretation}_required`:'future_interpretation_required';throw error;
+    const comparative=parsed.requiredInterpretation==='luminance_comparison';
+    const error=new Error(comparative?'Choose the physical luminance meaning of this comparison before translating.':thermal?'Choose the property sense and its contextual threshold before translating.':'Choose whether this is a future statement. Promise, intention and willingness require different meanings.');
+    error.code=(thermal||comparative)?`${parsed.requiredInterpretation}_required`:'future_interpretation_required';throw error;
   }
   let selectedStandard;
   if(['thermal_standard','mass_standard','luminance_standard','texture_standard'].includes(parsed.requiredInterpretation)){

@@ -1408,3 +1408,25 @@ need further grammar/context work. The original “This lamp is brighter than th
 lamp” also still needs ordinary comparative-adjective sense selection: its explicit
 “has a higher luminance than” counterpart now preserves this/that. These grammar
 checks do not establish real-world reference resolution or listening validation.
+
+### Brighter/dimmer comparison with explicit sense selection
+
+Brighter than and dimmer than now route to the existing physical luminance
+comparison after explicit interpretation selection. This reuses the already
+reviewed dimension and comparison relation; no root, compound, threshold or
+extra adjective sound was invented. Negated brighter-than scopes the comparison
+and does not collapse into dimmer-than, since equality satisfies the former.
+Questions, modal scope, this/that references and runtime 0/1/2 remain audible.
+
+Single-clause and multi-clause UI handlers require the luminance choice without
+asking for a numeric threshold and discard stale results. Twenty-seven sentence
+and mixed-clause cases have Ruby/browser formal and MIDI parity and independent
+reference/direction/scope recovery, plus an equality counterexample for negation.
+`reports/brightness_comparison_validation.json` records targeted results. These
+are handler mocks, not live UI/listening evidence. Perceived brightness and
+figurative meanings still require different semantics.
+
+The original “This lamp is brighter than that lamp” now receives a physical-sense
+choice. The authored 40-case diagnostic reports 24 checked, 10 requiring
+interpretation and 6 uncomposed, not an estimate of general English coverage.
+The complete translator goal and original seven gates remain open.

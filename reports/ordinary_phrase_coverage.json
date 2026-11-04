@@ -4,8 +4,8 @@
   "case_count": 40,
   "counts": {
     "verified_for_declared_checks": 24,
-    "requires_interpretation": 9,
-    "not_composed": 7
+    "requires_interpretation": 10,
+    "not_composed": 6
   },
   "areas": {
     "participants": {
@@ -830,8 +830,9 @@
       "requirements": [
         "Bind comparison direction, dimension, and both referents"
       ],
-      "status": "not_composed",
-      "failures": []
+      "status": "requires_interpretation",
+      "failures": [],
+      "clarification": "luminance_comparison_required"
     },
     {
       "id": "conditional",
