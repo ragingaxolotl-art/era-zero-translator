@@ -27,10 +27,12 @@ until evidence shows a benefit.
 The full translator goal remains **incomplete**. There are 324 preserved roots,
 63 approved compounds and 471 canonical senses. Desire/preference and polar-answer
 knowledge foundations remain opt-in candidate vocabulary and are excluded from
-those canonical counts. The consolidated regression at `8cb9ac7` passed **162/162**
-checks; see `reports/translator_completion_regression.json`. Earlier failures and
+those canonical counts. The consolidated regression at `c294562` passed **172/172**
+checks, including the opt-in blind synthetic-audio suites; see `reports/translator_completion_regression.json`. Earlier failures and
 repairs remain documented in the historical work log and Git history. This clean
-run is implementation evidence, not proof of complete ordinary-English coverage.
+run began from a clean checkout and records its exact revision and timestamps.
+It is implementation evidence, not proof of complete ordinary-English coverage
+or physical speaker-to-microphone recovery.
 
 The dictionary MIDI audit retains all 1,146 prior performance records exactly and
 adds 15 records for the five spatial/entry compounds across runtime 0/1/2. See
@@ -1628,3 +1630,20 @@ Validation: all 14 targeted suites in reports/cognitive_demonstratives_validatio
 pass, including preference, knowledge, acquisition, subject control, pronouns and
 preview handlers. The consolidated 162-check report remains evidence for revision
 8cb9ac7; this later reference fix has targeted validation, not a new full-suite run.
+
+## Consolidated understanding/audio checkpoint
+
+At `c29456270724ac4b7d16c4566dada3528e54c84b`, the complete runner with
+`--include-acoustic` passed 172/172 checks. It started from a clean checkout.
+This includes the understanding document/music/Ruby/UI-handler checks, existing
+translator regressions, 92 low-note duration cases, ten canonical-path synthetic
+audio messages, four existing cognitive draft messages and three understanding
+messages. The first fourteen audio messages also have 42 exact simulated-channel
+recoveries and fourteen damaged-payload rejections. The three understanding audio
+cases are clean synthetic tests only. Physical recordings tested: zero.
+
+The runner now records revision, starting worktree status, timing and whether the
+acoustic checks were included, so later report regeneration retains provenance.
+All original completion gates remain open. Live browser access was rechecked
+and remains disabled in Work settings. The pending physical-capture setup choice
+has not been answered; the prepared capture harness is not a tested recording.
