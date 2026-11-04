@@ -12,6 +12,14 @@ is the starting evidence, not a completion certificate.
 
 ## Current coverage evidence
 
+Latest targeted extension: [desired atomic conditions](../reviews/desired_atomic_conditions.md)
+reuse WRN:001, REP:001 and MIN:201 inside candidate desire, preserving the bearer,
+intensional content, negation and independent runtime states. The new 54-contrast
+suite passes Ruby/browser rendering and MIDI-only meaning recovery; existing
+subject-control and preference-inverse suites also pass. The full 108-check report
+below predates this extension; its newly registered test has not yet received a
+fresh full-suite run. No original completion gate is closed by this addition.
+
 The [ordinary phrase audit](../reports/ordinary_phrase_coverage.md) currently has
 24 checked compositions, 10 uncomposed phrases, and six phrases requiring an explicit interpretation or contextual standard out of 40 deliberately varied cases. This is an implementation-authored diagnostic set, not a blind evaluation
 or a statistical measure of English coverage. Green regression suites do not
