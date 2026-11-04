@@ -1,4 +1,4 @@
-import {personalPronounPlan} from './personal_pronoun_plan.mjs';
+import {personalPronounPlan,resolvePersonalPronouns} from './personal_pronoun_plan.mjs';
 import {validReferent} from './pronouns.mjs';
 // Draft interpretation/meaning contract. Its musical implementation is separate;
 // creating this document does not imply canonical vocabulary admission.
@@ -55,19 +55,7 @@ export async function composeUnderstandingContent(input,{allowDraft=false,interp
  if(!allowDraft)throw new Error('Understanding content requires explicit draft opt-in.');
  const pronouns=understandingPronounPlan(input);
  if(pronouns){
-  const fail=message=>{const e=new Error(message);e.code='pronoun_referents_required';throw e;};
-  if(!bindings||typeof bindings!=='object'||Array.isArray(bindings)||Object.keys(bindings).length!==pronouns.occurrences.length)fail('Identify each pronoun explicitly.');
-  const chosen={};
-  for(const o of pronouns.occurrences){
-   const value=bindings[o.key],neutral=/^(they|them)$/i.test(o.pronoun);
-   if(neutral){
-    if(!exact(value,['referent','number'])||!['singular','plural'].includes(value.number))fail('Specify whether they/them refers to one individual or a group.');
-    if(value.number==='plural')fail('Group reference requires plural participant binding, which is not implemented in this understanding draft yet.');
-   }
-   const reference=neutral?value.referent:value;
-   if(!validReferent(reference))fail('Use an explicit name, noun reference, or I/you for each pronoun.');chosen[o.key]=reference;
-  }
-  for(const o of [...pronouns.occurrences].reverse())input=input.slice(0,o.start)+chosen[o.key]+input.slice(o.end);
+  input=resolvePersonalPronouns(input,pronouns,bindings,validReferent).resolved;
  }else if(bindings!==undefined)throw new Error('This sentence does not require pronoun bindings.');
  const plan=understandingInterpretationPlan(input);if(!plan)throw new Error('Unsupported understanding sentence.');
  const kind=plan.selected_reading||interpretation;

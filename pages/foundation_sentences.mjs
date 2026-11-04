@@ -1,4 +1,4 @@
-import {personalPronounPlan} from './personal_pronoun_plan.mjs';
+import {personalPronounPlan,resolvePersonalPronouns} from './personal_pronoun_plan.mjs';
 import {expandNegativeContractions} from './contractions.mjs';
 import {validReferent} from './pronouns.mjs';
 import {canonicalDigest} from './engine.mjs';
@@ -76,17 +76,13 @@ async function reference(text,id,allowKind=false){
  return {node_id:id,kind:'phonemic_reference',value_type:'entity',name,referent_id:mode?`nominal:${NOMINAL_MODES[mode].id}:${name.name_id}`:`name:${name.name_id}`,...(mode?{reference_mode:mode}:{})};
 }
 export function foundationPronounPlan(input,{allowCognitive=false}={}){
- return personalPronounPlan(input,probe=>parseFoundationSentence(probe,{allowCognitive}));
+ return personalPronounPlan(input,probe=>parseFoundationSentence(probe,{allowCognitive}),{includeNeutral:true});
 }
 
 export async function composeFoundationSentence(input,authority,records,loadTemplate,{allowDraft=false,bindings,allowCognitive=false}={}){
  const plan=foundationPronounPlan(input,{allowCognitive});
  if(!plan){if(bindings!==undefined)throw new Error('This sentence does not require pronoun bindings.');return composeAtDepth(input,authority,records,loadTemplate,allowDraft,0,allowCognitive);}
- if(!bindings||typeof bindings!=='object'||Array.isArray(bindings)||Object.keys(bindings).length!==plan.occurrences.length||plan.occurrences.some(o=>!Object.hasOwn(bindings,o.key)||!validReferent(bindings[o.key]))){
-  const error=new Error('Identify each pronoun with an explicit name, quoted label, noun reference, or I/you.');error.code='pronoun_referents_required';throw error;
- }
- const chosen=Object.fromEntries(plan.occurrences.map(o=>[o.key,bindings[o.key]]));
- let resolved=input;for(const o of [...plan.occurrences].reverse())resolved=resolved.slice(0,o.start)+chosen[o.key]+resolved.slice(o.end);
+ const {chosen,resolved}=resolvePersonalPronouns(input,plan,bindings,validReferent);
  const result=await composeAtDepth(resolved,authority,records,loadTemplate,allowDraft,0,allowCognitive);
  return {...result,source_input:input,resolved_input:resolved,resolved_pronouns:plan.occurrences.map(o=>({...o,referent:chosen[o.key]}))};
 }

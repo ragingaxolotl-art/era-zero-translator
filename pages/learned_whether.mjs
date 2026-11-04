@@ -1,4 +1,4 @@
-import {personalPronounPlan} from './personal_pronoun_plan.mjs';
+import {personalPronounPlan,resolvePersonalPronouns} from './personal_pronoun_plan.mjs';
 import {validReferent} from './pronouns.mjs';
 import {expandNegativeContractions} from './contractions.mjs';
 import {composeFoundationSentence} from './foundation_sentences.mjs';
@@ -15,14 +15,12 @@ export function parseLearnedWhether(input){
  if(!m)return null;
  return {holder:m[1],body:m[3],runtimeState:state,speechAct:question?'question':'assertion',eventScopes:[...(day?[day[1]==='Yesterday'?'previous_day':'current_day']:[]),...(day?.[1]==='Yesterday'?[]:['before_speech']),...(m[2].includes('not')?['negation']:[])]};
 }
-export const learnedWhetherPronounPlan=input=>personalPronounPlan(input,parseLearnedWhether);
+export const learnedWhetherPronounPlan=input=>personalPronounPlan(input,parseLearnedWhether,{includeNeutral:true});
 export async function composeLearnedWhether(input,authority,records,loadTemplate,{allowDraft=false,bindings}={}){
  if(!allowDraft)throw new Error('Learning composition requires explicit draft opt-in.');
  const pronouns=learnedWhetherPronounPlan(input);
  if(pronouns){
-  if(!bindings||typeof bindings!=='object'||Array.isArray(bindings)||Object.keys(bindings).length!==pronouns.occurrences.length||pronouns.occurrences.some(o=>!Object.hasOwn(bindings,o.key)||!validReferent(bindings[o.key]))){const error=new Error('Identify each pronoun with an explicit name, noun reference or I/you.');error.code='pronoun_referents_required';throw error;}
-  const chosen={...bindings};let resolved=input;
-  for(const o of [...pronouns.occurrences].reverse())resolved=resolved.slice(0,o.start)+chosen[o.key]+resolved.slice(o.end);
+  const {chosen,resolved}=resolvePersonalPronouns(input,pronouns,bindings,validReferent);
   const result=await composeLearnedWhether(resolved,authority,records,loadTemplate,{allowDraft:true});
   return {...result,source_input:input,resolved_input:resolved,resolved_pronouns:pronouns.occurrences.map(o=>({...o,referent:chosen[o.key]}))};
  }

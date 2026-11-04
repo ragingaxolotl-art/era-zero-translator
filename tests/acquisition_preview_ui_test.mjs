@@ -32,3 +32,10 @@ context.composeLearnedWhether=async(...args)=>{assert.equal(JSON.stringify(args[
 await button.click();const oldSave=card.children.at(-1);assert.equal(button.hidden,true);fields[1].value='Orin';fields[1].input();assert.equal(button.hidden,false);assert.equal(oldSave.hidden,true);const previous=downloads.length;oldSave.click();assert.equal(downloads.length,previous);
 let finish;context.composeLearnedWhether=()=>new Promise(resolve=>finish=resolve);const pending=button.click();await new Promise(r=>setImmediate(r));const length=card.children.length;fields[1].value='Eli';fields[1].input();finish({acquisition:{},result_formal:{}});await pending;assert.equal(card.children.length,length);
 console.log('PASS learning UI pronoun fields, binding submission, re-preview after edits, stale completed downloads and edited pending-result rejection.');
+elements.sourceInput.value='They learned whether Eli was conscious.';
+vm.runInContext(`showAcquisitionPreview(${JSON.stringify(elements.sourceInput.value)});`,context);
+card=elements.candidateList.children.at(-1);button=card.children.at(-1);const neutralLabel=card.children[1];assert.equal(neutralLabel.children.length,2);
+neutralLabel.children[0].value='Nora';neutralLabel.children[1].value='singular';
+context.composeLearnedWhether=async(...args)=>{assert.equal(JSON.stringify(args[4].bindings),JSON.stringify({ref0:{referent:'Nora',number:'singular'}}));return {acquisition:{},result_formal:{}}};
+await button.click();const neutralSave=card.children.at(-1),downloadCount=downloads.length;neutralLabel.children[1].value='plural';neutralLabel.children[1].change();assert.equal(button.hidden,false);assert.equal(neutralSave.hidden,true);neutralSave.click();assert.equal(downloads.length,downloadCount);
+console.log('PASS acquisition UI neutral reference: explicit number submission and stale export invalidation on number edit.');

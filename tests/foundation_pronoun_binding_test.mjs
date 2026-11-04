@@ -29,3 +29,10 @@ let ui=show();assert.equal(ui.fields.length,2);assert(ui.fields.every(f=>f.value
 ui.fields[0].value='Ada';ui.fields[1].value='Eli';await ui.button.click();assert.equal(shown.resolved_input,'Ada prefers Eli to Nora.');
 ui=show();ui.fields[0].value='Ada';ui.fields[1].value='Eli';let finish;ctx.fetch=()=>new Promise(resolve=>finish=resolve);const previous=shown,pending=ui.button.click();ui.fields[1].value='Orin';finish({ok:true,json:async()=>({records})});await pending;assert.equal(shown,previous);
 console.log(`PASS ${count} explicit candidate pronoun bindings match full named-reference meanings/music; actual UI requires all bindings and discards edited pending results.`);
+ctx.fetch=async()=>({ok:true,json:async()=>({records})});
+elements.sourceInput.value='They prefer tea to coffee.';ctx.showFoundationPreview(elements.sourceInput.value);
+const neutralCard=elements.candidateList.children.at(-1),neutralLabel=neutralCard.children[1],neutralButton=neutralCard.children.at(-1);assert.equal(neutralLabel.children.length,2);
+neutralLabel.children[0].value='Nora';const beforeNeutral=shown;await neutralButton.click();assert.equal(shown,beforeNeutral);assert.equal(errors.at(-1).code,'pronoun_referents_required');
+neutralLabel.children[1].value='singular';await neutralButton.click();assert.equal(shown.resolved_input,'Nora prefer tea to coffee.');
+const singular=shown;neutralLabel.children[1].value='plural';await neutralButton.click();assert.equal(shown,singular);assert.equal(errors.at(-1).code,'pronoun_referents_required');
+console.log('PASS foundation UI neutral reference: number required, singular binding submitted, plural not coerced.');

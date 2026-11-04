@@ -71,5 +71,9 @@ The UI collects each referent and, for they/them, asks one individual versus a
 group. Unknown number and plural selections reject explicitly; this is not plural
 group support. Changing referents or number invalidates prior outputs. A complete
 plural representation and discourse-wide antecedent tracking remain requirements.
-The shared pronoun scanner's neutral-word option is opt-in for this path, so this
-change does not claim they/them support throughout the entire translator.
+The shared pronoun scanner's neutral-word option is now also used by desire,
+preference, polar knowledge and learned-whether previews. A shared resolver
+validates reference/number choices and snapshots strings before asynchronous
+composition. Fifteen additional complete meaning/MIDI comparisons pass, and
+actual-handler tests cover number fields and stale learning export rejection.
+This does not claim they/them support throughout the entire translator.

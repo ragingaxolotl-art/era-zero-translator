@@ -339,9 +339,12 @@ function showAcquisitionPreview(input){
   for(const occurrence of pronouns?.occurrences||[]){
     const label=document.createElement('label'),field=document.createElement('input');label.textContent=`Who or what does “${occurrence.pronoun}” refer to? (occurrence ${fields.length+1})`;field.type='text';field.value='';field.placeholder='Name or the robot';
     field.addEventListener('input',()=>{button.hidden=false;for(const output of outputs)output.hidden=true;outputs=[];});
-    label.append(field);fields.push({key:occurrence.key,field,label});
+    label.append(field);let number=null;
+    if(/^(they|them)$/i.test(occurrence.pronoun)){number=document.createElement('select');for(const [value,title] of [['','One individual or a group?'],['singular','One individual'],['plural','A group']]){const option=document.createElement('option');option.value=value;option.textContent=title;number.append(option);}number.value='';label.append(number);}
+    if(number)number.addEventListener('change',()=>{button.hidden=false;for(const output of outputs)output.hidden=true;outputs=[];});
+    fields.push({key:occurrence.key,field,label,number});
   }
-  const readBindings=()=>pronouns?Object.fromEntries(fields.map(({key,field})=>[key,field.value.trim()])):undefined;
+  const readBindings=()=>pronouns?Object.fromEntries(fields.map(({key,field,number})=>[key,number?{referent:field.value.trim(),number:number.value}:field.value.trim()])):undefined;
   button.textContent='Preview draft translation';
   const current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled';
   button.addEventListener('click',async()=>{
@@ -389,9 +392,11 @@ function showFoundationPreview(input){
   const pronouns=foundationPronounPlan(input,{allowCognitive:true}),fields=[];
   for(const occurrence of pronouns?.occurrences||[]){
     const label=document.createElement('label');label.textContent=`Who or what does “${occurrence.pronoun}” refer to? (occurrence ${fields.length+1})`;
-    const field=document.createElement('input');field.type='text';field.value='';field.placeholder='Name or the robot';label.append(field);fields.push({key:occurrence.key,field,label});
+    const field=document.createElement('input');field.type='text';field.value='';field.placeholder='Name or the robot';label.append(field);let number=null;
+    if(/^(they|them)$/i.test(occurrence.pronoun)){number=document.createElement('select');for(const [value,title] of [['','One individual or a group?'],['singular','One individual'],['plural','A group']]){const option=document.createElement('option');option.value=value;option.textContent=title;number.append(option);}number.value='';label.append(number);}
+    fields.push({key:occurrence.key,field,label,number});
   }
-  const readBindings=()=>pronouns?Object.fromEntries(fields.map(({key,field})=>[key,field.value.trim()])):undefined;
+  const readBindings=()=>pronouns?Object.fromEntries(fields.map(({key,field,number})=>[key,number?{referent:field.value.trim(),number:number.value}:field.value.trim()])):undefined;
   const button=document.createElement('button');button.textContent='Preview draft translation';
   const current=()=>$('sourceInput').value.trim()===input&&state.mode!=='controlled'&&card.isConnected!==false;
   button.addEventListener('click',async()=>{
