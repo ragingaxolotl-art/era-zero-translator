@@ -61,7 +61,7 @@ const conditional=await composeSentenceConditional('If the box is heavy, carry i
 assert(conditional.semantic_ir.nodes.some(n=>n.target_id===id));
 const cf=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_renderer','-e','puts JSON.generate(EraZeroRenderer.render(JSON.parse(STDIN.read)))'],{cwd:root,input:JSON.stringify(conditional.semantic_ir),encoding:'utf8',maxBuffer:5_000_000}));assert.deepEqual(cf,conditional.formal);
 execFileSync('ruby',['-Itools/lib','-rera_zero_validation','-e',String.raw`
- d=EraZeroValidation.load_yaml('lexicon/compound_dictionary.yaml')['entries'];m=EraZeroValidation.load_yaml('migrations/custody_delivery_2026_11_04.yaml');old=d.reject{|e|[m['added_compound_id'],'CMP:3c13b9c619d95f1c40ea5da5','CMP:60cd46250d183e3105b7250a','CMP:6c9e3042a361ccae6ecf5980','CMP:748be1f0ce7ceb2963716292','CMP:8e95897afbd6d54b8e164e03','CMP:c58b38d03fab27880ac3e1f0','CMP:c64ab0a9989c7b10c46e3b38'].include?(e['compound_id'])}
+ d=EraZeroValidation.load_yaml('lexicon/compound_dictionary.yaml')['entries'];m=EraZeroValidation.load_yaml('migrations/custody_delivery_2026_11_04.yaml');old=d.select{|e|m['previous_compound_ids'].include?(e['compound_id'])}
  raise 'Prior 42 compounds changed' unless old.length==42 && EraZeroValidation.fingerprint(old)==m['before_dictionary_fingerprint']
 `],{cwd:root,encoding:'utf8'});
 // Exercise the actual UI handler: choice is explicit, semantic output is delivery.

@@ -1,9 +1,9 @@
 # Controlled English Compiler Validation
 
-Status: **FAIL**
+Status: **PASS — CONTROLLED ENGLISH CANONICAL; GENERAL ENGLISH MAY BEGIN**
 
-- Checks passed: **12**
-- Checks failed: **1**
+- Checks passed: **13**
+- Checks failed: **0**
 - Controlled lexemes: **379**
 - Golden valid cases: **16**
 - Golden invalid cases: **17**
@@ -11,7 +11,7 @@ Status: **FAIL**
 - General English authorized next: **yes**
 - General English implemented: **no**
 
-## FAIL — source immutability
+## PASS — source immutability
 
 sense index, semantic IR, and renderer match recorded fingerprints
 
@@ -62,8 +62,4 @@ the controlled-English release itself began no general-English work
 ## PASS — authority integration
 
 controlled English remains canonical after orderly downstream progression
-
-## Failures
-
-- source immutability: sense index, semantic IR, and renderer match recorded fingerprints
 

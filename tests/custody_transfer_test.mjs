@@ -59,7 +59,7 @@ const lr=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_renderer','-r
 for(const [state,r] of lr.entries()){assert.deepEqual(await renderLexicalOccurrences(r.formal.semantic_ir,authority),r.formal.performance.lexical_events);const d=decodeCustodyTransferMidi(Buffer.from(r.midi,'base64'),authority.atoms);assert.equal(d.runtime_state,state);assert.deepEqual(d.participants,{source:{kind:'lexical',root_id:'LIF:010',runtime_state:0},object:{kind:'lexical',root_id:'MAT:010',runtime_state:2},recipient:{kind:'lexical',root_id:'LIF:000',runtime_state:1}});}
 execFileSync('ruby',['-Itools/lib','-rera_zero_controlled_english','-e',String.raw`
  d=EraZeroValidation.load_yaml('lexicon/compound_dictionary.yaml')['entries'];m=EraZeroValidation.load_yaml('migrations/custody_transfer_2026_11_04.yaml')
- old=d.reject{|e|[m['added_compound_id'],'CMP:5200738177777915abb3f42e','CMP:3c13b9c619d95f1c40ea5da5','CMP:60cd46250d183e3105b7250a','CMP:6c9e3042a361ccae6ecf5980','CMP:748be1f0ce7ceb2963716292','CMP:8e95897afbd6d54b8e164e03','CMP:c58b38d03fab27880ac3e1f0','CMP:c64ab0a9989c7b10c46e3b38'].include?(e['compound_id'])}
+ old=d.select{|e|m['previous_compound_ids'].include?(e['compound_id'])}
  raise 'Prior 41 compounds changed' unless old.length==41 && EraZeroValidation.fingerprint(old)==m['before_dictionary_fingerprint']
  begin
  EraZeroControlledEnglish::Compiler.new.compile!('ASSERT "completed transfer of physical custody" [1] ROLE source "identified other" [0] ROLE target "distinct material object" [2].')

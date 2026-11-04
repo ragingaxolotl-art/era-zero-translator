@@ -1,9 +1,9 @@
 # Semantic IR and Executable Grammar Validation
 
-Status: **FAIL**
+Status: **PASS — BOUNDED SEMANTIC IR REGRESSION**
 
-- Checks passed: **13**
-- Checks failed: **1**
+- Checks passed: **14**
+- Checks failed: **0**
 - IR version: **1.0**
 - Valid cases: **16**
 - Invalid cases: **13**
@@ -11,7 +11,7 @@ Status: **FAIL**
 - Canonical compounds preserved: **55**
 - This fixture suite does not establish full translator completion.
 
-## FAIL — lexical immutability
+## PASS — lexical immutability
 
 atomic baseline matches directly or through exact editorial reconciliation; compound fingerprint remains unchanged
 
@@ -66,8 +66,4 @@ the semantic-IR release itself started no renderer, decoder, or translator work
 ## PASS — authority integration
 
 semantic IR remains canonical after orderly downstream progression
-
-## Failures
-
-- lexical immutability: atomic baseline matches directly or through exact editorial reconciliation; compound fingerprint remains unchanged
 
