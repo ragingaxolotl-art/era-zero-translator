@@ -315,3 +315,38 @@ browser formal and MIDI equal Ruby, and MIDI-only semantic recovery preserves
 each time at its own level. Existing desire-time, knowledge-sentence and desired
 knowledge regressions pass. Acquisition and its result-state linkage remain the
 next distinct semantic dependency; no new root or sound was required for tense.
+
+## Acquisition result binding: draft executable contract
+
+The current ORI:110 invariant is completion of a bounded transition in which a
+distinct referent comes to obtain. The approved custody-acquisition convention
+provides a precedent for treating a relation as that referent and explicitly
+linking its absence before to its obtaining at culmination. ORI:100 instead grounds
+a source of another state and is not the appropriate substitute here. MIN:110
+only completes model revision and does not establish the knowledge result.
+
+`knowledge_acquisition.mjs` now defines a draft reusable result-state document
+using ORI:110 and the exact existing polar-answer knowledge candidate. Its phase
+contract requires that same relation not to hold before and to hold at culmination;
+afterward is unspecified. The embedded relation binds the same knower and complete
+question. It is a culmination state, not an independent assertion at speech time.
+An independently timed, negated or interrogative matrix result is rejected. Inner
+question negation remains part of the question. No new root or primitive is added.
+
+This explicit phase convention adds meaning beyond an unmarked pair of roots.
+It is not yet a canonical compound, admitted English learned-whether construction
+or musical event. It does not identify a teacher, medium, cause, effort, voluntary
+action, permanent retention or the positive answer as true. Broader skill learning,
+memorization and understanding need their own result contracts.
+
+The executable reference model receives independently established before/result
+knowledge truth and a completed-transition witness. It cannot infer knowledge
+from truth of the embedded proposition or a correct guess. All 27 combinations of
+true/false/unknown inputs match independent completion enumeration, and runtime
+0/1/2 is rejected as a truth substitute. Document tests preserve exact result
+identity and reject altered phase commitments and rehashed stale result data.
+These are semantic dependency checks, not musical or full-translator proof.
+
+Next: admit the result relation under explicit acquisition framing in both
+renderers, recover the pre/result linkage from MIDI, and only then expose
+learned-whether with separate tense, negation and runtime.

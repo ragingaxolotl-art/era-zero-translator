@@ -39,7 +39,9 @@ broader inverse coverage remain unfinished. Desired knowledge now reuses the
 existing desire and knowledge candidates with explicit subject binding; 15 cases
 have full browser/Ruby parity and independent musical meaning recovery. Past
 knowledge and separate outer/content calendar scopes now have 21 additional
-meaning/music checks; these do not implement learning.
+meaning/music checks. A subsequent draft acquisition contract reuses ORI:110
+and the exact knowledge result with explicit before/culmination binding; 27
+partial-information contrasts pass. Acquisition music and English remain open.
 
 Recent completed implementation work:
 
