@@ -32,7 +32,7 @@ for(const state of [0,1,2])results.push(await composeSentenceConjunction(`Nora w
 const ruby=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_presentation','-rbase64','-e',"puts JSON.generate(JSON.parse(STDIN.read).map{|ir|f=EraZeroRenderer.render(ir);{formal:f,midi:Base64.strict_encode64(EraZeroPresentation.midi(f))}})"],{cwd:root,input:JSON.stringify(results.map(r=>r.semantic_ir)),encoding:'utf8',maxBuffer:50_000_000}));
 for(const [i,r] of results.entries()){assert.deepEqual(r.formal,ruby[i].formal);assert.equal(Buffer.from(midiFromFormal(r.formal)).toString('base64'),ruby[i].midi);}
 const completed=await composeNamedSentence('Nora physically entered the archive.',{authority});assert.equal(decodePhysicalEntryMidi(midiFromFormal(completed.formal),authority.atoms).phases.culmination,'interior');assert.notDeepEqual(midiFromFormal(completed.formal),midiFromFormal(results[2].formal));
-for(const text of ['Nora enters the archive.','Nora may be entering the archive.','Nora is entering the archive slowly.'])assert.equal(parseNamedSentence(text),null);
+for(const text of ['Nora is entering the archive slowly.'])assert.equal(parseNamedSentence(text),null);
 // Valid musical names cannot be spliced into only the pre-phase without failing
 // independent identity recovery. No IR is passed to the inverse.
 const alternate=await composeNamedSentence('Eli is physically entering the archive.',{authority}),base=await composeNamedSentence('Nora is physically entering the archive.',{authority});

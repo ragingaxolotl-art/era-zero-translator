@@ -72,7 +72,7 @@ function showPronounReferents(input,plan){
     scale=select(card,`${luminance?'luminance unit':mass?'mass unit':'temperature scale'}`,luminance?[['candela_per_square_meter','Candelas per square metre (cd/m²)']]:mass?[['kilogram','Kilograms'],['gram','Grams']]:[['celsius','Degrees Celsius'],['kelvin','Kelvins']]);
     if(standardMode)standardMode.addEventListener('change',()=>{threshold.disabled=scale.disabled=standardMode.value==='contextual'});
     }
-  }else if(parsed.requiredInterpretation==='entry_modality')interpretation=select(card,'meaning of may',[['','Choose a meaning'],...entryModalChoices(parsed.entryModalNegative)]);
+  }else if(parsed.requiredInterpretation==='entry_modality')interpretation=select(card,'meaning of may',[['','Choose a meaning'],...entryModalChoices(parsed.entryModalNegative,parsed.key==='ongoing_physical_entry')]);
   else if(parsed.requiredInterpretation==='physical_entry')interpretation=select(card,'entry meaning',[['','Choose an entry meaning'],['physical_entry','Movement from outside to inside a physical region']]);
   else if(parsed.requiredInterpretation==='luminance_comparison')interpretation=select(card,`brightness meaning`,[['','Choose a comparison meaning'],['luminance_comparison','Physical luminance; comparable viewing conditions']]);
   else if(parsed.requiredInterpretation==='future_assertion')interpretation=select(card,`future meaning`,[['','Choose a future meaning'],['future_assertion','Future statement; no promise or intention added']]);
@@ -112,7 +112,7 @@ function showClauseInterpretations(input,plan){
       scale=select(section,`Clause ${index+1} ${luminance?'luminance unit':mass?'mass unit':'temperature scale'}`,luminance?[['candela_per_square_meter','Candelas per square metre (cd/m²)']]:mass?[['kilogram','Kilograms'],['gram','Grams']]:[['celsius','Degrees Celsius'],['kelvin','Kelvins']]);
       if(standardMode)standardMode.addEventListener('change',()=>{threshold.disabled=scale.disabled=standardMode.value==='contextual'});
       }
-    }else if(parsed.requiredInterpretation==='entry_modality')interpretation=select(section,`Clause ${index+1} meaning of may`,[['','Choose a meaning'],...entryModalChoices(parsed.entryModalNegative)]);
+    }else if(parsed.requiredInterpretation==='entry_modality')interpretation=select(section,`Clause ${index+1} meaning of may`,[['','Choose a meaning'],...entryModalChoices(parsed.entryModalNegative,parsed.key==='ongoing_physical_entry')]);
     else if(parsed.requiredInterpretation==='physical_entry')interpretation=select(section,`Clause ${index+1} entry meaning`,[['','Choose an entry meaning'],['physical_entry','Movement from outside to inside a physical region']]);
     else if(parsed.requiredInterpretation==='luminance_comparison')interpretation=select(section,`Clause ${index+1} brightness meaning`,[['','Choose a comparison meaning'],['luminance_comparison','Physical luminance; comparable viewing conditions']]);
     else if(parsed.requiredInterpretation==='future_assertion')interpretation=select(section,`Clause ${index+1} future meaning`,[['','Choose a future meaning'],['future_assertion','Future statement; no promise or intention added']]);
@@ -134,16 +134,22 @@ function showClauseInterpretations(input,plan){
   card.append(status,button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
 }
 function showCarryingViewpoint(input){
-  const parsed=parseNamedSentence(input),needsMass=parsed.requiredInterpretation==='mass_standard';
+  const parsed=parseNamedSentence(input),needsMass=parsed.requiredInterpretation==='mass_standard',needsEntry=parsed.requiredInterpretation==='physical_entry';
   state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
   $('output').classList.add('hidden');$('phraseCoverage').classList.add('hidden');$('resolutionPanel').classList.add('hidden');$('results').classList.remove('hidden');$('candidateList').innerHTML='';
   $('decisionSummary').textContent=`Choose the intended ${parsed.viewpointActivity||'carrying'} meaning before generating sound.`;
   const card=document.createElement('article');card.className='candidate';
-  const description=document.createElement('p');description.textContent=parsed.runningEndpoint?'A narrated journey reaches the destination by running. A recurring practice consists of such journeys without asserting a current occurrence. An unfolding run approaches the destination without asserting arrival.':parsed.requiredDestination?'Choose arrival at a position or carrying that culminates in transfer of physical custody to the recipient. An unfolding action does not assert completed arrival or transfer.':'A recurring practice, an unfolding action and one narrated episode have different meanings. None automatically means arrival, delivery or a future plan.';
-  const viewpointLabel=document.createElement('label');viewpointLabel.textContent=parsed.viewpointActivity==='running'?'Running meaning':parsed.viewpointActivity==='swimming'?'Swimming meaning':'Carrying meaning';
+  const description=document.createElement('p');description.textContent=parsed.viewpointActivity==='entry'?'A narrated entry reaches the inside. A recurring practice consists of completed entries without asserting a current occurrence. An unfolding entry can be interrupted before reaching the inside.':parsed.runningEndpoint?'A narrated journey reaches the destination by running. A recurring practice consists of such journeys without asserting a current occurrence. An unfolding run approaches the destination without asserting arrival.':parsed.requiredDestination?'Choose arrival at a position or carrying that culminates in transfer of physical custody to the recipient. An unfolding action does not assert completed arrival or transfer.':'A recurring practice, an unfolding action and one narrated episode have different meanings. None automatically means arrival, delivery or a future plan.';
+  const viewpointLabel=document.createElement('label');viewpointLabel.textContent=parsed.viewpointActivity==='entry'?'Entry viewpoint':parsed.viewpointActivity==='running'?'Running meaning':parsed.viewpointActivity==='swimming'?'Swimming meaning':'Carrying meaning';
   const viewpoint=document.createElement('select');
   for(const [value,text] of [['','Choose a meaning'],['habitual','A recurring practice'],['ongoing','An unfolding action'],['bounded','One narrated episode']]){const option=document.createElement('option');option.value=value;option.textContent=text;viewpoint.append(option)}
   viewpoint.value='';viewpointLabel.append(viewpoint);card.append(description);if(parsed.requiredViewpoint)card.append(viewpointLabel);
+  let entrySense;
+  if(needsEntry){
+    const label=document.createElement('label');label.textContent='Entry meaning';entrySense=document.createElement('select');
+    for(const [value,text] of [['','Choose an entry meaning'],['physical_entry','Movement from outside to inside a physical region']]){const option=document.createElement('option');option.value=value;option.textContent=text;entrySense.append(option)}
+    entrySense.value='';label.append(entrySense);card.append(label);
+  }
   let destination;
   if(parsed.requiredDestination){
     const label=document.createElement('label');label.textContent='Meaning of to';destination=document.createElement('select');
@@ -161,11 +167,11 @@ function showCarryingViewpoint(input){
   const button=document.createElement('button');button.textContent='Translate with these meanings';
   button.addEventListener('click',async()=>{
     if(card.isConnected===false||$('sourceInput').value.trim()!==input||state.mode==='controlled')return;
-    const chosen=viewpoint.value,chosenDestination=destination?.value,standard=needsMass?{dimension:'mass',threshold:threshold.value.trim(),scale:scale.value}:undefined;
-    const current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled'&&viewpoint.value===chosen&&destination?.value===chosenDestination&&(!needsMass||(threshold.value.trim()===standard.threshold&&scale.value===standard.scale));
+    const chosen=viewpoint.value,chosenEntry=entrySense?.value,chosenDestination=destination?.value,standard=needsMass?{dimension:'mass',threshold:threshold.value.trim(),scale:scale.value}:undefined;
+    const current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled'&&viewpoint.value===chosen&&entrySense?.value===chosenEntry&&destination?.value===chosenDestination&&(!needsMass||(threshold.value.trim()===standard.threshold&&scale.value===standard.scale));
     button.disabled=true;status.textContent='';
     try{
-      const composed=await composeNamedSentence(input,await sentenceTemplate(parsed.predicate),{...(parsed.requiredViewpoint?{viewpoint:chosen}:{}),...(parsed.requiredDestination?{destination:chosenDestination}:{}),...(needsMass?{interpretation:'mass_standard',standard}:{})});
+      const composed=await composeNamedSentence(input,await sentenceTemplate(parsed.predicate),{...(parsed.requiredViewpoint?{viewpoint:chosen}:{}),...(parsed.requiredDestination?{destination:chosenDestination}:{}),...(needsMass?{interpretation:'mass_standard',standard}:needsEntry?{interpretation:chosenEntry}:{})});
       if(!current())return;
       state.resolution=composed;$('results').classList.add('hidden');
       await showResolution(composed,{definition:[composed.interpretation,composed.semantic_note].filter(Boolean).join(' ')});
@@ -181,7 +187,7 @@ function showEntryModality(input){
  const card=document.createElement('article'),description=document.createElement('p'),choice=document.createElement('select'),status=document.createElement('p'),button=document.createElement('button');
  card.className='candidate';status.setAttribute('role','status');choice.setAttribute('aria-label','Meaning of may');
  description.textContent='These readings concern movement from outside to inside a physical region. Permission, possibility and the scope of “not” remain distinct. Other meanings of entry need another interpretation.';
- for(const [value,label] of [['','Choose a meaning'],...entryModalChoices(parsed.entryModalNegative)]){const option=document.createElement('option');option.value=value;option.textContent=label;choice.append(option)}
+ for(const [value,label] of [['','Choose a meaning'],...entryModalChoices(parsed.entryModalNegative,parsed.key==='ongoing_physical_entry')]){const option=document.createElement('option');option.value=value;option.textContent=label;choice.append(option)}
  button.textContent='Translate this meaning';
  button.addEventListener('click',async()=>{
   const selected=choice.value,current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled'&&choice.value===selected;

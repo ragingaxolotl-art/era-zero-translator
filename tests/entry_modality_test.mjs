@@ -10,11 +10,11 @@ import {decodePhysicalEntryMidi} from '../pages/physical_entry_decoder.mjs';
 const root=new URL('..',import.meta.url),authority=JSON.parse(fs.readFileSync(new URL('pages/data/index.json',root))),load=async()=>({authority}),results=[];
 const neg={operator:'negation'},possible={operator:'modality',mode:'possible'},permitted={operator:'modality',mode:'permitted'};
 const expected={entry_possible:[possible],entry_permitted:[permitted],entry_possible_not:[possible,neg],entry_not_permitted:[neg,permitted],entry_permitted_not:[permitted,neg]};
-for(const state of [0,1,2])for(const negative of [false,true])for(const [choice] of entryModalChoices(negative))for(const question of [false,true]){
- const text=`${question?'May Nora':'Nora may'} ${negative?'not ':''}enter the archive [${state}]${question?'?':'.'}`;
+for(const ongoing of [false,true])for(const state of [0,1,2])for(const negative of [false,true])for(const [choice] of entryModalChoices(negative))for(const question of [false,true]){
+ const text=`${question?'May Nora':'Nora may'} ${negative?'not ':''}${ongoing?'be entering':'enter'} the archive [${state}]${question?'?':'.'}`;
  await assert.rejects(()=>composeNamedSentence(text,{authority}),e=>e.code==='entry_modality_required');
  const r=await composeNamedSentence(text,{authority},{interpretation:choice});results.push(r);
- const d=decodePhysicalEntryMidi(midiFromFormal(r.formal),authority.atoms);assert.deepEqual(d.scopes,expected[choice]);assert.equal(d.runtime_state,state);assert.equal(d.speech_act,question?'question':'assertion');assert.equal(d.phases.culmination,'interior');
+ const d=decodePhysicalEntryMidi(midiFromFormal(r.formal),authority.atoms);assert.deepEqual(d.scopes,expected[choice]);assert.equal(d.runtime_state,state);assert.equal(d.speech_act,question?'question':'assertion');assert.equal(d.predicate,ongoing?'ongoing_physical_entry':'completed_physical_entry');assert.equal(d.phases.culmination,ongoing?'not_asserted':'interior');
  assert(!r.semantic_ir.nodes.some(n=>n.entryModal));assert(!r.semantic_ir.edges.some(e=>e.type==='time_relation'));
 }
 for(const state of [0,1,2])for(const [text,choice,scopes] of [
@@ -23,6 +23,9 @@ for(const state of [0,1,2])for(const [text,choice,scopes] of [
  ['Nora is permitted not to enter the archive','physical_entry',[permitted,neg]],
  ['Nora is permitted to not enter the archive','physical_entry',[permitted,neg]],
  ['Nora is permitted to physically enter the archive',undefined,[permitted]],
+ ['Nora is permitted to be entering the archive','physical_entry',[permitted]],
+ ['Nora is not permitted to be entering the archive','physical_entry',[neg,permitted]],
+ ['Nora is permitted not to be physically entering the archive',undefined,[permitted,neg]],
  ['It is possible that Nora may enter the archive','entry_permitted',[possible,permitted]],
  ['It is not the case that Nora may not enter the archive','entry_permitted_not',[neg,permitted,neg]]
 ]){
@@ -41,7 +44,11 @@ for(const [choice,explicit] of [['entry_permitted','Nora is permitted to enter t
 }
 const ruby=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_presentation','-rbase64','-e',"puts JSON.generate(JSON.parse(STDIN.read).map{|ir|f=EraZeroRenderer.render(ir);{formal:f,midi:Base64.strict_encode64(EraZeroPresentation.midi(f))}})"],{cwd:root,input:JSON.stringify(results.map(r=>r.semantic_ir)),encoding:'utf8',maxBuffer:60_000_000}));
 for(const [i,r] of results.entries()){assert.deepEqual(r.formal,ruby[i].formal);assert.equal(Buffer.from(midiFromFormal(r.formal)).toString('base64'),ruby[i].midi);}
-assert.equal(new Set(ruby.slice(0,30).map(r=>r.midi)).size,30);
+assert.equal(new Set(ruby.slice(0,60).map(r=>r.midi)).size,60);
+// A possible ongoing prefix need not have any completed-entry continuation in
+// the relevant alternatives. Possible(progress) is not possible(completion).
+const alternatives=[{ongoing:true,completed:false}];
+assert(alternatives.some(w=>w.ongoing));assert(!alternatives.some(w=>w.completed));
 // Independently specified permission/epistemic alternatives. Neither implies
 // occurrence, and permission to abstain is not prohibition of the action.
 function evaluate(scopes,model,entry=true){if(!scopes.length)return entry;const [s,...rest]=scopes;if(s.operator==='negation')return !evaluate(rest,model,entry);return model[s.mode].some(value=>evaluate(rest,model,value));}
@@ -67,3 +74,9 @@ const pronounInput='She may not enter the archive.';elements.sourceInput.value=p
 vm.runInContext(app.slice(app.indexOf('function showPronounReferents('),app.indexOf('function showClauseInterpretations(')),ctx);ctx.showPronounReferents(pronounInput,pronounInterpretationPlan(pronounInput));
 card=elements.candidateList.children.at(-1);const controls=card.children.filter(n=>n.children?.length).map(n=>n.children[0]);controls[0].value='Nora';controls[1].value='entry_permitted_not';await card.children.at(-1).click();assert.equal(shown.selected_interpretation,'entry_permitted_not');assert.deepEqual(decodePhysicalEntryMidi(midiFromFormal(shown.formal),authority.atoms).scopes,[permitted,neg]);
 console.log(`PASS ${results.length} modal entry cases: Ruby/MIDI parity, independently recovered modal/negative scopes, semantic countermodels and direct/group/pronoun UI choices.`);
+
+const ongoingInput='Nora may be entering the archive.';elements.sourceInput.value=ongoingInput;ctx.sentenceTemplate=load;ctx.showEntryModality(ongoingInput);card=elements.candidateList.children.at(-1);
+assert(card.children[1].children.some(option=>option.textContent==='Physical entry may be in progress'));
+card.children[1].value='entry_possible';await card.children.at(-1).click();
+const ongoingDecoded=decodePhysicalEntryMidi(midiFromFormal(shown.formal),authority.atoms);assert.equal(ongoingDecoded.predicate,'ongoing_physical_entry');assert.equal(ongoingDecoded.phases.culmination,'not_asserted');assert.deepEqual(ongoingDecoded.scopes,[possible]);
+console.log('PASS ongoing-modal UI uses progress-specific wording and retains the unasserted culmination.');

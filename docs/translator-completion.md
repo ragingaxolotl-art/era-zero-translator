@@ -1551,3 +1551,18 @@ The new suite covers 36 ongoing and mixed-event cases, Ruby/MIDI parity, indepen
 phase and scope recovery, corrupted identity, an interruption countermodel and
 exact preservation of earlier vocabulary. No full-suite or listening completion
 is claimed for this addition.
+
+### Entry viewpoints and modal progress
+
+Simple-present enters now offers bounded narrated, unfolding and habitual readings;
+explicit habitually wording selects the last. The unfolding reading reuses ongoing
+entry, and narrated/habitual readings reuse the completed event type. Neither past
+time nor a current habitual occurrence is invented. Ordinary wording collects
+physical sense and viewpoint together; pronoun and multi-clause flows preserve both.
+
+May-be-entering and explicit permitted-to-be-entering retain ongoing entry beneath
+the selected modal scope. UI wording identifies entry in progress. The expanded
+modal suite checks 96 cases; the new viewpoint suite checks 51 cases, both with
+Ruby/MIDI parity and independent meaning recovery. No vocabulary changed in this
+step: 324 roots, 63 compounds and 471 canonical senses remain. Dated/perfect modal
+forms, named authorities and broader coverage still require work.

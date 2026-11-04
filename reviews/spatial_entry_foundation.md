@@ -2,7 +2,7 @@
 
 Status: semantic audit and implementation record. Spatial states and completed
 physical entry, ongoing entry and modal-entry interpretation are implemented
-below; simple-present viewpoints and wider constructions remain unfinished. Initial audit: revision 5a5a427 (324 roots,
+below; wider grammar, held-out interpretation and listening checks remain unfinished. Initial audit: revision 5a5a427 (324 roots,
 58 compounds). Preserve root definitions, conventions and lexical/runtime 0/1/2.
 
 ## Evidence and rejected substitutions
@@ -213,3 +213,24 @@ phrasing needs no extra sense choice. Tests include mixed completed/ongoing clau
 Ruby parity, corrupted musical identity and preservation of all 62 prior compounds
 and the root source. Simple-present enters, may-be-entering, manners and arbitrary
 spatial qualifiers remain unfinished. No original completion gate is closed.
+
+## Simple-present viewpoints and modal ongoing entry
+
+“Enters” and its do questions now require an explicit viewpoint. A bounded narrated
+reading uses completed entry; an unfolding reading uses ongoing entry; a habitual
+reading scopes the completed event type without asserting a particular current
+occurrence. Explicit habitually forms supply the habitual scope. Past time is not
+inferred from the completed lexical head. Physical-sense choice and viewpoint are
+separate, collected together for ordinary wording, including pronoun and clause
+flows. Explicit physically wording supplies the sense but not a missing viewpoint.
+
+“May be entering” and permitted-to-be-entering retain the ongoing predicate under
+the same modal and negative scope choices. Their UI labels explicitly describe
+entry in progress. A possible ongoing process is not silently converted into a
+possible completed entry. Question speech act and runtime 0/1/2 are preserved.
+
+The expanded modal suite has 96 cases and the entry-viewpoint suite has 51 cases,
+with reference Ruby/MIDI parity, independent scope/phase recovery, mixed clauses,
+pronoun binding, explicit choices and stale-choice rejection. These are authored
+bounded checks. Dated/perfect modal entry, explicit authorities, arbitrary manner
+and region modifiers, and general English coverage remain unfinished.

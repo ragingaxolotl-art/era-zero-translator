@@ -115,9 +115,9 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     return inner?{...inner,explicitInterpretation:inner.explicitInterpretation||normalized.trim()}:null;
   }
   if(speechActs){
-    const mayQuestion=String(input).trim().match(new RegExp(`^[Mm]ay ${participant} (not )?(physically )?enter ${participant}[?]$`));
+    const mayQuestion=String(input).trim().match(new RegExp(`^[Mm]ay ${participant} (not )?((?:physically )?enter|be (?:physically )?entering) ${participant}[?]$`));
     if(mayQuestion){
-      const inner=parseNamedSentence(`${mayQuestion[1]} may ${mayQuestion[2]||''}${mayQuestion[3]||''}enter ${mayQuestion[4]}.`,depth+1,false);
+      const inner=parseNamedSentence(`${mayQuestion[1]} may ${mayQuestion[2]||''}${mayQuestion[3]} ${mayQuestion[4]}.`,depth+1,false);
       return inner?{...inner,speechAct:'question',construction:`question_${inner.construction}`,explicitInterpretation:String(input).trim()}:null;
     }
     const entryCommand=String(input).trim().match(new RegExp(`^([Dd]o not )?[Ee]nter ${participant}[.!]?$`));
@@ -215,16 +215,18 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     if(modal[1])scopes.push({operator:'negation'});
     return {...inner,scopes,construction:`scoped_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
-  const mayEntry=String(input).trim().match(new RegExp(`^${participant} may (not )?(physically )?enter ${participant}[.]?$`));
+  const mayEntry=String(input).trim().match(new RegExp(`^${participant} may (not )?((?:physically )?enter|be (?:physically )?entering) ${participant}[.]?$`));
   if(mayEntry){
-    const inner=parseNamedSentence(`${mayEntry[1]} physically entered ${mayEntry[4]}.`,depth+1,false);
+    const inner=parseNamedSentence(`${mayEntry[1]} ${mayEntry[3].startsWith('be ')?'is physically entering':'physically entered'} ${mayEntry[4]}.`,depth+1,false);
     if(!inner)return null;
     return {...inner,speechTime:undefined,requiredInterpretation:'entry_modality',entryModalNegative:!!mayEntry[2],scopes:[{entryModal:true,negative:!!mayEntry[2]}],construction:'modal_physical_entry',explicitInterpretation:String(input).trim(),semanticNote:inner.semanticNote+' May requires a permission or possibility interpretation; neither asserts occurrence or physical ability.'};
   }
-  const permissionEntry=String(input).trim().match(new RegExp(`^${participant} (?:is|am|are) (not )?permitted (not )?to (not )?(physically )?enter ${participant}[.]?$`));
+  const permissionEntry=String(input).trim().match(new RegExp(`^${participant} (?:is|am|are) (not )?permitted (not )?to (not )?((?:physically )?enter|be (?:physically )?entering) ${participant}[.]?$`));
   if(permissionEntry){
     if([permissionEntry[2],permissionEntry[3],permissionEntry[4]].filter(Boolean).length>1)return null;
-    const inner=parseNamedSentence(`${permissionEntry[1]} ${permissionEntry[5]||''}entered ${permissionEntry[6]}.`,depth+1,false);
+    const physical=permissionEntry[5].includes('physically'),ongoing=permissionEntry[5].startsWith('be ');
+    const wording=ongoing?`is ${physical?'physically ':''}entering`:`${physical?'physically ':''}entered`;
+    const inner=parseNamedSentence(`${permissionEntry[1]} ${wording} ${permissionEntry[6]}.`,depth+1,false);
     if(!inner)return null;
     const scopes=[...(permissionEntry[3]||permissionEntry[4]?[{operator:'negation'}]:[]),{operator:'modality',mode:'permitted'},...(permissionEntry[2]?[{operator:'negation'}]:[])];
     return {...inner,speechTime:undefined,scopes,construction:'permitted_physical_entry',explicitInterpretation:String(input).trim(),semanticNote:inner.semanticNote+' The permission scopes this event type; occurrence, ability and a named permitting authority are not asserted.'};
@@ -268,6 +270,18 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     const inner=parseNamedSentence(`${simpleSwimming[1]} is ${simpleSwimming[2].includes('not')?'not ':''}swimming${simpleSwimming[3]||''}`,depth+1,false);
     if(!inner||!['ongoing_bodily_swimming','ongoing_swimming_across_region'].includes(inner.key)||inner.requiredViewpoint||inner.requiredInterpretation||inner.speechAct||inner.scopes?.length||inner.calendarDay!==undefined||inner.speechTime!==undefined)return null;
     return {...inner,aspect:undefined,requiredViewpoint:true,viewpointActivity:'swimming',construction:`simple_present_${inner.construction}`,explicitInterpretation:String(input).trim()};
+  }
+  const entryQuestion=speechActs&&String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?(habitually )?(physically )?enter ${participant}[?]$`));
+  if(entryQuestion){
+    const inner=parseNamedSentence(`${entryQuestion[1]} ${entryQuestion[2]?'does not ':''}${entryQuestion[3]||''}${entryQuestion[4]||''}${entryQuestion[2]?'enter':'enters'} ${entryQuestion[5]}.`,depth+1,false);
+    return inner?{...inner,speechAct:'question',explicitInterpretation:String(input).trim()}:null;
+  }
+  const simpleEntry=String(input).trim().match(new RegExp(`^${participant} ((?:does not |do not )?)(habitually )?(physically )?(enters|enter) ${participant}[.]?$`));
+  if(simpleEntry){
+    const [,actor,negative,habit,physical,,region]=simpleEntry;
+    const inner=parseNamedSentence(`${actor} ${negative?'did not ':''}${physical||''}${negative?'enter':'entered'} ${region}.`,depth+1,false);
+    if(!inner||inner.key!=='completed_physical_entry')return null;
+    return {...inner,speechTime:undefined,aspect:habit?'habitual':undefined,requiredViewpoint:!habit,viewpointActivity:'entry',construction:`${habit?'habitual':'simple_present'}_${inner.construction}`,explicitInterpretation:String(input).trim()};
   }
   const runQuestion=speechActs&&String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?(habitually )?run((?: toward| to) .+)?[?]$`));
   if(runQuestion){
@@ -635,7 +649,7 @@ export async function composeNamedSentence(input,template,{interpretation,standa
     }
     parsed.aspect=viewpoint;
     const note={bounded:'Interprets simple-present carrying as one bounded narrated episode in the contextual reference interval, without asserting arrival, delivery or future time.',ongoing:'Interprets simple-present carrying as an unfolding action in the contextual reference interval, without asserting its endpoint.',habitual:'Interprets simple-present carrying as a recurring practice in the contextual reference interval, without asserting a particular occurrence, frequency or schedule.'}[viewpoint];
-    parsed.semanticNote=[parsed.semanticNote,parsed.viewpointActivity==='running'?'':parsed.viewpointActivity==='swimming'?({bounded:'One bounded narrated swimming episode; completion of an across-region crossing is not asserted.',ongoing:'An unfolding swimming activity; crossing completion is not asserted.',habitual:'A recurring swimming practice; no particular occurrence, frequency or schedule is asserted.'})[viewpoint]:note].filter(Boolean).join(' ');
+    parsed.semanticNote=[parsed.semanticNote,['running','entry'].includes(parsed.viewpointActivity)?'':parsed.viewpointActivity==='swimming'?({bounded:'One bounded narrated swimming episode; completion of an across-region crossing is not asserted.',ongoing:'An unfolding swimming activity; crossing completion is not asserted.',habitual:'A recurring swimming practice; no particular occurrence, frequency or schedule is asserted.'})[viewpoint]:note].filter(Boolean).join(' ');
   }else if(viewpoint!==undefined)throw new Error('This sentence does not require a viewpoint choice.');
   if(parsed.viewpointActivity==='running'){
     if(parsed.runningEndpoint){
@@ -644,6 +658,12 @@ export async function composeNamedSentence(input,template,{interpretation,standa
     }
     const note=parsed.aspect==='habitual'?'A recurring running practice; no particular current occurrence, frequency or schedule is asserted.':parsed.aspect==='ongoing'?'An unfolding running event; arrival is not asserted.':parsed.runningEndpoint?'One narrated running journey culminating at its destination; no past or future time is inferred.':'One bounded narrated running episode; arrival is not asserted.';
     parsed.semanticNote=[parsed.semanticNote,note].filter(Boolean).join(' ');
+  }
+  if(parsed.viewpointActivity==='entry'){
+    const chosen=parsed.aspect==='ongoing'?ONGOING_ENTRY:PHYSICAL_ENTRY;
+    Object.assign(parsed,{predicate:chosen.predicate,key:chosen.key,compoundSlots:chosen.compoundSlots,semanticNote:chosen.semanticNote});
+    const note=parsed.aspect==='habitual'?'A recurring practice of completed physical entries; no particular current occurrence, frequency or schedule is asserted.':parsed.aspect==='ongoing'?'An unfolding entry traversal; an interior culmination is not asserted.':'One narrated completed entry in the contextual reference interval; no past or future time is inferred.';
+    parsed.semanticNote+=' '+note;
   }
   if(parsed.requiredDestination){
     if(!['spatial','custody_delivery'].includes(destination)){
@@ -673,7 +693,7 @@ export async function composeNamedSentence(input,template,{interpretation,standa
   if(parsed.requiredInterpretation==='entry_modality'){
     const selected=entryModalScopes(interpretation,parsed.entryModalNegative);
     parsed.scopes=parsed.scopes.flatMap(scope=>scope.entryModal?selected:[scope]);
-    parsed.semanticNote+=' Selected reading: '+entryModalChoices(parsed.entryModalNegative).find(([key])=>key===interpretation)[1]+'.';
+    parsed.semanticNote+=' Selected reading: '+entryModalChoices(parsed.entryModalNegative,parsed.key==='ongoing_physical_entry').find(([key])=>key===interpretation)[1]+'.';
   }
   if(parsed.requiredInterpretation!=='entry_modality'&&interpretation!==undefined&&interpretation!==parsed.requiredInterpretation)throw new Error('This interpretation is not available for this sentence.');
   if(parsed.requiredInterpretation&&parsed.requiredInterpretation!=='entry_modality'&&interpretation!==parsed.requiredInterpretation){
