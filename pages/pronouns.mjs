@@ -20,7 +20,7 @@ export function pronounInterpretationPlan(input){
  if(!parsed||parsed.requiredInterpretation||parsed.requiredDestination||parsed.requiredViewpoint)return null;
  return {input,occurrences,parsed};
 }
-function validReferent(value){
+export function validReferent(value){
  if(typeof value!=='string'||value.length>200||value!==value.trim())return false;
  if(['I','me','you'].includes(value))return true;
  const nominal=parseNominal(value);if(nominal)return !nominal.quantifier;

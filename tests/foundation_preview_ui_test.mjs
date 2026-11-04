@@ -8,7 +8,7 @@ const elements=Object.fromEntries(['sourceInput','output','results','resolutionP
 const input='Nora prefers tea to coffee.';elements.sourceInput.value=input;
 const state={mode:'general',data:{},resolution:{old:true},wordSelections:new Map()};
 let calls=0,shown=null,errors=[];
-const context=vm.createContext({state,$:id=>elements[id],document:{createElement:element},fetch:async()=>({ok:true,json:async()=>({records:['candidate']})}),sentenceTemplate:()=>{},composeFoundationSentence:async(...args)=>{calls++;assert.equal(args[4].allowDraft,true);return {status:'candidate_translation'}},showResolution:async r=>{shown=r},showError:e=>errors.push(e)});
+const context=vm.createContext({foundationPronounPlan:()=>null,state,$:id=>elements[id],document:{createElement:element},fetch:async()=>({ok:true,json:async()=>({records:['candidate']})}),sentenceTemplate:()=>{},composeFoundationSentence:async(...args)=>{calls++;assert.equal(args[4].allowDraft,true);return {status:'candidate_translation'}},showResolution:async r=>{shown=r},showError:e=>errors.push(e)});
 vm.runInContext(handler+';showFoundationPreview('+JSON.stringify(input)+');',context);
 assert.equal(state.resolution,null);assert.equal(calls,0);
 const button=elements.candidateList.children.at(-1).children[1];
@@ -23,7 +23,7 @@ for(const outcome of ['success','failure']){
  complete(outcome==='success'?{status:'candidate_translation'}:new Error('late failure'));await pending;
  assert.equal(state.resolution,newer);assert.equal(shown,newer);assert.equal(errors.length,0);
 }
-assert(app.includes('if(parseFoundationSentence(input)){showFoundationPreview(input);return}'));
+assert(app.includes('if(parseFoundationSentence(input)||foundationPronounPlan(input)){showFoundationPreview(input);return}'));
 vm.runInContext(app.split('\n').find(l=>l.startsWith('const recognitionOptions='))+';this.options=recognitionOptions;',context);
 state.resolution={status:'candidate_translation'};assert.equal(context.options().mode,'strict');
 assert(app.includes("result.status==='candidate_translation'?'Draft preview'"));

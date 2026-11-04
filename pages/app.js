@@ -1,4 +1,4 @@
-import {parseFoundationSentence,composeFoundationSentence} from './foundation_sentences.mjs';
+import {parseFoundationSentence,composeFoundationSentence,foundationPronounPlan} from './foundation_sentences.mjs';
 import {pronounInterpretationPlan,composePronounSentence} from './pronouns.mjs';
 import {parseSentenceDisjunction,composeSentenceDisjunction,clauseInterpretationPlan,parseSentenceConditional,composeSentenceConditional,parseNamedSentence,composeNamedSentence,needsSentenceComposition,parseSentenceSequence,composeSentenceSequence,parseSentenceConjunction,composeSentenceConjunction} from './sentences.mjs';
 import{svgFromFormal,midiFromFormal,createBundle,verifyBundle,soundPlanFromFormal}from'./engine.mjs?v=1.15.0';
@@ -39,7 +39,7 @@ $('analyzeButton').addEventListener('click',analyze);
 $('sourceInput').addEventListener('keydown',event=>{if((event.metaKey||event.ctrlKey)&&event.key==='Enter')analyze()});
 
 async function sentenceTemplate(target){return state.data.compound_plans?.[target]?.expanded.nodes.some(node=>node.kind==='slot')?{authority:state.data}:{...(await resolutionDocument(target)).variants['assertion:1'],authority:state.data}}
-async function analyze(){const input=$('sourceInput').value.trim();if(!input)return toast('Write something in English to translate.');$('analyzeButton').disabled=true;try{if(state.mode==='controlled')await compileControlled(input);else{if(parseFoundationSentence(input)){showFoundationPreview(input);return}const pronounPlan=pronounInterpretationPlan(input);if(pronounPlan){showPronounReferents(input,pronounPlan);return}const groupPlan=clauseInterpretationPlan(input);if(groupPlan&&(groupPlan.requiredDisjunction||groupPlan.clauses.some(({parsed})=>parsed.requiredViewpoint||parsed.requiredDestination||parsed.requiredInterpretation))){showClauseInterpretations(input,groupPlan);return}if(parseNamedSentence(input)?.requiredViewpoint){showCarryingViewpoint(input);return}if(parseNamedSentence(input)?.requiredDestination){showCarryingViewpoint(input);return}if(['thermal_standard','mass_standard','luminance_standard','texture_standard'].includes(parseNamedSentence(input)?.requiredInterpretation)){showAdjectiveStandard(input);return}if(parseNamedSentence(input)?.requiredInterpretation){showFutureInterpretation(input);return}if(parseSentenceConditional(input)||parseNamedSentence(input)||parseSentenceSequence(input)||parseSentenceConjunction(input)){const composed=parseSentenceConditional(input)?await composeSentenceConditional(input,sentenceTemplate):parseSentenceConjunction(input)?await composeSentenceConjunction(input,sentenceTemplate):parseSentenceSequence(input)?await composeSentenceSequence(input,sentenceTemplate):await composeNamedSentence(input,await sentenceTemplate(parseNamedSentence(input).predicate));state.analysis=null;state.selected=null;state.phraseNames=[];state.resolution=composed;$('results').classList.add('hidden');await showResolution(composed,{definition:[composed.interpretation,composed.semantic_note].filter(Boolean).join(' ')});return}const result=analyzeEnglish(input,state.data);if(needsSentenceComposition(input)){result.decision.auto_resolution_allowed=false;result.decision.requires_clarification=true;result.decision.reasons.push('incomplete_sentence_construction');result.complete_sentence_unavailable=true}showAnalysis(result);if(result.decision.auto_resolution_allowed){const first=$('candidateList').querySelector('.candidate');selectCandidate(0,first);$('resolutionPrompt').textContent=`Automatically selected ${state.selected.sense_id}. The dictionary reading is ready below; choose another option only if you meant something else.`;await resolveSelected(true)}}}catch(error){showError(error)}finally{$('analyzeButton').disabled=false}}
+async function analyze(){const input=$('sourceInput').value.trim();if(!input)return toast('Write something in English to translate.');$('analyzeButton').disabled=true;try{if(state.mode==='controlled')await compileControlled(input);else{if(parseFoundationSentence(input)||foundationPronounPlan(input)){showFoundationPreview(input);return}const pronounPlan=pronounInterpretationPlan(input);if(pronounPlan){showPronounReferents(input,pronounPlan);return}const groupPlan=clauseInterpretationPlan(input);if(groupPlan&&(groupPlan.requiredDisjunction||groupPlan.clauses.some(({parsed})=>parsed.requiredViewpoint||parsed.requiredDestination||parsed.requiredInterpretation))){showClauseInterpretations(input,groupPlan);return}if(parseNamedSentence(input)?.requiredViewpoint){showCarryingViewpoint(input);return}if(parseNamedSentence(input)?.requiredDestination){showCarryingViewpoint(input);return}if(['thermal_standard','mass_standard','luminance_standard','texture_standard'].includes(parseNamedSentence(input)?.requiredInterpretation)){showAdjectiveStandard(input);return}if(parseNamedSentence(input)?.requiredInterpretation){showFutureInterpretation(input);return}if(parseSentenceConditional(input)||parseNamedSentence(input)||parseSentenceSequence(input)||parseSentenceConjunction(input)){const composed=parseSentenceConditional(input)?await composeSentenceConditional(input,sentenceTemplate):parseSentenceConjunction(input)?await composeSentenceConjunction(input,sentenceTemplate):parseSentenceSequence(input)?await composeSentenceSequence(input,sentenceTemplate):await composeNamedSentence(input,await sentenceTemplate(parseNamedSentence(input).predicate));state.analysis=null;state.selected=null;state.phraseNames=[];state.resolution=composed;$('results').classList.add('hidden');await showResolution(composed,{definition:[composed.interpretation,composed.semantic_note].filter(Boolean).join(' ')});return}const result=analyzeEnglish(input,state.data);if(needsSentenceComposition(input)){result.decision.auto_resolution_allowed=false;result.decision.requires_clarification=true;result.decision.reasons.push('incomplete_sentence_construction');result.complete_sentence_unavailable=true}showAnalysis(result);if(result.decision.auto_resolution_allowed){const first=$('candidateList').querySelector('.candidate');selectCandidate(0,first);$('resolutionPrompt').textContent=`Automatically selected ${state.selected.sense_id}. The dictionary reading is ready below; choose another option only if you meant something else.`;await resolveSelected(true)}}}catch(error){showError(error)}finally{$('analyzeButton').disabled=false}}
 function showPronounReferents(input,plan){
   state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
   for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
@@ -194,23 +194,30 @@ function showFoundationPreview(input){
   $('candidateList').innerHTML='';
   const card=document.createElement('article');card.className='candidate';
   const description=document.createElement('p');description.textContent='Preview the complete sentence using draft vocabulary. Preference compares alternatives without asserting that either is wanted absolutely. Desire does not assert that the desired event happens. For “wants tea,” specify what should happen to the tea.';
+  const pronouns=foundationPronounPlan(input),fields=[];
+  for(const occurrence of pronouns?.occurrences||[]){
+    const label=document.createElement('label');label.textContent=`Who or what does “${occurrence.pronoun}” refer to? (occurrence ${fields.length+1})`;
+    const field=document.createElement('input');field.type='text';field.value='';field.placeholder='Name or the robot';label.append(field);fields.push({key:occurrence.key,field,label});
+  }
+  const readBindings=()=>pronouns?Object.fromEntries(fields.map(({key,field})=>[key,field.value.trim()])):undefined;
   const button=document.createElement('button');button.textContent='Preview draft translation';
   const current=()=>$('sourceInput').value.trim()===input&&state.mode!=='controlled'&&card.isConnected!==false;
   button.addEventListener('click',async()=>{
     if(!current())return;
+    const bindings=readBindings(),snapshot=JSON.stringify(bindings),unchanged=()=>current()&&JSON.stringify(readBindings())===snapshot;
     button.disabled=true;
     try{
       const response=await fetch('./data/foundation_candidates.json');
       if(!response.ok)throw new Error('Draft vocabulary could not be loaded.');
       const registry=await response.json();
-      if(!current())return;
-      const composed=await composeFoundationSentence(input,state.data,registry.records,sentenceTemplate,{allowDraft:true});
-      if(!current())return;
+      if(!unchanged())return;
+      const composed=await composeFoundationSentence(input,state.data,registry.records,sentenceTemplate,{allowDraft:true,...(bindings?{bindings}:{})});
+      if(!unchanged())return;
       state.resolution=composed;$('results').classList.add('hidden');
       await showResolution(composed,{definition:'Draft translation — desire/preference vocabulary and sounds are under review.'});
-    }catch(error){if(current())showError(error)}finally{button.disabled=false}
+    }catch(error){if(unchanged())showError(error)}finally{button.disabled=false}
   });
-  card.append(description,button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+  card.append(description,...fields.map(f=>f.label),button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
 }
 function showFutureInterpretation(input){
   state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];

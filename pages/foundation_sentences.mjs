@@ -1,3 +1,4 @@
+import {validReferent} from './pronouns.mjs';
 import {canonicalDigest} from './engine.mjs';
 import {encodeName} from './names.mjs';
 import {deicticReference} from './references.mjs';
@@ -62,8 +63,29 @@ async function reference(text,id,allowKind=false){
  const mode=nominal?.mode||(kind?'nominal_class':null),name=await encodeName(nominal?.head||(quoted?text.slice(1,-1):text));
  return {node_id:id,kind:'phonemic_reference',value_type:'entity',name,referent_id:mode?`nominal:${mode==='nominal_class'?'class':'definite'}:${name.name_id}`:`name:${name.name_id}`,...(mode?{reference_mode:mode}:{})};
 }
-export async function composeFoundationSentence(input,authority,records,loadTemplate,{allowDraft=false}={}){
- return composeAtDepth(input,authority,records,loadTemplate,allowDraft,0);
+export function foundationPronounPlan(input){
+ if(typeof input!=='string')return null;
+ const occurrences=[];let quoted=false;
+ for(let i=0;i<input.length;){
+  if(input[i]==='"'){quoted=!quoted;i++;continue;}
+  const match=!quoted&&(i===0||!/[A-Za-z]/.test(input[i-1]))?input.slice(i).match(/^(she|he|her|him|it)\b/i):null;
+  if(match&&/^it is (?:not )?(?:(?:possible|necessary) that|the case that)\b/i.test(input.slice(i))){i+=match[0].length;continue;}
+  if(match){occurrences.push({key:`ref${occurrences.length}`,pronoun:match[0],start:i,end:i+match[0].length});i+=match[0].length;}else i++;
+ }
+ if(quoted||!occurrences.length||occurrences.length>16)return null;
+ let probe=input;for(const o of [...occurrences].reverse())probe=probe.slice(0,o.start)+`"reference ${String.fromCharCode(97+Number(o.key.slice(3)))}"`+probe.slice(o.end);
+ return parseFoundationSentence(probe)?{input,occurrences}:null;
+}
+export async function composeFoundationSentence(input,authority,records,loadTemplate,{allowDraft=false,bindings}={}){
+ const plan=foundationPronounPlan(input);
+ if(!plan){if(bindings!==undefined)throw new Error('This sentence does not require pronoun bindings.');return composeAtDepth(input,authority,records,loadTemplate,allowDraft,0);}
+ if(!bindings||typeof bindings!=='object'||Array.isArray(bindings)||Object.keys(bindings).length!==plan.occurrences.length||plan.occurrences.some(o=>!Object.hasOwn(bindings,o.key)||!validReferent(bindings[o.key]))){
+  const error=new Error('Identify each pronoun with an explicit name, quoted label, definite noun, or I/you.');error.code='pronoun_referents_required';throw error;
+ }
+ const chosen=Object.fromEntries(plan.occurrences.map(o=>[o.key,bindings[o.key]]));
+ let resolved=input;for(const o of [...plan.occurrences].reverse())resolved=resolved.slice(0,o.start)+chosen[o.key]+resolved.slice(o.end);
+ const result=await composeAtDepth(resolved,authority,records,loadTemplate,allowDraft,0);
+ return {...result,source_input:input,resolved_input:resolved,resolved_pronouns:plan.occurrences.map(o=>({...o,referent:chosen[o.key]}))};
 }
 async function composeAtDepth(input,authority,records,loadTemplate,allowDraft,depth){
  if(depth>8)throw new Error('Desired propositions exceed the supported nesting depth.');

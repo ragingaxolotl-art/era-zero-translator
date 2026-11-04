@@ -310,3 +310,17 @@ Forty-five tests cover holder, preferred alternative and comparison alternative.
 Quoted names remain intentional sound labels, and speaker/addressee references
 remain deictic across runtime 0/1/2. This closes silent identity loss; it does not
 provide general discourse inference or a new candidate pronoun-binding UI.
+
+Explicit candidate pronoun binding is now available for she/he/her/him/it, with
+one user-supplied referent per occurrence. The preview displays blank referent
+fields; composition requires every field and records the original input, resolved
+input and occurrence bindings. Quoted labels are excluded from scanning, as are
+recognized dummy-it proposition wrappers. Reflexive/plural/possessive inference
+is not introduced. Resolution is textual before the existing typed semantic
+composer, so it cannot bypass its participant or desired-content constraints.
+
+Twelve cases across runtime states compare complete formal output and MIDI with
+explicit-name paraphrases, including controlled desire, object-controlled desire
+and questions. Actual UI-handler tests check required fields and rejection of a
+pending result after field edits. Existing canonical pronoun, draft preview and
+candidate question/runtime tests pass. All foundation vocabulary remains opt-in.
