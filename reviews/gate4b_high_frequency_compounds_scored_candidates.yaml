@@ -4115,3 +4115,286 @@ reviews:
     decision: rejected
   recommendation: approve explicit_activity_convention
   confidence: high
+- compound_id: CMP:6ccc77b4b3aa69bb010849a4
+  display_title: physical region interior relation
+  current_choice_reason: reviews/spatial_entry_foundation.md; author scores, not independent
+    validation.
+  candidates:
+  - candidate_id: explicit_spatial_convention
+    direction: Material participant and live shared-frame configuration remain true;
+      convention contributes spatial inclusion.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-body
+        kind: root
+        root_id: MAT:000
+      - node_id: s-bearer
+        kind: slot
+        slot_name: located_participant
+        slot_type: entity
+      - node_id: s-region
+        kind: slot
+        slot_name: spatial_region
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MOV:221
+      edges:
+      - type: qualifies
+        from: q-body
+        to: s-bearer
+      - type: fills_role
+        from: s-bearer
+        to: h
+        role: bearer
+      - type: fills_role
+        from: s-region
+        to: h
+        role: location
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: physical_region_interior
+        sound_code: 26
+        added_definition: The located participant is material, and its contextually
+          relevant spatial extent is related to the bound physical region in one shared
+          spatial frame at the reference time. The region and relevant extent are
+          contextually selected, not measured or inferred from their sound labels.
+          The relevant extent lies wholly in the interior of the region, without meeting
+          its boundary. No movement, entry, exit, structural membership, ownership,
+          custody, intention or permission is asserted. The three relations are not
+          runtime states and outside is not a synonym for not inside.
+        excludes:
+        - Structural or organizational membership and figurative inclusion
+        - Entry or exit inferred from current location
+        - Outside inferred merely from not inside
+        - A numeric geometry or whole-body criterion silently inferred from a noun
+          label
+  - candidate_id: configuration_only
+    direction: Positional configuration does not determine interior or exterior.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 48
+    decision: rejected
+  - candidate_id: structural_membership
+    direction: Spatial occupancy is not structural membership.
+    scores:
+      atomicity: 5
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 32
+    decision: rejected
+  recommendation: approve explicit_spatial_convention
+  confidence: high
+- compound_id: CMP:cc6d19387b62013464e0e850
+  display_title: physical region exterior relation
+  current_choice_reason: reviews/spatial_entry_foundation.md; author scores, not independent
+    validation.
+  candidates:
+  - candidate_id: explicit_spatial_convention
+    direction: Material participant and live shared-frame configuration remain true;
+      convention contributes spatial inclusion.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-body
+        kind: root
+        root_id: MAT:000
+      - node_id: s-bearer
+        kind: slot
+        slot_name: located_participant
+        slot_type: entity
+      - node_id: s-region
+        kind: slot
+        slot_name: spatial_region
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MOV:221
+      edges:
+      - type: qualifies
+        from: q-body
+        to: s-bearer
+      - type: fills_role
+        from: s-bearer
+        to: h
+        role: bearer
+      - type: fills_role
+        from: s-region
+        to: h
+        role: location
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: physical_region_exterior
+        sound_code: 27
+        added_definition: The located participant is material, and its contextually
+          relevant spatial extent is related to the bound physical region in one shared
+          spatial frame at the reference time. The region and relevant extent are
+          contextually selected, not measured or inferred from their sound labels.
+          The relevant extent lies wholly in the exterior of the region, without meeting
+          its boundary. No movement, entry, exit, structural membership, ownership,
+          custody, intention or permission is asserted. The three relations are not
+          runtime states and outside is not a synonym for not inside.
+        excludes:
+        - Structural or organizational membership and figurative inclusion
+        - Entry or exit inferred from current location
+        - Outside inferred merely from not inside
+        - A numeric geometry or whole-body criterion silently inferred from a noun
+          label
+  - candidate_id: configuration_only
+    direction: Positional configuration does not determine interior or exterior.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 48
+    decision: rejected
+  - candidate_id: structural_membership
+    direction: Spatial occupancy is not structural membership.
+    scores:
+      atomicity: 5
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 32
+    decision: rejected
+  recommendation: approve explicit_spatial_convention
+  confidence: high
+- compound_id: CMP:835d2edc1573d2aea3a6fd18
+  display_title: physical region boundary relation
+  current_choice_reason: reviews/spatial_entry_foundation.md; author scores, not independent
+    validation.
+  candidates:
+  - candidate_id: explicit_spatial_convention
+    direction: Material participant and live shared-frame configuration remain true;
+      convention contributes spatial inclusion.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-body
+        kind: root
+        root_id: MAT:000
+      - node_id: s-bearer
+        kind: slot
+        slot_name: located_participant
+        slot_type: entity
+      - node_id: s-region
+        kind: slot
+        slot_name: spatial_region
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MOV:221
+      edges:
+      - type: qualifies
+        from: q-body
+        to: s-bearer
+      - type: fills_role
+        from: s-bearer
+        to: h
+        role: bearer
+      - type: fills_role
+        from: s-region
+        to: h
+        role: location
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: physical_region_boundary
+        sound_code: 28
+        added_definition: The located participant is material, and its contextually
+          relevant spatial extent is related to the bound physical region in one shared
+          spatial frame at the reference time. The region and relevant extent are
+          contextually selected, not measured or inferred from their sound labels.
+          The relevant extent intersects the boundary of the region; this does not
+          assert that the entire participant lies on the boundary. No movement, entry,
+          exit, structural membership, ownership, custody, intention or permission
+          is asserted. The three relations are not runtime states and outside is not
+          a synonym for not inside.
+        excludes:
+        - Structural or organizational membership and figurative inclusion
+        - Entry or exit inferred from current location
+        - Outside inferred merely from not inside
+        - A numeric geometry or whole-body criterion silently inferred from a noun
+          label
+  - candidate_id: configuration_only
+    direction: Positional configuration does not determine interior or exterior.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 48
+    decision: rejected
+  - candidate_id: structural_membership
+    direction: Spatial occupancy is not structural membership.
+    scores:
+      atomicity: 5
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 32
+    decision: rejected
+  recommendation: approve explicit_spatial_convention
+  confidence: high

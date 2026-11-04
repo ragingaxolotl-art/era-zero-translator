@@ -1472,3 +1472,20 @@ the preserved-vocabulary test passed 24 assertions. The regression report retain
 the original failed run and records these targeted follow-ups separately.
 This evidence does not close the ordinary-English, source reconciliation, held-out
 meaning, live UI, listening or publication requirements.
+
+### Spatial state foundation before entry
+
+Three versioned compounds now distinguish physical interior, exterior and boundary
+intersection. “Nora is inside the archive”, its outside/boundary alternatives,
+negation, questions and existing modal wrappers compose with independent runtime
+0/1/2. Musical recovery checks the bearer, region and relation independently of
+English input. A boundary-contact counterexample prevents treating not-inside as
+outside. Existing 324 roots and 58 earlier compounds are preserved; the inventory
+now has 61 compounds and 469 canonical senses. Entry and “may enter” still require
+the transition and interpretation work in reviews/spatial_entry_foundation.md.
+
+Validation: all 11 targeted suites in reports/spatial_relations_validation.json
+passed, including semantic IR, controlled English, renderer, glyph/MIDI, named
+sentences, combined pronoun choices, compound bindings and browser release checks.
+The prior consolidated report still refers to the earlier 58-compound revision;
+it is not a full-suite result for this addition.

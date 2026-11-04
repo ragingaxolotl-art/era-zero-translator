@@ -1,8 +1,8 @@
 ---
 metadata:
   version: 1.0.0
-  sense_count: 466
-  lemma_count: 449
+  sense_count: 469
+  lemma_count: 452
 exact_atom_labels:
 - input: continuous self
   expected_route: atom
@@ -1058,6 +1058,9 @@ exact_compound_labels:
 - input: consciously felt self-condition
   expected_route: compound
   expected_target: CMP:6c9e3042a361ccae6ecf5980
+- input: physical region interior relation
+  expected_route: compound
+  expected_target: CMP:6ccc77b4b3aa69bb010849a4
 - input: data transfer channel
   expected_route: compound
   expected_target: CMP:725868579ebb0e2ef83cf708
@@ -1076,6 +1079,9 @@ exact_compound_labels:
 - input: ongoing physical carrying
   expected_route: compound
   expected_target: CMP:7a6749aaf61cd6181e544bd6
+- input: physical region boundary relation
+  expected_route: compound
+  expected_target: CMP:835d2edc1573d2aea3a6fd18
 - input: machine
   expected_route: compound
   expected_target: CMP:8e5ae722d9e5e31f85ac3c5b
@@ -1127,6 +1133,9 @@ exact_compound_labels:
 - input: material hazard
   expected_route: compound
   expected_target: CMP:cb0812face56f90b7ba139c5
+- input: physical region exterior relation
+  expected_route: compound
+  expected_target: CMP:cc6d19387b62013464e0e850
 - input: sad felt mood
   expected_route: compound
   expected_target: CMP:d54499d2989fa97349e8e23d

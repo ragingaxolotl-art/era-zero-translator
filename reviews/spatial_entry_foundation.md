@@ -95,3 +95,33 @@ English, must be represented rather than dropped.
 - The original ordinary-English diagnostic remains unresolved until the complete
   selected sentence meaning is composed and performed. This document is not a
   passing translation result or completion evidence for the overall translator.
+
+## Implemented spatial state foundation
+
+Conventions 26/27/28 now express physical interior, exterior and boundary
+intersection as separate versioned compounds. Each binds a material bearer
+(MAT:000 qualification) and region (location role) to a live shared-frame
+configuration (MOV:221). The conventional meaning supplies the spatial inclusion
+relation; generic configuration alone does not entail it. The region is not
+required to be a material container. Both arguments use the existing reference
+and musical role frames. No root definition or melody changes.
+
+The context selects the relevant participant extent: interior/exterior require
+that extent wholly inside/outside without meeting the boundary; boundary contact
+requires intersection and does not assert the entire bearer lies on the boundary.
+This choice does not silently set a body-center coordinate, numerical geometry or
+universal anatomical criterion. These are explicit physical readings of inside,
+outside and on the boundary of; figurative containment is excluded. All three
+lexical meanings admit independent runtime 0/1/2. Negation of inside is not exterior.
+
+The generator is tools/add_spatial_relations.rb; identities and preservation
+baseline are in migrations/spatial_relations_2026_11_04.yaml. Sentence composition
+uses ordinary role bindings; spatial_relation_decoder.mjs recovers the exact
+relation, bearer, region, runtime, speech act and scopes from MIDI alone. The test
+includes Ruby parity and a finite interval countermodel for the negation contrast,
+plus exact preservation of the 58 preexisting compounds and 324-root document.
+The finite model is an example, not a universal geometry implementation.
+
+Entry, exit, same-event transitions, explicit descriptions of inclusion criteria,
+region-relative phrases beyond these constructions and the ordinary “may” choice
+remain unfinished. No entry result or completion gate is claimed by this addition.

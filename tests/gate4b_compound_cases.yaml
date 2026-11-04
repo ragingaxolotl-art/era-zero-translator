@@ -2,7 +2,7 @@
 metadata:
   title: Gate 4B dictionary conformance and routing cases
   version: 1.0.0
-  approved_entries: 58
+  approved_entries: 61
 accepted:
 - case_id: practical_physical_custody
   compound_id: CMP:0aca609416668978e1527dac
@@ -85,6 +85,9 @@ accepted:
 - case_id: consciously_felt_self-condition
   compound_id: CMP:6c9e3042a361ccae6ecf5980
   expected: valid_approved_entry
+- case_id: physical_region_interior_relation
+  compound_id: CMP:6ccc77b4b3aa69bb010849a4
+  expected: valid_approved_entry
 - case_id: data_transfer_channel
   compound_id: CMP:725868579ebb0e2ef83cf708
   expected: valid_approved_entry
@@ -102,6 +105,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: ongoing_physical_carrying
   compound_id: CMP:7a6749aaf61cd6181e544bd6
+  expected: valid_approved_entry
+- case_id: physical_region_boundary_relation
+  compound_id: CMP:835d2edc1573d2aea3a6fd18
   expected: valid_approved_entry
 - case_id: machine
   compound_id: CMP:8e5ae722d9e5e31f85ac3c5b
@@ -153,6 +159,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: material_hazard
   compound_id: CMP:cb0812face56f90b7ba139c5
+  expected: valid_approved_entry
+- case_id: physical_region_exterior_relation
+  compound_id: CMP:cc6d19387b62013464e0e850
   expected: valid_approved_entry
 - case_id: sad_felt_mood
   compound_id: CMP:d54499d2989fa97349e8e23d

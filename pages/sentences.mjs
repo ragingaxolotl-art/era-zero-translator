@@ -1,3 +1,4 @@
+import {SPATIAL_RELATIONS} from './spatial_relations.mjs';
 import {expandNegativeContractions} from './contractions.mjs';
 import {COMPLETED_RUNNING} from './completed_running.mjs';
 import {DESTINATION_RUNNING} from './destination_running.mjs';
@@ -17,6 +18,7 @@ import {deicticReference,deicticEvent,nominalMarker,NOMINAL_MODES} from './refer
 
 // Reviewed constructions use exact process senses, never a generic synonym pool.
 const ACTIONS = [
+  ...SPATIAL_RELATIONS,
   DESTINATION_RUNNING,
   {pattern:'acquired physical custody of',negativePattern:'did not acquire physical custody of',predicate:'CMP:c332d2e89b9f6177486fc93b',key:'completed_physical_custody_acquisition',wording:'acquired physical custody of',role:'source',targetRole:'target',speechTime:'before',compoundSlots:{source:['q-custody','s-source'],target:['q-custody','s-target']},semanticNote:'Acquisition means that this holder lacked practical physical custody of this object immediately before the transition and had it at culmination. It does not assert ownership, a previous custodian, handover, object movement or continued custody afterward.'},
   {pattern:'has physical custody of',negativePattern:'does not have physical custody of',predicate:'CMP:0aca609416668978e1527dac',key:'practical_physical_custody',wording:'has physical custody of',role:'source',targetRole:'target',compoundSlots:{source:['s-source'],target:['s-target']},semanticNote:'Established practical control over physical access and handling of this distinct material object, directly or through a controlled physical intermediary. This does not assert ownership, entitlement, exclusivity, load support, receipt or transfer.'},
@@ -465,7 +467,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light|bright|dim|brighter|dimmer|rough|smooth)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|able to move|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|arrive|arrives|arrived|arriving|carry|carries|carried|carrying|support|supporting|custody|acquire|acquired|acquiring|deliver|delivers|delivered|delivering|run|runs|running|swim|swims|swimming|happy|sad|hungry|thirsty|tired|temperature|luminance)\b/i.test(String(input))) && !parseNamedSentence(input);
+  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light|bright|dim|brighter|dimmer|rough|smooth)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|inside|outside|boundary|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|able to move|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|arrive|arrives|arrived|arriving|carry|carries|carried|carrying|support|supporting|custody|acquire|acquired|acquiring|deliver|delivers|delivered|delivering|run|runs|running|swim|swims|swimming|happy|sad|hungry|thirsty|tired|temperature|luminance)\b/i.test(String(input))) && !parseNamedSentence(input);
 }
 
 // A complete antecedent and a comma establish conditional scope. Without

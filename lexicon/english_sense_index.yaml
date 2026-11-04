@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 466
-  lemma_count: 449
+  sense_count: 469
+  lemma_count: 452
   canonical_atom_senses: 324
-  canonical_compound_senses: 58
+  canonical_compound_senses: 61
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: 910b79364126d969d8cec32e2373f9313b1b7fd16c2d16ca43fc110ffa1c8223
+  compound_dictionary_fingerprint: e549833ca76bda2580db74811f3d2ccfe0d85556310d4d982ed6c00e3890d449
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -7077,6 +7077,81 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: physical region boundary relation
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:835d2edc1573d2aea3a6fd18
+  definition: The located participant is material, and its contextually relevant spatial
+    extent is related to the bound physical region in one shared spatial frame at
+    the reference time. The region and relevant extent are contextually selected,
+    not measured or inferred from their sound labels. The relevant extent intersects
+    the boundary of the region; this does not assert that the entire participant lies
+    on the boundary. No movement, entry, exit, structural membership, ownership, custody,
+    intention or permission is asserted. The three relations are not runtime states
+    and outside is not a synonym for not inside.
+  sense_id: ENS:1df54eb6cc8e9e6bf1148e5a
+  display_form: physical region boundary relation
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Structural or organizational membership and figurative inclusion; Entry or exit
+    inferred from current location; Outside inferred merely from not inside; A numeric
+    geometry or whole-body criterion silently inferred from a noun label
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: physical region exterior relation
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:cc6d19387b62013464e0e850
+  definition: The located participant is material, and its contextually relevant spatial
+    extent is related to the bound physical region in one shared spatial frame at
+    the reference time. The region and relevant extent are contextually selected,
+    not measured or inferred from their sound labels. The relevant extent lies wholly
+    in the exterior of the region, without meeting its boundary. No movement, entry,
+    exit, structural membership, ownership, custody, intention or permission is asserted.
+    The three relations are not runtime states and outside is not a synonym for not
+    inside.
+  sense_id: ENS:6be06df009acab4eed557d95
+  display_form: physical region exterior relation
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Structural or organizational membership and figurative inclusion; Entry or exit
+    inferred from current location; Outside inferred merely from not inside; A numeric
+    geometry or whole-body criterion silently inferred from a noun label
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: physical region interior relation
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:6ccc77b4b3aa69bb010849a4
+  definition: The located participant is material, and its contextually relevant spatial
+    extent is related to the bound physical region in one shared spatial frame at
+    the reference time. The region and relevant extent are contextually selected,
+    not measured or inferred from their sound labels. The relevant extent lies wholly
+    in the interior of the region, without meeting its boundary. No movement, entry,
+    exit, structural membership, ownership, custody, intention or permission is asserted.
+    The three relations are not runtime states and outside is not a synonym for not
+    inside.
+  sense_id: ENS:2ab8dae837a736d66b0fcf3b
+  display_form: physical region interior relation
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Structural or organizational membership and figurative inclusion; Entry or exit
+    inferred from current location; Outside inferred merely from not inside; A numeric
+    geometry or whole-body criterion silently inferred from a noun label
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:f9bd25cc5eb7e47f678a30ae
   lemma: physical repair
   display_form: physical repair
@@ -10981,6 +11056,27 @@ lemma_index:
   physical injury:
     sense_ids:
     - ENS:d5a58e44ca087aff6764ad08
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  physical region boundary relation:
+    sense_ids:
+    - ENS:1df54eb6cc8e9e6bf1148e5a
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  physical region exterior relation:
+    sense_ids:
+    - ENS:6be06df009acab4eed557d95
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  physical region interior relation:
+    sense_ids:
+    - ENS:2ab8dae837a736d66b0fcf3b
     requires_disambiguation: false
     direct_target_count: 1
     routes:

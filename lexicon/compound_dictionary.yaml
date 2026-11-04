@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 58
+  entry_count: 61
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -1631,6 +1631,101 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: 6c9e3042a361ccae6ecf59808532048ed5f26a6303780c0050063e9a1ce325b6
 - architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-body
+    kind: root
+    root_id: MAT:000
+  - node_id: s-bearer
+    kind: slot
+    slot_name: located_participant
+    slot_type: entity
+  - node_id: s-region
+    kind: slot
+    slot_name: spatial_region
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:221
+  edges:
+  - type: qualifies
+    from: q-body
+    to: s-bearer
+  - type: fills_role
+    from: s-bearer
+    to: h
+    role: bearer
+  - type: fills_role
+    from: s-region
+    to: h
+    role: location
+  lexical_constraints:
+  - The material qualifier applies to the located participant, not the region.
+  - Both arguments share one contextual spatial frame and inclusion criterion.
+  - Location does not assert displacement; lexical address and runtime state remain
+    independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: physical_region_interior
+    sound_code: 26
+    added_definition: The located participant is material, and its contextually relevant
+      spatial extent is related to the bound physical region in one shared spatial
+      frame at the reference time. The region and relevant extent are contextually
+      selected, not measured or inferred from their sound labels. The relevant extent
+      lies wholly in the interior of the region, without meeting its boundary. No
+      movement, entry, exit, structural membership, ownership, custody, intention
+      or permission is asserted. The three relations are not runtime states and outside
+      is not a synonym for not inside.
+    excludes:
+    - Structural or organizational membership and figurative inclusion
+    - Entry or exit inferred from current location
+    - Outside inferred merely from not inside
+    - A numeric geometry or whole-body criterion silently inferred from a noun label
+  compound_id: CMP:6ccc77b4b3aa69bb010849a4
+  content_digest: 6ccc77b4b3aa69bb010849a4a77c87f8d65d6f82c94a6ee9acc5305a252b04eb
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: physical region interior relation
+  english_glosses:
+  - physical region interior relation
+  invariant_definition: The located participant is material, and its contextually
+    relevant spatial extent is related to the bound physical region in one shared
+    spatial frame at the reference time. The region and relevant extent are contextually
+    selected, not measured or inferred from their sound labels. The relevant extent
+    lies wholly in the interior of the region, without meeting its boundary. No movement,
+    entry, exit, structural membership, ownership, custody, intention or permission
+    is asserted. The three relations are not runtime states and outside is not a synonym
+    for not inside.
+  boundaries:
+    includes: The located participant is material, and its contextually relevant spatial
+      extent is related to the bound physical region in one shared spatial frame at
+      the reference time. The region and relevant extent are contextually selected,
+      not measured or inferred from their sound labels. The relevant extent lies wholly
+      in the interior of the region, without meeting its boundary. No movement, entry,
+      exit, structural membership, ownership, custody, intention or permission is
+      asserted. The three relations are not runtime states and outside is not a synonym
+      for not inside.
+    excludes: Structural or organizational membership and figurative inclusion; Entry
+      or exit inferred from current location; Outside inferred merely from not inside;
+      A numeric geometry or whole-body criterion silently inferred from a noun label
+  collision_audit: reviews/spatial_entry_foundation.md; positional configuration alone
+    does not specify interior, exterior or boundary.
+  confidence: high
+  approval_record: migrations/spatial_relations_2026_11_04.yaml
+  approval_basis: Author semantic review under the user-directed translator completion
+    goal; not independent linguistic validation.
+  examples:
+    ordinary: Nora is inside the archive.
+    technical: Keep the same participant, region and contextual extent criterion in
+      dependent event compounds.
+    future_compound: Entry must add outside-to-inside displacement in one event.
+    counterexample: Being inside throughout is not entry; touching the boundary is
+      neither wholly inside nor wholly outside.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 6ccc77b4b3aa69bb010849a4a77c87f8d65d6f82c94a6ee9acc5305a252b04eb
+- architecture_version: '1.0'
   compound_id: CMP:725868579ebb0e2ef83cf708
   content_digest: 725868579ebb0e2ef83cf7089271a399a547885e12b8bbde8b60552c9e41bcd0
   definition_version: 1.0.0
@@ -2097,6 +2192,101 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 7a6749aaf61cd6181e544bd606dbec63769da2c86a57ab40964de4c137fff030
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-body
+    kind: root
+    root_id: MAT:000
+  - node_id: s-bearer
+    kind: slot
+    slot_name: located_participant
+    slot_type: entity
+  - node_id: s-region
+    kind: slot
+    slot_name: spatial_region
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:221
+  edges:
+  - type: qualifies
+    from: q-body
+    to: s-bearer
+  - type: fills_role
+    from: s-bearer
+    to: h
+    role: bearer
+  - type: fills_role
+    from: s-region
+    to: h
+    role: location
+  lexical_constraints:
+  - The material qualifier applies to the located participant, not the region.
+  - Both arguments share one contextual spatial frame and inclusion criterion.
+  - Location does not assert displacement; lexical address and runtime state remain
+    independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: physical_region_boundary
+    sound_code: 28
+    added_definition: The located participant is material, and its contextually relevant
+      spatial extent is related to the bound physical region in one shared spatial
+      frame at the reference time. The region and relevant extent are contextually
+      selected, not measured or inferred from their sound labels. The relevant extent
+      intersects the boundary of the region; this does not assert that the entire
+      participant lies on the boundary. No movement, entry, exit, structural membership,
+      ownership, custody, intention or permission is asserted. The three relations
+      are not runtime states and outside is not a synonym for not inside.
+    excludes:
+    - Structural or organizational membership and figurative inclusion
+    - Entry or exit inferred from current location
+    - Outside inferred merely from not inside
+    - A numeric geometry or whole-body criterion silently inferred from a noun label
+  compound_id: CMP:835d2edc1573d2aea3a6fd18
+  content_digest: 835d2edc1573d2aea3a6fd18e127dbabb4a83e14b427565749f6e4a45f581e4b
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: physical region boundary relation
+  english_glosses:
+  - physical region boundary relation
+  invariant_definition: The located participant is material, and its contextually
+    relevant spatial extent is related to the bound physical region in one shared
+    spatial frame at the reference time. The region and relevant extent are contextually
+    selected, not measured or inferred from their sound labels. The relevant extent
+    intersects the boundary of the region; this does not assert that the entire participant
+    lies on the boundary. No movement, entry, exit, structural membership, ownership,
+    custody, intention or permission is asserted. The three relations are not runtime
+    states and outside is not a synonym for not inside.
+  boundaries:
+    includes: The located participant is material, and its contextually relevant spatial
+      extent is related to the bound physical region in one shared spatial frame at
+      the reference time. The region and relevant extent are contextually selected,
+      not measured or inferred from their sound labels. The relevant extent intersects
+      the boundary of the region; this does not assert that the entire participant
+      lies on the boundary. No movement, entry, exit, structural membership, ownership,
+      custody, intention or permission is asserted. The three relations are not runtime
+      states and outside is not a synonym for not inside.
+    excludes: Structural or organizational membership and figurative inclusion; Entry
+      or exit inferred from current location; Outside inferred merely from not inside;
+      A numeric geometry or whole-body criterion silently inferred from a noun label
+  collision_audit: reviews/spatial_entry_foundation.md; positional configuration alone
+    does not specify interior, exterior or boundary.
+  confidence: high
+  approval_record: migrations/spatial_relations_2026_11_04.yaml
+  approval_basis: Author semantic review under the user-directed translator completion
+    goal; not independent linguistic validation.
+  examples:
+    ordinary: Nora is on the boundary of the archive.
+    technical: Keep the same participant, region and contextual extent criterion in
+      dependent event compounds.
+    future_compound: Entry must add outside-to-inside displacement in one event.
+    counterexample: Being inside throughout is not entry; touching the boundary is
+      neither wholly inside nor wholly outside.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 835d2edc1573d2aea3a6fd18e127dbabb4a83e14b427565749f6e4a45f581e4b
 - architecture_version: '1.0'
   compound_id: CMP:8e5ae722d9e5e31f85ac3c5b
   content_digest: 8e5ae722d9e5e31f85ac3c5b465d536e077c3fa205ea3ab6e31f75f6948b8b14
@@ -3058,6 +3248,101 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: cb0812face56f90b7ba139c53a0c4b69820830bde14c60bcd0160122199daa8b
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-body
+    kind: root
+    root_id: MAT:000
+  - node_id: s-bearer
+    kind: slot
+    slot_name: located_participant
+    slot_type: entity
+  - node_id: s-region
+    kind: slot
+    slot_name: spatial_region
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:221
+  edges:
+  - type: qualifies
+    from: q-body
+    to: s-bearer
+  - type: fills_role
+    from: s-bearer
+    to: h
+    role: bearer
+  - type: fills_role
+    from: s-region
+    to: h
+    role: location
+  lexical_constraints:
+  - The material qualifier applies to the located participant, not the region.
+  - Both arguments share one contextual spatial frame and inclusion criterion.
+  - Location does not assert displacement; lexical address and runtime state remain
+    independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: physical_region_exterior
+    sound_code: 27
+    added_definition: The located participant is material, and its contextually relevant
+      spatial extent is related to the bound physical region in one shared spatial
+      frame at the reference time. The region and relevant extent are contextually
+      selected, not measured or inferred from their sound labels. The relevant extent
+      lies wholly in the exterior of the region, without meeting its boundary. No
+      movement, entry, exit, structural membership, ownership, custody, intention
+      or permission is asserted. The three relations are not runtime states and outside
+      is not a synonym for not inside.
+    excludes:
+    - Structural or organizational membership and figurative inclusion
+    - Entry or exit inferred from current location
+    - Outside inferred merely from not inside
+    - A numeric geometry or whole-body criterion silently inferred from a noun label
+  compound_id: CMP:cc6d19387b62013464e0e850
+  content_digest: cc6d19387b62013464e0e8503d05ac8e8a26d06e009bbe56cf4118b27b20fb51
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: physical region exterior relation
+  english_glosses:
+  - physical region exterior relation
+  invariant_definition: The located participant is material, and its contextually
+    relevant spatial extent is related to the bound physical region in one shared
+    spatial frame at the reference time. The region and relevant extent are contextually
+    selected, not measured or inferred from their sound labels. The relevant extent
+    lies wholly in the exterior of the region, without meeting its boundary. No movement,
+    entry, exit, structural membership, ownership, custody, intention or permission
+    is asserted. The three relations are not runtime states and outside is not a synonym
+    for not inside.
+  boundaries:
+    includes: The located participant is material, and its contextually relevant spatial
+      extent is related to the bound physical region in one shared spatial frame at
+      the reference time. The region and relevant extent are contextually selected,
+      not measured or inferred from their sound labels. The relevant extent lies wholly
+      in the exterior of the region, without meeting its boundary. No movement, entry,
+      exit, structural membership, ownership, custody, intention or permission is
+      asserted. The three relations are not runtime states and outside is not a synonym
+      for not inside.
+    excludes: Structural or organizational membership and figurative inclusion; Entry
+      or exit inferred from current location; Outside inferred merely from not inside;
+      A numeric geometry or whole-body criterion silently inferred from a noun label
+  collision_audit: reviews/spatial_entry_foundation.md; positional configuration alone
+    does not specify interior, exterior or boundary.
+  confidence: high
+  approval_record: migrations/spatial_relations_2026_11_04.yaml
+  approval_basis: Author semantic review under the user-directed translator completion
+    goal; not independent linguistic validation.
+  examples:
+    ordinary: Nora is outside the archive.
+    technical: Keep the same participant, region and contextual extent criterion in
+      dependent event compounds.
+    future_compound: Entry must add outside-to-inside displacement in one event.
+    counterexample: Being inside throughout is not entry; touching the boundary is
+      neither wholly inside nor wholly outside.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: cc6d19387b62013464e0e8503d05ac8e8a26d06e009bbe56cf4118b27b20fb51
 - architecture_version: '1.0'
   semantic_head: h
   nodes:

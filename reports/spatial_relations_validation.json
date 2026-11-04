@@ -1,0 +1,61 @@
+{
+  "scope": "Spatial-state composition, musical inverse and affected regressions; not entry or general translator completion.",
+  "passed": true,
+  "results": [
+    {
+      "test": "tests/compound_dependencies_test.rb",
+      "passed": true,
+      "output": "Run options: --seed 217\n\n# Running:\n\n......\n\nFinished in 0.018486s, 324.5699 runs/s, 3299.7944 assertions/s.\n\n6 runs, 61 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/compound_convention_test.rb",
+      "passed": true,
+      "output": "Run options: --seed 17433\n\n# Running:\n\n...\n\nFinished in 0.031647s, 94.7957 runs/s, 821.5629 assertions/s.\n\n3 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tools/validate_semantic_ir_and_grammar.rb",
+      "passed": true,
+      "output": "Semantic IR validation: PASS\nChecks passed: 14; checks failed: 0; valid: 16; invalid: 13\n"
+    },
+    {
+      "test": "tools/validate_controlled_english.rb",
+      "passed": true,
+      "output": "Controlled English validation: PASS\nChecks passed: 13; checks failed: 0\n"
+    },
+    {
+      "test": "tools/validate_renderer_decoder.rb",
+      "passed": true,
+      "output": "Renderer/decoder validation: PASS\nChecks passed: 12; checks failed: 0\n"
+    },
+    {
+      "test": "tools/validate_glyph_audio.rb",
+      "passed": true,
+      "output": "Glyph/audio validation: PASS\nChecks passed: 10; checks failed: 0\n"
+    },
+    {
+      "test": "tests/spatial_relations_test.mjs",
+      "passed": true,
+      "output": "PASS 39 spatial sentences: independent MIDI roles/relation/runtime/scope recovery, Ruby parity and boundary countermodel.\n"
+    },
+    {
+      "test": "tests/named_sentence_test.mjs",
+      "passed": true,
+      "output": "Named sentences: 81 full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.\n"
+    },
+    {
+      "test": "tests/pronoun_interpretation_choices_test.mjs",
+      "passed": true,
+      "output": "PASS 24 pronoun-plus-interpretation cases with exact named and Ruby/MIDI parity; option/binding snapshots, dummy-it exclusion and actual UI combined-choice/stale-result checks.\n"
+    },
+    {
+      "test": "tests/compound_binding_constraints_test.mjs",
+      "passed": true,
+      "output": "Compound identity constraints: scoped equality and distinctness reject wrong participants and known aliases in Ruby/browser; inherited paths and transitive contradictions are checked. Three runtime states preserve reference music. Fixtures do not approve carrying.\n"
+    },
+    {
+      "test": "tools/validate_pages_release.mjs",
+      "passed": true,
+      "output": "GitHub Pages audit: PASS\nChecks passed: 11171; failed: 0; canonical variants: 5370\n"
+    }
+  ]
+}
