@@ -1,3 +1,4 @@
+import {decodeFoundationSentenceMidi} from '../pages/foundation_semantic_decoder.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
@@ -26,6 +27,16 @@ for(const state of [0,1,2])for(const inner of [0,1,2]){
  assert.equal(Buffer.from(bytes).toString('base64'),rendered.midi);
  assert.equal(rendered.svg,true);
  sounds.add(Buffer.from(bytes).toString('base64'));
+ const decoded=await decodeFoundationSentenceMidi(bytes,authority.atoms,records,{allowDraft:true});
+ assert.equal(decoded.meaning.predicate.foundation_id,records[0].foundation_id);
+ assert.equal(decoded.meaning.runtime_state,state);
+ assert.equal(decoded.meaning.arguments.experiencer.reference.role,'speaker');
+ const desired=decoded.meaning.arguments.content;
+ assert.equal(desired.content_status,'intensional');
+ assert.equal(desired.proposition.predicate.root_id,'LIF:211');
+ assert.equal(desired.proposition.runtime_state,inner);
+ assert.equal(desired.proposition.arguments.actor.reference.role,'addressee');
+ assert.equal(desired.proposition.arguments.target.reference.role,'speaker');
  const observed=await decodeFoundationMusicMidi(bytes,authority.atoms,records,{allowDraft:true});
  const outer=observed.tokens.find(t=>t.kind==='foundation'),care=observed.tokens.find(t=>t.root_id==='LIF:211');
  assert.equal(outer.runtime_state,state);assert.equal(care.runtime_state,inner);

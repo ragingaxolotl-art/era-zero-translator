@@ -70,5 +70,5 @@ export function strictSemanticReader(bytes,atoms,message){
  }
   return {current,scopes};
  };
- return {observed,marker,exactRoot,reference,role,unwrapScopes};
+ return {observed,marker,exactRoot,reference,role,unwrapScopes,readTree:()=>tree(0,tokens.length)};
 }
