@@ -49,7 +49,11 @@ export function parseFoundationSentence(input){
  return null;
 }
 async function reference(text,id,allowKind=false){
- if(['I','me'].includes(text))return deicticReference('speaker',id);
+ if(/^(?:she|he|it|they|we|her|him|them|us|myself|yourself|himself|herself|itself|ourselves|yourselves|themselves|this|that|these|those|mine|yours|hers|his|ours|theirs)$/i.test(text)){
+  const error=new Error(`Identify “${text}” with an explicit name or definite noun before translating this desire or preference. Quoted names are treated as sound labels.`);
+  error.code='pronoun_referents_required';throw error;
+ }
+ if(/^(?:I|me)$/i.test(text))return deicticReference('speaker',id);
  if(/^[Yy]ou$/.test(text))return deicticReference('addressee',id);
  const nominal=parseNominal(text),quoted=/^"[^"\n]+"$/.test(text),proper=/^[A-Z][a-z]+$/.test(text);
  const kind=allowKind&&/^[a-z]+$/.test(text)&&parseNominal('the '+text);

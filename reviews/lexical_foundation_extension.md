@@ -301,3 +301,12 @@ cases across 0/1/2 now have identical full formal output for question punctuatio
 before, after or on both sides of the tag, and independent MIDI decoding recovers
 the question. Contradictory punctuation is rejected. This fixes candidate output;
 it does not change the registry's admission status or claim style/listening approval.
+
+Candidate pronoun identity repair: unresolved personal, reflexive, demonstrative
+and possessive pronouns are no longer accepted as phonemic names or bare noun
+kinds in preference/desire participant references. The composer returns
+pronoun_referents_required with a request for an explicit name or definite noun.
+Forty-five tests cover holder, preferred alternative and comparison alternative.
+Quoted names remain intentional sound labels, and speaker/addressee references
+remain deictic across runtime 0/1/2. This closes silent identity loss; it does not
+provide general discourse inference or a new candidate pronoun-binding UI.
