@@ -1,0 +1,175 @@
+{
+  "status": "PASS",
+  "scope": "Two authored clean synthetic WAVs, decoded by shared dispatch with no text, source IR or expected notes. No physical recording or channel perturbation.",
+  "physical_recordings": 0,
+  "cases": [
+    {
+      "phrase": "Does Nora prefer the heavy box to the light box? [0]",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-preference-noun-ha8oQ7/heavy.wav",
+      "meaning": {
+        "profile": "EZFOUND-SEMANTIC-INVERSE-1",
+        "speech_act": "question",
+        "meaning": {
+          "predicate": {
+            "kind": "foundation",
+            "foundation_id": "FND:018dd25d713dff83661a76a4",
+            "definition_version": "1.0.0",
+            "registry_status": "candidate"
+          },
+          "runtime_state": 0,
+          "scopes": [],
+          "arguments": {
+            "experiencer": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "N",
+                  "AO",
+                  "R",
+                  "AE"
+                ],
+                "instance_code": null
+              }
+            },
+            "target": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "definite_nominal",
+                "phonemes": [
+                  "B",
+                  "AA",
+                  "K",
+                  "S"
+                ],
+                "instance_code": "f912a1a4",
+                "property": {
+                  "dimension": "mass",
+                  "standard": "contextual",
+                  "norm": "heavy",
+                  "comparison": "greater_than"
+                }
+              }
+            },
+            "comparison_standard": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "definite_nominal",
+                "phonemes": [
+                  "B",
+                  "AA",
+                  "K",
+                  "S"
+                ],
+                "instance_code": "936a4c66",
+                "property": {
+                  "dimension": "mass",
+                  "standard": "contextual",
+                  "norm": "light",
+                  "comparison": "less_than"
+                }
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Candidate vocabulary requires explicit opt-in.",
+          "This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.",
+          "Reference sounds do not determine original spelling or external identity.",
+          "Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.",
+          "Reads strict MIDI, not recorded audio."
+        ]
+      },
+      "checksum": "verified"
+    },
+    {
+      "phrase": "Does Nora not prefer the light box to the heavy box? [2]",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-preference-noun-ha8oQ7/light.wav",
+      "meaning": {
+        "profile": "EZFOUND-SEMANTIC-INVERSE-1",
+        "speech_act": "question",
+        "meaning": {
+          "predicate": {
+            "kind": "foundation",
+            "foundation_id": "FND:018dd25d713dff83661a76a4",
+            "definition_version": "1.0.0",
+            "registry_status": "candidate"
+          },
+          "runtime_state": 2,
+          "scopes": [
+            {
+              "operator": "negation"
+            }
+          ],
+          "arguments": {
+            "experiencer": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "N",
+                  "AO",
+                  "R",
+                  "AE"
+                ],
+                "instance_code": null
+              }
+            },
+            "target": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "definite_nominal",
+                "phonemes": [
+                  "B",
+                  "AA",
+                  "K",
+                  "S"
+                ],
+                "instance_code": "f912a1a4",
+                "property": {
+                  "dimension": "mass",
+                  "standard": "contextual",
+                  "norm": "light",
+                  "comparison": "less_than"
+                }
+              }
+            },
+            "comparison_standard": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "definite_nominal",
+                "phonemes": [
+                  "B",
+                  "AA",
+                  "K",
+                  "S"
+                ],
+                "instance_code": "936a4c66",
+                "property": {
+                  "dimension": "mass",
+                  "standard": "contextual",
+                  "norm": "heavy",
+                  "comparison": "greater_than"
+                }
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Candidate vocabulary requires explicit opt-in.",
+          "This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.",
+          "Reference sounds do not determine original spelling or external identity.",
+          "Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.",
+          "Reads strict MIDI, not recorded audio."
+        ]
+      },
+      "checksum": "verified"
+    }
+  ]
+}

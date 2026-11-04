@@ -83,5 +83,10 @@ proof of external inequality, persistent identity or a resolved discourse link.
 Negation scopes the preference, not the noun restrictions. Separate contextual
 standards do not imply a shared numeric cutoff.
 
-UI selection, blind WAV recovery for this preference construction, broader noun
-modification and the painful/more-painful acceptance requirement remain open.
+Two clean synthetic WAV preference questions now pass blind recovery through
+the shared decoder, including reversed adjective ordering, negation, runtime
+0/2 and distinct audible instance tags. The decoder receives only the WAV path
+and draft opt-in, not source English, semantic IR or expected notes. See
+`reports/preference_nominal_mass_acoustic_probe.json`. Physical recordings, UI
+selection, broader noun modification and the painful/more-painful acceptance
+requirement remain open.

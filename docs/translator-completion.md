@@ -24,6 +24,12 @@ until evidence shows a benefit.
 
 ## Current draft status
 
+Modified heavy/light preference alternatives now have an explicit API reading
+choice, 18 MIDI/Ruby contrasts, and two blind synthetic WAV question recoveries.
+Noun labels remain separate from property meanings; audible instance tags keep
+the alternatives distinct. UI reading selection and physical recordings remain
+open. See `reviews/nominal_modifier_extension.md`.
+
 The noun-modifier dependency audit now has executable composition probes and an
 ordered extension plan in `reviews/nominal_modifier_extension.md`. Existing
 numeric mass restrictions are preserved; contextual heavy/light noun restrictions
