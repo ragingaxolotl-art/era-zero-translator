@@ -125,3 +125,28 @@ Next: define musical framing for question content distinct from matrix question
 speech acts and asserted propositions, then bind it to reviewed epistemic state
 and acquisition relations. Open wh-questions, contextual topics, factive projection,
 Ruby content validation and broad cognitive sentence composition remain unfinished.
+
+## Draft standalone question-content music
+
+EZQUESTION-MUSIC-1 now uses explicit polar-content opening/closing frames around
+the unchanged scheduled proposition events. The neutral final contour closes this
+standalone content audition; the wrapper explicitly means neither answer is
+asserted. It is distinct from a matrix direct-question contour. Draft decoding
+requires its own opt-in and the two paths do not collide with existing strict
+grammar or counted-predicate frames. No canonical sound is reassigned.
+
+Twelve full predicate performances preserve their independently decoded token
+trees inside the new wrapper, including participants, registers, negation,
+compound structure and runtime. Frame-index metadata is normalized for comparison;
+actual tree nesting is retained. Empty content and ordinary direct-question
+performances are rejected by the content reader. The reader recovers structure,
+not the full epistemic meaning of arbitrary predicates. Formal/content identity
+is checked before scheduling, but this is not a general formal regeneration
+validator. Inputs are snapshotted across asynchronous validation.
+
+The shared MIDI writer was extracted without changing the ordinary formal route.
+The 5,429-performance strict inverse regression, counted-property browser/Ruby
+parity, existing foundation preview/export checks and counted-frame checks pass.
+This remains browser-only standalone content audition: Ruby question-content
+validation/rendering, cognitive predicate binding, full semantic inverse, live
+listening and canonical admission remain open.

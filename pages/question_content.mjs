@@ -6,6 +6,7 @@ const PROFILE='EZQUESTION-CONTENT-1';
 const keys=(value,allowed)=>value&&typeof value==='object'&&!Array.isArray(value)&&Object.keys(value).every(key=>allowed.includes(key))&&allowed.every(key=>Object.hasOwn(value,key));
 export async function validatePolarQuestionContent(document,{allowDraft=false}={}){
  if(!allowDraft)throw new Error('Question content requires explicit draft opt-in.');
+ document=structuredClone(document);
  if(!keys(document,['profile','status','content_id','content_digest','question_kind','assertion_commitment','proposition']))throw new Error('Invalid question content fields.');
  const {content_id,content_digest,...body}=document;
  if(body.profile!==PROFILE||body.status!=='draft'||body.question_kind!=='polar'||body.assertion_commitment!=='neither_answer')throw new Error('Invalid polar question contract.');

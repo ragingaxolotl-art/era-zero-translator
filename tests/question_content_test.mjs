@@ -23,4 +23,4 @@ for(const change of [d=>{d.assertion_commitment='positive'},d=>{d.truth=true},d=
  const d=structuredClone(documents[0]);change(d);const {content_id,content_digest,...body}=d;d.content_digest=await canonicalDigest(body);d.content_id=`EZQ:${d.content_digest.slice(0,24)}`;
  await assert.rejects(()=>validate(d,{allowDraft:true}));
 }
-console.log('PASS 12 polar-content compositions preserve complete proposition graphs and all runtime states; questions assert neither answer, reject runtime-as-truth and malformed/rehashed content. No question-content music is implemented yet.');
+console.log('PASS 12 polar-content compositions preserve complete proposition graphs and all runtime states; questions assert neither answer, reject runtime-as-truth and malformed/rehashed content.');

@@ -1,3 +1,4 @@
+import {questionContentMusicFrames} from './question_music_frames.mjs';
 import {quantifiedMusicFrames} from './quantified_music.mjs';
 import {notesFromMidi} from './performance_codec.mjs';
 import {PHONEMES} from './names.mjs';
@@ -38,9 +39,9 @@ frame('decimal_point',[0,10,-1,0]);frame('coord_member',[0,11,0,11]);frame('cond
 for(let digit=0;digit<10;digit++)frame(`digit_${digit}`,[0,10,Math.floor(digit/4),digit%4,0]);
 UNITS.forEach((_,i)=>frame(`measurement_unit_${i+1}`,[0,13,i+1,13,0]));
 
-export function decodeStrictMusicMidi(bytes,atoms,{maxNotes=100000,maxTokens=100000,allowDraftQuantified=false}={}){
+export function decodeStrictMusicMidi(bytes,atoms,{maxNotes=100000,maxTokens=100000,allowDraftQuantified=false,allowDraftQuestionContent=false}={}){
  if(!Number.isInteger(maxNotes)||maxNotes<1||!Number.isInteger(maxTokens)||maxTokens<1)fail('invalid limits');
- const acceptedFrames=allowDraftQuantified?[...frames,...quantifiedMusicFrames()]:frames;
+ const acceptedFrames=[...frames,...(allowDraftQuantified?quantifiedMusicFrames():[]),...(allowDraftQuestionContent?questionContentMusicFrames():[])];
  const {notes,division}=notesFromMidi(bytes);
  if(!division||notes.length<3||notes.length>maxNotes||notes[0].start_tick!==0)fail('invalid note count or start');
  // The final contour is separated from the payload and has half-beat notes.
