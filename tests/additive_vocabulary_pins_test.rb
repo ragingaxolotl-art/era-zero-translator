@@ -3,7 +3,8 @@ require_relative '../tools/lib/era_zero_validation'
 class AdditiveVocabularyPinsTest < Minitest::Test
   def test_recorded_baselines_and_additions_preserve_exact_meanings
     v=EraZeroValidation
-    m=v.load_yaml('migrations/additive_vocabulary_source_pins_2026_11_04.yaml')
+    %w[migrations/additive_vocabulary_source_pins_2026_11_04.yaml migrations/running_vocabulary_source_pins_2026_11_04.yaml].each do |migration|
+    m=v.load_yaml(migration)
     m.fetch('sources').each do |path,source|
       key=path.include?('compound_dictionary') ? 'entries' : 'senses'
       id=key=='entries' ? 'compound_id' : 'sense_id'
@@ -17,6 +18,7 @@ class AdditiveVocabularyPinsTest < Minitest::Test
       refute_equal source['before_fingerprint'],v.fingerprint(prior.drop(1))
       altered=Marshal.load(Marshal.dump(prior));altered.first['definition_version']='corrupted'
       refute_equal source['before_fingerprint'],v.fingerprint(altered)
+    end
     end
   end
 end

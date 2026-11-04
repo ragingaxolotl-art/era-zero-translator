@@ -15,11 +15,15 @@ is the starting evidence, not a completion certificate.
 The full translator goal remains **incomplete**. There are 324 preserved roots,
 58 approved compounds and 466 canonical senses. Desire/preference and polar-answer knowledge foundations
 remain opt-in candidate vocabulary; they are not included in those canonical
-counts. The consolidated regression at `056c677` passed 146 of 147 checks. The
-carrying-command check timed out at 120 seconds; after that run terminated, its
-focused rerun passed all 21 command cases in 0.676 seconds without a code change.
-The report preserves the original timeout and the separate rerun; its cause is
-unresolved. This is implementation evidence, not proof of full English coverage.
+counts. The consolidated regression at `7bedb8b` passed 149 of 152 checks.
+The three failures were stale vocabulary fingerprints and the renderer's compound
+matrix count after the three running additions. Exact historical comparison
+confirmed all previous 55 compounds and 463 senses unchanged, then the dependent
+fingerprints and expected matrix count were reconciled. All three failed validators
+and the expanded preservation check passed on focused rerun. The report retains
+the original failures and follow-up results; this is not a clean 152/152 full run.
+The previously timed-out carrying-command check passed in this consolidated run.
+This remains implementation evidence, not proof of full English coverage.
 Local browser use was checked again and is disabled in Work settings, so live
 layout, interaction and listening validation remain unperformed.
 
@@ -1334,3 +1338,15 @@ The 40-case authored diagnostic now has 24 checked compositions, 9 requiring
 interpretation and 7 not composed. “Nora runs to the gate” moved from uncomposed
 to an explicit viewpoint choice. These counts are not representative English
 coverage. Temporal modality and the seven original completion gates remain open.
+
+### Temporal scope implementation evidence
+
+An isolated probe at `7bedb8b` established that the existing IR permits a timed
+predication clause beneath a modality operator. Ruby validation/rendering accepts
+it, browser/Ruby MIDI is identical, and the independent running inverse recovers
+possibility-before-time versus time-before-possibility as different scope orders.
+`reports/temporal_clause_nesting_probe.json` records the bounded observation. No new
+root, grammar operator or musical frame is needed for this example. The next fix
+belongs in English composition: nest its timed clause before applying outer
+modality or proposition negation, retaining existing clause-level time behavior
+for ordinary sentences. The probe does not mean English parsing is implemented.
