@@ -415,3 +415,24 @@ music, phase-model and knowledge-time tests pass. This is an explicit draft API;
 main UI/export integration remains unfinished. Bare learned-the-route, learned-that,
 ongoing learning and skill acquisition remain unsupported rather than silently
 receiving this polar-answer sense. No original completion gate is closed.
+
+## Regenerated acquisition export bundle
+
+`acquisition_bundle.mjs` adds the separate draft EZACQB-1 export format. It contains
+the complete acquisition document (including candidate definitions), source text
+as descriptive metadata, a digest of the shared root/compound authority and the
+regenerated MIDI checksum. It does not store or trust a caller's supplied event
+list. The result formal is regenerated from its meaning and current authority;
+the acquisition performance is then reconstructed around that result.
+
+Verification requires draft opt-in, exact fields/provenance, envelope and meaning
+identities, matching shared authority and matching regenerated music. Source text
+is not independently verified as an interpretation. Browser validation still
+supplements rather than replaces the Ruby full semantic validator. This format
+is an acquisition-specific API and is not mislabeled as canonical EZB-1.
+
+Nine scoped/question/runtime exports regenerate result formals equal to the
+composer, even when the supplied result event list is deliberately replaced.
+Rehashed changes to provenance, phase commitments, runtime, authority, music and
+extra formal data reject. The 18 learned-whether meaning/MIDI checks also pass.
+Main preview/download controls and live browser verification remain unfinished.

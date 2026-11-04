@@ -46,7 +46,9 @@ complete result binding in 18 MIDI-only decoding cases with independent event
 and result runtime states. Ruby now validates the full result and produces
 byte-identical acquisition MIDI. Draft English learned-whether now preserves
 event scopes, questions and content timing in 18 musical meaning/parity cases.
-Acquisition UI/export integration and broader learning senses remain open.
+A separate draft acquisition export API now regenerates music from meaning and
+checks authority/provenance in nine cases. Acquisition UI/download integration
+and broader learning senses remain open.
 
 Recent completed implementation work:
 
