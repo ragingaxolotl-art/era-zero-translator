@@ -251,3 +251,25 @@ English or recorded-audio comprehension. The English composer can reuse ordinary
 predicates outside the inverse's current whitelist; those still reject in the
 inverse and are not covered by this evidence. UI admission, wider inverse support,
 learning/acquisition, source reconciliation and listening validation remain open.
+
+## Draft preview admission and pronoun resolution
+
+The main analysis route now explicitly opts into cognitive parsing and offers the
+existing draft preview for knows/whether. The preview fetches a separate combined
+registry built from the unchanged desire/preference registry plus the cognitive
+candidate. The release builder validates and emits that combined artifact; this
+does not add any candidate to the canonical dictionary or root inventory.
+
+The shared pronoun planner accepts the same explicit cognitive option. Separate
+fields resolve each personal-pronoun occurrence before composition, including
+“She knows whether he is conscious.” Missing bindings reject; explicit Nora/Eli
+bindings produce the same formal result as the named sentence. Quoted labels retain
+the existing name treatment. The preview uses strict sound and draft labeling,
+and exported vocabulary provenance contains the cognitive definition.
+
+Actual preview-handler tests check explicit opt-in, stale input/card rejection,
+draft labeling and the combined endpoint. Real composer checks verify the sound
+plan, export provenance and separate pronoun bindings; existing foundation and
+pronoun UI regressions pass. These are handler/data tests, not live browser
+layout, interaction or listening evidence. Cognitive scope beyond the reviewed
+inverse constructions, learning/acquisition and completion gates remain open.

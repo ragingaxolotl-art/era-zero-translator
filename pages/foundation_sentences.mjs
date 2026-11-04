@@ -70,7 +70,7 @@ async function reference(text,id,allowKind=false){
  const mode=nominal?.mode||(kind?'nominal_class':null),name=await encodeName(nominal?.head||(quoted?text.slice(1,-1):text));
  return {node_id:id,kind:'phonemic_reference',value_type:'entity',name,referent_id:mode?`nominal:${mode==='nominal_class'?'class':'definite'}:${name.name_id}`:`name:${name.name_id}`,...(mode?{reference_mode:mode}:{})};
 }
-export function foundationPronounPlan(input){
+export function foundationPronounPlan(input,{allowCognitive=false}={}){
  if(typeof input!=='string')return null;
  const occurrences=[];let quoted=false;
  for(let i=0;i<input.length;){
@@ -81,10 +81,10 @@ export function foundationPronounPlan(input){
  }
  if(quoted||!occurrences.length||occurrences.length>16)return null;
  let probe=input;for(const o of [...occurrences].reverse())probe=probe.slice(0,o.start)+`"reference ${String.fromCharCode(97+Number(o.key.slice(3)))}"`+probe.slice(o.end);
- return parseFoundationSentence(probe)?{input,occurrences}:null;
+ return parseFoundationSentence(probe,{allowCognitive})?{input,occurrences}:null;
 }
 export async function composeFoundationSentence(input,authority,records,loadTemplate,{allowDraft=false,bindings,allowCognitive=false}={}){
- const plan=foundationPronounPlan(input);
+ const plan=foundationPronounPlan(input,{allowCognitive});
  if(!plan){if(bindings!==undefined)throw new Error('This sentence does not require pronoun bindings.');return composeAtDepth(input,authority,records,loadTemplate,allowDraft,0,allowCognitive);}
  if(!bindings||typeof bindings!=='object'||Array.isArray(bindings)||Object.keys(bindings).length!==plan.occurrences.length||plan.occurrences.some(o=>!Object.hasOwn(bindings,o.key)||!validReferent(bindings[o.key]))){
   const error=new Error('Identify each pronoun with an explicit name, quoted label, definite noun, or I/you.');error.code='pronoun_referents_required';throw error;

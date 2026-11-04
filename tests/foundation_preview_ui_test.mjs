@@ -23,7 +23,7 @@ for(const outcome of ['success','failure']){
  complete(outcome==='success'?{status:'candidate_translation'}:new Error('late failure'));await pending;
  assert.equal(state.resolution,newer);assert.equal(shown,newer);assert.equal(errors.length,0);
 }
-assert(app.includes('if(parseFoundationSentence(input)||foundationPronounPlan(input)){showFoundationPreview(input);return}'));
+assert(app.includes('if(parseFoundationSentence(input,{allowCognitive:true})||foundationPronounPlan(input,{allowCognitive:true})){showFoundationPreview(input);return}'));
 vm.runInContext(app.split('\n').find(l=>l.startsWith('const recognitionOptions='))+';this.options=recognitionOptions;',context);
 state.resolution={status:'candidate_translation'};assert.equal(context.options().mode,'strict');
 assert(app.includes("['candidate_translation','draft_quantified_translation'].includes(result.status)?'Draft preview'"));

@@ -33,7 +33,9 @@ candidate now accepts typed question content with browser/Ruby binding and MIDI
 parity. An explicit cognitive API opt-in now composes knows/whether sentences,
 with 21 full browser/Ruby formal and MIDI comparisons. MIDI-only semantic
 recovery now checks the holder, typed question, negation and runtime scopes for
-these cases. Main UI admission and broader inverse coverage remain unfinished.
+these cases. Main draft-preview routing now includes the cognitive candidate
+and explicit pronoun fields, with handler/export checks. Live UI validation and
+broader inverse coverage remain unfinished.
 
 Recent completed implementation work:
 

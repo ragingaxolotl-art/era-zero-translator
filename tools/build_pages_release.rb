@@ -108,6 +108,10 @@ File.write(File.join(data_dir, "index.json"), JSON.generate(browser_index))
 foundation_candidates = EraZeroValidation.load_yaml("reviews/foundation_extension_candidates.json")
 EraZeroFoundations.validate!(foundation_candidates.fetch("records"), allow_draft: true)
 File.write(File.join(data_dir, "foundation_candidates.json"), JSON.generate(foundation_candidates))
+cognitive_candidates = EraZeroValidation.load_yaml("reviews/cognitive_foundation_candidates.json")
+preview_candidates = foundation_candidates.merge("records" => foundation_candidates.fetch("records") + cognitive_candidates.fetch("records"))
+EraZeroFoundations.validate!(preview_candidates.fetch("records"), allow_draft: true)
+File.write(File.join(data_dir, "foundation_preview_candidates.json"), JSON.generate(preview_candidates))
 
 
 document_extensions = %w[.md .yaml .yml .json .jsonl .txt .svg .mid]
