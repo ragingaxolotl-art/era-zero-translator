@@ -36,7 +36,11 @@ and I/me/you; unresolved pronouns, counts and unsupported modifiers are rejected
 Twenty-eight document-to-MIDI cases pass, with rehashed corruption counterexamples.
 Documents render through the existing lexical reference renderer.
 
-Remaining: Ruby parity, cognitive binding contracts, English interpretation choices, UI integration,
+Ruby now independently validates the same content contract and reconstructs name
+notes. All 28 document cases produce byte-identical browser/Ruby MIDI at anchor
+60, and both validators reject the seven rehashed corruption cases.
+
+Remaining: cognitive binding contracts, English interpretation choices, UI integration,
 and listening checks. Selection is local-context-dependent and does not identify
 which of several messages/reasons/perspectives is intended. Names recover phonemes,
 not external identities. Existing polar-answer knowledge remains polar-only.
