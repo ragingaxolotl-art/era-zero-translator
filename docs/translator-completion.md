@@ -13,7 +13,7 @@ is the starting evidence, not a completion certificate.
 ## Current coverage evidence
 
 The [ordinary phrase audit](../reports/ordinary_phrase_coverage.md) currently has
-19 checked compositions, 18 uncomposed phrases, and three phrases requiring an explicit interpretation or contextual standard out of 40 deliberately varied cases. This is an implementation-authored diagnostic set, not a blind evaluation
+24 checked compositions, 12 uncomposed phrases, and four phrases requiring an explicit interpretation or contextual standard out of 40 deliberately varied cases. This is an implementation-authored diagnostic set, not a blind evaluation
 or a statistical measure of English coverage. Green regression suites do not
 override these missing constructions. The corpus records the intended distinctions
 even for cases that cannot yet be composed; future support must receive explicit
@@ -42,9 +42,7 @@ root meanings and both lexical and runtime 0/1/2 distinctions.
 First reconciled with the source audit's seven original phases at draft `0f10d62`
 on October 29, 2026 (Page sequence 5), preserving all 104 blocks and seven exit
 requirements. That historical revision recorded the 80-check baseline and its
-targeted follow-up. The November 4 repository now records a fresh 88-check passing run after custody transfer and delivery,
-including the MAT example reconciliation and per-clause correction. The ordinary diagnostic
-still has 19 checked compositions out of 40. Neither closes the gates below.
+targeted follow-up. The November 4 draft now adds a felt-condition dependency family, open definite noun labels, coordinated care targets and explicit inclusive/exclusive disjunction. The fresh consolidated regression passes all 91 checks; general-English and product checks separately pass 16 each. Evidence is in `reports/translator_completion_regression.json`. The ordinary diagnostic has 24 checked compositions out of 40; twelve remain uncomposed and four require interpretation. None of these changes closes the gates below.
 
 | Original gate | Current evidence | Outstanding requirement; gate remains open |
 |---|---|---|
@@ -75,6 +73,40 @@ both lexical meaning and audible state preservation. Preserve existing melodies
 and do not create new LIF/STR-like families merely to fill the address grid.
 
 ### Current dependency milestone and next work
+
+The [felt-condition review](../reviews/felt_conditions_foundation.md) introduces
+seven dependency-ordered conventional compounds: consciously felt self-condition,
+pleasant condition, happy mood, bodily need, hunger, thirst and fatigue. Ordinary
+happy/hungry/thirsty/tired predications bind the experiencer through the reused
+compound graph. The dictionary has 50 compounds and 458 indexed senses. All 324
+roots and the prior 43 compound definitions are preserved exactly. These are new
+explicit conventions under the user's completion instruction, not recovered
+historical approvals or a claim that existing root adjacency entails each feeling.
+
+The felt-condition suite checks 96 ordinary cases and 21 controlled cases, including
+MIDI-only recovery of the bound experiencer, dependency convention, runtime and
+scope. All 374 dictionary identities across 0/1/2 have distinct exact MIDI in the
+dictionary audit. This is not a perceptual listening test.
+
+Definite single-word nouns such as “the gyroscope” can now label references without
+a finite noun dictionary. They do not acquire invented semantic definitions.
+“Nora cares for Eli and Orin” binds both targets to one care relation. Its 23-case
+suite checks care scopes, target music registers and previously unknown noun labels.
+Known nonspatial arrival idioms are rejected rather than interpreted as displacement.
+General noun phrases and arbitrary coordination remain unfinished.
+
+Clause disjunction asks whether at least one alternative holds (including both),
+or exactly one holds. The selected meaning has a distinct coordination sound;
+there is no default. Eighteen sentence/state cases verify Ruby/browser parity,
+quoted labels, local negation and mixed felt predicates. UI-handler checks reject
+missing and stale choices. Modal attachment and mixed ungrouped conjunctions are
+not guessed. This is programmatic handler validation, not live browser validation.
+
+The next unresolved vocabulary includes sensory intensity/texture, preference,
+curiosity, learning/understanding and movement manner. Pronouns and general nested
+clauses also remain. The original completion gates remain open.
+
+### Previous custody-transfer and delivery milestone
 
 [Custody transfer](../reviews/custody_transfer_foundation.md) now links source loss
 and recipient acquisition of the same object in one reallocation. The subsequent

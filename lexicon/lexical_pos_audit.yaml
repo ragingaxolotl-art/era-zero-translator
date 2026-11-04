@@ -5,9 +5,9 @@ metadata:
   status: noncanonical_metadata_complete
   canonical_semantic_changes: 0
   root_count: 324
-  indexed_sense_count: 451
+  indexed_sense_count: 458
   game_story_surface_sense_count: 48
-  total_audited_senses: 499
+  total_audited_senses: 506
   part_of_speech_counts:
     adjective: 22
     adverb: 2
@@ -15,7 +15,7 @@ metadata:
     grammar: 1
     interjection: 1
     noun: 29
-    noun_phrase: 259
+    noun_phrase: 266
     number: 1
     preposition: 2
     quantifier: 1
@@ -15031,6 +15031,23 @@ senses:
   fidelity: authoritative
   controlled_input_allowed: true
   authority_layer: english_sense_index
+- sense_id: ENS:2fb286a241fc6e074c808382
+  lemma: consciously felt self-condition
+  part_of_speech: noun_phrase
+  surface_forms:
+  - consciously felt self-condition
+  route: compound
+  target_id: CMP:6c9e3042a361ccae6ecf5980
+  sense_key: canonical_compound_label
+  definition: The bound experiencer has a presently conscious felt presentation of
+    their own condition. The presentation is experiential rather than merely stored,
+    inferred, reported or externally registered, and can be implicit without a verbal
+    judgment. Within this compound the self in LIF:001 and MIN:001 is the bound experiencer,
+    not necessarily the speaker. No particular pleasantness, desire, bodily need,
+    cause, truth of a judgment or external sensory channel is asserted.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
 - sense_id: ENS:dad12cc129934924d0b30996
   lemma: continue
   part_of_speech: verb
@@ -15817,6 +15834,70 @@ senses:
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
+- sense_id: ENS:8824e67d1b7579fa4e61a836
+  lemma: felt bodily replenishment need
+  part_of_speech: noun_phrase
+  surface_forms:
+  - felt bodily replenishment need
+  route: compound
+  target_id: CMP:c64ab0a9989c7b10c46e3b38
+  sense_key: canonical_compound_label
+  definition: The same consciously felt self-condition presents the experiencer's
+    own material body as calling for replenishment or maintenance. MAT:000 identifies
+    that experiencer's body within the same focal frame. This is a felt bodily demand,
+    not proof of a measured physiological deficit, harm, failed viability, an intended
+    action or actual replenishment. The required resource or maintenance kind is not
+    yet specified.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:af59b7c03a8d3cab6a5691b1
+  lemma: felt fatigue
+  part_of_speech: noun_phrase
+  surface_forms:
+  - felt fatigue
+  route: compound
+  target_id: CMP:3c13b9c619d95f1c40ea5da5
+  sense_key: canonical_compound_label
+  definition: 'The experiencer feels fatigue: a condition of weariness in which sustaining
+    physical or mental effort is felt as taxing or diminished and rest or recovery
+    is called for. This does not entail sleep, dormancy, unconsciousness, objective
+    incapacity, illness, damage or a measured energy deficit. Mere boredom or being
+    tired of a particular object is a separate sense.'
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:504807edf2cd5416599a1591
+  lemma: felt hunger
+  part_of_speech: noun_phrase
+  surface_forms:
+  - felt hunger
+  route: compound
+  target_id: CMP:748be1f0ce7ceb2963716292
+  sense_key: canonical_compound_label
+  definition: 'The same felt bodily replenishment need is hunger: a bodily feeling
+    calling for food or nourishment through eating. The feeling need not prove a measured
+    energy deficit or imminent harm and does not assert eating, appetite for a particular
+    food, permission, or a deliberate plan. Figurative hunger for achievement or information
+    is excluded.'
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:dbd5032912ba7a9aa20c9a75
+  lemma: felt thirst
+  part_of_speech: noun_phrase
+  surface_forms:
+  - felt thirst
+  route: compound
+  target_id: CMP:60cd46250d183e3105b7250a
+  sense_key: canonical_compound_label
+  definition: 'The same felt bodily replenishment need is thirst: a bodily feeling
+    calling for water intake, ordinarily through drinking. It does not prove a measured
+    water deficit or assert drinking, a chosen beverage, permission, or a deliberate
+    plan. Figurative thirst for power or knowledge is excluded.'
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
 - sense_id: ENS:6d9271cb4b53de4bfc4a54dd
   lemma: fix
   part_of_speech: verb
@@ -15938,6 +16019,22 @@ senses:
   definition: Undergo active change of position in a shared frame.
   fidelity: high
   controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:5f8345cd1113054c3f4d0916
+  lemma: happy felt mood
+  part_of_speech: noun_phrase
+  surface_forms:
+  - happy felt mood
+  route: compound
+  target_id: CMP:c58b38d03fab27880ac3e1f0
+  sense_key: canonical_compound_label
+  definition: 'The experiencer feels happiness: a pleasant emotional mood of gladness
+    or contentment, not merely a pleasant sensory quality or a favorable evaluation.
+    The mood can coexist with other feelings and need not be permanent, intense, externally
+    expressed, or caused by a particular event. This is the felt-state sense of happy,
+    not fortunate, willing, suitable or happy with a specified object.'
+  fidelity: high
+  controlled_input_allowed: true
   authority_layer: english_sense_index
 - sense_id: ENS:6c88cdc2532bd142502cd306
   lemma: have
@@ -18496,6 +18593,22 @@ senses:
   target_id: CMP:111b772027accab2054f0415
   sense_key: canonical_compound_label
   definition: A generated artifact with enduring physical work capacity.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:42a927117beb8fe62bc625b5
+  lemma: pleasant felt condition
+  part_of_speech: noun_phrase
+  surface_forms:
+  - pleasant felt condition
+  route: compound
+  target_id: CMP:8e95897afbd6d54b8e164e03
+  sense_key: canonical_compound_label
+  definition: The same consciously felt self-condition has a pleasant experiential
+    tone for its experiencer. Pleasantness is felt valence, not an appraisal that
+    an outcome is useful, morally good or desired. It does not by itself establish
+    happiness, satisfaction, affection, care, preference, or absence of simultaneous
+    unpleasant feeling.
   fidelity: high
   controlled_input_allowed: true
   authority_layer: english_sense_index

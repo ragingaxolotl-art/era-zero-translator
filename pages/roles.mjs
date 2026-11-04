@@ -7,6 +7,7 @@ export function registerFor(nodeId,ir){
     const current=pending.pop();if(scopedIds.has(current))continue;scopedIds.add(current);
     for(const edge of ir.edges){
       const parent=nodes.get(edge.to);
+      if(edge.type==='member_of'&&edge.from===current&&parent?.kind==='coordination'&&['all_of','any_of','exactly_one'].includes(parent.operator))pending.push(edge.to);
       if(edge.type==='scopes'&&edge.from===current&&parent?.kind==='scope_operator'&&parent.operator==='quantifier')pending.push(edge.to);
     }
   }

@@ -67,7 +67,7 @@ assert.notEqual(outputs[0].semantic_ir.utterance_id,outputs[1].semantic_ir.utter
 assert.notDeepEqual(midiFromFormal(outputs[0].formal),midiFromFormal(outputs[1].formal));
 assert.equal(outputs[7].semantic_ir.nodes.find(node=>node.node_id==='p').target_type,'compound');
 assert.deepEqual(outputs[7].formal.performance.lexical_events.filter(event=>event.occurrence_id==='p').map(event=>event.target_id),['MAT:111','REP:111']);
-for(const text of ['Pip never cares for Ada.','Pip cares for Ada and Sol.','Pip barely cares for Ada.','Pip cares for a curious Ada.','Pip cares for Ada tomorrow.','Pip is not restoring Ada tomorrow.','Pip is damaging Ada and Sol.','Pip is physically repairing the broken machine.','Pip is physically repairing "pump" tomorrow.']){
+for(const text of ['Pip never cares for Ada.','Pip barely cares for Ada.','Pip cares for a curious Ada.','Pip cares for Ada tomorrow.','Pip is not restoring Ada tomorrow.','Pip is damaging Ada and Sol.','Pip is physically repairing the broken machine.','Pip is physically repairing "pump" tomorrow.']){
   assert.equal(parseNamedSentence(text),null,text);
   assert.equal(needsSentenceComposition(text),true,text);
 }
@@ -82,7 +82,7 @@ assert.equal(conscious.interpretation,'Pip is conscious.');
 assert.equal(notConscious.interpretation,'Pip is not conscious.');
 assert.notDeepEqual(midiFromFormal(conscious.formal),midiFromFormal(dormant.formal));
 assert.notDeepEqual(midiFromFormal(notConscious.formal),midiFromFormal(dormant.formal));
-assert.equal(parseNamedSentence('Pip is tired.'),null);
+assert.equal(parseNamedSentence('Pip is tired.').key,'felt_fatigue');
 assert.equal(parseNamedSentence('Pip is asleep.'),null);
 const modalMarkers=result=>scheduledLexicalEvents(result.formal).filter(event=>event.kind==='grammar_marker'&&!event.marker.startsWith('role_')).map(event=>event.marker);
 assert.deepEqual(modalMarkers(outputs[17]),['modality_possible_open','negation_open','negation_close','modality_possible_close']);

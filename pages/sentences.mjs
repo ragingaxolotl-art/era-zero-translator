@@ -1,3 +1,4 @@
+import {FELT_CONDITIONS} from './felt_conditions.mjs';
 import {massKilograms} from './mass.mjs';
 import {temperaturePointKelvin} from './temperature.mjs';
 import {renderLexicalOccurrences,lexicalGloss} from './bound_compounds.mjs';
@@ -33,6 +34,7 @@ const ACTIONS = [
   {pattern:'is physically repairing', predicate:'CMP:2816a7eeb356c2148b26beca', key:'ongoing_physical_repair', wording:'is physically repairing'}
 ];
 const DESCRIPTIONS = [
+  ...FELT_CONDITIONS,
   {pattern:'(?:damaged|impaired)', predicate:'WRN:001', key:'present_internal_impairment', wording:'is impaired', semanticNote:'Damaged or impaired describes a present intrinsic adverse condition relative to the bearer’s accepted state. It does not identify a damaging agent, mechanism, or ongoing damaging event.'},
   {pattern:'restored', predicate:'REP:001', key:'present_internal_restored_state', wording:'is restored', semanticNote:'Restored describes the bearer’s applicable internal restoration condition as presently realized. It does not identify a restorer or assert that restoration is still in progress.'},
   {pattern:'able to pay attention', predicate:'MIN:201', key:'available_attentional_capacity', wording:'is able to pay attention'},
@@ -104,7 +106,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     }
     const commands=[['care for','cares for'],['restore','is restoring'],['repair','is repairing'],['awaken','is awakening'],['damage','is damaging'],['physically repair','is physically repairing'],['physically support','is physically supporting'],['move toward','is moving toward'],['move away from','is moving away from'],['move relative to','is moving relative to'],['pay attention to','is paying attention to'],['revise a mental representation of','is revising a mental representation of']];
     for(const [verb,wording] of commands){
-      const command=String(input).trim().match(new RegExp(`^(?:[Dd]o not )?${verb} ${participant}[.!]?$`,'i'));
+      const command=String(input).trim().match(new RegExp(`^(?:[Dd]o not )?${verb} ${verb==='care for'?'(.+?)':participant}[.!]?$`,'i'));
       if(command){
         const negative=/^[Dd]o not /.test(String(input).trim());
         const predicate=negative?(verb==='care for'?'does not care for':wording.replace('is ','is not ')):wording;
@@ -114,7 +116,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
       }
     }
     const question=String(input).trim().match(new RegExp(`^(?:[Ii]s|[Aa]re|[Aa]m) ${participant} (.+)\\?$`));
-    const careQuestion=String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?care for ${participant}\\?$`));
+    const careQuestion=String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?care for (.+)\\?$`));
     const pastQuestion=String(input).trim().match(new RegExp(`^(?:[Ww]as|[Ww]ere) ${participant} (.+)\\?$`));
     const didQuestion=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?(care for|restore|repair|awaken|damage|physically repair|arrive at|acquire physical custody of) ${participant}( (?:yesterday|today))?\\?$`));
     const pastVerbs={'care for':'cared for',restore:'restored',repair:'repaired',awaken:'awakened',damage:'damaged','physically repair':'physically repaired','arrive at':'arrived at','acquire physical custody of':'acquired physical custody of'};
@@ -212,6 +214,8 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
   const arrival=String(input).trim().match(new RegExp(`^${participant} (arrived at|did not arrive at) ${participant}[.]?$`));
   if(arrival){
     const texts=[arrival[1],arrival[3]];
+    // These established idioms concern reasoning or agreement, not spatial displacement.
+    if(/^the (?:conclusion|decision|answer|solution|agreement|verdict|understanding)$/i.test(texts[1]))return null;
     if(texts.some(text=>parseNominal(text)?.quantifier)||participantIdentity(texts[0])===participantIdentity(texts[1]))return null;
     return {actor:texts[0].replaceAll('"',''),actorText:texts[0],target:texts[1].replaceAll('"',''),targetText:texts[1],
       predicate:'MOV:110',key:'completed_target_arrival',role:'actor',targetRole:'destination',speechTime:'before',
@@ -308,6 +312,18 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     const massStandard=['heavy','light'].includes(thermal[3]);
     return {actor:thermal[1].replaceAll('"',''),actorText:thermal[1],role:'bearer',predicate:thermal[1]==='I'?'MAT:000':'MAT:010',key:massStandard?'contextual_mass_adjective':'contextual_thermal_adjective',construction:massStandard?'contextual_mass_adjective':'contextual_thermal_adjective',adjective:thermal[3],negated:!!thermal[2],requiredInterpretation:massStandard?'mass_standard':'thermal_standard'};
   }
+  // Coordinated targets belong to one care predicate, not separate clauses.
+  const careTargets=grammaticalText.match(new RegExp(`^${participant} (?:cares for|is caring for) (?:both )?${participant} and ${participant}[.]?$`));
+  if(careTargets){
+    const texts=[careTargets[1],careTargets[2],careTargets[3]];
+    if(texts.some(text=>parseNominal(text)?.quantifier)||new Set(texts.map(participantIdentity)).size!==3)return null;
+    const care=ACTIONS.find(action=>action.key==='active_care');
+    return {...care,construction:'coordinated_care_targets',
+      participants:texts.map((text,index)=>({text,label:text.replaceAll('"',''),role:index===0?'actor':'target'})),
+      participantGroups:[{role:'target',indices:[1,2],operator:'all_of'}],
+      semanticNote:'One care relation with an explicitly coordinated target list. Both named targets belong to it; no temporal order is asserted.',
+      explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
   for(const action of ACTIONS){
     for(const negated of [false,true]){
       const pattern=negated?(action.negativePattern||(action.key==='active_care'?'(?:does not care for|is not caring for)':action.pattern.replace('is ','is not '))):action.pattern;
@@ -323,7 +339,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     const match=grammaticalText.match(new RegExp(`^${participant} is (not )?${description.pattern}[.]?$`));
     const quantified=match&&!!parseNominal(match[1])?.quantifier;
     if(quantified&&match[2])return null;
-    if(match)return {...(quantified?{quantifiedParticipants:true}:{}),actor:match[1].replaceAll('"',''),actorText:match[1],...description,predicate:match[1]==='I'?({'LIF:011':'LIF:001','LIF:012':'LIF:002'}[description.predicate]||description.predicate):description.predicate,role:'bearer',negated:!!match[2],construction:`named_${description.key}${match[2]?'_negated':''}`};
+    if(match)return {...(quantified?{quantifiedParticipants:true}:{}),actor:match[1].replaceAll('"',''),actorText:match[1],...description,predicate:match[1]==='I'?({'LIF:011':'LIF:001','LIF:012':'LIF:002'}[description.predicate]||description.predicate):description.predicate,role:description.role||'bearer',negated:!!match[2],construction:`named_${description.key}${match[2]?'_negated':''}`};
   }
   return null;
 }
@@ -332,7 +348,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|arrive|arrives|arrived|arriving|carry|carries|carried|carrying|support|supporting|custody|acquire|acquired|acquiring|deliver|delivers|delivered|delivering|temperature)\b/i.test(String(input))) && !parseNamedSentence(input);
+  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|arrive|arrives|arrived|arriving|carry|carries|carried|carrying|support|supporting|custody|acquire|acquired|acquiring|deliver|delivers|delivered|delivering|happy|hungry|thirsty|tired|temperature)\b/i.test(String(input))) && !parseNamedSentence(input);
 }
 
 // A complete antecedent and a comma establish conditional scope. Without
@@ -371,6 +387,7 @@ export async function composeSentenceConditional(input,loadTemplate,clauseOption
 }
 
 export function parseSentenceSequence(input) { return parseClauseGroup(input,/^(?:,\s*|\s+)then\s+/); }
+export function parseSentenceDisjunction(input) { return parseClauseGroup(input,/^(?:,\s*|\s+)or\s+/); }
 export function parseSentenceConjunction(input) { return parseClauseGroup(input,/^(?:,\s*|\s+)and\s+/); }
 function parseClauseGroup(input,delimiter) {
   const text=String(input).trim().replace(/\.$/,'');
@@ -401,10 +418,21 @@ export async function composeSentenceConjunction(input,loadTemplate,clauseOption
   return composeClauseGroup(input,parseSentenceConjunction(input),'all_of',loadTemplate,clauseOptions);
 }
 
+export async function composeSentenceDisjunction(input,loadTemplate,clauseOptions,{disjunction}={}) {
+  if(!['any_of','exactly_one'].includes(disjunction)){
+    const error=new Error('Choose whether at least one alternative may hold (including both), or exactly one holds.');
+    error.code='disjunction_interpretation_required';throw error;
+  }
+  const result=await composeClauseGroup(input,parseSentenceDisjunction(input),disjunction,loadTemplate,clauseOptions);
+  result.selected_disjunction=disjunction;
+  result.semantic_note=[disjunction==='any_of'?'At least one alternative holds; both may hold.':'Exactly one alternative holds; the alternatives cannot both hold.',result.semantic_note].filter(Boolean).join(' ');
+  return result;
+}
+
 export function clauseInterpretationPlan(input) {
-  for(const [operator,parse] of [['conditional',parseSentenceConditional],['all_of',parseSentenceConjunction],['sequence',parseSentenceSequence]]){
+  for(const [operator,parse] of [['conditional',parseSentenceConditional],['all_of',parseSentenceConjunction],['sequence',parseSentenceSequence],['disjunction',parseSentenceDisjunction]]){
     const clauses=parse(input);
-    if(clauses)return {operator,clauses:clauses.map(text=>({text,parsed:parseNamedSentence(text)}))};
+    if(clauses)return {operator,...(operator==='disjunction'?{requiredDisjunction:true}:{}),clauses:clauses.map(text=>({text,parsed:parseNamedSentence(text)}))};
   }
   return null;
 }
@@ -412,7 +440,7 @@ export function clauseInterpretationPlan(input) {
 async function composeClauseGroup(input,clauses,operator,loadTemplate,clauseOptions) {
   if(!clauses)throw new Error('Every clause must have a complete, unambiguous interpretation.');
   const conditional=operator==='conditional';
-  const groupId=conditional?'conditional':operator==='sequence'?'sequence':'conjunction';
+  const groupId=conditional?'conditional':operator==='sequence'?'sequence':['any_of','exactly_one'].includes(operator)?'disjunction':'conjunction';
   if(clauseOptions!==undefined&&(!Array.isArray(clauseOptions)||clauseOptions.length!==clauses.length||clauseOptions.some(options=>!options||typeof options!=='object'||Array.isArray(options)||Object.keys(options).some(key=>!['interpretation','standard','viewpoint','destination'].includes(key)))))throw new Error('Provide exactly one interpretation-options object per clause.');
   const choices=clauseOptions===undefined?clauses.map(()=>({})):structuredClone(clauseOptions);
   const parts=await Promise.all(clauses.map(async (clause,index)=>{
@@ -443,7 +471,7 @@ async function composeClauseGroup(input,clauses,operator,loadTemplate,clauseOpti
   const relativePlan={primary_contour:performance.primary_contour,contour_relative_semitones:performance.contour_relative_semitones,secondary_contours:performance.secondary_contours,lexical_events:relative,structural_events:structural,statement_boundary:performance.statement_boundary,statement_boundary_beats:performance.statement_boundary_beats};
   const formalDigest=await canonicalDigest({semantic_digest:digest,relative_plan:relativePlan});
   const formal={format:'EZF-1',renderer_version:'1.0.0',formal_id:`EZF:${formalDigest.slice(0,24)}`,formal_digest:formalDigest,semantic_digest:digest,semantic_ir:ir,performance,literal_gloss:gloss.join(' | ')};
-  return {source_input:input,...(clauseOptions!==undefined?{selected_clauses:clauses.map((text,index)=>({input:text,options:choices[index]}))}:{}),target_id:operator,semantic_note:(clauseOptions===undefined?[...new Set(parts.map(part=>part.semantic_note).filter(Boolean))]:parts.map((part,index)=>part.semantic_note?`Clause ${index+1}: ${part.semantic_note}`:null).filter(Boolean)).join(' ')||null,sense_id:`construction:explicit_${groupId}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,construction:`explicit_${groupId}`,interpretation:(conditional?'If ':'')+parts.map(part=>part.interpretation.replace(/\.$/,'')).join(conditional||operator==='sequence'?', then ':' and ')+'.'};
+  return {source_input:input,...(clauseOptions!==undefined?{selected_clauses:clauses.map((text,index)=>({input:text,options:choices[index]}))}:{}),target_id:operator,semantic_note:(clauseOptions===undefined?[...new Set(parts.map(part=>part.semantic_note).filter(Boolean))]:parts.map((part,index)=>part.semantic_note?`Clause ${index+1}: ${part.semantic_note}`:null).filter(Boolean)).join(' ')||null,sense_id:`construction:explicit_${groupId}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,construction:`explicit_${groupId}`,interpretation:(conditional?'If ':'')+parts.map(part=>part.interpretation.replace(/\.$/,'')).join(conditional||operator==='sequence'?', then ':['any_of','exactly_one'].includes(operator)?' or ':' and ')+'.'};
 }
 
 export async function composeNamedSentence(input,template,{interpretation,standard,viewpoint,destination}={}) {
@@ -519,6 +547,13 @@ export async function composeNamedSentence(input,template,{interpretation,standa
   const ir={ir_version:'1.0',root_clause:'c',speech_act:parsed.speechAct||'assertion',nodes:[{node_id:'c',kind:'clause',clause_type:'predication'},
     {node_id:'p',kind:'lexical_occurrence',target_type:predicates[0].target_type,target_id:parsed.predicate,runtime_state:{code:parsed.runtimeState??1}},...references],
     edges:[{edge_id:'e0',type:'centers',from:'p',to:'c'},...participants.map((participant,index)=>({edge_id:`e${index+1}`,type:'fills_role',from:participantIds[index],to:'p',role:participant.role}))],discourse_constraints:{}};
+  for(const [index,group] of (parsed.participantGroups||[]).entries()){
+    const id=`participant_group${index}`,members=group.indices.map(i=>participantIds[i]);
+    ir.nodes.push({node_id:id,kind:'coordination',operator:group.operator});
+    ir.edges=ir.edges.filter(e=>!(e.type==='fills_role'&&e.role===group.role&&members.includes(e.from)));
+    ir.edges.push({edge_id:`group_role${index}`,type:'fills_role',from:id,to:'p',role:group.role});
+    members.forEach((member,i)=>ir.edges.push({edge_id:`group_member${index}_${i}`,type:'member_of',from:member,to:id}));
+  }
   if(bound){
     if(nominal.some(description=>description?.quantifier))throw new Error('Quantified compound participants are not supported by this construction.');
     ir.nodes[1].compound_bindings=participants.flatMap((participant,index)=>{

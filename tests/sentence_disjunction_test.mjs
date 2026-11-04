@@ -1,0 +1,40 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+import {execFileSync} from 'node:child_process';
+import {parseSentenceDisjunction,composeSentenceDisjunction,clauseInterpretationPlan} from '../pages/sentences.mjs';
+import {midiFromFormal} from '../pages/engine.mjs';
+import {decodeStrictMusicMidi} from '../pages/strict_music_decoder.mjs';
+const root=new URL('..',import.meta.url),authority=JSON.parse(fs.readFileSync(new URL('pages/data/index.json',root)));
+const load=async id=>authority.compound_plans[id]?.expanded.nodes.some(n=>n.kind==='slot')?{authority}:{...JSON.parse(fs.readFileSync(new URL('pages/'+authority.resolution_files[id],root))).variants['assertion:1'],authority};
+const results=[];
+for(const state of [0,1,2])for(const disjunction of ['any_of','exactly_one'])for(const [left,right] of [['Nora cares for Eli','Orin is conscious'],['Nora does not care for Eli','Orin is hungry'],['Nora cares for "Eli or Ben"','Orin is tired']]){
+ const input=`${left} [${state}] or ${right} [${state}].`,r=await composeSentenceDisjunction(input,load,undefined,{disjunction});results.push(r);
+ const d=decodeStrictMusicMidi(midiFromFormal(r.formal),authority.atoms);
+ assert.equal(d.tokens[0].marker,`coord_${disjunction}_open`);
+ assert.equal(d.tokens.at(-1).marker,`coord_${disjunction}_close`);
+ assert.equal(d.tokens.filter(t=>t.marker==='coord_member').length,1);
+ const roots=d.tokens.filter(t=>t.root_id&&t.runtime_state!==null);assert(roots.length>=2);assert(roots.every(t=>t.runtime_state===state));
+ assert.equal(d.tokens.some(t=>t.marker==='negation_open'),left.includes('not'));
+ assert.equal(r.selected_disjunction,disjunction);assert(r.interpretation.includes(' or '));
+ assert(r.semantic_ir.edges.filter(e=>e.type==='member_of').every(e=>e.order===undefined));
+}
+const expected=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_renderer','-rera_zero_presentation','-rbase64','-e','puts JSON.generate(JSON.parse(STDIN.read).map{|ir|f=EraZeroRenderer.render(ir);{formal:f,midi:Base64.strict_encode64(EraZeroPresentation.midi(f))}})'],{cwd:root,input:JSON.stringify(results.map(r=>r.semantic_ir)),encoding:'utf8',maxBuffer:30_000_000}));
+for(const [i,r] of results.entries()){assert.deepEqual(r.formal,expected[i].formal);assert.deepEqual(Buffer.from(midiFromFormal(r.formal)),Buffer.from(expected[i].midi,'base64'));}
+assert.equal(new Set(results.map(r=>Buffer.from(midiFromFormal(r.formal)).toString('base64'))).size,results.length);
+const input='Nora cares for Eli or Orin is conscious.';
+for(const disjunction of [undefined,'inclusive','all_of'])await assert.rejects(()=>composeSentenceDisjunction(input,load,undefined,{disjunction}),e=>e.code==='disjunction_interpretation_required');
+for(const bad of ['Nora cares for Eli or Orin.','It is possible that Nora cares for Eli or Orin is conscious.','Nora cares for Eli and Ben is tired or Orin is conscious.'])assert.equal(parseSentenceDisjunction(bad),null);
+const app=fs.readFileSync(new URL('pages/app.js',root),'utf8'),handler=app.slice(app.indexOf('function showClauseInterpretations('),app.indexOf('function showCarryingViewpoint('));
+const element=tag=>({tag,value:'',children:[],classList:{add(){},remove(){}},append(...n){this.children.push(...n)},setAttribute(){},addEventListener(type,fn){this[type]=fn},scrollIntoView(){}});
+const elements=Object.fromEntries(['sourceInput','output','results','resolutionPanel','decisionSummary','candidateList','phraseCoverage'].map(id=>[id,element(id)]));elements.sourceInput.value=input;
+const state={mode:'english',wordSelections:new Map()};let shown;
+const ctx=vm.createContext({state,$:id=>elements[id],document:{createElement:element},composeSentenceDisjunction,composeSentenceConditional:null,composeSentenceConjunction:null,composeSentenceSequence:null,sentenceTemplate:load,showResolution:async r=>shown=r,plan:clauseInterpretationPlan(input)});
+vm.runInContext(handler+';showClauseInterpretations('+JSON.stringify(input)+',plan);',ctx);
+const card=elements.candidateList.children.at(-1),select=card.children[0].children[0],button=card.children.at(-1);
+assert.equal(select.value,'');await button.click();assert.equal(shown,undefined);
+select.value='any_of';await button.click();assert.equal(shown.selected_disjunction,'any_of');
+select.value='exactly_one';await button.click();assert.equal(shown.selected_disjunction,'exactly_one');
+let release;const gate=new Promise(r=>release=r);ctx.sentenceTemplate=async id=>{await gate;return load(id)};
+const old=shown,pending=button.click();select.value='any_of';release();await pending;assert.equal(shown,old);
+console.log(`Disjunction: ${results.length} two-alternative/runtime/negation/felt-condition/quoted-label cases have Ruby formal and MIDI parity, distinct inclusive/exclusive sound markers, explicit UI choices and stale-choice rejection.`);

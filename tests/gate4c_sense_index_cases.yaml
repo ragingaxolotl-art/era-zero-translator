@@ -1,8 +1,8 @@
 ---
 metadata:
   version: 1.0.0
-  sense_count: 451
-  lemma_count: 434
+  sense_count: 458
+  lemma_count: 441
 exact_atom_labels:
 - input: continuous self
   expected_route: atom
@@ -1010,6 +1010,9 @@ exact_compound_labels:
 - input: backup dataset
   expected_route: compound
   expected_target: CMP:33c135410b0deef525b6770d
+- input: felt fatigue
+  expected_route: compound
+  expected_target: CMP:3c13b9c619d95f1c40ea5da5
 - input: material biosystem
   expected_route: compound
   expected_target: CMP:4144fad413b8ce5012088c61
@@ -1031,15 +1034,24 @@ exact_compound_labels:
 - input: message datum
   expected_route: compound
   expected_target: CMP:608ecb4f3c515a9c9a3443ec
+- input: felt thirst
+  expected_route: compound
+  expected_target: CMP:60cd46250d183e3105b7250a
 - input: material artifact
   expected_route: compound
   expected_target: CMP:61bfb0de7a1e9d7f5b981725
+- input: consciously felt self-condition
+  expected_route: compound
+  expected_target: CMP:6c9e3042a361ccae6ecf5980
 - input: data transfer channel
   expected_route: compound
   expected_target: CMP:725868579ebb0e2ef83cf708
 - input: directed data link
   expected_route: compound
   expected_target: CMP:742b44d9ead66b451346708a
+- input: felt hunger
+  expected_route: compound
+  expected_target: CMP:748be1f0ce7ceb2963716292
 - input: completed physical carrying to a destination
   expected_route: compound
   expected_target: CMP:74d98d19808f74d0b8196951
@@ -1052,6 +1064,9 @@ exact_compound_labels:
 - input: machine
   expected_route: compound
   expected_target: CMP:8e5ae722d9e5e31f85ac3c5b
+- input: pleasant felt condition
+  expected_route: compound
+  expected_target: CMP:8e95897afbd6d54b8e164e03
 - input: synchronized data network
   expected_route: compound
   expected_target: CMP:8f05a5e16a897935492726fa
@@ -1082,6 +1097,12 @@ exact_compound_labels:
 - input: completed acquisition of physical custody
   expected_route: compound
   expected_target: CMP:c332d2e89b9f6177486fc93b
+- input: happy felt mood
+  expected_route: compound
+  expected_target: CMP:c58b38d03fab27880ac3e1f0
+- input: felt bodily replenishment need
+  expected_route: compound
+  expected_target: CMP:c64ab0a9989c7b10c46e3b38
 - input: material hazard
   expected_route: compound
   expected_target: CMP:cb0812face56f90b7ba139c5

@@ -38,7 +38,7 @@ require 'base64'
 id='CMP:0aca609416668978e1527dac'
 atoms,dictionary=EraZeroRenderer.load_authority
 m=EraZeroValidation.load_yaml('migrations/physical_custody_2026_10_29.yaml')
-raise 'Prior compounds changed' unless dictionary.length==43 && EraZeroValidation.fingerprint(dictionary.values.reject{|e|[id,'CMP:c332d2e89b9f6177486fc93b','CMP:e3075c904daf1c647969fef6','CMP:5200738177777915abb3f42e'].include?(e['compound_id'])})==m['before_dictionary_fingerprint']
+raise 'Prior compounds changed' unless EraZeroValidation.fingerprint(dictionary.values.reject{|e|[id,'CMP:c332d2e89b9f6177486fc93b','CMP:e3075c904daf1c647969fef6','CMP:5200738177777915abb3f42e','CMP:3c13b9c619d95f1c40ea5da5','CMP:60cd46250d183e3105b7250a','CMP:6c9e3042a361ccae6ecf5980','CMP:748be1f0ce7ceb2963716292','CMP:8e95897afbd6d54b8e164e03','CMP:c58b38d03fab27880ac3e1f0','CMP:c64ab0a9989c7b10c46e3b38'].include?(e['compound_id'])})==m['before_dictionary_fingerprint']
 c=EraZeroControlledEnglish::Compiler.new
 controlled=[0,1,2].map{|s|ir=c.compile(%Q{ASSERT "practical physical custody" [#{s}] ROLE source "identified other" [0] ROLE target "distinct material object" [2].})['semantic_ir'];f=EraZeroRenderer.render(ir);{formal:f,midi:Base64.strict_encode64(EraZeroPresentation.midi(f))}}
 bad=c.compile('ASSERT "practical physical custody" [1] ROLE source "distinct material object" [1] ROLE target REF source.')

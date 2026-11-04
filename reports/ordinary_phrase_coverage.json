@@ -3,9 +3,9 @@
   "completion_proven": false,
   "case_count": 40,
   "counts": {
-    "verified_for_declared_checks": 19,
-    "not_composed": 18,
-    "requires_interpretation": 3
+    "verified_for_declared_checks": 24,
+    "not_composed": 12,
+    "requires_interpretation": 4
   },
   "areas": {
     "participants": {
@@ -42,7 +42,7 @@
     },
     "noun_phrases": {
       "total": 2,
-      "verified": 1
+      "verified": 2
     },
     "discourse": {
       "total": 1,
@@ -62,11 +62,11 @@
     },
     "affect": {
       "total": 2,
-      "verified": 0
+      "verified": 1
     },
     "bodily_need": {
       "total": 3,
-      "verified": 0
+      "verified": 3
     },
     "movement_manner": {
       "total": 2,
@@ -549,8 +549,30 @@
       "requirements": [
         "Both objects belong to the care relation"
       ],
-      "status": "not_composed",
-      "failures": []
+      "expected": {
+        "targets": [
+          "LIF:211"
+        ],
+        "roles": [
+          "actor",
+          "target"
+        ],
+        "labels": [
+          "nora",
+          "eli",
+          "orin"
+        ],
+        "operators": [
+          "all_of"
+        ],
+        "coordinated_role_labels": [
+          "target:eli",
+          "target:orin"
+        ]
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "c912aef334845a6db9df76fe0dc0cdf71bccb80c300eed9c9cf71ba4da7ae2e9"
     },
     {
       "id": "path",
@@ -637,8 +659,22 @@
       "requirements": [
         "Express positive felt affect, not care behavior"
       ],
-      "status": "not_composed",
-      "failures": []
+      "expected": {
+        "targets": [
+          "CMP:c58b38d03fab27880ac3e1f0"
+        ],
+        "roles": [],
+        "labels": [
+          "nora"
+        ],
+        "operators": [],
+        "bound_role_labels": [
+          "s-experiencer:nora"
+        ]
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "0afae82e63de2ba93ba4e7ea80c7da137a0204843db5f029790b5814b7145777"
     },
     {
       "id": "prefers",
@@ -657,8 +693,22 @@
       "requirements": [
         "Distinguish food deficit from thirst and dormancy"
       ],
-      "status": "not_composed",
-      "failures": []
+      "expected": {
+        "targets": [
+          "CMP:748be1f0ce7ceb2963716292"
+        ],
+        "roles": [],
+        "labels": [
+          "eli"
+        ],
+        "operators": [],
+        "bound_role_labels": [
+          "s-experiencer:eli"
+        ]
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "a024b538d84997cb48e6fba649aff54ce08295452813bd96f0b240215790a948"
     },
     {
       "id": "thirsty",
@@ -667,8 +717,22 @@
       "requirements": [
         "Express water-related bodily need"
       ],
-      "status": "not_composed",
-      "failures": []
+      "expected": {
+        "targets": [
+          "CMP:60cd46250d183e3105b7250a"
+        ],
+        "roles": [],
+        "labels": [
+          "eli"
+        ],
+        "operators": [],
+        "bound_role_labels": [
+          "s-experiencer:eli"
+        ]
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "44c4e8137b7b4772874f6687ca49ab18b05d8a7d658fdbb2013b9674bbe3bdbe"
     },
     {
       "id": "tired",
@@ -677,8 +741,22 @@
       "requirements": [
         "Distinguish fatigue from dormant identity"
       ],
-      "status": "not_composed",
-      "failures": []
+      "expected": {
+        "targets": [
+          "CMP:3c13b9c619d95f1c40ea5da5"
+        ],
+        "roles": [],
+        "labels": [
+          "orin"
+        ],
+        "operators": [],
+        "bound_role_labels": [
+          "s-experiencer:orin"
+        ]
+      },
+      "status": "verified_for_declared_checks",
+      "failures": [],
+      "midi_sha256": "3599702fb658147598cd938a699f09806a500abf93e0fd39e3ca236714a6b346"
     },
     {
       "id": "curious",
@@ -807,8 +885,9 @@
       "requirements": [
         "Resolve inclusive versus exclusive interpretation"
       ],
-      "status": "not_composed",
-      "failures": []
+      "status": "requires_interpretation",
+      "failures": [],
+      "clarification": "disjunction_interpretation_required"
     },
     {
       "id": "love",

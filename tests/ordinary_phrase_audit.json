@@ -406,7 +406,28 @@
       "area": "noun_phrases",
       "requirements": [
         "Both objects belong to the care relation"
-      ]
+      ],
+      "expected": {
+        "targets": [
+          "LIF:211"
+        ],
+        "roles": [
+          "actor",
+          "target"
+        ],
+        "labels": [
+          "nora",
+          "eli",
+          "orin"
+        ],
+        "operators": [
+          "all_of"
+        ],
+        "coordinated_role_labels": [
+          "target:eli",
+          "target:orin"
+        ]
+      }
     },
     {
       "id": "path",
@@ -479,7 +500,20 @@
       "area": "affect",
       "requirements": [
         "Express positive felt affect, not care behavior"
-      ]
+      ],
+      "expected": {
+        "targets": [
+          "CMP:c58b38d03fab27880ac3e1f0"
+        ],
+        "roles": [],
+        "labels": [
+          "nora"
+        ],
+        "operators": [],
+        "bound_role_labels": [
+          "s-experiencer:nora"
+        ]
+      }
     },
     {
       "id": "prefers",
@@ -495,7 +529,20 @@
       "area": "bodily_need",
       "requirements": [
         "Distinguish food deficit from thirst and dormancy"
-      ]
+      ],
+      "expected": {
+        "targets": [
+          "CMP:748be1f0ce7ceb2963716292"
+        ],
+        "roles": [],
+        "labels": [
+          "eli"
+        ],
+        "operators": [],
+        "bound_role_labels": [
+          "s-experiencer:eli"
+        ]
+      }
     },
     {
       "id": "thirsty",
@@ -503,7 +550,20 @@
       "area": "bodily_need",
       "requirements": [
         "Express water-related bodily need"
-      ]
+      ],
+      "expected": {
+        "targets": [
+          "CMP:60cd46250d183e3105b7250a"
+        ],
+        "roles": [],
+        "labels": [
+          "eli"
+        ],
+        "operators": [],
+        "bound_role_labels": [
+          "s-experiencer:eli"
+        ]
+      }
     },
     {
       "id": "tired",
@@ -511,7 +571,20 @@
       "area": "bodily_need",
       "requirements": [
         "Distinguish fatigue from dormant identity"
-      ]
+      ],
+      "expected": {
+        "targets": [
+          "CMP:3c13b9c619d95f1c40ea5da5"
+        ],
+        "roles": [],
+        "labels": [
+          "orin"
+        ],
+        "operators": [],
+        "bound_role_labels": [
+          "s-experiencer:orin"
+        ]
+      }
     },
     {
       "id": "curious",

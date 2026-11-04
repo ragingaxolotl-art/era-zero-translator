@@ -39,7 +39,10 @@ const conditional=await composeSentenceConditional('If the radio is damaged, the
 assert.equal(conditional.semantic_ir.nodes.find(n=>n.node_id==='s000_p').target_id,'WRN:001');
 assert.equal(conditional.semantic_ir.nodes.find(n=>n.node_id==='s001_p').target_id,'REP:111');
 assert.equal(scheduledLexicalEvents(conditional.formal)[0].marker,'conditional_open_open');
-for(const text of ['The radio is damaged by Ada.','The radio is tired.'])assert.equal(parseNamedSentence(text),null,text);
+for(const text of ['The radio is damaged by Ada.','The radio is tired of Ada.'])assert.equal(parseNamedSentence(text),null,text);
 console.log('Condition adjectives: 15 reference-renderer parity cases; impairment/restoration state versus event, bearer roles, negation, questions, quantities, conditional scope, and all runtime endings pass.');
 
 assert.equal(parseNamedSentence('The radio is hot.').requiredInterpretation,'thermal_standard');
+
+// Labels do not impose a real-world ontology: a fictional radio may be an experiencer.
+assert.equal(parseNamedSentence('The radio is tired.').key,'felt_fatigue');

@@ -2,7 +2,7 @@
 metadata:
   title: Gate 4B dictionary conformance and routing cases
   version: 1.0.0
-  approved_entries: 43
+  approved_entries: 50
 accepted:
 - case_id: practical_physical_custody
   compound_id: CMP:0aca609416668978e1527dac
@@ -37,6 +37,9 @@ accepted:
 - case_id: backup_dataset
   compound_id: CMP:33c135410b0deef525b6770d
   expected: valid_approved_entry
+- case_id: felt_fatigue
+  compound_id: CMP:3c13b9c619d95f1c40ea5da5
+  expected: valid_approved_entry
 - case_id: material_biosystem
   compound_id: CMP:4144fad413b8ce5012088c61
   expected: valid_approved_entry
@@ -58,14 +61,23 @@ accepted:
 - case_id: message_datum
   compound_id: CMP:608ecb4f3c515a9c9a3443ec
   expected: valid_approved_entry
+- case_id: felt_thirst
+  compound_id: CMP:60cd46250d183e3105b7250a
+  expected: valid_approved_entry
 - case_id: material_artifact
   compound_id: CMP:61bfb0de7a1e9d7f5b981725
+  expected: valid_approved_entry
+- case_id: consciously_felt_self-condition
+  compound_id: CMP:6c9e3042a361ccae6ecf5980
   expected: valid_approved_entry
 - case_id: data_transfer_channel
   compound_id: CMP:725868579ebb0e2ef83cf708
   expected: valid_approved_entry
 - case_id: directed_data_link
   compound_id: CMP:742b44d9ead66b451346708a
+  expected: valid_approved_entry
+- case_id: felt_hunger
+  compound_id: CMP:748be1f0ce7ceb2963716292
   expected: valid_approved_entry
 - case_id: completed_physical_carrying_to_a_destination
   compound_id: CMP:74d98d19808f74d0b8196951
@@ -78,6 +90,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: machine
   compound_id: CMP:8e5ae722d9e5e31f85ac3c5b
+  expected: valid_approved_entry
+- case_id: pleasant_felt_condition
+  compound_id: CMP:8e95897afbd6d54b8e164e03
   expected: valid_approved_entry
 - case_id: synchronized_data_network
   compound_id: CMP:8f05a5e16a897935492726fa
@@ -108,6 +123,12 @@ accepted:
   expected: valid_approved_entry
 - case_id: completed_acquisition_of_physical_custody
   compound_id: CMP:c332d2e89b9f6177486fc93b
+  expected: valid_approved_entry
+- case_id: happy_felt_mood
+  compound_id: CMP:c58b38d03fab27880ac3e1f0
+  expected: valid_approved_entry
+- case_id: felt_bodily_replenishment_need
+  compound_id: CMP:c64ab0a9989c7b10c46e3b38
   expected: valid_approved_entry
 - case_id: material_hazard
   compound_id: CMP:cb0812face56f90b7ba139c5

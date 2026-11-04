@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 451
-  lemma_count: 434
+  sense_count: 458
+  lemma_count: 441
   canonical_atom_senses: 324
-  canonical_compound_senses: 43
+  canonical_compound_senses: 50
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: 9b2e6047a5bbd39f0b54ff2f49b569cf7e4726b361b51a62070804727efce26f
-  compound_dictionary_fingerprint: 905063464213c3e74281ce0f08b5f0fcbac855b8fa1d40135b36c594536cf117
+  compound_dictionary_fingerprint: 699cccc395502164d34bb535c726f66354788e87b90a4236d3a1b768ca08757e
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -2166,6 +2166,29 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: consciously felt self-condition
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:6c9e3042a361ccae6ecf5980
+  definition: The bound experiencer has a presently conscious felt presentation of
+    their own condition. The presentation is experiential rather than merely stored,
+    inferred, reported or externally registered, and can be implicit without a verbal
+    judgment. Within this compound the self in LIF:001 and MIN:001 is the bound experiencer,
+    not necessarily the speaker. No particular pleasantness, desire, bodily need,
+    cause, truth of a judgment or external sensory channel is asserted.
+  sense_id: ENS:2fb286a241fc6e074c808382
+  display_form: consciously felt self-condition
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Unconscious sensory registration or a device record alone; A manifest self-model
+    without conscious feeling; A specific emotional valence or bodily need inferred
+    from generic feeling
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:dad12cc129934924d0b30996
   lemma: continue
   display_form: continue
@@ -3231,6 +3254,91 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: felt bodily replenishment need
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:c64ab0a9989c7b10c46e3b38
+  definition: The same consciously felt self-condition presents the experiencer's
+    own material body as calling for replenishment or maintenance. MAT:000 identifies
+    that experiencer's body within the same focal frame. This is a felt bodily demand,
+    not proof of a measured physiological deficit, harm, failed viability, an intended
+    action or actual replenishment. The required resource or maintenance kind is not
+    yet specified.
+  sense_id: ENS:8824e67d1b7579fa4e61a836
+  display_form: felt bodily replenishment need
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A bodily deficit that is not felt; An intellectual wish or a duty without a felt
+    bodily demand; Measured depletion, damage or action inferred from the feeling
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: felt fatigue
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:3c13b9c619d95f1c40ea5da5
+  definition: 'The experiencer feels fatigue: a condition of weariness in which sustaining
+    physical or mental effort is felt as taxing or diminished and rest or recovery
+    is called for. This does not entail sleep, dormancy, unconsciousness, objective
+    incapacity, illness, damage or a measured energy deficit. Mere boredom or being
+    tired of a particular object is a separate sense.'
+  sense_id: ENS:af59b7c03a8d3cab6a5691b1
+  display_form: felt fatigue
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Dormancy or unconsciousness without felt fatigue; Low physical work capacity or
+    damage without weariness; Boredom with a particular object or a generic unpleasant
+    feeling alone
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: felt hunger
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:748be1f0ce7ceb2963716292
+  definition: 'The same felt bodily replenishment need is hunger: a bodily feeling
+    calling for food or nourishment through eating. The feeling need not prove a measured
+    energy deficit or imminent harm and does not assert eating, appetite for a particular
+    food, permission, or a deliberate plan. Figurative hunger for achievement or information
+    is excluded.'
+  sense_id: ENS:504807edf2cd5416599a1591
+  display_form: felt hunger
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Water-directed thirst without food-directed hunger; Dormancy, low work capacity
+    or an unfelt nutritional deficit alone; A metaphorical desire for success or knowledge
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: felt thirst
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:60cd46250d183e3105b7250a
+  definition: 'The same felt bodily replenishment need is thirst: a bodily feeling
+    calling for water intake, ordinarily through drinking. It does not prove a measured
+    water deficit or assert drinking, a chosen beverage, permission, or a deliberate
+    plan. Figurative thirst for power or knowledge is excluded.'
+  sense_id: ENS:dbd5032912ba7a9aa20c9a75
+  display_form: felt thirst
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Food-directed hunger without water-directed thirst; A dry object, an unfelt fluid
+    deficit or dormancy alone; A metaphorical desire for power or knowledge
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:6d9271cb4b53de4bfc4a54dd
   lemma: fix
   display_form: fix
@@ -3379,6 +3487,28 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: happy felt mood
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:c58b38d03fab27880ac3e1f0
+  definition: 'The experiencer feels happiness: a pleasant emotional mood of gladness
+    or contentment, not merely a pleasant sensory quality or a favorable evaluation.
+    The mood can coexist with other feelings and need not be permanent, intense, externally
+    expressed, or caused by a particular event. This is the felt-state sense of happy,
+    not fortunate, willing, suitable or happy with a specified object.'
+  sense_id: ENS:5f8345cd1113054c3f4d0916
+  display_form: happy felt mood
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Fortunate circumstances or willingness without felt happiness; Care, attention,
+    approval or a pleasant sensation alone; Absence of sadness or an exclusively positive
+    emotional state inferred from happiness
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:6c88cdc2532bd142502cd306
   lemma: have
   display_form: have
@@ -6837,6 +6967,28 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: pleasant felt condition
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:8e95897afbd6d54b8e164e03
+  definition: The same consciously felt self-condition has a pleasant experiential
+    tone for its experiencer. Pleasantness is felt valence, not an appraisal that
+    an outcome is useful, morally good or desired. It does not by itself establish
+    happiness, satisfaction, affection, care, preference, or absence of simultaneous
+    unpleasant feeling.
+  sense_id: ENS:42a927117beb8fe62bc625b5
+  display_form: pleasant felt condition
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Care behavior or a favorable judgment without pleasant feeling; Attention or physiological
+    activation used as positive valence; Happiness or a preferred outcome inferred
+    from any pleasant feeling
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:5c61e1b28e9b3d66f5ac6050
   lemma: possible or unresolved kinship
   display_form: possible or unresolved kinship
@@ -8765,6 +8917,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  consciously felt self-condition:
+    sense_ids:
+    - ENS:2fb286a241fc6e074c808382
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   continue:
     sense_ids:
     - ENS:dad12cc129934924d0b30996
@@ -9186,6 +9345,34 @@ lemma_index:
     direct_target_count: 2
     routes:
     - atom
+  felt bodily replenishment need:
+    sense_ids:
+    - ENS:8824e67d1b7579fa4e61a836
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  felt fatigue:
+    sense_ids:
+    - ENS:af59b7c03a8d3cab6a5691b1
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  felt hunger:
+    sense_ids:
+    - ENS:504807edf2cd5416599a1591
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  felt thirst:
+    sense_ids:
+    - ENS:dbd5032912ba7a9aa20c9a75
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   fix:
     sense_ids:
     - ENS:6d9271cb4b53de4bfc4a54dd
@@ -9251,6 +9438,13 @@ lemma_index:
     routes:
     - atom
     - semantic_ir
+  happy felt mood:
+    sense_ids:
+    - ENS:5f8345cd1113054c3f4d0916
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   have:
     sense_ids:
     - ENS:6c88cdc2532bd142502cd306
@@ -10572,6 +10766,13 @@ lemma_index:
   physical tool:
     sense_ids:
     - ENS:8420af877bacec19a5e0e087
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  pleasant felt condition:
+    sense_ids:
+    - ENS:42a927117beb8fe62bc625b5
     requires_disambiguation: false
     direct_target_count: 1
     routes:

@@ -54,6 +54,7 @@ module EraZeroRenderer
       scoped_ids << current
       ir.fetch("edges").each do |edge|
         parent = nodes[edge["to"]]
+        pending << edge["to"] if edge["type"] == "member_of" && edge["from"] == current && parent && parent["kind"] == "coordination" && %w[all_of any_of exactly_one].include?(parent["operator"])
         pending << edge["to"] if edge["type"] == "scopes" && edge["from"] == current && parent && parent["kind"] == "scope_operator" && parent["operator"] == "quantifier"
       end
     end

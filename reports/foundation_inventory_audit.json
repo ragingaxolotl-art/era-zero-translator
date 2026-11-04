@@ -2,10 +2,10 @@
   "purpose": "Pin the complete runtime authority used by the foundation review; counts and hashes do not prove semantic coverage.",
   "authority": {
     "lexicon/atoms.yaml": "8663e78a20f7badd76e26ac1ea1f359c843dbac96041895801672d8144ee46ea",
-    "lexicon/compound_dictionary.yaml": "3ed344d378ba96c2ece76992fcd08f6ae9feaf487aadbb89db2f75218beca1a6"
+    "lexicon/compound_dictionary.yaml": "ac5ce56422190fa4fb57400a3398857d6506e38fa176e6d3493d7180c7d79476"
   },
   "root_count": 324,
-  "compound_count": 43,
+  "compound_count": 50,
   "families": {
     "LIF": [
       {
@@ -1720,6 +1720,12 @@
       "entry_sha256": "5baf2271fbacdd88648147a4831a513a4ba692c3e1e4198e8b18ad308397f177"
     },
     {
+      "id": "CMP:3c13b9c619d95f1c40ea5da5",
+      "title": "felt fatigue",
+      "definition": "The experiencer feels fatigue: a condition of weariness in which sustaining physical or mental effort is felt as taxing or diminished and rest or recovery is called for. This does not entail sleep, dormancy, unconsciousness, objective incapacity, illness, damage or a measured energy deficit. Mere boredom or being tired of a particular object is a separate sense.",
+      "entry_sha256": "c963e3744f639667342cd50765d408bf48f731a8cee0bf710947300b1b378c94"
+    },
+    {
       "id": "CMP:4144fad413b8ce5012088c61",
       "title": "material biosystem",
       "definition": "A stable biosystem whose interacting participants are treated as one material aggregate.",
@@ -1762,10 +1768,22 @@
       "entry_sha256": "4b621280acdb08a7bb95687045ce4852164b85321f5e93f46e9c05aaac7606cd"
     },
     {
+      "id": "CMP:60cd46250d183e3105b7250a",
+      "title": "felt thirst",
+      "definition": "The same felt bodily replenishment need is thirst: a bodily feeling calling for water intake, ordinarily through drinking. It does not prove a measured water deficit or assert drinking, a chosen beverage, permission, or a deliberate plan. Figurative thirst for power or knowledge is excluded.",
+      "entry_sha256": "797ae09104dffd3ae08c7e7ecb371de8822996ba0b5900ba28fbf23fdf4a7be3"
+    },
+    {
       "id": "CMP:61bfb0de7a1e9d7f5b981725",
       "title": "material artifact",
       "definition": "A generated artifact whose bounded product is material.",
       "entry_sha256": "e0ef972c17da8ed6f5183faa08a61b5eb54bdd97f86beb59008433ea34e6b49b"
+    },
+    {
+      "id": "CMP:6c9e3042a361ccae6ecf5980",
+      "title": "consciously felt self-condition",
+      "definition": "The bound experiencer has a presently conscious felt presentation of their own condition. The presentation is experiential rather than merely stored, inferred, reported or externally registered, and can be implicit without a verbal judgment. Within this compound the self in LIF:001 and MIN:001 is the bound experiencer, not necessarily the speaker. No particular pleasantness, desire, bodily need, cause, truth of a judgment or external sensory channel is asserted.",
+      "entry_sha256": "eda46898a281621b30f13b45a3bb12787ac0630ce8bca502036ce1a84d724bff"
     },
     {
       "id": "CMP:725868579ebb0e2ef83cf708",
@@ -1778,6 +1796,12 @@
       "title": "directed data link",
       "definition": "An established directed communication relation between open source and target participants whose exchanged content is a bounded datum.",
       "entry_sha256": "3b8fcf8adf8260e551e519940d44551f0e4d106090a0ca332bed5db08740d7a9"
+    },
+    {
+      "id": "CMP:748be1f0ce7ceb2963716292",
+      "title": "felt hunger",
+      "definition": "The same felt bodily replenishment need is hunger: a bodily feeling calling for food or nourishment through eating. The feeling need not prove a measured energy deficit or imminent harm and does not assert eating, appetite for a particular food, permission, or a deliberate plan. Figurative hunger for achievement or information is excluded.",
+      "entry_sha256": "1e9e9638f024c3fa1b8df488677e35e05851ad64041c48580b0324cd67081088"
     },
     {
       "id": "CMP:74d98d19808f74d0b8196951",
@@ -1802,6 +1826,12 @@
       "title": "machine",
       "definition": "A generated artifact that is both a persistent composite arrangement and a bearer of enduring physical work capacity.",
       "entry_sha256": "7498557154a335740d5876de73212e2cda1c58bbbec86940c9be9ba1f4be5514"
+    },
+    {
+      "id": "CMP:8e95897afbd6d54b8e164e03",
+      "title": "pleasant felt condition",
+      "definition": "The same consciously felt self-condition has a pleasant experiential tone for its experiencer. Pleasantness is felt valence, not an appraisal that an outcome is useful, morally good or desired. It does not by itself establish happiness, satisfaction, affection, care, preference, or absence of simultaneous unpleasant feeling.",
+      "entry_sha256": "32946f48eaa32f9374cbb04c4fa907f92fda212460c4a4ab4d3b8c64f453ac7e"
     },
     {
       "id": "CMP:8f05a5e16a897935492726fa",
@@ -1862,6 +1892,18 @@
       "title": "completed acquisition of physical custody",
       "definition": "Completion of one bounded transition in which the specified practical physical custody relation comes to obtain: the same holder lacks that control of the same distinct material object immediately before the transition and has it at culmination. The actualized referent is this holder-object custody relation, not the material object. The nested custody relation describes the culmination state, not an independent assertion of custody at speech time. No prior custodian, sourced transfer, loss of another holder's control, ownership, willingness, displacement, creation of the object or persistence after culmination is asserted.",
       "entry_sha256": "ae0efdbfa600059262f095349a7496edd2a3ee434cdfe0953d93254b3e3b5785"
+    },
+    {
+      "id": "CMP:c58b38d03fab27880ac3e1f0",
+      "title": "happy felt mood",
+      "definition": "The experiencer feels happiness: a pleasant emotional mood of gladness or contentment, not merely a pleasant sensory quality or a favorable evaluation. The mood can coexist with other feelings and need not be permanent, intense, externally expressed, or caused by a particular event. This is the felt-state sense of happy, not fortunate, willing, suitable or happy with a specified object.",
+      "entry_sha256": "d6af816d90c9225d7f92b6970f288c1aff0832d6e8e30e897b4eeb59bad21e2e"
+    },
+    {
+      "id": "CMP:c64ab0a9989c7b10c46e3b38",
+      "title": "felt bodily replenishment need",
+      "definition": "The same consciously felt self-condition presents the experiencer's own material body as calling for replenishment or maintenance. MAT:000 identifies that experiencer's body within the same focal frame. This is a felt bodily demand, not proof of a measured physiological deficit, harm, failed viability, an intended action or actual replenishment. The required resource or maintenance kind is not yet specified.",
+      "entry_sha256": "ae10d570205f196e58d7510c3a4d6e35e93ada1cece178e9c2f1f6a5485782c4"
     },
     {
       "id": "CMP:cb0812face56f90b7ba139c5",

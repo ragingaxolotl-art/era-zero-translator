@@ -1,26 +1,29 @@
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
-import {parseSentenceConditional,composeSentenceConditional,parseNamedSentence,composeNamedSentence,parseSentenceSequence,composeSentenceSequence,parseSentenceConjunction,composeSentenceConjunction} from '../pages/sentences.mjs';
+import {parseSentenceDisjunction,composeSentenceDisjunction,parseSentenceConditional,composeSentenceConditional,parseNamedSentence,composeNamedSentence,parseSentenceSequence,composeSentenceSequence,parseSentenceConjunction,composeSentenceConjunction} from '../pages/sentences.mjs';
 import {midiFromFormal} from '../pages/engine.mjs';
 const root=new URL('..',import.meta.url);
 const read=path=>JSON.parse(fs.readFileSync(new URL(path,root)));
 const corpus=read('tests/ordinary_phrase_audit.json'),data=read('pages/data/index.json');
-const load=async target=>read(`pages/${data.resolution_files[target]}`).variants['assertion:1'];
+const load=async target=>data.compound_plans[target]?.expanded.nodes.some(n=>n.kind==='slot')?{authority:data}:{...read(`pages/${data.resolution_files[target]}`).variants['assertion:1'],authority:data};
 const equal=(a,b)=>JSON.stringify([...a].sort())===JSON.stringify([...b].sort());
 const results=[];
 for(const item of corpus.cases){
  let result=null,error=null,clarification=null;
  try{
-  if(parseSentenceConditional(item.input))result=await composeSentenceConditional(item.input,load);
+  if(parseSentenceDisjunction(item.input))result=await composeSentenceDisjunction(item.input,load);
+  else if(parseSentenceConditional(item.input))result=await composeSentenceConditional(item.input,load);
   else if(parseNamedSentence(item.input))result=await composeNamedSentence(item.input,await load(parseNamedSentence(item.input).predicate));
   else if(parseSentenceSequence(item.input))result=await composeSentenceSequence(item.input,load);
   else if(parseSentenceConjunction(item.input))result=await composeSentenceConjunction(item.input,load);
- }catch(caught){if(['future_interpretation_required','thermal_standard_required','mass_standard_required'].includes(caught.code))clarification=caught.code;else error=String(caught)}
+ }catch(caught){if(['disjunction_interpretation_required','future_interpretation_required','thermal_standard_required','mass_standard_required'].includes(caught.code))clarification=caught.code;else error=String(caught)}
  const failures=[];
  if(result&&item.expected){
   const ir=result.semantic_ir,actual={
    speech_acts:[ir.speech_act],
    condition_statuses:ir.edges.filter(e=>e.type==='condition_of').map(e=>e.condition_status),
+   bound_role_labels:ir.nodes.filter(n=>n.compound_bindings).flatMap(n=>n.compound_bindings.map(b=>`${b.slot_path.at(-1)}:${ir.nodes.find(a=>a.node_id===b.argument_id)?.name?.normalized_label||''}`)),
+   coordinated_role_labels:ir.edges.filter(e=>e.type==='fills_role').flatMap(e=>ir.edges.filter(m=>m.type==='member_of'&&m.to===e.from).map(m=>`${e.role}:${ir.nodes.find(n=>n.node_id===m.from)?.name?.normalized_label||''}`)),
    role_labels:ir.edges.filter(e=>e.type==='fills_role').map(e=>`${e.role}:${ir.nodes.find(n=>n.node_id===e.from)?.name?.normalized_label||''}`),
    reference_modes:ir.nodes.filter(n=>n.reference_mode).map(n=>n.reference_mode),
    calendar_days:ir.nodes.filter(n=>n.kind==='time_anchor').map(n=>[n.anchor_type,n.calendar_unit,n.relative_to,n.day_offset].join(':')),

@@ -2963,3 +2963,510 @@ reviews:
     decision: 'rejected: ternary semantic loss'
   recommendation: approve explicit_carrying_transfer_culmination
   confidence: high
+- compound_id: CMP:6c9e3042a361ccae6ecf5980
+  display_title: consciously felt self-condition
+  current_choice_reason: reviews/felt_conditions_foundation.md; author judgments,
+    not independent validation.
+  candidates:
+  - candidate_id: explicit_felt_specialization
+    direction: Bind one experiencer, reuse exact dependencies and audibly declare
+      the additional felt meaning.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-conscious
+        kind: root
+        root_id: LIF:001
+      - node_id: s-experiencer
+        kind: slot
+        slot_name: experiencer
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MIN:001
+      edges:
+      - type: qualifies
+        from: q-conscious
+        to: h
+      - type: fills_role
+        from: s-experiencer
+        to: h
+        role: experiencer
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: felt_self_condition
+        sound_code: 11
+        added_definition: The bound experiencer has a presently conscious felt presentation
+          of their own condition. The presentation is experiential rather than merely
+          stored, inferred, reported or externally registered, and can be implicit
+          without a verbal judgment. Within this compound the self in LIF:001 and
+          MIN:001 is the bound experiencer, not necessarily the speaker. No particular
+          pleasantness, desire, bodily need, cause, truth of a judgment or external
+          sensory channel is asserted.
+        excludes:
+        - Unconscious sensory registration or a device record alone
+        - A manifest self-model without conscious feeling
+        - A specific emotional valence or bodily need inferred from generic feeling
+  - candidate_id: unmarked_root_substitution
+    direction: Representation, care, work capacity and viability do not entail the
+      required feeling.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: missing experiential distinction'
+  - candidate_id: runtime_as_feeling
+    direction: Runtime status does not encode pleasantness, hunger, thirst or fatigue.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_felt_specialization
+  confidence: high
+- compound_id: CMP:8e95897afbd6d54b8e164e03
+  display_title: pleasant felt condition
+  current_choice_reason: reviews/felt_conditions_foundation.md; author judgments,
+    not independent validation.
+  candidates:
+  - candidate_id: explicit_felt_specialization
+    direction: Bind one experiencer, reuse exact dependencies and audibly declare
+      the additional felt meaning.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:6c9e3042a361ccae6ecf5980
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: pleasant_felt_condition
+        sound_code: 12
+        added_definition: The same consciously felt self-condition has a pleasant
+          experiential tone for its experiencer. Pleasantness is felt valence, not
+          an appraisal that an outcome is useful, morally good or desired. It does
+          not by itself establish happiness, satisfaction, affection, care, preference,
+          or absence of simultaneous unpleasant feeling.
+        excludes:
+        - Care behavior or a favorable judgment without pleasant feeling
+        - Attention or physiological activation used as positive valence
+        - Happiness or a preferred outcome inferred from any pleasant feeling
+  - candidate_id: unmarked_root_substitution
+    direction: Representation, care, work capacity and viability do not entail the
+      required feeling.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: missing experiential distinction'
+  - candidate_id: runtime_as_feeling
+    direction: Runtime status does not encode pleasantness, hunger, thirst or fatigue.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_felt_specialization
+  confidence: high
+- compound_id: CMP:c58b38d03fab27880ac3e1f0
+  display_title: happy felt mood
+  current_choice_reason: reviews/felt_conditions_foundation.md; author judgments,
+    not independent validation.
+  candidates:
+  - candidate_id: explicit_felt_specialization
+    direction: Bind one experiencer, reuse exact dependencies and audibly declare
+      the additional felt meaning.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:8e95897afbd6d54b8e164e03
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: happy_felt_mood
+        sound_code: 13
+        added_definition: 'The experiencer feels happiness: a pleasant emotional mood
+          of gladness or contentment, not merely a pleasant sensory quality or a favorable
+          evaluation. The mood can coexist with other feelings and need not be permanent,
+          intense, externally expressed, or caused by a particular event. This is
+          the felt-state sense of happy, not fortunate, willing, suitable or happy
+          with a specified object.'
+        excludes:
+        - Fortunate circumstances or willingness without felt happiness
+        - Care, attention, approval or a pleasant sensation alone
+        - Absence of sadness or an exclusively positive emotional state inferred from
+          happiness
+  - candidate_id: unmarked_root_substitution
+    direction: Representation, care, work capacity and viability do not entail the
+      required feeling.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: missing experiential distinction'
+  - candidate_id: runtime_as_feeling
+    direction: Runtime status does not encode pleasantness, hunger, thirst or fatigue.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_felt_specialization
+  confidence: high
+- compound_id: CMP:c64ab0a9989c7b10c46e3b38
+  display_title: felt bodily replenishment need
+  current_choice_reason: reviews/felt_conditions_foundation.md; author judgments,
+    not independent validation.
+  candidates:
+  - candidate_id: explicit_felt_specialization
+    direction: Bind one experiencer, reuse exact dependencies and audibly declare
+      the additional felt meaning.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-body
+        kind: root
+        root_id: MAT:000
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:6c9e3042a361ccae6ecf5980
+        definition_version: 1.0.0
+      edges:
+      - type: qualifies
+        from: q-body
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: felt_bodily_need
+        sound_code: 14
+        added_definition: The same consciously felt self-condition presents the experiencer's
+          own material body as calling for replenishment or maintenance. MAT:000 identifies
+          that experiencer's body within the same focal frame. This is a felt bodily
+          demand, not proof of a measured physiological deficit, harm, failed viability,
+          an intended action or actual replenishment. The required resource or maintenance
+          kind is not yet specified.
+        excludes:
+        - A bodily deficit that is not felt
+        - An intellectual wish or a duty without a felt bodily demand
+        - Measured depletion, damage or action inferred from the feeling
+  - candidate_id: unmarked_root_substitution
+    direction: Representation, care, work capacity and viability do not entail the
+      required feeling.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: missing experiential distinction'
+  - candidate_id: runtime_as_feeling
+    direction: Runtime status does not encode pleasantness, hunger, thirst or fatigue.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_felt_specialization
+  confidence: high
+- compound_id: CMP:748be1f0ce7ceb2963716292
+  display_title: felt hunger
+  current_choice_reason: reviews/felt_conditions_foundation.md; author judgments,
+    not independent validation.
+  candidates:
+  - candidate_id: explicit_felt_specialization
+    direction: Bind one experiencer, reuse exact dependencies and audibly declare
+      the additional felt meaning.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:c64ab0a9989c7b10c46e3b38
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: felt_hunger
+        sound_code: 15
+        added_definition: 'The same felt bodily replenishment need is hunger: a bodily
+          feeling calling for food or nourishment through eating. The feeling need
+          not prove a measured energy deficit or imminent harm and does not assert
+          eating, appetite for a particular food, permission, or a deliberate plan.
+          Figurative hunger for achievement or information is excluded.'
+        excludes:
+        - Water-directed thirst without food-directed hunger
+        - Dormancy, low work capacity or an unfelt nutritional deficit alone
+        - A metaphorical desire for success or knowledge
+  - candidate_id: unmarked_root_substitution
+    direction: Representation, care, work capacity and viability do not entail the
+      required feeling.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: missing experiential distinction'
+  - candidate_id: runtime_as_feeling
+    direction: Runtime status does not encode pleasantness, hunger, thirst or fatigue.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_felt_specialization
+  confidence: high
+- compound_id: CMP:60cd46250d183e3105b7250a
+  display_title: felt thirst
+  current_choice_reason: reviews/felt_conditions_foundation.md; author judgments,
+    not independent validation.
+  candidates:
+  - candidate_id: explicit_felt_specialization
+    direction: Bind one experiencer, reuse exact dependencies and audibly declare
+      the additional felt meaning.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:c64ab0a9989c7b10c46e3b38
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: felt_thirst
+        sound_code: 16
+        added_definition: 'The same felt bodily replenishment need is thirst: a bodily
+          feeling calling for water intake, ordinarily through drinking. It does not
+          prove a measured water deficit or assert drinking, a chosen beverage, permission,
+          or a deliberate plan. Figurative thirst for power or knowledge is excluded.'
+        excludes:
+        - Food-directed hunger without water-directed thirst
+        - A dry object, an unfelt fluid deficit or dormancy alone
+        - A metaphorical desire for power or knowledge
+  - candidate_id: unmarked_root_substitution
+    direction: Representation, care, work capacity and viability do not entail the
+      required feeling.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: missing experiential distinction'
+  - candidate_id: runtime_as_feeling
+    direction: Runtime status does not encode pleasantness, hunger, thirst or fatigue.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_felt_specialization
+  confidence: high
+- compound_id: CMP:3c13b9c619d95f1c40ea5da5
+  display_title: felt fatigue
+  current_choice_reason: reviews/felt_conditions_foundation.md; author judgments,
+    not independent validation.
+  candidates:
+  - candidate_id: explicit_felt_specialization
+    direction: Bind one experiencer, reuse exact dependencies and audibly declare
+      the additional felt meaning.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:6c9e3042a361ccae6ecf5980
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: felt_fatigue
+        sound_code: 17
+        added_definition: 'The experiencer feels fatigue: a condition of weariness
+          in which sustaining physical or mental effort is felt as taxing or diminished
+          and rest or recovery is called for. This does not entail sleep, dormancy,
+          unconsciousness, objective incapacity, illness, damage or a measured energy
+          deficit. Mere boredom or being tired of a particular object is a separate
+          sense.'
+        excludes:
+        - Dormancy or unconsciousness without felt fatigue
+        - Low physical work capacity or damage without weariness
+        - Boredom with a particular object or a generic unpleasant feeling alone
+  - candidate_id: unmarked_root_substitution
+    direction: Representation, care, work capacity and viability do not entail the
+      required feeling.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: missing experiential distinction'
+  - candidate_id: runtime_as_feeling
+    direction: Runtime status does not encode pleasantness, hunger, thirst or fatigue.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_felt_specialization
+  confidence: high
