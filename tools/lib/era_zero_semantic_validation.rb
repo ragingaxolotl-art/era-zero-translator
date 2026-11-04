@@ -1,3 +1,4 @@
+require_relative 'era_zero_quantified_binding'
 # frozen_string_literal: true
 require "json"
 require "digest"
@@ -44,7 +45,7 @@ module EraZeroSemanticValidation
     @authority_documents
   end
 
-  def validate(ir, compound_entries: nil, foundation_records: [], allow_draft_foundations: false)
+  def validate(ir, compound_entries: nil, foundation_records: [], allow_draft_foundations: false, allow_draft_quantified: false)
     return ["invalid_document"] unless ir.is_a?(Hash)
     return ["invalid_nodes"] unless ir["nodes"].is_a?(Array) && ir["nodes"].all? { |n| n.is_a?(Hash) && n["node_id"].is_a?(String) }
     return ["invalid_edges"] unless ir["edges"].is_a?(Array) && ir["edges"].all? { |e| e.is_a?(Hash) && e["edge_id"].is_a?(String) }
@@ -57,12 +58,22 @@ module EraZeroSemanticValidation
     rescue ArgumentError, KeyError, TypeError
       return ["invalid_foundation_ir"]
     end
+    if ir['nodes'].any?{|n|n['operator']=='quantified_predication'||n['kind']=='quantified_reference'} || ir['edges'].any?{|e|e['type']=='restricts'}
+      return ['draft_quantified_opt_in_required'] unless allow_draft_quantified
+      begin
+        EraZeroQuantifiedBinding.validate!(ir)
+      rescue ArgumentError, KeyError, TypeError
+        return ['invalid_quantified_binding']
+      end
+    end
     spec, schema, atoms_doc, compounds_doc = authority_documents
     atom_ids = atoms_doc.fetch("atoms").map { |a| a["canonical_id"] }.to_set
     entries = compound_entries || compounds_doc.fetch("entries")
     compound_ids = entries.map { |c| c["compound_id"] }.to_set
     node_kinds = schema.fetch("node_kinds").to_set
     edge_types = schema.fetch("edge_types").to_set
+    node_kinds.add('quantified_reference') if allow_draft_quantified
+    edge_types.add('restricts') if allow_draft_quantified
     roles = schema.fetch("roles").to_set
     forbidden = schema.fetch("forbidden_semantic_fields").to_set
     units = spec.dig("quantity_and_measurement", "units").values.flatten.to_set
@@ -158,7 +169,7 @@ module EraZeroSemanticValidation
     binding_edges.each { |from, to| binding_graph[from] << to }
     binding_edges.each { |from, to| errors << "cyclic_compound_bindings" if reaches?(to, from, binding_graph) }
     nodes.select { |n| n["kind"] == "scope_operator" }.each do |n|
-      errors << "unknown_scope_operator" unless spec.dig("node_types", "scope_operator", "operators").include?(n["operator"])
+      errors << "unknown_scope_operator" unless (spec.dig("node_types", "scope_operator", "operators")+(allow_draft_quantified ? ["quantified_predication"] : [])).include?(n["operator"])
     end
     nodes.select { |n| n["kind"] == "scope_operator" && n["operator"] == "comparison" }.each do |n|
       errors << "invalid_property_comparison" unless valid_property_comparison?(n, ir)

@@ -6,6 +6,7 @@ export function validateQuantifiedBindings(ir){
  const nodes=new Map(ir.nodes.map(n=>[n.node_id,n]));
  if(nodes.size!==ir.nodes.length||[...nodes.keys()].some(id=>typeof id!=='string'||!id))fail();
  if(ir.edges.some(e=>!nodes.has(e.from)||!nodes.has(e.to)))fail();
+ if(ir.nodes.some(n=>n.operator==='quantified_predication'&&n.kind!=='scope_operator'))fail();
  const binders=ir.nodes.filter(n=>n.kind==='scope_operator'&&n.operator==='quantified_predication');
  const refs=ir.nodes.filter(n=>n.kind==='quantified_reference');
  const structural=new Set(['scopes','centers','member_of','condition_of']);

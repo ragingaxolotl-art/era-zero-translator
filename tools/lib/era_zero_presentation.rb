@@ -1,3 +1,5 @@
+require_relative 'era_zero_quantified_music'
+require_relative 'era_zero_quantified_binding'
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
@@ -105,11 +107,17 @@ module EraZeroPresentation
     events = frame_bound_arguments(formal, max_events)
     ir = formal.fetch("semantic_ir")
     EraZeroSubjectControl.validate!(ir)
+    counted_draft=ir['nodes'].any?{|n|n['operator']=='quantified_predication'||n['kind']=='quantified_reference'}
+    if counted_draft
+      raise PresentationError,'Draft quantified music requires explicit opt-in.' unless formal['draft_quantified']==true
+      EraZeroQuantifiedBinding.validate!(ir)
+    end
+    binder_stack=[]
     ir.fetch("nodes").each do |node|
       raise PresentationError, "unsupported musical property comparison" if node["kind"] == "scope_operator" && node["operator"] == "comparison" && !EraZeroSemanticValidation.valid_property_comparison?(node, ir)
       raise PresentationError, "unsupported musical aspect" if node["operator"] == "aspect" && (!ASPECTS.include?(node["aspect"]) || !(node.keys - %w[node_id kind operator aspect]).empty?)
       raise PresentationError, "unsupported musical discourse variable/reference" if node["kind"] == "variable" || (node["kind"] == "reference" && node["reference_type"] != "desire_subject")
-      if (node["kind"] == "scope_operator" && !%w[negation repetition modality quantifier comparison aspect].include?(node["operator"])) ||
+      if (node["kind"] == "scope_operator" && !(%w[negation repetition modality quantifier comparison aspect]+(counted_draft ? ["quantified_predication"] : [])).include?(node["operator"])) ||
          (node["kind"] == "coordination" && !%w[sequence all_of any_of exactly_one].include?(node["operator"]))
         raise PresentationError, "unsupported musical operator: #{node['operator']}"
       end
@@ -139,7 +147,17 @@ module EraZeroPresentation
       active << id
       node = nodes.fetch(id) { raise PresentationError, "unknown performance scope #{id}" }
       edges = incoming.fetch(id, [])
-      result = case node["kind"]
+      result = if node['operator']=='quantified_predication'
+        restriction=edges.find{|e|e['type']=='restricts'};body=edges.find{|e|e['type']=='scopes'}
+        marker=->(name){EraZeroQuantifiedMusic.event(name,formal.dig('performance','anchor_midi')).merge('occurrence_id'=>id)}
+        binder_stack << id
+        phrase=[marker.call("counted_#{node['quantifier']}_open")]+node['value'].chars.map{|d|grammar_marker(formal,id,"digit_#{d}")}+[marker.call('counted_restriction_open')]+walk.call(restriction['from'])+[marker.call('counted_restriction_close'),marker.call('counted_predicate_open')]+walk.call(body['from'])+[marker.call('counted_predicate_close'),marker.call("counted_#{node['quantifier']}_close")]
+        binder_stack.pop;phrase
+      elsif node['kind']=='quantified_reference'
+        position=binder_stack.rindex(node['binder_id']);raise PresentationError,'Unbound quantified musical reference.' unless position
+        [EraZeroQuantifiedMusic.event("counted_reference_#{binder_stack.length-1-position}",formal.dig('performance','anchor_midi')).merge('occurrence_id'=>id)]
+      else
+        case node["kind"]
                when "scope_operator"
                  unless %w[negation modality quantifier comparison aspect].include?(node["operator"]) || (node["operator"] == "repetition" && node["mode"] == "count" && node["count"].is_a?(Integer) && node["count"].positive?)
                    raise PresentationError, "counted repetition export requires a positive count and supported nested scopes"
@@ -223,6 +241,7 @@ module EraZeroPresentation
                else
                  raise PresentationError, "unsupported node in repetition scope: #{node['kind']}"
                end
+      end
       active.pop
       raise PresentationError, "repetition exceeds event limit #{max_events}" if result.length > max_events
       result

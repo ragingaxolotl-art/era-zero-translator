@@ -131,7 +131,7 @@ module EraZeroRenderer
     raise RenderError, "compound #{compound.fetch('compound_id')} is missing required roles: #{missing.join(', ')}" unless missing.empty?
   end
 
-  def occurrence_events(node, ir, atoms, compounds, anchor_midi, register, ancestors = [], foundations: {}, allow_draft_foundations: false)
+  def occurrence_events(node, ir, atoms, compounds, anchor_midi, register, ancestors = [], foundations: {}, allow_draft_foundations: false, allow_draft_quantified: false)
     id = node.fetch("node_id")
     raise RenderError, "cyclic compound participant binding" if ancestors.include?(id)
     raise RenderError, "participant binding depth exceeds 64" if ancestors.length >= 64
@@ -234,7 +234,7 @@ module EraZeroRenderer
         argument = arguments.fetch(binding.fetch("argument_id"))
         raise RenderError, "bound participant must be a renderable occurrence" unless %w[lexical_occurrence phonemic_reference deictic_reference reference].include?(argument["kind"])
         role_register = ROLE_REGISTERS.fetch(binding.fetch("role"), "middle")
-        occurrence_events(argument, ir, atoms, compounds, anchor_midi, role_register, ancestors + [id], foundations: foundations, allow_draft_foundations: allow_draft_foundations).map do |event|
+        occurrence_events(argument, ir, atoms, compounds, anchor_midi, role_register, ancestors + [id], foundations: foundations, allow_draft_foundations: allow_draft_foundations, allow_draft_quantified: allow_draft_quantified).map do |event|
           event.merge("occurrence_id" => id, "argument_node_id" => argument.fetch("node_id"),
             "binding_path" => component.fetch("path"), "binding_role" => binding.fetch("role"),
             "binding_predicate_path" => binding.fetch("predicate_path"),
@@ -264,9 +264,9 @@ module EraZeroRenderer
     raise RenderError, error.message
   end
 
-  def render(ir, anchor_midi: 60, foundation_records: [], allow_draft_foundations: false)
+  def render(ir, anchor_midi: 60, foundation_records: [], allow_draft_foundations: false, allow_draft_quantified: false)
     atoms, compounds = load_authority
-    errors = EraZeroSemanticValidation.validate(ir, compound_entries: compounds.values, foundation_records: foundation_records, allow_draft_foundations: allow_draft_foundations)
+    errors = EraZeroSemanticValidation.validate(ir, compound_entries: compounds.values, foundation_records: foundation_records, allow_draft_foundations: allow_draft_foundations, allow_draft_quantified: allow_draft_quantified)
     raise RenderError, "invalid semantic IR: #{errors.join(", ")}" unless errors.empty?
     raise RenderError, "anchor_midi must be an integer from 24 through 96" unless anchor_midi.is_a?(Integer) && anchor_midi.between?(24, 96)
     foundations = foundation_records.to_h { |r| [r["foundation_id"], r] }
@@ -281,7 +281,7 @@ module EraZeroRenderer
     independent_ids = ir.fetch("edges").reject { |edge| edge["type"] == "corefers_with" }.map { |edge| edge["from"] }.to_set
     lexical_nodes.sort_by { |node| node["node_id"] }.each do |node|
       next if bound_ids.include?(node["node_id"]) && !independent_ids.include?(node["node_id"])
-      lexical_events.concat(occurrence_events(node, ir, atoms, compounds, anchor_midi, register_for(node["node_id"], ir), foundations: foundations, allow_draft_foundations: allow_draft_foundations))
+      lexical_events.concat(occurrence_events(node, ir, atoms, compounds, anchor_midi, register_for(node["node_id"], ir), foundations: foundations, allow_draft_foundations: allow_draft_foundations, allow_draft_quantified: allow_draft_quantified))
     end
     raise RenderError, "no independently rooted lexical occurrences" if !lexical_nodes.empty? && lexical_events.empty?
 
@@ -327,16 +327,16 @@ module EraZeroRenderer
       "semantic_digest" => digest, "semantic_ir" => ir,
       "performance" => { "profile" => PROFILE, "anchor_midi" => anchor_midi, "transposition_semantically_significant" => false, "primary_contour" => contour, "contour_relative_semitones" => CONTOUR_PATHS.fetch(contour), "secondary_contours" => secondary, "lexical_events" => lexical_events, "structural_events" => structural_events, "statement_boundary" => "long_gap", "statement_boundary_beats" => TIMING_BEATS.fetch("long_gap") },
       "literal_gloss" => gloss_parts.join(" | ")
-    }
+    }.tap{|formal|formal["draft_quantified"]=true if ir["nodes"].any?{|n|n["operator"]=="quantified_predication"}}
   end
 
-  def decode(formal, foundation_records: [], allow_draft_foundations: false)
+  def decode(formal, foundation_records: [], allow_draft_foundations: false, allow_draft_quantified: false)
     raise DecodeError, "unknown format" unless formal["format"] == FORMAT
     ir = formal.fetch("semantic_ir")
     digest = semantic_digest(ir)
     raise DecodeError, "semantic digest mismatch" unless formal["semantic_digest"] == digest && ir["utterance_id"] == "UTT:#{digest[0, 24]}" && ir.dig("serialization", "content_digest") == digest
-    regenerated = render(ir, anchor_midi: formal.dig("performance", "anchor_midi"), foundation_records: foundation_records, allow_draft_foundations: allow_draft_foundations)
-    %w[formal_id formal_digest performance literal_gloss].each do |field|
+    regenerated = render(ir, anchor_midi: formal.dig("performance", "anchor_midi"), foundation_records: foundation_records, allow_draft_foundations: allow_draft_foundations, allow_draft_quantified: allow_draft_quantified)
+    %w[formal_id formal_digest performance literal_gloss draft_quantified].each do |field|
       raise DecodeError, "#{field} mismatch" unless formal[field] == regenerated[field]
     end
     ir

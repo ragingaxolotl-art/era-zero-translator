@@ -130,3 +130,25 @@ IR, and wrong binder identity/default-without-opt-in are rejected. Canonical
 counted-noun and proposition-negation regressions continue to pass. Full typed
 formal construction, Ruby rendering, nested inverse and English/UI admission
 remain next work, not completed coverage.
+
+## Opt-in typed Ruby rendering
+
+Ruby semantic validation, rendering, formal decoding and presentation now accept
+the draft binder only with allow_draft_quantified. The binding validator runs
+alongside existing semantic checks; the two new node/edge forms and operator are
+admitted only under that option. Rendered formal documents carry draft_quantified,
+and formal decoding verifies that marker against regeneration. The default
+canonical route rejects these graphs. Existing canonical specs and source pins
+are unchanged because this remains an explicit draft extension.
+
+Ruby scheduling now mirrors the browser's binder stack, restriction/predicate
+frames and depth references. Twelve regenerated, correctly hashed formal documents
+round-trip through Ruby and produce byte-identical MIDI in Ruby and the browser.
+They also match the earlier browser probes and preserve independent MIDI meaning
+recovery. Existing 14-check semantic-IR, 12-check renderer/decoder and counted-noun
+regressions pass. This replaces the earlier stale-hash probe limitation for these
+twelve cases; it does not establish all nested/compound cases or English admission.
+
+Remaining: browser formal construction and verification for this draft type,
+nested and compound rendering/inverse coverage, explicit English/UI composition,
+and finite-model checks driven by decoded meaning rather than expected input.

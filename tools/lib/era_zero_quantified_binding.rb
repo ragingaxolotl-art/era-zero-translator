@@ -10,6 +10,7 @@ module EraZeroQuantifiedBinding
     fail_binding.call unless list.all?{|n|n.is_a?(Hash)&&n['node_id'].is_a?(String)&&!n['node_id'].empty?}
     nodes=list.to_h{|n|[n['node_id'],n]};fail_binding.call unless nodes.length==list.length
     fail_binding.call unless edges.all?{|e|e.is_a?(Hash)&&nodes.key?(e['from'])&&nodes.key?(e['to'])}
+    fail_binding.call if list.any?{|n|n['operator']=='quantified_predication'&&n['kind']!='scope_operator'}
     binders=list.select{|n|n['kind']=='scope_operator'&&n['operator']=='quantified_predication'}
     refs=list.select{|n|n['kind']=='quantified_reference'}
     structural=%w[scopes centers member_of condition_of]
