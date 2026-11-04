@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module EraZeroSubjectControl
-  SUBJECTS={'CMP:1e2ec87e1feff0da19aadc3b'=>['compound','actor',%w[h s-actor]],'CMP:d54499d2989fa97349e8e23d'=>['compound','experiencer',%w[h h s-experiencer]],'CMP:c58b38d03fab27880ac3e1f0'=>['compound','experiencer',%w[h h s-experiencer]],'CMP:748be1f0ce7ceb2963716292'=>['compound','experiencer',%w[h h s-experiencer]],'CMP:60cd46250d183e3105b7250a'=>['compound','experiencer',%w[h h s-experiencer]],'CMP:3c13b9c619d95f1c40ea5da5'=>['compound','experiencer',%w[h s-experiencer]],'LIF:211'=>['atom','actor'],'MOV:201'=>['atom','bearer'],'LIF:001'=>['atom','bearer'],'LIF:002'=>['atom','bearer'],'LIF:011'=>['atom','bearer'],'LIF:012'=>['atom','bearer'],'WRN:001'=>['atom','bearer'],'REP:001'=>['atom','bearer'],'MIN:201'=>['atom','bearer'],'FND:018dd25d713dff83661a76a4'=>['foundation','experiencer']}.freeze
+  SUBJECTS={'FND:fe36cb2a6d649151067c7754'=>['foundation','experiencer'],'CMP:1e2ec87e1feff0da19aadc3b'=>['compound','actor',%w[h s-actor]],'CMP:d54499d2989fa97349e8e23d'=>['compound','experiencer',%w[h h s-experiencer]],'CMP:c58b38d03fab27880ac3e1f0'=>['compound','experiencer',%w[h h s-experiencer]],'CMP:748be1f0ce7ceb2963716292'=>['compound','experiencer',%w[h h s-experiencer]],'CMP:60cd46250d183e3105b7250a'=>['compound','experiencer',%w[h h s-experiencer]],'CMP:3c13b9c619d95f1c40ea5da5'=>['compound','experiencer',%w[h s-experiencer]],'LIF:211'=>['atom','actor'],'MOV:201'=>['atom','bearer'],'LIF:001'=>['atom','bearer'],'LIF:002'=>['atom','bearer'],'LIF:011'=>['atom','bearer'],'LIF:012'=>['atom','bearer'],'WRN:001'=>['atom','bearer'],'REP:001'=>['atom','bearer'],'MIN:201'=>['atom','bearer'],'FND:018dd25d713dff83661a76a4'=>['foundation','experiencer']}.freeze
   module_function
   def validate!(ir)
     nodes=ir['nodes'].to_h{|n|[n['node_id'],n]};edges=ir['edges']
@@ -24,9 +24,9 @@ module EraZeroSubjectControl
         up=edges.select{|e|e['from']==id&&%w[scopes centers].include?(e['type'])};fail_control.call unless up.length==1;id=up[0]['to']
       end
       parents=edges.select{|e|e['from']==id&&e['type']=='fills_role'&&e['role']=='content'}
-      fail_control.call unless nodes[id]['content_status']=='intensional'&&parents.length==1
+      fail_control.call unless nodes[id]['content_status']=='intensional'&&nodes[id]['value_type']=='proposition'&&parents.length==1
       parent=nodes[parents[0]['to']]
-      fail_control.call unless parent&&parent['target_type']=='foundation'&&edges.any?{|e|e['from']==holder['node_id']&&e['to']==parent['node_id']&&e['type']=='fills_role'&&e['role']=='experiencer'}
+      fail_control.call unless parent&&parent['target_type']=='foundation'&&parent['target_id']=='FND:f66b7a3877f4b0140a0b7023'&&edges.any?{|e|e['from']==holder['node_id']&&e['to']==parent['node_id']&&e['type']=='fills_role'&&e['role']=='experiencer'}
     end
   end
   def event(node,anchor)

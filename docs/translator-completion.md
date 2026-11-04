@@ -35,7 +35,9 @@ with 21 full browser/Ruby formal and MIDI comparisons. MIDI-only semantic
 recovery now checks the holder, typed question, negation and runtime scopes for
 these cases. Main draft-preview routing now includes the cognitive candidate
 and explicit pronoun fields, with handler/export checks. Live UI validation and
-broader inverse coverage remain unfinished.
+broader inverse coverage remain unfinished. Desired knowledge now reuses the
+existing desire and knowledge candidates with explicit subject binding; 15 cases
+have full browser/Ruby parity and independent musical meaning recovery.
 
 Recent completed implementation work:
 

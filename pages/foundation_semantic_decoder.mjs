@@ -56,7 +56,7 @@ export async function decodeFoundationSentenceMidi(bytes,atoms,records,{allowDra
    }else if(frame.children.length===1&&frame.children[0].marker==='polar_content_open'){
     value={type:'question',question_kind:'polar',content_status:'intensional',assertion_commitment:'neither_answer',proposition:proposition(frame.children[0].children,depth+1,d)};
    }else if(frame.children.length===1&&frame.children[0].marker==='desire_subject_reference'){
-    if(parent?.sound_code!==0||role!==(d?.sound_code===1?'experiencer':({'LIF:211':'actor','MOV:201':'bearer','LIF:001':'bearer','LIF:002':'bearer','LIF:011':'bearer','LIF:012':'bearer','WRN:001':'bearer','REP:001':'bearer','MIN:201':'bearer'})[head.root_id]))fail();
+    if(parent?.sound_code!==0||role!==([1,2].includes(d?.sound_code)?'experiencer':({'LIF:211':'actor','MOV:201':'bearer','LIF:001':'bearer','LIF:002':'bearer','LIF:011':'bearer','LIF:012':'bearer','WRN:001':'bearer','REP:001':'bearer','MIN:201':'bearer'})[head.root_id]))fail();
     value={type:'entity',reference:{kind:'bound',binding:'parent_desire_experiencer'}};
    }else{
     const ref=reference(frame.children,registers[role]);

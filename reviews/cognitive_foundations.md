@@ -273,3 +273,29 @@ plan, export provenance and separate pronoun bindings; existing foundation and
 pronoun UI regressions pass. These are handler/data tests, not live browser
 layout, interaction or listening evidence. Cognitive scope beyond the reviewed
 inverse constructions, learning/acquisition and completion gates remain open.
+
+## Reused desire plus polar-answer knowledge
+
+The cognitive opt-in now permits “wants to know whether P,” using the existing
+desire relation whose propositional content is the knowledge relation, whose
+content is the polar question P. It adds no new primitive, compound address or
+musical frame. The desired knowledge is not asserted as obtained, and neither
+answer to P is asserted. This is an epistemic aim, not automatic acquisition,
+success, action or a claim that every instance of curiosity is this desire.
+
+The omitted knower in “Nora wants to know” is explicitly bound to Nora; “Nora wants
+Orin to know” retains a separate knower. The reviewed subject-control maps include
+the knowledge candidate's experiencer role. Both validators now also require the
+controlling parent to be the actual desire definition and the controlled clause
+to be a proposition, preventing a question or another foundation from borrowing
+the desire-specific identity mechanism.
+
+Fifteen cases preserve controlled/explicit holders, outer desire negation, inner
+knowledge negation, direct questions and outer runtime states. Independent MIDI
+recovery checks the three semantic layers and the binding; complete browser
+formals and MIDI match Ruby. Existing desired-swimming, subject-control and
+knowledge-preview regressions pass. The shared preview already explicitly opts
+into this cognitive construction. No live browser/listening proof is added here.
+
+Curiosity, acquisition/learning, broader knowledge/understanding senses and the
+original completion gates remain unfinished.

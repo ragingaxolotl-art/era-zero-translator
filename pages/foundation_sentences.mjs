@@ -117,7 +117,7 @@ async function composeAtDepth(input,authority,records,loadTemplate,allowDraft,de
    ir.edges.push({edge_id:id,type:'fills_role',from:prefix+source.root_clause,to:'p',role});
   }
  }else{
-  const infinitiveBody='(?:swim(?: \\[[012]\\])?|care for .+|prefer .+ to .+|be (?:not )?(?:conscious|dormant|able to move|able to pay attention|damaged|impaired|restored|happy|sad|hungry|thirsty|tired|swimming)(?: \\[[012]\\])?)';
+  const infinitiveBody=(allowCognitive?'(?:know whether .+|':'(?:')+'swim(?: \\[[012]\\])?|care for .+|prefer .+ to .+|be (?:not )?(?:conscious|dormant|able to move|able to pay attention|damaged|impaired|restored|happy|sad|hungry|thirsty|tired|swimming)(?: \\[[012]\\])?)';
   const infinitive=parsed.type==='knowledge'?null:parsed.content.match(new RegExp(`^(?:(${HOLDER}|me) )?(not )?to (not )?(${infinitiveBody})$`));
   const controlled=!!infinitive&&!infinitive[1];
   let content=parsed.content;
@@ -127,7 +127,7 @@ async function composeAtDepth(input,authority,records,loadTemplate,allowDraft,de
    const negations=Number(!!infinitive[2])+Number(!!infinitive[3])+Number(body.startsWith('be not '));
    if(negations>1)throw new Error('Repeated infinitival negation needs an explicit scope interpretation.');
    const negative=negations===1,firstOrSecond=/^(?:I|[Yy]ou)$/.test(holder);
-   const verb=/^swim(?: |$)/.test(body)?'swim':body.startsWith('prefer ')?'prefer':'care';
+   const verb=body.startsWith('know whether ')?'know':/^swim(?: |$)/.test(body)?'swim':body.startsWith('prefer ')?'prefer':'care';
    content=body.startsWith('be ')?`${holder} ${holder==='I'?'am':/^[Yy]ou$/.test(holder)?'are':'is'} ${negative?'not ':''}${body.replace(/^be (?:not )?/,'')}`:`${holder} ${negative?(firstOrSecond?`do not ${verb}`:`does not ${verb}`):(firstOrSecond?verb:verb+'s')}${body.slice(verb.length)}`;
   }
   const innerFoundation=parseFoundationSentence(content,{allowCognitive}),inner=innerFoundation||parseNamedSentence(content);

@@ -1,5 +1,5 @@
 // Reviewed subject roles; a new predicate needs an explicit binding review.
-const SUBJECTS=Object.freeze({'CMP:1e2ec87e1feff0da19aadc3b':{type:'compound',role:'actor',slot:['h','s-actor']},'CMP:d54499d2989fa97349e8e23d':{type:'compound',role:'experiencer',slot:['h','h','s-experiencer']},'CMP:c58b38d03fab27880ac3e1f0':{type:'compound',role:'experiencer',slot:['h','h','s-experiencer']},'CMP:748be1f0ce7ceb2963716292':{type:'compound',role:'experiencer',slot:['h','h','s-experiencer']},'CMP:60cd46250d183e3105b7250a':{type:'compound',role:'experiencer',slot:['h','h','s-experiencer']},'CMP:3c13b9c619d95f1c40ea5da5':{type:'compound',role:'experiencer',slot:['h','s-experiencer']},'LIF:211':{type:'atom',role:'actor'},'MOV:201':{type:'atom',role:'bearer'},'LIF:001':{type:'atom',role:'bearer'},'LIF:002':{type:'atom',role:'bearer'},'LIF:011':{type:'atom',role:'bearer'},'LIF:012':{type:'atom',role:'bearer'},'WRN:001':{type:'atom',role:'bearer'},'REP:001':{type:'atom',role:'bearer'},'MIN:201':{type:'atom',role:'bearer'},'FND:018dd25d713dff83661a76a4':{type:'foundation',role:'experiencer'}});
+const SUBJECTS=Object.freeze({'FND:fe36cb2a6d649151067c7754':{type:'foundation',role:'experiencer'},'CMP:1e2ec87e1feff0da19aadc3b':{type:'compound',role:'actor',slot:['h','s-actor']},'CMP:d54499d2989fa97349e8e23d':{type:'compound',role:'experiencer',slot:['h','h','s-experiencer']},'CMP:c58b38d03fab27880ac3e1f0':{type:'compound',role:'experiencer',slot:['h','h','s-experiencer']},'CMP:748be1f0ce7ceb2963716292':{type:'compound',role:'experiencer',slot:['h','h','s-experiencer']},'CMP:60cd46250d183e3105b7250a':{type:'compound',role:'experiencer',slot:['h','h','s-experiencer']},'CMP:3c13b9c619d95f1c40ea5da5':{type:'compound',role:'experiencer',slot:['h','s-experiencer']},'LIF:211':{type:'atom',role:'actor'},'MOV:201':{type:'atom',role:'bearer'},'LIF:001':{type:'atom',role:'bearer'},'LIF:002':{type:'atom',role:'bearer'},'LIF:011':{type:'atom',role:'bearer'},'LIF:012':{type:'atom',role:'bearer'},'WRN:001':{type:'atom',role:'bearer'},'REP:001':{type:'atom',role:'bearer'},'MIN:201':{type:'atom',role:'bearer'},'FND:018dd25d713dff83661a76a4':{type:'foundation',role:'experiencer'}});
 export function validateSubjectControl(ir){
  const nodes=new Map(ir.nodes.map(n=>[n.node_id,n])),edges=ir.edges;
  for(const n of ir.nodes.filter(n=>n.kind==='reference'&&n.reference_type==='desire_subject')){
@@ -20,9 +20,9 @@ export function validateSubjectControl(ir){
    const up=edges.filter(e=>e.from===id&&['scopes','centers'].includes(e.type));if(up.length!==1)fail();id=up[0].to;
   }
   const clause=nodes.get(id),parents=edges.filter(e=>e.from===id&&e.type==='fills_role'&&e.role==='content');
-  if(clause.content_status!=='intensional'||parents.length!==1)fail();
+  if(clause.content_status!=='intensional'||clause.value_type!=='proposition'||parents.length!==1)fail();
   const parent=nodes.get(parents[0].to);
-  if(parent?.target_type!=='foundation'||!edges.some(e=>e.from===holder.node_id&&e.to===parent.node_id&&e.type==='fills_role'&&e.role==='experiencer'))fail();
+  if(parent?.target_type!=='foundation'||parent.target_id!=='FND:f66b7a3877f4b0140a0b7023'||!edges.some(e=>e.from===holder.node_id&&e.to===parent.node_id&&e.type==='fills_role'&&e.role==='experiencer'))fail();
  }
 }
 export function subjectControlEvent(node,anchor=60){
