@@ -90,6 +90,21 @@ quantified grammar, source reconciliation, candidate admission, live use and
 listening validation remain open. No original completion gate is closed by the
 implementation checks alone.
 
+## Connected-source revision checkpoint
+
+A fresh connected Drive read exposed 21 visible revisions of the language document.
+Revisions 1, 6, 34, 67 and 68 were fetched. Revision 68 is exactly revision 67 plus
+1,970 UTF-16 code units of release notes. Its completeness claim concerns inventory
+and phrase preservation, including phonemic labels for unfamiliar terms. Revision
+67 explicitly disclaims exhaustive English coverage. This explains the historical
+“complete” label without changing the user's broader completion requirement.
+
+The early substantive revision 6 is a compiled Phase 1 reference, not the original
+129-turn conversation ledger. The latest ChatGPT Pages search still returns the
+existing audit at sequence 11; it does not enumerate all conversations. See
+[revision evidence](../reports/source_revision_reconciliation.json). The source
+gate remains open, and no external document was modified by this read-only audit.
+
 ## Historical coverage work log
 
 The entries below record successive changes. Their inventory counts and stated
