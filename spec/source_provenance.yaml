@@ -72,3 +72,13 @@ draft_reconciliation:
   - Recover and verify the complete original source capture and speaker-turn ledger.
   - Reconcile external Google and storage snapshots without presenting the draft as a released standard.
   - Meet all seven original translator completion gates; implementation checks alone do not establish completion.
+
+revision_recovery_followup:
+  observed_date: '2026-11-04'
+  report: reports/drive_revision_recovery_2026_11_04.json
+  drive_current_revision_id: '68'
+  drive_previous_revision_id: '67'
+  inspected_revision_ids: ['1', '6', '11', '12', '34', '67', '68']
+  finding: Latest revision appends phrase-preservation claims; it does not establish full sentence translation.
+  original_transcript_status: still_not_recovered
+  missing_review_artifacts_status: unresolved
