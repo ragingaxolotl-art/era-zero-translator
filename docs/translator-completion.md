@@ -21,6 +21,11 @@ not proof of full ordinary-English coverage or musical usability.
 
 Recent completed implementation work:
 
+- A [quantified-predicate semantic model](../reviews/quantified_predication.md) now
+  distinguishes predicate negation from proposition negation and incomplete
+  domains. Parser, typed binding and musical integration remain unfinished.
+  This follow-up postdates the 127-check baseline above.
+
 - Swimming supports explicit simple-present viewpoint choices, explicit habits
   and mixed-clause composition. Across-region swimming preserves the region and
   swimmer without asserting completed crossing. See [swimming across](../reviews/swimming_across.md).
