@@ -10,21 +10,25 @@ performance, keeping existing roots, sounds, names, and approved poetic meanings
 The [source audit](https://chatgpt.com/space/page_21c6ce0da1a88191abff53c0b13441f3)
 is the starting evidence, not a completion certificate.
 
-## Current status at implementation revision ef33dde
+## Current status at implementation revision 056c677
 
 The full translator goal remains **incomplete**. There are 324 preserved roots,
-55 approved compounds and 463 canonical senses. Desire/preference foundations
+55 approved compounds and 463 canonical senses. Desire/preference and polar-answer knowledge foundations
 remain opt-in candidate vocabulary; they are not included in those canonical
-counts. The fresh consolidated regression passed all 133 checks at this revision,
-with no failures, timeouts or reruns. This is implementation regression evidence,
-not proof of full ordinary-English coverage or musical usability.
+counts. The fresh consolidated regression passed 146 of 147 checks. The
+carrying-command check timed out at 120 seconds; after that run terminated, its
+focused rerun passed all 21 command cases in 0.676 seconds without a code change.
+The report preserves the original timeout and the separate rerun; its cause is
+unresolved. This is implementation evidence, not proof of full English coverage.
+Local browser use was checked again and is disabled in Work settings, so live
+layout, interaction and listening validation remain unperformed.
 
-A subsequent [cognitive foundation review](../reviews/cognitive_foundations.md)
+The [cognitive foundation review](../reviews/cognitive_foundations.md)
 records the missing content/result-state contracts for learning, understanding
 and curiosity, with ten authored contrast requirements. It changes the next
 implementation dependency order but adds no supported cognitive phrases. An
 opt-in polar-content document now preserves complete propositions without asserting
-either answer; its 12 composition checks postdate the consolidated baseline.
+either answer; its 12 composition checks are included in this baseline.
 Draft standalone musical framing now preserves the enclosed predicate token
 tree in 12 independent decoding checks. Ruby now validates the entire embedded
 proposition and produces byte-identical content MIDI for these cases. Integration
@@ -60,9 +64,8 @@ Recent completed implementation work:
   domains. Draft typed binding, unary English composition, browser/Ruby musical
   parity, independent unary sound recovery and an explicit UI preview are now
   implemented. Nested/compound coverage and canonical admission remain open.
-  These changes are included in the current regression baseline. Subsequent
-  focused checks add counted negative contractions and singular count-one noun
-  labels; these additions postdate that consolidated run.
+  The current regression includes counted negative contractions and singular
+  count-one noun labels.
 
 - Swimming supports explicit simple-present viewpoint choices, explicit habits
   and mixed-clause composition. Across-region swimming preserves the region and

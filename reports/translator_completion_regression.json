@@ -1,60 +1,60 @@
 {
   "scope": "Implementation regression only. Full ordinary-English coverage and musical semantic completeness are not established.",
-  "passed": true,
+  "passed": false,
   "results": [
     {
       "test": "tests/additive_vocabulary_pins_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 40361\n\n# Running:\n\n.\n\nFinished in 0.104117s, 9.6046 runs/s, 115.2550 assertions/s.\n\n1 runs, 12 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 48232\n\n# Running:\n\n.\n\nFinished in 0.103696s, 9.6436 runs/s, 115.7229 assertions/s.\n\n1 runs, 12 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/packet_evidence_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 50036\n\n# Running:\n\n...\n\nFinished in 0.000332s, 9036.1455 runs/s, 54216.8729 assertions/s.\n\n3 runs, 18 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 368\n\n# Running:\n\n...\n\nFinished in 0.000351s, 8547.0087 runs/s, 51282.0520 assertions/s.\n\n3 runs, 18 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/min_cross_reference_migration_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 22811\n\n# Running:\n\n.\n\nFinished in 0.681421s, 1.4675 runs/s, 129.1419 assertions/s.\n\n1 runs, 88 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 41023\n\n# Running:\n\n.\n\nFinished in 0.683375s, 1.4633 runs/s, 128.7726 assertions/s.\n\n1 runs, 88 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/mov_process_example_migration_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 7650\n\n# Running:\n\n.\n\nFinished in 1.031261s, 0.9697 runs/s, 172.6042 assertions/s.\n\n1 runs, 178 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 2667\n\n# Running:\n\n.\n\nFinished in 1.033118s, 0.9679 runs/s, 172.2940 assertions/s.\n\n1 runs, 178 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/mat_capacity_example_migration_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 42676\n\n# Running:\n\n.\n\nFinished in 0.955604s, 1.0465 runs/s, 171.6192 assertions/s.\n\n1 runs, 164 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 61380\n\n# Running:\n\n.\n\nFinished in 0.956483s, 1.0455 runs/s, 171.4615 assertions/s.\n\n1 runs, 164 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_dependencies_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 58038\n\n# Running:\n\n......\n\nFinished in 0.016551s, 362.5159 runs/s, 3323.0620 assertions/s.\n\n6 runs, 55 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 8836\n\n# Running:\n\n......\n\nFinished in 0.016702s, 359.2384 runs/s, 3293.0188 assertions/s.\n\n6 runs, 55 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_expansion_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 62477\n\n# Running:\n\n..........\n\nFinished in 0.260680s, 38.3612 runs/s, 659.8128 assertions/s.\n\n10 runs, 172 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 65174\n\n# Running:\n\n..........\n\nFinished in 0.256531s, 38.9816 runs/s, 670.4843 assertions/s.\n\n10 runs, 172 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_convention_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 33699\n\n# Running:\n\n...\n\nFinished in 0.032308s, 92.8563 runs/s, 804.7542 assertions/s.\n\n3 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 2838\n\n# Running:\n\n...\n\nFinished in 0.031491s, 95.2653 runs/s, 825.6327 assertions/s.\n\n3 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/dictionary_musical_identity_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 2295\n\n# Running:\n\n.\n\nFinished in 0.236965s, 4.2200 runs/s, 25.3202 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 16754\n\n# Running:\n\n.\n\nFinished in 0.233598s, 4.2809 runs/s, 25.6852 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/audit_dictionary_musical_identity.rb",
@@ -72,13 +72,13 @@
       "test": "tests/semantic_reference_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 3729\n\n# Running:\n\n.......\n\nFinished in 0.237289s, 29.4999 runs/s, 134.8567 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 53086\n\n# Running:\n\n.......\n\nFinished in 0.237058s, 29.5286 runs/s, 134.9881 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/quantity_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 17424\n\n# Running:\n\n...\n\nFinished in 0.400819s, 7.4847 runs/s, 217.0556 assertions/s.\n\n3 runs, 87 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 52224\n\n# Running:\n\n...\n\nFinished in 0.393906s, 7.6160 runs/s, 220.8649 assertions/s.\n\n3 runs, 87 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_semantic_ir_and_grammar.rb",
@@ -90,19 +90,19 @@
       "test": "tests/foundation_process_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 15670\n\n# Running:\n\n...\n\nFinished in 0.438366s, 6.8436 runs/s, 63.8736 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 23784\n\n# Running:\n\n...\n\nFinished in 0.443123s, 6.7701 runs/s, 63.1879 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/repetition_performance_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 32716\n\n# Running:\n\n...\n\nFinished in 0.498711s, 6.0155 runs/s, 16.0414 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 8115\n\n# Running:\n\n...\n\nFinished in 0.546076s, 5.4937 runs/s, 14.6500 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/controlled_role_reference_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 64768\n\n# Running:\n\n...\n\nFinished in 0.443301s, 6.7674 runs/s, 85.7205 assertions/s.\n\n3 runs, 38 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 13977\n\n# Running:\n\n...\n\nFinished in 0.445168s, 6.7390 runs/s, 85.3610 assertions/s.\n\n3 runs, 38 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_gate4b_compound_dictionary.rb",
@@ -133,6 +133,90 @@
       "passed": true,
       "exit_code": 0,
       "output": "Glyph/audio validation: PASS\nChecks passed: 10; checks failed: 0\n"
+    },
+    {
+      "test": "tests/learning_pronouns_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS six learning pronoun/state/scope cases: explicit identities, immutable binding snapshots, full acquisition/formal/MIDI equivalence and quoted-label preservation.\n"
+    },
+    {
+      "test": "tests/acquisition_preview_ui_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS acquisition UI: explicit preview, separate full-acquisition downloads, stale results/download rejection, cleared ordinary result and acquisition-specific import verification. Playback layout/listening not verified.\nPASS learning UI pronoun fields, binding submission, re-preview after edits, stale completed downloads and edited pending-result rejection.\n"
+    },
+    {
+      "test": "tests/acquisition_bundle_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS nine acquisition exports regenerate exact result formals and music, preserve draft provenance, ignore untrusted event lists and reject rehashed meaning/audio/authority/provenance tampering.\n"
+    },
+    {
+      "test": "tests/learned_whether_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 learned-whether English cases: acquisition rather than past knowledge, independent event/content time and negation, runtime, questions/contractions, MIDI-only meanings and exact Ruby audio parity. Main UI not yet admitted.\n"
+    },
+    {
+      "test": "tests/knowledge_acquisition_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 acquisition performances: independent transition/result runtimes, complete result meaning recovery, phase linkage, content negation, explicit admission, missing-root rejection and frame collision checks. English integration pending.\nPASS all 18 acquisition MIDI streams equal Ruby regeneration; default admission and changed persistence contract reject.\n"
+    },
+    {
+      "test": "tests/knowledge_acquisition_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS acquisition result identity, nonassertion-at-speech-time, phase invariants, invalid state/time/mutation rejection and 27 independently enumerated partial-information contrasts. Draft semantic contract only; English and music not yet admitted.\n"
+    },
+    {
+      "test": "tests/knowledge_time_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 21 knowledge time/state cases: separate outer and question-content times/negation, questions and contractions, full Ruby formal/MIDI parity and independent musical scope recovery.\n"
+    },
+    {
+      "test": "tests/desired_knowledge_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 15 desired-knowledge sentences: reuse desire and knowledge, controlled/explicit holders, nested negation, questions and runtime; independent MIDI meanings and full Ruby formal/audio parity.\n"
+    },
+    {
+      "test": "tests/knowledge_preview_ui_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS draft preview UI: explicit opt-in, stale input/results rejection, draft label and strict sound mode.\nPASS draft data, sound-plan generation and exported vocabulary provenance.\nPASS knowledge preview registry, explicit cognitive opt-in, sound plan/export provenance, and two independently resolved pronouns.\n"
+    },
+    {
+      "test": "tests/knowledge_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 21 knows/whether compositions with independent inner/outer runtime, negation, questions and contractions; complete browser/Ruby formal and MIDI parity. Independent MIDI recovery verifies holder, polar content, both scopes and runtimes; UI pending.\nPASS well-framed desire/question and knowledge/proposition type substitutions reject instead of silently changing meaning.\n"
+    },
+    {
+      "test": "tests/cognitive_question_binding_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS typed question arguments across runtime 0/1/2, five invalid scope/type cases with Ruby parity, and byte-identical bound cognitive MIDI.\n"
+    },
+    {
+      "test": "tests/question_content_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 12 content auditions: independent MIDI token recovery preserves entire predicate structure; distinct from assertions/direct questions, explicit opt-in and no grammar-path collisions. Full cognitive inverse remains unfinished.\nPASS Ruby full proposition validation and byte-identical content MIDI for all 12 browser cases; opt-in, assertion leakage and invalid roles rejected.\n"
+    },
+    {
+      "test": "tests/question_content_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 12 polar-content compositions preserve complete proposition graphs and all runtime states; questions assert neither answer, reject runtime-as-truth and malformed/rehashed content.\n"
+    },
+    {
+      "test": "tests/counted_wording_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 counted contraction/singular cases: full formal and MIDI equivalence, independent negation/runtime recovery, singular count validation and ordinary participant composition.\n"
     },
     {
       "test": "tests/quantified_preview_ui_test.mjs",
@@ -754,9 +838,8 @@
     },
     {
       "test": "tests/carrying_command_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "Carrying/support commands: 21 runtime/negation/destination/conditional cases match reference formal and MIDI; addressee and command contour decode independently, and local it retains its antecedent.\n"
+      "passed": false,
+      "output": "Timed out after 120 seconds"
     },
     {
       "test": "tests/destination_command_test.mjs",
@@ -811,6 +894,20 @@
     "Independent held-out meaning and sound decoding",
     "Source reconciliation, release migration and publication validation"
   ],
-  "tested_revision": "ef33dde",
-  "working_tree_note": "Only completion status prose changed during the run; implementation and registered tests match ef33dde."
+  "tested_revision": "056c67799edc39e4cd8f7a674eb041c01622099c",
+  "targeted_followups": [
+    {
+      "test": "tests/carrying_command_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "wall_time_seconds": 0.676,
+      "scope": "Targeted rerun after the consolidated run terminated with this check timing out at 120 seconds. All 21 carrying/support command cases passed.",
+      "timeout_cause": "Not established; no implementation change between runs."
+    }
+  ],
+  "live_browser_check": {
+    "available": false,
+    "observed_error": "Local browser use is disabled in Work settings",
+    "validation_claim": "No live layout, interaction or listening validation performed."
+  }
 }
