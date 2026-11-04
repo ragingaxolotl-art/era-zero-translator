@@ -26,7 +26,7 @@ module EraZeroCuriosity
     raise ArgumentError,'Invalid curiosity frame' unless anchor.is_a?(Integer) && anchor.between?(39,88) && %w[open close].include?(side)
     {'kind'=>'grammar_marker','grammar_profile'=>'EZCURIOSITY-MUSIC-1','marker'=>"epistemic_curiosity_#{side}",'register'=>'middle','base_midi'=>anchor,'family_opening_absolute_midi'=>[],'address_absolute_midi'=>[0,side=='open' ? -39 : 39,0,0].map{|n|anchor+n},'note_duration_beats'=>0.25,'boundary_after_beats'=>0.5}
   end
-  def midi(d,records,allow_draft:false,anchor_midi:60)
+  def events(d,records,allow_draft:false,anchor_midi:60)
     validate!(d,allow_draft:allow_draft);EraZeroFoundations.validate!(records,allow_draft:true)
     desire=records.find{|r|r['foundation_id']==CONTRACT['desire_foundation_id']};raise ArgumentError,'Original desire definition required' unless desire
     anchor=anchor_midi;formal={'performance'=>{'anchor_midi'=>anchor}};marker=lambda{|name|EraZeroPresentation.grammar_marker(formal,'curiosity',name)};r=d['experiencer']
@@ -35,6 +35,10 @@ module EraZeroCuriosity
       key=scope['operator']=='negation' ? 'negation' : "time_#{scope['relation']}"
       events=[marker.call(key+'_open')]+events+[marker.call(key+'_close')]
     end
-    EraZeroPresentation.midi_from_scheduled_events(events,anchor,d['speech_act']=='question' ? [0,2] : [0,0])
+    events
   end
+  def midi(d,records,allow_draft:false,anchor_midi:60)
+    EraZeroPresentation.midi_from_scheduled_events(events(d,records,allow_draft:allow_draft,anchor_midi:anchor_midi),anchor_midi,d['speech_act']=='question' ? [0,2] : [0,0])
+  end
+
 end

@@ -36,6 +36,11 @@ recording evidence. The main interface now routes these conjunctions to a draft
 card with separate clause reading choices and pronoun references. Actual handler
 tests compose and export complete messages, recover both member meanings from
 MIDI, preserve distinct runtimes, resolve acquisition-result readings and discard
-stale source/binding outputs. Independent Ruby conjunction regeneration, live
+stale source/binding outputs. Independent Ruby validation and regeneration now match 50 complete performances,
+including the 48 pair/runtime combinations and three/eight-member transposed
+messages. Ruby composes directly from validated member events, independently of
+the JavaScript MIDI-segment construction. Rehashed operator/meaning changes,
+question members and oversized groups reject. Existing standalone member MIDI
+parity remains passing after exposing reusable Ruby event functions. Live
 layout/listening, nested/outer scope, broader member types, held-out coverage and
 physical recording validation remain open.

@@ -1,3 +1,4 @@
+import {execFileSync} from 'node:child_process';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {composeCognitiveConjunction,cognitiveConjunctionPlan,createCognitiveConjunction,validateCognitiveConjunction} from '../pages/cognitive_conjunction.mjs';
@@ -10,11 +11,12 @@ import {midiFromRouteLearning} from '../pages/route_learning_music.mjs';
 import {canonicalDigest} from '../pages/engine.mjs';
 const authority=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url))),records=JSON.parse(fs.readFileSync(new URL('../pages/data/foundation_preview_candidates.json',import.meta.url))).records;
 const clauses=['Orin is not curious about the map','Eli understands what Nora said','Nora learned this route','Eli came to understand Nora’s reasons'];
-let count=0;
+let count=0;const parity=[];
 for(let left=0;left<4;left++)for(let right=0;right<4;right++)for(const runtime of [0,1,2]){
  const input=`${clauses[left]} [${runtime}] and ${clauses[right]} [${2-runtime}].`;
  const options=[left,right].map(index=>index===2?{interpretation:'navigation',resultRuntime:0}:{});
  const d=await composeCognitiveConjunction(input,{allowDraft:true,clauseOptions:options}),midi=await midiFromCognitiveConjunction(d,authority,records,{allowDraft:true}),r=await decodeSupportedMeaningWithDrafts(midi,authority.atoms,records,{allowDraft:true});
+ parity.push({document:d,anchor:60,midi:Buffer.from(midi).toString('base64')});
  assert.equal(r.operator,'all_of');assert.equal(r.members.length,2);
  for(const [i,member] of d.members.entries()){
   const bytes=member.profile==='EZCURIOSITY-1'?await midiFromCuriosity(member,authority,records,{allowDraft:true}):await ({'EZUNDERSTANDING-CONTENT-1':midiFromUnderstanding,'EZROUTE-LEARNING-1':midiFromRouteLearning,'EZUNDERSTANDING-ACQUISITION-1':midiFromUnderstandingAcquisition}[member.profile])(member,authority,{allowDraft:true});
@@ -34,7 +36,17 @@ console.log(`PASS ${count} mixed cognitive conjunctions: complete member meaning
 for(const size of [3,8]){
  const combined=await createCognitiveConjunction(Array.from({length:size},(_,i)=>d.members[i%2]),{allowDraft:true});
  const bytes=await midiFromCognitiveConjunction(combined,authority,records,{allowDraft:true,anchor:72});
+ parity.push({document:combined,anchor:72,midi:Buffer.from(bytes).toString('base64')});
  assert.equal((await decodeCognitiveConjunctionMidi(bytes,authority.atoms,records,{allowDraft:true})).members.length,size);
 }
 await assert.rejects(()=>createCognitiveConjunction(Array(9).fill(d.members[0]),{allowDraft:true}));
 console.log('PASS three/eight-member transposed conjunctions and oversized-document rejection.');
+
+const ruby=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_cognitive_conjunction','-rbase64','-e',"p=JSON.parse(STDIN.read);puts JSON.generate(p['cases'].map{|c|Base64.strict_encode64(EraZeroCognitiveConjunction.midi(c['document'],p['records'],anchor_midi:c['anchor'],allow_draft:true))})"],{input:JSON.stringify({cases:parity,records}),encoding:'utf8',maxBuffer:30_000_000}));assert.deepEqual(ruby,parity.map(p=>p.midi));
+const invalid=[];
+for(const mutate of [d=>d.operator='any_of',d=>d.members[0].criterion='Attention is curiosity',d=>d.members[0].outcome_commitment='asserted',d=>d.members[1].speech_act='question',d=>d.members.push(...Array(7).fill(d.members[0]))]){
+ const bad=structuredClone(d);mutate(bad);const {content_id,content_digest,...body}=bad,digest=await canonicalDigest(body);bad.content_digest=digest;bad.content_id=`EZCOGAND:${digest.slice(0,24)}`;invalid.push(bad);
+}
+const rejected=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_cognitive_conjunction','-e',"puts JSON.generate(JSON.parse(STDIN.read).map{|d|begin;EraZeroCognitiveConjunction.validate!(d,allow_draft:true);false;rescue ArgumentError;true;end})"],{input:JSON.stringify(invalid),encoding:'utf8'}));assert(rejected.every(Boolean));
+assert.throws(()=>execFileSync('ruby',['-Itools/lib','-rera_zero_cognitive_conjunction','-e','EraZeroCognitiveConjunction.validate!(JSON.parse(STDIN.read))'],{input:JSON.stringify(d),stdio:['pipe','pipe','pipe']}));
+console.log(`PASS ${parity.length} conjunctions match independent Ruby validation and regeneration from member events, with default admission and corrupt contracts rejected.`);

@@ -20,7 +20,7 @@ module EraZeroUnderstandingAcquisition
     raise ArgumentError,'Invalid acquisition anchor' unless anchor.is_a?(Integer) && anchor.between?(36,91) && %w[open close].include?(side)
     {'kind'=>'grammar_marker','grammar_profile'=>'EZUNDERSTANDING-ACQUISITION-MUSIC-1','marker'=>"understanding_acquisition_#{side}",'register'=>'middle','base_midi'=>anchor,'family_opening_absolute_midi'=>[],'address_absolute_midi'=>[0,side=='open' ? -36 : 36,0,0].map{|n|anchor+n},'note_duration_beats'=>0.25,'boundary_after_beats'=>0.5}
   end
-  def midi(d,allow_draft:false,anchor_midi:60)
+  def events(d,allow_draft:false,anchor_midi:60)
     validate!(d,allow_draft:allow_draft);anchor=anchor_midi;formal={'performance'=>{'anchor_midi'=>anchor}}
     atoms,_compounds=EraZeroRenderer.load_authority
     transition=EraZeroRenderer.atom_event(atoms.fetch('ORI:110'),occurrence_id:'acquisition',register:'middle',anchor_midi:anchor,runtime_code:d['transition_runtime']['code'])
@@ -29,6 +29,10 @@ module EraZeroUnderstandingAcquisition
       key=scope=='negation' ? 'negation' : "time_#{scope}"
       events=[EraZeroPresentation.grammar_marker(formal,'acquisition',key+'_open')]+events+[EraZeroPresentation.grammar_marker(formal,'acquisition',key+'_close')]
     end
-    EraZeroPresentation.midi_from_scheduled_events(events,anchor,d['speech_act']=='question' ? [0,2] : [0,0])
+    events
   end
+  def midi(d,allow_draft:false,anchor_midi:60)
+    EraZeroPresentation.midi_from_scheduled_events(events(d,allow_draft:allow_draft,anchor_midi:anchor_midi),anchor_midi,d['speech_act']=='question' ? [0,2] : [0,0])
+  end
+
 end

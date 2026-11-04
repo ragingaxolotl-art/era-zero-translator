@@ -30,8 +30,8 @@ member's scope, participants and runtime. Forty-eight authored pair/runtime
 combinations pass independent member-meaning recovery. See
 `reviews/cognitive_conjunction.md`; the UI now supports per-clause reading and
 pronoun choices with complete playback/MIDI/meaning exports and stale-output
-protection. Ruby conjunction regeneration, live layout/listening and broader
-coordination remain open. The 187-check consolidated report below
+protection. Independent Ruby validation/regeneration now matches 50 conjunction cases. Live
+layout/listening and broader coordination remain open. The 187-check consolidated report below
 predates this addition; targeted evidence does not supersede its revision scope.
 
 The contextual inquiry prerequisite for curiosity now preserves a topic without
