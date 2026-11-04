@@ -1,3 +1,4 @@
+import {execFileSync} from 'node:child_process';
 import assert from 'node:assert/strict';
 import {validateQuantifiedBindings as validate} from '../pages/quantified_binding.mjs';
 const fixture=()=>({nodes:[
@@ -28,5 +29,20 @@ const corruptions=[
  f=>{f.nodes.push({node_id:'outside',kind:'clause'});f.edges.push({type:'centers',from:'p',to:'outside'});},
  f=>f.edges.pop(),f=>f.edges.push({type:'corefers_with',from:'x',to:'class'})
 ];
-for(const corrupt of corruptions){const f=fixture();corrupt(f);assert.throws(()=>validate(f));}
+const cases=[fixture(),compound,nested,escaped];
+for(const corrupt of corruptions){const f=fixture();corrupt(f);assert.throws(()=>validate(f));cases.push(f);}
 console.log('PASS draft counted-predicate binding: nominal restriction, scoped shared identity, compound argument, nested binding and 14 capture/escape/malformed rejections. Rendering remains unimplemented.');
+
+// Node IDs and serialization order cannot carry hidden binding meaning.
+const renamed=cases.map(ir=>{
+ const copy=structuredClone(ir),names=new Map(copy.nodes.map((n,i)=>[n.node_id,`renamed_${i}`]));
+ for(const node of copy.nodes){node.node_id=names.get(node.node_id);if(node.binder_id&&names.has(node.binder_id))node.binder_id=names.get(node.binder_id);for(const b of node.compound_bindings||[])b.argument_id=names.get(b.argument_id)||b.argument_id;}
+ for(const edge of copy.edges){edge.from=names.get(edge.from);edge.to=names.get(edge.to);}
+ copy.nodes.reverse();copy.edges.reverse();return copy;
+});
+const outcome=ir=>{try{return {valid:true,result:validate(ir)}}catch{return {valid:false}}};
+assert.deepEqual(renamed.map(outcome),cases.map(outcome));cases.push(...renamed);
+const ruby=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_quantified_binding','-rjson','-e',"puts JSON.generate(JSON.parse(STDIN.read).map{|ir|begin;{valid:true,result:EraZeroQuantifiedBinding.validate!(ir)};rescue ArgumentError;{valid:false};end})"],{cwd:new URL('..',import.meta.url),input:JSON.stringify(cases),encoding:'utf8'}));
+const js=cases.map(ir=>{try{return {valid:true,result:validate(ir)}}catch{return {valid:false}}});
+assert.deepEqual(ruby,js);
+console.log(`PASS Ruby/JavaScript binding-validation parity for ${cases.length} valid and malformed graphs.`);

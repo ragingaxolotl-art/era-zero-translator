@@ -72,3 +72,12 @@ Next work: equivalent Ruby binding validation; typed canonical-IR integration;
 versioned musical frames and independent inverse; English composition using the
 finite-model contrast obligations above. The original counted negative phrase
 remains uncomposed at this checkpoint.
+
+Ruby binding validation is now implemented in era_zero_quantified_binding.rb.
+A shared graph corpus checks identical acceptance/rejection and result metadata
+in both implementations. The corpus includes valid atomic/compound/nested binding
+and malformed restriction, count, reference, cycle and escape structures. Each
+case is additionally renamed and serialized in reverse node/edge order, proving
+that incidental IDs and ordering do not change the binding verdict. All 34
+cross-language cases pass. These are structural binding checks, not full semantic
+IR or music validation; no unsupported English phrase is marked translated.
