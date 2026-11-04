@@ -22,7 +22,7 @@ for(const input of ['The box is inside this room.','I am outside that room.','Th
 const ruby=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_presentation','-rbase64','-e',"puts JSON.generate(JSON.parse(STDIN.read).map{|ir|f=EraZeroRenderer.render(ir);{formal:f,midi:Base64.strict_encode64(EraZeroPresentation.midi(f))}})"],{cwd:root,input:JSON.stringify(results.map(r=>r.semantic_ir)),encoding:'utf8',maxBuffer:30_000_000}));
 for(const [i,r] of results.entries()){assert.deepEqual(r.formal,ruby[i].formal);assert.equal(Buffer.from(midiFromFormal(r.formal)).toString('base64'),ruby[i].midi);}
 assert.equal(new Set(ruby.map(r=>r.midi)).size,results.length);
-for(const input of ['Nora may enter the archive.','Nora is inside the archive with Eli.'])assert.equal(parseNamedSentence(input),null);
+for(const input of ['Nora is inside the archive with Eli.'])assert.equal(parseNamedSentence(input),null);
 const reversed=await composeNamedSentence('The archive is inside Nora.',{authority});
 const forward=decodeSpatialRelationMidi(midiFromFormal(results[0].formal),authority.atoms);
 const backward=decodeSpatialRelationMidi(midiFromFormal(reversed.formal),authority.atoms);

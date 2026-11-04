@@ -2,7 +2,7 @@
 
 Fresh phrase coverage audit authored during implementation; not a blind or representative English benchmark.
 
-Full translator completion: **not established**. 24 of 40 cases pass their declared semantic checks; 6 have no complete composition; 10 require an explicit interpretation. These counts do not estimate coverage of English generally.
+Full translator completion: **not established**. 24 of 40 cases pass their declared semantic checks; 5 have no complete composition; 11 require an explicit interpretation. These counts do not estimate coverage of English generally.
 
 | Area | Checked compositions | Cases |
 |---|---:|---:|
@@ -43,5 +43,5 @@ Full translator completion: **not established**. 24 of 40 cases pass their decla
 - **Eli swims across the river.** — Propulsion and medium interaction are not passive transport (requires_interpretation)
 - **Exactly three lamps are active.** — Quantify three bearers, not repetitions of one assertion (not_composed)
 - **This lamp is brighter than that lamp.** — Bind comparison direction, dimension, and both referents (requires_interpretation)
-- **Nora may enter the archive.** — Disambiguate permission versus possibility (not_composed)
+- **Nora may enter the archive.** — Disambiguate permission versus possibility (requires_interpretation)
 - **Nora cares for Eli or Orin is conscious.** — Resolve inclusive versus exclusive interpretation (requires_interpretation)

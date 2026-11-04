@@ -1,8 +1,8 @@
 # Spatial entry before “may enter”
 
 Status: semantic audit and implementation record. Spatial states and completed
-physical entry are implemented in the sections below; ongoing entry and “may”
-interpretation remain unfinished. Initial audit: revision 5a5a427 (324 roots,
+physical entry and modal-entry interpretation are implemented below; ongoing
+entry remains unfinished. Initial audit: revision 5a5a427 (324 roots,
 58 compounds). Preserve root definitions, conventions and lexical/runtime 0/1/2.
 
 ## Evidence and rejected substitutions
@@ -156,3 +156,29 @@ Ongoing entering, ordinary simple-present entry viewpoint and “may enter” st
 need implementation. Explicit contextual geometry and arbitrary region expressions
 are not supplied by this addition. The inventory is 324 roots, 62 compounds and
 470 canonical senses; those counts do not establish translator completion.
+
+## Modal entry and negative scope
+
+Ordinary “may enter” now requires a physical-entry interpretation with a further
+choice of possible or permitted. “May not enter” offers possible non-entry,
+prohibited entry and permission not to enter. These have distinct scope trees:
+possible(not entry), not permitted(entry), and permitted(not entry). No reading
+is silently chosen and none asserts occurrence, physical ability or a permitting
+authority absent from the input. A current permission does not become a confidence
+score. An explicit authority, date, perfect construction or other unsupported
+material is rejected rather than dropped.
+
+The explicit permitted-to / not-permitted-to / permitted-not-to constructions
+reuse the same modes and scopes. Their ordinary entry sense still requires the
+physical choice; explicit “physically enter” supplies that sense. May questions
+retain question speech act. Outer possible/not-the-case scopes retain nesting.
+The parser-only deferred choice is replaced at its exact scope position before IR
+construction and never appears in the semantic IR or musical output.
+
+Tests recover the modes and negation order from MIDI, compare Ruby outputs, and
+use independently specified permission and epistemic alternatives to distinguish
+the readings. Direct, pronoun and multi-clause UI choices share the same options;
+changing the choice while loading invalidates stale results. These are bounded
+implementation and semantic-contrast checks, not held-out coverage or listening
+validation. The original diagnostic phrase now requires interpretation; it is
+not counted as an automatically resolved sentence.

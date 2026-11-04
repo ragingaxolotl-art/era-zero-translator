@@ -1,3 +1,4 @@
+import {entryModalScopes,entryModalChoices} from './entry_modality.mjs';
 import {PHYSICAL_ENTRY} from './physical_entry.mjs';
 import {SPATIAL_RELATIONS} from './spatial_relations.mjs';
 import {expandNegativeContractions} from './contractions.mjs';
@@ -111,6 +112,11 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     return inner?{...inner,explicitInterpretation:inner.explicitInterpretation||normalized.trim()}:null;
   }
   if(speechActs){
+    const mayQuestion=String(input).trim().match(new RegExp(`^[Mm]ay ${participant} (not )?(physically )?enter ${participant}[?]$`));
+    if(mayQuestion){
+      const inner=parseNamedSentence(`${mayQuestion[1]} may ${mayQuestion[2]||''}${mayQuestion[3]||''}enter ${mayQuestion[4]}.`,depth+1,false);
+      return inner?{...inner,speechAct:'question',construction:`question_${inner.construction}`,explicitInterpretation:String(input).trim()}:null;
+    }
     const entryCommand=String(input).trim().match(new RegExp(`^([Dd]o not )?[Ee]nter ${participant}[.!]?$`));
     if(entryCommand){
       const inner=parseNamedSentence(`you ${entryCommand[1]?'did not enter':'entered'} ${entryCommand[2]}.`,depth+1,false);
@@ -205,6 +211,20 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     const scopes=[...(inner.scopes||[]),{operator:'modality',mode:modal[2]}];
     if(modal[1])scopes.push({operator:'negation'});
     return {...inner,scopes,construction:`scoped_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
+  const mayEntry=String(input).trim().match(new RegExp(`^${participant} may (not )?(physically )?enter ${participant}[.]?$`));
+  if(mayEntry){
+    const inner=parseNamedSentence(`${mayEntry[1]} physically entered ${mayEntry[4]}.`,depth+1,false);
+    if(!inner)return null;
+    return {...inner,speechTime:undefined,requiredInterpretation:'entry_modality',entryModalNegative:!!mayEntry[2],scopes:[{entryModal:true,negative:!!mayEntry[2]}],construction:'modal_physical_entry',explicitInterpretation:String(input).trim(),semanticNote:inner.semanticNote+' May requires a permission or possibility interpretation; neither asserts occurrence or physical ability.'};
+  }
+  const permissionEntry=String(input).trim().match(new RegExp(`^${participant} (?:is|am|are) (not )?permitted (not )?to (not )?(physically )?enter ${participant}[.]?$`));
+  if(permissionEntry){
+    if([permissionEntry[2],permissionEntry[3],permissionEntry[4]].filter(Boolean).length>1)return null;
+    const inner=parseNamedSentence(`${permissionEntry[1]} ${permissionEntry[5]||''}entered ${permissionEntry[6]}.`,depth+1,false);
+    if(!inner)return null;
+    const scopes=[...(permissionEntry[3]||permissionEntry[4]?[{operator:'negation'}]:[]),{operator:'modality',mode:'permitted'},...(permissionEntry[2]?[{operator:'negation'}]:[])];
+    return {...inner,speechTime:undefined,scopes,construction:'permitted_physical_entry',explicitInterpretation:String(input).trim(),semanticNote:inner.semanticNote+' The permission scopes this event type; occurrence, ability and a named permitting authority are not asserted.'};
   }
   // Calendar-day statements retain their interval; tense is not runtime state.
   const calendar=String(input).trim().match(/^(.*?) (yesterday|today|tomorrow)[.]?$/);
@@ -647,8 +667,13 @@ export async function composeNamedSentence(input,template,{interpretation,standa
       (parsed.speechAct==='command'?' This is a command about that event type, not an assertion that carrying or arrival has occurred.':'');
     }
   }else if(destination!==undefined)throw new Error('This sentence does not require a destination reading choice.');
-  if(interpretation!==undefined&&interpretation!==parsed.requiredInterpretation)throw new Error('This interpretation is not available for this sentence.');
-  if(parsed.requiredInterpretation&&interpretation!==parsed.requiredInterpretation){
+  if(parsed.requiredInterpretation==='entry_modality'){
+    const selected=entryModalScopes(interpretation,parsed.entryModalNegative);
+    parsed.scopes=parsed.scopes.flatMap(scope=>scope.entryModal?selected:[scope]);
+    parsed.semanticNote+=' Selected reading: '+entryModalChoices(parsed.entryModalNegative).find(([key])=>key===interpretation)[1]+'.';
+  }
+  if(parsed.requiredInterpretation!=='entry_modality'&&interpretation!==undefined&&interpretation!==parsed.requiredInterpretation)throw new Error('This interpretation is not available for this sentence.');
+  if(parsed.requiredInterpretation&&parsed.requiredInterpretation!=='entry_modality'&&interpretation!==parsed.requiredInterpretation){
     const thermal=['thermal_standard','mass_standard','luminance_standard','texture_standard'].includes(parsed.requiredInterpretation);
     const comparative=parsed.requiredInterpretation==='luminance_comparison';
     const physicalEntry=parsed.requiredInterpretation==='physical_entry';

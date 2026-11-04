@@ -1510,3 +1510,23 @@ The new test includes 30 sentence cases, Ruby/MIDI parity, independent event-pha
 recovery, inconsistent-binding and corrupted-MIDI rejection, semantic countermodels,
 and direct, pronoun and multi-clause UI interpretation handlers. This is targeted
 implementation evidence, not a full-translator or held-out listening result.
+
+### Permission and possibility for entry
+
+“Nora may enter the archive” now requests the intended physical-entry reading:
+possible or permitted. Negative may distinguishes possible non-entry, prohibited
+entry and permitted non-entry. Explicit permission phrasing, questions, pronoun
+bindings and multiple clauses preserve these choices and their musical scope.
+No roots or compounds changed. Missing choice never defaults to permission or
+possibility; changing an asynchronous UI choice discards the pending result.
+
+The authored diagnostic is now 24 checked, 11 requiring interpretation and 5
+uncomposed. This is not a representative coverage estimate. Ongoing entry,
+simple-present viewpoints, dated/perfect modal entry and explicitly named modal
+authorities remain unfinished, alongside the original completion requirements.
+
+Validation: all 11 targeted suites in reports/entry_modality_validation.json pass.
+The new suite covers 57 cases with exact Ruby/MIDI parity, independent scope
+recovery, permission/possibility countermodels, explicit-phrasing equivalence and
+direct/group/pronoun UI choice handling. The existing root and compound inventories
+were not modified. These checks do not establish held-out or listening completion.

@@ -36,7 +36,7 @@ const ruby=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_presentatio
 for(const [i,r] of results.entries()){assert.deepEqual(r.formal,ruby[i].formal);assert.equal(Buffer.from(midiFromFormal(r.formal)).toString('base64'),ruby[i].midi);}
 assert.equal(new Set(ruby.slice(0,27).map(r=>r.midi)).size,27);
 const inside=await composeNamedSentence('Nora is inside the archive.',{authority});assert.throws(()=>decodePhysicalEntryMidi(midiFromFormal(inside.formal),authority.atoms));
-for(const text of ['Nora is entering the archive.','Nora may enter the archive.','Nora entered the archive slowly.'])assert.equal(parseNamedSentence(text),null);
+for(const text of ['Nora is entering the archive.','Nora entered the archive slowly.'])assert.equal(parseNamedSentence(text),null);
 for(const text of ['Nora entered the competition.','Enter the data.'])await assert.rejects(()=>composeNamedSentence(text,{authority}),e=>e.code==='physical_entry_required');
 // Inconsistent phase bindings must fail both renderers, even with valid references.
 const invalid=[];

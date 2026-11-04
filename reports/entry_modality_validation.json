@@ -1,0 +1,61 @@
+{
+  "scope": "Modal entry, negative scope and affected regressions; not broad English or listening completion.",
+  "passed": true,
+  "results": [
+    {
+      "test": "tests/entry_modality_test.mjs",
+      "passed": true,
+      "output": "PASS 57 modal entry cases: Ruby/MIDI parity, independently recovered modal/negative scopes, semantic countermodels and direct/group/pronoun UI choices.\n"
+    },
+    {
+      "test": "tests/physical_entry_test.mjs",
+      "passed": true,
+      "output": "PASS 30 entry cases with Ruby/MIDI parity, independent phase/identity/runtime/scope recovery, binding rejection, event countermodels and explicit UI sense choice.\nPASS entry sense selection in actual multi-clause and pronoun UI handlers.\n"
+    },
+    {
+      "test": "tests/spatial_relations_test.mjs",
+      "passed": true,
+      "output": "PASS 39 spatial sentences: independent MIDI roles/relation/runtime/scope recovery, Ruby parity and boundary countermodel.\n"
+    },
+    {
+      "test": "tests/modality_performance_test.mjs",
+      "passed": true,
+      "output": "Modality: seven distinct scoped modes preserve runtime and match Ruby/browser MIDI/SVG; unsounded confidence is rejected.\n"
+    },
+    {
+      "test": "tests/confidence_performance_test.mjs",
+      "passed": true,
+      "output": "Confidence: five exact decimal values recover from note frames; Ruby/browser output agrees; noncanonical or out-of-range strengths fail.\n"
+    },
+    {
+      "test": "tests/pronoun_interpretation_choices_test.mjs",
+      "passed": true,
+      "output": "PASS 24 pronoun-plus-interpretation cases with exact named and Ruby/MIDI parity; option/binding snapshots, dummy-it exclusion and actual UI combined-choice/stale-result checks.\n"
+    },
+    {
+      "test": "tests/clause_interpretation_test.mjs",
+      "passed": true,
+      "output": "Clause interpretations: 15 sequence/conjunction/conditional/runtime cases preserve per-clause viewpoints, destinations, mass/temperature standards and future readings with Ruby/browser formal/MIDI parity. Complete choices, local it, caller snapshots and stale UI results/errors are checked.\nPASS 9 contextual multi-clause runtime combinations, Ruby/MIDI parity and actual per-clause no-number UI.\nPASS mixed numeric/contextual disjunctions and stale standard-mode UI protection.\nPASS mixed texture/luminance UI has no spurious numerical texture controls and rejects stale input/detached results.\n"
+    },
+    {
+      "test": "tests/temporal_proposition_scope_test.mjs",
+      "passed": true,
+      "output": "PASS 44 temporal proposition cases with independent scope recovery and Ruby formal/MIDI parity; reversed temporal scope is musically distinct.\nPASS finite temporal-modal countermodel distinguishes the two decoded scope orders.\n"
+    },
+    {
+      "test": "tests/negative_contractions_test.mjs",
+      "passed": true,
+      "output": "PASS 33 contraction/state paraphrases and mixed conjunction preserve full formal/MIDI meaning; unsupported meanings and quoted labels are not rewritten.\n"
+    },
+    {
+      "test": "tools/audit_ordinary_phrase_coverage.mjs",
+      "passed": true,
+      "output": "{\"case_count\":40,\"counts\":{\"verified_for_declared_checks\":24,\"requires_interpretation\":11,\"not_composed\":5},\"completion_proven\":false}\n"
+    },
+    {
+      "test": "tools/validate_pages_release.mjs",
+      "passed": true,
+      "output": "GitHub Pages audit: PASS\nChecks passed: 11171; failed: 0; canonical variants: 5370\n"
+    }
+  ]
+}
