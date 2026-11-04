@@ -17,16 +17,18 @@ export async function midiFromCognitiveConjunction(document,authority,records,{a
   else bytes=await ({'EZUNDERSTANDING-CONTENT-1':midiFromUnderstanding,'EZUNDERSTANDING-ACQUISITION-1':midiFromUnderstandingAcquisition,'EZROUTE-LEARNING-1':midiFromRouteLearning}[member.profile])(member,authority,options);
   const {notes,division}=notesFromMidi(bytes);if(i)events.push(marker('coord_member'));events.push(...eventsFromNotes(notes.slice(0,-2),division));
  }
- events.push(marker('coord_all_of_close'));return midiFromScheduledEvents(events,anchor,[0,0]);
+ events.push(marker('coord_all_of_close'));if(d.scopes){events.unshift(marker('negation_open'));events.push(marker('negation_close'));}return midiFromScheduledEvents(events,anchor,[0,0]);
 }
 export async function decodeCognitiveConjunctionMidi(bytes,atoms,records,{allowDraft=false}={}){
  if(!allowDraft)throw new Error('Cognitive conjunction requires draft opt-in.');
  const foundations=[...records,await understandingFoundation(),...await routeLearningFoundations()];await validateFoundations(foundations,{allowDraft:true});
  const dictionary=[...atoms,...foundations.map(r=>({canonical_id:r.foundation_id,harmonic_signature_semitones:[0,3,7],note_path_semitones:foundationPath(r.sound_code)}))];
  const observed=decodeStrictMusicMidi(bytes,dictionary,{allowDraftAcquisition:true,allowDraftContextualContent:true,allowDraftContextualInquiry:true,allowDraftCuriosity:true}),tokens=observed.tokens;
- if(observed.speech_act!=='assertion'||tokens[0]?.marker!=='coord_all_of_open'||tokens[0].closing_token!==tokens.length-1)throw new Error('Expected a complete declarative conjunction.');
+ let body=tokens,scopes;
+ if(tokens[0]?.marker==='negation_open'&&tokens[0].closing_token===tokens.length-1){body=tokens.slice(1,-1);scopes=[{operator:'negation'}];}
+ if(observed.speech_act!=='assertion'||body[0]?.marker!=='coord_all_of_open'||body[0].closing_token!==tokens.indexOf(body.at(-1)))throw new Error('Expected a complete declarative conjunction.');
  const groups=[[]];
- for(const token of tokens.slice(1,-1)){if(token.marker==='coord_member'&&token.enclosing_scopes.length===1)groups.push([]);else groups.at(-1).push(token);}
+ for(const token of body.slice(1,-1)){if(token.marker==='coord_member'&&token.enclosing_scopes.length===body[0].enclosing_scopes.length)groups.push([]);else groups.at(-1).push(token);}
  if(groups.length<2||groups.length>8||groups.some(g=>!g.length))throw new Error('Invalid conjunction member count.');
  const {notes,division}=notesFromMidi(bytes),{decodeSupportedMeaningWithDrafts}=await import('./semantic_music_dispatch.mjs'),members=[];
  const profiles=['EZCURIOSITY-INVERSE-1','EZUNDERSTANDING-MUSIC-INVERSE-1','EZUNDERSTANDING-ACQUISITION-INVERSE-1','EZROUTE-LEARNING-INVERSE-1'];
@@ -36,5 +38,5 @@ export async function decodeCognitiveConjunctionMidi(bytes,atoms,records,{allowD
   const meaning=await decodeSupportedMeaningWithDrafts(reconstructed,atoms,records,{allowDraft:true,allowConjunction:false});
   if(!profiles.includes(meaning.profile))throw new Error('Unsupported cognitive member.');members.push(meaning);
  }
- return {profile:'EZCOGNITIVE-CONJUNCTION-INVERSE-1',status:'draft',operator:'all_of',speech_act:'assertion',members,limitations:['No temporal order or causal relationship is asserted between members.','Shared reference sounds do not establish external identity; each member retains its own contextual references.']};
+ return {profile:'EZCOGNITIVE-CONJUNCTION-INVERSE-1',status:'draft',operator:'all_of',speech_act:'assertion',members,...(scopes?{scopes}:{}),limitations:['No temporal order or causal relationship is asserted between members.','Shared reference sounds do not establish external identity; each member retains its own contextual references.']};
 }

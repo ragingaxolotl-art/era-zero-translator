@@ -13,7 +13,7 @@ supported complete clause. Quoted name labels containing “and” stay intact.
 Ambiguous member readings and personal pronouns require the existing explicit
 choices; errors identify the clause needing them. A trailing runtime belongs to
 its own clause. Omitted subjects, object coordination, question conjunctions,
-disjunction, outer negation and arbitrary canonical/draft mixtures are not
+disjunction and arbitrary canonical/draft mixtures are not
 silently inferred. This is reusable composition within four implemented drafts,
 not a claim of unrestricted English coordination.
 
@@ -42,5 +42,27 @@ messages. Ruby composes directly from validated member events, independently of
 the JavaScript MIDI-segment construction. Rehashed operator/meaning changes,
 question members and oversized groups reject. Existing standalone member MIDI
 parity remains passing after exposing reusable Ruby event functions. Live
-layout/listening, nested/outer scope, broader member types, held-out coverage and
+layout/listening, broader nested scope, broader member types, held-out coverage and
 physical recording validation remain open.
+
+
+## Explicit whole-message negation
+
+“It is not true that A and B” now places one negation outside the all-of group.
+Member negation remains inside its member, so not-both differs from neither.
+The optional exact `scopes: [{operator: 'negation'}]` field is present only for
+this extension; old unscoped document identities and performances are unchanged.
+Existing negation frames surround the complete conjunction. The inverse identifies
+member boundaries at the conjunction's actual depth and retains outer scope.
+
+Nine contrast/runtime cases match independent Ruby regeneration. Independent
+Boolean assignments distinguish not-both, neither and negation of a conjunction
+with one negative member. These assignments test scope semantics and never use
+runtime trits as truth. The interface explains the outer negation and exports the
+complete scoped document. Repeated or unsupported outer-scope lists reject.
+This does not add arbitrary nested scopes, quantifier negation, or pragmatic
+interpretation of “not A and B” without explicit whole-message wording.
+
+One authored clean synthetic WAV also recovers outer and inner negation together
+with comprehension-acquisition and past speech content from WAV alone. This is
+not physical recording or broad channel evidence.

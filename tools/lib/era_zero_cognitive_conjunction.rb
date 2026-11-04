@@ -7,8 +7,9 @@ module EraZeroCognitiveConjunction
   module_function
   def validate!(d,allow_draft:false)
     raise ArgumentError,'Cognitive conjunction requires draft opt-in' unless allow_draft
-    EraZeroContextualContent.exact!(d,%w[profile status operator speech_act members content_id content_digest])
+    EraZeroContextualContent.exact!(d,%w[profile status operator speech_act members content_id content_digest]+(d.key?('scopes') ? ['scopes'] : []))
     raise ArgumentError,'Invalid conjunction contract' unless d['profile']=='EZCOGNITIVE-CONJUNCTION-1' && d['status']=='draft' && d['operator']=='all_of' && d['speech_act']=='assertion' && d['members'].is_a?(Array) && d['members'].length.between?(2,8)
+    raise ArgumentError,'Unsupported outer scope' if d.key?('scopes') && d['scopes']!=[{'operator'=>'negation'}]
     d['members'].each do |member|
       raise ArgumentError,'Unsupported declarative member' unless member.is_a?(Hash) && MEMBERS.key?(member['profile']) && member['speech_act']=='assertion'
       MEMBERS.fetch(member['profile']).validate!(member,allow_draft:true)
@@ -28,6 +29,7 @@ module EraZeroCognitiveConjunction
       events.concat(implementation.events(*args,allow_draft:true,anchor_midi:anchor_midi))
     end
     events << marker.call('coord_all_of_close')
+    events=[marker.call('negation_open')]+events+[marker.call('negation_close')] if d.key?('scopes')
     EraZeroPresentation.midi_from_scheduled_events(events,anchor_midi,[0,0])
   end
 end

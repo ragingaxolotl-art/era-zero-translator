@@ -297,7 +297,7 @@ function showCognitiveConjunctionPreview(input){
   $('results').classList.remove('hidden');$('candidateList').innerHTML='';
   $('decisionSummary').textContent='Check the meaning of each joined clause.';
   const card=document.createElement('article'),description=document.createElement('p'),button=document.createElement('button');card.className='candidate';
-  description.textContent='Each clause keeps its own participants, timing, negation and runtime. Joining them with “and” does not imply a sequence or cause.';
+  description.textContent=(plan.outerNegation?'The whole conjunction is negated: it is not the case that all clauses hold. This does not say that every clause is false. ':'')+'Each clause keeps its own participants, timing, negation and runtime. Joining them with “and” does not imply a sequence or cause.';
   let outputs=[],revision=0;const clauses=[];card.append(description);
   const readChoice=()=>clauses.every(c=>!c.choice||!!c.choice.value);
   const invalidate=()=>{revision++;button.hidden=false;button.disabled=!readChoice();for(const output of outputs)output.hidden=true;outputs=[];};
@@ -328,7 +328,7 @@ function showCognitiveConjunctionPreview(input){
       const meaning=await composeCognitiveConjunction(input,{allowDraft:true,clauseOptions:bindings});if(!unchanged())return;
       const response=await fetch('./data/foundation_preview_candidates.json');if(!unchanged())return;if(!response.ok)throw new Error('Draft vocabulary could not be loaded.');const registry=await response.json();if(!unchanged())return;
       const bytes=await midiFromCognitiveConjunction(meaning,state.data,registry.records,{allowDraft:true});if(!unchanged())return;
-      description.textContent='Draft translation ready. The complete joined message preserves each clause’s chosen meaning, participants, timing, negation and runtime.';
+      description.textContent=(plan.outerNegation?'Whole-message negation is preserved outside the conjunction. ':'')+'Draft translation ready. The complete joined message preserves each clause’s chosen meaning, participants, timing, negation and runtime.';
       const play=document.createElement('button'),music=document.createElement('button'),save=document.createElement('button');
       play.textContent='Play draft music';music.textContent='Download MIDI';save.textContent='Save draft meaning';
       play.addEventListener('click',async()=>{if(!unchanged())return;try{const {context,bus}=await readyAudio();if(!unchanged())return;const {notes,division}=notesFromMidi(bytes),start=context.currentTime+.1;for(const n of notes)playScheduledTone(context,bus,n.midi,start+n.start_tick*.5/division,{duration:(n.end_tick-n.start_tick)*.5/division});}catch(error){if(unchanged())showError(error)}});

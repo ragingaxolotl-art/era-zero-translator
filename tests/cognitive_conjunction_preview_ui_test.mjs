@@ -30,3 +30,6 @@ context.composeCognitiveConjunction=composeCognitiveConjunction;
 card=show('Orin came to understand Nora and Eli is curious about the map.');button=card.children.at(-1);assert.equal(button.disabled,true);const selected=card.children[1].children[1].children[0];selected.value='reasons';selected.change();await button.click();card.children.at(-1).click();assert.equal(JSON.parse(await downloads.at(-1).blob.text()).members[0].result_state.content.content_kind,'reasons');
 assert(app.includes('if(cognitiveConjunctionPlan(input)){showCognitiveConjunctionPreview(input);return}'));
 console.log('PASS actual conjunction UI: per-clause reading/pronoun choices, complete composition/playback/MIDI/meaning exports, acquisition result choices, independent runtimes and stale-source/binding safeguards. Live layout/listening unverified.');
+
+card=show('It is not true that Orin is curious about the map and Eli understands Nora’s reasons.');assert(card.children[0].textContent.includes('whole conjunction is negated'));await card.children.at(-1).click();card.children.at(-1).click();assert.equal(JSON.parse(await downloads.at(-1).blob.text()).scopes[0].operator,'negation');assert(card.children[0].textContent.includes('Whole-message negation'));
+console.log('PASS explicit outer-negation UI explanation and complete scoped meaning export.');
