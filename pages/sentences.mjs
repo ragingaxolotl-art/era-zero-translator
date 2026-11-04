@@ -43,6 +43,7 @@ const DESCRIPTIONS = [
   {pattern:'(?:damaged|impaired)', predicate:'WRN:001', key:'present_internal_impairment', wording:'is impaired', semanticNote:'Damaged or impaired describes a present intrinsic adverse condition relative to the bearer’s accepted state. It does not identify a damaging agent, mechanism, or ongoing damaging event.'},
   {pattern:'restored', predicate:'REP:001', key:'present_internal_restored_state', wording:'is restored', semanticNote:'Restored describes the bearer’s applicable internal restoration condition as presently realized. It does not identify a restorer or assert that restoration is still in progress.'},
   {pattern:'able to pay attention', predicate:'MIN:201', key:'available_attentional_capacity', wording:'is able to pay attention'},
+  {pattern:'physically energized', predicate:'MAT:001', key:'energized_material_substrate', wording:'is physically energized', semanticNote:'The bearer’s material substrate is presently energized in the contextual physical sense. This does not assert electrical supply, switching, successful operation, light emission, or consciousness.'},
   {pattern:'conscious', predicate:'LIF:011', key:'conscious_other', wording:'is conscious'},
   {pattern:'dormant', predicate:'LIF:012', key:'dormant_other', wording:'is dormant'}
 ];
