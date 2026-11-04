@@ -16,7 +16,7 @@ module EraZeroFoundations
     records.each do |r|
       valid=r.is_a?(Hash)&&r['profile']=='EZFOUND-1'&&r['definition_version']=='1.0.0'&&r['family_affinity']=='MIN'&&(['approved']+(allow_draft ? ['candidate'] : [])).include?(r['status'])&&r['definition'].is_a?(String)&&r['definition'].length>=30&&r['excludes'].is_a?(Array)&&!r['excludes'].empty?&&r['excludes'].all?{|v|v.is_a?(String)&&!v.strip.empty?}&&r['roles'].is_a?(Hash)&&!r['roles'].empty?
       raise ArgumentError,'Invalid or unapproved foundation.' unless valid
-      r['roles'].each{|role,types|raise ArgumentError,'Invalid foundation argument types.' unless %w[experiencer target comparison_standard content].include?(role)&&types.is_a?(Array)&&!types.empty?&&types.uniq==types&&(types-%w[entity kind proposition question]).empty?}
+      r['roles'].each{|role,types|raise ArgumentError,'Invalid foundation argument types.' unless %w[experiencer target comparison_standard content].include?(role)&&types.is_a?(Array)&&!types.empty?&&types.uniq==types&&(types-%w[entity kind proposition question contextual_content]).empty?}
       path(r['sound_code']);digest=EraZeroValidation.fingerprint(payload(r))
       raise ArgumentError,'Foundation identity collision or mismatch.' unless r['content_digest']==digest&&r['foundation_id']=="FND:#{digest[0,24]}"&&!ids.include?(r['foundation_id'])&&!codes.include?(r['sound_code'])
       ids<<r['foundation_id'];codes<<r['sound_code']

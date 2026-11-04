@@ -28,8 +28,19 @@ Validation includes 27 cross-products of content reading, runtime and
 assertion/negated past/question forms, plus explicit selectors, contraction
 equivalence, default draft rejection and rehashed semantic corruption.
 
-Next: admit a reviewed comprehension predicate contract in the candidate musical
-registry, bind the existing content selectors and experiencer through the musical
-roles, add Ruby parity and independent inverse, then test the entire sentence
-through WAV-only recovery. No new 27-root family is justified by this draft.
-The current comprehension documents are not routed as completed translations.
+The draft musical predicate now uses foundation code 3, following existing
+desire, preference and polar-answer knowledge codes. Its definition digest includes
+the three contextual adequacy criteria, and its content argument is explicitly
+typed contextual_content. Existing roots and compound definitions are unchanged.
+Existing role and scope frames bind the experiencer and selected content.
+
+Twenty-seven MIDI-only inverse cases preserve reading, criterion, roles, scopes,
+runtime and speech act. Three clean synthetic WAV cases recover those meanings
+without source English or IR. The new lexical predicate event matches Ruby across
+runtime 0/1/2; full Ruby sentence rendering remains pending. Existing foundation
+codec checks retain 972 old atomic performances.
+
+Next: full Ruby document/sentence parity, UI interpretation choices, wider embedded
+and temporal content, simulated channel contrasts and physical microphone tests. No new 27-root family is justified by this draft.
+The current comprehension documents have an opt-in standalone musical path and
+WAV inverse; they are not yet routed as completed main-UI translations.
