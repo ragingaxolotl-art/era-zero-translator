@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {execFileSync} from 'node:child_process';
 import {validateFoundationIR} from '../pages/foundation_ir.mjs';
 const records=JSON.parse(fs.readFileSync(new URL('../reviews/foundation_extension_candidates.json',import.meta.url))).records;
 const [desire,preference]=records;
@@ -9,7 +10,8 @@ const edge=(from,to,role)=>({edge_id:`${from}-${to}`,type:'fills_role',from,to,r
 const base={root_clause:'main',nodes:[{node_id:'main',kind:'clause'},occurrence('want',desire),ref('holder'),{node_id:'desired',kind:'clause',clause_type:'content',content_status:'intensional',value_type:'proposition'},{node_id:'care',kind:'lexical_occurrence',target_type:'atom',target_id:'LIF:211',runtime_state:{code:1}}],edges:[{edge_id:'main-center',type:'centers',from:'want',to:'main'},edge('holder','want','experiencer'),edge('desired','want','content'),{edge_id:'content-center',type:'centers',from:'care',to:'desired'}]};
 const check=ir=>validateFoundationIR(ir,records,{allowDraft:true});
 let count=0;
-async function bad(edit){const x=structuredClone(base);edit(x);await assert.rejects(check(x));count++;}
+const rejected=[];
+async function bad(edit){const x=structuredClone(base);edit(x);rejected.push(x);await assert.rejects(check(x));count++;}
 await assert.rejects(validateFoundationIR(base,records));count++;
 for(const code of [0,1,2]){const x=structuredClone(base);x.nodes[1].runtime_state.code=code;await check(x);count++;}
 await bad(x=>x.nodes[1].foundation_version='2.0.0');
@@ -31,4 +33,6 @@ const pref={root_clause:'main',nodes:[{node_id:'main',kind:'clause'},occurrence(
 await check(pref);count++;
 const wrongHolder=structuredClone(pref);wrongHolder.edges[1].from='tea';await assert.rejects(check(wrongHolder));count++;
 const pending=check(base);base.nodes[3].content_status='asserted';const snapshot=await pending;assert.equal(snapshot.ir.nodes[3].content_status,'intensional');count++;
+const parity=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_foundation_ir','-rjson','-e',`x=JSON.parse(STDIN.read);puts JSON.generate(x['cases'].map{|ir|begin;EraZeroFoundationIR.validate!(ir,x['records'],allow_draft:true);true;rescue ArgumentError;false;end})`],{cwd:new URL('..',import.meta.url),input:JSON.stringify({records,cases:[snapshot.ir,pref,...rejected]}),encoding:'utf8'}));
+assert.deepEqual(parity,[true,true,...rejected.map(()=>false)]);
 console.log(`PASS ${count} foundation argument/scope checks (candidate only; not sentence translation coverage)`);

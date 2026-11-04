@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import {scheduledLexicalEvents} from '../pages/scheduler.mjs';
 import {renderLexicalOccurrences} from '../pages/bound_compounds.mjs';
-import {midiFromFormal} from '../pages/engine.mjs';
+import {canonicalDigest,midiFromFormal} from '../pages/engine.mjs';
 import {decodeFoundationMusicMidi} from '../pages/foundation_decoder.mjs';
 const authority=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url)));
 const records=JSON.parse(fs.readFileSync(new URL('../reviews/foundation_extension_candidates.json',import.meta.url))).records;
@@ -13,13 +13,18 @@ const ir={root_clause:'main',nodes:[{node_id:'main',kind:'clause'},{node_id:'wan
 await assert.rejects(renderLexicalOccurrences(ir,authority));
 const sounds=new Set();let cases=0;
 for(const state of [0,1,2])for(const inner of [0,1,2]){
- const input=structuredClone(ir);input.nodes[1].runtime_state.code=state;input.nodes[4].runtime_state.code=inner;
+ const input=structuredClone(ir);input.ir_version='1.0.0';input.speech_act='assertion';input.discourse_constraints={};input.nodes[1].runtime_state.code=state;input.nodes[4].runtime_state.code=inner;
+ const digest=await canonicalDigest(input);input.utterance_id='UTT:'+digest.slice(0,24);input.serialization={content_digest:digest};
  const events=await renderLexicalOccurrences(input,authority,{foundationRecords:records,allowDraftFoundations:true});
- // A candidate scheduled sentence probe, not yet a reference-renderer-validated EZF artifact.
+ // Independently validate, render, decode, and serialize the complete IR in Ruby.
  const probe={semantic_ir:input,performance:{anchor_midi:60,lexical_events:events,contour_relative_semitones:[0,0]}};
  const ruby=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_presentation','-rjson','-e','puts JSON.generate(EraZeroPresentation.scheduled_lexical_events(JSON.parse(STDIN.read)))'],{cwd:new URL('..',import.meta.url),input:JSON.stringify(probe),encoding:'utf8'}));
  assert.deepEqual(scheduledLexicalEvents(probe),ruby);
- const bytes=midiFromFormal(probe);
+ const rendered=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_presentation','-rjson','-rbase64','-e',`x=JSON.parse(STDIN.read);o={foundation_records:x['records'],allow_draft_foundations:true};f=EraZeroRenderer.render(x['ir'],**o);EraZeroRenderer.decode(f,**o);begin;EraZeroRenderer.render(x['ir']);raise 'Default admitted candidate';rescue EraZeroRenderer::RenderError;end;begin;EraZeroPresentation.midi(f);raise 'Default presented candidate';rescue EraZeroPresentation::PresentationError;end;altered=Marshal.load(Marshal.dump(f));altered['performance']['lexical_events'][0]['address_absolute_midi'][0]+=1;begin;EraZeroRenderer.decode(altered,**o);raise 'Altered music admitted';rescue EraZeroRenderer::DecodeError;end;puts JSON.generate({formal:f,midi:Base64.strict_encode64(EraZeroPresentation.midi(f,**o)),svg:EraZeroPresentation.svg(f,**o).include?('<svg')})`],{cwd:new URL('..',import.meta.url),input:JSON.stringify({ir:input,records}),encoding:'utf8'}));
+ assert.deepEqual(events,rendered.formal.performance.lexical_events);
+ const bytes=midiFromFormal(rendered.formal);
+ assert.equal(Buffer.from(bytes).toString('base64'),rendered.midi);
+ assert.equal(rendered.svg,true);
  sounds.add(Buffer.from(bytes).toString('base64'));
  const observed=await decodeFoundationMusicMidi(bytes,authority.atoms,records,{allowDraft:true});
  const outer=observed.tokens.find(t=>t.kind==='foundation'),care=observed.tokens.find(t=>t.root_id==='LIF:211');

@@ -23,8 +23,8 @@ module EraZeroPresentation
     value.to_s.gsub("&", "&amp;").gsub("<", "&lt;").gsub(">", "&gt;").gsub('"', "&quot;")
   end
 
-  def validate_formal!(formal)
-    EraZeroRenderer.decode(formal)
+  def validate_formal!(formal, **options)
+    EraZeroRenderer.decode(formal, **options)
     raise PresentationError, "performance profile is missing" unless formal["performance"].is_a?(Hash)
     true
   rescue EraZeroRenderer::DecodeError => error
@@ -35,8 +35,8 @@ module EraZeroPresentation
     event.fetch("family_opening_absolute_midi") + event.fetch("address_absolute_midi") + Array(event.dig("runtime_tail", "absolute_note"))
   end
 
-  def svg(formal)
-    validate_formal!(formal)
+  def svg(formal, **options)
+    validate_formal!(formal, **options)
     events = scheduled_lexical_events(formal)
     width = [960, 160 + events.sum { |event| note_sequence(event).length * 34 + 28 }].max
     height = 220 + events.length * 54
@@ -343,8 +343,8 @@ module EraZeroPresentation
       "note_duration_beats" => 0.25, "boundary_after_beats" => 0.5 }
   end
 
-  def midi(formal)
-    validate_formal!(formal)
+  def midi(formal, **options)
+    validate_formal!(formal, **options)
     absolute_events = []
     tick = 0
     scheduled_lexical_events(formal).each do |event|
@@ -380,9 +380,9 @@ module EraZeroPresentation
     "MThd".b + [6, 0, 1, TICKS_PER_BEAT].pack("Nnnn") + "MTrk".b + [track.bytesize].pack("N") + track
   end
 
-  def manifest(formal)
-    svg_data = svg(formal)
-    midi_data = midi(formal)
+  def manifest(formal, **options)
+    svg_data = svg(formal, **options)
+    midi_data = midi(formal, **options)
     { "presentation_version" => VERSION, "formal_id" => formal.fetch("formal_id"), "semantic_digest" => formal.fetch("semantic_digest"), "svg_sha256" => Digest::SHA256.hexdigest(svg_data), "midi_sha256" => Digest::SHA256.hexdigest(midi_data), "semantic_identity_changed" => false }
   end
 end

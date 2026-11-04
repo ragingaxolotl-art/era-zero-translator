@@ -4,6 +4,7 @@ require "digest"
 require "set"
 require_relative "era_zero_validation"
 require_relative "era_zero_names"
+require_relative "era_zero_foundation_ir"
 require_relative "era_zero_compound_expansion"
 require_relative "era_zero_reference_properties"
 
@@ -41,12 +42,19 @@ module EraZeroSemanticValidation
     @authority_documents
   end
 
-  def validate(ir, compound_entries: nil)
+  def validate(ir, compound_entries: nil, foundation_records: [], allow_draft_foundations: false)
     return ["invalid_document"] unless ir.is_a?(Hash)
     return ["invalid_nodes"] unless ir["nodes"].is_a?(Array) && ir["nodes"].all? { |n| n.is_a?(Hash) && n["node_id"].is_a?(String) }
     return ["invalid_edges"] unless ir["edges"].is_a?(Array) && ir["edges"].all? { |e| e.is_a?(Hash) && e["edge_id"].is_a?(String) }
     return ["invalid_serialization"] if ir.key?("serialization") && !ir["serialization"].is_a?(Hash)
     return ["invalid_discourse_constraints"] if ir.key?("discourse_constraints") && !ir["discourse_constraints"].is_a?(Hash)
+    begin
+      if !foundation_records.empty? || ir["nodes"].any? { |n| n["target_type"] == "foundation" || n["clause_type"] == "content" || n.key?("content_status") }
+        EraZeroFoundationIR.validate!(ir, foundation_records, allow_draft: allow_draft_foundations)
+      end
+    rescue ArgumentError, KeyError, TypeError
+      return ["invalid_foundation_ir"]
+    end
     spec, schema, atoms_doc, compounds_doc = authority_documents
     atom_ids = atoms_doc.fetch("atoms").map { |a| a["canonical_id"] }.to_set
     entries = compound_entries || compounds_doc.fetch("entries")
@@ -74,6 +82,7 @@ module EraZeroSemanticValidation
       errors << "forbidden_surface_field" unless (n.keys.to_set & forbidden).empty?
       if n["kind"] == "lexical_occurrence"
         valid_target = n["target_type"] == "atom" ? atom_ids.include?(n["target_id"]) : n["target_type"] == "compound" && compound_ids.include?(n["target_id"])
+        valid_target ||= n["target_type"] == "foundation" && foundation_records.any? { |r| r["foundation_id"] == n["target_id"] }
         errors << "unknown_target" unless valid_target
         state = n["runtime_state"].is_a?(Hash) ? n["runtime_state"] : {}
         errors << "invalid_runtime_state" unless [0, 1, 2].include?(state["code"])

@@ -131,7 +131,7 @@ module EraZeroRenderer
     raise RenderError, "compound #{compound.fetch('compound_id')} is missing required roles: #{missing.join(', ')}" unless missing.empty?
   end
 
-  def occurrence_events(node, ir, atoms, compounds, anchor_midi, register, ancestors = [])
+  def occurrence_events(node, ir, atoms, compounds, anchor_midi, register, ancestors = [], foundations: {}, allow_draft_foundations: false)
     id = node.fetch("node_id")
     raise RenderError, "cyclic compound participant binding" if ancestors.include?(id)
     raise RenderError, "participant binding depth exceeds 64" if ancestors.length >= 64
@@ -170,6 +170,9 @@ module EraZeroRenderer
       return EraZeroReferenceProperties.restrict(node, label_events, anchor_midi)
     end
     state = node.fetch("runtime_state").fetch("code")
+    if node["target_type"] == "foundation"
+      return [EraZeroFoundations.event(foundations.fetch(node["target_id"]), occurrence_id: id, register: register, anchor: anchor_midi, runtime_state: node.dig("runtime_state", "code"), allow_draft: allow_draft_foundations)]
+    end
     if node["target_type"] == "atom"
       raise RenderError, "an atom cannot declare compound bindings" if node.key?("compound_bindings")
       atom = atoms[node["target_id"]] or raise RenderError, "unknown atom #{node['target_id']}"
@@ -230,7 +233,7 @@ module EraZeroRenderer
         argument = arguments.fetch(binding.fetch("argument_id"))
         raise RenderError, "bound participant must be a renderable occurrence" unless %w[lexical_occurrence phonemic_reference deictic_reference].include?(argument["kind"])
         role_register = ROLE_REGISTERS.fetch(binding.fetch("role"), "middle")
-        occurrence_events(argument, ir, atoms, compounds, anchor_midi, role_register, ancestors + [id]).map do |event|
+        occurrence_events(argument, ir, atoms, compounds, anchor_midi, role_register, ancestors + [id], foundations: foundations, allow_draft_foundations: allow_draft_foundations).map do |event|
           event.merge("occurrence_id" => id, "argument_node_id" => argument.fetch("node_id"),
             "binding_path" => component.fetch("path"), "binding_role" => binding.fetch("role"),
             "binding_predicate_path" => binding.fetch("predicate_path"),
@@ -260,11 +263,12 @@ module EraZeroRenderer
     raise RenderError, error.message
   end
 
-  def render(ir, anchor_midi: 60)
+  def render(ir, anchor_midi: 60, foundation_records: [], allow_draft_foundations: false)
     atoms, compounds = load_authority
-    errors = EraZeroSemanticValidation.validate(ir, compound_entries: compounds.values)
+    errors = EraZeroSemanticValidation.validate(ir, compound_entries: compounds.values, foundation_records: foundation_records, allow_draft_foundations: allow_draft_foundations)
     raise RenderError, "invalid semantic IR: #{errors.join(", ")}" unless errors.empty?
     raise RenderError, "anchor_midi must be an integer from 24 through 96" unless anchor_midi.is_a?(Integer) && anchor_midi.between?(24, 96)
+    foundations = foundation_records.to_h { |r| [r["foundation_id"], r] }
     digest = semantic_digest(ir)
     expected_id = "UTT:#{digest[0, 24]}"
     raise RenderError, "utterance identity mismatch" unless ir["utterance_id"] == expected_id && ir.dig("serialization", "content_digest") == digest
@@ -276,7 +280,7 @@ module EraZeroRenderer
     independent_ids = ir.fetch("edges").map { |edge| edge["from"] }.to_set
     lexical_nodes.sort_by { |node| node["node_id"] }.each do |node|
       next if bound_ids.include?(node["node_id"]) && !independent_ids.include?(node["node_id"])
-      lexical_events.concat(occurrence_events(node, ir, atoms, compounds, anchor_midi, register_for(node["node_id"], ir)))
+      lexical_events.concat(occurrence_events(node, ir, atoms, compounds, anchor_midi, register_for(node["node_id"], ir), foundations: foundations, allow_draft_foundations: allow_draft_foundations))
     end
     raise RenderError, "no independently rooted lexical occurrences" if !lexical_nodes.empty? && lexical_events.empty?
 
@@ -312,7 +316,7 @@ module EraZeroRenderer
       next "#{event['occurrence_id']}:reference(#{event['reference_mode']})" if event["kind"] == "reference_marker"
       next "#{event['occurrence_id']}:reference(#{event['deictic_role']})" if event["kind"] == "deictic_reference"
       next "#{event['occurrence_id']}:name(#{event['label']})" if event["kind"] == "phonemic_label"
-      atom = atoms.fetch(event["target_id"])
+      atom = event["kind"] == "foundation" ? {"title" => foundations.fetch(event["target_id"]).fetch("display_title")} : atoms.fetch(event["target_id"])
       tail = event["runtime_tail"]
       "#{event['occurrence_id']}#{event['component_node_id'] ? ".#{event['component_node_id']}" : ''}:#{atom['title']}#{tail ? "[#{tail['code']}]" : ''}"
     end
@@ -324,12 +328,12 @@ module EraZeroRenderer
     }
   end
 
-  def decode(formal)
+  def decode(formal, foundation_records: [], allow_draft_foundations: false)
     raise DecodeError, "unknown format" unless formal["format"] == FORMAT
     ir = formal.fetch("semantic_ir")
     digest = semantic_digest(ir)
     raise DecodeError, "semantic digest mismatch" unless formal["semantic_digest"] == digest && ir["utterance_id"] == "UTT:#{digest[0, 24]}" && ir.dig("serialization", "content_digest") == digest
-    regenerated = render(ir, anchor_midi: formal.dig("performance", "anchor_midi"))
+    regenerated = render(ir, anchor_midi: formal.dig("performance", "anchor_midi"), foundation_records: foundation_records, allow_draft_foundations: allow_draft_foundations)
     %w[formal_id formal_digest performance literal_gloss].each do |field|
       raise DecodeError, "#{field} mismatch" unless formal[field] == regenerated[field]
     end
