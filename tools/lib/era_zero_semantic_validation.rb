@@ -115,6 +115,8 @@ module EraZeroSemanticValidation
         allowed = %w[node_id kind operator quantifier] + (counted ? ["value"] : [])
         valid = %w[exact at_least at_most all some none].include?(n["quantifier"]) && (n.keys - allowed).empty?
         valid &&= n["value"].is_a?(String) && n["value"].length <= 1024 && n["value"].match?(/\A(?:0|[1-9][0-9]*)\z/) if counted
+        scoped = edges.select { |e| e["type"] == "scopes" && e["to"] == n["node_id"] }
+        valid &&= scoped.length == 1 && %w[variable reference phonemic_reference deictic_reference lexical_occurrence coordination].include?(map.dig(scoped[0]["from"], "kind"))
         errors << "invalid_quantifier" unless valid
       elsif n["kind"] == "scope_operator" && n["operator"] == "aspect"
         scoped = edges.select { |e| e["type"] == "scopes" && e["to"] == n["node_id"] }

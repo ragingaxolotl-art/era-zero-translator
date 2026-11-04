@@ -26,3 +26,12 @@ for(const [i,r] of results.entries()){assert.deepEqual(r.formal,ruby[i].formal);
 assert.equal(new Set(ruby.map(r=>r.midi)).size,results.length);
 for(const sentence of ['Exactly three lamps are not physically energized.','It is not the case that is the lamp physically energized?','It is not the case that repair the radio.'])assert.equal(parseNamedSentence(sentence),null);
 console.log(`PASS ${results.length} proposition/count/negation/modal/runtime contrasts with complete MIDI scope recovery and Ruby parity.`);
+// A participant quantifier cannot be repurposed as a binder over a negative
+// property. Reject this malformed plan instead of emitting persuasive music.
+for(const operator of ['negation','modality','aspect']){
+ const formal=structuredClone(results[0].formal),ir=formal.semantic_ir,q=ir.nodes.find(n=>n.operator==='quantifier');
+ const edge=ir.edges.find(e=>e.type==='scopes'&&e.to===q.node_id),inner=edge.from;edge.from='invalid_scope';
+ ir.nodes.push({node_id:'invalid_scope',kind:'scope_operator',operator,...operator==='modality'?{mode:'possible'}:operator==='aspect'?{aspect:'ongoing'}:{}});
+ ir.edges.push({edge_id:'invalid_scope_edge',type:'scopes',from:inner,to:'invalid_scope'});
+ assert.throws(()=>midiFromFormal(formal),/quantifier scope/);
+}

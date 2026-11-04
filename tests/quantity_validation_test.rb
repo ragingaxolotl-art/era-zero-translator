@@ -34,4 +34,21 @@ class QuantityValidationTest < Minitest::Test
       assert_raises(EraZeroRenderer::RenderError) { EraZeroRenderer.render(ir) }
     end
   end
+  def test_quantifier_cannot_substitute_for_predicate_binding
+    %w[negation modality aspect].each do |operator|
+      ir = fixture('exact_quantity') do |f|
+        q=f['nodes'].find{|n|n['operator']=='quantifier'}
+        edge=f['edges'].find{|e|e['type']=='scopes'&&e['to']==q['node_id']}
+        inner=edge['from'];edge['from']='invalid_scope'
+        node={'node_id'=>'invalid_scope','kind'=>'scope_operator','operator'=>operator}
+        node['mode']='possible' if operator=='modality'
+        node['aspect']='ongoing' if operator=='aspect'
+        f['nodes'] << node
+        f['edges'] << {'edge_id'=>'invalid_scope_edge','type'=>'scopes','from'=>inner,'to'=>'invalid_scope'}
+      end
+      assert_includes EraZeroSemanticValidation.validate(ir),'invalid_quantifier'
+      assert_raises(EraZeroRenderer::RenderError){EraZeroRenderer.render(ir)}
+    end
+  end
+
 end

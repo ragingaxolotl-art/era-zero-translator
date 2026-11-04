@@ -14,6 +14,10 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
   const ir = formal.semantic_ir;
   validateSubjectControl(ir);
   for (const node of ir.nodes) {
+    if(node.kind==='scope_operator'&&node.operator==='quantifier'){
+      const scoped=ir.edges.filter(e=>e.type==='scopes'&&e.to===node.node_id);
+      if(scoped.length!==1||!['variable','reference','phonemic_reference','deictic_reference','lexical_occurrence','coordination'].includes(ir.nodes.find(n=>n.node_id===scoped[0]?.from)?.kind))throw new Error('Unsupported musical quantifier scope.');
+    }
     if(node.kind==='scope_operator'&&node.operator==='comparison')validatePropertyComparison(node,ir);
     if(node.kind==='scope_operator'&&node.operator==='aspect'){
       const scoped=ir.edges.filter(e=>e.type==='scopes'&&e.to===node.node_id);

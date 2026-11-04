@@ -31,3 +31,28 @@ commands embedded under this proposition wrapper are rejected. Bare quantified
 predicate negation remains unresolved; it must not be approximated by this rule.
 The wrapper currently excludes embedded calendar/speech-time clauses because
 those time anchors attach to the clause and need a separate scope treatment.
+
+## Participant counting versus predicate binding
+
+Inspection found that both validators allowed a quantifier to scope another
+scope operator, contrary to the declared quantity contract. Ruby validation and
+browser scheduling now reject that shape. Existing participant-count and
+whole-proposition-negation music still pass. This prevents treating arbitrary
+quantifier/negation nesting as a completed translation of counted negative
+properties.
+
+The remaining representation must bind an entity variable across a nominal
+restriction (lamp) and a truth-valued predicate (not energized), then apply the
+count to the set of satisfying entities. It needs explicit identity binding and
+separate musical boundaries for restriction, predicate and quantifier. Existing
+participant-count recordings must keep their current meaning and sound; a new
+binding construction must not reinterpret them. Negation outside this entire
+construction must remain distinguishable from negation inside its predicate.
+
+Acceptance requires finite-domain counterexamples, not just different MIDI:
+with six lamps, three energized, “exactly three are not energized” is true while
+“not exactly three are energized” is false. With four lamps, two energized,
+the first is false and the second true. Runtime 0/1/2 must not stand in for either
+negation. Unknown domain membership must remain unknown rather than defaulting
+to a closed-world count. Mixed participant roles, nested modal scope and bound
+identity recovery from music are additional obligations before admission.
