@@ -33,3 +33,6 @@ console.log('PASS actual conjunction UI: per-clause reading/pronoun choices, com
 
 card=show('It is not true that Orin is curious about the map and Eli understands Nora’s reasons.');assert(card.children[0].textContent.includes('whole conjunction is negated'));await card.children.at(-1).click();card.children.at(-1).click();assert.equal(JSON.parse(await downloads.at(-1).blob.text()).scopes[0].operator,'negation');assert(card.children[0].textContent.includes('Whole-message negation'));
 console.log('PASS explicit outer-negation UI explanation and complete scoped meaning export.');
+
+card=show('It is possible that it is not true that Orin is curious about the map and Eli understands Nora’s reasons.');assert(card.children[0].textContent.includes('possible that not all'));await card.children.at(-1).click();card.children.at(-1).click();const uncertain=JSON.parse(await downloads.at(-1).blob.text());assert.equal(uncertain.scopes[0].mode,'possible');assert.equal(uncertain.scopes[1].operator,'negation');
+console.log('PASS ordered possibility/negation UI explanation and complete scoped export.');

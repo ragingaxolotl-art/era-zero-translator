@@ -33,7 +33,9 @@ pronoun choices with complete playback/MIDI/meaning exports and stale-output
 protection. Independent Ruby validation/regeneration now matches 50 conjunction cases. Live
 layout/listening and broader coordination remain open. Explicit “It is not true
 that A and B” now preserves outer negation separately from member negation, with
-nine truth-contrast/MIDI/Ruby cases and scoped UI exports. The 187-check consolidated report below
+nine truth-contrast/MIDI/Ruby cases and scoped UI exports. Joint possibility,
+not-possible and possible-not now have nine additional finite-world/MIDI/Ruby
+contrasts and ordered-scope UI exports; they do not assert the members as actual. The 187-check consolidated report below
 predates this addition; targeted evidence does not supersede its revision scope.
 
 The contextual inquiry prerequisite for curiosity now preserves a topic without

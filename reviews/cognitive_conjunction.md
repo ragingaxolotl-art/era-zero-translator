@@ -66,3 +66,26 @@ interpretation of “not A and B” without explicit whole-message wording.
 One authored clean synthetic WAV also recovers outer and inner negation together
 with comprehension-acquisition and past speech content from WAV alone. This is
 not physical recording or broad channel evidence.
+
+
+## Possibility and ordered outer scope
+
+Explicit “It is possible that A and B” preserves joint possibility over the
+complete conjunction, without asserting either member as actual. “It is not
+possible that” uses negation outside possibility; “It is possible that it is not
+true that” places possibility outside negation. Existing possibility/negation
+frames express this order. No probability, confidence percentage, permission,
+actual outcome or new root is inferred. Optional scopes now admit exactly the
+single negation, single possibility, and these two ordered pairs; old unscoped
+and single-negation documents retain their identities and sounds.
+
+Nine authored runtime/scope cases match independent Ruby and musical inverses.
+An independent finite-world model demonstrates that joint possibility differs
+from each member being separately possible, and that not-possible differs from
+possible-not. Runtime trits do not enter this truth model. The UI explains the
+chosen outer scope and exports the complete ordered document. Broader modal
+kinds, arbitrary scope nesting and separate member possibility remain open.
+
+One authored clean synthetic WAV also recovers possible-not scope around a
+conjunction with inner negation, independent runtimes and past speech content,
+without source English or hidden meaning supplied. Physical audio remains untested.

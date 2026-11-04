@@ -1,4 +1,4 @@
-import {validateCognitiveConjunction} from './cognitive_conjunction.mjs';
+import {validateCognitiveConjunction,validCognitiveOuterScopes} from './cognitive_conjunction.mjs';
 import {midiFromCuriosity} from './curiosity_music.mjs';
 import {midiFromUnderstanding,understandingFoundation} from './understanding_music.mjs';
 import {midiFromUnderstandingAcquisition} from './understanding_acquisition_music.mjs';
@@ -17,15 +17,16 @@ export async function midiFromCognitiveConjunction(document,authority,records,{a
   else bytes=await ({'EZUNDERSTANDING-CONTENT-1':midiFromUnderstanding,'EZUNDERSTANDING-ACQUISITION-1':midiFromUnderstandingAcquisition,'EZROUTE-LEARNING-1':midiFromRouteLearning}[member.profile])(member,authority,options);
   const {notes,division}=notesFromMidi(bytes);if(i)events.push(marker('coord_member'));events.push(...eventsFromNotes(notes.slice(0,-2),division));
  }
- events.push(marker('coord_all_of_close'));if(d.scopes){events.unshift(marker('negation_open'));events.push(marker('negation_close'));}return midiFromScheduledEvents(events,anchor,[0,0]);
+ events.push(marker('coord_all_of_close'));for(const scope of [...(d.scopes||[])].reverse()){const key=scope.operator==='negation'?'negation':'modality_possible';events.unshift(marker(key+'_open'));events.push(marker(key+'_close'));}return midiFromScheduledEvents(events,anchor,[0,0]);
 }
 export async function decodeCognitiveConjunctionMidi(bytes,atoms,records,{allowDraft=false}={}){
  if(!allowDraft)throw new Error('Cognitive conjunction requires draft opt-in.');
  const foundations=[...records,await understandingFoundation(),...await routeLearningFoundations()];await validateFoundations(foundations,{allowDraft:true});
  const dictionary=[...atoms,...foundations.map(r=>({canonical_id:r.foundation_id,harmonic_signature_semitones:[0,3,7],note_path_semitones:foundationPath(r.sound_code)}))];
  const observed=decodeStrictMusicMidi(bytes,dictionary,{allowDraftAcquisition:true,allowDraftContextualContent:true,allowDraftContextualInquiry:true,allowDraftCuriosity:true}),tokens=observed.tokens;
- let body=tokens,scopes;
- if(tokens[0]?.marker==='negation_open'&&tokens[0].closing_token===tokens.length-1){body=tokens.slice(1,-1);scopes=[{operator:'negation'}];}
+ let body=tokens,scopes;const outer=[];
+ while(['negation_open','modality_possible_open'].includes(body[0]?.marker)&&body[0].closing_token===tokens.indexOf(body.at(-1))){outer.push(body[0].marker==='negation_open'?{operator:'negation'}:{operator:'modality',mode:'possible'});body=body.slice(1,-1);}
+ if(outer.length){if(!validCognitiveOuterScopes(outer))throw new Error('Unsupported conjunction scope.');scopes=outer;}
  if(observed.speech_act!=='assertion'||body[0]?.marker!=='coord_all_of_open'||body[0].closing_token!==tokens.indexOf(body.at(-1)))throw new Error('Expected a complete declarative conjunction.');
  const groups=[[]];
  for(const token of body.slice(1,-1)){if(token.marker==='coord_member'&&token.enclosing_scopes.length===body[0].enclosing_scopes.length)groups.push([]);else groups.at(-1).push(token);}
