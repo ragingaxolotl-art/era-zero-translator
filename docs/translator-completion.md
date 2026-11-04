@@ -12,6 +12,12 @@ is the starting evidence, not a completion certificate.
 
 ## Current coverage evidence
 
+[Preference between propositions](../reviews/preference_propositions.md) now
+connects explicit finite alternatives to the existing candidate preference roles.
+Separate subjects, intensional status, nested compounds, inner/outer states,
+negation and time survive MIDI recovery. Its targeted 27-state suite and original
+requirement audit do not establish general comparative syntax or close a gate.
+
 Re-execution of the original twenty desire/preference requirements finds eight
 candidate semantic passes and twelve uncomposed sentences. The
 [requirement-by-requirement report](../reports/foundation_requirements_audit.md)

@@ -13,6 +13,17 @@ export function parseFoundationSentence(input){
  text=text.replace(/[.!?]$/,'').trim();
  const prefix=text.match(/^(Yesterday|Today),\s+(.+)$/),frontedDay=prefix?.[1].toLowerCase();
  if(prefix)text=prefix[2];
+ // Explicit finite alternatives have their own subjects and scopes. Do not
+ // move a trailing content-day onto the outer preference.
+ let propositionPreference=text.match(new RegExp(`^(${HOLDER}) (prefers|prefer|preferred|does not prefer|do not prefer|did not prefer) that (.+) rather than that (.+)$`));
+ if(!propositionPreference&&question){
+  const q=text.match(new RegExp(`^([Dd]oes|[Dd]o|[Dd]id) (${HOLDER}) (not )?prefer that (.+) rather than that (.+)$`));
+  if(q)propositionPreference=[q[0],q[2],q[1].toLowerCase()==='did'?(q[3]?'did not prefer':'preferred'):(q[3]?'does not prefer':'prefer'),q[4],q[5]];
+ }
+ if(propositionPreference){
+  if(frontedDay||text.split(' rather than that ').length!==2)return null;
+  return {type:'preference',holder:propositionPreference[1],target:propositionPreference[3],standard:propositionPreference[4],propositionalAlternatives:true,negated:propositionPreference[2].includes('not'),speechAct:question?'question':'assertion',state,...(/^(?:preferred|did)/.test(propositionPreference[2])?{speechTime:'before'}:{})};
+ }
  const day=text.match(/ (yesterday|today)$/)?.[1],preferenceText=day?text.slice(0,-day.length-1):text;
  let m=preferenceText.match(new RegExp(`^(${HOLDER}) (prefers|prefer|preferred|does not prefer|do not prefer|did not prefer) (.+) to (.+)$`));
  if(!m&&question){const q=preferenceText.match(new RegExp(`^([Dd]oes|[Dd]o|[Dd]id) (${HOLDER}) (not )?prefer (.+) to (.+)$`));if(q)m=[q[0],q[2],q[1].toLowerCase()==='did'?(q[3]?'did not prefer':'preferred'):(q[3]?'does not prefer':'prefer'),q[4],q[5]];}
@@ -52,8 +63,20 @@ async function composeAtDepth(input,authority,records,loadTemplate,allowDraft,de
  if(!definition)throw new Error('Missing reviewed foundation definition.');
  const ir={ir_version:'1.0.0',root_clause:'c',speech_act:parsed.speechAct,nodes:[{node_id:'c',kind:'clause',clause_type:'simple'},{node_id:'p',kind:'lexical_occurrence',target_type:'foundation',target_id:definition.foundation_id,foundation_version:definition.definition_version,runtime_state:{code:parsed.state}},await reference(parsed.holder,'holder')],edges:[{edge_id:'center',type:'centers',from:'p',to:'c'},{edge_id:'holder',type:'fills_role',from:'holder',to:'p',role:'experiencer'}],discourse_constraints:{}};
  if(parsed.type==='preference'){
-  ir.nodes.push(await reference(parsed.target,'preferred',true),await reference(parsed.standard,'standard',true));
-  for(const [id,role] of [['preferred','target'],['standard','comparison_standard']])ir.edges.push({edge_id:id,type:'fills_role',from:id,to:'p',role});
+  for(const [id,role,text] of [['preferred','target',parsed.target],['standard','comparison_standard',parsed.standard]]){
+   if(!parsed.propositionalAlternatives){
+    ir.nodes.push(await reference(text,id,true));
+    ir.edges.push({edge_id:id,type:'fills_role',from:id,to:'p',role});continue;
+   }
+   const foundation=parseFoundationSentence(text),ordinary=foundation||parseNamedSentence(text);
+   if(!ordinary||ordinary.speechAct==='question'||ordinary.speechAct==='command')throw new Error('Each preference alternative needs a complete proposition with an explicit subject.');
+   const composed=foundation?await composeAtDepth(text,authority,records,loadTemplate,allowDraft,depth+1):await composeNamedSentence(text,await loadTemplate(ordinary.predicate));
+   const source=composed.semantic_ir,prefix=id+':';
+   ir.discourse_constraints.declared_referents=[...new Set([...(ir.discourse_constraints.declared_referents||[]),...(source.discourse_constraints?.declared_referents||[])])];
+   for(const n of source.nodes){const copy=structuredClone(n);copy.node_id=prefix+n.node_id;if(copy.compound_bindings)copy.compound_bindings=copy.compound_bindings.map(b=>({...b,argument_id:prefix+b.argument_id}));if(n.node_id===source.root_clause)Object.assign(copy,{clause_type:'content',content_status:'intensional',value_type:'proposition'});ir.nodes.push(copy);}
+   for(const e of source.edges)ir.edges.push({...e,edge_id:prefix+e.edge_id,from:prefix+e.from,to:prefix+e.to});
+   ir.edges.push({edge_id:id,type:'fills_role',from:prefix+source.root_clause,to:'p',role});
+  }
  }else{
   const infinitiveBody='(?:care for .+|prefer .+ to .+|be (?:not )?(?:conscious|dormant|able to move|able to pay attention|damaged|impaired|restored|happy|hungry|thirsty|tired)(?: \\[[012]\\])?)';
   const infinitive=parsed.content.match(new RegExp(`^(?:(${HOLDER}|me) )?(not )?to (not )?(${infinitiveBody})$`));
