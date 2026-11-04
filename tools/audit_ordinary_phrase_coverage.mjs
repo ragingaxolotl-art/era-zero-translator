@@ -1,3 +1,4 @@
+import {pronounInterpretationPlan,composePronounSentence} from '../pages/pronouns.mjs';
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {parseSentenceDisjunction,composeSentenceDisjunction,parseSentenceConditional,composeSentenceConditional,parseNamedSentence,composeNamedSentence,parseSentenceSequence,composeSentenceSequence,parseSentenceConjunction,composeSentenceConjunction} from '../pages/sentences.mjs';
@@ -11,12 +12,13 @@ const results=[];
 for(const item of corpus.cases){
  let result=null,error=null,clarification=null;
  try{
-  if(parseSentenceDisjunction(item.input))result=await composeSentenceDisjunction(item.input,load);
+  if(pronounInterpretationPlan(item.input))result=await composePronounSentence(item.input,load);
+  else if(parseSentenceDisjunction(item.input))result=await composeSentenceDisjunction(item.input,load);
   else if(parseSentenceConditional(item.input))result=await composeSentenceConditional(item.input,load);
   else if(parseNamedSentence(item.input))result=await composeNamedSentence(item.input,await load(parseNamedSentence(item.input).predicate));
   else if(parseSentenceSequence(item.input))result=await composeSentenceSequence(item.input,load);
   else if(parseSentenceConjunction(item.input))result=await composeSentenceConjunction(item.input,load);
- }catch(caught){if(['disjunction_interpretation_required','future_interpretation_required','thermal_standard_required','mass_standard_required'].includes(caught.code))clarification=caught.code;else error=String(caught)}
+ }catch(caught){if(['pronoun_referents_required','disjunction_interpretation_required','future_interpretation_required','thermal_standard_required','mass_standard_required'].includes(caught.code))clarification=caught.code;else error=String(caught)}
  const failures=[];
  if(result&&item.expected){
   const ir=result.semantic_ir,actual={

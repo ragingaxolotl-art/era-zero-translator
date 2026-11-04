@@ -1,0 +1,40 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+import {execFileSync} from 'node:child_process';
+import {pronounInterpretationPlan,composePronounSentence} from '../pages/pronouns.mjs';
+import {composeNamedSentence,parseNamedSentence} from '../pages/sentences.mjs';
+import {midiFromFormal} from '../pages/engine.mjs';
+import {decodeCareMidi} from '../pages/care_decoder.mjs';
+const root=new URL('..',import.meta.url),authority=JSON.parse(fs.readFileSync(new URL('pages/data/index.json',root)));
+const load=async id=>authority.compound_plans[id]?.expanded.nodes.some(n=>n.kind==='slot')?{authority}:{...JSON.parse(fs.readFileSync(new URL('pages/'+authority.resolution_files[id],root))).variants['assertion:1'],authority};
+const results=[];
+for(const state of [0,1,2])for(const input of ['She cares for him.','He does not care for her.','Does she care for him?','She cared for him yesterday.','It is possible that she cares for him.'])for(const bindings of [{ref0:'Nora',ref1:'Eli'},{ref0:'Eli',ref1:'Nora'}]){
+ const text=input+` [${state}]`,r=await composePronounSentence(text,load,bindings);results.push(r);
+ assert.equal(r.source_input,text);assert.equal(r.resolved_pronouns[0].referent,bindings.ref0);
+ const direct=await composeNamedSentence(r.resolved_input,await load(parseNamedSentence(r.resolved_input).predicate));assert.deepEqual(r.formal,direct.formal);
+ const d=decodeCareMidi(midiFromFormal(r.formal),authority.atoms);assert.equal(d.runtime_state,state);
+ assert.deepEqual(d.participants.caregiver.phonemes,bindings.ref0==='Nora'?['N','AO','R','AE']:['EH','L','IH']);
+ assert.deepEqual(d.participants.targets[0].phonemes,bindings.ref1==='Nora'?['N','AO','R','AE']:['EH','L','IH']);
+ assert.equal(d.speech_act,input.startsWith('Does')?'question':'assertion');
+ assert.equal(d.scopes.some(s=>s.operator==='negation'),input.includes('not'));
+}
+const expected=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_renderer','-rera_zero_presentation','-rbase64','-e','puts JSON.generate(JSON.parse(STDIN.read).map{|ir|f=EraZeroRenderer.render(ir);{formal:f,midi:Base64.strict_encode64(EraZeroPresentation.midi(f))}})'],{cwd:root,input:JSON.stringify(results.map(r=>r.semantic_ir)),encoding:'utf8',maxBuffer:30_000_000}));
+for(const [i,r] of results.entries()){assert.deepEqual(r.formal,expected[i].formal);assert.deepEqual(Buffer.from(midiFromFormal(r.formal)),Buffer.from(expected[i].midi,'base64'));}
+assert.equal(new Set(results.map(r=>Buffer.from(midiFromFormal(r.formal)).toString('base64'))).size,results.length);
+const input='She cares for him.';
+for(const bad of [undefined,{},[],{ref0:'Nora'},{ref0:'Nora',ref1:'him'},{ref0:'Nora',ref1:'Eli and Ben'},{ref0:'Nora',ref1:'Eli',ref2:'Ben'}])await assert.rejects(()=>composePronounSentence(input,load,bad),e=>e.code==='pronoun_referents_required');
+for(const text of ['"She" cares for "Him".','She cares for her robot.','They care for him.','She will care for him tomorrow.','If the radio is damaged, repair it.'])assert.equal(pronounInterpretationPlan(text),null,text);
+const r=await composePronounSentence('She is hungry.',load,{ref0:'"Mary Jane"'});assert.equal(r.semantic_ir.nodes.find(n=>n.name)?.name.normalized_label,'mary jane');
+const nominal=await composePronounSentence('She is repairing it.',load,{ref0:'Nora',ref1:'the gyroscope'});assert(nominal.semantic_ir.nodes.some(n=>n.reference_mode==='definite_nominal'&&n.name.normalized_label==='gyroscope'));
+let release;const gate=new Promise(r=>release=r),mutable={ref0:'Nora',ref1:'Eli'},pending=composePronounSentence(input,async id=>{await gate;return load(id)},mutable);mutable.ref0='Ben';release();assert.equal((await pending).resolved_pronouns[0].referent,'Nora');
+const app=fs.readFileSync(new URL('pages/app.js',root),'utf8'),handler=app.slice(app.indexOf('function showPronounReferents('),app.indexOf('function showClauseInterpretations('));
+const element=tag=>({tag,value:'',children:[],classList:{add(){},remove(){}},append(...n){this.children.push(...n)},setAttribute(){},addEventListener(type,fn){this[type]=fn},scrollIntoView(){}});
+const elements=Object.fromEntries(['sourceInput','output','results','resolutionPanel','decisionSummary','candidateList','phraseCoverage'].map(id=>[id,element(id)]));elements.sourceInput.value=input;
+const state={mode:'general',wordSelections:new Map()};let shown;
+const ctx=vm.createContext({state,$:id=>elements[id],document:{createElement:element},composePronounSentence,sentenceTemplate:load,showResolution:async r=>shown=r,plan:pronounInterpretationPlan(input)});
+vm.runInContext(handler+';showPronounReferents('+JSON.stringify(input)+',plan);',ctx);
+const card=elements.candidateList.children.at(-1),fields=card.children.slice(0,2).map(l=>l.children[0]),button=card.children.at(-1);
+await button.click();assert.equal(shown,undefined);fields[0].value='Nora';fields[1].value='Eli';await button.click();assert.equal(shown.resolved_input,'Nora cares for Eli.');
+let unlock;const wait=new Promise(r=>unlock=r);ctx.sentenceTemplate=async id=>{await wait;return load(id)};const old=shown,late=button.click();fields[1].value='Ben';unlock();await late;assert.equal(shown,old);
+console.log(`Pronouns: ${results.length} explicit referent/state/scope cases match direct interpretation and Ruby MIDI; MIDI-only care decoding preserves both roles. Missing, injected, stale and ambiguous bindings are rejected; names, nouns and compound experiencers are supported.`);

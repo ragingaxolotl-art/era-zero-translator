@@ -13,7 +13,7 @@ is the starting evidence, not a completion certificate.
 ## Current coverage evidence
 
 The [ordinary phrase audit](../reports/ordinary_phrase_coverage.md) currently has
-24 checked compositions, 12 uncomposed phrases, and four phrases requiring an explicit interpretation or contextual standard out of 40 deliberately varied cases. This is an implementation-authored diagnostic set, not a blind evaluation
+24 checked compositions, 11 uncomposed phrases, and five phrases requiring an explicit interpretation or contextual standard out of 40 deliberately varied cases. This is an implementation-authored diagnostic set, not a blind evaluation
 or a statistical measure of English coverage. Green regression suites do not
 override these missing constructions. The corpus records the intended distinctions
 even for cases that cannot yet be composed; future support must receive explicit
@@ -42,7 +42,7 @@ root meanings and both lexical and runtime 0/1/2 distinctions.
 First reconciled with the source audit's seven original phases at draft `0f10d62`
 on October 29, 2026 (Page sequence 5), preserving all 104 blocks and seven exit
 requirements. That historical revision recorded the 80-check baseline and its
-targeted follow-up. The November 4 draft now adds a felt-condition dependency family, open definite noun labels, coordinated care targets and explicit inclusive/exclusive disjunction. The fresh consolidated regression passes all 91 checks; general-English and product checks separately pass 16 each. Evidence is in `reports/translator_completion_regression.json`. The ordinary diagnostic has 24 checked compositions out of 40; twelve remain uncomposed and four require interpretation. None of these changes closes the gates below.
+targeted follow-up. The November 4 draft now adds a felt-condition dependency family, open definite noun labels, coordinated care targets and explicit inclusive/exclusive disjunction. The fresh consolidated regression passes all 92 checks; general-English and product checks separately pass 16 each. Evidence is in `reports/translator_completion_regression.json`. The ordinary diagnostic has 24 checked compositions out of 40; eleven remain uncomposed and five require interpretation. None of these changes closes the gates below.
 
 | Original gate | Current evidence | Outstanding requirement; gate remains open |
 |---|---|---|
@@ -73,6 +73,21 @@ both lexical meaning and audible state preservation. Preserve existing melodies
 and do not create new LIF/STR-like families merely to fill the address grid.
 
 ### Current dependency milestone and next work
+
+Explicit third-person pronoun resolution now supports otherwise complete single
+clauses: “She cares for him” requests a referent for each occurrence rather than
+inferring identity or gender from names. Supplied names, quoted names and definite
+nouns become the actual graph participants and audible reference labels. The
+original input and exact occurrence-to-referent choices remain in the result.
+The 30-case pronoun suite checks role reversal, all runtime states, negation,
+questions, past and modal scope against direct composition, Ruby rendering and
+MIDI-only care decoding. It also checks noun references, compound experiencers,
+missing/invalid bindings, caller snapshots and stale UI choices. This is explicit
+resolution, not automatic discourse inference; plural/possessive pronouns, general
+cross-clause resolution and combinations needing other interpretation choices
+remain incomplete. The ordinary diagnostic now separates this clarification from
+a completed translation: 24 checked, eleven uncomposed and five clarifications.
+
 
 The [felt-condition review](../reviews/felt_conditions_foundation.md) introduces
 seven dependency-ordered conventional compounds: consciously felt self-condition,

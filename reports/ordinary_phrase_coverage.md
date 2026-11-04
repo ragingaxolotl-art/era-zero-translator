@@ -2,7 +2,7 @@
 
 Fresh phrase coverage audit authored during implementation; not a blind or representative English benchmark.
 
-Full translator completion: **not established**. 24 of 40 cases pass their declared semantic checks; 12 have no complete composition; 4 require an explicit interpretation. These counts do not estimate coverage of English generally.
+Full translator completion: **not established**. 24 of 40 cases pass their declared semantic checks; 11 have no complete composition; 5 require an explicit interpretation. These counts do not estimate coverage of English generally.
 
 | Area | Checked compositions | Cases |
 |---|---:|---:|
@@ -29,7 +29,7 @@ Full translator completion: **not established**. 24 of 40 cases pass their decla
 
 ## Unfinished cases
 
-- **She cares for him.** — Resolve both pronouns from discourse or request referents (not_composed)
+- **She cares for him.** — Resolve both pronouns from discourse or request referents (requires_interpretation)
 - **Nora will care for Eli tomorrow.** — Preserve future time and commitment ambiguity (requires_interpretation)
 - **The radio is hot.** — Temperature is not generic activity (requires_interpretation)
 - **The radio is heavy.** — Mass or weight must not collapse into size (requires_interpretation)

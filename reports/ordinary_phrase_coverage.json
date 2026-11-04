@@ -4,8 +4,8 @@
   "case_count": 40,
   "counts": {
     "verified_for_declared_checks": 24,
-    "not_composed": 12,
-    "requires_interpretation": 4
+    "requires_interpretation": 5,
+    "not_composed": 11
   },
   "areas": {
     "participants": {
@@ -441,8 +441,9 @@
       "requirements": [
         "Resolve both pronouns from discourse or request referents"
       ],
-      "status": "not_composed",
-      "failures": []
+      "status": "requires_interpretation",
+      "failures": [],
+      "clarification": "pronoun_referents_required"
     },
     {
       "id": "past",
