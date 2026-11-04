@@ -24,7 +24,7 @@ for(const [i,r] of results.entries()){assert.deepEqual(r.formal,expected[i].form
 assert.equal(new Set(results.map(r=>Buffer.from(midiFromFormal(r.formal)).toString('base64'))).size,results.length);
 const input='She cares for him.';
 for(const bad of [undefined,{},[],{ref0:'Nora'},{ref0:'Nora',ref1:'him'},{ref0:'Nora',ref1:'Eli and Ben'},{ref0:'Nora',ref1:'Eli',ref2:'Ben'}])await assert.rejects(()=>composePronounSentence(input,load,bad),e=>e.code==='pronoun_referents_required');
-for(const text of ['"She" cares for "Him".','She cares for her robot.','They care for him.','She will care for him tomorrow.','If the radio is damaged, repair it.'])assert.equal(pronounInterpretationPlan(text),null,text);
+for(const text of ['"She" cares for "Him".','She cares for her robot.','They care for him.','If the radio is damaged, repair it.'])assert.equal(pronounInterpretationPlan(text),null,text);
 const r=await composePronounSentence('She is hungry.',load,{ref0:'"Mary Jane"'});assert.equal(r.semantic_ir.nodes.find(n=>n.name)?.name.normalized_label,'mary jane');
 const nominal=await composePronounSentence('She is repairing it.',load,{ref0:'Nora',ref1:'the gyroscope'});assert(nominal.semantic_ir.nodes.some(n=>n.reference_mode==='definite_nominal'&&n.name.normalized_label==='gyroscope'));
 let release;const gate=new Promise(r=>release=r),mutable={ref0:'Nora',ref1:'Eli'},pending=composePronounSentence(input,async id=>{await gate;return load(id)},mutable);mutable.ref0='Ben';release();assert.equal((await pending).resolved_pronouns[0].referent,'Nora');

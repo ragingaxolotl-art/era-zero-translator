@@ -53,15 +53,34 @@ function showPronounReferents(input,plan){
   const card=document.createElement('article');card.className='candidate';const fields=[];
   for(const [index,o] of plan.occurrences.entries()){
     const label=document.createElement('label');label.textContent=`${index+1}. “${o.pronoun}” refers to`;
-    const field=document.createElement('input');field.type='text';field.maxLength=200;field.placeholder='Ada, "Mary Jane", the robot, I, or you';label.append(field);card.append(label);fields.push([o.key,field]);
+    const field=document.createElement('input');field.type='text';field.maxLength=200;field.placeholder='Ada, "Mary Jane", the robot, this lamp, I, or you';label.append(field);card.append(label);fields.push([o.key,field]);
   }
+  const parsed=plan.parsed;
+  const select=(container,label,options)=>{const wrap=document.createElement('label');wrap.textContent=label;const field=document.createElement('select');for(const [value,text] of options){const option=document.createElement('option');option.value=value;option.textContent=text;field.append(option)}field.value=options[0][0];wrap.append(field);container.append(wrap);return field};
+  let view,destination,interpretation,threshold,scale,standardMode;
+  if(parsed.requiredViewpoint)view=select(card,`${parsed.viewpointActivity||'carrying'} meaning`,[['','Choose a meaning'],['habitual','A recurring practice'],['ongoing','An unfolding action'],['bounded','One narrated episode']]);
+  if(parsed.requiredDestination){destination=select(card,`meaning of to`,[['','Choose a destination meaning'],['spatial','Spatial destination; no receipt asserted'],['custody_delivery','Carry and transfer physical custody to the recipient']]);const note=document.createElement('p');note.textContent='Custody delivery means carrying arrival culminates in transfer from the carrier to the recipient. It does not mean ownership or willing acceptance.';card.append(note)}
+  const property=['mass_standard','thermal_standard','luminance_standard','texture_standard'].includes(parsed.requiredInterpretation);
+  const dimension=({mass_standard:'mass',thermal_standard:'thermodynamic_temperature',luminance_standard:'luminance',texture_standard:'surface_texture'})[parsed.requiredInterpretation];
+  if(property){
+    const texture=dimension==='surface_texture',mass=dimension==='mass',luminance=dimension==='luminance',propertyLabel=texture?'surface texture':luminance?'luminance':mass?'mass':'temperature';
+    const note=document.createElement('p');note.textContent=`For “${parsed.adjective}”, select the physical ${propertyLabel} meaning. Contextual standards stay local to this sentence; no shared numerical cutoff is inferred.`;card.append(note);
+    if(!parsed.nominalProperty)standardMode=select(card,`standard type`,texture?[['contextual','Physical texture at the contextual surface region and scale']]:[['numeric','Numerical threshold'],['contextual','Contextual standard; no number']]);
+    if(!texture){
+    const label=document.createElement('label');label.textContent=`${propertyLabel} threshold`;threshold=document.createElement('input');threshold.type='text';threshold.inputMode='decimal';threshold.maxLength=1000;threshold.placeholder='Enter your numerical threshold';label.append(threshold);card.append(label);
+    scale=select(card,`${luminance?'luminance unit':mass?'mass unit':'temperature scale'}`,luminance?[['candela_per_square_meter','Candelas per square metre (cd/m²)']]:mass?[['kilogram','Kilograms'],['gram','Grams']]:[['celsius','Degrees Celsius'],['kelvin','Kelvins']]);
+    if(standardMode)standardMode.addEventListener('change',()=>{threshold.disabled=scale.disabled=standardMode.value==='contextual'});
+    }
+  }else if(parsed.requiredInterpretation==='luminance_comparison')interpretation=select(card,`brightness meaning`,[['','Choose a comparison meaning'],['luminance_comparison','Physical luminance; comparable viewing conditions']]);
+  else if(parsed.requiredInterpretation==='future_assertion')interpretation=select(card,`future meaning`,[['','Choose a future meaning'],['future_assertion','Future statement; no promise or intention added']]);
+  const readOptions=()=>({...view?{viewpoint:view.value}:{},...destination?{destination:destination.value}:{},...property?{interpretation:parsed.requiredInterpretation,standard:standardMode?.value==='contextual'?{kind:'contextual',dimension}:{dimension,threshold:threshold.value.trim(),scale:scale.value}}:interpretation?{interpretation:interpretation.value}:{}});
   const read=()=>Object.fromEntries(fields.map(([key,field])=>[key,field.value.trim()]));
   const status=document.createElement('p');status.setAttribute('role','status');const button=document.createElement('button');button.textContent='Translate with these referents';
   button.addEventListener('click',async()=>{
     if(card.isConnected===false||$('sourceInput').value.trim()!==input||state.mode==='controlled')return;
-    const choices=read(),snapshot=JSON.stringify(choices),current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled'&&JSON.stringify(read())===snapshot;
+    const choices=read(),options=readOptions(),snapshot=JSON.stringify({choices,options}),current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled'&&JSON.stringify({choices:read(),options:readOptions()})===snapshot;
     button.disabled=true;status.textContent='';
-    try{const result=await composePronounSentence(input,sentenceTemplate,choices);if(!current())return;state.resolution=result;$('results').classList.add('hidden');await showResolution(result,{definition:[result.interpretation,result.semantic_note].filter(Boolean).join(' ')});}
+    try{const result=await composePronounSentence(input,sentenceTemplate,choices,options);if(!current())return;state.resolution=result;$('results').classList.add('hidden');await showResolution(result,{definition:[result.interpretation,result.semantic_note].filter(Boolean).join(' ')});}
     catch(error){if(current())status.textContent=error.message}finally{button.disabled=false}
   });
   card.append(status,button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});

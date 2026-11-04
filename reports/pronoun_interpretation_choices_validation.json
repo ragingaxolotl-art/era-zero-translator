@@ -1,0 +1,70 @@
+{
+  "scope": "Targeted explicit pronoun binding plus interpretation choices, including actual handler mocks; not automatic discourse inference, live UI or listening validation.",
+  "passed": true,
+  "checks": [
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/pronoun_interpretation_choices_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 24 pronoun-plus-interpretation cases with exact named and Ruby/MIDI parity; option/binding snapshots, dummy-it exclusion and actual UI combined-choice/stale-result checks.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/pronoun_resolution_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Pronouns: 30 explicit referent/state/scope cases match direct interpretation and Ruby MIDI; MIDI-only care decoding preserves both roles. Missing, injected, stale and ambiguous bindings are rejected; names, nouns and compound experiencers are supported.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/brightness_comparison_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 27 brightness comparison and mixed-clause cases with Ruby/MIDI parity, independent direction/reference recovery, negated-comparison counterexample, explicit UI interpretation and stale-result guards.\nPASS actual multi-clause UI requires comparison choice without a numerical threshold.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/clause_interpretation_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Clause interpretations: 15 sequence/conjunction/conditional/runtime cases preserve per-clause viewpoints, destinations, mass/temperature standards and future readings with Ruby/browser formal/MIDI parity. Complete choices, local it, caller snapshots and stale UI results/errors are checked.\nPASS 9 contextual multi-clause runtime combinations, Ruby/MIDI parity and actual per-clause no-number UI.\nPASS mixed numeric/contextual disjunctions and stale standard-mode UI protection.\nPASS mixed texture/luminance UI has no spurious numerical texture controls and rejects stale input/detached results.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/running_viewpoint_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 54 running viewpoint/state/scope musical contrasts and Ruby parity; actual UI choice and stale-result guards.\nPASS 15 explicit-habit paraphrases preserve complete formal/music, with no redundant viewpoint choice.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/foundation_pronoun_binding_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 12 explicit candidate pronoun bindings match full named-reference meanings/music; actual UI requires all bindings and discards edited pending results.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/learning_pronouns_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS six learning pronoun/state/scope cases: explicit identities, immutable binding snapshots, full acquisition/formal/MIDI equivalence and quoted-label preservation.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/negative_contractions_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 33 contraction/state paraphrases and mixed conjunction preserve full formal/MIDI meaning; unsupported meanings and quoted labels are not rewritten.\n"
+    }
+  ]
+}

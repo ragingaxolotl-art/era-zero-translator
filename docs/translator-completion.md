@@ -1430,3 +1430,21 @@ The original “This lamp is brighter than that lamp” now receives a physical-
 choice. The authored 40-case diagnostic reports 24 checked, 10 requiring
 interpretation and 6 uncomposed, not an estimate of general English coverage.
 The complete translator goal and original seven gates remain open.
+
+### Pronouns combined with interpretation choices
+
+The explicit pronoun flow now accepts sentences that also require a viewpoint,
+destination reading, property standard, brightness-comparison sense or future
+interpretation. The API snapshots both referent bindings and interpretation options
+before awaiting template loading. The UI collects these choices together and
+invalidates pending results when either changes. It no longer rejects such
+sentences solely because they need two kinds of clarification. Dummy it in “it is
+not the case that” is excluded from pronoun binding, as in the modal wrappers.
+
+`tests/pronoun_interpretation_choices_test.mjs` covers 24 combinations across runtime
+0/1/2, exact equivalence with fully named input, Ruby/formal/MIDI parity, independent
+brightness/running recovery, immutable snapshots and actual handler mocks. The
+report is `reports/pronoun_interpretation_choices_validation.json`. No name-based
+gender or automatic identity inference was added. General cross-sentence discourse,
+pronouns in arbitrary multi-clause constructions, live UI and listening verification
+remain unfinished, and no original completion gate is closed.
