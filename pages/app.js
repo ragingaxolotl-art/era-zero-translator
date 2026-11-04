@@ -253,7 +253,7 @@ function showAdjectiveStandard(input){
   $('output').classList.add('hidden');$('phraseCoverage').classList.add('hidden');$('resolutionPanel').classList.add('hidden');$('results').classList.remove('hidden');$('candidateList').innerHTML='';
   $('decisionSummary').textContent=`What ${property} standard do you mean by “${parsed.adjective}”?`;
   const card=document.createElement('article');card.className='candidate';
-  const description=document.createElement('p');description.textContent=`For this translation, use ${luminanceStandard?'photometric surface luminance in the contextual viewing direction':massStandard?'mass':'thermodynamic temperature'} ${['hot','heavy','bright'].includes(parsed.adjective)?'above':'below'} a standard. ${parsed.nominalProperty?'Supply a numerical threshold.':'Choose a contextual standard without a number, or supply a numerical threshold.'} ${luminanceStandard?'Perceived brightness, glare, color, luminous intensity and metaphorical meanings':massStandard?'Weight force, carrying effort, size and brightness':'Felt warmth, spiciness and emotional meanings'} need a different interpretation.`;
+  const description=document.createElement('p');description.textContent=`For this translation, use ${luminanceStandard?'photometric surface luminance in the contextual viewing direction':massStandard?'mass':'thermodynamic temperature'} ${['hot','heavy','bright'].includes(parsed.adjective)?'above':'below'} a standard. Choose a contextual standard without a number, or supply a numerical threshold. ${luminanceStandard?'Perceived brightness, glare, color, luminous intensity and metaphorical meanings':massStandard?'Weight force, carrying effort, size and brightness':'Felt warmth, spiciness and emotional meanings'} need a different interpretation.`;
   const label=document.createElement('label');label.textContent=luminanceStandard?'Luminance threshold':massStandard?'Mass threshold':'Temperature threshold';
   const threshold=document.createElement('input');threshold.type='text';threshold.inputMode='decimal';threshold.maxLength=1000;threshold.placeholder='Enter your contextual threshold';label.append(threshold);
   const scaleLabel=document.createElement('label');scaleLabel.textContent=luminanceStandard?'Luminance unit':massStandard?'Mass unit':'Temperature scale';
@@ -273,7 +273,7 @@ function showAdjectiveStandard(input){
     }catch(error){status.textContent=error.message}finally{button.disabled=false}
   });
   if(textureStandard){description.textContent='Use physical surface texture at the contextually selected surface region and scale. This does not assert tactile experience, damage, hardness or figurative difficulty. Rough and smooth can use different contextual standards.';card.append(description,status);}else card.append(description,label,scaleLabel,status,button);
-  if(!parsed.nominalProperty){
+  if(!parsed.nominalProperty||massStandard){
     const contextual=document.createElement('button');contextual.textContent=`Use the contextual ${property} standard (no number)`;
     contextual.addEventListener('click',async()=>{
       const current=()=>$('sourceInput').value.trim()===input&&state.mode!=='controlled'&&card.isConnected!==false;

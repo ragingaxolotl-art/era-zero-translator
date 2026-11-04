@@ -30,7 +30,10 @@ numeric mass restrictions are preserved; contextual heavy/light noun restriction
 now pass 12 full carrying-sentence MIDI/Ruby contrasts. Other noun modifiers, modified
 preference alternatives and painful/more-painful treatment semantics remain
 unfinished. See `tests/contextual_nominal_mass_test.mjs`; this bounded extension does not
-establish generic modifier coverage or recorded-audio recovery.
+establish generic modifier coverage. Two clean synthetic WAVs now pass shared
+audio-only decoding; physical recordings remain untested. The standalone
+adjective-choice handler exposes the contextual noun option; combined choice
+screens still need integration.
 
 Mixed cognitive conjunction now composes complete curiosity, understanding,
 route-learning and comprehension-acquisition clauses while preserving each

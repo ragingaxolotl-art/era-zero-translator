@@ -55,4 +55,9 @@ complete destination-carrying meaning from MIDI and match independent Ruby
 rendering. Numeric mass regression remains intact. The new contextual restriction
 remains attached to its noun under action negation; negation does not invert the
 restriction. Generic modifiers, preference integration and physical-audio
-obligations above remain open. No new WAV or physical recording is claimed.
+obligations above remain open. Two clean synthetic WAVs now recover complete
+destination-carrying meaning through the shared decoder with only the WAV path
+as input; see `reports/contextual_nominal_mass_acoustic_probe.json`. This is not
+physical recording evidence. The standalone adjective-choice UI now exposes the
+contextual noun option, with a handler test and changed-input guard. Combined
+viewpoint and multi-clause choice screens still need equivalent UI integration.
