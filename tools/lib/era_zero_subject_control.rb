@@ -24,6 +24,7 @@ module EraZeroSubjectControl
   def event(node,anchor)
     raise ArgumentError,'Unsupported discourse reference.' unless node['reference_type']=='desire_subject'
     path=[0,-25,0,0]
+    raise ArgumentError,'Subject-control pitch outside MIDI range.' unless anchor.is_a?(Integer)&&path.all?{|n|(anchor+n).between?(0,127)}
     {'kind'=>'discourse_reference','occurrence_id'=>node['node_id'],'target_id'=>'EZCONTROL:desire_subject','referent_id'=>node['referent_id'],'register'=>'middle','base_midi'=>anchor,'family_qualified_transliteration'=>'desire_subject','formal_carrier'=>'','family_opening_relative_semitones'=>[],'family_opening_absolute_midi'=>[],'address_relative_semitones'=>path,'address_absolute_midi'=>path.map{|n|anchor+n},'note_duration_beats'=>0.25}
   end
 end

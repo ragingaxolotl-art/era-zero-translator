@@ -31,3 +31,8 @@ const {soundPlanFromFormal,createBundle,verifyBundle}=await import('../pages/eng
 const plan=visemePlanFromFormal(checked.formal,{mode:'strict'}),sound=soundPlanFromFormal(checked.formal);
 assert.deepEqual(plan.cues.map(c=>c.note),[...sound.lexical_events.flatMap(e=>[...e.family_opening,...e.address_path,...e.runtime_ending]),...sound.sentence_contour]);
 assert.equal((await verifyBundle(await createBundle(checked))).vocabulary_status,'candidate');
+
+const {subjectControlEvent}=await import('../pages/subject_control.mjs');
+const controlled=checked.semantic_ir.nodes.find(n=>n.reference_type==='desire_subject');
+for(const anchor of [24,128,60.5])assert.throws(()=>subjectControlEvent(controlled,anchor),/range/);
+const rubyRange=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_subject_control','-rjson','-e',"n=JSON.parse(STDIN.read);puts JSON.generate([24,128,60.5].map{|a|begin;EraZeroSubjectControl.event(n,a);false;rescue ArgumentError;true;end})"],{cwd:root,input:JSON.stringify(controlled),encoding:'utf8'}));assert.deepEqual(rubyRange,[true,true,true]);
