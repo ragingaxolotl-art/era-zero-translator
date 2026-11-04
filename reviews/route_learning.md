@@ -32,5 +32,8 @@ are not supplied to those decoders. This is not physical recording evidence or a
 representative held-out English assessment. The user-facing draft panel now requires a reading and supports explicit pronoun
 bindings, music playback scheduling, MIDI export and full meaning export. Handler
 tests cover choice changes, stale asynchronous results, stale exports, questions,
-demonstrative routes and explicit singular they. Ruby parity, live browser layout
-and listening, broader grammar and canonical admission remain open.
+demonstrative routes and explicit singular they. Independent Ruby validation and regeneration now match all 85 tested MIDI
+performances: the original 81 plus speaker/addressee, noun and multiword-name
+references, contracted negative questions and two transposed anchors. Rehashed
+semantic corruptions reject. Live browser layout and listening, broader grammar
+and canonical admission remain open.
