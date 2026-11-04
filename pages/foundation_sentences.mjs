@@ -42,6 +42,10 @@ async function reference(text,id,allowKind=false){
  return {node_id:id,kind:'phonemic_reference',value_type:'entity',name,referent_id:mode?`nominal:${mode==='nominal_class'?'class':'definite'}:${name.name_id}`:`name:${name.name_id}`,...(mode?{reference_mode:mode}:{})};
 }
 export async function composeFoundationSentence(input,authority,records,loadTemplate,{allowDraft=false}={}){
+ return composeAtDepth(input,authority,records,loadTemplate,allowDraft,0);
+}
+async function composeAtDepth(input,authority,records,loadTemplate,allowDraft,depth){
+ if(depth>8)throw new Error('Desired propositions exceed the supported nesting depth.');
  records=await validateFoundations(records,{allowDraft});const parsed=parseFoundationSentence(input);
  if(!parsed)throw new Error('Unsupported foundation sentence.');
  const definition=records.find(r=>r.sound_code===(parsed.type==='desire'?0:1));
@@ -51,7 +55,7 @@ export async function composeFoundationSentence(input,authority,records,loadTemp
   ir.nodes.push(await reference(parsed.target,'preferred',true),await reference(parsed.standard,'standard',true));
   for(const [id,role] of [['preferred','target'],['standard','comparison_standard']])ir.edges.push({edge_id:id,type:'fills_role',from:id,to:'p',role});
  }else{
-  const infinitiveBody='(?:care for .+|be (?:not )?able to move(?: \\[[012]\\])?)';
+  const infinitiveBody='(?:care for .+|prefer .+ to .+|be (?:not )?able to move(?: \\[[012]\\])?)';
   const infinitive=parsed.content.match(new RegExp(`^(?:(${HOLDER}) )?(not )?to (not )?(${infinitiveBody})$`));
   const controlled=!!infinitive&&!infinitive[1];
   let content=parsed.content;
@@ -61,12 +65,15 @@ export async function composeFoundationSentence(input,authority,records,loadTemp
    const negations=Number(!!infinitive[2])+Number(!!infinitive[3])+Number(body.startsWith('be not '));
    if(negations>1)throw new Error('Repeated infinitival negation needs an explicit scope interpretation.');
    const negative=negations===1,firstOrSecond=/^(?:I|[Yy]ou)$/.test(holder);
-   content=body.startsWith('be ')?`${holder} ${holder==='I'?'am':/^[Yy]ou$/.test(holder)?'are':'is'} ${negative?'not ':''}${body.replace(/^be (?:not )?/,'')}`:`${holder} ${negative?(firstOrSecond?'do not care':'does not care'):(firstOrSecond?'care':'cares')}${body.slice(4)}`;
+   const verb=body.startsWith('prefer ')?'prefer':'care';
+   content=body.startsWith('be ')?`${holder} ${holder==='I'?'am':/^[Yy]ou$/.test(holder)?'are':'is'} ${negative?'not ':''}${body.replace(/^be (?:not )?/,'')}`:`${holder} ${negative?(firstOrSecond?`do not ${verb}`:`does not ${verb}`):(firstOrSecond?verb:verb+'s')}${body.slice(verb.length)}`;
   }
-  const inner=parseNamedSentence(content);
+  const innerFoundation=parseFoundationSentence(content),inner=innerFoundation||parseNamedSentence(content);
   if(!inner||inner.speechAct==='question'||inner.speechAct==='command')throw new Error('Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else.');
-  const composed=await composeNamedSentence(content,await loadTemplate(inner.predicate));
+  if(controlled&&innerFoundation)throw new Error('A desired preference needs an explicit subject until foundation subject binding is supported.');
+  const composed=innerFoundation?await composeAtDepth(content,authority,records,loadTemplate,allowDraft,depth+1):await composeNamedSentence(content,await loadTemplate(inner.predicate));
   const source=composed.semantic_ir;
+  if(source.discourse_constraints?.declared_referents)ir.discourse_constraints.declared_referents=[...source.discourse_constraints.declared_referents];
   for(const n of source.nodes){const copy=structuredClone(n);copy.node_id='desired:'+n.node_id;if(copy.compound_bindings)copy.compound_bindings=copy.compound_bindings.map(b=>({...b,argument_id:'desired:'+b.argument_id}));if(n.node_id===source.root_clause)Object.assign(copy,{clause_type:'content',content_status:'intensional',value_type:'proposition'});ir.nodes.push(copy);}
   for(const e of source.edges)ir.edges.push({...e,edge_id:'desired:'+e.edge_id,from:'desired:'+e.from,to:'desired:'+e.to});
   ir.edges.push({edge_id:'content',type:'fills_role',from:'desired:'+source.root_clause,to:'p',role:'content'});
@@ -74,7 +81,7 @@ export async function composeFoundationSentence(input,authority,records,loadTemp
    const actor=ir.nodes.find(n=>n.node_id==='desired:a'),holder=ir.nodes.find(n=>n.node_id==='holder');
    if(!actor)throw new Error('Missing controlled subject.');
    ir.nodes[ir.nodes.indexOf(actor)]={node_id:actor.node_id,kind:'reference',reference_type:'desire_subject',referent_id:holder.referent_id,value_type:'entity'};
-   ir.discourse_constraints.declared_referents=[holder.referent_id];
+   ir.discourse_constraints.declared_referents=[...new Set([...(ir.discourse_constraints.declared_referents||[]),holder.referent_id])];
    ir.edges.push({edge_id:'subject_identity',type:'corefers_with',from:actor.node_id,to:'holder'});
   }
 
@@ -95,6 +102,6 @@ export async function composeFoundationSentence(input,authority,records,loadTemp
  const relative=events.map(e=>{const {base_midi,family_opening_absolute_midi,address_absolute_midi,...copy}=e;copy.runtime_tail=e.runtime_tail?Object.fromEntries(Object.entries(e.runtime_tail).filter(([k])=>k!=='absolute_note')):null;return copy;});
  const relativePlan={primary_contour:performance.primary_contour,contour_relative_semitones:performance.contour_relative_semitones,secondary_contours:[],lexical_events:relative,structural_events:structural,statement_boundary:'long_gap',statement_boundary_beats:2};
  const formalDigest=await canonicalDigest({semantic_digest:digest,relative_plan:relativePlan});
- const gloss=events.map(e=>e.kind==='foundation'?`${e.occurrence_id}:${definition.display_title}[${e.runtime_tail.code}]`:lexicalGloss([e],authority)).join(' | ');
+ const gloss=events.map(e=>e.kind==='foundation'?`${e.occurrence_id}:${records.find(r=>r.foundation_id===e.target_id).display_title}[${e.runtime_tail.code}]`:lexicalGloss([e],authority)).join(' | ');
  return {vocabulary:{profile:'EZFOUND-1',status:definition.status,records},source_input:input,target_id:definition.foundation_id,construction:'foundation_'+parsed.type,sense_id:'foundation:'+parsed.type,controlled_input:'',status:definition.status==='candidate'?'candidate_translation':'translated',semantic_ir:ir,formal:{format:'EZF-1',renderer_version:'1.0.0',formal_id:'EZF:'+formalDigest.slice(0,24),formal_digest:formalDigest,semantic_digest:digest,semantic_ir:ir,performance,literal_gloss:gloss}};
 }

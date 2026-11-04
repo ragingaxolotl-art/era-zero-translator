@@ -234,3 +234,21 @@ form now requests clearer wording. A fronted day selects desire time; an explici
 finite content clause can carry its own day. Twenty-one outer time/runtime/speech
 act cases match Ruby/browser formals and MIDI, and independent decoding separates
 outer time from a day inside intensional content. These remain candidate previews.
+
+### Recursive desired propositions
+
+The candidate English composer now reuses foundation composition inside desired
+content. “Nora wants Eli to prefer tea to coffee” embeds preference; “Nora wants
+that Eli wants to care for Orin” embeds a desire whose controlled caregiver is
+Eli, not Nora. Nested subject declarations and identity edges survive node
+renaming. Each intensional boundary remains explicit and no embedded proposition
+is promoted to an independent assertion.
+
+The musical grammar and foundation definitions are unchanged. The English route
+now reaches combinations already representable by the typed IR. Mixed foundation
+glosses look up each occurrence's actual definition instead of applying the
+outer predicate's title to all occurrences. Twelve composed cases check separate
+runtime states, preference direction, nearest-holder binding, full Ruby/MIDI
+parity, independent inverse interpretation and candidate-bundle verification.
+Recursion is bounded; subjectless “wants to prefer” still needs a validated
+foundation-to-foundation subject-binding route.
