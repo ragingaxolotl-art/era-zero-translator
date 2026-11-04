@@ -36,6 +36,8 @@ LIF:011 and LIF:012 explicitly describe an “other” in the source dictionary.
 The existing ordinary description routes deserve a viewpoint audit before
 extending controlled “I want to be conscious/dormant” forms. This change does not
 equate lexical dormancy with runtime 2 or silently erase the self/other distinction.
+The subsequent [viewpoint review](desired_consciousness.md) confirms the existing
+speaker-specific root selection and extends desire while preserving it.
 Infinitival nested desire (“Nora wants Eli to want …”) remains unsupported;
 explicit finite content (“Nora wants that Eli wants …”) is supported.
 Desire still requires candidate opt-in; its vocabulary admission and broader

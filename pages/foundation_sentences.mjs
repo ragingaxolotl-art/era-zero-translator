@@ -55,13 +55,13 @@ async function composeAtDepth(input,authority,records,loadTemplate,allowDraft,de
   ir.nodes.push(await reference(parsed.target,'preferred',true),await reference(parsed.standard,'standard',true));
   for(const [id,role] of [['preferred','target'],['standard','comparison_standard']])ir.edges.push({edge_id:id,type:'fills_role',from:id,to:'p',role});
  }else{
-  const infinitiveBody='(?:care for .+|prefer .+ to .+|be (?:not )?(?:able to move|able to pay attention|damaged|impaired|restored|happy|hungry|thirsty|tired)(?: \\[[012]\\])?)';
-  const infinitive=parsed.content.match(new RegExp(`^(?:(${HOLDER}) )?(not )?to (not )?(${infinitiveBody})$`));
+  const infinitiveBody='(?:care for .+|prefer .+ to .+|be (?:not )?(?:conscious|dormant|able to move|able to pay attention|damaged|impaired|restored|happy|hungry|thirsty|tired)(?: \\[[012]\\])?)';
+  const infinitive=parsed.content.match(new RegExp(`^(?:(${HOLDER}|me) )?(not )?to (not )?(${infinitiveBody})$`));
   const controlled=!!infinitive&&!infinitive[1];
   let content=parsed.content;
   if(infinitive){
    if(/ (?:yesterday|today)$/.test(infinitive[4]))throw new Error('The day may describe the desire or the desired event. Put the day before the sentence for desire time, or use an explicit that-clause for content time.');
-   const holder=infinitive[1]||parsed.holder,body=infinitive[4];
+   const subject=infinitive[1]||parsed.holder,holder=subject==='me'?'I':subject,body=infinitive[4];
    const negations=Number(!!infinitive[2])+Number(!!infinitive[3])+Number(body.startsWith('be not '));
    if(negations>1)throw new Error('Repeated infinitival negation needs an explicit scope interpretation.');
    const negative=negations===1,firstOrSecond=/^(?:I|[Yy]ou)$/.test(holder);

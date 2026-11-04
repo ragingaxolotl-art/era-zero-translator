@@ -12,6 +12,14 @@ is the starting evidence, not a completion certificate.
 
 ## Current coverage evidence
 
+The [desired-consciousness viewpoint review](../reviews/desired_consciousness.md)
+confirms that the ordinary parser already distinguishes the speaker's LIF:001/002
+from LIF:011/012 for others. Candidate desire now preserves those choices for
+conscious/dormant content, including explicit “me” subjects, without shifting the
+speaker or substituting runtime 2 for lexical dormancy. Its 72-contrast targeted
+suite checks independent MIDI meaning recovery and Ruby/browser parity. Neither
+this nor the atomic-condition extension below has a fresh full-suite report yet.
+
 Latest targeted extension: [desired atomic conditions](../reviews/desired_atomic_conditions.md)
 reuse WRN:001, REP:001 and MIN:201 inside candidate desire, preserving the bearer,
 intensional content, negation and independent runtime states. The new 54-contrast
