@@ -1,3 +1,4 @@
+import {execFileSync} from 'node:child_process';
 import {curiosityFrames} from '../pages/curiosity_frames.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -15,9 +16,10 @@ import {questionContentMusicFrames} from '../pages/question_music_frames.mjs';
 import {quantifiedMusicFrames} from '../pages/quantified_music.mjs';
 const authority=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url))),paths=contextualInquiryFrames().map(f=>f.path.join(','));
 for(const f of [...strictGrammarFrameInventory(),...acquisitionMusicFrames({includeUnderstanding:true,includeRoute:true}),...contextualContentMusicFrames(),...contentSelectionFrames(),...questionContentMusicFrames(),...quantifiedMusicFrames(),...curiosityFrames()])assert(!paths.includes(f.path.join(',')));
-let count=0;
+let count=0;const parity=[];
 for(const label of ['the map','this map','that map','Nora','"River Stone"','I','you'])for(const anchor of [48,60,72]){
  const reference=await contextualContentReference(label),document=await createContextualInquiry(reference,{allowDraft:true}),midi=await midiFromContextualInquiry(document,authority,{allowDraft:true,anchor});
+ parity.push({document,anchor,midi:Buffer.from(midi).toString('base64')});
  const recovered=decodeContextualInquiryMidi(midi,authority.atoms,{allowDraft:true});
  assert.equal(recovered.answer_commitment,'none');assert.equal(recovered.specific_question_supplied,false);assert.equal(recovered.question_selection,'contextually_relevant_unresolved');
  const topic=await midiFromContextualContentDocument(document.topic,authority,{allowDraft:true,anchor});
@@ -30,3 +32,6 @@ for(const mutate of [d=>d.specific_question_supplied=true,d=>d.answer_commitment
 }
 await assert.rejects(()=>createContextualInquiry(valid.topic.anchor));
 console.log(`PASS ${count} contextual inquiry meanings/MIDI inverses: topic preserved, questions unresolved, no answer or curiosity asserted, topic-only distinction and rehashed corruption rejection.`);
+
+const ruby=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_contextual_inquiry','-rbase64','-e',"puts JSON.generate(JSON.parse(STDIN.read).map{|p|Base64.strict_encode64(EraZeroContextualInquiry.midi(p['document'],anchor_midi:p['anchor'],allow_draft:true))})"],{input:JSON.stringify(parity),encoding:'utf8'}));assert.deepEqual(ruby,parity.map(p=>p.midi));
+console.log('PASS all 21 contextual inquiry documents match independent Ruby validation and MIDI regeneration, including transpositions.');

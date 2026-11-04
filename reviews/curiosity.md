@@ -37,5 +37,8 @@ no source sentence, expected notes or hidden meaning to the decoder. This is not
 physical recording evidence. The main draft UI now offers playback scheduling and complete MIDI/meaning
 exports, with explicit pronoun fields and number selection for they/them. Actual
 handler tests cover source/binding changes, asynchronous completion, registry-load
-failures and stale exports. Ruby regeneration, live layout/listening, physical
-recordings, broader grammar and canonical admission remain open.
+failures and stale exports. Independent Ruby validation and regeneration now match all 27 curiosity
+performances byte-for-byte. It rejects default admission and rehashed changes to
+interest, outcome commitment, participant binding and topic/reference structure.
+Live layout/listening, physical recordings, broader grammar and canonical
+admission remain open.

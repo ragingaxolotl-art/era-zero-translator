@@ -23,11 +23,13 @@ answer commitments and curiosity assertions reject. Frame collisions are checked
 against existing canonical and draft grammar inventories. No root, compound,
 runtime interpretation or existing sound is reassigned.
 
-This does not complete “is curious about.” Next, define epistemic interest and
-its relation to the existing desire candidate without conflating instrumental
-wanting, knowledge, current attention, pleasure or successful learning. Then bind
-experiencer and inquiry, preserve matrix scope/runtime, and implement complete
-sentence composition, Ruby regeneration, UI and blind audio recovery. The new
+This content module alone does not translate “is curious about.” The subsequent
+`reviews/curiosity.md` draft binds experiencer and inquiry through an explicit
+epistemic-interest convention using the existing desire candidate, with sentence
+composition, scoped/runtime music, Ruby regeneration, UI and a clean synthetic
+WAV recovery. Broader grammar and physical recording evidence remain open. The new
 standalone content profile is intentionally absent from full-message dispatch;
-it must not be reported as a translated sentence. Ruby parity, WAV tests and
-physical recordings for this content profile remain unfinished.
+it must not be reported as a translated sentence. Independent Ruby validation and regeneration now match all 21 standalone content
+performances, including seven reference forms and three anchors. A subsequent
+curiosity sentence also exercises this content in blind synthetic WAV recovery;
+standalone content WAV tests and physical recordings remain unfinished.
