@@ -309,7 +309,7 @@ module EraZeroPresentation
     relative = [0, 24, 0, 0] if marker == "proposition_content_close"
     aspect = marker.match(/\Aaspect_(bounded|ongoing|habitual)_(open|close)\z/)
     relative = [0, aspect[2] == "open" ? -22 : 22, ASPECTS.index(aspect[1]), 0] if aspect
-    contextual = marker.match(/\Acontextual_(hot|cold|heavy|light|bright|dim)_(open|close)\z/)
+    contextual = marker.match(/\Acontextual_(hot|cold|heavy|light|bright|dim|rough|smooth)_(open|close)\z/)
     relative = [0, contextual[2] == "open" ? -26 : 26, EraZeroContextualStandards::NORMS.fetch(contextual[1])[2], 0] if contextual
     property = marker.match(/\Aproperty_(mass|thermodynamic_temperature|luminance)_(equal|greater_than|less_than|at_least|at_most|not_equal)_(open|close)\z/)
     relative = [0, property[3] == "open" ? -18 : 18, {"mass"=>1,"thermodynamic_temperature"=>2,"luminance"=>3}.fetch(property[1]), PROPERTY_COMPARISONS.index(property[2]), 0] if property

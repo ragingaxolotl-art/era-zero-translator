@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module EraZeroContextualStandards
-  NORMS={'hot'=>['thermodynamic_temperature','greater_than',0],'cold'=>['thermodynamic_temperature','less_than',1],'heavy'=>['mass','greater_than',2],'light'=>['mass','less_than',3],'bright'=>['luminance','greater_than',4],'dim'=>['luminance','less_than',5]}.freeze
+  NORMS={'hot'=>['thermodynamic_temperature','greater_than',0],'cold'=>['thermodynamic_temperature','less_than',1],'heavy'=>['mass','greater_than',2],'light'=>['mass','less_than',3],'bright'=>['luminance','greater_than',4],'dim'=>['luminance','less_than',5],'rough'=>['surface_texture','greater_than',6],'smooth'=>['surface_texture','less_than',7]}.freeze
   module_function
   def valid?(node,ir)
     norm=NORMS[node['norm']]

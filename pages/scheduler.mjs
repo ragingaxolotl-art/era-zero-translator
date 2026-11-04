@@ -167,7 +167,7 @@ function grammarMarker(formal,scopeId,marker){
   if(marker==='proposition_content_close')relative=[0,24,0,0];
   const aspect=marker.match(/^aspect_(bounded|ongoing|habitual)_(open|close)$/);
   if(aspect)relative=[0,aspect[2]==='open'?-22:22,ASPECTS.indexOf(aspect[1]),0];
-  const contextual=marker.match(/^contextual_(hot|cold|heavy|light|bright|dim)_(open|close)$/);
+  const contextual=marker.match(/^contextual_(hot|cold|heavy|light|bright|dim|rough|smooth)_(open|close)$/);
   if(contextual)relative=[0,contextual[2]==='open'?-26:26,CONTEXTUAL_NORMS[contextual[1]].code,0];
   const property=marker.match(/^property_(mass|thermodynamic_temperature|luminance)_(equal|greater_than|less_than|at_least|at_most|not_equal)_(open|close)$/);
   if(property)relative=[0,property[3]==='open'?-18:18,({mass:1,thermodynamic_temperature:2,luminance:3})[property[1]],PROPERTY_COMPARISONS.indexOf(property[2]),0];

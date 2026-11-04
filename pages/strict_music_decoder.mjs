@@ -16,7 +16,7 @@ const frame=(marker,path)=>frames.push({marker,path});
 frame('desire_subject_reference',[0,-25,0,0]);
 for(const side of ['open','close']){
  const sign=side==='open'?-1:1;
- ['hot','cold','heavy','light','bright','dim'].forEach((norm,code)=>frame(`contextual_${norm}_${side}`,[0,sign*26,code,0]));
+ ['hot','cold','heavy','light','bright','dim','rough','smooth'].forEach((norm,code)=>frame(`contextual_${norm}_${side}`,[0,sign*26,code,0]));
  frame(`proposition_content_${side}`,[0,sign*24,0,0]);
  ['bounded','ongoing','habitual'].forEach((mode,i)=>frame(`aspect_${mode}_${side}`,[0,sign*22,i,0]));
  frame(`negation_${side}`,[0,sign,sign,0]);

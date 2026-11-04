@@ -14,6 +14,16 @@ norms:
   light: {dimension: mass, relation: less_than, code: 3}
   bright: {dimension: luminance, relation: greater_than, code: 4}
   dim: {dimension: luminance, relation: less_than, code: 5}
+  rough: {dimension: surface_texture, relation: greater_than, code: 6}
+  smooth: {dimension: surface_texture, relation: less_than, code: 7}
+surface_texture:
+  review: reviews/surface_texture_foundation.md
+  property: Local physical surface irregularity of the material bearer
+  region_and_scale: Contextually selected locally; no whole-object or cross-context identity asserted
+  rough: Irregularity exceeds the local roughness standard
+  smooth: Irregularity is below the local smoothness standard
+  exclusions: [tactile experience, damage, hardness, friction, sharpness, figurative difficulty]
+  implementation_boundary: Typed IR and musical profile; English and UI selection pending
 music:
   open: '[0, -26, norm_code, 0]'
   close: '[0, 26, norm_code, 0]'

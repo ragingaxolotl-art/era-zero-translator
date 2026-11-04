@@ -19,6 +19,12 @@ noun modifiers in dependency order. An additive property/context profile needs
 implementation; no root family, sound code, adjective alias or coverage pass is
 added by this review.
 
+The first texture implementation now appends contextual profile codes 6/7 for
+rough/smooth, preserving codes 0–5 and all root sounds. Twelve typed-IR
+norm/state/negation contrasts pass Ruby/browser MIDI parity and inverse recovery;
+the existing 36 contextual adjective contrasts still pass. This establishes the
+physical texture profile, not its English/UI route, which remains the next step.
+
 [Preference between propositions](../reviews/preference_propositions.md) now
 connects explicit finite alternatives to the existing candidate preference roles.
 Separate subjects, intensional status, nested compounds, inner/outer states,
