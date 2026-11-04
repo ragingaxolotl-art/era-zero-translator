@@ -221,3 +221,16 @@ combinations for care and available mobility. Equivalent infinitive word orders
 produce the same IR and music. Ruby/browser parity and independent MIDI decoding
 verify the boundary. Repeated infinitival negation and unsupported adverbs remain
 unresolved instead of having words discarded. Candidate vocabulary remains opt-in.
+
+### Past desire and explicit matrix time
+
+“Wanted,” “did not want,” and “Did ... want?” place the desire before speech time.
+Fronted “Yesterday,” and “Today,” apply a calendar day to the desire; past tense
+within today retains both constraints. Neither tense nor runtime asserts that
+the desired proposition occurs or is fulfilled.
+
+A trailing day on an infinitive can describe the desire or its content, so that
+form now requests clearer wording. A fronted day selects desire time; an explicit
+finite content clause can carry its own day. Twenty-one outer time/runtime/speech
+act cases match Ruby/browser formals and MIDI, and independent decoding separates
+outer time from a day inside intensional content. These remain candidate previews.

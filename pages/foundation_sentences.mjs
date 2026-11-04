@@ -11,17 +11,24 @@ export function parseFoundationSentence(input){
  let text=input.trim(),state=1;const question=text.endsWith('?');const runtime=text.match(/\s*\[([012])\][.!?]?$/);
  if(runtime){state=Number(runtime[1]);text=text.slice(0,runtime.index).trim();}
  text=text.replace(/[.!?]$/,'').trim();
+ const prefix=text.match(/^(Yesterday|Today),\s+(.+)$/),frontedDay=prefix?.[1].toLowerCase();
+ if(prefix)text=prefix[2];
  const day=text.match(/ (yesterday|today)$/)?.[1],preferenceText=day?text.slice(0,-day.length-1):text;
  let m=preferenceText.match(new RegExp(`^(${HOLDER}) (prefers|prefer|preferred|does not prefer|do not prefer|did not prefer) (.+) to (.+)$`));
- if(!m&&question){const q=preferenceText.match(new RegExp(`^(Does|Do|Did) (${HOLDER}) (not )?prefer (.+) to (.+)$`));if(q)m=[q[0],q[2],q[1]==='Did'?(q[3]?'did not prefer':'preferred'):(q[3]?'does not prefer':'prefer'),q[4],q[5]];}
+ if(!m&&question){const q=preferenceText.match(new RegExp(`^([Dd]oes|[Dd]o|[Dd]id) (${HOLDER}) (not )?prefer (.+) to (.+)$`));if(q)m=[q[0],q[2],q[1].toLowerCase()==='did'?(q[3]?'did not prefer':'preferred'):(q[3]?'does not prefer':'prefer'),q[4],q[5]];}
  if(m){
+  if(frontedDay)return null;
   const past=/^(?:preferred|did)/.test(m[2]);
   if(day==='yesterday'&&!past)return null;
   return {type:'preference',holder:m[1],target:m[3],standard:m[4],negated:m[2].includes('not'),speechAct:question?'question':'assertion',state,...(past&&day!=='yesterday'?{speechTime:'before'}:{}),...(day?{calendarDay:day==='yesterday'?'-1':'0'}:{})};
  }
- m=text.match(new RegExp(`^(${HOLDER}) (wants|want|does not want|do not want) (?:that )?(.+)$`));
- if(!m&&question){const q=text.match(new RegExp(`^(?:Does|Do) (${HOLDER}) (not )?want (.+)$`));if(q)m=[q[0],q[1],q[2]?'does not want':'want',q[3]];}
- if(m)return {type:'desire',holder:m[1],content:m[3],negated:m[2].includes('not'),speechAct:question?'question':'assertion',state};
+ m=text.match(new RegExp(`^(${HOLDER}) (wants|want|wanted|does not want|do not want|did not want) (?:that )?(.+)$`));
+ if(!m&&question){const q=text.match(new RegExp(`^([Dd]oes|[Dd]o|[Dd]id) (${HOLDER}) (not )?want (.+)$`));if(q)m=[q[0],q[2],q[1].toLowerCase()==='did'?(q[3]?'did not want':'wanted'):(q[3]?'does not want':'want'),q[4]];}
+ if(m){
+  const past=/^(?:wanted|did)/.test(m[2]);
+  if(frontedDay==='yesterday'&&!past)return null;
+  return {type:'desire',holder:m[1],content:m[3],negated:m[2].includes('not'),speechAct:question?'question':'assertion',state,...(past&&frontedDay!=='yesterday'?{speechTime:'before'}:{}),...(frontedDay?{calendarDay:frontedDay==='yesterday'?'-1':'0'}:{})};
+ }
  return null;
 }
 async function reference(text,id,allowKind=false){
@@ -49,6 +56,7 @@ export async function composeFoundationSentence(input,authority,records,loadTemp
   const controlled=!!infinitive&&!infinitive[1];
   let content=parsed.content;
   if(infinitive){
+   if(/ (?:yesterday|today)$/.test(infinitive[4]))throw new Error('The day may describe the desire or the desired event. Put the day before the sentence for desire time, or use an explicit that-clause for content time.');
    const holder=infinitive[1]||parsed.holder,body=infinitive[4];
    const negations=Number(!!infinitive[2])+Number(!!infinitive[3])+Number(body.startsWith('be not '));
    if(negations>1)throw new Error('Repeated infinitival negation needs an explicit scope interpretation.');
