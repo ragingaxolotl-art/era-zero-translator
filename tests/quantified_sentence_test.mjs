@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import {composeQuantifiedPropertySentence as compose,parseQuantifiedPropertySentence as parse} from '../pages/quantified_sentences.mjs';
-import {midiFromFormal} from '../pages/engine.mjs';
+import {midiFromFormal,createBundle,verifyBundle,canonicalDigest} from '../pages/engine.mjs';
 import {decodeQuantifiedPropertyMidi} from '../pages/quantified_decoder.mjs';
 import {evaluateQuantifiedPredication as evaluate} from '../pages/quantified_predication.mjs';
 const root=new URL('..',import.meta.url),authority=JSON.parse(fs.readFileSync(new URL('pages/data/index.json',root)));
@@ -26,4 +26,19 @@ const ruby=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_presentatio
 for(const [i,r] of results.entries()){assert.deepEqual(r.formal,ruby[i].formal);assert.equal(Buffer.from(midiFromFormal(r.formal)).toString('base64'),ruby[i].midi);}
 await assert.rejects(()=>compose('Exactly three lamps are not physically energized.',load),/opt-in/);
 for(const s of ['Exactly three lamps are active.','Exactly three lamps are not physically energized yesterday.','Exactly three lamps are not physically energized?','Exactly three lamps are not physically energized? [1].'])assert.equal(parse(s),null);
-console.log('PASS 18 English counted-property cases with full browser/Ruby formal/MIDI parity, independent scope recovery and decoded finite-model counterexamples. UI admission remains pending.');
+console.log('PASS 18 English counted-property cases with full browser/Ruby formal/MIDI parity, independent scope recovery and decoded finite-model counterexamples.');
+
+const bundle=await createBundle(results[0],results[0].source_input);
+assert.equal((await verifyBundle(bundle)).grammar_status,'draft');
+for(const mutate of [
+ b=>{delete b.payload.grammar},
+ b=>{b.payload.grammar.status='approved'},
+ b=>{b.payload.grammar.music_profile='other'},
+ b=>{delete b.payload.formal.draft_quantified},
+ b=>{b.payload.semantic_ir.nodes.find(n=>n.kind==='quantified_reference').binder_id='missing'},
+ b=>{b.payload.semantic_ir.nodes.find(n=>n.operator==='quantified_predication').value='9'}
+]){
+ const tampered=structuredClone(bundle);mutate(tampered);delete tampered.bundle_digest;tampered.bundle_digest=await canonicalDigest(tampered);
+ await assert.rejects(verifyBundle(tampered));
+}
+console.log('PASS counted export provenance and rejection of rehashed metadata/binding/meaning tampering.');

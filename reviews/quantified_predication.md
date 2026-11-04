@@ -169,3 +169,21 @@ recovers both negation positions; those decoded values drive the finite-model
 counterexamples, distinguishing the six-lamp/three-energized interpretations.
 Composition requires allowDraft. This is an English API route, not yet main UI
 routing, canonical admission, arbitrary nested-count decoding or full grammar.
+
+## Draft counted-property preview and export
+
+The main translator now offers an explicit draft preview for counted unary
+properties that the canonical sentence parser does not already admit. Existing
+positive counted sentences retain their canonical route. The preview clears the
+previous result, checks the source text and card lifetime before and after
+composition, and uses strict sound scheduling with a visible draft label.
+Handler tests exercise opt-in and rejection of stale results and errors. This is
+handler-level evidence, not a live browser layout or listening check.
+
+Exports retain EZCOUNT-BIND-1 / EZCOUNT-MUSIC-1 draft provenance. Verification
+rejects missing or changed provenance, missing formal opt-in, invalid binders,
+and changed semantic identities even when the outer envelope digest is rebuilt.
+This check does not establish general formal regeneration for all bundle types.
+The 18 English meaning/music cases and existing foundation preview/export checks
+pass. Nested and compound counted predicates, broad English coverage, source
+reconciliation and the original completion gates remain open.

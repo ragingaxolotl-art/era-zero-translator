@@ -26,7 +26,7 @@ for(const outcome of ['success','failure']){
 assert(app.includes('if(parseFoundationSentence(input)||foundationPronounPlan(input)){showFoundationPreview(input);return}'));
 vm.runInContext(app.split('\n').find(l=>l.startsWith('const recognitionOptions='))+';this.options=recognitionOptions;',context);
 state.resolution={status:'candidate_translation'};assert.equal(context.options().mode,'strict');
-assert(app.includes("result.status==='candidate_translation'?'Draft preview'"));
+assert(app.includes("['candidate_translation','draft_quantified_translation'].includes(result.status)?'Draft preview'"));
 console.log('PASS draft preview UI: explicit opt-in, stale input/results rejection, draft label and strict sound mode.');
 const registry=JSON.parse(fs.readFileSync(new URL('../pages/data/foundation_candidates.json',import.meta.url)));
 assert.deepEqual(registry,JSON.parse(fs.readFileSync(new URL('../reviews/foundation_extension_candidates.json',import.meta.url))));
