@@ -87,3 +87,11 @@ questions and speaker/addressee bindings. Existing thirty pronoun cases retain
 Ruby parity. Actual UI-handler checks require number for both neutral references
 and reject group coercion. This extends supported sentence forms; it does not
 establish arbitrary pronoun grammar or discourse-wide antecedent resolution.
+
+Neutral subject agreement now also preserves contracted negation, including
+curly apostrophes and inverted questions. A discovered defect in “Did they care”
+would have inflected the bare verb after the auxiliary; auxiliary detection now
+prevents that for past and modal questions. Twenty-one contracted/past-question
+meaning/MIDI comparisons pass, plus understanding contraction, modal-entry and
+first-person am-not checks. Existing 24 ordinary, 15 cognitive and 27 understanding
+neutral-reference comparisons still pass. No lexical definition or sound changes.

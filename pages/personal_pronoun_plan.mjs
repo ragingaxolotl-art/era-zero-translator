@@ -41,6 +41,9 @@ export function substitutePersonalPronouns(input,occurrences,chosen){
   if(!/^they$/i.test(o.pronoun))continue;
   const ref=chosen[o.key],first=/^(I|me)$/.test(ref),second=/^you$/i.test(ref),third=!first&&!second;
   const agree=verb=>{const lower=verb.toLowerCase();let word=lower;
+   const negative={"aren't":'are',"weren't":'were',"haven't":'have',"don't":'do',"didn't":'did',"can't":'can',"couldn't":'could',"won't":'will',"wouldn't":'would',"shouldn't":'should',"mustn't":'must'}[lower.replace('’',"'")];
+   if(negative)return agree((/^[A-Z]/.test(verb)?negative[0].toUpperCase()+negative.slice(1):negative))+' not';
+   if(['did','can','could','will','would','should','must','may','might'].includes(lower))return verb;
    if(lower==='are')word=first?'am':second?'are':'is';
    else if(lower==='were')word=second?'were':'was';
    else if(third&&lower==='have')word='has';
@@ -48,10 +51,10 @@ export function substitutePersonalPronouns(input,occurrences,chosen){
    else if(third)word=/[^aeiou]y$/.test(lower)?lower.slice(0,-1)+'ies':/(s|sh|ch|x|z|o)$/.test(lower)?lower+'es':lower+'s';
    return /^[A-Z]/.test(verb)?word[0].toUpperCase()+word.slice(1):word;
   };
-  const before=input.slice(0,o.start).match(/\b(Are|Were|Do|Have) $/i);
-  const after=input.slice(o.end).match(/^ (are|were|have|do|care|run|swim|carry|enter|prefer|know|want|understand)\b/i);
+  const before=input.slice(0,o.start).match(/\b(aren['’]t|weren['’]t|haven['’]t|don['’]t|didn['’]t|can['’]t|couldn['’]t|won['’]t|wouldn['’]t|shouldn['’]t|mustn['’]t|Are|Were|Do|Have|Did|Can|Could|Will|Would|Should|Must|May|Might) $/i);
+  const after=input.slice(o.end).match(/^ (aren['’]t|weren['’]t|haven['’]t|don['’]t|didn['’]t|are|were|have|do|care|run|swim|carry|enter|prefer|know|want|understand)\b/i);
   if(after&&!before)edits.push({start:o.end+1,end:o.end+1+after[1].length,text:agree(after[1])});
-  if(before)edits.push({start:o.start-before[0].length,end:o.start-1,text:agree(before[1])});
+  if(before){const normalized=agree(before[1]),negative=normalized.endsWith(' not');edits.push({start:o.start-before[0].length,end:o.start-1,text:negative?normalized.slice(0,-4):normalized});if(negative)edits.find(e=>e.start===o.start&&e.end===o.end).text+=' not';}
  }
  let output=input;for(const edit of edits.sort((a,b)=>b.start-a.start))output=output.slice(0,edit.start)+edit.text+output.slice(edit.end);
  return output;
