@@ -4,6 +4,7 @@ require_relative 'era_zero_subject_control'
 module EraZeroFoundationIR
   module_function
   def argument_type(n)
+    return 'question' if n['kind']=='clause' && n['clause_type']=='content' && n['content_status']=='intensional' && n['value_type']=='question' && n['question_kind']=='polar'
     return 'proposition' if n['kind']=='clause' && n['clause_type']=='content' && n['content_status']=='intensional' && n['value_type']=='proposition'
     return 'kind' if n['kind']=='phonemic_reference' && n['reference_mode']=='nominal_class'
     return 'entity' if (%w[phonemic_reference deictic_reference].include?(n['kind']) || (n['kind']=='reference' && n['reference_type']=='desire_subject')) && n['value_type']=='entity'
@@ -28,7 +29,7 @@ module EraZeroFoundationIR
       end
     end
     nodes.select{|n|n['kind']=='clause'&&(n['clause_type']=='content'||n.key?('content_status'))}.each do |n|
-      raise ArgumentError,'Invalid intensional proposition.' unless argument_type(n)=='proposition' && n['node_id']!=ir['root_clause']
+      raise ArgumentError,'Invalid intensional proposition.' unless %w[proposition question].include?(argument_type(n)) && !(argument_type(n)=='proposition' && n.key?('question_kind')) && n['node_id']!=ir['root_clause']
       outgoing=edges.select{|e|e['from']==n['node_id']}
       raise ArgumentError,'Content cannot also be asserted or shared.' unless outgoing.length==1 && outgoing[0]['type']=='fills_role' && foundations.any?{|f|f['node_id']==outgoing[0]['to']}
       centers=edges.select{|e|e['type']=='centers'&&e['to']==n['node_id']}

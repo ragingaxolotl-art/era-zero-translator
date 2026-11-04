@@ -1,3 +1,4 @@
+import {questionContentMusicEvent} from './question_music_frames.mjs';
 import {validateQuantifiedBindings} from './quantified_binding.mjs';
 import {quantifiedMusicEvent} from './quantified_music.mjs';
 import {CONTEXTUAL_NORMS,validContextualComparison} from './contextual_standards.mjs';
@@ -93,8 +94,9 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
       if(conditions.length>1)throw new Error('Unsupported musical multiple conditions; use explicit coordination.');
       if(conditions.length){const condition=conditions[0];result=[grammarMarker(formal,id,`conditional_${condition.condition_status}_open`),...walk(condition.from),grammarMarker(formal,id,'conditional_then'),...result,grammarMarker(formal,id,`conditional_${condition.condition_status}_close`)];}
       if(node.clause_type==='content'){
-       if(node.content_status!=='intensional'||node.value_type!=='proposition'||id===ir.root_clause)throw new Error('Invalid intensional content.');
-       result=[grammarMarker(formal,id,'proposition_content_open'),...result,grammarMarker(formal,id,'proposition_content_close')];
+       if(node.content_status!=='intensional'||!['proposition','question'].includes(node.value_type)||id===ir.root_clause)throw new Error('Invalid intensional content.');
+       if(node.value_type==='question'){if(node.question_kind!=='polar')throw new Error('Unsupported question content.');result=[questionContentMusicEvent('open',formal.performance.anchor_midi),...result,questionContentMusicEvent('close',formal.performance.anchor_midi)];}
+       else result=[grammarMarker(formal,id,'proposition_content_open'),...result,grammarMarker(formal,id,'proposition_content_close')];
       }
     } else if (node.kind === 'measurement') {
       result=measurementMarkers(formal,node);

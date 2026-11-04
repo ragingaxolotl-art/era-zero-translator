@@ -171,3 +171,37 @@ Cognitive predicate binding and full epistemic semantic recovery remain the next
 work. Musical token-tree parity does not establish that a holder knows, believes,
 understands or has learned an answer. Open questions and live listening remain
 unverified.
+
+## Candidate polar-answer knowledge and typed question binding
+
+`reviews/cognitive_foundation_candidates.json` records one separate, noncanonical
+EZFOUND-1 candidate: knowledge of a polar answer, using previously unused sound
+code 2. It does not modify desire/preference records, the 324-root grid or approved
+compounds. Its invariant commits to knowing the correct alternative under the
+contextual epistemic standard, excludes a merely correct guess, and does not
+select the positive rather than negative answer. It asserts no acquisition event,
+explanation, empathy, skill, current attention, communication or permanent retention.
+This is the result-state dependency for a future learning construction, not a
+synonym for all understanding or all learning.
+
+Foundation type checking now admits `question` separately from `proposition`.
+An embedded question clause requires intensional content and `question_kind: polar`;
+it retains a single owned predicate center and cannot escape into an assertion.
+The knowledge candidate requires this question argument. Existing desire still
+requires a proposition: wanting to know requires a nested knowledge proposition,
+not a question attached directly to desire. Question metadata on a proposition
+is rejected rather than ignored. Open wh-question binding remains unsupported.
+
+Browser/Ruby validators agree on all three runtime states and five malformed
+argument/scope cases. Ruby-rendered formal documents produce byte-identical MIDI
+in the browser; independent token observation recovers the candidate identity
+and the polar-content frame only with the separate draft-question opt-in. The
+existing 23 foundation type/scope checks and foundation preview/export checks
+pass. This is typed binding and performance evidence, not a full semantic inverse
+or English knows/whether admission. A contextual knowledge claim cannot be
+verified as real-world knowledge from runtime, confidence or a truth bit.
+
+Next: compose explicit knows/whether English with independent outer and inner
+negation and runtime, then independently recover the holder, question proposition
+and both scopes from music. Keep default canonical admission unchanged until the
+candidate review and broader completion gates are satisfied.

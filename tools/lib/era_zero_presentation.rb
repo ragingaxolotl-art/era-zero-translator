@@ -196,8 +196,13 @@ module EraZeroPresentation
                    phrase = [grammar_marker(formal, id, "conditional_#{condition['condition_status']}_open")] + walk.call(condition.fetch("from")) + [grammar_marker(formal, id, "conditional_then")] + phrase + [grammar_marker(formal, id, "conditional_#{condition['condition_status']}_close")]
                  end
                  if node["clause_type"] == "content"
-                   raise PresentationError, "invalid intensional content" unless node["content_status"] == "intensional" && node["value_type"] == "proposition" && id != ir["root_clause"]
-                   phrase = [grammar_marker(formal, id, "proposition_content_open")] + phrase + [grammar_marker(formal, id, "proposition_content_close")]
+                   raise PresentationError, "invalid intensional content" unless node["content_status"] == "intensional" && %w[proposition question].include?(node["value_type"]) && id != ir["root_clause"]
+                   if node["value_type"] == "question"
+                     raise PresentationError, "unsupported question content" unless node["question_kind"] == "polar"
+                     phrase = [grammar_marker(formal, id, "polar_content_open")] + phrase + [grammar_marker(formal, id, "polar_content_close")]
+                   else
+                     phrase = [grammar_marker(formal, id, "proposition_content_open")] + phrase + [grammar_marker(formal, id, "proposition_content_close")]
+                   end
                  end
                  phrase
                when "measurement"
@@ -324,6 +329,8 @@ module EraZeroPresentation
       sign = day[2] == "open" ? -1 : 1
       relative = [0, 12 * sign, code, 12 * sign, 0]
     end
+    relative = [0, -31, 0, 0] if marker == "polar_content_open"
+    relative = [0, 31, 0, 0] if marker == "polar_content_close"
     relative = [0, -24, 0, 0] if marker == "proposition_content_open"
     relative = [0, 24, 0, 0] if marker == "proposition_content_close"
     aspect = marker.match(/\Aaspect_(bounded|ongoing|habitual)_(open|close)\z/)

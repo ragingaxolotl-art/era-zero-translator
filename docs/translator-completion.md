@@ -28,7 +28,9 @@ either answer; its 12 composition checks postdate the consolidated baseline.
 Draft standalone musical framing now preserves the enclosed predicate token
 tree in 12 independent decoding checks. Ruby now validates the entire embedded
 proposition and produces byte-identical content MIDI for these cases. Integration
-with cognitive predicates remains unfinished.
+with cognitive predicates is in progress: a separate polar-answer knowledge
+candidate now accepts typed question content with browser/Ruby binding and MIDI
+parity. English composition and full semantic inverse remain unfinished.
 
 Recent completed implementation work:
 

@@ -20,7 +20,7 @@ export async function validateFoundationIR(input, records, {allowDraft=false}={}
  const definitions=new Map(registry.map(r=>[r.foundation_id,r]));
  const foundations=ir.nodes.filter(n=>n.target_type==='foundation');
  const content=ir.nodes.filter(n=>n.kind==='clause'&&(n.clause_type==='content'||Object.hasOwn(n,'content_status')));
- const type=n=>n.kind==='clause'&&n.clause_type==='content'&&n.content_status==='intensional'&&n.value_type==='proposition'?'proposition':n.kind==='phonemic_reference'&&n.reference_mode==='nominal_class'?'kind':(['phonemic_reference','deictic_reference'].includes(n.kind)||(n.kind==='reference'&&n.reference_type==='desire_subject'))&&n.value_type==='entity'?'entity':null;
+ const type=n=>n.kind==='clause'&&n.clause_type==='content'&&n.content_status==='intensional'&&n.value_type==='question'&&n.question_kind==='polar'?'question':n.kind==='clause'&&n.clause_type==='content'&&n.content_status==='intensional'&&n.value_type==='proposition'?'proposition':n.kind==='phonemic_reference'&&n.reference_mode==='nominal_class'?'kind':(['phonemic_reference','deictic_reference'].includes(n.kind)||(n.kind==='reference'&&n.reference_type==='desire_subject'))&&n.value_type==='entity'?'entity':null;
  for(const n of foundations){
   const d=definitions.get(n.target_id);
   if(n.kind!=='lexical_occurrence'||!d||n.foundation_version!==d.definition_version||Object.hasOwn(n,'compound_bindings')||![0,1,2].includes(n.runtime_state?.code)||Object.hasOwn(n.runtime_state,'num'))throw new Error('Invalid foundation occurrence.');
@@ -32,7 +32,7 @@ export async function validateFoundationIR(input, records, {allowDraft=false}={}
   }
  }
  for(const n of content){
-  if(type(n)!=='proposition'||n.node_id===ir.root_clause)throw new Error('Content must be an intensional embedded proposition.');
+  if(!['proposition','question'].includes(type(n))||(type(n)==='proposition'&&Object.hasOwn(n,'question_kind'))||n.node_id===ir.root_clause)throw new Error('Content must be an intensional embedded proposition.');
   const outgoing=ir.edges.filter(e=>e.from===n.node_id);
   if(outgoing.length!==1||outgoing[0].type!=='fills_role'||!foundations.some(f=>f.node_id===outgoing[0].to))throw new Error('Intensional content cannot also be asserted or shared.');
   const centers=ir.edges.filter(e=>e.type==='centers'&&e.to===n.node_id);

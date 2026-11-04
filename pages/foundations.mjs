@@ -14,7 +14,7 @@ export async function validateFoundations(records,{allowDraft=false}={}){
  const ids=new Set(),codes=new Set();
  for(const r of records){
   if(!r||r.profile!=='EZFOUND-1'||r.definition_version!=='1.0.0'||r.family_affinity!=='MIN'||!['approved',...(allowDraft?['candidate']:[])].includes(r.status)||typeof r.definition!=='string'||r.definition.length<30||!Array.isArray(r.excludes)||!r.excludes.length||r.excludes.some(x=>typeof x!=='string'||!x.trim())||!r.roles||typeof r.roles!=='object'||Array.isArray(r.roles)||!Object.keys(r.roles).length)throw new Error('Invalid or unapproved foundation.');
-  for(const [role,types] of Object.entries(r.roles))if(!['experiencer','target','comparison_standard','content'].includes(role)||!Array.isArray(types)||!types.length||new Set(types).size!==types.length||types.some(t=>!['entity','kind','proposition'].includes(t)))throw new Error('Invalid foundation argument types.');
+  for(const [role,types] of Object.entries(r.roles))if(!['experiencer','target','comparison_standard','content'].includes(role)||!Array.isArray(types)||!types.length||new Set(types).size!==types.length||types.some(t=>!['entity','kind','proposition','question'].includes(t)))throw new Error('Invalid foundation argument types.');
   foundationPath(r.sound_code);
   const digest=await canonicalDigest(foundationPayload(r));
   if(r.content_digest!==digest||r.foundation_id!==`FND:${digest.slice(0,24)}`||ids.has(r.foundation_id)||codes.has(r.sound_code))throw new Error('Foundation identity collision or mismatch.');
