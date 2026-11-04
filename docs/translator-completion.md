@@ -32,16 +32,15 @@ confirms that the ordinary parser already distinguishes the speaker's LIF:001/00
 from LIF:011/012 for others. Candidate desire now preserves those choices for
 conscious/dormant content, including explicit “me” subjects, without shifting the
 speaker or substituting runtime 2 for lexical dormancy. Its 72-contrast targeted
-suite checks independent MIDI meaning recovery and Ruby/browser parity. Neither
-this nor the atomic-condition extension below has a fresh full-suite report yet.
+suite checks independent MIDI meaning recovery and Ruby/browser parity. Both this and the atomic-condition extension below are included in the fresh
+111-check full regression at revision `9a6ae06`, with no failures, timeouts or reruns.
 
 Latest targeted extension: [desired atomic conditions](../reviews/desired_atomic_conditions.md)
 reuse WRN:001, REP:001 and MIN:201 inside candidate desire, preserving the bearer,
 intensional content, negation and independent runtime states. The new 54-contrast
 suite passes Ruby/browser rendering and MIDI-only meaning recovery; existing
-subject-control and preference-inverse suites also pass. The full 108-check report
-below predates this extension; its newly registered test has not yet received a
-fresh full-suite run. No original completion gate is closed by this addition.
+subject-control and preference-inverse suites also pass. The fresh 111-check regression includes this extension and the subsequent
+consciousness and proposition-preference work. No original completion gate is closed by this addition.
 
 The [ordinary phrase audit](../reports/ordinary_phrase_coverage.md) currently has
 24 checked compositions, 10 uncomposed phrases, and six phrases requiring an explicit interpretation or contextual standard out of 40 deliberately varied cases. This is an implementation-authored diagnostic set, not a blind evaluation
@@ -74,7 +73,7 @@ root meanings and both lexical and runtime 0/1/2 distinctions.
 First reconciled with the source audit's seven original phases at draft `0f10d62`
 on October 29, 2026 (Page sequence 5), preserving all 104 blocks and seven exit
 requirements. That historical revision recorded the 80-check baseline and its
-targeted follow-up. The November 4 draft adds the felt-condition dependency family, open definite noun labels, coordinated care, explicit disjunction, luminance and local contextual standards. Candidate desire/preference composition now preserves past time, nested content, controlled subjects and desired felt conditions, including compounds of compounds. Candidate meanings remain opt-in, and live listening/browser/deployment validation is unverified. The fresh full implementation regression passes all 108 checks; general-English and product validation separately pass 16 each. These do not include resolution of the seven historical-packet audit failures. Current regression evidence is in `reports/translator_completion_regression.json`; it is an implementation report, not a gate-closure certificate. The ordinary diagnostic has 24 checked compositions out of 40; ten remain uncomposed and six require interpretation. None of these changes closes the gates below.
+targeted follow-up. The November 4 draft adds the felt-condition dependency family, open definite noun labels, coordinated care, explicit disjunction, luminance and local contextual standards. Candidate desire/preference composition now preserves past time, nested content, controlled subjects and desired felt conditions, including compounds of compounds. Candidate meanings remain opt-in, and live listening/browser/deployment validation is unverified. The fresh full implementation regression at `9a6ae06` passes all 111 checks; general-English and product validation separately pass 16 each. These do not include resolution of the seven historical-packet audit failures. Current regression evidence is in `reports/translator_completion_regression.json`; it is an implementation report, not a gate-closure certificate. The ordinary diagnostic has 24 checked compositions out of 40; ten remain uncomposed and six require interpretation. None of these changes closes the gates below.
 
 Seven Google revision snapshots were inspected, and all 47 missing review paths were searched in available non-shallow Git history without recovery. Fresh surviving-packet checks produce 24 passes and seven failures; duplicated candidates and review-coverage gaps remain visible. These reports are newly generated evidence, not replacements for historical approval artifacts. See `reports/drive_revision_recovery_2026_11_04.json` and `reports/missing_review_revalidation.json`.
 
@@ -110,8 +109,8 @@ and do not create new LIF/STR-like families merely to fill the address grid.
 
 A [candidate additive foundation codec](../reviews/lexical_foundation_extension.md)
 now tests a separate FND registry against the new-root-family alternative. Desire
-and preference remain candidate definitions; neither is an ordinary-English route
-or approved vocabulary. Seventy-two register/anchor/runtime cases match Ruby events
+and preference remain candidate definitions with opt-in English routes; neither
+is approved production vocabulary. Seventy-two register/anchor/runtime cases match Ruby events
 and recover from MIDI, and 972 existing root/state performances decode unchanged.
 Draft records are rejected by default. Typed/intensional arguments, compound reuse,
 full parser/renderer integration and pronunciation/listening remain admission gates.

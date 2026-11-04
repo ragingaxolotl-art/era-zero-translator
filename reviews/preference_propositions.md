@@ -33,4 +33,6 @@ painful-treatment modifiers, object desire, curiosity or choice available.
 
 Candidate opt-in and all existing admission gates remain. Full English preference
 syntax, general comparative attachment, mixed kinds/propositions, ellipsis,
-listening tests and a new full regression run are not established by this suite.
+and listening tests are not established by this suite. The subsequent full
+111-check regression at `9a6ae06` passes with no reruns; it does not supply those
+missing scope or listening claims.
