@@ -42,7 +42,16 @@ runtime 0/1/2. Full Ruby document validation and sentence rendering now match
 Default draft access and five rehashed corrupt semantic documents reject. Existing foundation
 codec checks retain 972 old atomic performances.
 
-Next: UI interpretation choices, wider embedded
+The general translator now routes recognized understanding sentences to an
+explicit draft card. Bare objects require a reading choice; explicit content
+readings select their stated criterion. Preview offers music playback, MIDI and
+the validated draft meaning document. Choice/source changes and late asynchronous
+results cannot reuse stale outputs. Actual-handler tests use real composition,
+export and MIDI inverse; live browser layout/listening is not yet verified.
+The saved document is a standalone understanding draft, not the ordinary bundle
+import format.
+
+Next: wider embedded
 and temporal content, simulated channel contrasts and physical microphone tests. No new 27-root family is justified by this draft.
-The current comprehension documents have an opt-in standalone musical path and
-WAV inverse; they are not yet routed as completed main-UI translations.
+The current comprehension documents have an opt-in standalone musical path,
+WAV inverse and draft UI route. They remain outside canonical vocabulary admission.
