@@ -18,3 +18,14 @@ export function decodeSupportedMeaningMidi(bytes,atoms){
  if(accepted.length!==1)throw new Error(accepted.length?'Multiple semantic profiles accepted; explicit resolution required.':'No supported full-message semantic profile accepted.');
  return accepted[0];
 }
+
+// Draft meanings remain explicitly gated and never silently become canonical.
+export async function decodeSupportedMeaningWithDrafts(bytes,atoms,records,{allowDraft=false}={}){
+ if(!allowDraft)return decodeSupportedMeaningMidi(bytes,atoms);
+ const {decodeFoundationSentenceMidi}=await import('./foundation_semantic_decoder.mjs');
+ const accepted=[];
+ try{accepted.push(decodeSupportedMeaningMidi(bytes,atoms));}catch{}
+ try{accepted.push(await decodeFoundationSentenceMidi(bytes,atoms,records,{allowDraft:true,allowDraftQuestionContent:true,allowDraftAcquisition:true}));}catch{}
+ if(accepted.length!==1)throw new Error('No unique supported canonical or draft semantic interpretation.');
+ return accepted[0];
+}

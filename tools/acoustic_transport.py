@@ -60,6 +60,12 @@ def decode(path):
     peak=float(energy.max(initial=0))
     if peak<.005: raise ValueError('Silent or too quiet')
     mask=energy>max(.003,peak*.15)
+    # Low-frequency zero crossings can dip below the energy threshold for a
+    # few milliseconds. Bridge only short internal dips, never the 40 ms
+    # intentional articulation gap. No expected notes inform this operation.
+    holes=np.diff(np.r_[True,mask,True].astype(int))
+    for a,b in zip(np.where(holes==-1)[0],np.where(holes==1)[0]):
+        if a>0 and b<len(mask) and (b-a)*block/rate<=.012: mask[a:b]=True
     changes=np.diff(np.r_[False,mask,False].astype(int))
     regions=[(a*block,min(b*block,len(x))) for a,b in zip(np.where(changes==1)[0],np.where(changes==-1)[0]) if (b-a)*block/rate>.055]
     if len(regions)<13: raise ValueError('Incomplete calibration, payload or checksum')
@@ -80,10 +86,10 @@ def decode(path):
     gap=float(np.median(gaps[:3]))
     if not .07<unit<.25 or not .015<gap<.1: raise ValueError('Invalid audio clock')
     quantized=[]
-    for p,d in zip(pitches,durations):
+    for index,(p,d) in enumerate(zip(pitches,durations)):
         q=round(p-tuning);ticks=round(d/unit)
         if abs(p-tuning-q)>.20 or abs(d/unit-ticks)>.18 or ticks<1 or not 0<=q<=127:
-            raise ValueError('Uncertain pitch or duration; no correction guessed')
+            raise ValueError(f'Uncertain pitch or duration at tone {index}: pitch={p-tuning:.3f}, units={d/unit:.3f}; no correction guessed')
         quantized.append((q,ticks))
     if quantized[:4]!=PREAMBLE: raise ValueError('Invalid audible calibration')
     if abs((gaps[3]-gap)/unit-4)>.25: raise ValueError('Invalid payload boundary')

@@ -16,3 +16,7 @@ Noise suppression, echo cancellation and automatic gain are requested off; actua
 browser/device settings may differ and are displayed during capture. Avoid
 headphones for this physical-channel test. Keep source meaning outside the decoder;
 compare recovered meaning afterward. This harness has not yet been live-tested.
+
+For an explicitly draft cognitive performance, add `--allow-draft` to the decoder
+command. The decoder loads the shared candidate registry; no source sentence or
+meaning file is supplied. Canonical performances do not require this flag.

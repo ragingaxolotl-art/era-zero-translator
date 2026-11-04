@@ -95,3 +95,25 @@ spatial reference modes, and custody acquisition. `tools/audio_capture/` provide
 a local browser recording harness which exports mono PCM WAV without uploading
 audio. It requests microphone access only after Start is pressed. Its JavaScript
 syntax has been checked; live browser/capture behavior remains unverified.
+
+## Cognitive draft audio integration
+
+The same WAV-only command now accepts `--allow-draft` to load the existing
+reviewed candidate registry and try the existing foundation/acquisition semantic
+inverse. Without that option, draft meanings remain rejected. No new cognitive
+root, compound or meaning is introduced by this transport integration.
+
+`tests/cognitive_acoustic_test.mjs` exercises demonstrative preference direction,
+desired swimming with an explicit actor, outer and embedded negation in polar
+knowledge, and yesterday's learned-whether event. It compares recovered meanings
+with the existing independent semantic inverse on the evaluator side; the decoder
+receives only a WAV path and the explicit draft flag. Results are recorded in
+`reports/cognitive_acoustic_probe.json`. Physical-channel validation remains open.
+
+The first learned-whether clean-audio test failed at a short MIDI-28 grammar
+tone: zero-crossing energy dips split the tone into a measured 0.560 timing unit.
+The segmenter now bridges only internal energy holes at most 12 ms long, shorter
+than the intentional 40 ms articulation gap. Pitch and timing rejection tolerances
+were not relaxed. A dedicated 92-case sweep covers MIDI 26–48 at four durations;
+all recover exactly. The four cognitive messages subsequently pass clean blind
+WAV decoding. Synthetic channel outcomes are recorded separately in their report.
