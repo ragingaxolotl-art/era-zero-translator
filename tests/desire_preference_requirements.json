@@ -1,0 +1,244 @@
+{
+  "status": "unimplemented_semantic_acceptance_requirements",
+  "scope": "Authored contrasting requirements, not a held-out benchmark or passing translator test. No vocabulary is approved by this file.",
+  "review": "reviews/desire_preference_foundation.md",
+  "cases": [
+    {
+      "id": "relative_not_absolute",
+      "input": "Nora prefers tea to coffee.",
+      "required": [
+        "holder=Nora",
+        "preferred=tea",
+        "dispreferred=coffee",
+        "contextual comparison"
+      ],
+      "must_not_infer": [
+        "drinking",
+        "ownership",
+        "both pleasant",
+        "absolute desire for tea"
+      ],
+      "encoding_status": "unresolved"
+    },
+    {
+      "id": "reversed",
+      "input": "Nora prefers coffee to tea.",
+      "required": [
+        "preferred=coffee",
+        "dispreferred=tea"
+      ],
+      "must_not_infer": [
+        "same meaning or sound as reversed ordering"
+      ],
+      "encoding_status": "unresolved"
+    },
+    {
+      "id": "both_unpleasant",
+      "input": "Nora prefers the painful treatment to the more painful treatment.",
+      "required": [
+        "relative favoring"
+      ],
+      "must_not_infer": [
+        "pleasantness",
+        "happiness",
+        "objective goodness"
+      ],
+      "encoding_status": "unresolved"
+    },
+    {
+      "id": "unattended",
+      "input": "Nora still prefers tea while thinking about the gate.",
+      "required": [
+        "preference can persist outside present attention"
+      ],
+      "must_not_infer": [
+        "present attention toward tea"
+      ],
+      "encoding_status": "unresolved"
+    },
+    {
+      "id": "fleeting",
+      "input": "For this instant Nora prefers tea to coffee.",
+      "required": [
+        "a contextually temporary preference"
+      ],
+      "must_not_infer": [
+        "persistence across cognitive episodes"
+      ],
+      "encoding_status": "unresolved"
+    },
+    {
+      "id": "without_choice",
+      "input": "Nora prefers tea but chooses coffee.",
+      "required": [
+        "preference distinct from selection"
+      ],
+      "must_not_infer": [
+        "contradiction solely from the two different alternatives"
+      ],
+      "encoding_status": "unresolved"
+    },
+    {
+      "id": "negation",
+      "input": "Nora does not prefer tea to coffee.",
+      "required": [
+        "negated preference"
+      ],
+      "must_not_infer": [
+        "reverse preference",
+        "indifference",
+        "runtime 0 used instead of negation"
+      ],
+      "encoding_status": "unresolved"
+    },
+    {
+      "id": "question",
+      "input": "Does Nora prefer tea to coffee?",
+      "required": [
+        "question speech act"
+      ],
+      "must_not_infer": [
+        "asserted preference"
+      ],
+      "encoding_status": "unresolved"
+    },
+    {
+      "id": "past",
+      "input": "Nora preferred tea to coffee yesterday.",
+      "required": [
+        "past contextual preference"
+      ],
+      "must_not_infer": [
+        "current preference",
+        "runtime 0 as tense"
+      ],
+      "encoding_status": "unresolved"
+    },
+    {
+      "id": "desire_not_need",
+      "input": "Nora wants the unnecessary ornament.",
+      "required": [
+        "desire"
+      ],
+      "must_not_infer": [
+        "physical need",
+        "viability dependence"
+      ],
+      "encoding_status": "unresolved"
+    },
+    {
+      "id": "need_not_desire",
+      "input": "Nora needs water but does not want water.",
+      "required": [
+        "need separate from desire"
+      ],
+      "must_not_infer": [
+        "contradiction from need alone"
+      ],
+      "encoding_status": "unresolved"
+    },
+    {
+      "id": "desire_without_pleasure",
+      "input": "Nora wants the unpleasant treatment.",
+      "required": [
+        "desire"
+      ],
+      "must_not_infer": [
+        "pleasant feeling"
+      ],
+      "encoding_status": "unresolved"
+    },
+    {
+      "id": "desire_without_plan",
+      "input": "Nora wants to leave but has no plan to leave.",
+      "required": [
+        "desired outcome"
+      ],
+      "must_not_infer": [
+        "intention",
+        "plan",
+        "departure event"
+      ],
+      "encoding_status": "unresolved"
+    },
+    {
+      "id": "unrealized_content",
+      "input": "Nora wants the nonexistent fountain to exist.",
+      "required": [
+        "intensional desired proposition"
+      ],
+      "must_not_infer": [
+        "actual fountain existence"
+      ],
+      "encoding_status": "unresolved"
+    },
+    {
+      "id": "object_reading",
+      "input": "Nora wants tea.",
+      "required": [
+        "resolve relevant desired relation from context or clarification"
+      ],
+      "must_not_infer": [
+        "silently force ownership or drinking"
+      ],
+      "encoding_status": "unresolved"
+    },
+    {
+      "id": "curiosity_not_attention",
+      "input": "Orin is curious about the map.",
+      "required": [
+        "epistemic orientation toward map topic"
+      ],
+      "must_not_infer": [
+        "attention alone",
+        "map understanding",
+        "successful learning"
+      ],
+      "encoding_status": "unresolved"
+    },
+    {
+      "id": "attention_not_curiosity",
+      "input": "The alarming noise captures Orin’s attention, but Orin does not want to learn about it.",
+      "required": [
+        "attention can lack curiosity"
+      ],
+      "must_not_infer": [
+        "curiosity inferred from attention"
+      ],
+      "encoding_status": "unresolved"
+    },
+    {
+      "id": "participant_change",
+      "input": "Eli prefers tea to coffee.",
+      "required": [
+        "holder=Eli"
+      ],
+      "must_not_infer": [
+        "same holder as Nora"
+      ],
+      "encoding_status": "unresolved"
+    },
+    {
+      "id": "runtime_independence",
+      "input": "Nora prefers tea to coffee [2].",
+      "required": [
+        "explicit runtime 2 distinct from preference relation"
+      ],
+      "must_not_infer": [
+        "runtime 2 as preference direction or emotional valence"
+      ],
+      "encoding_status": "unresolved"
+    },
+    {
+      "id": "kind_not_cup",
+      "input": "Nora prefers tea to coffee.",
+      "required": [
+        "alternatives may be beverage kinds"
+      ],
+      "must_not_infer": [
+        "particular cups or people inferred from noun labels"
+      ],
+      "encoding_status": "unresolved"
+    }
+  ]
+}

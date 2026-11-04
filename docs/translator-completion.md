@@ -74,6 +74,20 @@ and do not create new LIF/STR-like families merely to fill the address grid.
 
 ### Current dependency milestone and next work
 
+The [desire/preference foundation review](../reviews/desire_preference_foundation.md)
+checks the current 324-root/50-compound authority and separates desire, comparative
+preference and curiosity. Twenty [semantic acceptance requirements](../tests/desire_preference_requirements.json)
+record direction, alternatives, negative cases, dispositions, intensional content
+and runtime independence. They are unimplemented requirements, not passing tests.
+The review rejects deriving preference from attention, pleasure, persistent mental
+representation or redundant existence predicates. The existing minimum of two
+expanded roots is an architectural constraint, not evidence for two entailed
+components. Next compare a versioned minimal lexical-foundation extension with a
+sparse new-root proposal; preserve all current identities and sounds and require
+full semantic/type/rendering support. No new root, convention or preference alias
+has been approved by this review. Grammar work can continue independently.
+
+
 Explicit third-person pronoun resolution now supports otherwise complete single
 clauses: “She cares for him” requests a referent for each occurrence rather than
 inferring identity or gender from names. Supplied names, quoted names and definite
