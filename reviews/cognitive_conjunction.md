@@ -32,6 +32,10 @@ quoted-name splitting and corrupt member rejection. One clean synthetic WAV
 recovers a conjunction of negated curiosity and comprehension acquisition with
 separate runtimes and past speech content through shared WAV-only dispatch. The
 decoder receives no source English, IR or expected notes. This is not physical
-recording evidence. UI integration, independent
-Ruby conjunction regeneration, nested/outer scope, broader member types, held-out
-coverage and physical recording validation remain open.
+recording evidence. The main interface now routes these conjunctions to a draft
+card with separate clause reading choices and pronoun references. Actual handler
+tests compose and export complete messages, recover both member meanings from
+MIDI, preserve distinct runtimes, resolve acquisition-result readings and discard
+stale source/binding outputs. Independent Ruby conjunction regeneration, live
+layout/listening, nested/outer scope, broader member types, held-out coverage and
+physical recording validation remain open.

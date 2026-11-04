@@ -5,6 +5,14 @@ import {composeRouteLearning,validateRouteLearning,routeLearningInterpretationPl
 import {composeCameToUnderstand,validateUnderstandingAcquisition,parseCameToUnderstand} from './understanding_acquisition.mjs';
 const VALIDATORS={'EZCURIOSITY-1':validateCuriosity,'EZUNDERSTANDING-CONTENT-1':validateUnderstandingContent,'EZROUTE-LEARNING-1':validateRouteLearning,'EZUNDERSTANDING-ACQUISITION-1':validateUnderstandingAcquisition};
 const composer=input=>curiosityInterpretationPlan(input)||curiosityPronounPlan(input)?composeCuriosity:parseCameToUnderstand(input)?composeCameToUnderstand:routeLearningInterpretationPlan(input)||routeLearningPronounPlan(input)?composeRouteLearning:understandingInterpretationPlan(input)||understandingPronounPlan(input)?composeUnderstandingContent:null;
+export function cognitiveClauseChoicePlan(input){
+ const acquisition=parseCameToUnderstand(input),probe=acquisition?.result_input||input;
+ for(const [interpret,pronoun] of [[curiosityInterpretationPlan,curiosityPronounPlan],[routeLearningInterpretationPlan,routeLearningPronounPlan],[understandingInterpretationPlan,understandingPronounPlan]]){
+  const references=pronoun(probe),plan=interpret(probe)||references?.interpretation_plan;
+  if(plan)return {choices:plan.requires_interpretation?plan.choices:[],selected_reading:plan.selected_reading||null,occurrences:references?.occurrences||[]};
+ }
+ return null;
+}
 export function cognitiveConjunctionPlan(input){
  if(typeof input!=='string'||input.trim().endsWith('?'))return null;
  const text=input.trim().replace(/\.$/,''),parts=[];let quoted=false,start=0;
