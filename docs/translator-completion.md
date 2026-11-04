@@ -24,6 +24,14 @@ until evidence shows a benefit.
 
 ## Current draft status
 
+Mixed cognitive conjunction now composes complete curiosity, understanding,
+route-learning and comprehension-acquisition clauses while preserving each
+member's scope, participants and runtime. Forty-eight authored pair/runtime
+combinations pass independent member-meaning recovery. See
+`reviews/cognitive_conjunction.md`; UI integration, Ruby conjunction regeneration
+and broader coordination remain open. The 187-check consolidated report below
+predates this addition; targeted evidence does not supersede its revision scope.
+
 The contextual inquiry prerequisite for curiosity now preserves a topic without
 inventing a particular question or answer. Its 21 meaning/MIDI cases distinguish
 inquiry content from a bare topic across reference modes and transpositions. See

@@ -20,7 +20,7 @@ export function decodeSupportedMeaningMidi(bytes,atoms){
 }
 
 // Draft meanings remain explicitly gated and never silently become canonical.
-export async function decodeSupportedMeaningWithDrafts(bytes,atoms,records,{allowDraft=false}={}){
+export async function decodeSupportedMeaningWithDrafts(bytes,atoms,records,{allowDraft=false,allowConjunction=true}={}){
  if(!allowDraft)return decodeSupportedMeaningMidi(bytes,atoms);
  const {decodeFoundationSentenceMidi}=await import('./foundation_semantic_decoder.mjs');
  const {decodeUnderstandingMidi}=await import('./understanding_music.mjs');
@@ -34,6 +34,7 @@ export async function decodeSupportedMeaningWithDrafts(bytes,atoms,records,{allo
  try{accepted.push(await decodeUnderstandingAcquisitionMidi(bytes,atoms,{allowDraft:true}));}catch{}
  try{accepted.push(await decodeRouteLearningMidi(bytes,atoms,{allowDraft:true}));}catch{}
  try{accepted.push(await decodeCuriosityMidi(bytes,atoms,records,{allowDraft:true}));}catch{}
+ if(allowConjunction){const {decodeCognitiveConjunctionMidi}=await import('./cognitive_conjunction_music.mjs');try{accepted.push(await decodeCognitiveConjunctionMidi(bytes,atoms,records,{allowDraft:true}));}catch{}}
  if(accepted.length!==1)throw new Error('No unique supported canonical or draft semantic interpretation.');
  return accepted[0];
 }
