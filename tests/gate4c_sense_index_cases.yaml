@@ -1,8 +1,8 @@
 ---
 metadata:
   version: 1.0.0
-  sense_count: 465
-  lemma_count: 448
+  sense_count: 466
+  lemma_count: 449
 exact_atom_labels:
 - input: continuous self
   expected_route: atom
@@ -1037,6 +1037,9 @@ exact_compound_labels:
 - input: love
   expected_route: compound
   expected_target: CMP:44718c92b66443c0c0f03ad7
+- input: completed running to a destination
+  expected_route: compound
+  expected_target: CMP:4f83046a60201671bc92fe10
 - input: completed carrying-mediated custody delivery
   expected_route: compound
   expected_target: CMP:5200738177777915abb3f42e

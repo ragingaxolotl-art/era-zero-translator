@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 57
+  entry_count: 58
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -1146,6 +1146,111 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 44718c92b66443c0c0f03ad71a5115f6f051ce91928c9db7becea7453a59e63f
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-path
+    kind: compound_ref
+    compound_id: CMP:139985443924b6e8f24d44f2
+    definition_version: 1.0.0
+  - node_id: s-actor
+    kind: slot
+    slot_name: actor
+    slot_type: entity
+  - node_id: s-destination
+    kind: slot
+    slot_name: destination
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:110
+  edges:
+  - type: qualifies
+    from: q-path
+    to: h
+  - type: fills_role
+    from: s-actor
+    to: h
+    role: actor
+  - type: fills_role
+    from: s-destination
+    to: h
+    role: destination
+  lexical_constraints:
+  - The bound actor anchors the same focal material body and local physical changes
+    throughout the nested activity.
+  - Locomotor pattern and specialization are explicit audible conventions, not consequences
+    of root adjacency.
+  - Runtime, grammatical negation, time and path completion are independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: completed_destination_running
+    sound_code: 25
+    added_definition: 'Completion of one destination-directed bodily running event:
+      the same actor reaches the same bound destination as the culmination of that
+      running approach. The nested running and approach describe internal phases of
+      this completed event, not ongoing actions at speech time. Running partway followed
+      by a separate walk, passive carriage or an unrelated arrival does not satisfy
+      this meaning. The destination can be the contextual location of a named referent.
+      Receipt, ownership transfer, conscious intention and continued presence after
+      arrival are not asserted.'
+    excludes:
+    - Running partway followed by arrival through a separate manner or event
+    - Arrival of a different actor or at a different destination
+    - Continued presence, receipt or ownership inferred from arrival
+  binding_constraints:
+  - relation: same_argument
+    slot_paths:
+    - - q-path
+      - s-actor
+    - - s-actor
+  - relation: same_argument
+    slot_paths:
+    - - q-path
+      - s-destination
+    - - s-destination
+  compound_id: CMP:4f83046a60201671bc92fe10
+  content_digest: 4f83046a60201671bc92fe10fd74d7353d3b2fa5e61dc986356b540b180f70e0
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: completed running to a destination
+  english_glosses:
+  - completed running to a destination
+  invariant_definition: 'Completion of one destination-directed bodily running event:
+    the same actor reaches the same bound destination as the culmination of that running
+    approach. The nested running and approach describe internal phases of this completed
+    event, not ongoing actions at speech time. Running partway followed by a separate
+    walk, passive carriage or an unrelated arrival does not satisfy this meaning.
+    The destination can be the contextual location of a named referent. Receipt, ownership
+    transfer, conscious intention and continued presence after arrival are not asserted.'
+  boundaries:
+    includes: 'Completion of one destination-directed bodily running event: the same
+      actor reaches the same bound destination as the culmination of that running
+      approach. The nested running and approach describe internal phases of this completed
+      event, not ongoing actions at speech time. Running partway followed by a separate
+      walk, passive carriage or an unrelated arrival does not satisfy this meaning.
+      The destination can be the contextual location of a named referent. Receipt,
+      ownership transfer, conscious intention and continued presence after arrival
+      are not asserted.'
+    excludes: Running partway followed by arrival through a separate manner or event;
+      Arrival of a different actor or at a different destination; Continued presence,
+      receipt or ownership inferred from arrival
+  collision_audit: reviews/locomotion_foundations.md and reviews/completed_running.md;
+    physical change alone does not entail the declared locomotor pattern.
+  confidence: high
+  approval_record: migrations/completed_running_2026_11_04.yaml
+  approval_basis: Author review under the user-directed translator completion goal;
+    not independent linguistic validation.
+  examples:
+    ordinary: Nora ran to the gate.
+    technical: Preserve the same bound actor in each version-pinned dependency.
+    future_compound: Add a path only with the same actor and event binding.
+    counterexample: Running partway followed by arrival through a separate manner
+      or event
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 4f83046a60201671bc92fe10fd74d7353d3b2fa5e61dc986356b540b180f70e0
 - architecture_version: '1.0'
   semantic_head: h
   nodes:

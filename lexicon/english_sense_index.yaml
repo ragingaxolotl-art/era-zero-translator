@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 465
-  lemma_count: 448
+  sense_count: 466
+  lemma_count: 449
   canonical_atom_senses: 324
-  canonical_compound_senses: 57
+  canonical_compound_senses: 58
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: 550cf2e6ee5fb2f3bdc459838d71c0e2a5848acc121ddd60c71607794991830d
+  compound_dictionary_fingerprint: 910b79364126d969d8cec32e2373f9313b1b7fd16c2d16ca43fc110ffa1c8223
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -1633,6 +1633,30 @@ senses:
     event or by a different load; Arrival after unsupported flight or independent
     displacement following release; Receipt, ownership transfer or continued presence
     inferred from arrival
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- sense_id: ENS:c9c1b0a1e403f7f766eb33f5
+  lemma: completed running to a destination
+  display_form: completed running to a destination
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:4f83046a60201671bc92fe10
+  definition: 'Completion of one destination-directed bodily running event: the same
+    actor reaches the same bound destination as the culmination of that running approach.
+    The nested running and approach describe internal phases of this completed event,
+    not ongoing actions at speech time. Running partway followed by a separate walk,
+    passive carriage or an unrelated arrival does not satisfy this meaning. The destination
+    can be the contextual location of a named referent. Receipt, ownership transfer,
+    conscious intention and continued presence after arrival are not asserted.'
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Running partway followed by arrival through a separate manner or event; Arrival
+    of a different actor or at a different destination; Continued presence, receipt
+    or ownership inferred from arrival
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
@@ -8873,6 +8897,13 @@ lemma_index:
   completed physical carrying to a destination:
     sense_ids:
     - ENS:b1f0a6f857b639838521a11b
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  completed running to a destination:
+    sense_ids:
+    - ENS:c9c1b0a1e403f7f766eb33f5
     requires_disambiguation: false
     direct_target_count: 1
     routes:

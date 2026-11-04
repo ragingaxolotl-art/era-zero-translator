@@ -13,7 +13,7 @@ is the starting evidence, not a completion certificate.
 ## Current draft status
 
 The full translator goal remains **incomplete**. There are 324 preserved roots,
-57 approved compounds and 465 canonical senses. Desire/preference and polar-answer knowledge foundations
+58 approved compounds and 466 canonical senses. Desire/preference and polar-answer knowledge foundations
 remain opt-in candidate vocabulary; they are not included in those canonical
 counts. The consolidated regression at `056c677` passed 146 of 147 checks. The
 carrying-command check timed out at 120 seconds; after that run terminated, its
@@ -1292,3 +1292,22 @@ The MIDI inverse checks both repeated actor sounds and every nested root/frame.
 destination and unequal actor bindings, malformed musical payloads, and unchanged
 prior 56 compounds. No new root was added. Simple-present “runs to”, completed
 running journeys, live listening and the original completion gates remain open.
+
+### Completed running journeys — November 4, 2026
+
+Convention 25 binds the running approach to its culmination at MOV:110 arrival.
+The same actor and destination are enforced through all nested dependencies.
+“Ran to” and “did not run to”, did questions, contractions, yesterday and runtime
+0/1/2 now compose. Running partway followed by a separate arrival is excluded;
+continued presence, receipt and ownership are not inferred. Questions and negation
+scope the completed event without asserting an arrival.
+
+The targeted report `reports/completed_running_validation.json` includes 30
+sentence cases, browser/Ruby formal and MIDI parity, independent recovery of the
+nested event, wrong-root rejection and missing/unequal actor or destination
+binding rejection. Previous 57 compounds remain exact; the 324 roots are unchanged.
+Simple-present “runs to” still needs aspect selection. Temporal modality such as
+“It is possible that Nora ran to the gate” remains unresolved because the current
+clause-level time representation cannot place past time inside possibility.
+No full-language, live-browser or listening completion claim follows from these
+checks; the original seven gates remain open.

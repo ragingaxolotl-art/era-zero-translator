@@ -12,8 +12,8 @@ policy:
     authorize automatic semantic resolution.
 counts:
   atoms: 324
-  compounds: 57
-  entries: 381
+  compounds: 58
+  entries: 382
 entries:
 - target_id: CMP:0aca609416668978e1527dac
   target_type: compound
@@ -378,6 +378,26 @@ entries:
   - love
   example_searches:
   - love
+  mapping_status: discovery_only_noncanonical
+  authority_note: These words help people find the compound. They do not replace or
+    broaden its canonical graph.
+- target_id: CMP:4f83046a60201671bc92fe10
+  target_type: compound
+  canonical_title: completed running to a destination
+  plain_label: completed running to a destination
+  plain_explanation: An everyday discovery label for the approved compound “completed
+    running to a destination”; the compound graph controls its exact meaning.
+  ordinary_terms:
+  - completed
+  - running
+  - to
+  - a
+  - destination
+  - completed running to a destination
+  match_phrases:
+  - completed running to a destination
+  example_searches:
+  - completed running to a destination
   mapping_status: discovery_only_noncanonical
   authority_note: These words help people find the compound. They do not replace or
     broaden its canonical graph.

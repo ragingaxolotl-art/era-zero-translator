@@ -1,4 +1,5 @@
 import {expandNegativeContractions} from './contractions.mjs';
+import {COMPLETED_RUNNING} from './completed_running.mjs';
 import {DESTINATION_RUNNING} from './destination_running.mjs';
 import {RUNNING} from './running.mjs';
 import {SWIMMING,SWIMMING_ACROSS} from './swimming.mjs';
@@ -98,6 +99,12 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     return inner?{...inner,explicitInterpretation:inner.explicitInterpretation||normalized.trim()}:null;
   }
   if(speechActs){
+    const runningQuestion=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?run to ${participant}[?]$`));
+    if(runningQuestion){
+      const inner=parseNamedSentence(`${runningQuestion[1]} ${runningQuestion[2]?'did not run':'ran'} to ${runningQuestion[3]}.`,depth+1,false);
+      return inner?{...inner,speechAct:'question',explicitInterpretation:String(input).trim()}:null;
+    }
+
     const transferCommand=String(input).trim().match(new RegExp(`^([Dd]o not )?[Tt]ransfer physical custody of ${participant} to ${participant}[.!]?$`));
     const transferQuestion=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?transfer physical custody of ${participant} to ${participant}\\?$`));
     if(transferCommand||transferQuestion){
@@ -255,6 +262,13 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
   }
   // Arrival commits to completed displacement, not merely a bounded period of
   // approach. Its lexical completion remains independent of runtime 0/1/2.
+  const completedRunning=String(input).trim().match(new RegExp(`^${participant} (ran to|did not run to) ${participant}[.]?$`));
+  if(completedRunning){
+    const texts=[completedRunning[1],completedRunning[3]];
+    if(texts.some(text=>parseNominal(text)?.quantifier)||participantIdentity(texts[0])===participantIdentity(texts[1]))return null;
+    if(/^the (?:conclusion|decision|answer|solution|agreement|verdict|understanding)$/i.test(texts[1]))return null;
+    return {...COMPLETED_RUNNING,speechTime:'before',negated:completedRunning[2]==='did not run to',construction:'completed_destination_running',participants:texts.map((text,index)=>({text,label:text.replaceAll('"',''),role:index?'destination':'actor'})),explicitInterpretation:String(input).trim()};
+  }
   const arrival=String(input).trim().match(new RegExp(`^${participant} (arrived at|did not arrive at) ${participant}[.]?$`));
   if(arrival){
     const texts=[arrival[1],arrival[3]];

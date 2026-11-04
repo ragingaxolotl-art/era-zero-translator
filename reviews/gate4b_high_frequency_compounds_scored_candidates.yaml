@@ -4011,3 +4011,107 @@ reviews:
     decision: rejected
   recommendation: approve explicit_activity_convention
   confidence: high
+- compound_id: CMP:4f83046a60201671bc92fe10
+  display_title: completed running to a destination
+  current_choice_reason: reviews/completed_running.md; author judgments, not independent
+    validation.
+  candidates:
+  - candidate_id: explicit_activity_convention
+    direction: Physical ingredients remain true; the convention supplies pattern and
+      manner.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-path
+        kind: compound_ref
+        compound_id: CMP:139985443924b6e8f24d44f2
+        definition_version: 1.0.0
+      - node_id: s-actor
+        kind: slot
+        slot_name: actor
+        slot_type: entity
+      - node_id: s-destination
+        kind: slot
+        slot_name: destination
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MOV:110
+      edges:
+      - type: qualifies
+        from: q-path
+        to: h
+      - type: fills_role
+        from: s-actor
+        to: h
+        role: actor
+      - type: fills_role
+        from: s-destination
+        to: h
+        role: destination
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: completed_destination_running
+        sound_code: 25
+        added_definition: 'Completion of one destination-directed bodily running event:
+          the same actor reaches the same bound destination as the culmination of
+          that running approach. The nested running and approach describe internal
+          phases of this completed event, not ongoing actions at speech time. Running
+          partway followed by a separate walk, passive carriage or an unrelated arrival
+          does not satisfy this meaning. The destination can be the contextual location
+          of a named referent. Receipt, ownership transfer, conscious intention and
+          continued presence after arrival are not asserted.'
+        excludes:
+        - Running partway followed by arrival through a separate manner or event
+        - Arrival of a different actor or at a different destination
+        - Continued presence, receipt or ownership inferred from arrival
+      binding_constraints:
+      - relation: same_argument
+        slot_paths:
+        - - q-path
+          - s-actor
+        - - s-actor
+      - relation: same_argument
+        slot_paths:
+        - - q-path
+          - s-destination
+        - - s-destination
+  - candidate_id: generic_displacement
+    direction: Displacement loses bodily propulsion and can exclude in-place activity.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: rejected
+  - candidate_id: runtime_as_manner
+    direction: Runtime does not encode gait, water or propulsion.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: rejected
+  recommendation: approve explicit_activity_convention
+  confidence: high
