@@ -28,8 +28,15 @@ all 24 kind/reference combinations have distinct MIDI at each anchor. Frame
 collision checks include ordinary, quantified, polar-content, and acquisition
 inventories. These are structural musical tests, not listening judgments.
 
-Remaining: a validated content-document schema and reference constructor, Ruby
-parity, cognitive binding contracts, English interpretation choices, UI integration,
+The `EZCONTEXTUAL-CONTENT-1` document now validates exact fields, full encoded
+name data, reference mode and identity, local contextual resolution, and no
+assertion commitment. Its content digest covers that entire contract. The reference
+constructor accepts named/quoted labels, supported definite/this/that nominals,
+and I/me/you; unresolved pronouns, counts and unsupported modifiers are rejected.
+Twenty-eight document-to-MIDI cases pass, with rehashed corruption counterexamples.
+Documents render through the existing lexical reference renderer.
+
+Remaining: Ruby parity, cognitive binding contracts, English interpretation choices, UI integration,
 and listening checks. Selection is local-context-dependent and does not identify
 which of several messages/reasons/perspectives is intended. Names recover phonemes,
 not external identities. Existing polar-answer knowledge remains polar-only.

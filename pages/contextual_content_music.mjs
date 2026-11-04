@@ -21,3 +21,12 @@ export function midiFromContextualContent(kind,referenceEvents,atoms,{allowDraft
  readContextualContentMusic(bytes,atoms,{allowDraft:true});
  return bytes;
 }
+
+// Render from validated semantic content rather than caller-supplied sound data.
+export async function midiFromContextualContentDocument(document,authority,{allowDraft=false,anchor=60}={}){
+ const {validateContextualContent}=await import('./contextual_content.mjs');
+ const {renderLexicalOccurrences}=await import('./bound_compounds.mjs');
+ const checked=await validateContextualContent(document,{allowDraft});
+ const events=await renderLexicalOccurrences({nodes:[checked.anchor],edges:[]},authority,{anchor});
+ return midiFromContextualContent(checked.content_kind,events,authority.atoms,{allowDraft,anchor});
+}
