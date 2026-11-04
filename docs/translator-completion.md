@@ -360,7 +360,7 @@ The [desire/preference foundation review](../reviews/desire_preference_foundatio
 checks the current 324-root/50-compound authority and separates desire, comparative
 preference and curiosity. Twenty [semantic acceptance requirements](../tests/desire_preference_requirements.json)
 record direction, alternatives, negative cases, dispositions, intensional content
-and runtime independence. The current executable audit verifies eight in candidate preview and leaves twelve uncomposed; none establishes canonical admission or held-out coverage.
+and runtime independence. The refreshed executable audit verifies nine in candidate preview and leaves eleven uncomposed; none establishes canonical admission or held-out coverage.
 The review rejects deriving preference from attention, pleasure, persistent mental
 representation or redundant existence predicates. The existing minimum of two
 expanded roots is an architectural constraint, not evidence for two entailed
@@ -1727,3 +1727,23 @@ speaker-to-microphone recordings tested: zero. The new low-frequency search has
 112 authored pitch/duration cases; reproduction by physical speakers is unverified.
 The canonical 40-phrase diagnostic remains separate from draft vocabulary previews.
 All seven original completion gates remain open.
+
+
+## Original desire/preference acceptance refresh
+
+The original 20 authored acceptance cases were rerun after curiosity integration.
+Nine now pass bounded semantic/MIDI checks and eleven remain uncomposed. The
+curiosity case uses its actual sentence composer and independent inverse, retaining
+Orin, the definite map topic, epistemic interest, unresolved questions and a desired
+rather than asserted informational outcome. It is not routed through an attention
+alias. See `reports/foundation_requirements_audit.json` for per-case evidence.
+
+The remaining inputs require modified/comparative noun phrases (painful versus
+more painful treatment), temporal restrictions, subordinate contrast clauses,
+choice/plan predicates, and contextually selected object-desire relations. These
+are still rejected as full sentences; the audit does not count translating a
+simplified substitute. A useful next dependency is typed noun modification that
+preserves an adjective's meaning inside an argument, rather than phonemically
+labeling the entire English phrase. No new root is justified by this audit alone.
+This does not change the separate 40-case canonical-path diagnostic, approve
+candidate vocabulary or establish representative English coverage.

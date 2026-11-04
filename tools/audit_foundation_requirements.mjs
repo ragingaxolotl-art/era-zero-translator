@@ -1,3 +1,5 @@
+import {composeCuriosity} from '../pages/curiosity.mjs';
+import {midiFromCuriosity,decodeCuriosityMidi} from '../pages/curiosity_music.mjs';
 // Reconcile the original requirements against execution, without approving vocabulary.
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -13,6 +15,21 @@ const results=[];const sounds=new Map();
 for(const requirement of requirements.cases){
  const row={id:requirement.id,input:requirement.input,required:requirement.required,must_not_infer:requirement.must_not_infer};
  let result;
+ if(requirement.id==='curiosity_not_attention'){
+  const document=await composeCuriosity(requirement.input,{allowDraft:true}),bytes=await midiFromCuriosity(document,authority,records,{allowDraft:true}),recovered=await decodeCuriosityMidi(bytes,authority.atoms,records,{allowDraft:true});
+  assert.equal(recovered.predicate,'epistemic_curiosity');
+  assert.equal(recovered.desire_foundation_id,records.find(r=>r.sound_code===0).foundation_id);
+  assert.deepEqual(recovered.experiencer.phonemes,(await encodeName('Orin')).phonemes);
+  assert.deepEqual(recovered.inquiry.topic.anchor.phonemes,(await encodeName('map')).phonemes);
+  assert.equal(recovered.inquiry.topic.anchor.reference_mode,'definite_nominal');
+  assert.equal(recovered.inquiry.question_selection,'contextually_relevant_unresolved');
+  assert.equal(recovered.inquiry.specific_question_supplied,false);assert.equal(recovered.inquiry.answer_commitment,'none');
+  assert.equal(recovered.outcome_commitment,'desired_not_asserted');
+  assert.equal(recovered.desired_outcome,'same_experiencer_gains_contextually_relevant_information_resolving_some_inquiry_uncertainty');
+  assert.match(recovered.criterion,/itself motivationally attractive/);assert.match(recovered.criterion,/does not require pleasure, current attention/);
+  assert.equal(recovered.speech_act,'assertion');assert.equal(recovered.runtime_state,1);assert.deepEqual(recovered.scopes,[]);
+  results.push({...row,status:'candidate_semantic_checks_pass',recovered,limits:'Selected epistemic reading, shared convention and strict MIDI only. Does not establish all curiosity readings, canonical admission or physical audio evidence.'});continue;
+ }
  try{result=await composeFoundationSentence(requirement.input,authority,records,load,{allowDraft:true});}
  catch(error){
   assert(!supported.has(requirement.id),`${requirement.id}: ${error.message}`);
@@ -45,6 +62,6 @@ assert.equal(sounds.get('kind_not_cup'),baseline);
 const counts=Object.fromEntries([...new Set(results.map(r=>r.status))].map(s=>[s,results.filter(r=>r.status===s).length]));
 const report={scope:'Original authored acceptance requirements, executed against candidate preview. Not held-out validation or vocabulary approval.',completion_proven:false,counts,results};
 fs.writeFileSync(new URL('reports/foundation_requirements_audit.json',root),JSON.stringify(report,null,2)+'\n');
-const lines=['# Original desire/preference requirements audit','',report.scope,'','Full translator completion: **not established**.','','| Requirement | Input | Current evidence |','|---|---|---|',...results.map(r=>`| ${r.id} | ${r.input.replaceAll('|','\\|')} | ${r.status} |`),'','Passing cases recover holder, ordered alternatives, kind/entity typing, speech act, scope and runtime from MIDI. Changed direction, holder, negation, time, question and runtime have distinct performances. Missing cases remain missing, including object desire, curiosity, temporariness and preference combined with choice.',''];
+const lines=['# Original desire/preference requirements audit','',report.scope,'','Full translator completion: **not established**.','','| Requirement | Input | Current evidence |','|---|---|---|',...results.map(r=>`| ${r.id} | ${r.input.replaceAll('|','\\|')} | ${r.status} |`),'','Passing cases recover holder, ordered alternatives, kind/entity typing, speech act, scope and runtime from MIDI. Changed direction, holder, negation, time, question and runtime have distinct performances. Curiosity now recovers epistemic interest and unresolved topic inquiry without asserting information acquisition or current attention. Missing cases remain missing, including object desire, temporariness, modified noun phrases and preference combined with choice.',''];
 fs.writeFileSync(new URL('reports/foundation_requirements_audit.md',root),lines.join('\n'));
 console.log(JSON.stringify(counts));
