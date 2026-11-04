@@ -4521,3 +4521,119 @@ reviews:
     decision: rejected
   recommendation: approve explicit_entry_convention
   confidence: high
+- compound_id: CMP:b3fb15e7e645dae58d653887
+  display_title: ongoing physical entry
+  current_choice_reason: reviews/spatial_entry_foundation.md; author judgments, not
+    independent validation.
+  candidates:
+  - candidate_id: explicit_entry_convention
+    direction: Preserve an exterior pre-phase and ongoing displacement, with an explicit
+      entry-directed traversal and no interior culmination assertion.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-0-before
+        kind: compound_ref
+        compound_id: CMP:cc6d19387b62013464e0e850
+        definition_version: 1.0.0
+      - node_id: s-actor
+        kind: slot
+        slot_name: entering_participant
+        slot_type: entity
+      - node_id: s-region
+        kind: slot
+        slot_name: entered_region
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MOV:121
+      edges:
+      - type: qualifies
+        from: q-0-before
+        to: h
+      - type: fills_role
+        from: s-actor
+        to: h
+        role: actor
+      - type: fills_role
+        from: s-region
+        to: h
+        role: environment
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ongoing_physical_entry
+        sound_code: 30
+        added_definition: 'An ongoing physical entry process: the same material participant
+          is undergoing inward displacement as part of a boundary-crossing traversal
+          from the exterior of the same contextual physical region toward an interior
+          culmination. The exterior relation supplies the pre-crossing phase of this
+          same process, not an assertion that the participant is still wholly outside
+          now. The relevant extent, region and shared spatial frame remain fixed by
+          the same contextual criterion. The target condition uses the established
+          physical-region interior meaning: the relevant extent lies wholly inside
+          without meeting the boundary. This is a culmination criterion, not an asserted
+          interior state. Immediate approach integral to the crossing and partial
+          boundary traversal are included; merely traveling toward a remote region,
+          moving parallel to its boundary or waiting outside is insufficient. The
+          process may be interrupted, reversed or abandoned before culmination. Neither
+          boundary contact at this instant nor completed entry, current interior location,
+          prescribed manner, intention, permission, ownership or later continued presence
+          is asserted. Stationary enclosure or a changed region interpretation without
+          mover displacement is excluded.'
+        excludes:
+        - Completed entry or current interior location inferred from an ongoing process
+        - Remote approach, parallel movement or waiting without the entry traversal
+          being underway
+        - Different participants, regions, frames or extent criteria across the process
+        - Stationary enclosure or figurative entry
+        - Runtime state used as a substitute for completion or grammatical aspect
+      binding_constraints:
+      - relation: same_argument
+        slot_paths:
+        - - q-0-before
+          - s-bearer
+        - - s-actor
+      - relation: same_argument
+        slot_paths:
+        - - q-0-before
+          - s-region
+        - - s-region
+  - candidate_id: completed_event
+    direction: Completed entry incorrectly entails an actual culmination.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 48
+    decision: rejected
+  - candidate_id: generic_approach
+    direction: Movement toward a remote region need not be entry in progress.
+    scores:
+      atomicity: 5
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 32
+    decision: rejected
+  recommendation: approve explicit_entry_convention
+  confidence: high

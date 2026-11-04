@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 470
-  lemma_count: 453
+  sense_count: 471
+  lemma_count: 454
   canonical_atom_senses: 324
-  canonical_compound_senses: 62
+  canonical_compound_senses: 63
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: f4415c2c8fd4ef17646f5967f527c903919a1237f2c3ece4f509fdfdb4fe1db2
+  compound_dictionary_fingerprint: 5e5d71ca13bf0f3e75177e0731529014b899b71eeee01b67e62d9c319b67b2b3
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -5558,6 +5558,41 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: ongoing physical entry
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:b3fb15e7e645dae58d653887
+  definition: 'An ongoing physical entry process: the same material participant is
+    undergoing inward displacement as part of a boundary-crossing traversal from the
+    exterior of the same contextual physical region toward an interior culmination.
+    The exterior relation supplies the pre-crossing phase of this same process, not
+    an assertion that the participant is still wholly outside now. The relevant extent,
+    region and shared spatial frame remain fixed by the same contextual criterion.
+    The target condition uses the established physical-region interior meaning: the
+    relevant extent lies wholly inside without meeting the boundary. This is a culmination
+    criterion, not an asserted interior state. Immediate approach integral to the
+    crossing and partial boundary traversal are included; merely traveling toward
+    a remote region, moving parallel to its boundary or waiting outside is insufficient.
+    The process may be interrupted, reversed or abandoned before culmination. Neither
+    boundary contact at this instant nor completed entry, current interior location,
+    prescribed manner, intention, permission, ownership or later continued presence
+    is asserted. Stationary enclosure or a changed region interpretation without mover
+    displacement is excluded.'
+  sense_id: ENS:32930bb39b358b20bab82815
+  display_form: ongoing physical entry
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Completed entry or current interior location inferred from an ongoing process;
+    Remote approach, parallel movement or waiting without the entry traversal being
+    underway; Different participants, regions, frames or extent criteria across the
+    process; Stationary enclosure or figurative entry; Runtime state used as a substitute
+    for completion or grammatical aspect
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:96ddcc4f67e0aae5b8a8b130
   lemma: ongoing physical repair
   display_form: ongoing physical repair
@@ -10505,6 +10540,13 @@ lemma_index:
   ongoing physical carrying:
     sense_ids:
     - ENS:5d7cc34cdb22ccb9a0c41baa
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  ongoing physical entry:
+    sense_ids:
+    - ENS:32930bb39b358b20bab82815
     requires_disambiguation: false
     direct_target_count: 1
     routes:

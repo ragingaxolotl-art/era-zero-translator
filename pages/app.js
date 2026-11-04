@@ -198,7 +198,7 @@ function showPhysicalEntry(input){
   $('results').classList.remove('hidden');$('candidateList').innerHTML='';
   $('decisionSummary').textContent='Choose the intended entry meaning.';
   const card=document.createElement('article'),description=document.createElement('p'),status=document.createElement('p'),button=document.createElement('button');card.className='candidate';status.setAttribute('role','status');
-  description.textContent='Movement from outside to inside the selected physical region. Entering data, joining a competition and other nonspatial meanings need different interpretations.';
+  description.textContent='Movement from outside to inside the selected physical region. An ongoing entry need not reach the inside. Entering data, joining a competition and other nonspatial meanings need different interpretations.';
   button.textContent='Use physical entry';
   const current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled';
   button.addEventListener('click',async()=>{

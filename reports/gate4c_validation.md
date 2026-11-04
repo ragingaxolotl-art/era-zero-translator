@@ -4,10 +4,10 @@ Status: **PASS — GATE 4C CORE SENSE INDEX CANONICAL; GATE 4D MAY BEGIN**
 
 - Checks passed: **17**
 - Checks failed: **0**
-- Sense records: **470**
-- Normalized lemmas: **453**
+- Sense records: **471**
+- Normalized lemmas: **454**
 - Atom-label senses: **324**
-- Compound-label senses: **62**
+- Compound-label senses: **63**
 - Explicit gap senses: **11**
 - Semantic-IR routes: **24**
 - Translator authorized: **no**

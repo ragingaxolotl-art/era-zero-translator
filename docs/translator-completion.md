@@ -1530,3 +1530,24 @@ The new suite covers 57 cases with exact Ruby/MIDI parity, independent scope
 recovery, permission/possibility countermodels, explicit-phrasing equivalence and
 direct/group/pronoun UI choice handling. The existing root and compound inventories
 were not modified. These checks do not establish held-out or listening completion.
+
+### Ongoing entry without a false completion claim
+
+“Is entering” and “was entering” now use an ongoing entry traversal with an exterior
+pre-phase and an unasserted interior culmination criterion. They preserve the same
+mover and region while allowing interruption or reversal before completion. The
+physical-sense chooser is reused; explicit physically-entering phrasing selects
+that sense directly. Negation, questions, past/calendar time, outer modality and
+mixed completed/ongoing clauses retain their scopes and runtime 0/1/2.
+
+The independent MIDI reader distinguishes the ongoing and completed conventions
+and rejects inconsistent participant sounds. The vocabulary now contains 63
+compounds and 471 canonical senses, with all 324 roots and earlier compound
+meanings preserved. Simple-present entry viewpoints, may-be-entering and broader
+language coverage remain open; counts and implementation tests are not completion.
+
+Validation: all 13 targeted suites in reports/ongoing_entry_validation.json pass.
+The new suite covers 36 ongoing and mixed-event cases, Ruby/MIDI parity, independent
+phase and scope recovery, corrupted identity, an interruption countermodel and
+exact preservation of earlier vocabulary. No full-suite or listening completion
+is claimed for this addition.

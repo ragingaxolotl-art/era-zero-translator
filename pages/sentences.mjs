@@ -1,3 +1,4 @@
+import {ONGOING_ENTRY} from './ongoing_entry.mjs';
 import {entryModalScopes,entryModalChoices} from './entry_modality.mjs';
 import {PHYSICAL_ENTRY} from './physical_entry.mjs';
 import {SPATIAL_RELATIONS} from './spatial_relations.mjs';
@@ -20,6 +21,8 @@ import {deicticReference,deicticEvent,nominalMarker,NOMINAL_MODES} from './refer
 
 // Reviewed constructions use exact process senses, never a generic synonym pool.
 const ACTIONS = [
+  ONGOING_ENTRY,
+  {...ONGOING_ENTRY,pattern:'is physically entering',negativePattern:'is not physically entering',requiredInterpretation:undefined},
   PHYSICAL_ENTRY,
   {...PHYSICAL_ENTRY,pattern:'physically entered',negativePattern:'did not physically enter',requiredInterpretation:undefined},
   ...SPATIAL_RELATIONS,

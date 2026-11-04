@@ -1,8 +1,8 @@
 # Spatial entry before “may enter”
 
 Status: semantic audit and implementation record. Spatial states and completed
-physical entry and modal-entry interpretation are implemented below; ongoing
-entry remains unfinished. Initial audit: revision 5a5a427 (324 roots,
+physical entry, ongoing entry and modal-entry interpretation are implemented
+below; simple-present viewpoints and wider constructions remain unfinished. Initial audit: revision 5a5a427 (324 roots,
 58 compounds). Preserve root definitions, conventions and lexical/runtime 0/1/2.
 
 ## Evidence and rejected substitutions
@@ -182,3 +182,34 @@ changing the choice while loading invalidates stale results. These are bounded
 implementation and semantic-contrast checks, not held-out coverage or listening
 validation. The original diagnostic phrase now requires interpretation; it is
 not counted as an automatically resolved sentence.
+
+## Ongoing physical entry
+
+Convention 30 reuses the exact exterior relation as the pre-crossing phase and
+MOV:121 as ongoing shared-frame displacement. The same mover and region are bound
+across that phase and the movement. Its added meaning requires the entry traversal
+to be underway: immediate approach integral to crossing and partial traversal are
+included, but arbitrary remote approach, parallel movement and waiting are not.
+No distance threshold, walking manner, intention or permission is invented.
+
+The target interior criterion reuses the established interior meaning, recorded
+with its exact identity/version in migrations/ongoing_entry_2026_11_04.yaml. That
+criterion is explicitly not asserted. The compound graph therefore has no actual
+interior-state component and no completed-entry component. Including either as an
+asserted constituent would wrongly entail culmination. The exterior pre-phase
+likewise does not assert that the participant is still wholly outside now. Actual
+boundary contact at this instant is not required. This is a conventional lexical
+commitment about a process, not a generic redefinition of progressive aspect.
+
+The musical inverse distinguishes ongoing MOV:121/convention 30 from completed
+MOV:120/convention 29, checks repeated identity and recovers runtime independently.
+The interruption countermodel uses a material interval crossing partway over a
+region boundary and then returning outside; a successful continuation shares its
+earlier prefix. Thus the observed ongoing phase cannot establish completion.
+
+Is/was entering, questions, negation, calendar-day past and outer modal scopes use
+the same physical-sense choice as completed entry. Explicit physically-entering
+phrasing needs no extra sense choice. Tests include mixed completed/ongoing clauses,
+Ruby parity, corrupted musical identity and preservation of all 62 prior compounds
+and the root source. Simple-present enters, may-be-entering, manners and arbitrary
+spatial qualifiers remain unfinished. No original completion gate is closed.

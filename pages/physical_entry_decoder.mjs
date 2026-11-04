@@ -3,8 +3,20 @@ import {readSpatialRelationTree} from './spatial_relation_decoder.mjs';
 export function decodePhysicalEntryMidi(bytes,atoms){
  const fail=()=>{throw new Error('Unsupported or malformed physical entry music.');};
  const reader=strictSemanticReader(bytes,atoms,'Malformed entry music.');
- const {current,scopes}=reader.unwrapScopes(n=>n.marker==='convention_29_open');
- if(current.length!==1||current[0].marker!=='convention_29_open'||current[0].children?.length!==5)fail();
+ const {current,scopes}=reader.unwrapScopes(n=>['convention_29_open','convention_30_open'].includes(n.marker));
+ if(current.length!==1)fail();
+ if(current[0].marker==='convention_30_open'){
+  if(current[0].children?.length!==4)fail();
+  const [actorFrame,regionFrame,beforeTree,head]=current[0].children;
+  const actor=reader.role(actorFrame,'actor','low'),region=reader.role(regionFrame,'environment','sustained_background');
+  const before=readSpatialRelationTree(beforeTree,reader,{embedded:true});
+  if(before.relation!=='exterior'||JSON.stringify(before.bearer)!==JSON.stringify(actor)||JSON.stringify(before.region)!==JSON.stringify(region))fail();
+  if(![0,1,2].includes(head.runtime_state))fail();reader.exactRoot(head,'MOV:121','middle',head.runtime_state);
+  return {profile:'EZENTRY-INVERSE-1',speech_act:reader.observed.speech_act,scopes,predicate:'ongoing_physical_entry',actor,region,runtime_state:head.runtime_state,
+   phases:{before:'exterior',current:'entry_traversal_in_progress',culmination:'not_asserted',after:'unspecified'},culmination_criterion:'interior',same_participant:true,same_region:true,same_event:true,
+   limitations:['The interior criterion is not an achieved state; the traversal can be interrupted before completion.','Immediate approach integral to entry is included, but arbitrary remote approach is not entry in progress.','No current boundary contact, intention or permission is asserted.','Strict MIDI only; no external referent, geometry or recorded-audio recovery.']};
+ }
+ if(current[0].marker!=='convention_29_open'||current[0].children?.length!==5)fail();
  const [actorFrame,regionFrame,beforeTree,afterTree,head]=current[0].children;
  const actor=reader.role(actorFrame,'actor','low'),region=reader.role(regionFrame,'environment','sustained_background');
  const before=readSpatialRelationTree(beforeTree,reader,{embedded:true}),after=readSpatialRelationTree(afterTree,reader,{embedded:true});
