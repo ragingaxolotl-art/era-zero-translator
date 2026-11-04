@@ -10,12 +10,12 @@ performance, keeping existing roots, sounds, names, and approved poetic meanings
 The [source audit](https://chatgpt.com/space/page_21c6ce0da1a88191abff53c0b13441f3)
 is the starting evidence, not a completion certificate.
 
-## Current status at implementation revision 1576c0b
+## Current status at implementation revision ef33dde
 
 The full translator goal remains **incomplete**. There are 324 preserved roots,
 55 approved compounds and 463 canonical senses. Desire/preference foundations
 remain opt-in candidate vocabulary; they are not included in those canonical
-counts. The fresh consolidated regression passed all 127 checks at this revision,
+counts. The fresh consolidated regression passed all 133 checks at this revision,
 with no failures, timeouts or reruns. This is implementation regression evidence,
 not proof of full ordinary-English coverage or musical usability.
 
@@ -23,15 +23,17 @@ Recent completed implementation work:
 
 - A [quantified-predicate semantic model](../reviews/quantified_predication.md) now
   distinguishes predicate negation from proposition negation and incomplete
-  domains. Parser, typed binding and musical integration remain unfinished.
-  This follow-up postdates the 127-check baseline above.
+  domains. Draft typed binding, unary English composition, browser/Ruby musical
+  parity, independent unary sound recovery and an explicit UI preview are now
+  implemented. Nested/compound coverage and canonical admission remain open.
+  These changes are included in the current regression baseline.
 
 - Swimming supports explicit simple-present viewpoint choices, explicit habits
   and mixed-clause composition. Across-region swimming preserves the region and
   swimmer without asserting completed crossing. See [swimming across](../reviews/swimming_across.md).
 - Physical energization supports counted bearers. Explicit whole-proposition
-  negation preserves its scope over counts; counted negative predicates still
-  require a genuine variable-binding construction. See [energized bearers](../reviews/energized_bearer.md).
+  negation preserves its scope over counts; counted negative unary predicates
+  now have an opt-in draft variable-binding construction. See [energized bearers](../reviews/energized_bearer.md).
 - Negative auxiliary contractions preserve expanded meanings, including questions
   and conditional commands with local references. See [contractions](../reviews/negative_contractions.md).
 - Candidate desire/preference now preserves question punctuation around runtime
