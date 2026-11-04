@@ -137,6 +137,12 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
       return {...inner,speechAct:'question',construction:`question_${inner.construction}`,explicitInterpretation:String(input).trim()};
     }
   }
+  const propositionNegation=String(input).trim().match(/^[Ii]t is not the case that (.+)$/);
+  if(propositionNegation){
+    const inner=parseNamedSentence(propositionNegation[1],depth+1,false);
+    if(!inner||inner.speechAct||inner.calendarDay!==undefined||inner.speechTime!==undefined)return null;
+    return {...inner,scopes:[...(inner.scopes||[]),{operator:'negation'}],construction:`proposition_negation_${inner.construction}`,explicitInterpretation:String(input).trim(),semanticNote:[inner.semanticNote,'Negates the complete following proposition, including its participant count; it does not count participants satisfying a negated property.'].filter(Boolean).join(' ')};
+  }
   const confidence=String(input).trim().match(/^[Ww]ith ([0-9]+(?:\.[0-9]+)?)% confidence, (.+)$/);
   if(confidence){
     const strength=confidenceFromPercent(confidence[1]),inner=parseNamedSentence(confidence[2],depth+1);

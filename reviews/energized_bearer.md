@@ -20,3 +20,14 @@ count markers and one noun label; complete formal output and MIDI match Ruby.
 The existing counted-nominal checks pass. Quantified negation remains unresolved
 because its scope needs a separate treatment. The ambiguous “active” diagnostic
 is deliberately still unresolved; this addition does not close that audit case.
+
+Explicit proposition negation is now supported: “It is not the case that exactly
+three lamps are physically energized.” Negation encloses the complete predicate
+and counted bearer. This means the energized-lamp count is not three, not that
+three lamps satisfy a negative property. Fifteen cases recover the full nested
+scope tree from strict MIDI, including possible-not versus not-possible, double
+negation and all runtime states, and match Ruby formal/MIDI output. Questions or
+commands embedded under this proposition wrapper are rejected. Bare quantified
+predicate negation remains unresolved; it must not be approximated by this rule.
+The wrapper currently excludes embedded calendar/speech-time clauses because
+those time anchors attach to the clause and need a separate scope treatment.
