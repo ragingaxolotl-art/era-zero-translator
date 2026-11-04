@@ -74,6 +74,17 @@ and do not create new LIF/STR-like families merely to fill the address grid.
 
 ### Current dependency milestone and next work
 
+A [candidate additive foundation codec](../reviews/lexical_foundation_extension.md)
+now tests a separate FND registry against the new-root-family alternative. Desire
+and preference remain candidate definitions; neither is an ordinary-English route
+or approved vocabulary. Seventy-two register/anchor/runtime cases match Ruby events
+and recover from MIDI, and 972 existing root/state performances decode unchanged.
+Draft records are rejected by default. Typed/intensional arguments, compound reuse,
+full parser/renderer integration and pronunciation/listening remain admission gates.
+This supplies an implementation experiment for the architectural decision below;
+it does not change the 324 roots, 50 compounds or ordinary coverage counts.
+
+
 The [desire/preference foundation review](../reviews/desire_preference_foundation.md)
 checks the current 324-root/50-compound authority and separates desire, comparative
 preference and curiosity. Twenty [semantic acceptance requirements](../tests/desire_preference_requirements.json)
