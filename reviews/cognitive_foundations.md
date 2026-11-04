@@ -1,0 +1,100 @@
+# Cognitive foundations: dependency review
+
+Status: proposed semantic contracts and acceptance requirements, not canonical
+vocabulary, new musical addresses, or implemented English support. Evidence is
+pinned in `reports/cognitive_foundation_review.json`; authored contrast obligations
+are in `tests/cognitive_meaning_requirements.json`. Neither artifact is a passing
+translation test or a held-out evaluation.
+
+## Decision and dependency order
+
+Do not add curiosity, learning or understanding as aliases of attention, revision
+or data receipt. Do not introduce a new 27-root family to fill these gaps. Preserve
+all 324 roots, 55 approved compounds and the existing candidate desire/preference
+identities. Begin with typed cognitive content and a narrowly defined epistemic
+state, then its acquisition; only then compose curiosity using the existing desire
+candidate where its definition fits. This follows the earlier desire/preference
+review rather than introducing another wanting primitive.
+
+1. **Content and question types.** Keep an entity/topic, a proposition, an expressed
+   message and an open question distinct. A name such as “map” identifies a topic;
+   it does not supply “who made the map?” or “how to read the map?”. A question is
+   content here, not the speech act of the whole sentence. Existing proposition
+   content can be reused, but open-question binding and contextual content
+   resolution are unfinished grammar dependencies.
+2. **Epistemic result states.** Separate grasping communicated content, grasping an
+   explanatory relation, possessing information, memorization and practical
+   know-how. They do not entail each other. A proposed comprehension state needs
+   a cognizer, content and a contextual adequacy criterion; this criterion cannot
+   be replaced by confidence or a runtime trit. Whether this belongs in a new
+   candidate foundation or an explicit lexical convention remains a design choice.
+   Existing roots cannot be used as padding if their additional commitments are
+   not entailed by the intended sense.
+3. **Acquisition.** Build a transition into a selected epistemic result state with
+   the same cognizer and content at culmination. Reuse the established transition
+   machinery only after checking that its roles can refer to this state and that
+   the nested state is a result, not an independent assertion at speech time.
+   Acquisition may be incremental; a bounded “learned” event need not assert
+   permanent retention, conscious effort, a teacher, or perfect mastery.
+4. **Curiosity.** Reuse desire for acquisition of information about the selected
+   question where that reading is intended. Desire alone may also describe purely
+   instrumental information seeking; ordinary curiosity adds an epistemic-interest
+   reading that requires an explicit definition. Do not declare the bare desire
+   composition equivalent to all curiosity until contrast cases justify it.
+
+## What the current definitions actually establish
+
+The four directly relevant root families (108 exact definitions) were inspected,
+alongside the current compound sense definitions. This is a targeted entailment
+review, not a formal proof that no expression in the entire language could work.
+
+| Existing ingredient | Established commitment | Counterexample to the proposed shortcut |
+|---|---|---|
+| MIN:210/211 | Established/current allocation of attention to a target | Listening carefully to an unfamiliar language need not yield comprehension. |
+| MIN:010/011/012 | Persistent/manifest/latent target representation | A representation can be mistaken, uninterpreted or unhelpful for action. |
+| MIN:110/111 | Completed/ongoing target-model revision | Revision can introduce error; not every change is learning. |
+| DAT:110/111 | Completed/ongoing information transfer | A device may receive encoded content without interpreting it. |
+| CON:110/111 | Completed/ongoing communicative uptake | Taking up an expression does not establish the intended meaning was grasped. |
+| LOG:110/111 | Evaluation of admissibility under a specified constraint | Passing a formal criterion does not by itself establish truth, knowledge or comprehension. |
+| Sensory registration compounds | Physical registration with specified channels | Their definitions explicitly exclude comprehension and recognition. |
+| Felt pleasure and attention compounds | Experiential tone or cognitive selection | Curiosity may be unpleasant and need not be attended to at the moment. |
+
+Do not repair these failures by changing the root definitions. A conventional
+compound may add an explicit meaning, but must retain every commitment of its
+components. For example, persistent representation is too strong for a fleeting
+comprehension episode, and conscious feeling is too strong for all standing
+curiosity. A smaller subtype must not silently replace the requested broad sense.
+
+## Interpretation obligations for the current failed phrases
+
+- **“Nora learned the route.”** Distinguish memorizing route information, acquiring
+  practical navigation knowledge and becoming familiar with the route. Do not
+  infer actual travel, a correct map, or current retention from a noun label.
+- **“Eli understands Nora.”** Resolve communicated content, motives/reasons or an
+  empathetic reading. A person label cannot supply an unstated message. Preserve
+  an unresolved contextual content argument when clarification is needed.
+- **“Orin is curious about the map.”** Preserve the topic without inventing the
+  specific question. The intended epistemic interest does not assert discovery,
+  success, pleasure, attention or action.
+
+“Learned that P” ordinarily brings a factive commitment that memorizing a claim
+or learning how to do something does not share. This distinction must also survive
+negation, embedded desire and questions; no general rule should assert embedded
+content merely because it has a proposition node. Projection behavior needs its
+own explicit semantic contract before those forms are admitted.
+
+## Implementation and evidence required next
+
+Implement typed open-question/contextual-content arguments and a reviewed result
+state contract before composing its acquisition. Reuse the desire candidate for
+appropriate epistemic aims; do not mint a second desire sense. Require participant
+identity through each nested layer, explicit state/transition scope, independent
+negation and runtime states, and audible content-kind distinctions. Candidate
+sound codes must be allocated only after the contract is settled and must preserve
+all existing melodies.
+
+The ten authored contrast cases are future acceptance requirements. Completion
+requires actual sentence interpretation, validated IR, browser/Ruby performance
+agreement and independent musical recovery of the distinguishing commitments.
+No cognitive phrase is newly supported by this review alone. Source reconciliation,
+root-family admission and full translator completion remain open.

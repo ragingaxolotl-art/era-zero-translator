@@ -19,6 +19,11 @@ counts. The fresh consolidated regression passed all 133 checks at this revision
 with no failures, timeouts or reruns. This is implementation regression evidence,
 not proof of full ordinary-English coverage or musical usability.
 
+A subsequent [cognitive foundation review](../reviews/cognitive_foundations.md)
+records the missing content/result-state contracts for learning, understanding
+and curiosity, with ten authored contrast requirements. It changes the next
+implementation dependency order but adds no supported cognitive phrases.
+
 Recent completed implementation work:
 
 - A [quantified-predicate semantic model](../reviews/quantified_predication.md) now

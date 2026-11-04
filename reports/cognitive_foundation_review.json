@@ -1,0 +1,452 @@
+{
+  "status": "review_evidence_not_completion",
+  "revision": "5b93f2cc44e7eb0d3d31bd5f0b366e56d23fe7bf",
+  "scope": "Exact current definitions of the four directly relevant root families; not a proof of inexpressibility over all possible compounds.",
+  "root_inventory_count": 324,
+  "compound_plan_count": 55,
+  "reviewed_definitions_sha256": "d3125f0884adc11acb4663c5d7dfeab7364492c018929d5c314b70ed10253156",
+  "reviewed_definitions": [
+    {
+      "id": "MIN:000",
+      "definition": "A mental representation of the cognizer's own identity or condition that persists across cognitive episodes."
+    },
+    {
+      "id": "MIN:001",
+      "definition": "A mental representation of the cognizer's own identity or condition that is presently manifest in cognition."
+    },
+    {
+      "id": "MIN:002",
+      "definition": "A mental representation of the cognizer's own identity or condition that persists without presently manifesting in cognition."
+    },
+    {
+      "id": "MIN:010",
+      "definition": "A mental representation of a distinct target that persists across cognitive episodes."
+    },
+    {
+      "id": "MIN:011",
+      "definition": "A mental representation of a distinct target that is presently manifest in cognition."
+    },
+    {
+      "id": "MIN:012",
+      "definition": "A mental representation of a distinct target that persists without presently manifesting in cognition."
+    },
+    {
+      "id": "MIN:020",
+      "definition": "A mental representation held in common across multiple cognizers that persists across cognitive episodes."
+    },
+    {
+      "id": "MIN:021",
+      "definition": "A mental representation held in common across multiple cognizers that is presently manifest among them."
+    },
+    {
+      "id": "MIN:022",
+      "definition": "A mental representation held in common across multiple cognizers that persists without presently manifesting among them."
+    },
+    {
+      "id": "MIN:100",
+      "definition": "A completed cognitive process whose result is a change to the cognizer's representation of the cognizer's own identity or condition."
+    },
+    {
+      "id": "MIN:101",
+      "definition": "An active cognitive process that is changing the cognizer's representation of the cognizer's own identity or condition."
+    },
+    {
+      "id": "MIN:102",
+      "definition": "A cognitive process that would change the cognizer's representation of the cognizer's own identity or condition if actualized, but is not active or completed."
+    },
+    {
+      "id": "MIN:110",
+      "definition": "A completed cognitive process whose result is a change to a cognizer's representation of a distinct target."
+    },
+    {
+      "id": "MIN:111",
+      "definition": "An active cognitive process that is changing a cognizer's representation of a distinct target."
+    },
+    {
+      "id": "MIN:112",
+      "definition": "A cognitive process that would change a cognizer's representation of a distinct target if actualized, but is not active or completed."
+    },
+    {
+      "id": "MIN:120",
+      "definition": "A completed cognitive process distributed across multiple cognizers whose result is a change to a representation held in common among them."
+    },
+    {
+      "id": "MIN:121",
+      "definition": "An active cognitive process distributed across multiple cognizers that is changing a representation held in common among them."
+    },
+    {
+      "id": "MIN:122",
+      "definition": "A cognitive process distributed across multiple cognizers that would change a representation held in common among them if actualized, but is not active or completed."
+    },
+    {
+      "id": "MIN:200",
+      "definition": "A persistent capacity of a cognizer to allocate cognitive processing selectively."
+    },
+    {
+      "id": "MIN:201",
+      "definition": "A cognizer's capacity to allocate cognitive processing selectively that is presently available for exercise."
+    },
+    {
+      "id": "MIN:202",
+      "definition": "A cognizer's capacity to allocate cognitive processing selectively that exists without being presently available for exercise."
+    },
+    {
+      "id": "MIN:210",
+      "definition": "An established relation in which a cognizer's cognitive processing is preferentially directed toward a distinct target."
+    },
+    {
+      "id": "MIN:211",
+      "definition": "A relation in which a cognizer's cognitive processing is presently preferentially directed toward a distinct target."
+    },
+    {
+      "id": "MIN:212",
+      "definition": "An unresolved attentional relation between a cognizer and a distinct target whose receipt of preferential cognitive processing is undetermined."
+    },
+    {
+      "id": "MIN:220",
+      "definition": "A stable attentional relation among multiple cognizers that gives one target shared cognitive priority."
+    },
+    {
+      "id": "MIN:221",
+      "definition": "An attentional relation in which multiple cognizers presently give the same target shared cognitive priority."
+    },
+    {
+      "id": "MIN:222",
+      "definition": "An unrealized possible attentional relation in which multiple cognizers would give the same target shared cognitive priority."
+    },
+    {
+      "id": "CON:000",
+      "definition": "A bounded communicative locus that remains identified as the source-side endpoint of an exchange context."
+    },
+    {
+      "id": "CON:001",
+      "definition": "A source-side communicative locus presently participating as an endpoint in an exchange context."
+    },
+    {
+      "id": "CON:002",
+      "definition": "A source-side communicative locus defined for an exchange context without presently participating in it."
+    },
+    {
+      "id": "CON:010",
+      "definition": "A bounded communicative locus that remains identified as the target-side endpoint of an exchange context."
+    },
+    {
+      "id": "CON:011",
+      "definition": "A target-side communicative locus presently participating as an endpoint in an exchange context."
+    },
+    {
+      "id": "CON:012",
+      "definition": "A target-side communicative locus defined for an exchange context without presently participating in it."
+    },
+    {
+      "id": "CON:020",
+      "definition": "A bounded communicative environment that remains the common exchange context of multiple participant endpoints."
+    },
+    {
+      "id": "CON:021",
+      "definition": "A shared communicative environment presently functioning as the common exchange context of multiple participant endpoints."
+    },
+    {
+      "id": "CON:022",
+      "definition": "A shared communicative environment defined for multiple participant endpoints without presently functioning as their common exchange context."
+    },
+    {
+      "id": "CON:100",
+      "definition": "Completion of an act by which a source endpoint makes a communicative expression available to an exchange context."
+    },
+    {
+      "id": "CON:101",
+      "definition": "An ongoing act by which a source endpoint makes a communicative expression available to an exchange context."
+    },
+    {
+      "id": "CON:102",
+      "definition": "A nonactualized act by which a source endpoint would make a communicative expression available to an exchange context."
+    },
+    {
+      "id": "CON:110",
+      "definition": "Completion of an act by which a target endpoint takes up a communicative expression from an exchange context."
+    },
+    {
+      "id": "CON:111",
+      "definition": "An ongoing act by which a target endpoint takes up a communicative expression from an exchange context."
+    },
+    {
+      "id": "CON:112",
+      "definition": "A nonactualized act by which a target endpoint would take up a communicative expression from an exchange context."
+    },
+    {
+      "id": "CON:120",
+      "definition": "Completion of an act by which a communicative expression is made available across a shared channel to multiple participant endpoints."
+    },
+    {
+      "id": "CON:121",
+      "definition": "An ongoing act by which a communicative expression is made available across a shared channel to multiple participant endpoints."
+    },
+    {
+      "id": "CON:122",
+      "definition": "A nonactualized act by which a communicative expression would be made available across a shared channel to multiple participant endpoints."
+    },
+    {
+      "id": "CON:200",
+      "definition": "A persistent capacity of an endpoint to participate in communicative exchange."
+    },
+    {
+      "id": "CON:201",
+      "definition": "A communicative capacity of an endpoint that is presently available for exercise in an exchange."
+    },
+    {
+      "id": "CON:202",
+      "definition": "A communicative capacity of an endpoint that exists without being presently available for exercise."
+    },
+    {
+      "id": "CON:210",
+      "definition": "A persistent relation that identifies a distinct endpoint as the target of communicative exchange from a reference endpoint."
+    },
+    {
+      "id": "CON:211",
+      "definition": "A directed relation from a reference endpoint to a distinct target that is presently operative as a participant link for communicative exchange."
+    },
+    {
+      "id": "CON:212",
+      "definition": "A directed relation from a reference endpoint to a distinct target whose status as a participant link for communicative exchange is undetermined."
+    },
+    {
+      "id": "CON:220",
+      "definition": "A persistent communicative relation among multiple endpoints that constitutes them as co-participants in one shared exchange context."
+    },
+    {
+      "id": "CON:221",
+      "definition": "A communicative relation among multiple endpoints that presently operates to constitute them as co-participants in one shared exchange context."
+    },
+    {
+      "id": "CON:222",
+      "definition": "A not-yet-realized possible communicative relation among multiple endpoints that would constitute them as co-participants in one shared exchange context."
+    },
+    {
+      "id": "LOG:000",
+      "definition": "A persistent formal criterion within the logical specification of one reference entity that limits that entity's admissible states independently of whether the criterion is presently operative."
+    },
+    {
+      "id": "LOG:001",
+      "definition": "A formal criterion within the logical specification of one reference entity that is presently operative in limiting that entity's admissible states."
+    },
+    {
+      "id": "LOG:002",
+      "definition": "A formal criterion within the logical specification of one reference entity that remains defined without presently operating to limit that entity's admissible states."
+    },
+    {
+      "id": "LOG:010",
+      "definition": "A persistent formal constraint assigned to one distinct reference target that limits the target's admissible states independently of whether the constraint is presently operative."
+    },
+    {
+      "id": "LOG:011",
+      "definition": "A formal constraint assigned to one distinct reference target that is presently operative in limiting the target's admissible states."
+    },
+    {
+      "id": "LOG:012",
+      "definition": "A formal constraint assigned to one distinct reference target that remains defined without presently operating to limit the target's admissible states."
+    },
+    {
+      "id": "LOG:020",
+      "definition": "A persistent formal regime that correlates admissibility criteria across multiple participants in one shared rule domain independently of whether the regime is presently operative."
+    },
+    {
+      "id": "LOG:021",
+      "definition": "A formal regime that is presently operative in correlating admissibility criteria across multiple participants in one shared rule domain."
+    },
+    {
+      "id": "LOG:022",
+      "definition": "A formal regime that remains defined across multiple participants in one shared rule domain without presently operating to correlate their admissibility criteria."
+    },
+    {
+      "id": "LOG:100",
+      "definition": "Completion of a formal evaluation that determines the admissibility of one reference entity under its applicable internal criterion."
+    },
+    {
+      "id": "LOG:101",
+      "definition": "An ongoing formal evaluation that is determining the admissibility of one reference entity under its applicable internal criterion."
+    },
+    {
+      "id": "LOG:102",
+      "definition": "A nonactualized formal evaluation that would determine the admissibility of one reference entity under its applicable internal criterion."
+    },
+    {
+      "id": "LOG:110",
+      "definition": "Completion of a formal evaluation that applies one specified constraint to one distinct reference target and determines that target's admissibility under the constraint."
+    },
+    {
+      "id": "LOG:111",
+      "definition": "An ongoing formal evaluation that applies one specified constraint to one distinct reference target and is determining that target's admissibility under the constraint."
+    },
+    {
+      "id": "LOG:112",
+      "definition": "A nonactualized formal evaluation that would apply one specified constraint to one distinct reference target and determine that target's admissibility under the constraint."
+    },
+    {
+      "id": "LOG:120",
+      "definition": "Completion of a coordinated formal evaluation that determines the joint admissibility of multiple participants under one shared formal regime."
+    },
+    {
+      "id": "LOG:121",
+      "definition": "An ongoing coordinated formal evaluation that is determining the joint admissibility of multiple participants under one shared formal regime."
+    },
+    {
+      "id": "LOG:122",
+      "definition": "A nonactualized coordinated formal evaluation that would determine the joint admissibility of multiple participants under one shared formal regime."
+    },
+    {
+      "id": "LOG:200",
+      "definition": "A persistent capacity of one reference entity to undergo formal evaluation under its applicable internal criterion, independently of whether that capacity is presently operative."
+    },
+    {
+      "id": "LOG:201",
+      "definition": "A capacity of one reference entity to undergo formal evaluation under its applicable internal criterion that is presently operative."
+    },
+    {
+      "id": "LOG:202",
+      "definition": "A capacity of one reference entity to undergo formal evaluation under its applicable internal criterion that exists without being presently operative."
+    },
+    {
+      "id": "LOG:210",
+      "definition": "A persistent formal applicability relation between one specified constraint and one distinct reference target that can enable target constraint application, independently of whether that relation is presently operative."
+    },
+    {
+      "id": "LOG:211",
+      "definition": "A formal applicability relation between one specified constraint and one distinct reference target that presently enables target constraint application."
+    },
+    {
+      "id": "LOG:212",
+      "definition": "A formal applicability relation between one specified constraint and one distinct reference target that exists without presently enabling target constraint application."
+    },
+    {
+      "id": "LOG:220",
+      "definition": "A persistent capacity of multiple participants under one shared formal regime to undergo one coordinated joint evaluation, independently of whether that capacity is presently operative."
+    },
+    {
+      "id": "LOG:221",
+      "definition": "A capacity of multiple participants under one shared formal regime to undergo one coordinated joint evaluation that is presently operative."
+    },
+    {
+      "id": "LOG:222",
+      "definition": "A capacity of multiple participants under one shared formal regime to undergo one coordinated joint evaluation that exists without being presently operative."
+    },
+    {
+      "id": "DAT:000",
+      "definition": "A persistent bounded information object maintained within one reference entity, independently of whether that information object is presently manifest."
+    },
+    {
+      "id": "DAT:001",
+      "definition": "A bounded information object that is presently manifest within one reference entity."
+    },
+    {
+      "id": "DAT:002",
+      "definition": "A bounded information object that remains maintained within one reference entity without being presently manifest."
+    },
+    {
+      "id": "DAT:010",
+      "definition": "A persistent bounded information object whose content denotes one distinct reference target, independently of whether that referential content is presently manifest."
+    },
+    {
+      "id": "DAT:011",
+      "definition": "A bounded information object whose content presently manifests a reference to one distinct reference target."
+    },
+    {
+      "id": "DAT:012",
+      "definition": "A bounded information object whose content denotes one distinct reference target without presently manifesting that reference."
+    },
+    {
+      "id": "DAT:020",
+      "definition": "A persistent coordinated collection of information objects maintained as one shared dataset across multiple participants in one information domain, independently of whether that dataset is presently manifest."
+    },
+    {
+      "id": "DAT:021",
+      "definition": "A coordinated collection of information objects that is presently manifest as one shared dataset across multiple participants in one information domain."
+    },
+    {
+      "id": "DAT:022",
+      "definition": "A coordinated collection of information objects maintained as one shared dataset across multiple participants in one information domain without being presently manifest."
+    },
+    {
+      "id": "DAT:100",
+      "definition": "Completion of a bounded transformation of represented information within one reference entity, yielding transformed information without transferring it to a distinct target."
+    },
+    {
+      "id": "DAT:101",
+      "definition": "An ongoing bounded transformation of represented information within one reference entity that is producing transformed information without transferring it to a distinct target."
+    },
+    {
+      "id": "DAT:102",
+      "definition": "A nonactualized bounded transformation that would transform represented information within one reference entity without transferring it to a distinct target."
+    },
+    {
+      "id": "DAT:110",
+      "definition": "Completion of a bounded information transfer from one source context to one distinct reference target, causing that target to receive the transferred information."
+    },
+    {
+      "id": "DAT:111",
+      "definition": "An ongoing bounded information transfer from one source context to one distinct reference target that is causing that target to receive the transferred information."
+    },
+    {
+      "id": "DAT:112",
+      "definition": "A nonactualized bounded information transfer that would carry information from one source context to one distinct reference target."
+    },
+    {
+      "id": "DAT:120",
+      "definition": "Completion of a coordinated information-state alignment across multiple participants in one shared data domain under one synchronization criterion."
+    },
+    {
+      "id": "DAT:121",
+      "definition": "An ongoing coordinated information-state alignment across multiple participants in one shared data domain under one synchronization criterion."
+    },
+    {
+      "id": "DAT:122",
+      "definition": "A nonactualized coordinated process that would align information states across multiple participants in one shared data domain under one synchronization criterion."
+    },
+    {
+      "id": "DAT:200",
+      "definition": "A persistent capacity of represented information within one reference entity to undergo bounded internal data transformation, independently of whether that capacity is presently operative."
+    },
+    {
+      "id": "DAT:201",
+      "definition": "A capacity of represented information within one reference entity to undergo bounded internal data transformation that is presently operative."
+    },
+    {
+      "id": "DAT:202",
+      "definition": "A capacity of represented information within one reference entity to undergo bounded internal data transformation that exists without being presently operative."
+    },
+    {
+      "id": "DAT:210",
+      "definition": "A persistent information-transfer relation between one source context and one distinct reference target that can enable bounded target data transfer, independently of whether that relation is presently operative."
+    },
+    {
+      "id": "DAT:211",
+      "definition": "An information-transfer relation between one source context and one distinct reference target that presently enables bounded target data transfer."
+    },
+    {
+      "id": "DAT:212",
+      "definition": "An information-transfer relation between one source context and one distinct reference target that exists without presently enabling bounded target data transfer."
+    },
+    {
+      "id": "DAT:220",
+      "definition": "A persistent capacity of information states across multiple participants in one shared data domain to undergo coordinated alignment under one synchronization criterion, independently of whether that capacity is presently operative."
+    },
+    {
+      "id": "DAT:221",
+      "definition": "A capacity of information states across multiple participants in one shared data domain to undergo coordinated alignment under one synchronization criterion that is presently operative."
+    },
+    {
+      "id": "DAT:222",
+      "definition": "A capacity of information states across multiple participants in one shared data domain to undergo coordinated alignment under one synchronization criterion that exists without being presently operative."
+    }
+  ],
+  "dependency_order": [
+    "typed_epistemic_content",
+    "epistemic_access_or_understanding_state",
+    "acquisition_of_that_state",
+    "desire_for_acquisition_plus_epistemic_interest"
+  ],
+  "preserved_candidates": [
+    "FND:f66b7a3877f4b0140a0b7023",
+    "FND:018dd25d713dff83661a76a4"
+  ]
+}
