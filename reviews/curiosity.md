@@ -34,5 +34,8 @@ at those frequencies; a practical playback register needs physical-channel testi
 One authored clean synthetic WAV now recovers a past negated curiosity question,
 demonstrative topic and runtime from WAV alone through shared dispatch. It supplies
 no source sentence, expected notes or hidden meaning to the decoder. This is not
-physical recording evidence. Ruby regeneration, UI integration, live listening,
-physical recordings, broader grammar and canonical admission remain open.
+physical recording evidence. The main draft UI now offers playback scheduling and complete MIDI/meaning
+exports, with explicit pronoun fields and number selection for they/them. Actual
+handler tests cover source/binding changes, asynchronous completion, registry-load
+failures and stale exports. Ruby regeneration, live layout/listening, physical
+recordings, broader grammar and canonical admission remain open.
