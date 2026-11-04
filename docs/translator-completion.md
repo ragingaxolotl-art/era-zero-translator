@@ -13,19 +13,19 @@ is the starting evidence, not a completion certificate.
 ## Current draft status
 
 The full translator goal remains **incomplete**. There are 324 preserved roots,
-58 approved compounds and 466 canonical senses. Desire/preference and polar-answer knowledge foundations
-remain opt-in candidate vocabulary; they are not included in those canonical
-counts. The consolidated regression at `7bedb8b` passed 149 of 152 checks.
-The three failures were stale vocabulary fingerprints and the renderer's compound
-matrix count after the three running additions. Exact historical comparison
-confirmed all previous 55 compounds and 463 senses unchanged, then the dependent
-fingerprints and expected matrix count were reconciled. All three failed validators
-and the expanded preservation check passed on focused rerun. The report retains
-the original failures and follow-up results; this is not a clean 152/152 full run.
-The previously timed-out carrying-command check passed in this consolidated run.
-This remains implementation evidence, not proof of full English coverage.
-Local browser use was checked again and is disabled in Work settings, so live
-layout, interaction and listening validation remain unperformed.
+63 approved compounds and 471 canonical senses. Desire/preference and polar-answer
+knowledge foundations remain opt-in candidate vocabulary and are excluded from
+those canonical counts. The consolidated regression at `8cb9ac7` passed **162/162**
+checks; see `reports/translator_completion_regression.json`. Earlier failures and
+repairs remain documented in the historical work log and Git history. This clean
+run is implementation evidence, not proof of complete ordinary-English coverage.
+
+The dictionary MIDI audit retains all 1,146 prior performance records exactly and
+adds 15 records for the five spatial/entry compounds across runtime 0/1/2. See
+`reports/entry_dictionary_music_preservation.json` for its bounded scope. It does
+not establish arbitrary-sentence decoding or perceptual equivalence. At the last
+check, local browser use was disabled in Work settings; live layout, interaction
+and listening validation remain unperformed.
 
 The [cognitive foundation review](../reviews/cognitive_foundations.md)
 records the missing content/result-state contracts for learning, understanding
@@ -63,6 +63,16 @@ Live UI/listening checks and broader learning senses remain open.
 
 Recent completed implementation work:
 
+- Spatial interior, exterior and boundary contact are distinct; completed and
+  ongoing entry reuse those meanings without conflating arrival, current location
+  or successful culmination. May/may-not choices preserve permission, possibility
+  and negation scope. Simple-present entry supports narrated, unfolding and habitual
+  readings; modal ongoing entry retains an unasserted culmination. See
+  [entry review](../reviews/spatial_entry_foundation.md).
+- Bodily running includes directed and completed journeys, commands and viewpoint
+  choices. Demonstrative noun references, physical brightness comparisons and
+  combined pronoun/meaning choices preserve their musical contrasts.
+
 - A [quantified-predicate semantic model](../reviews/quantified_predication.md) now
   distinguishes predicate negation from proposition negation and incomplete
   domains. Draft typed binding, unary English composition, browser/Ruby musical
@@ -87,12 +97,12 @@ Recent completed implementation work:
 - Historical preservation failures were reconciled against exact Git snapshots,
   retaining original definition fingerprints. See [reconciliation](../reviews/additive_vocabulary_pin_reconciliation.md).
 
-The authored 40-phrase diagnostic remains 24 checked, 8 requiring interpretation
-and 8 uncomposed. It does not estimate general English coverage. Completed
-crossings, running, learning/understanding/curiosity, broader comparative and
-quantified grammar, source reconciliation, candidate admission, live use and
-listening validation remain open. No original completion gate is closed by the
-implementation checks alone.
+The authored 40-phrase canonical-path diagnostic is 24 checked, 11 requiring
+interpretation and 5 uncomposed. Opt-in candidate previews are tracked separately;
+these figures do not estimate general English coverage. Completed swimming
+crossings, broader learning/understanding/curiosity, comparative and quantified
+grammar, source reconciliation, candidate admission, live use and listening
+validation remain open. No original completion gate is closed by these checks.
 
 ## Connected-source revision checkpoint
 
@@ -270,7 +280,7 @@ all three runtime states, including nested use and participant changes. Check
 both lexical meaning and audible state preservation. Preserve existing melodies
 and do not create new LIF/STR-like families merely to fill the address grid.
 
-### Current dependency milestone and next work
+### Earlier candidate-foundation milestone
 
 A [candidate additive foundation codec](../reviews/lexical_foundation_extension.md)
 now tests a separate FND registry against the new-root-family alternative. Desire
@@ -500,6 +510,10 @@ Such refactoring changes identity and must use a versioned migration. New entrie
 can reuse an exact version of an older entry. No mutable reference to “latest.”
 
 ## Meaning-gap register
+
+This is the initial audit register, retained as historical rationale. It is not a
+current feature-status table; see Current draft status and the implementation
+records below for work completed since this audit.
 
 This is a review queue, not approved new vocabulary. Root IDs below identify
 candidate ingredients; they are not assertions that the whole English sense is
@@ -1566,3 +1580,12 @@ modal suite checks 96 cases; the new viewpoint suite checks 51 cases, both with
 Ruby/MIDI parity and independent meaning recovery. No vocabulary changed in this
 step: 324 roots, 63 compounds and 471 canonical senses remain. Dated/perfect modal
 forms, named authorities and broader coverage still require work.
+
+### Consolidated entry checkpoint
+
+All 162 checks passed at implementation revision `8cb9ac7`. The dictionary identity
+report now covers 1,161 performances; all 1,146 earlier records are unchanged.
+The opening status summary has been reconciled with current counts, diagnostic
+results and implemented entry/running work. Historical roadmap sections remain
+labeled as historical. Source recovery, held-out meaning assessment, live UI,
+listening and broader English requirements still prevent a completion claim.
