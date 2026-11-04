@@ -47,8 +47,10 @@ and result runtime states. Ruby now validates the full result and produces
 byte-identical acquisition MIDI. Draft English learned-whether now preserves
 event scopes, questions and content timing in 18 musical meaning/parity cases.
 A separate draft acquisition export API now regenerates music from meaning and
-checks authority/provenance in nine cases. Acquisition UI/download integration
-and broader learning senses remain open.
+checks authority/provenance in nine cases. A dedicated acquisition draft card
+now offers playback and complete MIDI/bundle downloads with stale-result guards.
+Live UI/listening checks, learning-pronoun fields and broader learning senses
+remain open.
 
 Recent completed implementation work:
 

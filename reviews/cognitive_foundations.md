@@ -436,3 +436,20 @@ composer, even when the supplied result event list is deliberately replaced.
 Rehashed changes to provenance, phase commitments, runtime, authority, music and
 extra formal data reject. The 18 learned-whether meaning/MIDI checks also pass.
 Main preview/download controls and live browser verification remain unfinished.
+
+## Acquisition draft preview and downloads
+
+The main translator routes supported learned-whether input to a dedicated draft
+preview. After opt-in it composes the acquisition, generates its complete music
+and creates the regenerated EZACQB-1 bundle. The card offers playback, MIDI and
+meaning-bundle downloads. The ordinary result is cleared and its output panel
+hidden, preventing generic result-only exporters from being used as acquisition
+exporters. Bundle import dispatches EZACQB-1 to its authority-aware verifier.
+
+Stale source/card checks guard async composition and export creation, playback
+startup and cached downloads. Handler tests exercise explicit opt-in, stale
+success/error rejection, correct acquisition filenames and cleared ordinary state.
+The existing acquisition bundle checks cover real music regeneration. This is
+not live layout or listening evidence. Learning-pronoun fields are not yet wired;
+users currently need explicit referents for this route, and unresolved pronouns
+fail rather than become name sounds. Broader learning meanings remain open.
