@@ -1,48 +1,54 @@
 {
   "scope": "Implementation regression only. Full ordinary-English coverage and musical semantic completeness are not established.",
-  "passed": false,
+  "passed": true,
   "results": [
+    {
+      "test": "tests/packet_evidence_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 8276\n\n# Running:\n\n...\n\nFinished in 0.000342s, 8771.9302 runs/s, 52631.5813 assertions/s.\n\n3 runs, 18 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
     {
       "test": "tests/min_cross_reference_migration_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 6324\n\n# Running:\n\n.\n\nFinished in 0.671638s, 1.4889 runs/s, 131.0230 assertions/s.\n\n1 runs, 88 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 2742\n\n# Running:\n\n.\n\nFinished in 0.668876s, 1.4950 runs/s, 131.5640 assertions/s.\n\n1 runs, 88 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/mov_process_example_migration_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 12694\n\n# Running:\n\n.\n\nFinished in 1.022716s, 0.9778 runs/s, 174.0464 assertions/s.\n\n1 runs, 178 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 55410\n\n# Running:\n\n.\n\nFinished in 1.024688s, 0.9759 runs/s, 173.7114 assertions/s.\n\n1 runs, 178 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/mat_capacity_example_migration_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 36382\n\n# Running:\n\n.\n\nFinished in 0.948849s, 1.0539 runs/s, 172.8410 assertions/s.\n\n1 runs, 164 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 43630\n\n# Running:\n\n.\n\nFinished in 0.948525s, 1.0543 runs/s, 172.9000 assertions/s.\n\n1 runs, 164 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_dependencies_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 54957\n\n# Running:\n\n......\n\nFinished in 0.015595s, 384.7387 runs/s, 3013.7865 assertions/s.\n\n6 runs, 47 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 28093\n\n# Running:\n\n......\n\nFinished in 0.015311s, 391.8751 runs/s, 3069.6885 assertions/s.\n\n6 runs, 47 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_expansion_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 43310\n\n# Running:\n\n..........\n\nFinished in 0.249134s, 40.1390 runs/s, 650.2525 assertions/s.\n\n10 runs, 162 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 46558\n\n# Running:\n\n..........\n\nFinished in 0.248037s, 40.3166 runs/s, 653.1284 assertions/s.\n\n10 runs, 162 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_convention_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 40857\n\n# Running:\n\n...\n\nFinished in 0.031690s, 94.6671 runs/s, 820.4481 assertions/s.\n\n3 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 10510\n\n# Running:\n\n...\n\nFinished in 0.031591s, 94.9638 runs/s, 823.0192 assertions/s.\n\n3 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/dictionary_musical_identity_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 58197\n\n# Running:\n\n.\n\nFinished in 0.230114s, 4.3457 runs/s, 26.0740 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 42461\n\n# Running:\n\n.\n\nFinished in 0.229105s, 4.3648 runs/s, 26.1889 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/audit_dictionary_musical_identity.rb",
@@ -60,13 +66,13 @@
       "test": "tests/semantic_reference_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 52000\n\n# Running:\n\n.......\n\nFinished in 0.228297s, 30.6618 runs/s, 140.1683 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 25659\n\n# Running:\n\n.......\n\nFinished in 0.227958s, 30.7074 runs/s, 140.3767 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/quantity_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 8793\n\n# Running:\n\n..\n\nFinished in 0.380187s, 5.2606 runs/s, 205.1622 assertions/s.\n\n2 runs, 78 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 26027\n\n# Running:\n\n..\n\nFinished in 0.388504s, 5.1480 runs/s, 200.7701 assertions/s.\n\n2 runs, 78 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_semantic_ir_and_grammar.rb",
@@ -78,19 +84,19 @@
       "test": "tests/foundation_process_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 43888\n\n# Running:\n\n...\n\nFinished in 0.430996s, 6.9606 runs/s, 64.9658 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 26377\n\n# Running:\n\n...\n\nFinished in 0.432473s, 6.9368 runs/s, 64.7439 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/repetition_performance_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 64511\n\n# Running:\n\n...\n\nFinished in 0.485468s, 6.1796 runs/s, 16.4789 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 43306\n\n# Running:\n\n...\n\nFinished in 0.486612s, 6.1651 runs/s, 16.4402 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/controlled_role_reference_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 47060\n\n# Running:\n\n...\n\nFinished in 0.426907s, 7.0273 runs/s, 89.0124 assertions/s.\n\n3 runs, 38 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 32827\n\n# Running:\n\n...\n\nFinished in 0.426864s, 7.0280 runs/s, 89.0213 assertions/s.\n\n3 runs, 38 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_gate4b_compound_dictionary.rb",
@@ -123,6 +129,30 @@
       "output": "Glyph/audio validation: PASS\nChecks passed: 10; checks failed: 0\n"
     },
     {
+      "test": "tests/desired_felt_conditions_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 72 desired felt-condition/runtime/negation contrasts preserve nested compounds, bound experiencers and intensional meaning with Ruby/MIDI parity and independent decoding; explicit/nested subjects, bundles and figurative rejection checked.\n"
+    },
+    {
+      "test": "tests/nested_foundation_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 12 recursive desire/preference/control cases: independent states, intensional boundaries, nearest-holder identity, Ruby/MIDI parity, inverse direction, gloss identity, bundle and recursion limits.\nPASS 18 controlled preference state/negation combinations plus deictic/nested holders, same-name contrast, draft bundle and invalid-role rejection in both validators.\n"
+    },
+    {
+      "test": "tests/desire_time_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 21 desire time/runtime/negation/question cases with Ruby/MIDI parity; intensional content time stays separate and ambiguous trailing days reject.\n"
+    },
+    {
+      "test": "tests/desire_negation_scope_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 24 desire/inner-negation/runtime scope contrasts with equivalent infinitive forms, Ruby/MIDI parity, independent decoding, deictic/explicit subjects and unsupported-scope rejection.\n"
+    },
+    {
       "test": "tests/contextual_standard_test.mjs",
       "passed": true,
       "exit_code": 0,
@@ -144,7 +174,7 @@
       "test": "tests/desire_subject_control_test.mjs",
       "passed": true,
       "exit_code": 0,
-      "output": "PASS 18 desire subject-control sentences preserve explicit identity in Ruby/browser formal, MIDI and independent decoding.\n"
+      "output": "PASS 18 desire subject-control sentences preserve explicit identity in Ruby/browser formal, MIDI and independent decoding.\nPASS desire for mobility: 18 independent outer/inner state and inner-negation contrasts, explicit/control subjects, question/outer negation, Ruby/MIDI inverse and draft-bundle checks.\n"
     },
     {
       "test": "tests/preference_time_test.mjs",
@@ -210,7 +240,7 @@
       "test": "tests/capability_sentence_test.mjs",
       "passed": true,
       "exit_code": 0,
-      "output": "Capability statements preserve REP:211 and all three runtime endings; inactive and negated-active remain musically distinct.\n"
+      "output": "Capability statements preserve REP:211 and all three runtime endings; inactive and negated-active remain musically distinct.\nPASS available self-mobility: six negation/runtime performances, Ruby/MIDI parity, bearer and unsupported-complement boundaries.\n"
     },
     {
       "test": "tests/speech_act_runtime_test.mjs",
@@ -514,8 +544,9 @@
     },
     {
       "test": "tests/arrival_sentence_test.mjs",
-      "passed": false,
-      "output": "Timed out after 120 seconds"
+      "passed": true,
+      "exit_code": 0,
+      "output": "Arrival: 27 participant/negation/question/calendar/property/runtime cases match Ruby formal and MIDI. Independent tokens distinguish completed arrival from approach without recipient or carrying inference.\n"
     },
     {
       "test": "tests/destination_carrying_test.mjs",
@@ -587,7 +618,7 @@
       "test": "tests/clause_interpretation_test.mjs",
       "passed": true,
       "exit_code": 0,
-      "output": "Clause interpretations: 15 sequence/conjunction/conditional/runtime cases preserve per-clause viewpoints, destinations, mass/temperature standards and future readings with Ruby/browser formal/MIDI parity. Complete choices, local it, caller snapshots and stale UI results/errors are checked.\n"
+      "output": "Clause interpretations: 15 sequence/conjunction/conditional/runtime cases preserve per-clause viewpoints, destinations, mass/temperature standards and future readings with Ruby/browser formal/MIDI parity. Complete choices, local it, caller snapshots and stale UI results/errors are checked.\nPASS 9 contextual multi-clause runtime combinations, Ruby/MIDI parity and actual per-clause no-number UI.\nPASS mixed numeric/contextual disjunctions and stale standard-mode UI protection.\n"
     },
     {
       "test": "tests/counted_nominal_test.mjs",

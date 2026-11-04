@@ -13,7 +13,7 @@ is the starting evidence, not a completion certificate.
 ## Current coverage evidence
 
 The [ordinary phrase audit](../reports/ordinary_phrase_coverage.md) currently has
-24 checked compositions, 11 uncomposed phrases, and five phrases requiring an explicit interpretation or contextual standard out of 40 deliberately varied cases. This is an implementation-authored diagnostic set, not a blind evaluation
+24 checked compositions, 10 uncomposed phrases, and six phrases requiring an explicit interpretation or contextual standard out of 40 deliberately varied cases. This is an implementation-authored diagnostic set, not a blind evaluation
 or a statistical measure of English coverage. Green regression suites do not
 override these missing constructions. The corpus records the intended distinctions
 even for cases that cannot yet be composed; future support must receive explicit
@@ -24,8 +24,9 @@ commands, and time/discourse handling. Sensory dimensions, affect, bodily needs,
 and movement manner still need foundation review before vocabulary expansion.
 Both kinds of gap matter: adding roots alone cannot repair missing clause structure,
 and expanding grammar cannot supply an absent sensory or desire distinction.
-Exact temperature measurements, temperature comparisons, and user-selected
-mass/temperature standards now have bounded implementations. They do not establish
+Exact mass, temperature and luminance measurements/comparisons now have bounded
+implementations. Selected physical heavy/light, hot/cold and bright/dim readings
+can use numeric thresholds or local contextual standards without numbers. They do not establish
 general sensory adjective coverage.
 
 ## Original completion-gate reconciliation
@@ -42,7 +43,9 @@ root meanings and both lexical and runtime 0/1/2 distinctions.
 First reconciled with the source audit's seven original phases at draft `0f10d62`
 on October 29, 2026 (Page sequence 5), preserving all 104 blocks and seven exit
 requirements. That historical revision recorded the 80-check baseline and its
-targeted follow-up. The November 4 draft now adds a felt-condition dependency family, open definite noun labels, coordinated care targets and explicit inclusive/exclusive disjunction. The fresh consolidated regression passes all 92 checks; general-English and product checks separately pass 16 each. Evidence is in `reports/translator_completion_regression.json`. The ordinary diagnostic has 24 checked compositions out of 40; eleven remain uncomposed and five require interpretation. None of these changes closes the gates below.
+targeted follow-up. The November 4 draft adds the felt-condition dependency family, open definite noun labels, coordinated care, explicit disjunction, luminance and local contextual standards. Candidate desire/preference composition now preserves past time, nested content, controlled subjects and desired felt conditions, including compounds of compounds. Candidate meanings remain opt-in, and live listening/browser/deployment validation is unverified. The fresh full implementation regression passes all 108 checks; general-English and product validation separately pass 16 each. These do not include resolution of the seven historical-packet audit failures. Current regression evidence is in `reports/translator_completion_regression.json`; it is an implementation report, not a gate-closure certificate. The ordinary diagnostic has 24 checked compositions out of 40; ten remain uncomposed and six require interpretation. None of these changes closes the gates below.
+
+Seven Google revision snapshots were inspected, and all 47 missing review paths were searched in available non-shallow Git history without recovery. Fresh surviving-packet checks produce 24 passes and seven failures; duplicated candidates and review-coverage gaps remain visible. These reports are newly generated evidence, not replacements for historical approval artifacts. See `reports/drive_revision_recovery_2026_11_04.json` and `reports/missing_review_revalidation.json`.
 
 | Original gate | Current evidence | Outstanding requirement; gate remains open |
 |---|---|---|
