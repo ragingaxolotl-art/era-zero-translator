@@ -12,6 +12,13 @@ is the starting evidence, not a completion certificate.
 
 ## Current coverage evidence
 
+The [surface-texture review](../reviews/surface_texture_foundation.md) rejects
+substituting STR engagement loci, damage or attention for roughness. It specifies
+surface texture, contextual rough/smooth judgments, then tactile experience and
+noun modifiers in dependency order. An additive property/context profile needs
+implementation; no root family, sound code, adjective alias or coverage pass is
+added by this review.
+
 [Preference between propositions](../reviews/preference_propositions.md) now
 connects explicit finite alternatives to the existing candidate preference roles.
 Separate subjects, intensional status, nested compounds, inner/outer states,
