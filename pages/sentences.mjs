@@ -217,6 +217,18 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     if(!inner||!['ongoing_bodily_swimming','ongoing_swimming_across_region'].includes(inner.key)||inner.requiredViewpoint||inner.requiredInterpretation||inner.speechAct||inner.scopes?.length||inner.calendarDay!==undefined||inner.speechTime!==undefined)return null;
     return {...inner,aspect:undefined,requiredViewpoint:true,viewpointActivity:'swimming',construction:`simple_present_${inner.construction}`,explicitInterpretation:String(input).trim()};
   }
+  const runQuestion=speechActs&&String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?(habitually )?run((?: toward| to) .+)?[?]$`));
+  if(runQuestion){
+    const inner=parseNamedSentence(`${runQuestion[1]} ${runQuestion[2]?'does not ':''}${runQuestion[3]||''}${runQuestion[2]?'run':'runs'}${runQuestion[4]||''}.`,depth+1,false);
+    return inner?{...inner,speechAct:'question',explicitInterpretation:String(input).trim()}:null;
+  }
+  const simpleRunning=String(input).trim().match(new RegExp(`^${participant} ((?:does not |do not )?)(habitually )?(runs|run)((?: toward| to) .+)?[.]?$`));
+  if(simpleRunning){
+    const [,actor,negative,habit,,path='']=simpleRunning,to=path.startsWith(' to ');
+    const inner=parseNamedSentence(to?`${actor} ${negative?'did not run':'ran'}${path}`:`${actor} is ${negative?'not ':''}running${path}`,depth+1,false);
+    if(!inner||!['ongoing_bodily_running','ongoing_destination_running','completed_destination_running'].includes(inner.key)||inner.requiredInterpretation||inner.speechAct||inner.scopes?.length||inner.calendarDay!==undefined)return null;
+    return {...inner,speechTime:undefined,aspect:habit?'habitual':undefined,requiredViewpoint:!habit,viewpointActivity:'running',runningEndpoint:to,construction:`${habit?'habitual':'simple_present'}_${inner.construction}`,explicitInterpretation:String(input).trim()};
+  }
   const simpleCarrying=String(input).trim().match(new RegExp(`^${participant} (does not carry|do not carry|carries|carry) (.+)$`));
   if(simpleCarrying){
     const inner=parseNamedSentence(`${simpleCarrying[1]} is ${simpleCarrying[2].includes('not')?'not ':''}carrying ${simpleCarrying[3]}`,depth+1);
@@ -561,12 +573,20 @@ export async function composeNamedSentence(input,template,{interpretation,standa
   if(parsed.requiredViewpoint){
     if(!['bounded','ongoing','habitual'].includes(viewpoint)){
       const error=new Error(`Choose whether ${parsed.viewpointActivity||'carrying'} describes one narrated episode, an unfolding action, or a recurring practice.`);
-      error.code=parsed.viewpointActivity==='swimming'?'swimming_viewpoint_required':'carrying_viewpoint_required';throw error;
+      error.code=parsed.viewpointActivity?`${parsed.viewpointActivity}_viewpoint_required`:'carrying_viewpoint_required';throw error;
     }
     parsed.aspect=viewpoint;
     const note={bounded:'Interprets simple-present carrying as one bounded narrated episode in the contextual reference interval, without asserting arrival, delivery or future time.',ongoing:'Interprets simple-present carrying as an unfolding action in the contextual reference interval, without asserting its endpoint.',habitual:'Interprets simple-present carrying as a recurring practice in the contextual reference interval, without asserting a particular occurrence, frequency or schedule.'}[viewpoint];
-    parsed.semanticNote=[parsed.semanticNote,parsed.viewpointActivity==='swimming'?({bounded:'One bounded narrated swimming episode; completion of an across-region crossing is not asserted.',ongoing:'An unfolding swimming activity; crossing completion is not asserted.',habitual:'A recurring swimming practice; no particular occurrence, frequency or schedule is asserted.'})[viewpoint]:note].filter(Boolean).join(' ');
+    parsed.semanticNote=[parsed.semanticNote,parsed.viewpointActivity==='running'?'':parsed.viewpointActivity==='swimming'?({bounded:'One bounded narrated swimming episode; completion of an across-region crossing is not asserted.',ongoing:'An unfolding swimming activity; crossing completion is not asserted.',habitual:'A recurring swimming practice; no particular occurrence, frequency or schedule is asserted.'})[viewpoint]:note].filter(Boolean).join(' ');
   }else if(viewpoint!==undefined)throw new Error('This sentence does not require a viewpoint choice.');
+  if(parsed.viewpointActivity==='running'){
+    if(parsed.runningEndpoint){
+      const chosen=parsed.aspect==='ongoing'?DESTINATION_RUNNING:COMPLETED_RUNNING;
+      Object.assign(parsed,{predicate:chosen.predicate,key:chosen.key,compoundSlots:chosen.compoundSlots,semanticNote:chosen.semanticNote});
+    }
+    const note=parsed.aspect==='habitual'?'A recurring running practice; no particular current occurrence, frequency or schedule is asserted.':parsed.aspect==='ongoing'?'An unfolding running event; arrival is not asserted.':parsed.runningEndpoint?'One narrated running journey culminating at its destination; no past or future time is inferred.':'One bounded narrated running episode; arrival is not asserted.';
+    parsed.semanticNote=[parsed.semanticNote,note].filter(Boolean).join(' ');
+  }
   if(parsed.requiredDestination){
     if(!['spatial','custody_delivery'].includes(destination)){
       const error=new Error('Choose a spatial destination or carrying-mediated custody delivery reading for “to”.');

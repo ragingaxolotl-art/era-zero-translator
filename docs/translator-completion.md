@@ -1311,3 +1311,26 @@ Simple-present “runs to” still needs aspect selection. Temporal modality suc
 clause-level time representation cannot place past time inside possibility.
 No full-language, live-browser or listening completion claim follows from these
 checks; the original seven gates remain open.
+
+### Running viewpoint and novel combinations — November 4, 2026
+
+Simple-present runs/run now composes with an explicit habitual, ongoing or bounded
+narrative choice, including toward/to destinations, negation, questions and runtime
+0/1/2. For a to-destination, ongoing selects approach without arrival; bounded
+selects a completed running journey; habitual scopes that completed event type
+without asserting a current occurrence. Bare/toward running does not gain an
+arrival from a bounded viewpoint. Explicit habitually wording needs no extra choice.
+No dictionary definitions, root meanings or lexical sound identities changed.
+
+The actual viewpoint handler labels running correctly, explains endpoint readings,
+and rejects stale selections/results. Tests are mocked-handler evidence, not live
+browser validation. Fifty-four viewpoint/state/scope cases have full Ruby/MIDI
+parity and independent recovery; 15 explicit-habit paraphrases have identical
+formals/music; 21 additional habit and mixed sequence/conjunction/conditional cases
+preserve each clause's own aspect and runtime. Targeted results are recorded in
+`reports/running_viewpoint_validation.json`.
+
+The 40-case authored diagnostic now has 24 checked compositions, 9 requiring
+interpretation and 7 not composed. “Nora runs to the gate” moved from uncomposed
+to an explicit viewpoint choice. These counts are not representative English
+coverage. Temporal modality and the seven original completion gates remain open.

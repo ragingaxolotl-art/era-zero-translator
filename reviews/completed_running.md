@@ -23,3 +23,13 @@ Temporal modality remains a known grammar gap: “It is possible that Nora ran t
 the gate” needs before-speech time inside possibility. The present clause-level
 time anchor wraps the clause and cannot be silently used for that nested reading.
 This input remains unresolved pending scoped temporal representation.
+
+## Simple-present viewpoint follow-up
+
+Runs to now requires a viewpoint choice. An unfolding reading uses the approach
+compound; a bounded narrated journey uses completed running; a habit scopes the
+completed event type without asserting a particular current arrival. Runs without
+a destination and runs toward keep their activity/approach meaning under all three
+viewpoints. Explicit habitually forms compose directly. Per-clause choices preserve
+these distinctions in mixed sequences, conjunctions and conditionals. This supersedes
+the earlier simple-present limitation; nested temporal modality remains unresolved.
