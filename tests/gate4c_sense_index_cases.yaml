@@ -1,8 +1,8 @@
 ---
 metadata:
   version: 1.0.0
-  sense_count: 460
-  lemma_count: 443
+  sense_count: 462
+  lemma_count: 445
 exact_atom_labels:
 - input: continuous self
   expected_route: atom
@@ -986,6 +986,12 @@ exact_compound_labels:
 - input: ongoing internal structural repair
   expected_route: compound
   expected_target: CMP:1b987e04bf47840f9e82ecd3
+- input: ongoing bodily swimming
+  expected_route: compound
+  expected_target: CMP:1e2ec87e1feff0da19aadc3b
+- input: ongoing bodily locomotor activity
+  expected_route: compound
+  expected_target: CMP:201afcb1035b464ef8e56bd6
 - input: living communication network
   expected_route: compound
   expected_target: CMP:218a5578a2274b92ba3d72db

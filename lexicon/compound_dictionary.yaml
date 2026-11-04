@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 52
+  entry_count: 54
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -204,6 +204,159 @@ entries:
     content_digest: 1b987e04bf47840f9e82ecd31caef82cd850e4b6ac0d169e7df593ac36089663
   approval_basis: Delegated semantic approval under the user-directed translator-completion
     goal; reviews/foundation_process_compounds.md
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:201afcb1035b464ef8e56bd6
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - The bound actor anchors the same focal material body and local physical changes
+    throughout the nested activity.
+  - Locomotor pattern and specialization are explicit audible conventions, not consequences
+    of root adjacency.
+  - Runtime, grammatical negation, time and path completion are independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_bodily_swimming
+    sound_code: 21
+    added_definition: The same actor performs bodily locomotor activity whose coordinated
+      movements generate swimming propulsion against surrounding water. Water and
+      the propulsion-producing interaction are part of this conventional meaning,
+      not inferred from a noun label. Limb, fin, tail or body movements may contribute;
+      assistance or equipment is not excluded. The activity need not produce net ground-relative
+      progress, as when opposing a current. Mere floating, passive drifting, riding
+      in a boat, or being carried through water does not suffice. No destination,
+      crossing completion, speed, voluntary intention or absence of assistance is
+      asserted.
+    excludes:
+    - Passive floating, drifting or transport alone
+    - Machine operation, figurative swimming or unspecified fluid movement
+    - Completed crossing, arrival or unassisted activity inferred from swimming
+  compound_id: CMP:1e2ec87e1feff0da19aadc3b
+  content_digest: 1e2ec87e1feff0da19aadc3bbe0ef4c2f6a7d6ef640699f6f1628389e32861a5
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: ongoing bodily swimming
+  english_glosses:
+  - ongoing bodily swimming
+  invariant_definition: The same actor performs bodily locomotor activity whose coordinated
+    movements generate swimming propulsion against surrounding water. Water and the
+    propulsion-producing interaction are part of this conventional meaning, not inferred
+    from a noun label. Limb, fin, tail or body movements may contribute; assistance
+    or equipment is not excluded. The activity need not produce net ground-relative
+    progress, as when opposing a current. Mere floating, passive drifting, riding
+    in a boat, or being carried through water does not suffice. No destination, crossing
+    completion, speed, voluntary intention or absence of assistance is asserted.
+  boundaries:
+    includes: The same actor performs bodily locomotor activity whose coordinated
+      movements generate swimming propulsion against surrounding water. Water and
+      the propulsion-producing interaction are part of this conventional meaning,
+      not inferred from a noun label. Limb, fin, tail or body movements may contribute;
+      assistance or equipment is not excluded. The activity need not produce net ground-relative
+      progress, as when opposing a current. Mere floating, passive drifting, riding
+      in a boat, or being carried through water does not suffice. No destination,
+      crossing completion, speed, voluntary intention or absence of assistance is
+      asserted.
+    excludes: Passive floating, drifting or transport alone; Machine operation, figurative
+      swimming or unspecified fluid movement; Completed crossing, arrival or unassisted
+      activity inferred from swimming
+  collision_audit: reviews/locomotion_foundations.md and reviews/swimming_foundation.md;
+    physical change alone does not entail the declared locomotor pattern.
+  confidence: high
+  approval_record: migrations/swimming_2026_11_04.yaml
+  approval_basis: Delegated author review under the user-directed translator completion
+    goal; not independent linguistic validation.
+  examples:
+    ordinary: Eli is swimming.
+    technical: Preserve the same bound actor in each version-pinned dependency.
+    future_compound: Add a path only with the same actor and event binding.
+    counterexample: Passive floating, drifting or transport alone
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 1e2ec87e1feff0da19aadc3bbe0ef4c2f6a7d6ef640699f6f1628389e32861a5
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-body
+    kind: root
+    root_id: MAT:000
+  - node_id: s-actor
+    kind: slot
+    slot_name: actor
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MAT:101
+  edges:
+  - type: qualifies
+    from: q-body
+    to: h
+  - type: fills_role
+    from: s-actor
+    to: h
+    role: actor
+  lexical_constraints:
+  - The bound actor anchors the same focal material body and local physical changes
+    throughout the nested activity.
+  - Locomotor pattern and specialization are explicit audible conventions, not consequences
+    of root adjacency.
+  - Runtime, grammatical negation, time and path completion are independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_bodily_locomotor_activity
+    sound_code: 20
+    added_definition: The bound actor is the focal material body undergoing coordinated
+      body-local movements constituting a locomotor activity pattern. The body itself
+      generates the pattern through its moving parts; passive carriage or arbitrary
+      physical change alone does not suffice. Whole-body displacement relative to
+      the ground, conscious intention, biological life, a destination, speed or a
+      particular gait is not asserted.
+    excludes:
+    - Passive transport without bodily locomotor activity
+    - An arbitrary internal physical change
+    - Whole-body displacement or conscious intention inferred from the activity
+  compound_id: CMP:201afcb1035b464ef8e56bd6
+  content_digest: 201afcb1035b464ef8e56bd6ad6e82686dfada32561bbe0896d9e465f1594749
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: ongoing bodily locomotor activity
+  english_glosses:
+  - ongoing bodily locomotor activity
+  invariant_definition: The bound actor is the focal material body undergoing coordinated
+    body-local movements constituting a locomotor activity pattern. The body itself
+    generates the pattern through its moving parts; passive carriage or arbitrary
+    physical change alone does not suffice. Whole-body displacement relative to the
+    ground, conscious intention, biological life, a destination, speed or a particular
+    gait is not asserted.
+  boundaries:
+    includes: The bound actor is the focal material body undergoing coordinated body-local
+      movements constituting a locomotor activity pattern. The body itself generates
+      the pattern through its moving parts; passive carriage or arbitrary physical
+      change alone does not suffice. Whole-body displacement relative to the ground,
+      conscious intention, biological life, a destination, speed or a particular gait
+      is not asserted.
+    excludes: Passive transport without bodily locomotor activity; An arbitrary internal
+      physical change; Whole-body displacement or conscious intention inferred from
+      the activity
+  collision_audit: reviews/locomotion_foundations.md and reviews/swimming_foundation.md;
+    physical change alone does not entail the declared locomotor pattern.
+  confidence: high
+  approval_record: migrations/swimming_2026_11_04.yaml
+  approval_basis: Delegated author review under the user-directed translator completion
+    goal; not independent linguistic validation.
+  examples:
+    ordinary: The actor performs bodily locomotor activity.
+    technical: Preserve the same bound actor in each version-pinned dependency.
+    future_compound: Add a path only with the same actor and event binding.
+    counterexample: Passive transport without bodily locomotor activity
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 201afcb1035b464ef8e56bd6ad6e82686dfada32561bbe0896d9e465f1594749
 - architecture_version: '1.0'
   compound_id: CMP:218a5578a2274b92ba3d72db
   content_digest: 218a5578a2274b92ba3d72db291d07498972eeb4a076cd232ffb798e0e862989

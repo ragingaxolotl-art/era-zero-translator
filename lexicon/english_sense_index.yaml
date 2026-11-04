@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 460
-  lemma_count: 443
+  sense_count: 462
+  lemma_count: 445
   canonical_atom_senses: 324
-  canonical_compound_senses: 52
+  canonical_compound_senses: 54
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: e2346ad21f3066a9d13aa3eeb59be0008e80239886c0188846f851c288638b85
+  compound_dictionary_fingerprint: bde092bbeae6837dbc4973e6372f20f5f2e11d695c970d79792a42e1f02e8017
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -5327,6 +5327,52 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- sense_id: ENS:9391ae74a047408a25ebcf67
+  lemma: ongoing bodily locomotor activity
+  display_form: ongoing bodily locomotor activity
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:201afcb1035b464ef8e56bd6
+  definition: The bound actor is the focal material body undergoing coordinated body-local
+    movements constituting a locomotor activity pattern. The body itself generates
+    the pattern through its moving parts; passive carriage or arbitrary physical change
+    alone does not suffice. Whole-body displacement relative to the ground, conscious
+    intention, biological life, a destination, speed or a particular gait is not asserted.
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Passive transport without bodily locomotor activity; An arbitrary internal physical
+    change; Whole-body displacement or conscious intention inferred from the activity
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- sense_id: ENS:d407b7bba0bc7c37ab625be6
+  lemma: ongoing bodily swimming
+  display_form: ongoing bodily swimming
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:1e2ec87e1feff0da19aadc3b
+  definition: The same actor performs bodily locomotor activity whose coordinated
+    movements generate swimming propulsion against surrounding water. Water and the
+    propulsion-producing interaction are part of this conventional meaning, not inferred
+    from a noun label. Limb, fin, tail or body movements may contribute; assistance
+    or equipment is not excluded. The activity need not produce net ground-relative
+    progress, as when opposing a current. Mere floating, passive drifting, riding
+    in a boat, or being carried through water does not suffice. No destination, crossing
+    completion, speed, voluntary intention or absence of assistance is asserted.
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Passive floating, drifting or transport alone; Machine operation, figurative swimming
+    or unspecified fluid movement; Completed crossing, arrival or unassisted activity
+    inferred from swimming
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:7a45fa463918b45fef4eefda
   lemma: ongoing destination-directed physical carrying
   display_form: ongoing destination-directed physical carrying
@@ -10187,6 +10233,20 @@ lemma_index:
   ongoing acoustic sensory registration:
     sense_ids:
     - ENS:a14e8a449378f9e4a12933a0
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  ongoing bodily locomotor activity:
+    sense_ids:
+    - ENS:9391ae74a047408a25ebcf67
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  ongoing bodily swimming:
+    sense_ids:
+    - ENS:d407b7bba0bc7c37ab625be6
     requires_disambiguation: false
     direct_target_count: 1
     routes:

@@ -12,6 +12,14 @@ is the starting evidence, not a completion certificate.
 
 ## Current coverage evidence
 
+[Bodily swimming](../reviews/swimming_foundation.md) now reuses a new body-local
+locomotor-activity compound. “Eli is swimming” preserves the actor, water and
+propulsion without asserting arrival, net ground-relative progress or absence of
+assistance. Twenty-one sentence/state/scope cases pass Ruby/MIDI parity and
+independent meaning recovery; prior 52 compounds and 460 senses remain exact.
+The inventory is 324 roots and 54 compounds. Running, swimming paths and completed
+crossing still need composition; the original across-river audit case stays open.
+
 The [locomotion foundation review](../reviews/locomotion_foundations.md) now
 separates body-local locomotor activity from environmental displacement, then
 running/swimming manner, then path and completion. It rejects speed-only and

@@ -6,10 +6,10 @@ Version: **1.0.0**
 ## Inventory
 
 - Canonical atom-label senses: **324**
-- Canonical compound-label senses: **52**
+- Canonical compound-label senses: **54**
 - Reviewed high-frequency senses: **84**
-- Total sense records: **460**
-- Normalized English lemmas: **443**
+- Total sense records: **462**
+- Normalized English lemmas: **445**
 
 ## Design result
 

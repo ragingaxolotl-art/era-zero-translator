@@ -60,3 +60,8 @@ reversed participants, negation and runtime independence. These are requirements
 not passing cases. Ordinary swimming is reviewed in the water sense; generalized
 fluid locomotion, machine operation, flowing liquids and figurative running remain
 separate senses. The two original audit failures remain open.
+
+Implementation follow-up: [swimming foundation](swimming_foundation.md) now
+encodes the body-local activity and water-propulsion specialization as conventions
+20 and 21. The running branch remains unimplemented; convention 21 is swimming,
+not a reserved running code. No path or arrival is inferred from this activity.
