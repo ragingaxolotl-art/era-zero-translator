@@ -1,0 +1,33 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {validateFoundationIR} from '../pages/foundation_ir.mjs';
+const records=JSON.parse(fs.readFileSync(new URL('../reviews/foundation_extension_candidates.json',import.meta.url))).records;
+const [desire,preference]=records;
+const ref=id=>({node_id:id,kind:'deictic_reference',value_type:'entity',deictic_role:'speaker',referent_id:'discourse:speaker'});
+const occurrence=(id,d)=>({node_id:id,kind:'lexical_occurrence',target_type:'foundation',target_id:d.foundation_id,foundation_version:d.definition_version,runtime_state:{code:1}});
+const edge=(from,to,role)=>({edge_id:`${from}-${to}`,type:'fills_role',from,to,role});
+const base={root_clause:'main',nodes:[{node_id:'main',kind:'clause'},occurrence('want',desire),ref('holder'),{node_id:'desired',kind:'clause',clause_type:'content',content_status:'intensional',value_type:'proposition'},{node_id:'care',kind:'lexical_occurrence',target_type:'atom',target_id:'LIF:211',runtime_state:{code:1}}],edges:[{edge_id:'main-center',type:'centers',from:'want',to:'main'},edge('holder','want','experiencer'),edge('desired','want','content'),{edge_id:'content-center',type:'centers',from:'care',to:'desired'}]};
+const check=ir=>validateFoundationIR(ir,records,{allowDraft:true});
+let count=0;
+async function bad(edit){const x=structuredClone(base);edit(x);await assert.rejects(check(x));count++;}
+await assert.rejects(validateFoundationIR(base,records));count++;
+for(const code of [0,1,2]){const x=structuredClone(base);x.nodes[1].runtime_state.code=code;await check(x);count++;}
+await bad(x=>x.nodes[1].foundation_version='2.0.0');
+await bad(x=>x.nodes[1].runtime_state.code=3);
+await bad(x=>x.nodes[1].compound_bindings={});
+await bad(x=>x.nodes[3].content_status='asserted');
+await bad(x=>delete x.nodes[3].content_status);
+await bad(x=>x.root_clause='desired');
+await bad(x=>x.edges.push({edge_id:'leak',type:'coordinates',from:'desired',to:'main'}));
+await bad(x=>x.edges=x.edges.filter(e=>e.role!=='experiencer'));
+await bad(x=>x.edges[1].role='target');
+await bad(x=>x.edges[2].from='holder');
+await bad(x=>x.edges[3].from='want');
+await bad(x=>x.edges.push({...x.edges[3],edge_id:'second-center'}));
+await bad(x=>x.nodes.push({...x.nodes[0]}));
+await bad(x=>x.edges[0].to='missing');
+const pref={root_clause:'main',nodes:[{node_id:'main',kind:'clause'},occurrence('prefer',preference),ref('holder'),{node_id:'tea',kind:'phonemic_reference',reference_mode:'nominal_class',value_type:'entity'},{node_id:'coffee',kind:'phonemic_reference',reference_mode:'nominal_class',value_type:'entity'}],edges:[{edge_id:'center',type:'centers',from:'prefer',to:'main'},edge('holder','prefer','experiencer'),edge('tea','prefer','target'),edge('coffee','prefer','comparison_standard')]};
+await check(pref);count++;
+const wrongHolder=structuredClone(pref);wrongHolder.edges[1].from='tea';await assert.rejects(check(wrongHolder));count++;
+const pending=check(base);base.nodes[3].content_status='asserted';const snapshot=await pending;assert.equal(snapshot.ir.nodes[3].content_status,'intensional');count++;
+console.log(`PASS ${count} foundation argument/scope checks (candidate only; not sentence translation coverage)`);

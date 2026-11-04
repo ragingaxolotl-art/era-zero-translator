@@ -91,3 +91,9 @@ This candidate suite is separate from the last 92-check production regression.
 
 These are open requirements. A working token codec is not a completed foundation
 layer, and it does not change the translator's ordinary phrase coverage count.
+
+### Typed IR validation prototype
+
+`pages/foundation_ir.mjs` now validates candidate occurrence versions, exact required roles, entity versus nominal-kind alternatives, and explicitly intensional proposition arguments. Desired content must have one predicate center, cannot be the root assertion, and cannot also have an outgoing assertion/coordination attachment. Cyclic role/center dependencies are rejected. Validation snapshots caller input before asynchronous registry validation.
+
+`tests/foundation_ir_test.mjs` passes 21 positive and rejection checks, including all three runtime states, reversed type placement, missing roles, leaked content, cycles, version mismatch and caller mutation. This is an extension validator that must be combined with the existing general IR validator; it does not validate phonemic payloads or establish sentence translation coverage. Renderer integration, audible content scope, independent semantic decoding, and ordinary-English composition remain pending. No candidate is admitted to the production dictionary by this change.
