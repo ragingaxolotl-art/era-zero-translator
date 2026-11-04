@@ -89,3 +89,11 @@ Before adding a unit, test the entire published unit range. The strict inverse p
 
 
 The first temperature step is now implemented in `temperature_measurement.md`: kelvin code 14, temperature-point sentences, exact Celsius offsets and scalar bounds. The unit/runtime matrix now covers fourteen units. Entity comparisons now use thermodynamic-temperature dimension code 2 with an independent MIDI meaning inverse. Contextual adjective standards remain next; temperature differences still require a distinct interval conversion route.
+
+## Photometric luminance extension
+
+The next dimension now has explicit luminance measurements (unit 15), entity
+comparisons (dimension 3), and bright/dim readings only with a selected physical
+sense and user-supplied threshold. See `luminance_foundation.md` for primary sources,
+surface/direction context, excluded photometric/perceptual senses and verification.
+This adds no atoms or compounds and leaves existing unit and dimension codes intact.

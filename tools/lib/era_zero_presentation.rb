@@ -6,7 +6,7 @@ require_relative "era_zero_renderer"
 
 module EraZeroPresentation
   ASPECTS = %w[bounded ongoing habitual].freeze
-  MEASUREMENT_UNITS = %w[1 second minute hour day meter kilometer gram kilogram degree radian bit byte kelvin].freeze
+  MEASUREMENT_UNITS = %w[1 second minute hour day meter kilometer gram kilogram degree radian bit byte kelvin candela_per_square_meter].freeze
   QUANTIFIERS = %w[exact at_least at_most all some none].freeze
   ROLE_ORDER = %w[actor source cause experiencer bearer predicate target result destination instrument material content recipient location environment condition persistent_condition time manner quantity comparison_standard beneficiary].freeze
   CONDITION_STATUSES = %w[open satisfied unsatisfied counterfactual].freeze
@@ -246,7 +246,7 @@ module EraZeroPresentation
   def measurement_markers(formal, node)
     raise PresentationError, "unsupported musical measurement comparison" if node.key?("comparison") && !MEASURE_COMPARISONS.include?(node["comparison"])
     value = node["magnitude"]; unit = MEASUREMENT_UNITS.index(node["unit"])
-    unless value.is_a?(String) && value.length <= 1024 && value != "-0" && value.match?(/\A-?(?:0|[1-9][0-9]*)(?:\.[0-9]*[1-9])?\z/) && unit && (node.keys - %w[node_id kind magnitude unit comparison]).empty?
+    unless value.is_a?(String) && value.length <= 1024 && value != "-0" && !(node["unit"] == "candela_per_square_meter" && value.start_with?("-")) && value.match?(/\A-?(?:0|[1-9][0-9]*)(?:\.[0-9]*[1-9])?\z/) && unit && (node.keys - %w[node_id kind magnitude unit comparison]).empty?
       raise PresentationError, "unsupported musical measurement"
     end
     markers = ["measurement_open"] + value.chars.map { |char| char == "-" ? "measurement_negative" : char == "." ? "decimal_point" : "digit_#{char}" } + ["measurement_unit_#{unit + 1}", "measurement_close"]
@@ -308,8 +308,8 @@ module EraZeroPresentation
     relative = [0, 24, 0, 0] if marker == "proposition_content_close"
     aspect = marker.match(/\Aaspect_(bounded|ongoing|habitual)_(open|close)\z/)
     relative = [0, aspect[2] == "open" ? -22 : 22, ASPECTS.index(aspect[1]), 0] if aspect
-    property = marker.match(/\Aproperty_(mass|thermodynamic_temperature)_(equal|greater_than|less_than|at_least|at_most|not_equal)_(open|close)\z/)
-    relative = [0, property[3] == "open" ? -18 : 18, {"mass"=>1,"thermodynamic_temperature"=>2}.fetch(property[1]), PROPERTY_COMPARISONS.index(property[2]), 0] if property
+    property = marker.match(/\Aproperty_(mass|thermodynamic_temperature|luminance)_(equal|greater_than|less_than|at_least|at_most|not_equal)_(open|close)\z/)
+    relative = [0, property[3] == "open" ? -18 : 18, {"mass"=>1,"thermodynamic_temperature"=>2,"luminance"=>3}.fetch(property[1]), PROPERTY_COMPARISONS.index(property[2]), 0] if property
     comparison = marker.match(/\Ameasure_compare_(greater_than|less_than|at_least|at_most|not_equal)_(open|close)\z/)
     relative = [0, comparison[2] == "open" ? -17 : 17, MEASURE_COMPARISONS.index(comparison[1]) + 1, 0] if comparison
     relative = [0, -13, -1, 0] if marker == "measurement_open"

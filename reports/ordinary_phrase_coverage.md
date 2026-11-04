@@ -2,7 +2,7 @@
 
 Fresh phrase coverage audit authored during implementation; not a blind or representative English benchmark.
 
-Full translator completion: **not established**. 24 of 40 cases pass their declared semantic checks; 11 have no complete composition; 5 require an explicit interpretation. These counts do not estimate coverage of English generally.
+Full translator completion: **not established**. 24 of 40 cases pass their declared semantic checks; 10 have no complete composition; 6 require an explicit interpretation. These counts do not estimate coverage of English generally.
 
 | Area | Checked compositions | Cases |
 |---|---:|---:|
@@ -33,7 +33,7 @@ Full translator completion: **not established**. 24 of 40 cases pass their decla
 - **Nora will care for Eli tomorrow.** — Preserve future time and commitment ambiguity (requires_interpretation)
 - **The radio is hot.** — Temperature is not generic activity (requires_interpretation)
 - **The radio is heavy.** — Mass or weight must not collapse into size (requires_interpretation)
-- **The lamp is bright.** — Express visual intensity (not_composed)
+- **The lamp is bright.** — Express visual intensity (requires_interpretation)
 - **The stone is rough.** — Express surface texture (not_composed)
 - **Nora prefers tea to coffee.** — Preserve preference direction and both alternatives (not_composed)
 - **Orin is curious about the map.** — Interest in knowing is not merely attention (not_composed)

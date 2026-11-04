@@ -50,8 +50,8 @@ export function decodePropertyComparisonMidi(bytes){
   }
  }
  const opening=relative(first,anchor);
- if(!duration(first,.25)||opening.length!==5||!same([opening[0],opening[1],opening[4]],[0,-18,0])||![1,2].includes(opening[2])||!RELATIONS[opening[3]])fail();
- const dimension=opening[2]===1?'mass':'thermodynamic_temperature';
+ if(!duration(first,.25)||opening.length!==5||!same([opening[0],opening[1],opening[4]],[0,-18,0])||![1,2,3].includes(opening[2])||!RELATIONS[opening[3]])fail();
+ const dimension={1:'mass',2:'thermodynamic_temperature',3:'luminance'}[opening[2]];
  const relation=RELATIONS[opening[3]];
  const roleFrame=(segment,side)=>{
   const pitches=relative(segment,anchor);

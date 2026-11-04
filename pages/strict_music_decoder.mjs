@@ -6,7 +6,7 @@ import {ROLE_ORDER} from './roles.mjs';
 const MODES=['possible','necessary','permitted','obligated','intended','predicted','counterfactual'];
 const QUANTIFIERS=['exact','at_least','at_most','all','some','none'];
 const COMPARISONS=['equal','greater_than','less_than','at_least','at_most','not_equal'];
-const UNITS=['1','second','minute','hour','day','meter','kilometer','gram','kilogram','degree','radian','bit','byte','kelvin'];
+const UNITS=['1','second','minute','hour','day','meter','kilometer','gram','kilogram','degree','radian','bit','byte','kelvin','candela_per_square_meter'];
 const CONDITIONS=['open','satisfied','unsatisfied','counterfactual'];
 const OFFSETS=new Map([[-12,'low'],[0,'middle'],[12,'high'],[-5,'sustained_background']]);
 const equal=(a,b)=>a.length===b.length&&a.every((n,i)=>n===b[i]);
@@ -27,7 +27,7 @@ for(const side of ['open','close']){
  ROLE_ORDER.forEach((role,i)=>frame(`role_${role}_${side}`,[0,sign*15,...i.toString(3).padStart(3,'0').split('').map(d=>[0,1,-1][Number(d)]),0]));
  CONDITIONS.forEach((name,i)=>frame(`conditional_${name}_${side}`,[0,sign*16,i,0]));
  COMPARISONS.slice(1).forEach((name,i)=>frame(`measure_compare_${name}_${side}`,[0,sign*17,i+1,0]));
- for(const [dimension,code] of [["mass",1],["thermodynamic_temperature",2]])COMPARISONS.forEach((name,i)=>frame(`property_${dimension}_${name}_${side}`,[0,sign*18,code,i,0]));
+ for(const [dimension,code] of [["mass",1],["thermodynamic_temperature",2],["luminance",3]])COMPARISONS.forEach((name,i)=>frame(`property_${dimension}_${name}_${side}`,[0,sign*18,code,i,0]));
 }
 ROLE_ORDER.forEach((role,i)=>frame(`role_reference_${role}`,[0,-20,...i.toString(3).padStart(3,'0').split('').map(d=>[0,1,-1][Number(d)]),0]));
 frame('nominal_mass_open',[0,-21,1,0]);frame('nominal_mass_close',[0,21,1,0]);frame('nominal_property_head',[0,21,0,21]);

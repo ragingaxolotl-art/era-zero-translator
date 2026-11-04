@@ -44,7 +44,7 @@ puts JSON.generate(units.product([0,1,2]).map do |unit,state|
  {unit:unit,state:state,formal:EraZeroRenderer.render(ir)}
 end)
 `],{cwd:root,encoding:'utf8',maxBuffer:8_000_000}));
-const unitOrder=['1','second','minute','hour','day','meter','kilometer','gram','kilogram','degree','radian','bit','byte','kelvin'];
+const unitOrder=['1','second','minute','hour','day','meter','kilometer','gram','kilogram','degree','radian','bit','byte','kelvin','candela_per_square_meter'];
 assert.deepEqual([...new Set(unitSamples.map(s=>s.unit))],unitOrder);
 for(const sample of unitSamples){
  let decoded;assert.doesNotThrow(()=>{decoded=check(sample.formal)},`${sample.unit} runtime ${sample.state}`);

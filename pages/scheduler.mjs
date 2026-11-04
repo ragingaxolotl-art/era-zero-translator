@@ -5,7 +5,7 @@ const MEASURE_COMPARISONS=['greater_than','less_than','at_least','at_most','not_
 const CONDITION_STATUSES=['open','satisfied','unsatisfied','counterfactual'];
 import {ROLE_ORDER} from './roles.mjs';
 const QUANTIFIERS=['exact','at_least','at_most','all','some','none'];
-const MEASUREMENT_UNITS=['1','second','minute','hour','day','meter','kilometer','gram','kilogram','degree','radian','bit','byte','kelvin'];
+const MEASUREMENT_UNITS=['1','second','minute','hour','day','meter','kilometer','gram','kilogram','degree','radian','bit','byte','kelvin','candela_per_square_meter'];
 const MODAL_MODES = ['possible','necessary','permitted','obligated','intended','predicted','counterfactual'];
 // Counted-scope scheduling shared by browser sound, notation and MIDI export.
 export function scheduledLexicalEvents(formal, maxEvents = 100000) {
@@ -124,7 +124,7 @@ function quantifierMarkers(formal,node){
 function measurementMarkers(formal,node){
   const value=node.magnitude,unit=MEASUREMENT_UNITS.indexOf(node.unit);
   if(node.comparison!==undefined&&!MEASURE_COMPARISONS.includes(node.comparison))throw new Error('Unsupported musical measurement comparison.');
-  if(typeof value!=='string'||value.length>1024||value==='-0'||!/^-?(?:0|[1-9][0-9]*)(?:\.[0-9]*[1-9])?$/.test(value)||unit<0||Object.keys(node).some(key=>!['node_id','kind','magnitude','unit','comparison'].includes(key)))throw new Error('Unsupported musical measurement.');
+  if(typeof value!=='string'||value.length>1024||value==='-0'||(node.unit==='candela_per_square_meter'&&value.startsWith('-'))||!/^-?(?:0|[1-9][0-9]*)(?:\.[0-9]*[1-9])?$/.test(value)||unit<0||Object.keys(node).some(key=>!['node_id','kind','magnitude','unit','comparison'].includes(key)))throw new Error('Unsupported musical measurement.');
   const markers=['measurement_open',...Array.from(value,char=>char==='-'?'measurement_negative':char==='.'?'decimal_point':`digit_${char}`),`measurement_unit_${unit+1}`,'measurement_close'];
   if(node.comparison)markers.unshift(`measure_compare_${node.comparison}_open`);
   if(node.comparison)markers.push(`measure_compare_${node.comparison}_close`);
@@ -166,8 +166,8 @@ function grammarMarker(formal,scopeId,marker){
   if(marker==='proposition_content_close')relative=[0,24,0,0];
   const aspect=marker.match(/^aspect_(bounded|ongoing|habitual)_(open|close)$/);
   if(aspect)relative=[0,aspect[2]==='open'?-22:22,ASPECTS.indexOf(aspect[1]),0];
-  const property=marker.match(/^property_(mass|thermodynamic_temperature)_(equal|greater_than|less_than|at_least|at_most|not_equal)_(open|close)$/);
-  if(property)relative=[0,property[3]==='open'?-18:18,({mass:1,thermodynamic_temperature:2})[property[1]],PROPERTY_COMPARISONS.indexOf(property[2]),0];
+  const property=marker.match(/^property_(mass|thermodynamic_temperature|luminance)_(equal|greater_than|less_than|at_least|at_most|not_equal)_(open|close)$/);
+  if(property)relative=[0,property[3]==='open'?-18:18,({mass:1,thermodynamic_temperature:2,luminance:3})[property[1]],PROPERTY_COMPARISONS.indexOf(property[2]),0];
   const comparison=marker.match(/^measure_compare_(greater_than|less_than|at_least|at_most|not_equal)_(open|close)$/);
   if(comparison)relative=[0,comparison[2]==='open'?-17:17,MEASURE_COMPARISONS.indexOf(comparison[1])+1,0];
   if(marker==='measurement_open')relative=[0,-13,-1,0];
@@ -218,5 +218,5 @@ function frameBoundArguments(formal,maxEvents){
 function validatePropertyComparison(node,ir){
  const scopes=ir.edges.filter(e=>e.type==='scopes'&&e.to===node.node_id),predicate=scopes.length===1?ir.nodes.find(n=>n.node_id===scopes[0].from):null;
  const roles=predicate?ir.edges.filter(e=>e.type==='fills_role'&&e.to===predicate.node_id):[];
- if(!['mass','thermodynamic_temperature'].includes(node.dimension)||!PROPERTY_COMPARISONS.includes(node.relation)||Object.keys(node).some(k=>!['node_id','kind','operator','dimension','relation'].includes(k))||predicate?.kind!=='lexical_occurrence'||predicate?.target_type!=='atom'||!['MAT:000','MAT:010'].includes(predicate?.target_id)||roles.map(e=>e.role).sort().join(',')!=='bearer,comparison_standard'||!roles.every(e=>ir.nodes.some(n=>n.node_id===e.from&&['phonemic_reference','deictic_reference'].includes(n.kind)&&n.reference_mode!=='nominal_class')))throw new Error('Unsupported musical property comparison.');
+ if(!['mass','thermodynamic_temperature','luminance'].includes(node.dimension)||!PROPERTY_COMPARISONS.includes(node.relation)||Object.keys(node).some(k=>!['node_id','kind','operator','dimension','relation'].includes(k))||predicate?.kind!=='lexical_occurrence'||predicate?.target_type!=='atom'||!['MAT:000','MAT:010'].includes(predicate?.target_id)||roles.map(e=>e.role).sort().join(',')!=='bearer,comparison_standard'||!roles.every(e=>ir.nodes.some(n=>n.node_id===e.from&&['phonemic_reference','deictic_reference'].includes(n.kind)&&n.reference_mode!=='nominal_class')))throw new Error('Unsupported musical property comparison.');
 }
