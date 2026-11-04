@@ -10,12 +10,12 @@ performance, keeping existing roots, sounds, names, and approved poetic meanings
 The [source audit](https://chatgpt.com/space/page_21c6ce0da1a88191abff53c0b13441f3)
 is the starting evidence, not a completion certificate.
 
-## Current status at implementation revision 056c677
+## Current draft status
 
 The full translator goal remains **incomplete**. There are 324 preserved roots,
-55 approved compounds and 463 canonical senses. Desire/preference and polar-answer knowledge foundations
+56 approved compounds and 464 canonical senses. Desire/preference and polar-answer knowledge foundations
 remain opt-in candidate vocabulary; they are not included in those canonical
-counts. The fresh consolidated regression passed 146 of 147 checks. The
+counts. The consolidated regression at `056c677` passed 146 of 147 checks. The
 carrying-command check timed out at 120 seconds; after that run terminated, its
 focused rerun passed all 21 command cases in 0.676 seconds without a code change.
 The report preserves the original timeout and the separate rerun; its cause is
@@ -1261,3 +1261,19 @@ source excerpt file preserves selected Life and Motion records; it is not the
 129-turn ledger. This bounds the Git recovery result only: a differently
 serialized capture, unreachable objects, other clones, or private conversation
 storage remain outside this check. The source-reconciliation gate stays open.
+
+### Running foundation — November 4, 2026
+
+Running now specializes the existing bodily locomotor activity with convention 23,
+with no new roots. The same actor remains bound through the nested compound.
+Ongoing sentences, questions, negation, time and runtime 0/1/2 preserve the running
+gait instead of replacing it with fast generic displacement. The MIDI inverse
+checks the complete nested physical payload and recovers actor and scopes without
+source text. The definition allows grounded and in-place execution without
+asserting a destination, airborne phase, speed threshold or arrival.
+
+The targeted evidence is `reports/running_foundation_validation.json`; it does not
+replace the consolidated regression baseline above. Running toward/to a destination,
+simple-present aspect selection and completed journeys remain unfinished, including
+the original diagnostic “Nora runs to the gate.” This is a reusable dependency for
+that construction, not a claim that the diagnostic or full translator is complete.

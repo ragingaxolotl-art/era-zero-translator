@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 463
-  lemma_count: 446
+  sense_count: 464
+  lemma_count: 447
   canonical_atom_senses: 324
-  canonical_compound_senses: 55
+  canonical_compound_senses: 56
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: cd85a941f48e1e89e584a5b08a420035a77077fe8874a547ff45206d0d371e96
+  compound_dictionary_fingerprint: 128b90c6cd9e22e32b8cfc20844884bf35e6ca9432c0dfd79178365a8756e261
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -5348,6 +5348,31 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- sense_id: ENS:3a92f3b181a96e4bc8b3c5be
+  lemma: ongoing bodily running
+  display_form: ongoing bodily running
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:22955227e19ba82d5b48c9ef
+  definition: 'The same actor performs a bodily running gait: a repeated leg-support
+    and recovery pattern of the running class, characterized by bouncing or compressive
+    support rather than the vaulting progression characteristic of walking. This is
+    a conventional gait category, not a speed threshold or an inference from arbitrary
+    body movement. Grounded forms without an airborne interval and running in place
+    are included. The actor need not be human or biological. No particular speed,
+    net ground-relative displacement, destination, arrival, conscious intention or
+    unassisted performance is asserted.'
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Walking, passive carriage or fast displacement without running gait; Running a
+    program, operating a machine or liquid flowing; Arrival, mandatory flight phase
+    or a speed threshold inferred from running
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:d407b7bba0bc7c37ab625be6
   lemma: ongoing bodily swimming
   display_form: ongoing bodily swimming
@@ -10265,6 +10290,13 @@ lemma_index:
   ongoing bodily locomotor activity:
     sense_ids:
     - ENS:9391ae74a047408a25ebcf67
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  ongoing bodily running:
+    sense_ids:
+    - ENS:3a92f3b181a96e4bc8b3c5be
     requires_disambiguation: false
     direct_target_count: 1
     routes:

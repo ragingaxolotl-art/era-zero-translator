@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 55
+  entry_count: 56
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -397,6 +397,79 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 218a5578a2274b92ba3d72db291d07498972eeb4a076cd232ffb798e0e862989
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:201afcb1035b464ef8e56bd6
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - The bound actor anchors the same focal material body and local physical changes
+    throughout the nested activity.
+  - Locomotor pattern and specialization are explicit audible conventions, not consequences
+    of root adjacency.
+  - Runtime, grammatical negation, time and path completion are independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_bodily_running
+    sound_code: 23
+    added_definition: 'The same actor performs a bodily running gait: a repeated leg-support
+      and recovery pattern of the running class, characterized by bouncing or compressive
+      support rather than the vaulting progression characteristic of walking. This
+      is a conventional gait category, not a speed threshold or an inference from
+      arbitrary body movement. Grounded forms without an airborne interval and running
+      in place are included. The actor need not be human or biological. No particular
+      speed, net ground-relative displacement, destination, arrival, conscious intention
+      or unassisted performance is asserted.'
+    excludes:
+    - Walking, passive carriage or fast displacement without running gait
+    - Running a program, operating a machine or liquid flowing
+    - Arrival, mandatory flight phase or a speed threshold inferred from running
+  compound_id: CMP:22955227e19ba82d5b48c9ef
+  content_digest: 22955227e19ba82d5b48c9ef66f69a4898d18356ea76814af3c488a3786d694d
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: ongoing bodily running
+  english_glosses:
+  - ongoing bodily running
+  invariant_definition: 'The same actor performs a bodily running gait: a repeated
+    leg-support and recovery pattern of the running class, characterized by bouncing
+    or compressive support rather than the vaulting progression characteristic of
+    walking. This is a conventional gait category, not a speed threshold or an inference
+    from arbitrary body movement. Grounded forms without an airborne interval and
+    running in place are included. The actor need not be human or biological. No particular
+    speed, net ground-relative displacement, destination, arrival, conscious intention
+    or unassisted performance is asserted.'
+  boundaries:
+    includes: 'The same actor performs a bodily running gait: a repeated leg-support
+      and recovery pattern of the running class, characterized by bouncing or compressive
+      support rather than the vaulting progression characteristic of walking. This
+      is a conventional gait category, not a speed threshold or an inference from
+      arbitrary body movement. Grounded forms without an airborne interval and running
+      in place are included. The actor need not be human or biological. No particular
+      speed, net ground-relative displacement, destination, arrival, conscious intention
+      or unassisted performance is asserted.'
+    excludes: Walking, passive carriage or fast displacement without running gait;
+      Running a program, operating a machine or liquid flowing; Arrival, mandatory
+      flight phase or a speed threshold inferred from running
+  collision_audit: reviews/locomotion_foundations.md and reviews/running_foundation.md;
+    physical change alone does not entail the declared locomotor pattern.
+  confidence: high
+  approval_record: migrations/running_2026_11_04.yaml
+  approval_basis: Author review under the user-directed translator completion goal;
+    not independent linguistic validation.
+  examples:
+    ordinary: Nora is running.
+    technical: Preserve the same bound actor in each version-pinned dependency.
+    future_compound: Add a path only with the same actor and event binding.
+    counterexample: Walking, passive carriage or fast displacement without running
+      gait
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 22955227e19ba82d5b48c9ef66f69a4898d18356ea76814af3c488a3786d694d
 - architecture_version: '1.0'
   compound_id: CMP:22f8ddc4d9b2d1a818d38e9f
   content_digest: 22f8ddc4d9b2d1a818d38e9fa1dc82343d7588ea825c12c9b5ae17856d9dc38a
