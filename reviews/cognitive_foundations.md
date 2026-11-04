@@ -228,3 +228,26 @@ This adds a draft English API, not main UI admission or proof of real-world
 knowledge. Independent full semantic recovery, pronoun-field integration for the
 cognitive route, acquisition/learning composition and broader cognitive meanings
 remain unfinished.
+
+## Independent knows/whether musical recovery
+
+The foundation semantic inverse now accepts polar-content frames only under
+`allowDraftQuestionContent`, separately from candidate vocabulary opt-in. It
+recovers a typed intensional question with an explicit neither-answer assertion
+commitment. The existing recursive predicate reader recovers the body and checks
+its roles; registry argument types reject a proposition where knowledge requires
+a question, or a question where desire requires a proposition. It receives MIDI
+and shared dictionaries, never the expected source IR, formal plan or sentence.
+
+The 21 knows/whether tests now check the recovered holder and content bearer
+phonemes, candidate identity, inner predicate, both negation positions, all nine
+inner/outer runtime pairs and matrix speech act. Two deliberately changed but
+well-framed performances (desire with question content, knowledge with proposition
+content) reject instead of silently becoming another reading. The existing twelve
+preference inverse contrasts still pass.
+
+This is semantic recovery for the admitted inverse constructions, not arbitrary
+English or recorded-audio comprehension. The English composer can reuse ordinary
+predicates outside the inverse's current whitelist; those still reject in the
+inverse and are not covered by this evidence. UI admission, wider inverse support,
+learning/acquisition, source reconciliation and listening validation remain open.

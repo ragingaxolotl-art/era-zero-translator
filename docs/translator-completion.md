@@ -31,8 +31,9 @@ proposition and produces byte-identical content MIDI for these cases. Integratio
 with cognitive predicates is in progress: a separate polar-answer knowledge
 candidate now accepts typed question content with browser/Ruby binding and MIDI
 parity. An explicit cognitive API opt-in now composes knows/whether sentences,
-with 21 full browser/Ruby formal and MIDI comparisons. Main UI admission and
-full semantic inverse remain unfinished.
+with 21 full browser/Ruby formal and MIDI comparisons. MIDI-only semantic
+recovery now checks the holder, typed question, negation and runtime scopes for
+these cases. Main UI admission and broader inverse coverage remain unfinished.
 
 Recent completed implementation work:
 

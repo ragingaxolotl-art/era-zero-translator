@@ -3,13 +3,13 @@ import {readFeltConditionTree} from './felt_decoder.mjs';
 import {validateFoundations,foundationPath} from './foundations.mjs';
 import {strictSemanticReader} from './strict_semantic_reader.mjs';
 // No source IR, expected sentence, or formal plan is accepted by this inverse.
-export async function decodeFoundationSentenceMidi(bytes,atoms,records,{allowDraft=false}={}){
+export async function decodeFoundationSentenceMidi(bytes,atoms,records,{allowDraft=false,allowDraftQuestionContent=false}={}){
  records=await validateFoundations(records,{allowDraft});
  const definitions=new Map(records.map(r=>[r.foundation_id,r]));
  if(atoms.some(a=>definitions.has(a.canonical_id)))throw new Error('Conflicting foundation identity.');
  const dictionary=[...atoms,...records.map(r=>({canonical_id:r.foundation_id,harmonic_signature_semitones:[0,3,7],note_path_semitones:foundationPath(r.sound_code)}))];
  const fail=()=>{throw new Error('Unsupported or malformed foundation sentence music.');};
- const reader=strictSemanticReader(bytes,dictionary,'Malformed foundation sentence framing.');
+ const reader=strictSemanticReader(bytes,dictionary,'Malformed foundation sentence framing.',{allowDraftQuestionContent});
  const {observed,readTree,reference}=reader;
  const registers={bearer:'middle',actor:'low',target:'high',experiencer:'middle',comparison_standard:'middle',content:'middle'};
  function proposition(children,depth=0,parent=null){
@@ -53,6 +53,8 @@ export async function decodeFoundationSentenceMidi(bytes,atoms,records,{allowDra
    let value;
    if(frame.children.length===1&&frame.children[0].marker==='proposition_content_open'){
     value={type:'proposition',content_status:'intensional',proposition:proposition(frame.children[0].children,depth+1,d)};
+   }else if(frame.children.length===1&&frame.children[0].marker==='polar_content_open'){
+    value={type:'question',question_kind:'polar',content_status:'intensional',assertion_commitment:'neither_answer',proposition:proposition(frame.children[0].children,depth+1,d)};
    }else if(frame.children.length===1&&frame.children[0].marker==='desire_subject_reference'){
     if(parent?.sound_code!==0||role!==(d?.sound_code===1?'experiencer':({'LIF:211':'actor','MOV:201':'bearer','LIF:001':'bearer','LIF:002':'bearer','LIF:011':'bearer','LIF:012':'bearer','WRN:001':'bearer','REP:001':'bearer','MIN:201':'bearer'})[head.root_id]))fail();
     value={type:'entity',reference:{kind:'bound',binding:'parent_desire_experiencer'}};
