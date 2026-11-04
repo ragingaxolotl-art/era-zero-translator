@@ -139,7 +139,7 @@ export async function renderLexicalOccurrences(ir,authority,{anchor=60,maxEvents
   if(previousBoundary!==undefined)result.at(-1).boundary_after_beats=previousBoundary;
   return result;
  }
- const lexical=ir.nodes.filter(n=>['lexical_occurrence','phonemic_reference','deictic_reference','reference'].includes(n.kind));
+ const lexical=ir.nodes.filter(n=>['lexical_occurrence','phonemic_reference','deictic_reference'].includes(n.kind)||(n.kind==='reference'&&n.reference_type==='desire_subject'));
  const boundIds=new Set(lexical.flatMap(n=>(n.compound_bindings||[]).map(b=>b.argument_id))),independent=new Set(ir.edges.map(e=>e.from)),events=[];
  for(const node of lexical.slice().sort((a,b)=>a.node_id<b.node_id?-1:a.node_id>b.node_id?1:0)){
   if(boundIds.has(node.node_id)&&!independent.has(node.node_id))continue;
