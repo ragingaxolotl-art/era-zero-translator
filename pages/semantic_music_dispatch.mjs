@@ -25,11 +25,13 @@ export async function decodeSupportedMeaningWithDrafts(bytes,atoms,records,{allo
  const {decodeFoundationSentenceMidi}=await import('./foundation_semantic_decoder.mjs');
  const {decodeUnderstandingMidi}=await import('./understanding_music.mjs');
  const {decodeUnderstandingAcquisitionMidi}=await import('./understanding_acquisition_music.mjs');
+ const {decodeRouteLearningMidi}=await import('./route_learning_music.mjs');
  const accepted=[];
  try{accepted.push(decodeSupportedMeaningMidi(bytes,atoms));}catch{}
  try{accepted.push(await decodeFoundationSentenceMidi(bytes,atoms,records,{allowDraft:true,allowDraftQuestionContent:true,allowDraftAcquisition:true}));}catch{}
  try{accepted.push(await decodeUnderstandingMidi(bytes,atoms,{allowDraft:true}));}catch{}
  try{accepted.push(await decodeUnderstandingAcquisitionMidi(bytes,atoms,{allowDraft:true}));}catch{}
+ try{accepted.push(await decodeRouteLearningMidi(bytes,atoms,{allowDraft:true}));}catch{}
  if(accepted.length!==1)throw new Error('No unique supported canonical or draft semantic interpretation.');
  return accepted[0];
 }

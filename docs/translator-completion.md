@@ -1654,3 +1654,21 @@ acoustic checks were included, so later report regeneration retains provenance.
 All original completion gates remain open. Live browser access was rechecked
 and remains disabled in Work settings. The pending physical-capture setup choice
 has not been answered; the prepared capture harness is not a tested recording.
+
+## Route-learning draft checkpoint
+
+The original “Nora learned the route” gap now has explicit draft interpretations
+for memorization, practical navigation knowledge and familiarity. The API requires
+a choice; none silently substitutes for the others. Existing roots and compounds
+are unchanged. Result contracts precede acquisition, with later retention left
+unspecified. See `reviews/route_learning.md` for the semantic audit and admission
+limitations. The three result candidates still need a broader reusable-predicate
+review before canonical admission.
+
+Targeted evidence covers 81 meaning contracts, 81 musical inverses, frame collision
+checks and three blind clean-synthetic WAV recoveries. Physical recordings remain
+zero. The shared draft audio decoder now recognizes the selected result, reference
+modes, scope and independent event/result trits. Ruby parity and user-facing route
+selection remain unfinished; these draft cases do not alter the canonical-path
+coverage diagnostic or close any completion gate. The consolidated report above
+remains evidence for its recorded revision, not this later work.
