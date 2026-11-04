@@ -37,7 +37,9 @@ these cases. Main draft-preview routing now includes the cognitive candidate
 and explicit pronoun fields, with handler/export checks. Live UI validation and
 broader inverse coverage remain unfinished. Desired knowledge now reuses the
 existing desire and knowledge candidates with explicit subject binding; 15 cases
-have full browser/Ruby parity and independent musical meaning recovery.
+have full browser/Ruby parity and independent musical meaning recovery. Past
+knowledge and separate outer/content calendar scopes now have 21 additional
+meaning/music checks; these do not implement learning.
 
 Recent completed implementation work:
 

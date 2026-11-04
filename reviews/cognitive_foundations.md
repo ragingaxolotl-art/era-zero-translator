@@ -299,3 +299,19 @@ into this cognitive construction. No live browser/listening proof is added here.
 
 Curiosity, acquisition/learning, broader knowledge/understanding senses and the
 original completion gates remain unfinished.
+
+## Knowledge time independent of question-content time
+
+The cognitive parser now admits knew/did-not-know, past questions and contractions,
+and explicit fronted Today/Yesterday scopes. A fronted day scopes the knowledge
+claim; a trailing day inside the whether clause remains on the embedded predicate.
+Past knowledge does not become a learning event or assert continued knowledge at
+speech time. Present-tense knowledge with a fronted yesterday is not silently
+reinterpreted, and future/learned forms remain outside this mapping.
+
+Twenty-one cases cover seven temporal/scope patterns across runtime states 0/1/2,
+including different outer/inner days, both negations and direct questions. Full
+browser formal and MIDI equal Ruby, and MIDI-only semantic recovery preserves
+each time at its own level. Existing desire-time, knowledge-sentence and desired
+knowledge regressions pass. Acquisition and its result-state linkage remain the
+next distinct semantic dependency; no new root or sound was required for tense.

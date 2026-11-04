@@ -20,13 +20,17 @@ export function parseFoundationSentence(input,{allowCognitive=false}={}){
  text=expandNegativeContractions(text,`(${HOLDER})`);
  const question=text.endsWith('?');
  text=text.replace(/[.!?]$/,'').trim();
- if(allowCognitive){
-  let k=text.match(new RegExp(`^(${HOLDER}) (knows|know|does not know|do not know) whether (.+)$`));
-  if(!k&&question){const q=text.match(new RegExp(`^([Dd]oes|[Dd]o) (${HOLDER}) (not )?know whether (.+)$`));if(q)k=[q[0],q[2],q[3]?'does not know':'know',q[4]];}
-  if(k)return {type:'knowledge',holder:k[1],content:k[3],negated:k[2].includes('not'),speechAct:question?'question':'assertion',state};
- }
  const prefix=text.match(/^(Yesterday|Today),\s+(.+)$/),frontedDay=prefix?.[1].toLowerCase();
  if(prefix)text=prefix[2];
+ if(allowCognitive){
+  let k=text.match(new RegExp(`^(${HOLDER}) (knows|know|knew|does not know|do not know|did not know) whether (.+)$`));
+  if(!k&&question){const q=text.match(new RegExp(`^([Dd]oes|[Dd]o|[Dd]id) (${HOLDER}) (not )?know whether (.+)$`));if(q)k=[q[0],q[2],q[1].toLowerCase()==='did'?(q[3]?'did not know':'knew'):(q[3]?'does not know':'know'),q[4]];}
+  if(k){
+   const past=/^(?:knew|did)/.test(k[2]);
+   if(frontedDay==='yesterday'&&!past)return null;
+   return {type:'knowledge',holder:k[1],content:k[3],negated:k[2].includes('not'),speechAct:question?'question':'assertion',state,...(past&&frontedDay!=='yesterday'?{speechTime:'before'}:{}),...(frontedDay?{calendarDay:frontedDay==='yesterday'?'-1':'0'}:{})};
+  }
+ }
  // Explicit finite alternatives have their own subjects and scopes. Do not
  // move a trailing content-day onto the outer preference.
  let propositionPreference=text.match(new RegExp(`^(${HOLDER}) (prefers|prefer|preferred|does not prefer|do not prefer|did not prefer) that (.+) rather than that (.+)$`));
