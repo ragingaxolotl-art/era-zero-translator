@@ -1,3 +1,4 @@
+import {readSwimmingTree} from './swimming_decoder.mjs';
 import {readFeltConditionTree} from './felt_decoder.mjs';
 import {validateFoundations,foundationPath} from './foundations.mjs';
 import {strictSemanticReader} from './strict_semantic_reader.mjs';
@@ -13,7 +14,7 @@ export async function decodeFoundationSentenceMidi(bytes,atoms,records,{allowDra
  const registers={bearer:'middle',actor:'low',target:'high',experiencer:'middle',comparison_standard:'middle',content:'middle'};
  function proposition(children,depth=0,parent=null){
   if(depth>32)fail();const scopes=[];
-  while(children.length===1&&children[0].kind==='grammar'&&!/^convention_(13|15|16|17|19)_open$/.test(children[0].marker||'')){
+  while(children.length===1&&children[0].kind==='grammar'&&!/^convention_(13|15|16|17|19|21)_open$/.test(children[0].marker||'')){
    const n=children[0],m=n.marker;let scope;
    if(m==='negation_open')scope={operator:'negation'};
    else if(/^aspect_(bounded|ongoing|habitual)_open$/.test(m))scope={operator:'aspect',aspect:m.slice(7,-5)};
@@ -31,6 +32,15 @@ export async function decodeFoundationSentenceMidi(bytes,atoms,records,{allowDra
     return reader.role(frame,'experiencer','middle');
    });
    return {predicate:{kind:'conventional_compound',name:felt.predicate,convention_codes:felt.convention_codes},runtime_state:felt.runtime_state,scopes,arguments:{experiencer:{type:'entity',reference:felt.participants.experiencer}},meaning:felt.meaning};
+  }
+  if(children.length===1&&children[0].marker==='convention_21_open'){
+   const swimming=readSwimmingTree(children[0],reader,frame=>{
+    if(frame.marker==='role_actor_open'&&frame.children?.length===1&&frame.children[0].marker==='desire_subject_reference'){
+     if(parent?.sound_code!==0)fail();return {kind:'bound',binding:'parent_desire_experiencer'};
+    }
+    return reader.role(frame,'actor','low');
+   });
+   return {predicate:{kind:'conventional_compound',name:swimming.predicate,convention_codes:swimming.convention_codes},runtime_state:swimming.runtime_state,scopes,arguments:{actor:{type:'entity',reference:swimming.actor}},meaning:swimming.meaning};
   }
   const head=children.at(-1),d=definitions.get(head?.root_id);
   if(head?.kind!=='root'||head.register!=='middle'||![0,1,2].includes(head.runtime_state))fail();
@@ -58,5 +68,5 @@ export async function decodeFoundationSentenceMidi(bytes,atoms,records,{allowDra
  const meaning=proposition(readTree());
  if(meaning.predicate.kind!=='foundation')fail();
  return {profile:'EZFOUND-SEMANTIC-INVERSE-1',speech_act:observed.speech_act,meaning,
-  limitations:['Candidate vocabulary requires explicit opt-in.','This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration or reviewed felt conditions with direct or controlled references; other constructions reject.','Reference sounds do not determine original spelling or external identity.','Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.','Reads strict MIDI, not recorded audio.']};
+  limitations:['Candidate vocabulary requires explicit opt-in.','This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.','Reference sounds do not determine original spelling or external identity.','Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.','Reads strict MIDI, not recorded audio.']};
 }

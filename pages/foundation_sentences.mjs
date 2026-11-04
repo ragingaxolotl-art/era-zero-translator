@@ -112,7 +112,7 @@ async function composeAtDepth(input,authority,records,loadTemplate,allowDraft,de
    ir.edges.push({edge_id:id,type:'fills_role',from:prefix+source.root_clause,to:'p',role});
   }
  }else{
-  const infinitiveBody='(?:care for .+|prefer .+ to .+|be (?:not )?(?:conscious|dormant|able to move|able to pay attention|damaged|impaired|restored|happy|sad|hungry|thirsty|tired)(?: \\[[012]\\])?)';
+  const infinitiveBody='(?:swim(?: \\[[012]\\])?|care for .+|prefer .+ to .+|be (?:not )?(?:conscious|dormant|able to move|able to pay attention|damaged|impaired|restored|happy|sad|hungry|thirsty|tired|swimming)(?: \\[[012]\\])?)';
   const infinitive=parsed.content.match(new RegExp(`^(?:(${HOLDER}|me) )?(not )?to (not )?(${infinitiveBody})$`));
   const controlled=!!infinitive&&!infinitive[1];
   let content=parsed.content;
@@ -122,12 +122,12 @@ async function composeAtDepth(input,authority,records,loadTemplate,allowDraft,de
    const negations=Number(!!infinitive[2])+Number(!!infinitive[3])+Number(body.startsWith('be not '));
    if(negations>1)throw new Error('Repeated infinitival negation needs an explicit scope interpretation.');
    const negative=negations===1,firstOrSecond=/^(?:I|[Yy]ou)$/.test(holder);
-   const verb=body.startsWith('prefer ')?'prefer':'care';
+   const verb=/^swim(?: |$)/.test(body)?'swim':body.startsWith('prefer ')?'prefer':'care';
    content=body.startsWith('be ')?`${holder} ${holder==='I'?'am':/^[Yy]ou$/.test(holder)?'are':'is'} ${negative?'not ':''}${body.replace(/^be (?:not )?/,'')}`:`${holder} ${negative?(firstOrSecond?`do not ${verb}`:`does not ${verb}`):(firstOrSecond?verb:verb+'s')}${body.slice(verb.length)}`;
   }
   const innerFoundation=parseFoundationSentence(content),inner=innerFoundation||parseNamedSentence(content);
   if(!inner||inner.speechAct==='question'||inner.speechAct==='command')throw new Error('Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else.');
-  const composed=innerFoundation?await composeAtDepth(content,authority,records,loadTemplate,allowDraft,depth+1):await composeNamedSentence(content,await loadTemplate(inner.predicate));
+  const composed=innerFoundation?await composeAtDepth(content,authority,records,loadTemplate,allowDraft,depth+1):await composeNamedSentence(content,await loadTemplate(inner.predicate),infinitive&&/^swim(?: |$)/.test(infinitive[4])?{viewpoint:'bounded'}:undefined);
   const source=composed.semantic_ir;
   if(source.discourse_constraints?.declared_referents)ir.discourse_constraints.declared_referents=[...source.discourse_constraints.declared_referents];
   for(const n of source.nodes){const copy=structuredClone(n);copy.node_id='desired:'+n.node_id;if(copy.compound_bindings)copy.compound_bindings=copy.compound_bindings.map(b=>({...b,argument_id:'desired:'+b.argument_id}));if(n.node_id===source.root_clause)Object.assign(copy,{clause_type:'content',content_status:'intensional',value_type:'proposition'});ir.nodes.push(copy);}
