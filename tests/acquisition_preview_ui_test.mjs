@@ -6,7 +6,7 @@ const element=()=>({children:[],classList:{add(){},remove(){}},append(...n){this
 const elements=Object.fromEntries(['sourceInput','output','phraseCoverage','resolutionPanel','results','candidateList','decisionSummary'].map(id=>[id,element()]));
 const input='Nora learned whether Eli is conscious.';elements.sourceInput.value=input;
 const state={mode:'general',data:{},resolution:{old:true},wordSelections:new Map()};let calls=0,downloads=[],errors=[];
-const context=vm.createContext({state,$:id=>elements[id],document:{createElement:element},fetch:async()=>({ok:true,json:async()=>({records:[]})}),sentenceTemplate(){},composeLearnedWhether:async(...args)=>{calls++;assert.equal(args[4].allowDraft,true);return {acquisition:{},result_formal:{}}},midiFromKnowledgeAcquisition:async()=>new Uint8Array([1,2,3]),createAcquisitionBundle:async()=>({format:'EZACQB-1',status:'draft'}),download:(b,n)=>downloads.push(n),Blob,showError:e=>errors.push(e)});
+const context=vm.createContext({learnedWhetherPronounPlan:()=>null,state,$:id=>elements[id],document:{createElement:element},fetch:async()=>({ok:true,json:async()=>({records:[]})}),sentenceTemplate(){},composeLearnedWhether:async(...args)=>{calls++;assert.equal(args[4].allowDraft,true);return {acquisition:{},result_formal:{}}},midiFromKnowledgeAcquisition:async()=>new Uint8Array([1,2,3]),createAcquisitionBundle:async()=>({format:'EZACQB-1',status:'draft'}),download:(b,n)=>downloads.push(n),Blob,showError:e=>errors.push(e)});
 vm.runInContext(handler+`;showAcquisitionPreview(${JSON.stringify(input)});`,context);
 assert.equal(state.resolution,null);assert.equal(calls,0);
 let card=elements.candidateList.children.at(-1),button=card.children[1];elements.sourceInput.value='changed';await button.click();assert.equal(calls,0);
@@ -19,6 +19,16 @@ for(const outcome of ['success','error']){
  context.composeLearnedWhether=()=>new Promise((resolve,reject)=>finish=outcome==='success'?resolve:reject);
  const pending=button.click();await new Promise(r=>setImmediate(r));card.isConnected=false;finish(outcome==='success'?{acquisition:{},result_formal:{}}:new Error('late'));await pending;assert.equal(card.children.length,2);assert.equal(errors.length,0);
 }
-assert(app.includes('if(parseLearnedWhether(input)){showAcquisitionPreview(input);return}'));
+assert(app.includes('if(parseLearnedWhether(input)||learnedWhetherPronounPlan(input)){showAcquisitionPreview(input);return}'));
 assert(app.includes("imported.format==='EZACQB-1'?await verifyAcquisitionBundle(imported,state.data,{allowDraft:true})"));
 console.log('PASS acquisition UI: explicit preview, separate full-acquisition downloads, stale results/download rejection, cleared ordinary result and acquisition-specific import verification. Playback layout/listening not verified.');
+const {learnedWhetherPronounPlan}=await import('../pages/learned_whether.mjs');
+context.learnedWhetherPronounPlan=learnedWhetherPronounPlan;
+const pronounInput='She learned whether he was conscious.';elements.sourceInput.value=pronounInput;
+vm.runInContext(`showAcquisitionPreview(${JSON.stringify(pronounInput)});`,context);
+card=elements.candidateList.children.at(-1);button=card.children.at(-1);const fields=card.children.slice(1,-1).map(label=>label.children[0]);assert.equal(fields.length,2);assert(fields.every(f=>f.value===''));
+fields[0].value='Nora';fields[1].value='Eli';
+context.composeLearnedWhether=async(...args)=>{assert.equal(JSON.stringify(args[4].bindings),JSON.stringify({ref0:'Nora',ref1:'Eli'}));return {acquisition:{},result_formal:{}}};
+await button.click();const oldSave=card.children.at(-1);assert.equal(button.hidden,true);fields[1].value='Orin';fields[1].input();assert.equal(button.hidden,false);assert.equal(oldSave.hidden,true);const previous=downloads.length;oldSave.click();assert.equal(downloads.length,previous);
+let finish;context.composeLearnedWhether=()=>new Promise(resolve=>finish=resolve);const pending=button.click();await new Promise(r=>setImmediate(r));const length=card.children.length;fields[1].value='Eli';fields[1].input();finish({acquisition:{},result_formal:{}});await pending;assert.equal(card.children.length,length);
+console.log('PASS learning UI pronoun fields, binding submission, re-preview after edits, stale completed downloads and edited pending-result rejection.');

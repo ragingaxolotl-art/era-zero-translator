@@ -453,3 +453,21 @@ The existing acquisition bundle checks cover real music regeneration. This is
 not live layout or listening evidence. Learning-pronoun fields are not yet wired;
 users currently need explicit referents for this route, and unresolved pronouns
 fail rather than become name sounds. Broader learning meanings remain open.
+
+## Learning-pronoun fields and immutable referents
+
+Learning and foundation previews now share the same personal-pronoun occurrence
+planner, preserving original source offsets and excluding quoted names. The
+learned-whether composer requires a complete set of explicit valid bindings and
+snapshots them before asynchronous composition. It retains original and resolved
+input metadata; the acquisition meaning uses the chosen referents.
+
+The acquisition card exposes separate fields, snapshots their values for preview
+and download guards, and restores the preview button when a field changes. Old
+download/play controls become hidden and cannot use changed bindings. Edited
+pending results are discarded. Six scope/runtime cases match explicit-name
+acquisition documents, formals and MIDI exactly; missing, invalid and extra
+bindings reject. Handler tests exercise field submission, re-preview and stale
+controls. Existing foundation pronoun tests pass after the shared-planner
+refactor. This supersedes the earlier missing learning-pronoun-field limitation,
+but live browser/listening and broad discourse resolution remain unverified.

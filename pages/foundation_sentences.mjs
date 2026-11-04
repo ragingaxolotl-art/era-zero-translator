@@ -1,3 +1,4 @@
+import {personalPronounPlan} from './personal_pronoun_plan.mjs';
 import {expandNegativeContractions} from './contractions.mjs';
 import {validReferent} from './pronouns.mjs';
 import {canonicalDigest} from './engine.mjs';
@@ -75,18 +76,9 @@ async function reference(text,id,allowKind=false){
  return {node_id:id,kind:'phonemic_reference',value_type:'entity',name,referent_id:mode?`nominal:${mode==='nominal_class'?'class':'definite'}:${name.name_id}`:`name:${name.name_id}`,...(mode?{reference_mode:mode}:{})};
 }
 export function foundationPronounPlan(input,{allowCognitive=false}={}){
- if(typeof input!=='string')return null;
- const occurrences=[];let quoted=false;
- for(let i=0;i<input.length;){
-  if(input[i]==='"'){quoted=!quoted;i++;continue;}
-  const match=!quoted&&(i===0||!/[A-Za-z]/.test(input[i-1]))?input.slice(i).match(/^(she|he|her|him|it)\b/i):null;
-  if(match&&/^it is (?:not )?(?:(?:possible|necessary) that|the case that)\b/i.test(input.slice(i))){i+=match[0].length;continue;}
-  if(match){occurrences.push({key:`ref${occurrences.length}`,pronoun:match[0],start:i,end:i+match[0].length});i+=match[0].length;}else i++;
- }
- if(quoted||!occurrences.length||occurrences.length>16)return null;
- let probe=input;for(const o of [...occurrences].reverse())probe=probe.slice(0,o.start)+`"reference ${String.fromCharCode(97+Number(o.key.slice(3)))}"`+probe.slice(o.end);
- return parseFoundationSentence(probe,{allowCognitive})?{input,occurrences}:null;
+ return personalPronounPlan(input,probe=>parseFoundationSentence(probe,{allowCognitive}));
 }
+
 export async function composeFoundationSentence(input,authority,records,loadTemplate,{allowDraft=false,bindings,allowCognitive=false}={}){
  const plan=foundationPronounPlan(input,{allowCognitive});
  if(!plan){if(bindings!==undefined)throw new Error('This sentence does not require pronoun bindings.');return composeAtDepth(input,authority,records,loadTemplate,allowDraft,0,allowCognitive);}
