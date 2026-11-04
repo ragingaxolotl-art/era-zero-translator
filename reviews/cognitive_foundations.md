@@ -205,3 +205,26 @@ Next: compose explicit knows/whether English with independent outer and inner
 negation and runtime, then independently recover the holder, question proposition
 and both scopes from music. Keep default canonical admission unchanged until the
 candidate review and broader completion gates are satisfied.
+
+## Opt-in English knows/whether composition
+
+The shared foundation composer now accepts `allowCognitive: true` in addition to
+the existing draft opt-in and an explicit registry containing the knowledge
+candidate. This admits explicit finite knows/whether clauses, negative forms,
+direct questions and negative contractions. The ordinary parser/UI route remains
+unchanged; its registry does not silently acquire the candidate.
+
+The existing content composer is reused, preserving complete inner propositions
+and compound bindings. Only the selected content clause becomes a typed polar
+question; outer negation still scopes the knowledge relation, and inner negation
+stays inside its question. The last runtime tag describes the outer predicate;
+an earlier tag inside the content describes the inner predicate. Twenty-one
+cases cover all nine outer/inner runtime pairs, both outer negation choices,
+questions and contractions. Full browser formal objects equal Ruby regeneration,
+and MIDI bytes match. Knows-that, bare knows-a-person, learned-whether and bare
+topics are not silently mapped to this sense.
+
+This adds a draft English API, not main UI admission or proof of real-world
+knowledge. Independent full semantic recovery, pronoun-field integration for the
+cognitive route, acquisition/learning composition and broader cognitive meanings
+remain unfinished.

@@ -8,7 +8,7 @@ import {parseNamedSentence,composeNamedSentence} from './sentences.mjs';
 import {validateFoundations} from './foundations.mjs';
 import {renderLexicalOccurrences,lexicalGloss} from './bound_compounds.mjs';
 const HOLDER='(?:I|[Yy]ou|[A-Z][a-z]+|"[^"\\n]+"|[Tt]he [a-z]+)';
-export function parseFoundationSentence(input){
+export function parseFoundationSentence(input,{allowCognitive=false}={}){
  if(typeof input!=='string')return null;
  let text=input.trim(),state=1;const runtime=text.match(/\s*\[([012])\]([.!?]?)$/);
  if(runtime){
@@ -20,6 +20,11 @@ export function parseFoundationSentence(input){
  text=expandNegativeContractions(text,`(${HOLDER})`);
  const question=text.endsWith('?');
  text=text.replace(/[.!?]$/,'').trim();
+ if(allowCognitive){
+  let k=text.match(new RegExp(`^(${HOLDER}) (knows|know|does not know|do not know) whether (.+)$`));
+  if(!k&&question){const q=text.match(new RegExp(`^([Dd]oes|[Dd]o) (${HOLDER}) (not )?know whether (.+)$`));if(q)k=[q[0],q[2],q[3]?'does not know':'know',q[4]];}
+  if(k)return {type:'knowledge',holder:k[1],content:k[3],negated:k[2].includes('not'),speechAct:question?'question':'assertion',state};
+ }
  const prefix=text.match(/^(Yesterday|Today),\s+(.+)$/),frontedDay=prefix?.[1].toLowerCase();
  if(prefix)text=prefix[2];
  // Explicit finite alternatives have their own subjects and scopes. Do not
@@ -78,22 +83,22 @@ export function foundationPronounPlan(input){
  let probe=input;for(const o of [...occurrences].reverse())probe=probe.slice(0,o.start)+`"reference ${String.fromCharCode(97+Number(o.key.slice(3)))}"`+probe.slice(o.end);
  return parseFoundationSentence(probe)?{input,occurrences}:null;
 }
-export async function composeFoundationSentence(input,authority,records,loadTemplate,{allowDraft=false,bindings}={}){
+export async function composeFoundationSentence(input,authority,records,loadTemplate,{allowDraft=false,bindings,allowCognitive=false}={}){
  const plan=foundationPronounPlan(input);
- if(!plan){if(bindings!==undefined)throw new Error('This sentence does not require pronoun bindings.');return composeAtDepth(input,authority,records,loadTemplate,allowDraft,0);}
+ if(!plan){if(bindings!==undefined)throw new Error('This sentence does not require pronoun bindings.');return composeAtDepth(input,authority,records,loadTemplate,allowDraft,0,allowCognitive);}
  if(!bindings||typeof bindings!=='object'||Array.isArray(bindings)||Object.keys(bindings).length!==plan.occurrences.length||plan.occurrences.some(o=>!Object.hasOwn(bindings,o.key)||!validReferent(bindings[o.key]))){
   const error=new Error('Identify each pronoun with an explicit name, quoted label, definite noun, or I/you.');error.code='pronoun_referents_required';throw error;
  }
  const chosen=Object.fromEntries(plan.occurrences.map(o=>[o.key,bindings[o.key]]));
  let resolved=input;for(const o of [...plan.occurrences].reverse())resolved=resolved.slice(0,o.start)+chosen[o.key]+resolved.slice(o.end);
- const result=await composeAtDepth(resolved,authority,records,loadTemplate,allowDraft,0);
+ const result=await composeAtDepth(resolved,authority,records,loadTemplate,allowDraft,0,allowCognitive);
  return {...result,source_input:input,resolved_input:resolved,resolved_pronouns:plan.occurrences.map(o=>({...o,referent:chosen[o.key]}))};
 }
-async function composeAtDepth(input,authority,records,loadTemplate,allowDraft,depth){
+async function composeAtDepth(input,authority,records,loadTemplate,allowDraft,depth,allowCognitive=false){
  if(depth>8)throw new Error('Desired propositions exceed the supported nesting depth.');
- records=await validateFoundations(records,{allowDraft});const parsed=parseFoundationSentence(input);
+ records=await validateFoundations(records,{allowDraft});const parsed=parseFoundationSentence(input,{allowCognitive});
  if(!parsed)throw new Error('Unsupported foundation sentence.');
- const definition=records.find(r=>r.sound_code===(parsed.type==='desire'?0:1));
+ const definition=records.find(r=>r.sound_code===(parsed.type==='desire'?0:parsed.type==='knowledge'?2:1));
  if(!definition)throw new Error('Missing reviewed foundation definition.');
  const ir={ir_version:'1.0.0',root_clause:'c',speech_act:parsed.speechAct,nodes:[{node_id:'c',kind:'clause',clause_type:'simple'},{node_id:'p',kind:'lexical_occurrence',target_type:'foundation',target_id:definition.foundation_id,foundation_version:definition.definition_version,runtime_state:{code:parsed.state}},await reference(parsed.holder,'holder')],edges:[{edge_id:'center',type:'centers',from:'p',to:'c'},{edge_id:'holder',type:'fills_role',from:'holder',to:'p',role:'experiencer'}],discourse_constraints:{}};
  if(parsed.type==='preference'){
@@ -102,9 +107,9 @@ async function composeAtDepth(input,authority,records,loadTemplate,allowDraft,de
     ir.nodes.push(await reference(text,id,true));
     ir.edges.push({edge_id:id,type:'fills_role',from:id,to:'p',role});continue;
    }
-   const foundation=parseFoundationSentence(text),ordinary=foundation||parseNamedSentence(text);
+   const foundation=parseFoundationSentence(text,{allowCognitive}),ordinary=foundation||parseNamedSentence(text);
    if(!ordinary||ordinary.speechAct==='question'||ordinary.speechAct==='command')throw new Error('Each preference alternative needs a complete proposition with an explicit subject.');
-   const composed=foundation?await composeAtDepth(text,authority,records,loadTemplate,allowDraft,depth+1):await composeNamedSentence(text,await loadTemplate(ordinary.predicate));
+   const composed=foundation?await composeAtDepth(text,authority,records,loadTemplate,allowDraft,depth+1,allowCognitive):await composeNamedSentence(text,await loadTemplate(ordinary.predicate));
    const source=composed.semantic_ir,prefix=id+':';
    ir.discourse_constraints.declared_referents=[...new Set([...(ir.discourse_constraints.declared_referents||[]),...(source.discourse_constraints?.declared_referents||[])])];
    for(const n of source.nodes){const copy=structuredClone(n);copy.node_id=prefix+n.node_id;if(copy.compound_bindings)copy.compound_bindings=copy.compound_bindings.map(b=>({...b,argument_id:prefix+b.argument_id}));if(n.node_id===source.root_clause)Object.assign(copy,{clause_type:'content',content_status:'intensional',value_type:'proposition'});ir.nodes.push(copy);}
@@ -113,7 +118,7 @@ async function composeAtDepth(input,authority,records,loadTemplate,allowDraft,de
   }
  }else{
   const infinitiveBody='(?:swim(?: \\[[012]\\])?|care for .+|prefer .+ to .+|be (?:not )?(?:conscious|dormant|able to move|able to pay attention|damaged|impaired|restored|happy|sad|hungry|thirsty|tired|swimming)(?: \\[[012]\\])?)';
-  const infinitive=parsed.content.match(new RegExp(`^(?:(${HOLDER}|me) )?(not )?to (not )?(${infinitiveBody})$`));
+  const infinitive=parsed.type==='knowledge'?null:parsed.content.match(new RegExp(`^(?:(${HOLDER}|me) )?(not )?to (not )?(${infinitiveBody})$`));
   const controlled=!!infinitive&&!infinitive[1];
   let content=parsed.content;
   if(infinitive){
@@ -125,12 +130,12 @@ async function composeAtDepth(input,authority,records,loadTemplate,allowDraft,de
    const verb=/^swim(?: |$)/.test(body)?'swim':body.startsWith('prefer ')?'prefer':'care';
    content=body.startsWith('be ')?`${holder} ${holder==='I'?'am':/^[Yy]ou$/.test(holder)?'are':'is'} ${negative?'not ':''}${body.replace(/^be (?:not )?/,'')}`:`${holder} ${negative?(firstOrSecond?`do not ${verb}`:`does not ${verb}`):(firstOrSecond?verb:verb+'s')}${body.slice(verb.length)}`;
   }
-  const innerFoundation=parseFoundationSentence(content),inner=innerFoundation||parseNamedSentence(content);
+  const innerFoundation=parseFoundationSentence(content,{allowCognitive}),inner=innerFoundation||parseNamedSentence(content);
   if(!inner||inner.speechAct==='question'||inner.speechAct==='command')throw new Error('Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else.');
-  const composed=innerFoundation?await composeAtDepth(content,authority,records,loadTemplate,allowDraft,depth+1):await composeNamedSentence(content,await loadTemplate(inner.predicate),infinitive&&/^swim(?: |$)/.test(infinitive[4])?{viewpoint:'bounded'}:undefined);
+  const composed=innerFoundation?await composeAtDepth(content,authority,records,loadTemplate,allowDraft,depth+1,allowCognitive):await composeNamedSentence(content,await loadTemplate(inner.predicate),infinitive&&/^swim(?: |$)/.test(infinitive[4])?{viewpoint:'bounded'}:undefined);
   const source=composed.semantic_ir;
   if(source.discourse_constraints?.declared_referents)ir.discourse_constraints.declared_referents=[...source.discourse_constraints.declared_referents];
-  for(const n of source.nodes){const copy=structuredClone(n);copy.node_id='desired:'+n.node_id;if(copy.compound_bindings)copy.compound_bindings=copy.compound_bindings.map(b=>({...b,argument_id:'desired:'+b.argument_id}));if(n.node_id===source.root_clause)Object.assign(copy,{clause_type:'content',content_status:'intensional',value_type:'proposition'});ir.nodes.push(copy);}
+  for(const n of source.nodes){const copy=structuredClone(n);copy.node_id='desired:'+n.node_id;if(copy.compound_bindings)copy.compound_bindings=copy.compound_bindings.map(b=>({...b,argument_id:'desired:'+b.argument_id}));if(n.node_id===source.root_clause)Object.assign(copy,{clause_type:'content',content_status:'intensional',value_type:parsed.type==='knowledge'?'question':'proposition',...(parsed.type==='knowledge'?{question_kind:'polar'}:{})});ir.nodes.push(copy);}
   for(const e of source.edges)ir.edges.push({...e,edge_id:'desired:'+e.edge_id,from:'desired:'+e.from,to:'desired:'+e.to});
   ir.edges.push({edge_id:'content',type:'fills_role',from:'desired:'+source.root_clause,to:'p',role:'content'});
   if(controlled){

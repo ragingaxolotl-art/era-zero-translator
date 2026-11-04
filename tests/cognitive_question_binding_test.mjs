@@ -29,4 +29,4 @@ for(const {formal,midi} of ruby.valid){
  assert.equal(flat.find(n=>n.kind==='foundation').foundation_id,cognitive[0].foundation_id);
  await assert.rejects(()=>decodeFoundationMusicMidi(bytes,data.atoms,records,{allowDraft:true}));
 }
-console.log('PASS typed question arguments across runtime 0/1/2, five invalid scope/type cases with Ruby parity, and byte-identical bound cognitive MIDI. No English knows/whether admission yet.');
+console.log('PASS typed question arguments across runtime 0/1/2, five invalid scope/type cases with Ruby parity, and byte-identical bound cognitive MIDI.');
