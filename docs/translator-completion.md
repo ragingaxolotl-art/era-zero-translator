@@ -76,7 +76,7 @@ Live UI/listening checks and broader learning senses remain open.
 The [understanding draft](../reviews/understanding_content.md) now distinguishes
 communicated-content, explanatory-reasons and perspective readings, with explicit
 choices for bare person objects. It has 27 MIDI-only semantic checks and three
-clean WAV-only meaning recoveries. Full Ruby sentence parity, main-UI integration,
+clean WAV-only meaning recoveries. Full Ruby sentence parity now passes 29 cases. Main-UI integration,
 embedded communication time and physical-channel validation remain open.
 
 Recent completed implementation work:

@@ -37,10 +37,12 @@ Existing role and scope frames bind the experiencer and selected content.
 Twenty-seven MIDI-only inverse cases preserve reading, criterion, roles, scopes,
 runtime and speech act. Three clean synthetic WAV cases recover those meanings
 without source English or IR. The new lexical predicate event matches Ruby across
-runtime 0/1/2; full Ruby sentence rendering remains pending. Existing foundation
+runtime 0/1/2. Full Ruby document validation and sentence rendering now match
+29 browser MIDI cases, including alternate anchors and demonstrative references.
+Default draft access and five rehashed corrupt semantic documents reject. Existing foundation
 codec checks retain 972 old atomic performances.
 
-Next: full Ruby document/sentence parity, UI interpretation choices, wider embedded
+Next: UI interpretation choices, wider embedded
 and temporal content, simulated channel contrasts and physical microphone tests. No new 27-root family is justified by this draft.
 The current comprehension documents have an opt-in standalone musical path and
 WAV inverse; they are not yet routed as completed main-UI translations.
