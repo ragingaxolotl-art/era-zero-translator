@@ -23,7 +23,12 @@ The first texture implementation now appends contextual profile codes 6/7 for
 rough/smooth, preserving codes 0–5 and all root sounds. Twelve typed-IR
 norm/state/negation contrasts pass Ruby/browser MIDI parity and inverse recovery;
 the existing 36 contextual adjective contrasts still pass. This establishes the
-physical texture profile, not its English/UI route, which remains the next step.
+physical texture profile. The subsequent English/UI route now asks for the
+physical surface-texture interpretation and uses a local context without numbers.
+Single and multi-clause composition are supported; tactile and figurative readings,
+texture measurements, noun modifiers and shared-standard comparisons remain open.
+The targeted 48-adjective suite includes rough/smooth and checks Ruby/MIDI inverse
+parity; the full 111-check baseline predates both texture additions.
 
 [Preference between propositions](../reviews/preference_propositions.md) now
 connects explicit finite alternatives to the existing candidate preference roles.
@@ -56,7 +61,7 @@ subject-control and preference-inverse suites also pass. The fresh 111-check reg
 consciousness and proposition-preference work. No original completion gate is closed by this addition.
 
 The [ordinary phrase audit](../reports/ordinary_phrase_coverage.md) currently has
-24 checked compositions, 10 uncomposed phrases, and six phrases requiring an explicit interpretation or contextual standard out of 40 deliberately varied cases. This is an implementation-authored diagnostic set, not a blind evaluation
+24 checked compositions, nine uncomposed phrases, and seven phrases requiring an explicit interpretation or contextual standard out of 40 deliberately varied cases. This is an implementation-authored diagnostic set, not a blind evaluation
 or a statistical measure of English coverage. Green regression suites do not
 override these missing constructions. The corpus records the intended distinctions
 even for cases that cannot yet be composed; future support must receive explicit

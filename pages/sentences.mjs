@@ -166,7 +166,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     if(day==='tomorrow')clause=rewrite([['will not be','is not'],['will be','is'],['will not care for','does not care for'],['will care for','cares for']]);
     if(clause===null)return null;
     const inner=parseNamedSentence(clause,depth+1);
-    if(!inner||inner.calendarDay!==undefined||inner.scopes?.length||inner.speechAct||(day==='tomorrow'&&['thermal_standard','mass_standard','luminance_standard'].includes(inner.requiredInterpretation))||(day==='yesterday'&&inner.speechTime!=='before')||(day==='tomorrow'&&inner.speechTime!==undefined))return null;
+    if(!inner||inner.calendarDay!==undefined||inner.scopes?.length||inner.speechAct||(day==='tomorrow'&&['thermal_standard','mass_standard','luminance_standard','texture_standard'].includes(inner.requiredInterpretation))||(day==='yesterday'&&inner.speechTime!=='before')||(day==='tomorrow'&&inner.speechTime!==undefined))return null;
     return {...inner,...(day==='yesterday'?{speechTime:undefined}:{}),...(day==='tomorrow'?{requiredInterpretation:'future_assertion',semanticNote:[inner.semanticNote,'Interprets will as a future assertion; promise, intention, and willingness are not inferred.'].filter(Boolean).join(' ')}:{}),calendarDay:{yesterday:'-1',today:'0',tomorrow:'1'}[day],construction:`calendar_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
   const simpleCarrying=String(input).trim().match(new RegExp(`^${participant} (does not carry|do not carry|carries|carry) (.+)$`));
@@ -325,12 +325,12 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
       measurement:{magnitude,unit:'kilogram',...((mass[3]&&mass[3]!=='exactly')?{comparison:({'more than':'greater_than','greater than':'greater_than','less than':'less_than','at least':'at_least','at most':'at_most','not exactly':'not_equal'})[mass[3]]}:{})},semanticNote:'This states physical mass, normalized exactly to kilograms. It does not state weight as force, size, heaviness relative to a standard, or the result of a weighing event.'};
   }
   const grammaticalText=String(input).trim().replace(new RegExp(`^(${NOMINAL_PATTERN}) are `),'$1 is ').replace(/^I am /,'I is ').replace(/^(You|you) are /,'$1 is ').replace(/^(I|You|you) care for /,'$1 cares for ').replace(/^(I|You|you) do not (care for|love|have physical custody of|have a directed data link to) /,'$1 does not $2 ').replace(/^(I|You|you) have physical custody of /,'$1 has physical custody of ').replace(/^(I|You|you) have a directed data link to /,'$1 has a directed data link to ').replace(/^(I|You|you) love /,'$1 loves ');
-  const thermal=grammaticalText.match(new RegExp(`^${participant} is (not )?(hot|cold|heavy|light|bright|dim)[.]?$`));
+  const thermal=grammaticalText.match(new RegExp(`^${participant} is (not )?(hot|cold|heavy|light|bright|dim|rough|smooth)[.]?$`));
   if(thermal){
     const nominal=parseNominal(thermal[1]);
     if(nominal?.quantifier||nominal?.mode==='nominal_class')return null;
-    const massStandard=['heavy','light'].includes(thermal[3]),luminanceStandard=['bright','dim'].includes(thermal[3]);
-    return {actor:thermal[1].replaceAll('"',''),actorText:thermal[1],role:'bearer',predicate:thermal[1]==='I'?'MAT:000':'MAT:010',key:luminanceStandard?'contextual_luminance_adjective':massStandard?'contextual_mass_adjective':'contextual_thermal_adjective',construction:luminanceStandard?'contextual_luminance_adjective':massStandard?'contextual_mass_adjective':'contextual_thermal_adjective',adjective:thermal[3],negated:!!thermal[2],requiredInterpretation:luminanceStandard?'luminance_standard':massStandard?'mass_standard':'thermal_standard'};
+    const textureStandard=['rough','smooth'].includes(thermal[3]),massStandard=['heavy','light'].includes(thermal[3]),luminanceStandard=['bright','dim'].includes(thermal[3]);
+    return {actor:thermal[1].replaceAll('"',''),actorText:thermal[1],role:'bearer',predicate:thermal[1]==='I'?'MAT:000':'MAT:010',key:textureStandard?'contextual_texture_adjective':luminanceStandard?'contextual_luminance_adjective':massStandard?'contextual_mass_adjective':'contextual_thermal_adjective',construction:textureStandard?'contextual_texture_adjective':luminanceStandard?'contextual_luminance_adjective':massStandard?'contextual_mass_adjective':'contextual_thermal_adjective',adjective:thermal[3],negated:!!thermal[2],requiredInterpretation:textureStandard?'texture_standard':luminanceStandard?'luminance_standard':massStandard?'mass_standard':'thermal_standard'};
   }
   // Coordinated targets belong to one care predicate, not separate clauses.
   const careTargets=grammaticalText.match(new RegExp(`^${participant} (?:cares for|is caring for) (?:both )?${participant} and ${participant}[.]?$`));
@@ -368,7 +368,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light|bright|dim)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|able to move|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|arrive|arrives|arrived|arriving|carry|carries|carried|carrying|support|supporting|custody|acquire|acquired|acquiring|deliver|delivers|delivered|delivering|happy|hungry|thirsty|tired|temperature|luminance)\b/i.test(String(input))) && !parseNamedSentence(input);
+  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light|bright|dim|rough|smooth)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|able to move|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|arrive|arrives|arrived|arriving|carry|carries|carried|carrying|support|supporting|custody|acquire|acquired|acquiring|deliver|delivers|delivered|delivering|happy|hungry|thirsty|tired|temperature|luminance)\b/i.test(String(input))) && !parseNamedSentence(input);
 }
 
 // A complete antecedent and a comma establish conditional scope. Without
@@ -533,21 +533,22 @@ export async function composeNamedSentence(input,template,{interpretation,standa
   }else if(destination!==undefined)throw new Error('This sentence does not require a destination reading choice.');
   if(interpretation!==undefined&&interpretation!==parsed.requiredInterpretation)throw new Error('This interpretation is not available for this sentence.');
   if(parsed.requiredInterpretation&&interpretation!==parsed.requiredInterpretation){
-    const thermal=['thermal_standard','mass_standard','luminance_standard'].includes(parsed.requiredInterpretation);
+    const thermal=['thermal_standard','mass_standard','luminance_standard','texture_standard'].includes(parsed.requiredInterpretation);
     const error=new Error(thermal?'Choose the property sense and its contextual threshold before translating.':'Choose whether this is a future statement. Promise, intention and willingness require different meanings.');
     error.code=thermal?`${parsed.requiredInterpretation}_required`:'future_interpretation_required';throw error;
   }
   let selectedStandard;
-  if(['thermal_standard','mass_standard','luminance_standard'].includes(parsed.requiredInterpretation)){
-    const massStandard=parsed.requiredInterpretation==='mass_standard',luminanceStandard=parsed.requiredInterpretation==='luminance_standard';
-    const dimension=luminanceStandard?'luminance':massStandard?'mass':'thermodynamic_temperature',unit=luminanceStandard?'candela_per_square_meter':massStandard?'kilogram':'kelvin';
+  if(['thermal_standard','mass_standard','luminance_standard','texture_standard'].includes(parsed.requiredInterpretation)){
+    const textureStandard=parsed.requiredInterpretation==='texture_standard',massStandard=parsed.requiredInterpretation==='mass_standard',luminanceStandard=parsed.requiredInterpretation==='luminance_standard';
+    const dimension=textureStandard?'surface_texture':luminanceStandard?'luminance':massStandard?'mass':'thermodynamic_temperature',unit=luminanceStandard?'candela_per_square_meter':massStandard?'kilogram':'kelvin';
     if(standard?.kind==='contextual'){
       if(parsed.nominalProperty||standard.dimension!==dimension||Object.keys(standard).sort().join(',')!=='dimension,kind')throw new Error('Invalid contextual property standard.');
       const norm=CONTEXTUAL_NORMS[parsed.adjective];
       parsed.contextualComparison={operator:'comparison',standard:'contextual',norm:parsed.adjective,dimension,relation:norm.relation};
       selectedStandard={dimension,kind:'contextual',norm:parsed.adjective,relation:norm.relation};
-      parsed.semanticNote=`Uses the local contextual ${parsed.adjective} standard in the selected ${dimension} sense. No numerical cutoff or measurement is asserted; the opposite adjective may use a different standard.`;
+      parsed.semanticNote=(textureStandard?'Physical texture of the contextually selected surface region and scale; no tactile experience, damage, hardness or figurative meaning is asserted. ':'')+`Uses the local contextual ${parsed.adjective} standard in the selected ${dimension} sense. No numerical cutoff or measurement is asserted; the opposite adjective may use a different standard.`;
     }else{
+    if(textureStandard)throw new Error('Physical texture uses a local contextual surface-region and scale standard; numerical texture measurements are not supported.');
     const threshold=standard?.dimension===dimension&&Object.keys(standard).sort().join(',')==='dimension,scale,threshold'?(luminanceStandard?luminanceValue(standard.threshold,standard.scale):massStandard?massKilograms(standard.threshold,standard.scale):temperaturePointKelvin(standard.threshold,standard.scale)):null;
     if(threshold===null)throw new Error(luminanceStandard?'Provide a nonnegative luminance threshold in candela_per_square_meter.':massStandard?'Provide a nonnegative mass threshold as an exact decimal in gram or kilogram.':'Provide a thermodynamic-temperature threshold as an exact decimal in celsius or kelvin.');
     const above=['hot','heavy','bright'].includes(parsed.adjective);
