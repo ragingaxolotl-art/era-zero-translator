@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 54
+  entry_count: 55
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -2201,6 +2201,86 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: a7fc0ca38a6f95a40cdb87b1966435f90b824e57edd04c7cdc8e76beedcdacfb
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: s-region
+    kind: slot
+    slot_name: region
+    slot_type: entity
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:1e2ec87e1feff0da19aadc3b
+    definition_version: 1.0.0
+  edges:
+  - type: fills_role
+    from: s-region
+    to: h
+    role: environment
+  lexical_constraints:
+  - The bound actor anchors the same focal material body and local physical changes
+    throughout the nested activity.
+  - Locomotor pattern and specialization are explicit audible conventions, not consequences
+    of root adjacency.
+  - Runtime, grammatical negation, time and path completion are independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_swimming_across_region
+    sound_code: 22
+    added_definition: The same actor is swimming along a traversal path through the
+      bound spatial region, progressing from a contextual side toward an opposed side
+      of that region. The swimming supplies this traversal, not an unrelated simultaneous
+      activity. The region is a traversed spatial extent, not a recipient, source
+      of propulsion or already reached destination. The event is ongoing and does
+      not assert that the actor has reached the opposite side or completed the crossing.
+      No particular speed, straightness, intention, unassisted activity or subsequent
+      location is asserted.
+    excludes:
+    - Swimming somewhere within a region without across-traversal
+    - A completed crossing inferred from ongoing activity
+    - The region treated as a recipient or a separately moving actor
+  compound_id: CMP:a900dd73c9816ed6cbad29f0
+  content_digest: a900dd73c9816ed6cbad29f04705e8b9b5bb9f71734e6ca82707eeb14bcb8f44
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: ongoing swimming across a region
+  english_glosses:
+  - ongoing swimming across a region
+  invariant_definition: The same actor is swimming along a traversal path through
+    the bound spatial region, progressing from a contextual side toward an opposed
+    side of that region. The swimming supplies this traversal, not an unrelated simultaneous
+    activity. The region is a traversed spatial extent, not a recipient, source of
+    propulsion or already reached destination. The event is ongoing and does not assert
+    that the actor has reached the opposite side or completed the crossing. No particular
+    speed, straightness, intention, unassisted activity or subsequent location is
+    asserted.
+  boundaries:
+    includes: The same actor is swimming along a traversal path through the bound
+      spatial region, progressing from a contextual side toward an opposed side of
+      that region. The swimming supplies this traversal, not an unrelated simultaneous
+      activity. The region is a traversed spatial extent, not a recipient, source
+      of propulsion or already reached destination. The event is ongoing and does
+      not assert that the actor has reached the opposite side or completed the crossing.
+      No particular speed, straightness, intention, unassisted activity or subsequent
+      location is asserted.
+    excludes: Swimming somewhere within a region without across-traversal; A completed
+      crossing inferred from ongoing activity; The region treated as a recipient or
+      a separately moving actor
+  collision_audit: reviews/locomotion_foundations.md and reviews/swimming_foundation.md;
+    physical change alone does not entail the declared locomotor pattern.
+  confidence: high
+  approval_record: migrations/swimming_across_2026_11_04.yaml
+  approval_basis: Delegated author review under the user-directed translator completion
+    goal; not independent linguistic validation.
+  examples:
+    ordinary: Eli is swimming.
+    technical: Preserve the same bound actor in each version-pinned dependency.
+    future_compound: Add a path only with the same actor and event binding.
+    counterexample: Swimming somewhere within a region without across-traversal
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: a900dd73c9816ed6cbad29f04705e8b9b5bb9f71734e6ca82707eeb14bcb8f44
 - architecture_version: '1.0'
   semantic_head: h
   nodes:

@@ -12,6 +12,14 @@ is the starting evidence, not a completion certificate.
 
 ## Current coverage evidence
 
+[Ongoing swimming across a region](../reviews/swimming_across.md) now binds the
+same swimmer through two nested references and a separate traversed-region slot.
+Eighteen participant/state/scope contrasts preserve both roles and ongoing path
+meaning in Ruby/MIDI and independent recovery. All prior 54 compounds and 462
+senses remain exact; the inventory is now 55 compounds. “Is swimming across” does
+not assert crossing completion. Bare “swims across” and completed “swam across”
+remain unfinished, so the original simple-present audit case is still open.
+
 [Bodily swimming](../reviews/swimming_foundation.md) now reuses a new body-local
 locomotor-activity compound. “Eli is swimming” preserves the actor, water and
 propulsion without asserting arrival, net ground-relative progress or absence of

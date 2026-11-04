@@ -1,4 +1,4 @@
-import {SWIMMING} from './swimming.mjs';
+import {SWIMMING,SWIMMING_ACROSS} from './swimming.mjs';
 import {CONTEXTUAL_NORMS} from './contextual_standards.mjs';
 import {luminanceValue} from './luminance.mjs';
 import {FELT_CONDITIONS} from './felt_conditions.mjs';
@@ -256,6 +256,12 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
       participants:texts.map((text,index)=>({text,label:text.replaceAll('"',''),role:['source','target','destination'][index]})),
       semanticNote:carrying.semanticNote+' The destination is the goal of this carrying movement; arrival, delivery and a recipient are not asserted.',
       explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
+  const swimmingAcross=String(input).trim().match(new RegExp(`^${participant} (?:is|am|are) (not )?swimming across ${participant}[.]?$`));
+  if(swimmingAcross){
+    const texts=[swimmingAcross[1],swimmingAcross[3]];
+    if(texts.some(text=>parseNominal(text)?.quantifier)||participantIdentity(texts[0])===participantIdentity(texts[1]))return null;
+    return {...SWIMMING_ACROSS,negated:!!swimmingAcross[2],construction:'ongoing_swimming_across_region',participants:texts.map((text,index)=>({text,label:text.replaceAll('"',''),role:index?'environment':'actor'})),explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
   const path=String(input).trim().match(new RegExp(`^${participant} (?:is|am|are) (not )?moving from ${participant} (?:to|toward) ${participant}[.]?$`));
   if(path){

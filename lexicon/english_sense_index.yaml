@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 462
-  lemma_count: 445
+  sense_count: 463
+  lemma_count: 446
   canonical_atom_senses: 324
-  canonical_compound_senses: 54
+  canonical_compound_senses: 55
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: bde092bbeae6837dbc4973e6372f20f5f2e11d695c970d79792a42e1f02e8017
+  compound_dictionary_fingerprint: cd85a941f48e1e89e584a5b08a420035a77077fe8874a547ff45206d0d371e96
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -5519,6 +5519,31 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- sense_id: ENS:19d191a1e74009a9b11ccf4b
+  lemma: ongoing swimming across a region
+  display_form: ongoing swimming across a region
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:a900dd73c9816ed6cbad29f0
+  definition: The same actor is swimming along a traversal path through the bound
+    spatial region, progressing from a contextual side toward an opposed side of that
+    region. The swimming supplies this traversal, not an unrelated simultaneous activity.
+    The region is a traversed spatial extent, not a recipient, source of propulsion
+    or already reached destination. The event is ongoing and does not assert that
+    the actor has reached the opposite side or completed the crossing. No particular
+    speed, straightness, intention, unassisted activity or subsequent location is
+    asserted.
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Swimming somewhere within a region without across-traversal; A completed crossing
+    inferred from ongoing activity; The region treated as a recipient or a separately
+    moving actor
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:fde92fc69d8d1aeff6000ad0
   lemma: operative constraint-target applicability
   display_form: operative constraint-target applicability
@@ -10296,6 +10321,13 @@ lemma_index:
   ongoing sensory registration:
     sense_ids:
     - ENS:9e8742cd2cda8a3dcd4c2a66
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  ongoing swimming across a region:
+    sense_ids:
+    - ENS:19d191a1e74009a9b11ccf4b
     requires_disambiguation: false
     direct_target_count: 1
     routes:
