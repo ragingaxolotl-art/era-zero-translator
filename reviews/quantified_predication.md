@@ -41,3 +41,34 @@ Remaining implementation contract:
 5. Wire ordinary counted-predicate wording into the parser and expose unresolved
    scope choices. Test compound predicates, other roles, mixed scopes and novel
    combinations before claiming general quantified-language support.
+
+## Draft binding graph (EZCOUNT-BIND-1)
+
+The next layer is implemented in pages/quantified_binding.mjs as binding-only
+validation, without admission to canonical semantic IR or renderers. It introduces
+an explicit quantified_predication scope operator with quantifier/value, exactly
+one scopes edge to the predicate body, and one restricts edge from a nominal-class
+phonemic reference. A quantified_reference is an entity with binder_id pointing
+to that operator; it has no lexical or runtime state of its own.
+
+Each bound reference must have at least one use as a predicate-role argument or
+compound argument within the binder's body. All structural paths from every
+such predicate must pass through its binder. This rejects not only an explicitly
+outside use but also a predicate node shared with an outside clause. Nested
+binders use separate IDs; outer variables may occur inside an inner body, while
+an inner variable cannot escape into an outer predicate. Missing restrictions,
+wrong reference types, free/unused bindings, duplicate IDs, malformed counts,
+cycles and explicit identity-rewriting edges are rejected.
+
+The tests check ordinary and compound argument positions, nested binding, and
+14 invalid/capture/escape cases. This layer intentionally does not validate root
+valence, phonemic encoding, general graph semantics or musical rendering; those
+remain the responsibilities of the existing authority and pending integration.
+It must be composed with those validators before any sentence is admitted.
+References inside intensional clause arguments are not yet part of this binder's
+traversal and need an explicit scope treatment rather than implicit capture.
+
+Next work: equivalent Ruby binding validation; typed canonical-IR integration;
+versioned musical frames and independent inverse; English composition using the
+finite-model contrast obligations above. The original counted negative phrase
+remains uncomposed at this checkpoint.
