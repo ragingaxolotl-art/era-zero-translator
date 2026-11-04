@@ -104,6 +104,11 @@ browser_index = {
   }
 }
 File.write(File.join(data_dir, "index.json"), JSON.generate(browser_index))
+# Keep preview vocabulary outside the canonical dictionary and counts.
+foundation_candidates = EraZeroValidation.load_yaml("reviews/foundation_extension_candidates.json")
+EraZeroFoundations.validate!(foundation_candidates.fetch("records"), allow_draft: true)
+File.write(File.join(data_dir, "foundation_candidates.json"), JSON.generate(foundation_candidates))
+
 
 document_extensions = %w[.md .yaml .yml .json .jsonl .txt .svg .mid]
 document_directories = %w[docs spec lexicon migrations reviews reports tests examples extraction visemes]

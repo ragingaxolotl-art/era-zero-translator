@@ -143,3 +143,9 @@ subsequent scope-boundary fix was verified by rerunning its affected suites: 23
 argument/scope checks with Ruby parity and 39 English/formal/MIDI/meaning checks,
 plus three compound-binding/formal cases. The report retains the original full-run
 outputs and records this distinction; it is not a completion certificate.
+
+### Browser draft preview
+
+The normal English input now offers an explicit draft-preview action for recognized desire/preference sentences. It loads a separate candidate registry, preserves canonical dictionary counts, labels output as draft, and rejects results arriving after input or panel replacement. Playback uses the strict musical sequence. Candidate articulation has not been approved, so foundation events retain a neutral mouth while preserving their opening, address, runtime and timing; no four-syllable carrier is fabricated. Canonical viseme regression remains unchanged (5,370 variants).
+
+Exported bundles retain the candidate vocabulary definitions and status. Bundle verification checks foundation IR against that registry and rejects missing provenance. This is not an approval or a full semantic proof of arbitrary imported music. UI handler tests cover explicit opt-in, stale success/failure, strict mode, data consistency, sound-plan generation and export provenance. Live visual/audio browser testing remains unavailable in this environment; no deployment or pronunciation approval is claimed.
