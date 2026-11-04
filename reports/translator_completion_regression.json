@@ -1,54 +1,60 @@
 {
   "scope": "Implementation regression only. Full ordinary-English coverage and musical semantic completeness are not established.",
-  "passed": false,
+  "passed": true,
   "results": [
+    {
+      "test": "tests/additive_vocabulary_pins_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 63434\n\n# Running:\n\n.\n\nFinished in 0.103139s, 9.6957 runs/s, 116.3478 assertions/s.\n\n1 runs, 12 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
     {
       "test": "tests/packet_evidence_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 44222\n\n# Running:\n\n...\n\nFinished in 0.000317s, 9463.7233 runs/s, 56782.3399 assertions/s.\n\n3 runs, 18 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 55907\n\n# Running:\n\n...\n\nFinished in 0.000317s, 9463.7233 runs/s, 56782.3399 assertions/s.\n\n3 runs, 18 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/min_cross_reference_migration_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 57832\n\n# Running:\n\n.\n\nFinished in 0.676094s, 1.4791 runs/s, 130.1594 assertions/s.\n\n1 runs, 88 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 6403\n\n# Running:\n\n.\n\nFinished in 0.682662s, 1.4649 runs/s, 128.9071 assertions/s.\n\n1 runs, 88 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/mov_process_example_migration_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 34174\n\n# Running:\n\n.\n\nFinished in 1.030438s, 0.9705 runs/s, 172.7421 assertions/s.\n\n1 runs, 178 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 6782\n\n# Running:\n\n.\n\nFinished in 1.031674s, 0.9693 runs/s, 172.5351 assertions/s.\n\n1 runs, 178 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/mat_capacity_example_migration_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 24584\n\n# Running:\n\n.\n\nFinished in 0.954534s, 1.0476 runs/s, 171.8116 assertions/s.\n\n1 runs, 164 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 65352\n\n# Running:\n\n.\n\nFinished in 0.966614s, 1.0345 runs/s, 169.6644 assertions/s.\n\n1 runs, 164 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_dependencies_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 35844\n\n# Running:\n\n......\n\nFinished in 0.016631s, 360.7721 runs/s, 3307.0771 assertions/s.\n\n6 runs, 55 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 19928\n\n# Running:\n\n......\n\nFinished in 0.016375s, 366.4122 runs/s, 3358.7786 assertions/s.\n\n6 runs, 55 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_expansion_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 56945\n\n# Running:\n\n..........\n\nFinished in 0.259413s, 38.5486 runs/s, 663.0354 assertions/s.\n\n10 runs, 172 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 31427\n\n# Running:\n\n..........\n\nFinished in 0.255138s, 39.1945 runs/s, 674.1450 assertions/s.\n\n10 runs, 172 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_convention_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 55083\n\n# Running:\n\n...\n\nFinished in 0.031479s, 95.3016 runs/s, 825.9475 assertions/s.\n\n3 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 17096\n\n# Running:\n\n...\n\nFinished in 0.031781s, 94.3960 runs/s, 818.0989 assertions/s.\n\n3 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/dictionary_musical_identity_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 5457\n\n# Running:\n\n.\n\nFinished in 0.240903s, 4.1510 runs/s, 24.9063 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 4268\n\n# Running:\n\n.\n\nFinished in 0.233467s, 4.2833 runs/s, 25.6996 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/audit_dictionary_musical_identity.rb",
@@ -66,37 +72,37 @@
       "test": "tests/semantic_reference_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 24223\n\n# Running:\n\n.......\n\nFinished in 0.235540s, 29.7189 runs/s, 135.8580 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 38130\n\n# Running:\n\n.......\n\nFinished in 0.236001s, 29.6609 runs/s, 135.5926 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/quantity_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 15023\n\n# Running:\n\n..\n\nFinished in 0.384901s, 5.1961 runs/s, 202.6495 assertions/s.\n\n2 runs, 78 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 56725\n\n# Running:\n\n...\n\nFinished in 0.400915s, 7.4829 runs/s, 217.0036 assertions/s.\n\n3 runs, 87 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_semantic_ir_and_grammar.rb",
-      "passed": false,
-      "exit_code": 1,
-      "output": "Semantic IR validation: FAIL\nChecks passed: 13; checks failed: 1; valid: 16; invalid: 13\nlexical immutability: atomic baseline matches directly or through exact editorial reconciliation; compound fingerprint remains unchanged\n"
+      "passed": true,
+      "exit_code": 0,
+      "output": "Semantic IR validation: PASS\nChecks passed: 14; checks failed: 0; valid: 16; invalid: 13\n"
     },
     {
       "test": "tests/foundation_process_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 62679\n\n# Running:\n\n...\n\nFinished in 0.445206s, 6.7385 runs/s, 62.8922 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 28757\n\n# Running:\n\n...\n\nFinished in 0.442230s, 6.7838 runs/s, 63.3155 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/repetition_performance_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 4873\n\n# Running:\n\n...\n\nFinished in 0.498605s, 6.0168 runs/s, 16.0448 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 19020\n\n# Running:\n\n...\n\nFinished in 0.501092s, 5.9869 runs/s, 15.9651 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/controlled_role_reference_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 20403\n\n# Running:\n\n...\n\nFinished in 0.436619s, 6.8710 runs/s, 87.0324 assertions/s.\n\n3 runs, 38 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 53576\n\n# Running:\n\n...\n\nFinished in 0.442055s, 6.7865 runs/s, 85.9622 assertions/s.\n\n3 runs, 38 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_gate4b_compound_dictionary.rb",
@@ -112,21 +118,75 @@
     },
     {
       "test": "tools/validate_controlled_english.rb",
-      "passed": false,
-      "exit_code": 1,
-      "output": "Controlled English validation: FAIL\nChecks passed: 12; checks failed: 1\nsource immutability: sense index, semantic IR, and renderer match recorded fingerprints\n"
+      "passed": true,
+      "exit_code": 0,
+      "output": "Controlled English validation: PASS\nChecks passed: 13; checks failed: 0\n"
     },
     {
       "test": "tools/validate_renderer_decoder.rb",
-      "passed": false,
-      "exit_code": 1,
-      "output": "Renderer/decoder validation: FAIL\nChecks passed: 10; checks failed: 2\nsource immutability: IR and compounds match recorded fingerprints; atoms match directly or through exact editorial reconciliation\ncompound rendering: all approved compounds render every root and place runtime state on the head only\n"
+      "passed": true,
+      "exit_code": 0,
+      "output": "Renderer/decoder validation: PASS\nChecks passed: 12; checks failed: 0\n"
     },
     {
       "test": "tools/validate_glyph_audio.rb",
       "passed": true,
       "exit_code": 0,
       "output": "Glyph/audio validation: PASS\nChecks passed: 10; checks failed: 0\n"
+    },
+    {
+      "test": "tests/desired_swimming_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 22 desired swimming cases: bound/explicit actors, independent runtime, inner/outer negation and questions; Ruby parity and MIDI-only meaning recovery.\n"
+    },
+    {
+      "test": "tests/foundation_contractions_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 21 candidate contraction/runtime/negation/question paraphrases and explicit pronoun combination preserve full meaning and music.\n"
+    },
+    {
+      "test": "tests/foundation_pronoun_binding_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 12 explicit candidate pronoun bindings match full named-reference meanings/music; actual UI requires all bindings and discards edited pending results.\n"
+    },
+    {
+      "test": "tests/foundation_pronoun_identity_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 45 unresolved pronoun role cases rejected; explicit quoted labels and speaker/addressee references preserved across runtime states.\n"
+    },
+    {
+      "test": "tests/foundation_question_runtime_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 9 candidate preference/desire question/runtime cases preserve question contour at either punctuation position; conflicting punctuation rejected.\n"
+    },
+    {
+      "test": "tests/contracted_conditional_reference_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 12 contracted conditional reference/state/destination cases with full paraphrase and Ruby/MIDI parity; ambiguous antecedents remain unresolved.\n"
+    },
+    {
+      "test": "tests/negative_contractions_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 33 contraction/state paraphrases and mixed conjunction preserve full formal/MIDI meaning; unsupported meanings and quoted labels are not rewritten.\n"
+    },
+    {
+      "test": "tests/proposition_negation_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 15 proposition/count/negation/modal/runtime contrasts with complete MIDI scope recovery and Ruby parity.\n"
+    },
+    {
+      "test": "tests/energized_bearer_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 21 energized bearer/count/state/scope cases, independent MIDI checks and Ruby parity; ambiguous active remains unresolved.\n"
     },
     {
       "test": "tests/swimming_combinations_test.mjs",
@@ -574,21 +634,21 @@
     },
     {
       "test": "tests/physical_support_test.mjs",
-      "passed": false,
-      "exit_code": 1,
-      "output": "-e:5:in `<main>': Old compound definitions changed (RuntimeError)\nnode:internal/errors:983\n  const err = new Error(message);\n              ^\n\nError: Command failed: ruby -Itools/lib -rera_zero_controlled_english -e \n id='CMP:eef9fff8ac6618ce60927f18'\n dictionary=EraZeroValidation.load_yaml('lexicon/compound_dictionary.yaml')['entries']\n migration=EraZeroValidation.load_yaml('migrations/physical_support_2026_10_28.yaml')\n raise 'Old compound definitions changed' unless EraZeroValidation.fingerprint(dictionary.reject{|e|['CMP:763faa4465065477220f6f06','CMP:74d98d19808f74d0b8196951','CMP:0aca609416668978e1527dac','CMP:c332d2e89b9f6177486fc93b','CMP:e3075c904daf1c647969fef6','CMP:5200738177777915abb3f42e','CMP:3c13b9c619d95f1c40ea5da5','CMP:60cd46250d183e3105b7250a','CMP:6c9e3042a361ccae6ecf5980','CMP:748be1f0ce7ceb2963716292','CMP:8e95897afbd6d54b8e164e03','CMP:c58b38d03fab27880ac3e1f0','CMP:c64ab0a9989c7b10c46e3b38'].include?(e['compound_id']) || [id,'CMP:7a6749aaf61cd6181e544bd6'].include?(e['compound_id'])})==migration['before_dictionary_fingerprint']\n c=EraZeroControlledEnglish::Compiler.new\n ir=c.compile('ASSERT \"active physical load support\" [2] ROLE source \"distinct material object\" [1] ROLE target \"distinct material object\" [0].')['semantic_ir']\n formal=EraZeroRenderer.render(ir)\n registry=dictionary.to_h{|e|[e['compound_id'],e]}\n nested={'compound_id'=>'fixture-nested','definition_version'=>'1.0.0','status'=>'approved','semantic_head'=>'b','nodes'=>%w[a b].map{|n|{'node_id'=>n,'kind'=>'compound_ref','compound_id'=>id,'definition_version'=>'1.0.0'}},'edges'=>[{'type'=>'qualifies','from'=>'a','to'=>'b'}]}\n registry['fixture-nested']=nested\n begin\n  EraZeroCompoundRoleBinding.bind_unique_roles!([{'node_id'=>'p','kind'=>'lexical_occurrence','target_type'=>'compound','target_id'=>'fixture-nested'}],[],registry)\n  raise 'Repeated roles were guessed'\n rescue ArgumentError => error\n  raise unless error.message.include?('Repeated scoped roles')\n end\n bad_nodes=Marshal.load(Marshal.dump(ir['nodes']));bad_nodes.find{|n|n['node_id']=='n002'}.delete('compound_bindings');bad_nodes.find{|n|n['node_id']=='n003'}['value_type']='event'\n bad_edges=[{'type'=>'fills_role','from'=>'n003','to'=>'n002','role'=>'source'},{'type'=>'fills_role','from'=>'n004','to'=>'n002','role'=>'target'}]\n begin\n  EraZeroCompoundRoleBinding.bind_unique_roles!(bad_nodes,bad_edges,registry)\n  raise 'Mistyped role was accepted'\n rescue ArgumentError => error\n  raise unless error.message.include?('entity occurrence')\n end\n puts JSON.generate({ir:ir,formal:formal})\n\n-e:5:in `<main>': Old compound definitions changed (RuntimeError)\n\n    at genericNodeError (node:internal/errors:983:15)\n    at wrappedFn (node:internal/errors:537:14)\n    at checkExecSyncError (node:child_process:882:11)\n    at execFileSync (node:child_process:918:15)\n    at file:///private/tmp/dba-audit-20261104/tests/physical_support_test.mjs:29:24 {\n  status: 1,\n  signal: null,\n  output: [\n    null,\n    '',\n    \"-e:5:in `<main>': Old compound definitions changed (RuntimeError)\\n\"\n  ],\n  pid: 43912,\n  stdout: '',\n  stderr: \"-e:5:in `<main>': Old compound definitions changed (RuntimeError)\\n\"\n}\n\nNode.js v22.14.0\n"
+      "passed": true,
+      "exit_code": 0,
+      "output": "Physical support: 20 role/runtime/scope sentences match Ruby formal and MIDI; target qualification and convention decode independently. Prior compound definitions are unchanged. Controlled role bindings become explicit paths. Carrying and metaphorical support remain distinct.\n"
     },
     {
       "test": "tests/physical_custody_test.mjs",
-      "passed": false,
-      "exit_code": 1,
-      "output": "-e:10:in `<main>': Prior compounds changed (RuntimeError)\nnode:internal/errors:983\n  const err = new Error(message);\n              ^\n\nError: Command failed: ruby -Itools/lib -e \nrequire 'minitest/mock'\nrequire 'era_zero_controlled_english'\nrequire 'era_zero_browser_compounds'\nrequire 'era_zero_presentation'\nrequire 'base64'\nid='CMP:0aca609416668978e1527dac'\natoms,dictionary=EraZeroRenderer.load_authority\nm=EraZeroValidation.load_yaml('migrations/physical_custody_2026_10_29.yaml')\nraise 'Prior compounds changed' unless EraZeroValidation.fingerprint(dictionary.values.reject{|e|[id,'CMP:c332d2e89b9f6177486fc93b','CMP:e3075c904daf1c647969fef6','CMP:5200738177777915abb3f42e','CMP:3c13b9c619d95f1c40ea5da5','CMP:60cd46250d183e3105b7250a','CMP:6c9e3042a361ccae6ecf5980','CMP:748be1f0ce7ceb2963716292','CMP:8e95897afbd6d54b8e164e03','CMP:c58b38d03fab27880ac3e1f0','CMP:c64ab0a9989c7b10c46e3b38'].include?(e['compound_id'])})==m['before_dictionary_fingerprint']\nc=EraZeroControlledEnglish::Compiler.new\ncontrolled=[0,1,2].map{|s|ir=c.compile(%Q{ASSERT \"practical physical custody\" [#{s}] ROLE source \"identified other\" [0] ROLE target \"distinct material object\" [2].})['semantic_ir'];f=EraZeroRenderer.render(ir);{formal:f,midi:Base64.strict_encode64(EraZeroPresentation.midi(f))}}\nbad=c.compile('ASSERT \"practical physical custody\" [1] ROLE source \"distinct material object\" [1] ROLE target REF source.')\nraise 'Self-custody accepted' unless bad['status']=='error' && bad.dig('error','message').include?('distinct arguments')\n\ninner=dictionary.fetch(id)\nouter={'compound_id'=>'custody-nesting-fixture','definition_version'=>'1.0.0','status'=>'approved','semantic_head'=>'b','lexical_constraints'=>[],\n 'nodes'=>%w[a b].map{|n|{'node_id'=>n,'kind'=>'compound_ref','compound_id'=>id,'definition_version'=>'1.0.0'}},'edges'=>[{'type'=>'qualifies','from'=>'a','to'=>'b'}]}\nouter['content_digest']=EraZeroValidation.fingerprint(EraZeroCompoundConventions.semantic_payload(outer))\nentries=[inner,outer];registry=entries.to_h{|e|[e['compound_id'],e]}\nplans=EraZeroBrowserCompounds.plans(entries)\nnested=[0,1,2].map do |state|\n ir=Marshal.load(Marshal.dump(controlled[state][:formal]['semantic_ir']))\n p=ir['nodes'].find{|n|n['target_id']==id};p['target_id']=outer['compound_id'];p['compound_bindings']=p['compound_bindings'].flat_map{|b|%w[a b].map{|prefix|b.merge('slot_path'=>[prefix]+b['slot_path'])}}\n digest=EraZeroRenderer.semantic_digest(ir);ir['utterance_id']='UTT:'+digest[0,24];ir['serialization']={'content_digest'=>digest}\n EraZeroRenderer.stub(:load_authority,[atoms,registry]){f=EraZeroRenderer.render(ir);{formal:f,midi:Base64.strict_encode64(EraZeroPresentation.midi(f))}}\nend\nputs JSON.generate({controlled:controlled,nested:nested,authority:{atoms:atoms.values,compounds:entries,compound_plans:plans}})\n\n-e:10:in `<main>': Prior compounds changed (RuntimeError)\n\n    at genericNodeError (node:internal/errors:983:15)\n    at wrappedFn (node:internal/errors:537:14)\n    at checkExecSyncError (node:child_process:882:11)\n    at execFileSync (node:child_process:918:15)\n    at file:///private/tmp/dba-audit-20261104/tests/physical_custody_test.mjs:32:26 {\n  status: 1,\n  signal: null,\n  output: [\n    null,\n    '',\n    \"-e:10:in `<main>': Prior compounds changed (RuntimeError)\\n\"\n  ],\n  pid: 43943,\n  stdout: '',\n  stderr: \"-e:10:in `<main>': Prior compounds changed (RuntimeError)\\n\"\n}\n\nNode.js v22.14.0\n"
+      "passed": true,
+      "exit_code": 0,
+      "output": "Physical custody: 34 role/state/negation/question/modal/conditional sentences match Ruby/browser formal and MIDI; independent audible structure distinguishes custody from support and arrival. Three controlled and three nested performances preserve independent runtime states. Prior 39 compounds and distinct-participant constraints are checked; receipt is not inferred.\n"
     },
     {
       "test": "tests/physical_carrying_test.mjs",
-      "passed": false,
-      "exit_code": 1,
-      "output": "-e:6:in `<main>': Old compounds changed (RuntimeError)\nnode:internal/errors:983\n  const err = new Error(message);\n              ^\n\nError: Command failed: ruby -Itools/lib -rera_zero_controlled_english -e \n dictionary=EraZeroValidation.load_yaml('lexicon/compound_dictionary.yaml')['entries']\n id='CMP:7a6749aaf61cd6181e544bd6';entry=dictionary.find{|e|e['compound_id']==id}\n raise 'Versioned support missing' unless entry['nodes'].any?{|n|n['kind']=='compound_ref'&&n['compound_id']=='CMP:eef9fff8ac6618ce60927f18'&&n['definition_version']=='1.0.0'}\n migration=EraZeroValidation.load_yaml('migrations/physical_carrying_2026_10_28.yaml')\n raise 'Old compounds changed' unless EraZeroValidation.fingerprint(dictionary.reject{|e|['CMP:763faa4465065477220f6f06','CMP:74d98d19808f74d0b8196951','CMP:0aca609416668978e1527dac','CMP:c332d2e89b9f6177486fc93b','CMP:e3075c904daf1c647969fef6','CMP:5200738177777915abb3f42e','CMP:3c13b9c619d95f1c40ea5da5','CMP:60cd46250d183e3105b7250a','CMP:6c9e3042a361ccae6ecf5980','CMP:748be1f0ce7ceb2963716292','CMP:8e95897afbd6d54b8e164e03','CMP:c58b38d03fab27880ac3e1f0','CMP:c64ab0a9989c7b10c46e3b38'].include?(e['compound_id']) || e['compound_id']==id})==migration['before_dictionary_fingerprint']\n JSON.parse(STDIN.read).each do |bad|\n  begin; EraZeroRenderer.render(bad);raise 'Invalid carrying accepted';rescue EraZeroRenderer::RenderError => error;raise unless error.message.include?('invalid_compound_bindings');end\n end\n c=EraZeroControlledEnglish::Compiler.new\n input='ASSERT \"ongoing physical carrying\" [2] ROLE source \"distinct material object\" [0] ROLE target \"distinct material object\" [1] ROLE actor REF target.'\n result=c.compile(input);raise result.inspect unless result['status']=='ok'\n rejected=c.compile(input.sub('ROLE actor REF target','ROLE actor \"distinct material object\" [1]'))\n raise 'Duplicate label guessed as same participant' unless rejected['status']=='error'\n ir=result.fetch('semantic_ir');puts JSON.generate({ir:ir,formal:EraZeroRenderer.render(ir)})\n\n-e:6:in `<main>': Old compounds changed (RuntimeError)\n\n    at genericNodeError (node:internal/errors:983:15)\n    at wrappedFn (node:internal/errors:537:14)\n    at checkExecSyncError (node:child_process:882:11)\n    at execFileSync (node:child_process:918:15)\n    at file:///private/tmp/dba-audit-20261104/tests/physical_carrying_test.mjs:31:24 {\n  status: 1,\n  signal: null,\n  output: [\n    null,\n    '',\n    \"-e:6:in `<main>': Old compounds changed (RuntimeError)\\n\"\n  ],\n  pid: 43974,\n  stdout: '',\n  stderr: \"-e:6:in `<main>': Old compounds changed (RuntimeError)\\n\"\n}\n\nNode.js v22.14.0\n"
+      "passed": true,
+      "exit_code": 0,
+      "output": "Physical carrying: 20 ordinary state/role/scope/clause cases match Ruby formal and MIDI; conventions 3/4 and runtime decode independently. Shared load, distinct carrier, exact dependency and unchanged prior compounds verified.\n"
     },
     {
       "test": "tests/carrying_goal_test.mjs",
@@ -622,21 +682,21 @@
     },
     {
       "test": "tests/custody_acquisition_test.mjs",
-      "passed": false,
-      "exit_code": 1,
-      "output": "-e:5:in `<main>': Prior forty compounds changed (RuntimeError)\nnode:internal/errors:983\n  const err = new Error(message);\n              ^\n\nError: Command failed: ruby -Itools/lib -rera_zero_controlled_english -rera_zero_presentation -rbase64 -e \n d=EraZeroValidation.load_yaml('lexicon/compound_dictionary.yaml')['entries']\n m=EraZeroValidation.load_yaml('migrations/custody_acquisition_2026_11_04.yaml')\n old=d.reject{|e|[m['added_compound_id'],'CMP:e3075c904daf1c647969fef6','CMP:5200738177777915abb3f42e','CMP:3c13b9c619d95f1c40ea5da5','CMP:60cd46250d183e3105b7250a','CMP:6c9e3042a361ccae6ecf5980','CMP:748be1f0ce7ceb2963716292','CMP:8e95897afbd6d54b8e164e03','CMP:c58b38d03fab27880ac3e1f0','CMP:c64ab0a9989c7b10c46e3b38'].include?(e['compound_id'])}\n raise 'Prior forty compounds changed' unless old.length==40 && EraZeroValidation.fingerprint(old)==m['before_dictionary_fingerprint']\n c=EraZeroControlledEnglish::Compiler.new\n puts JSON.generate([0,1,2].map{|s|ir=c.compile!(%Q{ASSERT \"completed acquisition of physical custody\" [#{s}] ROLE source \"identified other\" [0] ROLE target \"distinct material object\" [2].});f=EraZeroRenderer.render(ir);{formal:f,midi:Base64.strict_encode64(EraZeroPresentation.midi(f))}})\n\n-e:5:in `<main>': Prior forty compounds changed (RuntimeError)\n\n    at genericNodeError (node:internal/errors:983:15)\n    at wrappedFn (node:internal/errors:537:14)\n    at checkExecSyncError (node:child_process:882:11)\n    at execFileSync (node:child_process:918:15)\n    at file:///private/tmp/dba-audit-20261104/tests/custody_acquisition_test.mjs:44:29 {\n  status: 1,\n  signal: null,\n  output: [\n    null,\n    '',\n    \"-e:5:in `<main>': Prior forty compounds changed (RuntimeError)\\n\"\n  ],\n  pid: 44100,\n  stdout: '',\n  stderr: \"-e:5:in `<main>': Prior forty compounds changed (RuntimeError)\\n\"\n}\n\nNode.js v22.14.0\n"
+      "passed": true,
+      "exit_code": 0,
+      "output": "Custody acquisition: 36 state/participant/negation/question/command/property cases preserve complete Ruby/browser formal and MIDI output; independent inverse recovers the bounded transition and scoped culmination. Three controlled nested performances retain participant states; all forty preceding compounds remain exact.\n"
     },
     {
       "test": "tests/custody_transfer_test.mjs",
-      "passed": false,
-      "exit_code": 1,
-      "output": "-e:4:in `<main>': Prior 41 compounds changed (RuntimeError)\nnode:internal/errors:983\n  const err = new Error(message);\n              ^\n\nError: Command failed: ruby -Itools/lib -rera_zero_controlled_english -e \n d=EraZeroValidation.load_yaml('lexicon/compound_dictionary.yaml')['entries'];m=EraZeroValidation.load_yaml('migrations/custody_transfer_2026_11_04.yaml')\n old=d.reject{|e|[m['added_compound_id'],'CMP:5200738177777915abb3f42e','CMP:3c13b9c619d95f1c40ea5da5','CMP:60cd46250d183e3105b7250a','CMP:6c9e3042a361ccae6ecf5980','CMP:748be1f0ce7ceb2963716292','CMP:8e95897afbd6d54b8e164e03','CMP:c58b38d03fab27880ac3e1f0','CMP:c64ab0a9989c7b10c46e3b38'].include?(e['compound_id'])}\n raise 'Prior 41 compounds changed' unless old.length==41 && EraZeroValidation.fingerprint(old)==m['before_dictionary_fingerprint']\n begin\n EraZeroControlledEnglish::Compiler.new.compile!('ASSERT \"completed transfer of physical custody\" [1] ROLE source \"identified other\" [0] ROLE target \"distinct material object\" [2].')\n raise 'Ambiguous nested holders silently bound'\n rescue EraZeroControlledEnglish::CompileError => e\n raise unless e.message.include?('Repeated scoped roles')\n end\n\n-e:4:in `<main>': Prior 41 compounds changed (RuntimeError)\n\n    at genericNodeError (node:internal/errors:983:15)\n    at wrappedFn (node:internal/errors:537:14)\n    at checkExecSyncError (node:child_process:882:11)\n    at execFileSync (node:child_process:918:15)\n    at file:///private/tmp/dba-audit-20261104/tests/custody_transfer_test.mjs:60:1 {\n  status: 1,\n  signal: null,\n  output: [\n    null,\n    '',\n    \"-e:4:in `<main>': Prior 41 compounds changed (RuntimeError)\\n\"\n  ],\n  pid: 44147,\n  stdout: '',\n  stderr: \"-e:4:in `<main>': Prior 41 compounds changed (RuntimeError)\\n\"\n}\n\nNode.js v22.14.0\n"
+      "passed": true,
+      "exit_code": 0,
+      "output": "Custody transfer: 36 sentence/state cases preserve source, recipient and shared object, scoped before/after linkage and Ruby/browser MIDI parity. Three explicit lexical-participant fixtures preserve independent states. Corrupted object/root music and invalid identity bindings are rejected; 41 prior definitions remain exact.\n"
     },
     {
       "test": "tests/custody_delivery_test.mjs",
-      "passed": false,
-      "exit_code": 1,
-      "output": "-e:3:in `<main>': Prior 42 compounds changed (RuntimeError)\nnode:internal/errors:983\n  const err = new Error(message);\n              ^\n\nError: Command failed: ruby -Itools/lib -rera_zero_validation -e \n d=EraZeroValidation.load_yaml('lexicon/compound_dictionary.yaml')['entries'];m=EraZeroValidation.load_yaml('migrations/custody_delivery_2026_11_04.yaml');old=d.reject{|e|[m['added_compound_id'],'CMP:3c13b9c619d95f1c40ea5da5','CMP:60cd46250d183e3105b7250a','CMP:6c9e3042a361ccae6ecf5980','CMP:748be1f0ce7ceb2963716292','CMP:8e95897afbd6d54b8e164e03','CMP:c58b38d03fab27880ac3e1f0','CMP:c64ab0a9989c7b10c46e3b38'].include?(e['compound_id'])}\n raise 'Prior 42 compounds changed' unless old.length==42 && EraZeroValidation.fingerprint(old)==m['before_dictionary_fingerprint']\n\n-e:3:in `<main>': Prior 42 compounds changed (RuntimeError)\n\n    at genericNodeError (node:internal/errors:983:15)\n    at wrappedFn (node:internal/errors:537:14)\n    at checkExecSyncError (node:child_process:882:11)\n    at execFileSync (node:child_process:918:15)\n    at file:///private/tmp/dba-audit-20261104/tests/custody_delivery_test.mjs:63:1 {\n  status: 1,\n  signal: null,\n  output: [\n    null,\n    '',\n    \"-e:3:in `<main>': Prior 42 compounds changed (RuntimeError)\\n\"\n  ],\n  pid: 44208,\n  stdout: '',\n  stderr: \"-e:3:in `<main>': Prior 42 compounds changed (RuntimeError)\\n\"\n}\n\nNode.js v22.14.0\n"
+      "passed": true,
+      "exit_code": 0,
+      "output": "Custody delivery: 36 sentence/state cases with full Ruby/browser parity, independently decoded event linkage, contrasting spatial-only readings, corrupted participant rejection, conditional command and explicit UI selection; all 42 preceding compounds preserved.\n"
     },
     {
       "test": "tests/controlled_scoped_slot_test.mjs",
@@ -714,5 +774,7 @@
     "Recursive compound generation and complete scoped timing in the browser",
     "Independent held-out meaning and sound decoding",
     "Source reconciliation, release migration and publication validation"
-  ]
+  ],
+  "tested_revision": "1576c0b",
+  "tested_source_state": "Clean implementation tree at invocation; documentation summary edited during run. No implementation changes or reruns."
 }

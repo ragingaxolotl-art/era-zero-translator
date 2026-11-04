@@ -10,7 +10,45 @@ performance, keeping existing roots, sounds, names, and approved poetic meanings
 The [source audit](https://chatgpt.com/space/page_21c6ce0da1a88191abff53c0b13441f3)
 is the starting evidence, not a completion certificate.
 
-## Current coverage evidence
+## Current status at implementation revision 1576c0b
+
+The full translator goal remains **incomplete**. There are 324 preserved roots,
+55 approved compounds and 463 canonical senses. Desire/preference foundations
+remain opt-in candidate vocabulary; they are not included in those canonical
+counts. The fresh consolidated regression passed all 127 checks at this revision,
+with no failures, timeouts or reruns. This is implementation regression evidence,
+not proof of full ordinary-English coverage or musical usability.
+
+Recent completed implementation work:
+
+- Swimming supports explicit simple-present viewpoint choices, explicit habits
+  and mixed-clause composition. Across-region swimming preserves the region and
+  swimmer without asserting completed crossing. See [swimming across](../reviews/swimming_across.md).
+- Physical energization supports counted bearers. Explicit whole-proposition
+  negation preserves its scope over counts; counted negative predicates still
+  require a genuine variable-binding construction. See [energized bearers](../reviews/energized_bearer.md).
+- Negative auxiliary contractions preserve expanded meanings, including questions
+  and conditional commands with local references. See [contractions](../reviews/negative_contractions.md).
+- Candidate desire/preference now preserves question punctuation around runtime
+  tags, rejects unresolved pronouns as name sounds, and offers explicit singular
+  pronoun referent fields in its preview. See [foundation extension](../reviews/lexical_foundation_extension.md).
+- Candidate “wants to swim” reuses the approved swimming compound with a bound
+  or explicit swimmer and independent content/runtime scope. See [desired swimming](../reviews/desired_swimming.md).
+- Historical preservation failures were reconciled against exact Git snapshots,
+  retaining original definition fingerprints. See [reconciliation](../reviews/additive_vocabulary_pin_reconciliation.md).
+
+The authored 40-phrase diagnostic remains 24 checked, 8 requiring interpretation
+and 8 uncomposed. It does not estimate general English coverage. Completed
+crossings, running, learning/understanding/curiosity, broader comparative and
+quantified grammar, source reconciliation, candidate admission, live use and
+listening validation remain open. No original completion gate is closed by the
+implementation checks alone.
+
+## Historical coverage work log
+
+The entries below record successive changes. Their inventory counts and stated
+limitations describe their respective checkpoints; use the current summary above
+and linked current reviews for present status.
 
 [Ongoing swimming across a region](../reviews/swimming_across.md) now binds the
 same swimmer through two nested references and a separate traversed-region slot.
