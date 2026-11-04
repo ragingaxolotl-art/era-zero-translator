@@ -375,3 +375,19 @@ Existing knowledge, preference inverse and acquisition semantic-model checks pas
 This is browser rendering and strict-MIDI recovery, not Ruby parity, English
 learned-whether composition, general learning or listening proof. Those remain
 unfinished, along with the original completion requirements.
+
+## Ruby acquisition authority validation and musical parity
+
+`EraZeroKnowledgeAcquisition` now checks the exact draft acquisition contract,
+transition runtime, candidate knowledge result and culmination-only timing. It
+passes the embedded result through full canonical semantic validation and formal
+regeneration with the explicit candidate registry, then uses the existing ORI:110
+atom renderer and shared MIDI writer. No supplied event list is trusted as the
+result's performance.
+
+All eighteen browser acquisition streams are byte-identical to Ruby regeneration
+across transition/result runtime pairs and both question polarities. Default
+admission and a changed persistence contract reject. The semantic acquisition
+model's 27 partial-information cases remain passing. This supersedes the earlier
+Ruby-parity limitation; it does not yet provide English learned-whether, event
+negation/tense, nonassertion speech acts, UI integration or listening validation.

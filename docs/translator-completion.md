@@ -43,7 +43,9 @@ meaning/music checks. A subsequent draft acquisition contract reuses ORI:110
 and the exact knowledge result with explicit before/culmination binding; 27
 partial-information contrasts pass. Draft acquisition music now preserves the
 complete result binding in 18 MIDI-only decoding cases with independent event
-and result runtime states. Ruby parity and English learned-whether remain open.
+and result runtime states. Ruby now validates the full result and produces
+byte-identical acquisition MIDI. English learned-whether, event scopes and
+UI integration remain open.
 
 Recent completed implementation work:
 
