@@ -1,8 +1,9 @@
 # Spatial entry before “may enter”
 
-Status: semantic audit and implementation contract; entry is not implemented by
-this review. Inspected at revision 5a5a427 (324 roots, 58 compounds). Preserve all
-root definitions, existing conventions and lexical/runtime 0/1/2 distinctions.
+Status: semantic audit and implementation record. Spatial states and completed
+physical entry are implemented in the sections below; ongoing entry and “may”
+interpretation remain unfinished. Initial audit: revision 5a5a427 (324 roots,
+58 compounds). Preserve root definitions, conventions and lexical/runtime 0/1/2.
 
 ## Evidence and rejected substitutions
 
@@ -125,3 +126,33 @@ The finite model is an example, not a universal geometry implementation.
 Entry, exit, same-event transitions, explicit descriptions of inclusion criteria,
 region-relative phrases beyond these constructions and the ordinary “may” choice
 remain unfinished. No entry result or completion gate is claimed by this addition.
+
+## Completed physical entry implementation
+
+Convention 29 now composes version-pinned exterior (27) and interior (26) relations
+with MOV:120 completed shared-frame displacement. The new convention explicitly
+assigns the exterior relation to the pre-crossing phase and the interior relation
+to culmination, under one event and inclusion criterion. Neither phase is an
+independent assertion about speech time. Same-argument constraints bind each
+nested bearer to the mover and each nested region to the movement environment.
+This is not inferred from adjacency, generic arrival, or runtime endings.
+
+Ordinary entered/did-not-enter, did questions and enter/do-not-enter commands now
+request selection of physical entry. Explicit “physically entered” selects it
+without a second choice. Other entry senses remain unsupported; they are not
+silently relabeled as physical movement. The same choice is supported with explicit
+pronoun referents and multi-clause interpretation controls. Completed event type,
+past tense, speech act and runtime 0/1/2 remain separate. Commands request the
+complete event but make no claim that entry occurred.
+
+physical_entry_decoder.mjs reads MIDI alone, checking both spatial phase relations,
+repeated participant/region references, exact root, runtime and outer scopes.
+Tests cover Ruby parity, malformed bindings in both renderers, mismatched names
+spliced into a valid MIDI phase, semantic counterexamples, and actual UI handlers
+with asynchronous stale-result protection. Author review and implementation tests
+are not independent linguistic or listening validation.
+
+Ongoing entering, ordinary simple-present entry viewpoint and “may enter” still
+need implementation. Explicit contextual geometry and arbitrary region expressions
+are not supplied by this addition. The inventory is 324 roots, 62 compounds and
+470 canonical senses; those counts do not establish translator completion.

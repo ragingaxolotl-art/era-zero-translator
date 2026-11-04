@@ -1,3 +1,4 @@
+import {PHYSICAL_ENTRY} from './physical_entry.mjs';
 import {SPATIAL_RELATIONS} from './spatial_relations.mjs';
 import {expandNegativeContractions} from './contractions.mjs';
 import {COMPLETED_RUNNING} from './completed_running.mjs';
@@ -18,6 +19,8 @@ import {deicticReference,deicticEvent,nominalMarker,NOMINAL_MODES} from './refer
 
 // Reviewed constructions use exact process senses, never a generic synonym pool.
 const ACTIONS = [
+  PHYSICAL_ENTRY,
+  {...PHYSICAL_ENTRY,pattern:'physically entered',negativePattern:'did not physically enter',requiredInterpretation:undefined},
   ...SPATIAL_RELATIONS,
   DESTINATION_RUNNING,
   {pattern:'acquired physical custody of',negativePattern:'did not acquire physical custody of',predicate:'CMP:c332d2e89b9f6177486fc93b',key:'completed_physical_custody_acquisition',wording:'acquired physical custody of',role:'source',targetRole:'target',speechTime:'before',compoundSlots:{source:['q-custody','s-source'],target:['q-custody','s-target']},semanticNote:'Acquisition means that this holder lacked practical physical custody of this object immediately before the transition and had it at culmination. It does not assert ownership, a previous custodian, handover, object movement or continued custody afterward.'},
@@ -108,6 +111,12 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     return inner?{...inner,explicitInterpretation:inner.explicitInterpretation||normalized.trim()}:null;
   }
   if(speechActs){
+    const entryCommand=String(input).trim().match(new RegExp(`^([Dd]o not )?[Ee]nter ${participant}[.!]?$`));
+    if(entryCommand){
+      const inner=parseNamedSentence(`you ${entryCommand[1]?'did not enter':'entered'} ${entryCommand[2]}.`,depth+1,false);
+      if(!inner)return null;
+      return {...inner,speechTime:undefined,speechAct:'command',construction:`command_${inner.construction}`,explicitInterpretation:String(input).trim(),semanticNote:inner.semanticNote+' This requests or prohibits the event without asserting that entry occurred.'};
+    }
     const runningCommand=String(input).trim().match(new RegExp(`^([Dd]o not )?[Rr]un(?: (toward|to) ${participant})?[.!]?$`));
     if(runningCommand){
       const negative=!!runningCommand[1],relation=runningCommand[2],goal=runningCommand[3];
@@ -159,8 +168,8 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     const question=String(input).trim().match(new RegExp(`^(?:[Ii]s|[Aa]re|[Aa]m) ${participant} (.+)\\?$`));
     const careQuestion=String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?care for (.+)\\?$`));
     const pastQuestion=String(input).trim().match(new RegExp(`^(?:[Ww]as|[Ww]ere) ${participant} (.+)\\?$`));
-    const didQuestion=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?(care for|restore|repair|awaken|damage|physically repair|arrive at|acquire physical custody of) ${participant}( (?:yesterday|today))?\\?$`));
-    const pastVerbs={'care for':'cared for',restore:'restored',repair:'repaired',awaken:'awakened',damage:'damaged','physically repair':'physically repaired','arrive at':'arrived at','acquire physical custody of':'acquired physical custody of'};
+    const didQuestion=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?(care for|restore|repair|awaken|damage|physically repair|arrive at|physically enter|enter|acquire physical custody of) ${participant}( (?:yesterday|today))?\\?$`));
+    const pastVerbs={'physically enter':'physically entered',enter:'entered','care for':'cared for',restore:'restored',repair:'repaired',awaken:'awakened',damage:'damaged','physically repair':'physically repaired','arrive at':'arrived at','acquire physical custody of':'acquired physical custody of'};
     const carryDid=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?(habitually )?carry (.+)\\?$`));
     const carryHabit=String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?habitually carry (.+)\\?$`));
     const carrySimple=String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?carry (.+)\\?$`));
@@ -467,7 +476,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light|bright|dim|brighter|dimmer|rough|smooth)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|inside|outside|boundary|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|able to move|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|arrive|arrives|arrived|arriving|carry|carries|carried|carrying|support|supporting|custody|acquire|acquired|acquiring|deliver|delivers|delivered|delivering|run|runs|running|swim|swims|swimming|happy|sad|hungry|thirsty|tired|temperature|luminance)\b/i.test(String(input))) && !parseNamedSentence(input);
+  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light|bright|dim|brighter|dimmer|rough|smooth)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|enter|entered|entering|enters|inside|outside|boundary|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|able to move|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|arrive|arrives|arrived|arriving|carry|carries|carried|carrying|support|supporting|custody|acquire|acquired|acquiring|deliver|delivers|delivered|delivering|run|runs|running|swim|swims|swimming|happy|sad|hungry|thirsty|tired|temperature|luminance)\b/i.test(String(input))) && !parseNamedSentence(input);
 }
 
 // A complete antecedent and a comma establish conditional scope. Without
@@ -642,8 +651,9 @@ export async function composeNamedSentence(input,template,{interpretation,standa
   if(parsed.requiredInterpretation&&interpretation!==parsed.requiredInterpretation){
     const thermal=['thermal_standard','mass_standard','luminance_standard','texture_standard'].includes(parsed.requiredInterpretation);
     const comparative=parsed.requiredInterpretation==='luminance_comparison';
-    const error=new Error(comparative?'Choose the physical luminance meaning of this comparison before translating.':thermal?'Choose the property sense and its contextual threshold before translating.':'Choose whether this is a future statement. Promise, intention and willingness require different meanings.');
-    error.code=(thermal||comparative)?`${parsed.requiredInterpretation}_required`:'future_interpretation_required';throw error;
+    const physicalEntry=parsed.requiredInterpretation==='physical_entry';
+    const error=new Error(physicalEntry?'Choose whether entry means moving from outside to inside a physical region. Other entry meanings need different interpretations.':comparative?'Choose the physical luminance meaning of this comparison before translating.':thermal?'Choose the property sense and its contextual threshold before translating.':'Choose whether this is a future statement. Promise, intention and willingness require different meanings.');
+    error.code=(thermal||comparative||physicalEntry)?`${parsed.requiredInterpretation}_required`:'future_interpretation_required';throw error;
   }
   let selectedStandard;
   if(['thermal_standard','mass_standard','luminance_standard','texture_standard'].includes(parsed.requiredInterpretation)){

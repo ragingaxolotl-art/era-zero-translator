@@ -1489,3 +1489,24 @@ passed, including semantic IR, controlled English, renderer, glyph/MIDI, named
 sentences, combined pronoun choices, compound bindings and browser release checks.
 The prior consolidated report still refers to the earlier 58-compound revision;
 it is not a full-suite result for this addition.
+
+### Completed physical entry
+
+“Entered” now composes the exterior and interior meanings into one completed
+boundary-crossing displacement event. Explicit bindings preserve the same mover
+and region across both phases. Ordinary wording requests a physical-entry sense
+choice; “physically entered” selects it directly. Negation, did questions, commands,
+past/calendar time, modal wrappers, pronoun choices and clause combinations retain
+that event meaning independently of runtime 0/1/2. Independent MIDI recovery checks
+the internal phase identities and outer scopes. Neither current location nor
+arrival outside counts as entry. Existing compounds remain unchanged.
+
+The inventory is now 62 compounds and 470 canonical senses over the same 324 roots.
+“May enter”, ongoing entry and simple-present viewpoint still require work; the
+original seven completion gates remain open.
+
+Validation: all 13 targeted suites in reports/physical_entry_validation.json pass.
+The new test includes 30 sentence cases, Ruby/MIDI parity, independent event-phase
+recovery, inconsistent-binding and corrupted-MIDI rejection, semantic countermodels,
+and direct, pronoun and multi-clause UI interpretation handlers. This is targeted
+implementation evidence, not a full-translator or held-out listening result.

@@ -22,7 +22,7 @@ for(const input of ['The box is inside this room.','I am outside that room.','Th
 const ruby=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_presentation','-rbase64','-e',"puts JSON.generate(JSON.parse(STDIN.read).map{|ir|f=EraZeroRenderer.render(ir);{formal:f,midi:Base64.strict_encode64(EraZeroPresentation.midi(f))}})"],{cwd:root,input:JSON.stringify(results.map(r=>r.semantic_ir)),encoding:'utf8',maxBuffer:30_000_000}));
 for(const [i,r] of results.entries()){assert.deepEqual(r.formal,ruby[i].formal);assert.equal(Buffer.from(midiFromFormal(r.formal)).toString('base64'),ruby[i].midi);}
 assert.equal(new Set(ruby.map(r=>r.midi)).size,results.length);
-for(const input of ['Nora entered the archive.','Nora may enter the archive.','Nora is inside the archive with Eli.'])assert.equal(parseNamedSentence(input),null);
+for(const input of ['Nora may enter the archive.','Nora is inside the archive with Eli.'])assert.equal(parseNamedSentence(input),null);
 const reversed=await composeNamedSentence('The archive is inside Nora.',{authority});
 const forward=decodeSpatialRelationMidi(midiFromFormal(results[0].formal),authority.atoms);
 const backward=decodeSpatialRelationMidi(midiFromFormal(reversed.formal),authority.atoms);
@@ -33,7 +33,7 @@ assert.throws(()=>decodeSpatialRelationMidi(midiFromFormal(unrelated.formal),aut
 execFileSync('ruby',['-Itools/lib','-rera_zero_validation','-e',String.raw`
  v=EraZeroValidation;m=v.load_yaml('migrations/spatial_relations_2026_11_04.yaml');d=v.load_yaml('lexicon/compound_dictionary.yaml')['entries'];old=d.select{|e|m['previous_compound_ids'].include?(e['compound_id'])}
  raise 'Prior compounds changed' unless old.length==58 && v.fingerprint(old)==m['before_dictionary_fingerprint']
- raise 'Wrong additions' unless (d.map{|e|e['compound_id']}-m['previous_compound_ids']).sort==m['added_compounds'].values.sort
+ raise 'Wrong additions' unless (d.map{|e|e['compound_id']}&m['added_compounds'].values).sort==m['added_compounds'].values.sort
  baseline=YAML.safe_load(IO.popen(['git','show','0c9645d:lexicon/all_atoms.yaml'], &:read),aliases:true)
  raise 'Roots changed' unless baseline==v.load_yaml('lexicon/all_atoms.yaml')
 `],{cwd:root,encoding:'utf8'});

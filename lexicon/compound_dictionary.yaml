@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 61
+  entry_count: 62
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -2623,6 +2623,139 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 9e8b36f50570a0c3c362a968c9a99eff8df12285e44484758641ad7e2b47f247
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-0-before
+    kind: compound_ref
+    compound_id: CMP:cc6d19387b62013464e0e850
+    definition_version: 1.0.0
+  - node_id: q-1-after
+    kind: compound_ref
+    compound_id: CMP:6ccc77b4b3aa69bb010849a4
+    definition_version: 1.0.0
+  - node_id: s-actor
+    kind: slot
+    slot_name: entering_participant
+    slot_type: entity
+  - node_id: s-region
+    kind: slot
+    slot_name: entered_region
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:120
+  edges:
+  - type: qualifies
+    from: q-0-before
+    to: h
+  - type: qualifies
+    from: q-1-after
+    to: h
+  - type: fills_role
+    from: s-actor
+    to: h
+    role: actor
+  - type: fills_role
+    from: s-region
+    to: h
+    role: environment
+  binding_constraints:
+  - relation: same_argument
+    slot_paths:
+    - - q-0-before
+      - s-bearer
+    - - q-1-after
+      - s-bearer
+    - - s-actor
+  - relation: same_argument
+    slot_paths:
+    - - q-0-before
+      - s-region
+    - - q-1-after
+      - s-region
+    - - s-region
+  lexical_constraints:
+  - The nested exterior state is the pre-crossing phase and the nested interior state
+    is the culmination phase of this same displacement event.
+  - The actual mover is the same material bearer in both spatial relations; the region
+    anchors the same shared frame throughout.
+  - No nested spatial state has an independent runtime ending or speech-time assertion.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: completed_physical_entry
+    sound_code: 29
+    added_definition: Completion of one physical entry event in which the same material
+      participant displaces across the boundary of the same contextual physical region,
+      from its exterior before the crossing to its interior at culmination. Both spatial
+      phases use the same region, relevant participant extent and spatial frame. The
+      exterior and interior relations are internal event phases, not simultaneous
+      assertions or independent claims about speech time. The mover displacement constitutes
+      this crossing; an unrelated movement plus a location change, a changed region
+      interpretation or stationary enclosure by an expanding region is insufficient.
+      Boundary contact may occur during the transition. No prescribed route, locomotion
+      manner, conscious intention, permission, ownership, custody or continued presence
+      after culmination is asserted.
+    excludes:
+    - Being inside throughout, approaching without crossing or arrival at an exterior
+      doorstep
+    - Different participants, regions, frames or extent criteria in the two phases
+    - Stationary enclosure or a redefined boundary without the required mover displacement
+    - Entry of data, registration for a competition or other nonspatial senses
+    - Completion, past tense and runtime state treated as interchangeable
+  compound_id: CMP:a3244e0195aa8c228dd0af8c
+  content_digest: a3244e0195aa8c228dd0af8cec947b7ed958d7d9c6cd68f6180db5fd71b52fcb
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: completed physical entry
+  english_glosses:
+  - completed physical entry
+  invariant_definition: Completion of one physical entry event in which the same material
+    participant displaces across the boundary of the same contextual physical region,
+    from its exterior before the crossing to its interior at culmination. Both spatial
+    phases use the same region, relevant participant extent and spatial frame. The
+    exterior and interior relations are internal event phases, not simultaneous assertions
+    or independent claims about speech time. The mover displacement constitutes this
+    crossing; an unrelated movement plus a location change, a changed region interpretation
+    or stationary enclosure by an expanding region is insufficient. Boundary contact
+    may occur during the transition. No prescribed route, locomotion manner, conscious
+    intention, permission, ownership, custody or continued presence after culmination
+    is asserted.
+  boundaries:
+    includes: Completion of one physical entry event in which the same material participant
+      displaces across the boundary of the same contextual physical region, from its
+      exterior before the crossing to its interior at culmination. Both spatial phases
+      use the same region, relevant participant extent and spatial frame. The exterior
+      and interior relations are internal event phases, not simultaneous assertions
+      or independent claims about speech time. The mover displacement constitutes
+      this crossing; an unrelated movement plus a location change, a changed region
+      interpretation or stationary enclosure by an expanding region is insufficient.
+      Boundary contact may occur during the transition. No prescribed route, locomotion
+      manner, conscious intention, permission, ownership, custody or continued presence
+      after culmination is asserted.
+    excludes: Being inside throughout, approaching without crossing or arrival at
+      an exterior doorstep; Different participants, regions, frames or extent criteria
+      in the two phases; Stationary enclosure or a redefined boundary without the
+      required mover displacement; Entry of data, registration for a competition or
+      other nonspatial senses; Completion, past tense and runtime state treated as
+      interchangeable
+  collision_audit: reviews/spatial_entry_foundation.md; displacement plus version-pinned
+    exterior/interior phases requires explicit same-event and boundary-crossing convention.
+  confidence: high
+  approval_record: migrations/physical_entry_2026_11_04.yaml
+  approval_basis: Author semantic review under the user-directed translator completion
+    goal; not independent linguistic validation.
+  examples:
+    ordinary: Nora entered the archive.
+    technical: Same-argument constraints preserve mover and region across both internal
+      phases and the displacement head.
+    future_compound: Reuse this exact event under permission, possibility and manner-specific
+      entry.
+    counterexample: Nora arrives at the doorstep but remains outside.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: a3244e0195aa8c228dd0af8cec947b7ed958d7d9c6cd68f6180db5fd71b52fcb
 - architecture_version: '1.0'
   compound_id: CMP:a7fc0ca38a6f95a40cdb87b1
   content_digest: a7fc0ca38a6f95a40cdb87b1966435f90b824e57edd04c7cdc8e76beedcdacfb

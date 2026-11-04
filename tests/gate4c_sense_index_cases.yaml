@@ -1,8 +1,8 @@
 ---
 metadata:
   version: 1.0.0
-  sense_count: 469
-  lemma_count: 452
+  sense_count: 470
+  lemma_count: 453
 exact_atom_labels:
 - input: continuous self
   expected_route: atom
@@ -1103,6 +1103,9 @@ exact_compound_labels:
 - input: dormant program
   expected_route: compound
   expected_target: CMP:9e8b36f50570a0c3c362a968
+- input: completed physical entry
+  expected_route: compound
+  expected_target: CMP:a3244e0195aa8c228dd0af8c
 - input: composite artifact
   expected_route: compound
   expected_target: CMP:a7fc0ca38a6f95a40cdb87b1

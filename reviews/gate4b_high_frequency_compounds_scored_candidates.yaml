@@ -4398,3 +4398,126 @@ reviews:
     decision: rejected
   recommendation: approve explicit_spatial_convention
   confidence: high
+- compound_id: CMP:a3244e0195aa8c228dd0af8c
+  display_title: completed physical entry
+  current_choice_reason: reviews/spatial_entry_foundation.md; author judgments, not
+    independent validation.
+  candidates:
+  - candidate_id: explicit_entry_convention
+    direction: Preserve both spatial phases, same participant and same region, linked
+      to one completed displacement.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-0-before
+        kind: compound_ref
+        compound_id: CMP:cc6d19387b62013464e0e850
+        definition_version: 1.0.0
+      - node_id: q-1-after
+        kind: compound_ref
+        compound_id: CMP:6ccc77b4b3aa69bb010849a4
+        definition_version: 1.0.0
+      - node_id: s-actor
+        kind: slot
+        slot_name: entering_participant
+        slot_type: entity
+      - node_id: s-region
+        kind: slot
+        slot_name: entered_region
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MOV:120
+      edges:
+      - type: qualifies
+        from: q-0-before
+        to: h
+      - type: qualifies
+        from: q-1-after
+        to: h
+      - type: fills_role
+        from: s-actor
+        to: h
+        role: actor
+      - type: fills_role
+        from: s-region
+        to: h
+        role: environment
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: completed_physical_entry
+        sound_code: 29
+        added_definition: Completion of one physical entry event in which the same
+          material participant displaces across the boundary of the same contextual
+          physical region, from its exterior before the crossing to its interior at
+          culmination. Both spatial phases use the same region, relevant participant
+          extent and spatial frame. The exterior and interior relations are internal
+          event phases, not simultaneous assertions or independent claims about speech
+          time. The mover displacement constitutes this crossing; an unrelated movement
+          plus a location change, a changed region interpretation or stationary enclosure
+          by an expanding region is insufficient. Boundary contact may occur during
+          the transition. No prescribed route, locomotion manner, conscious intention,
+          permission, ownership, custody or continued presence after culmination is
+          asserted.
+        excludes:
+        - Being inside throughout, approaching without crossing or arrival at an exterior
+          doorstep
+        - Different participants, regions, frames or extent criteria in the two phases
+        - Stationary enclosure or a redefined boundary without the required mover
+          displacement
+        - Entry of data, registration for a competition or other nonspatial senses
+        - Completion, past tense and runtime state treated as interchangeable
+      binding_constraints:
+      - relation: same_argument
+        slot_paths:
+        - - q-0-before
+          - s-bearer
+        - - q-1-after
+          - s-bearer
+        - - s-actor
+      - relation: same_argument
+        slot_paths:
+        - - q-0-before
+          - s-region
+        - - q-1-after
+          - s-region
+        - - s-region
+  - candidate_id: arrival_only
+    direction: Arrival at an exterior target does not entail entry.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 48
+    decision: rejected
+  - candidate_id: state_conjunction
+    direction: Exterior and interior without phase/event linkage lose the transition.
+    scores:
+      atomicity: 5
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 32
+    decision: rejected
+  recommendation: approve explicit_entry_convention
+  confidence: high

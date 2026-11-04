@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 469
-  lemma_count: 452
+  sense_count: 470
+  lemma_count: 453
   canonical_atom_senses: 324
-  canonical_compound_senses: 61
+  canonical_compound_senses: 62
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: e549833ca76bda2580db74811f3d2ccfe0d85556310d4d982ed6c00e3890d449
+  compound_dictionary_fingerprint: f4415c2c8fd4ef17646f5967f527c903919a1237f2c3ece4f509fdfdb4fe1db2
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -1633,6 +1633,36 @@ senses:
     event or by a different load; Arrival after unsupported flight or independent
     displacement following release; Receipt, ownership transfer or continued presence
     inferred from arrival
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: completed physical entry
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:a3244e0195aa8c228dd0af8c
+  definition: Completion of one physical entry event in which the same material participant
+    displaces across the boundary of the same contextual physical region, from its
+    exterior before the crossing to its interior at culmination. Both spatial phases
+    use the same region, relevant participant extent and spatial frame. The exterior
+    and interior relations are internal event phases, not simultaneous assertions
+    or independent claims about speech time. The mover displacement constitutes this
+    crossing; an unrelated movement plus a location change, a changed region interpretation
+    or stationary enclosure by an expanding region is insufficient. Boundary contact
+    may occur during the transition. No prescribed route, locomotion manner, conscious
+    intention, permission, ownership, custody or continued presence after culmination
+    is asserted.
+  sense_id: ENS:f6deaa3ce13d4c181de8e4ea
+  display_form: completed physical entry
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Being inside throughout, approaching without crossing or arrival at an exterior
+    doorstep; Different participants, regions, frames or extent criteria in the two
+    phases; Stationary enclosure or a redefined boundary without the required mover
+    displacement; Entry of data, registration for a competition or other nonspatial
+    senses; Completion, past tense and runtime state treated as interchangeable
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
@@ -8972,6 +9002,13 @@ lemma_index:
   completed physical carrying to a destination:
     sense_ids:
     - ENS:b1f0a6f857b639838521a11b
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  completed physical entry:
+    sense_ids:
+    - ENS:f6deaa3ce13d4c181de8e4ea
     requires_disambiguation: false
     direct_target_count: 1
     routes:
