@@ -47,15 +47,17 @@ const elements=Object.fromEntries(['sourceInput','output','results','resolutionP
 const input='Pip carries the heavy box toward Ada.';elements.sourceInput.value=input;
 const state={mode:'english',wordSelections:new Map(),resolution:{old:true}};let shown=null,calls=0;
 const ctx=vm.createContext({state,$:id=>elements[id],document:{createElement:element},parseNamedSentence,sentenceTemplate:async()=>template,composeNamedSentence:async(...args)=>{calls++;return composeNamedSentence(...args)},showResolution:async r=>shown=r,toast(){}});
-const show=()=>{vm.runInContext(handler+';showCarryingViewpoint('+JSON.stringify(input)+');',ctx);const card=elements.candidateList.children.at(-1);return {card,view:card.children[1].children[0],threshold:card.children[3].children[0],status:card.children[5],button:card.children[6]};};
+const show=()=>{vm.runInContext(handler+';showCarryingViewpoint('+JSON.stringify(input)+');',ctx);const card=elements.candidateList.children.at(-1);return {card,view:card.children[1].children[0],threshold:card.children[3].children[0],standardMode:card.children[5].children[0],status:card.children[6],button:card.children[7]};};
 let ui=show();assert.equal(state.resolution,null);assert.equal(calls,0);assert.equal(ui.view.value,'');assert.equal(ui.threshold.value,'');
 await ui.button.click();assert.equal(shown,null);assert(ui.status.textContent.includes('Choose'));
 ui.view.value='habitual';await ui.button.click();assert.equal(shown,null);assert(ui.status.textContent.includes('threshold'));
 ui.threshold.value='20';await ui.button.click();assert.equal(shown.selected_viewpoint,'habitual');assert.equal(shown.selected_standard.threshold,'20');
-for(const change of ['viewpoint','standard','input','detached']){
+ui=show();ui.view.value='ongoing';ui.standardMode.value='contextual';ui.standardMode.change();assert(ui.threshold.disabled);await ui.button.click();assert.equal(shown.selected_standard.kind,'contextual');
+assert.equal(shown.semantic_ir.nodes.find(n=>n.property_restriction).property_restriction.norm,'heavy');
+for(const change of ['viewpoint','standard','standardMode','input','detached']){
  ui=show();ui.view.value='ongoing';ui.threshold.value='20';const newer={newer:change};shown=newer;state.resolution=newer;
  let finish;ctx.sentenceTemplate=()=>new Promise(resolve=>finish=resolve);const pending=ui.button.click();
- if(change==='viewpoint')ui.view.value='bounded';if(change==='standard')ui.threshold.value='30';if(change==='input')elements.sourceInput.value='Changed';if(change==='detached')ui.card.isConnected=false;
+ if(change==='standardMode')ui.standardMode.value='contextual';if(change==='viewpoint')ui.view.value='bounded';if(change==='standard')ui.threshold.value='30';if(change==='input')elements.sourceInput.value='Changed';if(change==='detached')ui.card.isConnected=false;
  finish(template);await pending;assert.equal(shown,newer);assert.equal(state.resolution,newer);elements.sourceInput.value=input;
 }
 ui=show();ui.view.value='habitual';ui.threshold.value='20';let fail;ctx.sentenceTemplate=()=>new Promise((_,reject)=>fail=reject);const pending=ui.button.click();ui.card.isConnected=false;const newer={newer:'failure'};state.resolution=newer;fail(new Error('late failure'));await pending;assert.equal(state.resolution,newer);assert.equal(ui.status.textContent,'');

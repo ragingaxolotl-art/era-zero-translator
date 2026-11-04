@@ -78,7 +78,7 @@ function showPronounReferents(input,plan){
   if(property){
     const texture=dimension==='surface_texture',mass=dimension==='mass',luminance=dimension==='luminance',propertyLabel=texture?'surface texture':luminance?'luminance':mass?'mass':'temperature';
     const note=document.createElement('p');note.textContent=`For “${parsed.adjective}”, select the physical ${propertyLabel} meaning. Contextual standards stay local to this sentence; no shared numerical cutoff is inferred.`;card.append(note);
-    if(!parsed.nominalProperty)standardMode=select(card,`standard type`,texture?[['contextual','Physical texture at the contextual surface region and scale']]:[['numeric','Numerical threshold'],['contextual','Contextual standard; no number']]);
+    if(!parsed.nominalProperty||mass)standardMode=select(card,`standard type`,texture?[['contextual','Physical texture at the contextual surface region and scale']]:[['numeric','Numerical threshold'],['contextual','Contextual standard; no number']]);
     if(!texture){
     const label=document.createElement('label');label.textContent=`${propertyLabel} threshold`;threshold=document.createElement('input');threshold.type='text';threshold.inputMode='decimal';threshold.maxLength=1000;threshold.placeholder='Enter your numerical threshold';label.append(threshold);card.append(label);
     scale=select(card,`${luminance?'luminance unit':mass?'mass unit':'temperature scale'}`,luminance?[['candela_per_square_meter','Candelas per square metre (cd/m²)']]:mass?[['kilogram','Kilograms'],['gram','Grams']]:[['celsius','Degrees Celsius'],['kelvin','Kelvins']]);
@@ -118,7 +118,7 @@ function showClauseInterpretations(input,plan){
     if(property){
       const texture=dimension==='surface_texture',mass=dimension==='mass',luminance=dimension==='luminance',propertyLabel=texture?'surface texture':luminance?'luminance':mass?'mass':'temperature';
       const note=document.createElement('p');note.textContent=`For “${parsed.adjective}”, select the physical ${propertyLabel} meaning. Contextual standards stay local to this clause; no shared numerical cutoff is inferred.`;section.append(note);
-      if(!parsed.nominalProperty)standardMode=select(section,`Clause ${index+1} standard type`,texture?[['contextual','Physical texture at the contextual surface region and scale']]:[['numeric','Numerical threshold'],['contextual','Contextual standard; no number']]);
+      if(!parsed.nominalProperty||mass)standardMode=select(section,`Clause ${index+1} standard type`,texture?[['contextual','Physical texture at the contextual surface region and scale']]:[['numeric','Numerical threshold'],['contextual','Contextual standard; no number']]);
       if(!texture){
       const label=document.createElement('label');label.textContent=`Clause ${index+1} ${propertyLabel} threshold`;threshold=document.createElement('input');threshold.type='text';threshold.inputMode='decimal';threshold.maxLength=1000;threshold.placeholder='Enter your numerical threshold';label.append(threshold);section.append(label);
       scale=select(section,`Clause ${index+1} ${luminance?'luminance unit':mass?'mass unit':'temperature scale'}`,luminance?[['candela_per_square_meter','Candelas per square metre (cd/m²)']]:mass?[['kilogram','Kilograms'],['gram','Grams']]:[['celsius','Degrees Celsius'],['kelvin','Kelvins']]);
@@ -168,19 +168,22 @@ function showCarryingViewpoint(input){
     for(const [value,text] of [['','Choose a destination meaning'],['spatial','Spatial destination; no receipt asserted'],['custody_delivery','Carry and transfer physical custody to the recipient']]){const option=document.createElement('option');option.value=value;option.textContent=text;destination.append(option)}
     destination.value='';label.append(destination);card.append(label);
   }
-  let threshold,scale;
+  let threshold,scale,standardMode;
   if(needsMass){
-    const explanation=document.createElement('p');explanation.textContent=`Also choose the mass standard for “${parsed.adjective}”: ${parsed.adjective==='heavy'?'above':'below'} a standard. ${parsed.nominalProperty?'Supply a numerical threshold.':'Choose a contextual standard without a number, or supply a numerical threshold.'} Weight force, effort and brightness need different meanings.`;
+    const explanation=document.createElement('p');explanation.textContent=`Also choose the mass standard for “${parsed.adjective}”: ${parsed.adjective==='heavy'?'above':'below'} a standard. Choose a contextual standard without a number, or supply a numerical threshold. Weight force, effort and brightness need different meanings.`;
     const thresholdLabel=document.createElement('label');thresholdLabel.textContent='Mass threshold';threshold=document.createElement('input');threshold.type='text';threshold.inputMode='decimal';threshold.maxLength=1000;threshold.placeholder='Enter your contextual threshold';thresholdLabel.append(threshold);
     const scaleLabel=document.createElement('label');scaleLabel.textContent='Mass unit';scale=document.createElement('select');for(const [value,text] of [['kilogram','Kilograms'],['gram','Grams']]){const option=document.createElement('option');option.value=value;option.textContent=text;scale.append(option)}scale.value='kilogram';scaleLabel.append(scale);
     card.append(explanation,thresholdLabel,scaleLabel);
+    const standardLabel=document.createElement('label');standardLabel.textContent='Mass standard type';standardMode=document.createElement('select');
+    for(const [value,text] of [['numeric','Numerical threshold'],['contextual','Contextual standard; no number']]){const option=document.createElement('option');option.value=value;option.textContent=text;standardMode.append(option)}
+    standardMode.value='numeric';standardMode.addEventListener('change',()=>{threshold.disabled=scale.disabled=standardMode.value==='contextual'});standardLabel.append(standardMode);card.append(standardLabel);
   }
   const status=document.createElement('p');status.setAttribute('role','status');
   const button=document.createElement('button');button.textContent='Translate with these meanings';
   button.addEventListener('click',async()=>{
     if(card.isConnected===false||$('sourceInput').value.trim()!==input||state.mode==='controlled')return;
-    const chosen=viewpoint.value,chosenEntry=entrySense?.value,chosenDestination=destination?.value,standard=needsMass?{dimension:'mass',threshold:threshold.value.trim(),scale:scale.value}:undefined;
-    const current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled'&&viewpoint.value===chosen&&entrySense?.value===chosenEntry&&destination?.value===chosenDestination&&(!needsMass||(threshold.value.trim()===standard.threshold&&scale.value===standard.scale));
+    const chosen=viewpoint.value,chosenEntry=entrySense?.value,chosenDestination=destination?.value,chosenStandardMode=standardMode?.value,standard=needsMass?(chosenStandardMode==='contextual'?{kind:'contextual',dimension:'mass'}:{dimension:'mass',threshold:threshold.value.trim(),scale:scale.value}):undefined;
+    const current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled'&&viewpoint.value===chosen&&entrySense?.value===chosenEntry&&destination?.value===chosenDestination&&(!needsMass||(standardMode.value===chosenStandardMode&&(chosenStandardMode==='contextual'||(threshold.value.trim()===standard.threshold&&scale.value===standard.scale))));
     button.disabled=true;status.textContent='';
     try{
       const composed=await composeNamedSentence(input,await sentenceTemplate(parsed.predicate),{...(parsed.requiredViewpoint?{viewpoint:chosen}:{}),...(parsed.requiredDestination?{destination:chosenDestination}:{}),...(needsMass?{interpretation:'mass_standard',standard}:needsEntry?{interpretation:chosenEntry}:{})});

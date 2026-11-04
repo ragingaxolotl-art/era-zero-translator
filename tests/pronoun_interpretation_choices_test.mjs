@@ -43,3 +43,12 @@ for(const changed of ['referent','meaning']){
  ctx.showPronounReferents(input,pronounInterpretationPlan(input));card=elements.candidateList.children.at(-1);const reference=card.children[0].children[0],meaning=card.children[1].children[0];reference.value='this lamp';meaning.value='luminance_comparison';let finish;ctx.sentenceTemplate=()=>new Promise(resolve=>finish=resolve);const old=shown,work=card.children.at(-1).click();if(changed==='referent')reference.value='the lantern';else meaning.value='';finish(await load('MAT:010'));await work;assert.equal(shown,old);
 }
 console.log(`PASS ${results.length} pronoun-plus-interpretation cases with exact named and Ruby/MIDI parity; option/binding snapshots, dummy-it exclusion and actual UI combined-choice/stale-result checks.`);
+const modified='They are carrying the heavy box toward Ada.';
+elements.sourceInput.value=modified;ctx.sentenceTemplate=load;shown=null;
+ctx.showPronounReferents(modified,pronounInterpretationPlan(modified));card=elements.candidateList.children.at(-1);
+card.children[0].children[0].value='Nora';card.children[0].children[1].value='singular';
+const standardMode=card.children.find(n=>n.textContent==='standard type').children[0];standardMode.value='contextual';standardMode.change();
+await card.children.at(-1).click();assert(shown);assert.equal(shown.selected_standard.kind,'contextual');
+assert.equal(shown.semantic_ir.nodes.find(n=>n.property_restriction).property_restriction.norm,'heavy');
+assert.equal(shown.resolved_pronouns[0].referent,'Nora');
+console.log('PASS singular they binding and contextual noun modifier in the same UI flow.');

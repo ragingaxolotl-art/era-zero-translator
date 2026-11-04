@@ -60,4 +60,8 @@ destination-carrying meaning through the shared decoder with only the WAV path
 as input; see `reports/contextual_nominal_mass_acoustic_probe.json`. This is not
 physical recording evidence. The standalone adjective-choice UI now exposes the
 contextual noun option, with a handler test and changed-input guard. Combined
-viewpoint and multi-clause choice screens still need equivalent UI integration.
+viewpoint, per-clause and explicit-pronoun screens now expose the same contextual
+option. Handler tests cover independent clause standards, singular they binding,
+disabled numeric inputs and invalidation when the standard mode changes while
+a template is loading. These are executable handler tests, not live-browser
+layout or listening evidence.

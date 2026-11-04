@@ -122,3 +122,11 @@ for(const stale of ['input','detached']){
  release();await pending;assert.equal(shown,null);
 }
 console.log('PASS mixed texture/luminance UI has no spurious numerical texture controls and rejects stale input/detached results.');
+// Independently choose contextual mass restrictions for two modified nouns.
+elements.sourceInput.value=input;ctx.sentenceTemplate=load;shown=null;
+ui=show();fill(ui);
+for(const [i,fields] of ui.fields.entries()){const mode=fields[`Clause ${i+1} standard type`];assert(mode);mode.value='contextual';mode.change();assert(fields[`Clause ${i+1} mass threshold`].disabled);}
+await ui.button.click();assert(shown);
+assert(shown.selected_clauses.every(c=>c.options.standard.kind==='contextual'));
+assert.equal(shown.semantic_ir.nodes.filter(n=>n.property_restriction?.standard==='contextual').length,2);
+console.log('PASS per-clause contextual noun restrictions remain independently selected.');

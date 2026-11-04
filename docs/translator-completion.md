@@ -32,8 +32,10 @@ preference alternatives and painful/more-painful treatment semantics remain
 unfinished. See `tests/contextual_nominal_mass_test.mjs`; this bounded extension does not
 establish generic modifier coverage. Two clean synthetic WAVs now pass shared
 audio-only decoding; physical recordings remain untested. The standalone
-adjective-choice handler exposes the contextual noun option; combined choice
-screens still need integration.
+adjective-choice, viewpoint, per-clause and explicit-pronoun handlers expose the
+contextual noun option. Targeted handler tests include singular they, independent
+clause standards and stale standard-mode results. Live browser validation remains
+open.
 
 Mixed cognitive conjunction now composes complete curiosity, understanding,
 route-learning and comprehension-acquisition clauses while preserving each
