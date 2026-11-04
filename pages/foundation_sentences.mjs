@@ -55,7 +55,7 @@ async function composeAtDepth(input,authority,records,loadTemplate,allowDraft,de
   ir.nodes.push(await reference(parsed.target,'preferred',true),await reference(parsed.standard,'standard',true));
   for(const [id,role] of [['preferred','target'],['standard','comparison_standard']])ir.edges.push({edge_id:id,type:'fills_role',from:id,to:'p',role});
  }else{
-  const infinitiveBody='(?:care for .+|prefer .+ to .+|be (?:not )?able to move(?: \\[[012]\\])?)';
+  const infinitiveBody='(?:care for .+|prefer .+ to .+|be (?:not )?(?:able to move|happy|hungry|thirsty|tired)(?: \\[[012]\\])?)';
   const infinitive=parsed.content.match(new RegExp(`^(?:(${HOLDER}) )?(not )?to (not )?(${infinitiveBody})$`));
   const controlled=!!infinitive&&!infinitive[1];
   let content=parsed.content;

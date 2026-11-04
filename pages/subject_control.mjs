@@ -1,15 +1,19 @@
 // Reviewed subject roles; a new predicate needs an explicit binding review.
-const SUBJECTS=Object.freeze({'LIF:211':{type:'atom',role:'actor'},'MOV:201':{type:'atom',role:'bearer'},'FND:018dd25d713dff83661a76a4':{type:'foundation',role:'experiencer'}});
+const SUBJECTS=Object.freeze({'CMP:c58b38d03fab27880ac3e1f0':{type:'compound',role:'experiencer',slot:['h','h','s-experiencer']},'CMP:748be1f0ce7ceb2963716292':{type:'compound',role:'experiencer',slot:['h','h','s-experiencer']},'CMP:60cd46250d183e3105b7250a':{type:'compound',role:'experiencer',slot:['h','h','s-experiencer']},'CMP:3c13b9c619d95f1c40ea5da5':{type:'compound',role:'experiencer',slot:['h','s-experiencer']},'LIF:211':{type:'atom',role:'actor'},'MOV:201':{type:'atom',role:'bearer'},'FND:018dd25d713dff83661a76a4':{type:'foundation',role:'experiencer'}});
 export function validateSubjectControl(ir){
  const nodes=new Map(ir.nodes.map(n=>[n.node_id,n])),edges=ir.edges;
  for(const n of ir.nodes.filter(n=>n.kind==='reference'&&n.reference_type==='desire_subject')){
   const fail=()=>{throw new Error('Invalid desired-subject identity.');};
   if(n.value_type!=='entity'||Object.keys(n).some(k=>!['node_id','kind','reference_type','referent_id','value_type'].includes(k))||!ir.discourse_constraints?.declared_referents?.includes(n.referent_id))fail();
   const links=edges.filter(e=>e.from===n.node_id),role=links.find(e=>e.type==='fills_role'),identity=links.find(e=>e.type==='corefers_with');
-  if(links.length!==2||!role||!identity)fail();
-  const predicate=nodes.get(role.to),holder=nodes.get(identity.to);
+  const bindings=ir.nodes.flatMap(p=>(p.compound_bindings||[]).filter(b=>b.argument_id===n.node_id).map(binding=>({predicate:p,binding})));
+  if(!identity||links.length!==(role?2:1)||bindings.length!==(role?0:1))fail();
+  const predicate=role?nodes.get(role.to):bindings[0].predicate,holder=nodes.get(identity.to);
   const subject=SUBJECTS[predicate?.target_id];
-  if(!subject||predicate.target_type!==subject.type||role.role!==subject.role||!['phonemic_reference','deictic_reference'].includes(holder?.kind)||holder.referent_id!==n.referent_id)fail();
+  if(!subject||predicate.target_type!==subject.type||!['phonemic_reference','deictic_reference'].includes(holder?.kind)||holder.referent_id!==n.referent_id)fail();
+  if(subject.type==='compound'){
+   if(role||JSON.stringify(bindings[0].binding.slot_path)!==JSON.stringify(subject.slot))fail();
+  }else if(!role||role.role!==subject.role)fail();
   let id=predicate.node_id;const seen=new Set();
   while(nodes.get(id)?.kind!=='clause'){
    if(seen.has(id))fail();seen.add(id);

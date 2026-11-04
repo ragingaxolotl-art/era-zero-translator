@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module EraZeroSubjectControl
-  SUBJECTS={'LIF:211'=>['atom','actor'],'MOV:201'=>['atom','bearer'],'FND:018dd25d713dff83661a76a4'=>['foundation','experiencer']}.freeze
+  SUBJECTS={'CMP:c58b38d03fab27880ac3e1f0'=>['compound','experiencer',%w[h h s-experiencer]],'CMP:748be1f0ce7ceb2963716292'=>['compound','experiencer',%w[h h s-experiencer]],'CMP:60cd46250d183e3105b7250a'=>['compound','experiencer',%w[h h s-experiencer]],'CMP:3c13b9c619d95f1c40ea5da5'=>['compound','experiencer',%w[h s-experiencer]],'LIF:211'=>['atom','actor'],'MOV:201'=>['atom','bearer'],'FND:018dd25d713dff83661a76a4'=>['foundation','experiencer']}.freeze
   module_function
   def validate!(ir)
     nodes=ir['nodes'].to_h{|n|[n['node_id'],n]};edges=ir['edges']
@@ -8,10 +8,16 @@ module EraZeroSubjectControl
       fail_control=-> {raise ArgumentError,'Invalid desired-subject identity.'}
       fail_control.call unless n['value_type']=='entity' && (n.keys-%w[node_id kind reference_type referent_id value_type]).empty? && Array(ir.dig('discourse_constraints','declared_referents')).include?(n['referent_id'])
       links=edges.select{|e|e['from']==n['node_id']};role=links.find{|e|e['type']=='fills_role'};identity=links.find{|e|e['type']=='corefers_with'}
-      fail_control.call unless links.length==2&&role&&identity
-      predicate=nodes[role['to']];holder=nodes[identity['to']]
+      bindings=nodes.values.flat_map{|p|Array(p['compound_bindings']).select{|b|b['argument_id']==n['node_id']}.map{|b|[p,b]}}
+      fail_control.call unless identity&&links.length==(role ? 2 : 1)&&bindings.length==(role ? 0 : 1)
+      predicate=role ? nodes[role['to']] : bindings[0][0];holder=nodes[identity['to']]
       subject=predicate&&SUBJECTS[predicate['target_id']]
-      fail_control.call unless subject&&predicate['target_type']==subject[0]&&role['role']==subject[1]&&holder&&%w[phonemic_reference deictic_reference].include?(holder['kind'])&&holder['referent_id']==n['referent_id']
+      fail_control.call unless subject&&predicate['target_type']==subject[0]&&holder&&%w[phonemic_reference deictic_reference].include?(holder['kind'])&&holder['referent_id']==n['referent_id']
+      if subject[0]=='compound'
+        fail_control.call unless !role&&bindings[0][1]['slot_path']==subject[2]
+      else
+        fail_control.call unless role&&role['role']==subject[1]
+      end
       id=predicate['node_id'];seen=[]
       until nodes[id]['kind']=='clause'
         fail_control.call if seen.include?(id);seen<<id

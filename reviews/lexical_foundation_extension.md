@@ -269,3 +269,26 @@ cover deictics, nearest-holder binding under nested desire, candidate bundles an
 wrong-role rejection in both validators. A separately sounded same-name holder
 remains musically distinct. Foundation definitions, addresses, roots, and draft
 opt-in status are unchanged.
+
+### Desired felt conditions reuse compound dependencies
+
+“I want to be happy,” “Nora wants not to be tired,” and the corresponding hunger
+and thirst forms now embed the existing felt-condition compounds under desire.
+The subject pointer fills the exact nested experiencer slot; it cannot bind an
+arbitrary slot or a different predicate. Compound definitions, conventional
+meaning codes and root forms are unchanged. Inner negation and runtime remain
+separate from the desire's own negation and runtime, and the felt state is not
+asserted to hold. Explicitly named experiencers remain independent references.
+
+The shared felt-condition inverse now reads its validated compound subtree both
+standalone and inside intensional content. Seventy-two combinations match full
+Ruby/browser formals and MIDI, and independent decoding recovers the feeling,
+conventional dependency chain, bound experiencer and separate states. Wrong slot
+paths reject in both validators. Bundle and strict animation checks retain the
+reference. Figurative hunger, object-directed happiness and tired-of expressions
+are outside these meanings.
+
+This exposed duplicate rendering of compound-bound references whose only outgoing
+edge was an identity link. Both renderers now exclude `corefers_with` from the
+edges that make a bound argument independently sounded. Identity remains in the
+IR; the reference sounds once at its compound slot.

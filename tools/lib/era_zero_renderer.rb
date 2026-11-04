@@ -278,7 +278,7 @@ module EraZeroRenderer
     lexical_events = []
     lexical_nodes = ir.fetch("nodes").select { |node| %w[lexical_occurrence phonemic_reference deictic_reference].include?(node["kind"]) || (node["kind"] == "reference" && node["reference_type"] == "desire_subject") }
     bound_ids = lexical_nodes.flat_map { |node| node.fetch("compound_bindings", []).map { |binding| binding.fetch("argument_id") } }.to_set
-    independent_ids = ir.fetch("edges").map { |edge| edge["from"] }.to_set
+    independent_ids = ir.fetch("edges").reject { |edge| edge["type"] == "corefers_with" }.map { |edge| edge["from"] }.to_set
     lexical_nodes.sort_by { |node| node["node_id"] }.each do |node|
       next if bound_ids.include?(node["node_id"]) && !independent_ids.include?(node["node_id"])
       lexical_events.concat(occurrence_events(node, ir, atoms, compounds, anchor_midi, register_for(node["node_id"], ir), foundations: foundations, allow_draft_foundations: allow_draft_foundations))

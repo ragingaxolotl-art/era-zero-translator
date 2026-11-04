@@ -14,7 +14,18 @@ export function decodeFeltConditionMidi(bytes,atoms){
  const message='Unsupported or malformed felt-condition music.',fail=()=>{throw new Error(message);};
  const {observed,marker,exactRoot,role,unwrapScopes}=strictSemanticReader(bytes,atoms,message);
  const {current,scopes}=unwrapScopes(node=>/^convention_(11|12|13|14|15|16|17)_open$/.test(node.marker||''));
- if(current.length!==1)fail();let node=current[0];
+ if(current.length!==1)fail();
+ const meaning=readFeltConditionTree(current[0],{marker,exactRoot,role});
+ return {profile:'EZFELT-INVERSE-1',speech_act:observed.speech_act,scopes,...meaning,
+  limitations:['The felt predicate remains inside the recovered scope and speech act; negation, questions and future scope do not assert it presently holds.',
+   'The subjective state does not diagnose a physical deficit, illness or objectively unavailable capacity.',
+   'Specific figurative, evaluative and object-directed senses require other conventions.',
+   'This bounded MIDI inverse does not recover original spelling, external identity, general discourse or arbitrary recorded audio.']};
+}
+
+// Shared tree interpretation for standalone and intensional felt conditions.
+export function readFeltConditionTree(node,{marker,exactRoot,role},readExperiencer){
+ const fail=()=>{throw new Error('Unsupported or malformed felt-condition music.');};
  const code=Number(node.marker?.match(/^convention_(\d+)_open$/)?.[1]),profile=profiles[code];if(!profile)fail();
  for(const expected of profile.chain){
   if(!marker(node,`convention_${expected}_open`))fail();
@@ -26,13 +37,9 @@ export function decodeFeltConditionMidi(bytes,atoms){
  if(node.children?.length!==3)fail();
  const [participant,conscious,head]=node.children,runtime=head?.runtime_state;
  if(![0,1,2].includes(runtime))fail();exactRoot(conscious,'LIF:001','middle',null);exactRoot(head,'MIN:001','middle',runtime);
- return {profile:'EZFELT-INVERSE-1',speech_act:observed.speech_act,scopes,predicate:profile.predicate,
-  runtime_state:runtime,participants:{experiencer:role(participant,'experiencer','middle')},convention_codes:[...profile.chain],
+ return {predicate:profile.predicate,
+  runtime_state:runtime,participants:{experiencer:readExperiencer?readExperiencer(participant):role(participant,'experiencer','middle')},convention_codes:[...profile.chain],
   meaning:{consciously_felt_self_condition:true,focal_self_is_bound_experiencer:true,quality:profile.quality,
    measured_physiological_deficit_asserted:false,care_behavior_asserted:false,intended_action_asserted:false,
-   sleep_or_dormancy_asserted:false,damage_asserted:false},
-  limitations:['The felt predicate remains inside the recovered scope and speech act; negation, questions and future scope do not assert it presently holds.',
-   'The subjective state does not diagnose a physical deficit, illness or objectively unavailable capacity.',
-   'Specific figurative, evaluative and object-directed senses require other conventions.',
-   'This bounded MIDI inverse does not recover original spelling, external identity, general discourse or arbitrary recorded audio.']};
+   sleep_or_dormancy_asserted:false,damage_asserted:false}};
 }
