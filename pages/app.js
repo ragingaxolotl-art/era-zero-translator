@@ -72,7 +72,7 @@ function showClauseInterpretations(input,plan){
   plan.clauses.forEach(({text,parsed},index)=>{
     const section=document.createElement('fieldset'),title=document.createElement('legend');title.textContent=`Clause ${index+1}: ${text}`;section.append(title);
     let view,destination,interpretation,threshold,scale,standardMode;
-    if(parsed.requiredViewpoint)view=select(section,`Clause ${index+1} carrying meaning`,[['','Choose a meaning'],['habitual','A recurring practice'],['ongoing','An unfolding action'],['bounded','One narrated episode']]);
+    if(parsed.requiredViewpoint)view=select(section,`Clause ${index+1} ${parsed.viewpointActivity||'carrying'} meaning`,[['','Choose a meaning'],['habitual','A recurring practice'],['ongoing','An unfolding action'],['bounded','One narrated episode']]);
     if(parsed.requiredDestination){destination=select(section,`Clause ${index+1} meaning of to`,[['','Choose a destination meaning'],['spatial','Spatial destination; no receipt asserted'],['custody_delivery','Carry and transfer physical custody to the recipient']]);const note=document.createElement('p');note.textContent='Custody delivery means carrying arrival culminates in transfer from the carrier to the recipient. It does not mean ownership or willing acceptance.';section.append(note)}
     const property=['mass_standard','thermal_standard','luminance_standard','texture_standard'].includes(parsed.requiredInterpretation);
     const dimension=({mass_standard:'mass',thermal_standard:'thermodynamic_temperature',luminance_standard:'luminance',texture_standard:'surface_texture'})[parsed.requiredInterpretation];
@@ -107,10 +107,10 @@ function showCarryingViewpoint(input){
   const parsed=parseNamedSentence(input),needsMass=parsed.requiredInterpretation==='mass_standard';
   state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
   $('output').classList.add('hidden');$('phraseCoverage').classList.add('hidden');$('resolutionPanel').classList.add('hidden');$('results').classList.remove('hidden');$('candidateList').innerHTML='';
-  $('decisionSummary').textContent='Choose the intended carrying meaning before generating sound.';
+  $('decisionSummary').textContent=`Choose the intended ${parsed.viewpointActivity||'carrying'} meaning before generating sound.`;
   const card=document.createElement('article');card.className='candidate';
   const description=document.createElement('p');description.textContent=parsed.requiredDestination?'Choose arrival at a position or carrying that culminates in transfer of physical custody to the recipient. An unfolding action does not assert completed arrival or transfer.':'A recurring practice, an unfolding action and one narrated episode have different meanings. None automatically means arrival, delivery or a future plan.';
-  const viewpointLabel=document.createElement('label');viewpointLabel.textContent='Carrying meaning';
+  const viewpointLabel=document.createElement('label');viewpointLabel.textContent=parsed.viewpointActivity==='swimming'?'Swimming meaning':'Carrying meaning';
   const viewpoint=document.createElement('select');
   for(const [value,text] of [['','Choose a meaning'],['habitual','A recurring practice'],['ongoing','An unfolding action'],['bounded','One narrated episode']]){const option=document.createElement('option');option.value=value;option.textContent=text;viewpoint.append(option)}
   viewpoint.value='';viewpointLabel.append(viewpoint);card.append(description);if(parsed.requiredViewpoint)card.append(viewpointLabel);

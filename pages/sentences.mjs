@@ -171,6 +171,17 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     if(!inner||inner.calendarDay!==undefined||inner.scopes?.length||inner.speechAct||(day==='tomorrow'&&['thermal_standard','mass_standard','luminance_standard','texture_standard'].includes(inner.requiredInterpretation))||(day==='yesterday'&&inner.speechTime!=='before')||(day==='tomorrow'&&inner.speechTime!==undefined))return null;
     return {...inner,...(day==='yesterday'?{speechTime:undefined}:{}),...(day==='tomorrow'?{requiredInterpretation:'future_assertion',semanticNote:[inner.semanticNote,'Interprets will as a future assertion; promise, intention, and willingness are not inferred.'].filter(Boolean).join(' ')}:{}),calendarDay:{yesterday:'-1',today:'0',tomorrow:'1'}[day],construction:`calendar_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
+  const swimQuestion=speechActs&&String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?swim( across .+)?[?]$`));
+  if(swimQuestion){
+    const inner=parseNamedSentence(`${swimQuestion[1]} ${swimQuestion[2]?'does not swim':'swims'}${swimQuestion[3]||''}.`,depth+1,false);
+    return inner?{...inner,speechAct:'question',explicitInterpretation:String(input).trim()}:null;
+  }
+  const simpleSwimming=String(input).trim().match(new RegExp(`^${participant} (does not swim|do not swim|swims|swim)( across .+)?[.]?$`));
+  if(simpleSwimming){
+    const inner=parseNamedSentence(`${simpleSwimming[1]} is ${simpleSwimming[2].includes('not')?'not ':''}swimming${simpleSwimming[3]||''}`,depth+1,false);
+    if(!inner||!['ongoing_bodily_swimming','ongoing_swimming_across_region'].includes(inner.key)||inner.requiredViewpoint||inner.requiredInterpretation||inner.speechAct||inner.scopes?.length||inner.calendarDay!==undefined||inner.speechTime!==undefined)return null;
+    return {...inner,aspect:undefined,requiredViewpoint:true,viewpointActivity:'swimming',construction:`simple_present_${inner.construction}`,explicitInterpretation:String(input).trim()};
+  }
   const simpleCarrying=String(input).trim().match(new RegExp(`^${participant} (does not carry|do not carry|carries|carry) (.+)$`));
   if(simpleCarrying){
     const inner=parseNamedSentence(`${simpleCarrying[1]} is ${simpleCarrying[2].includes('not')?'not ':''}carrying ${simpleCarrying[3]}`,depth+1);
@@ -376,7 +387,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light|bright|dim|rough|smooth)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|able to move|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|arrive|arrives|arrived|arriving|carry|carries|carried|carrying|support|supporting|custody|acquire|acquired|acquiring|deliver|delivers|delivered|delivering|swimming|happy|sad|hungry|thirsty|tired|temperature|luminance)\b/i.test(String(input))) && !parseNamedSentence(input);
+  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light|bright|dim|rough|smooth)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|able to move|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|arrive|arrives|arrived|arriving|carry|carries|carried|carrying|support|supporting|custody|acquire|acquired|acquiring|deliver|delivers|delivered|delivering|swim|swims|swimming|happy|sad|hungry|thirsty|tired|temperature|luminance)\b/i.test(String(input))) && !parseNamedSentence(input);
 }
 
 // A complete antecedent and a comma establish conditional scope. Without
@@ -507,13 +518,13 @@ export async function composeNamedSentence(input,template,{interpretation,standa
   if(!parsed)throw new Error('The complete sentence does not match this construction.');
   if(parsed.requiredViewpoint){
     if(!['bounded','ongoing','habitual'].includes(viewpoint)){
-      const error=new Error('Choose whether carrying describes one narrated episode, an unfolding action, or a recurring practice.');
-      error.code='carrying_viewpoint_required';throw error;
+      const error=new Error(`Choose whether ${parsed.viewpointActivity||'carrying'} describes one narrated episode, an unfolding action, or a recurring practice.`);
+      error.code=parsed.viewpointActivity==='swimming'?'swimming_viewpoint_required':'carrying_viewpoint_required';throw error;
     }
     parsed.aspect=viewpoint;
     const note={bounded:'Interprets simple-present carrying as one bounded narrated episode in the contextual reference interval, without asserting arrival, delivery or future time.',ongoing:'Interprets simple-present carrying as an unfolding action in the contextual reference interval, without asserting its endpoint.',habitual:'Interprets simple-present carrying as a recurring practice in the contextual reference interval, without asserting a particular occurrence, frequency or schedule.'}[viewpoint];
-    parsed.semanticNote=[parsed.semanticNote,note].filter(Boolean).join(' ');
-  }else if(viewpoint!==undefined)throw new Error('This sentence does not require a carrying viewpoint choice.');
+    parsed.semanticNote=[parsed.semanticNote,parsed.viewpointActivity==='swimming'?({bounded:'One bounded narrated swimming episode; completion of an across-region crossing is not asserted.',ongoing:'An unfolding swimming activity; crossing completion is not asserted.',habitual:'A recurring swimming practice; no particular occurrence, frequency or schedule is asserted.'})[viewpoint]:note].filter(Boolean).join(' ');
+  }else if(viewpoint!==undefined)throw new Error('This sentence does not require a viewpoint choice.');
   if(parsed.requiredDestination){
     if(!['spatial','custody_delivery'].includes(destination)){
       const error=new Error('Choose a spatial destination or carrying-mediated custody delivery reading for “to”.');
