@@ -159,6 +159,14 @@ validation remain open. No original completion gate is closed by these checks.
 
 ## Connected-source revision checkpoint
 
+The subsequent [complete visible revision inventory](../reviews/connected_revision_inventory.md)
+fetched all 21 connector-visible revisions of the language document. Its report
+separates 287 whitespace-normalized current definition matches, 28 apostrophe
+matches, and nine MOV definitions approved by reference and exactly matched to the
+repository packet/migration. No root meaning changed. This supersedes the five-
+revision sampling limitation below, but does not recover the original conversation
+ledger or establish exhaustive coverage of all Drive/ChatGPT storage.
+
 A fresh connected Drive read exposed 21 visible revisions of the language document.
 Revisions 1, 6, 34, 67 and 68 were fetched. Revision 68 is exactly revision 67 plus
 1,970 UTF-16 code units of release notes. Its completeness claim concerns inventory
