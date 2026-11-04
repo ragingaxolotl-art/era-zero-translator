@@ -21,7 +21,8 @@ be questioned. Past placement and runtime 0/1/2 are independent.
 The current parser deliberately rejects “what Nora said”: a complete treatment
 must preserve the past communication reference, not erase “said” into a generic
 content selector. It also rejects why-clauses, propositional factive understanding,
-degree modifiers and unresolved pronouns pending their respective bindings.
+degree modifiers and plural/possessive pronoun constructions pending their
+respective bindings.
 These remain requirements, not exclusions from the final translator goal.
 
 Validation includes 27 cross-products of content reading, runtime and
@@ -55,3 +56,20 @@ Next: wider embedded
 and temporal content, simulated channel contrasts and physical microphone tests. No new 27-root family is justified by this draft.
 The current comprehension documents have an opt-in standalone musical path,
 WAV inverse and draft UI route. They remain outside canonical vocabulary admission.
+
+## Gender-neutral participant references
+
+The understanding path now binds each he/she/him/her/it occurrence explicitly,
+and supports singular they/them with an explicit `number: singular` choice and
+referent. Pronouns are resolved into the same existing entity references; no
+gender, animacy or identity is inferred from names. Twenty-seven contrasts show
+identical meaning documents and MIDI for identical participants across he/she/they
+wording, content reading and runtime. Reference identity, rather than English
+pronoun spelling, determines the music. Quoted pronoun-like names remain labels.
+
+The UI collects each referent and, for they/them, asks one individual versus a
+group. Unknown number and plural selections reject explicitly; this is not plural
+group support. Changing referents or number invalidates prior outputs. A complete
+plural representation and discourse-wide antecedent tracking remain requirements.
+The shared pronoun scanner's neutral-word option is opt-in for this path, so this
+change does not claim they/them support throughout the entire translator.
