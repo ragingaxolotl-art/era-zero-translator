@@ -10,6 +10,18 @@ performance, keeping existing roots, sounds, names, and approved poetic meanings
 The [source audit](https://chatgpt.com/space/page_21c6ce0da1a88191abff53c0b13441f3)
 is the starting evidence, not a completion certificate.
 
+## Blind recorded-audio requirement
+
+The user requires audio-only recovery of the intended meaning, including physical
+speaker-to-microphone recordings. MIDI inverses and score-aware waveform checks
+are insufficient. The [audio transport evaluation](../reviews/recorded_audio_transport.md)
+adds this requirement to the existing meaning/music gate without replacing the
+vocabulary or grammar work. Its experimental WAV-only decoder reuses current
+semantic inverses and tests audible calibration, articulation boundaries and an
+error-detection trailer. Physical recording validation and broad predicate
+coverage remain open. Chords and additional participant motifs are deferred
+until evidence shows a benefit.
+
 ## Current draft status
 
 The full translator goal remains **incomplete**. There are 324 preserved roots,

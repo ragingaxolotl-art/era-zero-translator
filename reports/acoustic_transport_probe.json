@@ -1,0 +1,436 @@
+{
+  "status": "PASS",
+  "scope": "Synthetic PCM, blind audio decoding to supported predicate meanings; not general semantic interpretation or microphone evidence",
+  "cases": [
+    {
+      "phrase": "Nora cares for Eli.",
+      "meaning": {
+        "profile": "EZCARE-INVERSE-1",
+        "speech_act": "assertion",
+        "scopes": [],
+        "predicate": "active_care",
+        "runtime_state": 1,
+        "participants": {
+          "caregiver": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "N",
+              "AO",
+              "R",
+              "AE"
+            ],
+            "instance_code": null
+          },
+          "targets": [
+            {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "EH",
+                "L",
+                "IH"
+              ],
+              "instance_code": null
+            }
+          ]
+        },
+        "target_coordination": null,
+        "meaning": {
+          "target_list_belongs_to_one_relation": true,
+          "temporal_order_asserted": false,
+          "affection_or_preference_asserted": false
+        },
+        "limitations": [
+          "The care relation remains inside recovered scope and speech act.",
+          "A coordinated target list does not encode a sequence of separate care episodes or a temporal order.",
+          "Audible reference labels do not resolve external identity, original spelling or general discourse.",
+          "This profile reads strict MIDI, not arbitrary recorded audio."
+        ]
+      },
+      "channels": [
+        {
+          "channel": "gain_and_noise",
+          "accepted": true
+        },
+        {
+          "channel": "speed_plus_two_percent",
+          "accepted": true
+        },
+        {
+          "channel": "short_weak_echo",
+          "accepted": true
+        },
+        {
+          "channel": "dropout",
+          "accepted": false,
+          "reason": "Uncertain pitch or duration; no correction guessed"
+        }
+      ],
+      "notes": 60,
+      "status": "exact_audio_notes_structure_and_supported_predicate_meaning_recovery",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-APGDjX/case-0.wav",
+      "audio_seconds": 29.779
+    },
+    {
+      "phrase": "Eli cares for Nora.",
+      "meaning": {
+        "profile": "EZCARE-INVERSE-1",
+        "speech_act": "assertion",
+        "scopes": [],
+        "predicate": "active_care",
+        "runtime_state": 1,
+        "participants": {
+          "caregiver": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "EH",
+              "L",
+              "IH"
+            ],
+            "instance_code": null
+          },
+          "targets": [
+            {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            }
+          ]
+        },
+        "target_coordination": null,
+        "meaning": {
+          "target_list_belongs_to_one_relation": true,
+          "temporal_order_asserted": false,
+          "affection_or_preference_asserted": false
+        },
+        "limitations": [
+          "The care relation remains inside recovered scope and speech act.",
+          "A coordinated target list does not encode a sequence of separate care episodes or a temporal order.",
+          "Audible reference labels do not resolve external identity, original spelling or general discourse.",
+          "This profile reads strict MIDI, not arbitrary recorded audio."
+        ]
+      },
+      "channels": [
+        {
+          "channel": "gain_and_noise",
+          "accepted": true
+        },
+        {
+          "channel": "speed_plus_two_percent",
+          "accepted": true
+        },
+        {
+          "channel": "short_weak_echo",
+          "accepted": true
+        },
+        {
+          "channel": "dropout",
+          "accepted": false,
+          "reason": "Uncertain pitch or duration; no correction guessed"
+        }
+      ],
+      "notes": 60,
+      "status": "exact_audio_notes_structure_and_supported_predicate_meaning_recovery",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-APGDjX/case-1.wav",
+      "audio_seconds": 29.779
+    },
+    {
+      "phrase": "Nora did not care for Eli [0].",
+      "meaning": {
+        "profile": "EZCARE-INVERSE-1",
+        "speech_act": "assertion",
+        "scopes": [
+          {
+            "operator": "time",
+            "relation": "before_speech"
+          },
+          {
+            "operator": "negation"
+          }
+        ],
+        "predicate": "active_care",
+        "runtime_state": 0,
+        "participants": {
+          "caregiver": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "N",
+              "AO",
+              "R",
+              "AE"
+            ],
+            "instance_code": null
+          },
+          "targets": [
+            {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "EH",
+                "L",
+                "IH"
+              ],
+              "instance_code": null
+            }
+          ]
+        },
+        "target_coordination": null,
+        "meaning": {
+          "target_list_belongs_to_one_relation": true,
+          "temporal_order_asserted": false,
+          "affection_or_preference_asserted": false
+        },
+        "limitations": [
+          "The care relation remains inside recovered scope and speech act.",
+          "A coordinated target list does not encode a sequence of separate care episodes or a temporal order.",
+          "Audible reference labels do not resolve external identity, original spelling or general discourse.",
+          "This profile reads strict MIDI, not arbitrary recorded audio."
+        ]
+      },
+      "channels": [
+        {
+          "channel": "gain_and_noise",
+          "accepted": true
+        },
+        {
+          "channel": "speed_plus_two_percent",
+          "accepted": true
+        },
+        {
+          "channel": "short_weak_echo",
+          "accepted": true
+        },
+        {
+          "channel": "dropout",
+          "accepted": false,
+          "reason": "Uncertain note boundary"
+        }
+      ],
+      "notes": 78,
+      "status": "exact_audio_notes_structure_and_supported_predicate_meaning_recovery",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-APGDjX/case-2.wav",
+      "audio_seconds": 33.624
+    },
+    {
+      "phrase": "Eli is swimming [2].",
+      "meaning": {
+        "profile": "EZSWIM-INVERSE-1",
+        "speech_act": "assertion",
+        "scopes": [],
+        "predicate": "ongoing_bodily_swimming",
+        "runtime_state": 2,
+        "actor": {
+          "kind": "phonemic",
+          "reference_mode": "name",
+          "phonemes": [
+            "EH",
+            "L",
+            "IH"
+          ],
+          "instance_code": null
+        },
+        "convention_codes": [
+          21,
+          20
+        ],
+        "meaning": {
+          "body_generates_locomotor_pattern": true,
+          "medium": "water",
+          "swimming_propulsion": true,
+          "net_ground_progress_asserted": false,
+          "arrival_asserted": false,
+          "unassisted_activity_asserted": false,
+          "conscious_intention_asserted": false
+        },
+        "limitations": [
+          "Local bodily activity does not establish a completed path.",
+          "Strict MIDI only; no recorded-audio or external referent recovery."
+        ]
+      },
+      "channels": [
+        {
+          "channel": "gain_and_noise",
+          "accepted": true
+        },
+        {
+          "channel": "speed_plus_two_percent",
+          "accepted": true
+        },
+        {
+          "channel": "short_weak_echo",
+          "accepted": true
+        },
+        {
+          "channel": "dropout",
+          "accepted": false,
+          "reason": "Uncertain note boundary"
+        }
+      ],
+      "notes": 85,
+      "status": "exact_audio_notes_structure_and_supported_predicate_meaning_recovery",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-APGDjX/case-3.wav",
+      "audio_seconds": 32.279
+    },
+    {
+      "phrase": "Nora is permitted not to physically enter the archive.",
+      "meaning": {
+        "profile": "EZENTRY-INVERSE-1",
+        "speech_act": "assertion",
+        "scopes": [
+          {
+            "operator": "modality",
+            "mode": "permitted"
+          },
+          {
+            "operator": "negation"
+          }
+        ],
+        "predicate": "completed_physical_entry",
+        "actor": {
+          "kind": "phonemic",
+          "reference_mode": "name",
+          "phonemes": [
+            "N",
+            "AO",
+            "R",
+            "AE"
+          ],
+          "instance_code": null
+        },
+        "region": {
+          "kind": "phonemic",
+          "reference_mode": "definite_nominal",
+          "phonemes": [
+            "AA",
+            "R",
+            "CH",
+            "IH",
+            "V"
+          ],
+          "instance_code": null
+        },
+        "runtime_state": 1,
+        "phases": {
+          "before": "exterior",
+          "culmination": "interior",
+          "after": "unspecified"
+        },
+        "same_participant": true,
+        "same_region": true,
+        "same_event": true,
+        "limitations": [
+          "Entry is the event type under the recovered speech act and scopes; questions, commands and negation do not assert its occurrence.",
+          "No prescribed manner, permission, ownership or continued presence is asserted.",
+          "Strict MIDI only; external referent identity, contextual geometry and recorded audio are not recovered."
+        ]
+      },
+      "channels": [
+        {
+          "channel": "gain_and_noise",
+          "accepted": true
+        },
+        {
+          "channel": "speed_plus_two_percent",
+          "accepted": true
+        },
+        {
+          "channel": "short_weak_echo",
+          "accepted": true
+        },
+        {
+          "channel": "dropout",
+          "accepted": false,
+          "reason": "Audible checksum mismatch; recording rejected"
+        }
+      ],
+      "notes": 294,
+      "status": "exact_audio_notes_structure_and_supported_predicate_meaning_recovery",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-APGDjX/case-4.wav",
+      "audio_seconds": 109.137
+    },
+    {
+      "phrase": "It is possible that Nora is swimming.",
+      "meaning": {
+        "profile": "EZSWIM-INVERSE-1",
+        "speech_act": "assertion",
+        "scopes": [
+          {
+            "operator": "modality",
+            "mode": "possible"
+          }
+        ],
+        "predicate": "ongoing_bodily_swimming",
+        "runtime_state": 1,
+        "actor": {
+          "kind": "phonemic",
+          "reference_mode": "name",
+          "phonemes": [
+            "N",
+            "AO",
+            "R",
+            "AE"
+          ],
+          "instance_code": null
+        },
+        "convention_codes": [
+          21,
+          20
+        ],
+        "meaning": {
+          "body_generates_locomotor_pattern": true,
+          "medium": "water",
+          "swimming_propulsion": true,
+          "net_ground_progress_asserted": false,
+          "arrival_asserted": false,
+          "unassisted_activity_asserted": false,
+          "conscious_intention_asserted": false
+        },
+        "limitations": [
+          "Local bodily activity does not establish a completed path.",
+          "Strict MIDI only; no recorded-audio or external referent recovery."
+        ]
+      },
+      "channels": [
+        {
+          "channel": "gain_and_noise",
+          "accepted": true
+        },
+        {
+          "channel": "speed_plus_two_percent",
+          "accepted": true
+        },
+        {
+          "channel": "short_weak_echo",
+          "accepted": true
+        },
+        {
+          "channel": "dropout",
+          "accepted": false,
+          "reason": "Audible checksum mismatch; recording rejected"
+        }
+      ],
+      "notes": 95,
+      "status": "exact_audio_notes_structure_and_supported_predicate_meaning_recovery",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-APGDjX/case-5.wav",
+      "audio_seconds": 34.429
+    }
+  ],
+  "evaluation": {
+    "clean_audio_cases": 6,
+    "synthetic_channel_exact_recoveries": 18,
+    "damaged_payload_rejections": 6,
+    "physical_microphone_recordings": 0,
+    "original_text_or_ir_supplied_to_decoder": false,
+    "hidden_semantic_metadata": false,
+    "scope": "Authored six-message probe; not held-out or broad coverage"
+  }
+}
