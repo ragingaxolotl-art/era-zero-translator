@@ -81,3 +81,26 @@ case is additionally renamed and serialized in reverse node/edge order, proving
 that incidental IDs and ordering do not change the binding verdict. All 34
 cross-language cases pass. These are structural binding checks, not full semantic
 IR or music validation; no unsupported English phrase is marked translated.
+
+## Draft musical frames (EZCOUNT-MUSIC-1)
+
+The new draft profile allocates ±27 for counted exact/at-least/at-most frames,
+±28 for nominal restriction boundaries and ±29 for predicate boundaries. A -30
+reference delimiter carries five ternary address digits encoding binder depth
+0–127, then returns to anchor. Depth zero refers to the nearest enclosing counted
+binder, depth one to the next outer binder, etc. These are structural addresses,
+not new root trits or runtime values. Counts will use the existing decimal-digit
+markers. All notes use the existing quarter-beat grammar timing and half-beat
+boundary; existing frames and performances are unchanged.
+
+The 138 frame paths are pairwise distinct, match the Ruby definition and do not
+equal any existing grammar frame. Sixty-three transposed token/framing probes
+cover each count kind and representative depth boundaries. MIDI-only token
+recovery succeeds only with allowDraftQuantified enabled; the default inverse
+rejects draft music. Invalid depth/marker/pitch requests reject. Empty restriction
+frames in these probes are deliberately nonsemantic test scaffolding; they are
+not accepted sentences or evidence of complete binding recovery.
+
+Next integration must generate only well-typed frames from validated binder IR,
+encode references by actual enclosing binder depth, and independently reconstruct
+restriction/body binding from the MIDI tree. Balanced frames alone are not enough.

@@ -1,3 +1,4 @@
+import {quantifiedMusicFrames} from './quantified_music.mjs';
 import {notesFromMidi} from './performance_codec.mjs';
 import {PHONEMES} from './names.mjs';
 import {ROLE_ORDER} from './roles.mjs';
@@ -37,8 +38,9 @@ frame('decimal_point',[0,10,-1,0]);frame('coord_member',[0,11,0,11]);frame('cond
 for(let digit=0;digit<10;digit++)frame(`digit_${digit}`,[0,10,Math.floor(digit/4),digit%4,0]);
 UNITS.forEach((_,i)=>frame(`measurement_unit_${i+1}`,[0,13,i+1,13,0]));
 
-export function decodeStrictMusicMidi(bytes,atoms,{maxNotes=100000,maxTokens=100000}={}){
+export function decodeStrictMusicMidi(bytes,atoms,{maxNotes=100000,maxTokens=100000,allowDraftQuantified=false}={}){
  if(!Number.isInteger(maxNotes)||maxNotes<1||!Number.isInteger(maxTokens)||maxTokens<1)fail('invalid limits');
+ const acceptedFrames=allowDraftQuantified?[...frames,...quantifiedMusicFrames()]:frames;
  const {notes,division}=notesFromMidi(bytes);
  if(!division||notes.length<3||notes.length>maxNotes||notes[0].start_tick!==0)fail('invalid note count or start');
  // The final contour is separated from the payload and has half-beat notes.
@@ -59,7 +61,7 @@ export function decodeStrictMusicMidi(bytes,atoms,{maxNotes=100000,maxTokens=100
  const make=(i,length,value)=>({next:i+length,token:{...value,start_tick:notes[i].start_tick,end_tick:notes[i+length-1].end_tick}});
  function candidates(i){
   const out=[],base=notes[i].midi;
-  for(const f of frames)if(match(i,f.path,anchor,.25))out.push(make(i,f.path.length,{kind:'grammar',marker:f.marker}));
+  for(const f of acceptedFrames)if(match(i,f.path,anchor,.25))out.push(make(i,f.path.length,{kind:'grammar',marker:f.marker}));
   if(match(i,[0],anchor,.25)&&Math.abs(notes[i+1]?.midi-anchor)===19&&i+11<=end){
    const path=notes.slice(i,i+11).map(n=>n.midi-anchor),digits=path.slice(2,10).map(n=>[0,1,-1].indexOf(n));
    if(path[10]===0&&digits.every(n=>n>=0)&&match(i,path,anchor,.25)){
@@ -130,3 +132,5 @@ export function decodeStrictMusicMidi(bytes,atoms,{maxNotes=100000,maxTokens=100
  return {profile:'EZSTRICT-OBSERVATION-1',anchor_midi:anchor,speech_act:speechAct,tokens,
   semantic_status:'audible_structure_only',limitations:['No complete semantic IR reconstruction or original node IDs.','Phonemes and instance code do not uniquely recover spelling or external identity.','Compound identity and predicate attachment require dictionary interpretation; timing alone is not a semantic proof.','Balanced grammar frames do not prove that every grammatical combination is valid.']};
 }
+
+export function strictGrammarFrameInventory(){return frames.map(f=>({marker:f.marker,path:[...f.path]}));}
