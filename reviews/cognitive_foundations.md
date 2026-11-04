@@ -350,3 +350,28 @@ These are semantic dependency checks, not musical or full-translator proof.
 Next: admit the result relation under explicit acquisition framing in both
 renderers, recover the pre/result linkage from MIDI, and only then expose
 learned-whether with separate tense, negation and runtime.
+
+## Draft acquisition music and independent recovery
+
+The acquisition document now includes a separate transition runtime code; it is
+part of the hashed identity and never substituted for phase truth. Draft music
+uses explicit acquisition/result frames around the complete scheduled knowledge
+relation followed by ORI:110. The result frame identifies that relation as the
+culmination state of this transition, not a separate speech-time assertion. The
+new frame paths do not collide with existing canonical, counted or polar-content
+frames. This remains an explicitly versioned draft convention, not a claim that
+juxtaposition alone derives the phase linkage.
+
+The MIDI-only inverse requires separate acquisition admission, recognizes the
+exact actualization root, checks the positive knowledge result, and recovers its
+full nested meaning through the existing reader. Eighteen performances cover all
+nine transition/result runtime pairs and both inner question polarities. Each
+recovered result equals the independently decoded original knowledge performance;
+the acquisition wrapper adds the explicit before/culmination/unspecified-after
+contract. Missing-root performances and default admission reject. The standalone
+profile currently requires an assertion contour; other speech acts remain pending.
+
+Existing knowledge, preference inverse and acquisition semantic-model checks pass.
+This is browser rendering and strict-MIDI recovery, not Ruby parity, English
+learned-whether composition, general learning or listening proof. Those remain
+unfinished, along with the original completion requirements.

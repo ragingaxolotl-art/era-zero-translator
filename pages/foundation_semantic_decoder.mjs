@@ -3,13 +3,13 @@ import {readFeltConditionTree} from './felt_decoder.mjs';
 import {validateFoundations,foundationPath} from './foundations.mjs';
 import {strictSemanticReader} from './strict_semantic_reader.mjs';
 // No source IR, expected sentence, or formal plan is accepted by this inverse.
-export async function decodeFoundationSentenceMidi(bytes,atoms,records,{allowDraft=false,allowDraftQuestionContent=false}={}){
+export async function decodeFoundationSentenceMidi(bytes,atoms,records,{allowDraft=false,allowDraftQuestionContent=false,allowDraftAcquisition=false}={}){
  records=await validateFoundations(records,{allowDraft});
  const definitions=new Map(records.map(r=>[r.foundation_id,r]));
  if(atoms.some(a=>definitions.has(a.canonical_id)))throw new Error('Conflicting foundation identity.');
  const dictionary=[...atoms,...records.map(r=>({canonical_id:r.foundation_id,harmonic_signature_semitones:[0,3,7],note_path_semitones:foundationPath(r.sound_code)}))];
  const fail=()=>{throw new Error('Unsupported or malformed foundation sentence music.');};
- const reader=strictSemanticReader(bytes,dictionary,'Malformed foundation sentence framing.',{allowDraftQuestionContent});
+ const reader=strictSemanticReader(bytes,dictionary,'Malformed foundation sentence framing.',{allowDraftQuestionContent,allowDraftAcquisition});
  const {observed,readTree,reference}=reader;
  const registers={bearer:'middle',actor:'low',target:'high',experiencer:'middle',comparison_standard:'middle',content:'middle'};
  function proposition(children,depth=0,parent=null){
@@ -67,7 +67,18 @@ export async function decodeFoundationSentenceMidi(bytes,atoms,records,{allowDra
   }
   return {predicate:d?{kind:'foundation',foundation_id:d.foundation_id,definition_version:d.definition_version,registry_status:d.status}:{kind:'atom',root_id:head.root_id},runtime_state:head.runtime_state,scopes,arguments:args};
  }
- const meaning=proposition(readTree());
+ const tree=readTree();
+ if(tree.length===1&&tree[0].marker==='knowledge_acquisition_open'){
+  if(observed.speech_act!=='assertion')fail();
+  const children=tree[0].children;
+  if(children.length!==2||children[0].marker!=='acquisition_result_open')fail();
+  const head=children[1];reader.exactRoot(head,'ORI:110','middle',head.runtime_state);
+  if(![0,1,2].includes(head.runtime_state))fail();
+  const result=proposition(children[0].children);
+  if(result.predicate.foundation_id!=='FND:fe36cb2a6d649151067c7754'||result.scopes.length||result.arguments.content?.type!=='question')fail();
+  return {profile:'EZKNOWLEDGE-ACQUISITION-INVERSE-1',speech_act:observed.speech_act,meaning:{predicate:{kind:'acquisition',root_id:'ORI:110'},runtime_state:head.runtime_state,phase_contract:{before:'does_not_hold',culmination:'holds',after:'unspecified'},result_assertion:'at_culmination_only',result},limitations:['Draft acquisition convention; not general learning or recorded-audio recognition.','Knowledge result and question meanings are recovered, not verified as real-world facts.']};
+ }
+ const meaning=proposition(tree);
  if(meaning.predicate.kind!=='foundation')fail();
  return {profile:'EZFOUND-SEMANTIC-INVERSE-1',speech_act:observed.speech_act,meaning,
   limitations:['Candidate vocabulary requires explicit opt-in.','This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.','Reference sounds do not determine original spelling or external identity.','Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.','Reads strict MIDI, not recorded audio.']};
