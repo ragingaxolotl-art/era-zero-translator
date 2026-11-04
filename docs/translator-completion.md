@@ -1251,3 +1251,13 @@ A delayed future-interpretation result could overwrite a newer analysis of the s
 The adjective-standard workflow now also accepts heavy/light when the user explicitly chooses mass and supplies a nonnegative gram/kilogram threshold. Heavy means strictly above that standard and light strictly below it for the selected translation. It does not substitute mass for weight force, carrying effort, size or brightness. The same UI and selection guards serve thermal and mass standards; no threshold is prefilled.
 
 Exact mass normalization is shared with existing numeric mass sentences. Seventeen adjective cases cover relation direction, negation, runtime states, questions, modality, deictics and current/past calendar context with Ruby/browser formal and MIDI parity. Equivalent units preserve output; a different standard changes the sound. Missing standards, wrong senses/units, negative thresholds and stale selections are rejected. The original phrase diagnostic now records 19 verified compositions, 18 uncomposed and three requiring selection; clarification is not counted as a completed translation.
+
+### Reachable Git source-capture check — November 4, 2026
+
+`reports/git_source_capture_search.json` records an exact SHA-256 check of all
+3,399 blobs reachable from the locally available refs at `a764306`. None matches
+the historical decoded-source fingerprint. The checkout is not shallow. The
+source excerpt file preserves selected Life and Motion records; it is not the
+129-turn ledger. This bounds the Git recovery result only: a differently
+serialized capture, unreachable objects, other clones, or private conversation
+storage remain outside this check. The source-reconciliation gate stays open.
