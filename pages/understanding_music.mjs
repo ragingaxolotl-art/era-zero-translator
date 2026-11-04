@@ -31,7 +31,11 @@ export async function decodeUnderstandingMidi(bytes,atoms,{allowDraft=false}={})
  const dictionary=[...atoms,{canonical_id:record.foundation_id,harmonic_signature_semitones:[0,3,7],note_path_semitones:foundationPath(record.sound_code)}];
  const fail=()=>{throw new Error('Unsupported or malformed understanding music.');};
  const reader=strictSemanticReader(bytes,dictionary,'Malformed understanding frame.',{allowDraftContextualContent:true}),{current,scopes}=reader.unwrapScopes(n=>n.kind==='root');
- if(!['assertion','question'].includes(reader.observed.speech_act)||current.length!==3)fail();
+ return readUnderstandingTree(current,scopes,reader.observed.speech_act,reader,record);
+}
+export function readUnderstandingTree(current,scopes,speechAct,reader,record){
+ const fail=()=>{throw new Error('Unsupported or malformed understanding music.');};
+ if(!['assertion','question'].includes(speechAct)||current.length!==3)fail();
  const allowed=[[],[{operator:'negation'}],[{operator:'time',relation:'before_speech'}],[{operator:'time',relation:'before_speech'},{operator:'negation'}]];
  if(!allowed.some(s=>JSON.stringify(s)===JSON.stringify(scopes)))fail();
  const [holder,content,head]=current;
@@ -41,5 +45,5 @@ export async function decodeUnderstandingMidi(bytes,atoms,{allowDraft=false}={})
  const frame=content.children[0],kind=Object.keys(UNDERSTANDING_READINGS).find(k=>frame.marker===`content_${k}_open`);if(!kind)fail();
  const selected=readSelectedContent(frame.children,kind,reader),reference=selected.anchor;
  for(const ref of [experiencer,reference])if(!['phonemic','deictic'].includes(ref.kind)||ref.property||ref.reference_mode==='nominal_class')fail();
- return {profile:'EZUNDERSTANDING-MUSIC-INVERSE-1',status:'draft',speech_act:reader.observed.speech_act,predicate:'content_comprehension',foundation_id:record.foundation_id,runtime_state:head.runtime_state,scopes,experiencer,content:{content_kind:kind,...selected,resolution_scope:'local_context',assertion_commitment:'none'},criterion:UNDERSTANDING_READINGS[kind],limitations:['Contextually selected content is not supplied or verified as a real-world fact.','No original spelling or external referent identity is recovered from phonemes.','Draft comprehension predicate; broader cognitive grammar and canonical admission remain open.']};
+ return {profile:'EZUNDERSTANDING-MUSIC-INVERSE-1',status:'draft',speech_act:speechAct,predicate:'content_comprehension',foundation_id:record.foundation_id,runtime_state:head.runtime_state,scopes,experiencer,content:{content_kind:kind,...selected,resolution_scope:'local_context',assertion_commitment:'none'},criterion:UNDERSTANDING_READINGS[kind],limitations:['Contextually selected content is not supplied or verified as a real-world fact.','No original spelling or external referent identity is recovered from phonemes.','Draft comprehension predicate; broader cognitive grammar and canonical admission remain open.']};
 }

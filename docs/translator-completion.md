@@ -84,6 +84,12 @@ Past spoken-content selection now preserves “what Nora said” separately from
 matrix scope, with nine Ruby/MIDI cases and one clean WAV recovery. Live UI/listening,
 broader communication tense/channel grammar and physical-channel validation remain open.
 
+A [comprehension acquisition draft](../reviews/understanding_acquisition.md) now
+composes “came to understand” from ORI:110 and the existing understanding state.
+Its 27 independent MIDI/Ruby cases preserve separate event/result runtime and
+culmination-only result binding. The draft UI exports the complete event and one
+clean WAV-only inverse passes. This does not complete broader learning senses.
+
 Recent completed implementation work:
 
 - Spatial interior, exterior and boundary contact are distinct; completed and

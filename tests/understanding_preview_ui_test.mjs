@@ -1,3 +1,5 @@
+import {parseCameToUnderstand,composeCameToUnderstand} from '../pages/understanding_acquisition.mjs';
+import {midiFromUnderstandingAcquisition,decodeUnderstandingAcquisitionMidi} from '../pages/understanding_acquisition_music.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
@@ -9,7 +11,7 @@ const element=()=>({children:[],classList:{add(){},remove(){}},append(...nodes){
 const elements=Object.fromEntries(['sourceInput','output','phraseCoverage','resolutionPanel','results','candidateList','decisionSummary'].map(id=>[id,element()])),authority=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url)));
 let calls=0,errors=[],downloads=[],tones=[];const input='Eli understands Nora.';elements.sourceInput.value=input;
 const state={mode:'general',data:authority,resolution:{old:true},wordSelections:new Map()};
-const context=vm.createContext({state,$:id=>elements[id],document:{createElement:element},understandingInterpretationPlan,understandingPronounPlan,composeUnderstandingContent:async(...args)=>{calls++;return composeUnderstandingContent(...args)},midiFromUnderstanding,Blob,download:(blob,name)=>downloads.push({blob,name}),showError:e=>errors.push(e),notesFromMidi,readyAudio:async()=>({context:{currentTime:0},bus:{}}),playScheduledTone:(...args)=>tones.push(args)});
+const context=vm.createContext({parseCameToUnderstand,composeCameToUnderstand,midiFromUnderstandingAcquisition,state,$:id=>elements[id],document:{createElement:element},understandingInterpretationPlan,understandingPronounPlan,composeUnderstandingContent:async(...args)=>{calls++;return composeUnderstandingContent(...args)},midiFromUnderstanding,Blob,download:(blob,name)=>downloads.push({blob,name}),showError:e=>errors.push(e),notesFromMidi,readyAudio:async()=>({context:{currentTime:0},bus:{}}),playScheduledTone:(...args)=>tones.push(args)});
 vm.runInContext(handler,context);
 function show(text=input){elements.sourceInput.value=text;vm.runInContext(`showUnderstandingPreview(${JSON.stringify(text)});`,context);return elements.candidateList.children.at(-1);}
 let card=show(),select=card.children[1].children[0],button=card.children.at(-1);
@@ -39,3 +41,8 @@ for(const [field,number] of refFields){number.value='singular';number.change();}
 await button.click();const saved=card.children.at(-1);saved.click();const neutral=JSON.parse(await downloads.at(-1).blob.text());assert.equal(neutral.experiencer.name.normalized_label,'nora');
 refFields[0][1].value='plural';refFields[0][1].change();const before=downloads.length;saved.click();assert.equal(downloads.length,before);await button.click();assert.equal(errors.at(-1).code,'pronoun_referents_required');
 console.log('PASS neutral pronoun UI: per-occurrence references and explicit number, singular composition, plural rejection and stale export invalidation.');
+
+card=show('Eli came to understand what Nora said.');button=card.children.at(-1);await button.click();card.children.at(-2).click();card.children.at(-1).click();
+assert.equal(downloads.at(-1).name,'era-zero-understanding-acquisition.draft.json');const acquired=JSON.parse(await downloads.at(-1).blob.text());assert.equal(acquired.result_assertion,'at_culmination_only');
+const acquiredMusic=await decodeUnderstandingAcquisitionMidi(new Uint8Array(await downloads.at(-2).blob.arrayBuffer()),authority.atoms,{allowDraft:true});assert.equal(acquiredMusic.result.content.selection.channel,'speech');
+console.log('PASS comprehension acquisition UI uses event-specific composition, music and full meaning exports.');

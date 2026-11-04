@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "scope": "One authored clean synthetic WAV; no physical recording or simulated channel test",
+  "phrase": "Eli did not come to understand what Nora said [2].",
+  "meaning": {
+    "profile": "EZUNDERSTANDING-ACQUISITION-INVERSE-1",
+    "status": "draft",
+    "speech_act": "assertion",
+    "transition_root": "ORI:110",
+    "transition_runtime": 2,
+    "scopes": [
+      {
+        "operator": "time",
+        "relation": "before_speech"
+      },
+      {
+        "operator": "negation"
+      }
+    ],
+    "result_assertion": "at_culmination_only",
+    "phase_contract": {
+      "before": "does_not_hold",
+      "culmination": "holds",
+      "after": "unspecified"
+    },
+    "result": {
+      "profile": "EZUNDERSTANDING-MUSIC-INVERSE-1",
+      "status": "draft",
+      "speech_act": "assertion",
+      "predicate": "content_comprehension",
+      "foundation_id": "FND:ea8f935ca4dabd4470b2bcb5",
+      "runtime_state": 0,
+      "scopes": [],
+      "experiencer": {
+        "kind": "phonemic",
+        "reference_mode": "name",
+        "phonemes": [
+          "EH",
+          "L",
+          "IH"
+        ],
+        "instance_code": null
+      },
+      "content": {
+        "content_kind": "communicated_content",
+        "anchor": {
+          "kind": "phonemic",
+          "reference_mode": "name",
+          "phonemes": [
+            "N",
+            "AO",
+            "R",
+            "AE"
+          ],
+          "instance_code": null
+        },
+        "selection": {
+          "channel": "speech",
+          "time": "before_speech"
+        },
+        "resolution_scope": "local_context",
+        "assertion_commitment": "none"
+      },
+      "criterion": "Grasps the intended meaning of contextually selected content conveyed by the anchor; does not assert that the conveyed claims are true.",
+      "limitations": [
+        "Contextually selected content is not supplied or verified as a real-world fact.",
+        "No original spelling or external referent identity is recovered from phonemes.",
+        "Draft comprehension predicate; broader cognitive grammar and canonical admission remain open."
+      ]
+    },
+    "limitations": [
+      "Draft completed transition; not an assertion of understanding at speech time or permanent retention.",
+      "Content source restrictions are retained, without fabricating the referenced speech or its truth."
+    ]
+  },
+  "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-comprehension-acquisition-0sw2Op/acquisition.wav"
+}
