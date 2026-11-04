@@ -42,3 +42,23 @@ separate reviewed dimensions or meanings. This standard-reference grammar is not
 permission to label every adjective with an arbitrary physical unit. Existing
 numeric implementations remain useful, but do not establish unrestricted adjective
 translation or completion of the original phrase diagnostic.
+
+## Implemented local-context route
+
+The six physical readings now support an explicitly selected contextual standard
+without a number. The comparison operator retains norm, dimension and direction;
+paired musical frames distinguish it from measurements and named comparisons.
+JavaScript and Ruby render the same performances, and a separate strict MIDI
+reader reconstructs the norm, bearer, runtime and outer scopes without source IR.
+The interface offers the no-number choice alongside numeric thresholds.
+
+This is a local-context representation. Shared standard identity, restricted noun
+phrases, subjective and metaphorical readings, and listening validation remain
+open; these changes do not prove unrestricted adjective translation.
+
+Validation: `tests/contextual_standard_test.mjs` checks 36 distinct adjective,
+negation and runtime performances with Ruby/JavaScript parity and independent
+MIDI recovery. Additional cases cover questions, possibility, current-day scope,
+octave transposition, numeric-versus-contextual decoding, invalid standards and
+the actual no-number UI handler. These authored cases are implementation evidence,
+not a held-out language-coverage or listening evaluation.

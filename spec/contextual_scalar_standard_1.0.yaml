@@ -1,0 +1,37 @@
+profile: EZCONTEXTUAL-1
+status: versioned_implementation_convention
+purpose: Preserve a selected physical adjective without fabricating a numerical cutoff
+operator:
+  kind: scope_operator
+  operator: comparison
+  standard: contextual
+  scope: Exactly one MAT:000 or MAT:010 occurrence with exactly one bearer
+  bearer: Phonemic or deictic entity reference, excluding nominal classes
+norms:
+  hot: {dimension: thermodynamic_temperature, relation: greater_than, code: 0}
+  cold: {dimension: thermodynamic_temperature, relation: less_than, code: 1}
+  heavy: {dimension: mass, relation: greater_than, code: 2}
+  light: {dimension: mass, relation: less_than, code: 3}
+  bright: {dimension: luminance, relation: greater_than, code: 4}
+  dim: {dimension: luminance, relation: less_than, code: 5}
+music:
+  open: '[0, -26, norm_code, 0]'
+  close: '[0, 26, norm_code, 0]'
+  note_duration_beats: 0.25
+  anchor: Utterance anchor; every resulting MIDI pitch must be within 0..127
+invariants:
+  - No numerical quantity or default threshold is asserted
+  - Runtime 0/1/2 remains independent of the unspecified standard
+  - Negation scopes over the whole comparison; not hot does not mean cold
+  - Each occurrence uses a local contextual norm; equality across contexts is not asserted
+  - Existing numeric measurements and entity comparisons retain their encodings
+  - Physical interpretation requires explicit selection
+inverse:
+  implementation: pages/contextual_standard_decoder.mjs
+  input: Strict single-voice MIDI without source IR
+  recovers: Norm, dimension, relation, bearer sound label, root, runtime, speech act and outer scopes
+remaining:
+  - Shared contextual standard identity and binding
+  - Restricted noun phrases and arbitrary compound bearers
+  - Perceptual and metaphorical adjective meanings
+  - Listening and accessibility validation

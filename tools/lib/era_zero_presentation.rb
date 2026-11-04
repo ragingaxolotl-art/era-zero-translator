@@ -152,7 +152,8 @@ module EraZeroPresentation
                    [grammar_marker(formal, id, "aspect_#{node['aspect']}_open")] + phrase + [grammar_marker(formal, id, "aspect_#{node['aspect']}_close")]
                  elsif node["operator"] == "comparison"
                    raise PresentationError, "unsupported musical property comparison" unless EraZeroSemanticValidation.valid_property_comparison?(node, ir)
-                   [grammar_marker(formal, id, "property_#{node['dimension']}_#{node['relation']}_open")] + phrase + [grammar_marker(formal, id, "property_#{node['dimension']}_#{node['relation']}_close")]
+                   frame = node["standard"] == "contextual" ? "contextual_#{node['norm']}" : "property_#{node['dimension']}_#{node['relation']}"
+                   [grammar_marker(formal, id, "#{frame}_open")] + phrase + [grammar_marker(formal, id, "#{frame}_close")]
                  elsif node["operator"] == "negation"
                    [grammar_marker(formal, id, "negation_open")] + phrase + [grammar_marker(formal, id, "negation_close")]
                  elsif node["operator"] == "quantifier"
@@ -308,6 +309,8 @@ module EraZeroPresentation
     relative = [0, 24, 0, 0] if marker == "proposition_content_close"
     aspect = marker.match(/\Aaspect_(bounded|ongoing|habitual)_(open|close)\z/)
     relative = [0, aspect[2] == "open" ? -22 : 22, ASPECTS.index(aspect[1]), 0] if aspect
+    contextual = marker.match(/\Acontextual_(hot|cold|heavy|light|bright|dim)_(open|close)\z/)
+    relative = [0, contextual[2] == "open" ? -26 : 26, EraZeroContextualStandards::NORMS.fetch(contextual[1])[2], 0] if contextual
     property = marker.match(/\Aproperty_(mass|thermodynamic_temperature|luminance)_(equal|greater_than|less_than|at_least|at_most|not_equal)_(open|close)\z/)
     relative = [0, property[3] == "open" ? -18 : 18, {"mass"=>1,"thermodynamic_temperature"=>2,"luminance"=>3}.fetch(property[1]), PROPERTY_COMPARISONS.index(property[2]), 0] if property
     comparison = marker.match(/\Ameasure_compare_(greater_than|less_than|at_least|at_most|not_equal)_(open|close)\z/)
@@ -336,6 +339,7 @@ module EraZeroPresentation
     relative = [0, conditional[2] == "open" ? -16 : 16, CONDITION_STATUSES.index(conditional[1]), 0] if conditional
     relative = [0, 16, 0, 16] if marker == "conditional_then"
     base = formal.dig("performance", "anchor_midi")
+    raise PresentationError, "grammar pitch outside MIDI range" unless relative.all? { |n| (base + n).between?(0, 127) }
     { "kind" => "grammar_marker", "grammar_profile" => "EZGRAM-1", "marker" => marker,
       "occurrence_id" => scope_id, "target_id" => "EZGRAM:#{marker}", "register" => "middle", "base_midi" => base,
       "family_qualified_transliteration" => marker, "formal_carrier" => "",

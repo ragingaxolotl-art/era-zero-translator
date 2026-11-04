@@ -1,0 +1,25 @@
+{
+  "scope": "Contextual physical adjective standards; not full translator completion",
+  "full_regression": {
+    "checks": 103,
+    "passed": 102,
+    "timeout": "tests/arrival_sentence_test.mjs",
+    "report": "reports/translator_completion_regression.json"
+  },
+  "focused_reruns": [
+    {
+      "test": "tests/arrival_sentence_test.mjs",
+      "exit_code": 0,
+      "output": "Arrival: 27 participant/negation/question/calendar/property/runtime cases match Ruby formal and MIDI. Independent tokens distinguish completed arrival from approach without recipient or carrying inference.\n"
+    },
+    {
+      "test": "tests/contextual_standard_test.mjs",
+      "exit_code": 0,
+      "includes": "Questions, modality, time and octave transposition added after full run began"
+    },
+    {
+      "test": "tests/luminance_standard_test.mjs",
+      "exit_code": 0
+    }
+  ]
+}

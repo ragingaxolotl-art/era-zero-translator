@@ -1,48 +1,48 @@
 {
   "scope": "Implementation regression only. Full ordinary-English coverage and musical semantic completeness are not established.",
-  "passed": true,
+  "passed": false,
   "results": [
     {
       "test": "tests/min_cross_reference_migration_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 49892\n\n# Running:\n\n.\n\nFinished in 0.674742s, 1.4820 runs/s, 130.4202 assertions/s.\n\n1 runs, 88 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 6324\n\n# Running:\n\n.\n\nFinished in 0.671638s, 1.4889 runs/s, 131.0230 assertions/s.\n\n1 runs, 88 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/mov_process_example_migration_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 19248\n\n# Running:\n\n.\n\nFinished in 1.015415s, 0.9848 runs/s, 175.2978 assertions/s.\n\n1 runs, 178 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 12694\n\n# Running:\n\n.\n\nFinished in 1.022716s, 0.9778 runs/s, 174.0464 assertions/s.\n\n1 runs, 178 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/mat_capacity_example_migration_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 51874\n\n# Running:\n\n.\n\nFinished in 0.943629s, 1.0597 runs/s, 173.7971 assertions/s.\n\n1 runs, 164 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 36382\n\n# Running:\n\n.\n\nFinished in 0.948849s, 1.0539 runs/s, 172.8410 assertions/s.\n\n1 runs, 164 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_dependencies_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 57375\n\n# Running:\n\n......\n\nFinished in 0.016070s, 373.3665 runs/s, 2924.7044 assertions/s.\n\n6 runs, 47 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 54957\n\n# Running:\n\n......\n\nFinished in 0.015595s, 384.7387 runs/s, 3013.7865 assertions/s.\n\n6 runs, 47 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_expansion_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 30549\n\n# Running:\n\n..........\n\nFinished in 0.249443s, 40.0893 runs/s, 649.4470 assertions/s.\n\n10 runs, 162 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 43310\n\n# Running:\n\n..........\n\nFinished in 0.249134s, 40.1390 runs/s, 650.2525 assertions/s.\n\n10 runs, 162 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_convention_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 10121\n\n# Running:\n\n...\n\nFinished in 0.031624s, 94.8647 runs/s, 822.1604 assertions/s.\n\n3 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 40857\n\n# Running:\n\n...\n\nFinished in 0.031690s, 94.6671 runs/s, 820.4481 assertions/s.\n\n3 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/dictionary_musical_identity_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 51611\n\n# Running:\n\n.\n\nFinished in 0.228449s, 4.3773 runs/s, 26.2641 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 58197\n\n# Running:\n\n.\n\nFinished in 0.230114s, 4.3457 runs/s, 26.0740 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/audit_dictionary_musical_identity.rb",
@@ -60,13 +60,13 @@
       "test": "tests/semantic_reference_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 53866\n\n# Running:\n\n.......\n\nFinished in 0.232267s, 30.1377 runs/s, 137.7725 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 52000\n\n# Running:\n\n.......\n\nFinished in 0.228297s, 30.6618 runs/s, 140.1683 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/quantity_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 64431\n\n# Running:\n\n..\n\nFinished in 0.379727s, 5.2669 runs/s, 205.4107 assertions/s.\n\n2 runs, 78 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 8793\n\n# Running:\n\n..\n\nFinished in 0.380187s, 5.2606 runs/s, 205.1622 assertions/s.\n\n2 runs, 78 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_semantic_ir_and_grammar.rb",
@@ -78,19 +78,19 @@
       "test": "tests/foundation_process_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 13739\n\n# Running:\n\n...\n\nFinished in 0.431034s, 6.9600 runs/s, 64.9601 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 43888\n\n# Running:\n\n...\n\nFinished in 0.430996s, 6.9606 runs/s, 64.9658 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/repetition_performance_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 55398\n\n# Running:\n\n...\n\nFinished in 0.486980s, 6.1604 runs/s, 16.4278 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 64511\n\n# Running:\n\n...\n\nFinished in 0.485468s, 6.1796 runs/s, 16.4789 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/controlled_role_reference_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 26059\n\n# Running:\n\n...\n\nFinished in 0.433511s, 6.9202 runs/s, 87.6564 assertions/s.\n\n3 runs, 38 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 47060\n\n# Running:\n\n...\n\nFinished in 0.426907s, 7.0273 runs/s, 89.0124 assertions/s.\n\n3 runs, 38 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_gate4b_compound_dictionary.rb",
@@ -121,6 +121,12 @@
       "passed": true,
       "exit_code": 0,
       "output": "Glyph/audio validation: PASS\nChecks passed: 10; checks failed: 0\n"
+    },
+    {
+      "test": "tests/contextual_standard_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 36 contextual adjective/negation/runtime contrasts preserve unspecified standards, match Ruby/MIDI, and decode independently; UI accepts no-number selection.\n"
     },
     {
       "test": "tests/luminance_foundation_test.mjs",
@@ -508,9 +514,8 @@
     },
     {
       "test": "tests/arrival_sentence_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "Arrival: 27 participant/negation/question/calendar/property/runtime cases match Ruby formal and MIDI. Independent tokens distinguish completed arrival from approach without recipient or carrying inference.\n"
+      "passed": false,
+      "output": "Timed out after 120 seconds"
     },
     {
       "test": "tests/destination_carrying_test.mjs",

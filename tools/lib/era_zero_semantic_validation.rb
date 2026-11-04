@@ -7,11 +7,13 @@ require_relative "era_zero_names"
 require_relative "era_zero_foundation_ir"
 require_relative "era_zero_compound_expansion"
 require_relative "era_zero_reference_properties"
+require_relative "era_zero_contextual_standards"
 
 # Shared semantic validation for fixtures and sentence composition.
 module EraZeroSemanticValidation
   module_function
   def valid_property_comparison?(node, ir)
+    return EraZeroContextualStandards.valid?(node, ir) if node["standard"] == "contextual"
     return false unless %w[mass thermodynamic_temperature luminance].include?(node["dimension"]) && %w[equal greater_than less_than at_least at_most not_equal].include?(node["relation"]) && (node.keys - %w[node_id kind operator dimension relation]).empty?
     scopes = ir.fetch("edges").select { |e| e["type"] == "scopes" && e["to"] == node["node_id"] }
     return false unless scopes.length == 1

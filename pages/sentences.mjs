@@ -1,3 +1,4 @@
+import {CONTEXTUAL_NORMS} from './contextual_standards.mjs';
 import {luminanceValue} from './luminance.mjs';
 import {FELT_CONDITIONS} from './felt_conditions.mjs';
 import {massKilograms} from './mass.mjs';
@@ -539,6 +540,13 @@ export async function composeNamedSentence(input,template,{interpretation,standa
   if(['thermal_standard','mass_standard','luminance_standard'].includes(parsed.requiredInterpretation)){
     const massStandard=parsed.requiredInterpretation==='mass_standard',luminanceStandard=parsed.requiredInterpretation==='luminance_standard';
     const dimension=luminanceStandard?'luminance':massStandard?'mass':'thermodynamic_temperature',unit=luminanceStandard?'candela_per_square_meter':massStandard?'kilogram':'kelvin';
+    if(standard?.kind==='contextual'){
+      if(parsed.nominalProperty||standard.dimension!==dimension||Object.keys(standard).sort().join(',')!=='dimension,kind')throw new Error('Invalid contextual property standard.');
+      const norm=CONTEXTUAL_NORMS[parsed.adjective];
+      parsed.contextualComparison={operator:'comparison',standard:'contextual',norm:parsed.adjective,dimension,relation:norm.relation};
+      selectedStandard={dimension,kind:'contextual',norm:parsed.adjective,relation:norm.relation};
+      parsed.semanticNote=`Uses the local contextual ${parsed.adjective} standard in the selected ${dimension} sense. No numerical cutoff or measurement is asserted; the opposite adjective may use a different standard.`;
+    }else{
     const threshold=standard?.dimension===dimension&&Object.keys(standard).sort().join(',')==='dimension,scale,threshold'?(luminanceStandard?luminanceValue(standard.threshold,standard.scale):massStandard?massKilograms(standard.threshold,standard.scale):temperaturePointKelvin(standard.threshold,standard.scale)):null;
     if(threshold===null)throw new Error(luminanceStandard?'Provide a nonnegative luminance threshold in candela_per_square_meter.':massStandard?'Provide a nonnegative mass threshold as an exact decimal in gram or kilogram.':'Provide a thermodynamic-temperature threshold as an exact decimal in celsius or kelvin.');
     const above=['hot','heavy','bright'].includes(parsed.adjective);
@@ -547,6 +555,7 @@ export async function composeNamedSentence(input,template,{interpretation,standa
     else parsed.measurement=measurement;
     selectedStandard={dimension,threshold,unit,relation:measurement.comparison};
     parsed.semanticNote=[parsed.semanticNote,`For this translation, ${parsed.adjective} means ${luminanceStandard?'photometric luminance':massStandard?'mass':'a thermodynamic temperature'} ${above?'above':'below'} ${threshold} ${unit}s, using your supplied standard. This is not a universal cutoff or a claim about ${luminanceStandard?'perceived brightness, luminous intensity, illuminance, color, or intelligence':massStandard?'weight force, carrying effort, size, or brightness':'felt warmth, spiciness, or emotional tone'}.`].filter(Boolean).join(' ');
+    }
   }else if(standard!==undefined)throw new Error('This sentence does not take an adjective standard.');
   const bound=!!parsed.compoundSlots;
   const graphRendered=bound||!!parsed.nominalProperty;
@@ -597,6 +606,10 @@ export async function composeNamedSentence(input,template,{interpretation,standa
     ir.nodes.push({node_id:'aspect',kind:'scope_operator',operator:'aspect',aspect:parsed.aspect});
     ir.edges[0].from='aspect';
     ir.edges.push({edge_id:'aspect',type:'scopes',from:'p',to:'aspect'});
+  }
+  if(parsed.contextualComparison){
+    ir.nodes.push({node_id:'contextual',kind:'scope_operator',...parsed.contextualComparison});
+    ir.edges[0].from='contextual';ir.edges.push({edge_id:'contextual',type:'scopes',from:'p',to:'contextual'});
   }
   if(parsed.negated){
     ir.nodes.push({node_id:'neg',kind:'scope_operator',operator:'negation'});

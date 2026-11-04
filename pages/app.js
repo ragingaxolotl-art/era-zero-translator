@@ -116,7 +116,7 @@ function showCarryingViewpoint(input){
   }
   let threshold,scale;
   if(needsMass){
-    const explanation=document.createElement('p');explanation.textContent=`Also choose the mass standard for “${parsed.adjective}”: ${parsed.adjective==='heavy'?'above':'below'} your threshold. Weight force, effort and brightness need different meanings.`;
+    const explanation=document.createElement('p');explanation.textContent=`Also choose the mass standard for “${parsed.adjective}”: ${parsed.adjective==='heavy'?'above':'below'} a standard. ${parsed.nominalProperty?'Supply a numerical threshold.':'Choose a contextual standard without a number, or supply a numerical threshold.'} Weight force, effort and brightness need different meanings.`;
     const thresholdLabel=document.createElement('label');thresholdLabel.textContent='Mass threshold';threshold=document.createElement('input');threshold.type='text';threshold.inputMode='decimal';threshold.maxLength=1000;threshold.placeholder='Enter your contextual threshold';thresholdLabel.append(threshold);
     const scaleLabel=document.createElement('label');scaleLabel.textContent='Mass unit';scale=document.createElement('select');for(const [value,text] of [['kilogram','Kilograms'],['gram','Grams']]){const option=document.createElement('option');option.value=value;option.textContent=text;scale.append(option)}scale.value='kilogram';scaleLabel.append(scale);
     card.append(explanation,thresholdLabel,scaleLabel);
@@ -143,7 +143,7 @@ function showAdjectiveStandard(input){
   $('output').classList.add('hidden');$('phraseCoverage').classList.add('hidden');$('resolutionPanel').classList.add('hidden');$('results').classList.remove('hidden');$('candidateList').innerHTML='';
   $('decisionSummary').textContent=`What ${property} standard do you mean by “${parsed.adjective}”?`;
   const card=document.createElement('article');card.className='candidate';
-  const description=document.createElement('p');description.textContent=`For this translation, use ${luminanceStandard?'photometric surface luminance in the contextual viewing direction':massStandard?'mass':'thermodynamic temperature'} ${['hot','heavy','bright'].includes(parsed.adjective)?'above':'below'} your threshold. ${luminanceStandard?'Perceived brightness, glare, color, luminous intensity and metaphorical meanings':massStandard?'Weight force, carrying effort, size and brightness':'Felt warmth, spiciness and emotional meanings'} need a different interpretation.`;
+  const description=document.createElement('p');description.textContent=`For this translation, use ${luminanceStandard?'photometric surface luminance in the contextual viewing direction':massStandard?'mass':'thermodynamic temperature'} ${['hot','heavy','bright'].includes(parsed.adjective)?'above':'below'} a standard. ${parsed.nominalProperty?'Supply a numerical threshold.':'Choose a contextual standard without a number, or supply a numerical threshold.'} ${luminanceStandard?'Perceived brightness, glare, color, luminous intensity and metaphorical meanings':massStandard?'Weight force, carrying effort, size and brightness':'Felt warmth, spiciness and emotional meanings'} need a different interpretation.`;
   const label=document.createElement('label');label.textContent=luminanceStandard?'Luminance threshold':massStandard?'Mass threshold':'Temperature threshold';
   const threshold=document.createElement('input');threshold.type='text';threshold.inputMode='decimal';threshold.maxLength=1000;threshold.placeholder='Enter your contextual threshold';label.append(threshold);
   const scaleLabel=document.createElement('label');scaleLabel.textContent=luminanceStandard?'Luminance unit':massStandard?'Mass unit':'Temperature scale';
@@ -162,7 +162,23 @@ function showAdjectiveStandard(input){
       await showResolution(composed,{definition:[composed.interpretation,composed.semantic_note].filter(Boolean).join(' ')});
     }catch(error){status.textContent=error.message}finally{button.disabled=false}
   });
-  card.append(description,label,scaleLabel,status,button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+  card.append(description,label,scaleLabel,status,button);
+  if(!parsed.nominalProperty){
+    const contextual=document.createElement('button');contextual.textContent=`Use the contextual ${property} standard (no number)`;
+    contextual.addEventListener('click',async()=>{
+      const current=()=>$('sourceInput').value.trim()===input&&state.mode!=='controlled'&&card.isConnected!==false;
+      if(!current())return;contextual.disabled=true;status.textContent='';
+      try{
+        const standard={kind:'contextual',dimension:luminanceStandard?'luminance':massStandard?'mass':'thermodynamic_temperature'};
+        const composed=await composeNamedSentence(input,await sentenceTemplate(parsed.predicate),{interpretation:parsed.requiredInterpretation,standard});
+        if(!current())return;
+        state.resolution=composed;$('results').classList.add('hidden');
+        await showResolution(composed,{definition:[composed.interpretation,composed.semantic_note].filter(Boolean).join(' ')});
+      }catch(error){if(current())status.textContent=error.message}finally{contextual.disabled=false}
+    });
+    card.append(contextual);
+  }
+  $('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
 }
 function showFoundationPreview(input){
   state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];

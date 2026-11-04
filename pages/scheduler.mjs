@@ -1,3 +1,4 @@
+import {CONTEXTUAL_NORMS,validContextualComparison} from './contextual_standards.mjs';
 import {validateSubjectControl} from './subject_control.mjs';
 const ASPECTS=['bounded','ongoing','habitual'];
 const PROPERTY_COMPARISONS=['equal','greater_than','less_than','at_least','at_most','not_equal'];
@@ -55,7 +56,7 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
       const phrase = walk(scoped[0].from);
       if (!phrase.length) throw new Error('Repetition scope has no sound events.');
       if(node.operator==='aspect')result=[grammarMarker(formal,id,`aspect_${node.aspect}_open`),...phrase,grammarMarker(formal,id,`aspect_${node.aspect}_close`)];
-      else if(node.operator==='comparison'){validatePropertyComparison(node,ir);result=[grammarMarker(formal,id,`property_${node.dimension}_${node.relation}_open`),...phrase,grammarMarker(formal,id,`property_${node.dimension}_${node.relation}_close`)];}
+      else if(node.operator==='comparison'){validatePropertyComparison(node,ir);const frame=node.standard==='contextual'?`contextual_${node.norm}`:`property_${node.dimension}_${node.relation}`;result=[grammarMarker(formal,id,`${frame}_open`),...phrase,grammarMarker(formal,id,`${frame}_close`)];}
       else if(node.operator==='negation')result=[grammarMarker(formal,id,'negation_open'),...phrase,grammarMarker(formal,id,'negation_close')];
       else if(node.operator==='quantifier')result=[...quantifierMarkers(formal,node),...phrase,grammarMarker(formal,id,`quantifier_${node.quantifier}_close`)];
       else if(node.operator==='modality')result=[grammarMarker(formal,id,`modality_${node.mode}_open`),...confidenceMarkers(formal,id,node.strength),...phrase,grammarMarker(formal,id,`modality_${node.mode}_close`)];
@@ -166,6 +167,8 @@ function grammarMarker(formal,scopeId,marker){
   if(marker==='proposition_content_close')relative=[0,24,0,0];
   const aspect=marker.match(/^aspect_(bounded|ongoing|habitual)_(open|close)$/);
   if(aspect)relative=[0,aspect[2]==='open'?-22:22,ASPECTS.indexOf(aspect[1]),0];
+  const contextual=marker.match(/^contextual_(hot|cold|heavy|light|bright|dim)_(open|close)$/);
+  if(contextual)relative=[0,contextual[2]==='open'?-26:26,CONTEXTUAL_NORMS[contextual[1]].code,0];
   const property=marker.match(/^property_(mass|thermodynamic_temperature|luminance)_(equal|greater_than|less_than|at_least|at_most|not_equal)_(open|close)$/);
   if(property)relative=[0,property[3]==='open'?-18:18,({mass:1,thermodynamic_temperature:2,luminance:3})[property[1]],PROPERTY_COMPARISONS.indexOf(property[2]),0];
   const comparison=marker.match(/^measure_compare_(greater_than|less_than|at_least|at_most|not_equal)_(open|close)$/);
@@ -189,6 +192,7 @@ function grammarMarker(formal,scopeId,marker){
   if(conditional)relative=[0,conditional[2]==='open'?-16:16,CONDITION_STATUSES.indexOf(conditional[1]),0];
   if(marker==='conditional_then')relative=[0,16,0,16];
   const base=formal.performance.anchor_midi;
+  if(relative.some(n=>base+n<0||base+n>127))throw new Error('Grammar pitch outside MIDI range.');
   return {kind:'grammar_marker',grammar_profile:'EZGRAM-1',marker,occurrence_id:scopeId,target_id:`EZGRAM:${marker}`,register:'middle',base_midi:base,
     family_qualified_transliteration:marker,formal_carrier:'',family_opening_relative_semitones:[],family_opening_absolute_midi:[],
     address_relative_semitones:relative,address_absolute_midi:relative.map(note=>base+note),note_duration_beats:.25,boundary_after_beats:.5};
@@ -216,6 +220,8 @@ function frameBoundArguments(formal,maxEvents){
 }
 
 function validatePropertyComparison(node,ir){
+ if(node.standard==='contextual'){if(!validContextualComparison(node,ir))throw new Error('Invalid contextual standard.');return;}
+
  const scopes=ir.edges.filter(e=>e.type==='scopes'&&e.to===node.node_id),predicate=scopes.length===1?ir.nodes.find(n=>n.node_id===scopes[0].from):null;
  const roles=predicate?ir.edges.filter(e=>e.type==='fills_role'&&e.to===predicate.node_id):[];
  if(!['mass','thermodynamic_temperature','luminance'].includes(node.dimension)||!PROPERTY_COMPARISONS.includes(node.relation)||Object.keys(node).some(k=>!['node_id','kind','operator','dimension','relation'].includes(k))||predicate?.kind!=='lexical_occurrence'||predicate?.target_type!=='atom'||!['MAT:000','MAT:010'].includes(predicate?.target_id)||roles.map(e=>e.role).sort().join(',')!=='bearer,comparison_standard'||!roles.every(e=>ir.nodes.some(n=>n.node_id===e.from&&['phonemic_reference','deictic_reference'].includes(n.kind)&&n.reference_mode!=='nominal_class')))throw new Error('Unsupported musical property comparison.');
