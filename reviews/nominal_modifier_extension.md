@@ -14,8 +14,8 @@ frame is mass-specific; do not silently reinterpret it as a generic adjective.
 
 `contextual_standards.mjs` provides temperature, mass, luminance and texture
 norms. Their unspecified contextual standards are meaningful and must not be
-replaced by invented numeric cutoffs. Current noun restrictions reject these
-contextual standards. `foundation_sentences.mjs` accepts plain noun alternatives
+replaced by invented numeric cutoffs. Noun restrictions now accept contextual mass standards for heavy/light;
+other dimensions remain unsupported. `foundation_sentences.mjs` accepts plain noun alternatives
 but cannot attach these restrictions to preference alternatives.
 
 ## Implementation order
@@ -49,5 +49,10 @@ but cannot attach these restrictions to preference alternatives.
    and cannot replace, physical speaker-to-microphone recordings.
 
 No new root family is justified by these structural gaps. No root, approved
-compound, musical frame or runtime meaning was changed by this audit. All
-implementation and physical-audio obligations above remain open.
+compound or runtime meaning was changed. The first implementation reuses existing
+mass and contextual-norm frames: 12 heavy/light × negation × runtime cases recover
+complete destination-carrying meaning from MIDI and match independent Ruby
+rendering. Numeric mass regression remains intact. The new contextual restriction
+remains attached to its noun under action negation; negation does not invert the
+restriction. Generic modifiers, preference integration and physical-audio
+obligations above remain open. No new WAV or physical recording is claimed.

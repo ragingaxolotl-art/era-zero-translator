@@ -27,7 +27,15 @@ export function strictSemanticReader(bytes,atoms,message,options){
  };
  const reference=(nodes,register)=>{
   if(nodes.length===1&&marker(nodes[0],'nominal_mass_open')){
-   const content=nodes[0].children,compare=content[0],relation=compare?.marker?.match(/^measure_compare_(greater_than|less_than)_open$/)?.[1];
+   const content=nodes[0].children,compare=content[0];
+   const norm=compare?.marker?.match(/^contextual_(heavy|light)_open$/)?.[1];
+   if(norm){
+    if(compare.children?.length!==0||!marker(content[1],'nominal_property_head'))fail();
+    const head=reference(content.slice(2),register);
+    if(head.kind!=='phonemic'||head.reference_mode!=='definite_nominal'||head.property)fail();
+    return {...head,property:{dimension:'mass',standard:'contextual',norm,comparison:norm==='heavy'?'greater_than':'less_than'}};
+   }
+   const relation=compare?.marker?.match(/^measure_compare_(greater_than|less_than)_open$/)?.[1];
    if(!relation||compare.children?.length!==1||!marker(compare.children[0],'measurement_open')||!marker(content[1],'nominal_property_head'))fail();
    const measured=compare.children[0].children;if(!marker(measured.at(-1),'measurement_unit_9'))fail();
    const magnitude=decimal(measured.slice(0,-1)),head=reference(content.slice(2),register);

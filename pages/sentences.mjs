@@ -708,9 +708,10 @@ export async function composeNamedSentence(input,template,{interpretation,standa
     const textureStandard=parsed.requiredInterpretation==='texture_standard',massStandard=parsed.requiredInterpretation==='mass_standard',luminanceStandard=parsed.requiredInterpretation==='luminance_standard';
     const dimension=textureStandard?'surface_texture':luminanceStandard?'luminance':massStandard?'mass':'thermodynamic_temperature',unit=luminanceStandard?'candela_per_square_meter':massStandard?'kilogram':'kelvin';
     if(standard?.kind==='contextual'){
-      if(parsed.nominalProperty||standard.dimension!==dimension||Object.keys(standard).sort().join(',')!=='dimension,kind')throw new Error('Invalid contextual property standard.');
+      if(standard.dimension!==dimension||Object.keys(standard).sort().join(',')!=='dimension,kind')throw new Error('Invalid contextual property standard.');
       const norm=CONTEXTUAL_NORMS[parsed.adjective];
-      parsed.contextualComparison={operator:'comparison',standard:'contextual',norm:parsed.adjective,dimension,relation:norm.relation};
+      if(parsed.nominalProperty)parsed.nominalProperty.restriction={dimension,standard:'contextual',norm:parsed.adjective,comparison:norm.relation};
+      else parsed.contextualComparison={operator:'comparison',standard:'contextual',norm:parsed.adjective,dimension,relation:norm.relation};
       selectedStandard={dimension,kind:'contextual',norm:parsed.adjective,relation:norm.relation};
       parsed.semanticNote=(textureStandard?'Physical texture of the contextually selected surface region and scale; no tactile experience, damage, hardness or figurative meaning is asserted. ':'')+`Uses the local contextual ${parsed.adjective} standard in the selected ${dimension} sense. No numerical cutoff or measurement is asserted; the opposite adjective may use a different standard.`;
     }else{

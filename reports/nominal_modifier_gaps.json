@@ -42,8 +42,15 @@
           "dimension": "mass"
         }
       },
-      "status": "not_composed",
-      "diagnostic": "Invalid contextual property standard."
+      "status": "composed_requires_meaning_and_music_review",
+      "reference_restrictions": [
+        {
+          "dimension": "mass",
+          "standard": "contextual",
+          "norm": "heavy",
+          "comparison": "greater_than"
+        }
+      ]
     },
     {
       "input": "The hot robot is carrying the box.",
