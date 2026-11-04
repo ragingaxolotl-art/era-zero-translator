@@ -152,3 +152,20 @@ twelve cases; it does not establish all nested/compound cases or English admissi
 Remaining: browser formal construction and verification for this draft type,
 nested and compound rendering/inverse coverage, explicit English/UI composition,
 and finite-model checks driven by decoded meaning rather than expected input.
+
+## Draft English and browser formal construction
+
+quantified_sentences.mjs now composes explicit counted unary properties into the
+binder IR, then constructs fresh utterance/formal identities, structural events
+and digests in the browser. Supported wording includes exact/at-least/at-most
+counts, predicate negation, explicit whole-proposition negation, questions and
+runtime tags. It reuses existing canonical noun parsing and atomic property
+meanings. Ambiguous “active”, added temporal scope and unsupported predicates
+remain unresolved; there is no alias substitution for them.
+
+Eighteen English cases produce complete browser formal objects exactly equal to
+opt-in Ruby rendering, and byte-identical MIDI. The independent musical inverse
+recovers both negation positions; those decoded values drive the finite-model
+counterexamples, distinguishing the six-lamp/three-energized interpretations.
+Composition requires allowDraft. This is an English API route, not yet main UI
+routing, canonical admission, arbitrary nested-count decoding or full grammar.
