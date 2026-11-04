@@ -1369,3 +1369,22 @@ This supersedes the earlier unsupported examples using “It is possible that No
 ran to the gate” and “It is not the case that Nora ran to the gate.” It does not
 establish arbitrary temporal expressions, all modal meanings, live-browser behavior
 or listening validation, and does not close the original completion gates.
+
+### Running commands and conditional requests
+
+Run, run toward a destination and run to a destination now use the existing
+running activity, approach and completed-journey compounds under the command
+speech act. The runner is the discourse addressee. Negation prohibits the scoped
+event; neither positive nor negative commands assert that running or arrival
+occurred. The completed-to command drops the past-time anchor used by ran-to
+statements, preserving lexical completion independently of tense and runtime.
+
+`tests/running_command_test.mjs` covers 24 runtime/negation/destination/conditional
+cases with full Ruby/browser formal and MIDI parity, independent speech-act and
+addressee recovery, and three contracted-negative equivalents. Conditional
+requests keep the condition's runtime distinct from the requested journey's.
+`reports/running_command_validation.json` records the targeted regressions.
+No roots, compounds, prior sounds or dictionary meanings were changed. Program
+execution, manner adverbs, quantified destinations and dated commands remain
+unresolved; this addition does not establish broad imperative or full-language
+completion. Live UI and listening remain unverified.

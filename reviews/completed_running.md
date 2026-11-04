@@ -43,3 +43,12 @@ running journey definition and existing time/modality frames. The dedicated
 parity and an order-sensitive countermodel. Earlier temporal-modality rejection
 statements above are superseded for these supported constructions; broad temporal
 English and listening verification remain open.
+
+## Commands
+
+Run to a destination uses the completed journey as the requested event type, with
+addressee actor, command contour and no inherited past-time anchor. Run toward
+uses approach, and bare run uses bodily running. Do not and don't place negation
+inside the command. These forms request/prohibit rather than assert events. The
+24-case command test includes independent musical speech-act/participant recovery
+and conditional requests whose condition and conclusion retain separate runtimes.

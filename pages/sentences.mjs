@@ -106,6 +106,15 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     return inner?{...inner,explicitInterpretation:inner.explicitInterpretation||normalized.trim()}:null;
   }
   if(speechActs){
+    const runningCommand=String(input).trim().match(new RegExp(`^([Dd]o not )?[Rr]un(?: (toward|to) ${participant})?[.!]?$`));
+    if(runningCommand){
+      const negative=!!runningCommand[1],relation=runningCommand[2],goal=runningCommand[3];
+      const statement=relation==='to'?`you ${negative?'did not run':'ran'} to ${goal}.`:`you are ${negative?'not ':''}running${goal?' toward '+goal:''}.`;
+      const inner=parseNamedSentence(statement,depth+1,false);
+      if(!inner)return null;
+      return {...inner,speechTime:undefined,speechAct:'command',construction:`command_${inner.construction}`,explicitInterpretation:String(input).trim(),semanticNote:inner.semanticNote+' This addresses the listener and requests or prohibits the event; it does not assert that running or arrival occurred.'};
+    }
+
     const runningQuestion=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?run to ${participant}[?]$`));
     if(runningQuestion){
       const inner=parseNamedSentence(`${runningQuestion[1]} ${runningQuestion[2]?'did not run':'ran'} to ${runningQuestion[3]}.`,depth+1,false);
