@@ -1,3 +1,5 @@
+import {validateQuantifiedBindings} from './quantified_binding.mjs';
+import {quantifiedMusicEvent} from './quantified_music.mjs';
 import {CONTEXTUAL_NORMS,validContextualComparison} from './contextual_standards.mjs';
 import {validateSubjectControl} from './subject_control.mjs';
 const ASPECTS=['bounded','ongoing','habitual'];
@@ -13,6 +15,9 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
   const events = frameBoundArguments(formal, maxEvents);
   const ir = formal.semantic_ir;
   validateSubjectControl(ir);
+  const countedDraft=ir.nodes.some(n=>n.operator==='quantified_predication'||n.kind==='quantified_reference');
+  if(countedDraft){if(formal.draft_quantified!==true)throw new Error('Draft quantified music requires explicit opt-in.');validateQuantifiedBindings(ir);}
+  const binderStack=[];
   for (const node of ir.nodes) {
     if(node.kind==='scope_operator'&&node.operator==='quantifier'){
       const scoped=ir.edges.filter(e=>e.type==='scopes'&&e.to===node.node_id);
@@ -24,7 +29,7 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
       if(!ASPECTS.includes(node.aspect)||Object.keys(node).some(k=>!['node_id','kind','operator','aspect'].includes(k))||scoped.length!==1||!['lexical_occurrence','clause','scope_operator','coordination'].includes(ir.nodes.find(n=>n.node_id===scoped[0]?.from)?.kind))throw new Error('Unsupported musical aspect.');
     }
     if(node.kind==='variable'||(node.kind==='reference'&&node.reference_type!=='desire_subject'))throw new Error('Unsupported musical discourse variable/reference.');
-    if ((node.kind === 'scope_operator' && !['negation','repetition','modality','quantifier','comparison','aspect'].includes(node.operator)) ||
+    if ((node.kind === 'scope_operator' && !['negation','repetition','modality','quantifier','comparison','aspect',...(countedDraft?['quantified_predication']:[])].includes(node.operator)) ||
         (node.kind === 'coordination' && !['sequence','all_of','any_of','exactly_one'].includes(node.operator)))
       throw new Error(`Unsupported musical operator: ${node.operator}.`);
   }
@@ -52,7 +57,16 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
     if (!node) throw new Error(`Unknown performance scope ${id}.`);
     const edges = incoming.get(id) || [];
     let result;
-    if (node.kind === 'scope_operator') {
+    if(node.kind==='scope_operator'&&node.operator==='quantified_predication'){
+      const restriction=edges.find(e=>e.type==='restricts'),body=edges.find(e=>e.type==='scopes');
+      const marker=name=>({...quantifiedMusicEvent(name,formal.performance.anchor_midi),occurrence_id:id});
+      binderStack.push(id);
+      result=[marker(`counted_${node.quantifier}_open`),...Array.from(node.value,d=>grammarMarker(formal,id,`digit_${d}`)),marker('counted_restriction_open'),...walk(restriction.from),marker('counted_restriction_close'),marker('counted_predicate_open'),...walk(body.from),marker('counted_predicate_close'),marker(`counted_${node.quantifier}_close`)];
+      binderStack.pop();
+    } else if(node.kind==='quantified_reference'){
+      const position=binderStack.lastIndexOf(node.binder_id);if(position<0)throw new Error('Unbound quantified musical reference.');
+      result=[{...quantifiedMusicEvent(`counted_reference_${binderStack.length-1-position}`,formal.performance.anchor_midi),occurrence_id:id}];
+    } else if (node.kind === 'scope_operator') {
       if (!['negation','modality','quantifier','comparison','aspect'].includes(node.operator) && (node.operator !== 'repetition' || node.mode !== 'count' || !Number.isSafeInteger(node.count) || node.count < 1))
         throw new Error('Counted repetition requires a positive count and supported nested scopes.');
       const scoped = edges.filter(edge => edge.type === 'scopes');

@@ -2,9 +2,9 @@ import {decodeStrictMusicMidi} from './strict_music_decoder.mjs';
 
 // Shared strict grammar reader. Each semantic profile must validate the entire
 // remaining tree, including exact lexical conventions, roles and head roots.
-export function strictSemanticReader(bytes,atoms,message){
+export function strictSemanticReader(bytes,atoms,message,options){
  const fail=()=>{throw new Error(message);};
- const observed=decodeStrictMusicMidi(bytes,atoms),tokens=observed.tokens;
+ const observed=decodeStrictMusicMidi(bytes,atoms,options),tokens=observed.tokens;
  const tree=(from,to,depth=0)=>{
   if(depth>64)fail();const children=[];
   for(let i=from;i<to;i++){

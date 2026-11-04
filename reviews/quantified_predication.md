@@ -104,3 +104,29 @@ not accepted sentences or evidence of complete binding recovery.
 Next integration must generate only well-typed frames from validated binder IR,
 encode references by actual enclosing binder depth, and independently reconstruct
 restriction/body binding from the MIDI tree. Balanced frames alone are not enough.
+
+## Draft graph scheduling and first semantic inverse
+
+The browser scheduler now accepts counted binder/reference nodes only when the
+formal object explicitly opts in with draft_quantified. It first applies binding
+validation, then emits count digits, nominal restriction, predicate boundaries
+and reference depth from an actual binder stack. The existing count/negation
+paths remain unchanged. This does not bypass canonical semantic-IR admission:
+normal Ruby rendering and bundle validation still need integration.
+
+The new independent quantified-property inverse recovers exact/at-least/at-most
+count, nominal-class phonemes, bound bearer identity, atomic property, runtime,
+predicate negation and whole-proposition negation. Its admitted predicate set is
+physical energization, impairment/restoration and other-view consciousness/dormancy.
+Other valences, nested counts, compounds and malformed structures reject rather
+than returning a partial interpretation. The scheduler supports general binding
+structure; this first inverse is explicitly limited and does not certify it all.
+
+Twelve graph-to-MIDI cases cover both negation scopes independently across runtime
+0/1/2, with twelve different performances. The tests transform known canonical
+counted-property fixtures into the draft binder shape; their old formal hashes
+are not claimed valid. Independent MIDI recovery is tested without the source
+IR, and wrong binder identity/default-without-opt-in are rejected. Canonical
+counted-noun and proposition-negation regressions continue to pass. Full typed
+formal construction, Ruby rendering, nested inverse and English/UI admission
+remain next work, not completed coverage.
