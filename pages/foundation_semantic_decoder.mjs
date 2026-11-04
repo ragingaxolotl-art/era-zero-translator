@@ -1,3 +1,4 @@
+import {validAcquisitionScopes} from './acquisition_scopes.mjs';
 import {readSwimmingTree} from './swimming_decoder.mjs';
 import {readFeltConditionTree} from './felt_decoder.mjs';
 import {validateFoundations,foundationPath} from './foundations.mjs';
@@ -67,18 +68,22 @@ export async function decodeFoundationSentenceMidi(bytes,atoms,records,{allowDra
   }
   return {predicate:d?{kind:'foundation',foundation_id:d.foundation_id,definition_version:d.definition_version,registry_status:d.status}:{kind:'atom',root_id:head.root_id},runtime_state:head.runtime_state,scopes,arguments:args};
  }
- const tree=readTree();
+ const originalTree=readTree();let tree=originalTree;const acquisitionScopes=[];
+ while(tree.length===1&&['negation_open','time_before_speech_open','time_previous_day_open','time_current_day_open'].includes(tree[0].marker)){
+  const marker=tree[0].marker;acquisitionScopes.push(marker==='negation_open'?'negation':marker.slice(5,-5));tree=tree[0].children;
+ }
+
  if(tree.length===1&&tree[0].marker==='knowledge_acquisition_open'){
-  if(observed.speech_act!=='assertion')fail();
+  if(!['assertion','question'].includes(observed.speech_act)||!validAcquisitionScopes(acquisitionScopes))fail();
   const children=tree[0].children;
   if(children.length!==2||children[0].marker!=='acquisition_result_open')fail();
   const head=children[1];reader.exactRoot(head,'ORI:110','middle',head.runtime_state);
   if(![0,1,2].includes(head.runtime_state))fail();
   const result=proposition(children[0].children);
   if(result.predicate.foundation_id!=='FND:fe36cb2a6d649151067c7754'||result.scopes.length||result.arguments.content?.type!=='question')fail();
-  return {profile:'EZKNOWLEDGE-ACQUISITION-INVERSE-1',speech_act:observed.speech_act,meaning:{predicate:{kind:'acquisition',root_id:'ORI:110'},runtime_state:head.runtime_state,phase_contract:{before:'does_not_hold',culmination:'holds',after:'unspecified'},result_assertion:'at_culmination_only',result},limitations:['Draft acquisition convention; not general learning or recorded-audio recognition.','Knowledge result and question meanings are recovered, not verified as real-world facts.']};
+  return {profile:'EZKNOWLEDGE-ACQUISITION-INVERSE-1',speech_act:observed.speech_act,meaning:{predicate:{kind:'acquisition',root_id:'ORI:110'},runtime_state:head.runtime_state,scopes:acquisitionScopes.map(s=>s==='negation'?{operator:'negation'}:{operator:'time',relation:s}),phase_contract:{before:'does_not_hold',culmination:'holds',after:'unspecified'},result_assertion:'at_culmination_only',result},limitations:['Draft acquisition convention; not general learning or recorded-audio recognition.','Knowledge result and question meanings are recovered, not verified as real-world facts.']};
  }
- const meaning=proposition(tree);
+ const meaning=proposition(originalTree);
  if(meaning.predicate.kind!=='foundation')fail();
  return {profile:'EZFOUND-SEMANTIC-INVERSE-1',speech_act:observed.speech_act,meaning,
   limitations:['Candidate vocabulary requires explicit opt-in.','This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.','Reference sounds do not determine original spelling or external identity.','Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.','Reads strict MIDI, not recorded audio.']};

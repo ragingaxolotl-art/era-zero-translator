@@ -168,7 +168,7 @@ function confidenceMarkers(formal,id,strength){
   if(strength===undefined)return [];
   return ['confidence_open',...Array.from(strength,char=>char==='.'?'decimal_point':`digit_${char}`),'confidence_close'].map(marker=>grammarMarker(formal,id,marker));
 }
-function grammarMarker(formal,scopeId,marker){
+export function grammarMarker(formal,scopeId,marker){
   const modal=marker.match(/^modality_(.+)_(open|close)$/);
   const distance=modal?MODAL_MODES.indexOf(modal[1])+2:0;
   let relative=modal?[0,modal[2]==='open'?-distance:distance,modal[2]==='open'?-distance:distance,0]:(marker==='negation_open'?[0,-1,-1,0]:[0,1,1,0]);

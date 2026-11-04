@@ -391,3 +391,27 @@ admission and a changed persistence contract reject. The semantic acquisition
 model's 27 partial-information cases remain passing. This supersedes the earlier
 Ruby-parity limitation; it does not yet provide English learned-whether, event
 negation/tense, nonassertion speech acts, UI integration or listening validation.
+
+## English learned-whether and acquisition scopes
+
+`learned_whether.mjs` now composes explicit completed answer-acquisition clauses
+through the existing knowledge result and ORI:110 convention. Learned, did-not-learn,
+past questions and contractions preserve matrix speech act and event negation.
+Explicit fronted Today/Yesterday scopes the acquisition; time inside the whether
+clause stays on its predicate. The result knowledge itself is untimed relative to
+speech and bound only to culmination. This does not substitute past knowledge
+for learning, or assert knowledge independently under event negation/questions.
+
+The acquisition document now hashes speech act and ordered event scopes. The
+browser and Ruby wrap existing time/negation frames around acquisition, leaving
+the complete result inside its binding frame; final contour carries the matrix
+speech act. The semantic inverse validates the admitted scope order and recovers
+it separately from result and question-content scopes. No new sounds are needed
+for these existing grammatical operators.
+
+Eighteen English cases cover six scope/act patterns across event runtime 0/1/2,
+with MIDI-only semantic recovery and exact Ruby audio parity. Existing acquisition
+music, phase-model and knowledge-time tests pass. This is an explicit draft API;
+main UI/export integration remains unfinished. Bare learned-the-route, learned-that,
+ongoing learning and skill acquisition remain unsupported rather than silently
+receiving this polar-answer sense. No original completion gate is closed.

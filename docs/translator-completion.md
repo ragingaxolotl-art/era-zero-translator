@@ -44,8 +44,9 @@ and the exact knowledge result with explicit before/culmination binding; 27
 partial-information contrasts pass. Draft acquisition music now preserves the
 complete result binding in 18 MIDI-only decoding cases with independent event
 and result runtime states. Ruby now validates the full result and produces
-byte-identical acquisition MIDI. English learned-whether, event scopes and
-UI integration remain open.
+byte-identical acquisition MIDI. Draft English learned-whether now preserves
+event scopes, questions and content timing in 18 musical meaning/parity cases.
+Acquisition UI/export integration and broader learning senses remain open.
 
 Recent completed implementation work:
 

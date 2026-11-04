@@ -1,14 +1,16 @@
+import {validAcquisitionScopes} from './acquisition_scopes.mjs';
 // Draft result-state binding convention, not a new root or approved compound.
 import {canonicalDigest} from './engine.mjs';
 import {validateFoundationIR} from './foundation_ir.mjs';
 const PROFILE='EZKNOWLEDGE-ACQUISITION-1';
-const fields=['profile','status','transition_root','transition_runtime','result_assertion','phase_contract','result_state','vocabulary','content_digest','acquisition_id'];
+const fields=['profile','status','transition_root','transition_runtime','speech_act','event_scopes','result_assertion','phase_contract','result_state','vocabulary','content_digest','acquisition_id'];
 export async function validateKnowledgeAcquisition(input,{allowDraft=false}={}){
  if(!allowDraft)throw new Error('Knowledge acquisition requires draft opt-in.');
  const document=structuredClone(input);
  if(!document||fields.some(k=>!Object.hasOwn(document,k))||Object.keys(document).some(k=>!fields.includes(k)))throw new Error('Invalid acquisition fields.');
  if(document.profile!==PROFILE||document.status!=='draft'||document.transition_root!=='ORI:110'||document.result_assertion!=='at_culmination_only'||await canonicalDigest(document.phase_contract)!==await canonicalDigest({before:'does_not_hold',culmination:'holds',after:'unspecified'}))throw new Error('Invalid acquisition phase contract.');
  if(!document.transition_runtime||Object.keys(document.transition_runtime).join(',')!=='code'||![0,1,2].includes(document.transition_runtime.code))throw new Error('Invalid transition runtime.');
+ if(!['assertion','question'].includes(document.speech_act)||!validAcquisitionScopes(document.event_scopes))throw new Error('Invalid acquisition speech act or scope order.');
  const ir=document.result_state,records=document.vocabulary;
  await validateFoundationIR(ir,records,{allowDraft:true});
  const node=ir.nodes.find(n=>n.node_id===ir.edges.find(e=>e.type==='centers'&&e.to===ir.root_clause)?.from);
@@ -21,9 +23,9 @@ export async function validateKnowledgeAcquisition(input,{allowDraft=false}={}){
  if(content_digest!==digest||acquisition_id!==`EZACQ:${digest.slice(0,24)}`)throw new Error('Acquisition identity mismatch.');
  return document;
 }
-export async function createKnowledgeAcquisition(result,{allowDraft=false,runtimeState=1}={}){
+export async function createKnowledgeAcquisition(result,{allowDraft=false,runtimeState=1,speechAct='assertion',eventScopes=[]}={}){
  if(!allowDraft)throw new Error('Knowledge acquisition requires draft opt-in.');
- const body={profile:PROFILE,status:'draft',transition_root:'ORI:110',transition_runtime:{code:runtimeState},result_assertion:'at_culmination_only',phase_contract:{before:'does_not_hold',culmination:'holds',after:'unspecified'},result_state:structuredClone(result.semantic_ir),vocabulary:structuredClone(result.vocabulary?.records)};
+ const body={profile:PROFILE,status:'draft',transition_root:'ORI:110',transition_runtime:{code:runtimeState},speech_act:speechAct,event_scopes:structuredClone(eventScopes),result_assertion:'at_culmination_only',phase_contract:{before:'does_not_hold',culmination:'holds',after:'unspecified'},result_state:structuredClone(result.semantic_ir),vocabulary:structuredClone(result.vocabulary?.records)};
  const digest=await canonicalDigest(body);
  return validateKnowledgeAcquisition({...body,content_digest:digest,acquisition_id:`EZACQ:${digest.slice(0,24)}`},{allowDraft:true});
 }
