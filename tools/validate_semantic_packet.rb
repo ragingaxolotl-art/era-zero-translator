@@ -2,6 +2,7 @@
 # frozen_string_literal: true
 
 require "optparse"
+require_relative "lib/era_zero_packet_evidence"
 require_relative "lib/era_zero_validation"
 
 include EraZeroValidation
@@ -157,7 +158,10 @@ checks.add("winner selection", "each recommendation is a unique highest-scoring 
              candidates = root.fetch("candidates")
              maximum = candidates.map { |candidate| candidate.fetch("total") }.max
              winners = candidates.select { |candidate| candidate.fetch("total") == maximum }
-             winners.length == 1 && root.fetch("recommended_candidate_id") == winners.first.fetch("candidate_id")
+             # Earlier packets use recommended_winner for the same explicit candidate ID.
+             # If both fields exist they must agree; never infer a winner from scores.
+             selection = EraZeroPacketEvidence.field(root, %w[recommended_candidate_id recommended_winner])
+             winners.length == 1 && selection == winners.first.fetch("candidate_id")
            end)
 
 checks.add("fixed generated fields", "all packet fields match the immutable address algorithms",
@@ -213,15 +217,20 @@ checks.add("example coverage", "every root has at least six ordinary, technical,
              root_examples.is_a?(Array) && root_examples.length >= 6
            end)
 
-route_names = stress_tests.map { |test| test["routing"].to_s }.to_set
+# Legacy packets label the same evidence fields concept/classification/rationale
+# (or reason). Accept explicit aliases only when coexisting values agree.
+stress_field = EraZeroPacketEvidence.method(:field)
+concepts = stress_tests.map { |test| stress_field.call(test, %w[english_concept concept]) }
+routes = stress_tests.map { |test| stress_field.call(test, %w[routing classification]) }
+analyses = stress_tests.map { |test| stress_field.call(test, %w[analysis rationale reason]) }
+route_names = routes.compact.to_set
 non_atomic_route = route_names.any? do |route|
-  route.match?(/compound|grammar|family|gap|unresolved|contour|runtime/)
+  route.match?(/compound|composition|grammar|family|gap|unresolved|contour|runtime/)
 end
 checks.add("coverage stress tests", "at least 25 unique concepts include non-atomic routing",
-           stress_tests.length >= 25 &&
-             stress_tests.map { |test| test.fetch("english_concept") }.uniq.length == stress_tests.length &&
-             stress_tests.all? { |test| !test.fetch("analysis").to_s.strip.empty? } &&
-             route_names.length >= 3 && non_atomic_route)
+           stress_tests.length >= 25 && concepts.none?(&:nil?) &&
+             concepts.uniq.length == stress_tests.length && analyses.none?(&:nil?) &&
+             routes.none?(&:nil?) && route_names.length >= 3 && non_atomic_route)
 
 review_text = File.read(File.join(ROOT, paths.fetch(:review)), encoding: "UTF-8")
 collision_text = File.read(File.join(ROOT, paths.fetch(:collision)), encoding: "UTF-8")
