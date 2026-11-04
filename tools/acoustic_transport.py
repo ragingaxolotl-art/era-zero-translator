@@ -73,7 +73,7 @@ def decode(path):
         y=x[a:b]; y=y-y.mean();win=np.hanning(len(y));weighted=y*win
         nfft=1<<(len(y)*8-1).bit_length(); spectrum=np.abs(np.fft.rfft(weighted,nfft))
         frequencies=np.fft.rfftfreq(nfft,1/rate)
-        lo=np.searchsorted(frequencies,30);hi=np.searchsorted(frequencies,5000)
+        lo=np.searchsorted(frequencies,20);hi=np.searchsorted(frequencies,5000)
         k=lo+np.argmax(spectrum[lo:hi]);estimate=frequencies[k]
         t=np.arange(len(y))/rate
         result=minimize_scalar(lambda f:-abs(np.dot(weighted,np.exp(-2j*np.pi*f*t))),bounds=(estimate-rate/nfft,estimate+rate/nfft),method='bounded')

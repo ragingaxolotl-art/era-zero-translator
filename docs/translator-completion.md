@@ -27,8 +27,10 @@ until evidence shows a benefit.
 The contextual inquiry prerequisite for curiosity now preserves a topic without
 inventing a particular question or answer. Its 21 meaning/MIDI cases distinguish
 inquiry content from a bare topic across reference modes and transpositions. See
-`reviews/contextual_inquiry.md`. This is a content type, not completed curiosity
-sentence support; epistemic-interest semantics and full integration remain open.
+`reviews/contextual_inquiry.md`. A subsequent draft now composes epistemic “curious about” sentences through the
+unchanged desire foundation and an explicit interest/outcome convention. Twenty-
+seven meaning/MIDI cases pass; see `reviews/curiosity.md`. UI, Ruby regeneration,
+broader grammar and canonical admission remain open.
 
 The full translator goal remains **incomplete**. There are 324 preserved roots,
 63 approved compounds and 471 canonical senses. Desire/preference and polar-answer

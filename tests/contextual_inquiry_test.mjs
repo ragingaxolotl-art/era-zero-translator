@@ -1,3 +1,4 @@
+import {curiosityFrames} from '../pages/curiosity_frames.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {canonicalDigest} from '../pages/engine.mjs';
@@ -13,7 +14,7 @@ import {contentSelectionFrames} from '../pages/content_selection.mjs';
 import {questionContentMusicFrames} from '../pages/question_music_frames.mjs';
 import {quantifiedMusicFrames} from '../pages/quantified_music.mjs';
 const authority=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url))),paths=contextualInquiryFrames().map(f=>f.path.join(','));
-for(const f of [...strictGrammarFrameInventory(),...acquisitionMusicFrames({includeUnderstanding:true,includeRoute:true}),...contextualContentMusicFrames(),...contentSelectionFrames(),...questionContentMusicFrames(),...quantifiedMusicFrames()])assert(!paths.includes(f.path.join(',')));
+for(const f of [...strictGrammarFrameInventory(),...acquisitionMusicFrames({includeUnderstanding:true,includeRoute:true}),...contextualContentMusicFrames(),...contentSelectionFrames(),...questionContentMusicFrames(),...quantifiedMusicFrames(),...curiosityFrames()])assert(!paths.includes(f.path.join(',')));
 let count=0;
 for(const label of ['the map','this map','that map','Nora','"River Stone"','I','you'])for(const anchor of [48,60,72]){
  const reference=await contextualContentReference(label),document=await createContextualInquiry(reference,{allowDraft:true}),midi=await midiFromContextualInquiry(document,authority,{allowDraft:true,anchor});

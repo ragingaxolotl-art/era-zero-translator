@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "scope": "One authored clean synthetic WAV; no physical recording or simulated channel test",
+  "phrase": "Wasn't Orin curious about this map? [2]",
+  "meaning": {
+    "profile": "EZCURIOSITY-INVERSE-1",
+    "status": "draft",
+    "predicate": "epistemic_curiosity",
+    "desire_foundation_id": "FND:f66b7a3877f4b0140a0b7023",
+    "criterion": "The experiencer has epistemic interest in the contextual inquiry: resolving some contextually relevant uncertainty about the topic is itself motivationally attractive, rather than wanted solely for a separate practical outcome. Instrumental motives may coexist. This does not require pleasure, current attention, a conscious feeling, intention, action, successful discovery or complete ignorance of the topic.",
+    "desired_outcome": "same_experiencer_gains_contextually_relevant_information_resolving_some_inquiry_uncertainty",
+    "outcome_commitment": "desired_not_asserted",
+    "question_commitment": "contextual_not_specified",
+    "experiencer": {
+      "kind": "phonemic",
+      "reference_mode": "name",
+      "phonemes": [
+        "AO",
+        "R",
+        "IH",
+        "N"
+      ],
+      "instance_code": null
+    },
+    "inquiry": {
+      "content_kind": "contextual_question_set",
+      "topic": {
+        "anchor": {
+          "kind": "phonemic",
+          "reference_mode": "proximal_nominal",
+          "phonemes": [
+            "M",
+            "AE",
+            "P"
+          ],
+          "instance_code": null
+        }
+      },
+      "question_selection": "contextually_relevant_unresolved",
+      "answer_commitment": "none",
+      "specific_question_supplied": false
+    },
+    "speech_act": "question",
+    "scopes": [
+      {
+        "operator": "time",
+        "relation": "before_speech"
+      },
+      {
+        "operator": "negation"
+      }
+    ],
+    "runtime_state": 2,
+    "limitations": [
+      "Context must identify the topic and relevant questions.",
+      "This draft epistemic reading is not oddness, sensory novelty seeking or purely instrumental information demand."
+    ]
+  },
+  "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-curiosity-WoLWa0/curiosity.wav"
+}
