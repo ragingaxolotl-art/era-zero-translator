@@ -71,6 +71,10 @@ export function scheduledLexicalEvents(formal, maxEvents = 100000) {
       const conditions=edges.filter(edge=>edge.type==='condition_of');
       if(conditions.length>1)throw new Error('Unsupported musical multiple conditions; use explicit coordination.');
       if(conditions.length){const condition=conditions[0];result=[grammarMarker(formal,id,`conditional_${condition.condition_status}_open`),...walk(condition.from),grammarMarker(formal,id,'conditional_then'),...result,grammarMarker(formal,id,`conditional_${condition.condition_status}_close`)];}
+      if(node.clause_type==='content'){
+       if(node.content_status!=='intensional'||node.value_type!=='proposition'||id===ir.root_clause)throw new Error('Invalid intensional content.');
+       result=[grammarMarker(formal,id,'proposition_content_open'),...result,grammarMarker(formal,id,'proposition_content_close')];
+      }
     } else if (node.kind === 'measurement') {
       result=measurementMarkers(formal,node);
     } else if (node.kind === 'coordination') {
@@ -156,6 +160,8 @@ function grammarMarker(formal,scopeId,marker){
   if(time){const code={before:-1,at:0,after:1}[time[1]],sign=time[2]==='open'?-1:1;relative=[0,12*sign,code,12*sign,0]}
   const day=marker.match(/^time_(previous_day|current_day|next_day)_(open|close)$/);
   if(day){const code={previous_day:-2,current_day:2,next_day:3}[day[1]],sign=day[2]==='open'?-1:1;relative=[0,12*sign,code,12*sign,0]}
+  if(marker==='proposition_content_open')relative=[0,-24,0,0];
+  if(marker==='proposition_content_close')relative=[0,24,0,0];
   const aspect=marker.match(/^aspect_(bounded|ongoing|habitual)_(open|close)$/);
   if(aspect)relative=[0,aspect[2]==='open'?-22:22,ASPECTS.indexOf(aspect[1]),0];
   const property=marker.match(/^property_(mass|thermodynamic_temperature)_(equal|greater_than|less_than|at_least|at_most|not_equal)_(open|close)$/);

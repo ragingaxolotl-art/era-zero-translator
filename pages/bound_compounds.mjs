@@ -1,3 +1,5 @@
+import {validateFoundationIR} from './foundation_ir.mjs';
+import {foundationEvent} from './foundations.mjs';
 import {canonicalDigest,deepSort} from './engine.mjs';
 import {restrictReferenceEvents,validReferenceProperty} from './reference_properties.mjs';
 import {encodeName,notesForName} from './names.mjs';
@@ -33,8 +35,10 @@ function conventionEvent(meaning,side,id,anchor,path){
 
 // This is the lexical rendering layer, not a general semantic-IR parser.
 // Callers construct and validate grammar; compiled plans come from the release.
-export async function renderLexicalOccurrences(ir,authority,{anchor=60,maxEvents=100000}={}){
+export async function renderLexicalOccurrences(ir,authority,{anchor=60,maxEvents=100000,foundationRecords=[],allowDraftFoundations=false}={}){
  if(!Number.isInteger(anchor)||anchor<24||anchor>96||!Number.isInteger(maxEvents)||maxEvents<1)fail('invalid rendering limits');
+ const checked=await validateFoundationIR(ir,foundationRecords,{allowDraft:allowDraftFoundations});
+ ir=checked.ir;const foundations=new Map(checked.foundations.map(r=>[r.foundation_id,r]));
  const atoms=new Map(authority.atoms.map(a=>[a.canonical_id,a])),compounds=new Map(authority.compounds.map(c=>[c.compound_id,c]));
  const nodes=new Map(ir.nodes.map(n=>[n.node_id,n]));if(nodes.size!==ir.nodes.length)fail('duplicate node ID');
  for(const node of ir.nodes)if(Object.hasOwn(node,'property_restriction')&&!validReferenceProperty(node))fail('invalid nominal property restriction');
@@ -72,6 +76,7 @@ export async function renderLexicalOccurrences(ir,authority,{anchor=60,maxEvents
   if(['phonemic_reference','deictic_reference'].includes(node.kind))return reference(node,register);
   if(node.kind!=='lexical_occurrence')fail('participant is not renderable');
   const state=node.runtime_state?.code;if(![0,1,2].includes(state))fail('invalid runtime state');
+  if(node.target_type==='foundation')return count([await foundationEvent(foundations.get(node.target_id),{occurrenceId:id,register,anchor,runtimeState:state,allowDraft:allowDraftFoundations})]);
   if(node.target_type==='atom'){
    if(node.compound_bindings!==undefined)fail('atom cannot bind compound slots');
    return count([atomEvent(atoms.get(node.target_id),id,register,anchor,state)]);

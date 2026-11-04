@@ -35,6 +35,7 @@ export async function validateFoundationIR(input, records, {allowDraft=false}={}
   if(outgoing.length!==1||outgoing[0].type!=='fills_role'||!foundations.some(f=>f.node_id===outgoing[0].to))throw new Error('Intensional content cannot also be asserted or shared.');
   const centers=ir.edges.filter(e=>e.type==='centers'&&e.to===n.node_id);
   if(centers.length!==1)throw new Error('Content requires one predicate center.');
+  if(ir.edges.some(e=>e.type==='centers'&&e.from===centers[0].from&&e.to!==n.node_id))throw new Error('Content predicate cannot also center an assertion.');
  }
  // A content/predicate cycle would make the desired proposition contain its own holder relation.
  const graph=new Map(ir.nodes.map(n=>[n.node_id,[]]));

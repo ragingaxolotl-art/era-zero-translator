@@ -175,6 +175,10 @@ module EraZeroPresentation
                    condition = conditions.first
                    phrase = [grammar_marker(formal, id, "conditional_#{condition['condition_status']}_open")] + walk.call(condition.fetch("from")) + [grammar_marker(formal, id, "conditional_then")] + phrase + [grammar_marker(formal, id, "conditional_#{condition['condition_status']}_close")]
                  end
+                 if node["clause_type"] == "content"
+                   raise PresentationError, "invalid intensional content" unless node["content_status"] == "intensional" && node["value_type"] == "proposition" && id != ir["root_clause"]
+                   phrase = [grammar_marker(formal, id, "proposition_content_open")] + phrase + [grammar_marker(formal, id, "proposition_content_close")]
+                 end
                  phrase
                when "measurement"
                  measurement_markers(formal, node)
@@ -299,6 +303,8 @@ module EraZeroPresentation
       sign = day[2] == "open" ? -1 : 1
       relative = [0, 12 * sign, code, 12 * sign, 0]
     end
+    relative = [0, -24, 0, 0] if marker == "proposition_content_open"
+    relative = [0, 24, 0, 0] if marker == "proposition_content_close"
     aspect = marker.match(/\Aaspect_(bounded|ongoing|habitual)_(open|close)\z/)
     relative = [0, aspect[2] == "open" ? -22 : 22, ASPECTS.index(aspect[1]), 0] if aspect
     property = marker.match(/\Aproperty_(mass|thermodynamic_temperature)_(equal|greater_than|less_than|at_least|at_most|not_equal)_(open|close)\z/)
