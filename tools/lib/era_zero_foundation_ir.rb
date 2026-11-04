@@ -32,9 +32,19 @@ module EraZeroFoundationIR
       centers=edges.select{|e|e['type']=='centers'&&e['to']==n['node_id']}
       raise ArgumentError,'Content requires one center.' unless centers.length==1
       raise ArgumentError,'Content predicate also centers an assertion.' if edges.any?{|e|e['type']=='centers'&&e['from']==centers[0]['from']&&e['to']!=n['node_id']}
+      owned={n['node_id']=>true};pending=[n['node_id']]
+      until pending.empty?
+        target=pending.pop
+        edges.each do |e|
+          next if e['to']!=target || %w[phonemic_reference deictic_reference reference literal variable].include?(map[e['from']]['kind']) || owned[e['from']]
+          owned[e['from']]=true;pending<<e['from']
+        end
+      end
+      raise ArgumentError,'Embedded predicate or scope escapes intensional content.' if edges.any?{|e|owned[e['from']]&&e['from']!=n['node_id']&&!owned[e['to']]}
+
     end
     graph=nodes.to_h{|n|[n['node_id'],[]]}
-    edges.each{|e|graph[e['from']]<<e['to'] if %w[fills_role centers].include?(e['type'])}
+    edges.each{|e|graph[e['from']]<<e['to'] if %w[fills_role centers scopes member_of].include?(e['type'])}
     visiting={};done={};visit=nil
     visit=lambda do |id|
       raise ArgumentError,'Cyclic foundation content.' if visiting[id]

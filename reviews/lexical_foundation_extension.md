@@ -2,7 +2,8 @@
 
 Status: candidate implementation, not canonical vocabulary or completed translation.
 This follows the desire/preference inventory review. It changes no existing root,
-compound, family, address, runtime ending, parser route or released performance.
+compound, family, address, runtime ending or released canonical performance.
+Candidate-only English composition and validation are described in the dated work below.
 
 ## Architecture decision under evaluation
 
@@ -66,8 +67,9 @@ registry load, root-schema relaxation or dictionary admission in this change.
 
 Run `node tests/foundation_codec_test.mjs` with the project's Node executable.
 Its empty-IR transport harness is deliberately not an EZF semantic utterance.
-No test here proves a sentence's argument semantics or the truth of a translation.
-This candidate suite is separate from the last 92-check production regression.
+These initial codec tests establish token identity, not sentence semantics.
+Subsequent sentence and MIDI-only semantic tests are described below. Candidate
+suites now run within the consolidated regression, without admitting draft vocabulary.
 
 ## Required work before admission
 
@@ -123,3 +125,21 @@ Nine rendered desire/care contrasts now verify recovered holder, caregiver, targ
 Desired clauses reuse the existing single-clause composer, with node/edge IDs and compound argument bindings remapped into the intensional clause. Unsupported interpretations still reject. The new API requires explicit draft opt-in and returns `candidate_translation`; it is not yet a production UI route or admitted dictionary vocabulary. Full reference-formal and MIDI parity plus MIDI-only meaning recovery are tested for the supported preference/care cases. General embedded predicates exceed the current specialized independent inverse and require further work.
 
 Verification for this API: 36 English/runtime combinations match complete Ruby formal artifacts and MIDI bytes and pass independent preference/desire-care interpretation. Three additional desired compound clauses (happy, hungry and carrying the box) retain compound bindings and match Ruby formal output; these three are not claimed as independent musical semantic reconstructions.
+
+
+### Intensional scope boundary hardening
+
+A new rejection test exposed a leak through a scoped content predicate: the inner
+predicate could be negated inside desired content while also centering an outside
+assertion. Both validators now track the embedded predicate/scope dependency graph
+and reject outgoing attachments beyond the content boundary. References may still
+be shared; sharing a participant does not assert the embedded proposition. Scope
+and coordination edges also participate in cycle detection. The new rejection is
+checked independently in Ruby and JavaScript. Positive English tests distinguish
+“Nora wants that Eli does not care for Orin” from negating Nora's desire.
+
+Validation: the consolidated run started at 7493eda and passed all 97 checks. The
+subsequent scope-boundary fix was verified by rerunning its affected suites: 23
+argument/scope checks with Ruby parity and 39 English/formal/MIDI/meaning checks,
+plus three compound-binding/formal cases. The report retains the original full-run
+outputs and records this distinction; it is not a completion certificate.

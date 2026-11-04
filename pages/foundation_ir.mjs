@@ -36,10 +36,18 @@ export async function validateFoundationIR(input, records, {allowDraft=false}={}
   const centers=ir.edges.filter(e=>e.type==='centers'&&e.to===n.node_id);
   if(centers.length!==1)throw new Error('Content requires one predicate center.');
   if(ir.edges.some(e=>e.type==='centers'&&e.from===centers[0].from&&e.to!==n.node_id))throw new Error('Content predicate cannot also center an assertion.');
+  const owned=new Set([n.node_id]),pending=[n.node_id];
+  while(pending.length){const target=pending.pop();for(const e of ir.edges){
+   const source=nodes.get(e.from);
+   if(e.to!==target||['phonemic_reference','deictic_reference','reference','literal','variable'].includes(source.kind)||owned.has(e.from))continue;
+   owned.add(e.from);pending.push(e.from);
+  }}
+  if(ir.edges.some(e=>owned.has(e.from)&&e.from!==n.node_id&&!owned.has(e.to)))throw new Error('Embedded predicate or scope escapes intensional content.');
+
  }
  // A content/predicate cycle would make the desired proposition contain its own holder relation.
  const graph=new Map(ir.nodes.map(n=>[n.node_id,[]]));
- for(const e of ir.edges)if(['fills_role','centers'].includes(e.type))graph.get(e.from).push(e.to);
+ for(const e of ir.edges)if(['fills_role','centers','scopes','member_of'].includes(e.type))graph.get(e.from).push(e.to);
  const visiting=new Set(),done=new Set();
  function visit(id){if(visiting.has(id))throw new Error('Cyclic foundation content.');if(done.has(id))return;visiting.add(id);for(const next of graph.get(id))visit(next);visiting.delete(id);done.add(id);}
  for(const n of foundations)visit(n.node_id);

@@ -27,6 +27,11 @@ await bad(x=>x.edges[2].from='holder');
 await bad(x=>x.edges[3].from='want');
 await bad(x=>x.edges.push({...x.edges[3],edge_id:'second-center'}));
 await bad(x=>x.edges.push({edge_id:'leaked-predicate',type:'centers',from:'care',to:'main'}));
+await bad(x=>{
+ x.nodes.push({node_id:'inner-neg',kind:'scope_operator',operator:'negation'});
+ x.edges.find(e=>e.edge_id==='content-center').from='inner-neg';
+ x.edges.push({edge_id:'inner-scope',type:'scopes',from:'care',to:'inner-neg'},{edge_id:'scope-leak',type:'centers',from:'care',to:'main'});
+});
 await bad(x=>x.nodes.push({...x.nodes[0]}));
 await bad(x=>x.edges[0].to='missing');
 const pref={root_clause:'main',nodes:[{node_id:'main',kind:'clause'},occurrence('prefer',preference),ref('holder'),{node_id:'tea',kind:'phonemic_reference',reference_mode:'nominal_class',value_type:'entity'},{node_id:'coffee',kind:'phonemic_reference',reference_mode:'nominal_class',value_type:'entity'}],edges:[{edge_id:'center',type:'centers',from:'prefer',to:'main'},edge('holder','prefer','experiencer'),edge('tea','prefer','target'),edge('coffee','prefer','comparison_standard')]};
