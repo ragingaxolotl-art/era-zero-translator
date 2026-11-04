@@ -1448,3 +1448,14 @@ report is `reports/pronoun_interpretation_choices_validation.json`. No name-base
 gender or automatic identity inference was added. General cross-sentence discourse,
 pronouns in arbitrary multi-clause constructions, live UI and listening verification
 remain unfinished, and no original completion gate is closed.
+
+### Spatial entry dependency audit
+
+`reviews/spatial_entry_foundation.md` records the missing interior/boundary and
+same-event transition commitments for “Nora may enter the archive.” Arrival,
+approach, structural engagement and swimming-across cannot stand in for physical
+entry. The dependency order is spatial inclusion, completed/ongoing entry, then
+manner-specific and modal entry. Existing possible/permitted frames can be reused;
+no new modal root or family is justified. The English phrase remains uncomposed.
+The review specifies counterexamples and independent musical recovery obligations,
+but does not itself add a lexical sense or close a completion gate.
