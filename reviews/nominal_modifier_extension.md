@@ -65,3 +65,23 @@ option. Handler tests cover independent clause standards, singular they binding,
 disabled numeric inputs and invalidation when the standard mode changes while
 a template is loading. These are executable handler tests, not live-browser
 layout or listening evidence.
+
+## Modified preference API checkpoint
+
+`composeFoundationSentence(..., {allowDraft:true, contextualMassModifiers:true})`
+now selects the physical contextual mass reading for heavy/light in definite
+entity alternatives. Without that explicit selection it requests a reading.
+This option is bounded to direct entity preferences, not nested proposition
+choices, arbitrary adjectives or numeric thresholds. It reuses the candidate
+preference foundation and existing reference restriction rendering/inverse.
+
+Eighteen authored direction × assertion/negation/question × runtime cases recover
+complete preference meaning from MIDI and match independent Ruby MIDI output.
+The noun sound remains “box”; existing audible instance tags distinguish the
+preferred and comparison descriptions. Tags are local description handles, not
+proof of external inequality, persistent identity or a resolved discourse link.
+Negation scopes the preference, not the noun restrictions. Separate contextual
+standards do not imply a shared numeric cutoff.
+
+UI selection, blind WAV recovery for this preference construction, broader noun
+modification and the painful/more-painful acceptance requirement remain open.

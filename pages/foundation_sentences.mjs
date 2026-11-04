@@ -61,7 +61,17 @@ export function parseFoundationSentence(input,{allowCognitive=false}={}){
  }
  return null;
 }
-async function reference(text,id,allowKind=false){
+async function reference(text,id,allowKind=false,contextualMassModifiers=false){
+ const modified=text.match(/^([Tt]he) (heavy|light) ([a-z]+)$/);
+ if(modified){
+  if(!contextualMassModifiers)throw new Error('Select the contextual physical-mass reading for modified preference alternatives.');
+  const head=await reference(`${modified[1]} ${modified[3]}`,id,allowKind);
+  const norm=modified[2];
+  // Different descriptions do not establish shared discourse identity or inequality.
+  const name=await encodeName(head.name.normalized_label,`preference-description:${id}`);
+  return {...head,name,referent_id:`nominal:${NOMINAL_MODES[head.reference_mode].id}:${name.name_id}`,property_restriction:{dimension:'mass',standard:'contextual',norm,comparison:norm==='heavy'?'greater_than':'less_than'}};
+ }
+
  if(/^(?:she|he|it|they|we|her|him|them|us|myself|yourself|himself|herself|itself|ourselves|yourselves|themselves|this|that|these|those|mine|yours|hers|his|ours|theirs)$/i.test(text)){
   const error=new Error(`Identify “${text}” with an explicit name or noun reference before translating this desire or preference. Quoted names are treated as sound labels.`);
   error.code='pronoun_referents_required';throw error;
@@ -79,24 +89,26 @@ export function foundationPronounPlan(input,{allowCognitive=false}={}){
  return personalPronounPlan(input,probe=>parseFoundationSentence(probe,{allowCognitive}),{includeNeutral:true});
 }
 
-export async function composeFoundationSentence(input,authority,records,loadTemplate,{allowDraft=false,bindings,allowCognitive=false}={}){
+export async function composeFoundationSentence(input,authority,records,loadTemplate,{allowDraft=false,bindings,allowCognitive=false,contextualMassModifiers=false}={}){
+ if(typeof contextualMassModifiers!=='boolean')throw new Error('Invalid contextual mass selection.');
  const plan=foundationPronounPlan(input,{allowCognitive});
- if(!plan){if(bindings!==undefined)throw new Error('This sentence does not require pronoun bindings.');return composeAtDepth(input,authority,records,loadTemplate,allowDraft,0,allowCognitive);}
+ if(!plan){if(bindings!==undefined)throw new Error('This sentence does not require pronoun bindings.');return composeAtDepth(input,authority,records,loadTemplate,allowDraft,0,allowCognitive,contextualMassModifiers);}
  const {chosen,resolved}=resolvePersonalPronouns(input,plan,bindings,validReferent);
- const result=await composeAtDepth(resolved,authority,records,loadTemplate,allowDraft,0,allowCognitive);
+ const result=await composeAtDepth(resolved,authority,records,loadTemplate,allowDraft,0,allowCognitive,contextualMassModifiers);
  return {...result,source_input:input,resolved_input:resolved,resolved_pronouns:plan.occurrences.map(o=>({...o,referent:chosen[o.key]}))};
 }
-async function composeAtDepth(input,authority,records,loadTemplate,allowDraft,depth,allowCognitive=false){
+async function composeAtDepth(input,authority,records,loadTemplate,allowDraft,depth,allowCognitive=false,contextualMassModifiers=false){
  if(depth>8)throw new Error('Desired propositions exceed the supported nesting depth.');
  records=await validateFoundations(records,{allowDraft});const parsed=parseFoundationSentence(input,{allowCognitive});
  if(!parsed)throw new Error('Unsupported foundation sentence.');
+ if(contextualMassModifiers&&(parsed.type!=='preference'||parsed.propositionalAlternatives||![parsed.target,parsed.standard].some(t=>/^[Tt]he (heavy|light) [a-z]+$/.test(t))))throw new Error('Contextual mass selection requires modified entity preference alternatives.');
  const definition=records.find(r=>r.sound_code===(parsed.type==='desire'?0:parsed.type==='knowledge'?2:1));
  if(!definition)throw new Error('Missing reviewed foundation definition.');
  const ir={ir_version:'1.0.0',root_clause:'c',speech_act:parsed.speechAct,nodes:[{node_id:'c',kind:'clause',clause_type:'simple'},{node_id:'p',kind:'lexical_occurrence',target_type:'foundation',target_id:definition.foundation_id,foundation_version:definition.definition_version,runtime_state:{code:parsed.state}},await reference(parsed.holder,'holder')],edges:[{edge_id:'center',type:'centers',from:'p',to:'c'},{edge_id:'holder',type:'fills_role',from:'holder',to:'p',role:'experiencer'}],discourse_constraints:{}};
  if(parsed.type==='preference'){
   for(const [id,role,text] of [['preferred','target',parsed.target],['standard','comparison_standard',parsed.standard]]){
    if(!parsed.propositionalAlternatives){
-    ir.nodes.push(await reference(text,id,true));
+    ir.nodes.push(await reference(text,id,true,contextualMassModifiers));
     ir.edges.push({edge_id:id,type:'fills_role',from:id,to:'p',role});continue;
    }
    const foundation=parseFoundationSentence(text,{allowCognitive}),ordinary=foundation||parseNamedSentence(text);
