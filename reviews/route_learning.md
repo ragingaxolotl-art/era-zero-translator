@@ -29,5 +29,8 @@ Three clean synthetic WAVs recover full decoded meanings in separate processes
 given only the WAV, protocol/dictionaries and draft opt-in. They include definite,
 proximal and distal references. Source English, expected notes and meaning metadata
 are not supplied to those decoders. This is not physical recording evidence or a
-representative held-out English assessment. Ruby parity, user-facing interpretation
-selection, live listening, broader grammar and canonical admission remain open.
+representative held-out English assessment. The user-facing draft panel now requires a reading and supports explicit pronoun
+bindings, music playback scheduling, MIDI export and full meaning export. Handler
+tests cover choice changes, stale asynchronous results, stale exports, questions,
+demonstrative routes and explicit singular they. Ruby parity, live browser layout
+and listening, broader grammar and canonical admission remain open.

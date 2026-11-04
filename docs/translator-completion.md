@@ -1668,7 +1668,10 @@ review before canonical admission.
 Targeted evidence covers 81 meaning contracts, 81 musical inverses, frame collision
 checks and three blind clean-synthetic WAV recoveries. Physical recordings remain
 zero. The shared draft audio decoder now recognizes the selected result, reference
-modes, scope and independent event/result trits. Ruby parity and user-facing route
-selection remain unfinished; these draft cases do not alter the canonical-path
+modes, scope and independent event/result trits. The user-facing route
+selection panel now supports explicit reading and pronoun choices, playback
+scheduling and MIDI/meaning exports, with stale-output protection checked through
+the actual handlers. Ruby parity and live browser/listening remain unfinished;
+these draft cases do not alter the canonical-path
 coverage diagnostic or close any completion gate. The consolidated report above
 remains evidence for its recorded revision, not this later work.
