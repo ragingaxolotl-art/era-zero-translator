@@ -158,10 +158,10 @@ module EraZeroRenderer
         "family_opening_relative_semitones" => [], "family_opening_absolute_midi" => [],
         "address_relative_semitones" => notes.map { |note| note - 60 },
         "address_absolute_midi" => notes.map { |note| note + offset }, "note_duration_beats" => 1.0 }]
-      if %w[definite_nominal nominal_class].include?(node["reference_mode"])
+      if %w[definite_nominal nominal_class proximal_nominal distal_nominal].include?(node["reference_mode"])
         base = anchor_midi + REGISTER_OFFSETS.fetch(register)
         mode = node["reference_mode"]
-        relative = [0, 12, mode == "definite_nominal" ? 2 : 3, 0]
+        relative = [0, 12, {"definite_nominal"=>2,"nominal_class"=>3,"proximal_nominal"=>4,"distal_nominal"=>5}.fetch(mode), 0]
         marker = { "kind" => "reference_marker", "occurrence_id" => id, "target_id" => "EZREF:#{mode}", "referent_id" => node.fetch("referent_id"),
           "reference_mode" => mode, "label" => mode, "register" => register, "base_midi" => base,
           "family_qualified_transliteration" => mode, "formal_carrier" => "", "family_opening_relative_semitones" => [], "family_opening_absolute_midi" => [],

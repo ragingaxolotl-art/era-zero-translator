@@ -4,9 +4,12 @@ const WORDS={zero:'0',one:'1',two:'2',three:'3',four:'4',five:'5',six:'6',seven:
 // A definite single-word noun labels a referent; it does not need a semantic dictionary entry.
 const NON_HEADS=new Set(['and','or','then','not','is','are','was','were','has','have','to','from','of','for','with','in','on','at','the','a','an','this','that','these','those','he','she','it','they','we','you','me','him','her','them','us','heavy','light','hot','cold','happy','sad','hungry','thirsty','tired','curious','bright','dim','rough','smooth','broken','damaged','active','conscious','dormant']);
 const headPattern='(?!(?:'+[...NON_HEADS].join('|')+')\\b)[a-z]+(?:-[a-z]+)*';
-export const NOMINAL_PATTERN=`(?:[Tt]he (?:${headPattern})|(?:[Ee]xactly|[Aa]t least|[Aa]t most) (?:(?:[0-9]+|${Object.keys(WORDS).join('|')}) (?:${Object.keys(PLURALS).join('|')})|(?:0*1|one) (?:${[...SINGULARS].join('|')})))`;
+const demonstrativeHeadPattern='(?!(?:'+Object.keys(PLURALS).join('|')+')\\b)(?![a-z]+-)'+headPattern;
+export const NOMINAL_PATTERN=`(?:[Tt]he (?:${headPattern})|(?:[Tt]his|[Tt]hat) (?:${demonstrativeHeadPattern})|(?:[Ee]xactly|[Aa]t least|[Aa]t most) (?:(?:[0-9]+|${Object.keys(WORDS).join('|')}) (?:${Object.keys(PLURALS).join('|')})|(?:0*1|one) (?:${[...SINGULARS].join('|')})))`;
 export function parseNominal(text){
  if(typeof text!=='string'||text.startsWith('"'))return null;
+ const demonstrative=text.match(new RegExp(`^([Tt]his|[Tt]hat) (${demonstrativeHeadPattern})$`));
+ if(demonstrative){if(Object.hasOwn(PLURALS,demonstrative[2]))return null;return {head:demonstrative[2],mode:demonstrative[1].toLowerCase()==='this'?'proximal_nominal':'distal_nominal'};}
  const definite=text.match(new RegExp(`^[Tt]he (${headPattern})$`));
  if(definite)return {head:definite[1],mode:'definite_nominal'};
  const counted=text.match(/^(exactly|at least|at most) ([0-9]+|zero|one|two|three|four|five|six|seven|eight|nine|ten) ([a-z]+)$/i);

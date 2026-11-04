@@ -13,7 +13,7 @@ import {NOMINAL_PATTERN,parseNominal} from './nominals.mjs';
 import {registerFor} from './roles.mjs';
 import {canonicalDigest} from './engine.mjs';
 import {encodeName, notesForName} from './names.mjs';
-import {deicticReference,deicticEvent,nominalMarker} from './references.mjs';
+import {deicticReference,deicticEvent,nominalMarker,NOMINAL_MODES} from './references.mjs';
 
 // Reviewed constructions use exact process senses, never a generic synonym pool.
 const ACTIONS = [
@@ -670,7 +670,7 @@ export async function composeNamedSentence(input,template,{interpretation,standa
   const deicticRoles=participants.map(({text})=>['I','me','Me'].includes(text)?'speaker':['you','You'].includes(text)?'addressee':null);
   const nominal=participants.map(({text})=>parseNominal(text));
   const names=await Promise.all(participants.map(({label},index)=>deicticRoles[index]?null:encodeName(nominal[index]?nominal[index].head:label)));
-  const references=names.map((name,index)=>deicticRoles[index]?deicticReference(deicticRoles[index],participantIds[index]):({node_id:participantIds[index],kind:'phonemic_reference',referent_id:nominal[index]?`nominal:${nominal[index].mode==='definite_nominal'?'definite':'class'}:${name.name_id}`:name.name_id,value_type:'entity',name,...(nominal[index]?{reference_mode:nominal[index].mode}:{})}));
+  const references=names.map((name,index)=>deicticRoles[index]?deicticReference(deicticRoles[index],participantIds[index]):({node_id:participantIds[index],kind:'phonemic_reference',referent_id:nominal[index]?`nominal:${NOMINAL_MODES[nominal[index].mode].id}:${name.name_id}`:name.name_id,value_type:'entity',name,...(nominal[index]?{reference_mode:nominal[index].mode}:{})}));
   if(parsed.nominalProperty)references[parsed.nominalProperty.participantIndex].property_restriction=parsed.nominalProperty.restriction;
   const ir={ir_version:'1.0',root_clause:'c',speech_act:parsed.speechAct||'assertion',nodes:[{node_id:'c',kind:'clause',clause_type:'predication'},
     {node_id:'p',kind:'lexical_occurrence',target_type:predicates[0].target_type,target_id:parsed.predicate,runtime_state:{code:parsed.runtimeState??1}},...references],

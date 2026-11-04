@@ -4,7 +4,7 @@ import {foundationEvent} from './foundations.mjs';
 import {canonicalDigest,deepSort} from './engine.mjs';
 import {restrictReferenceEvents,validReferenceProperty} from './reference_properties.mjs';
 import {encodeName,notesForName} from './names.mjs';
-import {deicticEvent,nominalMarker} from './references.mjs';
+import {deicticEvent,nominalMarker,NOMINAL_MODES} from './references.mjs';
 import {registerFor,ROLE_ORDER} from './roles.mjs';
 const OFFSETS={low:-12,middle:0,high:12,sustained_background:-5};
 const ROLE_REGISTERS={actor:'low',source:'low',cause:'low',target:'high',result:'high',destination:'high',recipient:'high',beneficiary:'high',environment:'sustained_background',persistent_condition:'sustained_background',location:'sustained_background',time:'sustained_background'};
@@ -64,7 +64,7 @@ export async function renderLexicalOccurrences(ir,authority,{anchor=60,maxEvents
   const event={kind:'phonemic_label',occurrence_id:node.node_id,target_id:name.name_id,referent_id:node.referent_id,label:name.normalized_label,semantic_claim:false,register,base_midi:base,
    family_qualified_transliteration:name.normalized_label,formal_carrier:'',family_opening_relative_semitones:[],family_opening_absolute_midi:[],address_relative_semitones:notes.map(n=>n-60),address_absolute_midi:notes.map(n=>n+base-60),note_duration_beats:1};
   if(node.reference_mode){
-   const mode=node.reference_mode==='definite_nominal'?'definite':node.reference_mode==='nominal_class'?'class':null;
+   const mode=NOMINAL_MODES[node.reference_mode]?.id;
    if(!mode||node.referent_id!==`nominal:${mode}:${name.name_id}`||!/^[a-z]+$/.test(name.normalized_label))fail('invalid nominal reference');
    return count(restrictReferenceEvents(node,[nominalMarker(node,register,anchor),event],anchor));
   }

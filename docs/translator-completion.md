@@ -1388,3 +1388,23 @@ No roots, compounds, prior sounds or dictionary meanings were changed. Program
 execution, manner adverbs, quantified destinations and dated commands remain
 unresolved; this addition does not establish broad imperative or full-language
 completion. Live UI and listening remain unverified.
+
+### Demonstrative noun references before brighter-than composition
+
+This/that plus a single alphabetic noun now preserve proximal/distal demonstrative
+reference modes. New register-relative reference markers retain that grammatical
+distinction while the noun remains its existing phonemic label. No roots or
+compound meanings changed, and the prior definite/class reference markers retain
+exact sounds. The modes encode a discourse selection, not metric distance, object
+coordinates, ownership or proof that differently described external objects differ.
+
+The independent comparison and running inverses recover the modes. Twenty-four
+comparison and journey cases preserve reference reversal and runtime 0/1/2 with
+Ruby/browser formal and MIDI parity; altered mode/identity combinations reject.
+The report is `reports/demonstrative_reference_validation.json`. Quoted names keep
+their original treatment. Plural demonstratives, bare this/that, compound noun
+heads, modified noun phrases and multiple distinct same-form pointing acts still
+need further grammar/context work. The original “This lamp is brighter than that
+lamp” also still needs ordinary comparative-adjective sense selection: its explicit
+“has a higher luminance than” counterpart now preserves this/that. These grammar
+checks do not establish real-world reference resolution or listening validation.

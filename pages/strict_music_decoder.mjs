@@ -72,7 +72,7 @@ export function decodeStrictMusicMidi(bytes,atoms,{maxNotes=100000,maxTokens=100
    }
   }
   if(OFFSETS.has(base-anchor)){
-   for(const [code,role] of [[-1,'speaker'],[1,'addressee'],[2,'definite_nominal'],[3,'nominal_class']])if(match(i,[0,12,code,0],base,.25))out.push(make(i,4,{kind:Math.abs(code)===1?'deictic':'reference_mode',...(Math.abs(code)===1?{deictic_role:role}:{reference_mode:role}),register:OFFSETS.get(base-anchor)}));
+   for(const [code,role] of [[-1,'speaker'],[1,'addressee'],[2,'definite_nominal'],[3,'nominal_class'],[4,'proximal_nominal'],[5,'distal_nominal']])if(match(i,[0,12,code,0],base,.25))out.push(make(i,4,{kind:Math.abs(code)===1?'deictic':'reference_mode',...(Math.abs(code)===1?{deictic_role:role}:{reference_mode:role}),register:OFFSETS.get(base-anchor)}));
    for(const length of lengths){
     const path=notes.slice(i,i+length).map(n=>n.midi-base),roots=rootsByPath.get(path.join(','));
     if(!roots||!match(i,path,base,1))continue;

@@ -36,7 +36,7 @@ export function strictSemanticReader(bytes,atoms,message,options){
   }
   let mode='name';
   if(nodes[0]?.kind==='reference_mode'){
-   if(nodes[0].register!==register||!['definite_nominal','nominal_class'].includes(nodes[0].reference_mode))fail();
+   if(nodes[0].register!==register||!['definite_nominal','nominal_class','proximal_nominal','distal_nominal'].includes(nodes[0].reference_mode))fail();
    mode=nodes[0].reference_mode;nodes=nodes.slice(1);
   }
   if(nodes.length!==1||nodes[0].register!==register)fail();const n=nodes[0];

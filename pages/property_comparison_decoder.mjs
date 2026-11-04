@@ -64,8 +64,9 @@ export function decodePropertyComparisonMidi(bytes){
   if(duration(segment,.25)){
    if(same(path,[0,12,-1,0]))return {kind:'deictic',role:'speaker'};
    if(same(path,[0,12,1,0]))return {kind:'deictic',role:'addressee'};
-   if(!same(path,[0,12,2,0]))fail();
-   mode='definite_nominal';segment=take();path=relative(segment,anchor);
+   const nominalModes={2:'definite_nominal',4:'proximal_nominal',5:'distal_nominal'};
+   if(path.length!==4||path[0]!==0||path[1]!==12||path[3]!==0||!nominalModes[path[2]])fail();
+   mode=nominalModes[path[2]];segment=take();path=relative(segment,anchor);
   }
   if(!duration(segment,1)||!same(path.slice(0,3),[-12,0,-5])||!same(path.slice(-3),[-5,0,-12]))fail();
   const payload=path.slice(3,-3),phonemes=[];if(!payload.length||payload.length%2)fail();

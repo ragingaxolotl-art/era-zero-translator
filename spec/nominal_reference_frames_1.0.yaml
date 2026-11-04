@@ -45,3 +45,28 @@ counted_nominal_extension:
     - Collective versus distributive event realization is not further specified
     - Negated quantified constructions require explicit scope work
     - Multiple quantified participants, modified nouns and arbitrary plural forms remain unsupported
+
+demonstrative_extension:
+  status: versioned_implementation_convention
+  provenance: User-directed translator completion; preserve this/that reference distinction
+  modes:
+    proximal_nominal:
+      surface: this
+      referent_id: 'nominal:proximal:<name.name_id>'
+      relative_semitones: [0, 12, 4, 0]
+    distal_nominal:
+      surface: that
+      referent_id: 'nominal:distal:<name.name_id>'
+      relative_semitones: [0, 12, 5, 0]
+  meaning:
+    - This preserves the speaker-proximal demonstrative selection in the discourse
+    - That preserves the speaker-distal or contrastive demonstrative selection in the discourse
+    - Neither form asserts a metric distance, object coordinates, ownership or prior mention
+    - The marker distinguishes reference forms; it does not prove two external objects are different
+    - Resolving the indicated object still depends on shared context or pointing
+    - The noun head retains its nonsemantic EZNAME sound label
+  limits:
+    - Single alphabetic noun heads; no silent adjective or relative-clause deletion
+    - These/those plurals, bare demonstratives and compound noun heads remain unsupported here
+    - Repeated this/that with the same noun does not yet encode separate pointing acts
+  performance: Same register-relative quarter-beat reference-marker protocol; no runtime ending
