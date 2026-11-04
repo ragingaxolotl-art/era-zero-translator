@@ -22,7 +22,10 @@ not proof of full ordinary-English coverage or musical usability.
 A subsequent [cognitive foundation review](../reviews/cognitive_foundations.md)
 records the missing content/result-state contracts for learning, understanding
 and curiosity, with ten authored contrast requirements. It changes the next
-implementation dependency order but adds no supported cognitive phrases.
+implementation dependency order but adds no supported cognitive phrases. An
+opt-in polar-content document now preserves complete propositions without asserting
+either answer; its 12 composition checks postdate the consolidated baseline.
+Musical framing and integration with cognitive predicates remain unfinished.
 
 Recent completed implementation work:
 

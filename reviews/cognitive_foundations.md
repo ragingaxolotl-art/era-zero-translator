@@ -98,3 +98,30 @@ requires actual sentence interpretation, validated IR, browser/Ruby performance
 agreement and independent musical recovery of the distinguishing commitments.
 No cognitive phrase is newly supported by this review alone. Source reconciliation,
 root-family admission and full translator completion remain open.
+
+## First implementation: polar content documents
+
+`pages/question_content.mjs` implements an opt-in EZQUESTION-CONTENT-1 document.
+It embeds the complete existing proposition IR under a polar question wrapper,
+whose explicit assertion commitment is neither answer. This reuses existing
+participant, compound, negation and runtime representations. Its content digest
+and ID include both the wrapper and proposition. It accepts explicit “whether P”
+content through existing sentence composition; bare topics and unsupported
+propositions do not invent an epistemic question.
+
+This is a reusable content document, not a new canonical IR node. Its validator
+checks the wrapper contract and embedded semantic identity; it supplements rather
+than replaces ordinary IR validation. It does not prove arbitrary imported IR
+well-formed merely from a recomputed digest. Other draft grammars are not admitted
+inside it yet. Existing canonical composers generate the tested proposition IR.
+
+Twelve compositions preserve complete proposition graphs across runtime 0/1/2,
+including negation, repair and swimming. Tests distinguish positive/negative/unknown
+logical answer alternatives without interpreting runtime numbers as truth. Rehashed
+wrapper tampering and stale embedded identities are rejected. These are semantic
+content checks, not musical inverse checks or claims of English cognitive coverage.
+
+Next: define musical framing for question content distinct from matrix question
+speech acts and asserted propositions, then bind it to reviewed epistemic state
+and acquisition relations. Open wh-questions, contextual topics, factive projection,
+Ruby content validation and broad cognitive sentence composition remain unfinished.
