@@ -14,10 +14,10 @@ assert.equal(new Set(Array.from({length:6561},(_,i)=>foundationPath(i).join(',')
 for(const a of atoms)assert(!a.note_path_semitones.includes(-23));
 const samples=[];
 for(const r of registry.records)for(const register of ['low','middle','high','sustained_background'])for(const runtimeState of [0,1,2])for(const anchor of [48,60,72])samples.push({r,options:{register,runtimeState,anchor,allowDraft:true}});
-const ruby=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_foundations','-rjson','-e','puts JSON.generate(JSON.parse(STDIN.read).map{|s|o=s["options"];EraZeroFoundations.event(s["r"],register:o["register"],runtime_state:o["runtimeState"],anchor:o["anchor"],allow_draft:true)})'],{cwd:root,input:JSON.stringify(samples),encoding:'utf8',maxBuffer:8_000_000}));
+const ruby=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_foundations','-rjson','-e','puts JSON.generate(JSON.parse(STDIN.read).map{|s|o=s["options"];e=EraZeroFoundations.event(s["r"],register:o["register"],runtime_state:o["runtimeState"],anchor:o["anchor"],allow_draft:true);{event:e,digest:EraZeroValidation.fingerprint(e)}})'],{cwd:root,input:JSON.stringify(samples),encoding:'utf8',maxBuffer:8_000_000}));
 const sounds=[];
 for(const [i,s] of samples.entries()){
- const event=await foundationEvent(s.r,s.options);assert.deepEqual(event,ruby[i]);
+ const event=await foundationEvent(s.r,s.options);assert.deepEqual(event,ruby[i].event);assert.equal(await canonicalDigest(event),ruby[i].digest);
  // Transport probe only. This empty-IR harness is deliberately NOT an EZF semantic utterance.
  const harness={semantic_ir:{nodes:[],edges:[]},performance:{lexical_events:[event],anchor_midi:s.options.anchor,contour_relative_semitones:[0,0]}};
  const midi=midiFromFormal(harness);sounds.push(Buffer.from(midi).toString('base64'));
