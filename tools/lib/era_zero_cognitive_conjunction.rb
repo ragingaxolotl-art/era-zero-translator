@@ -8,7 +8,7 @@ module EraZeroCognitiveConjunction
   def validate!(d,allow_draft:false)
     raise ArgumentError,'Cognitive conjunction requires draft opt-in' unless allow_draft
     EraZeroContextualContent.exact!(d,%w[profile status operator speech_act members content_id content_digest]+(d.key?('scopes') ? ['scopes'] : []))
-    raise ArgumentError,'Invalid conjunction contract' unless d['profile']=='EZCOGNITIVE-CONJUNCTION-1' && d['status']=='draft' && d['operator']=='all_of' && d['speech_act']=='assertion' && d['members'].is_a?(Array) && d['members'].length.between?(2,8)
+    raise ArgumentError,'Invalid conjunction contract' unless d['profile']=='EZCOGNITIVE-CONJUNCTION-1' && d['status']=='draft' && d['operator']=='all_of' && %w[assertion question].include?(d['speech_act']) && d['members'].is_a?(Array) && d['members'].length.between?(2,8)
     neg={'operator'=>'negation'};possible={'operator'=>'modality','mode'=>'possible'}
     raise ArgumentError,'Unsupported outer scope' if d.key?('scopes') && ![[neg],[possible],[neg,possible],[possible,neg]].include?(d['scopes'])
     d['members'].each do |member|
@@ -34,6 +34,6 @@ module EraZeroCognitiveConjunction
       key=scope['operator']=='negation' ? 'negation' : 'modality_possible'
       events=[marker.call(key+'_open')]+events+[marker.call(key+'_close')]
     end
-    EraZeroPresentation.midi_from_scheduled_events(events,anchor_midi,[0,0])
+    EraZeroPresentation.midi_from_scheduled_events(events,anchor_midi,d['speech_act']=='question' ? [0,2] : [0,0])
   end
 end

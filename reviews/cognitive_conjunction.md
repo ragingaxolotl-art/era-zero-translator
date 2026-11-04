@@ -1,6 +1,6 @@
 # Reusable conjunction across cognitive drafts
 
-EZCOGNITIVE-CONJUNCTION-1 binds two to eight complete declarative members under
+EZCOGNITIVE-CONJUNCTION-1 binds two to eight complete declarative-content members under
 all-of conjunction. Current members are curiosity, understanding, route learning
 and comprehension acquisition. Each member remains a fully validated document;
 its participants, contextual content, local time/negation and runtime trits are
@@ -12,7 +12,7 @@ The English entry point splits unquoted “and” only when every segment is a
 supported complete clause. Quoted name labels containing “and” stay intact.
 Ambiguous member readings and personal pronouns require the existing explicit
 choices; errors identify the clause needing them. A trailing runtime belongs to
-its own clause. Omitted subjects, object coordination, question conjunctions,
+its own clause. Omitted subjects, object coordination, separately uttered member questions,
 disjunction and arbitrary canonical/draft mixtures are not
 silently inferred. This is reusable composition within four implemented drafts,
 not a claim of unrestricted English coordination.
@@ -89,3 +89,26 @@ kinds, arbitrary scope nesting and separate member possibility remain open.
 One authored clean synthetic WAV also recovers possible-not scope around a
 conjunction with inner negation, independent runtimes and past speech content,
 without source English or hidden meaning supplied. Physical audio remains untested.
+
+
+## Questions over the complete message
+
+Explicit “Is it true that A and B?” asks about the combined proposition. The
+parallel not-true, possible, not-possible and possible-not wrappers retain their
+ordered scopes beneath the question speech act. Members remain declarative
+content representations, not separately asserted utterances or independently
+asked questions; the enclosing speech act and scopes govern their commitment.
+Neither answer is asserted by a question. Unsupported embedded question punctuation
+now rejects during planning instead of entering a misleading preview.
+
+Fifteen question/runtime/scope cases match Ruby regeneration and independent
+musical recovery. Every question preserves the corresponding assertion's payload
+notes and member meanings while changing the final contour and document identity.
+The UI retains the question/nonassertion explanation through preview and export.
+Existing assertion document identities and performances remain unchanged. This
+extension does not infer answers, pragmatic bias of negative questions, or multiple
+separate questions from one final question contour.
+
+One authored clean synthetic WAV recovers a question over possible-not conjunction,
+including inner negation and past speech content, from WAV alone. This remains
+synthetic evidence; physical recording validation is open.

@@ -35,7 +35,9 @@ layout/listening and broader coordination remain open. Explicit “It is not tru
 that A and B” now preserves outer negation separately from member negation, with
 nine truth-contrast/MIDI/Ruby cases and scoped UI exports. Joint possibility,
 not-possible and possible-not now have nine additional finite-world/MIDI/Ruby
-contrasts and ordered-scope UI exports; they do not assert the members as actual. The 187-check consolidated report below
+contrasts and ordered-scope UI exports; they do not assert the members as actual.
+Whole-message questions now preserve that content/scope under a question contour,
+with 15 Ruby/MIDI assertion contrasts and nonasserting UI exports. The 187-check consolidated report below
 predates this addition; targeted evidence does not supersede its revision scope.
 
 The contextual inquiry prerequisite for curiosity now preserves a topic without

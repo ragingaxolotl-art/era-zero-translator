@@ -36,3 +36,6 @@ console.log('PASS explicit outer-negation UI explanation and complete scoped mea
 
 card=show('It is possible that it is not true that Orin is curious about the map and Eli understands Nora’s reasons.');assert(card.children[0].textContent.includes('possible that not all'));await card.children.at(-1).click();card.children.at(-1).click();const uncertain=JSON.parse(await downloads.at(-1).blob.text());assert.equal(uncertain.scopes[0].mode,'possible');assert.equal(uncertain.scopes[1].operator,'negation');
 console.log('PASS ordered possibility/negation UI explanation and complete scoped export.');
+
+card=show('Is it possible that Orin is curious about the map and Eli understands Nora’s reasons?');assert(card.children[0].textContent.includes('neither answer is asserted'));await card.children.at(-1).click();card.children.at(-1).click();assert.equal(JSON.parse(await downloads.at(-1).blob.text()).speech_act,'question');assert(card.children[0].textContent.includes('neither answer is asserted'));
+console.log('PASS whole-message question UI maintains nonassertion explanation and question export.');

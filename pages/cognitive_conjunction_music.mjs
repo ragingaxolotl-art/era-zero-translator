@@ -17,7 +17,7 @@ export async function midiFromCognitiveConjunction(document,authority,records,{a
   else bytes=await ({'EZUNDERSTANDING-CONTENT-1':midiFromUnderstanding,'EZUNDERSTANDING-ACQUISITION-1':midiFromUnderstandingAcquisition,'EZROUTE-LEARNING-1':midiFromRouteLearning}[member.profile])(member,authority,options);
   const {notes,division}=notesFromMidi(bytes);if(i)events.push(marker('coord_member'));events.push(...eventsFromNotes(notes.slice(0,-2),division));
  }
- events.push(marker('coord_all_of_close'));for(const scope of [...(d.scopes||[])].reverse()){const key=scope.operator==='negation'?'negation':'modality_possible';events.unshift(marker(key+'_open'));events.push(marker(key+'_close'));}return midiFromScheduledEvents(events,anchor,[0,0]);
+ events.push(marker('coord_all_of_close'));for(const scope of [...(d.scopes||[])].reverse()){const key=scope.operator==='negation'?'negation':'modality_possible';events.unshift(marker(key+'_open'));events.push(marker(key+'_close'));}return midiFromScheduledEvents(events,anchor,d.speech_act==='question'?[0,2]:[0,0]);
 }
 export async function decodeCognitiveConjunctionMidi(bytes,atoms,records,{allowDraft=false}={}){
  if(!allowDraft)throw new Error('Cognitive conjunction requires draft opt-in.');
@@ -27,7 +27,7 @@ export async function decodeCognitiveConjunctionMidi(bytes,atoms,records,{allowD
  let body=tokens,scopes;const outer=[];
  while(['negation_open','modality_possible_open'].includes(body[0]?.marker)&&body[0].closing_token===tokens.indexOf(body.at(-1))){outer.push(body[0].marker==='negation_open'?{operator:'negation'}:{operator:'modality',mode:'possible'});body=body.slice(1,-1);}
  if(outer.length){if(!validCognitiveOuterScopes(outer))throw new Error('Unsupported conjunction scope.');scopes=outer;}
- if(observed.speech_act!=='assertion'||body[0]?.marker!=='coord_all_of_open'||body[0].closing_token!==tokens.indexOf(body.at(-1)))throw new Error('Expected a complete declarative conjunction.');
+ if(!['assertion','question'].includes(observed.speech_act)||body[0]?.marker!=='coord_all_of_open'||body[0].closing_token!==tokens.indexOf(body.at(-1)))throw new Error('Expected a complete assertion or question over the conjunction.');
  const groups=[[]];
  for(const token of body.slice(1,-1)){if(token.marker==='coord_member'&&token.enclosing_scopes.length===body[0].enclosing_scopes.length)groups.push([]);else groups.at(-1).push(token);}
  if(groups.length<2||groups.length>8||groups.some(g=>!g.length))throw new Error('Invalid conjunction member count.');
@@ -39,5 +39,5 @@ export async function decodeCognitiveConjunctionMidi(bytes,atoms,records,{allowD
   const meaning=await decodeSupportedMeaningWithDrafts(reconstructed,atoms,records,{allowDraft:true,allowConjunction:false});
   if(!profiles.includes(meaning.profile))throw new Error('Unsupported cognitive member.');members.push(meaning);
  }
- return {profile:'EZCOGNITIVE-CONJUNCTION-INVERSE-1',status:'draft',operator:'all_of',speech_act:'assertion',members,...(scopes?{scopes}:{}),limitations:['No temporal order or causal relationship is asserted between members.','Shared reference sounds do not establish external identity; each member retains its own contextual references.']};
+ return {profile:'EZCOGNITIVE-CONJUNCTION-INVERSE-1',status:'draft',operator:'all_of',speech_act:observed.speech_act,members,...(scopes?{scopes}:{}),limitations:['No temporal order or causal relationship is asserted between members.','Shared reference sounds do not establish external identity; each member retains its own contextual references.']};
 }
