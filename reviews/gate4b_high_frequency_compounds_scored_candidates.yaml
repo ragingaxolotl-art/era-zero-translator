@@ -3470,3 +3470,141 @@ reviews:
     decision: 'rejected: ternary semantic loss'
   recommendation: approve explicit_felt_specialization
   confidence: high
+- compound_id: CMP:c4fb9863fe36d7667db847c0
+  display_title: unpleasant felt condition
+  current_choice_reason: reviews/felt_conditions_foundation.md; author judgments,
+    not independent validation.
+  candidates:
+  - candidate_id: explicit_felt_specialization
+    direction: Bind one experiencer, reuse exact dependencies and audibly declare
+      the additional felt meaning.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:6c9e3042a361ccae6ecf5980
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: unpleasant_felt_condition
+        sound_code: 18
+        added_definition: The same consciously felt self-condition has an unpleasant
+          experiential tone for its experiencer. Unpleasantness is felt valence, not
+          merely objective harm, disapproval, lack of pleasure, or a desire to avoid
+          an outcome. It may coexist with pleasant feeling and does not by itself
+          specify sadness, pain, fear, anger, fatigue or a cause.
+        excludes:
+        - Absence of pleasant feeling without unpleasant feeling
+        - Objective harm or disapproval without unpleasant experience
+        - Sadness, fear or pain inferred from every unpleasant feeling
+  - candidate_id: unmarked_root_substitution
+    direction: Representation, care, work capacity and viability do not entail the
+      required feeling.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: missing experiential distinction'
+  - candidate_id: runtime_as_feeling
+    direction: Runtime status does not encode pleasantness, hunger, thirst or fatigue.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_felt_specialization
+  confidence: high
+- compound_id: CMP:d54499d2989fa97349e8e23d
+  display_title: sad felt mood
+  current_choice_reason: reviews/felt_conditions_foundation.md; author judgments,
+    not independent validation.
+  candidates:
+  - candidate_id: explicit_felt_specialization
+    direction: Bind one experiencer, reuse exact dependencies and audibly declare
+      the additional felt meaning.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:c4fb9863fe36d7667db847c0
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: sad_felt_mood
+        sound_code: 19
+        added_definition: 'The experiencer feels sadness: an unpleasant emotional
+          mood of sorrow or low spirits. This is a felt-state meaning, not a diagnosis,
+          a judgment that an event is unfortunate, or every unpleasant sensation.
+          It does not require a particular loss, crying, outward expression, permanence,
+          incapacity, lack of care or total absence of happiness.'
+        excludes:
+        - Negated happiness or emotional neutrality without sadness
+        - Physical pain, fear or anger without sadness
+        - A regrettable event or medical diagnosis inferred from the adjective
+  - candidate_id: unmarked_root_substitution
+    direction: Representation, care, work capacity and viability do not entail the
+      required feeling.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: missing experiential distinction'
+  - candidate_id: runtime_as_feeling
+    direction: Runtime status does not encode pleasantness, hunger, thirst or fatigue.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_felt_specialization
+  confidence: high

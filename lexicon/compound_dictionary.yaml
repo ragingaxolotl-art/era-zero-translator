@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 50
+  entry_count: 52
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -2306,6 +2306,73 @@ entries:
   nodes:
   - node_id: h
     kind: compound_ref
+    compound_id: CMP:6c9e3042a361ccae6ecf5980
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - The bound experiencer anchors the focal self of every nested self-condition; no
+    automatic speaker substitution.
+  - Felt meaning and any specialization are explicit lexical conventions, not consequences
+    of root adjacency alone.
+  - Lexical trits, experiential quality, time, grammatical negation and runtime 0/1/2
+    remain independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: unpleasant_felt_condition
+    sound_code: 18
+    added_definition: The same consciously felt self-condition has an unpleasant experiential
+      tone for its experiencer. Unpleasantness is felt valence, not merely objective
+      harm, disapproval, lack of pleasure, or a desire to avoid an outcome. It may
+      coexist with pleasant feeling and does not by itself specify sadness, pain,
+      fear, anger, fatigue or a cause.
+    excludes:
+    - Absence of pleasant feeling without unpleasant feeling
+    - Objective harm or disapproval without unpleasant experience
+    - Sadness, fear or pain inferred from every unpleasant feeling
+  compound_id: CMP:c4fb9863fe36d7667db847c0
+  content_digest: c4fb9863fe36d7667db847c0aa9312baaac5a2a2d8d17a12ee6862fd6502d18f
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: unpleasant felt condition
+  english_glosses:
+  - unpleasant felt condition
+  invariant_definition: The same consciously felt self-condition has an unpleasant
+    experiential tone for its experiencer. Unpleasantness is felt valence, not merely
+    objective harm, disapproval, lack of pleasure, or a desire to avoid an outcome.
+    It may coexist with pleasant feeling and does not by itself specify sadness, pain,
+    fear, anger, fatigue or a cause.
+  boundaries:
+    includes: The same consciously felt self-condition has an unpleasant experiential
+      tone for its experiencer. Unpleasantness is felt valence, not merely objective
+      harm, disapproval, lack of pleasure, or a desire to avoid an outcome. It may
+      coexist with pleasant feeling and does not by itself specify sadness, pain,
+      fear, anger, fatigue or a cause.
+    excludes: Absence of pleasant feeling without unpleasant feeling; Objective harm
+      or disapproval without unpleasant experience; Sadness, fear or pain inferred
+      from every unpleasant feeling
+  collision_audit: Convention 18 explicitly adds the stated felt distinction. Exact
+    dependency versions preserve the shared experiencer; no existing mental, living,
+    material, care or runtime meaning is substituted for the added feeling.
+  confidence: high
+  approval_record: migrations/sadness_2026_11_04.yaml
+  approval_basis: Delegated author semantic review under the user-directed completion
+    goal; reviews/felt_conditions_foundation.md. Not independent linguistic validation.
+  examples:
+    ordinary: The experiencer has a unpleasant felt condition.
+    technical: The same experiencer is retained through the version-pinned nested
+      felt-state definitions.
+    future_compound: Reuse the exact felt foundation before specializing its object,
+      cause or relief.
+    counterexample: Absence of pleasant feeling without unpleasant feeling
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: c4fb9863fe36d7667db847c0aa9312baaac5a2a2d8d17a12ee6862fd6502d18f
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: h
+    kind: compound_ref
     compound_id: CMP:8e95897afbd6d54b8e164e03
     definition_version: 1.0.0
   edges: []
@@ -2485,6 +2552,73 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: cb0812face56f90b7ba139c53a0c4b69820830bde14c60bcd0160122199daa8b
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:c4fb9863fe36d7667db847c0
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - The bound experiencer anchors the focal self of every nested self-condition; no
+    automatic speaker substitution.
+  - Felt meaning and any specialization are explicit lexical conventions, not consequences
+    of root adjacency alone.
+  - Lexical trits, experiential quality, time, grammatical negation and runtime 0/1/2
+    remain independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: sad_felt_mood
+    sound_code: 19
+    added_definition: 'The experiencer feels sadness: an unpleasant emotional mood
+      of sorrow or low spirits. This is a felt-state meaning, not a diagnosis, a judgment
+      that an event is unfortunate, or every unpleasant sensation. It does not require
+      a particular loss, crying, outward expression, permanence, incapacity, lack
+      of care or total absence of happiness.'
+    excludes:
+    - Negated happiness or emotional neutrality without sadness
+    - Physical pain, fear or anger without sadness
+    - A regrettable event or medical diagnosis inferred from the adjective
+  compound_id: CMP:d54499d2989fa97349e8e23d
+  content_digest: d54499d2989fa97349e8e23d129379409f54db0d36c46621a3936d5212f73af1
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: sad felt mood
+  english_glosses:
+  - sad felt mood
+  invariant_definition: 'The experiencer feels sadness: an unpleasant emotional mood
+    of sorrow or low spirits. This is a felt-state meaning, not a diagnosis, a judgment
+    that an event is unfortunate, or every unpleasant sensation. It does not require
+    a particular loss, crying, outward expression, permanence, incapacity, lack of
+    care or total absence of happiness.'
+  boundaries:
+    includes: 'The experiencer feels sadness: an unpleasant emotional mood of sorrow
+      or low spirits. This is a felt-state meaning, not a diagnosis, a judgment that
+      an event is unfortunate, or every unpleasant sensation. It does not require
+      a particular loss, crying, outward expression, permanence, incapacity, lack
+      of care or total absence of happiness.'
+    excludes: Negated happiness or emotional neutrality without sadness; Physical
+      pain, fear or anger without sadness; A regrettable event or medical diagnosis
+      inferred from the adjective
+  collision_audit: Convention 19 explicitly adds the stated felt distinction. Exact
+    dependency versions preserve the shared experiencer; no existing mental, living,
+    material, care or runtime meaning is substituted for the added feeling.
+  confidence: high
+  approval_record: migrations/sadness_2026_11_04.yaml
+  approval_basis: Delegated author semantic review under the user-directed completion
+    goal; reviews/felt_conditions_foundation.md. Not independent linguistic validation.
+  examples:
+    ordinary: Eli is sad.
+    technical: The same experiencer is retained through the version-pinned nested
+      felt-state definitions.
+    future_compound: Reuse the exact felt foundation before specializing its object,
+      cause or relief.
+    counterexample: Negated happiness or emotional neutrality without sadness
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: d54499d2989fa97349e8e23d129379409f54db0d36c46621a3936d5212f73af1
 - architecture_version: '1.0'
   compound_id: CMP:d98407801d64c085f702c9db
   content_digest: d98407801d64c085f702c9dbfc86b643031cbda4ef933b6fe1c06d26f54c6e7b

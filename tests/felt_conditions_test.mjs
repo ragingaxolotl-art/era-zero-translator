@@ -7,7 +7,7 @@ import {midiFromFormal} from '../pages/engine.mjs';
 import {decodeStrictMusicMidi} from '../pages/strict_music_decoder.mjs';
 import {decodeFeltConditionMidi} from '../pages/felt_decoder.mjs';
 const root=new URL('..',import.meta.url),authority=JSON.parse(fs.readFileSync(new URL('pages/data/index.json',root))),results=[];
-const profiles={happy:['happy_felt_mood',[13,12,11],'glad_or_content_mood'],hungry:['felt_hunger',[15,14,11],'food_directed_bodily_demand'],thirsty:['felt_thirst',[16,14,11],'water_directed_bodily_demand'],tired:['felt_fatigue',[17,11],'physical_or_mental_weariness']};
+const profiles={sad:['sad_felt_mood',[19,18,11],'sorrow_or_low_spirits'],happy:['happy_felt_mood',[13,12,11],'glad_or_content_mood'],hungry:['felt_hunger',[15,14,11],'food_directed_bodily_demand'],thirsty:['felt_thirst',[16,14,11],'water_directed_bodily_demand'],tired:['felt_fatigue',[17,11],'physical_or_mental_weariness']};
 for(const [adjective,[predicate,codes,quality]] of Object.entries(profiles))for(const state of [0,1,2]){
  for(const text of [`Eli is ${adjective}.`,`Nora is ${adjective}.`,`I am ${adjective}.`,`Eli is not ${adjective}.`,`Is Eli ${adjective}?`,`Eli was ${adjective} yesterday.`,`Eli will be ${adjective} tomorrow.`,`It is possible that Eli is not ${adjective}.`]){
   const input=text+` [${state}]`,p=parseNamedSentence(input);assert(p,input);
@@ -28,6 +28,8 @@ for(const word of Object.keys(profiles))for(const text of [`Eli is ${word} for p
 const fixtures=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_controlled_english','-rera_zero_presentation','-rbase64','-e',String.raw`
  d=EraZeroValidation.load_yaml('lexicon/compound_dictionary.yaml')['entries'];m=EraZeroValidation.load_yaml('migrations/felt_conditions_2026_11_04.yaml')
  old=d.select{|e|m['previous_compound_ids'].include?(e['compound_id'])};raise 'Existing 43 meanings changed' unless old.length==43&&EraZeroValidation.fingerprint(old)==m['before_dictionary_fingerprint']
+ newer=EraZeroValidation.load_yaml('migrations/sadness_2026_11_04.yaml');prior=d.select{|e|newer['previous_compound_ids'].include?(e['compound_id'])};raise 'Previous 50 definitions changed' unless prior.length==50&&EraZeroValidation.fingerprint(prior)==newer['before_dictionary_fingerprint']
+ m['added_compounds'].merge!(newer['added_compounds'])
  c=EraZeroControlledEnglish::Compiler.new;out=[]
  m['added_compounds'].each do |key,id|
   label=d.find{|e|e['compound_id']==id}['display_title']
@@ -41,3 +43,9 @@ for(const id of ['LIF:001','MIN:001']){
  event.address_absolute_midi=replacement.note_path_semitones.map(n=>n+event.base_midi);const bytes=midiFromFormal(f);decodeStrictMusicMidi(bytes,authority.atoms);assert.throws(()=>decodeFeltConditionMidi(bytes,authority.atoms));
 }
 console.log(`Felt conditions: ${results.length} ordinary adjective/state/scope cases and ${fixtures.length} controlled dependency/state cases preserve experiencer, distinct feeling and Ruby/browser formal/MIDI parity. All prior 43 definitions remain exact; wrong-root music and figurative substitutions are rejected.`);
+
+const sad=await composeNamedSentence('Nora is sad.',{authority});
+const notHappy=await composeNamedSentence('Nora is not happy.',{authority});
+assert.notDeepEqual(midiFromFormal(sad.formal),midiFromFormal(notHappy.formal));
+assert.equal(decodeFeltConditionMidi(midiFromFormal(sad.formal),authority.atoms).meaning.quality,'sorrow_or_low_spirits');
+assert.deepEqual(decodeFeltConditionMidi(midiFromFormal(notHappy.formal),authority.atoms).scopes,[{operator:'negation'}]);

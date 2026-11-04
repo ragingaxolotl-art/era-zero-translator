@@ -58,5 +58,20 @@ export const FELT_CONDITIONS = [
       ]
     },
     "semanticNote": "The experiencer feels fatigue: a condition of weariness in which sustaining physical or mental effort is felt as taxing or diminished and rest or recovery is called for. This does not entail sleep, dormancy, unconsciousness, objective incapacity, illness, damage or a measured energy deficit. Mere boredom or being tired of a particular object is a separate sense."
+  },
+  {
+    "pattern": "sad",
+    "predicate": "CMP:d54499d2989fa97349e8e23d",
+    "key": "sad_felt_mood",
+    "wording": "is sad",
+    "role": "experiencer",
+    "compoundSlots": {
+      "experiencer": [
+        "h",
+        "h",
+        "s-experiencer"
+      ]
+    },
+    "semanticNote": "The experiencer feels sadness: an unpleasant emotional mood of sorrow or low spirits. This is a felt-state meaning, not a diagnosis, a judgment that an event is unfortunate, or every unpleasant sensation. It does not require a particular loss, crying, outward expression, permanence, incapacity, lack of care or total absence of happiness."
   }
 ];

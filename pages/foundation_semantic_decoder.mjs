@@ -13,7 +13,7 @@ export async function decodeFoundationSentenceMidi(bytes,atoms,records,{allowDra
  const registers={bearer:'middle',actor:'low',target:'high',experiencer:'middle',comparison_standard:'middle',content:'middle'};
  function proposition(children,depth=0,parent=null){
   if(depth>32)fail();const scopes=[];
-  while(children.length===1&&children[0].kind==='grammar'&&!/^convention_(13|15|16|17)_open$/.test(children[0].marker||'')){
+  while(children.length===1&&children[0].kind==='grammar'&&!/^convention_(13|15|16|17|19)_open$/.test(children[0].marker||'')){
    const n=children[0],m=n.marker;let scope;
    if(m==='negation_open')scope={operator:'negation'};
    else if(/^aspect_(bounded|ongoing|habitual)_open$/.test(m))scope={operator:'aspect',aspect:m.slice(7,-5)};
@@ -22,7 +22,7 @@ export async function decodeFoundationSentenceMidi(bytes,atoms,records,{allowDra
    else fail();
    scopes.push(scope);children=n.children;if(!children||scopes.length>32)fail();
   }
-  if(children.length===1&&/^convention_(13|15|16|17)_open$/.test(children[0].marker||'')){
+  if(children.length===1&&/^convention_(13|15|16|17|19)_open$/.test(children[0].marker||'')){
    const felt=readFeltConditionTree(children[0],reader,frame=>{
     if(frame.marker==='role_experiencer_open'&&frame.children?.length===1&&frame.children[0].marker==='desire_subject_reference'){
      if(parent?.sound_code!==0)fail();

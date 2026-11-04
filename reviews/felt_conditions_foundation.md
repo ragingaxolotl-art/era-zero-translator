@@ -58,3 +58,9 @@ Exact prior definitions and MIDI-only semantic recovery are checked; corrupted
 root music is rejected. These authored checks are not held-out validation or medical diagnosis.
 Broader emotion, desire/preference, sensory qualities and movement manner remain
 separate requirements; no alias silently substitutes this batch for them.
+
+The subsequent [sadness review](sadness_foundation.md) adds convention 18 for
+unpleasant felt condition and convention 19 for sad mood, in that dependency order.
+Both reuse the exact felt-self-condition definition and preserve its experiencer.
+The expanded suite checks 120 ordinary cases and 27 controlled dependency cases;
+it additionally verifies all previous 50 compound records remain unchanged.

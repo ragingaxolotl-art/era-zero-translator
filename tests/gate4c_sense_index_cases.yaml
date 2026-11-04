@@ -1,8 +1,8 @@
 ---
 metadata:
   version: 1.0.0
-  sense_count: 458
-  lemma_count: 441
+  sense_count: 460
+  lemma_count: 443
 exact_atom_labels:
 - input: continuous self
   expected_route: atom
@@ -1097,6 +1097,9 @@ exact_compound_labels:
 - input: completed acquisition of physical custody
   expected_route: compound
   expected_target: CMP:c332d2e89b9f6177486fc93b
+- input: unpleasant felt condition
+  expected_route: compound
+  expected_target: CMP:c4fb9863fe36d7667db847c0
 - input: happy felt mood
   expected_route: compound
   expected_target: CMP:c58b38d03fab27880ac3e1f0
@@ -1106,6 +1109,9 @@ exact_compound_labels:
 - input: material hazard
   expected_route: compound
   expected_target: CMP:cb0812face56f90b7ba139c5
+- input: sad felt mood
+  expected_route: compound
+  expected_target: CMP:d54499d2989fa97349e8e23d
 - input: addressed message
   expected_route: compound
   expected_target: CMP:d98407801d64c085f702c9db

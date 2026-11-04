@@ -12,6 +12,15 @@ is the starting evidence, not a completion certificate.
 
 ## Current coverage evidence
 
+[Unpleasant feeling and sadness](../reviews/sadness_foundation.md) now extend the
+felt-condition dependency chain with two explicit conventional compounds. “Nora
+is sad” preserves a sad mood rather than substituting negated happiness, harm or
+runtime 0. The inventory is now 324 unchanged roots and 52 compounds. Targeted
+tests pass 120 ordinary feeling cases and 27 controlled dependencies, with exact
+preservation of the previous 50 definitions. Dictionary/index and generated Pages
+checks pass; these are not live browser or listening validation. Browser access
+was rechecked and remains disabled in Work settings.
+
 The [surface-texture review](../reviews/surface_texture_foundation.md) rejects
 substituting STR engagement loci, damage or attention for roughness. It specifies
 surface texture, contextual rough/smooth judgments, then tactile experience and

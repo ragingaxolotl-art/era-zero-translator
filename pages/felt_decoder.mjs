@@ -8,12 +8,14 @@ const profiles={
   14:{predicate:'felt_bodily_need',chain:[14,11],quality:'bodily_replenishment_demand'},
   15:{predicate:'felt_hunger',chain:[15,14,11],quality:'food_directed_bodily_demand'},
   16:{predicate:'felt_thirst',chain:[16,14,11],quality:'water_directed_bodily_demand'},
-  17:{predicate:'felt_fatigue',chain:[17,11],quality:'physical_or_mental_weariness'}
+  17:{predicate:'felt_fatigue',chain:[17,11],quality:'physical_or_mental_weariness'},
+  18:{predicate:'unpleasant_felt_condition',chain:[18,11],quality:'unpleasant'},
+  19:{predicate:'sad_felt_mood',chain:[19,18,11],quality:'sorrow_or_low_spirits'}
 };
 export function decodeFeltConditionMidi(bytes,atoms){
  const message='Unsupported or malformed felt-condition music.',fail=()=>{throw new Error(message);};
  const {observed,marker,exactRoot,role,unwrapScopes}=strictSemanticReader(bytes,atoms,message);
- const {current,scopes}=unwrapScopes(node=>/^convention_(11|12|13|14|15|16|17)_open$/.test(node.marker||''));
+ const {current,scopes}=unwrapScopes(node=>/^convention_(11|12|13|14|15|16|17|18|19)_open$/.test(node.marker||''));
  if(current.length!==1)fail();
  const meaning=readFeltConditionTree(current[0],{marker,exactRoot,role});
  return {profile:'EZFELT-INVERSE-1',speech_act:observed.speech_act,scopes,...meaning,

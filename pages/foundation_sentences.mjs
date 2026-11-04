@@ -78,7 +78,7 @@ async function composeAtDepth(input,authority,records,loadTemplate,allowDraft,de
    ir.edges.push({edge_id:id,type:'fills_role',from:prefix+source.root_clause,to:'p',role});
   }
  }else{
-  const infinitiveBody='(?:care for .+|prefer .+ to .+|be (?:not )?(?:conscious|dormant|able to move|able to pay attention|damaged|impaired|restored|happy|hungry|thirsty|tired)(?: \\[[012]\\])?)';
+  const infinitiveBody='(?:care for .+|prefer .+ to .+|be (?:not )?(?:conscious|dormant|able to move|able to pay attention|damaged|impaired|restored|happy|sad|hungry|thirsty|tired)(?: \\[[012]\\])?)';
   const infinitive=parsed.content.match(new RegExp(`^(?:(${HOLDER}|me) )?(not )?to (not )?(${infinitiveBody})$`));
   const controlled=!!infinitive&&!infinitive[1];
   let content=parsed.content;
