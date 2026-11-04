@@ -8,8 +8,14 @@ import {renderLexicalOccurrences,lexicalGloss} from './bound_compounds.mjs';
 const HOLDER='(?:I|[Yy]ou|[A-Z][a-z]+|"[^"\\n]+"|[Tt]he [a-z]+)';
 export function parseFoundationSentence(input){
  if(typeof input!=='string')return null;
- let text=input.trim(),state=1;const question=text.endsWith('?');const runtime=text.match(/\s*\[([012])\][.!?]?$/);
- if(runtime){state=Number(runtime[1]);text=text.slice(0,runtime.index).trim();}
+ let text=input.trim(),state=1;const runtime=text.match(/\s*\[([012])\]([.!?]?)$/);
+ if(runtime){
+  state=Number(runtime[1]);text=text.slice(0,runtime.index).trim();
+  const before=text.match(/[.!?]$/)?.[0],after=runtime[2];
+  if(before&&after&&before!==after)return null;
+  if(!before&&after)text+=after;
+ }
+ const question=text.endsWith('?');
  text=text.replace(/[.!?]$/,'').trim();
  const prefix=text.match(/^(Yesterday|Today),\s+(.+)$/),frontedDay=prefix?.[1].toLowerCase();
  if(prefix)text=prefix[2];

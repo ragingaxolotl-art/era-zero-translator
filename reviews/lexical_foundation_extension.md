@@ -292,3 +292,12 @@ This exposed duplicate rendering of compound-bound references whose only outgoin
 edge was an identity link. Both renderers now exclude `corefers_with` from the
 edges that make a bound argument independently sounded. Identity remains in the
 IR; the reference sounds once at its compound slot.
+
+Candidate question/runtime repair: punctuation before an outer runtime tag now
+retains its question contour, just like punctuation after it. Previously the
+question flag was read before removing the runtime suffix, silently changing
+“Does Nora prefer tea to coffee? [2]” into an assertion. Nine preference/desire
+cases across 0/1/2 now have identical full formal output for question punctuation
+before, after or on both sides of the tag, and independent MIDI decoding recovers
+the question. Contradictory punctuation is rejected. This fixes candidate output;
+it does not change the registry's admission status or claim style/listening approval.
