@@ -26,8 +26,9 @@ implementation dependency order but adds no supported cognitive phrases. An
 opt-in polar-content document now preserves complete propositions without asserting
 either answer; its 12 composition checks postdate the consolidated baseline.
 Draft standalone musical framing now preserves the enclosed predicate token
-tree in 12 independent decoding checks. Ruby content rendering and integration
-with cognitive predicates remain unfinished.
+tree in 12 independent decoding checks. Ruby now validates the entire embedded
+proposition and produces byte-identical content MIDI for these cases. Integration
+with cognitive predicates remains unfinished.
 
 Recent completed implementation work:
 

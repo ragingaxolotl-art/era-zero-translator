@@ -369,9 +369,13 @@ module EraZeroPresentation
 
   def midi(formal, **options)
     validate_formal!(formal, **options)
+    midi_from_scheduled_events(scheduled_lexical_events(formal), formal.dig("performance", "anchor_midi"), formal.dig("performance", "contour_relative_semitones"))
+  end
+
+  def midi_from_scheduled_events(scheduled, contour_base, contour)
     absolute_events = []
     tick = 0
-    scheduled_lexical_events(formal).each do |event|
+    scheduled.each do |event|
       notes = note_sequence(event)
       notes.each_with_index do |note, index|
         raise PresentationError, "MIDI note outside 0..127" unless note.between?(0, 127)
@@ -386,8 +390,7 @@ module EraZeroPresentation
       end
       tick += (event.fetch("boundary_after_beats", 0.5) * TICKS_PER_BEAT).round
     end
-    contour_base = formal.dig("performance", "anchor_midi")
-    formal.dig("performance", "contour_relative_semitones").each do |offset|
+    contour.each do |offset|
       note = contour_base + offset
       absolute_events << [tick, 1, [0x90, note, 70]]
       absolute_events << [tick + TICKS_PER_BEAT / 2, 0, [0x80, note, 0]]

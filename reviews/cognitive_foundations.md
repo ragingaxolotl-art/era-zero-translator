@@ -150,3 +150,24 @@ parity, existing foundation preview/export checks and counted-frame checks pass.
 This remains browser-only standalone content audition: Ruby question-content
 validation/rendering, cognitive predicate binding, full semantic inverse, live
 listening and canonical admission remain open.
+
+## Ruby question-content validation and rendering
+
+`EraZeroQuestionContent` now validates the draft wrapper and its content identity,
+and sends the entire embedded proposition through the canonical semantic validator
+and renderer. This is stronger than the browser wrapper's supplementary identity
+check: invalid roles and graph semantics are checked against current authority.
+It regenerates the formal proposition rather than accepting supplied performance
+events. The wrapper still asserts neither answer and requires explicit opt-in.
+
+All twelve browser content cases produce byte-identical Ruby MIDI. Default
+admission, a changed assertion commitment and an invalid participant role are
+rejected. The ordinary Ruby MIDI writer was extracted into a shared event writer;
+the existing ten glyph/audio checks, eighteen counted-property parity cases and
+counted-noun regressions pass. No root, approved compound or canonical performance
+was changed. This supersedes the earlier browser-only rendering limitation.
+
+Cognitive predicate binding and full epistemic semantic recovery remain the next
+work. Musical token-tree parity does not establish that a holder knows, believes,
+understands or has learned an answer. Open questions and live listening remain
+unverified.
