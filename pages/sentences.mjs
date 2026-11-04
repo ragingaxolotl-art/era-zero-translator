@@ -80,6 +80,15 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
   }
   const participant='(I|me|you|'+NOMINAL_PATTERN+'|(?!(?:She|He|It|They|We|Her|Him|Them|Us)\\b)[A-Z][a-z]+|"[A-Za-z]+(?:[ -][A-Za-z]+)*")';
   if(speechActs){
+    const transferCommand=String(input).trim().match(new RegExp(`^([Dd]o not )?[Tt]ransfer physical custody of ${participant} to ${participant}[.!]?$`));
+    const transferQuestion=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?transfer physical custody of ${participant} to ${participant}\\?$`));
+    if(transferCommand||transferQuestion){
+      const statement=transferCommand?`you ${transferCommand[1]?'did not transfer':'transferred'} physical custody of ${transferCommand[2]} to ${transferCommand[3]}.`:`${transferQuestion[1]} ${transferQuestion[2]?'did not transfer':'transferred'} physical custody of ${transferQuestion[3]} to ${transferQuestion[4]}.`;
+      const inner=parseNamedSentence(statement,depth+1);
+      if(!inner)return null;
+      return {...inner,...(transferCommand?{speechTime:undefined}:{}),speechAct:transferCommand?'command':'question',construction:`${transferCommand?'command':'question'}_${inner.construction}`,explicitInterpretation:String(input).trim()};
+    }
+
     const carryingCommand=String(input).trim().match(new RegExp(`^(?:[Dd]o not )?[Cc]arry ${participant}(?: (toward|to) ${participant})?[.!]?$`));
     if(carryingCommand){
       const negative=/^[Dd]o not /.test(String(input).trim());
@@ -210,6 +219,16 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
       semanticNote:'Spatial arrival: completion of this mover’s displacement to the destination before speech time. This does not assert continued presence there, transfer of possession, a recipient, intention, or carriage of another entity. Negation denies that completed arrival; it does not assert that an approach occurred.',
       explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
+  const custodyTransfer=String(input).trim().match(new RegExp(`^${participant} (transferred|did not transfer) physical custody of ${participant} to ${participant}[.]?$`));
+  if(custodyTransfer){
+    const texts=[custodyTransfer[1],custodyTransfer[3],custodyTransfer[4]];
+    if(texts.some(text=>parseNominal(text)?.quantifier)||new Set(texts.map(participantIdentity)).size!==3)return null;
+    return {predicate:'CMP:e3075c904daf1c647969fef6',key:'completed_physical_custody_transfer',speechTime:'before',negated:custodyTransfer[2]==='did not transfer',construction:'completed_physical_custody_transfer',
+      participants:texts.map((text,index)=>({text,label:text.replaceAll('"',''),role:['source','target','recipient'][index]})),
+      compoundSlots:{source:['q-prior','s-source'],target:[['q-prior','s-target'],['h','q-custody','s-target']],recipient:['h','q-custody','s-source']},
+      semanticNote:'One linked reallocation: the source has practical custody before and loses it at culmination, while the distinct recipient lacks it before and acquires it at culmination, for the same object. This does not assert ownership, willingness, movement, carrying, exclusivity against third parties or later persistence. These commitments remain inside the sentence scope and speech act.',
+      explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
   const carryingTo=String(input).trim().match(new RegExp(`^${participant} (?:is|am|are) (not )?carrying ${participant} to ${participant}[.]?$`));
   if(carryingTo){
     const texts=[carryingTo[1],carryingTo[3],carryingTo[4]];
@@ -313,7 +332,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|arrive|arrives|arrived|arriving|carry|carries|carried|carrying|support|supporting|custody|acquire|acquired|acquiring|temperature)\b/i.test(String(input))) && !parseNamedSentence(input);
+  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|arrive|arrives|arrived|arriving|carry|carries|carried|carrying|support|supporting|custody|acquire|acquired|acquiring|deliver|delivers|delivered|delivering|temperature)\b/i.test(String(input))) && !parseNamedSentence(input);
 }
 
 // A complete antecedent and a comma establish conditional scope. Without
@@ -440,10 +459,21 @@ export async function composeNamedSentence(input,template,{interpretation,standa
     parsed.semanticNote=[parsed.semanticNote,note].filter(Boolean).join(' ');
   }else if(viewpoint!==undefined)throw new Error('This sentence does not require a carrying viewpoint choice.');
   if(parsed.requiredDestination){
-    if(destination!=='spatial'){
-      const error=new Error('Choose a spatial destination reading for “to”. Receipt or delivery to a recipient is a different meaning and is not implemented yet.');
+    if(!['spatial','custody_delivery'].includes(destination)){
+      const error=new Error('Choose a spatial destination or carrying-mediated custody delivery reading for “to”.');
       error.code='carrying_destination_required';throw error;
     }
+    if(destination==='custody_delivery'){
+      parsed.predicate='CMP:5200738177777915abb3f42e';
+      parsed.compoundSlots={
+        source:[['q-arrival','q-path','q-carry','q-support','s-source'],['h','q-prior','s-source']],
+        target:[['q-arrival','q-path','q-carry','q-support','s-target'],['q-arrival','q-path','q-carry','s-load'],['q-arrival','q-path','s-load'],['q-arrival','s-load'],['h','q-prior','s-target'],['h','h','q-custody','s-target']],
+        destination:[['q-arrival','q-path','s-destination'],['q-arrival','s-destination'],['h','h','q-custody','s-source']]};
+      parsed.semanticNote='Interprets “to” as a carrying-mediated transfer of practical physical custody: the same carrier conveys the same supported load to the recipient’s contextual position, with arrival culminating in transfer from that carrier to that recipient. The carrier loses custody as the recipient acquires it. Ownership, willing acceptance, exclusivity against third parties and persistence afterward are unspecified. '+
+        (parsed.aspect==='ongoing'?'Ongoing aspect describes this delivery event as unfolding; it does not assert completed arrival or transfer.':parsed.aspect==='habitual'?'Habitual aspect describes a recurring delivery practice, not a particular current arrival or transfer.':'The event type includes completed carrying arrival and custody transfer in one culmination.')+
+        (parsed.negated?' Negation scopes the whole proposition; it does not assert a failed attempt.':'')+
+        (parsed.speechAct==='command'?' This commands the event without asserting that it happened.':'');
+    }else{
     const completed=parsed.aspect!=='ongoing',prefix=completed?['q-path','q-carry']:['q-carry'];
     parsed.predicate=completed?'CMP:74d98d19808f74d0b8196951':'CMP:763faa4465065477220f6f06';
     parsed.compoundSlots={source:[...prefix,'q-support','s-source'],target:[[...prefix,'q-support','s-target'],[...prefix,'s-load'],...(completed?[['q-path','s-load']]:[]),['s-load']],destination:completed?[['q-path','s-destination'],['s-destination']]:['s-destination']};
@@ -451,6 +481,7 @@ export async function composeNamedSentence(input,template,{interpretation,standa
       (parsed.aspect==='ongoing'?'The same supported load is being conveyed toward that destination in this carrying event; arrival is not asserted.':parsed.aspect==='habitual'?'The recurring practice consists of carrying events that culminate in the same load reaching the same destination through that supporting conveyance. No particular current occurrence, frequency or schedule is asserted.':'This carrying event culminates in its supported load reaching the same destination through that supporting conveyance; separate later arrival or unsupported flight does not qualify.')+
       (parsed.negated?' Negation applies to this whole carrying proposition; it does not assert an incomplete approach.':'')+
       (parsed.speechAct==='command'?' This is a command about that event type, not an assertion that carrying or arrival has occurred.':'');
+    }
   }else if(destination!==undefined)throw new Error('This sentence does not require a destination reading choice.');
   if(interpretation!==undefined&&interpretation!==parsed.requiredInterpretation)throw new Error('This interpretation is not available for this sentence.');
   if(parsed.requiredInterpretation&&interpretation!==parsed.requiredInterpretation){

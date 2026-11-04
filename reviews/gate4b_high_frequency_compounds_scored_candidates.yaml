@@ -2756,3 +2756,210 @@ reviews:
     decision: 'rejected: ternary semantic loss'
   recommendation: approve explicit_relation_actualization
   confidence: high
+- compound_id: CMP:e3075c904daf1c647969fef6
+  display_title: completed transfer of physical custody
+  current_choice_reason: Review in reviews/custody_transfer_foundation.md; scores
+    are author judgments, not independent semantic validation.
+  candidates:
+  - candidate_id: explicit_linked_reallocation
+    direction: Reuse exact custody and acquisition, share the object and explicitly
+      link source loss and recipient gain.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-prior
+        kind: compound_ref
+        compound_id: CMP:0aca609416668978e1527dac
+        definition_version: 1.0.0
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:c332d2e89b9f6177486fc93b
+        definition_version: 1.0.0
+      edges:
+      - type: qualifies
+        from: q-prior
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: completed_physical_custody_transfer
+        sound_code: 9
+        added_definition: 'Completion of one reallocation of practical physical custody
+          of the same distinct material object from a source holder to a distinct
+          recipient: the source has custody and the recipient lacks it immediately
+          before the event; at culmination the source lacks that custody and the recipient
+          acquires it. The source custody and recipient acquisition are linked phases
+          of this same reallocation, not unrelated loss and acquisition. Nested source
+          custody describes the pre-state, while nested acquisition describes the
+          culmination transition; neither is an independent speech-time assertion.
+          No ownership change, willing acceptance, permission, displacement, physical
+          carrying, exclusive control by either holder relative to third parties,
+          or persistence afterward is asserted.'
+        excludes:
+        - Acquisition without a prior holder
+        - Unrelated loss and acquisition involving the same object
+        - Shared custody retained by the source at culmination
+        - Ownership, permission, motion or willing acceptance inferred from transfer
+        - Different objects at the two custody endpoints
+      binding_constraints:
+      - relation: same_argument
+        slot_paths:
+        - - q-prior
+          - s-target
+        - - h
+          - q-custody
+          - s-target
+      - relation: distinct_arguments
+        slot_paths:
+        - - q-prior
+          - s-source
+        - - h
+          - q-custody
+          - s-source
+  - candidate_id: unlinked_conjunction
+    direction: Unrelated loss and gain do not establish a sourced reallocation.
+    scores:
+      atomicity: 7
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 43
+    decision: 'rejected: event linkage absent'
+  - candidate_id: runtime_transition
+    direction: Runtime 0 and 1 are occurrence endings, not a before/after event operator.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_linked_reallocation
+  confidence: high
+- compound_id: CMP:5200738177777915abb3f42e
+  display_title: completed carrying-mediated custody delivery
+  current_choice_reason: Review in reviews/custody_delivery_foundation.md; scores
+    are author judgments, not independent semantic validation.
+  candidates:
+  - candidate_id: explicit_carrying_transfer_culmination
+    direction: Reuse exact carrying arrival and custody transfer, link their culmination
+      and share all three participants.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-arrival
+        kind: compound_ref
+        compound_id: CMP:74d98d19808f74d0b8196951
+        definition_version: 1.0.0
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:e3075c904daf1c647969fef6
+        definition_version: 1.0.0
+      edges:
+      - type: qualifies
+        from: q-arrival
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: completed_carrying_custody_delivery
+        sound_code: 10
+        added_definition: 'Completion of one carrying-mediated custody delivery: the
+          carrier conveys the same supported material load to the contextual position
+          of the recipient, and that carrying arrival culminates in the linked transfer
+          of practical physical custody of that load from the carrier to that recipient.
+          The carrier is the transfer source, the load is the transferred object and
+          the destination referent is the recipient. The nested carrying arrival and
+          custody transfer are phases of this one delivery, not independent events.
+          The source loses custody as the recipient acquires it at culmination. Ownership,
+          willing acceptance, permission, exclusivity against third parties and persistence
+          afterward are unspecified.'
+        excludes:
+        - Spatial arrival while the carrier retains custody
+        - Custody transfer without the specified supporting conveyance and arrival
+        - Carrying arrival and an unrelated later handover
+        - A different carrier, object or recipient across the nested events
+        - Ownership, permission or willing acceptance inferred from delivery
+      binding_constraints:
+      - relation: same_argument
+        slot_paths:
+        - - q-arrival
+          - q-path
+          - q-carry
+          - q-support
+          - s-source
+        - - h
+          - q-prior
+          - s-source
+      - relation: same_argument
+        slot_paths:
+        - - q-arrival
+          - s-load
+        - - h
+          - q-prior
+          - s-target
+      - relation: same_argument
+        slot_paths:
+        - - q-arrival
+          - s-destination
+        - - h
+          - h
+          - q-custody
+          - s-source
+  - candidate_id: unlinked_conjunction
+    direction: Unrelated arrival and handover do not establish this carrying-mediated
+      delivery.
+    scores:
+      atomicity: 7
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 43
+    decision: 'rejected: event linkage absent'
+  - candidate_id: runtime_transition
+    direction: Runtime 0 and 1 are occurrence endings, not a before/after event operator.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_carrying_transfer_culmination
+  confidence: high

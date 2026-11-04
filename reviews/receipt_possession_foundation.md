@@ -117,3 +117,13 @@ resolves the acquisition candidate with an explicit conventional event and bound
 MIDI inverse. The same holder/object relation is absent before and present at its
 culmination. A prior custodian, source-mediated handover and any relinquishment
 remain unimplemented commitments for the next transfer definition.
+
+## Subsequent transfer and delivery resolution
+
+The November 4 draft adds [custody transfer](custody_transfer_foundation.md),
+reusing the exact custody and acquisition versions with shared-object identity,
+distinct holders, linked reallocation and source loss at culmination. It then adds
+[carrying-mediated custody delivery](custody_delivery_foundation.md), where the
+same carrier/load/recipient's arrival culminates in that transfer. These resolve
+the bounded candidates above without adding roots. Wider delivery, ownership and
+willing acceptance senses remain separate. The original seven gates stay open.

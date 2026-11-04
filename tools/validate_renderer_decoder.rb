@@ -59,14 +59,10 @@ checks.add("exhaustive atomic rendering", "all 324 atoms in all three runtime st
 
 compound_ok = compounds.all? do |compound|
   [0, 1, 2].all? do |state|
-    required_roles = EraZeroRenderer.required_compound_roles(compound, compounds: compounds)
-    filler_nodes = required_roles.each_with_index.map { |_role, index| { "node_id" => format("n%03d", index + 3), "kind" => "lexical_occurrence", "target_type" => "atom", "target_id" => "ORI:000", "runtime_state" => { "code" => 1 } } }
-    role_edges = required_roles.each_with_index.map { |role, index| { "edge_id" => format("e%03d", index + 2), "type" => "fills_role", "from" => filler_nodes[index]["node_id"], "to" => "n002", "role" => role } }
-    aliases=EraZeroDictionaryProbe.role_aliases(compound,compounds)
-    aliases.each { |role,first| role_edges.find { |e| e['role']==role }['from']=role_edges.find { |e| e['role']==first }['from'] }
-    filler_nodes.select! { |node| role_edges.any? { |edge| edge['from']==node['node_id'] } }
-    payload = { "ir_version" => "1.0", "root_clause" => "n001", "speech_act" => "assertion", "nodes" => [{ "node_id" => "n001", "kind" => "clause", "clause_type" => "predication" }, { "node_id" => "n002", "kind" => "lexical_occurrence", "target_type" => "compound", "target_id" => compound["compound_id"], "runtime_state" => { "code" => state } }] + filler_nodes, "edges" => [{ "edge_id" => "e001", "type" => "centers", "from" => "n002", "to" => "n001" }] + role_edges, "discourse_constraints" => {} }
-    EraZeroCompoundRoleBinding.bind_unique_roles!(payload['nodes'],payload['edges'],compounds.to_h{|c|[c['compound_id'],c]})
+    probe=EraZeroDictionaryProbe.scoped_arguments(compound,compounds)
+    occurrence={"node_id"=>"n002","kind"=>"lexical_occurrence","target_type"=>"compound","target_id"=>compound["compound_id"],"runtime_state"=>{"code"=>state}}
+    occurrence['compound_bindings']=probe[:bindings] unless probe[:bindings].empty?
+    payload={"ir_version"=>"1.0","root_clause"=>"n001","speech_act"=>"assertion","nodes"=>[{"node_id"=>"n001","kind"=>"clause","clause_type"=>"predication"},occurrence]+probe[:nodes],"edges"=>[{"edge_id"=>"e001","type"=>"centers","from"=>"n002","to"=>"n001"}],"discourse_constraints"=>{}}
     digest = Digest::SHA256.hexdigest(JSON.generate(EraZeroValidation.deep_sort(payload)))
     ir = payload.merge("utterance_id" => "UTT:#{digest[0, 24]}", "serialization" => { "canonical_format" => "EZIR-JSON-1", "content_digest" => digest })
     formal = EraZeroRenderer.render(ir)

@@ -2,10 +2,10 @@
   "purpose": "Pin the complete runtime authority used by the foundation review; counts and hashes do not prove semantic coverage.",
   "authority": {
     "lexicon/atoms.yaml": "8663e78a20f7badd76e26ac1ea1f359c843dbac96041895801672d8144ee46ea",
-    "lexicon/compound_dictionary.yaml": "11be6798deccc95b8790b3c065f066ee3973d33c69e989ea850804a65e659f11"
+    "lexicon/compound_dictionary.yaml": "3ed344d378ba96c2ece76992fcd08f6ae9feaf487aadbb89db2f75218beca1a6"
   },
   "root_count": 324,
-  "compound_count": 41,
+  "compound_count": 43,
   "families": {
     "LIF": [
       {
@@ -1744,6 +1744,12 @@
       "entry_sha256": "d5fdfa66fbdf53a8e5530cb5b4e530540d73aa621dc27c15690b1b123861835d"
     },
     {
+      "id": "CMP:5200738177777915abb3f42e",
+      "title": "completed carrying-mediated custody delivery",
+      "definition": "Completion of one carrying-mediated custody delivery: the carrier conveys the same supported material load to the contextual position of the recipient, and that carrying arrival culminates in the linked transfer of practical physical custody of that load from the carrier to that recipient. The carrier is the transfer source, the load is the transferred object and the destination referent is the recipient. The nested carrying arrival and custody transfer are phases of this one delivery, not independent events. The source loses custody as the recipient acquires it at culmination. Ownership, willing acceptance, permission, exclusivity against third parties and persistence afterward are unspecified.",
+      "entry_sha256": "94f810963e391871f9092e25d136e94f57c684371aeff09019c545b9fc9e3c93"
+    },
+    {
       "id": "CMP:578fd06e1dec6f91d2b35add",
       "title": "formal ontological dependence",
       "definition": "A persistent target-ground dependence constrained by a persistent target-directed formal constraint.",
@@ -1880,6 +1886,12 @@
       "title": "generated living being",
       "definition": "An identified living being whose individual existence is a generated artifact.",
       "entry_sha256": "4a5eef0221b2fa1e6360ac07f340f367c242c16916eaa35b7ee70b5c4b7dc3a6"
+    },
+    {
+      "id": "CMP:e3075c904daf1c647969fef6",
+      "title": "completed transfer of physical custody",
+      "definition": "Completion of one reallocation of practical physical custody of the same distinct material object from a source holder to a distinct recipient: the source has custody and the recipient lacks it immediately before the event; at culmination the source lacks that custody and the recipient acquires it. The source custody and recipient acquisition are linked phases of this same reallocation, not unrelated loss and acquisition. Nested source custody describes the pre-state, while nested acquisition describes the culmination transition; neither is an independent speech-time assertion. No ownership change, willing acceptance, permission, displacement, physical carrying, exclusive control by either holder relative to third parties, or persistence afterward is asserted.",
+      "entry_sha256": "bce8b36b37e7a3a8c7023837631f783b63c4bfa611c9e5cb748d6e0f56983bb1"
     },
     {
       "id": "CMP:e799b436d9c5e7d87a5516fa",

@@ -1,0 +1,29 @@
+---
+authority: User-directed translator-completion goal
+review: reviews/custody_transfer_foundation.md
+before_dictionary_fingerprint: ec9fc79c0a64a9aa1abc92c2fa7d9452d627511fddf1eb032056a501e928a3d4
+added_compound_id: CMP:e3075c904daf1c647969fef6
+convention:
+  profile: EZLEX-1
+  sense_key: completed_physical_custody_transfer
+  sound_code: 9
+  added_definition: 'Completion of one reallocation of practical physical custody
+    of the same distinct material object from a source holder to a distinct recipient:
+    the source has custody and the recipient lacks it immediately before the event;
+    at culmination the source lacks that custody and the recipient acquires it. The
+    source custody and recipient acquisition are linked phases of this same reallocation,
+    not unrelated loss and acquisition. Nested source custody describes the pre-state,
+    while nested acquisition describes the culmination transition; neither is an independent
+    speech-time assertion. No ownership change, willing acceptance, permission, displacement,
+    physical carrying, exclusive control by either holder relative to third parties,
+    or persistence afterward is asserted.'
+  excludes:
+  - Acquisition without a prior holder
+  - Unrelated loss and acquisition involving the same object
+  - Shared custody retained by the source at culmination
+  - Ownership, permission, motion or willing acceptance inferred from transfer
+  - Different objects at the two custody endpoints
+atomic_meanings_changed: false
+existing_compound_meanings_changed: false
+required_followup: Validate three participants, linked phases, scoped nested bindings
+  and runtime states; carrying-mediated delivery remains separate.

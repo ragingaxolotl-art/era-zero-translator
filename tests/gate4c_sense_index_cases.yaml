@@ -1,8 +1,8 @@
 ---
 metadata:
   version: 1.0.0
-  sense_count: 449
-  lemma_count: 432
+  sense_count: 451
+  lemma_count: 434
 exact_atom_labels:
 - input: continuous self
   expected_route: atom
@@ -1022,6 +1022,9 @@ exact_compound_labels:
 - input: love
   expected_route: compound
   expected_target: CMP:44718c92b66443c0c0f03ad7
+- input: completed carrying-mediated custody delivery
+  expected_route: compound
+  expected_target: CMP:5200738177777915abb3f42e
 - input: formal ontological dependence
   expected_route: compound
   expected_target: CMP:578fd06e1dec6f91d2b35add
@@ -1091,6 +1094,9 @@ exact_compound_labels:
 - input: generated living being
   expected_route: compound
   expected_target: CMP:e2af90ba78681e87e68450e5
+- input: completed transfer of physical custody
+  expected_route: compound
+  expected_target: CMP:e3075c904daf1c647969fef6
 - input: structural repair
   expected_route: compound
   expected_target: CMP:e799b436d9c5e7d87a5516fa

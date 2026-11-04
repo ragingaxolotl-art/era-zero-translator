@@ -40,8 +40,18 @@ checks.add("structured failures", "invalid and unsupported inputs return exact s
 lexical_ok = controlled.all? do |sense|
   compound = compounds.find { |entry| entry['compound_id']==sense['target_id'] }
   roles = compound ? EraZeroRenderer.required_compound_roles(compound, compounds: compounds) : []
-  aliases=compound ? EraZeroDictionaryProbe.role_aliases(compound,compounds) : {}
-  bindings = roles.map { |role| aliases.key?(role) ? %( ROLE #{role} REF #{aliases[role]}) : %( ROLE #{role} "distinct material object" [1]) }.join
+  bindings = if compound
+    probe=EraZeroDictionaryProbe.scoped_arguments(compound,compounds)
+    seen={}
+    probe[:bindings].map do |binding|
+      path=binding.fetch('slot_path');id=binding.fetch('argument_id')
+      argument=seen.key?(id) ? "REF #{JSON.generate(seen[id])}" : '"distinct material object" [1]'
+      seen[id] ||= path
+      " SLOT #{JSON.generate(path)} #{argument}"
+    end.join
+  else
+    ''
+  end
   input = %(ASSERT "#{sense['lemma']}" [1]#{bindings}.)
   result = compiler.compile(input)
   next false unless result["status"] == "ok"

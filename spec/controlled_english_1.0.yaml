@@ -3,10 +3,10 @@ metadata:
   title: Era Zero Controlled English Compiler
   version: 1.0.0
   status: canonical
-  sense_index_fingerprint: 1e55f63b4bc8024dd0517c1c5117001adaecf0c7ff73789400461064bb6554c9
-  semantic_ir_fingerprint: 52e13e487bbba192ea66da0561b8309cd513e45e175f8102f69bc2427db94958
-  renderer_fingerprint: 69fbf7c59f5bd13d1fbbdec0e997f5711d8ca5d5fd24dd14ec8c79d475398df5
-  controlled_lexeme_count: 365
+  sense_index_fingerprint: 8bda4dbc4c0fe9a347967c110369c82d8b7bce819dc52007aa91de85a1f683f9
+  semantic_ir_fingerprint: 3d23255b70099da5ab0ccdc5e1ca8f5b3affdac5bb283e3b9f811ed2c17ee41b
+  renderer_fingerprint: 194d569d8a9b6e1af6418468dfd59e4d9833dff3d851a3ff4fbc2903db3c9b68
+  controlled_lexeme_count: 367
   general_english_started: false
 boundary:
   purpose: A deterministic, auditable input language for canonical labels and explicit
@@ -40,6 +40,14 @@ grammar:
     is an error, not an alternative parse.
   role_reference: REF reuses the exact argument occurrence of an earlier role in the
     same clause; it does not infer identity from equal lexical labels.
+  scoped_slot: ACT [NOT] [MODAL mode] [ASPECT aspect] COMPOUND {SLOT ["local_id",...]
+    (LEXICAL | REF ["earlier_slot",...])} [TIME relation SPEECH_TIME] [MEASURE decimal
+    unit] [QUANTIFIER kind [decimal]] .
+  scoped_slot_rules: SLOT uses exact nonempty JSON-array paths from the versioned
+    compound expansion. REF names an earlier bound path in this clause and reuses
+    its argument occurrence. Bind every slot exactly once, satisfy all identity constraints,
+    and do not mix SLOT with ROLE. No inference from equal labels. Local compiler
+    extension; browser controlled-text support is a separate boundary.
 inventories:
   speech_acts:
     ASSERT: assertion
@@ -152,6 +160,11 @@ errors:
 - unexpected_token
 - ambiguous_compound_binding
 - unknown_role_reference
+- invalid_slot_path
+- invalid_slot_binding
+- duplicate_slot_binding
+- unknown_slot_reference
+- mixed_compound_bindings
 pipeline:
 - controlled input
 - deterministic compiler

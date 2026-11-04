@@ -49,7 +49,7 @@ function showClauseInterpretations(input,plan){
     const section=document.createElement('fieldset'),title=document.createElement('legend');title.textContent=`Clause ${index+1}: ${text}`;section.append(title);
     let view,destination,interpretation,threshold,scale;
     if(parsed.requiredViewpoint)view=select(section,`Clause ${index+1} carrying meaning`,[['','Choose a meaning'],['habitual','A recurring practice'],['ongoing','An unfolding action'],['bounded','One narrated episode']]);
-    if(parsed.requiredDestination){destination=select(section,`Clause ${index+1} meaning of to`,[['','Choose a destination meaning'],['spatial','Spatial destination; no receipt asserted']]);const note=document.createElement('p');note.textContent='Receipt and delivery to a recipient need a different meaning, which is not implemented yet.';section.append(note)}
+    if(parsed.requiredDestination){destination=select(section,`Clause ${index+1} meaning of to`,[['','Choose a destination meaning'],['spatial','Spatial destination; no receipt asserted'],['custody_delivery','Carry and transfer physical custody to the recipient']]);const note=document.createElement('p');note.textContent='Custody delivery means carrying arrival culminates in transfer from the carrier to the recipient. It does not mean ownership or willing acceptance.';section.append(note)}
     const property=['mass_standard','thermal_standard'].includes(parsed.requiredInterpretation);
     if(property){
       const mass=parsed.requiredInterpretation==='mass_standard',note=document.createElement('p');note.textContent=`For “${parsed.adjective}”, use ${mass?'mass':'thermodynamic temperature'} ${['heavy','hot'].includes(parsed.adjective)?'above':'below'} this clause’s threshold.`;section.append(note);
@@ -79,7 +79,7 @@ function showCarryingViewpoint(input){
   $('output').classList.add('hidden');$('phraseCoverage').classList.add('hidden');$('resolutionPanel').classList.add('hidden');$('results').classList.remove('hidden');$('candidateList').innerHTML='';
   $('decisionSummary').textContent='Choose the intended carrying meaning before generating sound.';
   const card=document.createElement('article');card.className='candidate';
-  const description=document.createElement('p');description.textContent=parsed.requiredDestination?'A spatial destination is different from a recipient. An unfolding action does not assert arrival; completed destination-carrying reaches its endpoint. Receipt and delivery meanings are not implemented yet.':'A recurring practice, an unfolding action and one narrated episode have different meanings. None automatically means arrival, delivery or a future plan.';
+  const description=document.createElement('p');description.textContent=parsed.requiredDestination?'Choose arrival at a position or carrying that culminates in transfer of physical custody to the recipient. An unfolding action does not assert completed arrival or transfer.':'A recurring practice, an unfolding action and one narrated episode have different meanings. None automatically means arrival, delivery or a future plan.';
   const viewpointLabel=document.createElement('label');viewpointLabel.textContent='Carrying meaning';
   const viewpoint=document.createElement('select');
   for(const [value,text] of [['','Choose a meaning'],['habitual','A recurring practice'],['ongoing','An unfolding action'],['bounded','One narrated episode']]){const option=document.createElement('option');option.value=value;option.textContent=text;viewpoint.append(option)}
@@ -87,7 +87,7 @@ function showCarryingViewpoint(input){
   let destination;
   if(parsed.requiredDestination){
     const label=document.createElement('label');label.textContent='Meaning of to';destination=document.createElement('select');
-    for(const [value,text] of [['','Choose a destination meaning'],['spatial','Spatial destination; no receipt asserted']]){const option=document.createElement('option');option.value=value;option.textContent=text;destination.append(option)}
+    for(const [value,text] of [['','Choose a destination meaning'],['spatial','Spatial destination; no receipt asserted'],['custody_delivery','Carry and transfer physical custody to the recipient']]){const option=document.createElement('option');option.value=value;option.textContent=text;destination.append(option)}
     destination.value='';label.append(destination);card.append(label);
   }
   let threshold,scale;

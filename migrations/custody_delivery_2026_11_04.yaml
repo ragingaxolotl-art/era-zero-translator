@@ -1,0 +1,28 @@
+---
+authority: User-directed translator-completion goal
+review: reviews/custody_delivery_foundation.md
+before_dictionary_fingerprint: 51ebc94270493413d8860606600116794afd336e0a6ff6ba687c5bc69e5f90bc
+added_compound_id: CMP:5200738177777915abb3f42e
+convention:
+  profile: EZLEX-1
+  sense_key: completed_carrying_custody_delivery
+  sound_code: 10
+  added_definition: 'Completion of one carrying-mediated custody delivery: the carrier
+    conveys the same supported material load to the contextual position of the recipient,
+    and that carrying arrival culminates in the linked transfer of practical physical
+    custody of that load from the carrier to that recipient. The carrier is the transfer
+    source, the load is the transferred object and the destination referent is the
+    recipient. The nested carrying arrival and custody transfer are phases of this
+    one delivery, not independent events. The source loses custody as the recipient
+    acquires it at culmination. Ownership, willing acceptance, permission, exclusivity
+    against third parties and persistence afterward are unspecified.'
+  excludes:
+  - Spatial arrival while the carrier retains custody
+  - Custody transfer without the specified supporting conveyance and arrival
+  - Carrying arrival and an unrelated later handover
+  - A different carrier, object or recipient across the nested events
+  - Ownership, permission or willing acceptance inferred from delivery
+atomic_meanings_changed: false
+existing_compound_meanings_changed: false
+required_followup: Validate participant equality, event culmination, scope and runtime
+  states; broader delivery senses remain separate.

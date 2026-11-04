@@ -44,7 +44,7 @@ const existing=await composeNamedSentence('Ada has physical custody of the box.'
 const controlled=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_controlled_english','-rera_zero_presentation','-rbase64','-e',String.raw`
  d=EraZeroValidation.load_yaml('lexicon/compound_dictionary.yaml')['entries']
  m=EraZeroValidation.load_yaml('migrations/custody_acquisition_2026_11_04.yaml')
- old=d.reject{|e|e['compound_id']==m['added_compound_id']}
+ old=d.reject{|e|[m['added_compound_id'],'CMP:e3075c904daf1c647969fef6','CMP:5200738177777915abb3f42e'].include?(e['compound_id'])}
  raise 'Prior forty compounds changed' unless old.length==40 && EraZeroValidation.fingerprint(old)==m['before_dictionary_fingerprint']
  c=EraZeroControlledEnglish::Compiler.new
  puts JSON.generate([0,1,2].map{|s|ir=c.compile!(%Q{ASSERT "completed acquisition of physical custody" [#{s}] ROLE source "identified other" [0] ROLE target "distinct material object" [2].});f=EraZeroRenderer.render(ir);{formal:f,midi:Base64.strict_encode64(EraZeroPresentation.midi(f))}})

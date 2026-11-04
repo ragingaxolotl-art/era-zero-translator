@@ -6,14 +6,14 @@ This repository contains both the canonical Ruby application/API and a determini
 
 ## Translator-completion draft
 
-The `feat/translator-completion` draft has 324 roots, 41 compounds and 449 indexed
+The `feat/translator-completion` draft has 324 roots, 43 compounds and 451 indexed
 senses. It composes selected ordinary sentences and nested participant bindings,
-including carrying, physical custody and custody acquisition, while preserving
-independent 0/1/2 states. The current regression suite has 84 passing checks.
-These counts do not establish full English coverage. Transfer/delivery and the
-other original completion gates remain open; see the [completion plan](docs/translator-completion.md).
+including carrying, physical custody, acquisition, transfer and an explicit
+carrying-mediated custody-delivery reading, while preserving
+independent 0/1/2 states. The current regression suite has 88 passing checks.
+These counts do not establish full English coverage. The original completion gates remain open; see the [completion plan](docs/translator-completion.md).
 This draft has not been merged or deployed. Live browser verification of the
-latest acquisition addition remains pending because browser use was disabled.
+latest transfer/delivery additions remains pending because browser use was disabled.
 
 ## Historical hosted-release baseline
 

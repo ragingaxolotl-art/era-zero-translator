@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 41
+  entry_count: 43
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -758,6 +758,115 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 44718c92b66443c0c0f03ad71a5115f6f051ce91928c9db7becea7453a59e63f
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-arrival
+    kind: compound_ref
+    compound_id: CMP:74d98d19808f74d0b8196951
+    definition_version: 1.0.0
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:e3075c904daf1c647969fef6
+    definition_version: 1.0.0
+  edges:
+  - type: qualifies
+    from: q-arrival
+    to: h
+  binding_constraints:
+  - relation: same_argument
+    slot_paths:
+    - - q-arrival
+      - q-path
+      - q-carry
+      - q-support
+      - s-source
+    - - h
+      - q-prior
+      - s-source
+  - relation: same_argument
+    slot_paths:
+    - - q-arrival
+      - s-load
+    - - h
+      - q-prior
+      - s-target
+  - relation: same_argument
+    slot_paths:
+    - - q-arrival
+      - s-destination
+    - - h
+      - h
+      - q-custody
+      - s-source
+  lexical_constraints:
+  - The same carrier is the source of the same-load custody transfer.
+  - The destination referent identifies the recipient and its contextual position,
+    not a separate unbound person.
+  - Carrying arrival culminates in custody transfer within this one event; nested
+    event commitments remain inside outer grammar scope.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: completed_carrying_custody_delivery
+    sound_code: 10
+    added_definition: 'Completion of one carrying-mediated custody delivery: the carrier
+      conveys the same supported material load to the contextual position of the recipient,
+      and that carrying arrival culminates in the linked transfer of practical physical
+      custody of that load from the carrier to that recipient. The carrier is the
+      transfer source, the load is the transferred object and the destination referent
+      is the recipient. The nested carrying arrival and custody transfer are phases
+      of this one delivery, not independent events. The source loses custody as the
+      recipient acquires it at culmination. Ownership, willing acceptance, permission,
+      exclusivity against third parties and persistence afterward are unspecified.'
+    excludes:
+    - Spatial arrival while the carrier retains custody
+    - Custody transfer without the specified supporting conveyance and arrival
+    - Carrying arrival and an unrelated later handover
+    - A different carrier, object or recipient across the nested events
+    - Ownership, permission or willing acceptance inferred from delivery
+  compound_id: CMP:5200738177777915abb3f42e
+  content_digest: 5200738177777915abb3f42e7c304f263e561ea81a6c783e012654c2197d2bd3
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: completed carrying-mediated custody delivery
+  english_glosses:
+  - completed carrying-mediated custody delivery
+  invariant_definition: 'Completion of one carrying-mediated custody delivery: the
+    carrier conveys the same supported material load to the contextual position of
+    the recipient, and that carrying arrival culminates in the linked transfer of
+    practical physical custody of that load from the carrier to that recipient. The
+    carrier is the transfer source, the load is the transferred object and the destination
+    referent is the recipient. The nested carrying arrival and custody transfer are
+    phases of this one delivery, not independent events. The source loses custody
+    as the recipient acquires it at culmination. Ownership, willing acceptance, permission,
+    exclusivity against third parties and persistence afterward are unspecified.'
+  boundaries:
+    includes: A single supporting conveyance whose arrival culminates in transfer
+      to the destination recipient.
+    excludes: Spatial arrival while the carrier retains custody; Custody transfer
+      without the specified supporting conveyance and arrival; Carrying arrival and
+      an unrelated later handover; A different carrier, object or recipient across
+      the nested events; Ownership, permission or willing acceptance inferred from
+      delivery
+  collision_audit: Exact carrying-to-arrival and custody-transfer versions supply
+    the event ingredients. Convention 10 adds the same-event culmination and three
+    explicit participant equalities. Mere conjunction would not entail delivery.
+  confidence: high
+  approval_record: migrations/custody_delivery_2026_11_04.yaml
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/custody_delivery_foundation.md
+  examples:
+    ordinary: Ben carried the box to Ada, with the explicitly selected custody-delivery
+      reading.
+    technical: The carrier, load and recipient are shared across arrival and custody
+      transfer in one culmination.
+    future_compound: Reuse this delivery before specializing route, service or acceptance
+      conditions.
+    counterexample: The box arrives beside Ada while Ben retains custody.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 5200738177777915abb3f42e7c304f263e561ea81a6c783e012654c2197d2bd3
 - architecture_version: '1.0'
   compound_id: CMP:578fd06e1dec6f91d2b35add
   content_digest: 578fd06e1dec6f91d2b35addea49cab1370912015a72ce2fed948395804930f7
@@ -2013,6 +2122,106 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: e2af90ba78681e87e68450e55eeecd7e016b3f28b0c837c89b6c17dcf6035437
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-prior
+    kind: compound_ref
+    compound_id: CMP:0aca609416668978e1527dac
+    definition_version: 1.0.0
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:c332d2e89b9f6177486fc93b
+    definition_version: 1.0.0
+  edges:
+  - type: qualifies
+    from: q-prior
+    to: h
+  binding_constraints:
+  - relation: same_argument
+    slot_paths:
+    - - q-prior
+      - s-target
+    - - h
+      - q-custody
+      - s-target
+  - relation: distinct_arguments
+    slot_paths:
+    - - q-prior
+      - s-source
+    - - h
+      - q-custody
+      - s-source
+  lexical_constraints:
+  - Source custody is the pre-state of this reallocation, not current custody asserted
+    outside the event.
+  - The same object passes from source custody to recipient acquisition in one event;
+    source loss at culmination and linked reallocation are explicit conventional commitments.
+  - The inherited holder/object constraints and distinct source/recipient constraint
+    remain in force.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: completed_physical_custody_transfer
+    sound_code: 9
+    added_definition: 'Completion of one reallocation of practical physical custody
+      of the same distinct material object from a source holder to a distinct recipient:
+      the source has custody and the recipient lacks it immediately before the event;
+      at culmination the source lacks that custody and the recipient acquires it.
+      The source custody and recipient acquisition are linked phases of this same
+      reallocation, not unrelated loss and acquisition. Nested source custody describes
+      the pre-state, while nested acquisition describes the culmination transition;
+      neither is an independent speech-time assertion. No ownership change, willing
+      acceptance, permission, displacement, physical carrying, exclusive control by
+      either holder relative to third parties, or persistence afterward is asserted.'
+    excludes:
+    - Acquisition without a prior holder
+    - Unrelated loss and acquisition involving the same object
+    - Shared custody retained by the source at culmination
+    - Ownership, permission, motion or willing acceptance inferred from transfer
+    - Different objects at the two custody endpoints
+  compound_id: CMP:e3075c904daf1c647969fef6
+  content_digest: e3075c904daf1c647969fef6f55b831f3f9185fa172042873d8bbb03543c834e
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: completed transfer of physical custody
+  english_glosses:
+  - completed transfer of physical custody
+  invariant_definition: 'Completion of one reallocation of practical physical custody
+    of the same distinct material object from a source holder to a distinct recipient:
+    the source has custody and the recipient lacks it immediately before the event;
+    at culmination the source lacks that custody and the recipient acquires it. The
+    source custody and recipient acquisition are linked phases of this same reallocation,
+    not unrelated loss and acquisition. Nested source custody describes the pre-state,
+    while nested acquisition describes the culmination transition; neither is an independent
+    speech-time assertion. No ownership change, willing acceptance, permission, displacement,
+    physical carrying, exclusive control by either holder relative to third parties,
+    or persistence afterward is asserted.'
+  boundaries:
+    includes: A single linked reallocation with one object and distinct source and
+      recipient.
+    excludes: Acquisition without a prior holder; Unrelated loss and acquisition involving
+      the same object; Shared custody retained by the source at culmination; Ownership,
+      permission, motion or willing acceptance inferred from transfer; Different objects
+      at the two custody endpoints
+  collision_audit: Version-pinned custody supplies the source pre-state and acquisition
+    supplies the recipient transition. Convention 9 adds linked reallocation and source
+    loss. No existing root is redefined as material transfer.
+  confidence: high
+  approval_record: migrations/custody_transfer_2026_11_04.yaml
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/custody_transfer_foundation.md
+  examples:
+    ordinary: Ben transferred physical custody of the box to Ada.
+    technical: One object, distinct source and recipient, linked source loss and recipient
+      acquisition at culmination.
+    future_compound: Reuse this exact transfer event when specifying a carrying-mediated
+      delivery.
+    counterexample: Ada gains shared control while Ben retains custody; acquisition
+      occurs but this relinquishing transfer does not.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: e3075c904daf1c647969fef6f55b831f3f9185fa172042873d8bbb03543c834e
 - architecture_version: '1.0'
   compound_id: CMP:e799b436d9c5e7d87a5516fa
   content_digest: e799b436d9c5e7d87a5516fa59156bbbd5017b752d3de5056e1ba3425da670ed

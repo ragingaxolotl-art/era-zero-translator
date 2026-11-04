@@ -5,9 +5,9 @@ Status: **PASS**
 - Checks passed: **11171**
 - Checks failed: **0**
 - Canonical resolution variants: **5370**
-- Indexed senses: **449**
+- Indexed senses: **451**
 - Directly resolvable targets: **358**
-- Open-slot compounds excluded from standalone static templates: **7**
+- Open-slot compounds excluded from standalone static templates: **9**
 - SVG/MIDI verification: **byte-for-byte against the Ruby canonical generator**
 - EZB-1 integrity and corruption rejection: **verified**
 

@@ -39,21 +39,19 @@ source recovery, not an inference that approval never occurred. The
 corrects stale examples using the existing applied approval migration, preserving
 root meanings and both lexical and runtime 0/1/2 distinctions.
 
-Reconciled with the source audit's seven original phases at draft `0f10d62` on
-October 29, 2026. The linked Page now reflects that implementation revision
-(Page sequence 5); its historical source observations remain dated evidence.
-All 104 Page blocks and all seven original exit requirements were preserved.
-The linked Page records the 80-check baseline and its targeted follow-up. The
-repository now records a fresh 84-check passing run after custody acquisition,
+First reconciled with the source audit's seven original phases at draft `0f10d62`
+on October 29, 2026 (Page sequence 5), preserving all 104 blocks and seven exit
+requirements. That historical revision recorded the 80-check baseline and its
+targeted follow-up. The November 4 repository now records a fresh 88-check passing run after custody transfer and delivery,
 including the MAT example reconciliation and per-clause correction. The ordinary diagnostic
 still has 19 checked compositions out of 40. Neither closes the gates below.
 
 | Original gate | Current evidence | Outstanding requirement; gate remains open |
 |---|---|---|
 | 1. One baseline and accurate status | Pinned baseline, local source manifest, editorial migration and source reconciliation records | Recover the full historical provenance ledger and reconcile external snapshots, with authority/conflicts recorded; do not claim every storage was audited |
-| 2. Meaning survives rendering | Scoped grammar, participant frames, state contrasts, strict MIDI structure observer, bounded property inverses and destination-carrying and custody semantic projections | General attachment and discourse recovery, parallel performance, and independent meaning recovery for the claimed supported scope |
+| 2. Meaning survives rendering | Scoped grammar, participant frames, state contrasts, strict MIDI structure observer, bounded property inverses and destination-carrying, custody, acquisition, transfer and delivery semantic projections | General attachment and discourse recovery, parallel performance, and independent meaning recovery for the claimed supported scope |
 | 3. Recursive compounds and reference binding | Versioned expansion, scoped slots, browser plans, nested carrying/support and participant constraints | Broader English compound discovery/reference forms and end-to-end semantic round trips; token recovery alone is insufficient |
-| 4. Complete small vertical slice | The exact mandatory phrase composes after explicit spatial-destination, viewpoint and mass choices; nested same-event carrying, selected tense/negation/question variants | Receipt/delivery interpretation, broader participant frames, nested grammar, remaining original variants and independent meaning validation |
+| 4. Complete small vertical slice | The exact mandatory phrase composes after explicit spatial-destination, viewpoint and mass choices; nested same-event carrying, selected tense/negation/question variants and explicit custody-delivery interpretation | Broader delivery senses and participant frames, nested grammar, remaining original variants and independent meaning validation |
 | 5. Coherent vocabulary batches | Reviewed bounded compounds and contrasts; preservation of existing roots and poetic love | Missing ordinary senses and all required frames, novel combinations, dictionary discovery and pronunciation evidence for each approved batch |
 | 6. Sentence grammar and dialogue | Selected questions, commands, conditions, time, quantities and explicit interpretation choices | Relative clauses, broader pronouns/discourse, quantifier/modal scope and held-out construction tests with local/browser agreement |
 | 7. Actual-use validation and release | Draft regression and diagnostic reports | All mandatory acceptance cases, an agreed held-out scope/target, listening/accessibility/browser checks and deployed-build verification; no release is authorized by this ledger |
@@ -76,7 +74,46 @@ all three runtime states, including nested use and participant changes. Check
 both lexical meaning and audible state preservation. Preserve existing melodies
 and do not create new LIF/STR-like families merely to fill the address grid.
 
-### Next dependency milestone
+### Current dependency milestone and next work
+
+[Custody transfer](../reviews/custody_transfer_foundation.md) now links source loss
+and recipient acquisition of the same object in one reallocation. The subsequent
+[carrying-mediated delivery](../reviews/custody_delivery_foundation.md) reuses that
+exact event and completed carrying arrival, with structural equalities for the
+carrier/source, load/object and destination/recipient. No root or prior compound
+meaning changes. The dictionary now has 43 compounds and 451 indexed senses.
+
+“Pip carries the heavy box to Ada” supports an explicit choice between spatial-only
+carrying and carrying that culminates in custody transfer. Viewpoint, mass standard,
+negation, questions, commands and per-clause choices remain separate. Ongoing and
+habitual scope do not assert a current completed delivery. Neither delivery nor
+transfer asserts ownership, willingness or later persistence.
+
+The two new suites each exercise 36 sentence/state cases and three independently
+stated lexical-participant fixtures, with Ruby/browser agreement and MIDI-only
+semantic projection. The delivery suite also checks the conditional command and
+actual choice-handler behavior. Corrupted sounds with valid musical structure
+cannot silently change the carrier, load or recipient. Dictionary-wide audits now
+bind synthetic participants by scoped slot identity rather than conflating repeated
+role names; all 367 dictionary identities across 0/1/2 have distinct exact MIDI.
+
+The full regression now passes 88 checks. The ordinary 40-case diagnostic remains
+19 checked, 18 uncomposed and three requiring interpretation; these new vertical
+slice tests do not increase that score or close any original gate. Live browser
+verification was attempted again November 4, but local browser use is disabled.
+No visual, listening or deployment verification is claimed.
+
+Next, complete the remaining original vertical-slice variants and general scoped
+reference/grammar handling, then prioritize the missing ordinary bodily-need,
+sensory, affective and movement-manner foundations. Plain controlled ROLE names
+cannot distinguish the two nested custody holders. The local controlled compiler
+now supports exact JSON-array SLOT paths and backward REF paths, preserving
+independent holder identities and shared objects. Its 18 speech-act/event/state
+cases and 12 rejection cases complement the exhaustive controlled-label audit.
+General nested English grammar and browser controlled-text parity remain gaps. Broader delivery senses must
+not be silently reduced to this carrying-and-custody-transfer sense.
+
+### Earlier dependency milestones
 
 [Completed custody acquisition](../reviews/custody_acquisition_foundation.md)
 now reuses custody version 1.0.0 under an explicit relation-actualization convention.
@@ -85,7 +122,7 @@ without claiming object creation, movement, ownership or a previous custodian.
 Past assertions, negation, questions, commands and selected mass restrictions have
 36 Ruby/browser formal and MIDI comparisons, plus three controlled cases with
 independent participant states. Its bounded MIDI inverse recovers that event from
-performed sound structure. Source-holder transfer and delivery remain unfinished.
+performed sound structure. Source-holder transfer and carrying-mediated delivery are now implemented in the subsequent milestone above.
 
 
 The [custody MIDI inverse](../reviews/custody_musical_inverse.md) now recovers the
@@ -94,7 +131,7 @@ and independent runtime states from MIDI and root sounds alone. Thirty-six
 sentence/state cases and nine controlled performances check the semantic result;
 balanced wrong conventions, roles and roots are rejected. The shared strict grammar
 reader preserves the carrying inverse. General nested/discourse meaning recovery
-and custody-transfer events remain open.
+remain open; the subsequent milestone adds bounded custody transfer.
 
 [Practical physical custody](../reviews/physical_custody_foundation.md) now has an
 explicit conventional compound and the sentence construction “Ada has physical
@@ -102,9 +139,8 @@ custody of the box.” It preserves a distinct holder/object relation, qualified
 material target, independent runtime states, negation, questions and selected
 clause scopes. Custody is established practical control, not ownership, mere
 support or arrival. Controlled intermediaries and nonexclusive control are
-permitted; legal custody and abstract possession are separate meanings. Transfer
-must still define the same object's before/after custody under one event before
-receipt/delivery can reuse this foundation. This addition does not close gate 4.
+permitted; legal custody and abstract possession are separate meanings. The subsequent transfer and delivery conventions now bind the same object across
+these states under one event. This addition does not close gate 4.
 
 
 The [MAT capacity/coupling reconciliation](../reviews/mat_capacity_source_reconciliation.md)
@@ -147,7 +183,7 @@ The 45 sentence/state cases include properties, role reversal, past, negation an
 questions, with Ruby/browser formal and MIDI parity. Six controlled-syntax cases
 exercise shared roles through nested identity constraints.
 
-Receipt/delivery is still unsupported. Broader participant forms, general nested
+The later custody-delivery milestone adds one explicit recipient reading. Broader participant forms, general nested
 grammar beyond the implemented per-clause choices, and the original acceptance variants
 remain open. Clarification alone is not an exact translation, and this milestone
 does not establish general independent semantic recovery or close gate 4.
@@ -164,7 +200,7 @@ vocabulary growth as completion: reuse the reviewed carrying and mass foundation
 extend the implemented noun-phrase restriction to the remaining required frames,
 and resolve the distinction between motion toward a place and delivery to a person.
 Extend the original phrase tests with unseen participant/property/tense variants
-and the still-missing recipient reading.
+and broader recipient/delivery readings.
 Do not silently treat “toward Ada” as equivalent to “to Ada”.
 
 Alongside this milestone, review sensory, bodily-need and affect foundations by
