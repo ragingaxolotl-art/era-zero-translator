@@ -31,3 +31,13 @@ across-swimming, carrying-viewpoint and multi-clause tests also pass. These are
 targeted checks, not a new full-suite or live-browser validation. The 40 authored
 phrase diagnostic now reports 24 checked, 8 requiring interpretation and 8 not
 composed; this is not held-out evidence of general completion.
+
+Explicit present habits (“Eli habitually swims”, including across-region,
+negated and question forms) now compose without a redundant viewpoint prompt.
+Their formal output equals the matching simple-present sentence with habitual
+viewpoint selected. A separate 21-case check covers those paraphrases and mixed
+swimming/carrying sequence, conjunction and conditional sentences across runtime
+states. It checks that each aspect frame encloses only its own predicate's state
+in the decoded MIDI, as well as whole-output Ruby parity.
+
+Consolidated follow-up: 108/117 checks passed. Failures remain in tools/validate_semantic_ir_and_grammar.rb, tools/validate_controlled_english.rb, tools/validate_renderer_decoder.rb, tests/physical_support_test.mjs, tests/physical_custody_test.mjs, tests/physical_carrying_test.mjs, tests/custody_acquisition_test.mjs, tests/custody_transfer_test.mjs, tests/custody_delivery_test.mjs. These include historical source fingerprints and prior-compound selection checks; reconciliation is pending. The failing report is retained, and no full-suite success or completion is claimed.

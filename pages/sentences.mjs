@@ -171,6 +171,17 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     if(!inner||inner.calendarDay!==undefined||inner.scopes?.length||inner.speechAct||(day==='tomorrow'&&['thermal_standard','mass_standard','luminance_standard','texture_standard'].includes(inner.requiredInterpretation))||(day==='yesterday'&&inner.speechTime!=='before')||(day==='tomorrow'&&inner.speechTime!==undefined))return null;
     return {...inner,...(day==='yesterday'?{speechTime:undefined}:{}),...(day==='tomorrow'?{requiredInterpretation:'future_assertion',semanticNote:[inner.semanticNote,'Interprets will as a future assertion; promise, intention, and willingness are not inferred.'].filter(Boolean).join(' ')}:{}),calendarDay:{yesterday:'-1',today:'0',tomorrow:'1'}[day],construction:`calendar_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
   }
+  const swimmingHabitQuestion=speechActs&&String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?habitually swim( across .+)?[?]$`));
+  if(swimmingHabitQuestion){
+    const inner=parseNamedSentence(`${swimmingHabitQuestion[1]} ${swimmingHabitQuestion[2]?'does not habitually swim':'habitually swims'}${swimmingHabitQuestion[3]||''}.`,depth+1,false);
+    return inner?{...inner,speechAct:'question',explicitInterpretation:String(input).trim()}:null;
+  }
+  const swimmingHabit=String(input).trim().match(new RegExp(`^${participant} (habitually swims|habitually swim|does not habitually swim|do not habitually swim)( across .+)?[.]?$`));
+  if(swimmingHabit){
+    const inner=parseNamedSentence(`${swimmingHabit[1]} is ${swimmingHabit[2].includes('not')?'not ':''}swimming${swimmingHabit[3]||''}`,depth+1,false);
+    if(!inner||!['ongoing_bodily_swimming','ongoing_swimming_across_region'].includes(inner.key)||inner.speechAct||inner.scopes?.length||inner.calendarDay!==undefined||inner.speechTime!==undefined)return null;
+    return {...inner,aspect:'habitual',construction:`habitual_${inner.construction}`,semanticNote:inner.semanticNote+' A recurring swimming practice; no particular occurrence, frequency or schedule is asserted.',explicitInterpretation:String(input).trim()};
+  }
   const swimQuestion=speechActs&&String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?swim( across .+)?[?]$`));
   if(swimQuestion){
     const inner=parseNamedSentence(`${swimQuestion[1]} ${swimQuestion[2]?'does not swim':'swims'}${swimQuestion[3]||''}.`,depth+1,false);

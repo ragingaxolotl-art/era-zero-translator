@@ -1,17 +1,17 @@
 # Deterministic Renderer and Inverse Decoder Validation
 
-Status: **PASS — RENDERER/DECODER CANONICAL; CONTROLLED ENGLISH MAY BEGIN**
+Status: **FAIL**
 
-- Checks passed: **12**
-- Checks failed: **0**
+- Checks passed: **10**
+- Checks failed: **2**
 - Semantic IR fixtures: **16**
 - Transposed round trips: **48**
 - Atomic state renderings: **972**
-- Compound state renderings: **150**
+- Compound state renderings: **165**
 - Decoder corruption classes tested: **4+**
 - General English authorized: **no**
 
-## PASS — source immutability
+## FAIL — source immutability
 
 IR and compounds match recorded fingerprints; atoms match directly or through exact editorial reconciliation
 
@@ -31,7 +31,7 @@ formal identity and relative plans survive transposition while absolute notes sh
 
 all 324 atoms in all three runtime states render and decode exactly
 
-## PASS — compound rendering
+## FAIL — compound rendering
 
 all approved compounds render every root and place runtime state on the head only
 
@@ -58,4 +58,9 @@ controlled and general English remain unstarted
 ## PASS — authority integration
 
 renderer/decoder remains canonical after orderly downstream progression
+
+## Failures
+
+- source immutability: IR and compounds match recorded fingerprints; atoms match directly or through exact editorial reconciliation
+- compound rendering: all approved compounds render every root and place runtime state on the head only
 
