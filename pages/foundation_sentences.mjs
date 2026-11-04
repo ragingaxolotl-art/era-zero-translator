@@ -44,10 +44,15 @@ export async function composeFoundationSentence(input,authority,records,loadTemp
   ir.nodes.push(await reference(parsed.target,'preferred',true),await reference(parsed.standard,'standard',true));
   for(const [id,role] of [['preferred','target'],['standard','comparison_standard']])ir.edges.push({edge_id:id,type:'fills_role',from:id,to:'p',role});
  }else{
-  const controlled=parsed.content.match(/^to care for (.+)$/);
-  const desiredText=controlled?`${parsed.holder} to care for ${controlled[1]}`:parsed.content;
-  const infinitive=desiredText.match(new RegExp(`^(${HOLDER}) to care for (.+)$`));
-  const content=infinitive?`${infinitive[1]} ${/^(?:I|[Yy]ou)$/.test(infinitive[1])?'care':'cares'} for ${infinitive[2]}`:parsed.content;
+  const infinitiveBody='(?:care for .+|be (?:not )?able to move(?: \\[([012])\\])?)';
+  const controlled=parsed.content.match(new RegExp(`^to (${infinitiveBody})$`));
+  const desiredText=controlled?`${parsed.holder} to ${controlled[1]}`:parsed.content;
+  const infinitive=desiredText.match(new RegExp(`^(${HOLDER}) to (${infinitiveBody})$`));
+  let content=parsed.content;
+  if(infinitive){
+   const holder=infinitive[1],body=infinitive[2];
+   content=body.startsWith('be ')?`${holder} ${holder==='I'?'am':/^[Yy]ou$/.test(holder)?'are':'is'} ${body.slice(3)}`:`${holder} ${/^(?:I|[Yy]ou)$/.test(holder)?'care':'cares'}${body.slice(4)}`;
+  }
   const inner=parseNamedSentence(content);
   if(!inner||inner.speechAct==='question'||inner.speechAct==='command')throw new Error('Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else.');
   const composed=await composeNamedSentence(content,await loadTemplate(inner.predicate));

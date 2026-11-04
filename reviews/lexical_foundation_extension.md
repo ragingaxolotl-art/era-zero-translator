@@ -122,7 +122,7 @@ The nine runtime sentence contrasts now produce actual digest-checked EZF artifa
 
 ### MIDI-only semantic inverse
 
-`pages/foundation_semantic_decoder.mjs` recovers typed foundation arguments, predicate identity/version, separate runtime states, grammatical scopes and speech act using MIDI plus the shared dictionary only. Intensional argument frames recursively contain recovered propositions, rather than asserting those propositions independently. The initial profile accepts direct phonemic/deictic references, nominal kinds, nested foundation predicates, and embedded LIF:211 care. Other constructions fail explicitly; it does not reconstruct arbitrary sentences or original spelling.
+`pages/foundation_semantic_decoder.mjs` recovers typed foundation arguments, predicate identity/version, separate runtime states, grammatical scopes and speech act using MIDI plus the shared dictionary only. Intensional argument frames recursively contain recovered propositions, rather than asserting those propositions independently. The initial profile accepts direct phonemic/deictic references, nominal kinds, nested foundation predicates, and embedded LIF:211 care or MOV:201 available self-mobility. Other constructions fail explicitly; it does not reconstruct arbitrary sentences or original spelling.
 
 Nine rendered desire/care contrasts now verify recovered holder, caregiver, target and independent runtime states. Twelve preference contrasts verify alternative direction, kind typing, negation and runtime without inferring absolute desire or pleasantness. Octave transposition preserves recovered meaning; unapproved defaults, malformed argument typing and extra roles reject. Existing 23 ordinary-reference/care inverse cases still pass. All four candidate test files are included in the consolidated implementation runner, without treating candidates as admitted vocabulary. Ordinary-English routes and admission/style review remain unfinished.
 
@@ -178,12 +178,12 @@ negative/question forms now bind the embedded caregiver to the desire holder.
 This uses the existing semantic-IR reference/corefers_with mechanism, with an exact
 declared referent and a validated link to the immediate desire's experiencer.
 Equal name labels alone never create this link. The supported construction is
-currently care; other infinitive meanings still require their own validated route.
+care and available self-mobility; other infinitive meanings still require their own validated route.
 
 An audible `EZCONTROL:desire_subject` pointer uses `[0,-25,0,0]` at quarter beats,
-inside the embedded actor role. It denotes the immediately enclosing desire's
+inside the embedded actor role for care or bearer role for mobility capacity. It denotes the immediately enclosing desire's
 experiencer, not an arbitrary earlier name. Both renderers validate the enclosing
-content, exact target identity and actor role. The MIDI-only inverse recovers the
+content, exact target identity and the predicate-specific subject role. The MIDI-only inverse recovers the
 binding even when the outer holder is sounded later. This new candidate grammar
 frame remains subject to the same listening review as the other extension frames.
 
@@ -193,3 +193,18 @@ identity links reject in both validators. Sound/animation preserves all notes an
 bundle exports retain the declared identity. Existing ordinary deictic reference,
 unsupported-scope and 39 candidate-English checks pass. A separately named embedded
 subject produces a different musical reference and does not imply shared identity.
+
+### Desired available self-mobility
+
+The candidate desire route now composes “Nora wants to be able to move” using
+existing MOV:201 inside intensional content. The subject pointer binds the desired
+capacity's bearer to the desire's experiencer. “Nora wants Eli to be able to move”
+uses a separately sounded reference instead. Neither asserts that movement occurs
+or that the desired ability actually holds. No root or foundation definition changes.
+
+Eighteen combinations independently vary outer runtime, inner runtime and inner
+negation. Ruby/browser formal and MIDI agree, and the MIDI-only inverse recovers
+the capacity, intensional boundary, binding, separate endings and negation. Further
+cases cover deictics, questions, outer negation, explicit subjects, invalid roles,
+unsupported complements and draft bundle identity. The existing care tests still
+pass. Candidate vocabulary and listening-review limits remain in force.

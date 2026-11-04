@@ -1,13 +1,13 @@
-// Explicit subject control for the reviewed desire -> care infinitive construction.
+// Explicit subject control for the reviewed desire -> care or available-mobility infinitive constructions.
 export function validateSubjectControl(ir){
  const nodes=new Map(ir.nodes.map(n=>[n.node_id,n])),edges=ir.edges;
  for(const n of ir.nodes.filter(n=>n.kind==='reference'&&n.reference_type==='desire_subject')){
   const fail=()=>{throw new Error('Invalid desired-subject identity.');};
   if(n.value_type!=='entity'||Object.keys(n).some(k=>!['node_id','kind','reference_type','referent_id','value_type'].includes(k))||!ir.discourse_constraints?.declared_referents?.includes(n.referent_id))fail();
   const links=edges.filter(e=>e.from===n.node_id),role=links.find(e=>e.type==='fills_role'),identity=links.find(e=>e.type==='corefers_with');
-  if(links.length!==2||!role||role.role!=='actor'||!identity)fail();
+  if(links.length!==2||!role||!identity)fail();
   const predicate=nodes.get(role.to),holder=nodes.get(identity.to);
-  if(predicate?.target_id!=='LIF:211'||!['phonemic_reference','deictic_reference'].includes(holder?.kind)||holder.referent_id!==n.referent_id)fail();
+  if(predicate?.target_type!=='atom'||!Object.hasOwn({'LIF:211':'actor','MOV:201':'bearer'},predicate?.target_id)||role.role!==({'LIF:211':'actor','MOV:201':'bearer'})[predicate.target_id]||!['phonemic_reference','deictic_reference'].includes(holder?.kind)||holder.referent_id!==n.referent_id)fail();
   let id=predicate.node_id;const seen=new Set();
   while(nodes.get(id)?.kind!=='clause'){
    if(seen.has(id))fail();seen.add(id);

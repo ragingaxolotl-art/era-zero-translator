@@ -7,9 +7,9 @@ module EraZeroSubjectControl
       fail_control=-> {raise ArgumentError,'Invalid desired-subject identity.'}
       fail_control.call unless n['value_type']=='entity' && (n.keys-%w[node_id kind reference_type referent_id value_type]).empty? && Array(ir.dig('discourse_constraints','declared_referents')).include?(n['referent_id'])
       links=edges.select{|e|e['from']==n['node_id']};role=links.find{|e|e['type']=='fills_role'};identity=links.find{|e|e['type']=='corefers_with'}
-      fail_control.call unless links.length==2&&role&&role['role']=='actor'&&identity
+      fail_control.call unless links.length==2&&role&&identity
       predicate=nodes[role['to']];holder=nodes[identity['to']]
-      fail_control.call unless predicate&&predicate['target_id']=='LIF:211'&&holder&&%w[phonemic_reference deictic_reference].include?(holder['kind'])&&holder['referent_id']==n['referent_id']
+      fail_control.call unless predicate&&predicate['target_type']=='atom'&&{'LIF:211'=>'actor','MOV:201'=>'bearer'}[predicate['target_id']]==role['role']&&holder&&%w[phonemic_reference deictic_reference].include?(holder['kind'])&&holder['referent_id']==n['referent_id']
       id=predicate['node_id'];seen=[]
       until nodes[id]['kind']=='clause'
         fail_control.call if seen.include?(id);seen<<id
