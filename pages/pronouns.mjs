@@ -1,3 +1,4 @@
+import {resolvePersonalPronouns,substitutePersonalPronouns} from './personal_pronoun_plan.mjs';
 import {parseNamedSentence,composeNamedSentence,parseSentenceConditional} from './sentences.mjs';
 import {parseNominal} from './nominals.mjs';
 
@@ -8,12 +9,12 @@ export function pronounInterpretationPlan(input){
  const occurrences=[];let quoted=false;
  for(let i=0;i<input.length;){
   if(input[i]==='"'){quoted=!quoted;i++;continue;}
-  const match=!quoted&&(i===0||!/[A-Za-z]/.test(input[i-1]))?input.slice(i).match(/^(she|he|her|him|it)\b/i):null;
+  const match=!quoted&&(i===0||!/[A-Za-z]/.test(input[i-1]))?input.slice(i).match(/^(she|he|her|him|it|they|them)\b/i):null;
   if(match&&/^it is (?:(?:not )?(?:possible|necessary) that|not the case that)\b/i.test(input.slice(i))){i+=match[0].length;continue;}
   if(match){occurrences.push({key:`ref${occurrences.length}`,pronoun:match[0],start:i,end:i+match[0].length});i+=match[0].length;}else i++;
  }
  if(quoted||!occurrences.length||occurrences.length>16)return null;
- const substitute=values=>{let text=input;for(const o of [...occurrences].reverse())text=text.slice(0,o.start)+values[o.key]+text.slice(o.end);return text;};
+ const substitute=values=>substitutePersonalPronouns(input,occurrences,values);
  const placeholders=Object.fromEntries(occurrences.map((o,i)=>[o.key,`"reference ${String.fromCharCode(97+i)}"`]));
  const parsed=parseNamedSentence(substitute(placeholders));
  if(!parsed)return null;
@@ -27,13 +28,9 @@ export function validReferent(value){
 }
 export async function composePronounSentence(input,loadTemplate,bindings,options={}){
  const plan=pronounInterpretationPlan(input);if(!plan)throw new Error('This sentence does not support explicit pronoun resolution yet.');
- if(!bindings||typeof bindings!=='object'||Array.isArray(bindings)||Object.keys(bindings).length!==plan.occurrences.length||plan.occurrences.some(o=>!Object.hasOwn(bindings,o.key)||!validReferent(bindings[o.key]))){
-  const e=new Error('Identify every pronoun with a name, a quoted name, a noun reference such as “the robot” or “this lamp”, or I/you.');e.code='pronoun_referents_required';throw e;
- }
+ const {chosen,resolved}=resolvePersonalPronouns(input,plan,bindings,validReferent);
  if(!options||typeof options!=='object'||Array.isArray(options)||Object.keys(options).some(key=>!['interpretation','standard','viewpoint','destination'].includes(key)))throw new Error('Invalid sentence interpretation choices.');
  const selectedOptions=structuredClone(options);
- const chosen=Object.fromEntries(plan.occurrences.map(o=>[o.key,bindings[o.key]]));
- let resolved=input;for(const o of [...plan.occurrences].reverse())resolved=resolved.slice(0,o.start)+chosen[o.key]+resolved.slice(o.end);
  // Substitution may expose a forbidden identity (e.g. carrier equals load).
  const parsed=parseNamedSentence(resolved);if(!parsed)throw new Error('These referents do not form a valid interpretation of the whole sentence.');
  const result=await composeNamedSentence(resolved,await loadTemplate(parsed.predicate),selectedOptions);

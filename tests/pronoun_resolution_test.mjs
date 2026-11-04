@@ -24,7 +24,7 @@ for(const [i,r] of results.entries()){assert.deepEqual(r.formal,expected[i].form
 assert.equal(new Set(results.map(r=>Buffer.from(midiFromFormal(r.formal)).toString('base64'))).size,results.length);
 const input='She cares for him.';
 for(const bad of [undefined,{},[],{ref0:'Nora'},{ref0:'Nora',ref1:'him'},{ref0:'Nora',ref1:'Eli and Ben'},{ref0:'Nora',ref1:'Eli',ref2:'Ben'}])await assert.rejects(()=>composePronounSentence(input,load,bad),e=>e.code==='pronoun_referents_required');
-for(const text of ['"She" cares for "Him".','She cares for her robot.','They care for him.','If the radio is damaged, repair it.'])assert.equal(pronounInterpretationPlan(text),null,text);
+for(const text of ['"She" cares for "Him".','She cares for her robot.','If the radio is damaged, repair it.'])assert.equal(pronounInterpretationPlan(text),null,text);
 const r=await composePronounSentence('She is hungry.',load,{ref0:'"Mary Jane"'});assert.equal(r.semantic_ir.nodes.find(n=>n.name)?.name.normalized_label,'mary jane');
 const nominal=await composePronounSentence('She is repairing it.',load,{ref0:'Nora',ref1:'the gyroscope'});assert(nominal.semantic_ir.nodes.some(n=>n.reference_mode==='definite_nominal'&&n.name.normalized_label==='gyroscope'));
 let release;const gate=new Promise(r=>release=r),mutable={ref0:'Nora',ref1:'Eli'},pending=composePronounSentence(input,async id=>{await gate;return load(id)},mutable);mutable.ref0='Ben';release();assert.equal((await pending).resolved_pronouns[0].referent,'Nora');
@@ -38,3 +38,9 @@ const card=elements.candidateList.children.at(-1),fields=card.children.slice(0,2
 await button.click();assert.equal(shown,undefined);fields[0].value='Nora';fields[1].value='Eli';await button.click();assert.equal(shown.resolved_input,'Nora cares for Eli.');
 let unlock;const wait=new Promise(r=>unlock=r);ctx.sentenceTemplate=async id=>{await wait;return load(id)};const old=shown,late=button.click();fields[1].value='Ben';unlock();await late;assert.equal(shown,old);
 console.log(`Pronouns: ${results.length} explicit referent/state/scope cases match direct interpretation and Ruby MIDI; MIDI-only care decoding preserves both roles. Missing, injected, stale and ambiguous bindings are rejected; names, nouns and compound experiencers are supported.`);
+ctx.sentenceTemplate=load;const neutralInput='They care for them.';elements.sourceInput.value=neutralInput;ctx.plan=pronounInterpretationPlan(neutralInput);vm.runInContext(`showPronounReferents(${JSON.stringify(neutralInput)},plan);`,ctx);
+const neutralCard=elements.candidateList.children.at(-1),neutralFields=neutralCard.children.slice(0,2).map(l=>l.children),neutralButton=neutralCard.children.at(-1);assert(neutralFields.every(f=>f.length===2));
+neutralFields[0][0].value='Nora';neutralFields[1][0].value='Eli';const beforeNeutral=shown;await neutralButton.click();assert.equal(shown,beforeNeutral);
+for(const f of neutralFields)f[1].value='singular';await neutralButton.click();assert.equal(shown.resolved_input,'Nora cares for Eli.');
+const singular=shown;neutralFields[0][1].value='plural';await neutralButton.click();assert.equal(shown,singular);
+console.log('PASS ordinary pronoun UI requires explicit number and preserves two distinct neutral referents; group meaning is not coerced.');

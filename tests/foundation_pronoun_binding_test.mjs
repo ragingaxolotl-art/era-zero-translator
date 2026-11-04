@@ -33,6 +33,6 @@ ctx.fetch=async()=>({ok:true,json:async()=>({records})});
 elements.sourceInput.value='They prefer tea to coffee.';ctx.showFoundationPreview(elements.sourceInput.value);
 const neutralCard=elements.candidateList.children.at(-1),neutralLabel=neutralCard.children[1],neutralButton=neutralCard.children.at(-1);assert.equal(neutralLabel.children.length,2);
 neutralLabel.children[0].value='Nora';const beforeNeutral=shown;await neutralButton.click();assert.equal(shown,beforeNeutral);assert.equal(errors.at(-1).code,'pronoun_referents_required');
-neutralLabel.children[1].value='singular';await neutralButton.click();assert.equal(shown.resolved_input,'Nora prefer tea to coffee.');
+neutralLabel.children[1].value='singular';await neutralButton.click();assert.equal(shown.resolved_input,'Nora prefers tea to coffee.');
 const singular=shown;neutralLabel.children[1].value='plural';await neutralButton.click();assert.equal(shown,singular);assert.equal(errors.at(-1).code,'pronoun_referents_required');
 console.log('PASS foundation UI neutral reference: number required, singular binding submitted, plural not coerced.');

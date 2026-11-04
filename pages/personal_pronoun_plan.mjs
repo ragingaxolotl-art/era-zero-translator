@@ -9,7 +9,7 @@ export function personalPronounPlan(input,accepts,{includeNeutral=false}={}){
   if(match){occurrences.push({key:`ref${occurrences.length}`,pronoun:match[0],start:i,end:i+match[0].length});i+=match[0].length;}else i++;
  }
  if(quoted||!occurrences.length||occurrences.length>16)return null;
- let probe=input;for(const o of [...occurrences].reverse())probe=probe.slice(0,o.start)+`"reference ${String.fromCharCode(97+Number(o.key.slice(3)))}"`+probe.slice(o.end);
+ const probe=substitutePersonalPronouns(input,occurrences,Object.fromEntries(occurrences.map(o=>[o.key,`"reference ${String.fromCharCode(97+Number(o.key.slice(3)))}"`])));
  return accepts(probe)?{input,occurrences}:null;
 }
 
@@ -28,6 +28,31 @@ export function resolvePersonalPronouns(input,plan,bindings,validReferent){
   const referent=neutral?value.referent:value;
   if(!validReferent(referent))fail('Use an explicit name, noun reference, or I/you for each pronoun.');chosen[o.key]=referent;
  }
- let resolved=input;for(const o of [...plan.occurrences].reverse())resolved=resolved.slice(0,o.start)+chosen[o.key]+resolved.slice(o.end);
+ const resolved=substitutePersonalPronouns(input,plan.occurrences,chosen);
  return {resolved,chosen};
+}
+
+// Resolve singular they's English agreement without changing predicate meaning.
+// Only supported present-tense verbs/auxiliaries are normalized; past verbs and
+// modals remain untouched. Reference number is validated before actual resolution.
+export function substitutePersonalPronouns(input,occurrences,chosen){
+ const edits=occurrences.map(o=>({start:o.start,end:o.end,text:chosen[o.key]}));
+ for(const o of occurrences){
+  if(!/^they$/i.test(o.pronoun))continue;
+  const ref=chosen[o.key],first=/^(I|me)$/.test(ref),second=/^you$/i.test(ref),third=!first&&!second;
+  const agree=verb=>{const lower=verb.toLowerCase();let word=lower;
+   if(lower==='are')word=first?'am':second?'are':'is';
+   else if(lower==='were')word=second?'were':'was';
+   else if(third&&lower==='have')word='has';
+   else if(third&&lower==='do')word='does';
+   else if(third)word=/[^aeiou]y$/.test(lower)?lower.slice(0,-1)+'ies':/(s|sh|ch|x|z|o)$/.test(lower)?lower+'es':lower+'s';
+   return /^[A-Z]/.test(verb)?word[0].toUpperCase()+word.slice(1):word;
+  };
+  const before=input.slice(0,o.start).match(/\b(Are|Were|Do|Have) $/i);
+  const after=input.slice(o.end).match(/^ (are|were|have|do|care|run|swim|carry|enter|prefer|know|want|understand)\b/i);
+  if(after&&!before)edits.push({start:o.end+1,end:o.end+1+after[1].length,text:agree(after[1])});
+  if(before)edits.push({start:o.start-before[0].length,end:o.start-1,text:agree(before[1])});
+ }
+ let output=input;for(const edit of edits.sort((a,b)=>b.start-a.start))output=output.slice(0,edit.start)+edit.text+output.slice(edit.end);
+ return output;
 }

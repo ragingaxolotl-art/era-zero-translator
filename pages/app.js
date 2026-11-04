@@ -56,7 +56,9 @@ function showPronounReferents(input,plan){
   const card=document.createElement('article');card.className='candidate';const fields=[];
   for(const [index,o] of plan.occurrences.entries()){
     const label=document.createElement('label');label.textContent=`${index+1}. “${o.pronoun}” refers to`;
-    const field=document.createElement('input');field.type='text';field.maxLength=200;field.placeholder='Ada, "Mary Jane", the robot, this lamp, I, or you';label.append(field);card.append(label);fields.push([o.key,field]);
+    const field=document.createElement('input');field.type='text';field.maxLength=200;field.placeholder='Ada, "Mary Jane", the robot, this lamp, I, or you';label.append(field);let number=null;
+    if(/^(they|them)$/i.test(o.pronoun)){number=document.createElement('select');for(const [value,title] of [['','One individual or a group?'],['singular','One individual'],['plural','A group']]){const option=document.createElement('option');option.value=value;option.textContent=title;number.append(option);}number.value='';label.append(number);}
+    card.append(label);fields.push([o.key,field,number]);
   }
   const parsed=plan.parsed;
   const select=(container,label,options)=>{const wrap=document.createElement('label');wrap.textContent=label;const field=document.createElement('select');for(const [value,text] of options){const option=document.createElement('option');option.value=value;option.textContent=text;field.append(option)}field.value=options[0][0];wrap.append(field);container.append(wrap);return field};
@@ -79,7 +81,7 @@ function showPronounReferents(input,plan){
   else if(parsed.requiredInterpretation==='luminance_comparison')interpretation=select(card,`brightness meaning`,[['','Choose a comparison meaning'],['luminance_comparison','Physical luminance; comparable viewing conditions']]);
   else if(parsed.requiredInterpretation==='future_assertion')interpretation=select(card,`future meaning`,[['','Choose a future meaning'],['future_assertion','Future statement; no promise or intention added']]);
   const readOptions=()=>({...view?{viewpoint:view.value}:{},...destination?{destination:destination.value}:{},...property?{interpretation:parsed.requiredInterpretation,standard:standardMode?.value==='contextual'?{kind:'contextual',dimension}:{dimension,threshold:threshold.value.trim(),scale:scale.value}}:interpretation?{interpretation:interpretation.value}:{}});
-  const read=()=>Object.fromEntries(fields.map(([key,field])=>[key,field.value.trim()]));
+  const read=()=>Object.fromEntries(fields.map(([key,field,number])=>[key,number?{referent:field.value.trim(),number:number.value}:field.value.trim()]));
   const status=document.createElement('p');status.setAttribute('role','status');const button=document.createElement('button');button.textContent='Translate with these referents';
   button.addEventListener('click',async()=>{
     if(card.isConnected===false||$('sourceInput').value.trim()!==input||state.mode==='controlled')return;

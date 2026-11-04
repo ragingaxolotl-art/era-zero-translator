@@ -77,3 +77,13 @@ validates reference/number choices and snapshots strings before asynchronous
 composition. Fifteen additional complete meaning/MIDI comparisons pass, and
 actual-handler tests cover number fields and stale learning export rejection.
 This does not claim they/them support throughout the entire translator.
+
+The ordinary single-sentence pronoun path now also accepts singular they/them
+with explicit number/reference fields. A shared substitution helper normalizes
+supported English subject agreement (including present auxiliaries and inverted
+questions) while preserving the chosen referent and predicate. Twenty-four
+ordinary meaning/MIDI comparisons cover care, swimming, running, negation, time,
+questions and speaker/addressee bindings. Existing thirty pronoun cases retain
+Ruby parity. Actual UI-handler checks require number for both neutral references
+and reject group coercion. This extends supported sentence forms; it does not
+establish arbitrary pronoun grammar or discourse-wide antecedent resolution.
