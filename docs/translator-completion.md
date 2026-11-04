@@ -12,6 +12,12 @@ is the starting evidence, not a completion certificate.
 
 ## Current coverage evidence
 
+[Dictionary discovery fidelity](../reviews/discovery_label_fidelity.md) now uses
+reviewed atom titles and definitions instead of address-wide paraphrases that
+overstated learning or planning. Exact reviewed labels outrank heuristic tense
+guesses. All 376 current labels retrieve their intended targets; unsupported full
+sentences remain unresolved. This repairs discovery rather than adding meanings.
+
 [Unpleasant feeling and sadness](../reviews/sadness_foundation.md) now extend the
 felt-condition dependency chain with two explicit conventional compounds. “Nora
 is sad” preserves a sad mood rather than substituting negated happiness, harm or

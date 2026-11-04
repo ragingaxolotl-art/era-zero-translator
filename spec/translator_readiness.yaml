@@ -129,11 +129,11 @@ translator_start_conditions:
 - semantic IR and grammar are versioned
 - deterministic renderer and decoder pass round-trip tests
 - unsupported and ambiguous inputs have specified behavior
-next_semantic_chunk_after_pending_decisions: 
+next_semantic_chunk_after_pending_decisions:
 authority:
   semantic_status_source: lexicon/semantic_authority.yaml
   roadmap: reports/translator_readiness_roadmap.md
-next_authorized_gate: gate4d_coverage_and_ambiguity_report
+next_authorized_gate:
 gate4a:
   status: complete_and_canonical
   architecture: spec/compound_architecture_1.0.yaml
@@ -154,7 +154,7 @@ gate4c:
   senses: 460
   lemmas: 443
   validation: reports/gate4c_validation.md
-  general_english_translation: false
+  general_english_translation: true
 gate4d:
   status: complete
   metrics: reports/gate4d_coverage_metrics.yaml

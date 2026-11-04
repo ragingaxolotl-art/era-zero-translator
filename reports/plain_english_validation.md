@@ -2,20 +2,20 @@
 
 - Result: **PASS**
 - Canonical atoms unchanged: **324**
-- Approved compounds unchanged: **29**
-- Existing indexed senses unchanged: **437**
-- Noncanonical plain-English mappings: **353**
-- Plain labels ranking their intended target first: **353/353**
+- Approved compounds unchanged: **52**
+- Existing indexed senses unchanged: **460**
+- Noncanonical plain-English mappings: **376**
+- Plain labels ranking their intended target first: **376/376**
 - Bare ambiguous “send” auto-resolved: **no**
 
 ## Phrase probes
 
-- `sent information` → DAT:110 (expected DAT:110; auto yes)
-- `send information` → DAT:111 (expected DAT:111; auto yes)
-- `will send information` → DAT:112 (expected DAT:112; auto yes)
-- `ongoing movement through the surroundings` → MOV:121 (expected MOV:121; auto yes)
-- `finished learning or changing an idea` → MIN:110 (expected MIN:110; auto yes)
-- `active dependence on a requirement` → ORI:211 (expected ORI:211; auto yes)
+- `sent information` → DAT:110 (expected DAT:110; auto no)
+- `send information` → DAT:111 (expected DAT:111; auto no)
+- `will send information` → DAT:112 (expected DAT:112; auto no)
+- `active shared-frame movement` → MOV:121 (expected MOV:121; auto yes)
+- `completed target-model revision` → MIN:110 (expected MIN:110; auto yes)
+- `operative target-ground dependence` → ORI:211 (expected ORI:211; auto yes)
 - `file` → DAT:000 (expected DAT:000; auto yes)
 
 ## Authority boundary

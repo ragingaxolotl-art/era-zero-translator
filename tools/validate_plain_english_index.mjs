@@ -28,6 +28,14 @@ for(const entry of entries){
   check(Array.isArray(entry.match_phrases)&&entry.match_phrases.length>0,`${entry.target_id} match phrases`);
 }
 
+for(const atom of data.atoms){
+ const entry=entries.find(e=>e.target_id===atom.canonical_id);
+ check(entry.plain_label===atom.title,`${atom.canonical_id} preserves reviewed title`);
+ check(entry.plain_explanation===atom.core_definition,`${atom.canonical_id} preserves reviewed definition`);
+}
+for(const input of ['Nora learned the route.','Eli understands Nora.','Nora planned to move.']){
+ check(!analyzeEnglish(input,data).decision.auto_resolution_allowed,`Unsupported full meaning must not auto-resolve: ${input}`);
+}
 let exactTop=0;
 for(const entry of entries){
   const result=analyzeEnglish(entry.plain_label,data,{limit:8});
@@ -39,9 +47,9 @@ const probes=[
   ['sent information','DAT:110'],
   ['send information','DAT:111'],
   ['will send information','DAT:112'],
-  ['ongoing movement through the surroundings','MOV:121'],
-  ['finished learning or changing an idea','MIN:110'],
-  ['active dependence on a requirement','ORI:211'],
+  ['active shared-frame movement','MOV:121'],
+  [data.atoms.find(a=>a.canonical_id==='MIN:110').title,'MIN:110'],
+  [data.atoms.find(a=>a.canonical_id==='ORI:211').title,'ORI:211'],
   ['file','DAT:000']
 ];
 const probeResults=probes.map(([phrase,target])=>{const result=analyzeEnglish(phrase,data,{limit:8}),actual=result.candidates[0]?.target_id||null;check(actual===target,`“${phrase}” expected ${target}, got ${actual}`);return{phrase,expected:target,actual,auto_resolution_allowed:result.decision.auto_resolution_allowed}});
