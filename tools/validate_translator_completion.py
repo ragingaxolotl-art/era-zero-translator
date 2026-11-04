@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Run implementation regressions; a pass is not a full-translator certificate."""
 import argparse
+from datetime import datetime, timezone
 import json
 from pathlib import Path
 import shutil
@@ -10,6 +11,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
 parser.add_argument('--node', default=shutil.which('node'))
+parser.add_argument('--include-acoustic', action='store_true', help='Include synthetic WAV-only tests; requires NumPy and SciPy')
 args = parser.parse_args()
 if not args.node:
     parser.error('Node is required; supply --node /path/to/node')
@@ -30,6 +32,12 @@ commands = [['ruby', path] for path in [
     'tools/validate_pages_release.mjs',
     'tools/validate_viseme_performance.mjs',
 ]]
+if args.include_acoustic:
+    commands += [[sys.executable, 'tests/acoustic_low_pitch_test.py']]
+    commands += [[args.node, path] for path in ['tests/acoustic_transport_test.mjs', 'tests/cognitive_acoustic_test.mjs', 'tests/understanding_acoustic_test.mjs']]
+started_at = datetime.now(timezone.utc).isoformat()
+tested_revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
+initial_worktree_status = subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT, text=True).strip()
 results = []
 for command in commands:
     try:
@@ -42,6 +50,8 @@ for command in commands:
     print(('PASS ' if result['passed'] else 'FAIL ') + result['test'], flush=True)
 
 report = {
+    'tested_revision': tested_revision,
+    'run_context': {'started_at': started_at, 'completed_at': datetime.now(timezone.utc).isoformat(), 'initial_worktree_status': initial_worktree_status, 'include_acoustic': args.include_acoustic, 'physical_recordings_tested': 0},
     'scope': 'Implementation regression only. Full ordinary-English coverage and musical semantic completeness are not established.',
     'passed': all(result['passed'] for result in results),
     'results': results,
