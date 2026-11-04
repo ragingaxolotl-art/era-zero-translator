@@ -1,4 +1,5 @@
-// Explicit subject control for the reviewed desire -> care or available-mobility infinitive constructions.
+// Reviewed subject roles; a new predicate needs an explicit binding review.
+const SUBJECTS=Object.freeze({'LIF:211':{type:'atom',role:'actor'},'MOV:201':{type:'atom',role:'bearer'},'FND:018dd25d713dff83661a76a4':{type:'foundation',role:'experiencer'}});
 export function validateSubjectControl(ir){
  const nodes=new Map(ir.nodes.map(n=>[n.node_id,n])),edges=ir.edges;
  for(const n of ir.nodes.filter(n=>n.kind==='reference'&&n.reference_type==='desire_subject')){
@@ -7,7 +8,8 @@ export function validateSubjectControl(ir){
   const links=edges.filter(e=>e.from===n.node_id),role=links.find(e=>e.type==='fills_role'),identity=links.find(e=>e.type==='corefers_with');
   if(links.length!==2||!role||!identity)fail();
   const predicate=nodes.get(role.to),holder=nodes.get(identity.to);
-  if(predicate?.target_type!=='atom'||!Object.hasOwn({'LIF:211':'actor','MOV:201':'bearer'},predicate?.target_id)||role.role!==({'LIF:211':'actor','MOV:201':'bearer'})[predicate.target_id]||!['phonemic_reference','deictic_reference'].includes(holder?.kind)||holder.referent_id!==n.referent_id)fail();
+  const subject=SUBJECTS[predicate?.target_id];
+  if(!subject||predicate.target_type!==subject.type||role.role!==subject.role||!['phonemic_reference','deictic_reference'].includes(holder?.kind)||holder.referent_id!==n.referent_id)fail();
   let id=predicate.node_id;const seen=new Set();
   while(nodes.get(id)?.kind!=='clause'){
    if(seen.has(id))fail();seen.add(id);

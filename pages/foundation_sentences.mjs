@@ -70,7 +70,6 @@ async function composeAtDepth(input,authority,records,loadTemplate,allowDraft,de
   }
   const innerFoundation=parseFoundationSentence(content),inner=innerFoundation||parseNamedSentence(content);
   if(!inner||inner.speechAct==='question'||inner.speechAct==='command')throw new Error('Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else.');
-  if(controlled&&innerFoundation)throw new Error('A desired preference needs an explicit subject until foundation subject binding is supported.');
   const composed=innerFoundation?await composeAtDepth(content,authority,records,loadTemplate,allowDraft,depth+1):await composeNamedSentence(content,await loadTemplate(inner.predicate));
   const source=composed.semantic_ir;
   if(source.discourse_constraints?.declared_referents)ir.discourse_constraints.declared_referents=[...source.discourse_constraints.declared_referents];
@@ -78,7 +77,7 @@ async function composeAtDepth(input,authority,records,loadTemplate,allowDraft,de
   for(const e of source.edges)ir.edges.push({...e,edge_id:'desired:'+e.edge_id,from:'desired:'+e.from,to:'desired:'+e.to});
   ir.edges.push({edge_id:'content',type:'fills_role',from:'desired:'+source.root_clause,to:'p',role:'content'});
   if(controlled){
-   const actor=ir.nodes.find(n=>n.node_id==='desired:a'),holder=ir.nodes.find(n=>n.node_id==='holder');
+   const actor=ir.nodes.find(n=>n.node_id===(innerFoundation?'desired:holder':'desired:a')),holder=ir.nodes.find(n=>n.node_id==='holder');
    if(!actor)throw new Error('Missing controlled subject.');
    ir.nodes[ir.nodes.indexOf(actor)]={node_id:actor.node_id,kind:'reference',reference_type:'desire_subject',referent_id:holder.referent_id,value_type:'entity'};
    ir.discourse_constraints.declared_referents=[...new Set([...(ir.discourse_constraints.declared_referents||[]),holder.referent_id])];

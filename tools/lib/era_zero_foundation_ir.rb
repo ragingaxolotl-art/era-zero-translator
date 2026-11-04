@@ -6,7 +6,7 @@ module EraZeroFoundationIR
   def argument_type(n)
     return 'proposition' if n['kind']=='clause' && n['clause_type']=='content' && n['content_status']=='intensional' && n['value_type']=='proposition'
     return 'kind' if n['kind']=='phonemic_reference' && n['reference_mode']=='nominal_class'
-    return 'entity' if %w[phonemic_reference deictic_reference].include?(n['kind']) && n['value_type']=='entity'
+    return 'entity' if (%w[phonemic_reference deictic_reference].include?(n['kind']) || (n['kind']=='reference' && n['reference_type']=='desire_subject')) && n['value_type']=='entity'
     nil
   end
   def validate!(ir, records, allow_draft:false)

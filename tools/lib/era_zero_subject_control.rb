@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 module EraZeroSubjectControl
+  SUBJECTS={'LIF:211'=>['atom','actor'],'MOV:201'=>['atom','bearer'],'FND:018dd25d713dff83661a76a4'=>['foundation','experiencer']}.freeze
   module_function
   def validate!(ir)
     nodes=ir['nodes'].to_h{|n|[n['node_id'],n]};edges=ir['edges']
@@ -9,7 +10,8 @@ module EraZeroSubjectControl
       links=edges.select{|e|e['from']==n['node_id']};role=links.find{|e|e['type']=='fills_role'};identity=links.find{|e|e['type']=='corefers_with'}
       fail_control.call unless links.length==2&&role&&identity
       predicate=nodes[role['to']];holder=nodes[identity['to']]
-      fail_control.call unless predicate&&predicate['target_type']=='atom'&&{'LIF:211'=>'actor','MOV:201'=>'bearer'}[predicate['target_id']]==role['role']&&holder&&%w[phonemic_reference deictic_reference].include?(holder['kind'])&&holder['referent_id']==n['referent_id']
+      subject=predicate&&SUBJECTS[predicate['target_id']]
+      fail_control.call unless subject&&predicate['target_type']==subject[0]&&role['role']==subject[1]&&holder&&%w[phonemic_reference deictic_reference].include?(holder['kind'])&&holder['referent_id']==n['referent_id']
       id=predicate['node_id'];seen=[]
       until nodes[id]['kind']=='clause'
         fail_control.call if seen.include?(id);seen<<id

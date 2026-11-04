@@ -32,7 +32,7 @@ export async function decodeFoundationSentenceMidi(bytes,atoms,records,{allowDra
    if(frame.children.length===1&&frame.children[0].marker==='proposition_content_open'){
     value={type:'proposition',content_status:'intensional',proposition:proposition(frame.children[0].children,depth+1,d)};
    }else if(frame.children.length===1&&frame.children[0].marker==='desire_subject_reference'){
-    if(parent?.sound_code!==0||role!==({'LIF:211':'actor','MOV:201':'bearer'})[head.root_id])fail();
+    if(parent?.sound_code!==0||role!==(d?.sound_code===1?'experiencer':({'LIF:211':'actor','MOV:201':'bearer'})[head.root_id]))fail();
     value={type:'entity',reference:{kind:'bound',binding:'parent_desire_experiencer'}};
    }else{
     const ref=reference(frame.children,registers[role]);

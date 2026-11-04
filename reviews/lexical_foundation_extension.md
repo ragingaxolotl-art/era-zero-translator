@@ -250,5 +250,22 @@ glosses look up each occurrence's actual definition instead of applying the
 outer predicate's title to all occurrences. Twelve composed cases check separate
 runtime states, preference direction, nearest-holder binding, full Ruby/MIDI
 parity, independent inverse interpretation and candidate-bundle verification.
-Recursion is bounded; subjectless “wants to prefer” still needs a validated
-foundation-to-foundation subject-binding route.
+Recursion is bounded. The following subject-binding extension handles the
+subjectless “wants to prefer” construction.
+
+### Subject control for desired preference
+
+“Nora wants to prefer tea to coffee” now binds the embedded preference's
+experiencer to the enclosing desire's experiencer. The existing audible subject
+pointer is reused inside the preference experiencer frame. Its validator admits
+only the exact reviewed preference identity and role, in addition to the existing
+care and mobility roles; arbitrary foundation arguments cannot become controlled
+subjects. The typed foundation validator admits this reference only after the
+identity and enclosing-content checks pass.
+
+Eighteen runtime/negation combinations match Ruby/browser formal output and MIDI;
+the independent inverse recovers the bound preference holder. Additional cases
+cover deictics, nearest-holder binding under nested desire, candidate bundles and
+wrong-role rejection in both validators. A separately sounded same-name holder
+remains musically distinct. Foundation definitions, addresses, roots, and draft
+opt-in status are unchanged.
