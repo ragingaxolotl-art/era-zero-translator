@@ -24,6 +24,12 @@ until evidence shows a benefit.
 
 ## Current draft status
 
+The noun-modifier dependency audit now has executable composition probes and an
+ordered extension plan in `reviews/nominal_modifier_extension.md`. Existing
+numeric mass restrictions are reusable; contextual noun modifiers, modified
+preference alternatives and painful/more-painful treatment semantics remain
+unfinished. This audit adds evidence and implementation order, not coverage.
+
 Mixed cognitive conjunction now composes complete curiosity, understanding,
 route-learning and comprehension-acquisition clauses while preserving each
 member's scope, participants and runtime. Forty-eight authored pair/runtime
