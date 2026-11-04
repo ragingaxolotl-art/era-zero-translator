@@ -15,3 +15,12 @@ the original source input remains available. A mixed conjunction also preserves
 both clauses. Existing proposition-negation, speech-act/runtime and conditional
 command checks pass. This improves ordinary input access to existing meanings;
 it does not resolve missing vocabulary or the quantified negative-predicate gap.
+
+Local conditional reference resolution now recognizes both apostrophe forms of
+“don't carry it toward/to …”, in addition to “do not carry …”. Previously the
+local-reference pass ran before contraction expansion and missed the embedded
+“it” when a destination followed. Twelve full cases compare contracted wording
+with explicit-reference wording across runtime states and both destination
+forms, with Ruby/MIDI parity. Quantified, multi-participant and unresolved
+antecedents still fail instead of guessing an identity. The existing contraction
+and conditional-command regression checks also pass.

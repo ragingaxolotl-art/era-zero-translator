@@ -445,7 +445,7 @@ export function parseSentenceConditional(input) {
   // Local "it" requires a single definite nominal bearer. Multiple participants,
   // quantified classes and discourse-dependent pronouns need clarification.
   const finalIt=/\bit(?=\s*(?:\[[012]\])?[.!]?$)/i;
-  const carriedIt=/^((?:do not )?carry )it(?= (?:toward|to) )/i;
+  const carriedIt=/^((?:do not |don['’]t )?carry )it(?= (?:toward|to) )/i;
   if(finalIt.test(consequent)||carriedIt.test(consequent)){
     const reference=parseNominal(condition.actorText||'');
     if(condition.role!=='bearer'||condition.target||reference?.mode!=='definite_nominal')return null;
