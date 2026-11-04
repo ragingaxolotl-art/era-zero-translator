@@ -1,3 +1,4 @@
+import {parseFoundationSentence} from '../pages/foundation_sentences.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
@@ -8,7 +9,7 @@ const elements=Object.fromEntries(['sourceInput','output','results','resolutionP
 const input='Nora knows whether Eli is conscious.';elements.sourceInput.value=input;
 const state={mode:'general',data:{},resolution:{old:true},wordSelections:new Map()};
 let calls=0,shown=null,errors=[];
-const context=vm.createContext({foundationPronounPlan:()=>null,state,$:id=>elements[id],document:{createElement:element},fetch:async url=>{assert.equal(url,'./data/foundation_preview_candidates.json');return {ok:true,json:async()=>({records:['candidate']})}},sentenceTemplate:()=>{},composeFoundationSentence:async(...args)=>{calls++;assert.equal(args[4].allowDraft,true);assert.equal(args[4].allowCognitive,true);return {status:'candidate_translation'}},showResolution:async r=>{shown=r},showError:e=>errors.push(e)});
+const context=vm.createContext({parseFoundationSentence,foundationPronounPlan:()=>null,state,$:id=>elements[id],document:{createElement:element},fetch:async url=>{assert.equal(url,'./data/foundation_preview_candidates.json');return {ok:true,json:async()=>({records:['candidate']})}},sentenceTemplate:()=>{},composeFoundationSentence:async(...args)=>{calls++;assert.equal(args[4].allowDraft,true);assert.equal(args[4].allowCognitive,true);return {status:'candidate_translation'}},showResolution:async r=>{shown=r},showError:e=>errors.push(e)});
 vm.runInContext(handler+';showFoundationPreview('+JSON.stringify(input)+');',context);
 assert.equal(state.resolution,null);assert.equal(calls,0);
 const button=elements.candidateList.children.at(-1).children[1];

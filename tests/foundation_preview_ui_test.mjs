@@ -1,3 +1,4 @@
+import {parseFoundationSentence} from '../pages/foundation_sentences.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
@@ -8,7 +9,7 @@ const elements=Object.fromEntries(['sourceInput','output','results','resolutionP
 const input='Nora prefers tea to coffee.';elements.sourceInput.value=input;
 const state={mode:'general',data:{},resolution:{old:true},wordSelections:new Map()};
 let calls=0,shown=null,errors=[];
-const context=vm.createContext({foundationPronounPlan:()=>null,state,$:id=>elements[id],document:{createElement:element},fetch:async()=>({ok:true,json:async()=>({records:['candidate']})}),sentenceTemplate:()=>{},composeFoundationSentence:async(...args)=>{calls++;assert.equal(args[4].allowDraft,true);return {status:'candidate_translation'}},showResolution:async r=>{shown=r},showError:e=>errors.push(e)});
+const context=vm.createContext({parseFoundationSentence,foundationPronounPlan:()=>null,state,$:id=>elements[id],document:{createElement:element},fetch:async()=>({ok:true,json:async()=>({records:['candidate']})}),sentenceTemplate:()=>{},composeFoundationSentence:async(...args)=>{calls++;assert.equal(args[4].allowDraft,true);return {status:'candidate_translation'}},showResolution:async r=>{shown=r},showError:e=>errors.push(e)});
 vm.runInContext(handler+';showFoundationPreview('+JSON.stringify(input)+');',context);
 assert.equal(state.resolution,null);assert.equal(calls,0);
 const button=elements.candidateList.children.at(-1).children[1];
@@ -42,3 +43,17 @@ assert.equal((await verifyBundle(bundle)).vocabulary_status,'candidate');
 const stripped=structuredClone(bundle);delete stripped.payload.vocabulary;delete stripped.bundle_digest;stripped.bundle_digest=await canonicalDigest(stripped);
 await assert.rejects(verifyBundle(stripped),/provenance/);
 console.log('PASS draft data, sound-plan generation and exported vocabulary provenance.');
+// Modified alternatives require a visible reading selection and use real composition.
+const modified='Nora prefers the heavy box to the light box.';
+elements.sourceInput.value=modified;state.data=authority;shown=null;
+context.fetch=async()=>({ok:true,json:async()=>registry});context.composeFoundationSentence=composeFoundationSentence;
+vm.runInContext('showFoundationPreview('+JSON.stringify(modified)+');',context);
+const modifiedCard=elements.candidateList.children.at(-1),massChoice=modifiedCard.children[1].children[0],preview=modifiedCard.children.at(-1);
+assert.equal(massChoice.value,'');await preview.click();assert.equal(shown,null);
+massChoice.value='contextual_mass';await preview.click();assert(shown);
+assert.deepEqual(shown.semantic_ir.nodes.filter(n=>n.property_restriction).map(n=>n.property_restriction.norm),['heavy','light']);
+const modifiedBundle=await createBundle(shown,modified);assert.equal((await verifyBundle(modifiedBundle)).vocabulary_status,'candidate');
+const previous=shown;let finish;
+context.fetch=()=>new Promise(resolve=>finish=resolve);
+const pendingModified=preview.click();massChoice.value='';finish({ok:true,json:async()=>registry});await pendingModified;assert.equal(shown,previous);
+console.log('PASS modified preference UI selection, full draft export verification and stale reading rejection.');

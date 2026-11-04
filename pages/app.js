@@ -548,25 +548,33 @@ function showFoundationPreview(input){
     if(/^(they|them)$/i.test(occurrence.pronoun)){number=document.createElement('select');for(const [value,title] of [['','One individual or a group?'],['singular','One individual'],['plural','A group']]){const option=document.createElement('option');option.value=value;option.textContent=title;number.append(option);}number.value='';label.append(number);}
     fields.push({key:occurrence.key,field,label,number});
   }
+  const parsed=pronouns?.parsed||parseFoundationSentence(input,{allowCognitive:true});
+  const needsMass=parsed?.type==='preference'&&!parsed.propositionalAlternatives&&[parsed.target,parsed.standard].some(text=>/^[Tt]he (heavy|light) [a-z]+$/.test(text));
+  let massChoice,massLabel;
+  if(needsMass){
+    massLabel=document.createElement('label');massLabel.textContent='Meaning of heavy/light in these alternatives';massChoice=document.createElement('select');
+    for(const [value,title] of [['','Choose a property meaning'],['contextual_mass','Physical mass relative to local contextual standards; no number']]){const option=document.createElement('option');option.value=value;option.textContent=title;massChoice.append(option);}massChoice.value='';massLabel.append(massChoice);
+  }
   const readBindings=()=>pronouns?Object.fromEntries(fields.map(({key,field,number})=>[key,number?{referent:field.value.trim(),number:number.value}:field.value.trim()])):undefined;
   const button=document.createElement('button');button.textContent='Preview draft translation';
+  if(needsMass){button.disabled=true;massChoice.addEventListener('change',()=>{button.disabled=massChoice.value!=='contextual_mass'});}
   const current=()=>$('sourceInput').value.trim()===input&&state.mode!=='controlled'&&card.isConnected!==false;
   button.addEventListener('click',async()=>{
-    if(!current())return;
-    const bindings=readBindings(),snapshot=JSON.stringify(bindings),unchanged=()=>current()&&JSON.stringify(readBindings())===snapshot;
+    if(!current()||(needsMass&&massChoice.value!=='contextual_mass'))return;
+    const bindings=readBindings(),mass=massChoice?.value,snapshot=JSON.stringify(bindings),unchanged=()=>current()&&massChoice?.value===mass&&JSON.stringify(readBindings())===snapshot;
     button.disabled=true;
     try{
       const response=await fetch('./data/foundation_preview_candidates.json');
       if(!response.ok)throw new Error('Draft vocabulary could not be loaded.');
       const registry=await response.json();
       if(!unchanged())return;
-      const composed=await composeFoundationSentence(input,state.data,registry.records,sentenceTemplate,{allowDraft:true,allowCognitive:true,...(bindings?{bindings}:{})});
+      const composed=await composeFoundationSentence(input,state.data,registry.records,sentenceTemplate,{allowDraft:true,allowCognitive:true,...(needsMass?{contextualMassModifiers:true}:{}),...(bindings?{bindings}:{})});
       if(!unchanged())return;
       state.resolution=composed;$('results').classList.add('hidden');
       await showResolution(composed,{definition:'Draft translation — vocabulary and sounds are under review.'});
-    }catch(error){if(unchanged())showError(error)}finally{button.disabled=false}
+    }catch(error){if(unchanged())showError(error)}finally{button.disabled=needsMass&&massChoice.value!=='contextual_mass'}
   });
-  card.append(description,...fields.map(f=>f.label),button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+  card.append(description,...fields.map(f=>f.label),...(massLabel?[massLabel]:[]),button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
 }
 function showFutureInterpretation(input){
   state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];

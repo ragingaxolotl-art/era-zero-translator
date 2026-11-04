@@ -1,3 +1,4 @@
+import {parseFoundationSentence} from '../pages/foundation_sentences.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
@@ -22,7 +23,7 @@ const app=fs.readFileSync(new URL('pages/app.js',root),'utf8'),handler=app.slice
 const element=()=>({value:'',children:[],classList:{add(){},remove(){}},append(...nodes){this.children.push(...nodes)},addEventListener(type,fn){this[type]=fn},scrollIntoView(){}});
 const elements=Object.fromEntries(['sourceInput','output','results','resolutionPanel','decisionSummary','candidateList','phraseCoverage'].map(id=>[id,element()]));const input='She prefers him to Nora.';elements.sourceInput.value=input;
 const state={mode:'english',data:authority,wordSelections:new Map()};let shown,errors=[];
-const ctx=vm.createContext({state,foundationPronounPlan,$:id=>elements[id],document:{createElement:element},fetch:async()=>({ok:true,json:async()=>({records})}),sentenceTemplate:load,composeFoundationSentence,showResolution:async r=>shown=r,showError:e=>errors.push(e)});
+const ctx=vm.createContext({parseFoundationSentence,state,foundationPronounPlan,$:id=>elements[id],document:{createElement:element},fetch:async()=>({ok:true,json:async()=>({records})}),sentenceTemplate:load,composeFoundationSentence,showResolution:async r=>shown=r,showError:e=>errors.push(e)});
 vm.runInContext(handler,ctx);
 const show=()=>{ctx.showFoundationPreview(input);const card=elements.candidateList.children.at(-1);return {card,fields:card.children.slice(1,-1).map(l=>l.children[0]),button:card.children.at(-1)};};
 let ui=show();assert.equal(ui.fields.length,2);assert(ui.fields.every(f=>f.value===''));await ui.button.click();assert.equal(shown,undefined);assert.equal(errors.at(-1).code,'pronoun_referents_required');
