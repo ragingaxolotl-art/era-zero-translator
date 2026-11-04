@@ -1,9 +1,19 @@
 {
   "status": "PASS",
   "scope": "Synthetic PCM, blind audio decoding to supported predicate meanings; not general semantic interpretation or microphone evidence",
+  "evaluation": {
+    "clean_audio_cases": 10,
+    "synthetic_channel_exact_recoveries": 30,
+    "damaged_payload_rejections": 10,
+    "physical_microphone_recordings": 0,
+    "original_text_or_ir_supplied_to_decoder": false,
+    "hidden_semantic_metadata": false,
+    "scope": "Authored message probe; not held-out or broad coverage"
+  },
   "cases": [
     {
       "phrase": "Nora cares for Eli.",
+      "audio_seconds": 29.779274376417234,
       "meaning": {
         "profile": "EZCARE-INVERSE-1",
         "speech_act": "assertion",
@@ -69,11 +79,11 @@
       ],
       "notes": 60,
       "status": "exact_audio_notes_structure_and_supported_predicate_meaning_recovery",
-      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-APGDjX/case-0.wav",
-      "audio_seconds": 29.779
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-sLBNYH/case-0.wav"
     },
     {
       "phrase": "Eli cares for Nora.",
+      "audio_seconds": 29.779274376417234,
       "meaning": {
         "profile": "EZCARE-INVERSE-1",
         "speech_act": "assertion",
@@ -139,11 +149,11 @@
       ],
       "notes": 60,
       "status": "exact_audio_notes_structure_and_supported_predicate_meaning_recovery",
-      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-APGDjX/case-1.wav",
-      "audio_seconds": 29.779
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-sLBNYH/case-1.wav"
     },
     {
       "phrase": "Nora did not care for Eli [0].",
+      "audio_seconds": 33.623990929705215,
       "meaning": {
         "profile": "EZCARE-INVERSE-1",
         "speech_act": "assertion",
@@ -217,11 +227,11 @@
       ],
       "notes": 78,
       "status": "exact_audio_notes_structure_and_supported_predicate_meaning_recovery",
-      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-APGDjX/case-2.wav",
-      "audio_seconds": 33.624
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-sLBNYH/case-2.wav"
     },
     {
       "phrase": "Eli is swimming [2].",
+      "audio_seconds": 32.27891156462585,
       "meaning": {
         "profile": "EZSWIM-INVERSE-1",
         "speech_act": "assertion",
@@ -277,11 +287,11 @@
       ],
       "notes": 85,
       "status": "exact_audio_notes_structure_and_supported_predicate_meaning_recovery",
-      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-APGDjX/case-3.wav",
-      "audio_seconds": 32.279
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-sLBNYH/case-3.wav"
     },
     {
       "phrase": "Nora is permitted not to physically enter the archive.",
+      "audio_seconds": 109.13709750566893,
       "meaning": {
         "profile": "EZENTRY-INVERSE-1",
         "speech_act": "assertion",
@@ -354,11 +364,11 @@
       ],
       "notes": 294,
       "status": "exact_audio_notes_structure_and_supported_predicate_meaning_recovery",
-      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-APGDjX/case-4.wav",
-      "audio_seconds": 109.137
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-sLBNYH/case-4.wav"
     },
     {
       "phrase": "It is possible that Nora is swimming.",
+      "audio_seconds": 34.42875283446712,
       "meaning": {
         "profile": "EZSWIM-INVERSE-1",
         "speech_act": "assertion",
@@ -420,17 +430,286 @@
       ],
       "notes": 95,
       "status": "exact_audio_notes_structure_and_supported_predicate_meaning_recovery",
-      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-APGDjX/case-5.wav",
-      "audio_seconds": 34.429
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-sLBNYH/case-5.wav"
+    },
+    {
+      "phrase": "Is Eli running?",
+      "audio_seconds": 31.52888888888889,
+      "meaning": {
+        "profile": "EZRUN-INVERSE-1",
+        "speech_act": "question",
+        "scopes": [],
+        "predicate": "ongoing_bodily_running",
+        "runtime_state": 1,
+        "actor": {
+          "kind": "phonemic",
+          "reference_mode": "name",
+          "phonemes": [
+            "EH",
+            "L",
+            "IH"
+          ],
+          "instance_code": null
+        },
+        "convention_codes": [
+          23,
+          20
+        ],
+        "meaning": {
+          "body_generates_locomotor_pattern": true,
+          "gait": "running",
+          "airborne_interval_required": false,
+          "speed_threshold_asserted": false,
+          "net_ground_progress_asserted": false,
+          "arrival_asserted": false,
+          "conscious_intention_asserted": false
+        },
+        "limitations": [
+          "Gait does not establish displacement or completed arrival.",
+          "Strict MIDI only; no recorded-audio or external referent recovery."
+        ]
+      },
+      "channels": [
+        {
+          "channel": "gain_and_noise",
+          "accepted": true
+        },
+        {
+          "channel": "speed_plus_two_percent",
+          "accepted": true
+        },
+        {
+          "channel": "short_weak_echo",
+          "accepted": true
+        },
+        {
+          "channel": "dropout",
+          "accepted": false,
+          "reason": "Uncertain note boundary"
+        }
+      ],
+      "notes": 85,
+      "status": "exact_audio_notes_structure_and_supported_predicate_meaning_recovery",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-sLBNYH/case-6.wav"
+    },
+    {
+      "phrase": "The box is inside this room.",
+      "audio_seconds": 39.50884353741497,
+      "meaning": {
+        "profile": "EZSPATIAL-INVERSE-1",
+        "speech_act": "assertion",
+        "scopes": [],
+        "relation": "interior",
+        "runtime_state": 1,
+        "bearer": {
+          "kind": "phonemic",
+          "reference_mode": "definite_nominal",
+          "phonemes": [
+            "B",
+            "AA",
+            "K",
+            "S"
+          ],
+          "instance_code": null
+        },
+        "region": {
+          "kind": "phonemic",
+          "reference_mode": "proximal_nominal",
+          "phonemes": [
+            "R",
+            "UW",
+            "M"
+          ],
+          "instance_code": null
+        },
+        "criterion": "contextually selected region and relevant participant extent in a shared spatial frame",
+        "limitations": [
+          "No measured geometry, external referent identity or whole-body criterion is recovered from sound labels.",
+          "Location does not assert entry, exit, movement, permission or continued presence.",
+          "Strict MIDI recovery only; recorded-audio recognition is not established."
+        ]
+      },
+      "channels": [
+        {
+          "channel": "gain_and_noise",
+          "accepted": true
+        },
+        {
+          "channel": "speed_plus_two_percent",
+          "accepted": true
+        },
+        {
+          "channel": "short_weak_echo",
+          "accepted": true
+        },
+        {
+          "channel": "dropout",
+          "accepted": false,
+          "reason": "Audible checksum mismatch; recording rejected"
+        }
+      ],
+      "notes": 97,
+      "status": "exact_audio_notes_structure_and_supported_predicate_meaning_recovery",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-sLBNYH/case-7.wav"
+    },
+    {
+      "phrase": "Ada acquired physical custody of the box.",
+      "audio_seconds": 48.65845804988662,
+      "meaning": {
+        "profile": "EZCUSTODY-ACQUISITION-INVERSE-1",
+        "speech_act": "assertion",
+        "scopes": [
+          {
+            "operator": "time",
+            "relation": "before_speech"
+          }
+        ],
+        "predicate": "completed_physical_custody_acquisition",
+        "runtime_state": 1,
+        "participants": {
+          "holder": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "AE",
+              "D",
+              "AE"
+            ],
+            "instance_code": null
+          },
+          "object": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "B",
+              "AA",
+              "K",
+              "S"
+            ],
+            "instance_code": null
+          }
+        },
+        "convention_codes": [
+          8,
+          7
+        ],
+        "meaning": {
+          "actualized_referent": "holder_object_custody_relation",
+          "custody_immediately_before": false,
+          "custody_at_culmination": true,
+          "holder_distinct_from_object": true,
+          "object_creation_asserted": false,
+          "object_movement_asserted": false,
+          "prior_custodian_asserted": false,
+          "sourced_transfer_asserted": false,
+          "ownership_asserted": false,
+          "persistence_after_culmination_asserted": false
+        },
+        "limitations": [
+          "The pre/post commitments define the event inside the recovered scope and speech act; negation and commands do not assert that the transition occurred.",
+          "The nested custody relation is the culmination state, not a separate assertion of custody at speech time.",
+          "Recovers this bounded MIDI profile, not general discourse, original spelling, external referent identity or recorded audio.",
+          "Acquisition does not identify a prior holder or imply that another holder lost control; transfer and delivery require further meaning."
+        ]
+      },
+      "channels": [
+        {
+          "channel": "gain_and_noise",
+          "accepted": true
+        },
+        {
+          "channel": "speed_plus_two_percent",
+          "accepted": true
+        },
+        {
+          "channel": "short_weak_echo",
+          "accepted": true
+        },
+        {
+          "channel": "dropout",
+          "accepted": false,
+          "reason": "Audible checksum mismatch; recording rejected"
+        }
+      ],
+      "notes": 132,
+      "status": "exact_audio_notes_structure_and_supported_predicate_meaning_recovery",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-sLBNYH/case-8.wav"
+    },
+    {
+      "phrase": "Do not acquire physical custody of the box.",
+      "audio_seconds": 42.50843537414966,
+      "meaning": {
+        "profile": "EZCUSTODY-ACQUISITION-INVERSE-1",
+        "speech_act": "command",
+        "scopes": [
+          {
+            "operator": "negation"
+          }
+        ],
+        "predicate": "completed_physical_custody_acquisition",
+        "runtime_state": 1,
+        "participants": {
+          "holder": {
+            "kind": "deictic",
+            "role": "addressee"
+          },
+          "object": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "B",
+              "AA",
+              "K",
+              "S"
+            ],
+            "instance_code": null
+          }
+        },
+        "convention_codes": [
+          8,
+          7
+        ],
+        "meaning": {
+          "actualized_referent": "holder_object_custody_relation",
+          "custody_immediately_before": false,
+          "custody_at_culmination": true,
+          "holder_distinct_from_object": true,
+          "object_creation_asserted": false,
+          "object_movement_asserted": false,
+          "prior_custodian_asserted": false,
+          "sourced_transfer_asserted": false,
+          "ownership_asserted": false,
+          "persistence_after_culmination_asserted": false
+        },
+        "limitations": [
+          "The pre/post commitments define the event inside the recovered scope and speech act; negation and commands do not assert that the transition occurred.",
+          "The nested custody relation is the culmination state, not a separate assertion of custody at speech time.",
+          "Recovers this bounded MIDI profile, not general discourse, original spelling, external referent identity or recorded audio.",
+          "Acquisition does not identify a prior holder or imply that another holder lost control; transfer and delivery require further meaning."
+        ]
+      },
+      "channels": [
+        {
+          "channel": "gain_and_noise",
+          "accepted": true
+        },
+        {
+          "channel": "speed_plus_two_percent",
+          "accepted": true
+        },
+        {
+          "channel": "short_weak_echo",
+          "accepted": true
+        },
+        {
+          "channel": "dropout",
+          "accepted": false,
+          "reason": "Audible checksum mismatch; recording rejected"
+        }
+      ],
+      "notes": 122,
+      "status": "exact_audio_notes_structure_and_supported_predicate_meaning_recovery",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-sLBNYH/case-9.wav"
     }
-  ],
-  "evaluation": {
-    "clean_audio_cases": 6,
-    "synthetic_channel_exact_recoveries": 18,
-    "damaged_payload_rejections": 6,
-    "physical_microphone_recordings": 0,
-    "original_text_or_ir_supplied_to_decoder": false,
-    "hidden_semantic_metadata": false,
-    "scope": "Authored six-message probe; not held-out or broad coverage"
-  }
+  ]
 }

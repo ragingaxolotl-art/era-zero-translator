@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Era Zero recording test</title>
+<style>body{font:18px system-ui;max-width:750px;margin:3rem auto;padding:0 1rem;line-height:1.5}button,input{font:inherit;margin:.5rem 0;padding:.5rem}audio{display:block;width:100%}#status{white-space:pre-wrap}</style>
+<h1>Era Zero recording test</h1>
+<p>Record the generated test audio through a physical microphone. Nothing is uploaded. Start recording, play the test file through speakers, then stop. Headphones do not test the speaker-to-microphone path.</p>
+<label>Optional playback file <input id="file" type="file" accept="audio/wav"></label><audio id="playback" controls></audio>
+<button id="start">Start microphone recording</button><button id="stop" disabled>Stop and save WAV</button>
+<p id="status" role="status">Ready. Microphone access begins only when you press Start.</p><a id="download" hidden>Download microphone recording</a>
+<p>Serve this folder on localhost. Keep the test’s audible beginning and ending. Record device, speaker, distance, volume, room noise and any audio processing settings with the result. A downloaded file is not a successful decoding result.</p>
+<script type="module">
+const start=document.querySelector('#start'),stop=document.querySelector('#stop'),status=document.querySelector('#status'),link=document.querySelector('#download'),playback=document.querySelector('#playback');
+let context,stream,node,chunks=[],downloadUrl,playbackUrl;
+document.querySelector('#file').onchange=e=>{if(playbackUrl)URL.revokeObjectURL(playbackUrl);const file=e.target.files[0];if(file){playbackUrl=URL.createObjectURL(file);playback.src=playbackUrl;}};
+async function release(){stream?.getTracks().forEach(t=>t.stop());node?.disconnect();if(context&&context.state!=='closed')await context.close();stream=null;node=null;context=null;}
+start.onclick=async()=>{
+ start.disabled=true;link.hidden=true;chunks=[];
+ try{
+  stream=await navigator.mediaDevices.getUserMedia({audio:{channelCount:1,echoCancellation:false,noiseSuppression:false,autoGainControl:false}});
+  context=new AudioContext();
+  const source=`class Capture extends AudioWorkletProcessor {process(inputs){const channels=inputs[0];if(channels?.length){const mono=new Float32Array(channels[0].length);for(const c of channels)for(let i=0;i<mono.length;i++)mono[i]+=c[i]/channels.length;this.port.postMessage(mono);}return true;}}registerProcessor('capture',Capture);`;
+  const url=URL.createObjectURL(new Blob([source],{type:'text/javascript'}));try{await context.audioWorklet.addModule(url);}finally{URL.revokeObjectURL(url);}
+  node=new AudioWorkletNode(context,'capture');node.port.onmessage=e=>chunks.push(e.data);
+  const muted=context.createGain();muted.gain.value=0;context.createMediaStreamSource(stream).connect(node);node.connect(muted).connect(context.destination);
+  await context.resume();stop.disabled=false;
+  status.textContent='Recording. Play the complete test audio now.\nActual microphone settings: '+JSON.stringify(stream.getAudioTracks()[0].getSettings());
+ }catch(e){await release();start.disabled=false;status.textContent='Could not record: '+e.message;}
+};
+stop.onclick=async()=>{
+ stop.disabled=true;const rate=context.sampleRate;await release();
+ const count=chunks.reduce((n,c)=>n+c.length,0),bytes=new ArrayBuffer(44+count*2),view=new DataView(bytes);
+ const tag=(offset,s)=>[...s].forEach((c,i)=>view.setUint8(offset+i,c.charCodeAt(0)));
+ tag(0,'RIFF');view.setUint32(4,36+count*2,true);tag(8,'WAVE');tag(12,'fmt ');view.setUint32(16,16,true);view.setUint16(20,1,true);view.setUint16(22,1,true);view.setUint32(24,rate,true);view.setUint32(28,rate*2,true);view.setUint16(32,2,true);view.setUint16(34,16,true);tag(36,'data');view.setUint32(40,count*2,true);
+ let offset=44;for(const chunk of chunks)for(const sample of chunk){view.setInt16(offset,Math.round(Math.max(-1,Math.min(1,sample))*32767),true);offset+=2;}
+ if(downloadUrl)URL.revokeObjectURL(downloadUrl);downloadUrl=URL.createObjectURL(new Blob([bytes],{type:'audio/wav'}));link.href=downloadUrl;link.download='era-zero-microphone.wav';link.hidden=false;start.disabled=false;status.textContent=`Recorded ${(count/rate).toFixed(1)} seconds at ${rate} Hz. Download and run the WAV-only decoder. No decoding has been performed here.`;
+};
+</script></html>

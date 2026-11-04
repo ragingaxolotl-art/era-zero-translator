@@ -59,8 +59,7 @@ exist only on the test assertion side. Decoder selection tries supported shared
 profiles; it receives no hint naming the source sentence or predicate.
 
 `node tools/decode_recorded_audio.mjs recording.wav` accepts mono 16-bit PCM WAV
-and prints recovered meaning or rejects. Current semantic dispatcher covers care,
-swimming and physical entry; unsupported predicates reject even if transport
+and prints recovered meaning or rejects. Current semantic dispatcher reuses 14 existing full-message inverse functions; unsupported predicates reject even if transport
 notes decode. This is not broad translator completion.
 
 `reports/acoustic_transport_probe.json` records current generated-audio and
@@ -84,9 +83,15 @@ playback after its benefits, costs and compatibility are demonstrated.
 
 ## Measured initial result
 
-Six clean synthetic full-message cases recovered exactly. Eighteen channel cases
+Ten clean synthetic full-message cases recovered exactly. Thirty channel cases
 (three transformations per message) recovered the original note/timing stream
-exactly; all six payload-dropout cases rejected. Physical microphone recordings:
-zero. These six authored examples are not held-out or representative coverage.
+exactly; all ten payload-dropout cases rejected. Physical microphone recordings:
+zero. These ten authored examples are not held-out or representative coverage.
 The calibration/trailer and gaps increase playback time; compare that cost against
 measured physical-channel reliability before choosing default presentation.
+
+The expanded probe also preserves question and command contours, running,
+spatial reference modes, and custody acquisition. `tools/audio_capture/` provides
+a local browser recording harness which exports mono PCM WAV without uploading
+audio. It requests microphone access only after Start is pressed. Its JavaScript
+syntax has been checked; live browser/capture behavior remains unverified.
