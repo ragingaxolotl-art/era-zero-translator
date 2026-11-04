@@ -3,12 +3,12 @@ import {expandNegativeContractions} from './contractions.mjs';
 import {validReferent} from './pronouns.mjs';
 import {canonicalDigest} from './engine.mjs';
 import {encodeName} from './names.mjs';
-import {deicticReference} from './references.mjs';
+import {deicticReference,NOMINAL_MODES} from './references.mjs';
 import {parseNominal} from './nominals.mjs';
 import {parseNamedSentence,composeNamedSentence} from './sentences.mjs';
 import {validateFoundations} from './foundations.mjs';
 import {renderLexicalOccurrences,lexicalGloss} from './bound_compounds.mjs';
-const HOLDER='(?:I|[Yy]ou|[A-Z][a-z]+|"[^"\\n]+"|[Tt]he [a-z]+)';
+const HOLDER='(?:I|[Yy]ou|[A-Z][a-z]+|"[^"\\n]+"|(?:[Tt]he|[Tt]his|[Tt]hat) [a-z]+)';
 export function parseFoundationSentence(input,{allowCognitive=false}={}){
  if(typeof input!=='string')return null;
  let text=input.trim(),state=1;const runtime=text.match(/\s*\[([012])\]([.!?]?)$/);
@@ -63,7 +63,7 @@ export function parseFoundationSentence(input,{allowCognitive=false}={}){
 }
 async function reference(text,id,allowKind=false){
  if(/^(?:she|he|it|they|we|her|him|them|us|myself|yourself|himself|herself|itself|ourselves|yourselves|themselves|this|that|these|those|mine|yours|hers|his|ours|theirs)$/i.test(text)){
-  const error=new Error(`Identify “${text}” with an explicit name or definite noun before translating this desire or preference. Quoted names are treated as sound labels.`);
+  const error=new Error(`Identify “${text}” with an explicit name or noun reference before translating this desire or preference. Quoted names are treated as sound labels.`);
   error.code='pronoun_referents_required';throw error;
  }
  if(/^(?:I|me)$/i.test(text))return deicticReference('speaker',id);
@@ -73,7 +73,7 @@ async function reference(text,id,allowKind=false){
  if(!quoted&&!proper&&!nominal&&!kind)throw new Error('This participant needs a supported noun label or explicit referent.');
  if(nominal?.quantifier)throw new Error('Quantified alternatives require additional interpretation.');
  const mode=nominal?.mode||(kind?'nominal_class':null),name=await encodeName(nominal?.head||(quoted?text.slice(1,-1):text));
- return {node_id:id,kind:'phonemic_reference',value_type:'entity',name,referent_id:mode?`nominal:${mode==='nominal_class'?'class':'definite'}:${name.name_id}`:`name:${name.name_id}`,...(mode?{reference_mode:mode}:{})};
+ return {node_id:id,kind:'phonemic_reference',value_type:'entity',name,referent_id:mode?`nominal:${NOMINAL_MODES[mode].id}:${name.name_id}`:`name:${name.name_id}`,...(mode?{reference_mode:mode}:{})};
 }
 export function foundationPronounPlan(input,{allowCognitive=false}={}){
  return personalPronounPlan(input,probe=>parseFoundationSentence(probe,{allowCognitive}));
@@ -83,7 +83,7 @@ export async function composeFoundationSentence(input,authority,records,loadTemp
  const plan=foundationPronounPlan(input,{allowCognitive});
  if(!plan){if(bindings!==undefined)throw new Error('This sentence does not require pronoun bindings.');return composeAtDepth(input,authority,records,loadTemplate,allowDraft,0,allowCognitive);}
  if(!bindings||typeof bindings!=='object'||Array.isArray(bindings)||Object.keys(bindings).length!==plan.occurrences.length||plan.occurrences.some(o=>!Object.hasOwn(bindings,o.key)||!validReferent(bindings[o.key]))){
-  const error=new Error('Identify each pronoun with an explicit name, quoted label, definite noun, or I/you.');error.code='pronoun_referents_required';throw error;
+  const error=new Error('Identify each pronoun with an explicit name, quoted label, noun reference, or I/you.');error.code='pronoun_referents_required';throw error;
  }
  const chosen=Object.fromEntries(plan.occurrences.map(o=>[o.key,bindings[o.key]]));
  let resolved=input;for(const o of [...plan.occurrences].reverse())resolved=resolved.slice(0,o.start)+chosen[o.key]+resolved.slice(o.end);

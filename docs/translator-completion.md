@@ -1589,3 +1589,22 @@ The opening status summary has been reconciled with current counts, diagnostic
 results and implemented entry/running work. Historical roadmap sections remain
 labeled as historical. Source recovery, held-out meaning assessment, live UI,
 listening and broader English requirements still prevent a completion claim.
+
+### Cognitive demonstrative references
+
+A reference bug in draft cognitive composition assigned definite IDs to this/that
+noun modes, causing otherwise valid preference phrases to fail. The foundation
+composer now uses the shared nominal identity mapping; foundation and learned-
+whether holders also accept singular demonstrative noun references. This preserves
+reference modes through preferences, controlled desired actions, knowledge content
+and learning results, without changing noun phonemes or candidate admission.
+
+The new suite checks 18 cognitive and 18 acquisition cases with reference Ruby/MIDI
+parity, independent mode recovery, preference reversal and separate runtime states.
+It does not supply broader route-learning or understanding meanings, promote the
+candidate vocabulary, or close the original completion gates.
+
+Validation: all 14 targeted suites in reports/cognitive_demonstratives_validation.json
+pass, including preference, knowledge, acquisition, subject control, pronouns and
+preview handlers. The consolidated 162-check report remains evidence for revision
+8cb9ac7; this later reference fix has targeted validation, not a new full-suite run.

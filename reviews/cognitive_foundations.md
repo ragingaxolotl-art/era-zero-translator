@@ -1,17 +1,19 @@
 # Cognitive foundations: dependency review
 
-Status: proposed semantic contracts and acceptance requirements, not canonical
-vocabulary, new musical addresses, or implemented English support. Evidence is
-pinned in `reports/cognitive_foundation_review.json`; authored contrast obligations
-are in `tests/cognitive_meaning_requirements.json`. Neither artifact is a passing
-translation test or a held-out evaluation.
+Status: semantic audit with draft implementation records below. Desire, preference,
+polar-answer knowledge and learned-whether previews are implemented with opt-in;
+this is not canonical admission or broad learning/understanding support. The
+initial review evidence is pinned in `reports/cognitive_foundation_review.json`;
+authored obligations are in `tests/cognitive_meaning_requirements.json`. Neither
+initial artifact is a passing translation test or a held-out evaluation.
 
 ## Decision and dependency order
 
 Do not add curiosity, learning or understanding as aliases of attention, revision
 or data receipt. Do not introduce a new 27-root family to fill these gaps. Preserve
-all 324 roots, 55 approved compounds and the existing candidate desire/preference
-identities. Begin with typed cognitive content and a narrowly defined epistemic
+all established roots and approved compounds, plus the existing candidate
+desire/preference identities. The original audit snapshot contained 324 roots and
+55 compounds; current inventory counts are in docs/translator-completion.md. Begin with typed cognitive content and a narrowly defined epistemic
 state, then its acquisition; only then compose curiosity using the existing desire
 candidate where its definition fits. This follows the earlier desire/preference
 review rather than introducing another wanting primitive.
@@ -471,3 +473,24 @@ bindings reject. Handler tests exercise field submission, re-preview and stale
 controls. Existing foundation pronoun tests pass after the shared-planner
 refactor. This supersedes the earlier missing learning-pronoun-field limitation,
 but live browser/listening and broad discourse resolution remain unverified.
+
+## Demonstrative reference regression and repair
+
+A current-code probe found “Nora prefers this tea to that tea” failed with invalid
+nominal reference: the foundation composer kept proximal/distal reference modes
+but assigned both the definite-noun ID prefix. “This robot prefers tea to coffee”
+was also rejected by the holder grammar. This was a reference-composition defect,
+not evidence that preference required another root or English alias.
+
+The composer now uses the shared NOMINAL_MODES identity mapping, preserving
+proximal, distal, definite and class distinctions. Foundation and learned-whether
+holder patterns accept singular this/that noun references. Existing pronoun
+bindings may resolve to those same references. The noun phonemes remain unchanged;
+reference-mode frames carry the distinction. This does not establish numerical
+distance, real-world distinctness or unrestricted demonstrative discourse.
+
+Tests cover preference direction when both alternatives have the same noun sound,
+controlled desired subjects, knowledge content, learned-whether result and event
+runtime separation, exact Ruby/MIDI parity and independent semantic recovery.
+Draft admission remains required. The review's broader route-learning,
+understanding, curiosity and contextual-content dependencies are still open.

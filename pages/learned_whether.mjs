@@ -3,7 +3,7 @@ import {validReferent} from './pronouns.mjs';
 import {expandNegativeContractions} from './contractions.mjs';
 import {composeFoundationSentence} from './foundation_sentences.mjs';
 import {createKnowledgeAcquisition} from './knowledge_acquisition.mjs';
-const HOLDER='(?:I|[Yy]ou|[A-Z][a-z]+|"[^"\\n]+"|[Tt]he [a-z]+)';
+const HOLDER='(?:I|[Yy]ou|[A-Z][a-z]+|"[^"\\n]+"|(?:[Tt]he|[Tt]his|[Tt]hat) [a-z]+)';
 export function parseLearnedWhether(input){
  if(typeof input!=='string')return null;
  let text=input.trim(),state=1;const runtime=text.match(/\s+\[([012])\]([.!?]?)$/);
@@ -20,7 +20,7 @@ export async function composeLearnedWhether(input,authority,records,loadTemplate
  if(!allowDraft)throw new Error('Learning composition requires explicit draft opt-in.');
  const pronouns=learnedWhetherPronounPlan(input);
  if(pronouns){
-  if(!bindings||typeof bindings!=='object'||Array.isArray(bindings)||Object.keys(bindings).length!==pronouns.occurrences.length||pronouns.occurrences.some(o=>!Object.hasOwn(bindings,o.key)||!validReferent(bindings[o.key]))){const error=new Error('Identify each pronoun with an explicit name, definite noun or I/you.');error.code='pronoun_referents_required';throw error;}
+  if(!bindings||typeof bindings!=='object'||Array.isArray(bindings)||Object.keys(bindings).length!==pronouns.occurrences.length||pronouns.occurrences.some(o=>!Object.hasOwn(bindings,o.key)||!validReferent(bindings[o.key]))){const error=new Error('Identify each pronoun with an explicit name, noun reference or I/you.');error.code='pronoun_referents_required';throw error;}
   const chosen={...bindings};let resolved=input;
   for(const o of [...pronouns.occurrences].reverse())resolved=resolved.slice(0,o.start)+chosen[o.key]+resolved.slice(o.end);
   const result=await composeLearnedWhether(resolved,authority,records,loadTemplate,{allowDraft:true});
