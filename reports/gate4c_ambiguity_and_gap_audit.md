@@ -2,7 +2,7 @@
 
 Status: **PASS — POLYSEMY IS EXPLICIT; UNSUPPORTED READINGS ARE NOT FORCED**
 
-The index contains 464 senses across 447 normalized lemmas. 41 lemmas require disambiguation because they are polysemous or route outside direct lexical lookup.
+The index contains 465 senses across 448 normalized lemmas. 41 lemmas require disambiguation because they are polysemous or route outside direct lexical lookup.
 
 ## Hard gaps retained
 

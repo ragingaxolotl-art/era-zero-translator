@@ -13,7 +13,7 @@ is the starting evidence, not a completion certificate.
 ## Current draft status
 
 The full translator goal remains **incomplete**. There are 324 preserved roots,
-56 approved compounds and 464 canonical senses. Desire/preference and polar-answer knowledge foundations
+57 approved compounds and 465 canonical senses. Desire/preference and polar-answer knowledge foundations
 remain opt-in candidate vocabulary; they are not included in those canonical
 counts. The consolidated regression at `056c677` passed 146 of 147 checks. The
 carrying-command check timed out at 120 seconds; after that run terminated, its
@@ -1277,3 +1277,18 @@ replace the consolidated regression baseline above. Running toward/to a destinat
 simple-present aspect selection and completed journeys remain unfinished, including
 the original diagnostic “Nora runs to the gate.” This is a reusable dependency for
 that construction, not a claim that the diagnostic or full translator is complete.
+
+### Running approach with shared participant — November 4, 2026
+
+Convention 24 combines running with MOV:111 and an explicit same-argument binding
+between the runner and approaching actor. It supplies the same-event relation;
+concurrent unrelated running and movement do not suffice. “Nora is running toward
+the gate” now preserves actor and destination, questions, negation, time, modality
+and runtime 0/1/2. The progressive approach does not assert arrival or receipt.
+The MIDI inverse checks both repeated actor sounds and every nested root/frame.
+
+`reports/destination_running_validation.json` records the targeted checks, including
+24 full Ruby/browser formal and MIDI comparisons, reversed participants, missing
+destination and unequal actor bindings, malformed musical payloads, and unchanged
+prior 56 compounds. No new root was added. Simple-present “runs to”, completed
+running journeys, live listening and the original completion gates remain open.

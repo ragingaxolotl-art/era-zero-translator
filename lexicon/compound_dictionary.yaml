@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 56
+  entry_count: 57
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -153,6 +153,101 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 111b772027accab2054f04158521688548f4899eb5feda420f7ace4ebefba396
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-run
+    kind: compound_ref
+    compound_id: CMP:22955227e19ba82d5b48c9ef
+    definition_version: 1.0.0
+  - node_id: s-actor
+    kind: slot
+    slot_name: actor
+    slot_type: entity
+  - node_id: s-destination
+    kind: slot
+    slot_name: destination
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:111
+  edges:
+  - type: qualifies
+    from: q-run
+    to: h
+  - type: fills_role
+    from: s-actor
+    to: h
+    role: actor
+  - type: fills_role
+    from: s-destination
+    to: h
+    role: destination
+  lexical_constraints:
+  - The bound actor anchors the same focal material body and local physical changes
+    throughout the nested activity.
+  - Locomotor pattern and specialization are explicit audible conventions, not consequences
+    of root adjacency.
+  - Runtime, grammatical negation, time and path completion are independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_destination_running
+    sound_code: 24
+    added_definition: The same actor performs bodily running while undergoing displacement
+      toward the bound destination position in that same event. The running activity
+      constitutes this approach, not a separate simultaneous action or movement by
+      another actor. The destination can be the contextual location of a named referent.
+      The approach is ongoing; arrival, completed travel, receipt, ownership transfer,
+      deliberate intention and continued presence at the destination are not asserted.
+    excludes:
+    - Running and approach by different actors or in unrelated events
+    - Running in place alone without destination-directed displacement
+    - Arrival, receipt or completed travel inferred from approach
+  binding_constraints:
+  - relation: same_argument
+    slot_paths:
+    - - q-run
+      - h
+      - s-actor
+    - - s-actor
+  compound_id: CMP:139985443924b6e8f24d44f2
+  content_digest: 139985443924b6e8f24d44f2ef1e07372ec02474582210b90dbd2cc247e75946
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: ongoing running toward a destination
+  english_glosses:
+  - ongoing running toward a destination
+  invariant_definition: The same actor performs bodily running while undergoing displacement
+    toward the bound destination position in that same event. The running activity
+    constitutes this approach, not a separate simultaneous action or movement by another
+    actor. The destination can be the contextual location of a named referent. The
+    approach is ongoing; arrival, completed travel, receipt, ownership transfer, deliberate
+    intention and continued presence at the destination are not asserted.
+  boundaries:
+    includes: The same actor performs bodily running while undergoing displacement
+      toward the bound destination position in that same event. The running activity
+      constitutes this approach, not a separate simultaneous action or movement by
+      another actor. The destination can be the contextual location of a named referent.
+      The approach is ongoing; arrival, completed travel, receipt, ownership transfer,
+      deliberate intention and continued presence at the destination are not asserted.
+    excludes: Running and approach by different actors or in unrelated events; Running
+      in place alone without destination-directed displacement; Arrival, receipt or
+      completed travel inferred from approach
+  collision_audit: reviews/locomotion_foundations.md and reviews/destination_running.md;
+    physical change alone does not entail the declared locomotor pattern.
+  confidence: high
+  approval_record: migrations/destination_running_2026_11_04.yaml
+  approval_basis: Author review under the user-directed translator completion goal;
+    not independent linguistic validation.
+  examples:
+    ordinary: Nora is running toward the gate.
+    technical: Preserve the same bound actor in each version-pinned dependency.
+    future_compound: Add a path only with the same actor and event binding.
+    counterexample: Running and approach by different actors or in unrelated events
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 139985443924b6e8f24d44f2ef1e07372ec02474582210b90dbd2cc247e75946
 - architecture_version: '1.0'
   compound_id: CMP:1b987e04bf47840f9e82ecd3
   content_digest: 1b987e04bf47840f9e82ecd31caef82cd850e4b6ac0d169e7df593ac36089663

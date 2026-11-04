@@ -16,7 +16,7 @@ for(const state of [0,1,2])for(const text of ['Eli is running.','Nora is running
 const ruby=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_presentation','-rbase64','-e',"puts JSON.generate(JSON.parse(STDIN.read).map{|ir|f=EraZeroRenderer.render(ir);{formal:f,midi:Base64.strict_encode64(EraZeroPresentation.midi(f))}})"],{cwd:root,input:JSON.stringify(results.map(r=>r.semantic_ir)),encoding:'utf8',maxBuffer:20_000_000}));
 for(const [i,r] of results.entries()){assert.deepEqual(r.formal,ruby[i].formal);assert.equal(Buffer.from(midiFromFormal(r.formal)).toString('base64'),ruby[i].midi);}
 assert.equal(new Set(ruby.map(r=>r.midi)).size,21);
-for(const text of ['Nora runs the program.','Nora runs to the gate.','Nora is running toward the gate.','Eli is running quickly.'])assert.equal(parseNamedSentence(text),null);
+for(const text of ['Nora runs the program.','Nora runs to the gate.','Eli is running quickly.'])assert.equal(parseNamedSentence(text),null);
 execFileSync('ruby',['-Itools/lib','-rera_zero_validation','-e',"v=EraZeroValidation;d=v.load_yaml('lexicon/compound_dictionary.yaml')['entries'];m=v.load_yaml('migrations/running_2026_11_04.yaml');old=d.select{|e|m['previous_compound_ids'].include?(e['compound_id'])};raise 'Prior meanings changed' unless old.length==55&&v.fingerprint(old)==m['before_dictionary_fingerprint']"],{cwd:root});
 console.log('PASS 21 running participant/state/scope contrasts with Ruby formal/MIDI parity and independent inverse; prior 55 compounds unchanged; unsupported paths remain unresolved.');
 

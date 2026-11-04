@@ -1,4 +1,5 @@
 import {expandNegativeContractions} from './contractions.mjs';
+import {DESTINATION_RUNNING} from './destination_running.mjs';
 import {RUNNING} from './running.mjs';
 import {SWIMMING,SWIMMING_ACROSS} from './swimming.mjs';
 import {CONTEXTUAL_NORMS} from './contextual_standards.mjs';
@@ -15,6 +16,7 @@ import {deicticReference,deicticEvent,nominalMarker} from './references.mjs';
 
 // Reviewed constructions use exact process senses, never a generic synonym pool.
 const ACTIONS = [
+  DESTINATION_RUNNING,
   {pattern:'acquired physical custody of',negativePattern:'did not acquire physical custody of',predicate:'CMP:c332d2e89b9f6177486fc93b',key:'completed_physical_custody_acquisition',wording:'acquired physical custody of',role:'source',targetRole:'target',speechTime:'before',compoundSlots:{source:['q-custody','s-source'],target:['q-custody','s-target']},semanticNote:'Acquisition means that this holder lacked practical physical custody of this object immediately before the transition and had it at culmination. It does not assert ownership, a previous custodian, handover, object movement or continued custody afterward.'},
   {pattern:'has physical custody of',negativePattern:'does not have physical custody of',predicate:'CMP:0aca609416668978e1527dac',key:'practical_physical_custody',wording:'has physical custody of',role:'source',targetRole:'target',compoundSlots:{source:['s-source'],target:['s-target']},semanticNote:'Established practical control over physical access and handling of this distinct material object, directly or through a controlled physical intermediary. This does not assert ownership, entitlement, exclusivity, load support, receipt or transfer.'},
   {pattern:'is carrying',predicate:'CMP:7a6749aaf61cd6181e544bd6',key:'ongoing_physical_carrying',aspect:'ongoing',wording:'is carrying',role:'source',targetRole:'target',compoundSlots:{source:['q-support','s-source'],target:[['q-support','s-target'],['s-load']]},semanticNote:'Physical conveyance of a distinct material load borne upon, within or suspended from the carrier’s moving support; support and movement concern that same load and interval.'},

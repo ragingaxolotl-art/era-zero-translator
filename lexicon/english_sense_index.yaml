@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 464
-  lemma_count: 447
+  sense_count: 465
+  lemma_count: 448
   canonical_atom_senses: 324
-  canonical_compound_senses: 56
+  canonical_compound_senses: 57
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: 128b90c6cd9e22e32b8cfc20844884bf35e6ca9432c0dfd79178365a8756e261
+  compound_dictionary_fingerprint: 550cf2e6ee5fb2f3bdc459838d71c0e2a5848acc121ddd60c71607794991830d
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -5523,6 +5523,29 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- sense_id: ENS:8ba04ee4b7d94b2fef728ee3
+  lemma: ongoing running toward a destination
+  display_form: ongoing running toward a destination
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:139985443924b6e8f24d44f2
+  definition: The same actor performs bodily running while undergoing displacement
+    toward the bound destination position in that same event. The running activity
+    constitutes this approach, not a separate simultaneous action or movement by another
+    actor. The destination can be the contextual location of a named referent. The
+    approach is ongoing; arrival, completed travel, receipt, ownership transfer, deliberate
+    intention and continued presence at the destination are not asserted.
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Running and approach by different actors or in unrelated events; Running in place
+    alone without destination-directed displacement; Arrival, receipt or completed
+    travel inferred from approach
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:9e8742cd2cda8a3dcd4c2a66
   lemma: ongoing sensory registration
   display_form: ongoing sensory registration
@@ -10346,6 +10369,13 @@ lemma_index:
   ongoing physical repair:
     sense_ids:
     - ENS:96ddcc4f67e0aae5b8a8b130
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  ongoing running toward a destination:
+    sense_ids:
+    - ENS:8ba04ee4b7d94b2fef728ee3
     requires_disambiguation: false
     direct_target_count: 1
     routes:
