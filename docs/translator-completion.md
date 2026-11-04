@@ -2,6 +2,8 @@
 
 Baseline: `e8a42f842aeb789b3696936a59a2699d328687ab`, October 28, 2026.
 Working branch: `feat/translator-completion`.
+Current isolated checkout: `/private/tmp/dba-audit-20261104`, restored from the
+pushed draft after the previous temporary checkout was cleared.
 
 The goal is complete ordinary-language interpretation and meaning-preserving DBA
 performance, keeping existing roots, sounds, names, and approved poetic meanings.
@@ -42,7 +44,7 @@ October 29, 2026. The linked Page now reflects that implementation revision
 (Page sequence 5); its historical source observations remain dated evidence.
 All 104 Page blocks and all seven original exit requirements were preserved.
 The linked Page records the 80-check baseline and its targeted follow-up. The
-repository now records a fresh 83-check passing run after the custody inverse,
+repository now records a fresh 84-check passing run after custody acquisition,
 including the MAT example reconciliation and per-clause correction. The ordinary diagnostic
 still has 19 checked compositions out of 40. Neither closes the gates below.
 
@@ -75,6 +77,16 @@ both lexical meaning and audible state preservation. Preserve existing melodies
 and do not create new LIF/STR-like families merely to fill the address grid.
 
 ### Next dependency milestone
+
+[Completed custody acquisition](../reviews/custody_acquisition_foundation.md)
+now reuses custody version 1.0.0 under an explicit relation-actualization convention.
+“Ada acquired physical custody of the box” preserves a lack-to-control transition
+without claiming object creation, movement, ownership or a previous custodian.
+Past assertions, negation, questions, commands and selected mass restrictions have
+36 Ruby/browser formal and MIDI comparisons, plus three controlled cases with
+independent participant states. Its bounded MIDI inverse recovers that event from
+performed sound structure. Source-holder transfer and delivery remain unfinished.
+
 
 The [custody MIDI inverse](../reviews/custody_musical_inverse.md) now recovers the
 bounded custody meaning, holder/object, ordered scope, selected mass restrictions

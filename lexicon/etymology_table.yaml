@@ -4,12 +4,12 @@ metadata:
   version: 1.0.0
   status: canonical_gate4e
   atom_entries: 324
-  compound_entries: 40
-  total_entries: 364
+  compound_entries: 41
+  total_entries: 365
   scope: Auditable synchronic derivation and authority provenance; no invented natural-language
     ancestry.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: befc078d9883ca2d36b3901b5b3da3846e57c5ffa0b0d2a6acdd94b8acc9b6f9
+  compound_dictionary_fingerprint: ec9fc79c0a64a9aa1abc92c2fa7d9452d627511fddf1eb032056a501e928a3d4
 principles:
   synchronic_not_fictional: Era Zero forms are engineered encodings. The table records
     actual construction rules and approval history rather than inventing ancestors
@@ -18939,6 +18939,79 @@ entries:
     authority: gate4b_reviewed_compound
     record: migrations/registration_channels_2026_10_28.yaml
     approval_date: '2026-10-28'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:55823c212c67166790ab5a48
+  target_type: compound
+  target_id: CMP:c332d2e89b9f6177486fc93b
+  status: canonical
+  english_label: completed acquisition of physical custody
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: ORI:110
+  components:
+  - node_id: q-custody
+    kind: compound_ref
+    compound_id: CMP:0aca609416668978e1527dac
+    definition_version: 1.0.0
+  - node_id: h
+    kind: root
+    root_id: ORI:110
+  relations:
+  - type: qualifies
+    from: q-custody
+    to: h
+  semantic_derivation:
+    invariant_definition: 'Completion of one bounded transition in which the specified
+      practical physical custody relation comes to obtain: the same holder lacks that
+      control of the same distinct material object immediately before the transition
+      and has it at culmination. The actualized referent is this holder-object custody
+      relation, not the material object. The nested custody relation describes the
+      culmination state, not an independent assertion of custody at speech time. No
+      prior custodian, sourced transfer, loss of another holder''s control, ownership,
+      willingness, displacement, creation of the object or persistence after culmination
+      is asserted.'
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: completed_physical_custody_acquisition
+      sound_code: 8
+      added_definition: 'Completion of one bounded transition in which the specified
+        practical physical custody relation comes to obtain: the same holder lacks
+        that control of the same distinct material object immediately before the transition
+        and has it at culmination. The actualized referent is this holder-object custody
+        relation, not the material object. The nested custody relation describes the
+        culmination state, not an independent assertion of custody at speech time.
+        No prior custodian, sourced transfer, loss of another holder''s control, ownership,
+        willingness, displacement, creation of the object or persistence after culmination
+        is asserted.'
+      excludes:
+      - Already having custody without a transition into it
+      - Creation or movement of the material object inferred from acquisition
+      - Ownership, permission or legal custody without practical physical custody
+      - A prior holder, handover, causal mechanism or relinquishment inferred from
+        acquisition
+      - Continued custody after culmination inferred from completion
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: c332d2e89b9f6177486fc93bd0d39e619aef528b2289e83bcce41d7e7c1e3474
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/custody_acquisition_2026_11_04.yaml
+    approval_date: '2026-11-04'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
 - etymology_id: ETY:637d7b3d5694c78a7337e7d5

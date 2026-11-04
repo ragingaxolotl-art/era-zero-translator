@@ -4,10 +4,10 @@ Status: **PASS — CONTROLLED ENGLISH CANONICAL; GENERAL ENGLISH MAY BEGIN**
 
 - Checks passed: **13**
 - Checks failed: **0**
-- Controlled lexemes: **364**
+- Controlled lexemes: **365**
 - Golden valid cases: **16**
 - Golden invalid cases: **17**
-- Exhaustive lexical round trips: **364**
+- Exhaustive lexical round trips: **365**
 - General English authorized next: **yes**
 - General English implemented: **no**
 

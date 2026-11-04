@@ -82,7 +82,7 @@ Its review also checks the CON domain pointer: current communicative meanings do
 not supply ownership or material receipt. Do not build a custody alias from the
 old example or treat the pointer as a missing definition already implemented.
 
-## Acquisition before sourced transfer: next candidate review
+## Acquisition before sourced transfer: candidate review history
 
 The custody inverse now independently recovers the bounded relation. The next
 semantic dependency should distinguish acquisition of that relation from having
@@ -111,3 +111,9 @@ holder's control. A sourced transfer needs additional same-object and event
 linkage; loss, willingness and exclusivity must not be silently inferred.
 Runtime 0/1/2 remains independent of acquisition and transfer phase. This is a
 candidate review and dependency refinement, not an approved event compound.
+
+The [custody acquisition implementation](custody_acquisition_foundation.md) now
+resolves the acquisition candidate with an explicit conventional event and bounded
+MIDI inverse. The same holder/object relation is absent before and present at its
+culmination. A prior custodian, source-mediated handover and any relinquishment
+remain unimplemented commitments for the next transfer definition.

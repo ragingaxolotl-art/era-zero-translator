@@ -1,0 +1,27 @@
+---
+authority: User-directed translator-completion goal
+review: reviews/custody_acquisition_foundation.md
+before_dictionary_fingerprint: befc078d9883ca2d36b3901b5b3da3846e57c5ffa0b0d2a6acdd94b8acc9b6f9
+added_compound_id: CMP:c332d2e89b9f6177486fc93b
+convention:
+  profile: EZLEX-1
+  sense_key: completed_physical_custody_acquisition
+  sound_code: 8
+  added_definition: 'Completion of one bounded transition in which the specified practical
+    physical custody relation comes to obtain: the same holder lacks that control
+    of the same distinct material object immediately before the transition and has
+    it at culmination. The actualized referent is this holder-object custody relation,
+    not the material object. The nested custody relation describes the culmination
+    state, not an independent assertion of custody at speech time. No prior custodian,
+    sourced transfer, loss of another holder''s control, ownership, willingness, displacement,
+    creation of the object or persistence after culmination is asserted.'
+  excludes:
+  - Already having custody without a transition into it
+  - Creation or movement of the material object inferred from acquisition
+  - Ownership, permission or legal custody without practical physical custody
+  - A prior holder, handover, causal mechanism or relinquishment inferred from acquisition
+  - Continued custody after culmination inferred from completion
+atomic_meanings_changed: false
+existing_compound_meanings_changed: false
+required_followup: Validate sentence meaning, nested custody binding and all runtime
+  states; sourced transfer and delivery remain separate.

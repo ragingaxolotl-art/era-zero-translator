@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 448
-  lemma_count: 431
+  sense_count: 449
+  lemma_count: 432
   canonical_atom_senses: 324
-  canonical_compound_senses: 40
+  canonical_compound_senses: 41
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: 9b2e6047a5bbd39f0b54ff2f49b569cf7e4726b361b51a62070804727efce26f
-  compound_dictionary_fingerprint: befc078d9883ca2d36b3901b5b3da3846e57c5ffa0b0d2a6acdd94b8acc9b6f9
+  compound_dictionary_fingerprint: ec9fc79c0a64a9aa1abc92c2fa7d9452d627511fddf1eb032056a501e928a3d4
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -1357,6 +1357,33 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: completed acquisition of physical custody
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:c332d2e89b9f6177486fc93b
+  definition: 'Completion of one bounded transition in which the specified practical
+    physical custody relation comes to obtain: the same holder lacks that control
+    of the same distinct material object immediately before the transition and has
+    it at culmination. The actualized referent is this holder-object custody relation,
+    not the material object. The nested custody relation describes the culmination
+    state, not an independent assertion of custody at speech time. No prior custodian,
+    sourced transfer, loss of another holder''s control, ownership, willingness, displacement,
+    creation of the object or persistence after culmination is asserted.'
+  sense_id: ENS:ce766bf0e7679361fac687ed
+  display_form: completed acquisition of physical custody
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Already having custody without a transition into it; Creation or movement of the
+    material object inferred from acquisition; Ownership, permission or legal custody
+    without practical physical custody; A prior holder, handover, causal mechanism
+    or relinquishment inferred from acquisition; Continued custody after culmination
+    inferred from completion
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:b257a335e1be86a8155815d4
   lemma: completed artifact generation
   display_form: completed artifact generation
@@ -8382,6 +8409,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  completed acquisition of physical custody:
+    sense_ids:
+    - ENS:ce766bf0e7679361fac687ed
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   completed artifact generation:
     sense_ids:
     - ENS:b257a335e1be86a8155815d4

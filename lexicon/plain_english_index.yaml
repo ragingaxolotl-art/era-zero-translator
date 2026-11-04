@@ -12,8 +12,8 @@ policy:
     authorize automatic semantic resolution.
 counts:
   atoms: 324
-  compounds: 40
-  entries: 364
+  compounds: 41
+  entries: 365
 entries:
 - target_id: CMP:0aca609416668978e1527dac
   target_type: compound
@@ -610,6 +610,26 @@ entries:
   - ongoing optical sensory registration
   example_searches:
   - ongoing optical sensory registration
+  mapping_status: discovery_only_noncanonical
+  authority_note: These words help people find the compound. They do not replace or
+    broaden its canonical graph.
+- target_id: CMP:c332d2e89b9f6177486fc93b
+  target_type: compound
+  canonical_title: completed acquisition of physical custody
+  plain_label: completed acquisition of physical custody
+  plain_explanation: An everyday discovery label for the approved compound “completed
+    acquisition of physical custody”; the compound graph controls its exact meaning.
+  ordinary_terms:
+  - completed
+  - acquisition
+  - of
+  - physical
+  - custody
+  - completed acquisition of physical custody
+  match_phrases:
+  - completed acquisition of physical custody
+  example_searches:
+  - completed acquisition of physical custody
   mapping_status: discovery_only_noncanonical
   authority_note: These words help people find the compound. They do not replace or
     broaden its canonical graph.

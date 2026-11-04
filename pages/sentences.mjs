@@ -9,6 +9,7 @@ import {deicticReference,deicticEvent,nominalMarker} from './references.mjs';
 
 // Reviewed constructions use exact process senses, never a generic synonym pool.
 const ACTIONS = [
+  {pattern:'acquired physical custody of',negativePattern:'did not acquire physical custody of',predicate:'CMP:c332d2e89b9f6177486fc93b',key:'completed_physical_custody_acquisition',wording:'acquired physical custody of',role:'source',targetRole:'target',speechTime:'before',compoundSlots:{source:['q-custody','s-source'],target:['q-custody','s-target']},semanticNote:'Acquisition means that this holder lacked practical physical custody of this object immediately before the transition and had it at culmination. It does not assert ownership, a previous custodian, handover, object movement or continued custody afterward.'},
   {pattern:'has physical custody of',negativePattern:'does not have physical custody of',predicate:'CMP:0aca609416668978e1527dac',key:'practical_physical_custody',wording:'has physical custody of',role:'source',targetRole:'target',compoundSlots:{source:['s-source'],target:['s-target']},semanticNote:'Established practical control over physical access and handling of this distinct material object, directly or through a controlled physical intermediary. This does not assert ownership, entitlement, exclusivity, load support, receipt or transfer.'},
   {pattern:'is carrying',predicate:'CMP:7a6749aaf61cd6181e544bd6',key:'ongoing_physical_carrying',aspect:'ongoing',wording:'is carrying',role:'source',targetRole:'target',compoundSlots:{source:['q-support','s-source'],target:[['q-support','s-target'],['s-load']]},semanticNote:'Physical conveyance of a distinct material load borne upon, within or suspended from the carrier’s moving support; support and movement concern that same load and interval.'},
   {pattern:'is physically supporting',predicate:'CMP:eef9fff8ac6618ce60927f18',key:'active_physical_load_support',wording:'is physically supporting',role:'source',targetRole:'target',compoundSlots:{source:['s-source'],target:['s-target']},semanticNote:'Physical load-bearing support: this source bears at least part of the distinct material load. This does not assert carrying, movement, intention, or emotional support.'},
@@ -86,6 +87,12 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
       if(!inner)return null;
       return {...inner,aspect:undefined,speechAct:'command',construction:`command_${inner.construction}`,explicitInterpretation:String(input).trim()};
     }
+    const acquisitionCommand=String(input).trim().match(new RegExp(`^([Dd]o not )?[Aa]cquire physical custody of ${participant}[.!]?$`));
+    if(acquisitionCommand){
+      const inner=parseNamedSentence(`you ${acquisitionCommand[1]?'did not acquire':'acquired'} physical custody of ${acquisitionCommand[2]}.`,depth+1);
+      if(!inner)return null;
+      return {...inner,speechTime:undefined,speechAct:'command',construction:`command_${inner.construction}`,explicitInterpretation:String(input).trim(),semanticNote:inner.semanticNote+' This requests the event without asserting that it occurred.'};
+    }
     const commands=[['care for','cares for'],['restore','is restoring'],['repair','is repairing'],['awaken','is awakening'],['damage','is damaging'],['physically repair','is physically repairing'],['physically support','is physically supporting'],['move toward','is moving toward'],['move away from','is moving away from'],['move relative to','is moving relative to'],['pay attention to','is paying attention to'],['revise a mental representation of','is revising a mental representation of']];
     for(const [verb,wording] of commands){
       const command=String(input).trim().match(new RegExp(`^(?:[Dd]o not )?${verb} ${participant}[.!]?$`,'i'));
@@ -100,8 +107,8 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     const question=String(input).trim().match(new RegExp(`^(?:[Ii]s|[Aa]re|[Aa]m) ${participant} (.+)\\?$`));
     const careQuestion=String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?care for ${participant}\\?$`));
     const pastQuestion=String(input).trim().match(new RegExp(`^(?:[Ww]as|[Ww]ere) ${participant} (.+)\\?$`));
-    const didQuestion=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?(care for|restore|repair|awaken|damage|physically repair|arrive at) ${participant}( (?:yesterday|today))?\\?$`));
-    const pastVerbs={'care for':'cared for',restore:'restored',repair:'repaired',awaken:'awakened',damage:'damaged','physically repair':'physically repaired','arrive at':'arrived at'};
+    const didQuestion=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?(care for|restore|repair|awaken|damage|physically repair|arrive at|acquire physical custody of) ${participant}( (?:yesterday|today))?\\?$`));
+    const pastVerbs={'care for':'cared for',restore:'restored',repair:'repaired',awaken:'awakened',damage:'damaged','physically repair':'physically repaired','arrive at':'arrived at','acquire physical custody of':'acquired physical custody of'};
     const carryDid=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?(habitually )?carry (.+)\\?$`));
     const carryHabit=String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?habitually carry (.+)\\?$`));
     const carrySimple=String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?carry (.+)\\?$`));
@@ -306,7 +313,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|arrive|arrives|arrived|arriving|carry|carries|carried|carrying|support|supporting|custody|temperature)\b/i.test(String(input))) && !parseNamedSentence(input);
+  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|arrive|arrives|arrived|arriving|carry|carries|carried|carrying|support|supporting|custody|acquire|acquired|acquiring|temperature)\b/i.test(String(input))) && !parseNamedSentence(input);
 }
 
 // A complete antecedent and a comma establish conditional scope. Without

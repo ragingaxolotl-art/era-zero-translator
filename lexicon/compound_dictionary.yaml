@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 40
+  entry_count: 41
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -1762,6 +1762,88 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: bcfd189eb305cf364ada975a962b89ff5917d5afff28049b8cd30e3817285f7e
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-custody
+    kind: compound_ref
+    compound_id: CMP:0aca609416668978e1527dac
+    definition_version: 1.0.0
+  - node_id: h
+    kind: root
+    root_id: ORI:110
+  edges:
+  - type: qualifies
+    from: q-custody
+    to: h
+  lexical_constraints:
+  - The exact bound holder-object custody relation is the distinct referent actualized
+    by this transition.
+  - The nested custody state belongs to the culmination of this same acquisition;
+    it does not assert current custody outside the event scope.
+  - The inherited holder/object distinctness constraint remains in force.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: completed_physical_custody_acquisition
+    sound_code: 8
+    added_definition: 'Completion of one bounded transition in which the specified
+      practical physical custody relation comes to obtain: the same holder lacks that
+      control of the same distinct material object immediately before the transition
+      and has it at culmination. The actualized referent is this holder-object custody
+      relation, not the material object. The nested custody relation describes the
+      culmination state, not an independent assertion of custody at speech time. No
+      prior custodian, sourced transfer, loss of another holder''s control, ownership,
+      willingness, displacement, creation of the object or persistence after culmination
+      is asserted.'
+    excludes:
+    - Already having custody without a transition into it
+    - Creation or movement of the material object inferred from acquisition
+    - Ownership, permission or legal custody without practical physical custody
+    - A prior holder, handover, causal mechanism or relinquishment inferred from acquisition
+    - Continued custody after culmination inferred from completion
+  compound_id: CMP:c332d2e89b9f6177486fc93b
+  content_digest: c332d2e89b9f6177486fc93bd0d39e619aef528b2289e83bcce41d7e7c1e3474
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: completed acquisition of physical custody
+  english_glosses:
+  - completed acquisition of physical custody
+  invariant_definition: 'Completion of one bounded transition in which the specified
+    practical physical custody relation comes to obtain: the same holder lacks that
+    control of the same distinct material object immediately before the transition
+    and has it at culmination. The actualized referent is this holder-object custody
+    relation, not the material object. The nested custody relation describes the culmination
+    state, not an independent assertion of custody at speech time. No prior custodian,
+    sourced transfer, loss of another holder''s control, ownership, willingness, displacement,
+    creation of the object or persistence after culmination is asserted.'
+  boundaries:
+    includes: A bounded transition from lacking to having the specified custody relation,
+      with the same holder and object.
+    excludes: Already having custody without a transition into it; Creation or movement
+      of the material object inferred from acquisition; Ownership, permission or legal
+      custody without practical physical custody; A prior holder, handover, causal
+      mechanism or relinquishment inferred from acquisition; Continued custody after
+      culmination inferred from completion
+  collision_audit: The version-pinned custody relation supplies the culmination state;
+    ORI:110 supplies distinct actualization. Convention 8 identifies the actualized
+    referent as that relation and binds its pre/post transition. The object is not
+    newly created, and conjunction alone does not supply the event linkage.
+  confidence: high
+  approval_record: migrations/custody_acquisition_2026_11_04.yaml
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/custody_acquisition_foundation.md
+  examples:
+    ordinary: Ada acquired physical custody of the box.
+    technical: The same custody relation is absent immediately before this transition
+      and obtains at its culmination; later persistence is unspecified.
+    future_compound: Reuse this exact acquisition event before specifying a source
+      holder and transfer mechanism.
+    counterexample: Ada has held the box throughout; no acquisition occurs in the
+      described interval.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: c332d2e89b9f6177486fc93bd0d39e619aef528b2289e83bcce41d7e7c1e3474
 - architecture_version: '1.0'
   compound_id: CMP:cb0812face56f90b7ba139c5
   content_digest: cb0812face56f90b7ba139c53a0c4b69820830bde14c60bcd0160122199daa8b

@@ -1,8 +1,8 @@
 ---
 metadata:
   version: 1.0.0
-  sense_count: 448
-  lemma_count: 431
+  sense_count: 449
+  lemma_count: 432
 exact_atom_labels:
 - input: continuous self
   expected_route: atom
@@ -1076,6 +1076,9 @@ exact_compound_labels:
 - input: ongoing optical sensory registration
   expected_route: compound
   expected_target: CMP:bcfd189eb305cf364ada975a
+- input: completed acquisition of physical custody
+  expected_route: compound
+  expected_target: CMP:c332d2e89b9f6177486fc93b
 - input: material hazard
   expected_route: compound
   expected_target: CMP:cb0812face56f90b7ba139c5

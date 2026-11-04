@@ -5,9 +5,9 @@ metadata:
   status: noncanonical_metadata_complete
   canonical_semantic_changes: 0
   root_count: 324
-  indexed_sense_count: 448
+  indexed_sense_count: 449
   game_story_surface_sense_count: 48
-  total_audited_senses: 496
+  total_audited_senses: 497
   part_of_speech_counts:
     adjective: 22
     adverb: 2
@@ -15,7 +15,7 @@ metadata:
     grammar: 1
     interjection: 1
     noun: 29
-    noun_phrase: 256
+    noun_phrase: 257
     number: 1
     preposition: 2
     quantifier: 1
@@ -14444,6 +14444,25 @@ senses:
   definition: A population of living beings currently interacting as a collective.
   fidelity: high
   controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:ce766bf0e7679361fac687ed
+  lemma: completed acquisition of physical custody
+  part_of_speech: noun_phrase
+  surface_forms:
+  - completed acquisition of physical custody
+  route: compound
+  target_id: CMP:c332d2e89b9f6177486fc93b
+  sense_key: canonical_compound_label
+  definition: 'Completion of one bounded transition in which the specified practical
+    physical custody relation comes to obtain: the same holder lacks that control
+    of the same distinct material object immediately before the transition and has
+    it at culmination. The actualized referent is this holder-object custody relation,
+    not the material object. The nested custody relation describes the culmination
+    state, not an independent assertion of custody at speech time. No prior custodian,
+    sourced transfer, loss of another holder''s control, ownership, willingness, displacement,
+    creation of the object or persistence after culmination is asserted.'
+  fidelity: high
+  controlled_input_allowed: true
   authority_layer: english_sense_index
 - sense_id: ENS:b257a335e1be86a8155815d4
   lemma: completed artifact generation

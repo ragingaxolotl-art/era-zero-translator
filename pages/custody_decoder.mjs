@@ -27,3 +27,30 @@ export function decodePhysicalCustodyMidi(bytes,atoms){
    'This is a strict MIDI inverse, not recognition of arbitrary recorded or human-played audio.'
   ]};
 }
+
+// Acquisition specializes actualization of the exact nested custody relation.
+// It does not actualize the material object or imply a source custodian.
+export function decodeCustodyAcquisitionMidi(bytes,atoms){
+ const message='Unsupported or malformed custody-acquisition music.';
+ const fail=()=>{throw new Error(message);};
+ const {observed,marker,exactRoot,role,unwrapScopes}=strictSemanticReader(bytes,atoms,message);
+ const {current,scopes}=unwrapScopes(node=>marker(node,'convention_8_open'));
+ if(current.length!==1||!marker(current[0],'convention_8_open')||current[0].children?.length!==2)fail();
+ const [custody,head]=current[0].children,runtime=head?.runtime_state;
+ if(![0,1,2].includes(runtime))fail();exactRoot(head,'ORI:110','middle',runtime);
+ if(!marker(custody,'convention_7_open')||custody.children?.length!==3)fail();
+ const [source,target,coupling]=custody.children;exactRoot(coupling,'MAT:210','middle',null);
+ return {profile:'EZCUSTODY-ACQUISITION-INVERSE-1',speech_act:observed.speech_act,scopes,
+  predicate:'completed_physical_custody_acquisition',runtime_state:runtime,
+  participants:{holder:role(source,'source','low'),object:role(target,'target','high',true)},
+  convention_codes:[8,7],
+  meaning:{actualized_referent:'holder_object_custody_relation',custody_immediately_before:false,custody_at_culmination:true,
+   holder_distinct_from_object:true,object_creation_asserted:false,object_movement_asserted:false,
+   prior_custodian_asserted:false,sourced_transfer_asserted:false,ownership_asserted:false,persistence_after_culmination_asserted:false},
+  limitations:[
+   'The pre/post commitments define the event inside the recovered scope and speech act; negation and commands do not assert that the transition occurred.',
+   'The nested custody relation is the culmination state, not a separate assertion of custody at speech time.',
+   'Recovers this bounded MIDI profile, not general discourse, original spelling, external referent identity or recorded audio.',
+   'Acquisition does not identify a prior holder or imply that another holder lost control; transfer and delivery require further meaning.'
+  ]};
+}

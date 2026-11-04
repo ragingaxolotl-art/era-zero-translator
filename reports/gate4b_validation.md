@@ -5,8 +5,8 @@ Status: **PASS — GATE 4B INITIAL DICTIONARY CANONICAL; GATE 4C MAY BEGIN**
 - Checks passed: **16**
 - Checks failed: **0**
 - Dictionary version: **1.0.0**
-- Approved compounds: **40**
-- Candidate reviews: **40**
+- Approved compounds: **41**
+- Candidate reviews: **41**
 - Routing tests: **20**
 - Rejected/unsupported tests: **5**
 - Atomic roots changed: **0**

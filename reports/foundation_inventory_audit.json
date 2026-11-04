@@ -2,10 +2,10 @@
   "purpose": "Pin the complete runtime authority used by the foundation review; counts and hashes do not prove semantic coverage.",
   "authority": {
     "lexicon/atoms.yaml": "8663e78a20f7badd76e26ac1ea1f359c843dbac96041895801672d8144ee46ea",
-    "lexicon/compound_dictionary.yaml": "5ff5409d3ba6b66ef414bb17359d19b06a58648346e59a93e87ad80041647352"
+    "lexicon/compound_dictionary.yaml": "11be6798deccc95b8790b3c065f066ee3973d33c69e989ea850804a65e659f11"
   },
   "root_count": 324,
-  "compound_count": 40,
+  "compound_count": 41,
   "families": {
     "LIF": [
       {
@@ -1850,6 +1850,12 @@
       "title": "ongoing optical sensory registration",
       "definition": "An instance of ongoing sensory registration, as defined by CMP:ade73037114406a2cd91ce13 version 1.0.0, with the additional channel commitment: The sensory transduction registers information carried by light from the source, including visible, infrared or ultraviolet light. No conscious visual experience, color judgment, object recognition or attention is entailed.",
       "entry_sha256": "e0a1e698901c5532eb0ba4fa9b0294d2d1ac5051e946c252aac0f68e85cfdd0b"
+    },
+    {
+      "id": "CMP:c332d2e89b9f6177486fc93b",
+      "title": "completed acquisition of physical custody",
+      "definition": "Completion of one bounded transition in which the specified practical physical custody relation comes to obtain: the same holder lacks that control of the same distinct material object immediately before the transition and has it at culmination. The actualized referent is this holder-object custody relation, not the material object. The nested custody relation describes the culmination state, not an independent assertion of custody at speech time. No prior custodian, sourced transfer, loss of another holder's control, ownership, willingness, displacement, creation of the object or persistence after culmination is asserted.",
+      "entry_sha256": "ae0efdbfa600059262f095349a7496edd2a3ee434cdfe0953d93254b3e3b5785"
     },
     {
       "id": "CMP:cb0812face56f90b7ba139c5",
