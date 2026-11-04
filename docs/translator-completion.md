@@ -12,6 +12,15 @@ is the starting evidence, not a completion certificate.
 
 ## Current coverage evidence
 
+Re-execution of the original twenty desire/preference requirements finds eight
+candidate semantic passes and twelve uncomposed sentences. The
+[requirement-by-requirement report](../reports/foundation_requirements_audit.md)
+checks original participant, ordering, kind, scope and runtime obligations against
+MIDI-only recovery rather than treating parser acceptance as success. Object
+desire, curiosity, temporary preference, preference outside present attention and
+preference versus actual choice remain missing. The report does not approve the
+candidate vocabulary or change the ordinary production coverage count.
+
 The [desired-consciousness viewpoint review](../reviews/desired_consciousness.md)
 confirms that the ordinary parser already distinguishes the speaker's LIF:001/002
 from LIF:011/012 for others. Candidate desire now preserves those choices for
@@ -108,7 +117,7 @@ The [desire/preference foundation review](../reviews/desire_preference_foundatio
 checks the current 324-root/50-compound authority and separates desire, comparative
 preference and curiosity. Twenty [semantic acceptance requirements](../tests/desire_preference_requirements.json)
 record direction, alternatives, negative cases, dispositions, intensional content
-and runtime independence. They are unimplemented requirements, not passing tests.
+and runtime independence. The current executable audit verifies eight in candidate preview and leaves twelve uncomposed; none establishes canonical admission or held-out coverage.
 The review rejects deriving preference from attention, pleasure, persistent mental
 representation or redundant existence predicates. The existing minimum of two
 expanded roots is an architectural constraint, not evidence for two entailed

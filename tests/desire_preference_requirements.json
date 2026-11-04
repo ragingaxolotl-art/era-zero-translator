@@ -1,5 +1,5 @@
 {
-  "status": "unimplemented_semantic_acceptance_requirements",
+  "status": "partially_implemented_candidate_semantic_acceptance_requirements",
   "scope": "Authored contrasting requirements, not a held-out benchmark or passing translator test. No vocabulary is approved by this file.",
   "review": "reviews/desire_preference_foundation.md",
   "cases": [
@@ -18,7 +18,7 @@
         "both pleasant",
         "absolute desire for tea"
       ],
-      "encoding_status": "unresolved"
+      "encoding_status": "candidate_semantic_checks_pass"
     },
     {
       "id": "reversed",
@@ -30,7 +30,7 @@
       "must_not_infer": [
         "same meaning or sound as reversed ordering"
       ],
-      "encoding_status": "unresolved"
+      "encoding_status": "candidate_semantic_checks_pass"
     },
     {
       "id": "both_unpleasant",
@@ -43,7 +43,7 @@
         "happiness",
         "objective goodness"
       ],
-      "encoding_status": "unresolved"
+      "encoding_status": "not_composed"
     },
     {
       "id": "unattended",
@@ -54,7 +54,7 @@
       "must_not_infer": [
         "present attention toward tea"
       ],
-      "encoding_status": "unresolved"
+      "encoding_status": "not_composed"
     },
     {
       "id": "fleeting",
@@ -65,7 +65,7 @@
       "must_not_infer": [
         "persistence across cognitive episodes"
       ],
-      "encoding_status": "unresolved"
+      "encoding_status": "not_composed"
     },
     {
       "id": "without_choice",
@@ -76,7 +76,7 @@
       "must_not_infer": [
         "contradiction solely from the two different alternatives"
       ],
-      "encoding_status": "unresolved"
+      "encoding_status": "not_composed"
     },
     {
       "id": "negation",
@@ -89,7 +89,7 @@
         "indifference",
         "runtime 0 used instead of negation"
       ],
-      "encoding_status": "unresolved"
+      "encoding_status": "candidate_semantic_checks_pass"
     },
     {
       "id": "question",
@@ -100,7 +100,7 @@
       "must_not_infer": [
         "asserted preference"
       ],
-      "encoding_status": "unresolved"
+      "encoding_status": "candidate_semantic_checks_pass"
     },
     {
       "id": "past",
@@ -112,7 +112,7 @@
         "current preference",
         "runtime 0 as tense"
       ],
-      "encoding_status": "unresolved"
+      "encoding_status": "candidate_semantic_checks_pass"
     },
     {
       "id": "desire_not_need",
@@ -124,7 +124,7 @@
         "physical need",
         "viability dependence"
       ],
-      "encoding_status": "unresolved"
+      "encoding_status": "not_composed"
     },
     {
       "id": "need_not_desire",
@@ -135,7 +135,7 @@
       "must_not_infer": [
         "contradiction from need alone"
       ],
-      "encoding_status": "unresolved"
+      "encoding_status": "not_composed"
     },
     {
       "id": "desire_without_pleasure",
@@ -146,7 +146,7 @@
       "must_not_infer": [
         "pleasant feeling"
       ],
-      "encoding_status": "unresolved"
+      "encoding_status": "not_composed"
     },
     {
       "id": "desire_without_plan",
@@ -159,7 +159,7 @@
         "plan",
         "departure event"
       ],
-      "encoding_status": "unresolved"
+      "encoding_status": "not_composed"
     },
     {
       "id": "unrealized_content",
@@ -170,7 +170,7 @@
       "must_not_infer": [
         "actual fountain existence"
       ],
-      "encoding_status": "unresolved"
+      "encoding_status": "not_composed"
     },
     {
       "id": "object_reading",
@@ -181,7 +181,7 @@
       "must_not_infer": [
         "silently force ownership or drinking"
       ],
-      "encoding_status": "unresolved"
+      "encoding_status": "not_composed"
     },
     {
       "id": "curiosity_not_attention",
@@ -194,18 +194,18 @@
         "map understanding",
         "successful learning"
       ],
-      "encoding_status": "unresolved"
+      "encoding_status": "not_composed"
     },
     {
       "id": "attention_not_curiosity",
-      "input": "The alarming noise captures Orin’s attention, but Orin does not want to learn about it.",
+      "input": "The alarming noise captures Orin\u2019s attention, but Orin does not want to learn about it.",
       "required": [
         "attention can lack curiosity"
       ],
       "must_not_infer": [
         "curiosity inferred from attention"
       ],
-      "encoding_status": "unresolved"
+      "encoding_status": "not_composed"
     },
     {
       "id": "participant_change",
@@ -216,7 +216,7 @@
       "must_not_infer": [
         "same holder as Nora"
       ],
-      "encoding_status": "unresolved"
+      "encoding_status": "candidate_semantic_checks_pass"
     },
     {
       "id": "runtime_independence",
@@ -227,7 +227,7 @@
       "must_not_infer": [
         "runtime 2 as preference direction or emotional valence"
       ],
-      "encoding_status": "unresolved"
+      "encoding_status": "candidate_semantic_checks_pass"
     },
     {
       "id": "kind_not_cup",
@@ -238,7 +238,8 @@
       "must_not_infer": [
         "particular cups or people inferred from noun labels"
       ],
-      "encoding_status": "unresolved"
+      "encoding_status": "candidate_semantic_checks_pass"
     }
-  ]
+  ],
+  "current_evidence": "reports/foundation_requirements_audit.json"
 }
