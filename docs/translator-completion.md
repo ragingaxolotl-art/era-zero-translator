@@ -10,6 +10,43 @@ performance, keeping existing roots, sounds, names, and approved poetic meanings
 The [source audit](https://chatgpt.com/space/page_21c6ce0da1a88191abff53c0b13441f3)
 is the starting evidence, not a completion certificate.
 
+## User-approved first release scope
+
+The user explicitly approved a shorter text → meaning → music release with a
+compound builder. Prioritize supported sentence grammar, user-created reusable
+compounds (including compounds of compounds), playback and export. Preserve all
+324 roots, approved meanings, noun/name sound labels, lexical/runtime 0/1/2 and
+existing work. Clarify ambiguity and disclose unsupported constructions.
+
+Defer recorded-audio recovery and physical microphone tests, exhaustive source
+history reconciliation, duplicate implementation expansion and exhaustive English
+vocabulary coverage. These remain preserved future work, not first-release gates.
+The historical full objective below is not evidence that these deferred items
+must precede the user-approved first release. The 3–5 working-day estimate is
+provisional and has not been validated by a complete implementation inventory.
+
+### Compound-builder implementation evidence and order
+
+- `pages/app.js` concept queue currently approves only local English aliases for
+  existing targets; it does not create compounds. Do not describe it as a builder.
+- `pages/bound_compounds.mjs` renders validated compiled compound plans and binds
+  roles. It requires approved definitions and matching plan digests.
+- `tools/lib/era_zero_browser_compounds.rb` compiles nested definitions and required
+  roles; reuse its semantics rather than flattening compounds to unordered roots.
+- `tools/test_compound_extension.rb` contains an isolated repository extension
+  test. Its existence does not prove a browser can create new definitions.
+- Next: define a separately stored user compound registry with explicit structure,
+  semantic head, definition, dependencies and role slots. Keep canonical records
+  immutable; reject unresolved dependencies and cycles. Compile and render local
+  definitions through an explicit local path, without forging canonical approval.
+- Then: build search-first authoring, ordered component selection, role binding,
+  local persistence and export/import. Reuse saved compounds as components and
+  predicates in supported sentence structures.
+- Release evidence must include a user-created verb/adjective used in a full
+  sentence, a compound built from that compound, reload/export recovery, and
+  musical contrasts for participants, negation and runtime 0/1/2. Existing
+  dictionary counts or alias tests alone do not satisfy this gate.
+
 ## Blind recorded-audio requirement
 
 The user requires audio-only recovery of the intended meaning, including physical
