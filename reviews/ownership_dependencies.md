@@ -168,3 +168,22 @@ asynchronous generation and invalidated old downloads. Drinking preview tests
 still pass. These VM handler tests are not live-browser or physical-audio checks.
 Nested desired ownership, broader references/contexts, release validation and
 physical recordings remain unfinished.
+
+
+## Desired ownership semantic and musical composition
+
+Desired ownership now reuses the existing desire foundation and the ownership
+contract. Explicit finite or infinitival owners remain distinct from the desire
+holder; subject-controlled infinitives bind the proposed owner to that holder.
+The framework remains inside the ownership proposition, which is intensional
+and desired rather than asserted. Past time, negation, question and outer/inner
+runtime states remain separate. Explicit neutral pronoun bindings are supported.
+
+Draft +/-39 subcodes 15 and 16 distinguish controlled and explicit-owner desire
+frames. These reuse the ownership subtree reader and existing role/proposition
+frames. Eighteen semantic cases plus eighteen music cases exercise independent
+runtime pairs and subject control, transposition and unique draft dispatch;
+rehashed asserted-outcome, wrong-foundation and false-control documents reject.
+Standalone ownership rendering/decoding tests still pass. Independent rendering
+and blind WAV recovery for the nested form, object-desire clarification and UI
+routing remain unfinished. This addition is not canonical vocabulary approval.
