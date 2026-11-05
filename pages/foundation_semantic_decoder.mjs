@@ -1,3 +1,4 @@
+import {readCustodyDeliveryTree} from './delivery_decoder.mjs';
 import {readPhysicalCarryingTree} from './carrying_decoder.mjs';
 import {readPhysicalCustodyTree,readCustodyAcquisitionTree} from './custody_decoder.mjs';
 import {validAcquisitionScopes} from './acquisition_scopes.mjs';
@@ -17,7 +18,7 @@ export async function decodeFoundationSentenceMidi(bytes,atoms,records,{allowDra
  const registers={bearer:'middle',actor:'low',target:'high',experiencer:'middle',comparison_standard:'middle',content:'middle'};
  function proposition(children,depth=0,parent=null){
   if(depth>32)fail();const scopes=[];
-  while(children.length===1&&children[0].kind==='grammar'&&!/^convention_(4|7|8|13|15|16|17|19|21)_open$/.test(children[0].marker||'')){
+  while(children.length===1&&children[0].kind==='grammar'&&!/^convention_(4|7|8|10|13|15|16|17|19|21)_open$/.test(children[0].marker||'')){
    const n=children[0],m=n.marker;let scope;
    if(m==='negation_open')scope={operator:'negation'};
    else if(/^aspect_(bounded|ongoing|habitual)_open$/.test(m))scope={operator:'aspect',aspect:m.slice(7,-5)};
@@ -36,9 +37,9 @@ export async function decodeFoundationSentenceMidi(bytes,atoms,records,{allowDra
    });
    return {predicate:{kind:'conventional_compound',name:felt.predicate,convention_codes:felt.convention_codes},runtime_state:felt.runtime_state,scopes,arguments:{experiencer:{type:'entity',reference:felt.participants.experiencer}},meaning:felt.meaning};
   }
-  if(children.length===1&&/^convention_(4|8)_open$/.test(children[0].marker||'')){
+  if(children.length===1&&/^convention_(4|8|10)_open$/.test(children[0].marker||'')){
    const carrying=children[0].marker==='convention_4_open';
-   const value=carrying?readPhysicalCarryingTree(children[0],reader):readCustodyAcquisitionTree(children[0],reader);
+   const value=carrying?readPhysicalCarryingTree(children[0],reader):children[0].marker==='convention_10_open'?readCustodyDeliveryTree(children[0],reader):readCustodyAcquisitionTree(children[0],reader);
    const args=Object.fromEntries(Object.entries(value.participants).map(([role,reference])=>[role,{type:'entity',reference}]));
    return {predicate:{kind:'conventional_compound',name:value.predicate,convention_codes:value.convention_codes},runtime_state:value.runtime_state,scopes,arguments:args,meaning:value.meaning};
   }

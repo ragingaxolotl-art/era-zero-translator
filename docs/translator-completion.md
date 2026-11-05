@@ -22,6 +22,21 @@ error-detection trailer. Physical recording validation and broad predicate
 coverage remain open. Chords and additional participant motifs are deferred
 until evidence shows a benefit.
 
+## Desired custody-delivery extension
+
+The existing carrying-plus-custody-transfer compound can now be explicitly
+selected inside a desire proposition through `desiredDelivery`. The shared
+strict delivery reader supports nested foundation music without promoting the
+desired event to an assertion. Targeted evidence covers 18 independent runtime
+and negation combinations with Ruby parity, nine viewpoint selections, and a
+blind synthetic WAV recovery in the object-desire acoustic suite. Existing
+standalone delivery tests still pass. No roots or musical conventions changed.
+
+This does not yet support the ordinary `delivers` wording or a delivery-choice
+interface. The outcome audit retains that failed ordinary wording and separately
+reports the explicitly selected carrying-delivery form. Physical recordings and
+the full completion gates remain outstanding.
+
 ## Current draft status
 
 Draft bodily pain, pain-stimulus relations, intensity comparison and the original

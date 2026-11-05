@@ -89,18 +89,19 @@ export function foundationPronounPlan(input,{allowCognitive=false}={}){
  return personalPronounPlan(input,probe=>parseFoundationSentence(probe,{allowCognitive}),{includeNeutral:true});
 }
 
-export async function composeFoundationSentence(input,authority,records,loadTemplate,{allowDraft=false,bindings,allowCognitive=false,contextualMassModifiers=false}={}){
+export async function composeFoundationSentence(input,authority,records,loadTemplate,{allowDraft=false,bindings,allowCognitive=false,contextualMassModifiers=false,desiredDelivery}={}){
  if(typeof contextualMassModifiers!=='boolean')throw new Error('Invalid contextual mass selection.');
  const plan=foundationPronounPlan(input,{allowCognitive});
- if(!plan){if(bindings!==undefined)throw new Error('This sentence does not require pronoun bindings.');return composeAtDepth(input,authority,records,loadTemplate,allowDraft,0,allowCognitive,contextualMassModifiers);}
+ if(!plan){if(bindings!==undefined)throw new Error('This sentence does not require pronoun bindings.');return composeAtDepth(input,authority,records,loadTemplate,allowDraft,0,allowCognitive,contextualMassModifiers,desiredDelivery);}
  const {chosen,resolved}=resolvePersonalPronouns(input,plan,bindings,validReferent);
- const result=await composeAtDepth(resolved,authority,records,loadTemplate,allowDraft,0,allowCognitive,contextualMassModifiers);
+ const result=await composeAtDepth(resolved,authority,records,loadTemplate,allowDraft,0,allowCognitive,contextualMassModifiers,desiredDelivery);
  return {...result,source_input:input,resolved_input:resolved,resolved_pronouns:plan.occurrences.map(o=>({...o,referent:chosen[o.key]}))};
 }
-async function composeAtDepth(input,authority,records,loadTemplate,allowDraft,depth,allowCognitive=false,contextualMassModifiers=false){
+async function composeAtDepth(input,authority,records,loadTemplate,allowDraft,depth,allowCognitive=false,contextualMassModifiers=false,desiredDelivery){
  if(depth>8)throw new Error('Desired propositions exceed the supported nesting depth.');
  records=await validateFoundations(records,{allowDraft});const parsed=parseFoundationSentence(input,{allowCognitive});
  if(!parsed)throw new Error('Unsupported foundation sentence.');
+ if(desiredDelivery!==undefined&&(parsed.type!=='desire'||!desiredDelivery||typeof desiredDelivery!=='object'||Array.isArray(desiredDelivery)||Object.keys(desiredDelivery).some(k=>!['destination','viewpoint'].includes(k))||desiredDelivery.destination!=='custody_delivery'||(desiredDelivery.viewpoint!==undefined&&!['bounded','ongoing','habitual'].includes(desiredDelivery.viewpoint))))throw new Error('Desired delivery requires an explicit custody-delivery interpretation and valid viewpoint.');
  if(contextualMassModifiers&&(parsed.type!=='preference'||parsed.propositionalAlternatives||![parsed.target,parsed.standard].some(t=>/^[Tt]he (heavy|light) [a-z]+$/.test(t))))throw new Error('Contextual mass selection requires modified entity preference alternatives.');
  const definition=records.find(r=>r.sound_code===(parsed.type==='desire'?0:parsed.type==='knowledge'?2:1));
  if(!definition)throw new Error('Missing reviewed foundation definition.');
@@ -136,7 +137,8 @@ async function composeAtDepth(input,authority,records,loadTemplate,allowDraft,de
   }
   const innerFoundation=parseFoundationSentence(content,{allowCognitive}),inner=innerFoundation||parseNamedSentence(content);
   if(!inner||inner.speechAct==='question'||inner.speechAct==='command')throw new Error('Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else.');
-  const composed=innerFoundation?await composeAtDepth(content,authority,records,loadTemplate,allowDraft,depth+1,allowCognitive):await composeNamedSentence(content,await loadTemplate(inner.predicate),infinitive&&/^swim(?: |$)/.test(infinitive[4])?{viewpoint:'bounded'}:undefined);
+  if(desiredDelivery&&(innerFoundation||!inner.requiredDestination))throw new Error('Desired delivery choices require a direct carrying-to proposition.');
+  const composed=innerFoundation?await composeAtDepth(content,authority,records,loadTemplate,allowDraft,depth+1,allowCognitive):await composeNamedSentence(content,await loadTemplate(inner.predicate),desiredDelivery||(infinitive&&/^swim(?: |$)/.test(infinitive[4])?{viewpoint:'bounded'}:undefined));
   const source=composed.semantic_ir;
   if(source.discourse_constraints?.declared_referents)ir.discourse_constraints.declared_referents=[...source.discourse_constraints.declared_referents];
   for(const n of source.nodes){const copy=structuredClone(n);copy.node_id='desired:'+n.node_id;if(copy.compound_bindings)copy.compound_bindings=copy.compound_bindings.map(b=>({...b,argument_id:'desired:'+b.argument_id}));if(n.node_id===source.root_clause)Object.assign(copy,{clause_type:'content',content_status:'intensional',value_type:parsed.type==='knowledge'?'question':'proposition',...(parsed.type==='knowledge'?{question_kind:'polar'}:{})});ir.nodes.push(copy);}

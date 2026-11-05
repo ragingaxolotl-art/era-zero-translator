@@ -1,12 +1,149 @@
 {
   "status": "PASS",
-  "scope": "Four authored clean synthetic WAVs. Decoder receives neither original text nor clarification, semantic document or expected notes. No physical recordings or channel perturbations.",
+  "scope": "Five authored clean synthetic WAVs. Decoder receives neither original text nor clarification, semantic document or expected notes. No physical recordings or channel perturbations.",
   "physical_recordings": 0,
   "cases": [
     {
+      "phrase": "Does Nora not want this tea? [2]",
+      "desiredProposition": "Eli did not carry this tea to Nora. [0]",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-object-desire-9n0TD2/desire-0.wav",
+      "meaning": {
+        "profile": "EZFOUND-SEMANTIC-INVERSE-1",
+        "speech_act": "question",
+        "meaning": {
+          "predicate": {
+            "kind": "foundation",
+            "foundation_id": "FND:f66b7a3877f4b0140a0b7023",
+            "definition_version": "1.0.0",
+            "registry_status": "candidate"
+          },
+          "runtime_state": 2,
+          "scopes": [
+            {
+              "operator": "negation"
+            }
+          ],
+          "arguments": {
+            "content": {
+              "type": "proposition",
+              "content_status": "intensional",
+              "proposition": {
+                "predicate": {
+                  "kind": "conventional_compound",
+                  "name": "completed_carrying_custody_delivery",
+                  "convention_codes": [
+                    10,
+                    6,
+                    5,
+                    4,
+                    3,
+                    9,
+                    7,
+                    8,
+                    7
+                  ]
+                },
+                "runtime_state": 0,
+                "scopes": [
+                  {
+                    "operator": "time",
+                    "relation": "before_speech"
+                  },
+                  {
+                    "operator": "negation"
+                  },
+                  {
+                    "operator": "aspect",
+                    "aspect": "bounded"
+                  }
+                ],
+                "arguments": {
+                  "carrier": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "name",
+                      "phonemes": [
+                        "EH",
+                        "L",
+                        "IH"
+                      ],
+                      "instance_code": null
+                    }
+                  },
+                  "object": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "proximal_nominal",
+                      "phonemes": [
+                        "T",
+                        "IY"
+                      ],
+                      "instance_code": null
+                    }
+                  },
+                  "recipient": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "name",
+                      "phonemes": [
+                        "N",
+                        "AO",
+                        "R",
+                        "AE"
+                      ],
+                      "instance_code": null
+                    }
+                  }
+                },
+                "meaning": {
+                  "same_object": true,
+                  "carrier_is_transfer_source": true,
+                  "destination_referent_is_recipient": true,
+                  "arrival_culminates_in_transfer": true,
+                  "same_delivery_event": true,
+                  "source_custody_before_transfer": true,
+                  "source_custody_at_culmination": false,
+                  "recipient_custody_before_transfer": false,
+                  "recipient_custody_at_culmination": true,
+                  "ownership_asserted": false,
+                  "willingness_asserted": false,
+                  "persistence_after_culmination_asserted": false
+                }
+              }
+            },
+            "experiencer": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "N",
+                  "AO",
+                  "R",
+                  "AE"
+                ],
+                "instance_code": null
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Candidate vocabulary requires explicit opt-in.",
+          "This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.",
+          "Reference sounds do not determine original spelling or external identity.",
+          "Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.",
+          "Reads strict MIDI, not recorded audio."
+        ]
+      },
+      "checksum": "verified"
+    },
+    {
       "phrase": "Nora wants tea. [0]",
       "desiredProposition": "Eli has physical custody of the tea.",
-      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-object-desire-XicyT7/desire-0.wav",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-object-desire-9n0TD2/desire-1.wav",
       "meaning": {
         "profile": "EZFOUND-SEMANTIC-INVERSE-1",
         "speech_act": "assertion",
@@ -100,7 +237,7 @@
     {
       "phrase": "Does Nora not want the tea? [2]",
       "desiredProposition": "Eli does not have physical custody of the tea.",
-      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-object-desire-XicyT7/desire-1.wav",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-object-desire-9n0TD2/desire-2.wav",
       "meaning": {
         "profile": "EZFOUND-SEMANTIC-INVERSE-1",
         "speech_act": "question",
@@ -202,7 +339,7 @@
     {
       "phrase": "Does Nora want this tea? [2]",
       "desiredProposition": "Eli is carrying this tea [0].",
-      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-object-desire-XicyT7/desire-2.wav",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-object-desire-9n0TD2/desire-3.wav",
       "meaning": {
         "profile": "EZFOUND-SEMANTIC-INVERSE-1",
         "speech_act": "question",
@@ -302,7 +439,7 @@
     {
       "phrase": "Nora does not want the tea. [0]",
       "desiredProposition": "Eli acquired physical custody of the tea [2].",
-      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-object-desire-XicyT7/desire-3.wav",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-object-desire-9n0TD2/desire-4.wav",
       "meaning": {
         "profile": "EZFOUND-SEMANTIC-INVERSE-1",
         "speech_act": "assertion",

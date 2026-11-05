@@ -15,16 +15,18 @@ const probes=[
  ['ownership','Nora owns the tea.'],
  ['availability','The tea is available.'],
  ['delivery','Eli delivers the tea to Nora.'],
+ ['explicit_carrying_delivery','Eli carried the tea to Nora.'],
  ['making','Eli makes the tea.']
 ],results=[];
 for(const [id,desiredProposition] of probes){
  let phase='composition';
  try{
+  const desiredDelivery=id==='explicit_carrying_delivery'?{destination:'custody_delivery'}:undefined;
   const choices=id==='drinking'?{interpretation:'literal_drinking',viewpoint:'bounded',materialReading:'contextual_portion'}:null;
-  const d=choices?await composeObjectDesiredDrinking('Nora wants tea.',authority,{allowDraft:true,desiredProposition,...choices}):await composeObjectDesire('Nora wants tea.',authority,records,load,{allowDraft:true,desiredProposition});phase='musical_inverse';
+  const d=choices?await composeObjectDesiredDrinking('Nora wants tea.',authority,{allowDraft:true,desiredProposition,...choices}):await composeObjectDesire('Nora wants tea.',authority,records,load,{allowDraft:true,desiredProposition,desiredDelivery});phase='musical_inverse';
   const bytes=choices?await midiFromDesiredDrinking(d.meaning,authority,{allowDraft:true}):midiFromFormal(d.formal);
   const recovered=await decodeSupportedMeaningWithDrafts(bytes,authority.atoms,records,{allowDraft:true});
-  results.push({id,desiredProposition,status:'inverse_available_needs_case_specific_semantic_review',...(choices?{explicit_choices:choices}:{}),recovered});
+  results.push({id,desiredProposition,status:'inverse_available_needs_case_specific_semantic_review',...(choices?{explicit_choices:choices}:desiredDelivery?{explicit_choices:{desiredDelivery}}:{}),recovered});
  }catch(error){results.push({id,desiredProposition,status:'unsupported',phase:error.cause?'musical_inverse':phase,diagnostic:error.message});}
 }
 const report={scope:'Authored outcome coverage probes, not semantic acceptance or held-out evaluation. The outcome is explicitly selected, never inferred from wants tea.',completion_proven:false,results};

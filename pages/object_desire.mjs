@@ -13,16 +13,16 @@ export function objectDesirePlan(input){
  if((!nominal&&!bare&&!name)||nominal?.quantifier)return null;
  return {parsed,object,reference_mode:nominal?.mode||(name?'name':'unspecified_nominal'),head:nominal?.head||(object.startsWith('"')?object.slice(1,-1):object),required:'explicit_desired_proposition',automatic_relation:null};
 }
-export async function composeObjectDesire(input,authority,records,loadTemplate,{allowDraft=false,desiredProposition}={}){
+export async function composeObjectDesire(input,authority,records,loadTemplate,{allowDraft=false,desiredProposition,desiredDelivery}={}){
  if(!allowDraft)throw new Error('Object desire requires draft opt-in.');
  const {plan,content,resolved}=resolveObjectDesireInput(input,desiredProposition);
- const result=await composeFoundationSentence(resolved,authority,records,loadTemplate,{allowDraft:true});
+ const result=await composeFoundationSentence(resolved,authority,records,loadTemplate,{allowDraft:true,desiredDelivery});
  const expected=(await encodeName(plan.head)).normalized_label;
  const mentions=result.semantic_ir.nodes.filter(n=>n.node_id.startsWith('desired:')&&n.kind==='phonemic_reference'&&n.name?.normalized_label===expected&&(plan.reference_mode==='unspecified_nominal'?Boolean(n.reference_mode):(n.reference_mode||'name')===plan.reference_mode));
  if(!mentions.length)throw new Error('The desired proposition must explicitly identify the original object; unrelated outcomes cannot silently replace it.');
  try{await decodeSupportedMeaningWithDrafts(midiFromFormal(result.formal),authority.atoms,records,{allowDraft:true});}
  catch(cause){throw new Error('The selected outcome can be encoded but its complete musical meaning cannot yet be recovered. This translation remains unfinished.',{cause});}
- return {...result,source_input:input,resolved_input:resolved,object_desire_resolution:{object:plan.object,desired_proposition:content,relation_source:'explicit_user_clarification',matching_content_references:mentions.map(n=>n.node_id)}};
+ return {...result,source_input:input,resolved_input:resolved,object_desire_resolution:{object:plan.object,desired_proposition:content,relation_source:'explicit_user_clarification',...(desiredDelivery?{desired_delivery:structuredClone(desiredDelivery)}:{}),matching_content_references:mentions.map(n=>n.node_id)}};
 }
 
 export function resolveObjectDesireInput(input,desiredProposition){
