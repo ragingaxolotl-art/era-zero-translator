@@ -8,8 +8,9 @@ const exact=(value,keys)=>value&&typeof value==='object'&&!Array.isArray(value)&
 const text=value=>typeof value==='string'&&value.trim()===value&&value.length>0&&value.length<=4000;
 export const emptyLocalCompounds=()=>({profile:PROFILE,entries:[]});
 function checkDefinition(d,known){
- if(!exact(d,['label','definition','part_of_speech','components','roles']))fail('invalid definition fields');
+ if(!exact(d,['label','definition','part_of_speech','components','roles',...(Object.hasOwn(d||{},'english_forms')?['english_forms']:[])]))fail('invalid definition fields');
  if(!text(d.label)||!text(d.definition)||!['noun','verb','adjective','adverb'].includes(d.part_of_speech))fail('provide a label, definition and part of speech');
+ if(d.english_forms!==undefined&&(d.part_of_speech!=='verb'||!exact(d.english_forms,['third_person','past'])||!Object.values(d.english_forms).every(v=>text(v)&&/^[a-z]+(?: [a-z]+)*$/.test(v))))fail('provide lowercase third-person and past verb forms');
  if(!Array.isArray(d.components)||d.components.length<2||d.components.length>64)fail('use 2–64 ordered components');
  if(d.components.filter(c=>c?.relation==='head').length!==1)fail('choose exactly one semantic head');
  for(const c of d.components){

@@ -5,6 +5,7 @@
 <h2>Your ordered parts</h2><p>The head is the main meaning; the other parts qualify it.</p><ol id="parts"></ol>
 <label>Word or phrase<input id="label" maxlength="200"></label><label>Intended meaning<textarea id="definition" rows="3"></textarea></label>
 <label>Word type<select id="partOfSpeech"><option value="verb">Verb / action</option><option value="adjective">Adjective / quality</option><option value="noun">Noun / concept</option><option value="adverb">Adverb / manner</option></select></label>
+<fieldset><legend>Verb spellings (optional)</legend><p>For verbs, provide both forms to use ordinary present and past sentences. Leave both blank for do/does/did constructions.</p><label>Third-person form, as in “Nora repairs”<input id="thirdPerson"></label><label>Past form, as in “Nora repaired”<input id="pastForm"></label></fieldset>
 <fieldset><legend>Participants in this meaning</legend><p>Describe who or what takes each role. Roles inside a reused compound remain separate until explicitly connected.</p><div id="roles"></div><button id="addRole" type="button">Add a participant role</button></fieldset>
 <button id="save" disabled>Save compound</button><h2>Saved compounds</h2><button id="export" disabled>Export saved definitions</button><label>Restore a definitions file<input id="import" type="file" accept="application/json,.json"></label><p>Restore is available when this browser has no saved compounds, so it cannot replace your work.</p><div id="library"></div>
 <script type="module" src="./compound-builder.mjs"></script></main></body></html>

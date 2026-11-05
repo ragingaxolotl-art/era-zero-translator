@@ -14,3 +14,12 @@ assert.equal(await localVerbPlan('Nora do glowmend this tea.',registry,a),null);
 assert.equal(await localVerbPlan('Nora did glowmend this tea yesterday.',registry,a),null);
 const contracted=await composeLocalVerb("Didn't Nora glowmend this tea?",registry,a,options);assert.equal(contracted.meaning.scopes.length,2);
 console.log(`PASS ${count} saved verb auxiliary sentences, explicit role mapping, contraction and unsupported-tail rejection.`);
+const inflected=await addLocalCompound(emptyLocalCompounds(),{...d,english_forms:{third_person:'glowmends',past:'glowmended'}},a);
+for(const [sentence,equivalent] of [['Nora glowmends this tea.','Nora does glowmend this tea.'],['Nora glowmended this tea.','Nora did glowmend this tea.'],['I glowmend this tea.','I do glowmend this tea.']]){
+ const direct=await composeLocalVerb(sentence,inflected,a,options),auxiliary=await composeLocalVerb(equivalent,inflected,a,options);assert.deepEqual(direct.meaning,auxiliary.meaning);assert.deepEqual(direct.midi,auxiliary.midi);
+}
+assert.equal(await localVerbPlan('Nora glowmend this tea.',inflected,a),null);
+const irregular=await addLocalCompound(emptyLocalCompounds(),{...d,label:'take',english_forms:{third_person:'takes',past:'took'}},a);assert.deepEqual((await composeLocalVerb('Nora took this tea.',irregular,a,options)).meaning.scopes,[{operator:'time',relation:'before_speech'}]);
+const ambiguous=await addLocalCompound(emptyLocalCompounds(),{...d,label:'put',english_forms:{third_person:'puts',past:'put'}},a);assert.equal(await localVerbPlan('I put this tea.',ambiguous,a),null);
+await assert.rejects(addLocalCompound(emptyLocalCompounds(),{...d,english_forms:{third_person:'glowmends',past:''}},a));
+console.log('PASS explicit regular/irregular verb forms match auxiliary meanings/music; agreement, incomplete forms and ambiguous tense reject.');

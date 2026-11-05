@@ -30,20 +30,25 @@ export async function localVerbPlan(input,registry,authority){
  let text=input.trim(),runtimeState=1;const tag=text.match(/\s*\[([012])\]([.!?]?)$/);
  if(tag){runtimeState=Number(tag[1]);text=text.slice(0,tag.index).trim();const end=text.match(/[.!?]$/)?.[0];if(end&&tag[2]&&end!==tag[2])return null;if(!end)text+=tag[2];}
  text=expandNegativeContractions(text,`(${REF})`);const question=text.endsWith('?');text=text.replace(/[.!?]$/,'');
- const m=question?text.match(new RegExp(`^(Do|Does|Did) (${REF}) (not )?(.+)$`)):text.match(new RegExp(`^(${REF}) (do|does|did) (not )?(.+)$`));if(!m)return null;
- const subject=question?m[2]:m[1],aux=(question?m[1]:m[2]).toLowerCase(),past=aux==='did';
- if(!past&&aux!==(['I','you'].includes(subject)?'do':'does'))return null;
+ const m=question?text.match(new RegExp(`^(Do|Does|Did) (${REF}) (not )?(.+)$`)):text.match(new RegExp(`^(${REF}) (do|does|did) (not )?(.+)$`));
+ const direct=!question&&!m?text.match(new RegExp(`^(${REF}) (.+)$`)):null;if(!m&&!direct)return null;
+ const subject=m?(question?m[2]:m[1]):direct[1],aux=m?(question?m[1]:m[2]).toLowerCase():null;
+ if(m&&aux!=='did'&&aux!==(['I','you'].includes(subject)?'do':'does'))return null;
  const matches=[];
  for(const entry of checked.entries.filter(e=>e.definition.part_of_speech==='verb')){
-  const label=entry.definition.label,tail=m[4];
-  if(tail.toLowerCase()===label.toLowerCase())matches.push({entry,object:null});
-  else if(tail.toLowerCase().startsWith(label.toLowerCase()+' ')){
-   const object=tail.slice(label.length+1);if(new RegExp(`^${REF}$`).test(object))matches.push({entry,object});
+  const forms=m?[{label:entry.definition.label,past:aux==='did'}]:[
+   ...(['I','you'].includes(subject)?[{label:entry.definition.label,past:false}]:entry.definition.english_forms?[{label:entry.definition.english_forms.third_person,past:false}]:[]),
+   ...(entry.definition.english_forms?[{label:entry.definition.english_forms.past,past:true}]:[])];
+  for(const {label,past} of forms){const tail=m?m[4]:direct[2];
+   if(tail.toLowerCase()===label.toLowerCase())matches.push({entry,object:null,past});
+   else if(tail.toLowerCase().startsWith(label.toLowerCase()+' ')){
+    const object=tail.slice(label.length+1);if(new RegExp(`^${REF}$`).test(object))matches.push({entry,object,past});
+   }
   }
  }
- // Do not choose silently between a multiword verb and a verb plus object.
- if(matches.length!==1)return null;const {entry,object}=matches[0];
- return {compound_id:entry.compound_id,subject,object,available_roles:entry.definition.roles,runtime_state:runtimeState,speech_act:question?'question':'assertion',scopes:[...(past?[{operator:'time',relation:'before_speech'}]:[]),...(m[3]?[{operator:'negation'}]:[])]};
+ // Includes tense ambiguity (e.g. put/put): require clarification, never guess.
+ if(matches.length!==1)return null;const {entry,object,past}=matches[0];
+ return {compound_id:entry.compound_id,subject,object,available_roles:entry.definition.roles,runtime_state:runtimeState,speech_act:question?'question':'assertion',scopes:[...(past?[{operator:'time',relation:'before_speech'}]:[]),...(m?.[3]?[{operator:'negation'}]:[])]};
 }
 export async function composeLocalVerb(input,registry,authority,{subjectRole,objectRole,bindings=[],anchor=60}={}){
  const plan=await localVerbPlan(input,registry,authority);if(!plan)throw new Error('No supported saved verb construction matches this sentence.');
@@ -53,5 +58,5 @@ export async function composeLocalVerb(input,registry,authority,{subjectRole,obj
  const supplied=[{path:[],role:subjectRole,reference:await contextualContentReference(plan.subject)}];
  if(plan.object)supplied.push({path:[],role:objectRole,reference:await contextualContentReference(plan.object)});
  const result=await composeLocalCompoundSentence(plan.compound_id,registry,authority,[...supplied,...bindings],{runtimeState:plan.runtime_state,speechAct:plan.speech_act,scopes:plan.scopes,anchor});
- return {...result,source_input:input,construction:'local_verb_auxiliary_predication',role_interpretation:{subject:subjectRole,...(plan.object?{object:objectRole}:{})}};
+ return {...result,source_input:input,construction:'local_verb_predication',role_interpretation:{subject:subjectRole,...(plan.object?{object:objectRole}:{})}};
 }

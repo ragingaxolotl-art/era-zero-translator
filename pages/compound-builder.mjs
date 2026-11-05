@@ -29,6 +29,7 @@ $('addRole').addEventListener('click',()=>{const row=node('div'),select=node('se
 $('save').addEventListener('click',async()=>{
  if(busy||!registry)return;busy=true;$('save').disabled=true;
  try{const definition={label:$('label').value.trim(),definition:$('definition').value.trim(),part_of_speech:$('partOfSpeech').value,components:parts.map(p=>({target_id:p.id,relation:p.relation})),roles:[...$('roles').children].map(r=>({role:r.querySelector('select').value,definition:r.querySelector('input').value.trim()}))};
+ if($('thirdPerson').value.trim()||$('pastForm').value.trim())definition.english_forms={third_person:$('thirdPerson').value.trim(),past:$('pastForm').value.trim()};
  const next=await addLocalCompound(registry,definition,authority);registry=await saveLocalCompounds(localStorage,next,authority);renderLibrary();status(`Saved “${definition.label}”. You can reuse it as a part. Sentence integration is still under development.`);
  }catch(e){status(e.message);}finally{busy=false;$('save').disabled=false;}
 });

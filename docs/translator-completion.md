@@ -2025,3 +2025,14 @@ roles explicitly. Tests cover a past negative question at runtime 0, exact
 participant/role export, required selections and stale-output rejection. The
 same adjective handler tests remain green. Inflection and live-browser validation
 are still open; this route does not claim unrestricted English coverage.
+
+### Explicit saved verb inflections
+
+The builder accepts optional third-person and past spellings as part of a saved
+verb definition; both are required together and included in its identity. Existing
+definitions remain valid unchanged. English composition now recognizes these forms
+and first/second-person base forms. Tests compare complete meanings and MIDI with
+auxiliary equivalents, cover irregular spelling, and reject wrong agreement,
+incomplete form records and ambiguous tense (such as “I put”). Ambiguity still
+needs a dedicated clarification UI. Builder syntax, registry and English-control
+regressions pass; live-browser validation remains unavailable.
