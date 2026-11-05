@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+import {drinkingPlan,composeDrinkingSentence} from '../pages/drinking_sentences.mjs';
+import {midiFromDrinking,decodeDrinkingMidi} from '../pages/drinking_music.mjs';
+const app=fs.readFileSync(new URL('../pages/app.js',import.meta.url),'utf8'),handler=app.slice(app.indexOf('function showDrinkingPreview('),app.indexOf('function showPainPreferencePreview('));
+const element=()=>({children:[],classList:{add(){},remove(){}},append(...n){this.children.push(...n)},addEventListener(t,f){this[t]=f},scrollIntoView(){}}),els=Object.fromEntries(['sourceInput','output','phraseCoverage','resolutionPanel','results','candidateList','decisionSummary'].map(id=>[id,element()]));
+const authority=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url)));let downloads=[],errors=[];
+const ctx=vm.createContext({state:{mode:'general',data:authority,wordSelections:new Map()},$:id=>els[id],document:{createElement:element},drinkingPlan,composeDrinkingSentence,midiFromDrinking,Blob,download:(blob)=>downloads.push(blob),showError:e=>errors.push(e)});vm.runInContext(handler,ctx);
+const input='Does Nora not drink tea? [2]';els.sourceInput.value=input;ctx.showDrinkingPreview(input);
+const card=els.candidateList.children.at(-1),reading=card.children[1].children[0],view=card.children[2].children[0],button=card.children.at(-1);
+assert(button.disabled);reading.value='kind';reading.change();assert(button.disabled);view.value='habitual';view.change();await button.click();assert.equal(errors.length,0);
+const [play,music,save]=card.children.slice(-3);music.click();save.click();const d=JSON.parse(await downloads[1].text()),r=decodeDrinkingMidi(new Uint8Array(await downloads[0].arrayBuffer()),authority.atoms,{allowDraft:true});assert.equal(r.viewpoint,'habitual');assert.equal(r.material.reading,'kind');assert.equal(r.runtime_state,2);assert.deepEqual(r.scopes,[{operator:'negation'}]);assert.equal(r.speech_act,'question');assert.equal(d.viewpoint,r.viewpoint);
+reading.value='contextual_portion';reading.change();save.click();assert.equal(downloads.length,2);await button.click();assert(errors.length);
+console.log('PASS drinking preview requires material/viewpoint choices, exports full meaning/music and invalidates stale exports.');

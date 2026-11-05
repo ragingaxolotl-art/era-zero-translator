@@ -132,3 +132,16 @@ adapter, so the class marker cannot silently become a portion.
 The earlier three clean synthetic WAV checks remain separate evidence. Interface,
 desired-drinking integration, broader reference/quantity coverage and physical
 speaker/microphone testing remain unfinished. No canonical vocabulary is admitted.
+
+## Drinking preview checkpoint
+
+General analysis now routes supported drinking wording to a draft preview. It
+requires a material reading and, for simple present, a viewpoint. Explicit
+progressive/past/habitual wording constrains the available viewpoint. The user
+selects literal drinking through the labeled preview action. Music playback,
+MIDI download and complete meaning JSON reuse existing output mechanisms.
+
+The actual handler test passes missing-choice gating, real negated-question
+composition, decoded export checks and stale export invalidation. An incompatible
+portion reading for a bare noun rejects. Live browser/playback recording, neutral
+pronoun binding for this new profile, and desired-drinking integration remain open.
