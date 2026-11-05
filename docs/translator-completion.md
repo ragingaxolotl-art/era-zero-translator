@@ -2147,3 +2147,14 @@ reviewed again, preventing stale positional links after reordering. A handler te
 selects outer bearer → inner actor, saves it and successfully composes an English
 adjective sentence to music with one supplied participant. Syntax checks pass;
 live-browser validation and fuller end-to-end authoring tests remain open.
+
+### Role-connection consistency checks
+
+Participant grouping now checks canonical distinct-argument constraints after
+applying all same-argument and explicit author connections. Contradictory links
+are rejected during compound creation, import and saving before storage mutation.
+Tests construct a custody definition connecting its required-distinct participants
+to one bearer, including a correctly rehashed forged library; creation/import/save
+reject and existing stored data is preserved. Valid nested links, builder controls
+and merge regressions remain green. This enforces existing semantic constraints,
+not arbitrary natural-language definition truth.

@@ -55,16 +55,16 @@ export async function validateLocalCompounds(registry,authority){
 export async function addLocalCompound(registry,definition,authority){
  const result=await validateLocalCompounds(registry,authority),digest=await canonicalDigest(definition);
  result.entries.push({compound_id:`LOCALCMP:${digest}`,content_digest:digest,definition:structuredClone(definition)});
- return validateLocalCompounds(result,authority);
+ return checkLocalConnections(await validateLocalCompounds(result,authority),authority);
 }
 export async function saveLocalCompounds(storage,registry,authority){
- const checked=await validateLocalCompounds(registry,authority);
+ const checked=await checkLocalConnections(await validateLocalCompounds(registry,authority),authority);
  storage.setItem('era-zero-local-compounds-v1',JSON.stringify(checked));return checked;
 }
 export async function loadLocalCompounds(storage,authority){
  const value=storage.getItem('era-zero-local-compounds-v1');return validateLocalCompounds(value===null?emptyLocalCompounds():JSON.parse(value),authority);
 }
-export async function importLocalCompounds(json,authority){return validateLocalCompounds(JSON.parse(json),authority);}
+export async function importLocalCompounds(json,authority){return checkLocalConnections(await validateLocalCompounds(JSON.parse(json),authority),authority);}
 
 // Merge only validated, self-contained libraries. Existing identities and order
 // remain unchanged; incoming dependencies retain their topological order.
@@ -77,4 +77,11 @@ export async function mergeLocalCompounds(existing,incoming,authority){
   result.entries.push(entry);ids.add(entry.compound_id);labels.set(entry.definition.label.toLocaleLowerCase('en'),entry.compound_id);
  }
  return validateLocalCompounds(result,authority);
+}
+
+async function checkLocalConnections(registry,authority){
+ const {expandLocalCompound}=await import('./local_compound_expansion.mjs');
+ const {localParticipantGroups}=await import('./local_participant_groups.mjs');
+ for(const entry of registry.entries)if(entry.definition.role_links?.length)localParticipantGroups(await expandLocalCompound(entry.compound_id,registry,authority),authority);
+ return registry;
 }

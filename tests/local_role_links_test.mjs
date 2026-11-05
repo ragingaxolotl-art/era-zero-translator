@@ -12,3 +12,11 @@ for(const link of [{...d.role_links[0],component_path:[3]},{...d.role_links[0],o
 const nested=await addLocalCompound(registry,{...d,label:'nestedstride',components:[{target_id:registry.entries[0].compound_id,relation:'head'},d.components[1]],role_links:[{outer_role:'bearer',component_path:[0],role:'bearer'}]},a),composed=await composeLocalAdjective('Eli is nestedstride.',nested,a);
 assert.equal(composed.meaning.bindings.length,3);assert(composed.meaning.bindings.every(b=>b.reference.name.normalized_label==='eli'));assert.notEqual(nested.entries[0].compound_id,nested.entries[1].compound_id);
 console.log('PASS explicit outer-to-canonical and nested-local role links propagate participants; conflicts and invalid links reject.');
+const custody=a.compounds.find(c=>c.display_title==='practical physical custody'),custodyPlan=a.compound_plans[custody.compound_id];
+const incompatible={...d,label:'impossible custody',components:[{target_id:custody.compound_id,relation:'head'},d.components[1]],role_links:custodyPlan.expanded.nodes.filter(n=>n.kind==='slot').map(n=>({outer_role:'bearer',component_path:[0],slot_path:n.path,role:custodyPlan.expanded.edges.find(e=>e.type==='fills_role'&&JSON.stringify(e.from_path)===JSON.stringify(n.path)).role}))};
+await assert.rejects(addLocalCompound(emptyLocalCompounds(),incompatible,a),/requires to be distinct/);
+console.log('PASS contradictory author role connections reject before a new compound is returned.');
+const {canonicalDigest}=await import('../pages/engine.mjs');const {saveLocalCompounds,importLocalCompounds}=await import('../pages/local_compounds.mjs');
+const digest=await canonicalDigest(incompatible),forged={profile:'EZLOCAL-COMPOUNDS-1',entries:[{compound_id:`LOCALCMP:${digest}`,content_digest:digest,definition:incompatible}]};
+let stored=JSON.stringify(registry);const storage={setItem:(_,value)=>stored=value};await assert.rejects(saveLocalCompounds(storage,forged,a),/requires to be distinct/);assert.deepEqual(JSON.parse(stored),registry);await assert.rejects(importLocalCompounds(JSON.stringify(forged),a),/requires to be distinct/);
+console.log('PASS rehashed contradictory definitions cannot be imported or overwrite saved data.');

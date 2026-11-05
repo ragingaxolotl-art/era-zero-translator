@@ -1,4 +1,4 @@
-// Only canonical same-argument constraints authorize automatic grouping.
+// Canonical same-argument constraints and explicit author links authorize grouping.
 // Equal role names in separate local occurrences remain independent.
 export function localParticipantGroups(expansion,authority){
  const rows=expansion.role_requirements,key=r=>JSON.stringify([r.path,r.slot_path??null,r.role]),parents=new Map(rows.map(r=>[key(r),key(r)]));
@@ -15,5 +15,13 @@ export function localParticipantGroups(expansion,authority){
   }
   for(const child of node.components||[])walk(child);
  }walk(expansion.tree);
+ function checkDistinct(node){
+  if(node.kind==='canonical_compound')for(const constraint of authority.compound_plans[node.target_id].expanded.binding_constraints||[]){
+   if(constraint.relation!=='distinct_arguments')continue;
+   const representatives=constraint.slot_paths.map(slot=>{const row=rows.find(r=>JSON.stringify(r.path)===JSON.stringify(node.path)&&JSON.stringify(r.slot_path)===JSON.stringify(slot));if(!row)throw new Error('Unknown canonical distinct-participant constraint.');return find(key(row));});
+   if(new Set(representatives).size!==representatives.length)throw new Error('Role connections merge participants that this approved compound requires to be distinct.');
+  }
+  for(const child of node.components||[])checkDistinct(child);
+ }checkDistinct(expansion.tree);
  const groups=new Map();for(const r of rows){const k=find(key(r));if(!groups.has(k))groups.set(k,[]);groups.get(k).push(r);}return [...groups.values()];
 }
