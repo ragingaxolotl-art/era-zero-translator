@@ -1,3 +1,5 @@
+import {composePainPreference} from '../pages/pain_preference.mjs';
+import {midiFromPainPreference,decodePainPreferenceMidi} from '../pages/pain_preference_music.mjs';
 import {composeCuriosity} from '../pages/curiosity.mjs';
 import {midiFromCuriosity,decodeCuriosityMidi} from '../pages/curiosity_music.mjs';
 // Reconcile the original requirements against execution, without approving vocabulary.
@@ -15,6 +17,21 @@ const results=[];const sounds=new Map();
 for(const requirement of requirements.cases){
  const row={id:requirement.id,input:requirement.input,required:requirement.required,must_not_infer:requirement.must_not_infer};
  let result;
+ if(requirement.id==='both_unpleasant'){
+  const choices={experiencer:'Eli',interpretation:'expected_outcome',context:'this session',comparisonTarget:'other_alternative'};
+  await assert.rejects(composePainPreference(requirement.input,{allowDraft:true}));
+  const document=await composePainPreference(requirement.input,{allowDraft:true,...choices}),bytes=await midiFromPainPreference(document,authority,{allowDraft:true}),recovered=decodePainPreferenceMidi(bytes,authority.atoms,{allowDraft:true});
+  const foundation=records.find(r=>r.sound_code===1);
+  assert.equal(recovered.foundation_id,foundation.foundation_id);assert.match(foundation.definition,/does not entail.*pleasantness.*objective superiority/);
+  assert.deepEqual(recovered.holder.phonemes,(await encodeName('Nora')).phonemes);
+  assert.equal(recovered.more_painful_role,'comparison_standard');assert.equal(recovered.restriction_scope,'reference_descriptions_not_preference_polarity');
+  assert.deepEqual(recovered.pain_comparison.left.stimulus,recovered.comparison_standard);assert.deepEqual(recovered.pain_comparison.right.stimulus,recovered.target);
+  assert.notEqual(recovered.target.instance_code,recovered.comparison_standard.instance_code);
+  assert.deepEqual(recovered.pain_comparison.left.outcome.experiencer.phonemes,(await encodeName('Eli')).phonemes);
+  assert.equal(recovered.pain_comparison.left.relation,'expected_outcome');assert.equal(recovered.pain_comparison.relation,'greater_than');
+  assert.equal(recovered.speech_act,'assertion');assert.equal(recovered.runtime_state,1);assert.deepEqual(recovered.scopes,[]);
+  results.push({...row,status:'candidate_semantic_checks_pass_with_explicit_context',choices,recovered,limits:'Original sentence requires clarification of pain experiencer, reading, context and comparison target. Draft meaning and strict MIDI checked here; separate synthetic WAV evidence exists. No canonical admission, held-out coverage or physical recording proof.'});continue;
+ }
  if(requirement.id==='curiosity_not_attention'){
   const document=await composeCuriosity(requirement.input,{allowDraft:true}),bytes=await midiFromCuriosity(document,authority,records,{allowDraft:true}),recovered=await decodeCuriosityMidi(bytes,authority.atoms,records,{allowDraft:true});
   assert.equal(recovered.predicate,'epistemic_curiosity');
@@ -62,6 +79,6 @@ assert.equal(sounds.get('kind_not_cup'),baseline);
 const counts=Object.fromEntries([...new Set(results.map(r=>r.status))].map(s=>[s,results.filter(r=>r.status===s).length]));
 const report={scope:'Original authored acceptance requirements, executed against candidate preview. Not held-out validation or vocabulary approval.',completion_proven:false,counts,results};
 fs.writeFileSync(new URL('reports/foundation_requirements_audit.json',root),JSON.stringify(report,null,2)+'\n');
-const lines=['# Original desire/preference requirements audit','',report.scope,'','Full translator completion: **not established**.','','| Requirement | Input | Current evidence |','|---|---|---|',...results.map(r=>`| ${r.id} | ${r.input.replaceAll('|','\\|')} | ${r.status} |`),'','Passing cases recover holder, ordered alternatives, kind/entity typing, speech act, scope and runtime from MIDI. Changed direction, holder, negation, time, question and runtime have distinct performances. Curiosity now recovers epistemic interest and unresolved topic inquiry without asserting information acquisition or current attention. Missing cases remain missing, including object desire, temporariness, modified noun phrases and preference combined with choice.',''];
+const lines=['# Original desire/preference requirements audit','',report.scope,'','Full translator completion: **not established**.','','| Requirement | Input | Current evidence |','|---|---|---|',...results.map(r=>`| ${r.id} | ${r.input.replaceAll('|','\\|')} | ${r.status} |`),'','Passing cases recover holder, ordered alternatives, kind/entity typing, speech act, scope and runtime from MIDI. Changed direction, holder, negation, time, question and runtime have distinct performances. Curiosity now recovers epistemic interest and unresolved topic inquiry without asserting information acquisition or current attention. The painful-treatment preference passes only with explicit contextual choices; this is not automatic interpretation of the underspecified sentence. Missing cases include object desire, temporariness, other modified noun phrases and preference combined with choice.',''];
 fs.writeFileSync(new URL('reports/foundation_requirements_audit.md',root),lines.join('\n'));
 console.log(JSON.stringify(counts));

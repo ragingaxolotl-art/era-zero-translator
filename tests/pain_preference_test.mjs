@@ -11,3 +11,14 @@ assert.equal(ids.size,18);
 const original='Nora prefers the painful treatment to the more painful treatment.';
 await assert.rejects(composePainPreference(original,{...options,comparisonTarget:undefined}),/Confirm/);await assert.rejects(composePainPreference(original,{...options,experiencer:undefined}),/experiencer/);
 console.log('PASS 18 modified pain-preference meaning contrasts, original sentence with explicit missing-context choices, and rehashed argument-binding rejection. No music claim.');
+// A fully rehashed document must not collapse the two descriptive alternatives.
+const valid=await composePainPreference(original,options),collapsed=structuredClone(valid);
+collapsed.comparison_standard=structuredClone(collapsed.target);
+collapsed.pain_comparison.left.stimulus=structuredClone(collapsed.target);
+for(const [object,prefix] of [[collapsed.pain_comparison.left,'EZPAINSTIM'],[collapsed.pain_comparison,'EZPAINCMP'],[collapsed,'EZPAINPREF']]){
+ const {content_id,content_digest,...body}=object,hash=await canonicalDigest(body);object.content_digest=hash;object.content_id=`${prefix}:${hash.slice(0,24)}`;
+}
+await assert.rejects(validatePainPreference(collapsed,{allowDraft:true}),/distinct reference/);
+const {execFileSync}=await import('node:child_process');
+assert.equal(execFileSync('ruby',['-Itools/lib','-rera_zero_pain_preference','-rjson','-e',"begin;EraZeroPainPreference.validate!(JSON.parse(STDIN.read),allow_draft:true);puts 'accepted';rescue ArgumentError;puts 'rejected';end"],{input:JSON.stringify(collapsed),encoding:'utf8'}).trim(),'rejected');
+console.log('PASS both validators reject fully rehashed collapsed treatment identities.');

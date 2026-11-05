@@ -415,3 +415,22 @@ The existing comparison preview test still passes. This is a simulated DOM test,
 not a live browser or physical playback recording. This preview currently accepts
 explicit reference names/deictics; automatic pronoun antecedent resolution and
 other comparison targets remain outside this draft profile.
+
+### Original acceptance reconciliation and identity validation
+
+The executable original-requirements audit now exercises `both_unpleasant` with
+explicit pain experiencer, reading, context and comparison-target choices, and
+verifies that missing choices reject. It checks relative preference against the
+pinned foundation, ordered treatment identity, separate experiencer and scoped
+comparison after MIDI recovery. The status is deliberately separate:
+`candidate_semantic_checks_pass_with_explicit_context`. Across the original 20
+cases, 9 pass existing candidate checks, 1 passes with these explicit choices,
+and 10 remain uncomposed. This updates stale `not_composed` evidence without
+claiming automatic interpretation, canonical vocabulary approval or full completion.
+
+A validator inconsistency discovered during reconciliation is fixed in both
+JavaScript and Ruby: two preference alternatives cannot collapse to the same
+reference identity. A fully rehashed malformed document (including its nested
+stimulus and comparison) is rejected by both validators; otherwise encoding could
+succeed while inverse binding was ambiguous. Existing 18 musical parity cases
+remain passing. Local instance identity does not establish real-world inequality.

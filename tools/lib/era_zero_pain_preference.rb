@@ -12,6 +12,7 @@ module EraZeroPainPreference
       hash=EraZeroContextualContent.digest(ref)
       EraZeroContextualContent.validate!(ref.merge('content_digest'=>hash,'content_id'=>"EZCTX:#{hash[0,24]}"),allow_draft:true)
     end
+    raise ArgumentError,'Ambiguous alternative identities' if d['target']==d['comparison_standard']
     c=d['pain_comparison'];EraZeroPainComparison.validate!(c,allow_draft:true)
     more=d['more_painful_role'];less=more=='target' ? 'comparison_standard' : 'target'
     raise ArgumentError,'Invalid restriction binding' unless c['relation']=='greater_than' && c['speech_act']=='assertion' && c['scopes']==[] && c['left']['stimulus']==d[more] && c['right']['stimulus']==d[less]

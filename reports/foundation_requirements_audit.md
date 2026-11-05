@@ -8,7 +8,7 @@ Full translator completion: **not established**.
 |---|---|---|
 | relative_not_absolute | Nora prefers tea to coffee. | candidate_semantic_checks_pass |
 | reversed | Nora prefers coffee to tea. | candidate_semantic_checks_pass |
-| both_unpleasant | Nora prefers the painful treatment to the more painful treatment. | not_composed |
+| both_unpleasant | Nora prefers the painful treatment to the more painful treatment. | candidate_semantic_checks_pass_with_explicit_context |
 | unattended | Nora still prefers tea while thinking about the gate. | not_composed |
 | fleeting | For this instant Nora prefers tea to coffee. | not_composed |
 | without_choice | Nora prefers tea but chooses coffee. | not_composed |
@@ -27,4 +27,4 @@ Full translator completion: **not established**.
 | runtime_independence | Nora prefers tea to coffee [2]. | candidate_semantic_checks_pass |
 | kind_not_cup | Nora prefers tea to coffee. | candidate_semantic_checks_pass |
 
-Passing cases recover holder, ordered alternatives, kind/entity typing, speech act, scope and runtime from MIDI. Changed direction, holder, negation, time, question and runtime have distinct performances. Curiosity now recovers epistemic interest and unresolved topic inquiry without asserting information acquisition or current attention. Missing cases remain missing, including object desire, temporariness, modified noun phrases and preference combined with choice.
+Passing cases recover holder, ordered alternatives, kind/entity typing, speech act, scope and runtime from MIDI. Changed direction, holder, negation, time, question and runtime have distinct performances. Curiosity now recovers epistemic interest and unresolved topic inquiry without asserting information acquisition or current attention. The painful-treatment preference passes only with explicit contextual choices; this is not automatic interpretation of the underspecified sentence. Missing cases include object desire, temporariness, other modified noun phrases and preference combined with choice.

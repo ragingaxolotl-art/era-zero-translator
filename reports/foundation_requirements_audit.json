@@ -3,7 +3,8 @@
   "completion_proven": false,
   "counts": {
     "candidate_semantic_checks_pass": 9,
-    "not_composed": 11
+    "candidate_semantic_checks_pass_with_explicit_context": 1,
+    "not_composed": 10
   },
   "results": [
     {
@@ -176,8 +177,175 @@
         "happiness",
         "objective goodness"
       ],
-      "status": "not_composed",
-      "diagnostic": "This participant needs a supported noun label or explicit referent."
+      "status": "candidate_semantic_checks_pass_with_explicit_context",
+      "choices": {
+        "experiencer": "Eli",
+        "interpretation": "expected_outcome",
+        "context": "this session",
+        "comparisonTarget": "other_alternative"
+      },
+      "recovered": {
+        "profile": "EZPAIN-PREFERENCE-INVERSE-1",
+        "status": "draft",
+        "foundation_id": "FND:018dd25d713dff83661a76a4",
+        "holder": {
+          "kind": "phonemic",
+          "reference_mode": "name",
+          "phonemes": [
+            "N",
+            "AO",
+            "R",
+            "AE"
+          ],
+          "instance_code": null
+        },
+        "target": {
+          "kind": "phonemic",
+          "reference_mode": "definite_nominal",
+          "phonemes": [
+            "T",
+            "R",
+            "IY",
+            "T",
+            "M",
+            "EH",
+            "N",
+            "T"
+          ],
+          "instance_code": "6db2d529"
+        },
+        "comparison_standard": {
+          "kind": "phonemic",
+          "reference_mode": "definite_nominal",
+          "phonemes": [
+            "T",
+            "R",
+            "IY",
+            "T",
+            "M",
+            "EH",
+            "N",
+            "T"
+          ],
+          "instance_code": "0fec3ec5"
+        },
+        "pain_comparison": {
+          "profile": "EZPAIN-COMPARISON-INVERSE-1",
+          "status": "draft",
+          "dimension": "felt_bodily_pain_intensity",
+          "basis": "same_experiencer_and_selected_context",
+          "scale": "ordinal_no_numeric_score",
+          "operand_scope": "governed_by_comparison_and_matrix_scope",
+          "relation": "greater_than",
+          "left": {
+            "relation": "expected_outcome",
+            "criterion": "In the selected local context, occurrence or application of the stimulus is expected to produce the specified pain experience; neither occurrence nor pain is asserted as actual.",
+            "stimulus": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "T",
+                "R",
+                "IY",
+                "T",
+                "M",
+                "EH",
+                "N",
+                "T"
+              ],
+              "instance_code": "0fec3ec5"
+            },
+            "outcome": {
+              "predicate": "felt_bodily_pain",
+              "dependency": "CMP:6c9e3042a361ccae6ecf5980",
+              "dependency_version": "1.0.0",
+              "quality": "bodily_pain_experience",
+              "injury_commitment": "not_entailed",
+              "cause_commitment": "unspecified",
+              "intensity_commitment": "unspecified",
+              "stimulus_commitment": "unspecified",
+              "experiencer": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "EH",
+                  "L",
+                  "IH"
+                ],
+                "instance_code": null
+              },
+              "runtime_state": 1
+            },
+            "runtime_state": 1,
+            "outcome_scope": "governed_by_relation_and_matrix_scope"
+          },
+          "right": {
+            "relation": "expected_outcome",
+            "criterion": "In the selected local context, occurrence or application of the stimulus is expected to produce the specified pain experience; neither occurrence nor pain is asserted as actual.",
+            "stimulus": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "T",
+                "R",
+                "IY",
+                "T",
+                "M",
+                "EH",
+                "N",
+                "T"
+              ],
+              "instance_code": "6db2d529"
+            },
+            "outcome": {
+              "predicate": "felt_bodily_pain",
+              "dependency": "CMP:6c9e3042a361ccae6ecf5980",
+              "dependency_version": "1.0.0",
+              "quality": "bodily_pain_experience",
+              "injury_commitment": "not_entailed",
+              "cause_commitment": "unspecified",
+              "intensity_commitment": "unspecified",
+              "stimulus_commitment": "unspecified",
+              "experiencer": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "EH",
+                  "L",
+                  "IH"
+                ],
+                "instance_code": null
+              },
+              "runtime_state": 1
+            },
+            "runtime_state": 1,
+            "outcome_scope": "governed_by_relation_and_matrix_scope"
+          },
+          "context": {
+            "kind": "phonemic",
+            "reference_mode": "proximal_nominal",
+            "phonemes": [
+              "S",
+              "EH",
+              "S",
+              "S",
+              "IH",
+              "AA",
+              "N"
+            ],
+            "instance_code": null
+          },
+          "speech_act": "assertion",
+          "scopes": [],
+          "runtime_state": 1
+        },
+        "more_painful_role": "comparison_standard",
+        "restriction_scope": "reference_descriptions_not_preference_polarity",
+        "speech_act": "assertion",
+        "scopes": [],
+        "runtime_state": 1
+      },
+      "limits": "Original sentence requires clarification of pain experiencer, reading, context and comparison target. Draft meaning and strict MIDI checked here; separate synthetic WAV evidence exists. No canonical admission, held-out coverage or physical recording proof."
     },
     {
       "id": "unattended",
