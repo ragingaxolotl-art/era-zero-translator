@@ -113,3 +113,15 @@ pronoun binding or expected score is supplied. The recovered reference, scope,
 speech act, runtime and non-entailment of injury match the intended document.
 See `reports/pain_acoustic_probe.json`. This does not establish physical recording
 robustness, broad acoustic coverage or independent Ruby agreement.
+
+
+## Independent renderer checkpoint
+
+`tools/lib/era_zero_pain.rb` independently validates the draft contract and builds
+its reference, felt-convention, root, runtime and scope events. Twenty-eight
+performances match JavaScript MIDI exactly, including I/you, demonstrative noun
+references and a quoted multiword name. The parity check caught an unintended
+Ruby default pause between the conscious-self qualifier and felt head; the
+Ruby renderer now explicitly preserves the established zero-gap dependency.
+Default draft rejection and four rehashed semantic corruptions are checked.
+This closes the bounded Ruby agreement item, not broad pain/treatment coverage.
