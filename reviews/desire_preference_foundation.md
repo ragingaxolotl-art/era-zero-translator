@@ -118,3 +118,23 @@ Meanwhile, reference, clause-scope and content-type work can proceed independent
 There is no need to stop the translator goal while these lexical foundations are
 being designed. The requirement corpus must later run through the actual parser,
 formal validation and independent musical decoder; its existence is not a pass.
+
+## Object-desire clarification implementation checkpoint (November 5, 2026)
+
+`pages/object_desire.mjs` recognizes object-directed desire and requires an explicit
+desired proposition. It does not select drinking, ownership, consumption, or a
+custodian. The composed clarification preserves the outer holder, negation,
+question, time and runtime, and requires the original object label to occur in a
+content reference. An unrelated desired outcome rejects. The selected proposition
+is retained as explicit user clarification; generic object desire remains unresolved
+without it. This mechanism does not yet resolve pronouns or modified objects, and
+has not been connected to the interface or original acceptance pass count.
+
+An end-to-end probe exposed an existing asymmetry: custody could be encoded inside
+desire but not decoded. The foundation inverse now reuses the strict custody tree
+reader, preserving its no-ownership commitments inside intensional content. Nine
+clarified desire MIDI cases recover assertion/negation/question and runtime 0/1/2.
+The standalone custody inverse checks and 39 existing foundation English/Ruby
+parity cases plus 3 embedded compound formal checks remain passing. No new root,
+compound meaning or musical address was introduced. Blind WAV and interface
+validation for this clarification path remain unfinished.

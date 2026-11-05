@@ -1,3 +1,4 @@
+import {readPhysicalCustodyTree} from './custody_decoder.mjs';
 import {validAcquisitionScopes} from './acquisition_scopes.mjs';
 import {readSwimmingTree} from './swimming_decoder.mjs';
 import {readFeltConditionTree} from './felt_decoder.mjs';
@@ -15,7 +16,7 @@ export async function decodeFoundationSentenceMidi(bytes,atoms,records,{allowDra
  const registers={bearer:'middle',actor:'low',target:'high',experiencer:'middle',comparison_standard:'middle',content:'middle'};
  function proposition(children,depth=0,parent=null){
   if(depth>32)fail();const scopes=[];
-  while(children.length===1&&children[0].kind==='grammar'&&!/^convention_(13|15|16|17|19|21)_open$/.test(children[0].marker||'')){
+  while(children.length===1&&children[0].kind==='grammar'&&!/^convention_(7|13|15|16|17|19|21)_open$/.test(children[0].marker||'')){
    const n=children[0],m=n.marker;let scope;
    if(m==='negation_open')scope={operator:'negation'};
    else if(/^aspect_(bounded|ongoing|habitual)_open$/.test(m))scope={operator:'aspect',aspect:m.slice(7,-5)};
@@ -33,6 +34,10 @@ export async function decodeFoundationSentenceMidi(bytes,atoms,records,{allowDra
     return reader.role(frame,'experiencer','middle');
    });
    return {predicate:{kind:'conventional_compound',name:felt.predicate,convention_codes:felt.convention_codes},runtime_state:felt.runtime_state,scopes,arguments:{experiencer:{type:'entity',reference:felt.participants.experiencer}},meaning:felt.meaning};
+  }
+  if(children.length===1&&children[0].marker==='convention_7_open'){
+   const custody=readPhysicalCustodyTree(children[0],reader);
+   return {predicate:{kind:'conventional_compound',name:custody.predicate,convention_codes:custody.convention_codes},runtime_state:custody.runtime_state,scopes,arguments:{holder:{type:'entity',reference:custody.participants.holder},object:{type:'entity',reference:custody.participants.object}},meaning:custody.meaning};
   }
   if(children.length===1&&children[0].marker==='convention_21_open'){
    const swimming=readSwimmingTree(children[0],reader,frame=>{

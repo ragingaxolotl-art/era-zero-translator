@@ -5,7 +5,12 @@ import {strictSemanticReader} from './strict_semantic_reader.mjs';
 export function decodePhysicalCustodyMidi(bytes,atoms){
  const message='Unsupported or malformed physical-custody music.';
  const fail=()=>{throw new Error(message);};
- const {observed,marker,exactRoot,role,unwrapScopes}=strictSemanticReader(bytes,atoms,message);
+ return readCustodyReader(strictSemanticReader(bytes,atoms,message));
+}
+export function readPhysicalCustodyTree(frame,reader){return readCustodyReader({...reader,observed:{speech_act:'assertion'},unwrapScopes:()=>({current:[frame],scopes:[]})});}
+function readCustodyReader(reader){
+ const fail=()=>{throw new Error('Malformed physical custody structure.');};
+ const {observed,marker,exactRoot,role,unwrapScopes}=reader;
  const {current,scopes}=unwrapScopes(node=>marker(node,'convention_7_open'));
  if(current.length!==1||!marker(current[0],'convention_7_open'))fail();
  const children=current[0].children;if(children?.length!==3)fail();
