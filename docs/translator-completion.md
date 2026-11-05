@@ -2104,3 +2104,13 @@ storage is updated. Tests cover nested imports, repeat-import idempotence,
 conflicts and malformed dependency order without input mutation. This supersedes
 the earlier empty-library-only restore restriction. Syntax checks pass; actual
 browser file-picker/storage interactions remain unverified.
+
+### Canonically shared participant inputs
+
+The builder now groups internal participant slots only where an existing canonical
+same-argument constraint requires them to share one reference. A single input fans
+out to the validated internal bindings. Equal role names in different occurrences
+remain separate. Tests cover two uses of destination-directed running: six slots
+become four inputs, without merging their actors/destinations across occurrences.
+Builder handler regressions pass. User-authored outer-to-inner role mappings and
+grouped prompts in the main English preview remain unfinished.

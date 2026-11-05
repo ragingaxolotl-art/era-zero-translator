@@ -1,3 +1,4 @@
+import {localParticipantGroups} from './local_participant_groups.mjs';
 import {composeLocalCompoundSentence} from './local_compound_sentence.mjs';
 import {expandLocalCompound} from './local_compound_expansion.mjs';
 import {contextualContentReference} from './contextual_content.mjs';
@@ -5,8 +6,9 @@ import {localCompoundMusic} from './local_compound_music.mjs';
 export async function mountLocalCompoundControls(container,id,registry,authority,{document=globalThis.document,download,player,onError=()=>{}}={}){
  const make=(tag,text)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e;};
  const expansion=await expandLocalCompound(id,registry,authority),fields=[];
- for(const requirement of expansion.role_requirements){
-  const label=make('label',`${requirement.path.length?'Part '+requirement.path.map(n=>n+1).join('.'):'Whole compound'} · ${requirement.role.replaceAll('_',' ')}${requirement.definition?' — '+requirement.definition:''}`),field=make('input');field.placeholder='For example: Nora, this tea, or "named object"';label.append(field);container.append(label);fields.push({requirement,field});
+ for(const requirements of localParticipantGroups(expansion,authority)){
+  const requirement=requirements[0];
+  const label=make('label',`${requirement.path.length?'Part '+requirement.path.map(n=>n+1).join('.'):'Whole compound'} · ${requirement.role.replaceAll('_',' ')}${requirement.definition?' — '+requirement.definition:''}`),field=make('input');field.placeholder='For example: Nora, this tea, or "named object"';label.append(field);container.append(label);fields.push({requirements,field});
  }
  const runtimeLabel=make('label','Runtime state'),runtime=make('select');for(const value of [0,1,2]){const option=make('option',String(value));option.value=String(value);runtime.append(option);}runtime.value='1';runtimeLabel.append(runtime);container.append(runtimeLabel);
  const sentenceControls=[];
@@ -26,7 +28,7 @@ export async function mountLocalCompoundControls(container,id,registry,authority
   const current=()=>container.isConnected!==false&&revision===version&&runtime.value===state&&sentenceControls.every((c,i)=>c.value===choices[i])&&fields.every(({field},i)=>field.value.trim()===values[i]);
   generate.disabled=true;player?.stop();output.replaceChildren();
   try{
-   const bindings=await Promise.all(fields.map(async({requirement},i)=>({path:requirement.path,...(requirement.slot_path?{slot_path:requirement.slot_path}:{}),role:requirement.role,reference:await contextualContentReference(values[i])})));
+   const bindings=await Promise.all(fields.flatMap(({requirements},i)=>requirements.map(async requirement=>({path:requirement.path,...(requirement.slot_path?{slot_path:requirement.slot_path}:{}),role:requirement.role,reference:await contextualContentReference(values[i])}))));
    let result;
    if(form&&choices[0]!=='word'){
     const neg={operator:'negation'},possible={operator:'modality',mode:'possible'},scopes=[...(choices[1]?[{operator:'time',relation:choices[1]}]:[]),...({positive:[],negative:[neg],possible:[possible],possible_not:[possible,neg],not_possible:[neg,possible]}[choices[2]])];
