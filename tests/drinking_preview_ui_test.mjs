@@ -1,3 +1,5 @@
+import {desiredDrinkingPlan,composeDesiredDrinking} from '../pages/desired_drinking.mjs';
+import {midiFromDesiredDrinking,decodeDesiredDrinkingMidi} from '../pages/desired_drinking_music.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
@@ -6,7 +8,7 @@ import {midiFromDrinking,decodeDrinkingMidi} from '../pages/drinking_music.mjs';
 const app=fs.readFileSync(new URL('../pages/app.js',import.meta.url),'utf8'),handler=app.slice(app.indexOf('function showDrinkingPreview('),app.indexOf('function showPainPreferencePreview('));
 const element=()=>({children:[],classList:{add(){},remove(){}},append(...n){this.children.push(...n)},addEventListener(t,f){this[t]=f},scrollIntoView(){}}),els=Object.fromEntries(['sourceInput','output','phraseCoverage','resolutionPanel','results','candidateList','decisionSummary'].map(id=>[id,element()]));
 const authority=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url)));let downloads=[],errors=[];
-const ctx=vm.createContext({state:{mode:'general',data:authority,wordSelections:new Map()},$:id=>els[id],document:{createElement:element},drinkingPlan,drinkingPronounPlan,composeDrinkingSentence,midiFromDrinking,Blob,download:(blob)=>downloads.push(blob),showError:e=>errors.push(e)});vm.runInContext(handler,ctx);
+const ctx=vm.createContext({desiredDrinkingPlan,composeDesiredDrinking,midiFromDesiredDrinking,state:{mode:'general',data:authority,wordSelections:new Map()},$:id=>els[id],document:{createElement:element},drinkingPlan,drinkingPronounPlan,composeDrinkingSentence,midiFromDrinking,Blob,download:(blob)=>downloads.push(blob),showError:e=>errors.push(e)});vm.runInContext(handler,ctx);
 const input='Does Nora not drink tea? [2]';els.sourceInput.value=input;ctx.showDrinkingPreview(input);
 const card=els.candidateList.children.at(-1),reading=card.children[1].children[0],view=card.children[2].children[0],button=card.children.at(-1);
 assert(button.disabled);reading.value='kind';reading.change();assert(button.disabled);view.value='habitual';view.change();await button.click();assert.equal(errors.length,0);
@@ -18,3 +20,10 @@ els.sourceInput.value='They are drinking it.';ctx.showDrinkingPreview(els.source
 const pc=els.candidateList.children.at(-1),pr=pc.children[1].children[0],person=pc.children[3].children[0],number=pc.children[3].children[1],material=pc.children[4].children[0],pb=pc.children.at(-1);
 pr.value='contextual_portion';pr.change();person.value='Nora';material.value='this tea';errors=[];await pb.click();assert.match(errors.at(-1).message,/one individual or a group/);errors=[];number.value='singular';number.change();await pb.click();assert.equal(errors.length,0);pc.children.at(-1).click();const pd=JSON.parse(await downloads.at(-1).text());assert.equal(pd.drinker.name.normalized_label,'nora');assert.equal(pd.material.reference.reference_mode,'proximal_nominal');
 console.log('PASS drinking preview resolves singular they and material pronoun without gender information.');
+
+const desiredInput='Does Nora not want Eli to not drink this tea [0]? [2]';els.sourceInput.value=desiredInput;ctx.showDrinkingPreview(desiredInput,{desired:true});
+const dc=els.candidateList.children.at(-1),dr=dc.children[1].children[0],dv=dc.children[2].children[0],db=dc.children.at(-1);assert(db.disabled);dr.value='contextual_portion';dr.change();dv.value='ongoing';dv.change();errors=[];await db.click();assert.equal(errors.length,0);
+dc.children.at(-2).click();dc.children.at(-1).click();const dd=JSON.parse(await downloads.at(-1).text()),di=decodeDesiredDrinkingMidi(new Uint8Array(await downloads.at(-2).arrayBuffer()),authority.atoms,{allowDraft:true});assert.equal(di.content_status,'intensional');assert.equal(di.runtime_state,2);assert.equal(di.content.runtime_state,0);assert.deepEqual(di.scopes,[{operator:'negation'}]);assert.deepEqual(di.content.scopes,[{operator:'negation'}]);assert.equal(dd.holder.name.normalized_label,'nora');assert.equal(dd.content.drinker.name.normalized_label,'eli');
+const before=downloads.length;dv.value='bounded';dv.change();dc.children.at(-1).click();assert.equal(downloads.length,before);
+let finish,entered;const reached=new Promise(resolve=>entered=resolve);ctx.midiFromDesiredDrinking=()=>new Promise(resolve=>{finish=resolve;entered();});const pending=db.click();await reached;dv.value='habitual';dv.change();finish(new Uint8Array());await pending;assert.equal(db.hidden,false);
+console.log('PASS desired-drinking preview retains distinct participants and nested scope/runtime in exports and rejects stale async choices.');

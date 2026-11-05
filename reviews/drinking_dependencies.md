@@ -222,3 +222,19 @@ All 18 standalone drinking comparisons remain passing after event extraction.
 These checks complement the two clean synthetic WAV recoveries. They do not close
 UI, object-desire clarification integration, broad discourse or physical recording
 requirements. Existing approved root and compound definitions remain unchanged.
+
+## Desired-drinking preview integration
+
+General analysis routes supported desired-drinking sentences before generic
+foundation preview. The existing drinking preview now selects the combined
+composer/renderer for desire, preserving its complete document and MIDI export.
+The description explicitly distinguishes desired content from actual drinking and
+explains holder versus drinker. Material and unresolved viewpoint choices remain
+required; exports use a distinct desired-drinking filename.
+
+Actual handler tests recover a negated question with a different drinker, nested
+negation and outer/inner runtime 2/0 from exported MIDI, and check complete meaning
+JSON. Changed choices invalidate old downloads and pending async results. Existing
+standalone and neutral drinking preview checks remain passing. Live browser/audio
+recording, desired-drinking pronoun binding and “wants tea” clarification integration
+remain unfinished; this does not close broad translator coverage.
