@@ -26,7 +26,7 @@ export function painStimulusPlan(input){
  }
  return null;
 }
-export function painStimulusPronounPlan(input){return personalPronounPlan(input,painStimulusPlan,{includeNeutral:true});}
+export function painStimulusPronounPlan(input){let interpretation_plan;const p=personalPronounPlan(input,probe=>(interpretation_plan=painStimulusPlan(probe)),{includeNeutral:true});return p?{...p,interpretation_plan}:null;}
 export async function composePainStimulusSentence(input,{allowDraft=false,bindings}={}){
  if(!allowDraft)throw new Error('Pain stimulus requires draft opt-in.');
  const pronouns=painStimulusPronounPlan(input);

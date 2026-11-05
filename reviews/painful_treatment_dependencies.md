@@ -219,3 +219,16 @@ scope and runtime are rejected. The extracted pain event method retains all
 28 standalone Ruby parity cases. This closes the bounded relation Ruby agreement
 item; UI integration, broader scope evidence, intensity comparison and physical
 recordings remain open.
+
+
+## Stimulus preview checkpoint
+
+The main Analyze route now offers draft playback, MIDI download and complete
+meaning export for the supported explicit pain-stimulus sentences. The preview
+explains the actual/expected/dispositional distinction and keeps separate
+pronoun-occurrence fields. Its handler test decodes a downloaded negated
+expectation question and verifies both participants; a second case separately
+binds it and singular them. Missing number selection and changed input/bindings
+cannot publish stale outputs. Standalone pain preview and stimulus sentence
+regressions still pass. Live browser layout/listening remains unverified;
+playback still uses the note player, not calibrated acoustic WAV transport.
