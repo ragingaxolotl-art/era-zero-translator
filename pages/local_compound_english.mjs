@@ -24,3 +24,34 @@ export async function composeLocalAdjective(input,registry,authority,{bindings=[
  const result=await composeLocalCompoundSentence(plan.compound_id,registry,authority,[bearer,...bindings],{runtimeState:plan.runtime_state,speechAct:plan.speech_act,scopes:plan.scopes,anchor});
  return {...result,source_input:input,construction:'local_adjective_predication'};
 }
+
+export async function localVerbPlan(input,registry,authority){
+ const checked=await validateLocalCompounds(registry,authority);if(typeof input!=='string')return null;
+ let text=input.trim(),runtimeState=1;const tag=text.match(/\s*\[([012])\]([.!?]?)$/);
+ if(tag){runtimeState=Number(tag[1]);text=text.slice(0,tag.index).trim();const end=text.match(/[.!?]$/)?.[0];if(end&&tag[2]&&end!==tag[2])return null;if(!end)text+=tag[2];}
+ text=expandNegativeContractions(text,`(${REF})`);const question=text.endsWith('?');text=text.replace(/[.!?]$/,'');
+ const m=question?text.match(new RegExp(`^(Do|Does|Did) (${REF}) (not )?(.+)$`)):text.match(new RegExp(`^(${REF}) (do|does|did) (not )?(.+)$`));if(!m)return null;
+ const subject=question?m[2]:m[1],aux=(question?m[1]:m[2]).toLowerCase(),past=aux==='did';
+ if(!past&&aux!==(['I','you'].includes(subject)?'do':'does'))return null;
+ const matches=[];
+ for(const entry of checked.entries.filter(e=>e.definition.part_of_speech==='verb')){
+  const label=entry.definition.label,tail=m[4];
+  if(tail.toLowerCase()===label.toLowerCase())matches.push({entry,object:null});
+  else if(tail.toLowerCase().startsWith(label.toLowerCase()+' ')){
+   const object=tail.slice(label.length+1);if(new RegExp(`^${REF}$`).test(object))matches.push({entry,object});
+  }
+ }
+ // Do not choose silently between a multiword verb and a verb plus object.
+ if(matches.length!==1)return null;const {entry,object}=matches[0];
+ return {compound_id:entry.compound_id,subject,object,available_roles:entry.definition.roles,runtime_state:runtimeState,speech_act:question?'question':'assertion',scopes:[...(past?[{operator:'time',relation:'before_speech'}]:[]),...(m[3]?[{operator:'negation'}]:[])]};
+}
+export async function composeLocalVerb(input,registry,authority,{subjectRole,objectRole,bindings=[],anchor=60}={}){
+ const plan=await localVerbPlan(input,registry,authority);if(!plan)throw new Error('No supported saved verb construction matches this sentence.');
+ const roles=plan.available_roles.map(r=>r.role);
+ if(!roles.includes(subjectRole)||plan.object&&!roles.includes(objectRole)||!plan.object&&objectRole!==undefined||plan.object&&subjectRole===objectRole)throw new Error('Choose distinct declared roles for the sentence subject and object.');
+ if(!Array.isArray(bindings)||bindings.some(b=>Array.isArray(b.path)&&!b.path.length&&[subjectRole,objectRole].includes(b.role)))throw new Error('The sentence already supplies that participant.');
+ const supplied=[{path:[],role:subjectRole,reference:await contextualContentReference(plan.subject)}];
+ if(plan.object)supplied.push({path:[],role:objectRole,reference:await contextualContentReference(plan.object)});
+ const result=await composeLocalCompoundSentence(plan.compound_id,registry,authority,[...supplied,...bindings],{runtimeState:plan.runtime_state,speechAct:plan.speech_act,scopes:plan.scopes,anchor});
+ return {...result,source_input:input,construction:'local_verb_auxiliary_predication',role_interpretation:{subject:subjectRole,...(plan.object?{object:objectRole}:{})}};
+}

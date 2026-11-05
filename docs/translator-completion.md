@@ -2005,3 +2005,13 @@ It provides playback, MIDI and full meaning/definition export. Handler evidence
 covers a past negative question at runtime 2 and stale-source download rejection;
 app syntax checks pass. This is not live-browser evidence. Saved verbs and explicit
 nested role mappings remain unfinished.
+
+### Saved verb auxiliary constructions
+
+Saved verbs now compose from do/does/did statements and questions, including
+negative contractions and runtime tags. Exact local labels may take one explicit
+object. Subject/object semantic roles must be selected from the definition; they
+are not guessed as actor/target. Additional compound roles remain explicit.
+Twenty-four scope/runtime/question combinations pass with participant fidelity,
+plus role-choice, agreement and unsupported-tail rejection. Natural unassisted
+inflected forms, verb UI routing and ambiguity clarification remain unfinished.
