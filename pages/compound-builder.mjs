@@ -1,9 +1,10 @@
+import {mountRoleLinkControls} from './local_role_link_controls.mjs';
 import {createLocalCompoundPlayer} from './local_compound_player.mjs';
 import {mountLocalCompoundControls} from './local_compound_controls.mjs';
 import {loadLocalCompounds,saveLocalCompounds,addLocalCompound,importLocalCompounds,mergeLocalCompounds} from './local_compounds.mjs';
 import {ROLE_ORDER} from './roles.mjs';
 const $=id=>document.getElementById(id),node=(tag,text)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e;};
-let authority,registry,parts=[],busy=false;
+let authority,registry,parts=[],busy=false,readRoleLinks=null,roleLinkSnapshot=null;
 const player=createLocalCompoundPlayer();window.addEventListener('pagehide',()=>player.stop());
 const status=text=>$('status').textContent=text;
 const button=(text,action)=>{const b=node('button',text);b.type='button';b.addEventListener('click',action);return b;};
@@ -26,10 +27,12 @@ function renderLibrary(){
 }
 $('search').addEventListener('input',()=>{if(authority)renderSearch();});
 $('addRole').addEventListener('click',()=>{const row=node('div'),select=node('select'),description=node('input');select.setAttribute('aria-label','Participant role');description.setAttribute('aria-label','What this participant does');description.placeholder='What does this participant do?';for(const role of ROLE_ORDER){const option=node('option',role.replaceAll('_',' '));option.value=role;select.append(option);}row.append(select,description,button('Remove role',()=>row.remove()));$('roles').append(row);});
+function readDefinition(){const definition={label:$('label').value.trim(),definition:$('definition').value.trim(),part_of_speech:$('partOfSpeech').value,components:parts.map(p=>({target_id:p.id,relation:p.relation})),roles:[...$('roles').children].map(r=>({role:r.querySelector('select').value,definition:r.querySelector('input').value.trim()}))};
+ if($('thirdPerson').value.trim()||$('pastForm').value.trim())definition.english_forms={third_person:$('thirdPerson').value.trim(),past:$('pastForm').value.trim()};return definition;}
+$('connectRoles').addEventListener('click',async()=>{if(busy||!registry)return;busy=true;try{const definition=readDefinition(),snapshot=JSON.stringify(definition);$('roleLinks').replaceChildren();readRoleLinks=null;roleLinkSnapshot=null;const read=await mountRoleLinkControls($('roleLinks'),definition,registry,authority);if(JSON.stringify(readDefinition())!==snapshot)throw new Error('Definition changed while preparing connections. Review again.');readRoleLinks=read;roleLinkSnapshot=snapshot;status('Choose any participants that should be shared, then save.');}catch(e){status(e.message);}finally{busy=false;}});
 $('save').addEventListener('click',async()=>{
  if(busy||!registry)return;busy=true;$('save').disabled=true;
- try{const definition={label:$('label').value.trim(),definition:$('definition').value.trim(),part_of_speech:$('partOfSpeech').value,components:parts.map(p=>({target_id:p.id,relation:p.relation})),roles:[...$('roles').children].map(r=>({role:r.querySelector('select').value,definition:r.querySelector('input').value.trim()}))};
- if($('thirdPerson').value.trim()||$('pastForm').value.trim())definition.english_forms={third_person:$('thirdPerson').value.trim(),past:$('pastForm').value.trim()};
+ try{const definition=readDefinition();if(readRoleLinks){if(JSON.stringify(definition)!==roleLinkSnapshot)throw new Error('Parts or roles changed. Review participant connections again before saving.');const links=readRoleLinks();if(links.length)definition.role_links=links;}
  const next=await addLocalCompound(registry,definition,authority);registry=await saveLocalCompounds(localStorage,next,authority);renderLibrary();status(`Saved “${definition.label}”. You can reuse it as a part. Sentence integration is still under development.`);
  }catch(e){status(e.message);}finally{busy=false;$('save').disabled=false;}
 });

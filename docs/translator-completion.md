@@ -2136,3 +2136,14 @@ Tests cover outer bearer → canonical actor, chained local bearer connections,
 invalid links and conflicting references, with successful full sentence music.
 All 63 canonical dependency reuse checks and English-control tests still pass.
 The builder has not yet exposed role-connection authoring controls.
+
+### Builder role-connection authoring
+
+The builder now offers a participant-connection review after parts and outer roles
+are defined. Each inner participant defaults to separate; users can explicitly
+connect it to a declared outer role. Selected connections are saved in the compound
+identity. Changing the draft after review blocks saving until connections are
+reviewed again, preventing stale positional links after reordering. A handler test
+selects outer bearer → inner actor, saves it and successfully composes an English
+adjective sentence to music with one supplied participant. Syntax checks pass;
+live-browser validation and fuller end-to-end authoring tests remain open.
