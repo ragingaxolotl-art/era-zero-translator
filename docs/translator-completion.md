@@ -24,26 +24,34 @@ until evidence shows a benefit.
 
 ## Current draft status
 
-Explicit draft bodily-pain sentences now have a validated meaning document,
-24 MIDI scope/runtime contrasts and two blind synthetic WAV recoveries through
-shared dispatch. They reuse the approved felt-self dependency without altering
-its meaning. Independent Ruby agreement now passes 28 performances; the preview UI passes
-playback/export and pronoun-binding handler checks. Stimulus/disposition relations and painful-treatment degree comparison remain open. See
-`reviews/painful_treatment_dependencies.md`. The 200-check consolidated run below
-predates these pain changes; targeted results do not supersede its revision.
+Draft bodily pain, pain-stimulus relations, intensity comparison and the original
+painful-treatment preference now compose and recover meaning from MIDI and clean
+synthetic WAVs. They reuse the existing felt-self dependency and reference sounds.
+The preference preview requires explicit pain experiencer, actual/expected/
+dispositional reading, shared context and comparison target. Independent Ruby
+performances and simulated UI checks pass. See
+`reviews/painful_treatment_dependencies.md`; canonical admission, broad modifier
+coverage, live browser and physical recording evidence remain open.
 
-The pain dependency audit now pins four existing felt-condition compounds and
-records nine explicit root exclusions. `reviews/painful_treatment_dependencies.md`
-orders felt pain, stimulus/experiencer relations, nonactual outcomes and degree
-comparison before painful-treatment preference composition. No new vocabulary
-is admitted by this audit; the original acceptance remains open.
+Object-directed desire now requests an explicit desired outcome rather than
+assuming drinking or ownership. Custody, carrying and custody acquisition can be
+encoded inside intensional desire and recovered from clean synthetic audio, with
+independent scope/runtime and explicit noun-reference identity preserved. The
+preview rejects outcomes lacking a complete inverse. The eight-outcome audit still
+finds composition gaps for drinking, ownership, availability, the tested delivery
+wording and making. See `reports/object_desire_outcome_coverage.json`.
 
-A clean-checkout consolidated run at `a634ebf` passed all 200 checks,
-including the opt-in synthetic-audio suites (2026-11-04 23:55:56 UTC to
-2026-11-05 00:02:53 UTC). See `reports/translator_completion_regression.json`.
-This supersedes the older 187-check run as current regression evidence only;
-ordinary-English completeness, held-out semantic coverage and physical recordings
-remain unproven. Physical recordings tested: **0**.
+The original 20 desire/preference acceptance cases now have 9 candidate semantic
+checks passing, 2 passing with explicit context, and 9 still uncomposed. These are
+authored cases, not held-out coverage or vocabulary approval. See
+`reports/foundation_requirements_audit.json`.
+
+A clean-checkout consolidated run at `e3870a1` passed all **220 checks**, including
+the opt-in synthetic-audio suites (2026-11-05 00:42:34 UTC to 00:50:05 UTC).
+See `reports/translator_completion_regression.json`. This supersedes the earlier
+200-check run as regression evidence only. Ordinary-English completeness,
+held-out semantic coverage and physical recordings remain unproven.
+Physical recordings tested: **0**.
 
 Modified heavy/light preference alternatives now have an explicit API reading
 choice, 18 MIDI/Ruby contrasts, and two blind synthetic WAV question recoveries.
