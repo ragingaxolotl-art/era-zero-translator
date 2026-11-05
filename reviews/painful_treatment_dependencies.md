@@ -318,3 +318,16 @@ scope and relation are rejected. All 27 underlying relation parity cases remain
 intact. This adds independent implementation evidence; it does not prove broad
 semantic adequacy, physical audio reliability or completion of the original
 modified preference. UI integration and that preference remain open.
+
+
+## Comparison preview checkpoint
+
+Analyze now routes supported painful comparisons to a draft preview requiring
+an explicit actual/expected/dispositional reading and shared-context reference.
+It exports complete meaning and MIDI and schedules playback. Handler tests
+verify a negated greater-than question, the recovered context and mode, missing
+choice/context behavior, and invalidation after context or reading edits,
+including edits during asynchronous music generation. The existing stimulus
+preview test still passes. Live browser layout/listening and calibrated WAV
+playback integration remain open. The original modified preference remains a
+separate integration obligation, not completed by this comparative preview.
