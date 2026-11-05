@@ -232,3 +232,25 @@ binds it and singular them. Missing number selection and changed input/bindings
 cannot publish stale outputs. Standalone pain preview and stimulus sentence
 regressions still pass. Live browser layout/listening remains unverified;
 playback still uses the note player, not calibrated acoustic WAV transport.
+
+
+## Intensity comparison semantic prerequisite
+
+`pages/pain_comparison.mjs` now composes two existing pain-stimulus meanings into
+an explicit ordinal greater/less/equal intensity comparison. Both operands must
+use the same actual/expected/dispositional reading and the same experiencer;
+an explicit context reference selects the comparison setting. This does not
+supply a numeric score, duration/integrated burden, cross-person calibration or
+absolute unpleasantness threshold. Runtime is preserved independently on the
+comparison, each relation and each pain outcome.
+
+The operands are positive unscoped content governed by comparison and matrix
+scope, not separately asserted utterances. 108 authored documents cover three
+relation modes, three comparisons, three comparison runtimes, questions and
+negation. Direction reversal changes identity; cross-experiencer scales and
+rehashed runtime-as-intensity corruption reject. A small ordinal counterexample
+records that not-greater permits equality and cannot be replaced with less-than.
+These are representation checks, not a complete semantic model or audio proof.
+English parsing, musical transport, independent inverse/Ruby validation and UI
+remain open for this comparison. The original painful-treatment preference is
+still not claimed complete.
