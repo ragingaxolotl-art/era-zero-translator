@@ -166,3 +166,17 @@ and changing only agreement. Four neutral habitual/contracted contrasts produce
 the same full meaning and MIDI as explicit named wording. Twelve named contracted
 scope/runtime cases, existing 21 neutral-contraction cases and preview checks pass.
 This fixes ordinary wording failures without adding aliases for missing meanings.
+
+## Desired-drinking semantic integration
+
+The new draft `desired_drinking.mjs` composes the pinned existing desire foundation
+with the validated drinking content. Infinitival subject control binds “wants to
+drink” to the desire holder; an explicit different drinker remains separate. Outer
+negation/question/runtime and inner drinking negation are independent, and the
+outcome is intensional, desired rather than asserted. Twelve meaning contrasts
+pass, and rehashed false subject-control bindings reject. Simple infinitival
+activity still requires an explicit viewpoint; no bounded amount is guessed.
+
+This is semantic integration only. Joint musical transport, independent rendering,
+blind audio, object-desire clarification and UI routing remain unfinished. Existing
+standalone drinking music is reusable; canonical definitions have not changed.
