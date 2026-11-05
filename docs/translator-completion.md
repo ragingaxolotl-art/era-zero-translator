@@ -1942,3 +1942,11 @@ nonempty local library. User-entered strings are rendered with textContent.
 Module syntax and registry tests passed; browser interaction/visual validation,
 music controls and sentence integration are still outstanding. The screen clearly
 states that sentence integration is under development.
+
+### Builder music controls
+
+Saved-compound cards now expose participant inputs, runtime 0/1/2 selection and
+MIDI plus meaning/definition downloads. Actual handler tests verify missing-input
+rejection, exported participant/runtime fidelity and stale download invalidation.
+These are DOM-adapter tests, not live-browser or audible playback validation.
+In-page playback, sentence integration and live-browser validation remain open.
