@@ -50,3 +50,24 @@ addresses changed. This is a semantic prerequisite only: it is not yet wired int
 a drinking action, musical transport or the interface. The next work is the
 consumption action contract with explicit participant binding, followed by joint
 meaning/rendering/inverse integration and blind-audio checks.
+
+## Literal action meaning checkpoint
+
+`drinking_meaning.mjs` now provides an explicit draft convention for oral intake
+of liquid as drink. The action identifies the drinker and material independently;
+the material label alone still does not classify every referent bearing that name
+as liquid. The action's classification is inside its scoped content. No thirst,
+ownership, pleasure, benefit, intention or consumption of a whole portion follows.
+This is a declared semantic extension, not a deduction from generic entry or thirst.
+
+Viewpoint is required: ongoing activity does not assert a completed amount;
+bounded drinking presents a whole event with some intake but no total portion;
+habitual drinking does not assert an occurrence at speech time. Thirty-six
+viewpoint × assertion/question × negation × runtime cases pass strict meaning
+validation, alongside participant contrast and rehashed contract rejection. Runtime
+is independent of amount, aspect and negation. The material-reference prerequisite
+is reused without altering its identity or quantity commitments.
+
+The document remains draft. There is no English route, allocated musical frame,
+independent renderer or audio inverse yet. Those must be implemented together with
+participant-binding and contrast tests before drinking can count as translated.
