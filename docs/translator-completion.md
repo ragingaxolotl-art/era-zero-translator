@@ -27,8 +27,8 @@ until evidence shows a benefit.
 Explicit draft bodily-pain sentences now have a validated meaning document,
 24 MIDI scope/runtime contrasts and two blind synthetic WAV recoveries through
 shared dispatch. They reuse the approved felt-self dependency without altering
-its meaning. Independent Ruby agreement now passes 28 performances; UI integration, stimulus/disposition
-relations and painful-treatment degree comparison remain open. See
+its meaning. Independent Ruby agreement now passes 28 performances; the preview UI passes
+playback/export and pronoun-binding handler checks. Stimulus/disposition relations and painful-treatment degree comparison remain open. See
 `reviews/painful_treatment_dependencies.md`. The 200-check consolidated run below
 predates these pain changes; targeted results do not supersede its revision.
 

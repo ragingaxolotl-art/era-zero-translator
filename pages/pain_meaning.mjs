@@ -25,9 +25,10 @@ export async function validatePainMeaning(document,{allowDraft=false}={}){
  const {content_digest,content_id,...body}=d,digest=await canonicalDigest(body);
  if(content_digest!==digest||content_id!==`EZPAIN:${digest.slice(0,24)}`)throw new Error('Pain identity mismatch.');return d;
 }
+export function painPronounPlan(input){let interpretation_plan;const p=personalPronounPlan(input,probe=>(interpretation_plan=painMeaningPlan(probe)),{includeNeutral:true});return p?{...p,interpretation_plan}:null;}
 export async function composePainMeaning(input,{allowDraft=false,bindings}={}){
  if(!allowDraft)throw new Error('Pain meaning requires draft opt-in.');
- const pronouns=personalPronounPlan(input,painMeaningPlan,{includeNeutral:true});
+ const pronouns=painPronounPlan(input);
  if(pronouns)input=resolvePersonalPronouns(input,pronouns,bindings,validReferent).resolved;else if(bindings!==undefined)throw new Error('No unresolved pronouns.');
  const p=painMeaningPlan(input);if(!p)throw new Error('Select an explicit supported bodily-pain meaning.');
  const body={profile:'EZPAIN-MEANING-1',status:'draft',...PAIN_CONTRACT,...p,experiencer:await contextualContentReference(p.experiencer)},digest=await canonicalDigest(body);

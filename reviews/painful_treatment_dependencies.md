@@ -125,3 +125,16 @@ Ruby default pause between the conscious-self qualifier and felt head; the
 Ruby renderer now explicitly preserves the established zero-gap dependency.
 Default draft rejection and four rehashed semantic corruptions are checked.
 This closes the bounded Ruby agreement item, not broad pain/treatment coverage.
+
+
+## Preview integration checkpoint
+
+The main Analyze route now recognizes explicit bodily-pain sentences and opens
+a draft preview. It offers playback, MIDI download and complete meaning export.
+Unresolved pronouns receive explicit reference fields, including number selection
+for singular they. Edited input or bindings invalidate old outputs and pending
+work. `tests/pain_preview_ui_test.mjs` executes the actual handler and verifies
+exported MIDI meaning, scheduled playback and stale-result guards. The existing
+curiosity preview tests still pass. This is not live browser layout/listening
+validation, and the playback button does not yet generate calibrated transport
+WAVs. Generic pain readings and treatment/comparison composition remain open.
