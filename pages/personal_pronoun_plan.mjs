@@ -56,8 +56,8 @@ export function substitutePersonalPronouns(input,occurrences,chosen){
   const contractedAre=input.slice(o.end).match(/^['’]re\b/i);
   if(contractedAre)edits.push({start:o.end,end:o.end+contractedAre[0].length,text:' '+agree('are')});
   const before=input.slice(0,o.start).match(/\b(aren['’]t|weren['’]t|haven['’]t|don['’]t|didn['’]t|can['’]t|couldn['’]t|won['’]t|wouldn['’]t|shouldn['’]t|mustn['’]t|Are|Were|Do|Have|Did|Can|Could|Will|Would|Should|Must|May|Might) $/i);
-  const after=input.slice(o.end).match(/^ (aren['’]t|weren['’]t|haven['’]t|don['’]t|didn['’]t|are|were|have|do|care|run|swim|carry|enter|prefer|know|want|understand|drink)\b/i);
-  const habitual=input.slice(o.end).match(/^ habitually (drink|run|swim|carry|enter)\b/i);
+  const after=input.slice(o.end).match(/^ (aren['’]t|weren['’]t|haven['’]t|don['’]t|didn['’]t|are|were|have|do|care|run|swim|carry|enter|prefer|know|want|understand|drink|deliver)\b/i);
+  const habitual=input.slice(o.end).match(/^ habitually (drink|run|swim|carry|enter|deliver)\b/i);
   if(habitual&&!before)edits.push({start:o.end+12,end:o.end+12+habitual[1].length,text:agree(habitual[1])});
   if(after&&!before)edits.push({start:o.end+1,end:o.end+1+after[1].length,text:agree(after[1])});
   if(before){const normalized=agree(before[1]),negative=normalized.endsWith(' not');edits.push({start:o.start-before[0].length,end:o.start-1,text:negative?normalized.slice(0,-4):normalized});if(negative)edits.find(e=>e.start===o.start&&e.end===o.end).text+=' not';}

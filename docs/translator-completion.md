@@ -41,7 +41,14 @@ only after explicit custody-delivery selection. Twelve wording contrasts cover
 present, past and progressive forms across runtime 0/1/2. The UI test uses
 `delivers`; the blind audio test uses `did not deliver`. Unselected delivery,
 spatial-only interpretation, speech delivery and result delivery are not silently
-coerced. Other delivery senses and broader question forms remain unfinished. The outcome audit retains that failed ordinary wording and separately
+coerced. Other delivery senses, open-ended questions and plural-group references remain
+unfinished. Yes/no delivery questions now reuse the same explicit interpretation,
+including present/past auxiliaries, progressives and negative contractions.
+Eighteen question/runtime contrasts and four explicitly bound singular-they/them
+cases preserve complete meanings and music. A separate blind synthetic WAV
+probe recovers a past, negated, ongoing delivery question with distinct carrier
+and recipient; the decoder receives no text or pronoun bindings. No physical
+recording evidence is claimed. The outcome audit retains that failed ordinary wording and separately
 reports the explicitly selected carrying-delivery form. Physical recordings and
 the full completion gates remain outstanding.
 

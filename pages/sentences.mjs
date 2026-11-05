@@ -112,8 +112,10 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
   // Delivery is polysemous. This path is available only after explicitly
   // selecting the established carrying-arrival plus custody-transfer meaning.
   const deliveryPrefix=String(input).trim().match(new RegExp(`^${participant} (?:(?:does not|do not|did not|is|am|are|was|were) (?:not )?)?(?:habitually )?(delivers|delivered|delivering|deliver)\\b`));
-  if(deliveryPrefix){
-    const verb=deliveryPrefix.at(-1),text=String(input).trim(),start=deliveryPrefix[0].length-verb.length;
+  const deliveryQuestion=speechActs&&String(input).trim().endsWith('?')?String(input).trim().match(new RegExp(`^(?:[Dd]o|[Dd]oes|[Dd]id|[Ii]s|[Aa]m|[Aa]re|[Ww]as|[Ww]ere) ${participant} (?:not )?(?:habitually )?(deliver|delivering)\\b`)):null;
+  const deliveryMatch=deliveryPrefix||deliveryQuestion;
+  if(deliveryMatch){
+    const verb=deliveryMatch.at(-1),text=String(input).trim(),start=deliveryMatch[0].length-verb.length;
     const equivalent=text.slice(0,start)+({deliver:'carry',delivers:'carries',delivered:'carried',delivering:'carrying'})[verb]+text.slice(start+verb.length);
     const inner=parseNamedSentence(equivalent,depth+1,speechActs);
     if(!inner?.requiredDestination)return null;
