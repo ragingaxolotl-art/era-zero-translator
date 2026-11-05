@@ -113,18 +113,19 @@ checks passing, 2 passing with explicit context, and 9 still uncomposed. These a
 authored cases, not held-out coverage or vocabulary approval. See
 `reports/foundation_requirements_audit.json`.
 
-The consolidated run at `16b4b13` completed **235 checks: 234 passed and one
-failed**, including all synthetic-audio suites passing (2026-11-05 01:20:40 UTC
-to 01:28:33 UTC). The failure was a superseded custody-transfer test expecting
-ordinary delivery wording not to parse. That assertion now checks explicit
-interpretation gating and rejection by the custody-transfer-only inverse; its
-full targeted suite passed after correction. No implementation code changed
-following the consolidated run. The full run has not been repeated after the
-test correction. See `reports/translator_completion_regression.json` and
-`reports/custody_transfer_regression_followup.json`; the original failure report
-is retained. Earlier 220-check evidence predates drinking and delivery extensions.
-Ordinary-English completeness, held-out semantic coverage and physical recordings
-remain unproven. Physical recordings tested: **0**.
+The latest consolidated run at `a5a5758` passed **240/240 non-acoustic checks**
+(2026-11-05 02:41:39–02:47:55 UTC), starting from a clean worktree. It includes
+local authoring/storage, canonical dependency reuse, saved-word English routing,
+participant controls, MIDI and numeric-name preservation. See
+`reports/translator_completion_regression.json`. These are implementation checks,
+not a claim of unrestricted English coverage or browser/listening validation.
+Recording-to-meaning testing remains deferred under the approved first-release cuts.
+
+The earlier `16b4b13` run recorded 234/235 checks passing, including synthetic audio;
+its custody-transfer expectation was corrected and subsequently passed. That
+original report is archived as `reports/translator_regression_16b4b13.json`, with
+its targeted correction in `reports/custody_transfer_regression_followup.json`.
+Physical recordings tested remain **0**; none were attempted in the latest run.
 
 Modified heavy/light preference alternatives now have an explicit API reading
 choice, 18 MIDI/Ruby contrasts, and two blind synthetic WAV question recoveries.

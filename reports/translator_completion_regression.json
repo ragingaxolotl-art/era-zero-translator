@@ -1,68 +1,68 @@
 {
-  "tested_revision": "16b4b13eb3351a313e0f5c48c5904a191538b590",
+  "tested_revision": "a5a5758a90717f0b5e64184abf5d039cbcfd5425",
   "run_context": {
-    "started_at": "2026-11-05T01:20:40.813233+00:00",
-    "completed_at": "2026-11-05T01:28:33.193364+00:00",
+    "started_at": "2026-11-05T02:41:39.032609+00:00",
+    "completed_at": "2026-11-05T02:47:55.895995+00:00",
     "initial_worktree_status": "",
-    "include_acoustic": true,
+    "include_acoustic": false,
     "physical_recordings_tested": 0
   },
   "scope": "Implementation regression only. Full ordinary-English coverage and musical semantic completeness are not established.",
-  "passed": false,
+  "passed": true,
   "results": [
     {
       "test": "tests/additive_vocabulary_pins_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 26256\n\n# Running:\n\n.\n\nFinished in 0.206704s, 4.8378 runs/s, 116.1081 assertions/s.\n\n1 runs, 24 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 52801\n\n# Running:\n\n.\n\nFinished in 0.206649s, 4.8391 runs/s, 116.1390 assertions/s.\n\n1 runs, 24 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/packet_evidence_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 13152\n\n# Running:\n\n...\n\nFinished in 0.000341s, 8797.6545 runs/s, 52785.9273 assertions/s.\n\n3 runs, 18 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 16450\n\n# Running:\n\n...\n\nFinished in 0.000307s, 9771.9885 runs/s, 58631.9312 assertions/s.\n\n3 runs, 18 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/min_cross_reference_migration_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 63156\n\n# Running:\n\n.\n\nFinished in 0.690839s, 1.4475 runs/s, 127.3813 assertions/s.\n\n1 runs, 88 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 32283\n\n# Running:\n\n.\n\nFinished in 0.685334s, 1.4591 runs/s, 128.4045 assertions/s.\n\n1 runs, 88 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/mov_process_example_migration_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 25246\n\n# Running:\n\n.\n\nFinished in 1.042760s, 0.9590 runs/s, 170.7008 assertions/s.\n\n1 runs, 178 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 58968\n\n# Running:\n\n.\n\nFinished in 1.029069s, 0.9718 runs/s, 172.9719 assertions/s.\n\n1 runs, 178 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/mat_capacity_example_migration_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 54449\n\n# Running:\n\n.\n\nFinished in 0.947675s, 1.0552 runs/s, 173.0551 assertions/s.\n\n1 runs, 164 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 10346\n\n# Running:\n\n.\n\nFinished in 0.958661s, 1.0431 runs/s, 171.0719 assertions/s.\n\n1 runs, 164 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_dependencies_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 63823\n\n# Running:\n\n......\n\nFinished in 0.018630s, 322.0612 runs/s, 3596.3500 assertions/s.\n\n6 runs, 67 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 28956\n\n# Running:\n\n......\n\nFinished in 0.018965s, 316.3723 runs/s, 3532.8236 assertions/s.\n\n6 runs, 67 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_expansion_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 51413\n\n# Running:\n\n..........\n\nFinished in 0.265390s, 37.6804 runs/s, 708.3914 assertions/s.\n\n10 runs, 188 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 62638\n\n# Running:\n\n..........\n\nFinished in 0.269082s, 37.1634 runs/s, 698.6718 assertions/s.\n\n10 runs, 188 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/compound_convention_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 61027\n\n# Running:\n\n...\n\nFinished in 0.031974s, 93.8262 runs/s, 813.1607 assertions/s.\n\n3 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 4096\n\n# Running:\n\n...\n\nFinished in 0.031603s, 94.9277 runs/s, 822.7067 assertions/s.\n\n3 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/dictionary_musical_identity_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 12206\n\n# Running:\n\n.\n\nFinished in 0.240209s, 4.1630 runs/s, 24.9782 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 10941\n\n# Running:\n\n.\n\nFinished in 0.238290s, 4.1966 runs/s, 25.1794 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/audit_dictionary_musical_identity.rb",
@@ -80,13 +80,13 @@
       "test": "tests/semantic_reference_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 789\n\n# Running:\n\n.......\n\nFinished in 0.241749s, 28.9557 runs/s, 132.3687 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 31866\n\n# Running:\n\n.......\n\nFinished in 0.242143s, 28.9085 runs/s, 132.1533 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/quantity_validation_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 60493\n\n# Running:\n\n...\n\nFinished in 0.408481s, 7.3443 runs/s, 212.9842 assertions/s.\n\n3 runs, 87 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 65343\n\n# Running:\n\n...\n\nFinished in 0.407988s, 7.3532 runs/s, 213.2416 assertions/s.\n\n3 runs, 87 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_semantic_ir_and_grammar.rb",
@@ -98,19 +98,19 @@
       "test": "tests/foundation_process_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 54848\n\n# Running:\n\n...\n\nFinished in 0.451770s, 6.6405 runs/s, 61.9784 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 48326\n\n# Running:\n\n...\n\nFinished in 0.455364s, 6.5881 runs/s, 61.4893 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/repetition_performance_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 22286\n\n# Running:\n\n...\n\nFinished in 0.515758s, 5.8167 runs/s, 15.5112 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 18702\n\n# Running:\n\n...\n\nFinished in 0.515789s, 5.8163 runs/s, 15.5102 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tests/controlled_role_reference_test.rb",
       "passed": true,
       "exit_code": 0,
-      "output": "Run options: --seed 51024\n\n# Running:\n\n...\n\nFinished in 0.462304s, 6.4892 runs/s, 82.1970 assertions/s.\n\n3 runs, 38 assertions, 0 failures, 0 errors, 0 skips\n"
+      "output": "Run options: --seed 53839\n\n# Running:\n\n...\n\nFinished in 0.455585s, 6.5849 runs/s, 83.4092 assertions/s.\n\n3 runs, 38 assertions, 0 failures, 0 errors, 0 skips\n"
     },
     {
       "test": "tools/validate_gate4b_compound_dictionary.rb",
@@ -650,7 +650,7 @@
       "test": "tests/foundation_preview_ui_test.mjs",
       "passed": true,
       "exit_code": 0,
-      "output": "PASS draft preview UI: explicit opt-in, stale input/results rejection, draft label and strict sound mode.\nPASS draft data, sound-plan generation and exported vocabulary provenance.\nPASS modified preference UI selection, full draft export verification and stale reading rejection.\nPASS object desire UI requires outcome, composes real scoped meaning, verifies draft bundle and rejects stale clarification.\nPASS foundation clarification routes explicitly supplied drinking to material/viewpoint selection.\nPASS desired delivery UI requires interpretation/viewpoint, preserves nested music and bundle, resets edited outcome choices and discards stale selection.\n"
+      "output": "PASS draft preview UI: explicit opt-in, stale input/results rejection, draft label and strict sound mode.\nPASS draft data, sound-plan generation and exported vocabulary provenance.\nPASS modified preference UI selection, full draft export verification and stale reading rejection.\nPASS object desire UI requires outcome, composes real scoped meaning, verifies draft bundle and rejects stale clarification.\nPASS foundation clarification routes explicitly supplied drinking to material/viewpoint selection.\nPASS desired delivery UI requires interpretation/viewpoint, preserves nested music and bundle, resets edited outcome choices and discards stale selection.\nPASS object-desire ownership outcome routes to explicit framework selection.\n"
     },
     {
       "test": "tests/foundation_english_test.mjs",
@@ -693,6 +693,12 @@
       "passed": true,
       "exit_code": 0,
       "output": "Name participants: existing EZNAME notes, role reversal, nonsemantic labels, roundtrip and MIDI parity pass.\n"
+    },
+    {
+      "test": "tests/numeric_name_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS numeric identifier labels preserve digit order/leading zeroes and distinct reference music; existing alphabetic identities unchanged.\n"
     },
     {
       "test": "tests/nominal_reference_test.mjs",
@@ -887,6 +893,60 @@
       "output": "PASS 18 modified pain-preference meaning contrasts, original sentence with explicit missing-context choices, and rehashed argument-binding rejection. No music claim.\nPASS both validators reject fully rehashed collapsed treatment identities.\n"
     },
     {
+      "test": "tests/ownership_preview_ui_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS ownership preview requires framework, exports full meaning/music, resolves neutral references and discards stale selections/exports.\nPASS desired and object-clarified ownership previews export scoped music and provenance, preserving holder/owner separation and stale-export guards.\n"
+    },
+    {
+      "test": "tests/object_desired_ownership_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS nine object-desire ownership musical scope/runtime pairs; original nominal/name identity, explicit framework and outcome selection enforced.\n"
+    },
+    {
+      "test": "tests/desired_ownership_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 desired ownership scope/runtime cases, controlled and neutral subject identity, past scope and forged commitment rejection. Music not yet implemented.\n"
+    },
+    {
+      "test": "tests/desired_availability_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 desired availability scope/runtime combinations; distinct participants, neutral references, explicit choices and forged contracts. Music integration pending.\n"
+    },
+    {
+      "test": "tests/desired_availability_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 desired availability musical contrasts, complete nested inverse, participant identity, independent scopes, shared dispatch and transposition.\nPASS independent Ruby performances match all 18 meanings; forged commitments, foundation and participant control reject in both implementations.\n"
+    },
+    {
+      "test": "tests/desired_ownership_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 desired ownership musical contrasts preserve subject control, scoped ownership framework, separate negations and runtime pairs; unique shared inverse and transposition verified.\nPASS 18 independent desired-ownership performances match; rehashed assertion, foundation and subject-control corruption rejects.\n"
+    },
+    {
+      "test": "tests/ownership_sentences_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 full ownership sentence meanings, three explicit neutral-reference cases, framework distinction and unresolved/invalid reading rejection. Music remains unimplemented.\n"
+    },
+    {
+      "test": "tests/ownership_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 ownership music/inverse cases preserve three references, scopes and runtime; transposition and unique draft dispatch verified.\nPASS 18 independent Ruby ownership performances match JavaScript; default draft use and rehashed scope/rights/runtime corruption reject.\nPASS structurally valid music missing framework or duplicating owner role is rejected by ownership and shared semantic inverses.\n"
+    },
+    {
+      "test": "tests/ownership_meaning_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 48 draft ownership meanings distinguish owner/framework/scope/runtime; absent framework, forged commitments and stale participant identity reject. No musical or English coverage claimed.\n"
+    },
+    {
       "test": "tests/delivery_questions_test.mjs",
       "passed": true,
       "exit_code": 0,
@@ -1034,7 +1094,7 @@
       "test": "tests/carrying_viewpoint_choice_test.mjs",
       "passed": true,
       "exit_code": 0,
-      "output": "Carrying viewpoint choice: 63 interpretation/runtime/participant/question/modal/property cases match Ruby formal and MIDI; chosen ongoing/habitual readings equal explicit paraphrases. UI requires both viewpoint and applicable mass standard and discards stale results/errors.\n"
+      "output": "Carrying viewpoint choice: 63 interpretation/runtime/participant/question/modal/property cases match Ruby formal and MIDI; chosen ongoing/habitual readings equal explicit paraphrases. UI requires both viewpoint and applicable mass standard and discards stale results/errors.\nPASS acquisition preview uses its own viewpoint label and preserves modal ongoing scope without past time.\n"
     },
     {
       "test": "tests/measurement_comparison_test.mjs",
@@ -1133,6 +1193,78 @@
       "output": "Browser compiled plans: 5370 released forms preserve exact reference lexical events and glosses.\n"
     },
     {
+      "test": "tests/local_compounds_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS ordered local compounds, nested reuse, persistence/import, immutable canonical data, invalid identity/dependency/cycle rejection and preservation of saved data. Compilation and UI pending.\n"
+    },
+    {
+      "test": "tests/local_compound_expansion_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS nested order/head scopes, occurrence-specific roles, pinned canonical plans, bounded expansion and reload fidelity.\n"
+    },
+    {
+      "test": "tests/local_compound_binding_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS explicit occurrence bindings retain different participants, reject missing/duplicate/wrong paths and survive serialization.\n"
+    },
+    {
+      "test": "tests/local_compound_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS nested performance tree reuses root sounds, preserves actor name/register and applies runtime 0/1/2 only to the external semantic head. Audible local framing pending.\n"
+    },
+    {
+      "test": "tests/local_compound_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS portable local registry and nested framed MIDI export, identity/head contrasts and runtime 0/1/2. Audio inverse not claimed.\n"
+    },
+    {
+      "test": "tests/local_compound_controls_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS actual music controls require participants, export runtime and definitions, and block stale downloads after edits.\nPASS sentence controls export past questions and distinguish not-possible from possibly-not; scope edits invalidate stale output.\n"
+    },
+    {
+      "test": "tests/local_compound_player_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS existing voice scheduling preserves MIDI pitch/timing; stop cancels scheduled tones and pending audio resume.\n"
+    },
+    {
+      "test": "tests/local_canonical_dependencies_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS all 63 approved compounds reused as local heads with canonical same/distinct participant constraints.\n"
+    },
+    {
+      "test": "tests/local_compound_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 24 local sentence performances preserve participants, ordered negation/modality/time, question contour and runtime. Natural English parsing remains pending.\n"
+    },
+    {
+      "test": "tests/local_compound_english_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 24 saved adjective English sentences preserve subject, past, negation, questions and runtime; agreement/unsupported remainder rejects.\n"
+    },
+    {
+      "test": "tests/local_verb_english_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 24 saved verb auxiliary sentences, explicit role mapping, contraction and unsupported-tail rejection.\nPASS explicit regular/irregular verb forms match auxiliary meanings/music; agreement, incomplete forms and ambiguous tense reject.\n"
+    },
+    {
+      "test": "tests/local_english_controls_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS saved-English controls export full sentence meaning and reject stale source downloads.\nPASS verb preview requires distinct role choices, avoids duplicate participant prompts and invalidates exports after role edits.\n"
+    },
+    {
       "test": "tests/bound_sentence_test.mjs",
       "passed": true,
       "exit_code": 0,
@@ -1205,6 +1337,36 @@
       "output": "Custody MIDI inverse: 36 sentence/state/scope/property cases and nine reference-rendered speech-act/state cases recover custody, participants and independent runtime states from MIDI alone. Transposition, role reversal, homophone limits, balanced semantic corruptions, truncation and unsupported extra clauses are checked.\n"
     },
     {
+      "test": "tests/availability_preview_ui_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS availability preview requires reading/context/missing holder, preserves exported scopes and runtime, and rejects stale choices and exports.\nPASS availability preview retains separate explicit resource and neutral prospective-holder bindings.\nPASS desired availability UI exports music and meaning with distinct participants and nested runtime/scopes.\n"
+    },
+    {
+      "test": "tests/availability_sentences_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 full availability meaning comparisons plus explicit missing-holder and neutral-reference resolution; reading/context conflicts reject. No musical availability coverage claimed.\n"
+    },
+    {
+      "test": "tests/custody_opportunity_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 custody-opportunity musical inverses preserve context, resource, prospective holder, scope and runtime without asserting permission or acquisition; transposition and unique dispatch verified.\nPASS 18 independent Ruby opportunity performances; forged realization/permission/dependency/identity and structurally valid missing-context or duplicated-role music reject.\n"
+    },
+    {
+      "test": "tests/custody_opportunity_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 48 draft opportunity cases keep holder/resource/context, possibility, scope and runtime distinct; forged realization, permission, event dependency and past-time commitments reject. No music or English availability coverage claimed.\n"
+    },
+    {
+      "test": "tests/acquisition_viewpoint_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 present acquisition modal/viewpoint/runtime contrasts without invented past time; viewpoint choice and agreement enforced.\nPASS independent Ruby performances match all 18 scoped acquisition meanings.\n"
+    },
+    {
       "test": "tests/custody_acquisition_test.mjs",
       "passed": true,
       "exit_code": 0,
@@ -1212,9 +1374,9 @@
     },
     {
       "test": "tests/custody_transfer_test.mjs",
-      "passed": false,
-      "exit_code": 1,
-      "output": "node:internal/modules/run_main:122\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Ben delivered the box to Ada.\n+ actual - expected\n\n+ {\n+   aspect: 'bounded',\n+   compoundSlots: {\n+     source: [\n+       'q-support',\n+       's-source'\n+     ],\n+     target: [\n+       [\n+         'q-support',\n+         's-target'\n+       ],\n+       [\n+         's-load'\n+       ]\n+     ]\n+   },\n+   construction: 'delivery_wording_bounded_destination_physical_carrying',\n+   destinationCarrying: true,\n+   explicitInterpretation: 'Ben delivered the box to Ada.',\n+   key: 'ongoing_physical_carrying',\n+   negated: false,\n+   participants: [\n+     {\n+       label: 'Ben',\n+       role: 'source',\n+       text: 'Ben'\n+     },\n+     {\n+       label: 'the box',\n+       role: 'target',\n+       text: 'the box'\n+     },\n+     {\n+       label: 'Ada',\n+       role: 'destination',\n+       text: 'Ada'\n+     }\n+   ],\n+   pattern: 'is carrying',\n+   predicate: 'CMP:763faa4465065477220f6f06',\n+   requiredDeliveryInterpretation: true,\n+   requiredDestination: true,\n+   role: 'source',\n+   semanticNote: 'Physical conveyance of a distinct material load borne upon, within or suspended from the carrier\u2019s moving support; support and movement concern that same load and interval. This presents a bounded carrying episode before speech time; it does not assert arrival or delivery.',\n+   speechTime: 'before',\n+   targetRole: 'target',\n+   wording: 'is carrying'\n+ }\n- null\n\n    at file:///private/tmp/dba-audit-20261104/tests/custody_transfer_test.mjs:41:354 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: {\n    pattern: 'is carrying',\n    predicate: 'CMP:763faa4465065477220f6f06',\n    key: 'ongoing_physical_carrying',\n    aspect: 'bounded',\n    wording: 'is carrying',\n    role: 'source',\n    targetRole: 'target',\n    compoundSlots: {\n      source: [ 'q-support', 's-source' ],\n      target: [ [ 'q-support', 's-target' ], [ 's-load' ] ]\n    },\n    semanticNote: 'Physical conveyance of a distinct material load borne upon, within or suspended from the carrier\u2019s moving support; support and movement concern that same load and interval. This presents a bounded carrying episode before speech time; it does not assert arrival or delivery.',\n    requiredDestination: true,\n    destinationCarrying: true,\n    negated: false,\n    construction: 'delivery_wording_bounded_destination_physical_carrying',\n    participants: [\n      { text: 'Ben', label: 'Ben', role: 'source' },\n      { text: 'the box', label: 'the box', role: 'target' },\n      { text: 'Ada', label: 'Ada', role: 'destination' }\n    ],\n    explicitInterpretation: 'Ben delivered the box to Ada.',\n    speechTime: 'before',\n    requiredDeliveryInterpretation: true\n  },\n  expected: null,\n  operator: 'strictEqual'\n}\n\nNode.js v22.14.0\n"
+      "passed": true,
+      "exit_code": 0,
+      "output": "Custody transfer: 36 sentence/state cases preserve source, recipient and shared object, scoped before/after linkage and Ruby/browser MIDI parity. Three explicit lexical-participant fixtures preserve independent states. Corrupted object/root music and invalid identity bindings are rejected; 41 prior definitions remain exact.\n"
     },
     {
       "test": "tests/custody_delivery_test.mjs",
@@ -1287,138 +1449,6 @@
       "passed": true,
       "exit_code": 0,
       "output": "Viseme performance: PASS \u00b7 5370 variants \u00b7 63738 cues \u00b7 87546 assertions\n"
-    },
-    {
-      "test": "tests/acoustic_low_pitch_test.py",
-      "passed": true,
-      "exit_code": 0,
-      "output": "PASS 112 low-pitch/duration combinations from blind PCM with explicit boundaries.\n"
-    },
-    {
-      "test": "tests/acoustic_transport_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "{\n  \"status\": \"PASS\",\n  \"scope\": \"Synthetic PCM, blind audio decoding to supported predicate meanings; not general semantic interpretation or microphone evidence\",\n  \"evaluation\": {\n    \"clean_audio_cases\": 10,\n    \"synthetic_channel_exact_recoveries\": 30,\n    \"damaged_payload_rejections\": 10,\n    \"physical_microphone_recordings\": 0,\n    \"original_text_or_ir_supplied_to_decoder\": false,\n    \"hidden_semantic_metadata\": false,\n    \"scope\": \"Authored message probe; not held-out or broad coverage\"\n  },\n  \"cases\": [\n    {\n      \"phrase\": \"Nora cares for Eli.\",\n      \"audio_seconds\": 29.779274376417234,\n      \"meaning\": {\n        \"profile\": \"EZCARE-INVERSE-1\",\n        \"speech_act\": \"assertion\",\n        \"scopes\": [],\n        \"predicate\": \"active_care\",\n        \"runtime_state\": 1,\n        \"participants\": {\n          \"caregiver\": {\n            \"kind\": \"phonemic\",\n            \"reference_mode\": \"name\",\n            \"phonemes\": [\n              \"N\",\n              \"AO\",\n              \"R\",\n              \"AE\"\n            ],\n            \"instance_code\": null\n          },\n          \"targets\": [\n            {\n              \"kind\": \"phonemic\",\n              \"reference_mode\": \"name\",\n              \"phonemes\": [\n                \"EH\",\n                \"L\",\n                \"IH\"\n              ],\n              \"instance_code\": null\n            }\n          ]\n        },\n        \"target_coordination\": null,\n        \"meaning\": {\n          \"target_list_belongs_to_one_relation\": true,\n          \"temporal_order_asserted\": false,\n          \"affection_or_preference_asserted\": false\n        },\n        \"limitations\": [\n          \"The care relation remains inside recovered scope and speech act.\",\n          \"A coordinated target list does not encode a sequence of separate care episodes or a temporal order.\",\n          \"Audible reference labels do not resolve external identity, original spelling or general discourse.\",\n          \"This profile reads strict MIDI, not arbitrary recorded audio.\"\n        ]\n      },\n      \"channels\": [\n        {\n          \"channel\": \"gain_and_noise\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"speed_plus_two_percent\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"short_weak_echo\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"dropout\",\n          \"accepted\": false,\n          \"reason\": \"Uncertain pitch or duration at tone 5: pitch=46.000, units=1.760; no correction guessed\"\n        }\n      ],\n      \"notes\": 60,\n      \"status\": \"exact_audio_notes_structure_and_supported_predicate_meaning_recovery\",\n      \"wav\": \"/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-rotETi/case-0.wav\"\n    },\n    {\n      \"phrase\": \"Eli cares for Nora.\",\n      \"audio_seconds\": 29.779274376417234,\n      \"meaning\": {\n        \"profile\": \"EZCARE-INVERSE-1\",\n        \"speech_act\": \"assertion\",\n        \"scopes\": [],\n        \"predicate\": \"active_care\",\n        \"runtime_state\": 1,\n        \"participants\": {\n          \"caregiver\": {\n            \"kind\": \"phonemic\",\n            \"reference_mode\": \"name\",\n            \"phonemes\": [\n              \"EH\",\n              \"L\",\n              \"IH\"\n            ],\n            \"instance_code\": null\n          },\n          \"targets\": [\n            {\n              \"kind\": \"phonemic\",\n              \"reference_mode\": \"name\",\n              \"phonemes\": [\n                \"N\",\n                \"AO\",\n                \"R\",\n                \"AE\"\n              ],\n              \"instance_code\": null\n            }\n          ]\n        },\n        \"target_coordination\": null,\n        \"meaning\": {\n          \"target_list_belongs_to_one_relation\": true,\n          \"temporal_order_asserted\": false,\n          \"affection_or_preference_asserted\": false\n        },\n        \"limitations\": [\n          \"The care relation remains inside recovered scope and speech act.\",\n          \"A coordinated target list does not encode a sequence of separate care episodes or a temporal order.\",\n          \"Audible reference labels do not resolve external identity, original spelling or general discourse.\",\n          \"This profile reads strict MIDI, not arbitrary recorded audio.\"\n        ]\n      },\n      \"channels\": [\n        {\n          \"channel\": \"gain_and_noise\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"speed_plus_two_percent\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"short_weak_echo\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"dropout\",\n          \"accepted\": false,\n          \"reason\": \"Uncertain pitch or duration at tone 5: pitch=43.000, units=1.760; no correction guessed\"\n        }\n      ],\n      \"notes\": 60,\n      \"status\": \"exact_audio_notes_structure_and_supported_predicate_meaning_recovery\",\n      \"wav\": \"/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-rotETi/case-1.wav\"\n    },\n    {\n      \"phrase\": \"Nora did not care for Eli [0].\",\n      \"audio_seconds\": 33.623990929705215,\n      \"meaning\": {\n        \"profile\": \"EZCARE-INVERSE-1\",\n        \"speech_act\": \"assertion\",\n        \"scopes\": [\n          {\n            \"operator\": \"time\",\n            \"relation\": \"before_speech\"\n          },\n          {\n            \"operator\": \"negation\"\n          }\n        ],\n        \"predicate\": \"active_care\",\n        \"runtime_state\": 0,\n        \"participants\": {\n          \"caregiver\": {\n            \"kind\": \"phonemic\",\n            \"reference_mode\": \"name\",\n            \"phonemes\": [\n              \"N\",\n              \"AO\",\n              \"R\",\n              \"AE\"\n            ],\n            \"instance_code\": null\n          },\n          \"targets\": [\n            {\n              \"kind\": \"phonemic\",\n              \"reference_mode\": \"name\",\n              \"phonemes\": [\n                \"EH\",\n                \"L\",\n                \"IH\"\n              ],\n              \"instance_code\": null\n            }\n          ]\n        },\n        \"target_coordination\": null,\n        \"meaning\": {\n          \"target_list_belongs_to_one_relation\": true,\n          \"temporal_order_asserted\": false,\n          \"affection_or_preference_asserted\": false\n        },\n        \"limitations\": [\n          \"The care relation remains inside recovered scope and speech act.\",\n          \"A coordinated target list does not encode a sequence of separate care episodes or a temporal order.\",\n          \"Audible reference labels do not resolve external identity, original spelling or general discourse.\",\n          \"This profile reads strict MIDI, not arbitrary recorded audio.\"\n        ]\n      },\n      \"channels\": [\n        {\n          \"channel\": \"gain_and_noise\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"speed_plus_two_percent\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"short_weak_echo\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"dropout\",\n          \"accepted\": false,\n          \"reason\": \"Uncertain note boundary\"\n        }\n      ],\n      \"notes\": 78,\n      \"status\": \"exact_audio_notes_structure_and_supported_predicate_meaning_recovery\",\n      \"wav\": \"/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-rotETi/case-2.wav\"\n    },\n    {\n      \"phrase\": \"Eli is swimming [2].\",\n      \"audio_seconds\": 32.27891156462585,\n      \"meaning\": {\n        \"profile\": \"EZSWIM-INVERSE-1\",\n        \"speech_act\": \"assertion\",\n        \"scopes\": [],\n        \"predicate\": \"ongoing_bodily_swimming\",\n        \"runtime_state\": 2,\n        \"actor\": {\n          \"kind\": \"phonemic\",\n          \"reference_mode\": \"name\",\n          \"phonemes\": [\n            \"EH\",\n            \"L\",\n            \"IH\"\n          ],\n          \"instance_code\": null\n        },\n        \"convention_codes\": [\n          21,\n          20\n        ],\n        \"meaning\": {\n          \"body_generates_locomotor_pattern\": true,\n          \"medium\": \"water\",\n          \"swimming_propulsion\": true,\n          \"net_ground_progress_asserted\": false,\n          \"arrival_asserted\": false,\n          \"unassisted_activity_asserted\": false,\n          \"conscious_intention_asserted\": false\n        },\n        \"limitations\": [\n          \"Local bodily activity does not establish a completed path.\",\n          \"Strict MIDI only; no recorded-audio or external referent recovery.\"\n        ]\n      },\n      \"channels\": [\n        {\n          \"channel\": \"gain_and_noise\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"speed_plus_two_percent\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"short_weak_echo\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"dropout\",\n          \"accepted\": false,\n          \"reason\": \"Uncertain note boundary\"\n        }\n      ],\n      \"notes\": 85,\n      \"status\": \"exact_audio_notes_structure_and_supported_predicate_meaning_recovery\",\n      \"wav\": \"/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-rotETi/case-3.wav\"\n    },\n    {\n      \"phrase\": \"Nora is permitted not to physically enter the archive.\",\n      \"audio_seconds\": 109.13709750566893,\n      \"meaning\": {\n        \"profile\": \"EZENTRY-INVERSE-1\",\n        \"speech_act\": \"assertion\",\n        \"scopes\": [\n          {\n            \"operator\": \"modality\",\n            \"mode\": \"permitted\"\n          },\n          {\n            \"operator\": \"negation\"\n          }\n        ],\n        \"predicate\": \"completed_physical_entry\",\n        \"actor\": {\n          \"kind\": \"phonemic\",\n          \"reference_mode\": \"name\",\n          \"phonemes\": [\n            \"N\",\n            \"AO\",\n            \"R\",\n            \"AE\"\n          ],\n          \"instance_code\": null\n        },\n        \"region\": {\n          \"kind\": \"phonemic\",\n          \"reference_mode\": \"definite_nominal\",\n          \"phonemes\": [\n            \"AA\",\n            \"R\",\n            \"CH\",\n            \"IH\",\n            \"V\"\n          ],\n          \"instance_code\": null\n        },\n        \"runtime_state\": 1,\n        \"phases\": {\n          \"before\": \"exterior\",\n          \"culmination\": \"interior\",\n          \"after\": \"unspecified\"\n        },\n        \"same_participant\": true,\n        \"same_region\": true,\n        \"same_event\": true,\n        \"limitations\": [\n          \"Entry is the event type under the recovered speech act and scopes; questions, commands and negation do not assert its occurrence.\",\n          \"No prescribed manner, permission, ownership or continued presence is asserted.\",\n          \"Strict MIDI only; external referent identity, contextual geometry and recorded audio are not recovered.\"\n        ]\n      },\n      \"channels\": [\n        {\n          \"channel\": \"gain_and_noise\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"speed_plus_two_percent\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"short_weak_echo\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"dropout\",\n          \"accepted\": false,\n          \"reason\": \"Audible checksum mismatch; recording rejected\"\n        }\n      ],\n      \"notes\": 294,\n      \"status\": \"exact_audio_notes_structure_and_supported_predicate_meaning_recovery\",\n      \"wav\": \"/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-rotETi/case-4.wav\"\n    },\n    {\n      \"phrase\": \"It is possible that Nora is swimming.\",\n      \"audio_seconds\": 34.42875283446712,\n      \"meaning\": {\n        \"profile\": \"EZSWIM-INVERSE-1\",\n        \"speech_act\": \"assertion\",\n        \"scopes\": [\n          {\n            \"operator\": \"modality\",\n            \"mode\": \"possible\"\n          }\n        ],\n        \"predicate\": \"ongoing_bodily_swimming\",\n        \"runtime_state\": 1,\n        \"actor\": {\n          \"kind\": \"phonemic\",\n          \"reference_mode\": \"name\",\n          \"phonemes\": [\n            \"N\",\n            \"AO\",\n            \"R\",\n            \"AE\"\n          ],\n          \"instance_code\": null\n        },\n        \"convention_codes\": [\n          21,\n          20\n        ],\n        \"meaning\": {\n          \"body_generates_locomotor_pattern\": true,\n          \"medium\": \"water\",\n          \"swimming_propulsion\": true,\n          \"net_ground_progress_asserted\": false,\n          \"arrival_asserted\": false,\n          \"unassisted_activity_asserted\": false,\n          \"conscious_intention_asserted\": false\n        },\n        \"limitations\": [\n          \"Local bodily activity does not establish a completed path.\",\n          \"Strict MIDI only; no recorded-audio or external referent recovery.\"\n        ]\n      },\n      \"channels\": [\n        {\n          \"channel\": \"gain_and_noise\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"speed_plus_two_percent\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"short_weak_echo\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"dropout\",\n          \"accepted\": false,\n          \"reason\": \"Audible checksum mismatch; recording rejected\"\n        }\n      ],\n      \"notes\": 95,\n      \"status\": \"exact_audio_notes_structure_and_supported_predicate_meaning_recovery\",\n      \"wav\": \"/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-rotETi/case-5.wav\"\n    },\n    {\n      \"phrase\": \"Is Eli running?\",\n      \"audio_seconds\": 31.52888888888889,\n      \"meaning\": {\n        \"profile\": \"EZRUN-INVERSE-1\",\n        \"speech_act\": \"question\",\n        \"scopes\": [],\n        \"predicate\": \"ongoing_bodily_running\",\n        \"runtime_state\": 1,\n        \"actor\": {\n          \"kind\": \"phonemic\",\n          \"reference_mode\": \"name\",\n          \"phonemes\": [\n            \"EH\",\n            \"L\",\n            \"IH\"\n          ],\n          \"instance_code\": null\n        },\n        \"convention_codes\": [\n          23,\n          20\n        ],\n        \"meaning\": {\n          \"body_generates_locomotor_pattern\": true,\n          \"gait\": \"running\",\n          \"airborne_interval_required\": false,\n          \"speed_threshold_asserted\": false,\n          \"net_ground_progress_asserted\": false,\n          \"arrival_asserted\": false,\n          \"conscious_intention_asserted\": false\n        },\n        \"limitations\": [\n          \"Gait does not establish displacement or completed arrival.\",\n          \"Strict MIDI only; no recorded-audio or external referent recovery.\"\n        ]\n      },\n      \"channels\": [\n        {\n          \"channel\": \"gain_and_noise\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"speed_plus_two_percent\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"short_weak_echo\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"dropout\",\n          \"accepted\": false,\n          \"reason\": \"Uncertain note boundary\"\n        }\n      ],\n      \"notes\": 85,\n      \"status\": \"exact_audio_notes_structure_and_supported_predicate_meaning_recovery\",\n      \"wav\": \"/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-rotETi/case-6.wav\"\n    },\n    {\n      \"phrase\": \"The box is inside this room.\",\n      \"audio_seconds\": 39.50884353741497,\n      \"meaning\": {\n        \"profile\": \"EZSPATIAL-INVERSE-1\",\n        \"speech_act\": \"assertion\",\n        \"scopes\": [],\n        \"relation\": \"interior\",\n        \"runtime_state\": 1,\n        \"bearer\": {\n          \"kind\": \"phonemic\",\n          \"reference_mode\": \"definite_nominal\",\n          \"phonemes\": [\n            \"B\",\n            \"AA\",\n            \"K\",\n            \"S\"\n          ],\n          \"instance_code\": null\n        },\n        \"region\": {\n          \"kind\": \"phonemic\",\n          \"reference_mode\": \"proximal_nominal\",\n          \"phonemes\": [\n            \"R\",\n            \"UW\",\n            \"M\"\n          ],\n          \"instance_code\": null\n        },\n        \"criterion\": \"contextually selected region and relevant participant extent in a shared spatial frame\",\n        \"limitations\": [\n          \"No measured geometry, external referent identity or whole-body criterion is recovered from sound labels.\",\n          \"Location does not assert entry, exit, movement, permission or continued presence.\",\n          \"Strict MIDI recovery only; recorded-audio recognition is not established.\"\n        ]\n      },\n      \"channels\": [\n        {\n          \"channel\": \"gain_and_noise\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"speed_plus_two_percent\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"short_weak_echo\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"dropout\",\n          \"accepted\": false,\n          \"reason\": \"Audible checksum mismatch; recording rejected\"\n        }\n      ],\n      \"notes\": 97,\n      \"status\": \"exact_audio_notes_structure_and_supported_predicate_meaning_recovery\",\n      \"wav\": \"/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-rotETi/case-7.wav\"\n    },\n    {\n      \"phrase\": \"Ada acquired physical custody of the box.\",\n      \"audio_seconds\": 48.65845804988662,\n      \"meaning\": {\n        \"profile\": \"EZCUSTODY-ACQUISITION-INVERSE-1\",\n        \"speech_act\": \"assertion\",\n        \"scopes\": [\n          {\n            \"operator\": \"time\",\n            \"relation\": \"before_speech\"\n          }\n        ],\n        \"predicate\": \"completed_physical_custody_acquisition\",\n        \"runtime_state\": 1,\n        \"participants\": {\n          \"holder\": {\n            \"kind\": \"phonemic\",\n            \"reference_mode\": \"name\",\n            \"phonemes\": [\n              \"AE\",\n              \"D\",\n              \"AE\"\n            ],\n            \"instance_code\": null\n          },\n          \"object\": {\n            \"kind\": \"phonemic\",\n            \"reference_mode\": \"definite_nominal\",\n            \"phonemes\": [\n              \"B\",\n              \"AA\",\n              \"K\",\n              \"S\"\n            ],\n            \"instance_code\": null\n          }\n        },\n        \"convention_codes\": [\n          8,\n          7\n        ],\n        \"meaning\": {\n          \"actualized_referent\": \"holder_object_custody_relation\",\n          \"custody_immediately_before\": false,\n          \"custody_at_culmination\": true,\n          \"holder_distinct_from_object\": true,\n          \"object_creation_asserted\": false,\n          \"object_movement_asserted\": false,\n          \"prior_custodian_asserted\": false,\n          \"sourced_transfer_asserted\": false,\n          \"ownership_asserted\": false,\n          \"persistence_after_culmination_asserted\": false\n        },\n        \"limitations\": [\n          \"The pre/post commitments define the event inside the recovered scope and speech act; negation and commands do not assert that the transition occurred.\",\n          \"The nested custody relation is the culmination state, not a separate assertion of custody at speech time.\",\n          \"Recovers this bounded MIDI profile, not general discourse, original spelling, external referent identity or recorded audio.\",\n          \"Acquisition does not identify a prior holder or imply that another holder lost control; transfer and delivery require further meaning.\"\n        ]\n      },\n      \"channels\": [\n        {\n          \"channel\": \"gain_and_noise\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"speed_plus_two_percent\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"short_weak_echo\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"dropout\",\n          \"accepted\": false,\n          \"reason\": \"Audible checksum mismatch; recording rejected\"\n        }\n      ],\n      \"notes\": 132,\n      \"status\": \"exact_audio_notes_structure_and_supported_predicate_meaning_recovery\",\n      \"wav\": \"/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-rotETi/case-8.wav\"\n    },\n    {\n      \"phrase\": \"Do not acquire physical custody of the box.\",\n      \"audio_seconds\": 42.50843537414966,\n      \"meaning\": {\n        \"profile\": \"EZCUSTODY-ACQUISITION-INVERSE-1\",\n        \"speech_act\": \"command\",\n        \"scopes\": [\n          {\n            \"operator\": \"negation\"\n          }\n        ],\n        \"predicate\": \"completed_physical_custody_acquisition\",\n        \"runtime_state\": 1,\n        \"participants\": {\n          \"holder\": {\n            \"kind\": \"deictic\",\n            \"role\": \"addressee\"\n          },\n          \"object\": {\n            \"kind\": \"phonemic\",\n            \"reference_mode\": \"definite_nominal\",\n            \"phonemes\": [\n              \"B\",\n              \"AA\",\n              \"K\",\n              \"S\"\n            ],\n            \"instance_code\": null\n          }\n        },\n        \"convention_codes\": [\n          8,\n          7\n        ],\n        \"meaning\": {\n          \"actualized_referent\": \"holder_object_custody_relation\",\n          \"custody_immediately_before\": false,\n          \"custody_at_culmination\": true,\n          \"holder_distinct_from_object\": true,\n          \"object_creation_asserted\": false,\n          \"object_movement_asserted\": false,\n          \"prior_custodian_asserted\": false,\n          \"sourced_transfer_asserted\": false,\n          \"ownership_asserted\": false,\n          \"persistence_after_culmination_asserted\": false\n        },\n        \"limitations\": [\n          \"The pre/post commitments define the event inside the recovered scope and speech act; negation and commands do not assert that the transition occurred.\",\n          \"The nested custody relation is the culmination state, not a separate assertion of custody at speech time.\",\n          \"Recovers this bounded MIDI profile, not general discourse, original spelling, external referent identity or recorded audio.\",\n          \"Acquisition does not identify a prior holder or imply that another holder lost control; transfer and delivery require further meaning.\"\n        ]\n      },\n      \"channels\": [\n        {\n          \"channel\": \"gain_and_noise\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"speed_plus_two_percent\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"short_weak_echo\",\n          \"accepted\": true\n        },\n        {\n          \"channel\": \"dropout\",\n          \"accepted\": false,\n          \"reason\": \"Audible checksum mismatch; recording rejected\"\n        }\n      ],\n      \"notes\": 122,\n      \"status\": \"exact_audio_notes_structure_and_supported_predicate_meaning_recovery\",\n      \"wav\": \"/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-acoustic-rotETi/case-9.wav\"\n    }\n  ]\n}\n"
-    },
-    {
-      "test": "tests/cognitive_acoustic_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "PASS four draft cognitive WAV-only meaning round trips, default rejection, and channel probes.\n"
-    },
-    {
-      "test": "tests/understanding_acoustic_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "PASS three understanding readings recovered from WAV alone with runtime, negation/past and question distinctions.\n"
-    },
-    {
-      "test": "tests/understanding_spoken_content_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "PASS 9 past-spoken-content scoped sentences, Ruby MIDI parity and one blind clean-WAV meaning recovery; source time stays inside content, no claim truth asserted.\nPASS unsupported source-channel substitution and missing source frame rejected.\n"
-    },
-    {
-      "test": "tests/understanding_acquisition_acoustic_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "PASS blind WAV recovery of negated comprehension acquisition, distinct event/result runtimes and past speech source.\n"
-    },
-    {
-      "test": "tests/route_learning_acoustic_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "PASS three route-learning readings through blind WAV recovery, including negation, questions, reference modes and independent runtime trits.\n"
-    },
-    {
-      "test": "tests/curiosity_acoustic_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "PASS blind WAV recovery of past negated curiosity question, demonstrative topic and runtime without invented questions or asserted learning.\n"
-    },
-    {
-      "test": "tests/contextual_nominal_mass_acoustic_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "PASS two blind synthetic WAV recoveries preserve contextual noun mass, participant roles, negation and runtime.\n"
-    },
-    {
-      "test": "tests/preference_nominal_mass_acoustic_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "PASS two blind synthetic WAV recoveries preserve modified preference direction, separate noun instances, question, negation and runtime.\n"
-    },
-    {
-      "test": "tests/pain_acoustic_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "PASS two blind pain WAV recoveries preserve reference, past negation/question and independent runtime 0/2.\n"
-    },
-    {
-      "test": "tests/pain_stimulus_acoustic_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "PASS three blind pain-stimulus WAV recoveries distinguish causation, negated expectation question and disposition with separate stimulus/experiencer references.\n"
-    },
-    {
-      "test": "tests/pain_comparison_acoustic_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "PASS two blind comparison WAV recoveries preserve ordered stimuli, shared context, relation mode, ordinal direction, scope and runtime.\n"
-    },
-    {
-      "test": "tests/pain_preference_acoustic_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "PASS two blind preference WAV recoveries retain distinct participants, alternative identity, description binding, matrix scope, question and runtime.\n"
-    },
-    {
-      "test": "tests/delivery_question_acoustic_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "PASS blind delivery-question WAV preserves explicitly bound neutral participants, past negated ongoing scope, question and runtime 2.\n"
-    },
-    {
-      "test": "tests/object_desire_acoustic_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "PASS five blind object-desire WAV recoveries preserve custody delivery, custody, carrying and custody acquisition as intensional outcomes, including independent scope/runtime and reference mode.\n"
-    },
-    {
-      "test": "tests/drinking_acoustic_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "PASS four blind drinking WAV recoveries preserve viewpoint, material reading, participants, past/negated question and runtime.\n"
-    },
-    {
-      "test": "tests/desired_drinking_acoustic_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "PASS three blind desired-drinking WAV recoveries retain controlled/explicit drinker, intensional status and separate negation/runtime.\n"
-    },
-    {
-      "test": "tests/cognitive_conjunction_acoustic_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "PASS blind WAV recovery of mixed cognitive conjunction with local negation, separate runtimes and nested past speech content.\n"
-    },
-    {
-      "test": "tests/cognitive_conjunction_scope_acoustic_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "PASS blind WAV recovery of outer-negated cognitive conjunction with inner negation, separate runtimes and past speech content.\n"
-    },
-    {
-      "test": "tests/cognitive_conjunction_possibility_acoustic_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "PASS blind WAV recovery of possible-not cognitive conjunction with inner negation, separate runtimes and past speech content.\n"
-    },
-    {
-      "test": "tests/cognitive_conjunction_question_acoustic_test.mjs",
-      "passed": true,
-      "exit_code": 0,
-      "output": "PASS blind WAV recovery of question over possible-not conjunction with inner negation and past speech content.\n"
     }
   ],
   "remaining_requirements": [
