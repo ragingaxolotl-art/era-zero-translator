@@ -208,3 +208,14 @@ accepted as another meaning. See `reports/pain_stimulus_acoustic_probe.json`.
 These authored channel probes do not establish general acoustic reliability or
 physical speaker-to-microphone performance. Relation Ruby/UI work and intensity
 comparison remain unfinished.
+
+## Independent stimulus renderer checkpoint
+
+`tools/lib/era_zero_pain_stimulus.rb` now validates the relation contract and
+constructs its music independently, reusing `EraZeroPain.events` for the outcome.
+All 27 relation/outer-runtime/outcome-runtime performances match JavaScript MIDI.
+Default draft rejection and rehashed changes to relation, criterion, outcome
+scope and runtime are rejected. The extracted pain event method retains all
+28 standalone Ruby parity cases. This closes the bounded relation Ruby agreement
+item; UI integration, broader scope evidence, intensity comparison and physical
+recordings remain open.
