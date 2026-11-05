@@ -1,0 +1,50 @@
+// User definitions are separate from the approved dictionary. This module stores
+// meaning and ordered dependencies; it does not claim to compile performances.
+import {canonicalDigest} from './engine.mjs';
+import {ROLE_ORDER} from './roles.mjs';
+const PROFILE='EZLOCAL-COMPOUNDS-1';
+const fail=message=>{throw new Error(`Local compound: ${message}`)};
+const exact=(value,keys)=>value&&typeof value==='object'&&!Array.isArray(value)&&Object.keys(value).length===keys.length&&keys.every(k=>Object.hasOwn(value,k));
+const text=value=>typeof value==='string'&&value.trim()===value&&value.length>0&&value.length<=4000;
+export const emptyLocalCompounds=()=>({profile:PROFILE,entries:[]});
+function checkDefinition(d,known){
+ if(!exact(d,['label','definition','part_of_speech','components','roles']))fail('invalid definition fields');
+ if(!text(d.label)||!text(d.definition)||!['noun','verb','adjective','adverb'].includes(d.part_of_speech))fail('provide a label, definition and part of speech');
+ if(!Array.isArray(d.components)||d.components.length<2||d.components.length>64)fail('use 2–64 ordered components');
+ if(d.components.filter(c=>c?.relation==='head').length!==1)fail('choose exactly one semantic head');
+ for(const c of d.components){
+  if(!exact(c,['target_id','relation'])||!['head','qualifies'].includes(c.relation)||!known.has(c.target_id))fail('unknown dependency or component relationship');
+ }
+ if(!Array.isArray(d.roles)||d.roles.length>ROLE_ORDER.length)fail('invalid roles');
+ const roles=new Set();for(const r of d.roles){
+  if(!exact(r,['role','definition'])||!ROLE_ORDER.includes(r.role)||!text(r.definition)||roles.has(r.role))fail('roles need distinct supported names and definitions');roles.add(r.role);
+ }
+}
+export async function validateLocalCompounds(registry,authority){
+ if(!exact(registry,['profile','entries'])||registry.profile!==PROFILE||!Array.isArray(registry.entries)||registry.entries.length>1000)fail('invalid registry');
+ const known=new Set([...authority.atoms.map(a=>a.canonical_id),...authority.compounds.filter(c=>c.status==='approved').map(c=>c.compound_id)]),labels=new Set();
+ for(const entry of registry.entries){
+  if(!exact(entry,['compound_id','content_digest','definition']))fail('invalid entry fields');
+  checkDefinition(entry.definition,known);
+  const digest=await canonicalDigest(entry.definition);
+  if(entry.content_digest!==digest||entry.compound_id!==`LOCALCMP:${digest}`||known.has(entry.compound_id))fail('invalid or duplicate identity');
+  const label=entry.definition.label.toLocaleLowerCase('en');if(labels.has(label))fail('duplicate local label');labels.add(label);
+  // Dependencies must already exist: this rejects forward edges and cycles and
+  // makes every saved definition usable by subsequently authored compounds.
+  known.add(entry.compound_id);
+ }
+ return structuredClone(registry);
+}
+export async function addLocalCompound(registry,definition,authority){
+ const result=await validateLocalCompounds(registry,authority),digest=await canonicalDigest(definition);
+ result.entries.push({compound_id:`LOCALCMP:${digest}`,content_digest:digest,definition:structuredClone(definition)});
+ return validateLocalCompounds(result,authority);
+}
+export async function saveLocalCompounds(storage,registry,authority){
+ const checked=await validateLocalCompounds(registry,authority);
+ storage.setItem('era-zero-local-compounds-v1',JSON.stringify(checked));return checked;
+}
+export async function loadLocalCompounds(storage,authority){
+ const value=storage.getItem('era-zero-local-compounds-v1');return validateLocalCompounds(value===null?emptyLocalCompounds():JSON.parse(value),authority);
+}
+export async function importLocalCompounds(json,authority){return validateLocalCompounds(JSON.parse(json),authority);}

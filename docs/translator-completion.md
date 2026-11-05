@@ -1868,3 +1868,20 @@ preserves an adjective's meaning inside an argument, rather than phonemically
 labeling the entire English phrase. No new root is justified by this audit alone.
 This does not change the separate 40-case canonical-path diagnostic, approve
 candidate vocabulary or establish representative English coverage.
+
+## Local compound registry checkpoint
+
+`pages/local_compounds.mjs` now stores user definitions separately under
+`LOCALCMP` identities. Ordered components have one semantic head and qualifying
+components; dependencies may refer to canonical roots, approved compounds or
+previously saved local compounds. Definitions include part of speech and named
+participant-role descriptions. Full definition hashes prevent silent mutation.
+Validation rejects missing/forward/cyclic references and duplicate local labels.
+Storage/import validation happens before replacing saved data.
+
+`tests/local_compounds_test.mjs` verifies nested reuse, order-sensitive identity,
+reload/import fidelity, preservation of canonical authority and rejection of
+corrupt definitions without overwriting saved data. This is a registry foundation,
+not yet a musical compiler or usable builder. Role descriptions do not by themselves
+establish executable semantic bindings. Local musical compilation, explicit role
+mapping, UI authoring and sentence integration remain required.
