@@ -158,3 +158,20 @@ checks representation/validation, not empirical causality or complete semantic
 adequacy. No English parser, music encoding/inverse, UI, actual/nonactual model
 proof or audio tests exist for this relation yet. Intensity comparison and the
 original painful-treatment preference acceptance remain open.
+
+
+## Explicit stimulus sentence checkpoint
+
+`pages/pain_stimulus_sentences.mjs` now composes explicit “caused bodily pain for,”
+“is expected to cause bodily pain for” and “tends to cause bodily pain for”
+constructions, their supported outer negations and questions. Twenty-seven
+relation/form/runtime cases preserve stimulus, experiencer and past causal scope.
+Explicit pronoun binding includes singular them. The nested positive pain content
+uses default runtime 1 while the trailing sentence tag controls the relation;
+these states are not silently copied into each other.
+
+Bare “painful,” simple-present “causes” with unresolved event/habitual reading,
+and inner negation (“expected not to cause”) remain rejected. Outer “not expected”
+is not interpreted as an expectation of absence. Present first/second-person
+agreement, broader clauses, musical rendering/inverse and UI for these relations
+remain open. This checkpoint is meaning composition only, not complete translation.
