@@ -354,3 +354,23 @@ No music encoder/inverse, Ruby implementation or UI exists for this combined
 profile yet. The original acceptance remains not-completed in the requirements
 audit until full meaning/music evidence is integrated. Generic missing-context
 resolution, projection in broader embeddings and physical recordings remain open.
+
+### Preference musical binding checkpoint (November 5, 2026)
+
+The original painful-treatment preference now has a gated musical encoder and
+strict inverse (`pain_preference_music.mjs`). Draft frame ±39/subcode 8 identifies
+the fixed preference foundation and reference-restriction scope. It reuses the
+existing pain comparison, stimulus, pain, noun-label and reference encodings.
+The inverse derives which alternative is more painful from the encoded reference
+bindings; it receives neither the sentence nor its semantic document. Holder and
+pain experiencer remain independent, gender-free references. No roots or approved
+compound definitions changed.
+
+Targeted evidence: 18 preference direction/scope/question/runtime MIDI cases pass,
+including shared semantic dispatch and anchor transposition. The existing 42
+independent Ruby comparison performances still match after extracting reusable
+comparison events/tree reading. These are authored MIDI checks, not acoustic
+proof. The combined preference still needs independent renderer validation,
+blind WAV recovery, UI interpretation choices and physical speaker/microphone
+validation. Original acceptance status remains incomplete; the full translator
+goal is not achieved.
