@@ -23,7 +23,7 @@ log is historical: its older “pending” statements are not the current checkl
 ## Remaining first-release work
 
 1. Finish the broader non-acoustic regression on the current checkpoint and inspect
-   failures, if any. The 19-suite local gate passes; it is not a full release proof.
+   failures, if any. The 20-suite local gate passes; it is not a full release proof.
 2. Exercise held-out sentence and compound examples, including rejected input,
    role ambiguity, runtime changes, and storage failure. Check meaning and musical
    events rather than only whether a file was produced.
@@ -48,3 +48,11 @@ constructions must not be presented as complete sentence translations.
 
 Music generation is implemented. Recorded music → recovered meaning is deferred,
 and these tests do not prove that inverse operation.
+
+Additional routing evidence: `tests/local_saved_routing_test.mjs` extracts the
+actual saved-word routing function from `pages/app.js` and exercises real parsers
+with a DOM adapter. It checks supported adjective/pronoun routing, rejection of
+unsupported clauses/modifiers/time adjuncts, stale-input suppression, and corrupt
+storage preservation. The local release gate passes 20/20 suites. This added test
+is supplemental to the broader run started at `ed61230`; it was not in that run's
+initial test list. No production implementation changed during that run.

@@ -111,6 +111,12 @@
       "output": "PASS explicit outer-to-canonical and nested-local role links propagate participants; conflicts and invalid links reject.\nPASS contradictory author role connections reject before a new compound is returned.\nPASS rehashed contradictory definitions cannot be imported or overwrite saved data.\n"
     },
     {
+      "test": "local_saved_routing_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS actual saved-sentence routing: supported meaning and pronouns, unsupported remainder rejection, stale input protection, and corrupt-storage preservation (DOM adapter).\n"
+    },
+    {
       "test": "local_verb_english_test.mjs",
       "passed": true,
       "exit_code": 0,
