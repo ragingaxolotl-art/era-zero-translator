@@ -1,3 +1,4 @@
+import {localWordPronounPlan} from './local_compound_pronouns.mjs';
 import {loadLocalCompounds} from './local_compounds.mjs';
 import {localAdjectivePlan,localVerbPlan,localVerbCandidates} from './local_compound_english.mjs';
 import {mountLocalEnglishControls} from './local_english_controls.mjs';
@@ -1011,7 +1012,7 @@ $('sourceInput').addEventListener('input',()=>savedCompoundPlayer.stop());
 window.addEventListener('pagehide',()=>savedCompoundPlayer.stop());
 async function showSavedSentence(input){
  const registry=await loadLocalCompounds(localStorage,state.data);
- if(!registry.entries.length||!(await localAdjectivePlan(input,registry,state.data)||(await localVerbCandidates(input,registry,state.data)).length))return false;
+ if(!registry.entries.length||!(await localAdjectivePlan(input,registry,state.data)||(await localVerbCandidates(input,registry,state.data)).length||await localWordPronounPlan(input,registry,state.data)))return false;
  const current=()=>$('sourceInput').value.trim()===input&&state.mode!=='controlled';if(!current())return true;
  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
  for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');

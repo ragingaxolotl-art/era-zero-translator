@@ -19,3 +19,10 @@ await mountLocalEnglishControls(choiceContainer,'I put this tea.',ambiguous,a,{d
 assert.match(choiceContainer.children[1].textContent,/present/);assert.match(choiceContainer.children[2].textContent,/past/);await choiceContainer.children[2].click();
 const detail=choiceContainer.children.at(-1),sr=detail.children[3].children[0],ob=detail.children[4].children[0];sr.value='actor';sr.change();ob.value='target';ob.change();await detail.children.at(-2).click();detail.children.at(-1).children[1].click();assert.deepEqual(JSON.parse(await downloads.at(-1).text()).meaning.scopes,[{operator:'time',relation:'before_speech'}]);
 console.log('PASS ambiguous verb UI offers present/past and exports the chosen interpretation.');
+const pronounCard=element(),pronounErrors=[];
+await mountLocalEnglishControls(pronounCard,"They aren't glowsteady. [2]",registry,a,{document:{createElement:element},download:b=>downloads.push(b),onError:e=>pronounErrors.push(e)});
+const ref=pronounCard.children[0].children[0],number=pronounCard.children[0].children[1],confirm=pronounCard.children[1],resolvedCard=pronounCard.children[2];ref.value='Nora';ref.input();await confirm.click();assert.match(pronounErrors.at(-1).message,/one individual or a group/);
+number.value='plural';number.change();await confirm.click();assert.match(pronounErrors.at(-1).message,/Group reference/);
+number.value='singular';number.change();await confirm.click();await resolvedCard.children.at(-2).click();const exported=resolvedCard.children.at(-1).children[1];exported.click();const pronounResult=JSON.parse(await downloads.at(-1).text());assert.equal(pronounResult.source_input,"They aren't glowsteady. [2]");assert.equal(pronounResult.pronoun_resolution.resolved_input,'Nora is not glowsteady. [2]');assert.equal(pronounResult.meaning.bindings[0].reference.name.normalized_label,'nora');
+const oldCount=downloads.length;ref.value='Eli';ref.input();exported.click();assert.equal(downloads.length,oldCount);
+console.log('PASS pronoun UI requires explicit number, preserves reference provenance, rejects unsupported groups and blocks stale exports.');

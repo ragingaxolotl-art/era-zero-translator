@@ -2083,3 +2083,14 @@ and MIDI with explicit-name equivalents, including a negative past question at
 runtime 0 and a negative adjective at runtime 2. Quoted names are not treated as
 pronouns. Group references remain unsupported. UI pronoun prompts and arbitrary
 saved-verb agreement after singular they still need integration.
+
+### Saved-word pronoun interface
+
+The main saved-word route now recognizes supported pronoun constructions and asks
+for each referent before interpretation/role selection. They/them requires an
+explicit singular/group choice; unsupported groups produce an actionable error
+rather than singular coercion. Exports preserve the original sentence and resolved
+reference provenance, including through later tense ambiguity selection. Actual
+handler tests verify number gating, group rejection, singular adjective export and
+stale-output invalidation when a reference changes. Existing adjective, verb and
+tense-selection controls still pass. Live-browser validation remains open.
