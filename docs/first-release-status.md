@@ -80,3 +80,14 @@ no composition (“Exactly three lamps are active”). The four previews cover
 preference, curiosity, route learning, and understanding. Preview availability
 is explicitly not counted as semantic completion. This corpus was authored
 during implementation and is not a held-out or representative English benchmark.
+
+The curiosity preview now has a separate phrase-specific review in
+`reports/curiosity_phrase_review.json`, reproducible with
+`tools/review_curiosity_phrase.mjs`. “Orin is curious about the map” preserves the
+experiencer, definite topic, desired but unasserted information gain, and absence
+of an invented answer or specific question. Existing MIDI recovery preserves the
+checked meaning; four participant/negation/runtime variants change performed
+notes. Explicit acceptance of the draft epistemic reading is still required.
+This closes that declared-reading review, not automatic or general translation.
+The 40-phrase preview-only audit deliberately does not count this as automatic
+composition; its separate review supplies the conditional evidence.
