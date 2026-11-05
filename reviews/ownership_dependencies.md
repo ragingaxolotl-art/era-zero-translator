@@ -131,3 +131,23 @@ This is one authored clean sample, not physical microphone evidence or robustnes
 coverage. Independent Ruby rendering, adversarial role/framing corruption,
 interface integration, nested ownership/desire and physical recordings remain
 open. Ownership remains draft and is not added to canonical dictionary counts.
+
+
+## Independent renderer and malformed-role evidence
+
+`tools/lib/era_zero_ownership.rb` independently validates the fixed ownership
+contract, three references, allowed scope, runtime and semantic identity, then
+renders the convention through existing Ruby reference and scheduling machinery.
+All 18 authored JavaScript cases have byte-identical Ruby MIDI. Default draft
+use and rehashed attempts to add custody, exclusivity, invalid runtime or move
+the framework outside negation reject independently.
+
+Two malformed performances remain structurally valid to the strict musical
+reader but fail both the ownership semantic inverse and shared dispatch: an
+absent framework role and a duplicate owner role replacing the object role.
+This checks semantic completeness beyond distinct MIDI hashes. A coherently
+changed audible participant is a different message, not detectable corruption
+without an external expected message; no authentication claim is made.
+Interface integration, desired ownership, implicit context, co-ownership and
+physical audio recordings remain unfinished. These targeted checks do not
+supersede the last full regression report.
