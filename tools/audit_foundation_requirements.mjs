@@ -1,3 +1,4 @@
+import {composeObjectDesire} from '../pages/object_desire.mjs';
 import {composePainPreference} from '../pages/pain_preference.mjs';
 import {midiFromPainPreference,decodePainPreferenceMidi} from '../pages/pain_preference_music.mjs';
 import {composeCuriosity} from '../pages/curiosity.mjs';
@@ -11,12 +12,26 @@ import {encodeName} from '../pages/names.mjs';
 import {decodeFoundationSentenceMidi} from '../pages/foundation_semantic_decoder.mjs';
 const root=new URL('..',import.meta.url),read=p=>JSON.parse(fs.readFileSync(new URL(p,root)));
 const authority=read('pages/data/index.json'),records=read('reviews/foundation_extension_candidates.json').records,requirements=read('tests/desire_preference_requirements.json');
-const load=id=>({...read('pages/'+authority.resolution_files[id]).variants['assertion:1'],authority});
+const load=id=>!authority.resolution_files[id]?{authority}:({...read('pages/'+authority.resolution_files[id]).variants['assertion:1'],authority});
 const supported=new Set(['relative_not_absolute','reversed','negation','question','past','participant_change','runtime_independence','kind_not_cup']);
 const results=[];const sounds=new Map();
 for(const requirement of requirements.cases){
  const row={id:requirement.id,input:requirement.input,required:requirement.required,must_not_infer:requirement.must_not_infer};
  let result;
+ if(requirement.id==='object_reading'){
+  const choices={desiredProposition:'Eli has physical custody of the tea.'};
+  await assert.rejects(composeObjectDesire(requirement.input,authority,records,load,{allowDraft:true}));
+  const document=await composeObjectDesire(requirement.input,authority,records,load,{allowDraft:true,...choices});
+  const recovered=await decodeFoundationSentenceMidi(midiFromFormal(document.formal),authority.atoms,records,{allowDraft:true}),m=recovered.meaning,content=m.arguments.content;
+  assert.equal(m.predicate.foundation_id,records.find(r=>r.sound_code===0).foundation_id);
+  assert.deepEqual(m.arguments.experiencer.reference.phonemes,(await encodeName('Nora')).phonemes);
+  assert.equal(content.content_status,'intensional');assert.equal(content.proposition.predicate.name,'practical_physical_custody');assert.equal(content.proposition.meaning.ownership_asserted,false);
+  assert.deepEqual(content.proposition.arguments.holder.reference.phonemes,(await encodeName('Eli')).phonemes);
+  assert.deepEqual(content.proposition.arguments.object.reference.phonemes,(await encodeName('tea')).phonemes);
+  assert.equal(content.proposition.arguments.object.reference.reference_mode,'definite_nominal');assert.equal(document.object_desire_resolution.relation_source,'explicit_user_clarification');
+  assert.equal(recovered.speech_act,'assertion');assert.equal(m.runtime_state,1);assert.deepEqual(m.scopes,[]);
+  results.push({...row,status:'candidate_semantic_checks_pass_with_explicit_context',choices,recovered,limits:'Explicitly selected custody outcome and definite tea reference; no default drinking or ownership. Does not establish support for every requested outcome. Separate clean synthetic WAV checks exist; physical recordings and held-out coverage remain unproven.'});continue;
+ }
  if(requirement.id==='both_unpleasant'){
   const choices={experiencer:'Eli',interpretation:'expected_outcome',context:'this session',comparisonTarget:'other_alternative'};
   await assert.rejects(composePainPreference(requirement.input,{allowDraft:true}));
@@ -79,6 +94,6 @@ assert.equal(sounds.get('kind_not_cup'),baseline);
 const counts=Object.fromEntries([...new Set(results.map(r=>r.status))].map(s=>[s,results.filter(r=>r.status===s).length]));
 const report={scope:'Original authored acceptance requirements, executed against candidate preview. Not held-out validation or vocabulary approval.',completion_proven:false,counts,results};
 fs.writeFileSync(new URL('reports/foundation_requirements_audit.json',root),JSON.stringify(report,null,2)+'\n');
-const lines=['# Original desire/preference requirements audit','',report.scope,'','Full translator completion: **not established**.','','| Requirement | Input | Current evidence |','|---|---|---|',...results.map(r=>`| ${r.id} | ${r.input.replaceAll('|','\\|')} | ${r.status} |`),'','Passing cases recover holder, ordered alternatives, kind/entity typing, speech act, scope and runtime from MIDI. Changed direction, holder, negation, time, question and runtime have distinct performances. Curiosity now recovers epistemic interest and unresolved topic inquiry without asserting information acquisition or current attention. The painful-treatment preference passes only with explicit contextual choices; this is not automatic interpretation of the underspecified sentence. Missing cases include object desire, temporariness, other modified noun phrases and preference combined with choice.',''];
+const lines=['# Original desire/preference requirements audit','',report.scope,'','Full translator completion: **not established**.','','| Requirement | Input | Current evidence |','|---|---|---|',...results.map(r=>`| ${r.id} | ${r.input.replaceAll('|','\\|')} | ${r.status} |`),'','Passing cases recover holder, ordered alternatives, kind/entity typing, speech act, scope and runtime from MIDI. Changed direction, holder, negation, time, question and runtime have distinct performances. Curiosity now recovers epistemic interest and unresolved topic inquiry without asserting information acquisition or current attention. The painful-treatment preference passes only with explicit contextual choices; this is not automatic interpretation of the underspecified sentence. Object desire now passes only after explicit outcome clarification; drinking and ownership remain unsupported outcomes. Missing cases include temporariness, other modified noun phrases and preference combined with choice.',''];
 fs.writeFileSync(new URL('reports/foundation_requirements_audit.md',root),lines.join('\n'));
 console.log(JSON.stringify(counts));

@@ -38,3 +38,6 @@ const implicit=await compose('Nora wants tea.','Eli has physical custody of the 
 const inverse=await decodeFoundationSentenceMidi(midiFromFormal(implicit.formal),authority.atoms,records,{allowDraft:true});
 assert.equal(inverse.meaning.runtime_state,1);assert.equal(inverse.meaning.arguments.content.proposition.runtime_state,2);
 console.log('PASS noun/name and proximal/distal identity are not substituted; nine runtime pairs and default outer state preserve independent content runtime.');
+
+for(const outcome of ['Eli acquired physical custody of the tea.','Eli is carrying the tea.'])await assert.rejects(compose('Nora wants tea.',outcome),/complete musical meaning cannot yet be recovered/);
+console.log('PASS unrecoverable desired outcomes are not presented as complete translations.');

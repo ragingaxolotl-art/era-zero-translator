@@ -193,3 +193,23 @@ the content. All nine outer/inner runtime pairs pass strict MIDI recovery, as do
 the implicit outer-state-1 / explicit inner-state-2 case. Reference substitution
 rejections and the existing independent Ruby and preview checks pass. No vocabulary
 or musical convention changed.
+
+## Original object-reading acceptance and remaining outcome coverage
+
+The original `object_reading` case now executes missing-clarification rejection
+and the explicitly selected outcome `Eli has physical custody of the tea.` through
+full MIDI recovery. Its status is `candidate_semantic_checks_pass_with_explicit_context`,
+not unconditional translation. Original 20-case totals are 9 candidate checks,
+2 checks with explicit context, and 9 uncomposed cases. Desired custody remains
+intensional and does not assert ownership; the different holder Eli is explicit.
+
+The executable `tools/audit_object_desire_outcomes.mjs` records eight authored
+outcome probes in `reports/object_desire_outcome_coverage.json`. Custody has an
+inverse. Acquisition of custody and carrying exposed nested musical inverse gaps;
+drinking, ownership, availability, the tested delivery wording and making failed
+composition. These are remaining implementation obligations, not evidence those
+meanings should be removed from the goal. The object-desire composer now requires
+shared inverse acceptance before presenting a ready translation. This prevents
+unsupported nested outcomes from silently appearing complete while their inverse
+work remains pending. An inverse alone is not proof of semantic fidelity; the
+case-specific checks and audio evidence are still required.

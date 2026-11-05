@@ -1,3 +1,5 @@
+import {midiFromFormal} from './engine.mjs';
+import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs';
 // Resolve an object-directed desire only through an explicit desired proposition.
 // Reuses the existing intensional desire grammar and all its musical conventions.
 import {parseFoundationSentence,composeFoundationSentence} from './foundation_sentences.mjs';
@@ -27,5 +29,7 @@ export async function composeObjectDesire(input,authority,records,loadTemplate,{
  const expected=(await encodeName(plan.head)).normalized_label;
  const mentions=result.semantic_ir.nodes.filter(n=>n.node_id.startsWith('desired:')&&n.kind==='phonemic_reference'&&n.name?.normalized_label===expected&&(plan.reference_mode==='unspecified_nominal'?Boolean(n.reference_mode):(n.reference_mode||'name')===plan.reference_mode));
  if(!mentions.length)throw new Error('The desired proposition must explicitly identify the original object; unrelated outcomes cannot silently replace it.');
+ try{await decodeSupportedMeaningWithDrafts(midiFromFormal(result.formal),authority.atoms,records,{allowDraft:true});}
+ catch(cause){throw new Error('The selected outcome can be encoded but its complete musical meaning cannot yet be recovered. This translation remains unfinished.',{cause});}
  return {...result,source_input:input,resolved_input:resolved,object_desire_resolution:{object:plan.object,desired_proposition:content,relation_source:'explicit_user_clarification',matching_content_references:mentions.map(n=>n.node_id)}};
 }

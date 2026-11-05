@@ -20,11 +20,11 @@ Full translator completion: **not established**.
 | desire_without_pleasure | Nora wants the unpleasant treatment. | not_composed |
 | desire_without_plan | Nora wants to leave but has no plan to leave. | not_composed |
 | unrealized_content | Nora wants the nonexistent fountain to exist. | not_composed |
-| object_reading | Nora wants tea. | not_composed |
+| object_reading | Nora wants tea. | candidate_semantic_checks_pass_with_explicit_context |
 | curiosity_not_attention | Orin is curious about the map. | candidate_semantic_checks_pass |
 | attention_not_curiosity | The alarming noise captures Orin’s attention, but Orin does not want to learn about it. | not_composed |
 | participant_change | Eli prefers tea to coffee. | candidate_semantic_checks_pass |
 | runtime_independence | Nora prefers tea to coffee [2]. | candidate_semantic_checks_pass |
 | kind_not_cup | Nora prefers tea to coffee. | candidate_semantic_checks_pass |
 
-Passing cases recover holder, ordered alternatives, kind/entity typing, speech act, scope and runtime from MIDI. Changed direction, holder, negation, time, question and runtime have distinct performances. Curiosity now recovers epistemic interest and unresolved topic inquiry without asserting information acquisition or current attention. The painful-treatment preference passes only with explicit contextual choices; this is not automatic interpretation of the underspecified sentence. Missing cases include object desire, temporariness, other modified noun phrases and preference combined with choice.
+Passing cases recover holder, ordered alternatives, kind/entity typing, speech act, scope and runtime from MIDI. Changed direction, holder, negation, time, question and runtime have distinct performances. Curiosity now recovers epistemic interest and unresolved topic inquiry without asserting information acquisition or current attention. The painful-treatment preference passes only with explicit contextual choices; this is not automatic interpretation of the underspecified sentence. Object desire now passes only after explicit outcome clarification; drinking and ownership remain unsupported outcomes. Missing cases include temporariness, other modified noun phrases and preference combined with choice.

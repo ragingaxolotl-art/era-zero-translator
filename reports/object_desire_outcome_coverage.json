@@ -1,0 +1,148 @@
+{
+  "scope": "Authored outcome coverage probes, not semantic acceptance or held-out evaluation. The outcome is explicitly selected, never inferred from wants tea.",
+  "completion_proven": false,
+  "results": [
+    {
+      "id": "custody",
+      "desiredProposition": "Eli has physical custody of the tea.",
+      "status": "inverse_available_needs_case_specific_semantic_review",
+      "recovered": {
+        "profile": "EZFOUND-SEMANTIC-INVERSE-1",
+        "speech_act": "assertion",
+        "meaning": {
+          "predicate": {
+            "kind": "foundation",
+            "foundation_id": "FND:f66b7a3877f4b0140a0b7023",
+            "definition_version": "1.0.0",
+            "registry_status": "candidate"
+          },
+          "runtime_state": 1,
+          "scopes": [],
+          "arguments": {
+            "content": {
+              "type": "proposition",
+              "content_status": "intensional",
+              "proposition": {
+                "predicate": {
+                  "kind": "conventional_compound",
+                  "name": "practical_physical_custody",
+                  "convention_codes": [
+                    7
+                  ]
+                },
+                "runtime_state": 1,
+                "scopes": [],
+                "arguments": {
+                  "holder": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "name",
+                      "phonemes": [
+                        "EH",
+                        "L",
+                        "IH"
+                      ],
+                      "instance_code": null
+                    }
+                  },
+                  "object": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "definite_nominal",
+                      "phonemes": [
+                        "T",
+                        "IY"
+                      ],
+                      "instance_code": null
+                    }
+                  }
+                },
+                "meaning": {
+                  "established_practical_control": true,
+                  "holder_distinct_from_object": true,
+                  "exclusive_control_required": false,
+                  "ownership_asserted": false,
+                  "receipt_asserted": false,
+                  "transfer_asserted": false,
+                  "continuous_physical_influence_required": false
+                }
+              }
+            },
+            "experiencer": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "N",
+                  "AO",
+                  "R",
+                  "AE"
+                ],
+                "instance_code": null
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Candidate vocabulary requires explicit opt-in.",
+          "This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.",
+          "Reference sounds do not determine original spelling or external identity.",
+          "Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.",
+          "Reads strict MIDI, not recorded audio."
+        ]
+      }
+    },
+    {
+      "id": "acquiring_custody",
+      "desiredProposition": "Eli acquired physical custody of the tea.",
+      "status": "unsupported",
+      "phase": "musical_inverse",
+      "diagnostic": "The selected outcome can be encoded but its complete musical meaning cannot yet be recovered. This translation remains unfinished."
+    },
+    {
+      "id": "carrying",
+      "desiredProposition": "Eli is carrying the tea.",
+      "status": "unsupported",
+      "phase": "musical_inverse",
+      "diagnostic": "The selected outcome can be encoded but its complete musical meaning cannot yet be recovered. This translation remains unfinished."
+    },
+    {
+      "id": "drinking",
+      "desiredProposition": "Nora drinks the tea.",
+      "status": "unsupported",
+      "phase": "composition",
+      "diagnostic": "Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else."
+    },
+    {
+      "id": "ownership",
+      "desiredProposition": "Nora owns the tea.",
+      "status": "unsupported",
+      "phase": "composition",
+      "diagnostic": "Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else."
+    },
+    {
+      "id": "availability",
+      "desiredProposition": "The tea is available.",
+      "status": "unsupported",
+      "phase": "composition",
+      "diagnostic": "Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else."
+    },
+    {
+      "id": "delivery",
+      "desiredProposition": "Eli delivers the tea to Nora.",
+      "status": "unsupported",
+      "phase": "composition",
+      "diagnostic": "Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else."
+    },
+    {
+      "id": "making",
+      "desiredProposition": "Eli makes the tea.",
+      "status": "unsupported",
+      "phase": "composition",
+      "diagnostic": "Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else."
+    }
+  ]
+}
