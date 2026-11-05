@@ -9,7 +9,7 @@ log is historical: its older “pending” statements are not the current checkl
 
 | Requirement | Current evidence | Remaining check |
 | --- | --- | --- |
-| Preserve established roots and approved meanings | Dictionary identity, additive vocabulary pins, and compound validation suites | Broad regression after recent changes is running |
+| Preserve established roots and approved meanings | Dictionary identity, additive vocabulary pins, and compound validation suites | 247/247 non-acoustic checks passed at `ed61230` |
 | Create ordered compounds from existing parts | Actual builder handlers exercised in `tests/local_builder_authoring_test.mjs` | Live browser interaction |
 | Reuse compounds inside compounds | Same test saves a second compound using the first, checks nested music frames | Live browser interaction |
 | Preserve participant identity across nesting | Explicit role connections propagate one referent through three requirements | Broader user examples |
@@ -22,8 +22,9 @@ log is historical: its older “pending” statements are not the current checkl
 
 ## Remaining first-release work
 
-1. Finish the broader non-acoustic regression on the current checkpoint and inspect
-   failures, if any. The 20-suite local gate passes; it is not a full release proof.
+1. Broader non-acoustic regression completed: 247/247 checks passed at
+   `ed61230`. The supplemental 20-suite local gate also passes. These are
+   implementation checks, not a full release proof.
 2. Exercise held-out sentence and compound examples, including rejected input,
    role ambiguity, runtime changes, and storage failure. Check meaning and musical
    events rather than only whether a file was produced.
