@@ -138,3 +138,22 @@ The standalone custody inverse checks and 39 existing foundation English/Ruby
 parity cases plus 3 embedded compound formal checks remain passing. No new root,
 compound meaning or musical address was introduced. Blind WAV and interface
 validation for this clarification path remain unfinished.
+
+## Object-desire independent performance and audio checkpoint
+
+The nine clarified object-desire assertion/negation/question × runtime cases now
+also match independent Ruby MIDI rendering of their semantic IR. Two additional
+checks preserve outer previous-day/before-speech time separately from negation of
+the desired custody outcome.
+
+`tests/object_desire_acoustic_test.mjs` passes two clean synthetic WAV recoveries
+through an independent process receiving only WAV path and draft opt-in. The
+original sentence, explicit clarification, semantic document and expected notes
+are not decoder inputs. The first case wants custody with runtime 0; the second
+asks about a negated desire for a separately negated custody outcome with runtime
+2. Full recovered structures match, preserve intensional status and retain the
+custody convention's explicit no-ownership commitment. Evidence is recorded in
+`reports/object_desire_acoustic_probe.json` and included in the acoustic regression
+runner. This is authored synthetic audio, not physical speaker/microphone proof,
+held-out ordinary-language coverage or support for drinking/ownership semantics.
+Interface integration remains pending and original acceptance counts are unchanged.
