@@ -2209,3 +2209,13 @@ possibility outside negation. Twelve cases verify scope, runtime, question conto
 and bearer identity; a singular-they case exercises explicit reference resolution.
 Missing copulas and perfect-tense forms remain rejected, preserving unsupported
 meaning rather than dropping it. Existing English-preview regressions still pass.
+
+### Saved-word examples and translator handoff
+
+Saved-word cards provide syntax examples for declared verb roles and adjective
+bearers, including negation, questions, possibility and supplied past forms. Each
+example can populate the main translator through a one-time session-storage
+handoff; the user then translates and clarifies roles normally. Definitions without
+required outer roles do not advertise unsupported sentence examples. Tests verify
+all generated examples parse and the handoff is consumed once. Module syntax
+checks pass; browser navigation/focus behavior remains unverified.

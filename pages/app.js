@@ -1,3 +1,4 @@
+import {takeLocalExample} from './local_compound_examples.mjs';
 import {localWordPronounPlan} from './local_compound_pronouns.mjs';
 import {loadLocalCompounds} from './local_compounds.mjs';
 import {localAdjectivePlan,localVerbPlan,localVerbCandidates} from './local_compound_english.mjs';
@@ -1021,3 +1022,5 @@ async function showSavedSentence(input){
  await mountLocalEnglishControls(card,input,registry,state.data,{download,player:savedCompoundPlayer,isCurrent:current,onError:showError});
  return true;
 }
+
+try{const example=takeLocalExample(sessionStorage);if(example){$('sourceInput').value=example;$('sourceInput').focus();}}catch(error){showError(error);}
