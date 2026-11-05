@@ -15,3 +15,5 @@ await assert.rejects(composeDrinkingSentence('Nora is drinking this tea.',{...op
 await assert.rejects(composeDrinkingSentence('Nora is drinking this tea.',{...options,interpretation:undefined}),/Select/);
 for(const text of ['Nora drink tea.','I drinks tea.','Are Nora drinking tea?','Nora does not drank tea.'])assert.equal(drinkingPlan(text),null);
 console.log(`PASS ${count} drinking English scope/runtime cases; simple present, material reading and literal interpretation require explicit choices.`);
+for(const [contracted,expanded] of [["Nora isn't drinking this tea.",'Nora is not drinking this tea.'],["Wasn’t Nora drinking this tea?",'Was Nora not drinking this tea?'],["Nora didn't drink this tea.",'Nora did not drink this tea.'],["Doesn't Nora habitually drink this tea?",'Does Nora not habitually drink this tea?']])for(const state of [0,1,2])assert.deepEqual(await composeDrinkingSentence(contracted+` [${state}]`,options),await composeDrinkingSentence(expanded+` [${state}]`,options));
+console.log('PASS 12 named drinking contractions retain negation, question, time and runtime.');

@@ -156,3 +156,13 @@ they/them; plural groups still reject rather than becoming one individual. No ge
 field is needed. Preview tests cover missing number and successful two-reference
 resolution; the existing 24 neutral sentence cases still pass. Automatic antecedent
 resolution and general plural drinking remain unfinished.
+
+## Ordinary wording and neutral agreement checkpoint
+
+Drinking now applies the shared negative-contraction normalizer, including curly
+apostrophes and inverted questions. Shared singular-they substitution also handles
+`habitually` before the supported drinking/movement verbs, preserving the adverb
+and changing only agreement. Four neutral habitual/contracted contrasts produce
+the same full meaning and MIDI as explicit named wording. Twelve named contracted
+scope/runtime cases, existing 21 neutral-contraction cases and preview checks pass.
+This fixes ordinary wording failures without adding aliases for missing meanings.

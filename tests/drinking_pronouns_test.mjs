@@ -11,3 +11,11 @@ for(const [text,named] of [['They are drinking it.','Nora is drinking this tea.'
  await assert.rejects(composeDrinkingSentence(input,{...options,bindings:{...bindings,ref0:{referent:'Nora',number:'plural'}}}),/Group/);
 }
 console.log('PASS nine singular-they drinking cases match named meanings/music; missing number and plural coercion reject.');
+for(const [text,named,viewpoint] of [
+ ['They habitually drink it.','Nora habitually drinks this tea.','habitual'],
+ ["They aren't drinking it.",'Nora is not drinking this tea.','ongoing'],
+ ["Weren’t they drinking it?",'Was Nora not drinking this tea?','ongoing'],
+ ["Don't they drink it?",'Does Nora not drink this tea?','habitual']]){
+ const d=await composeDrinkingSentence(text,{...options,viewpoint,bindings:{ref0:{referent:'Nora',number:'singular'},ref1:'this tea'}}),e=await composeDrinkingSentence(named,{...options,viewpoint});assert.deepEqual(d,e);assert.deepEqual(await midiFromDrinking(d,authority,{allowDraft:true}),await midiFromDrinking(e,authority,{allowDraft:true}));
+}
+console.log('PASS habitual singular-they and straight/curly negative contractions preserve full meaning and music.');

@@ -1,3 +1,4 @@
+import {expandNegativeContractions} from './contractions.mjs';
 import {personalPronounPlan,resolvePersonalPronouns} from './personal_pronoun_plan.mjs';
 import {validReferent} from './pronouns.mjs';
 import {contextualContentReference} from './contextual_content.mjs';
@@ -8,6 +9,7 @@ export function drinkingPlan(input){
  if(typeof input!=='string')return null;
  let text=input.trim(),runtimeState=1;const tag=text.match(/\s*\[([012])\]([.!?]?)$/);
  if(tag){runtimeState=Number(tag[1]);text=text.slice(0,tag.index).trim();const p=text.match(/[.!?]$/)?.[0];if(p&&tag[2]&&p!==tag[2])return null;if(!p)text+=tag[2];}
+ text=expandNegativeContractions(text,`(${REF})`);
  const question=text.endsWith('?');text=text.replace(/[.!?]$/,'');
  let m,holder,material,verb,negative=false,viewpoint,past=false;
  if(question){
