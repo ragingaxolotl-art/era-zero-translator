@@ -36,3 +36,12 @@ export async function composeQuantifiedPropertySentence(input,loadTemplate,{allo
  const formalDigest=await canonicalDigest({semantic_digest:digest,relative_plan:relativePlan});Object.assign(formal,{formal_id:`EZF:${formalDigest.slice(0,24)}`,formal_digest:formalDigest,semantic_digest:digest,draft_quantified:true});
  return {...base,source_input:input,status:'draft_quantified_translation',grammar:{profile:'EZCOUNT-BIND-1',music_profile:'EZCOUNT-MUSIC-1',status:'draft'},construction:'counted_property',interpretation:input,semantic_note:(base.semantic_note?base.semantic_note+' ':'')+'Counts members of the contextual noun class satisfying the scoped property. Predicate negation and negation of the whole count are distinct. No real-world count is inferred from the noun label or runtime state.',semantic_ir:ir,formal};
 }
+
+// “Active” is ambiguous. Offer this existing reading only after explicit choice;
+// do not silently equate operation, illumination, or consciousness with energy.
+export function quantifiedActivityPlan(input){
+ if(typeof input!=='string')return null;
+ const expanded=input.replace(/\bactive(?=[.!?]?(?:\s*\[[012]\][.!?]?)?\s*$)/,'physically energized');
+ if(expanded===input||!parseQuantifiedPropertySentence(expanded))return null;
+ return {source_input:input,interpreted_input:expanded,reading:'physically_energized',definition:'The material substrate is physically energized. This does not assert that a lamp is switched on, working, or emitting light.'};
+}

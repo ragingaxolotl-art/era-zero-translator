@@ -28,3 +28,11 @@ vm.runInContext(app.split('\n').find(l=>l.startsWith('const recognitionOptions='
 state.resolution={status:'draft_quantified_translation'};assert.equal(context.options().mode,'strict');
 assert(app.includes("['candidate_translation','draft_quantified_translation'].includes(result.status)?'Draft preview'"));
 console.log('PASS draft preview UI: explicit opt-in, stale input/results rejection, draft label and strict sound mode.');
+
+const {quantifiedActivityPlan}=await import('../pages/quantified_sentences.mjs');
+const active='Exactly three lamps are active.',interpretation=quantifiedActivityPlan(active);assert(interpretation);assert.equal(interpretation.interpreted_input,'Exactly three lamps are physically energized.');
+for(const text of ['Exactly three lamps are active and bright.','Nora is active.','Exactly three "active" lamps are broken.'])assert.equal(quantifiedActivityPlan(text),null);
+elements.sourceInput.value=active;let interpreted=null;context.composeQuantifiedPropertySentence=async text=>{interpreted=text;return {status:'draft_quantified_translation'}};
+context.activityChoice=interpretation;vm.runInContext('showQuantifiedPreview('+JSON.stringify(active)+',activityChoice);',context);
+assert.equal(interpreted,null);const activeCard=elements.candidateList.children.at(-1);assert.match(activeCard.children[0].textContent,/does not assert/);assert.equal(activeCard.children[1].textContent,'Use physically energized meaning');await activeCard.children[1].click();assert.equal(interpreted,interpretation.interpreted_input);assert.equal(shown.source_input,active);assert.equal(shown.interpretation_choice.reading,'physically_energized');
+console.log('PASS counted active requires explicit physically-energized choice and preserves original wording; unsupported alternatives are not silently mapped.');

@@ -5,8 +5,7 @@
   "counts": {
     "verified_for_declared_checks": 24,
     "requires_interpretation": 11,
-    "preview_needs_semantic_review": 4,
-    "not_composed": 1
+    "preview_needs_semantic_review": 5
   },
   "areas": {
     "participants": {
@@ -825,8 +824,9 @@
       "requirements": [
         "Quantify three bearers, not repetitions of one assertion"
       ],
-      "status": "not_composed",
-      "failures": []
+      "status": "preview_needs_semantic_review",
+      "failures": [],
+      "preview_route": "quantified_activity_choice"
     },
     {
       "id": "compare",

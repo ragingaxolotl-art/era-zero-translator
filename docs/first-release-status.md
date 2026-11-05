@@ -102,3 +102,11 @@ existing MIDI recovery; their musical note sequences differ. Missing reading
 choices reject. The reproducible tool is `tools/review_interpretation_phrases.mjs`.
 These checks establish declared-reading behavior, not blind evaluation, automatic
 interpretation, browser usability, or audio recovery.
+
+Counted “active” now opens a clarification offering the existing physically
+energized reading with its exclusions visible. It does not equate energy with
+being switched on, operating, or emitting light, and requires a deliberate click.
+The chosen reading and original input are retained in the result. Existing
+counted-property scope tests (18 cases), actual handler tests, and the Pages
+audit pass. The diagnostic now reports five preview cases instead of four plus
+one uncomposed case; preview availability still does not prove intended meaning.

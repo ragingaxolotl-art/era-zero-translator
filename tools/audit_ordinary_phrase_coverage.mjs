@@ -2,7 +2,7 @@ import {curiosityInterpretationPlan} from '../pages/curiosity.mjs';
 import {routeLearningInterpretationPlan} from '../pages/route_learning.mjs';
 import {understandingInterpretationPlan} from '../pages/understanding_content.mjs';
 import {parseFoundationSentence} from '../pages/foundation_sentences.mjs';
-import {parseQuantifiedPropertySentence} from '../pages/quantified_sentences.mjs';
+import {quantifiedActivityPlan,parseQuantifiedPropertySentence} from '../pages/quantified_sentences.mjs';
 import {pronounInterpretationPlan,composePronounSentence} from '../pages/pronouns.mjs';
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
@@ -30,6 +30,7 @@ for(const item of corpus.cases){
   ['curiosity',curiosityInterpretationPlan(item.input)],
   ['route_learning',routeLearningInterpretationPlan(item.input)],
   ['understanding',understandingInterpretationPlan(item.input)],
+  ['quantified_activity_choice',quantifiedActivityPlan(item.input)],
   ['quantified_property',parseQuantifiedPropertySentence(item.input)],
   ['foundation',parseFoundationSentence(item.input,{allowCognitive:true})]
  ].find(([,plan])=>plan):null;

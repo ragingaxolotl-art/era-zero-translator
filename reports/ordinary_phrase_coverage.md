@@ -2,7 +2,7 @@
 
 Fresh phrase coverage audit authored during implementation; not a blind or representative English benchmark.
 
-Full translator completion: **not established**. 24 of 40 cases pass their declared semantic checks; 1 have no complete composition; 4 have newer interpretation previews requiring semantic review; 11 require an explicit interpretation. These counts do not estimate coverage of English generally.
+Full translator completion: **not established**. 24 of 40 cases pass their declared semantic checks; 0 have no complete composition; 5 have newer interpretation previews requiring semantic review; 11 require an explicit interpretation. These counts do not estimate coverage of English generally.
 
 | Area | Checked compositions | Cases |
 |---|---:|---:|
@@ -41,7 +41,7 @@ Full translator completion: **not established**. 24 of 40 cases pass their decla
 - **Eli understands Nora.** — Preserve interpretation or understanding beyond receiving communication (preview_needs_semantic_review)
 - **Nora runs to the gate.** — Running manner is not any fast movement (requires_interpretation)
 - **Eli swims across the river.** — Propulsion and medium interaction are not passive transport (requires_interpretation)
-- **Exactly three lamps are active.** — Quantify three bearers, not repetitions of one assertion (not_composed)
+- **Exactly three lamps are active.** — Quantify three bearers, not repetitions of one assertion (preview_needs_semantic_review)
 - **This lamp is brighter than that lamp.** — Bind comparison direction, dimension, and both referents (requires_interpretation)
 - **Nora may enter the archive.** — Disambiguate permission versus possibility (requires_interpretation)
 - **Nora cares for Eli or Orin is conscious.** — Resolve inclusive versus exclusive interpretation (requires_interpretation)
