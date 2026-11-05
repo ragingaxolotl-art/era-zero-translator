@@ -306,3 +306,15 @@ relation/pain. They yield eleven distinct performances because the five baseline
 probes coincide. Each inverse recovers all five values while the intensity
 relation remains greater-than. This adds bounded comparison-level runtime
 independence evidence; exhaustive combinations and broader scopes remain open.
+
+## Independent comparison renderer checkpoint
+
+`tools/lib/era_zero_pain_comparison.rb` validates the comparison contract and
+constructs the ordered context/operand performance independently, reusing
+`EraZeroPainStimulus.events`. All 42 authored comparison performances match
+JavaScript MIDI, including the 15 probes of independent nested runtime positions.
+Default draft use and rehashed corruption of scale, comparison basis, operand
+scope and relation are rejected. All 27 underlying relation parity cases remain
+intact. This adds independent implementation evidence; it does not prove broad
+semantic adequacy, physical audio reliability or completion of the original
+modified preference. UI integration and that preference remain open.
