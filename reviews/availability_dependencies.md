@@ -137,3 +137,21 @@ independent inverse and recordings remain unimplemented. Explicit propositions
 for the access conditions, different activities, scheduling and stock/offer
 readings are still separate dependencies. No availability translation is counted
 complete, no root is added, and no canonical compound is promoted here.
+
+
+## Explicit availability English selection
+
+`pages/availability_sentences.mjs` composes a selected practical-custody-opportunity
+reading from singular “is/was (not) available (to ...)” statements and questions,
+including negative contractions. The access context and interpretation are
+required; an omitted prospective holder is an explicit additional selection.
+A supplied holder cannot override one already stated. Shared neutral pronoun
+resolution preserves separate resource and prospective-holder references.
+
+Eighteen full-document comparisons check past/present, negation/question and all
+runtime states. Bare availability with a selected holder matches its explicit
+to-phrase, and explicitly bound it/them matches the named reading. Missing
+interpretation/context/holder and conflicting holder selection reject. Sale,
+scheduling and drinking-purpose wording remain unparsed. This is semantic API
+composition only: no opportunity music, inverse, waveform or UI exists yet.
+No default availability sense or root-family expansion is introduced.
