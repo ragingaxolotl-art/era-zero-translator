@@ -1983,3 +1983,15 @@ disables sentence scope controls. The actual-handler test checks exported past
 questions, participant/runtime fidelity, both mixed scope orders and invalidation
 of stale downloads. This is explicit guided composition; automatic English routing
 and live-browser verification remain pending.
+
+### Saved adjective English composition
+
+`local_compound_english.mjs` recognizes exact saved adjective labels in copular
+statements and yes/no questions, including negative contractions, past time and
+runtime tags. It binds the grammatical subject only to a declared outer bearer
+role and leaves all other requirements explicit. It checks subject/copula agreement
+and consumes the whole predicate text, so unsupported suffixes cannot disappear.
+Twenty-four positive/negative present/past assertion/question/runtime cases pass,
+plus contraction and rejection cases. This module is not yet wired into the main
+translator UI. Verb constructions, pronoun clarification, inherited role mapping
+and broader English remain unfinished.
