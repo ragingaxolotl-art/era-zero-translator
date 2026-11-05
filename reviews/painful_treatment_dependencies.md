@@ -289,3 +289,20 @@ runtimes in these sentence-generated cases are the default 1; broader independen
 nested-runtime coverage remains to be exercised at comparison level. Existing
 27 relation runtime cases and Ruby agreement remain intact. Independent comparison
 Ruby rendering, blind WAV tests, UI and physical recordings remain open.
+
+
+## Comparison audio and independent runtime checkpoint
+
+Two clean synthetic comparison WAVs now recover complete represented meaning
+through shared decoding: a negated greater-than expectation question at runtime
+2, and reversed stimulus ordering with less-than disposition at runtime 0. The
+context reference is recovered from the music, not supplied alongside the file.
+See `reports/pain_comparison_acoustic_probe.json`. These are authored synthetic
+examples, not physical recordings or broad acoustic validation.
+
+Fifteen additional MIDI probes independently vary each of the five runtime
+positions around a baseline: comparison, left relation/pain and right
+relation/pain. They yield eleven distinct performances because the five baseline
+probes coincide. Each inverse recovers all five values while the intensity
+relation remains greater-than. This adds bounded comparison-level runtime
+independence evidence; exhaustive combinations and broader scopes remain open.
