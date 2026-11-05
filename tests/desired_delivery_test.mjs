@@ -1,3 +1,4 @@
+import {composeNamedSentence,parseNamedSentence} from '../pages/sentences.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
@@ -28,3 +29,22 @@ for(const viewpoint of ['bounded','ongoing','habitual'])for(const state of [0,1,
  const p=d.meaning.arguments.content.proposition;assert.equal(p.runtime_state,state);assert.deepEqual(p.scopes,[{operator:'aspect',aspect:viewpoint}]);assert.equal(d.meaning.arguments.content.content_status,'intensional');assert.deepEqual(r.object_desire_resolution.desired_delivery,{destination:'custody_delivery',viewpoint});
 }
 console.log('PASS nine explicitly selected desired-delivery viewpoints retain bounded, ongoing and habitual scope.');
+for(const state of [0,1,2])for(const [wording,carrying,viewpoint] of [
+ ['Eli delivers this tea to Nora.','Eli carries this tea to Nora.','bounded'],
+ ['Eli delivered this tea to Nora.','Eli carried this tea to Nora.'],
+ ['Eli is not delivering this tea to Nora.','Eli is not carrying this tea to Nora.'],
+ ['Eli did not deliver this tea to Nora.','Eli did not carry this tea to Nora.']
+]){
+ const options={allowDraft:true,desiredDelivery:{destination:'custody_delivery',...(viewpoint?{viewpoint}:{})}},source='Nora wants this tea.';
+ const a=await composeObjectDesire(source,authority,records,load,{...options,desiredProposition:wording+` [${state}]`}),b=await composeObjectDesire(source,authority,records,load,{...options,desiredProposition:carrying+` [${state}]`});
+ assert.deepEqual(a.semantic_ir,b.semantic_ir);assert.deepEqual(midiFromFormal(a.formal),midiFromFormal(b.formal));
+ const inverse=await decodeFoundationSentenceMidi(midiFromFormal(a.formal),authority.atoms,records,{allowDraft:true});assert.equal(inverse.meaning.arguments.content.proposition.runtime_state,state);
+}
+await assert.rejects(composeObjectDesire('Nora wants tea.',authority,records,load,{allowDraft:true,desiredProposition:'Eli delivered the tea to Nora.'}),/Choose carrying-mediated/);
+console.log('PASS 12 explicitly interpreted delivery-wording cases preserve complete carrying-transfer meaning and music; unselected meaning rejects.');
+
+await assert.rejects(composeNamedSentence('Eli delivered the tea to Nora.',{authority},{destination:'spatial'}),/Choose carrying-mediated/);
+assert.equal(parseNamedSentence('Eli delivered a speech.'),null);
+assert.equal(parseNamedSentence('Eli delivers results.'),null);
+assert.equal(parseNamedSentence('"Deliver" carried the tea to Nora.').requiredDeliveryInterpretation,undefined);
+console.log('PASS spatial-only and unrelated delivery senses cannot silently reuse custody delivery; quoted name is unchanged.');

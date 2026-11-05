@@ -16,12 +16,13 @@ const probes=[
  ['availability','The tea is available.'],
  ['delivery','Eli delivers the tea to Nora.'],
  ['explicit_carrying_delivery','Eli carried the tea to Nora.'],
+ ['explicit_delivery_wording','Eli delivers the tea to Nora.'],
  ['making','Eli makes the tea.']
 ],results=[];
 for(const [id,desiredProposition] of probes){
  let phase='composition';
  try{
-  const desiredDelivery=id==='explicit_carrying_delivery'?{destination:'custody_delivery'}:undefined;
+  const desiredDelivery=id==='explicit_carrying_delivery'?{destination:'custody_delivery'}:id==='explicit_delivery_wording'?{destination:'custody_delivery',viewpoint:'bounded'}:undefined;
   const choices=id==='drinking'?{interpretation:'literal_drinking',viewpoint:'bounded',materialReading:'contextual_portion'}:null;
   const d=choices?await composeObjectDesiredDrinking('Nora wants tea.',authority,{allowDraft:true,desiredProposition,...choices}):await composeObjectDesire('Nora wants tea.',authority,records,load,{allowDraft:true,desiredProposition,desiredDelivery});phase='musical_inverse';
   const bytes=choices?await midiFromDesiredDrinking(d.meaning,authority,{allowDraft:true}):midiFromFormal(d.formal);

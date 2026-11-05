@@ -36,8 +36,12 @@ The object-desire clarification interface now exposes explicit custody-delivery
 and (when needed) viewpoint selections for carrying-to outcomes. Editing the
 outcome clears both choices; pending results are discarded when a selection
 changes. Handler tests check complete nested MIDI recovery and draft bundle
-verification. This is not live-browser verification. The ordinary `delivers`
-wording remains unsupported. The outcome audit retains that failed ordinary wording and separately
+verification. This is not live-browser verification. Ordinary affirmative and negated delivery statements now reuse this compound
+only after explicit custody-delivery selection. Twelve wording contrasts cover
+present, past and progressive forms across runtime 0/1/2. The UI test uses
+`delivers`; the blind audio test uses `did not deliver`. Unselected delivery,
+spatial-only interpretation, speech delivery and result delivery are not silently
+coerced. Other delivery senses and broader question forms remain unfinished. The outcome audit retains that failed ordinary wording and separately
 reports the explicitly selected carrying-delivery form. Physical recordings and
 the full completion gates remain outstanding.
 

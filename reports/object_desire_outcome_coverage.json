@@ -393,7 +393,7 @@
       "desiredProposition": "Eli delivers the tea to Nora.",
       "status": "unsupported",
       "phase": "composition",
-      "diagnostic": "Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else."
+      "diagnostic": "Choose carrying-mediated custody delivery explicitly; other delivery meanings are not supported by this construction."
     },
     {
       "id": "explicit_carrying_delivery",
@@ -442,6 +442,137 @@
                     "operator": "time",
                     "relation": "before_speech"
                   },
+                  {
+                    "operator": "aspect",
+                    "aspect": "bounded"
+                  }
+                ],
+                "arguments": {
+                  "carrier": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "name",
+                      "phonemes": [
+                        "EH",
+                        "L",
+                        "IH"
+                      ],
+                      "instance_code": null
+                    }
+                  },
+                  "object": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "definite_nominal",
+                      "phonemes": [
+                        "T",
+                        "IY"
+                      ],
+                      "instance_code": null
+                    }
+                  },
+                  "recipient": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "name",
+                      "phonemes": [
+                        "N",
+                        "AO",
+                        "R",
+                        "AE"
+                      ],
+                      "instance_code": null
+                    }
+                  }
+                },
+                "meaning": {
+                  "same_object": true,
+                  "carrier_is_transfer_source": true,
+                  "destination_referent_is_recipient": true,
+                  "arrival_culminates_in_transfer": true,
+                  "same_delivery_event": true,
+                  "source_custody_before_transfer": true,
+                  "source_custody_at_culmination": false,
+                  "recipient_custody_before_transfer": false,
+                  "recipient_custody_at_culmination": true,
+                  "ownership_asserted": false,
+                  "willingness_asserted": false,
+                  "persistence_after_culmination_asserted": false
+                }
+              }
+            },
+            "experiencer": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "N",
+                  "AO",
+                  "R",
+                  "AE"
+                ],
+                "instance_code": null
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Candidate vocabulary requires explicit opt-in.",
+          "This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.",
+          "Reference sounds do not determine original spelling or external identity.",
+          "Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.",
+          "Reads strict MIDI, not recorded audio."
+        ]
+      }
+    },
+    {
+      "id": "explicit_delivery_wording",
+      "desiredProposition": "Eli delivers the tea to Nora.",
+      "status": "inverse_available_needs_case_specific_semantic_review",
+      "explicit_choices": {
+        "desiredDelivery": {
+          "destination": "custody_delivery",
+          "viewpoint": "bounded"
+        }
+      },
+      "recovered": {
+        "profile": "EZFOUND-SEMANTIC-INVERSE-1",
+        "speech_act": "assertion",
+        "meaning": {
+          "predicate": {
+            "kind": "foundation",
+            "foundation_id": "FND:f66b7a3877f4b0140a0b7023",
+            "definition_version": "1.0.0",
+            "registry_status": "candidate"
+          },
+          "runtime_state": 1,
+          "scopes": [],
+          "arguments": {
+            "content": {
+              "type": "proposition",
+              "content_status": "intensional",
+              "proposition": {
+                "predicate": {
+                  "kind": "conventional_compound",
+                  "name": "completed_carrying_custody_delivery",
+                  "convention_codes": [
+                    10,
+                    6,
+                    5,
+                    4,
+                    3,
+                    9,
+                    7,
+                    8,
+                    7
+                  ]
+                },
+                "runtime_state": 1,
+                "scopes": [
                   {
                     "operator": "aspect",
                     "aspect": "bounded"

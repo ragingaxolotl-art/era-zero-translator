@@ -109,6 +109,16 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     return {...inner,adjective:match[2],requiredInterpretation:'mass_standard',nominalProperty:{participantIndex:indices[0]},construction:`nominal_mass_${inner.construction}`,explicitInterpretation:String(input).trim()};
   }
   const participant='(I|me|you|'+NOMINAL_PATTERN+'|(?!(?:She|He|It|They|We|Her|Him|Them|Us)\\b)[A-Z][a-z]+|"[A-Za-z]+(?:[ -][A-Za-z]+)*")';
+  // Delivery is polysemous. This path is available only after explicitly
+  // selecting the established carrying-arrival plus custody-transfer meaning.
+  const deliveryPrefix=String(input).trim().match(new RegExp(`^${participant} (?:(?:does not|do not|did not|is|am|are|was|were) (?:not )?)?(?:habitually )?(delivers|delivered|delivering|deliver)\\b`));
+  if(deliveryPrefix){
+    const verb=deliveryPrefix.at(-1),text=String(input).trim(),start=deliveryPrefix[0].length-verb.length;
+    const equivalent=text.slice(0,start)+({deliver:'carry',delivers:'carries',delivered:'carried',delivering:'carrying'})[verb]+text.slice(start+verb.length);
+    const inner=parseNamedSentence(equivalent,depth+1,speechActs);
+    if(!inner?.requiredDestination)return null;
+    return {...inner,requiredDeliveryInterpretation:true,construction:`delivery_wording_${inner.construction}`,explicitInterpretation:text};
+  }
   const normalized=expandNegativeContractions(String(input),participant);
   if(normalized!==String(input)){
     const inner=parseNamedSentence(normalized,depth+1,speechActs);
@@ -642,6 +652,7 @@ async function composeClauseGroup(input,clauses,operator,loadTemplate,clauseOpti
 export async function composeNamedSentence(input,template,{interpretation,standard,viewpoint,destination}={}) {
   const parsed=parseNamedSentence(input);
   if(!parsed)throw new Error('The complete sentence does not match this construction.');
+  if(parsed.requiredDeliveryInterpretation&&destination!=='custody_delivery')throw new Error('Choose carrying-mediated custody delivery explicitly; other delivery meanings are not supported by this construction.');
   if(parsed.requiredViewpoint){
     if(!['bounded','ongoing','habitual'].includes(viewpoint)){
       const error=new Error(`Choose whether ${parsed.viewpointActivity||'carrying'} describes one narrated episode, an unfolding action, or a recurring practice.`);

@@ -84,7 +84,7 @@ console.log('PASS foundation clarification routes explicitly supplied drinking t
 context.fetch=async()=>({ok:true,json:async()=>registry});elements.sourceInput.value=objectInput;shown=null;errors=[];context.showFoundationPreview(objectInput);
 const deliveryCard=elements.candidateList.children.at(-1),deliveryOutcome=deliveryCard.children[1].children[0],deliveryChoice=deliveryCard.children[2].children[0],viewpointChoice=deliveryCard.children[3].children[0],deliveryButton=deliveryCard.children.at(-1);
 assert.equal(deliveryCard.children[2].hidden,true);
-deliveryOutcome.value='Eli carries the tea to Nora. [0]';deliveryOutcome.input();assert.equal(deliveryCard.children[2].hidden,false);assert.equal(deliveryCard.children[3].hidden,false);
+deliveryOutcome.value='Eli delivers the tea to Nora. [0]';deliveryOutcome.input();assert.equal(deliveryCard.children[2].hidden,false);assert.equal(deliveryCard.children[3].hidden,false);
 await deliveryButton.click();assert.equal(shown,null);
 deliveryChoice.value='custody_delivery';await deliveryButton.click();assert.equal(shown,null);
 viewpointChoice.value='ongoing';errors=[];await deliveryButton.click();assert.equal(errors.length,0);assert(shown);
