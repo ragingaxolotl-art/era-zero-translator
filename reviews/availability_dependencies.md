@@ -177,3 +177,21 @@ See custody_opportunity_acoustic_probe.json. Existing ownership music tests pass
 Independent opportunity rendering, adversarial corruptions, UI/desired-outcome
 integration, explicit condition propositions and physical recordings remain open.
 This is one selected availability sense, not general availability completion.
+
+## Independent opportunity renderer and semantic corruption checks
+
+The Ruby opportunity renderer independently pins the opportunity contract,
+acquisition dependency and conditional phase commitments. It validates all three
+references, allowed scope, runtime, explicit context and distinct known
+holder/resource identity before rendering. Eighteen existing authored cases match
+JavaScript MIDI byte for byte.
+
+Rehashed changes asserting permission or actual acquisition, moving activity into
+past time, replacing the event dependency, invalidating runtime or collapsing
+holder/resource identity reject. Two structurally valid musical corruptions—an
+absent access-context role and duplicate prospective-holder role in place of the
+resource—fail both the specific inverse and shared semantic dispatch. These
+checks test missing meanings rather than treating different MIDI hashes as proof.
+UI integration, desired availability, explicit condition propositions, broader
+availability senses and physical recordings remain unfinished. The last full
+regression predates this extension; this evidence is targeted.
