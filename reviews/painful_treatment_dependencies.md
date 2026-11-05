@@ -271,3 +271,21 @@ runtime tag belongs to the comparison only. This is meaning composition, not yet
 musical comparison, UI interaction or full ordinary-language coverage. The
 original modified preference still requires integration and missing-context
 resolution before it can be claimed supported.
+
+
+## Comparison music checkpoint
+
+The comparison now has draft music frames using ±39 subcodes 5/6/7 for ordinal
+greater/less/equal, with its own runtime trit. It contains an audible context
+reference, a target operand and a comparison-standard operand. Both operands
+reuse the complete pain-stimulus and felt-pain event structures; no existing
+frame or root is reassigned. The strict inverse validates matching relation
+modes and experiencers and rejects mismatched or unscoped extra content.
+
+Twenty-seven negated-question performances cover three comparison directions,
+three outcome modes and three comparison runtimes. Full shared MIDI recovery
+and transposition preserve ordered stimulus references and context. Nested
+runtimes in these sentence-generated cases are the default 1; broader independent
+nested-runtime coverage remains to be exercised at comparison level. Existing
+27 relation runtime cases and Ruby agreement remain intact. Independent comparison
+Ruby rendering, blind WAV tests, UI and physical recordings remain open.
