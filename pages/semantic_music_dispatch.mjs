@@ -25,6 +25,7 @@ export async function decodeSupportedMeaningWithDrafts(bytes,atoms,records,{allo
  const {decodeFoundationSentenceMidi}=await import('./foundation_semantic_decoder.mjs');
  const {decodeUnderstandingMidi}=await import('./understanding_music.mjs');
  const {decodeUnderstandingAcquisitionMidi}=await import('./understanding_acquisition_music.mjs');
+ const {decodeDrinkingMidi}=await import('./drinking_music.mjs');
  const {decodePainPreferenceMidi}=await import('./pain_preference_music.mjs');
  const {decodePainComparisonMidi}=await import('./pain_comparison_music.mjs');
  const {decodePainStimulusMidi}=await import('./pain_stimulus_music.mjs');
@@ -37,6 +38,7 @@ export async function decodeSupportedMeaningWithDrafts(bytes,atoms,records,{allo
  try{accepted.push(await decodeUnderstandingMidi(bytes,atoms,{allowDraft:true}));}catch{}
  try{accepted.push(await decodeUnderstandingAcquisitionMidi(bytes,atoms,{allowDraft:true}));}catch{}
  try{accepted.push(await decodeRouteLearningMidi(bytes,atoms,{allowDraft:true}));}catch{}
+ try{accepted.push(decodeDrinkingMidi(bytes,atoms,{allowDraft:true}));}catch{}
  try{accepted.push(decodePainPreferenceMidi(bytes,atoms,{allowDraft:true}));}catch{}
  try{accepted.push(decodePainComparisonMidi(bytes,atoms,{allowDraft:true}));}catch{}
  try{accepted.push(decodePainStimulusMidi(bytes,atoms,{allowDraft:true}));}catch{}

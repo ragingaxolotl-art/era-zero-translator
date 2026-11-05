@@ -86,3 +86,19 @@ errors, missing choices and contradictory viewpoints reject. This is not yet
 connected to the main preview or desire composer: musical encoding and inverse
 must exist before it becomes an offered translation. Pronoun antecedents,
 quantities, modified materials and additional tense/aspect forms remain open.
+
+## Musical encoding checkpoint
+
+Draft ±39 subcodes 9/10/11 encode ongoing/bounded/habitual drinking with a
+separate runtime trit. Existing nominal modes and participant sounds carry drinker
+and material. The renderer's reference adapter uses its existing entity-valued
+carrier API while retaining the nominal-class marker; the inverse recovers kind
+versus contextual portion from that audible marker, not metadata. No source
+English or semantic document is accepted by the inverse. Shared draft dispatch
+requires a unique accepted profile.
+
+Eighteen viewpoint/runtime/material-reading contrasts recover participants,
+negated question scope and amount noncommitments, also under transposition.
+Default draft rejection remains enforced. Independent Ruby rendering, corruption
+checks, blind WAV, UI and desired-drinking integration remain unfinished. This
+adds draft conventions only and does not change canonical root sounds.
