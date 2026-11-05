@@ -2219,3 +2219,16 @@ handoff; the user then translates and clarifies roles normally. Definitions with
 required outer roles do not advertise unsupported sentence examples. Tests verify
 all generated examples parse and the handoff is consumed once. Module syntax
 checks pass; browser navigation/focus behavior remains unverified.
+
+## Builder authoring integration check
+
+`tests/local_builder_authoring_test.mjs` runs the actual builder script with a DOM
+adapter and real registry, role-link, and sentence modules. It exercises search,
+ordered component selection, participant links, stale-definition rejection,
+save/reload, and “Nora might not be stridebright.” to musical output. It verifies
+the shared participant and modality-before-negation meaning. This is not a live
+browser or listening test. The local release gate now passes 19/19 suites and
+resolves 133 browser modules. Browser interaction and listening remain unverified.
+
+The library button now says “Add to current compound,” accurately describing its
+behavior; saving points users to supported sentence examples in the library.

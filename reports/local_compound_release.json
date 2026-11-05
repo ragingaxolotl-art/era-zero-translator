@@ -1,7 +1,13 @@
 {
   "scope": "Local compound release gate: static module availability and targeted Node tests, not live-browser or unrestricted-English proof",
-  "checked_modules": 132,
+  "checked_modules": 133,
   "results": [
+    {
+      "test": "local_builder_authoring_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS actual builder handlers: search, ordered parts, role connection, stale-edit rejection, save/reload, and saved adjective sentence to music (DOM adapter, not live browser).\n"
+    },
     {
       "test": "local_canonical_dependencies_test.mjs",
       "passed": true,
@@ -24,7 +30,13 @@
       "test": "local_compound_english_test.mjs",
       "passed": true,
       "exit_code": 0,
-      "output": "PASS 24 saved adjective English sentences preserve subject, past, negation, questions and runtime; agreement/unsupported remainder rejects.\n"
+      "output": "PASS 24 saved adjective English sentences preserve subject, past, negation, questions and runtime; agreement/unsupported remainder rejects.\nPASS 12 saved adjective possibility/negation/question/runtime cases; missing copula and perfect tense reject.\n"
+    },
+    {
+      "test": "local_compound_examples_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS generated saved-word examples parse, missing-role definitions do not promise sentence support, and local handoff is consumed once.\n"
     },
     {
       "test": "local_compound_expansion_test.mjs",
@@ -60,7 +72,7 @@
       "test": "local_compound_pronouns_test.mjs",
       "passed": true,
       "exit_code": 0,
-      "output": "PASS neutral saved-word pronouns preserve explicit meanings/music and provenance; number clarification, plural rejection and quoted-name isolation.\nPASS direct singular-they saved verbs preserve base-form meaning; ambiguous base/past does not silently become past.\nPASS neutral-pronoun ambiguous verbs require explicit tense and retain the selected time in meaning and provenance.\n"
+      "output": "PASS neutral saved-word pronouns preserve explicit meanings/music and provenance; number clarification, plural rejection and quoted-name isolation.\nPASS direct singular-they saved verbs preserve base-form meaning; ambiguous base/past does not silently become past.\nPASS neutral-pronoun ambiguous verbs require explicit tense and retain the selected time in meaning and provenance.\nPASS singular-they saved verb uncertainty preserves pronouns and possibility/negation scope.\nPASS singular-they adjective possibility retains bearer identity and negation scope.\n"
     },
     {
       "test": "local_compound_sentence_test.mjs",
@@ -102,7 +114,7 @@
       "test": "local_verb_english_test.mjs",
       "passed": true,
       "exit_code": 0,
-      "output": "PASS 24 saved verb auxiliary sentences, explicit role mapping, contraction and unsupported-tail rejection.\nPASS explicit regular/irregular verb forms match auxiliary meanings/music; agreement, incomplete forms and ambiguous tense reject.\nPASS explicit ambiguous-tense selection preserves participants and changes time/music; stale or forged interpretations reject.\n"
+      "output": "PASS 24 saved verb auxiliary sentences, explicit role mapping, contraction and unsupported-tail rejection.\nPASS explicit regular/irregular verb forms match auxiliary meanings/music; agreement, incomplete forms and ambiguous tense reject.\nPASS explicit ambiguous-tense selection preserves participants and changes time/music; stale or forged interpretations reject.\nPASS 12 might/might-not statements/questions preserve possibility outside negation and runtime; perfect-tense and ambiguous may are not silently simplified.\n"
     }
   ],
   "passed": true
