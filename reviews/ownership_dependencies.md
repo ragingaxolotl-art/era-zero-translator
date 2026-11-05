@@ -151,3 +151,20 @@ without an external expected message; no authentication claim is made.
 Interface integration, desired ownership, implicit context, co-ownership and
 physical audio recordings remain unfinished. These targeted checks do not
 supersede the last full regression report.
+
+
+## Ownership preview integration
+
+The ordinary analysis route now recognizes ownership statements/questions and
+explicit pronoun plans, presenting a draft preview with a required framework
+field. It reuses the existing playback mechanism and exports ownership MIDI and
+full validated JSON. Pronoun references are explicit, including one/group
+selection for they/them; unsupported groups still reject. There is no default
+framework and no claim that the reference name provides or verifies its rules.
+
+Actual handler tests exercise framework gating, complete exported meaning/MIDI,
+a past negated question with runtime 2, singular-they and object binding, stale
+asynchronous generation and invalidated old downloads. Drinking preview tests
+still pass. These VM handler tests are not live-browser or physical-audio checks.
+Nested desired ownership, broader references/contexts, release validation and
+physical recordings remain unfinished.
