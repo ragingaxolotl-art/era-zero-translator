@@ -38,7 +38,12 @@ function readCustodyReader(reader){
 export function decodeCustodyAcquisitionMidi(bytes,atoms){
  const message='Unsupported or malformed custody-acquisition music.';
  const fail=()=>{throw new Error(message);};
- const {observed,marker,exactRoot,role,unwrapScopes}=strictSemanticReader(bytes,atoms,message);
+ return readAcquisitionReader(strictSemanticReader(bytes,atoms,message));
+}
+export function readCustodyAcquisitionTree(frame,reader){return readAcquisitionReader({...reader,observed:{speech_act:'assertion'},unwrapScopes:()=>({current:[frame],scopes:[]})});}
+function readAcquisitionReader(reader){
+ const fail=()=>{throw new Error('Malformed custody acquisition structure.');};
+ const {observed,marker,exactRoot,role,unwrapScopes}=reader;
  const {current,scopes}=unwrapScopes(node=>marker(node,'convention_8_open'));
  if(current.length!==1||!marker(current[0],'convention_8_open')||current[0].children?.length!==2)fail();
  const [custody,head]=current[0].children,runtime=head?.runtime_state;

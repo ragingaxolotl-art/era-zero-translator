@@ -213,3 +213,21 @@ shared inverse acceptance before presenting a ready translation. This prevents
 unsupported nested outcomes from silently appearing complete while their inverse
 work remains pending. An inverse alone is not proof of semantic fidelity; the
 case-specific checks and audio evidence are still required.
+
+## Desired carrying and custody acquisition inverse extension
+
+The two musical inverse gaps identified by the outcome audit are now implemented.
+The foundation inverse recognizes convention 8/7 custody acquisition using an
+extracted strict custody-acquisition tree reader, and convention 4/3 physical
+carrying using a strict tree reader that checks the actor is the same load as the
+nested physical support target. Existing roots, frames and meanings are reused.
+Both remain within intensional content; no actual outcome follows from desire.
+
+Eighteen authored cases (two outcomes × assertion/negation/question × runtime)
+recover their distinct commitments and match independent Ruby MIDI. Acquisition
+retains no-custody-before/custody-at-culmination, without ownership, object creation
+or continued custody afterward. Carrying retains physical support/shared load and
+translation without destination or arrival. The existing 36 standalone acquisition
+cases and prior object-desire tests pass. The outcome coverage report now records
+three available inverses; five tested outcomes remain composition failures. These
+two new nested outcomes still require blind audio and broader held-out checks.

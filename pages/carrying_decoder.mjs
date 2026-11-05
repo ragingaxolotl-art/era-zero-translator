@@ -42,3 +42,16 @@ export function decodeDestinationCarryingMidi(bytes,atoms){
    'Repeated reference sounds are checked for consistency; shared identity is asserted by the learned convention, not proved about external objects. Homophones and untagged referents can remain ambiguous.',
    'This is a strict MIDI inverse, not recognition of arbitrary recorded or human-played audio.']};
 }
+
+// Reusable undirected carrying tree; nested support remains lexical, not a
+// separate assertion of support or a second independently controlled runtime.
+export function readPhysicalCarryingTree(node,{marker,exactRoot,role}){
+ if(!marker(node,'convention_4_open')||node.children?.length!==3)fail();
+ const [actor,support,head]=node.children,runtime=head?.runtime_state;
+ if(![0,1,2].includes(runtime))fail();exactRoot(head,'MOV:121','middle',runtime);
+ if(!marker(support,'convention_3_open')||support.children?.length!==3)fail();
+ const [source,target,root]=support.children;exactRoot(root,'MAT:211','middle',null);
+ const carrier=role(source,'source','low'),load=role(target,'target','high',true);
+ if(!same(role(actor,'actor','low'),load))fail();
+ return {predicate:'physical_carrying',runtime_state:runtime,participants:{carrier,load},convention_codes:[4,3],meaning:{same_load:true,carrier_distinct_from_load:true,load_physically_supported:true,load_translates:true,destination_asserted:false,arrival_asserted:false,ownership_asserted:false}};
+}

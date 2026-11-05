@@ -39,5 +39,22 @@ const inverse=await decodeFoundationSentenceMidi(midiFromFormal(implicit.formal)
 assert.equal(inverse.meaning.runtime_state,1);assert.equal(inverse.meaning.arguments.content.proposition.runtime_state,2);
 console.log('PASS noun/name and proximal/distal identity are not substituted; nine runtime pairs and default outer state preserve independent content runtime.');
 
-for(const outcome of ['Eli acquired physical custody of the tea.','Eli is carrying the tea.'])await assert.rejects(compose('Nora wants tea.',outcome),/complete musical meaning cannot yet be recovered/);
-console.log('PASS unrecoverable desired outcomes are not presented as complete translations.');
+for(const [outcome,predicate] of [['Eli acquired physical custody of the tea.','completed_physical_custody_acquisition'],['Eli is carrying the tea.','physical_carrying']]){
+ const d=await compose('Nora wants tea.',outcome),r=await decodeFoundationSentenceMidi(midiFromFormal(d.formal),authority.atoms,records,{allowDraft:true});
+ assert.equal(r.meaning.arguments.content.content_status,'intensional');assert.equal(r.meaning.arguments.content.proposition.predicate.name,predicate);
+}
+console.log('PASS desired carrying and custody acquisition now recover as intensional content.');
+const nested=[];
+for(const action of ['acquired physical custody of','is carrying'])for(const form of ['Nora wants tea.','Nora does not want tea.','Does Nora want tea?'])for(const runtime of [0,1,2]){
+ const d=await compose(form+` [${runtime}]`,`Eli ${action} the tea.`),r=await decodeFoundationSentenceMidi(midiFromFormal(d.formal),authority.atoms,records,{allowDraft:true}),c=r.meaning.arguments.content;
+ nested.push(d);assert.equal(c.content_status,'intensional');assert.equal(r.meaning.runtime_state,runtime);assert.deepEqual(r.meaning.scopes,form.includes('not')?[{operator:'negation'}]:[]);assert.equal(r.speech_act,form.endsWith('?')?'question':'assertion');
+ assert.equal(c.proposition.meaning.ownership_asserted,false);
+ if(action==='is carrying'){
+  assert.deepEqual(c.proposition.predicate.convention_codes,[4,3]);assert.equal(c.proposition.meaning.same_load,true);assert.equal(c.proposition.meaning.arrival_asserted,false);assert.equal(c.proposition.meaning.destination_asserted,false);
+ }else{
+  assert.deepEqual(c.proposition.predicate.convention_codes,[8,7]);assert.equal(c.proposition.meaning.custody_immediately_before,false);assert.equal(c.proposition.meaning.custody_at_culmination,true);assert.equal(c.proposition.meaning.persistence_after_culmination_asserted,false);assert.equal(c.proposition.meaning.object_creation_asserted,false);
+ }
+}
+const nestedRuby=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_presentation','-rjson','-rbase64','-e',"x=JSON.parse(STDIN.read);o={foundation_records:x['records'],allow_draft_foundations:true};puts JSON.generate(x['documents'].map{|d|Base64.strict_encode64(EraZeroPresentation.midi(EraZeroRenderer.render(d['semantic_ir'],**o),**o))})"],{input:JSON.stringify({records,documents:nested}),encoding:'utf8',maxBuffer:16000000}));
+for(const [i,d] of nested.entries())assert.equal(Buffer.from(midiFromFormal(d.formal)).toString('base64'),nestedRuby[i]);
+console.log('PASS 18 desired carrying/acquisition scope/runtime cases preserve specific commitments and match independent Ruby music.');
