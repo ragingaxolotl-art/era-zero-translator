@@ -14,3 +14,7 @@ await assert.rejects(composeLocalWordWithPronouns('They are glowsteady.',r,a,{pr
 assert.equal(await localWordPronounPlan('"They" is glowsteady.',r,a),null);
 assert.equal(await localWordPronounPlan('They are unknown.',r,a),null);
 console.log('PASS neutral saved-word pronouns preserve explicit meanings/music and provenance; number clarification, plural rejection and quoted-name isolation.');
+const ordinary=await composeLocalWordWithPronouns('They glowmend it.',r,a,{pronounBindings:{...bindings,ref1:'this tea'},subjectRole:'actor',objectRole:'target'}),equivalent=await composeLocalVerb('Nora does glowmend this tea.',r,a,{subjectRole:'actor',objectRole:'target'});assert.deepEqual(ordinary.meaning,equivalent.meaning);assert.deepEqual(ordinary.midi,equivalent.midi);assert.equal(ordinary.source_input,'They glowmend it.');
+const firstPerson=await composeLocalWordWithPronouns('They glowmend it.',r,a,{pronounBindings:{ref0:{referent:'I',number:'singular'},ref1:'this tea'},subjectRole:'actor',objectRole:'target'});assert.equal(firstPerson.pronoun_resolution.resolved_input,'I do glowmend this tea.');
+const ambiguous=await addLocalCompound(r,{...r.entries[1].definition,label:'put',english_forms:{third_person:'puts',past:'put'}},a);assert.equal(await localWordPronounPlan('They put it.',ambiguous,a),null);assert(await localWordPronounPlan('They did put it.',ambiguous,a));
+console.log('PASS direct singular-they saved verbs preserve base-form meaning; ambiguous base/past does not silently become past.');

@@ -2158,3 +2158,14 @@ to one bearer, including a correctly rehashed forged library; creation/import/sa
 reject and existing stored data is preserved. Valid nested links, builder controls
 and merge regressions remain green. This enforces existing semantic constraints,
 not arbitrary natural-language definition truth.
+
+### Singular-they agreement for saved base-form verbs
+
+Supported direct sentences beginning with they plus a saved base-form verb now
+normalize through the existing do/does agreement path before explicit reference
+resolution. Original wording and reference provenance remain exported. Tests
+compare full meaning/MIDI with named equivalents and cover a speaker reference.
+An ambiguous base/past spelling (e.g. “They put it”) is not silently coerced to past
+by a singular probe; explicit do/did remains supported. A dedicated tense-choice
+path for that pronoun-plus-ambiguous-form combination is still unfinished.
+Pronoun and English-preview regressions pass.
