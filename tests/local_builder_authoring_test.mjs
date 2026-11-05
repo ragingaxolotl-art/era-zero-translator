@@ -37,3 +37,16 @@ const restored=await registryAPI.loadLocalCompounds(storage,authority);assert.eq
 const music=await composeLocalAdjective('Nora might not be stridebright.',restored,authority);assert(music.midi.length>0);assert.equal(music.meaning.bindings.length,2);assert(music.meaning.bindings.every(b=>b.reference.name.normalized_label==='nora'));
 assert.deepEqual(music.meaning.scopes.map(s=>s.operator),['modality','negation']);
 console.log('PASS actual builder handlers: search, ordered parts, role connection, stale-edit rejection, save/reload, and saved adjective sentence to music (DOM adapter, not live browser).');
+
+// Build a compound of the saved compound through the same authoring handlers.
+await ids.newCompound.fire();assert.equal(ids.parts.children.length,0);assert.equal(ids.roles.children.length,0);assert.equal(ids.label.value,'');assert.equal(ids.library.children.length,1);
+await addPart(restored.entries[0].compound_id);await addPart(authority.atoms[1].canonical_id);
+ids.label.value='stridecalm';ids.definition.value='Test-only nested quality.';ids.partOfSpeech.value='adjective';
+await ids.addRole.fire();ids.roles.children[0].querySelector('select').value='bearer';ids.roles.children[0].querySelector('input').value='Bearer of the nested quality.';
+await ids.connectRoles.fire();assert.equal(ids.roleLinks.children.length,1);ids.roleLinks.children[0].children[0].value='bearer';await ids.save.fire();assert.match(ids.status.textContent,/Saved/);
+const nested=await registryAPI.importLocalCompounds(JSON.stringify(await registryAPI.loadLocalCompounds(storage,authority)),authority);
+assert.equal(nested.entries.length,2);assert.equal(nested.entries[1].definition.components[0].target_id,restored.entries[0].compound_id);
+const nestedMusic=await composeLocalAdjective('Nora might not be stridecalm.',nested,authority);assert.equal(nestedMusic.meaning.bindings.length,3);assert(nestedMusic.meaning.bindings.every(b=>b.reference.name.normalized_label==='nora'));
+assert.deepEqual(nestedMusic.meaning.scopes,music.meaning.scopes);assert(nestedMusic.midi.length>music.midi.length);
+const frames=nestedMusic.events.filter(e=>e.grammar_profile==='EZLOCAL-COMPOUND-MUSIC-1');assert.equal(frames.length,4);const stack=[];for(const frame of frames){if(frame.marker.endsWith('_open'))stack.push(frame.target_id);else assert.equal(stack.pop(),frame.target_id);}assert.equal(stack.length,0);
+console.log('PASS new draft preserves saved words; nested compound authoring, export/import, transitive participants and nested musical frames.');

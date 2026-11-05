@@ -2232,3 +2232,14 @@ resolves 133 browser modules. Browser interaction and listening remain unverifie
 
 The library button now says “Add to current compound,” accurately describing its
 behavior; saving points users to supported sentence examples in the library.
+
+### Compounds of saved compounds
+
+The builder now provides an explicit “Clear draft and start another compound”
+action, preserving the saved library and resetting old participant connections.
+The authoring integration test builds a second adjective from the first saved
+adjective, exports/imports its registry, and composes a sentence with uncertainty
+and negation. It checks that all three participant requirements share Nora and
+that the musical frames preserve both levels of nesting. The 19-suite local
+release gate passes after this change. Live-browser/listening evidence remains
+outstanding; this test uses a DOM adapter.
