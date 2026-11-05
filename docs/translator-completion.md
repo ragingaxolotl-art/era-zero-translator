@@ -2114,3 +2114,13 @@ remain separate. Tests cover two uses of destination-directed running: six slots
 become four inputs, without merging their actors/destinations across occurrences.
 Builder handler regressions pass. User-authored outer-to-inner role mappings and
 grouped prompts in the main English preview remain unfinished.
+
+### Shared participant prompts in English previews
+
+English previews now use the same canonical participant grouping as builder music
+controls. One input supplies all internal slots constrained to share an argument;
+outer local roles remain independent unless explicitly connected. The handler test
+uses destination-directed running nested in a local adjective: two actor slots
+share Eli while the outer bearer stays Nora. Full exported bindings and successful
+music generation are checked. Existing pronoun, ambiguity and verb-role tests pass.
+User-authored outer/inner role connections remain a separate unfinished feature.

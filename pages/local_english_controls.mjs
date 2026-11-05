@@ -1,3 +1,4 @@
+import {localParticipantGroups} from './local_participant_groups.mjs';
 import {localWordPronounPlan,resolveLocalWordPronouns} from './local_compound_pronouns.mjs';
 import {localAdjectivePlan,composeLocalAdjective,localVerbPlan,localVerbCandidates,composeLocalVerb} from './local_compound_english.mjs';
 import {expandLocalCompound} from './local_compound_expansion.mjs';
@@ -35,9 +36,10 @@ export async function mountLocalEnglishControls(container,input,registry,authori
   subjectRole=selector(`What role does ${plan.subject} take?`);if(plan.object)objectRole=selector(`What role does ${plan.object} take?`);
  }
  const supplied=r=>!r.path.length&&!r.slot_path&&(adjective?r.role==='bearer':[subjectRole.value,objectRole?.value].includes(r.role));
- for(const requirement of expansion.role_requirements){
+ for(const requirements of localParticipantGroups(expansion,authority)){
+  const requirement=requirements[0];
   if(adjective&&supplied(requirement))continue;
-  const label=make('label',`Part ${requirement.path.map(n=>n+1).join('.')||'whole'} · ${requirement.role}`),field=make('input');field.placeholder='Name or noun phrase';label.append(field);container.append(label);fields.push({requirement,field,label});
+  const label=make('label',`Part ${requirement.path.map(n=>n+1).join('.')||'whole'} · ${requirement.role}`),field=make('input');field.placeholder='Name or noun phrase';label.append(field);container.append(label);fields.push({requirement,requirements,field,label});
  }
  const generate=make('button','Translate saved meaning'),output=make('div');container.append(generate,output);let revision=0;
  const roleChanged=()=>{revision++;player?.stop();output.replaceChildren();for(const {requirement,field,label} of fields){label.hidden=supplied(requirement);field.disabled=label.hidden;}generate.disabled=!subjectRole.value||(objectRole&&(!objectRole.value||objectRole.value===subjectRole.value));};
@@ -47,7 +49,7 @@ export async function mountLocalEnglishControls(container,input,registry,authori
   if(!isCurrent()||generate.disabled)return;const selectedSubject=subjectRole?.value,selectedObject=objectRole?.value;const version=revision,values=fields.map(({field})=>field.value.trim()),current=()=>isCurrent()&&container.isConnected!==false&&version===revision&&subjectRole?.value===selectedSubject&&objectRole?.value===selectedObject&&fields.every(({field},i)=>field.value.trim()===values[i]);
   generate.disabled=true;player?.stop();output.replaceChildren();
   try{
-   const bindings=await Promise.all(fields.map(({requirement:r},i)=>({r,i})).filter(({r})=>!supplied(r)).map(async({r,i})=>({path:r.path,...(r.slot_path?{slot_path:r.slot_path}:{}),role:r.role,reference:await contextualContentReference(values[i])})));
+   const bindings=await Promise.all(fields.flatMap(({requirements},i)=>requirements.map(r=>({r,i}))).filter(({r})=>!supplied(r)).map(async({r,i})=>({path:r.path,...(r.slot_path?{slot_path:r.slot_path}:{}),role:r.role,reference:await contextualContentReference(values[i])})));
    const result=adjective?await composeLocalAdjective(input,registry,authority,{bindings}):await composeLocalVerb(input,registry,authority,{bindings,subjectRole:selectedSubject,objectRole:selectedObject,interpretation});if(!current())return;
    if(player){const play=make('button','Play music'),stop=make('button','Stop');play.addEventListener('click',async()=>{if(!current())return;try{await player.play(result.midi);}catch(e){if(current())onError(e);}});stop.addEventListener('click',()=>player.stop());output.append(play,stop);}
    const midi=make('button','Download MIDI'),meaning=make('button','Save meaning and definitions');
