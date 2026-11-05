@@ -121,6 +121,14 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     if(!inner?.requiredDestination)return null;
     return {...inner,requiredDeliveryInterpretation:true,construction:`delivery_wording_${inner.construction}`,explicitInterpretation:text};
   }
+  const acquisitionPresent=String(input).trim().match(new RegExp(`^${participant} (acquires|acquire|does not acquire|do not acquire) physical custody of ${participant}[.]?$`));
+  if(acquisitionPresent){
+    const subject=acquisitionPresent[1],verb=acquisitionPresent[2],object=acquisitionPresent[3],firstOrSecond=/^(I|you)$/i.test(subject);
+    if(!(firstOrSecond?['acquire','do not acquire']:['acquires','does not acquire']).includes(verb))return null;
+    const inner=parseNamedSentence(`${subject} ${verb.includes('not')?'did not acquire':'acquired'} physical custody of ${object}.`,depth+1,false);
+    if(!inner)return null;
+    return {...inner,speechTime:undefined,requiredViewpoint:true,viewpointActivity:'acquisition',construction:'simple_present_custody_acquisition',explicitInterpretation:String(input).trim()};
+  }
   const normalized=expandNegativeContractions(String(input),participant);
   if(normalized!==String(input)){
     const inner=parseNamedSentence(normalized,depth+1,speechActs);
@@ -662,7 +670,7 @@ export async function composeNamedSentence(input,template,{interpretation,standa
     }
     parsed.aspect=viewpoint;
     const note={bounded:'Interprets simple-present carrying as one bounded narrated episode in the contextual reference interval, without asserting arrival, delivery or future time.',ongoing:'Interprets simple-present carrying as an unfolding action in the contextual reference interval, without asserting its endpoint.',habitual:'Interprets simple-present carrying as a recurring practice in the contextual reference interval, without asserting a particular occurrence, frequency or schedule.'}[viewpoint];
-    parsed.semanticNote=[parsed.semanticNote,['running','entry'].includes(parsed.viewpointActivity)?'':parsed.viewpointActivity==='swimming'?({bounded:'One bounded narrated swimming episode; completion of an across-region crossing is not asserted.',ongoing:'An unfolding swimming activity; crossing completion is not asserted.',habitual:'A recurring swimming practice; no particular occurrence, frequency or schedule is asserted.'})[viewpoint]:note].filter(Boolean).join(' ');
+    parsed.semanticNote=[parsed.semanticNote,parsed.viewpointActivity==='acquisition'?({bounded:'One bounded acquisition in the contextual reference interval; no past or future time is inferred.',ongoing:'An acquisition unfolding in the contextual reference interval; completed custody gain is not asserted.',habitual:'A recurring acquisition practice; no particular current occurrence or frequency is asserted.'})[viewpoint]:['running','entry'].includes(parsed.viewpointActivity)?'':parsed.viewpointActivity==='swimming'?({bounded:'One bounded narrated swimming episode; completion of an across-region crossing is not asserted.',ongoing:'An unfolding swimming activity; crossing completion is not asserted.',habitual:'A recurring swimming practice; no particular occurrence, frequency or schedule is asserted.'})[viewpoint]:note].filter(Boolean).join(' ');
   }else if(viewpoint!==undefined)throw new Error('This sentence does not require a viewpoint choice.');
   if(parsed.viewpointActivity==='running'){
     if(parsed.runningEndpoint){

@@ -78,3 +78,20 @@ and selected activity; then connect the availability interpretation. Keep generi
 possibility, capability and permission distinct. The nine passing probes are
 reusable-component evidence, not nine successful availability translations. No
 availability compound or new musical frame is introduced by this audit.
+
+
+## Present acquisition prerequisite implemented
+
+Simple present acquire/acquires and do/does-not-acquire now reuse the existing
+custody-acquisition compound with an explicit bounded/ongoing/habitual viewpoint.
+They do not inherit the past-time wrapper from acquired. Existing modal scopes
+compose around the event; negation and viewpoint retain their distinct positions.
+The common viewpoint preview recognizes the new acquisition activity and explains
+its culmination limits. No new roots or musical frames are introduced.
+
+Eighteen possibility/negation/viewpoint/runtime cases decode with no past-time
+edge and match independent Ruby MIDI. The existing 36 acquisition cases still
+pass. The audit's simple-present modal probe now parses but requires a viewpoint;
+“can acquire” and availability wording remain unresolved. Opportunity conditions,
+prospective timing and sense-specific availability composition remain next, and
+this prerequisite must not be counted as a completed availability translation.
