@@ -70,3 +70,18 @@ This review allocates no convention number and admits no new canonical meaning.
 Pain construction, cause/disposition structure, intensity comparison and the
 original painful-treatment acceptance remain unimplemented. Heavy/light
 preference support is infrastructure evidence, not satisfaction of these cases.
+
+
+## Draft meaning implementation checkpoint
+
+`pages/pain_meaning.mjs` now provides an opt-in semantic document for explicit
+“in bodily pain” sentences. It pins the existing felt-self-condition identity
+and version, preserves a validated reference, speech act, past/negation scopes
+and independent runtime. It does not infer injury, cause, stimulus or intensity.
+The bodily-pain quality is an explicit draft specialization, not a consequence
+of root adjacency. Generic “in pain” remains pending reading selection.
+
+Twenty-four meaning contrasts and rehashed contract-corruption checks pass,
+including singular they resolved to an explicit experiencer. No convention
+number, canonical admission, renderer, MIDI inverse, UI route or audio recovery
+is implemented for this profile yet. Complete pain translation remains open.
