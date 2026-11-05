@@ -1950,3 +1950,13 @@ MIDI plus meaning/definition downloads. Actual handler tests verify missing-inpu
 rejection, exported participant/runtime fidelity and stale download invalidation.
 These are DOM-adapter tests, not live-browser or audible playback validation.
 In-page playback, sentence integration and live-browser validation remain open.
+
+### Local in-page playback
+
+The builder now offers Play/Stop after preparing a saved compound. Playback uses
+the established Era Zero voice and limiter settings, preserving MIDI pitches and
+durations. One shared player stops previous playback; editing participant/runtime
+choices, rebuilding the library or leaving the page stops playback. A generation
+check cancels playback if Stop is pressed while browser audio resumes. Targeted
+scheduler tests and existing export-control tests passed. Live-browser listening,
+visual verification and full-sentence integration remain unfinished.

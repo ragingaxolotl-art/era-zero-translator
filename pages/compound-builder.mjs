@@ -1,8 +1,10 @@
+import {createLocalCompoundPlayer} from './local_compound_player.mjs';
 import {mountLocalCompoundControls} from './local_compound_controls.mjs';
 import {loadLocalCompounds,saveLocalCompounds,addLocalCompound,importLocalCompounds} from './local_compounds.mjs';
 import {ROLE_ORDER} from './roles.mjs';
 const $=id=>document.getElementById(id),node=(tag,text)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e;};
 let authority,registry,parts=[],busy=false;
+const player=createLocalCompoundPlayer();window.addEventListener('pagehide',()=>player.stop());
 const status=text=>$('status').textContent=text;
 const button=(text,action)=>{const b=node('button',text);b.type='button';b.addEventListener('click',action);return b;};
 function catalog(){return [...authority.atoms.map(a=>({id:a.canonical_id,label:a.title,meaning:a.core_definition})),...authority.compounds.filter(c=>c.status==='approved').map(c=>({id:c.compound_id,label:c.display_title,meaning:c.invariant_definition})),...registry.entries.map(e=>({id:e.compound_id,label:e.definition.label,meaning:e.definition.definition}))];}
@@ -18,7 +20,8 @@ function renderSearch(){
 }
 function downloadFile(blob,name){const url=URL.createObjectURL(blob),link=node('a');link.href=url;link.download=name;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 function renderLibrary(){
- $('library').replaceChildren();for(const e of registry.entries){const card=node('article');card.append(node('strong',e.definition.label),node('p',e.definition.definition),button('Use in a new compound',()=>addPart({id:e.compound_id,label:e.definition.label})));const music=button('Make music',async()=>{music.disabled=true;const controls=node('div');card.append(controls);try{await mountLocalCompoundControls(controls,e.compound_id,registry,authority,{download:downloadFile,onError:error=>status(error.message)});}catch(error){status(error.message);music.disabled=false;controls.remove();}});card.append(music);$('library').append(card);}
+ player.stop();
+ $('library').replaceChildren();for(const e of registry.entries){const card=node('article');card.append(node('strong',e.definition.label),node('p',e.definition.definition),button('Use in a new compound',()=>addPart({id:e.compound_id,label:e.definition.label})));const music=button('Make music',async()=>{music.disabled=true;const controls=node('div');card.append(controls);try{await mountLocalCompoundControls(controls,e.compound_id,registry,authority,{player,download:downloadFile,onError:error=>status(error.message)});}catch(error){status(error.message);music.disabled=false;controls.remove();}});card.append(music);$('library').append(card);}
  $('export').disabled=!registry.entries.length;renderSearch();
 }
 $('search').addEventListener('input',()=>{if(authority)renderSearch();});
