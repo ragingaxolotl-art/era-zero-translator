@@ -6,7 +6,7 @@
       "test": "local_builder_authoring_test.mjs",
       "passed": true,
       "exit_code": 0,
-      "output": "PASS actual builder handlers: search, ordered parts, role connection, stale-edit rejection, save/reload, and saved adjective sentence to music (DOM adapter, not live browser).\nPASS new draft preserves saved words; nested compound authoring, export/import, transitive participants and nested musical frames.\n"
+      "output": "PASS actual builder handlers: search, ordered parts, role connection, stale-edit rejection, save/reload, and saved adjective sentence to music (DOM adapter, not live browser).\nPASS new draft preserves saved words; nested compound authoring, export/import, transitive participants and nested musical frames.\nPASS 12 nested sentence contrasts preserve meaning and compound identities while changing actual MIDI note/timing sequences; audio decoding is not claimed.\n"
     },
     {
       "test": "local_canonical_dependencies_test.mjs",
@@ -78,7 +78,7 @@
       "test": "local_compound_sentence_test.mjs",
       "passed": true,
       "exit_code": 0,
-      "output": "PASS 24 local sentence performances preserve participants, ordered negation/modality/time, question contour and runtime. Natural English parsing remains pending.\n"
+      "output": "PASS 24 local sentence performances preserve participants, ordered negation/modality/time, question contour and runtime. Contrasts are checked in performed MIDI notes and timing, not file metadata.\n"
     },
     {
       "test": "local_compounds_test.mjs",

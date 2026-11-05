@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
+import {notesFromMidi} from '../pages/performance_codec.mjs';
 import * as registryAPI from '../pages/local_compounds.mjs';
 import * as examples from '../pages/local_compound_examples.mjs';
 import {ROLE_ORDER} from '../pages/roles.mjs';
@@ -50,3 +51,15 @@ const nestedMusic=await composeLocalAdjective('Nora might not be stridecalm.',ne
 assert.deepEqual(nestedMusic.meaning.scopes,music.meaning.scopes);assert(nestedMusic.midi.length>music.midi.length);
 const frames=nestedMusic.events.filter(e=>e.grammar_profile==='EZLOCAL-COMPOUND-MUSIC-1');assert.equal(frames.length,4);const stack=[];for(const frame of frames){if(frame.marker.endsWith('_open'))stack.push(frame.target_id);else assert.equal(stack.pop(),frame.target_id);}assert.equal(stack.length,0);
 console.log('PASS new draft preserves saved words; nested compound authoring, export/import, transitive participants and nested musical frames.');
+
+// Compare actual MIDI note/timing sequences, not file hashes or metadata.
+const signatures=new Set();
+for(const subject of ['Nora','Eli'])for(const runtime of [0,1,2])for(const negative of [false,true]){
+ const result=await composeLocalAdjective(`${subject} might ${negative?'not ':''}be stridecalm. [${runtime}]`,nested,authority);
+ assert.equal(result.meaning.runtime_state,runtime);assert(result.meaning.bindings.every(b=>b.reference.name.normalized_label===subject.toLowerCase()));
+ assert.deepEqual(result.meaning.scopes,[{operator:'modality',mode:'possible'},...(negative?[{operator:'negation'}]:[])]);
+ assert.deepEqual(result.events.filter(e=>e.grammar_profile==='EZLOCAL-COMPOUND-MUSIC-1').map(e=>e.target_id),frames.map(e=>e.target_id),'Participant and grammar changes must preserve nested compound identities.');
+ const notes=notesFromMidi(result.midi).notes;assert(notes.length>0);signatures.add(JSON.stringify(notes.map(n=>[n.midi,n.start_tick,n.end_tick])));
+}
+assert.equal(signatures.size,12,'Each participant/runtime/negation contrast must change performed notes or timing.');
+console.log('PASS 12 nested sentence contrasts preserve meaning and compound identities while changing actual MIDI note/timing sequences; audio decoding is not claimed.');

@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {notesFromMidi} from '../pages/performance_codec.mjs';
 import {emptyLocalCompounds,addLocalCompound} from '../pages/local_compounds.mjs';
 import {contextualContentReference} from '../pages/contextual_content.mjs';
 import {composeLocalCompoundSentence} from '../pages/local_compound_sentence.mjs';
@@ -10,8 +11,8 @@ for(const runtimeState of [0,1,2])for(const scopes of [[],[past,neg],[possible,n
  const result=await composeLocalCompoundSentence(id,registry,a,bindings,{runtimeState,scopes,speechAct});
  assert.deepEqual(result.meaning.scopes,scopes);assert.equal(result.meaning.runtime_state,runtimeState);assert.equal(result.meaning.speech_act,speechAct);assert.equal(result.meaning.bindings[0].reference.name.normalized_label,'nora');assert.equal(result.meaning.bindings[1].reference.name.normalized_label,'tea');
  if(scopes[0]===possible)assert.equal(result.events[0].marker,'modality_possible_open');if(scopes[0]===neg)assert.equal(result.events[0].marker,'negation_open');
- sounds.add(Buffer.from(result.midi).toString('base64'));
+ sounds.add(JSON.stringify(notesFromMidi(result.midi).notes.map(n=>[n.midi,n.start_tick,n.end_tick])));
 }
 assert.equal(sounds.size,24);await assert.rejects(composeLocalCompoundSentence(id,registry,a,bindings,{scopes:[{operator:'modality',mode:'unknown'}]}));
 await assert.rejects(composeLocalCompoundSentence(id,registry,a,bindings.slice(0,1)));
-console.log('PASS 24 local sentence performances preserve participants, ordered negation/modality/time, question contour and runtime. Natural English parsing remains pending.');
+console.log('PASS 24 local sentence performances preserve participants, ordered negation/modality/time, question contour and runtime. Contrasts are checked in performed MIDI notes and timing, not file metadata.');

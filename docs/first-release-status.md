@@ -57,3 +57,11 @@ unsupported clauses/modifiers/time adjuncts, stale-input suppression, and corrup
 storage preservation. The local release gate passes 20/20 suites. This added test
 is supplemental to the broader run started at `ed61230`; it was not in that run's
 initial test list. No production implementation changed during that run.
+
+Musical contrast strengthening: the nested builder scenario now checks 12
+participant × runtime × negation cases using parsed MIDI notes and their start/end
+ticks, while verifying unchanged nested compound identities and exact meaning.
+The 24 sentence-scope contrasts also compare performed notes/timing rather than
+whole-file bytes. All 20 local suites pass. This does not prove audio recovery or
+audible playback. Browser access was rechecked and remains disabled in Work
+settings; enabling it has been requested.
