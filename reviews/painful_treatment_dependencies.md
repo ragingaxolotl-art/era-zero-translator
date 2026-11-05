@@ -85,3 +85,19 @@ Twenty-four meaning contrasts and rehashed contract-corruption checks pass,
 including singular they resolved to an explicit experiencer. No convention
 number, canonical admission, renderer, MIDI inverse, UI route or audio recovery
 is implemented for this profile yet. Complete pain translation remains open.
+
+## Draft music checkpoint
+
+The pain profile now wraps the unchanged convention-11 felt dependency with a
+separate draft specialization frame. It uses extension namespace ±39 with
+subcode 1; curiosity retains subcode 0 unchanged. This keeps the existing pitch
+range while making the added meaning audible. The experiencer is role-framed,
+scopes surround the whole predicate, and runtime remains on the original felt
+head. Default canonical decoding rejects the draft frame.
+
+`tests/pain_music_test.mjs` checks 24 assertion/question, present/past, negation
+and runtime contrasts, transposition to anchor 72, rejection as generic feeling,
+and unique recovery by shared semantic dispatch without a predicate hint.
+No original English, semantic document or expected notes enter the inverse.
+Independent Ruby rendering, blind WAV tests, UI integration and physical audio
+remain open; MIDI evidence alone does not complete the pain translation layer.

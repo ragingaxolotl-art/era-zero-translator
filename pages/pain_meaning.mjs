@@ -3,7 +3,7 @@ import {canonicalDigest} from './engine.mjs';
 import {contextualContentReference,createContextualContent} from './contextual_content.mjs';
 import {personalPronounPlan,resolvePersonalPronouns} from './personal_pronoun_plan.mjs';
 import {validReferent} from './pronouns.mjs';
-const CONTRACT=Object.freeze({predicate:'felt_bodily_pain',dependency:'CMP:6c9e3042a361ccae6ecf5980',dependency_version:'1.0.0',quality:'bodily_pain_experience',injury_commitment:'not_entailed',cause_commitment:'unspecified',intensity_commitment:'unspecified',stimulus_commitment:'unspecified'});
+export const PAIN_CONTRACT=Object.freeze({predicate:'felt_bodily_pain',dependency:'CMP:6c9e3042a361ccae6ecf5980',dependency_version:'1.0.0',quality:'bodily_pain_experience',injury_commitment:'not_entailed',cause_commitment:'unspecified',intensity_commitment:'unspecified',stimulus_commitment:'unspecified'});
 const REF='(?:I|you|You|[A-Z][a-z]+|"[^"\\n]+"|(?:[Tt]he|[Tt]his|[Tt]hat) [a-z]+)';
 export function painMeaningPlan(input){
  if(typeof input!=='string')return null;
@@ -17,8 +17,8 @@ export function painMeaningPlan(input){
 }
 export async function validatePainMeaning(document,{allowDraft=false}={}){
  if(!allowDraft)throw new Error('Pain meaning requires draft opt-in.');
- const d=structuredClone(document),keys=['profile','status',...Object.keys(CONTRACT),'experiencer','speech_act','runtime_state','scopes','content_digest','content_id'];
- if(!d||typeof d!=='object'||Array.isArray(d)||Object.keys(d).length!==keys.length||keys.some(k=>!Object.hasOwn(d,k))||d.profile!=='EZPAIN-MEANING-1'||d.status!=='draft'||Object.entries(CONTRACT).some(([k,v])=>d[k]!==v)||![0,1,2].includes(d.runtime_state)||!['assertion','question'].includes(d.speech_act))throw new Error('Invalid pain meaning contract.');
+ const d=structuredClone(document),keys=['profile','status',...Object.keys(PAIN_CONTRACT),'experiencer','speech_act','runtime_state','scopes','content_digest','content_id'];
+ if(!d||typeof d!=='object'||Array.isArray(d)||Object.keys(d).length!==keys.length||keys.some(k=>!Object.hasOwn(d,k))||d.profile!=='EZPAIN-MEANING-1'||d.status!=='draft'||Object.entries(PAIN_CONTRACT).some(([k,v])=>d[k]!==v)||![0,1,2].includes(d.runtime_state)||!['assertion','question'].includes(d.speech_act))throw new Error('Invalid pain meaning contract.');
  const scopes=[[],[{operator:'negation'}],[{operator:'time',relation:'before_speech'}],[{operator:'time',relation:'before_speech'},{operator:'negation'}]];
  if(!scopes.some(s=>JSON.stringify(s)===JSON.stringify(d.scopes)))throw new Error('Unsupported pain scope.');
  await createContextualContent('topic',d.experiencer,{allowDraft:true});
@@ -30,6 +30,6 @@ export async function composePainMeaning(input,{allowDraft=false,bindings}={}){
  const pronouns=personalPronounPlan(input,painMeaningPlan,{includeNeutral:true});
  if(pronouns)input=resolvePersonalPronouns(input,pronouns,bindings,validReferent).resolved;else if(bindings!==undefined)throw new Error('No unresolved pronouns.');
  const p=painMeaningPlan(input);if(!p)throw new Error('Select an explicit supported bodily-pain meaning.');
- const body={profile:'EZPAIN-MEANING-1',status:'draft',...CONTRACT,...p,experiencer:await contextualContentReference(p.experiencer)},digest=await canonicalDigest(body);
+ const body={profile:'EZPAIN-MEANING-1',status:'draft',...PAIN_CONTRACT,...p,experiencer:await contextualContentReference(p.experiencer)},digest=await canonicalDigest(body);
  return validatePainMeaning({...body,content_digest:digest,content_id:`EZPAIN:${digest.slice(0,24)}`},{allowDraft:true});
 }
