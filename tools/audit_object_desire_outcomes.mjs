@@ -1,3 +1,5 @@
+import {composeObjectDesiredOwnership} from '../pages/object_desired_ownership.mjs';
+import {midiFromDesiredOwnership} from '../pages/desired_ownership_music.mjs';
 import {composeObjectDesiredDrinking} from '../pages/object_desired_drinking.mjs';
 import {midiFromDesiredDrinking} from '../pages/desired_drinking_music.mjs';
 // Authored coverage probes: success requires complete musical inverse, not parsing.
@@ -13,6 +15,7 @@ const probes=[
  ['carrying','Eli is carrying the tea.'],
  ['drinking','Nora drinks the tea.'],
  ['ownership','Nora owns the tea.'],
+ ['explicit_framework_ownership','Nora owns the tea.'],
  ['availability','The tea is available.'],
  ['delivery','Eli delivers the tea to Nora.'],
  ['explicit_carrying_delivery','Eli carried the tea to Nora.'],
@@ -23,9 +26,10 @@ for(const [id,desiredProposition] of probes){
  let phase='composition';
  try{
   const desiredDelivery=id==='explicit_carrying_delivery'?{destination:'custody_delivery'}:id==='explicit_delivery_wording'?{destination:'custody_delivery',viewpoint:'bounded'}:undefined;
-  const choices=id==='drinking'?{interpretation:'literal_drinking',viewpoint:'bounded',materialReading:'contextual_portion'}:null;
-  const d=choices?await composeObjectDesiredDrinking('Nora wants tea.',authority,{allowDraft:true,desiredProposition,...choices}):await composeObjectDesire('Nora wants tea.',authority,records,load,{allowDraft:true,desiredProposition,desiredDelivery});phase='musical_inverse';
-  const bytes=choices?await midiFromDesiredDrinking(d.meaning,authority,{allowDraft:true}):midiFromFormal(d.formal);
+  const ownership=id==='explicit_framework_ownership';
+  const choices=ownership?{framework:'"Harbor charter"'}:id==='drinking'?{interpretation:'literal_drinking',viewpoint:'bounded',materialReading:'contextual_portion'}:null;
+  const d=ownership?await composeObjectDesiredOwnership('Nora wants tea.',authority,{allowDraft:true,desiredProposition,...choices}):choices?await composeObjectDesiredDrinking('Nora wants tea.',authority,{allowDraft:true,desiredProposition,...choices}):await composeObjectDesire('Nora wants tea.',authority,records,load,{allowDraft:true,desiredProposition,desiredDelivery});phase='musical_inverse';
+  const bytes=ownership?await midiFromDesiredOwnership(d.meaning,authority,{allowDraft:true}):choices?await midiFromDesiredDrinking(d.meaning,authority,{allowDraft:true}):midiFromFormal(d.formal);
   const recovered=await decodeSupportedMeaningWithDrafts(bytes,authority.atoms,records,{allowDraft:true});
   results.push({id,desiredProposition,status:'inverse_available_needs_case_specific_semantic_review',...(choices?{explicit_choices:choices}:desiredDelivery?{explicit_choices:{desiredDelivery}}:{}),recovered});
  }catch(error){results.push({id,desiredProposition,status:'unsupported',phase:error.cause?'musical_inverse':phase,diagnostic:error.message});}

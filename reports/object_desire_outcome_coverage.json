@@ -382,6 +382,94 @@
       "diagnostic": "Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else."
     },
     {
+      "id": "explicit_framework_ownership",
+      "desiredProposition": "Nora owns the tea.",
+      "status": "inverse_available_needs_case_specific_semantic_review",
+      "explicit_choices": {
+        "framework": "\"Harbor charter\""
+      },
+      "recovered": {
+        "profile": "EZDESIRED-OWNERSHIP-INVERSE-1",
+        "status": "draft",
+        "foundation_id": "FND:f66b7a3877f4b0140a0b7023",
+        "holder": {
+          "kind": "phonemic",
+          "reference_mode": "name",
+          "phonemes": [
+            "N",
+            "AO",
+            "R",
+            "AE"
+          ],
+          "instance_code": null
+        },
+        "content": {
+          "profile": "EZOWNERSHIP-INVERSE-1",
+          "status": "draft",
+          "predicate": "framework_relative_ownership",
+          "relation": "owner_has_ownership_status_for_object_under_framework",
+          "framework_scope": "inside_proposition",
+          "framework_rules": "not_encoded_by_reference_label",
+          "physical_custody": "not_entailed",
+          "physical_control": "not_entailed",
+          "acquisition_or_transfer": "not_entailed",
+          "unlimited_use_or_disposal": "not_entailed",
+          "exclusive_ownership": "not_entailed",
+          "fractional_share": "unspecified",
+          "universal_agreement": "not_entailed",
+          "other_framework_status": "not_asserted",
+          "owner": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "N",
+              "AO",
+              "R",
+              "AE"
+            ],
+            "instance_code": null
+          },
+          "object": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "T",
+              "IY"
+            ],
+            "instance_code": null
+          },
+          "framework": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "HH",
+              "AA",
+              "R",
+              "B",
+              "AO",
+              "R",
+              "WB",
+              "CH",
+              "AA",
+              "R",
+              "T",
+              "ER"
+            ],
+            "instance_code": null
+          },
+          "speech_act": "assertion",
+          "scopes": [],
+          "runtime_state": 1
+        },
+        "content_status": "intensional",
+        "outcome_commitment": "desired_not_asserted",
+        "subject_binding": "explicit_content_subject",
+        "runtime_state": 1,
+        "speech_act": "assertion",
+        "scopes": []
+      }
+    },
+    {
       "id": "availability",
       "desiredProposition": "The tea is available.",
       "status": "unsupported",

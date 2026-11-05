@@ -205,3 +205,22 @@ sentence, framework selection, expected notes or semantic document. See
 `reports/desired_ownership_acoustic_probe.json`. This is one clean authored sample;
 physical recordings, channel perturbations and broader independently chosen
 messages remain untested for this form. Object-desire and UI integration are next.
+
+
+## Explicit object-desire ownership resolution
+
+`composeObjectDesiredOwnership` connects an explicitly supplied desired proposition
+and framework to the existing object-desire resolver. It preserves original input
+and clarification provenance separately from the hashed semantic document and
+requires a successful full shared musical inverse before returning. Matching is
+against the ownership object, not merely a name mentioned as owner or framework.
+Normalized noun/name identity and definite/proximal/distal mode remain distinct;
+bare nominal input may be clarified to a particular nominal reference, not a
+proper name with the same sounds.
+
+Nine outer/inner runtime pairs with separate negations and question scope pass.
+Unrelated objects, this/that substitution, noun-to-name substitution, absent
+outcomes and absent frameworks reject. The outcome audit keeps unclarified
+ownership unresolved and adds a separate explicit-framework case with recovered
+meaning. This is authored coverage, not held-out validation. UI routing and a
+blind audio test beginning from the original object-desire input remain open.
