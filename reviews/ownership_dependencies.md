@@ -187,3 +187,21 @@ rehashed asserted-outcome, wrong-foundation and false-control documents reject.
 Standalone ownership rendering/decoding tests still pass. Independent rendering
 and blind WAV recovery for the nested form, object-desire clarification and UI
 routing remain unfinished. This addition is not canonical vocabulary approval.
+
+
+## Independent desired-ownership rendering and blind audio
+
+The independent Ruby renderer now validates desired ownership, the pinned desire
+foundation, the entire nested ownership contract, and controlled subject identity.
+All 18 authored runtime/control contrasts produce identical Ruby and JavaScript
+MIDI. Rehashed attempts to assert the desired outcome, substitute its foundation,
+or claim false subject control reject.
+
+The blind synthetic-WAV case “Didn't Nora want Eli to not own this tea [0]? [2]”
+with explicit Harbor charter recovers distinct holder/owner, framework inside
+ownership, outer past negation/question, inner negation and independent runtime
+2/0. The decoder process receives only WAV path and draft opt-in, not the source
+sentence, framework selection, expected notes or semantic document. See
+`reports/desired_ownership_acoustic_probe.json`. This is one clean authored sample;
+physical recordings, channel perturbations and broader independently chosen
+messages remain untested for this form. Object-desire and UI integration are next.
