@@ -76,12 +76,18 @@ checks passing, 2 passing with explicit context, and 9 still uncomposed. These a
 authored cases, not held-out coverage or vocabulary approval. See
 `reports/foundation_requirements_audit.json`.
 
-A clean-checkout consolidated run at `e3870a1` passed all **220 checks**, including
-the opt-in synthetic-audio suites (2026-11-05 00:42:34 UTC to 00:50:05 UTC).
-See `reports/translator_completion_regression.json`. This supersedes the earlier
-200-check run as regression evidence only. Ordinary-English completeness,
-held-out semantic coverage and physical recordings remain unproven.
-Physical recordings tested: **0**.
+The consolidated run at `16b4b13` completed **235 checks: 234 passed and one
+failed**, including all synthetic-audio suites passing (2026-11-05 01:20:40 UTC
+to 01:28:33 UTC). The failure was a superseded custody-transfer test expecting
+ordinary delivery wording not to parse. That assertion now checks explicit
+interpretation gating and rejection by the custody-transfer-only inverse; its
+full targeted suite passed after correction. No implementation code changed
+following the consolidated run. The full run has not been repeated after the
+test correction. See `reports/translator_completion_regression.json` and
+`reports/custody_transfer_regression_followup.json`; the original failure report
+is retained. Earlier 220-check evidence predates drinking and delivery extensions.
+Ordinary-English completeness, held-out semantic coverage and physical recordings
+remain unproven. Physical recordings tested: **0**.
 
 Modified heavy/light preference alternatives now have an explicit API reading
 choice, 18 MIDI/Ruby contrasts, and two blind synthetic WAV question recoveries.

@@ -38,7 +38,7 @@ const ruby=String.raw`puts JSON.generate(JSON.parse(STDIN.read).map{|ir|f=EraZer
 const refs=JSON.parse(execFileSync('ruby',['-Itools/lib','-rera_zero_renderer','-rera_zero_presentation','-rbase64','-e',ruby],{cwd:root,input:JSON.stringify(results.map(r=>r.semantic_ir)),encoding:'utf8',maxBuffer:30_000_000}));
 for(const [i,r] of results.entries()){assert.deepEqual(r.formal,refs[i].formal);assert.deepEqual(Buffer.from(midiFromFormal(r.formal)),Buffer.from(refs[i].midi,'base64'));}
 assert.equal(new Set(results.map(r=>Buffer.from(midiFromFormal(r.formal)).toString('base64'))).size,results.length);
-for(const text of ['Ben delivered the box to Ada.','Ben transferred the box to Ada.','Ben transferred ownership of the box to Ada.','Ben transferred physical custody of the box to Ben.','Ben transferred physical custody of Ben to Ada.','Ben transferred physical custody of Ada to Ada.','Ben is transferring physical custody of the box to Ada.']){assert.equal(parseNamedSentence(text),null,text);assert(needsSentenceComposition(text));}
+for(const text of ['Ben transferred the box to Ada.','Ben transferred ownership of the box to Ada.','Ben transferred physical custody of the box to Ben.','Ben transferred physical custody of Ben to Ada.','Ben transferred physical custody of Ada to Ada.','Ben is transferring physical custody of the box to Ada.']){assert.equal(parseNamedSentence(text),null,text);assert(needsSentenceComposition(text));}
 for(const rootId of ['ORI:110','MAT:210']){
  const f=structuredClone(results[12].formal),e=f.performance.lexical_events.find(e=>e.target_id===rootId);e.address_absolute_midi[e.address_absolute_midi.length-1]+=2;
  const bytes=midiFromFormal(f);decodeStrictMusicMidi(bytes,authority.atoms);assert.throws(()=>decodeCustodyTransferMidi(bytes,authority.atoms),/custody-transfer/);
@@ -69,3 +69,11 @@ execFileSync('ruby',['-Itools/lib','-rera_zero_controlled_english','-e',String.r
  end
 `],{cwd:root,encoding:'utf8'});
 console.log(`Custody transfer: ${results.length} sentence/state cases preserve source, recipient and shared object, scoped before/after linkage and Ruby/browser MIDI parity. Three explicit lexical-participant fixtures preserve independent states. Corrupted object/root music and invalid identity bindings are rejected; 41 prior definitions remain exact.`);
+
+// Delivery wording now parses, but cannot silently select its stronger event.
+assert.equal(parseNamedSentence('Ben delivered the box to Ada.').requiredDeliveryInterpretation,true);
+await assert.rejects(composeNamedSentence('Ben delivered the box to Ada.',template),/Choose carrying-mediated/);
+await assert.rejects(composeNamedSentence('Ben delivered the box to Ada.',template,{destination:'spatial'}),/Choose carrying-mediated/);
+const delivery=await composeNamedSentence('Ben delivered the box to Ada.',template,{destination:'custody_delivery'});
+assert.notEqual(delivery.target_id,id);
+assert.throws(()=>decodeCustodyTransferMidi(midiFromFormal(delivery.formal),authority.atoms),/custody-transfer/);
