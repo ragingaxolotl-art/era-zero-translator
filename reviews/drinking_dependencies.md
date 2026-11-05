@@ -238,3 +238,14 @@ JSON. Changed choices invalidate old downloads and pending async results. Existi
 standalone and neutral drinking preview checks remain passing. Live browser/audio
 recording, desired-drinking pronoun binding and “wants tea” clarification integration
 remain unfinished; this does not close broad translator coverage.
+
+## Desired-drinking neutral reference checkpoint
+
+Desired drinking now reuses explicit pronoun bindings in both the composer and
+preview. Nine pronoun/runtime cases match their fully named meaning documents and
+MIDI, including singular-they subject control and a different explicit drinker.
+Missing bindings and plural groups reject; no gender or name-based inference is
+used. The actual preview handler resolves “They want to drink it” and verifies the
+holder is the controlled drinker in its complete export. Automatic antecedent and
+plural-group support remain unfinished; this does not default the object-desire
+reading to drinking.

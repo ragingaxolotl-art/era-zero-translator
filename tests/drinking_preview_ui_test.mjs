@@ -1,4 +1,4 @@
-import {desiredDrinkingPlan,composeDesiredDrinking} from '../pages/desired_drinking.mjs';
+import {desiredDrinkingPlan,desiredDrinkingPronounPlan,composeDesiredDrinking} from '../pages/desired_drinking.mjs';
 import {midiFromDesiredDrinking,decodeDesiredDrinkingMidi} from '../pages/desired_drinking_music.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -8,7 +8,7 @@ import {midiFromDrinking,decodeDrinkingMidi} from '../pages/drinking_music.mjs';
 const app=fs.readFileSync(new URL('../pages/app.js',import.meta.url),'utf8'),handler=app.slice(app.indexOf('function showDrinkingPreview('),app.indexOf('function showPainPreferencePreview('));
 const element=()=>({children:[],classList:{add(){},remove(){}},append(...n){this.children.push(...n)},addEventListener(t,f){this[t]=f},scrollIntoView(){}}),els=Object.fromEntries(['sourceInput','output','phraseCoverage','resolutionPanel','results','candidateList','decisionSummary'].map(id=>[id,element()]));
 const authority=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url)));let downloads=[],errors=[];
-const ctx=vm.createContext({desiredDrinkingPlan,composeDesiredDrinking,midiFromDesiredDrinking,state:{mode:'general',data:authority,wordSelections:new Map()},$:id=>els[id],document:{createElement:element},drinkingPlan,drinkingPronounPlan,composeDrinkingSentence,midiFromDrinking,Blob,download:(blob)=>downloads.push(blob),showError:e=>errors.push(e)});vm.runInContext(handler,ctx);
+const ctx=vm.createContext({desiredDrinkingPlan,desiredDrinkingPronounPlan,composeDesiredDrinking,midiFromDesiredDrinking,state:{mode:'general',data:authority,wordSelections:new Map()},$:id=>els[id],document:{createElement:element},drinkingPlan,drinkingPronounPlan,composeDrinkingSentence,midiFromDrinking,Blob,download:(blob)=>downloads.push(blob),showError:e=>errors.push(e)});vm.runInContext(handler,ctx);
 const input='Does Nora not drink tea? [2]';els.sourceInput.value=input;ctx.showDrinkingPreview(input);
 const card=els.candidateList.children.at(-1),reading=card.children[1].children[0],view=card.children[2].children[0],button=card.children.at(-1);
 assert(button.disabled);reading.value='kind';reading.change();assert(button.disabled);view.value='habitual';view.change();await button.click();assert.equal(errors.length,0);
@@ -27,3 +27,7 @@ dc.children.at(-2).click();dc.children.at(-1).click();const dd=JSON.parse(await 
 const before=downloads.length;dv.value='bounded';dv.change();dc.children.at(-1).click();assert.equal(downloads.length,before);
 let finish,entered;const reached=new Promise(resolve=>entered=resolve);ctx.midiFromDesiredDrinking=()=>new Promise(resolve=>{finish=resolve;entered();});const pending=db.click();await reached;dv.value='habitual';dv.change();finish(new Uint8Array());await pending;assert.equal(db.hidden,false);
 console.log('PASS desired-drinking preview retains distinct participants and nested scope/runtime in exports and rejects stale async choices.');
+ctx.midiFromDesiredDrinking=midiFromDesiredDrinking;els.sourceInput.value='They want to drink it.';ctx.showDrinkingPreview(els.sourceInput.value,{desired:true});
+const nc=els.candidateList.children.at(-1),nr=nc.children[1].children[0],nv=nc.children[2].children[0],np=nc.children[3].children[0],nn=nc.children[3].children[1],nm=nc.children[4].children[0],nb=nc.children.at(-1);
+nr.value='contextual_portion';nr.change();nv.value='bounded';nv.change();np.value='Nora';nn.value='singular';nm.value='this tea';errors=[];await nb.click();assert.equal(errors.length,0);nc.children.at(-1).click();const nd=JSON.parse(await downloads.at(-1).text());assert.equal(nd.subject_binding,'same_as_desire_holder');assert.deepEqual(nd.holder,nd.content.drinker);
+console.log('PASS desired-drinking preview keeps singular-they control bound to the resolved holder.');

@@ -1,3 +1,5 @@
+import {personalPronounPlan,resolvePersonalPronouns} from './personal_pronoun_plan.mjs';
+import {validReferent} from './pronouns.mjs';
 import {parseFoundationSentence} from './foundation_sentences.mjs';
 import {contextualContentReference,createContextualContent} from './contextual_content.mjs';
 import {composeDrinkingSentence,drinkingPlan} from './drinking_sentences.mjs';
@@ -24,8 +26,11 @@ export async function validateDesiredDrinking(document,{allowDraft=false}={}){
  if(d.content.speech_act!=='assertion'||(d.subject_binding==='same_as_desire_holder'&&await canonicalDigest(d.holder)!==await canonicalDigest(d.content.drinker)))throw new Error('Invalid desired drinker binding.');
  const {content_digest,content_id,...body}=d,hash=await canonicalDigest(body);if(content_digest!==hash||content_id!==`EZDESDRINK:${hash.slice(0,24)}`)throw new Error('Desired drinking identity mismatch.');return d;
 }
-export async function composeDesiredDrinking(input,{allowDraft=false,interpretation,viewpoint,materialReading}={}){
- if(!allowDraft)throw new Error('Desired drinking requires draft opt-in.');const p=desiredDrinkingPlan(input);if(!p)throw new Error('Unsupported desired drinking sentence.');
+export function desiredDrinkingPronounPlan(input){let interpretation_plan;const p=personalPronounPlan(input,probe=>(interpretation_plan=desiredDrinkingPlan(probe)),{includeNeutral:true});return p?{...p,interpretation_plan}:null;}
+export async function composeDesiredDrinking(input,{allowDraft=false,interpretation,viewpoint,materialReading,bindings}={}){
+ if(!allowDraft)throw new Error('Desired drinking requires draft opt-in.');
+ const pronouns=desiredDrinkingPronounPlan(input);if(pronouns)input=resolvePersonalPronouns(input,pronouns,bindings,validReferent).resolved;else if(bindings!==undefined)throw new Error('No unresolved pronouns.');
+ const p=desiredDrinkingPlan(input);if(!p)throw new Error('Unsupported desired drinking sentence.');
  const content=await composeDrinkingSentence(p.content,{allowDraft:true,interpretation,viewpoint,materialReading});
  const body={profile:'EZDESIRED-DRINKING-1',status:'draft',foundation_id:FOUNDATION,holder:await contextualContentReference(p.holder),content,content_status:'intensional',outcome_commitment:'desired_not_asserted',subject_binding:p.subject_binding,speech_act:p.speech_act,scopes:p.scopes,runtime_state:p.runtime_state},hash=await canonicalDigest(body);
  return validateDesiredDrinking({...body,content_digest:hash,content_id:`EZDESDRINK:${hash.slice(0,24)}`},{allowDraft:true});
