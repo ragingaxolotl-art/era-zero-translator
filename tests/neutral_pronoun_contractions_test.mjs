@@ -27,3 +27,16 @@ console.log(`PASS ${count} neutral contracted/past-inverted meaning and MIDI cas
 const modal=await composePronounSentence('May they enter the archive?',load,bindings,{interpretation:'entry_possible'}),namedModal=await composeNamedSentence('May Nora enter the archive?',{authority},{interpretation:'entry_possible'});assert.deepEqual(modal.formal,namedModal.formal);
 const first=await composePronounSentence("They aren't swimming.",load,{ref0:{referent:'I',number:'singular'}}),firstNamed=await composeNamedSentence('I am not swimming.',{authority});assert.deepEqual(first.formal,firstNamed.formal);
 console.log('PASS modal inversion retains bare verb and speaker binding retains am-not negation.');
+
+let affirmativeCount=0;
+for(const state of [0,1,2])for(const apostrophe of ["'",'’'])for(const [referent,target] of [['Nora','Nora is'],['I','I am'],['you','you are']]){
+ const source=`They${apostrophe}re not swimming. [${state}]`,explicit=`${target} not swimming. [${state}]`;
+ const plan=pronounInterpretationPlan(source);assert(plan,source);
+ assert.equal(source.slice(plan.occurrences[0].start,plan.occurrences[0].end),'They');
+ const actual=await composePronounSentence(source,load,{ref0:{referent,number:'singular'}}),expected=await composeNamedSentence(explicit,{authority});
+ assert.equal(actual.resolved_input,explicit);assert.deepEqual(actual.semantic_ir,expected.semantic_ir);assert.deepEqual(midiFromFormal(actual.formal),midiFromFormal(expected.formal));affirmativeCount++;
+}
+assert.equal(pronounInterpretationPlan('"Theyre" is swimming.'),null);
+await assert.rejects(composePronounSentence("They're swimming.",load,{ref0:{referent:'Nora',number:'plural'}}),/Group reference/);
+assert.equal(pronounInterpretationPlan("They'd swim."),null);
+console.log(`PASS ${affirmativeCount} contracted-they cases retain explicit participant, negation and runtime 0/1/2; plural and ambiguous contractions are not guessed.`);

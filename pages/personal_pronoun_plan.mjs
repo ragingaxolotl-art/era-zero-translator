@@ -51,6 +51,10 @@ export function substitutePersonalPronouns(input,occurrences,chosen){
    else if(third)word=/[^aeiou]y$/.test(lower)?lower.slice(0,-1)+'ies':/(s|sh|ch|x|z|o)$/.test(lower)?lower+'es':lower+'s';
    return /^[A-Z]/.test(verb)?word[0].toUpperCase()+word.slice(1):word;
   };
+  // Unambiguous contracted copula; keep original occurrence offsets for UI
+  // bindings and leave ambiguous 's/'d contractions for interpretation.
+  const contractedAre=input.slice(o.end).match(/^['’]re\b/i);
+  if(contractedAre)edits.push({start:o.end,end:o.end+contractedAre[0].length,text:' '+agree('are')});
   const before=input.slice(0,o.start).match(/\b(aren['’]t|weren['’]t|haven['’]t|don['’]t|didn['’]t|can['’]t|couldn['’]t|won['’]t|wouldn['’]t|shouldn['’]t|mustn['’]t|Are|Were|Do|Have|Did|Can|Could|Will|Would|Should|Must|May|Might) $/i);
   const after=input.slice(o.end).match(/^ (aren['’]t|weren['’]t|haven['’]t|don['’]t|didn['’]t|are|were|have|do|care|run|swim|carry|enter|prefer|know|want|understand|drink)\b/i);
   const habitual=input.slice(o.end).match(/^ habitually (drink|run|swim|carry|enter)\b/i);

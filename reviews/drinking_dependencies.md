@@ -299,3 +299,24 @@ Distal reference and clarification provenance are preserved. Existing standalone
 neutral, desired-drinking and foundation preview checks pass. Live browser and
 physical speaker/microphone validation remain unproven; unsupported material,
 reference and outcome forms still require further implementation.
+
+
+## Gender-neutral contraction and audio evidence
+
+The shared explicit pronoun resolver now accepts straight and curly apostrophes
+in singular `they’re`. It resolves the unambiguous `are` contraction according
+to the selected participant (Nora is / I am / you are), preserving original
+pronoun occurrence offsets. It does not infer gender, an antecedent, or plural
+membership. Ambiguous `they’d` remains unsupported rather than guessed.
+
+Eighteen swimming contrasts cover both apostrophe forms, three participant
+bindings and runtime 0/1/2 with negation, comparing full meaning and MIDI against
+explicit references. Drinking contrasts also preserve a separately bound object
+pronoun. The drinking acoustic report now includes four clean synthetic WAVs:
+the new `They’re not drinking it. [2]` case explicitly selects Nora and this tea,
+then recovers the full inverse in a decoder process receiving only the WAV path
+and draft permission. Named and pronoun source meanings are also checked equal.
+Existing 24 neutral sentence cases and nine desired-drinking pronoun cases pass.
+These are targeted checks, not a new full regression or completion claim.
+Physical recordings remain zero; plural participants and general discourse
+resolution remain open. No roots, approved compounds or musical codes changed.

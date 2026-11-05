@@ -19,3 +19,11 @@ for(const [text,named,viewpoint] of [
  const d=await composeDrinkingSentence(text,{...options,viewpoint,bindings:{ref0:{referent:'Nora',number:'singular'},ref1:'this tea'}}),e=await composeDrinkingSentence(named,{...options,viewpoint});assert.deepEqual(d,e);assert.deepEqual(await midiFromDrinking(d,authority,{allowDraft:true}),await midiFromDrinking(e,authority,{allowDraft:true}));
 }
 console.log('PASS habitual singular-they and straight/curly negative contractions preserve full meaning and music.');
+
+for(const apostrophe of ["'",'’']){
+ const source=`They${apostrophe}re not drinking it. [2]`,bindings={ref0:{referent:'Nora',number:'singular'},ref1:'this tea'};
+ const actual=await composeDrinkingSentence(source,{...options,bindings}),expected=await composeDrinkingSentence('Nora is not drinking this tea. [2]',options);
+ assert.deepEqual(actual,expected);const midi=await midiFromDrinking(actual,authority,{allowDraft:true});assert.deepEqual(midi,await midiFromDrinking(expected,authority,{allowDraft:true}));
+ assert.deepEqual(decodeDrinkingMidi(midi,authority.atoms,{allowDraft:true}),decodeDrinkingMidi(await midiFromDrinking(expected,authority,{allowDraft:true}),authority.atoms,{allowDraft:true}));
+}
+console.log('PASS contracted singular they plus separate object pronoun preserves drinking meaning and independent MIDI inverse.');
