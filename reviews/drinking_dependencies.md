@@ -194,3 +194,18 @@ Twenty-four subject-control × outer/inner-negation × runtime question contrast
 recover through unique shared dispatch and transposition. Standalone drinking's
 18 independent Ruby comparisons remain passing after event/reader extraction.
 Combined independent rendering, blind audio and UI integration remain unfinished.
+
+## Desired-drinking blind audio checkpoint
+
+Two authored clean synthetic WAVs now recover complete desired-drinking meaning
+in independent processes given only WAV path and draft permission. The first
+binds the drinker to the desire holder with outer runtime 0 and inner runtime 1.
+The second is a negated question with a different explicit drinker, separately
+negated drinking content, outer runtime 2 and inner runtime 0. Full inverse
+structures agree; additional checks preserve intensional/nonasserted status,
+participant identity, binding mode and both scope/runtime positions.
+
+Evidence is `reports/desired_drinking_acoustic_probe.json`; the acoustic regression
+runner includes the new test. This is not physical-recording or held-out-language
+proof. Combined independent Ruby rendering, desired-drinking UI, object-desire
+clarification integration, and broader outcome coverage remain pending.

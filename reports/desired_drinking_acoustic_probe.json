@@ -1,0 +1,174 @@
+{
+  "status": "PASS",
+  "scope": "Two authored clean synthetic WAVs. No original English, semantic document, interpretation choices or expected notes enter the decoder. No physical recordings or channel perturbations.",
+  "physical_recordings": 0,
+  "cases": [
+    {
+      "phrase": "Nora wants to drink tea. [0]",
+      "materialReading": "kind",
+      "viewpoint": "bounded",
+      "binding": "same_as_desire_holder",
+      "outer": 0,
+      "inner": 1,
+      "outerNeg": false,
+      "innerNeg": false,
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-desired-drinking-wZ5xzJ/desire-0.wav",
+      "meaning": {
+        "profile": "EZDESIRED-DRINKING-INVERSE-1",
+        "status": "draft",
+        "foundation_id": "FND:f66b7a3877f4b0140a0b7023",
+        "holder": {
+          "kind": "phonemic",
+          "reference_mode": "name",
+          "phonemes": [
+            "N",
+            "AO",
+            "R",
+            "AE"
+          ],
+          "instance_code": null
+        },
+        "content": {
+          "profile": "EZDRINKING-INVERSE-1",
+          "status": "draft",
+          "predicate": "literal_drinking",
+          "action_category": "oral_intake_of_liquid_as_drink",
+          "participant_binding": "drinker_performs_intake_of_material",
+          "material_classification_scope": "within_drinking_content_not_global_label_fact",
+          "thirst_commitment": "not_entailed",
+          "ownership_commitment": "not_entailed",
+          "pleasure_commitment": "not_entailed",
+          "benefit_commitment": "not_entailed",
+          "intention_commitment": "not_entailed",
+          "whole_amount_consumption": "not_asserted",
+          "drinker": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "N",
+              "AO",
+              "R",
+              "AE"
+            ],
+            "instance_code": null
+          },
+          "material": {
+            "reading": "kind",
+            "reference": {
+              "kind": "phonemic",
+              "reference_mode": "nominal_class",
+              "phonemes": [
+                "T",
+                "IY"
+              ],
+              "instance_code": null
+            },
+            "material_kind_commitment": "label_not_classification",
+            "quantity": "unspecified",
+            "whole_amount_consumption": "not_asserted",
+            "existence_commitment": "governed_by_enclosing_content"
+          },
+          "viewpoint": "bounded",
+          "viewpoint_contract": "A bounded drinking event is presented as a whole; some intake belongs to that event, but no entire contextual portion or numeric amount is asserted.",
+          "runtime_state": 1,
+          "speech_act": "assertion",
+          "scopes": []
+        },
+        "content_status": "intensional",
+        "outcome_commitment": "desired_not_asserted",
+        "subject_binding": "same_as_desire_holder",
+        "runtime_state": 0,
+        "speech_act": "assertion",
+        "scopes": []
+      },
+      "checksum": "verified"
+    },
+    {
+      "phrase": "Does Nora not want Eli to not drink this tea [0]? [2]",
+      "materialReading": "contextual_portion",
+      "viewpoint": "ongoing",
+      "binding": "explicit_content_subject",
+      "outer": 2,
+      "inner": 0,
+      "outerNeg": true,
+      "innerNeg": true,
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-desired-drinking-wZ5xzJ/desire-1.wav",
+      "meaning": {
+        "profile": "EZDESIRED-DRINKING-INVERSE-1",
+        "status": "draft",
+        "foundation_id": "FND:f66b7a3877f4b0140a0b7023",
+        "holder": {
+          "kind": "phonemic",
+          "reference_mode": "name",
+          "phonemes": [
+            "N",
+            "AO",
+            "R",
+            "AE"
+          ],
+          "instance_code": null
+        },
+        "content": {
+          "profile": "EZDRINKING-INVERSE-1",
+          "status": "draft",
+          "predicate": "literal_drinking",
+          "action_category": "oral_intake_of_liquid_as_drink",
+          "participant_binding": "drinker_performs_intake_of_material",
+          "material_classification_scope": "within_drinking_content_not_global_label_fact",
+          "thirst_commitment": "not_entailed",
+          "ownership_commitment": "not_entailed",
+          "pleasure_commitment": "not_entailed",
+          "benefit_commitment": "not_entailed",
+          "intention_commitment": "not_entailed",
+          "whole_amount_consumption": "not_asserted",
+          "drinker": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "EH",
+              "L",
+              "IH"
+            ],
+            "instance_code": null
+          },
+          "material": {
+            "reading": "contextual_portion",
+            "reference": {
+              "kind": "phonemic",
+              "reference_mode": "proximal_nominal",
+              "phonemes": [
+                "T",
+                "IY"
+              ],
+              "instance_code": null
+            },
+            "material_kind_commitment": "label_not_classification",
+            "quantity": "unspecified",
+            "whole_amount_consumption": "not_asserted",
+            "existence_commitment": "governed_by_enclosing_content"
+          },
+          "viewpoint": "ongoing",
+          "viewpoint_contract": "Drinking activity is in progress; no completed intake amount or completed event is asserted.",
+          "runtime_state": 0,
+          "speech_act": "assertion",
+          "scopes": [
+            {
+              "operator": "negation"
+            }
+          ]
+        },
+        "content_status": "intensional",
+        "outcome_commitment": "desired_not_asserted",
+        "subject_binding": "explicit_content_subject",
+        "runtime_state": 2,
+        "speech_act": "question",
+        "scopes": [
+          {
+            "operator": "negation"
+          }
+        ]
+      },
+      "checksum": "verified"
+    }
+  ]
+}
