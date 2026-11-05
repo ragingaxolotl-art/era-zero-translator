@@ -1995,3 +1995,13 @@ Twenty-four positive/negative present/past assertion/question/runtime cases pass
 plus contraction and rejection cases. This module is not yet wired into the main
 translator UI. Verb constructions, pronoun clarification, inherited role mapping
 and broader English remain unfinished.
+
+### Main-translator saved adjective routing
+
+After existing supported sentence routes and before lexical fallback, the main
+translator now checks validated local adjective definitions. A dedicated preview
+shows the definition, binds the sentence subject and requests remaining roles.
+It provides playback, MIDI and full meaning/definition export. Handler evidence
+covers a past negative question at runtime 2 and stale-source download rejection;
+app syntax checks pass. This is not live-browser evidence. Saved verbs and explicit
+nested role mappings remain unfinished.
