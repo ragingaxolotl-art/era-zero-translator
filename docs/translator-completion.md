@@ -24,6 +24,12 @@ until evidence shows a benefit.
 
 ## Current draft status
 
+The pain dependency audit now pins four existing felt-condition compounds and
+records nine explicit root exclusions. `reviews/painful_treatment_dependencies.md`
+orders felt pain, stimulus/experiencer relations, nonactual outcomes and degree
+comparison before painful-treatment preference composition. No new vocabulary
+is admitted by this audit; the original acceptance remains open.
+
 A clean-checkout consolidated run at `a634ebf` passed all 200 checks,
 including the opt-in synthetic-audio suites (2026-11-04 23:55:56 UTC to
 2026-11-05 00:02:53 UTC). See `reports/translator_completion_regression.json`.
