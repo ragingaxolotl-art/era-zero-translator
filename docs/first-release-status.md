@@ -110,3 +110,10 @@ The chosen reading and original input are retained in the result. Existing
 counted-property scope tests (18 cases), actual handler tests, and the Pages
 audit pass. The diagnostic now reports five preview cases instead of four plus
 one uncomposed case; preview availability still does not prove intended meaning.
+
+Counted interpretation provenance now survives EZB export. `createBundle` copies
+the selected interpretation; verification checks that it matches the original
+source's offered reading and belongs to a counted energized result. Rehashed
+changes to the reading, interpreted wording, or source alone reject. This is
+consistency validation, not authentication of the user's choice. The 18 counted
+semantic cases and added export-provenance cases pass.

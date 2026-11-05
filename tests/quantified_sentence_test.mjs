@@ -42,3 +42,11 @@ for(const mutate of [
  await assert.rejects(verifyBundle(tampered));
 }
 console.log('PASS counted export provenance and rejection of rehashed metadata/binding/meaning tampering.');
+
+const {quantifiedActivityPlan}=await import('../pages/quantified_sentences.mjs');
+const original='Exactly three lamps are active.',choice=quantifiedActivityPlan(original),chosen=await compose(choice.interpreted_input,load,{allowDraft:true});chosen.source_input=original;chosen.interpretation_choice=choice;
+const chosenBundle=await createBundle(chosen);assert.equal(chosenBundle.payload.source,original);assert.deepEqual(chosenBundle.payload.interpretation_choice,choice);await verifyBundle(chosenBundle);
+for(const mutate of [b=>b.payload.interpretation_choice.reading='emitting_light',b=>b.payload.interpretation_choice.interpreted_input='Exactly four lamps are physically energized.',b=>b.payload.source='Exactly four lamps are active.']){
+ const b=structuredClone(chosenBundle);mutate(b);const {bundle_digest,...body}=b;b.bundle_digest=await canonicalDigest(body);await assert.rejects(verifyBundle(b),/Interpretation choice/);
+}
+console.log('PASS counted interpretation exports preserve original source and selected reading; rehashed inconsistent choices reject.');
