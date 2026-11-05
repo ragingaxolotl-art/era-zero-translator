@@ -56,3 +56,25 @@ validate English composition, music and independent decoding. Test counterexampl
 where changing only participant, activity, condition or time changes meaning,
 including runtime 0/1/2. Blind waveform recovery and physical recordings remain
 required. This review is not a claim that an availability translation now works.
+
+## Executed composition audit
+
+`tools/audit_availability_composition.mjs` exercises nine full existing
+compositions: possibility around past custody acquisition, negation outside that
+possibility, and negation inside it, each at runtime 0/1/2. The performed MIDI
+inverse recovers the exact modal/time/negation order, participants and acquisition
+meaning without inferring ownership. See `reports/availability_composition_audit.json`.
+
+Four prospective probes remain unparsed: “Nora can acquire physical custody of
+the tea,” “It is possible that Nora acquires physical custody of the tea,” “The
+tea is available to Nora,” and “The tea is available for Nora to drink.” The
+working past-acquisition form must not be used as their substitute. Reusing its
+root/compound phase contract is possible, but a new occurrence must represent a
+prospective or contextual event without the past-time wrapper.
+
+Next implementation order is therefore: separate event viewpoint from speech
+time in acquisition wording; represent the explicit practical opportunity context
+and selected activity; then connect the availability interpretation. Keep generic
+possibility, capability and permission distinct. The nine passing probes are
+reusable-component evidence, not nine successful availability translations. No
+availability compound or new musical frame is introduced by this audit.
