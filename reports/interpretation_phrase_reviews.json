@@ -1,0 +1,87 @@
+{
+  "status": "verified_for_declared_readings_after_explicit_draft_selection",
+  "automatic_translation": false,
+  "reviews": [
+    {
+      "input": "Nora learned the route.",
+      "reading": "memorization",
+      "checks": [
+        "Nora learns the definite route",
+        "Past acquisition, not merely revision",
+        "Result holds at culmination; persistence is not asserted",
+        "Selected result criterion and independent runtime states preserved in MIDI"
+      ],
+      "criterion": "The experiencer retains contextually selected information representing the route and can recall that information to the contextual memory criterion. Recall need not be occurring now. The represented information need not be true or sufficient for navigation.",
+      "content_commitment": "representation_without_truth_assertion"
+    },
+    {
+      "input": "Nora learned the route.",
+      "reading": "navigation",
+      "checks": [
+        "Nora learns the definite route",
+        "Past acquisition, not merely revision",
+        "Result holds at culmination; persistence is not asserted",
+        "Selected result criterion and independent runtime states preserved in MIDI"
+      ],
+      "criterion": "The experiencer knows how to follow the contextually identified route to the contextual practical-navigation criterion. This is usable procedural knowledge, not merely reciting route information. It does not assert present physical ability, actual traversal, complete mastery of every circumstance or permanent retention.",
+      "content_commitment": "contextual_route_reference"
+    },
+    {
+      "input": "Nora learned the route.",
+      "reading": "familiarity",
+      "checks": [
+        "Nora learns the definite route",
+        "Past acquisition, not merely revision",
+        "Result holds at culmination; persistence is not asserted",
+        "Selected result criterion and independent runtime states preserved in MIDI"
+      ],
+      "criterion": "The experiencer has contextually adequate cognitive acquaintance with the identified route through direct or mediated exposure, so it is familiar rather than wholly unfamiliar. This does not by itself establish recall of route instructions, practical navigation knowledge, or actual traversal.",
+      "content_commitment": "contextual_route_reference"
+    },
+    {
+      "input": "Eli understands Nora.",
+      "reading": "communicated_content",
+      "checks": [
+        "Eli is the experiencer; Nora anchors the content",
+        "No truth assertion about the understood content",
+        "Selected content kind and criterion preserved in MIDI"
+      ],
+      "criterion": "Grasps the intended meaning of contextually selected content conveyed by the anchor; does not assert that the conveyed claims are true."
+    },
+    {
+      "input": "Eli understands Nora.",
+      "reading": "reasons",
+      "checks": [
+        "Eli is the experiencer; Nora anchors the content",
+        "No truth assertion about the understood content",
+        "Selected content kind and criterion preserved in MIDI"
+      ],
+      "criterion": "Grasps contextually selected explanatory reasons concerning the anchor, to the contextual standard of explanatory adequacy; does not assert approval or shared motives."
+    },
+    {
+      "input": "Eli understands Nora.",
+      "reading": "perspective",
+      "checks": [
+        "Eli is the experiencer; Nora anchors the content",
+        "No truth assertion about the understood content",
+        "Selected content kind and criterion preserved in MIDI"
+      ],
+      "criterion": "Grasps the contextually selected standpoint or experiences of the anchor, to the contextual standard of perspective understanding; does not assert shared feelings, agreement or approval."
+    },
+    {
+      "input": "Nora prefers tea to coffee.",
+      "reading": "declared preference foundation",
+      "checks": [
+        "Nora is the experiencer",
+        "Tea is preferred; coffee is the comparison alternative",
+        "Reversing preference direction changes performed notes"
+      ]
+    }
+  ],
+  "limitations": [
+    "These are implementation-authored diagnostic cases, not held-out examples.",
+    "A user must select the intended reading and accept draft meanings.",
+    "MIDI recovery is not recorded-audio recovery.",
+    "No browser interaction or listening test was performed."
+  ]
+}

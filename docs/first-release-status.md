@@ -91,3 +91,14 @@ notes. Explicit acceptance of the draft epistemic reading is still required.
 This closes that declared-reading review, not automatic or general translation.
 The 40-phrase preview-only audit deliberately does not count this as automatic
 composition; its separate review supplies the conditional evidence.
+
+`reports/interpretation_phrase_reviews.json` supplies conditional semantic review
+for the other three preview-only corpus cases. Preference preserves experiencer
+and ordered alternatives; reversing them changes performed notes. Route learning
+distinguishes memorization, navigation, and familiarity without asserting permanent
+retention. Understanding distinguishes communicated content, reasons, and
+perspective without asserting the content's truth. Selected meanings survive the
+existing MIDI recovery; their musical note sequences differ. Missing reading
+choices reject. The reproducible tool is `tools/review_interpretation_phrases.mjs`.
+These checks establish declared-reading behavior, not blind evaluation, automatic
+interpretation, browser usability, or audio recovery.
