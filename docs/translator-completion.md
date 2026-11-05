@@ -2179,3 +2179,15 @@ API tests compare participant-equal but time/music-distinct outputs; actual UI
 handler tests require a choice and export the selected past reading. This closes
 the specific “They put it” gap noted in the preceding checkpoint. Broader group
 reference and live-browser validation remain unfinished.
+
+### Saved-compound release gate
+
+The Pages workflow now runs `tools/validate_local_compound_release.mjs` after its
+existing release audit. It checks the builder link/assets, recursively resolves
+literal browser module dependencies from builder and app entry points, and runs
+all local_* test suites. Current evidence: 17/17 suites pass and 132 browser modules
+are present. Report: `reports/local_compound_release.json`. This gate does not
+execute a browser or prove runtime dynamic imports beyond literal file references,
+visual correctness, unrestricted language coverage or audio-only recovery. The
+workflow edit has not deployed the branch; it applies when the release workflow
+runs on an authorized release.

@@ -1,0 +1,109 @@
+{
+  "scope": "Local compound release gate: static module availability and targeted Node tests, not live-browser or unrestricted-English proof",
+  "checked_modules": 132,
+  "results": [
+    {
+      "test": "local_canonical_dependencies_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS all 63 approved compounds reused as local heads with canonical same/distinct participant constraints.\n"
+    },
+    {
+      "test": "local_compound_binding_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS explicit occurrence bindings retain different participants, reject missing/duplicate/wrong paths and survive serialization.\n"
+    },
+    {
+      "test": "local_compound_controls_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS actual music controls require participants, export runtime and definitions, and block stale downloads after edits.\nPASS sentence controls export past questions and distinguish not-possible from possibly-not; scope edits invalidate stale output.\n"
+    },
+    {
+      "test": "local_compound_english_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 24 saved adjective English sentences preserve subject, past, negation, questions and runtime; agreement/unsupported remainder rejects.\n"
+    },
+    {
+      "test": "local_compound_expansion_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS nested order/head scopes, occurrence-specific roles, pinned canonical plans, bounded expansion and reload fidelity.\n"
+    },
+    {
+      "test": "local_compound_merge_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS merging preserves existing words, nested dependencies and identities; repeats are idempotent and conflicts/malformed imports leave input unchanged.\n"
+    },
+    {
+      "test": "local_compound_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS portable local registry and nested framed MIDI export, identity/head contrasts and runtime 0/1/2. Audio inverse not claimed.\n"
+    },
+    {
+      "test": "local_compound_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS nested performance tree reuses root sounds, preserves actor name/register and applies runtime 0/1/2 only to the external semantic head. Audible local framing pending.\n"
+    },
+    {
+      "test": "local_compound_player_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS existing voice scheduling preserves MIDI pitch/timing; stop cancels scheduled tones and pending audio resume.\n"
+    },
+    {
+      "test": "local_compound_pronouns_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS neutral saved-word pronouns preserve explicit meanings/music and provenance; number clarification, plural rejection and quoted-name isolation.\nPASS direct singular-they saved verbs preserve base-form meaning; ambiguous base/past does not silently become past.\nPASS neutral-pronoun ambiguous verbs require explicit tense and retain the selected time in meaning and provenance.\n"
+    },
+    {
+      "test": "local_compound_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 24 local sentence performances preserve participants, ordered negation/modality/time, question contour and runtime. Natural English parsing remains pending.\n"
+    },
+    {
+      "test": "local_compounds_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS ordered local compounds, nested reuse, persistence/import, immutable canonical data, invalid identity/dependency/cycle rejection and preservation of saved data. Compilation and UI pending.\n"
+    },
+    {
+      "test": "local_english_controls_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS saved-English controls export full sentence meaning and reject stale source downloads.\nPASS verb preview requires distinct role choices, avoids duplicate participant prompts and invalidates exports after role edits.\nPASS ambiguous verb UI offers present/past and exports the chosen interpretation.\nPASS pronoun UI requires explicit number, preserves reference provenance, rejects unsupported groups and blocks stale exports.\nPASS English preview groups canonical shared actors without merging the outer bearer.\nPASS pronoun-tense UI requires selection and exports past interpretation with resolved participants.\n"
+    },
+    {
+      "test": "local_participant_groups_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS canonical shared-actor slots use one input per occurrence; separate nested actors and destinations remain independent.\n"
+    },
+    {
+      "test": "local_role_link_controls_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS builder role selection saves explicit links and composes English to music without duplicate participant input.\n"
+    },
+    {
+      "test": "local_role_links_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS explicit outer-to-canonical and nested-local role links propagate participants; conflicts and invalid links reject.\nPASS contradictory author role connections reject before a new compound is returned.\nPASS rehashed contradictory definitions cannot be imported or overwrite saved data.\n"
+    },
+    {
+      "test": "local_verb_english_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 24 saved verb auxiliary sentences, explicit role mapping, contraction and unsupported-tail rejection.\nPASS explicit regular/irregular verb forms match auxiliary meanings/music; agreement, incomplete forms and ambiguous tense reject.\nPASS explicit ambiguous-tense selection preserves participants and changes time/music; stale or forged interpretations reject.\n"
+    }
+  ],
+  "passed": true
+}
