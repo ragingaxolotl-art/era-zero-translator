@@ -1,3 +1,4 @@
+import {composeObjectDesiredDrinking} from './object_desired_drinking.mjs';
 import {desiredDrinkingPlan,desiredDrinkingPronounPlan,composeDesiredDrinking} from './desired_drinking.mjs';
 import {midiFromDesiredDrinking} from './desired_drinking_music.mjs';
 import {drinkingPlan,drinkingPronounPlan,composeDrinkingSentence} from './drinking_sentences.mjs';
@@ -355,14 +356,15 @@ function showCognitiveConjunctionPreview(input){
   });
   card.append(button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
 }
-function showDrinkingPreview(input,{desired=false}={}){
- const pronouns=desired?desiredDrinkingPronounPlan(input):drinkingPronounPlan(input),plan=desired?drinkingPlan((desiredDrinkingPlan(input)||pronouns?.interpretation_plan)?.content):drinkingPlan(input)||pronouns?.interpretation_plan;if(!plan)return;
+function showDrinkingPreview(input,{desired=false,clarification}={}){
+ const pronouns=desired?desiredDrinkingPronounPlan(input):drinkingPronounPlan(input),plan=clarification?drinkingPlan(clarification):desired?drinkingPlan((desiredDrinkingPlan(input)||pronouns?.interpretation_plan)?.content):drinkingPlan(input)||pronouns?.interpretation_plan;if(!plan)return;
  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
  for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
  $('results').classList.remove('hidden');$('candidateList').innerHTML='';$('decisionSummary').textContent='Clarify the drinking reading.';
  const card=document.createElement('article'),description=document.createElement('p'),button=document.createElement('button');card.className='candidate';
  description.textContent='Preview literal drinking. No thirst, ownership, enjoyment or consumption of the entire portion is inferred. Choose whether the material names a kind or a particular portion.';
  if(desired)description.textContent='Preview a desire for literal drinking. The outcome is desired, not asserted as happening. The desire holder and drinker remain distinct unless the sentence binds them together. Choose the material reference and drinking viewpoint.';
+ if(clarification)description.textContent+=` Original: ${input} Selected outcome: ${clarification}`;
  const select=(title,choices)=>{const label=document.createElement('label'),field=document.createElement('select');label.textContent=title;for(const [value,text] of choices){const option=document.createElement('option');option.value=value;option.textContent=text;field.append(option);}field.value='';label.append(field);card.append(label);return field;};
  card.append(description);
  const reading=select('Material reference',[['','Choose a reading'],['kind','A substance kind (bare noun)'],['contextual_portion','A contextual portion (the/this/that)']]);
@@ -382,11 +384,13 @@ function showDrinkingPreview(input,{desired=false}={}){
  button.addEventListener('click',async()=>{
   if(!current()||!ready())return;const version=revision,materialReading=reading.value,view=viewpoint.value,bindings=readBindings(),snapshot=JSON.stringify(bindings),unchanged=()=>current()&&revision===version&&reading.value===materialReading&&viewpoint.value===view&&JSON.stringify(readBindings())===snapshot;button.disabled=true;
   try{
-   const meaning=await (desired?composeDesiredDrinking:composeDrinkingSentence)(input,{allowDraft:true,interpretation:'literal_drinking',materialReading,viewpoint:view,...(bindings?{bindings}:{})});if(!unchanged())return;
+   const options={allowDraft:true,interpretation:'literal_drinking',materialReading,viewpoint:view,...(bindings?{bindings}:{})};
+   const clarified=clarification?await composeObjectDesiredDrinking(input,state.data,{...options,desiredProposition:clarification}):null;
+   const meaning=clarified?.meaning||await (desired?composeDesiredDrinking:composeDrinkingSentence)(input,options);if(!unchanged())return;
    const bytes=await (desired?midiFromDesiredDrinking:midiFromDrinking)(meaning,state.data,{allowDraft:true});if(!unchanged())return;
    const play=document.createElement('button'),music=document.createElement('button'),save=document.createElement('button');play.textContent='Play draft music';music.textContent='Download MIDI';save.textContent='Save draft meaning';
    play.addEventListener('click',async()=>{if(!unchanged())return;try{const {context,bus}=await readyAudio();if(!unchanged())return;const {notes,division}=notesFromMidi(bytes),start=context.currentTime+.1;for(const n of notes)playScheduledTone(context,bus,n.midi,start+n.start_tick*.5/division,{duration:(n.end_tick-n.start_tick)*.5/division});}catch(error){if(unchanged())showError(error)}});
-   music.addEventListener('click',()=>{if(unchanged())download(new Blob([bytes],{type:'audio/midi'}),desired?'era-zero-desired-drinking.mid':'era-zero-drinking.mid')});save.addEventListener('click',()=>{if(unchanged())download(new Blob([JSON.stringify(meaning,null,2)],{type:'application/json'}),desired?'era-zero-desired-drinking.draft.json':'era-zero-drinking.draft.json')});
+   music.addEventListener('click',()=>{if(unchanged())download(new Blob([bytes],{type:'audio/midi'}),desired?'era-zero-desired-drinking.mid':'era-zero-drinking.mid')});save.addEventListener('click',()=>{if(unchanged())download(new Blob([JSON.stringify(clarified||meaning,null,2)],{type:'application/json'}),desired?'era-zero-desired-drinking.draft.json':'era-zero-drinking.draft.json')});
    outputs=[play,music,save];card.append(...outputs);button.hidden=true;
   }catch(error){if(unchanged())showError(error)}finally{if(unchanged())button.disabled=!ready()}
  });card.append(button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
@@ -787,6 +791,7 @@ function showFoundationPreview(input){
     const bindings=readBindings(),mass=massChoice?.value,desired=desiredField?.value.trim(),snapshot=JSON.stringify(bindings),unchanged=()=>current()&&massChoice?.value===mass&&desiredField?.value.trim()===desired&&JSON.stringify(readBindings())===snapshot;
     button.disabled=true;
     try{
+      if(objectPlan&&drinkingPlan(desired)){if(unchanged())showDrinkingPreview(input,{desired:true,clarification:desired});return;}
       const response=await fetch('./data/foundation_preview_candidates.json');
       if(!response.ok)throw new Error('Draft vocabulary could not be loaded.');
       const registry=await response.json();

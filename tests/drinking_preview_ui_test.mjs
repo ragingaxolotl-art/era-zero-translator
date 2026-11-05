@@ -1,3 +1,4 @@
+import {composeObjectDesiredDrinking} from '../pages/object_desired_drinking.mjs';
 import {desiredDrinkingPlan,desiredDrinkingPronounPlan,composeDesiredDrinking} from '../pages/desired_drinking.mjs';
 import {midiFromDesiredDrinking,decodeDesiredDrinkingMidi} from '../pages/desired_drinking_music.mjs';
 import assert from 'node:assert/strict';
@@ -8,7 +9,7 @@ import {midiFromDrinking,decodeDrinkingMidi} from '../pages/drinking_music.mjs';
 const app=fs.readFileSync(new URL('../pages/app.js',import.meta.url),'utf8'),handler=app.slice(app.indexOf('function showDrinkingPreview('),app.indexOf('function showPainPreferencePreview('));
 const element=()=>({children:[],classList:{add(){},remove(){}},append(...n){this.children.push(...n)},addEventListener(t,f){this[t]=f},scrollIntoView(){}}),els=Object.fromEntries(['sourceInput','output','phraseCoverage','resolutionPanel','results','candidateList','decisionSummary'].map(id=>[id,element()]));
 const authority=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url)));let downloads=[],errors=[];
-const ctx=vm.createContext({desiredDrinkingPlan,desiredDrinkingPronounPlan,composeDesiredDrinking,midiFromDesiredDrinking,state:{mode:'general',data:authority,wordSelections:new Map()},$:id=>els[id],document:{createElement:element},drinkingPlan,drinkingPronounPlan,composeDrinkingSentence,midiFromDrinking,Blob,download:(blob)=>downloads.push(blob),showError:e=>errors.push(e)});vm.runInContext(handler,ctx);
+const ctx=vm.createContext({composeObjectDesiredDrinking,desiredDrinkingPlan,desiredDrinkingPronounPlan,composeDesiredDrinking,midiFromDesiredDrinking,state:{mode:'general',data:authority,wordSelections:new Map()},$:id=>els[id],document:{createElement:element},drinkingPlan,drinkingPronounPlan,composeDrinkingSentence,midiFromDrinking,Blob,download:(blob)=>downloads.push(blob),showError:e=>errors.push(e)});vm.runInContext(handler,ctx);
 const input='Does Nora not drink tea? [2]';els.sourceInput.value=input;ctx.showDrinkingPreview(input);
 const card=els.candidateList.children.at(-1),reading=card.children[1].children[0],view=card.children[2].children[0],button=card.children.at(-1);
 assert(button.disabled);reading.value='kind';reading.change();assert(button.disabled);view.value='habitual';view.change();await button.click();assert.equal(errors.length,0);
@@ -31,3 +32,8 @@ ctx.midiFromDesiredDrinking=midiFromDesiredDrinking;els.sourceInput.value='They 
 const nc=els.candidateList.children.at(-1),nr=nc.children[1].children[0],nv=nc.children[2].children[0],np=nc.children[3].children[0],nn=nc.children[3].children[1],nm=nc.children[4].children[0],nb=nc.children.at(-1);
 nr.value='contextual_portion';nr.change();nv.value='bounded';nv.change();np.value='Nora';nn.value='singular';nm.value='this tea';errors=[];await nb.click();assert.equal(errors.length,0);nc.children.at(-1).click();const nd=JSON.parse(await downloads.at(-1).text());assert.equal(nd.subject_binding,'same_as_desire_holder');assert.deepEqual(nd.holder,nd.content.drinker);
 console.log('PASS desired-drinking preview keeps singular-they control bound to the resolved holder.');
+
+els.sourceInput.value='Does Nora not want that tea? [2]';ctx.showDrinkingPreview(els.sourceInput.value,{desired:true,clarification:'Eli does not drink that tea [0].'});
+const oc=els.candidateList.children.at(-1),orr=oc.children[1].children[0],ov=oc.children[2].children[0],ob=oc.children.at(-1);orr.value='contextual_portion';orr.change();ov.value='bounded';ov.change();errors=[];await ob.click();assert.equal(errors.length,0);oc.children.at(-2).click();oc.children.at(-1).click();
+const saved=JSON.parse(await downloads.at(-1).text()),oi=decodeDesiredDrinkingMidi(new Uint8Array(await downloads.at(-2).arrayBuffer()),authority.atoms,{allowDraft:true});assert.equal(saved.source_input,els.sourceInput.value);assert.equal(saved.object_desire_resolution.relation_source,'explicit_user_clarification');assert.equal(oi.content.material.reference.reference_mode,'distal_nominal');assert.equal(oi.runtime_state,2);assert.equal(oi.content.runtime_state,0);assert.equal(saved.meaning.content.drinker.name.normalized_label,'eli');
+console.log('PASS object-desire drinking preview exports clarification provenance with full meaning and scoped music.');

@@ -1,3 +1,4 @@
+import {drinkingPlan} from '../pages/drinking_sentences.mjs';
 import {objectDesirePlan,composeObjectDesire} from '../pages/object_desire.mjs';
 import {parseFoundationSentence} from '../pages/foundation_sentences.mjs';
 import assert from 'node:assert/strict';
@@ -10,7 +11,7 @@ const elements=Object.fromEntries(['sourceInput','output','results','resolutionP
 const input='Nora prefers tea to coffee.';elements.sourceInput.value=input;
 const state={mode:'general',data:{},resolution:{old:true},wordSelections:new Map()};
 let calls=0,shown=null,errors=[];
-const context=vm.createContext({objectDesirePlan,composeObjectDesire,parseFoundationSentence,foundationPronounPlan:()=>null,state,$:id=>elements[id],document:{createElement:element},fetch:async()=>({ok:true,json:async()=>({records:['candidate']})}),sentenceTemplate:()=>{},composeFoundationSentence:async(...args)=>{calls++;assert.equal(args[4].allowDraft,true);return {status:'candidate_translation'}},showResolution:async r=>{shown=r},showError:e=>errors.push(e)});
+const context=vm.createContext({drinkingPlan,objectDesirePlan,composeObjectDesire,parseFoundationSentence,foundationPronounPlan:()=>null,state,$:id=>elements[id],document:{createElement:element},fetch:async()=>({ok:true,json:async()=>({records:['candidate']})}),sentenceTemplate:()=>{},composeFoundationSentence:async(...args)=>{calls++;assert.equal(args[4].allowDraft,true);return {status:'candidate_translation'}},showResolution:async r=>{shown=r},showError:e=>errors.push(e)});
 vm.runInContext(handler+';showFoundationPreview('+JSON.stringify(input)+');',context);
 assert.equal(state.resolution,null);assert.equal(calls,0);
 const button=elements.candidateList.children.at(-1).children[1];
@@ -75,3 +76,6 @@ assert.equal((await verifyBundle(await createBundle(shown,objectInput))).vocabul
 const previousObject=shown;let completeObject;context.fetch=()=>new Promise(resolve=>completeObject=resolve);
 const pendingObject=objectButton.click();outcome.value='Eli is happy.';completeObject({ok:true,json:async()=>registry});await pendingObject;assert.equal(shown,previousObject);
 console.log('PASS object desire UI requires outcome, composes real scoped meaning, verifies draft bundle and rejects stale clarification.');
+
+let routed;context.showDrinkingPreview=(input,options)=>routed={input,options};elements.sourceInput.value='Nora wants tea.';context.showFoundationPreview(elements.sourceInput.value);const routeCard=elements.candidateList.children.at(-1);routeCard.children[1].children[0].value='Nora drinks tea.';await routeCard.children.at(-1).click();assert.equal(routed.input,'Nora wants tea.');assert.equal(routed.options.clarification,'Nora drinks tea.');assert.equal(routed.options.desired,true);
+console.log('PASS foundation clarification routes explicitly supplied drinking to material/viewpoint selection.');

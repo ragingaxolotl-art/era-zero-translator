@@ -282,3 +282,20 @@ custody, acquisition, carrying and drinking. Four tested wordings still fail
 composition: ownership, availability, delivery and making. Audit status remains
 `inverse_available_needs_case_specific_semantic_review`, not a full coverage or
 physical audio certificate. Object clarification interface routing remains open.
+
+## Object-desire drinking interface routing
+
+When the user supplies a drinking outcome in the existing object-desire
+clarification field, the preview now routes to explicit material/viewpoint choices
+instead of attempting unsupported generic foundation composition. It does not
+suggest or preselect drinking. The resulting JSON retains original input,
+clarified outcome, provenance and the complete validated meaning; MIDI contains
+the corresponding desired-drinking semantics. The preview displays both original
+sentence and selected outcome.
+
+Actual handler tests cover the routing and end-to-end export of a negated question
+about `that tea`, a different drinker, inner negation and outer/inner runtime 2/0.
+Distal reference and clarification provenance are preserved. Existing standalone,
+neutral, desired-drinking and foundation preview checks pass. Live browser and
+physical speaker/microphone validation remain unproven; unsupported material,
+reference and outcome forms still require further implementation.
