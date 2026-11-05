@@ -1,3 +1,4 @@
+import {ownershipPlan} from '../pages/ownership_sentences.mjs';
 import {parseNamedSentence} from '../pages/sentences.mjs';
 import {drinkingPlan} from '../pages/drinking_sentences.mjs';
 import {objectDesirePlan,composeObjectDesire} from '../pages/object_desire.mjs';
@@ -12,7 +13,7 @@ const elements=Object.fromEntries(['sourceInput','output','results','resolutionP
 const input='Nora prefers tea to coffee.';elements.sourceInput.value=input;
 const state={mode:'general',data:{},resolution:{old:true},wordSelections:new Map()};
 let calls=0,shown=null,errors=[];
-const context=vm.createContext({parseNamedSentence,drinkingPlan,objectDesirePlan,composeObjectDesire,parseFoundationSentence,foundationPronounPlan:()=>null,state,$:id=>elements[id],document:{createElement:element},fetch:async()=>({ok:true,json:async()=>({records:['candidate']})}),sentenceTemplate:()=>{},composeFoundationSentence:async(...args)=>{calls++;assert.equal(args[4].allowDraft,true);return {status:'candidate_translation'}},showResolution:async r=>{shown=r},showError:e=>errors.push(e)});
+const context=vm.createContext({ownershipPlan,parseNamedSentence,drinkingPlan,objectDesirePlan,composeObjectDesire,parseFoundationSentence,foundationPronounPlan:()=>null,state,$:id=>elements[id],document:{createElement:element},fetch:async()=>({ok:true,json:async()=>({records:['candidate']})}),sentenceTemplate:()=>{},composeFoundationSentence:async(...args)=>{calls++;assert.equal(args[4].allowDraft,true);return {status:'candidate_translation'}},showResolution:async r=>{shown=r},showError:e=>errors.push(e)});
 vm.runInContext(handler+';showFoundationPreview('+JSON.stringify(input)+');',context);
 assert.equal(state.resolution,null);assert.equal(calls,0);
 const button=elements.candidateList.children.at(-1).children[1];
@@ -93,3 +94,6 @@ assert.equal(deliveryDecoded.meaning.runtime_state,2);assert.equal(deliveryConte
 const keptDelivery=shown;let finishDelivery;context.fetch=()=>new Promise(resolve=>finishDelivery=resolve);const pendingDelivery=deliveryButton.click();viewpointChoice.value='bounded';finishDelivery({ok:true,json:async()=>registry});await pendingDelivery;assert.equal(shown,keptDelivery);
 deliveryOutcome.value='Eli has physical custody of the tea.';deliveryOutcome.input();assert.equal(deliveryChoice.value,'');assert.equal(viewpointChoice.value,'');assert.equal(deliveryCard.children[2].hidden,true);
 console.log('PASS desired delivery UI requires interpretation/viewpoint, preserves nested music and bundle, resets edited outcome choices and discards stale selection.');
+
+let ownershipRoute;context.showOwnershipPreview=(input,options)=>ownershipRoute={input,options};elements.sourceInput.value='Nora wants tea.';context.showFoundationPreview(elements.sourceInput.value);const ownershipCard=elements.candidateList.children.at(-1);ownershipCard.children[1].children[0].value='Eli owns the tea.';await ownershipCard.children.at(-1).click();assert.equal(ownershipRoute.input,'Nora wants tea.');assert.equal(ownershipRoute.options.desired,true);assert.equal(ownershipRoute.options.clarification,'Eli owns the tea.');
+console.log('PASS object-desire ownership outcome routes to explicit framework selection.');

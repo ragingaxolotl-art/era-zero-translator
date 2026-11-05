@@ -224,3 +224,23 @@ outcomes and absent frameworks reject. The outcome audit keeps unclarified
 ownership unresolved and adds a separate explicit-framework case with recovered
 meaning. This is authored coverage, not held-out validation. UI routing and a
 blind audio test beginning from the original object-desire input remain open.
+
+
+## Desired and clarified ownership preview completion checkpoint
+
+The ownership preview now handles direct desired ownership and explicit ownership
+outcomes entered through the object-desire clarification field. Both require a
+framework and preserve the desired-not-asserted status. Clarified exports retain
+original input, selected outcome and provenance alongside the validated meaning.
+Playback and MIDI export use the nested ownership performance. Input, framework,
+pronoun and revision guards invalidate old results and downloads.
+
+Actual handler tests recover complete nested meanings from exported MIDI for
+both paths, checking distinct holder/owner, distal object, independent negation
+and runtime 2/0. Foundation routing, existing drinking previews and foundation
+pronoun checks pass. The desired-ownership WAV probe now starts from “Didn't Nora
+want this tea? [2]” plus the explicit outcome “Eli does not own this tea [0].” and
+Harbor charter selection. Waveform-only decoding recovers the nested meaning
+without original input or clarification. This updates the current report; earlier
+direct-desire waveform evidence remains in Git history. Live-browser validation,
+physical recordings and broader ownership/context coverage remain unfinished.
