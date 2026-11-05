@@ -29,3 +29,11 @@ const now=await composeLocalVerb('I put this tea.',ambiguous,a,{...options,inter
 await assert.rejects(composeLocalVerb('Nora put this tea.',ambiguous,a,{...options,interpretation:alternatives[0]}),/no longer matches/);
 await assert.rejects(composeLocalVerb('I put this tea.',ambiguous,a,{...options,interpretation:{...alternatives[0],runtime_state:2}}),/no longer matches/);
 console.log('PASS explicit ambiguous-tense selection preserves participants and changes time/music; stale or forged interpretations reject.');
+for(const state of [0,1,2])for(const negative of [false,true])for(const question of [false,true]){
+ const phrase=(question?'Might Nora ':'Nora might ')+(negative?'not ':'')+`glowmend this tea${question?'?':'.'} [${state}]`,result=await composeLocalVerb(phrase,registry,a,options);
+ assert.deepEqual(result.meaning.scopes,[{operator:'modality',mode:'possible'},...(negative?[{operator:'negation'}]:[])]);assert.equal(result.meaning.runtime_state,state);assert.equal(result.meaning.speech_act,question?'question':'assertion');assert.equal(result.events[0].marker,'modality_possible_open');assert.equal(result.events.at(-1).marker,'modality_possible_close');
+ if(negative)assert.equal(result.events[1].marker,'negation_open');assert.equal(result.meaning.bindings[1].reference.name.normalized_label,'tea');
+}
+assert.equal(await localVerbPlan('Nora might have glowmended this tea.',inflected,a),null);
+assert.equal(await localVerbPlan('Nora may glowmend this tea.',registry,a),null);
+console.log('PASS 12 might/might-not statements/questions preserve possibility outside negation and runtime; perfect-tense and ambiguous may are not silently simplified.');

@@ -30,10 +30,10 @@ export async function localVerbCandidates(input,registry,authority){
  let text=input.trim(),runtimeState=1;const tag=text.match(/\s*\[([012])\]([.!?]?)$/);
  if(tag){runtimeState=Number(tag[1]);text=text.slice(0,tag.index).trim();const end=text.match(/[.!?]$/)?.[0];if(end&&tag[2]&&end!==tag[2])return [];if(!end)text+=tag[2];}
  text=expandNegativeContractions(text,`(${REF})`);const question=text.endsWith('?');text=text.replace(/[.!?]$/,'');
- const m=question?text.match(new RegExp(`^(Do|Does|Did) (${REF}) (not )?(.+)$`)):text.match(new RegExp(`^(${REF}) (do|does|did) (not )?(.+)$`));
+ const m=question?text.match(new RegExp(`^(Do|Does|Did|Might) (${REF}) (not )?(.+)$`)):text.match(new RegExp(`^(${REF}) (do|does|did|might) (not )?(.+)$`));
  const direct=!question&&!m?text.match(new RegExp(`^(${REF}) (.+)$`)):null;if(!m&&!direct)return [];
  const subject=m?(question?m[2]:m[1]):direct[1],aux=m?(question?m[1]:m[2]).toLowerCase():null;
- if(m&&aux!=='did'&&aux!==(['I','you'].includes(subject)?'do':'does'))return [];
+ if(m&&!['did','might'].includes(aux)&&aux!==(['I','you'].includes(subject)?'do':'does'))return [];
  const matches=[];
  for(const entry of checked.entries.filter(e=>e.definition.part_of_speech==='verb')){
   const forms=m?[{label:entry.definition.label,past:aux==='did'}]:[
@@ -47,7 +47,7 @@ export async function localVerbCandidates(input,registry,authority){
   }
  }
  // Includes tense ambiguity (e.g. put/put): require clarification, never guess.
- return matches.map(({entry,object,past})=>({compound_id:entry.compound_id,subject,object,available_roles:entry.definition.roles,runtime_state:runtimeState,speech_act:question?'question':'assertion',scopes:[...(past?[{operator:'time',relation:'before_speech'}]:[]),...(m?.[3]?[{operator:'negation'}]:[])]}));
+ return matches.map(({entry,object,past})=>({compound_id:entry.compound_id,subject,object,available_roles:entry.definition.roles,runtime_state:runtimeState,speech_act:question?'question':'assertion',scopes:[...(past?[{operator:'time',relation:'before_speech'}]:[]),...(aux==='might'?[{operator:'modality',mode:'possible'}]:[]),...(m?.[3]?[{operator:'negation'}]:[])]}));
 }
 export async function localVerbPlan(input,registry,authority,{interpretation}={}){
  const candidates=await localVerbCandidates(input,registry,authority);

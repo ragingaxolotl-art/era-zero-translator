@@ -2191,3 +2191,13 @@ execute a browser or prove runtime dynamic imports beyond literal file reference
 visual correctness, unrestricted language coverage or audio-only recovery. The
 workflow edit has not deployed the branch; it applies when the release workflow
 runs on an authorized release.
+
+### Saved-verb possibility in ordinary English
+
+Saved verb statements and yes/no questions now accept might/might not, composing
+possibility outside the predicate's negation. Twelve runtime/question/polarity
+cases verify meaning scopes, musical boundaries and participant retention. A
+singular-they case verifies the same scope through reference clarification. Perfect
+forms and ambiguous may remain unsupported rather than losing their extra meaning.
+The existing main saved-word preview uses this parser, so no separate UI path is
+needed. Live-browser verification remains open.
