@@ -2015,3 +2015,13 @@ are not guessed as actor/target. Additional compound roles remain explicit.
 Twenty-four scope/runtime/question combinations pass with participant fidelity,
 plus role-choice, agreement and unsupported-tail rejection. Natural unassisted
 inflected forms, verb UI routing and ambiguity clarification remain unfinished.
+
+### Main-translator saved verb routing
+
+The saved-word fallback now recognizes supported local verb auxiliary sentences
+as well as adjectives. Verb previews require distinct subject/object role choices
+from the saved definition, hide duplicate participant prompts, and request other
+roles explicitly. Tests cover a past negative question at runtime 0, exact
+participant/role export, required selections and stale-output rejection. The
+same adjective handler tests remain green. Inflection and live-browser validation
+are still open; this route does not claim unrestricted English coverage.
