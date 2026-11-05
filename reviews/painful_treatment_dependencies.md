@@ -175,3 +175,23 @@ and inner negation (“expected not to cause”) remain rejected. Outer “not e
 is not interpreted as an expectation of absence. Present first/second-person
 agreement, broader clauses, musical rendering/inverse and UI for these relations
 remain open. This checkpoint is meaning composition only, not complete translation.
+
+
+## Stimulus music checkpoint
+
+Three draft relation frames now use the existing ±39 extension namespace with
+subcodes 2/3/4 and an explicit independent relation-runtime trit. Previous
+curiosity and pain subcodes 0/1 are unchanged. Each relation contains a stimulus
+reference and the full existing pain structure, including its own experiencer
+and runtime. The stimulus is delimited by a content role; the enclosing relation
+assigns its stimulus meaning, rather than pretending the cause role alone
+supplies causation. Outer scope and contour govern the relation and nested
+outcome; expectation/disposition does not become an asserted pain episode.
+
+Twenty-seven relation × outer runtime × outcome runtime cases use actual past
+assertion, negated expectation and a disposition question. They recover complete
+represented meaning through shared MIDI dispatch, match after transposition and
+reject without draft opt-in. Existing standalone pain tests and 28 Ruby parity
+cases remain intact after extracting reusable pain events. Full relation Ruby
+parity, blind WAV tests, UI, broader scope contrasts and physical audio remain
+open; intensity comparison and the original preference acceptance remain open.
