@@ -1,0 +1,162 @@
+{
+  "status": "PASS",
+  "scope": "Two authored clean synthetic WAVs, decoded by shared dispatch with no text, source IR or expected notes. No physical recording or channel perturbation.",
+  "physical_recordings": 0,
+  "cases": [
+    {
+      "phrase": "Pip is carrying the heavy box to Ada [0].",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-contextual-noun-bvu9dd/heavy.wav",
+      "meaning": {
+        "profile": "EZCARRY-INVERSE-1",
+        "speech_act": "assertion",
+        "scopes": [
+          {
+            "operator": "aspect",
+            "aspect": "ongoing"
+          }
+        ],
+        "predicate": "ongoing_destination_carrying",
+        "runtime_state": 0,
+        "participants": {
+          "carrier": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "P",
+              "IH",
+              "P"
+            ],
+            "instance_code": null
+          },
+          "load": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "B",
+              "AA",
+              "K",
+              "S"
+            ],
+            "instance_code": null,
+            "property": {
+              "dimension": "mass",
+              "standard": "contextual",
+              "norm": "heavy",
+              "comparison": "greater_than"
+            }
+          },
+          "destination": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "AE",
+              "D",
+              "AE"
+            ],
+            "instance_code": null
+          }
+        },
+        "convention_codes": [
+          5,
+          4,
+          3
+        ],
+        "meaning": {
+          "destination": "spatial",
+          "same_load": true,
+          "same_carrying_event": true,
+          "carrier_distinct_from_load": true,
+          "culmination_part_of_event_type": false,
+          "receipt_asserted": false
+        },
+        "limitations": [
+          "The recovered speech act distinguishes assertions from commands; a command does not assert that the requested event occurred.",
+          "The predicate and its commitments are inside the recovered scope operators; negation, modality, ongoing and habitual scope do not by themselves assert a current completed event.",
+          "Recovers this bounded convention profile, not arbitrary sentences, original IR node IDs or English spelling.",
+          "Repeated reference sounds are checked for consistency; shared identity is asserted by the learned convention, not proved about external objects. Homophones and untagged referents can remain ambiguous.",
+          "This is a strict MIDI inverse, not recognition of arbitrary recorded or human-played audio."
+        ]
+      },
+      "checksum": "verified"
+    },
+    {
+      "phrase": "Pip is not carrying the light box to Ada [2].",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-contextual-noun-bvu9dd/light.wav",
+      "meaning": {
+        "profile": "EZCARRY-INVERSE-1",
+        "speech_act": "assertion",
+        "scopes": [
+          {
+            "operator": "negation"
+          },
+          {
+            "operator": "aspect",
+            "aspect": "ongoing"
+          }
+        ],
+        "predicate": "ongoing_destination_carrying",
+        "runtime_state": 2,
+        "participants": {
+          "carrier": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "P",
+              "IH",
+              "P"
+            ],
+            "instance_code": null
+          },
+          "load": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "B",
+              "AA",
+              "K",
+              "S"
+            ],
+            "instance_code": null,
+            "property": {
+              "dimension": "mass",
+              "standard": "contextual",
+              "norm": "light",
+              "comparison": "less_than"
+            }
+          },
+          "destination": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "AE",
+              "D",
+              "AE"
+            ],
+            "instance_code": null
+          }
+        },
+        "convention_codes": [
+          5,
+          4,
+          3
+        ],
+        "meaning": {
+          "destination": "spatial",
+          "same_load": true,
+          "same_carrying_event": true,
+          "carrier_distinct_from_load": true,
+          "culmination_part_of_event_type": false,
+          "receipt_asserted": false
+        },
+        "limitations": [
+          "The recovered speech act distinguishes assertions from commands; a command does not assert that the requested event occurred.",
+          "The predicate and its commitments are inside the recovered scope operators; negation, modality, ongoing and habitual scope do not by themselves assert a current completed event.",
+          "Recovers this bounded convention profile, not arbitrary sentences, original IR node IDs or English spelling.",
+          "Repeated reference sounds are checked for consistency; shared identity is asserted by the learned convention, not proved about external objects. Homophones and untagged referents can remain ambiguous.",
+          "This is a strict MIDI inverse, not recognition of arbitrary recorded or human-played audio."
+        ]
+      },
+      "checksum": "verified"
+    }
+  ]
+}

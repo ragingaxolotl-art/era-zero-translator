@@ -49,8 +49,10 @@ for(const[canonicalId,relative]of Object.entries(index.resolution_files)){
     check(plan.cues.every((cue,i)=>cue.duration>0&&cue.start>=0&&(i===0||cue.start>plan.cues[i-1].start)),`${canonicalId} ${key} timing order`);
     check(plan.cues.every(cue=>VISEMES[cue.onset_viseme]&&VISEMES[cue.nucleus_viseme]),`${canonicalId} ${key} pose validity`);
     const addressCues=plan.cues.filter(cue=>cue.section==='address_path');
-    const carriers=sound.lexical_events.flatMap(event=>event.formal_carrier.split('-'));
+    const carriers=sound.lexical_events.filter(event=>!['grammar_marker','reference_marker','phonemic_label','deictic_reference'].includes(event.kind)).flatMap(event=>event.formal_carrier.split('-'));
     check(JSON.stringify(addressCues.map(cue=>cue.syllable))===JSON.stringify(carriers),`${canonicalId} ${key} address/carrier alignment`);
+    const markerCues=plan.cues.filter(cue=>cue.section==='grammar_marker');
+    check(markerCues.every(cue=>cue.syllable===null&&cue.sustain_only&&cue.onset_viseme==='REST'),`${canonicalId} ${key} marker channel has no invented carrier`);
     const sustained=plan.cues.filter(cue=>cue.section==='runtime_ending'||cue.section==='sentence_contour');
     check(sustained.every(cue=>cue.sustain_only&&cue.onset_viseme===cue.nucleus_viseme),`${canonicalId} ${key} grammatical tone sustain`);
     const runtimeCues=plan.cues.filter(cue=>cue.section==='runtime_ending');

@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import {execFileSync} from 'node:child_process';
+import {composeCuriosity} from '../pages/curiosity.mjs';
+import {midiFromCuriosity,decodeCuriosityMidi} from '../pages/curiosity_music.mjs';
+import {notesFromMidi} from '../pages/performance_codec.mjs';
+const authority=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url))),phrase="Wasn't Orin curious about this map? [2]",records=JSON.parse(fs.readFileSync(new URL('../pages/data/foundation_preview_candidates.json',import.meta.url))).records;
+const document=await composeCuriosity(phrase,{allowDraft:true}),bytes=await midiFromCuriosity(document,authority,records,{allowDraft:true}),expected=await decodeCuriosityMidi(bytes,authority.atoms,records,{allowDraft:true});
+const file=path.join(fs.mkdtempSync(path.join(os.tmpdir(),'era-curiosity-')),'curiosity.wav');
+const notes=notesFromMidi(bytes).notes.map(({midi,start_tick,end_tick})=>({midi,start_tick,end_tick}));execFileSync('python3',['tools/acoustic_transport.py','synth',file],{input:JSON.stringify(notes)});
+const result=JSON.parse(execFileSync(process.execPath,['tools/decode_recorded_audio.mjs',file,'--allow-draft'],{encoding:'utf8'}));assert.deepEqual(result.meaning,expected);
+fs.writeFileSync(new URL('../reports/curiosity_acoustic_probe.json',import.meta.url),JSON.stringify({status:'PASS',scope:'One authored clean synthetic WAV; no physical recording or simulated channel test',phrase,meaning:result.meaning,wav:file},null,2)+'\n');
+console.log('PASS blind WAV recovery of past negated curiosity question, demonstrative topic and runtime without invented questions or asserted learning.');

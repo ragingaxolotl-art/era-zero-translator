@@ -9,6 +9,7 @@ require_relative "lib/era_zero_validation"
 require_relative "lib/era_zero_general_english"
 require_relative "lib/era_zero_renderer"
 require_relative "lib/era_zero_presentation"
+require_relative "lib/era_zero_browser_compounds"
 
 root = EraZeroValidation::ROOT
 pages = File.join(root, "pages")
@@ -54,7 +55,7 @@ required_roles = {}
 
 canonical_by_target.sort.each do |target_id, sense|
   roles = if sense.fetch("route") == "compound"
-            EraZeroRenderer.required_compound_roles(compound_by_id.fetch(target_id))
+            EraZeroRenderer.required_compound_roles(compound_by_id.fetch(target_id), compounds: compound_by_id)
           else
             []
           end
@@ -86,6 +87,7 @@ browser_index = {
   "lore_conversations" => lore_conversations,
   "atoms" => atoms,
   "compounds" => compounds,
+  "compound_plans" => EraZeroBrowserCompounds.plans(compounds),
   "controlled" => allowed.map { |sense| sense.slice("sense_id", "lemma", "route", "target_id") },
   "required_roles" => required_roles,
   "resolution_files" => resolution_files,
@@ -98,10 +100,19 @@ browser_index = {
   "online_scope" => {
     "direct_targets" => resolution_files.length,
     "slotted_compounds" => required_roles.count { |_id, roles| !roles.empty? },
-    "note" => "The static release resolves every atom and closed compound exactly. Open-slot compound role binding remains available in the local Ruby API."
+    "note" => "Static templates resolve atoms and closed compounds. Reviewed browser sentence constructions bind open slots through compiled plans; advanced controlled role binding remains available in the local Ruby API."
   }
 }
 File.write(File.join(data_dir, "index.json"), JSON.generate(browser_index))
+# Keep preview vocabulary outside the canonical dictionary and counts.
+foundation_candidates = EraZeroValidation.load_yaml("reviews/foundation_extension_candidates.json")
+EraZeroFoundations.validate!(foundation_candidates.fetch("records"), allow_draft: true)
+File.write(File.join(data_dir, "foundation_candidates.json"), JSON.generate(foundation_candidates))
+cognitive_candidates = EraZeroValidation.load_yaml("reviews/cognitive_foundation_candidates.json")
+preview_candidates = foundation_candidates.merge("records" => foundation_candidates.fetch("records") + cognitive_candidates.fetch("records"))
+EraZeroFoundations.validate!(preview_candidates.fetch("records"), allow_draft: true)
+File.write(File.join(data_dir, "foundation_preview_candidates.json"), JSON.generate(preview_candidates))
+
 
 document_extensions = %w[.md .yaml .yml .json .jsonl .txt .svg .mid]
 document_directories = %w[docs spec lexicon migrations reviews reports tests examples extraction visemes]

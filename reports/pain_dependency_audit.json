@@ -1,0 +1,138 @@
+{
+  "scope": "Literal inspection of current authoritative definitions and exclusions. Mentioning pain does not establish a pain meaning; absence of a literal mention does not prove semantic absence.",
+  "root_count": 324,
+  "dependencies": [
+    {
+      "compound_id": "CMP:6c9e3042a361ccae6ecf5980",
+      "definition_version": "1.0.0",
+      "meaning": {
+        "profile": "EZLEX-1",
+        "sense_key": "felt_self_condition",
+        "sound_code": 11,
+        "added_definition": "The bound experiencer has a presently conscious felt presentation of their own condition. The presentation is experiential rather than merely stored, inferred, reported or externally registered, and can be implicit without a verbal judgment. Within this compound the self in LIF:001 and MIN:001 is the bound experiencer, not necessarily the speaker. No particular pleasantness, desire, bodily need, cause, truth of a judgment or external sensory channel is asserted.",
+        "excludes": [
+          "Unconscious sensory registration or a device record alone",
+          "A manifest self-model without conscious feeling",
+          "A specific emotional valence or bodily need inferred from generic feeling"
+        ]
+      }
+    },
+    {
+      "compound_id": "CMP:c4fb9863fe36d7667db847c0",
+      "definition_version": "1.0.0",
+      "meaning": {
+        "profile": "EZLEX-1",
+        "sense_key": "unpleasant_felt_condition",
+        "sound_code": 18,
+        "added_definition": "The same consciously felt self-condition has an unpleasant experiential tone for its experiencer. Unpleasantness is felt valence, not merely objective harm, disapproval, lack of pleasure, or a desire to avoid an outcome. It may coexist with pleasant feeling and does not by itself specify sadness, pain, fear, anger, fatigue or a cause.",
+        "excludes": [
+          "Absence of pleasant feeling without unpleasant feeling",
+          "Objective harm or disapproval without unpleasant experience",
+          "Sadness, fear or pain inferred from every unpleasant feeling"
+        ]
+      }
+    },
+    {
+      "compound_id": "CMP:c64ab0a9989c7b10c46e3b38",
+      "definition_version": "1.0.0",
+      "meaning": {
+        "profile": "EZLEX-1",
+        "sense_key": "felt_bodily_need",
+        "sound_code": 14,
+        "added_definition": "The same consciously felt self-condition presents the experiencer's own material body as calling for replenishment or maintenance. MAT:000 identifies that experiencer's body within the same focal frame. This is a felt bodily demand, not proof of a measured physiological deficit, harm, failed viability, an intended action or actual replenishment. The required resource or maintenance kind is not yet specified.",
+        "excludes": [
+          "A bodily deficit that is not felt",
+          "An intellectual wish or a duty without a felt bodily demand",
+          "Measured depletion, damage or action inferred from the feeling"
+        ]
+      }
+    },
+    {
+      "compound_id": "CMP:d54499d2989fa97349e8e23d",
+      "definition_version": "1.0.0",
+      "meaning": {
+        "profile": "EZLEX-1",
+        "sense_key": "sad_felt_mood",
+        "sound_code": 19,
+        "added_definition": "The experiencer feels sadness: an unpleasant emotional mood of sorrow or low spirits. This is a felt-state meaning, not a diagnosis, a judgment that an event is unfortunate, or every unpleasant sensation. It does not require a particular loss, crying, outward expression, permanence, incapacity, lack of care or total absence of happiness.",
+        "excludes": [
+          "Negated happiness or emotional neutrality without sadness",
+          "Physical pain, fear or anger without sadness",
+          "A regrettable event or medical diagnosis inferred from the adjective"
+        ]
+      }
+    }
+  ],
+  "explicitPainExclusions": [
+    {
+      "canonical_id": "WRN:000",
+      "core_definition": "An intrinsic adverse condition that remains identified within one reference entity independently of whether it is presently producing harmful deviation.",
+      "exclusions": [
+        "Physical fracture, force, heat, collision, displacement, approach, biological injury, illness, fear, or pain without a separate applicable WRN adverse classification."
+      ]
+    },
+    {
+      "canonical_id": "WRN:001",
+      "core_definition": "An intrinsic adverse condition within one reference entity that is presently producing harmful deviation from that entity's accepted state.",
+      "exclusions": [
+        "Physical fracture, force, heat, collision, displacement, approach, biological injury, illness, fear, or pain without a separate applicable WRN adverse classification."
+      ]
+    },
+    {
+      "canonical_id": "WRN:002",
+      "core_definition": "An intrinsic adverse condition within one reference entity that is present without presently producing harmful deviation.",
+      "exclusions": [
+        "Physical fracture, force, heat, collision, displacement, approach, biological injury, illness, fear, or pain without a separate applicable WRN adverse classification."
+      ]
+    },
+    {
+      "canonical_id": "WRN:010",
+      "core_definition": "A distinct external condition that remains identified as capable of adversely affecting one reference target independently of current contact or effect.",
+      "exclusions": [
+        "Physical fracture, force, heat, collision, displacement, approach, biological injury, illness, fear, or pain without a separate applicable WRN adverse classification."
+      ]
+    },
+    {
+      "canonical_id": "WRN:011",
+      "core_definition": "A distinct external condition that is presently expressing the harmful potential by which it can adversely affect one reference target.",
+      "exclusions": [
+        "Physical fracture, force, heat, collision, displacement, approach, biological injury, illness, fear, or pain without a separate applicable WRN adverse classification."
+      ]
+    },
+    {
+      "canonical_id": "WRN:012",
+      "core_definition": "A distinct external condition capable of adversely affecting one reference target that is present without presently expressing that harmful potential.",
+      "exclusions": [
+        "Physical fracture, force, heat, collision, displacement, approach, biological injury, illness, fear, or pain without a separate applicable WRN adverse classification."
+      ]
+    },
+    {
+      "canonical_id": "WRN:020",
+      "core_definition": "One correlated adverse condition that remains identified across multiple participant entities within a shared system independently of its present manifestation pattern.",
+      "exclusions": [
+        "Physical fracture, force, heat, collision, displacement, approach, biological injury, illness, fear, or pain without a separate applicable WRN adverse classification."
+      ]
+    },
+    {
+      "canonical_id": "WRN:021",
+      "core_definition": "One correlated adverse condition that is presently producing harmful deviation across multiple participant entities within a shared system.",
+      "exclusions": [
+        "Physical fracture, force, heat, collision, displacement, approach, biological injury, illness, fear, or pain without a separate applicable WRN adverse classification."
+      ]
+    },
+    {
+      "canonical_id": "WRN:022",
+      "core_definition": "One correlated adverse condition present across multiple participant entities within a shared system without presently producing harmful deviation.",
+      "exclusions": [
+        "Physical fracture, force, heat, collision, displacement, approach, biological injury, illness, fear, or pain without a separate applicable WRN adverse classification."
+      ]
+    }
+  ],
+  "definitionsMentioningPain": [
+    {
+      "id": "CMP:c4fb9863fe36d7667db847c0",
+      "definition": "The same consciously felt self-condition has an unpleasant experiential tone for its experiencer. Unpleasantness is felt valence, not merely objective harm, disapproval, lack of pleasure, or a desire to avoid an outcome. It may coexist with pleasant feeling and does not by itself specify sadness, pain, fear, anger, fatigue or a cause."
+    }
+  ],
+  "decision": "Reuse felt experience and unpleasant valence as dependencies; do not alias pain to them or to WRN. Review a pain-specific convention, then a pain-producing relation and degree comparison before painful-treatment preferences. No new root family established by this audit."
+}

@@ -1,0 +1,38 @@
+profile: EZREFPROPERTY-1
+status: versioned_implementation_convention
+authority: User-directed translator completion goal, October 28, 2026
+scope: One scalar mass restriction on a definite phonemic nominal reference
+semantic_field: property_restriction
+fields:
+  dimension: mass
+  magnitude: Canonical nonnegative decimal string, at most 1024 characters
+  unit: kilogram
+  comparison: [greater_than, less_than]
+meaning:
+  - The reference selects the contextually intended noun referent subject to this mass restriction.
+  - The restriction is part of reference interpretation, not an independent sentence-level assertion.
+  - Outer negation, modality, time and runtime state belong to the enclosing predicate; they do not alter this restriction's selected threshold.
+  - A name sound labels the noun; its phonemes do not encode the adjective or infer a material taxonomy.
+  - A reference label alone is not proof of unique real-world identity.
+english:
+  - The heavy or light noun requires an explicitly supplied mass standard.
+  - Heavy selects greater_than; light selects less_than. Neither includes equality.
+  - One restriction and one user-selected standard are supported per sentence.
+  - Repeated ambiguous noun labels, two restricted participants, quantified properties and future-choice combinations remain unsupported.
+  - Quoted names are labels and bypass adjective interpretation.
+sound:
+  open: [0, -21, 1, 0]
+  head_separator: [0, 21, 0, 21]
+  close: [0, 21, 1, 0]
+  payload_order: [open, scalar_measurement_comparison, head_separator, nominal_reference_marker, noun_phonemes, close]
+  scalar_measurement_comparison: Existing EZGRAM-1 comparison, decimal digits and kilogram unit code 9
+  marker_note_duration_beats: 0.25
+  marker_boundary_beats: 0.5
+  register: Markers at the utterance anchor; noun retains its participant register
+  nested_binding: The entire restriction and noun remain inside every substituted slot's role frame
+runtime_contract:
+  - Lexical trits in the unchanged 324 root addresses retain their definitions.
+  - Predicate runtime 0, 1 and 2 retain their existing tails.
+  - The reference restriction has no runtime_state field; it is not an action occurrence.
+compatibility: Existing references without this field and all existing lexical melodies remain unchanged
+inverse: pages/reference_property_decoder.mjs recovers bounded nominal restrictions from MIDI only; it does not recover complete sentence meaning

@@ -1,0 +1,19 @@
+status: implemented_schema_extension
+scope: Semantic validation of existing EZNAME-0.1 participant references
+preserved:
+  - All 324 root definitions and musical addresses
+  - Existing semantic payload identities
+  - Existing legacy semantic IR conformance fixtures
+added_node_kind: phonemic_reference
+required_fields: [node_id, kind, referent_id, value_type, name]
+value_type: entity
+name_validation: Existing EZNAME-0.1 phoneme inventory and content-derived name_id
+forbidden_fields: [runtime_state]
+identity_rule: referent_id is a nonempty explicit identifier; the encoded name has its own validated name_id
+integration:
+  - Shared tools/lib/era_zero_semantic_validation.rb replaces fixture-local validation
+  - Sentence composition regression checks validate semantic IR before rendering
+remaining:
+  - General compound-slot bindings and typed reference validation
+  - Runtime renderer enforcement of the complete shared semantic validator
+  - Broader discourse identity and referent resolution

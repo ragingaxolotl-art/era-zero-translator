@@ -1,0 +1,17 @@
+change: per_clause_interpretation_choices
+date: '2026-10-29'
+review: reviews/clause_interpretations.md
+scope:
+  - existing sequence, conjunction and conditional constructions
+  - viewpoint, spatial destination, adjective standard and future statement choices
+  - existing single-definite-bearer it rule extended to carry-to commands
+preservation:
+  - choices remain attached to their clause
+  - missing or unsupported choices reject the complete group
+  - runtime 0/1/2 remains independent per occurrence
+  - no root, compound or musical convention changes
+  - existing no-choice formal outputs remain unchanged
+limitations:
+  - no arbitrary nested grammar or discourse resolution
+  - no general multi-clause semantic inverse
+test: tests/clause_interpretation_test.mjs

@@ -106,8 +106,8 @@ export function inferEnglishIntent(raw,explicitRuntime=null){
   const speechAct=definition?'definition':possibility?'possibility':question?'question':imperative?'command':'assertion';
   let runtime=explicitRuntime,runtimeSource='explicit';
   if(runtime===null){
-    runtime=/\b(?:not|never|no longer|isn t|aren t|wasn t|weren t|don t|doesn t|didn t|cannot|can t)\b/.test(text)?0:1;
-    runtimeSource=runtime===0?'inferred from English negation':'ordinary positive-English default';
+    runtime=1;
+    runtimeSource=/\b(?:not|never|no longer|isn t|aren t|wasn t|weren t|don t|doesn t|didn t|cannot|can t)\b/.test(text)?'negation requires scope; dictionary runtime defaults to active':'ordinary positive-English default';
   }
   return{speechAct,runtime,runtimeSource};
 }
@@ -130,14 +130,15 @@ function scoreSense(sense,input,inputTokens){
   if(profileSense&&headPattern&&sense.part_of_speech==='adjective'&&new RegExp(`\\b(?:am|is|are|was|were|feel|feels|felt|seem|seems) (?:${headPattern})\\b`).test(input))score+=.10;
   if(sense.sense_key==='canonical_atom_label'&&!exact)score=Math.min(score,.62);
   const targetAddress=String(sense.target_id||'').match(/^[A-Z]{3}:([012]{3})$/)?.[1],lexicalLayer=sense.lexical_layer||targetAddress?.[0],lexicalPhase=sense.lexical_phase||targetAddress?.[2];
-  if(lexicalLayer==='1'){
+  const reviewedLabel=exactLemma&&(sense.sense_key==='canonical_atom_label'||sense.plain_mapping);
+  if(lexicalLayer==='1'&&!reviewedLabel){
     const modalQuestion=/^(?:could|can|may|might|will|would)\s+(?:i|we|you|he|she|they|it)\b/.test(input),phase=!modalQuestion&&/\b(?:possible|planned|pending|will|shall|may|might|could|plan|plans|intend|intends|need|needs|needed|want|wants|wanted|later|soon)\b/.test(input)?'2':/\b(?:ongoing|active|current)\b/.test(input)?'1':/\b(?:finished|completed|has|have|had)\b|\b(?:sent|left|went|came|found|made|built|knew|received|broke|fixed|repaired|moved|stopped|continued|arrived|departed|returned|crossed|followed|waited|shared|changed|created|\w+ed)\b/.test(input)?'0':'1';
     if(phase===lexicalPhase)score+=sense.plain_mapping ? .16 : .08;
     else if(['mental_revision','completed_target_discovery_generalized','data_transfer_completion','completed_target_restoration','completed_target_arrival'].includes(sense.sense_key))score-=.02;
     else score=Math.min(score-.18,sense.plain_mapping ? .72 : .84);
   }
   score=Math.round(Math.min(score,1)*10000)/10000;
-  return{sense_id:sense.sense_id,lemma:sense.lemma,sense_key:sense.sense_key,route:sense.route,target_id:sense.target_id,definition:sense.definition,selection_cues:sense.selection_cues||[],generalization:sense.generalization||null,fidelity:sense.fidelity||'indexed',plain_mapping:Boolean(sense.plain_mapping),part_of_speech:sense.part_of_speech||null,competition_group:sense.competition_group||null,specificity:bestTokens.size,noun_label_allowed:Boolean(sense.noun_label_allowed),score,confidence:score>=.82?'high':score>=.62?'medium':'low',match_type:exact?'exact_lemma':hint?.[3]==='context'?'contextual_english':hint?'english_sentence':surfaceMatch?'inflected_lemma':'context_overlap',contextual_hint:hint?.[3]==='context',evidence:{lexical_overlap:lexical,selection_cue_overlap:cue,definition_overlap:definition}};
+  return{reviewed_label_match:Boolean(reviewedLabel),sense_id:sense.sense_id,lemma:sense.lemma,sense_key:sense.sense_key,route:sense.route,target_id:sense.target_id,definition:sense.definition,selection_cues:sense.selection_cues||[],generalization:sense.generalization||null,fidelity:sense.fidelity||'indexed',plain_mapping:Boolean(sense.plain_mapping),part_of_speech:sense.part_of_speech||null,competition_group:sense.competition_group||null,specificity:bestTokens.size,noun_label_allowed:Boolean(sense.noun_label_allowed),score,confidence:score>=.82?'high':score>=.62?'medium':'low',match_type:exact?'exact_lemma':hint?.[3]==='context'?'contextual_english':hint?'english_sentence':surfaceMatch?'inflected_lemma':'context_overlap',contextual_hint:hint?.[3]==='context',evidence:{lexical_overlap:lexical,selection_cue_overlap:cue,definition_overlap:definition}};
 }
 
 function plainMappedSenses(data){
@@ -185,7 +186,7 @@ export function analyzeEnglish(raw,data,{limit=Number.POSITIVE_INFINITY}={}){
   if(!normalized)throw{code:'empty_input',message:'Write an English word, phrase, or sentence to translate.'};
   const intent=inferEnglishIntent(text,explicitRuntime),inputTokens=lexicalTokens(normalized);
   const allSenses=[...data.senses,...(data.game_story_senses||[]),...(data.local_senses||[]),...plainMappedSenses(data)],candidateSenses=allSenses.filter(sense=>sense.route!=='label');
-  const ranked=candidateSenses.map(sense=>scoreSense(sense,normalized,inputTokens)).filter(Boolean).sort((a,b)=>b.score-a.score||b.specificity-a.specificity||a.sense_id.localeCompare(b.sense_id)).slice(0,limit);
+  const ranked=candidateSenses.map(sense=>scoreSense(sense,normalized,inputTokens)).filter(Boolean).sort((a,b)=>Number(b.reviewed_label_match)-Number(a.reviewed_label_match)||b.score-a.score||b.specificity-a.specificity||a.sense_id.localeCompare(b.sense_id)).slice(0,limit);
   const coverage=termCoverage(normalized,data,ranked,allSenses);
   const unresolvedSemantic=coverage.some(item=>item.status==='unresolved_semantic');
   if(!ranked.length)return{status:'ok',input:raw,normalized_input:normalized,speech_act_proposal:intent.speechAct,explicit_runtime_state:intent.runtime,runtime_inference:intent.runtimeSource,candidates:[],candidate_count:0,term_coverage:coverage,decision:{auto_resolution_allowed:false,requires_clarification:true,reasons:[unresolvedSemantic?'unresolved_semantic_content':'phonemic_labels_only'],competing_sense_ids:[]}};
@@ -199,8 +200,12 @@ export function analyzeEnglish(raw,data,{limit=Number.POSITIVE_INFINITY}={}){
   const hasUnfamiliarTerms=coverage.some(item=>item.status==='phonemic_label');
   const crossDomainObject=/(?:\bfiles?\b|\bdocuments?\b|\brecords?\b)/.test(normalized);
   const underspecifiedChange=crossDomainObject&&(/\b(?:move|moves|moving|moved)\b/.test(normalized)||(/\b(?:change|changes|changing|changed)\b/.test(normalized)&&!/\b(?:contents?|represented information)\b/.test(normalized)));
-  const auto=Boolean(confident&&!material&&direct&&!missingRoles&&hosted&&!unresolvedSemantic&&!underspecifiedChange);
+  // Ranking locates dictionary meanings; it does not bind a sentence's roles,
+  // modifiers or scopes. Only a whole lexical label is a standalone lookup.
+  const wholeLexicalLabel=normalized===normalize(top.lemma);
+  const auto=Boolean(wholeLexicalLabel&&confident&&!material&&direct&&!missingRoles&&hosted&&!unresolvedSemantic&&!underspecifiedChange);
   const reasons=[];
+  if(!wholeLexicalLabel)reasons.push('incomplete_sentence_construction');
   if(material)reasons.push('material_sense_ambiguity');
   if(missingRoles)reasons.push('required_roles_missing');
   if(structural)reasons.push('structural_template_required');
@@ -210,5 +215,5 @@ export function analyzeEnglish(raw,data,{limit=Number.POSITIVE_INFINITY}={}){
   if(unresolvedSemantic)reasons.push('unresolved_semantic_content');
   if(underspecifiedChange)reasons.push('cross_domain_action_underspecified');
   if(hasUnfamiliarTerms&&!auto)reasons.push('phonemic_labels_present');
-  return{status:'ok',input:raw,normalized_input:normalized,speech_act_proposal:intent.speechAct,explicit_runtime_state:intent.runtime,runtime_inference:intent.runtimeSource,candidates:ranked,candidate_count:ranked.length,term_coverage:coverage,decision:{auto_resolution_allowed:auto,requires_clarification:!auto,reasons,competing_sense_ids:competing.map(item=>item.sense_id)}};
+  return{status:'ok',complete_sentence_unavailable:!wholeLexicalLabel,interpretation_scope:wholeLexicalLabel?'dictionary_label':'partial_dictionary_reading',input:raw,normalized_input:normalized,speech_act_proposal:intent.speechAct,explicit_runtime_state:intent.runtime,runtime_inference:intent.runtimeSource,candidates:ranked,candidate_count:ranked.length,term_coverage:coverage,decision:{auto_resolution_allowed:auto,requires_clarification:!auto,reasons,competing_sense_ids:competing.map(item=>item.sense_id)}};
 }

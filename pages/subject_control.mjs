@@ -1,0 +1,33 @@
+// Reviewed subject roles; a new predicate needs an explicit binding review.
+const SUBJECTS=Object.freeze({'FND:fe36cb2a6d649151067c7754':{type:'foundation',role:'experiencer'},'CMP:1e2ec87e1feff0da19aadc3b':{type:'compound',role:'actor',slot:['h','s-actor']},'CMP:d54499d2989fa97349e8e23d':{type:'compound',role:'experiencer',slot:['h','h','s-experiencer']},'CMP:c58b38d03fab27880ac3e1f0':{type:'compound',role:'experiencer',slot:['h','h','s-experiencer']},'CMP:748be1f0ce7ceb2963716292':{type:'compound',role:'experiencer',slot:['h','h','s-experiencer']},'CMP:60cd46250d183e3105b7250a':{type:'compound',role:'experiencer',slot:['h','h','s-experiencer']},'CMP:3c13b9c619d95f1c40ea5da5':{type:'compound',role:'experiencer',slot:['h','s-experiencer']},'LIF:211':{type:'atom',role:'actor'},'MOV:201':{type:'atom',role:'bearer'},'LIF:001':{type:'atom',role:'bearer'},'LIF:002':{type:'atom',role:'bearer'},'LIF:011':{type:'atom',role:'bearer'},'LIF:012':{type:'atom',role:'bearer'},'WRN:001':{type:'atom',role:'bearer'},'REP:001':{type:'atom',role:'bearer'},'MIN:201':{type:'atom',role:'bearer'},'FND:018dd25d713dff83661a76a4':{type:'foundation',role:'experiencer'}});
+export function validateSubjectControl(ir){
+ const nodes=new Map(ir.nodes.map(n=>[n.node_id,n])),edges=ir.edges;
+ for(const n of ir.nodes.filter(n=>n.kind==='reference'&&n.reference_type==='desire_subject')){
+  const fail=()=>{throw new Error('Invalid desired-subject identity.');};
+  if(n.value_type!=='entity'||Object.keys(n).some(k=>!['node_id','kind','reference_type','referent_id','value_type'].includes(k))||!ir.discourse_constraints?.declared_referents?.includes(n.referent_id))fail();
+  const links=edges.filter(e=>e.from===n.node_id),role=links.find(e=>e.type==='fills_role'),identity=links.find(e=>e.type==='corefers_with');
+  const bindings=ir.nodes.flatMap(p=>(p.compound_bindings||[]).filter(b=>b.argument_id===n.node_id).map(binding=>({predicate:p,binding})));
+  if(!identity||links.length!==(role?2:1)||bindings.length!==(role?0:1))fail();
+  const predicate=role?nodes.get(role.to):bindings[0].predicate,holder=nodes.get(identity.to);
+  const subject=SUBJECTS[predicate?.target_id];
+  if(!subject||predicate.target_type!==subject.type||!['phonemic_reference','deictic_reference'].includes(holder?.kind)||holder.referent_id!==n.referent_id)fail();
+  if(subject.type==='compound'){
+   if(role||JSON.stringify(bindings[0].binding.slot_path)!==JSON.stringify(subject.slot))fail();
+  }else if(!role||role.role!==subject.role)fail();
+  let id=predicate.node_id;const seen=new Set();
+  while(nodes.get(id)?.kind!=='clause'){
+   if(seen.has(id))fail();seen.add(id);
+   const up=edges.filter(e=>e.from===id&&['scopes','centers'].includes(e.type));if(up.length!==1)fail();id=up[0].to;
+  }
+  const clause=nodes.get(id),parents=edges.filter(e=>e.from===id&&e.type==='fills_role'&&e.role==='content');
+  if(clause.content_status!=='intensional'||clause.value_type!=='proposition'||parents.length!==1)fail();
+  const parent=nodes.get(parents[0].to);
+  if(parent?.target_type!=='foundation'||parent.target_id!=='FND:f66b7a3877f4b0140a0b7023'||!edges.some(e=>e.from===holder.node_id&&e.to===parent.node_id&&e.type==='fills_role'&&e.role==='experiencer'))fail();
+ }
+}
+export function subjectControlEvent(node,anchor=60){
+ if(node.reference_type!=='desire_subject')throw new Error('Unsupported discourse reference.');
+ const path=[0,-25,0,0];
+ if(!Number.isInteger(anchor)||path.some(n=>anchor+n<0||anchor+n>127))throw new Error('Subject-control pitch outside MIDI range.');
+ return {kind:'discourse_reference',occurrence_id:node.node_id,target_id:'EZCONTROL:desire_subject',referent_id:node.referent_id,register:'middle',base_midi:anchor,family_qualified_transliteration:'desire_subject',formal_carrier:'',family_opening_relative_semitones:[],family_opening_absolute_midi:[],address_relative_semitones:path,address_absolute_midi:path.map(n=>anchor+n),note_duration_beats:.25};
+}

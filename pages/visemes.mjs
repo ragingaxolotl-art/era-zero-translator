@@ -42,9 +42,21 @@ export function visemePlanFromFormal(formal,options={}){
   const sound=soundPlanFromFormal(formal),cues=[];
   let at=.08,lastSyllable='ma';
   sound.lexical_events.forEach((event,eventIndex)=>{
+    if(['reference_marker','phonemic_label','grammar_marker','deictic_reference','discourse_reference'].includes(event.kind)){
+      // EZNAME is a framed label channel, not four DBA carrier syllables.
+      // Keep the mouth neutral until phoneme-specific articulation is defined.
+      event.address_path.forEach((note,noteIndex)=>{
+        const duration=(event.note_duration_beats||1)*.24;
+        cues.push({section:event.kind,note,start:Number(at.toFixed(4)),duration,syllable:null,target_id:event.target_id,event_index:eventIndex,note_index:noteIndex,onset_viseme:'REST',nucleus_viseme:'REST',onset_duration:0,sustain_only:true});
+        at+=duration+.04;
+      });
+      at+=event.boundary_after_beats===undefined?.16:event.boundary_after_beats*.24;
+      return;
+    }
+    if(event.kind==='foundation'&&mode!=='strict')throw new Error('Draft foundations currently support strict sound only.');
     const carrier=event.formal_carrier.split('-');
     const lexicalDuration=(event.note_duration_beats||1)*.24;
-    if(carrier.length!==4)throw new Error(`Expected four carrier syllables for ${event.target_id}.`);
+    if(carrier.length!==(event.kind==='foundation'?12:4)||carrier.length!==event.address_path.length)throw new Error(`Carrier syllables do not match the lexical address for ${event.target_id}.`);
     carrier.forEach(visemesForSyllable);
     event.family_opening.forEach((note,noteIndex)=>{
       cues.push(cue({section:'family_opening',note,start:at,duration:lexicalDuration,syllable:carrier[0],targetId:event.target_id,eventIndex,noteIndex}));
@@ -58,7 +70,7 @@ export function visemePlanFromFormal(formal,options={}){
       at+=lexicalDuration+.04;
     });
     if(mode!=='strict'){
-      const recognition=recognitionForTarget(event.target_id,registry,formal.performance.lexical_events[eventIndex].base_midi,mode);
+      const recognition=recognitionForTarget(event.target_id,registry,event.base_midi,mode);
       at+=recognition.separation_before_seconds;
       recognition.absolute_midi.forEach((note,noteIndex)=>{
         const duration=recognition.duration_seconds[noteIndex];
@@ -72,7 +84,7 @@ export function visemePlanFromFormal(formal,options={}){
       cues.push(cue({section:'runtime_ending',note,start:at,duration,syllable:lastSyllable,targetId:event.target_id,eventIndex,noteIndex,sustainOnly:true}));
       at+=duration+.04;
     });
-    at+=.16;
+    at+=event.boundary_after_beats===undefined?.16:event.boundary_after_beats*.24;
   });
   sound.sentence_contour.forEach((note,noteIndex)=>{
     cues.push(cue({section:'sentence_contour',note,start:at,duration:.30,syllable:lastSyllable,targetId:null,eventIndex:null,noteIndex,sustainOnly:true}));

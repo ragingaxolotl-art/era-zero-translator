@@ -2,9 +2,23 @@
 
 Public browser release: **https://ragingaxolotl-art.github.io/era-zero-translator/**
 
-This repository contains both the full canonical Ruby application/API and a deterministic browser-native GitHub Pages release.
+This repository contains both the canonical Ruby application/API and a deterministic browser-native GitHub Pages release.
 
-## Hosted release
+## Translator-completion draft
+
+The `feat/translator-completion` draft has 324 roots, 43 compounds and 451 indexed
+senses. It composes selected ordinary sentences and nested participant bindings,
+including carrying, physical custody, acquisition, transfer and an explicit
+carrying-mediated custody-delivery reading, while preserving
+independent 0/1/2 states. The current regression suite has 88 passing checks.
+These counts do not establish full English coverage. The original completion gates remain open; see the [completion plan](docs/translator-completion.md).
+This draft has not been merged or deployed. Live browser verification of the
+latest transfer/delivery additions remains pending because browser use was disabled.
+
+## Historical hosted-release baseline
+
+The following describes the earlier release baseline, not the current draft or a
+fresh verification of the public deployment.
 
 The Pages build runs entirely in the browser. Its default interface accepts ordinary English sentences—no state brackets or controlled syntax required—and infers inflections, questions, commands, negation, and the ordinary positive state. Genuine polysemy is surfaced for the user instead of guessed. It includes all 437 indexed senses and precomputed canonical resolution artifacts for all 324 atoms and every closed approved compound: 352 direct targets × 3 runtime states × 5 speech acts = 5,280 exact variants. Semantic IR, EZF-1, SVG, MIDI, reference-tone preview, and integrity-checked EZB-1 exchange are available without a server.
 

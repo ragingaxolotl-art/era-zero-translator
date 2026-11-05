@@ -1,3 +1,51 @@
+import {takeLocalExample} from './local_compound_examples.mjs';
+import {localWordPronounPlan} from './local_compound_pronouns.mjs';
+import {loadLocalCompounds} from './local_compounds.mjs';
+import {localAdjectivePlan,localVerbPlan,localVerbCandidates} from './local_compound_english.mjs';
+import {mountLocalEnglishControls} from './local_english_controls.mjs';
+import {createLocalCompoundPlayer} from './local_compound_player.mjs';
+import {desiredAvailabilityPlan,desiredAvailabilityPronounPlan,composeDesiredAvailability} from './desired_availability.mjs';
+import {midiFromDesiredAvailability} from './desired_availability_music.mjs';
+import {availabilityPlan,availabilityPronounPlan,composeAvailabilitySentence} from './availability_sentences.mjs';
+import {midiFromCustodyOpportunity} from './custody_opportunity_music.mjs';
+import {composeObjectDesiredOwnership} from './object_desired_ownership.mjs';
+import {desiredOwnershipPlan,desiredOwnershipPronounPlan,composeDesiredOwnership} from './desired_ownership.mjs';
+import {midiFromDesiredOwnership} from './desired_ownership_music.mjs';
+import {ownershipPlan,ownershipPronounPlan,composeOwnershipSentence} from './ownership_sentences.mjs';
+import {midiFromOwnership} from './ownership_music.mjs';
+import {composeObjectDesiredDrinking} from './object_desired_drinking.mjs';
+import {desiredDrinkingPlan,desiredDrinkingPronounPlan,composeDesiredDrinking} from './desired_drinking.mjs';
+import {midiFromDesiredDrinking} from './desired_drinking_music.mjs';
+import {drinkingPlan,drinkingPronounPlan,composeDrinkingSentence} from './drinking_sentences.mjs';
+import {midiFromDrinking} from './drinking_music.mjs';
+import {objectDesirePlan,composeObjectDesire} from './object_desire.mjs';
+import {painPreferencePlan,composePainPreference} from './pain_preference.mjs';
+import {midiFromPainPreference} from './pain_preference_music.mjs';
+import {painComparisonPlan,painComparisonPronounPlan,composePainComparisonSentence} from './pain_comparison_sentences.mjs';
+import {midiFromPainComparison} from './pain_comparison_music.mjs';
+import {painStimulusPlan,painStimulusPronounPlan,composePainStimulusSentence} from './pain_stimulus_sentences.mjs';
+import {midiFromPainStimulus} from './pain_stimulus_music.mjs';
+import {painMeaningPlan,painPronounPlan,composePainMeaning} from './pain_meaning.mjs';
+import {midiFromPain} from './pain_music.mjs';
+import {cognitiveConjunctionPlan,cognitiveClauseChoicePlan,composeCognitiveConjunction} from './cognitive_conjunction.mjs';
+import {midiFromCognitiveConjunction} from './cognitive_conjunction_music.mjs';
+import {curiosityInterpretationPlan,curiosityPronounPlan,composeCuriosity} from './curiosity.mjs';
+import {midiFromCuriosity} from './curiosity_music.mjs';
+import {routeLearningInterpretationPlan,routeLearningPronounPlan,composeRouteLearning} from './route_learning.mjs';
+import {midiFromRouteLearning} from './route_learning_music.mjs';
+import {parseCameToUnderstand,composeCameToUnderstand} from './understanding_acquisition.mjs';
+import {midiFromUnderstandingAcquisition} from './understanding_acquisition_music.mjs';
+import {understandingInterpretationPlan,understandingPronounPlan,composeUnderstandingContent} from './understanding_content.mjs';
+import {midiFromUnderstanding} from './understanding_music.mjs';
+import {entryModalChoices} from './entry_modality.mjs';
+import {parseLearnedWhether,composeLearnedWhether,learnedWhetherPronounPlan} from './learned_whether.mjs';
+import {midiFromKnowledgeAcquisition} from './knowledge_acquisition_music.mjs';
+import {createAcquisitionBundle,verifyAcquisitionBundle} from './acquisition_bundle.mjs';
+import {notesFromMidi} from './performance_codec.mjs';
+import {quantifiedActivityPlan,parseQuantifiedPropertySentence,composeQuantifiedPropertySentence} from './quantified_sentences.mjs';
+import {parseFoundationSentence,composeFoundationSentence,foundationPronounPlan} from './foundation_sentences.mjs';
+import {pronounInterpretationPlan,composePronounSentence} from './pronouns.mjs';
+import {parseSentenceDisjunction,composeSentenceDisjunction,clauseInterpretationPlan,parseSentenceConditional,composeSentenceConditional,parseNamedSentence,composeNamedSentence,needsSentenceComposition,parseSentenceSequence,composeSentenceSequence,parseSentenceConjunction,composeSentenceConjunction} from './sentences.mjs';
 import{svgFromFormal,midiFromFormal,createBundle,verifyBundle,soundPlanFromFormal}from'./engine.mjs?v=1.15.0';
 import{analyzeEnglish}from'./english.mjs?v=1.15.0';
 import{encodeName,estimatePhonemes,notesForName,midiFromName,PHONEMES}from'./names.mjs?v=1.15.0';
@@ -35,8 +83,838 @@ document.querySelectorAll('[data-example]').forEach(btn=>btn.addEventListener('c
 $('analyzeButton').addEventListener('click',analyze);
 $('sourceInput').addEventListener('keydown',event=>{if((event.metaKey||event.ctrlKey)&&event.key==='Enter')analyze()});
 
-async function analyze(){const input=$('sourceInput').value.trim();if(!input)return toast('Write something in English to translate.');$('analyzeButton').disabled=true;try{if(state.mode==='controlled')await compileControlled(input);else{const result=analyzeEnglish(input,state.data);showAnalysis(result);if(result.decision.auto_resolution_allowed){const first=$('candidateList').querySelector('.candidate');selectCandidate(0,first);$('resolutionPrompt').textContent=`Automatically selected ${state.selected.sense_id}. The canonical result is ready below; choose another option only if you meant something else.`;await resolveSelected(true)}}}catch(error){showError(error)}finally{$('analyzeButton').disabled=false}}
-function showAnalysis(result){state.analysis=result;state.selected=null;state.resolution=null;state.phraseNames=[];$('results').classList.remove('hidden');$('output').classList.add('hidden');$('candidateList').innerHTML='';const names={material_sense_ambiguity:'please choose the intended meaning',required_roles_missing:'more details are needed',structural_template_required:'full sentence structure is not implemented yet',documented_vocabulary_gap:'this meaning is not in Era Zero yet',low_confidence_english:'I am not confident enough to guess',local_api_required:'the full local engine is required',phonemic_labels_present:'nouns were preserved as sound labels',phonemic_labels_only:'no approved semantic reading; noun-label sounds are available',unresolved_semantic_content:'an unknown verb or descriptor still needs meaning',cross_domain_action_underspecified:'file change or movement needs its intended domain'};$('decisionSummary').textContent=result.decision.auto_resolution_allowed?`English understood${result.candidates[0]?.fidelity==='generalized'?' through a disclosed generalization':''} · ${result.runtime_inference}.`:`${result.candidate_count} interpretation${result.candidate_count===1?'':'s'} · ${result.decision.reasons.map(x=>names[x]||x).join(' · ')}`;$('speechAct').value=result.speech_act_proposal;$('runtimeState').value=result.explicit_runtime_state;$('resolutionPanel').classList.toggle('hidden',!result.candidates.length);result.candidates.forEach((candidate,index)=>{const el=document.createElement('article');el.className='candidate';el.tabIndex=0;el.innerHTML=`<div class="candidate-head"><span class="route">${escapeHtml(candidate.route)}</span><h3>${escapeHtml(candidate.lemma)} <small>${escapeHtml(candidate.sense_key.replaceAll('_',' '))}</small></h3><span class="confidence">${escapeHtml(candidate.confidence)}</span><span class="score">${candidate.score.toFixed(2)}</span></div><p>${escapeHtml(candidate.definition)}</p>${candidate.generalization?`<p class="word-definition"><b>Generalization:</b> ${escapeHtml(candidate.generalization)}</p>`:''}<div class="evidence">${candidate.target_id?escapeHtml(candidate.target_id)+' · ':''}${escapeHtml(candidate.match_type.replaceAll('_',' '))}${candidate.fidelity==='generalized'?' · generalized':''}</div>`;el.addEventListener('click',()=>selectCandidate(index,el));el.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();selectCandidate(index,el)}});$('candidateList').append(el)});renderPhraseCoverage(result);$('results').scrollIntoView({behavior:'smooth',block:'start'})}
+async function sentenceTemplate(target){return state.data.compound_plans?.[target]?.expanded.nodes.some(node=>node.kind==='slot')?{authority:state.data}:{...(await resolutionDocument(target)).variants['assertion:1'],authority:state.data}}
+async function analyze(){const input=$('sourceInput').value.trim();if(!input)return toast('Write something in English to translate.');$('analyzeButton').disabled=true;try{if(state.mode==='controlled')await compileControlled(input);else{if(desiredDrinkingPlan(input)||desiredDrinkingPronounPlan(input)){showDrinkingPreview(input,{desired:true});return}if(desiredAvailabilityPlan(input)||desiredAvailabilityPronounPlan(input)){showAvailabilityPreview(input,{desired:true});return;}if(availabilityPlan(input)||availabilityPronounPlan(input)){showAvailabilityPreview(input);return;}if(desiredOwnershipPlan(input)||desiredOwnershipPronounPlan(input)){showOwnershipPreview(input,{desired:true});return;}if(ownershipPlan(input)||ownershipPronounPlan(input)){showOwnershipPreview(input);return;}if(drinkingPlan(input)||drinkingPronounPlan(input)){showDrinkingPreview(input);return}if(painPreferencePlan(input)){showPainPreferencePreview(input);return}if(painComparisonPlan(input)||painComparisonPronounPlan(input)){showPainComparisonPreview(input);return}if(painStimulusPlan(input)||painStimulusPronounPlan(input)){showPainStimulusPreview(input);return}if(painMeaningPlan(input)||painPronounPlan(input)){showPainPreview(input);return}if(cognitiveConjunctionPlan(input)){showCognitiveConjunctionPreview(input);return}if(curiosityInterpretationPlan(input)||curiosityPronounPlan(input)){showCuriosityPreview(input);return}if(routeLearningInterpretationPlan(input)||routeLearningPronounPlan(input)){showRouteLearningPreview(input);return}if(parseCameToUnderstand(input)){showUnderstandingPreview(input);return}if(understandingInterpretationPlan(input)||understandingPronounPlan(input)){showUnderstandingPreview(input);return}if(parseLearnedWhether(input)||learnedWhetherPronounPlan(input)){showAcquisitionPreview(input);return}const activity=quantifiedActivityPlan(input);if(activity){showQuantifiedPreview(input,activity);return;}if(!parseNamedSentence(input)&&parseQuantifiedPropertySentence(input)){showQuantifiedPreview(input);return}if(parseFoundationSentence(input,{allowCognitive:true})||foundationPronounPlan(input,{allowCognitive:true})){showFoundationPreview(input);return}const pronounPlan=pronounInterpretationPlan(input);if(pronounPlan){showPronounReferents(input,pronounPlan);return}const groupPlan=clauseInterpretationPlan(input);if(groupPlan&&(groupPlan.requiredDisjunction||groupPlan.clauses.some(({parsed})=>parsed.requiredViewpoint||parsed.requiredDestination||parsed.requiredInterpretation))){showClauseInterpretations(input,groupPlan);return}if(parseNamedSentence(input)?.requiredViewpoint){showCarryingViewpoint(input);return}if(parseNamedSentence(input)?.requiredDestination){showCarryingViewpoint(input);return}if(parseNamedSentence(input)?.requiredInterpretation==='entry_modality'){showEntryModality(input);return}if(parseNamedSentence(input)?.requiredInterpretation==='physical_entry'){showPhysicalEntry(input);return}if(parseNamedSentence(input)?.requiredInterpretation==='luminance_comparison'){showBrightnessComparison(input);return}if(['thermal_standard','mass_standard','luminance_standard','texture_standard'].includes(parseNamedSentence(input)?.requiredInterpretation)){showAdjectiveStandard(input);return}if(parseNamedSentence(input)?.requiredInterpretation){showFutureInterpretation(input);return}if(parseSentenceConditional(input)||parseNamedSentence(input)||parseSentenceSequence(input)||parseSentenceConjunction(input)){const composed=parseSentenceConditional(input)?await composeSentenceConditional(input,sentenceTemplate):parseSentenceConjunction(input)?await composeSentenceConjunction(input,sentenceTemplate):parseSentenceSequence(input)?await composeSentenceSequence(input,sentenceTemplate):await composeNamedSentence(input,await sentenceTemplate(parseNamedSentence(input).predicate));state.analysis=null;state.selected=null;state.phraseNames=[];state.resolution=composed;$('results').classList.add('hidden');await showResolution(composed,{definition:[composed.interpretation,composed.semantic_note].filter(Boolean).join(' ')});return}if(await showSavedSentence(input))return;const result=analyzeEnglish(input,state.data);if(needsSentenceComposition(input)){result.decision.auto_resolution_allowed=false;result.decision.requires_clarification=true;result.decision.reasons.push('incomplete_sentence_construction');result.complete_sentence_unavailable=true}showAnalysis(result);if(result.decision.auto_resolution_allowed){const first=$('candidateList').querySelector('.candidate');selectCandidate(0,first);$('resolutionPrompt').textContent=`Automatically selected ${state.selected.sense_id}. The dictionary reading is ready below; choose another option only if you meant something else.`;await resolveSelected(true)}}}catch(error){showError(error)}finally{$('analyzeButton').disabled=false}}
+function showPronounReferents(input,plan){
+  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
+  for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
+  $('results').classList.remove('hidden');$('candidateList').innerHTML='';
+  $('decisionSummary').textContent='Identify who or what each pronoun refers to. Names do not determine gender or identity.';
+  const card=document.createElement('article');card.className='candidate';const fields=[];
+  for(const [index,o] of plan.occurrences.entries()){
+    const label=document.createElement('label');label.textContent=`${index+1}. “${o.pronoun}” refers to`;
+    const field=document.createElement('input');field.type='text';field.maxLength=200;field.placeholder='Ada, "Mary Jane", the robot, this lamp, I, or you';label.append(field);let number=null;
+    if(/^(they|them)$/i.test(o.pronoun)){number=document.createElement('select');for(const [value,title] of [['','One individual or a group?'],['singular','One individual'],['plural','A group']]){const option=document.createElement('option');option.value=value;option.textContent=title;number.append(option);}number.value='';label.append(number);}
+    card.append(label);fields.push([o.key,field,number]);
+  }
+  const parsed=plan.parsed;
+  const select=(container,label,options)=>{const wrap=document.createElement('label');wrap.textContent=label;const field=document.createElement('select');for(const [value,text] of options){const option=document.createElement('option');option.value=value;option.textContent=text;field.append(option)}field.value=options[0][0];wrap.append(field);container.append(wrap);return field};
+  let view,destination,interpretation,threshold,scale,standardMode;
+  if(parsed.requiredViewpoint)view=select(card,`${parsed.viewpointActivity||'carrying'} meaning`,[['','Choose a meaning'],['habitual','A recurring practice'],['ongoing','An unfolding action'],['bounded','One narrated episode']]);
+  if(parsed.requiredDestination){destination=select(card,`meaning of to`,[['','Choose a destination meaning'],['spatial','Spatial destination; no receipt asserted'],['custody_delivery','Carry and transfer physical custody to the recipient']]);const note=document.createElement('p');note.textContent='Custody delivery means carrying arrival culminates in transfer from the carrier to the recipient. It does not mean ownership or willing acceptance.';card.append(note)}
+  const property=['mass_standard','thermal_standard','luminance_standard','texture_standard'].includes(parsed.requiredInterpretation);
+  const dimension=({mass_standard:'mass',thermal_standard:'thermodynamic_temperature',luminance_standard:'luminance',texture_standard:'surface_texture'})[parsed.requiredInterpretation];
+  if(property){
+    const texture=dimension==='surface_texture',mass=dimension==='mass',luminance=dimension==='luminance',propertyLabel=texture?'surface texture':luminance?'luminance':mass?'mass':'temperature';
+    const note=document.createElement('p');note.textContent=`For “${parsed.adjective}”, select the physical ${propertyLabel} meaning. Contextual standards stay local to this sentence; no shared numerical cutoff is inferred.`;card.append(note);
+    if(!parsed.nominalProperty||mass)standardMode=select(card,`standard type`,texture?[['contextual','Physical texture at the contextual surface region and scale']]:[['numeric','Numerical threshold'],['contextual','Contextual standard; no number']]);
+    if(!texture){
+    const label=document.createElement('label');label.textContent=`${propertyLabel} threshold`;threshold=document.createElement('input');threshold.type='text';threshold.inputMode='decimal';threshold.maxLength=1000;threshold.placeholder='Enter your numerical threshold';label.append(threshold);card.append(label);
+    scale=select(card,`${luminance?'luminance unit':mass?'mass unit':'temperature scale'}`,luminance?[['candela_per_square_meter','Candelas per square metre (cd/m²)']]:mass?[['kilogram','Kilograms'],['gram','Grams']]:[['celsius','Degrees Celsius'],['kelvin','Kelvins']]);
+    if(standardMode)standardMode.addEventListener('change',()=>{threshold.disabled=scale.disabled=standardMode.value==='contextual'});
+    }
+  }else if(parsed.requiredInterpretation==='entry_modality')interpretation=select(card,'meaning of may',[['','Choose a meaning'],...entryModalChoices(parsed.entryModalNegative,parsed.key==='ongoing_physical_entry')]);
+  else if(parsed.requiredInterpretation==='physical_entry')interpretation=select(card,'entry meaning',[['','Choose an entry meaning'],['physical_entry','Movement from outside to inside a physical region']]);
+  else if(parsed.requiredInterpretation==='luminance_comparison')interpretation=select(card,`brightness meaning`,[['','Choose a comparison meaning'],['luminance_comparison','Physical luminance; comparable viewing conditions']]);
+  else if(parsed.requiredInterpretation==='future_assertion')interpretation=select(card,`future meaning`,[['','Choose a future meaning'],['future_assertion','Future statement; no promise or intention added']]);
+  const readOptions=()=>({...view?{viewpoint:view.value}:{},...destination?{destination:destination.value}:{},...property?{interpretation:parsed.requiredInterpretation,standard:standardMode?.value==='contextual'?{kind:'contextual',dimension}:{dimension,threshold:threshold.value.trim(),scale:scale.value}}:interpretation?{interpretation:interpretation.value}:{}});
+  const read=()=>Object.fromEntries(fields.map(([key,field,number])=>[key,number?{referent:field.value.trim(),number:number.value}:field.value.trim()]));
+  const status=document.createElement('p');status.setAttribute('role','status');const button=document.createElement('button');button.textContent='Translate with these referents';
+  button.addEventListener('click',async()=>{
+    if(card.isConnected===false||$('sourceInput').value.trim()!==input||state.mode==='controlled')return;
+    const choices=read(),options=readOptions(),snapshot=JSON.stringify({choices,options}),current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled'&&JSON.stringify({choices:read(),options:readOptions()})===snapshot;
+    button.disabled=true;status.textContent='';
+    try{const result=await composePronounSentence(input,sentenceTemplate,choices,options);if(!current())return;state.resolution=result;$('results').classList.add('hidden');await showResolution(result,{definition:[result.interpretation,result.semantic_note].filter(Boolean).join(' ')});}
+    catch(error){if(current())status.textContent=error.message}finally{button.disabled=false}
+  });
+  card.append(status,button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showClauseInterpretations(input,plan){
+  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
+  $('output').classList.add('hidden');$('phraseCoverage').classList.add('hidden');$('resolutionPanel').classList.add('hidden');$('results').classList.remove('hidden');$('candidateList').innerHTML='';
+  $('decisionSummary').textContent='Choose the meanings for each clause. Each choice applies only to the clause shown above it.';
+  const card=document.createElement('article');card.className='candidate';
+  const read=[];
+  const select=(section,label,options)=>{const wrap=document.createElement('label');wrap.textContent=label;const field=document.createElement('select');for(const [value,text] of options){const option=document.createElement('option');option.value=value;option.textContent=text;field.append(option)}field.value=options[0][0];wrap.append(field);section.append(wrap);return field};
+  const disjunction=plan.requiredDisjunction?select(card,'Meaning of or',[['','Choose an alternative meaning'],['any_of','At least one; both may hold'],['exactly_one','Exactly one; both cannot hold']]):null;
+  plan.clauses.forEach(({text,parsed},index)=>{
+    const section=document.createElement('fieldset'),title=document.createElement('legend');title.textContent=`Clause ${index+1}: ${text}`;section.append(title);
+    let view,destination,interpretation,threshold,scale,standardMode;
+    if(parsed.requiredViewpoint)view=select(section,`Clause ${index+1} ${parsed.viewpointActivity||'carrying'} meaning`,[['','Choose a meaning'],['habitual','A recurring practice'],['ongoing','An unfolding action'],['bounded','One narrated episode']]);
+    if(parsed.requiredDestination){destination=select(section,`Clause ${index+1} meaning of to`,[['','Choose a destination meaning'],['spatial','Spatial destination; no receipt asserted'],['custody_delivery','Carry and transfer physical custody to the recipient']]);const note=document.createElement('p');note.textContent='Custody delivery means carrying arrival culminates in transfer from the carrier to the recipient. It does not mean ownership or willing acceptance.';section.append(note)}
+    const property=['mass_standard','thermal_standard','luminance_standard','texture_standard'].includes(parsed.requiredInterpretation);
+    const dimension=({mass_standard:'mass',thermal_standard:'thermodynamic_temperature',luminance_standard:'luminance',texture_standard:'surface_texture'})[parsed.requiredInterpretation];
+    if(property){
+      const texture=dimension==='surface_texture',mass=dimension==='mass',luminance=dimension==='luminance',propertyLabel=texture?'surface texture':luminance?'luminance':mass?'mass':'temperature';
+      const note=document.createElement('p');note.textContent=`For “${parsed.adjective}”, select the physical ${propertyLabel} meaning. Contextual standards stay local to this clause; no shared numerical cutoff is inferred.`;section.append(note);
+      if(!parsed.nominalProperty||mass)standardMode=select(section,`Clause ${index+1} standard type`,texture?[['contextual','Physical texture at the contextual surface region and scale']]:[['numeric','Numerical threshold'],['contextual','Contextual standard; no number']]);
+      if(!texture){
+      const label=document.createElement('label');label.textContent=`Clause ${index+1} ${propertyLabel} threshold`;threshold=document.createElement('input');threshold.type='text';threshold.inputMode='decimal';threshold.maxLength=1000;threshold.placeholder='Enter your numerical threshold';label.append(threshold);section.append(label);
+      scale=select(section,`Clause ${index+1} ${luminance?'luminance unit':mass?'mass unit':'temperature scale'}`,luminance?[['candela_per_square_meter','Candelas per square metre (cd/m²)']]:mass?[['kilogram','Kilograms'],['gram','Grams']]:[['celsius','Degrees Celsius'],['kelvin','Kelvins']]);
+      if(standardMode)standardMode.addEventListener('change',()=>{threshold.disabled=scale.disabled=standardMode.value==='contextual'});
+      }
+    }else if(parsed.requiredInterpretation==='entry_modality')interpretation=select(section,`Clause ${index+1} meaning of may`,[['','Choose a meaning'],...entryModalChoices(parsed.entryModalNegative,parsed.key==='ongoing_physical_entry')]);
+    else if(parsed.requiredInterpretation==='physical_entry')interpretation=select(section,`Clause ${index+1} entry meaning`,[['','Choose an entry meaning'],['physical_entry','Movement from outside to inside a physical region']]);
+    else if(parsed.requiredInterpretation==='luminance_comparison')interpretation=select(section,`Clause ${index+1} brightness meaning`,[['','Choose a comparison meaning'],['luminance_comparison','Physical luminance; comparable viewing conditions']]);
+    else if(parsed.requiredInterpretation==='future_assertion')interpretation=select(section,`Clause ${index+1} future meaning`,[['','Choose a future meaning'],['future_assertion','Future statement; no promise or intention added']]);
+    if(!view&&!destination&&!property&&!interpretation){const note=document.createElement('p');note.textContent='No additional interpretation choice is needed for this clause.';section.append(note)}
+    read.push(()=>({...view?{viewpoint:view.value}:{},...destination?{destination:destination.value}:{},...property?{interpretation:parsed.requiredInterpretation,standard:standardMode?.value==='contextual'?{kind:'contextual',dimension}:{dimension,threshold:threshold.value.trim(),scale:scale.value}}:interpretation?{interpretation:interpretation.value}:{}}));
+    card.append(section);
+  });
+  const status=document.createElement('p');status.setAttribute('role','status');const button=document.createElement('button');button.textContent='Translate all clauses';
+  button.addEventListener('click',async()=>{
+    if(card.isConnected===false||$('sourceInput').value.trim()!==input||state.mode==='controlled')return;
+    const choices=read.map(get=>get()),snapshot=JSON.stringify({choices,disjunction:disjunction?.value}),current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled'&&JSON.stringify({choices:read.map(get=>get()),disjunction:disjunction?.value})===snapshot;
+    button.disabled=true;status.textContent='';
+    try{
+      const compose=({conditional:composeSentenceConditional,sequence:composeSentenceSequence,all_of:composeSentenceConjunction})[plan.operator];
+      const result=plan.requiredDisjunction?await composeSentenceDisjunction(input,sentenceTemplate,choices,{disjunction:disjunction.value}):await compose(input,sentenceTemplate,choices);if(!current())return;
+      state.resolution=result;$('results').classList.add('hidden');await showResolution(result,{definition:[result.interpretation,result.semantic_note].filter(Boolean).join(' ')});
+    }catch(error){if(current())status.textContent=error.message}finally{button.disabled=false}
+  });
+  card.append(status,button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showCarryingViewpoint(input){
+  const parsed=parseNamedSentence(input),needsMass=parsed.requiredInterpretation==='mass_standard',needsEntry=parsed.requiredInterpretation==='physical_entry';
+  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
+  $('output').classList.add('hidden');$('phraseCoverage').classList.add('hidden');$('resolutionPanel').classList.add('hidden');$('results').classList.remove('hidden');$('candidateList').innerHTML='';
+  $('decisionSummary').textContent=`Choose the intended ${parsed.viewpointActivity||'carrying'} meaning before generating sound.`;
+  const card=document.createElement('article');card.className='candidate';
+  const description=document.createElement('p');description.textContent=parsed.viewpointActivity==='acquisition'?'One narrated acquisition includes a change into physical custody. An unfolding acquisition does not assert completed custody gain. A recurring practice does not assert a particular current occurrence. Ownership and past time are not implied.':parsed.viewpointActivity==='entry'?'A narrated entry reaches the inside. A recurring practice consists of completed entries without asserting a current occurrence. An unfolding entry can be interrupted before reaching the inside.':parsed.runningEndpoint?'A narrated journey reaches the destination by running. A recurring practice consists of such journeys without asserting a current occurrence. An unfolding run approaches the destination without asserting arrival.':parsed.requiredDestination?'Choose arrival at a position or carrying that culminates in transfer of physical custody to the recipient. An unfolding action does not assert completed arrival or transfer.':'A recurring practice, an unfolding action and one narrated episode have different meanings. None automatically means arrival, delivery or a future plan.';
+  const viewpointLabel=document.createElement('label');viewpointLabel.textContent=parsed.viewpointActivity==='acquisition'?'Acquisition viewpoint':parsed.viewpointActivity==='entry'?'Entry viewpoint':parsed.viewpointActivity==='running'?'Running meaning':parsed.viewpointActivity==='swimming'?'Swimming meaning':'Carrying meaning';
+  const viewpoint=document.createElement('select');
+  for(const [value,text] of [['','Choose a meaning'],['habitual','A recurring practice'],['ongoing','An unfolding action'],['bounded','One narrated episode']]){const option=document.createElement('option');option.value=value;option.textContent=text;viewpoint.append(option)}
+  viewpoint.value='';viewpointLabel.append(viewpoint);card.append(description);if(parsed.requiredViewpoint)card.append(viewpointLabel);
+  let entrySense;
+  if(needsEntry){
+    const label=document.createElement('label');label.textContent='Entry meaning';entrySense=document.createElement('select');
+    for(const [value,text] of [['','Choose an entry meaning'],['physical_entry','Movement from outside to inside a physical region']]){const option=document.createElement('option');option.value=value;option.textContent=text;entrySense.append(option)}
+    entrySense.value='';label.append(entrySense);card.append(label);
+  }
+  let destination;
+  if(parsed.requiredDestination){
+    const label=document.createElement('label');label.textContent='Meaning of to';destination=document.createElement('select');
+    for(const [value,text] of [['','Choose a destination meaning'],['spatial','Spatial destination; no receipt asserted'],['custody_delivery','Carry and transfer physical custody to the recipient']]){const option=document.createElement('option');option.value=value;option.textContent=text;destination.append(option)}
+    destination.value='';label.append(destination);card.append(label);
+  }
+  let threshold,scale,standardMode;
+  if(needsMass){
+    const explanation=document.createElement('p');explanation.textContent=`Also choose the mass standard for “${parsed.adjective}”: ${parsed.adjective==='heavy'?'above':'below'} a standard. Choose a contextual standard without a number, or supply a numerical threshold. Weight force, effort and brightness need different meanings.`;
+    const thresholdLabel=document.createElement('label');thresholdLabel.textContent='Mass threshold';threshold=document.createElement('input');threshold.type='text';threshold.inputMode='decimal';threshold.maxLength=1000;threshold.placeholder='Enter your contextual threshold';thresholdLabel.append(threshold);
+    const scaleLabel=document.createElement('label');scaleLabel.textContent='Mass unit';scale=document.createElement('select');for(const [value,text] of [['kilogram','Kilograms'],['gram','Grams']]){const option=document.createElement('option');option.value=value;option.textContent=text;scale.append(option)}scale.value='kilogram';scaleLabel.append(scale);
+    card.append(explanation,thresholdLabel,scaleLabel);
+    const standardLabel=document.createElement('label');standardLabel.textContent='Mass standard type';standardMode=document.createElement('select');
+    for(const [value,text] of [['numeric','Numerical threshold'],['contextual','Contextual standard; no number']]){const option=document.createElement('option');option.value=value;option.textContent=text;standardMode.append(option)}
+    standardMode.value='numeric';standardMode.addEventListener('change',()=>{threshold.disabled=scale.disabled=standardMode.value==='contextual'});standardLabel.append(standardMode);card.append(standardLabel);
+  }
+  const status=document.createElement('p');status.setAttribute('role','status');
+  const button=document.createElement('button');button.textContent='Translate with these meanings';
+  button.addEventListener('click',async()=>{
+    if(card.isConnected===false||$('sourceInput').value.trim()!==input||state.mode==='controlled')return;
+    const chosen=viewpoint.value,chosenEntry=entrySense?.value,chosenDestination=destination?.value,chosenStandardMode=standardMode?.value,standard=needsMass?(chosenStandardMode==='contextual'?{kind:'contextual',dimension:'mass'}:{dimension:'mass',threshold:threshold.value.trim(),scale:scale.value}):undefined;
+    const current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled'&&viewpoint.value===chosen&&entrySense?.value===chosenEntry&&destination?.value===chosenDestination&&(!needsMass||(standardMode.value===chosenStandardMode&&(chosenStandardMode==='contextual'||(threshold.value.trim()===standard.threshold&&scale.value===standard.scale))));
+    button.disabled=true;status.textContent='';
+    try{
+      const composed=await composeNamedSentence(input,await sentenceTemplate(parsed.predicate),{...(parsed.requiredViewpoint?{viewpoint:chosen}:{}),...(parsed.requiredDestination?{destination:chosenDestination}:{}),...(needsMass?{interpretation:'mass_standard',standard}:needsEntry?{interpretation:chosenEntry}:{})});
+      if(!current())return;
+      state.resolution=composed;$('results').classList.add('hidden');
+      await showResolution(composed,{definition:[composed.interpretation,composed.semantic_note].filter(Boolean).join(' ')});
+    }catch(error){if(current())status.textContent=error.message}finally{button.disabled=false}
+  });
+  card.append(status,button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showEntryModality(input){
+ const parsed=parseNamedSentence(input);
+ state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
+ for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
+ $('results').classList.remove('hidden');$('candidateList').innerHTML='';$('decisionSummary').textContent='Choose what “may” means.';
+ const card=document.createElement('article'),description=document.createElement('p'),choice=document.createElement('select'),status=document.createElement('p'),button=document.createElement('button');
+ card.className='candidate';status.setAttribute('role','status');choice.setAttribute('aria-label','Meaning of may');
+ description.textContent='These readings concern movement from outside to inside a physical region. Permission, possibility and the scope of “not” remain distinct. Other meanings of entry need another interpretation.';
+ for(const [value,label] of [['','Choose a meaning'],...entryModalChoices(parsed.entryModalNegative,parsed.key==='ongoing_physical_entry')]){const option=document.createElement('option');option.value=value;option.textContent=label;choice.append(option)}
+ button.textContent='Translate this meaning';
+ button.addEventListener('click',async()=>{
+  const selected=choice.value,current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled'&&choice.value===selected;
+  if(!current())return;button.disabled=true;status.textContent='';
+  try{const result=await composeNamedSentence(input,await sentenceTemplate(parsed.predicate),{interpretation:selected});if(!current())return;state.resolution=result;$('results').classList.add('hidden');await showResolution(result,{definition:result.semantic_note});}
+  catch(error){if(current())status.textContent=error.message}finally{button.disabled=false}
+ });
+ card.append(description,choice,status,button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showPhysicalEntry(input){
+  const parsed=parseNamedSentence(input);
+  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
+  for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
+  $('results').classList.remove('hidden');$('candidateList').innerHTML='';
+  $('decisionSummary').textContent='Choose the intended entry meaning.';
+  const card=document.createElement('article'),description=document.createElement('p'),status=document.createElement('p'),button=document.createElement('button');card.className='candidate';status.setAttribute('role','status');
+  description.textContent='Movement from outside to inside the selected physical region. An ongoing entry need not reach the inside. Entering data, joining a competition and other nonspatial meanings need different interpretations.';
+  button.textContent='Use physical entry';
+  const current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled';
+  button.addEventListener('click',async()=>{
+    if(!current())return;button.disabled=true;status.textContent='';
+    try{
+      const result=await composeNamedSentence(input,await sentenceTemplate(parsed.predicate),{interpretation:'physical_entry'});
+      if(!current())return;state.resolution=result;$('results').classList.add('hidden');await showResolution(result,{definition:result.semantic_note});
+    }catch(error){if(current())status.textContent=error.message}finally{button.disabled=false}
+  });
+  card.append(description,status,button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showBrightnessComparison(input){
+  const parsed=parseNamedSentence(input);
+  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
+  for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
+  $('results').classList.remove('hidden');$('candidateList').innerHTML='';
+  $('decisionSummary').textContent='Choose the intended brightness meaning.';
+  const card=document.createElement('article'),description=document.createElement('p'),status=document.createElement('p'),button=document.createElement('button');card.className='candidate';status.setAttribute('role','status');
+  description.textContent='Compare the surfaces’ physical luminance under comparable viewing conditions. Perceived brightness and figurative meanings still need another interpretation. This comparison needs no numerical threshold.';
+  button.textContent='Use physical luminance';
+  const current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled';
+  button.addEventListener('click',async()=>{
+    if(!current())return;button.disabled=true;status.textContent='';
+    try{
+      const result=await composeNamedSentence(input,await sentenceTemplate(parsed.predicate),{interpretation:'luminance_comparison'});
+      if(!current())return;state.resolution=result;$('results').classList.add('hidden');await showResolution(result,{definition:result.semantic_note});
+    }catch(error){if(current())status.textContent=error.message}finally{button.disabled=false}
+  });
+  card.append(description,status,button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showAdjectiveStandard(input){
+  const parsed=parseNamedSentence(input),textureStandard=parsed.requiredInterpretation==='texture_standard',massStandard=parsed.requiredInterpretation==='mass_standard',luminanceStandard=parsed.requiredInterpretation==='luminance_standard',property=textureStandard?'surface texture':luminanceStandard?'surface luminance':massStandard?'mass':'temperature';
+  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
+  $('output').classList.add('hidden');$('phraseCoverage').classList.add('hidden');$('resolutionPanel').classList.add('hidden');$('results').classList.remove('hidden');$('candidateList').innerHTML='';
+  $('decisionSummary').textContent=`What ${property} standard do you mean by “${parsed.adjective}”?`;
+  const card=document.createElement('article');card.className='candidate';
+  const description=document.createElement('p');description.textContent=`For this translation, use ${luminanceStandard?'photometric surface luminance in the contextual viewing direction':massStandard?'mass':'thermodynamic temperature'} ${['hot','heavy','bright'].includes(parsed.adjective)?'above':'below'} a standard. Choose a contextual standard without a number, or supply a numerical threshold. ${luminanceStandard?'Perceived brightness, glare, color, luminous intensity and metaphorical meanings':massStandard?'Weight force, carrying effort, size and brightness':'Felt warmth, spiciness and emotional meanings'} need a different interpretation.`;
+  const label=document.createElement('label');label.textContent=luminanceStandard?'Luminance threshold':massStandard?'Mass threshold':'Temperature threshold';
+  const threshold=document.createElement('input');threshold.type='text';threshold.inputMode='decimal';threshold.maxLength=1000;threshold.placeholder='Enter your contextual threshold';label.append(threshold);
+  const scaleLabel=document.createElement('label');scaleLabel.textContent=luminanceStandard?'Luminance unit':massStandard?'Mass unit':'Temperature scale';
+  const scale=document.createElement('select');for(const [value,text] of (luminanceStandard?[['candela_per_square_meter','Candelas per square metre (cd/m²)']]:massStandard?[['kilogram','Kilograms'],['gram','Grams']]:[['celsius','Degrees Celsius'],['kelvin','Kelvins']])){const option=document.createElement('option');option.value=value;option.textContent=text;scale.append(option)}scale.value=luminanceStandard?'candela_per_square_meter':massStandard?'kilogram':'celsius';scaleLabel.append(scale);
+  const status=document.createElement('p');status.setAttribute('role','status');
+  const button=document.createElement('button');button.textContent=`Use this ${property} standard`;
+  button.addEventListener('click',async()=>{
+    if($('sourceInput').value.trim()!==input||state.mode==='controlled'){toast('The input changed. Analyze it again.');return}
+    button.disabled=true;status.textContent='';
+    const chosen={dimension:textureStandard?'surface_texture':luminanceStandard?'luminance':massStandard?'mass':'thermodynamic_temperature',threshold:threshold.value.trim(),scale:scale.value};
+    try{
+      const composed=await composeNamedSentence(input,await sentenceTemplate(parsed.predicate),{interpretation:parsed.requiredInterpretation,standard:chosen});
+      if($('sourceInput').value.trim()!==input||state.mode==='controlled'){toast('The input changed. Analyze it again.');return}
+      if(card.isConnected===false||threshold.value.trim()!==chosen.threshold||scale.value!==chosen.scale){toast('The property standard changed. Select it again.');return}
+      state.resolution=composed;$('results').classList.add('hidden');
+      await showResolution(composed,{definition:[composed.interpretation,composed.semantic_note].filter(Boolean).join(' ')});
+    }catch(error){status.textContent=error.message}finally{button.disabled=false}
+  });
+  if(textureStandard){description.textContent='Use physical surface texture at the contextually selected surface region and scale. This does not assert tactile experience, damage, hardness or figurative difficulty. Rough and smooth can use different contextual standards.';card.append(description,status);}else card.append(description,label,scaleLabel,status,button);
+  if(!parsed.nominalProperty||massStandard){
+    const contextual=document.createElement('button');contextual.textContent=`Use the contextual ${property} standard (no number)`;
+    contextual.addEventListener('click',async()=>{
+      const current=()=>$('sourceInput').value.trim()===input&&state.mode!=='controlled'&&card.isConnected!==false;
+      if(!current())return;contextual.disabled=true;status.textContent='';
+      try{
+        const standard={kind:'contextual',dimension:textureStandard?'surface_texture':luminanceStandard?'luminance':massStandard?'mass':'thermodynamic_temperature'};
+        const composed=await composeNamedSentence(input,await sentenceTemplate(parsed.predicate),{interpretation:parsed.requiredInterpretation,standard});
+        if(!current())return;
+        state.resolution=composed;$('results').classList.add('hidden');
+        await showResolution(composed,{definition:[composed.interpretation,composed.semantic_note].filter(Boolean).join(' ')});
+      }catch(error){if(current())status.textContent=error.message}finally{contextual.disabled=false}
+    });
+    card.append(contextual);
+  }
+  $('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showCognitiveConjunctionPreview(input){
+  const plan=cognitiveConjunctionPlan(input);if(!plan)return;
+  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
+  for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
+  $('results').classList.remove('hidden');$('candidateList').innerHTML='';
+  $('decisionSummary').textContent='Check the meaning of each joined clause.';
+  const card=document.createElement('article'),description=document.createElement('p'),button=document.createElement('button');card.className='candidate';
+  description.textContent=plan.scope_description+'Each clause keeps its own participants, timing, negation and runtime. Joining them with “and” does not imply a sequence or cause.';
+  let outputs=[],revision=0;const clauses=[];card.append(description);
+  const readChoice=()=>clauses.every(c=>!c.choice||!!c.choice.value);
+  const invalidate=()=>{revision++;button.hidden=false;button.disabled=!readChoice();for(const output of outputs)output.hidden=true;outputs=[];};
+  const titles={memorization:'Memorized route information',navigation:'How to navigate the route',familiarity:'Became familiar with the route',communicated_content:'Communicated meaning',reasons:'Explanatory reasons',perspective:'Perspective or experiences'};
+  for(const [index,source] of plan.clauses.entries()){
+    const details=cognitiveClauseChoicePlan(source),section=document.createElement('section'),heading=document.createElement('p');heading.textContent=`Clause ${index+1}: ${source}`;section.append(heading);
+    const entry={choice:null,fields:[],selected:details.selected_reading};
+    if(details.choices.length){
+      const label=document.createElement('label'),select=document.createElement('select');label.textContent='Choose the intended meaning';
+      for(const option of [{id:'',description:'Choose a reading'},...details.choices]){const item=document.createElement('option');item.value=option.id;item.textContent=titles[option.id]||option.description;select.append(item);}select.value='';select.addEventListener('change',invalidate);label.append(select);section.append(label);entry.choice=select;
+    }
+    for(const occurrence of details.occurrences){
+      const label=document.createElement('label'),field=document.createElement('input');label.textContent=`Who or what does “${occurrence.pronoun}” refer to? (occurrence ${entry.fields.length+1})`;field.type='text';field.value='';field.placeholder='Name, this robot, or I/you';field.addEventListener('input',invalidate);label.append(field);let number=null;
+      if(/^(they|them)$/i.test(occurrence.pronoun)){
+        number=document.createElement('select');for(const [value,title] of [['','One individual or a group?'],['singular','One individual'],['plural','A group']]){const item=document.createElement('option');item.value=value;item.textContent=title;number.append(item);}number.value='';number.addEventListener('change',invalidate);label.append(number);
+      }
+      entry.fields.push({key:occurrence.key,field,number});section.append(label);
+    }
+    clauses.push(entry);card.append(section);
+  }
+  const readBindings=()=>clauses.map(({choice,selected,fields})=>({...((choice?.value||selected)?{interpretation:choice?.value||selected}:{}),...(fields.length?{bindings:Object.fromEntries(fields.map(({key,field,number})=>[key,number?{referent:field.value.trim(),number:number.value}:field.value.trim()]))}:{})}));
+  button.textContent='Preview draft translation';button.disabled=!readChoice();
+  const current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled';
+  button.addEventListener('click',async()=>{
+    if(!current()||!readChoice())return;const interpretation=readChoice(),version=revision,bindings=readBindings(),bindingSnapshot=JSON.stringify(bindings);
+    const unchanged=()=>current()&&revision===version&&readChoice()===interpretation&&JSON.stringify(readBindings())===bindingSnapshot;button.disabled=true;
+    try{
+      const meaning=await composeCognitiveConjunction(input,{allowDraft:true,clauseOptions:bindings});if(!unchanged())return;
+      const response=await fetch('./data/foundation_preview_candidates.json');if(!unchanged())return;if(!response.ok)throw new Error('Draft vocabulary could not be loaded.');const registry=await response.json();if(!unchanged())return;
+      const bytes=await midiFromCognitiveConjunction(meaning,state.data,registry.records,{allowDraft:true});if(!unchanged())return;
+      description.textContent=(plan.speech_act==='question'?plan.scope_description:plan.outerNegation?'Whole-message negation is preserved outside the conjunction. ':plan.scope_description)+'Draft translation ready. The complete joined message preserves each clause’s chosen meaning, participants, timing, negation and runtime.';
+      const play=document.createElement('button'),music=document.createElement('button'),save=document.createElement('button');
+      play.textContent='Play draft music';music.textContent='Download MIDI';save.textContent='Save draft meaning';
+      play.addEventListener('click',async()=>{if(!unchanged())return;try{const {context,bus}=await readyAudio();if(!unchanged())return;const {notes,division}=notesFromMidi(bytes),start=context.currentTime+.1;for(const n of notes)playScheduledTone(context,bus,n.midi,start+n.start_tick*.5/division,{duration:(n.end_tick-n.start_tick)*.5/division});}catch(error){if(unchanged())showError(error)}});
+      music.addEventListener('click',()=>{if(unchanged())download(new Blob([bytes],{type:'audio/midi'}),'era-zero-cognitive-conjunction.mid')});
+      save.addEventListener('click',()=>{if(unchanged())download(new Blob([JSON.stringify(meaning,null,2)],{type:'application/json'}),'era-zero-cognitive-conjunction.draft.json')});
+      outputs=[play,music,save];card.append(...outputs);button.hidden=true;
+    }catch(error){if(unchanged())showError(error)}finally{if(unchanged())button.disabled=!readChoice()}
+  });
+  card.append(button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showAvailabilityPreview(input,{desired=false}={}){
+ const pronouns=desired?desiredAvailabilityPronounPlan(input):availabilityPronounPlan(input),outer=(desired?desiredAvailabilityPlan(input):availabilityPlan(input))||pronouns?.interpretation_plan,plan=desired&&outer?availabilityPlan(outer.content):outer;if(!plan)return;
+ state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
+ for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');$('results').classList.remove('hidden');$('candidateList').innerHTML='';$('decisionSummary').textContent='Clarify the availability meaning and access context.';
+ const card=document.createElement('article'),description=document.createElement('p'),button=document.createElement('button');card.className='candidate';
+ description.textContent='Choose the intended availability meaning. Practical custody opportunity means the selected circumstances allow the person to acquire physical custody. It does not assert permission, ownership, willingness or actual acquisition. The context name identifies circumstances; it does not encode their rules.';card.append(description);
+ const accessContextLabel=document.createElement('label'),accessContextField=document.createElement('input');accessContextLabel.textContent='Which access context applies?';accessContextField.value='';accessContextField.placeholder='For example: "Pantry access"';accessContextLabel.append(accessContextField);card.append(accessContextLabel);
+ const readingLabel=document.createElement('label'),reading=document.createElement('select');readingLabel.textContent='Availability meaning';for(const [value,title] of [['','Choose a meaning'],['practical_custody_opportunity','Practical opportunity to acquire physical custody']]){const option=document.createElement('option');option.value=value;option.textContent=title;reading.append(option);}reading.value='';readingLabel.append(reading);card.append(readingLabel);
+ let holderField;if(!plan.prospectiveHolder){const label=document.createElement('label');label.textContent='Who has this opportunity?';holderField=document.createElement('input');holderField.value='';label.append(holderField);card.append(label);}
+ let revision=0,outputs=[];const ready=()=>Boolean(accessContextField.value.trim()&&reading.value&&(!holderField||holderField.value.trim()));
+ const invalidate=()=>{revision++;button.hidden=false;button.disabled=!ready();for(const node of outputs)node.hidden=true;outputs=[];};accessContextField.addEventListener('input',invalidate);reading.addEventListener('change',invalidate);holderField?.addEventListener('input',invalidate);
+ const fields=[];
+ for(const occurrence of pronouns?.occurrences||[]){
+  const label=document.createElement('label'),field=document.createElement('input');label.textContent=`Who or what does “${occurrence.pronoun}” refer to?`;field.value='';field.addEventListener('input',invalidate);label.append(field);let number=null;
+  if(/^(they|them)$/i.test(occurrence.pronoun)){number=document.createElement('select');for(const [value,title] of [['','One individual or a group?'],['singular','One individual'],['plural','A group']]){const option=document.createElement('option');option.value=value;option.textContent=title;number.append(option);}number.value='';number.addEventListener('change',invalidate);label.append(number);}
+  fields.push({key:occurrence.key,field,number});card.append(label);
+ }
+ const readBindings=()=>pronouns?Object.fromEntries(fields.map(({key,field,number})=>[key,number?{referent:field.value.trim(),number:number.value}:field.value.trim()])):undefined;
+ const current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled';
+ button.textContent=desired?'Preview desired availability':'Preview draft availability';button.disabled=!ready();button.addEventListener('click',async()=>{
+  if(!current()||!ready())return;const version=revision,accessContext=accessContextField.value.trim(),interpretation=reading.value,prospectiveHolder=holderField?.value.trim(),bindings=readBindings(),snapshot=JSON.stringify(bindings),unchanged=()=>current()&&revision===version&&accessContextField.value.trim()===accessContext&&reading.value===interpretation&&holderField?.value.trim()===prospectiveHolder&&JSON.stringify(readBindings())===snapshot;button.disabled=true;
+  try{
+   const meaning=await (desired?composeDesiredAvailability:composeAvailabilitySentence)(input,{allowDraft:true,accessContext,interpretation,...(holderField?{prospectiveHolder}:{}),...(bindings?{bindings}:{})});if(!unchanged())return;
+   const bytes=await (desired?midiFromDesiredAvailability:midiFromCustodyOpportunity)(meaning,state.data,{allowDraft:true});if(!unchanged())return;
+   const play=document.createElement('button'),music=document.createElement('button'),save=document.createElement('button');play.textContent='Play draft music';music.textContent='Download MIDI';save.textContent='Save draft meaning';
+   play.addEventListener('click',async()=>{if(!unchanged())return;try{const {context,bus}=await readyAudio();if(!unchanged())return;const {notes,division}=notesFromMidi(bytes),start=context.currentTime+.1;for(const n of notes)playScheduledTone(context,bus,n.midi,start+n.start_tick*.5/division,{duration:(n.end_tick-n.start_tick)*.5/division});}catch(error){if(unchanged())showError(error)}});
+   music.addEventListener('click',()=>{if(unchanged())download(new Blob([bytes],{type:'audio/midi'}),'era-zero-availability.mid')});save.addEventListener('click',()=>{if(unchanged())download(new Blob([JSON.stringify(meaning,null,2)],{type:'application/json'}),'era-zero-availability.draft.json')});
+   outputs=[play,music,save];card.append(...outputs);button.hidden=true;
+  }catch(error){if(unchanged())showError(error)}finally{if(unchanged())button.disabled=!ready()}
+ });card.append(button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showOwnershipPreview(input,{desired=false,clarification}={}){
+ const pronouns=desired?desiredOwnershipPronounPlan(input):ownershipPronounPlan(input),plan=clarification?ownershipPlan(clarification):desired?desiredOwnershipPlan(input)||pronouns?.interpretation_plan:ownershipPlan(input)||pronouns?.interpretation_plan;if(!plan)return;
+ state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
+ for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');$('results').classList.remove('hidden');$('candidateList').innerHTML='';$('decisionSummary').textContent='Clarify the ownership framework.';
+ const card=document.createElement('article'),description=document.createElement('p'),button=document.createElement('button');card.className='candidate';
+ description.textContent='Preview ownership under an explicitly named framework. This does not imply physical custody, unlimited rights or agreement by everyone. The framework name identifies the context; it does not establish its rules or verify ownership.';if(desired)description.textContent+=' The ownership outcome is desired, not asserted as happening.';if(clarification)description.textContent+=` Original: ${input} Selected outcome: ${clarification}`;card.append(description);
+ const frameworkLabel=document.createElement('label'),frameworkField=document.createElement('input');frameworkLabel.textContent='Which framework defines ownership here?';frameworkField.value='';frameworkField.placeholder='For example: "Harbor charter"';frameworkLabel.append(frameworkField);card.append(frameworkLabel);
+ let revision=0,outputs=[];const ready=()=>Boolean(frameworkField.value.trim());
+ const invalidate=()=>{revision++;button.hidden=false;button.disabled=!ready();for(const node of outputs)node.hidden=true;outputs=[];};frameworkField.addEventListener('input',invalidate);
+ const fields=[];
+ for(const occurrence of pronouns?.occurrences||[]){
+  const label=document.createElement('label'),field=document.createElement('input');label.textContent=`Who or what does “${occurrence.pronoun}” refer to?`;field.value='';field.addEventListener('input',invalidate);label.append(field);let number=null;
+  if(/^(they|them)$/i.test(occurrence.pronoun)){number=document.createElement('select');for(const [value,title] of [['','One individual or a group?'],['singular','One individual'],['plural','A group']]){const option=document.createElement('option');option.value=value;option.textContent=title;number.append(option);}number.value='';number.addEventListener('change',invalidate);label.append(number);}
+  fields.push({key:occurrence.key,field,number});card.append(label);
+ }
+ const readBindings=()=>pronouns?Object.fromEntries(fields.map(({key,field,number})=>[key,number?{referent:field.value.trim(),number:number.value}:field.value.trim()])):undefined;
+ const current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled';
+ button.textContent=desired?'Preview desired ownership':'Preview draft ownership';button.disabled=!ready();button.addEventListener('click',async()=>{
+  if(!current()||!ready())return;const version=revision,framework=frameworkField.value.trim(),bindings=readBindings(),snapshot=JSON.stringify(bindings),unchanged=()=>current()&&revision===version&&frameworkField.value.trim()===framework&&JSON.stringify(readBindings())===snapshot;button.disabled=true;
+  try{
+   const options={allowDraft:true,framework,...(bindings?{bindings}:{})};
+   const clarified=clarification?await composeObjectDesiredOwnership(input,state.data,{...options,desiredProposition:clarification}):null;
+   const meaning=clarified?.meaning||await (desired?composeDesiredOwnership:composeOwnershipSentence)(input,options);if(!unchanged())return;
+   const bytes=await (desired?midiFromDesiredOwnership:midiFromOwnership)(meaning,state.data,{allowDraft:true});if(!unchanged())return;
+   const play=document.createElement('button'),music=document.createElement('button'),save=document.createElement('button');play.textContent='Play draft music';music.textContent='Download MIDI';save.textContent='Save draft meaning';
+   play.addEventListener('click',async()=>{if(!unchanged())return;try{const {context,bus}=await readyAudio();if(!unchanged())return;const {notes,division}=notesFromMidi(bytes),start=context.currentTime+.1;for(const n of notes)playScheduledTone(context,bus,n.midi,start+n.start_tick*.5/division,{duration:(n.end_tick-n.start_tick)*.5/division});}catch(error){if(unchanged())showError(error)}});
+   music.addEventListener('click',()=>{if(unchanged())download(new Blob([bytes],{type:'audio/midi'}),desired?'era-zero-desired-ownership.mid':'era-zero-ownership.mid')});save.addEventListener('click',()=>{if(unchanged())download(new Blob([JSON.stringify(clarified||meaning,null,2)],{type:'application/json'}),desired?'era-zero-desired-ownership.draft.json':'era-zero-ownership.draft.json')});
+   outputs=[play,music,save];card.append(...outputs);button.hidden=true;
+  }catch(error){if(unchanged())showError(error)}finally{if(unchanged())button.disabled=!ready()}
+ });card.append(button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showDrinkingPreview(input,{desired=false,clarification}={}){
+ const pronouns=desired?desiredDrinkingPronounPlan(input):drinkingPronounPlan(input),plan=clarification?drinkingPlan(clarification):desired?drinkingPlan((desiredDrinkingPlan(input)||pronouns?.interpretation_plan)?.content):drinkingPlan(input)||pronouns?.interpretation_plan;if(!plan)return;
+ state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
+ for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
+ $('results').classList.remove('hidden');$('candidateList').innerHTML='';$('decisionSummary').textContent='Clarify the drinking reading.';
+ const card=document.createElement('article'),description=document.createElement('p'),button=document.createElement('button');card.className='candidate';
+ description.textContent='Preview literal drinking. No thirst, ownership, enjoyment or consumption of the entire portion is inferred. Choose whether the material names a kind or a particular portion.';
+ if(desired)description.textContent='Preview a desire for literal drinking. The outcome is desired, not asserted as happening. The desire holder and drinker remain distinct unless the sentence binds them together. Choose the material reference and drinking viewpoint.';
+ if(clarification)description.textContent+=` Original: ${input} Selected outcome: ${clarification}`;
+ const select=(title,choices)=>{const label=document.createElement('label'),field=document.createElement('select');label.textContent=title;for(const [value,text] of choices){const option=document.createElement('option');option.value=value;option.textContent=text;field.append(option);}field.value='';label.append(field);card.append(label);return field;};
+ card.append(description);
+ const reading=select('Material reference',[['','Choose a reading'],['kind','A substance kind (bare noun)'],['contextual_portion','A contextual portion (the/this/that)']]);
+ const viewpoint=select('Drinking viewpoint',[['','Choose a viewpoint'],...(plan.viewpoint?[[plan.viewpoint,plan.viewpoint]]:[['ongoing','In progress'],['bounded','A bounded event'],['habitual','Habitual or characteristic']])]);
+ if(plan.viewpoint)viewpoint.value=plan.viewpoint;
+ let revision=0,outputs=[];const ready=()=>Boolean(reading.value&&viewpoint.value);
+ const invalidate=()=>{revision++;button.hidden=false;button.disabled=!ready();for(const node of outputs)node.hidden=true;outputs=[];};reading.addEventListener('change',invalidate);viewpoint.addEventListener('change',invalidate);
+ const fields=[];
+ for(const occurrence of pronouns?.occurrences||[]){
+  const label=document.createElement('label'),field=document.createElement('input');label.textContent=`Who or what does “${occurrence.pronoun}” refer to?`;field.value='';field.addEventListener('input',invalidate);label.append(field);let number=null;
+  if(/^(they|them)$/i.test(occurrence.pronoun)){number=document.createElement('select');for(const [value,title] of [['','One individual or a group?'],['singular','One individual'],['plural','A group']]){const option=document.createElement('option');option.value=value;option.textContent=title;number.append(option);}number.value='';number.addEventListener('change',invalidate);label.append(number);}
+  fields.push({key:occurrence.key,field,number});card.append(label);
+ }
+ const readBindings=()=>pronouns?Object.fromEntries(fields.map(({key,field,number})=>[key,number?{referent:field.value.trim(),number:number.value}:field.value.trim()])):undefined;
+ const current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled';
+ button.textContent=desired?'Preview desired drinking':'Preview literal drinking';button.disabled=!ready();
+ button.addEventListener('click',async()=>{
+  if(!current()||!ready())return;const version=revision,materialReading=reading.value,view=viewpoint.value,bindings=readBindings(),snapshot=JSON.stringify(bindings),unchanged=()=>current()&&revision===version&&reading.value===materialReading&&viewpoint.value===view&&JSON.stringify(readBindings())===snapshot;button.disabled=true;
+  try{
+   const options={allowDraft:true,interpretation:'literal_drinking',materialReading,viewpoint:view,...(bindings?{bindings}:{})};
+   const clarified=clarification?await composeObjectDesiredDrinking(input,state.data,{...options,desiredProposition:clarification}):null;
+   const meaning=clarified?.meaning||await (desired?composeDesiredDrinking:composeDrinkingSentence)(input,options);if(!unchanged())return;
+   const bytes=await (desired?midiFromDesiredDrinking:midiFromDrinking)(meaning,state.data,{allowDraft:true});if(!unchanged())return;
+   const play=document.createElement('button'),music=document.createElement('button'),save=document.createElement('button');play.textContent='Play draft music';music.textContent='Download MIDI';save.textContent='Save draft meaning';
+   play.addEventListener('click',async()=>{if(!unchanged())return;try{const {context,bus}=await readyAudio();if(!unchanged())return;const {notes,division}=notesFromMidi(bytes),start=context.currentTime+.1;for(const n of notes)playScheduledTone(context,bus,n.midi,start+n.start_tick*.5/division,{duration:(n.end_tick-n.start_tick)*.5/division});}catch(error){if(unchanged())showError(error)}});
+   music.addEventListener('click',()=>{if(unchanged())download(new Blob([bytes],{type:'audio/midi'}),desired?'era-zero-desired-drinking.mid':'era-zero-drinking.mid')});save.addEventListener('click',()=>{if(unchanged())download(new Blob([JSON.stringify(clarified||meaning,null,2)],{type:'application/json'}),desired?'era-zero-desired-drinking.draft.json':'era-zero-drinking.draft.json')});
+   outputs=[play,music,save];card.append(...outputs);button.hidden=true;
+  }catch(error){if(unchanged())showError(error)}finally{if(unchanged())button.disabled=!ready()}
+ });card.append(button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showPainPreferencePreview(input){
+  const plan=painPreferencePlan(input);if(!plan)return;
+  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
+  for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
+  $('results').classList.remove('hidden');$('candidateList').innerHTML='';
+  $('decisionSummary').textContent='Clarify the painful alternatives before translating the preference.';
+  const card=document.createElement('article'),description=document.createElement('p'),button=document.createElement('button');card.className='candidate';
+  description.textContent='The person expressing a preference may differ from the person experiencing pain. Identify that person, the context, and whether pain is actual, expected, or a tendency. Preferring an alternative does not imply enjoying it.';
+  let outputs=[],revision=0;
+  const choice=document.createElement('select'),choiceLabel=document.createElement('label'),contextField=document.createElement('input'),contextLabel=document.createElement('label');
+  choiceLabel.textContent='Which pain outcomes are compared?';
+  for(const [value,title] of [['','Choose a reading'],['actual_causation','Actual pain-producing outcomes'],['expected_outcome','Expected pain outcomes'],['disposition','Tendency to produce pain']]){const item=document.createElement('option');item.value=value;item.textContent=title;choice.append(item);}choice.value='';choiceLabel.append(choice);
+  contextLabel.textContent='Shared comparison context';contextField.type='text';contextField.value='';contextField.placeholder='this session or a quoted context name';contextLabel.append(contextField);
+  const readChoice=()=>choice.value;card.append(description,choiceLabel,contextLabel);
+  const experiencerField=document.createElement('input'),experiencerLabel=document.createElement('label'),comparisonChoice=document.createElement('select'),comparisonLabel=document.createElement('label');
+  experiencerLabel.textContent='Who experiences the pain?';experiencerField.type='text';experiencerField.value='';experiencerField.placeholder='Name, I, you, or this person';experiencerLabel.append(experiencerField);
+  comparisonLabel.textContent='What is “more painful” compared with?';
+  for(const [value,title] of [['','Choose a comparison'],['other_alternative','The other treatment in this sentence']]){const item=document.createElement('option');item.value=value;item.textContent=title;comparisonChoice.append(item);}comparisonChoice.value='';comparisonLabel.append(comparisonChoice);card.append(experiencerLabel,comparisonLabel);
+  const ready=()=>Boolean(readChoice()&&comparisonChoice.value);
+  const invalidate=()=>{revision++;button.hidden=false;button.disabled=!ready();for(const output of outputs)output.hidden=true;outputs=[];};
+  choice.addEventListener('change',invalidate);contextField.addEventListener('input',invalidate);experiencerField.addEventListener('input',invalidate);comparisonChoice.addEventListener('change',invalidate);
+  button.textContent='Preview draft translation';button.disabled=!ready();
+  const current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled';
+  button.addEventListener('click',async()=>{
+    if(!current()||!ready())return;const interpretation=readChoice(),version=revision,selectedContext=contextField.value.trim(),experiencer=experiencerField.value.trim(),comparisonTarget=comparisonChoice.value;
+    const unchanged=()=>current()&&revision===version&&readChoice()===interpretation&&contextField.value.trim()===selectedContext&&experiencerField.value.trim()===experiencer&&comparisonChoice.value===comparisonTarget;button.disabled=true;
+    try{
+      const meaning=await composePainPreference(input,{allowDraft:true,interpretation,context:selectedContext,experiencer,comparisonTarget});if(!unchanged())return;
+      const bytes=await midiFromPainPreference(meaning,state.data,{allowDraft:true});if(!unchanged())return;
+      description.textContent='Draft translation ready. The preference, separate pain experiencer, treatment descriptions, shared context, scope and runtime are preserved in the music.';
+      const play=document.createElement('button'),music=document.createElement('button'),save=document.createElement('button');
+      play.textContent='Play draft music';music.textContent='Download MIDI';save.textContent='Save draft meaning';
+      play.addEventListener('click',async()=>{if(!unchanged())return;try{const {context,bus}=await readyAudio();if(!unchanged())return;const {notes,division}=notesFromMidi(bytes),start=context.currentTime+.1;for(const n of notes)playScheduledTone(context,bus,n.midi,start+n.start_tick*.5/division,{duration:(n.end_tick-n.start_tick)*.5/division});}catch(error){if(unchanged())showError(error)}});
+      music.addEventListener('click',()=>{if(unchanged())download(new Blob([bytes],{type:'audio/midi'}),'era-zero-pain-preference.mid')});
+      save.addEventListener('click',()=>{if(unchanged())download(new Blob([JSON.stringify(meaning,null,2)],{type:'application/json'}),'era-zero-pain-preference.draft.json')});
+      outputs=[play,music,save];card.append(...outputs);button.hidden=true;
+    }catch(error){if(unchanged())showError(error)}finally{if(unchanged())button.disabled=!ready()}
+  });
+  card.append(button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showPainComparisonPreview(input){
+  const pronouns=painComparisonPronounPlan(input),plan=painComparisonPlan(input)||pronouns?.interpretation_plan;if(!plan)return;
+  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
+  for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
+  $('results').classList.remove('hidden');$('candidateList').innerHTML='';
+  $('decisionSummary').textContent='Choose the pain comparison reading and context.';
+  const card=document.createElement('article'),description=document.createElement('p'),button=document.createElement('button');card.className='candidate';
+  description.textContent='Compare bodily-pain intensity for the same experiencer in a shared context. Choose actual, expected or dispositional pain outcomes. No numeric pain score or actual treatment is inferred from expectation.';
+  let outputs=[],revision=0;
+  const choice=document.createElement('select'),choiceLabel=document.createElement('label'),contextField=document.createElement('input'),contextLabel=document.createElement('label');
+  choiceLabel.textContent='Which pain outcomes are compared?';
+  for(const [value,title] of [['','Choose a reading'],['actual_causation','Actual pain-producing outcomes'],['expected_outcome','Expected pain outcomes'],['disposition','Tendency to produce pain']]){const item=document.createElement('option');item.value=value;item.textContent=title;choice.append(item);}choice.value='';choiceLabel.append(choice);
+  contextLabel.textContent='Shared comparison context';contextField.type='text';contextField.value='';contextField.placeholder='this session or a quoted context name';contextLabel.append(contextField);
+  const readChoice=()=>choice.value;card.append(description,choiceLabel,contextLabel);
+  const fields=[];
+  const invalidate=()=>{revision++;button.hidden=false;button.disabled=!readChoice();for(const output of outputs)output.hidden=true;outputs=[];};
+  choice.addEventListener('change',invalidate);contextField.addEventListener('input',invalidate);
+  for(const occurrence of pronouns?.occurrences||[]){
+    const label=document.createElement('label'),field=document.createElement('input');label.textContent=`Who or what does “${occurrence.pronoun}” refer to? (occurrence ${fields.length+1})`;field.type='text';field.value='';field.placeholder='Name, this robot, or I/you';field.addEventListener('input',invalidate);label.append(field);
+    let number=null;
+    if(/^(they|them)$/i.test(occurrence.pronoun)){
+      number=document.createElement('select');
+      for(const [value,title] of [['','One individual or a group?'],['singular','One individual'],['plural','A group']]){const option=document.createElement('option');option.value=value;option.textContent=title;number.append(option);}number.value='';number.addEventListener('change',invalidate);label.append(number);
+    }
+    fields.push({key:occurrence.key,field,number});card.append(label);
+  }
+  const readBindings=()=>pronouns?Object.fromEntries(fields.map(({key,field,number})=>[key,number?{referent:field.value.trim(),number:number.value}:field.value.trim()])):undefined;
+  button.textContent='Preview draft translation';button.disabled=!readChoice();
+  const current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled';
+  button.addEventListener('click',async()=>{
+    if(!current()||!readChoice())return;const interpretation=readChoice(),version=revision,selectedContext=contextField.value.trim(),bindings=readBindings(),bindingSnapshot=JSON.stringify(bindings);
+    const unchanged=()=>current()&&revision===version&&readChoice()===interpretation&&contextField.value.trim()===selectedContext&&JSON.stringify(readBindings())===bindingSnapshot;button.disabled=true;
+    try{
+      const meaning=await composePainComparisonSentence(input,{allowDraft:true,interpretation,context:selectedContext,...(bindings?{bindings}:{})});if(!unchanged())return;
+      const bytes=await midiFromPainComparison(meaning,state.data,{allowDraft:true});if(!unchanged())return;
+      description.textContent='Draft translation ready. The ordered pain outcomes, shared context, comparison direction, experiencer, scope and runtime are preserved in the music.';
+      const play=document.createElement('button'),music=document.createElement('button'),save=document.createElement('button');
+      play.textContent='Play draft music';music.textContent='Download MIDI';save.textContent='Save draft meaning';
+      play.addEventListener('click',async()=>{if(!unchanged())return;try{const {context,bus}=await readyAudio();if(!unchanged())return;const {notes,division}=notesFromMidi(bytes),start=context.currentTime+.1;for(const n of notes)playScheduledTone(context,bus,n.midi,start+n.start_tick*.5/division,{duration:(n.end_tick-n.start_tick)*.5/division});}catch(error){if(unchanged())showError(error)}});
+      music.addEventListener('click',()=>{if(unchanged())download(new Blob([bytes],{type:'audio/midi'}),'era-zero-pain-comparison.mid')});
+      save.addEventListener('click',()=>{if(unchanged())download(new Blob([JSON.stringify(meaning,null,2)],{type:'application/json'}),'era-zero-pain-comparison.draft.json')});
+      outputs=[play,music,save];card.append(...outputs);button.hidden=true;
+    }catch(error){if(unchanged())showError(error)}finally{if(unchanged())button.disabled=!readChoice()}
+  });
+  card.append(button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showPainStimulusPreview(input){
+  const pronouns=painStimulusPronounPlan(input),plan=painStimulusPlan(input)||pronouns?.interpretation_plan;if(!plan)return;
+  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
+  for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
+  $('results').classList.remove('hidden');$('candidateList').innerHTML='';
+  $('decisionSummary').textContent='Preview the stated pain-producing relation.';
+  const card=document.createElement('article'),description=document.createElement('p'),button=document.createElement('button');card.className='candidate';
+  description.textContent='This draft keeps the stimulus separate from the person feeling pain. Actual causation, expected outcomes and a tendency to cause pain are different meanings. Expectation and tendency do not assert that pain occurred.';
+  let outputs=[],revision=0;
+  const readChoice=()=>true;card.append(description);
+  const fields=[];
+  const invalidate=()=>{revision++;button.hidden=false;button.disabled=!readChoice();for(const output of outputs)output.hidden=true;outputs=[];};
+  for(const occurrence of pronouns?.occurrences||[]){
+    const label=document.createElement('label'),field=document.createElement('input');label.textContent=`Who or what does “${occurrence.pronoun}” refer to? (occurrence ${fields.length+1})`;field.type='text';field.value='';field.placeholder='Name, this robot, or I/you';field.addEventListener('input',invalidate);label.append(field);
+    let number=null;
+    if(/^(they|them)$/i.test(occurrence.pronoun)){
+      number=document.createElement('select');
+      for(const [value,title] of [['','One individual or a group?'],['singular','One individual'],['plural','A group']]){const option=document.createElement('option');option.value=value;option.textContent=title;number.append(option);}number.value='';number.addEventListener('change',invalidate);label.append(number);
+    }
+    fields.push({key:occurrence.key,field,number});card.append(label);
+  }
+  const readBindings=()=>pronouns?Object.fromEntries(fields.map(({key,field,number})=>[key,number?{referent:field.value.trim(),number:number.value}:field.value.trim()])):undefined;
+  button.textContent='Preview draft translation';button.disabled=!readChoice();
+  const current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled';
+  button.addEventListener('click',async()=>{
+    if(!current()||!readChoice())return;const interpretation=readChoice(),version=revision,bindings=readBindings(),bindingSnapshot=JSON.stringify(bindings);
+    const unchanged=()=>current()&&revision===version&&readChoice()===interpretation&&JSON.stringify(readBindings())===bindingSnapshot;button.disabled=true;
+    try{
+      const meaning=await composePainStimulusSentence(input,{allowDraft:true,interpretation,...(bindings?{bindings}:{})});if(!unchanged())return;
+      const bytes=await midiFromPainStimulus(meaning,state.data,{allowDraft:true});if(!unchanged())return;
+      description.textContent='Draft translation ready. The selected relation, stimulus, experiencer, timing, negation and separate runtime values are preserved in the music.';
+      const play=document.createElement('button'),music=document.createElement('button'),save=document.createElement('button');
+      play.textContent='Play draft music';music.textContent='Download MIDI';save.textContent='Save draft meaning';
+      play.addEventListener('click',async()=>{if(!unchanged())return;try{const {context,bus}=await readyAudio();if(!unchanged())return;const {notes,division}=notesFromMidi(bytes),start=context.currentTime+.1;for(const n of notes)playScheduledTone(context,bus,n.midi,start+n.start_tick*.5/division,{duration:(n.end_tick-n.start_tick)*.5/division});}catch(error){if(unchanged())showError(error)}});
+      music.addEventListener('click',()=>{if(unchanged())download(new Blob([bytes],{type:'audio/midi'}),'era-zero-pain-stimulus.mid')});
+      save.addEventListener('click',()=>{if(unchanged())download(new Blob([JSON.stringify(meaning,null,2)],{type:'application/json'}),'era-zero-pain-stimulus.draft.json')});
+      outputs=[play,music,save];card.append(...outputs);button.hidden=true;
+    }catch(error){if(unchanged())showError(error)}finally{if(unchanged())button.disabled=!readChoice()}
+  });
+  card.append(button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showPainPreview(input){
+  const pronouns=painPronounPlan(input),plan=painMeaningPlan(input)||pronouns?.interpretation_plan;if(!plan)return;
+  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
+  for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
+  $('results').classList.remove('hidden');$('candidateList').innerHTML='';
+  $('decisionSummary').textContent='Preview the explicit bodily-pain meaning.';
+  const card=document.createElement('article'),description=document.createElement('p'),button=document.createElement('button');card.className='candidate';
+  description.textContent='This draft represents bodily pain felt by the named experiencer. It does not assert injury, a cause, an intensity or a painful treatment.';
+  let outputs=[],revision=0;
+  const readChoice=()=>true;card.append(description);
+  const fields=[];
+  const invalidate=()=>{revision++;button.hidden=false;button.disabled=!readChoice();for(const output of outputs)output.hidden=true;outputs=[];};
+  for(const occurrence of pronouns?.occurrences||[]){
+    const label=document.createElement('label'),field=document.createElement('input');label.textContent=`Who or what does “${occurrence.pronoun}” refer to? (occurrence ${fields.length+1})`;field.type='text';field.value='';field.placeholder='Name, this robot, or I/you';field.addEventListener('input',invalidate);label.append(field);
+    let number=null;
+    if(/^(they|them)$/i.test(occurrence.pronoun)){
+      number=document.createElement('select');
+      for(const [value,title] of [['','One individual or a group?'],['singular','One individual'],['plural','A group']]){const option=document.createElement('option');option.value=value;option.textContent=title;number.append(option);}number.value='';number.addEventListener('change',invalidate);label.append(number);
+    }
+    fields.push({key:occurrence.key,field,number});card.append(label);
+  }
+  const readBindings=()=>pronouns?Object.fromEntries(fields.map(({key,field,number})=>[key,number?{referent:field.value.trim(),number:number.value}:field.value.trim()])):undefined;
+  button.textContent='Preview draft translation';button.disabled=!readChoice();
+  const current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled';
+  button.addEventListener('click',async()=>{
+    if(!current()||!readChoice())return;const interpretation=readChoice(),version=revision,bindings=readBindings(),bindingSnapshot=JSON.stringify(bindings);
+    const unchanged=()=>current()&&revision===version&&readChoice()===interpretation&&JSON.stringify(readBindings())===bindingSnapshot;button.disabled=true;
+    try{
+      const meaning=await composePainMeaning(input,{allowDraft:true,interpretation,...(bindings?{bindings}:{})});if(!unchanged())return;
+      const bytes=await midiFromPain(meaning,state.data,{allowDraft:true});if(!unchanged())return;
+      description.textContent='Draft translation ready. The experiencer, bodily-pain meaning, timing, negation and runtime are preserved in the music.';
+      const play=document.createElement('button'),music=document.createElement('button'),save=document.createElement('button');
+      play.textContent='Play draft music';music.textContent='Download MIDI';save.textContent='Save draft meaning';
+      play.addEventListener('click',async()=>{if(!unchanged())return;try{const {context,bus}=await readyAudio();if(!unchanged())return;const {notes,division}=notesFromMidi(bytes),start=context.currentTime+.1;for(const n of notes)playScheduledTone(context,bus,n.midi,start+n.start_tick*.5/division,{duration:(n.end_tick-n.start_tick)*.5/division});}catch(error){if(unchanged())showError(error)}});
+      music.addEventListener('click',()=>{if(unchanged())download(new Blob([bytes],{type:'audio/midi'}),'era-zero-pain.mid')});
+      save.addEventListener('click',()=>{if(unchanged())download(new Blob([JSON.stringify(meaning,null,2)],{type:'application/json'}),'era-zero-pain.draft.json')});
+      outputs=[play,music,save];card.append(...outputs);button.hidden=true;
+    }catch(error){if(unchanged())showError(error)}finally{if(unchanged())button.disabled=!readChoice()}
+  });
+  card.append(button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showCuriosityPreview(input){
+  const pronouns=curiosityPronounPlan(input),plan=curiosityInterpretationPlan(input)||pronouns?.interpretation_plan;if(!plan)return;
+  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
+  for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
+  $('results').classList.remove('hidden');$('candidateList').innerHTML='';
+  $('decisionSummary').textContent='Preview curiosity as interest in finding out about the topic.';
+  const card=document.createElement('article'),description=document.createElement('p'),button=document.createElement('button');card.className='candidate';
+  description.textContent='This draft means epistemic interest: finding out about the topic is attractive in itself. It does not imply attention, pleasure, taking action or finding an answer. The relevant questions still depend on context.';
+  let outputs=[],revision=0;
+  const readChoice=()=>true;card.append(description);
+  const fields=[];
+  const invalidate=()=>{revision++;button.hidden=false;button.disabled=!readChoice();for(const output of outputs)output.hidden=true;outputs=[];};
+  for(const occurrence of pronouns?.occurrences||[]){
+    const label=document.createElement('label'),field=document.createElement('input');label.textContent=`Who or what does “${occurrence.pronoun}” refer to? (occurrence ${fields.length+1})`;field.type='text';field.value='';field.placeholder='Name, this robot, or I/you';field.addEventListener('input',invalidate);label.append(field);
+    let number=null;
+    if(/^(they|them)$/i.test(occurrence.pronoun)){
+      number=document.createElement('select');
+      for(const [value,title] of [['','One individual or a group?'],['singular','One individual'],['plural','A group']]){const option=document.createElement('option');option.value=value;option.textContent=title;number.append(option);}number.value='';number.addEventListener('change',invalidate);label.append(number);
+    }
+    fields.push({key:occurrence.key,field,number});card.append(label);
+  }
+  const readBindings=()=>pronouns?Object.fromEntries(fields.map(({key,field,number})=>[key,number?{referent:field.value.trim(),number:number.value}:field.value.trim()])):undefined;
+  button.textContent='Preview draft translation';button.disabled=!readChoice();
+  const current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled';
+  button.addEventListener('click',async()=>{
+    if(!current()||!readChoice())return;const interpretation=readChoice(),version=revision,bindings=readBindings(),bindingSnapshot=JSON.stringify(bindings);
+    const unchanged=()=>current()&&revision===version&&readChoice()===interpretation&&JSON.stringify(readBindings())===bindingSnapshot;button.disabled=true;
+    try{
+      const meaning=await composeCuriosity(input,{allowDraft:true,interpretation,...(bindings?{bindings}:{})});if(!unchanged())return;
+      const response=await fetch('./data/foundation_preview_candidates.json');if(!unchanged())return;if(!response.ok)throw new Error('Draft vocabulary could not be loaded.');const registry=await response.json();if(!unchanged())return;
+      const bytes=await midiFromCuriosity(meaning,state.data,registry.records,{allowDraft:true});if(!unchanged())return;
+      description.textContent='Draft translation ready. Epistemic interest, the participant, topic, timing, negation and runtime are preserved in the music. No particular question, answer or successful learning is asserted.';
+      const play=document.createElement('button'),music=document.createElement('button'),save=document.createElement('button');
+      play.textContent='Play draft music';music.textContent='Download MIDI';save.textContent='Save draft meaning';
+      play.addEventListener('click',async()=>{if(!unchanged())return;try{const {context,bus}=await readyAudio();if(!unchanged())return;const {notes,division}=notesFromMidi(bytes),start=context.currentTime+.1;for(const n of notes)playScheduledTone(context,bus,n.midi,start+n.start_tick*.5/division,{duration:(n.end_tick-n.start_tick)*.5/division});}catch(error){if(unchanged())showError(error)}});
+      music.addEventListener('click',()=>{if(unchanged())download(new Blob([bytes],{type:'audio/midi'}),'era-zero-curiosity.mid')});
+      save.addEventListener('click',()=>{if(unchanged())download(new Blob([JSON.stringify(meaning,null,2)],{type:'application/json'}),'era-zero-curiosity.draft.json')});
+      outputs=[play,music,save];card.append(...outputs);button.hidden=true;
+    }catch(error){if(unchanged())showError(error)}finally{if(unchanged())button.disabled=!readChoice()}
+  });
+  card.append(button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showRouteLearningPreview(input){
+  const pronouns=routeLearningPronounPlan(input),plan=routeLearningInterpretationPlan(input)||pronouns?.interpretation_plan;if(!plan)return;
+  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
+  for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
+  $('results').classList.remove('hidden');$('candidateList').innerHTML='';
+  $('decisionSummary').textContent='Choose what learning the route means in this sentence.';
+  const card=document.createElement('article'),description=document.createElement('p'),button=document.createElement('button');card.className='candidate';
+  description.textContent='Choose whether the person memorized route information, learned how to navigate, or became familiar with the route. These outcomes are different; none implies actual travel or permanent retention.';
+  let choice=null,outputs=[],revision=0;
+  const readChoice=()=>plan.selected_reading||choice.value;
+  if(plan.requires_interpretation){
+    const label=document.createElement('label');label.textContent='What did the person learn?';choice=document.createElement('select');
+    const placeholder=document.createElement('option');placeholder.value='';placeholder.textContent='Choose a reading';choice.append(placeholder);choice.value='';
+    const titles={memorization:'Memorized route information',navigation:'How to navigate the route',familiarity:'Became familiar with the route'};
+    for(const option of plan.choices){const item=document.createElement('option');item.value=option.id;item.textContent=titles[option.id];choice.append(item);}
+    choice.addEventListener('change',()=>{revision++;button.hidden=false;button.disabled=!readChoice();for(const output of outputs)output.hidden=true;outputs=[];});label.append(choice);card.append(description,label);
+  }else card.append(description);
+  const fields=[];
+  const invalidate=()=>{revision++;button.hidden=false;button.disabled=!readChoice();for(const output of outputs)output.hidden=true;outputs=[];};
+  for(const occurrence of pronouns?.occurrences||[]){
+    const label=document.createElement('label'),field=document.createElement('input');label.textContent=`Who or what does “${occurrence.pronoun}” refer to? (occurrence ${fields.length+1})`;field.type='text';field.value='';field.placeholder='Name, this robot, or I/you';field.addEventListener('input',invalidate);label.append(field);
+    let number=null;
+    if(/^(they|them)$/i.test(occurrence.pronoun)){
+      number=document.createElement('select');
+      for(const [value,title] of [['','One individual or a group?'],['singular','One individual'],['plural','A group']]){const option=document.createElement('option');option.value=value;option.textContent=title;number.append(option);}number.value='';number.addEventListener('change',invalidate);label.append(number);
+    }
+    fields.push({key:occurrence.key,field,number});card.append(label);
+  }
+  const readBindings=()=>pronouns?Object.fromEntries(fields.map(({key,field,number})=>[key,number?{referent:field.value.trim(),number:number.value}:field.value.trim()])):undefined;
+  button.textContent='Preview draft translation';button.disabled=!readChoice();
+  const current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled';
+  button.addEventListener('click',async()=>{
+    if(!current()||!readChoice())return;const interpretation=readChoice(),version=revision,bindings=readBindings(),bindingSnapshot=JSON.stringify(bindings);
+    const unchanged=()=>current()&&revision===version&&readChoice()===interpretation&&JSON.stringify(readBindings())===bindingSnapshot;button.disabled=true;
+    try{
+      const meaning=await composeRouteLearning(input,{allowDraft:true,interpretation,...(bindings?{bindings}:{})});if(!unchanged())return;
+      const bytes=await midiFromRouteLearning(meaning,state.data,{allowDraft:true});if(!unchanged())return;
+      description.textContent='Draft translation ready. The selected learning outcome, participant, route reference, timing, negation and runtime are preserved in the music. Later retention is not asserted; context must identify the route.';
+      const play=document.createElement('button'),music=document.createElement('button'),save=document.createElement('button');
+      play.textContent='Play draft music';music.textContent='Download MIDI';save.textContent='Save draft meaning';
+      play.addEventListener('click',async()=>{if(!unchanged())return;try{const {context,bus}=await readyAudio();if(!unchanged())return;const {notes,division}=notesFromMidi(bytes),start=context.currentTime+.1;for(const n of notes)playScheduledTone(context,bus,n.midi,start+n.start_tick*.5/division,{duration:(n.end_tick-n.start_tick)*.5/division});}catch(error){if(unchanged())showError(error)}});
+      music.addEventListener('click',()=>{if(unchanged())download(new Blob([bytes],{type:'audio/midi'}),'era-zero-route-learning.mid')});
+      save.addEventListener('click',()=>{if(unchanged())download(new Blob([JSON.stringify(meaning,null,2)],{type:'application/json'}),'era-zero-route-learning.draft.json')});
+      outputs=[play,music,save];card.append(...outputs);button.hidden=true;
+    }catch(error){if(unchanged())showError(error)}finally{if(unchanged())button.disabled=!readChoice()}
+  });
+  card.append(button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showUnderstandingPreview(input){
+  const acquisition=parseCameToUnderstand(input),probe=acquisition?.result_input||input,pronouns=understandingPronounPlan(probe),plan=understandingInterpretationPlan(probe)||pronouns?.interpretation_plan;if(!plan)return;
+  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
+  for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
+  $('results').classList.remove('hidden');$('candidateList').innerHTML='';
+  $('decisionSummary').textContent='Choose what understanding means in this sentence.';
+  const card=document.createElement('article'),description=document.createElement('p'),button=document.createElement('button');card.className='candidate';
+  description.textContent='This draft distinguishes understanding communicated meaning, reasons, and perspective. It does not infer agreement, shared feelings, or the truth of a communicated claim.';
+  let choice=null,outputs=[],revision=0;
+  const readChoice=()=>plan.selected_reading||choice.value;
+  if(plan.requires_interpretation){
+    const label=document.createElement('label');label.textContent='What does the person understand?';choice=document.createElement('select');
+    const placeholder=document.createElement('option');placeholder.value='';placeholder.textContent='Choose a reading';choice.append(placeholder);choice.value='';
+    const titles={communicated_content:'Communicated meaning',reasons:'Explanatory reasons',perspective:'Perspective or experiences'};
+    for(const option of plan.choices){const item=document.createElement('option');item.value=option.id;item.textContent=titles[option.id];choice.append(item);}
+    choice.addEventListener('change',()=>{revision++;button.hidden=false;button.disabled=!readChoice();for(const output of outputs)output.hidden=true;outputs=[];});label.append(choice);card.append(description,label);
+  }else card.append(description);
+  const fields=[];
+  const invalidate=()=>{revision++;button.hidden=false;button.disabled=!readChoice();for(const output of outputs)output.hidden=true;outputs=[];};
+  for(const occurrence of pronouns?.occurrences||[]){
+    const label=document.createElement('label'),field=document.createElement('input');label.textContent=`Who or what does “${occurrence.pronoun}” refer to? (occurrence ${fields.length+1})`;field.type='text';field.value='';field.placeholder='Name, this robot, or I/you';field.addEventListener('input',invalidate);label.append(field);
+    let number=null;
+    if(/^(they|them)$/i.test(occurrence.pronoun)){
+      number=document.createElement('select');
+      for(const [value,title] of [['','One individual or a group?'],['singular','One individual'],['plural','A group']]){const option=document.createElement('option');option.value=value;option.textContent=title;number.append(option);}number.value='';number.addEventListener('change',invalidate);label.append(number);
+    }
+    fields.push({key:occurrence.key,field,number});card.append(label);
+  }
+  const readBindings=()=>pronouns?Object.fromEntries(fields.map(({key,field,number})=>[key,number?{referent:field.value.trim(),number:number.value}:field.value.trim()])):undefined;
+  button.textContent='Preview draft translation';button.disabled=!readChoice();
+  const current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled';
+  button.addEventListener('click',async()=>{
+    if(!current()||!readChoice())return;const interpretation=readChoice(),version=revision,bindings=readBindings(),bindingSnapshot=JSON.stringify(bindings);
+    const unchanged=()=>current()&&revision===version&&readChoice()===interpretation&&JSON.stringify(readBindings())===bindingSnapshot;button.disabled=true;
+    try{
+      const meaning=await (acquisition?composeCameToUnderstand:composeUnderstandingContent)(input,{allowDraft:true,interpretation,...(bindings?{bindings}:{})});if(!unchanged())return;
+      const bytes=await (acquisition?midiFromUnderstandingAcquisition:midiFromUnderstanding)(meaning,state.data,{allowDraft:true});if(!unchanged())return;
+      description.textContent=(acquisition?'Coming to understand is preserved as a completed transition; later retention is not asserted. ':'')+'Draft translation ready. The selected understanding, participants, timing, negation and runtime are preserved in the music. The content itself still depends on context.';
+      const play=document.createElement('button'),music=document.createElement('button'),save=document.createElement('button');
+      play.textContent='Play draft music';music.textContent='Download MIDI';save.textContent='Save draft meaning';
+      play.addEventListener('click',async()=>{if(!unchanged())return;try{const {context,bus}=await readyAudio();if(!unchanged())return;const {notes,division}=notesFromMidi(bytes),start=context.currentTime+.1;for(const n of notes)playScheduledTone(context,bus,n.midi,start+n.start_tick*.5/division,{duration:(n.end_tick-n.start_tick)*.5/division});}catch(error){if(unchanged())showError(error)}});
+      music.addEventListener('click',()=>{if(unchanged())download(new Blob([bytes],{type:'audio/midi'}),acquisition?'era-zero-understanding-acquisition.mid':'era-zero-understanding.mid')});
+      save.addEventListener('click',()=>{if(unchanged())download(new Blob([JSON.stringify(meaning,null,2)],{type:'application/json'}),acquisition?'era-zero-understanding-acquisition.draft.json':'era-zero-understanding.draft.json')});
+      outputs=[play,music,save];card.append(...outputs);button.hidden=true;
+    }catch(error){if(unchanged())showError(error)}finally{if(unchanged())button.disabled=!readChoice()}
+  });
+  card.append(button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showAcquisitionPreview(input){
+  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
+  for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
+  $('results').classList.remove('hidden');$('candidateList').innerHTML='';
+  $('decisionSummary').textContent='Learning an answer has a draft translation available.';
+  const card=document.createElement('article'),description=document.createElement('p'),button=document.createElement('button');card.className='candidate';
+  description.textContent='Preview coming to know the answer to this question. This does not say that the answer is yes or that the knowledge lasts forever. The meaning and sounds are under review.';
+  const pronouns=learnedWhetherPronounPlan(input),fields=[];let outputs=[];
+  for(const occurrence of pronouns?.occurrences||[]){
+    const label=document.createElement('label'),field=document.createElement('input');label.textContent=`Who or what does “${occurrence.pronoun}” refer to? (occurrence ${fields.length+1})`;field.type='text';field.value='';field.placeholder='Name or the robot';
+    field.addEventListener('input',()=>{button.hidden=false;for(const output of outputs)output.hidden=true;outputs=[];});
+    label.append(field);let number=null;
+    if(/^(they|them)$/i.test(occurrence.pronoun)){number=document.createElement('select');for(const [value,title] of [['','One individual or a group?'],['singular','One individual'],['plural','A group']]){const option=document.createElement('option');option.value=value;option.textContent=title;number.append(option);}number.value='';label.append(number);}
+    if(number)number.addEventListener('change',()=>{button.hidden=false;for(const output of outputs)output.hidden=true;outputs=[];});
+    fields.push({key:occurrence.key,field,label,number});
+  }
+  const readBindings=()=>pronouns?Object.fromEntries(fields.map(({key,field,number})=>[key,number?{referent:field.value.trim(),number:number.value}:field.value.trim()])):undefined;
+  button.textContent='Preview draft translation';
+  const current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled';
+  button.addEventListener('click',async()=>{
+    if(!current())return;const bindings=readBindings(),snapshot=JSON.stringify(bindings),unchanged=()=>current()&&JSON.stringify(readBindings())===snapshot;button.disabled=true;
+    try{
+      const response=await fetch('./data/foundation_preview_candidates.json');if(!response.ok)throw new Error('Draft vocabulary could not be loaded.');
+      const registry=await response.json();if(!unchanged())return;
+      const result=await composeLearnedWhether(input,state.data,registry.records,sentenceTemplate,{allowDraft:true,...(bindings?{bindings}:{})});if(!unchanged())return;
+      const bytes=await midiFromKnowledgeAcquisition(result.acquisition,result.result_formal,state.data,{allowDraft:true});
+      const bundle=await createAcquisitionBundle(result,state.data,{allowDraft:true});if(!unchanged())return;
+      description.textContent='Draft translation ready. Event negation, timing and the question content are preserved in the music and saved meaning.';
+      const play=document.createElement('button'),music=document.createElement('button'),save=document.createElement('button');
+      play.textContent='Play draft music';music.textContent='Download MIDI';save.textContent='Save meaning bundle';
+      play.addEventListener('click',async()=>{if(!unchanged())return;try{const {context,bus}=await readyAudio();if(!unchanged())return;const {notes,division}=notesFromMidi(bytes),start=context.currentTime+.1;for(const n of notes)playScheduledTone(context,bus,n.midi,start+n.start_tick*.5/division,{duration:(n.end_tick-n.start_tick)*.5/division});}catch(error){if(unchanged())showError(error)}});
+      music.addEventListener('click',()=>{if(unchanged())download(new Blob([bytes],{type:'audio/midi'}),'era-zero-learning.mid')});
+      save.addEventListener('click',()=>{if(unchanged())download(new Blob([JSON.stringify(bundle,null,2)],{type:'application/json'}),'era-zero-learning.ezacqb.json')});
+      button.hidden=true;outputs=[play,music,save];card.append(...outputs);
+    }catch(error){if(unchanged())showError(error)}finally{button.disabled=false}
+  });
+  card.append(description,...fields.map(f=>f.label),button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showQuantifiedPreview(input,interpretation=null){
+  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
+  $('output').classList.add('hidden');$('phraseCoverage').classList.add('hidden');$('resolutionPanel').classList.add('hidden');$('results').classList.remove('hidden');$('candidateList').innerHTML='';
+  $('decisionSummary').textContent='A draft translation is available for this counted property.';
+  const card=document.createElement('article'),description=document.createElement('p'),button=document.createElement('button');card.className='candidate';
+  description.textContent='Counts members that satisfy the property, including “not” when it belongs to that property. This differs from denying the whole count. The new count-binding sound is under review.';
+  button.textContent='Preview draft translation';
+  if(interpretation){$('decisionSummary').textContent='Choose what “active” means before translating.';description.textContent=interpretation.definition+' This preview uses draft counted-property grammar. Choose this only if it is your intended meaning; otherwise rephrase with the intended property.';button.textContent='Use physically energized meaning';}
+  const current=()=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled';
+  button.addEventListener('click',async()=>{
+    if(!current())return;button.disabled=true;
+    try{const result=await composeQuantifiedPropertySentence(interpretation?.interpreted_input||input,sentenceTemplate,{allowDraft:true});if(interpretation){result.source_input=input;result.interpretation_choice=interpretation;}if(!current())return;state.resolution=result;$('results').classList.add('hidden');await showResolution(result,{definition:result.semantic_note});}
+    catch(error){if(current())showError(error)}finally{button.disabled=false}
+  });
+  card.append(description,button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showFoundationPreview(input){
+  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];
+  state.wordSelections.clear();$('phraseCoverage').classList.add('hidden');
+  $('output').classList.add('hidden');$('results').classList.remove('hidden');$('resolutionPanel').classList.add('hidden');
+  $('decisionSummary').textContent='Desire, preference and knowing whether have draft meanings available. Their new sounds are still under review.';
+  $('candidateList').innerHTML='';
+  const card=document.createElement('article');card.className='candidate';
+  const description=document.createElement('p');description.textContent='Preview the complete sentence using draft vocabulary. Preference compares alternatives without asserting that either is wanted absolutely. Desire does not assert that the desired event happens. Knowing whether means knowing the answer, without asserting that the answer is yes. For “wants tea,” specify what should happen to the tea.';
+  const pronouns=foundationPronounPlan(input,{allowCognitive:true}),fields=[];
+  for(const occurrence of pronouns?.occurrences||[]){
+    const label=document.createElement('label');label.textContent=`Who or what does “${occurrence.pronoun}” refer to? (occurrence ${fields.length+1})`;
+    const field=document.createElement('input');field.type='text';field.value='';field.placeholder='Name or the robot';label.append(field);let number=null;
+    if(/^(they|them)$/i.test(occurrence.pronoun)){number=document.createElement('select');for(const [value,title] of [['','One individual or a group?'],['singular','One individual'],['plural','A group']]){const option=document.createElement('option');option.value=value;option.textContent=title;number.append(option);}number.value='';label.append(number);}
+    fields.push({key:occurrence.key,field,label,number});
+  }
+  const parsed=pronouns?.parsed||parseFoundationSentence(input,{allowCognitive:true});
+  const objectPlan=objectDesirePlan(input);let desiredField,desiredLabel,deliveryChoice,deliveryViewpoint,deliveryLabel,deliveryViewpointLabel;
+  if(objectPlan){
+    desiredLabel=document.createElement('label');desiredLabel.textContent=`What is desired to happen concerning “${objectPlan.object}”?`;
+    desiredField=document.createElement('input');desiredField.type='text';desiredField.value='';desiredField.placeholder='Write the intended outcome as a complete sentence';desiredLabel.append(desiredField);
+    deliveryLabel=document.createElement('label');deliveryLabel.textContent='Does this carrying event include handing the object over to the recipient?';
+    deliveryChoice=document.createElement('select');
+    for(const [value,title] of [['','Choose the intended meaning'],['custody_delivery','Yes: carrying arrival and transfer of physical custody in one event']]){const option=document.createElement('option');option.value=value;option.textContent=title;deliveryChoice.append(option);}deliveryChoice.value='';deliveryLabel.append(deliveryChoice);
+    deliveryViewpointLabel=document.createElement('label');deliveryViewpointLabel.textContent='How is the desired carrying event presented?';deliveryViewpoint=document.createElement('select');
+    for(const [value,title] of [['','Choose a viewpoint'],['bounded','One whole event'],['ongoing','An event in progress'],['habitual','A recurring practice']]){const option=document.createElement('option');option.value=value;option.textContent=title;deliveryViewpoint.append(option);}deliveryViewpoint.value='';deliveryViewpointLabel.append(deliveryViewpoint);
+    deliveryLabel.hidden=true;deliveryViewpointLabel.hidden=true;
+    desiredField.addEventListener('input',()=>{const plan=parseNamedSentence(desiredField.value.trim());deliveryLabel.hidden=!plan?.requiredDestination;deliveryViewpointLabel.hidden=!(plan?.requiredDestination&&plan.requiredViewpoint);deliveryChoice.value='';deliveryViewpoint.value='';});
+    description.textContent='Specify the intended outcome. Wanting an object does not by itself mean drinking, owning, or possessing it. The outcome will be encoded as desired, without asserting that it happens. Unsupported outcomes will remain unresolved.';
+  }
+  const needsMass=parsed?.type==='preference'&&!parsed.propositionalAlternatives&&[parsed.target,parsed.standard].some(text=>/^[Tt]he (heavy|light) [a-z]+$/.test(text));
+  let massChoice,massLabel;
+  if(needsMass){
+    massLabel=document.createElement('label');massLabel.textContent='Meaning of heavy/light in these alternatives';massChoice=document.createElement('select');
+    for(const [value,title] of [['','Choose a property meaning'],['contextual_mass','Physical mass relative to local contextual standards; no number']]){const option=document.createElement('option');option.value=value;option.textContent=title;massChoice.append(option);}massChoice.value='';massLabel.append(massChoice);
+  }
+  const readBindings=()=>pronouns?Object.fromEntries(fields.map(({key,field,number})=>[key,number?{referent:field.value.trim(),number:number.value}:field.value.trim()])):undefined;
+  const button=document.createElement('button');button.textContent='Preview draft translation';
+  if(needsMass){button.disabled=true;massChoice.addEventListener('change',()=>{button.disabled=massChoice.value!=='contextual_mass'});}
+  const current=()=>$('sourceInput').value.trim()===input&&state.mode!=='controlled'&&card.isConnected!==false;
+  button.addEventListener('click',async()=>{
+    if(!current()||(needsMass&&massChoice.value!=='contextual_mass'))return;
+    const bindings=readBindings(),mass=massChoice?.value,desired=desiredField?.value.trim(),delivery=deliveryChoice?.value,viewpoint=deliveryViewpoint?.value,snapshot=JSON.stringify(bindings),unchanged=()=>current()&&massChoice?.value===mass&&desiredField?.value.trim()===desired&&deliveryChoice?.value===delivery&&deliveryViewpoint?.value===viewpoint&&JSON.stringify(readBindings())===snapshot;
+    button.disabled=true;
+    try{
+      if(objectPlan&&ownershipPlan(desired)){if(unchanged())showOwnershipPreview(input,{desired:true,clarification:desired});return;}
+      if(objectPlan&&drinkingPlan(desired)){if(unchanged())showDrinkingPreview(input,{desired:true,clarification:desired});return;}
+      const response=await fetch('./data/foundation_preview_candidates.json');
+      if(!response.ok)throw new Error('Draft vocabulary could not be loaded.');
+      const registry=await response.json();
+      if(!unchanged())return;
+      const composed=objectPlan?await composeObjectDesire(input,state.data,registry.records,sentenceTemplate,{allowDraft:true,desiredProposition:desired,...(delivery?{desiredDelivery:{destination:delivery,...(viewpoint?{viewpoint}:{})}}:{})}):await composeFoundationSentence(input,state.data,registry.records,sentenceTemplate,{allowDraft:true,allowCognitive:true,...(needsMass?{contextualMassModifiers:true}:{}),...(bindings?{bindings}:{})});
+      if(!unchanged())return;
+      state.resolution=composed;$('results').classList.add('hidden');
+      await showResolution(composed,{definition:'Draft translation — vocabulary and sounds are under review.'});
+    }catch(error){if(unchanged())showError(error)}finally{button.disabled=needsMass&&massChoice.value!=='contextual_mass'}
+  });
+  card.append(description,...fields.map(f=>f.label),...(massLabel?[massLabel]:[]),...(desiredLabel?[desiredLabel,deliveryLabel,deliveryViewpointLabel]:[]),button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showFutureInterpretation(input){
+  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];
+  state.wordSelections.clear();$('phraseCoverage').classList.add('hidden');
+  $('output').classList.add('hidden');$('results').classList.remove('hidden');$('resolutionPanel').classList.add('hidden');
+  $('decisionSummary').textContent='“Will” can state a future event or express a commitment. Choose the intended reading before generating sound.';
+  $('candidateList').innerHTML='';
+  const card=document.createElement('article');card.className='candidate';
+  const description=document.createElement('p');description.textContent='Translate this as a statement about tomorrow, without adding a promise, intention, or willingness. If you meant one of those, edit the sentence; that meaning is not yet supported by this construction.';
+  const button=document.createElement('button');button.textContent='Translate as a future statement';
+  button.addEventListener('click',async()=>{
+    if($('sourceInput').value.trim()!==input||state.mode==='controlled'){toast('The input changed. Analyze it again.');return}
+    if(card.isConnected===false)return;
+    button.disabled=true;
+    try{
+      const parsed=parseNamedSentence(input);
+      const composed=await composeNamedSentence(input,await sentenceTemplate(parsed.predicate),{interpretation:'future_assertion'});
+      if($('sourceInput').value.trim()!==input||state.mode==='controlled'){toast('The input changed. Analyze it again.');return}
+      if(card.isConnected===false)return;
+      state.resolution=composed;$('results').classList.add('hidden');
+      await showResolution(composed,{definition:[composed.interpretation,composed.semantic_note].filter(Boolean).join(' ')});
+    }catch(error){if(card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled')showError(error)}finally{button.disabled=false}
+  });
+  card.append(description,button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showAnalysis(result){state.analysis=result;state.selected=null;state.resolution=null;state.phraseNames=[];$('results').classList.remove('hidden');$('output').classList.add('hidden');$('candidateList').innerHTML='';const names={incomplete_sentence_construction:'this sentence contains meaning the current construction cannot yet preserve; dictionary readings below are partial',material_sense_ambiguity:'please choose the intended meaning',required_roles_missing:'more details are needed',structural_template_required:'full sentence structure is not implemented yet',documented_vocabulary_gap:'this meaning is not in Era Zero yet',low_confidence_english:'I am not confident enough to guess',local_api_required:'the full local engine is required',phonemic_labels_present:'nouns were preserved as sound labels',phonemic_labels_only:'no approved semantic reading; noun-label sounds are available',unresolved_semantic_content:'an unknown verb or descriptor still needs meaning',cross_domain_action_underspecified:'file change or movement needs its intended domain'};$('decisionSummary').textContent=result.decision.auto_resolution_allowed?`Dictionary label matched${result.candidates[0]?.fidelity==='generalized'?' through a disclosed generalization':''} · ${result.runtime_inference}.`:`${result.candidate_count} interpretation${result.candidate_count===1?'':'s'} · ${result.decision.reasons.map(x=>names[x]||x).join(' · ')}`;$('speechAct').value=result.speech_act_proposal;$('runtimeState').value=result.explicit_runtime_state;$('resolutionPanel').classList.toggle('hidden',!result.candidates.length);result.candidates.forEach((candidate,index)=>{const el=document.createElement('article');el.className='candidate';el.tabIndex=0;el.innerHTML=`<div class="candidate-head"><span class="route">${escapeHtml(candidate.route)}</span><h3>${escapeHtml(candidate.lemma)} <small>${escapeHtml(candidate.sense_key.replaceAll('_',' '))}</small></h3><span class="confidence">${escapeHtml(candidate.confidence)}</span><span class="score">${candidate.score.toFixed(2)}</span></div><p>${escapeHtml(candidate.definition)}</p>${candidate.generalization?`<p class="word-definition"><b>Generalization:</b> ${escapeHtml(candidate.generalization)}</p>`:''}<div class="evidence">${candidate.target_id?escapeHtml(candidate.target_id)+' · ':''}${escapeHtml(candidate.match_type.replaceAll('_',' '))}${candidate.fidelity==='generalized'?' · generalized':''}</div>`;el.addEventListener('click',()=>selectCandidate(index,el));el.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();selectCandidate(index,el)}});$('candidateList').append(el)});renderPhraseCoverage(result);$('results').scrollIntoView({behavior:'smooth',block:'start'})}
 function updateSentenceMap(coverage){const summary=$('sentenceMap');if(!summary)return;summary.textContent=coverage.map(item=>{if(item.status==='function_word')return`${item.term} → English syntax`;if(item.status==='participant_reference')return`${item.term} → ${item.participant_role}`;if(item.status==='unresolved_semantic')return`${item.term} → unresolved ${item.semantic_kind||'meaning'}`;if(['phonemic_label','labeled_entity'].includes(item.status))return`${item.term} → ${item.semantic_class_target_id?item.semantic_class_target_id+' + ':''}${item.name_id||'EZNAME label'}`;const selected=item.matches.find(match=>match.sense_id===state.wordSelections.get(item.token_index))||item.matches[0];return`${item.term} → ${selected?.target_id||selected?.sense_id||selected?.route||'unresolved'}${item.name_id?' + '+item.name_id:''}`}).join('  ·  ')}
 function matchOptionLabel(match){const record=dictionaryRecord(match),id=match.target_id||match.route,title=record?.title||record?.display_title||match.lemma,meaning=record?.core_definition||record?.invariant_definition||match.definition||'';return`${id} — ${title} — ${meaning}`}
 async function renderPhraseCoverage(result){const box=$('phraseCoverage'),coverage=result.term_coverage||[];state.wordSelections.clear();if(!coverage.length){box.classList.add('hidden');return}box.classList.remove('hidden');box.innerHTML='<div class="word-map-head"><div><h3>How each word is handled</h3><p>Verbs and descriptors require meaning. Nouns may keep a phonemic label when their detailed class is absent.</p></div></div><div class="phrase-terms word-map"></div><p id="sentenceMap" class="sentence-map"></p>';const list=box.querySelector('.phrase-terms');for(const item of coverage){const card=document.createElement('div');card.className='phrase-term';const recommended=item.matches.find(match=>match.sense_id===item.recommended_sense_id)||item.matches[0],labelAllowed=['phonemic_label','labeled_entity'].includes(item.status)||(item.status==='documented_gap'&&recommended?.noun_label_allowed);if(labelAllowed){try{const encoded=await encodeName(item.term);item.name_id=encoded.name_id;state.phraseNames.push(encoded);const explanation=item.status==='labeled_entity'?`labeled person/entity${item.semantic_class_target_id?' · class '+item.semantic_class_target_id:''}`:item.status==='documented_gap'?'documented noun gap · referent preserved as a label':'unfamiliar noun/referent · phonemic label';card.innerHTML=`<b>${escapeHtml(item.term)}</b><span>${escapeHtml(explanation)}</span><code>${escapeHtml(encoded.name_id)}</code>${recommended?.definition?`<p class="word-definition">${escapeHtml(recommended.definition)}</p>`:''}<button>▶ Hear label</button>`;card.querySelector('button').addEventListener('click',event=>playName(encoded,event.currentTarget))}catch(error){card.innerHTML=`<b>${escapeHtml(item.term)}</b><span>unencodable noun label</span>`}}else if(item.status==='participant_reference'){card.innerHTML=`<b>${escapeHtml(item.term)}</b><span>participant reference · ${escapeHtml(item.participant_role)}</span><p class="word-definition">Handled as a discourse participant, not as a phonemic name or lexical root.</p>`}else if(item.status==='unresolved_semantic'){card.innerHTML=`<b>${escapeHtml(item.term)}</b><span>unresolved ${escapeHtml(item.semantic_kind||'semantic content')} · translation blocked</span><p class="word-definition">This word carries meaning and cannot honestly be replaced by phoneme tones.</p>`}else if(item.status==='function_word'){card.innerHTML=`<b>${escapeHtml(item.term)}</b><span>English syntax/function word · no atomic meaning asserted</span><p class="word-definition">Handled by English parsing unless a later grammar template explicitly represents it.</p>`}else{const route=item.status==='documented_gap'?'documented vocabulary gap':item.status==='structural'?'structural language route':'approved semantic coverage';state.wordSelections.set(item.token_index,recommended?.sense_id);card.innerHTML=`<b>${escapeHtml(item.term)}</b><i class="recommended">best match</i><span>${escapeHtml(route)} · ${item.matches.length} option${item.matches.length===1?'':'s'}</span><label>Meaning match<select aria-label="Meaning match for ${escapeHtml(item.term)}">${item.matches.map(match=>`<option value="${escapeHtml(match.sense_id)}"${match.sense_id===recommended?.sense_id?' selected':''}>${escapeHtml(matchOptionLabel(match))}</option>`).join('')}</select></label><div class="word-target">${escapeHtml(recommended?.target_id||recommended?.sense_id||'')}</div><p class="word-definition">${escapeHtml(recommended?.definition||'')}${recommended?.generalization?` Generalization: ${escapeHtml(recommended.generalization)}`:''}</p><button class="word-dictionary">View dictionary record</button>`;const select=card.querySelector('select'),target=card.querySelector('.word-target'),definition=card.querySelector('.word-definition'),dictionary=card.querySelector('.word-dictionary');const refresh=()=>{const selected=item.matches.find(match=>match.sense_id===select.value);state.wordSelections.set(item.token_index,select.value);target.textContent=selected?.target_id||selected?.sense_id||'';definition.textContent=`${selected?.definition||''}${selected?.generalization?` Generalization: ${selected.generalization}`:''}`;dictionary.onclick=()=>openDictionarySense(selected);updateSentenceMap(coverage)};select.addEventListener('change',refresh);refresh()}list.append(card)}if(state.phraseNames.length){const hear=document.createElement('button');hear.className='primary phrase-hear';hear.textContent=state.phraseNames.length===coverage.filter(item=>!['function_word','participant_reference'].includes(item.status)).length?'▶ Hear complete label-only phrase':'▶ Hear noun labels';hear.addEventListener('click',event=>playPhraseNames(event.currentTarget));box.append(hear)}updateSentenceMap(coverage)}
@@ -76,10 +954,10 @@ function updateResolveButton(){const c=state.selected,hosted=c?.target_id&&state
 $('runtimeState').addEventListener('change',updateResolveButton);
 $('resolveButton').addEventListener('click',()=>resolveSelected(false));
 async function resolutionDocument(target){if(!state.resolutionCache.has(target))state.resolutionCache.set(target,fetch(state.data.resolution_files[target]).then(response=>response.json()));return state.resolutionCache.get(target)}
-async function resolveSelected(automatic=false){const candidate=state.selected;if(!candidate)return;const runtime=Number($('runtimeState').value),act=$('speechAct').value;try{const document=await resolutionDocument(candidate.target_id),template=document.variants[`${act}:${runtime}`];if(!template)throw{code:'resolution_unavailable',message:'This hosted resolution variant is unavailable.'};const result=structuredClone(template);result.source_input=$('sourceInput').value;result.sense_id=candidate.sense_id;result.surface_fidelity=candidate.fidelity||'indexed';result.generalization=candidate.generalization||null;state.resolution=result;if(!automatic)toast('Canonical interpretation resolved.');await showResolution(result,candidate);const hasSupplement=state.analysis?.term_coverage?.some(item=>!['canonical','function_word','participant_reference'].includes(item.status))||['generalized','reviewed_local_mapping'].includes(candidate.fidelity);if(automatic&&!hasSupplement)$('results').classList.add('hidden')}catch(error){showError(error)}}
+async function resolveSelected(automatic=false){const candidate=state.selected;if(!candidate)return;const runtime=Number($('runtimeState').value),act=$('speechAct').value;try{const document=await resolutionDocument(candidate.target_id),template=document.variants[`${act}:${runtime}`];if(!template)throw{code:'resolution_unavailable',message:'This hosted resolution variant is unavailable.'};const result=structuredClone(template);result.source_input=$('sourceInput').value;result.sense_id=candidate.sense_id;result.surface_fidelity=candidate.fidelity||'indexed';result.generalization=candidate.generalization||null;state.resolution=result;if(state.analysis?.complete_sentence_unavailable){result.partial_sentence=true;result.source_input=`Partial dictionary reading from: ${result.source_input}`}if(!automatic)toast(result.partial_sentence?'Partial dictionary reading only.':'Canonical interpretation resolved.');await showResolution(result,candidate);const hasSupplement=state.analysis?.term_coverage?.some(item=>!['canonical','function_word','participant_reference'].includes(item.status))||['generalized','reviewed_local_mapping'].includes(candidate.fidelity);if(automatic&&!hasSupplement)$('results').classList.add('hidden')}catch(error){showError(error)}}
 async function compileControlled(input){const match=input.match(/^(ASSERT|QUESTION|COMMAND|DEFINE|POSSIBILITY)\s+"([^"]+)"\s+\[([012])\]\.$/);if(!match)throw{code:'hosted_controlled_subset',message:'The hosted release accepts exact simple controlled statements. Advanced templates are available in the local Ruby application.'};const [,keyword,label,stateCode]=match;const candidates=state.data.controlled.filter(item=>normalize(item.lemma)===normalize(label));if(candidates.length!==1)throw{code:candidates.length?'ambiguous_lexeme':'unknown_lexeme',message:candidates.length?'The controlled label is ambiguous.':'The quoted label is not in the controlled lexicon.'};const candidate={...candidates[0],definition:state.data.senses.find(s=>s.sense_id===candidates[0].sense_id)?.definition,required_roles:state.data.required_roles[candidates[0].target_id]||[]};if(candidate.required_roles.length||!state.data.resolution_files[candidate.target_id])throw{code:'local_api_required',message:'This controlled statement needs role binding or a structural template from the local Ruby API.'};state.analysis={candidates:[candidate]};state.selected=candidate;$('speechAct').value=ACTS[keyword];$('runtimeState').value=stateCode;await resolveSelected(true);$('results').classList.add('hidden');activateOutputPanel('ir');toast('Controlled statement compiled and rendered exactly.')}
-async function showResolution(result,candidate){$('output').classList.remove('hidden');$('meaningTitle').textContent=candidate?.definition||result.target_id;$('sourceEcho').textContent=result.source_input||$('sourceInput').value;$('controlledText').textContent=result.controlled_input;$('targetBadge').textContent=result.target_id;$('utteranceId').textContent=result.semantic_ir.utterance_id;$('formalId').textContent=result.formal.formal_id;$('roundTrip').textContent=result.round_trip_equal?'Exact ✓':'Failed';const sound=soundPlanFromFormal(result.formal),mode=currentSoundMode();$('prefixText').textContent=sound.lexical_events.map(event=>`${event.target_id}: ${event.transliteration.split('·')[0]}`).join(' · ');$('carrierText').textContent=sound.lexical_events.map(event=>event.formal_carrier).join('  |  ');$('familyNotes').textContent=sound.lexical_events.map(event=>event.family_opening.join('–')).join('  |  ');$('addressNotes').textContent=sound.lexical_events.map(event=>event.address_path.join('–')).join('  |  ');$('recognitionNotes').textContent=mode==='strict'?'Off — strict canonical performance':result.formal.performance.lexical_events.map(event=>{const phrase=recognitionForTarget(event.target_id,state.data.recognition_audio,event.base_midi,mode);return `${event.target_id}: ${phrase.absolute_midi.join('–')} · ${phrase.checksum}`}).join('  |  ');$('runtimeNote').textContent=sound.lexical_events.map(event=>`${event.runtime?.name||'none'}: ${event.runtime_ending.join('–')}`).join('  |  ');$('contourNotes').textContent=`${sound.primary_contour}: ${sound.sentence_contour.join('–')}`;$('irCode').textContent=JSON.stringify(result.semantic_ir,null,2);$('formalCode').textContent=JSON.stringify(result.formal,null,2);$('glyphStage').innerHTML=svgFromFormal(result.formal);$('output').scrollIntoView({behavior:'smooth',block:'start'})}
-function showError(value){const error=value?.error||value;$('results').classList.remove('hidden');$('candidateList').innerHTML=`<div class="error-card"><strong>${escapeHtml(error?.code||'error')}</strong><p>${escapeHtml(error?.message||'The request failed.')}</p></div>`;$('decisionSummary').textContent='Nothing was translated.';toast(error?.message||'Request failed')}
+async function showResolution(result,candidate){$('output').classList.remove('hidden');$('meaningTitle').textContent=candidate?.definition||result.target_id;$('sourceEcho').textContent=result.source_input||$('sourceInput').value;$('controlledText').textContent=result.controlled_input||result.formal.literal_gloss;$('readingLabel').textContent=result.controlled_input?'Controlled form':'Lexical gloss';$('targetBadge').textContent=result.target_id;$('utteranceId').textContent=result.semantic_ir.utterance_id;$('formalId').textContent=result.formal.formal_id;$('roundTrip').textContent=['candidate_translation','draft_quantified_translation'].includes(result.status)?'Draft preview':result.partial_sentence?'Partial reading':result.construction?'Composed sentence':result.round_trip_equal?'Exact ✓':'Failed';const sound=soundPlanFromFormal(result.formal),mode=['candidate_translation','draft_quantified_translation'].includes(result.status)?'strict':currentSoundMode();$('prefixText').textContent=sound.lexical_events.map(event=>`${event.target_id}: ${event.transliteration.split('·')[0]}`).join(' · ');$('carrierText').textContent=sound.lexical_events.map(event=>event.formal_carrier).join('  |  ');$('familyNotes').textContent=sound.lexical_events.map(event=>event.family_opening.join('–')).join('  |  ');$('addressNotes').textContent=sound.lexical_events.map(event=>event.address_path.join('–')).join('  |  ');$('recognitionNotes').textContent=mode==='strict'?(['candidate_translation','draft_quantified_translation'].includes(result.status)?'Draft musical performance; recognition embellishments unavailable.':'Off — strict canonical performance'):result.formal.performance.lexical_events.map(event=>{if(event.kind==='grammar_marker')return `${event.marker}: grammar frame`;if(event.kind==='reference_marker')return `${event.label}: noun reference frame`;if(event.kind==='deictic_reference')return `${event.label}: discourse reference frame`;if(event.kind==='phonemic_label')return `${event.label}: phonemic name frame`;const phrase=recognitionForTarget(event.target_id,state.data.recognition_audio,event.base_midi,mode);return `${event.target_id}: ${phrase.absolute_midi.join('–')} · ${phrase.checksum}`}).join('  |  ');$('runtimeNote').textContent=sound.lexical_events.filter(event=>event.runtime).map(event=>`${event.target_id} [${event.runtime.code}] ${event.runtime.name}: ${event.runtime_ending.join('–')}`).join('  |  ')||'No lexical runtime ending';$('contourNotes').textContent=`${sound.primary_contour}: ${sound.sentence_contour.join('–')}`;$('irCode').textContent=JSON.stringify(result.semantic_ir,null,2);$('formalCode').textContent=JSON.stringify(result.formal,null,2);$('glyphStage').innerHTML=svgFromFormal(result.formal);$('output').scrollIntoView({behavior:'smooth',block:'start'})}
+function showError(value){state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();$('output').classList.add('hidden');$('resolutionPanel').classList.add('hidden');$('phraseCoverage').classList.add('hidden');const error=value?.error||value;$('results').classList.remove('hidden');$('candidateList').innerHTML=`<div class="error-card"><strong>${escapeHtml(error?.code||'error')}</strong><p>${escapeHtml(error?.message||'The request failed.')}</p></div>`;$('decisionSummary').textContent='Nothing was translated.';toast(error?.message||'Request failed')}
 function activateOutputPanel(name){document.querySelectorAll('.output-tab').forEach(x=>x.classList.toggle('active',x.dataset.panel===name));document.querySelectorAll('.output-panel').forEach(x=>x.classList.remove('active'));$(`panel-${name}`).classList.add('active')}
 document.querySelectorAll('.output-tab').forEach(btn=>btn.addEventListener('click',()=>activateOutputPanel(btn.dataset.panel)));
 const download=(blob,name)=>{const anchor=document.createElement('a');anchor.href=URL.createObjectURL(blob);anchor.download=name;anchor.click();setTimeout(()=>URL.revokeObjectURL(anchor.href),1000)};
@@ -92,7 +970,7 @@ $('selfCheckAudio').addEventListener('click',async()=>{if(!state.resolution)retu
 $('verifyPerformanceAudio').addEventListener('change',async event=>{const file=event.target.files[0];if(!file)return;let context=null;try{if(!state.resolution)throw new Error('Resolve a meaning before checking audio.');if(file.size>20_000_000)throw new Error('Audio file is too large for this browser check.');const Engine=window.AudioContext||window.webkitAudioContext;if(!Engine)throw new Error('Web Audio decoding is unavailable.');context=new Engine();const decoded=await context.decodeAudioData(await file.arrayBuffer()),samples=new Float32Array(decoded.length);for(let channel=0;channel<decoded.numberOfChannels;channel++){const source=decoded.getChannelData(channel);for(let i=0;i<samples.length;i++)samples[i]+=source[i]/decoded.numberOfChannels}const result=verifyPerformancePcm(state.resolution.formal,state.data.recognition_audio,samples,decoded.sampleRate);$('audioCheck').textContent=result.status==='valid_checksum'?`Audio verified: optional identity phrase matches · ${result.observed_note_count} notes.`:result.status==='valid_strict_absence'?`Audio verified: canonical strict notes with no identity phrase · ${result.observed_note_count} notes.`:`Audio did not match this canonical form at note ${result.first_mismatch+1}; detected ${result.observed_note_count} notes. No meaning inferred.`;toast(result.status.replaceAll('_',' '))}catch(error){$('audioCheck').textContent=`Audio check inconclusive: ${error.message}`;toast(error.message)}finally{if(context)await context.close();event.target.value=''}});
 $('downloadViseme').addEventListener('click',()=>{if(!state.resolution)return toast('Resolve a meaning before exporting its visemes.');const file=visemeFileFromFormal(state.resolution.formal,currentEyeExpression,recognitionOptions());download(new Blob([JSON.stringify(file,null,2)],{type:'application/json'}),`${state.resolution.formal.formal_id.toLowerCase().replace(':','-')}-${currentEyeExpression}.ezviseme.json`)});
 $('downloadBundle').addEventListener('click',async()=>{if(!state.resolution)return toast('Resolve a meaning before exporting.');try{const bundle=await createBundle(state.resolution,$('sourceInput').value);download(new Blob([JSON.stringify(bundle,null,2)],{type:'application/json'}),'era-zero-bundle.ezb.json')}catch(error){showError(error)}});
-$('importBundle').addEventListener('change',async event=>{const file=event.target.files[0];if(!file)return;try{const verified=await verifyBundle(JSON.parse(await file.text()));toast(`Valid ${verified.format} · ${verified.target_id}`)}catch(error){showError({code:'invalid_bundle',message:error.message})}finally{event.target.value=''}});
+$('importBundle').addEventListener('change',async event=>{const file=event.target.files[0];if(!file)return;try{const imported=JSON.parse(await file.text()),verified=imported.format==='EZACQB-1'?await verifyAcquisitionBundle(imported,state.data,{allowDraft:true}):await verifyBundle(imported);toast(`${(verified.vocabulary_status==='candidate'||verified.grammar_status==='draft')?'Draft vocabulary · ':''}Valid ${verified.format} · ${verified.target_id||verified.acquisition_id}`)}catch(error){showError({code:'invalid_bundle',message:error.message})}finally{event.target.value=''}});
 function playResolutionTones(button=null){return playFormalPerformance(false,button)}
 $('previewTones').addEventListener('click',event=>playResolutionTones(event.currentTarget));
 $('hearTranslation').addEventListener('click',event=>playResolutionTones(event.currentTarget));
@@ -101,7 +979,7 @@ let sharedAudioContext=null,sharedAudioBus=null,sharedAudioLimiter=null;
 async function readyAudio(){const AudioEngine=window.AudioContext||window.webkitAudioContext;if(!AudioEngine)throw new Error('This browser does not provide Web Audio.');if(!sharedAudioContext||sharedAudioContext.state==='closed'){sharedAudioContext=new AudioEngine({latencyHint:'interactive'});sharedAudioBus=sharedAudioContext.createGain();sharedAudioLimiter=sharedAudioContext.createDynamicsCompressor();sharedAudioBus.gain.value=.78;sharedAudioLimiter.threshold.value=-9;sharedAudioLimiter.knee.value=12;sharedAudioLimiter.ratio.value=4;sharedAudioLimiter.attack.value=.004;sharedAudioLimiter.release.value=.18;sharedAudioBus.connect(sharedAudioLimiter).connect(sharedAudioContext.destination)}if(sharedAudioContext.state==='suspended')await sharedAudioContext.resume();if(sharedAudioContext.state!=='running')throw new Error('Browser audio is paused. Check the tab and system volume, then press Play again.');return{context:sharedAudioContext,bus:sharedAudioBus}}
 const currentVoice=()=>$('soundVoice')?.value||'era_zero';
 const currentSoundMode=()=>$('soundMode')?.value||'recognition';
-const recognitionOptions=()=>({mode:currentSoundMode(),recognitionRegistry:state.data?.recognition_audio});
+const recognitionOptions=()=>({mode:['candidate_translation','draft_quantified_translation'].includes(state.resolution?.status)?'strict':currentSoundMode(),recognitionRegistry:state.data?.recognition_audio});
 function playScheduledTone(context,bus,note,at,options={}){return scheduleVoiceTone(context,bus,note,at,{...options,voice:currentVoice()})}
 async function playConversation(){if(!state.conversation.length)await buildConversation();if(!state.conversation.length)return;try{const{context,bus}=await readyAudio(),speakerBuses={};for(const [name,speaker] of Object.entries(CONVERSATION_SPEAKERS)){const gain=context.createGain();gain.gain.value=.92;if(context.createStereoPanner){const pan=context.createStereoPanner();pan.pan.value=speaker.pan;gain.connect(pan).connect(bus)}else gain.connect(bus);speakerBuses[name]=gain}let at=context.currentTime+.12;const starts=[];for(const [turnIndex,turn] of state.conversation.entries()){const turnStart=at;starts.push({turnIndex,delayMs:Math.max(0,(turnStart-context.currentTime)*1000)});for(const formal of turn.formals){const plan=visemePlanFromFormal(formal,recognitionOptions());for(const cue of plan.cues){const style=cue.section==='family_opening'?{waveform:'sine',gainLevel:.10}:cue.section==='recognition_phrase'?{waveform:'triangle',gainLevel:.065}:cue.section==='runtime_ending'?{waveform:'square',gainLevel:.055}:cue.section==='sentence_contour'?{waveform:'sine',gainLevel:.085}:{waveform:'triangle',gainLevel:.075};scheduleVoiceTone(context,speakerBuses[turn.speaker],cue.note,at+cue.start,{...style,duration:cue.duration,voice:turn.voice})}at+=plan.duration_seconds+.16}at+=.62}document.querySelectorAll('.conversation-turn').forEach(card=>card.classList.remove('active'));starts.forEach(({turnIndex,delayMs},i)=>setTimeout(()=>{document.querySelectorAll('.conversation-turn').forEach(card=>card.classList.toggle('active',Number(card.dataset.turn)===turnIndex));const active=state.conversation[turnIndex];$('conversationStatus').textContent=`Speaking: ${active.displaySpeaker||active.speaker} · ${active.label}`;if(i===starts.length-1)setTimeout(()=>{document.querySelectorAll('.conversation-turn').forEach(card=>card.classList.remove('active'));$('conversationStatus').textContent='Conversation complete.'},Math.max(500,(at-context.currentTime)*1000-delayMs))},delayMs));showPlaying($('playConversation'),Math.ceil((at-context.currentTime+.25)*1000),'conversation…');toast(`Conversation started · ${currentSoundMode()} sound detail · first speaker is ocarina · second speaker is warm organ.`)}catch(error){toast(error.message||'Conversation audio could not start.')}}
 $('playConversation').addEventListener('click',playConversation);
@@ -130,3 +1008,20 @@ const savedVoice=localStorage.getItem('era-zero-sound-voice');if(savedVoice&&VOI
 const savedSoundMode=localStorage.getItem('era-zero-sound-mode');if(['strict','recognition','learning'].includes(savedSoundMode))$('soundMode').value=savedSoundMode;
 $('conversationScript').value=DEMO_CONVERSATION;
 boot();
+
+const savedCompoundPlayer=createLocalCompoundPlayer();
+$('sourceInput').addEventListener('input',()=>savedCompoundPlayer.stop());
+window.addEventListener('pagehide',()=>savedCompoundPlayer.stop());
+async function showSavedSentence(input){
+ const registry=await loadLocalCompounds(localStorage,state.data);
+ if(!registry.entries.length||!(await localAdjectivePlan(input,registry,state.data)||(await localVerbCandidates(input,registry,state.data)).length||await localWordPronounPlan(input,registry,state.data)))return false;
+ const current=()=>$('sourceInput').value.trim()===input&&state.mode!=='controlled';if(!current())return true;
+ state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
+ for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
+ $('results').classList.remove('hidden');$('candidateList').innerHTML='';$('decisionSummary').textContent='Use your saved word meaning.';
+ const card=document.createElement('article');card.className='candidate';$('candidateList').append(card);
+ await mountLocalEnglishControls(card,input,registry,state.data,{download,player:savedCompoundPlayer,isCurrent:current,onError:showError});
+ return true;
+}
+
+try{const example=takeLocalExample(sessionStorage);if(example){$('sourceInput').value=example;$('sourceInput').focus();}}catch(error){showError(error);}

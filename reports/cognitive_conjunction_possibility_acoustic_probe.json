@@ -1,0 +1,145 @@
+{
+  "status": "PASS",
+  "scope": "One authored clean synthetic WAV; no physical recording or simulated channel test",
+  "phrase": "It is possible that it is not true that Orin is not curious about this map [2] and Eli came to understand what Nora said [0].",
+  "meaning": {
+    "profile": "EZCOGNITIVE-CONJUNCTION-INVERSE-1",
+    "status": "draft",
+    "operator": "all_of",
+    "speech_act": "assertion",
+    "members": [
+      {
+        "profile": "EZCURIOSITY-INVERSE-1",
+        "status": "draft",
+        "predicate": "epistemic_curiosity",
+        "desire_foundation_id": "FND:f66b7a3877f4b0140a0b7023",
+        "criterion": "The experiencer has epistemic interest in the contextual inquiry: resolving some contextually relevant uncertainty about the topic is itself motivationally attractive, rather than wanted solely for a separate practical outcome. Instrumental motives may coexist. This does not require pleasure, current attention, a conscious feeling, intention, action, successful discovery or complete ignorance of the topic.",
+        "desired_outcome": "same_experiencer_gains_contextually_relevant_information_resolving_some_inquiry_uncertainty",
+        "outcome_commitment": "desired_not_asserted",
+        "question_commitment": "contextual_not_specified",
+        "experiencer": {
+          "kind": "phonemic",
+          "reference_mode": "name",
+          "phonemes": [
+            "AO",
+            "R",
+            "IH",
+            "N"
+          ],
+          "instance_code": null
+        },
+        "inquiry": {
+          "content_kind": "contextual_question_set",
+          "topic": {
+            "anchor": {
+              "kind": "phonemic",
+              "reference_mode": "proximal_nominal",
+              "phonemes": [
+                "M",
+                "AE",
+                "P"
+              ],
+              "instance_code": null
+            }
+          },
+          "question_selection": "contextually_relevant_unresolved",
+          "answer_commitment": "none",
+          "specific_question_supplied": false
+        },
+        "speech_act": "assertion",
+        "scopes": [
+          {
+            "operator": "negation"
+          }
+        ],
+        "runtime_state": 2,
+        "limitations": [
+          "Context must identify the topic and relevant questions.",
+          "This draft epistemic reading is not oddness, sensory novelty seeking or purely instrumental information demand."
+        ]
+      },
+      {
+        "profile": "EZUNDERSTANDING-ACQUISITION-INVERSE-1",
+        "status": "draft",
+        "speech_act": "assertion",
+        "transition_root": "ORI:110",
+        "transition_runtime": 0,
+        "scopes": [
+          {
+            "operator": "time",
+            "relation": "before_speech"
+          }
+        ],
+        "result_assertion": "at_culmination_only",
+        "phase_contract": {
+          "before": "does_not_hold",
+          "culmination": "holds",
+          "after": "unspecified"
+        },
+        "result": {
+          "profile": "EZUNDERSTANDING-MUSIC-INVERSE-1",
+          "status": "draft",
+          "speech_act": "assertion",
+          "predicate": "content_comprehension",
+          "foundation_id": "FND:ea8f935ca4dabd4470b2bcb5",
+          "runtime_state": 1,
+          "scopes": [],
+          "experiencer": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "EH",
+              "L",
+              "IH"
+            ],
+            "instance_code": null
+          },
+          "content": {
+            "content_kind": "communicated_content",
+            "anchor": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "selection": {
+              "channel": "speech",
+              "time": "before_speech"
+            },
+            "resolution_scope": "local_context",
+            "assertion_commitment": "none"
+          },
+          "criterion": "Grasps the intended meaning of contextually selected content conveyed by the anchor; does not assert that the conveyed claims are true.",
+          "limitations": [
+            "Contextually selected content is not supplied or verified as a real-world fact.",
+            "No original spelling or external referent identity is recovered from phonemes.",
+            "Draft comprehension predicate; broader cognitive grammar and canonical admission remain open."
+          ]
+        },
+        "limitations": [
+          "Draft completed transition; not an assertion of understanding at speech time or permanent retention.",
+          "Content source restrictions are retained, without fabricating the referenced speech or its truth."
+        ]
+      }
+    ],
+    "scopes": [
+      {
+        "operator": "modality",
+        "mode": "possible"
+      },
+      {
+        "operator": "negation"
+      }
+    ],
+    "limitations": [
+      "No temporal order or causal relationship is asserted between members.",
+      "Shared reference sounds do not establish external identity; each member retains its own contextual references."
+    ]
+  },
+  "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-cognitive-conjunction-bM6o2A/conjunction.wav"
+}

@@ -7,6 +7,7 @@ require "digest"
 require "set"
 require_relative "era_zero_validation"
 require_relative "era_zero_renderer"
+require_relative "era_zero_compound_role_binding"
 
 module EraZeroControlledEnglish
   ROOT = EraZeroValidation::ROOT
@@ -16,7 +17,7 @@ module EraZeroControlledEnglish
   ASPECTS = %w[bounded ongoing habitual iterative perfect prospective].freeze
   TIME_RELATIONS = %w[before at after during starts ends overlaps].freeze
   ROLES = %w[actor source cause experiencer bearer predicate target result destination instrument material content recipient location environment condition persistent_condition time manner quantity comparison_standard beneficiary].freeze
-  UNITS = %w[1 second minute hour day meter kilometer gram kilogram degree radian bit byte].freeze
+  UNITS = %w[1 second minute hour day meter kilometer gram kilogram degree radian bit byte kelvin candela_per_square_meter].freeze
 
   class CompileError < StandardError
     attr_reader :code, :details
@@ -116,6 +117,11 @@ module EraZeroControlledEnglish
     end
 
     def finalize(nodes, edges, speech_act, root = "n001")
+      begin
+        EraZeroCompoundRoleBinding.bind_unique_roles!(nodes, edges, @compounds)
+      rescue ArgumentError => error
+        raise CompileError.new("ambiguous_compound_binding", error.message)
+      end
       nodes = nodes.sort_by { |node| node.fetch("node_id") }
       edges = edges.sort_by { |edge| edge.fetch("edge_id") }
       payload = { "ir_version" => "1.0", "root_clause" => root, "speech_act" => speech_act, "nodes" => nodes, "edges" => edges, "discourse_constraints" => {} }
@@ -125,7 +131,21 @@ module EraZeroControlledEnglish
 
     def required_roles(lexical)
       return [] unless lexical["target_type"] == "compound"
-      EraZeroRenderer.required_compound_roles(@compounds.fetch(lexical.fetch("target_id")))
+      EraZeroRenderer.required_compound_roles(@compounds.fetch(lexical.fetch("target_id")), compounds: @compounds)
+    end
+
+    def parse_slot_path(text)
+      match = /\A(\[(?:\s*"(?:[^"\\]|\\.)*"\s*(?:,\s*"(?:[^"\\]|\\.)*"\s*)*)?\])\s*/.match(text)
+      raise CompileError.new('invalid_slot_path', 'SLOT requires a nonempty JSON array of exact local node IDs.') unless match
+      begin
+        path=JSON.parse(match[1])
+      rescue JSON::ParserError
+        raise CompileError.new('invalid_slot_path', 'Slot paths must use valid JSON strings.')
+      end
+      unless path.length.between?(1,64) && path.all? { |part| part.is_a?(String) && !part.empty? }
+        raise CompileError.new('invalid_slot_path', 'Slot paths require 1 to 64 nonempty local node IDs.')
+      end
+      [path,text[match.end(0)..]]
     end
 
     def compile_simple(text, speech_act)
@@ -152,19 +172,51 @@ module EraZeroControlledEnglish
       next_node = 3
       next_edge = 1
       roles = Set.new
+      role_arguments = {}
+      slot_arguments = {}
+      slot_bindings = []
       time_spec = nil
       measurement = nil
       quantifier = nil
 
       until rest.strip.empty?
         rest = rest.lstrip
-        if (match = /\AROLE\s+(\S+)\s+/.match(rest))
+        if rest.start_with?('SLOT ')
+          raise CompileError.new('mixed_compound_bindings', 'Use either ROLE or scoped SLOT arguments, not both.') unless roles.empty?
+          raise CompileError.new('invalid_slot_binding', 'SLOT requires a compound predicate.') unless head['target_type']=='compound'
+          path, argument_text=parse_slot_path(rest.delete_prefix('SLOT ').lstrip)
+          raise CompileError.new('duplicate_slot_binding', 'A scoped slot may be bound only once.') if slot_arguments.key?(path)
+          if argument_text.start_with?('REF ')
+            referenced_path, tail=parse_slot_path(argument_text.delete_prefix('REF ').lstrip)
+            id=slot_arguments[referenced_path]
+            raise CompileError.new('unknown_slot_reference', 'Slot REF must name an earlier bound slot in this clause.') unless id
+          else
+            argument, tail=parse_lexical_prefix(argument_text)
+            id=node_id(next_node);next_node+=1
+            nodes<<lexical_node(id,argument).merge('value_type'=>'entity')
+          end
+          slot_arguments[path]=id
+          slot_bindings<<{'slot_path'=>path,'argument_id'=>id}
+          rest=tail
+        elsif (match = /\AROLE\s+(\S+)\s+/.match(rest))
+          raise CompileError.new('mixed_compound_bindings', 'Use either ROLE or scoped SLOT arguments, not both.') unless slot_bindings.empty?
           role = match[1]
           raise CompileError.new("invalid_role", "Unknown controlled role.", { "role" => role, "allowed" => ROLES }) unless ROLES.include?(role)
           raise CompileError.new("duplicate_role", "A singular controlled role may occur only once.", { "role" => role }) if roles.include?(role)
-          argument, tail = parse_lexical_prefix(rest[match.end(0)..])
-          id = node_id(next_node); next_node += 1
-          nodes << lexical_node(id, argument)
+          argument_text = rest[match.end(0)..]
+          if (reference = /\AREF\s+(\S+)(?=\s|\z)/.match(argument_text))
+            referenced_role = reference[1]
+            id = role_arguments[referenced_role]
+            unless id
+              raise CompileError.new("unknown_role_reference", "REF must name an earlier role in this clause.", { "role" => referenced_role })
+            end
+            tail = argument_text[reference.end(0)..]
+          else
+            argument, tail = parse_lexical_prefix(argument_text)
+            id = node_id(next_node); next_node += 1
+            nodes << lexical_node(id, argument)
+          end
+          role_arguments[role] = id
           edges << { "edge_id" => edge_id(next_edge), "type" => "fills_role", "from" => id, "to" => "n002", "role" => role }; next_edge += 1
           roles << role
           rest = tail
@@ -196,8 +248,20 @@ module EraZeroControlledEnglish
         end
       end
 
-      missing = required_roles(head) - roles.to_a
-      raise CompileError.new("missing_compound_role", "The compound has unbound required roles.", { "target_id" => head["target_id"], "missing_roles" => missing }) unless missing.empty?
+      if slot_bindings.empty?
+        missing = required_roles(head) - roles.to_a
+        raise CompileError.new("missing_compound_role", "The compound has unbound required roles.", { "target_id" => head["target_id"], "missing_roles" => missing }) unless missing.empty?
+      else
+        begin
+          compound=@compounds.fetch(head.fetch('target_id'))
+          expander=EraZeroCompoundExpansion::Expander.new(@compounds.values)
+          expanded=expander.expand(compound.fetch('compound_id'),compound.fetch('definition_version'))
+          expander.bind_slots(expanded,bindings:slot_bindings,arguments:nodes.to_h { |n| [n['node_id'],n] })
+        rescue EraZeroCompoundExpansion::ExpansionError => error
+          raise CompileError.new('invalid_slot_binding',error.message)
+        end
+        nodes[1]['compound_bindings']=slot_bindings
+      end
 
       center = "n002"
       [["negation", prefix["negation"]], ["modality", prefix["modality"]], ["aspect", prefix["aspect"]]].each do |operator, value|

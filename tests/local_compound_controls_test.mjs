@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {mountLocalCompoundControls} from '../pages/local_compound_controls.mjs';
+import {emptyLocalCompounds,addLocalCompound} from '../pages/local_compounds.mjs';
+const authority=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url)));
+const registry=await addLocalCompound(emptyLocalCompounds(),{label:'test action',definition:'Test-only action.',part_of_speech:'verb',roles:[{role:'actor',definition:'Person acting.'}],components:authority.atoms.slice(0,2).map((a,i)=>({target_id:a.canonical_id,relation:i?'qualifies':'head'}))},authority);
+const element=()=>({children:[],value:'',append(...children){this.children.push(...children)},replaceChildren(...children){this.children=children},addEventListener(type,handler){this[type]=handler}});
+const container=element(),downloads=[],errors=[];
+await mountLocalCompoundControls(container,registry.entries[0].compound_id,registry,authority,{document:{createElement:element},download:(blob,name)=>downloads.push({blob,name}),onError:e=>errors.push(e)});
+const participant=container.children[0].children[0],runtime=container.children[1].children[0],generate=container.children.at(-2),output=container.children.at(-1);
+await generate.click();assert.equal(errors.length,1);assert.equal(output.children.length,0);
+participant.value='Nora';participant.input();runtime.value='2';runtime.change();await generate.click();assert.equal(output.children.length,2);
+const [midi,bundle]=output.children;midi.click();bundle.click();assert.equal(downloads.length,2);assert((await downloads[0].blob.arrayBuffer()).byteLength>0);
+const saved=JSON.parse(await downloads[1].blob.text());assert.deepEqual(saved.registry,registry);assert.equal(saved.performance.runtime_state,2);assert.equal(saved.performance.bindings[0].reference.name.normalized_label,'nora');
+participant.value='Eli';participant.input();midi.click();bundle.click();assert.equal(downloads.length,2);assert.equal(output.children.length,0);
+console.log('PASS actual music controls require participants, export runtime and definitions, and block stale downloads after edits.');
+
+const form=container.children[2].children[0],time=container.children[3].children[0],polarity=container.children[4].children[0];
+form.value='question';form.change();assert.equal(time.disabled,false);time.value='before_speech';time.change();polarity.value='not_possible';polarity.change();await generate.click();output.children[1].click();
+const sentence=JSON.parse(await downloads.at(-1).blob.text());assert.equal(sentence.meaning.speech_act,'question');assert.equal(sentence.meaning.runtime_state,2);assert.deepEqual(sentence.meaning.scopes,[{operator:'time',relation:'before_speech'},{operator:'negation'},{operator:'modality',mode:'possible'}]);assert.equal(sentence.meaning.bindings[0].reference.name.normalized_label,'eli');
+const stale=output.children[1],before=downloads.length;polarity.value='possible_not';polarity.change();stale.click();assert.equal(downloads.length,before);await generate.click();output.children[1].click();assert.deepEqual(JSON.parse(await downloads.at(-1).blob.text()).meaning.scopes.slice(1),[{operator:'modality',mode:'possible'},{operator:'negation'}]);
+console.log('PASS sentence controls export past questions and distinguish not-possible from possibly-not; scope edits invalidate stale output.');

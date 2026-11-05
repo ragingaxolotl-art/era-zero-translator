@@ -1,0 +1,86 @@
+{
+  "scope": "Draft cognitive demonstrative references and affected regressions; not canonical admission or general cognitive translation.",
+  "observed_before_fix": [
+    {
+      "input": "Nora prefers this tea to that tea.",
+      "error": "Compound binding: invalid nominal reference"
+    },
+    {
+      "input": "This robot prefers tea to coffee.",
+      "error": "Unsupported foundation sentence."
+    }
+  ],
+  "passed": true,
+  "results": [
+    {
+      "test": "tests/cognitive_demonstratives_test.mjs",
+      "passed": true,
+      "output": "PASS 18 cognitive and 18 acquisition cases with independent demonstrative-mode recovery, preference direction, subject control, runtime separation and Ruby/MIDI parity; noun phonemes and draft admission remain unchanged.\n"
+    },
+    {
+      "test": "tests/foundation_pronoun_binding_test.mjs",
+      "passed": true,
+      "output": "PASS 12 explicit candidate pronoun bindings match full named-reference meanings/music; actual UI requires all bindings and discards edited pending results.\n"
+    },
+    {
+      "test": "tests/foundation_pronoun_identity_test.mjs",
+      "passed": true,
+      "output": "PASS 45 unresolved pronoun role cases rejected; explicit quoted labels and speaker/addressee references preserved across runtime states.\n"
+    },
+    {
+      "test": "tests/foundation_contractions_test.mjs",
+      "passed": true,
+      "output": "PASS 21 candidate contraction/runtime/negation/question paraphrases and explicit pronoun combination preserve full meaning and music.\n"
+    },
+    {
+      "test": "tests/desire_subject_control_test.mjs",
+      "passed": true,
+      "output": "PASS 18 desire subject-control sentences preserve explicit identity in Ruby/browser formal, MIDI and independent decoding.\nPASS desire for mobility: 18 independent outer/inner state and inner-negation contrasts, explicit/control subjects, question/outer negation, Ruby/MIDI inverse and draft-bundle checks.\n"
+    },
+    {
+      "test": "tests/knowledge_sentence_test.mjs",
+      "passed": true,
+      "output": "PASS 21 knows/whether compositions with independent inner/outer runtime, negation, questions and contractions; complete browser/Ruby formal and MIDI parity. Independent MIDI recovery verifies holder, polar content, both scopes and runtimes; UI pending.\nPASS well-framed desire/question and knowledge/proposition type substitutions reject instead of silently changing meaning.\n"
+    },
+    {
+      "test": "tests/knowledge_time_test.mjs",
+      "passed": true,
+      "output": "PASS 21 knowledge time/state cases: separate outer and question-content times/negation, questions and contractions, full Ruby formal/MIDI parity and independent musical scope recovery.\n"
+    },
+    {
+      "test": "tests/learned_whether_test.mjs",
+      "passed": true,
+      "output": "PASS 18 learned-whether English cases: acquisition rather than past knowledge, independent event/content time and negation, runtime, questions/contractions, MIDI-only meanings and exact Ruby audio parity. Main UI not yet admitted.\n"
+    },
+    {
+      "test": "tests/learning_pronouns_test.mjs",
+      "passed": true,
+      "output": "PASS six learning pronoun/state/scope cases: explicit identities, immutable binding snapshots, full acquisition/formal/MIDI equivalence and quoted-label preservation.\n"
+    },
+    {
+      "test": "tests/preference_time_test.mjs",
+      "passed": true,
+      "output": "PASS 18 preference time/negation/runtime sentences match reference formal/MIDI and MIDI-only semantic scopes.\n"
+    },
+    {
+      "test": "tests/preference_propositions_test.mjs",
+      "passed": true,
+      "output": "PASS 27 independent preference/alternative runtime contrasts with Ruby parity and MIDI inverse; order, nested desire, negation and separate time scopes preserved.\n"
+    },
+    {
+      "test": "tests/foundation_preview_ui_test.mjs",
+      "passed": true,
+      "output": "PASS draft preview UI: explicit opt-in, stale input/results rejection, draft label and strict sound mode.\nPASS draft data, sound-plan generation and exported vocabulary provenance.\n"
+    },
+    {
+      "test": "tests/acquisition_preview_ui_test.mjs",
+      "passed": true,
+      "output": "PASS acquisition UI: explicit preview, separate full-acquisition downloads, stale results/download rejection, cleared ordinary result and acquisition-specific import verification. Playback layout/listening not verified.\nPASS learning UI pronoun fields, binding submission, re-preview after edits, stale completed downloads and edited pending-result rejection.\n"
+    },
+    {
+      "test": "tests/knowledge_preview_ui_test.mjs",
+      "passed": true,
+      "output": "PASS draft preview UI: explicit opt-in, stale input/results rejection, draft label and strict sound mode.\nPASS draft data, sound-plan generation and exported vocabulary provenance.\nPASS knowledge preview registry, explicit cognitive opt-in, sound plan/export provenance, and two independently resolved pronouns.\n"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+profile: EZCUSTODY-DELIVERY-INVERSE-1
+inputs: [performed_MIDI, root_sound_inventory]
+source_IR_required: false
+compound: CMP:5200738177777915abb3f42e
+version: 1.0.0
+conventions: [10, 6, 5, 4, 3, 9, 7, 8, 7]
+participants: [carrier, object, recipient]
+outer_runtime_states: [0, 1, 2]
+requirements:
+  - Exact nested support, carrying, approach, arrival, custody and acquisition structures
+  - Carrier equals transfer source, load equals transferred object, destination referent equals recipient
+  - Carrying arrival culminates in custody transfer within one delivery event
+  - Ongoing and habitual scope do not entail a current completed delivery
+  - Preserve ordered scopes and speech act without asserting events outside scope
+limits: [other_delivery_senses, external_identity, original_spelling, general_discourse, recorded_audio]
+test: tests/custody_delivery_test.mjs

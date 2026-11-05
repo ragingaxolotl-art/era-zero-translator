@@ -3,10 +3,10 @@ metadata:
   title: Era Zero Controlled English Compiler
   version: 1.0.0
   status: canonical
-  sense_index_fingerprint: c8697b27f7594ee2dea6af2d7b3acae0812874f51081ee9f1d9e7951b961d47f
-  semantic_ir_fingerprint: '089c3095f8ad3007f9375cdc0b5327c226106dcec5923165d81e1fedf07e4e97'
-  renderer_fingerprint: ec460c5a0f9c7a1a2323d60529c5ba98b8d091fb6880e505397245a656ee1496
-  controlled_lexeme_count: 353
+  sense_index_fingerprint: 30491a02cd8d1209b464ed75ea3499e52b49b1fb2eb929fec265361b7c09c4ff
+  semantic_ir_fingerprint: 033cad2ee2fb02dbeab90d88a187db8a185a88a781f3e05b3a188f5699e7747b
+  renderer_fingerprint: dfd8650128c7816bddeb3abb12c68f1934033ccfc4bf60662aebc9ceb4d00d0c
+  controlled_lexeme_count: 387
   general_english_started: false
 boundary:
   purpose: A deterministic, auditable input language for canonical labels and explicit
@@ -29,14 +29,25 @@ grammar:
   terminal: Every input ends in exactly one period.
   speech_act: ASSERT | QUESTION | COMMAND | DEFINE | POSSIBILITY
   lexical: '"<controlled label>" [0|1|2]'
-  simple: ACT [NOT] [MODAL mode] [ASPECT aspect] LEXICAL {ROLE role LEXICAL} [TIME
-    relation SPEECH_TIME] [MEASURE decimal unit] [QUANTIFIER kind [decimal]] .
+  simple: ACT [NOT] [MODAL mode] [ASPECT aspect] LEXICAL {ROLE role (LEXICAL | REF
+    earlier_role)} [TIME relation SPEECH_TIME] [MEASURE decimal unit] [QUANTIFIER
+    kind [decimal]] .
   sequence: ACT SEQUENCE LEXICAL THEN LEXICAL {THEN LEXICAL} .
   parallel: ACT PARALLEL LEXICAL AND LEXICAL {AND LEXICAL} .
   repetition: ACT REPEAT positive_integer TIMES LEXICAL .
   conditional: ACT IF LEXICAL THEN LEXICAL .
   ordering_rule: Keywords and modifiers occur only in the documented order; reordering
     is an error, not an alternative parse.
+  role_reference: REF reuses the exact argument occurrence of an earlier role in the
+    same clause; it does not infer identity from equal lexical labels.
+  scoped_slot: ACT [NOT] [MODAL mode] [ASPECT aspect] COMPOUND {SLOT ["local_id",...]
+    (LEXICAL | REF ["earlier_slot",...])} [TIME relation SPEECH_TIME] [MEASURE decimal
+    unit] [QUANTIFIER kind [decimal]] .
+  scoped_slot_rules: SLOT uses exact nonempty JSON-array paths from the versioned
+    compound expansion. REF names an earlier bound path in this clause and reuses
+    its argument occurrence. Bind every slot exactly once, satisfy all identity constraints,
+    and do not mix SLOT with ROLE. No inference from equal labels. Local compiler
+    extension; browser controlled-text support is a separate boundary.
 inventories:
   speech_acts:
     ASSERT: assertion
@@ -104,6 +115,8 @@ inventories:
   - radian
   - bit
   - byte
+  - kelvin
+  - candela_per_square_meter
   runtime_states:
     0: state zero
     1: state one
@@ -146,6 +159,13 @@ errors:
 - invalid_repetition
 - invalid_conditional
 - unexpected_token
+- ambiguous_compound_binding
+- unknown_role_reference
+- invalid_slot_path
+- invalid_slot_binding
+- duplicate_slot_binding
+- unknown_slot_reference
+- mixed_compound_bindings
 pipeline:
 - controlled input
 - deterministic compiler

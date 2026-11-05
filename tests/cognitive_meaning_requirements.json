@@ -1,0 +1,116 @@
+{
+  "status": "authored_acceptance_requirements_not_passing_tests",
+  "review": "reviews/cognitive_foundations.md",
+  "cases": [
+    {
+      "id": "attention_without_understanding",
+      "contrast": [
+        "Nora pays attention to Eli.",
+        "Nora understands Eli."
+      ],
+      "obligations": [
+        "Attention may be directed at unintelligible speech.",
+        "Do not infer understood content, correct interpretation or empathy from attention."
+      ]
+    },
+    {
+      "id": "receipt_without_understanding",
+      "contrast": [
+        "Nora receives the message.",
+        "Nora understands the message."
+      ],
+      "obligations": [
+        "Receipt does not entail comprehension.",
+        "Understanding must preserve a content reference and the relevant comprehension criterion."
+      ]
+    },
+    {
+      "id": "revision_without_learning",
+      "contrast": [
+        "Nora revised her idea of the route.",
+        "Nora learned the route."
+      ],
+      "obligations": [
+        "A revision can introduce error or lose usable knowledge.",
+        "Route familiarity, memorization and practical navigation are separate readings."
+      ]
+    },
+    {
+      "id": "learning_without_current_attention",
+      "contrast": [
+        "Nora learned the route yesterday.",
+        "Nora is thinking about the route now."
+      ],
+      "obligations": [
+        "Acquisition completion does not assert current attention or permanent retention.",
+        "Speech-time placement and lexical result must remain separate from runtime state."
+      ]
+    },
+    {
+      "id": "curiosity_without_attention",
+      "contrast": [
+        "Orin is curious about the map.",
+        "Orin is paying attention to the map."
+      ],
+      "obligations": [
+        "A desire to find something out can persist while attention is elsewhere.",
+        "A watched map can be watched without interest in finding anything out."
+      ]
+    },
+    {
+      "id": "curiosity_without_success",
+      "contrast": [
+        "Orin is curious about the map.",
+        "Orin learned who made the map."
+      ],
+      "obligations": [
+        "An epistemic aim does not assert a correct answer or successful acquisition.",
+        "A topic label cannot silently select the question being asked."
+      ]
+    },
+    {
+      "id": "curiosity_without_pleasure",
+      "contrast": [
+        "Orin is curious about the accident.",
+        "Orin enjoys the accident."
+      ],
+      "obligations": [
+        "Interest in finding out can coexist with fear or distress.",
+        "Pleasure is not an ingredient required by curiosity."
+      ]
+    },
+    {
+      "id": "understanding_senses",
+      "contrast": [
+        "Eli understands Nora.",
+        "Eli understands what Nora said."
+      ],
+      "obligations": [
+        "The first may concern speech comprehension, motives or empathetic understanding.",
+        "Do not manufacture an utterance or motive from the proper-name label."
+      ]
+    },
+    {
+      "id": "learning_false_content",
+      "contrast": [
+        "Nora learned the claim by heart.",
+        "Nora learned that the claim is true."
+      ],
+      "obligations": [
+        "Memorization can concern false content.",
+        "Factive propositional learning and acquisition of a representation need distinct commitments."
+      ]
+    },
+    {
+      "id": "lexical_runtime_independence",
+      "contrast": [
+        "Nora learned the route [0].",
+        "Nora learned the route [2]."
+      ],
+      "obligations": [
+        "Runtime cannot replace lexical completion, success, truth, negation or temporal placement.",
+        "Preserve lexical addresses and runtime endings independently."
+      ]
+    }
+  ]
+}

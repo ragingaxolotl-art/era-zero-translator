@@ -127,7 +127,7 @@ validate = lambda do |definition|
 end
 
 checks.add("atomic authority", "all 324 referenced atoms are canonical and generated forms remain valid", canonical_ids.length == 324 && EraZeroValidation.generated_field_errors(atoms).empty?)
-checks.add("atomic immutability", "Gate 4A records the unchanged full atomic fingerprint", architecture.dig("metadata", "atomic_lexicon_fingerprint") == EraZeroValidation.fingerprint(atoms_doc.fetch("atoms")) && architecture.dig("metadata", "atomic_meanings_changed") == false && architecture.dig("metadata", "generated_fields_changed") == false)
+checks.add("atomic immutability", "Gate 4A baseline matches directly or through exact editorial reconciliation", EraZeroValidation.atomic_fingerprint_matches?(atoms_doc.fetch("atoms"), architecture.dig("metadata", "atomic_lexicon_fingerprint")) && architecture.dig("metadata", "atomic_meanings_changed") == false && architecture.dig("metadata", "generated_fields_changed") == false)
 checks.add("scope boundary", "architecture owns composition but excludes dictionary, English index, IR, and translator", architecture.dig("scope", "owns").length >= 8 && architecture.dig("scope", "does_not_own").length >= 6)
 checks.add("source compound order", "describer-before-head and no-gap modifier binding are preserved", architecture.dig("source_grounded_invariants", "describer_before_head").include?("before") && architecture.dig("source_grounded_invariants", "modifier_timing").include?("no-gap"))
 checks.add("source argument performance", "short-gap arguments and head-only role contour are preserved", architecture.dig("source_grounded_invariants", "argument_timing").include?("short gap") && architecture.dig("source_grounded_invariants", "head_role_contour").include?("head"))

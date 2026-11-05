@@ -1,0 +1,873 @@
+import {ONGOING_ENTRY} from './ongoing_entry.mjs';
+import {entryModalScopes,entryModalChoices} from './entry_modality.mjs';
+import {PHYSICAL_ENTRY} from './physical_entry.mjs';
+import {SPATIAL_RELATIONS} from './spatial_relations.mjs';
+import {expandNegativeContractions} from './contractions.mjs';
+import {COMPLETED_RUNNING} from './completed_running.mjs';
+import {DESTINATION_RUNNING} from './destination_running.mjs';
+import {RUNNING} from './running.mjs';
+import {SWIMMING,SWIMMING_ACROSS} from './swimming.mjs';
+import {CONTEXTUAL_NORMS} from './contextual_standards.mjs';
+import {luminanceValue} from './luminance.mjs';
+import {FELT_CONDITIONS} from './felt_conditions.mjs';
+import {massKilograms} from './mass.mjs';
+import {temperaturePointKelvin} from './temperature.mjs';
+import {renderLexicalOccurrences,lexicalGloss} from './bound_compounds.mjs';
+import {NOMINAL_PATTERN,parseNominal} from './nominals.mjs';
+import {registerFor} from './roles.mjs';
+import {canonicalDigest} from './engine.mjs';
+import {encodeName, notesForName} from './names.mjs';
+import {deicticReference,deicticEvent,nominalMarker,NOMINAL_MODES} from './references.mjs';
+
+// Reviewed constructions use exact process senses, never a generic synonym pool.
+const ACTIONS = [
+  ONGOING_ENTRY,
+  {...ONGOING_ENTRY,pattern:'is physically entering',negativePattern:'is not physically entering',requiredInterpretation:undefined},
+  PHYSICAL_ENTRY,
+  {...PHYSICAL_ENTRY,pattern:'physically entered',negativePattern:'did not physically enter',requiredInterpretation:undefined},
+  ...SPATIAL_RELATIONS,
+  DESTINATION_RUNNING,
+  {pattern:'acquired physical custody of',negativePattern:'did not acquire physical custody of',predicate:'CMP:c332d2e89b9f6177486fc93b',key:'completed_physical_custody_acquisition',wording:'acquired physical custody of',role:'source',targetRole:'target',speechTime:'before',compoundSlots:{source:['q-custody','s-source'],target:['q-custody','s-target']},semanticNote:'Acquisition means that this holder lacked practical physical custody of this object immediately before the transition and had it at culmination. It does not assert ownership, a previous custodian, handover, object movement or continued custody afterward.'},
+  {pattern:'has physical custody of',negativePattern:'does not have physical custody of',predicate:'CMP:0aca609416668978e1527dac',key:'practical_physical_custody',wording:'has physical custody of',role:'source',targetRole:'target',compoundSlots:{source:['s-source'],target:['s-target']},semanticNote:'Established practical control over physical access and handling of this distinct material object, directly or through a controlled physical intermediary. This does not assert ownership, entitlement, exclusivity, load support, receipt or transfer.'},
+  {pattern:'is carrying',predicate:'CMP:7a6749aaf61cd6181e544bd6',key:'ongoing_physical_carrying',aspect:'ongoing',wording:'is carrying',role:'source',targetRole:'target',compoundSlots:{source:['q-support','s-source'],target:[['q-support','s-target'],['s-load']]},semanticNote:'Physical conveyance of a distinct material load borne upon, within or suspended from the carrier’s moving support; support and movement concern that same load and interval.'},
+  {pattern:'is physically supporting',predicate:'CMP:eef9fff8ac6618ce60927f18',key:'active_physical_load_support',wording:'is physically supporting',role:'source',targetRole:'target',compoundSlots:{source:['s-source'],target:['s-target']},semanticNote:'Physical load-bearing support: this source bears at least part of the distinct material load. This does not assert carrying, movement, intention, or emotional support.'},
+  {pattern:'has a directed data link to',negativePattern:'does not have a directed data link to',predicate:'CMP:742b44d9ead66b451346708a',key:'directed_data_link',wording:'has a directed data link to',role:'source',targetRole:'target',compoundSlots:{source:['a-source-01'],target:['a-target-01']},semanticNote:'An established directed communication relation with bounded data content; it does not assert an ongoing transfer.'},
+  {pattern:'is registering optical input from',predicate:'CMP:bcfd189eb305cf364ada975a',key:'ongoing_optical_registration',wording:'is registering optical input from',role:'target',targetRole:'source',semanticNote:'Optical sensory registration uses a light-carried input. It does not by itself assert conscious seeing, attention, recognition, color, or understanding.'},
+  {pattern:'is registering acoustic input from',predicate:'CMP:42e9bd596b35612ed6cbe3ce',key:'ongoing_acoustic_registration',wording:'is registering acoustic input from',role:'target',targetRole:'source',semanticNote:'Acoustic sensory registration uses a propagating mechanical pressure or elastic vibration signal. It does not by itself assert conscious hearing, attention, recognition, speech comprehension, or understanding.'},
+  {pattern:'is registering sensory input from',predicate:'CMP:ade73037114406a2cd91ce13',key:'ongoing_sensory_registration',wording:'is registering sensory input from',role:'target',targetRole:'source',semanticNote:'Sensory registration is physical sensory transduction of information from this source into this receiver. It does not by itself assert consciousness, attention, recognition, understanding, or a particular sensory channel.'},
+  {pattern:'(?:can repair|is able to repair)',negativePattern:'(?:cannot repair|can not repair|is not able to repair|is unable to repair)',predicate:'REP:211',key:'available_target_repair',wording:'can repair',semanticNote:'Can means currently enabled to restore this target under applicable conditions; it does not assert permission, ongoing repair, or guaranteed success.'},
+  {pattern:'(?:can restore|is able to restore)',negativePattern:'(?:cannot restore|can not restore|is not able to restore|is unable to restore)',predicate:'REP:211',key:'available_target_restoration',wording:'can restore',semanticNote:'Can means currently enabled to restore this target under applicable conditions; it does not assert permission, ongoing restoration, or guaranteed success.'},
+  {pattern:'(?:loves|is loving)', negativePattern:'(?:does not love|is not loving)', predicate:'CMP:44718c92b66443c0c0f03ad7', key:'approved_poetic_love', wording:'loves', semanticNote:'DBA poetic love: an established life-bond characterized by self-awakening and the preserved, not-yet-expressed self.'},
+  {pattern:'is paying attention to', predicate:'MIN:211', key:'active_target_attention', wording:'is paying attention to', role:'experiencer'},
+  {pattern:'is revising a mental representation of', predicate:'MIN:111', key:'active_target_model_revision', wording:'is revising a mental representation of', role:'experiencer'},
+  {pattern:'is moving toward', predicate:'MOV:111', key:'active_target_approach', wording:'is moving toward', targetRole:'destination'},
+  {pattern:'is moving away from', predicate:'MOV:101', key:'active_source_departure', wording:'is moving away from', targetRole:'source'},
+  {pattern:'is moving relative to', predicate:'MOV:121', key:'active_shared_frame_movement', wording:'is moving relative to', targetRole:'environment'},
+  {pattern:'(?:cares for|is caring for)', predicate:'LIF:211', key:'active_care', gloss:'active care', wording:'actively cares for'},
+  {pattern:'is awakening', predicate:'LIF:111', key:'active_other_awakening', gloss:'actively awaken another', wording:'is awakening'},
+  {pattern:'is restoring', predicate:'REP:111', key:'active_target_restoration', gloss:'active target restoration', wording:'is restoring'},
+  {pattern:'is damaging', predicate:'WRN:111', key:'active_target_impairment', gloss:'active target impairment', wording:'is damaging'},
+  {pattern:'is repairing', predicate:'REP:111', key:'ongoing_target_repair', wording:'is repairing'},
+  {pattern:'is physically repairing', predicate:'CMP:2816a7eeb356c2148b26beca', key:'ongoing_physical_repair', wording:'is physically repairing'}
+];
+const DESCRIPTIONS = [
+  SWIMMING,
+  RUNNING,
+  ...FELT_CONDITIONS,
+  {pattern:'able to move', predicate:'MOV:201', key:'available_self_mobility', wording:'is able to move', semanticNote:'Presently available capacity to change the bearer’s own position. This does not assert ongoing movement, permission, a destination, or a particular manner of movement.'},
+  {pattern:'(?:damaged|impaired)', predicate:'WRN:001', key:'present_internal_impairment', wording:'is impaired', semanticNote:'Damaged or impaired describes a present intrinsic adverse condition relative to the bearer’s accepted state. It does not identify a damaging agent, mechanism, or ongoing damaging event.'},
+  {pattern:'restored', predicate:'REP:001', key:'present_internal_restored_state', wording:'is restored', semanticNote:'Restored describes the bearer’s applicable internal restoration condition as presently realized. It does not identify a restorer or assert that restoration is still in progress.'},
+  {pattern:'able to pay attention', predicate:'MIN:201', key:'available_attentional_capacity', wording:'is able to pay attention'},
+  {pattern:'physically energized', predicate:'MAT:001', key:'energized_material_substrate', wording:'is physically energized', semanticNote:'The bearer’s material substrate is presently energized in the contextual physical sense. This does not assert electrical supply, switching, successful operation, light emission, or consciousness.'},
+  {pattern:'conscious', predicate:'LIF:011', key:'conscious_other', wording:'is conscious'},
+  {pattern:'dormant', predicate:'LIF:012', key:'dormant_other', wording:'is dormant'}
+];
+// Shift a decimal percentage by two places without binary floating point.
+export function confidenceFromPercent(value) {
+  if(typeof value!=='string'||value.length>1000||!/^\d+(?:\.\d+)?$/.test(value))return null;
+  let [whole,fraction='']=value.split('.');whole=whole.replace(/^0+/,'')||'0';
+  if(whole.length>3||Number(whole)>100||(whole==='100'&&/[1-9]/.test(fraction)))return null;
+  const padded=whole.padStart(3,'0'),integer=padded.slice(0,-2),decimal=(padded.slice(-2)+fraction).replace(/0+$/,'');
+  return integer+(decimal?'.'+decimal:'');
+}
+function participantIdentity(text){
+  const nominal=parseNominal(text);
+  if(nominal)return `nominal:${nominal.mode}:${nominal.head}:${nominal.quantifier||''}:${nominal.value||''}`;
+  if(['I','me','Me'].includes(text))return 'discourse:speaker';
+  if(['You','you'].includes(text))return 'discourse:addressee';
+  return 'name:'+text.replaceAll('"','').toLowerCase();
+}
+// Parser-only instruction: preserve the inner clause's temporal scope before
+// adding a surrounding proposition operator. It becomes an ordinary nested
+// clause with existing time anchors, never a new semantic operator or sound.
+function nestParsedTime(inner){
+ if(inner.calendarDay===undefined&&inner.speechTime===undefined)return inner;
+ return {...inner,calendarDay:undefined,speechTime:undefined,scopes:[...(inner.scopes||[]),{temporalClause:true,...(inner.calendarDay!==undefined?{calendarDay:inner.calendarDay}:{}),...(inner.speechTime!==undefined?{speechTime:inner.speechTime}:{})}]};
+}
+export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
+  if(depth>16)return null;
+  const explicitState=String(input).trim().match(/^(.*?)\s+\[([012])\]([.!?]?)$/);
+  if(explicitState){
+    const content=explicitState[1].trim(),punctuation=explicitState[3],existing=content.match(/[.!?]$/)?.[0];
+    if(existing&&punctuation&&existing!==punctuation)return null;
+    const inner=parseNamedSentence(content+(existing?'':punctuation),depth+1,speechActs);
+    if(!inner||inner.runtimeState!==undefined)return null;
+    return {...inner,runtimeState:Number(explicitState[2])};
+  }
+  // Resolve the adjective as a semantic restriction, never part of a noun's
+  // sound label. One explicit standard per sentence is currently selectable.
+  const propertyPhrases=[...String(input).matchAll(/\b([Tt]he) (heavy|light) ([a-z]+)\b/g)].filter(match=>String(input).slice(0,match.index).split('"').length%2===1);
+  if(propertyPhrases.length){
+    if(propertyPhrases.length!==1)return null;
+    const match=propertyPhrases[0],plain=`${match[1]} ${match[3]}`;
+    if(!parseNominal(plain))return null;
+    const inner=parseNamedSentence(String(input).slice(0,match.index)+plain+String(input).slice(match.index+match[0].length),depth+1,speechActs);
+    if(!inner||inner.requiredInterpretation||inner.nominalProperty)return null;
+    const participants=inner.participants||[{text:inner.actorText},...(inner.target?[{text:inner.targetText}]:[])];
+    const indices=participants.flatMap((p,i)=>p.text?.toLowerCase()===plain.toLowerCase()?[i]:[]);
+    if(indices.length!==1)return null;
+    return {...inner,adjective:match[2],requiredInterpretation:'mass_standard',nominalProperty:{participantIndex:indices[0]},construction:`nominal_mass_${inner.construction}`,explicitInterpretation:String(input).trim()};
+  }
+  const participant='(I|me|you|'+NOMINAL_PATTERN+'|(?!(?:She|He|It|They|We|Her|Him|Them|Us)\\b)[A-Z][a-z]+|"[A-Za-z]+(?:[ -][A-Za-z]+)*")';
+  // Delivery is polysemous. This path is available only after explicitly
+  // selecting the established carrying-arrival plus custody-transfer meaning.
+  const deliveryPrefix=String(input).trim().match(new RegExp(`^${participant} (?:(?:does not|do not|did not|is|am|are|was|were) (?:not )?)?(?:habitually )?(delivers|delivered|delivering|deliver)\\b`));
+  const deliveryQuestion=speechActs&&String(input).trim().endsWith('?')?String(input).trim().match(new RegExp(`^(?:[Dd]o|[Dd]oes|[Dd]id|[Ii]s|[Aa]m|[Aa]re|[Ww]as|[Ww]ere) ${participant} (?:not )?(?:habitually )?(deliver|delivering)\\b`)):null;
+  const deliveryMatch=deliveryPrefix||deliveryQuestion;
+  if(deliveryMatch){
+    const verb=deliveryMatch.at(-1),text=String(input).trim(),start=deliveryMatch[0].length-verb.length;
+    const equivalent=text.slice(0,start)+({deliver:'carry',delivers:'carries',delivered:'carried',delivering:'carrying'})[verb]+text.slice(start+verb.length);
+    const inner=parseNamedSentence(equivalent,depth+1,speechActs);
+    if(!inner?.requiredDestination)return null;
+    return {...inner,requiredDeliveryInterpretation:true,construction:`delivery_wording_${inner.construction}`,explicitInterpretation:text};
+  }
+  const acquisitionPresent=String(input).trim().match(new RegExp(`^${participant} (acquires|acquire|does not acquire|do not acquire) physical custody of ${participant}[.]?$`));
+  if(acquisitionPresent){
+    const subject=acquisitionPresent[1],verb=acquisitionPresent[2],object=acquisitionPresent[3],firstOrSecond=/^(I|you)$/i.test(subject);
+    if(!(firstOrSecond?['acquire','do not acquire']:['acquires','does not acquire']).includes(verb))return null;
+    const inner=parseNamedSentence(`${subject} ${verb.includes('not')?'did not acquire':'acquired'} physical custody of ${object}.`,depth+1,false);
+    if(!inner)return null;
+    return {...inner,speechTime:undefined,requiredViewpoint:true,viewpointActivity:'acquisition',construction:'simple_present_custody_acquisition',explicitInterpretation:String(input).trim()};
+  }
+  const normalized=expandNegativeContractions(String(input),participant);
+  if(normalized!==String(input)){
+    const inner=parseNamedSentence(normalized,depth+1,speechActs);
+    return inner?{...inner,explicitInterpretation:inner.explicitInterpretation||normalized.trim()}:null;
+  }
+  if(speechActs){
+    const mayQuestion=String(input).trim().match(new RegExp(`^[Mm]ay ${participant} (not )?((?:physically )?enter|be (?:physically )?entering) ${participant}[?]$`));
+    if(mayQuestion){
+      const inner=parseNamedSentence(`${mayQuestion[1]} may ${mayQuestion[2]||''}${mayQuestion[3]} ${mayQuestion[4]}.`,depth+1,false);
+      return inner?{...inner,speechAct:'question',construction:`question_${inner.construction}`,explicitInterpretation:String(input).trim()}:null;
+    }
+    const entryCommand=String(input).trim().match(new RegExp(`^([Dd]o not )?[Ee]nter ${participant}[.!]?$`));
+    if(entryCommand){
+      const inner=parseNamedSentence(`you ${entryCommand[1]?'did not enter':'entered'} ${entryCommand[2]}.`,depth+1,false);
+      if(!inner)return null;
+      return {...inner,speechTime:undefined,speechAct:'command',construction:`command_${inner.construction}`,explicitInterpretation:String(input).trim(),semanticNote:inner.semanticNote+' This requests or prohibits the event without asserting that entry occurred.'};
+    }
+    const runningCommand=String(input).trim().match(new RegExp(`^([Dd]o not )?[Rr]un(?: (toward|to) ${participant})?[.!]?$`));
+    if(runningCommand){
+      const negative=!!runningCommand[1],relation=runningCommand[2],goal=runningCommand[3];
+      const statement=relation==='to'?`you ${negative?'did not run':'ran'} to ${goal}.`:`you are ${negative?'not ':''}running${goal?' toward '+goal:''}.`;
+      const inner=parseNamedSentence(statement,depth+1,false);
+      if(!inner)return null;
+      return {...inner,speechTime:undefined,speechAct:'command',construction:`command_${inner.construction}`,explicitInterpretation:String(input).trim(),semanticNote:inner.semanticNote+' This addresses the listener and requests or prohibits the event; it does not assert that running or arrival occurred.'};
+    }
+
+    const runningQuestion=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?run to ${participant}[?]$`));
+    if(runningQuestion){
+      const inner=parseNamedSentence(`${runningQuestion[1]} ${runningQuestion[2]?'did not run':'ran'} to ${runningQuestion[3]}.`,depth+1,false);
+      return inner?{...inner,speechAct:'question',explicitInterpretation:String(input).trim()}:null;
+    }
+
+    const transferCommand=String(input).trim().match(new RegExp(`^([Dd]o not )?[Tt]ransfer physical custody of ${participant} to ${participant}[.!]?$`));
+    const transferQuestion=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?transfer physical custody of ${participant} to ${participant}\\?$`));
+    if(transferCommand||transferQuestion){
+      const statement=transferCommand?`you ${transferCommand[1]?'did not transfer':'transferred'} physical custody of ${transferCommand[2]} to ${transferCommand[3]}.`:`${transferQuestion[1]} ${transferQuestion[2]?'did not transfer':'transferred'} physical custody of ${transferQuestion[3]} to ${transferQuestion[4]}.`;
+      const inner=parseNamedSentence(statement,depth+1);
+      if(!inner)return null;
+      return {...inner,...(transferCommand?{speechTime:undefined}:{}),speechAct:transferCommand?'command':'question',construction:`${transferCommand?'command':'question'}_${inner.construction}`,explicitInterpretation:String(input).trim()};
+    }
+
+    const carryingCommand=String(input).trim().match(new RegExp(`^(?:[Dd]o not )?[Cc]arry ${participant}(?: (toward|to) ${participant})?[.!]?$`));
+    if(carryingCommand){
+      const negative=/^[Dd]o not /.test(String(input).trim());
+      const inner=parseNamedSentence(`you are ${negative?'not ':''}carrying ${carryingCommand[1]}${carryingCommand[3]?' '+carryingCommand[2]+' '+carryingCommand[3]:''}.`,depth+1);
+      if(!inner)return null;
+      return {...inner,aspect:undefined,speechAct:'command',construction:`command_${inner.construction}`,explicitInterpretation:String(input).trim()};
+    }
+    const acquisitionCommand=String(input).trim().match(new RegExp(`^([Dd]o not )?[Aa]cquire physical custody of ${participant}[.!]?$`));
+    if(acquisitionCommand){
+      const inner=parseNamedSentence(`you ${acquisitionCommand[1]?'did not acquire':'acquired'} physical custody of ${acquisitionCommand[2]}.`,depth+1);
+      if(!inner)return null;
+      return {...inner,speechTime:undefined,speechAct:'command',construction:`command_${inner.construction}`,explicitInterpretation:String(input).trim(),semanticNote:inner.semanticNote+' This requests the event without asserting that it occurred.'};
+    }
+    const commands=[['care for','cares for'],['restore','is restoring'],['repair','is repairing'],['awaken','is awakening'],['damage','is damaging'],['physically repair','is physically repairing'],['physically support','is physically supporting'],['move toward','is moving toward'],['move away from','is moving away from'],['move relative to','is moving relative to'],['pay attention to','is paying attention to'],['revise a mental representation of','is revising a mental representation of']];
+    for(const [verb,wording] of commands){
+      const command=String(input).trim().match(new RegExp(`^(?:[Dd]o not )?${verb} ${verb==='care for'?'(.+?)':participant}[.!]?$`,'i'));
+      if(command){
+        const negative=/^[Dd]o not /.test(String(input).trim());
+        const predicate=negative?(verb==='care for'?'does not care for':wording.replace('is ','is not ')):wording;
+        const inner=parseNamedSentence(`you ${predicate} ${command[1]}.`,depth+1);
+        if(!inner)return null;
+        return {...inner,speechAct:'command',construction:`command_${inner.construction}`,explicitInterpretation:String(input).trim()};
+      }
+    }
+    const question=String(input).trim().match(new RegExp(`^(?:[Ii]s|[Aa]re|[Aa]m) ${participant} (.+)\\?$`));
+    const careQuestion=String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?care for (.+)\\?$`));
+    const pastQuestion=String(input).trim().match(new RegExp(`^(?:[Ww]as|[Ww]ere) ${participant} (.+)\\?$`));
+    const didQuestion=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?(care for|restore|repair|awaken|damage|physically repair|arrive at|physically enter|enter|acquire physical custody of) ${participant}( (?:yesterday|today))?\\?$`));
+    const pastVerbs={'physically enter':'physically entered',enter:'entered','care for':'cared for',restore:'restored',repair:'repaired',awaken:'awakened',damage:'damaged','physically repair':'physically repaired','arrive at':'arrived at','acquire physical custody of':'acquired physical custody of'};
+    const carryDid=String(input).trim().match(new RegExp(`^[Dd]id ${participant} (not )?(habitually )?carry (.+)\\?$`));
+    const carryHabit=String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?habitually carry (.+)\\?$`));
+    const carrySimple=String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?carry (.+)\\?$`));
+    const custodyQuestion=String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?have physical custody of ${participant}\\?$`));
+    const statement=custodyQuestion?`${custodyQuestion[1]} ${custodyQuestion[2]?'does not have':'has'} physical custody of ${custodyQuestion[3]}.`:carrySimple?`${carrySimple[1]} ${carrySimple[2]?'does not carry':'carries'} ${carrySimple[3]}.`:carryDid?`${carryDid[1]} ${carryDid[2]?'did not '+(carryDid[3]||'')+'carry':(carryDid[3]||'')+'carried'} ${carryDid[4]}.`:carryHabit?`${carryHabit[1]} ${carryHabit[2]?'does not habitually carry':'habitually carries'} ${carryHabit[3]}.`:question?`${question[1]} is ${question[2]}.`:careQuestion?`${careQuestion[1]} ${careQuestion[2]?'does not care for':'cares for'} ${careQuestion[3]}.`:pastQuestion?`${pastQuestion[1]} was ${pastQuestion[2]}.`:didQuestion?`${didQuestion[1]} ${didQuestion[2]?'did not '+didQuestion[3]:pastVerbs[didQuestion[3]]} ${didQuestion[4]}${didQuestion[5]||''}.`:null;
+    if(statement){
+      const inner=parseNamedSentence(statement,depth+1);
+      if(!inner)return null;
+      return {...inner,speechAct:'question',construction:`question_${inner.construction}`,explicitInterpretation:String(input).trim()};
+    }
+  }
+  const propositionNegation=String(input).trim().match(/^[Ii]t is not the case that (.+)$/);
+  if(propositionNegation){
+    let inner=parseNamedSentence(propositionNegation[1],depth+1,false);
+    if(!inner||inner.speechAct)return null;
+    inner=nestParsedTime(inner);
+    return {...inner,scopes:[...(inner.scopes||[]),{operator:'negation'}],construction:`proposition_negation_${inner.construction}`,explicitInterpretation:String(input).trim(),semanticNote:[inner.semanticNote,'Negates the complete following proposition, including its participant count; it does not count participants satisfying a negated property.'].filter(Boolean).join(' ')};
+  }
+  const confidence=String(input).trim().match(/^[Ww]ith ([0-9]+(?:\.[0-9]+)?)% confidence, (.+)$/);
+  if(confidence){
+    const strength=confidenceFromPercent(confidence[1]),inner=parseNamedSentence(confidence[2],depth+1);
+    if(strength===null||!inner?.scopes?.length)return null;
+    const outer=inner.scopes.at(-1);
+    // Attaching confidence to an outer negation would require a distinct scope.
+    if(outer.operator!=='modality'||!['possible','necessary','predicted'].includes(outer.mode)||outer.strength!==undefined)return null;
+    return {...inner,scopes:[...inner.scopes.slice(0,-1),{...outer,strength}],construction:`confidence_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
+  const modal=String(input).trim().match(/^[Ii]t is (not )?(possible|necessary) that (.+)$/);
+  if(modal){
+    let inner=parseNamedSentence(modal[3],depth+1);
+    if(!inner||inner.speechAct)return null;
+    inner=nestParsedTime(inner);
+    const scopes=[...(inner.scopes||[]),{operator:'modality',mode:modal[2]}];
+    if(modal[1])scopes.push({operator:'negation'});
+    return {...inner,scopes,construction:`scoped_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
+  const mayEntry=String(input).trim().match(new RegExp(`^${participant} may (not )?((?:physically )?enter|be (?:physically )?entering) ${participant}[.]?$`));
+  if(mayEntry){
+    const inner=parseNamedSentence(`${mayEntry[1]} ${mayEntry[3].startsWith('be ')?'is physically entering':'physically entered'} ${mayEntry[4]}.`,depth+1,false);
+    if(!inner)return null;
+    return {...inner,speechTime:undefined,requiredInterpretation:'entry_modality',entryModalNegative:!!mayEntry[2],scopes:[{entryModal:true,negative:!!mayEntry[2]}],construction:'modal_physical_entry',explicitInterpretation:String(input).trim(),semanticNote:inner.semanticNote+' May requires a permission or possibility interpretation; neither asserts occurrence or physical ability.'};
+  }
+  const permissionEntry=String(input).trim().match(new RegExp(`^${participant} (?:is|am|are) (not )?permitted (not )?to (not )?((?:physically )?enter|be (?:physically )?entering) ${participant}[.]?$`));
+  if(permissionEntry){
+    if([permissionEntry[2],permissionEntry[3],permissionEntry[4]].filter(Boolean).length>1)return null;
+    const physical=permissionEntry[5].includes('physically'),ongoing=permissionEntry[5].startsWith('be ');
+    const wording=ongoing?`is ${physical?'physically ':''}entering`:`${physical?'physically ':''}entered`;
+    const inner=parseNamedSentence(`${permissionEntry[1]} ${wording} ${permissionEntry[6]}.`,depth+1,false);
+    if(!inner)return null;
+    const scopes=[...(permissionEntry[3]||permissionEntry[4]?[{operator:'negation'}]:[]),{operator:'modality',mode:'permitted'},...(permissionEntry[2]?[{operator:'negation'}]:[])];
+    return {...inner,speechTime:undefined,scopes,construction:'permitted_physical_entry',explicitInterpretation:String(input).trim(),semanticNote:inner.semanticNote+' The permission scopes this event type; occurrence, ability and a named permitting authority are not asserted.'};
+  }
+  // Calendar-day statements retain their interval; tense is not runtime state.
+  const calendar=String(input).trim().match(/^(.*?) (yesterday|today|tomorrow)[.]?$/);
+  if(calendar){
+    let clause=calendar[1];
+    const day=calendar[2];
+    const rewrite=(forms)=>{
+      for(const [surface,replacement] of forms){
+        const match=clause.match(new RegExp(`^${participant} ${surface} (.+)$`));
+        if(match)return `${match[1]} ${replacement} ${match[2]}`;
+      }
+      return null;
+    };
+    if(day==='tomorrow')clause=rewrite([['will not be','is not'],['will be','is'],['will not care for','does not care for'],['will care for','cares for']]);
+    if(clause===null)return null;
+    const inner=parseNamedSentence(clause,depth+1);
+    if(!inner||inner.calendarDay!==undefined||inner.scopes?.length||inner.speechAct||(day==='tomorrow'&&['thermal_standard','mass_standard','luminance_standard','texture_standard'].includes(inner.requiredInterpretation))||(day==='yesterday'&&inner.speechTime!=='before')||(day==='tomorrow'&&inner.speechTime!==undefined))return null;
+    return {...inner,...(day==='yesterday'?{speechTime:undefined}:{}),...(day==='tomorrow'?{requiredInterpretation:'future_assertion',semanticNote:[inner.semanticNote,'Interprets will as a future assertion; promise, intention, and willingness are not inferred.'].filter(Boolean).join(' ')}:{}),calendarDay:{yesterday:'-1',today:'0',tomorrow:'1'}[day],construction:`calendar_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
+  const swimmingHabitQuestion=speechActs&&String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?habitually swim( across .+)?[?]$`));
+  if(swimmingHabitQuestion){
+    const inner=parseNamedSentence(`${swimmingHabitQuestion[1]} ${swimmingHabitQuestion[2]?'does not habitually swim':'habitually swims'}${swimmingHabitQuestion[3]||''}.`,depth+1,false);
+    return inner?{...inner,speechAct:'question',explicitInterpretation:String(input).trim()}:null;
+  }
+  const swimmingHabit=String(input).trim().match(new RegExp(`^${participant} (habitually swims|habitually swim|does not habitually swim|do not habitually swim)( across .+)?[.]?$`));
+  if(swimmingHabit){
+    const inner=parseNamedSentence(`${swimmingHabit[1]} is ${swimmingHabit[2].includes('not')?'not ':''}swimming${swimmingHabit[3]||''}`,depth+1,false);
+    if(!inner||!['ongoing_bodily_swimming','ongoing_swimming_across_region'].includes(inner.key)||inner.speechAct||inner.scopes?.length||inner.calendarDay!==undefined||inner.speechTime!==undefined)return null;
+    return {...inner,aspect:'habitual',construction:`habitual_${inner.construction}`,semanticNote:inner.semanticNote+' A recurring swimming practice; no particular occurrence, frequency or schedule is asserted.',explicitInterpretation:String(input).trim()};
+  }
+  const swimQuestion=speechActs&&String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?swim( across .+)?[?]$`));
+  if(swimQuestion){
+    const inner=parseNamedSentence(`${swimQuestion[1]} ${swimQuestion[2]?'does not swim':'swims'}${swimQuestion[3]||''}.`,depth+1,false);
+    return inner?{...inner,speechAct:'question',explicitInterpretation:String(input).trim()}:null;
+  }
+  const simpleSwimming=String(input).trim().match(new RegExp(`^${participant} (does not swim|do not swim|swims|swim)( across .+)?[.]?$`));
+  if(simpleSwimming){
+    const inner=parseNamedSentence(`${simpleSwimming[1]} is ${simpleSwimming[2].includes('not')?'not ':''}swimming${simpleSwimming[3]||''}`,depth+1,false);
+    if(!inner||!['ongoing_bodily_swimming','ongoing_swimming_across_region'].includes(inner.key)||inner.requiredViewpoint||inner.requiredInterpretation||inner.speechAct||inner.scopes?.length||inner.calendarDay!==undefined||inner.speechTime!==undefined)return null;
+    return {...inner,aspect:undefined,requiredViewpoint:true,viewpointActivity:'swimming',construction:`simple_present_${inner.construction}`,explicitInterpretation:String(input).trim()};
+  }
+  const entryQuestion=speechActs&&String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?(habitually )?(physically )?enter ${participant}[?]$`));
+  if(entryQuestion){
+    const inner=parseNamedSentence(`${entryQuestion[1]} ${entryQuestion[2]?'does not ':''}${entryQuestion[3]||''}${entryQuestion[4]||''}${entryQuestion[2]?'enter':'enters'} ${entryQuestion[5]}.`,depth+1,false);
+    return inner?{...inner,speechAct:'question',explicitInterpretation:String(input).trim()}:null;
+  }
+  const simpleEntry=String(input).trim().match(new RegExp(`^${participant} ((?:does not |do not )?)(habitually )?(physically )?(enters|enter) ${participant}[.]?$`));
+  if(simpleEntry){
+    const [,actor,negative,habit,physical,,region]=simpleEntry;
+    const inner=parseNamedSentence(`${actor} ${negative?'did not ':''}${physical||''}${negative?'enter':'entered'} ${region}.`,depth+1,false);
+    if(!inner||inner.key!=='completed_physical_entry')return null;
+    return {...inner,speechTime:undefined,aspect:habit?'habitual':undefined,requiredViewpoint:!habit,viewpointActivity:'entry',construction:`${habit?'habitual':'simple_present'}_${inner.construction}`,explicitInterpretation:String(input).trim()};
+  }
+  const runQuestion=speechActs&&String(input).trim().match(new RegExp(`^[Dd]o(?:es)? ${participant} (not )?(habitually )?run((?: toward| to) .+)?[?]$`));
+  if(runQuestion){
+    const inner=parseNamedSentence(`${runQuestion[1]} ${runQuestion[2]?'does not ':''}${runQuestion[3]||''}${runQuestion[2]?'run':'runs'}${runQuestion[4]||''}.`,depth+1,false);
+    return inner?{...inner,speechAct:'question',explicitInterpretation:String(input).trim()}:null;
+  }
+  const simpleRunning=String(input).trim().match(new RegExp(`^${participant} ((?:does not |do not )?)(habitually )?(runs|run)((?: toward| to) .+)?[.]?$`));
+  if(simpleRunning){
+    const [,actor,negative,habit,,path='']=simpleRunning,to=path.startsWith(' to ');
+    const inner=parseNamedSentence(to?`${actor} ${negative?'did not run':'ran'}${path}`:`${actor} is ${negative?'not ':''}running${path}`,depth+1,false);
+    if(!inner||!['ongoing_bodily_running','ongoing_destination_running','completed_destination_running'].includes(inner.key)||inner.requiredInterpretation||inner.speechAct||inner.scopes?.length||inner.calendarDay!==undefined)return null;
+    return {...inner,speechTime:undefined,aspect:habit?'habitual':undefined,requiredViewpoint:!habit,viewpointActivity:'running',runningEndpoint:to,construction:`${habit?'habitual':'simple_present'}_${inner.construction}`,explicitInterpretation:String(input).trim()};
+  }
+  const simpleCarrying=String(input).trim().match(new RegExp(`^${participant} (does not carry|do not carry|carries|carry) (.+)$`));
+  if(simpleCarrying){
+    const inner=parseNamedSentence(`${simpleCarrying[1]} is ${simpleCarrying[2].includes('not')?'not ':''}carrying ${simpleCarrying[3]}`,depth+1);
+    if(!inner||inner.key!=='ongoing_physical_carrying'||inner.requiredViewpoint||inner.requiredInterpretation||inner.speechAct||inner.scopes?.length||inner.calendarDay!==undefined||inner.speechTime!==undefined)return null;
+    return {...inner,aspect:undefined,requiredViewpoint:true,construction:`simple_present_${inner.construction}`,explicitInterpretation:String(input).trim()};
+  }
+  // Viewpoint is separate from lexical phase, tense and runtime status. A
+  // bounded carrying episode does not imply reaching a destination.
+  const carryingViews=[
+    ['habitually carries','is carrying','habitual'],
+    ['habitually carry','is carrying','habitual'],
+    ['does not habitually carry','is not carrying','habitual'],
+    ['do not habitually carry','is not carrying','habitual'],
+    ['habitually carried','is carrying','habitual','before'],
+    ['did not habitually carry','is not carrying','habitual','before'],
+    ['carried','is carrying','bounded','before'],
+    ['did not carry','is not carrying','bounded','before']
+  ];
+  for(const [surface,replacement,aspect,speechTime] of carryingViews){
+    const match=String(input).trim().match(new RegExp(`^${participant} ${surface} (.+)$`));
+    if(!match)continue;
+    const inner=parseNamedSentence(`${match[1]} ${replacement} ${match[2]}`,depth+1);
+    if(!inner||inner.key!=='ongoing_physical_carrying'||(inner.aspect&&inner.aspect!=='ongoing')||inner.speechAct||inner.scopes?.length||inner.calendarDay!==undefined||inner.speechTime!==undefined)return null;
+    return {...inner,aspect,...(speechTime?{speechTime}:{}),construction:`${aspect}_${inner.construction}`,
+      semanticNote:inner.semanticNote+(aspect==='bounded'?' This presents a bounded carrying episode before speech time; it does not assert arrival or delivery.':' This describes a recurring carrying practice over the contextual reference interval; it does not assert carrying at this instant, a frequency, or a schedule.'),
+      explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
+  const pastForms=[
+    ['was','is'],['were','is'],['cared for','cares for'],['did not care for','does not care for'],
+    ['repaired','is repairing','REP:110'],['did not repair','is not repairing','REP:110'],
+    ['restored','is restoring','REP:110'],['did not restore','is not restoring','REP:110'],
+    ['awakened','is awakening','LIF:110'],['did not awaken','is not awakening','LIF:110'],
+    ['damaged','is damaging','WRN:110'],['did not damage','is not damaging','WRN:110'],
+    ['physically repaired','is physically repairing','CMP:22f8ddc4d9b2d1a818d38e9f'],
+    ['did not physically repair','is not physically repairing','CMP:22f8ddc4d9b2d1a818d38e9f']
+  ];
+  for(const [surface,replacement,completedPredicate] of pastForms){
+    const match=String(input).trim().match(new RegExp(`^${participant} ${surface} (.+)$`));
+    if(!match)continue;
+    const inner=parseNamedSentence(`${match[1]} ${replacement} ${match[2]}`,depth+1);
+    if(!inner||inner.calendarDay!==undefined||inner.speechTime!==undefined||inner.scopes?.length||inner.speechAct)return null;
+    return {...inner,...(completedPredicate?{predicate:completedPredicate}:{}),speechTime:'before',construction:`past_${inner.construction}`,explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
+  // Arrival commits to completed displacement, not merely a bounded period of
+  // approach. Its lexical completion remains independent of runtime 0/1/2.
+  const completedRunning=String(input).trim().match(new RegExp(`^${participant} (ran to|did not run to) ${participant}[.]?$`));
+  if(completedRunning){
+    const texts=[completedRunning[1],completedRunning[3]];
+    if(texts.some(text=>parseNominal(text)?.quantifier)||participantIdentity(texts[0])===participantIdentity(texts[1]))return null;
+    if(/^the (?:conclusion|decision|answer|solution|agreement|verdict|understanding)$/i.test(texts[1]))return null;
+    return {...COMPLETED_RUNNING,speechTime:'before',negated:completedRunning[2]==='did not run to',construction:'completed_destination_running',participants:texts.map((text,index)=>({text,label:text.replaceAll('"',''),role:index?'destination':'actor'})),explicitInterpretation:String(input).trim()};
+  }
+  const arrival=String(input).trim().match(new RegExp(`^${participant} (arrived at|did not arrive at) ${participant}[.]?$`));
+  if(arrival){
+    const texts=[arrival[1],arrival[3]];
+    // These established idioms concern reasoning or agreement, not spatial displacement.
+    if(/^the (?:conclusion|decision|answer|solution|agreement|verdict|understanding)$/i.test(texts[1]))return null;
+    if(texts.some(text=>parseNominal(text)?.quantifier)||participantIdentity(texts[0])===participantIdentity(texts[1]))return null;
+    return {actor:texts[0].replaceAll('"',''),actorText:texts[0],target:texts[1].replaceAll('"',''),targetText:texts[1],
+      predicate:'MOV:110',key:'completed_target_arrival',role:'actor',targetRole:'destination',speechTime:'before',
+      negated:arrival[2]==='did not arrive at',construction:'completed_target_arrival',
+      semanticNote:'Spatial arrival: completion of this mover’s displacement to the destination before speech time. This does not assert continued presence there, transfer of possession, a recipient, intention, or carriage of another entity. Negation denies that completed arrival; it does not assert that an approach occurred.',
+      explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
+  const custodyTransfer=String(input).trim().match(new RegExp(`^${participant} (transferred|did not transfer) physical custody of ${participant} to ${participant}[.]?$`));
+  if(custodyTransfer){
+    const texts=[custodyTransfer[1],custodyTransfer[3],custodyTransfer[4]];
+    if(texts.some(text=>parseNominal(text)?.quantifier)||new Set(texts.map(participantIdentity)).size!==3)return null;
+    return {predicate:'CMP:e3075c904daf1c647969fef6',key:'completed_physical_custody_transfer',speechTime:'before',negated:custodyTransfer[2]==='did not transfer',construction:'completed_physical_custody_transfer',
+      participants:texts.map((text,index)=>({text,label:text.replaceAll('"',''),role:['source','target','recipient'][index]})),
+      compoundSlots:{source:['q-prior','s-source'],target:[['q-prior','s-target'],['h','q-custody','s-target']],recipient:['h','q-custody','s-source']},
+      semanticNote:'One linked reallocation: the source has practical custody before and loses it at culmination, while the distinct recipient lacks it before and acquires it at culmination, for the same object. This does not assert ownership, willingness, movement, carrying, exclusivity against third parties or later persistence. These commitments remain inside the sentence scope and speech act.',
+      explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
+  const carryingTo=String(input).trim().match(new RegExp(`^${participant} (?:is|am|are) (not )?carrying ${participant} to ${participant}[.]?$`));
+  if(carryingTo){
+    const texts=[carryingTo[1],carryingTo[3],carryingTo[4]];
+    if(texts.some(text=>parseNominal(text)?.quantifier)||new Set(texts.map(participantIdentity)).size!==3)return null;
+    const carrying=ACTIONS.find(action=>action.key==='ongoing_physical_carrying');
+    return {...carrying,predicate:'CMP:763faa4465065477220f6f06',requiredDestination:true,destinationCarrying:true,negated:!!carryingTo[2],construction:'destination_physical_carrying',
+      participants:texts.map((text,index)=>({text,label:text.replaceAll('"',''),role:['source','target','destination'][index]})),
+      explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
+  const carryingGoal=String(input).trim().match(new RegExp(`^${participant} (?:is|am|are) (not )?carrying ${participant} toward ${participant}[.]?$`));
+  if(carryingGoal){
+    const texts=[carryingGoal[1],carryingGoal[3],carryingGoal[4]];
+    if(texts.some(text=>parseNominal(text)?.quantifier)||new Set(texts.map(participantIdentity)).size!==3)return null;
+    const carrying=ACTIONS.find(action=>action.key==='ongoing_physical_carrying');
+    return {...carrying,negated:!!carryingGoal[2],construction:`named_physical_carrying_goal${carryingGoal[2]?'_negated':''}`,
+      participants:texts.map((text,index)=>({text,label:text.replaceAll('"',''),role:['source','target','destination'][index]})),
+      semanticNote:carrying.semanticNote+' The destination is the goal of this carrying movement; arrival, delivery and a recipient are not asserted.',
+      explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
+  const swimmingAcross=String(input).trim().match(new RegExp(`^${participant} (?:is|am|are) (not )?swimming across ${participant}[.]?$`));
+  if(swimmingAcross){
+    const texts=[swimmingAcross[1],swimmingAcross[3]];
+    if(texts.some(text=>parseNominal(text)?.quantifier)||participantIdentity(texts[0])===participantIdentity(texts[1]))return null;
+    return {...SWIMMING_ACROSS,negated:!!swimmingAcross[2],construction:'ongoing_swimming_across_region',participants:texts.map((text,index)=>({text,label:text.replaceAll('"',''),role:index?'environment':'actor'})),explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
+  const path=String(input).trim().match(new RegExp(`^${participant} (?:is|am|are) (not )?moving from ${participant} (?:to|toward) ${participant}[.]?$`));
+  if(path){
+    const texts=[path[1],path[3],path[4]],counted=texts.filter(text=>parseNominal(text)?.quantifier);
+    if(new Set(texts.map(participantIdentity)).size!==3||(counted.length&&(path[2]||counted.length>1)))return null;
+    return {...(counted.length?{quantifiedParticipants:true}:{}),predicate:'MOV:111',key:'active_path_approach',construction:`named_active_path_approach${path[2]?'_negated':''}`,negated:!!path[2],
+      participants:texts.map((text,index)=>({text,label:text.replaceAll('"',''),role:['actor','source','destination'][index]})),
+      explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
+  const transfer=String(input).trim().match(new RegExp(`^[Dd]ata ${participant} is (not )?being transferred from ${participant} to ${participant}[.]?$`));
+  if(transfer){
+    const counted=[transfer[1],transfer[3],transfer[4]].filter(text=>parseNominal(text)?.quantifier);
+    if(counted.length&&(transfer[2]||counted.length>1))return null;
+    if(participantIdentity(transfer[3])===participantIdentity(transfer[4]))return null;
+    const label=value=>value.replaceAll('"','');
+    return {...(counted.length?{quantifiedParticipants:true}:{}),predicate:'DAT:111',key:'active_data_transfer',construction:`named_active_data_transfer${transfer[2]?'_negated':''}`,negated:!!transfer[2],
+      participants:[{label:label(transfer[3]),text:transfer[3],role:'source'},{label:label(transfer[1]),text:transfer[1],role:'content'},{label:label(transfer[4]),text:transfer[4],role:'target'}],
+      explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
+  const brightnessComparison=String(input).trim().match(new RegExp(`^${participant} (?:is|am|are) (not )?(brighter|dimmer) than ${participant}[.]?$`));
+  if(brightnessComparison){
+    const inner=parseNamedSentence(`${brightnessComparison[1]} has a ${brightnessComparison[3]==='brighter'?'higher':'lower'} luminance than ${brightnessComparison[4]}.`,depth+1,false);
+    if(!inner||inner.key!=='luminance_pair_comparison')return null;
+    return {...inner,adjective:brightnessComparison[3],requiredInterpretation:'luminance_comparison',scopes:[...inner.scopes,...(brightnessComparison[2]?[{operator:'negation'}]:[])],construction:'brightness_pair_comparison',explicitInterpretation:String(input).trim()};
+  }
+  const luminancePair=String(input).trim().match(new RegExp(`^${participant} (?:has|have) (a higher luminance than|a lower luminance than|the same luminance as|at least as high a luminance as|at most as high a luminance as|a different luminance from) ${participant}[.]?$`));
+  if(luminancePair){
+    if([luminancePair[1],luminancePair[3]].some(text=>{const n=parseNominal(text);return n?.quantifier||n?.mode==='nominal_class'}))return null;
+    const relation=({'a higher luminance than':'greater_than','a lower luminance than':'less_than','the same luminance as':'equal','at least as high a luminance as':'at_least','at most as high a luminance as':'at_most','a different luminance from':'not_equal'})[luminancePair[2]];
+    return {actor:luminancePair[1].replaceAll('"',''),actorText:luminancePair[1],target:luminancePair[3].replaceAll('"',''),targetText:luminancePair[3],role:'bearer',targetRole:'comparison_standard',predicate:luminancePair[1]==='I'?'MAT:000':'MAT:010',key:'luminance_pair_comparison',construction:'luminance_pair_comparison',scopes:[{operator:'comparison',dimension:'luminance',relation}],
+      semanticNote:'Compares the contextually specified surfaces’ photometric luminance under comparable directional/viewing conditions. No subjective brightness, illuminance, luminous intensity, or numeric threshold is asserted.'};
+  }
+  const luminance=String(input).trim().match(new RegExp(`^${participant} (has|have) a luminance (?:of )?(?:(more than|greater than|less than|at least|at most|not exactly|exactly) )?(-?[0-9]+(?:\\.[0-9]+)?) (candelas? per square met(?:er|re)|cd/m²|cd/m2)[.]?$`));
+  if(luminance){
+    if(parseNominal(luminance[1])?.quantifier)return null;
+    if(['I','you','You'].includes(luminance[1])?(luminance[2]!=='have'):(luminance[2]!=='has'))return null;
+    const magnitude=luminanceValue(luminance[4]);
+    if(magnitude===null)return null;
+    return {actor:luminance[1].replaceAll('"',''),actorText:luminance[1],role:'bearer',predicate:luminance[1]==='I'?'MAT:000':'MAT:010',key:'luminance_measurement',construction:'luminance_measurement',
+      measurement:{magnitude,unit:'candela_per_square_meter',...((luminance[3]&&luminance[3]!=='exactly')?{comparison:({'more than':'greater_than','greater than':'greater_than','less than':'less_than','at least':'at_least','at most':'at_most','not exactly':'not_equal'})[luminance[3]]}:{})},
+      semanticNote:'States photometric luminance of the contextually specified surface and direction in candelas per square metre. It does not assert subjective brightness, illuminance, luminous intensity, emitted power, or a bright/dim threshold.'};
+  }
+  const temperaturePair=String(input).trim().match(new RegExp(`^${participant} (?:has|have) (a higher temperature than|a lower temperature than|the same temperature as|at least as high a temperature as|at most as high a temperature as|a different temperature from) ${participant}[.]?$`));
+  if(temperaturePair){
+    if([temperaturePair[1],temperaturePair[3]].some(text=>{const n=parseNominal(text);return n?.quantifier||n?.mode==='nominal_class'}))return null;
+    const relation=({'a higher temperature than':'greater_than','a lower temperature than':'less_than','the same temperature as':'equal','at least as high a temperature as':'at_least','at most as high a temperature as':'at_most','a different temperature from':'not_equal'})[temperaturePair[2]];
+    return {actor:temperaturePair[1].replaceAll('"',''),actorText:temperaturePair[1],target:temperaturePair[3].replaceAll('"',''),targetText:temperaturePair[3],role:'bearer',targetRole:'comparison_standard',predicate:temperaturePair[1]==='I'?'MAT:000':'MAT:010',key:'temperature_pair_comparison',construction:'temperature_pair_comparison',scopes:[{operator:'comparison',dimension:'thermodynamic_temperature',relation}],
+      semanticNote:'Compares the first material bearer’s thermodynamic temperature with the second bearer’s temperature. No numeric temperature, heat content, felt warmth, or contextual hot/cold threshold is asserted.'};
+  }
+  const temperature=String(input).trim().match(new RegExp(`^${participant} (has|have) a (?:thermodynamic )?temperature (?:of )?(?:(more than|greater than|less than|at least|at most|not exactly|exactly) )?(-?[0-9]+(?:\\.[0-9]+)?) (kelvins?|degrees? Celsius)[.]?$`));
+  if(temperature){
+    if(parseNominal(temperature[1])?.quantifier)return null;
+    if(['I','you','You'].includes(temperature[1])?(temperature[2]!=='have'):(temperature[2]!=='has'))return null;
+    const magnitude=temperaturePointKelvin(temperature[4],temperature[5].includes('Celsius')?'celsius':'kelvin');
+    if(magnitude===null)return null;
+    return {actor:temperature[1].replaceAll('"',''),actorText:temperature[1],role:'bearer',predicate:temperature[1]==='I'?'MAT:000':'MAT:010',key:'temperature_measurement',construction:'temperature_measurement',
+      measurement:{magnitude,unit:'kelvin',...((temperature[3]&&temperature[3]!=='exactly')?{comparison:({'more than':'greater_than','greater than':'greater_than','less than':'less_than','at least':'at_least','at most':'at_most','not exactly':'not_equal'})[temperature[3]]}:{})},
+      semanticNote:'This states the material bearer’s thermodynamic temperature, normalized exactly to kelvins. It is a temperature point, not a temperature difference, heat content, felt warmth, or a contextual hot/cold judgment.'};
+  }
+  const massPair=String(input).trim().match(new RegExp(`^${participant} (?:has|have) (more mass than|greater mass than|less mass than|the same mass as|at least as much mass as|at most as much mass as|a different mass from) ${participant}[.]?$`));
+  if(massPair){
+    if([massPair[1],massPair[3]].some(text=>parseNominal(text)?.quantifier))return null;
+    const relation=({'more mass than':'greater_than','greater mass than':'greater_than','less mass than':'less_than','the same mass as':'equal','at least as much mass as':'at_least','at most as much mass as':'at_most','a different mass from':'not_equal'})[massPair[2]];
+    return {actor:massPair[1].replaceAll('"',''),actorText:massPair[1],target:massPair[3].replaceAll('"',''),targetText:massPair[3],role:'bearer',targetRole:'comparison_standard',predicate:massPair[1]==='I'?'MAT:000':'MAT:010',
+      key:'mass_pair_comparison',construction:'mass_pair_comparison',scopes:[{operator:'comparison',dimension:'mass',relation}],
+      semanticNote:'Compares the first bearer’s physical mass with the second bearer’s mass. No numeric value, weight force, perceived burden, or contextual heavy/light threshold is asserted.'};
+  }
+  const mass=String(input).trim().match(new RegExp(`^${participant} (has|have) a mass (?:of )?(?:(more than|greater than|less than|at least|at most|not exactly|exactly) )?([0-9]+(?:\\.[0-9]+)?) (grams?|kilograms?)[.]?$`));
+  if(mass){
+    const nominal=parseNominal(mass[1]);
+    if(nominal?.quantifier||mass[4].length>1000)return null;
+    if(['I','you','You'].includes(mass[1])?(mass[2]!=='have'):(mass[2]!=='has'))return null;
+    const magnitude=massKilograms(mass[4],mass[5].startsWith('gram')?'gram':'kilogram');
+    return {actor:mass[1].replaceAll('"',''),actorText:mass[1],role:'bearer',predicate:mass[1]==='I'?'MAT:000':'MAT:010',key:'mass_measurement',construction:'mass_measurement',
+      measurement:{magnitude,unit:'kilogram',...((mass[3]&&mass[3]!=='exactly')?{comparison:({'more than':'greater_than','greater than':'greater_than','less than':'less_than','at least':'at_least','at most':'at_most','not exactly':'not_equal'})[mass[3]]}:{})},semanticNote:'This states physical mass, normalized exactly to kilograms. It does not state weight as force, size, heaviness relative to a standard, or the result of a weighing event.'};
+  }
+  const grammaticalText=String(input).trim().replace(new RegExp(`^(${NOMINAL_PATTERN}) are `),'$1 is ').replace(/^I am /,'I is ').replace(/^(You|you) are /,'$1 is ').replace(/^(I|You|you) care for /,'$1 cares for ').replace(/^(I|You|you) do not (care for|love|have physical custody of|have a directed data link to) /,'$1 does not $2 ').replace(/^(I|You|you) have physical custody of /,'$1 has physical custody of ').replace(/^(I|You|you) have a directed data link to /,'$1 has a directed data link to ').replace(/^(I|You|you) love /,'$1 loves ');
+  const thermal=grammaticalText.match(new RegExp(`^${participant} is (not )?(hot|cold|heavy|light|bright|dim|rough|smooth)[.]?$`));
+  if(thermal){
+    const nominal=parseNominal(thermal[1]);
+    if(nominal?.quantifier||nominal?.mode==='nominal_class')return null;
+    const textureStandard=['rough','smooth'].includes(thermal[3]),massStandard=['heavy','light'].includes(thermal[3]),luminanceStandard=['bright','dim'].includes(thermal[3]);
+    return {actor:thermal[1].replaceAll('"',''),actorText:thermal[1],role:'bearer',predicate:thermal[1]==='I'?'MAT:000':'MAT:010',key:textureStandard?'contextual_texture_adjective':luminanceStandard?'contextual_luminance_adjective':massStandard?'contextual_mass_adjective':'contextual_thermal_adjective',construction:textureStandard?'contextual_texture_adjective':luminanceStandard?'contextual_luminance_adjective':massStandard?'contextual_mass_adjective':'contextual_thermal_adjective',adjective:thermal[3],negated:!!thermal[2],requiredInterpretation:textureStandard?'texture_standard':luminanceStandard?'luminance_standard':massStandard?'mass_standard':'thermal_standard'};
+  }
+  // Coordinated targets belong to one care predicate, not separate clauses.
+  const careTargets=grammaticalText.match(new RegExp(`^${participant} (?:cares for|is caring for) (?:both )?${participant} and ${participant}[.]?$`));
+  if(careTargets){
+    const texts=[careTargets[1],careTargets[2],careTargets[3]];
+    if(texts.some(text=>parseNominal(text)?.quantifier)||new Set(texts.map(participantIdentity)).size!==3)return null;
+    const care=ACTIONS.find(action=>action.key==='active_care');
+    return {...care,construction:'coordinated_care_targets',
+      participants:texts.map((text,index)=>({text,label:text.replaceAll('"',''),role:index===0?'actor':'target'})),
+      participantGroups:[{role:'target',indices:[1,2],operator:'all_of'}],
+      semanticNote:'One care relation with an explicitly coordinated target list. Both named targets belong to it; no temporal order is asserted.',
+      explicitInterpretation:String(input).trim().replace(/\.$/,'')+'.'};
+  }
+  for(const action of ACTIONS){
+    for(const negated of [false,true]){
+      const pattern=negated?(action.negativePattern||(action.key==='active_care'?'(?:does not care for|is not caring for)':action.pattern.replace('is ','is not '))):action.pattern;
+      const match=grammaticalText.match(new RegExp(`^${participant} ${pattern} ${participant}[.]?$`));
+      if(match&&action.key==='approved_poetic_love'&&(match[1].startsWith('"')||match[2].startsWith('"')||parseNominal(match[1])||parseNominal(match[2])))return null;
+      const quantified=match&&[match[1],match[2]].some(text=>parseNominal(text)?.quantifier);
+      if(quantified&&(action.compoundSlots||negated||[match[1],match[2]].filter(text=>parseNominal(text)?.quantifier).length>1))return null;
+      if(match&&participantIdentity(match[1])===participantIdentity(match[2]))return null;
+      if(match)return {...(quantified?{quantifiedParticipants:true}:{}),actor:match[1].replaceAll('"',''),target:match[2].replaceAll('"',''),actorText:match[1],targetText:match[2],...action,negated,construction:`named_${action.key}${negated?'_negated':''}`};
+    }
+  }
+  for(const description of DESCRIPTIONS){
+    const match=grammaticalText.match(new RegExp(`^${participant} is (not )?${description.pattern}[.]?$`));
+    const quantified=match&&!!parseNominal(match[1])?.quantifier;
+    if(quantified&&match[2])return null;
+    if(match)return {...(quantified?{quantifiedParticipants:true}:{}),actor:match[1].replaceAll('"',''),actorText:match[1],...description,predicate:match[1]==='I'?({'LIF:011':'LIF:001','LIF:012':'LIF:002'}[description.predicate]||description.predicate):description.predicate,role:description.role||'bearer',negated:!!match[2],construction:`named_${description.key}${match[2]?'_negated':''}`};
+  }
+  return null;
+}
+
+// Recognize the construction family even when additional meaning makes its
+// current complete parser decline. The legacy keyword path may still offer
+// dictionary readings, but must not present one as the complete sentence.
+export function needsSentenceComposition(input) {
+  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light|bright|dim|brighter|dimmer|rough|smooth)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|enter|entered|entering|enters|inside|outside|boundary|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|able to move|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|arrive|arrives|arrived|arriving|carry|carries|carried|carrying|support|supporting|custody|acquire|acquired|acquiring|deliver|delivers|delivered|delivering|run|runs|running|swim|swims|swimming|happy|sad|hungry|thirsty|tired|temperature|luminance)\b/i.test(String(input))) && !parseNamedSentence(input);
+}
+
+// A complete antecedent and a comma establish conditional scope. Without
+// explicit "then", currently accept only an imperative consequent.
+export function parseSentenceConditional(input) {
+  const text=String(input).trim().replace(/\.$/,'');
+  if(!/^[Ii]f /.test(text))return null;
+  let quoted=false;const commas=[],explicitBoundaries=[];
+  for(let i=3;i<text.length;i++){
+    if(text[i]==='"')quoted=!quoted;
+    if(!quoted&&text[i]===','){commas.push(i);if(/^,\s+then\s+/.test(text.slice(i)))explicitBoundaries.push(i);}
+  }
+  const boundaries=explicitBoundaries.length?explicitBoundaries:commas;
+  if(quoted||boundaries.length!==1)return null;
+  const i=boundaries[0],antecedent=text.slice(3,i).trim();
+  let consequent=text.slice(i+1).trim();
+  const explicitThen=/^then\s+/.test(consequent);
+  if(explicitThen)consequent=consequent.replace(/^then\s+/,'');
+  const condition=parseNamedSentence(antecedent);
+  if(!condition||condition.speechAct)return null;
+  // Local "it" requires a single definite nominal bearer. Multiple participants,
+  // quantified classes and discourse-dependent pronouns need clarification.
+  const finalIt=/\bit(?=\s*(?:\[[012]\])?[.!]?$)/i;
+  const carriedIt=/^((?:do not |don['’]t )?carry )it(?= (?:toward|to) )/i;
+  if(finalIt.test(consequent)||carriedIt.test(consequent)){
+    const reference=parseNominal(condition.actorText||'');
+    if(condition.role!=='bearer'||condition.target||reference?.mode!=='definite_nominal')return null;
+    consequent=carriedIt.test(consequent)?consequent.replace(carriedIt,(_match,prefix)=>prefix+condition.actorText):consequent.replace(finalIt,()=>condition.actorText);
+  }
+  const result=parseNamedSentence(consequent);
+  if(!result||result.speechAct==='question'||(!explicitThen&&result.speechAct!=='command'))return null;
+  return [antecedent,consequent];
+}
+export async function composeSentenceConditional(input,loadTemplate,clauseOptions) {
+  return composeClauseGroup(input,parseSentenceConditional(input),'conditional',loadTemplate,clauseOptions);
+}
+
+export function parseSentenceSequence(input) { return parseClauseGroup(input,/^(?:,\s*|\s+)then\s+/); }
+export function parseSentenceDisjunction(input) { return parseClauseGroup(input,/^(?:,\s*|\s+)or\s+/); }
+export function parseSentenceConjunction(input) { return parseClauseGroup(input,/^(?:,\s*|\s+)and\s+/); }
+function parseClauseGroup(input,delimiter) {
+  const text=String(input).trim().replace(/\.$/,'');
+  let quoted=false,start=0;const clauses=[];
+  for(let i=0;i<text.length;i++){
+    if(text[i]==='"')quoted=!quoted;
+    if(!quoted){
+      const match=text.slice(i).match(delimiter);
+      if(match){clauses.push(text.slice(start,i).trim());i+=match[0].length-1;start=i+1;}
+    }
+  }
+  if(quoted||!clauses.length)return null;
+  // Without explicit grouping a leading modal can scope one clause or the
+  // entire sequence. Do not guess that attachment.
+  if(/^(?:[Ii]t is (?:not )?(?:possible|necessary) that |[Ww]ith [0-9.]+% confidence, )/.test(text))return null;
+  clauses.push(text.slice(start).trim());
+  if(clauses.slice(0,-1).some(clause=>/^(?:[Ii]t is (?:not )?(?:possible|necessary) that |[Ww]ith [0-9.]+% confidence, )/.test(clause)))return null;
+  if(clauses.length>32||clauses.some(clause=>{const parsed=parseNamedSentence(clause);return !parsed||!!parsed.speechAct}))return null;
+  return clauses;
+}
+
+export async function composeSentenceSequence(input,loadTemplate,clauseOptions) {
+  const clauses=parseSentenceSequence(input);
+  return composeClauseGroup(input,clauses,'sequence',loadTemplate,clauseOptions);
+}
+
+export async function composeSentenceConjunction(input,loadTemplate,clauseOptions) {
+  return composeClauseGroup(input,parseSentenceConjunction(input),'all_of',loadTemplate,clauseOptions);
+}
+
+export async function composeSentenceDisjunction(input,loadTemplate,clauseOptions,{disjunction}={}) {
+  if(!['any_of','exactly_one'].includes(disjunction)){
+    const error=new Error('Choose whether at least one alternative may hold (including both), or exactly one holds.');
+    error.code='disjunction_interpretation_required';throw error;
+  }
+  const result=await composeClauseGroup(input,parseSentenceDisjunction(input),disjunction,loadTemplate,clauseOptions);
+  result.selected_disjunction=disjunction;
+  result.semantic_note=[disjunction==='any_of'?'At least one alternative holds; both may hold.':'Exactly one alternative holds; the alternatives cannot both hold.',result.semantic_note].filter(Boolean).join(' ');
+  return result;
+}
+
+export function clauseInterpretationPlan(input) {
+  for(const [operator,parse] of [['conditional',parseSentenceConditional],['all_of',parseSentenceConjunction],['sequence',parseSentenceSequence],['disjunction',parseSentenceDisjunction]]){
+    const clauses=parse(input);
+    if(clauses)return {operator,...(operator==='disjunction'?{requiredDisjunction:true}:{}),clauses:clauses.map(text=>({text,parsed:parseNamedSentence(text)}))};
+  }
+  return null;
+}
+
+async function composeClauseGroup(input,clauses,operator,loadTemplate,clauseOptions) {
+  if(!clauses)throw new Error('Every clause must have a complete, unambiguous interpretation.');
+  const conditional=operator==='conditional';
+  const groupId=conditional?'conditional':operator==='sequence'?'sequence':['any_of','exactly_one'].includes(operator)?'disjunction':'conjunction';
+  if(clauseOptions!==undefined&&(!Array.isArray(clauseOptions)||clauseOptions.length!==clauses.length||clauseOptions.some(options=>!options||typeof options!=='object'||Array.isArray(options)||Object.keys(options).some(key=>!['interpretation','standard','viewpoint','destination'].includes(key)))))throw new Error('Provide exactly one interpretation-options object per clause.');
+  const choices=clauseOptions===undefined?clauses.map(()=>({})):structuredClone(clauseOptions);
+  const parts=await Promise.all(clauses.map(async (clause,index)=>{
+    try{return await composeNamedSentence(clause,await loadTemplate(parseNamedSentence(clause).predicate),choices[index]);}
+    catch(error){const failure=new Error(`Clause ${index+1}: ${error?.message||String(error)}`);if(error?.code!==undefined)failure.code=error.code;failure.clause_index=index;throw failure;}
+  }));
+  const ir={ir_version:'1.0',root_clause:'c',speech_act:conditional?parts[1].semantic_ir.speech_act:'assertion',nodes:[{node_id:'c',kind:'clause',clause_type:conditional?'conditional':'predication'},...(conditional?[]:[{node_id:groupId,kind:'coordination',operator}])],
+    edges:[{edge_id:'e0',type:'centers',from:conditional?'s001_c':groupId,to:'c'}],discourse_constraints:{}};
+  const events=[],gloss=[];
+  parts.forEach((part,index)=>{
+    const prefix=`s${String(index).padStart(3,'0')}_`;
+    ir.nodes.push(...part.semantic_ir.nodes.map(node=>({...structuredClone(node),node_id:prefix+node.node_id,...(node.compound_bindings?{compound_bindings:node.compound_bindings.map(binding=>({...binding,argument_id:prefix+binding.argument_id}))}:{})})));
+    ir.edges.push(...part.semantic_ir.edges.map(edge=>({...edge,edge_id:prefix+edge.edge_id,from:prefix+edge.from,to:prefix+edge.to})));
+    if(!conditional)ir.edges.push({edge_id:`member${index}`,type:'member_of',from:prefix+'c',to:groupId,...(operator==='sequence'?{order:index+1}:{})});
+    events.push(...part.formal.performance.lexical_events.map(event=>({...structuredClone(event),occurrence_id:prefix+event.occurrence_id,...(event.argument_node_id?{argument_node_id:prefix+event.argument_node_id}:{}),...(event.binding_chain?{binding_chain:event.binding_chain.map(binding=>({...binding,compound_occurrence_id:prefix+binding.compound_occurrence_id,argument_id:prefix+binding.argument_id}))}:{})})));
+    gloss.push(part.formal.literal_gloss.split(' | ').map(value=>prefix+value).join(' | '));
+  });
+  if(conditional)ir.edges.push({edge_id:'condition',type:'condition_of',from:'s000_c',to:'s001_c',condition_status:'open'});
+  const digest=await canonicalDigest(ir);
+  ir.utterance_id=`UTT:${digest.slice(0,24)}`;ir.serialization={canonical_format:'EZIR-JSON-1',content_digest:digest};
+  const structural=ir.edges.slice().sort((a,b)=>a.edge_id<b.edge_id?-1:a.edge_id>b.edge_id?1:0).map(edge=>({edge_id:edge.edge_id,edge_type:edge.type,from:edge.from,to:edge.to,...(edge.role?{role:edge.role}:{}),...(edge.relation?{relation:edge.relation}:{}),boundary:edge.type==='fills_role'?'short_gap':'medium_gap',boundary_beats:edge.type==='fills_role'?.5:1}));
+  const performance={...structuredClone(parts[conditional?1:0].formal.performance),lexical_events:events,structural_events:structural,...(conditional?{secondary_contours:['unresolved_ending']}:{})};
+  const relative=events.map(event=>{
+    const {base_midi,family_opening_absolute_midi,address_absolute_midi,...copy}=event;
+    copy.runtime_tail=event.runtime_tail?Object.fromEntries(Object.entries(event.runtime_tail).filter(([key])=>key!=='absolute_note')):null;
+    return copy;
+  });
+  const relativePlan={primary_contour:performance.primary_contour,contour_relative_semitones:performance.contour_relative_semitones,secondary_contours:performance.secondary_contours,lexical_events:relative,structural_events:structural,statement_boundary:performance.statement_boundary,statement_boundary_beats:performance.statement_boundary_beats};
+  const formalDigest=await canonicalDigest({semantic_digest:digest,relative_plan:relativePlan});
+  const formal={format:'EZF-1',renderer_version:'1.0.0',formal_id:`EZF:${formalDigest.slice(0,24)}`,formal_digest:formalDigest,semantic_digest:digest,semantic_ir:ir,performance,literal_gloss:gloss.join(' | ')};
+  return {source_input:input,...(clauseOptions!==undefined?{selected_clauses:clauses.map((text,index)=>({input:text,options:choices[index]}))}:{}),target_id:operator,semantic_note:(clauseOptions===undefined?[...new Set(parts.map(part=>part.semantic_note).filter(Boolean))]:parts.map((part,index)=>part.semantic_note?`Clause ${index+1}: ${part.semantic_note}`:null).filter(Boolean)).join(' ')||null,sense_id:`construction:explicit_${groupId}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,construction:`explicit_${groupId}`,interpretation:(conditional?'If ':'')+parts.map(part=>part.interpretation.replace(/\.$/,'')).join(conditional||operator==='sequence'?', then ':['any_of','exactly_one'].includes(operator)?' or ':' and ')+'.'};
+}
+
+export async function composeNamedSentence(input,template,{interpretation,standard,viewpoint,destination}={}) {
+  const parsed=parseNamedSentence(input);
+  if(!parsed)throw new Error('The complete sentence does not match this construction.');
+  if(parsed.requiredDeliveryInterpretation&&destination!=='custody_delivery')throw new Error('Choose carrying-mediated custody delivery explicitly; other delivery meanings are not supported by this construction.');
+  if(parsed.requiredViewpoint){
+    if(!['bounded','ongoing','habitual'].includes(viewpoint)){
+      const error=new Error(`Choose whether ${parsed.viewpointActivity||'carrying'} describes one narrated episode, an unfolding action, or a recurring practice.`);
+      error.code=parsed.viewpointActivity?`${parsed.viewpointActivity}_viewpoint_required`:'carrying_viewpoint_required';throw error;
+    }
+    parsed.aspect=viewpoint;
+    const note={bounded:'Interprets simple-present carrying as one bounded narrated episode in the contextual reference interval, without asserting arrival, delivery or future time.',ongoing:'Interprets simple-present carrying as an unfolding action in the contextual reference interval, without asserting its endpoint.',habitual:'Interprets simple-present carrying as a recurring practice in the contextual reference interval, without asserting a particular occurrence, frequency or schedule.'}[viewpoint];
+    parsed.semanticNote=[parsed.semanticNote,parsed.viewpointActivity==='acquisition'?({bounded:'One bounded acquisition in the contextual reference interval; no past or future time is inferred.',ongoing:'An acquisition unfolding in the contextual reference interval; completed custody gain is not asserted.',habitual:'A recurring acquisition practice; no particular current occurrence or frequency is asserted.'})[viewpoint]:['running','entry'].includes(parsed.viewpointActivity)?'':parsed.viewpointActivity==='swimming'?({bounded:'One bounded narrated swimming episode; completion of an across-region crossing is not asserted.',ongoing:'An unfolding swimming activity; crossing completion is not asserted.',habitual:'A recurring swimming practice; no particular occurrence, frequency or schedule is asserted.'})[viewpoint]:note].filter(Boolean).join(' ');
+  }else if(viewpoint!==undefined)throw new Error('This sentence does not require a viewpoint choice.');
+  if(parsed.viewpointActivity==='running'){
+    if(parsed.runningEndpoint){
+      const chosen=parsed.aspect==='ongoing'?DESTINATION_RUNNING:COMPLETED_RUNNING;
+      Object.assign(parsed,{predicate:chosen.predicate,key:chosen.key,compoundSlots:chosen.compoundSlots,semanticNote:chosen.semanticNote});
+    }
+    const note=parsed.aspect==='habitual'?'A recurring running practice; no particular current occurrence, frequency or schedule is asserted.':parsed.aspect==='ongoing'?'An unfolding running event; arrival is not asserted.':parsed.runningEndpoint?'One narrated running journey culminating at its destination; no past or future time is inferred.':'One bounded narrated running episode; arrival is not asserted.';
+    parsed.semanticNote=[parsed.semanticNote,note].filter(Boolean).join(' ');
+  }
+  if(parsed.viewpointActivity==='entry'){
+    const chosen=parsed.aspect==='ongoing'?ONGOING_ENTRY:PHYSICAL_ENTRY;
+    Object.assign(parsed,{predicate:chosen.predicate,key:chosen.key,compoundSlots:chosen.compoundSlots,semanticNote:chosen.semanticNote});
+    const note=parsed.aspect==='habitual'?'A recurring practice of completed physical entries; no particular current occurrence, frequency or schedule is asserted.':parsed.aspect==='ongoing'?'An unfolding entry traversal; an interior culmination is not asserted.':'One narrated completed entry in the contextual reference interval; no past or future time is inferred.';
+    parsed.semanticNote+=' '+note;
+  }
+  if(parsed.requiredDestination){
+    if(!['spatial','custody_delivery'].includes(destination)){
+      const error=new Error('Choose a spatial destination or carrying-mediated custody delivery reading for “to”.');
+      error.code='carrying_destination_required';throw error;
+    }
+    if(destination==='custody_delivery'){
+      parsed.predicate='CMP:5200738177777915abb3f42e';
+      parsed.compoundSlots={
+        source:[['q-arrival','q-path','q-carry','q-support','s-source'],['h','q-prior','s-source']],
+        target:[['q-arrival','q-path','q-carry','q-support','s-target'],['q-arrival','q-path','q-carry','s-load'],['q-arrival','q-path','s-load'],['q-arrival','s-load'],['h','q-prior','s-target'],['h','h','q-custody','s-target']],
+        destination:[['q-arrival','q-path','s-destination'],['q-arrival','s-destination'],['h','h','q-custody','s-source']]};
+      parsed.semanticNote='Interprets “to” as a carrying-mediated transfer of practical physical custody: the same carrier conveys the same supported load to the recipient’s contextual position, with arrival culminating in transfer from that carrier to that recipient. The carrier loses custody as the recipient acquires it. Ownership, willing acceptance, exclusivity against third parties and persistence afterward are unspecified. '+
+        (parsed.aspect==='ongoing'?'Ongoing aspect describes this delivery event as unfolding; it does not assert completed arrival or transfer.':parsed.aspect==='habitual'?'Habitual aspect describes a recurring delivery practice, not a particular current arrival or transfer.':'The event type includes completed carrying arrival and custody transfer in one culmination.')+
+        (parsed.negated?' Negation scopes the whole proposition; it does not assert a failed attempt.':'')+
+        (parsed.speechAct==='command'?' This commands the event without asserting that it happened.':'');
+    }else{
+    const completed=parsed.aspect!=='ongoing',prefix=completed?['q-path','q-carry']:['q-carry'];
+    parsed.predicate=completed?'CMP:74d98d19808f74d0b8196951':'CMP:763faa4465065477220f6f06';
+    parsed.compoundSlots={source:[...prefix,'q-support','s-source'],target:[[...prefix,'q-support','s-target'],[...prefix,'s-load'],...(completed?[['q-path','s-load']]:[]),['s-load']],destination:completed?[['q-path','s-destination'],['s-destination']]:['s-destination']};
+    parsed.semanticNote='Interprets “to” as a spatial destination, possibly the contextual location of the named referent; no receipt, ownership transfer, intention or continued presence is asserted. '+
+      (parsed.aspect==='ongoing'?'The same supported load is being conveyed toward that destination in this carrying event; arrival is not asserted.':parsed.aspect==='habitual'?'The recurring practice consists of carrying events that culminate in the same load reaching the same destination through that supporting conveyance. No particular current occurrence, frequency or schedule is asserted.':'This carrying event culminates in its supported load reaching the same destination through that supporting conveyance; separate later arrival or unsupported flight does not qualify.')+
+      (parsed.negated?' Negation applies to this whole carrying proposition; it does not assert an incomplete approach.':'')+
+      (parsed.speechAct==='command'?' This is a command about that event type, not an assertion that carrying or arrival has occurred.':'');
+    }
+  }else if(destination!==undefined)throw new Error('This sentence does not require a destination reading choice.');
+  if(parsed.requiredInterpretation==='entry_modality'){
+    const selected=entryModalScopes(interpretation,parsed.entryModalNegative);
+    parsed.scopes=parsed.scopes.flatMap(scope=>scope.entryModal?selected:[scope]);
+    parsed.semanticNote+=' Selected reading: '+entryModalChoices(parsed.entryModalNegative,parsed.key==='ongoing_physical_entry').find(([key])=>key===interpretation)[1]+'.';
+  }
+  if(parsed.requiredInterpretation!=='entry_modality'&&interpretation!==undefined&&interpretation!==parsed.requiredInterpretation)throw new Error('This interpretation is not available for this sentence.');
+  if(parsed.requiredInterpretation&&parsed.requiredInterpretation!=='entry_modality'&&interpretation!==parsed.requiredInterpretation){
+    const thermal=['thermal_standard','mass_standard','luminance_standard','texture_standard'].includes(parsed.requiredInterpretation);
+    const comparative=parsed.requiredInterpretation==='luminance_comparison';
+    const physicalEntry=parsed.requiredInterpretation==='physical_entry';
+    const error=new Error(physicalEntry?'Choose whether entry means moving from outside to inside a physical region. Other entry meanings need different interpretations.':comparative?'Choose the physical luminance meaning of this comparison before translating.':thermal?'Choose the property sense and its contextual threshold before translating.':'Choose whether this is a future statement. Promise, intention and willingness require different meanings.');
+    error.code=(thermal||comparative||physicalEntry)?`${parsed.requiredInterpretation}_required`:'future_interpretation_required';throw error;
+  }
+  let selectedStandard;
+  if(['thermal_standard','mass_standard','luminance_standard','texture_standard'].includes(parsed.requiredInterpretation)){
+    const textureStandard=parsed.requiredInterpretation==='texture_standard',massStandard=parsed.requiredInterpretation==='mass_standard',luminanceStandard=parsed.requiredInterpretation==='luminance_standard';
+    const dimension=textureStandard?'surface_texture':luminanceStandard?'luminance':massStandard?'mass':'thermodynamic_temperature',unit=luminanceStandard?'candela_per_square_meter':massStandard?'kilogram':'kelvin';
+    if(standard?.kind==='contextual'){
+      if(standard.dimension!==dimension||Object.keys(standard).sort().join(',')!=='dimension,kind')throw new Error('Invalid contextual property standard.');
+      const norm=CONTEXTUAL_NORMS[parsed.adjective];
+      if(parsed.nominalProperty)parsed.nominalProperty.restriction={dimension,standard:'contextual',norm:parsed.adjective,comparison:norm.relation};
+      else parsed.contextualComparison={operator:'comparison',standard:'contextual',norm:parsed.adjective,dimension,relation:norm.relation};
+      selectedStandard={dimension,kind:'contextual',norm:parsed.adjective,relation:norm.relation};
+      parsed.semanticNote=(textureStandard?'Physical texture of the contextually selected surface region and scale; no tactile experience, damage, hardness or figurative meaning is asserted. ':'')+`Uses the local contextual ${parsed.adjective} standard in the selected ${dimension} sense. No numerical cutoff or measurement is asserted; the opposite adjective may use a different standard.`;
+    }else{
+    if(textureStandard)throw new Error('Physical texture uses a local contextual surface-region and scale standard; numerical texture measurements are not supported.');
+    const threshold=standard?.dimension===dimension&&Object.keys(standard).sort().join(',')==='dimension,scale,threshold'?(luminanceStandard?luminanceValue(standard.threshold,standard.scale):massStandard?massKilograms(standard.threshold,standard.scale):temperaturePointKelvin(standard.threshold,standard.scale)):null;
+    if(threshold===null)throw new Error(luminanceStandard?'Provide a nonnegative luminance threshold in candela_per_square_meter.':massStandard?'Provide a nonnegative mass threshold as an exact decimal in gram or kilogram.':'Provide a thermodynamic-temperature threshold as an exact decimal in celsius or kelvin.');
+    const above=['hot','heavy','bright'].includes(parsed.adjective);
+    const measurement={magnitude:threshold,unit,comparison:above?'greater_than':'less_than'};
+    if(parsed.nominalProperty)parsed.nominalProperty.restriction={dimension,...measurement};
+    else parsed.measurement=measurement;
+    selectedStandard={dimension,threshold,unit,relation:measurement.comparison};
+    parsed.semanticNote=[parsed.semanticNote,`For this translation, ${parsed.adjective} means ${luminanceStandard?'photometric luminance':massStandard?'mass':'a thermodynamic temperature'} ${above?'above':'below'} ${threshold} ${unit}s, using your supplied standard. This is not a universal cutoff or a claim about ${luminanceStandard?'perceived brightness, luminous intensity, illuminance, color, or intelligence':massStandard?'weight force, carrying effort, size, or brightness':'felt warmth, spiciness, or emotional tone'}.`].filter(Boolean).join(' ');
+    }
+  }else if(standard!==undefined)throw new Error('This sentence does not take an adjective standard.');
+  const bound=!!parsed.compoundSlots;
+  const graphRendered=bound||!!parsed.nominalProperty;
+  if(graphRendered&&!template.authority)throw new Error('This construction requires the compiled dictionary authority.');
+  const source=bound?{semantic_ir:{speech_act:'assertion',nodes:[{node_id:'c',kind:'clause'},{node_id:'p',kind:'lexical_occurrence',target_type:'compound',target_id:parsed.predicate,runtime_state:{code:1}}],edges:[{type:'centers'}]},performance:{profile:'reference-midi-v1',anchor_midi:60,transposition_semantically_significant:false,primary_contour:'level',contour_relative_semitones:[0,0],secondary_contours:[],statement_boundary:'long_gap',statement_boundary_beats:2}}:template.formal;
+  const predicates=source.semantic_ir.nodes.filter(node=>node.kind==='lexical_occurrence');
+  if(source.semantic_ir.speech_act!=='assertion' || source.semantic_ir.nodes.length!==2 || source.semantic_ir.edges.length!==1 || source.semantic_ir.edges[0].type!=='centers' || source.performance.anchor_midi!==60 || predicates.length!==1 || predicates[0].target_id!==parsed.predicate || predicates[0].runtime_state?.code!==1)
+    throw new Error('Expected the matching canonical action assertion template at anchor 60.');
+  const participants=parsed.participants||[{label:parsed.actor,text:parsed.actorText,role:parsed.role||'actor'},...(parsed.target?[{label:parsed.target,text:parsed.targetText,role:parsed.targetRole||'target'}]:[])];
+  const participantIds=participants.map((_,index)=>index<2?['a','b'][index]:`d${index}`);
+  const deicticRoles=participants.map(({text})=>['I','me','Me'].includes(text)?'speaker':['you','You'].includes(text)?'addressee':null);
+  const nominal=participants.map(({text})=>parseNominal(text));
+  const names=await Promise.all(participants.map(({label},index)=>deicticRoles[index]?null:encodeName(nominal[index]?nominal[index].head:label)));
+  const references=names.map((name,index)=>deicticRoles[index]?deicticReference(deicticRoles[index],participantIds[index]):({node_id:participantIds[index],kind:'phonemic_reference',referent_id:nominal[index]?`nominal:${NOMINAL_MODES[nominal[index].mode].id}:${name.name_id}`:name.name_id,value_type:'entity',name,...(nominal[index]?{reference_mode:nominal[index].mode}:{})}));
+  if(parsed.nominalProperty)references[parsed.nominalProperty.participantIndex].property_restriction=parsed.nominalProperty.restriction;
+  const ir={ir_version:'1.0',root_clause:'c',speech_act:parsed.speechAct||'assertion',nodes:[{node_id:'c',kind:'clause',clause_type:'predication'},
+    {node_id:'p',kind:'lexical_occurrence',target_type:predicates[0].target_type,target_id:parsed.predicate,runtime_state:{code:parsed.runtimeState??1}},...references],
+    edges:[{edge_id:'e0',type:'centers',from:'p',to:'c'},...participants.map((participant,index)=>({edge_id:`e${index+1}`,type:'fills_role',from:participantIds[index],to:'p',role:participant.role}))],discourse_constraints:{}};
+  for(const [index,group] of (parsed.participantGroups||[]).entries()){
+    const id=`participant_group${index}`,members=group.indices.map(i=>participantIds[i]);
+    ir.nodes.push({node_id:id,kind:'coordination',operator:group.operator});
+    ir.edges=ir.edges.filter(e=>!(e.type==='fills_role'&&e.role===group.role&&members.includes(e.from)));
+    ir.edges.push({edge_id:`group_role${index}`,type:'fills_role',from:id,to:'p',role:group.role});
+    members.forEach((member,i)=>ir.edges.push({edge_id:`group_member${index}_${i}`,type:'member_of',from:member,to:id}));
+  }
+  if(bound){
+    if(nominal.some(description=>description?.quantifier))throw new Error('Quantified compound participants are not supported by this construction.');
+    ir.nodes[1].compound_bindings=participants.flatMap((participant,index)=>{
+      const paths=parsed.compoundSlots[participant.role];
+      // Whole-predicate roles, such as a destination, remain external edges.
+      if(!paths)return [];
+      return (Array.isArray(paths[0])?paths:[paths]).map(slot_path=>({slot_path,argument_id:participantIds[index]}));
+    });
+    ir.edges=ir.edges.filter(edge=>edge.type!=='fills_role'||!parsed.compoundSlots[edge.role]);
+  }
+  nominal.forEach((description,index)=>{
+    if(!description?.quantifier)return;
+    const id=`quantity${index}`;
+    ir.nodes.push({node_id:id,kind:'scope_operator',operator:'quantifier',quantifier:description.quantifier,value:description.value});
+    ir.edges[index+1].from=id;
+    ir.edges.push({edge_id:`quantity${index}`,type:'scopes',from:participantIds[index],to:id});
+  });
+  if(parsed.measurement){
+    ir.nodes.push({node_id:'measure',kind:'measurement',...parsed.measurement});
+    ir.edges.push({edge_id:'measurement',type:'fills_role',from:'measure',to:'p',role:'quantity'});
+  }
+  if(parsed.aspect){
+    ir.nodes.push({node_id:'aspect',kind:'scope_operator',operator:'aspect',aspect:parsed.aspect});
+    ir.edges[0].from='aspect';
+    ir.edges.push({edge_id:'aspect',type:'scopes',from:'p',to:'aspect'});
+  }
+  if(parsed.contextualComparison){
+    ir.nodes.push({node_id:'contextual',kind:'scope_operator',...parsed.contextualComparison});
+    ir.edges[0].from='contextual';ir.edges.push({edge_id:'contextual',type:'scopes',from:'p',to:'contextual'});
+  }
+  if(parsed.negated){
+    ir.nodes.push({node_id:'neg',kind:'scope_operator',operator:'negation'});
+    const inner=ir.edges[0].from;ir.edges[0].from='neg';
+    ir.edges.push({edge_id:`e${Math.max(3,participants.length+1)}`,type:'scopes',from:inner,to:'neg'});
+  }
+  for(const [index,scope] of (parsed.scopes||[]).entries()){
+    const id=`scope${String(index).padStart(2,'0')}`;
+    if(scope.temporalClause){
+      ir.nodes.push({node_id:id,kind:'clause',clause_type:'predication'});
+      ir.edges.push({edge_id:`${id}:center`,type:'centers',from:ir.edges[0].from,to:id});
+      if(scope.calendarDay!==undefined){
+        ir.nodes.push({node_id:`${id}:day`,kind:'time_anchor',anchor_type:'interval',calendar_unit:'day',relative_to:'speech_date',day_offset:scope.calendarDay});
+        ir.edges.push({edge_id:`${id}:time0`,type:'time_relation',from:`${id}:day`,to:id,relation:'during'});
+      }
+      if(scope.speechTime!==undefined){
+        ir.nodes.push({node_id:`${id}:speech`,kind:'time_anchor',anchor_type:'speech_time'});
+        ir.edges.push({edge_id:`${id}:time1`,type:'time_relation',from:`${id}:speech`,to:id,relation:scope.speechTime});
+      }
+      ir.edges[0].from=id;
+      continue;
+    }
+    ir.nodes.push({node_id:id,kind:'scope_operator',...scope});
+    ir.edges.push({edge_id:`zscope${String(index).padStart(2,'0')}`,type:'scopes',from:ir.edges[0].from,to:id});
+    ir.edges[0].from=id;
+  }
+  if(parsed.calendarDay!==undefined){
+    ir.nodes.push({node_id:'time',kind:'time_anchor',anchor_type:'interval',calendar_unit:'day',relative_to:'speech_date',day_offset:parsed.calendarDay});
+    ir.edges.push({edge_id:'time0',type:'time_relation',from:'time',to:'c',relation:'during'});
+  }
+  if(parsed.speechTime!==undefined){
+    ir.nodes.push({node_id:'speech_time',kind:'time_anchor',anchor_type:'speech_time'});
+    ir.edges.push({edge_id:'time1',type:'time_relation',from:'speech_time',to:'c',relation:parsed.speechTime});
+  }
+  const digest=await canonicalDigest(ir);
+  ir.utterance_id=`UTT:${digest.slice(0,24)}`;
+  ir.serialization={canonical_format:'EZIR-JSON-1',content_digest:digest};
+  const events=graphRendered?await renderLexicalOccurrences(ir,template.authority):names.flatMap((name,index)=>{
+    const register=registerFor(participantIds[index],ir);
+    if(deicticRoles[index])return [deicticEvent(references[index],register)];
+    const offset={low:-12,middle:0,high:12,sustained_background:-5}[register],notes=notesForName(name);
+    const labelEvent={kind:'phonemic_label',occurrence_id:participantIds[index],target_id:name.name_id,referent_id:references[index].referent_id,label:name.normalized_label,semantic_claim:false,
+      register,base_midi:60+offset,family_qualified_transliteration:name.normalized_label,formal_carrier:'',
+      family_opening_relative_semitones:[],family_opening_absolute_midi:[],address_relative_semitones:notes.map(note=>note-60),address_absolute_midi:notes.map(note=>note+offset),note_duration_beats:1};
+    return nominal[index]?[nominalMarker(references[index],register),labelEvent]:[labelEvent];
+  });
+  if(!graphRendered)events.push(...source.performance.lexical_events.map(event=>{
+    const copy={...structuredClone(event),occurrence_id:'p'};
+    if(copy.runtime_tail&&parsed.runtimeState!==undefined){
+      const code=parsed.runtimeState,last=copy.address_absolute_midi.at(-1),base=copy.base_midi;
+      copy.runtime_tail=code===0?{code,name:'inactive',relative_motion_semitones:-1,absolute_note:last-1,articulation:'sharp_stop',duration_beats:.25}:code===2?{code,name:'num',relative_motion_semitones:7,absolute_note:last+7,articulation:'sustain',duration_beats:2}:{code,name:'active',relative_motion_semitones:(-copy.address_relative_semitones.at(-1)||0),absolute_note:base,articulation:'firm_return',duration_beats:.5};
+    }
+    return copy;
+  }));
+  const structural=ir.edges.slice().sort((a,b)=>a.edge_id<b.edge_id?-1:a.edge_id>b.edge_id?1:0).map(edge=>({edge_id:edge.edge_id,edge_type:edge.type,from:edge.from,to:edge.to,...(edge.role?{role:edge.role}:{}),...(edge.relation?{relation:edge.relation}:{}),boundary:edge.type==='fills_role'?'short_gap':'medium_gap',boundary_beats:edge.type==='fills_role'?.5:1}));
+  const performance={...structuredClone(source.performance),lexical_events:events,structural_events:structural};
+  if(parsed.speechAct==='command'){performance.primary_contour='sharply_falling';performance.contour_relative_semitones=[0,-4]}
+  if(parsed.speechAct==='question'){performance.primary_contour='rising';performance.contour_relative_semitones=[0,2]}
+  const relative=events.map(event=>{
+    const {base_midi,family_opening_absolute_midi,address_absolute_midi,...copy}=event;
+    copy.runtime_tail=event.runtime_tail?Object.fromEntries(Object.entries(event.runtime_tail).filter(([key])=>key!=='absolute_note')):null;
+    return copy;
+  });
+  const relativePlan={primary_contour:performance.primary_contour,contour_relative_semitones:performance.contour_relative_semitones,secondary_contours:performance.secondary_contours,
+    lexical_events:relative,structural_events:structural,statement_boundary:performance.statement_boundary,statement_boundary_beats:performance.statement_boundary_beats};
+  const formalDigest=await canonicalDigest({semantic_digest:digest,relative_plan:relativePlan});
+  const formal={format:'EZF-1',renderer_version:'1.0.0',formal_id:`EZF:${formalDigest.slice(0,24)}`,formal_digest:formalDigest,semantic_digest:digest,semantic_ir:ir,performance,
+    literal_gloss:graphRendered?lexicalGloss(events,template.authority):`${names.map((name,index)=>deicticRoles[index]?`${participantIds[index]}:reference(${deicticRoles[index]})`:`${nominal[index]?`${participantIds[index]}:reference(${nominal[index].mode}) | `:''}${participantIds[index]}:name(${name.normalized_label})`).join(' | ')} | ${source.literal_gloss.replaceAll(`${predicates[0].node_id}:`,'p:').replaceAll(`${predicates[0].node_id}.`,'p.').replace(/\[1\](?= \| |$)/g,`[${parsed.runtimeState??1}]`)}`};
+  return {source_input:input,...(destination?{selected_destination:destination}:{}),...(viewpoint?{selected_viewpoint:viewpoint}:{}),...(interpretation?{selected_interpretation:interpretation}:{}),...(selectedStandard?{selected_standard:selectedStandard}:{}),target_id:parsed.predicate,sense_id:`construction:${parsed.construction}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,
+    semantic_note:parsed.semanticNote?(parsed.semanticNote+(parsed.runtimeState===2&&parsed.key==='approved_poetic_love'?' The num ending carries the approved never-finished-becoming reading.':'')):null,construction:parsed.construction,interpretation:parsed.explicitInterpretation||((deicticRoles.some(Boolean)||parsed.semanticNote)?String(input).trim():null)||`${parsed.actorText} ${parsed.negated?(parsed.key==='active_care'?'does not actively care for':parsed.wording.replace('is ','is not ')):parsed.wording}${parsed.targetText?' '+parsed.targetText:''}.`};
+}

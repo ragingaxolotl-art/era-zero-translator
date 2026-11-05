@@ -1,0 +1,17 @@
+change: additive_destination_carrying_imperative
+date: '2026-10-28'
+review: reviews/destination_carrying_commands.md
+reuses:
+  compound: CMP:74d98d19808f74d0b8196951
+  definition_version: 1.0.0
+  speech_act: command
+choices:
+  - spatial destination interpretation
+  - mass standard when a heavy/light noun is present
+preservation:
+  - root and compound definitions unchanged
+  - existing toward-command performances unchanged
+  - lexical completion independent of runtime 0/1/2
+  - no inferred tense or progressive aspect
+  - command is not an assertion of actual arrival
+test: tests/destination_command_test.mjs

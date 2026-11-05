@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {createLocalCompoundPlayer} from '../pages/local_compound_player.mjs';
+import {midiFromScheduledEvents} from '../pages/engine.mjs';
+const midi=midiFromScheduledEvents([{family_opening_absolute_midi:[],address_absolute_midi:[60,64],note_duration_beats:1,boundary_after_beats:0}],60,[]);
+const param=()=>({value:0}),node=()=>({gain:param(),threshold:param(),knee:param(),ratio:param(),attack:param(),release:param(),connect(){return this}});
+let scheduled=[],stopped=0,finish;const context={state:'running',currentTime:4,destination:{},createGain:node,createDynamicsCompressor:node,resume:()=>new Promise(resolve=>{finish=()=>{context.state='running';resolve()}})};
+const player=createLocalCompoundPlayer({audioContextFactory:()=>context,scheduleTone:(c,b,n,t,o)=>{scheduled.push({n,t,o});return {stop(){stopped++}}}});
+await player.play(midi);assert.deepEqual(scheduled.map(n=>n.n),[60,64]);assert.equal(scheduled[0].t,4.1);assert.equal(scheduled[1].t,4.6);assert.equal(scheduled[0].o.duration,.5);player.stop();assert.equal(stopped,2);
+context.state='suspended';const pending=player.play(midi);player.stop();finish();await pending;assert.equal(scheduled.length,2);
+console.log('PASS existing voice scheduling preserves MIDI pitch/timing; stop cancels scheduled tones and pending audio resume.');

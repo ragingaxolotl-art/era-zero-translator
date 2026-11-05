@@ -1,0 +1,116 @@
+{
+  "scope": "Authored diagnostic probes of noun modification; composition alone proves neither intended meaning nor audio recovery.",
+  "cases": [
+    {
+      "input": "The lamp is heavy.",
+      "options": {
+        "interpretation": "mass_standard",
+        "standard": {
+          "kind": "contextual",
+          "dimension": "mass"
+        }
+      },
+      "status": "composed_requires_meaning_and_music_review",
+      "reference_restrictions": []
+    },
+    {
+      "input": "The heavy robot is carrying the box.",
+      "options": {
+        "interpretation": "mass_standard",
+        "standard": {
+          "dimension": "mass",
+          "threshold": "10",
+          "scale": "kilogram"
+        }
+      },
+      "status": "composed_requires_meaning_and_music_review",
+      "reference_restrictions": [
+        {
+          "dimension": "mass",
+          "magnitude": "10",
+          "unit": "kilogram",
+          "comparison": "greater_than"
+        }
+      ]
+    },
+    {
+      "input": "The heavy robot is carrying the box.",
+      "options": {
+        "interpretation": "mass_standard",
+        "standard": {
+          "kind": "contextual",
+          "dimension": "mass"
+        }
+      },
+      "status": "composed_requires_meaning_and_music_review",
+      "reference_restrictions": [
+        {
+          "dimension": "mass",
+          "standard": "contextual",
+          "norm": "heavy",
+          "comparison": "greater_than"
+        }
+      ]
+    },
+    {
+      "input": "The hot robot is carrying the box.",
+      "options": {
+        "interpretation": "thermal_standard",
+        "standard": {
+          "kind": "contextual",
+          "dimension": "thermodynamic_temperature"
+        }
+      },
+      "status": "not_composed",
+      "diagnostic": "Unsupported foundation sentence."
+    },
+    {
+      "input": "The heavy robot is carrying the light box.",
+      "options": {
+        "interpretation": "mass_standard",
+        "standard": {
+          "dimension": "mass",
+          "threshold": "10",
+          "scale": "kilogram"
+        }
+      },
+      "status": "not_composed",
+      "diagnostic": "Unsupported foundation sentence."
+    },
+    {
+      "input": "Nora prefers the robot to the box.",
+      "status": "composed_requires_meaning_and_music_review",
+      "reference_restrictions": []
+    },
+    {
+      "input": "Nora prefers the heavy robot to the light box.",
+      "status": "not_composed",
+      "diagnostic": "This participant needs a supported noun label or explicit referent."
+    },
+    {
+      "input": "Nora prefers the painful treatment to the more painful treatment.",
+      "status": "not_composed",
+      "diagnostic": "This participant needs a supported noun label or explicit referent."
+    },
+    {
+      "input": "Nora does not prefer the painful treatment to the more painful treatment.",
+      "status": "not_composed",
+      "diagnostic": "This participant needs a supported noun label or explicit referent."
+    },
+    {
+      "input": "Does Nora prefer the painful treatment to the more painful treatment?",
+      "status": "not_composed",
+      "diagnostic": "This participant needs a supported noun label or explicit referent."
+    },
+    {
+      "input": "Nora wants the unnecessary ornament.",
+      "status": "not_composed",
+      "diagnostic": "Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else."
+    },
+    {
+      "input": "Nora wants the unpleasant treatment.",
+      "status": "not_composed",
+      "diagnostic": "Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else."
+    }
+  ]
+}

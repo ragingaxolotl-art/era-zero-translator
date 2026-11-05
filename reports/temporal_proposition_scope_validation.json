@@ -1,0 +1,124 @@
+{
+  "scope": "Targeted temporal-clause composition, independent strict MIDI scope recovery and finite countermodel; not all temporal English, live browser or listening validation.",
+  "initial_failures": [
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/named_sentence_test.mjs"
+      ],
+      "exit_code": 1,
+      "output": "Named sentences: 81 full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.\nnode:internal/modules/run_main:122\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ {\n+   actor: 'Nora',\n+   actorText: 'Nora',\n+   calendarDay: undefined,\n+   construction: 'scoped_past_named_active_target_restoration',\n+   explicitInterpretation: 'It is possible that Nora restored Eli.',\n+   gloss: 'active target restoration',\n+   key: 'active_target_restoration',\n+   negated: false,\n+   pattern: 'is restoring',\n+   predicate: 'REP:110',\n+   scopes: [\n+     {\n+       speechTime: 'before',\n+       temporalClause: true\n+     },\n+     {\n+       mode: 'possible',\n+       operator: 'modality'\n+     }\n+   ],\n+   speechTime: undefined,\n+   target: 'Eli',\n+   targetText: 'Eli',\n+   wording: 'is restoring'\n+ }\n- null\n\n    at file:///private/tmp/dba-audit-20261104/tests/named_sentence_test.mjs:183:8 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: {\n    actor: 'Nora',\n    target: 'Eli',\n    actorText: 'Nora',\n    targetText: 'Eli',\n    pattern: 'is restoring',\n    predicate: 'REP:110',\n    key: 'active_target_restoration',\n    gloss: 'active target restoration',\n    wording: 'is restoring',\n    negated: false,\n    construction: 'scoped_past_named_active_target_restoration',\n    speechTime: undefined,\n    explicitInterpretation: 'It is possible that Nora restored Eli.',\n    calendarDay: undefined,\n    scopes: [\n      { temporalClause: true, speechTime: 'before' },\n      { operator: 'modality', mode: 'possible' }\n    ]\n  },\n  expected: null,\n  operator: 'strictEqual'\n}\n\nNode.js v22.14.0\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/sentence_time_test.mjs"
+      ],
+      "exit_code": 1,
+      "output": "node:internal/modules/cjs/loader:1228\n  throw err;\n  ^\n\nError: Cannot find module '/private/tmp/dba-audit-20261104/tests/sentence_time_test.mjs'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)\n    at Function._load (node:internal/modules/cjs/loader:1055:27)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:170:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.14.0\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/sentence_scope_test.mjs"
+      ],
+      "exit_code": 1,
+      "output": "node:internal/modules/cjs/loader:1228\n  throw err;\n  ^\n\nError: Cannot find module '/private/tmp/dba-audit-20261104/tests/sentence_scope_test.mjs'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)\n    at Function._load (node:internal/modules/cjs/loader:1055:27)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:170:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.14.0\n"
+    }
+  ],
+  "followup_reason": "Updated obsolete rejection assertions for newly supported temporal constructions; corrected two nonexistent test filenames.",
+  "passed": true,
+  "checks": [
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/temporal_proposition_scope_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 44 temporal proposition cases with independent scope recovery and Ruby formal/MIDI parity; reversed temporal scope is musically distinct.\nPASS finite temporal-modal countermodel distinguishes the two decoded scope orders.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/named_sentence_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Named sentences: 81 full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/proposition_negation_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 15 proposition/count/negation/modal/runtime contrasts with complete MIDI scope recovery and Ruby parity.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/completed_running_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 30 completed-running actor/destination/runtime/scope cases, Ruby parity, independent MIDI recovery, wrong-root rejection and prior 57 meanings unchanged.\nPASS missing destination and unequal actor bindings reject in browser/Ruby; inconsistent actor sounds reject independently.\nPASS mismatched destination identity rejects in IR/music and ongoing approach stays distinct from completed running.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/running_viewpoint_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 54 running viewpoint/state/scope musical contrasts and Ruby parity; actual UI choice and stale-result guards.\nPASS 15 explicit-habit paraphrases preserve complete formal/music, with no redundant viewpoint choice.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/running_combinations_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 21 explicit running habits and mixed-clause scope/state contrasts, with Ruby/MIDI parity.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/speech_act_runtime_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Questions and commands retain all three runtime states, independent contours, and exactly one compound-head ending.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/negative_contractions_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 33 contraction/state paraphrases and mixed conjunction preserve full formal/MIDI meaning; unsupported meanings and quoted labels are not rewritten.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/unsupported_musical_scope_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Unsupported music configurations: 4 invalid or unsupported scopes rejected by browser schedule/MIDI/SVG and Ruby MIDI/SVG; supported negation preserved.\n"
+    }
+  ],
+  "intermediate_test_corrections": [
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/temporal_proposition_scope_test.mjs"
+      ],
+      "exit_code": 1,
+      "output": "file:///private/tmp/dba-audit-20261104/tests/temporal_proposition_scope_test.mjs:39\n const target=parseNamedSentence(base).predicate,template=JSON.parse(fs.readFileSync(new URL('pages/'+authority.resolution_files[target],root))).variants['assertion:1'];\n                                      ^\n\nTypeError: Cannot read properties of null (reading 'predicate')\n    at file:///private/tmp/dba-audit-20261104/tests/temporal_proposition_scope_test.mjs:39:39\n\nNode.js v22.14.0\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/named_sentence_test.mjs"
+      ],
+      "exit_code": 1,
+      "output": "file:///private/tmp/dba-audit-20261104/tests/named_sentence_test.mjs:94\nassert.equal(parseNamedSentence('It is possible that Pip cares for Ada tomorrow.').requiredInterpretation,'future_assertion');\n                                                                                  ^\n\nTypeError: Cannot read properties of null (reading 'requiredInterpretation')\n    at file:///private/tmp/dba-audit-20261104/tests/named_sentence_test.mjs:94:83\n\nNode.js v22.14.0\n"
+    }
+  ],
+  "final_test_corrections": "Preserved rejection of present-tense cares tomorrow; future scope case uses will care tomorrow and still requires future_assertion selection. Added combined current-day and before-speech scope coverage."
+}

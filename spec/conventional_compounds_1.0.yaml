@@ -1,0 +1,59 @@
+profile: EZLEX-1
+status: implemented_extension_with_reviewed_sensory_registration
+extends: spec/compound_architecture_1.0.yaml
+purpose: Identify explicit conventional lexical specialization without changing canonical atoms
+meaning_contract:
+  - A conventional compound still entails its component graph and lexical constraints.
+  - The added definition contributes meaning that the graph alone does not entail.
+  - Added meaning must not contradict, weaken, or silently replace any component definition.
+  - A conventional compound and its unmarked graph are distinct lexical meanings.
+  - New senses require a reviewed invariant, exclusions, participants, contrasts and delegated semantic approval.
+  - Existing entries without conventional_meaning retain their identity and musical output.
+field:
+  name: conventional_meaning
+  required_keys: [profile, sense_key, sound_code, added_definition, excludes]
+  profile: EZLEX-1
+  sense_key: Stable lowercase identifier, 3 through 80 characters
+  sound_code: Integer from 0 through 6560, reserved permanently once released
+  added_definition: Explicit additional semantic commitment, not an English alias
+  excludes: Nonempty list of semantic boundaries
+identity:
+  - The complete conventional_meaning object is part of the canonical compound semantic payload.
+  - A semantic revision requires a new compound identity and a new convention code and sense key.
+  - A code or sense key cannot identify conflicting convention records, including across retained versions.
+  - Reuse the versioned compound reference rather than restating its convention in consumers.
+  - Runtime state, role, absolute pitch and English aliases remain outside lexical identity.
+graph_extension:
+  - For this exact specialization shape, the base graph-schema minima are overridden to one node and zero edges. All other base requirements remain in force.
+  - A single version-pinned compound_ref head with explicit conventional_meaning may specialize an existing compound without redundant roots or edges.
+  - A single unmarked reference is only an alias and is not a distinct approved meaning.
+  - The exception does not admit a lone root; approved entries still expand to at least two roots.
+expansion:
+  - Each convention stays attached to its exact expanded compound scope.
+  - Consumers inherit a referenced convention without widening it to unrelated sibling roots.
+  - A conventional outer compound may wrap an already conventional inner compound.
+  - Argument binding remains explicit and its role frames remain inside the applicable convention scope.
+music:
+  anchor: Utterance anchor, independent of participant register
+  code: Eight zero-padded base-three digits of sound_code, most significant first
+  trit_pitches: [0, 1, -1]
+  open: '[0, -19, eight trit pitches, 0]'
+  close: '[0, 19, the same eight trit pitches, 0]'
+  note_duration_beats: 0.25
+  boundary_after_beats: 0.5
+  attachment_exception: The closing frame of a compound that qualifies a following unit has zero additional boundary beats, preserving modifier attachment.
+  nesting: Open outer to inner, close inner to outer; close before leaving the referenced compound scope
+  runtime: Markers have no runtime tail; preserve the existing head-only compound ending and argument endings
+  style: Reuses the ternary note vocabulary; no new atomic family or root address
+validation:
+  - Exact schema and bounded integer code
+  - Registry-wide code and sense consistency
+  - Content hash includes additional meaning
+  - All 6561 marker codes have distinct pitch sequences
+  - Nested scope, bound participants and runtime 0/1/2 survive MIDI and SVG export
+  - Independent reading recovers the convention code from MIDI note frames
+limitations:
+  - Sensory registration is approved separately in reviews/sensory_registration_foundation.md; seeing and hearing remain unimplemented.
+  - A code recovers a registered lexical distinction, not arbitrary natural-language semantics without its dictionary.
+  - Independent frame decoding is not a complete inverse of the enclosed compound or sentence.
+  - Acoustic recognition and listener perception remain unverified.

@@ -5,7 +5,7 @@ Status: **PASS — GATE 4 COMPOUND AND COVERAGE COMPLETE; SEMANTIC IR MAY BEGIN*
 - Checks passed: **13**
 - Checks failed: **0**
 - Atomic derivations: **324**
-- Compound derivations: **29**
+- Compound derivations: **35**
 - Source-canonical atoms: **36**
 - Reviewed-canonical atoms: **288**
 - Semantic or generated-form changes: **0**
@@ -57,7 +57,7 @@ every row rejects invented historical claims
 
 ## PASS — fingerprint immutability
 
-atomic and compound fingerprints remain exact
+atomic baseline matches directly or through exact editorial reconciliation; compound fingerprint remains exact
 
 ## PASS — authority integration
 

@@ -6,6 +6,9 @@ require "json"
 require "digest"
 require "set"
 require_relative "era_zero_validation"
+require_relative "era_zero_compound_expansion"
+require_relative "era_zero_names"
+require_relative "era_zero_semantic_validation"
 
 module EraZeroRenderer
   ROOT = EraZeroValidation::ROOT
@@ -42,7 +45,20 @@ module EraZeroRenderer
   end
 
   def register_for(node_id, ir)
-    role_edges = ir.fetch("edges").select { |e| e["type"] == "fills_role" && e["from"] == node_id }
+    # A cardinality wrapper retains the argument role of the referent it scopes.
+    nodes = ir.fetch("nodes").to_h { |node| [node["node_id"], node] }
+    pending = [node_id]; scoped_ids = Set.new
+    until pending.empty?
+      current = pending.pop
+      next if scoped_ids.include?(current)
+      scoped_ids << current
+      ir.fetch("edges").each do |edge|
+        parent = nodes[edge["to"]]
+        pending << edge["to"] if edge["type"] == "member_of" && edge["from"] == current && parent && parent["kind"] == "coordination" && %w[all_of any_of exactly_one].include?(parent["operator"])
+        pending << edge["to"] if edge["type"] == "scopes" && edge["from"] == current && parent && parent["kind"] == "scope_operator" && parent["operator"] == "quantifier"
+      end
+    end
+    role_edges = ir.fetch("edges").select { |e| e["type"] == "fills_role" && scoped_ids.include?(e["from"]) }
     registers = role_edges.map { |e| ROLE_REGISTERS.fetch(e["role"], "middle") }
     return "high" if registers.include?("high")
     return "low" if registers.include?("low")
@@ -78,13 +94,32 @@ module EraZeroRenderer
     event
   end
 
-  def compound_root_order(compound)
+  def compound_root_order(compound, compounds: nil)
+    if compound.fetch("nodes").any? { |node| node["kind"] == "compound_ref" }
+      entries = (compounds || load_authority.last).values
+      expander = EraZeroCompoundExpansion::Expander.new(entries)
+      expanded = expander.expand(compound.fetch("compound_id"), compound.fetch("definition_version"))
+      if expanded.fetch("nodes").any? { |node| node["kind"] == "slot" }
+        raise RenderError, "nested compound slots require explicit scoped binding"
+      end
+      return expander.ordered_roots(expanded).map do |node|
+        node.merge("node_id" => JSON.generate(node.fetch("path")))
+      end
+    end
     roots = compound.fetch("nodes").select { |n| n["kind"] == "root" }
     head = compound.fetch("semantic_head")
     (roots.reject { |n| n["node_id"] == head }.sort_by { |n| n["node_id"] } + roots.select { |n| n["node_id"] == head })
+  rescue EraZeroCompoundExpansion::ExpansionError => error
+    raise RenderError, error.message
   end
 
-  def required_compound_roles(compound)
+  def required_compound_roles(compound, compounds: nil)
+    if compound.fetch("nodes").any? { |node| node["kind"]=="compound_ref" }
+      registry=compounds || load_authority.last
+      expanded=EraZeroCompoundExpansion::Expander.new(registry.is_a?(Hash) ? registry.values : registry).expand(compound.fetch('compound_id'),compound.fetch('definition_version'))
+      paths=expanded.fetch('nodes').select { |node| node['kind']=='slot' }.map { |node| node['path'] }
+      return expanded.fetch('edges').select { |edge| edge['type']=='fills_role' && paths.include?(edge['from_path']) }.map { |edge| edge.fetch('role') }.uniq.sort
+    end
     slot_ids = compound.fetch("nodes").select { |node| node["kind"] == "slot" }.map { |node| node.fetch("node_id") }.to_set
     compound.fetch("edges").select { |edge| edge["type"] == "fills_role" && slot_ids.include?(edge["from"]) }.map { |edge| edge.fetch("role") }.uniq.sort
   end
@@ -96,33 +131,159 @@ module EraZeroRenderer
     raise RenderError, "compound #{compound.fetch('compound_id')} is missing required roles: #{missing.join(', ')}" unless missing.empty?
   end
 
-  def render(ir, anchor_midi: 60)
+  def occurrence_events(node, ir, atoms, compounds, anchor_midi, register, ancestors = [], foundations: {}, allow_draft_foundations: false, allow_draft_quantified: false)
+    id = node.fetch("node_id")
+    raise RenderError, "cyclic compound participant binding" if ancestors.include?(id)
+    raise RenderError, "participant binding depth exceeds 64" if ancestors.length >= 64
+    return [EraZeroSubjectControl.event(node, anchor_midi)] if node["kind"] == "reference"
+    if node["kind"] == "deictic_reference"
+      role = node.fetch("deictic_role")
+      relative = { "speaker" => [0, 12, -1, 0], "addressee" => [0, 12, 1, 0] }.fetch(role)
+      base = anchor_midi + REGISTER_OFFSETS.fetch(register)
+      return [{ "kind" => "deictic_reference", "occurrence_id" => id, "target_id" => "EZREF:#{role}",
+        "referent_id" => node.fetch("referent_id"), "deictic_role" => role, "label" => role,
+        "register" => register, "base_midi" => base, "family_qualified_transliteration" => role, "formal_carrier" => "",
+        "family_opening_relative_semitones" => [], "family_opening_absolute_midi" => [],
+        "address_relative_semitones" => relative, "address_absolute_midi" => relative.map { |note| base + note }, "note_duration_beats" => 0.25 }]
+    end
+    if node["kind"] == "phonemic_reference"
+      name = node.fetch("name")
+      notes = EraZeroNames.notes(name)
+      offset = anchor_midi - 60 + REGISTER_OFFSETS.fetch(register)
+      label_events = [{ "kind" => "phonemic_label", "occurrence_id" => id,
+        "target_id" => name.fetch("name_id"), "referent_id" => node.fetch("referent_id"),
+        "label" => name.fetch("normalized_label"), "semantic_claim" => false,
+        "register" => register, "base_midi" => anchor_midi + REGISTER_OFFSETS.fetch(register),
+        "family_qualified_transliteration" => name.fetch("normalized_label"), "formal_carrier" => "",
+        "family_opening_relative_semitones" => [], "family_opening_absolute_midi" => [],
+        "address_relative_semitones" => notes.map { |note| note - 60 },
+        "address_absolute_midi" => notes.map { |note| note + offset }, "note_duration_beats" => 1.0 }]
+      if %w[definite_nominal nominal_class proximal_nominal distal_nominal].include?(node["reference_mode"])
+        base = anchor_midi + REGISTER_OFFSETS.fetch(register)
+        mode = node["reference_mode"]
+        relative = [0, 12, {"definite_nominal"=>2,"nominal_class"=>3,"proximal_nominal"=>4,"distal_nominal"=>5}.fetch(mode), 0]
+        marker = { "kind" => "reference_marker", "occurrence_id" => id, "target_id" => "EZREF:#{mode}", "referent_id" => node.fetch("referent_id"),
+          "reference_mode" => mode, "label" => mode, "register" => register, "base_midi" => base,
+          "family_qualified_transliteration" => mode, "formal_carrier" => "", "family_opening_relative_semitones" => [], "family_opening_absolute_midi" => [],
+          "address_relative_semitones" => relative, "address_absolute_midi" => relative.map { |note| base + note }, "note_duration_beats" => 0.25 }
+        label_events.unshift(marker)
+      end
+      return EraZeroReferenceProperties.restrict(node, label_events, anchor_midi)
+    end
+    state = node.fetch("runtime_state").fetch("code")
+    if node["target_type"] == "foundation"
+      return [EraZeroFoundations.event(foundations.fetch(node["target_id"]), occurrence_id: id, register: register, anchor: anchor_midi, runtime_state: node.dig("runtime_state", "code"), allow_draft: allow_draft_foundations)]
+    end
+    if node["target_type"] == "atom"
+      raise RenderError, "an atom cannot declare compound bindings" if node.key?("compound_bindings")
+      atom = atoms[node["target_id"]] or raise RenderError, "unknown atom #{node['target_id']}"
+      return [atom_event(atom, occurrence_id: id, register: register, anchor_midi: anchor_midi, runtime_code: state)]
+    end
+    raise RenderError, "invalid lexical target type" unless node["target_type"] == "compound"
+    compound = compounds[node["target_id"]] or raise RenderError, "unknown compound #{node['target_id']}"
+    if node.key?("compound_bindings")
+      expander = EraZeroCompoundExpansion::Expander.new(compounds.values)
+      expanded = expander.expand(compound.fetch("compound_id"), compound.fetch("definition_version"))
+      arguments = ir.fetch("nodes").to_h { |argument| [argument.fetch("node_id"), argument] }
+      bindings = expander.bind_slots(expanded, bindings: node.fetch("compound_bindings"), arguments: arguments).to_h { |binding| [binding.fetch("slot_path"), binding] }
+      components = expander.ordered_roots(expanded, include_slots: true)
+    else
+      validate_compound_roles!(compound, node, ir)
+      if compound.key?("conventional_meaning") || compound.fetch("nodes").any? { |item| item["kind"] == "compound_ref" }
+        expander = EraZeroCompoundExpansion::Expander.new(compounds.values)
+        expanded = expander.expand(compound.fetch("compound_id"), compound.fetch("definition_version"))
+        raise RenderError, "nested compound slots require explicit scoped binding" if expanded.fetch("nodes").any? { |item| item["kind"] == "slot" }
+        components = expander.ordered_roots(expanded)
+      else
+        components = compound_root_order(compound, compounds: compounds).map do |component|
+          compound.fetch("edges").any? { |edge| edge["type"] == "qualifies" && edge["from"] == component["node_id"] } ? component.merge("boundary_after_beats" => 0) : component
+        end
+      end
+    end
+    conventional_scopes = expanded ? expanded.fetch("scopes").select { |scope| scope.key?("conventional_meaning") } : []
+    previous_scopes, result, previous_contexts, previous_boundary = [], [], {}, nil
+    components.each do |component|
+      path = component["path"] || [component.fetch("node_id")]
+      chain_for = lambda do |paths|
+        paths.map do |slot_path|
+          binding = bindings.fetch(slot_path)
+          { "compound_occurrence_id" => id, "slot_path" => slot_path, "argument_id" => binding.fetch("argument_id"), "role" => binding.fetch("role"), "predicate_path" => binding.fetch("predicate_path") }
+        end
+      end
+      qualified_chain = chain_for.call(component.fetch("qualified_slot_paths", []))
+      contexts = component.fetch("convention_slot_contexts", []).to_h { |context| [context.fetch("scope_path"), chain_for.call(context.fetch("qualified_slot_paths"))] }
+      scopes = conventional_scopes.select { |scope| path.take(scope.fetch("path").length) == scope.fetch("path") }.sort_by { |scope| scope.fetch("path").length }
+      shared = 0
+      shared += 1 while shared < previous_scopes.length && shared < scopes.length && previous_scopes[shared]["path"] == scopes[shared]["path"]
+      previous_scopes.drop(shared).reverse_each do |scope|
+        marker = EraZeroCompoundConventions.event(scope.fetch("conventional_meaning"), "close", id, anchor_midi, scope.fetch("path"))
+        chain = previous_contexts.fetch(scope.fetch("path"), [])
+        marker["binding_chain"] = chain unless chain.empty?
+        result << marker
+      end
+      result.last["boundary_after_beats"] = previous_boundary if !previous_boundary.nil? && !result.empty?
+      scopes.drop(shared).each do |scope|
+        marker = EraZeroCompoundConventions.event(scope.fetch("conventional_meaning"), "open", id, anchor_midi, scope.fetch("path"))
+        chain = contexts.fetch(scope.fetch("path"), [])
+        marker["binding_chain"] = chain unless chain.empty?
+        result << marker
+      end
+      previous_scopes, previous_contexts, previous_boundary = scopes, contexts, component["boundary_after_beats"]
+      payload = if component["kind"] == "slot"
+        binding = bindings.fetch(component.fetch("path"))
+        argument = arguments.fetch(binding.fetch("argument_id"))
+        raise RenderError, "bound participant must be a renderable occurrence" unless %w[lexical_occurrence phonemic_reference deictic_reference reference].include?(argument["kind"])
+        role_register = ROLE_REGISTERS.fetch(binding.fetch("role"), "middle")
+        occurrence_events(argument, ir, atoms, compounds, anchor_midi, role_register, ancestors + [id], foundations: foundations, allow_draft_foundations: allow_draft_foundations, allow_draft_quantified: allow_draft_quantified).map do |event|
+          event.merge("occurrence_id" => id, "argument_node_id" => argument.fetch("node_id"),
+            "binding_path" => component.fetch("path"), "binding_role" => binding.fetch("role"),
+            "binding_predicate_path" => binding.fetch("predicate_path"),
+            "binding_chain" => [{ "compound_occurrence_id" => id, "slot_path" => component.fetch("path"), "argument_id" => argument.fetch("node_id"), "role" => binding.fetch("role"), "predicate_path" => binding.fetch("predicate_path") }] + event.fetch("binding_chain", []))
+        end
+      else
+        atom = atoms.fetch(component.fetch("root_id"))
+        is_head = component.fetch("external_head", component["node_id"] == compound["semantic_head"])
+        component_register = component["component_role"] ? ROLE_REGISTERS.fetch(component["component_role"], "middle") : register
+        [atom_event(atom, occurrence_id: id, register: component_register, anchor_midi: anchor_midi,
+          runtime_code: is_head ? state : nil,
+          component_node_id: component["path"] ? JSON.generate(component["path"]) : component["node_id"],
+          component_role: is_head ? "head" : component["component_role"] || "qualifier")]
+      end
+      payload = payload.map { |event| event.merge("binding_chain" => qualified_chain + event.fetch("binding_chain", [])) } unless qualified_chain.empty?
+      result.concat(payload)
+    end
+    previous_scopes.reverse_each do |scope|
+      marker = EraZeroCompoundConventions.event(scope.fetch("conventional_meaning"), "close", id, anchor_midi, scope.fetch("path"))
+      chain = previous_contexts.fetch(scope.fetch("path"), [])
+      marker["binding_chain"] = chain unless chain.empty?
+      result << marker
+    end
+    result.last["boundary_after_beats"] = previous_boundary unless previous_boundary.nil?
+    result
+  rescue EraZeroCompoundExpansion::ExpansionError, EraZeroNames::NameError, KeyError, ArgumentError => error
+    raise RenderError, error.message
+  end
+
+  def render(ir, anchor_midi: 60, foundation_records: [], allow_draft_foundations: false, allow_draft_quantified: false)
     atoms, compounds = load_authority
+    errors = EraZeroSemanticValidation.validate(ir, compound_entries: compounds.values, foundation_records: foundation_records, allow_draft_foundations: allow_draft_foundations, allow_draft_quantified: allow_draft_quantified)
+    raise RenderError, "invalid semantic IR: #{errors.join(", ")}" unless errors.empty?
     raise RenderError, "anchor_midi must be an integer from 24 through 96" unless anchor_midi.is_a?(Integer) && anchor_midi.between?(24, 96)
+    foundations = foundation_records.to_h { |r| [r["foundation_id"], r] }
     digest = semantic_digest(ir)
     expected_id = "UTT:#{digest[0, 24]}"
     raise RenderError, "utterance identity mismatch" unless ir["utterance_id"] == expected_id && ir.dig("serialization", "content_digest") == digest
     speech_act = ir.fetch("speech_act")
     contour = CONTOURS.fetch(speech_act) { raise RenderError, "unknown speech act #{speech_act}" }
     lexical_events = []
-    ir.fetch("nodes").select { |n| n["kind"] == "lexical_occurrence" }.sort_by { |n| n["node_id"] }.each do |node|
-      register = register_for(node["node_id"], ir)
-      state = node.fetch("runtime_state").fetch("code")
-      if node["target_type"] == "atom"
-        atom = atoms[node["target_id"]] or raise RenderError, "unknown atom #{node['target_id']}"
-        lexical_events << atom_event(atom, occurrence_id: node["node_id"], register: register, anchor_midi: anchor_midi, runtime_code: state)
-      elsif node["target_type"] == "compound"
-        compound = compounds[node["target_id"]] or raise RenderError, "unknown compound #{node['target_id']}"
-        validate_compound_roles!(compound, node, ir)
-        compound_root_order(compound).each do |component|
-          atom = atoms.fetch(component.fetch("root_id"))
-          is_head = component["node_id"] == compound["semantic_head"]
-          lexical_events << atom_event(atom, occurrence_id: node["node_id"], register: register, anchor_midi: anchor_midi, runtime_code: is_head ? state : nil, component_node_id: component["node_id"], component_role: is_head ? "head" : "qualifier")
-        end
-      else
-        raise RenderError, "invalid lexical target type"
-      end
+    lexical_nodes = ir.fetch("nodes").select { |node| %w[lexical_occurrence phonemic_reference deictic_reference].include?(node["kind"]) || (node["kind"] == "reference" && node["reference_type"] == "desire_subject") }
+    bound_ids = lexical_nodes.flat_map { |node| node.fetch("compound_bindings", []).map { |binding| binding.fetch("argument_id") } }.to_set
+    independent_ids = ir.fetch("edges").reject { |edge| edge["type"] == "corefers_with" }.map { |edge| edge["from"] }.to_set
+    lexical_nodes.sort_by { |node| node["node_id"] }.each do |node|
+      next if bound_ids.include?(node["node_id"]) && !independent_ids.include?(node["node_id"])
+      lexical_events.concat(occurrence_events(node, ir, atoms, compounds, anchor_midi, register_for(node["node_id"], ir), foundations: foundations, allow_draft_foundations: allow_draft_foundations, allow_draft_quantified: allow_draft_quantified))
     end
+    raise RenderError, "no independently rooted lexical occurrences" if !lexical_nodes.empty? && lexical_events.empty?
 
     structural_events = ir.fetch("edges").sort_by { |e| e["edge_id"] }.map do |edge|
       timing = case edge["type"]
@@ -152,7 +313,12 @@ module EraZeroRenderer
     }
     formal_digest = Digest::SHA256.hexdigest(JSON.generate(EraZeroValidation.deep_sort({ "semantic_digest" => digest, "relative_plan" => relative_plan })))
     gloss_parts = lexical_events.map do |event|
-      atom = atoms.fetch(event["target_id"])
+      next "#{event['occurrence_id']}:#{event['marker']}" if event["kind"] == "grammar_marker"
+      next "#{event['occurrence_id']}:reference(desire_subject)" if event["kind"] == "discourse_reference"
+      next "#{event['occurrence_id']}:reference(#{event['reference_mode']})" if event["kind"] == "reference_marker"
+      next "#{event['occurrence_id']}:reference(#{event['deictic_role']})" if event["kind"] == "deictic_reference"
+      next "#{event['occurrence_id']}:name(#{event['label']})" if event["kind"] == "phonemic_label"
+      atom = event["kind"] == "foundation" ? {"title" => foundations.fetch(event["target_id"]).fetch("display_title")} : atoms.fetch(event["target_id"])
       tail = event["runtime_tail"]
       "#{event['occurrence_id']}#{event['component_node_id'] ? ".#{event['component_node_id']}" : ''}:#{atom['title']}#{tail ? "[#{tail['code']}]" : ''}"
     end
@@ -161,16 +327,16 @@ module EraZeroRenderer
       "semantic_digest" => digest, "semantic_ir" => ir,
       "performance" => { "profile" => PROFILE, "anchor_midi" => anchor_midi, "transposition_semantically_significant" => false, "primary_contour" => contour, "contour_relative_semitones" => CONTOUR_PATHS.fetch(contour), "secondary_contours" => secondary, "lexical_events" => lexical_events, "structural_events" => structural_events, "statement_boundary" => "long_gap", "statement_boundary_beats" => TIMING_BEATS.fetch("long_gap") },
       "literal_gloss" => gloss_parts.join(" | ")
-    }
+    }.tap{|formal|formal["draft_quantified"]=true if ir["nodes"].any?{|n|n["operator"]=="quantified_predication"}}
   end
 
-  def decode(formal)
+  def decode(formal, foundation_records: [], allow_draft_foundations: false, allow_draft_quantified: false)
     raise DecodeError, "unknown format" unless formal["format"] == FORMAT
     ir = formal.fetch("semantic_ir")
     digest = semantic_digest(ir)
     raise DecodeError, "semantic digest mismatch" unless formal["semantic_digest"] == digest && ir["utterance_id"] == "UTT:#{digest[0, 24]}" && ir.dig("serialization", "content_digest") == digest
-    regenerated = render(ir, anchor_midi: formal.dig("performance", "anchor_midi"))
-    %w[formal_id formal_digest performance literal_gloss].each do |field|
+    regenerated = render(ir, anchor_midi: formal.dig("performance", "anchor_midi"), foundation_records: foundation_records, allow_draft_foundations: allow_draft_foundations, allow_draft_quantified: allow_draft_quantified)
+    %w[formal_id formal_digest performance literal_gloss draft_quantified].each do |field|
       raise DecodeError, "#{field} mismatch" unless formal[field] == regenerated[field]
     end
     ir

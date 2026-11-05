@@ -1,0 +1,255 @@
+{
+  "status": "PASS",
+  "scope": "Two authored clean synthetic WAVs; no original text, selected context, semantic document or expected notes supplied to decoder. No physical recordings or channel perturbations.",
+  "physical_recordings": 0,
+  "cases": [
+    {
+      "phrase": "Is \"Treatment A\" not more painful for Nora than \"Treatment B\"? [2]",
+      "interpretation": "expected_outcome",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-pain-comparison-fKu1mB/comparison-0.wav",
+      "meaning": {
+        "profile": "EZPAIN-COMPARISON-INVERSE-1",
+        "status": "draft",
+        "dimension": "felt_bodily_pain_intensity",
+        "basis": "same_experiencer_and_selected_context",
+        "scale": "ordinal_no_numeric_score",
+        "operand_scope": "governed_by_comparison_and_matrix_scope",
+        "relation": "greater_than",
+        "left": {
+          "relation": "expected_outcome",
+          "criterion": "In the selected local context, occurrence or application of the stimulus is expected to produce the specified pain experience; neither occurrence nor pain is asserted as actual.",
+          "stimulus": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "T",
+              "R",
+              "IY",
+              "T",
+              "M",
+              "EH",
+              "N",
+              "T",
+              "WB",
+              "AE"
+            ],
+            "instance_code": null
+          },
+          "outcome": {
+            "predicate": "felt_bodily_pain",
+            "dependency": "CMP:6c9e3042a361ccae6ecf5980",
+            "dependency_version": "1.0.0",
+            "quality": "bodily_pain_experience",
+            "injury_commitment": "not_entailed",
+            "cause_commitment": "unspecified",
+            "intensity_commitment": "unspecified",
+            "stimulus_commitment": "unspecified",
+            "experiencer": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "runtime_state": 1
+          },
+          "runtime_state": 1,
+          "outcome_scope": "governed_by_relation_and_matrix_scope"
+        },
+        "right": {
+          "relation": "expected_outcome",
+          "criterion": "In the selected local context, occurrence or application of the stimulus is expected to produce the specified pain experience; neither occurrence nor pain is asserted as actual.",
+          "stimulus": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "T",
+              "R",
+              "IY",
+              "T",
+              "M",
+              "EH",
+              "N",
+              "T",
+              "WB",
+              "B"
+            ],
+            "instance_code": null
+          },
+          "outcome": {
+            "predicate": "felt_bodily_pain",
+            "dependency": "CMP:6c9e3042a361ccae6ecf5980",
+            "dependency_version": "1.0.0",
+            "quality": "bodily_pain_experience",
+            "injury_commitment": "not_entailed",
+            "cause_commitment": "unspecified",
+            "intensity_commitment": "unspecified",
+            "stimulus_commitment": "unspecified",
+            "experiencer": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "runtime_state": 1
+          },
+          "runtime_state": 1,
+          "outcome_scope": "governed_by_relation_and_matrix_scope"
+        },
+        "context": {
+          "kind": "phonemic",
+          "reference_mode": "proximal_nominal",
+          "phonemes": [
+            "S",
+            "EH",
+            "S",
+            "S",
+            "IH",
+            "AA",
+            "N"
+          ],
+          "instance_code": null
+        },
+        "speech_act": "question",
+        "scopes": [
+          {
+            "operator": "negation"
+          }
+        ],
+        "runtime_state": 2
+      },
+      "checksum": "verified"
+    },
+    {
+      "phrase": "\"Treatment B\" is less painful for Nora than \"Treatment A\". [0]",
+      "interpretation": "disposition",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-pain-comparison-fKu1mB/comparison-1.wav",
+      "meaning": {
+        "profile": "EZPAIN-COMPARISON-INVERSE-1",
+        "status": "draft",
+        "dimension": "felt_bodily_pain_intensity",
+        "basis": "same_experiencer_and_selected_context",
+        "scale": "ordinal_no_numeric_score",
+        "operand_scope": "governed_by_comparison_and_matrix_scope",
+        "relation": "less_than",
+        "left": {
+          "relation": "disposition",
+          "criterion": "The stimulus has a contextually qualified tendency to produce the specified pain experience when encountered or applied; no particular occurrence, inevitability or present pain is asserted.",
+          "stimulus": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "T",
+              "R",
+              "IY",
+              "T",
+              "M",
+              "EH",
+              "N",
+              "T",
+              "WB",
+              "B"
+            ],
+            "instance_code": null
+          },
+          "outcome": {
+            "predicate": "felt_bodily_pain",
+            "dependency": "CMP:6c9e3042a361ccae6ecf5980",
+            "dependency_version": "1.0.0",
+            "quality": "bodily_pain_experience",
+            "injury_commitment": "not_entailed",
+            "cause_commitment": "unspecified",
+            "intensity_commitment": "unspecified",
+            "stimulus_commitment": "unspecified",
+            "experiencer": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "runtime_state": 1
+          },
+          "runtime_state": 1,
+          "outcome_scope": "governed_by_relation_and_matrix_scope"
+        },
+        "right": {
+          "relation": "disposition",
+          "criterion": "The stimulus has a contextually qualified tendency to produce the specified pain experience when encountered or applied; no particular occurrence, inevitability or present pain is asserted.",
+          "stimulus": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "T",
+              "R",
+              "IY",
+              "T",
+              "M",
+              "EH",
+              "N",
+              "T",
+              "WB",
+              "AE"
+            ],
+            "instance_code": null
+          },
+          "outcome": {
+            "predicate": "felt_bodily_pain",
+            "dependency": "CMP:6c9e3042a361ccae6ecf5980",
+            "dependency_version": "1.0.0",
+            "quality": "bodily_pain_experience",
+            "injury_commitment": "not_entailed",
+            "cause_commitment": "unspecified",
+            "intensity_commitment": "unspecified",
+            "stimulus_commitment": "unspecified",
+            "experiencer": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "runtime_state": 1
+          },
+          "runtime_state": 1,
+          "outcome_scope": "governed_by_relation_and_matrix_scope"
+        },
+        "context": {
+          "kind": "phonemic",
+          "reference_mode": "proximal_nominal",
+          "phonemes": [
+            "S",
+            "EH",
+            "S",
+            "S",
+            "IH",
+            "AA",
+            "N"
+          ],
+          "instance_code": null
+        },
+        "speech_act": "assertion",
+        "scopes": [],
+        "runtime_state": 0
+      },
+      "checksum": "verified"
+    }
+  ]
+}

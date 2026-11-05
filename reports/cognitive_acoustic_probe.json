@@ -1,0 +1,403 @@
+{
+  "status": "PASS",
+  "scope": "Four authored cognitive draft messages through synthetic audio only; physical recording unverified",
+  "original_text_or_ir_supplied_to_decoder": false,
+  "physical_recordings": 0,
+  "cases": [
+    {
+      "phrase": "Nora prefers this tea to that tea [0].",
+      "audio_seconds": 42.84394557823129,
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-cognitive-audio-cI1BCt/case-0.wav",
+      "meaning": {
+        "profile": "EZFOUND-SEMANTIC-INVERSE-1",
+        "speech_act": "assertion",
+        "meaning": {
+          "predicate": {
+            "kind": "foundation",
+            "foundation_id": "FND:018dd25d713dff83661a76a4",
+            "definition_version": "1.0.0",
+            "registry_status": "candidate"
+          },
+          "runtime_state": 0,
+          "scopes": [],
+          "arguments": {
+            "experiencer": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "N",
+                  "AO",
+                  "R",
+                  "AE"
+                ],
+                "instance_code": null
+              }
+            },
+            "target": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "proximal_nominal",
+                "phonemes": [
+                  "T",
+                  "IY"
+                ],
+                "instance_code": null
+              }
+            },
+            "comparison_standard": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "distal_nominal",
+                "phonemes": [
+                  "T",
+                  "IY"
+                ],
+                "instance_code": null
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Candidate vocabulary requires explicit opt-in.",
+          "This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.",
+          "Reference sounds do not determine original spelling or external identity.",
+          "Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.",
+          "Reads strict MIDI, not recorded audio."
+        ]
+      },
+      "channels": [
+        {
+          "channel": "gain_and_noise",
+          "accepted": true
+        },
+        {
+          "channel": "speed_plus_two_percent",
+          "accepted": true
+        },
+        {
+          "channel": "short_weak_echo",
+          "accepted": true
+        },
+        {
+          "channel": "dropout",
+          "accepted": false,
+          "reason": "Uncertain pitch or duration at tone 5: pitch=58.000, units=1.760; no correction guessed"
+        }
+      ]
+    },
+    {
+      "phrase": "Nora wants Eli to swim [2].",
+      "audio_seconds": 57.328208616780046,
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-cognitive-audio-cI1BCt/case-1.wav",
+      "meaning": {
+        "profile": "EZFOUND-SEMANTIC-INVERSE-1",
+        "speech_act": "assertion",
+        "meaning": {
+          "predicate": {
+            "kind": "foundation",
+            "foundation_id": "FND:f66b7a3877f4b0140a0b7023",
+            "definition_version": "1.0.0",
+            "registry_status": "candidate"
+          },
+          "runtime_state": 2,
+          "scopes": [],
+          "arguments": {
+            "content": {
+              "type": "proposition",
+              "content_status": "intensional",
+              "proposition": {
+                "predicate": {
+                  "kind": "conventional_compound",
+                  "name": "ongoing_bodily_swimming",
+                  "convention_codes": [
+                    21,
+                    20
+                  ]
+                },
+                "runtime_state": 1,
+                "scopes": [
+                  {
+                    "operator": "aspect",
+                    "aspect": "bounded"
+                  }
+                ],
+                "arguments": {
+                  "actor": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "name",
+                      "phonemes": [
+                        "EH",
+                        "L",
+                        "IH"
+                      ],
+                      "instance_code": null
+                    }
+                  }
+                },
+                "meaning": {
+                  "body_generates_locomotor_pattern": true,
+                  "medium": "water",
+                  "swimming_propulsion": true,
+                  "net_ground_progress_asserted": false,
+                  "arrival_asserted": false,
+                  "unassisted_activity_asserted": false,
+                  "conscious_intention_asserted": false
+                }
+              }
+            },
+            "experiencer": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "N",
+                  "AO",
+                  "R",
+                  "AE"
+                ],
+                "instance_code": null
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Candidate vocabulary requires explicit opt-in.",
+          "This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.",
+          "Reference sounds do not determine original spelling or external identity.",
+          "Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.",
+          "Reads strict MIDI, not recorded audio."
+        ]
+      },
+      "channels": [
+        {
+          "channel": "gain_and_noise",
+          "accepted": true
+        },
+        {
+          "channel": "speed_plus_two_percent",
+          "accepted": true
+        },
+        {
+          "channel": "short_weak_echo",
+          "accepted": true
+        },
+        {
+          "channel": "dropout",
+          "accepted": false,
+          "reason": "Uncertain note boundary"
+        }
+      ]
+    },
+    {
+      "phrase": "Nora does not know whether Eli is not conscious.",
+      "audio_seconds": 46.35863945578231,
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-cognitive-audio-cI1BCt/case-2.wav",
+      "meaning": {
+        "profile": "EZFOUND-SEMANTIC-INVERSE-1",
+        "speech_act": "assertion",
+        "meaning": {
+          "predicate": {
+            "kind": "foundation",
+            "foundation_id": "FND:fe36cb2a6d649151067c7754",
+            "definition_version": "1.0.0",
+            "registry_status": "candidate"
+          },
+          "runtime_state": 1,
+          "scopes": [
+            {
+              "operator": "negation"
+            }
+          ],
+          "arguments": {
+            "content": {
+              "type": "question",
+              "question_kind": "polar",
+              "content_status": "intensional",
+              "assertion_commitment": "neither_answer",
+              "proposition": {
+                "predicate": {
+                  "kind": "atom",
+                  "root_id": "LIF:011"
+                },
+                "runtime_state": 1,
+                "scopes": [
+                  {
+                    "operator": "negation"
+                  }
+                ],
+                "arguments": {
+                  "bearer": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "name",
+                      "phonemes": [
+                        "EH",
+                        "L",
+                        "IH"
+                      ],
+                      "instance_code": null
+                    }
+                  }
+                }
+              }
+            },
+            "experiencer": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "N",
+                  "AO",
+                  "R",
+                  "AE"
+                ],
+                "instance_code": null
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Candidate vocabulary requires explicit opt-in.",
+          "This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.",
+          "Reference sounds do not determine original spelling or external identity.",
+          "Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.",
+          "Reads strict MIDI, not recorded audio."
+        ]
+      },
+      "channels": [
+        {
+          "channel": "gain_and_noise",
+          "accepted": true
+        },
+        {
+          "channel": "speed_plus_two_percent",
+          "accepted": true
+        },
+        {
+          "channel": "short_weak_echo",
+          "accepted": true
+        },
+        {
+          "channel": "dropout",
+          "accepted": false,
+          "reason": "Uncertain note boundary"
+        }
+      ]
+    },
+    {
+      "phrase": "Yesterday, Nora learned whether Eli is conscious.",
+      "audio_seconds": 52.82843537414966,
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-zero-cognitive-audio-cI1BCt/case-3.wav",
+      "meaning": {
+        "profile": "EZKNOWLEDGE-ACQUISITION-INVERSE-1",
+        "speech_act": "assertion",
+        "meaning": {
+          "predicate": {
+            "kind": "acquisition",
+            "root_id": "ORI:110"
+          },
+          "runtime_state": 1,
+          "scopes": [
+            {
+              "operator": "time",
+              "relation": "previous_day"
+            }
+          ],
+          "phase_contract": {
+            "before": "does_not_hold",
+            "culmination": "holds",
+            "after": "unspecified"
+          },
+          "result_assertion": "at_culmination_only",
+          "result": {
+            "predicate": {
+              "kind": "foundation",
+              "foundation_id": "FND:fe36cb2a6d649151067c7754",
+              "definition_version": "1.0.0",
+              "registry_status": "candidate"
+            },
+            "runtime_state": 1,
+            "scopes": [],
+            "arguments": {
+              "content": {
+                "type": "question",
+                "question_kind": "polar",
+                "content_status": "intensional",
+                "assertion_commitment": "neither_answer",
+                "proposition": {
+                  "predicate": {
+                    "kind": "atom",
+                    "root_id": "LIF:011"
+                  },
+                  "runtime_state": 1,
+                  "scopes": [],
+                  "arguments": {
+                    "bearer": {
+                      "type": "entity",
+                      "reference": {
+                        "kind": "phonemic",
+                        "reference_mode": "name",
+                        "phonemes": [
+                          "EH",
+                          "L",
+                          "IH"
+                        ],
+                        "instance_code": null
+                      }
+                    }
+                  }
+                }
+              },
+              "experiencer": {
+                "type": "entity",
+                "reference": {
+                  "kind": "phonemic",
+                  "reference_mode": "name",
+                  "phonemes": [
+                    "N",
+                    "AO",
+                    "R",
+                    "AE"
+                  ],
+                  "instance_code": null
+                }
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Draft acquisition convention; not general learning or recorded-audio recognition.",
+          "Knowledge result and question meanings are recovered, not verified as real-world facts."
+        ]
+      },
+      "channels": [
+        {
+          "channel": "gain_and_noise",
+          "accepted": true
+        },
+        {
+          "channel": "speed_plus_two_percent",
+          "accepted": true
+        },
+        {
+          "channel": "short_weak_echo",
+          "accepted": true
+        },
+        {
+          "channel": "dropout",
+          "accepted": false,
+          "reason": "Uncertain note boundary"
+        }
+      ]
+    }
+  ]
+}

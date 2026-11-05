@@ -1,0 +1,18 @@
+{
+  "baseline_revision": "16b4b13eb3351a313e0f5c48c5904a191538b590",
+  "baseline_report": "reports/translator_completion_regression.json",
+  "baseline_result": "234 of 235 checks passed; custody_transfer_test failed on obsolete parse-null expectation",
+  "changed_file": "tests/custody_transfer_test.mjs",
+  "changed_file_sha256": "bccc68fb4a87778b8094736d631912a24d227908d806d890467a3ef74028c5b8",
+  "command": [
+    "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+    "tests/custody_transfer_test.mjs"
+  ],
+  "observed_exit_code": 0,
+  "checks_added": [
+    "Delivery wording requires explicit custody-delivery interpretation",
+    "Spatial interpretation cannot silently replace delivery",
+    "Selected delivery is rejected by custody-transfer-only decoder"
+  ],
+  "scope": "Targeted rerun after test-only correction. No implementation changes and no full-suite rerun. No physical recordings."
+}

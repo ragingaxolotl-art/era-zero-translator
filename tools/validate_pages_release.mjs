@@ -22,17 +22,17 @@ check('browser resolution scope',Object.keys(index.resolution_files).length===in
 check('conservative data',index.senses.some(s=>s.lemma==='go'&&s.route==='atom')&&index.senses.some(s=>s.lemma==='go'&&s.route==='semantic_ir')&&index.senses.some(s=>s.lemma==='food'&&s.route==='gap'));
 
 const englishCases=[
-  ['I am leaving home now.','MOV:101','assertion',1,true],
-  ['She arrived at the station.','MOV:110','assertion',1,true],
-  ['Are they approaching the bridge?','MOV:111','question',1,true],
-  ['I am not moving.','MOV:121','assertion',0,true],
-  ['Please leave now.','MOV:101','command',1,true],
-  ['Could we approach the station?','MOV:111','question',1,true],
-  ['They left the building.','MOV:100','assertion',1,true],
-  ['Go home.','MOV:121','command',1,true],
-  ['Send the file.','DAT:111','command',1,true],
-  ['Send the message.','CON:101','command',1,true],
-  ['I changed my mind.','MIN:101','assertion',1,true]
+  ['I am leaving home now.','MOV:101','assertion',1,false],
+  ['She arrived at the station.','MOV:110','assertion',1,false],
+  ['Are they approaching the bridge?','MOV:111','question',1,false],
+  ['I am not moving.','MOV:121','assertion',1,false],
+  ['Please leave now.','MOV:101','command',1,false],
+  ['Could we approach the station?','MOV:111','question',1,false],
+  ['They left the building.','MOV:100','assertion',1,false],
+  ['Go home.','MOV:121','command',1,false],
+  ['Send the file.','DAT:111','command',1,false],
+  ['Send the message.','CON:101','command',1,false],
+  ['I changed my mind.','MIN:101','assertion',1,false]
 ];
 for(const [sentence,target,act,runtime,automatic] of englishCases){
   const result=english.analyzeEnglish(sentence,index);
@@ -40,6 +40,8 @@ for(const [sentence,target,act,runtime,automatic] of englishCases){
   check(`plain English intent: ${sentence}`,result.speech_act_proposal===act&&result.explicit_runtime_state===runtime);
   check(`plain English safe resolution: ${sentence}`,result.decision.auto_resolution_allowed===automatic);
 }
+const labelLookup=english.analyzeEnglish('active care',index);
+check('exact lexical lookup remains available',labelLookup.interpretation_scope==='dictionary_label'&&!labelLookup.complete_sentence_unavailable);
 const ambiguousKnow=english.analyzeEnglish('I know the answer.',index);
 check('plain English preserves real ambiguity',ambiguousKnow.decision.requires_clarification&&ambiguousKnow.candidates.some(item=>item.route==='gap'));
 const allChangeOptions=english.analyzeEnglish('change',index);
@@ -47,7 +49,7 @@ check('all matching options escape the old eight-item cutoff',allChangeOptions.c
 const unknownPhrase=english.analyzeEnglish('Zibble frobnates quux.',index);
 check('unknown nouns are labeled while unknown predicates remain semantic gaps',unknownPhrase.status==='ok'&&unknownPhrase.candidates.length===0&&unknownPhrase.term_coverage.filter(item=>item.status==='phonemic_label').length===2&&unknownPhrase.term_coverage.some(item=>item.term==='frobnates'&&item.status==='unresolved_semantic')&&!unknownPhrase.decision.auto_resolution_allowed);
 const mixedPhrase=english.analyzeEnglish('Go home with zibble.',index);
-check('mixed phrase preserves labels without blocking strong context',mixedPhrase.candidates[0]?.target_id==='MOV:121'&&mixedPhrase.decision.auto_resolution_allowed&&mixedPhrase.term_coverage.some(item=>item.term==='zibble'&&item.status==='phonemic_label'));
+check('mixed phrase keeps dictionary candidates without claiming complete role binding',mixedPhrase.candidates[0]?.target_id==='MOV:121'&&!mixedPhrase.decision.auto_resolution_allowed&&mixedPhrase.complete_sentence_unavailable&&mixedPhrase.term_coverage.some(item=>item.term==='zibble'&&item.status==='phonemic_label'));
 const named=await names.encodeName('zibble','blue-2');
 const namedAgain=await names.encodeName('zibble','blue-2');
 const differentInstance=await names.encodeName('zibble','red-1');
@@ -107,10 +109,10 @@ check('automatic reading is visibly selected',app.includes('selectCandidate(0,fi
 check('phoneme audio resumes and reports playback',app.includes("sharedAudioContext.state==='suspended'")&&app.includes('await sharedAudioContext.resume()')&&app.includes('Audio started · ${notes.length} phoneme-label tones.')&&app.includes('showPlaying(button'));
 check('visible complete sound construction',html.includes('id="hearTranslation"')&&html.includes('id="prefixText"')&&html.includes('id="carrierText"')&&html.includes('id="familyNotes"')&&html.includes('id="addressNotes"')&&html.includes('id="runtimeNote"')&&html.includes('id="contourNotes"')&&app.includes('soundPlanFromFormal'));
 check('accessible responsive UI',html.includes('aria-live')&&html.includes('role="tablist"')&&css.includes('@media(max-width:900px)')&&css.includes('prefers-reduced-motion'));
-check('hosted limitation is explicit',app.includes('Open-slot compound role binding')||index.online_scope.note.includes('Open-slot compound'));
+check('hosted limitation is explicit',index.online_scope.note.includes('Reviewed browser sentence constructions')&&index.online_scope.note.includes('advanced controlled role binding remains available in the local Ruby API'));
 
 const failed=checks.filter(([,ok])=>!ok);
-const report=`# GitHub Pages Release Audit\n\nStatus: **${failed.length?'FAIL':'PASS'}**\n\n- Checks passed: **${checks.length-failed.length}**\n- Checks failed: **${failed.length}**\n- Canonical resolution variants: **${variants}**\n- Indexed senses: **${index.counts.senses}**\n- Directly resolvable targets: **${Object.keys(index.resolution_files).length}**\n- Open-slot compounds reserved for the local API: **${index.online_scope.slotted_compounds}**\n- SVG/MIDI verification: **byte-for-byte against the Ruby canonical generator**\n- EZB-1 integrity and corruption rejection: **verified**\n\nThe static release preserves ambiguity, gaps, runtime state, speech act, Semantic IR, EZF-1, SVG, MIDI, and deterministic direct resolution. The single open-slot compound requires arbitrary role binding and remains explicitly routed to the full local Ruby API.\n`;
+const report=`# GitHub Pages Release Audit\n\nStatus: **${failed.length?'FAIL':'PASS'}**\n\n- Checks passed: **${checks.length-failed.length}**\n- Checks failed: **${failed.length}**\n- Canonical resolution variants: **${variants}**\n- Indexed senses: **${index.counts.senses}**\n- Directly resolvable targets: **${Object.keys(index.resolution_files).length}**\n- Open-slot compounds excluded from standalone static templates: **${index.online_scope.slotted_compounds}**\n- SVG/MIDI verification: **byte-for-byte against the Ruby canonical generator**\n- EZB-1 integrity and corruption rejection: **verified**\n\nThe static release preserves ambiguity, gaps, runtime state, speech act, Semantic IR, EZF-1, SVG, MIDI, and deterministic direct resolution. Open-slot compounds require explicit participant binding. Reviewed ordinary-English constructions use browser compiled plans; advanced controlled templates remain available through the local Ruby API.\n`;
 await fs.writeFile(path.join(root,'reports/pages_release_audit.md'),report);
 console.log(`GitHub Pages audit: ${failed.length?'FAIL':'PASS'}`);
 console.log(`Checks passed: ${checks.length-failed.length}; failed: ${failed.length}; canonical variants: ${variants}`);

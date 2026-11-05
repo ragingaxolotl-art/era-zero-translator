@@ -1784,3 +1784,2856 @@ reviews:
     decision: 'rejected: loses both self-awakening and preserved potential'
   recommendation: approve selected bond head
   confidence: high
+- compound_id: CMP:2816a7eeb356c2148b26beca
+  display_title: ongoing physical repair
+  current_choice_reason: Review in reviews/foundation_process_compounds.md; scores
+    are implementation-author judgments, not independent review or measured coverage.
+  candidates:
+  - candidate_id: active_graph
+    direction: Both domain and restoration are ongoing; preserves all required distinctions.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 74
+    decision: winner
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: MAT:111
+      - node_id: h
+        kind: root
+        root_id: REP:111
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+  - candidate_id: head_only
+    direction: Using only the restorative head loses the domain restriction.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 51
+    decision: 'rejected: domain distinction is missing'
+  - candidate_id: completed_with_runtime
+    direction: Changing runtime on the completed foundation does not change its lexical
+      phase.
+    scores:
+      atomicity: 8
+      address_fit: 2
+      family_fit: 8
+      neighbor_separation: 1
+      cross_family_separation: 7
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 32
+    decision: 'rejected: completed process is not ongoing'
+  recommendation: approve active_graph
+  confidence: high
+- compound_id: CMP:9ddb5e2cfc285515c799462e
+  display_title: ongoing internal data repair
+  current_choice_reason: Review in reviews/foundation_process_compounds.md; scores
+    are implementation-author judgments, not independent review or measured coverage.
+  candidates:
+  - candidate_id: active_graph
+    direction: Both domain and restoration are ongoing; preserves all required distinctions.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 74
+    decision: winner
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: DAT:101
+      - node_id: h
+        kind: root
+        root_id: REP:101
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+  - candidate_id: head_only
+    direction: Using only the restorative head loses the domain restriction.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 51
+    decision: 'rejected: domain distinction is missing'
+  - candidate_id: completed_with_runtime
+    direction: Changing runtime on the completed foundation does not change its lexical
+      phase.
+    scores:
+      atomicity: 8
+      address_fit: 2
+      family_fit: 8
+      neighbor_separation: 1
+      cross_family_separation: 7
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 32
+    decision: 'rejected: completed process is not ongoing'
+  recommendation: approve active_graph
+  confidence: high
+- compound_id: CMP:1b987e04bf47840f9e82ecd3
+  display_title: ongoing internal structural repair
+  current_choice_reason: Review in reviews/foundation_process_compounds.md; scores
+    are implementation-author judgments, not independent review or measured coverage.
+  candidates:
+  - candidate_id: active_graph
+    direction: Both domain and restoration are ongoing; preserves all required distinctions.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 74
+    decision: winner
+    graph:
+      head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: STR:101
+      - node_id: h
+        kind: root
+        root_id: REP:101
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+  - candidate_id: head_only
+    direction: Using only the restorative head loses the domain restriction.
+    scores:
+      atomicity: 10
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 5
+      technical_coverage: 5
+    total: 51
+    decision: 'rejected: domain distinction is missing'
+  - candidate_id: completed_with_runtime
+    direction: Changing runtime on the completed foundation does not change its lexical
+      phase.
+    scores:
+      atomicity: 8
+      address_fit: 2
+      family_fit: 8
+      neighbor_separation: 1
+      cross_family_separation: 7
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 32
+    decision: 'rejected: completed process is not ongoing'
+  recommendation: approve active_graph
+  confidence: high
+- compound_id: CMP:ade73037114406a2cd91ce13
+  display_title: ongoing sensory registration
+  current_choice_reason: Semantic analysis in reviews/sensory_registration_foundation.md.
+    Scores are implementation-author judgments, not independent evidence.
+  candidates:
+  - candidate_id: explicit_transduction
+    direction: Retains both physical coupling and information transfer; names the
+      additional transduction commitment explicitly.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q01
+        kind: root
+        root_id: MAT:211
+      - node_id: h
+        kind: root
+        root_id: DAT:111
+      edges:
+      - edge_id: e01
+        type: qualifies
+        from: q01
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ongoing_sensory_registration
+        sound_code: 0
+        added_definition: 'The transfer is realized by physical sensory transduction:
+          the target receiver registers information carried by a physical stimulus
+          from the distinct source. Registration does not by itself assert conscious
+          experience, attention, identification or understanding.'
+        excludes:
+        - Mere physical influence without informational registration
+        - Generic data copying without sensory transduction
+        - Conscious experience or understanding inferred from registration
+        - A specified sensory channel inferred without a channel distinction
+  - candidate_id: unmarked_transfer
+    direction: Information transfer plus physical coupling does not select sensory
+      registration.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 6
+      everyday_language_coverage: 4
+      technical_coverage: 6
+    total: 50
+    decision: 'rejected: sensory commitment absent'
+  - candidate_id: conscious_representation
+    direction: Conscious mental representation excludes nonconscious sensors and adds
+      an unsupported experiential claim.
+    scores:
+      atomicity: 6
+      address_fit: 6
+      family_fit: 5
+      neighbor_separation: 5
+      cross_family_separation: 4
+      compound_usefulness: 5
+      everyday_language_coverage: 4
+      technical_coverage: 4
+    total: 39
+    decision: 'rejected: wrong receiver and experience commitments'
+  recommendation: approve explicit_transduction
+  confidence: high
+- compound_id: CMP:bcfd189eb305cf364ada975a
+  display_title: ongoing optical sensory registration
+  current_choice_reason: Review in reviews/registration_channels.md; scores are author
+    judgments, not independent validation.
+  candidates:
+  - candidate_id: versioned_specialization
+    direction: Reuse registration exactly and add an explicit, audible channel restriction.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 76
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:ade73037114406a2cd91ce13
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ongoing_optical_registration
+        sound_code: 1
+        added_definition: The sensory transduction registers information carried by
+          light from the source, including visible, infrared or ultraviolet light.
+          No conscious visual experience, color judgment, object recognition or attention
+          is entailed.
+        excludes:
+        - radio data transfer, acoustic-only input, visual imagination, and conscious
+          seeing inferred from registration
+        - Inferring the channel from the source noun alone
+  - candidate_id: unmarked_reference
+    direction: A reference alone repeats registration without distinguishing a channel.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 1
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 45
+    decision: 'rejected: missing channel'
+  - candidate_id: noun_inference
+    direction: Guessing the channel from a source name loses meaning and fails cross-channel
+      cases.
+    scores:
+      atomicity: 3
+      address_fit: 3
+      family_fit: 3
+      neighbor_separation: 1
+      cross_family_separation: 2
+      compound_usefulness: 3
+      everyday_language_coverage: 3
+      technical_coverage: 2
+    total: 20
+    decision: 'rejected: source noun is not a channel'
+  recommendation: approve versioned_specialization
+  confidence: high
+- compound_id: CMP:42e9bd596b35612ed6cbe3ce
+  display_title: ongoing acoustic sensory registration
+  current_choice_reason: Review in reviews/registration_channels.md; scores are author
+    judgments, not independent validation.
+  candidates:
+  - candidate_id: versioned_specialization
+    direction: Reuse registration exactly and add an explicit, audible channel restriction.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 10
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 76
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:ade73037114406a2cd91ce13
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ongoing_acoustic_registration
+        sound_code: 2
+        added_definition: The sensory transduction registers information carried by
+          a propagating mechanical pressure or elastic vibration signal from the source
+          through a material medium. No conscious auditory experience, speech comprehension,
+          source recognition or attention is entailed.
+        excludes:
+        - static contact alone, optical-only input, remembered sounds, and conscious
+          hearing inferred from registration
+        - Inferring the channel from the source noun alone
+  - candidate_id: unmarked_reference
+    direction: A reference alone repeats registration without distinguishing a channel.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 1
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 45
+    decision: 'rejected: missing channel'
+  - candidate_id: noun_inference
+    direction: Guessing the channel from a source name loses meaning and fails cross-channel
+      cases.
+    scores:
+      atomicity: 3
+      address_fit: 3
+      family_fit: 3
+      neighbor_separation: 1
+      cross_family_separation: 2
+      compound_usefulness: 3
+      everyday_language_coverage: 3
+      technical_coverage: 2
+    total: 20
+    decision: 'rejected: source noun is not a channel'
+  recommendation: approve versioned_specialization
+  confidence: high
+- compound_id: CMP:eef9fff8ac6618ce60927f18
+  display_title: active physical load support
+  current_choice_reason: Review in reviews/physical_support_foundation.md; scores
+    are author judgments, not independent semantic validation.
+  candidates:
+  - candidate_id: explicit_load_support
+    direction: Bind the same source and material load; explicitly mark the extra load-bearing
+      commitment.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-load
+        kind: root
+        root_id: MAT:010
+      - node_id: s-source
+        kind: slot
+        slot_name: supporter
+        slot_type: entity
+      - node_id: s-target
+        kind: slot
+        slot_name: load
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MAT:211
+      edges:
+      - type: qualifies
+        from: q-load
+        to: s-target
+      - type: fills_role
+        from: s-source
+        to: h
+        role: source
+      - type: fills_role
+        from: s-target
+        to: h
+        role: target
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: active_physical_load_support
+        sound_code: 3
+        added_definition: The same material source bears at least part of the distinct
+          material target load through physical influence that resists displacement
+          under an applied force. This load-bearing support may be contact-mediated
+          or field-mediated, need not bear the entire load, and does not require rest,
+          movement, intention or consciousness.
+        excludes:
+        - Physical influence without load-bearing support
+        - Emotional, evidential, financial or computational support
+        - Carrying or transport inferred from support alone
+        - Grasping or holding without the load-bearing commitment
+  - candidate_id: unmarked_coupling
+    direction: Physical influence alone includes heating and other non-supporting
+      interactions.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: load bearing absent'
+  - candidate_id: movement_substitution
+    direction: Movement can be unsupported; support can occur without movement.
+    scores:
+      atomicity: 5
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 32
+    decision: 'rejected: wrong invariant'
+  recommendation: approve explicit_load_support
+  confidence: high
+- compound_id: CMP:7a6749aaf61cd6181e544bd6
+  display_title: ongoing physical carrying
+  current_choice_reason: Review in reviews/physical_carrying.md; scores are author
+    judgments, not independent semantic validation.
+  candidates:
+  - candidate_id: explicit_supported_conveyance
+    direction: Reuse support first, bind its load to the mover, and mark conveyance
+      by that supporting engagement.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-support
+        kind: compound_ref
+        compound_id: CMP:eef9fff8ac6618ce60927f18
+        definition_version: 1.0.0
+      - node_id: s-load
+        kind: slot
+        slot_name: moving_load
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MOV:121
+      edges:
+      - type: qualifies
+        from: q-support
+        to: h
+      - type: fills_role
+        from: s-load
+        to: h
+        role: actor
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ongoing_physical_carrying
+        sound_code: 4
+        added_definition: A material source conveys the same distinct material load
+          that it physically supports, relative to the contextually relevant movement
+          frame during the same ongoing interval. The load is borne upon, within,
+          or suspended from a moving supporting part or field maintained by the source;
+          that load-bearing engagement is the means of conveyance. The whole source
+          need not translate, as with a conveyor belt. No intention, destination or
+          recipient is asserted.
+        excludes:
+        - Stationary support without conveyance
+        - Support and unrelated simultaneous movement
+        - Pushing or dragging a load across an independently supporting surface without
+          bearing it upon, within or suspended from the carrier
+        - Throwing or falling after support ends
+        - Abstract carrying of information, responsibility or disease
+      binding_constraints:
+      - relation: same_argument
+        slot_paths:
+        - - q-support
+          - s-target
+        - - s-load
+      - relation: distinct_arguments
+        slot_paths:
+        - - q-support
+          - s-source
+        - - q-support
+          - s-target
+  - candidate_id: mere_conjunction
+    direction: Support plus simultaneous movement does not entail conveyance by that
+      support.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: conveyance linkage absent'
+  - candidate_id: unshared_mover
+    direction: A carrier can support one object while a different object moves.
+    scores:
+      atomicity: 5
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 32
+    decision: 'rejected: wrong invariant'
+  recommendation: approve explicit_supported_conveyance
+  confidence: high
+- compound_id: CMP:763faa4465065477220f6f06
+  display_title: ongoing destination-directed physical carrying
+  current_choice_reason: reviews/destination_carrying.md; author-scored candidates,
+    not independent semantic validation.
+  candidates:
+  - candidate_id: explicit_same_event
+    direction: Reuse the exact prior foundation, share load and destination as applicable,
+      and state the same-event relation audibly.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-carry
+        kind: compound_ref
+        compound_id: CMP:7a6749aaf61cd6181e544bd6
+        definition_version: 1.0.0
+      - node_id: s-load
+        kind: slot
+        slot_name: moving_load
+        slot_type: entity
+      - node_id: s-destination
+        kind: slot
+        slot_name: destination
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MOV:111
+      edges:
+      - type: qualifies
+        from: q-carry
+        to: h
+      - type: fills_role
+        from: s-load
+        to: h
+        role: actor
+      - type: fills_role
+        from: s-destination
+        to: h
+        role: destination
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ongoing_destination_carrying
+        sound_code: 5
+        added_definition: An instance of ongoing physical carrying in which that same
+          supported load is undergoing displacement toward the specified destination
+          position during the same carrying event. The supporting conveyance constitutes
+          this approach; unrelated simultaneous approach does not qualify. The destination
+          may be specified by a contextual location associated with a referent. Arrival,
+          receipt, ownership transfer, intention and continued presence are not asserted.
+        excludes:
+        - Carrying and unrelated approach by another load or during another event
+        - Arrival or receipt inferred merely from directed carrying
+        - Recipient or ownership inferred from a destination label
+      binding_constraints:
+      - relation: same_argument
+        slot_paths:
+        - - q-carry
+          - q-support
+          - s-target
+        - - q-carry
+          - s-load
+        - - s-load
+  - candidate_id: unlinked_conjunction
+    direction: Conjunction permits different events and cannot establish this carrying
+      culmination.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 44
+    decision: 'rejected: event identity missing'
+  - candidate_id: runtime_as_completion
+    direction: Using runtime 0 or 2 to express arrival corrupts the independent ternary
+      state.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: runtime semantic loss'
+  recommendation: approve explicit_same_event
+  confidence: high
+- compound_id: CMP:74d98d19808f74d0b8196951
+  display_title: completed physical carrying to a destination
+  current_choice_reason: reviews/destination_carrying.md; author-scored candidates,
+    not independent semantic validation.
+  candidates:
+  - candidate_id: explicit_same_event
+    direction: Reuse the exact prior foundation, share load and destination as applicable,
+      and state the same-event relation audibly.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-path
+        kind: compound_ref
+        compound_id: CMP:763faa4465065477220f6f06
+        definition_version: 1.0.0
+      - node_id: s-load
+        kind: slot
+        slot_name: moving_load
+        slot_type: entity
+      - node_id: s-destination
+        kind: slot
+        slot_name: destination
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MOV:110
+      edges:
+      - type: qualifies
+        from: q-path
+        to: h
+      - type: fills_role
+        from: s-load
+        to: h
+        role: actor
+      - type: fills_role
+        from: s-destination
+        to: h
+        role: destination
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: completed_destination_carrying
+        sound_code: 6
+        added_definition: 'Completion of one destination-directed physical carrying
+          event: the same load conveyed by the same supporting source reaches the
+          same specified destination position as the culmination of that carrying
+          conveyance. The ongoing carrying and approach are internal phases of this
+          completed event, not separate current assertions. Arrival after the load
+          is released and travels independently is excluded. Receipt, ownership transfer,
+          intention and continued presence after arrival are not asserted.'
+        excludes:
+        - A carrying episode that ends short of the destination
+        - Arrival during a separate event or by a different load
+        - Arrival after unsupported flight or independent displacement following release
+        - Receipt, ownership transfer or continued presence inferred from arrival
+      binding_constraints:
+      - relation: same_argument
+        slot_paths:
+        - - q-path
+          - s-load
+        - - s-load
+      - relation: same_argument
+        slot_paths:
+        - - q-path
+          - s-destination
+        - - s-destination
+  - candidate_id: unlinked_conjunction
+    direction: Conjunction permits different events and cannot establish this carrying
+      culmination.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 44
+    decision: 'rejected: event identity missing'
+  - candidate_id: runtime_as_completion
+    direction: Using runtime 0 or 2 to express arrival corrupts the independent ternary
+      state.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: runtime semantic loss'
+  recommendation: approve explicit_same_event
+  confidence: high
+- compound_id: CMP:0aca609416668978e1527dac
+  display_title: practical physical custody
+  current_choice_reason: Review in reviews/physical_custody_foundation.md; scores
+    are author judgments, not independent semantic validation.
+  candidates:
+  - candidate_id: explicit_practical_custody
+    direction: Conventional practical control specializes the established material
+      relation and keeps a distinct object.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-load
+        kind: root
+        root_id: MAT:010
+      - node_id: s-source
+        kind: slot
+        slot_name: custodian
+        slot_type: entity
+      - node_id: s-target
+        kind: slot
+        slot_name: held_object
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MAT:210
+      edges:
+      - type: qualifies
+        from: q-load
+        to: s-target
+      - type: fills_role
+        from: s-source
+        to: h
+        role: source
+      - type: fills_role
+        from: s-target
+        to: h
+        role: target
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: practical_physical_custody
+        sound_code: 7
+        added_definition: An established material relation in which a holder has effective
+          practical control over access to and physical handling of a distinct material
+          object, through an arrangement the holder can operate directly or through
+          a controlled physical intermediary. Mere ability to approach, touch, influence
+          or seize the object does not establish this relation. Control need not be
+          exclusive, lawful, conscious, voluntary, continuously exercised or accompanied
+          by ownership, load bearing, movement or a prior transfer.
+        excludes:
+        - Ownership, permission or entitlement without practical control
+        - Proximity, touch, load support or physical influence alone
+        - Hypothetical ability to seize an object not already under practical control
+        - Legal guardianship, information access or ownership of an abstract asset
+        - Receipt or transfer inferred from a custody state alone
+      binding_constraints:
+      - relation: distinct_arguments
+        slot_paths:
+        - - s-source
+        - - s-target
+  - candidate_id: unmarked_coupling
+    direction: Heating or illumination can influence an object without custody.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: practical control absent'
+  - candidate_id: load_support_substitution
+    direction: A table may bear the load without controlling access; custody may use
+      a controlled enclosure.
+    scores:
+      atomicity: 7
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 43
+    decision: 'rejected: wrong relation'
+  recommendation: approve explicit_practical_custody
+  confidence: high
+- compound_id: CMP:c332d2e89b9f6177486fc93b
+  display_title: completed acquisition of physical custody
+  current_choice_reason: Review in reviews/custody_acquisition_foundation.md; scores
+    are author judgments, not independent semantic validation.
+  candidates:
+  - candidate_id: explicit_relation_actualization
+    direction: Actualize the exact custody relation at one culmination, with an explicit
+      pre-state and stable participants.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-custody
+        kind: compound_ref
+        compound_id: CMP:0aca609416668978e1527dac
+        definition_version: 1.0.0
+      - node_id: h
+        kind: root
+        root_id: ORI:110
+      edges:
+      - type: qualifies
+        from: q-custody
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: completed_physical_custody_acquisition
+        sound_code: 8
+        added_definition: 'Completion of one bounded transition in which the specified
+          practical physical custody relation comes to obtain: the same holder lacks
+          that control of the same distinct material object immediately before the
+          transition and has it at culmination. The actualized referent is this holder-object
+          custody relation, not the material object. The nested custody relation describes
+          the culmination state, not an independent assertion of custody at speech
+          time. No prior custodian, sourced transfer, loss of another holder''s control,
+          ownership, willingness, displacement, creation of the object or persistence
+          after culmination is asserted.'
+        excludes:
+        - Already having custody without a transition into it
+        - Creation or movement of the material object inferred from acquisition
+        - Ownership, permission or legal custody without practical physical custody
+        - A prior holder, handover, causal mechanism or relinquishment inferred from
+          acquisition
+        - Continued custody after culmination inferred from completion
+  - candidate_id: spatial_arrival
+    direction: Arrival beside a person does not establish their practical control.
+    scores:
+      atomicity: 7
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 43
+    decision: 'rejected: acquisition absent'
+  - candidate_id: runtime_transition
+    direction: Runtime 0 and 1 are occurrence endings, not a before/after event operator.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_relation_actualization
+  confidence: high
+- compound_id: CMP:e3075c904daf1c647969fef6
+  display_title: completed transfer of physical custody
+  current_choice_reason: Review in reviews/custody_transfer_foundation.md; scores
+    are author judgments, not independent semantic validation.
+  candidates:
+  - candidate_id: explicit_linked_reallocation
+    direction: Reuse exact custody and acquisition, share the object and explicitly
+      link source loss and recipient gain.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-prior
+        kind: compound_ref
+        compound_id: CMP:0aca609416668978e1527dac
+        definition_version: 1.0.0
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:c332d2e89b9f6177486fc93b
+        definition_version: 1.0.0
+      edges:
+      - type: qualifies
+        from: q-prior
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: completed_physical_custody_transfer
+        sound_code: 9
+        added_definition: 'Completion of one reallocation of practical physical custody
+          of the same distinct material object from a source holder to a distinct
+          recipient: the source has custody and the recipient lacks it immediately
+          before the event; at culmination the source lacks that custody and the recipient
+          acquires it. The source custody and recipient acquisition are linked phases
+          of this same reallocation, not unrelated loss and acquisition. Nested source
+          custody describes the pre-state, while nested acquisition describes the
+          culmination transition; neither is an independent speech-time assertion.
+          No ownership change, willing acceptance, permission, displacement, physical
+          carrying, exclusive control by either holder relative to third parties,
+          or persistence afterward is asserted.'
+        excludes:
+        - Acquisition without a prior holder
+        - Unrelated loss and acquisition involving the same object
+        - Shared custody retained by the source at culmination
+        - Ownership, permission, motion or willing acceptance inferred from transfer
+        - Different objects at the two custody endpoints
+      binding_constraints:
+      - relation: same_argument
+        slot_paths:
+        - - q-prior
+          - s-target
+        - - h
+          - q-custody
+          - s-target
+      - relation: distinct_arguments
+        slot_paths:
+        - - q-prior
+          - s-source
+        - - h
+          - q-custody
+          - s-source
+  - candidate_id: unlinked_conjunction
+    direction: Unrelated loss and gain do not establish a sourced reallocation.
+    scores:
+      atomicity: 7
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 43
+    decision: 'rejected: event linkage absent'
+  - candidate_id: runtime_transition
+    direction: Runtime 0 and 1 are occurrence endings, not a before/after event operator.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_linked_reallocation
+  confidence: high
+- compound_id: CMP:5200738177777915abb3f42e
+  display_title: completed carrying-mediated custody delivery
+  current_choice_reason: Review in reviews/custody_delivery_foundation.md; scores
+    are author judgments, not independent semantic validation.
+  candidates:
+  - candidate_id: explicit_carrying_transfer_culmination
+    direction: Reuse exact carrying arrival and custody transfer, link their culmination
+      and share all three participants.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-arrival
+        kind: compound_ref
+        compound_id: CMP:74d98d19808f74d0b8196951
+        definition_version: 1.0.0
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:e3075c904daf1c647969fef6
+        definition_version: 1.0.0
+      edges:
+      - type: qualifies
+        from: q-arrival
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: completed_carrying_custody_delivery
+        sound_code: 10
+        added_definition: 'Completion of one carrying-mediated custody delivery: the
+          carrier conveys the same supported material load to the contextual position
+          of the recipient, and that carrying arrival culminates in the linked transfer
+          of practical physical custody of that load from the carrier to that recipient.
+          The carrier is the transfer source, the load is the transferred object and
+          the destination referent is the recipient. The nested carrying arrival and
+          custody transfer are phases of this one delivery, not independent events.
+          The source loses custody as the recipient acquires it at culmination. Ownership,
+          willing acceptance, permission, exclusivity against third parties and persistence
+          afterward are unspecified.'
+        excludes:
+        - Spatial arrival while the carrier retains custody
+        - Custody transfer without the specified supporting conveyance and arrival
+        - Carrying arrival and an unrelated later handover
+        - A different carrier, object or recipient across the nested events
+        - Ownership, permission or willing acceptance inferred from delivery
+      binding_constraints:
+      - relation: same_argument
+        slot_paths:
+        - - q-arrival
+          - q-path
+          - q-carry
+          - q-support
+          - s-source
+        - - h
+          - q-prior
+          - s-source
+      - relation: same_argument
+        slot_paths:
+        - - q-arrival
+          - s-load
+        - - h
+          - q-prior
+          - s-target
+      - relation: same_argument
+        slot_paths:
+        - - q-arrival
+          - s-destination
+        - - h
+          - h
+          - q-custody
+          - s-source
+  - candidate_id: unlinked_conjunction
+    direction: Unrelated arrival and handover do not establish this carrying-mediated
+      delivery.
+    scores:
+      atomicity: 7
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 43
+    decision: 'rejected: event linkage absent'
+  - candidate_id: runtime_transition
+    direction: Runtime 0 and 1 are occurrence endings, not a before/after event operator.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_carrying_transfer_culmination
+  confidence: high
+- compound_id: CMP:6c9e3042a361ccae6ecf5980
+  display_title: consciously felt self-condition
+  current_choice_reason: reviews/felt_conditions_foundation.md; author judgments,
+    not independent validation.
+  candidates:
+  - candidate_id: explicit_felt_specialization
+    direction: Bind one experiencer, reuse exact dependencies and audibly declare
+      the additional felt meaning.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-conscious
+        kind: root
+        root_id: LIF:001
+      - node_id: s-experiencer
+        kind: slot
+        slot_name: experiencer
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MIN:001
+      edges:
+      - type: qualifies
+        from: q-conscious
+        to: h
+      - type: fills_role
+        from: s-experiencer
+        to: h
+        role: experiencer
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: felt_self_condition
+        sound_code: 11
+        added_definition: The bound experiencer has a presently conscious felt presentation
+          of their own condition. The presentation is experiential rather than merely
+          stored, inferred, reported or externally registered, and can be implicit
+          without a verbal judgment. Within this compound the self in LIF:001 and
+          MIN:001 is the bound experiencer, not necessarily the speaker. No particular
+          pleasantness, desire, bodily need, cause, truth of a judgment or external
+          sensory channel is asserted.
+        excludes:
+        - Unconscious sensory registration or a device record alone
+        - A manifest self-model without conscious feeling
+        - A specific emotional valence or bodily need inferred from generic feeling
+  - candidate_id: unmarked_root_substitution
+    direction: Representation, care, work capacity and viability do not entail the
+      required feeling.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: missing experiential distinction'
+  - candidate_id: runtime_as_feeling
+    direction: Runtime status does not encode pleasantness, hunger, thirst or fatigue.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_felt_specialization
+  confidence: high
+- compound_id: CMP:8e95897afbd6d54b8e164e03
+  display_title: pleasant felt condition
+  current_choice_reason: reviews/felt_conditions_foundation.md; author judgments,
+    not independent validation.
+  candidates:
+  - candidate_id: explicit_felt_specialization
+    direction: Bind one experiencer, reuse exact dependencies and audibly declare
+      the additional felt meaning.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:6c9e3042a361ccae6ecf5980
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: pleasant_felt_condition
+        sound_code: 12
+        added_definition: The same consciously felt self-condition has a pleasant
+          experiential tone for its experiencer. Pleasantness is felt valence, not
+          an appraisal that an outcome is useful, morally good or desired. It does
+          not by itself establish happiness, satisfaction, affection, care, preference,
+          or absence of simultaneous unpleasant feeling.
+        excludes:
+        - Care behavior or a favorable judgment without pleasant feeling
+        - Attention or physiological activation used as positive valence
+        - Happiness or a preferred outcome inferred from any pleasant feeling
+  - candidate_id: unmarked_root_substitution
+    direction: Representation, care, work capacity and viability do not entail the
+      required feeling.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: missing experiential distinction'
+  - candidate_id: runtime_as_feeling
+    direction: Runtime status does not encode pleasantness, hunger, thirst or fatigue.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_felt_specialization
+  confidence: high
+- compound_id: CMP:c58b38d03fab27880ac3e1f0
+  display_title: happy felt mood
+  current_choice_reason: reviews/felt_conditions_foundation.md; author judgments,
+    not independent validation.
+  candidates:
+  - candidate_id: explicit_felt_specialization
+    direction: Bind one experiencer, reuse exact dependencies and audibly declare
+      the additional felt meaning.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:8e95897afbd6d54b8e164e03
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: happy_felt_mood
+        sound_code: 13
+        added_definition: 'The experiencer feels happiness: a pleasant emotional mood
+          of gladness or contentment, not merely a pleasant sensory quality or a favorable
+          evaluation. The mood can coexist with other feelings and need not be permanent,
+          intense, externally expressed, or caused by a particular event. This is
+          the felt-state sense of happy, not fortunate, willing, suitable or happy
+          with a specified object.'
+        excludes:
+        - Fortunate circumstances or willingness without felt happiness
+        - Care, attention, approval or a pleasant sensation alone
+        - Absence of sadness or an exclusively positive emotional state inferred from
+          happiness
+  - candidate_id: unmarked_root_substitution
+    direction: Representation, care, work capacity and viability do not entail the
+      required feeling.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: missing experiential distinction'
+  - candidate_id: runtime_as_feeling
+    direction: Runtime status does not encode pleasantness, hunger, thirst or fatigue.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_felt_specialization
+  confidence: high
+- compound_id: CMP:c64ab0a9989c7b10c46e3b38
+  display_title: felt bodily replenishment need
+  current_choice_reason: reviews/felt_conditions_foundation.md; author judgments,
+    not independent validation.
+  candidates:
+  - candidate_id: explicit_felt_specialization
+    direction: Bind one experiencer, reuse exact dependencies and audibly declare
+      the additional felt meaning.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-body
+        kind: root
+        root_id: MAT:000
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:6c9e3042a361ccae6ecf5980
+        definition_version: 1.0.0
+      edges:
+      - type: qualifies
+        from: q-body
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: felt_bodily_need
+        sound_code: 14
+        added_definition: The same consciously felt self-condition presents the experiencer's
+          own material body as calling for replenishment or maintenance. MAT:000 identifies
+          that experiencer's body within the same focal frame. This is a felt bodily
+          demand, not proof of a measured physiological deficit, harm, failed viability,
+          an intended action or actual replenishment. The required resource or maintenance
+          kind is not yet specified.
+        excludes:
+        - A bodily deficit that is not felt
+        - An intellectual wish or a duty without a felt bodily demand
+        - Measured depletion, damage or action inferred from the feeling
+  - candidate_id: unmarked_root_substitution
+    direction: Representation, care, work capacity and viability do not entail the
+      required feeling.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: missing experiential distinction'
+  - candidate_id: runtime_as_feeling
+    direction: Runtime status does not encode pleasantness, hunger, thirst or fatigue.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_felt_specialization
+  confidence: high
+- compound_id: CMP:748be1f0ce7ceb2963716292
+  display_title: felt hunger
+  current_choice_reason: reviews/felt_conditions_foundation.md; author judgments,
+    not independent validation.
+  candidates:
+  - candidate_id: explicit_felt_specialization
+    direction: Bind one experiencer, reuse exact dependencies and audibly declare
+      the additional felt meaning.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:c64ab0a9989c7b10c46e3b38
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: felt_hunger
+        sound_code: 15
+        added_definition: 'The same felt bodily replenishment need is hunger: a bodily
+          feeling calling for food or nourishment through eating. The feeling need
+          not prove a measured energy deficit or imminent harm and does not assert
+          eating, appetite for a particular food, permission, or a deliberate plan.
+          Figurative hunger for achievement or information is excluded.'
+        excludes:
+        - Water-directed thirst without food-directed hunger
+        - Dormancy, low work capacity or an unfelt nutritional deficit alone
+        - A metaphorical desire for success or knowledge
+  - candidate_id: unmarked_root_substitution
+    direction: Representation, care, work capacity and viability do not entail the
+      required feeling.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: missing experiential distinction'
+  - candidate_id: runtime_as_feeling
+    direction: Runtime status does not encode pleasantness, hunger, thirst or fatigue.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_felt_specialization
+  confidence: high
+- compound_id: CMP:60cd46250d183e3105b7250a
+  display_title: felt thirst
+  current_choice_reason: reviews/felt_conditions_foundation.md; author judgments,
+    not independent validation.
+  candidates:
+  - candidate_id: explicit_felt_specialization
+    direction: Bind one experiencer, reuse exact dependencies and audibly declare
+      the additional felt meaning.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:c64ab0a9989c7b10c46e3b38
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: felt_thirst
+        sound_code: 16
+        added_definition: 'The same felt bodily replenishment need is thirst: a bodily
+          feeling calling for water intake, ordinarily through drinking. It does not
+          prove a measured water deficit or assert drinking, a chosen beverage, permission,
+          or a deliberate plan. Figurative thirst for power or knowledge is excluded.'
+        excludes:
+        - Food-directed hunger without water-directed thirst
+        - A dry object, an unfelt fluid deficit or dormancy alone
+        - A metaphorical desire for power or knowledge
+  - candidate_id: unmarked_root_substitution
+    direction: Representation, care, work capacity and viability do not entail the
+      required feeling.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: missing experiential distinction'
+  - candidate_id: runtime_as_feeling
+    direction: Runtime status does not encode pleasantness, hunger, thirst or fatigue.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_felt_specialization
+  confidence: high
+- compound_id: CMP:3c13b9c619d95f1c40ea5da5
+  display_title: felt fatigue
+  current_choice_reason: reviews/felt_conditions_foundation.md; author judgments,
+    not independent validation.
+  candidates:
+  - candidate_id: explicit_felt_specialization
+    direction: Bind one experiencer, reuse exact dependencies and audibly declare
+      the additional felt meaning.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:6c9e3042a361ccae6ecf5980
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: felt_fatigue
+        sound_code: 17
+        added_definition: 'The experiencer feels fatigue: a condition of weariness
+          in which sustaining physical or mental effort is felt as taxing or diminished
+          and rest or recovery is called for. This does not entail sleep, dormancy,
+          unconsciousness, objective incapacity, illness, damage or a measured energy
+          deficit. Mere boredom or being tired of a particular object is a separate
+          sense.'
+        excludes:
+        - Dormancy or unconsciousness without felt fatigue
+        - Low physical work capacity or damage without weariness
+        - Boredom with a particular object or a generic unpleasant feeling alone
+  - candidate_id: unmarked_root_substitution
+    direction: Representation, care, work capacity and viability do not entail the
+      required feeling.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: missing experiential distinction'
+  - candidate_id: runtime_as_feeling
+    direction: Runtime status does not encode pleasantness, hunger, thirst or fatigue.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_felt_specialization
+  confidence: high
+- compound_id: CMP:c4fb9863fe36d7667db847c0
+  display_title: unpleasant felt condition
+  current_choice_reason: reviews/felt_conditions_foundation.md; author judgments,
+    not independent validation.
+  candidates:
+  - candidate_id: explicit_felt_specialization
+    direction: Bind one experiencer, reuse exact dependencies and audibly declare
+      the additional felt meaning.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:6c9e3042a361ccae6ecf5980
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: unpleasant_felt_condition
+        sound_code: 18
+        added_definition: The same consciously felt self-condition has an unpleasant
+          experiential tone for its experiencer. Unpleasantness is felt valence, not
+          merely objective harm, disapproval, lack of pleasure, or a desire to avoid
+          an outcome. It may coexist with pleasant feeling and does not by itself
+          specify sadness, pain, fear, anger, fatigue or a cause.
+        excludes:
+        - Absence of pleasant feeling without unpleasant feeling
+        - Objective harm or disapproval without unpleasant experience
+        - Sadness, fear or pain inferred from every unpleasant feeling
+  - candidate_id: unmarked_root_substitution
+    direction: Representation, care, work capacity and viability do not entail the
+      required feeling.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: missing experiential distinction'
+  - candidate_id: runtime_as_feeling
+    direction: Runtime status does not encode pleasantness, hunger, thirst or fatigue.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_felt_specialization
+  confidence: high
+- compound_id: CMP:d54499d2989fa97349e8e23d
+  display_title: sad felt mood
+  current_choice_reason: reviews/felt_conditions_foundation.md; author judgments,
+    not independent validation.
+  candidates:
+  - candidate_id: explicit_felt_specialization
+    direction: Bind one experiencer, reuse exact dependencies and audibly declare
+      the additional felt meaning.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:c4fb9863fe36d7667db847c0
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: sad_felt_mood
+        sound_code: 19
+        added_definition: 'The experiencer feels sadness: an unpleasant emotional
+          mood of sorrow or low spirits. This is a felt-state meaning, not a diagnosis,
+          a judgment that an event is unfortunate, or every unpleasant sensation.
+          It does not require a particular loss, crying, outward expression, permanence,
+          incapacity, lack of care or total absence of happiness.'
+        excludes:
+        - Negated happiness or emotional neutrality without sadness
+        - Physical pain, fear or anger without sadness
+        - A regrettable event or medical diagnosis inferred from the adjective
+  - candidate_id: unmarked_root_substitution
+    direction: Representation, care, work capacity and viability do not entail the
+      required feeling.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: missing experiential distinction'
+  - candidate_id: runtime_as_feeling
+    direction: Runtime status does not encode pleasantness, hunger, thirst or fatigue.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: 'rejected: ternary semantic loss'
+  recommendation: approve explicit_felt_specialization
+  confidence: high
+- compound_id: CMP:201afcb1035b464ef8e56bd6
+  display_title: ongoing bodily locomotor activity
+  current_choice_reason: reviews/swimming_foundation.md; author judgments, not independent
+    validation.
+  candidates:
+  - candidate_id: explicit_activity_convention
+    direction: Physical ingredients remain true; the convention supplies pattern and
+      manner.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-body
+        kind: root
+        root_id: MAT:000
+      - node_id: s-actor
+        kind: slot
+        slot_name: actor
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MAT:101
+      edges:
+      - type: qualifies
+        from: q-body
+        to: h
+      - type: fills_role
+        from: s-actor
+        to: h
+        role: actor
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ongoing_bodily_locomotor_activity
+        sound_code: 20
+        added_definition: The bound actor is the focal material body undergoing coordinated
+          body-local movements constituting a locomotor activity pattern. The body
+          itself generates the pattern through its moving parts; passive carriage
+          or arbitrary physical change alone does not suffice. Whole-body displacement
+          relative to the ground, conscious intention, biological life, a destination,
+          speed or a particular gait is not asserted.
+        excludes:
+        - Passive transport without bodily locomotor activity
+        - An arbitrary internal physical change
+        - Whole-body displacement or conscious intention inferred from the activity
+  - candidate_id: generic_displacement
+    direction: Displacement loses bodily propulsion and can exclude in-place activity.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: rejected
+  - candidate_id: runtime_as_manner
+    direction: Runtime does not encode gait, water or propulsion.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: rejected
+  recommendation: approve explicit_activity_convention
+  confidence: high
+- compound_id: CMP:1e2ec87e1feff0da19aadc3b
+  display_title: ongoing bodily swimming
+  current_choice_reason: reviews/swimming_foundation.md; author judgments, not independent
+    validation.
+  candidates:
+  - candidate_id: explicit_activity_convention
+    direction: Physical ingredients remain true; the convention supplies pattern and
+      manner.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:201afcb1035b464ef8e56bd6
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ongoing_bodily_swimming
+        sound_code: 21
+        added_definition: The same actor performs bodily locomotor activity whose
+          coordinated movements generate swimming propulsion against surrounding water.
+          Water and the propulsion-producing interaction are part of this conventional
+          meaning, not inferred from a noun label. Limb, fin, tail or body movements
+          may contribute; assistance or equipment is not excluded. The activity need
+          not produce net ground-relative progress, as when opposing a current. Mere
+          floating, passive drifting, riding in a boat, or being carried through water
+          does not suffice. No destination, crossing completion, speed, voluntary
+          intention or absence of assistance is asserted.
+        excludes:
+        - Passive floating, drifting or transport alone
+        - Machine operation, figurative swimming or unspecified fluid movement
+        - Completed crossing, arrival or unassisted activity inferred from swimming
+  - candidate_id: generic_displacement
+    direction: Displacement loses bodily propulsion and can exclude in-place activity.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: rejected
+  - candidate_id: runtime_as_manner
+    direction: Runtime does not encode gait, water or propulsion.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: rejected
+  recommendation: approve explicit_activity_convention
+  confidence: high
+- compound_id: CMP:a900dd73c9816ed6cbad29f0
+  display_title: ongoing swimming across a region
+  current_choice_reason: reviews/swimming_foundation.md; author judgments, not independent
+    validation.
+  candidates:
+  - candidate_id: explicit_activity_convention
+    direction: Physical ingredients remain true; the convention supplies pattern and
+      manner.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: s-region
+        kind: slot
+        slot_name: region
+        slot_type: entity
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:1e2ec87e1feff0da19aadc3b
+        definition_version: 1.0.0
+      edges:
+      - type: fills_role
+        from: s-region
+        to: h
+        role: environment
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ongoing_swimming_across_region
+        sound_code: 22
+        added_definition: The same actor is swimming along a traversal path through
+          the bound spatial region, progressing from a contextual side toward an opposed
+          side of that region. The swimming supplies this traversal, not an unrelated
+          simultaneous activity. The region is a traversed spatial extent, not a recipient,
+          source of propulsion or already reached destination. The event is ongoing
+          and does not assert that the actor has reached the opposite side or completed
+          the crossing. No particular speed, straightness, intention, unassisted activity
+          or subsequent location is asserted.
+        excludes:
+        - Swimming somewhere within a region without across-traversal
+        - A completed crossing inferred from ongoing activity
+        - The region treated as a recipient or a separately moving actor
+  - candidate_id: generic_displacement
+    direction: Displacement loses bodily propulsion and can exclude in-place activity.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: rejected
+  - candidate_id: runtime_as_manner
+    direction: Runtime does not encode gait, water or propulsion.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: rejected
+  recommendation: approve explicit_activity_convention
+  confidence: high
+- compound_id: CMP:22955227e19ba82d5b48c9ef
+  display_title: ongoing bodily running
+  current_choice_reason: reviews/running_foundation.md; author judgments, not independent
+    validation.
+  candidates:
+  - candidate_id: explicit_activity_convention
+    direction: Physical ingredients remain true; the convention supplies pattern and
+      manner.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:201afcb1035b464ef8e56bd6
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ongoing_bodily_running
+        sound_code: 23
+        added_definition: 'The same actor performs a bodily running gait: a repeated
+          leg-support and recovery pattern of the running class, characterized by
+          bouncing or compressive support rather than the vaulting progression characteristic
+          of walking. This is a conventional gait category, not a speed threshold
+          or an inference from arbitrary body movement. Grounded forms without an
+          airborne interval and running in place are included. The actor need not
+          be human or biological. No particular speed, net ground-relative displacement,
+          destination, arrival, conscious intention or unassisted performance is asserted.'
+        excludes:
+        - Walking, passive carriage or fast displacement without running gait
+        - Running a program, operating a machine or liquid flowing
+        - Arrival, mandatory flight phase or a speed threshold inferred from running
+  - candidate_id: generic_displacement
+    direction: Displacement loses bodily propulsion and can exclude in-place activity.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: rejected
+  - candidate_id: runtime_as_manner
+    direction: Runtime does not encode gait, water or propulsion.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: rejected
+  recommendation: approve explicit_activity_convention
+  confidence: high
+- compound_id: CMP:139985443924b6e8f24d44f2
+  display_title: ongoing running toward a destination
+  current_choice_reason: reviews/destination_running.md; author judgments, not independent
+    validation.
+  candidates:
+  - candidate_id: explicit_activity_convention
+    direction: Physical ingredients remain true; the convention supplies pattern and
+      manner.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-run
+        kind: compound_ref
+        compound_id: CMP:22955227e19ba82d5b48c9ef
+        definition_version: 1.0.0
+      - node_id: s-actor
+        kind: slot
+        slot_name: actor
+        slot_type: entity
+      - node_id: s-destination
+        kind: slot
+        slot_name: destination
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MOV:111
+      edges:
+      - type: qualifies
+        from: q-run
+        to: h
+      - type: fills_role
+        from: s-actor
+        to: h
+        role: actor
+      - type: fills_role
+        from: s-destination
+        to: h
+        role: destination
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ongoing_destination_running
+        sound_code: 24
+        added_definition: The same actor performs bodily running while undergoing
+          displacement toward the bound destination position in that same event. The
+          running activity constitutes this approach, not a separate simultaneous
+          action or movement by another actor. The destination can be the contextual
+          location of a named referent. The approach is ongoing; arrival, completed
+          travel, receipt, ownership transfer, deliberate intention and continued
+          presence at the destination are not asserted.
+        excludes:
+        - Running and approach by different actors or in unrelated events
+        - Running in place alone without destination-directed displacement
+        - Arrival, receipt or completed travel inferred from approach
+      binding_constraints:
+      - relation: same_argument
+        slot_paths:
+        - - q-run
+          - h
+          - s-actor
+        - - s-actor
+  - candidate_id: generic_displacement
+    direction: Displacement loses bodily propulsion and can exclude in-place activity.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: rejected
+  - candidate_id: runtime_as_manner
+    direction: Runtime does not encode gait, water or propulsion.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: rejected
+  recommendation: approve explicit_activity_convention
+  confidence: high
+- compound_id: CMP:4f83046a60201671bc92fe10
+  display_title: completed running to a destination
+  current_choice_reason: reviews/completed_running.md; author judgments, not independent
+    validation.
+  candidates:
+  - candidate_id: explicit_activity_convention
+    direction: Physical ingredients remain true; the convention supplies pattern and
+      manner.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-path
+        kind: compound_ref
+        compound_id: CMP:139985443924b6e8f24d44f2
+        definition_version: 1.0.0
+      - node_id: s-actor
+        kind: slot
+        slot_name: actor
+        slot_type: entity
+      - node_id: s-destination
+        kind: slot
+        slot_name: destination
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MOV:110
+      edges:
+      - type: qualifies
+        from: q-path
+        to: h
+      - type: fills_role
+        from: s-actor
+        to: h
+        role: actor
+      - type: fills_role
+        from: s-destination
+        to: h
+        role: destination
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: completed_destination_running
+        sound_code: 25
+        added_definition: 'Completion of one destination-directed bodily running event:
+          the same actor reaches the same bound destination as the culmination of
+          that running approach. The nested running and approach describe internal
+          phases of this completed event, not ongoing actions at speech time. Running
+          partway followed by a separate walk, passive carriage or an unrelated arrival
+          does not satisfy this meaning. The destination can be the contextual location
+          of a named referent. Receipt, ownership transfer, conscious intention and
+          continued presence after arrival are not asserted.'
+        excludes:
+        - Running partway followed by arrival through a separate manner or event
+        - Arrival of a different actor or at a different destination
+        - Continued presence, receipt or ownership inferred from arrival
+      binding_constraints:
+      - relation: same_argument
+        slot_paths:
+        - - q-path
+          - s-actor
+        - - s-actor
+      - relation: same_argument
+        slot_paths:
+        - - q-path
+          - s-destination
+        - - s-destination
+  - candidate_id: generic_displacement
+    direction: Displacement loses bodily propulsion and can exclude in-place activity.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: rejected
+  - candidate_id: runtime_as_manner
+    direction: Runtime does not encode gait, water or propulsion.
+    scores:
+      atomicity: 1
+      address_fit: 2
+      family_fit: 2
+      neighbor_separation: 1
+      cross_family_separation: 1
+      compound_usefulness: 1
+      everyday_language_coverage: 2
+      technical_coverage: 1
+    total: 11
+    decision: rejected
+  recommendation: approve explicit_activity_convention
+  confidence: high
+- compound_id: CMP:6ccc77b4b3aa69bb010849a4
+  display_title: physical region interior relation
+  current_choice_reason: reviews/spatial_entry_foundation.md; author scores, not independent
+    validation.
+  candidates:
+  - candidate_id: explicit_spatial_convention
+    direction: Material participant and live shared-frame configuration remain true;
+      convention contributes spatial inclusion.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-body
+        kind: root
+        root_id: MAT:000
+      - node_id: s-bearer
+        kind: slot
+        slot_name: located_participant
+        slot_type: entity
+      - node_id: s-region
+        kind: slot
+        slot_name: spatial_region
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MOV:221
+      edges:
+      - type: qualifies
+        from: q-body
+        to: s-bearer
+      - type: fills_role
+        from: s-bearer
+        to: h
+        role: bearer
+      - type: fills_role
+        from: s-region
+        to: h
+        role: location
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: physical_region_interior
+        sound_code: 26
+        added_definition: The located participant is material, and its contextually
+          relevant spatial extent is related to the bound physical region in one shared
+          spatial frame at the reference time. The region and relevant extent are
+          contextually selected, not measured or inferred from their sound labels.
+          The relevant extent lies wholly in the interior of the region, without meeting
+          its boundary. No movement, entry, exit, structural membership, ownership,
+          custody, intention or permission is asserted. The three relations are not
+          runtime states and outside is not a synonym for not inside.
+        excludes:
+        - Structural or organizational membership and figurative inclusion
+        - Entry or exit inferred from current location
+        - Outside inferred merely from not inside
+        - A numeric geometry or whole-body criterion silently inferred from a noun
+          label
+  - candidate_id: configuration_only
+    direction: Positional configuration does not determine interior or exterior.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 48
+    decision: rejected
+  - candidate_id: structural_membership
+    direction: Spatial occupancy is not structural membership.
+    scores:
+      atomicity: 5
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 32
+    decision: rejected
+  recommendation: approve explicit_spatial_convention
+  confidence: high
+- compound_id: CMP:cc6d19387b62013464e0e850
+  display_title: physical region exterior relation
+  current_choice_reason: reviews/spatial_entry_foundation.md; author scores, not independent
+    validation.
+  candidates:
+  - candidate_id: explicit_spatial_convention
+    direction: Material participant and live shared-frame configuration remain true;
+      convention contributes spatial inclusion.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-body
+        kind: root
+        root_id: MAT:000
+      - node_id: s-bearer
+        kind: slot
+        slot_name: located_participant
+        slot_type: entity
+      - node_id: s-region
+        kind: slot
+        slot_name: spatial_region
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MOV:221
+      edges:
+      - type: qualifies
+        from: q-body
+        to: s-bearer
+      - type: fills_role
+        from: s-bearer
+        to: h
+        role: bearer
+      - type: fills_role
+        from: s-region
+        to: h
+        role: location
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: physical_region_exterior
+        sound_code: 27
+        added_definition: The located participant is material, and its contextually
+          relevant spatial extent is related to the bound physical region in one shared
+          spatial frame at the reference time. The region and relevant extent are
+          contextually selected, not measured or inferred from their sound labels.
+          The relevant extent lies wholly in the exterior of the region, without meeting
+          its boundary. No movement, entry, exit, structural membership, ownership,
+          custody, intention or permission is asserted. The three relations are not
+          runtime states and outside is not a synonym for not inside.
+        excludes:
+        - Structural or organizational membership and figurative inclusion
+        - Entry or exit inferred from current location
+        - Outside inferred merely from not inside
+        - A numeric geometry or whole-body criterion silently inferred from a noun
+          label
+  - candidate_id: configuration_only
+    direction: Positional configuration does not determine interior or exterior.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 48
+    decision: rejected
+  - candidate_id: structural_membership
+    direction: Spatial occupancy is not structural membership.
+    scores:
+      atomicity: 5
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 32
+    decision: rejected
+  recommendation: approve explicit_spatial_convention
+  confidence: high
+- compound_id: CMP:835d2edc1573d2aea3a6fd18
+  display_title: physical region boundary relation
+  current_choice_reason: reviews/spatial_entry_foundation.md; author scores, not independent
+    validation.
+  candidates:
+  - candidate_id: explicit_spatial_convention
+    direction: Material participant and live shared-frame configuration remain true;
+      convention contributes spatial inclusion.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-body
+        kind: root
+        root_id: MAT:000
+      - node_id: s-bearer
+        kind: slot
+        slot_name: located_participant
+        slot_type: entity
+      - node_id: s-region
+        kind: slot
+        slot_name: spatial_region
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MOV:221
+      edges:
+      - type: qualifies
+        from: q-body
+        to: s-bearer
+      - type: fills_role
+        from: s-bearer
+        to: h
+        role: bearer
+      - type: fills_role
+        from: s-region
+        to: h
+        role: location
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: physical_region_boundary
+        sound_code: 28
+        added_definition: The located participant is material, and its contextually
+          relevant spatial extent is related to the bound physical region in one shared
+          spatial frame at the reference time. The region and relevant extent are
+          contextually selected, not measured or inferred from their sound labels.
+          The relevant extent intersects the boundary of the region; this does not
+          assert that the entire participant lies on the boundary. No movement, entry,
+          exit, structural membership, ownership, custody, intention or permission
+          is asserted. The three relations are not runtime states and outside is not
+          a synonym for not inside.
+        excludes:
+        - Structural or organizational membership and figurative inclusion
+        - Entry or exit inferred from current location
+        - Outside inferred merely from not inside
+        - A numeric geometry or whole-body criterion silently inferred from a noun
+          label
+  - candidate_id: configuration_only
+    direction: Positional configuration does not determine interior or exterior.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 48
+    decision: rejected
+  - candidate_id: structural_membership
+    direction: Spatial occupancy is not structural membership.
+    scores:
+      atomicity: 5
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 32
+    decision: rejected
+  recommendation: approve explicit_spatial_convention
+  confidence: high
+- compound_id: CMP:a3244e0195aa8c228dd0af8c
+  display_title: completed physical entry
+  current_choice_reason: reviews/spatial_entry_foundation.md; author judgments, not
+    independent validation.
+  candidates:
+  - candidate_id: explicit_entry_convention
+    direction: Preserve both spatial phases, same participant and same region, linked
+      to one completed displacement.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-0-before
+        kind: compound_ref
+        compound_id: CMP:cc6d19387b62013464e0e850
+        definition_version: 1.0.0
+      - node_id: q-1-after
+        kind: compound_ref
+        compound_id: CMP:6ccc77b4b3aa69bb010849a4
+        definition_version: 1.0.0
+      - node_id: s-actor
+        kind: slot
+        slot_name: entering_participant
+        slot_type: entity
+      - node_id: s-region
+        kind: slot
+        slot_name: entered_region
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MOV:120
+      edges:
+      - type: qualifies
+        from: q-0-before
+        to: h
+      - type: qualifies
+        from: q-1-after
+        to: h
+      - type: fills_role
+        from: s-actor
+        to: h
+        role: actor
+      - type: fills_role
+        from: s-region
+        to: h
+        role: environment
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: completed_physical_entry
+        sound_code: 29
+        added_definition: Completion of one physical entry event in which the same
+          material participant displaces across the boundary of the same contextual
+          physical region, from its exterior before the crossing to its interior at
+          culmination. Both spatial phases use the same region, relevant participant
+          extent and spatial frame. The exterior and interior relations are internal
+          event phases, not simultaneous assertions or independent claims about speech
+          time. The mover displacement constitutes this crossing; an unrelated movement
+          plus a location change, a changed region interpretation or stationary enclosure
+          by an expanding region is insufficient. Boundary contact may occur during
+          the transition. No prescribed route, locomotion manner, conscious intention,
+          permission, ownership, custody or continued presence after culmination is
+          asserted.
+        excludes:
+        - Being inside throughout, approaching without crossing or arrival at an exterior
+          doorstep
+        - Different participants, regions, frames or extent criteria in the two phases
+        - Stationary enclosure or a redefined boundary without the required mover
+          displacement
+        - Entry of data, registration for a competition or other nonspatial senses
+        - Completion, past tense and runtime state treated as interchangeable
+      binding_constraints:
+      - relation: same_argument
+        slot_paths:
+        - - q-0-before
+          - s-bearer
+        - - q-1-after
+          - s-bearer
+        - - s-actor
+      - relation: same_argument
+        slot_paths:
+        - - q-0-before
+          - s-region
+        - - q-1-after
+          - s-region
+        - - s-region
+  - candidate_id: arrival_only
+    direction: Arrival at an exterior target does not entail entry.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 48
+    decision: rejected
+  - candidate_id: state_conjunction
+    direction: Exterior and interior without phase/event linkage lose the transition.
+    scores:
+      atomicity: 5
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 32
+    decision: rejected
+  recommendation: approve explicit_entry_convention
+  confidence: high
+- compound_id: CMP:b3fb15e7e645dae58d653887
+  display_title: ongoing physical entry
+  current_choice_reason: reviews/spatial_entry_foundation.md; author judgments, not
+    independent validation.
+  candidates:
+  - candidate_id: explicit_entry_convention
+    direction: Preserve an exterior pre-phase and ongoing displacement, with an explicit
+      entry-directed traversal and no interior culmination assertion.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q-0-before
+        kind: compound_ref
+        compound_id: CMP:cc6d19387b62013464e0e850
+        definition_version: 1.0.0
+      - node_id: s-actor
+        kind: slot
+        slot_name: entering_participant
+        slot_type: entity
+      - node_id: s-region
+        kind: slot
+        slot_name: entered_region
+        slot_type: entity
+      - node_id: h
+        kind: root
+        root_id: MOV:121
+      edges:
+      - type: qualifies
+        from: q-0-before
+        to: h
+      - type: fills_role
+        from: s-actor
+        to: h
+        role: actor
+      - type: fills_role
+        from: s-region
+        to: h
+        role: environment
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ongoing_physical_entry
+        sound_code: 30
+        added_definition: 'An ongoing physical entry process: the same material participant
+          is undergoing inward displacement as part of a boundary-crossing traversal
+          from the exterior of the same contextual physical region toward an interior
+          culmination. The exterior relation supplies the pre-crossing phase of this
+          same process, not an assertion that the participant is still wholly outside
+          now. The relevant extent, region and shared spatial frame remain fixed by
+          the same contextual criterion. The target condition uses the established
+          physical-region interior meaning: the relevant extent lies wholly inside
+          without meeting the boundary. This is a culmination criterion, not an asserted
+          interior state. Immediate approach integral to the crossing and partial
+          boundary traversal are included; merely traveling toward a remote region,
+          moving parallel to its boundary or waiting outside is insufficient. The
+          process may be interrupted, reversed or abandoned before culmination. Neither
+          boundary contact at this instant nor completed entry, current interior location,
+          prescribed manner, intention, permission, ownership or later continued presence
+          is asserted. Stationary enclosure or a changed region interpretation without
+          mover displacement is excluded.'
+        excludes:
+        - Completed entry or current interior location inferred from an ongoing process
+        - Remote approach, parallel movement or waiting without the entry traversal
+          being underway
+        - Different participants, regions, frames or extent criteria across the process
+        - Stationary enclosure or figurative entry
+        - Runtime state used as a substitute for completion or grammatical aspect
+      binding_constraints:
+      - relation: same_argument
+        slot_paths:
+        - - q-0-before
+          - s-bearer
+        - - s-actor
+      - relation: same_argument
+        slot_paths:
+        - - q-0-before
+          - s-region
+        - - s-region
+  - candidate_id: completed_event
+    direction: Completed entry incorrectly entails an actual culmination.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 5
+      everyday_language_coverage: 4
+      technical_coverage: 5
+    total: 48
+    decision: rejected
+  - candidate_id: generic_approach
+    direction: Movement toward a remote region need not be entry in progress.
+    scores:
+      atomicity: 5
+      address_fit: 5
+      family_fit: 6
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 32
+    decision: rejected
+  recommendation: approve explicit_entry_convention
+  confidence: high

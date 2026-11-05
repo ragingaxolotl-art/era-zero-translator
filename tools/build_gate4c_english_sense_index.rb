@@ -49,7 +49,7 @@ end
 senses.concat(compounds.map do |entry|
   make_sense(
     lemma: entry.fetch("display_title"), pos: "noun_phrase", key: "canonical_compound_label", route: "compound", target: entry.fetch("compound_id"),
-    definition: entry.fetch("invariant_definition"), cues: ["exact approved compound label", "all component restrictions are intended"],
+    definition: entry.fetch("invariant_definition"), cues: (entry.fetch("compound_id") == "CMP:44718c92b66443c0c0f03ad7" ? ["bond, self-awakening, and the self yet to be expressed", "the approved poetic life-course meaning"] : ["exact approved compound label", "all component restrictions are intended"]),
     excludes: [entry.dig("boundaries", "excludes")], confidence: entry.fetch("confidence"), controlled: true,
     provenance: "lexicon/compound_dictionary.yaml"
   )
@@ -299,8 +299,8 @@ File.write(File.join(EraZeroValidation::ROOT, "migrations/gate4c_english_sense_i
 
 version_path = File.join(EraZeroValidation::ROOT, "spec/version.yaml")
 version = YAML.load_file(version_path)
-version["last_completed_gate"] = "gate4c_english_concept_and_sense_index"
-version["next_gate_authorized"] = "gate4d_coverage_and_ambiguity_report"
+version["last_completed_gate"] = "gate4c_english_concept_and_sense_index" unless version["general_english_status"] == "canonical"
+version["next_gate_authorized"] = "gate4d_coverage_and_ambiguity_report" unless version["general_english_status"] == "canonical"
 version["gate4c_status"] = "canonical"
 version["english_sense_index_version"] = VERSION
 version["english_sense_records"] = senses.length
@@ -310,13 +310,13 @@ File.write(version_path, YAML.dump(version))
 
 readiness_path = File.join(EraZeroValidation::ROOT, "spec/translator_readiness.yaml")
 readiness = YAML.load_file(readiness_path)
-readiness["next_authorized_gate"] = "gate4d_coverage_and_ambiguity_report"
+readiness["next_authorized_gate"] = "gate4d_coverage_and_ambiguity_report" unless version["general_english_status"] == "canonical"
 gate2 = readiness.fetch("required_gates").find { |g| g["gate"] == "compound_and_coverage" }
 g4c = gate2.fetch("subgates").find { |g| g["gate"] == "gate4c_english_concept_and_sense_index" }
 g4c["status"] = "complete"
 g4c["senses"] = senses.length
 g4c["lemmas"] = index.length
-readiness["gate4c"] = { "status" => "complete_and_canonical", "index" => "lexicon/english_sense_index.yaml", "schema" => "spec/english_sense_index_schema.yaml", "senses" => senses.length, "lemmas" => index.length, "validation" => "reports/gate4c_validation.md", "general_english_translation" => false }
+readiness["gate4c"] = { "status" => "complete_and_canonical", "index" => "lexicon/english_sense_index.yaml", "schema" => "spec/english_sense_index_schema.yaml", "senses" => senses.length, "lemmas" => index.length, "validation" => "reports/gate4c_validation.md", "general_english_translation" => version["general_english_status"] == "canonical" }
 File.write(readiness_path, YAML.dump(readiness))
 
 canonical_path = File.join(EraZeroValidation::ROOT, "spec/canonical_spec.yaml")

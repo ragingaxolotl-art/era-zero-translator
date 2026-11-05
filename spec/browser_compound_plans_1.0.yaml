@@ -1,0 +1,43 @@
+profile: EZCOMPOUNDPLAN-1
+status: implementation_draft
+purpose: Render recursively expanded compound occurrences in the browser with the reference ordering and participant attachment.
+compiler: tools/lib/era_zero_browser_compounds.rb
+release_builder: tools/build_pages_release.rb
+renderer: pages/bound_compounds.mjs
+identity:
+  - Each plan names its compound ID, exact definition version and content digest.
+  - plan_digest hashes the complete canonical plan payload excluding that digest field.
+  - The browser checks the plan digest and its agreement with the loaded dictionary entry.
+  - This is consistency verification, not a signature or independent source-authority proof.
+structure:
+  - Expanded paths, scopes, bound components and permitted unbound components are compiled by the reference expander.
+  - Actual participant values are supplied by semantic IR occurrence bindings at runtime.
+  - Nested qualifier scopes retain participant binding chains and zero-gap attachment.
+  - Dictionary-local paths remain unchanged when clause occurrence IDs are prefixed.
+invariants:
+  - Lexical address trits and runtime endings are separate.
+  - Only the external compound head takes the compound runtime ending.
+  - Bound lexical participants retain their own runtime endings.
+  - Name and discourse references have no runtime ending.
+  - All slots require exactly one correctly typed binding and one declared role.
+limits:
+  participant_depth: 64
+  default_events: 100000
+  anchor_midi: 24 through 96 inclusive
+  compiler: Existing expansion limits apply before plans are emitted.
+ordinary_english:
+  approved_construction: X has a directed data link to Y
+  predicate: CMP:742b44d9ead66b451346708a
+  source_slot: [a-source-01]
+  target_slot: [a-target-01]
+  exclusions:
+    - Does not assert an ongoing transfer.
+    - Quantified participants and implicit reflexive bindings are not interpreted by this construction.
+remaining:
+  - Broader ordinary-English composition and semantic review of new foundational vocabulary.
+  - General independent inverse decoding of sentences and compound scope from music.
+  - Source reconciliation and release migration policy.
+tests:
+  - tests/browser_compound_plans_test.mjs
+  - tests/qualified_slot_music_test.mjs
+  - tests/bound_sentence_test.mjs

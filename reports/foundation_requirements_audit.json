@@ -1,0 +1,1092 @@
+{
+  "scope": "Original authored acceptance requirements, executed against candidate preview. Not held-out validation or vocabulary approval.",
+  "completion_proven": false,
+  "counts": {
+    "candidate_semantic_checks_pass": 9,
+    "candidate_semantic_checks_pass_with_explicit_context": 2,
+    "not_composed": 9
+  },
+  "results": [
+    {
+      "id": "relative_not_absolute",
+      "input": "Nora prefers tea to coffee.",
+      "required": [
+        "holder=Nora",
+        "preferred=tea",
+        "dispreferred=coffee",
+        "contextual comparison"
+      ],
+      "must_not_infer": [
+        "drinking",
+        "ownership",
+        "both pleasant",
+        "absolute desire for tea"
+      ],
+      "status": "candidate_semantic_checks_pass",
+      "recovered": {
+        "profile": "EZFOUND-SEMANTIC-INVERSE-1",
+        "speech_act": "assertion",
+        "meaning": {
+          "predicate": {
+            "kind": "foundation",
+            "foundation_id": "FND:018dd25d713dff83661a76a4",
+            "definition_version": "1.0.0",
+            "registry_status": "candidate"
+          },
+          "runtime_state": 1,
+          "scopes": [],
+          "arguments": {
+            "experiencer": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "N",
+                  "AO",
+                  "R",
+                  "AE"
+                ],
+                "instance_code": null
+              }
+            },
+            "target": {
+              "type": "kind",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "nominal_class",
+                "phonemes": [
+                  "T",
+                  "IY"
+                ],
+                "instance_code": null
+              }
+            },
+            "comparison_standard": {
+              "type": "kind",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "nominal_class",
+                "phonemes": [
+                  "K",
+                  "AA",
+                  "F",
+                  "F",
+                  "IY"
+                ],
+                "instance_code": null
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Candidate vocabulary requires explicit opt-in.",
+          "This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.",
+          "Reference sounds do not determine original spelling or external identity.",
+          "Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.",
+          "Reads strict MIDI, not recorded audio."
+        ]
+      },
+      "limits": "Candidate registry semantics and strict MIDI only; no listening or canonical admission evidence."
+    },
+    {
+      "id": "reversed",
+      "input": "Nora prefers coffee to tea.",
+      "required": [
+        "preferred=coffee",
+        "dispreferred=tea"
+      ],
+      "must_not_infer": [
+        "same meaning or sound as reversed ordering"
+      ],
+      "status": "candidate_semantic_checks_pass",
+      "recovered": {
+        "profile": "EZFOUND-SEMANTIC-INVERSE-1",
+        "speech_act": "assertion",
+        "meaning": {
+          "predicate": {
+            "kind": "foundation",
+            "foundation_id": "FND:018dd25d713dff83661a76a4",
+            "definition_version": "1.0.0",
+            "registry_status": "candidate"
+          },
+          "runtime_state": 1,
+          "scopes": [],
+          "arguments": {
+            "experiencer": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "N",
+                  "AO",
+                  "R",
+                  "AE"
+                ],
+                "instance_code": null
+              }
+            },
+            "target": {
+              "type": "kind",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "nominal_class",
+                "phonemes": [
+                  "K",
+                  "AA",
+                  "F",
+                  "F",
+                  "IY"
+                ],
+                "instance_code": null
+              }
+            },
+            "comparison_standard": {
+              "type": "kind",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "nominal_class",
+                "phonemes": [
+                  "T",
+                  "IY"
+                ],
+                "instance_code": null
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Candidate vocabulary requires explicit opt-in.",
+          "This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.",
+          "Reference sounds do not determine original spelling or external identity.",
+          "Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.",
+          "Reads strict MIDI, not recorded audio."
+        ]
+      },
+      "limits": "Candidate registry semantics and strict MIDI only; no listening or canonical admission evidence."
+    },
+    {
+      "id": "both_unpleasant",
+      "input": "Nora prefers the painful treatment to the more painful treatment.",
+      "required": [
+        "relative favoring"
+      ],
+      "must_not_infer": [
+        "pleasantness",
+        "happiness",
+        "objective goodness"
+      ],
+      "status": "candidate_semantic_checks_pass_with_explicit_context",
+      "choices": {
+        "experiencer": "Eli",
+        "interpretation": "expected_outcome",
+        "context": "this session",
+        "comparisonTarget": "other_alternative"
+      },
+      "recovered": {
+        "profile": "EZPAIN-PREFERENCE-INVERSE-1",
+        "status": "draft",
+        "foundation_id": "FND:018dd25d713dff83661a76a4",
+        "holder": {
+          "kind": "phonemic",
+          "reference_mode": "name",
+          "phonemes": [
+            "N",
+            "AO",
+            "R",
+            "AE"
+          ],
+          "instance_code": null
+        },
+        "target": {
+          "kind": "phonemic",
+          "reference_mode": "definite_nominal",
+          "phonemes": [
+            "T",
+            "R",
+            "IY",
+            "T",
+            "M",
+            "EH",
+            "N",
+            "T"
+          ],
+          "instance_code": "6db2d529"
+        },
+        "comparison_standard": {
+          "kind": "phonemic",
+          "reference_mode": "definite_nominal",
+          "phonemes": [
+            "T",
+            "R",
+            "IY",
+            "T",
+            "M",
+            "EH",
+            "N",
+            "T"
+          ],
+          "instance_code": "0fec3ec5"
+        },
+        "pain_comparison": {
+          "profile": "EZPAIN-COMPARISON-INVERSE-1",
+          "status": "draft",
+          "dimension": "felt_bodily_pain_intensity",
+          "basis": "same_experiencer_and_selected_context",
+          "scale": "ordinal_no_numeric_score",
+          "operand_scope": "governed_by_comparison_and_matrix_scope",
+          "relation": "greater_than",
+          "left": {
+            "relation": "expected_outcome",
+            "criterion": "In the selected local context, occurrence or application of the stimulus is expected to produce the specified pain experience; neither occurrence nor pain is asserted as actual.",
+            "stimulus": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "T",
+                "R",
+                "IY",
+                "T",
+                "M",
+                "EH",
+                "N",
+                "T"
+              ],
+              "instance_code": "0fec3ec5"
+            },
+            "outcome": {
+              "predicate": "felt_bodily_pain",
+              "dependency": "CMP:6c9e3042a361ccae6ecf5980",
+              "dependency_version": "1.0.0",
+              "quality": "bodily_pain_experience",
+              "injury_commitment": "not_entailed",
+              "cause_commitment": "unspecified",
+              "intensity_commitment": "unspecified",
+              "stimulus_commitment": "unspecified",
+              "experiencer": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "EH",
+                  "L",
+                  "IH"
+                ],
+                "instance_code": null
+              },
+              "runtime_state": 1
+            },
+            "runtime_state": 1,
+            "outcome_scope": "governed_by_relation_and_matrix_scope"
+          },
+          "right": {
+            "relation": "expected_outcome",
+            "criterion": "In the selected local context, occurrence or application of the stimulus is expected to produce the specified pain experience; neither occurrence nor pain is asserted as actual.",
+            "stimulus": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "T",
+                "R",
+                "IY",
+                "T",
+                "M",
+                "EH",
+                "N",
+                "T"
+              ],
+              "instance_code": "6db2d529"
+            },
+            "outcome": {
+              "predicate": "felt_bodily_pain",
+              "dependency": "CMP:6c9e3042a361ccae6ecf5980",
+              "dependency_version": "1.0.0",
+              "quality": "bodily_pain_experience",
+              "injury_commitment": "not_entailed",
+              "cause_commitment": "unspecified",
+              "intensity_commitment": "unspecified",
+              "stimulus_commitment": "unspecified",
+              "experiencer": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "EH",
+                  "L",
+                  "IH"
+                ],
+                "instance_code": null
+              },
+              "runtime_state": 1
+            },
+            "runtime_state": 1,
+            "outcome_scope": "governed_by_relation_and_matrix_scope"
+          },
+          "context": {
+            "kind": "phonemic",
+            "reference_mode": "proximal_nominal",
+            "phonemes": [
+              "S",
+              "EH",
+              "S",
+              "S",
+              "IH",
+              "AA",
+              "N"
+            ],
+            "instance_code": null
+          },
+          "speech_act": "assertion",
+          "scopes": [],
+          "runtime_state": 1
+        },
+        "more_painful_role": "comparison_standard",
+        "restriction_scope": "reference_descriptions_not_preference_polarity",
+        "speech_act": "assertion",
+        "scopes": [],
+        "runtime_state": 1
+      },
+      "limits": "Original sentence requires clarification of pain experiencer, reading, context and comparison target. Draft meaning and strict MIDI checked here; separate synthetic WAV evidence exists. No canonical admission, held-out coverage or physical recording proof."
+    },
+    {
+      "id": "unattended",
+      "input": "Nora still prefers tea while thinking about the gate.",
+      "required": [
+        "preference can persist outside present attention"
+      ],
+      "must_not_infer": [
+        "present attention toward tea"
+      ],
+      "status": "not_composed",
+      "diagnostic": "Unsupported foundation sentence."
+    },
+    {
+      "id": "fleeting",
+      "input": "For this instant Nora prefers tea to coffee.",
+      "required": [
+        "a contextually temporary preference"
+      ],
+      "must_not_infer": [
+        "persistence across cognitive episodes"
+      ],
+      "status": "not_composed",
+      "diagnostic": "Unsupported foundation sentence."
+    },
+    {
+      "id": "without_choice",
+      "input": "Nora prefers tea but chooses coffee.",
+      "required": [
+        "preference distinct from selection"
+      ],
+      "must_not_infer": [
+        "contradiction solely from the two different alternatives"
+      ],
+      "status": "not_composed",
+      "diagnostic": "Unsupported foundation sentence."
+    },
+    {
+      "id": "negation",
+      "input": "Nora does not prefer tea to coffee.",
+      "required": [
+        "negated preference"
+      ],
+      "must_not_infer": [
+        "reverse preference",
+        "indifference",
+        "runtime 0 used instead of negation"
+      ],
+      "status": "candidate_semantic_checks_pass",
+      "recovered": {
+        "profile": "EZFOUND-SEMANTIC-INVERSE-1",
+        "speech_act": "assertion",
+        "meaning": {
+          "predicate": {
+            "kind": "foundation",
+            "foundation_id": "FND:018dd25d713dff83661a76a4",
+            "definition_version": "1.0.0",
+            "registry_status": "candidate"
+          },
+          "runtime_state": 1,
+          "scopes": [
+            {
+              "operator": "negation"
+            }
+          ],
+          "arguments": {
+            "experiencer": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "N",
+                  "AO",
+                  "R",
+                  "AE"
+                ],
+                "instance_code": null
+              }
+            },
+            "target": {
+              "type": "kind",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "nominal_class",
+                "phonemes": [
+                  "T",
+                  "IY"
+                ],
+                "instance_code": null
+              }
+            },
+            "comparison_standard": {
+              "type": "kind",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "nominal_class",
+                "phonemes": [
+                  "K",
+                  "AA",
+                  "F",
+                  "F",
+                  "IY"
+                ],
+                "instance_code": null
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Candidate vocabulary requires explicit opt-in.",
+          "This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.",
+          "Reference sounds do not determine original spelling or external identity.",
+          "Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.",
+          "Reads strict MIDI, not recorded audio."
+        ]
+      },
+      "limits": "Candidate registry semantics and strict MIDI only; no listening or canonical admission evidence."
+    },
+    {
+      "id": "question",
+      "input": "Does Nora prefer tea to coffee?",
+      "required": [
+        "question speech act"
+      ],
+      "must_not_infer": [
+        "asserted preference"
+      ],
+      "status": "candidate_semantic_checks_pass",
+      "recovered": {
+        "profile": "EZFOUND-SEMANTIC-INVERSE-1",
+        "speech_act": "question",
+        "meaning": {
+          "predicate": {
+            "kind": "foundation",
+            "foundation_id": "FND:018dd25d713dff83661a76a4",
+            "definition_version": "1.0.0",
+            "registry_status": "candidate"
+          },
+          "runtime_state": 1,
+          "scopes": [],
+          "arguments": {
+            "experiencer": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "N",
+                  "AO",
+                  "R",
+                  "AE"
+                ],
+                "instance_code": null
+              }
+            },
+            "target": {
+              "type": "kind",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "nominal_class",
+                "phonemes": [
+                  "T",
+                  "IY"
+                ],
+                "instance_code": null
+              }
+            },
+            "comparison_standard": {
+              "type": "kind",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "nominal_class",
+                "phonemes": [
+                  "K",
+                  "AA",
+                  "F",
+                  "F",
+                  "IY"
+                ],
+                "instance_code": null
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Candidate vocabulary requires explicit opt-in.",
+          "This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.",
+          "Reference sounds do not determine original spelling or external identity.",
+          "Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.",
+          "Reads strict MIDI, not recorded audio."
+        ]
+      },
+      "limits": "Candidate registry semantics and strict MIDI only; no listening or canonical admission evidence."
+    },
+    {
+      "id": "past",
+      "input": "Nora preferred tea to coffee yesterday.",
+      "required": [
+        "past contextual preference"
+      ],
+      "must_not_infer": [
+        "current preference",
+        "runtime 0 as tense"
+      ],
+      "status": "candidate_semantic_checks_pass",
+      "recovered": {
+        "profile": "EZFOUND-SEMANTIC-INVERSE-1",
+        "speech_act": "assertion",
+        "meaning": {
+          "predicate": {
+            "kind": "foundation",
+            "foundation_id": "FND:018dd25d713dff83661a76a4",
+            "definition_version": "1.0.0",
+            "registry_status": "candidate"
+          },
+          "runtime_state": 1,
+          "scopes": [
+            {
+              "operator": "time",
+              "relation": "previous_day"
+            }
+          ],
+          "arguments": {
+            "experiencer": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "N",
+                  "AO",
+                  "R",
+                  "AE"
+                ],
+                "instance_code": null
+              }
+            },
+            "target": {
+              "type": "kind",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "nominal_class",
+                "phonemes": [
+                  "T",
+                  "IY"
+                ],
+                "instance_code": null
+              }
+            },
+            "comparison_standard": {
+              "type": "kind",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "nominal_class",
+                "phonemes": [
+                  "K",
+                  "AA",
+                  "F",
+                  "F",
+                  "IY"
+                ],
+                "instance_code": null
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Candidate vocabulary requires explicit opt-in.",
+          "This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.",
+          "Reference sounds do not determine original spelling or external identity.",
+          "Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.",
+          "Reads strict MIDI, not recorded audio."
+        ]
+      },
+      "limits": "Candidate registry semantics and strict MIDI only; no listening or canonical admission evidence."
+    },
+    {
+      "id": "desire_not_need",
+      "input": "Nora wants the unnecessary ornament.",
+      "required": [
+        "desire"
+      ],
+      "must_not_infer": [
+        "physical need",
+        "viability dependence"
+      ],
+      "status": "not_composed",
+      "diagnostic": "Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else."
+    },
+    {
+      "id": "need_not_desire",
+      "input": "Nora needs water but does not want water.",
+      "required": [
+        "need separate from desire"
+      ],
+      "must_not_infer": [
+        "contradiction from need alone"
+      ],
+      "status": "not_composed",
+      "diagnostic": "Unsupported foundation sentence."
+    },
+    {
+      "id": "desire_without_pleasure",
+      "input": "Nora wants the unpleasant treatment.",
+      "required": [
+        "desire"
+      ],
+      "must_not_infer": [
+        "pleasant feeling"
+      ],
+      "status": "not_composed",
+      "diagnostic": "Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else."
+    },
+    {
+      "id": "desire_without_plan",
+      "input": "Nora wants to leave but has no plan to leave.",
+      "required": [
+        "desired outcome"
+      ],
+      "must_not_infer": [
+        "intention",
+        "plan",
+        "departure event"
+      ],
+      "status": "not_composed",
+      "diagnostic": "Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else."
+    },
+    {
+      "id": "unrealized_content",
+      "input": "Nora wants the nonexistent fountain to exist.",
+      "required": [
+        "intensional desired proposition"
+      ],
+      "must_not_infer": [
+        "actual fountain existence"
+      ],
+      "status": "not_composed",
+      "diagnostic": "Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else."
+    },
+    {
+      "id": "object_reading",
+      "input": "Nora wants tea.",
+      "required": [
+        "resolve relevant desired relation from context or clarification"
+      ],
+      "must_not_infer": [
+        "silently force ownership or drinking"
+      ],
+      "status": "candidate_semantic_checks_pass_with_explicit_context",
+      "choices": {
+        "desiredProposition": "Eli has physical custody of the tea."
+      },
+      "recovered": {
+        "profile": "EZFOUND-SEMANTIC-INVERSE-1",
+        "speech_act": "assertion",
+        "meaning": {
+          "predicate": {
+            "kind": "foundation",
+            "foundation_id": "FND:f66b7a3877f4b0140a0b7023",
+            "definition_version": "1.0.0",
+            "registry_status": "candidate"
+          },
+          "runtime_state": 1,
+          "scopes": [],
+          "arguments": {
+            "content": {
+              "type": "proposition",
+              "content_status": "intensional",
+              "proposition": {
+                "predicate": {
+                  "kind": "conventional_compound",
+                  "name": "practical_physical_custody",
+                  "convention_codes": [
+                    7
+                  ]
+                },
+                "runtime_state": 1,
+                "scopes": [],
+                "arguments": {
+                  "holder": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "name",
+                      "phonemes": [
+                        "EH",
+                        "L",
+                        "IH"
+                      ],
+                      "instance_code": null
+                    }
+                  },
+                  "object": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "definite_nominal",
+                      "phonemes": [
+                        "T",
+                        "IY"
+                      ],
+                      "instance_code": null
+                    }
+                  }
+                },
+                "meaning": {
+                  "established_practical_control": true,
+                  "holder_distinct_from_object": true,
+                  "exclusive_control_required": false,
+                  "ownership_asserted": false,
+                  "receipt_asserted": false,
+                  "transfer_asserted": false,
+                  "continuous_physical_influence_required": false
+                }
+              }
+            },
+            "experiencer": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "N",
+                  "AO",
+                  "R",
+                  "AE"
+                ],
+                "instance_code": null
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Candidate vocabulary requires explicit opt-in.",
+          "This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.",
+          "Reference sounds do not determine original spelling or external identity.",
+          "Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.",
+          "Reads strict MIDI, not recorded audio."
+        ]
+      },
+      "limits": "Explicitly selected custody outcome and definite tea reference; no default drinking or ownership. Does not establish support for every requested outcome. Separate clean synthetic WAV checks exist; physical recordings and held-out coverage remain unproven."
+    },
+    {
+      "id": "curiosity_not_attention",
+      "input": "Orin is curious about the map.",
+      "required": [
+        "epistemic orientation toward map topic"
+      ],
+      "must_not_infer": [
+        "attention alone",
+        "map understanding",
+        "successful learning"
+      ],
+      "status": "candidate_semantic_checks_pass",
+      "recovered": {
+        "profile": "EZCURIOSITY-INVERSE-1",
+        "status": "draft",
+        "predicate": "epistemic_curiosity",
+        "desire_foundation_id": "FND:f66b7a3877f4b0140a0b7023",
+        "criterion": "The experiencer has epistemic interest in the contextual inquiry: resolving some contextually relevant uncertainty about the topic is itself motivationally attractive, rather than wanted solely for a separate practical outcome. Instrumental motives may coexist. This does not require pleasure, current attention, a conscious feeling, intention, action, successful discovery or complete ignorance of the topic.",
+        "desired_outcome": "same_experiencer_gains_contextually_relevant_information_resolving_some_inquiry_uncertainty",
+        "outcome_commitment": "desired_not_asserted",
+        "question_commitment": "contextual_not_specified",
+        "experiencer": {
+          "kind": "phonemic",
+          "reference_mode": "name",
+          "phonemes": [
+            "AO",
+            "R",
+            "IH",
+            "N"
+          ],
+          "instance_code": null
+        },
+        "inquiry": {
+          "content_kind": "contextual_question_set",
+          "topic": {
+            "anchor": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "M",
+                "AE",
+                "P"
+              ],
+              "instance_code": null
+            }
+          },
+          "question_selection": "contextually_relevant_unresolved",
+          "answer_commitment": "none",
+          "specific_question_supplied": false
+        },
+        "speech_act": "assertion",
+        "scopes": [],
+        "runtime_state": 1,
+        "limitations": [
+          "Context must identify the topic and relevant questions.",
+          "This draft epistemic reading is not oddness, sensory novelty seeking or purely instrumental information demand."
+        ]
+      },
+      "limits": "Selected epistemic reading, shared convention and strict MIDI only. Does not establish all curiosity readings, canonical admission or physical audio evidence."
+    },
+    {
+      "id": "attention_not_curiosity",
+      "input": "The alarming noise captures Orin’s attention, but Orin does not want to learn about it.",
+      "required": [
+        "attention can lack curiosity"
+      ],
+      "must_not_infer": [
+        "curiosity inferred from attention"
+      ],
+      "status": "not_composed",
+      "diagnostic": "Unsupported foundation sentence."
+    },
+    {
+      "id": "participant_change",
+      "input": "Eli prefers tea to coffee.",
+      "required": [
+        "holder=Eli"
+      ],
+      "must_not_infer": [
+        "same holder as Nora"
+      ],
+      "status": "candidate_semantic_checks_pass",
+      "recovered": {
+        "profile": "EZFOUND-SEMANTIC-INVERSE-1",
+        "speech_act": "assertion",
+        "meaning": {
+          "predicate": {
+            "kind": "foundation",
+            "foundation_id": "FND:018dd25d713dff83661a76a4",
+            "definition_version": "1.0.0",
+            "registry_status": "candidate"
+          },
+          "runtime_state": 1,
+          "scopes": [],
+          "arguments": {
+            "experiencer": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "EH",
+                  "L",
+                  "IH"
+                ],
+                "instance_code": null
+              }
+            },
+            "target": {
+              "type": "kind",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "nominal_class",
+                "phonemes": [
+                  "T",
+                  "IY"
+                ],
+                "instance_code": null
+              }
+            },
+            "comparison_standard": {
+              "type": "kind",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "nominal_class",
+                "phonemes": [
+                  "K",
+                  "AA",
+                  "F",
+                  "F",
+                  "IY"
+                ],
+                "instance_code": null
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Candidate vocabulary requires explicit opt-in.",
+          "This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.",
+          "Reference sounds do not determine original spelling or external identity.",
+          "Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.",
+          "Reads strict MIDI, not recorded audio."
+        ]
+      },
+      "limits": "Candidate registry semantics and strict MIDI only; no listening or canonical admission evidence."
+    },
+    {
+      "id": "runtime_independence",
+      "input": "Nora prefers tea to coffee [2].",
+      "required": [
+        "explicit runtime 2 distinct from preference relation"
+      ],
+      "must_not_infer": [
+        "runtime 2 as preference direction or emotional valence"
+      ],
+      "status": "candidate_semantic_checks_pass",
+      "recovered": {
+        "profile": "EZFOUND-SEMANTIC-INVERSE-1",
+        "speech_act": "assertion",
+        "meaning": {
+          "predicate": {
+            "kind": "foundation",
+            "foundation_id": "FND:018dd25d713dff83661a76a4",
+            "definition_version": "1.0.0",
+            "registry_status": "candidate"
+          },
+          "runtime_state": 2,
+          "scopes": [],
+          "arguments": {
+            "experiencer": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "N",
+                  "AO",
+                  "R",
+                  "AE"
+                ],
+                "instance_code": null
+              }
+            },
+            "target": {
+              "type": "kind",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "nominal_class",
+                "phonemes": [
+                  "T",
+                  "IY"
+                ],
+                "instance_code": null
+              }
+            },
+            "comparison_standard": {
+              "type": "kind",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "nominal_class",
+                "phonemes": [
+                  "K",
+                  "AA",
+                  "F",
+                  "F",
+                  "IY"
+                ],
+                "instance_code": null
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Candidate vocabulary requires explicit opt-in.",
+          "This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.",
+          "Reference sounds do not determine original spelling or external identity.",
+          "Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.",
+          "Reads strict MIDI, not recorded audio."
+        ]
+      },
+      "limits": "Candidate registry semantics and strict MIDI only; no listening or canonical admission evidence."
+    },
+    {
+      "id": "kind_not_cup",
+      "input": "Nora prefers tea to coffee.",
+      "required": [
+        "alternatives may be beverage kinds"
+      ],
+      "must_not_infer": [
+        "particular cups or people inferred from noun labels"
+      ],
+      "status": "candidate_semantic_checks_pass",
+      "recovered": {
+        "profile": "EZFOUND-SEMANTIC-INVERSE-1",
+        "speech_act": "assertion",
+        "meaning": {
+          "predicate": {
+            "kind": "foundation",
+            "foundation_id": "FND:018dd25d713dff83661a76a4",
+            "definition_version": "1.0.0",
+            "registry_status": "candidate"
+          },
+          "runtime_state": 1,
+          "scopes": [],
+          "arguments": {
+            "experiencer": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "N",
+                  "AO",
+                  "R",
+                  "AE"
+                ],
+                "instance_code": null
+              }
+            },
+            "target": {
+              "type": "kind",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "nominal_class",
+                "phonemes": [
+                  "T",
+                  "IY"
+                ],
+                "instance_code": null
+              }
+            },
+            "comparison_standard": {
+              "type": "kind",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "nominal_class",
+                "phonemes": [
+                  "K",
+                  "AA",
+                  "F",
+                  "F",
+                  "IY"
+                ],
+                "instance_code": null
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Candidate vocabulary requires explicit opt-in.",
+          "This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.",
+          "Reference sounds do not determine original spelling or external identity.",
+          "Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.",
+          "Reads strict MIDI, not recorded audio."
+        ]
+      },
+      "limits": "Candidate registry semantics and strict MIDI only; no listening or canonical admission evidence."
+    }
+  ]
+}

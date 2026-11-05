@@ -128,10 +128,10 @@ atoms:
       definition are new proposals
   canonical_version: 1.0.1-semantic-overlay
   neighbor_contrast_notes:
-  - MOV:101 (self-departure) occupies active inward process; do not merge it with
-    MOV:100.
-  - MOV:102 (departure readiness) occupies pending inward process; do not merge it
-    with MOV:100.
+  - 'MOV:101 (active source departure): Ongoing displacement of a mover away from
+    a source position. Do not merge it with MOV:100.'
+  - 'MOV:102 (potential source departure): A potential displacement away from a source
+    position that is not presently active or completed. Do not merge it with MOV:100.'
   canonization:
     standard: Era Zero Core Architecture 1.0 selective semantic overlay
     approval_basis: Explicit user approval of the final challenge meanings and the
@@ -217,10 +217,10 @@ atoms:
       definition are new proposals
   canonical_version: 1.0.1-semantic-overlay
   neighbor_contrast_notes:
-  - MOV:100 (departure complete) occupies completed inward process; do not merge it
-    with MOV:101.
-  - MOV:102 (departure readiness) occupies pending inward process; do not merge it
-    with MOV:101.
+  - 'MOV:100 (completed source departure): Completion of a mover''s displacement away
+    from a source position. Do not merge it with MOV:101.'
+  - 'MOV:102 (potential source departure): A potential displacement away from a source
+    position that is not presently active or completed. Do not merge it with MOV:101.'
   canonization:
     standard: Era Zero Core Architecture 1.0 selective semantic overlay
     approval_basis: Explicit user approval of the final challenge meanings and the
@@ -285,8 +285,8 @@ atoms:
   - MOV:000
   - MOV:001
   - MOV:002
-  normal_example: MOV:102 [1] — An entity is prepared to leave its source, but outward
-    motion has not yet begun.
+  normal_example: MOV:102 [1] — Displacement away from the source is potential, not
+    presently active or completed; readiness or a departure plan is not asserted.
   technical_example: gi·kan / gi-ki-ma-nu / path 0, 2, 2, 0 semitones.
   runtime_state_examples:
     '0': MOV:102 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -307,10 +307,10 @@ atoms:
       definition are new proposals
   canonical_version: 1.0.1-semantic-overlay
   neighbor_contrast_notes:
-  - MOV:100 (departure complete) occupies completed inward process; do not merge it
-    with MOV:102.
-  - MOV:101 (self-departure) occupies active inward process; do not merge it with
-    MOV:102.
+  - 'MOV:100 (completed source departure): Completion of a mover''s displacement away
+    from a source position. Do not merge it with MOV:102.'
+  - 'MOV:101 (active source departure): Ongoing displacement of a mover away from
+    a source position. Do not merge it with MOV:102.'
   canonization:
     standard: Era Zero Core Architecture 1.0 selective semantic overlay
     approval_basis: Explicit user approval of the final challenge meanings and the
@@ -396,10 +396,10 @@ atoms:
       definition are new proposals
   canonical_version: 1.0.1-semantic-overlay
   neighbor_contrast_notes:
-  - MOV:111 (destination approach) occupies active outward process; do not merge it
-    with MOV:110.
-  - MOV:112 (pending arrival) occupies pending outward process; do not merge it with
-    MOV:110.
+  - 'MOV:111 (active target approach): Ongoing displacement of a mover toward a target
+    position. Do not merge it with MOV:110.'
+  - 'MOV:112 (potential target approach): A potential displacement toward a target
+    position that is not presently active or completed. Do not merge it with MOV:110.'
   canonization:
     standard: Era Zero Core Architecture 1.0 selective semantic overlay
     approval_basis: Explicit user approval of the final challenge meanings and the
@@ -484,10 +484,10 @@ atoms:
       definition are new proposals
   canonical_version: 1.0.1-semantic-overlay
   neighbor_contrast_notes:
-  - MOV:110 (arrival complete) occupies completed outward process; do not merge it
-    with MOV:111.
-  - MOV:112 (pending arrival) occupies pending outward process; do not merge it with
-    MOV:111.
+  - 'MOV:110 (completed target arrival): Completion of a mover''s displacement to
+    a target position. Do not merge it with MOV:111.'
+  - 'MOV:112 (potential target approach): A potential displacement toward a target
+    position that is not presently active or completed. Do not merge it with MOV:111.'
   canonization:
     standard: Era Zero Core Architecture 1.0 selective semantic overlay
     approval_basis: Explicit user approval of the final challenge meanings and the
@@ -552,8 +552,9 @@ atoms:
   - MOV:010
   - MOV:011
   - MOV:012
-  normal_example: MOV:112 [1] — Movement toward a destination is intended or queued,
-    but arrival is not yet in progress.
+  normal_example: MOV:112 [1] — Displacement toward the target position is potential,
+    not presently active or completed; intention, queuing and future time are not
+    asserted.
   technical_example: gi·kon / gi-ki-ki-nu / path 0, 2, 4, 2 semitones.
   runtime_state_examples:
     '0': MOV:112 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -574,10 +575,10 @@ atoms:
       definition are new proposals
   canonical_version: 1.0.1-semantic-overlay
   neighbor_contrast_notes:
-  - MOV:110 (arrival complete) occupies completed outward process; do not merge it
-    with MOV:112.
-  - MOV:111 (destination approach) occupies active outward process; do not merge it
-    with MOV:112.
+  - 'MOV:110 (completed target arrival): Completion of a mover''s displacement to
+    a target position. Do not merge it with MOV:112.'
+  - 'MOV:111 (active target approach): Ongoing displacement of a mover toward a target
+    position. Do not merge it with MOV:112.'
   canonization:
     standard: Era Zero Core Architecture 1.0 selective semantic overlay
     approval_basis: Explicit user approval of the final challenge meanings and the
@@ -642,8 +643,9 @@ atoms:
   - MOV:020
   - MOV:021
   - MOV:022
-  normal_example: MOV:120 [1] — A route-wide transfer, circulation step, or temporal
-    transition has reached its defined end state.
+  normal_example: MOV:120 [1] — The mover's change of position relative to the shared
+    reference frame is complete; route traversal and nonpositional transitions are
+    not asserted.
   technical_example: gi·kim / gi-ki-nu-ma / path 0, 2, 0, 0 semitones.
   runtime_state_examples:
     '0': MOV:120 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -664,9 +666,11 @@ atoms:
       definition are new proposals
   canonical_version: 1.0.1-semantic-overlay
   neighbor_contrast_notes:
-  - MOV:121 (system flow) occupies active systemic process; do not merge it with MOV:120.
-  - MOV:122 (pending system transition) occupies pending systemic process; do not
-    merge it with MOV:120.
+  - 'MOV:121 (active shared-frame movement): Ongoing change of a mover''s position
+    relative to a shared or environmental reference frame. Do not merge it with MOV:120.'
+  - 'MOV:122 (potential shared-frame movement): A potential change of a mover''s position
+    relative to a shared or environmental reference frame that is not presently active
+    or completed. Do not merge it with MOV:120.'
   canonization:
     standard: Era Zero Core Architecture 1.0 selective semantic overlay
     approval_basis: Explicit user approval of the final challenge meanings and the
@@ -731,8 +735,8 @@ atoms:
   - MOV:020
   - MOV:021
   - MOV:022
-  normal_example: MOV:121 [1] — Entities, signals, or time-indexed states are actively
-    moving through a shared route system.
+  normal_example: MOV:121 [1] — The mover's position is changing relative to the shared
+    reference frame; a route, schedule or temporal transition is not asserted.
   technical_example: gi·kik / gi-ki-nu-ki / path 0, 2, 0, 2 semitones.
   runtime_state_examples:
     '0': MOV:121 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -753,10 +757,12 @@ atoms:
       definition are new proposals
   canonical_version: 1.0.1-semantic-overlay
   neighbor_contrast_notes:
-  - MOV:120 (system transition complete) occupies completed systemic process; do not
-    merge it with MOV:121.
-  - MOV:122 (pending system transition) occupies pending systemic process; do not
-    merge it with MOV:121.
+  - 'MOV:120 (completed shared-frame movement): Completion of a mover''s change of
+    position relative to a shared or environmental reference frame. Do not merge it
+    with MOV:121.'
+  - 'MOV:122 (potential shared-frame movement): A potential change of a mover''s position
+    relative to a shared or environmental reference frame that is not presently active
+    or completed. Do not merge it with MOV:121.'
   canonization:
     standard: Era Zero Core Architecture 1.0 selective semantic overlay
     approval_basis: Explicit user approval of the final challenge meanings and the
@@ -821,8 +827,9 @@ atoms:
   - MOV:020
   - MOV:021
   - MOV:022
-  normal_example: MOV:122 [1] — A route-wide transfer or temporal transition is staged
-    but has not started.
+  normal_example: MOV:122 [1] — A change of the mover's position relative to the shared
+    reference frame is potential, not presently active or completed; staging or scheduling
+    is not asserted.
   technical_example: gi·kin / gi-ki-nu-nu / path 0, 2, 0, -2 semitones.
   runtime_state_examples:
     '0': MOV:122 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -843,9 +850,11 @@ atoms:
       definition are new proposals
   canonical_version: 1.0.1-semantic-overlay
   neighbor_contrast_notes:
-  - MOV:120 (system transition complete) occupies completed systemic process; do not
-    merge it with MOV:122.
-  - MOV:121 (system flow) occupies active systemic process; do not merge it with MOV:122.
+  - 'MOV:120 (completed shared-frame movement): Completion of a mover''s change of
+    position relative to a shared or environmental reference frame. Do not merge it
+    with MOV:122.'
+  - 'MOV:121 (active shared-frame movement): Ongoing change of a mover''s position
+    relative to a shared or environmental reference frame. Do not merge it with MOV:122.'
   canonization:
     standard: Era Zero Core Architecture 1.0 selective semantic overlay
     approval_basis: Explicit user approval of the final challenge meanings and the
@@ -3189,8 +3198,8 @@ atoms:
   - MAT:202
   - MAT:210
   - MAT:220
-  normal_example: MAT:200 [1] — An entity has a stable inward capacity to bear load,
-    retain form, or resist material disruption.
+  normal_example: MAT:200 [1] — A battery has a persistent capacity to supply energy
+    for physical change; current availability or use is not asserted.
   technical_example: ba·mam / ba-nu-ma-ma / path 0, -2, -2, -2 semitones.
   runtime_state_examples:
     '0': MAT:200 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -3284,8 +3293,8 @@ atoms:
   - MAT:202
   - MAT:211
   - MAT:221
-  normal_example: MAT:201 [1] — An entity is actively able to exert force, release
-    energy, or perform physical work.
+  normal_example: MAT:201 [1] — A battery's capacity to supply energy for physical
+    change is presently available; actual discharge is not asserted.
   technical_example: ba·mak / ba-nu-ma-ki / path 0, -2, -2, 0 semitones.
   runtime_state_examples:
     '0': MAT:201 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -3379,8 +3388,9 @@ atoms:
   - MAT:202
   - MAT:212
   - MAT:222
-  normal_example: MAT:202 [1] — An entity contains material or energy potential that
-    is not presently accessible or expressed.
+  normal_example: MAT:202 [1] — A material bearer's energy-supplying capacity exists
+    but is not presently available for exercise; runtime [1] affirms this latent-capacity
+    meaning.
   technical_example: ba·man / ba-nu-ma-nu / path 0, -2, -2, -4 semitones.
   runtime_state_examples:
     '0': MAT:202 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -3474,8 +3484,9 @@ atoms:
   - MAT:212
   - MAT:200
   - MAT:220
-  normal_example: MAT:210 [1] — An object has a stable physical connection, fit, ownership,
-    or resource relation to a target.
+  normal_example: MAT:210 [1] — An established material coupling allows a bearer to
+    transmit physical influence to a distinct target; ownership, custody and permission
+    are not asserted.
   technical_example: ba·mom / ba-nu-ki-ma / path 0, -2, 0, 0 semitones.
   runtime_state_examples:
     '0': MAT:210 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -3569,8 +3580,8 @@ atoms:
   - MAT:212
   - MAT:201
   - MAT:221
-  normal_example: MAT:211 [1] — Two material entities are actively touching, exchanging
-    force, or transferring energy.
+  normal_example: MAT:211 [1] — A material bearer is presently transmitting physical
+    influence to a distinct target; mere contact without influence is insufficient.
   technical_example: ba·mok / ba-nu-ki-ki / path 0, -2, 0, 2 semitones.
   runtime_state_examples:
     '0': MAT:211 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -3664,8 +3675,9 @@ atoms:
   - MAT:212
   - MAT:202
   - MAT:222
-  normal_example: MAT:212 [1] — A physical attachment, transfer, or resource relation
-    may be viable but remains unconfirmed.
+  normal_example: MAT:212 [1] — Whether a material bearer can transmit physical influence
+    to a distinct target is unresolved; transfer, intention and future occurrence
+    are not asserted.
   technical_example: ba·mon / ba-nu-ki-nu / path 0, -2, 0, -2 semitones.
   runtime_state_examples:
     '0': MAT:212 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -3759,8 +3771,9 @@ atoms:
   - MAT:222
   - MAT:200
   - MAT:210
-  normal_example: MAT:220 [1] — A material system has a stable relationship among
-    its matter, energy, inputs, and outputs.
+  normal_example: MAT:220 [1] — Material parts of a shared system stand in a stable
+    relation of mutual constraint on their physical states; shared membership alone
+    is insufficient.
   technical_example: ba·mim / ba-nu-nu-ma / path 0, -2, -4, -4 semitones.
   runtime_state_examples:
     '0': MAT:220 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -3854,8 +3867,8 @@ atoms:
   - MAT:222
   - MAT:201
   - MAT:211
-  normal_example: MAT:221 [1] — A distributed system is actively exchanging matter,
-    energy, or resources among its parts.
+  normal_example: MAT:221 [1] — Material parts of a shared system are presently exerting
+    reciprocal physical influence; one-way exchange alone is insufficient.
   technical_example: ba·mik / ba-nu-nu-ki / path 0, -2, -4, -2 semitones.
   runtime_state_examples:
     '0': MAT:221 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -3949,8 +3962,9 @@ atoms:
   - MAT:222
   - MAT:202
   - MAT:212
-  normal_example: MAT:222 [1] — A physically valid arrangement or resource state could
-    exist at system scale but has not been produced.
+  normal_example: MAT:222 [1] — A possible relation of mutual physical constraint
+    among parts of a shared system remains unrealized; current interdependence is
+    not asserted.
   technical_example: ba·min / ba-nu-nu-nu / path 0, -2, -4, -6 semitones.
   runtime_state_examples:
     '0': MAT:222 [0] — this lexical concept is currently inactive, false, ended, unavailable,
@@ -4025,10 +4039,12 @@ atoms:
   translation_candidates:
   - persistent self-representation
   distinctions_and_exclusions:
-  - The act of perceiving, remembering, learning, interpreting, or reasoning belongs
-    to MIN:1xx and remains provisional until separately reviewed.
-  - Competence, attention capacity, belief relation, uncertainty, and distributed
-    intelligence belong to MIN:2xx and remain provisional until separately reviewed.
+  - MIN:1xx specifies changes to mental representations. Perception, remembering,
+    learning, interpreting, and reasoning are not established merely by selecting
+    a representational-change root.
+  - MIN:2xx specifies selective-attention capacities and relations. Belief, uncertainty,
+    general competence, and distributed intelligence are not established merely by
+    selecting an attention root.
   - Living identity and consciousness belong to LIF; neural or sensory substrate belongs
     to MAT.
   - Communication, consensus procedure, access, and social tradition belong to CON
@@ -4120,10 +4136,12 @@ atoms:
   translation_candidates:
   - manifest self-representation
   distinctions_and_exclusions:
-  - The act of perceiving, remembering, learning, interpreting, or reasoning belongs
-    to MIN:1xx and remains provisional until separately reviewed.
-  - Competence, attention capacity, belief relation, uncertainty, and distributed
-    intelligence belong to MIN:2xx and remain provisional until separately reviewed.
+  - MIN:1xx specifies changes to mental representations. Perception, remembering,
+    learning, interpreting, and reasoning are not established merely by selecting
+    a representational-change root.
+  - MIN:2xx specifies selective-attention capacities and relations. Belief, uncertainty,
+    general competence, and distributed intelligence are not established merely by
+    selecting an attention root.
   - Living identity and consciousness belong to LIF; neural or sensory substrate belongs
     to MAT.
   - Communication, consensus procedure, access, and social tradition belong to CON
@@ -4215,10 +4233,12 @@ atoms:
   translation_candidates:
   - latent self-representation
   distinctions_and_exclusions:
-  - The act of perceiving, remembering, learning, interpreting, or reasoning belongs
-    to MIN:1xx and remains provisional until separately reviewed.
-  - Competence, attention capacity, belief relation, uncertainty, and distributed
-    intelligence belong to MIN:2xx and remain provisional until separately reviewed.
+  - MIN:1xx specifies changes to mental representations. Perception, remembering,
+    learning, interpreting, and reasoning are not established merely by selecting
+    a representational-change root.
+  - MIN:2xx specifies selective-attention capacities and relations. Belief, uncertainty,
+    general competence, and distributed intelligence are not established merely by
+    selecting an attention root.
   - Living identity and consciousness belong to LIF; neural or sensory substrate belongs
     to MAT.
   - Communication, consensus procedure, access, and social tradition belong to CON
@@ -4311,10 +4331,12 @@ atoms:
   translation_candidates:
   - persistent target representation
   distinctions_and_exclusions:
-  - The act of perceiving, remembering, learning, interpreting, or reasoning belongs
-    to MIN:1xx and remains provisional until separately reviewed.
-  - Competence, attention capacity, belief relation, uncertainty, and distributed
-    intelligence belong to MIN:2xx and remain provisional until separately reviewed.
+  - MIN:1xx specifies changes to mental representations. Perception, remembering,
+    learning, interpreting, and reasoning are not established merely by selecting
+    a representational-change root.
+  - MIN:2xx specifies selective-attention capacities and relations. Belief, uncertainty,
+    general competence, and distributed intelligence are not established merely by
+    selecting an attention root.
   - Living identity and consciousness belong to LIF; neural or sensory substrate belongs
     to MAT.
   - Communication, consensus procedure, access, and social tradition belong to CON
@@ -4407,10 +4429,12 @@ atoms:
   translation_candidates:
   - manifest target representation
   distinctions_and_exclusions:
-  - The act of perceiving, remembering, learning, interpreting, or reasoning belongs
-    to MIN:1xx and remains provisional until separately reviewed.
-  - Competence, attention capacity, belief relation, uncertainty, and distributed
-    intelligence belong to MIN:2xx and remain provisional until separately reviewed.
+  - MIN:1xx specifies changes to mental representations. Perception, remembering,
+    learning, interpreting, and reasoning are not established merely by selecting
+    a representational-change root.
+  - MIN:2xx specifies selective-attention capacities and relations. Belief, uncertainty,
+    general competence, and distributed intelligence are not established merely by
+    selecting an attention root.
   - Living identity and consciousness belong to LIF; neural or sensory substrate belongs
     to MAT.
   - Communication, consensus procedure, access, and social tradition belong to CON
@@ -4503,10 +4527,12 @@ atoms:
   translation_candidates:
   - latent target representation
   distinctions_and_exclusions:
-  - The act of perceiving, remembering, learning, interpreting, or reasoning belongs
-    to MIN:1xx and remains provisional until separately reviewed.
-  - Competence, attention capacity, belief relation, uncertainty, and distributed
-    intelligence belong to MIN:2xx and remain provisional until separately reviewed.
+  - MIN:1xx specifies changes to mental representations. Perception, remembering,
+    learning, interpreting, and reasoning are not established merely by selecting
+    a representational-change root.
+  - MIN:2xx specifies selective-attention capacities and relations. Belief, uncertainty,
+    general competence, and distributed intelligence are not established merely by
+    selecting an attention root.
   - Living identity and consciousness belong to LIF; neural or sensory substrate belongs
     to MAT.
   - Communication, consensus procedure, access, and social tradition belong to CON
@@ -4599,10 +4625,12 @@ atoms:
   translation_candidates:
   - persistent shared cognitive schema
   distinctions_and_exclusions:
-  - The act of perceiving, remembering, learning, interpreting, or reasoning belongs
-    to MIN:1xx and remains provisional until separately reviewed.
-  - Competence, attention capacity, belief relation, uncertainty, and distributed
-    intelligence belong to MIN:2xx and remain provisional until separately reviewed.
+  - MIN:1xx specifies changes to mental representations. Perception, remembering,
+    learning, interpreting, and reasoning are not established merely by selecting
+    a representational-change root.
+  - MIN:2xx specifies selective-attention capacities and relations. Belief, uncertainty,
+    general competence, and distributed intelligence are not established merely by
+    selecting an attention root.
   - Living identity and consciousness belong to LIF; neural or sensory substrate belongs
     to MAT.
   - Communication, consensus procedure, access, and social tradition belong to CON
@@ -4695,10 +4723,12 @@ atoms:
   translation_candidates:
   - manifest shared cognitive schema
   distinctions_and_exclusions:
-  - The act of perceiving, remembering, learning, interpreting, or reasoning belongs
-    to MIN:1xx and remains provisional until separately reviewed.
-  - Competence, attention capacity, belief relation, uncertainty, and distributed
-    intelligence belong to MIN:2xx and remain provisional until separately reviewed.
+  - MIN:1xx specifies changes to mental representations. Perception, remembering,
+    learning, interpreting, and reasoning are not established merely by selecting
+    a representational-change root.
+  - MIN:2xx specifies selective-attention capacities and relations. Belief, uncertainty,
+    general competence, and distributed intelligence are not established merely by
+    selecting an attention root.
   - Living identity and consciousness belong to LIF; neural or sensory substrate belongs
     to MAT.
   - Communication, consensus procedure, access, and social tradition belong to CON
@@ -4791,10 +4821,12 @@ atoms:
   translation_candidates:
   - latent shared cognitive schema
   distinctions_and_exclusions:
-  - The act of perceiving, remembering, learning, interpreting, or reasoning belongs
-    to MIN:1xx and remains provisional until separately reviewed.
-  - Competence, attention capacity, belief relation, uncertainty, and distributed
-    intelligence belong to MIN:2xx and remain provisional until separately reviewed.
+  - MIN:1xx specifies changes to mental representations. Perception, remembering,
+    learning, interpreting, and reasoning are not established merely by selecting
+    a representational-change root.
+  - MIN:2xx specifies selective-attention capacities and relations. Belief, uncertainty,
+    general competence, and distributed intelligence are not established merely by
+    selecting an attention root.
   - Living identity and consciousness belong to LIF; neural or sensory substrate belongs
     to MAT.
   - Communication, consensus procedure, access, and social tradition belong to CON

@@ -1,0 +1,19 @@
+{
+  "scope": "Independent audible-structure inverse; not full semantic sentence decoding.",
+  "profile": "EZSTRICT-OBSERVATION-1",
+  "forward_encoding_changed": false,
+  "checks": [
+    {
+      "test": "tests/strict_music_decoder_test.mjs",
+      "passed": true,
+      "output": "Independent strict music inverse: 5384 dictionary and sentence performances recover audible lexical/reference/grammar tokens and exact boundaries, without source IR or a formal plan.\n"
+    },
+    {
+      "test": "tests/qualified_slot_music_test.mjs",
+      "passed": true,
+      "output": "Qualified slots: 18 attachment/runtime contrasts keep modifiers inside the correct participant role frame, including nested conventions; exact no-gap MIDI attachment, argument endings and Ruby/browser parity hold. Fixtures are structural, not approved experience vocabulary.\n"
+    }
+  ],
+  "baseline_regressions": "The 58-check consolidated report predates this additive inverse. These targeted checks validate this change; the consolidated runner now includes the new inverse test.",
+  "completion_proven": false
+}

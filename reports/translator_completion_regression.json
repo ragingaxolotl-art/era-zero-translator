@@ -1,0 +1,1506 @@
+{
+  "tested_revision": "ed6123047db8260d5e12a48ae81a447fea63f7d1",
+  "run_context": {
+    "started_at": "2026-11-05T03:09:48.241315+00:00",
+    "completed_at": "2026-11-05T03:16:04.794333+00:00",
+    "initial_worktree_status": "",
+    "include_acoustic": false,
+    "physical_recordings_tested": 0
+  },
+  "scope": "Implementation regression only. Full ordinary-English coverage and musical semantic completeness are not established.",
+  "passed": true,
+  "results": [
+    {
+      "test": "tests/additive_vocabulary_pins_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 20465\n\n# Running:\n\n.\n\nFinished in 0.210008s, 4.7617 runs/s, 114.2814 assertions/s.\n\n1 runs, 24 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/packet_evidence_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 15489\n\n# Running:\n\n...\n\nFinished in 0.000343s, 8746.3559 runs/s, 52478.1353 assertions/s.\n\n3 runs, 18 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/min_cross_reference_migration_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 44337\n\n# Running:\n\n.\n\nFinished in 0.691226s, 1.4467 runs/s, 127.3100 assertions/s.\n\n1 runs, 88 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/mov_process_example_migration_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 42555\n\n# Running:\n\n.\n\nFinished in 1.034110s, 0.9670 runs/s, 172.1287 assertions/s.\n\n1 runs, 178 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/mat_capacity_example_migration_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 434\n\n# Running:\n\n.\n\nFinished in 0.945403s, 1.0577 runs/s, 173.4710 assertions/s.\n\n1 runs, 164 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/compound_dependencies_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 29990\n\n# Running:\n\n......\n\nFinished in 0.018953s, 316.5726 runs/s, 3535.0604 assertions/s.\n\n6 runs, 67 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/compound_expansion_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 4561\n\n# Running:\n\n..........\n\nFinished in 0.265069s, 37.7260 runs/s, 709.2493 assertions/s.\n\n10 runs, 188 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/compound_convention_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 2238\n\n# Running:\n\n...\n\nFinished in 0.031527s, 95.1565 runs/s, 824.6899 assertions/s.\n\n3 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/dictionary_musical_identity_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 4925\n\n# Running:\n\n.\n\nFinished in 0.238855s, 4.1866 runs/s, 25.1198 assertions/s.\n\n1 runs, 6 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tools/audit_dictionary_musical_identity.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "{\"dictionary_entries\":387,\"performance_count\":1161,\"collisions\":[],\"completion_proven\":false}\n"
+    },
+    {
+      "test": "tools/audit_role_musical_contrasts.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "{\"roles\":22,\"collisions\":[]}\n"
+    },
+    {
+      "test": "tests/semantic_reference_validation_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 34556\n\n# Running:\n\n.......\n\nFinished in 0.241873s, 28.9408 runs/s, 132.3008 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/quantity_validation_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 7918\n\n# Running:\n\n...\n\nFinished in 0.396119s, 7.5735 runs/s, 219.6310 assertions/s.\n\n3 runs, 87 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tools/validate_semantic_ir_and_grammar.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Semantic IR validation: PASS\nChecks passed: 14; checks failed: 0; valid: 16; invalid: 13\n"
+    },
+    {
+      "test": "tests/foundation_process_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 16570\n\n# Running:\n\n...\n\nFinished in 0.457731s, 6.5541 runs/s, 61.1713 assertions/s.\n\n3 runs, 28 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/repetition_performance_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 33412\n\n# Running:\n\n...\n\nFinished in 0.516467s, 5.8087 runs/s, 15.4899 assertions/s.\n\n3 runs, 8 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tests/controlled_role_reference_test.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Run options: --seed 59477\n\n# Running:\n\n...\n\nFinished in 0.454574s, 6.5996 runs/s, 83.5948 assertions/s.\n\n3 runs, 38 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tools/validate_gate4b_compound_dictionary.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Gate 4B validation: PASS\nChecks passed: 16; checks failed: 0; entries: 63\n"
+    },
+    {
+      "test": "tools/validate_gate4c_english_sense_index.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Gate 4C validation: PASS\nChecks passed: 17; checks failed: 0; senses: 471; lemmas: 454\n"
+    },
+    {
+      "test": "tools/validate_controlled_english.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Controlled English validation: PASS\nChecks passed: 13; checks failed: 0\n"
+    },
+    {
+      "test": "tools/validate_renderer_decoder.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Renderer/decoder validation: PASS\nChecks passed: 12; checks failed: 0\n"
+    },
+    {
+      "test": "tools/validate_glyph_audio.rb",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Glyph/audio validation: PASS\nChecks passed: 10; checks failed: 0\n"
+    },
+    {
+      "test": "tests/cognitive_demonstratives_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 cognitive and 18 acquisition cases with independent demonstrative-mode recovery, preference direction, subject control, runtime separation and Ruby/MIDI parity; noun phonemes and draft admission remain unchanged.\n"
+    },
+    {
+      "test": "tests/learning_pronouns_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS six learning pronoun/state/scope cases: explicit identities, immutable binding snapshots, full acquisition/formal/MIDI equivalence and quoted-label preservation.\n"
+    },
+    {
+      "test": "tests/acquisition_preview_ui_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS acquisition UI: explicit preview, separate full-acquisition downloads, stale results/download rejection, cleared ordinary result and acquisition-specific import verification. Playback layout/listening not verified.\nPASS learning UI pronoun fields, binding submission, re-preview after edits, stale completed downloads and edited pending-result rejection.\nPASS acquisition UI neutral reference: explicit number submission and stale export invalidation on number edit.\n"
+    },
+    {
+      "test": "tests/acquisition_bundle_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS nine acquisition exports regenerate exact result formals and music, preserve draft provenance, ignore untrusted event lists and reject rehashed meaning/audio/authority/provenance tampering.\n"
+    },
+    {
+      "test": "tests/learned_whether_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 learned-whether English cases: acquisition rather than past knowledge, independent event/content time and negation, runtime, questions/contractions, MIDI-only meanings and exact Ruby audio parity. Main UI not yet admitted.\n"
+    },
+    {
+      "test": "tests/knowledge_acquisition_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 acquisition performances: independent transition/result runtimes, complete result meaning recovery, phase linkage, content negation, explicit admission, missing-root rejection and frame collision checks. English integration pending.\nPASS all 18 acquisition MIDI streams equal Ruby regeneration; default admission and changed persistence contract reject.\n"
+    },
+    {
+      "test": "tests/knowledge_acquisition_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS acquisition result identity, nonassertion-at-speech-time, phase invariants, invalid state/time/mutation rejection and 27 independently enumerated partial-information contrasts. Draft semantic contract only; English and music not yet admitted.\n"
+    },
+    {
+      "test": "tests/knowledge_time_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 21 knowledge time/state cases: separate outer and question-content times/negation, questions and contractions, full Ruby formal/MIDI parity and independent musical scope recovery.\n"
+    },
+    {
+      "test": "tests/desired_knowledge_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 15 desired-knowledge sentences: reuse desire and knowledge, controlled/explicit holders, nested negation, questions and runtime; independent MIDI meanings and full Ruby formal/audio parity.\n"
+    },
+    {
+      "test": "tests/knowledge_preview_ui_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS draft preview UI: explicit opt-in, stale input/results rejection, draft label and strict sound mode.\nPASS draft data, sound-plan generation and exported vocabulary provenance.\nPASS knowledge preview registry, explicit cognitive opt-in, sound plan/export provenance, and two independently resolved pronouns.\n"
+    },
+    {
+      "test": "tests/knowledge_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 21 knows/whether compositions with independent inner/outer runtime, negation, questions and contractions; complete browser/Ruby formal and MIDI parity. Independent MIDI recovery verifies holder, polar content, both scopes and runtimes; UI pending.\nPASS well-framed desire/question and knowledge/proposition type substitutions reject instead of silently changing meaning.\n"
+    },
+    {
+      "test": "tests/cognitive_question_binding_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS typed question arguments across runtime 0/1/2, five invalid scope/type cases with Ruby parity, and byte-identical bound cognitive MIDI.\n"
+    },
+    {
+      "test": "tests/neutral_pronoun_contractions_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 21 neutral contracted/past-inverted meaning and MIDI cases; negation preserved, plus understanding contraction equivalence.\nPASS modal inversion retains bare verb and speaker binding retains am-not negation.\nPASS 18 contracted-they cases retain explicit participant, negation and runtime 0/1/2; plural and ambiguous contractions are not guessed.\n"
+    },
+    {
+      "test": "tests/neutral_pronoun_sentences_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 24 ordinary singular-they meaning/music cases with neutral roles, present/past/inverted agreement and explicit one/group resolution.\n"
+    },
+    {
+      "test": "tests/cognitive_neutral_pronouns_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 15 neutral cognitive reference cases: named-equivalent full meanings/music, explicit number, no gender field or plural-to-singular coercion.\n"
+    },
+    {
+      "test": "tests/route_learning_preview_ui_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS actual route-learning UI handler: required choice, real composition/play scheduling/MIDI and meaning exports, question and demonstrative route, changed-choice/source and late-result protection. Live browser layout/listening unverified.\nPASS neutral pronoun UI: per-occurrence references and explicit number, singular composition, plural rejection and stale export invalidation.\n"
+    },
+    {
+      "test": "tests/route_learning_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 81 route-learning meaning contracts, distinct readings, independent runtimes, event scope, explicit neutral reference and corruption rejection.\n"
+    },
+    {
+      "test": "tests/route_learning_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 81 distinct route-learning musical meanings with separate result criteria, participants, scope, speech act and independent runtimes. WAV evidence is in the separate acoustic suite.\nPASS 85 independent Ruby document validations and byte-identical MIDI regenerations, with deictic/noun/multiword references, transposition and rehashed corruption rejection.\n"
+    },
+    {
+      "test": "tests/understanding_acquisition_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 27 comprehension-acquisition musical inverses: independent transition/result runtime, positive result at culmination only, negation/time/question scope and past speech selection.\nPASS all 27 comprehension acquisition performances match independent Ruby document validation and regeneration.\n"
+    },
+    {
+      "test": "tests/understanding_pronouns_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 27 gender-neutral reference/meaning/MIDI equivalences; singular they explicit, plural not collapsed, unresolved/extra fields rejected, quoted names preserved.\n"
+    },
+    {
+      "test": "tests/understanding_preview_ui_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS actual understanding UI handler: required choice, real composition/play scheduling/MIDI and meaning exports, explicit readings, changed-choice/source and late-result protection. Live browser layout/listening unverified.\nPASS neutral pronoun UI: per-occurrence references and explicit number, singular composition, plural rejection and stale export invalidation.\nPASS comprehension acquisition UI uses event-specific composition, music and full meaning exports.\n"
+    },
+    {
+      "test": "tests/understanding_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 27 understanding MIDI-only meaning recoveries; distinct content criteria, roles, scopes, runtime and speech acts; draft opt-in, malformed head and command rejection.\nPASS Ruby/browser new predicate event parity across runtime 0/1/2; full sentence parity is checked below.\nPASS 29 full Ruby/browser understanding MIDI comparisons and default/rehashed-corruption rejection.\n"
+    },
+    {
+      "test": "tests/understanding_content_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 27 understanding interpretation contracts; three content readings, temporal/negation scope, runtime, questions, exact references and corrupted semantic rejection. Musical predicate is tested separately.\n"
+    },
+    {
+      "test": "tests/curiosity_preview_ui_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS actual curiosity UI: draft opt-in, real playback scheduling and meaning/MIDI exports, explicit singular they, plural rejection, stale source/binding/async/fetch guards and vocabulary-load failure. Live layout/listening unverified.\n"
+    },
+    {
+      "test": "tests/cognitive_conjunction_preview_ui_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS actual conjunction UI: per-clause reading/pronoun choices, complete composition/playback/MIDI/meaning exports, acquisition result choices, independent runtimes and stale-source/binding safeguards. Live layout/listening unverified.\nPASS explicit outer-negation UI explanation and complete scoped meaning export.\nPASS ordered possibility/negation UI explanation and complete scoped export.\nPASS whole-message question UI maintains nonassertion explanation and question export.\n"
+    },
+    {
+      "test": "tests/cognitive_conjunction_question_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 15 whole-message questions with independent member meaning/scope recovery, assertion contrasts, unchanged payload notes and Ruby regeneration; command and embedded-question misuse reject.\n"
+    },
+    {
+      "test": "tests/cognitive_conjunction_possibility_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS nine possibility/negation scope contrasts with Ruby/MIDI recovery and independent finite-world evidence: joint possibility differs from separate possibilities, and not-possible differs from possible-not.\n"
+    },
+    {
+      "test": "tests/cognitive_conjunction_scope_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS nine full conjunction-scope meanings with Ruby/MIDI parity; independent truth assignments distinguish not-both, neither and outer-plus-inner negation without treating runtime as truth.\n"
+    },
+    {
+      "test": "tests/cognitive_conjunction_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 48 mixed cognitive conjunctions: complete member meanings independently recovered, local negation and runtimes preserved, interpretation/pronoun choices explicit, malformed composition rejected.\nPASS three/eight-member transposed conjunctions and oversized-document rejection.\nPASS 50 conjunctions match independent Ruby validation and regeneration from member events, with default admission and corrupt contracts rejected.\n"
+    },
+    {
+      "test": "tests/curiosity_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 27 curiosity sentence/music inverses with unchanged desire identity, unasserted epistemic outcome, unresolved inquiry, scope, runtime and explicit singular they.\nPASS all 27 curiosity sentences match independent Ruby validation and MIDI regeneration; default admission and rehashed semantic corruption reject.\n"
+    },
+    {
+      "test": "tests/contextual_inquiry_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 21 contextual inquiry meanings/MIDI inverses: topic preserved, questions unresolved, no answer or curiosity asserted, topic-only distinction and rehashed corruption rejection.\nPASS all 21 contextual inquiry documents match independent Ruby validation and MIDI regeneration, including transpositions.\n"
+    },
+    {
+      "test": "tests/contextual_content_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 28 contextual documents through musical inverse; corrupt rehashed semantics, assertion leakage, unresolved anchors and polar-content substitution rejected.\nPASS Ruby byte-identical MIDI for all contextual documents and rejection of rehashed semantic corruption.\n"
+    },
+    {
+      "test": "tests/contextual_content_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 72 contextual selector musical inverses; distinct kinds and reference modes, collision checks, nonassertion, malformed payload and draft rejection.\n"
+    },
+    {
+      "test": "tests/question_content_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 12 content auditions: independent MIDI token recovery preserves entire predicate structure; distinct from assertions/direct questions, explicit opt-in and no grammar-path collisions. Full cognitive inverse remains unfinished.\nPASS Ruby full proposition validation and byte-identical content MIDI for all 12 browser cases; opt-in, assertion leakage and invalid roles rejected.\n"
+    },
+    {
+      "test": "tests/question_content_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 12 polar-content compositions preserve complete proposition graphs and all runtime states; questions assert neither answer, reject runtime-as-truth and malformed/rehashed content.\n"
+    },
+    {
+      "test": "tests/counted_wording_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 counted contraction/singular cases: full formal and MIDI equivalence, independent negation/runtime recovery, singular count validation and ordinary participant composition.\n"
+    },
+    {
+      "test": "tests/quantified_preview_ui_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS draft preview UI: explicit opt-in, stale input/results rejection, draft label and strict sound mode.\n"
+    },
+    {
+      "test": "tests/quantified_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 English counted-property cases with full browser/Ruby formal/MIDI parity, independent scope recovery and decoded finite-model counterexamples.\nPASS counted export provenance and rejection of rehashed metadata/binding/meaning tampering.\n"
+    },
+    {
+      "test": "tests/quantified_property_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 12 counted-property/runtime/negation musical contrasts recover noun restriction and bound bearer from MIDI; draft scheduling requires opt-in. English admission remains pending.\nPASS 12 valid draft formal identities round-trip through opt-in Ruby rendering and decoding, with complete Ruby/browser MIDI equality; default rendering rejects.\n"
+    },
+    {
+      "test": "tests/quantified_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 138 distinct draft frames match Ruby and avoid existing grammar paths; 63 transposed MIDI framing probes decode only with opt-in. Semantic sentence integration remains pending.\n"
+    },
+    {
+      "test": "tests/quantified_binding_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS draft counted-predicate binding: nominal restriction, scoped shared identity, compound argument, nested binding and 14 capture/escape/malformed rejections. Rendering remains unimplemented.\nPASS Ruby/JavaScript binding-validation parity for 34 valid and malformed graphs.\n"
+    },
+    {
+      "test": "tests/quantified_predication_model_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 26244 finite-model checks against independently enumerated completions; predicate/whole-proposition negation, unknown domains and unique identities distinguished. No parser/music coverage is claimed.\n"
+    },
+    {
+      "test": "tests/desired_swimming_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 22 desired swimming cases: bound/explicit actors, independent runtime, inner/outer negation and questions; Ruby parity and MIDI-only meaning recovery.\n"
+    },
+    {
+      "test": "tests/foundation_contractions_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 21 candidate contraction/runtime/negation/question paraphrases and explicit pronoun combination preserve full meaning and music.\n"
+    },
+    {
+      "test": "tests/foundation_pronoun_binding_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 12 explicit candidate pronoun bindings match full named-reference meanings/music; actual UI requires all bindings and discards edited pending results.\nPASS foundation UI neutral reference: number required, singular binding submitted, plural not coerced.\n"
+    },
+    {
+      "test": "tests/foundation_pronoun_identity_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 45 unresolved pronoun role cases rejected; explicit quoted labels and speaker/addressee references preserved across runtime states.\n"
+    },
+    {
+      "test": "tests/foundation_question_runtime_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 9 candidate preference/desire question/runtime cases preserve question contour at either punctuation position; conflicting punctuation rejected.\n"
+    },
+    {
+      "test": "tests/contracted_conditional_reference_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 12 contracted conditional reference/state/destination cases with full paraphrase and Ruby/MIDI parity; ambiguous antecedents remain unresolved.\n"
+    },
+    {
+      "test": "tests/negative_contractions_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 33 contraction/state paraphrases and mixed conjunction preserve full formal/MIDI meaning; unsupported meanings and quoted labels are not rewritten.\n"
+    },
+    {
+      "test": "tests/proposition_negation_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 15 proposition/count/negation/modal/runtime contrasts with complete MIDI scope recovery and Ruby parity.\n"
+    },
+    {
+      "test": "tests/energized_bearer_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 21 energized bearer/count/state/scope cases, independent MIDI checks and Ruby parity; ambiguous active remains unresolved.\n"
+    },
+    {
+      "test": "tests/swimming_combinations_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 21 explicit swimming habits and mixed-clause scope/state contrasts, with Ruby/MIDI parity.\n"
+    },
+    {
+      "test": "tests/swimming_viewpoint_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 54 swimming viewpoint/state/scope musical contrasts and Ruby parity; actual UI choice and stale-result guards.\n"
+    },
+    {
+      "test": "tests/swimming_across_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 swimming-across participant/state/scope contrasts, Ruby/MIDI parity and independent region/actor recovery; all 54 prior compounds unchanged.\n"
+    },
+    {
+      "test": "tests/swimming_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 21 swimming participant/state/scope contrasts with Ruby formal/MIDI parity and independent inverse; prior 52 compounds unchanged; unsupported paths remain unresolved.\n"
+    },
+    {
+      "test": "tests/running_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 21 running participant/state/scope contrasts with Ruby formal/MIDI parity and independent inverse; prior 55 compounds unchanged; unsupported paths remain unresolved.\nPASS running remains distinct from swimming and generic displacement.\n"
+    },
+    {
+      "test": "tests/destination_running_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 24 directed-running actor/destination/runtime/scope cases, Ruby parity, independent MIDI recovery, wrong-root rejection and prior 56 meanings unchanged.\nPASS missing destination and unequal actor bindings reject in browser/Ruby; inconsistent actor sounds reject independently.\n"
+    },
+    {
+      "test": "tests/completed_running_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 30 completed-running actor/destination/runtime/scope cases, Ruby parity, independent MIDI recovery, wrong-root rejection and prior 57 meanings unchanged.\nPASS missing destination and unequal actor bindings reject in browser/Ruby; inconsistent actor sounds reject independently.\nPASS mismatched destination identity rejects in IR/music and ongoing approach stays distinct from completed running.\n"
+    },
+    {
+      "test": "tests/running_viewpoint_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 54 running viewpoint/state/scope musical contrasts and Ruby parity; actual UI choice and stale-result guards.\nPASS 15 explicit-habit paraphrases preserve complete formal/music, with no redundant viewpoint choice.\n"
+    },
+    {
+      "test": "tests/running_combinations_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 21 explicit running habits and mixed-clause scope/state contrasts, with Ruby/MIDI parity.\n"
+    },
+    {
+      "test": "tests/running_command_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 24 running command/state/negation/conditional cases with Ruby formal/MIDI parity, independent addressee/speech-act recovery and three contraction equivalents.\n"
+    },
+    {
+      "test": "tests/demonstrative_reference_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 24 demonstrative reference/state/comparison/journey cases with independent recovery and Ruby formal/MIDI parity; noun sounds and previous reference markers preserved; mismatched identity rejected.\n"
+    },
+    {
+      "test": "tests/brightness_comparison_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 27 brightness comparison and mixed-clause cases with Ruby/MIDI parity, independent direction/reference recovery, negated-comparison counterexample, explicit UI interpretation and stale-result guards.\nPASS actual multi-clause UI requires comparison choice without a numerical threshold.\n"
+    },
+    {
+      "test": "tests/spatial_relations_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 39 spatial sentences: independent MIDI roles/relation/runtime/scope recovery, Ruby parity and boundary countermodel.\n"
+    },
+    {
+      "test": "tests/physical_entry_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 30 entry cases with Ruby/MIDI parity, independent phase/identity/runtime/scope recovery, binding rejection, event countermodels and explicit UI sense choice.\nPASS entry sense selection in actual multi-clause and pronoun UI handlers.\n"
+    },
+    {
+      "test": "tests/entry_modality_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 96 modal entry cases: Ruby/MIDI parity, independently recovered modal/negative scopes, semantic countermodels and direct/group/pronoun UI choices.\nPASS ongoing-modal UI uses progress-specific wording and retains the unasserted culmination.\n"
+    },
+    {
+      "test": "tests/ongoing_entry_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 36 ongoing-entry and mixed-event cases: independent phase/scope/runtime recovery, Ruby/MIDI parity, identity corruption rejection, interruption countermodel and historical vocabulary preservation.\n"
+    },
+    {
+      "test": "tests/entry_viewpoint_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 51 entry viewpoint/habit/mixed/pronoun cases with Ruby/MIDI parity, independent completion contrast, explicit dual UI choices and stale-choice rejection.\n"
+    },
+    {
+      "test": "tests/pronoun_interpretation_choices_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 24 pronoun-plus-interpretation cases with exact named and Ruby/MIDI parity; option/binding snapshots, dummy-it exclusion and actual UI combined-choice/stale-result checks.\nPASS singular they binding and contextual noun modifier in the same UI flow.\n"
+    },
+    {
+      "test": "tests/temporal_proposition_scope_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 44 temporal proposition cases with independent scope recovery and Ruby formal/MIDI parity; reversed temporal scope is musically distinct.\nPASS finite temporal-modal countermodel distinguishes the two decoded scope orders.\n"
+    },
+    {
+      "test": "tests/texture_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 48 selected contextual adjective contrasts including physical rough/smooth; Ruby/browser MIDI parity and independent inverse.\n"
+    },
+    {
+      "test": "tests/surface_texture_profile_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS surface-texture profile: 12 distinct norm/state/negation performances, Ruby/browser MIDI parity, inverse meaning and wrong-dimension rejection. English/UI admission remains pending.\n"
+    },
+    {
+      "test": "tests/preference_propositions_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 27 independent preference/alternative runtime contrasts with Ruby parity and MIDI inverse; order, nested desire, negation and separate time scopes preserved.\n"
+    },
+    {
+      "test": "tests/desired_consciousness_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 72 consciousness/dormancy performances preserve lexical self/other, separate inner/outer runtime states, negation and controlled identity; Ruby parity and MIDI-only inverse verified.\n"
+    },
+    {
+      "test": "tests/desired_atomic_conditions_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS desired atomic conditions: 54 distinct state/negation performances with Ruby parity and independent MIDI meaning recovery; explicit, controlled, nested and deictic subjects; wrong-role rejection.\n"
+    },
+    {
+      "test": "tests/desired_felt_conditions_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 90 desired felt-condition/runtime/negation contrasts preserve nested compounds, bound experiencers and intensional meaning with Ruby/MIDI parity and independent decoding; explicit/nested subjects, bundles and figurative rejection checked.\n"
+    },
+    {
+      "test": "tests/nested_foundation_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 12 recursive desire/preference/control cases: independent states, intensional boundaries, nearest-holder identity, Ruby/MIDI parity, inverse direction, gloss identity, bundle and recursion limits.\nPASS 18 controlled preference state/negation combinations plus deictic/nested holders, same-name contrast, draft bundle and invalid-role rejection in both validators.\n"
+    },
+    {
+      "test": "tests/desire_time_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 21 desire time/runtime/negation/question cases with Ruby/MIDI parity; intensional content time stays separate and ambiguous trailing days reject.\n"
+    },
+    {
+      "test": "tests/desire_negation_scope_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 24 desire/inner-negation/runtime scope contrasts with equivalent infinitive forms, Ruby/MIDI parity, independent decoding, deictic/explicit subjects and unsupported-scope rejection.\n"
+    },
+    {
+      "test": "tests/contextual_standard_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 36 contextual adjective/negation/runtime contrasts preserve unspecified standards, match Ruby/MIDI, and decode independently; UI accepts no-number selection.\n"
+    },
+    {
+      "test": "tests/luminance_foundation_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 48 luminance measurements/comparisons: exact magnitudes, roles, direction and runtime match reference output and MIDI observation.\n"
+    },
+    {
+      "test": "tests/luminance_standard_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 15 bright/dim state/negation contrasts with explicit standards, MIDI-only meaning recovery and actual UI guards.\n"
+    },
+    {
+      "test": "tests/desire_subject_control_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 desire subject-control sentences preserve explicit identity in Ruby/browser formal, MIDI and independent decoding.\nPASS desire for mobility: 18 independent outer/inner state and inner-negation contrasts, explicit/control subjects, question/outer negation, Ruby/MIDI inverse and draft-bundle checks.\n"
+    },
+    {
+      "test": "tests/preference_time_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 preference time/negation/runtime sentences match reference formal/MIDI and MIDI-only semantic scopes.\n"
+    },
+    {
+      "test": "tests/foundation_preview_ui_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS draft preview UI: explicit opt-in, stale input/results rejection, draft label and strict sound mode.\nPASS draft data, sound-plan generation and exported vocabulary provenance.\nPASS modified preference UI selection, full draft export verification and stale reading rejection.\nPASS object desire UI requires outcome, composes real scoped meaning, verifies draft bundle and rejects stale clarification.\nPASS foundation clarification routes explicitly supplied drinking to material/viewpoint selection.\nPASS desired delivery UI requires interpretation/viewpoint, preserves nested music and bundle, resets edited outcome choices and discards stale selection.\nPASS object-desire ownership outcome routes to explicit framework selection.\n"
+    },
+    {
+      "test": "tests/foundation_english_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 39 candidate English sentences match Ruby formal/MIDI and recover meaning independently; ambiguous object desires remain unresolved.\nPASS 3 desired compound clauses preserve scoped bindings and reference-renderer formal parity.\n"
+    },
+    {
+      "test": "tests/foundation_codec_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Candidate foundation codec: 72 register/anchor/runtime cases match independent Ruby events and decode from MIDI; 6,561 addresses are unique and 972 existing atomic performances decode unchanged. Unapproved defaults, malformed frames, altered identities and occupied addresses reject. No sentence translation or canonical vocabulary is certified.\n"
+    },
+    {
+      "test": "tests/foundation_ir_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 23 foundation argument/scope checks (candidate only; not sentence translation coverage)\n"
+    },
+    {
+      "test": "tests/foundation_sentence_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 9 candidate sentence musical scopes: desire and embedded care retain independent 0/1/2 endings.\n"
+    },
+    {
+      "test": "tests/foundation_semantic_inverse_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 12 MIDI-only preference contrasts: direction, kind arguments, negation and runtime remain distinct; wrong types and extra roles reject.\n"
+    },
+    {
+      "test": "tests/repetition_browser_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Browser repetition: Ruby/JS MIDI and SVG parity, sound-plan counts, and export bounds pass.\n"
+    },
+    {
+      "test": "tests/name_participants_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Name participants: existing EZNAME notes, role reversal, nonsemantic labels, roundtrip and MIDI parity pass.\n"
+    },
+    {
+      "test": "tests/numeric_name_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS numeric identifier labels preserve digit order/leading zeroes and distinct reference music; existing alphabetic identities unchanged.\n"
+    },
+    {
+      "test": "tests/nominal_reference_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Definite noun references: ten full compositions preserve reference frames, names remain distinct, Ruby/browser output agrees, malformed references fail.\n"
+    },
+    {
+      "test": "tests/capability_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Capability statements preserve REP:211 and all three runtime endings; inactive and negated-active remain musically distinct.\nPASS available self-mobility: six negation/runtime performances, Ruby/MIDI parity, bearer and unsupported-complement boundaries.\n"
+    },
+    {
+      "test": "tests/speech_act_runtime_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Questions and commands retain all three runtime states, independent contours, and exactly one compound-head ending.\n"
+    },
+    {
+      "test": "tests/discourse_reference_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Discourse references: speaker/addressee anchors retain distinct roles and sound, match Ruby events/MIDI, and use neutral mouth cues without lexical runtime.\n"
+    },
+    {
+      "test": "tests/pronoun_resolution_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Pronouns: 30 explicit referent/state/scope cases match direct interpretation and Ruby MIDI; MIDI-only care decoding preserves both roles. Missing, injected, stale and ambiguous bindings are rejected; names, nouns and compound experiencers are supported.\nPASS ordinary pronoun UI requires explicit number and preserves two distinct neutral referents; group meaning is not coerced.\n"
+    },
+    {
+      "test": "tests/named_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Named sentences: 81 full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.\n"
+    },
+    {
+      "test": "tests/dictionary_fidelity_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Dictionary fidelity: uncomposed sentences remain partial, lexical labels remain available, and negation never infers runtime zero.\n"
+    },
+    {
+      "test": "tests/long_performance_verification_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Long performance verification: 96 lexical events plus 128 role frames accept strict, recognition and mixed paths; changed, missing, extra and empty notes are rejected.\n"
+    },
+    {
+      "test": "tools/validate_recognition_audio.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Recognition audio: PASS \u00b7 5370 variants \u00b7 32343 assertions\n"
+    },
+    {
+      "test": "tools/validate_performance_audio.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Recognition waveform: PASS \u00b7 108 performances \u00b7 327 assertions\n"
+    },
+    {
+      "test": "tests/sentence_sequence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Explicit sequences: whole-IR Ruby parity, exact MIDI parity, action order, clause boundary and unsupported-clause rejection pass.\n"
+    },
+    {
+      "test": "tests/sentence_conjunction_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Conjoined sentences: full Ruby/browser parity, quoted conjunctions, local negation, and-versus-then sound contrast, and ambiguous-scope rejection pass.\n"
+    },
+    {
+      "test": "tests/sentence_disjunction_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Disjunction: 18 two-alternative/runtime/negation/felt-condition/quoted-label cases have Ruby formal and MIDI parity, distinct inclusive/exclusive sound markers, explicit UI choices and stale-choice rejection.\n"
+    },
+    {
+      "test": "tools/audit_ordinary_phrase_coverage.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "{\"case_count\":40,\"counts\":{\"verified_for_declared_checks\":24,\"requires_interpretation\":11,\"not_composed\":5},\"completion_proven\":false}\n"
+    },
+    {
+      "test": "tests/negation_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Negation: positive/negative/inactive distinction, grammar framing, marker durations and Ruby/browser parity pass.\n"
+    },
+    {
+      "test": "tests/modality_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Modality: seven distinct scoped modes preserve runtime and match Ruby/browser MIDI/SVG; unsounded confidence is rejected.\n"
+    },
+    {
+      "test": "tests/confidence_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Confidence: five exact decimal values recover from note frames; Ruby/browser output agrees; noncanonical or out-of-range strengths fail.\n"
+    },
+    {
+      "test": "tests/coordination_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Coordination: sequence, all-of, any-of and exactly-one sound distinct; Ruby/browser MIDI/SVG agree and unordered members retain boundaries.\n"
+    },
+    {
+      "test": "tests/temporal_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Temporal music: before/at/after speech time remain distinct, lexical state is unchanged, Ruby/browser output agrees, and unsounded anchor details fail.\nCalendar-day music: previous/current/next calendar days are distinct from speech-time relations, with Ruby/browser parity and strict anchor checks.\n"
+    },
+    {
+      "test": "tests/future_interpretation_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Future interpretation: 9 state/negation/bound-compound cases require explicit selection, then preserve tomorrow and runtime independently with reference/MIDI parity. UI does not compose before selection and rejects stale input; unresolved clause groups produce no partial translation.\n"
+    },
+    {
+      "test": "tests/measurement_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Measurement music preserves sign, exact decimal value and unit; eight contrasts match Ruby/browser output without changing lexical state.\n"
+    },
+    {
+      "test": "tests/mass_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Mass statements: eight reference-renderer/MIDI parity cases, exact gram/kilogram normalization beyond floating-point precision, bearer/quantity binding, modal and runtime preservation, and unsupported-dimension rejection.\n"
+    },
+    {
+      "test": "tests/temperature_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Temperature: 34 exact point/state/bound/bearer/modal cases match Ruby formal and MIDI; Celsius/Kelvin equivalents share meaning and sound, temperature differs from mass, controlled kelvin and independent unit/runtime decoding pass.\n"
+    },
+    {
+      "test": "tests/thermal_standard_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Thermal standards: 17 hot/cold/negation/runtime/question/modal/deictic cases preserve the chosen threshold in meaning and MIDI. Missing sense/standard is unresolved; equivalent scales match; changed standards change sound. UI requires a supplied threshold and rejects stale input.\n"
+    },
+    {
+      "test": "tests/mass_standard_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Mass standards: 17 heavy/light/negation/runtime/question/modal/deictic cases preserve the chosen threshold in meaning and MIDI. Missing sense/standard is unresolved; equivalent scales match; changed standards change sound. UI requires a supplied threshold and rejects stale input.\n"
+    },
+    {
+      "test": "tests/nominal_mass_property_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Nominal mass restrictions: 36 adjective/participant/negation/question/command/past/runtime cases match Ruby formal and MIDI. Independent performance decoding retains the restriction on its noun; equivalent units match, different thresholds differ, and unsupported senses/frames remain incomplete.\n"
+    },
+    {
+      "test": "tests/contextual_nominal_mass_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 12 contextual noun mass sentence contrasts, independent full MIDI recovery and Ruby parity; no numeric cutoff invented.\nPASS contextual noun standard UI choice and changed-input guard.\n"
+    },
+    {
+      "test": "tests/preference_nominal_mass_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 modified preference contrasts preserve noun labels, independent restriction occurrences, direction, scope and runtime through MIDI.\nPASS independent Ruby MIDI parity for all 18 modified preferences.\n"
+    },
+    {
+      "test": "tests/pain_meaning_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 24 draft pain meaning contrasts, singular they binding, explicit reading boundaries and rehashed semantic-corruption rejection. No music implementation claimed.\n"
+    },
+    {
+      "test": "tests/pain_stimulus_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 36 draft stimulus relation/speech-act/negation/runtime distinctions; treatment and experiencer remain separate; outcome not independently asserted. No English or music route claimed.\n"
+    },
+    {
+      "test": "tests/pain_comparison_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 108 draft comparison documents preserve relation mode, scope and independent runtimes; reject cross-person scales and runtime-as-intensity. No music claim.\n"
+    },
+    {
+      "test": "tests/pain_preference_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 modified pain-preference meaning contrasts, original sentence with explicit missing-context choices, and rehashed argument-binding rejection. No music claim.\nPASS both validators reject fully rehashed collapsed treatment identities.\n"
+    },
+    {
+      "test": "tests/ownership_preview_ui_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS ownership preview requires framework, exports full meaning/music, resolves neutral references and discards stale selections/exports.\nPASS desired and object-clarified ownership previews export scoped music and provenance, preserving holder/owner separation and stale-export guards.\n"
+    },
+    {
+      "test": "tests/object_desired_ownership_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS nine object-desire ownership musical scope/runtime pairs; original nominal/name identity, explicit framework and outcome selection enforced.\n"
+    },
+    {
+      "test": "tests/desired_ownership_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 desired ownership scope/runtime cases, controlled and neutral subject identity, past scope and forged commitment rejection. Music not yet implemented.\n"
+    },
+    {
+      "test": "tests/desired_availability_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 desired availability scope/runtime combinations; distinct participants, neutral references, explicit choices and forged contracts. Music integration pending.\n"
+    },
+    {
+      "test": "tests/desired_availability_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 desired availability musical contrasts, complete nested inverse, participant identity, independent scopes, shared dispatch and transposition.\nPASS independent Ruby performances match all 18 meanings; forged commitments, foundation and participant control reject in both implementations.\n"
+    },
+    {
+      "test": "tests/desired_ownership_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 desired ownership musical contrasts preserve subject control, scoped ownership framework, separate negations and runtime pairs; unique shared inverse and transposition verified.\nPASS 18 independent desired-ownership performances match; rehashed assertion, foundation and subject-control corruption rejects.\n"
+    },
+    {
+      "test": "tests/ownership_sentences_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 full ownership sentence meanings, three explicit neutral-reference cases, framework distinction and unresolved/invalid reading rejection. Music remains unimplemented.\n"
+    },
+    {
+      "test": "tests/ownership_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 ownership music/inverse cases preserve three references, scopes and runtime; transposition and unique draft dispatch verified.\nPASS 18 independent Ruby ownership performances match JavaScript; default draft use and rehashed scope/rights/runtime corruption reject.\nPASS structurally valid music missing framework or duplicating owner role is rejected by ownership and shared semantic inverses.\n"
+    },
+    {
+      "test": "tests/ownership_meaning_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 48 draft ownership meanings distinguish owner/framework/scope/runtime; absent framework, forged commitments and stale participant identity reject. No musical or English coverage claimed.\n"
+    },
+    {
+      "test": "tests/delivery_questions_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 delivery question/runtime contrasts and four neutral participant cases preserve full meanings/music without inferring gender or receipt outside question scope.\n"
+    },
+    {
+      "test": "tests/desired_delivery_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 desired custody-delivery scope/runtime contrasts; explicit interpretation required and unrelated content rejects.\nPASS independent Ruby rendering of all 18 nested delivery meanings.\nPASS nine explicitly selected desired-delivery viewpoints retain bounded, ongoing and habitual scope.\nPASS 12 explicitly interpreted delivery-wording cases preserve complete carrying-transfer meaning and music; unselected meaning rejects.\nPASS spatial-only and unrelated delivery senses cannot silently reuse custody delivery; quoted name is unchanged.\n"
+    },
+    {
+      "test": "tests/object_desire_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS object desire requires explicit content, rejects unrelated outcomes, and preserves outer scope/runtime/question through existing music.\nPASS nine independent Ruby performances agree; outer past time remains distinct from desired-content negation.\nPASS noun/name and proximal/distal identity are not substituted; nine runtime pairs and default outer state preserve independent content runtime.\nPASS desired carrying and custody acquisition now recover as intensional content.\nPASS 18 desired carrying/acquisition scope/runtime cases preserve specific commitments and match independent Ruby music.\n"
+    },
+    {
+      "test": "tests/object_desired_drinking_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS nine object-desire drinking clarifications preserve original reference and separate scope/runtime; missing or mismatched choices reject.\n"
+    },
+    {
+      "test": "tests/material_reference_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS eight draft material references preserve kind/portion and deixis without amount, liquid or existence inference; malformed/implicit readings reject. No music or drinking claim.\n"
+    },
+    {
+      "test": "tests/drinking_meaning_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 36 draft drinking viewpoint/scope/runtime meanings, participant contrast and rehashed contract rejection. No English or music completeness claim.\n"
+    },
+    {
+      "test": "tests/desired_drinking_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 12 desired-drinking meanings preserve controlled/explicit subject, independent negation and runtime; forged control rejects. No music claim.\n"
+    },
+    {
+      "test": "tests/desired_drinking_pronouns_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS nine desired-drinking pronoun cases preserve subject control and distinct participants without gender assumptions; unbound/plural references reject.\n"
+    },
+    {
+      "test": "tests/desired_drinking_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 24 desired-drinking musical contrasts preserve subject control, separate negations, question and runtime through shared inverse/transposition.\nPASS 24 independent desired-drinking performances agree; rehashed scope/commitment/foundation/control corruption rejects.\n"
+    },
+    {
+      "test": "tests/drinking_sentences_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 24 drinking English scope/runtime cases; simple present, material reading and literal interpretation require explicit choices.\nPASS 12 named drinking contractions retain negation, question, time and runtime.\n"
+    },
+    {
+      "test": "tests/drinking_pronouns_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS nine singular-they drinking cases match named meanings/music; missing number and plural coercion reject.\nPASS habitual singular-they and straight/curly negative contractions preserve full meaning and music.\nPASS contracted singular they plus separate object pronoun preserves drinking meaning and independent MIDI inverse.\n"
+    },
+    {
+      "test": "tests/drinking_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 drinking MIDI contrasts recover viewpoint, material kind/portion, participants, negated question and runtime via shared dispatch and transposition.\nPASS 18 independent Ruby drinking performances match JavaScript.\nPASS independent renderer rejects default draft use and rehashed action, viewpoint, total-consumption and runtime changes.\n"
+    },
+    {
+      "test": "tests/drinking_preview_ui_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS drinking preview requires material/viewpoint choices, exports full meaning/music and invalidates stale exports.\nPASS drinking preview resolves singular they and material pronoun without gender information.\nPASS desired-drinking preview retains distinct participants and nested scope/runtime in exports and rejects stale async choices.\nPASS desired-drinking preview keeps singular-they control bound to the resolved holder.\nPASS object-desire drinking preview exports clarification provenance with full meaning and scoped music.\n"
+    },
+    {
+      "test": "tests/pain_preference_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 complete pain-preference MIDI inverses preserve holder, separate pain experiencer, ordered restrictions, scope, question and runtime; transposition and shared dispatch agree.\nPASS 18 independent Ruby preference performances match JavaScript.\nPASS independent validator rejects default use and rehashed preference identity, restriction scope, comparison binding and runtime corruption.\n"
+    },
+    {
+      "test": "tests/pain_comparison_sentences_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 72 explicit pain comparison meanings preserve intensity direction, past/negation/question/runtime; reading and context are required, with neutral bindings.\n"
+    },
+    {
+      "test": "tests/pain_comparison_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 27 pain comparison MIDI contrasts retain ordered outcomes, context, mode, negated question and runtime through shared inverse/transposition.\nPASS five runtime positions vary independently without becoming pain intensity; 15 probes include five shared baselines.\nPASS 42 independent Ruby comparison performances match JavaScript, including independent nested runtime probes.\nPASS independent comparison validator rejects default draft use and rehashed scale, basis, scope and relation corruption.\n"
+    },
+    {
+      "test": "tests/pain_stimulus_sentences_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 27 explicit causal/expected/dispositional sentence meanings plus neutral reference binding; ambiguous painful and inner negation are not silently reinterpreted.\n"
+    },
+    {
+      "test": "tests/pain_stimulus_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 27 stimulus/outcome runtime contrasts preserve relations, separate participants and scopes through unique shared MIDI decoding and transposition.\nPASS 27 independent Ruby pain-stimulus performances match JavaScript with distinct outer and nested runtime values.\nPASS Ruby rejects unapproved draft use and rehashed relation, criterion, outcome-scope and runtime corruption.\n"
+    },
+    {
+      "test": "tests/pain_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 24 pain music contrasts with full MIDI meaning recovery, transposition, default opt-out and generic-feeling cross-rejection.\nPASS 28 independent Ruby pain performances match JavaScript, including deictic, demonstrative and quoted-name references.\nPASS Ruby rejects default draft use and rehashed changes to pain quality, injury commitment, dependency and runtime.\n"
+    },
+    {
+      "test": "tests/pain_preview_ui_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS pain preview playback/MIDI/meaning export, explicit singular-they binding and stale input/binding protection.\n"
+    },
+    {
+      "test": "tests/pain_stimulus_preview_ui_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS pain-stimulus preview playback and complete exports, separate stimulus/them bindings and stale input/binding protection.\n"
+    },
+    {
+      "test": "tests/pain_comparison_preview_ui_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS comparison preview requires reading/context, exports full MIDI/meaning, schedules playback and rejects stale context/reading results.\n"
+    },
+    {
+      "test": "tests/pain_preference_preview_ui_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS preference preview requires explicit pain reading, comparison target, experiencer and context; exports full music/meaning and rejects stale results.\n"
+    },
+    {
+      "test": "tests/aspect_carrying_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Aspect: 45 carrying/negation/past/question/nominal-property/runtime cases have Ruby/browser formal and MIDI parity; 9 controlled aspect/state cases preserve distinct audible frames without participant roles. Bounded, ongoing and habitual stay separate from tense, arrival and runtime.\n"
+    },
+    {
+      "test": "tests/carrying_viewpoint_choice_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Carrying viewpoint choice: 63 interpretation/runtime/participant/question/modal/property cases match Ruby formal and MIDI; chosen ongoing/habitual readings equal explicit paraphrases. UI requires both viewpoint and applicable mass standard and discards stale results/errors.\nPASS acquisition preview uses its own viewpoint label and preserves modal ongoing scope without past time.\n"
+    },
+    {
+      "test": "tests/measurement_comparison_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Six scalar comparison meanings produce distinct music with Ruby/browser formal and MIDI parity; exact and compatible-unit paraphrases normalize, and unknown comparisons fail validation.\n"
+    },
+    {
+      "test": "tests/property_comparison_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Entity mass comparison: 12 reference-renderer/MIDI cases preserve six relations and operand direction; explicit paraphrases normalize, invalid dimensions/roles fail, and modal/runtime scope remains separate.\n"
+    },
+    {
+      "test": "tests/temperature_comparison_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Temperature comparison: 38 six-relation/runtime/direction/deictic/scope cases match Ruby formal and MIDI; independent inverse recovers dimension, relation, ordered participants and state. Mass API remains mass-only.\n"
+    },
+    {
+      "test": "tests/mass_comparison_inverse_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Independent MIDI inverse: 36 relation/runtime/direction cases plus deictic operands; octave transposition preserves decoding, corruption/truncation fail, negated possibility preserves scope independently of all three runtime states. 36 confidence/mode/runtime cases preserve exact decimal strings. No source IR or formal plan is supplied to the decoder.\n"
+    },
+    {
+      "test": "tests/strict_music_decoder_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Independent strict music inverse: 5429 dictionary and sentence performances recover audible lexical/reference/grammar tokens and exact boundaries, without source IR or a formal plan.\n"
+    },
+    {
+      "test": "tests/quantifier_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Quantifier music: six scoped operators and exact cardinalities remain distinct, preserve runtime, and match Ruby/browser output.\n"
+    },
+    {
+      "test": "tests/quantified_role_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Quantified participants keep actor/target/background/experiencer registers; browser and Ruby agree and scope does not repeat the participant.\n"
+    },
+    {
+      "test": "tests/conditional_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Conditional music preserves antecedent/consequent direction and all four declared statuses; eight contrasts match Ruby/browser output.\n"
+    },
+    {
+      "test": "tests/conditional_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "English conditionals: five full Ruby/browser parity cases, reversed condition contrast, explicit runtime and past scopes, quoted name, and incomplete-clause rejection pass.\n"
+    },
+    {
+      "test": "tests/conditional_command_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Conditional commands: eight full renderer/MIDI parity cases, local definite-reference identity, explicit-reference paraphrase equivalence, command/assertion contrast, negation scope and independent runtime endings.\n"
+    },
+    {
+      "test": "tests/condition_adjective_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Condition adjectives: 15 reference-renderer parity cases; impairment/restoration state versus event, bearer roles, negation, questions, quantities, conditional scope, and all runtime endings pass.\n"
+    },
+    {
+      "test": "tests/compound_binding_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Nested bound compounds: 12 role/runtime contrasts retain both binding scopes, no duplicate payload, Ruby/browser MIDI and SVG parity, and event limits. Structural probes do not assert lexical valence.\n"
+    },
+    {
+      "test": "tests/compound_binding_constraints_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Compound identity constraints: scoped equality and distinctness reject wrong participants and known aliases in Ruby/browser; inherited paths and transitive contradictions are checked. Three runtime states preserve reference music. Fixtures do not approve carrying.\n"
+    },
+    {
+      "test": "tests/role_reference_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Role-reference music: 66 role/runtime structural cases distinguish a shared argument from identical separate lexical occurrences, preserve Ruby/browser MIDI and SVG, and recover the reference token without source IR. These probes do not approve arbitrary lexical valence.\n"
+    },
+    {
+      "test": "tests/qualified_slot_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Qualified slots: 18 attachment/runtime contrasts keep modifiers inside the correct participant role frame, including nested conventions; exact no-gap MIDI attachment, argument endings and Ruby/browser parity hold. Fixtures are structural, not approved experience vocabulary.\n"
+    },
+    {
+      "test": "tests/browser_compound_plans_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Browser compiled plans: 5370 released forms preserve exact reference lexical events and glosses.\n"
+    },
+    {
+      "test": "tests/local_compounds_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS ordered local compounds, nested reuse, persistence/import, immutable canonical data, invalid identity/dependency/cycle rejection and preservation of saved data. Compilation and UI pending.\n"
+    },
+    {
+      "test": "tests/local_compound_merge_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS merging preserves existing words, nested dependencies and identities; repeats are idempotent and conflicts/malformed imports leave input unchanged.\n"
+    },
+    {
+      "test": "tests/local_compound_examples_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS generated saved-word examples parse, missing-role definitions do not promise sentence support, and local handoff is consumed once.\n"
+    },
+    {
+      "test": "tests/local_participant_groups_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS canonical shared-actor slots use one input per occurrence; separate nested actors and destinations remain independent.\n"
+    },
+    {
+      "test": "tests/local_role_links_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS explicit outer-to-canonical and nested-local role links propagate participants; conflicts and invalid links reject.\nPASS contradictory author role connections reject before a new compound is returned.\nPASS rehashed contradictory definitions cannot be imported or overwrite saved data.\n"
+    },
+    {
+      "test": "tests/local_role_link_controls_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS builder role selection saves explicit links and composes English to music without duplicate participant input.\n"
+    },
+    {
+      "test": "tests/local_builder_authoring_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS actual builder handlers: search, ordered parts, role connection, stale-edit rejection, save/reload, and saved adjective sentence to music (DOM adapter, not live browser).\nPASS new draft preserves saved words; nested compound authoring, export/import, transitive participants and nested musical frames.\n"
+    },
+    {
+      "test": "tests/local_compound_expansion_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS nested order/head scopes, occurrence-specific roles, pinned canonical plans, bounded expansion and reload fidelity.\n"
+    },
+    {
+      "test": "tests/local_compound_binding_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS explicit occurrence bindings retain different participants, reject missing/duplicate/wrong paths and survive serialization.\n"
+    },
+    {
+      "test": "tests/local_compound_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS nested performance tree reuses root sounds, preserves actor name/register and applies runtime 0/1/2 only to the external semantic head. Audible local framing pending.\n"
+    },
+    {
+      "test": "tests/local_compound_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS portable local registry and nested framed MIDI export, identity/head contrasts and runtime 0/1/2. Audio inverse not claimed.\n"
+    },
+    {
+      "test": "tests/local_compound_controls_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS actual music controls require participants, export runtime and definitions, and block stale downloads after edits.\nPASS sentence controls export past questions and distinguish not-possible from possibly-not; scope edits invalidate stale output.\n"
+    },
+    {
+      "test": "tests/local_compound_player_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS existing voice scheduling preserves MIDI pitch/timing; stop cancels scheduled tones and pending audio resume.\n"
+    },
+    {
+      "test": "tests/local_canonical_dependencies_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS all 63 approved compounds reused as local heads with canonical same/distinct participant constraints.\n"
+    },
+    {
+      "test": "tests/local_compound_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 24 local sentence performances preserve participants, ordered negation/modality/time, question contour and runtime. Natural English parsing remains pending.\n"
+    },
+    {
+      "test": "tests/local_compound_english_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 24 saved adjective English sentences preserve subject, past, negation, questions and runtime; agreement/unsupported remainder rejects.\nPASS 12 saved adjective possibility/negation/question/runtime cases; missing copula and perfect tense reject.\n"
+    },
+    {
+      "test": "tests/local_compound_pronouns_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS neutral saved-word pronouns preserve explicit meanings/music and provenance; number clarification, plural rejection and quoted-name isolation.\nPASS direct singular-they saved verbs preserve base-form meaning; ambiguous base/past does not silently become past.\nPASS neutral-pronoun ambiguous verbs require explicit tense and retain the selected time in meaning and provenance.\nPASS singular-they saved verb uncertainty preserves pronouns and possibility/negation scope.\nPASS singular-they adjective possibility retains bearer identity and negation scope.\n"
+    },
+    {
+      "test": "tests/local_verb_english_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 24 saved verb auxiliary sentences, explicit role mapping, contraction and unsupported-tail rejection.\nPASS explicit regular/irregular verb forms match auxiliary meanings/music; agreement, incomplete forms and ambiguous tense reject.\nPASS explicit ambiguous-tense selection preserves participants and changes time/music; stale or forged interpretations reject.\nPASS 12 might/might-not statements/questions preserve possibility outside negation and runtime; perfect-tense and ambiguous may are not silently simplified.\n"
+    },
+    {
+      "test": "tests/local_english_controls_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS saved-English controls export full sentence meaning and reject stale source downloads.\nPASS verb preview requires distinct role choices, avoids duplicate participant prompts and invalidates exports after role edits.\nPASS ambiguous verb UI offers present/past and exports the chosen interpretation.\nPASS pronoun UI requires explicit number, preserves reference provenance, rejects unsupported groups and blocks stale exports.\nPASS English preview groups canonical shared actors without merging the outer bearer.\nPASS pronoun-tense UI requires selection and exports past interpretation with resolved participants.\n"
+    },
+    {
+      "test": "tests/bound_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Bound sentences: 21 name/deictic/nominal/state/scope/clause cases match reference formal and MIDI; invalid bindings, references, plans and event limits are rejected.\n"
+    },
+    {
+      "test": "tests/compound_convention_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Explicit compound conventions: 18 nested identity/runtime/binding contrasts preserve roots and head-only endings; Ruby/browser MIDI and SVG agree; independent MIDI frame reading recovers scoped convention codes. Fixtures do not approve vocabulary.\n"
+    },
+    {
+      "test": "tests/sensory_registration_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Sensory registration: 24 sentence/runtime cases preserve receiver versus source, negation/modality/confidence, exact Ruby/browser formal and MIDI parity, and independently readable convention code 0. No hearing, seeing or understanding alias is inferred.\n"
+    },
+    {
+      "test": "tests/registration_channels_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Registration channels: 18 channel/runtime/scope cases reuse one exact versioned foundation, retain source and receiver roles, preserve nested convention codes in MIDI, and match Ruby/browser formal output. Generic registration and conscious perception remain distinct.\n"
+    },
+    {
+      "test": "tests/physical_support_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Physical support: 20 role/runtime/scope sentences match Ruby formal and MIDI; target qualification and convention decode independently. Prior compound definitions are unchanged. Controlled role bindings become explicit paths. Carrying and metaphorical support remain distinct.\n"
+    },
+    {
+      "test": "tests/physical_custody_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Physical custody: 34 role/state/negation/question/modal/conditional sentences match Ruby/browser formal and MIDI; independent audible structure distinguishes custody from support and arrival. Three controlled and three nested performances preserve independent runtime states. Prior 39 compounds and distinct-participant constraints are checked; receipt is not inferred.\n"
+    },
+    {
+      "test": "tests/physical_carrying_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Physical carrying: 20 ordinary state/role/scope/clause cases match Ruby formal and MIDI; conventions 3/4 and runtime decode independently. Shared load, distinct carrier, exact dependency and unchanged prior compounds verified.\n"
+    },
+    {
+      "test": "tests/carrying_goal_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Carrying goals: 17 role/runtime/negation/modality/past-question/conditional cases match reference formal and MIDI. Destination differs from load and remains audible; arrival is not inferred; unsupported additions stay incomplete.\n"
+    },
+    {
+      "test": "tests/arrival_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Arrival: 27 participant/negation/question/calendar/property/runtime cases match Ruby formal and MIDI. Independent tokens distinguish completed arrival from approach without recipient or carrying inference.\n"
+    },
+    {
+      "test": "tests/destination_carrying_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Destination carrying: 45 sentence/runtime variants preserve nested event conventions, load/destination identity, aspect and mass restrictions with Ruby/browser formal/MIDI parity. Missing choices and wrong bindings reject; all prior compounds remain exact.\n"
+    },
+    {
+      "test": "tests/carrying_inverse_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Carrying MIDI inverse: 36 full supported performances recover predicate, ordered scope, participants, property and runtime from MIDI alone. Transposition, role reversal, malformed-but-balanced conventions/roles/bindings/roots, truncation and unsupported extra content are checked.\n"
+    },
+    {
+      "test": "tests/custody_inverse_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Custody MIDI inverse: 36 sentence/state/scope/property cases and nine reference-rendered speech-act/state cases recover custody, participants and independent runtime states from MIDI alone. Transposition, role reversal, homophone limits, balanced semantic corruptions, truncation and unsupported extra clauses are checked.\n"
+    },
+    {
+      "test": "tests/availability_preview_ui_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS availability preview requires reading/context/missing holder, preserves exported scopes and runtime, and rejects stale choices and exports.\nPASS availability preview retains separate explicit resource and neutral prospective-holder bindings.\nPASS desired availability UI exports music and meaning with distinct participants and nested runtime/scopes.\n"
+    },
+    {
+      "test": "tests/availability_sentences_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 full availability meaning comparisons plus explicit missing-holder and neutral-reference resolution; reading/context conflicts reject. No musical availability coverage claimed.\n"
+    },
+    {
+      "test": "tests/custody_opportunity_music_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 custody-opportunity musical inverses preserve context, resource, prospective holder, scope and runtime without asserting permission or acquisition; transposition and unique dispatch verified.\nPASS 18 independent Ruby opportunity performances; forged realization/permission/dependency/identity and structurally valid missing-context or duplicated-role music reject.\n"
+    },
+    {
+      "test": "tests/custody_opportunity_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 48 draft opportunity cases keep holder/resource/context, possibility, scope and runtime distinct; forged realization, permission, event dependency and past-time commitments reject. No music or English availability coverage claimed.\n"
+    },
+    {
+      "test": "tests/acquisition_viewpoint_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS 18 present acquisition modal/viewpoint/runtime contrasts without invented past time; viewpoint choice and agreement enforced.\nPASS independent Ruby performances match all 18 scoped acquisition meanings.\n"
+    },
+    {
+      "test": "tests/custody_acquisition_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Custody acquisition: 36 state/participant/negation/question/command/property cases preserve complete Ruby/browser formal and MIDI output; independent inverse recovers the bounded transition and scoped culmination. Three controlled nested performances retain participant states; all forty preceding compounds remain exact.\n"
+    },
+    {
+      "test": "tests/custody_transfer_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Custody transfer: 36 sentence/state cases preserve source, recipient and shared object, scoped before/after linkage and Ruby/browser MIDI parity. Three explicit lexical-participant fixtures preserve independent states. Corrupted object/root music and invalid identity bindings are rejected; 41 prior definitions remain exact.\n"
+    },
+    {
+      "test": "tests/custody_delivery_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Custody delivery: 36 sentence/state cases with full Ruby/browser parity, independently decoded event linkage, contrasting spatial-only readings, corrupted participant rejection, conditional command and explicit UI selection; all 42 preceding compounds preserved.\n"
+    },
+    {
+      "test": "tests/controlled_scoped_slot_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Scoped controlled SLOT paths: 18 speech-act/event/state cases preserve independent participant states and Ruby/browser MIDI agreement; 12 malformed, ambiguous or identity-breaking cases return structured errors without partial IR.\n"
+    },
+    {
+      "test": "tests/ordinary_reference_expansion_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "23 ordinary-reference compositions match Ruby formal/MIDI; MIDI-only care inverse preserves coordinated targets, role changes and 0/1/2. Unlisted noun heads remain sound labels and adjective phrases are not swallowed.\n"
+    },
+    {
+      "test": "tests/felt_conditions_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Felt conditions: 120 ordinary adjective/state/scope cases and 27 controlled dependency/state cases preserve experiencer, distinct feeling and Ruby/browser formal/MIDI parity. All prior 43 definitions remain exact; wrong-root music and figurative substitutions are rejected.\n"
+    },
+    {
+      "test": "tests/carrying_command_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Carrying/support commands: 21 runtime/negation/destination/conditional cases match reference formal and MIDI; addressee and command contour decode independently, and local it retains its antecedent.\n"
+    },
+    {
+      "test": "tests/destination_command_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Destination commands: 18 runtime/negation/property/participant variants match Ruby formal and MIDI; MIDI-only inverse recovers imperative contour and addressee without tense/aspect or actual-arrival inference. Form requires destination and property choices only.\n"
+    },
+    {
+      "test": "tests/clause_interpretation_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Clause interpretations: 15 sequence/conjunction/conditional/runtime cases preserve per-clause viewpoints, destinations, mass/temperature standards and future readings with Ruby/browser formal/MIDI parity. Complete choices, local it, caller snapshots and stale UI results/errors are checked.\nPASS 9 contextual multi-clause runtime combinations, Ruby/MIDI parity and actual per-clause no-number UI.\nPASS mixed numeric/contextual disjunctions and stale standard-mode UI protection.\nPASS mixed texture/luminance UI has no spurious numerical texture controls and rejects stale input/detached results.\nPASS per-clause contextual noun restrictions remain independently selected.\n"
+    },
+    {
+      "test": "tests/counted_nominal_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Counted noun phrases preserve quantifier, cardinality, noun label and participant role without repeating the predicate; Ruby/browser parity verified.\n"
+    },
+    {
+      "test": "tests/path_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Movement paths retain mover, source and destination; reversal changes music, with negation, num and past-question scope preserved.\n"
+    },
+    {
+      "test": "tests/unsupported_musical_scope_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Unsupported music configurations: 4 invalid or unsupported scopes rejected by browser schedule/MIDI/SVG and Ruby MIDI/SVG; supported negation preserved.\n"
+    },
+    {
+      "test": "tools/validate_pages_release.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "GitHub Pages audit: PASS\nChecks passed: 11171; failed: 0; canonical variants: 5370\n"
+    },
+    {
+      "test": "tools/validate_viseme_performance.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Viseme performance: PASS \u00b7 5370 variants \u00b7 63738 cues \u00b7 87546 assertions\n"
+    }
+  ],
+  "remaining_requirements": [
+    "Broad ordinary sentence parsing and unquoted noun phrases",
+    "Pronouns, discourse reference and ambiguity handling",
+    "Adjectives, quantities and sensory/affective foundations",
+    "Tense, modality, quantifier and parallel-scope sound conventions",
+    "General semantic validation of new occurrence bindings and phonemic references",
+    "Recursive compound generation and complete scoped timing in the browser",
+    "Independent held-out meaning and sound decoding",
+    "Source reconciliation, release migration and publication validation"
+  ]
+}
