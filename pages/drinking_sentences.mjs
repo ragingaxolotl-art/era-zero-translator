@@ -1,3 +1,5 @@
+import {personalPronounPlan,resolvePersonalPronouns} from './personal_pronoun_plan.mjs';
+import {validReferent} from './pronouns.mjs';
 import {contextualContentReference} from './contextual_content.mjs';
 import {createMaterialReference} from './material_reference.mjs';
 import {createDrinkingMeaning} from './drinking_meaning.mjs';
@@ -23,8 +25,11 @@ export function drinkingPlan(input){
  past=['was','were','did','drank'].includes(verb);
  return {holder,material,viewpoint,runtimeState,speechAct:question?'question':'assertion',scopes:[...(past?[{operator:'time',relation:'before_speech'}]:[]),...(negative?[{operator:'negation'}]:[])]};
 }
-export async function composeDrinkingSentence(input,{allowDraft=false,interpretation,viewpoint,materialReading}={}){
+export function drinkingPronounPlan(input){let interpretation_plan;const p=personalPronounPlan(input,probe=>(interpretation_plan=drinkingPlan(probe)),{includeNeutral:true});return p?{...p,interpretation_plan}:null;}
+export async function composeDrinkingSentence(input,{allowDraft=false,interpretation,viewpoint,materialReading,bindings}={}){
  if(!allowDraft)throw new Error('Drinking requires draft opt-in.');
+ const pronouns=drinkingPronounPlan(input);
+ if(pronouns)input=resolvePersonalPronouns(input,pronouns,bindings,validReferent).resolved;else if(bindings!==undefined)throw new Error('No unresolved pronouns.');
  const p=drinkingPlan(input);if(!p)throw new Error('Unsupported drinking sentence.');
  if(interpretation!=='literal_drinking')throw new Error('Select literal intake of liquid as drink.');
  if(p.viewpoint&&viewpoint&&viewpoint!==p.viewpoint)throw new Error('Selected viewpoint conflicts with the sentence.');

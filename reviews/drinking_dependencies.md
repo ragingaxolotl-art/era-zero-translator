@@ -145,3 +145,14 @@ The actual handler test passes missing-choice gating, real negated-question
 composition, decoded export checks and stale export invalidation. An incompatible
 portion reading for a bare noun rejects. Live browser/playback recording, neutral
 pronoun binding for this new profile, and desired-drinking integration remain open.
+
+## Neutral pronoun binding checkpoint
+
+Drinking now reuses explicit personal-pronoun resolution in composition and the
+preview. Nine singular-they present/past/question × runtime cases produce identical
+meaning and MIDI to their named-reference counterparts. Material `it` can resolve
+to a contextual portion without changing its nominal mode. Number is required for
+they/them; plural groups still reject rather than becoming one individual. No gender
+field is needed. Preview tests cover missing number and successful two-reference
+resolution; the existing 24 neutral sentence cases still pass. Automatic antecedent
+resolution and general plural drinking remain unfinished.
