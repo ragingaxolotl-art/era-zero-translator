@@ -6,32 +6,34 @@ export async function localWordPronounPlan(input,registry,authority){
  let probe;
  const plan=personalPronounPlan(input,value=>{probe=value;return true;},{includeNeutral:true});if(!plan)return null;
  const checked=await validateLocalCompounds(registry,authority);
- let normalized=input;
+ let normalized=input,tenseInputs;
  const subject=plan.occurrences.find(o=>o.start===0&&/^they$/i.test(o.pronoun));
  if(subject){
   const tail=input.slice(subject.end),matches=checked.entries.filter(e=>e.definition.part_of_speech==='verb'&&tail.toLowerCase().startsWith(' '+e.definition.label.toLowerCase())&&/^[\s.!?\[]?$/.test(tail.slice(e.definition.label.length+1,e.definition.label.length+2)));
   if(matches.length){
    // A direct neutral subject uses the base form. Never reinterpret an ambiguous
    // base/past spelling as past merely because the probe is singular.
-   if(matches.some(e=>e.definition.english_forms?.past.toLowerCase()===e.definition.label.toLowerCase()))return null;
+   if(matches.some(e=>e.definition.english_forms?.past.toLowerCase()===e.definition.label.toLowerCase()))tenseInputs={present:input.slice(0,subject.end)+' do'+input.slice(subject.end),past:input.slice(0,subject.end)+' did'+input.slice(subject.end)};
    normalized=input.slice(0,subject.end)+' do'+input.slice(subject.end);
    personalPronounPlan(normalized,value=>{probe=value;return true;},{includeNeutral:true});
   }
  }
  const adjective=await localAdjectivePlan(probe,checked,authority),verbs=adjective?[]:await localVerbCandidates(probe,checked,authority);
- return adjective||verbs.length?{...plan,normalized_input:normalized,kind:adjective?'adjective':'verb'}:null;
+ return adjective||verbs.length?{...plan,normalized_input:normalized,...(tenseInputs?{tense_inputs:tenseInputs}:{}),kind:adjective?'adjective':'verb'}:null;
 }
-export async function resolveLocalWordPronouns(input,registry,authority,pronounBindings){
+export async function resolveLocalWordPronouns(input,registry,authority,pronounBindings,{tense}={}){
  const plan=await localWordPronounPlan(input,registry,authority);if(!plan)throw new Error('No supported saved-word pronoun construction.');
- const normalized=plan.normalized_input,normalizedPlan=personalPronounPlan(normalized,()=>true,{includeNeutral:true});
+ if(plan.tense_inputs&&!['present','past'].includes(tense))throw new Error('Choose present or past for this verb form.');
+ if(!plan.tense_inputs&&tense!==undefined)throw new Error('This sentence does not require a tense choice.');
+ const normalized=plan.tense_inputs?plan.tense_inputs[tense]:plan.normalized_input,normalizedPlan=personalPronounPlan(normalized,()=>true,{includeNeutral:true});
  const {resolved,chosen}=resolvePersonalPronouns(normalized,normalizedPlan,pronounBindings,validReferent);
  // Validate again after actual references replace probes, including agreement.
  const adjective=await localAdjectivePlan(resolved,registry,authority),verbs=adjective?[]:await localVerbCandidates(resolved,registry,authority);
  if(!adjective&&!verbs.length)throw new Error('Resolved references do not form a supported saved-word sentence.');
- return {source_input:input,resolved_input:resolved,pronoun_bindings:chosen,kind:adjective?'adjective':'verb'};
+ return {source_input:input,resolved_input:resolved,pronoun_bindings:chosen,...(tense?{tense_interpretation:tense}:{}),kind:adjective?'adjective':'verb'};
 }
-export async function composeLocalWordWithPronouns(input,registry,authority,{pronounBindings,...options}={}){
- const resolution=await resolveLocalWordPronouns(input,registry,authority,pronounBindings);
+export async function composeLocalWordWithPronouns(input,registry,authority,{pronounBindings,tense,...options}={}){
+ const resolution=await resolveLocalWordPronouns(input,registry,authority,pronounBindings,{tense});
  const result=resolution.kind==='adjective'?await composeLocalAdjective(resolution.resolved_input,registry,authority,options):await composeLocalVerb(resolution.resolved_input,registry,authority,options);
  return {...result,source_input:input,pronoun_resolution:resolution};
 }

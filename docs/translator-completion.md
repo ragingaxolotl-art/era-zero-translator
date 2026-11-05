@@ -2169,3 +2169,13 @@ An ambiguous base/past spelling (e.g. “They put it”) is not silently coerced
 by a singular probe; explicit do/did remains supported. A dedicated tense-choice
 path for that pronoun-plus-ambiguous-form combination is still unfinished.
 Pronoun and English-preview regressions pass.
+
+### Combined pronoun and tense clarification
+
+Direct singular-they forms whose saved base and past spellings coincide now offer
+an explicit present/past choice in the pronoun preview. Resolution normalizes to
+do/did only after selection and preserves that choice in exported provenance.
+API tests compare participant-equal but time/music-distinct outputs; actual UI
+handler tests require a choice and export the selected past reading. This closes
+the specific “They put it” gap noted in the preceding checkpoint. Broader group
+reference and live-browser validation remain unfinished.

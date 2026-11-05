@@ -12,10 +12,12 @@ export async function mountLocalEnglishControls(container,input,registry,authori
    if(/^(they|them)$/i.test(occurrence.pronoun)){number=document.createElement('select');for(const [value,text] of [['','One individual or a group?'],['singular','One individual'],['plural','A group']]){const option=document.createElement('option');option.value=value;option.textContent=text;number.append(option);}number.value='';number.addEventListener('change',invalidate);label.append(number);}
    fields.push({occurrence,field,number});container.append(label);
   }
+  let tense;
+  if(pronouns.tense_inputs){const label=document.createElement('label');label.textContent='Does this verb describe the present or the past?';tense=document.createElement('select');for(const [value,text] of [['','Choose a time'],['present','Present'],['past','Past']]){const option=document.createElement('option');option.value=value;option.textContent=text;tense.append(option);}tense.value='';tense.addEventListener('change',invalidate);label.append(tense);container.append(label);}
   const values=()=>Object.fromEntries(fields.map(({occurrence,field,number})=>[occurrence.key,number?{referent:field.value.trim(),number:number.value}:field.value.trim()]));
   confirm.textContent='Use these references';container.append(confirm,detail);
-  confirm.addEventListener('click',async()=>{if(!isCurrent())return;const version=++revision,bindings=values(),snapshot=JSON.stringify(bindings),current=()=>isCurrent()&&version===revision&&snapshot===JSON.stringify(values());detail.replaceChildren();player?.stop();confirm.disabled=true;
-   try{const resolution=await resolveLocalWordPronouns(input,registry,authority,bindings);if(!current())return;await mountLocalEnglishControls(detail,resolution.resolved_input,registry,authority,{document,download,player,isCurrent:current,onError,pronounResolution:resolution});}catch(e){if(current())onError(e);}finally{confirm.disabled=false;}
+  confirm.addEventListener('click',async()=>{if(!isCurrent())return;const version=++revision,bindings=values(),chosenTense=tense?.value,snapshot=JSON.stringify(bindings),current=()=>isCurrent()&&version===revision&&tense?.value===chosenTense&&snapshot===JSON.stringify(values());detail.replaceChildren();player?.stop();confirm.disabled=true;
+   try{const resolution=await resolveLocalWordPronouns(input,registry,authority,bindings,{tense:chosenTense});if(!current())return;await mountLocalEnglishControls(detail,resolution.resolved_input,registry,authority,{document,download,player,isCurrent:current,onError,pronounResolution:resolution});}catch(e){if(current())onError(e);}finally{confirm.disabled=false;}
   });return true;
  }
  const adjective=await localAdjectivePlan(input,registry,authority),plan=adjective||await localVerbPlan(input,registry,authority,{interpretation});
