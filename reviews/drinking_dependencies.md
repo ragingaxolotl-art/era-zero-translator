@@ -209,3 +209,16 @@ Evidence is `reports/desired_drinking_acoustic_probe.json`; the acoustic regress
 runner includes the new test. This is not physical-recording or held-out-language
 proof. Combined independent Ruby rendering, desired-drinking UI, object-desire
 clarification integration, and broader outcome coverage remain pending.
+
+## Desired-drinking independent renderer checkpoint
+
+The Ruby renderer now composes validated desire-holder references, the intensional
+content boundary and reusable drinking events. All 24 controlled/explicit-subject,
+outer/inner-negation and runtime performances match JavaScript byte-for-byte.
+Independent validation rejects default draft use and rehashed false subject
+control, changed desire foundation, asserted-content status or outcome commitment.
+All 18 standalone drinking comparisons remain passing after event extraction.
+
+These checks complement the two clean synthetic WAV recoveries. They do not close
+UI, object-desire clarification integration, broad discourse or physical recording
+requirements. Existing approved root and compound definitions remain unchanged.

@@ -30,7 +30,7 @@ module EraZeroDrinking
     if kind;ref['reference_mode']='definite_nominal';ref['referent_id']="nominal:definite:#{r.dig('name','name_id')}";end
     reference!(ref);identity!(m,'EZMATREF');identity!(d,'EZDRINK');true
   end
-  def midi(d,allow_draft:false,anchor_midi:60)
+  def events(d,allow_draft:false,anchor_midi:60)
     validate!(d,allow_draft:allow_draft);anchor=anchor_midi
     raise ArgumentError,'Invalid anchor' unless anchor.is_a?(Integer) && anchor.between?(39,88)
     atoms,compounds=EraZeroRenderer.load_authority
@@ -44,6 +44,9 @@ module EraZeroDrinking
     d['scopes'].reverse_each do |scope|
       key=scope['operator']=='negation' ? 'negation' : "time_#{scope['relation']}";events=[mark.call(key+'_open')]+events+[mark.call(key+'_close')]
     end
-    EraZeroPresentation.midi_from_scheduled_events(events,anchor,d['speech_act']=='question' ? [0,2] : [0,0])
+    events
+  end
+  def midi(d,allow_draft:false,anchor_midi:60)
+    EraZeroPresentation.midi_from_scheduled_events(events(d,allow_draft:allow_draft,anchor_midi:anchor_midi),anchor_midi,d['speech_act']=='question' ? [0,2] : [0,0])
   end
 end
