@@ -1,6 +1,6 @@
 import {createLocalCompoundPlayer} from './local_compound_player.mjs';
 import {mountLocalCompoundControls} from './local_compound_controls.mjs';
-import {loadLocalCompounds,saveLocalCompounds,addLocalCompound,importLocalCompounds} from './local_compounds.mjs';
+import {loadLocalCompounds,saveLocalCompounds,addLocalCompound,importLocalCompounds,mergeLocalCompounds} from './local_compounds.mjs';
 import {ROLE_ORDER} from './roles.mjs';
 const $=id=>document.getElementById(id),node=(tag,text)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e;};
 let authority,registry,parts=[],busy=false;
@@ -34,5 +34,5 @@ $('save').addEventListener('click',async()=>{
  }catch(e){status(e.message);}finally{busy=false;$('save').disabled=false;}
 });
 $('export').addEventListener('click',()=>{const url=URL.createObjectURL(new Blob([JSON.stringify(registry,null,2)],{type:'application/json'})),a=node('a');a.href=url;a.download='era-zero-my-compounds.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
-$('import').addEventListener('change',async()=>{if(busy||!registry)return;busy=true;try{if(registry.entries.length)throw new Error('Export your current definitions first. Restore is only available in an empty library.');const file=$('import').files[0];if(!file)return;const next=await importLocalCompounds(await file.text(),authority);registry=await saveLocalCompounds(localStorage,next,authority);renderLibrary();status('Definitions restored.');}catch(e){status(e.message);}finally{busy=false;}});
+$('import').addEventListener('change',async()=>{if(busy||!registry)return;busy=true;try{const file=$('import').files[0];if(!file)return;const incoming=await importLocalCompounds(await file.text(),authority),next=await mergeLocalCompounds(registry,incoming,authority);registry=await saveLocalCompounds(localStorage,next,authority);renderLibrary();status('Definitions imported. Existing words were preserved.');}catch(e){status(e.message);}finally{busy=false;}});
 try{const response=await fetch('./data/index.json');if(!response.ok)throw new Error('Could not load dictionary.');authority=await response.json();registry=await loadLocalCompounds(localStorage,authority);renderLibrary();$('save').disabled=false;status('Ready. Search existing meanings to begin.');}catch(e){status(`Unable to open the builder: ${e.message}`);}

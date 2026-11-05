@@ -2094,3 +2094,13 @@ reference provenance, including through later tense ambiguity selection. Actual
 handler tests verify number gating, group rejection, singular adjective export and
 stale-output invalidation when a reference changes. Existing adjective, verb and
 tense-selection controls still pass. Live-browser validation remains open.
+
+### Non-destructive definition-library import
+
+Builder import now merges a validated library into existing local definitions,
+skipping identical IDs and preserving dependency order and existing entries.
+Conflicting labels with different definitions reject the entire merge before
+storage is updated. Tests cover nested imports, repeat-import idempotence,
+conflicts and malformed dependency order without input mutation. This supersedes
+the earlier empty-library-only restore restriction. Syntax checks pass; actual
+browser file-picker/storage interactions remain unverified.

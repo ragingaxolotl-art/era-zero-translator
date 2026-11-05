@@ -49,3 +49,16 @@ export async function loadLocalCompounds(storage,authority){
  const value=storage.getItem('era-zero-local-compounds-v1');return validateLocalCompounds(value===null?emptyLocalCompounds():JSON.parse(value),authority);
 }
 export async function importLocalCompounds(json,authority){return validateLocalCompounds(JSON.parse(json),authority);}
+
+// Merge only validated, self-contained libraries. Existing identities and order
+// remain unchanged; incoming dependencies retain their topological order.
+export async function mergeLocalCompounds(existing,incoming,authority){
+ const result=await validateLocalCompounds(existing,authority),source=await validateLocalCompounds(incoming,authority);
+ const ids=new Set(result.entries.map(e=>e.compound_id)),labels=new Map(result.entries.map(e=>[e.definition.label.toLocaleLowerCase('en'),e.compound_id]));
+ for(const entry of source.entries){
+  if(ids.has(entry.compound_id))continue;
+  if(labels.has(entry.definition.label.toLocaleLowerCase('en')))throw new Error(`Local compound: “${entry.definition.label}” already names a different saved definition. No definitions were merged.`);
+  result.entries.push(entry);ids.add(entry.compound_id);labels.set(entry.definition.label.toLocaleLowerCase('en'),entry.compound_id);
+ }
+ return validateLocalCompounds(result,authority);
+}
