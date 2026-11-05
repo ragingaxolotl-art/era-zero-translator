@@ -32,3 +32,21 @@ drinkers/materials. Each needs a complete meaning and independently recovered so
 Add the interface choice only after its meaning/renderer/inverse agree. Keep
 “wants tea” unresolved until the intended outcome is explicitly supplied; drinking
 is one possible reading and must never be its default.
+
+## Material-reference prerequisite checkpoint
+
+`pages/material_reference.mjs` now supplies a gated, validated reference document
+for a material kind or a contextually identified portion. It reuses existing noun
+sound labels and nominal-class/definite/proximal/distal reference modes. A bare
+noun can be explicitly selected as a kind; a portion requires the/this/that.
+Neither liquid classification nor amount, whole-portion consumption or independent
+existence is asserted. Existence follows the enclosing content's commitments.
+
+Eight tea/water × kind/definite/proximal/distal cases retain distinct identities.
+Validation rejects rehashed invented quantity, classification, total-consumption
+and existence claims. Implicit portion selection, unknown reading, modified nouns
+and unimplemented quantity forms reject. No roots, approved compounds or musical
+addresses changed. This is a semantic prerequisite only: it is not yet wired into
+a drinking action, musical transport or the interface. The next work is the
+consumption action contract with explicit participant binding, followed by joint
+meaning/rendering/inverse integration and blind-audio checks.
