@@ -1885,3 +1885,14 @@ corrupt definitions without overwriting saved data. This is a registry foundatio
 not yet a musical compiler or usable builder. Role descriptions do not by themselves
 establish executable semantic bindings. Local musical compilation, explicit role
 mapping, UI authoring and sentence integration remain required.
+
+### Local dependency expansion
+
+`pages/local_compound_expansion.mjs` preserves ordered nested local definitions,
+semantic-head indices and occurrence paths. Approved compounds remain references
+to digest-verified existing compiled plans. Required roles are reported separately
+for each occurrence so two uses of one compound cannot silently share participants.
+Expansion limits reject excessive size/depth. The targeted test verifies these
+properties, reload fidelity and rejection of damaged canonical plans. Explicit
+mapping from outer roles to nested roles, music compilation and builder UI remain
+unfinished; this expansion does not infer those mappings from prose definitions.
