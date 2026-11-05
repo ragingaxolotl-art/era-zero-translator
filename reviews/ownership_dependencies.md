@@ -109,3 +109,25 @@ invalid agreement, absent frameworks and conflicting punctuation reject. Changin
 the named framework changes the semantic document. This remains an API semantic
 extension, not a complete translation: no ownership music, independent inverse,
 WAV recovery, UI route or canonical promotion is available yet.
+
+
+## Draft musical and waveform checkpoint
+
+Ownership uses draft frame subcode 14 in the existing +/-39 namespace with
+runtime-bearing open/close paths `[0, +/-39, 14, runtime, 0]`. Existing subcodes
+0–13 retain their meanings. Inside the new frame, the existing experiencer,
+content and comparison-standard role frames identify owner, object and normative
+framework respectively; this local convention does not redefine those roles in
+other predicates. Existing phonemic/deictic reference rendering and time/negation
+wrappers are reused. No root or approved compound sound changes.
+
+Eighteen meaning-to-MIDI/inverse checks cover two named frameworks, all runtime
+states, question and past-negated forms, with transposition and unique shared
+dispatch. Default strict decoding rejects the draft frame. A clean synthetic WAV
+for “Didn't Nora own this tea? [2]” under an explicitly selected Harbor charter
+recovers the complete inverse without original English, selected framework or
+semantic document supplied to the decoder. See ownership_acoustic_probe.json.
+This is one authored clean sample, not physical microphone evidence or robustness
+coverage. Independent Ruby rendering, adversarial role/framing corruption,
+interface integration, nested ownership/desire and physical recordings remain
+open. Ownership remains draft and is not added to canonical dictionary counts.
