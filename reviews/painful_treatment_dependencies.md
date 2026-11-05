@@ -254,3 +254,20 @@ These are representation checks, not a complete semantic model or audio proof.
 English parsing, musical transport, independent inverse/Ruby validation and UI
 remain open for this comparison. The original painful-treatment preference is
 still not claimed complete.
+
+
+## Explicit comparative English checkpoint
+
+The sentence composer now supports more/less painful for an explicit experiencer
+than a second named/nominal alternative, and equally painful ... as. Present/past,
+outer negation, questions and runtime produce 72 distinct tested meaning
+documents. Callers must select actual/expected/dispositional bodily-pain outcomes
+and identify a shared context; neither is inferred from the adjective. Explicit
+it/them bindings preserve separate stimulus and experiencer references. Missing
+experiencer and mismatched comparative connectors remain unsupported.
+
+The nested relations and pain outcomes use their default runtime 1; a trailing
+runtime tag belongs to the comparison only. This is meaning composition, not yet
+musical comparison, UI interaction or full ordinary-language coverage. The
+original modified preference still requires integration and missing-context
+resolution before it can be claimed supported.
