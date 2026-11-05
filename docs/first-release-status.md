@@ -72,3 +72,11 @@ exact meaning and MIDI parity with expanded sentences, including negation and
 runtime 0/1/2. Quoted names, ambiguous 's/'d forms, and unsupported trailing
 constructions are not rewritten. The 20-suite local gate passes after this code
 change; the earlier 247-suite broad report predates it.
+
+The 40-phrase diagnostic now checks newer preview routes before reporting no
+composition. Current result: 24 pass their declared semantic checks, 11 require
+interpretation, four have previews still requiring semantic review, and one has
+no composition (“Exactly three lamps are active”). The four previews cover
+preference, curiosity, route learning, and understanding. Preview availability
+is explicitly not counted as semantic completion. This corpus was authored
+during implementation and is not a held-out or representative English benchmark.

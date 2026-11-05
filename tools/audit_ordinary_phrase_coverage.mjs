@@ -1,3 +1,8 @@
+import {curiosityInterpretationPlan} from '../pages/curiosity.mjs';
+import {routeLearningInterpretationPlan} from '../pages/route_learning.mjs';
+import {understandingInterpretationPlan} from '../pages/understanding_content.mjs';
+import {parseFoundationSentence} from '../pages/foundation_sentences.mjs';
+import {parseQuantifiedPropertySentence} from '../pages/quantified_sentences.mjs';
 import {pronounInterpretationPlan,composePronounSentence} from '../pages/pronouns.mjs';
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
@@ -19,6 +24,15 @@ for(const item of corpus.cases){
   else if(parseSentenceSequence(item.input))result=await composeSentenceSequence(item.input,load);
   else if(parseSentenceConjunction(item.input))result=await composeSentenceConjunction(item.input,load);
  }catch(caught){if(['entry_viewpoint_required','entry_modality_required','physical_entry_required','luminance_comparison_required','running_viewpoint_required','swimming_viewpoint_required','pronoun_referents_required','disjunction_interpretation_required','future_interpretation_required','thermal_standard_required','mass_standard_required','luminance_standard_required','texture_standard_required'].includes(caught.code))clarification=caught.code;else error=String(caught)}
+ // These newer app routes open interpretation previews. Finding a route is
+ // evidence of UI coverage, not proof of a composed or verified meaning.
+ const preview=!result&&!error&&!clarification?[
+  ['curiosity',curiosityInterpretationPlan(item.input)],
+  ['route_learning',routeLearningInterpretationPlan(item.input)],
+  ['understanding',understandingInterpretationPlan(item.input)],
+  ['quantified_property',parseQuantifiedPropertySentence(item.input)],
+  ['foundation',parseFoundationSentence(item.input,{allowCognitive:true})]
+ ].find(([,plan])=>plan):null;
  const failures=[];
  if(result&&item.expected){
   const ir=result.semantic_ir,actual={
@@ -54,12 +68,12 @@ for(const item of corpus.cases){
    if(outer.operator!=='modality'||ir.nodes.find(n=>n.node_id===inside)?.operator!=='negation')failures.push('scope_order');
   }
  }
- results.push({...item,status:clarification?'requires_interpretation':error?'error':!result?'not_composed':!item.expected?'composed_needs_semantic_review':failures.length?'semantic_check_failed':'verified_for_declared_checks',failures,...(clarification?{clarification}:{}),...(error?{error}:{}),...(result?{midi_sha256:createHash('sha256').update(midiFromFormal(result.formal)).digest('hex')}: {})});
+ results.push({...item,status:clarification?'requires_interpretation':error?'error':preview?'preview_needs_semantic_review':!result?'not_composed':!item.expected?'composed_needs_semantic_review':failures.length?'semantic_check_failed':'verified_for_declared_checks',failures,...(preview?{preview_route:preview[0]}:{}),...(clarification?{clarification}:{}),...(error?{error}:{}),...(result?{midi_sha256:createHash('sha256').update(midiFromFormal(result.formal)).digest('hex')}: {})});
 }
 const counts={};for(const result of results)counts[result.status]=(counts[result.status]||0)+1;
 const areas={};for(const result of results){const area=areas[result.area]??={total:0,verified:0};area.total++;if(result.status==='verified_for_declared_checks')area.verified++}
 const report={scope:corpus.purpose,completion_proven:false,case_count:results.length,counts,areas,results};
 fs.writeFileSync(new URL('reports/ordinary_phrase_coverage.json',root),JSON.stringify(report,null,2)+'\n');
-fs.writeFileSync(new URL('reports/ordinary_phrase_coverage.md',root),`# Ordinary phrase coverage audit\n\n${corpus.purpose}\n\nFull translator completion: **not established**. ${counts.verified_for_declared_checks||0} of ${results.length} cases pass their declared semantic checks; ${counts.not_composed||0} have no complete composition; ${counts.requires_interpretation||0} require an explicit interpretation. These counts do not estimate coverage of English generally.\n\n| Area | Checked compositions | Cases |\n|---|---:|---:|\n${Object.entries(areas).map(([name,area])=>`| ${name} | ${area.verified} | ${area.total} |`).join('\n')}\n\n## Unfinished cases\n\n${results.filter(r=>r.status!=='verified_for_declared_checks').map(r=>`- **${r.input}** — ${r.requirements.join('; ')} (${r.status})`).join('\n')}\n`);
+fs.writeFileSync(new URL('reports/ordinary_phrase_coverage.md',root),`# Ordinary phrase coverage audit\n\n${corpus.purpose}\n\nFull translator completion: **not established**. ${counts.verified_for_declared_checks||0} of ${results.length} cases pass their declared semantic checks; ${counts.not_composed||0} have no complete composition; ${counts.preview_needs_semantic_review||0} have newer interpretation previews requiring semantic review; ${counts.requires_interpretation||0} require an explicit interpretation. These counts do not estimate coverage of English generally.\n\n| Area | Checked compositions | Cases |\n|---|---:|---:|\n${Object.entries(areas).map(([name,area])=>`| ${name} | ${area.verified} | ${area.total} |`).join('\n')}\n\n## Unfinished cases\n\n${results.filter(r=>r.status!=='verified_for_declared_checks').map(r=>`- **${r.input}** — ${r.requirements.join('; ')} (${r.status})`).join('\n')}\n`);
 console.log(JSON.stringify({case_count:results.length,counts,completion_proven:false}));
 if(results.some(r=>r.status==='error'||r.status==='semantic_check_failed'))process.exitCode=1;
