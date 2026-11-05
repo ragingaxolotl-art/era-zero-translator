@@ -231,3 +231,21 @@ translation without destination or arrival. The existing 36 standalone acquisiti
 cases and prior object-desire tests pass. The outcome coverage report now records
 three available inverses; five tested outcomes remain composition failures. These
 two new nested outcomes still require blind audio and broader held-out checks.
+
+## Nested outcome blind-audio checkpoint
+
+The object-desire acoustic suite now covers four clean synthetic WAVs, adding
+carrying and custody acquisition to the two custody cases. The carrying question
+uses outer runtime 2, inner runtime 0, ongoing aspect and a proximal `this tea`
+reference. The negated acquisition desire uses outer runtime 0, inner runtime 2
+and before-speech time on the desired acquisition. Independent processes receive
+only WAV path and draft permission, with no source sentence, clarification,
+semantic document or expected notes.
+
+All four full inverse structures match. Additional assertions check intensional
+status, independent scope/runtime, proximal reference, shared carrying load,
+absence of arrival/ownership claims, and acquisition's absent-before/present-at-
+culmination custody without persistence afterward. Updated evidence is in
+`reports/object_desire_acoustic_probe.json`. These are authored clean synthetic
+recordings; physical speaker/microphone validation and channel perturbations for
+these new nested outcomes remain pending. Full translator completion is unproven.
