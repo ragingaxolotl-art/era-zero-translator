@@ -91,3 +91,21 @@ English parser or preview added, compound promoted, or audio recovery demonstrat
 The prior 235-check regression predates this module. Next: specify the audible
 three-role convention, then independently encode/decode it and connect explicit
 English interpretation. Unspecified-context and co-ownership remain unresolved.
+
+
+## English composition checkpoint
+
+`pages/ownership_sentences.mjs` now composes own/owns/owned, negative auxiliaries,
+straight/curly negative contractions and yes/no questions into the draft model.
+Framework is an explicit API selection; no contextual framework is invented.
+Entity references reuse existing definite/proximal/distal nouns, names and
+speaker/listener references. Bare mass nouns and unqualified “has” do not silently
+become ownership. Explicit singular-they and object-pronoun bindings reuse the
+shared resolver; plural groups are not coerced to one owner.
+
+Eighteen full-document comparisons check tense, negation, question and all runtime
+states. Three neutral-reference contrasts match their explicit named meanings;
+invalid agreement, absent frameworks and conflicting punctuation reject. Changing
+the named framework changes the semantic document. This remains an API semantic
+extension, not a complete translation: no ownership music, independent inverse,
+WAV recovery, UI route or canonical promotion is available yet.
