@@ -71,3 +71,18 @@ is reused without altering its identity or quantity commitments.
 The document remains draft. There is no English route, allocated musical frame,
 independent renderer or audio inverse yet. Those must be implemented together with
 participant-binding and contrast tests before drinking can count as translated.
+
+## English interpretation checkpoint
+
+`drinking_sentences.mjs` interprets progressive, past bounded and explicitly
+habitual drinking sentences, including questions, negation, I/you, and runtime
+0/1/2. Simple present requires an explicit viewpoint instead of silently treating
+all present drinking as habitual. Literal-drinking interpretation and material
+kind/portion readings are explicit API choices. A caller cannot override an
+expressed progressive or habitual viewpoint with a conflicting choice.
+
+Twenty-four authored tense/scope/runtime cases pass meaning checks. Agreement
+errors, missing choices and contradictory viewpoints reject. This is not yet
+connected to the main preview or desire composer: musical encoding and inverse
+must exist before it becomes an offered translation. Pronoun antecedents,
+quantities, modified materials and additional tense/aspect forms remain open.
