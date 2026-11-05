@@ -331,3 +331,26 @@ including edits during asynchronous music generation. The existing stimulus
 preview test still passes. Live browser layout/listening and calibrated WAV
 playback integration remain open. The original modified preference remains a
 separate integration obligation, not completed by this comparative preview.
+
+
+## Original modified-preference meaning checkpoint
+
+`composePainPreference` now handles the original “Nora prefers the painful
+treatment to the more painful treatment” and its reversed, negated and question
+forms. Explicit options identify the pain experiencer, actual/expected/dispositional
+reading, context and confirmation that more painful compares with the other
+alternative. The holder is not automatically the pain experiencer. Existing
+preference foundation FND:018dd25d713dff83661a76a4 is pinned unchanged; it does not
+entail absolute wanting, pleasantness, happiness or objective goodness.
+
+Two noun descriptions retain the same noun phonemes but use separate audible
+instance tags. The comparison's greater-intensity operand must match the
+more-painful alternative exactly; rehashed rebinding is rejected. Reference
+restrictions are distinct from matrix preference polarity, so negating preference
+does not invert the pain ordering. Eighteen meaning cases pass. These local
+instance handles do not prove persistent external identity or inequality.
+
+No music encoder/inverse, Ruby implementation or UI exists for this combined
+profile yet. The original acceptance remains not-completed in the requirements
+audit until full meaning/music evidence is integrated. Generic missing-context
+resolution, projection in broader embeddings and physical recordings remain open.
