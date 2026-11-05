@@ -1,0 +1,142 @@
+{
+  "status": "PASS",
+  "scope": "Two authored clean synthetic WAVs. No original text, viewpoint or semantic metadata supplied to decoder. Not availability translation or physical recording validation.",
+  "physical_recordings": 0,
+  "cases": [
+    {
+      "phrase": "It is possible that Nora acquires physical custody of this tea. [2]",
+      "viewpoint": "ongoing",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-acquisition-viewpoint-P3mXnB/case-0.wav",
+      "meaning": {
+        "profile": "EZCUSTODY-ACQUISITION-INVERSE-1",
+        "speech_act": "assertion",
+        "scopes": [
+          {
+            "operator": "modality",
+            "mode": "possible"
+          },
+          {
+            "operator": "aspect",
+            "aspect": "ongoing"
+          }
+        ],
+        "predicate": "completed_physical_custody_acquisition",
+        "runtime_state": 2,
+        "participants": {
+          "holder": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "N",
+              "AO",
+              "R",
+              "AE"
+            ],
+            "instance_code": null
+          },
+          "object": {
+            "kind": "phonemic",
+            "reference_mode": "proximal_nominal",
+            "phonemes": [
+              "T",
+              "IY"
+            ],
+            "instance_code": null
+          }
+        },
+        "convention_codes": [
+          8,
+          7
+        ],
+        "meaning": {
+          "actualized_referent": "holder_object_custody_relation",
+          "custody_immediately_before": false,
+          "custody_at_culmination": true,
+          "holder_distinct_from_object": true,
+          "object_creation_asserted": false,
+          "object_movement_asserted": false,
+          "prior_custodian_asserted": false,
+          "sourced_transfer_asserted": false,
+          "ownership_asserted": false,
+          "persistence_after_culmination_asserted": false
+        },
+        "limitations": [
+          "The pre/post commitments define the event inside the recovered scope and speech act; negation and commands do not assert that the transition occurred.",
+          "The nested custody relation is the culmination state, not a separate assertion of custody at speech time.",
+          "Recovers this bounded MIDI profile, not general discourse, original spelling, external referent identity or recorded audio.",
+          "Acquisition does not identify a prior holder or imply that another holder lost control; transfer and delivery require further meaning."
+        ]
+      },
+      "checksum": "verified"
+    },
+    {
+      "phrase": "It is not the case that it is possible that Nora acquires physical custody of this tea. [0]",
+      "viewpoint": "bounded",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-acquisition-viewpoint-P3mXnB/case-1.wav",
+      "meaning": {
+        "profile": "EZCUSTODY-ACQUISITION-INVERSE-1",
+        "speech_act": "assertion",
+        "scopes": [
+          {
+            "operator": "negation"
+          },
+          {
+            "operator": "modality",
+            "mode": "possible"
+          },
+          {
+            "operator": "aspect",
+            "aspect": "bounded"
+          }
+        ],
+        "predicate": "completed_physical_custody_acquisition",
+        "runtime_state": 0,
+        "participants": {
+          "holder": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "N",
+              "AO",
+              "R",
+              "AE"
+            ],
+            "instance_code": null
+          },
+          "object": {
+            "kind": "phonemic",
+            "reference_mode": "proximal_nominal",
+            "phonemes": [
+              "T",
+              "IY"
+            ],
+            "instance_code": null
+          }
+        },
+        "convention_codes": [
+          8,
+          7
+        ],
+        "meaning": {
+          "actualized_referent": "holder_object_custody_relation",
+          "custody_immediately_before": false,
+          "custody_at_culmination": true,
+          "holder_distinct_from_object": true,
+          "object_creation_asserted": false,
+          "object_movement_asserted": false,
+          "prior_custodian_asserted": false,
+          "sourced_transfer_asserted": false,
+          "ownership_asserted": false,
+          "persistence_after_culmination_asserted": false
+        },
+        "limitations": [
+          "The pre/post commitments define the event inside the recovered scope and speech act; negation and commands do not assert that the transition occurred.",
+          "The nested custody relation is the culmination state, not a separate assertion of custody at speech time.",
+          "Recovers this bounded MIDI profile, not general discourse, original spelling, external referent identity or recorded audio.",
+          "Acquisition does not identify a prior holder or imply that another holder lost control; transfer and delivery require further meaning."
+        ]
+      },
+      "checksum": "verified"
+    }
+  ]
+}

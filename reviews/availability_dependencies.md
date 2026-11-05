@@ -95,3 +95,19 @@ pass. The audit's simple-present modal probe now parses but requires a viewpoint
 “can acquire” and availability wording remain unresolved. Opportunity conditions,
 prospective timing and sense-specific availability composition remain next, and
 this prerequisite must not be counted as a completed availability translation.
+
+
+## Acquisition prerequisite interface and waveform verification
+
+The actual shared viewpoint handler now displays “Acquisition viewpoint” rather
+than the inherited carrying label. Its new handler test selects ongoing
+acquisition inside possibility and recovers runtime 2 without any time scope.
+The existing 63 carrying viewpoint/parity cases still pass.
+
+Two blind synthetic WAV cases cover possible ongoing acquisition at runtime 2
+and negation outside possible bounded acquisition at runtime 0. The independent
+process receives only samples and shared vocabulary, not the English, selected
+viewpoint or expected semantics. Full recovered inverses match, with proximal
+object identity and no past time. See acquisition_viewpoint_acoustic_probe.json.
+This verifies the reusable event prerequisite, not availability itself. Physical
+recordings and the contextual opportunity/conditions model remain unfinished.

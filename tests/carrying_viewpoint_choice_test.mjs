@@ -75,3 +75,9 @@ for(const mode of ['recognition','strict','learning'])for(const code of [0,1,2])
  assert(display.glyphStage.innerHTML.includes('<svg'));assert.equal(JSON.parse(display.irCode.textContent).utterance_id,result.semantic_ir.utterance_id);
 }
 console.log(`Carrying viewpoint choice: ${results.length} interpretation/runtime/participant/question/modal/property cases match Ruby formal and MIDI; chosen ongoing/habitual readings equal explicit paraphrases. UI requires both viewpoint and applicable mass standard and discards stale results/errors.`);
+
+const acquisitionInput='It is possible that Nora acquires physical custody of this tea. [2]';elements.sourceInput.value=acquisitionInput;ctx.sentenceTemplate=async()=>template;shown=null;ctx.showCarryingViewpoint(acquisitionInput);
+const acquisitionCard=elements.candidateList.children.at(-1),acquisitionView=acquisitionCard.children[1].children[0],acquisitionButton=acquisitionCard.children.at(-1);
+assert.equal(acquisitionCard.children[1].textContent,'Acquisition viewpoint');await acquisitionButton.click();assert.equal(shown,null);acquisitionView.value='ongoing';await acquisitionButton.click();assert(shown);
+const {decodeCustodyAcquisitionMidi}=await import('../pages/custody_decoder.mjs');const acquired=decodeCustodyAcquisitionMidi(midiFromFormal(shown.formal),authority.atoms);assert.equal(acquired.runtime_state,2);assert.deepEqual(acquired.scopes,[{operator:'modality',mode:'possible'},{operator:'aspect',aspect:'ongoing'}]);
+console.log('PASS acquisition preview uses its own viewpoint label and preserves modal ongoing scope without past time.');
