@@ -71,3 +71,23 @@ sound; matching English aliases or differing MIDI hashes are insufficient. A
 complete implementation also needs independent rendering, strict inverse checks,
 forged participant-binding rejection, blind WAV tests and physical recordings.
 No ownership translation is claimed complete by this review.
+
+
+## Draft semantic implementation checkpoint
+
+`pages/ownership_meaning.mjs` implements a draft-only three-participant status
+contract using validated existing entity/name references. The framework must be
+explicit and phonemic; speaker/listener references cannot silently serve as its
+identity. The contract retains framework inside proposition scope and makes no
+custody, control, acquisition, unrestricted rights, exclusivity, share or universal
+agreement assertion. Its reference label does not supply the framework's rules.
+
+Forty-eight authored documents distinguish two owners, two frameworks, assertion
+versus question, negation and runtime 0/1/2 under past scope. Validation rejects
+missing frameworks, altered participant identities, extra hidden rights and
+rehashed attempts to change the contract. The test is registered in the runner.
+This is semantic-model evidence only: no musical identity has been allocated,
+English parser or preview added, compound promoted, or audio recovery demonstrated.
+The prior 235-check regression predates this module. Next: specify the audible
+three-role convention, then independently encode/decode it and connect explicit
+English interpretation. Unspecified-context and co-ownership remain unresolved.
