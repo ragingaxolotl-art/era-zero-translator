@@ -52,12 +52,12 @@ export function parseFoundationSentence(input,{allowCognitive=false}={}){
   if(day==='yesterday'&&!past)return null;
   return {type:'preference',holder:m[1],target:m[3],standard:m[4],negated:m[2].includes('not'),speechAct:question?'question':'assertion',state,...(past&&day!=='yesterday'?{speechTime:'before'}:{}),...(day?{calendarDay:day==='yesterday'?'-1':'0'}:{})};
  }
- m=text.match(new RegExp(`^(${HOLDER}) (wants|want|wanted|does not want|do not want|did not want) (?:that )?(.+)$`));
+ m=text.match(new RegExp(`^(${HOLDER}) (wants|want|wanted|does not want|do not want|did not want) (.+)$`));
  if(!m&&question){const q=text.match(new RegExp(`^([Dd]oes|[Dd]o|[Dd]id) (${HOLDER}) (not )?want (.+)$`));if(q)m=[q[0],q[2],q[1].toLowerCase()==='did'?(q[3]?'did not want':'wanted'):(q[3]?'does not want':'want'),q[4]];}
  if(m){
   const past=/^(?:wanted|did)/.test(m[2]);
   if(frontedDay==='yesterday'&&!past)return null;
-  return {type:'desire',holder:m[1],content:m[3],negated:m[2].includes('not'),speechAct:question?'question':'assertion',state,...(past&&frontedDay!=='yesterday'?{speechTime:'before'}:{}),...(frontedDay?{calendarDay:frontedDay==='yesterday'?'-1':'0'}:{})};
+  return {type:'desire',holder:m[1],content:m[3].replace(/^that (?=.+\s)/,''),negated:m[2].includes('not'),speechAct:question?'question':'assertion',state,...(past&&frontedDay!=='yesterday'?{speechTime:'before'}:{}),...(frontedDay?{calendarDay:frontedDay==='yesterday'?'-1':'0'}:{})};
  }
  return null;
 }

@@ -249,3 +249,20 @@ used. The actual preview handler resolves “They want to drink it” and verifi
 holder is the controlled drinker in its complete export. Automatic antecedent and
 plural-group support remain unfinished; this does not default the object-desire
 reading to drinking.
+
+## Explicit object-desire drinking clarification
+
+`composeObjectDesiredDrinking` now connects a user-supplied drinking proposition
+to an original object desire, reusing the existing clarification input resolver.
+It verifies the original noun label and explicit nominal mode against the consumed
+material, preserves outer scope/runtime and checks the shared musical inverse.
+It returns the unchanged validated meaning plus clarification provenance separately.
+Drinking and its viewpoint/material reading remain explicit choices, never defaults.
+
+Nine assertion/negation/question × runtime cases pass full MIDI recovery, including
+independent inner runtime 0. Missing choices, unrelated materials and proximal/
+distal substitution reject. The test exposed an existing parser loss: “wants that
+tea” dropped the demonstrative as if it were a clause connector. Bare two-word
+`that` nominals are now retained; finite that-clauses remain supported. This API
+still needs interface routing and its own blind-audio evidence; broader reference
+and outcome coverage remains open.
