@@ -1908,3 +1908,13 @@ entity binding rather than being coerced. The targeted binding test verifies two
 uses of the same local action with different participants and serialized recovery.
 Broader canonical constraint fixtures, non-entity binding, automatic role mapping,
 musical rendering and UI remain unfinished.
+
+### Local performance preparation
+
+`local_compound_performance.mjs` prepares a nested performance tree using the
+existing lexical renderer for roots, canonical compounds and participant labels.
+Participant roles retain their established registers. Runtime tails apply only
+to the external semantic head, including across nested local compounds. The new
+test covers ordered root payloads, distinct actor labels and all three runtime
+values. This is not yet a complete musical export: audible local identity and
+scope framing, broader canonical dependency tests and UI remain required.
