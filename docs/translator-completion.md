@@ -2072,3 +2072,14 @@ participant roles for ambiguous forms such as “I put this tea.” Targeted tes
 check both tense meanings/music, unchanged participants, stale-choice rejection,
 and actual UI selection/export of the past reading. Broader ambiguity, pronoun
 resolution and live-browser validation remain open.
+
+### Saved-word pronoun composition
+
+`local_compound_pronouns.mjs` adapts the existing occurrence-based resolver to
+saved adjective and supported verb constructions. It validates both probe and
+resolved sentences, retains original/resolved text and explicit references, and
+requires singular/group clarification for they/them. Tests compare full meaning
+and MIDI with explicit-name equivalents, including a negative past question at
+runtime 0 and a negative adjective at runtime 2. Quoted names are not treated as
+pronouns. Group references remain unsupported. UI pronoun prompts and arbitrary
+saved-verb agreement after singular they still need integration.

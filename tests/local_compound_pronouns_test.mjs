@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {emptyLocalCompounds,addLocalCompound} from '../pages/local_compounds.mjs';
+import {composeLocalAdjective,composeLocalVerb} from '../pages/local_compound_english.mjs';
+import {localWordPronounPlan,composeLocalWordWithPronouns} from '../pages/local_compound_pronouns.mjs';
+const a=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url))),base={label:'glowsteady',definition:'Test-only quality.',part_of_speech:'adjective',roles:[{role:'bearer',definition:'Entity with quality.'}],components:a.atoms.slice(0,2).map((v,i)=>({target_id:v.canonical_id,relation:i?'qualifies':'head'}))};
+let r=await addLocalCompound(emptyLocalCompounds(),base,a);
+r=await addLocalCompound(r,{...base,label:'glowmend',part_of_speech:'verb',roles:[{role:'actor',definition:'Doer.'},{role:'target',definition:'Affected entity.'}]},a);
+const bindings={ref0:{referent:'Nora',number:'singular'}};
+const neutral=await composeLocalWordWithPronouns("They aren't glowsteady. [2]",r,a,{pronounBindings:bindings}),explicit=await composeLocalAdjective('Nora is not glowsteady. [2]',r,a);assert.deepEqual(neutral.meaning,explicit.meaning);assert.deepEqual(neutral.midi,explicit.midi);
+const verb=await composeLocalWordWithPronouns("Didn't they glowmend it? [0]",r,a,{pronounBindings:{...bindings,ref1:'this tea'},subjectRole:'actor',objectRole:'target'}),direct=await composeLocalVerb("Didn't Nora glowmend this tea? [0]",r,a,{subjectRole:'actor',objectRole:'target'});assert.deepEqual(verb.meaning,direct.meaning);assert.deepEqual(verb.midi,direct.midi);assert.equal(verb.pronoun_resolution.source_input,"Didn't they glowmend it? [0]");
+await assert.rejects(composeLocalWordWithPronouns('They are glowsteady.',r,a,{pronounBindings:{ref0:'Nora'}}),/one individual or a group/);
+await assert.rejects(composeLocalWordWithPronouns('They are glowsteady.',r,a,{pronounBindings:{ref0:{referent:'Nora',number:'plural'}}}),/Group reference/);
+assert.equal(await localWordPronounPlan('"They" is glowsteady.',r,a),null);
+assert.equal(await localWordPronounPlan('They are unknown.',r,a),null);
+console.log('PASS neutral saved-word pronouns preserve explicit meanings/music and provenance; number clarification, plural rejection and quoted-name isolation.');
