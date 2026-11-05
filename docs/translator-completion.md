@@ -2124,3 +2124,15 @@ uses destination-directed running nested in a local adjective: two actor slots
 share Eli while the outer bearer stays Nora. Full exported bindings and successful
 music generation are checked. Existing pronoun, ambiguity and verb-role tests pass.
 User-authored outer/inner role connections remain a separate unfinished feature.
+
+### Explicit outer-to-inner role connections
+
+Local definitions optionally include identity-bearing role_links from declared
+outer roles to specific nested local roles or canonical entity slots. Validation
+checks paths, role declarations, slot types and duplicate targets. Participant
+grouping follows these explicit connections alongside canonical same-argument
+constraints; binding propagates supplied references and rejects conflicting ones.
+Tests cover outer bearer → canonical actor, chained local bearer connections,
+invalid links and conflicting references, with successful full sentence music.
+All 63 canonical dependency reuse checks and English-control tests still pass.
+The builder has not yet exposed role-connection authoring controls.

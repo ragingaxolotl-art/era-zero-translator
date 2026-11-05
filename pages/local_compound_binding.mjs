@@ -1,3 +1,4 @@
+import {localParticipantGroups} from './local_participant_groups.mjs';
 import {expandLocalCompound} from './local_compound_expansion.mjs';
 import {createContextualContent} from './contextual_content.mjs';
 const key=r=>JSON.stringify([r.path,r.slot_path??null,r.role]);
@@ -13,6 +14,11 @@ export async function bindLocalCompound(id,registry,authority,bindings){
   if(requirement.value_type&&requirement.value_type!=='entity')throw new Error('This slot requires a non-entity argument; entity binding is not valid.');
   await createContextualContent('topic',binding.reference,{allowDraft:true});
   resolved.set(identity,{...structuredClone(requirement),reference:structuredClone(binding.reference)});
+ }
+ for(const group of localParticipantGroups(expansion,authority)){
+  const supplied=group.map(r=>resolved.get(key(r))).filter(Boolean);if(!supplied.length)continue;
+  if(new Set(supplied.map(b=>b.reference.referent_id)).size!==1)throw new Error('Connected participant roles require the same reference.');
+  for(const requirement of group)if(!resolved.has(key(requirement)))resolved.set(key(requirement),{...structuredClone(requirement),reference:structuredClone(supplied[0].reference)});
  }
  if(resolved.size!==requirements.size)throw new Error('Bind every participant explicitly.');
  // Preserve canonical same/distinct-argument constraints within each occurrence.

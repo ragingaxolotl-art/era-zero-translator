@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {emptyLocalCompounds,addLocalCompound} from '../pages/local_compounds.mjs';
+import {composeLocalAdjective} from '../pages/local_compound_english.mjs';
+import {contextualContentReference} from '../pages/contextual_content.mjs';
+const a=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url))),running=a.compounds.find(c=>c.display_title==='ongoing bodily locomotor activity'),plan=a.compound_plans[running.compound_id],slot=plan.expanded.nodes.find(n=>n.kind==='slot');
+const d={label:'stridebright',definition:'Test-only role-linked quality.',part_of_speech:'adjective',roles:[{role:'bearer',definition:'Entity bearing this quality.'}],components:[{target_id:running.compound_id,relation:'head'},{target_id:a.atoms[0].canonical_id,relation:'qualifies'}],role_links:[{outer_role:'bearer',component_path:[0],slot_path:slot.path,role:'actor'}]};
+const registry=await addLocalCompound(emptyLocalCompounds(),d,a),result=await composeLocalAdjective('Nora is stridebright.',registry,a);
+assert.equal(result.meaning.bindings.length,2);assert(result.meaning.bindings.every(b=>b.reference.name.normalized_label==='nora'));
+await assert.rejects(composeLocalAdjective('Nora is stridebright.',registry,a,{bindings:[{path:[0],slot_path:slot.path,role:'actor',reference:await contextualContentReference('Eli')}]}),/same reference/);
+for(const link of [{...d.role_links[0],component_path:[3]},{...d.role_links[0],outer_role:'target'},{...d.role_links[0],role:'target'}])await assert.rejects(addLocalCompound(emptyLocalCompounds(),{...d,role_links:[link]},a));
+const nested=await addLocalCompound(registry,{...d,label:'nestedstride',components:[{target_id:registry.entries[0].compound_id,relation:'head'},d.components[1]],role_links:[{outer_role:'bearer',component_path:[0],role:'bearer'}]},a),composed=await composeLocalAdjective('Eli is nestedstride.',nested,a);
+assert.equal(composed.meaning.bindings.length,3);assert(composed.meaning.bindings.every(b=>b.reference.name.normalized_label==='eli'));assert.notEqual(nested.entries[0].compound_id,nested.entries[1].compound_id);
+console.log('PASS explicit outer-to-canonical and nested-local role links propagate participants; conflicts and invalid links reject.');

@@ -4,6 +4,10 @@ export function localParticipantGroups(expansion,authority){
  const rows=expansion.role_requirements,key=r=>JSON.stringify([r.path,r.slot_path??null,r.role]),parents=new Map(rows.map(r=>[key(r),key(r)]));
  const find=k=>parents.get(k)===k?k:find(parents.get(k));
  function walk(node){
+  if(node.kind==='local_compound')for(const link of node.definition.role_links||[]){
+   const source=key({path:node.path,role:link.outer_role}),target=key({path:[...node.path,...link.component_path],slot_path:link.slot_path,role:link.role});
+   if(!parents.has(source)||!parents.has(target))throw new Error('Unknown explicit role connection.');parents.set(find(target),find(source));
+  }
   if(node.kind==='canonical_compound')for(const constraint of authority.compound_plans[node.target_id].expanded.binding_constraints||[]){
    if(constraint.relation!=='same_argument')continue;
    const keys=constraint.slot_paths.map(slot=>{const r=rows.find(r=>JSON.stringify(r.path)===JSON.stringify(node.path)&&JSON.stringify(r.slot_path)===JSON.stringify(slot));if(!r)throw new Error('Unknown canonical participant constraint.');return key(r);});
