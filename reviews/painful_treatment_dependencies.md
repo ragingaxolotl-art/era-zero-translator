@@ -397,3 +397,21 @@ This is authored synthetic-audio evidence, not held-out language coverage or
 physical recording evidence. UI integration, perturbation checks for this longer
 profile, physical speaker/microphone tests and broader completion work remain.
 The original acceptance gate stays incomplete pending its remaining requirements.
+
+### Preference interface checkpoint (November 5, 2026)
+
+General analysis now routes the original painful-treatment preference to a
+specific draft preview before the generic foundation route. The preview requires
+an explicit actual/expected/dispositional reading, pain experiencer, shared
+context and confirmation that the comparison concerns the other alternative.
+It does not infer that the preference holder is the pain experiencer. Gender is
+not requested. It offers scheduled music playback, MIDI download and full meaning
+JSON export. Changing any choice or the source sentence invalidates stale output.
+
+The actual handler test (`pain_preference_preview_ui_test.mjs`) passes missing
+choice/context handling, full export decoding, separate holder/experiencer,
+negated question/runtime 2, playback scheduling and stale async-result guards.
+The existing comparison preview test still passes. This is a simulated DOM test,
+not a live browser or physical playback recording. This preview currently accepts
+explicit reference names/deictics; automatic pronoun antecedent resolution and
+other comparison targets remain outside this draft profile.
