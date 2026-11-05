@@ -111,3 +111,29 @@ viewpoint or expected semantics. Full recovered inverses match, with proximal
 object identity and no past time. See acquisition_viewpoint_acoustic_probe.json.
 This verifies the reusable event prerequisite, not availability itself. Physical
 recordings and the contextual opportunity/conditions model remain unfinished.
+
+
+## Draft practical custody opportunity model
+
+`pages/custody_opportunity.mjs` defines one selected availability-related sense:
+contextual circumstances admit a prospective holder's acquisition of practical
+physical custody of the same resource. It pins the existing acquisition compound
+and its conditional before/culmination commitments. Those phases apply if the
+activity is realized; the opportunity does not assert a current, ongoing or
+completed acquisition. Activity time is prospective relative to the opportunity,
+not automatically future relative to speech. Permission, ownership, willingness,
+and availability for other activities are excluded from entailment.
+
+The three explicit references are prospective holder, resource and access
+context. A context label identifies the selected circumstances but does not
+encode their rules. Same known holder/resource identity rejects, preserving the
+underlying custody invariant. Unknown real-world identity is not inferred.
+
+Forty-eight authored semantic cases distinguish holders, contexts, negation,
+questions and runtime 0/1/2. Rehashed attempts to assert realization, permission,
+past activity, wrong dependency, or inverted culmination reject. This is a draft
+semantic contract only. Its English interpretation, audible convention,
+independent inverse and recordings remain unimplemented. Explicit propositions
+for the access conditions, different activities, scheduling and stock/offer
+readings are still separate dependencies. No availability translation is counted
+complete, no root is added, and no canonical compound is promoted here.
