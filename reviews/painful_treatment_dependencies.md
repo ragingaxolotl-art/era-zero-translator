@@ -101,3 +101,15 @@ and unique recovery by shared semantic dispatch without a predicate hint.
 No original English, semantic document or expected notes enter the inverse.
 Independent Ruby rendering, blind WAV tests, UI integration and physical audio
 remain open; MIDI evidence alone does not complete the pain translation layer.
+
+
+## Blind synthetic-audio checkpoint
+
+`tests/pain_acoustic_test.mjs` now verifies two full-message clean WAV recoveries
+through the shared decoder. One is a past negated question at runtime 2; the
+other binds singular they to Nora before encoding at runtime 0. Only the WAV
+pathname and draft opt-in enter the decoding process; no text, source meaning,
+pronoun binding or expected score is supplied. The recovered reference, scope,
+speech act, runtime and non-entailment of injury match the intended document.
+See `reports/pain_acoustic_probe.json`. This does not establish physical recording
+robustness, broad acoustic coverage or independent Ruby agreement.

@@ -24,6 +24,14 @@ until evidence shows a benefit.
 
 ## Current draft status
 
+Explicit draft bodily-pain sentences now have a validated meaning document,
+24 MIDI scope/runtime contrasts and two blind synthetic WAV recoveries through
+shared dispatch. They reuse the approved felt-self dependency without altering
+its meaning. Independent Ruby agreement, UI integration, stimulus/disposition
+relations and painful-treatment degree comparison remain open. See
+`reviews/painful_treatment_dependencies.md`. The 200-check consolidated run below
+predates these pain changes; targeted results do not supersede its revision.
+
 The pain dependency audit now pins four existing felt-condition compounds and
 records nine explicit root exclusions. `reviews/painful_treatment_dependencies.md`
 orders felt pain, stimulus/experiencer relations, nonactual outcomes and degree
