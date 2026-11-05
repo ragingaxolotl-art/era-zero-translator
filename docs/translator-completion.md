@@ -1960,3 +1960,15 @@ choices, rebuilding the library or leaving the page stops playback. A generation
 check cancels playback if Stop is pressed while browser audio resumes. Targeted
 scheduler tests and existing export-control tests passed. Live-browser listening,
 visual verification and full-sentence integration remain unfinished.
+
+### Local sentence scope API
+
+`composeLocalCompoundSentence` wraps a participant-bound local verb/adjective in
+explicit ordered negation, time and modality scopes and assertion/question contour.
+It retains the definitions and full meaning with a digest. Twenty-four targeted
+performances cover runtime 0/1/2, questions, past negation, possible(not(P)) and
+not(possible(P)); missing participants and unsupported scopes reject. This is a
+structured sentence API, not automatic English parsing or proof of every lexical
+definition's validity. Sentence UI, English routing and full semantic inverse
+checks remain pending. Browser validation was attempted: CUA inventory reports
+local browser use disabled in Work settings; no browser test success is claimed.
