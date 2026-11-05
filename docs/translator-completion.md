@@ -1896,3 +1896,15 @@ Expansion limits reject excessive size/depth. The targeted test verifies these
 properties, reload fidelity and rejection of damaged canonical plans. Explicit
 mapping from outer roles to nested roles, music compilation and builder UI remain
 unfinished; this expansion does not infer those mappings from prose definitions.
+
+### Explicit local participant bindings
+
+Local expansion now retains canonical slot paths and value types rather than
+reducing required arguments to role names. `local_compound_binding.mjs` accepts
+explicit entity references for each occurrence/slot, validates those references,
+and rejects missing, duplicate or unknown bindings. It includes checks for the
+existing canonical same/distinct constraints; non-entity slots currently reject
+entity binding rather than being coerced. The targeted binding test verifies two
+uses of the same local action with different participants and serialized recovery.
+Broader canonical constraint fixtures, non-entity binding, automatic role mapping,
+musical rendering and UI remain unfinished.

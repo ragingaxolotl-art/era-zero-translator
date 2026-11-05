@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {emptyLocalCompounds,addLocalCompound} from '../pages/local_compounds.mjs';
+import {bindLocalCompound} from '../pages/local_compound_binding.mjs';
+import {contextualContentReference} from '../pages/contextual_content.mjs';
+const authority=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url)));
+const d={label:'test action',definition:'Test-only local action.',part_of_speech:'verb',components:authority.atoms.slice(0,2).map((a,i)=>({target_id:a.canonical_id,relation:i?'qualifies':'head'})),roles:[{role:'actor',definition:'Participant acting.'}]};
+let r=await addLocalCompound(emptyLocalCompounds(),d,authority);const first=r.entries[0].compound_id;
+r=await addLocalCompound(r,{...d,label:'nested test action',roles:[],components:[{target_id:first,relation:'head'},{target_id:first,relation:'qualifies'}]},authority);const id=r.entries[1].compound_id;
+const bindings=[{path:[0],role:'actor',reference:await contextualContentReference('Nora')},{path:[1],role:'actor',reference:await contextualContentReference('Eli')}];
+const bound=await bindLocalCompound(id,r,authority,bindings);assert.equal(bound.bindings[0].reference.name.normalized_label,'nora');assert.equal(bound.bindings[1].reference.name.normalized_label,'eli');
+await assert.rejects(bindLocalCompound(id,r,authority,bindings.slice(0,1)),/every participant/);await assert.rejects(bindLocalCompound(id,r,authority,[bindings[0],bindings[0]]),/duplicate/);
+await assert.rejects(bindLocalCompound(id,r,authority,[{...bindings[0],path:[]},bindings[1]]),/Unknown/);
+assert.deepEqual(await bindLocalCompound(id,r,authority,JSON.parse(JSON.stringify(bindings))),bound);
+console.log('PASS explicit occurrence bindings retain different participants, reject missing/duplicate/wrong paths and survive serialization.');

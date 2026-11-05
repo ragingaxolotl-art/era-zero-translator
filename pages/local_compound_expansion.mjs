@@ -19,7 +19,11 @@ export async function expandLocalCompound(compoundId,registry,authority,{maxNode
   const definition=canonical.get(id),plan=authority.compound_plans?.[id];
   if(!definition||definition.status!=='approved'||!plan||plan.compound_id!==id||plan.profile!=='EZCOMPOUNDPLAN-1'||plan.definition_version!==definition.definition_version||plan.content_digest!==definition.content_digest)throw new Error('Missing canonical dependency plan.');
   const {plan_digest,...body}=plan;if(await canonicalDigest(body)!==plan_digest)throw new Error('Invalid canonical dependency plan.');
-  for(const role of plan.required_roles)requirements.push({path:[...path],target_id:id,role,definition:null});
+  for(const slot of plan.expanded.nodes.filter(n=>n.kind==='slot')){
+   const edges=plan.expanded.edges.filter(e=>JSON.stringify(e.from_path)===JSON.stringify(slot.path)&&e.type==='fills_role');
+   if(edges.length!==1)throw new Error('Invalid canonical slot role.');
+   requirements.push({path:[...path],target_id:id,slot_path:structuredClone(slot.path),value_type:slot.slot_type,role:edges[0].role,definition:null});
+  }
   return {kind:'canonical_compound',target_id:id,path,relation,content_digest:definition.content_digest,plan_digest};
  }
  const tree=await visit(compoundId,[],'head');
