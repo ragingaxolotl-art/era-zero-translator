@@ -102,3 +102,19 @@ negated question scope and amount noncommitments, also under transposition.
 Default draft rejection remains enforced. Independent Ruby rendering, corruption
 checks, blind WAV, UI and desired-drinking integration remain unfinished. This
 adds draft conventions only and does not change canonical root sounds.
+
+## Blind synthetic-audio checkpoint
+
+`tests/drinking_acoustic_test.mjs` now generates and decodes three clean WAVs:
+past negated ongoing question with proximal material/runtime 2, bounded past
+water intake/runtime 0, and habitual speaker-referenced tea-kind drinking/runtime
+1. Separate decoder processes receive only WAV path and draft permission, never
+original English, selected reading, semantic document or expected notes.
+
+Full recovered structures agree, with additional assertions for viewpoint,
+kind/portion, deictic speaker, proximal reference, past/negation scope and runtime.
+No thirst or whole-portion consumption claim is introduced. Evidence is recorded
+in `reports/drinking_acoustic_probe.json` and the acoustic regression runner.
+These are authored synthetic cases, not physical recordings, channel-perturbation
+proof or held-out language coverage. Independent renderer, interface and desired-
+drinking integration remain pending.
