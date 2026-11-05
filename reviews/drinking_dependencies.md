@@ -118,3 +118,17 @@ in `reports/drinking_acoustic_probe.json` and the acoustic regression runner.
 These are authored synthetic cases, not physical recordings, channel-perturbation
 proof or held-out language coverage. Independent renderer, interface and desired-
 drinking integration remain pending.
+
+## Independent renderer checkpoint
+
+`tools/lib/era_zero_drinking.rb` independently validates the drinking and material
+contracts, participant references and document identities, then renders the
+existing noun/role sounds and draft viewpoint frames. All 18 authored
+viewpoint/runtime/kind-or-portion performances match JavaScript byte-for-byte.
+Default draft use and rehashed action, viewpoint, total-consumption and runtime
+alterations reject. Material kind is checked independently of its rendering
+adapter, so the class marker cannot silently become a portion.
+
+The earlier three clean synthetic WAV checks remain separate evidence. Interface,
+desired-drinking integration, broader reference/quantity coverage and physical
+speaker/microphone testing remain unfinished. No canonical vocabulary is admitted.
