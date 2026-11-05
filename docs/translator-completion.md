@@ -2049,3 +2049,15 @@ participants respecting canonical same/distinct constraints. This test demonstra
 reuse/renderability, not validity of arbitrary user-authored meanings. A fixture
 using numeric name suffixes also showed that the existing name encoder can collapse
 those labels; numeric-name preservation needs separate investigation.
+
+### Numeric identifier sound-label correction
+
+Confirmed that name normalization discarded digits: Participant 1 and Participant 2
+had identical normalized labels, reference IDs and music. New input now expands
+each ASCII digit to its spoken label before existing phoneme estimation, preserving
+order and leading zeroes without changing root or runtime codes. Numeric-name tests
+and existing name-participant/Ruby rendering parity pass. Alphabetic identities
+remain unchanged. Previously stored labels whose digits were already discarded
+cannot recover them from normalized data alone; re-encoding original input is
+needed. This change is identifier pronunciation, not a general numeric-quantity
+semantics implementation; punctuation/non-ASCII name coverage remains separate.
