@@ -1,3 +1,4 @@
+import {objectDesirePlan,composeObjectDesire} from './object_desire.mjs';
 import {painPreferencePlan,composePainPreference} from './pain_preference.mjs';
 import {midiFromPainPreference} from './pain_preference_music.mjs';
 import {painComparisonPlan,painComparisonPronounPlan,composePainComparisonSentence} from './pain_comparison_sentences.mjs';
@@ -725,6 +726,12 @@ function showFoundationPreview(input){
     fields.push({key:occurrence.key,field,label,number});
   }
   const parsed=pronouns?.parsed||parseFoundationSentence(input,{allowCognitive:true});
+  const objectPlan=objectDesirePlan(input);let desiredField,desiredLabel;
+  if(objectPlan){
+    desiredLabel=document.createElement('label');desiredLabel.textContent=`What is desired to happen concerning “${objectPlan.object}”?`;
+    desiredField=document.createElement('input');desiredField.type='text';desiredField.value='';desiredField.placeholder='Write the intended outcome as a complete sentence';desiredLabel.append(desiredField);
+    description.textContent='Specify the intended outcome. Wanting an object does not by itself mean drinking, owning, or possessing it. The outcome will be encoded as desired, without asserting that it happens. Unsupported outcomes will remain unresolved.';
+  }
   const needsMass=parsed?.type==='preference'&&!parsed.propositionalAlternatives&&[parsed.target,parsed.standard].some(text=>/^[Tt]he (heavy|light) [a-z]+$/.test(text));
   let massChoice,massLabel;
   if(needsMass){
@@ -737,20 +744,20 @@ function showFoundationPreview(input){
   const current=()=>$('sourceInput').value.trim()===input&&state.mode!=='controlled'&&card.isConnected!==false;
   button.addEventListener('click',async()=>{
     if(!current()||(needsMass&&massChoice.value!=='contextual_mass'))return;
-    const bindings=readBindings(),mass=massChoice?.value,snapshot=JSON.stringify(bindings),unchanged=()=>current()&&massChoice?.value===mass&&JSON.stringify(readBindings())===snapshot;
+    const bindings=readBindings(),mass=massChoice?.value,desired=desiredField?.value.trim(),snapshot=JSON.stringify(bindings),unchanged=()=>current()&&massChoice?.value===mass&&desiredField?.value.trim()===desired&&JSON.stringify(readBindings())===snapshot;
     button.disabled=true;
     try{
       const response=await fetch('./data/foundation_preview_candidates.json');
       if(!response.ok)throw new Error('Draft vocabulary could not be loaded.');
       const registry=await response.json();
       if(!unchanged())return;
-      const composed=await composeFoundationSentence(input,state.data,registry.records,sentenceTemplate,{allowDraft:true,allowCognitive:true,...(needsMass?{contextualMassModifiers:true}:{}),...(bindings?{bindings}:{})});
+      const composed=objectPlan?await composeObjectDesire(input,state.data,registry.records,sentenceTemplate,{allowDraft:true,desiredProposition:desired}):await composeFoundationSentence(input,state.data,registry.records,sentenceTemplate,{allowDraft:true,allowCognitive:true,...(needsMass?{contextualMassModifiers:true}:{}),...(bindings?{bindings}:{})});
       if(!unchanged())return;
       state.resolution=composed;$('results').classList.add('hidden');
       await showResolution(composed,{definition:'Draft translation — vocabulary and sounds are under review.'});
     }catch(error){if(unchanged())showError(error)}finally{button.disabled=needsMass&&massChoice.value!=='contextual_mass'}
   });
-  card.append(description,...fields.map(f=>f.label),...(massLabel?[massLabel]:[]),button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+  card.append(description,...fields.map(f=>f.label),...(massLabel?[massLabel]:[]),...(desiredLabel?[desiredLabel]:[]),button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
 }
 function showFutureInterpretation(input){
   state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];

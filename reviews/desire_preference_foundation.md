@@ -157,3 +157,21 @@ custody convention's explicit no-ownership commitment. Evidence is recorded in
 runner. This is authored synthetic audio, not physical speaker/microphone proof,
 held-out ordinary-language coverage or support for drinking/ownership semantics.
 Interface integration remains pending and original acceptance counts are unchanged.
+
+## Object-desire interface checkpoint
+
+The existing foundation preview now recognizes object-directed desire and asks
+for the intended outcome in a complete sentence. No outcome is preselected. The
+same preview and resolution/export path handles the composed result, preserving
+the original input and explicit clarification. A changed clarification during an
+async load/composition cannot replace newer output. Unsupported outcome predicates
+continue to reject rather than being reduced to labels.
+
+The actual preview handler test now covers missing outcome, real custody-content
+composition under negated question/runtime 2, strict MIDI inverse, candidate
+bundle verification and stale clarification rejection. Existing knowledge and
+foundation-pronoun handler tests receive the new dependencies and remain passing.
+This is simulated DOM evidence, not a live browser check. Automatic resolution of
+object-desire pronouns, broad desired-outcome predicates and physical recorded
+audio remain unfinished. No acceptance count or canonical vocabulary promotion
+is inferred from this UI integration.

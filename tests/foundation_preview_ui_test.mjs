@@ -1,3 +1,4 @@
+import {objectDesirePlan,composeObjectDesire} from '../pages/object_desire.mjs';
 import {parseFoundationSentence} from '../pages/foundation_sentences.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -9,7 +10,7 @@ const elements=Object.fromEntries(['sourceInput','output','results','resolutionP
 const input='Nora prefers tea to coffee.';elements.sourceInput.value=input;
 const state={mode:'general',data:{},resolution:{old:true},wordSelections:new Map()};
 let calls=0,shown=null,errors=[];
-const context=vm.createContext({parseFoundationSentence,foundationPronounPlan:()=>null,state,$:id=>elements[id],document:{createElement:element},fetch:async()=>({ok:true,json:async()=>({records:['candidate']})}),sentenceTemplate:()=>{},composeFoundationSentence:async(...args)=>{calls++;assert.equal(args[4].allowDraft,true);return {status:'candidate_translation'}},showResolution:async r=>{shown=r},showError:e=>errors.push(e)});
+const context=vm.createContext({objectDesirePlan,composeObjectDesire,parseFoundationSentence,foundationPronounPlan:()=>null,state,$:id=>elements[id],document:{createElement:element},fetch:async()=>({ok:true,json:async()=>({records:['candidate']})}),sentenceTemplate:()=>{},composeFoundationSentence:async(...args)=>{calls++;assert.equal(args[4].allowDraft,true);return {status:'candidate_translation'}},showResolution:async r=>{shown=r},showError:e=>errors.push(e)});
 vm.runInContext(handler+';showFoundationPreview('+JSON.stringify(input)+');',context);
 assert.equal(state.resolution,null);assert.equal(calls,0);
 const button=elements.candidateList.children.at(-1).children[1];
@@ -57,3 +58,20 @@ const previous=shown;let finish;
 context.fetch=()=>new Promise(resolve=>finish=resolve);
 const pendingModified=preview.click();massChoice.value='';finish({ok:true,json:async()=>registry});await pendingModified;assert.equal(shown,previous);
 console.log('PASS modified preference UI selection, full draft export verification and stale reading rejection.');
+
+// Original object desire now offers an explicit outcome field in the real handler.
+const objectInput='Does Nora not want tea? [2]';elements.sourceInput.value=objectInput;shown=null;errors=[];
+context.fetch=async()=>({ok:true,json:async()=>registry});
+context.sentenceTemplate=id=>!authority.resolution_files[id]?{authority}:({...JSON.parse(fs.readFileSync(new URL('../pages/'+authority.resolution_files[id],import.meta.url))).variants['assertion:1'],authority});
+context.showFoundationPreview(objectInput);
+const objectCard=elements.candidateList.children.at(-1),outcome=objectCard.children[1].children[0],objectButton=objectCard.children.at(-1);
+await objectButton.click();assert.equal(shown,null);assert.match(errors.at(-1).message,/Specify/);errors=[];
+outcome.value='Eli has physical custody of the tea.';await objectButton.click();assert.equal(errors.length,0);assert.equal(shown.source_input,objectInput);assert.equal(shown.object_desire_resolution.relation_source,'explicit_user_clarification');
+const {decodeFoundationSentenceMidi}=await import('../pages/foundation_semantic_decoder.mjs');
+const {midiFromFormal}=await import('../pages/engine.mjs');
+const recovered=await decodeFoundationSentenceMidi(midiFromFormal(shown.formal),authority.atoms,registry.records,{allowDraft:true});
+assert.equal(recovered.speech_act,'question');assert.equal(recovered.meaning.runtime_state,2);assert.deepEqual(recovered.meaning.scopes,[{operator:'negation'}]);assert.equal(recovered.meaning.arguments.content.content_status,'intensional');
+assert.equal((await verifyBundle(await createBundle(shown,objectInput))).vocabulary_status,'candidate');
+const previousObject=shown;let completeObject;context.fetch=()=>new Promise(resolve=>completeObject=resolve);
+const pendingObject=objectButton.click();outcome.value='Eli is happy.';completeObject({ok:true,json:async()=>registry});await pendingObject;assert.equal(shown,previousObject);
+console.log('PASS object desire UI requires outcome, composes real scoped meaning, verifies draft bundle and rejects stale clarification.');
