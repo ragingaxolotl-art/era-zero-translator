@@ -24,6 +24,13 @@ until evidence shows a benefit.
 
 ## Current draft status
 
+A clean-checkout consolidated run at `a634ebf` passed all 200 checks,
+including the opt-in synthetic-audio suites (2026-11-04 23:55:56 UTC to
+2026-11-05 00:02:53 UTC). See `reports/translator_completion_regression.json`.
+This supersedes the older 187-check run as current regression evidence only;
+ordinary-English completeness, held-out semantic coverage and physical recordings
+remain unproven. Physical recordings tested: **0**.
+
 Modified heavy/light preference alternatives now have an explicit API reading
 choice, 18 MIDI/Ruby contrasts, and two blind synthetic WAV question recoveries.
 Noun labels remain separate from property meanings; audible instance tags keep
