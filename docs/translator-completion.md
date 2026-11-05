@@ -1972,3 +1972,14 @@ structured sentence API, not automatic English parsing or proof of every lexical
 definition's validity. Sentence UI, English routing and full semantic inverse
 checks remain pending. Browser validation was attempted: CUA inventory reports
 local browser use disabled in Work settings; no browser test success is claimed.
+
+### Local sentence controls
+
+Verb/adjective music controls now offer compound-only, statement or yes/no question
+output, unspecified/before/at/after speech time, and affirmative/not/possibly/
+possibly-not/not-possible scope choices. Time takes outer scope; the two mixed
+negation/modality choices retain their different orders. Compound-only mode
+disables sentence scope controls. The actual-handler test checks exported past
+questions, participant/runtime fidelity, both mixed scope orders and invalidation
+of stale downloads. This is explicit guided composition; automatic English routing
+and live-browser verification remain pending.
