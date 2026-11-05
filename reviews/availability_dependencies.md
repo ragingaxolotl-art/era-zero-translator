@@ -155,3 +155,25 @@ interpretation/context/holder and conflicting holder selection reject. Sale,
 scheduling and drinking-purpose wording remain unparsed. This is semantic API
 composition only: no opportunity music, inverse, waveform or UI exists yet.
 No default availability sense or root-family expansion is introduced.
+
+
+## Draft opportunity music and audio checkpoint
+
+Draft +/-39 subcode 17 now identifies practical custody opportunity with runtime
+0/1/2. Its experiencer, content and comparison-standard frames identify prospective
+holder, resource and access context within this convention. It reuses existing
+reference rendering and scope frames; prior draft subcodes 0–16 and all roots
+remain unchanged. The strict semantic reader requires exactly three ordered roles,
+an explicit context and distinct holder/resource references. The event dependency
+and non-realization commitments are defined by the selected convention, not
+inferred from a noun label or a generic possibility marker.
+
+Eighteen MIDI/inverse cases preserve two contexts, participants, questions, past
+negation and all runtime states, including transposition and unique draft dispatch.
+A blind clean synthetic WAV of “Wasn't this tea available to Nora? [2]” under the
+explicit practical-custody reading and Pantry access context recovers the full
+meaning without source text, interpretation or context supplied to the decoder.
+See custody_opportunity_acoustic_probe.json. Existing ownership music tests pass.
+Independent opportunity rendering, adversarial corruptions, UI/desired-outcome
+integration, explicit condition propositions and physical recordings remain open.
+This is one selected availability sense, not general availability completion.

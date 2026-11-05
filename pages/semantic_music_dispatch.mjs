@@ -27,6 +27,7 @@ export async function decodeSupportedMeaningWithDrafts(bytes,atoms,records,{allo
  const {decodeUnderstandingAcquisitionMidi}=await import('./understanding_acquisition_music.mjs');
  const {decodeDesiredDrinkingMidi}=await import('./desired_drinking_music.mjs');
  const {decodeDesiredOwnershipMidi}=await import('./desired_ownership_music.mjs');
+ const {decodeCustodyOpportunityMidi}=await import('./custody_opportunity_music.mjs');
  const {decodeOwnershipMidi}=await import('./ownership_music.mjs');
  const {decodeDrinkingMidi}=await import('./drinking_music.mjs');
  const {decodePainPreferenceMidi}=await import('./pain_preference_music.mjs');
@@ -43,6 +44,7 @@ export async function decodeSupportedMeaningWithDrafts(bytes,atoms,records,{allo
  try{accepted.push(await decodeRouteLearningMidi(bytes,atoms,{allowDraft:true}));}catch{}
  try{accepted.push(decodeDesiredDrinkingMidi(bytes,atoms,{allowDraft:true}));}catch{}
  try{accepted.push(decodeDesiredOwnershipMidi(bytes,atoms,{allowDraft:true}));}catch{}
+ try{accepted.push(decodeCustodyOpportunityMidi(bytes,atoms,{allowDraft:true}));}catch{}
  try{accepted.push(decodeOwnershipMidi(bytes,atoms,{allowDraft:true}));}catch{}
  try{accepted.push(decodeDrinkingMidi(bytes,atoms,{allowDraft:true}));}catch{}
  try{accepted.push(decodePainPreferenceMidi(bytes,atoms,{allowDraft:true}));}catch{}
