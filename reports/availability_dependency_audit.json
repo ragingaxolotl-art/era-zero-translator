@@ -1,0 +1,146 @@
+{
+  "status": "dependency_review",
+  "completion_proven": false,
+  "root_count": 324,
+  "candidates": [
+    {
+      "canonical_id": "MOV:201",
+      "title": "available self-mobility",
+      "definition": "A mover's capacity to change its own position that is presently available for exercise."
+    },
+    {
+      "canonical_id": "MOV:202",
+      "title": "latent self-mobility",
+      "definition": "A mover's capacity to change its own position that exists without being presently available for exercise."
+    },
+    {
+      "canonical_id": "MAT:201",
+      "title": "available physical work capacity",
+      "definition": "A material bearer's capacity to supply energy for physical change that is presently available for exercise."
+    },
+    {
+      "canonical_id": "MAT:202",
+      "title": "latent physical work capacity",
+      "definition": "A material bearer's capacity to supply energy for physical change that exists without being presently available for exercise."
+    },
+    {
+      "canonical_id": "MIN:201",
+      "title": "available attentional capacity",
+      "definition": "A cognizer's capacity to allocate cognitive processing selectively that is presently available for exercise."
+    },
+    {
+      "canonical_id": "MIN:202",
+      "title": "latent attentional capacity",
+      "definition": "A cognizer's capacity to allocate cognitive processing selectively that exists without being presently available for exercise."
+    },
+    {
+      "canonical_id": "CON:100",
+      "title": "completed source expression",
+      "definition": "Completion of an act by which a source endpoint makes a communicative expression available to an exchange context."
+    },
+    {
+      "canonical_id": "CON:120",
+      "title": "completed shared distribution",
+      "definition": "Completion of an act by which a communicative expression is made available across a shared channel to multiple participant endpoints."
+    },
+    {
+      "canonical_id": "CON:201",
+      "title": "available communicative participation capacity",
+      "definition": "A communicative capacity of an endpoint that is presently available for exercise in an exchange."
+    },
+    {
+      "canonical_id": "CON:202",
+      "title": "latent communicative participation capacity",
+      "definition": "A communicative capacity of an endpoint that exists without being presently available for exercise."
+    },
+    {
+      "canonical_id": "STR:201",
+      "title": "available internal reconfiguration capacity",
+      "definition": "A capacity of a reference structure to reassign its own constituents among its internal positions that is presently available for exercise while preserving that structure as the reference whole."
+    },
+    {
+      "canonical_id": "STR:202",
+      "title": "latent internal reconfiguration capacity",
+      "definition": "A capacity of a reference structure to reassign its own constituents among its internal positions that exists without being presently available for exercise while preserving that structure as the reference whole."
+    }
+  ],
+  "senses": [
+    {
+      "id": "resource_opportunity",
+      "example": "The tea is available to Nora.",
+      "required": [
+        "resource identity",
+        "prospective user",
+        "access or acquisition activity",
+        "contextual conditions"
+      ],
+      "not_entailed": [
+        "ownership",
+        "current custody",
+        "permission under every framework",
+        "actual acquisition or use"
+      ]
+    },
+    {
+      "id": "schedule",
+      "example": "Nora is available tomorrow.",
+      "required": [
+        "participant",
+        "time interval",
+        "activity or commitment context"
+      ],
+      "not_entailed": [
+        "willingness",
+        "physical proximity",
+        "free time for every activity"
+      ]
+    },
+    {
+      "id": "offer_or_stock",
+      "example": "The tea is available for sale.",
+      "required": [
+        "resource or kind",
+        "offer activity",
+        "context or provider",
+        "relevant conditions"
+      ],
+      "not_entailed": [
+        "purchase",
+        "delivery",
+        "ownership change",
+        "free access"
+      ]
+    },
+    {
+      "id": "functional_readiness",
+      "example": "The tool is available for use.",
+      "required": [
+        "resource",
+        "intended activity",
+        "contextual readiness/access conditions"
+      ],
+      "not_entailed": [
+        "unrestricted permission",
+        "actual use",
+        "ownership"
+      ]
+    }
+  ],
+  "conclusions": [
+    "Existing capacity roots remain domain-specific; their shared available wording is not a general resource-availability invariant.",
+    "Runtime 1 cannot by itself encode available-to-whom, for-what or under-which-conditions.",
+    "No new family is justified by this inventory; evaluate scoped opportunity/access composition before a new convention.",
+    "Bare availability remains unresolved rather than silently selecting a sense."
+  ],
+  "next_dependencies": [
+    "explicit activity content and its participant binding",
+    "context and conditions of access/opportunity",
+    "temporal interval for scheduling sense",
+    "scope-aware possibility distinct from normative permission"
+  ],
+  "limitations": [
+    "Authored distinctions, not independent semantic review.",
+    "Does not prove that no existing compound composition can express a specific selected reading.",
+    "No dictionary, parser, music code or source approval changes."
+  ]
+}
