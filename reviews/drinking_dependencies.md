@@ -266,3 +266,19 @@ tea” dropped the demonstrative as if it were a clause connector. Bare two-word
 `that` nominals are now retained; finite that-clauses remain supported. This API
 still needs interface routing and its own blind-audio evidence; broader reference
 and outcome coverage remains open.
+
+## Object clarification audio and coverage reconciliation
+
+The desired-drinking acoustic suite now includes an original object desire,
+“Does Nora not want that tea? [2]”, explicitly clarified as Eli not drinking that
+tea with inner runtime 0. Blind WAV recovery preserves the distal reference,
+different drinker, intensional content and separate negations/runtime values.
+All three desired-drinking clean synthetic WAV cases pass. The decoder receives
+neither original input nor the clarification or selected readings.
+
+The eight-outcome audit now executes drinking through this explicit clarification
+API and records all extra choices. Four outcomes have a full inverse available:
+custody, acquisition, carrying and drinking. Four tested wordings still fail
+composition: ownership, availability, delivery and making. Audit status remains
+`inverse_available_needs_case_specific_semantic_review`, not a full coverage or
+physical audio certificate. Object clarification interface routing remains open.

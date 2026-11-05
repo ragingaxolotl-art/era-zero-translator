@@ -1,3 +1,5 @@
+import {composeObjectDesiredDrinking} from '../pages/object_desired_drinking.mjs';
+import {midiFromDesiredDrinking} from '../pages/desired_drinking_music.mjs';
 // Authored coverage probes: success requires complete musical inverse, not parsing.
 import fs from 'node:fs';
 import {composeObjectDesire} from '../pages/object_desire.mjs';
@@ -18,9 +20,11 @@ const probes=[
 for(const [id,desiredProposition] of probes){
  let phase='composition';
  try{
-  const d=await composeObjectDesire('Nora wants tea.',authority,records,load,{allowDraft:true,desiredProposition});phase='musical_inverse';
-  const recovered=await decodeSupportedMeaningWithDrafts(midiFromFormal(d.formal),authority.atoms,records,{allowDraft:true});
-  results.push({id,desiredProposition,status:'inverse_available_needs_case_specific_semantic_review',recovered});
+  const choices=id==='drinking'?{interpretation:'literal_drinking',viewpoint:'bounded',materialReading:'contextual_portion'}:null;
+  const d=choices?await composeObjectDesiredDrinking('Nora wants tea.',authority,{allowDraft:true,desiredProposition,...choices}):await composeObjectDesire('Nora wants tea.',authority,records,load,{allowDraft:true,desiredProposition});phase='musical_inverse';
+  const bytes=choices?await midiFromDesiredDrinking(d.meaning,authority,{allowDraft:true}):midiFromFormal(d.formal);
+  const recovered=await decodeSupportedMeaningWithDrafts(bytes,authority.atoms,records,{allowDraft:true});
+  results.push({id,desiredProposition,status:'inverse_available_needs_case_specific_semantic_review',...(choices?{explicit_choices:choices}:{}),recovered});
  }catch(error){results.push({id,desiredProposition,status:'unsupported',phase:error.cause?'musical_inverse':phase,diagnostic:error.message});}
 }
 const report={scope:'Authored outcome coverage probes, not semantic acceptance or held-out evaluation. The outcome is explicitly selected, never inferred from wants tea.',completion_proven:false,results};
