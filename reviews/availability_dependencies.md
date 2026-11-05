@@ -212,3 +212,9 @@ stale generation/download invalidation after context or holder changes. Ownershi
 preview tests still pass. These are VM handler tests, not live browser or physical
 microphone validation. Desired availability, explicit context-condition content,
 other availability senses and physical recordings remain unfinished.
+
+### Desired availability semantic composition
+
+Added `pages/desired_availability.mjs`, reusing the pinned desire foundation and the existing practical custody opportunity contract. Explicit resource infinitives such as “Nora wants this tea to be available to Eli” preserve Nora as desire holder, tea as resource, and Eli as prospective custodian. The availability reading and named access context remain explicit choices; an omitted prospective custodian must be supplied explicitly. Bare “wants to be available” is not silently interpreted as a custody opportunity.
+
+`tests/desired_availability_test.mjs` passes 18 outer/inner runtime and inner negation combinations with outer negative questions, plus neutral pronoun binding, past desire scope, missing-choice rejection and rehashed forged-contract rejection. Registered in the full regression runner. This is semantic composition evidence only: nested musical framing, independent decoding, waveform tests, UI integration and physical speaker-to-microphone testing remain unfinished. No roots or approved meanings changed.
