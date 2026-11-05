@@ -1931,3 +1931,14 @@ three runtime performances. It does not prove an audio inverse or unrestricted
 sentence translation. Local definitions must accompany shared music. Builder UI,
 full-sentence integration and validation of broader canonical dependencies remain
 unfinished; recording-to-meaning remains deferred by the user-approved release cuts.
+
+### Compound authoring screen
+
+`compound-builder.html` and `compound-builder.mjs` provide search across canonical
+roots/approved compounds and saved local definitions, ordered part editing, head
+selection, role descriptions, validated saving, nested reuse and definition
+export/restore. The translator links to this screen. Restore refuses to replace a
+nonempty local library. User-entered strings are rendered with textContent.
+Module syntax and registry tests passed; browser interaction/visual validation,
+music controls and sentence integration are still outstanding. The screen clearly
+states that sentence integration is under development.
