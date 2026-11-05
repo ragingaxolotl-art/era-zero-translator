@@ -175,3 +175,21 @@ This is simulated DOM evidence, not a live browser check. Automatic resolution o
 object-desire pronouns, broad desired-outcome predicates and physical recorded
 audio remain unfinished. No acceptance count or canonical vocabulary promotion
 is inferred from this UI integration.
+
+## Object-desire reference and runtime scope correction
+
+Adversarial checks found that matching only normalized object labels could allow
+`this tea` to become `that tea`, or the noun `the tea` to become the proper name
+`Tea`. Clarification now preserves explicit reference mode as well as label;
+an initially bare noun permits an explicitly chosen nominal reference but not a
+proper-name replacement. This remains local reference preservation, not external
+identity proof.
+
+A second gap allowed an outcome's trailing runtime marker to be read as the outer
+desire marker when the original desire had no explicit marker. The resolver now
+serializes the original outer runtime explicitly and verifies holder, speech act,
+negation and time against the source parse. Desired-content runtime remains inside
+the content. All nine outer/inner runtime pairs pass strict MIDI recovery, as does
+the implicit outer-state-1 / explicit inner-state-2 case. Reference substitution
+rejections and the existing independent Ruby and preview checks pass. No vocabulary
+or musical convention changed.

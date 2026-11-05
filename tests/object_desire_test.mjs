@@ -25,3 +25,16 @@ for(const [text,scope] of [['Yesterday, Nora wanted tea.','previous_day'],['Nora
  assert.deepEqual(r.meaning.scopes,[{operator:'time',relation:scope}]);assert.deepEqual(r.meaning.arguments.content.proposition.scopes,[{operator:'negation'}]);
 }
 console.log('PASS nine independent Ruby performances agree; outer past time remains distinct from desired-content negation.');
+// Preserve reference mode rather than equating a proper name with a noun label.
+await assert.rejects(compose('Nora wants this tea.','Eli has physical custody of that tea.'),/original object/);
+await assert.rejects(compose('Nora wants the tea.','Eli cares for Tea.'),/original object/);
+await assert.rejects(compose('Nora wants Tea.','Eli has physical custody of the tea.'),/original object/);
+for(const outerState of [0,1,2])for(const innerState of [0,1,2]){
+ const d=await compose(`Does Nora want this tea? [${outerState}]`,`Eli has physical custody of this tea [${innerState}].`);
+ const r=await decodeFoundationSentenceMidi(midiFromFormal(d.formal),authority.atoms,records,{allowDraft:true});
+ assert.equal(r.meaning.runtime_state,outerState);assert.equal(r.meaning.arguments.content.proposition.runtime_state,innerState);assert.equal(r.meaning.arguments.content.proposition.arguments.object.reference.reference_mode,'proximal_nominal');
+}
+const implicit=await compose('Nora wants tea.','Eli has physical custody of the tea [2].');
+const inverse=await decodeFoundationSentenceMidi(midiFromFormal(implicit.formal),authority.atoms,records,{allowDraft:true});
+assert.equal(inverse.meaning.runtime_state,1);assert.equal(inverse.meaning.arguments.content.proposition.runtime_state,2);
+console.log('PASS noun/name and proximal/distal identity are not substituted; nine runtime pairs and default outer state preserve independent content runtime.');
