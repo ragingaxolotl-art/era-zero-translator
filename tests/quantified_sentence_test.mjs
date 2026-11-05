@@ -50,3 +50,9 @@ for(const mutate of [b=>b.payload.interpretation_choice.reading='emitting_light'
  const b=structuredClone(chosenBundle);mutate(b);const {bundle_digest,...body}=b;b.bundle_digest=await canonicalDigest(body);await assert.rejects(verifyBundle(b),/Interpretation choice/);
 }
 console.log('PASS counted interpretation exports preserve original source and selected reading; rehashed inconsistent choices reject.');
+
+for(const source of ['Exactly four lamps are active.','Exactly three radios are active.','Exactly three lamps are not active.','Are exactly three lamps active?','Exactly three lamps are active. [2]']){
+ const acceptedChoice=quantifiedActivityPlan(source),accepted=await compose(acceptedChoice.interpreted_input,load,{allowDraft:true});accepted.source_input=source;accepted.interpretation_choice=acceptedChoice;await verifyBundle(await createBundle(accepted));
+ const b=structuredClone(chosenBundle);b.payload.source=source;b.payload.interpretation_choice=quantifiedActivityPlan(source);const {bundle_digest,...body}=b;b.bundle_digest=await canonicalDigest(body);await assert.rejects(verifyBundle(b),/Interpretation choice/);
+}
+console.log('PASS internally consistent source/choice substitutions still reject when count, noun, negation, question or runtime differs from exported meaning.');

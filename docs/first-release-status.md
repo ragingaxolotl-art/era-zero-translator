@@ -117,3 +117,10 @@ source's offered reading and belongs to a counted energized result. Rehashed
 changes to the reading, interpreted wording, or source alone reject. This is
 consistency validation, not authentication of the user's choice. The 18 counted
 semantic cases and added export-provenance cases pass.
+
+Counted-choice bundle verification now also checks semantic agreement: quantity,
+noun restriction, energized predicate, runtime, speech act, and inner versus outer
+negation scope. Updating both the source and choice consistently cannot conceal
+a mismatch with the exported meaning. Matching variants pass; mismatched count,
+noun, negation, question, and runtime variants reject. Counted tests, acquisition
+bundle tests, and the Pages audit pass after the change.

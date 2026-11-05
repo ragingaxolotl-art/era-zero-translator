@@ -45,3 +45,17 @@ export function quantifiedActivityPlan(input){
  if(expanded===input||!parseQuantifiedPropertySentence(expanded))return null;
  return {source_input:input,interpreted_input:expanded,reading:'physically_energized',definition:'The material substrate is physically energized. This does not assert that a lamp is switched on, working, or emitting light.'};
 }
+
+export async function validateQuantifiedActivityChoice(choice,source,ir){
+ const expected=quantifiedActivityPlan(source),fail=()=>{throw new Error('Interpretation choice does not match the counted source and meaning.');};
+ if(!expected||await canonicalDigest(choice)!==await canonicalDigest(expected))fail();
+ const plan=parseQuantifiedPropertySentence(expected.interpreted_input),nominal=parseNominal(plan.parsed.actorText);
+ const binders=ir.nodes.filter(n=>n.operator==='quantified_predication'),predicates=ir.nodes.filter(n=>n.kind==='lexical_occurrence');
+ if(binders.length!==1||predicates.length!==1)fail();const [binder]=binders,[predicate]=predicates;
+ if(binder.quantifier!==nominal.quantifier||binder.value!==nominal.value||predicate.target_id!=='MAT:001'||predicate.runtime_state?.code!==(plan.parsed.runtimeState??1)||ir.speech_act!==(plan.parsed.speechAct||'assertion'))fail();
+ const restriction=ir.edges.filter(e=>e.type==='restricts'&&e.to===binder.node_id);if(restriction.length!==1||ir.nodes.find(n=>n.node_id===restriction[0].from)?.name?.normalized_label!==nominal.head)fail();
+ const child=(id,type)=>{const edges=ir.edges.filter(e=>e.type===type&&e.to===id);if(edges.length!==1)fail();return ir.nodes.find(n=>n.node_id===edges[0].from);};
+ let outer=child(ir.root_clause,'centers');if(plan.propositionNegated){if(outer?.operator!=='negation')fail();outer=child(outer.node_id,'scopes');}if(outer?.node_id!==binder.node_id)fail();
+ let inner=child(binder.node_id,'scopes');if(plan.predicateNegated){if(inner?.operator!=='negation')fail();inner=child(inner.node_id,'scopes');}if(inner?.node_id!==predicate.node_id)fail();
+ return true;
+}
