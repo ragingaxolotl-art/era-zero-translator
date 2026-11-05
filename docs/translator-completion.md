@@ -2062,3 +2062,13 @@ remain unchanged. Previously stored labels whose digits were already discarded
 cannot recover them from normalized data alone; re-encoding original input is
 needed. This change is identifier pronunciation, not a general numeric-quantity
 semantics implementation; punctuation/non-ASCII name coverage remains separate.
+
+### Saved verb ambiguity clarification
+
+Verb parsing now exposes all supported interpretations. An explicit selection is
+validated against the current sentence and registry before composition; stale or
+forged choices reject. Main-translator previews offer reading/time choices before
+participant roles for ambiguous forms such as “I put this tea.” Targeted tests
+check both tense meanings/music, unchanged participants, stale-choice rejection,
+and actual UI selection/export of the past reading. Broader ambiguity, pronoun
+resolution and live-browser validation remain open.

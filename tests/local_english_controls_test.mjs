@@ -14,3 +14,8 @@ assert(go.disabled);subject.value='actor';subject.change();assert(go.disabled);o
 await go.click();results.children[1].click();const verbResult=JSON.parse(await downloads.at(-1).text());assert.deepEqual(verbResult.role_interpretation,{subject:'actor',object:'target'});assert.equal(verbResult.meaning.runtime_state,0);assert.equal(verbResult.meaning.bindings[0].reference.name.normalized_label,'nora');assert.equal(verbResult.meaning.bindings[1].reference.name.normalized_label,'tea');
 const stale=results.children[1],total=downloads.length;object.value='actor';object.change();assert(go.disabled);stale.click();assert.equal(downloads.length,total);
 console.log('PASS verb preview requires distinct role choices, avoids duplicate participant prompts and invalidates exports after role edits.');
+const ambiguous=await addLocalCompound(verbs,{...verbs.entries.at(-1).definition,label:'put',english_forms:{third_person:'puts',past:'put'}},a),choiceContainer=element();
+await mountLocalEnglishControls(choiceContainer,'I put this tea.',ambiguous,a,{document:{createElement:element},download:b=>downloads.push(b),onError:e=>{throw e}});
+assert.match(choiceContainer.children[1].textContent,/present/);assert.match(choiceContainer.children[2].textContent,/past/);await choiceContainer.children[2].click();
+const detail=choiceContainer.children.at(-1),sr=detail.children[3].children[0],ob=detail.children[4].children[0];sr.value='actor';sr.change();ob.value='target';ob.change();await detail.children.at(-2).click();detail.children.at(-1).children[1].click();assert.deepEqual(JSON.parse(await downloads.at(-1).text()).meaning.scopes,[{operator:'time',relation:'before_speech'}]);
+console.log('PASS ambiguous verb UI offers present/past and exports the chosen interpretation.');

@@ -25,15 +25,15 @@ export async function composeLocalAdjective(input,registry,authority,{bindings=[
  return {...result,source_input:input,construction:'local_adjective_predication'};
 }
 
-export async function localVerbPlan(input,registry,authority){
- const checked=await validateLocalCompounds(registry,authority);if(typeof input!=='string')return null;
+export async function localVerbCandidates(input,registry,authority){
+ const checked=await validateLocalCompounds(registry,authority);if(typeof input!=='string')return [];
  let text=input.trim(),runtimeState=1;const tag=text.match(/\s*\[([012])\]([.!?]?)$/);
- if(tag){runtimeState=Number(tag[1]);text=text.slice(0,tag.index).trim();const end=text.match(/[.!?]$/)?.[0];if(end&&tag[2]&&end!==tag[2])return null;if(!end)text+=tag[2];}
+ if(tag){runtimeState=Number(tag[1]);text=text.slice(0,tag.index).trim();const end=text.match(/[.!?]$/)?.[0];if(end&&tag[2]&&end!==tag[2])return [];if(!end)text+=tag[2];}
  text=expandNegativeContractions(text,`(${REF})`);const question=text.endsWith('?');text=text.replace(/[.!?]$/,'');
  const m=question?text.match(new RegExp(`^(Do|Does|Did) (${REF}) (not )?(.+)$`)):text.match(new RegExp(`^(${REF}) (do|does|did) (not )?(.+)$`));
- const direct=!question&&!m?text.match(new RegExp(`^(${REF}) (.+)$`)):null;if(!m&&!direct)return null;
+ const direct=!question&&!m?text.match(new RegExp(`^(${REF}) (.+)$`)):null;if(!m&&!direct)return [];
  const subject=m?(question?m[2]:m[1]):direct[1],aux=m?(question?m[1]:m[2]).toLowerCase():null;
- if(m&&aux!=='did'&&aux!==(['I','you'].includes(subject)?'do':'does'))return null;
+ if(m&&aux!=='did'&&aux!==(['I','you'].includes(subject)?'do':'does'))return [];
  const matches=[];
  for(const entry of checked.entries.filter(e=>e.definition.part_of_speech==='verb')){
   const forms=m?[{label:entry.definition.label,past:aux==='did'}]:[
@@ -47,11 +47,18 @@ export async function localVerbPlan(input,registry,authority){
   }
  }
  // Includes tense ambiguity (e.g. put/put): require clarification, never guess.
- if(matches.length!==1)return null;const {entry,object,past}=matches[0];
- return {compound_id:entry.compound_id,subject,object,available_roles:entry.definition.roles,runtime_state:runtimeState,speech_act:question?'question':'assertion',scopes:[...(past?[{operator:'time',relation:'before_speech'}]:[]),...(m?.[3]?[{operator:'negation'}]:[])]};
+ return matches.map(({entry,object,past})=>({compound_id:entry.compound_id,subject,object,available_roles:entry.definition.roles,runtime_state:runtimeState,speech_act:question?'question':'assertion',scopes:[...(past?[{operator:'time',relation:'before_speech'}]:[]),...(m?.[3]?[{operator:'negation'}]:[])]}));
 }
-export async function composeLocalVerb(input,registry,authority,{subjectRole,objectRole,bindings=[],anchor=60}={}){
- const plan=await localVerbPlan(input,registry,authority);if(!plan)throw new Error('No supported saved verb construction matches this sentence.');
+export async function localVerbPlan(input,registry,authority,{interpretation}={}){
+ const candidates=await localVerbCandidates(input,registry,authority);
+ if(interpretation!==undefined){
+  const selected=candidates.find(c=>JSON.stringify(c)===JSON.stringify(interpretation));
+  if(!selected)throw new Error('The selected verb interpretation no longer matches this sentence.');return selected;
+ }
+ return candidates.length===1?candidates[0]:null;
+}
+export async function composeLocalVerb(input,registry,authority,{subjectRole,objectRole,bindings=[],anchor=60,interpretation}={}){
+ const plan=await localVerbPlan(input,registry,authority,{interpretation});if(!plan)throw new Error('No supported saved verb construction matches this sentence.');
  const roles=plan.available_roles.map(r=>r.role);
  if(!roles.includes(subjectRole)||plan.object&&!roles.includes(objectRole)||!plan.object&&objectRole!==undefined||plan.object&&subjectRole===objectRole)throw new Error('Choose distinct declared roles for the sentence subject and object.');
  if(!Array.isArray(bindings)||bindings.some(b=>Array.isArray(b.path)&&!b.path.length&&[subjectRole,objectRole].includes(b.role)))throw new Error('The sentence already supplies that participant.');

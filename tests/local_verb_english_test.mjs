@@ -23,3 +23,9 @@ const irregular=await addLocalCompound(emptyLocalCompounds(),{...d,label:'take',
 const ambiguous=await addLocalCompound(emptyLocalCompounds(),{...d,label:'put',english_forms:{third_person:'puts',past:'put'}},a);assert.equal(await localVerbPlan('I put this tea.',ambiguous,a),null);
 await assert.rejects(addLocalCompound(emptyLocalCompounds(),{...d,english_forms:{third_person:'glowmends',past:''}},a));
 console.log('PASS explicit regular/irregular verb forms match auxiliary meanings/music; agreement, incomplete forms and ambiguous tense reject.');
+const {localVerbCandidates}=await import('../pages/local_compound_english.mjs');
+const alternatives=await localVerbCandidates('I put this tea.',ambiguous,a);assert.equal(alternatives.length,2);assert.deepEqual(alternatives.map(p=>p.scopes),[[],[{operator:'time',relation:'before_speech'}]]);
+const now=await composeLocalVerb('I put this tea.',ambiguous,a,{...options,interpretation:alternatives[0]}),then=await composeLocalVerb('I put this tea.',ambiguous,a,{...options,interpretation:alternatives[1]});assert.notDeepEqual(now.midi,then.midi);assert.deepEqual(now.meaning.bindings,then.meaning.bindings);
+await assert.rejects(composeLocalVerb('Nora put this tea.',ambiguous,a,{...options,interpretation:alternatives[0]}),/no longer matches/);
+await assert.rejects(composeLocalVerb('I put this tea.',ambiguous,a,{...options,interpretation:{...alternatives[0],runtime_state:2}}),/no longer matches/);
+console.log('PASS explicit ambiguous-tense selection preserves participants and changes time/music; stale or forged interpretations reject.');
