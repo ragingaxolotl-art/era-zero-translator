@@ -25,7 +25,7 @@ module EraZeroPainComparison
     raise ArgumentError,'Invalid comparison frame' unless anchor.is_a?(Integer) && anchor.between?(39,88) && %w[open close].include?(side)
     {'kind'=>'grammar_marker','grammar_profile'=>'EZPAIN-COMPARISON-MUSIC-1','marker'=>"pain_comparison_#{d['relation']}_#{d['runtime_state']}_#{side}",'register'=>'middle','base_midi'=>anchor,'family_opening_absolute_midi'=>[],'address_absolute_midi'=>[0,side=='open' ? -39 : 39,CODES.fetch(d['relation']),d['runtime_state'],0].map{|n|anchor+n},'note_duration_beats'=>0.25,'boundary_after_beats'=>0.5}
   end
-  def midi(d,allow_draft:false,anchor_midi:60)
+  def events(d,allow_draft:false,anchor_midi:60)
     validate!(d,allow_draft:allow_draft);anchor=anchor_midi;atoms,compounds=EraZeroRenderer.load_authority
     mark=lambda{|name|EraZeroPresentation.grammar_marker({'performance'=>{'anchor_midi'=>anchor}},'pain-comparison',name)}
     ref=d['context'];reference=EraZeroRenderer.occurrence_events(ref,{'nodes'=>[ref],'edges'=>[]},atoms,compounds,anchor,'middle')
@@ -34,6 +34,9 @@ module EraZeroPainComparison
       key=scope['operator']=='negation' ? 'negation' : "time_#{scope['relation']}"
       events=[mark.call(key+'_open')]+events+[mark.call(key+'_close')]
     end
-    EraZeroPresentation.midi_from_scheduled_events(events,anchor,d['speech_act']=='question' ? [0,2] : [0,0])
+    events
+  end
+  def midi(d,allow_draft:false,anchor_midi:60)
+    EraZeroPresentation.midi_from_scheduled_events(events(d,allow_draft:allow_draft,anchor_midi:anchor_midi),anchor_midi,d['speech_act']=='question' ? [0,2] : [0,0])
   end
 end

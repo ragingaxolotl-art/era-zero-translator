@@ -374,3 +374,26 @@ proof. The combined preference still needs independent renderer validation,
 blind WAV recovery, UI interpretation choices and physical speaker/microphone
 validation. Original acceptance status remains incomplete; the full translator
 goal is not achieved.
+
+### Preference independent rendering and WAV checkpoint (November 5, 2026)
+
+`EraZeroPainPreference` independently validates and renders the combined
+preference. All 18 authored performances match JavaScript byte-for-byte. Default
+draft rejection and rehashed foundation, restriction scope, direction-binding,
+and runtime corruption are rejected. Extracting reusable Ruby comparison events
+retains the 42 existing comparison parity cases.
+
+`pain_preference_acoustic_test.mjs` recovers two complete preference meanings from
+clean synthetic WAV files in separate decoder processes. One is the original
+less-painful alternative preference with expected-outcome reading and runtime 0;
+the other reverses the preferred alternative and uses a negated question,
+disposition reading, and runtime 2. Pain experiencer Eli remains distinct from
+holder Nora. Decoder inputs contain only WAV path and draft permission; context,
+participants, restrictions and scope are recovered from sound. Full inverse
+objects match the expected meaning, with participant/binding checks against the
+source meaning document. Report: `reports/pain_preference_acoustic_probe.json`.
+
+This is authored synthetic-audio evidence, not held-out language coverage or
+physical recording evidence. UI integration, perturbation checks for this longer
+profile, physical speaker/microphone tests and broader completion work remain.
+The original acceptance gate stays incomplete pending its remaining requirements.
