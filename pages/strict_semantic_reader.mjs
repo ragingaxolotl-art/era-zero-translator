@@ -59,8 +59,8 @@ export function strictSemanticReader(bytes,atoms,message,options){
   if(qualified){exactRoot(content[0],'MAT:010',register,null);content=content.slice(1);}
   return reference(content,register);
  };
- const unwrapScopes=stop=>{
-  let current=tree(0,tokens.length),scopes=[];
+ const unwrapScopes=(stop,subtree)=>{
+  let current=subtree??tree(0,tokens.length),scopes=[];
  while(current.length===1&&!stop(current[0])){
   const node=current[0],m=node.marker;let scope;
   if(m==='negation_open')scope={operator:'negation'};

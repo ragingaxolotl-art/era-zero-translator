@@ -180,3 +180,17 @@ activity still requires an explicit viewpoint; no bounded amount is guessed.
 This is semantic integration only. Joint musical transport, independent rendering,
 blind audio, object-desire clarification and UI routing remain unfinished. Existing
 standalone drinking music is reusable; canonical definitions have not changed.
+
+## Desired-drinking musical composition checkpoint
+
+The desired-drinking renderer reuses drinking events inside the existing
+intensional proposition frame, with explicit holder and control binding. Draft
+±39 subcodes 12/13 distinguish controlled versus explicit content subjects; outer
+runtime is separate from the nested drinking frame. The strict reader now supports
+scope traversal over a supplied subtree, allowing the same drinking inverse to
+validate standalone and nested content. No original text or IR enters decoding.
+
+Twenty-four subject-control × outer/inner-negation × runtime question contrasts
+recover through unique shared dispatch and transposition. Standalone drinking's
+18 independent Ruby comparisons remain passing after event/reader extraction.
+Combined independent rendering, blind audio and UI integration remain unfinished.
