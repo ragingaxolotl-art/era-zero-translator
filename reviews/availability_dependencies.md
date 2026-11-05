@@ -195,3 +195,20 @@ checks test missing meanings rather than treating different MIDI hashes as proof
 UI integration, desired availability, explicit condition propositions, broader
 availability senses and physical recordings remain unfinished. The last full
 regression predates this extension; this evidence is targeted.
+
+
+## Availability preview integration
+
+The ordinary analysis route now presents a draft availability preview for the
+supported singular forms. It requires explicit practical-custody interpretation,
+access-context reference and a prospective holder when omitted from the sentence.
+Separate pronoun bindings retain resource and holder roles without gender
+inference or plural coercion. Playback, MIDI export and full semantic JSON reuse
+the existing preview lifecycle.
+
+Actual handler checks verify missing-choice gating, past-negated-question export
+with runtime 2, decoded opportunity semantics, neutral-reference binding, and
+stale generation/download invalidation after context or holder changes. Ownership
+preview tests still pass. These are VM handler tests, not live browser or physical
+microphone validation. Desired availability, explicit context-condition content,
+other availability senses and physical recordings remain unfinished.
