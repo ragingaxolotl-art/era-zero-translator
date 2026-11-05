@@ -1918,3 +1918,16 @@ to the external semantic head, including across nested local compounds. The new
 test covers ordered root payloads, distinct actor labels and all three runtime
 values. This is not yet a complete musical export: audible local identity and
 scope framing, broader canonical dependency tests and UI remain required.
+
+### Local MIDI export
+
+`local_compound_music.mjs` adds local-only ±39/19 framing with explicit
+head/qualifier relation and a 48-bit definition identifier. Registry-wide identifier
+collisions reject export. Nested scopes bracket existing root/name payloads and
+participant role markers; the export retains the validated registry and performance
+tree alongside MIDI. This namespace is separate from approved compound conventions.
+The targeted test checks balanced nested frames, identity/relation contrasts and
+three runtime performances. It does not prove an audio inverse or unrestricted
+sentence translation. Local definitions must accompany shared music. Builder UI,
+full-sentence integration and validation of broader canonical dependencies remain
+unfinished; recording-to-meaning remains deferred by the user-approved release cuts.
