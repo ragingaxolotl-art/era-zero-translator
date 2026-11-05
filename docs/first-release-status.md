@@ -65,3 +65,10 @@ The 24 sentence-scope contrasts also compare performed notes/timing rather than
 whole-file bytes. All 20 local suites pass. This does not prove audio recovery or
 audible playback. Browser access was rechecked and remains disabled in Work
 settings; enabling it has been requested.
+
+Saved-adjective phrasing fix: unambiguous initial “I'm” and “you're” (straight or
+curly apostrophes) now expand to their copular forms. Twenty-four tests verify
+exact meaning and MIDI parity with expanded sentences, including negation and
+runtime 0/1/2. Quoted names, ambiguous 's/'d forms, and unsupported trailing
+constructions are not rewritten. The 20-suite local gate passes after this code
+change; the earlier 247-suite broad report predates it.

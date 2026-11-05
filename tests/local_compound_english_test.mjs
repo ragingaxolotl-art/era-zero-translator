@@ -19,3 +19,11 @@ for(const state of [0,1,2])for(const negative of [false,true])for(const question
 }
 assert.equal(await localAdjectivePlan('Nora might have been glowsteady.',registry,a),null);assert.equal(await localAdjectivePlan('Nora might glowsteady.',registry,a),null);
 console.log('PASS 12 saved adjective possibility/negation/question/runtime cases; missing copula and perfect tense reject.');
+
+for(const [short,full] of [["I'm",'I am'],['I’m','I am'],["You're",'you are'],['You’re','you are']])for(const state of [0,1,2])for(const negative of [false,true]){
+ const tail=` ${negative?'not ':''}glowsteady. [${state}]`,contracted=await composeLocalAdjective(short+tail,registry,a),expanded=await composeLocalAdjective(full+tail,registry,a);
+ assert.deepEqual(contracted.meaning,expanded.meaning);assert.deepEqual(contracted.midi,expanded.midi);assert.equal(contracted.source_input,short+tail);
+}
+const quoted=await composeLocalAdjective('"I’m" is glowsteady.',registry,a);assert.notEqual(quoted.meaning.bindings[0].reference.name.normalized_label,'i');
+for(const input of ["Nora's glowsteady.","I'm glowsteady and tired.","You're very glowsteady."])assert.equal(await localAdjectivePlan(input,registry,a),null);
+console.log('PASS 24 unambiguous copula contraction cases preserve expanded meaning/music, runtime and negation; quoted labels and unsupported tails are not rewritten.');

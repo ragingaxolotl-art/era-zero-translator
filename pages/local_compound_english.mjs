@@ -7,6 +7,9 @@ export async function localAdjectivePlan(input,registry,authority){
  const checked=await validateLocalCompounds(registry,authority);if(typeof input!=='string')return null;
  let text=input.trim(),runtimeState=1;const tag=text.match(/\s*\[([012])\]([.!?]?)$/);
  if(tag){runtimeState=Number(tag[1]);text=text.slice(0,tag.index).trim();const end=text.match(/[.!?]$/)?.[0];if(end&&tag[2]&&end!==tag[2])return null;if(!end)text+=tag[2];}
+ // These copular contractions have one reading; quoted labels and ambiguous
+ // 's/'d forms are left intact rather than guessing is/has or had/would.
+ text=text.replace(/^I['’]m\b/, 'I am').replace(/^[Yy]ou['’]re\b/, 'you are');
  text=expandNegativeContractions(text,`(${REF})`);const question=text.endsWith('?');text=text.replace(/[.!?]$/,'');
  const modal=question?text.match(new RegExp(`^(Might) (${REF}) (not )?be (.+)$`)):text.match(new RegExp(`^(${REF}) (might) (not )?be (.+)$`));
  const m=modal||(question?text.match(new RegExp(`^(Is|Was|Am|Are|Were) (${REF}) (not )?(.+)$`)):text.match(new RegExp(`^(${REF}) (is|was|am|are|were) (not )?(.+)$`)));if(!m)return null;
