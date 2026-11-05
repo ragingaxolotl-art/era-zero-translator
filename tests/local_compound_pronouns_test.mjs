@@ -25,3 +25,5 @@ const present=await composeLocalWordWithPronouns('They put it.',ambiguous,a,{...
 console.log('PASS neutral-pronoun ambiguous verbs require explicit tense and retain the selected time in meaning and provenance.');
 const uncertain=await composeLocalWordWithPronouns('They might not glowmend it.',r,a,{pronounBindings:{...bindings,ref1:'this tea'},subjectRole:'actor',objectRole:'target'});assert.deepEqual(uncertain.meaning.scopes,[{operator:'modality',mode:'possible'},{operator:'negation'}]);assert.equal(uncertain.pronoun_resolution.resolved_input,'Nora might not glowmend this tea.');
 console.log('PASS singular-they saved verb uncertainty preserves pronouns and possibility/negation scope.');
+const possibleQuality=await composeLocalWordWithPronouns('They might not be glowsteady.',r,a,{pronounBindings:bindings});assert.deepEqual(possibleQuality.meaning.scopes,[{operator:'modality',mode:'possible'},{operator:'negation'}]);assert.equal(possibleQuality.pronoun_resolution.resolved_input,'Nora might not be glowsteady.');
+console.log('PASS singular-they adjective possibility retains bearer identity and negation scope.');

@@ -2201,3 +2201,11 @@ singular-they case verifies the same scope through reference clarification. Perf
 forms and ambiguous may remain unsupported rather than losing their extra meaning.
 The existing main saved-word preview uses this parser, so no separate UI path is
 needed. Live-browser verification remains open.
+
+### Saved adjective possibility in ordinary English
+
+Saved adjective statements/questions now accept might be and might not be, with
+possibility outside negation. Twelve cases verify scope, runtime, question contour
+and bearer identity; a singular-they case exercises explicit reference resolution.
+Missing copulas and perfect-tense forms remain rejected, preserving unsupported
+meaning rather than dropping it. Existing English-preview regressions still pass.
