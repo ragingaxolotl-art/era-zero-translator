@@ -195,3 +195,16 @@ reject without draft opt-in. Existing standalone pain tests and 28 Ruby parity
 cases remain intact after extracting reusable pain events. Full relation Ruby
 parity, blind WAV tests, UI, broader scope contrasts and physical audio remain
 open; intensity comparison and the original preference acceptance remain open.
+
+
+## Stimulus audio checkpoint
+
+Three clean synthetic WAVs now recover actual past causation, a negated
+expectation question and a disposition with explicit it/them bindings through
+shared decoding. Only the WAV pathname and draft opt-in reach the decoder.
+One expectation question also retains its full meaning under simulated gain/noise,
++2% speed and weak short echo. Removing a payload segment is rejected rather than
+accepted as another meaning. See `reports/pain_stimulus_acoustic_probe.json`.
+These authored channel probes do not establish general acoustic reliability or
+physical speaker-to-microphone performance. Relation Ruby/UI work and intensity
+comparison remain unfinished.

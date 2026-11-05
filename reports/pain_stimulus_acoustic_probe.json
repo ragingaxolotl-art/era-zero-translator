@@ -1,0 +1,190 @@
+{
+  "status": "PASS",
+  "scope": "Three authored clean synthetic WAVs decoded with only waveform path and draft opt-in. One negated-expectation question also tested under simulated gain/noise, speed change, weak echo and dropout; no physical recordings.",
+  "physical_recordings": 0,
+  "cases": [
+    {
+      "phrase": "The treatment caused bodily pain for Nora. [0]",
+      "meaning": {
+        "profile": "EZPAIN-STIMULUS-INVERSE-1",
+        "status": "draft",
+        "relation": "actual_causation",
+        "criterion": "The stimulus causally contributes to the specified pain experience; causal contribution is not mere correlation or temporal order and need not be the sole cause.",
+        "stimulus": {
+          "kind": "phonemic",
+          "reference_mode": "definite_nominal",
+          "phonemes": [
+            "T",
+            "R",
+            "IY",
+            "T",
+            "M",
+            "EH",
+            "N",
+            "T"
+          ],
+          "instance_code": null
+        },
+        "outcome": {
+          "predicate": "felt_bodily_pain",
+          "dependency": "CMP:6c9e3042a361ccae6ecf5980",
+          "dependency_version": "1.0.0",
+          "quality": "bodily_pain_experience",
+          "injury_commitment": "not_entailed",
+          "cause_commitment": "unspecified",
+          "intensity_commitment": "unspecified",
+          "stimulus_commitment": "unspecified",
+          "experiencer": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "N",
+              "AO",
+              "R",
+              "AE"
+            ],
+            "instance_code": null
+          },
+          "runtime_state": 1
+        },
+        "speech_act": "assertion",
+        "scopes": [
+          {
+            "operator": "time",
+            "relation": "before_speech"
+          }
+        ],
+        "runtime_state": 0,
+        "outcome_scope": "governed_by_relation_and_matrix_scope"
+      },
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-pain-stimulus-audio-6IJiEm/pain-0.wav",
+      "checksum": "verified"
+    },
+    {
+      "phrase": "Is the treatment not expected to cause bodily pain for Nora? [2]",
+      "meaning": {
+        "profile": "EZPAIN-STIMULUS-INVERSE-1",
+        "status": "draft",
+        "relation": "expected_outcome",
+        "criterion": "In the selected local context, occurrence or application of the stimulus is expected to produce the specified pain experience; neither occurrence nor pain is asserted as actual.",
+        "stimulus": {
+          "kind": "phonemic",
+          "reference_mode": "definite_nominal",
+          "phonemes": [
+            "T",
+            "R",
+            "IY",
+            "T",
+            "M",
+            "EH",
+            "N",
+            "T"
+          ],
+          "instance_code": null
+        },
+        "outcome": {
+          "predicate": "felt_bodily_pain",
+          "dependency": "CMP:6c9e3042a361ccae6ecf5980",
+          "dependency_version": "1.0.0",
+          "quality": "bodily_pain_experience",
+          "injury_commitment": "not_entailed",
+          "cause_commitment": "unspecified",
+          "intensity_commitment": "unspecified",
+          "stimulus_commitment": "unspecified",
+          "experiencer": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "N",
+              "AO",
+              "R",
+              "AE"
+            ],
+            "instance_code": null
+          },
+          "runtime_state": 1
+        },
+        "speech_act": "question",
+        "scopes": [
+          {
+            "operator": "negation"
+          }
+        ],
+        "runtime_state": 2,
+        "outcome_scope": "governed_by_relation_and_matrix_scope"
+      },
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-pain-stimulus-audio-6IJiEm/pain-1.wav",
+      "checksum": "verified"
+    },
+    {
+      "phrase": "It tends to cause bodily pain for them. [1]",
+      "meaning": {
+        "profile": "EZPAIN-STIMULUS-INVERSE-1",
+        "status": "draft",
+        "relation": "disposition",
+        "criterion": "The stimulus has a contextually qualified tendency to produce the specified pain experience when encountered or applied; no particular occurrence, inevitability or present pain is asserted.",
+        "stimulus": {
+          "kind": "phonemic",
+          "reference_mode": "definite_nominal",
+          "phonemes": [
+            "T",
+            "R",
+            "IY",
+            "T",
+            "M",
+            "EH",
+            "N",
+            "T"
+          ],
+          "instance_code": null
+        },
+        "outcome": {
+          "predicate": "felt_bodily_pain",
+          "dependency": "CMP:6c9e3042a361ccae6ecf5980",
+          "dependency_version": "1.0.0",
+          "quality": "bodily_pain_experience",
+          "injury_commitment": "not_entailed",
+          "cause_commitment": "unspecified",
+          "intensity_commitment": "unspecified",
+          "stimulus_commitment": "unspecified",
+          "experiencer": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "N",
+              "AO",
+              "R",
+              "AE"
+            ],
+            "instance_code": null
+          },
+          "runtime_state": 1
+        },
+        "speech_act": "assertion",
+        "scopes": [],
+        "runtime_state": 1,
+        "outcome_scope": "governed_by_relation_and_matrix_scope"
+      },
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-pain-stimulus-audio-6IJiEm/pain-2.wav",
+      "checksum": "verified"
+    }
+  ],
+  "channelResults": [
+    {
+      "channel": "gain_and_noise",
+      "status": "meaning_recovered"
+    },
+    {
+      "channel": "speed_plus_two_percent",
+      "status": "meaning_recovered"
+    },
+    {
+      "channel": "short_weak_echo",
+      "status": "meaning_recovered"
+    },
+    {
+      "channel": "dropout",
+      "status": "rejected"
+    }
+  ]
+}
