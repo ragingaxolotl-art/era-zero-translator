@@ -1,3 +1,4 @@
+import {parseNamedSentence} from '../pages/sentences.mjs';
 import {drinkingPlan} from '../pages/drinking_sentences.mjs';
 import {objectDesirePlan,composeObjectDesire} from '../pages/object_desire.mjs';
 import {parseFoundationSentence} from '../pages/foundation_sentences.mjs';
@@ -11,7 +12,7 @@ const elements=Object.fromEntries(['sourceInput','output','results','resolutionP
 const input='Nora prefers tea to coffee.';elements.sourceInput.value=input;
 const state={mode:'general',data:{},resolution:{old:true},wordSelections:new Map()};
 let calls=0,shown=null,errors=[];
-const context=vm.createContext({drinkingPlan,objectDesirePlan,composeObjectDesire,parseFoundationSentence,foundationPronounPlan:()=>null,state,$:id=>elements[id],document:{createElement:element},fetch:async()=>({ok:true,json:async()=>({records:['candidate']})}),sentenceTemplate:()=>{},composeFoundationSentence:async(...args)=>{calls++;assert.equal(args[4].allowDraft,true);return {status:'candidate_translation'}},showResolution:async r=>{shown=r},showError:e=>errors.push(e)});
+const context=vm.createContext({parseNamedSentence,drinkingPlan,objectDesirePlan,composeObjectDesire,parseFoundationSentence,foundationPronounPlan:()=>null,state,$:id=>elements[id],document:{createElement:element},fetch:async()=>({ok:true,json:async()=>({records:['candidate']})}),sentenceTemplate:()=>{},composeFoundationSentence:async(...args)=>{calls++;assert.equal(args[4].allowDraft,true);return {status:'candidate_translation'}},showResolution:async r=>{shown=r},showError:e=>errors.push(e)});
 vm.runInContext(handler+';showFoundationPreview('+JSON.stringify(input)+');',context);
 assert.equal(state.resolution,null);assert.equal(calls,0);
 const button=elements.candidateList.children.at(-1).children[1];
@@ -79,3 +80,16 @@ console.log('PASS object desire UI requires outcome, composes real scoped meanin
 
 let routed;context.showDrinkingPreview=(input,options)=>routed={input,options};elements.sourceInput.value='Nora wants tea.';context.showFoundationPreview(elements.sourceInput.value);const routeCard=elements.candidateList.children.at(-1);routeCard.children[1].children[0].value='Nora drinks tea.';await routeCard.children.at(-1).click();assert.equal(routed.input,'Nora wants tea.');assert.equal(routed.options.clarification,'Nora drinks tea.');assert.equal(routed.options.desired,true);
 console.log('PASS foundation clarification routes explicitly supplied drinking to material/viewpoint selection.');
+
+context.fetch=async()=>({ok:true,json:async()=>registry});elements.sourceInput.value=objectInput;shown=null;errors=[];context.showFoundationPreview(objectInput);
+const deliveryCard=elements.candidateList.children.at(-1),deliveryOutcome=deliveryCard.children[1].children[0],deliveryChoice=deliveryCard.children[2].children[0],viewpointChoice=deliveryCard.children[3].children[0],deliveryButton=deliveryCard.children.at(-1);
+assert.equal(deliveryCard.children[2].hidden,true);
+deliveryOutcome.value='Eli carries the tea to Nora. [0]';deliveryOutcome.input();assert.equal(deliveryCard.children[2].hidden,false);assert.equal(deliveryCard.children[3].hidden,false);
+await deliveryButton.click();assert.equal(shown,null);
+deliveryChoice.value='custody_delivery';await deliveryButton.click();assert.equal(shown,null);
+viewpointChoice.value='ongoing';errors=[];await deliveryButton.click();assert.equal(errors.length,0);assert(shown);
+const deliveryDecoded=await decodeFoundationSentenceMidi(midiFromFormal(shown.formal),authority.atoms,registry.records,{allowDraft:true}),deliveryContent=deliveryDecoded.meaning.arguments.content;
+assert.equal(deliveryDecoded.meaning.runtime_state,2);assert.equal(deliveryContent.proposition.runtime_state,0);assert.equal(deliveryContent.content_status,'intensional');assert.equal(deliveryContent.proposition.predicate.name,'completed_carrying_custody_delivery');assert.deepEqual(deliveryContent.proposition.scopes,[{operator:'aspect',aspect:'ongoing'}]);assert.equal((await verifyBundle(await createBundle(shown,objectInput))).vocabulary_status,'candidate');
+const keptDelivery=shown;let finishDelivery;context.fetch=()=>new Promise(resolve=>finishDelivery=resolve);const pendingDelivery=deliveryButton.click();viewpointChoice.value='bounded';finishDelivery({ok:true,json:async()=>registry});await pendingDelivery;assert.equal(shown,keptDelivery);
+deliveryOutcome.value='Eli has physical custody of the tea.';deliveryOutcome.input();assert.equal(deliveryChoice.value,'');assert.equal(viewpointChoice.value,'');assert.equal(deliveryCard.children[2].hidden,true);
+console.log('PASS desired delivery UI requires interpretation/viewpoint, preserves nested music and bundle, resets edited outcome choices and discards stale selection.');

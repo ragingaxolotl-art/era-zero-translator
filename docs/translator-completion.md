@@ -32,8 +32,12 @@ and negation combinations with Ruby parity, nine viewpoint selections, and a
 blind synthetic WAV recovery in the object-desire acoustic suite. Existing
 standalone delivery tests still pass. No roots or musical conventions changed.
 
-This does not yet support the ordinary `delivers` wording or a delivery-choice
-interface. The outcome audit retains that failed ordinary wording and separately
+The object-desire clarification interface now exposes explicit custody-delivery
+and (when needed) viewpoint selections for carrying-to outcomes. Editing the
+outcome clears both choices; pending results are discarded when a selection
+changes. Handler tests check complete nested MIDI recovery and draft bundle
+verification. This is not live-browser verification. The ordinary `delivers`
+wording remains unsupported. The outcome audit retains that failed ordinary wording and separately
 reports the explicitly selected carrying-delivery form. Physical recordings and
 the full completion gates remain outstanding.
 

@@ -770,10 +770,17 @@ function showFoundationPreview(input){
     fields.push({key:occurrence.key,field,label,number});
   }
   const parsed=pronouns?.parsed||parseFoundationSentence(input,{allowCognitive:true});
-  const objectPlan=objectDesirePlan(input);let desiredField,desiredLabel;
+  const objectPlan=objectDesirePlan(input);let desiredField,desiredLabel,deliveryChoice,deliveryViewpoint,deliveryLabel,deliveryViewpointLabel;
   if(objectPlan){
     desiredLabel=document.createElement('label');desiredLabel.textContent=`What is desired to happen concerning “${objectPlan.object}”?`;
     desiredField=document.createElement('input');desiredField.type='text';desiredField.value='';desiredField.placeholder='Write the intended outcome as a complete sentence';desiredLabel.append(desiredField);
+    deliveryLabel=document.createElement('label');deliveryLabel.textContent='Does this carrying event include handing the object over to the recipient?';
+    deliveryChoice=document.createElement('select');
+    for(const [value,title] of [['','Choose the intended meaning'],['custody_delivery','Yes: carrying arrival and transfer of physical custody in one event']]){const option=document.createElement('option');option.value=value;option.textContent=title;deliveryChoice.append(option);}deliveryChoice.value='';deliveryLabel.append(deliveryChoice);
+    deliveryViewpointLabel=document.createElement('label');deliveryViewpointLabel.textContent='How is the desired carrying event presented?';deliveryViewpoint=document.createElement('select');
+    for(const [value,title] of [['','Choose a viewpoint'],['bounded','One whole event'],['ongoing','An event in progress'],['habitual','A recurring practice']]){const option=document.createElement('option');option.value=value;option.textContent=title;deliveryViewpoint.append(option);}deliveryViewpoint.value='';deliveryViewpointLabel.append(deliveryViewpoint);
+    deliveryLabel.hidden=true;deliveryViewpointLabel.hidden=true;
+    desiredField.addEventListener('input',()=>{const plan=parseNamedSentence(desiredField.value.trim());deliveryLabel.hidden=!plan?.requiredDestination;deliveryViewpointLabel.hidden=!(plan?.requiredDestination&&plan.requiredViewpoint);deliveryChoice.value='';deliveryViewpoint.value='';});
     description.textContent='Specify the intended outcome. Wanting an object does not by itself mean drinking, owning, or possessing it. The outcome will be encoded as desired, without asserting that it happens. Unsupported outcomes will remain unresolved.';
   }
   const needsMass=parsed?.type==='preference'&&!parsed.propositionalAlternatives&&[parsed.target,parsed.standard].some(text=>/^[Tt]he (heavy|light) [a-z]+$/.test(text));
@@ -788,7 +795,7 @@ function showFoundationPreview(input){
   const current=()=>$('sourceInput').value.trim()===input&&state.mode!=='controlled'&&card.isConnected!==false;
   button.addEventListener('click',async()=>{
     if(!current()||(needsMass&&massChoice.value!=='contextual_mass'))return;
-    const bindings=readBindings(),mass=massChoice?.value,desired=desiredField?.value.trim(),snapshot=JSON.stringify(bindings),unchanged=()=>current()&&massChoice?.value===mass&&desiredField?.value.trim()===desired&&JSON.stringify(readBindings())===snapshot;
+    const bindings=readBindings(),mass=massChoice?.value,desired=desiredField?.value.trim(),delivery=deliveryChoice?.value,viewpoint=deliveryViewpoint?.value,snapshot=JSON.stringify(bindings),unchanged=()=>current()&&massChoice?.value===mass&&desiredField?.value.trim()===desired&&deliveryChoice?.value===delivery&&deliveryViewpoint?.value===viewpoint&&JSON.stringify(readBindings())===snapshot;
     button.disabled=true;
     try{
       if(objectPlan&&drinkingPlan(desired)){if(unchanged())showDrinkingPreview(input,{desired:true,clarification:desired});return;}
@@ -796,13 +803,13 @@ function showFoundationPreview(input){
       if(!response.ok)throw new Error('Draft vocabulary could not be loaded.');
       const registry=await response.json();
       if(!unchanged())return;
-      const composed=objectPlan?await composeObjectDesire(input,state.data,registry.records,sentenceTemplate,{allowDraft:true,desiredProposition:desired}):await composeFoundationSentence(input,state.data,registry.records,sentenceTemplate,{allowDraft:true,allowCognitive:true,...(needsMass?{contextualMassModifiers:true}:{}),...(bindings?{bindings}:{})});
+      const composed=objectPlan?await composeObjectDesire(input,state.data,registry.records,sentenceTemplate,{allowDraft:true,desiredProposition:desired,...(delivery?{desiredDelivery:{destination:delivery,...(viewpoint?{viewpoint}:{})}}:{})}):await composeFoundationSentence(input,state.data,registry.records,sentenceTemplate,{allowDraft:true,allowCognitive:true,...(needsMass?{contextualMassModifiers:true}:{}),...(bindings?{bindings}:{})});
       if(!unchanged())return;
       state.resolution=composed;$('results').classList.add('hidden');
       await showResolution(composed,{definition:'Draft translation — vocabulary and sounds are under review.'});
     }catch(error){if(unchanged())showError(error)}finally{button.disabled=needsMass&&massChoice.value!=='contextual_mass'}
   });
-  card.append(description,...fields.map(f=>f.label),...(massLabel?[massLabel]:[]),...(desiredLabel?[desiredLabel]:[]),button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+  card.append(description,...fields.map(f=>f.label),...(massLabel?[massLabel]:[]),...(desiredLabel?[desiredLabel,deliveryLabel,deliveryViewpointLabel]:[]),button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
 }
 function showFutureInterpretation(input){
   state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];
