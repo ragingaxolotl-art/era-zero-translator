@@ -138,3 +138,23 @@ exported MIDI meaning, scheduled playback and stale-result guards. The existing
 curiosity preview tests still pass. This is not live browser layout/listening
 validation, and the playback button does not yet generate calibrated transport
 WAVs. Generic pain readings and treatment/comparison composition remain open.
+
+
+## Stimulus relation semantic prerequisite
+
+`pages/pain_stimulus.mjs` now provides a draft, typed composition of a stimulus
+reference and the existing pain-meaning document. Callers must choose actual
+causal contribution, expected outcome or contextual disposition. These meanings
+are explicit conventions: the mere cause-role marker or WRN/REP roots do not
+supply this general relation without their narrower harm/restoration commitments.
+The treatment remains the stimulus; the nested pain document retains Nora as
+experiencer. Outcome content is governed by relation and matrix scope and is not
+an independent assertion, especially under questions, negation or expectation.
+Outer relation runtime and nested pain runtime remain separate.
+
+Thirty-six authored relation × speech-act × negation × runtime documents preserve
+these distinctions and reject rehashed independent-assertion corruption. This
+checks representation/validation, not empirical causality or complete semantic
+adequacy. No English parser, music encoding/inverse, UI, actual/nonactual model
+proof or audio tests exist for this relation yet. Intensity comparison and the
+original painful-treatment preference acceptance remain open.
