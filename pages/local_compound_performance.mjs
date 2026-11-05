@@ -21,8 +21,10 @@ export async function prepareLocalCompoundPerformance(id,registry,authority,bind
   const nodes=[occurrence];
   if(node.kind==='canonical_compound'){
    const entries=bound.bindings.filter(b=>same(b.path,node.path));
+   const argumentsByReference=new Map();
    occurrence.compound_bindings=entries.map((b,i)=>{
-    const argument_id=`argument${i}`;nodes.push({...b.reference,node_id:argument_id});return {slot_path:b.slot_path,role:b.role,argument_id};
+    const identity=JSON.stringify(b.reference);let argument_id=argumentsByReference.get(identity);
+    if(!argument_id){argument_id=`argument${i}`;argumentsByReference.set(identity,argument_id);nodes.push({...b.reference,node_id:argument_id});}return {slot_path:b.slot_path,role:b.role,argument_id};
    });
   }
   const events=await renderLexicalOccurrences({nodes,edges:[]},authority,{anchor});

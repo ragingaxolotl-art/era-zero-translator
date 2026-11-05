@@ -2036,3 +2036,16 @@ auxiliary equivalents, cover irregular spelling, and reject wrong agreement,
 incomplete form records and ambiguous tense (such as “I put”). Ambiguity still
 needs a dedicated clarification UI. Builder syntax, registry and English-control
 regressions pass; live-browser validation remains unavailable.
+
+### Canonical dependency reuse regression
+
+The initial 11 local suites passed at revision 167269e (recorded in
+`reports/local_compound_regression.json`). A broader canonical-dependency test then
+exposed a real rendering failure: equal references assigned to same-argument slots
+were emitted under different argument node IDs. Local performance preparation now
+reuses one argument occurrence for an identical validated reference within a
+canonical compound. All 63 approved compounds pass as local heads, with fixture
+participants respecting canonical same/distinct constraints. This test demonstrates
+reuse/renderability, not validity of arbitrary user-authored meanings. A fixture
+using numeric name suffixes also showed that the existing name encoder can collapse
+those labels; numeric-name preservation needs separate investigation.
