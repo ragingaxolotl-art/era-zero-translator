@@ -220,7 +220,7 @@ export function storyReading(input, authority, {answers={}, preferences=[]}={}) 
     if(args.length===2&&args[0].entity===args[1].entity && !['MIN:011','MIN:110'].includes(reading.root))return null;
     lastSubject=sub;
     events.push({predicate:reading.root,arguments:args,scopes:reading.scopes,quantifier:c.q,negated_quantifier:c.outsideNegation});
-    if(c.inherited)notes.push(entities[sub].label+' also performs the next action.');
+    if(c.inherited)notes.push('The next action has the same subject (“'+entities[sub].label+'”).');
     if(c.q)notes.push(c.outsideNegation?'At least one member did not perform this action. Zero performers is possible.':
       c.q==='none'?'Zero members performed this action.':'Every member performed this action.');
     if(reading.sense?.generalization)notes.push(reading.sense.generalization);

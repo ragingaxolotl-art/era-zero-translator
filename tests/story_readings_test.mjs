@@ -44,6 +44,10 @@ for(const [text,edges] of [
 ])assert.deepEqual((await hear(text)).heard.relations.map(r=>r.events),edges);
 const together=(await hear('Aru found a cracked gate and repaired it.')).heard;
 assert.deepEqual(together.relations,[{kind:'and',events:[0,1]}]);assert.equal(together.events[1].arguments[0].entity,0);
+for(const subject of ['I','We','Aru']){
+ const plan=read(subject+' restored the resistance and waited.');
+ assert(plan.notes.includes('The next action has the same subject (“'+subject+'”).'));
+}
 for(const action of ['rang','vibrated','recurred']){
  const notAll=(await hear('Not all the bells '+action+'.')).heard,none=(await hear('None of the bells '+action+'.')).heard;
  assert.deepEqual(notAll.events[0].quantifier,'all');assert.equal(notAll.events[0].negated_quantifier,true);
