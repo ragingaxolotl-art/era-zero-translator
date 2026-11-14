@@ -4,21 +4,13 @@ Public browser release: **https://ragingaxolotl-art.github.io/era-zero-translato
 
 This repository contains both the canonical Ruby application/API and a deterministic browser-native GitHub Pages release.
 
-## Translator-completion draft
+## Translate a sentence or build a word
 
-The `feat/translator-completion` draft has 324 roots, 43 compounds and 451 indexed
-senses. It composes selected ordinary sentences and nested participant bindings,
-including carrying, physical custody, acquisition, transfer and an explicit
-carrying-mediated custody-delivery reading, while preserving
-independent 0/1/2 states. The current regression suite has 88 passing checks.
-These counts do not establish full English coverage. The original completion gates remain open; see the [completion plan](docs/translator-completion.md).
-This draft has not been merged or deployed. Live browser verification of the
-latest transfer/delivery additions remains pending because browser use was disabled.
+Try “I swim” or “Pip carries the heavy box to Ada” in the browser. Choose the intended reading and play the resulting music. For an unfamiliar action or quality, use **Find or build this meaning**. You can save a word, reuse it inside another compound, and translate your original sentence with it. The first release includes 324 roots, 63 approved compounds and 471 indexed senses. It supports specific English constructions and shows gaps when it cannot preserve the whole sentence. [Compound builder](https://ragingaxolotl-art.github.io/era-zero-translator/compound-builder.html) · [Examples, verification, and limits](docs/first-release-status.md)
 
 ## Historical hosted-release baseline
 
-The following describes the earlier release baseline, not the current draft or a
-fresh verification of the public deployment.
+The following records how the earlier dictionary-based workbench operated. The first-release guide above describes the current sentence composer.
 
 The Pages build runs entirely in the browser. Its default interface accepts ordinary English sentences—no state brackets or controlled syntax required—and infers inflections, questions, commands, negation, and the ordinary positive state. Genuine polysemy is surfaced for the user instead of guessed. It includes all 437 indexed senses and precomputed canonical resolution artifacts for all 324 atoms and every closed approved compound: 352 direct targets × 3 runtime states × 5 speech acts = 5,280 exact variants. Semantic IR, EZF-1, SVG, MIDI, reference-tone preview, and integrity-checked EZB-1 exchange are available without a server.
 

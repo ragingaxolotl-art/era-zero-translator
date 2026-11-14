@@ -37,3 +37,49 @@ const tenseCard=element(),tenseErrors=[];await mountLocalEnglishControls(tenseCa
 tenseCard.children[0].children[0].value='Nora';tenseCard.children[0].children[1].value='singular';tenseCard.children[1].children[0].value='this tea';
 const timeChoice=tenseCard.children[2].children[0],resolve=tenseCard.children[3],resolved=tenseCard.children[4];await resolve.click();assert.match(tenseErrors.at(-1).message,/Choose present or past/);timeChoice.value='past';timeChoice.change();await resolve.click();resolved.children[3].children[0].value='actor';resolved.children[3].children[0].change();resolved.children[4].children[0].value='target';resolved.children[4].children[0].change();await resolved.children.at(-2).click();resolved.children.at(-1).children[1].click();assert.equal(JSON.parse(await downloads.at(-1).text()).pronoun_resolution.tense_interpretation,'past');
 console.log('PASS pronoun-tense UI requires selection and exports past interpretation with resolved participants.');
+const activity = a.compounds.find(record => record.display_title === 'ongoing bodily locomotor activity');
+const strideRegistry = await addLocalCompound(registry, {
+ label: 'patternstride', definition: 'Move in an internally generated body pattern.',
+ part_of_speech: 'verb', english_forms: {third_person: 'patternstrides', past: 'patternstrode'},
+ components: [{target_id: activity.compound_id, relation: 'head'}, {target_id:'CRE:000', relation:'qualifies'}],
+ roles: [{role:'actor', definition:'The moving body.'}],
+ role_links: [{outer_role:'actor',component_path:[0],role:'actor',slot_path:['s-actor']}]
+}, a);
+const strideCard=element();
+await mountLocalEnglishControls(strideCard,'Kira patternstrode. [0]',strideRegistry,a,{
+ document:{createElement:element},download:blob=>downloads.push(blob),onError:error=>{throw error}
+});
+assert.equal(strideCard.children[3].children[0].value,'actor');
+await strideCard.children.at(-2).click();
+strideCard.children.at(-1).children[1].click();
+const strideMeaning=JSON.parse(await downloads.at(-1).text()).meaning;
+assert.equal(strideMeaning.runtime_state,0);
+assert.deepEqual(strideMeaning.scopes,[{operator:'time',relation:'before_speech'}]);
+assert.equal(strideMeaning.bindings.length,2);
+assert(strideMeaning.bindings.every(binding=>binding.reference.name.normalized_label==='kira'));
+console.log('PASS one sentence subject supplies both linked actor roles without a duplicate input.');
+
+const openRegistry=await addLocalCompound(registry,{
+ label:'open',definition:'Make a previously unavailable communication path usable as a shared channel.',
+ english_forms:{third_person:'opens',past:'opened'},part_of_speech:'verb',
+ components:[{target_id:'ORI:110',relation:'head'},{target_id:'CON:021',relation:'qualifies'}],
+ roles:[{role:'actor',definition:'The participant that makes the channel available.'},{role:'target',definition:'The path.'}]
+},a);
+const openCard=element();
+await mountLocalEnglishControls(openCard,'The routine opened the path.',openRegistry,a,{
+ document:{createElement:element},download:blob=>downloads.push(blob),onError:error=>{throw error}
+});
+for(const [index,role] of [[3,'actor'],[4,'target']]){
+ const select=openCard.children[index].children[0];
+ select.value=role;
+ select.change();
+}
+await openCard.children.at(-2).click();
+openCard.children.at(-1).children[1].click();
+const opened=JSON.parse(await downloads.at(-1).text());
+assert.deepEqual(opened.meaning.bindings.map(b=>[b.role,b.reference.reference_mode,b.reference.name.normalized_label]),[
+ ['actor','definite_nominal','routine'],['target','definite_nominal','path']
+]);
+assert.deepEqual(opened.meaning.scopes,[{operator:'time',relation:'before_speech'}]);
+assert.equal(opened.source_input,'The routine opened the path.');
+console.log('PASS a story sentence keeps both definite noun references and the past tense of a saved verb.');

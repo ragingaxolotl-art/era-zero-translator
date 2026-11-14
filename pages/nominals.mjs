@@ -2,7 +2,12 @@ const PLURALS={lamps:'lamp',lanterns:'lantern',shelves:'shelf',sensors:'sensor',
 const SINGULARS=new Set(Object.values(PLURALS));
 const WORDS={zero:'0',one:'1',two:'2',three:'3',four:'4',five:'5',six:'6',seven:'7',eight:'8',nine:'9',ten:'10'};
 // A definite single-word noun labels a referent; it does not need a semantic dictionary entry.
-const NON_HEADS=new Set(['and','or','then','not','is','are','was','were','has','have','to','from','of','for','with','in','on','at','the','a','an','this','that','these','those','he','she','it','they','we','you','me','him','her','them','us','heavy','light','hot','cold','happy','sad','hungry','thirsty','tired','curious','bright','dim','rough','smooth','broken','damaged','active','conscious','dormant']);
+const PROPERTY_WORDS = new Set('heavy light hot cold happy sad hungry thirsty tired curious bright dim rough smooth broken damaged active conscious dormant'.split(' '));
+export function isAttributiveProperty(word, nextWord) {
+ if (!nextWord || NON_HEADS.has(nextWord)) return false;
+ return PROPERTY_WORDS.has(word) || (SINGULARS.has(nextWord) && /(?:ous|ful|less|ive|able|ible|ish|ary|ory)$/.test(word));
+}
+const NON_HEADS=new Set(['and','or','then','not','is','are','was','were','has','have','to','from','of','for','with','in','on','at','the','a','an','this','that','these','those','he','she','it','they','we','you','me','him','her','them','us',...PROPERTY_WORDS]);
 const headPattern='(?!(?:'+[...NON_HEADS].join('|')+')\\b)[a-z]+(?:-[a-z]+)*';
 const demonstrativeHeadPattern='(?!(?:'+Object.keys(PLURALS).join('|')+')\\b)(?![a-z]+-)'+headPattern;
 export const NOMINAL_PATTERN=`(?:[Tt]he (?:${headPattern})|(?:[Tt]his|[Tt]hat) (?:${demonstrativeHeadPattern})|(?:[Ee]xactly|[Aa]t least|[Aa]t most) (?:(?:[0-9]+|${Object.keys(WORDS).join('|')}) (?:${Object.keys(PLURALS).join('|')})|(?:0*1|one) (?:${[...SINGULARS].join('|')})))`;

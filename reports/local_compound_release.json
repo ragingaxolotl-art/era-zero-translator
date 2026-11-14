@@ -1,6 +1,6 @@
 {
   "scope": "Local compound release gate: static module availability and targeted Node tests, not live-browser or unrestricted-English proof",
-  "checked_modules": 133,
+  "checked_modules": 134,
   "results": [
     {
       "test": "local_builder_authoring_test.mjs",
@@ -90,7 +90,7 @@
       "test": "local_english_controls_test.mjs",
       "passed": true,
       "exit_code": 0,
-      "output": "PASS saved-English controls export full sentence meaning and reject stale source downloads.\nPASS verb preview requires distinct role choices, avoids duplicate participant prompts and invalidates exports after role edits.\nPASS ambiguous verb UI offers present/past and exports the chosen interpretation.\nPASS pronoun UI requires explicit number, preserves reference provenance, rejects unsupported groups and blocks stale exports.\nPASS English preview groups canonical shared actors without merging the outer bearer.\nPASS pronoun-tense UI requires selection and exports past interpretation with resolved participants.\n"
+      "output": "PASS saved-English controls export full sentence meaning and reject stale source downloads.\nPASS verb preview requires distinct role choices, avoids duplicate participant prompts and invalidates exports after role edits.\nPASS ambiguous verb UI offers present/past and exports the chosen interpretation.\nPASS pronoun UI requires explicit number, preserves reference provenance, rejects unsupported groups and blocks stale exports.\nPASS English preview groups canonical shared actors without merging the outer bearer.\nPASS pronoun-tense UI requires selection and exports past interpretation with resolved participants.\nPASS one sentence subject supplies both linked actor roles without a duplicate input.\nPASS a story sentence keeps both definite noun references and the past tense of a saved verb.\n"
     },
     {
       "test": "local_participant_groups_test.mjs",

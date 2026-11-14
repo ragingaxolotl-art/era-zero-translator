@@ -6,7 +6,7 @@ import {loadLocalCompounds,saveLocalCompounds,addLocalCompound,importLocalCompou
 import {ROLE_ORDER} from './roles.mjs';
 const $=id=>document.getElementById(id),node=(tag,text)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e;};
 let authority,registry,parts=[],busy=false,readRoleLinks=null,roleLinkSnapshot=null;
-const player=createLocalCompoundPlayer();window.addEventListener('pagehide',()=>player.stop());
+const player=createLocalCompoundPlayer({onStatus:text=>status(text)});window.addEventListener('pagehide',()=>player.stop());
 const status=text=>$('status').textContent=text;
 const button=(text,action)=>{const b=node('button',text);b.type='button';b.addEventListener('click',action);return b;};
 function catalog(){return [...authority.atoms.map(a=>({id:a.canonical_id,label:a.title,meaning:a.core_definition})),...authority.compounds.filter(c=>c.status==='approved').map(c=>({id:c.compound_id,label:c.display_title,meaning:c.invariant_definition})),...registry.entries.map(e=>({id:e.compound_id,label:e.definition.label,meaning:e.definition.definition}))];}
@@ -40,4 +40,13 @@ $('save').addEventListener('click',async()=>{
 });
 $('export').addEventListener('click',()=>{const url=URL.createObjectURL(new Blob([JSON.stringify(registry,null,2)],{type:'application/json'})),a=node('a');a.href=url;a.download='era-zero-my-compounds.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
 $('import').addEventListener('change',async()=>{if(busy||!registry)return;busy=true;try{const file=$('import').files[0];if(!file)return;const incoming=await importLocalCompounds(await file.text(),authority),next=await mergeLocalCompounds(registry,incoming,authority);registry=await saveLocalCompounds(localStorage,next,authority);renderLibrary();status('Definitions imported. Existing words were preserved.');}catch(e){status(e.message);}finally{busy=false;}});
-try{const response=await fetch('./data/index.json');if(!response.ok)throw new Error('Could not load dictionary.');authority=await response.json();registry=await loadLocalCompounds(localStorage,authority);renderLibrary();$('save').disabled=false;status('Ready. Search existing meanings to begin.');}catch(e){status(`Unable to open the builder: ${e.message}`);}
+try{const response=await fetch('./data/index.json');if(!response.ok)throw new Error('Could not load dictionary.');authority=await response.json();registry=await loadLocalCompounds(localStorage,authority);renderLibrary();$('save').disabled=false;status('Ready. Search existing meanings to begin.');
+ const returning=window.location?.hash;
+ if(returning){
+  const query=new URLSearchParams(returning.slice(1)),word=query.get('word'),type=query.get('type');
+  if(word&&['verb','adjective','adverb'].includes(type)){
+   $('search').value=word;$('partOfSpeech').value=type;renderSearch();
+   $('returnSentence').hidden=false;
+   status('Look for the intended meaning of “'+word+'”. To build a new word, choose its parts and enter its base spelling.');
+  }
+ }}catch(e){status(`Unable to open the builder: ${e.message}`);}

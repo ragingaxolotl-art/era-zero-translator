@@ -6,8 +6,8 @@ Status: **PASS**
 - Checks failed: **0**
 - Phrase cases: **69**
 - Prevalidated Cyber Pet intents: **13**
-- Canonically renderable generalized/direct predicates: **50**
-- Honest vocabulary-gap phrases: **13**
+- Canonically renderable generalized/direct predicates: **52**
+- Honest vocabulary-gap phrases: **11**
 - Phrases blocked by unknown semantic content: **3**
 - Phrases preserving one or more noun labels: **25**
 - Canonical root changes: **0**
@@ -16,45 +16,45 @@ Status: **PASS**
 
 | Phrase | Primary route | Word handling | Automatic | Result |
 |---|---|---|---:|---|
-| The programmer found us. | MIN:110 | the:function_word, programmer:labeled_entity, found:canonical, us:participant_reference | yes | PASS |
-| Pip found the toy. | MIN:110 | pip:phonemic_label, found:canonical, the:function_word, toy:documented_gap | yes | PASS |
-| Find the missing pet. | MIN:110 | find:canonical, the:function_word, missing:canonical, pet:phonemic_label | yes | PASS |
-| Search for Zibble. | MIN:211 | search:canonical, for:function_word, zibble:phonemic_label | yes | PASS |
-| I see you. | MIN:011 | i:participant_reference, see:canonical, you:participant_reference | yes | PASS |
-| I noticed Pip. | MIN:011 | i:participant_reference, noticed:canonical, pip:phonemic_label | yes | PASS |
-| I need food. | ORI:211 | i:participant_reference, need:canonical, food:documented_gap | yes | PASS |
-| The pet needs rest. | ORI:211 | the:function_word, pet:phonemic_label, needs:canonical, rest:canonical | yes | PASS |
-| I am hungry. | ORI:211 | i:participant_reference, am:function_word, hungry:canonical | yes | PASS |
-| I am thirsty. | ORI:211 | i:participant_reference, am:function_word, thirsty:canonical | yes | PASS |
-| I am tired. | ORI:211 | i:participant_reference, am:function_word, tired:canonical | yes | PASS |
-| Please help me. | LIF:211 | please:function_word, help:canonical, me:participant_reference | yes | PASS |
-| Feed Pip. | LIF:211 | feed:canonical, pip:phonemic_label | yes | PASS |
-| Care for the pet. | LIF:211 | care:canonical, for:function_word, the:function_word, pet:phonemic_label | yes | PASS |
-| Support your friend. | LIF:211 | support:canonical, your:participant_reference, friend:documented_gap | yes | PASS |
-| I am resting. | REP:101 | i:participant_reference, am:function_word, resting:canonical | yes | PASS |
-| I am recovering. | REP:101 | i:participant_reference, am:function_word, recovering:canonical | yes | PASS |
-| My injury is healing. | REP:101 | my:participant_reference, injury:canonical, is:function_word, healing:canonical | yes | PASS |
-| Clean the pet. | REP:111 | clean:canonical, the:function_word, pet:phonemic_label | yes | PASS |
-| Treat the injury. | REP:111 | treat:canonical, the:function_word, injury:canonical | yes | PASS |
-| I am asleep. | LIF:002 | i:participant_reference, am:function_word, asleep:canonical | yes | PASS |
-| I am awake. | LIF:001 | i:participant_reference, am:function_word, awake:canonical | yes | PASS |
+| The programmer found us. | MIN:110 | the:function_word, programmer:labeled_entity, found:canonical, us:participant_reference | no | PASS |
+| Pip found the toy. | MIN:110 | pip:phonemic_label, found:canonical, the:function_word, toy:documented_gap | no | PASS |
+| Find the missing pet. | MIN:110 | find:canonical, the:function_word, missing:canonical, pet:phonemic_label | no | PASS |
+| Search for Zibble. | MIN:211 | search:canonical, for:function_word, zibble:phonemic_label | no | PASS |
+| I see you. | MIN:011 | i:participant_reference, see:canonical, you:participant_reference | no | PASS |
+| I noticed Pip. | MIN:011 | i:participant_reference, noticed:canonical, pip:phonemic_label | no | PASS |
+| I need food. | ORI:211 | i:participant_reference, need:canonical, food:documented_gap | no | PASS |
+| The pet needs rest. | ORI:211 | the:function_word, pet:phonemic_label, needs:canonical, rest:canonical | no | PASS |
+| I am hungry. | ORI:211 | i:participant_reference, am:function_word, hungry:canonical | no | PASS |
+| I am thirsty. | ORI:211 | i:participant_reference, am:function_word, thirsty:canonical | no | PASS |
+| I am tired. | ORI:211 | i:participant_reference, am:function_word, tired:canonical | no | PASS |
+| Please help me. | LIF:211 | please:function_word, help:canonical, me:participant_reference | no | PASS |
+| Feed Pip. | LIF:211 | feed:canonical, pip:phonemic_label | no | PASS |
+| Care for the pet. | LIF:211 | care:canonical, for:function_word, the:function_word, pet:phonemic_label | no | PASS |
+| Support your friend. | LIF:211 | support:canonical, your:participant_reference, friend:documented_gap | no | PASS |
+| I am resting. | REP:101 | i:participant_reference, am:function_word, resting:canonical | no | PASS |
+| I am recovering. | REP:101 | i:participant_reference, am:function_word, recovering:canonical | no | PASS |
+| My injury is healing. | REP:101 | my:participant_reference, injury:canonical, is:function_word, healing:canonical | no | PASS |
+| Clean the pet. | REP:111 | clean:canonical, the:function_word, pet:phonemic_label | no | PASS |
+| Treat the injury. | REP:111 | treat:canonical, the:function_word, injury:canonical | no | PASS |
+| I am asleep. | LIF:002 | i:participant_reference, am:function_word, asleep:canonical | no | PASS |
+| I am awake. | LIF:001 | i:participant_reference, am:function_word, awake:canonical | no | PASS |
 | Wake up. | LIF:101 | wake:canonical, up:phonemic_label | no | PASS |
 | Wake the pet. | LIF:111 | wake:canonical, the:function_word, pet:phonemic_label | no | PASS |
-| I am well. | REP:001 | i:participant_reference, am:function_word, well:canonical | yes | PASS |
-| The pet recovered. | REP:001 | the:function_word, pet:phonemic_label, recovered:canonical | yes | PASS |
-| The pet is sick. | WRN:001 | the:function_word, pet:phonemic_label, is:function_word, sick:canonical | yes | PASS |
-| I am hurt. | CMP:f1abd5eccdf06d92d5690a32 | i:participant_reference, am:function_word, hurt:canonical | yes | PASS |
-| The pet is injured. | CMP:f1abd5eccdf06d92d5690a32 | the:function_word, pet:phonemic_label, is:function_word, injured:canonical | yes | PASS |
-| Pip is lost. | MOV:212 | pip:phonemic_label, is:function_word, lost:canonical | yes | PASS |
+| I am well. | REP:001 | i:participant_reference, am:function_word, well:canonical | no | PASS |
+| The pet recovered. | REP:001 | the:function_word, pet:phonemic_label, recovered:canonical | no | PASS |
+| The pet is sick. | WRN:001 | the:function_word, pet:phonemic_label, is:function_word, sick:canonical | no | PASS |
+| I am hurt. | CMP:f1abd5eccdf06d92d5690a32 | i:participant_reference, am:function_word, hurt:canonical | no | PASS |
+| The pet is injured. | CMP:f1abd5eccdf06d92d5690a32 | the:function_word, pet:phonemic_label, is:function_word, injured:canonical | no | PASS |
+| Pip is lost. | MOV:212 | pip:phonemic_label, is:function_word, lost:canonical | no | PASS |
 | Hello. | CON:100 | hello:canonical | yes | PASS |
-| Thank you. | CON:100 | thank:canonical, you:participant_reference | yes | PASS |
-| Go home. | MOV:121 | go:canonical, home:documented_gap | yes | PASS |
-| Leave now. | MOV:101 | leave:canonical, now:function_word | yes | PASS |
-| Approach the bridge. | MOV:111 | approach:canonical, the:function_word, bridge:phonemic_label | yes | PASS |
-| We arrived. | MOV:110 | we:participant_reference, arrived:canonical | yes | PASS |
-| Danger is near. | MOV:210 | danger:canonical, is:function_word, near:canonical | yes | PASS |
-| I am happy. | positive_affect | i:participant_reference, am:function_word, happy:documented_gap | no | PASS |
-| I am sad. | negative_affect | i:participant_reference, am:function_word, sad:documented_gap | no | PASS |
+| Thank you. | CON:100 | thank:canonical, you:participant_reference | no | PASS |
+| Go home. | MOV:121 | go:canonical, home:documented_gap | no | PASS |
+| Leave now. | MOV:101 | leave:canonical, now:function_word | no | PASS |
+| Approach the bridge. | MOV:111 | approach:canonical, the:function_word, bridge:phonemic_label | no | PASS |
+| We arrived. | MOV:110 | we:participant_reference, arrived:canonical | no | PASS |
+| Danger is near. | MOV:210 | danger:canonical, is:function_word, near:canonical | no | PASS |
+| I am happy. | CMP:c58b38d03fab27880ac3e1f0 | i:participant_reference, am:function_word, happy:canonical | no | PASS |
+| I am sad. | CMP:d54499d2989fa97349e8e23d | i:participant_reference, am:function_word, sad:canonical | no | PASS |
 | I am angry. | anger_affect | i:participant_reference, am:function_word, angry:documented_gap | no | PASS |
 | I am scared. | fear_affect | i:participant_reference, am:function_word, scared:documented_gap | no | PASS |
 | I love you. | affection_or_preference | i:participant_reference, love:canonical, you:participant_reference | no | PASS |
@@ -68,23 +68,23 @@ Status: **PASS**
 | Throw the ball. | game_object_referent | throw:unresolved_semantic, the:function_word, ball:documented_gap | no | PASS |
 | I am glarpy. | none | i:participant_reference, am:function_word, glarpy:unresolved_semantic | no | PASS |
 | Zibble frobnates quux. | none | zibble:phonemic_label, frobnates:unresolved_semantic, quux:phonemic_label | no | PASS |
-| The programmer is here. | MOV:001 | the:function_word, programmer:labeled_entity, is:function_word, here:canonical | yes | PASS |
-| Alice helps Zibble. | LIF:211 | alice:phonemic_label, helps:canonical, zibble:phonemic_label | yes | PASS |
-| The developer discovered Pip. | MIN:110 | the:function_word, developer:labeled_entity, discovered:canonical, pip:phonemic_label | yes | PASS |
-| The pet requires medicine. | ORI:211 | the:function_word, pet:phonemic_label, requires:canonical, medicine:documented_gap | yes | PASS |
-| Rest now. | REP:101 | rest:canonical, now:function_word | yes | PASS |
-| The pet is responsive. | LIF:001 | the:function_word, pet:phonemic_label, is:function_word, responsive:canonical | yes | PASS |
-| The pet is unwell. | WRN:001 | the:function_word, pet:phonemic_label, is:function_word, unwell:canonical | yes | PASS |
-| Goodbye. | CON:100 | goodbye:canonical | yes | PASS |
-| I need the file inside the folder. | ORI:211 | i:participant_reference, need:canonical, the:function_word, file:canonical, inside:canonical, the:function_word, folder:canonical | yes | PASS |
-| I need the file that is inside the folder. | ORI:211 | i:participant_reference, need:canonical, the:function_word, file:canonical, that:function_word, is:function_word, inside:canonical, the:function_word, folder:canonical | yes | PASS |
+| The programmer is here. | MOV:001 | the:function_word, programmer:labeled_entity, is:function_word, here:canonical | no | PASS |
+| Alice helps Zibble. | LIF:211 | alice:phonemic_label, helps:canonical, zibble:phonemic_label | no | PASS |
+| The developer discovered Pip. | MIN:110 | the:function_word, developer:labeled_entity, discovered:canonical, pip:phonemic_label | no | PASS |
+| The pet requires medicine. | ORI:211 | the:function_word, pet:phonemic_label, requires:canonical, medicine:documented_gap | no | PASS |
+| Rest now. | REP:101 | rest:canonical, now:function_word | no | PASS |
+| The pet is responsive. | LIF:001 | the:function_word, pet:phonemic_label, is:function_word, responsive:canonical | no | PASS |
+| The pet is unwell. | WRN:001 | the:function_word, pet:phonemic_label, is:function_word, unwell:canonical | no | PASS |
+| Goodbye. | CON:100 | goodbye:canonical | no | PASS |
+| I need the file inside the folder. | ORI:211 | i:participant_reference, need:canonical, the:function_word, file:canonical, inside:canonical, the:function_word, folder:canonical | no | PASS |
+| I need the file that is inside the folder. | ORI:211 | i:participant_reference, need:canonical, the:function_word, file:canonical, that:function_word, is:function_word, inside:canonical, the:function_word, folder:canonical | no | PASS |
 | I used the file. | instrumental_use_relation | i:participant_reference, used:structural, the:function_word, file:canonical | no | PASS |
 | Delete the file. | requested_information_deletion | delete:structural, the:function_word, file:canonical | no | PASS |
 | The files are being deleted. | active_information_deletion | the:function_word, files:canonical, are:function_word, being:function_word, deleted:structural | no | PASS |
 | The files were deleted. | completed_information_deletion | the:function_word, files:canonical, were:function_word, deleted:structural | no | PASS |
-| We need to migrate. | DAT:112 | we:participant_reference, need:canonical, to:function_word, migrate:canonical | yes | PASS |
-| The files are migrating. | DAT:111 | the:function_word, files:canonical, are:function_word, migrating:canonical | yes | PASS |
-| We migrated the files. | DAT:110 | we:participant_reference, migrated:canonical, the:function_word, files:canonical | yes | PASS |
+| We need to migrate. | DAT:112 | we:participant_reference, need:canonical, to:function_word, migrate:canonical | no | PASS |
+| The files are migrating. | DAT:111 | the:function_word, files:canonical, are:function_word, migrating:canonical | no | PASS |
+| We migrated the files. | DAT:110 | we:participant_reference, migrated:canonical, the:function_word, files:canonical | no | PASS |
 
 ## Interpretation boundary
 

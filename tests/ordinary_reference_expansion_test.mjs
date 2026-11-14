@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
-import {composeNamedSentence,parseNamedSentence} from '../pages/sentences.mjs';
+import {composeNamedSentence,parseNamedSentence,helpCareReading} from '../pages/sentences.mjs';
 import {parseNominal} from '../pages/nominals.mjs';
 import {midiFromFormal} from '../pages/engine.mjs';
 import {decodeStrictMusicMidi} from '../pages/strict_music_decoder.mjs';
@@ -36,3 +36,18 @@ assert.equal(parseNominal('the gyroscope').head,'gyroscope');
 const simple=await composeNamedSentence('Nora cares for Eli.',load('LIF:211'));assert.equal(decodeCareMidi(midiFromFormal(simple.formal),authority.atoms).target_coordination,null);
 const swapped=await composeNamedSentence('Eli cares for Nora and Orin.',load('LIF:211'));assert.notDeepEqual(decodeCareMidi(midiFromFormal(swapped.formal),authority.atoms).participants,decodeCareMidi(midiFromFormal(results[0].formal),authority.atoms).participants);
 console.log(`${results.length} ordinary-reference compositions match Ruby formal/MIDI; MIDI-only care inverse preserves coordinated targets, role changes and 0/1/2. Unlisted noun heads remain sound labels and adjective phrases are not swallowed.`);
+
+const careMusic=[];
+for(const text of ['Pip helps Ada.', 'Ada helps Pip.', 'Pip does not help Ada. [2]']){
+ const plan=helpCareReading(text);
+ assert.equal(plan.predicate,'LIF:211');
+ const result=await composeNamedSentence(plan.reading,load(plan.predicate));
+ careMusic.push(decodeCareMidi(midiFromFormal(result.formal),authority.atoms));
+}
+assert.notDeepEqual(careMusic[0].participants.caregiver.phonemes,careMusic[1].participants.caregiver.phonemes);
+assert.deepEqual(careMusic[0].participants.caregiver.phonemes,careMusic[1].participants.targets[0].phonemes);
+assert.deepEqual(careMusic[1].participants.caregiver.phonemes,careMusic[0].participants.targets[0].phonemes);
+assert.equal(careMusic[2].runtime_state,2);
+assert.deepEqual(careMusic[2].scopes,[{operator:'negation'}]);
+for(const text of ['Pip helps Ada tomorrow.','Pip help Ada.','They help Ada.','"Ada helps Pip" cares for Tam.'])assert.equal(helpCareReading(text),null);
+console.log('PASS the chosen active-care reading of help preserves exchanged participants, negation and runtime in MIDI.');

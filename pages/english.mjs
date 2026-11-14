@@ -1,3 +1,4 @@
+import {isAttributiveProperty} from './nominals.mjs';
 const STOPWORDS=new Set('a an the to of in on at for from with am is are was were be being been do does did i you he she it we they this that these those my your his her its our their please now just may might maybe could can would will shall should perhaps possibly probably'.split(' '));
 const DIRECT=new Set(['atom','compound']);
 const INHERENTLY_POLYSEMOUS=new Set(['know','have','exist','receive','send','share','change','return','run','home']);
@@ -121,6 +122,10 @@ function scoreSense(sense,input,inputTokens){
   if(!exact&&!surfaceMatch&&!lexical&&!hint)return null;
   let score=sense.plain_mapping?(exactLemma?1:exact?.72:surfaceMatch?(bestTokens.size===1?.72:.82):Math.min(.12+.28*ratio,.44)):(exact?1:surfaceMatch?(bestTokens.size===1?.78:.90):Math.min(.18+.34*ratio,.52));
   if(hint)score+=hint[2];
+  if(sense.sense_key==='canonical_compound_label'&&['happy felt mood','sad felt mood'].includes(sense.lemma)){
+    const mood=sense.lemma.split(' ')[0];
+    if(input.endsWith(' '+mood)&&/\b(?:am|is|are|was|were|feel|feels|felt) (?:not )?(?:happy|sad)$/.test(input))score=1;
+  }
   const cue=overlap(inputTokens,lexicalTokens((sense.selection_cues||[]).join(' '))).length;
   const definition=overlap(inputTokens,lexicalTokens(sense.definition||'')).length;
   score+=Math.min(cue*.025,.08)+Math.min(definition*.012,.07);
@@ -154,12 +159,14 @@ function plainMappedSenses(data){
 function unknownSemanticKind(words,index){
   const word=words[index],previous=words[index-1]||'',beforePrevious=words[index-2]||'',next=words[index+1]||'';
   if(PHRASAL_VERBS.has(`${word} ${next}`))return'verb';
-  if(['a','an','the','this','that','these','those','my','your','his','her','its','our','their'].includes(previous))return null;
+  if(word==='together'&&index>0)return'manner';
+  if(['a','an','the','this','that','these','those','my','your','his','her','its','our','their'].includes(previous))return isAttributiveProperty(word,next)?'descriptor':null;
   if(/(?:ed|ing)$/.test(word)||['do','does','did','can','could','will','would','should','may','might','must'].includes(previous)||(previous==='to'&&['want','wants','wanted','need','needs','needed','try','tries','tried','plan','plans','planned'].includes(beforePrevious)))return'verb';
   if(['am','is','are','was','were','be','being','been','feel','feels','felt','seem','seems','look','looks'].includes(previous))return'descriptor';
   if(index===0&&next&&['the','a','an','me','us','him','her','them','it'].includes(next))return'verb';
-  if(index===1&&PARTICIPANTS.has(previous)&&next)return'verb';
-  if(index>0&&next&&/(?:s|es)$/.test(word)&&!STOPWORDS.has(previous))return'verb';
+  if(index===1&&PARTICIPANTS.has(previous))return'verb';
+  const followsSubject = index===1 || (index===2 && ['the','this','that','a','an'].includes(words[0]));
+  if(index>0&&(next||followsSubject)&&/s$/.test(word)&&!STOPWORDS.has(previous))return'verb';
   if(/(?:ous|ful|less|ive|able|ible|ish|ary|ory)$/.test(word))return'descriptor';
   return null;
 }
@@ -174,7 +181,8 @@ function termCoverage(normalized,data,ranked,allSenses){
     const labels=authoritative.filter(match=>match.route==='label');
     const participant=PARTICIPANTS.get(word),semanticKind=unknownSemanticKind(words,tokenIndex);
     const particle=PHRASAL_VERBS.has(`${words[tokenIndex-1]||''} ${word}`);
-    const status=participant?'participant_reference':direct.length?'canonical':gaps.length?'documented_gap':labels.length?'labeled_entity':authoritative.length?'structural':STOPWORDS.has(word)||particle?'function_word':semanticKind?'unresolved_semantic':'phonemic_label';
+    const contextualStructure=['grammar','semantic_ir'].includes(matches[0]?.route)&&rankBySense.get(matches[0].sense_id)?.match_type==='contextual_english';
+    const status=participant?'participant_reference':contextualStructure?'structural':direct.length?'canonical':gaps.length?'documented_gap':labels.length?'labeled_entity':authoritative.length?'structural':STOPWORDS.has(word)||particle?'function_word':semanticKind?'unresolved_semantic':'phonemic_label';
     const label=labels[0];
     return{token_index:tokenIndex,term:word,status,semantic_kind:semanticKind,participant_role:participant||null,semantic_class_target_id:label?.semantic_class_target_id||null,recommended_sense_id:matches[0]?.sense_id??null,matches};
   });

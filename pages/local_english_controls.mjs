@@ -3,6 +3,17 @@ import {localWordPronounPlan,resolveLocalWordPronouns} from './local_compound_pr
 import {localAdjectivePlan,composeLocalAdjective,localVerbPlan,localVerbCandidates,composeLocalVerb} from './local_compound_english.mjs';
 import {expandLocalCompound} from './local_compound_expansion.mjs';
 import {contextualContentReference} from './contextual_content.mjs';
+function describeInterpretation(plan) {
+ const parts = [`${plan.speech_act === 'question' ? 'Question' : 'Statement'} about ${plan.subject}`];
+ if (plan.object) parts.push(`object ${plan.object}`);
+ if (plan.scopes.some(scope => scope.operator === 'time' && scope.relation === 'before_speech')) parts.push('past');
+ const possible = plan.scopes.some(scope => scope.operator === 'modality');
+ const negative = plan.scopes.some(scope => scope.operator === 'negation');
+ if (possible || negative) parts.push(possible ? (negative ? 'possibly not' : 'possibly') : 'negated');
+ parts.push(`runtime [${plan.runtime_state}]`);
+ return parts.join(' · ');
+}
+
 export async function mountLocalEnglishControls(container,input,registry,authority,{document=globalThis.document,download,player,isCurrent=()=>true,onError=()=>{},interpretation,pronounResolution}={}){
  const pronouns=await localWordPronounPlan(input,registry,authority);
  if(pronouns){
@@ -31,7 +42,7 @@ export async function mountLocalEnglishControls(container,input,registry,authori
  }
  const make=(tag,text)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;return el;};
  const entry=registry.entries.find(e=>e.compound_id===plan.compound_id),expansion=await expandLocalCompound(plan.compound_id,registry,authority),fields=[];
- container.append(make('h3',entry.definition.label),make('p',entry.definition.definition),make('p',`Subject: ${plan.subject}. Time, negation, question and runtime choices come from your sentence.`));
+ container.append(make('h3',entry.definition.label),make('p',entry.definition.definition),make('p',describeInterpretation(plan)));
  let subjectRole,objectRole;
  if(!adjective){
   const selector=(title)=>{const label=make('label',title),select=make('select');for(const role of [{role:'',definition:'Choose a role'},...plan.available_roles]){const option=make('option',role.role?`${role.role} — ${role.definition}`:role.definition);option.value=role.role;select.append(option);}select.value='';label.append(select);container.append(label);return select;};
@@ -44,14 +55,28 @@ export async function mountLocalEnglishControls(container,input,registry,authori
   const label=make('label',`Part ${requirement.path.map(n=>n+1).join('.')||'whole'} · ${requirement.role}`),field=make('input');field.placeholder='Name or noun phrase';label.append(field);container.append(label);fields.push({requirement,requirements,field,label});
  }
  const generate=make('button','Translate saved meaning'),output=make('div');container.append(generate,output);let revision=0;
- const roleChanged=()=>{revision++;player?.stop();output.replaceChildren();for(const {requirement,field,label} of fields){label.hidden=supplied(requirement);field.disabled=label.hidden;}generate.disabled=!subjectRole.value||(objectRole&&(!objectRole.value||objectRole.value===subjectRole.value));};
+ const roleChanged=()=>{revision++;player?.stop();output.replaceChildren();for(const {requirements,field,label} of fields){label.hidden=requirements.some(supplied);field.disabled=label.hidden;}generate.disabled=!subjectRole.value||(objectRole&&(!objectRole.value||objectRole.value===subjectRole.value));};
+ if (subjectRole && !objectRole && plan.available_roles.length === 1) {
+  subjectRole.value = plan.available_roles[0].role;
+ }
  if(subjectRole){subjectRole.addEventListener('change',roleChanged);objectRole?.addEventListener('change',roleChanged);roleChanged();}
  for(const {field} of fields)field.addEventListener('input',()=>{revision++;player?.stop();output.replaceChildren();});
  generate.addEventListener('click',async()=>{
   if(!isCurrent()||generate.disabled)return;const selectedSubject=subjectRole?.value,selectedObject=objectRole?.value;const version=revision,values=fields.map(({field})=>field.value.trim()),current=()=>isCurrent()&&container.isConnected!==false&&version===revision&&subjectRole?.value===selectedSubject&&objectRole?.value===selectedObject&&fields.every(({field},i)=>field.value.trim()===values[i]);
   generate.disabled=true;player?.stop();output.replaceChildren();
   try{
-   const bindings=await Promise.all(fields.flatMap(({requirements},i)=>requirements.map(r=>({r,i}))).filter(({r})=>!supplied(r)).map(async({r,i})=>({path:r.path,...(r.slot_path?{slot_path:r.slot_path}:{}),role:r.role,reference:await contextualContentReference(values[i])})));
+   // The binder propagates one reference throughout each connected group.
+   const extraFields = fields.filter(({requirements}) => !requirements.some(supplied));
+   const bindings = await Promise.all(extraFields.map(async ({requirement, field}) => {
+    const value = field.value.trim();
+    if (!value) throw new Error(`Enter a name or noun phrase for the ${requirement.role}.`);
+    return {
+     path: requirement.path,
+     ...(requirement.slot_path ? {slot_path: requirement.slot_path} : {}),
+     role: requirement.role,
+     reference: await contextualContentReference(value)
+    };
+   }));
    const result=adjective?await composeLocalAdjective(input,registry,authority,{bindings}):await composeLocalVerb(input,registry,authority,{bindings,subjectRole:selectedSubject,objectRole:selectedObject,interpretation});if(!current())return;
    if(player){const play=make('button','Play music'),stop=make('button','Stop');play.addEventListener('click',async()=>{if(!current())return;try{await player.play(result.midi);}catch(e){if(current())onError(e);}});stop.addEventListener('click',()=>player.stop());output.append(play,stop);}
    const midi=make('button','Download MIDI'),meaning=make('button','Save meaning and definitions');

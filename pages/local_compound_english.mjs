@@ -2,7 +2,7 @@ import {validateLocalCompounds} from './local_compounds.mjs';
 import {contextualContentReference} from './contextual_content.mjs';
 import {composeLocalCompoundSentence} from './local_compound_sentence.mjs';
 import {expandNegativeContractions} from './contractions.mjs';
-const REF='(?:I|you|[A-Z][a-z]+|"[^"\\n]+"|(?:the|this|that) [a-z]+)';
+const REF='(?:I|[Yy]ou|(?:[Tt]he|[Tt]his|[Tt]hat) [a-z]+|[A-Z][a-z]+|"[^"\\n]+")';
 export async function localAdjectivePlan(input,registry,authority){
  const checked=await validateLocalCompounds(registry,authority);if(typeof input!=='string')return null;
  let text=input.trim(),runtimeState=1;const tag=text.match(/\s*\[([012])\]([.!?]?)$/);
@@ -14,7 +14,7 @@ export async function localAdjectivePlan(input,registry,authority){
  const modal=question?text.match(new RegExp(`^(Might) (${REF}) (not )?be (.+)$`)):text.match(new RegExp(`^(${REF}) (might) (not )?be (.+)$`));
  const m=modal||(question?text.match(new RegExp(`^(Is|Was|Am|Are|Were) (${REF}) (not )?(.+)$`)):text.match(new RegExp(`^(${REF}) (is|was|am|are|were) (not )?(.+)$`)));if(!m)return null;
  const subject=question?m[2]:m[1],verb=(question?m[1]:m[2]).toLowerCase(),past=['was','were'].includes(verb);
- const correct=subject==='I'?(past?'was':'am'):subject==='you'?(past?'were':'are'):(past?'was':'is');if(!modal&&verb!==correct)return null;
+ const correct=subject==='I'?(past?'was':'am'):subject.toLowerCase()==='you'?(past?'were':'are'):(past?'was':'is');if(!modal&&verb!==correct)return null;
  const entry=checked.entries.find(e=>e.definition.part_of_speech==='adjective'&&e.definition.label.toLowerCase()===m[4].toLowerCase());if(!entry)return null;
  // A syntactic subject is the bearer of a quality. Other role choices require
  // a separately declared construction and must not be guessed from labels.
@@ -37,11 +37,11 @@ export async function localVerbCandidates(input,registry,authority){
  const m=question?text.match(new RegExp(`^(Do|Does|Did|Might) (${REF}) (not )?(.+)$`)):text.match(new RegExp(`^(${REF}) (do|does|did|might) (not )?(.+)$`));
  const direct=!question&&!m?text.match(new RegExp(`^(${REF}) (.+)$`)):null;if(!m&&!direct)return [];
  const subject=m?(question?m[2]:m[1]):direct[1],aux=m?(question?m[1]:m[2]).toLowerCase():null;
- if(m&&!['did','might'].includes(aux)&&aux!==(['I','you'].includes(subject)?'do':'does'))return [];
+ if(m&&!['did','might'].includes(aux)&&aux!==(['i','you'].includes(subject.toLowerCase())?'do':'does'))return [];
  const matches=[];
  for(const entry of checked.entries.filter(e=>e.definition.part_of_speech==='verb')){
   const forms=m?[{label:entry.definition.label,past:aux==='did'}]:[
-   ...(['I','you'].includes(subject)?[{label:entry.definition.label,past:false}]:entry.definition.english_forms?[{label:entry.definition.english_forms.third_person,past:false}]:[]),
+   ...(['i','you'].includes(subject.toLowerCase())?[{label:entry.definition.label,past:false}]:entry.definition.english_forms?[{label:entry.definition.english_forms.third_person,past:false}]:[]),
    ...(entry.definition.english_forms?[{label:entry.definition.english_forms.past,past:true}]:[])];
   for(const {label,past} of forms){const tail=m?m[4]:direct[2];
    if(tail.toLowerCase()===label.toLowerCase())matches.push({entry,object:null,past});

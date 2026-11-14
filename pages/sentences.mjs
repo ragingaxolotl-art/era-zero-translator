@@ -871,3 +871,22 @@ export async function composeNamedSentence(input,template,{interpretation,standa
   return {source_input:input,...(destination?{selected_destination:destination}:{}),...(viewpoint?{selected_viewpoint:viewpoint}:{}),...(interpretation?{selected_interpretation:interpretation}:{}),...(selectedStandard?{selected_standard:selectedStandard}:{}),target_id:parsed.predicate,sense_id:`construction:${parsed.construction}`,surface_fidelity:'complete_construction',controlled_input:'',semantic_ir:ir,formal,
     semantic_note:parsed.semanticNote?(parsed.semanticNote+(parsed.runtimeState===2&&parsed.key==='approved_poetic_love'?' The num ending carries the approved never-finished-becoming reading.':'')):null,construction:parsed.construction,interpretation:parsed.explicitInterpretation||((deicticRoles.some(Boolean)||parsed.semanticNote)?String(input).trim():null)||`${parsed.actorText} ${parsed.negated?(parsed.key==='active_care'?'does not actively care for':parsed.wording.replace('is ','is not ')):parsed.wording}${parsed.targetText?' '+parsed.targetText:''}.`};
 }
+
+// Help can mean many things. Offer a single current act of care only when
+// both participants can be bound by the existing care construction.
+export function helpCareReading(input) {
+ if (typeof input !== 'string') return null;
+ const match = input.trim().match(/^(.+?) (helps|help|is helping|am helping|are helping|does not help|do not help) (.+?)([.!]?)(\s*\[[012]\][.!]?)?$/);
+ if (!match || match[1].includes('"') && !/^"[^"]+"$/.test(match[1])) return null;
+ const [, subject, verb, target, punctuation, runtime] = match;
+ const firstOrSecond = /^(?:I|you)$/i.test(subject);
+ if (firstOrSecond && ['helps','is helping','does not help'].includes(verb)) return null;
+ if (!firstOrSecond && ['help','am helping','are helping','do not help'].includes(verb)) return null;
+ if ((verb==='am helping' && subject!=='I') || (verb==='are helping' && !/^you$/i.test(subject))) return null;
+ const negative = verb.includes('not');
+ const inflected = negative ? (firstOrSecond ? 'do not care for' : 'does not care for') : firstOrSecond ? 'care for' : 'cares for';
+ const reading = subject+' '+inflected+' '+target+punctuation+(runtime || '');
+ const parsed = parseNamedSentence(reading);
+ if (parsed?.key !== 'active_care' || parsed.requiredInterpretation || parsed.actorText!==subject || parsed.targetText!==target) return null;
+ return {reading, predicate:parsed.predicate};
+}
