@@ -3,7 +3,7 @@ import {compactChordMidi} from './compact_chords.mjs';
 
 const scopeLabels={modality_necessary:'required',modality_possible:'possible',negation:'negated',aspect_ongoing:'ongoing',time_before_speech:'past',time_current_day:'today',time_next_day:'tomorrow',time_previous_day:'yesterday'};
 
-export async function mountDictionaryClause(container,plan,authority,{document=globalThis.document,player,add,download,wordLink,remember,selectReading,isCurrent,onError}) {
+export async function mountDictionaryClause(container,plan,authority,{document=globalThis.document,player,add,download,wordLink,remember,selectReading,isCurrent,onError,onStatus=()=>{}}) {
   const make=(tag,text)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;return el;};
   const card=make('article');card.className='candidate dictionary-clause';
   const word=plan.readings[0].word, output=make('div');
@@ -14,7 +14,7 @@ export async function mountDictionaryClause(container,plan,authority,{document=g
     const label=make('label',(plan.needsDefinition&&plan.preferred<0?'What does “':'Meaning of “')+word+(plan.needsDefinition&&plan.preferred<0?'” mean here?':'” in this sentence'));
     picker=make('select');label.append(picker);card.append(label);
     if(plan.needsDefinition){const opt=make('option','Choose the meaning you intend');opt.value='';picker.append(opt);}
-    plan.readings.forEach((r,i)=>{const opt=make('option',title(r)+' · '+r.root);opt.value=String(i);picker.append(opt);});
+    plan.readings.forEach((r,i)=>{const wording=r.terms?[...r.terms].sort().slice(0,3).join(' / ')+' — ':'';const opt=make('option',wording+title(r)+' · '+r.root);opt.value=String(i);picker.append(opt);});
     const initial=plan.selectedIndex??plan.preferred;picker.value=initial>=0?String(initial):plan.needsDefinition?'':'0';
   }
   if(plan.needsDefinition && wordLink)card.append(wordLink(plan.input,word,plan.readings[0].quality?'adjective':'verb'));
@@ -23,10 +23,12 @@ export async function mountDictionaryClause(container,plan,authority,{document=g
   async function refresh(){
     const generation=++version,current=()=>active()&&version===generation;
     player.stop();output.replaceChildren();
-    if(!current()||picker?.value==='')return;
+    if(!current())return;
+    if(picker?.value===''){onStatus('Choose a meaning for “'+word+'” to finish this sentence.');return;}
     const index=picker?Number(picker.value):0,reading=plan.readings[index];
     try {
       const line=await scoreDictionaryClause(plan,index,authority);if(!current())return;
+      onStatus(index===preferred?'Whole sentence ready · using your saved word choice':plan.needsDefinition?'Whole sentence ready · using your chosen meaning':'Whole sentence ready · draft musical grammar');
       output.append(make('p',reading.root+' · '+(authority.atoms.find(a=>a.canonical_id===reading.root)?.core_definition||title(reading))));
       const who=text=>text==='we'?'our group':text==='I'?'the speaker':text==='you'?'the listener':text;
       const roles=reading.participants.map(p=>p.role+' · '+who(p.text)).join(' / ');
@@ -43,6 +45,7 @@ export async function mountDictionaryClause(container,plan,authority,{document=g
           const forget=index===preferred;
           remember(reading,plan.preferenceForms,forget);preferred=forget?-1:index;
           preference.textContent=forget?'Use this meaning next time':'Forget this word choice';
+          onStatus(forget?'Whole sentence ready · using your chosen meaning':'Whole sentence ready · using your saved word choice');
         });
       }
       button('Download sentence MIDI',()=>download(new Blob([line.midi],{type:'audio/midi'}),'era-zero-sentence.mid'));
