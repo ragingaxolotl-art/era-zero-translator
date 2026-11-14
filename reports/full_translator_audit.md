@@ -6,9 +6,9 @@ Status: **PASS**
 - Checks failed: **0**
 - Phrase cases: **80**
 - Dictionary roots: **324**
-- Compounds: **63**
-- Indexed senses: **471**
-- Public document records: **602**
+- Compounds: **76**
+- Indexed senses: **497**
+- Public document records: **608**
 
 ## Phrase matrix
 
@@ -73,7 +73,7 @@ Status: **PASS**
 | Send. | DAT:111 | no | 1 | command | send:canonical | PASS |
 | Receive. | CON:111 | no | 1 | command | receive:canonical | PASS |
 | Share. | DAT:121 | no | 1 | command | share:canonical | PASS |
-| Return. | function_result | no | 1 | command | return:structural | PASS |
+| Return. | CMP:0808e01be62b7fac873ee324 | no | 1 | command | return:canonical | PASS |
 | Run. | locomotion | no | 1 | assertion | run:canonical | PASS |
 | What is a route? | MOV:020 | no | 1 | question | what:phonemic_label, is:function_word, a:function_word, route:canonical | PASS |
 | A route means an ordered path. | MOV:020 | no | 1 | definition | a:function_word, route:canonical, means:unresolved_semantic, an:function_word, ordered:phonemic_label, path:canonical | PASS |
@@ -103,7 +103,7 @@ Status: **PASS**
 - **PASS** — all generated root fields available
 - **PASS** — complete compound records
 - **PASS** — complete indexed dictionary options
-- **PASS** — document manifest count is exact: 602 records
+- **PASS** — document manifest count is exact: 608 records
 - **PASS** — every document path exists
 - **PASS** — required authority documents are public
 - **PASS** — all evidence categories available
