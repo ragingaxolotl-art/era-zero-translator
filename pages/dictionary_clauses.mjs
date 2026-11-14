@@ -165,7 +165,7 @@ export function dictionaryClausePlan(input,authority,{offerDefinition=false,pref
     if(mode==='past' && scopes.includes('time_next_day'))continue;
     if(mode==='past')scopes.push('time_before_speech');
     if(mode==='progressive')scopes.push('aspect_ongoing');
-    const pair=phases[sense.target_id],root=pair?pair[mode==='past'||scopes.includes('modality_necessary')&&mode==='base'?1:0]:sense.target_id;
+    const pair=!sense.local_review&&phases[sense.target_id],root=pair?pair[mode==='past'||scopes.includes('modality_necessary')&&mode==='base'?1:0]:sense.target_id;
     const key=JSON.stringify([root,participants,scopes]);
     if(readings.some(r=>r.key===key))continue;
     readings.push({key,sense,root,participants,scopes,word:syntax.tail.slice(0,form.length),quality:mode==='quality'});
@@ -186,8 +186,9 @@ export function dictionaryClausePlan(input,authority,{offerDefinition=false,pref
       if(mode!==(quality?'quality':'base')||sense.target_id==='erase_stored_object')continue;
       const participants=argumentsFor(shape,syntax.subject,m[2]||'');
       if(!participants||new Set(participants.map(p=>normalized(p.text))).size!==participants.length)continue;
-      const pair=phases[sense.target_id],goal=scopes.includes('time_before_speech')||scopes.includes('modality_necessary')&&!syntax.being;
-      const root=pair?pair[goal?1:0]:sense.target_id;
+      // A word being defined takes the exact dictionary sense the user picks.
+      // Its participants, possibility, necessity and tense are scored separately.
+      const root=sense.target_id;
       const existing=readings.find(r=>r.root===root);
       if(existing){if(!existing.terms.includes(sense.lemma))existing.terms.push(sense.lemma);continue;}
       readings.push({sense,root,participants,scopes,word:m[1],quality,terms:[sense.lemma]});
@@ -196,6 +197,11 @@ export function dictionaryClausePlan(input,authority,{offerDefinition=false,pref
   }
   if(!readings.length)return null;
   const preferred=readings.findIndex(r=>matchingChoice(preferences,r)?.target===r.sense.target_id);
+  if(preferred>=0){
+    const reading=readings[preferred],choice=matchingChoice(preferences,reading);
+    const root=choice.root??choice.target;
+    if([reading.sense.target_id,...(phases[reading.sense.target_id]||[])].includes(root))reading.root=root;
+  }
   if(needsDefinition && preferred<0 && !offerDefinition)return null;
   const first=readings[0],surface=normalized(first.word);
   const preferenceForms=!first.quality&&syntax.form==='base'&&!syntax.being&&!first.scopes.includes('time_before_speech')?Object.values(inflections(surface)):[surface];
