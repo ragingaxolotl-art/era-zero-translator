@@ -80,15 +80,20 @@ function mount(plan){
  return {sel,output,button:name=>output.children.find(e=>e.textContent===name)?.listeners.click};});
 }
 const ui=await mount(pick);assert.equal(ui.sel.value,'');assert.match(status,/Choose a meaning/);assert.equal(ui.button('Add to song'),undefined);
-const idx=pick.readings.findIndex(r=>r.root==='REP:110');assert(idx>=0);ui.sel.value=String(idx);await ui.sel.listeners.change();assert.match(status,/Whole sentence ready/);assert(ui.sel.children.some(o=>o.textContent.includes('fix')&&o.textContent.includes('REP:110')));
+const idx=pick.readings.findIndex(r=>r.root==='REP:110');assert(idx>=0);ui.sel.value=String(idx);await ui.sel.listeners.change();assert.match(status,/Whole sentence ready/);assert(ui.sel.children.some(o=>o.textContent.includes('repair')&&o.textContent.includes('REP:110')));
 await ui.button('Play whole sentence')();await ui.button('Add to song')();assert.deepEqual(played,added[1]);assert.equal(added[0],unknown);
 const old=ui.button('Add to song');await ui.button('Use this meaning next time')();
 const prefs=readWordChoices(store);
 for(const t of ['You might glimmerseal a valve.','Mira glimmerseals this radio.','Aru glimmersealed the door.']){
  const plan=dictionaryClausePlan(t,a,{preferences:prefs});assert(plan.preferred>=0,t);
- const s=await scoreSongText(t,a,load,prefs);await roundtrip(s);assert(['REP:110','REP:111'].includes(s.meaning.predicate));
+ const s=await scoreSongText(t,a,load,prefs);await roundtrip(s);assert.equal(s.meaning.predicate,'REP:110',t);
 }
-const other=pick.readings.findIndex(r=>r.root==='WRN:110');ui.sel.value=String(other);await ui.sel.listeners.change();added=null;await old();assert.equal(added,null);await ui.button('Add to song')();assert.equal(decodeDictionaryClauseMidi(added[1],a.atoms).predicate,'WRN:110');
+const localAuthority={...a,local_senses:[{...a.senses.find(s=>s.lemma==='repair'&&s.route==='atom'),sense_id:'LOCAL:exact',local_review:true,lemma:'timbrel',surface_forms:['timbrel'],target_id:'REP:110'}]};
+const prior=await scoreSongText('Ada might timbrel this radio.',localAuthority,load);
+assert.equal(prior.meaning.predicate,'REP:110');
+const oldStyle=prefs.map(({root,...rest})=>rest);
+assert.equal((await scoreSongText('You might glimmerseal the gate.',a,load,oldStyle)).meaning.predicate,prefs[0].target);
+const other=pick.readings.findIndex(r=>r.root==='WRN:111');ui.sel.value=String(other);await ui.sel.listeners.change();added=null;await old();assert.equal(added,null);await ui.button('Add to song')();assert.equal(decodeDictionaryClauseMidi(added[1],a.atoms).predicate,'WRN:111');
 const poly=dictionaryClausePlan('We change the record.',a);assert(poly.readings.length>=3);let chords=[];
 for(let i=0;i<poly.readings.length;i++){const s=await score(poly,i);chords.push(Buffer.from(compactChordMidi(s.midi,a.atoms)).toString('hex'));}assert.equal(new Set(chords).size,chords.length);
 const userDefined={label:'glowmend',definition:'A saved restoration with a light qualifier.',part_of_speech:'verb',roles:[{role:'actor',definition:'Who does it'},{role:'target',definition:'What receives it'}],components:[{relation:'head',target_id:'REP:111'},{relation:'qualifies',target_id:'MAT:001'}]};

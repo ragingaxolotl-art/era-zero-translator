@@ -4,7 +4,7 @@ const key='era-zero-sentence-word-choices-v1';
 export function readWordChoices(storage) {
   const raw=storage.getItem(key);if(raw===null)return [];
   const rows=JSON.parse(raw);
-  if(!Array.isArray(rows)||rows.some(r=>!r || typeof r.word!=='string'||!Array.isArray(r.forms)||r.forms.some(f=>typeof f!=='string')||typeof r.roles!=='string'||typeof r.target!=='string'||typeof r.quality!=='boolean'))throw Error('Saved word choices could not be read.');
+  if(!Array.isArray(rows)||rows.some(r=>!r || typeof r.word!=='string'||!Array.isArray(r.forms)||r.forms.some(f=>typeof f!=='string')||typeof r.roles!=='string'||typeof r.target!=='string'||(r.root!==undefined&&typeof r.root!=='string')||typeof r.quality!=='boolean'))throw Error('Saved word choices could not be read.');
   return rows;
 }
 export function matchingChoice(rows,reading){
@@ -14,6 +14,6 @@ export function matchingChoice(rows,reading){
 export function updateWordChoice(storage,reading,forms,forget=false) {
   const rows=readWordChoices(storage),previous=matchingChoice(rows,reading);
   const next=rows.filter(row=>row!==previous);
-  if(!forget)next.push({word:reading.word.toLowerCase(),forms:previous?.forms||forms,roles:reading.participants.map(p=>p.role).join('/'),quality:reading.quality,target:reading.sense.target_id});
+  if(!forget)next.push({word:reading.word.toLowerCase(),forms:previous?.forms||forms,roles:reading.participants.map(p=>p.role).join('/'),quality:reading.quality,target:reading.sense.target_id,root:reading.root});
   storage.setItem(key,JSON.stringify(next));return next;
 }

@@ -1,4 +1,4 @@
-import {dictionaryClausePlan} from './dictionary_clauses.mjs';
+import {dictionaryClausePlan} from './dictionary_clauses.mjs?v=exact-word-1';
 import {scoreDictionaryClause} from './dictionary_clause_music.mjs';
 import {midiFromFormal,midiFromScheduledEvents} from './engine.mjs';
 import {notesFromMidi} from './performance_codec.mjs';
