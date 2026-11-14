@@ -42,6 +42,7 @@
           <textarea id="sourceInput" rows="5" spellcheck="true" placeholder="Try: I am leaving home now."></textarea>
           <div class="examples" aria-label="Examples">
             <span>Examples</span>
+            <button data-example="We have found the program. We need to delete it.">found the program</button>
             <button data-example="I am leaving home now.">leaving home</button>
             <button data-example="She arrived at the station.">arrived</button>
             <button data-example="Are they approaching the bridge?">question</button>
@@ -171,7 +172,7 @@
 
       <section id="output" class="output hidden" data-app-view="translator">
         <div class="section-heading">
-          <div><p class="eyebrow">Canonical result</p><h2>One meaning, multiple views.</h2></div>
+          <div><p class="eyebrow" id="resultScope">Translation</p><h2>One meaning, multiple views.</h2></div>
           <div class="actions"><button id="downloadBundle">Export EZB-1</button><label class="file-button">Import EZB-1<input id="importBundle" type="file" accept="application/json,.json"></label></div>
         </div>
         <nav class="output-tabs" aria-label="Result view">
@@ -182,7 +183,7 @@
         </nav>
         <div class="output-card card">
           <div id="panel-meaning" class="output-panel active">
-            <div class="meaning-summary"><span id="targetBadge"></span><h3 id="meaningTitle"></h3><p class="translation-line"><b>Your English</b><q id="sourceEcho"></q></p><p class="translation-line"><b id="readingLabel">Controlled form</b><code id="controlledText"></code></p><div class="translation-actions"><button id="hearTranslation">▶ Hear Era Zero</button><button id="showCharacter">◉ Character close-up</button><button id="downloadViseme">Download viseme file</button><span>Hear the complete performance or use its synchronized character file.</span></div><div class="translation-actions"><button id="downloadPerformanceMidi">Download audible performance MIDI</button><label class="file-button">Check performance MIDI<input id="verifyPerformanceMidi" type="file" accept=".mid,.midi,audio/midi,audio/x-midi"></label><span>Checks family, address, optional identity phrase, runtime, and contour against this canonical form. This is a pitch-exact MIDI check, not microphone recognition.</span></div><output id="performanceCheck" aria-live="polite"></output><div class="sound-components" aria-label="Complete sound construction"><div><span>Family prefix</span><code id="prefixText"></code></div><div><span>Full sung carrier</span><code id="carrierText"></code></div><div><span>Family opening notes</span><code id="familyNotes"></code></div><div><span>Address path</span><code id="addressNotes"></code></div><div><span>Recognition checksum</span><code id="recognitionNotes"></code></div><div><span>Runtime ending</span><code id="runtimeNote"></code></div><div><span>Sentence contour</span><code id="contourNotes"></code></div></div></div>
+            <div class="meaning-summary"><span id="targetBadge"></span><h3 id="meaningTitle"></h3><p class="translation-line"><b>Your English</b><q id="sourceEcho"></q></p><p class="translation-line"><b id="readingLabel">Controlled form</b><code id="controlledText"></code></p><div class="translation-actions"><button id="addSentenceToSong" type="button" hidden>Add to song</button><button id="playEntryChords" type="button">Play compact chords</button><button id="hearTranslation">▶ Hear Era Zero</button><button id="showCharacter">◉ Character close-up</button><button id="downloadViseme">Download viseme file</button><span>Hear the complete performance or use its synchronized character file.</span></div><div class="translation-actions"><button id="downloadPerformanceMidi">Download audible performance MIDI</button><label class="file-button">Check performance MIDI<input id="verifyPerformanceMidi" type="file" accept=".mid,.midi,audio/midi,audio/x-midi"></label><span>Checks family, address, optional identity phrase, runtime, and contour against this canonical form. This is a pitch-exact MIDI check, not microphone recognition.</span></div><output id="performanceCheck" aria-live="polite"></output><div class="sound-components" aria-label="Complete sound construction"><div><span>Family prefix</span><code id="prefixText"></code></div><div><span>Full sung carrier</span><code id="carrierText"></code></div><div><span>Family opening notes</span><code id="familyNotes"></code></div><div><span>Address path</span><code id="addressNotes"></code></div><div><span>Recognition checksum</span><code id="recognitionNotes"></code></div><div><span>Runtime ending</span><code id="runtimeNote"></code></div><div><span>Sentence contour</span><code id="contourNotes"></code></div></div></div>
             <div class="translation-actions"><button id="downloadPerformanceWav">Download reference WAV</button><button id="selfCheckAudio">Self-check reference audio</button><label class="file-button">Check recorded audio<input id="verifyPerformanceAudio" type="file" accept="audio/*,.wav,.mp3,.m4a"></label><span>Audio verification works best for clean, monophonic tones. It checks the selected canonical form; noisy, overlapping, or unrelated recordings are not decoded as new meanings.</span></div><output id="audioCheck" aria-live="polite"></output>
             <div class="identity-grid"><div><span>Utterance</span><code id="utteranceId"></code></div><div><span>Formal identity</span><code id="formalId"></code></div><div><span>Round trip</span><strong id="roundTrip"></strong></div></div>
           </div>
@@ -195,6 +196,13 @@
         </div>
       </section>
 
+      <section class="card song-editor" data-app-view="translator" aria-labelledby="songTitle">
+        <h2 id="songTitle">Your song</h2><p>Translate a line, then choose <strong>Add to song</strong>. Lines play in the order you add them.</p>
+        <label>Song arrangement<select id="songArrangement"><option value="chords">Compact chords</option><option value="melody">Original melody</option></select></label>
+        <ol id="songLines"></ol>
+        <div class="translation-actions"><button id="playSong" disabled>Play song</button><button id="stopSong" disabled>Stop</button><button id="exportSong" disabled>Download song MIDI</button></div>
+        <p id="songStatus" role="status"></p>
+      </section>
       <section class="conversation card view-hidden" aria-labelledby="conversationTitle" data-app-view="conversation">
         <div class="conversation-copy">
           <div><p class="eyebrow">Two-being performance</p><h2 id="conversationTitle">Write a conversation and hear the speakers alternate.</h2></div>
@@ -224,7 +232,7 @@
         <div class="conversation-actions"><button id="loadDemoConversation">Load demo</button><button id="buildConversation">Translate conversation</button><button id="playConversation" class="primary" disabled>▶ Play back-and-forth</button></div>
         <p id="conversationStatus" class="conversation-status" aria-live="polite">Load or write a conversation, then translate it.</p>
         <div id="conversationTurns" class="conversation-turns" aria-live="polite"></div>
-        <p class="microcopy">The current performance sounds the ordered approved concepts in each English sentence. Function words and participant pronouns guide interpretation but do not receive invented roots.</p>
+        <p class="microcopy">Supported conversation lines play as complete sentences. The recorded demo and keyed story adaptations identify the concept motifs they use.</p>
       </section>
 
       <section class="documents card view-hidden" aria-labelledby="documentsTitle" data-app-view="documents">

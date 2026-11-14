@@ -32,6 +32,10 @@ jobs:
         run: gem install webrick --no-document
       - name: Build deterministic browser release
         run: ruby tools/build_pages_release.rb
+      - name: Verify full passage playback and song export
+        run: |
+          node tests/song_lines_test.mjs
+          node tests/compact_song_chords_test.mjs
       - name: Audit browser release
         run: node tools/validate_pages_release.mjs
       - name: Validate saved compound builder and sentence integration
