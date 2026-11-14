@@ -1,3 +1,5 @@
+import {speakerGroupReference} from './references.mjs?v=clauses-1';
+import {canonicalDigest} from './engine.mjs';
 import {localParticipantGroups} from './local_participant_groups.mjs';
 import {expandLocalCompound} from './local_compound_expansion.mjs';
 import {createContextualContent} from './contextual_content.mjs';
@@ -12,7 +14,9 @@ export async function bindLocalCompound(id,registry,authority,bindings){
   const identity=key(binding),requirement=requirements.get(identity);
   if(!requirement||resolved.has(identity))throw new Error('Unknown or duplicate participant binding.');
   if(requirement.value_type&&requirement.value_type!=='entity')throw new Error('This slot requires a non-entity argument; entity binding is not valid.');
-  await createContextualContent('topic',binding.reference,{allowDraft:true});
+  if(binding.reference?.deictic_role==='speaker_group'){
+   if(await canonicalDigest(binding.reference)!==await canonicalDigest(speakerGroupReference('anchor')))throw Error('Invalid group reference.');
+  }else await createContextualContent('topic',binding.reference,{allowDraft:true});
   resolved.set(identity,{...structuredClone(requirement),reference:structuredClone(binding.reference)});
  }
  for(const group of localParticipantGroups(expansion,authority)){

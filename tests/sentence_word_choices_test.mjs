@@ -32,6 +32,7 @@ for (const state of [0,1,2]) {
 }
 for (const [text,actor,scope,mode,type] of [
   ['I need to fix this timing fault.','speaker',['necessary'],'proximal_nominal','timing'],
+  ['We might need to resolve the redundancy error.','speaker_group',['possible','necessary'],'definite_nominal','redundancy'],
   ['You need to correct that error.','addressee',['necessary'],'distal_nominal',null],
   ['We don’t need to resolve the redundancy error.','speaker_group',['negation','necessary'],'definite_nominal','redundancy'],
   ['We need to not resolve the redundancy error.','speaker_group',['necessary','negation'],'definite_nominal','redundancy']
@@ -45,7 +46,7 @@ for (const [text,actor,scope,mode,type] of [
   assert.notDeepEqual(s.midi,original.midi);
 }
 assert.deepEqual((await scoreSongText('We need to fix the redundancy fault.',a,noLookup)).midi,original.midi);
-for (const text of ['We resolved the redundancy error.','We might need to resolve the redundancy error.',
+for (const text of ['We resolved the redundancy error.',
  'We need to resolve the redundancy error?','We need to resolve two redundancy errors.','We need to resolve the critical error.',
  'They need to resolve the redundancy error.','We need to resolve the redundancy error and leave.']) {
   assert.equal(faultCorrectionPlan(text),null,text);

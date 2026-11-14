@@ -5,6 +5,10 @@ export function deicticReference(role,nodeId){
   if(!Object.hasOwn(PATHS,role))throw new Error('Unknown discourse role.');
   return {node_id:nodeId,kind:'deictic_reference',deictic_role:role,referent_id:`discourse:${role}`,value_type:'entity'};
 }
+// Plural speech uses the existing framed speaker motive in draft constructions.
+export function speakerGroupReference(nodeId){
+  return {...deicticReference('speaker',nodeId),deictic_role:'speaker_group',referent_id:'discourse:speaker_group'};
+}
 export function deicticEvent(reference,register,anchor=60){
   const role=reference.deictic_role;
   if(!Object.hasOwn(PATHS,role)||reference.referent_id!==`discourse:${role}`||!Object.hasOwn(OFFSETS,register))throw new Error('Invalid discourse reference.');

@@ -1,10 +1,14 @@
+import {savedScopedReadings} from './dictionary_clauses.mjs';
+import {speakerGroupReference} from './references.mjs?v=clauses-1';
 import {validateLocalCompounds} from './local_compounds.mjs';
 import {contextualContentReference} from './contextual_content.mjs';
-import {composeLocalCompoundSentence} from './local_compound_sentence.mjs';
+import {composeLocalCompoundSentence} from './local_compound_sentence.mjs?v=clauses-1';
 import {expandNegativeContractions} from './contractions.mjs';
 const REF='(?:I|[Yy]ou|(?:[Tt]he|[Tt]his|[Tt]hat) [a-z]+|[A-Z][a-z]+|"[^"\\n]+")';
+const localReference=text=>text==='we'?speakerGroupReference('anchor'):contextualContentReference(text);
 export async function localAdjectivePlan(input,registry,authority){
  const checked=await validateLocalCompounds(registry,authority);if(typeof input!=='string')return null;
+ const scoped=savedScopedReadings(input,checked.entries,'adjective');if(scoped.length)return scoped[0];
  let text=input.trim(),runtimeState=1;const tag=text.match(/\s*\[([012])\]([.!?]?)$/);
  if(tag){runtimeState=Number(tag[1]);text=text.slice(0,tag.index).trim();const end=text.match(/[.!?]$/)?.[0];if(end&&tag[2]&&end!==tag[2])return null;if(!end)text+=tag[2];}
  // These copular contractions have one reading; quoted labels and ambiguous
@@ -24,13 +28,14 @@ export async function localAdjectivePlan(input,registry,authority){
 export async function composeLocalAdjective(input,registry,authority,{bindings=[],anchor=60}={}){
  const plan=await localAdjectivePlan(input,registry,authority);if(!plan)throw new Error('No supported saved adjective construction matches this sentence.');
  if(!Array.isArray(bindings)||bindings.some(b=>Array.isArray(b.path)&&b.path.length===0&&b.role==='bearer'))throw new Error('The sentence already supplies its bearer.');
- const bearer={path:[],role:'bearer',reference:await contextualContentReference(plan.subject)};
+ const bearer={path:[],role:'bearer',reference:await localReference(plan.subject)};
  const result=await composeLocalCompoundSentence(plan.compound_id,registry,authority,[bearer,...bindings],{runtimeState:plan.runtime_state,speechAct:plan.speech_act,scopes:plan.scopes,anchor});
  return {...result,source_input:input,construction:'local_adjective_predication'};
 }
 
 export async function localVerbCandidates(input,registry,authority){
  const checked=await validateLocalCompounds(registry,authority);if(typeof input!=='string')return [];
+ const scoped=savedScopedReadings(input,checked.entries,'verb');if(scoped.length)return scoped;
  let text=input.trim(),runtimeState=1;const tag=text.match(/\s*\[([012])\]([.!?]?)$/);
  if(tag){runtimeState=Number(tag[1]);text=text.slice(0,tag.index).trim();const end=text.match(/[.!?]$/)?.[0];if(end&&tag[2]&&end!==tag[2])return [];if(!end)text+=tag[2];}
  text=expandNegativeContractions(text,`(${REF})`);const question=text.endsWith('?');text=text.replace(/[.!?]$/,'');
@@ -66,8 +71,8 @@ export async function composeLocalVerb(input,registry,authority,{subjectRole,obj
  const roles=plan.available_roles.map(r=>r.role);
  if(!roles.includes(subjectRole)||plan.object&&!roles.includes(objectRole)||!plan.object&&objectRole!==undefined||plan.object&&subjectRole===objectRole)throw new Error('Choose distinct declared roles for the sentence subject and object.');
  if(!Array.isArray(bindings)||bindings.some(b=>Array.isArray(b.path)&&!b.path.length&&[subjectRole,objectRole].includes(b.role)))throw new Error('The sentence already supplies that participant.');
- const supplied=[{path:[],role:subjectRole,reference:await contextualContentReference(plan.subject)}];
- if(plan.object)supplied.push({path:[],role:objectRole,reference:await contextualContentReference(plan.object)});
+ const supplied=[{path:[],role:subjectRole,reference:await localReference(plan.subject)}];
+ if(plan.object)supplied.push({path:[],role:objectRole,reference:await localReference(plan.object)});
  const result=await composeLocalCompoundSentence(plan.compound_id,registry,authority,[...supplied,...bindings],{runtimeState:plan.runtime_state,speechAct:plan.speech_act,scopes:plan.scopes,anchor});
  return {...result,source_input:input,construction:'local_verb_predication',role_interpretation:{subject:subjectRole,...(plan.object?{object:objectRole}:{})}};
 }

@@ -1,5 +1,5 @@
 // Draft constructions for a speaker group, a present-perfect report and an erasure outcome.
-const codes = {speaker_group: 8, present_perfect: 9, erase_stored_object: 10};
+const codes = {speaker_group: 8, present_perfect: 9, erase_stored_object: 10, dictionary_clause: 11, indefinite_singular: 12};
 export function informationPassageFrames() {
   return Object.entries(codes).flatMap(([name, code]) => ['open', 'close'].map(side => {
     const sign = side === 'open' ? -1 : 1;

@@ -1,8 +1,10 @@
+import {dictionaryClausePlan} from './dictionary_clauses.mjs';
+import {scoreDictionaryClause} from './dictionary_clause_music.mjs';
 import {midiFromFormal,midiFromScheduledEvents} from './engine.mjs';
 import {notesFromMidi} from './performance_codec.mjs';
 import {composeNamedSentence,parseNamedSentence,parseSentenceConjunction,composeSentenceConjunction,
   parseSentenceSequence,composeSentenceSequence,parseSentenceConditional,composeSentenceConditional} from './sentences.mjs';
-import {faultCorrectionPlan,composeFaultCorrection,describeFaultCorrection} from './fault_correction.mjs';
+import {faultCorrectionPlan,composeFaultCorrection,describeFaultCorrection} from './fault_correction.mjs?v=clauses-1';
 import {informationPassagePlan,composeInformationPassage} from './information_passage.mjs';
 
 export function songMidi(lines) {
@@ -22,7 +24,7 @@ export function songMidi(lines) {
 }
 
 // Use sentence composition before consulting isolated dictionary readings.
-export async function scoreSongText(text,authority,loadTemplate) {
+export async function scoreSongText(text,authority,loadTemplate,preferences=[]) {
   if (informationPassagePlan(text)) {
     const {midi,meaning}=await composeInformationPassage(text,authority);
     return {midi,meaning,label:'Draft discovery and required erasure'};
@@ -47,7 +49,14 @@ export async function scoreSongText(text,authority,loadTemplate) {
     else if (parseSentenceConjunction(input)) r=await composeSentenceConjunction(input,loadTemplate);
     else if (parseSentenceSequence(input)) r=await composeSentenceSequence(input,loadTemplate);
     else if (parseSentenceConditional(input)) r=await composeSentenceConditional(input,loadTemplate);
-    else return null;
+    else {
+      if(parsed)return null;
+      const dictionary=dictionaryClausePlan(input,authority,{preferences});
+      if(!dictionary||dictionary.preferred<0&&dictionary.readings.length!==1)return null;
+      const scored=await scoreDictionaryClause(dictionary,Math.max(0,dictionary.preferred),authority);
+      if(parts.length===1)return scored;
+      lines.push(scored);continue;
+    }
     lines.push({midi:midiFromFormal(r.formal),meaning:r.semantic_ir});
   }
   const includesDraft=lines.some(line=>line.meaning.status==='draft');

@@ -1,4 +1,4 @@
-import {localCompoundMusic} from './local_compound_music.mjs';
+import {localCompoundMusic} from './local_compound_music.mjs?v=clauses-1';
 import {grammarMarker} from './scheduler.mjs';
 import {midiFromScheduledEvents,canonicalDigest} from './engine.mjs';
 // Explicit scope order is outermost first: not(possible(P)) differs from

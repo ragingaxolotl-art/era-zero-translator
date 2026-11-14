@@ -1,10 +1,11 @@
+import {informationFrame} from './information_passage_frames.mjs';
 import {subjectControlEvent} from './subject_control.mjs';
 import {validateFoundationIR} from './foundation_ir.mjs';
 import {foundationEvent} from './foundations.mjs';
 import {canonicalDigest,deepSort} from './engine.mjs';
 import {restrictReferenceEvents,validReferenceProperty} from './reference_properties.mjs';
 import {encodeName,notesForName} from './names.mjs';
-import {deicticEvent,nominalMarker,NOMINAL_MODES} from './references.mjs';
+import {deicticReference,deicticEvent,nominalMarker,NOMINAL_MODES} from './references.mjs';
 import {registerFor,ROLE_ORDER} from './roles.mjs';
 const OFFSETS={low:-12,middle:0,high:12,sustained_background:-5};
 const ROLE_REGISTERS={actor:'low',source:'low',cause:'low',target:'high',result:'high',destination:'high',recipient:'high',beneficiary:'high',environment:'sustained_background',persistent_condition:'sustained_background',location:'sustained_background',time:'sustained_background'};
@@ -54,6 +55,10 @@ export async function renderLexicalOccurrences(ir,authority,{anchor=60,maxEvents
  }
  async function reference(node,register){
   if(node.value_type!=='entity'||node.runtime_state!==undefined)fail('invalid reference type or runtime');
+  if(node.kind==='deictic_reference'&&node.deictic_role==='speaker_group'){
+   if(node.referent_id!=='discourse:speaker_group')fail('invalid speaker group');
+   return count([informationFrame('speaker_group_open',anchor),deicticEvent(deicticReference('speaker',node.node_id),register,anchor),informationFrame('speaker_group_close',anchor)]);
+  }
   if(node.kind==='deictic_reference')return count([deicticEvent(node,register,anchor)]);
   const name=node.name;
   if(!name||!Array.isArray(name.phonemes))fail('missing name');
