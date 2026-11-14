@@ -188,8 +188,9 @@ export function dictionaryClausePlan(input,authority,{offerDefinition=false,pref
       if(!participants||new Set(participants.map(p=>normalized(p.text))).size!==participants.length)continue;
       const pair=phases[sense.target_id],goal=scopes.includes('time_before_speech')||scopes.includes('modality_necessary')&&!syntax.being;
       const root=pair?pair[goal?1:0]:sense.target_id;
-      if(readings.some(r=>r.root===root))continue;
-      readings.push({sense,root,participants,scopes,word:m[1],quality});
+      const existing=readings.find(r=>r.root===root);
+      if(existing){if(!existing.terms.includes(sense.lemma))existing.terms.push(sense.lemma);continue;}
+      readings.push({sense,root,participants,scopes,word:m[1],quality,terms:[sense.lemma]});
     }
     needsDefinition=true;
   }

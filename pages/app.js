@@ -1,6 +1,6 @@
 import {readWordChoices,updateWordChoice} from './dictionary_word_choices.mjs';
-import {dictionaryClausePlan} from './dictionary_clauses.mjs';
-import {mountDictionaryClause} from './dictionary_clause_controls.mjs';
+import {dictionaryClausePlan} from './dictionary_clauses.mjs?v=choice-feedback-1';
+import {mountDictionaryClause} from './dictionary_clause_controls.mjs?v=choice-feedback-1';
 import {compactChordMidi} from './compact_chords.mjs';
 import {mountSongEditor} from './song_editor.mjs';
 import {needsWholeReading,scoreSongText} from './song_lines.mjs?v=1.15.2';
@@ -1007,7 +1007,7 @@ async function showDictionaryClause(input) {
  for(const id of ['output','resolutionPanel','phraseCoverage'])$(id).classList.add('hidden');
  $('results').classList.remove('hidden');const list=$('candidateList');list.replaceChildren();
  $('decisionSummary').textContent=plan.preferred>=0?'Whole sentence · using your saved word choice':plan.needsDefinition?'The sentence roles are ready. Choose a meaning for the unfamiliar word.':'Whole sentence · draft musical grammar';
- await mountDictionaryClause(list,plan,state.data,{player:savedCompoundPlayer,add:addPerformance,download,wordLink:buildWordLink,selectReading:r=>{state.lastClauseChoice=r?{input,sense:r.sense.sense_id,root:r.root}:null;},remember:(reading,forms,forget)=>{state.wordPreferences=updateWordChoice(localStorage,reading,forms,forget);toast(forget?'Word choice forgotten.':'Word choice saved in this browser.');},isCurrent:current,onError:e=>toast(e.message)});
+ await mountDictionaryClause(list,plan,state.data,{player:savedCompoundPlayer,add:addPerformance,download,wordLink:buildWordLink,onStatus:message=>{$('decisionSummary').textContent=message;},selectReading:r=>{state.lastClauseChoice=r?{input,sense:r.sense.sense_id,root:r.root}:null;},remember:(reading,forms,forget)=>{state.wordPreferences=updateWordChoice(localStorage,reading,forms,forget);toast(forget?'Word choice forgotten.':'Word choice saved in this browser.');},isCurrent:current,onError:e=>toast(e.message)});
  if(current())$('results').scrollIntoView({behavior:'smooth',block:'start'});
  return true;
 }
