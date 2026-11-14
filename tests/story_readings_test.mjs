@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {storyReading} from '../pages/story_readings.mjs';
 import {scoreStory,decodeStoryMidi} from '../pages/story_music.mjs';
+import {analyzeEnglish} from '../pages/english.mjs';
 import {encodeName} from '../pages/names.mjs';
 import {compactChordMidi,expandChordMidi} from '../pages/compact_chords.mjs';
 import {scoreSongText} from '../pages/song_lines.mjs';
@@ -69,6 +70,8 @@ for(const [s,p] of [['The bell is cracked.','cracked'],['The handle is broken.',
 }
 for(const text of ['We might ring and wait.','Pip repaired the bell before Ada arrived and Mira waited.','Pip repaired the barely cracked bell.','Pip found a cracked bell. They repaired it before Ada arrived. Extra words.'])assert.equal(read(text),null,text);
 assert.equal(read('Pip returned.').question.options.length,2);
+const ambiguousWord=analyzeEnglish('Return.',authority);assert.equal(ambiguousWord.decision.auto_resolution_allowed,false);
+assert(ambiguousWord.candidates.some(c=>c.sense_key==='function_result'));
 assert.equal(read('The arrival repeated it.').question.allowName,true);
 assert.equal(read('Find it!').question.allowName,true);
 const lib=await addLocalCompound(emptyLocalCompounds(),{label:'chime back',definition:'A second resonant response.',part_of_speech:'verb',components:[{relation:'head',target_id:vocab.get('ring')},{relation:'qualifies',target_id:vocab.get('recur')}],roles:[]},authority);
