@@ -1,4 +1,4 @@
-import {prepareLocalCompoundPerformance} from './local_compound_performance.mjs';
+import {prepareLocalCompoundPerformance} from './local_compound_performance.mjs?v=clauses-1';
 import {grammarMarker} from './scheduler.mjs';
 import {midiFromScheduledEvents} from './engine.mjs';
 import {validateLocalCompounds} from './local_compounds.mjs';

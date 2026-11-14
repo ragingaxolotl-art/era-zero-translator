@@ -1,15 +1,17 @@
 import {localParticipantGroups} from './local_participant_groups.mjs';
 import {localWordPronounPlan,resolveLocalWordPronouns} from './local_compound_pronouns.mjs';
-import {localAdjectivePlan,composeLocalAdjective,localVerbPlan,localVerbCandidates,composeLocalVerb} from './local_compound_english.mjs';
+import {localAdjectivePlan,composeLocalAdjective,localVerbPlan,localVerbCandidates,composeLocalVerb} from './local_compound_english.mjs?v=clauses-1';
 import {expandLocalCompound} from './local_compound_expansion.mjs';
 import {contextualContentReference} from './contextual_content.mjs';
 function describeInterpretation(plan) {
  const parts = [plan.speech_act === 'question' ? 'Question' : 'Statement', 'subject '+plan.subject];
  if (plan.object) parts.push(`object ${plan.object}`);
  if (plan.scopes.some(scope => scope.operator === 'time' && scope.relation === 'before_speech')) parts.push('past');
- const possible = plan.scopes.some(scope => scope.operator === 'modality');
+ const possible = plan.scopes.some(scope => scope.mode === 'possible');
+ const necessity = plan.scopes.findIndex(scope => scope.mode === 'necessary');
  const negative = plan.scopes.some(scope => scope.operator === 'negation');
- if (possible || negative) parts.push(possible ? (negative ? 'possibly not' : 'possibly') : 'negated');
+ if (necessity>=0) parts.push(negative?(plan.scopes.findIndex(s=>s.operator==='negation')<necessity?'not necessary':'necessary to refrain'):'necessary');
+ else if (possible || negative) parts.push(possible ? (negative ? 'possibly not' : 'possibly') : 'negated');
  parts.push(`runtime [${plan.runtime_state}]`);
  return parts.join(' · ');
 }
@@ -59,10 +61,13 @@ export async function mountLocalEnglishControls(container,input,registry,authori
  if (subjectRole && !objectRole && plan.available_roles.length === 1) {
   subjectRole.value = plan.available_roles[0].role;
  }
+ if(subjectRole&&objectRole && plan.available_roles.length===2 && plan.available_roles.some(r=>r.role==='actor')&&plan.available_roles.some(r=>r.role==='target')){
+  subjectRole.value='actor';objectRole.value='target';
+ }
  if(subjectRole){subjectRole.addEventListener('change',roleChanged);objectRole?.addEventListener('change',roleChanged);roleChanged();}
  generate.className='primary';
  for(const {field} of fields)field.addEventListener('input',()=>{revision++;player?.stop();output.replaceChildren();});
- generate.addEventListener('click',async()=>{
+ const generateSentence=async()=>{
   if(!isCurrent()||generate.disabled)return;const selectedSubject=subjectRole?.value,selectedObject=objectRole?.value;const version=revision,values=fields.map(({field})=>field.value.trim()),current=()=>isCurrent()&&container.isConnected!==false&&version===revision&&subjectRole?.value===selectedSubject&&objectRole?.value===selectedObject&&fields.every(({field},i)=>field.value.trim()===values[i]);
   generate.disabled=true;player?.stop();output.replaceChildren();
   try{
@@ -85,5 +90,8 @@ export async function mountLocalEnglishControls(container,input,registry,authori
    midi.addEventListener('click',()=>{if(current())download(new Blob([result.midi],{type:'audio/midi'}),'era-zero-saved-sentence.mid');});
    meaning.addEventListener('click',()=>{if(current()){const {midi,...portable}=result;if(pronounResolution){portable.source_input=pronounResolution.source_input;portable.pronoun_resolution=pronounResolution;}download(new Blob([JSON.stringify(portable,null,2)],{type:'application/json'}),'era-zero-saved-sentence.json');}});output.append(midi,meaning);
   }catch(e){if(current())onError(e);}finally{generate.disabled=!!subjectRole&&(!subjectRole.value||!!objectRole&&(!objectRole.value||objectRole.value===subjectRole.value));}
- });return true;
+ };
+ generate.addEventListener('click',generateSentence);
+ if(onSongLine && !generate.disabled && fields.every(({field})=>field.disabled))await generateSentence();
+ return true;
 }
