@@ -2,8 +2,11 @@
 metadata:
   title: Gate 4B dictionary conformance and routing cases
   version: 1.0.0
-  approved_entries: 63
+  approved_entries: 76
 accepted:
+- case_id: arrival_back_at_a_prior_position
+  compound_id: CMP:0808e01be62b7fac873ee324
+  expected: valid_approved_entry
 - case_id: practical_physical_custody
   compound_id: CMP:0aca609416668978e1527dac
   expected: valid_approved_entry
@@ -13,8 +16,14 @@ accepted:
 - case_id: ongoing_running_toward_a_destination
   compound_id: CMP:139985443924b6e8f24d44f2
   expected: valid_approved_entry
+- case_id: episode_of_resonant_ringing
+  compound_id: CMP:1b70b478c71b872bf63bb95a
+  expected: valid_approved_entry
 - case_id: ongoing_internal_structural_repair
   compound_id: CMP:1b987e04bf47840f9e82ecd3
+  expected: valid_approved_entry
+- case_id: episode_of_mechanical_sound_emission
+  compound_id: CMP:1dc218880dfc6c56123b7732
   expected: valid_approved_entry
 - case_id: ongoing_bodily_swimming
   compound_id: CMP:1e2ec87e1feff0da19aadc3b
@@ -52,6 +61,12 @@ accepted:
 - case_id: felt_fatigue
   compound_id: CMP:3c13b9c619d95f1c40ea5da5
   expected: valid_approved_entry
+- case_id: cessation_of_an_occurrence
+  compound_id: CMP:3d95154b4812da0cefd7fc45
+  expected: valid_approved_entry
+- case_id: material_object_bearing_a_fissure
+  compound_id: CMP:3deb356dfe7aaa444e25e929
+  expected: valid_approved_entry
 - case_id: material_biosystem
   compound_id: CMP:4144fad413b8ce5012088c61
   expected: valid_approved_entry
@@ -66,6 +81,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: completed_running_to_a_destination
   compound_id: CMP:4f83046a60201671bc92fe10
+  expected: valid_approved_entry
+- case_id: material_fissure
+  compound_id: CMP:50520ef35adf0102649dc6cf
   expected: valid_approved_entry
 - case_id: completed_carrying-mediated_custody_delivery
   compound_id: CMP:5200738177777915abb3f42e
@@ -124,6 +142,9 @@ accepted:
 - case_id: shared_message_collection
   compound_id: CMP:99a87c8869d58498f524f1cc
   expected: valid_approved_entry
+- case_id: fault_that_impairs_an_intended_function
+  compound_id: CMP:9afc86c0f17022e083c7a5fe
+  expected: valid_approved_entry
 - case_id: ongoing_internal_data_repair
   compound_id: CMP:9ddb5e2cfc285515c799462e
   expected: valid_approved_entry
@@ -141,6 +162,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: ongoing_sensory_registration
   compound_id: CMP:ade73037114406a2cd91ce13
+  expected: valid_approved_entry
+- case_id: episode_of_physical_oscillation
+  compound_id: CMP:b08305996685a5c9ba7f7a45
   expected: valid_approved_entry
 - case_id: ongoing_physical_entry
   compound_id: CMP:b3fb15e7e645dae58d653887
@@ -169,14 +193,26 @@ accepted:
 - case_id: physical_region_exterior_relation
   compound_id: CMP:cc6d19387b62013464e0e850
   expected: valid_approved_entry
+- case_id: cause_another_occurrence_of_a_pattern
+  compound_id: CMP:d372748e7d848ebe63c65cd0
+  expected: valid_approved_entry
 - case_id: sad_felt_mood
   compound_id: CMP:d54499d2989fa97349e8e23d
+  expected: valid_approved_entry
+- case_id: another_occurrence_of_a_pattern
+  compound_id: CMP:d6b796937329c4412a92ea4a
   expected: valid_approved_entry
 - case_id: addressed_message
   compound_id: CMP:d98407801d64c085f702c9db
   expected: valid_approved_entry
+- case_id: functionally_broken_object_or_process
+  compound_id: CMP:db907903bd93df7356cf7039
+  expected: valid_approved_entry
 - case_id: dormant_machine
   compound_id: CMP:e152ea538409460a93b99b90
+  expected: valid_approved_entry
+- case_id: interval_of_deferred_action
+  compound_id: CMP:e17374fbc08546afa196b2cd
   expected: valid_approved_entry
 - case_id: generated_living_being
   compound_id: CMP:e2af90ba78681e87e68450e5
@@ -186,6 +222,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: structural_repair
   compound_id: CMP:e799b436d9c5e7d87a5516fa
+  expected: valid_approved_entry
+- case_id: completed_discovery_of_a_particular_target
+  compound_id: CMP:ec01f9b5c6eb3c5483bc3b72
   expected: valid_approved_entry
 - case_id: active_physical_load_support
   compound_id: CMP:eef9fff8ac6618ce60927f18

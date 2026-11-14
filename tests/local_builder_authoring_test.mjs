@@ -21,7 +21,8 @@ class Element {
 const ids=Object.fromEntries([...fs.readFileSync(new URL('../pages/compound-builder.html',import.meta.url),'utf8').matchAll(/id="([^"]+)"/g)].map(m=>[m[1],new Element()]));
 const document={getElementById:id=>ids[id],createElement:tag=>new Element(tag)};
 const memory=new Map(),storage={getItem:key=>memory.get(key)??null,setItem:(key,value)=>memory.set(key,value)};
-const context=vm.createContext({...registryAPI,...examples,ROLE_ORDER,document,localStorage:storage,sessionStorage:storage,window:{addEventListener(){}},fetch:async()=>({ok:true,json:async()=>authority}),createLocalCompoundPlayer:()=>({stop(){}}),mountLocalCompoundControls:()=>{},mountRoleLinkControls:(...args)=>mountRoleLinkControls(...args,{document})});
+const {everydayMeaning}=await import('../pages/everyday.mjs');
+const context=vm.createContext({everydayMeaning,...registryAPI,...examples,ROLE_ORDER,document,localStorage:storage,sessionStorage:storage,window:{addEventListener(){}},fetch:async()=>({ok:true,json:async()=>authority}),createLocalCompoundPlayer:()=>({stop(){}}),mountLocalCompoundControls:()=>{},mountRoleLinkControls:(...args)=>mountRoleLinkControls(...args,{document})});
 const script=fs.readFileSync(new URL('../pages/compound-builder.mjs',import.meta.url),'utf8').replace(/^import .*;\n/gm,'');
 await vm.runInContext(`(async()=>{${script}\n})()`,context);
 assert.match(ids.status.textContent,/Ready/);

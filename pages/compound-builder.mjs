@@ -1,3 +1,4 @@
+import {everydayMeaning} from './everyday.mjs';
 import {localCompoundExamples,queueLocalExample} from './local_compound_examples.mjs';
 import {mountRoleLinkControls} from './local_role_link_controls.mjs';
 import {createLocalCompoundPlayer} from './local_compound_player.mjs';
@@ -9,16 +10,16 @@ let authority,registry,parts=[],busy=false,readRoleLinks=null,roleLinkSnapshot=n
 const player=createLocalCompoundPlayer({onStatus:text=>status(text)});window.addEventListener('pagehide',()=>player.stop());
 const status=text=>$('status').textContent=text;
 const button=(text,action)=>{const b=node('button',text);b.type='button';b.addEventListener('click',action);return b;};
-function catalog(){return [...authority.atoms.map(a=>({id:a.canonical_id,label:a.title,meaning:a.core_definition})),...authority.compounds.filter(c=>c.status==='approved').map(c=>({id:c.compound_id,label:c.display_title,meaning:c.invariant_definition})),...registry.entries.map(e=>({id:e.compound_id,label:e.definition.label,meaning:e.definition.definition}))];}
+function catalog(){return [...authority.atoms.map(a=>({id:a.canonical_id,label:everydayMeaning(authority,a.canonical_id)||a.title,title:a.title,meaning:a.core_definition})),...authority.compounds.filter(c=>c.status==='approved').map(c=>({id:c.compound_id,label:everydayMeaning(authority,c.compound_id)||c.display_title,title:c.display_title,meaning:c.invariant_definition})),...registry.entries.map(e=>({id:e.compound_id,label:e.definition.label,meaning:e.definition.definition}))];}
 function renderParts(){
  $('parts').replaceChildren();parts.forEach((part,i)=>{const li=node('li',part.label+' ');li.append(button(part.relation==='head'?'Main meaning ✓':'Make main meaning',()=>{parts.forEach((p,j)=>p.relation=j===i?'head':'qualifies');renderParts();}),button('Move earlier',()=>{if(i){[parts[i-1],parts[i]]=[parts[i],parts[i-1]];renderParts();}}),button('Remove',()=>{parts.splice(i,1);renderParts();}));$('parts').append(li);});
 }
 function addPart(item){parts.push({...item,relation:parts.length?'qualifies':'head'});renderParts();}
 function renderSearch(){
  const q=$('search').value.trim().toLowerCase();$('matches').replaceChildren();if(!q)return;
- const found=catalog().filter(c=>(c.label+' '+c.meaning+' '+c.id).toLowerCase().includes(q));
+ const found=catalog().filter(c=>(c.label+' '+(c.title||'')+' '+c.meaning+' '+c.id).toLowerCase().includes(q));
  $('matches').append(node('p',`${found.length} matches${found.length>30?' · showing the first 30; refine your search':''}`));
- for(const item of found.slice(0,30)){const card=node('article');card.append(node('strong',item.label),node('p',item.meaning),button('Add this part',()=>addPart(item)));$('matches').append(card);}
+ for(const item of found.slice(0,30)){const card=node('article');card.append(node('strong',item.label),node('small',[item.title,item.id].filter(Boolean).join(' · ')),node('p',item.meaning),button('Add this part',()=>addPart(item)));$('matches').append(card);}
 }
 function downloadFile(blob,name){const url=URL.createObjectURL(blob),link=node('a');link.href=url;link.download=name;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 function renderLibrary(){
@@ -40,7 +41,7 @@ $('save').addEventListener('click',async()=>{
 });
 $('export').addEventListener('click',()=>{const url=URL.createObjectURL(new Blob([JSON.stringify(registry,null,2)],{type:'application/json'})),a=node('a');a.href=url;a.download='era-zero-my-compounds.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
 $('import').addEventListener('change',async()=>{if(busy||!registry)return;busy=true;try{const file=$('import').files[0];if(!file)return;const incoming=await importLocalCompounds(await file.text(),authority),next=await mergeLocalCompounds(registry,incoming,authority);registry=await saveLocalCompounds(localStorage,next,authority);renderLibrary();status('Definitions imported. Existing words were preserved.');}catch(e){status(e.message);}finally{busy=false;}});
-try{const response=await fetch('./data/index.json');if(!response.ok)throw new Error('Could not load dictionary.');authority=await response.json();registry=await loadLocalCompounds(localStorage,authority);renderLibrary();$('save').disabled=false;status('Ready. Search existing meanings to begin.');
+try{const response=await fetch('./data/index.json',{cache:'no-cache'});if(!response.ok)throw new Error('Could not load dictionary.');authority=await response.json();registry=await loadLocalCompounds(localStorage,authority);renderLibrary();$('save').disabled=false;status('Ready. Search existing meanings to begin.');
  const returning=window.location?.hash;
  if(returning){
   const query=new URLSearchParams(returning.slice(1)),word=query.get('word'),type=query.get('type');

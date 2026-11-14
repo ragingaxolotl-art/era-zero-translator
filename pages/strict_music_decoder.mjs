@@ -1,4 +1,4 @@
-import {informationPassageFrames} from './information_passage_frames.mjs?v=clauses-1';
+import {informationPassageFrames} from './information_passage_frames.mjs?v=story-1';
 import {desiredAvailabilityFrames} from './desired_availability_frames.mjs';
 import {custodyOpportunityFrames} from './custody_opportunity_frames.mjs';
 import {desiredOwnershipFrames} from './desired_ownership_frames.mjs';

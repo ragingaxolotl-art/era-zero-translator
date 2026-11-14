@@ -90,20 +90,20 @@
         <div class="catalog-copy">
           <p class="eyebrow">Complete language inventory</p>
           <h2 id="catalogTitle">Every approved meaning and every indexed option.</h2>
-          <p>Search all 324 atomic roots, 28 approved compounds, structural routes, and documented gaps. Nothing is hidden by the sentence-ranking cutoff.</p>
+          <p>Search all 324 basic meanings, the approved compounds, sentence relationships, and gaps in the dictionary. Nothing is hidden by the sentence-ranking cutoff.</p>
         </div>
         <div class="catalog-controls">
           <label>Search the full language<input id="catalogSearch" type="search" placeholder="word, definition, family, address, or sense ID"></label>
           <label>Jump to meaning<select id="catalogJump"><option value="">Choose a root or compound</option></select></label>
-          <label>Route<select id="catalogRoute"><option value="all">All routes</option><option value="atom">Atomic roots</option><option value="compound">Compounds</option><option value="semantic_ir">Semantic IR</option><option value="grammar">Grammar</option><option value="gap">Documented gaps</option></select></label>
-          <label>Family<select id="catalogFamily"><option value="all">All families</option><option>LIF</option><option>MOV</option><option>MAT</option><option>MIN</option><option>CON</option><option>STR</option><option>WRN</option><option>REP</option><option>LOG</option><option>DAT</option><option>CRE</option><option>ORI</option><option value="CMP">Compounds</option></select></label>
+          <label>Route<select id="catalogRoute"><option value="all">All routes</option><option value="atom">Basic meanings (atoms)</option><option value="compound">Combined meanings (compounds)</option><option value="semantic_ir">Actions and relationships (Semantic IR)</option><option value="grammar">How words fit together (grammar)</option><option value="gap">Meanings still missing</option></select></label>
+          <label>Family<select id="catalogFamily"><option value="all">All families</option><option value="LIF">Life and care (LIF)</option><option value="MOV">Movement and position (MOV)</option><option value="MAT">Matter and physical change (MAT)</option><option value="MIN">Mind and attention (MIN)</option><option value="CON">Communication (CON)</option><option value="STR">Structure and parts (STR)</option><option value="WRN">Faults and danger (WRN)</option><option value="REP">Repair and recovery (REP)</option><option value="LOG">Rules and checks (LOG)</option><option value="DAT">Information (DAT)</option><option value="CRE">Creation (CRE)</option><option value="ORI">Existence and dependence (ORI)</option><option value="CMP">Combined meanings (compounds)</option></select></label>
         </div>
         <section class="concept-intake" aria-labelledby="conceptIntakeTitle">
           <div><p class="eyebrow">DBA concept intake</p><h3 id="conceptIntakeTitle">Check a missing word before proposing anything new.</h3><p>The analyzer first tries an existing surface, atom, compound, Semantic IR, grammar, or documented gap. It never canonizes a new meaning automatically.</p></div>
           <label>Word or concept<input id="conceptInput" placeholder="e.g. teleport, programmer, compress a file"></label>
           <button id="analyzeConcept">Check concept route</button>
           <output id="conceptResult" class="hidden" aria-live="polite"></output>
-          <div class="concept-review"><h4>Save a noncanonical concept review</h4><p>Local to this browser until exported. Approval below can add an English surface for an existing canonical target; it cannot create a root or compound.</p><label>Intended meaning<textarea id="conceptMeaning" placeholder="What exactly do you mean?"></textarea></label><label>Example context<textarea id="conceptContext" placeholder="A sentence from your story, game, or programming use"></textarea></label><label>Part of speech<select id="conceptPos"><option value="verb">Verb</option><option value="noun">Noun</option><option value="adjective">Adjective</option><option value="verb_phrase">Verb phrase</option><option value="noun_phrase">Noun phrase</option><option value="adverb">Adverb</option><option value="other">Other / undecided</option></select></label><button id="saveConcept">Save proposal</button><button id="exportConcepts">Export review queue</button><label class="file-button">Import review queue<input id="importConcepts" type="file" accept="application/json,.json"></label><p id="conceptQueueSummary"></p><div id="conceptQueue" class="concept-queue"></div></div>
+          <datalist id="conceptTargets"></datalist><div class="concept-review"><h4>Save a noncanonical concept review</h4><p>Local to this browser until exported. Approval below can add an English surface for an existing canonical target; it cannot create a root or compound.</p><label>Intended meaning<textarea id="conceptMeaning" placeholder="What exactly do you mean?"></textarea></label><label>Example context<textarea id="conceptContext" placeholder="A sentence from your story, game, or programming use"></textarea></label><label>Part of speech<select id="conceptPos"><option value="verb">Verb</option><option value="noun">Noun</option><option value="adjective">Adjective</option><option value="verb_phrase">Verb phrase</option><option value="noun_phrase">Noun phrase</option><option value="adverb">Adverb</option><option value="other">Other / undecided</option></select></label><button id="saveConcept">Save proposal</button><button id="exportConcepts">Export review queue</button><label class="file-button">Import review queue<input id="importConcepts" type="file" accept="application/json,.json"></label><p id="conceptQueueSummary"></p><div id="conceptQueue" class="concept-queue"></div></div>
         </section>
         <div class="dictionary-body">
           <div>
@@ -176,7 +176,7 @@
         <nav class="output-tabs" aria-label="Result view">
           <button class="output-tab active" data-panel="meaning">Meaning</button>
           <button class="output-tab" data-panel="glyph">Glyph</button>
-          <button class="output-tab" data-panel="ir">Semantic IR</button>
+          <button class="output-tab" data-panel="ir">Actions and relationships (Semantic IR)</button>
           <button class="output-tab" data-panel="formal">EZF-1</button>
         </nav>
         <div class="output-card card">

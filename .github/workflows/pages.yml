@@ -38,6 +38,8 @@ jobs:
           node tests/sentence_word_choices_test.mjs
           node tests/dictionary_clauses_test.mjs
           node tests/compact_song_chords_test.mjs
+          node tests/story_readings_test.mjs
+          node tools/audit_story_readings.mjs
       - name: Audit browser release
         run: node tools/validate_pages_release.mjs
       - name: Validate saved compound builder and sentence integration

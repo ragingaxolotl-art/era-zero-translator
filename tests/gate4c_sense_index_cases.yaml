@@ -1,8 +1,8 @@
 ---
 metadata:
   version: 1.0.0
-  sense_count: 471
-  lemma_count: 454
+  sense_count: 497
+  lemma_count: 478
 exact_atom_labels:
 - input: continuous self
   expected_route: atom
@@ -977,6 +977,9 @@ exact_atom_labels:
   expected_route: atom
   expected_target: ORI:222
 exact_compound_labels:
+- input: arrival back at a prior position
+  expected_route: compound
+  expected_target: CMP:0808e01be62b7fac873ee324
 - input: practical physical custody
   expected_route: compound
   expected_target: CMP:0aca609416668978e1527dac
@@ -986,9 +989,15 @@ exact_compound_labels:
 - input: ongoing running toward a destination
   expected_route: compound
   expected_target: CMP:139985443924b6e8f24d44f2
+- input: episode of resonant ringing
+  expected_route: compound
+  expected_target: CMP:1b70b478c71b872bf63bb95a
 - input: ongoing internal structural repair
   expected_route: compound
   expected_target: CMP:1b987e04bf47840f9e82ecd3
+- input: episode of mechanical sound emission
+  expected_route: compound
+  expected_target: CMP:1dc218880dfc6c56123b7732
 - input: ongoing bodily swimming
   expected_route: compound
   expected_target: CMP:1e2ec87e1feff0da19aadc3b
@@ -1025,6 +1034,12 @@ exact_compound_labels:
 - input: felt fatigue
   expected_route: compound
   expected_target: CMP:3c13b9c619d95f1c40ea5da5
+- input: cessation of an occurrence
+  expected_route: compound
+  expected_target: CMP:3d95154b4812da0cefd7fc45
+- input: material object bearing a fissure
+  expected_route: compound
+  expected_target: CMP:3deb356dfe7aaa444e25e929
 - input: material biosystem
   expected_route: compound
   expected_target: CMP:4144fad413b8ce5012088c61
@@ -1040,6 +1055,9 @@ exact_compound_labels:
 - input: completed running to a destination
   expected_route: compound
   expected_target: CMP:4f83046a60201671bc92fe10
+- input: material fissure
+  expected_route: compound
+  expected_target: CMP:50520ef35adf0102649dc6cf
 - input: completed carrying-mediated custody delivery
   expected_route: compound
   expected_target: CMP:5200738177777915abb3f42e
@@ -1097,6 +1115,9 @@ exact_compound_labels:
 - input: shared message collection
   expected_route: compound
   expected_target: CMP:99a87c8869d58498f524f1cc
+- input: fault that impairs an intended function
+  expected_route: compound
+  expected_target: CMP:9afc86c0f17022e083c7a5fe
 - input: ongoing internal data repair
   expected_route: compound
   expected_target: CMP:9ddb5e2cfc285515c799462e
@@ -1115,6 +1136,9 @@ exact_compound_labels:
 - input: ongoing sensory registration
   expected_route: compound
   expected_target: CMP:ade73037114406a2cd91ce13
+- input: episode of physical oscillation
+  expected_route: compound
+  expected_target: CMP:b08305996685a5c9ba7f7a45
 - input: ongoing physical entry
   expected_route: compound
   expected_target: CMP:b3fb15e7e645dae58d653887
@@ -1142,15 +1166,27 @@ exact_compound_labels:
 - input: physical region exterior relation
   expected_route: compound
   expected_target: CMP:cc6d19387b62013464e0e850
+- input: cause another occurrence of a pattern
+  expected_route: compound
+  expected_target: CMP:d372748e7d848ebe63c65cd0
 - input: sad felt mood
   expected_route: compound
   expected_target: CMP:d54499d2989fa97349e8e23d
+- input: another occurrence of a pattern
+  expected_route: compound
+  expected_target: CMP:d6b796937329c4412a92ea4a
 - input: addressed message
   expected_route: compound
   expected_target: CMP:d98407801d64c085f702c9db
+- input: functionally broken object or process
+  expected_route: compound
+  expected_target: CMP:db907903bd93df7356cf7039
 - input: dormant machine
   expected_route: compound
   expected_target: CMP:e152ea538409460a93b99b90
+- input: interval of deferred action
+  expected_route: compound
+  expected_target: CMP:e17374fbc08546afa196b2cd
 - input: generated living being
   expected_route: compound
   expected_target: CMP:e2af90ba78681e87e68450e5
@@ -1160,6 +1196,9 @@ exact_compound_labels:
 - input: structural repair
   expected_route: compound
   expected_target: CMP:e799b436d9c5e7d87a5516fa
+- input: completed discovery of a particular target
+  expected_route: compound
+  expected_target: CMP:ec01f9b5c6eb3c5483bc3b72
 - input: active physical load support
   expected_route: compound
   expected_target: CMP:eef9fff8ac6618ce60927f18

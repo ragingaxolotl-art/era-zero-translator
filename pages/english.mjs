@@ -138,7 +138,7 @@ function scoreSense(sense,input,inputTokens){
   if(profileSense&&headPattern&&sense.part_of_speech==='adjective'&&new RegExp(`\\b(?:am|is|are|was|were|feel|feels|felt|seem|seems) (?:${headPattern})\\b`).test(input))score+=.10;
   if(sense.sense_key==='canonical_atom_label'&&!exact)score=Math.min(score,.62);
   const targetAddress=String(sense.target_id||'').match(/^[A-Z]{3}:([012]{3})$/)?.[1],lexicalLayer=sense.lexical_layer||targetAddress?.[0],lexicalPhase=sense.lexical_phase||targetAddress?.[2];
-  const reviewedLabel=exactLemma&&(sense.sense_key==='canonical_atom_label'||sense.plain_mapping);
+  const reviewedLabel=exactLemma&&(sense.sense_key==='canonical_atom_label'||sense.plain_mapping&&normalize(sense.canonical_title)===input);
   if(lexicalLayer==='1'&&!reviewedLabel){
     const modalQuestion=/^(?:could|can|may|might|will|would)\s+(?:i|we|you|he|she|they|it)\b/.test(input),phase=!modalQuestion&&/\b(?:possible|planned|pending|will|shall|may|might|could|plan|plans|intend|intends|need|needs|needed|want|wants|wanted|later|soon)\b/.test(input)?'2':/\b(?:ongoing|active|current)\b/.test(input)?'1':/\b(?:finished|completed|has|have|had)\b|\b(?:sent|left|went|came|found|made|built|knew|received|broke|fixed|repaired|moved|stopped|continued|arrived|departed|returned|crossed|followed|waited|shared|changed|created|\w+ed)\b/.test(input)?'0':'1';
     if(phase===lexicalPhase)score+=sense.plain_mapping ? .16 : .08;
@@ -155,7 +155,7 @@ function plainMappedSenses(data){
   return(data.plain_english?.entries||[]).map(entry=>{
     const record=entry.target_type==='atom'?atoms.get(entry.target_id):compounds.get(entry.target_id);
     const address=record?.address||'';
-    return{sense_id:`PLN:${entry.target_id}`,lemma:entry.plain_label,surface_forms:entry.match_phrases||[],part_of_speech:address[0]==='1'?'verb_phrase':'noun_phrase',sense_key:'plain_language_mapping',route:entry.target_type,target_id:entry.target_id,definition:record?.core_definition||record?.invariant_definition||entry.plain_explanation,selection_cues:[],generalization:entry.authority_note,fidelity:'plain_language_mapping',plain_mapping:true,lexical_layer:address[0]||null,lexical_phase:address[2]||null,competition_group:address?`PLN:${entry.target_id.split(':')[0]}:${address.slice(0,2)}`:`PLN:${entry.target_id}`};
+    return{sense_id:`PLN:${entry.target_id}`,lemma:entry.plain_label,canonical_title:entry.canonical_title,surface_forms:entry.match_phrases||[],part_of_speech:address[0]==='1'?'verb_phrase':'noun_phrase',sense_key:'plain_language_mapping',route:entry.target_type,target_id:entry.target_id,definition:record?.core_definition||record?.invariant_definition||entry.plain_explanation,selection_cues:[],generalization:entry.authority_note,fidelity:'plain_language_mapping',plain_mapping:true,lexical_layer:address[0]||null,lexical_phase:address[2]||null,competition_group:address?`PLN:${entry.target_id.split(':')[0]}:${address.slice(0,2)}`:`PLN:${entry.target_id}`};
   });
 }
 

@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 63
+  entry_count: 76
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -15,6 +15,66 @@ metadata:
   semantic_ir_started: false
   translator_started: false
 entries:
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: root
+    root_id: MOV:000
+  - node_id: h
+    kind: root
+    root_id: MOV:110
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: arrival_back_at_a_prior_position
+    sound_code: 39
+    added_definition: A mover reaches a place it occupied earlier. The place reached
+      is the earlier place of this same mover. The route, duration away and reason
+      for coming back are unspecified.
+    excludes:
+    - The pulse happened again without travelling back to an earlier position.
+  compound_id: CMP:0808e01be62b7fac873ee324
+  content_digest: '0808e01be62b7fac873ee3249eda3809ef61d9939643c0a3a670ab515dd0f94e'
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-14'
+  display_title: arrival back at a prior position
+  english_glosses:
+  - return
+  - arrival back at a prior position
+  invariant_definition: A mover reaches a place it occupied earlier. The place reached
+    is the earlier place of this same mover. The route, duration away and reason for
+    coming back are unspecified.
+  boundaries:
+    includes: A mover reaches a place it occupied earlier. The place reached is the
+      earlier place of this same mover. The route, duration away and reason for coming
+      back are unspecified.
+    excludes: The pulse happened again without travelling back to an earlier position.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. Source lines and intended readings are in tests/story_reading_intentions.json.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 39 supplies the specific distinction. Nearest excluded reading: The pulse
+    happened again without travelling back to an earlier position.'
+  examples:
+    ordinary: The cart returned to its former position.
+    technical: A mover reaches a place it occupied earlier. The place reached is the
+      earlier place of this same mover. The route, duration away and reason for coming
+      back are unspecified.
+    future_compound: A round trip can add a departure from that same place.
+    counterexample: The pulse happened again without travelling back to an earlier
+      position.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: '0808e01be62b7fac873ee3249eda3809ef61d9939643c0a3a670ab515dd0f94e'
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
@@ -249,6 +309,60 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: 139985443924b6e8f24d44f2ef1e07372ec02474582210b90dbd2cc247e75946
 - architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:1dc218880dfc6c56123b7732
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: episode_of_resonant_ringing
+    sound_code: 35
+    added_definition: One source produces a resonant ringing sound during an episode
+      of mechanical sound emission. The ringing is the sound of that source. A listener,
+      a responsible striker and repeated strikes are unspecified.
+    excludes:
+    - Someone rang Ada on the phone to speak with her.
+  compound_id: CMP:1b70b478c71b872bf63bb95a
+  content_digest: 1b70b478c71b872bf63bb95a99c5e39ece15c0a1cc457303dbc5fcf5726678f9
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-14'
+  display_title: episode of resonant ringing
+  english_glosses:
+  - ring
+  - episode of resonant ringing
+  invariant_definition: One source produces a resonant ringing sound during an episode
+    of mechanical sound emission. The ringing is the sound of that source. A listener,
+    a responsible striker and repeated strikes are unspecified.
+  boundaries:
+    includes: One source produces a resonant ringing sound during an episode of mechanical
+      sound emission. The ringing is the sound of that source. A listener, a responsible
+      striker and repeated strikes are unspecified.
+    excludes: Someone rang Ada on the phone to speak with her.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. Source lines and intended readings are in tests/story_reading_intentions.json.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 35 supplies the specific distinction. Nearest excluded reading: Someone
+    rang Ada on the phone to speak with her.'
+  examples:
+    ordinary: The bell rang in the empty hall.
+    technical: One source produces a resonant ringing sound during an episode of mechanical
+      sound emission. The ringing is the sound of that source. A listener, a responsible
+      striker and repeated strikes are unspecified.
+    future_compound: Restrictions on which sources rang can be quantified independently.
+    counterexample: Someone rang Ada on the phone to speak with her.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 1b70b478c71b872bf63bb95a99c5e39ece15c0a1cc457303dbc5fcf5726678f9
+- architecture_version: '1.0'
   compound_id: CMP:1b987e04bf47840f9e82ecd3
   content_digest: 1b987e04bf47840f9e82ecd31caef82cd850e4b6ac0d169e7df593ac36089663
   definition_version: 1.0.0
@@ -299,6 +413,66 @@ entries:
     content_digest: 1b987e04bf47840f9e82ecd31caef82cd850e4b6ac0d169e7df593ac36089663
   approval_basis: Delegated semantic approval under the user-directed translator-completion
     goal; reviews/foundation_process_compounds.md
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:b08305996685a5c9ba7f7a45
+    definition_version: 1.0.0
+  - node_id: h
+    kind: root
+    root_id: MAT:110
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: episode_of_mechanical_sound_emission
+    sound_code: 34
+    added_definition: Oscillation in a material source sends a mechanical pressure
+      or elastic wave into a surrounding medium during the same episode. No listener
+      or intention to signal is required.
+    excludes:
+    - An earpiece detected a wave from elsewhere without emitting it.
+  compound_id: CMP:1dc218880dfc6c56123b7732
+  content_digest: 1dc218880dfc6c56123b7732929a36ba72f01247472d9ad479246e1303a1475d
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-14'
+  display_title: episode of mechanical sound emission
+  english_glosses:
+  - sound
+  - episode of mechanical sound emission
+  invariant_definition: Oscillation in a material source sends a mechanical pressure
+    or elastic wave into a surrounding medium during the same episode. No listener
+    or intention to signal is required.
+  boundaries:
+    includes: Oscillation in a material source sends a mechanical pressure or elastic
+      wave into a surrounding medium during the same episode. No listener or intention
+      to signal is required.
+    excludes: An earpiece detected a wave from elsewhere without emitting it.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. Source lines and intended readings are in tests/story_reading_intentions.json.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 34 supplies the specific distinction. Nearest excluded reading: An earpiece
+    detected a wave from elsewhere without emitting it.'
+  examples:
+    ordinary: An alarm sounded in an empty room.
+    technical: Oscillation in a material source sends a mechanical pressure or elastic
+      wave into a surrounding medium during the same episode. No listener or intention
+      to signal is required.
+    future_compound: A source that rings emits this kind of sound with sustained resonance.
+    counterexample: An earpiece detected a wave from elsewhere without emitting it.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 1dc218880dfc6c56123b7732929a36ba72f01247472d9ad479246e1303a1475d
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
@@ -937,6 +1111,128 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: 3c13b9c619d95f1c40ea5da56060272a946f76b4006e7efab2901fdbc905c4d9
 - architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: root
+    root_id: ORI:010
+  - node_id: h
+    kind: root
+    root_id: ORI:110
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: cessation_of_an_occurrence
+    sound_code: 38
+    added_definition: A previously ongoing occurrence reaches an endpoint at which
+      its continuation ceases. The resulting situation begins at that endpoint. No
+      destruction, lasting inactivity or deliberate agent is implied.
+    excludes:
+    - The pulse became quieter while it continued.
+  compound_id: CMP:3d95154b4812da0cefd7fc45
+  content_digest: 3d95154b4812da0cefd7fc456c7bcbe3448290aa5f8bf5df6cb176b9b3de7cdd
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-14'
+  display_title: cessation of an occurrence
+  english_glosses:
+  - cease
+  - cessation of an occurrence
+  invariant_definition: A previously ongoing occurrence reaches an endpoint at which
+    its continuation ceases. The resulting situation begins at that endpoint. No destruction,
+    lasting inactivity or deliberate agent is implied.
+  boundaries:
+    includes: A previously ongoing occurrence reaches an endpoint at which its continuation
+      ceases. The resulting situation begins at that endpoint. No destruction, lasting
+      inactivity or deliberate agent is implied.
+    excludes: The pulse became quieter while it continued.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. Source lines and intended readings are in tests/story_reading_intentions.json.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 38 supplies the specific distinction. Nearest excluded reading: The pulse
+    became quieter while it continued.'
+  examples:
+    ordinary: The pulse ceased.
+    technical: A previously ongoing occurrence reaches an endpoint at which its continuation
+      ceases. The resulting situation begins at that endpoint. No destruction, lasting
+      inactivity or deliberate agent is implied.
+    future_compound: A pause adds the possibility of continuing the same activity
+      after an interval.
+    counterexample: The pulse became quieter while it continued.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 3d95154b4812da0cefd7fc456c7bcbe3448290aa5f8bf5df6cb176b9b3de7cdd
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:50520ef35adf0102649dc6cf
+    definition_version: 1.0.0
+  - node_id: h
+    kind: root
+    root_id: MAT:010
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: material_object_bearing_a_fissure
+    sound_code: 32
+    added_definition: A particular material object currently bears at least one material
+      fissure. The fissure belongs to that object. The object may still function and
+      need not have separated into pieces.
+    excludes:
+    - The bell fails because its clapper is missing but its material is intact.
+  compound_id: CMP:3deb356dfe7aaa444e25e929
+  content_digest: 3deb356dfe7aaa444e25e929dd62c9bb38a151382a0ece0de18780eb65233d1c
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-14'
+  display_title: material object bearing a fissure
+  english_glosses:
+  - cracked
+  - material object bearing a fissure
+  invariant_definition: A particular material object currently bears at least one
+    material fissure. The fissure belongs to that object. The object may still function
+    and need not have separated into pieces.
+  boundaries:
+    includes: A particular material object currently bears at least one material fissure.
+      The fissure belongs to that object. The object may still function and need not
+      have separated into pieces.
+    excludes: The bell fails because its clapper is missing but its material is intact.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. Source lines and intended readings are in tests/story_reading_intentions.json.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 32 supplies the specific distinction. Nearest excluded reading: The bell
+    fails because its clapper is missing but its material is intact.'
+  examples:
+    ordinary: Pip found a cracked bell that could still ring.
+    technical: A particular material object currently bears at least one material
+      fissure. The fissure belongs to that object. The object may still function and
+      need not have separated into pieces.
+    future_compound: The same restriction can describe a radio, a bell or the subject
+      of another action.
+    counterexample: The bell fails because its clapper is missing but its material
+      is intact.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 3deb356dfe7aaa444e25e929dd62c9bb38a151382a0ece0de18780eb65233d1c
+- architecture_version: '1.0'
   compound_id: CMP:4144fad413b8ce5012088c61
   content_digest: 4144fad413b8ce5012088c6193969cb6f73701fe8a61e005e8c66bb6ef90deaa
   definition_version: 1.0.0
@@ -1251,6 +1547,65 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 4f83046a60201671bc92fe10fd74d7353d3b2fa5e61dc986356b540b180f70e0
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: root
+    root_id: MAT:000
+  - node_id: h
+    kind: root
+    root_id: STR:010
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: material_fissure
+    sound_code: 31
+    added_definition: A narrow physical discontinuity extends through or along a material
+      bearer where the material on either side would otherwise be joined. It may be
+      internal or visible at a surface.
+    excludes:
+    - A painted line on intact ceramic.
+  compound_id: CMP:50520ef35adf0102649dc6cf
+  content_digest: 50520ef35adf0102649dc6cf83be17275c69d859ccb7614e3a644131b9a7109f
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-14'
+  display_title: material fissure
+  english_glosses:
+  - fissure
+  - material fissure
+  invariant_definition: A narrow physical discontinuity extends through or along a
+    material bearer where the material on either side would otherwise be joined. It
+    may be internal or visible at a surface.
+  boundaries:
+    includes: A narrow physical discontinuity extends through or along a material
+      bearer where the material on either side would otherwise be joined. It may be
+      internal or visible at a surface.
+    excludes: A painted line on intact ceramic.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. Source lines and intended readings are in tests/story_reading_intentions.json.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 31 supplies the specific distinction. Nearest excluded reading: A painted
+    line on intact ceramic.'
+  examples:
+    ordinary: A fissure runs through the ceramic.
+    technical: A narrow physical discontinuity extends through or along a material
+      bearer where the material on either side would otherwise be joined. It may be
+      internal or visible at a surface.
+    future_compound: A cracked object bears one of these discontinuities.
+    counterexample: A painted line on intact ceramic.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 50520ef35adf0102649dc6cf83be17275c69d859ccb7614e3a644131b9a7109f
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
@@ -2523,6 +2878,66 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: 99a87c8869d58498f524f1cc2782321e356f26bf94b14c405077c92a58ff97a7
 - architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: root
+    root_id: WRN:001
+  - node_id: h
+    kind: root
+    root_id: LOG:010
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: fault_that_impairs_an_intended_function
+    sound_code: 41
+    added_definition: An object or process has a manifest fault that interferes with
+      at least one of its intended functions under the conditions where that function
+      is expected. Other functions can remain available.
+    excludes:
+    - A chair has a harmless scratch and every intended function works.
+  compound_id: CMP:9afc86c0f17022e083c7a5fe
+  content_digest: 9afc86c0f17022e083c7a5fec55b104abf1083b526568186c5a9adb3275e905a
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-14'
+  display_title: fault that impairs an intended function
+  english_glosses:
+  - faulty
+  - fault that impairs an intended function
+  invariant_definition: An object or process has a manifest fault that interferes
+    with at least one of its intended functions under the conditions where that function
+    is expected. Other functions can remain available.
+  boundaries:
+    includes: An object or process has a manifest fault that interferes with at least
+      one of its intended functions under the conditions where that function is expected.
+      Other functions can remain available.
+    excludes: A chair has a harmless scratch and every intended function works.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. Source lines and intended readings are in tests/story_reading_intentions.json.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 41 supplies the specific distinction. Nearest excluded reading: A chair
+    has a harmless scratch and every intended function works.'
+  examples:
+    ordinary: A faulty chair drops when someone leans back.
+    technical: An object or process has a manifest fault that interferes with at least
+      one of its intended functions under the conditions where that function is expected.
+      Other functions can remain available.
+    future_compound: Functional breakage adds that an intended function can no longer
+      be performed as required.
+    counterexample: A chair has a harmless scratch and every intended function works.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 9afc86c0f17022e083c7a5fec55b104abf1083b526568186c5a9adb3275e905a
+- architecture_version: '1.0'
   compound_id: CMP:9ddb5e2cfc285515c799462e
   content_digest: 9ddb5e2cfc285515c799462ec538f0f410adc3eadca8d90c7db041d998369e45
   definition_version: 1.0.0
@@ -2947,6 +3362,65 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: ade73037114406a2cd91ce13ab20c3d9ac540127d75abd06aa73c8b2c9d13cab
   approval_record: migrations/sensory_registration_2026_10_28.yaml
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: root
+    root_id: MOV:120
+  - node_id: h
+    kind: root
+    root_id: MAT:100
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: episode_of_physical_oscillation
+    sound_code: 33
+    added_definition: During one reported episode a material bearer moves back and
+      forth about a position. The episode includes repeated reversals. Audible emission,
+      a receiver and a communicative intention are optional.
+    excludes:
+    - The phone slid once across the table.
+  compound_id: CMP:b08305996685a5c9ba7f7a45
+  content_digest: b08305996685a5c9ba7f7a455902ff6cf05335cd856a11b1740e1926bac6f30f
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-14'
+  display_title: episode of physical oscillation
+  english_glosses:
+  - vibrate
+  - episode of physical oscillation
+  invariant_definition: During one reported episode a material bearer moves back and
+    forth about a position. The episode includes repeated reversals. Audible emission,
+    a receiver and a communicative intention are optional.
+  boundaries:
+    includes: During one reported episode a material bearer moves back and forth about
+      a position. The episode includes repeated reversals. Audible emission, a receiver
+      and a communicative intention are optional.
+    excludes: The phone slid once across the table.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. Source lines and intended readings are in tests/story_reading_intentions.json.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 33 supplies the specific distinction. Nearest excluded reading: The phone
+    slid once across the table.'
+  examples:
+    ordinary: Her phone vibrated silently.
+    technical: During one reported episode a material bearer moves back and forth
+      about a position. The episode includes repeated reversals. Audible emission,
+      a receiver and a communicative intention are optional.
+    future_compound: An emitting vibration provides the mechanical source for a sound.
+    counterexample: The phone slid once across the table.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: b08305996685a5c9ba7f7a455902ff6cf05335cd856a11b1740e1926bac6f30f
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
@@ -3617,6 +4091,67 @@ entries:
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:d6b796937329c4412a92ea4a
+    definition_version: 1.0.0
+  - node_id: h
+    kind: root
+    root_id: ORI:100
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: cause_another_occurrence_of_a_pattern
+    sound_code: 37
+    added_definition: One participant brings about a later occurrence of the specified
+      earlier pattern. The two occurrences instantiate the same pattern. The cause
+      of the first occurrence may be different.
+    excludes:
+    - A pulse recurred without being brought about by the named participant.
+  compound_id: CMP:d372748e7d848ebe63c65cd0
+  content_digest: d372748e7d848ebe63c65cd05312b667cb9254ba321835067c191a6203ecd681
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-14'
+  display_title: cause another occurrence of a pattern
+  english_glosses:
+  - repeat
+  - cause another occurrence of a pattern
+  invariant_definition: One participant brings about a later occurrence of the specified
+    earlier pattern. The two occurrences instantiate the same pattern. The cause of
+    the first occurrence may be different.
+  boundaries:
+    includes: One participant brings about a later occurrence of the specified earlier
+      pattern. The two occurrences instantiate the same pattern. The cause of the
+      first occurrence may be different.
+    excludes: A pulse recurred without being brought about by the named participant.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. Source lines and intended readings are in tests/story_reading_intentions.json.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 37 supplies the specific distinction. Nearest excluded reading: A pulse
+    recurred without being brought about by the named participant.'
+  examples:
+    ordinary: The arrival repeated the pulse.
+    technical: One participant brings about a later occurrence of the specified earlier
+      pattern. The two occurrences instantiate the same pattern. The cause of the
+      first occurrence may be different.
+    future_compound: A replay can add the restriction that a recorded sequence supplies
+      the pattern.
+    counterexample: A pulse recurred without being brought about by the named participant.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: d372748e7d848ebe63c65cd05312b667cb9254ba321835067c191a6203ecd681
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
   - node_id: h
     kind: compound_ref
     compound_id: CMP:c4fb9863fe36d7667db847c0
@@ -3682,6 +4217,66 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: d54499d2989fa97349e8e23d129379409f54db0d36c46621a3936d5212f73af1
 - architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: root
+    root_id: ORI:010
+  - node_id: h
+    kind: root
+    root_id: ORI:110
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: another_occurrence_of_a_pattern
+    sound_code: 36
+    added_definition: An occurrence of a pattern takes place again after a prior occurrence
+      of that same pattern. The newer occurrence is distinct. The interval, exact
+      repetition count and cause are unspecified.
+    excludes:
+    - One uninterrupted retry continued for a longer time.
+  compound_id: CMP:d6b796937329c4412a92ea4a
+  content_digest: d6b796937329c4412a92ea4ab2ec2b6d2845cd9f2086572e0a87a66bc035c10e
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-14'
+  display_title: another occurrence of a pattern
+  english_glosses:
+  - recur
+  - another occurrence of a pattern
+  invariant_definition: An occurrence of a pattern takes place again after a prior
+    occurrence of that same pattern. The newer occurrence is distinct. The interval,
+    exact repetition count and cause are unspecified.
+  boundaries:
+    includes: An occurrence of a pattern takes place again after a prior occurrence
+      of that same pattern. The newer occurrence is distinct. The interval, exact
+      repetition count and cause are unspecified.
+    excludes: One uninterrupted retry continued for a longer time.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. Source lines and intended readings are in tests/story_reading_intentions.json.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 36 supplies the specific distinction. Nearest excluded reading: One uninterrupted
+    retry continued for a longer time.'
+  examples:
+    ordinary: The retries recurred.
+    technical: An occurrence of a pattern takes place again after a prior occurrence
+      of that same pattern. The newer occurrence is distinct. The interval, exact
+      repetition count and cause are unspecified.
+    future_compound: Causing a recurrence adds the participant who brings about the
+      later occurrence.
+    counterexample: One uninterrupted retry continued for a longer time.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: d6b796937329c4412a92ea4ab2ec2b6d2845cd9f2086572e0a87a66bc035c10e
+- architecture_version: '1.0'
   compound_id: CMP:d98407801d64c085f702c9db
   content_digest: d98407801d64c085f702c9dbfc86b643031cbda4ef933b6fe1c06d26f54c6e7b
   definition_version: 1.0.0
@@ -3722,6 +4317,62 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: d98407801d64c085f702c9dbfc86b643031cbda4ef933b6fe1c06d26f54c6e7b
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:9afc86c0f17022e083c7a5fe
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: functionally_broken_object_or_process
+    sound_code: 42
+    added_definition: A fault prevents this object or process from performing at least
+      one intended function when required. It may still perform other functions. No
+      particular material fracture or physical cause is specified.
+    excludes:
+    - A bell has a hairline crack but still performs every intended function.
+  compound_id: CMP:db907903bd93df7356cf7039
+  content_digest: db907903bd93df7356cf7039947a4d98d96f7be4d76e2edb0f79982921652dec
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-14'
+  display_title: functionally broken object or process
+  english_glosses:
+  - broken
+  - functionally broken object or process
+  invariant_definition: A fault prevents this object or process from performing at
+    least one intended function when required. It may still perform other functions.
+    No particular material fracture or physical cause is specified.
+  boundaries:
+    includes: A fault prevents this object or process from performing at least one
+      intended function when required. It may still perform other functions. No particular
+      material fracture or physical cause is specified.
+    excludes: A bell has a hairline crack but still performs every intended function.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. Source lines and intended readings are in tests/story_reading_intentions.json.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 42 supplies the specific distinction. Nearest excluded reading: A bell has
+    a hairline crack but still performs every intended function.'
+  examples:
+    ordinary: That is the broken chair. It supports a seated person but cannot hold
+      its back in position.
+    technical: A fault prevents this object or process from performing at least one
+      intended function when required. It may still perform other functions. No particular
+      material fracture or physical cause is specified.
+    future_compound: A repair can identify the lost function that is to be restored.
+    counterexample: A bell has a hairline crack but still performs every intended
+      function.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: db907903bd93df7356cf7039947a4d98d96f7be4d76e2edb0f79982921652dec
 - architecture_version: '1.0'
   compound_id: CMP:e152ea538409460a93b99b90
   content_digest: e152ea538409460a93b99b9058ed1443cb3db1490edc80b2bae66cd2beae8bbb
@@ -3770,6 +4421,65 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: e152ea538409460a93b99b9058ed1443cb3db1490edc80b2bae66cd2beae8bbb
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: root
+    root_id: ORI:112
+  - node_id: h
+    kind: root
+    root_id: ORI:010
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: interval_of_deferred_action
+    sound_code: 40
+    added_definition: During an interval a participant defers a pending action while
+      a condition or occasion for acting is outstanding. Other activity can continue.
+      The pending action need never actually happen.
+    excludes:
+    - A counter stopped existing or never had a pending action.
+  compound_id: CMP:e17374fbc08546afa196b2cd
+  content_digest: e17374fbc08546afa196b2cd782b981f31ca5ffab8042d3188500a63f9af4aed
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-14'
+  display_title: interval of deferred action
+  english_glosses:
+  - wait
+  - interval of deferred action
+  invariant_definition: During an interval a participant defers a pending action while
+    a condition or occasion for acting is outstanding. Other activity can continue.
+    The pending action need never actually happen.
+  boundaries:
+    includes: During an interval a participant defers a pending action while a condition
+      or occasion for acting is outstanding. Other activity can continue. The pending
+      action need never actually happen.
+    excludes: A counter stopped existing or never had a pending action.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. Source lines and intended readings are in tests/story_reading_intentions.json.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 40 supplies the specific distinction. Nearest excluded reading: A counter
+    stopped existing or never had a pending action.'
+  examples:
+    ordinary: The counter waited.
+    technical: During an interval a participant defers a pending action while a condition
+      or occasion for acting is outstanding. Other activity can continue. The pending
+      action need never actually happen.
+    future_compound: Waiting for a particular event can specify the outstanding condition.
+    counterexample: A counter stopped existing or never had a pending action.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: e17374fbc08546afa196b2cd782b981f31ca5ffab8042d3188500a63f9af4aed
 - architecture_version: '1.0'
   compound_id: CMP:e2af90ba78681e87e68450e5
   content_digest: e2af90ba78681e87e68450e55eeecd7e016b3f28b0c837c89b6c17dcf6035437
@@ -3951,6 +4661,71 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: e799b436d9c5e7d87a5516fa59156bbbd5017b752d3de5056e1ba3425da670ed
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: root
+    root_id: MIN:010
+  - node_id: h
+    kind: root
+    root_id: MIN:110
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: completed_discovery_of_a_particular_target
+    sound_code: 43
+    added_definition: An experiencer newly identifies a particular target or its whereabouts
+      through an encounter. The resulting change in what the experiencer represents
+      is about that same target. Deliberate searching and physical possession are
+      unspecified.
+    excludes:
+    - Pip already knows where the bell is and only changes an opinion about its colour.
+  compound_id: CMP:ec01f9b5c6eb3c5483bc3b72
+  content_digest: ec01f9b5c6eb3c5483bc3b72c704112ac3ce379998a251e2ce14543b3d9adb7c
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-14'
+  display_title: completed discovery of a particular target
+  english_glosses:
+  - find
+  - completed discovery of a particular target
+  invariant_definition: An experiencer newly identifies a particular target or its
+    whereabouts through an encounter. The resulting change in what the experiencer
+    represents is about that same target. Deliberate searching and physical possession
+    are unspecified.
+  boundaries:
+    includes: An experiencer newly identifies a particular target or its whereabouts
+      through an encounter. The resulting change in what the experiencer represents
+      is about that same target. Deliberate searching and physical possession are
+      unspecified.
+    excludes: Pip already knows where the bell is and only changes an opinion about
+      its colour.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. Source lines and intended readings are in tests/story_reading_intentions.json.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 43 supplies the specific distinction. Nearest excluded reading: Pip already
+    knows where the bell is and only changes an opinion about its colour.'
+  examples:
+    ordinary: Pip found a cracked bell.
+    technical: An experiencer newly identifies a particular target or its whereabouts
+      through an encounter. The resulting change in what the experiencer represents
+      is about that same target. Deliberate searching and physical possession are
+      unspecified.
+    future_compound: A later action can involve the very object the finder discovered.
+    counterexample: Pip already knows where the bell is and only changes an opinion
+      about its colour.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: ec01f9b5c6eb3c5483bc3b72c704112ac3ce379998a251e2ce14543b3d9adb7c
 - architecture_version: '1.0'
   semantic_head: h
   nodes:

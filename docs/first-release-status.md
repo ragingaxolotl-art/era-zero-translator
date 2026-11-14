@@ -2,6 +2,8 @@
 
 The browser translator makes music from supported English sentences and from words you build yourself. It includes 324 canonical roots, 63 approved compounds and 471 indexed senses. You can combine earlier compounds in the order you choose, mark the main meaning, and connect participants across the parts. Your definitions stay in your browser and can be exported and imported. [Open the translator](https://ragingaxolotl-art.github.io/era-zero-translator/) · [Open the compound builder](https://ragingaxolotl-art.github.io/era-zero-translator/compound-builder.html)
 
+The [current story and dialogue audit](../reports/story_readings.md) covers the subsequent story grammar and vocabulary release.
+
 ## Try a sentence
 
 - Enter “I swim.” Choose whether you mean a recurring practice, an unfolding action, or one narrated episode. The choice affects the performed meaning.

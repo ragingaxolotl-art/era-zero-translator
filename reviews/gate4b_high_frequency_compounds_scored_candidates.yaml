@@ -4637,3 +4637,943 @@ reviews:
     decision: rejected
   recommendation: approve explicit_entry_convention
   confidence: high
+- compound_id: CMP:50520ef35adf0102649dc6cf
+  display_title: material fissure
+  current_choice_reason: The authored distinction is exercised by A fissure runs through
+    the ceramic. and contrasted with A painted line on intact ceramic.
+  candidates:
+  - candidate_id: specific_convention
+    direction: A narrow physical discontinuity extends through or along a material
+      bearer where the material on either side would otherwise be joined. It may be
+      internal or visible at a surface.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: MAT:000
+      - node_id: h
+        kind: root
+        root_id: STR:010
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: material_fissure
+        sound_code: 31
+        added_definition: A narrow physical discontinuity extends through or along
+          a material bearer where the material on either side would otherwise be joined.
+          It may be internal or visible at a surface.
+        excludes:
+        - A painted line on intact ceramic.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: A painted line on intact
+      ceramic.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:3deb356dfe7aaa444e25e929
+  display_title: material object bearing a fissure
+  current_choice_reason: The authored distinction is exercised by Pip found a cracked
+    bell that could still ring. and contrasted with The bell fails because its clapper
+    is missing but its material is intact.
+  candidates:
+  - candidate_id: specific_convention
+    direction: A particular material object currently bears at least one material
+      fissure. The fissure belongs to that object. The object may still function and
+      need not have separated into pieces.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: compound_ref
+        compound_id: CMP:50520ef35adf0102649dc6cf
+        definition_version: 1.0.0
+      - node_id: h
+        kind: root
+        root_id: MAT:010
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: material_object_bearing_a_fissure
+        sound_code: 32
+        added_definition: A particular material object currently bears at least one
+          material fissure. The fissure belongs to that object. The object may still
+          function and need not have separated into pieces.
+        excludes:
+        - The bell fails because its clapper is missing but its material is intact.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: The bell fails because
+      its clapper is missing but its material is intact.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:b08305996685a5c9ba7f7a45
+  display_title: episode of physical oscillation
+  current_choice_reason: The authored distinction is exercised by Her phone vibrated
+    silently. and contrasted with The phone slid once across the table.
+  candidates:
+  - candidate_id: specific_convention
+    direction: During one reported episode a material bearer moves back and forth
+      about a position. The episode includes repeated reversals. Audible emission,
+      a receiver and a communicative intention are optional.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: MOV:120
+      - node_id: h
+        kind: root
+        root_id: MAT:100
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: episode_of_physical_oscillation
+        sound_code: 33
+        added_definition: During one reported episode a material bearer moves back
+          and forth about a position. The episode includes repeated reversals. Audible
+          emission, a receiver and a communicative intention are optional.
+        excludes:
+        - The phone slid once across the table.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: The phone slid once across
+      the table.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:1dc218880dfc6c56123b7732
+  display_title: episode of mechanical sound emission
+  current_choice_reason: The authored distinction is exercised by An alarm sounded
+    in an empty room. and contrasted with An earpiece detected a wave from elsewhere
+    without emitting it.
+  candidates:
+  - candidate_id: specific_convention
+    direction: Oscillation in a material source sends a mechanical pressure or elastic
+      wave into a surrounding medium during the same episode. No listener or intention
+      to signal is required.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: compound_ref
+        compound_id: CMP:b08305996685a5c9ba7f7a45
+        definition_version: 1.0.0
+      - node_id: h
+        kind: root
+        root_id: MAT:110
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: episode_of_mechanical_sound_emission
+        sound_code: 34
+        added_definition: Oscillation in a material source sends a mechanical pressure
+          or elastic wave into a surrounding medium during the same episode. No listener
+          or intention to signal is required.
+        excludes:
+        - An earpiece detected a wave from elsewhere without emitting it.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: An earpiece detected
+      a wave from elsewhere without emitting it.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:1b70b478c71b872bf63bb95a
+  display_title: episode of resonant ringing
+  current_choice_reason: The authored distinction is exercised by The bell rang in
+    the empty hall. and contrasted with Someone rang Ada on the phone to speak with
+    her.
+  candidates:
+  - candidate_id: specific_convention
+    direction: One source produces a resonant ringing sound during an episode of mechanical
+      sound emission. The ringing is the sound of that source. A listener, a responsible
+      striker and repeated strikes are unspecified.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:1dc218880dfc6c56123b7732
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: episode_of_resonant_ringing
+        sound_code: 35
+        added_definition: One source produces a resonant ringing sound during an episode
+          of mechanical sound emission. The ringing is the sound of that source. A
+          listener, a responsible striker and repeated strikes are unspecified.
+        excludes:
+        - Someone rang Ada on the phone to speak with her.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: Someone rang Ada on the
+      phone to speak with her.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:d6b796937329c4412a92ea4a
+  display_title: another occurrence of a pattern
+  current_choice_reason: The authored distinction is exercised by The retries recurred.
+    and contrasted with One uninterrupted retry continued for a longer time.
+  candidates:
+  - candidate_id: specific_convention
+    direction: An occurrence of a pattern takes place again after a prior occurrence
+      of that same pattern. The newer occurrence is distinct. The interval, exact
+      repetition count and cause are unspecified.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: ORI:010
+      - node_id: h
+        kind: root
+        root_id: ORI:110
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: another_occurrence_of_a_pattern
+        sound_code: 36
+        added_definition: An occurrence of a pattern takes place again after a prior
+          occurrence of that same pattern. The newer occurrence is distinct. The interval,
+          exact repetition count and cause are unspecified.
+        excludes:
+        - One uninterrupted retry continued for a longer time.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: One uninterrupted retry
+      continued for a longer time.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:d372748e7d848ebe63c65cd0
+  display_title: cause another occurrence of a pattern
+  current_choice_reason: The authored distinction is exercised by The arrival repeated
+    the pulse. and contrasted with A pulse recurred without being brought about by
+    the named participant.
+  candidates:
+  - candidate_id: specific_convention
+    direction: One participant brings about a later occurrence of the specified earlier
+      pattern. The two occurrences instantiate the same pattern. The cause of the
+      first occurrence may be different.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: compound_ref
+        compound_id: CMP:d6b796937329c4412a92ea4a
+        definition_version: 1.0.0
+      - node_id: h
+        kind: root
+        root_id: ORI:100
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: cause_another_occurrence_of_a_pattern
+        sound_code: 37
+        added_definition: One participant brings about a later occurrence of the specified
+          earlier pattern. The two occurrences instantiate the same pattern. The cause
+          of the first occurrence may be different.
+        excludes:
+        - A pulse recurred without being brought about by the named participant.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: A pulse recurred without
+      being brought about by the named participant.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:3d95154b4812da0cefd7fc45
+  display_title: cessation of an occurrence
+  current_choice_reason: The authored distinction is exercised by The pulse ceased.
+    and contrasted with The pulse became quieter while it continued.
+  candidates:
+  - candidate_id: specific_convention
+    direction: A previously ongoing occurrence reaches an endpoint at which its continuation
+      ceases. The resulting situation begins at that endpoint. No destruction, lasting
+      inactivity or deliberate agent is implied.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: ORI:010
+      - node_id: h
+        kind: root
+        root_id: ORI:110
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: cessation_of_an_occurrence
+        sound_code: 38
+        added_definition: A previously ongoing occurrence reaches an endpoint at which
+          its continuation ceases. The resulting situation begins at that endpoint.
+          No destruction, lasting inactivity or deliberate agent is implied.
+        excludes:
+        - The pulse became quieter while it continued.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: The pulse became quieter
+      while it continued.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:0808e01be62b7fac873ee324
+  display_title: arrival back at a prior position
+  current_choice_reason: The authored distinction is exercised by The cart returned
+    to its former position. and contrasted with The pulse happened again without travelling
+    back to an earlier position.
+  candidates:
+  - candidate_id: specific_convention
+    direction: A mover reaches a place it occupied earlier. The place reached is the
+      earlier place of this same mover. The route, duration away and reason for coming
+      back are unspecified.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: MOV:000
+      - node_id: h
+        kind: root
+        root_id: MOV:110
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: arrival_back_at_a_prior_position
+        sound_code: 39
+        added_definition: A mover reaches a place it occupied earlier. The place reached
+          is the earlier place of this same mover. The route, duration away and reason
+          for coming back are unspecified.
+        excludes:
+        - The pulse happened again without travelling back to an earlier position.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: The pulse happened again
+      without travelling back to an earlier position.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:e17374fbc08546afa196b2cd
+  display_title: interval of deferred action
+  current_choice_reason: The authored distinction is exercised by The counter waited.
+    and contrasted with A counter stopped existing or never had a pending action.
+  candidates:
+  - candidate_id: specific_convention
+    direction: During an interval a participant defers a pending action while a condition
+      or occasion for acting is outstanding. Other activity can continue. The pending
+      action need never actually happen.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: ORI:112
+      - node_id: h
+        kind: root
+        root_id: ORI:010
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: interval_of_deferred_action
+        sound_code: 40
+        added_definition: During an interval a participant defers a pending action
+          while a condition or occasion for acting is outstanding. Other activity
+          can continue. The pending action need never actually happen.
+        excludes:
+        - A counter stopped existing or never had a pending action.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: A counter stopped existing
+      or never had a pending action.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:9afc86c0f17022e083c7a5fe
+  display_title: fault that impairs an intended function
+  current_choice_reason: The authored distinction is exercised by A faulty chair drops
+    when someone leans back. and contrasted with A chair has a harmless scratch and
+    every intended function works.
+  candidates:
+  - candidate_id: specific_convention
+    direction: An object or process has a manifest fault that interferes with at least
+      one of its intended functions under the conditions where that function is expected.
+      Other functions can remain available.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: WRN:001
+      - node_id: h
+        kind: root
+        root_id: LOG:010
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: fault_that_impairs_an_intended_function
+        sound_code: 41
+        added_definition: An object or process has a manifest fault that interferes
+          with at least one of its intended functions under the conditions where that
+          function is expected. Other functions can remain available.
+        excludes:
+        - A chair has a harmless scratch and every intended function works.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: A chair has a harmless
+      scratch and every intended function works.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:db907903bd93df7356cf7039
+  display_title: functionally broken object or process
+  current_choice_reason: The authored distinction is exercised by That is the broken
+    chair. It supports a seated person but cannot hold its back in position. and contrasted
+    with A bell has a hairline crack but still performs every intended function.
+  candidates:
+  - candidate_id: specific_convention
+    direction: A fault prevents this object or process from performing at least one
+      intended function when required. It may still perform other functions. No particular
+      material fracture or physical cause is specified.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:9afc86c0f17022e083c7a5fe
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: functionally_broken_object_or_process
+        sound_code: 42
+        added_definition: A fault prevents this object or process from performing
+          at least one intended function when required. It may still perform other
+          functions. No particular material fracture or physical cause is specified.
+        excludes:
+        - A bell has a hairline crack but still performs every intended function.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: A bell has a hairline
+      crack but still performs every intended function.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:ec01f9b5c6eb3c5483bc3b72
+  display_title: completed discovery of a particular target
+  current_choice_reason: The authored distinction is exercised by Pip found a cracked
+    bell. and contrasted with Pip already knows where the bell is and only changes
+    an opinion about its colour.
+  candidates:
+  - candidate_id: specific_convention
+    direction: An experiencer newly identifies a particular target or its whereabouts
+      through an encounter. The resulting change in what the experiencer represents
+      is about that same target. Deliberate searching and physical possession are
+      unspecified.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: MIN:010
+      - node_id: h
+        kind: root
+        root_id: MIN:110
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: completed_discovery_of_a_particular_target
+        sound_code: 43
+        added_definition: An experiencer newly identifies a particular target or its
+          whereabouts through an encounter. The resulting change in what the experiencer
+          represents is about that same target. Deliberate searching and physical
+          possession are unspecified.
+        excludes:
+        - Pip already knows where the bell is and only changes an opinion about its
+          colour.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: Pip already knows where
+      the bell is and only changes an opinion about its colour.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
