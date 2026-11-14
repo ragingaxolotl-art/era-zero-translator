@@ -73,7 +73,8 @@ class ResultElement extends Element {
 const fields=Object.fromEntries(['sourceInput','output','phraseCoverage','resolutionPanel','results','decisionSummary','candidateList'].map(id=>[id,new ResultElement()]));
 fields.sourceInput.value=phrase;
 let forwarded=[],playedLine;
-const ctx=vm.createContext({faultCorrectionPlan,informationPassagePlan,composeInformationPassage,scoreSongText,compactChordMidi,
+const {storyReading}=await import('../pages/story_readings.mjs');
+const ctx=vm.createContext({storyReading,faultCorrectionPlan,informationPassagePlan,composeInformationPassage,scoreSongText,compactChordMidi,
  state:{data:a,mode:'general',wordSelections:new Map()},$:id=>fields[id],sentenceTemplate:load,document:{createElement:()=>new ResultElement()},
  savedCompoundPlayer:{play:async(bytes,options)=>{playedLine={bytes,options};},stop(){}},toast(){},download(){},
  addPerformance:(text,midi,label)=>forwarded.push({text,midi,label})});

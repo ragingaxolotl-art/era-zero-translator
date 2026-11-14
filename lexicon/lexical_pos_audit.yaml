@@ -5,21 +5,21 @@ metadata:
   status: noncanonical_metadata_complete
   canonical_semantic_changes: 0
   root_count: 324
-  indexed_sense_count: 471
+  indexed_sense_count: 497
   game_story_surface_sense_count: 48
-  total_audited_senses: 519
+  total_audited_senses: 545
   part_of_speech_counts:
-    adjective: 22
+    adjective: 25
     adverb: 2
     conjunction: 3
     grammar: 1
     interjection: 1
-    noun: 29
-    noun_phrase: 279
+    noun: 30
+    noun_phrase: 292
     number: 1
     preposition: 2
     quantifier: 1
-    verb: 70
+    verb: 79
     verb_phrase: 108
   policy: English senses carry parts of speech; Era Zero roots retain address-derived
     semantic affordances and may support more than one English syntactic realization.
@@ -14100,6 +14100,20 @@ senses:
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
+- sense_id: ENS:97ead269b05b1aa1bee7f31b
+  lemma: another occurrence of a pattern
+  part_of_speech: noun_phrase
+  surface_forms:
+  - another occurrence of a pattern
+  route: compound
+  target_id: CMP:d6b796937329c4412a92ea4a
+  sense_key: canonical_compound_label
+  definition: An occurrence of a pattern takes place again after a prior occurrence
+    of that same pattern. The newer occurrence is distinct. The interval, exact repetition
+    count and cause are unspecified.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
 - sense_id: ENS:3214e617d9796e986d0caf3f
   lemma: approach
   part_of_speech: verb
@@ -14111,6 +14125,20 @@ senses:
   definition: To be undergoing displacement toward a target position.
   fidelity: high
   controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:1c80a3ae782558db47760325
+  lemma: arrival back at a prior position
+  part_of_speech: noun_phrase
+  surface_forms:
+  - arrival back at a prior position
+  route: compound
+  target_id: CMP:0808e01be62b7fac873ee324
+  sense_key: canonical_compound_label
+  definition: A mover reaches a place it occupied earlier. The place reached is the
+    earlier place of this same mover. The route, duration away and reason for coming
+    back are unspecified.
+  fidelity: high
+  controlled_input_allowed: true
   authority_layer: english_sense_index
 - sense_id: ENS:b1563c8c463e36e3e134035b
   lemma: arrive
@@ -14299,6 +14327,20 @@ senses:
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
+- sense_id: ENS:c8dcd3b72256609763340515
+  lemma: broken
+  part_of_speech: adjective
+  surface_forms:
+  - broken
+  route: compound
+  target_id: CMP:db907903bd93df7356cf7039
+  sense_key: functionally_broken_object_or_process
+  definition: A fault prevents this object or process from performing at least one
+    intended function when required. It may still perform other functions. No particular
+    material fracture or physical cause is specified.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
 - sense_id: ENS:c905c4d6c245b415ebec6f04
   lemma: build
   part_of_speech: verb
@@ -14334,6 +14376,51 @@ senses:
   definition: To actively increase, diversify, or develop life at the population or
     system level.
   fidelity: authoritative
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:2cc43a5443cce0bfca6b0fd4
+  lemma: cause another occurrence of a pattern
+  part_of_speech: noun_phrase
+  surface_forms:
+  - cause another occurrence of a pattern
+  route: compound
+  target_id: CMP:d372748e7d848ebe63c65cd0
+  sense_key: canonical_compound_label
+  definition: One participant brings about a later occurrence of the specified earlier
+    pattern. The two occurrences instantiate the same pattern. The cause of the first
+    occurrence may be different.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:39af21a1faba152d7b30092a
+  lemma: cease
+  part_of_speech: verb
+  surface_forms:
+  - cease
+  - ceases
+  - ceased
+  - ceasing
+  route: compound
+  target_id: CMP:3d95154b4812da0cefd7fc45
+  sense_key: cessation_of_an_occurrence
+  definition: A previously ongoing occurrence reaches an endpoint at which its continuation
+    ceases. The resulting situation begins at that endpoint. No destruction, lasting
+    inactivity or deliberate agent is implied.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:8b12e7d95ec6c41738802e6e
+  lemma: cessation of an occurrence
+  part_of_speech: noun_phrase
+  surface_forms:
+  - cessation of an occurrence
+  route: compound
+  target_id: CMP:3d95154b4812da0cefd7fc45
+  sense_key: canonical_compound_label
+  definition: A previously ongoing occurrence reaches an endpoint at which its continuation
+    ceases. The resulting situation begins at that endpoint. No destruction, lasting
+    inactivity or deliberate agent is implied.
+  fidelity: high
   controlled_input_allowed: true
   authority_layer: english_sense_index
 - sense_id: ENS:5ac40242b12e752bb91e5bde
@@ -14485,6 +14572,20 @@ senses:
   definition: The formation or development of a population, ecology, or living network
     has reached a stable completed state.
   fidelity: authoritative
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:22e995e9b66f133d310470d1
+  lemma: completed discovery of a particular target
+  part_of_speech: noun_phrase
+  surface_forms:
+  - completed discovery of a particular target
+  route: compound
+  target_id: CMP:ec01f9b5c6eb3c5483bc3b72
+  sense_key: canonical_compound_label
+  definition: An experiencer newly identifies a particular target or its whereabouts
+    through an encounter. The resulting change in what the experiencer represents
+    is about that same target. Deliberate searching and physical possession are unspecified.
+  fidelity: high
   controlled_input_allowed: true
   authority_layer: english_sense_index
 - sense_id: ENS:547ab87a829976b5a6e2e562
@@ -15076,6 +15177,20 @@ senses:
     states.
   fidelity: authoritative
   controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:4f3abb9752ddd37214cc49df
+  lemma: cracked
+  part_of_speech: adjective
+  surface_forms:
+  - cracked
+  route: compound
+  target_id: CMP:3deb356dfe7aaa444e25e929
+  sense_key: material_object_bearing_a_fissure
+  definition: A particular material object currently bears at least one material fissure.
+    The fissure belongs to that object. The object may still function and need not
+    have separated into pieces.
+  fidelity: high
+  controlled_input_allowed: false
   authority_layer: english_sense_index
 - sense_id: ENS:259f9210b63cd16ffed8286a
   lemma: create
@@ -15685,6 +15800,48 @@ senses:
   fidelity: authoritative
   controlled_input_allowed: true
   authority_layer: english_sense_index
+- sense_id: ENS:64bc06a151a0c705f93560e6
+  lemma: episode of mechanical sound emission
+  part_of_speech: noun_phrase
+  surface_forms:
+  - episode of mechanical sound emission
+  route: compound
+  target_id: CMP:1dc218880dfc6c56123b7732
+  sense_key: canonical_compound_label
+  definition: Oscillation in a material source sends a mechanical pressure or elastic
+    wave into a surrounding medium during the same episode. No listener or intention
+    to signal is required.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:574d6f02cf59588e8906cb63
+  lemma: episode of physical oscillation
+  part_of_speech: noun_phrase
+  surface_forms:
+  - episode of physical oscillation
+  route: compound
+  target_id: CMP:b08305996685a5c9ba7f7a45
+  sense_key: canonical_compound_label
+  definition: During one reported episode a material bearer moves back and forth about
+    a position. The episode includes repeated reversals. Audible emission, a receiver
+    and a communicative intention are optional.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:0904c64ff9461068093724e6
+  lemma: episode of resonant ringing
+  part_of_speech: noun_phrase
+  surface_forms:
+  - episode of resonant ringing
+  route: compound
+  target_id: CMP:1b70b478c71b872bf63bb95a
+  sense_key: canonical_compound_label
+  definition: One source produces a resonant ringing sound during an episode of mechanical
+    sound emission. The ringing is the sound of that source. A listener, a responsible
+    striker and repeated strikes are unspecified.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
 - sense_id: ENS:87d396cf885816d2944d80f4
   lemma: established directed communication relation
   part_of_speech: noun_phrase
@@ -15838,6 +15995,34 @@ senses:
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
+- sense_id: ENS:949acd48498840f3ec4c7510
+  lemma: fault that impairs an intended function
+  part_of_speech: noun_phrase
+  surface_forms:
+  - fault that impairs an intended function
+  route: compound
+  target_id: CMP:9afc86c0f17022e083c7a5fe
+  sense_key: canonical_compound_label
+  definition: An object or process has a manifest fault that interferes with at least
+    one of its intended functions under the conditions where that function is expected.
+    Other functions can remain available.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:72470d63e05af041c34151fe
+  lemma: faulty
+  part_of_speech: adjective
+  surface_forms:
+  - faulty
+  route: compound
+  target_id: CMP:9afc86c0f17022e083c7a5fe
+  sense_key: fault_that_impairs_an_intended_function
+  definition: An object or process has a manifest fault that interferes with at least
+    one of its intended functions under the conditions where that function is expected.
+    Other functions can remain available.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
 - sense_id: ENS:8824e67d1b7579fa4e61a836
   lemma: felt bodily replenishment need
   part_of_speech: noun_phrase
@@ -15901,6 +16086,35 @@ senses:
     plan. Figurative thirst for power or knowledge is excluded.'
   fidelity: high
   controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:4be15dd8292bd3df4669e4e1
+  lemma: find
+  part_of_speech: verb
+  surface_forms:
+  - found
+  route: compound
+  target_id: CMP:ec01f9b5c6eb3c5483bc3b72
+  sense_key: completed_discovery_of_a_particular_target
+  definition: An experiencer newly identifies a particular target or its whereabouts
+    through an encounter. The resulting change in what the experiencer represents
+    is about that same target. Deliberate searching and physical possession are unspecified.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:0656ed2f1e9820245ee0fe5c
+  lemma: fissure
+  part_of_speech: noun
+  surface_forms:
+  - fissure
+  - fissures
+  route: compound
+  target_id: CMP:50520ef35adf0102649dc6cf
+  sense_key: material_fissure
+  definition: A narrow physical discontinuity extends through or along a material
+    bearer where the material on either side would otherwise be joined. It may be
+    internal or visible at a surface.
+  fidelity: high
+  controlled_input_allowed: false
   authority_layer: english_sense_index
 - sense_id: ENS:6d9271cb4b53de4bfc4a54dd
   lemma: fix
@@ -15974,6 +16188,20 @@ senses:
   definition: A person standing in a socially recognized friendship relation.
   fidelity: high
   controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:8860ac1540798db59b1fe0d8
+  lemma: functionally broken object or process
+  part_of_speech: noun_phrase
+  surface_forms:
+  - functionally broken object or process
+  route: compound
+  target_id: CMP:db907903bd93df7356cf7039
+  sense_key: canonical_compound_label
+  definition: A fault prevents this object or process from performing at least one
+    intended function when required. It may still perform other functions. No particular
+    material fracture or physical cause is specified.
+  fidelity: high
+  controlled_input_allowed: true
   authority_layer: english_sense_index
 - sense_id: ENS:3a52c8f1a5eb614d5593140d
   lemma: future
@@ -16135,6 +16363,20 @@ senses:
   definition: A part–whole arrangement that is presently realized as one structure
     by constituents occupying multiple constituent positions.
   fidelity: authoritative
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:2aa3a7000a95ed9fbe443212
+  lemma: interval of deferred action
+  part_of_speech: noun_phrase
+  surface_forms:
+  - interval of deferred action
+  route: compound
+  target_id: CMP:e17374fbc08546afa196b2cd
+  sense_key: canonical_compound_label
+  definition: During an interval a participant defers a pending action while a condition
+    or occasion for acting is outstanding. Other activity can continue. The pending
+    action need never actually happen.
+  fidelity: high
   controlled_input_allowed: true
   authority_layer: english_sense_index
 - sense_id: ENS:7a7a779150abda10b3747adb
@@ -16949,6 +17191,20 @@ senses:
   fidelity: high
   controlled_input_allowed: true
   authority_layer: english_sense_index
+- sense_id: ENS:3ef53009b4131237181307f9
+  lemma: material fissure
+  part_of_speech: noun_phrase
+  surface_forms:
+  - material fissure
+  route: compound
+  target_id: CMP:50520ef35adf0102649dc6cf
+  sense_key: canonical_compound_label
+  definition: A narrow physical discontinuity extends through or along a material
+    bearer where the material on either side would otherwise be joined. It may be
+    internal or visible at a surface.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
 - sense_id: ENS:cbdd37a061a7a32250ee31bf
   lemma: material hazard
   part_of_speech: noun_phrase
@@ -16958,6 +17214,20 @@ senses:
   target_id: CMP:cb0812face56f90b7ba139c5
   sense_key: canonical_compound_label
   definition: A persistent external hazard that is a distinct material object.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:0e3aad5666ac1d26d1cc5464
+  lemma: material object bearing a fissure
+  part_of_speech: noun_phrase
+  surface_forms:
+  - material object bearing a fissure
+  route: compound
+  target_id: CMP:3deb356dfe7aaa444e25e929
+  sense_key: canonical_compound_label
+  definition: A particular material object currently bears at least one material fissure.
+    The fissure belongs to that object. The object may still function and need not
+    have separated into pieces.
   fidelity: high
   controlled_input_allowed: true
   authority_layer: english_sense_index
@@ -19130,6 +19400,23 @@ senses:
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
+- sense_id: ENS:11f92112f316aceca0a0d70b
+  lemma: recur
+  part_of_speech: verb
+  surface_forms:
+  - recur
+  - recurs
+  - recurred
+  - recurring
+  route: compound
+  target_id: CMP:d6b796937329c4412a92ea4a
+  sense_key: another_occurrence_of_a_pattern
+  definition: An occurrence of a pattern takes place again after a prior occurrence
+    of that same pattern. The newer occurrence is distinct. The interval, exact repetition
+    count and cause are unspecified.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
 - sense_id: ENS:901babefedfc9e1f7aa95438
   lemma: remember
   part_of_speech: verb
@@ -19154,6 +19441,23 @@ senses:
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
+- sense_id: ENS:cae44a92e9c627b9da9b9f42
+  lemma: repeat
+  part_of_speech: verb
+  surface_forms:
+  - repeat
+  - repeats
+  - repeated
+  - repeating
+  route: compound
+  target_id: CMP:d372748e7d848ebe63c65cd0
+  sense_key: cause_another_occurrence_of_a_pattern
+  definition: One participant brings about a later occurrence of the specified earlier
+    pattern. The two occurrences instantiate the same pattern. The cause of the first
+    occurrence may be different.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
 - sense_id: ENS:166cbe337a240a43af71830f
   lemma: retained position
   part_of_speech: noun_phrase
@@ -19166,6 +19470,23 @@ senses:
     occupied.
   fidelity: authoritative
   controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:18d9a9168b20ee756325f0fb
+  lemma: return
+  part_of_speech: verb
+  surface_forms:
+  - return
+  - returns
+  - returned
+  - returning
+  route: compound
+  target_id: CMP:0808e01be62b7fac873ee324
+  sense_key: arrival_back_at_a_prior_position
+  definition: A mover reaches a place it occupied earlier. The place reached is the
+    earlier place of this same mover. The route, duration away and reason for coming
+    back are unspecified.
+  fidelity: high
+  controlled_input_allowed: false
   authority_layer: english_sense_index
 - sense_id: ENS:19cd0d609dff1ebdc1d2cbbd
   lemma: return
@@ -19188,6 +19509,23 @@ senses:
   target_id: 
   sense_key: movement_to_prior_position
   definition: Move to a position previously occupied or treated as origin.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:89d504d58bff5e22c39cea0d
+  lemma: ring
+  part_of_speech: verb
+  surface_forms:
+  - ring
+  - rings
+  - rang
+  - ringing
+  route: compound
+  target_id: CMP:1b70b478c71b872bf63bb95a
+  sense_key: episode_of_resonant_ringing
+  definition: One source produces a resonant ringing sound during an episode of mechanical
+    sound emission. The ringing is the sound of that source. A listener, a responsible
+    striker and repeated strikes are unspecified.
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
@@ -19377,6 +19715,23 @@ senses:
     formal regime.
   fidelity: high
   controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:b8a8116c284c8366399cde70
+  lemma: sound
+  part_of_speech: verb
+  surface_forms:
+  - sound
+  - sounds
+  - sounded
+  - sounding
+  route: compound
+  target_id: CMP:1dc218880dfc6c56123b7732
+  sense_key: episode_of_mechanical_sound_emission
+  definition: Oscillation in a material source sends a mechanical pressure or elastic
+    wave into a surrounding medium during the same episode. No listener or intention
+    to signal is required.
+  fidelity: high
+  controlled_input_allowed: false
   authority_layer: english_sense_index
 - sense_id: ENS:bbea2eed19e3e8481d0b999b
   lemma: stable biosystem
@@ -19636,6 +19991,23 @@ senses:
   fidelity: authoritative
   controlled_input_allowed: true
   authority_layer: english_sense_index
+- sense_id: ENS:e2085f15c58d4e231b1b3202
+  lemma: vibrate
+  part_of_speech: verb
+  surface_forms:
+  - vibrate
+  - vibrates
+  - vibrated
+  - vibrating
+  route: compound
+  target_id: CMP:b08305996685a5c9ba7f7a45
+  sense_key: episode_of_physical_oscillation
+  definition: During one reported episode a material bearer moves back and forth about
+    a position. The episode includes repeated reversals. Audible emission, a receiver
+    and a communicative intention are optional.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
 - sense_id: ENS:608cf277730410f915c85501
   lemma: wait
   part_of_speech: verb
@@ -19645,6 +20017,23 @@ senses:
   target_id: 
   sense_key: deferred_action
   definition: Remain without actualizing a pending process until a condition holds.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:d0388311fab54ab12e4a5cc1
+  lemma: wait
+  part_of_speech: verb
+  surface_forms:
+  - wait
+  - waits
+  - waited
+  - waiting
+  route: compound
+  target_id: CMP:e17374fbc08546afa196b2cd
+  sense_key: interval_of_deferred_action
+  definition: During an interval a participant defers a pending action while a condition
+    or occasion for acting is outstanding. Other activity can continue. The pending
+    action need never actually happen.
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index

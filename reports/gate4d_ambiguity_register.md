@@ -34,7 +34,7 @@ Status: **CURRENT**
 | pause | 1 | semantic_ir | — |
 | receive | 2 | atom | CON:111, DAT:110 |
 | remember | 1 | semantic_ir | — |
-| return | 2 | semantic_ir | — |
+| return | 3 | compound, semantic_ir | CMP:0808e01be62b7fac873ee324 |
 | run | 3 | semantic_ir | — |
 | safe | 1 | gap | — |
 | send | 2 | atom | CON:101, DAT:111 |
@@ -43,5 +43,5 @@ Status: **CURRENT**
 | think | 1 | gap | — |
 | transport | 1 | semantic_ir | — |
 | true | 1 | gap | — |
-| wait | 1 | semantic_ir | — |
+| wait | 2 | compound, semantic_ir | CMP:e17374fbc08546afa196b2cd |
 | water | 1 | gap | — |

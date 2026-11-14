@@ -40,7 +40,9 @@ export async function decodeSupportedMeaningWithDrafts(bytes,atoms,records,{allo
  const {decodeDictionaryClauseMidi}=await import('./dictionary_clause_music.mjs');
  const {decodeFaultCorrectionMidi}=await import('./fault_correction.mjs');
  const {decodeInformationPassageMidi}=await import('./information_passage.mjs');
+ const {decodeStoryMidi}=await import('./story_music.mjs');
  const accepted=[];
+ try{accepted.push(decodeStoryMidi(bytes,atoms));}catch{}
  try{accepted.push(decodeDictionaryClauseMidi(bytes,atoms));}catch{}
  try{accepted.push(await decodeFaultCorrectionMidi(bytes,atoms));}catch{}
  try{accepted.push(decodeInformationPassageMidi(bytes,atoms));}catch{}

@@ -1,10 +1,10 @@
 import {dictionaryRoles} from './dictionary_clauses.mjs';
 import {contextualContentReference} from './contextual_content.mjs';
 import {informationMusic} from './information_music.mjs';
-import {informationFrame} from './information_passage_frames.mjs?v=clauses-1';
+import {informationFrame} from './information_passage_frames.mjs?v=story-1';
 import {midiFromScheduledEvents} from './engine.mjs';
 import {registerFor} from './roles.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=clauses-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=story-1';
 
 const semantic=(root,participants,scopes,runtime_state,speech_act)=>({
   profile:'EZ-DICTIONARY-CLAUSE-1',status:'draft',predicate:root,participants,scopes,runtime_state,speech_act

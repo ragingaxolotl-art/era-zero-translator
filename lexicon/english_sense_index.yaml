@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 471
-  lemma_count: 454
+  sense_count: 497
+  lemma_count: 478
   canonical_atom_senses: 324
-  canonical_compound_senses: 63
+  canonical_compound_senses: 76
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: 5e5d71ca13bf0f3e75177e0731529014b899b71eeee01b67e62d9c319b67b2b3
+  compound_dictionary_fingerprint: abe134ba53d483946b478ee09567c54bc46c16d2a43e836a5bae00970bc7c744
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -964,6 +964,24 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: another occurrence of a pattern
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:d6b796937329c4412a92ea4a
+  definition: An occurrence of a pattern takes place again after a prior occurrence
+    of that same pattern. The newer occurrence is distinct. The interval, exact repetition
+    count and cause are unspecified.
+  sense_id: ENS:97ead269b05b1aa1bee7f31b
+  display_form: another occurrence of a pattern
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - One uninterrupted retry continued for a longer time.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:3214e617d9796e986d0caf3f
   lemma: approach
   display_form: approach
@@ -979,6 +997,24 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: arrival back at a prior position
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:0808e01be62b7fac873ee324
+  definition: A mover reaches a place it occupied earlier. The place reached is the
+    earlier place of this same mover. The route, duration away and reason for coming
+    back are unspecified.
+  sense_id: ENS:1c80a3ae782558db47760325
+  display_form: arrival back at a prior position
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - The pulse happened again without travelling back to an earlier position.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:b1563c8c463e36e3e134035b
   lemma: arrive
   display_form: arrive
@@ -1221,6 +1257,26 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: broken
+  part_of_speech: adjective
+  sense_key: functionally_broken_object_or_process
+  route: compound
+  target_id: CMP:db907903bd93df7356cf7039
+  definition: A fault prevents this object or process from performing at least one
+    intended function when required. It may still perform other functions. No particular
+    material fracture or physical cause is specified.
+  sense_id: ENS:c8dcd3b72256609763340515
+  display_form: broken
+  surface_forms:
+  - broken
+  selection_cues:
+  - That is the broken chair. It supports a seated person but cannot hold its back
+    in position.
+  excluded_readings:
+  - A bell has a hairline crack but still performs every intended function.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:c905c4d6c245b415ebec6f04
   lemma: build
   display_form: build
@@ -1267,6 +1323,64 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: cause another occurrence of a pattern
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:d372748e7d848ebe63c65cd0
+  definition: One participant brings about a later occurrence of the specified earlier
+    pattern. The two occurrences instantiate the same pattern. The cause of the first
+    occurrence may be different.
+  sense_id: ENS:2cc43a5443cce0bfca6b0fd4
+  display_form: cause another occurrence of a pattern
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A pulse recurred without being brought about by the named participant.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: cease
+  part_of_speech: verb
+  sense_key: cessation_of_an_occurrence
+  route: compound
+  target_id: CMP:3d95154b4812da0cefd7fc45
+  definition: A previously ongoing occurrence reaches an endpoint at which its continuation
+    ceases. The resulting situation begins at that endpoint. No destruction, lasting
+    inactivity or deliberate agent is implied.
+  sense_id: ENS:39af21a1faba152d7b30092a
+  display_form: cease
+  surface_forms:
+  - cease
+  - ceases
+  - ceased
+  - ceasing
+  selection_cues:
+  - The pulse ceased.
+  excluded_readings:
+  - The pulse became quieter while it continued.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
+- lemma: cessation of an occurrence
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:3d95154b4812da0cefd7fc45
+  definition: A previously ongoing occurrence reaches an endpoint at which its continuation
+    ceases. The resulting situation begins at that endpoint. No destruction, lasting
+    inactivity or deliberate agent is implied.
+  sense_id: ENS:8b12e7d95ec6c41738802e6e
+  display_form: cessation of an occurrence
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - The pulse became quieter while it continued.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:5ac40242b12e752bb91e5bde
   lemma: change
   display_form: change
@@ -1465,6 +1579,24 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: completed discovery of a particular target
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:ec01f9b5c6eb3c5483bc3b72
+  definition: An experiencer newly identifies a particular target or its whereabouts
+    through an encounter. The resulting change in what the experiencer represents
+    is about that same target. Deliberate searching and physical possession are unspecified.
+  sense_id: ENS:22e995e9b66f133d310470d1
+  display_form: completed discovery of a particular target
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Pip already knows where the bell is and only changes an opinion about its colour.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:547ab87a829976b5a6e2e562
   lemma: completed distinct actualization
   display_form: completed distinct actualization
@@ -2275,6 +2407,25 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: cracked
+  part_of_speech: adjective
+  sense_key: material_object_bearing_a_fissure
+  route: compound
+  target_id: CMP:3deb356dfe7aaa444e25e929
+  definition: A particular material object currently bears at least one material fissure.
+    The fissure belongs to that object. The object may still function and need not
+    have separated into pieces.
+  sense_id: ENS:4f3abb9752ddd37214cc49df
+  display_form: cracked
+  surface_forms:
+  - cracked
+  selection_cues:
+  - Pip found a cracked bell that could still ring.
+  excluded_readings:
+  - The bell fails because its clapper is missing but its material is intact.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:259f9210b63cd16ffed8286a
   lemma: create
   display_form: create
@@ -3099,6 +3250,60 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: episode of mechanical sound emission
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:1dc218880dfc6c56123b7732
+  definition: Oscillation in a material source sends a mechanical pressure or elastic
+    wave into a surrounding medium during the same episode. No listener or intention
+    to signal is required.
+  sense_id: ENS:64bc06a151a0c705f93560e6
+  display_form: episode of mechanical sound emission
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - An earpiece detected a wave from elsewhere without emitting it.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: episode of physical oscillation
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:b08305996685a5c9ba7f7a45
+  definition: During one reported episode a material bearer moves back and forth about
+    a position. The episode includes repeated reversals. Audible emission, a receiver
+    and a communicative intention are optional.
+  sense_id: ENS:574d6f02cf59588e8906cb63
+  display_form: episode of physical oscillation
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - The phone slid once across the table.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: episode of resonant ringing
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:1b70b478c71b872bf63bb95a
+  definition: One source produces a resonant ringing sound during an episode of mechanical
+    sound emission. The ringing is the sound of that source. A listener, a responsible
+    striker and repeated strikes are unspecified.
+  sense_id: ENS:0904c64ff9461068093724e6
+  display_form: episode of resonant ringing
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Someone rang Ada on the phone to speak with her.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:87d396cf885816d2944d80f4
   lemma: established directed communication relation
   display_form: established directed communication relation
@@ -3308,6 +3513,43 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: fault that impairs an intended function
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:9afc86c0f17022e083c7a5fe
+  definition: An object or process has a manifest fault that interferes with at least
+    one of its intended functions under the conditions where that function is expected.
+    Other functions can remain available.
+  sense_id: ENS:949acd48498840f3ec4c7510
+  display_form: fault that impairs an intended function
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A chair has a harmless scratch and every intended function works.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: faulty
+  part_of_speech: adjective
+  sense_key: fault_that_impairs_an_intended_function
+  route: compound
+  target_id: CMP:9afc86c0f17022e083c7a5fe
+  definition: An object or process has a manifest fault that interferes with at least
+    one of its intended functions under the conditions where that function is expected.
+    Other functions can remain available.
+  sense_id: ENS:72470d63e05af041c34151fe
+  display_form: faulty
+  surface_forms:
+  - faulty
+  selection_cues:
+  - A faulty chair drops when someone leans back.
+  excluded_readings:
+  - A chair has a harmless scratch and every intended function works.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:8824e67d1b7579fa4e61a836
   lemma: felt bodily replenishment need
   display_form: felt bodily replenishment need
@@ -3393,6 +3635,45 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: find
+  part_of_speech: verb
+  sense_key: completed_discovery_of_a_particular_target
+  route: compound
+  target_id: CMP:ec01f9b5c6eb3c5483bc3b72
+  definition: An experiencer newly identifies a particular target or its whereabouts
+    through an encounter. The resulting change in what the experiencer represents
+    is about that same target. Deliberate searching and physical possession are unspecified.
+  sense_id: ENS:4be15dd8292bd3df4669e4e1
+  display_form: find
+  surface_forms:
+  - found
+  selection_cues:
+  - Pip found a cracked bell.
+  excluded_readings:
+  - Pip already knows where the bell is and only changes an opinion about its colour.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
+- lemma: fissure
+  part_of_speech: noun
+  sense_key: material_fissure
+  route: compound
+  target_id: CMP:50520ef35adf0102649dc6cf
+  definition: A narrow physical discontinuity extends through or along a material
+    bearer where the material on either side would otherwise be joined. It may be
+    internal or visible at a surface.
+  sense_id: ENS:0656ed2f1e9820245ee0fe5c
+  display_form: fissure
+  surface_forms:
+  - fissure
+  - fissures
+  selection_cues:
+  - A fissure runs through the ceramic.
+  excluded_readings:
+  - A painted line on intact ceramic.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:6d9271cb4b53de4bfc4a54dd
   lemma: fix
   display_form: fix
@@ -3481,6 +3762,24 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: functionally broken object or process
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:db907903bd93df7356cf7039
+  definition: A fault prevents this object or process from performing at least one
+    intended function when required. It may still perform other functions. No particular
+    material fracture or physical cause is specified.
+  sense_id: ENS:8860ac1540798db59b1fe0d8
+  display_form: functionally broken object or process
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A bell has a hairline crack but still performs every intended function.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:3a52c8f1a5eb614d5593140d
   lemma: future
   display_form: future
@@ -3683,6 +3982,24 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: interval of deferred action
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:e17374fbc08546afa196b2cd
+  definition: During an interval a participant defers a pending action while a condition
+    or occasion for acting is outstanding. Other activity can continue. The pending
+    action need never actually happen.
+  sense_id: ENS:2aa3a7000a95ed9fbe443212
+  display_form: interval of deferred action
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A counter stopped existing or never had a pending action.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:7a7a779150abda10b3747adb
   lemma: know
   display_form: know
@@ -4786,6 +5103,24 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: material fissure
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:50520ef35adf0102649dc6cf
+  definition: A narrow physical discontinuity extends through or along a material
+    bearer where the material on either side would otherwise be joined. It may be
+    internal or visible at a surface.
+  sense_id: ENS:3ef53009b4131237181307f9
+  display_form: material fissure
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A painted line on intact ceramic.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:cbdd37a061a7a32250ee31bf
   lemma: material hazard
   display_form: material hazard
@@ -4799,6 +5134,24 @@ senses:
   - all component restrictions are intended
   excluded_readings:
   - abstract risks and actual impairment events
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: material object bearing a fissure
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:3deb356dfe7aaa444e25e929
+  definition: A particular material object currently bears at least one material fissure.
+    The fissure belongs to that object. The object may still function and need not
+    have separated into pieces.
+  sense_id: ENS:0e3aad5666ac1d26d1cc5464
+  display_form: material object bearing a fissure
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - The bell fails because its clapper is missing but its material is intact.
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
@@ -7738,6 +8091,28 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: recur
+  part_of_speech: verb
+  sense_key: another_occurrence_of_a_pattern
+  route: compound
+  target_id: CMP:d6b796937329c4412a92ea4a
+  definition: An occurrence of a pattern takes place again after a prior occurrence
+    of that same pattern. The newer occurrence is distinct. The interval, exact repetition
+    count and cause are unspecified.
+  sense_id: ENS:11f92112f316aceca0a0d70b
+  display_form: recur
+  surface_forms:
+  - recur
+  - recurs
+  - recurred
+  - recurring
+  selection_cues:
+  - The retries recurred.
+  excluded_readings:
+  - One uninterrupted retry continued for a longer time.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:901babefedfc9e1f7aa95438
   lemma: remember
   display_form: remember
@@ -7767,6 +8142,28 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: repeat
+  part_of_speech: verb
+  sense_key: cause_another_occurrence_of_a_pattern
+  route: compound
+  target_id: CMP:d372748e7d848ebe63c65cd0
+  definition: One participant brings about a later occurrence of the specified earlier
+    pattern. The two occurrences instantiate the same pattern. The cause of the first
+    occurrence may be different.
+  sense_id: ENS:cae44a92e9c627b9da9b9f42
+  display_form: repeat
+  surface_forms:
+  - repeat
+  - repeats
+  - repeated
+  - repeating
+  selection_cues:
+  - The arrival repeated the pulse.
+  excluded_readings:
+  - A pulse recurred without being brought about by the named participant.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:166cbe337a240a43af71830f
   lemma: retained position
   display_form: retained position
@@ -7785,6 +8182,28 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: return
+  part_of_speech: verb
+  sense_key: arrival_back_at_a_prior_position
+  route: compound
+  target_id: CMP:0808e01be62b7fac873ee324
+  definition: A mover reaches a place it occupied earlier. The place reached is the
+    earlier place of this same mover. The route, duration away and reason for coming
+    back are unspecified.
+  sense_id: ENS:18d9a9168b20ee756325f0fb
+  display_form: return
+  surface_forms:
+  - return
+  - returns
+  - returned
+  - returning
+  selection_cues:
+  - The cart returned to its former position.
+  excluded_readings:
+  - The pulse happened again without travelling back to an earlier position.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:19cd0d609dff1ebdc1d2cbbd
   lemma: return
   display_form: return
@@ -7813,6 +8232,28 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: ring
+  part_of_speech: verb
+  sense_key: episode_of_resonant_ringing
+  route: compound
+  target_id: CMP:1b70b478c71b872bf63bb95a
+  definition: One source produces a resonant ringing sound during an episode of mechanical
+    sound emission. The ringing is the sound of that source. A listener, a responsible
+    striker and repeated strikes are unspecified.
+  sense_id: ENS:89d504d58bff5e22c39cea0d
+  display_form: ring
+  surface_forms:
+  - ring
+  - rings
+  - rang
+  - ringing
+  selection_cues:
+  - The bell rang in the empty hall.
+  excluded_readings:
+  - Someone rang Ada on the phone to speak with her.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:7660ff0929ff6fd78f912906
   lemma: route
   display_form: route
@@ -8048,6 +8489,28 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: sound
+  part_of_speech: verb
+  sense_key: episode_of_mechanical_sound_emission
+  route: compound
+  target_id: CMP:1dc218880dfc6c56123b7732
+  definition: Oscillation in a material source sends a mechanical pressure or elastic
+    wave into a surrounding medium during the same episode. No listener or intention
+    to signal is required.
+  sense_id: ENS:b8a8116c284c8366399cde70
+  display_form: sound
+  surface_forms:
+  - sound
+  - sounds
+  - sounded
+  - sounding
+  selection_cues:
+  - An alarm sounded in an empty room.
+  excluded_readings:
+  - An earpiece detected a wave from elsewhere without emitting it.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:bbea2eed19e3e8481d0b999b
   lemma: stable biosystem
   display_form: stable biosystem
@@ -8391,6 +8854,28 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: vibrate
+  part_of_speech: verb
+  sense_key: episode_of_physical_oscillation
+  route: compound
+  target_id: CMP:b08305996685a5c9ba7f7a45
+  definition: During one reported episode a material bearer moves back and forth about
+    a position. The episode includes repeated reversals. Audible emission, a receiver
+    and a communicative intention are optional.
+  sense_id: ENS:e2085f15c58d4e231b1b3202
+  display_form: vibrate
+  surface_forms:
+  - vibrate
+  - vibrates
+  - vibrated
+  - vibrating
+  selection_cues:
+  - Her phone vibrated silently.
+  excluded_readings:
+  - The phone slid once across the table.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:608cf277730410f915c85501
   lemma: wait
   display_form: wait
@@ -8405,6 +8890,28 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: wait
+  part_of_speech: verb
+  sense_key: interval_of_deferred_action
+  route: compound
+  target_id: CMP:e17374fbc08546afa196b2cd
+  definition: During an interval a participant defers a pending action while a condition
+    or occasion for acting is outstanding. Other activity can continue. The pending
+    action need never actually happen.
+  sense_id: ENS:d0388311fab54ab12e4a5cc1
+  display_form: wait
+  surface_forms:
+  - wait
+  - waits
+  - waited
+  - waiting
+  selection_cues:
+  - The counter waited.
+  excluded_readings:
+  - A counter stopped existing or never had a pending action.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:b4e230454467ad8c75af4664
   lemma: water
   display_form: water
@@ -8791,6 +9298,13 @@ lemma_index:
     direct_target_count: 0
     routes:
     - grammar
+  another occurrence of a pattern:
+    sense_ids:
+    - ENS:97ead269b05b1aa1bee7f31b
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   approach:
     sense_ids:
     - ENS:3214e617d9796e986d0caf3f
@@ -8798,6 +9312,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  arrival back at a prior position:
+    sense_ids:
+    - ENS:1c80a3ae782558db47760325
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   arrive:
     sense_ids:
     - ENS:b1563c8c463e36e3e134035b
@@ -8903,6 +9424,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  broken:
+    sense_ids:
+    - ENS:c8dcd3b72256609763340515
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   build:
     sense_ids:
     - ENS:c905c4d6c245b415ebec6f04
@@ -8924,6 +9452,27 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  cause another occurrence of a pattern:
+    sense_ids:
+    - ENS:2cc43a5443cce0bfca6b0fd4
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  cease:
+    sense_ids:
+    - ENS:39af21a1faba152d7b30092a
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  cessation of an occurrence:
+    sense_ids:
+    - ENS:8b12e7d95ec6c41738802e6e
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   change:
     sense_ids:
     - ENS:5ac40242b12e752bb91e5bde
@@ -8978,6 +9527,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  completed discovery of a particular target:
+    sense_ids:
+    - ENS:22e995e9b66f133d310470d1
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   completed distinct actualization:
     sense_ids:
     - ENS:547ab87a829976b5a6e2e562
@@ -9279,6 +9835,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  cracked:
+    sense_ids:
+    - ENS:4f3abb9752ddd37214cc49df
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   create:
     sense_ids:
     - ENS:259f9210b63cd16ffed8286a
@@ -9608,6 +10171,27 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  episode of mechanical sound emission:
+    sense_ids:
+    - ENS:64bc06a151a0c705f93560e6
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  episode of physical oscillation:
+    sense_ids:
+    - ENS:574d6f02cf59588e8906cb63
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  episode of resonant ringing:
+    sense_ids:
+    - ENS:0904c64ff9461068093724e6
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   established directed communication relation:
     sense_ids:
     - ENS:87d396cf885816d2944d80f4
@@ -9686,6 +10270,20 @@ lemma_index:
     direct_target_count: 2
     routes:
     - atom
+  fault that impairs an intended function:
+    sense_ids:
+    - ENS:949acd48498840f3ec4c7510
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  faulty:
+    sense_ids:
+    - ENS:72470d63e05af041c34151fe
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   felt bodily replenishment need:
     sense_ids:
     - ENS:8824e67d1b7579fa4e61a836
@@ -9710,6 +10308,20 @@ lemma_index:
   felt thirst:
     sense_ids:
     - ENS:dbd5032912ba7a9aa20c9a75
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  find:
+    sense_ids:
+    - ENS:4be15dd8292bd3df4669e4e1
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  fissure:
+    sense_ids:
+    - ENS:0656ed2f1e9820245ee0fe5c
     requires_disambiguation: false
     direct_target_count: 1
     routes:
@@ -9756,6 +10368,13 @@ lemma_index:
     direct_target_count: 0
     routes:
     - gap
+  functionally broken object or process:
+    sense_ids:
+    - ENS:8860ac1540798db59b1fe0d8
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   future:
     sense_ids:
     - ENS:3a52c8f1a5eb614d5593140d
@@ -9831,6 +10450,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  interval of deferred action:
+    sense_ids:
+    - ENS:2aa3a7000a95ed9fbe443212
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   know:
     sense_ids:
     - ENS:7a7a779150abda10b3747adb
@@ -10260,9 +10886,23 @@ lemma_index:
     direct_target_count: 1
     routes:
     - compound
+  material fissure:
+    sense_ids:
+    - ENS:3ef53009b4131237181307f9
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   material hazard:
     sense_ids:
     - ENS:cbdd37a061a7a32250ee31bf
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  material object bearing a fissure:
+    sense_ids:
+    - ENS:0e3aad5666ac1d26d1cc5464
     requires_disambiguation: false
     direct_target_count: 1
     routes:
@@ -11357,6 +11997,13 @@ lemma_index:
     direct_target_count: 2
     routes:
     - atom
+  recur:
+    sense_ids:
+    - ENS:11f92112f316aceca0a0d70b
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   remember:
     sense_ids:
     - ENS:901babefedfc9e1f7aa95438
@@ -11371,6 +12018,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  repeat:
+    sense_ids:
+    - ENS:cae44a92e9c627b9da9b9f42
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   retained position:
     sense_ids:
     - ENS:166cbe337a240a43af71830f
@@ -11380,12 +12034,21 @@ lemma_index:
     - atom
   return:
     sense_ids:
+    - ENS:18d9a9168b20ee756325f0fb
     - ENS:19cd0d609dff1ebdc1d2cbbd
     - ENS:aade26f173c426afdcc5bea6
     requires_disambiguation: true
-    direct_target_count: 0
+    direct_target_count: 1
     routes:
+    - compound
     - semantic_ir
+  ring:
+    sense_ids:
+    - ENS:89d504d58bff5e22c39cea0d
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   route:
     sense_ids:
     - ENS:7660ff0929ff6fd78f912906
@@ -11463,6 +12126,13 @@ lemma_index:
   shared-world law:
     sense_ids:
     - ENS:55fe2e6e2b8fd4a78e03c38a
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  sound:
+    sense_ids:
+    - ENS:b8a8116c284c8366399cde70
     requires_disambiguation: false
     direct_target_count: 1
     routes:
@@ -11607,12 +12277,21 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  vibrate:
+    sense_ids:
+    - ENS:e2085f15c58d4e231b1b3202
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   wait:
     sense_ids:
     - ENS:608cf277730410f915c85501
+    - ENS:d0388311fab54ab12e4a5cc1
     requires_disambiguation: true
-    direct_target_count: 0
+    direct_target_count: 1
     routes:
+    - compound
     - semantic_ir
   water:
     sense_ids:

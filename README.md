@@ -6,7 +6,13 @@ This repository contains both the canonical Ruby application/API and a determini
 
 ## Translate a sentence or build a word
 
-Try “I swim” or “Pip carries the heavy box to Ada” in the browser. Choose the intended reading and play the resulting music. For an unfamiliar action or quality, use **Find or build this meaning**. You can save a word, reuse it inside another compound, and translate your original sentence with it. The first release includes 324 roots, 63 approved compounds and 471 indexed senses. It supports specific English constructions and shows gaps when it cannot preserve the whole sentence. [Compound builder](https://ragingaxolotl-art.github.io/era-zero-translator/compound-builder.html) · [Examples, verification, and limits](docs/first-release-status.md)
+Try “I swim” or “Pip carries the heavy box to Ada” in the browser. Choose the intended reading and play the resulting music. For an unfamiliar action or quality, use **Find or build this meaning**. You can save a word, reuse it inside another compound, and translate your original sentence with it. The current dictionary includes 324 roots, 76 approved compounds and 497 indexed senses. It supports specific English constructions and shows gaps when it cannot preserve the whole sentence. [Compound builder](https://ragingaxolotl-art.github.io/era-zero-translator/compound-builder.html) · [Examples, verification, and limits](docs/first-release-status.md)
+
+## Story and dialogue readings
+
+Try “Pip found a cracked bell. They repaired it before Ada arrived.” The same bell is discovered and repaired. The repair happens before the arrival. Try “Not all the bells rang” and “None of the bells rang” to hear two different scopes. An unclear pronoun prompts for its referent. Route choices, individual basic meanings, dictionary entries and compound-building parts show an everyday paraphrase alongside their technical identity. The spoken meaning remains defined by the original dictionary record.
+
+The [story audit](reports/story_readings.md) records intended meanings, what the music preserved, questions and losses for 29 fresh lines. The [vocabulary batch](lexicon/story_compound_batch.json) lists the 13 new compounds in dependency order, with an example and a near miss for each. The [grammar checks](tests/story_readings_test.mjs) decode both arrangements from notes.
 
 ## Historical hosted-release baseline
 
