@@ -11,6 +11,14 @@ The browser translator makes music from supported English sentences and from wor
 
 Nouns and proper names can have phonemic labels. A verb or adjective needs a meaning. Runtime endings [0], [1], and [2] are independent of the trits in the dictionary address. You can negate an assertion at any runtime. Use neutral references with a specified referent in the supported pronoun constructions.
 
+## Put a line into a song
+
+Enter “We have found the program. We need to delete it.” Choose **Play whole passage** to hear the reading or **Add to song** to keep it. Add another supported line, then use **Play song** or **Download song MIDI**. “We” identifies the speaker’s group. “It” refers to the stored program that group found. The second clause places erasure under necessity. The discovery uses the existing generalized reading of a completed change in the finder’s representation of the target. The passage grammar is a draft. Run `node tests/song_lines_test.mjs` to check the MIDI-only inverse, changed actors, runtime endings and assembled song.
+
+In **Your song**, choose **Compact chords** or **Original melody** before playing or downloading. Compact chords voice each complete root’s family opening with three notes and its address with three notes in separate pitch ranges. The upper voice carries the runtime ending over two held tones. Names, grammar frames and speech-act contours retain their original melodies. The chord reader can expand a solo MIDI performance back to its original pitches, durations and rests. `node tests/compact_song_chords_test.mjs` checks all 324 roots and all three endings. Mixed recordings and room playback require separate listening tests.
+
+Each line keeps its original phrase contours. A two-beat rest separates successive lines. The song list is saved in this browser. Dictionary previews identify individual entries. The song action appears once a complete line has been scored.
+
 ## Make a missing word
 
 1. Enter your sentence and follow **Find or build this meaning** beside the missing word. Search for existing meanings first.

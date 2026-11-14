@@ -44,3 +44,6 @@
   cursor: pointer;
 }
 .saved-sentence button:hover:not(:disabled) { border-color: var(--blue); }
+
+.song-editor{margin:1.5rem 0;padding:clamp(1rem,3vw,2rem)}
+.song-editor li{margin:.55rem 0}.song-editor li button{margin-inline-start:.75rem}

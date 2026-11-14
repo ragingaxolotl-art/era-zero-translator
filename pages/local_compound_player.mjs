@@ -23,10 +23,10 @@ export function createLocalCompoundPlayer({
   if (wasPlaying) onStatus('Playback stopped.');
  }
 
- async function play(bytes) {
+ async function play(bytes,{chords=false}={}) {
   stop();
   const token = generation;
-  const {notes, division} = notesFromMidi(bytes);
+  const {notes, division} = notesFromMidi(bytes,{allowPolyphony:chords});
   if (!context || context.state === 'closed') {
    context = audioContextFactory();
    bus = context.createGain();
@@ -48,7 +48,7 @@ export function createLocalCompoundPlayer({
    for (const note of notes) {
     const at = start + note.start_tick * .5 / division;
     const duration = (note.end_tick - note.start_tick) * .5 / division;
-    const handle = scheduleTone(context, bus, note.midi, at, {voice, duration});
+    const handle = scheduleTone(context, bus, note.midi, at, {voice, duration,...(chords?{gainLevel:.085}:{})});
     handles.push(handle);
     end = Math.max(end, handle.end_time ?? at + duration);
    }

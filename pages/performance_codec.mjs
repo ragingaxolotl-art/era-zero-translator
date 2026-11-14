@@ -23,7 +23,22 @@ export function midiFromPerformance(formal,registry,mode='recognition'){
   return new Uint8Array([...'MThd'].map(c=>c.charCodeAt(0)).concat(u32(6),u16(0),u16(1),u16(PPQ),[...'MTrk'].map(c=>c.charCodeAt(0)),u32(track.length),track));
 }
 
-export function notesFromMidi(input){
+// A single fixed-tempo musical line can contain simultaneous pitches.
+export function midiFromNoteTimeline(notes,division=480,tempo=500000) {
+  if (!Number.isInteger(division)||division<1||division>32767||!Number.isInteger(tempo)||tempo<1||tempo>0xffffff) throw Error('Invalid MIDI clock.');
+  const events=[];
+  for (const {midi,start_tick,end_tick} of notes) {
+    if (!Number.isInteger(midi)||midi<0||midi>127||!Number.isSafeInteger(start_tick)||!Number.isSafeInteger(end_tick)||start_tick<0||end_tick<=start_tick) throw Error('Invalid note in music timeline.');
+    events.push([start_tick,1,midi],[end_tick,0,midi]);
+  }
+  events.sort((a,b)=>a[0]-b[0]||a[1]-b[1]||a[2]-b[2]);
+  const track=[0,0xff,0x51,3,...u32(tempo).slice(1),0,0xc0,0];let previous=0;
+  for(const [tick,on,pitch] of events){track.push(...vlq(tick-previous),on?0x90:0x80,pitch,on?90:0);previous=tick;}
+  track.push(0,0xff,0x2f,0);
+  return new Uint8Array([77,84,104,100,...u32(6),...u16(0),...u16(1),...u16(division),77,84,114,107,...u32(track.length),...track]);
+}
+
+export function notesFromMidi(input,{allowPolyphony=false}={}){
   const data=input instanceof Uint8Array?input:new Uint8Array(input);
   let at=0;
   const take=n=>{if(n<0||at+n>data.length)throw new Error('Truncated MIDI file.');const bytes=data.slice(at,at+n);at+=n;return bytes};
@@ -57,7 +72,7 @@ export function notesFromMidi(input){
   }
   if(at!==data.length)throw new Error('Trailing MIDI bytes.');
   notes.sort((a,b)=>a.start_tick-b.start_tick||a.track-b.track||a.midi-b.midi);
-  if(notes.some((note,index)=>index&&note.start_tick<notes[index-1].end_tick))throw new Error('Polyphonic MIDI cannot be checked as a single Era Zero voice.');
+  if(!allowPolyphony&&notes.some((note,index)=>index&&note.start_tick<notes[index-1].end_tick))throw new Error('Polyphonic MIDI cannot be checked as a single Era Zero voice.');
   return{format:'SMF',division,tempos,notes};
 }
 

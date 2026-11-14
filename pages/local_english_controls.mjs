@@ -14,7 +14,7 @@ function describeInterpretation(plan) {
  return parts.join(' · ');
 }
 
-export async function mountLocalEnglishControls(container,input,registry,authority,{document=globalThis.document,download,player,isCurrent=()=>true,onError=()=>{},interpretation,pronounResolution}={}){
+export async function mountLocalEnglishControls(container,input,registry,authority,{document=globalThis.document,download,player,onSongLine,isCurrent=()=>true,onError=()=>{},interpretation,pronounResolution}={}){
  const pronouns=await localWordPronounPlan(input,registry,authority);
  if(pronouns){
   const fields=[],detail=document.createElement('div'),confirm=document.createElement('button');let revision=0;
@@ -28,7 +28,7 @@ export async function mountLocalEnglishControls(container,input,registry,authori
   const values=()=>Object.fromEntries(fields.map(({occurrence,field,number})=>[occurrence.key,number?{referent:field.value.trim(),number:number.value}:field.value.trim()]));
   confirm.textContent='Use these references';container.append(confirm,detail);
   confirm.addEventListener('click',async()=>{if(!isCurrent())return;const version=++revision,bindings=values(),chosenTense=tense?.value,snapshot=JSON.stringify(bindings),current=()=>isCurrent()&&version===revision&&tense?.value===chosenTense&&snapshot===JSON.stringify(values());detail.replaceChildren();player?.stop();confirm.disabled=true;
-   try{const resolution=await resolveLocalWordPronouns(input,registry,authority,bindings,{tense:chosenTense});if(!current())return;await mountLocalEnglishControls(detail,resolution.resolved_input,registry,authority,{document,download,player,isCurrent:current,onError,pronounResolution:resolution});}catch(e){if(current())onError(e);}finally{confirm.disabled=false;}
+   try{const resolution=await resolveLocalWordPronouns(input,registry,authority,bindings,{tense:chosenTense});if(!current())return;await mountLocalEnglishControls(detail,resolution.resolved_input,registry,authority,{document,download,player,onSongLine,isCurrent:current,onError,pronounResolution:resolution});}catch(e){if(current())onError(e);}finally{confirm.disabled=false;}
   });return true;
  }
  const adjective=await localAdjectivePlan(input,registry,authority),plan=adjective||await localVerbPlan(input,registry,authority,{interpretation});
@@ -37,7 +37,7 @@ export async function mountLocalEnglishControls(container,input,registry,authori
   const prompt=document.createElement('p');prompt.textContent='Choose the intended saved-word reading and time.';container.append(prompt);
   const detail=document.createElement('div');let selection=0;
   for(const candidate of candidates){const option=document.createElement('button'),entry=registry.entries.find(e=>e.compound_id===candidate.compound_id);option.textContent=`${entry.definition.label} — ${candidate.scopes.some(s=>s.operator==='time')?'past':'present'}${candidate.object?' · object: '+candidate.object:''}`;
-   option.addEventListener('click',async()=>{if(!isCurrent())return;const version=++selection;player?.stop();detail.replaceChildren();try{await mountLocalEnglishControls(detail,input,registry,authority,{document,download,player,onError,isCurrent:()=>isCurrent()&&version===selection,interpretation:candidate,pronounResolution});}catch(e){if(version===selection)onError(e);}});container.append(option);
+   option.addEventListener('click',async()=>{if(!isCurrent())return;const version=++selection;player?.stop();detail.replaceChildren();try{await mountLocalEnglishControls(detail,input,registry,authority,{document,download,player,onSongLine,onError,isCurrent:()=>isCurrent()&&version===selection,interpretation:candidate,pronounResolution});}catch(e){if(version===selection)onError(e);}});container.append(option);
   }container.append(detail);return true;
  }
  const make=(tag,text)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;return el;};
@@ -80,6 +80,7 @@ export async function mountLocalEnglishControls(container,input,registry,authori
    }));
    const result=adjective?await composeLocalAdjective(input,registry,authority,{bindings}):await composeLocalVerb(input,registry,authority,{bindings,subjectRole:selectedSubject,objectRole:selectedObject,interpretation});if(!current())return;
    if(player){const play=make('button','Play music'),stop=make('button','Stop');play.addEventListener('click',async()=>{if(!current())return;try{await player.play(result.midi);}catch(e){if(current())onError(e);}});stop.addEventListener('click',()=>player.stop());output.append(play,stop);}
+   if(onSongLine){const add=make('button','Add to song');add.addEventListener('click',()=>{if(current())onSongLine(pronounResolution?.source_input||input,result.midi,'Saved compound sentence');});output.append(add);}
    const midi=make('button','Download MIDI'),meaning=make('button','Save meaning and definitions');
    midi.addEventListener('click',()=>{if(current())download(new Blob([result.midi],{type:'audio/midi'}),'era-zero-saved-sentence.mid');});
    meaning.addEventListener('click',()=>{if(current()){const {midi,...portable}=result;if(pronounResolution){portable.source_input=pronounResolution.source_input;portable.pronoun_resolution=pronounResolution;}download(new Blob([JSON.stringify(portable,null,2)],{type:'application/json'}),'era-zero-saved-sentence.json');}});output.append(midi,meaning);
