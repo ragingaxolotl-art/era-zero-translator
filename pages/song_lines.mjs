@@ -2,6 +2,7 @@ import {midiFromFormal,midiFromScheduledEvents} from './engine.mjs';
 import {notesFromMidi} from './performance_codec.mjs';
 import {composeNamedSentence,parseNamedSentence,parseSentenceConjunction,composeSentenceConjunction,
   parseSentenceSequence,composeSentenceSequence,parseSentenceConditional,composeSentenceConditional} from './sentences.mjs';
+import {faultCorrectionPlan,composeFaultCorrection,describeFaultCorrection} from './fault_correction.mjs';
 import {informationPassagePlan,composeInformationPassage} from './information_passage.mjs';
 
 export function songMidi(lines) {
@@ -26,11 +27,21 @@ export async function scoreSongText(text,authority,loadTemplate) {
     const {midi,meaning}=await composeInformationPassage(text,authority);
     return {midi,meaning,label:'Draft discovery and required erasure'};
   }
+  const correction=faultCorrectionPlan(text);
+  if (correction) {
+    const result=await composeFaultCorrection(correction,authority);
+    return {...result,label:'Draft fault correction',description:describeFaultCorrection(correction)};
+  }
   const parts=text.match(/[^.!?]+(?:[.!?](?:\s*\[[012]\])?|$)/g);
   if (!parts || parts.join('')!==text) return null;
   const lines=[];
   for (const part of parts) {
-    const input=part.trim(), parsed=parseNamedSentence(input);
+    const input=part.trim(), correction=faultCorrectionPlan(input);
+    if (correction) {
+      lines.push(await composeFaultCorrection(correction,authority));
+      continue;
+    }
+    const parsed=parseNamedSentence(input);
     let r;
     if (parsed && !(parsed.requiredInterpretation||parsed.requiredViewpoint||parsed.requiredDestination)) r=await composeNamedSentence(input,await loadTemplate(parsed.predicate));
     else if (parseSentenceConjunction(input)) r=await composeSentenceConjunction(input,loadTemplate);
@@ -39,7 +50,8 @@ export async function scoreSongText(text,authority,loadTemplate) {
     else return null;
     lines.push({midi:midiFromFormal(r.formal),meaning:r.semantic_ir});
   }
-  return {midi:lines.length===1?lines[0].midi:songMidi(lines),meaning:lines.map(l=>l.meaning),label:lines.length===1?'Complete sentence':'Complete sentences in order'};
+  const includesDraft=lines.some(line=>line.meaning.status==='draft');
+  return {midi:lines.length===1?lines[0].midi:songMidi(lines),meaning:lines.map(l=>l.meaning),label:includesDraft?'Sentences with draft grammar':lines.length===1?'Complete sentence':'Complete sentences in order'};
 }
 
 export function needsWholeReading(input,result) {

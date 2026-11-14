@@ -6,7 +6,7 @@
   <meta name="description" content="Browser workbench for conservative English-to-Era-Zero translation, clarification, formal notation, SVG, and MIDI export.">
   <title>Era Zero Translator Workbench</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1420'/%3E%3Cpath d='M14 10h36v8H24v10h22v8H24v10h26v8H14z' fill='%2361e1d2'/%3E%3C/svg%3E">
-    <link rel="stylesheet" href="./styles.css?v=1.15.0">
+    <link rel="stylesheet" href="./styles.css?v=1.15.1">
 </head>
 <body>
   <div class="shell">
@@ -42,6 +42,7 @@
           <textarea id="sourceInput" rows="5" spellcheck="true" placeholder="Try: I am leaving home now."></textarea>
           <div class="examples" aria-label="Examples">
             <span>Examples</span>
+            <button data-example="We need to resolve the redundancy error.">redundancy error</button>
             <button data-example="We have found the program. We need to delete it.">found the program</button>
             <button data-example="I am leaving home now.">leaving home</button>
             <button data-example="She arrived at the station.">arrived</button>
@@ -144,7 +145,7 @@
 
       <section id="results" class="results hidden" aria-live="polite" data-app-view="translator">
         <div class="section-heading">
-          <div><p class="eyebrow">Interpretation</p><h2 id="resultTitle">Candidate meanings</h2></div>
+          <div><p class="eyebrow">Interpretation</p><h2 id="resultTitle">Your translation</h2></div>
           <p id="decisionSummary"></p>
         </div>
         <div class="result-grid">
@@ -288,6 +289,6 @@
     </section>
   </div>
   <div id="toast" role="status" aria-live="polite"></div>
-    <script type="module" src="./app.js?v=1.15.0"></script>
+    <script type="module" src="./app.js?v=1.15.1"></script>
 </body>
 </html>
