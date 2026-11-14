@@ -1,0 +1,21 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+import {emptyLocalCompounds,addLocalCompound,saveLocalCompounds,loadLocalCompounds} from '../pages/local_compounds.mjs';
+import {localAdjectivePlan,localVerbCandidates} from '../pages/local_compound_english.mjs';
+import {localWordPronounPlan} from '../pages/local_compound_pronouns.mjs';
+const authority=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url)));
+const registry=await addLocalCompound(emptyLocalCompounds(),{label:'glowsteady',definition:'Test-only quality.',part_of_speech:'adjective',roles:[{role:'bearer',definition:'Bearer.'}],components:authority.atoms.slice(0,2).map((a,i)=>({target_id:a.canonical_id,relation:i?'qualifies':'head'}))},authority);
+let stored=null;const localStorage={getItem:()=>stored,setItem:(key,value)=>{stored=value}};await saveLocalCompounds(localStorage,registry,authority);
+const element=()=>({value:'',children:[],classList:{add(){},remove(){}},append(child){this.children.push(child)}}),ids=Object.fromEntries(['sourceInput','output','phraseCoverage','resolutionPanel','results','candidateList','decisionSummary'].map(id=>[id,element()]));
+let mounted=0;const state={data:authority,mode:'general',wordSelections:new Map()};
+const context=vm.createContext({state,$:id=>ids[id],localStorage,loadLocalCompounds,localAdjectivePlan,localVerbCandidates,localWordPronounPlan,document:{createElement:element},mountLocalEnglishControls:async()=>{mounted++},download(){},savedCompoundPlayer:{},showError(){}});
+const source=fs.readFileSync(new URL('../pages/app.js',import.meta.url),'utf8'),start=source.indexOf('async function showSavedSentence(input){'),end=source.indexOf('\ntry{const example=takeLocalExample',start);assert(start>=0&&end>start);vm.runInContext(source.slice(start,end),context);
+async function route(text){ids.sourceInput.value=text;return context.showSavedSentence(text);}
+assert.equal(await route('Nora might not be glowsteady.'),true);assert.equal(mounted,1);assert.equal(state.resolution,null);
+assert.equal(await route('They are glowsteady.'),true);assert.equal(mounted,2);
+for(const text of ['Nora is glowsteady and Eli is tired.','Nora is very glowsteady.','Nora was glowsteady yesterday.','Nora is unfamiliarquality.'])assert.equal(await route(text),false,text);
+assert.equal(mounted,2,'Unsupported remainder must not create a complete saved-word translation.');
+ids.sourceInput.value='Changed input';assert.equal(await context.showSavedSentence('Nora is glowsteady.'),true);assert.equal(mounted,2,'Async stale input must not mount a result.');
+stored='{broken';await assert.rejects(route('Nora is glowsteady.'));assert.equal(stored,'{broken','Invalid storage must not be overwritten.');assert.equal(mounted,2);
+console.log('PASS actual saved-sentence routing: supported meaning and pronouns, unsupported remainder rejection, stale input protection, and corrupt-storage preservation (DOM adapter).');

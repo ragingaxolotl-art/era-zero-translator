@@ -5,7 +5,9 @@ const START=[48,60,55],END=[55,60,48],INSTANCE_START=[72,65,72];
 const DICTIONARY={water:['W','AO','T','ER'],food:['F','UW','D'],home:['HH','OW','M'],friend:['F','R','EH','N','D'],robot:['R','OW','B','AA','T'],data:['D','EY','T','AH'],message:['M','EH','S','IH','JH'],zibble:['Z','IH','B','AH','L'],xenoflirp:['Z','IY','N','OW','F','L','ER','P']};
 const RULES=[['tion',['SH','AH','N']],['tch',['CH']],['dge',['JH']],['ch',['CH']],['sh',['SH']],['th',['TH']],['ng',['NG']],['ph',['F']],['wh',['W']],['qu',['K','W']],['ck',['K']],['ee',['IY']],['ea',['IY']],['oo',['UW']],['oa',['OW']],['ai',['EY']],['ay',['EY']],['oi',['OY']],['oy',['OY']],['ow',['AW']],['ou',['AW']],['ar',['AA','R']],['er',['ER']],['ir',['ER']],['ur',['ER']],['or',['AO','R']]];
 const SINGLE={a:['AE'],b:['B'],c:['K'],d:['D'],e:['EH'],f:['F'],g:['G'],h:['HH'],i:['IH'],j:['JH'],k:['K'],l:['L'],m:['M'],n:['N'],o:['AA'],p:['P'],q:['K'],r:['R'],s:['S'],t:['T'],u:['UH'],v:['V'],w:['W'],x:['K','S'],y:['Y'],z:['Z']};
-const clean=value=>String(value??'').normalize('NFC').toLowerCase().replace(/[^a-z\s-]/g,' ').replace(/[-\s]+/g,' ').trim();
+const DIGIT_WORDS=['zero','one','two','three','four','five','six','seven','eight','nine'];
+// Read identifier digits individually, preserving order and leading zeroes.
+const clean=value=>String(value??'').normalize('NFC').toLowerCase().replace(/[0-9]/g,digit=>' '+DIGIT_WORDS[Number(digit)]+' ').replace(/[^a-z\s-]/g,' ').replace(/[-\s]+/g,' ').trim();
 
 function estimateWord(word){
   if(DICTIONARY[word])return DICTIONARY[word];

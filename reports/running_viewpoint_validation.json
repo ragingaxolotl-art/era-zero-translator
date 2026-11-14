@@ -1,0 +1,96 @@
+{
+  "scope": "Targeted running viewpoint, actual UI handler mocks and mixed-clause musical tests; not live-browser/listening or representative English coverage.",
+  "passed": true,
+  "checks": [
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/running_viewpoint_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 54 running viewpoint/state/scope musical contrasts and Ruby parity; actual UI choice and stale-result guards.\nPASS 15 explicit-habit paraphrases preserve complete formal/music, with no redundant viewpoint choice.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/running_combinations_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 21 explicit running habits and mixed-clause scope/state contrasts, with Ruby/MIDI parity.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/completed_running_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 30 completed-running actor/destination/runtime/scope cases, Ruby parity, independent MIDI recovery, wrong-root rejection and prior 57 meanings unchanged.\nPASS missing destination and unequal actor bindings reject in browser/Ruby; inconsistent actor sounds reject independently.\nPASS mismatched destination identity rejects in IR/music and ongoing approach stays distinct from completed running.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/destination_running_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 24 directed-running actor/destination/runtime/scope cases, Ruby parity, independent MIDI recovery, wrong-root rejection and prior 56 meanings unchanged.\nPASS missing destination and unequal actor bindings reject in browser/Ruby; inconsistent actor sounds reject independently.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/running_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 21 running participant/state/scope contrasts with Ruby formal/MIDI parity and independent inverse; prior 55 compounds unchanged; unsupported paths remain unresolved.\nPASS running remains distinct from swimming and generic displacement.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/swimming_viewpoint_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 54 swimming viewpoint/state/scope musical contrasts and Ruby parity; actual UI choice and stale-result guards.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/swimming_combinations_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 21 explicit swimming habits and mixed-clause scope/state contrasts, with Ruby/MIDI parity.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/carrying_viewpoint_choice_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Carrying viewpoint choice: 63 interpretation/runtime/participant/question/modal/property cases match Ruby formal and MIDI; chosen ongoing/habitual readings equal explicit paraphrases. UI requires both viewpoint and applicable mass standard and discards stale results/errors."
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/named_sentence_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Named sentences: 81 full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/bound_sentence_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Bound sentences: 21 name/deictic/nominal/state/scope/clause cases match reference formal and MIDI; invalid bindings, references, plans and event limits are rejected.\n"
+    }
+  ],
+  "invocation_corrections": [
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/carrying_viewpoint_test.mjs"
+      ],
+      "exit_code": 1,
+      "output": "node:internal/modules/cjs/loader:1228\n  throw err;\n  ^\n\nError: Cannot find module '/private/tmp/dba-audit-20261104/tests/carrying_viewpoint_test.mjs'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)\n    at Function._load (node:internal/modules/cjs/loader:1055:27)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:170:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.14.0\n"
+    }
+  ]
+}

@@ -37,11 +37,11 @@ checks.add("source authority partition", "36 source-canonical and 288 reviewed a
 checks.add("review provenance", "every reviewed atom names its effective approval migration", atom_rows.select { |r| r.dig("semantic_derivation", "provenance", "authority") == "reviewed_canonical" }.all? { |r| r.dig("semantic_derivation", "provenance", "approval_migration").to_s.start_with?("migrations/") })
 checks.add("compound graphs exact", "head, components, relations, digest, and definition match Gate 4B", compound_rows.all? do |r|
   c = compound_map.fetch(r["target_id"])
-  r["components"] == c["nodes"] && r["relations"] == c["edges"] && r.dig("identity_derivation", "content_digest") == c["content_digest"] && r.dig("semantic_derivation", "invariant_definition") == c["invariant_definition"]
+  r.dig("semantic_derivation", "conventional_meaning") == c["conventional_meaning"] && r.dig("provenance", "record") == c.fetch("approval_record", "migrations/gate4b_compound_dictionary_1.0.yaml") && r["components"] == c["nodes"] && r["relations"] == c["edges"] && r.dig("identity_derivation", "content_digest") == c["content_digest"] && r.dig("semantic_derivation", "invariant_definition") == c["invariant_definition"]
 end)
 checks.add("English independence", "every English label is explicitly non-identifying metadata", rows.all? { |r| r["english_label_status"].include?("not_") })
 checks.add("no fictional ancestry", "every row rejects invented historical claims", rows.all? { |r| r["historical_claim"].include?("No ") })
-checks.add("fingerprint immutability", "atomic and compound fingerprints remain exact", table.dig("metadata", "atomic_lexicon_fingerprint") == EraZeroValidation.fingerprint(atoms) && table.dig("metadata", "compound_dictionary_fingerprint") == EraZeroValidation.fingerprint(compounds))
+checks.add("fingerprint immutability", "atomic baseline matches directly or through exact editorial reconciliation; compound fingerprint remains exact", EraZeroValidation.atomic_fingerprint_matches?(atoms, table.dig("metadata", "atomic_lexicon_fingerprint")) && table.dig("metadata", "compound_dictionary_fingerprint") == EraZeroValidation.fingerprint(compounds))
 checks.add("authority integration", "Gate 4 remains complete, its migration records the semantic-IR handoff, and later translation is orderly", begin
   version = EraZeroValidation.load_yaml("spec/version.yaml")
   readiness = EraZeroValidation.load_yaml("spec/translator_readiness.yaml")

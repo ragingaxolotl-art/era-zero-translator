@@ -1,0 +1,14 @@
+authority: User-directed translator completion goal
+review: reviews/surface_texture_foundation.md
+profile: EZCONTEXTUAL-1
+added_norms:
+  rough: {dimension: surface_texture, relation: greater_than, code: 6}
+  smooth: {dimension: surface_texture, relation: less_than, code: 7}
+preserved_norm_codes: [0, 1, 2, 3, 4, 5]
+existing_roots_changed: false
+existing_compounds_changed: false
+runtime_meanings_changed: false
+context: Local surface region and scale; neither a numerical measurement nor shared standard identity
+evidence: tests/surface_texture_profile_test.mjs
+english_ui_implemented: false
+completion_proven: false

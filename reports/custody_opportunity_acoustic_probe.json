@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "scope": "One authored clean synthetic WAV; no original text, bindings or expected notes supplied to decoder. No physical recording or channel perturbation.",
+  "physical_recordings": 0,
+  "phrase": "Wasn't this tea available to Nora? [2]",
+  "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-custody-opportunity-uN9OTe/question.wav",
+  "meaning": {
+    "profile": "EZCUSTODY-OPPORTUNITY-INVERSE-1",
+    "status": "draft",
+    "predicate": "contextual_practical_custody_opportunity",
+    "activity_compound": "CMP:c332d2e89b9f6177486fc93b",
+    "activity": "acquisition_of_practical_physical_custody",
+    "activity_binding": "prospective_holder_acquires_same_resource",
+    "opportunity": "contextual_circumstances_admit_realization_of_activity",
+    "activity_status": "possible_not_asserted",
+    "activity_time": "prospective_relative_to_opportunity",
+    "access_context_scope": "inside_opportunity_proposition",
+    "context_rules": "not_encoded_by_reference_label",
+    "prior_custody_if_realized": false,
+    "custody_at_culmination_if_realized": true,
+    "current_custody": "not_entailed",
+    "ownership": "not_entailed",
+    "normative_permission": "not_entailed",
+    "intention_or_willingness": "not_entailed",
+    "actual_acquisition": "not_entailed",
+    "ongoing_acquisition": "not_entailed",
+    "availability_for_other_activities": "not_asserted",
+    "prospective_holder": {
+      "kind": "phonemic",
+      "reference_mode": "name",
+      "phonemes": [
+        "N",
+        "AO",
+        "R",
+        "AE"
+      ],
+      "instance_code": null
+    },
+    "resource": {
+      "kind": "phonemic",
+      "reference_mode": "proximal_nominal",
+      "phonemes": [
+        "T",
+        "IY"
+      ],
+      "instance_code": null
+    },
+    "access_context": {
+      "kind": "phonemic",
+      "reference_mode": "name",
+      "phonemes": [
+        "P",
+        "AE",
+        "N",
+        "T",
+        "R",
+        "Y",
+        "WB",
+        "AE",
+        "K",
+        "S",
+        "EH",
+        "S",
+        "S"
+      ],
+      "instance_code": null
+    },
+    "speech_act": "question",
+    "scopes": [
+      {
+        "operator": "time",
+        "relation": "before_speech"
+      },
+      {
+        "operator": "negation"
+      }
+    ],
+    "runtime_state": 2
+  },
+  "checksum": "verified"
+}

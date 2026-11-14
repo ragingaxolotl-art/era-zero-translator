@@ -1,0 +1,14 @@
+profile: EZCUSTODY-ACQUISITION-INVERSE-1
+status: bounded_strict_midi_semantic_projection
+inputs: [performed MIDI bytes, root sound inventory]
+convention_codes: [8, 7]
+head: ORI:110
+nested_custody_head: MAT:210
+actualized_referent: exact holder-object custody relation
+precondition: holder lacks that custody immediately before transition
+culmination: same holder has custody of same object
+independent_dimensions: [speech act, scope, runtime 0/1/2, participant runtime]
+not_implied: [object creation, movement, ownership, prior custodian, sourced transfer, relinquishment, later persistence]
+rejection_policy: Entire performance must match; no partial interpretation.
+implementation: pages/custody_decoder.mjs
+validation: tests/custody_acquisition_test.mjs

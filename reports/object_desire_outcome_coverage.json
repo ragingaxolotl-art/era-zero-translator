@@ -1,0 +1,759 @@
+{
+  "scope": "Authored outcome coverage probes, not semantic acceptance or held-out evaluation. The outcome is explicitly selected, never inferred from wants tea.",
+  "completion_proven": false,
+  "results": [
+    {
+      "id": "custody",
+      "desiredProposition": "Eli has physical custody of the tea.",
+      "status": "inverse_available_needs_case_specific_semantic_review",
+      "recovered": {
+        "profile": "EZFOUND-SEMANTIC-INVERSE-1",
+        "speech_act": "assertion",
+        "meaning": {
+          "predicate": {
+            "kind": "foundation",
+            "foundation_id": "FND:f66b7a3877f4b0140a0b7023",
+            "definition_version": "1.0.0",
+            "registry_status": "candidate"
+          },
+          "runtime_state": 1,
+          "scopes": [],
+          "arguments": {
+            "content": {
+              "type": "proposition",
+              "content_status": "intensional",
+              "proposition": {
+                "predicate": {
+                  "kind": "conventional_compound",
+                  "name": "practical_physical_custody",
+                  "convention_codes": [
+                    7
+                  ]
+                },
+                "runtime_state": 1,
+                "scopes": [],
+                "arguments": {
+                  "holder": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "name",
+                      "phonemes": [
+                        "EH",
+                        "L",
+                        "IH"
+                      ],
+                      "instance_code": null
+                    }
+                  },
+                  "object": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "definite_nominal",
+                      "phonemes": [
+                        "T",
+                        "IY"
+                      ],
+                      "instance_code": null
+                    }
+                  }
+                },
+                "meaning": {
+                  "established_practical_control": true,
+                  "holder_distinct_from_object": true,
+                  "exclusive_control_required": false,
+                  "ownership_asserted": false,
+                  "receipt_asserted": false,
+                  "transfer_asserted": false,
+                  "continuous_physical_influence_required": false
+                }
+              }
+            },
+            "experiencer": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "N",
+                  "AO",
+                  "R",
+                  "AE"
+                ],
+                "instance_code": null
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Candidate vocabulary requires explicit opt-in.",
+          "This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.",
+          "Reference sounds do not determine original spelling or external identity.",
+          "Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.",
+          "Reads strict MIDI, not recorded audio."
+        ]
+      }
+    },
+    {
+      "id": "acquiring_custody",
+      "desiredProposition": "Eli acquired physical custody of the tea.",
+      "status": "inverse_available_needs_case_specific_semantic_review",
+      "recovered": {
+        "profile": "EZFOUND-SEMANTIC-INVERSE-1",
+        "speech_act": "assertion",
+        "meaning": {
+          "predicate": {
+            "kind": "foundation",
+            "foundation_id": "FND:f66b7a3877f4b0140a0b7023",
+            "definition_version": "1.0.0",
+            "registry_status": "candidate"
+          },
+          "runtime_state": 1,
+          "scopes": [],
+          "arguments": {
+            "content": {
+              "type": "proposition",
+              "content_status": "intensional",
+              "proposition": {
+                "predicate": {
+                  "kind": "conventional_compound",
+                  "name": "completed_physical_custody_acquisition",
+                  "convention_codes": [
+                    8,
+                    7
+                  ]
+                },
+                "runtime_state": 1,
+                "scopes": [
+                  {
+                    "operator": "time",
+                    "relation": "before_speech"
+                  }
+                ],
+                "arguments": {
+                  "holder": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "name",
+                      "phonemes": [
+                        "EH",
+                        "L",
+                        "IH"
+                      ],
+                      "instance_code": null
+                    }
+                  },
+                  "object": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "definite_nominal",
+                      "phonemes": [
+                        "T",
+                        "IY"
+                      ],
+                      "instance_code": null
+                    }
+                  }
+                },
+                "meaning": {
+                  "actualized_referent": "holder_object_custody_relation",
+                  "custody_immediately_before": false,
+                  "custody_at_culmination": true,
+                  "holder_distinct_from_object": true,
+                  "object_creation_asserted": false,
+                  "object_movement_asserted": false,
+                  "prior_custodian_asserted": false,
+                  "sourced_transfer_asserted": false,
+                  "ownership_asserted": false,
+                  "persistence_after_culmination_asserted": false
+                }
+              }
+            },
+            "experiencer": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "N",
+                  "AO",
+                  "R",
+                  "AE"
+                ],
+                "instance_code": null
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Candidate vocabulary requires explicit opt-in.",
+          "This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.",
+          "Reference sounds do not determine original spelling or external identity.",
+          "Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.",
+          "Reads strict MIDI, not recorded audio."
+        ]
+      }
+    },
+    {
+      "id": "carrying",
+      "desiredProposition": "Eli is carrying the tea.",
+      "status": "inverse_available_needs_case_specific_semantic_review",
+      "recovered": {
+        "profile": "EZFOUND-SEMANTIC-INVERSE-1",
+        "speech_act": "assertion",
+        "meaning": {
+          "predicate": {
+            "kind": "foundation",
+            "foundation_id": "FND:f66b7a3877f4b0140a0b7023",
+            "definition_version": "1.0.0",
+            "registry_status": "candidate"
+          },
+          "runtime_state": 1,
+          "scopes": [],
+          "arguments": {
+            "content": {
+              "type": "proposition",
+              "content_status": "intensional",
+              "proposition": {
+                "predicate": {
+                  "kind": "conventional_compound",
+                  "name": "physical_carrying",
+                  "convention_codes": [
+                    4,
+                    3
+                  ]
+                },
+                "runtime_state": 1,
+                "scopes": [
+                  {
+                    "operator": "aspect",
+                    "aspect": "ongoing"
+                  }
+                ],
+                "arguments": {
+                  "carrier": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "name",
+                      "phonemes": [
+                        "EH",
+                        "L",
+                        "IH"
+                      ],
+                      "instance_code": null
+                    }
+                  },
+                  "load": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "definite_nominal",
+                      "phonemes": [
+                        "T",
+                        "IY"
+                      ],
+                      "instance_code": null
+                    }
+                  }
+                },
+                "meaning": {
+                  "same_load": true,
+                  "carrier_distinct_from_load": true,
+                  "load_physically_supported": true,
+                  "load_translates": true,
+                  "destination_asserted": false,
+                  "arrival_asserted": false,
+                  "ownership_asserted": false
+                }
+              }
+            },
+            "experiencer": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "N",
+                  "AO",
+                  "R",
+                  "AE"
+                ],
+                "instance_code": null
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Candidate vocabulary requires explicit opt-in.",
+          "This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.",
+          "Reference sounds do not determine original spelling or external identity.",
+          "Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.",
+          "Reads strict MIDI, not recorded audio."
+        ]
+      }
+    },
+    {
+      "id": "drinking",
+      "desiredProposition": "Nora drinks the tea.",
+      "status": "inverse_available_needs_case_specific_semantic_review",
+      "explicit_choices": {
+        "interpretation": "literal_drinking",
+        "viewpoint": "bounded",
+        "materialReading": "contextual_portion"
+      },
+      "recovered": {
+        "profile": "EZDESIRED-DRINKING-INVERSE-1",
+        "status": "draft",
+        "foundation_id": "FND:f66b7a3877f4b0140a0b7023",
+        "holder": {
+          "kind": "phonemic",
+          "reference_mode": "name",
+          "phonemes": [
+            "N",
+            "AO",
+            "R",
+            "AE"
+          ],
+          "instance_code": null
+        },
+        "content": {
+          "profile": "EZDRINKING-INVERSE-1",
+          "status": "draft",
+          "predicate": "literal_drinking",
+          "action_category": "oral_intake_of_liquid_as_drink",
+          "participant_binding": "drinker_performs_intake_of_material",
+          "material_classification_scope": "within_drinking_content_not_global_label_fact",
+          "thirst_commitment": "not_entailed",
+          "ownership_commitment": "not_entailed",
+          "pleasure_commitment": "not_entailed",
+          "benefit_commitment": "not_entailed",
+          "intention_commitment": "not_entailed",
+          "whole_amount_consumption": "not_asserted",
+          "drinker": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "N",
+              "AO",
+              "R",
+              "AE"
+            ],
+            "instance_code": null
+          },
+          "material": {
+            "reading": "contextual_portion",
+            "reference": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "T",
+                "IY"
+              ],
+              "instance_code": null
+            },
+            "material_kind_commitment": "label_not_classification",
+            "quantity": "unspecified",
+            "whole_amount_consumption": "not_asserted",
+            "existence_commitment": "governed_by_enclosing_content"
+          },
+          "viewpoint": "bounded",
+          "viewpoint_contract": "A bounded drinking event is presented as a whole; some intake belongs to that event, but no entire contextual portion or numeric amount is asserted.",
+          "runtime_state": 1,
+          "speech_act": "assertion",
+          "scopes": []
+        },
+        "content_status": "intensional",
+        "outcome_commitment": "desired_not_asserted",
+        "subject_binding": "explicit_content_subject",
+        "runtime_state": 1,
+        "speech_act": "assertion",
+        "scopes": []
+      }
+    },
+    {
+      "id": "ownership",
+      "desiredProposition": "Nora owns the tea.",
+      "status": "unsupported",
+      "phase": "composition",
+      "diagnostic": "Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else."
+    },
+    {
+      "id": "explicit_framework_ownership",
+      "desiredProposition": "Nora owns the tea.",
+      "status": "inverse_available_needs_case_specific_semantic_review",
+      "explicit_choices": {
+        "framework": "\"Harbor charter\""
+      },
+      "recovered": {
+        "profile": "EZDESIRED-OWNERSHIP-INVERSE-1",
+        "status": "draft",
+        "foundation_id": "FND:f66b7a3877f4b0140a0b7023",
+        "holder": {
+          "kind": "phonemic",
+          "reference_mode": "name",
+          "phonemes": [
+            "N",
+            "AO",
+            "R",
+            "AE"
+          ],
+          "instance_code": null
+        },
+        "content": {
+          "profile": "EZOWNERSHIP-INVERSE-1",
+          "status": "draft",
+          "predicate": "framework_relative_ownership",
+          "relation": "owner_has_ownership_status_for_object_under_framework",
+          "framework_scope": "inside_proposition",
+          "framework_rules": "not_encoded_by_reference_label",
+          "physical_custody": "not_entailed",
+          "physical_control": "not_entailed",
+          "acquisition_or_transfer": "not_entailed",
+          "unlimited_use_or_disposal": "not_entailed",
+          "exclusive_ownership": "not_entailed",
+          "fractional_share": "unspecified",
+          "universal_agreement": "not_entailed",
+          "other_framework_status": "not_asserted",
+          "owner": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "N",
+              "AO",
+              "R",
+              "AE"
+            ],
+            "instance_code": null
+          },
+          "object": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "T",
+              "IY"
+            ],
+            "instance_code": null
+          },
+          "framework": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "HH",
+              "AA",
+              "R",
+              "B",
+              "AO",
+              "R",
+              "WB",
+              "CH",
+              "AA",
+              "R",
+              "T",
+              "ER"
+            ],
+            "instance_code": null
+          },
+          "speech_act": "assertion",
+          "scopes": [],
+          "runtime_state": 1
+        },
+        "content_status": "intensional",
+        "outcome_commitment": "desired_not_asserted",
+        "subject_binding": "explicit_content_subject",
+        "runtime_state": 1,
+        "speech_act": "assertion",
+        "scopes": []
+      }
+    },
+    {
+      "id": "availability",
+      "desiredProposition": "The tea is available.",
+      "status": "unsupported",
+      "phase": "composition",
+      "diagnostic": "Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else."
+    },
+    {
+      "id": "delivery",
+      "desiredProposition": "Eli delivers the tea to Nora.",
+      "status": "unsupported",
+      "phase": "composition",
+      "diagnostic": "Choose carrying-mediated custody delivery explicitly; other delivery meanings are not supported by this construction."
+    },
+    {
+      "id": "explicit_carrying_delivery",
+      "desiredProposition": "Eli carried the tea to Nora.",
+      "status": "inverse_available_needs_case_specific_semantic_review",
+      "explicit_choices": {
+        "desiredDelivery": {
+          "destination": "custody_delivery"
+        }
+      },
+      "recovered": {
+        "profile": "EZFOUND-SEMANTIC-INVERSE-1",
+        "speech_act": "assertion",
+        "meaning": {
+          "predicate": {
+            "kind": "foundation",
+            "foundation_id": "FND:f66b7a3877f4b0140a0b7023",
+            "definition_version": "1.0.0",
+            "registry_status": "candidate"
+          },
+          "runtime_state": 1,
+          "scopes": [],
+          "arguments": {
+            "content": {
+              "type": "proposition",
+              "content_status": "intensional",
+              "proposition": {
+                "predicate": {
+                  "kind": "conventional_compound",
+                  "name": "completed_carrying_custody_delivery",
+                  "convention_codes": [
+                    10,
+                    6,
+                    5,
+                    4,
+                    3,
+                    9,
+                    7,
+                    8,
+                    7
+                  ]
+                },
+                "runtime_state": 1,
+                "scopes": [
+                  {
+                    "operator": "time",
+                    "relation": "before_speech"
+                  },
+                  {
+                    "operator": "aspect",
+                    "aspect": "bounded"
+                  }
+                ],
+                "arguments": {
+                  "carrier": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "name",
+                      "phonemes": [
+                        "EH",
+                        "L",
+                        "IH"
+                      ],
+                      "instance_code": null
+                    }
+                  },
+                  "object": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "definite_nominal",
+                      "phonemes": [
+                        "T",
+                        "IY"
+                      ],
+                      "instance_code": null
+                    }
+                  },
+                  "recipient": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "name",
+                      "phonemes": [
+                        "N",
+                        "AO",
+                        "R",
+                        "AE"
+                      ],
+                      "instance_code": null
+                    }
+                  }
+                },
+                "meaning": {
+                  "same_object": true,
+                  "carrier_is_transfer_source": true,
+                  "destination_referent_is_recipient": true,
+                  "arrival_culminates_in_transfer": true,
+                  "same_delivery_event": true,
+                  "source_custody_before_transfer": true,
+                  "source_custody_at_culmination": false,
+                  "recipient_custody_before_transfer": false,
+                  "recipient_custody_at_culmination": true,
+                  "ownership_asserted": false,
+                  "willingness_asserted": false,
+                  "persistence_after_culmination_asserted": false
+                }
+              }
+            },
+            "experiencer": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "N",
+                  "AO",
+                  "R",
+                  "AE"
+                ],
+                "instance_code": null
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Candidate vocabulary requires explicit opt-in.",
+          "This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.",
+          "Reference sounds do not determine original spelling or external identity.",
+          "Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.",
+          "Reads strict MIDI, not recorded audio."
+        ]
+      }
+    },
+    {
+      "id": "explicit_delivery_wording",
+      "desiredProposition": "Eli delivers the tea to Nora.",
+      "status": "inverse_available_needs_case_specific_semantic_review",
+      "explicit_choices": {
+        "desiredDelivery": {
+          "destination": "custody_delivery",
+          "viewpoint": "bounded"
+        }
+      },
+      "recovered": {
+        "profile": "EZFOUND-SEMANTIC-INVERSE-1",
+        "speech_act": "assertion",
+        "meaning": {
+          "predicate": {
+            "kind": "foundation",
+            "foundation_id": "FND:f66b7a3877f4b0140a0b7023",
+            "definition_version": "1.0.0",
+            "registry_status": "candidate"
+          },
+          "runtime_state": 1,
+          "scopes": [],
+          "arguments": {
+            "content": {
+              "type": "proposition",
+              "content_status": "intensional",
+              "proposition": {
+                "predicate": {
+                  "kind": "conventional_compound",
+                  "name": "completed_carrying_custody_delivery",
+                  "convention_codes": [
+                    10,
+                    6,
+                    5,
+                    4,
+                    3,
+                    9,
+                    7,
+                    8,
+                    7
+                  ]
+                },
+                "runtime_state": 1,
+                "scopes": [
+                  {
+                    "operator": "aspect",
+                    "aspect": "bounded"
+                  }
+                ],
+                "arguments": {
+                  "carrier": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "name",
+                      "phonemes": [
+                        "EH",
+                        "L",
+                        "IH"
+                      ],
+                      "instance_code": null
+                    }
+                  },
+                  "object": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "definite_nominal",
+                      "phonemes": [
+                        "T",
+                        "IY"
+                      ],
+                      "instance_code": null
+                    }
+                  },
+                  "recipient": {
+                    "type": "entity",
+                    "reference": {
+                      "kind": "phonemic",
+                      "reference_mode": "name",
+                      "phonemes": [
+                        "N",
+                        "AO",
+                        "R",
+                        "AE"
+                      ],
+                      "instance_code": null
+                    }
+                  }
+                },
+                "meaning": {
+                  "same_object": true,
+                  "carrier_is_transfer_source": true,
+                  "destination_referent_is_recipient": true,
+                  "arrival_culminates_in_transfer": true,
+                  "same_delivery_event": true,
+                  "source_custody_before_transfer": true,
+                  "source_custody_at_culmination": false,
+                  "recipient_custody_before_transfer": false,
+                  "recipient_custody_at_culmination": true,
+                  "ownership_asserted": false,
+                  "willingness_asserted": false,
+                  "persistence_after_culmination_asserted": false
+                }
+              }
+            },
+            "experiencer": {
+              "type": "entity",
+              "reference": {
+                "kind": "phonemic",
+                "reference_mode": "name",
+                "phonemes": [
+                  "N",
+                  "AO",
+                  "R",
+                  "AE"
+                ],
+                "instance_code": null
+              }
+            }
+          }
+        },
+        "limitations": [
+          "Candidate vocabulary requires explicit opt-in.",
+          "This profile supports foundation predicates and embedded care, viewpoint-specific consciousness/dormancy, available self-mobility, attentional capacity, internal impairment/restoration reviewed felt conditions or bodily swimming with direct or controlled references; other constructions reject.",
+          "Reference sounds do not determine original spelling or external identity.",
+          "Recovered propositions remain inside their scopes and speech act; intensional content is not independently asserted.",
+          "Reads strict MIDI, not recorded audio."
+        ]
+      }
+    },
+    {
+      "id": "making",
+      "desiredProposition": "Eli makes the tea.",
+      "status": "unsupported",
+      "phase": "composition",
+      "diagnostic": "Specify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else."
+    }
+  ]
+}

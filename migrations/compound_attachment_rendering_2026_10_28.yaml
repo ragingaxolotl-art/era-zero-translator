@@ -1,0 +1,25 @@
+authority: User-directed translator-completion goal
+status: renderer_correction_before_publication
+previous_commit: c5a6f94
+review: reviews/qualified_experiencer_binding.md
+source_rule: spec/compound_architecture_1.0.yaml source_grounded_invariants.modifier_timing
+corrections:
+  - Qualifiers of a bound slot inherit its exact participant binding chain.
+  - Nested qualifier convention frames remain inside that participant frame; whole-predicate conventions remain outside it.
+  - Compound modifiers receive zero additional boundary beats before the qualified unit, including after a nested qualifier's closing convention frame.
+preserved:
+  - All 324 atomic definitions, pitches and generated forms
+  - Existing compound lexical identities and definitions
+  - Lexical trits and occurrence runtime endings 0, 1 and 2
+  - Participant-specific runtime endings
+  - Typed argument and unrelated grammar boundaries
+compatibility:
+  - Compound formal identities and MIDI timing change where prior rendering inserted an incorrect modifier gap.
+  - Regenerate affected formal, MIDI, performance and browser artifacts from unchanged semantic IR.
+  - The reference Ruby decoder re-renders and rejects obsolete compound formal identities. Browser bundle verification checks integrity rather than full current-source conformance.
+evidence: reports/compound_attachment_migration.json
+remaining:
+  - Complete release versioning and an explicit policy for legacy browser bundles.
+  - Approve exact sensory-experience definitions and content semantics.
+  - Connect ordinary browser composition to explicit qualified-slot templates.
+  - Complete independent whole-sentence musical decoding and perceptual validation.

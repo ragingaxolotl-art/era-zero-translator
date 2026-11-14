@@ -1,0 +1,142 @@
+{
+  "scope": "All blobs reachable from locally available Git refs; exact raw-byte SHA-256 comparison, not remote storage or decoded/normalized equivalence.",
+  "tested_revision": "a7643062510365dbbed5db86a4a5c619b7a81ede",
+  "shallow": false,
+  "target_sha256": "5a89af8cda717ce223e252348e0cf2f7735cd2d1f58c7b7655094a3d13862475",
+  "blob_count": 3399,
+  "blob_bytes": 188559189,
+  "exact_matches": [],
+  "source_named_blob_versions": [
+    {
+      "object": "6e379bfd17d73a28d7dfc94fe194707f92e6b600",
+      "path": "docs/LORE_CONVERSATION_PRESETS.md",
+      "bytes": 2174
+    },
+    {
+      "object": "98e02e1f4e1fc6931db0151d2ba65a8f6400d370",
+      "path": "docs/SOURCE_PROVENANCE.md",
+      "bytes": 3822
+    },
+    {
+      "object": "a573381bcfd9106043474245018b0fad0ce661ec",
+      "path": "docs/TWO_BEINGS_CONVERSATION_SCRIPT.md",
+      "bytes": 870
+    },
+    {
+      "object": "94bc31f88b5cf58e29febee36f65deb7329ff51f",
+      "path": "examples/lore_conversation_presets.json",
+      "bytes": 6931
+    },
+    {
+      "object": "37d6e1c483406bd534be1ec741cf14fd6e682fc8",
+      "path": "examples/two_beings_conversation.json",
+      "bytes": 994
+    },
+    {
+      "object": "4b04358ef40d4b9a31e1101723f2e85f7a5f0712",
+      "path": "extraction/source_index.yaml",
+      "bytes": 1608
+    },
+    {
+      "object": "5caa3d4381cfe3274775457d08fa221ebb60b794",
+      "path": "lexicon/completed_atoms_source.md",
+      "bytes": 38539
+    },
+    {
+      "object": "58f2c9200035cc962844bfc455434262ce427a0e",
+      "path": "migrations/additive_vocabulary_source_pins_2026_11_04.yaml",
+      "bytes": 18792
+    },
+    {
+      "object": "10d172a39face6f607921debbfa36ec2fa839789",
+      "path": "reports/conversation_validation.md",
+      "bytes": 912
+    },
+    {
+      "object": "995d75da21b994d601e61724d1f0ee697e35cac9",
+      "path": "reports/lore_conversation_validation.md",
+      "bytes": 4618
+    },
+    {
+      "object": "faf2e3121836a299c034b14ace8af0654144ed68",
+      "path": "reports/source_recovery_followup_2026_11_04.json",
+      "bytes": 1840
+    },
+    {
+      "object": "fa39fef7c0a7cc040c2ecac4dbe9e7e6f3dbeea2",
+      "path": "reports/source_revision_reconciliation.json",
+      "bytes": 4641
+    },
+    {
+      "object": "9a0e3e797b9e6f5da00b9828f4c1c291acd705a3",
+      "path": "reviews/mat_capacity_source_reconciliation.md",
+      "bytes": 4936
+    },
+    {
+      "object": "068928052e4695e487daf5ce43486c2f62cc3c90",
+      "path": "reviews/mov_process_source_reconciliation.md",
+      "bytes": 4158
+    },
+    {
+      "object": "c144ea381e3522454734631c7c75751cf7f4a05f",
+      "path": "spec/source_provenance.yaml",
+      "bytes": 4300
+    },
+    {
+      "object": "ddad2c1659703d1a0a01ab458fd9c05b23f42672",
+      "path": "tools/build_conversation_audio.mjs",
+      "bytes": 4662
+    },
+    {
+      "object": "5d4447df3e08e44348955daa10c3ad0ffcc60dc8",
+      "path": "tools/validate_conversation.mjs",
+      "bytes": 3227
+    },
+    {
+      "object": "1ee7b966b0210f80c3c89f533dd200de6727c3f8",
+      "path": "tools/validate_lore_conversations.mjs",
+      "bytes": 4097
+    },
+    {
+      "object": "d9d188109d996c84e72880598508524a4f9dfce6",
+      "path": "spec/source_provenance.yaml",
+      "bytes": 3839
+    },
+    {
+      "object": "001aa1331d6a115e9eb273b49a3ecf01e4b28391",
+      "path": "docs/SOURCE_PROVENANCE.md",
+      "bytes": 2859
+    },
+    {
+      "object": "f5778b62279bf2f882ef3c209ca3e355c731965f",
+      "path": "extraction/source_index.yaml",
+      "bytes": 1412
+    },
+    {
+      "object": "00d93ed511a5089b1b5e6b194b83810bdc3d24eb",
+      "path": "spec/source_provenance.yaml",
+      "bytes": 2699
+    },
+    {
+      "object": "feb0e43c192ad8e6396458f9885c10bb56eedb93",
+      "path": "docs/SOURCE_PROVENANCE.md",
+      "bytes": 2818
+    },
+    {
+      "object": "dc49ed38ae700f62713e70a4fb1416b7f62efeb6",
+      "path": "docs/SOURCE_PROVENANCE.md",
+      "bytes": 2531
+    },
+    {
+      "object": "38a923082c00196c60c0b91bcae2bd1d9d0682bd",
+      "path": "spec/source_provenance.yaml",
+      "bytes": 2402
+    }
+  ],
+  "finding": "No exact full-capture fingerprint match in reachable blobs.",
+  "limitations": [
+    "Decoded source could have a different container or serialization; absence of an exact raw-byte match does not rule that out.",
+    "Unreachable objects, untracked files, other clones and private ChatGPT conversation storage are not covered.",
+    "Source-named artifacts include excerpts and provenance statements; their names alone do not establish a complete ledger."
+  ]
+}

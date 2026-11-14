@@ -1,0 +1,81 @@
+---
+type: editorial_example_reconciliation
+authority: Existing applied MAT:200–222 selective semantic approval overrides retained
+  provisional example prose
+approval_source: migrations/MAT_200_222_semantic_approval.yaml
+scope: Nine normal examples; all other root fields preserved
+root_ids:
+- MAT:200
+- MAT:201
+- MAT:202
+- MAT:210
+- MAT:211
+- MAT:212
+- MAT:220
+- MAT:221
+- MAT:222
+changes:
+- root_id: MAT:200
+  field: normal_example
+  before: MAT:200 [1] — An entity has a stable inward capacity to bear load, retain
+    form, or resist material disruption.
+  after: MAT:200 [1] — A battery has a persistent capacity to supply energy for physical
+    change; current availability or use is not asserted.
+- root_id: MAT:201
+  field: normal_example
+  before: MAT:201 [1] — An entity is actively able to exert force, release energy,
+    or perform physical work.
+  after: MAT:201 [1] — A battery's capacity to supply energy for physical change is
+    presently available; actual discharge is not asserted.
+- root_id: MAT:202
+  field: normal_example
+  before: MAT:202 [1] — An entity contains material or energy potential that is not
+    presently accessible or expressed.
+  after: MAT:202 [1] — A material bearer's energy-supplying capacity exists but is
+    not presently available for exercise; runtime [1] affirms this latent-capacity
+    meaning.
+- root_id: MAT:210
+  field: normal_example
+  before: MAT:210 [1] — An object has a stable physical connection, fit, ownership,
+    or resource relation to a target.
+  after: MAT:210 [1] — An established material coupling allows a bearer to transmit
+    physical influence to a distinct target; ownership, custody and permission are
+    not asserted.
+- root_id: MAT:211
+  field: normal_example
+  before: MAT:211 [1] — Two material entities are actively touching, exchanging force,
+    or transferring energy.
+  after: MAT:211 [1] — A material bearer is presently transmitting physical influence
+    to a distinct target; mere contact without influence is insufficient.
+- root_id: MAT:212
+  field: normal_example
+  before: MAT:212 [1] — A physical attachment, transfer, or resource relation may
+    be viable but remains unconfirmed.
+  after: MAT:212 [1] — Whether a material bearer can transmit physical influence to
+    a distinct target is unresolved; transfer, intention and future occurrence are
+    not asserted.
+- root_id: MAT:220
+  field: normal_example
+  before: MAT:220 [1] — A material system has a stable relationship among its matter,
+    energy, inputs, and outputs.
+  after: MAT:220 [1] — Material parts of a shared system stand in a stable relation
+    of mutual constraint on their physical states; shared membership alone is insufficient.
+- root_id: MAT:221
+  field: normal_example
+  before: MAT:221 [1] — A distributed system is actively exchanging matter, energy,
+    or resources among its parts.
+  after: MAT:221 [1] — Material parts of a shared system are presently exerting reciprocal
+    physical influence; one-way exchange alone is insufficient.
+- root_id: MAT:222
+  field: normal_example
+  before: MAT:222 [1] — A physically valid arrangement or resource state could exist
+    at system scale but has not been produced.
+  after: MAT:222 [1] — A possible relation of mutual physical constraint among parts
+    of a shared system remains unrealized; current interdependence is not asserted.
+before_fingerprint: 553dce6a29aa108d00e16ed38f253fcf615bee6f746d7e02311c7ad33f25f86c
+historical_sources_preserved:
+- lexicon/provisional_atoms.yaml
+- reviews/MAT_200_222_peer_review.md
+- reviews/MAT_200_222_recommended_spec.yaml
+- tools/build_mat_200_222_review.rb
+after_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28

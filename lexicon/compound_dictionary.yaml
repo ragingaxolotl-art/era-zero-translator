@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 29
+  entry_count: 63
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -15,6 +15,104 @@ metadata:
   semantic_ir_started: false
   translator_started: false
 entries:
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-load
+    kind: root
+    root_id: MAT:010
+  - node_id: s-source
+    kind: slot
+    slot_name: custodian
+    slot_type: entity
+  - node_id: s-target
+    kind: slot
+    slot_name: held_object
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MAT:210
+  edges:
+  - type: qualifies
+    from: q-load
+    to: s-target
+  - type: fills_role
+    from: s-source
+    to: h
+    role: source
+  - type: fills_role
+    from: s-target
+    to: h
+    role: target
+  binding_constraints:
+  - relation: distinct_arguments
+    slot_paths:
+    - - s-source
+    - - s-target
+  lexical_constraints:
+  - The custodian and material object are distinct participants.
+  - The established coupling and practical control concern the same holder-to-object
+    relation; the material qualifier applies to the bound target object.
+  - Controlled mediation does not imply ownership of the intermediary or object; control
+    itself must be established rather than merely achievable.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: practical_physical_custody
+    sound_code: 7
+    added_definition: An established material relation in which a holder has effective
+      practical control over access to and physical handling of a distinct material
+      object, through an arrangement the holder can operate directly or through a
+      controlled physical intermediary. Mere ability to approach, touch, influence
+      or seize the object does not establish this relation. Control need not be exclusive,
+      lawful, conscious, voluntary, continuously exercised or accompanied by ownership,
+      load bearing, movement or a prior transfer.
+    excludes:
+    - Ownership, permission or entitlement without practical control
+    - Proximity, touch, load support or physical influence alone
+    - Hypothetical ability to seize an object not already under practical control
+    - Legal guardianship, information access or ownership of an abstract asset
+    - Receipt or transfer inferred from a custody state alone
+  compound_id: CMP:0aca609416668978e1527dac
+  content_digest: 0aca609416668978e1527dac3aeac18d202b9b5615f5e15134d637682a39fa8d
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-29'
+  display_title: practical physical custody
+  english_glosses:
+  - practical physical custody
+  invariant_definition: An established material relation in which a holder has effective
+    practical control over access to and physical handling of a distinct material
+    object, through an arrangement the holder can operate directly or through a controlled
+    physical intermediary. Mere ability to approach, touch, influence or seize the
+    object does not establish this relation. Control need not be exclusive, lawful,
+    conscious, voluntary, continuously exercised or accompanied by ownership, load
+    bearing, movement or a prior transfer.
+  boundaries:
+    includes: Established practical control of physical access and handling, directly
+      or through a controlled material arrangement; shared custody is permitted.
+    excludes: Ownership, permission or entitlement without practical control; Proximity,
+      touch, load support or physical influence alone; Hypothetical ability to seize
+      an object not already under practical control; Legal guardianship, information
+      access or ownership of an abstract asset; Receipt or transfer inferred from
+      a custody state alone
+  collision_audit: MAT:210 supplies established material coupling and MAT:010 constrains
+    its target object. Convention code 7 adds effective practical control of access
+    and handling; no root graph alone is claimed to entail that commitment.
+  confidence: high
+  approval_record: migrations/physical_custody_2026_10_29.yaml
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/physical_custody_foundation.md
+  examples:
+    ordinary: Ada has physical custody of the box.
+    technical: A controlled locker can mediate custody without continuous touch or
+      load bearing by the holder.
+    future_compound: Reuse this exact relation as the before/after state of a custody
+      transfer, preserving object identity.
+    counterexample: A table bears a box without controlling access; an owner can lack
+      custody; a custodian can lack ownership.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 0aca609416668978e1527dac3aeac18d202b9b5615f5e15134d637682a39fa8d
 - architecture_version: '1.0'
   compound_id: CMP:111b772027accab2054f0415
   content_digest: 111b772027accab2054f04158521688548f4899eb5feda420f7ace4ebefba396
@@ -56,6 +154,305 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: 111b772027accab2054f04158521688548f4899eb5feda420f7ace4ebefba396
 - architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-run
+    kind: compound_ref
+    compound_id: CMP:22955227e19ba82d5b48c9ef
+    definition_version: 1.0.0
+  - node_id: s-actor
+    kind: slot
+    slot_name: actor
+    slot_type: entity
+  - node_id: s-destination
+    kind: slot
+    slot_name: destination
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:111
+  edges:
+  - type: qualifies
+    from: q-run
+    to: h
+  - type: fills_role
+    from: s-actor
+    to: h
+    role: actor
+  - type: fills_role
+    from: s-destination
+    to: h
+    role: destination
+  lexical_constraints:
+  - The bound actor anchors the same focal material body and local physical changes
+    throughout the nested activity.
+  - Locomotor pattern and specialization are explicit audible conventions, not consequences
+    of root adjacency.
+  - Runtime, grammatical negation, time and path completion are independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_destination_running
+    sound_code: 24
+    added_definition: The same actor performs bodily running while undergoing displacement
+      toward the bound destination position in that same event. The running activity
+      constitutes this approach, not a separate simultaneous action or movement by
+      another actor. The destination can be the contextual location of a named referent.
+      The approach is ongoing; arrival, completed travel, receipt, ownership transfer,
+      deliberate intention and continued presence at the destination are not asserted.
+    excludes:
+    - Running and approach by different actors or in unrelated events
+    - Running in place alone without destination-directed displacement
+    - Arrival, receipt or completed travel inferred from approach
+  binding_constraints:
+  - relation: same_argument
+    slot_paths:
+    - - q-run
+      - h
+      - s-actor
+    - - s-actor
+  compound_id: CMP:139985443924b6e8f24d44f2
+  content_digest: 139985443924b6e8f24d44f2ef1e07372ec02474582210b90dbd2cc247e75946
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: ongoing running toward a destination
+  english_glosses:
+  - ongoing running toward a destination
+  invariant_definition: The same actor performs bodily running while undergoing displacement
+    toward the bound destination position in that same event. The running activity
+    constitutes this approach, not a separate simultaneous action or movement by another
+    actor. The destination can be the contextual location of a named referent. The
+    approach is ongoing; arrival, completed travel, receipt, ownership transfer, deliberate
+    intention and continued presence at the destination are not asserted.
+  boundaries:
+    includes: The same actor performs bodily running while undergoing displacement
+      toward the bound destination position in that same event. The running activity
+      constitutes this approach, not a separate simultaneous action or movement by
+      another actor. The destination can be the contextual location of a named referent.
+      The approach is ongoing; arrival, completed travel, receipt, ownership transfer,
+      deliberate intention and continued presence at the destination are not asserted.
+    excludes: Running and approach by different actors or in unrelated events; Running
+      in place alone without destination-directed displacement; Arrival, receipt or
+      completed travel inferred from approach
+  collision_audit: reviews/locomotion_foundations.md and reviews/destination_running.md;
+    physical change alone does not entail the declared locomotor pattern.
+  confidence: high
+  approval_record: migrations/destination_running_2026_11_04.yaml
+  approval_basis: Author review under the user-directed translator completion goal;
+    not independent linguistic validation.
+  examples:
+    ordinary: Nora is running toward the gate.
+    technical: Preserve the same bound actor in each version-pinned dependency.
+    future_compound: Add a path only with the same actor and event binding.
+    counterexample: Running and approach by different actors or in unrelated events
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 139985443924b6e8f24d44f2ef1e07372ec02474582210b90dbd2cc247e75946
+- architecture_version: '1.0'
+  compound_id: CMP:1b987e04bf47840f9e82ecd3
+  content_digest: 1b987e04bf47840f9e82ecd31caef82cd850e4b6ac0d169e7df593ac36089663
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: ongoing internal structural repair
+  english_glosses:
+  - ongoing internal structural repair
+  semantic_head: h
+  invariant_definition: An ongoing restorative transformation originating within one
+    reference structure whose restorative transformation changes how that structure's
+    constituents occupy its internal positions.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: STR:101
+  - node_id: h
+    kind: root
+    root_id: REP:101
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: ongoing internal structural reconfiguration toward the applicable restoration
+      standard
+    excludes: arbitrary rearrangement, incorporation of a distinct target, formation
+      of a peer composite, and completed or merely possible restoration
+  collision_audit: The restorative head and domain qualifier both encode an ongoing
+    process. Runtime status does not replace lexical phase. The completed foundation
+    remains unchanged.
+  confidence: high
+  examples:
+    ordinary: ongoing internal structural reconfiguration toward the applicable restoration
+      standard
+    technical: An ongoing restorative transformation originating within one reference
+      structure whose restorative transformation changes how that structure's constituents
+      occupy its internal positions.
+    future_compound: May be reused as an ongoing restorative process with explicit
+      participants and domain restrictions.
+    counterexample: Do not use for arbitrary rearrangement, incorporation of a distinct
+      target, formation of a peer composite, and completed or merely possible restoration.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 1b987e04bf47840f9e82ecd31caef82cd850e4b6ac0d169e7df593ac36089663
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/foundation_process_compounds.md
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:201afcb1035b464ef8e56bd6
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - The bound actor anchors the same focal material body and local physical changes
+    throughout the nested activity.
+  - Locomotor pattern and specialization are explicit audible conventions, not consequences
+    of root adjacency.
+  - Runtime, grammatical negation, time and path completion are independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_bodily_swimming
+    sound_code: 21
+    added_definition: The same actor performs bodily locomotor activity whose coordinated
+      movements generate swimming propulsion against surrounding water. Water and
+      the propulsion-producing interaction are part of this conventional meaning,
+      not inferred from a noun label. Limb, fin, tail or body movements may contribute;
+      assistance or equipment is not excluded. The activity need not produce net ground-relative
+      progress, as when opposing a current. Mere floating, passive drifting, riding
+      in a boat, or being carried through water does not suffice. No destination,
+      crossing completion, speed, voluntary intention or absence of assistance is
+      asserted.
+    excludes:
+    - Passive floating, drifting or transport alone
+    - Machine operation, figurative swimming or unspecified fluid movement
+    - Completed crossing, arrival or unassisted activity inferred from swimming
+  compound_id: CMP:1e2ec87e1feff0da19aadc3b
+  content_digest: 1e2ec87e1feff0da19aadc3bbe0ef4c2f6a7d6ef640699f6f1628389e32861a5
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: ongoing bodily swimming
+  english_glosses:
+  - ongoing bodily swimming
+  invariant_definition: The same actor performs bodily locomotor activity whose coordinated
+    movements generate swimming propulsion against surrounding water. Water and the
+    propulsion-producing interaction are part of this conventional meaning, not inferred
+    from a noun label. Limb, fin, tail or body movements may contribute; assistance
+    or equipment is not excluded. The activity need not produce net ground-relative
+    progress, as when opposing a current. Mere floating, passive drifting, riding
+    in a boat, or being carried through water does not suffice. No destination, crossing
+    completion, speed, voluntary intention or absence of assistance is asserted.
+  boundaries:
+    includes: The same actor performs bodily locomotor activity whose coordinated
+      movements generate swimming propulsion against surrounding water. Water and
+      the propulsion-producing interaction are part of this conventional meaning,
+      not inferred from a noun label. Limb, fin, tail or body movements may contribute;
+      assistance or equipment is not excluded. The activity need not produce net ground-relative
+      progress, as when opposing a current. Mere floating, passive drifting, riding
+      in a boat, or being carried through water does not suffice. No destination,
+      crossing completion, speed, voluntary intention or absence of assistance is
+      asserted.
+    excludes: Passive floating, drifting or transport alone; Machine operation, figurative
+      swimming or unspecified fluid movement; Completed crossing, arrival or unassisted
+      activity inferred from swimming
+  collision_audit: reviews/locomotion_foundations.md and reviews/swimming_foundation.md;
+    physical change alone does not entail the declared locomotor pattern.
+  confidence: high
+  approval_record: migrations/swimming_2026_11_04.yaml
+  approval_basis: Delegated author review under the user-directed translator completion
+    goal; not independent linguistic validation.
+  examples:
+    ordinary: Eli is swimming.
+    technical: Preserve the same bound actor in each version-pinned dependency.
+    future_compound: Add a path only with the same actor and event binding.
+    counterexample: Passive floating, drifting or transport alone
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 1e2ec87e1feff0da19aadc3bbe0ef4c2f6a7d6ef640699f6f1628389e32861a5
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-body
+    kind: root
+    root_id: MAT:000
+  - node_id: s-actor
+    kind: slot
+    slot_name: actor
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MAT:101
+  edges:
+  - type: qualifies
+    from: q-body
+    to: h
+  - type: fills_role
+    from: s-actor
+    to: h
+    role: actor
+  lexical_constraints:
+  - The bound actor anchors the same focal material body and local physical changes
+    throughout the nested activity.
+  - Locomotor pattern and specialization are explicit audible conventions, not consequences
+    of root adjacency.
+  - Runtime, grammatical negation, time and path completion are independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_bodily_locomotor_activity
+    sound_code: 20
+    added_definition: The bound actor is the focal material body undergoing coordinated
+      body-local movements constituting a locomotor activity pattern. The body itself
+      generates the pattern through its moving parts; passive carriage or arbitrary
+      physical change alone does not suffice. Whole-body displacement relative to
+      the ground, conscious intention, biological life, a destination, speed or a
+      particular gait is not asserted.
+    excludes:
+    - Passive transport without bodily locomotor activity
+    - An arbitrary internal physical change
+    - Whole-body displacement or conscious intention inferred from the activity
+  compound_id: CMP:201afcb1035b464ef8e56bd6
+  content_digest: 201afcb1035b464ef8e56bd6ad6e82686dfada32561bbe0896d9e465f1594749
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: ongoing bodily locomotor activity
+  english_glosses:
+  - ongoing bodily locomotor activity
+  invariant_definition: The bound actor is the focal material body undergoing coordinated
+    body-local movements constituting a locomotor activity pattern. The body itself
+    generates the pattern through its moving parts; passive carriage or arbitrary
+    physical change alone does not suffice. Whole-body displacement relative to the
+    ground, conscious intention, biological life, a destination, speed or a particular
+    gait is not asserted.
+  boundaries:
+    includes: The bound actor is the focal material body undergoing coordinated body-local
+      movements constituting a locomotor activity pattern. The body itself generates
+      the pattern through its moving parts; passive carriage or arbitrary physical
+      change alone does not suffice. Whole-body displacement relative to the ground,
+      conscious intention, biological life, a destination, speed or a particular gait
+      is not asserted.
+    excludes: Passive transport without bodily locomotor activity; An arbitrary internal
+      physical change; Whole-body displacement or conscious intention inferred from
+      the activity
+  collision_audit: reviews/locomotion_foundations.md and reviews/swimming_foundation.md;
+    physical change alone does not entail the declared locomotor pattern.
+  confidence: high
+  approval_record: migrations/swimming_2026_11_04.yaml
+  approval_basis: Delegated author review under the user-directed translator completion
+    goal; not independent linguistic validation.
+  examples:
+    ordinary: The actor performs bodily locomotor activity.
+    technical: Preserve the same bound actor in each version-pinned dependency.
+    future_compound: Add a path only with the same actor and event binding.
+    counterexample: Passive transport without bodily locomotor activity
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 201afcb1035b464ef8e56bd6ad6e82686dfada32561bbe0896d9e465f1594749
+- architecture_version: '1.0'
   compound_id: CMP:218a5578a2274b92ba3d72db
   content_digest: 218a5578a2274b92ba3d72db291d07498972eeb4a076cd232ffb798e0e862989
   definition_version: 1.0.0
@@ -95,6 +492,79 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 218a5578a2274b92ba3d72db291d07498972eeb4a076cd232ffb798e0e862989
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:201afcb1035b464ef8e56bd6
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - The bound actor anchors the same focal material body and local physical changes
+    throughout the nested activity.
+  - Locomotor pattern and specialization are explicit audible conventions, not consequences
+    of root adjacency.
+  - Runtime, grammatical negation, time and path completion are independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_bodily_running
+    sound_code: 23
+    added_definition: 'The same actor performs a bodily running gait: a repeated leg-support
+      and recovery pattern of the running class, characterized by bouncing or compressive
+      support rather than the vaulting progression characteristic of walking. This
+      is a conventional gait category, not a speed threshold or an inference from
+      arbitrary body movement. Grounded forms without an airborne interval and running
+      in place are included. The actor need not be human or biological. No particular
+      speed, net ground-relative displacement, destination, arrival, conscious intention
+      or unassisted performance is asserted.'
+    excludes:
+    - Walking, passive carriage or fast displacement without running gait
+    - Running a program, operating a machine or liquid flowing
+    - Arrival, mandatory flight phase or a speed threshold inferred from running
+  compound_id: CMP:22955227e19ba82d5b48c9ef
+  content_digest: 22955227e19ba82d5b48c9ef66f69a4898d18356ea76814af3c488a3786d694d
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: ongoing bodily running
+  english_glosses:
+  - ongoing bodily running
+  invariant_definition: 'The same actor performs a bodily running gait: a repeated
+    leg-support and recovery pattern of the running class, characterized by bouncing
+    or compressive support rather than the vaulting progression characteristic of
+    walking. This is a conventional gait category, not a speed threshold or an inference
+    from arbitrary body movement. Grounded forms without an airborne interval and
+    running in place are included. The actor need not be human or biological. No particular
+    speed, net ground-relative displacement, destination, arrival, conscious intention
+    or unassisted performance is asserted.'
+  boundaries:
+    includes: 'The same actor performs a bodily running gait: a repeated leg-support
+      and recovery pattern of the running class, characterized by bouncing or compressive
+      support rather than the vaulting progression characteristic of walking. This
+      is a conventional gait category, not a speed threshold or an inference from
+      arbitrary body movement. Grounded forms without an airborne interval and running
+      in place are included. The actor need not be human or biological. No particular
+      speed, net ground-relative displacement, destination, arrival, conscious intention
+      or unassisted performance is asserted.'
+    excludes: Walking, passive carriage or fast displacement without running gait;
+      Running a program, operating a machine or liquid flowing; Arrival, mandatory
+      flight phase or a speed threshold inferred from running
+  collision_audit: reviews/locomotion_foundations.md and reviews/running_foundation.md;
+    physical change alone does not entail the declared locomotor pattern.
+  confidence: high
+  approval_record: migrations/running_2026_11_04.yaml
+  approval_basis: Author review under the user-directed translator completion goal;
+    not independent linguistic validation.
+  examples:
+    ordinary: Nora is running.
+    technical: Preserve the same bound actor in each version-pinned dependency.
+    future_compound: Add a path only with the same actor and event binding.
+    counterexample: Walking, passive carriage or fast displacement without running
+      gait
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 22955227e19ba82d5b48c9ef66f69a4898d18356ea76814af3c488a3786d694d
 - architecture_version: '1.0'
   compound_id: CMP:22f8ddc4d9b2d1a818d38e9f
   content_digest: 22f8ddc4d9b2d1a818d38e9fa1dc82343d7588ea825c12c9b5ae17856d9dc38a
@@ -136,6 +606,58 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 22f8ddc4d9b2d1a818d38e9fa1dc82343d7588ea825c12c9b5ae17856d9dc38a
+- architecture_version: '1.0'
+  compound_id: CMP:2816a7eeb356c2148b26beca
+  content_digest: 2816a7eeb356c2148b26becacdd6b0ff071eb2846e2936166bc2c692907c9ecc
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: ongoing physical repair
+  english_glosses:
+  - ongoing physical repair
+  semantic_head: h
+  invariant_definition: An ongoing source-to-target restorative transformation whose
+    restorative transformation is an ongoing physical-state change localized in that
+    distinct material target.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: MAT:111
+  - node_id: h
+    kind: root
+    root_id: REP:111
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: actively restoring a distinct physical target toward its applicable
+      restoration standard
+    excludes: completed or merely possible repair, arbitrary physical change, internal
+      self-restoration, and future intention without ongoing repair
+  collision_audit: The restorative head and domain qualifier both encode an ongoing
+    process. Runtime status does not replace lexical phase. The completed foundation
+    remains unchanged.
+  confidence: high
+  examples:
+    ordinary: actively restoring a distinct physical target toward its applicable
+      restoration standard
+    technical: An ongoing source-to-target restorative transformation whose restorative
+      transformation is an ongoing physical-state change localized in that distinct
+      material target.
+    future_compound: May be reused as an ongoing restorative process with explicit
+      participants and domain restrictions.
+    counterexample: Do not use for completed or merely possible repair, arbitrary
+      physical change, internal self-restoration, and future intention without ongoing
+      repair.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 2816a7eeb356c2148b26becacdd6b0ff071eb2846e2936166bc2c692907c9ecc
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/foundation_process_compounds.md
 - architecture_version: '1.0'
   compound_id: CMP:2d26353b47b531bd3f5ae090
   content_digest: 2d26353b47b531bd3f5ae0901bf01e4ce43f5223e70b70cdd716b295e0beac27
@@ -348,6 +870,73 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: 33c135410b0deef525b6770d4a8f40c3032cecd94d385aa905fb0d30dd7440f6
 - architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:6c9e3042a361ccae6ecf5980
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - The bound experiencer anchors the focal self of every nested self-condition; no
+    automatic speaker substitution.
+  - Felt meaning and any specialization are explicit lexical conventions, not consequences
+    of root adjacency alone.
+  - Lexical trits, experiential quality, time, grammatical negation and runtime 0/1/2
+    remain independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: felt_fatigue
+    sound_code: 17
+    added_definition: 'The experiencer feels fatigue: a condition of weariness in
+      which sustaining physical or mental effort is felt as taxing or diminished and
+      rest or recovery is called for. This does not entail sleep, dormancy, unconsciousness,
+      objective incapacity, illness, damage or a measured energy deficit. Mere boredom
+      or being tired of a particular object is a separate sense.'
+    excludes:
+    - Dormancy or unconsciousness without felt fatigue
+    - Low physical work capacity or damage without weariness
+    - Boredom with a particular object or a generic unpleasant feeling alone
+  compound_id: CMP:3c13b9c619d95f1c40ea5da5
+  content_digest: 3c13b9c619d95f1c40ea5da56060272a946f76b4006e7efab2901fdbc905c4d9
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: felt fatigue
+  english_glosses:
+  - felt fatigue
+  invariant_definition: 'The experiencer feels fatigue: a condition of weariness in
+    which sustaining physical or mental effort is felt as taxing or diminished and
+    rest or recovery is called for. This does not entail sleep, dormancy, unconsciousness,
+    objective incapacity, illness, damage or a measured energy deficit. Mere boredom
+    or being tired of a particular object is a separate sense.'
+  boundaries:
+    includes: 'The experiencer feels fatigue: a condition of weariness in which sustaining
+      physical or mental effort is felt as taxing or diminished and rest or recovery
+      is called for. This does not entail sleep, dormancy, unconsciousness, objective
+      incapacity, illness, damage or a measured energy deficit. Mere boredom or being
+      tired of a particular object is a separate sense.'
+    excludes: Dormancy or unconsciousness without felt fatigue; Low physical work
+      capacity or damage without weariness; Boredom with a particular object or a
+      generic unpleasant feeling alone
+  collision_audit: Convention 17 explicitly adds the stated felt distinction. Exact
+    dependency versions preserve the shared experiencer; no existing mental, living,
+    material, care or runtime meaning is substituted for the added feeling.
+  confidence: high
+  approval_record: migrations/felt_conditions_2026_11_04.yaml
+  approval_basis: Delegated author semantic review under the user-directed completion
+    goal; reviews/felt_conditions_foundation.md. Not independent linguistic validation.
+  examples:
+    ordinary: Eli is tired.
+    technical: The same experiencer is retained through the version-pinned nested
+      felt-state definitions.
+    future_compound: Reuse the exact felt foundation before specializing its object,
+      cause or relief.
+    counterexample: Dormancy or unconsciousness without felt fatigue
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 3c13b9c619d95f1c40ea5da56060272a946f76b4006e7efab2901fdbc905c4d9
+- architecture_version: '1.0'
   compound_id: CMP:4144fad413b8ce5012088c61
   content_digest: 4144fad413b8ce5012088c6193969cb6f73701fe8a61e005e8c66bb6ef90deaa
   definition_version: 1.0.0
@@ -388,6 +977,70 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 4144fad413b8ce5012088c6193969cb6f73701fe8a61e005e8c66bb6ef90deaa
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:ade73037114406a2cd91ce13
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - The channel restriction applies to the same registration event and its source-to-receiver
+    transfer. All inherited registration commitments remain true.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_acoustic_registration
+    sound_code: 2
+    added_definition: The sensory transduction registers information carried by a
+      propagating mechanical pressure or elastic vibration signal from the source
+      through a material medium. No conscious auditory experience, speech comprehension,
+      source recognition or attention is entailed.
+    excludes:
+    - static contact alone, optical-only input, remembered sounds, and conscious hearing
+      inferred from registration
+    - Inferring the channel from the source noun alone
+  compound_id: CMP:42e9bd596b35612ed6cbe3ce
+  content_digest: 42e9bd596b35612ed6cbe3cee5bbe04bfd416e94797059002a2add8cc839ab21
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: ongoing acoustic sensory registration
+  english_glosses:
+  - ongoing acoustic sensory registration
+  invariant_definition: 'An instance of ongoing sensory registration, as defined by
+    CMP:ade73037114406a2cd91ce13 version 1.0.0, with the additional channel commitment:
+    The sensory transduction registers information carried by a propagating mechanical
+    pressure or elastic vibration signal from the source through a material medium.
+    No conscious auditory experience, speech comprehension, source recognition or
+    attention is entailed.'
+  boundaries:
+    includes: sensory registration of an acoustic vibration signal in a biological
+      or device receiver
+    excludes: static contact alone, optical-only input, remembered sounds, and conscious
+      hearing inferred from registration
+  collision_audit: The exact registration foundation is reused through a versioned
+    reference. A distinct conventional frame adds the channel restriction; it is not
+    inferred from root adjacency, source noun, or runtime state.
+  confidence: high
+  approval_record: migrations/registration_channels_2026_10_28.yaml
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/registration_channels.md
+  examples:
+    ordinary: The sensor is registering acoustic input from the bell.
+    technical: The sensory transduction registers information carried by a propagating
+      mechanical pressure or elastic vibration signal from the source through a material
+      medium. No conscious auditory experience, speech comprehension, source recognition
+      or attention is entailed.
+    future_compound: Reuse the exact registration/channel meaning where the derived
+      definition entails it; conscious experience and recognition require additional
+      foundations.
+    counterexample: Do not infer this channel from the noun bell; exclude static contact
+      alone, optical-only input, remembered sounds, and conscious hearing inferred
+      from registration.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 42e9bd596b35612ed6cbe3cee5bbe04bfd416e94797059002a2add8cc839ab21
 - architecture_version: '1.0'
   compound_id: CMP:44173561806bc8f334a0b7c9
   content_digest: 44173561806bc8f334a0b7c9a87b29ba2bc84d18360e234eaa701c7e5eae8370
@@ -494,6 +1147,220 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: 44718c92b66443c0c0f03ad71a5115f6f051ce91928c9db7becea7453a59e63f
 - architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-path
+    kind: compound_ref
+    compound_id: CMP:139985443924b6e8f24d44f2
+    definition_version: 1.0.0
+  - node_id: s-actor
+    kind: slot
+    slot_name: actor
+    slot_type: entity
+  - node_id: s-destination
+    kind: slot
+    slot_name: destination
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:110
+  edges:
+  - type: qualifies
+    from: q-path
+    to: h
+  - type: fills_role
+    from: s-actor
+    to: h
+    role: actor
+  - type: fills_role
+    from: s-destination
+    to: h
+    role: destination
+  lexical_constraints:
+  - The bound actor anchors the same focal material body and local physical changes
+    throughout the nested activity.
+  - Locomotor pattern and specialization are explicit audible conventions, not consequences
+    of root adjacency.
+  - Runtime, grammatical negation, time and path completion are independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: completed_destination_running
+    sound_code: 25
+    added_definition: 'Completion of one destination-directed bodily running event:
+      the same actor reaches the same bound destination as the culmination of that
+      running approach. The nested running and approach describe internal phases of
+      this completed event, not ongoing actions at speech time. Running partway followed
+      by a separate walk, passive carriage or an unrelated arrival does not satisfy
+      this meaning. The destination can be the contextual location of a named referent.
+      Receipt, ownership transfer, conscious intention and continued presence after
+      arrival are not asserted.'
+    excludes:
+    - Running partway followed by arrival through a separate manner or event
+    - Arrival of a different actor or at a different destination
+    - Continued presence, receipt or ownership inferred from arrival
+  binding_constraints:
+  - relation: same_argument
+    slot_paths:
+    - - q-path
+      - s-actor
+    - - s-actor
+  - relation: same_argument
+    slot_paths:
+    - - q-path
+      - s-destination
+    - - s-destination
+  compound_id: CMP:4f83046a60201671bc92fe10
+  content_digest: 4f83046a60201671bc92fe10fd74d7353d3b2fa5e61dc986356b540b180f70e0
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: completed running to a destination
+  english_glosses:
+  - completed running to a destination
+  invariant_definition: 'Completion of one destination-directed bodily running event:
+    the same actor reaches the same bound destination as the culmination of that running
+    approach. The nested running and approach describe internal phases of this completed
+    event, not ongoing actions at speech time. Running partway followed by a separate
+    walk, passive carriage or an unrelated arrival does not satisfy this meaning.
+    The destination can be the contextual location of a named referent. Receipt, ownership
+    transfer, conscious intention and continued presence after arrival are not asserted.'
+  boundaries:
+    includes: 'Completion of one destination-directed bodily running event: the same
+      actor reaches the same bound destination as the culmination of that running
+      approach. The nested running and approach describe internal phases of this completed
+      event, not ongoing actions at speech time. Running partway followed by a separate
+      walk, passive carriage or an unrelated arrival does not satisfy this meaning.
+      The destination can be the contextual location of a named referent. Receipt,
+      ownership transfer, conscious intention and continued presence after arrival
+      are not asserted.'
+    excludes: Running partway followed by arrival through a separate manner or event;
+      Arrival of a different actor or at a different destination; Continued presence,
+      receipt or ownership inferred from arrival
+  collision_audit: reviews/locomotion_foundations.md and reviews/completed_running.md;
+    physical change alone does not entail the declared locomotor pattern.
+  confidence: high
+  approval_record: migrations/completed_running_2026_11_04.yaml
+  approval_basis: Author review under the user-directed translator completion goal;
+    not independent linguistic validation.
+  examples:
+    ordinary: Nora ran to the gate.
+    technical: Preserve the same bound actor in each version-pinned dependency.
+    future_compound: Add a path only with the same actor and event binding.
+    counterexample: Running partway followed by arrival through a separate manner
+      or event
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 4f83046a60201671bc92fe10fd74d7353d3b2fa5e61dc986356b540b180f70e0
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-arrival
+    kind: compound_ref
+    compound_id: CMP:74d98d19808f74d0b8196951
+    definition_version: 1.0.0
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:e3075c904daf1c647969fef6
+    definition_version: 1.0.0
+  edges:
+  - type: qualifies
+    from: q-arrival
+    to: h
+  binding_constraints:
+  - relation: same_argument
+    slot_paths:
+    - - q-arrival
+      - q-path
+      - q-carry
+      - q-support
+      - s-source
+    - - h
+      - q-prior
+      - s-source
+  - relation: same_argument
+    slot_paths:
+    - - q-arrival
+      - s-load
+    - - h
+      - q-prior
+      - s-target
+  - relation: same_argument
+    slot_paths:
+    - - q-arrival
+      - s-destination
+    - - h
+      - h
+      - q-custody
+      - s-source
+  lexical_constraints:
+  - The same carrier is the source of the same-load custody transfer.
+  - The destination referent identifies the recipient and its contextual position,
+    not a separate unbound person.
+  - Carrying arrival culminates in custody transfer within this one event; nested
+    event commitments remain inside outer grammar scope.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: completed_carrying_custody_delivery
+    sound_code: 10
+    added_definition: 'Completion of one carrying-mediated custody delivery: the carrier
+      conveys the same supported material load to the contextual position of the recipient,
+      and that carrying arrival culminates in the linked transfer of practical physical
+      custody of that load from the carrier to that recipient. The carrier is the
+      transfer source, the load is the transferred object and the destination referent
+      is the recipient. The nested carrying arrival and custody transfer are phases
+      of this one delivery, not independent events. The source loses custody as the
+      recipient acquires it at culmination. Ownership, willing acceptance, permission,
+      exclusivity against third parties and persistence afterward are unspecified.'
+    excludes:
+    - Spatial arrival while the carrier retains custody
+    - Custody transfer without the specified supporting conveyance and arrival
+    - Carrying arrival and an unrelated later handover
+    - A different carrier, object or recipient across the nested events
+    - Ownership, permission or willing acceptance inferred from delivery
+  compound_id: CMP:5200738177777915abb3f42e
+  content_digest: 5200738177777915abb3f42e7c304f263e561ea81a6c783e012654c2197d2bd3
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: completed carrying-mediated custody delivery
+  english_glosses:
+  - completed carrying-mediated custody delivery
+  invariant_definition: 'Completion of one carrying-mediated custody delivery: the
+    carrier conveys the same supported material load to the contextual position of
+    the recipient, and that carrying arrival culminates in the linked transfer of
+    practical physical custody of that load from the carrier to that recipient. The
+    carrier is the transfer source, the load is the transferred object and the destination
+    referent is the recipient. The nested carrying arrival and custody transfer are
+    phases of this one delivery, not independent events. The source loses custody
+    as the recipient acquires it at culmination. Ownership, willing acceptance, permission,
+    exclusivity against third parties and persistence afterward are unspecified.'
+  boundaries:
+    includes: A single supporting conveyance whose arrival culminates in transfer
+      to the destination recipient.
+    excludes: Spatial arrival while the carrier retains custody; Custody transfer
+      without the specified supporting conveyance and arrival; Carrying arrival and
+      an unrelated later handover; A different carrier, object or recipient across
+      the nested events; Ownership, permission or willing acceptance inferred from
+      delivery
+  collision_audit: Exact carrying-to-arrival and custody-transfer versions supply
+    the event ingredients. Convention 10 adds the same-event culmination and three
+    explicit participant equalities. Mere conjunction would not entail delivery.
+  confidence: high
+  approval_record: migrations/custody_delivery_2026_11_04.yaml
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/custody_delivery_foundation.md
+  examples:
+    ordinary: Ben carried the box to Ada, with the explicitly selected custody-delivery
+      reading.
+    technical: The carrier, load and recipient are shared across arrival and custody
+      transfer in one culmination.
+    future_compound: Reuse this delivery before specializing route, service or acceptance
+      conditions.
+    counterexample: The box arrives beside Ada while Ben retains custody.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 5200738177777915abb3f42e7c304f263e561ea81a6c783e012654c2197d2bd3
+- architecture_version: '1.0'
   compound_id: CMP:578fd06e1dec6f91d2b35add
   content_digest: 578fd06e1dec6f91d2b35addea49cab1370912015a72ce2fed948395804930f7
   definition_version: 1.0.0
@@ -577,6 +1444,69 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: 608ecb4f3c515a9c9a3443ec287b2836f35df7e5b2214fea55fabc1d69c9b035
 - architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:c64ab0a9989c7b10c46e3b38
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - The bound experiencer anchors the focal self of every nested self-condition; no
+    automatic speaker substitution.
+  - Felt meaning and any specialization are explicit lexical conventions, not consequences
+    of root adjacency alone.
+  - Lexical trits, experiential quality, time, grammatical negation and runtime 0/1/2
+    remain independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: felt_thirst
+    sound_code: 16
+    added_definition: 'The same felt bodily replenishment need is thirst: a bodily
+      feeling calling for water intake, ordinarily through drinking. It does not prove
+      a measured water deficit or assert drinking, a chosen beverage, permission,
+      or a deliberate plan. Figurative thirst for power or knowledge is excluded.'
+    excludes:
+    - Food-directed hunger without water-directed thirst
+    - A dry object, an unfelt fluid deficit or dormancy alone
+    - A metaphorical desire for power or knowledge
+  compound_id: CMP:60cd46250d183e3105b7250a
+  content_digest: 60cd46250d183e3105b7250a98ef41e6315191049703c985cbedc5f5d519440e
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: felt thirst
+  english_glosses:
+  - felt thirst
+  invariant_definition: 'The same felt bodily replenishment need is thirst: a bodily
+    feeling calling for water intake, ordinarily through drinking. It does not prove
+    a measured water deficit or assert drinking, a chosen beverage, permission, or
+    a deliberate plan. Figurative thirst for power or knowledge is excluded.'
+  boundaries:
+    includes: 'The same felt bodily replenishment need is thirst: a bodily feeling
+      calling for water intake, ordinarily through drinking. It does not prove a measured
+      water deficit or assert drinking, a chosen beverage, permission, or a deliberate
+      plan. Figurative thirst for power or knowledge is excluded.'
+    excludes: Food-directed hunger without water-directed thirst; A dry object, an
+      unfelt fluid deficit or dormancy alone; A metaphorical desire for power or knowledge
+  collision_audit: Convention 16 explicitly adds the stated felt distinction. Exact
+    dependency versions preserve the shared experiencer; no existing mental, living,
+    material, care or runtime meaning is substituted for the added feeling.
+  confidence: high
+  approval_record: migrations/felt_conditions_2026_11_04.yaml
+  approval_basis: Delegated author semantic review under the user-directed completion
+    goal; reviews/felt_conditions_foundation.md. Not independent linguistic validation.
+  examples:
+    ordinary: Eli is thirsty.
+    technical: The same experiencer is retained through the version-pinned nested
+      felt-state definitions.
+    future_compound: Reuse the exact felt foundation before specializing its object,
+      cause or relief.
+    counterexample: Food-directed hunger without water-directed thirst
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 60cd46250d183e3105b7250a98ef41e6315191049703c985cbedc5f5d519440e
+- architecture_version: '1.0'
   compound_id: CMP:61bfb0de7a1e9d7f5b981725
   content_digest: 61bfb0de7a1e9d7f5b98172517f8145bf2603c26ec4ed8da6b1149474901b518
   definition_version: 1.0.0
@@ -616,6 +1546,185 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 61bfb0de7a1e9d7f5b98172517f8145bf2603c26ec4ed8da6b1149474901b518
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-conscious
+    kind: root
+    root_id: LIF:001
+  - node_id: s-experiencer
+    kind: slot
+    slot_name: experiencer
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MIN:001
+  edges:
+  - type: qualifies
+    from: q-conscious
+    to: h
+  - type: fills_role
+    from: s-experiencer
+    to: h
+    role: experiencer
+  lexical_constraints:
+  - The bound experiencer anchors the focal self of every nested self-condition; no
+    automatic speaker substitution.
+  - Felt meaning and any specialization are explicit lexical conventions, not consequences
+    of root adjacency alone.
+  - Lexical trits, experiential quality, time, grammatical negation and runtime 0/1/2
+    remain independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: felt_self_condition
+    sound_code: 11
+    added_definition: The bound experiencer has a presently conscious felt presentation
+      of their own condition. The presentation is experiential rather than merely
+      stored, inferred, reported or externally registered, and can be implicit without
+      a verbal judgment. Within this compound the self in LIF:001 and MIN:001 is the
+      bound experiencer, not necessarily the speaker. No particular pleasantness,
+      desire, bodily need, cause, truth of a judgment or external sensory channel
+      is asserted.
+    excludes:
+    - Unconscious sensory registration or a device record alone
+    - A manifest self-model without conscious feeling
+    - A specific emotional valence or bodily need inferred from generic feeling
+  compound_id: CMP:6c9e3042a361ccae6ecf5980
+  content_digest: 6c9e3042a361ccae6ecf59808532048ed5f26a6303780c0050063e9a1ce325b6
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: consciously felt self-condition
+  english_glosses:
+  - consciously felt self-condition
+  invariant_definition: The bound experiencer has a presently conscious felt presentation
+    of their own condition. The presentation is experiential rather than merely stored,
+    inferred, reported or externally registered, and can be implicit without a verbal
+    judgment. Within this compound the self in LIF:001 and MIN:001 is the bound experiencer,
+    not necessarily the speaker. No particular pleasantness, desire, bodily need,
+    cause, truth of a judgment or external sensory channel is asserted.
+  boundaries:
+    includes: The bound experiencer has a presently conscious felt presentation of
+      their own condition. The presentation is experiential rather than merely stored,
+      inferred, reported or externally registered, and can be implicit without a verbal
+      judgment. Within this compound the self in LIF:001 and MIN:001 is the bound
+      experiencer, not necessarily the speaker. No particular pleasantness, desire,
+      bodily need, cause, truth of a judgment or external sensory channel is asserted.
+    excludes: Unconscious sensory registration or a device record alone; A manifest
+      self-model without conscious feeling; A specific emotional valence or bodily
+      need inferred from generic feeling
+  collision_audit: Convention 11 explicitly adds the stated felt distinction. Exact
+    dependency versions preserve the shared experiencer; no existing mental, living,
+    material, care or runtime meaning is substituted for the added feeling.
+  confidence: high
+  approval_record: migrations/felt_conditions_2026_11_04.yaml
+  approval_basis: Delegated author semantic review under the user-directed completion
+    goal; reviews/felt_conditions_foundation.md. Not independent linguistic validation.
+  examples:
+    ordinary: The experiencer has a consciously felt self-condition.
+    technical: The same experiencer is retained through the version-pinned nested
+      felt-state definitions.
+    future_compound: Reuse the exact felt foundation before specializing its object,
+      cause or relief.
+    counterexample: Unconscious sensory registration or a device record alone
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 6c9e3042a361ccae6ecf59808532048ed5f26a6303780c0050063e9a1ce325b6
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-body
+    kind: root
+    root_id: MAT:000
+  - node_id: s-bearer
+    kind: slot
+    slot_name: located_participant
+    slot_type: entity
+  - node_id: s-region
+    kind: slot
+    slot_name: spatial_region
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:221
+  edges:
+  - type: qualifies
+    from: q-body
+    to: s-bearer
+  - type: fills_role
+    from: s-bearer
+    to: h
+    role: bearer
+  - type: fills_role
+    from: s-region
+    to: h
+    role: location
+  lexical_constraints:
+  - The material qualifier applies to the located participant, not the region.
+  - Both arguments share one contextual spatial frame and inclusion criterion.
+  - Location does not assert displacement; lexical address and runtime state remain
+    independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: physical_region_interior
+    sound_code: 26
+    added_definition: The located participant is material, and its contextually relevant
+      spatial extent is related to the bound physical region in one shared spatial
+      frame at the reference time. The region and relevant extent are contextually
+      selected, not measured or inferred from their sound labels. The relevant extent
+      lies wholly in the interior of the region, without meeting its boundary. No
+      movement, entry, exit, structural membership, ownership, custody, intention
+      or permission is asserted. The three relations are not runtime states and outside
+      is not a synonym for not inside.
+    excludes:
+    - Structural or organizational membership and figurative inclusion
+    - Entry or exit inferred from current location
+    - Outside inferred merely from not inside
+    - A numeric geometry or whole-body criterion silently inferred from a noun label
+  compound_id: CMP:6ccc77b4b3aa69bb010849a4
+  content_digest: 6ccc77b4b3aa69bb010849a4a77c87f8d65d6f82c94a6ee9acc5305a252b04eb
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: physical region interior relation
+  english_glosses:
+  - physical region interior relation
+  invariant_definition: The located participant is material, and its contextually
+    relevant spatial extent is related to the bound physical region in one shared
+    spatial frame at the reference time. The region and relevant extent are contextually
+    selected, not measured or inferred from their sound labels. The relevant extent
+    lies wholly in the interior of the region, without meeting its boundary. No movement,
+    entry, exit, structural membership, ownership, custody, intention or permission
+    is asserted. The three relations are not runtime states and outside is not a synonym
+    for not inside.
+  boundaries:
+    includes: The located participant is material, and its contextually relevant spatial
+      extent is related to the bound physical region in one shared spatial frame at
+      the reference time. The region and relevant extent are contextually selected,
+      not measured or inferred from their sound labels. The relevant extent lies wholly
+      in the interior of the region, without meeting its boundary. No movement, entry,
+      exit, structural membership, ownership, custody, intention or permission is
+      asserted. The three relations are not runtime states and outside is not a synonym
+      for not inside.
+    excludes: Structural or organizational membership and figurative inclusion; Entry
+      or exit inferred from current location; Outside inferred merely from not inside;
+      A numeric geometry or whole-body criterion silently inferred from a noun label
+  collision_audit: reviews/spatial_entry_foundation.md; positional configuration alone
+    does not specify interior, exterior or boundary.
+  confidence: high
+  approval_record: migrations/spatial_relations_2026_11_04.yaml
+  approval_basis: Author semantic review under the user-directed translator completion
+    goal; not independent linguistic validation.
+  examples:
+    ordinary: Nora is inside the archive.
+    technical: Keep the same participant, region and contextual extent criterion in
+      dependent event compounds.
+    future_compound: Entry must add outside-to-inside displacement in one event.
+    counterexample: Being inside throughout is not entry; touching the boundary is
+      neither wholly inside nor wholly outside.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 6ccc77b4b3aa69bb010849a4a77c87f8d65d6f82c94a6ee9acc5305a252b04eb
 - architecture_version: '1.0'
   compound_id: CMP:725868579ebb0e2ef83cf708
   content_digest: 725868579ebb0e2ef83cf7089271a399a547885e12b8bbde8b60552c9e41bcd0
@@ -717,6 +1826,468 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: 742b44d9ead66b451346708a55701f9e55d12b6359366cddec873c6537829129
 - architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:c64ab0a9989c7b10c46e3b38
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - The bound experiencer anchors the focal self of every nested self-condition; no
+    automatic speaker substitution.
+  - Felt meaning and any specialization are explicit lexical conventions, not consequences
+    of root adjacency alone.
+  - Lexical trits, experiential quality, time, grammatical negation and runtime 0/1/2
+    remain independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: felt_hunger
+    sound_code: 15
+    added_definition: 'The same felt bodily replenishment need is hunger: a bodily
+      feeling calling for food or nourishment through eating. The feeling need not
+      prove a measured energy deficit or imminent harm and does not assert eating,
+      appetite for a particular food, permission, or a deliberate plan. Figurative
+      hunger for achievement or information is excluded.'
+    excludes:
+    - Water-directed thirst without food-directed hunger
+    - Dormancy, low work capacity or an unfelt nutritional deficit alone
+    - A metaphorical desire for success or knowledge
+  compound_id: CMP:748be1f0ce7ceb2963716292
+  content_digest: 748be1f0ce7ceb2963716292494ddacd187b1cb77ff1a399fe5e17a2b7c37e6a
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: felt hunger
+  english_glosses:
+  - felt hunger
+  invariant_definition: 'The same felt bodily replenishment need is hunger: a bodily
+    feeling calling for food or nourishment through eating. The feeling need not prove
+    a measured energy deficit or imminent harm and does not assert eating, appetite
+    for a particular food, permission, or a deliberate plan. Figurative hunger for
+    achievement or information is excluded.'
+  boundaries:
+    includes: 'The same felt bodily replenishment need is hunger: a bodily feeling
+      calling for food or nourishment through eating. The feeling need not prove a
+      measured energy deficit or imminent harm and does not assert eating, appetite
+      for a particular food, permission, or a deliberate plan. Figurative hunger for
+      achievement or information is excluded.'
+    excludes: Water-directed thirst without food-directed hunger; Dormancy, low work
+      capacity or an unfelt nutritional deficit alone; A metaphorical desire for success
+      or knowledge
+  collision_audit: Convention 15 explicitly adds the stated felt distinction. Exact
+    dependency versions preserve the shared experiencer; no existing mental, living,
+    material, care or runtime meaning is substituted for the added feeling.
+  confidence: high
+  approval_record: migrations/felt_conditions_2026_11_04.yaml
+  approval_basis: Delegated author semantic review under the user-directed completion
+    goal; reviews/felt_conditions_foundation.md. Not independent linguistic validation.
+  examples:
+    ordinary: Eli is hungry.
+    technical: The same experiencer is retained through the version-pinned nested
+      felt-state definitions.
+    future_compound: Reuse the exact felt foundation before specializing its object,
+      cause or relief.
+    counterexample: Water-directed thirst without food-directed hunger
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 748be1f0ce7ceb2963716292494ddacd187b1cb77ff1a399fe5e17a2b7c37e6a
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-path
+    kind: compound_ref
+    compound_id: CMP:763faa4465065477220f6f06
+    definition_version: 1.0.0
+  - node_id: s-load
+    kind: slot
+    slot_name: moving_load
+    slot_type: entity
+  - node_id: s-destination
+    kind: slot
+    slot_name: destination
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:110
+  edges:
+  - type: qualifies
+    from: q-path
+    to: h
+  - type: fills_role
+    from: s-load
+    to: h
+    role: actor
+  - type: fills_role
+    from: s-destination
+    to: h
+    role: destination
+  binding_constraints:
+  - relation: same_argument
+    slot_paths:
+    - - q-path
+      - s-load
+    - - s-load
+  - relation: same_argument
+    slot_paths:
+    - - q-path
+      - s-destination
+    - - s-destination
+  lexical_constraints:
+  - The same-argument constraints bind the exact load throughout the nested carrying
+    and movement.
+  - The nested approach culminates at this arrival in the same event, with one shared
+    destination.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: completed_destination_carrying
+    sound_code: 6
+    added_definition: 'Completion of one destination-directed physical carrying event:
+      the same load conveyed by the same supporting source reaches the same specified
+      destination position as the culmination of that carrying conveyance. The ongoing
+      carrying and approach are internal phases of this completed event, not separate
+      current assertions. Arrival after the load is released and travels independently
+      is excluded. Receipt, ownership transfer, intention and continued presence after
+      arrival are not asserted.'
+    excludes:
+    - A carrying episode that ends short of the destination
+    - Arrival during a separate event or by a different load
+    - Arrival after unsupported flight or independent displacement following release
+    - Receipt, ownership transfer or continued presence inferred from arrival
+  compound_id: CMP:74d98d19808f74d0b8196951
+  content_digest: 74d98d19808f74d0b8196951e12acf2846fa3ae296dcd750251cf933207dccf9
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: completed physical carrying to a destination
+  english_glosses:
+  - completed physical carrying to a destination
+  invariant_definition: 'Completion of one destination-directed physical carrying
+    event: the same load conveyed by the same supporting source reaches the same specified
+    destination position as the culmination of that carrying conveyance. The ongoing
+    carrying and approach are internal phases of this completed event, not separate
+    current assertions. Arrival after the load is released and travels independently
+    is excluded. Receipt, ownership transfer, intention and continued presence after
+    arrival are not asserted.'
+  boundaries:
+    includes: 'Completion of one destination-directed physical carrying event: the
+      same load conveyed by the same supporting source reaches the same specified
+      destination position as the culmination of that carrying conveyance. The ongoing
+      carrying and approach are internal phases of this completed event, not separate
+      current assertions. Arrival after the load is released and travels independently
+      is excluded. Receipt, ownership transfer, intention and continued presence after
+      arrival are not asserted.'
+    excludes: A carrying episode that ends short of the destination; Arrival during
+      a separate event or by a different load; Arrival after unsupported flight or
+      independent displacement following release; Receipt, ownership transfer or continued
+      presence inferred from arrival
+  collision_audit: Version-pinned dependency CMP:763faa4465065477220f6f06 plus MOV:110
+    supplies the ingredients; convention 6 explicitly adds same-event linkage, and
+    the completed convention adds culmination. Neither is asserted to follow from
+    conjunction alone.
+  confidence: high
+  approval_record: migrations/destination_carrying_2026_10_28.yaml
+  approval_basis: Delegated semantic review under the user-directed translator-completion
+    goal; reviews/destination_carrying.md. Author review, not independent validation.
+  examples:
+    ordinary: Ada carried the box to the gate (completed spatial destination reading).
+    technical: One load, one carrier and one carrying event; destination denotes a
+      contextual position, not a recipient.
+    future_compound: Reuse this spatial foundation before adding receipt or specialized
+      delivery.
+    counterexample: Ada carries the box partway, then throws it through the gate.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 74d98d19808f74d0b8196951e12acf2846fa3ae296dcd750251cf933207dccf9
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-carry
+    kind: compound_ref
+    compound_id: CMP:7a6749aaf61cd6181e544bd6
+    definition_version: 1.0.0
+  - node_id: s-load
+    kind: slot
+    slot_name: moving_load
+    slot_type: entity
+  - node_id: s-destination
+    kind: slot
+    slot_name: destination
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:111
+  edges:
+  - type: qualifies
+    from: q-carry
+    to: h
+  - type: fills_role
+    from: s-load
+    to: h
+    role: actor
+  - type: fills_role
+    from: s-destination
+    to: h
+    role: destination
+  binding_constraints:
+  - relation: same_argument
+    slot_paths:
+    - - q-carry
+      - q-support
+      - s-target
+    - - q-carry
+      - s-load
+    - - s-load
+  lexical_constraints:
+  - The same-argument constraints bind the exact load throughout the nested carrying
+    and movement.
+  - The carrying conveyance is the approach event, not a separate simultaneous occurrence.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_destination_carrying
+    sound_code: 5
+    added_definition: An instance of ongoing physical carrying in which that same
+      supported load is undergoing displacement toward the specified destination position
+      during the same carrying event. The supporting conveyance constitutes this approach;
+      unrelated simultaneous approach does not qualify. The destination may be specified
+      by a contextual location associated with a referent. Arrival, receipt, ownership
+      transfer, intention and continued presence are not asserted.
+    excludes:
+    - Carrying and unrelated approach by another load or during another event
+    - Arrival or receipt inferred merely from directed carrying
+    - Recipient or ownership inferred from a destination label
+  compound_id: CMP:763faa4465065477220f6f06
+  content_digest: 763faa4465065477220f6f06f1706db8324949b39f70c72c6705a6ef8d227190
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: ongoing destination-directed physical carrying
+  english_glosses:
+  - ongoing destination-directed physical carrying
+  invariant_definition: An instance of ongoing physical carrying in which that same
+    supported load is undergoing displacement toward the specified destination position
+    during the same carrying event. The supporting conveyance constitutes this approach;
+    unrelated simultaneous approach does not qualify. The destination may be specified
+    by a contextual location associated with a referent. Arrival, receipt, ownership
+    transfer, intention and continued presence are not asserted.
+  boundaries:
+    includes: An instance of ongoing physical carrying in which that same supported
+      load is undergoing displacement toward the specified destination position during
+      the same carrying event. The supporting conveyance constitutes this approach;
+      unrelated simultaneous approach does not qualify. The destination may be specified
+      by a contextual location associated with a referent. Arrival, receipt, ownership
+      transfer, intention and continued presence are not asserted.
+    excludes: Carrying and unrelated approach by another load or during another event;
+      Arrival or receipt inferred merely from directed carrying; Recipient or ownership
+      inferred from a destination label
+  collision_audit: Version-pinned dependency CMP:7a6749aaf61cd6181e544bd6 plus MOV:111
+    supplies the ingredients; convention 5 explicitly adds same-event linkage, and
+    the completed convention adds culmination. Neither is asserted to follow from
+    conjunction alone.
+  confidence: high
+  approval_record: migrations/destination_carrying_2026_10_28.yaml
+  approval_basis: Delegated semantic review under the user-directed translator-completion
+    goal; reviews/destination_carrying.md. Author review, not independent validation.
+  examples:
+    ordinary: Ada is carrying the box to the gate (spatial destination reading).
+    technical: One load, one carrier and one carrying event; destination denotes a
+      contextual position, not a recipient.
+    future_compound: Reuse this spatial foundation before adding receipt or specialized
+      delivery.
+    counterexample: Ada carries the box away while another object approaches the gate.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 763faa4465065477220f6f06f1706db8324949b39f70c72c6705a6ef8d227190
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-support
+    kind: compound_ref
+    compound_id: CMP:eef9fff8ac6618ce60927f18
+    definition_version: 1.0.0
+  - node_id: s-load
+    kind: slot
+    slot_name: moving_load
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:121
+  edges:
+  - type: qualifies
+    from: q-support
+    to: h
+  - type: fills_role
+    from: s-load
+    to: h
+    role: actor
+  binding_constraints:
+  - relation: same_argument
+    slot_paths:
+    - - q-support
+      - s-target
+    - - s-load
+  - relation: distinct_arguments
+    slot_paths:
+    - - q-support
+      - s-source
+    - - q-support
+      - s-target
+  lexical_constraints:
+  - The supported load is exactly the moving participant, distinct from its carrier.
+  - Support and conveyance concern the same ongoing interval and the load-bearing
+    engagement is the means of conveyance.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_physical_carrying
+    sound_code: 4
+    added_definition: A material source conveys the same distinct material load that
+      it physically supports, relative to the contextually relevant movement frame
+      during the same ongoing interval. The load is borne upon, within, or suspended
+      from a moving supporting part or field maintained by the source; that load-bearing
+      engagement is the means of conveyance. The whole source need not translate,
+      as with a conveyor belt. No intention, destination or recipient is asserted.
+    excludes:
+    - Stationary support without conveyance
+    - Support and unrelated simultaneous movement
+    - Pushing or dragging a load across an independently supporting surface without
+      bearing it upon, within or suspended from the carrier
+    - Throwing or falling after support ends
+    - Abstract carrying of information, responsibility or disease
+  compound_id: CMP:7a6749aaf61cd6181e544bd6
+  content_digest: 7a6749aaf61cd6181e544bd606dbec63769da2c86a57ab40964de4c137fff030
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: ongoing physical carrying
+  english_glosses:
+  - ongoing physical carrying
+  invariant_definition: A material source conveys the same distinct material load
+    that it physically supports, relative to the contextually relevant movement frame
+    during the same ongoing interval. The load is borne upon, within, or suspended
+    from a moving supporting part or field maintained by the source; that load-bearing
+    engagement is the means of conveyance. The whole source need not translate, as
+    with a conveyor belt. No intention, destination or recipient is asserted.
+  boundaries:
+    includes: A person, vehicle, tray or conveyor conveying a distinct material load
+      borne by its moving support.
+    excludes: Stationary support without conveyance; Support and unrelated simultaneous
+      movement; Pushing or dragging a load across an independently supporting surface
+      without bearing it upon, within or suspended from the carrier; Throwing or falling
+      after support ends; Abstract carrying of information, responsibility or disease
+  collision_audit: Exact support version 1.0.0 supplies load bearing; MOV:121 supplies
+    shared-frame movement. Neither entails conveyance by that support. Convention
+    code 4 adds the transport linkage and explicit participant constraints.
+  confidence: high
+  approval_record: migrations/physical_carrying_2026_10_28.yaml
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/physical_carrying.md
+  examples:
+    ordinary: Ada is carrying the box.
+    technical: The supported target and moving actor are the same load, conveyed by
+      its carrier during the same interval.
+    future_compound: Reuse this exact transport relation before adding destinations,
+      recipients or manner.
+    counterexample: A shelf supports a stationary box; a person pushes a box across
+      a floor that bears its load.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 7a6749aaf61cd6181e544bd606dbec63769da2c86a57ab40964de4c137fff030
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-body
+    kind: root
+    root_id: MAT:000
+  - node_id: s-bearer
+    kind: slot
+    slot_name: located_participant
+    slot_type: entity
+  - node_id: s-region
+    kind: slot
+    slot_name: spatial_region
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:221
+  edges:
+  - type: qualifies
+    from: q-body
+    to: s-bearer
+  - type: fills_role
+    from: s-bearer
+    to: h
+    role: bearer
+  - type: fills_role
+    from: s-region
+    to: h
+    role: location
+  lexical_constraints:
+  - The material qualifier applies to the located participant, not the region.
+  - Both arguments share one contextual spatial frame and inclusion criterion.
+  - Location does not assert displacement; lexical address and runtime state remain
+    independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: physical_region_boundary
+    sound_code: 28
+    added_definition: The located participant is material, and its contextually relevant
+      spatial extent is related to the bound physical region in one shared spatial
+      frame at the reference time. The region and relevant extent are contextually
+      selected, not measured or inferred from their sound labels. The relevant extent
+      intersects the boundary of the region; this does not assert that the entire
+      participant lies on the boundary. No movement, entry, exit, structural membership,
+      ownership, custody, intention or permission is asserted. The three relations
+      are not runtime states and outside is not a synonym for not inside.
+    excludes:
+    - Structural or organizational membership and figurative inclusion
+    - Entry or exit inferred from current location
+    - Outside inferred merely from not inside
+    - A numeric geometry or whole-body criterion silently inferred from a noun label
+  compound_id: CMP:835d2edc1573d2aea3a6fd18
+  content_digest: 835d2edc1573d2aea3a6fd18e127dbabb4a83e14b427565749f6e4a45f581e4b
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: physical region boundary relation
+  english_glosses:
+  - physical region boundary relation
+  invariant_definition: The located participant is material, and its contextually
+    relevant spatial extent is related to the bound physical region in one shared
+    spatial frame at the reference time. The region and relevant extent are contextually
+    selected, not measured or inferred from their sound labels. The relevant extent
+    intersects the boundary of the region; this does not assert that the entire participant
+    lies on the boundary. No movement, entry, exit, structural membership, ownership,
+    custody, intention or permission is asserted. The three relations are not runtime
+    states and outside is not a synonym for not inside.
+  boundaries:
+    includes: The located participant is material, and its contextually relevant spatial
+      extent is related to the bound physical region in one shared spatial frame at
+      the reference time. The region and relevant extent are contextually selected,
+      not measured or inferred from their sound labels. The relevant extent intersects
+      the boundary of the region; this does not assert that the entire participant
+      lies on the boundary. No movement, entry, exit, structural membership, ownership,
+      custody, intention or permission is asserted. The three relations are not runtime
+      states and outside is not a synonym for not inside.
+    excludes: Structural or organizational membership and figurative inclusion; Entry
+      or exit inferred from current location; Outside inferred merely from not inside;
+      A numeric geometry or whole-body criterion silently inferred from a noun label
+  collision_audit: reviews/spatial_entry_foundation.md; positional configuration alone
+    does not specify interior, exterior or boundary.
+  confidence: high
+  approval_record: migrations/spatial_relations_2026_11_04.yaml
+  approval_basis: Author semantic review under the user-directed translator completion
+    goal; not independent linguistic validation.
+  examples:
+    ordinary: Nora is on the boundary of the archive.
+    technical: Keep the same participant, region and contextual extent criterion in
+      dependent event compounds.
+    future_compound: Entry must add outside-to-inside displacement in one event.
+    counterexample: Being inside throughout is not entry; touching the boundary is
+      neither wholly inside nor wholly outside.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 835d2edc1573d2aea3a6fd18e127dbabb4a83e14b427565749f6e4a45f581e4b
+- architecture_version: '1.0'
   compound_id: CMP:8e5ae722d9e5e31f85ac3c5b
   content_digest: 8e5ae722d9e5e31f85ac3c5b465d536e077c3fa205ea3ab6e31f75f6948b8b14
   definition_version: 1.0.0
@@ -764,6 +2335,73 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 8e5ae722d9e5e31f85ac3c5b465d536e077c3fa205ea3ab6e31f75f6948b8b14
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:6c9e3042a361ccae6ecf5980
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - The bound experiencer anchors the focal self of every nested self-condition; no
+    automatic speaker substitution.
+  - Felt meaning and any specialization are explicit lexical conventions, not consequences
+    of root adjacency alone.
+  - Lexical trits, experiential quality, time, grammatical negation and runtime 0/1/2
+    remain independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: pleasant_felt_condition
+    sound_code: 12
+    added_definition: The same consciously felt self-condition has a pleasant experiential
+      tone for its experiencer. Pleasantness is felt valence, not an appraisal that
+      an outcome is useful, morally good or desired. It does not by itself establish
+      happiness, satisfaction, affection, care, preference, or absence of simultaneous
+      unpleasant feeling.
+    excludes:
+    - Care behavior or a favorable judgment without pleasant feeling
+    - Attention or physiological activation used as positive valence
+    - Happiness or a preferred outcome inferred from any pleasant feeling
+  compound_id: CMP:8e95897afbd6d54b8e164e03
+  content_digest: 8e95897afbd6d54b8e164e035ee464e2df91a5ce19018f67360326bb3ae3bfeb
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: pleasant felt condition
+  english_glosses:
+  - pleasant felt condition
+  invariant_definition: The same consciously felt self-condition has a pleasant experiential
+    tone for its experiencer. Pleasantness is felt valence, not an appraisal that
+    an outcome is useful, morally good or desired. It does not by itself establish
+    happiness, satisfaction, affection, care, preference, or absence of simultaneous
+    unpleasant feeling.
+  boundaries:
+    includes: The same consciously felt self-condition has a pleasant experiential
+      tone for its experiencer. Pleasantness is felt valence, not an appraisal that
+      an outcome is useful, morally good or desired. It does not by itself establish
+      happiness, satisfaction, affection, care, preference, or absence of simultaneous
+      unpleasant feeling.
+    excludes: Care behavior or a favorable judgment without pleasant feeling; Attention
+      or physiological activation used as positive valence; Happiness or a preferred
+      outcome inferred from any pleasant feeling
+  collision_audit: Convention 12 explicitly adds the stated felt distinction. Exact
+    dependency versions preserve the shared experiencer; no existing mental, living,
+    material, care or runtime meaning is substituted for the added feeling.
+  confidence: high
+  approval_record: migrations/felt_conditions_2026_11_04.yaml
+  approval_basis: Delegated author semantic review under the user-directed completion
+    goal; reviews/felt_conditions_foundation.md. Not independent linguistic validation.
+  examples:
+    ordinary: The experiencer has a pleasant felt condition.
+    technical: The same experiencer is retained through the version-pinned nested
+      felt-state definitions.
+    future_compound: Reuse the exact felt foundation before specializing its object,
+      cause or relief.
+    counterexample: Care behavior or a favorable judgment without pleasant feeling
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 8e95897afbd6d54b8e164e035ee464e2df91a5ce19018f67360326bb3ae3bfeb
 - architecture_version: '1.0'
   compound_id: CMP:8f05a5e16a897935492726fa
   content_digest: 8f05a5e16a897935492726faf2e747c5fa22f3b3cc01e1b30fb853521782ec7b
@@ -885,6 +2523,60 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: 99a87c8869d58498f524f1cc2782321e356f26bf94b14c405077c92a58ff97a7
 - architecture_version: '1.0'
+  compound_id: CMP:9ddb5e2cfc285515c799462e
+  content_digest: 9ddb5e2cfc285515c799462ec538f0f410adc3eadca8d90c7db041d998369e45
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: ongoing internal data repair
+  english_glosses:
+  - ongoing internal data repair
+  semantic_head: h
+  invariant_definition: An ongoing restorative transformation originating within one
+    reference entity whose restorative transformation is an ongoing bounded transformation
+    of represented information within that entity, without transfer to a distinct
+    target.
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: DAT:101
+  - node_id: h
+    kind: root
+    root_id: REP:101
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - All qualifiers narrow the head; no component asserts a separate event.
+  boundaries:
+    includes: internal restoration of damaged represented information by an ongoing
+      internal information transformation
+    excludes: arbitrary editing, transfer to another target, completed restoration,
+      and restoration originating from a distinct external source
+  collision_audit: The restorative head and domain qualifier both encode an ongoing
+    process. Runtime status does not replace lexical phase. The completed foundation
+    remains unchanged.
+  confidence: high
+  examples:
+    ordinary: internal restoration of damaged represented information by an ongoing
+      internal information transformation
+    technical: An ongoing restorative transformation originating within one reference
+      entity whose restorative transformation is an ongoing bounded transformation
+      of represented information within that entity, without transfer to a distinct
+      target.
+    future_compound: May be reused as an ongoing restorative process with explicit
+      participants and domain restrictions.
+    counterexample: Do not use for arbitrary editing, transfer to another target,
+      completed restoration, and restoration originating from a distinct external
+      source.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 9ddb5e2cfc285515c799462ec538f0f410adc3eadca8d90c7db041d998369e45
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/foundation_process_compounds.md
+- architecture_version: '1.0'
   compound_id: CMP:9e8b36f50570a0c3c362a968
   content_digest: 9e8b36f50570a0c3c362a968c9a99eff8df12285e44484758641ad7e2b47f247
   definition_version: 1.0.0
@@ -932,6 +2624,139 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: 9e8b36f50570a0c3c362a968c9a99eff8df12285e44484758641ad7e2b47f247
 - architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-0-before
+    kind: compound_ref
+    compound_id: CMP:cc6d19387b62013464e0e850
+    definition_version: 1.0.0
+  - node_id: q-1-after
+    kind: compound_ref
+    compound_id: CMP:6ccc77b4b3aa69bb010849a4
+    definition_version: 1.0.0
+  - node_id: s-actor
+    kind: slot
+    slot_name: entering_participant
+    slot_type: entity
+  - node_id: s-region
+    kind: slot
+    slot_name: entered_region
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:120
+  edges:
+  - type: qualifies
+    from: q-0-before
+    to: h
+  - type: qualifies
+    from: q-1-after
+    to: h
+  - type: fills_role
+    from: s-actor
+    to: h
+    role: actor
+  - type: fills_role
+    from: s-region
+    to: h
+    role: environment
+  binding_constraints:
+  - relation: same_argument
+    slot_paths:
+    - - q-0-before
+      - s-bearer
+    - - q-1-after
+      - s-bearer
+    - - s-actor
+  - relation: same_argument
+    slot_paths:
+    - - q-0-before
+      - s-region
+    - - q-1-after
+      - s-region
+    - - s-region
+  lexical_constraints:
+  - The nested exterior state is the pre-crossing phase and the nested interior state
+    is the culmination phase of this same displacement event.
+  - The actual mover is the same material bearer in both spatial relations; the region
+    anchors the same shared frame throughout.
+  - No nested spatial state has an independent runtime ending or speech-time assertion.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: completed_physical_entry
+    sound_code: 29
+    added_definition: Completion of one physical entry event in which the same material
+      participant displaces across the boundary of the same contextual physical region,
+      from its exterior before the crossing to its interior at culmination. Both spatial
+      phases use the same region, relevant participant extent and spatial frame. The
+      exterior and interior relations are internal event phases, not simultaneous
+      assertions or independent claims about speech time. The mover displacement constitutes
+      this crossing; an unrelated movement plus a location change, a changed region
+      interpretation or stationary enclosure by an expanding region is insufficient.
+      Boundary contact may occur during the transition. No prescribed route, locomotion
+      manner, conscious intention, permission, ownership, custody or continued presence
+      after culmination is asserted.
+    excludes:
+    - Being inside throughout, approaching without crossing or arrival at an exterior
+      doorstep
+    - Different participants, regions, frames or extent criteria in the two phases
+    - Stationary enclosure or a redefined boundary without the required mover displacement
+    - Entry of data, registration for a competition or other nonspatial senses
+    - Completion, past tense and runtime state treated as interchangeable
+  compound_id: CMP:a3244e0195aa8c228dd0af8c
+  content_digest: a3244e0195aa8c228dd0af8cec947b7ed958d7d9c6cd68f6180db5fd71b52fcb
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: completed physical entry
+  english_glosses:
+  - completed physical entry
+  invariant_definition: Completion of one physical entry event in which the same material
+    participant displaces across the boundary of the same contextual physical region,
+    from its exterior before the crossing to its interior at culmination. Both spatial
+    phases use the same region, relevant participant extent and spatial frame. The
+    exterior and interior relations are internal event phases, not simultaneous assertions
+    or independent claims about speech time. The mover displacement constitutes this
+    crossing; an unrelated movement plus a location change, a changed region interpretation
+    or stationary enclosure by an expanding region is insufficient. Boundary contact
+    may occur during the transition. No prescribed route, locomotion manner, conscious
+    intention, permission, ownership, custody or continued presence after culmination
+    is asserted.
+  boundaries:
+    includes: Completion of one physical entry event in which the same material participant
+      displaces across the boundary of the same contextual physical region, from its
+      exterior before the crossing to its interior at culmination. Both spatial phases
+      use the same region, relevant participant extent and spatial frame. The exterior
+      and interior relations are internal event phases, not simultaneous assertions
+      or independent claims about speech time. The mover displacement constitutes
+      this crossing; an unrelated movement plus a location change, a changed region
+      interpretation or stationary enclosure by an expanding region is insufficient.
+      Boundary contact may occur during the transition. No prescribed route, locomotion
+      manner, conscious intention, permission, ownership, custody or continued presence
+      after culmination is asserted.
+    excludes: Being inside throughout, approaching without crossing or arrival at
+      an exterior doorstep; Different participants, regions, frames or extent criteria
+      in the two phases; Stationary enclosure or a redefined boundary without the
+      required mover displacement; Entry of data, registration for a competition or
+      other nonspatial senses; Completion, past tense and runtime state treated as
+      interchangeable
+  collision_audit: reviews/spatial_entry_foundation.md; displacement plus version-pinned
+    exterior/interior phases requires explicit same-event and boundary-crossing convention.
+  confidence: high
+  approval_record: migrations/physical_entry_2026_11_04.yaml
+  approval_basis: Author semantic review under the user-directed translator completion
+    goal; not independent linguistic validation.
+  examples:
+    ordinary: Nora entered the archive.
+    technical: Same-argument constraints preserve mover and region across both internal
+      phases and the displacement head.
+    future_compound: Reuse this exact event under permission, possibility and manner-specific
+      entry.
+    counterexample: Nora arrives at the doorstep but remains outside.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: a3244e0195aa8c228dd0af8cec947b7ed958d7d9c6cd68f6180db5fd71b52fcb
+- architecture_version: '1.0'
   compound_id: CMP:a7fc0ca38a6f95a40cdb87b1
   content_digest: a7fc0ca38a6f95a40cdb87b1966435f90b824e57edd04c7cdc8e76beedcdacfb
   definition_version: 1.0.0
@@ -972,6 +2797,294 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: a7fc0ca38a6f95a40cdb87b1966435f90b824e57edd04c7cdc8e76beedcdacfb
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: s-region
+    kind: slot
+    slot_name: region
+    slot_type: entity
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:1e2ec87e1feff0da19aadc3b
+    definition_version: 1.0.0
+  edges:
+  - type: fills_role
+    from: s-region
+    to: h
+    role: environment
+  lexical_constraints:
+  - The bound actor anchors the same focal material body and local physical changes
+    throughout the nested activity.
+  - Locomotor pattern and specialization are explicit audible conventions, not consequences
+    of root adjacency.
+  - Runtime, grammatical negation, time and path completion are independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_swimming_across_region
+    sound_code: 22
+    added_definition: The same actor is swimming along a traversal path through the
+      bound spatial region, progressing from a contextual side toward an opposed side
+      of that region. The swimming supplies this traversal, not an unrelated simultaneous
+      activity. The region is a traversed spatial extent, not a recipient, source
+      of propulsion or already reached destination. The event is ongoing and does
+      not assert that the actor has reached the opposite side or completed the crossing.
+      No particular speed, straightness, intention, unassisted activity or subsequent
+      location is asserted.
+    excludes:
+    - Swimming somewhere within a region without across-traversal
+    - A completed crossing inferred from ongoing activity
+    - The region treated as a recipient or a separately moving actor
+  compound_id: CMP:a900dd73c9816ed6cbad29f0
+  content_digest: a900dd73c9816ed6cbad29f04705e8b9b5bb9f71734e6ca82707eeb14bcb8f44
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: ongoing swimming across a region
+  english_glosses:
+  - ongoing swimming across a region
+  invariant_definition: The same actor is swimming along a traversal path through
+    the bound spatial region, progressing from a contextual side toward an opposed
+    side of that region. The swimming supplies this traversal, not an unrelated simultaneous
+    activity. The region is a traversed spatial extent, not a recipient, source of
+    propulsion or already reached destination. The event is ongoing and does not assert
+    that the actor has reached the opposite side or completed the crossing. No particular
+    speed, straightness, intention, unassisted activity or subsequent location is
+    asserted.
+  boundaries:
+    includes: The same actor is swimming along a traversal path through the bound
+      spatial region, progressing from a contextual side toward an opposed side of
+      that region. The swimming supplies this traversal, not an unrelated simultaneous
+      activity. The region is a traversed spatial extent, not a recipient, source
+      of propulsion or already reached destination. The event is ongoing and does
+      not assert that the actor has reached the opposite side or completed the crossing.
+      No particular speed, straightness, intention, unassisted activity or subsequent
+      location is asserted.
+    excludes: Swimming somewhere within a region without across-traversal; A completed
+      crossing inferred from ongoing activity; The region treated as a recipient or
+      a separately moving actor
+  collision_audit: reviews/locomotion_foundations.md and reviews/swimming_foundation.md;
+    physical change alone does not entail the declared locomotor pattern.
+  confidence: high
+  approval_record: migrations/swimming_across_2026_11_04.yaml
+  approval_basis: Delegated author review under the user-directed translator completion
+    goal; not independent linguistic validation.
+  examples:
+    ordinary: Eli is swimming.
+    technical: Preserve the same bound actor in each version-pinned dependency.
+    future_compound: Add a path only with the same actor and event binding.
+    counterexample: Swimming somewhere within a region without across-traversal
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: a900dd73c9816ed6cbad29f04705e8b9b5bb9f71734e6ca82707eeb14bcb8f44
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q01
+    kind: root
+    root_id: MAT:211
+  - node_id: h
+    kind: root
+    root_id: DAT:111
+  edges:
+  - edge_id: e01
+    type: qualifies
+    from: q01
+    to: h
+  lexical_constraints:
+  - The qualifier describes the physical realization of the same source-to-target
+    information transfer, not an unrelated simultaneous coupling.
+  - The source is distinct from the receiving target. Neither consciousness nor communication
+    intent is required.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_sensory_registration
+    sound_code: 0
+    added_definition: 'The transfer is realized by physical sensory transduction:
+      the target receiver registers information carried by a physical stimulus from
+      the distinct source. Registration does not by itself assert conscious experience,
+      attention, identification or understanding.'
+    excludes:
+    - Mere physical influence without informational registration
+    - Generic data copying without sensory transduction
+    - Conscious experience or understanding inferred from registration
+    - A specified sensory channel inferred without a channel distinction
+  compound_id: CMP:ade73037114406a2cd91ce13
+  content_digest: ade73037114406a2cd91ce13ab20c3d9ac540127d75abd06aa73c8b2c9d13cab
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: ongoing sensory registration
+  english_glosses:
+  - ongoing sensory registration
+  invariant_definition: An ongoing information transfer from one distinct physical
+    source to a receiving target, physically realized by active material coupling
+    in which sensory transduction causes the receiver to register information carried
+    by the source stimulus.
+  boundaries:
+    includes: physical sensory registration by a biological receiver or a sensing
+      device, with no required conscious experience
+    excludes: Mere physical influence without informational registration; Generic
+      data copying without sensory transduction; Conscious experience or understanding
+      inferred from registration; A specified sensory channel inferred without a channel
+      distinction
+  collision_audit: MAT:211 supplies active physical coupling and DAT:111 supplies
+    ongoing source-to-target information transfer. Their graph alone does not entail
+    sensory transduction. EZLEX-1 code 0 explicitly contributes that additional conventional
+    distinction; the unmarked graph remains broader.
+  confidence: high
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/sensory_registration_foundation.md
+  examples:
+    ordinary: The sensor is registering sensory input from the bell.
+    technical: A receiver transduces a physical stimulus into received information
+      without asserting a conscious experience.
+    future_compound: Reuse as the registration component of channel-specific sensing;
+      experience and successful perception require separate definitions.
+    counterexample: A body is warmed without registering information, or a stored
+      file is copied without sensory transduction.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: ade73037114406a2cd91ce13ab20c3d9ac540127d75abd06aa73c8b2c9d13cab
+  approval_record: migrations/sensory_registration_2026_10_28.yaml
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-0-before
+    kind: compound_ref
+    compound_id: CMP:cc6d19387b62013464e0e850
+    definition_version: 1.0.0
+  - node_id: s-actor
+    kind: slot
+    slot_name: entering_participant
+    slot_type: entity
+  - node_id: s-region
+    kind: slot
+    slot_name: entered_region
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:121
+  edges:
+  - type: qualifies
+    from: q-0-before
+    to: h
+  - type: fills_role
+    from: s-actor
+    to: h
+    role: actor
+  - type: fills_role
+    from: s-region
+    to: h
+    role: environment
+  binding_constraints:
+  - relation: same_argument
+    slot_paths:
+    - - q-0-before
+      - s-bearer
+    - - s-actor
+  - relation: same_argument
+    slot_paths:
+    - - q-0-before
+      - s-region
+    - - s-region
+  lexical_constraints:
+  - The nested exterior relation is the pre-crossing phase of the ongoing traversal,
+    not a current exterior assertion. No actual interior-state component is included.
+  - The mover is the same material bearer as in the exterior pre-phase; the region
+    anchors the same shared frame throughout.
+  - No nested spatial state has an independent runtime ending or speech-time assertion.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_physical_entry
+    sound_code: 30
+    added_definition: 'An ongoing physical entry process: the same material participant
+      is undergoing inward displacement as part of a boundary-crossing traversal from
+      the exterior of the same contextual physical region toward an interior culmination.
+      The exterior relation supplies the pre-crossing phase of this same process,
+      not an assertion that the participant is still wholly outside now. The relevant
+      extent, region and shared spatial frame remain fixed by the same contextual
+      criterion. The target condition uses the established physical-region interior
+      meaning: the relevant extent lies wholly inside without meeting the boundary.
+      This is a culmination criterion, not an asserted interior state. Immediate approach
+      integral to the crossing and partial boundary traversal are included; merely
+      traveling toward a remote region, moving parallel to its boundary or waiting
+      outside is insufficient. The process may be interrupted, reversed or abandoned
+      before culmination. Neither boundary contact at this instant nor completed entry,
+      current interior location, prescribed manner, intention, permission, ownership
+      or later continued presence is asserted. Stationary enclosure or a changed region
+      interpretation without mover displacement is excluded.'
+    excludes:
+    - Completed entry or current interior location inferred from an ongoing process
+    - Remote approach, parallel movement or waiting without the entry traversal being
+      underway
+    - Different participants, regions, frames or extent criteria across the process
+    - Stationary enclosure or figurative entry
+    - Runtime state used as a substitute for completion or grammatical aspect
+  compound_id: CMP:b3fb15e7e645dae58d653887
+  content_digest: b3fb15e7e645dae58d6538878ce0636ba24ec21dea21f9264bc4ef61e6b013a5
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: ongoing physical entry
+  english_glosses:
+  - ongoing physical entry
+  invariant_definition: 'An ongoing physical entry process: the same material participant
+    is undergoing inward displacement as part of a boundary-crossing traversal from
+    the exterior of the same contextual physical region toward an interior culmination.
+    The exterior relation supplies the pre-crossing phase of this same process, not
+    an assertion that the participant is still wholly outside now. The relevant extent,
+    region and shared spatial frame remain fixed by the same contextual criterion.
+    The target condition uses the established physical-region interior meaning: the
+    relevant extent lies wholly inside without meeting the boundary. This is a culmination
+    criterion, not an asserted interior state. Immediate approach integral to the
+    crossing and partial boundary traversal are included; merely traveling toward
+    a remote region, moving parallel to its boundary or waiting outside is insufficient.
+    The process may be interrupted, reversed or abandoned before culmination. Neither
+    boundary contact at this instant nor completed entry, current interior location,
+    prescribed manner, intention, permission, ownership or later continued presence
+    is asserted. Stationary enclosure or a changed region interpretation without mover
+    displacement is excluded.'
+  boundaries:
+    includes: 'An ongoing physical entry process: the same material participant is
+      undergoing inward displacement as part of a boundary-crossing traversal from
+      the exterior of the same contextual physical region toward an interior culmination.
+      The exterior relation supplies the pre-crossing phase of this same process,
+      not an assertion that the participant is still wholly outside now. The relevant
+      extent, region and shared spatial frame remain fixed by the same contextual
+      criterion. The target condition uses the established physical-region interior
+      meaning: the relevant extent lies wholly inside without meeting the boundary.
+      This is a culmination criterion, not an asserted interior state. Immediate approach
+      integral to the crossing and partial boundary traversal are included; merely
+      traveling toward a remote region, moving parallel to its boundary or waiting
+      outside is insufficient. The process may be interrupted, reversed or abandoned
+      before culmination. Neither boundary contact at this instant nor completed entry,
+      current interior location, prescribed manner, intention, permission, ownership
+      or later continued presence is asserted. Stationary enclosure or a changed region
+      interpretation without mover displacement is excluded.'
+    excludes: Completed entry or current interior location inferred from an ongoing
+      process; Remote approach, parallel movement or waiting without the entry traversal
+      being underway; Different participants, regions, frames or extent criteria across
+      the process; Stationary enclosure or figurative entry; Runtime state used as
+      a substitute for completion or grammatical aspect
+  collision_audit: reviews/spatial_entry_foundation.md; Ongoing displacement plus
+    an exterior pre-phase does not entail entry-directed traversal; the convention
+    supplies that commitment without asserting the target interior state.
+  confidence: high
+  approval_record: migrations/ongoing_entry_2026_11_04.yaml
+  approval_basis: Author semantic review under the user-directed translator completion
+    goal; not independent linguistic validation.
+  examples:
+    ordinary: Nora is entering the archive.
+    technical: Same-argument constraints preserve mover and region between the exterior
+      pre-phase and ongoing displacement.
+    future_compound: Reuse this exact event under permission, possibility and manner-specific
+      entry.
+    counterexample: Nora waits outside, or travels toward a distant archive; no entry
+      traversal is underway.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: b3fb15e7e645dae58d6538878ce0636ba24ec21dea21f9264bc4ef61e6b013a5
 - architecture_version: '1.0'
   compound_id: CMP:b518a324d776e46e9d0ff041
   content_digest: b518a324d776e46e9d0ff041bb5acc721a256348465cf4ee2965c6a770b04521
@@ -1014,6 +3127,360 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: b518a324d776e46e9d0ff041bb5acc721a256348465cf4ee2965c6a770b04521
 - architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:ade73037114406a2cd91ce13
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - The channel restriction applies to the same registration event and its source-to-receiver
+    transfer. All inherited registration commitments remain true.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ongoing_optical_registration
+    sound_code: 1
+    added_definition: The sensory transduction registers information carried by light
+      from the source, including visible, infrared or ultraviolet light. No conscious
+      visual experience, color judgment, object recognition or attention is entailed.
+    excludes:
+    - radio data transfer, acoustic-only input, visual imagination, and conscious
+      seeing inferred from registration
+    - Inferring the channel from the source noun alone
+  compound_id: CMP:bcfd189eb305cf364ada975a
+  content_digest: bcfd189eb305cf364ada975a962b89ff5917d5afff28049b8cd30e3817285f7e
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: ongoing optical sensory registration
+  english_glosses:
+  - ongoing optical sensory registration
+  invariant_definition: 'An instance of ongoing sensory registration, as defined by
+    CMP:ade73037114406a2cd91ce13 version 1.0.0, with the additional channel commitment:
+    The sensory transduction registers information carried by light from the source,
+    including visible, infrared or ultraviolet light. No conscious visual experience,
+    color judgment, object recognition or attention is entailed.'
+  boundaries:
+    includes: light-mediated sensory registration in a biological or device receiver
+    excludes: radio data transfer, acoustic-only input, visual imagination, and conscious
+      seeing inferred from registration
+  collision_audit: The exact registration foundation is reused through a versioned
+    reference. A distinct conventional frame adds the channel restriction; it is not
+    inferred from root adjacency, source noun, or runtime state.
+  confidence: high
+  approval_record: migrations/registration_channels_2026_10_28.yaml
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/registration_channels.md
+  examples:
+    ordinary: The sensor is registering optical input from the bell.
+    technical: The sensory transduction registers information carried by light from
+      the source, including visible, infrared or ultraviolet light. No conscious visual
+      experience, color judgment, object recognition or attention is entailed.
+    future_compound: Reuse the exact registration/channel meaning where the derived
+      definition entails it; conscious experience and recognition require additional
+      foundations.
+    counterexample: Do not infer this channel from the noun bell; exclude radio data
+      transfer, acoustic-only input, visual imagination, and conscious seeing inferred
+      from registration.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: bcfd189eb305cf364ada975a962b89ff5917d5afff28049b8cd30e3817285f7e
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-custody
+    kind: compound_ref
+    compound_id: CMP:0aca609416668978e1527dac
+    definition_version: 1.0.0
+  - node_id: h
+    kind: root
+    root_id: ORI:110
+  edges:
+  - type: qualifies
+    from: q-custody
+    to: h
+  lexical_constraints:
+  - The exact bound holder-object custody relation is the distinct referent actualized
+    by this transition.
+  - The nested custody state belongs to the culmination of this same acquisition;
+    it does not assert current custody outside the event scope.
+  - The inherited holder/object distinctness constraint remains in force.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: completed_physical_custody_acquisition
+    sound_code: 8
+    added_definition: 'Completion of one bounded transition in which the specified
+      practical physical custody relation comes to obtain: the same holder lacks that
+      control of the same distinct material object immediately before the transition
+      and has it at culmination. The actualized referent is this holder-object custody
+      relation, not the material object. The nested custody relation describes the
+      culmination state, not an independent assertion of custody at speech time. No
+      prior custodian, sourced transfer, loss of another holder''s control, ownership,
+      willingness, displacement, creation of the object or persistence after culmination
+      is asserted.'
+    excludes:
+    - Already having custody without a transition into it
+    - Creation or movement of the material object inferred from acquisition
+    - Ownership, permission or legal custody without practical physical custody
+    - A prior holder, handover, causal mechanism or relinquishment inferred from acquisition
+    - Continued custody after culmination inferred from completion
+  compound_id: CMP:c332d2e89b9f6177486fc93b
+  content_digest: c332d2e89b9f6177486fc93bd0d39e619aef528b2289e83bcce41d7e7c1e3474
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: completed acquisition of physical custody
+  english_glosses:
+  - completed acquisition of physical custody
+  invariant_definition: 'Completion of one bounded transition in which the specified
+    practical physical custody relation comes to obtain: the same holder lacks that
+    control of the same distinct material object immediately before the transition
+    and has it at culmination. The actualized referent is this holder-object custody
+    relation, not the material object. The nested custody relation describes the culmination
+    state, not an independent assertion of custody at speech time. No prior custodian,
+    sourced transfer, loss of another holder''s control, ownership, willingness, displacement,
+    creation of the object or persistence after culmination is asserted.'
+  boundaries:
+    includes: A bounded transition from lacking to having the specified custody relation,
+      with the same holder and object.
+    excludes: Already having custody without a transition into it; Creation or movement
+      of the material object inferred from acquisition; Ownership, permission or legal
+      custody without practical physical custody; A prior holder, handover, causal
+      mechanism or relinquishment inferred from acquisition; Continued custody after
+      culmination inferred from completion
+  collision_audit: The version-pinned custody relation supplies the culmination state;
+    ORI:110 supplies distinct actualization. Convention 8 identifies the actualized
+    referent as that relation and binds its pre/post transition. The object is not
+    newly created, and conjunction alone does not supply the event linkage.
+  confidence: high
+  approval_record: migrations/custody_acquisition_2026_11_04.yaml
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/custody_acquisition_foundation.md
+  examples:
+    ordinary: Ada acquired physical custody of the box.
+    technical: The same custody relation is absent immediately before this transition
+      and obtains at its culmination; later persistence is unspecified.
+    future_compound: Reuse this exact acquisition event before specifying a source
+      holder and transfer mechanism.
+    counterexample: Ada has held the box throughout; no acquisition occurs in the
+      described interval.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: c332d2e89b9f6177486fc93bd0d39e619aef528b2289e83bcce41d7e7c1e3474
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:6c9e3042a361ccae6ecf5980
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - The bound experiencer anchors the focal self of every nested self-condition; no
+    automatic speaker substitution.
+  - Felt meaning and any specialization are explicit lexical conventions, not consequences
+    of root adjacency alone.
+  - Lexical trits, experiential quality, time, grammatical negation and runtime 0/1/2
+    remain independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: unpleasant_felt_condition
+    sound_code: 18
+    added_definition: The same consciously felt self-condition has an unpleasant experiential
+      tone for its experiencer. Unpleasantness is felt valence, not merely objective
+      harm, disapproval, lack of pleasure, or a desire to avoid an outcome. It may
+      coexist with pleasant feeling and does not by itself specify sadness, pain,
+      fear, anger, fatigue or a cause.
+    excludes:
+    - Absence of pleasant feeling without unpleasant feeling
+    - Objective harm or disapproval without unpleasant experience
+    - Sadness, fear or pain inferred from every unpleasant feeling
+  compound_id: CMP:c4fb9863fe36d7667db847c0
+  content_digest: c4fb9863fe36d7667db847c0aa9312baaac5a2a2d8d17a12ee6862fd6502d18f
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: unpleasant felt condition
+  english_glosses:
+  - unpleasant felt condition
+  invariant_definition: The same consciously felt self-condition has an unpleasant
+    experiential tone for its experiencer. Unpleasantness is felt valence, not merely
+    objective harm, disapproval, lack of pleasure, or a desire to avoid an outcome.
+    It may coexist with pleasant feeling and does not by itself specify sadness, pain,
+    fear, anger, fatigue or a cause.
+  boundaries:
+    includes: The same consciously felt self-condition has an unpleasant experiential
+      tone for its experiencer. Unpleasantness is felt valence, not merely objective
+      harm, disapproval, lack of pleasure, or a desire to avoid an outcome. It may
+      coexist with pleasant feeling and does not by itself specify sadness, pain,
+      fear, anger, fatigue or a cause.
+    excludes: Absence of pleasant feeling without unpleasant feeling; Objective harm
+      or disapproval without unpleasant experience; Sadness, fear or pain inferred
+      from every unpleasant feeling
+  collision_audit: Convention 18 explicitly adds the stated felt distinction. Exact
+    dependency versions preserve the shared experiencer; no existing mental, living,
+    material, care or runtime meaning is substituted for the added feeling.
+  confidence: high
+  approval_record: migrations/sadness_2026_11_04.yaml
+  approval_basis: Delegated author semantic review under the user-directed completion
+    goal; reviews/felt_conditions_foundation.md. Not independent linguistic validation.
+  examples:
+    ordinary: The experiencer has a unpleasant felt condition.
+    technical: The same experiencer is retained through the version-pinned nested
+      felt-state definitions.
+    future_compound: Reuse the exact felt foundation before specializing its object,
+      cause or relief.
+    counterexample: Absence of pleasant feeling without unpleasant feeling
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: c4fb9863fe36d7667db847c0aa9312baaac5a2a2d8d17a12ee6862fd6502d18f
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:8e95897afbd6d54b8e164e03
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - The bound experiencer anchors the focal self of every nested self-condition; no
+    automatic speaker substitution.
+  - Felt meaning and any specialization are explicit lexical conventions, not consequences
+    of root adjacency alone.
+  - Lexical trits, experiential quality, time, grammatical negation and runtime 0/1/2
+    remain independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: happy_felt_mood
+    sound_code: 13
+    added_definition: 'The experiencer feels happiness: a pleasant emotional mood
+      of gladness or contentment, not merely a pleasant sensory quality or a favorable
+      evaluation. The mood can coexist with other feelings and need not be permanent,
+      intense, externally expressed, or caused by a particular event. This is the
+      felt-state sense of happy, not fortunate, willing, suitable or happy with a
+      specified object.'
+    excludes:
+    - Fortunate circumstances or willingness without felt happiness
+    - Care, attention, approval or a pleasant sensation alone
+    - Absence of sadness or an exclusively positive emotional state inferred from
+      happiness
+  compound_id: CMP:c58b38d03fab27880ac3e1f0
+  content_digest: c58b38d03fab27880ac3e1f07491df0f1d1c954c23646792fb6c9b180220ddd7
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: happy felt mood
+  english_glosses:
+  - happy felt mood
+  invariant_definition: 'The experiencer feels happiness: a pleasant emotional mood
+    of gladness or contentment, not merely a pleasant sensory quality or a favorable
+    evaluation. The mood can coexist with other feelings and need not be permanent,
+    intense, externally expressed, or caused by a particular event. This is the felt-state
+    sense of happy, not fortunate, willing, suitable or happy with a specified object.'
+  boundaries:
+    includes: 'The experiencer feels happiness: a pleasant emotional mood of gladness
+      or contentment, not merely a pleasant sensory quality or a favorable evaluation.
+      The mood can coexist with other feelings and need not be permanent, intense,
+      externally expressed, or caused by a particular event. This is the felt-state
+      sense of happy, not fortunate, willing, suitable or happy with a specified object.'
+    excludes: Fortunate circumstances or willingness without felt happiness; Care,
+      attention, approval or a pleasant sensation alone; Absence of sadness or an
+      exclusively positive emotional state inferred from happiness
+  collision_audit: Convention 13 explicitly adds the stated felt distinction. Exact
+    dependency versions preserve the shared experiencer; no existing mental, living,
+    material, care or runtime meaning is substituted for the added feeling.
+  confidence: high
+  approval_record: migrations/felt_conditions_2026_11_04.yaml
+  approval_basis: Delegated author semantic review under the user-directed completion
+    goal; reviews/felt_conditions_foundation.md. Not independent linguistic validation.
+  examples:
+    ordinary: Eli is happy.
+    technical: The same experiencer is retained through the version-pinned nested
+      felt-state definitions.
+    future_compound: Reuse the exact felt foundation before specializing its object,
+      cause or relief.
+    counterexample: Fortunate circumstances or willingness without felt happiness
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: c58b38d03fab27880ac3e1f07491df0f1d1c954c23646792fb6c9b180220ddd7
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-body
+    kind: root
+    root_id: MAT:000
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:6c9e3042a361ccae6ecf5980
+    definition_version: 1.0.0
+  edges:
+  - type: qualifies
+    from: q-body
+    to: h
+  lexical_constraints:
+  - The bound experiencer anchors the focal self of every nested self-condition; no
+    automatic speaker substitution.
+  - Felt meaning and any specialization are explicit lexical conventions, not consequences
+    of root adjacency alone.
+  - Lexical trits, experiential quality, time, grammatical negation and runtime 0/1/2
+    remain independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: felt_bodily_need
+    sound_code: 14
+    added_definition: The same consciously felt self-condition presents the experiencer's
+      own material body as calling for replenishment or maintenance. MAT:000 identifies
+      that experiencer's body within the same focal frame. This is a felt bodily demand,
+      not proof of a measured physiological deficit, harm, failed viability, an intended
+      action or actual replenishment. The required resource or maintenance kind is
+      not yet specified.
+    excludes:
+    - A bodily deficit that is not felt
+    - An intellectual wish or a duty without a felt bodily demand
+    - Measured depletion, damage or action inferred from the feeling
+  compound_id: CMP:c64ab0a9989c7b10c46e3b38
+  content_digest: c64ab0a9989c7b10c46e3b3860f29f4f9b3b2c06a37179b04f8b6e945af4a58b
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: felt bodily replenishment need
+  english_glosses:
+  - felt bodily replenishment need
+  invariant_definition: The same consciously felt self-condition presents the experiencer's
+    own material body as calling for replenishment or maintenance. MAT:000 identifies
+    that experiencer's body within the same focal frame. This is a felt bodily demand,
+    not proof of a measured physiological deficit, harm, failed viability, an intended
+    action or actual replenishment. The required resource or maintenance kind is not
+    yet specified.
+  boundaries:
+    includes: The same consciously felt self-condition presents the experiencer's
+      own material body as calling for replenishment or maintenance. MAT:000 identifies
+      that experiencer's body within the same focal frame. This is a felt bodily demand,
+      not proof of a measured physiological deficit, harm, failed viability, an intended
+      action or actual replenishment. The required resource or maintenance kind is
+      not yet specified.
+    excludes: A bodily deficit that is not felt; An intellectual wish or a duty without
+      a felt bodily demand; Measured depletion, damage or action inferred from the
+      feeling
+  collision_audit: Convention 14 explicitly adds the stated felt distinction. Exact
+    dependency versions preserve the shared experiencer; no existing mental, living,
+    material, care or runtime meaning is substituted for the added feeling.
+  confidence: high
+  approval_record: migrations/felt_conditions_2026_11_04.yaml
+  approval_basis: Delegated author semantic review under the user-directed completion
+    goal; reviews/felt_conditions_foundation.md. Not independent linguistic validation.
+  examples:
+    ordinary: The experiencer has a felt bodily replenishment need.
+    technical: The same experiencer is retained through the version-pinned nested
+      felt-state definitions.
+    future_compound: Reuse the exact felt foundation before specializing its object,
+      cause or relief.
+    counterexample: A bodily deficit that is not felt
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: c64ab0a9989c7b10c46e3b3860f29f4f9b3b2c06a37179b04f8b6e945af4a58b
+- architecture_version: '1.0'
   compound_id: CMP:cb0812face56f90b7ba139c5
   content_digest: cb0812face56f90b7ba139c53a0c4b69820830bde14c60bcd0160122199daa8b
   definition_version: 1.0.0
@@ -1052,6 +3519,168 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: cb0812face56f90b7ba139c53a0c4b69820830bde14c60bcd0160122199daa8b
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-body
+    kind: root
+    root_id: MAT:000
+  - node_id: s-bearer
+    kind: slot
+    slot_name: located_participant
+    slot_type: entity
+  - node_id: s-region
+    kind: slot
+    slot_name: spatial_region
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MOV:221
+  edges:
+  - type: qualifies
+    from: q-body
+    to: s-bearer
+  - type: fills_role
+    from: s-bearer
+    to: h
+    role: bearer
+  - type: fills_role
+    from: s-region
+    to: h
+    role: location
+  lexical_constraints:
+  - The material qualifier applies to the located participant, not the region.
+  - Both arguments share one contextual spatial frame and inclusion criterion.
+  - Location does not assert displacement; lexical address and runtime state remain
+    independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: physical_region_exterior
+    sound_code: 27
+    added_definition: The located participant is material, and its contextually relevant
+      spatial extent is related to the bound physical region in one shared spatial
+      frame at the reference time. The region and relevant extent are contextually
+      selected, not measured or inferred from their sound labels. The relevant extent
+      lies wholly in the exterior of the region, without meeting its boundary. No
+      movement, entry, exit, structural membership, ownership, custody, intention
+      or permission is asserted. The three relations are not runtime states and outside
+      is not a synonym for not inside.
+    excludes:
+    - Structural or organizational membership and figurative inclusion
+    - Entry or exit inferred from current location
+    - Outside inferred merely from not inside
+    - A numeric geometry or whole-body criterion silently inferred from a noun label
+  compound_id: CMP:cc6d19387b62013464e0e850
+  content_digest: cc6d19387b62013464e0e8503d05ac8e8a26d06e009bbe56cf4118b27b20fb51
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: physical region exterior relation
+  english_glosses:
+  - physical region exterior relation
+  invariant_definition: The located participant is material, and its contextually
+    relevant spatial extent is related to the bound physical region in one shared
+    spatial frame at the reference time. The region and relevant extent are contextually
+    selected, not measured or inferred from their sound labels. The relevant extent
+    lies wholly in the exterior of the region, without meeting its boundary. No movement,
+    entry, exit, structural membership, ownership, custody, intention or permission
+    is asserted. The three relations are not runtime states and outside is not a synonym
+    for not inside.
+  boundaries:
+    includes: The located participant is material, and its contextually relevant spatial
+      extent is related to the bound physical region in one shared spatial frame at
+      the reference time. The region and relevant extent are contextually selected,
+      not measured or inferred from their sound labels. The relevant extent lies wholly
+      in the exterior of the region, without meeting its boundary. No movement, entry,
+      exit, structural membership, ownership, custody, intention or permission is
+      asserted. The three relations are not runtime states and outside is not a synonym
+      for not inside.
+    excludes: Structural or organizational membership and figurative inclusion; Entry
+      or exit inferred from current location; Outside inferred merely from not inside;
+      A numeric geometry or whole-body criterion silently inferred from a noun label
+  collision_audit: reviews/spatial_entry_foundation.md; positional configuration alone
+    does not specify interior, exterior or boundary.
+  confidence: high
+  approval_record: migrations/spatial_relations_2026_11_04.yaml
+  approval_basis: Author semantic review under the user-directed translator completion
+    goal; not independent linguistic validation.
+  examples:
+    ordinary: Nora is outside the archive.
+    technical: Keep the same participant, region and contextual extent criterion in
+      dependent event compounds.
+    future_compound: Entry must add outside-to-inside displacement in one event.
+    counterexample: Being inside throughout is not entry; touching the boundary is
+      neither wholly inside nor wholly outside.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: cc6d19387b62013464e0e8503d05ac8e8a26d06e009bbe56cf4118b27b20fb51
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:c4fb9863fe36d7667db847c0
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - The bound experiencer anchors the focal self of every nested self-condition; no
+    automatic speaker substitution.
+  - Felt meaning and any specialization are explicit lexical conventions, not consequences
+    of root adjacency alone.
+  - Lexical trits, experiential quality, time, grammatical negation and runtime 0/1/2
+    remain independent.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: sad_felt_mood
+    sound_code: 19
+    added_definition: 'The experiencer feels sadness: an unpleasant emotional mood
+      of sorrow or low spirits. This is a felt-state meaning, not a diagnosis, a judgment
+      that an event is unfortunate, or every unpleasant sensation. It does not require
+      a particular loss, crying, outward expression, permanence, incapacity, lack
+      of care or total absence of happiness.'
+    excludes:
+    - Negated happiness or emotional neutrality without sadness
+    - Physical pain, fear or anger without sadness
+    - A regrettable event or medical diagnosis inferred from the adjective
+  compound_id: CMP:d54499d2989fa97349e8e23d
+  content_digest: d54499d2989fa97349e8e23d129379409f54db0d36c46621a3936d5212f73af1
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: sad felt mood
+  english_glosses:
+  - sad felt mood
+  invariant_definition: 'The experiencer feels sadness: an unpleasant emotional mood
+    of sorrow or low spirits. This is a felt-state meaning, not a diagnosis, a judgment
+    that an event is unfortunate, or every unpleasant sensation. It does not require
+    a particular loss, crying, outward expression, permanence, incapacity, lack of
+    care or total absence of happiness.'
+  boundaries:
+    includes: 'The experiencer feels sadness: an unpleasant emotional mood of sorrow
+      or low spirits. This is a felt-state meaning, not a diagnosis, a judgment that
+      an event is unfortunate, or every unpleasant sensation. It does not require
+      a particular loss, crying, outward expression, permanence, incapacity, lack
+      of care or total absence of happiness.'
+    excludes: Negated happiness or emotional neutrality without sadness; Physical
+      pain, fear or anger without sadness; A regrettable event or medical diagnosis
+      inferred from the adjective
+  collision_audit: Convention 19 explicitly adds the stated felt distinction. Exact
+    dependency versions preserve the shared experiencer; no existing mental, living,
+    material, care or runtime meaning is substituted for the added feeling.
+  confidence: high
+  approval_record: migrations/sadness_2026_11_04.yaml
+  approval_basis: Delegated author semantic review under the user-directed completion
+    goal; reviews/felt_conditions_foundation.md. Not independent linguistic validation.
+  examples:
+    ordinary: Eli is sad.
+    technical: The same experiencer is retained through the version-pinned nested
+      felt-state definitions.
+    future_compound: Reuse the exact felt foundation before specializing its object,
+      cause or relief.
+    counterexample: Negated happiness or emotional neutrality without sadness
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: d54499d2989fa97349e8e23d129379409f54db0d36c46621a3936d5212f73af1
 - architecture_version: '1.0'
   compound_id: CMP:d98407801d64c085f702c9db
   content_digest: d98407801d64c085f702c9dbfc86b643031cbda4ef933b6fe1c06d26f54c6e7b
@@ -1183,6 +3812,106 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: e2af90ba78681e87e68450e55eeecd7e016b3f28b0c837c89b6c17dcf6035437
 - architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-prior
+    kind: compound_ref
+    compound_id: CMP:0aca609416668978e1527dac
+    definition_version: 1.0.0
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:c332d2e89b9f6177486fc93b
+    definition_version: 1.0.0
+  edges:
+  - type: qualifies
+    from: q-prior
+    to: h
+  binding_constraints:
+  - relation: same_argument
+    slot_paths:
+    - - q-prior
+      - s-target
+    - - h
+      - q-custody
+      - s-target
+  - relation: distinct_arguments
+    slot_paths:
+    - - q-prior
+      - s-source
+    - - h
+      - q-custody
+      - s-source
+  lexical_constraints:
+  - Source custody is the pre-state of this reallocation, not current custody asserted
+    outside the event.
+  - The same object passes from source custody to recipient acquisition in one event;
+    source loss at culmination and linked reallocation are explicit conventional commitments.
+  - The inherited holder/object constraints and distinct source/recipient constraint
+    remain in force.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: completed_physical_custody_transfer
+    sound_code: 9
+    added_definition: 'Completion of one reallocation of practical physical custody
+      of the same distinct material object from a source holder to a distinct recipient:
+      the source has custody and the recipient lacks it immediately before the event;
+      at culmination the source lacks that custody and the recipient acquires it.
+      The source custody and recipient acquisition are linked phases of this same
+      reallocation, not unrelated loss and acquisition. Nested source custody describes
+      the pre-state, while nested acquisition describes the culmination transition;
+      neither is an independent speech-time assertion. No ownership change, willing
+      acceptance, permission, displacement, physical carrying, exclusive control by
+      either holder relative to third parties, or persistence afterward is asserted.'
+    excludes:
+    - Acquisition without a prior holder
+    - Unrelated loss and acquisition involving the same object
+    - Shared custody retained by the source at culmination
+    - Ownership, permission, motion or willing acceptance inferred from transfer
+    - Different objects at the two custody endpoints
+  compound_id: CMP:e3075c904daf1c647969fef6
+  content_digest: e3075c904daf1c647969fef6f55b831f3f9185fa172042873d8bbb03543c834e
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-04'
+  display_title: completed transfer of physical custody
+  english_glosses:
+  - completed transfer of physical custody
+  invariant_definition: 'Completion of one reallocation of practical physical custody
+    of the same distinct material object from a source holder to a distinct recipient:
+    the source has custody and the recipient lacks it immediately before the event;
+    at culmination the source lacks that custody and the recipient acquires it. The
+    source custody and recipient acquisition are linked phases of this same reallocation,
+    not unrelated loss and acquisition. Nested source custody describes the pre-state,
+    while nested acquisition describes the culmination transition; neither is an independent
+    speech-time assertion. No ownership change, willing acceptance, permission, displacement,
+    physical carrying, exclusive control by either holder relative to third parties,
+    or persistence afterward is asserted.'
+  boundaries:
+    includes: A single linked reallocation with one object and distinct source and
+      recipient.
+    excludes: Acquisition without a prior holder; Unrelated loss and acquisition involving
+      the same object; Shared custody retained by the source at culmination; Ownership,
+      permission, motion or willing acceptance inferred from transfer; Different objects
+      at the two custody endpoints
+  collision_audit: Version-pinned custody supplies the source pre-state and acquisition
+    supplies the recipient transition. Convention 9 adds linked reallocation and source
+    loss. No existing root is redefined as material transfer.
+  confidence: high
+  approval_record: migrations/custody_transfer_2026_11_04.yaml
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/custody_transfer_foundation.md
+  examples:
+    ordinary: Ben transferred physical custody of the box to Ada.
+    technical: One object, distinct source and recipient, linked source loss and recipient
+      acquisition at culmination.
+    future_compound: Reuse this exact transfer event when specifying a carrying-mediated
+      delivery.
+    counterexample: Ada gains shared control while Ben retains custody; acquisition
+      occurs but this relinquishing transfer does not.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: e3075c904daf1c647969fef6f55b831f3f9185fa172042873d8bbb03543c834e
+- architecture_version: '1.0'
   compound_id: CMP:e799b436d9c5e7d87a5516fa
   content_digest: e799b436d9c5e7d87a5516fa59156bbbd5017b752d3de5056e1ba3425da670ed
   definition_version: 1.0.0
@@ -1222,6 +3951,90 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: e799b436d9c5e7d87a5516fa59156bbbd5017b752d3de5056e1ba3425da670ed
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q-load
+    kind: root
+    root_id: MAT:010
+  - node_id: s-source
+    kind: slot
+    slot_name: supporter
+    slot_type: entity
+  - node_id: s-target
+    kind: slot
+    slot_name: load
+    slot_type: entity
+  - node_id: h
+    kind: root
+    root_id: MAT:211
+  edges:
+  - type: qualifies
+    from: q-load
+    to: s-target
+  - type: fills_role
+    from: s-source
+    to: h
+    role: source
+  - type: fills_role
+    from: s-target
+    to: h
+    role: target
+  lexical_constraints:
+  - The supporting source and material load are distinct participants.
+  - The physical influence and load-bearing commitment concern the same source-to-target
+    relation; the material qualifier applies to the bound target load.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: active_physical_load_support
+    sound_code: 3
+    added_definition: The same material source bears at least part of the distinct
+      material target load through physical influence that resists displacement under
+      an applied force. This load-bearing support may be contact-mediated or field-mediated,
+      need not bear the entire load, and does not require rest, movement, intention
+      or consciousness.
+    excludes:
+    - Physical influence without load-bearing support
+    - Emotional, evidential, financial or computational support
+    - Carrying or transport inferred from support alone
+    - Grasping or holding without the load-bearing commitment
+  compound_id: CMP:eef9fff8ac6618ce60927f18
+  content_digest: eef9fff8ac6618ce60927f183e2c9d4f8cd5a8aa0335ae1dd4542f2f48f4b214
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-10-28'
+  display_title: active physical load support
+  english_glosses:
+  - active physical load support
+  invariant_definition: The same material source bears at least part of the distinct
+    material target load through physical influence that resists displacement under
+    an applied force. This load-bearing support may be contact-mediated or field-mediated,
+    need not bear the entire load, and does not require rest, movement, intention
+    or consciousness.
+  boundaries:
+    includes: A person, structure or device physically bearing all or part of a distinct
+      material load, through contact or a field.
+    excludes: Physical influence without load-bearing support; Emotional, evidential,
+      financial or computational support; Carrying or transport inferred from support
+      alone; Grasping or holding without the load-bearing commitment
+  collision_audit: MAT:211 supplies physical influence and MAT:010 constrains the
+    bound load. Neither entails load bearing. Convention code 3 contributes that additional
+    commitment without changing either root.
+  confidence: high
+  approval_record: migrations/physical_support_2026_10_28.yaml
+  approval_basis: Delegated semantic approval under the user-directed translator-completion
+    goal; reviews/physical_support_foundation.md
+  examples:
+    ordinary: Ada is physically supporting the box.
+    technical: The supporting source bears part of the target load through physical
+      influence resisting displacement under an applied force.
+    future_compound: Reuse the exact versioned support relation for carrying, with
+      explicit movement and shared participant constraints.
+    counterexample: A lamp heats a box without bearing its load; a shelf supports
+      a box without transporting it.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: eef9fff8ac6618ce60927f183e2c9d4f8cd5a8aa0335ae1dd4542f2f48f4b214
 - architecture_version: '1.0'
   compound_id: CMP:f1abd5eccdf06d92d5690a32
   content_digest: f1abd5eccdf06d92d5690a32fdd15868b95af51fb4273e9e53304bbf082107cc

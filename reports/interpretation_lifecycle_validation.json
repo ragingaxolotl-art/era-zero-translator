@@ -1,0 +1,19 @@
+{
+  "scope": "Targeted interpretation-panel lifecycle tests; full 70-check baseline is 282bfb8. This is not a fresh full-suite run.",
+  "passed": true,
+  "results": [
+    {
+      "test": "tests/future_interpretation_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Future interpretation: 9 state/negation/bound-compound cases require explicit selection, then preserve tomorrow and runtime independently with reference/MIDI parity. UI does not compose before selection and rejects stale input; unresolved clause groups produce no partial translation.\n"
+    },
+    {
+      "test": "tests/thermal_standard_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Thermal standards: 17 hot/cold/negation/runtime/question/modal/deictic cases preserve the chosen threshold in meaning and MIDI. Missing sense/standard is unresolved; equivalent scales match; changed standards change sound. UI requires a supplied threshold and rejects stale input.\n"
+    }
+  ],
+  "completion_proven": false
+}

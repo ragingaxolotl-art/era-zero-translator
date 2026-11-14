@@ -176,7 +176,7 @@ module EraZeroGeneralEnglish
       label = @canonical_label.fetch(target_id)
       candidate["canonical_label"] = label
       required = if candidate["route"] == "compound"
-                   EraZeroRenderer.required_compound_roles(@compounds.fetch(target_id))
+                   EraZeroRenderer.required_compound_roles(@compounds.fetch(target_id), compounds: @compounds)
                  else
                    []
                  end

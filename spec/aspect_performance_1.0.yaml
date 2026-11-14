@@ -1,0 +1,40 @@
+profile: EZASPECT-1
+status: versioned_implementation_convention
+authority: User-directed translator completion goal; realizes existing semantic-IR aspect operator
+semantic_shape:
+  kind: scope_operator
+  operator: aspect
+  aspect: bounded, ongoing or habitual
+  scopes: Exactly one predicative node, clause, operator or coordination; not a noun reference
+meanings:
+  bounded: Present the scoped eventuality as a bounded episode in the contextual reference interval; do not infer success, destination arrival or completion of a separate goal.
+  ongoing: Present an internal ongoing view of the scoped eventuality; do not assert its endpoint has been reached.
+  habitual: Describe a recurring practice or characteristic pattern over the contextual reference interval; do not infer a particular occurrence at speech time, a count, frequency threshold or schedule.
+independence:
+  - Viewpoint does not change lexical root phase or trits.
+  - Viewpoint does not select runtime state 0, 1 or 2.
+  - Time relations locate the clause independently of viewpoint.
+  - Aspect is not repetition; a habitual claim does not repeat the performance a guessed number of times.
+  - A bounded view of carrying retains the carrying process within that episode; it does not substitute the completed-arrival root.
+sound:
+  open: '[0, -22, aspect_code, 0]'
+  close: '[0, 22, aspect_code, 0]'
+  aspect_codes: {bounded: 0, ongoing: 1, habitual: 2}
+  note_duration_beats: 0.25
+  boundary_beats: 0.5
+  code_note: Grammar frame ordinals are not lexical trits or runtime codes.
+scope:
+  english_negative_habitual: Negation scopes habitual carrying; absence of a habit is not a habit of non-carrying.
+  controlled_prefixes: Existing controlled prefix nesting remains explicit in its resulting graph; do not assume token order equals English scope.
+  restrictions: Reference property restrictions retain their nominal interpretation within the action's aspect frame.
+implemented_english:
+  - Progressive is/am/are/was/were carrying explicitly selects ongoing viewpoint; ordinary carry commands do not acquire that viewpoint from their internal parser rewrite.
+  - carried or did not carry, with a before-speech time relation
+  - habitually carries/carry or does/do not habitually carry
+  - habitually carried or did not habitually carry, with past time
+  - corresponding did and habitual do/does questions
+limitations:
+  - Bare simple-present carries requires an explicit viewpoint choice in composition and the browser; it is not silently made habitual.
+  - To-destination culmination, perfect, prospective and quantified recurrence remain unfinished.
+  - The strict MIDI observer recovers scope frames; it is not a complete semantic inverse.
+compatibility: Existing IR without aspect scopes remains renderable unchanged. Newly composed English progressive carrying now includes an explicit ongoing frame and receives a new utterance identity. Static dictionary forms, root melodies and compound definitions are unchanged.

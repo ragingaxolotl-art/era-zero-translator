@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {localCompoundExamples,queueLocalExample,takeLocalExample} from '../pages/local_compound_examples.mjs';
+import {emptyLocalCompounds,addLocalCompound} from '../pages/local_compounds.mjs';
+import {localAdjectivePlan,localVerbCandidates} from '../pages/local_compound_english.mjs';
+const a=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url))),base={label:'glowsteady',definition:'Test-only quality.',part_of_speech:'adjective',roles:[{role:'bearer',definition:'Bearer.'}],components:a.atoms.slice(0,2).map((v,i)=>({target_id:v.canonical_id,relation:i?'qualifies':'head'}))};
+let registry=await addLocalCompound(emptyLocalCompounds(),base,a);for(const example of localCompoundExamples(base))assert(await localAdjectivePlan(example,registry,a));
+const verb={...base,label:'glowmend',part_of_speech:'verb',roles:[{role:'actor',definition:'Doer.'},{role:'target',definition:'Affected entity.'}],english_forms:{third_person:'glowmends',past:'glowmended'}};registry=await addLocalCompound(registry,verb,a);for(const example of localCompoundExamples(verb))assert.equal((await localVerbCandidates(example,registry,a)).length,1);
+assert.deepEqual(localCompoundExamples({...base,roles:[]}),[]);
+const values=new Map(),storage={getItem:k=>values.get(k)??null,setItem:(k,v)=>values.set(k,v),removeItem:k=>values.delete(k)};queueLocalExample(storage,'Nora is glowsteady.');assert.equal(takeLocalExample(storage),'Nora is glowsteady.');assert.equal(takeLocalExample(storage),null);assert.throws(()=>queueLocalExample(storage,''));
+console.log('PASS generated saved-word examples parse, missing-role definitions do not promise sentence support, and local handoff is consumed once.');

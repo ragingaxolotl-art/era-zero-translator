@@ -1,0 +1,31 @@
+{
+  "status": "candidate_not_canonical",
+  "profile": "EZFOUND-1",
+  "records": [
+    {
+      "profile": "EZFOUND-1",
+      "definition_version": "1.0.0",
+      "family_affinity": "MIN",
+      "status": "candidate",
+      "review": "reviews/cognitive_foundations.md",
+      "sound_code": 2,
+      "display_title": "knowledge of a polar answer",
+      "definition": "The experiencer knows which of the positive and negative alternatives of the specified polar question is correct, under the contextual epistemic standard. This relation is factive about the answer known but does not assert the positive alternative rather than the negative one. A merely correct guess, false belief, receipt of information, attention or confidence alone is insufficient. It does not entail an explanation, practical skill, current attention, certainty, communication, an acquisition event or permanent retention.",
+      "roles": {
+        "experiencer": [
+          "entity"
+        ],
+        "content": [
+          "question"
+        ]
+      },
+      "excludes": [
+        "Truth of the positive embedded proposition inferred from knowing whether",
+        "Correct guessing, confidence, attention or receipt alone used as knowledge",
+        "Learning, explanation, skill or empathy inferred from answer knowledge"
+      ],
+      "content_digest": "fe36cb2a6d649151067c77540c6e6cb63be7f424f4efb577f40c35e4872a85b0",
+      "foundation_id": "FND:fe36cb2a6d649151067c7754"
+    }
+  ]
+}

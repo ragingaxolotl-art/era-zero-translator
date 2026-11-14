@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "midi_ruby_cases": 9,
+  "clean_wav_cases": 1,
+  "physical_recordings": 0,
+  "meaning": {
+    "profile": "EZUNDERSTANDING-MUSIC-INVERSE-1",
+    "status": "draft",
+    "speech_act": "assertion",
+    "predicate": "content_comprehension",
+    "foundation_id": "FND:ea8f935ca4dabd4470b2bcb5",
+    "runtime_state": 0,
+    "scopes": [],
+    "experiencer": {
+      "kind": "phonemic",
+      "reference_mode": "name",
+      "phonemes": [
+        "EH",
+        "L",
+        "IH"
+      ],
+      "instance_code": null
+    },
+    "content": {
+      "content_kind": "communicated_content",
+      "anchor": {
+        "kind": "phonemic",
+        "reference_mode": "name",
+        "phonemes": [
+          "N",
+          "AO",
+          "R",
+          "AE"
+        ],
+        "instance_code": null
+      },
+      "selection": {
+        "channel": "speech",
+        "time": "before_speech"
+      },
+      "resolution_scope": "local_context",
+      "assertion_commitment": "none"
+    },
+    "criterion": "Grasps the intended meaning of contextually selected content conveyed by the anchor; does not assert that the conveyed claims are true.",
+    "limitations": [
+      "Contextually selected content is not supplied or verified as a real-world fact.",
+      "No original spelling or external referent identity is recovered from phonemes.",
+      "Draft comprehension predicate; broader cognitive grammar and canonical admission remain open."
+    ]
+  },
+  "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-spoken-content-JWEYuN/spoken.wav"
+}

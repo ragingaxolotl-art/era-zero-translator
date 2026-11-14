@@ -42,7 +42,7 @@ add.call("authority artifacts present", required.all? { |path| File.file?(File.j
 
 passed = checks.count { |_name, ok, _detail| ok }
 failed = checks.length - passed
-lines = ["# Full Project Completeness and Provenance Audit", "", "Status: **#{failed.zero? ? 'PASS' : 'FAIL'}**", "", "- Checks passed: **#{passed}**", "- Checks failed: **#{failed}**", "- Audited: **2026-10-10**", "", "This audit reconciles the browser release with the canonical lexicon, compound dictionary, English index, current gate status, original shared conversation, integrated Google document, and current development-conversation decisions.", ""]
+lines = ["# Full Project Completeness and Provenance Audit", "", "Status: **#{failed.zero? ? 'PASS' : 'FAIL'}**", "", "- Checks passed: **#{passed}**", "- Checks failed: **#{failed}**", "- Audited: **#{Time.now.utc.strftime('%Y-%m-%d')}**", "", "This audit reconciles the browser release with the canonical lexicon, compound dictionary, English index, current gate status, original shared conversation, integrated Google document, and current development-conversation decisions.", ""]
 checks.each { |name, ok, detail| lines.concat(["## #{ok ? 'PASS' : 'FAIL'} — #{name}", "", detail, ""]) }
 lines.concat(["## Product boundary", "", "The interface accepts any phrase, exposes every indexed option, and preserves unfamiliar terms as EZNAME phonemic labels. A phonemic label identifies a surface form; it is not a fabricated semantic translation. Free-form multi-clause semantic composition remains constrained by the approved IR and must not be guessed.", ""])
 File.write(File.join(root, "reports/full_project_completeness_audit.md"), lines.join("\n"))

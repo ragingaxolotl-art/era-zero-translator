@@ -1,0 +1,40 @@
+---
+authority: User-directed translator-completion goal
+review: reviews/registration_channels.md
+before_dictionary_fingerprint: '0778d040a63fc4e06d972a0dd13b620cbecc4477fdd3de664145dbea6f28dd66'
+added:
+- channel: optical
+  compound_id: CMP:bcfd189eb305cf364ada975a
+  convention:
+    profile: EZLEX-1
+    sense_key: ongoing_optical_registration
+    sound_code: 1
+    added_definition: The sensory transduction registers information carried by light
+      from the source, including visible, infrared or ultraviolet light. No conscious
+      visual experience, color judgment, object recognition or attention is entailed.
+    excludes:
+    - radio data transfer, acoustic-only input, visual imagination, and conscious
+      seeing inferred from registration
+    - Inferring the channel from the source noun alone
+  dependency:
+    compound_id: CMP:ade73037114406a2cd91ce13
+    definition_version: 1.0.0
+- channel: acoustic
+  compound_id: CMP:42e9bd596b35612ed6cbe3ce
+  convention:
+    profile: EZLEX-1
+    sense_key: ongoing_acoustic_registration
+    sound_code: 2
+    added_definition: The sensory transduction registers information carried by a
+      propagating mechanical pressure or elastic vibration signal from the source
+      through a material medium. No conscious auditory experience, speech comprehension,
+      source recognition or attention is entailed.
+    excludes:
+    - static contact alone, optical-only input, remembered sounds, and conscious hearing
+      inferred from registration
+    - Inferring the channel from the source noun alone
+  dependency:
+    compound_id: CMP:ade73037114406a2cd91ce13
+    definition_version: 1.0.0
+atomic_meanings_changed: false
+existing_compound_meanings_changed: false

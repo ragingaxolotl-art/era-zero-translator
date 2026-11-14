@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import {execFileSync} from 'node:child_process';
+import {composeCognitiveConjunction} from '../pages/cognitive_conjunction.mjs';
+import {midiFromCognitiveConjunction,decodeCognitiveConjunctionMidi} from '../pages/cognitive_conjunction_music.mjs';
+import {notesFromMidi} from '../pages/performance_codec.mjs';
+const authority=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url))),phrase='Is it possible that it is not true that Orin is not curious about this map [2] and Eli came to understand what Nora said [0]?',records=JSON.parse(fs.readFileSync(new URL('../pages/data/foundation_preview_candidates.json',import.meta.url))).records;
+const document=await composeCognitiveConjunction(phrase,{allowDraft:true}),bytes=await midiFromCognitiveConjunction(document,authority,records,{allowDraft:true}),expected=await decodeCognitiveConjunctionMidi(bytes,authority.atoms,records,{allowDraft:true});
+const file=path.join(fs.mkdtempSync(path.join(os.tmpdir(),'era-cognitive-conjunction-')),'conjunction.wav');
+const notes=notesFromMidi(bytes).notes.map(({midi,start_tick,end_tick})=>({midi,start_tick,end_tick}));execFileSync('python3',['tools/acoustic_transport.py','synth',file],{input:JSON.stringify(notes)});
+const result=JSON.parse(execFileSync(process.execPath,['tools/decode_recorded_audio.mjs',file,'--allow-draft'],{encoding:'utf8'}));assert.deepEqual(result.meaning,expected);
+fs.writeFileSync(new URL('../reports/cognitive_conjunction_question_acoustic_probe.json',import.meta.url),JSON.stringify({status:'PASS',scope:'One authored clean synthetic WAV; no physical recording or simulated channel test',phrase,meaning:result.meaning,wav:file},null,2)+'\n');
+console.log('PASS blind WAV recovery of question over possible-not conjunction with inner negation and past speech content.');

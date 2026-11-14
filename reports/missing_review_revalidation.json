@@ -1,0 +1,622 @@
+{
+  "scope": "Missing root-review citations in available local Git history, plus fresh reusable packet checks. Not full source reconciliation.",
+  "observed_date": "2026-11-04",
+  "implementation_revision": "5ef377d376fbea8f93337cb825dc8cebfb47b56f",
+  "shallow_repository": "false",
+  "root_inventory_sha256": "8663e78a20f7badd76e26ac1ea1f359c843dbac96041895801672d8144ee46ea",
+  "missing_paths": 47,
+  "historical_paths_found": 0,
+  "current_packet_passes": 24,
+  "current_packet_failures": 7,
+  "authority_limit": "Current consistency checks cannot prove historical approval or recover missing evidence. No cited historical path is created or changed.",
+  "results": [
+    {
+      "missing_citation": "reviews/CON_000_022_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "CON:000-022",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/CON_000_022.md"
+      ],
+      "exit_code": 0,
+      "output": "CON:000\u2013022: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 61\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/CON_000_022.md",
+      "report_sha256": "b691aa452b0048a88aab4090e97f8ac274d59e952b8f2e6ebe6ea20ae879e4fd"
+    },
+    {
+      "missing_citation": "reviews/CON_100_122_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "CON:100-122",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/CON_100_122.md"
+      ],
+      "exit_code": 0,
+      "output": "CON:100\u2013122: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 62\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/CON_100_122.md",
+      "report_sha256": "e5a5c2ab5ee0e0fa7eca52941001145337edbe71e0d64ecba79968ca03eb74ca"
+    },
+    {
+      "missing_citation": "reviews/CON_200_222_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "CON:200-222",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/CON_200_222.md"
+      ],
+      "exit_code": 0,
+      "output": "CON:200\u2013222: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 73\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/CON_200_222.md",
+      "report_sha256": "19bc7d4d48d3f339fcdc556f4c93515fd7bc0dcefa6ead45a468c551daacf511"
+    },
+    {
+      "missing_citation": "reviews/CRE_000_022_soundness_audit.md",
+      "historical_commit_found": null,
+      "current_revalidation": "Not run: historical soundness audit requires a separate scope-specific review."
+    },
+    {
+      "missing_citation": "reviews/CRE_000_022_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "CRE:000-022",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/CRE_000_022.md"
+      ],
+      "exit_code": 0,
+      "output": "CRE:000\u2013022: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 125\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/CRE_000_022.md",
+      "report_sha256": "bfad282ef7946c2bb1714559f12a730cfdf27720a66ac4bf537322f7d55613c9"
+    },
+    {
+      "missing_citation": "reviews/CRE_000_122_soundness_audit.md",
+      "historical_commit_found": null,
+      "current_revalidation": "Not run: historical soundness audit requires a separate scope-specific review."
+    },
+    {
+      "missing_citation": "reviews/CRE_100_122_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "CRE:100-122",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/CRE_100_122.md"
+      ],
+      "exit_code": 0,
+      "output": "CRE:100\u2013122: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 115\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/CRE_100_122.md",
+      "report_sha256": "8e88604095a4c03e213aceed1d10ca67f7e665ac86a04a77b76c13cea0819603"
+    },
+    {
+      "missing_citation": "reviews/CRE_200_222_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "CRE:200-222",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/CRE_200_222.md"
+      ],
+      "exit_code": 0,
+      "output": "CRE:200\u2013222: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 115\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/CRE_200_222.md",
+      "report_sha256": "dafb64b8d8ccf0eee352434bb4330474211e1a5caf0ce853d58535bf905948ad"
+    },
+    {
+      "missing_citation": "reviews/DAT_000_022_soundness_audit.md",
+      "historical_commit_found": null,
+      "current_revalidation": "Not run: historical soundness audit requires a separate scope-specific review."
+    },
+    {
+      "missing_citation": "reviews/DAT_000_022_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "DAT:000-022",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/DAT_000_022.md"
+      ],
+      "exit_code": 0,
+      "output": "DAT:000\u2013022: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 113\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/DAT_000_022.md",
+      "report_sha256": "a357d2a73ef13e40d31b5452c0f57b5e02fab3ad1a21d5b825b1eaca858b4aa9"
+    },
+    {
+      "missing_citation": "reviews/DAT_000_122_soundness_audit.md",
+      "historical_commit_found": null,
+      "current_revalidation": "Not run: historical soundness audit requires a separate scope-specific review."
+    },
+    {
+      "missing_citation": "reviews/DAT_100_122_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "DAT:100-122",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/DAT_100_122.md"
+      ],
+      "exit_code": 0,
+      "output": "DAT:100\u2013122: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 133\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/DAT_100_122.md",
+      "report_sha256": "68f6735486acd8e686d91bf9bc98312e712797bf60487cd5eb4a59c6d69edd80"
+    },
+    {
+      "missing_citation": "reviews/DAT_200_222_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "DAT:200-222",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/DAT_200_222.md"
+      ],
+      "exit_code": 0,
+      "output": "DAT:200\u2013222: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 125\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/DAT_200_222.md",
+      "report_sha256": "0a57b55d9b87b7f403a91d9e5df953f239a0cc5b9d361aae6ae4736507c3c36c"
+    },
+    {
+      "missing_citation": "reviews/LOG_000_022_soundness_audit.md",
+      "historical_commit_found": null,
+      "current_revalidation": "Not run: historical soundness audit requires a separate scope-specific review."
+    },
+    {
+      "missing_citation": "reviews/LOG_000_022_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "LOG:000-022",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/LOG_000_022.md"
+      ],
+      "exit_code": 0,
+      "output": "LOG:000\u2013022: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 126\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/LOG_000_022.md",
+      "report_sha256": "97c737b864d4d2318eb7e981719a1cdf30ac785716805f3396aa457d441d31a0"
+    },
+    {
+      "missing_citation": "reviews/LOG_000_122_soundness_audit.md",
+      "historical_commit_found": null,
+      "current_revalidation": "Not run: historical soundness audit requires a separate scope-specific review."
+    },
+    {
+      "missing_citation": "reviews/LOG_100_122_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "LOG:100-122",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/LOG_100_122.md"
+      ],
+      "exit_code": 0,
+      "output": "LOG:100\u2013122: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 123\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/LOG_100_122.md",
+      "report_sha256": "46f945fc72701837e3733124758948e01ba3a2c1abc5da03f1504ec9bd801b16"
+    },
+    {
+      "missing_citation": "reviews/LOG_200_222_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "LOG:200-222",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/LOG_200_222.md"
+      ],
+      "exit_code": 0,
+      "output": "LOG:200\u2013222: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 123\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/LOG_200_222.md",
+      "report_sha256": "a6e8739c2528b21c58b0e140ac0b39b55e677f3bb984409b191bfca6dd10b796"
+    },
+    {
+      "missing_citation": "reviews/MAT_000_022_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "MAT:000-022",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/MAT_000_022.md"
+      ],
+      "exit_code": 1,
+      "output": "MAT:000\u2013022: FAIL\nMode: canonical; checks passed: 17; checks failed: 1\nCandidates: 36; score assertions: 360; stress tests: 75\nexample coverage: every root has at least six ordinary, technical, compound, or counterexamples\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/MAT_000_022.md",
+      "report_sha256": "785302e9cf60bc0732aa5a742c78104212dc899d460fdaf96bd5b11a669497e8"
+    },
+    {
+      "missing_citation": "reviews/MAT_100_122_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "MAT:100-122",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/MAT_100_122.md"
+      ],
+      "exit_code": 1,
+      "output": "MAT:100\u2013122: FAIL\nMode: canonical; checks passed: 17; checks failed: 1\nCandidates: 36; score assertions: 360; stress tests: 82\ncandidate breadth: each root has at least four genuinely distinct semantic candidates\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/MAT_100_122.md",
+      "report_sha256": "1b675c4ce23ea19e66869b55bc51c8730eb425020602c1f1f06d1aaf59825915"
+    },
+    {
+      "missing_citation": "reviews/MAT_200_222_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "MAT:200-222",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/MAT_200_222.md"
+      ],
+      "exit_code": 1,
+      "output": "MAT:200\u2013222: FAIL\nMode: canonical; checks passed: 17; checks failed: 1\nCandidates: 36; score assertions: 360; stress tests: 85\ncandidate breadth: each root has at least four genuinely distinct semantic candidates\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/MAT_200_222.md",
+      "report_sha256": "1e989e4b16da56e772107642ea1e19054ebf3c0b06d8292ad4c64aca89e982d8"
+    },
+    {
+      "missing_citation": "reviews/MIN_000_022_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "MIN:000-022",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/MIN_000_022.md"
+      ],
+      "exit_code": 1,
+      "output": "MIN:000\u2013022: FAIL\nMode: canonical; checks passed: 17; checks failed: 1\nCandidates: 45; score assertions: 450; stress tests: 91\ncandidate breadth: each root has at least four genuinely distinct semantic candidates\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/MIN_000_022.md",
+      "report_sha256": "bf454547f48ee76aee17c1a9f9ad0a0584d49d26e47a71dcc913b56e8e81a9c8"
+    },
+    {
+      "missing_citation": "reviews/MIN_100_122_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "MIN:100-122",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/MIN_100_122.md"
+      ],
+      "exit_code": 1,
+      "output": "MIN:100\u2013122: FAIL\nMode: canonical; checks passed: 17; checks failed: 1\nCandidates: 45; score assertions: 360; stress tests: 51\ncandidate breadth: each root has at least four genuinely distinct semantic candidates\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/MIN_100_122.md",
+      "report_sha256": "5f8c61b0556628b1f573586ed3e87d1b254b8c597f8b60321587107e2d11c214"
+    },
+    {
+      "missing_citation": "reviews/MIN_200_222_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "MIN:200-222",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/MIN_200_222.md"
+      ],
+      "exit_code": 1,
+      "output": "MIN:200\u2013222: FAIL\nMode: canonical; checks passed: 17; checks failed: 1\nCandidates: 45; score assertions: 360; stress tests: 61\ncandidate breadth: each root has at least four genuinely distinct semantic candidates\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/MIN_200_222.md",
+      "report_sha256": "0cbd64ae38faa4013b0f1697387010f031ce8c5bf72089a07aeebcf1a0616bcb"
+    },
+    {
+      "missing_citation": "reviews/MOV_100_122_approval_record.md",
+      "historical_commit_found": null,
+      "current_revalidation": "Not run: historical soundness audit requires a separate scope-specific review."
+    },
+    {
+      "missing_citation": "reviews/MOV_100_122_final_challenge.md",
+      "historical_commit_found": null,
+      "current_revalidation": "Not run: historical soundness audit requires a separate scope-specific review."
+    },
+    {
+      "missing_citation": "reviews/MOV_200_222_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "MOV:200-222",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/MOV_200_222.md"
+      ],
+      "exit_code": 1,
+      "output": "MOV:200\u2013222: FAIL\nMode: canonical; checks passed: 16; checks failed: 2\nCandidates: 36; score assertions: 324; stress tests: 45\ncross-family collision audit: every root distinguishes all eleven competing families\nexample coverage: every root has at least six ordinary, technical, compound, or counterexamples\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/MOV_200_222.md",
+      "report_sha256": "88bc060595ab94e6d20c02dbbe3d985707f5fa0624dfb20cc49fb6548c3ef191"
+    },
+    {
+      "missing_citation": "reviews/ORI_000_022_soundness_audit.md",
+      "historical_commit_found": null,
+      "current_revalidation": "Not run: historical soundness audit requires a separate scope-specific review."
+    },
+    {
+      "missing_citation": "reviews/ORI_000_022_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "ORI:000-022",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/ORI_000_022.md"
+      ],
+      "exit_code": 0,
+      "output": "ORI:000\u2013022: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 115\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/ORI_000_022.md",
+      "report_sha256": "39ef551b325e354c417ae00ce5c77e5e230393594afbcc8171608bb7c4b3abaa"
+    },
+    {
+      "missing_citation": "reviews/ORI_000_122_soundness_audit.md",
+      "historical_commit_found": null,
+      "current_revalidation": "Not run: historical soundness audit requires a separate scope-specific review."
+    },
+    {
+      "missing_citation": "reviews/ORI_100_122_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "ORI:100-122",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/ORI_100_122.md"
+      ],
+      "exit_code": 0,
+      "output": "ORI:100\u2013122: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 114\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/ORI_100_122.md",
+      "report_sha256": "6023b83469483d92dff9bf7e1cb8d7ac49a9a91d26b6f1479c6014a60daa89d9"
+    },
+    {
+      "missing_citation": "reviews/ORI_200_222_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "ORI:200-222",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/ORI_200_222.md"
+      ],
+      "exit_code": 0,
+      "output": "ORI:200\u2013222: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 115\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/ORI_200_222.md",
+      "report_sha256": "79d57c32deffde24ec8bd9ea1c456790795a77fd98b0c4067470240b88a3ffd8"
+    },
+    {
+      "missing_citation": "reviews/REP_000_022_soundness_audit.md",
+      "historical_commit_found": null,
+      "current_revalidation": "Not run: historical soundness audit requires a separate scope-specific review."
+    },
+    {
+      "missing_citation": "reviews/REP_000_022_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "REP:000-022",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/REP_000_022.md"
+      ],
+      "exit_code": 0,
+      "output": "REP:000\u2013022: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 100\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/REP_000_022.md",
+      "report_sha256": "1ad4c86c7cec2588a83d083d4a60acf70ee2c2842d07a25f783afd2ce65b74a2"
+    },
+    {
+      "missing_citation": "reviews/REP_000_122_soundness_audit.md",
+      "historical_commit_found": null,
+      "current_revalidation": "Not run: historical soundness audit requires a separate scope-specific review."
+    },
+    {
+      "missing_citation": "reviews/REP_100_122_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "REP:100-122",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/REP_100_122.md"
+      ],
+      "exit_code": 0,
+      "output": "REP:100\u2013122: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 105\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/REP_100_122.md",
+      "report_sha256": "52a542ba65738866f0ba2498142a6e2349dcb534a439c4c60e10831303106cab"
+    },
+    {
+      "missing_citation": "reviews/REP_200_222_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "REP:200-222",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/REP_200_222.md"
+      ],
+      "exit_code": 0,
+      "output": "REP:200\u2013222: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 105\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/REP_200_222.md",
+      "report_sha256": "0104f934a904deb776d3841e95b8b8ef24a7c5caac54e5d246e3a6faae4de06a"
+    },
+    {
+      "missing_citation": "reviews/STR_000_022_soundness_audit.md",
+      "historical_commit_found": null,
+      "current_revalidation": "Not run: historical soundness audit requires a separate scope-specific review."
+    },
+    {
+      "missing_citation": "reviews/STR_000_022_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "STR:000-022",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/STR_000_022.md"
+      ],
+      "exit_code": 0,
+      "output": "STR:000\u2013022: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 91\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/STR_000_022.md",
+      "report_sha256": "169723925b40586a0da15b28176c8080d317078a7d1258873fa521b7b553e962"
+    },
+    {
+      "missing_citation": "reviews/STR_000_122_soundness_audit.md",
+      "historical_commit_found": null,
+      "current_revalidation": "Not run: historical soundness audit requires a separate scope-specific review."
+    },
+    {
+      "missing_citation": "reviews/STR_100_122_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "STR:100-122",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/STR_100_122.md"
+      ],
+      "exit_code": 0,
+      "output": "STR:100\u2013122: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 73\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/STR_100_122.md",
+      "report_sha256": "84b490213335b58c0e32025f51d1c2e99815fa46fe365aba40294e373a2e7775"
+    },
+    {
+      "missing_citation": "reviews/STR_200_222_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "STR:200-222",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/STR_200_222.md"
+      ],
+      "exit_code": 0,
+      "output": "STR:200\u2013222: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 82\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/STR_200_222.md",
+      "report_sha256": "1487389d374cfde1166dc623e31cb11b10a988b5f4ec535b4f6cd5eb490d309d"
+    },
+    {
+      "missing_citation": "reviews/WRN_000_022_soundness_audit.md",
+      "historical_commit_found": null,
+      "current_revalidation": "Not run: historical soundness audit requires a separate scope-specific review."
+    },
+    {
+      "missing_citation": "reviews/WRN_000_022_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "WRN:000-022",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/WRN_000_022.md"
+      ],
+      "exit_code": 0,
+      "output": "WRN:000\u2013022: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 92\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/WRN_000_022.md",
+      "report_sha256": "e6209509a52ff5d48a8918dd4f81e2a884a2c9f7026bb8827992a968e66e634e"
+    },
+    {
+      "missing_citation": "reviews/WRN_000_122_soundness_audit.md",
+      "historical_commit_found": null,
+      "current_revalidation": "Not run: historical soundness audit requires a separate scope-specific review."
+    },
+    {
+      "missing_citation": "reviews/WRN_100_122_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "WRN:100-122",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/WRN_100_122.md"
+      ],
+      "exit_code": 0,
+      "output": "WRN:100\u2013122: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 93\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/WRN_100_122.md",
+      "report_sha256": "edab2628f8b83bb99825a77fa36a3ab88f8a657d76fbb36824c065cd26231363"
+    },
+    {
+      "missing_citation": "reviews/WRN_200_222_validation.md",
+      "historical_commit_found": null,
+      "command": [
+        "ruby",
+        "tools/validate_semantic_packet.rb",
+        "WRN:200-222",
+        "--mode",
+        "canonical",
+        "--report",
+        "reports/packet_revalidation_2026_11_04/WRN_200_222.md"
+      ],
+      "exit_code": 0,
+      "output": "WRN:200\u2013222: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 104\n",
+      "current_report": "reports/packet_revalidation_2026_11_04/WRN_200_222.md",
+      "report_sha256": "5c1a1bf8052f68bc60a71b3b97245b1491d7527dba1db5cf29fe198366b40234"
+    }
+  ],
+  "completion_proven": false
+}

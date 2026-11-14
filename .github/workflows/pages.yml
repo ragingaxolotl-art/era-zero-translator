@@ -34,6 +34,8 @@ jobs:
         run: ruby tools/build_pages_release.rb
       - name: Audit browser release
         run: node tools/validate_pages_release.mjs
+      - name: Validate saved compound builder and sentence integration
+        run: node tools/validate_local_compound_release.mjs
       - name: Test compound vocabulary growth
         run: ruby tools/test_compound_extension.rb
       - name: Audit approved love compound

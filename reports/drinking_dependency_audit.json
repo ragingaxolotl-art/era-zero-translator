@@ -1,0 +1,85 @@
+{
+  "scope": "Dependency audit for ordinary literal drinking, not approval of a new root or compound.",
+  "root_count": 324,
+  "unchanged_roots": true,
+  "reusable": [
+    {
+      "id": "CMP:60cd46250d183e3105b7250a",
+      "version": "1.0.0",
+      "title": "felt thirst",
+      "definition": "The same felt bodily replenishment need is thirst: a bodily feeling calling for water intake, ordinarily through drinking. It does not prove a measured water deficit or assert drinking, a chosen beverage, permission, or a deliberate plan. Figurative thirst for power or knowledge is excluded."
+    },
+    {
+      "id": "CMP:c64ab0a9989c7b10c46e3b38",
+      "version": "1.0.0",
+      "title": "felt bodily replenishment need",
+      "definition": "The same consciously felt self-condition presents the experiencer's own material body as calling for replenishment or maintenance. MAT:000 identifies that experiencer's body within the same focal frame. This is a felt bodily demand, not proof of a measured physiological deficit, harm, failed viability, an intended action or actual replenishment. The required resource or maintenance kind is not yet specified."
+    },
+    {
+      "id": "CMP:a3244e0195aa8c228dd0af8c",
+      "version": "1.0.0",
+      "title": "completed physical entry",
+      "definition": "Completion of one physical entry event in which the same material participant displaces across the boundary of the same contextual physical region, from its exterior before the crossing to its interior at culmination. Both spatial phases use the same region, relevant participant extent and spatial frame. The exterior and interior relations are internal event phases, not simultaneous assertions or independent claims about speech time. The mover displacement constitutes this crossing; an unrelated movement plus a location change, a changed region interpretation or stationary enclosure by an expanding region is insufficient. Boundary contact may occur during the transition. No prescribed route, locomotion manner, conscious intention, permission, ownership, custody or continued presence after culmination is asserted."
+    },
+    {
+      "id": "CMP:b3fb15e7e645dae58d653887",
+      "version": "1.0.0",
+      "title": "ongoing physical entry",
+      "definition": "An ongoing physical entry process: the same material participant is undergoing inward displacement as part of a boundary-crossing traversal from the exterior of the same contextual physical region toward an interior culmination. The exterior relation supplies the pre-crossing phase of this same process, not an assertion that the participant is still wholly outside now. The relevant extent, region and shared spatial frame remain fixed by the same contextual criterion. The target condition uses the established physical-region interior meaning: the relevant extent lies wholly inside without meeting the boundary. This is a culmination criterion, not an asserted interior state. Immediate approach integral to the crossing and partial boundary traversal are included; merely traveling toward a remote region, moving parallel to its boundary or waiting outside is insufficient. The process may be interrupted, reversed or abandoned before culmination. Neither boundary contact at this instant nor completed entry, current interior location, prescribed manner, intention, permission, ownership or later continued presence is asserted. Stationary enclosure or a changed region interpretation without mover displacement is excluded."
+    },
+    {
+      "id": "MAT:000",
+      "title": "persistent material substrate",
+      "definition": "The enduring matter that constitutes a focal entity's physical body."
+    },
+    {
+      "id": "MAT:010",
+      "title": "distinct material object",
+      "definition": "A materially bounded body treated as a distinct external object."
+    },
+    {
+      "id": "MOV:120",
+      "title": "completed shared-frame movement",
+      "definition": "Completion of a mover's change of position relative to a shared or environmental reference frame."
+    },
+    {
+      "id": "MOV:121",
+      "title": "active shared-frame movement",
+      "definition": "Ongoing change of a mover's position relative to a shared or environmental reference frame."
+    }
+  ],
+  "rejected_substitutions": [
+    {
+      "candidate": "CMP:60cd46250d183e3105b7250a",
+      "reason": "A felt demand for water does not assert drinking; drinking need not encode felt thirst."
+    },
+    {
+      "candidate": "CMP:c64ab0a9989c7b10c46e3b38",
+      "reason": "Replenishment demand is a feeling, not consumption."
+    },
+    {
+      "candidate": "physical_entry",
+      "reason": "Material entering a region does not alone distinguish drinking from pouring, accidental entry or other routes."
+    },
+    {
+      "candidate": "MAT:010",
+      "reason": "An external material object reference does not alone supply liquid kind, consumption route or drinker identity."
+    }
+  ],
+  "required_contract": [
+    "Bind drinker and consumed material independently, without inferring a beverage from a name.",
+    "Specify literal drinking as an action category; do not infer consciousness, thirst, enjoyment, ownership or benefit.",
+    "Separate ongoing activity, completed quantity/event and habitual readings; do not infer consumption of an entire named amount.",
+    "Keep consumed-material reference type explicit: kind, contextual portion or bounded quantity.",
+    "Preserve desired versus actual drinking and independent scope/runtime."
+  ],
+  "implementation_order": [
+    "Define and review the literal drinking action contract and participant bindings against counterexamples.",
+    "Audit material/portion typing and consumption-route convention; reuse material and motion structures only where their commitments fit.",
+    "Build a gated reusable meaning, renderer and inverse together; do not allocate root families to fill inventory slots.",
+    "Integrate ordinary wording and object-desire clarification without silently selecting drinking.",
+    "Require full-message independent rendering and blind audio contrasts before updating acceptance evidence."
+  ],
+  "completion_proven": false,
+  "new_vocabulary_approved": false
+}

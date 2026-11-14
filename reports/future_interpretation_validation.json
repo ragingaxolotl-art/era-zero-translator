@@ -1,0 +1,37 @@
+{
+  "scope": "Targeted future-interpretation API/UI, temporal, sequence, conditional and ordinary-phrase checks. Full regression baseline remains 2cc85e7; this is not a fresh full-suite run.",
+  "passed": true,
+  "results": [
+    {
+      "test": "tests/future_interpretation_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Future interpretation: 9 state/negation/bound-compound cases require explicit selection, then preserve tomorrow and runtime independently with reference/MIDI parity. UI does not compose before selection and rejects stale input; unresolved clause groups produce no partial translation.\n"
+    },
+    {
+      "test": "tests/temporal_performance_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Temporal music: before/at/after speech time remain distinct, lexical state is unchanged, Ruby/browser output agrees, and unsounded anchor details fail.\nCalendar-day music: previous/current/next calendar days are distinct from speech-time relations, with Ruby/browser parity and strict anchor checks.\n"
+    },
+    {
+      "test": "tests/sentence_sequence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Explicit sequences: whole-IR Ruby parity, exact MIDI parity, action order, clause boundary and unsupported-clause rejection pass.\n"
+    },
+    {
+      "test": "tests/conditional_command_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Conditional commands: eight full renderer/MIDI parity cases, local definite-reference identity, explicit-reference paraphrase equivalence, command/assertion contrast, negation scope and independent runtime endings.\n"
+    },
+    {
+      "test": "tools/audit_ordinary_phrase_coverage.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "{\"case_count\":40,\"counts\":{\"verified_for_declared_checks\":19,\"not_composed\":20,\"requires_interpretation\":1},\"completion_proven\":false}\n"
+    }
+  ],
+  "completion_proven": false
+}

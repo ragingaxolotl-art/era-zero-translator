@@ -1,0 +1,78 @@
+{
+  "scope": "Targeted running imperative and adjacent grammar regressions; not all English commands, live browser or listening validation.",
+  "passed": true,
+  "checks": [
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/running_command_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 24 running command/state/negation/conditional cases with Ruby formal/MIDI parity, independent addressee/speech-act recovery and three contraction equivalents.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/running_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 21 running participant/state/scope contrasts with Ruby formal/MIDI parity and independent inverse; prior 55 compounds unchanged; unsupported paths remain unresolved.\nPASS running remains distinct from swimming and generic displacement.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/destination_running_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 24 directed-running actor/destination/runtime/scope cases, Ruby parity, independent MIDI recovery, wrong-root rejection and prior 56 meanings unchanged.\nPASS missing destination and unequal actor bindings reject in browser/Ruby; inconsistent actor sounds reject independently.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/completed_running_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 30 completed-running actor/destination/runtime/scope cases, Ruby parity, independent MIDI recovery, wrong-root rejection and prior 57 meanings unchanged.\nPASS missing destination and unequal actor bindings reject in browser/Ruby; inconsistent actor sounds reject independently.\nPASS mismatched destination identity rejects in IR/music and ongoing approach stays distinct from completed running.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/carrying_command_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Carrying/support commands: 21 runtime/negation/destination/conditional cases match reference formal and MIDI; addressee and command contour decode independently, and local it retains its antecedent.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/destination_command_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Destination commands: 18 runtime/negation/property/participant variants match Ruby formal and MIDI; MIDI-only inverse recovers imperative contour and addressee without tense/aspect or actual-arrival inference. Form requires destination and property choices only.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/conditional_command_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Conditional commands: eight full renderer/MIDI parity cases, local definite-reference identity, explicit-reference paraphrase equivalence, command/assertion contrast, negation scope and independent runtime endings.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/speech_act_runtime_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Questions and commands retain all three runtime states, independent contours, and exactly one compound-head ending.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/negative_contractions_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 33 contraction/state paraphrases and mixed conjunction preserve full formal/MIDI meaning; unsupported meanings and quoted labels are not rewritten.\n"
+    }
+  ]
+}

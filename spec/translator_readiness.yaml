@@ -53,8 +53,8 @@ required_gates:
     entries: 28
   - gate: gate4c_english_concept_and_sense_index
     status: complete
-    senses: 436
-    lemmas: 419
+    senses: 466
+    lemmas: 449
   - gate: gate4d_coverage_and_ambiguity_report
     status: complete
     direct_lexical_percent: 90.14
@@ -129,18 +129,18 @@ translator_start_conditions:
 - semantic IR and grammar are versioned
 - deterministic renderer and decoder pass round-trip tests
 - unsupported and ambiguous inputs have specified behavior
-next_semantic_chunk_after_pending_decisions: 
+next_semantic_chunk_after_pending_decisions:
 authority:
   semantic_status_source: lexicon/semantic_authority.yaml
   roadmap: reports/translator_readiness_roadmap.md
-next_authorized_gate: 
+next_authorized_gate:
 gate4a:
   status: complete_and_canonical
   architecture: spec/compound_architecture_1.0.yaml
   schema: spec/compound_graph_schema.yaml
   validation: reports/gate4a_validation.md
   conformance_cases: tests/gate4a_compound_cases.yaml
-  dictionary_entries: 29
+  dictionary_entries: 63
 gate4b:
   status: complete_and_canonical
   dictionary: lexicon/compound_dictionary.yaml
@@ -151,8 +151,8 @@ gate4c:
   status: complete_and_canonical
   index: lexicon/english_sense_index.yaml
   schema: spec/english_sense_index_schema.yaml
-  senses: 436
-  lemmas: 419
+  senses: 466
+  lemmas: 449
   validation: reports/gate4c_validation.md
   general_english_translation: true
 gate4d:

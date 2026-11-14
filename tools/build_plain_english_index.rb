@@ -65,7 +65,7 @@ PHASES = {
   "1" => {
     "0" => ["finished", %w[finished completed done already]],
     "1" => ["ongoing", %w[ongoing happening active now]],
-    "2" => ["possible or planned", %w[possible planned pending not-started]]
+    "2" => ["possible", %w[possible pending not-started]]
   },
   "2" => {
     "0" => ["lasting", %w[lasting established persistent available-in-principle]],
@@ -90,12 +90,10 @@ entries = atoms.map do |atom|
   axis = profile.fetch(:axes).fetch(address[0, 2])
   phase_label, phase_terms = PHASES.fetch(address[0]).fetch(address[2])
   base, base_terms = axis
-  plain_label = "#{phase_label} #{base}"
-  plain_explanation = case address[0]
-                      when "0" then "Talk about #{base} as #{phase_label}; use the canonical definition for the exact boundary."
-                      when "1" then "Talk about #{base} as #{phase_label}; this is a process, not the resulting thing or a general ability."
-                      else "Talk about #{base} as #{phase_label}; this is a capacity or relation, not the action itself."
-                      end
+  # Address-wide prose cannot safely replace the reviewed invariant: possible
+  # is not necessarily planned, and model revision does not entail learning.
+  plain_label = atom.fetch("title")
+  plain_explanation = atom.fetch("core_definition")
   indexed = Array(senses_by_target[atom.fetch("canonical_id")]).map { |sense| [sense["lemma"], *Array(sense["surface_forms"])] }
   tags = normalize_tags([profile.fetch(:family), base_terms, phase_terms, indexed, atom.fetch("title").split])
   match_phrases = normalize_tags([plain_label, "#{base_terms.first} #{phase_terms.first}", "#{phase_terms.first} #{base_terms.first}", base_terms])

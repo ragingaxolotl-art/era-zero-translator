@@ -4,7 +4,7 @@ Status: **PASS**
 
 - Checks passed: **11**
 - Checks failed: **0**
-- Audited: **2026-10-10**
+- Audited: **2026-11-14**
 
 This audit reconciles the browser release with the canonical lexicon, compound dictionary, English index, current gate status, original shared conversation, integrated Google document, and current development-conversation decisions.
 
@@ -18,15 +18,15 @@ source corpus preserved separately with immutable source IDs
 
 ## PASS — approved compounds
 
-29 approved definitions
+63 approved definitions
 
 ## PASS — complete sense options
 
-324 atomic labels / 29 compound labels
+324 atomic labels / 63 compound labels
 
 ## PASS — complete lexical targets
 
-353 unique direct targets
+387 unique direct targets
 
 ## PASS — 11 explicit gaps
 

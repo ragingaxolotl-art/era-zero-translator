@@ -1,0 +1,43 @@
+{
+  "status": "semantic_candidates_not_encoded_or_approved",
+  "review": "reviews/locomotion_foundations.md",
+  "root_inventory": 324,
+  "existing_compounds": 52,
+  "proposed_dependency_order": [
+    {
+      "key": "ongoing_bodily_locomotor_activity",
+      "roots": ["MAT:000", "MAT:101"],
+      "actor_role": "actor",
+      "invariant": "The same focal material body undergoes coordinated bodily movements constituting a locomotor activity pattern. Actual displacement of the whole body relative to the surroundings, intention and a destination are not required.",
+      "conventional_addition": "Locomotor activity pattern and identity of its actor with the focal material bearer.",
+      "excludes": ["passive transport alone", "arbitrary material change alone", "machine operation inferred from energized material"]
+    },
+    {
+      "key": "ongoing_running_activity",
+      "depends_on": "ongoing_bodily_locomotor_activity",
+      "invariant": "The same actor performs a running gait, including its grounded forms and in-place execution. No particular speed, universal airborne interval, destination or completed displacement is asserted.",
+      "definition_work_remaining": "Specify the gait-class convention and contrasts without a circular English-only alias or human-only mechanical criterion."
+    },
+    {
+      "key": "ongoing_bodily_swimming",
+      "depends_on": "ongoing_bodily_locomotor_activity",
+      "invariant": "The same actor performs coordinated bodily movements that generate swimming propulsion against surrounding water. Passive carriage in water does not suffice. Ground-relative arrival or net journey completion is not asserted.",
+      "definition_work_remaining": "Specify medium binding, assisted swimming boundaries, and station-holding relative frames."
+    }
+  ],
+  "acceptance_cases": [
+    {"input":"Nora is running.","required":["actor Nora","running manner","ongoing aspect"],"must_not_infer":["speed threshold","arrival","mandatory flight phase"]},
+    {"input":"Nora is running in place.","required":["running manner","in-place activity"],"must_not_infer":["whole-body environmental displacement"]},
+    {"input":"Nora is moving quickly.","required":["movement","contextual speed"],"must_not_infer":["running gait"]},
+    {"input":"Eli is swimming.","required":["actor Eli","bodily swimming propulsion","water medium"],"must_not_infer":["completed crossing","unassisted activity"]},
+    {"input":"Eli is carried through water.","required":["passive transport"],"must_not_infer":["swimming propulsion"]},
+    {"input":"Nora is running toward the gate.","required":["same runner and mover","destination gate","ongoing approach"],"must_not_infer":["arrival"]},
+    {"input":"Eli is swimming across the river.","required":["same swimmer and path participant","traversed region river","ongoing traversal"],"must_not_infer":["completed crossing"]},
+    {"input":"Eli swam across the river.","required":["swimming manner","past traversal","completion interpretation"],"must_not_infer":["runtime 0 substituted for past"]},
+    {"input":"Nora is not running.","required":["negated running"],"must_not_infer":["walking","runtime 0 substituted for negation"]},
+    {"input":"Nora is running [2].","required":["running lexical meaning","runtime 2"],"must_not_infer":["future tense","different gait"]},
+    {"input":"Eli is running and Nora is swimming.","required":["Eli bound to running","Nora bound to swimming"],"must_not_infer":["shared actor"]},
+    {"input":"Nora runs the program.","required":["program-operation interpretation"],"must_not_infer":["bodily running"]}
+  ],
+  "completion_proven": false
+}

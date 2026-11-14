@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "scope": "One authored clean synthetic WAV; no original text, bindings or expected notes supplied to decoder. No physical recording or channel perturbation.",
+  "physical_recordings": 0,
+  "phrase": "Were they not delivering this tea to them? [2]",
+  "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-delivery-question-QhVdsg/question.wav",
+  "meaning": {
+    "profile": "EZCUSTODY-DELIVERY-INVERSE-1",
+    "speech_act": "question",
+    "scopes": [
+      {
+        "operator": "time",
+        "relation": "before_speech"
+      },
+      {
+        "operator": "negation"
+      },
+      {
+        "operator": "aspect",
+        "aspect": "ongoing"
+      }
+    ],
+    "predicate": "completed_carrying_custody_delivery",
+    "runtime_state": 2,
+    "participants": {
+      "carrier": {
+        "kind": "phonemic",
+        "reference_mode": "name",
+        "phonemes": [
+          "N",
+          "AO",
+          "R",
+          "AE"
+        ],
+        "instance_code": null
+      },
+      "object": {
+        "kind": "phonemic",
+        "reference_mode": "proximal_nominal",
+        "phonemes": [
+          "T",
+          "IY"
+        ],
+        "instance_code": null
+      },
+      "recipient": {
+        "kind": "phonemic",
+        "reference_mode": "name",
+        "phonemes": [
+          "EH",
+          "L",
+          "IH"
+        ],
+        "instance_code": null
+      }
+    },
+    "convention_codes": [
+      10,
+      6,
+      5,
+      4,
+      3,
+      9,
+      7,
+      8,
+      7
+    ],
+    "meaning": {
+      "same_object": true,
+      "carrier_is_transfer_source": true,
+      "destination_referent_is_recipient": true,
+      "arrival_culminates_in_transfer": true,
+      "same_delivery_event": true,
+      "source_custody_before_transfer": true,
+      "source_custody_at_culmination": false,
+      "recipient_custody_before_transfer": false,
+      "recipient_custody_at_culmination": true,
+      "ownership_asserted": false,
+      "willingness_asserted": false,
+      "persistence_after_culmination_asserted": false
+    },
+    "limitations": [
+      "These are event-type commitments inside recovered scope and speech act. Ongoing, habitual, negated, modal, questioned or commanded delivery does not assert a current completed arrival or transfer.",
+      "The source pre-state is immediately before transfer; this does not assert exclusive custody throughout the whole journey.",
+      "The destination is the recipient-associated position; carrying arrival and handover belong to one culmination, not unrelated episodes.",
+      "Repeated audible references are checked; original spelling, external identity, general discourse and recorded audio are outside this bounded MIDI inverse.",
+      "This profile excludes delivery by unsupported flight, an unattended drop-off without custody acquisition, retained source custody or transfer by a different agent."
+    ]
+  },
+  "checksum": "verified"
+}

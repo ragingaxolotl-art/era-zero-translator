@@ -2042,7 +2042,7 @@ resolution_cases:
     target_id: CMP:742b44d9ead66b451346708a
     controlled_input: ASSERT "directed data link" [1] ROLE source "conscious other"
       [1] ROLE target "active material object" [1].
-    semantic_ir: &20
+    semantic_ir:
       ir_version: '1.0'
       root_clause: n001
       speech_act: assertion
@@ -2091,16 +2091,63 @@ resolution_cases:
     formal:
       format: EZF-1
       renderer_version: 1.0.0
-      formal_id: EZF:0ce32f86624558cf3e8bdf58
-      formal_digest: 0ce32f86624558cf3e8bdf585a02f6ff34841beb68e319f518682294c858b819
+      formal_id: EZF:1acce22f2a15f0eda6b4cee3
+      formal_digest: 1acce22f2a15f0eda6b4cee34b531c0504b35cb94a7bdf3c339ce9f0b9a40724
       semantic_digest: b8f1f16ea820e92732e8f1b75f054c43a109e3f4eaa3248d0841269f5e55106d
-      semantic_ir: *20
+      semantic_ir:
+        ir_version: '1.0'
+        root_clause: n001
+        speech_act: assertion
+        nodes:
+        - node_id: n001
+          kind: clause
+          clause_type: predication
+        - node_id: n002
+          kind: lexical_occurrence
+          target_type: compound
+          target_id: CMP:742b44d9ead66b451346708a
+          runtime_state:
+            code: 1
+        - node_id: n003
+          kind: lexical_occurrence
+          target_type: atom
+          target_id: LIF:011
+          runtime_state:
+            code: 1
+        - node_id: n004
+          kind: lexical_occurrence
+          target_type: atom
+          target_id: MAT:011
+          runtime_state:
+            code: 1
+        edges:
+        - edge_id: e001
+          type: fills_role
+          from: n003
+          to: n002
+          role: source
+        - edge_id: e002
+          type: fills_role
+          from: n004
+          to: n002
+          role: target
+        - edge_id: e003
+          type: centers
+          from: n002
+          to: n001
+        discourse_constraints: {}
+        utterance_id: UTT:b8f1f16ea820e92732e8f1b7
+        serialization:
+          canonical_format: EZIR-JSON-1
+          content_digest: b8f1f16ea820e92732e8f1b75f054c43a109e3f4eaa3248d0841269f5e55106d
       performance:
         profile: reference-midi-v1
         anchor_midi: 60
         transposition_semantically_significant: false
         primary_contour: level
-        contour_relative_semitones: *13
+        contour_relative_semitones:
+        - 0
+        - 0
         secondary_contours: []
         lexical_events:
         - occurrence_id: n002
@@ -2132,6 +2179,7 @@ resolution_cases:
           - 60
           - 60
           note_duration_beats: 1.0
+          boundary_after_beats: 0
         - occurrence_id: n002
           component_node_id: h
           component_role: head

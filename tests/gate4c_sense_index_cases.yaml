@@ -1,8 +1,8 @@
 ---
 metadata:
   version: 1.0.0
-  sense_count: 437
-  lemma_count: 420
+  sense_count: 471
+  lemma_count: 454
 exact_atom_labels:
 - input: continuous self
   expected_route: atom
@@ -977,15 +977,36 @@ exact_atom_labels:
   expected_route: atom
   expected_target: ORI:222
 exact_compound_labels:
+- input: practical physical custody
+  expected_route: compound
+  expected_target: CMP:0aca609416668978e1527dac
 - input: physical tool
   expected_route: compound
   expected_target: CMP:111b772027accab2054f0415
+- input: ongoing running toward a destination
+  expected_route: compound
+  expected_target: CMP:139985443924b6e8f24d44f2
+- input: ongoing internal structural repair
+  expected_route: compound
+  expected_target: CMP:1b987e04bf47840f9e82ecd3
+- input: ongoing bodily swimming
+  expected_route: compound
+  expected_target: CMP:1e2ec87e1feff0da19aadc3b
+- input: ongoing bodily locomotor activity
+  expected_route: compound
+  expected_target: CMP:201afcb1035b464ef8e56bd6
 - input: living communication network
   expected_route: compound
   expected_target: CMP:218a5578a2274b92ba3d72db
+- input: ongoing bodily running
+  expected_route: compound
+  expected_target: CMP:22955227e19ba82d5b48c9ef
 - input: physical repair
   expected_route: compound
   expected_target: CMP:22f8ddc4d9b2d1a818d38e9f
+- input: ongoing physical repair
+  expected_route: compound
+  expected_target: CMP:2816a7eeb356c2148b26beca
 - input: shared-world law
   expected_route: compound
   expected_target: CMP:2d26353b47b531bd3f5ae090
@@ -1001,33 +1022,72 @@ exact_compound_labels:
 - input: backup dataset
   expected_route: compound
   expected_target: CMP:33c135410b0deef525b6770d
+- input: felt fatigue
+  expected_route: compound
+  expected_target: CMP:3c13b9c619d95f1c40ea5da5
 - input: material biosystem
   expected_route: compound
   expected_target: CMP:4144fad413b8ce5012088c61
+- input: ongoing acoustic sensory registration
+  expected_route: compound
+  expected_target: CMP:42e9bd596b35612ed6cbe3ce
 - input: shared knowledge base
   expected_route: compound
   expected_target: CMP:44173561806bc8f334a0b7c9
 - input: love
   expected_route: compound
   expected_target: CMP:44718c92b66443c0c0f03ad7
+- input: completed running to a destination
+  expected_route: compound
+  expected_target: CMP:4f83046a60201671bc92fe10
+- input: completed carrying-mediated custody delivery
+  expected_route: compound
+  expected_target: CMP:5200738177777915abb3f42e
 - input: formal ontological dependence
   expected_route: compound
   expected_target: CMP:578fd06e1dec6f91d2b35add
 - input: message datum
   expected_route: compound
   expected_target: CMP:608ecb4f3c515a9c9a3443ec
+- input: felt thirst
+  expected_route: compound
+  expected_target: CMP:60cd46250d183e3105b7250a
 - input: material artifact
   expected_route: compound
   expected_target: CMP:61bfb0de7a1e9d7f5b981725
+- input: consciously felt self-condition
+  expected_route: compound
+  expected_target: CMP:6c9e3042a361ccae6ecf5980
+- input: physical region interior relation
+  expected_route: compound
+  expected_target: CMP:6ccc77b4b3aa69bb010849a4
 - input: data transfer channel
   expected_route: compound
   expected_target: CMP:725868579ebb0e2ef83cf708
 - input: directed data link
   expected_route: compound
   expected_target: CMP:742b44d9ead66b451346708a
+- input: felt hunger
+  expected_route: compound
+  expected_target: CMP:748be1f0ce7ceb2963716292
+- input: completed physical carrying to a destination
+  expected_route: compound
+  expected_target: CMP:74d98d19808f74d0b8196951
+- input: ongoing destination-directed physical carrying
+  expected_route: compound
+  expected_target: CMP:763faa4465065477220f6f06
+- input: ongoing physical carrying
+  expected_route: compound
+  expected_target: CMP:7a6749aaf61cd6181e544bd6
+- input: physical region boundary relation
+  expected_route: compound
+  expected_target: CMP:835d2edc1573d2aea3a6fd18
 - input: machine
   expected_route: compound
   expected_target: CMP:8e5ae722d9e5e31f85ac3c5b
+- input: pleasant felt condition
+  expected_route: compound
+  expected_target: CMP:8e95897afbd6d54b8e164e03
 - input: synchronized data network
   expected_route: compound
   expected_target: CMP:8f05a5e16a897935492726fa
@@ -1037,18 +1097,54 @@ exact_compound_labels:
 - input: shared message collection
   expected_route: compound
   expected_target: CMP:99a87c8869d58498f524f1cc
+- input: ongoing internal data repair
+  expected_route: compound
+  expected_target: CMP:9ddb5e2cfc285515c799462e
 - input: dormant program
   expected_route: compound
   expected_target: CMP:9e8b36f50570a0c3c362a968
+- input: completed physical entry
+  expected_route: compound
+  expected_target: CMP:a3244e0195aa8c228dd0af8c
 - input: composite artifact
   expected_route: compound
   expected_target: CMP:a7fc0ca38a6f95a40cdb87b1
+- input: ongoing swimming across a region
+  expected_route: compound
+  expected_target: CMP:a900dd73c9816ed6cbad29f0
+- input: ongoing sensory registration
+  expected_route: compound
+  expected_target: CMP:ade73037114406a2cd91ce13
+- input: ongoing physical entry
+  expected_route: compound
+  expected_target: CMP:b3fb15e7e645dae58d653887
 - input: data repair
   expected_route: compound
   expected_target: CMP:b518a324d776e46e9d0ff041
+- input: ongoing optical sensory registration
+  expected_route: compound
+  expected_target: CMP:bcfd189eb305cf364ada975a
+- input: completed acquisition of physical custody
+  expected_route: compound
+  expected_target: CMP:c332d2e89b9f6177486fc93b
+- input: unpleasant felt condition
+  expected_route: compound
+  expected_target: CMP:c4fb9863fe36d7667db847c0
+- input: happy felt mood
+  expected_route: compound
+  expected_target: CMP:c58b38d03fab27880ac3e1f0
+- input: felt bodily replenishment need
+  expected_route: compound
+  expected_target: CMP:c64ab0a9989c7b10c46e3b38
 - input: material hazard
   expected_route: compound
   expected_target: CMP:cb0812face56f90b7ba139c5
+- input: physical region exterior relation
+  expected_route: compound
+  expected_target: CMP:cc6d19387b62013464e0e850
+- input: sad felt mood
+  expected_route: compound
+  expected_target: CMP:d54499d2989fa97349e8e23d
 - input: addressed message
   expected_route: compound
   expected_target: CMP:d98407801d64c085f702c9db
@@ -1058,9 +1154,15 @@ exact_compound_labels:
 - input: generated living being
   expected_route: compound
   expected_target: CMP:e2af90ba78681e87e68450e5
+- input: completed transfer of physical custody
+  expected_route: compound
+  expected_target: CMP:e3075c904daf1c647969fef6
 - input: structural repair
   expected_route: compound
   expected_target: CMP:e799b436d9c5e7d87a5516fa
+- input: active physical load support
+  expected_route: compound
+  expected_target: CMP:eef9fff8ac6618ce60927f18
 - input: physical injury
   expected_route: compound
   expected_target: CMP:f1abd5eccdf06d92d5690a32

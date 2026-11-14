@@ -1,3 +1,5 @@
+require_relative 'era_zero_quantified_music'
+require_relative 'era_zero_quantified_binding'
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
@@ -5,6 +7,13 @@ require "digest"
 require_relative "era_zero_renderer"
 
 module EraZeroPresentation
+  ASPECTS = %w[bounded ongoing habitual].freeze
+  MEASUREMENT_UNITS = %w[1 second minute hour day meter kilometer gram kilogram degree radian bit byte kelvin candela_per_square_meter].freeze
+  QUANTIFIERS = %w[exact at_least at_most all some none].freeze
+  ROLE_ORDER = %w[actor source cause experiencer bearer predicate target result destination instrument material content recipient location environment condition persistent_condition time manner quantity comparison_standard beneficiary].freeze
+  CONDITION_STATUSES = %w[open satisfied unsatisfied counterfactual].freeze
+  MEASURE_COMPARISONS = %w[greater_than less_than at_least at_most not_equal].freeze
+  PROPERTY_COMPARISONS = %w[equal greater_than less_than at_least at_most not_equal].freeze
   VERSION = "1.0.0"
   TICKS_PER_BEAT = 480
   TEMPO_MICROSECONDS = 500_000
@@ -16,8 +25,8 @@ module EraZeroPresentation
     value.to_s.gsub("&", "&amp;").gsub("<", "&lt;").gsub(">", "&gt;").gsub('"', "&quot;")
   end
 
-  def validate_formal!(formal)
-    EraZeroRenderer.decode(formal)
+  def validate_formal!(formal, **options)
+    EraZeroRenderer.decode(formal, **options)
     raise PresentationError, "performance profile is missing" unless formal["performance"].is_a?(Hash)
     true
   rescue EraZeroRenderer::DecodeError => error
@@ -28,9 +37,9 @@ module EraZeroPresentation
     event.fetch("family_opening_absolute_midi") + event.fetch("address_absolute_midi") + Array(event.dig("runtime_tail", "absolute_note"))
   end
 
-  def svg(formal)
-    validate_formal!(formal)
-    events = formal.dig("performance", "lexical_events")
+  def svg(formal, **options)
+    validate_formal!(formal, **options)
+    events = scheduled_lexical_events(formal)
     width = [960, 160 + events.sum { |event| note_sequence(event).length * 34 + 28 }].max
     height = 220 + events.length * 54
     cursor = 100
@@ -71,27 +80,324 @@ module EraZeroPresentation
     bytes.pack("C*")
   end
 
-  def midi(formal)
-    validate_formal!(formal)
+  def frame_bound_arguments(formal, max_events)
+    output = []; previous = []; occurrence = nil
+    formal.dig("performance", "lexical_events").each do |event|
+      chain = event.fetch("binding_chain", [])
+      unless chain.is_a?(Array) && chain.all? { |b| b.is_a?(Hash) && ROLE_ORDER.include?(b["role"]) && b["slot_path"].is_a?(Array) && b["predicate_path"].is_a?(Array) }
+        raise PresentationError, "unsupported musical compound binding chain"
+      end
+      shared = 0
+      if occurrence == event["occurrence_id"]
+        shared += 1 while shared < previous.length && shared < chain.length && previous[shared] == chain[shared]
+      end
+      previous[shared..-1].reverse_each { |b| output << grammar_marker(formal, occurrence, "role_#{b['role']}_close") }
+      chain[shared..-1].each { |b| output << grammar_marker(formal, event["occurrence_id"], "role_#{b['role']}_open") }
+      output << event; previous = chain; occurrence = event["occurrence_id"]
+      raise PresentationError, "compound binding exceeds event limit #{max_events}" if output.length > max_events
+    end
+    previous.reverse_each { |b| output << grammar_marker(formal, occurrence, "role_#{b['role']}_close") }
+    raise PresentationError, "compound binding exceeds event limit #{max_events}" if output.length > max_events
+    output
+  end
+
+  # Expand explicit counted scopes as whole phrases, not per-root multipliers.
+  # Bounds protect export size; they are implementation limits, not language rules.
+  def scheduled_lexical_events(formal, max_events: 100_000)
+    events = frame_bound_arguments(formal, max_events)
+    ir = formal.fetch("semantic_ir")
+    EraZeroSubjectControl.validate!(ir)
+    counted_draft=ir['nodes'].any?{|n|n['operator']=='quantified_predication'||n['kind']=='quantified_reference'}
+    if counted_draft
+      raise PresentationError,'Draft quantified music requires explicit opt-in.' unless formal['draft_quantified']==true
+      EraZeroQuantifiedBinding.validate!(ir)
+    end
+    binder_stack=[]
+    ir.fetch("nodes").each do |node|
+      raise PresentationError, "unsupported musical property comparison" if node["kind"] == "scope_operator" && node["operator"] == "comparison" && !EraZeroSemanticValidation.valid_property_comparison?(node, ir)
+      raise PresentationError, "unsupported musical aspect" if node["operator"] == "aspect" && (!ASPECTS.include?(node["aspect"]) || !(node.keys - %w[node_id kind operator aspect]).empty?)
+      raise PresentationError, "unsupported musical discourse variable/reference" if node["kind"] == "variable" || (node["kind"] == "reference" && node["reference_type"] != "desire_subject")
+      if (node["kind"] == "scope_operator" && !(%w[negation repetition modality quantifier comparison aspect]+(counted_draft ? ["quantified_predication"] : [])).include?(node["operator"])) ||
+         (node["kind"] == "coordination" && !%w[sequence all_of any_of exactly_one].include?(node["operator"]))
+        raise PresentationError, "unsupported musical operator: #{node['operator']}"
+      end
+    end
+    ir.fetch("nodes").select { |node| node["operator"] == "modality" }.each do |node|
+      unless %w[possible necessary permitted obligated intended predicted counterfactual].include?(node["mode"]) && (!node.key?("strength") || (%w[possible necessary predicted].include?(node["mode"]) && node["strength"].is_a?(String) && node["strength"].length <= 1024 && node["strength"].match?(/\A(?:0|1|0\.[0-9]*[1-9])\z/)))
+        raise PresentationError, "unsupported musical modality mode or confidence strength"
+      end
+    end
+    time_edges = ir.fetch("edges").select { |edge| edge["type"] == "time_relation" }
+    time_nodes = ir.fetch("nodes").to_h { |node| [node["node_id"], node] }
+    time_edges.each { |edge| time_frame(edge, time_nodes) }
+    ir.fetch("edges").select { |edge| edge["type"] == "condition_of" }.each do |edge|
+      unless CONDITION_STATUSES.include?(edge["condition_status"]) && time_nodes.dig(edge["from"], "kind") == "clause" && time_nodes.dig(edge["to"], "kind") == "clause" && (edge.keys - %w[edge_id type from to condition_status]).empty?
+        raise PresentationError, "unsupported musical condition"
+      end
+    end
+    return events unless ir.fetch("edges").any? { |edge| %w[fills_role condition_of].include?(edge["type"]) } || ir.fetch("nodes").any? { |node| node["kind"] == "measurement" } || !time_edges.empty? || ir.fetch("nodes").any? { |node| %w[repetition sequence negation modality quantifier aspect all_of any_of exactly_one].include?(node["operator"]) }
+    nodes = ir.fetch("nodes").to_h { |node| [node.fetch("node_id"), node] }
+    incoming = ir.fetch("edges").group_by { |edge| edge.fetch("to") }
+    by_occurrence = events.group_by { |event| event.fetch("occurrence_id") }
+    active = []
+    walk = nil
+    walk = lambda do |id|
+      raise PresentationError, "cyclic repetition scope" if active.include?(id)
+      raise PresentationError, "performance scope exceeds nesting limit 128" if active.length >= 128
+      active << id
+      node = nodes.fetch(id) { raise PresentationError, "unknown performance scope #{id}" }
+      edges = incoming.fetch(id, [])
+      result = if node['operator']=='quantified_predication'
+        restriction=edges.find{|e|e['type']=='restricts'};body=edges.find{|e|e['type']=='scopes'}
+        marker=->(name){EraZeroQuantifiedMusic.event(name,formal.dig('performance','anchor_midi')).merge('occurrence_id'=>id)}
+        binder_stack << id
+        phrase=[marker.call("counted_#{node['quantifier']}_open")]+node['value'].chars.map{|d|grammar_marker(formal,id,"digit_#{d}")}+[marker.call('counted_restriction_open')]+walk.call(restriction['from'])+[marker.call('counted_restriction_close'),marker.call('counted_predicate_open')]+walk.call(body['from'])+[marker.call('counted_predicate_close'),marker.call("counted_#{node['quantifier']}_close")]
+        binder_stack.pop;phrase
+      elsif node['kind']=='quantified_reference'
+        position=binder_stack.rindex(node['binder_id']);raise PresentationError,'Unbound quantified musical reference.' unless position
+        [EraZeroQuantifiedMusic.event("counted_reference_#{binder_stack.length-1-position}",formal.dig('performance','anchor_midi')).merge('occurrence_id'=>id)]
+      else
+        case node["kind"]
+               when "scope_operator"
+                 unless %w[negation modality quantifier comparison aspect].include?(node["operator"]) || (node["operator"] == "repetition" && node["mode"] == "count" && node["count"].is_a?(Integer) && node["count"].positive?)
+                   raise PresentationError, "counted repetition export requires a positive count and supported nested scopes"
+                 end
+                 scoped = edges.select { |edge| edge["type"] == "scopes" }
+                 raise PresentationError, "repetition must have exactly one scope" unless scoped.length == 1
+                 phrase = walk.call(scoped.first.fetch("from"))
+                 raise PresentationError, "repetition scope has no sound events" if phrase.empty?
+                 if node["operator"] == "aspect"
+                   [grammar_marker(formal, id, "aspect_#{node['aspect']}_open")] + phrase + [grammar_marker(formal, id, "aspect_#{node['aspect']}_close")]
+                 elsif node["operator"] == "comparison"
+                   raise PresentationError, "unsupported musical property comparison" unless EraZeroSemanticValidation.valid_property_comparison?(node, ir)
+                   frame = node["standard"] == "contextual" ? "contextual_#{node['norm']}" : "property_#{node['dimension']}_#{node['relation']}"
+                   [grammar_marker(formal, id, "#{frame}_open")] + phrase + [grammar_marker(formal, id, "#{frame}_close")]
+                 elsif node["operator"] == "negation"
+                   [grammar_marker(formal, id, "negation_open")] + phrase + [grammar_marker(formal, id, "negation_close")]
+                 elsif node["operator"] == "quantifier"
+                   quantifier_markers(formal, node) + phrase + [grammar_marker(formal, id, "quantifier_#{node['quantifier']}_close")]
+                 elsif node["operator"] == "modality"
+                   [grammar_marker(formal, id, "modality_#{node.fetch('mode')}_open")] + confidence_markers(formal, id, node["strength"]) + phrase + [grammar_marker(formal, id, "modality_#{node.fetch('mode')}_close")]
+                 else
+                   raise PresentationError, "repetition exceeds event limit #{max_events}" if phrase.length * node["count"] > max_events
+                   phrase * node["count"]
+                 end
+               when "clause"
+                 centers = edges.select { |edge| edge["type"] == "centers" }
+                 raise PresentationError, "repetition clause requires one center" unless centers.length == 1
+                 phrase = walk.call(centers.first.fetch("from"))
+                 edges.select { |edge| edge["type"] == "time_relation" }.sort_by { |edge| edge.fetch("edge_id") }.reverse_each do |edge|
+                   phrase = [grammar_marker(formal, id, "#{time_frame(edge, nodes)}_open")] + phrase + [grammar_marker(formal, id, "#{time_frame(edge, nodes)}_close")]
+                 end
+                 conditions = edges.select { |edge| edge["type"] == "condition_of" }
+                 raise PresentationError, "unsupported musical multiple conditions; use explicit coordination" if conditions.length > 1
+                 unless conditions.empty?
+                   condition = conditions.first
+                   phrase = [grammar_marker(formal, id, "conditional_#{condition['condition_status']}_open")] + walk.call(condition.fetch("from")) + [grammar_marker(formal, id, "conditional_then")] + phrase + [grammar_marker(formal, id, "conditional_#{condition['condition_status']}_close")]
+                 end
+                 if node["clause_type"] == "content"
+                   raise PresentationError, "invalid intensional content" unless node["content_status"] == "intensional" && %w[proposition question].include?(node["value_type"]) && id != ir["root_clause"]
+                   if node["value_type"] == "question"
+                     raise PresentationError, "unsupported question content" unless node["question_kind"] == "polar"
+                     phrase = [grammar_marker(formal, id, "polar_content_open")] + phrase + [grammar_marker(formal, id, "polar_content_close")]
+                   else
+                     phrase = [grammar_marker(formal, id, "proposition_content_open")] + phrase + [grammar_marker(formal, id, "proposition_content_close")]
+                   end
+                 end
+                 phrase
+               when "measurement"
+                 measurement_markers(formal, node)
+               when "coordination"
+                 members = edges.select { |edge| edge["type"] == "member_of" }
+                 raise PresentationError, "coordination requires at least two members" if members.length < 2
+                 if node["operator"] == "sequence"
+                 orders = members.map { |edge| edge["order"] }
+                 unless orders.all? { |order| order.is_a?(Integer) } && orders.uniq.length == orders.length
+                   raise PresentationError, "repeated sequence requires distinct explicit member order"
+                 end
+                 members.sort_by { |edge| edge.fetch("order") }.each_with_index.flat_map do |edge, index|
+                   phrase = walk.call(edge.fetch("from"))
+                   phrase[-1] = phrase.last.merge("boundary_after_beats" => 1) if index < members.length - 1 && !phrase.empty?
+                   phrase
+                 end
+                 else
+                   raise PresentationError, "unordered coordination cannot declare sequence order" if members.any? { |edge| edge.key?("order") }
+                   coordinated = [grammar_marker(formal, id, "coord_#{node['operator']}_open")]
+                   members.sort_by { |edge| edge.fetch("edge_id") }.each_with_index do |edge, index|
+                     coordinated << grammar_marker(formal, id, "coord_member") if index.positive?
+                     coordinated.concat(walk.call(edge.fetch("from")))
+                   end
+                   coordinated << grammar_marker(formal, id, "coord_#{node['operator']}_close")
+                   coordinated
+                 end
+               when "lexical_occurrence", "phonemic_reference", "deictic_reference", "reference"
+                 arguments = edges.select { |edge| %w[fills_role qualifies].include?(edge["type"]) }
+                 seen_arguments = {}
+                 arguments.sort_by { |edge| edge.fetch("edge_id") }.flat_map do |edge|
+                   next walk.call(edge.fetch("from")) unless edge['type']=='fills_role'
+                   previous_role=seen_arguments[edge.fetch('from')]
+                   if previous_role && arguments.count { |e| e['type']=='fills_role' && e['role']==previous_role }!=1
+                     raise PresentationError, 'ambiguous musical role reference'
+                   end
+                   phrase=previous_role ? [grammar_marker(formal,edge.fetch('edge_id'),"role_reference_#{previous_role}")] : walk.call(edge.fetch('from'))
+                   seen_arguments[edge.fetch('from')] ||= edge.fetch('role')
+                   [grammar_marker(formal, edge.fetch("edge_id"), "role_#{edge['role']}_open")] + phrase + [grammar_marker(formal, edge.fetch("edge_id"), "role_#{edge['role']}_close")]
+                 end + by_occurrence.fetch(id, [])
+               else
+                 raise PresentationError, "unsupported node in repetition scope: #{node['kind']}"
+               end
+      end
+      active.pop
+      raise PresentationError, "repetition exceeds event limit #{max_events}" if result.length > max_events
+      result
+    end
+    scheduled = walk.call(ir.fetch("root_clause"))
+    unless scheduled.reject { |event| event["kind"] == "grammar_marker" }.map { |event| event["occurrence_id"] }.uniq.sort == by_occurrence.keys.sort
+      raise PresentationError, "repetition schedule would omit lexical occurrences"
+    end
+    scheduled
+  end
+
+  def quantifier_markers(formal, node)
+    counted = %w[exact at_least at_most].include?(node["quantifier"])
+    allowed = %w[node_id kind operator quantifier] + (counted ? ["value"] : [])
+    unless QUANTIFIERS.include?(node["quantifier"]) && (node.keys - allowed).empty? && (!counted || (node["value"].is_a?(String) && node["value"].length <= 1024 && node["value"].match?(/\A(?:0|[1-9][0-9]*)\z/)))
+      raise PresentationError, "unsupported musical quantifier"
+    end
+    markers = ["quantifier_#{node['quantifier']}_open"] + (counted ? node['value'].chars.map { |char| "digit_#{char}" } : [])
+    markers.map { |marker| grammar_marker(formal, node.fetch("node_id"), marker) }
+  end
+
+  def measurement_markers(formal, node)
+    raise PresentationError, "unsupported musical measurement comparison" if node.key?("comparison") && !MEASURE_COMPARISONS.include?(node["comparison"])
+    value = node["magnitude"]; unit = MEASUREMENT_UNITS.index(node["unit"])
+    unless value.is_a?(String) && value.length <= 1024 && value != "-0" && !(node["unit"] == "candela_per_square_meter" && value.start_with?("-")) && value.match?(/\A-?(?:0|[1-9][0-9]*)(?:\.[0-9]*[1-9])?\z/) && unit && (node.keys - %w[node_id kind magnitude unit comparison]).empty?
+      raise PresentationError, "unsupported musical measurement"
+    end
+    markers = ["measurement_open"] + value.chars.map { |char| char == "-" ? "measurement_negative" : char == "." ? "decimal_point" : "digit_#{char}" } + ["measurement_unit_#{unit + 1}", "measurement_close"]
+    markers = ["measure_compare_#{node['comparison']}_open"] + markers + ["measure_compare_#{node['comparison']}_close"] if node["comparison"]
+    markers.map { |marker| grammar_marker(formal, node.fetch("node_id"), marker) }
+  end
+
+  def time_frame(edge, nodes)
+    anchor = nodes[edge["from"]]; clause = nodes[edge["to"]]
+    if anchor && anchor["kind"] == "time_anchor" && clause && clause["kind"] == "clause"
+      if anchor["anchor_type"] == "speech_time" && (anchor.keys - %w[node_id kind anchor_type]).empty? && %w[before at after].include?(edge["relation"])
+        return "time_#{edge['relation']}_speech"
+      end
+      days = { "-1" => "previous_day", "0" => "current_day", "1" => "next_day" }
+      if anchor["anchor_type"] == "interval" && anchor["calendar_unit"] == "day" && anchor["relative_to"] == "speech_date" && days.key?(anchor["day_offset"]) && (anchor.keys - %w[node_id kind anchor_type calendar_unit relative_to day_offset]).empty? && edge["relation"] == "during"
+        return "time_#{days.fetch(anchor['day_offset'])}"
+      end
+    end
+    raise PresentationError, "unsupported musical time relation or anchor"
+  end
+
+  def confidence_markers(formal, id, strength)
+    return [] if strength.nil?
+    (["confidence_open"] + strength.chars.map { |char| char == "." ? "decimal_point" : "digit_#{char}" } + ["confidence_close"]).map { |marker| grammar_marker(formal, id, marker) }
+  end
+
+  def grammar_marker(formal, scope_id, marker)
+    relative = marker == "negation_open" ? [0, -1, -1, 0] : [0, 1, 1, 0]
+    if (modal = marker.match(/\Amodality_(.+)_(open|close)\z/))
+      distance = %w[possible necessary permitted obligated intended predicted counterfactual].index(modal[1]) + 2
+      note = modal[2] == "open" ? -distance : distance
+      relative = [0, note, note, 0]
+    end
+    relative = [0, 9, 0, 9] if marker == "confidence_open"
+    relative = [0, -9, 0, -9] if marker == "confidence_close"
+    relative = [0, 10, -1, 0] if marker == "decimal_point"
+    if marker.match?(/\Adigit_[0-9]\z/)
+      digit = marker[-1].to_i
+      relative = [0, 10, digit / 4, digit % 4, 0]
+    end
+    if (coordination = marker.match(/\Acoord_(all_of|any_of|exactly_one)_(open|close)\z/))
+      code = %w[all_of any_of exactly_one].index(coordination[1]) + 1
+      sign = coordination[2] == "open" ? -1 : 1
+      relative = [0, 11 * sign, code * sign, 0]
+    elsif marker == "coord_member"
+      relative = [0, 11, 0, 11]
+    end
+    if (time = marker.match(/\Atime_(before|at|after)_speech_(open|close)\z/))
+      code = { "before" => -1, "at" => 0, "after" => 1 }.fetch(time[1])
+      sign = time[2] == "open" ? -1 : 1
+      relative = [0, 12 * sign, code, 12 * sign, 0]
+    end
+    if (day = marker.match(/\Atime_(previous_day|current_day|next_day)_(open|close)\z/))
+      code = { "previous_day" => -2, "current_day" => 2, "next_day" => 3 }.fetch(day[1])
+      sign = day[2] == "open" ? -1 : 1
+      relative = [0, 12 * sign, code, 12 * sign, 0]
+    end
+    relative = [0, -31, 0, 0] if marker == "polar_content_open"
+    relative = [0, 31, 0, 0] if marker == "polar_content_close"
+    relative = [0, -24, 0, 0] if marker == "proposition_content_open"
+    relative = [0, 24, 0, 0] if marker == "proposition_content_close"
+    aspect = marker.match(/\Aaspect_(bounded|ongoing|habitual)_(open|close)\z/)
+    relative = [0, aspect[2] == "open" ? -22 : 22, ASPECTS.index(aspect[1]), 0] if aspect
+    contextual = marker.match(/\Acontextual_(hot|cold|heavy|light|bright|dim|rough|smooth)_(open|close)\z/)
+    relative = [0, contextual[2] == "open" ? -26 : 26, EraZeroContextualStandards::NORMS.fetch(contextual[1])[2], 0] if contextual
+    property = marker.match(/\Aproperty_(mass|thermodynamic_temperature|luminance)_(equal|greater_than|less_than|at_least|at_most|not_equal)_(open|close)\z/)
+    relative = [0, property[3] == "open" ? -18 : 18, {"mass"=>1,"thermodynamic_temperature"=>2,"luminance"=>3}.fetch(property[1]), PROPERTY_COMPARISONS.index(property[2]), 0] if property
+    comparison = marker.match(/\Ameasure_compare_(greater_than|less_than|at_least|at_most|not_equal)_(open|close)\z/)
+    relative = [0, comparison[2] == "open" ? -17 : 17, MEASURE_COMPARISONS.index(comparison[1]) + 1, 0] if comparison
+    relative = [0, -13, -1, 0] if marker == "measurement_open"
+    relative = [0, 13, 1, 0] if marker == "measurement_close"
+    relative = [0, -13, 0, -13] if marker == "measurement_negative"
+    unit = marker.match(/\Ameasurement_unit_(\d+)\z/)
+    relative = [0, 13, unit[1].to_i, 13, 0] if unit
+    quantifier = marker.match(/\Aquantifier_(exact|at_least|at_most|all|some|none)_(open|close)\z/)
+    relative = [0, quantifier[2] == "open" ? -14 : 14, QUANTIFIERS.index(quantifier[1]) + 1, 0] if quantifier
+    role = marker.match(/\Arole_(.+)_(open|close)\z/)
+    if role
+      code = ROLE_ORDER.index(role[1])
+      raise PresentationError, "unsupported musical role" unless code
+      digits = code.to_s(3).rjust(3, '0').chars.map { |trit| [0, 1, -1][trit.to_i] }
+      relative = [0, role[2] == "open" ? -15 : 15] + digits + [0]
+    end
+    reference = marker.match(/\Arole_reference_(.+)\z/)
+    if reference
+      code=ROLE_ORDER.index(reference[1])
+      raise PresentationError,'unsupported musical role reference' unless code
+      relative=[0,-20]+code.to_s(3).rjust(3,'0').chars.map{|d|[0,1,-1][d.to_i]}+[0]
+    end
+    conditional = marker.match(/\Aconditional_(open|satisfied|unsatisfied|counterfactual)_(open|close)\z/)
+    relative = [0, conditional[2] == "open" ? -16 : 16, CONDITION_STATUSES.index(conditional[1]), 0] if conditional
+    relative = [0, 16, 0, 16] if marker == "conditional_then"
+    base = formal.dig("performance", "anchor_midi")
+    raise PresentationError, "grammar pitch outside MIDI range" unless relative.all? { |n| (base + n).between?(0, 127) }
+    { "kind" => "grammar_marker", "grammar_profile" => "EZGRAM-1", "marker" => marker,
+      "occurrence_id" => scope_id, "target_id" => "EZGRAM:#{marker}", "register" => "middle", "base_midi" => base,
+      "family_qualified_transliteration" => marker, "formal_carrier" => "",
+      "family_opening_relative_semitones" => [], "family_opening_absolute_midi" => [],
+      "address_relative_semitones" => relative, "address_absolute_midi" => relative.map { |note| base + note },
+      "note_duration_beats" => 0.25, "boundary_after_beats" => 0.5 }
+  end
+
+  def midi(formal, **options)
+    validate_formal!(formal, **options)
+    midi_from_scheduled_events(scheduled_lexical_events(formal), formal.dig("performance", "anchor_midi"), formal.dig("performance", "contour_relative_semitones"))
+  end
+
+  def midi_from_scheduled_events(scheduled, contour_base, contour)
     absolute_events = []
     tick = 0
-    formal.dig("performance", "lexical_events").each do |event|
+    scheduled.each do |event|
       notes = note_sequence(event)
       notes.each_with_index do |note, index|
         raise PresentationError, "MIDI note outside 0..127" unless note.between?(0, 127)
         duration = if index == notes.length - 1 && event["runtime_tail"]
                      (event.dig("runtime_tail", "duration_beats") * TICKS_PER_BEAT).round
                    else
-                     TICKS_PER_BEAT
+                     (event.fetch("note_duration_beats", 1.0) * TICKS_PER_BEAT).round
                    end
         absolute_events << [tick, 1, [0x90, note, 90]]
         absolute_events << [tick + duration, 0, [0x80, note, 0]]
         tick += duration
       end
-      tick += (0.5 * TICKS_PER_BEAT).round
+      tick += (event.fetch("boundary_after_beats", 0.5) * TICKS_PER_BEAT).round
     end
-    contour_base = formal.dig("performance", "anchor_midi")
-    formal.dig("performance", "contour_relative_semitones").each do |offset|
+    contour.each do |offset|
       note = contour_base + offset
       absolute_events << [tick, 1, [0x90, note, 70]]
       absolute_events << [tick + TICKS_PER_BEAT / 2, 0, [0x80, note, 0]]
@@ -108,9 +414,9 @@ module EraZeroPresentation
     "MThd".b + [6, 0, 1, TICKS_PER_BEAT].pack("Nnnn") + "MTrk".b + [track.bytesize].pack("N") + track
   end
 
-  def manifest(formal)
-    svg_data = svg(formal)
-    midi_data = midi(formal)
+  def manifest(formal, **options)
+    svg_data = svg(formal, **options)
+    midi_data = midi(formal, **options)
     { "presentation_version" => VERSION, "formal_id" => formal.fetch("formal_id"), "semantic_digest" => formal.fetch("semantic_digest"), "svg_sha256" => Digest::SHA256.hexdigest(svg_data), "midi_sha256" => Digest::SHA256.hexdigest(midi_data), "semantic_identity_changed" => false }
   end
 end

@@ -1,0 +1,180 @@
+{
+  "status": "PASS",
+  "scope": "Three authored clean synthetic WAVs; no physical recordings or simulated channel tests",
+  "cases": [
+    {
+      "phrase": "Nora learned the route.",
+      "reading": "memorization",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-route-learning-dBrBIo/memorization.wav",
+      "meaning": {
+        "profile": "EZROUTE-LEARNING-INVERSE-1",
+        "status": "draft",
+        "speech_act": "assertion",
+        "transition_root": "ORI:110",
+        "transition_runtime": 0,
+        "scopes": [
+          {
+            "operator": "time",
+            "relation": "before_speech"
+          }
+        ],
+        "result_assertion": "at_culmination_only",
+        "phase_contract": {
+          "before": "does_not_hold",
+          "culmination": "holds",
+          "after": "unspecified"
+        },
+        "result_state": {
+          "reading": "memorization",
+          "predicate": "route_information_recall",
+          "criterion": "The experiencer retains contextually selected information representing the route and can recall that information to the contextual memory criterion. Recall need not be occurring now. The represented information need not be true or sufficient for navigation.",
+          "experiencer": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "N",
+              "AO",
+              "R",
+              "AE"
+            ],
+            "instance_code": null
+          },
+          "route": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "R",
+              "AW",
+              "T"
+            ],
+            "instance_code": null
+          },
+          "runtime_state": 2,
+          "content_commitment": "representation_without_truth_assertion"
+        },
+        "limitations": [
+          "Context must resolve the route and relevant represented information or criterion.",
+          "No actual traversal, permanent retention or external referent identity is established.",
+          "Candidate result meanings are not canonical vocabulary admission."
+        ]
+      }
+    },
+    {
+      "phrase": "Nora did not learn this route.",
+      "reading": "navigation",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-route-learning-dBrBIo/navigation.wav",
+      "meaning": {
+        "profile": "EZROUTE-LEARNING-INVERSE-1",
+        "status": "draft",
+        "speech_act": "assertion",
+        "transition_root": "ORI:110",
+        "transition_runtime": 1,
+        "scopes": [
+          {
+            "operator": "time",
+            "relation": "before_speech"
+          },
+          {
+            "operator": "negation"
+          }
+        ],
+        "result_assertion": "at_culmination_only",
+        "phase_contract": {
+          "before": "does_not_hold",
+          "culmination": "holds",
+          "after": "unspecified"
+        },
+        "result_state": {
+          "reading": "navigation",
+          "predicate": "practical_route_knowledge",
+          "criterion": "The experiencer knows how to follow the contextually identified route to the contextual practical-navigation criterion. This is usable procedural knowledge, not merely reciting route information. It does not assert present physical ability, actual traversal, complete mastery of every circumstance or permanent retention.",
+          "experiencer": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "N",
+              "AO",
+              "R",
+              "AE"
+            ],
+            "instance_code": null
+          },
+          "route": {
+            "kind": "phonemic",
+            "reference_mode": "proximal_nominal",
+            "phonemes": [
+              "R",
+              "AW",
+              "T"
+            ],
+            "instance_code": null
+          },
+          "runtime_state": 1,
+          "content_commitment": "contextual_route_reference"
+        },
+        "limitations": [
+          "Context must resolve the route and relevant represented information or criterion.",
+          "No actual traversal, permanent retention or external referent identity is established.",
+          "Candidate result meanings are not canonical vocabulary admission."
+        ]
+      }
+    },
+    {
+      "phrase": "Did Nora learn that route?",
+      "reading": "familiarity",
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-route-learning-dBrBIo/familiarity.wav",
+      "meaning": {
+        "profile": "EZROUTE-LEARNING-INVERSE-1",
+        "status": "draft",
+        "speech_act": "question",
+        "transition_root": "ORI:110",
+        "transition_runtime": 2,
+        "scopes": [
+          {
+            "operator": "time",
+            "relation": "before_speech"
+          }
+        ],
+        "result_assertion": "at_culmination_only",
+        "phase_contract": {
+          "before": "does_not_hold",
+          "culmination": "holds",
+          "after": "unspecified"
+        },
+        "result_state": {
+          "reading": "familiarity",
+          "predicate": "route_familiarity",
+          "criterion": "The experiencer has contextually adequate cognitive acquaintance with the identified route through direct or mediated exposure, so it is familiar rather than wholly unfamiliar. This does not by itself establish recall of route instructions, practical navigation knowledge, or actual traversal.",
+          "experiencer": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "N",
+              "AO",
+              "R",
+              "AE"
+            ],
+            "instance_code": null
+          },
+          "route": {
+            "kind": "phonemic",
+            "reference_mode": "distal_nominal",
+            "phonemes": [
+              "R",
+              "AW",
+              "T"
+            ],
+            "instance_code": null
+          },
+          "runtime_state": 0,
+          "content_commitment": "contextual_route_reference"
+        },
+        "limitations": [
+          "Context must resolve the route and relevant represented information or criterion.",
+          "No actual traversal, permanent retention or external referent identity is established.",
+          "Candidate result meanings are not canonical vocabulary admission."
+        ]
+      }
+    }
+  ]
+}

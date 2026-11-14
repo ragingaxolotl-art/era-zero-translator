@@ -1,0 +1,156 @@
+{
+  "status": "PASS",
+  "scope": "Three authored clean synthetic WAV cases; no channel simulation or physical microphone recording in this probe",
+  "original_text_or_ir_supplied_to_decoder": false,
+  "cases": [
+    {
+      "phrase": "Eli understands Nora [0].",
+      "reading": "communicated_content",
+      "status": "exact_wav_only_meaning_recovery",
+      "meaning": {
+        "profile": "EZUNDERSTANDING-MUSIC-INVERSE-1",
+        "status": "draft",
+        "speech_act": "assertion",
+        "predicate": "content_comprehension",
+        "foundation_id": "FND:ea8f935ca4dabd4470b2bcb5",
+        "runtime_state": 0,
+        "scopes": [],
+        "experiencer": {
+          "kind": "phonemic",
+          "reference_mode": "name",
+          "phonemes": [
+            "EH",
+            "L",
+            "IH"
+          ],
+          "instance_code": null
+        },
+        "content": {
+          "content_kind": "communicated_content",
+          "anchor": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "N",
+              "AO",
+              "R",
+              "AE"
+            ],
+            "instance_code": null
+          },
+          "resolution_scope": "local_context",
+          "assertion_commitment": "none"
+        },
+        "criterion": "Grasps the intended meaning of contextually selected content conveyed by the anchor; does not assert that the conveyed claims are true.",
+        "limitations": [
+          "Contextually selected content is not supplied or verified as a real-world fact.",
+          "No original spelling or external referent identity is recovered from phonemes.",
+          "Draft comprehension predicate; broader cognitive grammar and canonical admission remain open."
+        ]
+      },
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-understanding-audio-oqdyYm/communicated_content.wav"
+    },
+    {
+      "phrase": "Eli did not understand Nora [1].",
+      "reading": "reasons",
+      "status": "exact_wav_only_meaning_recovery",
+      "meaning": {
+        "profile": "EZUNDERSTANDING-MUSIC-INVERSE-1",
+        "status": "draft",
+        "speech_act": "assertion",
+        "predicate": "content_comprehension",
+        "foundation_id": "FND:ea8f935ca4dabd4470b2bcb5",
+        "runtime_state": 1,
+        "scopes": [
+          {
+            "operator": "time",
+            "relation": "before_speech"
+          },
+          {
+            "operator": "negation"
+          }
+        ],
+        "experiencer": {
+          "kind": "phonemic",
+          "reference_mode": "name",
+          "phonemes": [
+            "EH",
+            "L",
+            "IH"
+          ],
+          "instance_code": null
+        },
+        "content": {
+          "content_kind": "reasons",
+          "anchor": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "N",
+              "AO",
+              "R",
+              "AE"
+            ],
+            "instance_code": null
+          },
+          "resolution_scope": "local_context",
+          "assertion_commitment": "none"
+        },
+        "criterion": "Grasps contextually selected explanatory reasons concerning the anchor, to the contextual standard of explanatory adequacy; does not assert approval or shared motives.",
+        "limitations": [
+          "Contextually selected content is not supplied or verified as a real-world fact.",
+          "No original spelling or external referent identity is recovered from phonemes.",
+          "Draft comprehension predicate; broader cognitive grammar and canonical admission remain open."
+        ]
+      },
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-understanding-audio-oqdyYm/reasons.wav"
+    },
+    {
+      "phrase": "Does Eli understand Nora [2]?",
+      "reading": "perspective",
+      "status": "exact_wav_only_meaning_recovery",
+      "meaning": {
+        "profile": "EZUNDERSTANDING-MUSIC-INVERSE-1",
+        "status": "draft",
+        "speech_act": "question",
+        "predicate": "content_comprehension",
+        "foundation_id": "FND:ea8f935ca4dabd4470b2bcb5",
+        "runtime_state": 2,
+        "scopes": [],
+        "experiencer": {
+          "kind": "phonemic",
+          "reference_mode": "name",
+          "phonemes": [
+            "EH",
+            "L",
+            "IH"
+          ],
+          "instance_code": null
+        },
+        "content": {
+          "content_kind": "perspective",
+          "anchor": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "N",
+              "AO",
+              "R",
+              "AE"
+            ],
+            "instance_code": null
+          },
+          "resolution_scope": "local_context",
+          "assertion_commitment": "none"
+        },
+        "criterion": "Grasps the contextually selected standpoint or experiences of the anchor, to the contextual standard of perspective understanding; does not assert shared feelings, agreement or approval.",
+        "limitations": [
+          "Contextually selected content is not supplied or verified as a real-world fact.",
+          "No original spelling or external referent identity is recovered from phonemes.",
+          "Draft comprehension predicate; broader cognitive grammar and canonical admission remain open."
+        ]
+      },
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-understanding-audio-oqdyYm/perspective.wav"
+    }
+  ]
+}

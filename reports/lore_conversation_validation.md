@@ -2,11 +2,11 @@
 
 Status: **PASS**
 
-- Checks passed: **61**
+- Checks passed: **66**
 - Checks failed: **0**
 - Presets: **5**
 - Performance turns: **22**
-- Hosted canonical concept performances found: **39**
+- Hosted canonical concept performances found: **34**
 
 ## Checks
 
@@ -21,7 +21,8 @@ Status: **PASS**
 - PASS — FEAST-CARRY turn 2 playable — Tavi: Please help the people who carry the meals.
 - PASS — FEAST-CARRY turn 2 honest predicates — Tavi: Please help the people who carry the meals.
 - PASS — FEAST-CARRY turn 3 playable — Brindle: We are here together.
-- PASS — FEAST-CARRY turn 3 honest predicates — Brindle: We are here together.
+- PASS — FEAST-CARRY turn 3 scored excerpt and limits
+- PASS — FEAST-CARRY turn 3 edited text requires a fresh reading
 - PASS — FEAST-CARRY turn 4 playable — Tavi: I will help.
 - PASS — FEAST-CARRY turn 4 honest predicates — Tavi: I will help.
 - PASS — CURRENT-LISTEN complete context
@@ -31,7 +32,8 @@ Status: **PASS**
 - PASS — CURRENT-LISTEN turn 2 playable — Suth: The present route is here.
 - PASS — CURRENT-LISTEN turn 2 honest predicates — Suth: The present route is here.
 - PASS — CURRENT-LISTEN turn 3 playable — Pell: We are moving together.
-- PASS — CURRENT-LISTEN turn 3 honest predicates — Pell: We are moving together.
+- PASS — CURRENT-LISTEN turn 3 scored excerpt and limits
+- PASS — CURRENT-LISTEN turn 3 edited text requires a fresh reading
 - PASS — CURRENT-LISTEN turn 4 playable — Suth: Keep listening for living people.
 - PASS — CURRENT-LISTEN turn 4 honest predicates — Suth: Keep listening for living people.
 - PASS — ROOMS-BESIDE complete context
@@ -39,9 +41,11 @@ Status: **PASS**
 - PASS — ROOMS-BESIDE turn 1 playable — Palinode: I preserved the objection.
 - PASS — ROOMS-BESIDE turn 1 honest predicates — Palinode: I preserved the objection.
 - PASS — ROOMS-BESIDE turn 2 playable — Serein: Keep my objection beside yours.
-- PASS — ROOMS-BESIDE turn 2 honest predicates — Serein: Keep my objection beside yours.
+- PASS — ROOMS-BESIDE turn 2 scored excerpt and limits
+- PASS — ROOMS-BESIDE turn 2 edited text requires a fresh reading
 - PASS — ROOMS-BESIDE turn 3 playable — Palinode: I will keep it.
-- PASS — ROOMS-BESIDE turn 3 honest predicates — Palinode: I will keep it.
+- PASS — ROOMS-BESIDE turn 3 scored excerpt and limits
+- PASS — ROOMS-BESIDE turn 3 edited text requires a fresh reading
 - PASS — ROOMS-BESIDE turn 4 playable — Serein: Help me place this wall.
 - PASS — ROOMS-BESIDE turn 4 honest predicates — Serein: Help me place this wall.
 - PASS — ARRIVAL-ASK complete context
@@ -53,7 +57,8 @@ Status: **PASS**
 - PASS — ARRIVAL-ASK turn 3 playable — Nacre: No. My current position is your station. We need a live receiving exchange.
 - PASS — ARRIVAL-ASK turn 3 honest predicates — Nacre: No. My current position is your station. We need a live receiving exchange.
 - PASS — ARRIVAL-ASK turn 4 playable — Varo: I will stay until you answer.
-- PASS — ARRIVAL-ASK turn 4 honest predicates — Varo: I will stay until you answer.
+- PASS — ARRIVAL-ASK turn 4 scored excerpt and limits
+- PASS — ARRIVAL-ASK turn 4 edited text requires a fresh reading
 - PASS — TWO-DROPS-WAIT complete context
 - PASS — TWO-DROPS-WAIT two-speaker exchange
 - PASS — TWO-DROPS-WAIT turn 1 playable — Dema: I found your home.

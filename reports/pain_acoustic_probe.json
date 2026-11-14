@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "scope": "Two authored clean synthetic WAVs decoded with only waveform path and draft opt-in. No physical recordings or channel perturbations.",
+  "physical_recordings": 0,
+  "cases": [
+    {
+      "phrase": "Was Nora not in bodily pain? [2]",
+      "meaning": {
+        "profile": "EZPAIN-INVERSE-1",
+        "status": "draft",
+        "predicate": "felt_bodily_pain",
+        "dependency": "CMP:6c9e3042a361ccae6ecf5980",
+        "dependency_version": "1.0.0",
+        "quality": "bodily_pain_experience",
+        "injury_commitment": "not_entailed",
+        "cause_commitment": "unspecified",
+        "intensity_commitment": "unspecified",
+        "stimulus_commitment": "unspecified",
+        "experiencer": {
+          "kind": "phonemic",
+          "reference_mode": "name",
+          "phonemes": [
+            "N",
+            "AO",
+            "R",
+            "AE"
+          ],
+          "instance_code": null
+        },
+        "speech_act": "question",
+        "scopes": [
+          {
+            "operator": "time",
+            "relation": "before_speech"
+          },
+          {
+            "operator": "negation"
+          }
+        ],
+        "runtime_state": 2
+      },
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-pain-audio-oPh8tb/pain-0.wav",
+      "checksum": "verified"
+    },
+    {
+      "phrase": "They are in bodily pain. [0]",
+      "meaning": {
+        "profile": "EZPAIN-INVERSE-1",
+        "status": "draft",
+        "predicate": "felt_bodily_pain",
+        "dependency": "CMP:6c9e3042a361ccae6ecf5980",
+        "dependency_version": "1.0.0",
+        "quality": "bodily_pain_experience",
+        "injury_commitment": "not_entailed",
+        "cause_commitment": "unspecified",
+        "intensity_commitment": "unspecified",
+        "stimulus_commitment": "unspecified",
+        "experiencer": {
+          "kind": "phonemic",
+          "reference_mode": "name",
+          "phonemes": [
+            "N",
+            "AO",
+            "R",
+            "AE"
+          ],
+          "instance_code": null
+        },
+        "speech_act": "assertion",
+        "scopes": [],
+        "runtime_state": 0
+      },
+      "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-pain-audio-oPh8tb/pain-1.wav",
+      "checksum": "verified"
+    }
+  ]
+}

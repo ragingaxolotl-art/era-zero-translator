@@ -34,3 +34,7 @@ The core translator pipeline is complete. All planned translator-readiness gates
 ## Regression command
 
 Run `ruby tools/regress_current_state.rb` from the project root. A release is acceptable only when the complete atomic, compound, sense, coverage, etymology, IR, renderer, controlled-English, general-English, and family soundness suite passes.
+
+## Gate 4C completion — 2026-10-09
+
+Gate 4C is complete as a canonical core sense index with **460 senses** across **443 English lemmas**. The index preserves polysemy and explicit gaps instead of using first-match lookup. Gate 4D coverage and ambiguity analysis is next; no translator implementation is authorized yet.

@@ -18,11 +18,11 @@
         "Brindle: Meals for one another. Please include the people who carry them.",
         "Tavi enters carrying nothing while Brindle holds the door."
       ],
-      "performance_note": "The performance preserves beginning, active care, people, present location, and acting together. Era Zero does not claim a dedicated atomic meaning for meals or carrying here.",
+      "performance_note": "The performance preserves beginning, active care, people, and present location. The line about acting together retains that detail in the dialogue. Era Zero does not claim a dedicated atomic meaning for meals or carrying here.",
       "performance_turns": [
         {"speaker": "Brindle", "english": "Somebody has to begin."},
         {"speaker": "Tavi", "english": "Please help the people who carry the meals."},
-        {"speaker": "Brindle", "english": "We are here together."},
+        {"speaker": "Brindle", "english": "We are here together.", "motif": {"target_id": "MOV:001", "term": "their present position", "limitation": "The tone gives their location. The speakers describe their togetherness in the line."}},
         {"speaker": "Tavi", "english": "I will help."}
       ]
     },
@@ -43,7 +43,7 @@
       "performance_turns": [
         {"speaker": "Pell", "english": "I need the present route."},
         {"speaker": "Suth", "english": "The present route is here."},
-        {"speaker": "Pell", "english": "We are moving together."},
+        {"speaker": "Pell", "english": "We are moving together.", "motif": {"target_id": "MOV:121", "term": "their ongoing movement", "limitation": "The tone gives ongoing movement. Moving together is an additional detail in the line."}},
         {"speaker": "Suth", "english": "Keep listening for living people."}
       ]
     },
@@ -64,8 +64,8 @@
       "performance_note": "The performance preserves preservation, data retention, assistance, placement, and a present task. Objection and wall remain referential labels rather than newly invented roots.",
       "performance_turns": [
         {"speaker": "Palinode", "english": "I preserved the objection."},
-        {"speaker": "Serein", "english": "Keep my objection beside yours."},
-        {"speaker": "Palinode", "english": "I will keep it."},
+        {"speaker": "Serein", "english": "Keep my objection beside yours.", "motif": {"target_id": "DAT:000", "term": "the durable objection record", "limitation": "Preserving the record is sounded. The request and the placement of two separate objections remain in the dialogue."}},
+        {"speaker": "Palinode", "english": "I will keep it.", "motif": {"target_id": "DAT:000", "term": "the record to be kept", "limitation": "The tone recalls the record. The speaker’s future promise remains in the dialogue."}},
         {"speaker": "Serein", "english": "Help me place this wall."}
       ]
     },
@@ -89,7 +89,7 @@
         {"speaker": "Nacre", "english": "I need the low-water gate."},
         {"speaker": "Varo", "english": "You are at your destination."},
         {"speaker": "Nacre", "english": "No. My current position is your station. We need a live receiving exchange."},
-        {"speaker": "Varo", "english": "I will stay until you answer."}
+        {"speaker": "Varo", "english": "I will stay until you answer.", "motif": {"target_id": "MOV:001", "term": "Varo’s present position", "limitation": "The tone marks where Varo is. The promise to stay and the condition on leaving remain in the dialogue."}}
       ]
     },
     {

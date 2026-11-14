@@ -1,0 +1,71 @@
+{
+  "scope": "Completed physical entry and affected regressions; not general English, ongoing entry or may-entry completeness.",
+  "passed": true,
+  "results": [
+    {
+      "test": "tests/compound_dependencies_test.rb",
+      "passed": true,
+      "output": "Run options: --seed 8394\n\n# Running:\n\n......\n\nFinished in 0.019124s, 313.7419 runs/s, 3398.8705 assertions/s.\n\n6 runs, 65 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "test": "tools/validate_semantic_ir_and_grammar.rb",
+      "passed": true,
+      "output": "Semantic IR validation: PASS\nChecks passed: 14; checks failed: 0; valid: 16; invalid: 13\n"
+    },
+    {
+      "test": "tools/validate_controlled_english.rb",
+      "passed": true,
+      "output": "Controlled English validation: PASS\nChecks passed: 13; checks failed: 0\n"
+    },
+    {
+      "test": "tools/validate_renderer_decoder.rb",
+      "passed": true,
+      "output": "Renderer/decoder validation: PASS\nChecks passed: 12; checks failed: 0\n"
+    },
+    {
+      "test": "tools/validate_glyph_audio.rb",
+      "passed": true,
+      "output": "Glyph/audio validation: PASS\nChecks passed: 10; checks failed: 0\n"
+    },
+    {
+      "test": "tests/physical_entry_test.mjs",
+      "passed": true,
+      "output": "PASS 30 entry cases with Ruby/MIDI parity, independent phase/identity/runtime/scope recovery, binding rejection, event countermodels and explicit UI sense choice.\nPASS entry sense selection in actual multi-clause and pronoun UI handlers.\n"
+    },
+    {
+      "test": "tests/spatial_relations_test.mjs",
+      "passed": true,
+      "output": "PASS 39 spatial sentences: independent MIDI roles/relation/runtime/scope recovery, Ruby parity and boundary countermodel.\n"
+    },
+    {
+      "test": "tests/brightness_comparison_test.mjs",
+      "passed": true,
+      "output": "PASS 27 brightness comparison and mixed-clause cases with Ruby/MIDI parity, independent direction/reference recovery, negated-comparison counterexample, explicit UI interpretation and stale-result guards.\nPASS actual multi-clause UI requires comparison choice without a numerical threshold.\n"
+    },
+    {
+      "test": "tests/pronoun_interpretation_choices_test.mjs",
+      "passed": true,
+      "output": "PASS 24 pronoun-plus-interpretation cases with exact named and Ruby/MIDI parity; option/binding snapshots, dummy-it exclusion and actual UI combined-choice/stale-result checks.\n"
+    },
+    {
+      "test": "tests/temporal_proposition_scope_test.mjs",
+      "passed": true,
+      "output": "PASS 44 temporal proposition cases with independent scope recovery and Ruby formal/MIDI parity; reversed temporal scope is musically distinct.\nPASS finite temporal-modal countermodel distinguishes the two decoded scope orders.\n"
+    },
+    {
+      "test": "tests/named_sentence_test.mjs",
+      "passed": true,
+      "output": "Named sentences: 81 full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.\n"
+    },
+    {
+      "test": "tests/clause_interpretation_test.mjs",
+      "passed": true,
+      "output": "Clause interpretations: 15 sequence/conjunction/conditional/runtime cases preserve per-clause viewpoints, destinations, mass/temperature standards and future readings with Ruby/browser formal/MIDI parity. Complete choices, local it, caller snapshots and stale UI results/errors are checked.\nPASS 9 contextual multi-clause runtime combinations, Ruby/MIDI parity and actual per-clause no-number UI.\nPASS mixed numeric/contextual disjunctions and stale standard-mode UI protection.\nPASS mixed texture/luminance UI has no spurious numerical texture controls and rejects stale input/detached results.\n"
+    },
+    {
+      "test": "tools/validate_pages_release.mjs",
+      "passed": true,
+      "output": "GitHub Pages audit: PASS\nChecks passed: 11171; failed: 0; canonical variants: 5370\n"
+    }
+  ]
+}

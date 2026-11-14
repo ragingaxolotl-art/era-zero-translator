@@ -48,7 +48,7 @@ for(const[canonicalId,relative]of Object.entries(index.resolution_files)){
     const recognized=visemePlanFromFormal(result.formal,{mode:'recognition',recognitionRegistry:registry});
     const learning=visemePlanFromFormal(result.formal,{mode:'learning',recognitionRegistry:registry});
     check(JSON.stringify(strict)===JSON.stringify(explicitStrict),`${canonicalId} ${key} strict default unchanged`);
-    const expectedCount=result.formal.performance.lexical_events.reduce((sum,event)=>sum+recognitionForTarget(event.target_id,registry,event.base_midi).note_count,0);
+    const expectedCount=result.formal.performance.lexical_events.filter(event=>!['grammar_marker','reference_marker','phonemic_label','deictic_reference'].includes(event.kind)).reduce((sum,event)=>sum+recognitionForTarget(event.target_id,registry,event.base_midi).note_count,0);
     const recognitionCues=recognized.cues.filter(cue=>cue.section==='recognition_phrase');
     check(recognitionCues.length===expectedCount,`${canonicalId} ${key} recognition count`);
     check(recognized.semantic_identity_changed===false&&recognized.recognition_semantic_content===false,`${canonicalId} ${key} identity boundary`);

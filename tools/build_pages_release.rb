@@ -9,7 +9,9 @@ require_relative "lib/era_zero_validation"
 require_relative "lib/era_zero_general_english"
 require_relative "lib/era_zero_renderer"
 require_relative "lib/era_zero_presentation"
+require_relative "lib/era_zero_browser_compounds"
 
+release_date = "2026-11-14"
 root = EraZeroValidation::ROOT
 pages = File.join(root, "pages")
 data_dir = File.join(pages, "data")
@@ -20,7 +22,10 @@ index_html = File.read(File.join(root, "app/public/index.html"))
   .gsub('href="/"', 'href="./"')
   .gsub('href="/styles.css?v=1.15.0"', 'href="./styles.css?v=1.15.0"')
   .gsub('<script src="/app.js?v=1.15.0" defer></script>', '<script type="module" src="./app.js?v=1.15.0"></script>')
+  .sub('    <nav class="app-tabs"', "    <p><a href=\"./compound-builder.html\">Build and save your own compounds →</a></p>\n    <nav class=\"app-tabs\"")
   .gsub('Canonical engine ready', 'Loading canonical browser engine')
+  .sub('Use an ordinary sentence. The translator infers intent and state, asks only when your wording has more than one real meaning, and produces canonical Era Zero notation.', 'Write a sentence, choose the intended meaning, and play it as Era Zero music. You can build a missing verb or adjective from words you already have.')
+  .sub('Every resolution round-trips exactly', 'MIDI and meaning exports')
   .gsub('Local workbench for', 'Browser workbench for')
   .gsub('DBA Era Zero · Local canonical translator', 'DBA Era Zero · Canonical browser translator')
 File.write(File.join(pages, "index.html"), index_html)
@@ -54,7 +59,7 @@ required_roles = {}
 
 canonical_by_target.sort.each do |target_id, sense|
   roles = if sense.fetch("route") == "compound"
-            EraZeroRenderer.required_compound_roles(compound_by_id.fetch(target_id))
+            EraZeroRenderer.required_compound_roles(compound_by_id.fetch(target_id), compounds: compound_by_id)
           else
             []
           end
@@ -76,7 +81,7 @@ canonical_by_target.sort.each do |target_id, sense|
 end
 
 browser_index = {
-  "format" => "EZ-WEB-1", "version" => "1.0.0", "generated" => "2026-10-10",
+  "format" => "EZ-WEB-1", "version" => "1.0.0", "generated" => release_date,
   "counts" => { "atoms" => 324, "compounds" => compounds.length, "senses" => senses.length, "lemmas" => senses.map { |s| s["lemma"].downcase }.uniq.length, "gaps" => senses.count { |s| s["route"] == "gap" }, "plain_language_entries" => plain_english.fetch("entries").length },
   "senses" => senses,
   "game_story_senses" => game_story_senses,
@@ -86,6 +91,7 @@ browser_index = {
   "lore_conversations" => lore_conversations,
   "atoms" => atoms,
   "compounds" => compounds,
+  "compound_plans" => EraZeroBrowserCompounds.plans(compounds),
   "controlled" => allowed.map { |sense| sense.slice("sense_id", "lemma", "route", "target_id") },
   "required_roles" => required_roles,
   "resolution_files" => resolution_files,
@@ -98,10 +104,19 @@ browser_index = {
   "online_scope" => {
     "direct_targets" => resolution_files.length,
     "slotted_compounds" => required_roles.count { |_id, roles| !roles.empty? },
-    "note" => "The static release resolves every atom and closed compound exactly. Open-slot compound role binding remains available in the local Ruby API."
+    "note" => "Static templates resolve atoms and closed compounds. Reviewed browser sentence constructions bind open slots through compiled plans; advanced controlled role binding remains available in the local Ruby API."
   }
 }
 File.write(File.join(data_dir, "index.json"), JSON.generate(browser_index))
+# Keep preview vocabulary outside the canonical dictionary and counts.
+foundation_candidates = EraZeroValidation.load_yaml("reviews/foundation_extension_candidates.json")
+EraZeroFoundations.validate!(foundation_candidates.fetch("records"), allow_draft: true)
+File.write(File.join(data_dir, "foundation_candidates.json"), JSON.generate(foundation_candidates))
+cognitive_candidates = EraZeroValidation.load_yaml("reviews/cognitive_foundation_candidates.json")
+preview_candidates = foundation_candidates.merge("records" => foundation_candidates.fetch("records") + cognitive_candidates.fetch("records"))
+EraZeroFoundations.validate!(preview_candidates.fetch("records"), allow_draft: true)
+File.write(File.join(data_dir, "foundation_preview_candidates.json"), JSON.generate(preview_candidates))
+
 
 document_extensions = %w[.md .yaml .yml .json .jsonl .txt .svg .mid]
 document_directories = %w[docs spec lexicon migrations reviews reports tests examples extraction visemes]
@@ -139,7 +154,7 @@ documents = document_paths.map do |absolute|
 end.sort_by { |entry| [entry.fetch("category"), entry.fetch("path")] }
 document_manifest = {
   "format" => "EZ-DOCUMENT-MANIFEST-1",
-  "generated" => "2026-10-10",
+  "generated" => release_date,
   "count" => documents.length,
   "categories" => documents.map { |entry| entry.fetch("category") }.uniq,
   "sources" => [

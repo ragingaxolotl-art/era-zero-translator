@@ -1,0 +1,9 @@
+id: nominal_mass_properties_2026_10_28
+kind: additive_semantic_and_performance_convention
+profile: EZREFPROPERTY-1
+specification: spec/nominal_property_restrictions_1.0.yaml
+review: reviews/nominal_mass_properties.md
+preserved: [324_root_definitions, lexical_trits, runtime_states_0_1_2, existing_compound_definitions, unrestricted_reference_performances]
+new_behavior: Explicit mass restrictions are sounded within definite noun references, including nested compound bindings
+identity: Adding or changing a reference restriction changes its enclosing utterance semantic digest and performance
+publication: Draft only; external source snapshots and deployed site are not replaced

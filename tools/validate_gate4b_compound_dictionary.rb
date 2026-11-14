@@ -5,6 +5,7 @@ require "yaml"
 require "json"
 require "digest"
 require "set"
+require_relative "lib/era_zero_compound_expansion"
 require_relative "../tools/lib/era_zero_validation"
 
 include EraZeroValidation
@@ -17,6 +18,7 @@ atoms = EraZeroValidation.atoms_by_id(atoms_doc)
 ids = atoms.keys.to_set
 entries = dictionary.fetch("entries")
 checks = EraZeroValidation::CheckSet.new
+EraZeroCompoundConventions.validate!(entries)
 
 checks.add("bounded release", "dictionary declares canonical initial release and a nonzero exact count", dictionary.dig("metadata", "status") == "canonical_initial_release" && dictionary.dig("metadata", "entry_count") == entries.length && entries.length >= 24)
 checks.add("unique content identities", "every entry has a unique CMP id and full digest", entries.map { |e| e["compound_id"] }.uniq.length == entries.length && entries.map { |e| e["content_digest"] }.uniq.length == entries.length)
@@ -30,7 +32,7 @@ checks.add("connected graphs", "every non-head node has a path to h", entries.al
   graph.keys.all? { |node| reach.call(node, Set.new) }
 end)
 checks.add("content hashes", "each CMP id is derived from the canonical semantic payload", entries.all? do |e|
-  payload = e.slice("architecture_version", "semantic_head", "nodes", "edges", "lexical_constraints")
+  payload = EraZeroCompoundConventions.semantic_payload(e)
   payload["architecture_version"] = "1.0"
   digest = Digest::SHA256.hexdigest(JSON.generate(EraZeroValidation.deep_sort(payload)))
   digest == e["content_digest"] && e["compound_id"] == "CMP:#{digest[0, 24]}" && e.dig("serialization", "content_digest") == digest
@@ -38,11 +40,20 @@ end)
 checks.add("runtime separation", "no dictionary identity stores runtime, contour, pitch, or English-word fields", entries.all? { |e| (e.keys & %w[runtime_state contour register absolute_pitch english_word timing]).empty? })
 checks.add("semantic records", "every entry has invariant, boundaries, collision analysis, examples, and confidence", entries.all? { |e| e["invariant_definition"].to_s.length >= 35 && e.dig("boundaries", "includes").to_s.length >= 15 && e.dig("boundaries", "excludes").to_s.length >= 15 && e["collision_audit"].to_s.length >= 30 && e.fetch("examples").keys.to_set == %w[ordinary technical future_compound counterexample].to_set })
 checks.add("candidate review", "each approved entry has three scored semantic directions and one winner", reviews.fetch("reviews").length == entries.length && reviews.fetch("reviews").all? { |r| r["candidates"].length >= 3 && r["candidates"].count { |c| c["decision"] == "winner" } == 1 && r["candidates"].all? { |c| EraZeroValidation::SCORE_KEYS.all? { |k| c["scores"][k].between?(1, 10) } } })
-checks.add("atom collision discipline", "every accepted graph contains a real cross-atom distinction", entries.all? { |e| e["nodes"].count { |n| n["kind"] == "root" } >= 2 })
+checks.add("atom collision discipline", "graphs expand to at least two roots; single-reference specializations require explicit added meaning", begin
+  expander = EraZeroCompoundExpansion::Expander.new(entries)
+  EraZeroCompoundDependencies::Registry.new(entries).ordered
+  entries.all? do |entry|
+    expanded = expander.expand(entry.fetch("compound_id"), entry.fetch("definition_version"))
+    EraZeroCompoundConventions.distinct_dictionary_graph?(entry, expanded)
+  end
+rescue EraZeroCompoundExpansion::ExpansionError, EraZeroCompoundDependencies::DependencyError
+  false
+end)
 checks.add("gap honesty", "water, food, shelter, and home are not forced into approved entries", %w[water food shelter home].all? { |term| cases.fetch("routing_tests").any? { |r| r["english_concept"] == term && %w[unresolved_gap defer_to_gate4c_and_ir].include?(r["route"]) } })
 checks.add("occurrence boundary", "program execution, message sending, and transport are deferred to IR", %w[run\ a\ program send\ a\ message transport].all? { |term| cases.fetch("routing_tests").any? { |r| r["english_concept"] == term && r["route"].include?("ir") } })
 checks.add("conformance coverage", "all approved entries and critical rejection classes have tests", cases.fetch("accepted").length == entries.length && cases.fetch("rejection_tests").length >= 5)
-checks.add("atomic immutability", "atomic fingerprint and all generated forms remain unchanged", EraZeroValidation.fingerprint(atoms_doc.fetch("atoms")) == EraZeroValidation.load_yaml("migrations/gate4b_compound_dictionary_1.0.yaml")["atomic_lexicon_fingerprint"] && EraZeroValidation.generated_field_errors(atoms).empty?)
+checks.add("atomic immutability", "atomic records match the baseline or exact editorial reconciliation; generated forms remain unchanged", EraZeroValidation.atomic_fingerprint_matches?(atoms_doc.fetch("atoms"), EraZeroValidation.load_yaml("migrations/gate4b_compound_dictionary_1.0.yaml")["atomic_lexicon_fingerprint"]) && EraZeroValidation.generated_field_errors(atoms).empty?)
 checks.add("authority integration", "Gate 4B remains canonical and its migration records the orderly Gate 4C handoff", begin
   version = EraZeroValidation.load_yaml("spec/version.yaml")
   readiness = EraZeroValidation.load_yaml("spec/translator_readiness.yaml")

@@ -1,0 +1,37 @@
+{
+  "scope": "Targeted command, conditional-reference and speech-act validation. Full regression baseline remains 2cc85e7, with carrying-goal checks recorded at 4e8819a. This is not a fresh full-suite run.",
+  "passed": true,
+  "results": [
+    {
+      "test": "tests/carrying_command_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Carrying/support commands: 21 runtime/negation/destination/conditional cases match reference formal and MIDI; addressee and command contour decode independently, and local it retains its antecedent.\n"
+    },
+    {
+      "test": "tests/carrying_goal_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Carrying goals: 17 role/runtime/negation/modality/past-question/conditional cases match reference formal and MIDI. Destination differs from load and remains audible; arrival is not inferred; unsupported additions stay incomplete.\n"
+    },
+    {
+      "test": "tests/conditional_command_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Conditional commands: eight full renderer/MIDI parity cases, local definite-reference identity, explicit-reference paraphrase equivalence, command/assertion contrast, negation scope and independent runtime endings.\n"
+    },
+    {
+      "test": "tests/conditional_sentence_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "English conditionals: five full Ruby/browser parity cases, reversed condition contrast, explicit runtime and past scopes, quoted name, and incomplete-clause rejection pass.\n"
+    },
+    {
+      "test": "tests/speech_act_runtime_test.mjs",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Questions and commands retain all three runtime states, independent contours, and exactly one compound-head ending.\n"
+    }
+  ],
+  "completion_proven": false
+}

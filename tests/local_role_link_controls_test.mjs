@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {emptyLocalCompounds,addLocalCompound} from '../pages/local_compounds.mjs';
+import {mountRoleLinkControls} from '../pages/local_role_link_controls.mjs';
+import {composeLocalAdjective} from '../pages/local_compound_english.mjs';
+const a=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url))),running=a.compounds.find(c=>c.display_title==='ongoing bodily locomotor activity'),d={label:'stridebright',definition:'Test-only linked quality.',part_of_speech:'adjective',roles:[{role:'bearer',definition:'Bearer of the quality.'}],components:[{target_id:running.compound_id,relation:'head'},{target_id:a.atoms[0].canonical_id,relation:'qualifies'}]};
+const element=()=>({children:[],append(...items){this.children.push(...items)}}),container=element();
+const read=await mountRoleLinkControls(container,d,emptyLocalCompounds(),a,{document:{createElement:element}});assert.deepEqual(read(),[]);assert.equal(container.children.length,1);
+container.children[0].children[0].value='bearer';const links=read();assert.equal(links.length,1);assert.deepEqual(links[0].component_path,[0]);assert.equal(links[0].role,'actor');
+const saved=await addLocalCompound(emptyLocalCompounds(),{...d,role_links:links},a),result=await composeLocalAdjective('Nora is stridebright.',saved,a);assert.equal(result.meaning.bindings.length,2);assert(result.meaning.bindings.every(b=>b.reference.name.normalized_label==='nora'));assert(result.midi.length>0);
+console.log('PASS builder role selection saves explicit links and composes English to music without duplicate participant input.');

@@ -1,0 +1,102 @@
+{
+  "scope": "Targeted completed-running meaning/music and adjacent regression checks; not full English coverage, live browser or listening validation.",
+  "passed": true,
+  "checks": [
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/completed_running_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 30 completed-running actor/destination/runtime/scope cases, Ruby parity, independent MIDI recovery, wrong-root rejection and prior 57 meanings unchanged.\nPASS missing destination and unequal actor bindings reject in browser/Ruby; inconsistent actor sounds reject independently.\nPASS mismatched destination identity rejects in IR/music and ongoing approach stays distinct from completed running.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/destination_running_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 24 directed-running actor/destination/runtime/scope cases, Ruby parity, independent MIDI recovery, wrong-root rejection and prior 56 meanings unchanged.\nPASS missing destination and unequal actor bindings reject in browser/Ruby; inconsistent actor sounds reject independently.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/running_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 21 running participant/state/scope contrasts with Ruby formal/MIDI parity and independent inverse; prior 55 compounds unchanged; unsupported paths remain unresolved.\nPASS running remains distinct from swimming and generic displacement.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/arrival_sentence_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Arrival: 27 participant/negation/question/calendar/property/runtime cases match Ruby formal and MIDI. Independent tokens distinguish completed arrival from approach without recipient or carrying inference.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/compound_convention_music_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Explicit compound conventions: 18 nested identity/runtime/binding contrasts preserve roots and head-only endings; Ruby/browser MIDI and SVG agree; independent MIDI frame reading recovers scoped convention codes. Fixtures do not approve vocabulary.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/named_sentence_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Named sentences: 81 full compositions match Ruby rendering; role reversal changes sound; unsupported additions never match.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/bound_sentence_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Bound sentences: 21 name/deictic/nominal/state/scope/clause cases match reference formal and MIDI; invalid bindings, references, plans and event limits are rejected.\n"
+    },
+    {
+      "command": [
+        "ruby",
+        "tests/compound_dependencies_test.rb"
+      ],
+      "exit_code": 0,
+      "output": "Run options: --seed 65205\n\n# Running:\n\n......\n\nFinished in 0.017521s, 342.4462 runs/s, 3481.5364 assertions/s.\n\n6 runs, 61 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "command": [
+        "ruby",
+        "tests/compound_expansion_test.rb"
+      ],
+      "exit_code": 0,
+      "output": "Run options: --seed 33255\n\n# Running:\n\n..........\n\nFinished in 0.263606s, 37.9354 runs/s, 675.2502 assertions/s.\n\n10 runs, 178 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "command": [
+        "ruby",
+        "tests/compound_convention_test.rb"
+      ],
+      "exit_code": 0,
+      "output": "Run options: --seed 25961\n\n# Running:\n\n...\n\nFinished in 0.031980s, 93.8086 runs/s, 813.0081 assertions/s.\n\n3 runs, 26 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "command": [
+        "ruby",
+        "tools/validate_gate4b_compound_dictionary.rb"
+      ],
+      "exit_code": 0,
+      "output": "Gate 4B validation: PASS\nChecks passed: 16; checks failed: 0; entries: 58\n"
+    },
+    {
+      "command": [
+        "ruby",
+        "tools/validate_gate4c_english_sense_index.rb"
+      ],
+      "exit_code": 0,
+      "output": "Gate 4C validation: PASS\nChecks passed: 17; checks failed: 0; senses: 466; lemmas: 449\n"
+    }
+  ]
+}

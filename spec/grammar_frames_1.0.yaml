@@ -1,0 +1,317 @@
+profile: EZGRAM-1
+status: versioned_implementation_convention
+authority: User-directed translator completion goal, October 28, 2026
+provenance: New explicit grammar convention; not recovered from the original language source
+purpose: Sound grammatical scope without changing lexical roots or runtime endings
+frames:
+  aspect_bounded_open:
+    relative_semitones: [0, -22, 0, 0]
+    note_duration_beats: 0.25
+  aspect_bounded_close:
+    relative_semitones: [0, 22, 0, 0]
+    note_duration_beats: 0.25
+  aspect_ongoing_open:
+    relative_semitones: [0, -22, 1, 0]
+    note_duration_beats: 0.25
+  aspect_ongoing_close:
+    relative_semitones: [0, 22, 1, 0]
+    note_duration_beats: 0.25
+  aspect_habitual_open:
+    relative_semitones: [0, -22, 2, 0]
+    note_duration_beats: 0.25
+  aspect_habitual_close:
+    relative_semitones: [0, 22, 2, 0]
+    note_duration_beats: 0.25
+  nominal_mass_open:
+    relative_semitones: [0, -21, 1, 0]
+    note_duration_beats: 0.25
+  nominal_property_head:
+    relative_semitones: [0, 21, 0, 21]
+    note_duration_beats: 0.25
+  nominal_mass_close:
+    relative_semitones: [0, 21, 1, 0]
+    note_duration_beats: 0.25
+  negation_open:
+    relative_semitones: [0, -1, -1, 0]
+    note_duration_beats: 0.25
+  negation_close:
+    relative_semitones: [0, 1, 1, 0]
+    note_duration_beats: 0.25
+  modality_possible_open:
+    relative_semitones: [0, -2, -2, 0]
+    note_duration_beats: 0.25
+  modality_possible_close:
+    relative_semitones: [0, 2, 2, 0]
+    note_duration_beats: 0.25
+  modality_necessary_open:
+    relative_semitones: [0, -3, -3, 0]
+    note_duration_beats: 0.25
+  modality_necessary_close:
+    relative_semitones: [0, 3, 3, 0]
+    note_duration_beats: 0.25
+  modality_permitted_open:
+    relative_semitones: [0, -4, -4, 0]
+    note_duration_beats: 0.25
+  modality_permitted_close:
+    relative_semitones: [0, 4, 4, 0]
+    note_duration_beats: 0.25
+  modality_obligated_open:
+    relative_semitones: [0, -5, -5, 0]
+    note_duration_beats: 0.25
+  modality_obligated_close:
+    relative_semitones: [0, 5, 5, 0]
+    note_duration_beats: 0.25
+  modality_intended_open:
+    relative_semitones: [0, -6, -6, 0]
+    note_duration_beats: 0.25
+  modality_intended_close:
+    relative_semitones: [0, 6, 6, 0]
+    note_duration_beats: 0.25
+  modality_predicted_open:
+    relative_semitones: [0, -7, -7, 0]
+    note_duration_beats: 0.25
+  modality_predicted_close:
+    relative_semitones: [0, 7, 7, 0]
+    note_duration_beats: 0.25
+  modality_counterfactual_open:
+    relative_semitones: [0, -8, -8, 0]
+    note_duration_beats: 0.25
+  modality_counterfactual_close:
+    relative_semitones: [0, 8, 8, 0]
+    note_duration_beats: 0.25
+  confidence_open:
+    relative_semitones: [0, 9, 0, 9]
+    note_duration_beats: 0.25
+  confidence_close:
+    relative_semitones: [0, -9, 0, -9]
+    note_duration_beats: 0.25
+  decimal_point:
+    relative_semitones: [0, 10, -1, 0]
+    note_duration_beats: 0.25
+  digit_0:
+    relative_semitones: [0, 10, 0, 0, 0]
+    note_duration_beats: 0.25
+  digit_1:
+    relative_semitones: [0, 10, 0, 1, 0]
+    note_duration_beats: 0.25
+  digit_2:
+    relative_semitones: [0, 10, 0, 2, 0]
+    note_duration_beats: 0.25
+  digit_3:
+    relative_semitones: [0, 10, 0, 3, 0]
+    note_duration_beats: 0.25
+  digit_4:
+    relative_semitones: [0, 10, 1, 0, 0]
+    note_duration_beats: 0.25
+  digit_5:
+    relative_semitones: [0, 10, 1, 1, 0]
+    note_duration_beats: 0.25
+  digit_6:
+    relative_semitones: [0, 10, 1, 2, 0]
+    note_duration_beats: 0.25
+  digit_7:
+    relative_semitones: [0, 10, 1, 3, 0]
+    note_duration_beats: 0.25
+  digit_8:
+    relative_semitones: [0, 10, 2, 0, 0]
+    note_duration_beats: 0.25
+  digit_9:
+    relative_semitones: [0, 10, 2, 1, 0]
+    note_duration_beats: 0.25
+  coord_all_of_open:
+    relative_semitones: [0, -11, -1, 0]
+    note_duration_beats: 0.25
+  coord_all_of_close:
+    relative_semitones: [0, 11, 1, 0]
+    note_duration_beats: 0.25
+  coord_any_of_open:
+    relative_semitones: [0, -11, -2, 0]
+    note_duration_beats: 0.25
+  coord_any_of_close:
+    relative_semitones: [0, 11, 2, 0]
+    note_duration_beats: 0.25
+  coord_exactly_one_open:
+    relative_semitones: [0, -11, -3, 0]
+    note_duration_beats: 0.25
+  coord_exactly_one_close:
+    relative_semitones: [0, 11, 3, 0]
+    note_duration_beats: 0.25
+  coord_member:
+    relative_semitones: [0, 11, 0, 11]
+    note_duration_beats: 0.25
+  time_before_speech_open:
+    relative_semitones: [0, -12, -1, -12, 0]
+    note_duration_beats: 0.25
+  time_before_speech_close:
+    relative_semitones: [0, 12, -1, 12, 0]
+    note_duration_beats: 0.25
+  time_at_speech_open:
+    relative_semitones: [0, -12, 0, -12, 0]
+    note_duration_beats: 0.25
+  time_at_speech_close:
+    relative_semitones: [0, 12, 0, 12, 0]
+    note_duration_beats: 0.25
+  time_after_speech_open:
+    relative_semitones: [0, -12, 1, -12, 0]
+    note_duration_beats: 0.25
+  time_after_speech_close:
+    relative_semitones: [0, 12, 1, 12, 0]
+    note_duration_beats: 0.25
+  time_previous_day_open:
+    relative_semitones: [0, -12, -2, -12, 0]
+    note_duration_beats: 0.25
+  time_previous_day_close:
+    relative_semitones: [0, 12, -2, 12, 0]
+    note_duration_beats: 0.25
+  time_current_day_open:
+    relative_semitones: [0, -12, 2, -12, 0]
+    note_duration_beats: 0.25
+  time_current_day_close:
+    relative_semitones: [0, 12, 2, 12, 0]
+    note_duration_beats: 0.25
+  time_next_day_open:
+    relative_semitones: [0, -12, 3, -12, 0]
+    note_duration_beats: 0.25
+  time_next_day_close:
+    relative_semitones: [0, 12, 3, 12, 0]
+    note_duration_beats: 0.25
+  measurement_open:
+    relative_semitones: [0, -13, -1, 0]
+    note_duration_beats: 0.25
+  measurement_close:
+    relative_semitones: [0, 13, 1, 0]
+    note_duration_beats: 0.25
+  measurement_negative:
+    relative_semitones: [0, -13, 0, -13]
+    note_duration_beats: 0.25
+  measurement_unit_1:
+    unit: "1"
+    relative_semitones: [0, 13, 1, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_2:
+    unit: "second"
+    relative_semitones: [0, 13, 2, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_3:
+    unit: "minute"
+    relative_semitones: [0, 13, 3, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_4:
+    unit: "hour"
+    relative_semitones: [0, 13, 4, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_5:
+    unit: "day"
+    relative_semitones: [0, 13, 5, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_6:
+    unit: "meter"
+    relative_semitones: [0, 13, 6, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_7:
+    unit: "kilometer"
+    relative_semitones: [0, 13, 7, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_8:
+    unit: "gram"
+    relative_semitones: [0, 13, 8, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_9:
+    unit: "kilogram"
+    relative_semitones: [0, 13, 9, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_10:
+    unit: "degree"
+    relative_semitones: [0, 13, 10, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_11:
+    unit: "radian"
+    relative_semitones: [0, 13, 11, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_12:
+    unit: "bit"
+    relative_semitones: [0, 13, 12, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_13:
+    unit: "byte"
+    relative_semitones: [0, 13, 13, 13, 0]
+    note_duration_beats: 0.25
+  measurement_unit_14:
+    unit: "kelvin"
+    relative_semitones: [0, 13, 14, 13, 0]
+    note_duration_beats: 0.25
+  quantifier_exact_open:
+    relative_semitones: [0, -14, 1, 0]
+    note_duration_beats: 0.25
+  quantifier_exact_close:
+    relative_semitones: [0, 14, 1, 0]
+    note_duration_beats: 0.25
+  quantifier_at_least_open:
+    relative_semitones: [0, -14, 2, 0]
+    note_duration_beats: 0.25
+  quantifier_at_least_close:
+    relative_semitones: [0, 14, 2, 0]
+    note_duration_beats: 0.25
+  quantifier_at_most_open:
+    relative_semitones: [0, -14, 3, 0]
+    note_duration_beats: 0.25
+  quantifier_at_most_close:
+    relative_semitones: [0, 14, 3, 0]
+    note_duration_beats: 0.25
+  quantifier_all_open:
+    relative_semitones: [0, -14, 4, 0]
+    note_duration_beats: 0.25
+  quantifier_all_close:
+    relative_semitones: [0, 14, 4, 0]
+    note_duration_beats: 0.25
+  quantifier_some_open:
+    relative_semitones: [0, -14, 5, 0]
+    note_duration_beats: 0.25
+  quantifier_some_close:
+    relative_semitones: [0, 14, 5, 0]
+    note_duration_beats: 0.25
+  quantifier_none_open:
+    relative_semitones: [0, -14, 6, 0]
+    note_duration_beats: 0.25
+  quantifier_none_close:
+    relative_semitones: [0, 14, 6, 0]
+    note_duration_beats: 0.25
+anchor: Utterance anchor, independent of the role registers inside the scope
+boundary_after_beats: 0.5
+rules:
+  - Opening and closing frames surround exactly the negated subtree
+  - All-of, any-of and exactly-one coordination have distinct frames and explicit member separators
+  - Unordered coordination playback order is presentational and does not assert temporal sequence
+  - Modal frames surround exactly their scoped subtree and do not change runtime state
+  - Explicit confidence uses confidence-open, exact decimal digits, confidence-close before the scoped proposition
+  - Confidence supports possible, necessary and predicted modes; it never substitutes for deontic force
+  - Confidence strings must be canonical decimals from 0 through 1, with at most 1024 characters
+  - Nested negation remains nested; no silent double-negation cancellation
+  - Markers are grammar events, not atoms, compounds, names or recognition checksums
+  - Runtime zero means inactive; it never substitutes for the negation frame
+  - Before/at/after speech-time frames enclose the time-related clause without changing lexical or runtime state
+  - Calendar-day interval frames use during relations and day offsets -1, 0 or 1 relative to the contextual speech date
+  - Calendar days require the discourse calendar and timezone; they do not assert fixed 24-hour durations
+  - Quantifier frames enclose their exact scope; exact/at-least/at-most cardinalities use canonical nonnegative integer digits after the opening
+  - All/some/none quantifiers carry no numeric value and do not replace clause negation or lexical runtime
+  - Measurement frames enclose optional minus, exact decimal digits, and an explicit unit frame
+  - Measurement digits reuse decimal digit frames; no runtime state is used for magnitude or sign
+  - Unsupported anchors and extra anchor parameters must not be silently omitted
+  - Existing root melodies, runtime notes, and speech-act contours remain unchanged
+  - No carrier syllables are invented for grammar frames; mouth animation is neutral
+compatibility:
+  positive_output: Unchanged
+  negative_output: New scoped markers replace the previously indistinguishable positive performance
+  semantic_ir: Existing negation nodes retain their identities
+  consumers: Ruby and browser MIDI, SVG, browser sound and viseme schedules
+remaining:
+  - Musical conventions for range/proportional quantifiers, aspect and other unsounded operators
+  - Independent listener recognition and broader end-to-end semantic decoding
+
+argument_role_frames: spec/role_frames_1.0.yaml
+
+conditional_frames: spec/conditional_frames_1.0.yaml
+
+measurement_comparison_frames: spec/measurement_comparison_1.0.yaml
+
+property_comparison_frames: spec/property_comparison_1.0.yaml

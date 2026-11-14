@@ -1,0 +1,30 @@
+profile: EZCARRY-INVERSE-1
+status: bounded_implementation
+input:
+  - strict MIDI bytes
+  - canonical root sound inventory
+excluded_inputs:
+  - source English
+  - semantic IR
+  - formal performance events
+  - expected utterance digest
+  - compiled compound plan
+convention_profiles:
+  ongoing_destination_carrying: [5, 4, 3]
+  completed_destination_carrying: [6, 5, 4, 3]
+output:
+  - predicate event type inside ordered scopes
+  - carrier, load and spatial destination references
+  - exact nominal mass restriction where present
+  - independent outer and lexical-participant runtime states
+  - speech act, negation, modality/confidence, aspect and supported relative time
+validation:
+  - exact nested roots and scoped roles
+  - complete input consumption
+  - consistency of shared reference sounds and properties
+  - only outer predicate head has the compound runtime ending
+identity_limit: Learned convention asserts sharing; sounds do not prove external object identity or recover spelling.
+compatibility: No encoding, root, compound or existing sentence identity changes.
+implementation: pages/carrying_decoder.mjs
+test: tests/carrying_inverse_test.mjs
+review: reviews/carrying_musical_inverse.md

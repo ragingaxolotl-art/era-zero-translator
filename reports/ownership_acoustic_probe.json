@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "scope": "One authored clean synthetic WAV; no original text, bindings or expected notes supplied to decoder. No physical recording or channel perturbation.",
+  "physical_recordings": 0,
+  "phrase": "Didn't Nora own this tea? [2]",
+  "wav": "/var/folders/wt/hrl68gjx1xvb9fxppwb1827r0000gn/T/era-ownership-gwaUoQ/question.wav",
+  "meaning": {
+    "profile": "EZOWNERSHIP-INVERSE-1",
+    "status": "draft",
+    "predicate": "framework_relative_ownership",
+    "relation": "owner_has_ownership_status_for_object_under_framework",
+    "framework_scope": "inside_proposition",
+    "framework_rules": "not_encoded_by_reference_label",
+    "physical_custody": "not_entailed",
+    "physical_control": "not_entailed",
+    "acquisition_or_transfer": "not_entailed",
+    "unlimited_use_or_disposal": "not_entailed",
+    "exclusive_ownership": "not_entailed",
+    "fractional_share": "unspecified",
+    "universal_agreement": "not_entailed",
+    "other_framework_status": "not_asserted",
+    "owner": {
+      "kind": "phonemic",
+      "reference_mode": "name",
+      "phonemes": [
+        "N",
+        "AO",
+        "R",
+        "AE"
+      ],
+      "instance_code": null
+    },
+    "object": {
+      "kind": "phonemic",
+      "reference_mode": "proximal_nominal",
+      "phonemes": [
+        "T",
+        "IY"
+      ],
+      "instance_code": null
+    },
+    "framework": {
+      "kind": "phonemic",
+      "reference_mode": "name",
+      "phonemes": [
+        "HH",
+        "AA",
+        "R",
+        "B",
+        "AO",
+        "R",
+        "WB",
+        "CH",
+        "AA",
+        "R",
+        "T",
+        "ER"
+      ],
+      "instance_code": null
+    },
+    "speech_act": "question",
+    "scopes": [
+      {
+        "operator": "time",
+        "relation": "before_speech"
+      },
+      {
+        "operator": "negation"
+      }
+    ],
+    "runtime_state": 2
+  },
+  "checksum": "verified"
+}

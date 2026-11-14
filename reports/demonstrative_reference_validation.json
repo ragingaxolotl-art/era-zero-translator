@@ -1,0 +1,86 @@
+{
+  "scope": "Targeted demonstrative grammar and independent musical recovery; not resolved external pointing, unrestricted noun phrases or listening validation.",
+  "passed": true,
+  "checks": [
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/demonstrative_reference_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 24 demonstrative reference/state/comparison/journey cases with independent recovery and Ruby formal/MIDI parity; noun sounds and previous reference markers preserved; mismatched identity rejected.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/nominal_reference_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Definite noun references: ten full compositions preserve reference frames, names remain distinct, Ruby/browser output agrees, malformed references fail.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/discourse_reference_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Discourse references: speaker/addressee anchors retain distinct roles and sound, match Ruby events/MIDI, and use neutral mouth cues without lexical runtime.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/role_reference_music_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Role-reference music: 66 role/runtime structural cases distinguish a shared argument from identical separate lexical occurrences, preserve Ruby/browser MIDI and SVG, and recover the reference token without source IR. These probes do not approve arbitrary lexical valence.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/property_comparison_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Entity mass comparison: 12 reference-renderer/MIDI cases preserve six relations and operand direction; explicit paraphrases normalize, invalid dimensions/roles fail, and modal/runtime scope remains separate.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/luminance_foundation_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS 48 luminance measurements/comparisons: exact magnitudes, roles, direction and runtime match reference output and MIDI observation.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/bound_sentence_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Bound sentences: 21 name/deictic/nominal/state/scope/clause cases match reference formal and MIDI; invalid bindings, references, plans and event limits are rejected.\n"
+    },
+    {
+      "command": [
+        "/private/tmp/node-v22.14.0-darwin-arm64/bin/node",
+        "tests/strict_music_decoder_test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Independent strict music inverse: 5429 dictionary and sentence performances recover audible lexical/reference/grammar tokens and exact boundaries, without source IR or a formal plan.\n"
+    },
+    {
+      "command": [
+        "ruby",
+        "tests/semantic_reference_validation_test.rb"
+      ],
+      "exit_code": 0,
+      "output": "Run options: --seed 60003\n\n# Running:\n\n.......\n\nFinished in 0.241273s, 29.0128 runs/s, 132.6298 assertions/s.\n\n7 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n"
+    },
+    {
+      "command": [
+        "ruby",
+        "tools/validate_renderer_decoder.rb"
+      ],
+      "exit_code": 0,
+      "output": "Renderer/decoder validation: PASS\nChecks passed: 12; checks failed: 0\n"
+    }
+  ]
+}

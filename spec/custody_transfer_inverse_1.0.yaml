@@ -1,0 +1,15 @@
+profile: EZCUSTODY-TRANSFER-INVERSE-1
+inputs: [performed_MIDI, root_sound_inventory]
+source_IR_required: false
+compound: CMP:e3075c904daf1c647969fef6
+version: 1.0.0
+conventions: [9, 7, 8, 7]
+participants: [source, object, recipient]
+outer_runtime_states: [0, 1, 2]
+requirements:
+  - Exact nested custody and acquisition roots and roles
+  - Same audible object reference across source pre-state and recipient acquisition
+  - Source loss and recipient gain at one linked reallocation culmination
+  - Preserve ordered scopes and speech act without asserting events outside scope
+limits: [external_identity, original_spelling, general_discourse, recorded_audio]
+test: tests/custody_transfer_test.mjs

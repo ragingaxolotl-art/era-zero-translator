@@ -1,0 +1,47 @@
+# Ordinary phrase coverage audit
+
+Fresh phrase coverage audit authored during implementation; not a blind or representative English benchmark.
+
+Full translator completion: **not established**. 24 of 40 cases pass their declared semantic checks; 0 have no complete composition; 5 have newer interpretation previews requiring semantic review; 11 require an explicit interpretation. These counts do not estimate coverage of English generally.
+
+| Area | Checked compositions | Cases |
+|---|---:|---:|
+| participants | 2 | 2 |
+| scope | 2 | 2 |
+| adjectives | 1 | 1 |
+| compounds | 1 | 1 |
+| movement | 3 | 3 |
+| cognition | 1 | 4 |
+| coordination | 2 | 3 |
+| quantity | 1 | 2 |
+| noun_phrases | 2 | 2 |
+| discourse | 0 | 1 |
+| time | 1 | 2 |
+| speech_act | 2 | 2 |
+| sensory_dimensions | 0 | 4 |
+| affect | 1 | 2 |
+| bodily_need | 3 | 3 |
+| movement_manner | 0 | 2 |
+| comparison | 0 | 1 |
+| conditional | 1 | 1 |
+| modality | 0 | 1 |
+| poetic_meaning | 1 | 1 |
+
+## Unfinished cases
+
+- **She cares for him.** — Resolve both pronouns from discourse or request referents (requires_interpretation)
+- **Nora will care for Eli tomorrow.** — Preserve future time and commitment ambiguity (requires_interpretation)
+- **The radio is hot.** — Temperature is not generic activity (requires_interpretation)
+- **The radio is heavy.** — Mass or weight must not collapse into size (requires_interpretation)
+- **The lamp is bright.** — Express visual intensity (requires_interpretation)
+- **The stone is rough.** — Express surface texture (requires_interpretation)
+- **Nora prefers tea to coffee.** — Preserve preference direction and both alternatives (preview_needs_semantic_review)
+- **Orin is curious about the map.** — Interest in knowing is not merely attention (preview_needs_semantic_review)
+- **Nora learned the route.** — Represent learning and its result without equating every revision with truth (preview_needs_semantic_review)
+- **Eli understands Nora.** — Preserve interpretation or understanding beyond receiving communication (preview_needs_semantic_review)
+- **Nora runs to the gate.** — Running manner is not any fast movement (requires_interpretation)
+- **Eli swims across the river.** — Propulsion and medium interaction are not passive transport (requires_interpretation)
+- **Exactly three lamps are active.** — Quantify three bearers, not repetitions of one assertion (preview_needs_semantic_review)
+- **This lamp is brighter than that lamp.** — Bind comparison direction, dimension, and both referents (requires_interpretation)
+- **Nora may enter the archive.** — Disambiguate permission versus possibility (requires_interpretation)
+- **Nora cares for Eli or Orin is conscious.** — Resolve inclusive versus exclusive interpretation (requires_interpretation)

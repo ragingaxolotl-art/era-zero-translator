@@ -1,0 +1,36 @@
+{
+  "tested_revision": "7bedb8b9a88fb476b7a84efa439a13722bf21c35",
+  "scope": "Isolated manually assembled IR probe, not English composition or general temporal coverage.",
+  "construction": "Completed running IR nested in a timed predication clause under possibility; second case keeps time on the outer clause. Existing renderer and browser scheduler only.",
+  "results": [
+    {
+      "temporal_inside": true,
+      "scopes": [
+        {
+          "operator": "modality",
+          "mode": "possible"
+        },
+        {
+          "operator": "time",
+          "relation": "before_speech"
+        }
+      ],
+      "ruby_browser_midi_equal": true
+    },
+    {
+      "temporal_inside": false,
+      "scopes": [
+        {
+          "operator": "time",
+          "relation": "before_speech"
+        },
+        {
+          "operator": "modality",
+          "mode": "possible"
+        }
+      ],
+      "ruby_browser_midi_equal": true
+    }
+  ],
+  "next_action": "Reuse nested clauses in English composition instead of introducing a new time operator or marker."
+}
