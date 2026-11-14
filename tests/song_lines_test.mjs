@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {composeInformationPassage,informationPassagePlan,decodeInformationPassageMidi} from '../pages/information_passage.mjs';
+import {faultCorrectionPlan} from '../pages/fault_correction.mjs';
 import {notesFromMidi} from '../pages/performance_codec.mjs';
 import {songMidi,scoreSongText,needsWholeReading} from '../pages/song_lines.mjs';
 import {encodeName} from '../pages/names.mjs';
@@ -72,7 +73,7 @@ class ResultElement extends Element {
 const fields=Object.fromEntries(['sourceInput','output','phraseCoverage','resolutionPanel','results','decisionSummary','candidateList'].map(id=>[id,new ResultElement()]));
 fields.sourceInput.value=phrase;
 let forwarded=[],playedLine;
-const ctx=vm.createContext({informationPassagePlan,composeInformationPassage,scoreSongText,compactChordMidi,
+const ctx=vm.createContext({faultCorrectionPlan,informationPassagePlan,composeInformationPassage,scoreSongText,compactChordMidi,
  state:{data:a,mode:'general',wordSelections:new Map()},$:id=>fields[id],sentenceTemplate:load,document:{createElement:()=>new ResultElement()},
  savedCompoundPlayer:{play:async(bytes,options)=>{playedLine={bytes,options};},stop(){}},toast(){},download(){},
  addPerformance:(text,midi,label)=>forwarded.push({text,midi,label})});
@@ -87,3 +88,15 @@ control('Add to song').click();assert.equal(forwarded[0].text,phrase);assert.dee
 fields.sourceInput.value='We found the program. We deleted it.';control('Add to song').click();assert.equal(forwarded.length,1);
 assert.equal(await ctx.showWholePassage(fields.sourceInput.value),false);
 console.log('PASS whole passage, chord preview and Add to song buttons use the scored notes and discard stale readings.');
+
+fields.sourceInput.value='we need to resolve the redundancy error';
+assert.equal(await ctx.showWholePassage(fields.sourceInput.value),true);
+const faultCard=fields.candidateList.children[0],faultButton=name=>faultCard.children.find(e=>e.textContent===name);
+assert.equal(faultCard.children[1].textContent,'Our group needs to correct the redundancy fault. “redundancy” names the kind of fault.');
+await faultButton('Play whole sentence').click();
+faultButton('Add to song').click();
+assert.equal(forwarded[1].text,fields.sourceInput.value);
+assert.deepEqual(lineNotes(forwarded[1].midi),lineNotes(playedLine.bytes));
+await faultButton('Play compact chords').click();
+assert.deepEqual(lineNotes(expandChordMidi(playedLine.bytes,a.atoms)),lineNotes(forwarded[1].midi));
+console.log('PASS the submitted sentence plays and enters the song directly from its whole-sentence controls.');

@@ -20,8 +20,8 @@ FileUtils.mkdir_p(resolution_dir)
 
 index_html = File.read(File.join(root, "app/public/index.html"))
   .gsub('href="/"', 'href="./"')
-  .gsub('href="/styles.css?v=1.15.0"', 'href="./styles.css?v=1.15.0"')
-  .gsub('<script src="/app.js?v=1.15.0" defer></script>', '<script type="module" src="./app.js?v=1.15.0"></script>')
+  .gsub('href="/styles.css?v=1.15.0"', 'href="./styles.css?v=1.15.1"')
+  .gsub('<script src="/app.js?v=1.15.0" defer></script>', '<script type="module" src="./app.js?v=1.15.1"></script>')
   .sub('    <nav class="app-tabs"', "    <p><a href=\"./compound-builder.html\">Build and save your own compounds →</a></p>\n    <nav class=\"app-tabs\"")
   .gsub('Canonical engine ready', 'Loading canonical browser engine')
   .sub('Use an ordinary sentence. The translator infers intent and state, asks only when your wording has more than one real meaning, and produces canonical Era Zero notation.', 'Write a sentence, choose the intended meaning, and play it as Era Zero music. You can build a missing verb or adjective from words you already have.')
@@ -29,7 +29,12 @@ index_html = File.read(File.join(root, "app/public/index.html"))
   .gsub('Local workbench for', 'Browser workbench for')
   .gsub('DBA Era Zero · Local canonical translator', 'DBA Era Zero · Canonical browser translator')
 index_html = index_html
-  .sub('<button data-example="I am leaving home now.">', '<button data-example="We have found the program. We need to delete it.">found the program</button>' + "\n            " + '<button data-example="I am leaving home now.">')
+  .sub('<button data-example="I am leaving home now.">', [
+    '<button data-example="We need to resolve the redundancy error.">redundancy error</button>',
+    '<button data-example="We have found the program. We need to delete it.">found the program</button>',
+    '<button data-example="I am leaving home now.">'
+  ].join("\n            "))
+  .sub('<p class="eyebrow">Interpretation</p><h2 id="resultTitle">Candidate meanings</h2>', '<p class="eyebrow">Interpretation</p><h2 id="resultTitle">Your translation</h2>')
   .sub('<p class="eyebrow">Canonical result</p>', '<p class="eyebrow" id="resultScope">Translation</p>')
   .sub('<button id="hearTranslation"', '<button id="addSentenceToSong" type="button" hidden>Add to song</button><button id="playEntryChords" type="button">Play compact chords</button><button id="hearTranslation"')
   .sub('      <section class="conversation', File.read(File.join(root, "app/browser/song_editor.html")) + '      <section class="conversation')

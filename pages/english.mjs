@@ -3,6 +3,9 @@ const STOPWORDS=new Set('a an the to of in on at for from with am is are was wer
 const DIRECT=new Set(['atom','compound']);
 const INHERENTLY_POLYSEMOUS=new Set(['know','have','exist','receive','send','share','change','return','run','home']);
 const PARTICIPANTS=new Map(Object.entries({i:'speaker',me:'speaker',my:'speaker',myself:'speaker',we:'speaker_group',us:'speaker_group',our:'speaker_group',ourselves:'speaker_group',you:'addressee',your:'addressee',yourself:'addressee',he:'other_person',him:'other_person',his:'other_person',she:'other_person',her:'other_person',hers:'other_person',they:'other_group',them:'other_group',their:'other_group',it:'other_referent',its:'other_referent'}));
+const SCOPE_WORDS=new Set('and or but if unless then because not never no tomorrow yesterday today already always sometimes'.split(' '));
+const DETERMINERS=new Set('a an the this that these those my your his her its our their'.split(' '));
+const COMMON_DESCRIPTORS=new Set('small large big tiny short long'.split(' '));
 const PHRASAL_VERBS=new Set(['pick up','back up','shut down','log in','log out','power on','turn off','turn on','set up','break down']);
 
 const IRREGULAR={
@@ -160,7 +163,10 @@ function unknownSemanticKind(words,index){
   const word=words[index],previous=words[index-1]||'',beforePrevious=words[index-2]||'',next=words[index+1]||'';
   if(PHRASAL_VERBS.has(`${word} ${next}`))return'verb';
   if(word==='together'&&index>0)return'manner';
-  if(['a','an','the','this','that','these','those','my','your','his','her','its','our','their'].includes(previous))return isAttributiveProperty(word,next)?'descriptor':null;
+  if(COMMON_DESCRIPTORS.has(word) || (words.length===1 && isAttributiveProperty(word,'object')))return'descriptor';
+  if(DETERMINERS.has(previous))return isAttributiveProperty(word,next)?'descriptor':null;
+  if(DETERMINERS.has(beforePrevious)&&(COMMON_DESCRIPTORS.has(previous)||isAttributiveProperty(previous,word)))return null;
+  if(word==='resolve' && words.length===1)return'verb';
   if(/(?:ed|ing)$/.test(word)||['do','does','did','can','could','will','would','should','may','might','must'].includes(previous)||(previous==='to'&&['want','wants','wanted','need','needs','needed','try','tries','tried','plan','plans','planned'].includes(beforePrevious)))return'verb';
   if(['am','is','are','was','were','be','being','been','feel','feels','felt','seem','seems','look','looks'].includes(previous))return'descriptor';
   if(index===0&&next&&['the','a','an','me','us','him','her','them','it'].includes(next))return'verb';
@@ -182,7 +188,7 @@ function termCoverage(normalized,data,ranked,allSenses){
     const participant=PARTICIPANTS.get(word),semanticKind=unknownSemanticKind(words,tokenIndex);
     const particle=PHRASAL_VERBS.has(`${words[tokenIndex-1]||''} ${word}`);
     const contextualStructure=['grammar','semantic_ir'].includes(matches[0]?.route)&&rankBySense.get(matches[0].sense_id)?.match_type==='contextual_english';
-    const status=participant?'participant_reference':contextualStructure?'structural':direct.length?'canonical':gaps.length?'documented_gap':labels.length?'labeled_entity':authoritative.length?'structural':STOPWORDS.has(word)||particle?'function_word':semanticKind?'unresolved_semantic':'phonemic_label';
+    const status=participant?'participant_reference':SCOPE_WORDS.has(word)&&!authoritative.length?'function_word':contextualStructure?'structural':direct.length?'canonical':gaps.length?'documented_gap':labels.length?'labeled_entity':authoritative.length?'structural':STOPWORDS.has(word)||particle?'function_word':semanticKind?'unresolved_semantic':'phonemic_label';
     const label=labels[0];
     return{token_index:tokenIndex,term:word,status,semantic_kind:semanticKind,participant_role:participant||null,semantic_class_target_id:label?.semantic_class_target_id||null,recommended_sense_id:matches[0]?.sense_id??null,matches};
   });

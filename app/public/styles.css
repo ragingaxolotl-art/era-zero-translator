@@ -47,3 +47,11 @@
 
 .song-editor{margin:1.5rem 0;padding:clamp(1rem,3vw,2rem)}
 .song-editor li{margin:.55rem 0}.song-editor li button{margin-inline-start:.75rem}
+
+.result-grid > *, .candidate-list details, .phrase-terms select {min-width:0}
+.result-grid:has(.resolution.hidden) {grid-template-columns:minmax(0,1fr)}
+.candidate-list summary {cursor:pointer;padding:10px 0;color:var(--muted)}
+.word-score {margin-bottom:12px}
+.word-score p {margin:0 0 8px;overflow-wrap:anywhere}
+.word-score button {margin:0 6px 6px 0}
+@media(max-width:900px){.result-grid{grid-template-columns:minmax(0,1fr)}}
