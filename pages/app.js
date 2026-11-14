@@ -83,7 +83,7 @@ document.querySelectorAll('.mode-tab').forEach(btn=>btn.addEventListener('click'
 function setExamples(mode){document.querySelectorAll('[data-example]').forEach((button,index)=>{const [caption,phrase]=examples[mode][index];button.textContent=caption;button.dataset.example=phrase;});}
 setExamples('general');
 $('sourceInput').placeholder='Try “Pip carries the heavy box to Ada.”';
-$('inputHint').textContent='Choose the meaning you intend. If a verb or adjective is missing, you can build it from existing words.';
+$('inputHint').textContent='Choose the intended meaning before playing the music.';
 document.querySelectorAll('[data-example]').forEach(btn=>btn.addEventListener('click',()=>{$('sourceInput').value=btn.dataset.example;$('sourceInput').dispatchEvent(new Event('input'));$('sourceInput').focus()}));
 $('analyzeButton').addEventListener('click',analyze);
 $('sourceInput').addEventListener('keydown',event=>{if((event.metaKey||event.ctrlKey)&&event.key==='Enter')analyze()});
@@ -1064,7 +1064,7 @@ async function showSavedSentence(input){
  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
  for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
  $('results').classList.remove('hidden');$('candidateList').innerHTML='';$('decisionSummary').textContent='Use your saved word meaning.';
- const card=document.createElement('article');card.className='candidate';$('candidateList').append(card);
+ const card=document.createElement('article');card.className='candidate saved-sentence';$('candidateList').append(card);
  await mountLocalEnglishControls(card,input,registry,state.data,{download,player:savedCompoundPlayer,isCurrent:()=>current()&&card.isConnected!==false,onError:error=>toast(error.message)});
  if(current()&&card.isConnected)card.scrollIntoView({behavior:'smooth',block:'center'});
  return true;

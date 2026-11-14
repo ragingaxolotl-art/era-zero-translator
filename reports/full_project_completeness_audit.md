@@ -4,7 +4,7 @@ Status: **PASS**
 
 - Checks passed: **11**
 - Checks failed: **0**
-- Audited: **2026-10-10**
+- Audited: **2026-11-14**
 
 This audit reconciles the browser release with the canonical lexicon, compound dictionary, English index, current gate status, original shared conversation, integrated Google document, and current development-conversation decisions.
 

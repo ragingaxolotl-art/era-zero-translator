@@ -11,6 +11,7 @@ require_relative "lib/era_zero_renderer"
 require_relative "lib/era_zero_presentation"
 require_relative "lib/era_zero_browser_compounds"
 
+release_date = "2026-11-14"
 root = EraZeroValidation::ROOT
 pages = File.join(root, "pages")
 data_dir = File.join(pages, "data")
@@ -80,7 +81,7 @@ canonical_by_target.sort.each do |target_id, sense|
 end
 
 browser_index = {
-  "format" => "EZ-WEB-1", "version" => "1.0.0", "generated" => "2026-10-10",
+  "format" => "EZ-WEB-1", "version" => "1.0.0", "generated" => release_date,
   "counts" => { "atoms" => 324, "compounds" => compounds.length, "senses" => senses.length, "lemmas" => senses.map { |s| s["lemma"].downcase }.uniq.length, "gaps" => senses.count { |s| s["route"] == "gap" }, "plain_language_entries" => plain_english.fetch("entries").length },
   "senses" => senses,
   "game_story_senses" => game_story_senses,
@@ -153,7 +154,7 @@ documents = document_paths.map do |absolute|
 end.sort_by { |entry| [entry.fetch("category"), entry.fetch("path")] }
 document_manifest = {
   "format" => "EZ-DOCUMENT-MANIFEST-1",
-  "generated" => "2026-10-10",
+  "generated" => release_date,
   "count" => documents.length,
   "categories" => documents.map { |entry| entry.fetch("category") }.uniq,
   "sources" => [

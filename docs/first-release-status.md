@@ -22,7 +22,7 @@ A saved word also appears as a component for the next word you build. The builde
 
 ## What was verified
 
-In a browser, a new movement verb survived reloading. A second word reused that verb as an adjective and shared its mover. “Kira patternstrode. [0]” produced 165 scheduled tones with one mover and a past-time frame. The browser also generated the adjective under possibility and negation. Play and Stop were exercised with Web Audio.
+In a browser, a new movement verb survived reloading. A second word reused that verb as an adjective and shared its mover. “Kira patternstrode. [0]” produced 165 scheduled tones with one mover and a past-time frame. “Nora might not be lifestriding. [2]” scheduled 280 tones with the nested adjective, possibility and negation. Editing the sentence cleared the old result. Play and Stop were exercised with Web Audio.
 
 A second browser walkthrough started with “The routine opened the path,” a line from the Still Room manuscript. Its missing verb led to the builder. We defined one communication sense of *open* from completed distinct actualization and active shared channel. Returning to the original sentence preserved the routine as actor, the path as target, and past time. Playback scheduled 160 tones. This was a worked interpretation of one story line. [Story source](https://github.com/ragingaxolotl-art/cyber-pet-lore/blob/main/sources/haven-stories/still/manuscript.md)
 

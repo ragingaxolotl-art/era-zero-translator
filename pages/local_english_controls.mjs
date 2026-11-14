@@ -4,7 +4,7 @@ import {localAdjectivePlan,composeLocalAdjective,localVerbPlan,localVerbCandidat
 import {expandLocalCompound} from './local_compound_expansion.mjs';
 import {contextualContentReference} from './contextual_content.mjs';
 function describeInterpretation(plan) {
- const parts = [`${plan.speech_act === 'question' ? 'Question' : 'Statement'} about ${plan.subject}`];
+ const parts = [plan.speech_act === 'question' ? 'Question' : 'Statement', 'subject '+plan.subject];
  if (plan.object) parts.push(`object ${plan.object}`);
  if (plan.scopes.some(scope => scope.operator === 'time' && scope.relation === 'before_speech')) parts.push('past');
  const possible = plan.scopes.some(scope => scope.operator === 'modality');
@@ -60,6 +60,7 @@ export async function mountLocalEnglishControls(container,input,registry,authori
   subjectRole.value = plan.available_roles[0].role;
  }
  if(subjectRole){subjectRole.addEventListener('change',roleChanged);objectRole?.addEventListener('change',roleChanged);roleChanged();}
+ generate.className='primary';
  for(const {field} of fields)field.addEventListener('input',()=>{revision++;player?.stop();output.replaceChildren();});
  generate.addEventListener('click',async()=>{
   if(!isCurrent()||generate.disabled)return;const selectedSubject=subjectRole?.value,selectedObject=objectRole?.value;const version=revision,values=fields.map(({field})=>field.value.trim()),current=()=>isCurrent()&&container.isConnected!==false&&version===revision&&subjectRole?.value===selectedSubject&&objectRole?.value===selectedObject&&fields.every(({field},i)=>field.value.trim()===values[i]);
