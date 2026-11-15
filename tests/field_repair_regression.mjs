@@ -6,6 +6,7 @@ import {storyWords} from '../pages/story_words.mjs';
 import {compactChordMidi,compactChordPerformance} from '../pages/compact_chords.mjs';
 import {readSongLine} from '../pages/song_readback.mjs';
 import {decodeSupportedMeaningWithDrafts} from '../pages/semantic_music_dispatch.mjs';
+import {analyzeEnglish} from '../pages/english.mjs';
 import {faultCorrectionPlan} from '../pages/fault_correction.mjs';
 
 const read=name=>JSON.parse(fs.readFileSync(new URL('../pages/data/'+name,import.meta.url)));
@@ -18,6 +19,12 @@ async function check(text,answers={}){
   assert.deepEqual(raw,meaning);
   assert.deepEqual((await readSongLine(compactChordMidi(midi,authority.atoms),authority.atoms,records,true)).meaning,meaning);
   return {heard:raw,midi};
+}
+for(const input of ['Follow the route.','The pilot followed a marked trail.','The scouts follow their path.']){
+  assert.equal(analyzeEnglish(input,authority).candidates[0].sense_key,'trajectory_tracking',input);
+}
+for(const input of ['An adjustment followed.','An adjustment followed after the route reopened.']){
+  assert.equal(analyzeEnglish(input,authority).candidates[0].sense_key,'occurrence_after_a_reference_event',input);
 }
 const carry='The compiler carried the jobs.';
 assert.equal(storyReading(carry,authority).question.key,'carrying0');

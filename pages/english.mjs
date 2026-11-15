@@ -23,7 +23,9 @@ const IRREGULAR={
   shared:['share'],changed:['change'],created:['create']
 };
 
+const followingPath=/\bfollow(?:s|ed|ing)?\s+(?:(?:a|an|the|this|that|these|those|our|your|their|its)\s+)?(?:(?:marked|mapped|planned|same|old|new|winding|designated|chosen|short|long|return)\s+){0,2}(?:routes?|paths?|trails?|tracks?|trajector(?:y|ies)|courses?)(?=$|\s+(?:to|toward|towards|until|through|into|home|back|again)\b)/;
 const SENSE_HINTS=[
+  [followingPath,'trajectory_tracking',.68,'context'],
   [/\b(?:find|finds|finding|found|discover|discovers|discovered)\b/,'completed_target_discovery_generalized',.34,'context'],
   [/\b(?:wait|waits|waiting|waited)\b/,'deferred_action',.62,'context'],
   [/\b(?:cross|crosses|crossing|crossed)\b.*\b(?:bridge|boundary|border|line|threshold)\b/,'boundary_traversal',.68,'context'],
@@ -125,6 +127,7 @@ function scoreSense(sense,input,inputTokens){
   if(!exact&&!surfaceMatch&&!lexical&&!hint)return null;
   let score=sense.plain_mapping?(exactLemma?1:exact?.72:surfaceMatch?(bestTokens.size===1?.72:.82):Math.min(.12+.28*ratio,.44)):(exact?1:surfaceMatch?(bestTokens.size===1?.78:.90):Math.min(.18+.34*ratio,.52));
   if(hint)score+=hint[2];
+  if(sense.sense_key==='occurrence_after_a_reference_event'&&followingPath.test(input))score-=.45;
   if(sense.sense_key==='canonical_compound_label'&&['happy felt mood','sad felt mood'].includes(sense.lemma)){
     const mood=sense.lemma.split(' ')[0];
     if(input.endsWith(' '+mood)&&/\b(?:am|is|are|was|were|feel|feels|felt) (?:not )?(?:happy|sad)$/.test(input))score=1;
