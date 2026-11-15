@@ -15,13 +15,13 @@ Status: **CURRENT**
 | continue | 1 | semantic_ir | — |
 | cross | 1 | semantic_ir | — |
 | exist | 2 | atom | ORI:010, ORI:110 |
-| follow | 1 | semantic_ir | — |
+| follow | 2 | compound, semantic_ir | CMP:1a34b714578bdb300dfedbe4 |
 | food | 1 | gap | — |
 | forget | 1 | semantic_ir | — |
 | friend | 1 | gap | — |
 | future | 1 | semantic_ir | — |
 | go | 2 | atom, semantic_ir | MOV:121 |
-| have | 2 | gap, grammar | — |
+| have | 3 | compound, gap, grammar | CMP:beb2a0dff4e59fb7d8b75bf9 |
 | home | 2 | gap | — |
 | if | 1 | semantic_ir | — |
 | know | 2 | atom, gap | MIN:010 |

@@ -1,6 +1,6 @@
 // Perform dictionary roots as chords. Names, grammar and the speech-act contour retain their notes.
 import {notesFromMidi,midiFromNoteTimeline} from './performance_codec.mjs';
-import {decodeStrictMusicNotes} from './strict_music_decoder.mjs?v=joined-roots-1';
+import {decodeStrictMusicNotes} from './strict_music_decoder.mjs?v=field-repairs-1';
 
 const laneOffsets=[0,5,12],tritMotion=[0,2,-2];
 const cache=new WeakMap();
@@ -95,7 +95,8 @@ export function compactChordPerformance(bytes,atoms,{preview=false}={}) {
   const {notes,division,tempo}=clock(bytes,false);
   const roots=scoreRoots(notes,division,atoms,dictionary(atoms));
   const output=[];
-  let saved=0,firstRoot=null,rootCount=0;
+  let saved=0,rootCount=0;
+  const previews=[];
   const seconds=tick=>tick*tempo/division/1e6;
   for(let i=0;i<notes.length;){
     const n=notes[i],base=n.midi,root=roots.get(n.start_tick);
@@ -113,17 +114,19 @@ export function compactChordPerformance(bytes,atoms,{preview=false}={}) {
     address.forEach((pitch,lane)=>output.push(note(pitch,addressStart,lane===2?addressEnd:release)));
     if(tail>=0)output.push(note(chordTail(tail,address[2],base),addressEnd,release));
     const end=i+entry.path.length+(tail>=0?1:0);
-    if(preview&&!firstRoot){
-      firstRoot={id:entry.id,atSeconds:seconds(start),
-        melody:midiFromNoteTimeline(relativeNotes(notes.slice(i,end)),division,tempo),
-        chords:midiFromNoteTimeline(relativeNotes(output.slice(outputStart)),division,tempo)};
+    if(preview){
+      const inputStart=i,outputEnd=output.length;
+      previews.push({id:entry.id,atSeconds:seconds(start),
+        get melody(){return midiFromNoteTimeline(relativeNotes(notes.slice(inputStart,end)),division,tempo);},
+        get chords(){return midiFromNoteTimeline(relativeNotes(output.slice(outputStart,outputEnd)),division,tempo);}
+      });
     }
     saved+=notes[end-1].end_tick-n.start_tick-(release-start);
     rootCount++;
     i=end;
   }
   const originalLength=notes.at(-1)?.end_tick??0;
-  return {midi:midiFromNoteTimeline(output,division,tempo),rootCount,firstRoot,
+  return {midi:midiFromNoteTimeline(output,division,tempo),rootCount,firstRoot:previews[0]??null,previews,
     melodySeconds:seconds(originalLength),chordSeconds:seconds(originalLength-saved)};
 }
 export function compactChordMidi(bytes,atoms) {

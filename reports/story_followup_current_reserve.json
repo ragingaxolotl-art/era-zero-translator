@@ -1,0 +1,343 @@
+{
+  "cohort": "reserve",
+  "results": [
+    {
+      "key": "aru-waits",
+      "questions": [],
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "AA",
+                "R",
+                "UH"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "matches_preregistered_meaning": true
+    },
+    {
+      "key": "came-back-now",
+      "questions": [
+        {
+          "prompt": "Which meaning do you intend in this action?",
+          "options": [
+            "went back to an earlier place",
+            "happened again"
+          ],
+          "answer": null
+        }
+      ]
+    },
+    {
+      "key": "comparison-arrives",
+      "questions": []
+    },
+    {
+      "key": "both-versions",
+      "questions": []
+    },
+    {
+      "key": "resumed-stream-waits",
+      "questions": []
+    },
+    {
+      "key": "restore-then-report",
+      "questions": [],
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "L",
+                "AE",
+                "CH"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "AE",
+                "D",
+                "JH",
+                "UH",
+                "S",
+                "T",
+                "M",
+                "EH",
+                "N",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "EH",
+                "K",
+                "W",
+                "EH",
+                "S",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "REP:110",
+            "arguments": [
+              {
+                "role": "source",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          },
+          {
+            "predicate": "CMP:3d95154b4812da0cefd7fc45",
+            "arguments": [
+              {
+                "role": "bearer",
+                "entity": 2,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "matches_preregistered_meaning": true
+    },
+    {
+      "key": "you-did-not-return",
+      "questions": [
+        {
+          "prompt": "Which meaning do you intend in this action?",
+          "options": [
+            "went back to an earlier place",
+            "happened again"
+          ],
+          "answer": "meaning:return"
+        }
+      ],
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "deictic",
+              "role": "addressee"
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:0808e01be62b7fac873ee324",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech",
+              "negation"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "matches_preregistered_meaning": true
+    },
+    {
+      "key": "same-finder",
+      "questions": [
+        {
+          "prompt": "What does “It” refer to?",
+          "options": [
+            "Latch (reference 1)",
+            "the result (reference 2)"
+          ],
+          "answer": "0"
+        }
+      ],
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "L",
+                "AE",
+                "CH"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "EH",
+                "S",
+                "UH",
+                "L",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "K",
+                "AA",
+                "N",
+                "T",
+                "EH",
+                "K",
+                "S",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:ec01f9b5c6eb3c5483bc3b72",
+            "arguments": [
+              {
+                "role": "experiencer",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          },
+          {
+            "predicate": "CMP:ec01f9b5c6eb3c5483bc3b72",
+            "arguments": [
+              {
+                "role": "experiencer",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 2,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "matches_preregistered_meaning": true
+    }
+  ]
+}

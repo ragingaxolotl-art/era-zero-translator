@@ -6,12 +6,13 @@ import {decodeRunningMidi} from './running_decoder.mjs';
 import {decodeSpatialRelationMidi} from './spatial_relation_decoder.mjs';
 import {decodePhysicalCustodyMidi,decodeCustodyAcquisitionMidi,decodeCustodyTransferMidi} from './custody_decoder.mjs';
 import {decodeCustodyDeliveryMidi} from './delivery_decoder.mjs';
-import {decodeDestinationCarryingMidi} from './carrying_decoder.mjs';
+import {decodeNamedProcessMidi} from './named_process_decoder.mjs?v=field-repairs-1';
+import {decodePhysicalCarryingMidi,decodeDestinationCarryingMidi} from './carrying_decoder.mjs?v=field-repairs-1';
 import {decodeFeltConditionMidi} from './felt_decoder.mjs';
 import {decodeContextualStandardMidi} from './contextual_standard_decoder.mjs';
 import {decodeMaterialMeasurementMidi} from './material_measurement_decoder.mjs';
 import {decodePropertyComparisonMidi} from './property_comparison_decoder.mjs';
-const DECODERS=[decodeCareMidi,decodeSwimmingMidi,decodePhysicalEntryMidi,decodeRunningMidi,decodeSpatialRelationMidi,decodePhysicalCustodyMidi,decodeCustodyAcquisitionMidi,decodeCustodyTransferMidi,decodeCustodyDeliveryMidi,decodeDestinationCarryingMidi,decodeFeltConditionMidi,decodeContextualStandardMidi,decodeMaterialMeasurementMidi,decodePropertyComparisonMidi];
+const DECODERS=[decodeNamedProcessMidi,decodePhysicalCarryingMidi,decodeCareMidi,decodeSwimmingMidi,decodePhysicalEntryMidi,decodeRunningMidi,decodeSpatialRelationMidi,decodePhysicalCustodyMidi,decodeCustodyAcquisitionMidi,decodeCustodyTransferMidi,decodeCustodyDeliveryMidi,decodeDestinationCarryingMidi,decodeFeltConditionMidi,decodeContextualStandardMidi,decodeMaterialMeasurementMidi,decodePropertyComparisonMidi];
 export function decodeSupportedMeaningMidi(bytes,atoms){
  const accepted=[];
  for(const decoder of DECODERS){try{accepted.push(decoder(bytes,atoms));}catch{}}
@@ -37,11 +38,13 @@ export async function decodeSupportedMeaningWithDrafts(bytes,atoms,records,{allo
  const {decodePainMidi}=await import('./pain_music.mjs');
  const {decodeCuriosityMidi}=await import('./curiosity_music.mjs');
  const {decodeRouteLearningMidi}=await import('./route_learning_music.mjs');
- const {decodeDictionaryClauseMidi}=await import('./dictionary_clause_music.mjs?v=1.16.1');
- const {decodeFaultCorrectionMidi}=await import('./fault_correction.mjs');
+ const {decodeDictionaryClauseMidi}=await import('./dictionary_clause_music.mjs?v=field-repairs-1');
+ const {decodeFaultCorrectionMidi}=await import('./fault_correction.mjs?v=field-repairs-1');
  const {decodeInformationPassageMidi}=await import('./information_passage.mjs');
- const {decodeStoryMidi}=await import('./story_music.mjs?v=story-passages-1');
+ const {decodeKnownValueMidi}=await import('./known_value.mjs?v=field-repairs-1');
+ const {decodeStoryMidi}=await import('./story_music.mjs?v=field-repairs-1');
  const accepted=[];
+ try{accepted.push(decodeKnownValueMidi(bytes,atoms));}catch{}
  try{accepted.push(decodeStoryMidi(bytes,atoms));}catch{}
  try{accepted.push(decodeDictionaryClauseMidi(bytes,atoms));}catch{}
  try{accepted.push(await decodeFaultCorrectionMidi(bytes,atoms));}catch{}

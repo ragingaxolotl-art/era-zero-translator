@@ -205,12 +205,195 @@ export const storyWords = [
       "CMP:f9554786959994e2f5fb6e9c",
       "ORI:110"
     ]
+  },
+  {
+    "word": "check",
+    "code": 50,
+    "example": "The technician checked the valve.",
+    "near": "A sensor noticed a flash without inspecting anything.",
+    "id": "CMP:b72611332d4684a6b7f0bf19",
+    "parts": [
+      "MIN:011",
+      "LOG:110"
+    ]
+  },
+  {
+    "word": "valid",
+    "code": 51,
+    "example": "The result is valid.",
+    "near": "An untested answer is assumed to be acceptable because it exists.",
+    "id": "CMP:0cddf1c999333b77818f32fc",
+    "parts": [
+      "LOG:010",
+      "ORI:011"
+    ]
+  },
+  {
+    "word": "completion",
+    "code": 52,
+    "example": "Completion of the scan occurred at noon.",
+    "near": "The scan began but stopped before the final step.",
+    "id": "CMP:22a4eb4803d9bf5e07204f02",
+    "parts": [
+      "ORI:010",
+      "ORI:110"
+    ]
+  },
+  {
+    "word": "request",
+    "code": 53,
+    "example": "The worker requested a replay.",
+    "near": "The worker mentioned a replay while describing yesterday.",
+    "id": "CMP:59400f445c53fdb3333c7943",
+    "parts": [
+      "ORI:112",
+      "CON:100"
+    ]
+  },
+  {
+    "word": "follow",
+    "code": 54,
+    "example": "An adjustment followed.",
+    "near": "A traveler followed a guide along the road.",
+    "id": "CMP:1a34b714578bdb300dfedbe4",
+    "parts": [
+      "ORI:010",
+      "ORI:110"
+    ]
+  },
+  {
+    "word": "wrong",
+    "code": 55,
+    "example": "We were wrong about the source.",
+    "near": "A person deliberately broke a rule while correctly predicting its effect.",
+    "id": "CMP:45a6b6cf438ae2274104f30b",
+    "parts": [
+      "MIN:011",
+      "LOG:010"
+    ]
+  },
+  {
+    "word": "open",
+    "code": 56,
+    "example": "The door opened for the first time.",
+    "near": "A door was passable throughout the reported interval.",
+    "id": "CMP:0b0461b1975240868e0bed8d",
+    "parts": [
+      "CMP:3c7e1b60fb3087e942be4555",
+      "ORI:110"
+    ]
+  },
+  {
+    "word": "hand off work",
+    "code": 57,
+    "example": "The dispatcher carried the handoffs between two workers.",
+    "near": "A porter carried a stack of paper without handing work to anyone.",
+    "id": "CMP:36f60b14c3c3f26ad71f2564",
+    "parts": [
+      "CON:100",
+      "DAT:110"
+    ]
+  },
+  {
+    "word": "have",
+    "code": 58,
+    "example": "The team has replays.",
+    "near": "The team knows that replays exist elsewhere but has none.",
+    "id": "CMP:beb2a0dff4e59fb7d8b75bf9",
+    "parts": [
+      "ORI:001",
+      "ORI:011"
+    ]
+  },
+  {
+    "word": "recheck",
+    "code": 59,
+    "example": "The worker rechecked the log.",
+    "near": "The worker kept looking throughout one uninterrupted inspection.",
+    "id": "CMP:ffeb55f462f10014970989a4",
+    "parts": [
+      "CMP:d6b796937329c4412a92ea4a",
+      "CMP:b72611332d4684a6b7f0bf19"
+    ]
+  },
+  {
+    "word": "remain valid",
+    "code": 60,
+    "example": "The permit remained valid throughout the change.",
+    "near": "A previously invalid permit became valid for the first time.",
+    "id": "CMP:7017c0aee0086123c2cf67dc",
+    "parts": [
+      "CMP:0cddf1c999333b77818f32fc",
+      "ORI:010"
+    ]
+  },
+  {
+    "word": "request completion",
+    "code": 61,
+    "example": "The worker requested completion.",
+    "near": "The worker reported that the activity had already completed.",
+    "id": "CMP:ba437968d31a6673a65ed1ff",
+    "parts": [
+      "CMP:22a4eb4803d9bf5e07204f02",
+      "CMP:59400f445c53fdb3333c7943"
+    ]
+  },
+  {
+    "word": "hear",
+    "code": 62,
+    "example": "From the hall I can hear the bell.",
+    "near": "A microphone records the vibration while no one hears it.",
+    "id": "CMP:6cb819bd20ef8429225daca3",
+    "parts": [
+      "CMP:42e9bd596b35612ed6cbe3ce",
+      "MIN:011"
+    ]
+  },
+  {
+    "word": "see",
+    "code": 63,
+    "example": "From here Mira can see the tower.",
+    "near": "The tower first attracts attention when someone mentions it out of view.",
+    "id": "CMP:b937ee54b7c000fafe11d338",
+    "parts": [
+      "CMP:bcfd189eb305cf364ada975a",
+      "MIN:011"
+    ]
+  },
+  {
+    "word": "open for use",
+    "code": 64,
+    "example": "The file was open in the editor.",
+    "near": "The file existed on disk while the application had it closed.",
+    "id": "CMP:bfa62b7a436315bd68c9801e",
+    "parts": [
+      "DAT:000",
+      "ORI:011"
+    ]
+  },
+  {
+    "word": "resume",
+    "code": 65,
+    "example": "After the pause the meeting reopened.",
+    "near": "A separate meeting began while the original session remained suspended.",
+    "id": "CMP:2f0b0fa860550a0826567bb3",
+    "parts": [
+      "CMP:3d95154b4812da0cefd7fc45",
+      "ORI:110"
+    ]
   }
 ];
 export const storyDependencies = [
   {
     "id": "CMP:bcfd189eb305cf364ada975a",
     "code": 1,
+    "parts": [
+      "CMP:ade73037114406a2cd91ce13"
+    ]
+  },
+  {
+    "id": "CMP:42e9bd596b35612ed6cbe3ce",
+    "code": 2,
     "parts": [
       "CMP:ade73037114406a2cd91ce13"
     ]

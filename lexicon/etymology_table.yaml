@@ -4,12 +4,12 @@ metadata:
   version: 1.0.0
   status: canonical_gate4e
   atom_entries: 324
-  compound_entries: 82
-  total_entries: 406
+  compound_entries: 98
+  total_entries: 422
   scope: Auditable synchronic derivation and authority provenance; no invented natural-language
     ancestry.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: b894c0065bc49847461abfbe23de8b5d9779632be6bcc56756dda04bd86eb7aa
+  compound_dictionary_fingerprint: 9220e1989a440ce941852da3045960c0c49409e69bc6a1dd1d7a529074cfc2ff
 principles:
   synchronic_not_fictional: Era Zero forms are engineered encodings. The table records
     actual construction rules and approval history rather than inventing ancestors
@@ -17388,6 +17388,117 @@ entries:
     approval_date: '2026-10-29'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
+- etymology_id: ETY:db61db77e62cf40b4d159c2d
+  target_type: compound
+  target_id: CMP:0b0461b1975240868e0bed8d
+  status: canonical
+  english_label: transition to a traversable passage
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: ORI:110
+  components:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:3c7e1b60fb3087e942be4555
+    definition_version: 1.0.0
+  - node_id: h
+    kind: root
+    root_id: ORI:110
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: A previously nonpassable door, gate or route becomes passable
+      for the relevant traffic by the end of the transition. Its history before this
+      transition is unspecified.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: transition_to_a_traversable_passage
+      sound_code: 56
+      added_definition: A previously nonpassable door, gate or route becomes passable
+        for the relevant traffic by the end of the transition. Its history before
+        this transition is unspecified.
+      excludes:
+      - A door was passable throughout the reported interval.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 0b0461b1975240868e0bed8dec24f480140652b3e6f8571695e78ee953da4e7f
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: lexicon/story_compound_batch.json
+    approval_date: '2026-11-15'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:e9e16a83cdd382174e572483
+  target_type: compound
+  target_id: CMP:0cddf1c999333b77818f32fc
+  status: canonical
+  english_label: satisfaction of an applicable criterion
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: ORI:011
+  components:
+  - node_id: q1
+    kind: root
+    root_id: LOG:010
+  - node_id: h
+    kind: root
+    root_id: ORI:011
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: A particular result, claim, permit or other bearer meets
+      the criterion applicable to it at the reference time. Continuing validity adds
+      a duration over which that relationship holds.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: satisfaction_of_an_applicable_criterion
+      sound_code: 51
+      added_definition: A particular result, claim, permit or other bearer meets the
+        criterion applicable to it at the reference time. Continuing validity adds
+        a duration over which that relationship holds.
+      excludes:
+      - An untested answer is assumed to be acceptable because it exists.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 0cddf1c999333b77818f32fc41b42f7fad0a8d62f091ecae04d74ebd42662eed
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: lexicon/story_compound_batch.json
+    approval_date: '2026-11-15'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
 - etymology_id: ETY:0e7d5a1e0d531d86a3587485
   target_type: compound
   target_id: CMP:111b772027accab2054f0415
@@ -17517,6 +17628,61 @@ entries:
     authority: gate4b_reviewed_compound
     record: migrations/destination_running_2026_11_04.yaml
     approval_date: '2026-11-04'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:49aa7c3cce075740dd43c8ce
+  target_type: compound
+  target_id: CMP:1a34b714578bdb300dfedbe4
+  status: canonical
+  english_label: occurrence after a reference event
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: ORI:110
+  components:
+  - node_id: q1
+    kind: root
+    root_id: ORI:010
+  - node_id: h
+    kind: root
+    root_id: ORI:110
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: An event occurs later than a reference event supplied by
+      the context. Temporal succession by itself supplies neither causation nor movement
+      behind another participant.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: occurrence_after_a_reference_event
+      sound_code: 54
+      added_definition: An event occurs later than a reference event supplied by the
+        context. Temporal succession by itself supplies neither causation nor movement
+        behind another participant.
+      excludes:
+      - A traveler followed a guide along the road.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 1a34b714578bdb300dfedbe4da652a2a5729dafc5c492d4ec6bb3405b0ca5827
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: lexicon/story_compound_batch.json
+    approval_date: '2026-11-15'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
 - etymology_id: ETY:fbf21a6d21cba6400a4f76a8
@@ -17909,6 +18075,61 @@ entries:
     approval_date: '2026-11-04'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
+- etymology_id: ETY:b130cae4e895628e99dddf80
+  target_type: compound
+  target_id: CMP:22a4eb4803d9bf5e07204f02
+  status: canonical
+  english_label: attainment of an activity endpoint
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: ORI:110
+  components:
+  - node_id: q1
+    kind: root
+    root_id: ORI:010
+  - node_id: h
+    kind: root
+    root_id: ORI:110
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: A process or task attains its relevant endpoint. The endpoint
+      belongs to that activity. A desire, request or prediction can mention completion
+      without committing the speaker to its occurrence.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: attainment_of_an_activity_endpoint
+      sound_code: 52
+      added_definition: A process or task attains its relevant endpoint. The endpoint
+        belongs to that activity. A desire, request or prediction can mention completion
+        without committing the speaker to its occurrence.
+      excludes:
+      - The scan began but stopped before the final step.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 22a4eb4803d9bf5e07204f024df745329deb64cde4161e65ec9c88e79b7e7273
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: lexicon/story_compound_batch.json
+    approval_date: '2026-11-15'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
 - etymology_id: ETY:7e80bdfdb0f9d072478cb8e8
   target_type: compound
   target_id: CMP:22f8ddc4d9b2d1a818d38e9f
@@ -18147,6 +18368,62 @@ entries:
     approval_date: '2026-10-09'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
+- etymology_id: ETY:65903c8b8137c89ebda20f6e
+  target_type: compound
+  target_id: CMP:2f0b0fa860550a0826567bb3
+  status: canonical
+  english_label: resumption of an interrupted activity
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: ORI:110
+  components:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:3d95154b4812da0cefd7fc45
+    definition_version: 1.0.0
+  - node_id: h
+    kind: root
+    root_id: ORI:110
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: A session or activity that was interrupted begins to proceed
+      again as the same activity. A venue opening to traffic or an unrelated meeting
+      beginning does not establish resumption.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: resumption_of_an_interrupted_activity
+      sound_code: 65
+      added_definition: A session or activity that was interrupted begins to proceed
+        again as the same activity. A venue opening to traffic or an unrelated meeting
+        beginning does not establish resumption.
+      excludes:
+      - A separate meeting began while the original session remained suspended.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 2f0b0fa860550a0826567bb3898aae37af6b7459212b41f5ade04f4c49cd4c22
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: lexicon/story_compound_batch.json
+    approval_date: '2026-11-15'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
 - etymology_id: ETY:e2c93aae6d77746ab6a65d11
   target_type: compound
   target_id: CMP:2f350e7d8e5dfba4a802d82d
@@ -18281,6 +18558,61 @@ entries:
     authority: gate4b_reviewed_compound
     record: migrations/gate4b_compound_dictionary_1.0.yaml
     approval_date: '2026-10-09'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:2db7c445a983d336fbe37a6d
+  target_type: compound
+  target_id: CMP:36f60b14c3c3f26ad71f2564
+  status: canonical
+  english_label: convey work between handlers
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: DAT:110
+  components:
+  - node_id: q1
+    kind: root
+    root_id: CON:100
+  - node_id: h
+    kind: root
+    root_id: DAT:110
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: A source conveys a work assignment or its associated state
+      from one handler to another so that handling can continue. The recipient may
+      be implicit. Physical support or transport of an object is unnecessary.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: convey_work_between_handlers
+      sound_code: 57
+      added_definition: A source conveys a work assignment or its associated state
+        from one handler to another so that handling can continue. The recipient may
+        be implicit. Physical support or transport of an object is unnecessary.
+      excludes:
+      - A porter carried a stack of paper without handing work to anyone.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 36f60b14c3c3f26ad71f2564196f32ac4c625a06ff10471037edb39412a1fc57
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: lexicon/story_compound_batch.json
+    approval_date: '2026-11-15'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
 - etymology_id: ETY:3d34d7918dbf6349554cd588
@@ -18752,6 +19084,61 @@ entries:
     approval_date: '2026-10-28'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
+- etymology_id: ETY:d9e35baf9a89b3640f2ae8a8
+  target_type: compound
+  target_id: CMP:45a6b6cf438ae2274104f30b
+  status: canonical
+  english_label: incorrect judgment by a participant
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: LOG:010
+  components:
+  - node_id: q1
+    kind: root
+    root_id: MIN:011
+  - node_id: h
+    kind: root
+    root_id: LOG:010
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: A bearer holds or expresses a judgment that fails an applicable
+      correctness criterion at the reference time. This reading attributes an error
+      in judgment to the bearer.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: incorrect_judgment_by_a_participant
+      sound_code: 55
+      added_definition: A bearer holds or expresses a judgment that fails an applicable
+        correctness criterion at the reference time. This reading attributes an error
+        in judgment to the bearer.
+      excludes:
+      - A person deliberately broke a rule while correctly predicting its effect.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 45a6b6cf438ae2274104f30b21f6fcaef98c88a1f11f0d1bcbe9fcbe2456c854
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: lexicon/story_compound_batch.json
+    approval_date: '2026-11-15'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
 - etymology_id: ETY:86961eb038687d2a6e96a47d
   target_type: compound
   target_id: CMP:4f83046a60201671bc92fe10
@@ -19046,6 +19433,61 @@ entries:
     approval_date: '2026-10-09'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
+- etymology_id: ETY:bd3e19d13e980cb032bc310d
+  target_type: compound
+  target_id: CMP:59400f445c53fdb3333c7943
+  status: canonical
+  english_label: expression asking for an outcome
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: CON:100
+  components:
+  - node_id: q1
+    kind: root
+    root_id: ORI:112
+  - node_id: h
+    kind: root
+    root_id: CON:100
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: A requester expresses that an addressee should bring about
+      a specified outcome. The outcome is content of the request. Understanding, agreement
+      and fulfillment each require further evidence.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: expression_asking_for_an_outcome
+      sound_code: 53
+      added_definition: A requester expresses that an addressee should bring about
+        a specified outcome. The outcome is content of the request. Understanding,
+        agreement and fulfillment each require further evidence.
+      excludes:
+      - The worker mentioned a replay while describing yesterday.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 59400f445c53fdb3333c7943bca548a78768e95a5288e8cb95990e3f41ec03bf
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: lexicon/story_compound_batch.json
+    approval_date: '2026-11-15'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
 - etymology_id: ETY:27af24a83e84626196c57b9b
   target_type: compound
   target_id: CMP:608ecb4f3c515a9c9a3443ec
@@ -19315,6 +19757,62 @@ entries:
     approval_date: '2026-11-04'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
+- etymology_id: ETY:f36f36c7fdd7521cb26af2d4
+  target_type: compound
+  target_id: CMP:6cb819bd20ef8429225daca3
+  status: canonical
+  english_label: auditory perception of a target
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: MIN:011
+  components:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:42e9bd596b35612ed6cbe3ce
+    definition_version: 1.0.0
+  - node_id: h
+    kind: root
+    root_id: MIN:011
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: An experiencer is aware of a target through acoustic input
+      registered from that target during the reference interval. Recognizing its identity
+      or understanding a message is optional.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: auditory_perception_of_a_target
+      sound_code: 62
+      added_definition: An experiencer is aware of a target through acoustic input
+        registered from that target during the reference interval. Recognizing its
+        identity or understanding a message is optional.
+      excludes:
+      - A microphone records the vibration while no one hears it.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 6cb819bd20ef8429225daca336e88afb5f6e3fd18889217d6360f51eada54c8a
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: lexicon/story_compound_batch.json
+    approval_date: '2026-11-15'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
 - etymology_id: ETY:16b19549e48b2f6756c00051
   target_type: compound
   target_id: CMP:6ccc77b4b3aa69bb010849a4
@@ -19397,6 +19895,62 @@ entries:
     authority: gate4b_reviewed_compound
     record: migrations/spatial_relations_2026_11_04.yaml
     approval_date: '2026-11-04'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:608f67a5c65db669d7d3a1f5
+  target_type: compound
+  target_id: CMP:7017c0aee0086123c2cf67dc
+  status: canonical
+  english_label: continued satisfaction of the same criterion
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: ORI:010
+  components:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:0cddf1c999333b77818f32fc
+    definition_version: 1.0.0
+  - node_id: h
+    kind: root
+    root_id: ORI:010
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: The same bearer continues to meet the applicable criterion
+      over the reference interval, including its earlier and later portions. The sentence
+      can report this persistence without reporting an inspection.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: continued_satisfaction_of_the_same_criterion
+      sound_code: 60
+      added_definition: The same bearer continues to meet the applicable criterion
+        over the reference interval, including its earlier and later portions. The
+        sentence can report this persistence without reporting an inspection.
+      excludes:
+      - A previously invalid permit became valid for the first time.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 7017c0aee0086123c2cf67dcf30a585e8e0969914d65501578ccd4de71958b47
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: lexicon/story_compound_batch.json
+    approval_date: '2026-11-15'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
 - etymology_id: ETY:fcd98b74a8bd720192069f25
@@ -20858,6 +21412,174 @@ entries:
     approval_date: '2026-10-09'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
+- etymology_id: ETY:f945c37b4318473aaa04327f
+  target_type: compound
+  target_id: CMP:b72611332d4684a6b7f0bf19
+  status: canonical
+  english_label: deliberate inspection of a target
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: LOG:110
+  components:
+  - node_id: q1
+    kind: root
+    root_id: MIN:011
+  - node_id: h
+    kind: root
+    root_id: LOG:110
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: An inspector deliberately evaluates information about a
+      particular target for a relevant condition. The inspection itself is the reported
+      action. Its outcome can be favorable, unfavorable or inconclusive.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: deliberate_inspection_of_a_target
+      sound_code: 50
+      added_definition: An inspector deliberately evaluates information about a particular
+        target for a relevant condition. The inspection itself is the reported action.
+        Its outcome can be favorable, unfavorable or inconclusive.
+      excludes:
+      - A sensor noticed a flash without inspecting anything.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: b72611332d4684a6b7f0bf19a36df99f8369c7c5d6e98a278de11c53bbd4fcfe
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: lexicon/story_compound_batch.json
+    approval_date: '2026-11-15'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:87e272c450eff1c1f5c751ef
+  target_type: compound
+  target_id: CMP:b937ee54b7c000fafe11d338
+  status: canonical
+  english_label: visual perception of a target
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: MIN:011
+  components:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:bcfd189eb305cf364ada975a
+    definition_version: 1.0.0
+  - node_id: h
+    kind: root
+    root_id: MIN:011
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: An experiencer is aware of a target through light registered
+      from that target during the reference interval. No transition from being unaware,
+      identification or interpretation is required.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: visual_perception_of_a_target
+      sound_code: 63
+      added_definition: An experiencer is aware of a target through light registered
+        from that target during the reference interval. No transition from being unaware,
+        identification or interpretation is required.
+      excludes:
+      - The tower first attracts attention when someone mentions it out of view.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: b937ee54b7c000fafe11d338bd7603ea00263a55677c40dba12f80eb0b89deff
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: lexicon/story_compound_batch.json
+    approval_date: '2026-11-15'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:90e9596886fdae5d1ece4a38
+  target_type: compound
+  target_id: CMP:ba437968d31a6673a65ed1ff
+  status: canonical
+  english_label: request for attainment of an activity endpoint
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: compound_ref
+    target_id: CMP:59400f445c53fdb3333c7943
+  components:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:22a4eb4803d9bf5e07204f02
+    definition_version: 1.0.0
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:59400f445c53fdb3333c7943
+    definition_version: 1.0.0
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: A requester communicates a request for an applicable activity
+      to reach its endpoint. The request occurs at its own reference time. The requested
+      completion is embedded content and may never occur.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: request_for_attainment_of_an_activity_endpoint
+      sound_code: 61
+      added_definition: A requester communicates a request for an applicable activity
+        to reach its endpoint. The request occurs at its own reference time. The requested
+        completion is embedded content and may never occur.
+      excludes:
+      - The worker reported that the activity had already completed.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: ba437968d31a6673a65ed1ff09207a40f5e0cca1e6b738f02ba25892a2f0bd3c
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: lexicon/story_compound_batch.json
+    approval_date: '2026-11-15'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
 - etymology_id: ETY:772f6b3050d120437fca5651
   target_type: compound
   target_id: CMP:bcfd189eb305cf364ada975a
@@ -20911,6 +21633,116 @@ entries:
     authority: gate4b_reviewed_compound
     record: migrations/registration_channels_2026_10_28.yaml
     approval_date: '2026-10-28'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:2b720f42946df55e4e0fbc27
+  target_type: compound
+  target_id: CMP:beb2a0dff4e59fb7d8b75bf9
+  status: canonical
+  english_label: possession of an available resource
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: ORI:011
+  components:
+  - node_id: q1
+    kind: root
+    root_id: ORI:001
+  - node_id: h
+    kind: root
+    root_id: ORI:011
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: At the reference time a holder has a resource in its possession
+      or at its disposal. The bearer can be a group and the resource can be tangible
+      or represented. The relation leaves legal ownership, acquisition and use unspecified.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: possession_of_an_available_resource
+      sound_code: 58
+      added_definition: At the reference time a holder has a resource in its possession
+        or at its disposal. The bearer can be a group and the resource can be tangible
+        or represented. The relation leaves legal ownership, acquisition and use unspecified.
+      excludes:
+      - The team knows that replays exist elsewhere but has none.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: beb2a0dff4e59fb7d8b75bf983cb6c590e67fcbfa47b2badebdbeee9aa8834a8
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: lexicon/story_compound_batch.json
+    approval_date: '2026-11-15'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:947b1ba28f3d7a8c30abeb97
+  target_type: compound
+  target_id: CMP:bfa62b7a436315bd68c9801e
+  status: canonical
+  english_label: open state of a software resource
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: ORI:011
+  components:
+  - node_id: q1
+    kind: root
+    root_id: DAT:000
+  - node_id: h
+    kind: root
+    root_id: ORI:011
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: A software resource is open for use at the reference time
+      in some application or session. Scope, write permission, who opened it and whether
+      it is being edited are unspecified.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: open_state_of_a_software_resource
+      sound_code: 64
+      added_definition: A software resource is open for use at the reference time
+        in some application or session. Scope, write permission, who opened it and
+        whether it is being edited are unspecified.
+      excludes:
+      - The file existed on disk while the application had it closed.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: bfa62b7a436315bd68c9801e9c5b9214c18b90b3061bbeb84ea93235c3f98382
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: lexicon/story_compound_batch.json
+    approval_date: '2026-11-15'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
 - etymology_id: ETY:55823c212c67166790ab5a48
@@ -22062,5 +22894,62 @@ entries:
     authority: gate4b_reviewed_compound
     record: lexicon/story_compound_batch.json
     approval_date: '2026-11-14'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:537aa35970b9e63d61aea367
+  target_type: compound
+  target_id: CMP:ffeb55f462f10014970989a4
+  status: canonical
+  english_label: subsequent inspection of the same target
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: compound_ref
+    target_id: CMP:b72611332d4684a6b7f0bf19
+  components:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:d6b796937329c4412a92ea4a
+    definition_version: 1.0.0
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:b72611332d4684a6b7f0bf19
+    definition_version: 1.0.0
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: An inspector inspects the target again after a prior inspection
+      of that target. The inspector in the earlier episode, interval, number of earlier
+      checks and their outcomes are unspecified.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: subsequent_inspection_of_the_same_target
+      sound_code: 59
+      added_definition: An inspector inspects the target again after a prior inspection
+        of that target. The inspector in the earlier episode, interval, number of
+        earlier checks and their outcomes are unspecified.
+      excludes:
+      - The worker kept looking throughout one uninterrupted inspection.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: ffeb55f462f10014970989a49d98fd56dd82fa0a1ec4253114c9d67d5396f647
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: lexicon/story_compound_batch.json
+    approval_date: '2026-11-15'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.

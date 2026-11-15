@@ -16,6 +16,12 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const repo=fileURLToPath(new URL('..',import.meta.url));
 const readJson=async name=>JSON.parse(await fs.readFile(path.join(repo,name),'utf8'));
 const intentions=await readJson('tests/field_audit/intentions.json');
+if(process.env.FIELD_REPAIR_AUDIT){
+  const choices=await readJson('tests/field_audit/repair_answers.json');
+  const reserve=await readJson('tests/field_audit/repair_reserve.json');
+  intentions.cases.push(...reserve.map((entry,i)=>({...entry,id:'fresh-'+(i+1),group:'reserve'})));
+  for(const entry of intentions.cases)if(choices[entry.id])entry.answers=choices[entry.id];
+}
 const {atoms}=await readJson('pages/data/index.json');
 const {records}=await readJson('pages/data/foundation_preview_candidates.json');
 await fs.mkdir(outDirectory,{recursive:true});
@@ -81,6 +87,7 @@ async function auditCase(page,test) {
     const value=await answer(page,action);
     if(value)supplied.push(value);
   }
+  if(supplied.length)await page.waitForFunction(()=>document.querySelector('#candidateList p, #candidateList input, #candidateList button, #output:not(.hidden) button'));
   const final=await inspectPage(page);
   const row={id:test.id,start,answers:supplied,final};
   const add=page.getByRole('button',{name:'Add to song',exact:true});

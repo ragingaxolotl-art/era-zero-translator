@@ -1,7 +1,7 @@
 import {renderLexicalOccurrences} from './bound_compounds.mjs';
 import {contextualContentReference} from './contextual_content.mjs';
 import {grammarMarker} from './scheduler.mjs';
-import {informationFrame} from './information_passage_frames.mjs';
+import {informationFrame} from './information_passage_frames.mjs?v=field-repairs-1';
 
 const roleNode=(node,role)=>({nodes:[node,{node_id:'clause',kind:'clause'}],
   edges:[{edge_id:'binding',type:'fills_role',from:node.node_id,to:'clause',role}]});

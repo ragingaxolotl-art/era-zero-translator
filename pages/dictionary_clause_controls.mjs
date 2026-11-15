@@ -1,6 +1,7 @@
+import {describeClaim,describeRuntime} from './meaning_readback.mjs?v=field-repairs-1';
 import {everydayMeaning} from './everyday.mjs';
-import {scoreDictionaryClause} from './dictionary_clause_music.mjs?v=1.16.1';
-import {compactChordMidi} from './compact_chords.mjs?v=joined-roots-1';
+import {scoreDictionaryClause} from './dictionary_clause_music.mjs?v=field-repairs-1';
+import {compactChordMidi} from './compact_chords.mjs?v=field-repairs-1';
 
 const scopeLabels={modality_necessary:'required',modality_possible:'possible',negation:'negated',aspect_ongoing:'ongoing',time_before_speech:'past',time_current_day:'today',time_next_day:'tomorrow',time_previous_day:'yesterday'};
 
@@ -30,13 +31,14 @@ export async function mountDictionaryClause(container,plan,authority,{document=g
     try {
       const line=await scoreDictionaryClause(plan,index,authority);if(!current())return;
       onStatus(index===preferred?'Whole sentence ready · using your saved word choice':plan.needsDefinition?'Whole sentence ready · using your chosen meaning':'Whole sentence ready · draft musical grammar');
-      output.append(make('p',everydayMeaning(authority,{...reading.sense,target_id:reading.root})));
+      const label=reading.root==='erase_stored_object'?'remove the item from storage':everydayMeaning(authority,{...reading.sense,target_id:reading.root});
+      output.append(make('p',describeClaim(label,line.meaning.scopes,line.meaning.speech_act)));
       output.append(make('p',reading.root+' · '+(authority.atoms.find(a=>a.canonical_id===reading.root)?.core_definition||title(reading))));
       const who=text=>text==='we'?'our group':text==='I'?'the speaker':text==='you'?'the listener':text;
       const roles=reading.participants.map(p=>p.role+' · '+who(p.text)).join(' / ');
       const actLabel=plan.speechAct==='command'?'Command':plan.speechAct==='question'?'Question':'Statement';
       const scope=[actLabel,...reading.scopes.map(s=>scopeLabels[s])].join(' → ');
-      output.append(make('p',scope+' · ['+plan.runtime+']. '+roles+'.'));
+      output.append(make('p',scope+' · '+roles+'. '+describeRuntime(line.meaning.runtime_state)));
       if(reading.sense.generalization&&!plan.needsDefinition)output.append(make('p',reading.sense.generalization));
       const button=(text,action)=>{const b=make('button',text);b.type='button';b.addEventListener('click',async()=>{if(current())try{await action();}catch(error){if(current())onError(error);}});output.append(b);return b;};
       button('Play whole sentence',()=>player.play(line.midi)).className='primary';

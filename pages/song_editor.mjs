@@ -1,14 +1,17 @@
-import {compactChordPerformance} from './compact_chords.mjs?v=joined-roots-1';
-import {songMidi} from './song_lines.mjs';
+import {compactChordPerformance} from './compact_chords.mjs?v=field-repairs-1';
+import {readSongLine} from './song_readback.mjs?v=field-repairs-1';
+import {compactChordMidi} from './compact_chords.mjs?v=field-repairs-1';
+import {songMidi} from './song_lines.mjs?v=field-repairs-1';
 import {notesFromMidi} from './performance_codec.mjs';
 
-const key='era-zero-song-lines-v1';
-export function mountSongEditor({document,storage,player,download,getAtoms}) {
+import {isSongStorageKey,readSongLines,newSongLine,saveSongLine,removeSongLine} from './song_storage.mjs?v=field-repairs-1';
+export function mountSongEditor({document,storage,player,download,getAtoms,getRecords}) {
   const list=document.getElementById('songLines'), status=document.getElementById('songStatus');
   const play=document.getElementById('playSong'), save=document.getElementById('exportSong'),stop=document.getElementById('stopSong');
   const arrangement=document.getElementById('songArrangement');
   const preview=document.getElementById('previewSongRoot'),timing=document.getElementById('songTiming');
-  let prepared=null,original=null;
+  const next=document.getElementById('nextSongRoot');
+  let prepared=null,original=null,rootIndex=0;
   const originalMelody=()=>original??=songMidi(lines);
   function performance(){
     if(!prepared){
@@ -23,6 +26,7 @@ export function mountSongEditor({document,storage,player,download,getAtoms}) {
   function showArrangement(){
     if(!preview||!timing)return;
     preview.disabled=true;
+    if(next)next.disabled=true;
     preview.textContent=inChords()?'Hear first root in chords':'Hear first root as a melody';
     timing.textContent='';
     if(!lines.length||!getAtoms()?.length)return;
@@ -33,46 +37,79 @@ export function mountSongEditor({document,storage,player,download,getAtoms}) {
         return;
       }
       preview.disabled=false;
+      if(next)next.disabled=result.rootCount<2;
+      if(rootIndex>0)preview.textContent='Hear root '+(rootIndex+1)+(inChords()?' in chords':' as a melody');
       timing.textContent='Melody '+showSeconds(result.melodySeconds)+' · Compact chords '+showSeconds(result.chordSeconds)+
-        '. The first chord starts at '+showSeconds(result.firstRoot.atSeconds)+'.';
+        '. The first chord starts at '+showSeconds(result.firstRoot.atSeconds)+'. Root '+(rootIndex+1)+' of '+result.rootCount+' · '+result.previews[rootIndex].id+'.';
     }catch(error){timing.textContent=error.message;}
   }
   arrangement.addEventListener('change',()=>{player.stop();showArrangement();});
-  preview?.addEventListener('click',async()=>{
+  async function hearRoot(){
     try{
-      const first=performance().firstRoot;
+      const first=performance().previews[rootIndex];
       if(first)await player.play(inChords()?first.chords:first.melody,{chords:inChords()});
     }catch(error){status.textContent=error.message;}
-  });
+  }
+  preview?.addEventListener('click',hearRoot);
+  next?.addEventListener('click',()=>{rootIndex=(rootIndex+1)%performance().rootCount;showArrangement();return hearRoot();});
   let lines=[],canSave=true;
-  try {
-    const stored=storage.getItem(key);
-    if (stored) lines=JSON.parse(stored).map(({text,bytes,label})=>{
-      if (typeof text!=='string'||typeof label!=='string'||typeof bytes!=='string') throw Error();
-      const midi=Uint8Array.from(atob(bytes),c=>c.charCodeAt(0));
-      notesFromMidi(midi);return {text,midi,label};
-    });
-  } catch { canSave=false;status.textContent='The saved song could not be opened. New lines are available in this tab.'; }
+  function reload(){
+    if(!canSave)return;
+    try{
+      const stored=readSongLines(storage);
+      for(const line of stored)notesFromMidi(line.midi);
+      lines=stored;
+    }catch{
+      canSave=false;status.textContent='The saved song could not be opened. New lines are available in this tab.';
+    }
+  }
+  reload();
+  document.defaultView?.addEventListener('storage',event=>{
+    if(!canSave||!isSongStorageKey(event.key))return;
+    reload();render();
+  });
   function render() {
-    prepared=null;original=null;
+    prepared=null;original=null;rootIndex=0;
     list.replaceChildren();
     play.disabled=save.disabled=stop.disabled=!lines.length;
     for (const [index,line] of lines.entries()) {
       const row=document.createElement('li'),label=document.createElement('span'),remove=document.createElement('button');
       label.textContent=line.text+' · '+line.label;remove.type='button';remove.textContent='Remove';
       remove.setAttribute('aria-label','Remove line '+(index+1));
-      remove.addEventListener('click',()=>{player.stop();lines.splice(index,1);changed('Line removed.');});
-      row.append(label,remove);list.append(row);
+      remove.addEventListener('click',()=>{player.stop();lines=lines.filter(item=>item.id!==line.id);changed('Line removed.',()=>removeSongLine(storage,line.id));});
+      row.append(label,remove);
+      if(getRecords){
+        const check=document.createElement('button'),result=document.createElement('div');
+        check.type='button';check.textContent='Check musical meaning';check.setAttribute('aria-label','Check musical meaning of line '+(index+1));
+        result.setAttribute('role','status');
+        check.addEventListener('click',async()=>{
+          check.disabled=true;result.textContent='Reading the notes…';
+          try{
+            const chords=inChords(),atoms=getAtoms(),bytes=chords?compactChordMidi(line.midi,atoms):line.midi;
+            const heard=await readSongLine(bytes,atoms,await getRecords(),chords);
+            const details=document.createElement('details'),summary=document.createElement('summary'),decoded=document.createElement('pre');
+            summary.textContent='Recovered roles and scope';decoded.textContent=JSON.stringify(heard.meaning,null,2);
+            details.append(summary,decoded);result.textContent='Meaning recovered from the '+(chords?'chords':'melody')+'. '+heard.summary;result.append(details);
+          }catch(error){result.textContent='This line plays. The listener could not recover a unique reading. '+error.message;}
+          finally{check.disabled=false;}
+        });
+        row.append(check,result);
+      }
+      list.append(row);
     }
     showArrangement();
   }
-  function changed(message) {
-    render();
+  function changed(message,persist) {
     try {
-      if (!canSave) throw Error();
-      storage.setItem(key,JSON.stringify(lines.map(({text,label,midi})=>({text,label,bytes:btoa(Array.from(midi,b=>String.fromCharCode(b)).join(''))}))));
+      if(!canSave)throw Error();
+      persist();reload();
+      if(!canSave)throw Error();
       status.textContent=message+' Saved in this browser.';
-    } catch { status.textContent=message+' Available in this tab. Download the song MIDI to keep a copy.'; }
+    } catch {
+      canSave=false;
+      status.textContent=message+' Available in this tab. Download the song MIDI to keep a copy.';
+    }
+    render();
   }
   play.addEventListener('click',async()=>{try {await player.play(arranged(),{chords:arrangement.value==='chords'});} catch(e){status.textContent=e.message;}});
   stop.addEventListener('click',()=>player.stop());
@@ -80,8 +117,10 @@ export function mountSongEditor({document,storage,player,download,getAtoms}) {
   render();
   function addLine(text,midi,label){
     if (!text.trim()||!notesFromMidi(midi).notes.length) throw Error('This line has no music.');
-    player.stop();lines.push({text,label,midi:new Uint8Array(midi)});changed('Line '+lines.length+' added.');
-    return lines.length;
+    player.stop();reload();
+    const line=newSongLine(text,label,midi,lines);
+    lines.push(line);changed('Line '+lines.length+' added.',()=>saveSongLine(storage,line));
+    return lines.findIndex(item=>item.id===line.id)+1;
   }
   addLine.refreshArrangement=showArrangement;
   return addLine;

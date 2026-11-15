@@ -1,0 +1,787 @@
+{
+  "test": "Real browser input, saved song, original and compact MIDI downloads, blind note decoding, then comparison with the written intentions.",
+  "runtime_revision": "6ae030bb4125ff272edeb1534ff5efaa94f7d3fc",
+  "results": [
+    {
+      "id": "fault",
+      "group": "control",
+      "text": "We need to resolve the redundancy error.",
+      "intended": "Our group must correct the fault named redundancy. This is a requirement, with no assertion that correction occurred.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 31,
+      "chord_seconds": 25.5,
+      "three_note_attacks": 4
+    },
+    {
+      "id": "found-delete",
+      "group": "control",
+      "text": "We have found the program. We need to delete it.",
+      "intended": "Our group completed the discovery of the same program it now needs to delete. The second action remains required.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 62.5,
+      "chord_seconds": 46,
+      "three_note_attacks": 12
+    },
+    {
+      "id": "leave-home",
+      "group": "control",
+      "text": "I am leaving home now.",
+      "intended": "The speaker is currently departing home. Preserve the departure, home and current progression.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 28.25,
+      "chord_seconds": 25.75,
+      "three_note_attacks": 2
+    },
+    {
+      "id": "arrive-station",
+      "group": "control",
+      "text": "She arrived at the station.",
+      "intended": "A specific person arrived at the station in the past. For this trial, she is Mira.",
+      "choice": [
+        "Mira"
+      ],
+      "result": "intended meaning recovered",
+      "melody_seconds": 26.5,
+      "chord_seconds": 24,
+      "three_note_attacks": 2
+    },
+    {
+      "id": "approach-question",
+      "group": "control",
+      "text": "Are they approaching the bridge?",
+      "intended": "A question about whether a group is approaching the bridge now. For this trial they are the robots.",
+      "choice": [
+        "the robots"
+      ],
+      "result": "intended meaning recovered",
+      "melody_seconds": 39.5,
+      "chord_seconds": 37,
+      "three_note_attacks": 2
+    },
+    {
+      "id": "not-moving",
+      "group": "control",
+      "text": "I am not moving.",
+      "intended": "The speaker denies their current movement. Retain the negation.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 16.375,
+      "chord_seconds": 13.875,
+      "three_note_attacks": 2
+    },
+    {
+      "id": "few",
+      "group": "control",
+      "text": "A few waited.",
+      "intended": "A small, unnumbered set of participants waited. A single entity named few changes the quantity.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 26.375,
+      "chord_seconds": 21.375,
+      "three_note_attacks": 4
+    },
+    {
+      "id": "latch",
+      "group": "control",
+      "text": "Latch found the result. It found the context.",
+      "intended": "Latch discovered both the result and the context. A clarification about the second finder is valid.",
+      "choice": [
+        "Latch (reference 1)"
+      ],
+      "result": "intended meaning recovered",
+      "melody_seconds": 75.75,
+      "chord_seconds": 65.75,
+      "three_note_attacks": 8
+    },
+    {
+      "id": "work-handoffs",
+      "group": "control",
+      "text": "Latch carried the handoffs.",
+      "intended": "Latch conveyed computational work between workers. Physical support and movement of a load would change the sense.",
+      "choice": [
+        "Work passed between handlers"
+      ],
+      "result": "intended meaning recovered",
+      "melody_seconds": 46.75,
+      "chord_seconds": 40.75,
+      "three_note_attacks": 4
+    },
+    {
+      "id": "few-robots",
+      "group": "contrast",
+      "text": "A few robots waited.",
+      "intended": "An unspecified small number of robots waited. Preserve the group, its kind, and past waiting.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 34.625,
+      "chord_seconds": 29.625,
+      "three_note_attacks": 4
+    },
+    {
+      "id": "no-one",
+      "group": "contrast",
+      "text": "No one waited.",
+      "intended": "Nobody waited. No participant performed the action.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 26.125,
+      "chord_seconds": 21.125,
+      "three_note_attacks": 4
+    },
+    {
+      "id": "not-all",
+      "group": "contrast",
+      "text": "Not all the faulty radios rang.",
+      "intended": "At least one of the faulty radios did not ring. Zero ringing radios is possible.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 58.375,
+      "chord_seconds": 45.875,
+      "three_note_attacks": 10
+    },
+    {
+      "id": "none",
+      "group": "contrast",
+      "text": "None of the faulty radios rang.",
+      "intended": "Zero faulty radios rang. Faulty restricts the set of radios.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 56.875,
+      "chord_seconds": 44.375,
+      "three_note_attacks": 10
+    },
+    {
+      "id": "two-names",
+      "group": "contrast",
+      "text": "Pip noticed Mira. They waited.",
+      "intended": "Pip noticed Mira. In this reading Mira waited. Ask which of the two the singular they denotes.",
+      "choice": [
+        "Mira (reference 2)"
+      ],
+      "result": "intended meaning recovered",
+      "melody_seconds": 55.375,
+      "chord_seconds": 45.375,
+      "three_note_attacks": 8
+    },
+    {
+      "id": "program-subject",
+      "group": "contrast",
+      "text": "The routine spotted a blocked gate. They repaired it.",
+      "intended": "The routine visually noticed a gate that prevents passage, then the same routine repaired that gate. Sentence order alone supplies no explicit temporal marker.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 89.5,
+      "chord_seconds": 71,
+      "three_note_attacks": 14
+    },
+    {
+      "id": "paragraph-break",
+      "group": "contrast",
+      "text": "The routine spotted a blocked gate.\nThey repaired it.",
+      "intended": "Same participants, properties and events as the preceding one-line form. A line break separates the sentences.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 89.5,
+      "chord_seconds": 71,
+      "three_note_attacks": 14
+    },
+    {
+      "id": "paired",
+      "group": "contrast",
+      "text": "Pip spotted a cracked and faulty bell and repaired it.",
+      "intended": "Pip visually noticed one bell that was both cracked and faulty. Pip also repaired that bell. The conjunction adds no strict order.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 108,
+      "chord_seconds": 82,
+      "three_note_attacks": 20
+    },
+    {
+      "id": "negated",
+      "group": "contrast",
+      "text": "Pip did not spot a cracked bell.",
+      "intended": "Past negation of Pip visually noticing a bell with a crack.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 79,
+      "chord_seconds": 61,
+      "three_note_attacks": 14
+    },
+    {
+      "id": "possible-negated",
+      "group": "contrast",
+      "text": "Pip might not spot a cracked bell.",
+      "intended": "It is possible that Pip does not visually notice a cracked bell. Possibility scopes over negation.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 78.75,
+      "chord_seconds": 60.75,
+      "three_note_attacks": 14
+    },
+    {
+      "id": "reopen-0",
+      "group": "contrast",
+      "text": "The gate reopened. [0]",
+      "intended": "The gate became passable again after blockage, in the past, with runtime ending 0.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 51.5,
+      "chord_seconds": 39,
+      "three_note_attacks": 10
+    },
+    {
+      "id": "reopen-1",
+      "group": "contrast",
+      "text": "The gate reopened. [1]",
+      "intended": "The same past reopening with runtime ending 1.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 51.625,
+      "chord_seconds": 39.125,
+      "three_note_attacks": 10
+    },
+    {
+      "id": "reopen-2",
+      "group": "contrast",
+      "text": "The gate reopened. [2]",
+      "intended": "The same past reopening with runtime ending 2.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 52.375,
+      "chord_seconds": 39.875,
+      "three_note_attacks": 10
+    },
+    {
+      "id": "negated-reopen",
+      "group": "contrast",
+      "text": "The gate did not reopen.",
+      "intended": "Deny the past change from blocked to passable. The explanation must make the denial visible.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 53.125,
+      "chord_seconds": 40.625,
+      "three_note_attacks": 10
+    },
+    {
+      "id": "open-file",
+      "group": "contrast",
+      "text": "The file was open.",
+      "intended": "The file was open for use in software. If offered the sense of passage through it, decline that sense.",
+      "choice": [
+        "Open for use in software"
+      ],
+      "result": "intended meaning recovered",
+      "melody_seconds": 28.625,
+      "chord_seconds": 23.125,
+      "three_note_attacks": 4
+    },
+    {
+      "id": "open-path",
+      "group": "contrast",
+      "text": "The path was open.",
+      "intended": "The specific path allowed passage at the earlier reference time.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 31.375,
+      "chord_seconds": 26.375,
+      "three_note_attacks": 4
+    },
+    {
+      "id": "resume-meeting",
+      "group": "contrast",
+      "text": "The meeting reopened.",
+      "intended": "A suspended meeting resumed. If asked whether this means a traversable passage, decline.",
+      "choice": [
+        "The same activity resumed after a pause"
+      ],
+      "result": "intended meaning recovered",
+      "melody_seconds": 36.875,
+      "chord_seconds": 29.375,
+      "three_note_attacks": 6
+    },
+    {
+      "id": "transitive-reopen",
+      "group": "contrast",
+      "text": "The pilot reopened the gate.",
+      "intended": "The pilot caused a particular blocked gate to become passable again. Both participants and the change matter.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 65.25,
+      "chord_seconds": 52.75,
+      "three_note_attacks": 10
+    },
+    {
+      "id": "before",
+      "group": "contrast",
+      "text": "Pip repaired a cracked bell before Mira arrived.",
+      "intended": "The bell was cracked. Pip repaired it earlier than Mira arrived. Both events are past.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 76.625,
+      "chord_seconds": 63.625,
+      "three_note_attacks": 10
+    },
+    {
+      "id": "after",
+      "group": "contrast",
+      "text": "Pip repaired a cracked bell after Mira arrived.",
+      "intended": "Mira arrived earlier than the repair by Pip. Both events are past; the bell was cracked.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 76.625,
+      "chord_seconds": 63.625,
+      "three_note_attacks": 10
+    },
+    {
+      "id": "reverse-a",
+      "group": "contrast",
+      "text": "Mira repaired Pip.",
+      "intended": "Mira, a program, repaired Pip. Preserve the direction and past time.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 23.25,
+      "chord_seconds": 20.25,
+      "three_note_attacks": 2
+    },
+    {
+      "id": "reverse-b",
+      "group": "contrast",
+      "text": "Pip repaired Mira.",
+      "intended": "Pip repaired Mira. The repairer and the repaired participant have exchanged roles.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 23.25,
+      "chord_seconds": 20.25,
+      "three_note_attacks": 2
+    },
+    {
+      "id": "disjunction",
+      "group": "contrast",
+      "text": "Pip noticed the bell or the gate.",
+      "intended": "Pip became aware of at least one alternative. Do not assert both or silently discard a target.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 51.875,
+      "chord_seconds": 46.875,
+      "three_note_attacks": 4
+    },
+    {
+      "id": "conditional",
+      "group": "contrast",
+      "text": "If the gate reopens, the routine will wait.",
+      "intended": "Future waiting by the routine is conditional on the gate becoming passable again.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 81.75,
+      "chord_seconds": 64.25,
+      "three_note_attacks": 14
+    },
+    {
+      "id": "negative-need",
+      "group": "contrast",
+      "text": "We don't need to delete the program.",
+      "intended": "Deleting the program is unnecessary for our group. This allows both deleting and keeping it.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 36.5,
+      "chord_seconds": 31,
+      "three_note_attacks": 4
+    },
+    {
+      "id": "need-negative",
+      "group": "contrast",
+      "text": "We need to not delete the program.",
+      "intended": "Our group must refrain from deleting the program. Deleting it would violate the requirement.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 36.5,
+      "chord_seconds": 31,
+      "three_note_attacks": 4
+    },
+    {
+      "id": "hear",
+      "group": "contrast",
+      "text": "I can hear the bell.",
+      "intended": "The speaker can perceive the specific bell by sound. Preserve the sensory channel and the ability/current availability.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 45,
+      "chord_seconds": 37,
+      "three_note_attacks": 6
+    },
+    {
+      "id": "see",
+      "group": "contrast",
+      "text": "I can see the bell.",
+      "intended": "The speaker can perceive the specific bell visually. Preserve the sensory channel and the ability/current availability.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 45,
+      "chord_seconds": 37,
+      "three_note_attacks": 6
+    },
+    {
+      "id": "numeric-name",
+      "group": "contrast",
+      "text": "Pip noticed \"Gate 2\".",
+      "intended": "Pip became aware of the specific label Gate 2, including the number. This is a named target.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 42.25,
+      "chord_seconds": 37.25,
+      "three_note_attacks": 4
+    },
+    {
+      "id": "verb-paraphrase",
+      "group": "contrast",
+      "text": "We need to fix the duplicate error.",
+      "intended": "The speaker group is required to correct the fault named duplicate. Keep both the obligation and the fault kind.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 29,
+      "chord_seconds": 23.5,
+      "three_note_attacks": 4
+    },
+    {
+      "id": "lowercase",
+      "group": "contrast",
+      "text": "pip spotted a cracked bell.",
+      "intended": "Pip visually noticed a bell with a crack, in the past. Lowercase typing does not change the requested referent.",
+      "choice": [
+        "Use the name Pip"
+      ],
+      "result": "intended meaning recovered",
+      "melody_seconds": 77.5,
+      "chord_seconds": 59.5,
+      "three_note_attacks": 14
+    },
+    {
+      "id": "question",
+      "group": "contrast",
+      "text": "Did Pip spot the gate?",
+      "intended": "Ask whether Pip visually noticed the particular gate in the past. Neither sight nor its absence is asserted.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 56.25,
+      "chord_seconds": 45.75,
+      "three_note_attacks": 8
+    },
+    {
+      "id": "newline-clause",
+      "group": "contrast",
+      "text": "Pip spotted a cracked bell. They repaired it.",
+      "intended": "Pip visually noticed a bell with a crack and repaired that same bell. They refers to Pip and it to the bell.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 91.25,
+      "chord_seconds": 70.25,
+      "three_note_attacks": 16
+    },
+    {
+      "id": "nothing-followed",
+      "group": "manuscript",
+      "text": "Nothing followed.",
+      "intended": "No following event or incoming adjustment occurred at that point. Nothing does not name an actor.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 26.125,
+      "chord_seconds": 21.125,
+      "three_note_attacks": 4
+    },
+    {
+      "id": "requested-completion",
+      "group": "manuscript",
+      "text": "The worker requested completion.",
+      "intended": "The worker asked for completion. The request is past. Completion has not thereby been established.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 44.125,
+      "chord_seconds": 33.625,
+      "three_note_attacks": 8
+    },
+    {
+      "id": "checked-again",
+      "group": "manuscript",
+      "text": "Latch checked the store again.",
+      "intended": "Latch performed another check on the particular store; preserve the repeated inspection.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 53.5,
+      "chord_seconds": 43.5,
+      "three_note_attacks": 8
+    },
+    {
+      "id": "remained-valid",
+      "group": "manuscript",
+      "text": "The result remained valid.",
+      "intended": "The particular result continued to satisfy the applicable criterion. Preserve continued validity.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 37.875,
+      "chord_seconds": 30.375,
+      "three_note_attacks": 6
+    },
+    {
+      "id": "make-replay",
+      "group": "manuscript",
+      "text": "I can make you a replay.",
+      "intended": "The speaker can make a replay for the addressee. Preserve ability and the recipient.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 35.625,
+      "chord_seconds": 32.625,
+      "three_note_attacks": 2
+    },
+    {
+      "id": "have-replays",
+      "group": "manuscript",
+      "text": "We have replays.",
+      "intended": "The speaker\u2019s group possesses replays. They are plural, with no precise count.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 41,
+      "chord_seconds": 36,
+      "three_note_attacks": 4
+    },
+    {
+      "id": "know-want",
+      "group": "manuscript",
+      "text": "Then I don\u2019t know what else you want.",
+      "intended": "The speaker lacks knowledge of the additional thing the addressee wants. The embedded desire and negated knowledge have different subjects.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 20.5,
+      "chord_seconds": 18,
+      "three_note_attacks": 2
+    },
+    {
+      "id": "door-opened",
+      "group": "manuscript",
+      "text": "The door opened.",
+      "intended": "The door changed to an open state. The text establishes no earlier reopening.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 38.125,
+      "chord_seconds": 30.625,
+      "three_note_attacks": 6
+    },
+    {
+      "id": "wrong",
+      "group": "manuscript",
+      "text": "We were wrong.",
+      "intended": "The speaker\u2019s group had an incorrect belief or judgment. This is past and describes the group.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 25.375,
+      "chord_seconds": 20.375,
+      "three_note_attacks": 4
+    },
+    {
+      "id": "fresh-1",
+      "group": "reserve",
+      "text": "A few lanterns rang.",
+      "intended": "A small unspecified number of lanterns rang in the past, with no exact count.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 45.625,
+      "chord_seconds": 38.125,
+      "three_note_attacks": 6
+    },
+    {
+      "id": "fresh-2",
+      "group": "reserve",
+      "text": "Nobody waited.",
+      "intended": "No participant waited in the past.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 26.125,
+      "chord_seconds": 21.125,
+      "three_note_attacks": 4
+    },
+    {
+      "id": "fresh-3",
+      "group": "reserve",
+      "text": "The resolver found the report. It found the log.",
+      "intended": "The resolver was the second finder. Ask the author when both the resolver and its report fit the pronoun.",
+      "choice": [
+        "The resolver (reference 1)"
+      ],
+      "result": "intended meaning recovered",
+      "melody_seconds": 75.5,
+      "chord_seconds": 65.5,
+      "three_note_attacks": 8
+    },
+    {
+      "id": "fresh-4",
+      "group": "reserve",
+      "text": "The porter carried the crate.",
+      "intended": "The porter carried the physical crate in the past.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 52.25,
+      "chord_seconds": 44.75,
+      "three_note_attacks": 6
+    },
+    {
+      "id": "fresh-5",
+      "group": "reserve",
+      "text": "The compiler carried the assignments.",
+      "intended": "The compiler passed work on. Ask about the sense of carrying when the target can represent work or a physical item.",
+      "choice": [
+        "Work passed between handlers"
+      ],
+      "result": "intended meaning recovered",
+      "melody_seconds": 54.5,
+      "chord_seconds": 48.5,
+      "three_note_attacks": 4
+    },
+    {
+      "id": "fresh-6",
+      "group": "reserve",
+      "text": "Nora might not notice the alarm.",
+      "intended": "The possibility scopes over Nora failing to notice the alarm. Both the screen and the musical reading must show this.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 43.25,
+      "chord_seconds": 38.25,
+      "three_note_attacks": 4
+    },
+    {
+      "id": "fresh-7",
+      "group": "reserve",
+      "text": "Did Nora notice a faulty radio?",
+      "intended": "Ask whether Nora noticed a radio with a fault in the past.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 55.5,
+      "chord_seconds": 45.5,
+      "three_note_attacks": 8
+    },
+    {
+      "id": "fresh-8",
+      "group": "reserve",
+      "text": "Mira repaired Nora.",
+      "intended": "Recover both named participants from music alone with Mira in the source role.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 24.25,
+      "chord_seconds": 21.25,
+      "three_note_attacks": 2
+    },
+    {
+      "id": "fresh-9",
+      "group": "reserve",
+      "text": "The engineer reopened the tunnel.",
+      "intended": "The engineer caused the tunnel to become passable again after blockage.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 69.25,
+      "chord_seconds": 56.75,
+      "three_note_attacks": 10
+    },
+    {
+      "id": "fresh-10",
+      "group": "reserve",
+      "text": "The worker checked the log again.",
+      "intended": "The worker performed a later inspection of the log, without asserting a favorable result.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 55.25,
+      "chord_seconds": 45.25,
+      "three_note_attacks": 8
+    },
+    {
+      "id": "fresh-11",
+      "group": "reserve",
+      "text": "The permit remained valid.",
+      "intended": "The permit continued to meet the applicable criterion.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 36.875,
+      "chord_seconds": 29.375,
+      "three_note_attacks": 6
+    },
+    {
+      "id": "fresh-12",
+      "group": "reserve",
+      "text": "The service requested completion.",
+      "intended": "The service made a request for completion. The requested outcome is unasserted.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 44.125,
+      "chord_seconds": 33.625,
+      "three_note_attacks": 8
+    },
+    {
+      "id": "fresh-13",
+      "group": "reserve",
+      "text": "I can make you a map.",
+      "intended": "The speaker can create a map for the addressee. Creation and delivery are unasserted.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 33.625,
+      "chord_seconds": 30.625,
+      "three_note_attacks": 2
+    },
+    {
+      "id": "fresh-14",
+      "group": "reserve",
+      "text": "If the tunnel reopens, the monitor will wait.",
+      "intended": "Waiting by the monitor is future and conditional on reopening of the tunnel.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 86.75,
+      "chord_seconds": 69.25,
+      "three_note_attacks": 14
+    },
+    {
+      "id": "fresh-15",
+      "group": "reserve",
+      "text": "Nora noticed the lamp or the bell.",
+      "intended": "At least one of the two targets was noticed. The text leaves open whether both were noticed.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 53.875,
+      "chord_seconds": 48.875,
+      "three_note_attacks": 4
+    },
+    {
+      "id": "fresh-16",
+      "group": "reserve",
+      "text": "We need to fix the checksum error.",
+      "intended": "The speaker group needs to correct a checksum fault. Success is unasserted.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 27,
+      "chord_seconds": 21.5,
+      "three_note_attacks": 4
+    },
+    {
+      "id": "fresh-17",
+      "group": "reserve",
+      "text": "The file was open.",
+      "intended": "In this reading a software resource is available for use. Never silently choose traversability.",
+      "choice": [
+        "Open for use in software"
+      ],
+      "result": "intended meaning recovered",
+      "melody_seconds": 28.625,
+      "chord_seconds": 23.125,
+      "three_note_attacks": 4
+    },
+    {
+      "id": "fresh-18",
+      "group": "reserve",
+      "text": "Nora spotted a cracked radio.\nThey repaired it.",
+      "intended": "Nora saw the crack-bearing radio and repaired that same radio. The newline does not change the participants.",
+      "choice": [],
+      "result": "intended meaning recovered",
+      "melody_seconds": 93.25,
+      "chord_seconds": 72.25,
+      "three_note_attacks": 16
+    }
+  ]
+}

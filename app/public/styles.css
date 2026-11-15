@@ -66,3 +66,7 @@
 .chord-actions button,.song-editor #previewSongRoot{min-height:36px;cursor:pointer}
 .song-editor #previewSongRoot{margin:8px 0}.song-editor #songTiming:empty{display:none}
 @media(max-width:560px){.app-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%}.app-tabs .app-tab{min-width:0;width:100%}}
+
+.song-editor li [role="status"]:not(:empty){margin:.5rem 0 1rem;overflow-wrap:anywhere}
+.song-editor li pre{white-space:pre-wrap;font-size:.85em}
+.song-editor #nextSongRoot{min-height:36px;margin-inline-start:.25rem}
