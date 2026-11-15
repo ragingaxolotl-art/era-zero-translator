@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 82
+  entry_count: 94
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -174,6 +174,127 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: 0aca609416668978e1527dac3aeac18d202b9b5615f5e15134d637682a39fa8d
 - architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:3c7e1b60fb3087e942be4555
+    definition_version: 1.0.0
+  - node_id: h
+    kind: root
+    root_id: ORI:110
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: transition_to_a_traversable_passage
+    sound_code: 56
+    added_definition: A previously nonpassable door, gate or route becomes passable
+      for the relevant traffic by the end of the transition. Its history before this
+      transition is unspecified.
+    excludes:
+    - A door was passable throughout the reported interval.
+  compound_id: CMP:0b0461b1975240868e0bed8d
+  content_digest: 0b0461b1975240868e0bed8dec24f480140652b3e6f8571695e78ee953da4e7f
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: transition to a traversable passage
+  english_glosses:
+  - open
+  - transition to a traversable passage
+  invariant_definition: A previously nonpassable door, gate or route becomes passable
+    for the relevant traffic by the end of the transition. Its history before this
+    transition is unspecified.
+  boundaries:
+    includes: A previously nonpassable door, gate or route becomes passable for the
+      relevant traffic by the end of the transition. Its history before this transition
+      is unspecified.
+    excludes: A door was passable throughout the reported interval.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The field findings in reports/translator_field_audit.md motivated this dependency-ordered
+    batch. The listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 56 supplies the specific distinction. Nearest excluded reading: A door was
+    passable throughout the reported interval.'
+  examples:
+    ordinary: The door opened for the first time.
+    technical: A previously nonpassable door, gate or route becomes passable for the
+      relevant traffic by the end of the transition. Its history before this transition
+      is unspecified.
+    future_compound: A causing participant can bring about opening of this same passage.
+    counterexample: A door was passable throughout the reported interval.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 0b0461b1975240868e0bed8dec24f480140652b3e6f8571695e78ee953da4e7f
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: root
+    root_id: LOG:010
+  - node_id: h
+    kind: root
+    root_id: ORI:011
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: satisfaction_of_an_applicable_criterion
+    sound_code: 51
+    added_definition: A particular result, claim, permit or other bearer meets the
+      criterion applicable to it at the reference time. Continuing validity adds a
+      duration over which that relationship holds.
+    excludes:
+    - An untested answer is assumed to be acceptable because it exists.
+  compound_id: CMP:0cddf1c999333b77818f32fc
+  content_digest: 0cddf1c999333b77818f32fc41b42f7fad0a8d62f091ecae04d74ebd42662eed
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: satisfaction of an applicable criterion
+  english_glosses:
+  - valid
+  - satisfaction of an applicable criterion
+  invariant_definition: A particular result, claim, permit or other bearer meets the
+    criterion applicable to it at the reference time. Continuing validity adds a duration
+    over which that relationship holds.
+  boundaries:
+    includes: A particular result, claim, permit or other bearer meets the criterion
+      applicable to it at the reference time. Continuing validity adds a duration
+      over which that relationship holds.
+    excludes: An untested answer is assumed to be acceptable because it exists.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The field findings in reports/translator_field_audit.md motivated this dependency-ordered
+    batch. The listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 51 supplies the specific distinction. Nearest excluded reading: An untested
+    answer is assumed to be acceptable because it exists.'
+  examples:
+    ordinary: The result is valid.
+    technical: A particular result, claim, permit or other bearer meets the criterion
+      applicable to it at the reference time. Continuing validity adds a duration
+      over which that relationship holds.
+    future_compound: Continued validity preserves the same bearer and criterion.
+    counterexample: An untested answer is assumed to be acceptable because it exists.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 0cddf1c999333b77818f32fc41b42f7fad0a8d62f091ecae04d74ebd42662eed
+- architecture_version: '1.0'
   compound_id: CMP:111b772027accab2054f0415
   content_digest: 111b772027accab2054f04158521688548f4899eb5feda420f7ace4ebefba396
   definition_version: 1.0.0
@@ -308,6 +429,66 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 139985443924b6e8f24d44f2ef1e07372ec02474582210b90dbd2cc247e75946
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: root
+    root_id: ORI:010
+  - node_id: h
+    kind: root
+    root_id: ORI:110
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: occurrence_after_a_reference_event
+    sound_code: 54
+    added_definition: An event occurs later than a reference event supplied by the
+      context. Temporal succession by itself supplies neither causation nor movement
+      behind another participant.
+    excludes:
+    - A traveler followed a guide along the road.
+  compound_id: CMP:1a34b714578bdb300dfedbe4
+  content_digest: 1a34b714578bdb300dfedbe4da652a2a5729dafc5c492d4ec6bb3405b0ca5827
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: occurrence after a reference event
+  english_glosses:
+  - follow
+  - occurrence after a reference event
+  invariant_definition: An event occurs later than a reference event supplied by the
+    context. Temporal succession by itself supplies neither causation nor movement
+    behind another participant.
+  boundaries:
+    includes: An event occurs later than a reference event supplied by the context.
+      Temporal succession by itself supplies neither causation nor movement behind
+      another participant.
+    excludes: A traveler followed a guide along the road.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The field findings in reports/translator_field_audit.md motivated this dependency-ordered
+    batch. The listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 54 supplies the specific distinction. Nearest excluded reading: A traveler
+    followed a guide along the road.'
+  examples:
+    ordinary: An adjustment followed.
+    technical: An event occurs later than a reference event supplied by the context.
+      Temporal succession by itself supplies neither causation nor movement behind
+      another participant.
+    future_compound: A negative quantifier can deny any subsequent occurrence.
+    counterexample: A traveler followed a guide along the road.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 1a34b714578bdb300dfedbe4da652a2a5729dafc5c492d4ec6bb3405b0ca5827
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
@@ -740,6 +921,66 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: 22955227e19ba82d5b48c9ef66f69a4898d18356ea76814af3c488a3786d694d
 - architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: root
+    root_id: ORI:010
+  - node_id: h
+    kind: root
+    root_id: ORI:110
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: attainment_of_an_activity_endpoint
+    sound_code: 52
+    added_definition: A process or task attains its relevant endpoint. The endpoint
+      belongs to that activity. A desire, request or prediction can mention completion
+      without committing the speaker to its occurrence.
+    excludes:
+    - The scan began but stopped before the final step.
+  compound_id: CMP:22a4eb4803d9bf5e07204f02
+  content_digest: 22a4eb4803d9bf5e07204f024df745329deb64cde4161e65ec9c88e79b7e7273
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: attainment of an activity endpoint
+  english_glosses:
+  - completion
+  - attainment of an activity endpoint
+  invariant_definition: A process or task attains its relevant endpoint. The endpoint
+    belongs to that activity. A desire, request or prediction can mention completion
+    without committing the speaker to its occurrence.
+  boundaries:
+    includes: A process or task attains its relevant endpoint. The endpoint belongs
+      to that activity. A desire, request or prediction can mention completion without
+      committing the speaker to its occurrence.
+    excludes: The scan began but stopped before the final step.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The field findings in reports/translator_field_audit.md motivated this dependency-ordered
+    batch. The listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 52 supplies the specific distinction. Nearest excluded reading: The scan
+    began but stopped before the final step.'
+  examples:
+    ordinary: Completion of the scan occurred at noon.
+    technical: A process or task attains its relevant endpoint. The endpoint belongs
+      to that activity. A desire, request or prediction can mention completion without
+      committing the speaker to its occurrence.
+    future_compound: A request may take this endpoint as its content.
+    counterexample: The scan began but stopped before the final step.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 22a4eb4803d9bf5e07204f024df745329deb64cde4161e65ec9c88e79b7e7273
+- architecture_version: '1.0'
   compound_id: CMP:22f8ddc4d9b2d1a818d38e9f
   content_digest: 22f8ddc4d9b2d1a818d38e9fa1dc82343d7588ea825c12c9b5ae17856d9dc38a
   definition_version: 1.0.0
@@ -1117,6 +1358,66 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 33c135410b0deef525b6770d4a8f40c3032cecd94d385aa905fb0d30dd7440f6
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: root
+    root_id: CON:100
+  - node_id: h
+    kind: root
+    root_id: DAT:110
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: convey_work_between_handlers
+    sound_code: 57
+    added_definition: A source conveys a work assignment or its associated state from
+      one handler to another so that handling can continue. The recipient may be implicit.
+      Physical support or transport of an object is unnecessary.
+    excludes:
+    - A porter carried a stack of paper without handing work to anyone.
+  compound_id: CMP:36f60b14c3c3f26ad71f2564
+  content_digest: 36f60b14c3c3f26ad71f2564196f32ac4c625a06ff10471037edb39412a1fc57
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: convey work between handlers
+  english_glosses:
+  - hand off work
+  - convey work between handlers
+  invariant_definition: A source conveys a work assignment or its associated state
+    from one handler to another so that handling can continue. The recipient may be
+    implicit. Physical support or transport of an object is unnecessary.
+  boundaries:
+    includes: A source conveys a work assignment or its associated state from one
+      handler to another so that handling can continue. The recipient may be implicit.
+      Physical support or transport of an object is unnecessary.
+    excludes: A porter carried a stack of paper without handing work to anyone.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The field findings in reports/translator_field_audit.md motivated this dependency-ordered
+    batch. The listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 57 supplies the specific distinction. Nearest excluded reading: A porter
+    carried a stack of paper without handing work to anyone.'
+  examples:
+    ordinary: The dispatcher carried the handoffs between two workers.
+    technical: A source conveys a work assignment or its associated state from one
+      handler to another so that handling can continue. The recipient may be implicit.
+      Physical support or transport of an object is unnecessary.
+    future_compound: A handoff may itself be checked before another worker continues.
+    counterexample: A porter carried a stack of paper without handing work to anyone.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 36f60b14c3c3f26ad71f2564196f32ac4c625a06ff10471037edb39412a1fc57
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
@@ -1641,6 +1942,67 @@ entries:
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
+  - node_id: q1
+    kind: root
+    root_id: MIN:011
+  - node_id: h
+    kind: root
+    root_id: LOG:010
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: incorrect_judgment_by_a_participant
+    sound_code: 55
+    added_definition: A bearer holds or expresses a judgment that fails an applicable
+      correctness criterion at the reference time. This reading attributes an error
+      in judgment to the bearer.
+    excludes:
+    - A person deliberately broke a rule while correctly predicting its effect.
+  compound_id: CMP:45a6b6cf438ae2274104f30b
+  content_digest: 45a6b6cf438ae2274104f30b21f6fcaef98c88a1f11f0d1bcbe9fcbe2456c854
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: incorrect judgment by a participant
+  english_glosses:
+  - wrong
+  - incorrect judgment by a participant
+  invariant_definition: A bearer holds or expresses a judgment that fails an applicable
+    correctness criterion at the reference time. This reading attributes an error
+    in judgment to the bearer.
+  boundaries:
+    includes: A bearer holds or expresses a judgment that fails an applicable correctness
+      criterion at the reference time. This reading attributes an error in judgment
+      to the bearer.
+    excludes: A person deliberately broke a rule while correctly predicting its effect.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The field findings in reports/translator_field_audit.md motivated this dependency-ordered
+    batch. The listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 55 supplies the specific distinction. Nearest excluded reading: A person
+    deliberately broke a rule while correctly predicting its effect.'
+  examples:
+    ordinary: We were wrong about the source.
+    technical: A bearer holds or expresses a judgment that fails an applicable correctness
+      criterion at the reference time. This reading attributes an error in judgment
+      to the bearer.
+    future_compound: A later correction can revise this judgment.
+    counterexample: A person deliberately broke a rule while correctly predicting
+      its effect.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 45a6b6cf438ae2274104f30b21f6fcaef98c88a1f11f0d1bcbe9fcbe2456c854
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
   - node_id: q-path
     kind: compound_ref
     compound_id: CMP:139985443924b6e8f24d44f2
@@ -1952,6 +2314,66 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 578fd06e1dec6f91d2b35addea49cab1370912015a72ce2fed948395804930f7
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: root
+    root_id: ORI:112
+  - node_id: h
+    kind: root
+    root_id: CON:100
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: expression_asking_for_an_outcome
+    sound_code: 53
+    added_definition: A requester expresses that an addressee should bring about a
+      specified outcome. The outcome is content of the request. Understanding, agreement
+      and fulfillment each require further evidence.
+    excludes:
+    - The worker mentioned a replay while describing yesterday.
+  compound_id: CMP:59400f445c53fdb3333c7943
+  content_digest: 59400f445c53fdb3333c7943bca548a78768e95a5288e8cb95990e3f41ec03bf
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: expression asking for an outcome
+  english_glosses:
+  - request
+  - expression asking for an outcome
+  invariant_definition: A requester expresses that an addressee should bring about
+    a specified outcome. The outcome is content of the request. Understanding, agreement
+    and fulfillment each require further evidence.
+  boundaries:
+    includes: A requester expresses that an addressee should bring about a specified
+      outcome. The outcome is content of the request. Understanding, agreement and
+      fulfillment each require further evidence.
+    excludes: The worker mentioned a replay while describing yesterday.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The field findings in reports/translator_field_audit.md motivated this dependency-ordered
+    batch. The listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 53 supplies the specific distinction. Nearest excluded reading: The worker
+    mentioned a replay while describing yesterday.'
+  examples:
+    ordinary: The worker requested a replay.
+    technical: A requester expresses that an addressee should bring about a specified
+      outcome. The outcome is content of the request. Understanding, agreement and
+      fulfillment each require further evidence.
+    future_compound: A request for completion specifies the requested endpoint.
+    counterexample: The worker mentioned a replay while describing yesterday.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 59400f445c53fdb3333c7943bca548a78768e95a5288e8cb95990e3f41ec03bf
 - architecture_version: '1.0'
   compound_id: CMP:608ecb4f3c515a9c9a3443ec
   content_digest: 608ecb4f3c515a9c9a3443ec287b2836f35df7e5b2214fea55fabc1d69c9b035
@@ -2339,6 +2761,67 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 6ccc77b4b3aa69bb010849a4a77c87f8d65d6f82c94a6ee9acc5305a252b04eb
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:0cddf1c999333b77818f32fc
+    definition_version: 1.0.0
+  - node_id: h
+    kind: root
+    root_id: ORI:010
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: continued_satisfaction_of_the_same_criterion
+    sound_code: 60
+    added_definition: The same bearer continues to meet the applicable criterion over
+      the reference interval, including its earlier and later portions. The sentence
+      can report this persistence without reporting an inspection.
+    excludes:
+    - A previously invalid permit became valid for the first time.
+  compound_id: CMP:7017c0aee0086123c2cf67dc
+  content_digest: 7017c0aee0086123c2cf67dcf30a585e8e0969914d65501578ccd4de71958b47
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: continued satisfaction of the same criterion
+  english_glosses:
+  - remain valid
+  - continued satisfaction of the same criterion
+  invariant_definition: The same bearer continues to meet the applicable criterion
+    over the reference interval, including its earlier and later portions. The sentence
+    can report this persistence without reporting an inspection.
+  boundaries:
+    includes: The same bearer continues to meet the applicable criterion over the
+      reference interval, including its earlier and later portions. The sentence can
+      report this persistence without reporting an inspection.
+    excludes: A previously invalid permit became valid for the first time.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The field findings in reports/translator_field_audit.md motivated this dependency-ordered
+    batch. The listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 60 supplies the specific distinction. Nearest excluded reading: A previously
+    invalid permit became valid for the first time.'
+  examples:
+    ordinary: The permit remained valid throughout the change.
+    technical: The same bearer continues to meet the applicable criterion over the
+      reference interval, including its earlier and later portions. The sentence can
+      report this persistence without reporting an inspection.
+    future_compound: A later invalidation ends this continued state.
+    counterexample: A previously invalid permit became valid for the first time.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 7017c0aee0086123c2cf67dcf30a585e8e0969914d65501578ccd4de71958b47
 - architecture_version: '1.0'
   compound_id: CMP:725868579ebb0e2ef83cf708
   content_digest: 725868579ebb0e2ef83cf7089271a399a547885e12b8bbde8b60552c9e41bcd0
@@ -3929,6 +4412,128 @@ entries:
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
+  - node_id: q1
+    kind: root
+    root_id: MIN:011
+  - node_id: h
+    kind: root
+    root_id: LOG:110
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: deliberate_inspection_of_a_target
+    sound_code: 50
+    added_definition: An inspector deliberately evaluates information about a particular
+      target for a relevant condition. The inspection itself is the reported action.
+      Its outcome can be favorable, unfavorable or inconclusive.
+    excludes:
+    - A sensor noticed a flash without inspecting anything.
+  compound_id: CMP:b72611332d4684a6b7f0bf19
+  content_digest: b72611332d4684a6b7f0bf19a36df99f8369c7c5d6e98a278de11c53bbd4fcfe
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: deliberate inspection of a target
+  english_glosses:
+  - check
+  - deliberate inspection of a target
+  invariant_definition: An inspector deliberately evaluates information about a particular
+    target for a relevant condition. The inspection itself is the reported action.
+    Its outcome can be favorable, unfavorable or inconclusive.
+  boundaries:
+    includes: An inspector deliberately evaluates information about a particular target
+      for a relevant condition. The inspection itself is the reported action. Its
+      outcome can be favorable, unfavorable or inconclusive.
+    excludes: A sensor noticed a flash without inspecting anything.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The field findings in reports/translator_field_audit.md motivated this dependency-ordered
+    batch. The listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 50 supplies the specific distinction. Nearest excluded reading: A sensor
+    noticed a flash without inspecting anything.'
+  examples:
+    ordinary: The technician checked the valve.
+    technical: An inspector deliberately evaluates information about a particular
+      target for a relevant condition. The inspection itself is the reported action.
+      Its outcome can be favorable, unfavorable or inconclusive.
+    future_compound: A recheck is another inspection of the same target.
+    counterexample: A sensor noticed a flash without inspecting anything.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: b72611332d4684a6b7f0bf19a36df99f8369c7c5d6e98a278de11c53bbd4fcfe
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:22a4eb4803d9bf5e07204f02
+    definition_version: 1.0.0
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:59400f445c53fdb3333c7943
+    definition_version: 1.0.0
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: request_for_attainment_of_an_activity_endpoint
+    sound_code: 61
+    added_definition: A requester communicates a request for an applicable activity
+      to reach its endpoint. The request occurs at its own reference time. The requested
+      completion is embedded content and may never occur.
+    excludes:
+    - The worker reported that the activity had already completed.
+  compound_id: CMP:ba437968d31a6673a65ed1ff
+  content_digest: ba437968d31a6673a65ed1ff09207a40f5e0cca1e6b738f02ba25892a2f0bd3c
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: request for attainment of an activity endpoint
+  english_glosses:
+  - request completion
+  - request for attainment of an activity endpoint
+  invariant_definition: A requester communicates a request for an applicable activity
+    to reach its endpoint. The request occurs at its own reference time. The requested
+    completion is embedded content and may never occur.
+  boundaries:
+    includes: A requester communicates a request for an applicable activity to reach
+      its endpoint. The request occurs at its own reference time. The requested completion
+      is embedded content and may never occur.
+    excludes: The worker reported that the activity had already completed.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The field findings in reports/translator_field_audit.md motivated this dependency-ordered
+    batch. The listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 61 supplies the specific distinction. Nearest excluded reading: The worker
+    reported that the activity had already completed.'
+  examples:
+    ordinary: The worker requested completion.
+    technical: A requester communicates a request for an applicable activity to reach
+      its endpoint. The request occurs at its own reference time. The requested completion
+      is embedded content and may never occur.
+    future_compound: A renewed request can target the same pending completion.
+    counterexample: The worker reported that the activity had already completed.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: ba437968d31a6673a65ed1ff09207a40f5e0cca1e6b738f02ba25892a2f0bd3c
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
   - node_id: h
     kind: compound_ref
     compound_id: CMP:ade73037114406a2cd91ce13
@@ -3986,6 +4591,67 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: bcfd189eb305cf364ada975a962b89ff5917d5afff28049b8cd30e3817285f7e
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: root
+    root_id: ORI:001
+  - node_id: h
+    kind: root
+    root_id: ORI:011
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: possession_of_an_available_resource
+    sound_code: 58
+    added_definition: At the reference time a holder has a resource in its possession
+      or at its disposal. The bearer can be a group and the resource can be tangible
+      or represented. The relation leaves legal ownership, acquisition and use unspecified.
+    excludes:
+    - The team knows that replays exist elsewhere but has none.
+  compound_id: CMP:beb2a0dff4e59fb7d8b75bf9
+  content_digest: beb2a0dff4e59fb7d8b75bf983cb6c590e67fcbfa47b2badebdbeee9aa8834a8
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: possession of an available resource
+  english_glosses:
+  - have
+  - possession of an available resource
+  invariant_definition: At the reference time a holder has a resource in its possession
+    or at its disposal. The bearer can be a group and the resource can be tangible
+    or represented. The relation leaves legal ownership, acquisition and use unspecified.
+  boundaries:
+    includes: At the reference time a holder has a resource in its possession or at
+      its disposal. The bearer can be a group and the resource can be tangible or
+      represented. The relation leaves legal ownership, acquisition and use unspecified.
+    excludes: The team knows that replays exist elsewhere but has none.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The field findings in reports/translator_field_audit.md motivated this dependency-ordered
+    batch. The listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 58 supplies the specific distinction. Nearest excluded reading: The team
+    knows that replays exist elsewhere but has none.'
+  examples:
+    ordinary: The team has replays.
+    technical: At the reference time a holder has a resource in its possession or
+      at its disposal. The bearer can be a group and the resource can be tangible
+      or represented. The relation leaves legal ownership, acquisition and use unspecified.
+    future_compound: An author can quantify the available resources or ask who has
+      them.
+    counterexample: The team knows that replays exist elsewhere but has none.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: beb2a0dff4e59fb7d8b75bf983cb6c590e67fcbfa47b2badebdbeee9aa8834a8
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
@@ -5236,3 +5902,65 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: f9554786959994e2f5fb6e9c5ab9a141bff2c4efbc8b73561ed9acf916d49130
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:d6b796937329c4412a92ea4a
+    definition_version: 1.0.0
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:b72611332d4684a6b7f0bf19
+    definition_version: 1.0.0
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: subsequent_inspection_of_the_same_target
+    sound_code: 59
+    added_definition: An inspector inspects the target again after a prior inspection
+      of that target. The inspector in the earlier episode, interval, number of earlier
+      checks and their outcomes are unspecified.
+    excludes:
+    - The worker kept looking throughout one uninterrupted inspection.
+  compound_id: CMP:ffeb55f462f10014970989a4
+  content_digest: ffeb55f462f10014970989a49d98fd56dd82fa0a1ec4253114c9d67d5396f647
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: subsequent inspection of the same target
+  english_glosses:
+  - recheck
+  - subsequent inspection of the same target
+  invariant_definition: An inspector inspects the target again after a prior inspection
+    of that target. The inspector in the earlier episode, interval, number of earlier
+    checks and their outcomes are unspecified.
+  boundaries:
+    includes: An inspector inspects the target again after a prior inspection of that
+      target. The inspector in the earlier episode, interval, number of earlier checks
+      and their outcomes are unspecified.
+    excludes: The worker kept looking throughout one uninterrupted inspection.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The field findings in reports/translator_field_audit.md motivated this dependency-ordered
+    batch. The listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 59 supplies the specific distinction. Nearest excluded reading: The worker
+    kept looking throughout one uninterrupted inspection.'
+  examples:
+    ordinary: The worker rechecked the log.
+    technical: An inspector inspects the target again after a prior inspection of
+      that target. The inspector in the earlier episode, interval, number of earlier
+      checks and their outcomes are unspecified.
+    future_compound: An inspection can recur while the target remains valid.
+    counterexample: The worker kept looking throughout one uninterrupted inspection.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: ffeb55f462f10014970989a49d98fd56dd82fa0a1ec4253114c9d67d5396f647

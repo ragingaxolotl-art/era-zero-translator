@@ -2,7 +2,7 @@
 metadata:
   title: Gate 4B dictionary conformance and routing cases
   version: 1.0.0
-  approved_entries: 82
+  approved_entries: 94
 accepted:
 - case_id: arrival_back_at_a_prior_position
   compound_id: CMP:0808e01be62b7fac873ee324
@@ -10,11 +10,20 @@ accepted:
 - case_id: practical_physical_custody
   compound_id: CMP:0aca609416668978e1527dac
   expected: valid_approved_entry
+- case_id: transition_to_a_traversable_passage
+  compound_id: CMP:0b0461b1975240868e0bed8d
+  expected: valid_approved_entry
+- case_id: satisfaction_of_an_applicable_criterion
+  compound_id: CMP:0cddf1c999333b77818f32fc
+  expected: valid_approved_entry
 - case_id: physical_tool
   compound_id: CMP:111b772027accab2054f0415
   expected: valid_approved_entry
 - case_id: ongoing_running_toward_a_destination
   compound_id: CMP:139985443924b6e8f24d44f2
+  expected: valid_approved_entry
+- case_id: occurrence_after_a_reference_event
+  compound_id: CMP:1a34b714578bdb300dfedbe4
   expected: valid_approved_entry
 - case_id: episode_of_resonant_ringing
   compound_id: CMP:1b70b478c71b872bf63bb95a
@@ -36,6 +45,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: ongoing_bodily_running
   compound_id: CMP:22955227e19ba82d5b48c9ef
+  expected: valid_approved_entry
+- case_id: attainment_of_an_activity_endpoint
+  compound_id: CMP:22a4eb4803d9bf5e07204f02
   expected: valid_approved_entry
 - case_id: physical_repair
   compound_id: CMP:22f8ddc4d9b2d1a818d38e9f
@@ -60,6 +72,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: backup_dataset
   compound_id: CMP:33c135410b0deef525b6770d
+  expected: valid_approved_entry
+- case_id: convey_work_between_handlers
+  compound_id: CMP:36f60b14c3c3f26ad71f2564
   expected: valid_approved_entry
 - case_id: felt_fatigue
   compound_id: CMP:3c13b9c619d95f1c40ea5da5
@@ -88,6 +103,9 @@ accepted:
 - case_id: love
   compound_id: CMP:44718c92b66443c0c0f03ad7
   expected: valid_approved_entry
+- case_id: incorrect_judgment_by_a_participant
+  compound_id: CMP:45a6b6cf438ae2274104f30b
+  expected: valid_approved_entry
 - case_id: completed_running_to_a_destination
   compound_id: CMP:4f83046a60201671bc92fe10
   expected: valid_approved_entry
@@ -99,6 +117,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: formal_ontological_dependence
   compound_id: CMP:578fd06e1dec6f91d2b35add
+  expected: valid_approved_entry
+- case_id: expression_asking_for_an_outcome
+  compound_id: CMP:59400f445c53fdb3333c7943
   expected: valid_approved_entry
 - case_id: message_datum
   compound_id: CMP:608ecb4f3c515a9c9a3443ec
@@ -117,6 +138,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: physical_region_interior_relation
   compound_id: CMP:6ccc77b4b3aa69bb010849a4
+  expected: valid_approved_entry
+- case_id: continued_satisfaction_of_the_same_criterion
+  compound_id: CMP:7017c0aee0086123c2cf67dc
   expected: valid_approved_entry
 - case_id: data_transfer_channel
   compound_id: CMP:725868579ebb0e2ef83cf708
@@ -187,8 +211,17 @@ accepted:
 - case_id: data_repair
   compound_id: CMP:b518a324d776e46e9d0ff041
   expected: valid_approved_entry
+- case_id: deliberate_inspection_of_a_target
+  compound_id: CMP:b72611332d4684a6b7f0bf19
+  expected: valid_approved_entry
+- case_id: request_for_attainment_of_an_activity_endpoint
+  compound_id: CMP:ba437968d31a6673a65ed1ff
+  expected: valid_approved_entry
 - case_id: ongoing_optical_sensory_registration
   compound_id: CMP:bcfd189eb305cf364ada975a
+  expected: valid_approved_entry
+- case_id: possession_of_an_available_resource
+  compound_id: CMP:beb2a0dff4e59fb7d8b75bf9
   expected: valid_approved_entry
 - case_id: completed_acquisition_of_physical_custody
   compound_id: CMP:c332d2e89b9f6177486fc93b
@@ -249,6 +282,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: passage_preventing_traversal
   compound_id: CMP:f9554786959994e2f5fb6e9c
+  expected: valid_approved_entry
+- case_id: subsequent_inspection_of_the_same_target
+  compound_id: CMP:ffeb55f462f10014970989a4
   expected: valid_approved_entry
 routing_tests:
 - english_concept: person

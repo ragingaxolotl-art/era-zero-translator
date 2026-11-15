@@ -6025,3 +6025,882 @@ reviews:
     decision: 'rejected: unnecessary change of authority'
   recommendation: approve specific_convention
   confidence: high
+- compound_id: CMP:b72611332d4684a6b7f0bf19
+  display_title: deliberate inspection of a target
+  current_choice_reason: The authored distinction is exercised by The technician checked
+    the valve. and contrasted with A sensor noticed a flash without inspecting anything.
+  candidates:
+  - candidate_id: specific_convention
+    direction: An inspector deliberately evaluates information about a particular
+      target for a relevant condition. The inspection itself is the reported action.
+      Its outcome can be favorable, unfavorable or inconclusive.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: MIN:011
+      - node_id: h
+        kind: root
+        root_id: LOG:110
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: deliberate_inspection_of_a_target
+        sound_code: 50
+        added_definition: An inspector deliberately evaluates information about a
+          particular target for a relevant condition. The inspection itself is the
+          reported action. Its outcome can be favorable, unfavorable or inconclusive.
+        excludes:
+        - A sensor noticed a flash without inspecting anything.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: A sensor noticed a flash
+      without inspecting anything.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:0cddf1c999333b77818f32fc
+  display_title: satisfaction of an applicable criterion
+  current_choice_reason: The authored distinction is exercised by The result is valid.
+    and contrasted with An untested answer is assumed to be acceptable because it
+    exists.
+  candidates:
+  - candidate_id: specific_convention
+    direction: A particular result, claim, permit or other bearer meets the criterion
+      applicable to it at the reference time. Continuing validity adds a duration
+      over which that relationship holds.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: LOG:010
+      - node_id: h
+        kind: root
+        root_id: ORI:011
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: satisfaction_of_an_applicable_criterion
+        sound_code: 51
+        added_definition: A particular result, claim, permit or other bearer meets
+          the criterion applicable to it at the reference time. Continuing validity
+          adds a duration over which that relationship holds.
+        excludes:
+        - An untested answer is assumed to be acceptable because it exists.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: An untested answer is
+      assumed to be acceptable because it exists.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:22a4eb4803d9bf5e07204f02
+  display_title: attainment of an activity endpoint
+  current_choice_reason: The authored distinction is exercised by Completion of the
+    scan occurred at noon. and contrasted with The scan began but stopped before the
+    final step.
+  candidates:
+  - candidate_id: specific_convention
+    direction: A process or task attains its relevant endpoint. The endpoint belongs
+      to that activity. A desire, request or prediction can mention completion without
+      committing the speaker to its occurrence.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: ORI:010
+      - node_id: h
+        kind: root
+        root_id: ORI:110
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: attainment_of_an_activity_endpoint
+        sound_code: 52
+        added_definition: A process or task attains its relevant endpoint. The endpoint
+          belongs to that activity. A desire, request or prediction can mention completion
+          without committing the speaker to its occurrence.
+        excludes:
+        - The scan began but stopped before the final step.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: The scan began but stopped
+      before the final step.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:59400f445c53fdb3333c7943
+  display_title: expression asking for an outcome
+  current_choice_reason: The authored distinction is exercised by The worker requested
+    a replay. and contrasted with The worker mentioned a replay while describing yesterday.
+  candidates:
+  - candidate_id: specific_convention
+    direction: A requester expresses that an addressee should bring about a specified
+      outcome. The outcome is content of the request. Understanding, agreement and
+      fulfillment each require further evidence.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: ORI:112
+      - node_id: h
+        kind: root
+        root_id: CON:100
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: expression_asking_for_an_outcome
+        sound_code: 53
+        added_definition: A requester expresses that an addressee should bring about
+          a specified outcome. The outcome is content of the request. Understanding,
+          agreement and fulfillment each require further evidence.
+        excludes:
+        - The worker mentioned a replay while describing yesterday.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: The worker mentioned
+      a replay while describing yesterday.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:1a34b714578bdb300dfedbe4
+  display_title: occurrence after a reference event
+  current_choice_reason: The authored distinction is exercised by An adjustment followed.
+    and contrasted with A traveler followed a guide along the road.
+  candidates:
+  - candidate_id: specific_convention
+    direction: An event occurs later than a reference event supplied by the context.
+      Temporal succession by itself supplies neither causation nor movement behind
+      another participant.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: ORI:010
+      - node_id: h
+        kind: root
+        root_id: ORI:110
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: occurrence_after_a_reference_event
+        sound_code: 54
+        added_definition: An event occurs later than a reference event supplied by
+          the context. Temporal succession by itself supplies neither causation nor
+          movement behind another participant.
+        excludes:
+        - A traveler followed a guide along the road.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: A traveler followed a
+      guide along the road.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:45a6b6cf438ae2274104f30b
+  display_title: incorrect judgment by a participant
+  current_choice_reason: The authored distinction is exercised by We were wrong about
+    the source. and contrasted with A person deliberately broke a rule while correctly
+    predicting its effect.
+  candidates:
+  - candidate_id: specific_convention
+    direction: A bearer holds or expresses a judgment that fails an applicable correctness
+      criterion at the reference time. This reading attributes an error in judgment
+      to the bearer.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: MIN:011
+      - node_id: h
+        kind: root
+        root_id: LOG:010
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: incorrect_judgment_by_a_participant
+        sound_code: 55
+        added_definition: A bearer holds or expresses a judgment that fails an applicable
+          correctness criterion at the reference time. This reading attributes an
+          error in judgment to the bearer.
+        excludes:
+        - A person deliberately broke a rule while correctly predicting its effect.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: A person deliberately
+      broke a rule while correctly predicting its effect.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:0b0461b1975240868e0bed8d
+  display_title: transition to a traversable passage
+  current_choice_reason: The authored distinction is exercised by The door opened
+    for the first time. and contrasted with A door was passable throughout the reported
+    interval.
+  candidates:
+  - candidate_id: specific_convention
+    direction: A previously nonpassable door, gate or route becomes passable for the
+      relevant traffic by the end of the transition. Its history before this transition
+      is unspecified.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: compound_ref
+        compound_id: CMP:3c7e1b60fb3087e942be4555
+        definition_version: 1.0.0
+      - node_id: h
+        kind: root
+        root_id: ORI:110
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: transition_to_a_traversable_passage
+        sound_code: 56
+        added_definition: A previously nonpassable door, gate or route becomes passable
+          for the relevant traffic by the end of the transition. Its history before
+          this transition is unspecified.
+        excludes:
+        - A door was passable throughout the reported interval.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: A door was passable throughout
+      the reported interval.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:36f60b14c3c3f26ad71f2564
+  display_title: convey work between handlers
+  current_choice_reason: The authored distinction is exercised by The dispatcher carried
+    the handoffs between two workers. and contrasted with A porter carried a stack
+    of paper without handing work to anyone.
+  candidates:
+  - candidate_id: specific_convention
+    direction: A source conveys a work assignment or its associated state from one
+      handler to another so that handling can continue. The recipient may be implicit.
+      Physical support or transport of an object is unnecessary.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: CON:100
+      - node_id: h
+        kind: root
+        root_id: DAT:110
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: convey_work_between_handlers
+        sound_code: 57
+        added_definition: A source conveys a work assignment or its associated state
+          from one handler to another so that handling can continue. The recipient
+          may be implicit. Physical support or transport of an object is unnecessary.
+        excludes:
+        - A porter carried a stack of paper without handing work to anyone.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: A porter carried a stack
+      of paper without handing work to anyone.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:beb2a0dff4e59fb7d8b75bf9
+  display_title: possession of an available resource
+  current_choice_reason: The authored distinction is exercised by The team has replays.
+    and contrasted with The team knows that replays exist elsewhere but has none.
+  candidates:
+  - candidate_id: specific_convention
+    direction: At the reference time a holder has a resource in its possession or
+      at its disposal. The bearer can be a group and the resource can be tangible
+      or represented. The relation leaves legal ownership, acquisition and use unspecified.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: ORI:001
+      - node_id: h
+        kind: root
+        root_id: ORI:011
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: possession_of_an_available_resource
+        sound_code: 58
+        added_definition: At the reference time a holder has a resource in its possession
+          or at its disposal. The bearer can be a group and the resource can be tangible
+          or represented. The relation leaves legal ownership, acquisition and use
+          unspecified.
+        excludes:
+        - The team knows that replays exist elsewhere but has none.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: The team knows that replays
+      exist elsewhere but has none.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:ffeb55f462f10014970989a4
+  display_title: subsequent inspection of the same target
+  current_choice_reason: The authored distinction is exercised by The worker rechecked
+    the log. and contrasted with The worker kept looking throughout one uninterrupted
+    inspection.
+  candidates:
+  - candidate_id: specific_convention
+    direction: An inspector inspects the target again after a prior inspection of
+      that target. The inspector in the earlier episode, interval, number of earlier
+      checks and their outcomes are unspecified.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: compound_ref
+        compound_id: CMP:d6b796937329c4412a92ea4a
+        definition_version: 1.0.0
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:b72611332d4684a6b7f0bf19
+        definition_version: 1.0.0
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: subsequent_inspection_of_the_same_target
+        sound_code: 59
+        added_definition: An inspector inspects the target again after a prior inspection
+          of that target. The inspector in the earlier episode, interval, number of
+          earlier checks and their outcomes are unspecified.
+        excludes:
+        - The worker kept looking throughout one uninterrupted inspection.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: The worker kept looking
+      throughout one uninterrupted inspection.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:7017c0aee0086123c2cf67dc
+  display_title: continued satisfaction of the same criterion
+  current_choice_reason: The authored distinction is exercised by The permit remained
+    valid throughout the change. and contrasted with A previously invalid permit became
+    valid for the first time.
+  candidates:
+  - candidate_id: specific_convention
+    direction: The same bearer continues to meet the applicable criterion over the
+      reference interval, including its earlier and later portions. The sentence can
+      report this persistence without reporting an inspection.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: compound_ref
+        compound_id: CMP:0cddf1c999333b77818f32fc
+        definition_version: 1.0.0
+      - node_id: h
+        kind: root
+        root_id: ORI:010
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: continued_satisfaction_of_the_same_criterion
+        sound_code: 60
+        added_definition: The same bearer continues to meet the applicable criterion
+          over the reference interval, including its earlier and later portions. The
+          sentence can report this persistence without reporting an inspection.
+        excludes:
+        - A previously invalid permit became valid for the first time.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: A previously invalid
+      permit became valid for the first time.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:ba437968d31a6673a65ed1ff
+  display_title: request for attainment of an activity endpoint
+  current_choice_reason: The authored distinction is exercised by The worker requested
+    completion. and contrasted with The worker reported that the activity had already
+    completed.
+  candidates:
+  - candidate_id: specific_convention
+    direction: A requester communicates a request for an applicable activity to reach
+      its endpoint. The request occurs at its own reference time. The requested completion
+      is embedded content and may never occur.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: compound_ref
+        compound_id: CMP:22a4eb4803d9bf5e07204f02
+        definition_version: 1.0.0
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:59400f445c53fdb3333c7943
+        definition_version: 1.0.0
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: request_for_attainment_of_an_activity_endpoint
+        sound_code: 61
+        added_definition: A requester communicates a request for an applicable activity
+          to reach its endpoint. The request occurs at its own reference time. The
+          requested completion is embedded content and may never occur.
+        excludes:
+        - The worker reported that the activity had already completed.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: The worker reported that
+      the activity had already completed.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high

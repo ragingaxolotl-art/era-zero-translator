@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 509
-  lemma_count: 490
+  sense_count: 533
+  lemma_count: 512
   canonical_atom_senses: 324
-  canonical_compound_senses: 82
+  canonical_compound_senses: 94
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: b894c0065bc49847461abfbe23de8b5d9779632be6bcc56756dda04bd86eb7aa
+  compound_dictionary_fingerprint: 2414ae7c0c64cb3b9455dd6dab310125c04d4f621a4b40fd7efa75eed7b93f07
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -1030,6 +1030,24 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: attainment of an activity endpoint
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:22a4eb4803d9bf5e07204f02
+  definition: A process or task attains its relevant endpoint. The endpoint belongs
+    to that activity. A desire, request or prediction can mention completion without
+    committing the speaker to its occurrence.
+  sense_id: ENS:6986345dddd5957a62d17e5f
+  display_form: attainment of an activity endpoint
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - The scan began but stopped before the final step.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:250d732ee9f0283ec5ddb2b3
   lemma: attention
   display_form: attention
@@ -1476,6 +1494,32 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: check
+  part_of_speech: verb
+  sense_key: deliberate_inspection_of_a_target
+  route: compound
+  target_id: CMP:b72611332d4684a6b7f0bf19
+  definition: An inspector deliberately evaluates information about a particular target
+    for a relevant condition. The inspection itself is the reported action. Its outcome
+    can be favorable, unfavorable or inconclusive.
+  sense_id: ENS:eaabf176a022c74a9217fcba
+  display_form: check
+  surface_forms:
+  - check
+  - checks
+  - checked
+  - checking
+  - inspect
+  - inspects
+  - inspected
+  - inspecting
+  selection_cues:
+  - The technician checked the valve.
+  excluded_readings:
+  - A sensor noticed a flash without inspecting anything.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:a4390645ea409c7b69b818a1
   lemma: community
   display_form: community
@@ -2322,6 +2366,26 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: completion
+  part_of_speech: noun
+  sense_key: attainment_of_an_activity_endpoint
+  route: compound
+  target_id: CMP:22a4eb4803d9bf5e07204f02
+  definition: A process or task attains its relevant endpoint. The endpoint belongs
+    to that activity. A desire, request or prediction can mention completion without
+    committing the speaker to its occurrence.
+  sense_id: ENS:c5829ab3a7ce4f6e53331778
+  display_form: completion
+  surface_forms:
+  - completion
+  - completions
+  selection_cues:
+  - Completion of the scan occurred at noon.
+  excluded_readings:
+  - The scan began but stopped before the final step.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:9fd302a83e2d4dc861f3b4cd
   lemma: composite artifact
   display_form: composite artifact
@@ -2409,6 +2473,24 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: continued satisfaction of the same criterion
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:7017c0aee0086123c2cf67dc
+  definition: The same bearer continues to meet the applicable criterion over the
+    reference interval, including its earlier and later portions. The sentence can
+    report this persistence without reporting an inspection.
+  sense_id: ENS:7615b9e02ed9b600c44b1e4f
+  display_form: continued satisfaction of the same criterion
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A previously invalid permit became valid for the first time.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:ca15d833a56b8d790f6eeb85
   lemma: continuous self
   display_form: continuous self
@@ -2427,6 +2509,24 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: convey work between handlers
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:36f60b14c3c3f26ad71f2564
+  definition: A source conveys a work assignment or its associated state from one
+    handler to another so that handling can continue. The recipient may be implicit.
+    Physical support or transport of an object is unnecessary.
+  sense_id: ENS:5202b74268d638c767469849
+  display_form: convey work between handlers
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A porter carried a stack of paper without handing work to anyone.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - lemma: cracked
   part_of_speech: adjective
   sense_key: material_object_bearing_a_fissure
@@ -2556,6 +2656,24 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: deliberate inspection of a target
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:b72611332d4684a6b7f0bf19
+  definition: An inspector deliberately evaluates information about a particular target
+    for a relevant condition. The inspection itself is the reported action. Its outcome
+    can be favorable, unfavorable or inconclusive.
+  sense_id: ENS:dcd26a21dbebb664acefbc78
+  display_form: deliberate inspection of a target
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A sensor noticed a flash without inspecting anything.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:87b6694a6714d56b02ea6e7c
   lemma: depart
   display_form: depart
@@ -3533,6 +3651,24 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: expression asking for an outcome
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:59400f445c53fdb3333c7943
+  definition: A requester expresses that an addressee should bring about a specified
+    outcome. The outcome is content of the request. Understanding, agreement and fulfillment
+    each require further evidence.
+  sense_id: ENS:18683f0338f5d04869dbee9e
+  display_form: expression asking for an outcome
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - The worker mentioned a replay while describing yesterday.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - lemma: fault that impairs an intended function
   part_of_speech: noun_phrase
   sense_key: canonical_compound_label
@@ -3709,6 +3845,28 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: follow
+  part_of_speech: verb
+  sense_key: occurrence_after_a_reference_event
+  route: compound
+  target_id: CMP:1a34b714578bdb300dfedbe4
+  definition: An event occurs later than a reference event supplied by the context.
+    Temporal succession by itself supplies neither causation nor movement behind another
+    participant.
+  sense_id: ENS:67ba63f91890b487948e0ae1
+  display_form: follow
+  surface_forms:
+  - follow
+  - follows
+  - followed
+  - following
+  selection_cues:
+  - An adjustment followed.
+  excluded_readings:
+  - A traveler followed a guide along the road.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:4f7c87330a8274dcb7ceaf35
   lemma: follow
   display_form: follow
@@ -3860,6 +4018,27 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: hand off work
+  part_of_speech: verb
+  sense_key: convey_work_between_handlers
+  route: compound
+  target_id: CMP:36f60b14c3c3f26ad71f2564
+  definition: A source conveys a work assignment or its associated state from one
+    handler to another so that handling can continue. The recipient may be implicit.
+    Physical support or transport of an object is unnecessary.
+  sense_id: ENS:7d74a3a7e065a75563cca029
+  display_form: hand off work
+  surface_forms:
+  - hand off work
+  - handed off work
+  - carry the handoffs
+  selection_cues:
+  - The dispatcher carried the handoffs between two workers.
+  excluded_readings:
+  - A porter carried a stack of paper without handing work to anyone.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:5f8345cd1113054c3f4d0916
   lemma: happy felt mood
   display_form: happy felt mood
@@ -3910,6 +4089,28 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: have
+  part_of_speech: verb
+  sense_key: possession_of_an_available_resource
+  route: compound
+  target_id: CMP:beb2a0dff4e59fb7d8b75bf9
+  definition: At the reference time a holder has a resource in its possession or at
+    its disposal. The bearer can be a group and the resource can be tangible or represented.
+    The relation leaves legal ownership, acquisition and use unspecified.
+  sense_id: ENS:32e033dd2a2ebb26667956d0
+  display_form: have
+  surface_forms:
+  - have
+  - has
+  - had
+  - having
+  selection_cues:
+  - The team has replays.
+  excluded_readings:
+  - The team knows that replays exist elsewhere but has none.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:ce7583f1235d7078c9de8e70
   lemma: home
   display_form: home
@@ -3969,6 +4170,24 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: incorrect judgment by a participant
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:45a6b6cf438ae2274104f30b
+  definition: A bearer holds or expresses a judgment that fails an applicable correctness
+    criterion at the reference time. This reading attributes an error in judgment
+    to the bearer.
+  sense_id: ENS:090b14f80d219933f9913701
+  display_form: incorrect judgment by a participant
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A person deliberately broke a rule while correctly predicting its effect.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:6cfc0269b3e11fba8fef53e9
   lemma: injury
   display_form: injury
@@ -5707,6 +5926,24 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: occurrence after a reference event
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:1a34b714578bdb300dfedbe4
+  definition: An event occurs later than a reference event supplied by the context.
+    Temporal succession by itself supplies neither causation nor movement behind another
+    participant.
+  sense_id: ENS:2b3d4fa6497480427eaffdc8
+  display_form: occurrence after a reference event
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A traveler followed a guide along the road.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:fa719832016f441a12a0bd14
   lemma: occurrent distinct-existence condition
   display_form: occurrent distinct-existence condition
@@ -6098,6 +6335,28 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: open
+  part_of_speech: verb
+  sense_key: transition_to_a_traversable_passage
+  route: compound
+  target_id: CMP:0b0461b1975240868e0bed8d
+  definition: A previously nonpassable door, gate or route becomes passable for the
+    relevant traffic by the end of the transition. Its history before this transition
+    is unspecified.
+  sense_id: ENS:d37803572f23ba667cbdf161
+  display_form: open
+  surface_forms:
+  - open
+  - opens
+  - opened
+  - opening
+  selection_cues:
+  - The door opened for the first time.
+  excluded_readings:
+  - A door was passable throughout the reported interval.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:fde92fc69d8d1aeff6000ad0
   lemma: operative constraint-target applicability
   display_form: operative constraint-target applicability
@@ -7766,6 +8025,24 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: possession of an available resource
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:beb2a0dff4e59fb7d8b75bf9
+  definition: At the reference time a holder has a resource in its possession or at
+    its disposal. The bearer can be a group and the resource can be tangible or represented.
+    The relation leaves legal ownership, acquisition and use unspecified.
+  sense_id: ENS:5261a212bc758eb60c8fa179
+  display_form: possession of an available resource
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - The team knows that replays exist elsewhere but has none.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:5c61e1b28e9b3d66f5ac6050
   lemma: possible or unresolved kinship
   display_form: possible or unresolved kinship
@@ -8232,6 +8509,29 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: recheck
+  part_of_speech: verb
+  sense_key: subsequent_inspection_of_the_same_target
+  route: compound
+  target_id: CMP:ffeb55f462f10014970989a4
+  definition: An inspector inspects the target again after a prior inspection of that
+    target. The inspector in the earlier episode, interval, number of earlier checks
+    and their outcomes are unspecified.
+  sense_id: ENS:e0a91a6f5547881c2c598c3a
+  display_form: recheck
+  surface_forms:
+  - recheck
+  - rechecks
+  - rechecked
+  - rechecking
+  - check again
+  selection_cues:
+  - The worker rechecked the log.
+  excluded_readings:
+  - The worker kept looking throughout one uninterrupted inspection.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - lemma: recur
   part_of_speech: verb
   sense_key: another_occurrence_of_a_pattern
@@ -8251,6 +8551,29 @@ senses:
   - The retries recurred.
   excluded_readings:
   - One uninterrupted retry continued for a longer time.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
+- lemma: remain valid
+  part_of_speech: verb
+  sense_key: continued_satisfaction_of_the_same_criterion
+  route: compound
+  target_id: CMP:7017c0aee0086123c2cf67dc
+  definition: The same bearer continues to meet the applicable criterion over the
+    reference interval, including its earlier and later portions. The sentence can
+    report this persistence without reporting an inspection.
+  sense_id: ENS:4cb705cd75f5f600662d9daa
+  display_form: remain valid
+  surface_forms:
+  - remain valid
+  - remains valid
+  - remained valid
+  - stay valid
+  - stayed valid
+  selection_cues:
+  - The permit remained valid throughout the change.
+  excluded_readings:
+  - A previously invalid permit became valid for the first time.
   confidence: high
   controlled_input_allowed: false
   provenance: lexicon/story_compound_batch.json
@@ -8328,6 +8651,67 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: lexicon/story_compound_batch.json
+- lemma: request
+  part_of_speech: verb
+  sense_key: expression_asking_for_an_outcome
+  route: compound
+  target_id: CMP:59400f445c53fdb3333c7943
+  definition: A requester expresses that an addressee should bring about a specified
+    outcome. The outcome is content of the request. Understanding, agreement and fulfillment
+    each require further evidence.
+  sense_id: ENS:18368d997ed490442bd794eb
+  display_form: request
+  surface_forms:
+  - request
+  - requests
+  - requested
+  - requesting
+  selection_cues:
+  - The worker requested a replay.
+  excluded_readings:
+  - The worker mentioned a replay while describing yesterday.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
+- lemma: request completion
+  part_of_speech: verb
+  sense_key: request_for_attainment_of_an_activity_endpoint
+  route: compound
+  target_id: CMP:ba437968d31a6673a65ed1ff
+  definition: A requester communicates a request for an applicable activity to reach
+    its endpoint. The request occurs at its own reference time. The requested completion
+    is embedded content and may never occur.
+  sense_id: ENS:a018b7633f67d25159bfe920
+  display_form: request completion
+  surface_forms:
+  - request completion
+  - requests completion
+  - requested completion
+  selection_cues:
+  - The worker requested completion.
+  excluded_readings:
+  - The worker reported that the activity had already completed.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
+- lemma: request for attainment of an activity endpoint
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:ba437968d31a6673a65ed1ff
+  definition: A requester communicates a request for an applicable activity to reach
+    its endpoint. The request occurs at its own reference time. The requested completion
+    is embedded content and may never occur.
+  sense_id: ENS:62e993d40bb6f91e5599360a
+  display_form: request for attainment of an activity endpoint
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - The worker reported that the activity had already completed.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - lemma: restoration of passage after blockage
   part_of_speech: noun_phrase
   sense_key: canonical_compound_label
@@ -8563,6 +8947,24 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: satisfaction of an applicable criterion
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:0cddf1c999333b77818f32fc
+  definition: A particular result, claim, permit or other bearer meets the criterion
+    applicable to it at the reference time. Continuing validity adds a duration over
+    which that relationship holds.
+  sense_id: ENS:6ec2fb4a9fdb21da577acc93
+  display_form: satisfaction of an applicable criterion
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - An untested answer is assumed to be acceptable because it exists.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:e2737704f0c0bebfb4450550
   lemma: self
   display_form: self
@@ -8818,6 +9220,24 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: subsequent inspection of the same target
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:ffeb55f462f10014970989a4
+  definition: An inspector inspects the target again after a prior inspection of that
+    target. The inspector in the earlier episode, interval, number of earlier checks
+    and their outcomes are unspecified.
+  sense_id: ENS:040a7792772638a3c012491e
+  display_form: subsequent inspection of the same target
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - The worker kept looking throughout one uninterrupted inspection.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:9d32f71874c840ba4bc2177b
   lemma: synchronized data network
   display_form: synchronized data network
@@ -8864,6 +9284,24 @@ senses:
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
   target_id: CMP:111b772027accab2054f0415
+- lemma: transition to a traversable passage
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:0b0461b1975240868e0bed8d
+  definition: A previously nonpassable door, gate or route becomes passable for the
+    relevant traffic by the end of the transition. Its history before this transition
+    is unspecified.
+  sense_id: ENS:3bc1478ed752abf049e58684
+  display_form: transition to a traversable passage
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A door was passable throughout the reported interval.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:12a4c2b7592a8f9c66ac33f7
   lemma: transport
   display_form: transport
@@ -9077,6 +9515,25 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: valid
+  part_of_speech: adjective
+  sense_key: satisfaction_of_an_applicable_criterion
+  route: compound
+  target_id: CMP:0cddf1c999333b77818f32fc
+  definition: A particular result, claim, permit or other bearer meets the criterion
+    applicable to it at the reference time. Continuing validity adds a duration over
+    which that relationship holds.
+  sense_id: ENS:c175c9ca2df43023bf21c6d0
+  display_form: valid
+  surface_forms:
+  - valid
+  selection_cues:
+  - The result is valid.
+  excluded_readings:
+  - An untested answer is assumed to be acceptable because it exists.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - lemma: vibrate
   part_of_speech: verb
   sense_key: episode_of_physical_oscillation
@@ -9167,6 +9624,26 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: wrong
+  part_of_speech: adjective
+  sense_key: incorrect_judgment_by_a_participant
+  route: compound
+  target_id: CMP:45a6b6cf438ae2274104f30b
+  definition: A bearer holds or expresses a judgment that fails an applicable correctness
+    criterion at the reference time. This reading attributes an error in judgment
+    to the bearer.
+  sense_id: ENS:6129b7ab840aff42143a923f
+  display_form: wrong
+  surface_forms:
+  - wrong
+  - mistaken
+  selection_cues:
+  - We were wrong about the source.
+  excluded_readings:
+  - A person deliberately broke a rule while correctly predicting its effect.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 lemma_index:
   active artifact generation:
     sense_ids:
@@ -9567,6 +10044,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  attainment of an activity endpoint:
+    sense_ids:
+    - ENS:6986345dddd5957a62d17e5f
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   attention:
     sense_ids:
     - ENS:250d732ee9f0283ec5ddb2b3
@@ -9733,6 +10217,13 @@ lemma_index:
     routes:
     - atom
     - semantic_ir
+  check:
+    sense_ids:
+    - ENS:eaabf176a022c74a9217fcba
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   community:
     sense_ids:
     - ENS:a4390645ea409c7b69b818a1
@@ -10041,6 +10532,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - compound
+  completion:
+    sense_ids:
+    - ENS:c5829ab3a7ce4f6e53331778
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   composite artifact:
     sense_ids:
     - ENS:9fd302a83e2d4dc861f3b4cd
@@ -10076,6 +10574,13 @@ lemma_index:
     direct_target_count: 0
     routes:
     - semantic_ir
+  continued satisfaction of the same criterion:
+    sense_ids:
+    - ENS:7615b9e02ed9b600c44b1e4f
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   continuous self:
     sense_ids:
     - ENS:ca15d833a56b8d790f6eeb85
@@ -10083,6 +10588,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  convey work between handlers:
+    sense_ids:
+    - ENS:5202b74268d638c767469849
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   cracked:
     sense_ids:
     - ENS:4f3abb9752ddd37214cc49df
@@ -10139,6 +10651,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  deliberate inspection of a target:
+    sense_ids:
+    - ENS:dcd26a21dbebb664acefbc78
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   depart:
     sense_ids:
     - ENS:87b6694a6714d56b02ea6e7c
@@ -10518,6 +11037,13 @@ lemma_index:
     direct_target_count: 2
     routes:
     - atom
+  expression asking for an outcome:
+    sense_ids:
+    - ENS:18683f0338f5d04869dbee9e
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   fault that impairs an intended function:
     sense_ids:
     - ENS:949acd48498840f3ec4c7510
@@ -10583,10 +11109,12 @@ lemma_index:
     - atom
   follow:
     sense_ids:
+    - ENS:67ba63f91890b487948e0ae1
     - ENS:4f7c87330a8274dcb7ceaf35
     requires_disambiguation: true
-    direct_target_count: 0
+    direct_target_count: 1
     routes:
+    - compound
     - semantic_ir
   food:
     sense_ids:
@@ -10646,6 +11174,13 @@ lemma_index:
     routes:
     - atom
     - semantic_ir
+  hand off work:
+    sense_ids:
+    - ENS:7d74a3a7e065a75563cca029
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   happy felt mood:
     sense_ids:
     - ENS:5f8345cd1113054c3f4d0916
@@ -10657,9 +11192,11 @@ lemma_index:
     sense_ids:
     - ENS:6c88cdc2532bd142502cd306
     - ENS:b110a9f781f7b17331893258
+    - ENS:32e033dd2a2ebb26667956d0
     requires_disambiguation: true
-    direct_target_count: 0
+    direct_target_count: 1
     routes:
+    - compound
     - gap
     - grammar
   home:
@@ -10684,6 +11221,13 @@ lemma_index:
     direct_target_count: 0
     routes:
     - semantic_ir
+  incorrect judgment by a participant:
+    sense_ids:
+    - ENS:090b14f80d219933f9913701
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   injury:
     sense_ids:
     - ENS:6cfc0269b3e11fba8fef53e9
@@ -11355,6 +11899,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  occurrence after a reference event:
+    sense_ids:
+    - ENS:2b3d4fa6497480427eaffdc8
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   occurrent distinct-existence condition:
     sense_ids:
     - ENS:fa719832016f441a12a0bd14
@@ -11477,6 +12028,13 @@ lemma_index:
   onset of awareness of a target:
     sense_ids:
     - ENS:c98586fe68b1e924523623c4
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  open:
+    sense_ids:
+    - ENS:d37803572f23ba667cbdf161
     requires_disambiguation: false
     direct_target_count: 1
     routes:
@@ -12111,6 +12669,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - compound
+  possession of an available resource:
+    sense_ids:
+    - ENS:5261a212bc758eb60c8fa179
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   possible or unresolved kinship:
     sense_ids:
     - ENS:5c61e1b28e9b3d66f5ac6050
@@ -12287,9 +12852,23 @@ lemma_index:
     direct_target_count: 2
     routes:
     - atom
+  recheck:
+    sense_ids:
+    - ENS:e0a91a6f5547881c2c598c3a
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   recur:
     sense_ids:
     - ENS:11f92112f316aceca0a0d70b
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  remain valid:
+    sense_ids:
+    - ENS:4cb705cd75f5f600662d9daa
     requires_disambiguation: false
     direct_target_count: 1
     routes:
@@ -12318,6 +12897,27 @@ lemma_index:
   repeat:
     sense_ids:
     - ENS:cae44a92e9c627b9da9b9f42
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  request:
+    sense_ids:
+    - ENS:18368d997ed490442bd794eb
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  request completion:
+    sense_ids:
+    - ENS:a018b7633f67d25159bfe920
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  request for attainment of an activity endpoint:
+    sense_ids:
+    - ENS:62e993d40bb6f91e5599360a
     requires_disambiguation: false
     direct_target_count: 1
     routes:
@@ -12397,6 +12997,13 @@ lemma_index:
     direct_target_count: 0
     routes:
     - gap
+  satisfaction of an applicable criterion:
+    sense_ids:
+    - ENS:6ec2fb4a9fdb21da577acc93
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   self:
     sense_ids:
     - ENS:e2737704f0c0bebfb4450550
@@ -12490,6 +13097,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - compound
+  subsequent inspection of the same target:
+    sense_ids:
+    - ENS:040a7792772638a3c012491e
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   synchronized data network:
     sense_ids:
     - ENS:9d32f71874c840ba4bc2177b
@@ -12507,6 +13121,13 @@ lemma_index:
   tool:
     sense_ids:
     - ENS:58375e9ff4fe7dbf4b0a0297
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  transition to a traversable passage:
+    sense_ids:
+    - ENS:3bc1478ed752abf049e58684
     requires_disambiguation: false
     direct_target_count: 1
     routes:
@@ -12595,6 +13216,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  valid:
+    sense_ids:
+    - ENS:c175c9ca2df43023bf21c6d0
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   vibrate:
     sense_ids:
     - ENS:e2085f15c58d4e231b1b3202
@@ -12625,3 +13253,10 @@ lemma_index:
     direct_target_count: 0
     routes:
     - gap
+  wrong:
+    sense_ids:
+    - ENS:6129b7ab840aff42143a923f
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound

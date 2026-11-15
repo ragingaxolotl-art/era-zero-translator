@@ -1,8 +1,8 @@
 ---
 metadata:
   version: 1.0.0
-  sense_count: 509
-  lemma_count: 490
+  sense_count: 533
+  lemma_count: 512
 exact_atom_labels:
 - input: continuous self
   expected_route: atom
@@ -983,12 +983,21 @@ exact_compound_labels:
 - input: practical physical custody
   expected_route: compound
   expected_target: CMP:0aca609416668978e1527dac
+- input: transition to a traversable passage
+  expected_route: compound
+  expected_target: CMP:0b0461b1975240868e0bed8d
+- input: satisfaction of an applicable criterion
+  expected_route: compound
+  expected_target: CMP:0cddf1c999333b77818f32fc
 - input: physical tool
   expected_route: compound
   expected_target: CMP:111b772027accab2054f0415
 - input: ongoing running toward a destination
   expected_route: compound
   expected_target: CMP:139985443924b6e8f24d44f2
+- input: occurrence after a reference event
+  expected_route: compound
+  expected_target: CMP:1a34b714578bdb300dfedbe4
 - input: episode of resonant ringing
   expected_route: compound
   expected_target: CMP:1b70b478c71b872bf63bb95a
@@ -1010,6 +1019,9 @@ exact_compound_labels:
 - input: ongoing bodily running
   expected_route: compound
   expected_target: CMP:22955227e19ba82d5b48c9ef
+- input: attainment of an activity endpoint
+  expected_route: compound
+  expected_target: CMP:22a4eb4803d9bf5e07204f02
 - input: physical repair
   expected_route: compound
   expected_target: CMP:22f8ddc4d9b2d1a818d38e9f
@@ -1034,6 +1046,9 @@ exact_compound_labels:
 - input: backup dataset
   expected_route: compound
   expected_target: CMP:33c135410b0deef525b6770d
+- input: convey work between handlers
+  expected_route: compound
+  expected_target: CMP:36f60b14c3c3f26ad71f2564
 - input: felt fatigue
   expected_route: compound
   expected_target: CMP:3c13b9c619d95f1c40ea5da5
@@ -1061,6 +1076,9 @@ exact_compound_labels:
 - input: love
   expected_route: compound
   expected_target: CMP:44718c92b66443c0c0f03ad7
+- input: incorrect judgment by a participant
+  expected_route: compound
+  expected_target: CMP:45a6b6cf438ae2274104f30b
 - input: completed running to a destination
   expected_route: compound
   expected_target: CMP:4f83046a60201671bc92fe10
@@ -1073,6 +1091,9 @@ exact_compound_labels:
 - input: formal ontological dependence
   expected_route: compound
   expected_target: CMP:578fd06e1dec6f91d2b35add
+- input: expression asking for an outcome
+  expected_route: compound
+  expected_target: CMP:59400f445c53fdb3333c7943
 - input: message datum
   expected_route: compound
   expected_target: CMP:608ecb4f3c515a9c9a3443ec
@@ -1091,6 +1112,9 @@ exact_compound_labels:
 - input: physical region interior relation
   expected_route: compound
   expected_target: CMP:6ccc77b4b3aa69bb010849a4
+- input: continued satisfaction of the same criterion
+  expected_route: compound
+  expected_target: CMP:7017c0aee0086123c2cf67dc
 - input: data transfer channel
   expected_route: compound
   expected_target: CMP:725868579ebb0e2ef83cf708
@@ -1160,9 +1184,18 @@ exact_compound_labels:
 - input: data repair
   expected_route: compound
   expected_target: CMP:b518a324d776e46e9d0ff041
+- input: deliberate inspection of a target
+  expected_route: compound
+  expected_target: CMP:b72611332d4684a6b7f0bf19
+- input: request for attainment of an activity endpoint
+  expected_route: compound
+  expected_target: CMP:ba437968d31a6673a65ed1ff
 - input: ongoing optical sensory registration
   expected_route: compound
   expected_target: CMP:bcfd189eb305cf364ada975a
+- input: possession of an available resource
+  expected_route: compound
+  expected_target: CMP:beb2a0dff4e59fb7d8b75bf9
 - input: completed acquisition of physical custody
   expected_route: compound
   expected_target: CMP:c332d2e89b9f6177486fc93b
@@ -1223,6 +1256,9 @@ exact_compound_labels:
 - input: passage preventing traversal
   expected_route: compound
   expected_target: CMP:f9554786959994e2f5fb6e9c
+- input: subsequent inspection of the same target
+  expected_route: compound
+  expected_target: CMP:ffeb55f462f10014970989a4
 polysemy_tests:
 - input: go
   expected: requires_disambiguation
