@@ -1,12 +1,12 @@
-import {storyReading} from './story_readings.mjs?v=story-passages-1';
-import {scoreStory} from './story_music.mjs?v=story-passages-1';
+import {storyReading} from './story_readings.mjs?v=field-repairs-1';
+import {scoreStory} from './story_music.mjs?v=field-repairs-1';
 import {dictionaryClausePlan} from './dictionary_clauses.mjs?v=1.16.1';
-import {scoreDictionaryClause} from './dictionary_clause_music.mjs?v=1.16.1';
+import {scoreDictionaryClause} from './dictionary_clause_music.mjs?v=field-repairs-1';
 import {midiFromFormal,midiFromScheduledEvents} from './engine.mjs';
 import {notesFromMidi} from './performance_codec.mjs';
 import {composeNamedSentence,parseNamedSentence,parseSentenceConjunction,composeSentenceConjunction,
   parseSentenceSequence,composeSentenceSequence,parseSentenceConditional,composeSentenceConditional} from './sentences.mjs';
-import {faultCorrectionPlan,composeFaultCorrection,describeFaultCorrection} from './fault_correction.mjs?v=clauses-1';
+import {faultCorrectionPlan,composeFaultCorrection,describeFaultCorrection} from './fault_correction.mjs?v=field-repairs-1';
 import {informationPassagePlan,composeInformationPassage} from './information_passage.mjs';
 
 export function songMidi(lines) {

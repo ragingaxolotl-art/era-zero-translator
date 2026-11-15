@@ -1,10 +1,10 @@
 import {dictionaryRoles} from './dictionary_clauses.mjs';
 import {contextualContentReference} from './contextual_content.mjs';
-import {informationMusic} from './information_music.mjs';
-import {informationFrame} from './information_passage_frames.mjs?v=story-1';
+import {informationMusic} from './information_music.mjs?v=field-repairs-1';
+import {informationFrame} from './information_passage_frames.mjs?v=field-repairs-1';
 import {midiFromScheduledEvents} from './engine.mjs';
 import {registerFor} from './roles.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=story-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=field-repairs-1';
 
 const semantic=(root,participants,scopes,runtime_state,speech_act)=>({
   profile:'EZ-DICTIONARY-CLAUSE-1',status:'draft',predicate:root,participants,scopes,runtime_state,speech_act
@@ -14,7 +14,14 @@ const supportedScopes=new Set(['modality_necessary','modality_possible','negatio
 function framed(name,events,anchor) {
   return [informationFrame(name+'_open',anchor),...events,informationFrame(name+'_close',anchor)];
 }
-export async function scoreRoleReference(text,role,{anchor,reference}) {
+export async function scoreRoleReference(text,role,{anchor,reference},kind) {
+  if(kind==='nominal_class'||kind==='indefinite_plural'){
+    const ref=await contextualContentReference(JSON.stringify(text));
+    if(kind==='nominal_class'){ref.reference_mode=kind;ref.referent_id='nominal:class:'+ref.name.name_id;}
+    const notes=await reference(ref,role);
+    return {identity:{kind:'phonemic',reference_mode:kind,phonemes:ref.name.phonemes,instance_code:null},
+      notes:kind==='indefinite_plural'?framed('story_indefinite_plural',notes,anchor):notes};
+  }
   const indefinite=/^an? (.+)$/.exec(text),group=text==='we';
   const ref=await contextualContentReference(group?'I':indefinite?'"'+indefinite[1]+'"':text);
   const identity=ref.kind==='deictic_reference'?{kind:'deictic',role:group?'speaker_group':ref.deictic_role}:
@@ -26,6 +33,11 @@ export function readRoleReference(nodes,role,reader) {
   const fail=()=>{throw Error('Invalid role reference.');};
   const register=registerFor('argument',{nodes:[],edges:[{type:'fills_role',from:'argument',role}]});
   const frame=nodes.length===1?nodes[0].marker:undefined,group=frame==='speaker_group_open',indefinite=frame==='indefinite_singular_open';
+  if(frame==='story_indefinite_plural_open'){
+    const ref=reader.reference(nodes[0].children,register);
+    if(ref.kind!=='phonemic'||ref.reference_mode!=='name')fail();
+    return {...ref,reference_mode:'indefinite_plural'};
+  }
   const ref=reader.reference(group||indefinite?nodes[0].children:nodes,register);
   if(group){if(ref.kind!=='deictic'||ref.role!=='speaker')fail();ref.role='speaker_group';}
   if(indefinite){if(ref.kind!=='phonemic'||ref.reference_mode!=='name')fail();ref.reference_mode='indefinite_singular';}

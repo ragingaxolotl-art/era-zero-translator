@@ -1,7 +1,7 @@
-import {storyReading} from './story_readings.mjs?v=story-passages-1';
-import {scoreStory} from './story_music.mjs?v=story-passages-1';
+import {storyReading} from './story_readings.mjs?v=field-repairs-1';
+import {scoreStory} from './story_music.mjs?v=field-repairs-1';
 import {everydayMeaning} from './everyday.mjs';
-import {compactChordMidi} from './compact_chords.mjs?v=joined-roots-1';
+import {compactChordMidi} from './compact_chords.mjs?v=field-repairs-1';
 
 export async function showStoryControls(input,authority,{list,summary,current,preferences,player,add,download,onError},initial){
   const element=(tag,text)=>{const node=document.createElement(tag);if(text)node.textContent=text;return node;};
@@ -31,7 +31,7 @@ export async function showStoryControls(input,authority,{list,summary,current,pr
       }
       return;
     }
-    if(!plan){
+    if(!plan||plan.unsupported){
       summary.textContent='This meaning has no whole-line score yet.';
       button('Change the reading',()=>{for(const key of Object.keys(answers))delete answers[key];return render(initial);});
       return;

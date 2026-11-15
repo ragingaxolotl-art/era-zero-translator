@@ -1,4 +1,4 @@
-import {strictSemanticReader} from './strict_semantic_reader.mjs';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=field-repairs-1';
 
 // Independent interpretation of the released EZLEX conventions 3–6. Inputs are
 // performed MIDI and the root sound inventory, never English, IR or event plans.
@@ -54,4 +54,12 @@ export function readPhysicalCarryingTree(node,{marker,exactRoot,role}){
  const carrier=role(source,'source','low'),load=role(target,'target','high',true);
  if(!same(role(actor,'actor','low'),load))fail();
  return {predicate:'physical_carrying',runtime_state:runtime,participants:{carrier,load},convention_codes:[4,3],meaning:{same_load:true,carrier_distinct_from_load:true,load_physically_supported:true,load_translates:true,destination_asserted:false,arrival_asserted:false,ownership_asserted:false}};
+}
+
+export function decodePhysicalCarryingMidi(bytes,atoms){
+  const reader=strictSemanticReader(bytes,atoms,'Invalid standalone physical carrying performance.');
+  const {current,scopes}=reader.unwrapScopes(node=>node.marker==='convention_4_open');
+  if(current.length!==1)fail();
+  return {profile:'EZCARRY-INVERSE-1',speech_act:reader.observed.speech_act,scopes,
+    ...readPhysicalCarryingTree(current[0],reader)};
 }

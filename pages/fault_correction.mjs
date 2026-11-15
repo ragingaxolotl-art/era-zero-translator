@@ -1,24 +1,35 @@
 import {clauseSyntax} from './dictionary_clauses.mjs';
-import {scoreRoleReference,readRoleReference} from './dictionary_clause_music.mjs';
+import {scoreRoleReference,readRoleReference} from './dictionary_clause_music.mjs?v=field-repairs-1';
 import {midiFromScheduledEvents} from './engine.mjs';
-import {informationMusic} from './information_music.mjs';
+import {informationMusic} from './information_music.mjs?v=field-repairs-1';
 import {encodeName} from './names.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=clauses-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=field-repairs-1';
 
 // These nouns name categories of fault. A category does not specify its cause or a repair procedure.
-const faultTypes = ['redundancy','checksum','data','memory','network','parity','storage','syntax','timing','transmission','backup','sensor','valve','power','clock','disk'];
+const faultTypes = ['redundancy','duplicate','checksum','data','memory','network','parity','storage','syntax','timing','transmission','backup','sensor','valve','power','clock','disk'];
 const types = new Set(faultTypes);
 const restorationTarget = 'REP:110';
 const internalFault = 'WRN:000';
 
-export function faultCorrectionPlan(input) {
+function faultPlan(input,acceptCategory=false) {
   const line=clauseSyntax(input);if(!line||line.being||!line.scopes.includes('modality_necessary'))return null;
   const m=/^(?:resolve|fix|correct) (the|this|that|a|an) (?:([a-z]+|"[a-z]+") )?(?:error|fault)$/i.exec(line.tail);
   if(!m)return null;
   const type=m[2]?.toLowerCase()||null;
-  if(type&&!types.has(type)&&!type.startsWith('"'))return null;
+  if(!acceptCategory&&type&&!types.has(type)&&!type.startsWith('"'))return null;
   return {actor:line.subject,scopes:line.scopes.map(s=>s.replace('modality_','')),
     determiner:m[1].toLowerCase(),type:type?.replaceAll('"','')||null,runtime:line.runtime,speechAct:line.speechAct};
+}
+
+export function faultCorrectionPlan(input){return faultPlan(input);}
+export function faultCategoryReading(input,answers){
+  if(!/\b(?:error|fault)\b/i.test(input))return null;
+  const proposed=faultPlan(input,true);
+  if(!proposed||!proposed.type||types.has(proposed.type)||faultPlan(input))return null;
+  if(answers.faultCategory==='type')return {faultPlan:proposed};
+  if(answers.faultCategory==='other')return {unsupported:true};
+  return {question:{key:'faultCategory',prompt:'Does “'+proposed.type+'” name the kind of fault?',
+    options:[{value:'type',label:'Use it as a fault category'},{value:'other',label:'It describes the fault another way'}]}};
 }
 
 function faultMeaning(actor,scopes,reference_mode,type_label,runtime_state,speech_act) {

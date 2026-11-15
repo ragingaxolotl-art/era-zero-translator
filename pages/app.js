@@ -1,14 +1,14 @@
 import {everydayMeaning,routeName} from './everyday.mjs';
-import {storyReading} from './story_readings.mjs?v=story-passages-1';
-import {showStoryControls} from './story_controls.mjs?v=joined-roots-1';
+import {storyReading} from './story_readings.mjs?v=field-repairs-1';
+import {showStoryControls} from './story_controls.mjs?v=field-repairs-1';
 import {readWordChoices,updateWordChoice} from './dictionary_word_choices.mjs?v=exact-word-1';
 import {dictionaryClausePlan} from './dictionary_clauses.mjs?v=1.16.1';
-import {mountDictionaryClause} from './dictionary_clause_controls.mjs?v=joined-roots-1';
-import {compactChordMidi} from './compact_chords.mjs?v=joined-roots-1';
-import {mountSongEditor} from './song_editor.mjs?v=joined-roots-1';
-import {needsWholeReading,scoreSongText} from './song_lines.mjs?v=1.17.0';
+import {mountDictionaryClause} from './dictionary_clause_controls.mjs?v=field-repairs-1';
+import {compactChordMidi} from './compact_chords.mjs?v=field-repairs-1';
+import {mountSongEditor} from './song_editor.mjs?v=field-repairs-1';
+import {needsWholeReading,scoreSongText} from './song_lines.mjs?v=field-repairs-1';
 import {informationPassagePlan} from './information_passage.mjs';
-import {faultCorrectionPlan} from './fault_correction.mjs?v=clauses-1';
+import {faultCorrectionPlan} from './fault_correction.mjs?v=field-repairs-1';
 import {selectedWordMatch,wordScorePlan,scoreSelectedWords} from './word_score.mjs';
 import {conversationTargets} from './conversation_targets.mjs';
 import {takeLocalExample,queueLocalExample} from './local_compound_examples.mjs';
@@ -89,8 +89,17 @@ Orin: We migrated the file.`;
 const CONVERSATION_SPEAKERS={Oca:{voice:'ocarina',label:'Ocarina',pan:-.32},Orin:{voice:'warm_organ',label:'Warm organ',pan:.32}};
 
 async function boot(){try{try{state.wordPreferences=readWordChoices(localStorage)}catch{state.wordPreferences=[]}[state.data,state.documents]=await Promise.all([fetch('./data/index.json',{cache:'no-cache'}).then(response=>{if(!response.ok)throw new Error('index unavailable');return response.json()}),fetch('./data/documents.json').then(response=>{if(!response.ok)throw new Error('document manifest unavailable');return response.json()})]);try{state.conceptQueue=loadQueue(localStorage,state.data);state.data.local_senses=approvedLocalSenses(state.conceptQueue,state.data)}catch(error){state.conceptQueue=emptyQueue();state.data.local_senses=[];toast(`Concept queue could not load: ${error.message}`)}addSongLine.refreshArrangement();$('hearCareChords').disabled=$('hearCareMelody').disabled=false;$('serviceStatus').textContent='Canonical browser engine ready';document.querySelector('.status-dot').classList.add('ready');document.querySelector('.principles dl').innerHTML=`<div><dt>${state.data.counts.atoms}</dt><dd>canonical atoms</dd></div><div><dt>${state.data.counts.compounds}</dt><dd>approved compounds</dd></div><div><dt>${state.data.counts.senses}</dt><dd>indexed senses</dd></div><div><dt>${state.data.counts.gaps}</dt><dd>visible gaps</dd></div>`;renderRootJump();renderCatalog();renderDocuments();renderLorePresetPicker();renderConceptQueue();const params=new URLSearchParams(location.search),shared=params.get('text')||(params.get('example')==='redundancy-error'?correctionExample:'');if(shared&&shared.length<=5000&&!$('sourceInput').value.trim()){$('sourceInput').value=shared;await analyze()}}catch(error){$('serviceStatus').textContent='Engine unavailable';showError({code:'load_failed',message:'The canonical browser data or document manifest could not be loaded.'})}}
-function setAppView(next,button){state.view=next;document.querySelectorAll('[data-app-view]').forEach(section=>section.classList.toggle('view-hidden',section.dataset.appView!==next));document.querySelectorAll('.app-tab').forEach(tab=>{tab.classList.toggle('active',tab===button);tab.setAttribute('aria-selected',tab===button)});window.scrollTo({top:0,behavior:'smooth'})}
-document.querySelectorAll('.app-tab').forEach(button=>button.addEventListener('click',()=>setAppView(button.dataset.appTab,button)));
+function setAppView(next,button){state.view=next;document.querySelectorAll('[data-app-view]').forEach(section=>section.classList.toggle('view-hidden',section.dataset.appView!==next));document.querySelectorAll('.app-tab').forEach(tab=>{tab.classList.toggle('active',tab===button);tab.setAttribute('aria-selected',tab===button);tab.tabIndex=tab===button?0:-1});window.scrollTo({top:0,behavior:'smooth'})}
+const appTabs=[...document.querySelectorAll('.app-tab')];
+appTabs.forEach((button,index)=>{
+ button.tabIndex=button.classList.contains('active')?0:-1;
+ button.addEventListener('click',()=>setAppView(button.dataset.appTab,button));
+ button.addEventListener('keydown',event=>{
+   const position={ArrowRight:(index+1)%appTabs.length,ArrowLeft:(index+appTabs.length-1)%appTabs.length,Home:0,End:appTabs.length-1}[event.key];
+   if(position===undefined)return;
+   event.preventDefault();const target=appTabs[position];setAppView(target.dataset.appTab,target);target.focus();
+ });
+});
 function setMode(next,button){if(next===state.mode)return;savedCompoundPlayer.stop();state.drafts[state.mode]=$('sourceInput').value;state.mode=next;$('sourceInput').value=state.drafts[next];state.analysis=null;state.selected=null;state.resolution=null;$('results').classList.add('hidden');$('output').classList.add('hidden');document.querySelectorAll('.mode-tab').forEach(x=>{x.classList.toggle('active',x===button);x.setAttribute('aria-selected',x===button)});$('inputLabel').textContent=next==='general'?'Write it in normal English':'Enter canonical controlled English';$('sourceInput').placeholder=next==='general'?'Try: I need food.':'Try: QUESTION "active destination" [1].';$('inputHint').textContent=next==='general'?'Any phrase may be analyzed. Known meanings translate; unfamiliar nouns may use sound labels, while unknown verbs and descriptors remain visible gaps.':'Advanced mode accepts exact canonical statements.';$('analyzeButton').innerHTML=next==='general'?'Translate English <span>→</span>':'Compile statement <span>→</span>';setExamples(next)}
 document.querySelectorAll('.mode-tab').forEach(btn=>btn.addEventListener('click',()=>setMode(btn.dataset.mode,btn)));
 function setExamples(mode){document.querySelectorAll('[data-example]').forEach((button,index)=>{const example=examples[mode][index];button.hidden=!example;if(!example)return;const [caption,phrase]=example;button.textContent=caption;button.dataset.example=phrase;});}
@@ -1199,7 +1208,16 @@ $('conversationScript').value=DEMO_CONVERSATION;
 boot();
 
 const savedCompoundPlayer=createLocalCompoundPlayer({getVoice:currentVoice,onStatus:toast});
-const addSongLine=mountSongEditor({document,storage:localStorage,player:savedCompoundPlayer,download,getAtoms:()=>state.data?.atoms});
+let songFoundationRecords;
+async function loadSongFoundations(){
+ if(!songFoundationRecords){
+   const response=await fetch('./data/foundation_preview_candidates.json');
+   if(!response.ok)throw Error('The public dictionary could not be loaded.');
+   songFoundationRecords=(await response.json()).records;
+ }
+ return songFoundationRecords;
+}
+const addSongLine=mountSongEditor({document,storage:localStorage,player:savedCompoundPlayer,download,getAtoms:()=>state.data?.atoms,getRecords:loadSongFoundations});
 let carePreviewRequest=0;
 for(const [buttonId,chords] of [['hearCareChords',true],['hearCareMelody',false]]){
   $(buttonId).addEventListener('click',async()=>{
