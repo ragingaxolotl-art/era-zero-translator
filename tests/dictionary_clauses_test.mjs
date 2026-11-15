@@ -64,6 +64,27 @@ const open=await scoreSongText('Aru needs to resolve the "gyroflux" error.',a,lo
 assert.deepEqual((await decodeFaultCorrectionMidi(open.midi,a.atoms)).fault.type_label,{phonemes:(await encodeName('gyroflux')).phonemes});
 
 const storage=new Map(),store={getItem:k=>storage.get(k)??null,setItem:(k,v)=>storage.set(k,v)};
+for(const text of ['Back up the file.','Please pick up the radio.','Turn off the sensor.']){
+ const p=dictionaryClausePlan(text,a,{offerDefinition:true});
+ assert.equal(p.speechAct,'command',text);assert(p.needsDefinition,text);
+ assert.equal(p.readings[0].word.toLowerCase(),text.toLowerCase().replace(/^please /,'').split(' ').slice(0,2).join(' '));
+ assert(p.readings.every(r=>r.participants[0].text==='you'));
+ assert.equal(await scoreSongText(text,a,load),null,'No music before a meaning is supplied.');
+}
+const wake=dictionaryClausePlan('Power on.',a,{offerDefinition:true});
+const wakeIndex=wake.readings.findIndex(r=>r.root==='LIF:101');assert(wakeIndex>=0);
+const command=await score(wake,wakeIndex);
+const commandMeaning=await decodeSupportedMeaningWithDrafts(expandChordMidi(compactChordMidi(command.midi,a.atoms),a.atoms),a.atoms,[],{allowDraft:true});
+assert.deepEqual(commandMeaning,command.meaning);
+assert.equal(commandMeaning.speech_act,'command');assert.equal(commandMeaning.participants[0].reference.role,'addressee');
+const savedPhrase=updateWordChoice(store,wake.readings[wakeIndex],wake.preferenceForms);
+for(const [text,act] of [['Power on.','command'],['Mira powers on.','assertion'],['Did Mira power on?','question']]){
+ const performed=await scoreSongText(text,a,load,savedPhrase);
+ assert.equal(decodeDictionaryClauseMidi(performed.midi,a.atoms).speech_act,act);
+}
+updateWordChoice(store,wake.readings[wakeIndex],wake.preferenceForms,true);
+assert.equal(dictionaryClausePlan('Backed up the file.',a,{offerDefinition:true}),null);
+assert.equal(dictionaryClausePlan('We backed up the file.',a,{offerDefinition:true}).readings[0].word,'backed up');
 const unknown='We need to glimmerseal the hatch.';assert.equal(await scoreSongText(unknown,a,load),null);
 const pick=dictionaryClausePlan(unknown,a,{offerDefinition:true});assert(pick.needsDefinition);
 class El{

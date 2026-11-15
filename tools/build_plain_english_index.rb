@@ -82,6 +82,12 @@ atoms = EraZeroValidation.load_yaml("lexicon/all_atoms.yaml").fetch("atoms")
 senses = EraZeroValidation.load_yaml("lexicon/english_sense_index.yaml").fetch("senses")
 compounds = EraZeroValidation.load_yaml("lexicon/compound_dictionary.yaml").fetch("entries")
 senses_by_target = senses.group_by { |sense| sense["target_id"] }
+targets_by_form = Hash.new { |forms, term| forms[term] = [] }
+senses.each do |sense|
+  normalize_tags([sense["lemma"], sense["surface_forms"]]).each do |term|
+    targets_by_form[term] << sense["target_id"]
+  end
+end
 
 entries = atoms.map do |atom|
   family = atom.fetch("family")
@@ -115,11 +121,14 @@ entries.concat(compounds.map do |compound|
   id = compound.fetch("compound_id")
   indexed = Array(senses_by_target[id]).flat_map { |sense| [sense["lemma"], *Array(sense["surface_forms"])] }
   title = compound["display_title"] || compound["title"] || indexed.first
+  plain_label = normalize_tags(indexed).min_by { |term| [term.split.length, term.length] } || title
+  # Keep ambiguous short forms searchable. The dictionary label identifies just this reading.
+  plain_label = title if targets_by_form[plain_label].any? { |target| target != id }
   {
     "target_id" => id,
     "target_type" => "compound",
     "canonical_title" => title,
-    "plain_label" => indexed.min_by { |term| [term.to_s.split.length, term.to_s.length] } || title,
+    "plain_label" => plain_label,
     "plain_explanation" => compound["usage_note"] || "An everyday discovery label for the approved compound “#{title}”; the compound graph controls its exact meaning.",
     "ordinary_terms" => normalize_tags([title.to_s.split, indexed]),
     "match_phrases" => normalize_tags([indexed, title]),

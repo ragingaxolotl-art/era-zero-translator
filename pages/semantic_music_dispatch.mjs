@@ -37,7 +37,7 @@ export async function decodeSupportedMeaningWithDrafts(bytes,atoms,records,{allo
  const {decodePainMidi}=await import('./pain_music.mjs');
  const {decodeCuriosityMidi}=await import('./curiosity_music.mjs');
  const {decodeRouteLearningMidi}=await import('./route_learning_music.mjs');
- const {decodeDictionaryClauseMidi}=await import('./dictionary_clause_music.mjs');
+ const {decodeDictionaryClauseMidi}=await import('./dictionary_clause_music.mjs?v=1.16.1');
  const {decodeFaultCorrectionMidi}=await import('./fault_correction.mjs');
  const {decodeInformationPassageMidi}=await import('./information_passage.mjs');
  const {decodeStoryMidi}=await import('./story_music.mjs');

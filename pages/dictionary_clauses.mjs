@@ -1,7 +1,7 @@
 // English predicates come from the installed dictionary. A frame specifies which
 // participant a predicate can take in this construction, independently of its spelling.
 import {matchingChoice} from './dictionary_word_choices.mjs';
-import {analyzeEnglish} from './english.mjs';
+import {analyzeEnglish,phrasalVerbAt} from './english.mjs?v=1.16.1';
 import {parseNominal} from './nominals.mjs';
 import {expandNegativeContractions} from './contractions.mjs';
 
@@ -23,7 +23,7 @@ frame('WRN:001 REP:001 LIF:001 LIF:002 LIF:011 LIF:012','bearer',null);
 
 const pastForms={find:'found',see:'saw',make:'made',break:'broke',build:'built',send:'sent',leave:'left',go:'went',wake:'woke',sleep:'slept',know:'knew',seek:'sought',take:'took',run:'ran',come:'came',bring:'brought',heal:'healed',hurt:'hurt',do:'did'};
 const phases={'REP:110':['REP:111','REP:110'],'REP:111':['REP:111','REP:110'],'WRN:111':['WRN:111','WRN:110'],'CRE:111':['CRE:111','CRE:110'],'CON:101':['CON:101','CON:100'],'CON:111':['CON:111','CON:110'],'LIF:111':['LIF:111','LIF:110']};
-const particles=new Set(['up','for','from','to','at','of','with','on','out','down']);
+const particles=new Set(['up','for','from','to','at','of','with','on','out','down','in','off']);
 const forbidden=new Set('a an the this that these those and or but not no never if unless then now today yesterday tomorrow may might will would could should must can to from of in on at with for before after by i me my we us our you your he she they them it her his who what someone nobody everyone something nothing one two three all some each please do does did is are am was were had has have need needs might maybe perhaps when how why which where must would kindly there yes no other any none'.split(' '));
 const normalized=text=>text.toLowerCase().replace(/\s+/g,' ').trim();
 const knownActor = /^(?:I|we|you)$/i;
@@ -80,7 +80,11 @@ export function clauseSyntax(input) {
     if(!lead)return null;
     first=normalized(lead[1]);text=lead[2];
   }
-  const parts=subjectAndTail(text);if(!parts)return null;
+  // An opening phrasal verb addresses the listener, even when capitalized.
+  const commandText=text.replace(/^please\s+/i,''),words=normalized(commandText).split(' ');
+  const phrase=question?null:phrasalVerbAt(words,0);
+  if(phrase && phrase!==words.slice(0,2).join(' '))return null;
+  const parts=phrase?{subject:'you',tail:commandText}:subjectAndTail(text);if(!parts)return null;
   let {subject,tail}=parts;
   if (first) tail=first+' '+tail;
   else if(/^need not /i.test(tail))tail=(knownActor.test(subject)?'do':'does')+' not need to '+tail.slice(9);
@@ -104,7 +108,7 @@ export function clauseSyntax(input) {
     form='base';tail=need[3];
   }
   if(!being && (need||aux) && /^be /i.test(tail)){being=true;form='progressive';tail=tail.slice(3);}
-  return {subject,tail,scopes,form,being,allowPast:!aux&&!need,speechAct:question?'question':'assertion',runtime};
+  return {subject,tail,scopes,form,being,allowPast:!aux&&!need&&!phrase,speechAct:question?'question':phrase?'command':'assertion',runtime};
 }
 
 // Index only exact English word forms in the dictionary. Broad search matches
@@ -176,22 +180,24 @@ export function dictionaryClausePlan(input,authority,{offerDefinition=false,pref
   }
   let needsDefinition=false;
   if(!readings.length && (offerDefinition||preferences.length)){
-    const m=/^([a-z][a-z-]*)(?: (.+))?$/i.exec(syntax.tail);
-    if(!m||forbidden.has(normalized(m[1])))return null;
-    const word=normalized(m[1]), quality=syntax.being&&!word.endsWith('ing');
+    const tokens=syntax.tail.split(' '), word=normalized(tokens[0]);
+    if(!/^[a-z][a-z-]*$/.test(word)||forbidden.has(word))return null;
+    const length=phrasalVerbAt(tokens.map(normalized),0)?2:1;
+    const surface=tokens.slice(0,length).join(' '), remainder=tokens.slice(length).join(' ');
+    const quality=syntax.being&&!word.endsWith('ing');
     const scopes=[...syntax.scopes];
     if(syntax.being&&!quality)scopes.push('aspect_ongoing');
     else if(syntax.allowPast&&word.endsWith('ed'))scopes.push('time_before_speech');
     for(const {sense,mode,shape} of lexicon(authority)){
       if(mode!==(quality?'quality':'base')||sense.target_id==='erase_stored_object')continue;
-      const participants=argumentsFor(shape,syntax.subject,m[2]||'');
+      const participants=argumentsFor(shape,syntax.subject,remainder);
       if(!participants||new Set(participants.map(p=>normalized(p.text))).size!==participants.length)continue;
       // A word being defined takes the exact dictionary sense the user picks.
       // Its participants, possibility, necessity and tense are scored separately.
       const root=sense.target_id;
       const existing=readings.find(r=>r.root===root);
       if(existing){if(!existing.terms.includes(sense.lemma))existing.terms.push(sense.lemma);continue;}
-      readings.push({sense,root,participants,scopes,word:m[1],quality,terms:[sense.lemma]});
+      readings.push({sense,root,participants,scopes,word:surface,quality,terms:[sense.lemma]});
     }
     needsDefinition=true;
   }

@@ -1,5 +1,5 @@
 import {everydayMeaning} from './everyday.mjs';
-import {scoreDictionaryClause} from './dictionary_clause_music.mjs';
+import {scoreDictionaryClause} from './dictionary_clause_music.mjs?v=1.16.1';
 import {compactChordMidi} from './compact_chords.mjs';
 
 const scopeLabels={modality_necessary:'required',modality_possible:'possible',negation:'negated',aspect_ongoing:'ongoing',time_before_speech:'past',time_current_day:'today',time_next_day:'tomorrow',time_previous_day:'yesterday'};
@@ -34,7 +34,8 @@ export async function mountDictionaryClause(container,plan,authority,{document=g
       output.append(make('p',reading.root+' · '+(authority.atoms.find(a=>a.canonical_id===reading.root)?.core_definition||title(reading))));
       const who=text=>text==='we'?'our group':text==='I'?'the speaker':text==='you'?'the listener':text;
       const roles=reading.participants.map(p=>p.role+' · '+who(p.text)).join(' / ');
-      const scope=[plan.speechAct==='question'?'Question':'Statement',...reading.scopes.map(s=>scopeLabels[s])].join(' → ');
+      const actLabel=plan.speechAct==='command'?'Command':plan.speechAct==='question'?'Question':'Statement';
+      const scope=[actLabel,...reading.scopes.map(s=>scopeLabels[s])].join(' → ');
       output.append(make('p',scope+' · ['+plan.runtime+']. '+roles+'.'));
       if(reading.sense.generalization&&!plan.needsDefinition)output.append(make('p',reading.sense.generalization));
       const button=(text,action)=>{const b=make('button',text);b.type='button';b.addEventListener('click',async()=>{if(current())try{await action();}catch(error){if(current())onError(error);}});output.append(b);return b;};

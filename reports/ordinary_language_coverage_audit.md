@@ -6,7 +6,7 @@ Status: **PASS**
 - Existing game/story phrases: **69**
 - Lore performance turns: **22**
 - Total audited phrases: **144**
-- Canonical roots / indexed and profile senses: **324 / 519**
+- Canonical roots / indexed and profile senses: **324 / 545**
 - Automatic single-target readings: **1** (not full sentence translations)
 - Phrases with documented gaps: **27**
 - Phrases with unresolved predicates/descriptors: **24**
@@ -222,7 +222,7 @@ These require either a defensible reviewed surface route to an existing meaning,
 | ROOMS-BESIDE / lore | Help me place this wall. | LIF:211 | no | help:canonical, place:canonical, wall:phonemic_label | PASS |
 | ARRIVAL-ASK / lore | I need the low-water gate. | ORI:211 | no | need:canonical, low-water:phonemic_label, gate:phonemic_label | PASS |
 | ARRIVAL-ASK / lore | You are at your destination. | MOV:010 | no | destination:canonical | PASS |
-| ARRIVAL-ASK / lore | No. My current position is your station. We need a live receiving exchange. | ORI:211 | no | no:phonemic_label, current:canonical, position:canonical, station:phonemic_label, need:canonical, live:canonical, receiving:canonical, exchange:phonemic_label | PASS |
+| ARRIVAL-ASK / lore | No. My current position is your station. We need a live receiving exchange. | ORI:211 | no | current:canonical, position:canonical, station:phonemic_label, need:canonical, live:canonical, receiving:canonical, exchange:phonemic_label | PASS |
 | ARRIVAL-ASK / lore | I will stay until you answer. | none | no | stay:unresolved_semantic, until:phonemic_label, answer:phonemic_label | PASS |
 | TWO-DROPS-WAIT / lore | I found your home. | MIN:110 | no | found:canonical, home:documented_gap | PASS |
 | TWO-DROPS-WAIT / lore | Please do not clean it. | REP:111 | no | not:structural, clean:canonical | PASS |
@@ -233,7 +233,7 @@ These require either a defensible reviewed surface route to an existing meaning,
 
 ## Review decisions
 
-- Preserve the 324 canonical roots and 63 approved compounds. Corpus frequency alone does not establish a meaning.
+- Preserve the 324 canonical roots and 76 approved compounds. Corpus frequency alone does not establish a meaning.
 - Keep broad and unsupported readings marked as gaps. The sentence composer covers specific felt moods, desires and drinking constructions.
 - Treat data deletion, waiting, crossing, return, and program execution as structural/IR routes until complete templates and role binding exist.
 - Treat `pick up`, `back up`, file opening/saving/copying, and other unrepresented predicates as semantic gaps, never phonemic nouns.

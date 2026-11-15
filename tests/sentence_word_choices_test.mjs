@@ -71,6 +71,23 @@ assert.notDeepEqual(await scoreSelectedWords(revised,0,load),await scoreSelected
 const unknown=wordScorePlan(analyzeEnglish('we blorf the small archive',a).term_coverage,new Map(),a);
 assert.deepEqual(unknown.playable,[{term:'archive',kind:'name'}]);
 assert(unknown.omitted.includes('blorf')&&unknown.omitted.includes('small'));
+for(const [sentence,head,particle] of [
+  ['Back up the file.','back','up'],
+  ['We backed up the archive.','backed','up'],
+  ['The server powers on.','powers','on'],
+  ['Mira picked up the radio.','picked','up']
+]){
+  const rows=analyzeEnglish(sentence,a).term_coverage;
+  const verb=rows.find(row=>row.term===head),following=rows.find(row=>row.term===particle);
+  assert.equal(verb.status,'unresolved_semantic',sentence);
+  assert.deepEqual(verb.matches,[],sentence);
+  assert.equal(following.status,'function_word',sentence);
+  assert.deepEqual(following.matches,[],sentence);
+}
+const localSense={sense_id:'LOCAL:back-up',lemma:'back up',surface_forms:['back up'],route:'semantic_ir',
+  sense_key:'make_a_backup',part_of_speech:'verb',definition:'Make a recoverable copy of the file.'};
+const withLocal=analyzeEnglish('We backed up the file.',{...a,local_senses:[localSense]}).term_coverage;
+assert.deepEqual(withLocal.find(row=>row.term==='backed').matches.map(match=>match.sense_id),[localSense.sense_id]);
 
 // Exercise the actual result buttons, including an edit while a template is loading.
 const app=fs.readFileSync(new URL('../pages/app.js',import.meta.url),'utf8');

@@ -48,7 +48,8 @@ export async function scoreDictionaryClause(plan,index,authority) {
   }
   events=framed('dictionary_clause',events,anchor);
   for(const scope of [...reading.scopes].reverse())events=wrap(scope,events);
-  return {midi:midiFromScheduledEvents(events,anchor,plan.speechAct==='question'?[0,2]:[0,0]),
+  const contour=plan.speechAct==='command'?[0,-4]:plan.speechAct==='question'?[0,2]:[0,0];
+  return {midi:midiFromScheduledEvents(events,anchor,contour),
     meaning:semantic(reading.root,participants,reading.scopes,plan.runtime,plan.speechAct),label:plan.needsDefinition?'Sentence with your word meaning':'Dictionary sentence'};
 }
 
@@ -65,7 +66,7 @@ export function decodeDictionaryClauseMidi(bytes,atoms) {
   }
   if(nodes.length!==1||nodes[0].marker!=='dictionary_clause_open')fail();
   const [head,...args]=nodes[0].children,act=reader.observed.speech_act;
-  if(!head||!['assertion','question'].includes(act))fail();
+  if(!head||!['assertion','question','command'].includes(act))fail();
   let root=head.root_id,runtime=head.runtime_state;
   if(head.marker==='erase_stored_object_open'){
     const [transition,result]=head.children;
