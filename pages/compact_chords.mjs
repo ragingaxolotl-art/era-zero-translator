@@ -1,6 +1,6 @@
-// Optional performance of complete, isolated dictionary roots. All other note
-// runs pass through verbatim, including names, grammar and the speech-act contour.
+// Perform dictionary roots as chords. Names, grammar and the speech-act contour retain their notes.
 import {notesFromMidi,midiFromNoteTimeline} from './performance_codec.mjs';
+import {decodeStrictMusicNotes} from './strict_music_decoder.mjs?v=joined-roots-1';
 
 const laneOffsets=[0,5,12],tritMotion=[0,2,-2];
 const cache=new WeakMap();
@@ -22,7 +22,7 @@ function dictionary(atoms) {
     families.set(familyKey,family);
     const path=[...opening,...atom.note_path_semitones],key=path.join(',');
     if (paths.has(key)||byId.has(atom.canonical_id)) throw Error('Two roots share a pitch path or address.');
-    const entry={familyChord,addressChord:[...address].map((d,i)=>laneOffsets[i]+tritMotion[Number(d)]),path};
+    const entry={id:atom.canonical_id,familyChord,addressChord:[...address].map((d,i)=>laneOffsets[i]+tritMotion[Number(d)]),path};
     paths.set(key,entry);byId.set(atom.canonical_id,entry);
   }
   if (!byId.size) throw Error('A root dictionary is required.');
@@ -44,27 +44,90 @@ function identify(run,dict,division) {
   return {entry,base,tail};
 }
 
-export function compactChordMidi(bytes,atoms) {
-  const {notes,division,tempo}=clock(bytes,false),dict=dictionary(atoms),out=[];
-  let saved=0;
-  for(let i=0;i<notes.length;) {
-    let end=i+1;
-    while(end<notes.length&&notes[end-1].end_tick===notes[end].start_tick)end++;
-    const run=notes.slice(i,end),root=identify(run,dict,division),start=run[0].start_tick-saved;
-    i=end;
-    if (!root || root.base+21>127 || root.base-2<0) {
-      for(const n of run)out.push(note(n.midi,n.start_tick-saved,n.end_tick-saved));
+const frameOptions={
+  allowDraftQuantified:true,allowDraftQuestionContent:true,allowDraftAcquisition:true,
+  allowDraftContextualContent:true,allowDraftContextualInquiry:true,allowDraftCuriosity:true,
+  allowDraftPain:true,allowDraftPainStimulus:true,allowDraftPainComparison:true,allowDraftPainPreference:true,
+  allowDraftDrinking:true,allowDraftDesiredDrinking:true,allowDraftOwnership:true,allowDraftDesiredOwnership:true,
+  allowDraftDesiredAvailability:true,allowDraftCustodyOpportunity:true,allowDraftInformationPassage:true
+};
+
+function relativeNotes(notes) {
+  const origin=notes[0].start_tick;
+  return notes.map(n=>note(n.midi,n.start_tick-origin,n.end_tick-origin));
+}
+
+function rootsInLine(notes,division,atoms,dict) {
+  const origin=notes[0].start_tick;
+  try {
+    const observation=decodeStrictMusicNotes({notes:relativeNotes(notes),division},atoms,frameOptions);
+    return observation.tokens.filter(token=>token.kind==='root').map(token=>({
+      start:origin+token.start_tick,entry:dict.byId.get(token.root_id),tail:token.runtime_state??-1
+    }));
+  } catch {
+    // Older word sketches and standalone notes may have no sentence contour.
+    // Match a complete isolated root there, never a substring of an unknown name or frame.
+    const roots=[];
+    for(let start=0;start<notes.length;){
+      let end=start+1;
+      while(end<notes.length&&notes[end-1].end_tick===notes[end].start_tick)end++;
+      const root=identify(notes.slice(start,end),dict,division);
+      if(root)roots.push({start:notes[start].start_tick,entry:root.entry,tail:root.tail});
+      start=end;
+    }
+    return roots;
+  }
+}
+
+function scoreRoots(notes,division,atoms,dict) {
+  const roots=new Map();
+  for(let start=0;start<notes.length;){
+    let end=start+1;
+    // The song editor puts two beats between lines, including songs saved by older versions.
+    while(end<notes.length&&notes[end].start_tick-notes[end-1].end_tick<2*division)end++;
+    for(const root of rootsInLine(notes.slice(start,end),division,atoms,dict))roots.set(root.start,root);
+    start=end;
+  }
+  return roots;
+}
+
+export function compactChordPerformance(bytes,atoms,{preview=false}={}) {
+  const {notes,division,tempo}=clock(bytes,false);
+  const roots=scoreRoots(notes,division,atoms,dictionary(atoms));
+  const output=[];
+  let saved=0,firstRoot=null,rootCount=0;
+  const seconds=tick=>tick*tempo/division/1e6;
+  for(let i=0;i<notes.length;){
+    const n=notes[i],base=n.midi,root=roots.get(n.start_tick);
+    if(!root||base+21>127||base-2<0){
+      output.push(note(base,n.start_tick-saved,n.end_tick-saved));
+      i++;
       continue;
     }
-    const {entry,base,tail}=root,at=start+division,addressEnd=at+division;
+    const {entry,tail}=root;
+    const start=n.start_tick-saved,addressStart=start+division,addressEnd=addressStart+division;
     const release=addressEnd+(tail<0?0:durations[tail]*division);
-    for (const pitch of entry.familyChord)out.push(note(base+pitch,start,at));
-    const address=entry.addressChord.map(p=>p+base);
-    address.forEach((pitch,lane)=>out.push(note(pitch,at,lane===2?addressEnd:release)));
-    if(tail>=0)out.push(note(chordTail(tail,address[2],base),addressEnd,release));
-    saved+=run.at(-1).end_tick-run[0].start_tick-(release-start);
+    const outputStart=output.length;
+    for(const pitch of entry.familyChord)output.push(note(base+pitch,start,addressStart));
+    const address=entry.addressChord.map(pitch=>pitch+base);
+    address.forEach((pitch,lane)=>output.push(note(pitch,addressStart,lane===2?addressEnd:release)));
+    if(tail>=0)output.push(note(chordTail(tail,address[2],base),addressEnd,release));
+    const end=i+entry.path.length+(tail>=0?1:0);
+    if(preview&&!firstRoot){
+      firstRoot={id:entry.id,atSeconds:seconds(start),
+        melody:midiFromNoteTimeline(relativeNotes(notes.slice(i,end)),division,tempo),
+        chords:midiFromNoteTimeline(relativeNotes(output.slice(outputStart)),division,tempo)};
+    }
+    saved+=notes[end-1].end_tick-n.start_tick-(release-start);
+    rootCount++;
+    i=end;
   }
-  return midiFromNoteTimeline(out,division,tempo);
+  const originalLength=notes.at(-1)?.end_tick??0;
+  return {midi:midiFromNoteTimeline(output,division,tempo),rootCount,firstRoot,
+    melodySeconds:seconds(originalLength),chordSeconds:seconds(originalLength-saved)};
+}
+export function compactChordMidi(bytes,atoms) {
+  return compactChordPerformance(bytes,atoms).midi;
 }
 
 // Expand from the played notes and the shared dictionary. No source score,

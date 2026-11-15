@@ -19,6 +19,8 @@ Enter “We have found the program. We need to delete it.” Choose **Play whole
 
 In **Your song**, choose **Compact chords** or **Original melody** before playing or downloading. Compact chords voice each complete root’s family opening with three notes and its address with three notes in separate pitch ranges. The upper voice carries the runtime ending over two held tones. Names, grammar frames and speech-act contours retain their original melodies. The chord reader can expand a solo MIDI performance back to its original pitches, durations and rests. `node tests/compact_song_chords_test.mjs` checks all 324 roots and all three endings. Mixed recordings and room playback require separate listening tests.
 
+Beside the sentence box, **Hear “care” in chords** and **Hear as a melody** play the same root. In **Your song**, choose an arrangement and press **Hear first root** for an immediate comparison using your own line. **Play song** and **Download song MIDI** use the arrangement shown. The timing beneath the selector gives both durations and the first chord’s position. Sentence openings can introduce names and participants before the first dictionary root. Joined roots inside a compound also receive their two chords.
+
 Each line keeps its original phrase contours. A two-beat rest separates successive lines. The song list is saved in this browser. Dictionary previews identify individual entries. The song action appears once a complete line has been scored.
 
 ## Make a missing word

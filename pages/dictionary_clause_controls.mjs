@@ -1,6 +1,6 @@
 import {everydayMeaning} from './everyday.mjs';
 import {scoreDictionaryClause} from './dictionary_clause_music.mjs?v=1.16.1';
-import {compactChordMidi} from './compact_chords.mjs';
+import {compactChordMidi} from './compact_chords.mjs?v=joined-roots-1';
 
 const scopeLabels={modality_necessary:'required',modality_possible:'possible',negation:'negated',aspect_ongoing:'ongoing',time_before_speech:'past',time_current_day:'today',time_next_day:'tomorrow',time_previous_day:'yesterday'};
 
