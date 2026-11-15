@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 98
+  entry_count: 107
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -294,6 +294,62 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 0cddf1c999333b77818f32fc41b42f7fad0a8d62f091ecae04d74ebd42662eed
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: root
+    root_id: ORI:011
+  - node_id: h
+    kind: root
+    root_id: ORI:211
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - The components refer to the same bearer, relationship or episode as specified
+    in the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: practical_availability_for_a_contextual_use
+    sound_code: 69
+    added_definition: A resource is accessible and ready for the relevant use under
+      the circumstances. The identity of a user and any actual use are left open.
+    excludes:
+    - A tool was functional but locked out of reach.
+  compound_id: CMP:0ed5f8a1c4b5a22781920ad9
+  content_digest: 0ed5f8a1c4b5a22781920ad95040e4b8454cb080ea4289ca812ed4f9f81eeb3a
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: practical availability for a contextual use
+  english_glosses:
+  - available for use
+  - practical availability for a contextual use
+  invariant_definition: A resource is accessible and ready for the relevant use under
+    the circumstances. The identity of a user and any actual use are left open.
+  boundaries:
+    includes: A resource is accessible and ready for the relevant use under the circumstances.
+      The identity of a user and any actual use are left open.
+    excludes: A tool was functional but locked out of reach.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The user requested the reusable state, movement and adjective batch. The
+    listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 69 supplies the specific distinction. Nearest excluded reading: A tool was
+    functional but locked out of reach.'
+  examples:
+    ordinary: The tool stayed available.
+    technical: A resource is accessible and ready for the relevant use under the circumstances.
+      The identity of a user and any actual use are left open.
+    future_compound: The resource can remain available while another participant waits.
+    counterexample: A tool was functional but locked out of reach.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 0ed5f8a1c4b5a22781920ad95040e4b8454cb080ea4289ca812ed4f9f81eeb3a
 - architecture_version: '1.0'
   compound_id: CMP:111b772027accab2054f0415
   content_digest: 111b772027accab2054f04158521688548f4899eb5feda420f7ace4ebefba396
@@ -3415,6 +3471,120 @@ entries:
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:6ae4a680528e1cd7fd1ac0df
+    definition_version: 1.0.0
+  - node_id: h
+    kind: root
+    root_id: STR:011
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - The components refer to the same bearer, relationship or episode as specified
+    in the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: shut_configuration_of_a_closure
+    sound_code: 68
+    added_definition: A closure is in its shut configuration at the reference time.
+      Its lock, seal and the cause of closure are unspecified.
+    excludes:
+    - An open hatch had an obstruction in front of it.
+  compound_id: CMP:82a697e83c845e4a7b38b53e
+  content_digest: 82a697e83c845e4a7b38b53e4525b7f45a11e394b22dd662df9d114312f75969
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: shut configuration of a closure
+  english_glosses:
+  - closed
+  - shut configuration of a closure
+  invariant_definition: A closure is in its shut configuration at the reference time.
+    Its lock, seal and the cause of closure are unspecified.
+  boundaries:
+    includes: A closure is in its shut configuration at the reference time. Its lock,
+      seal and the cause of closure are unspecified.
+    excludes: An open hatch had an obstruction in front of it.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The user requested the reusable state, movement and adjective batch. The
+    listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 68 supplies the specific distinction. Nearest excluded reading: An open
+    hatch had an obstruction in front of it.'
+  examples:
+    ordinary: The hatch stayed closed.
+    technical: A closure is in its shut configuration at the reference time. Its lock,
+      seal and the cause of closure are unspecified.
+    future_compound: Closure can persist through an interval or be maintained.
+    counterexample: An open hatch had an obstruction in front of it.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 82a697e83c845e4a7b38b53e4525b7f45a11e394b22dd662df9d114312f75969
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: root
+    root_id: MAT:211
+  - node_id: h
+    kind: root
+    root_id: MOV:120
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - The components refer to the same bearer, relationship or episode as specified
+    in the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: caused_displacement_in_a_physical_frame
+    sound_code: 71
+    added_definition: A cause changes the position of a material target relative to
+      the relevant spatial frame. The direction and means are unspecified.
+    excludes:
+    - Mira pressed on the box and it stayed still.
+  compound_id: CMP:82dc9c681fbaf7944cb7b85b
+  content_digest: 82dc9c681fbaf7944cb7b85bb5e778cef79c024f60dc09378c088402d2abe486
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: caused displacement in a physical frame
+  english_glosses:
+  - displace
+  - caused displacement in a physical frame
+  invariant_definition: A cause changes the position of a material target relative
+    to the relevant spatial frame. The direction and means are unspecified.
+  boundaries:
+    includes: A cause changes the position of a material target relative to the relevant
+      spatial frame. The direction and means are unspecified.
+    excludes: Mira pressed on the box and it stayed still.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The user requested the reusable state, movement and adjective batch. The
+    listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 71 supplies the specific distinction. Nearest excluded reading: Mira pressed
+    on the box and it stayed still.'
+  examples:
+    ordinary: Mira displaced the box.
+    technical: A cause changes the position of a material target relative to the relevant
+      spatial frame. The direction and means are unspecified.
+    future_compound: Lifting and lowering specify opposite directions in the same
+      frame.
+    counterexample: Mira pressed on the box and it stayed still.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 82dc9c681fbaf7944cb7b85bb5e778cef79c024f60dc09378c088402d2abe486
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
   - node_id: q-body
     kind: root
     root_id: MAT:000
@@ -3702,6 +3872,121 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 919b714e6201a462756224a27932d620baaef25ac165ab07a89cc4cbee40be3d
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:82dc9c681fbaf7944cb7b85b
+    definition_version: 1.0.0
+  - node_id: h
+    kind: root
+    root_id: MOV:211
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - The components refer to the same bearer, relationship or episode as specified
+    in the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: caused_downward_physical_displacement
+    sound_code: 73
+    added_definition: An actor physically displaces a target downwards relative to
+      the local vertical. Distance, method, destination and subsequent contact are
+      unspecified.
+    excludes:
+    - The box started low and remained there.
+  compound_id: CMP:92464b1ea3c632b343340a05
+  content_digest: 92464b1ea3c632b343340a05615e56a9b2159dc1dc8349776bc8eff14bed255d
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: caused downward physical displacement
+  english_glosses:
+  - lower
+  - caused downward physical displacement
+  invariant_definition: An actor physically displaces a target downwards relative
+    to the local vertical. Distance, method, destination and subsequent contact are
+    unspecified.
+  boundaries:
+    includes: An actor physically displaces a target downwards relative to the local
+      vertical. Distance, method, destination and subsequent contact are unspecified.
+    excludes: The box started low and remained there.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The user requested the reusable state, movement and adjective batch. The
+    listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 73 supplies the specific distinction. Nearest excluded reading: The box
+    started low and remained there.'
+  examples:
+    ordinary: Mira lowered the box.
+    technical: An actor physically displaces a target downwards relative to the local
+      vertical. Distance, method, destination and subsequent contact are unspecified.
+    future_compound: The lowering action can take a different load or actor.
+    counterexample: The box started low and remained there.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 92464b1ea3c632b343340a05615e56a9b2159dc1dc8349776bc8eff14bed255d
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: root
+    root_id: MAT:201
+  - node_id: h
+    kind: root
+    root_id: MAT:211
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - The components refer to the same bearer, relationship or episode as specified
+    in the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: application_of_directed_physical_pressure
+    sound_code: 70
+    added_definition: An actor applies contact force against a target in a direction
+      away from the point of application. The target can remain stationary.
+    excludes:
+    - The gate moved in a gust while Mira watched.
+  compound_id: CMP:9549f538a6224892d3aff0ea
+  content_digest: 9549f538a6224892d3aff0eab06663b1ea9e0889bda6a5154077fd029b03c4c6
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: application of directed physical pressure
+  english_glosses:
+  - push
+  - application of directed physical pressure
+  invariant_definition: An actor applies contact force against a target in a direction
+    away from the point of application. The target can remain stationary.
+  boundaries:
+    includes: An actor applies contact force against a target in a direction away
+      from the point of application. The target can remain stationary.
+    excludes: The gate moved in a gust while Mira watched.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The user requested the reusable state, movement and adjective batch. The
+    listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 70 supplies the specific distinction. Nearest excluded reading: The gate
+    moved in a gust while Mira watched.'
+  examples:
+    ordinary: Mira pushed the gate.
+    technical: An actor applies contact force against a target in a direction away
+      from the point of application. The target can remain stationary.
+    future_compound: A push can act on an object that is already described as shut.
+    counterexample: The gate moved in a gust while Mira watched.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 9549f538a6224892d3aff0eab06663b1ea9e0889bda6a5154077fd029b03c4c6
 - architecture_version: '1.0'
   compound_id: CMP:99a87c8869d58498f524f1cc
   content_digest: 99a87c8869d58498f524f1cc2782321e356f26bf94b14c405077c92a58ff97a7
@@ -4719,6 +5004,64 @@ entries:
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
+  - node_id: q1
+    kind: root
+    root_id: MIN:010
+  - node_id: h
+    kind: root
+    root_id: MIN:201
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - The components refer to the same bearer, relationship or episode as specified
+    in the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: disposition_toward_epistemic_inquiry
+    sound_code: 74
+    added_definition: The bearer is disposed to seek understanding for the sake of
+      knowing. No particular topic, act of inquiry, answer or successful learning
+      is asserted.
+    excludes:
+    - A curious marking was unusual in shape.
+  compound_id: CMP:bc64fdf8b202aa9c02cff526
+  content_digest: bc64fdf8b202aa9c02cff5260748476bb00d940a4813395d6d8c0172d871e949
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: disposition toward epistemic inquiry
+  english_glosses:
+  - curious
+  - disposition toward epistemic inquiry
+  invariant_definition: The bearer is disposed to seek understanding for the sake
+    of knowing. No particular topic, act of inquiry, answer or successful learning
+    is asserted.
+  boundaries:
+    includes: The bearer is disposed to seek understanding for the sake of knowing.
+      No particular topic, act of inquiry, answer or successful learning is asserted.
+    excludes: A curious marking was unusual in shape.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The user requested the reusable state, movement and adjective batch. The
+    listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 74 supplies the specific distinction. Nearest excluded reading: A curious
+    marking was unusual in shape.'
+  examples:
+    ordinary: The curious child waited.
+    technical: The bearer is disposed to seek understanding for the sake of knowing.
+      No particular topic, act of inquiry, answer or successful learning is asserted.
+    future_compound: An inquisitive participant can take any supported action.
+    counterexample: A curious marking was unusual in shape.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: bc64fdf8b202aa9c02cff5260748476bb00d940a4813395d6d8c0172d871e949
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
   - node_id: h
     kind: compound_ref
     compound_id: CMP:ade73037114406a2cd91ce13
@@ -5191,6 +5534,67 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: c64ab0a9989c7b10c46e3b3860f29f4f9b3b2c06a37179b04f8b6e945af4a58b
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:ec3a1fad0ed828279e948372
+    definition_version: 1.0.0
+  - node_id: h
+    kind: root
+    root_id: ORI:211
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - The components refer to the same bearer, relationship or episode as specified
+    in the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: causal_maintenance_of_a_specified_state
+    sound_code: 67
+    added_definition: A maintainer acts or operates so that its target continues in
+      the specified state through the relevant interval. The target may already have
+      been in that state.
+    excludes:
+    - Mira noticed that the gate happened to stay open.
+  compound_id: CMP:cac584a394535e4912c75b5a
+  content_digest: cac584a394535e4912c75b5ab2f61e6909dc83cff18f91aa449e4889665f0a7d
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: causal maintenance of a specified state
+  english_glosses:
+  - keep
+  - causal maintenance of a specified state
+  invariant_definition: A maintainer acts or operates so that its target continues
+    in the specified state through the relevant interval. The target may already have
+    been in that state.
+  boundaries:
+    includes: A maintainer acts or operates so that its target continues in the specified
+      state through the relevant interval. The target may already have been in that
+      state.
+    excludes: Mira noticed that the gate happened to stay open.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The user requested the reusable state, movement and adjective batch. The
+    listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 67 supplies the specific distinction. Nearest excluded reading: Mira noticed
+    that the gate happened to stay open.'
+  examples:
+    ordinary: Mira kept the gate open.
+    technical: A maintainer acts or operates so that its target continues in the specified
+      state through the relevant interval. The target may already have been in that
+      state.
+    future_compound: The same maintenance can apply to a different bearer or quality.
+    counterexample: Mira noticed that the gate happened to stay open.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: cac584a394535e4912c75b5ab2f61e6909dc83cff18f91aa449e4889665f0a7d
 - architecture_version: '1.0'
   compound_id: CMP:cb0812face56f90b7ba139c5
   content_digest: cb0812face56f90b7ba139c53a0c4b69820830bde14c60bcd0160122199daa8b
@@ -5718,6 +6122,63 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: e17374fbc08546afa196b2cd782b981f31ca5ffab8042d3188500a63f9af4aed
 - architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:82dc9c681fbaf7944cb7b85b
+    definition_version: 1.0.0
+  - node_id: h
+    kind: root
+    root_id: MOV:211
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - The components refer to the same bearer, relationship or episode as specified
+    in the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: caused_upward_physical_displacement
+    sound_code: 72
+    added_definition: An actor physically displaces a target upwards relative to the
+      local vertical. Distance, method, destination and continued support are unspecified.
+    excludes:
+    - Mira held an already elevated box steady.
+  compound_id: CMP:e1d0059daad4093d8a5ce05c
+  content_digest: e1d0059daad4093d8a5ce05cde4f83eb9995c40af383d321a6072285139810bc
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: caused upward physical displacement
+  english_glosses:
+  - lift
+  - caused upward physical displacement
+  invariant_definition: An actor physically displaces a target upwards relative to
+    the local vertical. Distance, method, destination and continued support are unspecified.
+  boundaries:
+    includes: An actor physically displaces a target upwards relative to the local
+      vertical. Distance, method, destination and continued support are unspecified.
+    excludes: Mira held an already elevated box steady.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The user requested the reusable state, movement and adjective batch. The
+    listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 72 supplies the specific distinction. Nearest excluded reading: Mira held
+    an already elevated box steady.'
+  examples:
+    ordinary: Mira lifted the box.
+    technical: An actor physically displaces a target upwards relative to the local
+      vertical. Distance, method, destination and continued support are unspecified.
+    future_compound: The same lifting action can take a described load.
+    counterexample: Mira held an already elevated box steady.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: e1d0059daad4093d8a5ce05cde4f83eb9995c40af383d321a6072285139810bc
+- architecture_version: '1.0'
   compound_id: CMP:e2af90ba78681e87e68450e5
   content_digest: e2af90ba78681e87e68450e55eeecd7e016b3f28b0c837c89b6c17dcf6035437
   definition_version: 1.0.0
@@ -5963,6 +6424,62 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: ec01f9b5c6eb3c5483bc3b72c704112ac3ce379998a251e2ce14543b3d9adb7c
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: root
+    root_id: ORI:011
+  - node_id: h
+    kind: root
+    root_id: ORI:010
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - The components refer to the same bearer, relationship or episode as specified
+    in the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: continuation_of_a_specified_state
+    sound_code: 66
+    added_definition: The same specified quality holds of its bearer throughout the
+      relevant interval. Its start and any external intervention are left open.
+    excludes:
+    - A gate was open at one instant and immediately shut.
+  compound_id: CMP:ec3a1fad0ed828279e948372
+  content_digest: ec3a1fad0ed828279e948372bdd1dc520bc75569c4ce7ba1ff13372195d67dea
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: continuation of a specified state
+  english_glosses:
+  - stay
+  - continuation of a specified state
+  invariant_definition: The same specified quality holds of its bearer throughout
+    the relevant interval. Its start and any external intervention are left open.
+  boundaries:
+    includes: The same specified quality holds of its bearer throughout the relevant
+      interval. Its start and any external intervention are left open.
+    excludes: A gate was open at one instant and immediately shut.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The user requested the reusable state, movement and adjective batch. The
+    listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 66 supplies the specific distinction. Nearest excluded reading: A gate was
+    open at one instant and immediately shut.'
+  examples:
+    ordinary: The gate stayed open.
+    technical: The same specified quality holds of its bearer throughout the relevant
+      interval. Its start and any external intervention are left open.
+    future_compound: The continuing quality can be maintained by another participant.
+    counterexample: A gate was open at one instant and immediately shut.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: ec3a1fad0ed828279e948372bdd1dc520bc75569c4ce7ba1ff13372195d67dea
 - architecture_version: '1.0'
   semantic_head: h
   nodes:

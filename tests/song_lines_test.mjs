@@ -6,6 +6,7 @@ import {notesFromMidi} from '../pages/performance_codec.mjs';
 import {songMidi,scoreSongText,needsWholeReading} from '../pages/song_lines.mjs';
 import {encodeName} from '../pages/names.mjs';
 import {analyzeEnglish} from '../pages/english.mjs';
+import {storedStoryAdjectives} from '../pages/story_saved_adjectives.mjs';
 import {mountSongEditor} from '../pages/song_editor.mjs';
 const read=p=>JSON.parse(fs.readFileSync(new URL('../pages/'+p,import.meta.url)));
 const a=read('data/index.json');
@@ -86,7 +87,7 @@ const fields=Object.fromEntries(['sourceInput','output','phraseCoverage','resolu
 fields.sourceInput.value=phrase;
 let forwarded=[],playedLine;
 const {storyReading}=await import('../pages/story_readings.mjs');
-const ctx=vm.createContext({storyReading,faultCorrectionPlan,informationPassagePlan,composeInformationPassage,scoreSongText,compactChordMidi,
+const ctx=vm.createContext({storedStoryAdjectives,storyReading,faultCorrectionPlan,informationPassagePlan,composeInformationPassage,scoreSongText,compactChordMidi,
  state:{data:a,mode:'general',wordSelections:new Map()},$:id=>fields[id],sentenceTemplate:load,document:{createElement:()=>new ResultElement()},
  savedCompoundPlayer:{play:async(bytes,options)=>{playedLine={bytes,options};},stop(){}},toast(){},download(){},
  addPerformance:(text,midi,label)=>forwarded.push({text,midi,label})});

@@ -6,8 +6,8 @@ Status: **PASS**
 - Checks failed: **0**
 - Phrase cases: **80**
 - Dictionary roots: **324**
-- Compounds: **98**
-- Indexed senses: **541**
+- Compounds: **107**
+- Indexed senses: **560**
 - Public document records: **625**
 
 ## Phrase matrix
@@ -16,7 +16,7 @@ Status: **PASS**
 |---|---|---:|---:|---|---|---|
 | continuous self | LIF:000 | yes | 1 | assertion | continuous:canonical, self:canonical | PASS |
 | active care | LIF:211 | yes | 1 | assertion | active:canonical, care:canonical | PASS |
-| A curious child | no semantic candidate | no | 1 | assertion | a:function_word, curious:unresolved_semantic, child:phonemic_label | PASS |
+| A curious child | CMP:bc64fdf8b202aa9c02cff526 | no | 1 | assertion | a:function_word, curious:canonical, child:phonemic_label | PASS |
 | Pip frobnates. | no semantic candidate | no | 1 | assertion | pip:phonemic_label, frobnates:unresolved_semantic | PASS |
 | The lantern frobnates. | no semantic candidate | no | 1 | assertion | the:function_word, lantern:phonemic_label, frobnates:unresolved_semantic | PASS |
 | Go home. | MOV:121 | no | 1 | command | go:canonical, home:documented_gap | PASS |

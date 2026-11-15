@@ -3,9 +3,9 @@
 Status: **PASS — COMPLETE NONCANONICAL METADATA LAYER**
 
 - Canonical roots audited: **324/324**
-- Canonical English-index senses audited: **541/541**
+- Canonical English-index senses audited: **560/560**
 - Game/story surface senses audited: **48/48**
-- Verb or verb-phrase senses: **202**
+- Verb or verb-phrase senses: **208**
 - Canonical meanings changed: **0**
 
 ## Design decision
@@ -22,15 +22,15 @@ Existing verbs are consolidated into reviewed senses. An unfamiliar verb is neve
 
 ## POS counts
 
-- `adjective`: **30**
+- `adjective`: **34**
 - `adverb`: **2**
 - `conjunction`: **3**
 - `grammar`: **1**
 - `interjection`: **1**
 - `noun`: **32**
-- `noun_phrase`: **314**
+- `noun_phrase`: **323**
 - `number`: **1**
 - `preposition`: **2**
 - `quantifier`: **1**
-- `verb`: **94**
+- `verb`: **100**
 - `verb_phrase`: **108**

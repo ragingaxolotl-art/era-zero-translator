@@ -1,5 +1,5 @@
-import {storyReading} from './story_readings.mjs?v=field-repairs-1';
-import {scoreStory} from './story_music.mjs?v=field-repairs-1';
+import {storyReading} from './story_readings.mjs?v=state-adjectives-1';
+import {scoreStory} from './story_music.mjs?v=state-adjectives-1';
 import {dictionaryClausePlan} from './dictionary_clauses.mjs?v=1.16.1';
 import {scoreDictionaryClause} from './dictionary_clause_music.mjs?v=field-repairs-1';
 import {midiFromFormal,midiFromScheduledEvents} from './engine.mjs';
@@ -26,7 +26,7 @@ export function songMidi(lines) {
 }
 
 // Use sentence composition before consulting isolated dictionary readings.
-export async function scoreSongText(text,authority,loadTemplate,preferences=[]) {
+export async function scoreSongText(text,authority,loadTemplate,preferences=[],adjectives) {
   if (informationPassagePlan(text)) {
     const {midi,meaning}=await composeInformationPassage(text,authority);
     return {midi,meaning,label:'Draft discovery and required erasure'};
@@ -36,7 +36,7 @@ export async function scoreSongText(text,authority,loadTemplate,preferences=[]) 
     const result=await composeFaultCorrection(correction,authority);
     return {...result,label:'Draft fault correction',description:describeFaultCorrection(correction)};
   }
-  const story=storyReading(text,authority,{preferences});
+  const story=storyReading(text,authority,{preferences,adjectives});
   if(story)return story.question?null:scoreStory(story,authority);
   const parts=text.match(/[^.!?]+(?:[.!?](?:\s*\[[012]\])?|$)/g);
   if (!parts || parts.join('')!==text) return null;

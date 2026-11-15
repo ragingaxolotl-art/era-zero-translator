@@ -1,8 +1,8 @@
 ---
 metadata:
   version: 1.0.0
-  sense_count: 541
-  lemma_count: 520
+  sense_count: 560
+  lemma_count: 539
 exact_atom_labels:
 - input: continuous self
   expected_route: atom
@@ -989,6 +989,9 @@ exact_compound_labels:
 - input: satisfaction of an applicable criterion
   expected_route: compound
   expected_target: CMP:0cddf1c999333b77818f32fc
+- input: practical availability for a contextual use
+  expected_route: compound
+  expected_target: CMP:0ed5f8a1c4b5a22781920ad9
 - input: physical tool
   expected_route: compound
   expected_target: CMP:111b772027accab2054f0415
@@ -1139,6 +1142,12 @@ exact_compound_labels:
 - input: ongoing physical carrying
   expected_route: compound
   expected_target: CMP:7a6749aaf61cd6181e544bd6
+- input: shut configuration of a closure
+  expected_route: compound
+  expected_target: CMP:82a697e83c845e4a7b38b53e
+- input: caused displacement in a physical frame
+  expected_route: compound
+  expected_target: CMP:82dc9c681fbaf7944cb7b85b
 - input: physical region boundary relation
   expected_route: compound
   expected_target: CMP:835d2edc1573d2aea3a6fd18
@@ -1154,6 +1163,12 @@ exact_compound_labels:
 - input: material route
   expected_route: compound
   expected_target: CMP:919b714e6201a462756224a2
+- input: caused downward physical displacement
+  expected_route: compound
+  expected_target: CMP:92464b1ea3c632b343340a05
+- input: application of directed physical pressure
+  expected_route: compound
+  expected_target: CMP:9549f538a6224892d3aff0ea
 - input: shared message collection
   expected_route: compound
   expected_target: CMP:99a87c8869d58498f524f1cc
@@ -1199,6 +1214,9 @@ exact_compound_labels:
 - input: request for attainment of an activity endpoint
   expected_route: compound
   expected_target: CMP:ba437968d31a6673a65ed1ff
+- input: disposition toward epistemic inquiry
+  expected_route: compound
+  expected_target: CMP:bc64fdf8b202aa9c02cff526
 - input: ongoing optical sensory registration
   expected_route: compound
   expected_target: CMP:bcfd189eb305cf364ada975a
@@ -1220,6 +1238,9 @@ exact_compound_labels:
 - input: felt bodily replenishment need
   expected_route: compound
   expected_target: CMP:c64ab0a9989c7b10c46e3b38
+- input: causal maintenance of a specified state
+  expected_route: compound
+  expected_target: CMP:cac584a394535e4912c75b5a
 - input: material hazard
   expected_route: compound
   expected_target: CMP:cb0812face56f90b7ba139c5
@@ -1247,6 +1268,9 @@ exact_compound_labels:
 - input: interval of deferred action
   expected_route: compound
   expected_target: CMP:e17374fbc08546afa196b2cd
+- input: caused upward physical displacement
+  expected_route: compound
+  expected_target: CMP:e1d0059daad4093d8a5ce05c
 - input: generated living being
   expected_route: compound
   expected_target: CMP:e2af90ba78681e87e68450e5
@@ -1259,6 +1283,9 @@ exact_compound_labels:
 - input: completed discovery of a particular target
   expected_route: compound
   expected_target: CMP:ec01f9b5c6eb3c5483bc3b72
+- input: continuation of a specified state
+  expected_route: compound
+  expected_target: CMP:ec3a1fad0ed828279e948372
 - input: active physical load support
   expected_route: compound
   expected_target: CMP:eef9fff8ac6618ce60927f18

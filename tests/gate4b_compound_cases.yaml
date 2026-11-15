@@ -2,7 +2,7 @@
 metadata:
   title: Gate 4B dictionary conformance and routing cases
   version: 1.0.0
-  approved_entries: 98
+  approved_entries: 107
 accepted:
 - case_id: arrival_back_at_a_prior_position
   compound_id: CMP:0808e01be62b7fac873ee324
@@ -15,6 +15,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: satisfaction_of_an_applicable_criterion
   compound_id: CMP:0cddf1c999333b77818f32fc
+  expected: valid_approved_entry
+- case_id: practical_availability_for_a_contextual_use
+  compound_id: CMP:0ed5f8a1c4b5a22781920ad9
   expected: valid_approved_entry
 - case_id: physical_tool
   compound_id: CMP:111b772027accab2054f0415
@@ -166,6 +169,12 @@ accepted:
 - case_id: ongoing_physical_carrying
   compound_id: CMP:7a6749aaf61cd6181e544bd6
   expected: valid_approved_entry
+- case_id: shut_configuration_of_a_closure
+  compound_id: CMP:82a697e83c845e4a7b38b53e
+  expected: valid_approved_entry
+- case_id: caused_displacement_in_a_physical_frame
+  compound_id: CMP:82dc9c681fbaf7944cb7b85b
+  expected: valid_approved_entry
 - case_id: physical_region_boundary_relation
   compound_id: CMP:835d2edc1573d2aea3a6fd18
   expected: valid_approved_entry
@@ -180,6 +189,12 @@ accepted:
   expected: valid_approved_entry
 - case_id: material_route
   compound_id: CMP:919b714e6201a462756224a2
+  expected: valid_approved_entry
+- case_id: caused_downward_physical_displacement
+  compound_id: CMP:92464b1ea3c632b343340a05
+  expected: valid_approved_entry
+- case_id: application_of_directed_physical_pressure
+  compound_id: CMP:9549f538a6224892d3aff0ea
   expected: valid_approved_entry
 - case_id: shared_message_collection
   compound_id: CMP:99a87c8869d58498f524f1cc
@@ -226,6 +241,9 @@ accepted:
 - case_id: request_for_attainment_of_an_activity_endpoint
   compound_id: CMP:ba437968d31a6673a65ed1ff
   expected: valid_approved_entry
+- case_id: disposition_toward_epistemic_inquiry
+  compound_id: CMP:bc64fdf8b202aa9c02cff526
+  expected: valid_approved_entry
 - case_id: ongoing_optical_sensory_registration
   compound_id: CMP:bcfd189eb305cf364ada975a
   expected: valid_approved_entry
@@ -246,6 +264,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: felt_bodily_replenishment_need
   compound_id: CMP:c64ab0a9989c7b10c46e3b38
+  expected: valid_approved_entry
+- case_id: causal_maintenance_of_a_specified_state
+  compound_id: CMP:cac584a394535e4912c75b5a
   expected: valid_approved_entry
 - case_id: material_hazard
   compound_id: CMP:cb0812face56f90b7ba139c5
@@ -274,6 +295,9 @@ accepted:
 - case_id: interval_of_deferred_action
   compound_id: CMP:e17374fbc08546afa196b2cd
   expected: valid_approved_entry
+- case_id: caused_upward_physical_displacement
+  compound_id: CMP:e1d0059daad4093d8a5ce05c
+  expected: valid_approved_entry
 - case_id: generated_living_being
   compound_id: CMP:e2af90ba78681e87e68450e5
   expected: valid_approved_entry
@@ -285,6 +309,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: completed_discovery_of_a_particular_target
   compound_id: CMP:ec01f9b5c6eb3c5483bc3b72
+  expected: valid_approved_entry
+- case_id: continuation_of_a_specified_state
+  compound_id: CMP:ec3a1fad0ed828279e948372
   expected: valid_approved_entry
 - case_id: active_physical_load_support
   compound_id: CMP:eef9fff8ac6618ce60927f18

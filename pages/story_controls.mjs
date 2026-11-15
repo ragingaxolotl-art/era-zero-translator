@@ -1,9 +1,9 @@
-import {storyReading} from './story_readings.mjs?v=field-repairs-1';
-import {scoreStory} from './story_music.mjs?v=field-repairs-1';
+import {storyReading} from './story_readings.mjs?v=state-adjectives-1';
+import {scoreStory} from './story_music.mjs?v=state-adjectives-1';
 import {everydayMeaning} from './everyday.mjs';
-import {compactChordMidi} from './compact_chords.mjs?v=field-repairs-1';
+import {compactChordMidi} from './compact_chords.mjs?v=state-adjectives-1';
 
-export async function showStoryControls(input,authority,{list,summary,current,preferences,player,add,download,onError},initial){
+export async function showStoryControls(input,authority,{list,summary,current,preferences,adjectives,player,add,download,onError},initial){
   const element=(tag,text)=>{const node=document.createElement(tag);if(text)node.textContent=text;return node;};
   const card=element('article');card.className='candidate';list.replaceChildren(card);
   const answers={};
@@ -21,7 +21,7 @@ export async function showStoryControls(input,authority,{list,summary,current,pr
       card.append(element('p',q.prompt));
       const choose=value=>{
         answers[q.key]=value;
-        return render(storyReading(input,authority,{answers,preferences}));
+        return render(storyReading(input,authority,{answers,preferences,adjectives}));
       };
       for(const o of q.options)button(o.sense?everydayMeaning(authority,o.sense):o.label,()=>choose(o.value));
       if(q.allowName){

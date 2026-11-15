@@ -381,6 +381,105 @@ export const storyWords = [
       "CMP:3d95154b4812da0cefd7fc45",
       "ORI:110"
     ]
+  },
+  {
+    "word": "stay",
+    "code": 66,
+    "example": "The gate stayed open.",
+    "near": "A gate was open at one instant and immediately shut.",
+    "id": "CMP:ec3a1fad0ed828279e948372",
+    "parts": [
+      "ORI:011",
+      "ORI:010"
+    ]
+  },
+  {
+    "word": "keep",
+    "code": 67,
+    "example": "Mira kept the gate open.",
+    "near": "Mira noticed that the gate happened to stay open.",
+    "id": "CMP:cac584a394535e4912c75b5a",
+    "parts": [
+      "CMP:ec3a1fad0ed828279e948372",
+      "ORI:211"
+    ]
+  },
+  {
+    "word": "closed",
+    "code": 68,
+    "example": "The hatch stayed closed.",
+    "near": "An open hatch had an obstruction in front of it.",
+    "id": "CMP:82a697e83c845e4a7b38b53e",
+    "parts": [
+      "CMP:6ae4a680528e1cd7fd1ac0df",
+      "STR:011"
+    ]
+  },
+  {
+    "word": "available for use",
+    "code": 69,
+    "example": "The tool stayed available.",
+    "near": "A tool was functional but locked out of reach.",
+    "id": "CMP:0ed5f8a1c4b5a22781920ad9",
+    "parts": [
+      "ORI:011",
+      "ORI:211"
+    ]
+  },
+  {
+    "word": "push",
+    "code": 70,
+    "example": "Mira pushed the gate.",
+    "near": "The gate moved in a gust while Mira watched.",
+    "id": "CMP:9549f538a6224892d3aff0ea",
+    "parts": [
+      "MAT:201",
+      "MAT:211"
+    ]
+  },
+  {
+    "word": "displace",
+    "code": 71,
+    "example": "Mira displaced the box.",
+    "near": "Mira pressed on the box and it stayed still.",
+    "id": "CMP:82dc9c681fbaf7944cb7b85b",
+    "parts": [
+      "MAT:211",
+      "MOV:120"
+    ]
+  },
+  {
+    "word": "lift",
+    "code": 72,
+    "example": "Mira lifted the box.",
+    "near": "Mira held an already elevated box steady.",
+    "id": "CMP:e1d0059daad4093d8a5ce05c",
+    "parts": [
+      "CMP:82dc9c681fbaf7944cb7b85b",
+      "MOV:211"
+    ]
+  },
+  {
+    "word": "lower",
+    "code": 73,
+    "example": "Mira lowered the box.",
+    "near": "The box started low and remained there.",
+    "id": "CMP:92464b1ea3c632b343340a05",
+    "parts": [
+      "CMP:82dc9c681fbaf7944cb7b85b",
+      "MOV:211"
+    ]
+  },
+  {
+    "word": "curious",
+    "code": 74,
+    "example": "The curious child waited.",
+    "near": "A curious marking was unusual in shape.",
+    "id": "CMP:bc64fdf8b202aa9c02cff526",
+    "parts": [
+      "MIN:010",
+      "MIN:201"
+    ]
   }
 ];
 export const storyDependencies = [

@@ -1,12 +1,13 @@
+import {storedStoryAdjectives} from './story_saved_adjectives.mjs';
 import {everydayMeaning,routeName} from './everyday.mjs';
-import {storyReading} from './story_readings.mjs?v=field-repairs-1';
-import {showStoryControls} from './story_controls.mjs?v=field-repairs-1';
+import {storyReading} from './story_readings.mjs?v=state-adjectives-1';
+import {showStoryControls} from './story_controls.mjs?v=state-adjectives-1';
 import {readWordChoices,updateWordChoice} from './dictionary_word_choices.mjs?v=exact-word-1';
 import {dictionaryClausePlan} from './dictionary_clauses.mjs?v=1.16.1';
 import {mountDictionaryClause} from './dictionary_clause_controls.mjs?v=field-repairs-1';
-import {compactChordMidi} from './compact_chords.mjs?v=field-repairs-1';
-import {mountSongEditor} from './song_editor.mjs?v=field-repairs-1';
-import {needsWholeReading,scoreSongText} from './song_lines.mjs?v=field-repairs-1';
+import {compactChordMidi} from './compact_chords.mjs?v=state-adjectives-1';
+import {mountSongEditor} from './song_editor.mjs?v=state-adjectives-1';
+import {needsWholeReading,scoreSongText} from './song_lines.mjs?v=state-adjectives-1';
 import {informationPassagePlan} from './information_passage.mjs';
 import {faultCorrectionPlan} from './fault_correction.mjs?v=field-repairs-1';
 import {selectedWordMatch,wordScorePlan,scoreSelectedWords} from './word_score.mjs';
@@ -60,7 +61,7 @@ import {parseFoundationSentence,composeFoundationSentence,foundationPronounPlan}
 import {pronounInterpretationPlan,composePronounSentence} from './pronouns.mjs';
 import {helpCareReading,parseSentenceDisjunction,composeSentenceDisjunction,clauseInterpretationPlan,parseSentenceConditional,composeSentenceConditional,parseNamedSentence,composeNamedSentence,needsSentenceComposition,parseSentenceSequence,composeSentenceSequence,parseSentenceConjunction,composeSentenceConjunction} from './sentences.mjs';
 import{svgFromFormal,midiFromFormal,createBundle,verifyBundle,soundPlanFromFormal}from'./engine.mjs?v=1.15.0';
-import{analyzeEnglish}from'./english.mjs?v=field-repairs-3';
+import{analyzeEnglish}from'./english.mjs?v=state-adjectives-1';
 import{encodeName,estimatePhonemes,notesForName,midiFromName,PHONEMES}from'./names.mjs?v=1.15.0';
 import{visemePlanFromFormal,visemeFrameAt,visemeFileFromFormal,EYE_EXPRESSIONS}from'./visemes.mjs?v=1.15.0';
 import{recognitionForTarget}from'./recognition.mjs?v=1.15.0';
@@ -1217,7 +1218,7 @@ async function loadSongFoundations(){
  }
  return songFoundationRecords;
 }
-const addSongLine=mountSongEditor({document,storage:localStorage,player:savedCompoundPlayer,download,getAtoms:()=>state.data?.atoms,getRecords:loadSongFoundations});
+const addSongLine=mountSongEditor({document,storage:localStorage,player:savedCompoundPlayer,download,getAtoms:()=>state.data?.atoms,getRecords:loadSongFoundations,getAdjectives:()=>storedStoryAdjectives(state.data)});
 let carePreviewRequest=0;
 for(const [buttonId,chords] of [['hearCareChords',true],['hearCareMelody',false]]){
   $(buttonId).addEventListener('click',async()=>{
@@ -1255,13 +1256,15 @@ async function showWholePassage(input) {
  const multiple=/[.!?]\s+\S/.test(input);
  const correction=faultCorrectionPlan(input);
  const current=()=>$('sourceInput').value.trim()===input&&state.mode==='general';
- const story=!plan&&!correction&&storyReading(input,state.data,{preferences:state.wordPreferences||[]});
+ const adjectives=!plan&&!correction?await storedStoryAdjectives(state.data,input):undefined;
+ if(!current())return true;
+ const story=!plan&&!correction&&storyReading(input,state.data,{preferences:state.wordPreferences||[],adjectives});
  if(story){
    state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
    for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
    $('results').classList.remove('hidden');
    await showStoryControls(input,state.data,{list:$('candidateList'),summary:$('decisionSummary'),current,
-     preferences:state.wordPreferences||[],player:savedCompoundPlayer,add:addPerformance,download,onError:e=>toast(e.message)},story);
+     preferences:state.wordPreferences||[],adjectives,player:savedCompoundPlayer,add:addPerformance,download,onError:e=>toast(e.message)},story);
    if(current())$('results').scrollIntoView({behavior:'smooth',block:'start'});return true;
  }
  if (!plan&&!correction&&!multiple) return false;

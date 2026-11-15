@@ -21,7 +21,7 @@ export function decodeSupportedMeaningMidi(bytes,atoms){
 }
 
 // Draft meanings remain explicitly gated and never silently become canonical.
-export async function decodeSupportedMeaningWithDrafts(bytes,atoms,records,{allowDraft=false,allowConjunction=true}={}){
+export async function decodeSupportedMeaningWithDrafts(bytes,atoms,records,{allowDraft=false,allowConjunction=true,adjectives}={}){
  if(!allowDraft)return decodeSupportedMeaningMidi(bytes,atoms);
  const {decodeFoundationSentenceMidi}=await import('./foundation_semantic_decoder.mjs');
  const {decodeUnderstandingMidi}=await import('./understanding_music.mjs');
@@ -42,10 +42,10 @@ export async function decodeSupportedMeaningWithDrafts(bytes,atoms,records,{allo
  const {decodeFaultCorrectionMidi}=await import('./fault_correction.mjs?v=field-repairs-1');
  const {decodeInformationPassageMidi}=await import('./information_passage.mjs');
  const {decodeKnownValueMidi}=await import('./known_value.mjs?v=field-repairs-1');
- const {decodeStoryMidi}=await import('./story_music.mjs?v=field-repairs-1');
+ const {decodeStoryMidi}=await import('./story_music.mjs?v=state-adjectives-1');
  const accepted=[];
  try{accepted.push(decodeKnownValueMidi(bytes,atoms));}catch{}
- try{accepted.push(decodeStoryMidi(bytes,atoms));}catch{}
+ try{accepted.push(decodeStoryMidi(bytes,atoms,adjectives));}catch{}
  try{accepted.push(decodeDictionaryClauseMidi(bytes,atoms));}catch{}
  try{accepted.push(await decodeFaultCorrectionMidi(bytes,atoms));}catch{}
  try{accepted.push(decodeInformationPassageMidi(bytes,atoms));}catch{}

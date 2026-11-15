@@ -69,7 +69,52 @@
     },
     {
       "key": "resumed-stream-waits",
-      "questions": []
+      "questions": [],
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "S",
+                "T",
+                "R",
+                "IY",
+                "M"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": [
+                  "CMP:2f0b0fa860550a0826567bb3"
+                ]
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "matches_preregistered_meaning": null
     },
     {
       "key": "restore-then-report",

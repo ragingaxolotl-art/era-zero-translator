@@ -1,4 +1,4 @@
-import {decodeStrictMusicMidi} from './strict_music_decoder.mjs?v=field-repairs-1';
+import {decodeStrictMusicMidi} from './strict_music_decoder.mjs?v=state-adjectives-1';
 
 // Shared strict grammar reader. Each semantic profile must validate the entire
 // remaining tree, including exact lexical conventions, roles and head roots.

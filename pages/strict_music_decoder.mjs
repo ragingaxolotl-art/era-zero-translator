@@ -83,6 +83,18 @@ export function decodeStrictMusicNotes({notes,division},atoms,{maxNotes=100000,m
  function candidates(i){
   const out=[],base=notes[i].midi;
   for(const f of acceptedFrames)if(match(i,f.path,anchor,.25))out.push(make(i,f.path.length,{kind:'grammar',marker:f.marker}));
+  // A saved word carries its existing 48-bit identity, relationship and ordered
+  // components. The story inverse verifies its entire sound against the shared library.
+  if(allowDraftInformationPassage && base===anchor && Math.abs(notes[i+1]?.midi-anchor)===39 && i+36<=end){
+    const path=notes.slice(i,i+36).map(n=>n.midi-anchor),trits=path.slice(4,-1).map(p=>[0,1,-1].indexOf(p));
+    if(path[2]===19 && [0,1].includes(path[3]) && path[35]===0 && trits.every(d=>d>=0) && match(i,path,anchor,.25)){
+      const code=trits.reduce((n,d)=>n*3+d,0);
+      if(code<2**48){
+        const hex=code.toString(16).padStart(12,'0'),relation=path[3]?'qualifies':'head',side=path[1]<0?'open':'close';
+        out.push(make(i,36,{kind:'grammar',marker:'local_'+hex+'_'+relation+'_'+side,local_code:hex,local_relation:relation}));
+      }
+    }
+  }
   if(match(i,[0],anchor,.25)&&Math.abs(notes[i+1]?.midi-anchor)===19&&i+11<=end){
    const path=notes.slice(i,i+11).map(n=>n.midi-anchor),digits=path.slice(2,10).map(n=>[0,1,-1].indexOf(n));
    if(path[10]===0&&digits.every(n=>n>=0)&&match(i,path,anchor,.25)){
