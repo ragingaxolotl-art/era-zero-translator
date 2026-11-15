@@ -1,0 +1,102 @@
+{
+  "voice": "Era Zero reference tones",
+  "arrangement": "compact chords",
+  "tempo_bpm": 120,
+  "capture": "MacBook Pro Speakers to MacBook Pro Microphone, mono 48 kHz, macOS Core Audio; built-in hardware, no loopback",
+  "blind_inputs": "Only recorded WAV and public language enter the listener; compare scored notes and semantics afterwards.",
+  "development": "The first two microphone recordings were used to refine bass detection. The final listener was fixed before recording the two held-out performances.",
+  "results": [
+    {
+      "text": "I am not moving.",
+      "source": "browser PCM",
+      "cohort": "development",
+      "seconds": 14.153,
+      "notes": 76,
+      "note_sha256": "2f590badf359da7889c7882e63a198c4bd280a25e100585f77cd2297bcf75073",
+      "runtime": 1,
+      "exact_compact_notes_and_timing": true,
+      "exact_musical_meaning": true
+    },
+    {
+      "text": "I am not moving.",
+      "source": "room microphone",
+      "cohort": "development",
+      "seconds": 14.891,
+      "notes": 76,
+      "note_sha256": "2f590badf359da7889c7882e63a198c4bd280a25e100585f77cd2297bcf75073",
+      "runtime": 1,
+      "exact_compact_notes_and_timing": true,
+      "exact_musical_meaning": true
+    },
+    {
+      "text": "We need to fix the checksum error.",
+      "source": "browser PCM",
+      "cohort": "development",
+      "seconds": 21.78,
+      "notes": 84,
+      "note_sha256": "7e8be31f4694fc6c93c9491dbb4a8bfd6c235743476925c7aad7b4407e1cd1e3",
+      "runtime": 1,
+      "exact_compact_notes_and_timing": true,
+      "exact_musical_meaning": true
+    },
+    {
+      "text": "We need to fix the checksum error.",
+      "source": "room microphone",
+      "cohort": "development",
+      "seconds": 22.534,
+      "notes": 84,
+      "note_sha256": "7e8be31f4694fc6c93c9491dbb4a8bfd6c235743476925c7aad7b4407e1cd1e3",
+      "runtime": 1,
+      "exact_compact_notes_and_timing": true,
+      "exact_musical_meaning": true
+    },
+    {
+      "text": "The gate reopened. [2]",
+      "source": "browser PCM",
+      "cohort": "held_out",
+      "seconds": 40.153,
+      "notes": 216,
+      "note_sha256": "6c379cced533766435c93cecbaadc0d028d7506e974b86babe49de26609fc679",
+      "runtime": 2,
+      "exact_compact_notes_and_timing": true,
+      "exact_musical_meaning": true
+    },
+    {
+      "text": "The gate reopened. [2]",
+      "source": "room microphone",
+      "cohort": "held_out",
+      "seconds": 40.966,
+      "notes": 216,
+      "note_sha256": "6c379cced533766435c93cecbaadc0d028d7506e974b86babe49de26609fc679",
+      "runtime": 2,
+      "exact_compact_notes_and_timing": true,
+      "exact_musical_meaning": true
+    },
+    {
+      "text": "I am not moving. [0]",
+      "source": "browser PCM",
+      "cohort": "held_out",
+      "seconds": 14.03,
+      "notes": 76,
+      "note_sha256": "ad19cf7b9d34772e91af20d7f0e1a15edb32a287ef3dceaf839e3049abea3543",
+      "runtime": 0,
+      "exact_compact_notes_and_timing": true,
+      "exact_musical_meaning": true
+    },
+    {
+      "text": "I am not moving. [0]",
+      "source": "room microphone",
+      "cohort": "held_out",
+      "seconds": 14.933,
+      "notes": 76,
+      "note_sha256": "ad19cf7b9d34772e91af20d7f0e1a15edb32a287ef3dceaf839e3049abea3543",
+      "runtime": 0,
+      "exact_compact_notes_and_timing": true,
+      "exact_musical_meaning": true
+    }
+  ],
+  "negative_controls": {
+    "truncated": "rejected",
+    "silent": "rejected"
+  }
+}

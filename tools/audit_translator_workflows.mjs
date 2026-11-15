@@ -26,8 +26,28 @@ try{
    }));
  }
  await page.setViewportSize({width:390,height:844});
+ const oldSong=await fs.readFile(new URL('../tests/field_audit/legacy_song.json',import.meta.url),'utf8');
+ await page.evaluate(data=>localStorage.setItem('era-zero-song-lines-v1',data),oldSong);
+ await page.reload();await ready(page);assert((await song(page))[0].startsWith('The gate reopened.'));
+ await page.getByRole('button',{name:'Check musical meaning of line 1'}).click();
+ await page.locator('#songLines details').waitFor({state:'attached'});
+ report.legacy_runtime=JSON.parse(await page.locator('#songLines pre').textContent()).runtime_state;
+ assert.equal(report.legacy_runtime,1);
+ await page.getByRole('button',{name:'Remove line 1'}).click();await page.reload();await ready(page);
+ assert.deepEqual(await song(page),[]);
  await add(page,'The path was open.');await add(page,'The gate reopened.');
  await page.reload();await ready(page);report.after_reload=await song(page);
+ await page.locator('#previewSongRoot').click();await page.locator('#nextSongRoot').click();
+ assert.match(await page.locator('#songTiming').innerText(),/Root 2 of/);
+ await page.locator('#songArrangement').selectOption('melody');
+ assert.equal(await page.locator('#previewSongRoot').textContent(),'Hear root 2 as a melody');
+ await page.locator('#songArrangement').selectOption('chords');
+ const firstLine=page.locator('#songLines li').first();
+ await firstLine.getByRole('button',{name:'Check musical meaning of line 1'}).click();
+ await firstLine.locator('details').waitFor({state:'attached'});
+ assert.match(await firstLine.innerText(),/Meaning recovered from the chords/);
+ report.checked_framed_meaning=JSON.parse(await firstLine.locator('pre').textContent());
+ assert.equal(report.checked_framed_meaning.events[0].arguments[0].role,'bearer');
  await page.getByRole('button',{name:'Remove line 1'}).click();report.after_remove=await song(page);
  await page.getByRole('button',{name:'Remove line 1'}).click();
  const tab=await context.newPage();await open(tab);
@@ -49,6 +69,9 @@ try{
  const translator=page.getByRole('tab',{name:'Translator',exact:true});
  await translator.focus();await page.keyboard.press('ArrowRight');
  report.focus_after_tab_arrow=await page.evaluate(()=>document.activeElement.textContent.trim());
+ assert.equal(report.focus_after_tab_arrow,'Conversation');
+ await page.keyboard.press('End');assert.equal(await page.evaluate(()=>document.activeElement.textContent.trim()),'Documents');
+ await page.keyboard.press('Home');assert.equal(await page.evaluate(()=>document.activeElement.textContent.trim()),'Translator');
  await page.getByRole('tab',{name:'Dictionary',exact:true}).click();
  await page.locator('#catalogSearch').fill('reopen');
  report.dictionary_reopen_matches=await page.locator('#catalogList').innerText();

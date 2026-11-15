@@ -56,5 +56,5 @@ for(const entry of ledger[cohort]){
  outcomes.push(result);
  console.log(entry.key,questions.length+' question(s)',!result.heard?(result.dictionary_prompt?'dictionary proposal only':'no score'):result.matches_preregistered_meaning===true?'exact match':result.matches_preregistered_meaning===false?'different reading':'compare scored meaning to written requirements');
 }
-const output=new URL('../reports/story_followup_'+cohort+'.json',import.meta.url);
+const output=new URL('../reports/story_followup_current_'+cohort+'.json',import.meta.url);
 fs.writeFileSync(output,JSON.stringify({cohort,results:outcomes},null,2)+'\n');

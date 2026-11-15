@@ -1,5 +1,7 @@
 # What happens when you put an English line into a DBA song?
 
+The subsequent repair release retested these 51 inputs and 18 fresh examples and played four recordings through a speaker and microphone. [Repair results](translator_field_repairs.md)
+
 The bottom song selector had a playback bug. In 13 of 26 test lines that produced a whole score, choosing **Compact chords** played exactly the same pitches at the same times as **Original melody**. Some approved compounds join multiple roots without a rest. The chord arranger used the rests to find roots and skipped those joins. It now reads the boundaries already present in the musical grammar.
 
 ## Hear the difference
