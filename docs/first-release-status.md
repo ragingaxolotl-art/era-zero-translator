@@ -1,8 +1,8 @@
 # DBA translator first release
 
-The browser translator makes music from supported English sentences and from words you build yourself. It includes 324 canonical roots, 63 approved compounds and 471 indexed senses. You can combine earlier compounds in the order you choose, mark the main meaning, and connect participants across the parts. Your definitions stay in your browser and can be exported and imported. [Open the translator](https://ragingaxolotl-art.github.io/era-zero-translator/) · [Open the compound builder](https://ragingaxolotl-art.github.io/era-zero-translator/compound-builder.html)
+The browser translator makes music from supported English sentences and from words you build yourself. It includes 324 canonical roots, 82 approved compounds and 509 indexed senses. You can combine earlier compounds in the order you choose, mark the main meaning, and connect participants across the parts. Your definitions stay in your browser and can be exported and imported. [Open the translator](https://ragingaxolotl-art.github.io/era-zero-translator/) · [Open the compound builder](https://ragingaxolotl-art.github.io/era-zero-translator/compound-builder.html)
 
-The [current story and dialogue audit](../reports/story_readings.md) covers the subsequent story grammar and vocabulary release.
+The field audit tests 51 inputs through the song controls, measures the sound of both arrangements and ranks the remaining bugs. [Field audit](../reports/translator_field_audit.md) · [Story and dialogue audit](../reports/story_readings.md)
 
 ## Try a sentence
 
