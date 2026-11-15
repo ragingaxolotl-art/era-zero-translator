@@ -2,7 +2,7 @@ import {compactChordPerformance} from './compact_chords.mjs?v=joined-roots-1';
 import {songMidi} from './song_lines.mjs';
 import {notesFromMidi} from './performance_codec.mjs';
 
-const key='era-zero-song-lines-v1';
+import {isSongStorageKey,readSongLines,newSongLine,saveSongLine,removeSongLine} from './song_storage.mjs';
 export function mountSongEditor({document,storage,player,download,getAtoms}) {
   const list=document.getElementById('songLines'), status=document.getElementById('songStatus');
   const play=document.getElementById('playSong'), save=document.getElementById('exportSong'),stop=document.getElementById('stopSong');
@@ -45,14 +45,21 @@ export function mountSongEditor({document,storage,player,download,getAtoms}) {
     }catch(error){status.textContent=error.message;}
   });
   let lines=[],canSave=true;
-  try {
-    const stored=storage.getItem(key);
-    if (stored) lines=JSON.parse(stored).map(({text,bytes,label})=>{
-      if (typeof text!=='string'||typeof label!=='string'||typeof bytes!=='string') throw Error();
-      const midi=Uint8Array.from(atob(bytes),c=>c.charCodeAt(0));
-      notesFromMidi(midi);return {text,midi,label};
-    });
-  } catch { canSave=false;status.textContent='The saved song could not be opened. New lines are available in this tab.'; }
+  function reload(){
+    if(!canSave)return;
+    try{
+      const stored=readSongLines(storage);
+      for(const line of stored)notesFromMidi(line.midi);
+      lines=stored;
+    }catch{
+      canSave=false;status.textContent='The saved song could not be opened. New lines are available in this tab.';
+    }
+  }
+  reload();
+  document.defaultView?.addEventListener('storage',event=>{
+    if(!canSave||!isSongStorageKey(event.key))return;
+    reload();render();
+  });
   function render() {
     prepared=null;original=null;
     list.replaceChildren();
@@ -61,18 +68,22 @@ export function mountSongEditor({document,storage,player,download,getAtoms}) {
       const row=document.createElement('li'),label=document.createElement('span'),remove=document.createElement('button');
       label.textContent=line.text+' · '+line.label;remove.type='button';remove.textContent='Remove';
       remove.setAttribute('aria-label','Remove line '+(index+1));
-      remove.addEventListener('click',()=>{player.stop();lines.splice(index,1);changed('Line removed.');});
+      remove.addEventListener('click',()=>{player.stop();lines=lines.filter(item=>item.id!==line.id);changed('Line removed.',()=>removeSongLine(storage,line.id));});
       row.append(label,remove);list.append(row);
     }
     showArrangement();
   }
-  function changed(message) {
-    render();
+  function changed(message,persist) {
     try {
-      if (!canSave) throw Error();
-      storage.setItem(key,JSON.stringify(lines.map(({text,label,midi})=>({text,label,bytes:btoa(Array.from(midi,b=>String.fromCharCode(b)).join(''))}))));
+      if(!canSave)throw Error();
+      persist();reload();
+      if(!canSave)throw Error();
       status.textContent=message+' Saved in this browser.';
-    } catch { status.textContent=message+' Available in this tab. Download the song MIDI to keep a copy.'; }
+    } catch {
+      canSave=false;
+      status.textContent=message+' Available in this tab. Download the song MIDI to keep a copy.';
+    }
+    render();
   }
   play.addEventListener('click',async()=>{try {await player.play(arranged(),{chords:arrangement.value==='chords'});} catch(e){status.textContent=e.message;}});
   stop.addEventListener('click',()=>player.stop());
@@ -80,7 +91,9 @@ export function mountSongEditor({document,storage,player,download,getAtoms}) {
   render();
   function addLine(text,midi,label){
     if (!text.trim()||!notesFromMidi(midi).notes.length) throw Error('This line has no music.');
-    player.stop();lines.push({text,label,midi:new Uint8Array(midi)});changed('Line '+lines.length+' added.');
+    player.stop();reload();
+    const line=newSongLine(text,label,midi,lines);
+    lines.push(line);changed('Line '+lines.length+' added.',()=>saveSongLine(storage,line));
     return lines.length;
   }
   addLine.refreshArrangement=showArrangement;

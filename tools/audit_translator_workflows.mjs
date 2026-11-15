@@ -1,5 +1,6 @@
 // Independent browser profile for each run. All test-created words and songs are local to it.
 import fs from 'node:fs/promises';
+import assert from 'node:assert/strict';
 import path from 'node:path';
 import {createRequire} from 'node:module';
 const require=createRequire(import.meta.url);
@@ -31,7 +32,17 @@ try{
  await page.getByRole('button',{name:'Remove line 1'}).click();
  const tab=await context.newPage();await open(tab);
  await add(page,'The gate reopened.');await add(tab,'The path was open.');
- await page.reload();await ready(page);report.after_two_tabs_added=await song(page);await tab.close();
+ await page.reload();await ready(page);report.after_two_tabs_added=await song(page);
+ assert.equal(report.after_two_tabs_added.length,2,'Both tabs must keep their additions');
+ await Promise.all([type(page,'The gate reopened.'),type(tab,'The gate reopened.')]);
+ await Promise.all([page,tab].map(p=>p.getByRole('button',{name:'Add to song',exact:true}).click()));
+ await Promise.all([page,tab].map(p=>p.waitForFunction(()=>document.querySelectorAll('#songLines li').length===4)));
+ await page.getByRole('button',{name:'Remove line 1',exact:true}).click();
+ await tab.waitForFunction(()=>document.querySelectorAll('#songLines li').length===3);
+ await tab.reload();await ready(tab);report.after_concurrent_adds_and_remove=await song(tab);
+ assert.equal(report.after_concurrent_adds_and_remove.length,3);
+ assert.equal(report.after_concurrent_adds_and_remove.filter(s=>s.startsWith('The gate reopened.')).length,2);
+ await tab.close();
  await type(page,'The gate reopened.');
  await page.locator('#sourceInput').fill('Changed but not submitted');
  report.stale_add_visible=await page.getByRole('button',{name:'Add to song',exact:true}).isVisible();

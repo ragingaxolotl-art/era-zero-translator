@@ -50,7 +50,7 @@ function editor() {
  const ids=new Map(['songLines','songStatus','playSong','exportSong','stopSong','songArrangement'].map(id=>[id,new Element()]));
  ids.get('songArrangement').value='melody';
  const add=mountSongEditor({getAtoms:()=>a.atoms,document:{getElementById:id=>ids.get(id),createElement:()=>new Element()},
-  storage:{getItem:key=>storageState.get(key),setItem:(key,v)=>storageState.set(key,v)},
+  storage:{get length(){return storageState.size},key:i=>[...storageState.keys()][i],getItem:key=>storageState.get(key)??null,setItem:(key,v)=>storageState.set(key,v),removeItem:key=>storageState.delete(key)},
   player:{play:bytes=>{played=bytes;},stop:()=>{stops++;}},download:blob=>{saved=blob;}});
  return {ids,add};
 }
@@ -60,6 +60,18 @@ assert.deepEqual(lineNotes(played),both);ui.ids.get('exportSong').click();
 assert.deepEqual(lineNotes(new Uint8Array(await saved.arrayBuffer())),both);
 ui.ids.get('songLines').children[0].children[1].click();assert(stops>0);
 assert.equal(editor().ids.get('songLines').children.length,1);
+// Two tabs can hold different views when their synchronous click handlers run.
+const originalSave=JSON.stringify([{text:phrase,label:'Earlier song',bytes:Buffer.from(sentence.midi).toString('base64')}]);
+storageState=new Map([['era-zero-song-lines-v1',originalSave]]);
+const tabA=editor(),tabB=editor(),oldRemove=tabB.ids.get('songLines').children[0].children[1];
+tabA.add('First new line',care.midi,'Care');
+tabB.add('Second new line',care.midi,'Care');
+oldRemove.click();
+const titles=()=>editor().ids.get('songLines').children.map(row=>row.children[0].textContent.split(' · ')[0]);
+assert.deepEqual(titles(),['First new line','Second new line']);
+tabA.ids.get('songLines').children[1].children[1].click();
+assert.deepEqual(titles(),['Second new line']);
+assert.equal(storageState.get('era-zero-song-lines-v1'),originalSave);
 console.log('PASS two-clause meaning recovered from MIDI alone, role/time/runtime contrasts, unsupported near misses, ordered song playback, export and local persistence.');
 
 // Exercise the same translator result buttons that forward a scored passage to the song editor.
