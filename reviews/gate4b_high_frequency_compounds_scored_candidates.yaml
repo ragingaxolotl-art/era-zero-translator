@@ -5577,3 +5577,451 @@ reviews:
     decision: 'rejected: unnecessary change of authority'
   recommendation: approve specific_convention
   confidence: high
+- compound_id: CMP:ac9df67396f3632d36b5d078
+  display_title: onset of awareness of a target
+  current_choice_reason: The authored distinction is exercised by The keeper noticed
+    a change in the signal. and contrasted with The keeper remained aware of the unchanging
+    signal throughout, with no new moment of noticing.
+  candidates:
+  - candidate_id: specific_convention
+    direction: During an episode a cognizer comes to register a particular, distinct
+      target in awareness. The change makes the target present to that cognizer at
+      the time of noticing. The target may be familiar. The means of detection and
+      any subsequent response are unspecified.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: MIN:011
+      - node_id: h
+        kind: root
+        root_id: MIN:110
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: onset_of_awareness_of_a_target
+        sound_code: 44
+        added_definition: During an episode a cognizer comes to register a particular,
+          distinct target in awareness. The change makes the target present to that
+          cognizer at the time of noticing. The target may be familiar. The means
+          of detection and any subsequent response are unspecified.
+        excludes:
+        - The keeper remained aware of the unchanging signal throughout, with no new
+          moment of noticing.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: The keeper remained aware
+      of the unchanging signal throughout, with no new moment of noticing.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:42b9bbf271c7fc2a1193c5ca
+  display_title: visual noticing of a target
+  current_choice_reason: The authored distinction is exercised by Mira spotted a hairline
+    crack in the lens. and contrasted with Mira noticed the crack by touch in complete
+    darkness.
+  candidates:
+  - candidate_id: specific_convention
+    direction: A cognizer comes to notice the target through optical information registered
+      from it during the same episode. The receiver of the optical information is
+      the one who notices. Naming, recognizing or searching for the target is optional.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: compound_ref
+        compound_id: CMP:bcfd189eb305cf364ada975a
+        definition_version: 1.0.0
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:ac9df67396f3632d36b5d078
+        definition_version: 1.0.0
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: visual_noticing_of_a_target
+        sound_code: 45
+        added_definition: A cognizer comes to notice the target through optical information
+          registered from it during the same episode. The receiver of the optical
+          information is the one who notices. Naming, recognizing or searching for
+          the target is optional.
+        excludes:
+        - Mira noticed the crack by touch in complete darkness.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: Mira noticed the crack
+      by touch in complete darkness.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:6ae4a680528e1cd7fd1ac0df
+  display_title: route through an interface
+  current_choice_reason: The authored distinction is exercised by The passage linked
+    the outer chamber to the shelter. and contrasted with The two chambers share a
+    wall with no route across it.
+  candidates:
+  - candidate_id: specific_convention
+    direction: An established route connects two sides through an identifiable interface.
+      It can be a physical opening or a defined path between parts of a machine or
+      system. Its availability to any traveler or signal at a particular time is unspecified.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: STR:010
+      - node_id: h
+        kind: root
+        root_id: MOV:020
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: route_through_an_interface
+        sound_code: 46
+        added_definition: An established route connects two sides through an identifiable
+          interface. It can be a physical opening or a defined path between parts
+          of a machine or system. Its availability to any traveler or signal at a
+          particular time is unspecified.
+        excludes:
+        - The two chambers share a wall with no route across it.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: The two chambers share
+      a wall with no route across it.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:3c7e1b60fb3087e942be4555
+  display_title: passage permitting traversal
+  current_choice_reason: The authored distinction is exercised by Despite the warning,
+    the service passage was passable. and contrasted with The sign permits entry but
+    a solid barrier prevents the relevant traffic from getting through.
+  candidates:
+  - candidate_id: specific_convention
+    direction: At the reference time the passage permits the contextually relevant
+      traveler, signal or other traffic to get through. No actual traversal, invitation,
+      safety guarantee or legal permission is implied.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:6ae4a680528e1cd7fd1ac0df
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: passage_permitting_traversal
+        sound_code: 47
+        added_definition: At the reference time the passage permits the contextually
+          relevant traveler, signal or other traffic to get through. No actual traversal,
+          invitation, safety guarantee or legal permission is implied.
+        excludes:
+        - The sign permits entry but a solid barrier prevents the relevant traffic
+          from getting through.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: The sign permits entry
+      but a solid barrier prevents the relevant traffic from getting through.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:f9554786959994e2f5fb6e9c
+  display_title: passage preventing traversal
+  current_choice_reason: The authored distinction is exercised by The gate was blocked
+    by fallen stone. and contrasted with A sign advises against travel but the traveler
+    can still get through.
+  candidates:
+  - candidate_id: specific_convention
+    direction: At the reference time the passage prevents the contextually relevant
+      traveler, signal or other traffic from getting through. The route can remain
+      identifiable throughout the blockage. The cause, responsibility and duration
+      are unspecified.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: h
+        kind: compound_ref
+        compound_id: CMP:6ae4a680528e1cd7fd1ac0df
+        definition_version: 1.0.0
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: passage_preventing_traversal
+        sound_code: 48
+        added_definition: At the reference time the passage prevents the contextually
+          relevant traveler, signal or other traffic from getting through. The route
+          can remain identifiable throughout the blockage. The cause, responsibility
+          and duration are unspecified.
+        excludes:
+        - A sign advises against travel but the traveler can still get through.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: A sign advises against
+      travel but the traveler can still get through.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:28e9f477e3bc88111934ddda
+  display_title: restoration of passage after blockage
+  current_choice_reason: The authored distinction is exercised by After the rubble
+    shifted, the tunnel reopened. and contrasted with Workers opened a new tunnel
+    that had never been passable before.
+  candidates:
+  - candidate_id: specific_convention
+    direction: A passage that previously permitted the relevant traffic, then prevented
+      it, becomes passable again by the end of the reported transition. Both the earlier
+      and the restored conditions concern the same passage and kind of traffic. No
+      operator or actual traveler is required.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: compound_ref
+        compound_id: CMP:f9554786959994e2f5fb6e9c
+        definition_version: 1.0.0
+      - node_id: q2
+        kind: compound_ref
+        compound_id: CMP:3c7e1b60fb3087e942be4555
+        definition_version: 1.0.0
+      - node_id: h
+        kind: root
+        root_id: ORI:110
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      - type: qualifies
+        from: q2
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: restoration_of_passage_after_blockage
+        sound_code: 49
+        added_definition: A passage that previously permitted the relevant traffic,
+          then prevented it, becomes passable again by the end of the reported transition.
+          Both the earlier and the restored conditions concern the same passage and
+          kind of traffic. No operator or actual traveler is required.
+        excludes:
+        - Workers opened a new tunnel that had never been passable before.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: Workers opened a new
+      tunnel that had never been passable before.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high

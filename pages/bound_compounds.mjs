@@ -1,3 +1,4 @@
+import {validNominalLabel} from './nominals.mjs';
 import {informationFrame} from './information_passage_frames.mjs';
 import {subjectControlEvent} from './subject_control.mjs';
 import {validateFoundationIR} from './foundation_ir.mjs';
@@ -70,7 +71,7 @@ export async function renderLexicalOccurrences(ir,authority,{anchor=60,maxEvents
    family_qualified_transliteration:name.normalized_label,formal_carrier:'',family_opening_relative_semitones:[],family_opening_absolute_midi:[],address_relative_semitones:notes.map(n=>n-60),address_absolute_midi:notes.map(n=>n+base-60),note_duration_beats:1};
   if(node.reference_mode){
    const mode=NOMINAL_MODES[node.reference_mode]?.id;
-   if(!mode||node.referent_id!==`nominal:${mode}:${name.name_id}`||!/^[a-z]+$/.test(name.normalized_label))fail('invalid nominal reference');
+   if(!mode||node.referent_id!==`nominal:${mode}:${name.name_id}`||!validNominalLabel(name.normalized_label))fail('invalid nominal reference');
    return count(restrictReferenceEvents(node,[nominalMarker(node,register,anchor),event],anchor));
   }
   return count([event]);

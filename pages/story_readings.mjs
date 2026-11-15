@@ -1,5 +1,6 @@
+import {routeNounLabel} from './nominals.mjs';
 import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs';
-import {storyWords} from './story_words.mjs';
+import {storyWords} from './story_words.mjs?v=story-passages-1';
 
 const words = new Map(storyWords.map(word => [word.word, word]));
 const id = word => words.get(word).id;
@@ -11,21 +12,28 @@ const shapes = [
   ['repeat', 'repeats', 'repeated', ['actor', 'target']],
   ['cease', 'ceases', 'ceased', ['bearer']],
   ['wait', 'waits', 'waited', ['actor']],
+  ['notice', 'notices', 'noticed', ['experiencer','target']],
+  ['spot', 'spots', 'spotted', ['experiencer','target']],
+  ['reopen', 'reopens', 'reopened', ['bearer']],
   ['return', 'returns', 'returned', ['actor']],
   ['arrive', 'arrives', 'arrived', ['actor']]
 ];
 const predicateId = word => word === 'arrive' ? 'MOV:110' : id(word);
 const properties = new Map(Object.entries({
   cracked:id('cracked'), faulty:id('faulty'), broken:id('broken'), sick:'WRN:001',
+  passable:id('passable'), open:id('passable'), blocked:id('blocked'), impassable:id('blocked'),
   awake:'LIF:001', asleep:'LIF:002', well:'REP:001', lost:'MOV:212'
 }));
 const pronouns = new Set('they them he him she her it'.split(' '));
 const deictics = {i:'I',me:'I',we:'we',us:'we',you:'you'};
 const determiners = new Set('a an the this that'.split(' '));
-const personNouns = new Set('person child teacher worker friend programmer keeper custodian'.split(' '));
+const personNouns = new Set('person people child children teacher worker friend programmer keeper custodian'.split(' '));
+const machineActors = new Set('program routine resolver robot machine compiler process agent'.split(' '));
+const passageHeads = new Set('path route passage corridor passageway tunnel gate gateway door doorway hatch entrance exit bridge port channel lane road trail opening'.split(' '));
+const passageQualities = new Set([id('passable'),id('blocked')]);
 const nonNouns = new Set('all none of a an the this that to is are was were it they us and but or before after not need needs might could will must who what do does did'.split(' '));
 const folded = s => s.toLowerCase();
-const plural = noun => /(?:ies|s)$/.test(noun) && !/(?:ss|us|is)$/.test(noun);
+const plural = noun => ['people','children','men','women','mice'].includes(noun) || /(?:ies|s)$/.test(noun) && !/(?:ss|us|is)$/.test(noun);
 export const storyPropertyIds = new Set(properties.values());
 export function storyRoles(root) {
   const roles = shapes.filter(([base]) => predicateId(base) === root).map(row => row[3]);
@@ -50,15 +58,34 @@ function nounPhrase(tokens, offset) {
     return {text:token, length:1, reference:token, category:'person', plural:false, qualities:[]};
   }
   offset++;
-  const qualities = [];
-  while (properties.has(tokens[offset]?.toLowerCase())) qualities.push(properties.get(tokens[offset++].toLowerCase()));
-  const head = tokens[offset]?.toLowerCase();
-  if (!head || !/^[a-z]+(?:-[a-z]+)*$/.test(head) || nonNouns.has(head)) return null;
+  const qualities = [],descriptors=[];
+  while (properties.has(tokens[offset]?.toLowerCase())){
+    const descriptor=tokens[offset++].toLowerCase();
+    qualities.push(properties.get(descriptor));descriptors.push(descriptor);
+    if(tokens[offset]?.toLowerCase()==='and'&&properties.has(tokens[offset+1]?.toLowerCase()))offset++;
+  }
+  let head = tokens[offset]?.toLowerCase();
+  const route=routeNounLabel(head,tokens[offset+1]?.toLowerCase());
+  if(route){head=route;offset++;}
+  if (!head || (!route && !/^[a-z]+(?:-[a-z]+)*$/.test(head)) || nonNouns.has(head)) return null;
   if (plural(head) && ['a','an','this','that'].includes(det)) return null;
   return {text:tokens.slice(start,offset+1).join(' '), length:offset-start+1, reference:det+' '+head,
-    head, category:personNouns.has(head.replace(/s$/,''))?'person':'thing', plural:plural(head), qualities};
+    head, category:personNouns.has(head.replace(/s$/,''))?'person':'thing', plural:plural(head), qualities,descriptors};
 }
 const tokensOf = s => s.match(/"[^"\n]+"|[^\s]+/g) || [];
+function linkedClauses(body){
+  const tokens=tokensOf(body),parts=[],clause=[];
+  for(let i=0;i<tokens.length;){
+    const word=folded(tokens[i]);
+    if(['and','before','after'].includes(word)){
+      parts.push(clause.join(' '),word);clause.length=0;i++;continue;
+    }
+    // Consume a whole noun phrase so the 'and' inside paired adjectives stays with its noun.
+    const nominal=nounPhrase(tokens,i),length=nominal?.length||1;
+    clause.push(...tokens.slice(i,i+length));i+=length;
+  }
+  return [...parts,clause.join(' ')];
+}
 function splitObject(tokens) {
   for (let i=1; i<tokens.length; i++) {
     const object = nounPhrase(tokens, i);
@@ -75,8 +102,13 @@ function predicate(verb, subject, object, authority, runtime, preferences) {
   const placeholder = anchor+' '+verb+(object?' the gate':'');
   const syntax = clauseSyntax(placeholder);
   if (!syntax) return [];
+  const personal=preferences.length && dictionaryClausePlan(placeholder+' ['+runtime+'].',authority,{preferences});
+  if(personal && personal.preferred>=0){
+    const r=personal.readings[personal.preferred];
+    if(r.root!=='erase_stored_object')return [{root:r.root,word:r.sense.lemma,roles:r.participants.map(p=>p.role),scopes:r.scopes,sense:r.sense,specific:false}];
+  }
   const tail = object ? folded(syntax.tail).slice(0,-' the gate'.length) : folded(syntax.tail);
-  if(syntax.being && !object && properties.has(tail))return [{root:properties.get(tail),word:tail,roles:['bearer'],scopes:syntax.scopes,specific:words.has(tail)}];
+  if(syntax.being && !object && properties.has(tail))return [{root:properties.get(tail),word:tail,roles:['bearer'],scopes:syntax.scopes,specific:words.has(tail)||passageQualities.has(properties.get(tail))}];
   const readings = [];
   if(object && syntax.allowPast && tail==='found' && !preferences.some(p=>p.forms?.includes('found'))){
     return [{root:id('find'),word:'find',roles:['experiencer','target'],scopes:[...syntax.scopes,'time_before_speech'],specific:true}];
@@ -118,7 +150,7 @@ function prepare(input, authority, preferences) {
     let link=null;
     const leading=/^(before|after) (.+?),\s*(.+)$/i.exec(body);
     if(leading)body=leading[2]+' '+(folded(leading[1])==='before'?'after':'before')+' '+leading[3];
-    const parts=body.split(/\s+(and|before|after)\s+/i);
+    const parts=linkedClauses(body);
     // Without punctuation or parentheses, three linked clauses have ambiguous attachment.
     if(parts.length>3)return null;
     for(let i=0;i<parts.length;i+=2){
@@ -133,7 +165,7 @@ function prepare(input, authority, preferences) {
       if(link==='and' && (!subject || subject.category==='person' && shapes.some(row=>row.slice(0,3).includes(folded(tokens[0]))))){
         subject=clauses.at(-1).subject;consumed=0;inherited=true;special=true;
       }
-      if(clauses.length===0 && sentences.length===1 && /^(?:find|notice|repair|repeat|ring) (?:(?:it|them|the|a|an|this|that)\b)/i.test(piece)){
+      if(clauses.length===0 && sentences.length===1 && /^(?:find|notice|spot|repair|repeat|ring) (?:(?:it|them|the|a|an|this|that)\b)/i.test(piece)){
         subject={text:'you',pronoun:'you'};consumed=0;act='command';
       }
       if(!subject || q&&!subject.plural)return null;
@@ -171,14 +203,15 @@ export function storyReading(input, authority, {answers={}, preferences=[]}={}) 
     const p=np.pronoun;
     if(pronouns.has(p)){
       const people=!['it'].includes(p);
-      const eligible=entities.map((e,i)=>({e,i})).filter(({i})=>i!==exclude);
-      let candidates=eligible.filter(({e})=>people?(e.category==='person'||(['they','them'].includes(p)&&e.plural)):e.category==='thing');
+      const neutral=p==='they'||p==='them';
+      const eligible=entities.map((e,i)=>({e,i})).filter(({e,i})=>i!==exclude&&(neutral||!e.plural));
+      let candidates=eligible.filter(({e})=>people?(e.category==='person'||(neutral&&(e.plural||machineActors.has(e.head)))):e.category==='thing');
       const direct=candidates.length>0;
       if(!direct && ['it','they','them'].includes(p))candidates=eligible;
       const answer=answers[key];
       if(answer?.startsWith('new:')){
         const supplied=tokensOf(answer.slice(4).trim()), ref=nounPhrase(supplied,0);
-        if(ref && !ref.pronoun && ref.length===supplied.length && !ref.qualities.length){
+        if(ref && !ref.pronoun && ref.length===supplied.length && !ref.qualities.length && (neutral||!ref.plural)){
           const chosen=identify(ref,key);notes.push('“'+np.text+'” refers to '+ref.text+'.');return chosen;
         }
       }
@@ -203,6 +236,19 @@ export function storyReading(input, authority, {answers={}, preferences=[]}={}) 
     }
     entities.push({reference,label:np.text,head:np.head,plural:!!np.plural||reference==='we',category,owner});return entities.length-1;
   }
+  function passageSense(entity,word,key){
+    if(word!=='reopen'&&!passageQualities.has(properties.get(word)))return true;
+    const head=(entities[entity].head||'').split(' ').at(-1);
+    if(passageHeads.has(head)||passageHeads.has(head.replace(/s$/,'')))return true;
+    const answer=answers[key];
+    if(answer==='passage')return true;
+    if(answer==='other')return false;
+    const explanation=word==='reopen'?'a route became passable again':properties.get(word)===id('blocked')?'something prevents passage':'something can get through';
+    const label=entities[entity].label.replace(/^(?:The|This|That|A|An)\b/,s=>s.toLowerCase());
+    question={key,prompt:'Does “'+word+'” describe passage through '+label+'?',
+      options:[{value:'passage',label:'Yes, '+explanation},{value:'other',label:'I mean another sense of “'+word+'”'}]};
+    return false;
+  }
   for(const [index,c] of grammar.clauses.entries()){
     let reading=c.readings[0];
     if(c.readings.length>1){
@@ -211,10 +257,17 @@ export function storyReading(input, authority, {answers={}, preferences=[]}={}) 
     }
     const sub=c.inherited?lastSubject:identify(c.subject,'subject'+index);
     if(question)return {question};
+    const subjectWords=c.inherited?[]:c.subject.descriptors||[];
+    for(const descriptor of [...subjectWords,...(storyPropertyIds.has(reading.root)||reading.root===id('reopen')?[reading.word]:[])]){
+      if(!passageSense(sub,descriptor,'property'+index+'Subject'+descriptor))return question?{question}:null;
+    }
     const args=[{role:reading.roles[0],entity:sub,properties:c.inherited?[]:c.subject.qualities||[]}];
     if(c.object){
       const target=identify(c.object,'object'+index,sub);
       if(question)return {question};
+      for(const descriptor of c.object.descriptors||[]){
+        if(!passageSense(target,descriptor,'property'+index+'Object'+descriptor))return question?{question}:null;
+      }
       args.push({role:reading.roles[1],entity:target,properties:c.object.qualities||[]});
     }
     if(args.length===2&&args[0].entity===args[1].entity && !['MIN:011','MIN:110'].includes(reading.root))return null;

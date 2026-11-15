@@ -7,7 +7,7 @@ import {encodeName} from '../pages/names.mjs';
 import {compactChordMidi,expandChordMidi} from '../pages/compact_chords.mjs';
 import {scoreSongText} from '../pages/song_lines.mjs';
 import {decodeSupportedMeaningWithDrafts} from '../pages/semantic_music_dispatch.mjs';
-import {storyWords} from '../pages/story_words.mjs';
+import {storyWords,storyDependencies} from '../pages/story_words.mjs';
 import {everydayMeaning,routeName} from '../pages/everyday.mjs';
 import {addLocalCompound,emptyLocalCompounds} from '../pages/local_compounds.mjs';
 const authority=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',import.meta.url)));
@@ -58,6 +58,50 @@ for(const action of ['rang','vibrated','recurred']){
   assert.equal(truth(notAll.events[0],outcomes),weak);assert.equal(truth(none.events[0],outcomes),strong);
  }
 }
+// Exercise combinations, rather than giving the manuscript quotations special cases.
+const modifiers=['cracked','faulty'].map(w=>vocab.get(w));
+const spotted='The routine spotted a cracked and faulty gate. They repaired it.';
+const visual=(await hear(spotted)).heard;
+assert.deepEqual(visual.events.map(e=>e.arguments.map(r=>[r.role,r.entity,r.properties])),[
+  [['experiencer',0,[]],['target',1,modifiers]],[['source',0,[]],['target',1,[]]]]);
+assert.deepEqual(visual.events.map(e=>e.predicate),[vocab.get('spot'),'REP:110']);
+assert.deepEqual((await hear(spotted.replace('spotted','noticed'))).heard.events.map(e=>e.predicate),[vocab.get('notice'),'REP:110']);
+const optical=storyWords.find(w=>w.word==='spot').parts.find(x=>x!==vocab.get('notice'));
+assert.equal(storyDependencies.find(x=>x.id===optical).parts[0],storyDependencies.find(x=>x.code===0).id);
+const coordinated=(await hear('Nia spotted a cracked and faulty panel and repaired it.')).heard;
+assert.deepEqual(coordinated.relations,[{kind:'and',events:[0,1]}]);
+assert.deepEqual(coordinated.events.map(e=>e.arguments.map(a=>a.properties)),[[[],modifiers],[[],[]]]);
+for(const [quant,neg,prefix] of [['all',true,'Not all'],['none',false,'None of']]){
+  const event=(await hear(prefix+' the cracked and faulty bells rang.')).heard.events[0];
+  assert.deepEqual([event.quantifier,event.negated_quantifier,event.arguments[0].properties],[quant,neg,modifiers]);
+}
+for(const state of [0,1,2]){
+  const roots=[];
+  for(const [surface,word] of [['reopened','reopen'],['was passable','passable'],['was blocked','blocked']]){
+    const {heard,midi}=await hear('The return path '+surface+'. ['+state+']');
+    const decoded=await decodeSupportedMeaningWithDrafts(midi,authority.atoms,[],{allowDraft:true});
+    assert.deepEqual(decoded,heard);assert.equal(decoded.runtime_state,state);
+    assert.deepEqual(decoded.entities[0].identity.phonemes,(await encodeName('return path')).phonemes);
+    assert.deepEqual(decoded.events[0].scopes,['time_before_speech']);
+    assert.equal(decoded.events[0].predicate,vocab.get(word));roots.push(decoded.events[0].predicate);
+  }
+  assert.equal(new Set(roots).size,3);
+}
+const external='It was open.';
+assert.equal(read(external).question.key,'subject0');
+const externalRoute=(await hear(external,{subject0:'new:the return path'})).heard;
+assert.deepEqual(externalRoute.entities[0].identity.phonemes,(await encodeName('return path')).phonemes);
+assert.equal(externalRoute.events[0].predicate,vocab.get('passable'));
+for(const [line,pred] of [['The file was open.','passable'],['The trial reopened.','reopen']]){
+  const q=read(line).question;assert(q.prompt.includes('passage through'));
+  assert.equal(read(line,{[q.key]:'other'}),null);
+  assert.equal((await hear(line,{[q.key]:'passage'})).heard.events[0].predicate,vocab.get(pred));
+}
+const singular='The bells rang. It was cracked.';
+assert.deepEqual(read(singular).question.options,[]);
+assert(read(singular,{subject1:'new:the bells'}).question);
+const preference={word:'noticed',forms:['noticed'],target:'MIN:011',root:'MIN:011',quality:false,roles:'experiencer/target'};
+assert.equal(storyReading('Nia noticed a cracked and faulty panel.',authority,{preferences:[preference]}).events[0].predicate,'MIN:011');
 const ambiguous='Pip noticed Ada. They repaired a cracked bell.';
 const q=read(ambiguous).question;assert(q.prompt.includes('They'));assert.equal(q.options.length,2);
 for(const [answer,i] of [['0',0],['1',1]])assert.equal((await hear(ambiguous,{[q.key]:answer})).heard.events[1].arguments[0].entity,i);

@@ -140,5 +140,87 @@ export const storyWords = [
       "MIN:010",
       "MIN:110"
     ]
+  },
+  {
+    "word": "notice",
+    "code": 44,
+    "example": "The keeper noticed a change in the signal.",
+    "near": "The keeper remained aware of the unchanging signal throughout, with no new moment of noticing.",
+    "id": "CMP:ac9df67396f3632d36b5d078",
+    "parts": [
+      "MIN:011",
+      "MIN:110"
+    ]
+  },
+  {
+    "word": "spot",
+    "code": 45,
+    "example": "Mira spotted a hairline crack in the lens.",
+    "near": "Mira noticed the crack by touch in complete darkness.",
+    "id": "CMP:42b9bbf271c7fc2a1193c5ca",
+    "parts": [
+      "CMP:bcfd189eb305cf364ada975a",
+      "CMP:ac9df67396f3632d36b5d078"
+    ]
+  },
+  {
+    "word": "passage",
+    "code": 46,
+    "example": "The passage linked the outer chamber to the shelter.",
+    "near": "The two chambers share a wall with no route across it.",
+    "id": "CMP:6ae4a680528e1cd7fd1ac0df",
+    "parts": [
+      "STR:010",
+      "MOV:020"
+    ]
+  },
+  {
+    "word": "passable",
+    "code": 47,
+    "example": "Despite the warning, the service passage was passable.",
+    "near": "The sign permits entry but a solid barrier prevents the relevant traffic from getting through.",
+    "id": "CMP:3c7e1b60fb3087e942be4555",
+    "parts": [
+      "CMP:6ae4a680528e1cd7fd1ac0df"
+    ]
+  },
+  {
+    "word": "blocked",
+    "code": 48,
+    "example": "The gate was blocked by fallen stone.",
+    "near": "A sign advises against travel but the traveler can still get through.",
+    "id": "CMP:f9554786959994e2f5fb6e9c",
+    "parts": [
+      "CMP:6ae4a680528e1cd7fd1ac0df"
+    ]
+  },
+  {
+    "word": "reopen",
+    "code": 49,
+    "example": "After the rubble shifted, the tunnel reopened.",
+    "near": "Workers opened a new tunnel that had never been passable before.",
+    "id": "CMP:28e9f477e3bc88111934ddda",
+    "parts": [
+      "CMP:3c7e1b60fb3087e942be4555",
+      "CMP:f9554786959994e2f5fb6e9c",
+      "ORI:110"
+    ]
+  }
+];
+export const storyDependencies = [
+  {
+    "id": "CMP:bcfd189eb305cf364ada975a",
+    "code": 1,
+    "parts": [
+      "CMP:ade73037114406a2cd91ce13"
+    ]
+  },
+  {
+    "id": "CMP:ade73037114406a2cd91ce13",
+    "code": 0,
+    "parts": [
+      "MAT:211",
+      "DAT:111"
+    ]
   }
 ];

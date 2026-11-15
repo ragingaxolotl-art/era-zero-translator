@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 76
+  entry_count: 82
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -833,6 +833,80 @@ entries:
   approval_basis: Delegated semantic approval under the user-directed translator-completion
     goal; reviews/foundation_process_compounds.md
 - architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:f9554786959994e2f5fb6e9c
+    definition_version: 1.0.0
+  - node_id: q2
+    kind: compound_ref
+    compound_id: CMP:3c7e1b60fb3087e942be4555
+    definition_version: 1.0.0
+  - node_id: h
+    kind: root
+    root_id: ORI:110
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  - type: qualifies
+    from: q2
+    to: h
+  lexical_constraints:
+  - The first qualifier describes the passage immediately before the transition. The
+    second describes the same passage at its completion for the same kind of traffic.
+    The passage was passable at an earlier time.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: restoration_of_passage_after_blockage
+    sound_code: 49
+    added_definition: A passage that previously permitted the relevant traffic, then
+      prevented it, becomes passable again by the end of the reported transition.
+      Both the earlier and the restored conditions concern the same passage and kind
+      of traffic. No operator or actual traveler is required.
+    excludes:
+    - Workers opened a new tunnel that had never been passable before.
+  compound_id: CMP:28e9f477e3bc88111934ddda
+  content_digest: 28e9f477e3bc88111934dddabe44899486d6985a55cf06dd4609e26e5eb591b5
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-14'
+  display_title: restoration of passage after blockage
+  english_glosses:
+  - reopen
+  - restoration of passage after blockage
+  invariant_definition: A passage that previously permitted the relevant traffic,
+    then prevented it, becomes passable again by the end of the reported transition.
+    Both the earlier and the restored conditions concern the same passage and kind
+    of traffic. No operator or actual traveler is required.
+  boundaries:
+    includes: A passage that previously permitted the relevant traffic, then prevented
+      it, becomes passable again by the end of the reported transition. Both the earlier
+      and the restored conditions concern the same passage and kind of traffic. No
+      operator or actual traveler is required.
+    excludes: Workers opened a new tunnel that had never been passable before.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The existing noticing and open-path gaps in reports/story_readings.md motivated
+    this batch. The listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 49 supplies the specific distinction. Nearest excluded reading: Workers
+    opened a new tunnel that had never been passable before.'
+  examples:
+    ordinary: After the rubble shifted, the tunnel reopened.
+    technical: A passage that previously permitted the relevant traffic, then prevented
+      it, becomes passable again by the end of the reported transition. Both the earlier
+      and the restored conditions concern the same passage and kind of traffic. No
+      operator or actual traveler is required.
+    future_compound: A caused reopening can add a distinct actor who brings about
+      this restoration.
+    counterexample: Workers opened a new tunnel that had never been passable before.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 28e9f477e3bc88111934dddabe44899486d6985a55cf06dd4609e26e5eb591b5
+- architecture_version: '1.0'
   compound_id: CMP:2d26353b47b531bd3f5ae090
   content_digest: 2d26353b47b531bd3f5ae0901bf01e4ce43f5223e70b70cdd716b295e0beac27
   definition_version: 1.0.0
@@ -1113,6 +1187,65 @@ entries:
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:6ae4a680528e1cd7fd1ac0df
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: passage_permitting_traversal
+    sound_code: 47
+    added_definition: At the reference time the passage permits the contextually relevant
+      traveler, signal or other traffic to get through. No actual traversal, invitation,
+      safety guarantee or legal permission is implied.
+    excludes:
+    - The sign permits entry but a solid barrier prevents the relevant traffic from
+      getting through.
+  compound_id: CMP:3c7e1b60fb3087e942be4555
+  content_digest: 3c7e1b60fb3087e942be4555e00bb3bf4073e4be740daa340a4c35349b636c7c
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-14'
+  display_title: passage permitting traversal
+  english_glosses:
+  - passable
+  - passage permitting traversal
+  invariant_definition: At the reference time the passage permits the contextually
+    relevant traveler, signal or other traffic to get through. No actual traversal,
+    invitation, safety guarantee or legal permission is implied.
+  boundaries:
+    includes: At the reference time the passage permits the contextually relevant
+      traveler, signal or other traffic to get through. No actual traversal, invitation,
+      safety guarantee or legal permission is implied.
+    excludes: The sign permits entry but a solid barrier prevents the relevant traffic
+      from getting through.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The existing noticing and open-path gaps in reports/story_readings.md motivated
+    this batch. The listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 47 supplies the specific distinction. Nearest excluded reading: The sign
+    permits entry but a solid barrier prevents the relevant traffic from getting through.'
+  examples:
+    ordinary: Despite the warning, the service passage was passable.
+    technical: At the reference time the passage permits the contextually relevant
+      traveler, signal or other traffic to get through. No actual traversal, invitation,
+      safety guarantee or legal permission is implied.
+    future_compound: Reopening adds an earlier blockage and a transition back to this
+      passable condition.
+    counterexample: The sign permits entry but a solid barrier prevents the relevant
+      traffic from getting through.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 3c7e1b60fb3087e942be4555e00bb3bf4073e4be740daa340a4c35349b636c7c
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
   - node_id: q1
     kind: root
     root_id: ORI:010
@@ -1273,6 +1406,69 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 4144fad413b8ce5012088c6193969cb6f73701fe8a61e005e8c66bb6ef90deaa
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:bcfd189eb305cf364ada975a
+    definition_version: 1.0.0
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:ac9df67396f3632d36b5d078
+    definition_version: 1.0.0
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: visual_noticing_of_a_target
+    sound_code: 45
+    added_definition: A cognizer comes to notice the target through optical information
+      registered from it during the same episode. The receiver of the optical information
+      is the one who notices. Naming, recognizing or searching for the target is optional.
+    excludes:
+    - Mira noticed the crack by touch in complete darkness.
+  compound_id: CMP:42b9bbf271c7fc2a1193c5ca
+  content_digest: 42b9bbf271c7fc2a1193c5caf7c7f565f43e249a5c8765f3f17c57d51ea57bd4
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-14'
+  display_title: visual noticing of a target
+  english_glosses:
+  - spot
+  - visual noticing of a target
+  invariant_definition: A cognizer comes to notice the target through optical information
+    registered from it during the same episode. The receiver of the optical information
+    is the one who notices. Naming, recognizing or searching for the target is optional.
+  boundaries:
+    includes: A cognizer comes to notice the target through optical information registered
+      from it during the same episode. The receiver of the optical information is
+      the one who notices. Naming, recognizing or searching for the target is optional.
+    excludes: Mira noticed the crack by touch in complete darkness.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The existing noticing and open-path gaps in reports/story_readings.md motivated
+    this batch. The listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 45 supplies the specific distinction. Nearest excluded reading: Mira noticed
+    the crack by touch in complete darkness.'
+  examples:
+    ordinary: Mira spotted a hairline crack in the lens.
+    technical: A cognizer comes to notice the target through optical information registered
+      from it during the same episode. The receiver of the optical information is
+      the one who notices. Naming, recognizing or searching for the target is optional.
+    future_compound: Spotting a familiar pattern can add recognition to this visual
+      noticing.
+    counterexample: Mira noticed the crack by touch in complete darkness.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 42b9bbf271c7fc2a1193c5caf7c7f565f43e249a5c8765f3f17c57d51ea57bd4
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
@@ -1901,6 +2097,69 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 61bfb0de7a1e9d7f5b98172517f8145bf2603c26ec4ed8da6b1149474901b518
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: root
+    root_id: STR:010
+  - node_id: h
+    kind: root
+    root_id: MOV:020
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: route_through_an_interface
+    sound_code: 46
+    added_definition: An established route connects two sides through an identifiable
+      interface. It can be a physical opening or a defined path between parts of a
+      machine or system. Its availability to any traveler or signal at a particular
+      time is unspecified.
+    excludes:
+    - The two chambers share a wall with no route across it.
+  compound_id: CMP:6ae4a680528e1cd7fd1ac0df
+  content_digest: 6ae4a680528e1cd7fd1ac0df95cac12c16827d645e0d777f9c9d231ddfe11bf7
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-14'
+  display_title: route through an interface
+  english_glosses:
+  - passage
+  - route through an interface
+  invariant_definition: An established route connects two sides through an identifiable
+    interface. It can be a physical opening or a defined path between parts of a machine
+    or system. Its availability to any traveler or signal at a particular time is
+    unspecified.
+  boundaries:
+    includes: An established route connects two sides through an identifiable interface.
+      It can be a physical opening or a defined path between parts of a machine or
+      system. Its availability to any traveler or signal at a particular time is unspecified.
+    excludes: The two chambers share a wall with no route across it.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The existing noticing and open-path gaps in reports/story_readings.md motivated
+    this batch. The listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 46 supplies the specific distinction. Nearest excluded reading: The two
+    chambers share a wall with no route across it.'
+  examples:
+    ordinary: The passage linked the outer chamber to the shelter.
+    technical: An established route connects two sides through an identifiable interface.
+      It can be a physical opening or a defined path between parts of a machine or
+      system. Its availability to any traveler or signal at a particular time is unspecified.
+    future_compound: Passable and blocked add different conditions on movement through
+      the same passage.
+    counterexample: The two chambers share a wall with no route across it.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 6ae4a680528e1cd7fd1ac0df95cac12c16827d645e0d777f9c9d231ddfe11bf7
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
@@ -3292,6 +3551,73 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: a900dd73c9816ed6cbad29f04705e8b9b5bb9f71734e6ca82707eeb14bcb8f44
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: root
+    root_id: MIN:011
+  - node_id: h
+    kind: root
+    root_id: MIN:110
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: onset_of_awareness_of_a_target
+    sound_code: 44
+    added_definition: During an episode a cognizer comes to register a particular,
+      distinct target in awareness. The change makes the target present to that cognizer
+      at the time of noticing. The target may be familiar. The means of detection
+      and any subsequent response are unspecified.
+    excludes:
+    - The keeper remained aware of the unchanging signal throughout, with no new moment
+      of noticing.
+  compound_id: CMP:ac9df67396f3632d36b5d078
+  content_digest: ac9df67396f3632d36b5d07870f7cc6387c055ab118ba4b9c13e64ad65140486
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-14'
+  display_title: onset of awareness of a target
+  english_glosses:
+  - notice
+  - onset of awareness of a target
+  invariant_definition: During an episode a cognizer comes to register a particular,
+    distinct target in awareness. The change makes the target present to that cognizer
+    at the time of noticing. The target may be familiar. The means of detection and
+    any subsequent response are unspecified.
+  boundaries:
+    includes: During an episode a cognizer comes to register a particular, distinct
+      target in awareness. The change makes the target present to that cognizer at
+      the time of noticing. The target may be familiar. The means of detection and
+      any subsequent response are unspecified.
+    excludes: The keeper remained aware of the unchanging signal throughout, with
+      no new moment of noticing.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The existing noticing and open-path gaps in reports/story_readings.md motivated
+    this batch. The listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 44 supplies the specific distinction. Nearest excluded reading: The keeper
+    remained aware of the unchanging signal throughout, with no new moment of noticing.'
+  examples:
+    ordinary: The keeper noticed a change in the signal.
+    technical: During an episode a cognizer comes to register a particular, distinct
+      target in awareness. The change makes the target present to that cognizer at
+      the time of noticing. The target may be familiar. The means of detection and
+      any subsequent response are unspecified.
+    future_compound: Spotting adds the visual source of the change in awareness.
+    counterexample: The keeper remained aware of the unchanging signal throughout,
+      with no new moment of noticing.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: ac9df67396f3632d36b5d07870f7cc6387c055ab118ba4b9c13e64ad65140486
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
@@ -4851,3 +5177,62 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: f1abd5eccdf06d92d5690a32fdd15868b95af51fb4273e9e53304bbf082107cc
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:6ae4a680528e1cd7fd1ac0df
+    definition_version: 1.0.0
+  edges: []
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: passage_preventing_traversal
+    sound_code: 48
+    added_definition: At the reference time the passage prevents the contextually
+      relevant traveler, signal or other traffic from getting through. The route can
+      remain identifiable throughout the blockage. The cause, responsibility and duration
+      are unspecified.
+    excludes:
+    - A sign advises against travel but the traveler can still get through.
+  compound_id: CMP:f9554786959994e2f5fb6e9c
+  content_digest: f9554786959994e2f5fb6e9c5ab9a141bff2c4efbc8b73561ed9acf916d49130
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-14'
+  display_title: passage preventing traversal
+  english_glosses:
+  - blocked
+  - passage preventing traversal
+  invariant_definition: At the reference time the passage prevents the contextually
+    relevant traveler, signal or other traffic from getting through. The route can
+    remain identifiable throughout the blockage. The cause, responsibility and duration
+    are unspecified.
+  boundaries:
+    includes: At the reference time the passage prevents the contextually relevant
+      traveler, signal or other traffic from getting through. The route can remain
+      identifiable throughout the blockage. The cause, responsibility and duration
+      are unspecified.
+    excludes: A sign advises against travel but the traveler can still get through.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The existing noticing and open-path gaps in reports/story_readings.md motivated
+    this batch. The listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 48 supplies the specific distinction. Nearest excluded reading: A sign advises
+    against travel but the traveler can still get through.'
+  examples:
+    ordinary: The gate was blocked by fallen stone.
+    technical: At the reference time the passage prevents the contextually relevant
+      traveler, signal or other traffic from getting through. The route can remain
+      identifiable throughout the blockage. The cause, responsibility and duration
+      are unspecified.
+    future_compound: Reopening a route can take this condition as its starting point.
+    counterexample: A sign advises against travel but the traveler can still get through.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: f9554786959994e2f5fb6e9c5ab9a141bff2c4efbc8b73561ed9acf916d49130

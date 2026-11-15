@@ -2,7 +2,7 @@ import {validContentSelection} from './content_selection.mjs';
 // Contextual content is a reference, never proof of a cognitive predicate.
 import {canonicalDigest} from './engine.mjs';
 import {encodeName} from './names.mjs';
-import {parseNominal} from './nominals.mjs';
+import {parseNominal,validNominalLabel} from './nominals.mjs';
 import {deicticReference,NOMINAL_MODES} from './references.mjs';
 import {CONTEXTUAL_CONTENT_KINDS} from './contextual_content_frames.mjs';
 const exact=(v,fields)=>v&&typeof v==='object'&&!Array.isArray(v)&&Object.keys(v).length===fields.length&&fields.every(k=>Object.hasOwn(v,k));
@@ -31,7 +31,7 @@ export async function validateContextualContent(document,{allowDraft=false}={}){
   if(await canonicalDigest(n)!==await canonicalDigest(expected))fail();
   if(Object.hasOwn(r,'reference_mode')){
    const mode=NOMINAL_MODES[r.reference_mode];
-   if(!mode||r.reference_mode==='nominal_class'||!/^[a-z]+$/.test(n.normalized_label)||r.referent_id!==`nominal:${mode.id}:${n.name_id}`)fail();
+   if(!mode||r.reference_mode==='nominal_class'||!validNominalLabel(n.normalized_label)||r.referent_id!==`nominal:${mode.id}:${n.name_id}`)fail();
   }else if(r.referent_id!==`name:${n.name_id}`)fail();
  }else fail();
  if(Object.hasOwn(body,'selection')&&!validContentSelection(body.content_kind,body.selection))fail();

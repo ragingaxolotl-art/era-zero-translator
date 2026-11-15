@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 497
-  lemma_count: 478
+  sense_count: 509
+  lemma_count: 490
   canonical_atom_senses: 324
-  canonical_compound_senses: 76
+  canonical_compound_senses: 82
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: abe134ba53d483946b478ee09567c54bc46c16d2a43e836a5bae00970bc7c744
+  compound_dictionary_fingerprint: b894c0065bc49847461abfbe23de8b5d9779632be6bcc56756dda04bd86eb7aa
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -1227,6 +1227,26 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: blocked
+  part_of_speech: adjective
+  sense_key: passage_preventing_traversal
+  route: compound
+  target_id: CMP:f9554786959994e2f5fb6e9c
+  definition: At the reference time the passage prevents the contextually relevant
+    traveler, signal or other traffic from getting through. The route can remain identifiable
+    throughout the blockage. The cause, responsibility and duration are unspecified.
+  sense_id: ENS:e4af1606249f224c5c8c8ca4
+  display_form: blocked
+  surface_forms:
+  - blocked
+  - impassable
+  selection_cues:
+  - The gate was blocked by fallen stone.
+  excluded_readings:
+  - A sign advises against travel but the traveler can still get through.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:4ba08e5d2231c0881249f7ba
   lemma: body
   display_form: body
@@ -5646,6 +5666,30 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: notice
+  part_of_speech: verb
+  sense_key: onset_of_awareness_of_a_target
+  route: compound
+  target_id: CMP:ac9df67396f3632d36b5d078
+  definition: During an episode a cognizer comes to register a particular, distinct
+    target in awareness. The change makes the target present to that cognizer at the
+    time of noticing. The target may be familiar. The means of detection and any subsequent
+    response are unspecified.
+  sense_id: ENS:ccc57384f3669fa64a5585c8
+  display_form: notice
+  surface_forms:
+  - notice
+  - notices
+  - noticed
+  - noticing
+  selection_cues:
+  - The keeper noticed a change in the signal.
+  excluded_readings:
+  - The keeper remained aware of the unchanging signal throughout, with no new moment
+    of noticing.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:082d86e658eb1121fcb82728
   lemma: occupied constituent position
   display_form: occupied constituent position
@@ -6031,6 +6075,26 @@ senses:
   - Swimming somewhere within a region without across-traversal; A completed crossing
     inferred from ongoing activity; The region treated as a recipient or a separately
     moving actor
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: onset of awareness of a target
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:ac9df67396f3632d36b5d078
+  definition: During an episode a cognizer comes to register a particular, distinct
+    target in awareness. The change makes the target present to that cognizer at the
+    time of noticing. The target may be familiar. The means of detection and any subsequent
+    response are unspecified.
+  sense_id: ENS:c98586fe68b1e924523623c4
+  display_form: onset of awareness of a target
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - The keeper remained aware of the unchanging signal throughout, with no new moment
+    of noticing.
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
@@ -6559,6 +6623,83 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: passable
+  part_of_speech: adjective
+  sense_key: passage_permitting_traversal
+  route: compound
+  target_id: CMP:3c7e1b60fb3087e942be4555
+  definition: At the reference time the passage permits the contextually relevant
+    traveler, signal or other traffic to get through. No actual traversal, invitation,
+    safety guarantee or legal permission is implied.
+  sense_id: ENS:13ba9a6b4f23f2ecbe0162e6
+  display_form: passable
+  surface_forms:
+  - passable
+  selection_cues:
+  - Despite the warning, the service passage was passable.
+  excluded_readings:
+  - The sign permits entry but a solid barrier prevents the relevant traffic from
+    getting through.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
+- lemma: passage
+  part_of_speech: noun
+  sense_key: route_through_an_interface
+  route: compound
+  target_id: CMP:6ae4a680528e1cd7fd1ac0df
+  definition: An established route connects two sides through an identifiable interface.
+    It can be a physical opening or a defined path between parts of a machine or system.
+    Its availability to any traveler or signal at a particular time is unspecified.
+  sense_id: ENS:b5f0ca8016ced97eda902e8f
+  display_form: passage
+  surface_forms:
+  - passage
+  - passages
+  selection_cues:
+  - The passage linked the outer chamber to the shelter.
+  excluded_readings:
+  - The two chambers share a wall with no route across it.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
+- lemma: passage permitting traversal
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:3c7e1b60fb3087e942be4555
+  definition: At the reference time the passage permits the contextually relevant
+    traveler, signal or other traffic to get through. No actual traversal, invitation,
+    safety guarantee or legal permission is implied.
+  sense_id: ENS:39c6551f8c937417b5890479
+  display_form: passage permitting traversal
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - The sign permits entry but a solid barrier prevents the relevant traffic from
+    getting through.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: passage preventing traversal
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:f9554786959994e2f5fb6e9c
+  definition: At the reference time the passage prevents the contextually relevant
+    traveler, signal or other traffic from getting through. The route can remain identifiable
+    throughout the blockage. The cause, responsibility and duration are unspecified.
+  sense_id: ENS:bee25b01e6b898198473c44f
+  display_form: passage preventing traversal
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A sign advises against travel but the traveler can still get through.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:a10921c3c47805bd67e92fb6
   lemma: past
   display_form: past
@@ -8127,6 +8268,29 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: reopen
+  part_of_speech: verb
+  sense_key: restoration_of_passage_after_blockage
+  route: compound
+  target_id: CMP:28e9f477e3bc88111934ddda
+  definition: A passage that previously permitted the relevant traffic, then prevented
+    it, becomes passable again by the end of the reported transition. Both the earlier
+    and the restored conditions concern the same passage and kind of traffic. No operator
+    or actual traveler is required.
+  sense_id: ENS:d5d5986c9ef86480f32ba2ce
+  display_form: reopen
+  surface_forms:
+  - reopen
+  - reopens
+  - reopened
+  - reopening
+  selection_cues:
+  - After the rubble shifted, the tunnel reopened.
+  excluded_readings:
+  - Workers opened a new tunnel that had never been passable before.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:c32777032ea8e6deca4bfd90
   lemma: repair
   display_form: repair
@@ -8164,6 +8328,25 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: lexicon/story_compound_batch.json
+- lemma: restoration of passage after blockage
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:28e9f477e3bc88111934ddda
+  definition: A passage that previously permitted the relevant traffic, then prevented
+    it, becomes passable again by the end of the reported transition. Both the earlier
+    and the restored conditions concern the same passage and kind of traffic. No operator
+    or actual traveler is required.
+  sense_id: ENS:ba33ec590edcc2cebc9414c2
+  display_form: restoration of passage after blockage
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Workers opened a new tunnel that had never been passable before.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:166cbe337a240a43af71830f
   lemma: retained position
   display_form: retained position
@@ -8269,6 +8452,24 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: route through an interface
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:6ae4a680528e1cd7fd1ac0df
+  definition: An established route connects two sides through an identifiable interface.
+    It can be a physical opening or a defined path between parts of a machine or system.
+    Its availability to any traveler or signal at a particular time is unspecified.
+  sense_id: ENS:190bbab91ddec9ee56adc511
+  display_form: route through an interface
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - The two chambers share a wall with no route across it.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:f387f27b5390348e016dfb4f
   lemma: rule
   display_form: rule
@@ -8508,6 +8709,28 @@ senses:
   - An alarm sounded in an empty room.
   excluded_readings:
   - An earpiece detected a wave from elsewhere without emitting it.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
+- lemma: spot
+  part_of_speech: verb
+  sense_key: visual_noticing_of_a_target
+  route: compound
+  target_id: CMP:42b9bbf271c7fc2a1193c5ca
+  definition: A cognizer comes to notice the target through optical information registered
+    from it during the same episode. The receiver of the optical information is the
+    one who notices. Naming, recognizing or searching for the target is optional.
+  sense_id: ENS:67350fb1d4eacd0594dc39f1
+  display_form: spot
+  surface_forms:
+  - spot
+  - spots
+  - spotted
+  - spotting
+  selection_cues:
+  - Mira spotted a hairline crack in the lens.
+  excluded_readings:
+  - Mira noticed the crack by touch in complete darkness.
   confidence: high
   controlled_input_allowed: false
   provenance: lexicon/story_compound_batch.json
@@ -8876,6 +9099,24 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: lexicon/story_compound_batch.json
+- lemma: visual noticing of a target
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:42b9bbf271c7fc2a1193c5ca
+  definition: A cognizer comes to notice the target through optical information registered
+    from it during the same episode. The receiver of the optical information is the
+    one who notices. Naming, recognizing or searching for the target is optional.
+  sense_id: ENS:36fb8c20387329cfbc9917f4
+  display_form: visual noticing of a target
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Mira noticed the crack by touch in complete darkness.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:608cf277730410f915c85501
   lemma: wait
   display_form: wait
@@ -9410,6 +9651,13 @@ lemma_index:
     direct_target_count: 0
     routes:
     - semantic_ir
+  blocked:
+    sense_ids:
+    - ENS:e4af1606249f224c5c8c8ca4
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   body:
     sense_ids:
     - ENS:4ba08e5d2231c0881249f7ba
@@ -11093,6 +11341,13 @@ lemma_index:
     direct_target_count: 0
     routes:
     - grammar
+  notice:
+    sense_ids:
+    - ENS:ccc57384f3669fa64a5585c8
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   occupied constituent position:
     sense_ids:
     - ENS:082d86e658eb1121fcb82728
@@ -11215,6 +11470,13 @@ lemma_index:
   ongoing swimming across a region:
     sense_ids:
     - ENS:19d191a1e74009a9b11ccf4b
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  onset of awareness of a target:
+    sense_ids:
+    - ENS:c98586fe68b1e924523623c4
     requires_disambiguation: false
     direct_target_count: 1
     routes:
@@ -11422,6 +11684,34 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  passable:
+    sense_ids:
+    - ENS:13ba9a6b4f23f2ecbe0162e6
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  passage:
+    sense_ids:
+    - ENS:b5f0ca8016ced97eda902e8f
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  passage permitting traversal:
+    sense_ids:
+    - ENS:39c6551f8c937417b5890479
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  passage preventing traversal:
+    sense_ids:
+    - ENS:bee25b01e6b898198473c44f
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   past:
     sense_ids:
     - ENS:a10921c3c47805bd67e92fb6
@@ -12011,6 +12301,13 @@ lemma_index:
     direct_target_count: 0
     routes:
     - semantic_ir
+  reopen:
+    sense_ids:
+    - ENS:d5d5986c9ef86480f32ba2ce
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   repair:
     sense_ids:
     - ENS:c32777032ea8e6deca4bfd90
@@ -12021,6 +12318,13 @@ lemma_index:
   repeat:
     sense_ids:
     - ENS:cae44a92e9c627b9da9b9f42
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  restoration of passage after blockage:
+    sense_ids:
+    - ENS:ba33ec590edcc2cebc9414c2
     requires_disambiguation: false
     direct_target_count: 1
     routes:
@@ -12056,6 +12360,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  route through an interface:
+    sense_ids:
+    - ENS:190bbab91ddec9ee56adc511
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   rule:
     sense_ids:
     - ENS:f387f27b5390348e016dfb4f
@@ -12133,6 +12444,13 @@ lemma_index:
   sound:
     sense_ids:
     - ENS:b8a8116c284c8366399cde70
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  spot:
+    sense_ids:
+    - ENS:67350fb1d4eacd0594dc39f1
     requires_disambiguation: false
     direct_target_count: 1
     routes:
@@ -12280,6 +12598,13 @@ lemma_index:
   vibrate:
     sense_ids:
     - ENS:e2085f15c58d4e231b1b3202
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  visual noticing of a target:
+    sense_ids:
+    - ENS:36fb8c20387329cfbc9917f4
     requires_disambiguation: false
     direct_target_count: 1
     routes:

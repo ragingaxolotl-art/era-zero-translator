@@ -8,6 +8,12 @@ performance, keeping existing roots, sounds, names, and approved poetic meanings
 The [source audit](https://chatgpt.com/space/page_21c6ce0da1a88191abff53c0b13441f3)
 is the starting evidence, not a completion certificate.
 
+## Vocabulary first, grammar second, fresh stories last (November 14)
+
+The [ordered follow-up](../reports/story_followup.md) adds six compounds and keeps all 324 roots. Noticing precedes visual spotting; a route precedes its passable and blocked states; both feed reopening. Sentence composition now binds paired adjectives to their noun and can carry a gender-neutral program participant into the next action. A past reopening and a merely passable route sound different in both melody and compact chords.
+
+Of 17 fresh manuscript inputs with [intentions sealed before playback](../tests/story_followup_intentions.json), three preserved their meaning directly, four after clarification, seven had no whole score and three changed the meaning. The most urgent next work is to prevent confident errors about participants and quantities. See the [individual source lines, decoded results and next steps](../reports/story_followup.md). The earlier 29 and the 250 retained implementation checks are separate evidence.
+
 ## User-approved first release scope
 
 The user explicitly approved a shorter text → meaning → music release with a
