@@ -1,6 +1,6 @@
 # DBA translator first release
 
-The browser translator makes music from supported English sentences and from words you build yourself. It includes 324 canonical roots, 82 approved compounds and 509 indexed senses. You can combine earlier compounds in the order you choose, mark the main meaning, and connect participants across the parts. Your definitions stay in your browser and can be exported and imported. [Open the translator](https://ragingaxolotl-art.github.io/era-zero-translator/) · [Open the compound builder](https://ragingaxolotl-art.github.io/era-zero-translator/compound-builder.html)
+The browser translator makes music from supported English sentences and from words you build yourself. It includes 324 canonical roots, 107 approved compounds and 560 indexed English senses. You can combine earlier compounds in the order you choose, mark the main meaning, and connect participants across the parts. Your definitions stay in your browser and can be exported and imported. [Open the translator](https://ragingaxolotl-art.github.io/era-zero-translator/) · [Open the compound builder](https://ragingaxolotl-art.github.io/era-zero-translator/compound-builder.html)
 
 The field audit tests 51 inputs through the song controls, measures the sound of both arrangements and ranks the remaining bugs. [Field audit](../reports/translator_field_audit.md) · [Story and dialogue audit](../reports/story_readings.md)
 
@@ -12,6 +12,16 @@ The field audit tests 51 inputs through the song controls, measures the sound of
 - Enter “A curious child.” The analyzer singles out the adjective. For the reading in which a particular child wants to know about something, supply a topic, for example “The child is curious about the map.” The translator asks you to confirm that reading.
 
 Nouns and proper names can have phonemic labels. A verb or adjective needs a meaning. Runtime endings [0], [1], and [2] are independent of the trits in the dictionary address. You can negate an assertion at any runtime. Use neutral references with a specified referent in the supported pronoun constructions.
+
+## States, actions and adjectives in a sentence
+
+Try **The gate was open**, **The gate stayed open**, and **Mira kept the gate open**. The first describes passability. The second says it continued through an interval. The third gives Mira responsibility for maintaining it. Change the gate to a hatch and try **Nora kept the hatch shut**. **Available** has a reading in which a resource is accessible and ready for the relevant use. For an ambiguous resource the translator lets you select that reading.
+
+**Push** describes directed contact pressure and leaves the outcome open. **Lift** and **lower** reuse one physical displacement meaning with opposite vertical directions. Each takes an actor and a target.
+
+Try **The curious child waited** and choose the child's inclination to find things out. **The resumed stream waited** describes which stream waited. Likewise **The hungry child lifted the closed box** attaches hunger to the child and closure to the box. **The child is curious about the map** keeps its existing topic-specific reading.
+
+A saved adjective can describe a subject or an object in the supported story constructions. Build it with a **bearer** role to bind that role to the noun. If its definition needs another independent participant, the translator asks who fills that role. Nested saved definitions reuse the connections you supplied in the builder. The musical listener uses the same exported definition library. [Sentence and music checks](../tests/state_adjective_sentences_test.mjs)
 
 ## Put a line into a song
 

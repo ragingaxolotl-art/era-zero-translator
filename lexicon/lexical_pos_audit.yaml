@@ -5,21 +5,21 @@ metadata:
   status: noncanonical_metadata_complete
   canonical_semantic_changes: 0
   root_count: 324
-  indexed_sense_count: 541
+  indexed_sense_count: 560
   game_story_surface_sense_count: 48
-  total_audited_senses: 589
+  total_audited_senses: 608
   part_of_speech_counts:
-    adjective: 30
+    adjective: 34
     adverb: 2
     conjunction: 3
     grammar: 1
     interjection: 1
     noun: 32
-    noun_phrase: 314
+    noun_phrase: 323
     number: 1
     preposition: 2
     quantifier: 1
-    verb: 94
+    verb: 100
     verb_phrase: 108
   policy: English senses carry parts of speech; Era Zero roots retain address-derived
     semantic affordances and may support more than one English syntactic realization.
@@ -14114,6 +14114,19 @@ senses:
   fidelity: high
   controlled_input_allowed: true
   authority_layer: english_sense_index
+- sense_id: ENS:e13272b3ea00a3393a943b08
+  lemma: application of directed physical pressure
+  part_of_speech: noun_phrase
+  surface_forms:
+  - application of directed physical pressure
+  route: compound
+  target_id: CMP:9549f538a6224892d3aff0ea
+  sense_key: canonical_compound_label
+  definition: An actor applies contact force against a target in a direction away
+    from the point of application. The target can remain stationary.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
 - sense_id: ENS:3214e617d9796e986d0caf3f
   lemma: approach
   part_of_speech: verb
@@ -14217,6 +14230,20 @@ senses:
     for exercise in an exchange.
   fidelity: authoritative
   controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:39cc511e752cf1775a033aa3
+  lemma: available for use
+  part_of_speech: adjective
+  surface_forms:
+  - available for use
+  - available
+  route: compound
+  target_id: CMP:0ed5f8a1c4b5a22781920ad9
+  sense_key: practical_availability_for_a_contextual_use
+  definition: A resource is accessible and ready for the relevant use under the circumstances.
+    The identity of a user and any actual use are left open.
+  fidelity: high
+  controlled_input_allowed: false
   authority_layer: english_sense_index
 - sense_id: ENS:fe7df4d4fe86129440027dc3
   lemma: available internal reconfiguration capacity
@@ -14396,6 +14423,20 @@ senses:
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
+- sense_id: ENS:68cc15791d8353dff9ae0ea6
+  lemma: causal maintenance of a specified state
+  part_of_speech: noun_phrase
+  surface_forms:
+  - causal maintenance of a specified state
+  route: compound
+  target_id: CMP:cac584a394535e4912c75b5a
+  sense_key: canonical_compound_label
+  definition: A maintainer acts or operates so that its target continues in the specified
+    state through the relevant interval. The target may already have been in that
+    state.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
 - sense_id: ENS:c4b6bbda20f77f413356e78e
   lemma: cause
   part_of_speech: noun
@@ -14432,6 +14473,45 @@ senses:
   definition: One participant brings about a later occurrence of the specified earlier
     pattern. The two occurrences instantiate the same pattern. The cause of the first
     occurrence may be different.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:f2370b294b1156013bc3eb03
+  lemma: caused displacement in a physical frame
+  part_of_speech: noun_phrase
+  surface_forms:
+  - caused displacement in a physical frame
+  route: compound
+  target_id: CMP:82dc9c681fbaf7944cb7b85b
+  sense_key: canonical_compound_label
+  definition: A cause changes the position of a material target relative to the relevant
+    spatial frame. The direction and means are unspecified.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:c2c2a594f7d7774395d7a89f
+  lemma: caused downward physical displacement
+  part_of_speech: noun_phrase
+  surface_forms:
+  - caused downward physical displacement
+  route: compound
+  target_id: CMP:92464b1ea3c632b343340a05
+  sense_key: canonical_compound_label
+  definition: An actor physically displaces a target downwards relative to the local
+    vertical. Distance, method, destination and subsequent contact are unspecified.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:028b3170d0e025b60d8a5065
+  lemma: caused upward physical displacement
+  part_of_speech: noun_phrase
+  surface_forms:
+  - caused upward physical displacement
+  route: compound
+  target_id: CMP:e1d0059daad4093d8a5ce05c
+  sense_key: canonical_compound_label
+  definition: An actor physically displaces a target upwards relative to the local
+    vertical. Distance, method, destination and continued support are unspecified.
   fidelity: high
   controlled_input_allowed: true
   authority_layer: english_sense_index
@@ -14545,6 +14625,20 @@ senses:
   definition: An inspector deliberately evaluates information about a particular target
     for a relevant condition. The inspection itself is the reported action. Its outcome
     can be favorable, unfavorable or inconclusive.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:f121b1885a9586a67ad5a53f
+  lemma: closed
+  part_of_speech: adjective
+  surface_forms:
+  - closed
+  - shut
+  route: compound
+  target_id: CMP:82a697e83c845e4a7b38b53e
+  sense_key: shut_configuration_of_a_closure
+  definition: A closure is in its shut configuration at the reference time. Its lock,
+    seal and the cause of closure are unspecified.
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
@@ -15232,6 +15326,19 @@ senses:
   fidelity: high
   controlled_input_allowed: true
   authority_layer: english_sense_index
+- sense_id: ENS:6320ec56cd502aec8fdf6bee
+  lemma: continuation of a specified state
+  part_of_speech: noun_phrase
+  surface_forms:
+  - continuation of a specified state
+  route: compound
+  target_id: CMP:ec3a1fad0ed828279e948372
+  sense_key: canonical_compound_label
+  definition: The same specified quality holds of its bearer throughout the relevant
+    interval. Its start and any external intervention are left open.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
 - sense_id: ENS:dad12cc129934924d0b30996
   lemma: continue
   part_of_speech: verb
@@ -15320,6 +15427,20 @@ senses:
   target_id: 
   sense_key: boundary_traversal
   definition: Move from one side of a boundary locus to another.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:8d147c2957d4449487918b69
+  lemma: curious
+  part_of_speech: adjective
+  surface_forms:
+  - curious
+  - inquisitive
+  route: compound
+  target_id: CMP:bc64fdf8b202aa9c02cff526
+  sense_key: disposition_toward_epistemic_inquiry
+  definition: The bearer is disposed to seek understanding for the sake of knowing.
+    No particular topic, act of inquiry, answer or successful learning is asserted.
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
@@ -15433,6 +15554,35 @@ senses:
   sense_key: canonical_compound_label
   definition: An established directed communication relation between open source and
     target participants whose exchanged content is a bounded datum.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:6407b3cfa7f5c7d0c1eb67e9
+  lemma: displace
+  part_of_speech: verb
+  surface_forms:
+  - displace
+  - displaces
+  - displaced
+  - displacing
+  route: compound
+  target_id: CMP:82dc9c681fbaf7944cb7b85b
+  sense_key: caused_displacement_in_a_physical_frame
+  definition: A cause changes the position of a material target relative to the relevant
+    spatial frame. The direction and means are unspecified.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:7919ba68c809f77bb8c653a6
+  lemma: disposition toward epistemic inquiry
+  part_of_speech: noun_phrase
+  surface_forms:
+  - disposition toward epistemic inquiry
+  route: compound
+  target_id: CMP:bc64fdf8b202aa9c02cff526
+  sense_key: canonical_compound_label
+  definition: The bearer is disposed to seek understanding for the sake of knowing.
+    No particular topic, act of inquiry, answer or successful learning is asserted.
   fidelity: high
   controlled_input_allowed: true
   authority_layer: english_sense_index
@@ -16595,6 +16745,27 @@ senses:
   fidelity: high
   controlled_input_allowed: true
   authority_layer: english_sense_index
+- sense_id: ENS:5d709a9d4d9a07570573c920
+  lemma: keep
+  part_of_speech: verb
+  surface_forms:
+  - keep
+  - keeps
+  - kept
+  - keeping
+  - maintain
+  - maintains
+  - maintained
+  - maintaining
+  route: compound
+  target_id: CMP:cac584a394535e4912c75b5a
+  sense_key: causal_maintenance_of_a_specified_state
+  definition: A maintainer acts or operates so that its target continues in the specified
+    state through the relevant interval. The target may already have been in that
+    state.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
 - sense_id: ENS:7a7a779150abda10b3747adb
   lemma: know
   part_of_speech: verb
@@ -17073,6 +17244,22 @@ senses:
   fidelity: authoritative
   controlled_input_allowed: true
   authority_layer: english_sense_index
+- sense_id: ENS:b73df4ea3c98d3ff3d6537b7
+  lemma: lift
+  part_of_speech: verb
+  surface_forms:
+  - lift
+  - lifts
+  - lifted
+  - lifting
+  route: compound
+  target_id: CMP:e1d0059daad4093d8a5ce05c
+  sense_key: caused_upward_physical_displacement
+  definition: An actor physically displaces a target upwards relative to the local
+    vertical. Distance, method, destination and continued support are unspecified.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
 - sense_id: ENS:84286135902b03f0325e5fbd
   lemma: live shared-frame configuration
   part_of_speech: noun_phrase
@@ -17149,6 +17336,22 @@ senses:
     not-yet-expressed self.
   fidelity: high
   controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:4e095418c57e84edc0958380
+  lemma: lower
+  part_of_speech: verb
+  surface_forms:
+  - lower
+  - lowers
+  - lowered
+  - lowering
+  route: compound
+  target_id: CMP:92464b1ea3c632b343340a05
+  sense_key: caused_downward_physical_displacement
+  definition: An actor physically displaces a target downwards relative to the local
+    vertical. Distance, method, destination and subsequent contact are unspecified.
+  fidelity: high
+  controlled_input_allowed: false
   authority_layer: english_sense_index
 - sense_id: ENS:5aabc680ae2a662166b4f678
   lemma: machine
@@ -19661,6 +19864,19 @@ senses:
   fidelity: authoritative
   controlled_input_allowed: true
   authority_layer: english_sense_index
+- sense_id: ENS:b029ee0e2087ed2427025030
+  lemma: practical availability for a contextual use
+  part_of_speech: noun_phrase
+  surface_forms:
+  - practical availability for a contextual use
+  route: compound
+  target_id: CMP:0ed5f8a1c4b5a22781920ad9
+  sense_key: canonical_compound_label
+  definition: A resource is accessible and ready for the relevant use under the circumstances.
+    The identity of a user and any actual use are left open.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
 - sense_id: ENS:60adbee4ad9e95f983c0d81d
   lemma: practical physical custody
   part_of_speech: noun_phrase
@@ -19742,6 +19958,22 @@ senses:
     and constrained by a persistent target-directed formal constraint.
   fidelity: high
   controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:a0cf37148a0d7a3f4686b092
+  lemma: push
+  part_of_speech: verb
+  surface_forms:
+  - push
+  - pushes
+  - pushed
+  - pushing
+  route: compound
+  target_id: CMP:9549f538a6224892d3aff0ea
+  sense_key: application_of_directed_physical_pressure
+  definition: An actor applies contact force against a target in a direction away
+    from the point of application. The target can remain stationary.
+  fidelity: high
+  controlled_input_allowed: false
   authority_layer: english_sense_index
 - sense_id: ENS:4f942868d77d2376a79f744d
   lemma: readiness for self-awakening
@@ -19968,6 +20200,19 @@ senses:
   definition: A session or activity that was interrupted begins to proceed again as
     the same activity. A venue opening to traffic or an unrelated meeting beginning
     does not establish resumption.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:48eb795c29bfd874abdbb37d
+  lemma: resumed
+  part_of_speech: adjective
+  surface_forms:
+  - resumed
+  route: compound
+  target_id: CMP:2f0b0fa860550a0826567bb3
+  sense_key: previously_resumed_activity_modifier
+  definition: Describes the particular activity or stream that resumed after an interruption.
+    The main clause states what that participant did.
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
@@ -20288,6 +20533,19 @@ senses:
   fidelity: high
   controlled_input_allowed: true
   authority_layer: english_sense_index
+- sense_id: ENS:15ee28e1724b7530ed529d03
+  lemma: shut configuration of a closure
+  part_of_speech: noun_phrase
+  surface_forms:
+  - shut configuration of a closure
+  route: compound
+  target_id: CMP:82a697e83c845e4a7b38b53e
+  sense_key: canonical_compound_label
+  definition: A closure is in its shut configuration at the reference time. Its lock,
+    seal and the cause of closure are unspecified.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
 - sense_id: ENS:b8a8116c284c8366399cde70
   lemma: sound
   part_of_speech: verb
@@ -20359,6 +20617,26 @@ senses:
   definition: The stable capacity of a being to remain alive and continue functioning.
   fidelity: authoritative
   controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:17e7a7acf425019e34153ce9
+  lemma: stay
+  part_of_speech: verb
+  surface_forms:
+  - stay
+  - stays
+  - stayed
+  - staying
+  - remain
+  - remains
+  - remained
+  - remaining
+  route: compound
+  target_id: CMP:ec3a1fad0ed828279e948372
+  sense_key: continuation_of_a_specified_state
+  definition: The same specified quality holds of its bearer throughout the relevant
+    interval. Its start and any external intervention are left open.
+  fidelity: high
+  controlled_input_allowed: false
   authority_layer: english_sense_index
 - sense_id: ENS:c1c7595e90f9472f9c3c2a45
   lemma: stop

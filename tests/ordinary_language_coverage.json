@@ -14,7 +14,7 @@
     {"domain":"care","phrase":"Pick up the toy.","expected_terms":{"pick":"unresolved_semantic","up":"function_word"},"must_not_auto":true},
     {"domain":"care","phrase":"The pet is scared.","route":"gap","expected_terms":{"scared":"documented_gap"},"must_not_auto":true},
     {"domain":"care","phrase":"The pet needs medicine.","target":"ORI:211","expected_terms":{"needs":"canonical","medicine":"documented_gap"}},
-    {"domain":"care","phrase":"The child is curious.","expected_terms":{"curious":"unresolved_semantic"},"must_not_auto":true},
+    {"domain":"care","phrase":"The child is curious.","expected_terms":{"curious":"canonical"},"must_not_auto":true},
     {"domain":"care","phrase":"We are safe.","route":"gap","expected_terms":{"safe":"documented_gap"},"must_not_auto":true},
     {"domain":"computer","phrase":"I found the file.","target":"MIN:110","expected_terms":{"found":"canonical","file":"canonical"}},
     {"domain":"computer","phrase":"Open the folder.","expected_terms":{"open":"unresolved_semantic"},"must_not_auto":true},

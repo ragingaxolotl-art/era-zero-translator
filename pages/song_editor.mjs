@@ -1,11 +1,11 @@
-import {compactChordPerformance} from './compact_chords.mjs?v=field-repairs-1';
-import {readSongLine} from './song_readback.mjs?v=field-repairs-1';
-import {compactChordMidi} from './compact_chords.mjs?v=field-repairs-1';
-import {songMidi} from './song_lines.mjs?v=field-repairs-1';
+import {compactChordPerformance} from './compact_chords.mjs?v=state-adjectives-1';
+import {readSongLine} from './song_readback.mjs?v=state-adjectives-1';
+import {compactChordMidi} from './compact_chords.mjs?v=state-adjectives-1';
+import {songMidi} from './song_lines.mjs?v=state-adjectives-1';
 import {notesFromMidi} from './performance_codec.mjs';
 
 import {isSongStorageKey,readSongLines,newSongLine,saveSongLine,removeSongLine} from './song_storage.mjs?v=field-repairs-1';
-export function mountSongEditor({document,storage,player,download,getAtoms,getRecords}) {
+export function mountSongEditor({document,storage,player,download,getAtoms,getRecords,getAdjectives}) {
   const list=document.getElementById('songLines'), status=document.getElementById('songStatus');
   const play=document.getElementById('playSong'), save=document.getElementById('exportSong'),stop=document.getElementById('stopSong');
   const arrangement=document.getElementById('songArrangement');
@@ -86,7 +86,7 @@ export function mountSongEditor({document,storage,player,download,getAtoms,getRe
           check.disabled=true;result.textContent='Reading the notes…';
           try{
             const chords=inChords(),atoms=getAtoms(),bytes=chords?compactChordMidi(line.midi,atoms):line.midi;
-            const heard=await readSongLine(bytes,atoms,await getRecords(),chords);
+            const heard=await readSongLine(bytes,atoms,await getRecords(),chords,await getAdjectives?.());
             const details=document.createElement('details'),summary=document.createElement('summary'),decoded=document.createElement('pre');
             summary.textContent='Recovered roles and scope';decoded.textContent=JSON.stringify(heard.meaning,null,2);
             details.append(summary,decoded);result.textContent='Meaning recovered from the '+(chords?'chords':'melody')+'. '+heard.summary;result.append(details);

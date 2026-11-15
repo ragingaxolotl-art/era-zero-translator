@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 541
-  lemma_count: 520
+  sense_count: 560
+  lemma_count: 539
   canonical_atom_senses: 324
-  canonical_compound_senses: 98
+  canonical_compound_senses: 107
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: 9220e1989a440ce941852da3045960c0c49409e69bc6a1dd1d7a529074cfc2ff
+  compound_dictionary_fingerprint: '07857b7faebd53159404141633ce7a28d7b1e065cd1e76ef700ffab6dfa091e3'
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -982,6 +982,23 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: application of directed physical pressure
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:9549f538a6224892d3aff0ea
+  definition: An actor applies contact force against a target in a direction away
+    from the point of application. The target can remain stationary.
+  sense_id: ENS:e13272b3ea00a3393a943b08
+  display_form: application of directed physical pressure
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - The gate moved in a gust while Mira watched.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:3214e617d9796e986d0caf3f
   lemma: approach
   display_form: approach
@@ -1117,6 +1134,25 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: available for use
+  part_of_speech: adjective
+  sense_key: practical_availability_for_a_contextual_use
+  route: compound
+  target_id: CMP:0ed5f8a1c4b5a22781920ad9
+  definition: A resource is accessible and ready for the relevant use under the circumstances.
+    The identity of a user and any actual use are left open.
+  sense_id: ENS:39cc511e752cf1775a033aa3
+  display_form: available for use
+  surface_forms:
+  - available for use
+  - available
+  selection_cues:
+  - The tool stayed available.
+  excluded_readings:
+  - A tool was functional but locked out of reach.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:fe7df4d4fe86129440027dc3
   lemma: available internal reconfiguration capacity
   display_form: available internal reconfiguration capacity
@@ -1347,6 +1383,24 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: causal maintenance of a specified state
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:cac584a394535e4912c75b5a
+  definition: A maintainer acts or operates so that its target continues in the specified
+    state through the relevant interval. The target may already have been in that
+    state.
+  sense_id: ENS:68cc15791d8353dff9ae0ea6
+  display_form: causal maintenance of a specified state
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Mira noticed that the gate happened to stay open.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:c4b6bbda20f77f413356e78e
   lemma: cause
   display_form: cause
@@ -1394,6 +1448,57 @@ senses:
   - all component restrictions are intended
   excluded_readings:
   - A pulse recurred without being brought about by the named participant.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: caused displacement in a physical frame
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:82dc9c681fbaf7944cb7b85b
+  definition: A cause changes the position of a material target relative to the relevant
+    spatial frame. The direction and means are unspecified.
+  sense_id: ENS:f2370b294b1156013bc3eb03
+  display_form: caused displacement in a physical frame
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Mira pressed on the box and it stayed still.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: caused downward physical displacement
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:92464b1ea3c632b343340a05
+  definition: An actor physically displaces a target downwards relative to the local
+    vertical. Distance, method, destination and subsequent contact are unspecified.
+  sense_id: ENS:c2c2a594f7d7774395d7a89f
+  display_form: caused downward physical displacement
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - The box started low and remained there.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: caused upward physical displacement
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:e1d0059daad4093d8a5ce05c
+  definition: An actor physically displaces a target upwards relative to the local
+    vertical. Distance, method, destination and continued support are unspecified.
+  sense_id: ENS:028b3170d0e025b60d8a5065
+  display_form: caused upward physical displacement
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Mira held an already elevated box steady.
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
@@ -1535,6 +1640,25 @@ senses:
   - The technician checked the valve.
   excluded_readings:
   - A sensor noticed a flash without inspecting anything.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
+- lemma: closed
+  part_of_speech: adjective
+  sense_key: shut_configuration_of_a_closure
+  route: compound
+  target_id: CMP:82a697e83c845e4a7b38b53e
+  definition: A closure is in its shut configuration at the reference time. Its lock,
+    seal and the cause of closure are unspecified.
+  sense_id: ENS:f121b1885a9586a67ad5a53f
+  display_form: closed
+  surface_forms:
+  - closed
+  - shut
+  selection_cues:
+  - The hatch stayed closed.
+  excluded_readings:
+  - An open hatch had an obstruction in front of it.
   confidence: high
   controlled_input_allowed: false
   provenance: lexicon/story_compound_batch.json
@@ -2477,6 +2601,23 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: continuation of a specified state
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:ec3a1fad0ed828279e948372
+  definition: The same specified quality holds of its bearer throughout the relevant
+    interval. Its start and any external intervention are left open.
+  sense_id: ENS:6320ec56cd502aec8fdf6bee
+  display_form: continuation of a specified state
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A gate was open at one instant and immediately shut.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:dad12cc129934924d0b30996
   lemma: continue
   display_form: continue
@@ -2593,6 +2734,25 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: curious
+  part_of_speech: adjective
+  sense_key: disposition_toward_epistemic_inquiry
+  route: compound
+  target_id: CMP:bc64fdf8b202aa9c02cff526
+  definition: The bearer is disposed to seek understanding for the sake of knowing.
+    No particular topic, act of inquiry, answer or successful learning is asserted.
+  sense_id: ENS:8d147c2957d4449487918b69
+  display_form: curious
+  surface_forms:
+  - curious
+  - inquisitive
+  selection_cues:
+  - The curious child waited.
+  excluded_readings:
+  - A curious marking was unusual in shape.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:783cb9ac9e17a7e04353a11e
   lemma: danger
   display_form: danger
@@ -2736,6 +2896,44 @@ senses:
   - all component restrictions are intended
   excluded_readings:
   - a transfer occurrence, an undirected channel, or fixed participant identities
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: displace
+  part_of_speech: verb
+  sense_key: caused_displacement_in_a_physical_frame
+  route: compound
+  target_id: CMP:82dc9c681fbaf7944cb7b85b
+  definition: A cause changes the position of a material target relative to the relevant
+    spatial frame. The direction and means are unspecified.
+  sense_id: ENS:6407b3cfa7f5c7d0c1eb67e9
+  display_form: displace
+  surface_forms:
+  - displace
+  - displaces
+  - displaced
+  - displacing
+  selection_cues:
+  - Mira displaced the box.
+  excluded_readings:
+  - Mira pressed on the box and it stayed still.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
+- lemma: disposition toward epistemic inquiry
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:bc64fdf8b202aa9c02cff526
+  definition: The bearer is disposed to seek understanding for the sake of knowing.
+    No particular topic, act of inquiry, answer or successful learning is asserted.
+  sense_id: ENS:7919ba68c809f77bb8c653a6
+  display_form: disposition toward epistemic inquiry
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A curious marking was unusual in shape.
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
@@ -4279,6 +4477,32 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: keep
+  part_of_speech: verb
+  sense_key: causal_maintenance_of_a_specified_state
+  route: compound
+  target_id: CMP:cac584a394535e4912c75b5a
+  definition: A maintainer acts or operates so that its target continues in the specified
+    state through the relevant interval. The target may already have been in that
+    state.
+  sense_id: ENS:5d709a9d4d9a07570573c920
+  display_form: keep
+  surface_forms:
+  - keep
+  - keeps
+  - kept
+  - keeping
+  - maintain
+  - maintains
+  - maintained
+  - maintaining
+  selection_cues:
+  - Mira kept the gate open.
+  excluded_readings:
+  - Mira noticed that the gate happened to stay open.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:7a7a779150abda10b3747adb
   lemma: know
   display_form: know
@@ -4928,6 +5152,27 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: lift
+  part_of_speech: verb
+  sense_key: caused_upward_physical_displacement
+  route: compound
+  target_id: CMP:e1d0059daad4093d8a5ce05c
+  definition: An actor physically displaces a target upwards relative to the local
+    vertical. Distance, method, destination and continued support are unspecified.
+  sense_id: ENS:b73df4ea3c98d3ff3d6537b7
+  display_form: lift
+  surface_forms:
+  - lift
+  - lifts
+  - lifted
+  - lifting
+  selection_cues:
+  - Mira lifted the box.
+  excluded_readings:
+  - Mira held an already elevated box steady.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:84286135902b03f0325e5fbd
   lemma: live shared-frame configuration
   display_form: live shared-frame configuration
@@ -5033,6 +5278,27 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: lower
+  part_of_speech: verb
+  sense_key: caused_downward_physical_displacement
+  route: compound
+  target_id: CMP:92464b1ea3c632b343340a05
+  definition: An actor physically displaces a target downwards relative to the local
+    vertical. Distance, method, destination and subsequent contact are unspecified.
+  sense_id: ENS:4e095418c57e84edc0958380
+  display_form: lower
+  surface_forms:
+  - lower
+  - lowers
+  - lowered
+  - lowering
+  selection_cues:
+  - Mira lowered the box.
+  excluded_readings:
+  - The box started low and remained there.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:5aabc680ae2a662166b4f678
   lemma: machine
   display_form: machine
@@ -8427,6 +8693,23 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: practical availability for a contextual use
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:0ed5f8a1c4b5a22781920ad9
+  definition: A resource is accessible and ready for the relevant use under the circumstances.
+    The identity of a user and any actual use are left open.
+  sense_id: ENS:b029ee0e2087ed2427025030
+  display_form: practical availability for a contextual use
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A tool was functional but locked out of reach.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:60adbee4ad9e95f983c0d81d
   lemma: practical physical custody
   display_form: practical physical custody
@@ -8539,6 +8822,27 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: push
+  part_of_speech: verb
+  sense_key: application_of_directed_physical_pressure
+  route: compound
+  target_id: CMP:9549f538a6224892d3aff0ea
+  definition: An actor applies contact force against a target in a direction away
+    from the point of application. The target can remain stationary.
+  sense_id: ENS:a0cf37148a0d7a3f4686b092
+  display_form: push
+  surface_forms:
+  - push
+  - pushes
+  - pushed
+  - pushing
+  selection_cues:
+  - Mira pushed the gate.
+  excluded_readings:
+  - The gate moved in a gust while Mira watched.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:4f942868d77d2376a79f744d
   lemma: readiness for self-awakening
   display_form: readiness for self-awakening
@@ -8828,6 +9132,24 @@ senses:
   - After the pause the meeting reopened.
   excluded_readings:
   - A separate meeting began while the original session remained suspended.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
+- lemma: resumed
+  part_of_speech: adjective
+  sense_key: previously_resumed_activity_modifier
+  route: compound
+  target_id: CMP:2f0b0fa860550a0826567bb3
+  definition: Describes the particular activity or stream that resumed after an interruption.
+    The main clause states what that participant did.
+  sense_id: ENS:48eb795c29bfd874abdbb37d
+  display_form: resumed
+  surface_forms:
+  - resumed
+  selection_cues:
+  - The resumed stream waited.
+  excluded_readings:
+  - A different stream began for the first time.
   confidence: high
   controlled_input_allowed: false
   provenance: lexicon/story_compound_batch.json
@@ -9232,6 +9554,23 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: shut configuration of a closure
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:82a697e83c845e4a7b38b53e
+  definition: A closure is in its shut configuration at the reference time. Its lock,
+    seal and the cause of closure are unspecified.
+  sense_id: ENS:15ee28e1724b7530ed529d03
+  display_form: shut configuration of a closure
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - An open hatch had an obstruction in front of it.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - lemma: sound
   part_of_speech: verb
   sense_key: episode_of_mechanical_sound_emission
@@ -9329,6 +9668,31 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: stay
+  part_of_speech: verb
+  sense_key: continuation_of_a_specified_state
+  route: compound
+  target_id: CMP:ec3a1fad0ed828279e948372
+  definition: The same specified quality holds of its bearer throughout the relevant
+    interval. Its start and any external intervention are left open.
+  sense_id: ENS:17e7a7acf425019e34153ce9
+  display_form: stay
+  surface_forms:
+  - stay
+  - stays
+  - stayed
+  - staying
+  - remain
+  - remains
+  - remained
+  - remaining
+  selection_cues:
+  - The gate stayed open.
+  excluded_readings:
+  - A gate was open at one instant and immediately shut.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:c1c7595e90f9472f9c3c2a45
   lemma: stop
   display_form: stop
@@ -10181,6 +10545,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - compound
+  application of directed physical pressure:
+    sense_ids:
+    - ENS:e13272b3ea00a3393a943b08
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   approach:
     sense_ids:
     - ENS:3214e617d9796e986d0caf3f
@@ -10237,6 +10608,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  available for use:
+    sense_ids:
+    - ENS:39cc511e752cf1775a033aa3
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   available internal reconfiguration capacity:
     sense_ids:
     - ENS:fe7df4d4fe86129440027dc3
@@ -10335,6 +10713,13 @@ lemma_index:
     direct_target_count: 0
     routes:
     - semantic_ir
+  causal maintenance of a specified state:
+    sense_ids:
+    - ENS:68cc15791d8353dff9ae0ea6
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   cause:
     sense_ids:
     - ENS:c4b6bbda20f77f413356e78e
@@ -10352,6 +10737,27 @@ lemma_index:
   cause another occurrence of a pattern:
     sense_ids:
     - ENS:2cc43a5443cce0bfca6b0fd4
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  caused displacement in a physical frame:
+    sense_ids:
+    - ENS:f2370b294b1156013bc3eb03
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  caused downward physical displacement:
+    sense_ids:
+    - ENS:c2c2a594f7d7774395d7a89f
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  caused upward physical displacement:
+    sense_ids:
+    - ENS:028b3170d0e025b60d8a5065
     requires_disambiguation: false
     direct_target_count: 1
     routes:
@@ -10385,6 +10791,13 @@ lemma_index:
   check:
     sense_ids:
     - ENS:eaabf176a022c74a9217fcba
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  closed:
+    sense_ids:
+    - ENS:f121b1885a9586a67ad5a53f
     requires_disambiguation: false
     direct_target_count: 1
     routes:
@@ -10732,6 +11145,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - compound
+  continuation of a specified state:
+    sense_ids:
+    - ENS:6320ec56cd502aec8fdf6bee
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   continue:
     sense_ids:
     - ENS:dad12cc129934924d0b30996
@@ -10781,6 +11201,13 @@ lemma_index:
     direct_target_count: 0
     routes:
     - semantic_ir
+  curious:
+    sense_ids:
+    - ENS:8d147c2957d4449487918b69
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   danger:
     sense_ids:
     - ENS:783cb9ac9e17a7e04353a11e
@@ -10840,6 +11267,20 @@ lemma_index:
   directed data link:
     sense_ids:
     - ENS:9b064955bf2ce7ec90c73704
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  displace:
+    sense_ids:
+    - ENS:6407b3cfa7f5c7d0c1eb67e9
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  disposition toward epistemic inquiry:
+    sense_ids:
+    - ENS:7919ba68c809f77bb8c653a6
     requires_disambiguation: false
     direct_target_count: 1
     routes:
@@ -11421,6 +11862,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - compound
+  keep:
+    sense_ids:
+    - ENS:5d709a9d4d9a07570573c920
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   know:
     sense_ids:
     - ENS:7a7a779150abda10b3747adb
@@ -11668,6 +12116,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  lift:
+    sense_ids:
+    - ENS:b73df4ea3c98d3ff3d6537b7
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   live shared-frame configuration:
     sense_ids:
     - ENS:84286135902b03f0325e5fbd
@@ -11706,6 +12161,13 @@ lemma_index:
   love:
     sense_ids:
     - ENS:d685e99424a4155440ba879b
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  lower:
+    sense_ids:
+    - ENS:4e095418c57e84edc0958380
     requires_disambiguation: false
     direct_target_count: 1
     routes:
@@ -12981,6 +13443,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  practical availability for a contextual use:
+    sense_ids:
+    - ENS:b029ee0e2087ed2427025030
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   practical physical custody:
     sense_ids:
     - ENS:60adbee4ad9e95f983c0d81d
@@ -13019,6 +13488,13 @@ lemma_index:
   program definition:
     sense_ids:
     - ENS:35d3e16763c21a821a5b49e4
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  push:
+    sense_ids:
+    - ENS:a0cf37148a0d7a3f4686b092
     requires_disambiguation: false
     direct_target_count: 1
     routes:
@@ -13118,6 +13594,13 @@ lemma_index:
   resume:
     sense_ids:
     - ENS:2952eebf516636f09b50514f
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  resumed:
+    sense_ids:
+    - ENS:48eb795c29bfd874abdbb37d
     requires_disambiguation: false
     direct_target_count: 1
     routes:
@@ -13255,6 +13738,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - compound
+  shut configuration of a closure:
+    sense_ids:
+    - ENS:15ee28e1724b7530ed529d03
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   sound:
     sense_ids:
     - ENS:b8a8116c284c8366399cde70
@@ -13290,6 +13780,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  stay:
+    sense_ids:
+    - ENS:17e7a7acf425019e34153ce9
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   stop:
     sense_ids:
     - ENS:c1c7595e90f9472f9c3c2a45

@@ -1,18 +1,20 @@
-import {expandChordMidi} from './compact_chords.mjs?v=field-repairs-1';
-import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=field-repairs-1';
+import {savedQualityLabel} from './story_saved_adjectives.mjs';
+import {expandChordMidi} from './compact_chords.mjs?v=state-adjectives-1';
+import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=state-adjectives-1';
 import {describeClaim,describeRuntime} from './meaning_readback.mjs?v=field-repairs-1';
-import {storyWords} from './story_words.mjs?v=field-repairs-1';
+import {feltProperties} from './story_qualities.mjs';
+import {storyWords} from './story_words.mjs?v=state-adjectives-1';
 
-const labels=new Map(storyWords.map(r=>[r.id,r.word]));
+const labels=new Map([...storyWords.map(r=>[r.id,r.word]),...Object.entries(feltProperties).map(([word,id])=>[id,word])]);
 function identity(value){
   if(value.kind==='deictic')return ({speaker:'the speaker',speaker_group:'the speaker’s group',addressee:'the listener'})[value.role]||value.role;
   if(value.kind==='domain')return ({people:'people',things:'things',contextual:'the contextual group'})[value.domain];
   return value.phonemes?.join(' ')||value.kind;
 }
-export async function readSongLine(bytes,atoms,records,chords){
+export async function readSongLine(bytes,atoms,records,chords,adjectives){
   const melody=chords?expandChordMidi(bytes,atoms):bytes;
-  const m=await decodeSupportedMeaningWithDrafts(melody,atoms,records,{allowDraft:true});
-  const label=id=>labels.get(id)||atoms.find(a=>a.canonical_id===id)?.title||id;
+  const m=await decodeSupportedMeaningWithDrafts(melody,atoms,records,{allowDraft:true,adjectives});
+  const label=id=>typeof id==='object'?savedQualityLabel(id,adjectives,i=>identity(m.entities[i].identity)):labels.get(id)||atoms.find(a=>a.canonical_id===id)?.title||id;
   const words=[];
   if(m.events){
     for(const [i,e] of m.events.entries()){
@@ -22,7 +24,7 @@ export async function readSongLine(bytes,atoms,records,chords){
       }).join(', ');
       const relation=m.relations.find(r=>r.kind==='condition'&&r.events.includes(i));
       const prefix=relation?(relation.events[0]===i?'Condition · ':'Consequence if the condition holds · '):'';
-      words.push(prefix+describeClaim(label(e.predicate),e.scopes,m.speech_act,e.quantifier,e.negated_quantifier)+' '+binding+'.');
+      words.push(prefix+describeClaim(label(e.predicate)+(e.condition?' · '+label(e.condition):''),e.scopes,m.speech_act,e.quantifier,e.negated_quantifier)+' '+binding+'.');
     }
     for(const r of m.relations){
       const [a,b]=r.events.map(i=>i+1);

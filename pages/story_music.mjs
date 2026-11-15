@@ -1,14 +1,21 @@
+import {FELT_CONDITIONS} from './felt_conditions.mjs';
+import {readFeltConditionTree} from './felt_decoder.mjs';
+import {renderLexicalOccurrences} from './bound_compounds.mjs';
+import {deicticReference} from './references.mjs';
+import {validStorySlots,savedQualityLabel} from './story_saved_adjectives.mjs';
+import {notesFromMidi} from './performance_codec.mjs';
 import {scoreKnownValue} from './known_value.mjs?v=field-repairs-1';
 import {composeFaultCorrection,describeFaultCorrection} from './fault_correction.mjs?v=field-repairs-1';
 import {describeClaim,describeRuntime} from './meaning_readback.mjs?v=field-repairs-1';
 import {everydayMeaning} from './everyday.mjs';
 import {scoreRoleReference,readRoleReference} from './dictionary_clause_music.mjs?v=field-repairs-1';
 import {informationMusic} from './information_music.mjs?v=field-repairs-1';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=field-repairs-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=state-adjectives-1';
 import {midiFromFormal,midiFromScheduledEvents} from './engine.mjs';
-import {storyWords,storyDependencies} from './story_words.mjs?v=field-repairs-1';
-import {storyRoles,storyPropertyIds} from './story_readings.mjs?v=field-repairs-1';
+import {storyWords,storyDependencies} from './story_words.mjs?v=state-adjectives-1';
+import {storyRoles,storyPropertyIds,needsState} from './story_readings.mjs?v=state-adjectives-1';
 
+const feltTargets=new Map(FELT_CONDITIONS.map(f=>[f.predicate,f]));
 const catalog = new Map([...storyWords,...storyDependencies].map(w=>[w.id,w]));
 const byCode = new Map([...catalog.values()].map(w=>[w.code,w]));
 const scopes = new Set(['time_before_speech','time_at_speech','time_after_speech','time_previous_day','time_current_day','time_next_day','modality_necessary','modality_possible','negation','aspect_ongoing']);
@@ -43,14 +50,31 @@ export async function scoreStory(plan,authority) {
     notes.push(...draft('story_entity',value));
   }
   const qualityMusic=informationMusic(authority,1);
+  async function propertySound(value,bearer){
+    const felt=feltTargets.get(value);
+    if(felt){
+      const slot=felt.compoundSlots.experiencer;
+      const node={node_id:'quality',kind:'lexical_occurrence',target_type:'compound',target_id:value,runtime_state:{code:1},
+        compound_bindings:[{slot_path:slot,role:'experiencer',argument_id:'bearer'}]};
+      const events=await renderLexicalOccurrences({nodes:[node,deicticReference('speaker','bearer')],edges:[]},authority,{anchor});
+      // Inside a story the bound reference is the existing numbered entity.
+      // Replace the reference sound in its experiencer role, keeping the dictionary performance.
+      return draft('story_property',events.flatMap(e=>e.kind==='deictic_reference'?wrap('role_experiencer',number(bearer)):[e]));
+    }
+    if(typeof value==='string')return draft('story_property',await qualityMusic.lexical(value));
+    const entry=plan.adjectives.byId.get(value.local_id);
+    const slots=value.bindings.flatMap((entity,i)=>wrap('role_'+entry.slots[i].role,number(entity)));
+    return draft('story_property',[...slots,...entry.events]);
+  }
   for(const e of plan.events){
     let body=await lexical(e.predicate);
+    if(e.condition)body.push(...await propertySound(e.condition,e.arguments.find(a=>a.role==='bearer').entity));
     for(const argument of e.arguments){
       const values=[];
       for(const option of [argument,...argument.alternatives||[]]){
         if(values.length)values.push(marker('coord_member'));
         values.push(...number(option.entity));
-        for(const p of option.properties)values.push(...draft('story_property',await qualityMusic.lexical(p)));
+        for(const p of option.properties)values.push(...await propertySound(p,option.entity));
       }
       const bodyNotes=argument.coordination==='any_of'?wrap('coord_any_of',values):values;
       body.push(...wrap('role_'+argument.role,bodyNotes));
@@ -71,13 +95,13 @@ export async function scoreStory(plan,authority) {
 }
 
 export function describeStory(plan,authority){
-  const label=key=>everydayMeaning(authority,key) || catalog.get(key)?.word || authority.atoms.find(a=>a.canonical_id===key)?.title || key;
+  const label=key=>typeof key==='object'?savedQualityLabel(key,plan.adjectives,i=>plan.entities[i].label):everydayMeaning(authority,key) || catalog.get(key)?.word || authority.atoms.find(a=>a.canonical_id===key)?.title || key;
   const names=plan.events.map(e=>e.arguments.map(a=>plan.entities[a.entity].label).join(' / '));
   const lines=plan.events.map((e,i)=>{
     const name=a=>plan.entities[a.entity].label+(a.properties.length?' ('+a.properties.map(label).join(', ')+')':'');
     const binding=e.arguments.map(a=>a.role+' = '+[a,...a.alternatives||[]].map(name).join(' or ')).join(', ');
     const conditional=plan.relations.find(r=>r.kind==='condition'&&r.events.includes(i));
-    const claim=describeClaim(label(e.predicate),e.scopes,plan.act,e.quantifier,e.negated_quantifier);
+    const claim=describeClaim(label(e.predicate)+(e.condition?' · '+label(e.condition):''),e.scopes,plan.act,e.quantifier,e.negated_quantifier);
     const reading=conditional?(conditional.events[0]===i?'Condition considered · ':'Consequence if the condition holds · ')+claim:claim;
     return 'Action '+(i+1)+' · '+reading+' '+binding+'.';
   });
@@ -109,7 +133,7 @@ function readWord(node){
   if(!id)fail();
   return {id,state:part(node,id,true)};
 }
-export function decodeStoryMidi(bytes,atoms) {
+export function decodeStoryMidi(bytes,atoms,adjectives) {
   const invalid=()=>{throw Error('Invalid story reading.');};
   const reader=strictSemanticReader(bytes,atoms,'Invalid story reading.',{allowDraftInformationPassage:true});
   const tree=reader.readTree();
@@ -122,6 +146,40 @@ export function decodeStoryMidi(bytes,atoms) {
     return Number(digits);
   };
   const entities=[],events=[],relations=[];
+  let clock;
+  function readProperty(node,bearer){
+    if(node?.marker!=='story_property_open'||!node.children.length)invalid();
+    const content=node.children,word=content.at(-1);
+    if(!word.local_code){
+      if(content.length!==1)invalid();
+      if([13,15,16,17,19].includes(word.sound_code)){
+        const quality=readFeltConditionTree(word,reader,participant=>{
+          if(participant.marker!=='role_experiencer_open'||number(participant.children)!==bearer)invalid();
+          return bearer;
+        });
+        const target=FELT_CONDITIONS.find(f=>f.key===quality.predicate);
+        if(!target||quality.runtime_state!==1)invalid();
+        return target.predicate;
+      }
+      const value=readWord(word);
+      if(value.state!==1||!storyPropertyIds.has(value.id))invalid();
+      return value.id;
+    }
+    const entry=adjectives?.byCode.get(word.local_code);
+    if(!entry || word.local_relation!=='head' || content.length!==entry.slots.length+1)invalid();
+    const bindings=content.slice(0,-1).map((slot,i)=>{
+      if(slot.marker!=='role_'+entry.slots[i].role+'_open')invalid();
+      return number(slot.children);
+    });
+    if(!validStorySlots(entry,bindings,bearer,entities.length))invalid();
+    clock??=notesFromMidi(bytes);
+    const close=reader.observed.tokens[word.closing_token];
+    const played=clock.notes.filter(n=>n.start_tick>=word.start_tick&&n.start_tick<close.end_tick);
+    if(played.length!==entry.pattern.length || !entry.pattern.every(([pitch,start,end],i)=>
+      played[i].midi===reader.observed.anchor_midi+pitch && played[i].start_tick===word.start_tick+start*clock.division &&
+      played[i].end_tick===word.start_tick+end*clock.division))invalid();
+    return {local_id:entry.id,bindings};
+  }
   let runtime=null;
   for(const node of tree[0].children){
     let list=node.children;
@@ -151,16 +209,15 @@ export function decodeStoryMidi(bytes,atoms) {
       }
       const [head,...roles]=list,word=readWord(head);
       if(runtime!==null&&runtime!==word.state)invalid();runtime=word.state;
+      const stateNode=needsState(word.id)?roles.shift():null;
+      if(needsState(word.id)&&!stateNode)invalid();
       const args=roles.map(n=>{
         const role=/^role_(.+)_open$/.exec(n.marker)?.[1];if(!role)invalid();
         const member=children=>{
           const propertyStart=children.findIndex(c=>c.marker==='story_property_open');
           const digits=propertyStart<0?children:children.slice(0,propertyStart);
           const entity=number(digits);if(!entities[entity])invalid();
-          const properties=children.slice(digits.length).map(p=>{
-            if(p.marker!=='story_property_open'||p.children.length!==1)invalid();
-            const w=readWord(p.children[0]);if(!storyPropertyIds.has(w.id)||w.state!==1)invalid();return w.id;
-          });
+          const properties=children.slice(digits.length).map(p=>readProperty(p,entity));
           return {entity,properties};
         };
         if(n.children.length===1&&n.children[0].marker==='coord_any_of_open'){
@@ -175,8 +232,9 @@ export function decodeStoryMidi(bytes,atoms) {
         return {role,...member(n.children)};
       });
       if(!storyRoles(word.id).some(signature=>signature.join('/')===args.map(a=>a.role).join('/')))invalid();
+      const condition=stateNode?readProperty(stateNode,args.find(a=>a.role==='bearer').entity):null;
       if(quantifier&&!entities[args[0].entity].plural)invalid();
-      events.push({predicate:word.id,arguments:args,scopes:modifiers,quantifier,negated_quantifier});
+      events.push({predicate:word.id,arguments:args,scopes:modifiers,quantifier,negated_quantifier,...(condition?{condition}:{})});
     }else if(['story_before_open','story_together_open','conditional_open_open'].includes(node.marker)){
       const conditional=node.marker==='conditional_open_open';
       const split=list.findIndex(n=>n.marker===(conditional?'conditional_then':'coord_member'));
@@ -186,6 +244,15 @@ export function decodeStoryMidi(bytes,atoms) {
       relations.push({kind:conditional?'condition':node.marker==='story_before_open'?'before':'and',events:pair});
     }else invalid();
   }
-  if(!events.length || entities.some((_,i)=>!entities.some(e=>e.owner===i)&&!events.some(e=>e.arguments.some(a=>a.entity===i||a.alternatives?.some(o=>o.entity===i)))))invalid();
+  const referenced=new Set();
+  for(const e of entities)if(e.owner!==null)referenced.add(e.owner);
+  for(const event of events){
+    for(const entity of event.condition?.bindings||[])referenced.add(entity);
+    for(const arg of event.arguments)for(const option of [arg,...arg.alternatives||[]]){
+      referenced.add(option.entity);
+      for(const p of option.properties)for(const entity of p.bindings||[])referenced.add(entity);
+    }
+  }
+  if(!events.length || referenced.size!==entities.length)invalid();
   return message(entities,events,relations,runtime,act);
 }

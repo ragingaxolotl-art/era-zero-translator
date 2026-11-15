@@ -6,10 +6,10 @@ Status: **PASS**
 - Existing game/story phrases: **69**
 - Lore performance turns: **22**
 - Total audited phrases: **144**
-- Canonical roots / indexed and profile senses: **324 / 589**
+- Canonical roots / indexed and profile senses: **324 / 608**
 - Automatic single-target readings: **1** (not full sentence translations)
 - Phrases with documented gaps: **27**
-- Phrases with unresolved predicates/descriptors: **23**
+- Phrases with unresolved predicates/descriptors: **22**
 - Assertion failures: **0**
 
 ## What this audit proves
@@ -20,7 +20,7 @@ It checks conservative lexical routing and word-level classifications over three
 
 | Domain | Phrases | Auto single-target | With gap | With unresolved semantic word | With structural word |
 |---|---:|---:|---:|---:|---:|
-| care | 13 | 0 | 7 | 3 | 0 |
+| care | 13 | 0 | 7 | 2 | 0 |
 | computer | 21 | 0 | 0 | 8 | 3 |
 | game_story | 69 | 1 | 15 | 3 | 5 |
 | lore | 22 | 0 | 3 | 4 | 2 |
@@ -36,7 +36,6 @@ These require either a defensible reviewed surface route to an existing meaning,
 | together | 3 | manner |
 | throw | 2 | verb |
 | pick | 1 | verb |
-| curious | 1 | descriptor |
 | open | 1 | verb |
 | save | 1 | verb |
 | copy | 1 | verb |
@@ -96,7 +95,7 @@ These require either a defensible reviewed surface route to an existing meaning,
 | curated / care | Pick up the toy. | game_object_referent | no | pick:unresolved_semantic, toy:documented_gap | PASS |
 | curated / care | The pet is scared. | fear_affect | no | pet:phonemic_label, scared:documented_gap | PASS |
 | curated / care | The pet needs medicine. | ORI:211 | no | pet:phonemic_label, needs:canonical, medicine:documented_gap | PASS |
-| curated / care | The child is curious. | none | no | child:phonemic_label, curious:unresolved_semantic | PASS |
+| curated / care | The child is curious. | CMP:bc64fdf8b202aa9c02cff526 | no | child:phonemic_label, curious:canonical | PASS |
 | curated / care | We are safe. | acceptable_risk | no | safe:documented_gap | PASS |
 | curated / computer | I found the file. | MIN:110 | no | found:canonical, file:canonical | PASS |
 | curated / computer | Open the folder. | STR:020 | no | open:unresolved_semantic, folder:canonical | PASS |
@@ -232,7 +231,7 @@ These require either a defensible reviewed surface route to an existing meaning,
 
 ## Review decisions
 
-- Preserve the 324 canonical roots and 98 approved compounds. Corpus frequency alone does not establish a meaning.
+- Preserve the 324 canonical roots and 107 approved compounds. Corpus frequency alone does not establish a meaning.
 - Keep broad and unsupported readings marked as gaps. The sentence composer covers specific felt moods, desires and drinking constructions.
 - Treat data deletion, waiting, crossing, return, and program execution as structural/IR routes until complete templates and role binding exist.
 - Treat `pick up`, `back up`, file opening/saving/copying, and other unrepresented predicates as semantic gaps, never phonemic nouns.

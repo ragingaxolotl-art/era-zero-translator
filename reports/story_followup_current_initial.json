@@ -390,7 +390,76 @@
     },
     {
       "key": "keep-path-open",
-      "questions": []
+      "questions": [
+        {
+          "prompt": "What does “It” refer to?",
+          "options": [],
+          "answer": "new:the routine"
+        }
+      ],
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "AW",
+                "T",
+                "IH",
+                "N"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "P",
+                "AE",
+                "TH"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:cac584a394535e4912c75b5a",
+            "arguments": [
+              {
+                "role": "cause",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "bearer",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false,
+            "condition": "CMP:3c7e1b60fb3087e942be4555"
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "matches_preregistered_meaning": null
     },
     {
       "key": "finding-in-room",

@@ -1,14 +1,24 @@
+import {validStorySlots} from './story_saved_adjectives.mjs';
 import {isPassageHead} from './passage_nouns.mjs';
 import {knownValueReading} from './known_value.mjs?v=field-repairs-1';
 import {faultCategoryReading} from './fault_correction.mjs?v=field-repairs-1';
 import {routeNounLabel} from './nominals.mjs';
 import {expandNegativeContractions} from './contractions.mjs';
 import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs';
-import {storyWords} from './story_words.mjs?v=field-repairs-1';
+import {properties,feltProperties,isMaterialTarget} from './story_qualities.mjs';
+import {storyWords} from './story_words.mjs?v=state-adjectives-1';
 
 const words = new Map(storyWords.map(word => [word.word, word]));
 const id = word => words.get(word).id;
 const shapes = [
+  ['stay','stays','stayed',['bearer'],null,'staying'],
+  ['remain','remains','remained',['bearer'],'stay','remaining'],
+  ['keep','keeps','kept',['cause','bearer'],null,'keeping'],
+  ['push','pushes','pushed',['actor','target'],null,'pushing'],
+  ['displace','displaces','displaced',['cause','bearer'],null,'displacing'],
+  ['lift','lifts','lifted',['actor','target'],null,'lifting'],
+  ['lower','lowers','lowered',['actor','target'],null,'lowering'],
+  ['resume','resumes','resumed',['bearer'],null,'resuming'],
   ['vibrate', 'vibrates', 'vibrated', ['bearer']],
   ['sound', 'sounds', 'sounded', ['source']],
   ['ring', 'rings', 'rang', ['source']],
@@ -39,11 +49,6 @@ const shapes = [
   ['make','makes','made',['source','result'],'CRE:110']
 ];
 const predicateId = (word,target) => target?.includes(':')?target:word==='arrive'?'MOV:110':id(target||word);
-const properties = new Map(Object.entries({
-  cracked:id('cracked'), faulty:id('faulty'), broken:id('broken'), sick:'WRN:001',
-  passable:id('passable'), open:id('passable'), blocked:id('blocked'), impassable:id('blocked'),
-  valid:id('valid'), wrong:id('wrong'), mistaken:id('wrong'), awake:'LIF:001', asleep:'LIF:002', well:'REP:001', lost:'MOV:212'
-}));
 const pronouns = new Set('they them he him she her it'.split(' '));
 const deictics = {i:'I',me:'I',we:'we',us:'we',you:'you'};
 const determiners = new Set('a an the this that'.split(' '));
@@ -54,6 +59,7 @@ const nonNouns = new Set('a few no nobody nothing something home again now can w
 const folded = s => s.toLowerCase();
 const plural = noun => ['people','children','men','women','mice'].includes(noun) || /(?:ies|s)$/.test(noun) && !/(?:ss|us|is)$/.test(noun);
 export const storyPropertyIds = new Set([...properties.values(),id('open for use')]);
+export const needsState = root => root === id('stay') || root === id('keep');
 export function storyRoles(root) {
   const roles = shapes.filter(row=>predicateId(row[0],row[4])===root).map(row=>row[3]);
   if(root===id('hand off work'))roles.push(['source','content']);
@@ -66,12 +72,12 @@ export function storyRoles(root) {
   return [...roles, ...dictionaryRoles(root)];
 }
 
-function nounPhrase(tokens, offset, {guessName=false,barePlural=false}={}) {
+function nounPhrase(tokens, offset, {guessName=false,barePlural=false}={}, qualityAt=propertyAt) {
   const start = offset, token = tokens[offset], word = token?.toLowerCase();
   if (!word) return null;
   const possessive=['her','his','their','my','our','your'].includes(word) && /^[a-z][a-z-]*$/i.test(tokens[offset+1]||'');
   if(possessive){
-    const np=nounPhrase(['the',...tokens.slice(offset+1)],0);
+    const np=nounPhrase(['the',...tokens.slice(offset+1)],0,{},qualityAt);
     if(!np)return null;
     return {...np,text:tokens.slice(start,start+np.length).join(' '),owner:{text:token,pronoun:({her:'she',his:'he',their:'they',my:'i',our:'we',your:'you'})[word]}};
   }
@@ -92,10 +98,9 @@ function nounPhrase(tokens, offset, {guessName=false,barePlural=false}={}) {
   }
   offset++;
   const qualities = [],descriptors=[];
-  while (properties.has(tokens[offset]?.toLowerCase())){
-    const descriptor=tokens[offset++].toLowerCase();
-    qualities.push(properties.get(descriptor));descriptors.push(descriptor);
-    if(tokens[offset]?.toLowerCase()==='and'&&properties.has(tokens[offset+1]?.toLowerCase()))offset++;
+  for(let quality; (quality=qualityAt(tokens,offset));){
+    qualities.push(quality.root);descriptors.push(quality.word);offset+=quality.length;
+    if(tokens[offset]?.toLowerCase()==='and'&&qualityAt(tokens,offset+1))offset++;
   }
   let head = tokens[offset]?.toLowerCase();
   const route=routeNounLabel(head,tokens[offset+1]?.toLowerCase());
@@ -105,13 +110,13 @@ function nounPhrase(tokens, offset, {guessName=false,barePlural=false}={}) {
   return {text:tokens.slice(start,offset+1).join(' '), length:offset-start+1, reference:det+' '+head,
     head, category:personNouns.has(head.replace(/s$/,''))?'person':'thing', plural:plural(head), qualities,descriptors};
 }
-function countedSubject(tokens){
+function countedSubject(tokens,parseNoun){
   const first=folded(tokens[0]||''),second=folded(tokens[1]||'');
   const few=first==='a'&&second==='few';
   if(!few && first!=='nobody' && first!=='nothing' && !(first==='no'&&second==='one'))return null;
   const length=few||first==='no'?2:1;
   if(few){
-    const nominal=nounPhrase(['the',...tokens.slice(length)],0);
+    const nominal=parseNoun(['the',...tokens.slice(length)],0);
     if(nominal?.plural){
       return {q:'few',subject:{...nominal,reference:nominal.head,referenceKind:'nominal_class',
         text:tokens.slice(0,length+nominal.length-1).join(' '),length:length+nominal.length-1}};
@@ -122,7 +127,7 @@ function countedSubject(tokens){
     category:first==='nothing'?'thing':'person',plural:true,singularAgreement:!few,qualities:[]}};
 }
 const tokensOf = s => s.match(/"[^"\n]+"|[^\s]+/g) || [];
-function linkedClauses(body){
+function linkedClauses(body,parseNoun){
   const tokens=tokensOf(body),parts=[],clause=[];
   for(let i=0;i<tokens.length;){
     const word=folded(tokens[i]);
@@ -130,25 +135,54 @@ function linkedClauses(body){
       parts.push(clause.join(' '),word);clause.length=0;i++;continue;
     }
     // Consume a whole noun phrase so the 'and' inside paired adjectives stays with its noun.
-    const nominal=nounPhrase(tokens,i),length=nominal?.length||1;
+    const nominal=parseNoun(tokens,i),length=nominal?.length||1;
     clause.push(...tokens.slice(i,i+length));i+=length;
   }
   return [...parts,clause.join(' ')];
 }
-function splitObject(tokens) {
+function splitObject(tokens,parseNoun) {
   for (let i=1; i<tokens.length; i++) {
-    const object = nounPhrase(tokens, i,{barePlural:true});
+    const object = parseNoun(tokens, i,{barePlural:true});
     if(!object)continue;
     const alternatives=[];
     let end=i+object.length;
     while(folded(tokens[end]||'')==='or'){
-      const next=nounPhrase(tokens,end+1,{barePlural:true});
+      const next=parseNoun(tokens,end+1,{barePlural:true});
       if(!next)break;
       alternatives.push(next);end+=1+next.length;
     }
     if(end===tokens.length)return {verb:tokens.slice(0,i).join(' '),object,alternatives};
   }
   return {verb:tokens.join(' '), object:null};
+}
+// Keep the predicated state separate from a description inside the noun phrase.
+function stateComplement(tokens, parseObject, propertyAt) {
+  for (let i=1; i<tokens.length; i++) {
+    const quality = propertyAt(tokens,i);
+    if (!quality || i + quality.length !== tokens.length) continue;
+    const parsed = parseObject(tokens.slice(0,i));
+    const word = folded(parsed.verb).split(' ').at(-1);
+    const keeps = ['keep','keeps','kept','keeping'].includes(word);
+    const stays = ['stay','stays','stayed','staying','remain','remains','remained','remaining'].includes(word);
+    if ((!keeps && !stays) || keeps !== !!parsed.object || parsed.alternatives?.length) continue;
+    // The earlier lexicalized "remain valid" has its own published sound.
+    if (stays && quality.word === 'valid' && !word.endsWith('ing')) continue;
+    return {...parsed, condition:quality};
+  }
+  return null;
+}
+function propertyAt(tokens,offset,adjectives) {
+  const first=folded(tokens[offset]||'');
+  const choices=adjectives?.byFirst.get(first)||[];
+  for(const entry of choices){
+    const parts=entry.parts;
+    if(parts.every((word,i)=>word===folded(tokens[offset+i]||''))){
+      return {word:entry.label,root:properties.get(entry.label)||entry.id,length:parts.length};
+    }
+  }
+  if(first==='available' && folded(tokens[offset+1]||'')==='for' && folded(tokens[offset+2]||'')==='use')
+    return {word:'available for use',root:id('available for use'),length:3};
+  return properties.has(first)?{word:first,root:properties.get(first),length:1}:null;
 }
 function describeChoice(row) {
   return row.word === 'return' ? 'went back to an earlier place' : 'happened again';
@@ -173,7 +207,7 @@ function predicate(verb, subject, object, authority, runtime, preferences) {
     if(r.root!=='erase_stored_object')return [{root:r.root,word:r.sense.lemma,roles:r.participants.map(p=>p.role),scopes:r.scopes,sense:r.sense,specific:false}];
   }
   const tail = object ? folded(syntax.tail).slice(0,-' the gate'.length) : folded(syntax.tail);
-  if(syntax.being && !object && properties.has(tail))return [{root:properties.get(tail),word:tail,roles:['bearer'],scopes:syntax.scopes,specific:words.has(tail)||passageQualities.has(properties.get(tail))}];
+  if(syntax.being && !object && properties.has(tail) && !Object.hasOwn(feltProperties,tail) && !['available','curious','resumed'].includes(tail))return [{root:properties.get(tail),word:tail,roles:['bearer'],scopes:syntax.scopes,specific:words.has(tail)||passageQualities.has(properties.get(tail))}];
   const readings = [];
   if(object && syntax.allowPast && tail==='found' && !preferences.some(p=>p.forms?.includes('found'))){
     return [{root:id('find'),word:'find',roles:['experiencer','target'],scopes:[...syntax.scopes,'time_before_speech'],specific:true}];
@@ -206,7 +240,10 @@ function predicate(verb, subject, object, authority, runtime, preferences) {
     sense:r.sense, specific:false}));
 }
 
-function prepare(input, authority, preferences) {
+function prepare(input, authority, preferences, adjectives) {
+  const qualityAt=(tokens,offset)=>propertyAt(tokens,offset,adjectives);
+  const parseNoun=(tokens,offset,options)=>nounPhrase(tokens,offset,options,qualityAt);
+  const parseObject=tokens=>splitObject(tokens,parseNoun);
   let text=expandNegativeContractions(input.trim().replace(/\s+/g,' ')), runtime=1;
   const state=/\s*\[([012])\]([.!?]?)$/.exec(text);
   if (state) {
@@ -225,7 +262,7 @@ function prepare(input, authority, preferences) {
       if(sentences.length!==1)return null;
       const aux=/^(do|does|did|am|are|is|was|were|might|can|will) (.+)$/i.exec(body);
       if(!aux)return null;
-      const tokens=tokensOf(aux[2]),subject=nounPhrase(tokens,0,{guessName:true});
+      const tokens=tokensOf(aux[2]),subject=parseNoun(tokens,0,{guessName:true});
       if(!subject)return null;
       body=tokens.slice(0,subject.length).join(' ')+' '+folded(aux[1])+' '+tokens.slice(subject.length).join(' ');
       act='question';
@@ -234,7 +271,7 @@ function prepare(input, authority, preferences) {
     const leading=/^(before|after) (.+?),\s*(.+)$/i.exec(body);
     if(leading)body=leading[2]+' '+(folded(leading[1])==='before'?'after':'before')+' '+leading[3];
     const condition=/^if (.+?),\s*(?:then )?(.+)$/i.exec(body),postcondition=/^(.+) if (.+)$/i.exec(body);
-    const parts=condition?[condition[1],'condition',condition[2]]:postcondition?[postcondition[1],'provided',postcondition[2]]:linkedClauses(body);
+    const parts=condition?[condition[1],'condition',condition[2]]:postcondition?[postcondition[1],'provided',postcondition[2]]:linkedClauses(body,parseNoun);
     // Without punctuation or parentheses, three linked clauses have ambiguous attachment.
     if(parts.length>3)return null;
     for(let i=0;i<parts.length;i+=2){
@@ -245,15 +282,15 @@ function prepare(input, authority, preferences) {
         q=folded(count[1])==='none'?'none':'all';outsideNegation=folded(count[1])==='not all';piece=count[2];special=true;
       }
       const tokens=tokensOf(piece);
-      const counted=countedSubject(tokens);
-      let subject=counted?.subject||nounPhrase(tokens,0,{guessName:true}),consumed=subject?.length??0,inherited=false;
+      const counted=countedSubject(tokens,parseNoun);
+      let subject=counted?.subject||parseNoun(tokens,0,{guessName:true}),consumed=subject?.length??0,inherited=false;
       if(counted){q=counted.q;special=true;}
-      const shared=link==='and'&&subject?.guessedName?splitObject(tokens):null;
+      const shared=link==='and'&&subject?.guessedName?parseObject(tokens):null;
       if(link==='and' && (!subject || subject.category==='person' && shapes.some(row=>row.slice(0,3).includes(folded(tokens[0]))) ||
           shared&&predicate(shared.verb,clauses.at(-1).subject,shared.object,authority,runtime,preferences).length)){
         subject=clauses.at(-1).subject;consumed=0;inherited=true;special=true;
       }
-      if(clauses.length===0 && sentences.length===1 && /^(?:find|notice|spot|repair|repeat|ring) (?:(?:it|them|the|a|an|this|that)\b)/i.test(piece)){
+      if(clauses.length===0 && sentences.length===1 && /^(?:find|notice|spot|repair|repeat|ring|keep|push|lift|lower|displace) (?:(?:it|them|the|a|an|this|that)\b)/i.test(piece)){
         subject={text:'you',pronoun:'you'};consumed=0;act='command';
       }
       if(!subject || q&&!subject.plural)return null;
@@ -262,12 +299,13 @@ function prepare(input, authority, preferences) {
       if(folded(tail.at(-1)||'')==='again'){again=true;tail=tail.slice(0,-1);}
       const ditransitive=tail.findIndex(t=>['make','makes','made'].includes(folded(t)));
       if(ditransitive>=0){
-        const indirect=nounPhrase(tail,ditransitive+1),result=indirect&&nounPhrase(tail,ditransitive+1+indirect.length,{barePlural:true});
+        const indirect=parseNoun(tail,ditransitive+1),result=indirect&&parseNoun(tail,ditransitive+1+indirect.length,{barePlural:true});
         if(indirect&&result&&ditransitive+1+indirect.length+result.length===tail.length){
           recipient=indirect;tail=[...tail.slice(0,ditransitive+1),...tail.slice(ditransitive+1+indirect.length)];
         }
       }
-      let {verb,object,alternatives=[]}=splitObject(tail);
+      const state=stateComplement(tail,parseObject,qualityAt);
+      let {verb,object,alternatives=[]}=state||parseObject(tail);
       if(!object && /^notic(?:e|es|ed)$/i.test(verb)){
         object={text:'the omitted target',pronoun:'it',prompt:'What did '+subject.text+' notice?'};
       }
@@ -276,6 +314,7 @@ function prepare(input, authority, preferences) {
       if(act==='command' && folded(verb)==='find' && object && !preferences.some(p=>p.forms?.includes('find'))){
         readings=[{root:id('find'),word:'find',roles:['experiencer','target'],scopes:[],specific:true}];
       }
+      readings=readings.filter(r=>needsState(r.root)===!!state);
       if(again)readings=readings.filter(r=>r.root===id('check')).map(r=>({...r,root:id('recheck'),word:'recheck'}));
       if(when)readings=readings.map(r=>({...r,scopes:[when,...r.scopes]}));
       if(recipient)readings=readings.filter(r=>r.root==='CRE:110');
@@ -289,19 +328,19 @@ function prepare(input, authority, preferences) {
       }
       special ||= !!link || readings.some(r=>r.specific) || !!subject.owner || !!object?.owner || !!subject.qualities?.length || !!object?.qualities?.length ||
         pronouns.has(subject.pronoun)||pronouns.has(object?.pronoun);
-      clauses.push({subject,object,alternatives,recipient,inherited,readings,q,outsideNegation});
+      clauses.push({subject,object,alternatives,recipient,inherited,readings,q,outsideNegation,condition:state?.condition});
     }
   }
   return special ? {runtime,act,clauses,relations} : null;
 }
 
-export function storyReading(input, authority, {answers={}, preferences=[]}={}) {
+export function storyReading(input, authority, {answers={}, preferences=[], adjectives}={}) {
   if(typeof input!=='string')return null;
   const embedded=knownValueReading(input,answers)||faultCategoryReading(input,answers);
   if(embedded)return embedded;
-  const grammar=prepare(input,authority,preferences);
+  const grammar=prepare(input,authority,preferences,adjectives);
   if(!grammar)return null;
-  const entities=[],events=[],notes=[];
+  const entities=[],events=[],notes=[],described=[];
   let question=null, lastSubject;
   function identify(np,key,exclude=null) {
     if(np.guessedName && !entities.some(e=>e.reference===np.reference) && answers[key+'Name']!=='name'){
@@ -337,18 +376,43 @@ export function storyReading(input, authority, {answers={}, preferences=[]}={}) 
     const owner=np.owner?identify(np.owner,key+'Owner'):null;
     if(question)return null;
     const indefinite=!!np.domain||!!np.referenceKind||/^an? /.test(reference);
-    const previous=entities.map((e,i)=>({e,i})).filter(({e})=>
+    let previous=entities.map((e,i)=>({e,i})).filter(({e})=>
       !indefinite && e.owner===owner && (e.reference===reference || (np.head && reference.startsWith('the ') && e.head===np.head)));
-    if(previous.length===1)return previous[0].i;
+    if(np.qualities?.length && previous.length){
+      const eligible=previous.filter(({i})=>i!==exclude);
+      const same=eligible.filter(({i})=>np.qualities.every(q=>described[i].has(q)));
+      if(same.length)previous=same;
+      else if(eligible.length && eligible.some(({i})=>described[i].size)){
+        if(answers[key]==='different')previous=[];
+        else{
+          const chosen=eligible.find(({i})=>String(i)===answers[key]);
+          if(chosen){np.qualities.forEach(q=>described[chosen.i].add(q));return chosen.i;}
+          question={key,prompt:'Which participant does “'+np.text+'” describe?',options:[
+            ...eligible.map(({e,i})=>({value:String(i),label:e.label+' (reference '+(i+1)+')'})),
+            {value:'different',label:'A different '+np.head}]};return null;
+        }
+      }else previous=eligible;
+    }
+    if(previous.length===1){(np.qualities||[]).forEach(q=>described[previous[0].i].add(q));return previous[0].i;}
     if(previous.length>1){
       const chosen=previous.find(x=>String(x.i)===answers[key]);
       if(chosen)return chosen.i;
       question={key,prompt:'Which '+np.head+' do you mean?',options:previous.map(({e,i})=>({value:String(i),label:e.label+' (reference '+(i+1)+')'}))};
       return null;
     }
+    described.push(new Set(np.qualities||[]));
     entities.push({reference,referenceKind:np.referenceKind,domain:np.domain,label:np.guessedName?np.reference:np.text,head:np.head,plural:!!np.plural||reference==='we',category,owner});return entities.length-1;
   }
   function passageSense(entity,word,key,root){
+    if(root===id('available for use') && word!=='available for use' || root===id('curious') && word==='curious' || root===id('closed')){
+      const head=entities[entity].head||'';
+      if(root===id('closed') && /^(?:gates?|doors?|hatch(?:es)?|windows?|lids?|boxes|box|valves?)$/.test(head))return root;
+      if(answers[key]==='selected')return root;
+      if(answers[key]==='other')return null;
+      const label=root===id('closed')?'Physically shut':root===id('curious')?'Inclined to learn or find out':'Accessible and ready for the relevant use';
+      question={key,prompt:'What does “'+word+'” mean for '+entities[entity].label+'?',options:[{value:'selected',label},{value:'other',label:'Another meaning'}]};
+      return null;
+    }
     if(![id('reopen'),id('open'),...passageQualities].includes(root))return root;
     const head=(entities[entity].head||'').split(' ').at(-1);
     if(isPassageHead(head))return root;
@@ -368,10 +432,45 @@ export function storyReading(input, authority, {answers={}, preferences=[]}={}) 
     question={key,prompt:'Does “'+word+'” describe passage through '+label+'?',options};
     return null;
   }
+  function selectProperty(entity,word,key,root){
+    const local=adjectives?.byLabel.get(word);
+    if(!local)return passageSense(entity,word,key,root);
+    if(root!==local.id){
+      const choice=answers[key+'Sense'];
+      if(choice==='dictionary')return passageSense(entity,word,key,root);
+      if(choice!=='saved'){
+        question={key:key+'Sense',prompt:'Which meaning of “'+word+'” describes '+entities[entity].label+'?',options:[
+          {value:'dictionary',label:'Published dictionary meaning'},
+          {value:'saved',label:'Saved meaning · '+(local.definition||word)}]};
+        return null;
+      }
+    }
+    if(local.unavailable){question={key,prompt:local.unavailable,options:[]};return null;}
+    const bindings=[];
+    for(const [i,slot] of local.slots.entries()){
+      if(slot.bearer){bindings.push(entity);continue;}
+      const slotKey=key+'Slot'+i,answer=answers[slotKey];
+      const allowed=index=>local.distinct.every(group=>!group.includes(i)||!group.some(j=>
+        j!==i&&(local.slots[j].bearer?entity:bindings[j])===index));
+      let target=null;
+      if(answer?.startsWith('new:')){
+        const tokens=tokensOf(answer.slice(4).trim()),np=nounPhrase(tokens,0);
+        if(np&&!np.pronoun&&!np.qualities.length&&np.length===tokens.length)target=identify(np,slotKey+'Referent');
+        if(question)return null;
+      }else if(answer!==undefined && /^(0|[1-9][0-9]*)$/.test(answer))target=Number(answer);
+      if(target===null||!entities[target]||!allowed(target)){
+        question={key:slotKey,prompt:'For “'+word+'”, who or what fills '+slot.role+' ('+slot.description+')?',
+          options:entities.flatMap((e,index)=>allowed(index)?[{value:String(index),label:e.label}]:[]),allowName:true};
+        return null;
+      }
+      bindings.push(target);
+    }
+    return validStorySlots(local,bindings,entity,entities.length)?{local_id:local.id,bindings}:null;
+  }
   function argument(np,entity,role,key){
     const properties=[];
     for(const [i,root] of (np.qualities||[]).entries()){
-      const word=np.descriptors[i],selected=passageSense(entity,word,key+word,root);
+      const word=np.descriptors[i],selected=selectProperty(entity,word,key+word,root);
       if(!selected)return null;
       properties.push(selected);
     }
@@ -404,6 +503,17 @@ export function storyReading(input, authority, {answers={}, preferences=[]}={}) 
     if(c.object){
       const target=identify(c.object,'object'+index,sub);
       if(target===null)return question?{question}:null;
+      if(['push','lift','lower','displace'].includes(reading.word)){
+        const entity=entities[target],head=entity.head||'';
+        // A conventional physical reading is direct for ordinary material targets.
+        // Named and abstract targets can also be a ban, a price or a software push.
+        if(!isMaterialTarget(head)){
+          const key='physical'+index;
+          if(!answers[key])return {question:{key,prompt:'Does “'+reading.word+'” describe a physical action on '+entity.label+'?',options:[
+            {value:'physical',label:words.get(reading.word).example},{value:'other',label:'Another meaning'}]}};
+          if(answers[key]!=='physical')return null;
+        }
+      }
       const objectArg=argument(c.object,target,reading.roles[1],'property'+index+'Object');
       if(!objectArg)return question?{question}:null;
       if(c.alternatives.length){
@@ -425,6 +535,11 @@ export function storyReading(input, authority, {answers={}, preferences=[]}={}) 
       if(!root)return question?{question}:null;
       reading={...reading,root};
     }
+    let condition;
+    if(c.condition){
+      condition=selectProperty(bearer.entity,c.condition.word,'condition'+index,c.condition.root);
+      if(!condition)return question?{question}:null;
+    }
     if(c.recipient){
       const recipient=identify(c.recipient,'recipient'+index);
       if(recipient===null)return question?{question}:null;
@@ -432,11 +547,11 @@ export function storyReading(input, authority, {answers={}, preferences=[]}={}) 
     }
     if(args.length===2&&args[0].entity===args[1].entity && !['MIN:011','MIN:110'].includes(reading.root))return null;
     lastSubject=sub;
-    events.push({predicate:reading.root,arguments:args,scopes:reading.scopes,quantifier:c.q,negated_quantifier:c.outsideNegation});
+    events.push({predicate:reading.root,arguments:args,scopes:reading.scopes,quantifier:c.q,negated_quantifier:c.outsideNegation,...(condition?{condition}:{})});
     if(c.inherited)notes.push('The next action has the same subject (“'+entities[sub].label+'”).');
     if(c.q)notes.push(c.outsideNegation?'At least one member did not perform this action. Zero performers is possible.':
       c.q==='none'?'Zero members performed this action.':c.q==='few'?'A small, unspecified number of members performed this action.':'Every member performed this action.');
     if(reading.sense?.generalization)notes.push(reading.sense.generalization);
   }
-  return {entities,events,relations:grammar.relations,runtime:grammar.runtime,act:grammar.act,notes};
+  return {entities,events,relations:grammar.relations,runtime:grammar.runtime,act:grammar.act,notes,...(adjectives?{adjectives}:{})};
 }

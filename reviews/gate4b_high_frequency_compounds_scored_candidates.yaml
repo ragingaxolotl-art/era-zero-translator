@@ -7199,3 +7199,644 @@ reviews:
     decision: 'rejected: unnecessary change of authority'
   recommendation: approve specific_convention
   confidence: high
+- compound_id: CMP:ec3a1fad0ed828279e948372
+  display_title: continuation of a specified state
+  current_choice_reason: The authored distinction is exercised by The gate stayed
+    open. and contrasted with A gate was open at one instant and immediately shut.
+  candidates:
+  - candidate_id: specific_convention
+    direction: The same specified quality holds of its bearer throughout the relevant
+      interval. Its start and any external intervention are left open.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: ORI:011
+      - node_id: h
+        kind: root
+        root_id: ORI:010
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: continuation_of_a_specified_state
+        sound_code: 66
+        added_definition: The same specified quality holds of its bearer throughout
+          the relevant interval. Its start and any external intervention are left
+          open.
+        excludes:
+        - A gate was open at one instant and immediately shut.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: A gate was open at one
+      instant and immediately shut.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:cac584a394535e4912c75b5a
+  display_title: causal maintenance of a specified state
+  current_choice_reason: The authored distinction is exercised by Mira kept the gate
+    open. and contrasted with Mira noticed that the gate happened to stay open.
+  candidates:
+  - candidate_id: specific_convention
+    direction: A maintainer acts or operates so that its target continues in the specified
+      state through the relevant interval. The target may already have been in that
+      state.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: compound_ref
+        compound_id: CMP:ec3a1fad0ed828279e948372
+        definition_version: 1.0.0
+      - node_id: h
+        kind: root
+        root_id: ORI:211
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: causal_maintenance_of_a_specified_state
+        sound_code: 67
+        added_definition: A maintainer acts or operates so that its target continues
+          in the specified state through the relevant interval. The target may already
+          have been in that state.
+        excludes:
+        - Mira noticed that the gate happened to stay open.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: Mira noticed that the
+      gate happened to stay open.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:82a697e83c845e4a7b38b53e
+  display_title: shut configuration of a closure
+  current_choice_reason: The authored distinction is exercised by The hatch stayed
+    closed. and contrasted with An open hatch had an obstruction in front of it.
+  candidates:
+  - candidate_id: specific_convention
+    direction: A closure is in its shut configuration at the reference time. Its lock,
+      seal and the cause of closure are unspecified.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: compound_ref
+        compound_id: CMP:6ae4a680528e1cd7fd1ac0df
+        definition_version: 1.0.0
+      - node_id: h
+        kind: root
+        root_id: STR:011
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: shut_configuration_of_a_closure
+        sound_code: 68
+        added_definition: A closure is in its shut configuration at the reference
+          time. Its lock, seal and the cause of closure are unspecified.
+        excludes:
+        - An open hatch had an obstruction in front of it.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: An open hatch had an
+      obstruction in front of it.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:0ed5f8a1c4b5a22781920ad9
+  display_title: practical availability for a contextual use
+  current_choice_reason: The authored distinction is exercised by The tool stayed
+    available. and contrasted with A tool was functional but locked out of reach.
+  candidates:
+  - candidate_id: specific_convention
+    direction: A resource is accessible and ready for the relevant use under the circumstances.
+      The identity of a user and any actual use are left open.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: ORI:011
+      - node_id: h
+        kind: root
+        root_id: ORI:211
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: practical_availability_for_a_contextual_use
+        sound_code: 69
+        added_definition: A resource is accessible and ready for the relevant use
+          under the circumstances. The identity of a user and any actual use are left
+          open.
+        excludes:
+        - A tool was functional but locked out of reach.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: A tool was functional
+      but locked out of reach.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:9549f538a6224892d3aff0ea
+  display_title: application of directed physical pressure
+  current_choice_reason: The authored distinction is exercised by Mira pushed the
+    gate. and contrasted with The gate moved in a gust while Mira watched.
+  candidates:
+  - candidate_id: specific_convention
+    direction: An actor applies contact force against a target in a direction away
+      from the point of application. The target can remain stationary.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: MAT:201
+      - node_id: h
+        kind: root
+        root_id: MAT:211
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: application_of_directed_physical_pressure
+        sound_code: 70
+        added_definition: An actor applies contact force against a target in a direction
+          away from the point of application. The target can remain stationary.
+        excludes:
+        - The gate moved in a gust while Mira watched.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: The gate moved in a gust
+      while Mira watched.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:82dc9c681fbaf7944cb7b85b
+  display_title: caused displacement in a physical frame
+  current_choice_reason: The authored distinction is exercised by Mira displaced the
+    box. and contrasted with Mira pressed on the box and it stayed still.
+  candidates:
+  - candidate_id: specific_convention
+    direction: A cause changes the position of a material target relative to the relevant
+      spatial frame. The direction and means are unspecified.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: MAT:211
+      - node_id: h
+        kind: root
+        root_id: MOV:120
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: caused_displacement_in_a_physical_frame
+        sound_code: 71
+        added_definition: A cause changes the position of a material target relative
+          to the relevant spatial frame. The direction and means are unspecified.
+        excludes:
+        - Mira pressed on the box and it stayed still.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: Mira pressed on the box
+      and it stayed still.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:e1d0059daad4093d8a5ce05c
+  display_title: caused upward physical displacement
+  current_choice_reason: The authored distinction is exercised by Mira lifted the
+    box. and contrasted with Mira held an already elevated box steady.
+  candidates:
+  - candidate_id: specific_convention
+    direction: An actor physically displaces a target upwards relative to the local
+      vertical. Distance, method, destination and continued support are unspecified.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: compound_ref
+        compound_id: CMP:82dc9c681fbaf7944cb7b85b
+        definition_version: 1.0.0
+      - node_id: h
+        kind: root
+        root_id: MOV:211
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: caused_upward_physical_displacement
+        sound_code: 72
+        added_definition: An actor physically displaces a target upwards relative
+          to the local vertical. Distance, method, destination and continued support
+          are unspecified.
+        excludes:
+        - Mira held an already elevated box steady.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: Mira held an already
+      elevated box steady.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:92464b1ea3c632b343340a05
+  display_title: caused downward physical displacement
+  current_choice_reason: The authored distinction is exercised by Mira lowered the
+    box. and contrasted with The box started low and remained there.
+  candidates:
+  - candidate_id: specific_convention
+    direction: An actor physically displaces a target downwards relative to the local
+      vertical. Distance, method, destination and subsequent contact are unspecified.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: compound_ref
+        compound_id: CMP:82dc9c681fbaf7944cb7b85b
+        definition_version: 1.0.0
+      - node_id: h
+        kind: root
+        root_id: MOV:211
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: caused_downward_physical_displacement
+        sound_code: 73
+        added_definition: An actor physically displaces a target downwards relative
+          to the local vertical. Distance, method, destination and subsequent contact
+          are unspecified.
+        excludes:
+        - The box started low and remained there.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: The box started low and
+      remained there.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:bc64fdf8b202aa9c02cff526
+  display_title: disposition toward epistemic inquiry
+  current_choice_reason: The authored distinction is exercised by The curious child
+    waited. and contrasted with A curious marking was unusual in shape.
+  candidates:
+  - candidate_id: specific_convention
+    direction: The bearer is disposed to seek understanding for the sake of knowing.
+      No particular topic, act of inquiry, answer or successful learning is asserted.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: MIN:010
+      - node_id: h
+        kind: root
+        root_id: MIN:201
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: disposition_toward_epistemic_inquiry
+        sound_code: 74
+        added_definition: The bearer is disposed to seek understanding for the sake
+          of knowing. No particular topic, act of inquiry, answer or successful learning
+          is asserted.
+        excludes:
+        - A curious marking was unusual in shape.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: A curious marking was
+      unusual in shape.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high

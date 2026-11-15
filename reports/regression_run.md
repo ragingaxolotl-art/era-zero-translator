@@ -47,14 +47,14 @@ Valid cases: 12; invalid cases: 23; dictionary entries: 0
 
 ```text
 Gate 4B validation: PASS
-Checks passed: 16; checks failed: 0; entries: 82
+Checks passed: 16; checks failed: 0; entries: 107
 ```
 
 ## PASS — validate Gate 4C English concept and sense index
 
 ```text
 Gate 4C validation: PASS
-Checks passed: 17; checks failed: 0; senses: 509; lemmas: 490
+Checks passed: 17; checks failed: 0; senses: 560; lemmas: 539
 ```
 
 ## PASS — validate Gate 4D coverage and ambiguity report
@@ -109,13 +109,13 @@ Checks passed: 10; checks failed: 0
 ## PASS — validate carrier-driven character visemes
 
 ```text
-Viseme performance: PASS · 5655 variants · 80877 cues · 92106 assertions
+Viseme performance: PASS · 6030 variants · 102402 cues · 98106 assertions
 ```
 
 ## PASS — validate optional recognition audio checksums
 
 ```text
-Recognition audio: PASS · 5655 variants · 33939 assertions
+Recognition audio: PASS · 6030 variants · 36039 assertions
 ```
 
 ## PASS — validate recorded-waveform recognition checks against canonical form
@@ -170,7 +170,7 @@ Ordinary-language corpus: PASS · 144 phrases · 0 failures
 ## PASS — validate complete plain-English discovery and matching layer
 
 ```text
-Plain-English matching: PASS (406/406 labels; 406 complete mappings)
+Plain-English matching: PASS (431/431 labels; 431 complete mappings)
 ```
 
 ## PASS — validate lexical/POS audit and DBA concept-intake workflow

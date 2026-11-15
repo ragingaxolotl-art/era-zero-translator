@@ -15,7 +15,7 @@ const check=(name,ok,detail='')=>checks.push({name,ok:Boolean(ok),detail});
 const cases=[
   {phrase:'continuous self',target:'LIF:000',auto:true},
   {phrase:'active care',target:'LIF:211',auto:true},
-  {phrase:'A curious child',auto:false,unknown:1,unresolved:1},
+  {phrase:'A curious child',key:'disposition_toward_epistemic_inquiry',partial:true,unknown:1,unresolved:0},
   {phrase:'Pip frobnates.',auto:false,unknown:1,unresolved:1},
   {phrase:'The lantern frobnates.',auto:false,unresolved:1},
   {phrase:'Go home.',target:'MOV:121',key:'spatial_movement',partial:true,act:'command'},
