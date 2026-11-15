@@ -159,7 +159,7 @@ function plainMappedSenses(data){
   });
 }
 
-function phrasalVerbAt(words,index){
+export function phrasalVerbAt(words,index){
   if(!words[index+1])return null;
   for(const head of variants(words[index])){
     const phrase=head+' '+words[index+1];

@@ -1,7 +1,7 @@
 import {storyReading} from './story_readings.mjs';
 import {scoreStory} from './story_music.mjs';
-import {dictionaryClausePlan} from './dictionary_clauses.mjs?v=exact-word-1';
-import {scoreDictionaryClause} from './dictionary_clause_music.mjs';
+import {dictionaryClausePlan} from './dictionary_clauses.mjs?v=1.16.1';
+import {scoreDictionaryClause} from './dictionary_clause_music.mjs?v=1.16.1';
 import {midiFromFormal,midiFromScheduledEvents} from './engine.mjs';
 import {notesFromMidi} from './performance_codec.mjs';
 import {composeNamedSentence,parseNamedSentence,parseSentenceConjunction,composeSentenceConjunction,
