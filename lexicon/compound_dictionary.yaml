@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 94
+  entry_count: 98
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -1229,6 +1229,67 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 2d993bb1d93b7d24d303e3640d3fa402963c4b8f10a7e9e3392d12226c649174
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:3d95154b4812da0cefd7fc45
+    definition_version: 1.0.0
+  - node_id: h
+    kind: root
+    root_id: ORI:110
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: resumption_of_an_interrupted_activity
+    sound_code: 65
+    added_definition: A session or activity that was interrupted begins to proceed
+      again as the same activity. A venue opening to traffic or an unrelated meeting
+      beginning does not establish resumption.
+    excludes:
+    - A separate meeting began while the original session remained suspended.
+  compound_id: CMP:2f0b0fa860550a0826567bb3
+  content_digest: 2f0b0fa860550a0826567bb3898aae37af6b7459212b41f5ade04f4c49cd4c22
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: resumption of an interrupted activity
+  english_glosses:
+  - resume
+  - resumption of an interrupted activity
+  invariant_definition: A session or activity that was interrupted begins to proceed
+    again as the same activity. A venue opening to traffic or an unrelated meeting
+    beginning does not establish resumption.
+  boundaries:
+    includes: A session or activity that was interrupted begins to proceed again as
+      the same activity. A venue opening to traffic or an unrelated meeting beginning
+      does not establish resumption.
+    excludes: A separate meeting began while the original session remained suspended.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The field findings in reports/translator_field_audit.md motivated this dependency-ordered
+    batch. The listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 65 supplies the specific distinction. Nearest excluded reading: A separate
+    meeting began while the original session remained suspended.'
+  examples:
+    ordinary: After the pause the meeting reopened.
+    technical: A session or activity that was interrupted begins to proceed again
+      as the same activity. A venue opening to traffic or an unrelated meeting beginning
+      does not establish resumption.
+    future_compound: A participant can cause the activity to resume.
+    counterexample: A separate meeting began while the original session remained suspended.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 2f0b0fa860550a0826567bb3898aae37af6b7459212b41f5ade04f4c49cd4c22
 - architecture_version: '1.0'
   compound_id: CMP:2f350e7d8e5dfba4a802d82d
   content_digest: 2f350e7d8e5dfba4a802d82dc95260ddcfa10e8ca8b7e00d34593d8e087c1c9f
@@ -2666,6 +2727,68 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 6c9e3042a361ccae6ecf59808532048ed5f26a6303780c0050063e9a1ce325b6
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:42e9bd596b35612ed6cbe3ce
+    definition_version: 1.0.0
+  - node_id: h
+    kind: root
+    root_id: MIN:011
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: auditory_perception_of_a_target
+    sound_code: 62
+    added_definition: An experiencer is aware of a target through acoustic input registered
+      from that target during the reference interval. Recognizing its identity or
+      understanding a message is optional.
+    excludes:
+    - A microphone records the vibration while no one hears it.
+  compound_id: CMP:6cb819bd20ef8429225daca3
+  content_digest: 6cb819bd20ef8429225daca336e88afb5f6e3fd18889217d6360f51eada54c8a
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: auditory perception of a target
+  english_glosses:
+  - hear
+  - auditory perception of a target
+  invariant_definition: An experiencer is aware of a target through acoustic input
+    registered from that target during the reference interval. Recognizing its identity
+    or understanding a message is optional.
+  boundaries:
+    includes: An experiencer is aware of a target through acoustic input registered
+      from that target during the reference interval. Recognizing its identity or
+      understanding a message is optional.
+    excludes: A microphone records the vibration while no one hears it.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The field findings in reports/translator_field_audit.md motivated this dependency-ordered
+    batch. The listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 62 supplies the specific distinction. Nearest excluded reading: A microphone
+    records the vibration while no one hears it.'
+  examples:
+    ordinary: From the hall I can hear the bell.
+    technical: An experiencer is aware of a target through acoustic input registered
+      from that target during the reference interval. Recognizing its identity or
+      understanding a message is optional.
+    future_compound: An ability can scope over this perception without asserting that
+      it occurred.
+    counterexample: A microphone records the vibration while no one hears it.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 6cb819bd20ef8429225daca336e88afb5f6e3fd18889217d6360f51eada54c8a
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
@@ -4474,6 +4597,68 @@ entries:
   nodes:
   - node_id: q1
     kind: compound_ref
+    compound_id: CMP:bcfd189eb305cf364ada975a
+    definition_version: 1.0.0
+  - node_id: h
+    kind: root
+    root_id: MIN:011
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: visual_perception_of_a_target
+    sound_code: 63
+    added_definition: An experiencer is aware of a target through light registered
+      from that target during the reference interval. No transition from being unaware,
+      identification or interpretation is required.
+    excludes:
+    - The tower first attracts attention when someone mentions it out of view.
+  compound_id: CMP:b937ee54b7c000fafe11d338
+  content_digest: b937ee54b7c000fafe11d338bd7603ea00263a55677c40dba12f80eb0b89deff
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: visual perception of a target
+  english_glosses:
+  - see
+  - visual perception of a target
+  invariant_definition: An experiencer is aware of a target through light registered
+    from that target during the reference interval. No transition from being unaware,
+    identification or interpretation is required.
+  boundaries:
+    includes: An experiencer is aware of a target through light registered from that
+      target during the reference interval. No transition from being unaware, identification
+      or interpretation is required.
+    excludes: The tower first attracts attention when someone mentions it out of view.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The field findings in reports/translator_field_audit.md motivated this dependency-ordered
+    batch. The listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 63 supplies the specific distinction. Nearest excluded reading: The tower
+    first attracts attention when someone mentions it out of view.'
+  examples:
+    ordinary: From here Mira can see the tower.
+    technical: An experiencer is aware of a target through light registered from that
+      target during the reference interval. No transition from being unaware, identification
+      or interpretation is required.
+    future_compound: This can be contrasted with the onset of visual noticing.
+    counterexample: The tower first attracts attention when someone mentions it out
+      of view.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: b937ee54b7c000fafe11d338bd7603ea00263a55677c40dba12f80eb0b89deff
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: compound_ref
     compound_id: CMP:22a4eb4803d9bf5e07204f02
     definition_version: 1.0.0
   - node_id: h
@@ -4652,6 +4837,66 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: beb2a0dff4e59fb7d8b75bf983cb6c590e67fcbfa47b2badebdbeee9aa8834a8
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - node_id: q1
+    kind: root
+    root_id: DAT:000
+  - node_id: h
+    kind: root
+    root_id: ORI:011
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - All parts describe the same bearer or the same reported episode as specified in
+    the conventional meaning.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: open_state_of_a_software_resource
+    sound_code: 64
+    added_definition: A software resource is open for use at the reference time in
+      some application or session. Scope, write permission, who opened it and whether
+      it is being edited are unspecified.
+    excludes:
+    - The file existed on disk while the application had it closed.
+  compound_id: CMP:bfa62b7a436315bd68c9801e
+  content_digest: bfa62b7a436315bd68c9801e9c5b9214c18b90b3061bbeb84ea93235c3f98382
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-15'
+  display_title: open state of a software resource
+  english_glosses:
+  - open for use
+  - open state of a software resource
+  invariant_definition: A software resource is open for use at the reference time
+    in some application or session. Scope, write permission, who opened it and whether
+    it is being edited are unspecified.
+  boundaries:
+    includes: A software resource is open for use at the reference time in some application
+      or session. Scope, write permission, who opened it and whether it is being edited
+      are unspecified.
+    excludes: The file existed on disk while the application had it closed.
+  confidence: high
+  approval_record: lexicon/story_compound_batch.json
+  approval_basis: Author semantic review under the user-directed story vocabulary
+    goal. The field findings in reports/translator_field_audit.md motivated this dependency-ordered
+    batch. The listed alternatives and near misses are author judgments.
+  collision_audit: 'The pinned parts supply the more general meaning. Conventional
+    frame 64 supplies the specific distinction. Nearest excluded reading: The file
+    existed on disk while the application had it closed.'
+  examples:
+    ordinary: The file was open in the editor.
+    technical: A software resource is open for use at the reference time in some application
+      or session. Scope, write permission, who opened it and whether it is being edited
+      are unspecified.
+    future_compound: A later close operation can end this open state.
+    counterexample: The file existed on disk while the application had it closed.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: bfa62b7a436315bd68c9801e9c5b9214c18b90b3061bbeb84ea93235c3f98382
 - architecture_version: '1.0'
   semantic_head: h
   nodes:

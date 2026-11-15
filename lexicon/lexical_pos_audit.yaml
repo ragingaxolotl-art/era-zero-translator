@@ -5,21 +5,21 @@ metadata:
   status: noncanonical_metadata_complete
   canonical_semantic_changes: 0
   root_count: 324
-  indexed_sense_count: 533
+  indexed_sense_count: 541
   game_story_surface_sense_count: 48
-  total_audited_senses: 581
+  total_audited_senses: 589
   part_of_speech_counts:
-    adjective: 29
+    adjective: 30
     adverb: 2
     conjunction: 3
     grammar: 1
     interjection: 1
     noun: 32
-    noun_phrase: 310
+    noun_phrase: 314
     number: 1
     preposition: 2
     quantifier: 1
-    verb: 91
+    verb: 94
     verb_phrase: 108
   policy: English senses carry parts of speech; Era Zero roots retain address-derived
     semantic affordances and may support more than one English syntactic realization.
@@ -14178,6 +14178,20 @@ senses:
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
+- sense_id: ENS:c3e8ee004db6c93f51bc0eca
+  lemma: auditory perception of a target
+  part_of_speech: noun_phrase
+  surface_forms:
+  - auditory perception of a target
+  route: compound
+  target_id: CMP:6cb819bd20ef8429225daca3
+  sense_key: canonical_compound_label
+  definition: An experiencer is aware of a target through acoustic input registered
+    from that target during the reference interval. Recognizing its identity or understanding
+    a message is optional.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
 - sense_id: ENS:b48188c65184dca21f266f35
   lemma: available attentional capacity
   part_of_speech: noun_phrase
@@ -16463,6 +16477,23 @@ senses:
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
+- sense_id: ENS:cce785297d28220b5d691431
+  lemma: hear
+  part_of_speech: verb
+  surface_forms:
+  - hear
+  - hears
+  - heard
+  - hearing
+  route: compound
+  target_id: CMP:6cb819bd20ef8429225daca3
+  sense_key: auditory_perception_of_a_target
+  definition: An experiencer is aware of a target through acoustic input registered
+    from that target during the reference interval. Recognizing its identity or understanding
+    a message is optional.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
 - sense_id: ENS:ce7583f1235d7078c9de8e70
   lemma: home
   part_of_speech: noun
@@ -18135,6 +18166,35 @@ senses:
     is unspecified.
   fidelity: high
   controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:db386a6b8f1cd596018d8b54
+  lemma: open for use
+  part_of_speech: adjective
+  surface_forms:
+  - open for use
+  - open in software
+  route: compound
+  target_id: CMP:bfa62b7a436315bd68c9801e
+  sense_key: open_state_of_a_software_resource
+  definition: A software resource is open for use at the reference time in some application
+    or session. Scope, write permission, who opened it and whether it is being edited
+    are unspecified.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:bbc915f48c286c67fb020b03
+  lemma: open state of a software resource
+  part_of_speech: noun_phrase
+  surface_forms:
+  - open state of a software resource
+  route: compound
+  target_id: CMP:bfa62b7a436315bd68c9801e
+  sense_key: canonical_compound_label
+  definition: A software resource is open for use at the reference time in some application
+    or session. Scope, write permission, who opened it and whether it is being edited
+    are unspecified.
+  fidelity: high
+  controlled_input_allowed: true
   authority_layer: english_sense_index
 - sense_id: ENS:fde92fc69d8d1aeff6000ad0
   lemma: operative constraint-target applicability
@@ -19894,6 +19954,37 @@ senses:
   fidelity: high
   controlled_input_allowed: true
   authority_layer: english_sense_index
+- sense_id: ENS:2952eebf516636f09b50514f
+  lemma: resume
+  part_of_speech: verb
+  surface_forms:
+  - resume
+  - resumes
+  - resumed
+  - resuming
+  route: compound
+  target_id: CMP:2f0b0fa860550a0826567bb3
+  sense_key: resumption_of_an_interrupted_activity
+  definition: A session or activity that was interrupted begins to proceed again as
+    the same activity. A venue opening to traffic or an unrelated meeting beginning
+    does not establish resumption.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:4deed8fcd8636aaedb3cf93a
+  lemma: resumption of an interrupted activity
+  part_of_speech: noun_phrase
+  surface_forms:
+  - resumption of an interrupted activity
+  route: compound
+  target_id: CMP:2f0b0fa860550a0826567bb3
+  sense_key: canonical_compound_label
+  definition: A session or activity that was interrupted begins to proceed again as
+    the same activity. A venue opening to traffic or an unrelated meeting beginning
+    does not establish resumption.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
 - sense_id: ENS:166cbe337a240a43af71830f
   lemma: retained position
   part_of_speech: noun_phrase
@@ -20080,6 +20171,23 @@ senses:
     which that relationship holds.
   fidelity: high
   controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:7409319a93bc8cfd2cddc172
+  lemma: see
+  part_of_speech: verb
+  surface_forms:
+  - see
+  - sees
+  - saw
+  - seeing
+  route: compound
+  target_id: CMP:b937ee54b7c000fafe11d338
+  sense_key: visual_perception_of_a_target
+  definition: An experiencer is aware of a target through light registered from that
+    target during the reference interval. No transition from being unaware, identification
+    or interpretation is required.
+  fidelity: high
+  controlled_input_allowed: false
   authority_layer: english_sense_index
 - sense_id: ENS:e2737704f0c0bebfb4450550
   lemma: self
@@ -20542,6 +20650,20 @@ senses:
   definition: A cognizer comes to notice the target through optical information registered
     from it during the same episode. The receiver of the optical information is the
     one who notices. Naming, recognizing or searching for the target is optional.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:373e3a41d446a63a36c953ee
+  lemma: visual perception of a target
+  part_of_speech: noun_phrase
+  surface_forms:
+  - visual perception of a target
+  route: compound
+  target_id: CMP:b937ee54b7c000fafe11d338
+  sense_key: canonical_compound_label
+  definition: An experiencer is aware of a target through light registered from that
+    target during the reference interval. No transition from being unaware, identification
+    or interpretation is required.
   fidelity: high
   controlled_input_allowed: true
   authority_layer: english_sense_index

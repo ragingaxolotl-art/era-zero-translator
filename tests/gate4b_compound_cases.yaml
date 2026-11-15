@@ -2,7 +2,7 @@
 metadata:
   title: Gate 4B dictionary conformance and routing cases
   version: 1.0.0
-  approved_entries: 94
+  approved_entries: 98
 accepted:
 - case_id: arrival_back_at_a_prior_position
   compound_id: CMP:0808e01be62b7fac873ee324
@@ -63,6 +63,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: dormant_living_body
   compound_id: CMP:2d993bb1d93b7d24d303e364
+  expected: valid_approved_entry
+- case_id: resumption_of_an_interrupted_activity
+  compound_id: CMP:2f0b0fa860550a0826567bb3
   expected: valid_approved_entry
 - case_id: program_definition
   compound_id: CMP:2f350e7d8e5dfba4a802d82d
@@ -135,6 +138,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: consciously_felt_self-condition
   compound_id: CMP:6c9e3042a361ccae6ecf5980
+  expected: valid_approved_entry
+- case_id: auditory_perception_of_a_target
+  compound_id: CMP:6cb819bd20ef8429225daca3
   expected: valid_approved_entry
 - case_id: physical_region_interior_relation
   compound_id: CMP:6ccc77b4b3aa69bb010849a4
@@ -214,6 +220,9 @@ accepted:
 - case_id: deliberate_inspection_of_a_target
   compound_id: CMP:b72611332d4684a6b7f0bf19
   expected: valid_approved_entry
+- case_id: visual_perception_of_a_target
+  compound_id: CMP:b937ee54b7c000fafe11d338
+  expected: valid_approved_entry
 - case_id: request_for_attainment_of_an_activity_endpoint
   compound_id: CMP:ba437968d31a6673a65ed1ff
   expected: valid_approved_entry
@@ -222,6 +231,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: possession_of_an_available_resource
   compound_id: CMP:beb2a0dff4e59fb7d8b75bf9
+  expected: valid_approved_entry
+- case_id: open_state_of_a_software_resource
+  compound_id: CMP:bfa62b7a436315bd68c9801e
   expected: valid_approved_entry
 - case_id: completed_acquisition_of_physical_custody
   compound_id: CMP:c332d2e89b9f6177486fc93b

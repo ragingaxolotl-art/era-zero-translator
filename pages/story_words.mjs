@@ -337,12 +337,63 @@ export const storyWords = [
       "CMP:22a4eb4803d9bf5e07204f02",
       "CMP:59400f445c53fdb3333c7943"
     ]
+  },
+  {
+    "word": "hear",
+    "code": 62,
+    "example": "From the hall I can hear the bell.",
+    "near": "A microphone records the vibration while no one hears it.",
+    "id": "CMP:6cb819bd20ef8429225daca3",
+    "parts": [
+      "CMP:42e9bd596b35612ed6cbe3ce",
+      "MIN:011"
+    ]
+  },
+  {
+    "word": "see",
+    "code": 63,
+    "example": "From here Mira can see the tower.",
+    "near": "The tower first attracts attention when someone mentions it out of view.",
+    "id": "CMP:b937ee54b7c000fafe11d338",
+    "parts": [
+      "CMP:bcfd189eb305cf364ada975a",
+      "MIN:011"
+    ]
+  },
+  {
+    "word": "open for use",
+    "code": 64,
+    "example": "The file was open in the editor.",
+    "near": "The file existed on disk while the application had it closed.",
+    "id": "CMP:bfa62b7a436315bd68c9801e",
+    "parts": [
+      "DAT:000",
+      "ORI:011"
+    ]
+  },
+  {
+    "word": "resume",
+    "code": 65,
+    "example": "After the pause the meeting reopened.",
+    "near": "A separate meeting began while the original session remained suspended.",
+    "id": "CMP:2f0b0fa860550a0826567bb3",
+    "parts": [
+      "CMP:3d95154b4812da0cefd7fc45",
+      "ORI:110"
+    ]
   }
 ];
 export const storyDependencies = [
   {
     "id": "CMP:bcfd189eb305cf364ada975a",
     "code": 1,
+    "parts": [
+      "CMP:ade73037114406a2cd91ce13"
+    ]
+  },
+  {
+    "id": "CMP:42e9bd596b35612ed6cbe3ce",
+    "code": 2,
     "parts": [
       "CMP:ade73037114406a2cd91ce13"
     ]

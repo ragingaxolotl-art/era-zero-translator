@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 533
-  lemma_count: 512
+  sense_count: 541
+  lemma_count: 520
   canonical_atom_senses: 324
-  canonical_compound_senses: 94
+  canonical_compound_senses: 98
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: 2414ae7c0c64cb3b9455dd6dab310125c04d4f621a4b40fd7efa75eed7b93f07
+  compound_dictionary_fingerprint: 9220e1989a440ce941852da3045960c0c49409e69bc6a1dd1d7a529074cfc2ff
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -1063,6 +1063,24 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: auditory perception of a target
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:6cb819bd20ef8429225daca3
+  definition: An experiencer is aware of a target through acoustic input registered
+    from that target during the reference interval. Recognizing its identity or understanding
+    a message is optional.
+  sense_id: ENS:c3e8ee004db6c93f51bc0eca
+  display_form: auditory perception of a target
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A microphone records the vibration while no one hears it.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:b48188c65184dca21f266f35
   lemma: available attentional capacity
   display_form: available attentional capacity
@@ -4111,6 +4129,28 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: lexicon/story_compound_batch.json
+- lemma: hear
+  part_of_speech: verb
+  sense_key: auditory_perception_of_a_target
+  route: compound
+  target_id: CMP:6cb819bd20ef8429225daca3
+  definition: An experiencer is aware of a target through acoustic input registered
+    from that target during the reference interval. Recognizing its identity or understanding
+    a message is optional.
+  sense_id: ENS:cce785297d28220b5d691431
+  display_form: hear
+  surface_forms:
+  - hear
+  - hears
+  - heard
+  - hearing
+  selection_cues:
+  - From the hall I can hear the bell.
+  excluded_readings:
+  - A microphone records the vibration while no one hears it.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:ce7583f1235d7078c9de8e70
   lemma: home
   display_form: home
@@ -6357,6 +6397,44 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: lexicon/story_compound_batch.json
+- lemma: open for use
+  part_of_speech: adjective
+  sense_key: open_state_of_a_software_resource
+  route: compound
+  target_id: CMP:bfa62b7a436315bd68c9801e
+  definition: A software resource is open for use at the reference time in some application
+    or session. Scope, write permission, who opened it and whether it is being edited
+    are unspecified.
+  sense_id: ENS:db386a6b8f1cd596018d8b54
+  display_form: open for use
+  surface_forms:
+  - open for use
+  - open in software
+  selection_cues:
+  - The file was open in the editor.
+  excluded_readings:
+  - The file existed on disk while the application had it closed.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
+- lemma: open state of a software resource
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:bfa62b7a436315bd68c9801e
+  definition: A software resource is open for use at the reference time in some application
+    or session. Scope, write permission, who opened it and whether it is being edited
+    are unspecified.
+  sense_id: ENS:bbc915f48c286c67fb020b03
+  display_form: open state of a software resource
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - The file existed on disk while the application had it closed.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:fde92fc69d8d1aeff6000ad0
   lemma: operative constraint-target applicability
   display_form: operative constraint-target applicability
@@ -8731,6 +8809,46 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: resume
+  part_of_speech: verb
+  sense_key: resumption_of_an_interrupted_activity
+  route: compound
+  target_id: CMP:2f0b0fa860550a0826567bb3
+  definition: A session or activity that was interrupted begins to proceed again as
+    the same activity. A venue opening to traffic or an unrelated meeting beginning
+    does not establish resumption.
+  sense_id: ENS:2952eebf516636f09b50514f
+  display_form: resume
+  surface_forms:
+  - resume
+  - resumes
+  - resumed
+  - resuming
+  selection_cues:
+  - After the pause the meeting reopened.
+  excluded_readings:
+  - A separate meeting began while the original session remained suspended.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
+- lemma: resumption of an interrupted activity
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:2f0b0fa860550a0826567bb3
+  definition: A session or activity that was interrupted begins to proceed again as
+    the same activity. A venue opening to traffic or an unrelated meeting beginning
+    does not establish resumption.
+  sense_id: ENS:4deed8fcd8636aaedb3cf93a
+  display_form: resumption of an interrupted activity
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A separate meeting began while the original session remained suspended.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:166cbe337a240a43af71830f
   lemma: retained position
   display_form: retained position
@@ -8965,6 +9083,28 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: see
+  part_of_speech: verb
+  sense_key: visual_perception_of_a_target
+  route: compound
+  target_id: CMP:b937ee54b7c000fafe11d338
+  definition: An experiencer is aware of a target through light registered from that
+    target during the reference interval. No transition from being unaware, identification
+    or interpretation is required.
+  sense_id: ENS:7409319a93bc8cfd2cddc172
+  display_form: see
+  surface_forms:
+  - see
+  - sees
+  - saw
+  - seeing
+  selection_cues:
+  - From here Mira can see the tower.
+  excluded_readings:
+  - The tower first attracts attention when someone mentions it out of view.
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/story_compound_batch.json
 - sense_id: ENS:e2737704f0c0bebfb4450550
   lemma: self
   display_form: self
@@ -9574,6 +9714,24 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: visual perception of a target
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:b937ee54b7c000fafe11d338
+  definition: An experiencer is aware of a target through light registered from that
+    target during the reference interval. No transition from being unaware, identification
+    or interpretation is required.
+  sense_id: ENS:373e3a41d446a63a36c953ee
+  display_form: visual perception of a target
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - The tower first attracts attention when someone mentions it out of view.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:608cf277730410f915c85501
   lemma: wait
   display_form: wait
@@ -10058,6 +10216,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  auditory perception of a target:
+    sense_ids:
+    - ENS:c3e8ee004db6c93f51bc0eca
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   available attentional capacity:
     sense_ids:
     - ENS:b48188c65184dca21f266f35
@@ -11199,6 +11364,13 @@ lemma_index:
     - compound
     - gap
     - grammar
+  hear:
+    sense_ids:
+    - ENS:cce785297d28220b5d691431
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   home:
     sense_ids:
     - ENS:ce7583f1235d7078c9de8e70
@@ -12035,6 +12207,20 @@ lemma_index:
   open:
     sense_ids:
     - ENS:d37803572f23ba667cbdf161
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  open for use:
+    sense_ids:
+    - ENS:db386a6b8f1cd596018d8b54
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  open state of a software resource:
+    sense_ids:
+    - ENS:bbc915f48c286c67fb020b03
     requires_disambiguation: false
     direct_target_count: 1
     routes:
@@ -12929,6 +13115,20 @@ lemma_index:
     direct_target_count: 1
     routes:
     - compound
+  resume:
+    sense_ids:
+    - ENS:2952eebf516636f09b50514f
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  resumption of an interrupted activity:
+    sense_ids:
+    - ENS:4deed8fcd8636aaedb3cf93a
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   retained position:
     sense_ids:
     - ENS:166cbe337a240a43af71830f
@@ -13000,6 +13200,13 @@ lemma_index:
   satisfaction of an applicable criterion:
     sense_ids:
     - ENS:6ec2fb4a9fdb21da577acc93
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  see:
+    sense_ids:
+    - ENS:7409319a93bc8cfd2cddc172
     requires_disambiguation: false
     direct_target_count: 1
     routes:
@@ -13233,6 +13440,13 @@ lemma_index:
   visual noticing of a target:
     sense_ids:
     - ENS:36fb8c20387329cfbc9917f4
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  visual perception of a target:
+    sense_ids:
+    - ENS:373e3a41d446a63a36c953ee
     requires_disambiguation: false
     direct_target_count: 1
     routes:

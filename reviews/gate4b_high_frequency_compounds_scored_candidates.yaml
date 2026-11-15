@@ -6904,3 +6904,298 @@ reviews:
     decision: 'rejected: unnecessary change of authority'
   recommendation: approve specific_convention
   confidence: high
+- compound_id: CMP:6cb819bd20ef8429225daca3
+  display_title: auditory perception of a target
+  current_choice_reason: The authored distinction is exercised by From the hall I
+    can hear the bell. and contrasted with A microphone records the vibration while
+    no one hears it.
+  candidates:
+  - candidate_id: specific_convention
+    direction: An experiencer is aware of a target through acoustic input registered
+      from that target during the reference interval. Recognizing its identity or
+      understanding a message is optional.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: compound_ref
+        compound_id: CMP:42e9bd596b35612ed6cbe3ce
+        definition_version: 1.0.0
+      - node_id: h
+        kind: root
+        root_id: MIN:011
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: auditory_perception_of_a_target
+        sound_code: 62
+        added_definition: An experiencer is aware of a target through acoustic input
+          registered from that target during the reference interval. Recognizing its
+          identity or understanding a message is optional.
+        excludes:
+        - A microphone records the vibration while no one hears it.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: A microphone records
+      the vibration while no one hears it.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:b937ee54b7c000fafe11d338
+  display_title: visual perception of a target
+  current_choice_reason: The authored distinction is exercised by From here Mira can
+    see the tower. and contrasted with The tower first attracts attention when someone
+    mentions it out of view.
+  candidates:
+  - candidate_id: specific_convention
+    direction: An experiencer is aware of a target through light registered from that
+      target during the reference interval. No transition from being unaware, identification
+      or interpretation is required.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: compound_ref
+        compound_id: CMP:bcfd189eb305cf364ada975a
+        definition_version: 1.0.0
+      - node_id: h
+        kind: root
+        root_id: MIN:011
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: visual_perception_of_a_target
+        sound_code: 63
+        added_definition: An experiencer is aware of a target through light registered
+          from that target during the reference interval. No transition from being
+          unaware, identification or interpretation is required.
+        excludes:
+        - The tower first attracts attention when someone mentions it out of view.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: The tower first attracts
+      attention when someone mentions it out of view.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:bfa62b7a436315bd68c9801e
+  display_title: open state of a software resource
+  current_choice_reason: The authored distinction is exercised by The file was open
+    in the editor. and contrasted with The file existed on disk while the application
+    had it closed.
+  candidates:
+  - candidate_id: specific_convention
+    direction: A software resource is open for use at the reference time in some application
+      or session. Scope, write permission, who opened it and whether it is being edited
+      are unspecified.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: root
+        root_id: DAT:000
+      - node_id: h
+        kind: root
+        root_id: ORI:011
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: open_state_of_a_software_resource
+        sound_code: 64
+        added_definition: A software resource is open for use at the reference time
+          in some application or session. Scope, write permission, who opened it and
+          whether it is being edited are unspecified.
+        excludes:
+        - The file existed on disk while the application had it closed.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: The file existed on disk
+      while the application had it closed.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high
+- compound_id: CMP:2f0b0fa860550a0826567bb3
+  display_title: resumption of an interrupted activity
+  current_choice_reason: The authored distinction is exercised by After the pause
+    the meeting reopened. and contrasted with A separate meeting began while the original
+    session remained suspended.
+  candidates:
+  - candidate_id: specific_convention
+    direction: A session or activity that was interrupted begins to proceed again
+      as the same activity. A venue opening to traffic or an unrelated meeting beginning
+      does not establish resumption.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 9
+      everyday_language_coverage: 8
+      technical_coverage: 9
+    total: 73
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - node_id: q1
+        kind: compound_ref
+        compound_id: CMP:3d95154b4812da0cefd7fc45
+        definition_version: 1.0.0
+      - node_id: h
+        kind: root
+        root_id: ORI:110
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: resumption_of_an_interrupted_activity
+        sound_code: 65
+        added_definition: A session or activity that was interrupted begins to proceed
+          again as the same activity. A venue opening to traffic or an unrelated meeting
+          beginning does not establish resumption.
+        excludes:
+        - A separate meeting began while the original session remained suspended.
+  - candidate_id: parts_alone
+    direction: 'The component meanings allow this near miss: A separate meeting began
+      while the original session remained suspended.'
+    scores:
+      atomicity: 9
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 3
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 6
+      technical_coverage: 5
+    total: 48
+    decision: 'rejected: missing distinction'
+  - candidate_id: new_atom
+    direction: A new root would duplicate the prior foundations and break the 324-address
+      inventory.
+    scores:
+      atomicity: 2
+      address_fit: 4
+      family_fit: 2
+      neighbor_separation: 5
+      cross_family_separation: 3
+      compound_usefulness: 3
+      everyday_language_coverage: 1
+      technical_coverage: 3
+    total: 23
+    decision: 'rejected: unnecessary change of authority'
+  recommendation: approve specific_convention
+  confidence: high

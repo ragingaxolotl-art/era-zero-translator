@@ -1,8 +1,8 @@
 ---
 metadata:
   version: 1.0.0
-  sense_count: 533
-  lemma_count: 512
+  sense_count: 541
+  lemma_count: 520
 exact_atom_labels:
 - input: continuous self
   expected_route: atom
@@ -1037,6 +1037,9 @@ exact_compound_labels:
 - input: dormant living body
   expected_route: compound
   expected_target: CMP:2d993bb1d93b7d24d303e364
+- input: resumption of an interrupted activity
+  expected_route: compound
+  expected_target: CMP:2f0b0fa860550a0826567bb3
 - input: program definition
   expected_route: compound
   expected_target: CMP:2f350e7d8e5dfba4a802d82d
@@ -1109,6 +1112,9 @@ exact_compound_labels:
 - input: consciously felt self-condition
   expected_route: compound
   expected_target: CMP:6c9e3042a361ccae6ecf5980
+- input: auditory perception of a target
+  expected_route: compound
+  expected_target: CMP:6cb819bd20ef8429225daca3
 - input: physical region interior relation
   expected_route: compound
   expected_target: CMP:6ccc77b4b3aa69bb010849a4
@@ -1187,6 +1193,9 @@ exact_compound_labels:
 - input: deliberate inspection of a target
   expected_route: compound
   expected_target: CMP:b72611332d4684a6b7f0bf19
+- input: visual perception of a target
+  expected_route: compound
+  expected_target: CMP:b937ee54b7c000fafe11d338
 - input: request for attainment of an activity endpoint
   expected_route: compound
   expected_target: CMP:ba437968d31a6673a65ed1ff
@@ -1196,6 +1205,9 @@ exact_compound_labels:
 - input: possession of an available resource
   expected_route: compound
   expected_target: CMP:beb2a0dff4e59fb7d8b75bf9
+- input: open state of a software resource
+  expected_route: compound
+  expected_target: CMP:bfa62b7a436315bd68c9801e
 - input: completed acquisition of physical custody
   expected_route: compound
   expected_target: CMP:c332d2e89b9f6177486fc93b
