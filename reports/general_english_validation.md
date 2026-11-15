@@ -4,10 +4,10 @@ Status: **PASS — CORE TRANSLATOR PIPELINE CANONICAL**
 
 - Checks passed: **16**
 - Checks failed: **0**
-- Indexed senses: **497**
+- Indexed senses: **509**
 - Analysis fixtures: **13**
 - Resolution fixtures: **4**
-- Exact-lemma sense recall: **497/497**
+- Exact-lemma sense recall: **509/509**
 - Silent first-match selection: **no**
 - Next authorized gate: **glyph and audio**
 
