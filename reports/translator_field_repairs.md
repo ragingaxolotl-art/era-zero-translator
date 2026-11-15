@@ -38,6 +38,8 @@ The first two recordings exposed weak bass through the laptop speakers. The list
 
 These trials cover one laptop, one room, the reference voice, a single song line, and the browser’s fixed tempo. The WAV listener runs from the repository. The website’s **Check musical meaning** reads saved notes. Crowded rooms, other instruments, singers and physical iPhone playback still need separate tests.
 
+The retained implementation suite passed 277 checks, including its clean acoustic tests. The Lore suite passed 176 checks. The four existing choir arrangements also revalidated against the updated translator, covering all 168 phrases and 24 sentence verses across 12 voices. [Implementation checks](field_repair_regression.json) · [Choir validation](https://github.com/ragingaxolotl-art/cyber-pet-lore/blob/main/site/songs/voices-chords/language-validation.json)
+
 ## Reproducing the checks
 
 With the site running locally, use a Chromium/Playwright installation for the browser tests and NumPy and SciPy for recorded WAVs.

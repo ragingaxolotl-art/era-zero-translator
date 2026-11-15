@@ -11,6 +11,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
 parser.add_argument('--node', default=shutil.which('node'))
+parser.add_argument('--report', help='Write results to this path instead of replacing the standard report')
 parser.add_argument('--include-acoustic', action='store_true', help='Include synthetic WAV-only tests; requires NumPy and SciPy')
 args = parser.parse_args()
 if not args.node:
@@ -66,5 +67,5 @@ report = {
         'Source reconciliation, release migration and publication validation',
     ],
 }
-(ROOT / 'reports/translator_completion_regression.json').write_text(json.dumps(report, indent=2) + '\n')
+(Path(args.report) if args.report else ROOT / 'reports/translator_completion_regression.json').write_text(json.dumps(report, indent=2) + '\n')
 sys.exit(0 if report['passed'] else 1)
