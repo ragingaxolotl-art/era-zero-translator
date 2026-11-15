@@ -201,8 +201,8 @@ export const storyWords = [
     "near": "Workers opened a new tunnel that had never been passable before.",
     "id": "CMP:28e9f477e3bc88111934ddda",
     "parts": [
-      "CMP:f9554786959994e2f5fb6e9c",
       "CMP:3c7e1b60fb3087e942be4555",
+      "CMP:f9554786959994e2f5fb6e9c",
       "ORI:110"
     ]
   }

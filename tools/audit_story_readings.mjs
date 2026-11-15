@@ -27,12 +27,12 @@ const verdicts=[
  full(['find','REP:110','MOV:110'],[[0,1],[0,1],[2]],'The discovery introduces the cracked bell. Pip repairs that bell before Ada arrives.'),
  full(['ring'],[[0]],'Negation encloses all of the specified bells. Zero ringing bells is compatible.'),
  full(['ring'],[[0]],'The specified group has zero members that rang.'),
- gap('The path and the sense of accessible or open both need context.'),
+ ask('subject0','It','new:the return path','passable','Asks what was open. Supplying the return path preserves its full name and the past state of allowing passage.'),
  ask('object0','it','new:the record','find','Asks for the object while keeping the listener as the commanded finder.'),
  ask('subject0','It','new:the request','recur','Asks what recurred. The reading introduces no causal agent.'),
- ask('object0','notice','new:the signal','MIN:011','Asks what was noticed. The resulting dictionary reading generalizes noticing to representing the target.'),
+ ask('object0','notice','new:the signal','notice','Asks what entered the speaker’s awareness. The resulting score does not assume sight or sound.'),
  gap('Withdrawal from contact is outside the scored construction.'),
- {...full(['MIN:011','REP:110'],[[0,1],[0,1]],'The radio alone is cracked. Both actions share Ada and the radio. The noticing verb is generalized to awareness of the target.'),grade:'Partial'},
+ full(['notice','REP:110'],[[0,1],[0,1]],'The radio alone is cracked. Ada’s awareness of it begins, and Ada repairs the very same radio. Neither a sensory channel nor strict ordering is assumed.'),
  full(['ring','MOV:110'],[[0],[1]],'Mira arrives before the bell rings.'),
  full(['cease'],[[0]],'The request stops without implying destruction.'),
  full(['find'],[[0,1]],'Latch discovers the specific result.'),
@@ -62,6 +62,7 @@ for(const [cohort,entries] of Object.entries(inputs)){
     const selected=storyReading(source,a,{answers:{[expectation.key]:expectation.answer}});
     const scored=await scoreStory(selected,a), recovered=decodeStoryMidi(scored.midi,a.atoms);
     assert.deepEqual(recovered,scored.meaning,source);assert.equal(recovered.events[0].predicate,id(expectation.predicate),source);
+    if(source==='It was open.')assert.deepEqual(recovered.entities[0].identity.phonemes,(await encodeName('return path')).phonemes);
     if(source==='Find it!')assert.equal(recovered.speech_act,'command');
     if(source.startsWith('Her phone'))assert.equal(recovered.entities[1].owner,0);
   }else{
@@ -83,9 +84,10 @@ for(const [cohort,entries] of Object.entries(inputs)){
 }
 assert.equal(index,verdicts.length);
 const doc=['# Story and dialogue listening audit','',
- 'Run the [story grammar tests](../tests/story_readings_test.mjs) for melody and compact-chord MIDI. The [clean-WAV test](../tests/story_acoustic_test.mjs) plays the Pip passage and both bell-count messages through the calibrated monophonic audio transport and compares the listener’s recovered meaning. Physical speaker-to-microphone recordings and polyphonic audio decoding remain untested.','',
+ 'Run the [story grammar tests](../tests/story_readings_test.mjs) for melody and compact-chord MIDI. The [clean-WAV test](../tests/story_acoustic_test.mjs) plays the Pip passage, both bell-count messages, visual noticing and reopening through the calibrated monophonic audio transport and compares the listener’s recovered meaning. Physical speaker-to-microphone recordings and polyphonic audio decoding remain untested.','',
  'Each intended reading was written before the translator saw that group. The inverse received the musical notes and the shared dictionary. Clarification cases were also played and decoded after supplying the missing detail. Partial marks an audible loss. Gap marks an unavailable whole-line score. A word sketch earns neither full nor partial credit here.','',
  'The original development baseline scored 0 of 11 complete lines. The first seven reserved cases produced two scores, one useful question and four gaps. Closer comparison found that one of those two scores preserved the participants but generalized noticing. Follow-up work added an intransitive reading of *repeat* and a question for an omitted target. A second reserve exposed a broad default for *found* even with the precise discovery compound available. The simple subject–verb–object path now uses that discovery meaning. The four final reserved lines were tested after these changes. These are authored checks on this corpus.','',
+ 'Before the new noticing and passage compounds, these same 29 lines yielded 13 preserved, eight useful clarifications, one partial and seven gaps. This rerun measures the change on familiar material. The [separately reserved follow-up](story_followup.md) measures new material.','',
  rows.length+' lines in the current evaluation. '+Object.entries(counts).map(([k,v])=>v+' '+k.toLowerCase()).join(', ')+'.','',
  'The original scope, before-run intentions and first reserved results are available in the [completion plan](../docs/translator-completion.md), [intention ledger](../tests/story_reading_intentions.json), [development baseline](story_reading_baseline.json) and [first reserved run](story_reserved_first_run.json).',''];
 for(const [key,title] of [['development','Development lines'],['reserved','First reserve after follow-up'],['second_reserve','Second reserve after follow-up'],['final_reserve','Final reserve, first run']]){

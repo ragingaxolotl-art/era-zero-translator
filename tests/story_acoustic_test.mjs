@@ -11,7 +11,7 @@ const root=fileURLToPath(new URL('..',import.meta.url));
 const authority=JSON.parse(fs.readFileSync(path.join(root,'pages/data/index.json')));
 const directory=fs.mkdtempSync(path.join(os.tmpdir(),'era-story-wav-'));
 try{
- for(const [index,text] of ['Pip found a cracked bell. They repaired it before Ada arrived.','Not all the bells rang.','None of the bells rang.'].entries()){
+ for(const [index,text] of ['Pip found a cracked bell. They repaired it before Ada arrived.','Not all the bells rang.','None of the bells rang.','Nia spotted a blocked gate.','The return path reopened.'].entries()){
   const scored=await scoreSongText(text,authority);
   const samples=notesFromMidi(scored.midi).notes.map(({midi,start_tick,end_tick})=>({midi,start_tick,end_tick}));
   const wav=path.join(directory,index+'.wav');
@@ -19,5 +19,5 @@ try{
   const output=execFileSync(process.execPath,['tools/decode_recorded_audio.mjs',wav,'--allow-draft'],{cwd:root,encoding:'utf8'});
   assert.deepEqual(JSON.parse(output).meaning,scored.meaning,text);
  }
- console.log('PASS three clean synthesized WAVs recovered the linked events, noun properties and quantifier scopes.');
+ console.log('PASS five clean synthesized WAVs recovered linked events, quantifiers, visual noticing, blockage and reopening.');
 }finally{for(const name of fs.readdirSync(directory))fs.unlinkSync(path.join(directory,name));fs.rmdirSync(directory);}

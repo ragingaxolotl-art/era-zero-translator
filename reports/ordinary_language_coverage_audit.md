@@ -6,10 +6,10 @@ Status: **PASS**
 - Existing game/story phrases: **69**
 - Lore performance turns: **22**
 - Total audited phrases: **144**
-- Canonical roots / indexed and profile senses: **324 / 545**
+- Canonical roots / indexed and profile senses: **324 / 557**
 - Automatic single-target readings: **1** (not full sentence translations)
 - Phrases with documented gaps: **27**
-- Phrases with unresolved predicates/descriptors: **24**
+- Phrases with unresolved predicates/descriptors: **23**
 - Assertion failures: **0**
 
 ## What this audit proves
@@ -25,7 +25,7 @@ It checks conservative lexical routing and word-level classifications over three
 | game_story | 69 | 1 | 15 | 3 | 5 |
 | lore | 22 | 0 | 3 | 4 | 2 |
 | motion | 7 | 0 | 1 | 2 | 3 |
-| story | 12 | 0 | 1 | 4 | 4 |
+| story | 12 | 0 | 1 | 3 | 4 |
 
 ## High-priority unrepresented actions and descriptors
 
@@ -46,7 +46,6 @@ These require either a defensible reviewed surface route to an existing meaning,
 | compile | 1 | verb |
 | delivered | 1 | verb |
 | rising | 1 | verb |
-| blocked | 1 | verb |
 | warn | 1 | verb |
 | open | 1 | descriptor |
 | talking | 1 | verb |
@@ -128,7 +127,7 @@ These require either a defensible reviewed surface route to an existing meaning,
 | curated / motion | The storm is coming. | MOV:111 | no | storm:phonemic_label, coming:canonical | PASS |
 | curated / motion | The river is rising. | none | no | river:phonemic_label, rising:unresolved_semantic | PASS |
 | curated / story | Remember the route. | MOV:020 | no | remember:structural, route:canonical | PASS |
-| curated / story | The route is blocked. | MOV:020 | no | route:canonical, blocked:unresolved_semantic | PASS |
+| curated / story | The route is blocked. | CMP:f9554786959994e2f5fb6e9c | no | route:canonical, blocked:canonical | PASS |
 | curated / story | Warn the others. | LIF:010 | no | warn:unresolved_semantic, others:canonical | PASS |
 | curated / story | The door is open. | none | no | door:phonemic_label, open:unresolved_semantic | PASS |
 | curated / story | I do not know. | MIN:010 | no | not:structural, know:canonical | PASS |
@@ -233,7 +232,7 @@ These require either a defensible reviewed surface route to an existing meaning,
 
 ## Review decisions
 
-- Preserve the 324 canonical roots and 76 approved compounds. Corpus frequency alone does not establish a meaning.
+- Preserve the 324 canonical roots and 82 approved compounds. Corpus frequency alone does not establish a meaning.
 - Keep broad and unsupported readings marked as gaps. The sentence composer covers specific felt moods, desires and drinking constructions.
 - Treat data deletion, waiting, crossing, return, and program execution as structural/IR routes until complete templates and role binding exist.
 - Treat `pick up`, `back up`, file opening/saving/copying, and other unrepresented predicates as semantic gaps, never phonemic nouns.

@@ -3,11 +3,11 @@ import {scoreRoleReference,readRoleReference} from './dictionary_clause_music.mj
 import {informationMusic} from './information_music.mjs';
 import {strictSemanticReader} from './strict_semantic_reader.mjs';
 import {midiFromScheduledEvents} from './engine.mjs';
-import {storyWords} from './story_words.mjs';
-import {storyRoles,storyPropertyIds} from './story_readings.mjs';
+import {storyWords,storyDependencies} from './story_words.mjs?v=story-passages-1';
+import {storyRoles,storyPropertyIds} from './story_readings.mjs?v=story-passages-1';
 
-const catalog = new Map(storyWords.map(w=>[w.id,w]));
-const byCode = new Map(storyWords.map(w=>[w.code,w]));
+const catalog = new Map([...storyWords,...storyDependencies].map(w=>[w.id,w]));
+const byCode = new Map([...catalog.values()].map(w=>[w.code,w]));
 const scopes = new Set(['time_before_speech','time_previous_day','time_current_day','time_next_day','modality_necessary','modality_possible','negation','aspect_ongoing']);
 const message = (entities,events,relations,runtime_state,speech_act) => ({
   profile:'EZ-STORY-1',status:'draft',entities,events,relations,runtime_state,speech_act

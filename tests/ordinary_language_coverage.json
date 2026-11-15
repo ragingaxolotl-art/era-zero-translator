@@ -45,7 +45,7 @@
     {"domain":"motion","phrase":"The storm is coming.","target":"MOV:111","expected_terms":{"coming":"canonical"}},
     {"domain":"motion","phrase":"The river is rising.","expected_terms":{"rising":"unresolved_semantic"},"must_not_auto":true},
     {"domain":"story","phrase":"Remember the route.","expected_terms":{"remember":"structural","route":"canonical"}},
-    {"domain":"story","phrase":"The route is blocked.","expected_terms":{"blocked":"unresolved_semantic"},"must_not_auto":true},
+    {"domain":"story","phrase":"The route is blocked.","target":"CMP:f9554786959994e2f5fb6e9c","expected_terms":{"blocked":"canonical"},"must_not_auto":true},
     {"domain":"story","phrase":"Warn the others.","expected_terms":{"warn":"unresolved_semantic"},"must_not_auto":true},
     {"domain":"story","phrase":"The door is open.","expected_terms":{"open":"unresolved_semantic"},"must_not_auto":true},
     {"domain":"story","phrase":"I do not know.","expected_terms":{"know":"canonical"},"must_not_auto":true},

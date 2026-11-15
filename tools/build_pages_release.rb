@@ -21,7 +21,7 @@ FileUtils.mkdir_p(resolution_dir)
 index_html = File.read(File.join(root, "app/public/index.html"))
   .gsub('href="/"', 'href="./"')
   .gsub('href="/styles.css?v=1.15.0"', 'href="./styles.css?v=1.16.0"')
-  .gsub('<script src="/app.js?v=1.15.0" defer></script>', '<script type="module" src="./app.js?v=1.16.1"></script>')
+  .gsub('<script src="/app.js?v=1.15.0" defer></script>', '<script type="module" src="./app.js?v=1.17.0"></script>')
   .sub('    <nav class="app-tabs"', "    <p><a href=\"./compound-builder.html\">Build and save your own compounds →</a></p>\n    <nav class=\"app-tabs\"")
   .gsub('Canonical engine ready', 'Loading canonical browser engine')
   .sub('Use an ordinary sentence. The translator infers intent and state, asks only when your wording has more than one real meaning, and produces canonical Era Zero notation.', 'Write a sentence, choose the intended meaning, and play it as Era Zero music. You can build a missing verb or adjective from words you already have.')
@@ -56,14 +56,19 @@ compounds = EraZeroValidation.load_yaml("lexicon/compound_dictionary.yaml").fetc
 plain_english = EraZeroValidation.load_yaml("lexicon/plain_english_index.yaml")
 # The listener shares these dictionary definitions, never the source sentence.
 compound_by_id = compounds.to_h { |compound| [compound.fetch("compound_id"), compound] }
-def story_sound(entry)
+compound_plans = EraZeroBrowserCompounds.plans(compounds)
+def story_sound(entry, plans)
+  # Binding order follows the renderer. A graph may list its qualifiers in a different order.
+  nodes = entry.fetch("nodes").to_h { |node| [node.fetch("node_id"), node] }
+  order = plans.fetch(entry.fetch("compound_id")).fetch("unbound_components").map { |c| c.fetch("path").first }.chunk(&:itself).map(&:first)
+  raise "Story sound needs a single ordered head and complete components" unless order.last == entry.fetch("semantic_head") && order.sort == nodes.keys.sort
   { "id" => entry.fetch("compound_id"), "code" => entry.fetch("conventional_meaning").fetch("sound_code"),
-    "parts" => entry.fetch("nodes").map { |node| node["compound_id"] || node.fetch("root_id") } }
+    "parts" => order.map { |part| node = nodes.fetch(part); node["compound_id"] || node.fetch("root_id") } }
 end
 story_words = JSON.parse(File.read(File.join(root, "lexicon/story_compound_batch.json"))).map do |word|
   entry = compounds.find { |item| item.fetch("display_title") == word.fetch("title") } or raise "Missing story compound"
   raise "Story word convention differs from dictionary" unless word.fetch("code") == entry.fetch("conventional_meaning").fetch("sound_code")
-  word.slice("word", "code", "example", "near").merge(story_sound(entry))
+  word.slice("word", "code", "example", "near").merge(story_sound(entry, compound_plans))
 end
 known = story_words.to_h { |word| [word.fetch("id"), true] }
 dependencies = []
@@ -71,7 +76,7 @@ pending = story_words.flat_map { |word| word.fetch("parts") }
 until pending.empty?
   id = pending.shift
   next unless compound_by_id.key?(id) && !known[id]
-  sound = story_sound(compound_by_id.fetch(id))
+  sound = story_sound(compound_by_id.fetch(id), compound_plans)
   known[id] = true
   dependencies << sound
   pending.concat(sound.fetch("parts"))
@@ -125,7 +130,7 @@ browser_index = {
   "lore_conversations" => lore_conversations,
   "atoms" => atoms,
   "compounds" => compounds,
-  "compound_plans" => EraZeroBrowserCompounds.plans(compounds),
+  "compound_plans" => compound_plans,
   "controlled" => allowed.map { |sense| sense.slice("sense_id", "lemma", "route", "target_id") },
   "required_roles" => required_roles,
   "resolution_files" => resolution_files,

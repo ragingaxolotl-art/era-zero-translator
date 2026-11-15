@@ -1,5 +1,5 @@
-import {storyReading} from './story_readings.mjs';
-import {scoreStory} from './story_music.mjs';
+import {storyReading} from './story_readings.mjs?v=story-passages-1';
+import {scoreStory} from './story_music.mjs?v=story-passages-1';
 import {everydayMeaning} from './everyday.mjs';
 import {compactChordMidi} from './compact_chords.mjs';
 
@@ -31,7 +31,11 @@ export async function showStoryControls(input,authority,{list,summary,current,pr
       }
       return;
     }
-    if(!plan){summary.textContent='This reading needs more detail. Edit the line to continue.';return;}
+    if(!plan){
+      summary.textContent='This meaning has no whole-line score yet.';
+      button('Change the reading',()=>{for(const key of Object.keys(answers))delete answers[key];return render(initial);});
+      return;
+    }
     const scored=await scoreStory(plan,authority);if(!active())return;
     summary.textContent='Whole story line ready';
     card.append(element('p',scored.description));

@@ -1,5 +1,5 @@
-import {storyReading} from './story_readings.mjs';
-import {scoreStory} from './story_music.mjs';
+import {storyReading} from './story_readings.mjs?v=story-passages-1';
+import {scoreStory} from './story_music.mjs?v=story-passages-1';
 import {dictionaryClausePlan} from './dictionary_clauses.mjs?v=1.16.1';
 import {scoreDictionaryClause} from './dictionary_clause_music.mjs?v=1.16.1';
 import {midiFromFormal,midiFromScheduledEvents} from './engine.mjs';

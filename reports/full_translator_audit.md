@@ -6,8 +6,8 @@ Status: **PASS**
 - Checks failed: **0**
 - Phrase cases: **80**
 - Dictionary roots: **324**
-- Compounds: **76**
-- Indexed senses: **497**
+- Compounds: **82**
+- Indexed senses: **509**
 - Public document records: **608**
 
 ## Phrase matrix
