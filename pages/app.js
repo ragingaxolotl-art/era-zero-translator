@@ -60,7 +60,7 @@ import {parseFoundationSentence,composeFoundationSentence,foundationPronounPlan}
 import {pronounInterpretationPlan,composePronounSentence} from './pronouns.mjs';
 import {helpCareReading,parseSentenceDisjunction,composeSentenceDisjunction,clauseInterpretationPlan,parseSentenceConditional,composeSentenceConditional,parseNamedSentence,composeNamedSentence,needsSentenceComposition,parseSentenceSequence,composeSentenceSequence,parseSentenceConjunction,composeSentenceConjunction} from './sentences.mjs';
 import{svgFromFormal,midiFromFormal,createBundle,verifyBundle,soundPlanFromFormal}from'./engine.mjs?v=1.15.0';
-import{analyzeEnglish}from'./english.mjs?v=field-repairs-2';
+import{analyzeEnglish}from'./english.mjs?v=field-repairs-3';
 import{encodeName,estimatePhonemes,notesForName,midiFromName,PHONEMES}from'./names.mjs?v=1.15.0';
 import{visemePlanFromFormal,visemeFrameAt,visemeFileFromFormal,EYE_EXPRESSIONS}from'./visemes.mjs?v=1.15.0';
 import{recognitionForTarget}from'./recognition.mjs?v=1.15.0';

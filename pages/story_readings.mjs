@@ -1,3 +1,4 @@
+import {isPassageHead} from './passage_nouns.mjs';
 import {knownValueReading} from './known_value.mjs?v=field-repairs-1';
 import {faultCategoryReading} from './fault_correction.mjs?v=field-repairs-1';
 import {routeNounLabel} from './nominals.mjs';
@@ -48,7 +49,6 @@ const deictics = {i:'I',me:'I',we:'we',us:'we',you:'you'};
 const determiners = new Set('a an the this that'.split(' '));
 const personNouns = new Set('person people child children teacher worker friend programmer keeper custodian'.split(' '));
 const machineActors = new Set('program routine resolver robot machine compiler process agent'.split(' '));
-const passageHeads = new Set('path route passage corridor passageway tunnel gate gateway door doorway hatch entrance exit bridge port channel lane road trail opening'.split(' '));
 const passageQualities = new Set([id('passable'),id('blocked')]);
 const nonNouns = new Set('a few no nobody nothing something home again now can will if then some all none of a an the this that to is are was were it they us and but or before after not need needs might could will must who what do does did'.split(' '));
 const folded = s => s.toLowerCase();
@@ -351,7 +351,7 @@ export function storyReading(input, authority, {answers={}, preferences=[]}={}) 
   function passageSense(entity,word,key,root){
     if(![id('reopen'),id('open'),...passageQualities].includes(root))return root;
     const head=(entities[entity].head||'').split(' ').at(-1);
-    if(passageHeads.has(head)||passageHeads.has(head.replace(/s$/,'')))return root;
+    if(isPassageHead(head))return root;
     const software=root===id('passable')&&['file','document','record','program','application','window'].includes(head);
     const session=root===id('reopen')&&['meeting','session','hearing','debate','trial'].includes(head);
     const answer=answers[key];

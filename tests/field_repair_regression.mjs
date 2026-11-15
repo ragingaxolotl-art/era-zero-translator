@@ -26,6 +26,10 @@ for(const input of ['Follow the route.','The pilot followed a marked trail.','Th
 for(const input of ['An adjustment followed.','An adjustment followed after the route reopened.']){
   assert.equal(analyzeEnglish(input,authority).candidates[0].sense_key,'occurrence_after_a_reference_event',input);
 }
+for(const [input,term,expected] of [['Open the folder.','open','unresolved_semantic'],['The hatch is open.','open','unresolved_semantic'],['We used the map.','used','structural']]){
+  assert.equal(analyzeEnglish(input,authority).term_coverage.find(t=>t.term===term).status,expected,input);
+}
+assert.equal((await check('The hatch was open.')).heard.events[0].predicate,id('passable'));
 const carry='The compiler carried the jobs.';
 assert.equal(storyReading(carry,authority).question.key,'carrying0');
 assert.equal((await check(carry,{carrying0:'work'})).heard.events[0].predicate,id('hand off work'));
