@@ -6,9 +6,9 @@ Status: **PASS**
 - Checks failed: **0**
 - Phrase cases: **80**
 - Dictionary roots: **324**
-- Compounds: **82**
-- Indexed senses: **509**
-- Public document records: **616**
+- Compounds: **98**
+- Indexed senses: **541**
+- Public document records: **625**
 
 ## Phrase matrix
 
@@ -46,7 +46,7 @@ Status: **PASS**
 | Maybe go home. | MOV:121 | no | 1 | possibility | maybe:function_word, go:canonical, home:documented_gap | PASS |
 | Wait here. | deferred_action | no | 1 | command | wait:structural, here:canonical | PASS |
 | Stop moving. | MOV:121 | no | 1 | command | stop:structural, moving:canonical | PASS |
-| Continue moving. | MOV:121 | no | 1 | command | continue:structural, moving:canonical | PASS |
+| Continue moving. | MOV:121 | no | 1 | command | continue:canonical, moving:canonical | PASS |
 | Cross the bridge. | boundary_traversal | no | 1 | command | cross:structural, the:function_word, bridge:phonemic_label | PASS |
 | Follow the route. | trajectory_tracking | no | 1 | command | follow:structural, the:function_word, route:canonical | PASS |
 | Transport the box. | caused_target_movement | no | 1 | assertion | transport:structural, the:function_word, box:phonemic_label | PASS |
@@ -68,7 +68,7 @@ Status: **PASS**
 | Think. | generic_cognition | no | 1 | command | think:documented_gap | PASS |
 | True. | truth_value | no | 1 | assertion | true:documented_gap | PASS |
 | Know. | truth_entailing_knowledge | no | 1 | assertion | know:canonical | PASS |
-| Have. | perfect_auxiliary | no | 1 | question | have:canonical | PASS |
+| Have. | CMP:beb2a0dff4e59fb7d8b75bf9 | no | 1 | question | have:canonical | PASS |
 | Change. | generic_state_transition | no | 1 | command | change:canonical | PASS |
 | Send. | DAT:111 | no | 1 | command | send:canonical | PASS |
 | Receive. | CON:111 | no | 1 | command | receive:canonical | PASS |
@@ -103,7 +103,7 @@ Status: **PASS**
 - **PASS** — all generated root fields available
 - **PASS** — complete compound records
 - **PASS** — complete indexed dictionary options
-- **PASS** — document manifest count is exact: 616 records
+- **PASS** — document manifest count is exact: 625 records
 - **PASS** — every document path exists
 - **PASS** — required authority documents are public
 - **PASS** — all evidence categories available
