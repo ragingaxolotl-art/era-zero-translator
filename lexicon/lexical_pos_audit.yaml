@@ -5,21 +5,21 @@ metadata:
   status: noncanonical_metadata_complete
   canonical_semantic_changes: 0
   root_count: 324
-  indexed_sense_count: 497
+  indexed_sense_count: 509
   game_story_surface_sense_count: 48
-  total_audited_senses: 545
+  total_audited_senses: 557
   part_of_speech_counts:
-    adjective: 25
+    adjective: 27
     adverb: 2
     conjunction: 3
     grammar: 1
     interjection: 1
-    noun: 30
-    noun_phrase: 292
+    noun: 31
+    noun_phrase: 298
     number: 1
     preposition: 2
     quantifier: 1
-    verb: 79
+    verb: 82
     verb_phrase: 108
   policy: English senses carry parts of speech; Era Zero roots retain address-derived
     semantic affordances and may support more than one English syntactic realization.
@@ -14303,6 +14303,21 @@ senses:
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
+- sense_id: ENS:e4af1606249f224c5c8c8ca4
+  lemma: blocked
+  part_of_speech: adjective
+  surface_forms:
+  - blocked
+  - impassable
+  route: compound
+  target_id: CMP:f9554786959994e2f5fb6e9c
+  sense_key: passage_preventing_traversal
+  definition: At the reference time the passage prevents the contextually relevant
+    traveler, signal or other traffic from getting through. The route can remain identifiable
+    throughout the blockage. The cause, responsibility and duration are unspecified.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
 - sense_id: ENS:4ba08e5d2231c0881249f7ba
   lemma: body
   part_of_speech: noun
@@ -17597,6 +17612,24 @@ senses:
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
+- sense_id: ENS:ccc57384f3669fa64a5585c8
+  lemma: notice
+  part_of_speech: verb
+  surface_forms:
+  - notice
+  - notices
+  - noticed
+  - noticing
+  route: compound
+  target_id: CMP:ac9df67396f3632d36b5d078
+  sense_key: onset_of_awareness_of_a_target
+  definition: During an episode a cognizer comes to register a particular, distinct
+    target in awareness. The change makes the target present to that cognizer at the
+    time of noticing. The target may be familiar. The means of detection and any subsequent
+    response are unspecified.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
 - sense_id: ENS:082d86e658eb1121fcb82728
   lemma: occupied constituent position
   part_of_speech: noun_phrase
@@ -17884,6 +17917,21 @@ senses:
     the actor has reached the opposite side or completed the crossing. No particular
     speed, straightness, intention, unassisted activity or subsequent location is
     asserted.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:c98586fe68b1e924523623c4
+  lemma: onset of awareness of a target
+  part_of_speech: noun_phrase
+  surface_forms:
+  - onset of awareness of a target
+  route: compound
+  target_id: CMP:ac9df67396f3632d36b5d078
+  sense_key: canonical_compound_label
+  definition: During an episode a cognizer comes to register a particular, distinct
+    target in awareness. The change makes the target present to that cognizer at the
+    time of noticing. The target may be familiar. The means of detection and any subsequent
+    response are unspecified.
   fidelity: high
   controlled_input_allowed: true
   authority_layer: english_sense_index
@@ -18270,6 +18318,63 @@ senses:
   definition: A stable position understood as the source from which movement, measurement,
     or sequence begins.
   fidelity: authoritative
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:13ba9a6b4f23f2ecbe0162e6
+  lemma: passable
+  part_of_speech: adjective
+  surface_forms:
+  - passable
+  route: compound
+  target_id: CMP:3c7e1b60fb3087e942be4555
+  sense_key: passage_permitting_traversal
+  definition: At the reference time the passage permits the contextually relevant
+    traveler, signal or other traffic to get through. No actual traversal, invitation,
+    safety guarantee or legal permission is implied.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:b5f0ca8016ced97eda902e8f
+  lemma: passage
+  part_of_speech: noun
+  surface_forms:
+  - passage
+  - passages
+  route: compound
+  target_id: CMP:6ae4a680528e1cd7fd1ac0df
+  sense_key: route_through_an_interface
+  definition: An established route connects two sides through an identifiable interface.
+    It can be a physical opening or a defined path between parts of a machine or system.
+    Its availability to any traveler or signal at a particular time is unspecified.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:39c6551f8c937417b5890479
+  lemma: passage permitting traversal
+  part_of_speech: noun_phrase
+  surface_forms:
+  - passage permitting traversal
+  route: compound
+  target_id: CMP:3c7e1b60fb3087e942be4555
+  sense_key: canonical_compound_label
+  definition: At the reference time the passage permits the contextually relevant
+    traveler, signal or other traffic to get through. No actual traversal, invitation,
+    safety guarantee or legal permission is implied.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:bee25b01e6b898198473c44f
+  lemma: passage preventing traversal
+  part_of_speech: noun_phrase
+  surface_forms:
+  - passage preventing traversal
+  route: compound
+  target_id: CMP:f9554786959994e2f5fb6e9c
+  sense_key: canonical_compound_label
+  definition: At the reference time the passage prevents the contextually relevant
+    traveler, signal or other traffic from getting through. The route can remain identifiable
+    throughout the blockage. The cause, responsibility and duration are unspecified.
+  fidelity: high
   controlled_input_allowed: true
   authority_layer: english_sense_index
 - sense_id: ENS:a10921c3c47805bd67e92fb6
@@ -19429,6 +19534,24 @@ senses:
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
+- sense_id: ENS:d5d5986c9ef86480f32ba2ce
+  lemma: reopen
+  part_of_speech: verb
+  surface_forms:
+  - reopen
+  - reopens
+  - reopened
+  - reopening
+  route: compound
+  target_id: CMP:28e9f477e3bc88111934ddda
+  sense_key: restoration_of_passage_after_blockage
+  definition: A passage that previously permitted the relevant traffic, then prevented
+    it, becomes passable again by the end of the reported transition. Both the earlier
+    and the restored conditions concern the same passage and kind of traffic. No operator
+    or actual traveler is required.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
 - sense_id: ENS:c32777032ea8e6deca4bfd90
   lemma: repair
   part_of_speech: verb
@@ -19457,6 +19580,21 @@ senses:
     occurrence may be different.
   fidelity: high
   controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:ba33ec590edcc2cebc9414c2
+  lemma: restoration of passage after blockage
+  part_of_speech: noun_phrase
+  surface_forms:
+  - restoration of passage after blockage
+  route: compound
+  target_id: CMP:28e9f477e3bc88111934ddda
+  sense_key: canonical_compound_label
+  definition: A passage that previously permitted the relevant traffic, then prevented
+    it, becomes passable again by the end of the reported transition. Both the earlier
+    and the restored conditions concern the same passage and kind of traffic. No operator
+    or actual traveler is required.
+  fidelity: high
+  controlled_input_allowed: true
   authority_layer: english_sense_index
 - sense_id: ENS:166cbe337a240a43af71830f
   lemma: retained position
@@ -19540,6 +19678,20 @@ senses:
   definition: A stable sequence of positions connecting locations.
   fidelity: high
   controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:190bbab91ddec9ee56adc511
+  lemma: route through an interface
+  part_of_speech: noun_phrase
+  surface_forms:
+  - route through an interface
+  route: compound
+  target_id: CMP:6ae4a680528e1cd7fd1ac0df
+  sense_key: canonical_compound_label
+  definition: An established route connects two sides through an identifiable interface.
+    It can be a physical opening or a defined path between parts of a machine or system.
+    Its availability to any traveler or signal at a particular time is unspecified.
+  fidelity: high
+  controlled_input_allowed: true
   authority_layer: english_sense_index
 - sense_id: ENS:f387f27b5390348e016dfb4f
   lemma: rule
@@ -19730,6 +19882,23 @@ senses:
   definition: Oscillation in a material source sends a mechanical pressure or elastic
     wave into a surrounding medium during the same episode. No listener or intention
     to signal is required.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:67350fb1d4eacd0594dc39f1
+  lemma: spot
+  part_of_speech: verb
+  surface_forms:
+  - spot
+  - spots
+  - spotted
+  - spotting
+  route: compound
+  target_id: CMP:42b9bbf271c7fc2a1193c5ca
+  sense_key: visual_noticing_of_a_target
+  definition: A cognizer comes to notice the target through optical information registered
+    from it during the same episode. The receiver of the optical information is the
+    one who notices. Naming, recognizing or searching for the target is optional.
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
@@ -20007,6 +20176,20 @@ senses:
     and a communicative intention are optional.
   fidelity: high
   controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:36fb8c20387329cfbc9917f4
+  lemma: visual noticing of a target
+  part_of_speech: noun_phrase
+  surface_forms:
+  - visual noticing of a target
+  route: compound
+  target_id: CMP:42b9bbf271c7fc2a1193c5ca
+  sense_key: canonical_compound_label
+  definition: A cognizer comes to notice the target through optical information registered
+    from it during the same episode. The receiver of the optical information is the
+    one who notices. Naming, recognizing or searching for the target is optional.
+  fidelity: high
+  controlled_input_allowed: true
   authority_layer: english_sense_index
 - sense_id: ENS:608cf277730410f915c85501
   lemma: wait

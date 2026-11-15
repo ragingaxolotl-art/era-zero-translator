@@ -2,7 +2,7 @@
 metadata:
   title: Gate 4B dictionary conformance and routing cases
   version: 1.0.0
-  approved_entries: 76
+  approved_entries: 82
 accepted:
 - case_id: arrival_back_at_a_prior_position
   compound_id: CMP:0808e01be62b7fac873ee324
@@ -43,6 +43,9 @@ accepted:
 - case_id: ongoing_physical_repair
   compound_id: CMP:2816a7eeb356c2148b26beca
   expected: valid_approved_entry
+- case_id: restoration_of_passage_after_blockage
+  compound_id: CMP:28e9f477e3bc88111934ddda
+  expected: valid_approved_entry
 - case_id: shared-world_law
   compound_id: CMP:2d26353b47b531bd3f5ae090
   expected: valid_approved_entry
@@ -61,6 +64,9 @@ accepted:
 - case_id: felt_fatigue
   compound_id: CMP:3c13b9c619d95f1c40ea5da5
   expected: valid_approved_entry
+- case_id: passage_permitting_traversal
+  compound_id: CMP:3c7e1b60fb3087e942be4555
+  expected: valid_approved_entry
 - case_id: cessation_of_an_occurrence
   compound_id: CMP:3d95154b4812da0cefd7fc45
   expected: valid_approved_entry
@@ -69,6 +75,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: material_biosystem
   compound_id: CMP:4144fad413b8ce5012088c61
+  expected: valid_approved_entry
+- case_id: visual_noticing_of_a_target
+  compound_id: CMP:42b9bbf271c7fc2a1193c5ca
   expected: valid_approved_entry
 - case_id: ongoing_acoustic_sensory_registration
   compound_id: CMP:42e9bd596b35612ed6cbe3ce
@@ -99,6 +108,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: material_artifact
   compound_id: CMP:61bfb0de7a1e9d7f5b981725
+  expected: valid_approved_entry
+- case_id: route_through_an_interface
+  compound_id: CMP:6ae4a680528e1cd7fd1ac0df
   expected: valid_approved_entry
 - case_id: consciously_felt_self-condition
   compound_id: CMP:6c9e3042a361ccae6ecf5980
@@ -159,6 +171,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: ongoing_swimming_across_a_region
   compound_id: CMP:a900dd73c9816ed6cbad29f0
+  expected: valid_approved_entry
+- case_id: onset_of_awareness_of_a_target
+  compound_id: CMP:ac9df67396f3632d36b5d078
   expected: valid_approved_entry
 - case_id: ongoing_sensory_registration
   compound_id: CMP:ade73037114406a2cd91ce13
@@ -231,6 +246,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: physical_injury
   compound_id: CMP:f1abd5eccdf06d92d5690a32
+  expected: valid_approved_entry
+- case_id: passage_preventing_traversal
+  compound_id: CMP:f9554786959994e2f5fb6e9c
   expected: valid_approved_entry
 routing_tests:
 - english_concept: person

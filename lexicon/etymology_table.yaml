@@ -4,12 +4,12 @@ metadata:
   version: 1.0.0
   status: canonical_gate4e
   atom_entries: 324
-  compound_entries: 76
-  total_entries: 400
+  compound_entries: 82
+  total_entries: 406
   scope: Auditable synchronic derivation and authority provenance; no invented natural-language
     ancestry.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: abe134ba53d483946b478ee09567c54bc46c16d2a43e836a5bae00970bc7c744
+  compound_dictionary_fingerprint: b894c0065bc49847461abfbe23de8b5d9779632be6bcc56756dda04bd86eb7aa
 principles:
   synchronic_not_fictional: Era Zero forms are engineered encodings. The table records
     actual construction rules and approval history rather than inventing ancestors
@@ -17996,6 +17996,71 @@ entries:
     approval_date: '2026-10-28'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
+- etymology_id: ETY:8304029b7c7fc1ce93da312d
+  target_type: compound
+  target_id: CMP:28e9f477e3bc88111934ddda
+  status: canonical
+  english_label: restoration of passage after blockage
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: ORI:110
+  components:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:f9554786959994e2f5fb6e9c
+    definition_version: 1.0.0
+  - node_id: q2
+    kind: compound_ref
+    compound_id: CMP:3c7e1b60fb3087e942be4555
+    definition_version: 1.0.0
+  - node_id: h
+    kind: root
+    root_id: ORI:110
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  - type: qualifies
+    from: q2
+    to: h
+  semantic_derivation:
+    invariant_definition: A passage that previously permitted the relevant traffic,
+      then prevented it, becomes passable again by the end of the reported transition.
+      Both the earlier and the restored conditions concern the same passage and kind
+      of traffic. No operator or actual traveler is required.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: restoration_of_passage_after_blockage
+      sound_code: 49
+      added_definition: A passage that previously permitted the relevant traffic,
+        then prevented it, becomes passable again by the end of the reported transition.
+        Both the earlier and the restored conditions concern the same passage and
+        kind of traffic. No operator or actual traveler is required.
+      excludes:
+      - Workers opened a new tunnel that had never been passable before.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 28e9f477e3bc88111934dddabe44899486d6985a55cf06dd4609e26e5eb591b5
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: lexicon/story_compound_batch.json
+    approval_date: '2026-11-14'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
 - etymology_id: ETY:e658e61b073671896a2db6a2
   target_type: compound
   target_id: CMP:2d26353b47b531bd3f5ae090
@@ -18275,6 +18340,57 @@ entries:
     approval_date: '2026-11-04'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
+- etymology_id: ETY:1e5acb9eb18b38ab1bfc0254
+  target_type: compound
+  target_id: CMP:3c7e1b60fb3087e942be4555
+  status: canonical
+  english_label: passage permitting traversal
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: compound_ref
+    target_id: CMP:6ae4a680528e1cd7fd1ac0df
+  components:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:6ae4a680528e1cd7fd1ac0df
+    definition_version: 1.0.0
+  relations: []
+  semantic_derivation:
+    invariant_definition: At the reference time the passage permits the contextually
+      relevant traveler, signal or other traffic to get through. No actual traversal,
+      invitation, safety guarantee or legal permission is implied.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: passage_permitting_traversal
+      sound_code: 47
+      added_definition: At the reference time the passage permits the contextually
+        relevant traveler, signal or other traffic to get through. No actual traversal,
+        invitation, safety guarantee or legal permission is implied.
+      excludes:
+      - The sign permits entry but a solid barrier prevents the relevant traffic from
+        getting through.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 3c7e1b60fb3087e942be4555e00bb3bf4073e4be740daa340a4c35349b636c7c
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: lexicon/story_compound_batch.json
+    approval_date: '2026-11-14'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
 - etymology_id: ETY:a5463b3aa37d54ddacaef78b
   target_type: compound
   target_id: CMP:3d95154b4812da0cefd7fc45
@@ -18427,6 +18543,64 @@ entries:
     authority: gate4b_reviewed_compound
     record: migrations/gate4b_compound_dictionary_1.0.yaml
     approval_date: '2026-10-09'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:46d59e63050d4700a0fe1db0
+  target_type: compound
+  target_id: CMP:42b9bbf271c7fc2a1193c5ca
+  status: canonical
+  english_label: visual noticing of a target
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: compound_ref
+    target_id: CMP:ac9df67396f3632d36b5d078
+  components:
+  - node_id: q1
+    kind: compound_ref
+    compound_id: CMP:bcfd189eb305cf364ada975a
+    definition_version: 1.0.0
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:ac9df67396f3632d36b5d078
+    definition_version: 1.0.0
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: A cognizer comes to notice the target through optical information
+      registered from it during the same episode. The receiver of the optical information
+      is the one who notices. Naming, recognizing or searching for the target is optional.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: visual_noticing_of_a_target
+      sound_code: 45
+      added_definition: A cognizer comes to notice the target through optical information
+        registered from it during the same episode. The receiver of the optical information
+        is the one who notices. Naming, recognizing or searching for the target is
+        optional.
+      excludes:
+      - Mira noticed the crack by touch in complete darkness.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 42b9bbf271c7fc2a1193c5caf7c7f565f43e249a5c8765f3f17c57d51ea57bd4
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: lexicon/story_compound_batch.json
+    approval_date: '2026-11-14'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
 - etymology_id: ETY:462932f7ebafd9ba3edc1b00
@@ -19009,6 +19183,63 @@ entries:
     authority: gate4b_reviewed_compound
     record: migrations/gate4b_compound_dictionary_1.0.yaml
     approval_date: '2026-10-09'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:599fc0bc7ef9098df03b953e
+  target_type: compound
+  target_id: CMP:6ae4a680528e1cd7fd1ac0df
+  status: canonical
+  english_label: route through an interface
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: MOV:020
+  components:
+  - node_id: q1
+    kind: root
+    root_id: STR:010
+  - node_id: h
+    kind: root
+    root_id: MOV:020
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: An established route connects two sides through an identifiable
+      interface. It can be a physical opening or a defined path between parts of a
+      machine or system. Its availability to any traveler or signal at a particular
+      time is unspecified.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: route_through_an_interface
+      sound_code: 46
+      added_definition: An established route connects two sides through an identifiable
+        interface. It can be a physical opening or a defined path between parts of
+        a machine or system. Its availability to any traveler or signal at a particular
+        time is unspecified.
+      excludes:
+      - The two chambers share a wall with no route across it.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 6ae4a680528e1cd7fd1ac0df95cac12c16827d645e0d777f9c9d231ddfe11bf7
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: lexicon/story_compound_batch.json
+    approval_date: '2026-11-14'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
 - etymology_id: ETY:134ffdc79a80bac258e728c7
@@ -20293,6 +20524,64 @@ entries:
     authority: gate4b_reviewed_compound
     record: migrations/swimming_across_2026_11_04.yaml
     approval_date: '2026-11-04'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:18ee4f0a8b1a95db237641f8
+  target_type: compound
+  target_id: CMP:ac9df67396f3632d36b5d078
+  status: canonical
+  english_label: onset of awareness of a target
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: MIN:110
+  components:
+  - node_id: q1
+    kind: root
+    root_id: MIN:011
+  - node_id: h
+    kind: root
+    root_id: MIN:110
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: During an episode a cognizer comes to register a particular,
+      distinct target in awareness. The change makes the target present to that cognizer
+      at the time of noticing. The target may be familiar. The means of detection
+      and any subsequent response are unspecified.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: onset_of_awareness_of_a_target
+      sound_code: 44
+      added_definition: During an episode a cognizer comes to register a particular,
+        distinct target in awareness. The change makes the target present to that
+        cognizer at the time of noticing. The target may be familiar. The means of
+        detection and any subsequent response are unspecified.
+      excludes:
+      - The keeper remained aware of the unchanging signal throughout, with no new
+        moment of noticing.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: ac9df67396f3632d36b5d07870f7cc6387c055ab118ba4b9c13e64ad65140486
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: lexicon/story_compound_batch.json
+    approval_date: '2026-11-14'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
 - etymology_id: ETY:76d306e4c7645e0ab6bdf7df
@@ -21721,5 +22010,57 @@ entries:
     authority: gate4b_reviewed_compound
     record: migrations/gate4b_compound_dictionary_1.0.yaml
     approval_date: '2026-10-09'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:ffad55316119d437b0a21b6f
+  target_type: compound
+  target_id: CMP:f9554786959994e2f5fb6e9c
+  status: canonical
+  english_label: passage preventing traversal
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: compound_ref
+    target_id: CMP:6ae4a680528e1cd7fd1ac0df
+  components:
+  - node_id: h
+    kind: compound_ref
+    compound_id: CMP:6ae4a680528e1cd7fd1ac0df
+    definition_version: 1.0.0
+  relations: []
+  semantic_derivation:
+    invariant_definition: At the reference time the passage prevents the contextually
+      relevant traveler, signal or other traffic from getting through. The route can
+      remain identifiable throughout the blockage. The cause, responsibility and duration
+      are unspecified.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: passage_preventing_traversal
+      sound_code: 48
+      added_definition: At the reference time the passage prevents the contextually
+        relevant traveler, signal or other traffic from getting through. The route
+        can remain identifiable throughout the blockage. The cause, responsibility
+        and duration are unspecified.
+      excludes:
+      - A sign advises against travel but the traveler can still get through.
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: f9554786959994e2f5fb6e9c5ab9a141bff2c4efbc8b73561ed9acf916d49130
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: lexicon/story_compound_batch.json
+    approval_date: '2026-11-14'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
