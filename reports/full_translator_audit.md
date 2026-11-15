@@ -46,7 +46,7 @@ Status: **PASS**
 | Maybe go home. | MOV:121 | no | 1 | possibility | maybe:function_word, go:canonical, home:documented_gap | PASS |
 | Wait here. | deferred_action | no | 1 | command | wait:structural, here:canonical | PASS |
 | Stop moving. | MOV:121 | no | 1 | command | stop:structural, moving:canonical | PASS |
-| Continue moving. | MOV:121 | no | 1 | command | continue:canonical, moving:canonical | PASS |
+| Continue moving. | MOV:121 | no | 1 | command | continue:structural, moving:canonical | PASS |
 | Cross the bridge. | boundary_traversal | no | 1 | command | cross:structural, the:function_word, bridge:phonemic_label | PASS |
 | Follow the route. | trajectory_tracking | no | 1 | command | follow:structural, the:function_word, route:canonical | PASS |
 | Transport the box. | caused_target_movement | no | 1 | assertion | transport:structural, the:function_word, box:phonemic_label | PASS |

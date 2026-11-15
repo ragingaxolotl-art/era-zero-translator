@@ -1,3 +1,4 @@
+import {contextsForWords} from './word_coverage_context.mjs';
 import {isAttributiveProperty} from './nominals.mjs';
 const STOPWORDS=new Set('a an the to of in on at for from with am is are was were be being been do does did i you he she it we they this that these those my your his her its our their please now just may might maybe could can would will shall should perhaps possibly probably'.split(' '));
 const DIRECT=new Set(['atom','compound']);
@@ -224,7 +225,7 @@ export function analyzeEnglish(raw,data,{limit=Number.POSITIVE_INFINITY}={}){
   const normalized=normalize(text);
   if(!normalized)throw{code:'empty_input',message:'Write an English word, phrase, or sentence to translate.'};
   const intent=inferEnglishIntent(text,explicitRuntime),inputTokens=lexicalTokens(normalized);
-  const allSenses=[...data.senses,...(data.game_story_senses||[]),...(data.local_senses||[]),...plainMappedSenses(data)],candidateSenses=allSenses.filter(sense=>sense.route!=='label');
+  const allSenses=[...data.senses,...(data.game_story_senses||[]),...(data.local_senses||[]),...plainMappedSenses(data)].filter(contextsForWords(normalized,data.senses)),candidateSenses=allSenses.filter(sense=>sense.route!=='label');
   const ranked=candidateSenses.map(sense=>scoreSense(sense,normalized,inputTokens)).filter(Boolean).sort((a,b)=>Number(b.reviewed_label_match)-Number(a.reviewed_label_match)||b.score-a.score||b.specificity-a.specificity||a.sense_id.localeCompare(b.sense_id)).slice(0,limit);
   const coverage=termCoverage(normalized,data,ranked,allSenses);
   const unresolvedSemantic=coverage.some(item=>item.status==='unresolved_semantic');
