@@ -1,0 +1,474 @@
+{
+  "source_revision": "d54de4961f6ec5462beab6a17ae99ba29bdad0e5",
+  "method": "Fresh whole inputs, selected after the vocabulary and grammar commits. These are purposive examples of narration and dialogue, not a random sample. Keep the reserve unplayed until the initial run has been recorded. Answers are context from the manuscripts, not inputs to the listener. Quotes are exact spans with outer quotation marks removed; where noted, replace the dialogue-tag comma with a period. Two reserved passages include a previously tested clause in a new two-sentence input.",
+  "initial": [
+    {
+      "key": "narrator-waits",
+      "source": "aru-first-newborn-revised/manuscript.md",
+      "line_number": 1329,
+      "input": "I waited.",
+      "intended": "The narrator deferred acting in the past; no duration or target is specified.",
+      "meaning": {
+        "speech_act": "assertion",
+        "entities": [
+          {
+            "label": "speaker",
+            "mode": "deictic"
+          }
+        ],
+        "events": [
+          {
+            "predicate": "wait",
+            "arguments": [
+              [
+                "actor",
+                0
+              ]
+            ],
+            "scopes": [
+              "time_before_speech"
+            ]
+          }
+        ],
+        "relations": []
+      }
+    },
+    {
+      "key": "priya-waits",
+      "source": "custodian-who-refused-revised/chapter-08.md",
+      "line_number": 69,
+      "input": "She waited.",
+      "intended": "Priya, the woman from the preceding exchange, waited. An isolated “she” needs a referent; gender is unnecessary once identified.",
+      "meaning": {
+        "speech_act": "assertion",
+        "entities": [
+          {
+            "label": "Priya",
+            "mode": "name"
+          }
+        ],
+        "events": [
+          {
+            "predicate": "wait",
+            "arguments": [
+              [
+                "actor",
+                0
+              ]
+            ],
+            "scopes": [
+              "time_before_speech"
+            ]
+          }
+        ],
+        "relations": []
+      },
+      "answers": {
+        "subject0": "new:Priya"
+      }
+    },
+    {
+      "key": "noticing-hurt",
+      "source": "aru-first-newborn-revised/manuscript.md",
+      "line_number": 1495,
+      "input": "Aru noticed.",
+      "intended": "Aru became aware of the narrator’s hurt. In isolation ask what entered Aru’s awareness. Preserve whose hurt when the narrator supplies it; do not assume sight.",
+      "meaning": {
+        "speech_act": "assertion",
+        "entities": [
+          {
+            "label": "Aru",
+            "mode": "name"
+          },
+          {
+            "label": "speaker",
+            "mode": "deictic"
+          },
+          {
+            "label": "hurt",
+            "mode": "definite_nominal",
+            "owner": 1
+          }
+        ],
+        "events": [
+          {
+            "predicate": "notice",
+            "arguments": [
+              [
+                "experiencer",
+                0
+              ],
+              [
+                "target",
+                2
+              ]
+            ],
+            "scopes": [
+              "time_before_speech"
+            ]
+          }
+        ],
+        "relations": []
+      },
+      "answers": {
+        "object0": "new:my hurt"
+      }
+    },
+    {
+      "key": "worker-discovers",
+      "source": "haven-stories/interval/manuscript.md",
+      "line_number": 119,
+      "input": "It found a discrepancy.",
+      "intended": "The worker discovered a previously unspecified discrepancy. Ask what “it” denotes if the line is isolated.",
+      "meaning": {
+        "speech_act": "assertion",
+        "entities": [
+          {
+            "label": "worker",
+            "mode": "definite_nominal"
+          },
+          {
+            "label": "discrepancy",
+            "mode": "indefinite_singular"
+          }
+        ],
+        "events": [
+          {
+            "predicate": "find",
+            "arguments": [
+              [
+                "experiencer",
+                0
+              ],
+              [
+                "target",
+                1
+              ]
+            ],
+            "scopes": [
+              "time_before_speech"
+            ]
+          }
+        ],
+        "relations": []
+      },
+      "answers": {
+        "subject0": "new:the worker"
+      }
+    },
+    {
+      "key": "few-wait",
+      "source": "haven-stories/sideways/manuscript.md",
+      "line_number": 269,
+      "input": "A few waited.",
+      "intended": "A small, unspecified subset of the processes deferred action. Do not invent a number or replace a few with all/none.",
+      "meaning": {
+        "requires": [
+          "wait in the past",
+          "a small nonzero, unnumbered subset of processes"
+        ]
+      }
+    },
+    {
+      "key": "approved-release",
+      "source": "custodian-who-refused-revised/chapter-08.md",
+      "line_number": 71,
+      "input": "I approved the release.",
+      "intended": "In dialogue the speaker takes responsibility for authorizing this specific release, in the past. Passing a constraint test or merely believing the release is good is insufficient.",
+      "meaning": {
+        "requires": [
+          "speaker as authorizer",
+          "specific release as object",
+          "past authorization"
+        ]
+      }
+    },
+    {
+      "key": "keep-path-open",
+      "source": "haven-stories/still/manuscript.md",
+      "line_number": 91,
+      "input": "It kept the path open.",
+      "intended": "The holding routine actively maintained passability of the reporting path; it did not merely find it open or open it once.",
+      "meaning": {
+        "requires": [
+          "holding routine as maintainer",
+          "continued passability of the specified path",
+          "past maintenance, not an opening transition"
+        ]
+      },
+      "answers": {
+        "subject0": "new:the routine"
+      }
+    },
+    {
+      "key": "finding-in-room",
+      "source": "aru-first-newborn-revised/manuscript.md",
+      "line_number": 683,
+      "input": "I found Aru in the seventy-third room.",
+      "intended": "The narrator discovered Aru, located in the 73rd room. Dropping the place or its ordinal changes the message.",
+      "meaning": {
+        "requires": [
+          "past discovery by speaker",
+          "Aru as target",
+          "the seventy-third room as location"
+        ]
+      }
+    },
+    {
+      "key": "transfer-work",
+      "source": "haven-stories/interval/manuscript.md",
+      "line_number": 23,
+      "input": "Latch carried the handoffs.",
+      "intended": "Latch conveyed handoffs between computational workers. The scene does not describe Latch physically bearing a load.",
+      "meaning": {
+        "requires": [
+          "Latch as agent",
+          "the identified plural handoffs",
+          "past transfer of work without a new physical-load claim"
+        ]
+      }
+    }
+  ],
+  "reserve": [
+    {
+      "key": "aru-waits",
+      "source": "aru-first-newborn-revised/manuscript.md",
+      "line_number": 989,
+      "input": "Aru waited.",
+      "intended": "Aru deferred acting (past); the narrator did not do the waiting.",
+      "meaning": {
+        "speech_act": "assertion",
+        "entities": [
+          {
+            "label": "Aru",
+            "mode": "name"
+          }
+        ],
+        "events": [
+          {
+            "predicate": "wait",
+            "arguments": [
+              [
+                "actor",
+                0
+              ]
+            ],
+            "scopes": [
+              "time_before_speech"
+            ]
+          }
+        ],
+        "relations": []
+      }
+    },
+    {
+      "key": "came-back-now",
+      "source": "aru-first-newborn-revised/manuscript.md",
+      "line_number": 699,
+      "input": "I returned now.",
+      "intended": "The speaker came back to Aru at the present occasion. Preserve the contrast with the earlier absence, not recurrence or a generic function result.",
+      "meaning": {
+        "requires": [
+          "speaker as mover",
+          "return to a prior location",
+          "explicit now, not merely grammatical past"
+        ]
+      }
+    },
+    {
+      "key": "comparison-arrives",
+      "source": "haven-stories/interval/manuscript.md",
+      "line_number": 47,
+      "input": "The comparison request arrived.",
+      "intended": "The previously identifiable request for a comparison reached the scene. Keep what kind of request arrived.",
+      "meaning": {
+        "requires": [
+          "particular request for comparison (both words)",
+          "arrival in the past",
+          "no added sender or destination"
+        ]
+      }
+    },
+    {
+      "key": "both-versions",
+      "source": "custodian-who-refused-revised/chapter-08.md",
+      "line_number": 41,
+      "input": "Have you seen both versions?",
+      "intended": "The speaker asks whether the addressee has seen each of the two versions. This is a question about earlier experience, not a command to look.",
+      "meaning": {
+        "requires": [
+          "question to addressee",
+          "experience of seeing by now",
+          "both distinct versions"
+        ]
+      }
+    },
+    {
+      "key": "resumed-stream-waits",
+      "source": "haven-stories/chorus/manuscript.md",
+      "line_number": 219,
+      "input": "The resumed stream waited.",
+      "intended": "The specific stream that resumed its activity deferred action. Preserve resumption as a restriction on the stream, not a second waiting event.",
+      "meaning": {
+        "requires": [
+          "particular stream",
+          "its prior resumption",
+          "past waiting by that same stream"
+        ]
+      }
+    },
+    {
+      "key": "restore-then-report",
+      "source": "haven-stories/interval/manuscript.md",
+      "line_number": 13,
+      "input": "Latch restored the adjustment. The request ceased.",
+      "intended": "Latch restored the specific adjustment; the specific request stopped. Both are past. The two assertions alone do not mark an explicit causal or before relation.",
+      "meaning": {
+        "speech_act": "assertion",
+        "entities": [
+          {
+            "label": "Latch",
+            "mode": "name"
+          },
+          {
+            "label": "adjustment",
+            "mode": "definite_nominal"
+          },
+          {
+            "label": "request",
+            "mode": "definite_nominal"
+          }
+        ],
+        "events": [
+          {
+            "predicate": "REP:110",
+            "arguments": [
+              [
+                "source",
+                0
+              ],
+              [
+                "target",
+                1
+              ]
+            ],
+            "scopes": [
+              "time_before_speech"
+            ]
+          },
+          {
+            "predicate": "cease",
+            "arguments": [
+              [
+                "bearer",
+                2
+              ]
+            ],
+            "scopes": [
+              "time_before_speech"
+            ]
+          }
+        ],
+        "relations": []
+      }
+    },
+    {
+      "key": "you-did-not-return",
+      "source": "aru-first-newborn-revised/manuscript.md",
+      "line_number": 697,
+      "input": "You did not return.",
+      "intended": "Aru tells the addressee they did not come back during the earlier absence. If motion back and recurrence are offered, choose motion back. Keep past, negation and addressee.",
+      "meaning": {
+        "speech_act": "assertion",
+        "entities": [
+          {
+            "label": "addressee",
+            "mode": "deictic"
+          }
+        ],
+        "events": [
+          {
+            "predicate": "return",
+            "arguments": [
+              [
+                "actor",
+                0
+              ]
+            ],
+            "scopes": [
+              "time_before_speech",
+              "negation"
+            ]
+          }
+        ],
+        "relations": []
+      },
+      "answers": {
+        "word0": "meaning:return"
+      },
+      "source_span": "You did not return,"
+    },
+    {
+      "key": "same-finder",
+      "source": "haven-stories/interval/manuscript.md",
+      "line_number": 49,
+      "input": "Latch found the result. It found the context.",
+      "intended": "Latch is the finder both times. The result and the context are different definite targets. A question offering Latch is acceptable; making the result the second finder changes the story.",
+      "meaning": {
+        "speech_act": "assertion",
+        "entities": [
+          {
+            "label": "Latch",
+            "mode": "name"
+          },
+          {
+            "label": "result",
+            "mode": "definite_nominal"
+          },
+          {
+            "label": "context",
+            "mode": "definite_nominal"
+          }
+        ],
+        "events": [
+          {
+            "predicate": "find",
+            "arguments": [
+              [
+                "experiencer",
+                0
+              ],
+              [
+                "target",
+                1
+              ]
+            ],
+            "scopes": [
+              "time_before_speech"
+            ]
+          },
+          {
+            "predicate": "find",
+            "arguments": [
+              [
+                "experiencer",
+                0
+              ],
+              [
+                "target",
+                2
+              ]
+            ],
+            "scopes": [
+              "time_before_speech"
+            ]
+          }
+        ],
+        "relations": []
+      },
+      "answers": {
+        "subject1": "0"
+      }
+    }
+  ]
+}
