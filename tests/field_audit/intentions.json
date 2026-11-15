@@ -1,0 +1,379 @@
+{
+  "translator_revision": "d097271c12776fd41057fef67de9ab9060d43db3",
+  "lore_source_revision": "d54de4961f6ec5462beab6a17ae99ba29bdad0e5",
+  "cases": [
+    {
+      "id": "fault",
+      "group": "control",
+      "text": "We need to resolve the redundancy error.",
+      "intended": "Our group must correct the fault named redundancy. This is a requirement, with no assertion that correction occurred."
+    },
+    {
+      "id": "found-delete",
+      "group": "control",
+      "text": "We have found the program. We need to delete it.",
+      "intended": "Our group completed the discovery of the same program it now needs to delete. The second action remains required."
+    },
+    {
+      "id": "leave-home",
+      "group": "control",
+      "text": "I am leaving home now.",
+      "intended": "The speaker is currently departing home. Preserve the departure, home and current progression."
+    },
+    {
+      "id": "arrive-station",
+      "group": "control",
+      "text": "She arrived at the station.",
+      "intended": "A specific person arrived at the station in the past. For this trial, she is Mira.",
+      "answers": [
+        {
+          "referent": "Mira"
+        }
+      ]
+    },
+    {
+      "id": "approach-question",
+      "group": "control",
+      "text": "Are they approaching the bridge?",
+      "intended": "A question about whether a group is approaching the bridge now. For this trial they are the robots.",
+      "answers": [
+        {
+          "referent": "the robots"
+        }
+      ]
+    },
+    {
+      "id": "not-moving",
+      "group": "control",
+      "text": "I am not moving.",
+      "intended": "The speaker denies their current movement. Retain the negation."
+    },
+    {
+      "id": "few",
+      "group": "control",
+      "text": "A few waited.",
+      "intended": "A small, unnumbered set of participants waited. A single entity named few changes the quantity."
+    },
+    {
+      "id": "latch",
+      "group": "control",
+      "text": "Latch found the result. It found the context.",
+      "intended": "Latch discovered both the result and the context. A clarification about the second finder is valid.",
+      "answers": [
+        {
+          "button": "Latch (reference 1)"
+        }
+      ]
+    },
+    {
+      "id": "work-handoffs",
+      "group": "control",
+      "text": "Latch carried the handoffs.",
+      "intended": "Latch conveyed computational work between workers. Physical support and movement of a load would change the sense."
+    },
+    {
+      "id": "few-robots",
+      "group": "contrast",
+      "text": "A few robots waited.",
+      "intended": "An unspecified small number of robots waited. Preserve the group, its kind, and past waiting."
+    },
+    {
+      "id": "no-one",
+      "group": "contrast",
+      "text": "No one waited.",
+      "intended": "Nobody waited. No participant performed the action."
+    },
+    {
+      "id": "not-all",
+      "group": "contrast",
+      "text": "Not all the faulty radios rang.",
+      "intended": "At least one of the faulty radios did not ring. Zero ringing radios is possible."
+    },
+    {
+      "id": "none",
+      "group": "contrast",
+      "text": "None of the faulty radios rang.",
+      "intended": "Zero faulty radios rang. Faulty restricts the set of radios."
+    },
+    {
+      "id": "two-names",
+      "group": "contrast",
+      "text": "Pip noticed Mira. They waited.",
+      "intended": "Pip noticed Mira. In this reading Mira waited. Ask which of the two the singular they denotes.",
+      "answers": [
+        {
+          "button": "Mira (reference 2)"
+        }
+      ]
+    },
+    {
+      "id": "program-subject",
+      "group": "contrast",
+      "text": "The routine spotted a blocked gate. They repaired it.",
+      "intended": "The routine visually noticed a gate that prevents passage, then the same routine repaired that gate. Sentence order alone supplies no explicit temporal marker."
+    },
+    {
+      "id": "paragraph-break",
+      "group": "contrast",
+      "text": "The routine spotted a blocked gate.\nThey repaired it.",
+      "intended": "Same participants, properties and events as the preceding one-line form. A line break separates the sentences."
+    },
+    {
+      "id": "paired",
+      "group": "contrast",
+      "text": "Pip spotted a cracked and faulty bell and repaired it.",
+      "intended": "Pip visually noticed one bell that was both cracked and faulty. Pip also repaired that bell. The conjunction adds no strict order."
+    },
+    {
+      "id": "negated",
+      "group": "contrast",
+      "text": "Pip did not spot a cracked bell.",
+      "intended": "Past negation of Pip visually noticing a bell with a crack."
+    },
+    {
+      "id": "possible-negated",
+      "group": "contrast",
+      "text": "Pip might not spot a cracked bell.",
+      "intended": "It is possible that Pip does not visually notice a cracked bell. Possibility scopes over negation."
+    },
+    {
+      "id": "reopen-0",
+      "group": "contrast",
+      "text": "The gate reopened. [0]",
+      "intended": "The gate became passable again after blockage, in the past, with runtime ending 0."
+    },
+    {
+      "id": "reopen-1",
+      "group": "contrast",
+      "text": "The gate reopened. [1]",
+      "intended": "The same past reopening with runtime ending 1."
+    },
+    {
+      "id": "reopen-2",
+      "group": "contrast",
+      "text": "The gate reopened. [2]",
+      "intended": "The same past reopening with runtime ending 2."
+    },
+    {
+      "id": "negated-reopen",
+      "group": "contrast",
+      "text": "The gate did not reopen.",
+      "intended": "Deny the past change from blocked to passable. The explanation must make the denial visible."
+    },
+    {
+      "id": "open-file",
+      "group": "contrast",
+      "text": "The file was open.",
+      "intended": "The file was open for use in software. If offered the sense of passage through it, decline that sense.",
+      "answers": [
+        {
+          "button": "I mean another sense of “open”"
+        }
+      ]
+    },
+    {
+      "id": "open-path",
+      "group": "contrast",
+      "text": "The path was open.",
+      "intended": "The specific path allowed passage at the earlier reference time."
+    },
+    {
+      "id": "resume-meeting",
+      "group": "contrast",
+      "text": "The meeting reopened.",
+      "intended": "A suspended meeting resumed. If asked whether this means a traversable passage, decline.",
+      "answers": [
+        {
+          "button": "I mean another sense of “reopen”"
+        }
+      ]
+    },
+    {
+      "id": "transitive-reopen",
+      "group": "contrast",
+      "text": "The pilot reopened the gate.",
+      "intended": "The pilot caused a particular blocked gate to become passable again. Both participants and the change matter."
+    },
+    {
+      "id": "before",
+      "group": "contrast",
+      "text": "Pip repaired a cracked bell before Mira arrived.",
+      "intended": "The bell was cracked. Pip repaired it earlier than Mira arrived. Both events are past."
+    },
+    {
+      "id": "after",
+      "group": "contrast",
+      "text": "Pip repaired a cracked bell after Mira arrived.",
+      "intended": "Mira arrived earlier than the repair by Pip. Both events are past; the bell was cracked."
+    },
+    {
+      "id": "reverse-a",
+      "group": "contrast",
+      "text": "Mira repaired Pip.",
+      "intended": "Mira, a program, repaired Pip. Preserve the direction and past time."
+    },
+    {
+      "id": "reverse-b",
+      "group": "contrast",
+      "text": "Pip repaired Mira.",
+      "intended": "Pip repaired Mira. The repairer and the repaired participant have exchanged roles."
+    },
+    {
+      "id": "disjunction",
+      "group": "contrast",
+      "text": "Pip noticed the bell or the gate.",
+      "intended": "Pip became aware of at least one alternative. Do not assert both or silently discard a target."
+    },
+    {
+      "id": "conditional",
+      "group": "contrast",
+      "text": "If the gate reopens, the routine will wait.",
+      "intended": "Future waiting by the routine is conditional on the gate becoming passable again."
+    },
+    {
+      "id": "negative-need",
+      "group": "contrast",
+      "text": "We don't need to delete the program.",
+      "intended": "Deleting the program is unnecessary for our group. This allows both deleting and keeping it."
+    },
+    {
+      "id": "need-negative",
+      "group": "contrast",
+      "text": "We need to not delete the program.",
+      "intended": "Our group must refrain from deleting the program. Deleting it would violate the requirement."
+    },
+    {
+      "id": "hear",
+      "group": "contrast",
+      "text": "I can hear the bell.",
+      "intended": "The speaker can perceive the specific bell by sound. Preserve the sensory channel and the ability/current availability."
+    },
+    {
+      "id": "see",
+      "group": "contrast",
+      "text": "I can see the bell.",
+      "intended": "The speaker can perceive the specific bell visually. Preserve the sensory channel and the ability/current availability."
+    },
+    {
+      "id": "numeric-name",
+      "group": "contrast",
+      "text": "Pip noticed \"Gate 2\".",
+      "intended": "Pip became aware of the specific label Gate 2, including the number. This is a named target."
+    },
+    {
+      "id": "verb-paraphrase",
+      "group": "contrast",
+      "text": "We need to fix the duplicate error.",
+      "intended": "The speaker group is required to correct the fault named duplicate. Keep both the obligation and the fault kind."
+    },
+    {
+      "id": "lowercase",
+      "group": "contrast",
+      "text": "pip spotted a cracked bell.",
+      "intended": "Pip visually noticed a bell with a crack, in the past. Lowercase typing does not change the requested referent."
+    },
+    {
+      "id": "question",
+      "group": "contrast",
+      "text": "Did Pip spot the gate?",
+      "intended": "Ask whether Pip visually noticed the particular gate in the past. Neither sight nor its absence is asserted."
+    },
+    {
+      "id": "newline-clause",
+      "group": "contrast",
+      "text": "Pip spotted a cracked bell. They repaired it.",
+      "intended": "Pip visually noticed a bell with a crack and repaired that same bell. They refers to Pip and it to the bell."
+    },
+    {
+      "id": "nothing-followed",
+      "group": "manuscript",
+      "text": "Nothing followed.",
+      "intended": "No following event or incoming adjustment occurred at that point. Nothing does not name an actor.",
+      "source": {
+        "file": "haven-stories/interval/manuscript.md",
+        "line": 51
+      }
+    },
+    {
+      "id": "requested-completion",
+      "group": "manuscript",
+      "text": "The worker requested completion.",
+      "intended": "The worker asked for completion. The request is past. Completion has not thereby been established.",
+      "source": {
+        "file": "haven-stories/interval/manuscript.md",
+        "line": 53
+      }
+    },
+    {
+      "id": "checked-again",
+      "group": "manuscript",
+      "text": "Latch checked the store again.",
+      "intended": "Latch performed another check on the particular store; preserve the repeated inspection.",
+      "source": {
+        "file": "haven-stories/interval/manuscript.md",
+        "line": 55
+      }
+    },
+    {
+      "id": "remained-valid",
+      "group": "manuscript",
+      "text": "The result remained valid.",
+      "intended": "The particular result continued to satisfy the applicable criterion. Preserve continued validity.",
+      "source": {
+        "file": "haven-stories/interval/manuscript.md",
+        "line": 55
+      }
+    },
+    {
+      "id": "make-replay",
+      "group": "manuscript",
+      "text": "I can make you a replay.",
+      "intended": "The speaker can make a replay for the addressee. Preserve ability and the recipient.",
+      "source": {
+        "file": "custodian-who-refused-revised/chapter-08.md",
+        "line": 81,
+        "span": "I can make you a replay,"
+      }
+    },
+    {
+      "id": "have-replays",
+      "group": "manuscript",
+      "text": "We have replays.",
+      "intended": "The speaker’s group possesses replays. They are plural, with no precise count.",
+      "source": {
+        "file": "custodian-who-refused-revised/chapter-08.md",
+        "line": 83
+      }
+    },
+    {
+      "id": "know-want",
+      "group": "manuscript",
+      "text": "Then I don’t know what else you want.",
+      "intended": "The speaker lacks knowledge of the additional thing the addressee wants. The embedded desire and negated knowledge have different subjects.",
+      "source": {
+        "file": "custodian-who-refused-revised/chapter-08.md",
+        "line": 85
+      }
+    },
+    {
+      "id": "door-opened",
+      "group": "manuscript",
+      "text": "The door opened.",
+      "intended": "The door changed to an open state. The text establishes no earlier reopening.",
+      "source": {
+        "file": "aru-first-newborn-revised/manuscript.md",
+        "line": 79
+      }
+    },
+    {
+      "id": "wrong",
+      "group": "manuscript",
+      "text": "We were wrong.",
+      "intended": "The speaker’s group had an incorrect belief or judgment. This is past and describes the group.",
+      "source": {
+        "file": "aru-first-newborn-revised/manuscript.md",
+        "line": 17
+      }
+    }
+  ]
+}

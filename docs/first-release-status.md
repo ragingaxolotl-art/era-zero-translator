@@ -1,8 +1,8 @@
 # DBA translator first release
 
-The browser translator makes music from supported English sentences and from words you build yourself. It includes 324 canonical roots, 63 approved compounds and 471 indexed senses. You can combine earlier compounds in the order you choose, mark the main meaning, and connect participants across the parts. Your definitions stay in your browser and can be exported and imported. [Open the translator](https://ragingaxolotl-art.github.io/era-zero-translator/) · [Open the compound builder](https://ragingaxolotl-art.github.io/era-zero-translator/compound-builder.html)
+The browser translator makes music from supported English sentences and from words you build yourself. It includes 324 canonical roots, 82 approved compounds and 509 indexed senses. You can combine earlier compounds in the order you choose, mark the main meaning, and connect participants across the parts. Your definitions stay in your browser and can be exported and imported. [Open the translator](https://ragingaxolotl-art.github.io/era-zero-translator/) · [Open the compound builder](https://ragingaxolotl-art.github.io/era-zero-translator/compound-builder.html)
 
-The [current story and dialogue audit](../reports/story_readings.md) covers the subsequent story grammar and vocabulary release.
+The field audit tests 51 inputs through the song controls, measures the sound of both arrangements and ranks the remaining bugs. [Field audit](../reports/translator_field_audit.md) · [Story and dialogue audit](../reports/story_readings.md)
 
 ## Try a sentence
 
@@ -18,6 +18,8 @@ Nouns and proper names can have phonemic labels. A verb or adjective needs a mea
 Enter “We have found the program. We need to delete it.” Choose **Play whole passage** to hear the reading or **Add to song** to keep it. Add another supported line, then use **Play song** or **Download song MIDI**. “We” identifies the speaker’s group. “It” refers to the stored program that group found. The second clause places erasure under necessity. The discovery uses the existing generalized reading of a completed change in the finder’s representation of the target. The passage grammar is a draft. Run `node tests/song_lines_test.mjs` to check the MIDI-only inverse, changed actors, runtime endings and assembled song.
 
 In **Your song**, choose **Compact chords** or **Original melody** before playing or downloading. Compact chords voice each complete root’s family opening with three notes and its address with three notes in separate pitch ranges. The upper voice carries the runtime ending over two held tones. Names, grammar frames and speech-act contours retain their original melodies. The chord reader can expand a solo MIDI performance back to its original pitches, durations and rests. `node tests/compact_song_chords_test.mjs` checks all 324 roots and all three endings. Mixed recordings and room playback require separate listening tests.
+
+Beside the sentence box, **Hear “care” in chords** and **Hear as a melody** play the same root. In **Your song**, choose an arrangement and press **Hear first root** for an immediate comparison using your own line. **Play song** and **Download song MIDI** use the arrangement shown. The timing beneath the selector gives both durations and the first chord’s position. Sentence openings can introduce names and participants before the first dictionary root. Joined roots inside a compound also receive their two chords.
 
 Each line keeps its original phrase contours. A two-beat rest separates successive lines. The song list is saved in this browser. Dictionary previews identify individual entries. The song action appears once a complete line has been scored.
 

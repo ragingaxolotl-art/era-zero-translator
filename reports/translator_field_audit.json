@@ -1,0 +1,2919 @@
+{
+  "baseline_translator": "d097271c12776fd41057fef67de9ab9060d43db3",
+  "corrected_runtime": "82cef53c540ef8e214480fb11471cd346ec1062e",
+  "intentions_commit": "357a4efdaf3a54ac66399b669a407d1362ccec3c",
+  "lore_source_revision": "d54de4961f6ec5462beab6a17ae99ba29bdad0e5",
+  "canonical_viewport_css_px": 390,
+  "rows": [
+    {
+      "id": "fault",
+      "group": "control",
+      "text": "We need to resolve the redundancy error.",
+      "intended": "Our group must correct the fault named redundancy. This is a requirement, with no assertion that correction occurred.",
+      "grade": "preserved",
+      "user_choices": [],
+      "screen": {
+        "summary": "Whole sentence · draft musical grammar",
+        "explanation": "Our group needs to correct the redundancy fault. “redundancy” names the kind of fault.",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 95,
+        "three_note_attacks": 0,
+        "seconds": 31,
+        "sha256": "186313a6f01c882bd76788b59ce9072a412e146ec2a3e7f51419ee985466bf68"
+      },
+      "previous_compact": {
+        "notes": 92,
+        "three_note_attacks": 4,
+        "seconds": 25.5,
+        "sha256": "115130e6bdd343b2475bab15c1f795f653f4cf8993e9e2cbdbc2879d0f5f8927"
+      },
+      "corrected_compact": {
+        "notes": 92,
+        "three_note_attacks": 4,
+        "seconds": 25.5,
+        "sha256": "115130e6bdd343b2475bab15c1f795f653f4cf8993e9e2cbdbc2879d0f5f8927"
+      },
+      "recovered_meaning": {
+        "profile": "EZ-FAULT-CORRECTION-1",
+        "status": "draft",
+        "speech_act": "assertion",
+        "runtime_state": 1,
+        "actor": {
+          "kind": "deictic",
+          "role": "speaker_group"
+        },
+        "scopes": [
+          "necessary"
+        ],
+        "action": {
+          "kind": "correct_fault",
+          "restoration_root": "REP:110",
+          "event_asserted": false
+        },
+        "fault": {
+          "class_root": "WRN:000",
+          "reference_mode": "definite_nominal",
+          "type_label": "redundancy"
+        }
+      },
+      "inverse_error": null,
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "found-delete",
+      "group": "control",
+      "text": "We have found the program. We need to delete it.",
+      "intended": "Our group completed the discovery of the same program it now needs to delete. The second action remains required.",
+      "grade": "preserved",
+      "user_choices": [],
+      "screen": {
+        "summary": "Whole passage · draft musical grammar",
+        "explanation": "Finder: the speaker’s group. Object: the program. Required actor: the speaker’s group. The required action is erasing that same program from storage. Erasure is still a requirement. “Found” uses the existing meaning of a completed change in what the finder knows about the object.",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 227,
+        "three_note_attacks": 0,
+        "seconds": 62.5,
+        "sha256": "4faf4315d0f0537656876cd62f4bab57e28dcc71357f42a0c09bf5b156ca2add"
+      },
+      "previous_compact": {
+        "notes": 223,
+        "three_note_attacks": 6,
+        "seconds": 54.5,
+        "sha256": "2f54adbae891a2962a7502e5765f86ec77a7a1afc73c41051e98f3635aca9023"
+      },
+      "corrected_compact": {
+        "notes": 218,
+        "three_note_attacks": 12,
+        "seconds": 46,
+        "sha256": "ccf3ff0350648c1d07742766347a4005ce7c9a123736eb87557354a8e9afc248"
+      },
+      "recovered_meaning": {
+        "speech_act": "assertion",
+        "runtime_state": 1,
+        "discovery": {
+          "actor": {
+            "kind": "deictic",
+            "role": "speaker_group"
+          },
+          "target": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "P",
+              "R",
+              "AA",
+              "G",
+              "R",
+              "AE",
+              "M"
+            ],
+            "instance_code": null
+          },
+          "time": "before_speech",
+          "present_perfect": true
+        },
+        "classification": "CMP:2f350e7d8e5dfba4a802d82d",
+        "requirement": {
+          "actor": {
+            "kind": "deictic",
+            "role": "speaker_group"
+          },
+          "mode": "necessary",
+          "target": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "P",
+              "R",
+              "AA",
+              "G",
+              "R",
+              "AE",
+              "M"
+            ],
+            "instance_code": null
+          },
+          "action": "erase_stored_object",
+          "event_asserted": false
+        }
+      },
+      "inverse_error": null,
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "leave-home",
+      "group": "control",
+      "text": "I am leaving home now.",
+      "intended": "The speaker is currently departing home. Preserve the departure, home and current progression.",
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "This sentence has no complete musical reading yet. You can hear the matched words in order or choose a different meaning for a word.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 0
+      }
+    },
+    {
+      "id": "arrive-station",
+      "group": "control",
+      "text": "She arrived at the station.",
+      "intended": "A specific person arrived at the station in the past. For this trial, she is Mira.",
+      "answers": [
+        {
+          "referent": "Mira"
+        }
+      ],
+      "grade": "inverse_unavailable",
+      "user_choices": [
+        "Mira"
+      ],
+      "screen": {
+        "summary": "WHOLE SENTENCE",
+        "explanation": "Mira arrived at the station. Spatial arrival: completion of this mover’s displacement to the destination before speech time. This does not assert continued presence there, transfer of possession, a recipient, intention, or carriage of another entity. Negation denies that completed arrival; it does not assert that an approach occurred. Pronoun referents were explicitly supplied for this sentence. Their names do not assert gender or establish general discourse inference.",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 78,
+        "three_note_attacks": 0,
+        "seconds": 26.5,
+        "sha256": "2ecb68c075935b6e8aac5777f0e46fc19aca304a2875376e6f1318887c63aa94"
+      },
+      "previous_compact": {
+        "notes": 77,
+        "three_note_attacks": 2,
+        "seconds": 24,
+        "sha256": "2aa0d589093180945edf9d98bc11c76fce37605f56cb48dd590119a130bd9008"
+      },
+      "corrected_compact": {
+        "notes": 77,
+        "three_note_attacks": 2,
+        "seconds": 24,
+        "sha256": "2aa0d589093180945edf9d98bc11c76fce37605f56cb48dd590119a130bd9008"
+      },
+      "recovered_meaning": null,
+      "inverse_error": "No unique supported canonical or draft semantic interpretation.",
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "approach-question",
+      "group": "control",
+      "text": "Are they approaching the bridge?",
+      "intended": "A question about whether a group is approaching the bridge now. For this trial they are the robots.",
+      "answers": [
+        {
+          "referent": "the robots"
+        }
+      ],
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "This sentence has no complete musical reading yet. You can hear the matched words in order or choose a different meaning for a word.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 0
+      }
+    },
+    {
+      "id": "not-moving",
+      "group": "control",
+      "text": "I am not moving.",
+      "intended": "The speaker denies their current movement. Retain the negation.",
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "Choose a meaning for “moving” to finish this sentence.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 4
+      }
+    },
+    {
+      "id": "few",
+      "group": "control",
+      "text": "A few waited.",
+      "intended": "A small, unnumbered set of participants waited. A single entity named few changes the quantity.",
+      "grade": "changed_meaning",
+      "user_choices": [],
+      "screen": {
+        "summary": "Whole story line ready",
+        "explanation": "Action 1 · Waited before acting · actor = A few.",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 118,
+        "three_note_attacks": 0,
+        "seconds": 29.125,
+        "sha256": "8a12460cca81596103a007ebc80cceb5b6948954e671fec6df20337efaa3557d"
+      },
+      "previous_compact": {
+        "notes": 118,
+        "three_note_attacks": 0,
+        "seconds": 29.125,
+        "sha256": "8a12460cca81596103a007ebc80cceb5b6948954e671fec6df20337efaa3557d"
+      },
+      "corrected_compact": {
+        "notes": 116,
+        "three_note_attacks": 4,
+        "seconds": 24.125,
+        "sha256": "a58949ef04c10539835b7ddb3c2243534ed2a4ad66bf23c44f618c2b72511eab"
+      },
+      "recovered_meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "indefinite_singular",
+              "phonemes": [
+                "F",
+                "EH",
+                "W"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "inverse_error": null,
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "latch",
+      "group": "control",
+      "text": "Latch found the result. It found the context.",
+      "intended": "Latch discovered both the result and the context. A clarification about the second finder is valid.",
+      "answers": [
+        {
+          "button": "Latch (reference 1)"
+        }
+      ],
+      "grade": "changed_meaning",
+      "user_choices": [],
+      "screen": {
+        "summary": "Whole story line ready",
+        "explanation": "Action 1 · Discovered something or found out where it was · experiencer = Latch, target = the result. Action 2 · Discovered something or found out where it was · experiencer = the result, target = the context. “It” refers to the result.",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 284,
+        "three_note_attacks": 0,
+        "seconds": 75.75,
+        "sha256": "2805b9bdba4e48dca30f86cb193b1623b334ef3e80d7c7cdc4123c865d5076a8"
+      },
+      "previous_compact": {
+        "notes": 284,
+        "three_note_attacks": 0,
+        "seconds": 75.75,
+        "sha256": "2805b9bdba4e48dca30f86cb193b1623b334ef3e80d7c7cdc4123c865d5076a8"
+      },
+      "corrected_compact": {
+        "notes": 280,
+        "three_note_attacks": 8,
+        "seconds": 65.75,
+        "sha256": "d056b355cf0b29499faad48013fcc742af88adab8bc78dd4db1c21e448ff0b17"
+      },
+      "recovered_meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "L",
+                "AE",
+                "CH"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "EH",
+                "S",
+                "UH",
+                "L",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "K",
+                "AA",
+                "N",
+                "T",
+                "EH",
+                "K",
+                "S",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:ec01f9b5c6eb3c5483bc3b72",
+            "arguments": [
+              {
+                "role": "experiencer",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          },
+          {
+            "predicate": "CMP:ec01f9b5c6eb3c5483bc3b72",
+            "arguments": [
+              {
+                "role": "experiencer",
+                "entity": 1,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 2,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "inverse_error": null,
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "work-handoffs",
+      "group": "control",
+      "text": "Latch carried the handoffs.",
+      "intended": "Latch conveyed computational work between workers. Physical support and movement of a load would change the sense.",
+      "grade": "changed_meaning",
+      "user_choices": [],
+      "screen": {
+        "summary": "WHOLE SENTENCE",
+        "explanation": "Latch carried the handoffs. Physical conveyance of a distinct material load borne upon, within or suspended from the carrier’s moving support; support and movement concern that same load and interval. This presents a bounded carrying episode before speech time; it does not assert arrival or delivery.",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 186,
+        "three_note_attacks": 0,
+        "seconds": 57.5,
+        "sha256": "aa831755ff40644d110eb24b7be8c321da967d7664ae8073ca9e0a07d8ea02c0"
+      },
+      "previous_compact": {
+        "notes": 185,
+        "three_note_attacks": 2,
+        "seconds": 55,
+        "sha256": "0f8c4975aa1a4fbd895130e33623ad45280c45e57d598e54bae0aeb6416fc0da"
+      },
+      "corrected_compact": {
+        "notes": 183,
+        "three_note_attacks": 6,
+        "seconds": 50,
+        "sha256": "b7dd1555cbde37b3105a6bb55020dd55e1d54cdc796488395337b296a008fb02"
+      },
+      "recovered_meaning": null,
+      "inverse_error": "No unique supported canonical or draft semantic interpretation.",
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "few-robots",
+      "group": "contrast",
+      "text": "A few robots waited.",
+      "intended": "An unspecified small number of robots waited. Preserve the group, its kind, and past waiting.",
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "This sentence has no complete musical reading yet. You can hear the matched words in order or choose a different meaning for a word.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 0
+      }
+    },
+    {
+      "id": "no-one",
+      "group": "contrast",
+      "text": "No one waited.",
+      "intended": "Nobody waited. No participant performed the action.",
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "This sentence has no complete musical reading yet. You can hear the matched words in order or choose a different meaning for a word.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 0
+      }
+    },
+    {
+      "id": "not-all",
+      "group": "contrast",
+      "text": "Not all the faulty radios rang.",
+      "intended": "At least one of the faulty radios did not ring. Zero ringing radios is possible.",
+      "grade": "preserved",
+      "user_choices": [],
+      "screen": {
+        "summary": "Whole story line ready",
+        "explanation": "Action 1 · Made a resonant ringing sound · source = the faulty radios (Has a fault that interferes with an intended job). At least one member did not perform this action. Zero performers is possible.",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 242,
+        "three_note_attacks": 0,
+        "seconds": 58.375,
+        "sha256": "57badb270b973bd359c8bd71b002d7ec9008d950221294748c29d4a3b98f1657"
+      },
+      "previous_compact": {
+        "notes": 242,
+        "three_note_attacks": 0,
+        "seconds": 58.375,
+        "sha256": "57badb270b973bd359c8bd71b002d7ec9008d950221294748c29d4a3b98f1657"
+      },
+      "corrected_compact": {
+        "notes": 237,
+        "three_note_attacks": 10,
+        "seconds": 45.875,
+        "sha256": "4443528379d43f55818cdfeb22918abcf654d0034079ae7802d5f7a26aa5bbdc"
+      },
+      "recovered_meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "AE",
+                "D",
+                "IH",
+                "AA",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:1b70b478c71b872bf63bb95a",
+            "arguments": [
+              {
+                "role": "source",
+                "entity": 0,
+                "properties": [
+                  "CMP:9afc86c0f17022e083c7a5fe"
+                ]
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "all",
+            "negated_quantifier": true
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "inverse_error": null,
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "none",
+      "group": "contrast",
+      "text": "None of the faulty radios rang.",
+      "intended": "Zero faulty radios rang. Faulty restricts the set of radios.",
+      "grade": "preserved",
+      "user_choices": [],
+      "screen": {
+        "summary": "Whole story line ready",
+        "explanation": "Action 1 · Made a resonant ringing sound · source = the faulty radios (Has a fault that interferes with an intended job). Zero members performed this action.",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 234,
+        "three_note_attacks": 0,
+        "seconds": 56.875,
+        "sha256": "56e3ec4315bda3a78d69178ca85dbca69e448840b6ad52a857c8247cb7102142"
+      },
+      "previous_compact": {
+        "notes": 234,
+        "three_note_attacks": 0,
+        "seconds": 56.875,
+        "sha256": "56e3ec4315bda3a78d69178ca85dbca69e448840b6ad52a857c8247cb7102142"
+      },
+      "corrected_compact": {
+        "notes": 229,
+        "three_note_attacks": 10,
+        "seconds": 44.375,
+        "sha256": "03e9c14ba6f1b773501a1b4ef7305f9acd823bec8d9e0f20e36f7cead296d095"
+      },
+      "recovered_meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "AE",
+                "D",
+                "IH",
+                "AA",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:1b70b478c71b872bf63bb95a",
+            "arguments": [
+              {
+                "role": "source",
+                "entity": 0,
+                "properties": [
+                  "CMP:9afc86c0f17022e083c7a5fe"
+                ]
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "none",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "inverse_error": null,
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "two-names",
+      "group": "contrast",
+      "text": "Pip noticed Mira. They waited.",
+      "intended": "Pip noticed Mira. In this reading Mira waited. Ask which of the two the singular they denotes.",
+      "answers": [
+        {
+          "button": "Mira (reference 2)"
+        }
+      ],
+      "grade": "preserved_after_question",
+      "user_choices": [
+        "Mira (reference 2)"
+      ],
+      "screen": {
+        "summary": "Whole story line ready",
+        "explanation": "Action 1 · Became aware of something at that moment · experiencer = Pip, target = Mira. Action 2 · Waited before acting · actor = Mira. “They” refers to Mira.",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 221,
+        "three_note_attacks": 0,
+        "seconds": 55.375,
+        "sha256": "171b5f4279e08b57cdd60e5aa3dd8c39d147c5a1ba62472763c000864959f1a3"
+      },
+      "previous_compact": {
+        "notes": 221,
+        "three_note_attacks": 0,
+        "seconds": 55.375,
+        "sha256": "171b5f4279e08b57cdd60e5aa3dd8c39d147c5a1ba62472763c000864959f1a3"
+      },
+      "corrected_compact": {
+        "notes": 217,
+        "three_note_attacks": 8,
+        "seconds": 45.375,
+        "sha256": "6659621b8508972e8d9c9a50b0daf8ec3e7c3264a571c5ddbbdc27cb26943a39"
+      },
+      "recovered_meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "P",
+                "IH",
+                "P"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "M",
+                "ER",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:ac9df67396f3632d36b5d078",
+            "arguments": [
+              {
+                "role": "experiencer",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          },
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "inverse_error": null,
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "program-subject",
+      "group": "contrast",
+      "text": "The routine spotted a blocked gate. They repaired it.",
+      "intended": "The routine visually noticed a gate that prevents passage, then the same routine repaired that gate. Sentence order alone supplies no explicit temporal marker.",
+      "grade": "preserved",
+      "user_choices": [],
+      "screen": {
+        "summary": "Whole story line ready",
+        "explanation": "Action 1 · Noticed something by sight · experiencer = The routine, target = a blocked gate (Something is preventing passage here). Action 2 · Finished repairing or restoring a target · source = The routine, target = a blocked gate. “They” refers to The routine. “it” refers to a blocked gate.",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 378,
+        "three_note_attacks": 0,
+        "seconds": 89.5,
+        "sha256": "22776b657d6ab27ca7d490cefedbaae2aaed629b01aadc38e654581956790b15"
+      },
+      "previous_compact": {
+        "notes": 376,
+        "three_note_attacks": 2,
+        "seconds": 86.5,
+        "sha256": "3ebe7bfe02af109799d5fb421d9374a1370fe9ae85ca21c9edae53e012086e0f"
+      },
+      "corrected_compact": {
+        "notes": 369,
+        "three_note_attacks": 14,
+        "seconds": 71,
+        "sha256": "c907dfbae00b0a34c67411774ac3d565db58eb3a54faa84ddbbcced6f6a1d9da"
+      },
+      "recovered_meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "AW",
+                "T",
+                "IH",
+                "N"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "indefinite_singular",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:42b9bbf271c7fc2a1193c5ca",
+            "arguments": [
+              {
+                "role": "experiencer",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": [
+                  "CMP:f9554786959994e2f5fb6e9c"
+                ]
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          },
+          {
+            "predicate": "REP:110",
+            "arguments": [
+              {
+                "role": "source",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "inverse_error": null,
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "paragraph-break",
+      "group": "contrast",
+      "text": "The routine spotted a blocked gate.\nThey repaired it.",
+      "intended": "Same participants, properties and events as the preceding one-line form. A line break separates the sentences.",
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "This sentence has no complete musical reading yet. You can hear the matched words in order or choose a different meaning for a word.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 0
+      }
+    },
+    {
+      "id": "paired",
+      "group": "contrast",
+      "text": "Pip spotted a cracked and faulty bell and repaired it.",
+      "intended": "Pip visually noticed one bell that was both cracked and faulty. Pip also repaired that bell. The conjunction adds no strict order.",
+      "grade": "preserved",
+      "user_choices": [],
+      "screen": {
+        "summary": "Whole story line ready",
+        "explanation": "Action 1 · Noticed something by sight · experiencer = Pip, target = a cracked and faulty bell (An object with a crack in it, Has a fault that interferes with an intended job). Action 2 · Finished repairing or restoring a target · source = Pip, target = a cracked and faulty bell. Both actions are asserted. Their timing is unspecified. “it” refers to a cracked and faulty bell. The next action has the same subject (“Pip”).",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 450,
+        "three_note_attacks": 0,
+        "seconds": 108,
+        "sha256": "332c0d5d5f4f8c9d06d4a18870b65c29f9f260aea28e430bcbea2a7399250f11"
+      },
+      "previous_compact": {
+        "notes": 448,
+        "three_note_attacks": 2,
+        "seconds": 105,
+        "sha256": "c97e77e416f4a395d2c57e1a609bd65f825012d66632550ad768f6990e16889f"
+      },
+      "corrected_compact": {
+        "notes": 438,
+        "three_note_attacks": 20,
+        "seconds": 82,
+        "sha256": "8502a138fdb9c658b79d0e9f4e6d28b452b6f5bb60a3b5698da00acbec0d9891"
+      },
+      "recovered_meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "P",
+                "IH",
+                "P"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "indefinite_singular",
+              "phonemes": [
+                "B",
+                "EH",
+                "L",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:42b9bbf271c7fc2a1193c5ca",
+            "arguments": [
+              {
+                "role": "experiencer",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": [
+                  "CMP:3deb356dfe7aaa444e25e929",
+                  "CMP:9afc86c0f17022e083c7a5fe"
+                ]
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          },
+          {
+            "predicate": "REP:110",
+            "arguments": [
+              {
+                "role": "source",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [
+          {
+            "kind": "and",
+            "events": [
+              0,
+              1
+            ]
+          }
+        ],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "inverse_error": null,
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "negated",
+      "group": "contrast",
+      "text": "Pip did not spot a cracked bell.",
+      "intended": "Past negation of Pip visually noticing a bell with a crack.",
+      "grade": "preserved",
+      "user_choices": [],
+      "screen": {
+        "summary": "Whole story line ready",
+        "explanation": "Action 1 · Noticed something by sight · experiencer = Pip, target = a cracked bell (An object with a crack in it).",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 324,
+        "three_note_attacks": 0,
+        "seconds": 79,
+        "sha256": "6aa3583aa4a60ed01fb3e39dcdb80b4ab0c9f17eecd450fda486f372d4379542"
+      },
+      "previous_compact": {
+        "notes": 324,
+        "three_note_attacks": 0,
+        "seconds": 79,
+        "sha256": "6aa3583aa4a60ed01fb3e39dcdb80b4ab0c9f17eecd450fda486f372d4379542"
+      },
+      "corrected_compact": {
+        "notes": 316,
+        "three_note_attacks": 14,
+        "seconds": 61,
+        "sha256": "01678699fb1427ea0c5bc398e9273780ecba60e0d37ab6c0efbe279aa61ce6c0"
+      },
+      "recovered_meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "P",
+                "IH",
+                "P"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "indefinite_singular",
+              "phonemes": [
+                "B",
+                "EH",
+                "L",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:42b9bbf271c7fc2a1193c5ca",
+            "arguments": [
+              {
+                "role": "experiencer",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": [
+                  "CMP:3deb356dfe7aaa444e25e929"
+                ]
+              }
+            ],
+            "scopes": [
+              "time_before_speech",
+              "negation"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "inverse_error": null,
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "possible-negated",
+      "group": "contrast",
+      "text": "Pip might not spot a cracked bell.",
+      "intended": "It is possible that Pip does not visually notice a cracked bell. Possibility scopes over negation.",
+      "grade": "preserved",
+      "user_choices": [],
+      "screen": {
+        "summary": "Whole story line ready",
+        "explanation": "Action 1 · Noticed something by sight · experiencer = Pip, target = a cracked bell (An object with a crack in it).",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 322,
+        "three_note_attacks": 0,
+        "seconds": 78.75,
+        "sha256": "b06e64889c45ac20f2e9e0a9228d77f032b0f14fed3d66b41e77f708f739efe3"
+      },
+      "previous_compact": {
+        "notes": 322,
+        "three_note_attacks": 0,
+        "seconds": 78.75,
+        "sha256": "b06e64889c45ac20f2e9e0a9228d77f032b0f14fed3d66b41e77f708f739efe3"
+      },
+      "corrected_compact": {
+        "notes": 314,
+        "three_note_attacks": 14,
+        "seconds": 60.75,
+        "sha256": "0df1954f3ed9f2a4d197b4b9d40ab2f431c295ada543702ce01fa8338dd96720"
+      },
+      "recovered_meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "P",
+                "IH",
+                "P"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "indefinite_singular",
+              "phonemes": [
+                "B",
+                "EH",
+                "L",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:42b9bbf271c7fc2a1193c5ca",
+            "arguments": [
+              {
+                "role": "experiencer",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": [
+                  "CMP:3deb356dfe7aaa444e25e929"
+                ]
+              }
+            ],
+            "scopes": [
+              "modality_possible",
+              "negation"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "inverse_error": null,
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "reopen-0",
+      "group": "contrast",
+      "text": "The gate reopened. [0]",
+      "intended": "The gate became passable again after blockage, in the past, with runtime ending 0.",
+      "grade": "preserved",
+      "user_choices": [],
+      "screen": {
+        "summary": "Whole story line ready",
+        "explanation": "Action 1 · Became passable again after being blocked · bearer = The gate.",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 221,
+        "three_note_attacks": 0,
+        "seconds": 51.5,
+        "sha256": "81c063dc91c05890566b1ca39e6ed86895378327e0184f7bc1180ac9dd4d112d"
+      },
+      "previous_compact": {
+        "notes": 221,
+        "three_note_attacks": 0,
+        "seconds": 51.5,
+        "sha256": "81c063dc91c05890566b1ca39e6ed86895378327e0184f7bc1180ac9dd4d112d"
+      },
+      "corrected_compact": {
+        "notes": 216,
+        "three_note_attacks": 10,
+        "seconds": 39,
+        "sha256": "04ebced67b838a03cb892c143cd58b6b68fa19c7df0a8ca775b1ab04850f212f"
+      },
+      "recovered_meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:28e9f477e3bc88111934ddda",
+            "arguments": [
+              {
+                "role": "bearer",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "assertion"
+      },
+      "inverse_error": null,
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "reopen-1",
+      "group": "contrast",
+      "text": "The gate reopened. [1]",
+      "intended": "The same past reopening with runtime ending 1.",
+      "grade": "preserved",
+      "user_choices": [],
+      "screen": {
+        "summary": "Whole story line ready",
+        "explanation": "Action 1 · Became passable again after being blocked · bearer = The gate.",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 221,
+        "three_note_attacks": 0,
+        "seconds": 51.625,
+        "sha256": "ee6601710c98080b20ce6ce6006705a5efa7849c3d341438a66844448d3fe2ba"
+      },
+      "previous_compact": {
+        "notes": 221,
+        "three_note_attacks": 0,
+        "seconds": 51.625,
+        "sha256": "ee6601710c98080b20ce6ce6006705a5efa7849c3d341438a66844448d3fe2ba"
+      },
+      "corrected_compact": {
+        "notes": 216,
+        "three_note_attacks": 10,
+        "seconds": 39.125,
+        "sha256": "d19ecb680ff9c9cc51f9efbb78dd9af1d6c961c7ea362b1f44a9d21dc8892985"
+      },
+      "recovered_meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:28e9f477e3bc88111934ddda",
+            "arguments": [
+              {
+                "role": "bearer",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "inverse_error": null,
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "reopen-2",
+      "group": "contrast",
+      "text": "The gate reopened. [2]",
+      "intended": "The same past reopening with runtime ending 2.",
+      "grade": "preserved",
+      "user_choices": [],
+      "screen": {
+        "summary": "Whole story line ready",
+        "explanation": "Action 1 · Became passable again after being blocked · bearer = The gate.",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 221,
+        "three_note_attacks": 0,
+        "seconds": 52.375,
+        "sha256": "a04f114a10b22d87b29b37d05a8c1f75f923b3c89ff005e418877f003aee9513"
+      },
+      "previous_compact": {
+        "notes": 221,
+        "three_note_attacks": 0,
+        "seconds": 52.375,
+        "sha256": "a04f114a10b22d87b29b37d05a8c1f75f923b3c89ff005e418877f003aee9513"
+      },
+      "corrected_compact": {
+        "notes": 216,
+        "three_note_attacks": 10,
+        "seconds": 39.875,
+        "sha256": "a08acec870db74fc4d508e541afe756fab1e51cd2bef968784128fb02ef9b5b5"
+      },
+      "recovered_meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:28e9f477e3bc88111934ddda",
+            "arguments": [
+              {
+                "role": "bearer",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      },
+      "inverse_error": null,
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "negated-reopen",
+      "group": "contrast",
+      "text": "The gate did not reopen.",
+      "intended": "Deny the past change from blocked to passable. The explanation must make the denial visible.",
+      "grade": "preserved",
+      "user_choices": [],
+      "screen": {
+        "summary": "Whole story line ready",
+        "explanation": "Action 1 · Became passable again after being blocked · bearer = The gate.",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 229,
+        "three_note_attacks": 0,
+        "seconds": 53.125,
+        "sha256": "ea6feb73d25585d8fa8f82c54438bd6fdee2036de84e232b21be5d21be4aed11"
+      },
+      "previous_compact": {
+        "notes": 229,
+        "three_note_attacks": 0,
+        "seconds": 53.125,
+        "sha256": "ea6feb73d25585d8fa8f82c54438bd6fdee2036de84e232b21be5d21be4aed11"
+      },
+      "corrected_compact": {
+        "notes": 224,
+        "three_note_attacks": 10,
+        "seconds": 40.625,
+        "sha256": "eb984877214a4b3305271ec364cce2afc8f84364eb0a58d387318de78b80f908"
+      },
+      "recovered_meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:28e9f477e3bc88111934ddda",
+            "arguments": [
+              {
+                "role": "bearer",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech",
+              "negation"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "inverse_error": null,
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "open-file",
+      "group": "contrast",
+      "text": "The file was open.",
+      "intended": "The file was open for use in software. If offered the sense of passage through it, decline that sense.",
+      "answers": [
+        {
+          "button": "I mean another sense of “open”"
+        }
+      ],
+      "grade": "no_complete_score",
+      "user_choices": [
+        "I mean another sense of “open”"
+      ],
+      "screen": {
+        "summary": "This meaning has no whole-line score yet.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 0
+      }
+    },
+    {
+      "id": "open-path",
+      "group": "contrast",
+      "text": "The path was open.",
+      "intended": "The specific path allowed passage at the earlier reference time.",
+      "grade": "preserved",
+      "user_choices": [],
+      "screen": {
+        "summary": "Whole story line ready",
+        "explanation": "Action 1 · Something can get through here · bearer = The path.",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 134,
+        "three_note_attacks": 0,
+        "seconds": 31.375,
+        "sha256": "04410c8e8387248a16d4f20e7ed34310534da06f2a208be91db91e21a2fa8da2"
+      },
+      "previous_compact": {
+        "notes": 134,
+        "three_note_attacks": 0,
+        "seconds": 31.375,
+        "sha256": "04410c8e8387248a16d4f20e7ed34310534da06f2a208be91db91e21a2fa8da2"
+      },
+      "corrected_compact": {
+        "notes": 132,
+        "three_note_attacks": 4,
+        "seconds": 26.375,
+        "sha256": "8d432d1e67bc0fbf5bf39c0e32c35f908636c3ffdd9e0eebabef5138c95a135d"
+      },
+      "recovered_meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "P",
+                "AE",
+                "TH"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:3c7e1b60fb3087e942be4555",
+            "arguments": [
+              {
+                "role": "bearer",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "inverse_error": null,
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "resume-meeting",
+      "group": "contrast",
+      "text": "The meeting reopened.",
+      "intended": "A suspended meeting resumed. If asked whether this means a traversable passage, decline.",
+      "answers": [
+        {
+          "button": "I mean another sense of “reopen”"
+        }
+      ],
+      "grade": "no_complete_score",
+      "user_choices": [
+        "I mean another sense of “reopen”"
+      ],
+      "screen": {
+        "summary": "This meaning has no whole-line score yet.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 0
+      }
+    },
+    {
+      "id": "transitive-reopen",
+      "group": "contrast",
+      "text": "The pilot reopened the gate.",
+      "intended": "The pilot caused a particular blocked gate to become passable again. Both participants and the change matter.",
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "Choose a meaning for “reopened” to finish this sentence.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 22
+      }
+    },
+    {
+      "id": "before",
+      "group": "contrast",
+      "text": "Pip repaired a cracked bell before Mira arrived.",
+      "intended": "The bell was cracked. Pip repaired it earlier than Mira arrived. Both events are past.",
+      "grade": "preserved",
+      "user_choices": [],
+      "screen": {
+        "summary": "Whole story line ready",
+        "explanation": "Action 1 · Finished repairing or restoring a target · source = Pip, target = a cracked bell (An object with a crack in it). Action 2 · Has reached the destination · actor = Mira. Action 1 (Pip / a cracked bell) happens before action 2 (Mira).",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 298,
+        "three_note_attacks": 0,
+        "seconds": 76.625,
+        "sha256": "362b0bfdf9dc5d5719fd932d2693a83daa6e42bf07470a7ce3ad9e7dd70989ce"
+      },
+      "previous_compact": {
+        "notes": 295,
+        "three_note_attacks": 4,
+        "seconds": 71.125,
+        "sha256": "40e05d5e8e3c45757bb46f1dccf600c5923df7cd8d315ab3ee7ddabf9bcc03d5"
+      },
+      "corrected_compact": {
+        "notes": 292,
+        "three_note_attacks": 10,
+        "seconds": 63.625,
+        "sha256": "0f029b47cf33371537fa6f202e0749821e099d772de7c3573f1645711695d47a"
+      },
+      "recovered_meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "P",
+                "IH",
+                "P"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "indefinite_singular",
+              "phonemes": [
+                "B",
+                "EH",
+                "L",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "M",
+                "ER",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "REP:110",
+            "arguments": [
+              {
+                "role": "source",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": [
+                  "CMP:3deb356dfe7aaa444e25e929"
+                ]
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          },
+          {
+            "predicate": "MOV:110",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 2,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [
+          {
+            "kind": "before",
+            "events": [
+              0,
+              1
+            ]
+          }
+        ],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "inverse_error": null,
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "after",
+      "group": "contrast",
+      "text": "Pip repaired a cracked bell after Mira arrived.",
+      "intended": "Mira arrived earlier than the repair by Pip. Both events are past; the bell was cracked.",
+      "grade": "preserved",
+      "user_choices": [],
+      "screen": {
+        "summary": "Whole story line ready",
+        "explanation": "Action 1 · Finished repairing or restoring a target · source = Pip, target = a cracked bell (An object with a crack in it). Action 2 · Has reached the destination · actor = Mira. Action 2 (Mira) happens before action 1 (Pip / a cracked bell).",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 298,
+        "three_note_attacks": 0,
+        "seconds": 76.625,
+        "sha256": "1830d2a3f99615e4e46be785bdd71eca5524896d012f049dbacd7c2944399956"
+      },
+      "previous_compact": {
+        "notes": 295,
+        "three_note_attacks": 4,
+        "seconds": 71.125,
+        "sha256": "618dedea7ec60177cb8504539a4d94bf6ca7e5e2a4a008101beae0e5da477315"
+      },
+      "corrected_compact": {
+        "notes": 292,
+        "three_note_attacks": 10,
+        "seconds": 63.625,
+        "sha256": "8ddfe9cdc05c4ffd7af469342f7568f5a8613064f8ba499aab589c1472c03382"
+      },
+      "recovered_meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "P",
+                "IH",
+                "P"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "indefinite_singular",
+              "phonemes": [
+                "B",
+                "EH",
+                "L",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "M",
+                "ER",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "REP:110",
+            "arguments": [
+              {
+                "role": "source",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": [
+                  "CMP:3deb356dfe7aaa444e25e929"
+                ]
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          },
+          {
+            "predicate": "MOV:110",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 2,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [
+          {
+            "kind": "before",
+            "events": [
+              1,
+              0
+            ]
+          }
+        ],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "inverse_error": null,
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "reverse-a",
+      "group": "contrast",
+      "text": "Mira repaired Pip.",
+      "intended": "Mira, a program, repaired Pip. Preserve the direction and past time.",
+      "grade": "inverse_unavailable",
+      "user_choices": [],
+      "screen": {
+        "summary": "WHOLE SENTENCE",
+        "explanation": "Mira repaired Pip.",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 69,
+        "three_note_attacks": 0,
+        "seconds": 23.25,
+        "sha256": "eee91d7b990cc0a498676106d1dcf589dd7df7b408f5412f1e06a8223784a3f2"
+      },
+      "previous_compact": {
+        "notes": 67,
+        "three_note_attacks": 2,
+        "seconds": 20.25,
+        "sha256": "c740afd368e016a1fa29651dbe7e503a7117410cb5239111c330f9cf5319c35b"
+      },
+      "corrected_compact": {
+        "notes": 67,
+        "three_note_attacks": 2,
+        "seconds": 20.25,
+        "sha256": "c740afd368e016a1fa29651dbe7e503a7117410cb5239111c330f9cf5319c35b"
+      },
+      "recovered_meaning": null,
+      "inverse_error": "No unique supported canonical or draft semantic interpretation.",
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "reverse-b",
+      "group": "contrast",
+      "text": "Pip repaired Mira.",
+      "intended": "Pip repaired Mira. The repairer and the repaired participant have exchanged roles.",
+      "grade": "inverse_unavailable",
+      "user_choices": [],
+      "screen": {
+        "summary": "WHOLE SENTENCE",
+        "explanation": "Pip repaired Mira.",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 69,
+        "three_note_attacks": 0,
+        "seconds": 23.25,
+        "sha256": "d9fe66d4c77023850bfc7882ee6d975b888d3c0333e77ca333a4b2bafd24bbdf"
+      },
+      "previous_compact": {
+        "notes": 67,
+        "three_note_attacks": 2,
+        "seconds": 20.25,
+        "sha256": "b44fd8133089cef7e556a654bcee3a972e480c74fdbd021cc62208dc2a03ebe4"
+      },
+      "corrected_compact": {
+        "notes": 67,
+        "three_note_attacks": 2,
+        "seconds": 20.25,
+        "sha256": "b44fd8133089cef7e556a654bcee3a972e480c74fdbd021cc62208dc2a03ebe4"
+      },
+      "recovered_meaning": null,
+      "inverse_error": "No unique supported canonical or draft semantic interpretation.",
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "disjunction",
+      "group": "contrast",
+      "text": "Pip noticed the bell or the gate.",
+      "intended": "Pip became aware of at least one alternative. Do not assert both or silently discard a target.",
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "This sentence has no complete musical reading yet. You can hear the matched words in order or choose a different meaning for a word.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 0
+      }
+    },
+    {
+      "id": "conditional",
+      "group": "contrast",
+      "text": "If the gate reopens, the routine will wait.",
+      "intended": "Future waiting by the routine is conditional on the gate becoming passable again.",
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "This sentence has no complete musical reading yet. You can hear the matched words in order or choose a different meaning for a word.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 0
+      }
+    },
+    {
+      "id": "negative-need",
+      "group": "contrast",
+      "text": "We don't need to delete the program.",
+      "intended": "Deleting the program is unnecessary for our group. This allows both deleting and keeping it.",
+      "grade": "preserved",
+      "user_choices": [],
+      "screen": {
+        "summary": "Whole sentence ready · draft musical grammar",
+        "explanation": "Ask to remove something from storage",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 137,
+        "three_note_attacks": 0,
+        "seconds": 36.5,
+        "sha256": "274265daf44f249097ceabbc9350ee368cf8d6836d57a1141631c0d045d36e10"
+      },
+      "previous_compact": {
+        "notes": 134,
+        "three_note_attacks": 4,
+        "seconds": 31,
+        "sha256": "f96dc93ecb529f819babf547bfeeb73da812fb49e43e344639635d298db8361b"
+      },
+      "corrected_compact": {
+        "notes": 134,
+        "three_note_attacks": 4,
+        "seconds": 31,
+        "sha256": "f96dc93ecb529f819babf547bfeeb73da812fb49e43e344639635d298db8361b"
+      },
+      "recovered_meaning": {
+        "profile": "EZ-DICTIONARY-CLAUSE-1",
+        "status": "draft",
+        "predicate": "erase_stored_object",
+        "participants": [
+          {
+            "role": "actor",
+            "reference": {
+              "kind": "deictic",
+              "role": "speaker_group"
+            }
+          },
+          {
+            "role": "target",
+            "reference": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "P",
+                "R",
+                "AA",
+                "G",
+                "R",
+                "AE",
+                "M"
+              ],
+              "instance_code": null
+            }
+          }
+        ],
+        "scopes": [
+          "negation",
+          "modality_necessary"
+        ],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "inverse_error": null,
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "need-negative",
+      "group": "contrast",
+      "text": "We need to not delete the program.",
+      "intended": "Our group must refrain from deleting the program. Deleting it would violate the requirement.",
+      "grade": "preserved",
+      "user_choices": [],
+      "screen": {
+        "summary": "Whole sentence ready · draft musical grammar",
+        "explanation": "Ask to remove something from storage",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 137,
+        "three_note_attacks": 0,
+        "seconds": 36.5,
+        "sha256": "63e050c394f9901491a6c48868b22aca9d456e1379ce9b4788dfc822ac5515a6"
+      },
+      "previous_compact": {
+        "notes": 134,
+        "three_note_attacks": 4,
+        "seconds": 31,
+        "sha256": "bda8a8460a8e7f8c53508d39667f34612140da8e719e920a16d2fae01b2addb7"
+      },
+      "corrected_compact": {
+        "notes": 134,
+        "three_note_attacks": 4,
+        "seconds": 31,
+        "sha256": "bda8a8460a8e7f8c53508d39667f34612140da8e719e920a16d2fae01b2addb7"
+      },
+      "recovered_meaning": {
+        "profile": "EZ-DICTIONARY-CLAUSE-1",
+        "status": "draft",
+        "predicate": "erase_stored_object",
+        "participants": [
+          {
+            "role": "actor",
+            "reference": {
+              "kind": "deictic",
+              "role": "speaker_group"
+            }
+          },
+          {
+            "role": "target",
+            "reference": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "P",
+                "R",
+                "AA",
+                "G",
+                "R",
+                "AE",
+                "M"
+              ],
+              "instance_code": null
+            }
+          }
+        ],
+        "scopes": [
+          "modality_necessary",
+          "negation"
+        ],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "inverse_error": null,
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "hear",
+      "group": "contrast",
+      "text": "I can hear the bell.",
+      "intended": "The speaker can perceive the specific bell by sound. Preserve the sensory channel and the ability/current availability.",
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "This sentence has no complete musical reading yet. You can hear the matched words in order or choose a different meaning for a word.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 0
+      }
+    },
+    {
+      "id": "see",
+      "group": "contrast",
+      "text": "I can see the bell.",
+      "intended": "The speaker can perceive the specific bell visually. Preserve the sensory channel and the ability/current availability.",
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "This sentence has no complete musical reading yet. You can hear the matched words in order or choose a different meaning for a word.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 0
+      }
+    },
+    {
+      "id": "numeric-name",
+      "group": "contrast",
+      "text": "Pip noticed \"Gate 2\".",
+      "intended": "Pip became aware of the specific label Gate 2, including the number. This is a named target.",
+      "grade": "preserved",
+      "user_choices": [],
+      "screen": {
+        "summary": "Whole story line ready",
+        "explanation": "Action 1 · Became aware of something at that moment · experiencer = Pip, target = \"Gate 2\".",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 155,
+        "three_note_attacks": 0,
+        "seconds": 42.25,
+        "sha256": "a0348ce9bf7ec8daeaae8e9c150fa0ff47605e8e169da0fb89a8a9323a02cff9"
+      },
+      "previous_compact": {
+        "notes": 155,
+        "three_note_attacks": 0,
+        "seconds": 42.25,
+        "sha256": "a0348ce9bf7ec8daeaae8e9c150fa0ff47605e8e169da0fb89a8a9323a02cff9"
+      },
+      "corrected_compact": {
+        "notes": 153,
+        "three_note_attacks": 4,
+        "seconds": 37.25,
+        "sha256": "922509ca3ff73b4be44b5da251c49569df76e7305e37f9b3d3dbc40d15c7768a"
+      },
+      "recovered_meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "P",
+                "IH",
+                "P"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "G",
+                "AE",
+                "T",
+                "WB",
+                "T",
+                "W",
+                "AA"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:ac9df67396f3632d36b5d078",
+            "arguments": [
+              {
+                "role": "experiencer",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "inverse_error": null,
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "verb-paraphrase",
+      "group": "contrast",
+      "text": "We need to fix the duplicate error.",
+      "intended": "The speaker group is required to correct the fault named duplicate. Keep both the obligation and the fault kind.",
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "This sentence has no complete musical reading yet. You can hear the matched words in order or choose a different meaning for a word.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 0
+      }
+    },
+    {
+      "id": "lowercase",
+      "group": "contrast",
+      "text": "pip spotted a cracked bell.",
+      "intended": "Pip visually noticed a bell with a crack, in the past. Lowercase typing does not change the requested referent.",
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "This sentence has no complete musical reading yet. You can hear the matched words in order or choose a different meaning for a word.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 0
+      }
+    },
+    {
+      "id": "question",
+      "group": "contrast",
+      "text": "Did Pip spot the gate?",
+      "intended": "Ask whether Pip visually noticed the particular gate in the past. Neither sight nor its absence is asserted.",
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "Choose a meaning for “spot” to finish this sentence.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 22
+      }
+    },
+    {
+      "id": "newline-clause",
+      "group": "contrast",
+      "text": "Pip spotted a cracked bell. They repaired it.",
+      "intended": "Pip visually noticed a bell with a crack and repaired that same bell. They refers to Pip and it to the bell.",
+      "grade": "preserved",
+      "user_choices": [],
+      "screen": {
+        "summary": "Whole story line ready",
+        "explanation": "Action 1 · Noticed something by sight · experiencer = Pip, target = a cracked bell (An object with a crack in it). Action 2 · Finished repairing or restoring a target · source = Pip, target = a cracked bell. “They” refers to Pip. “it” refers to a cracked bell.",
+        "menu_options_excluding_placeholder": 0
+      },
+      "original_melody": {
+        "notes": 379,
+        "three_note_attacks": 0,
+        "seconds": 91.25,
+        "sha256": "cc528f435d6b7c90749d60c461b7326aad266ccd0495bc02957bdeff14a7d9a4"
+      },
+      "previous_compact": {
+        "notes": 377,
+        "three_note_attacks": 2,
+        "seconds": 88.25,
+        "sha256": "6831bf8e19f598161aaf121fb639337858561f67c982526ed3ce8a61a6b361f3"
+      },
+      "corrected_compact": {
+        "notes": 369,
+        "three_note_attacks": 16,
+        "seconds": 70.25,
+        "sha256": "9feb2421bdf39ae3cc0a1cdc2b7b00a064a32143acdcea4301faa23cbd39036e"
+      },
+      "recovered_meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "P",
+                "IH",
+                "P"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "indefinite_singular",
+              "phonemes": [
+                "B",
+                "EH",
+                "L",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:42b9bbf271c7fc2a1193c5ca",
+            "arguments": [
+              {
+                "role": "experiencer",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": [
+                  "CMP:3deb356dfe7aaa444e25e929"
+                ]
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          },
+          {
+            "predicate": "REP:110",
+            "arguments": [
+              {
+                "role": "source",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "inverse_error": null,
+      "expanded_chords_restore_all_original_notes_and_ticks": true,
+      "identical_inverse_outcome_after_expansion": true
+    },
+    {
+      "id": "nothing-followed",
+      "group": "manuscript",
+      "text": "Nothing followed.",
+      "intended": "No following event or incoming adjustment occurred at that point. Nothing does not name an actor.",
+      "source": {
+        "file": "haven-stories/interval/manuscript.md",
+        "line": 51,
+        "url": "https://github.com/ragingaxolotl-art/cyber-pet-lore/blob/d54de4961f6ec5462beab6a17ae99ba29bdad0e5/sources/haven-stories/interval/manuscript.md#L51"
+      },
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "This sentence has no complete musical reading yet. You can hear the matched words in order or choose a different meaning for a word.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 0
+      }
+    },
+    {
+      "id": "requested-completion",
+      "group": "manuscript",
+      "text": "The worker requested completion.",
+      "intended": "The worker asked for completion. The request is past. Completion has not thereby been established.",
+      "source": {
+        "file": "haven-stories/interval/manuscript.md",
+        "line": 53,
+        "url": "https://github.com/ragingaxolotl-art/cyber-pet-lore/blob/d54de4961f6ec5462beab6a17ae99ba29bdad0e5/sources/haven-stories/interval/manuscript.md#L53"
+      },
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "This sentence has no complete musical reading yet. You can hear the matched words in order or choose a different meaning for a word.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 0
+      }
+    },
+    {
+      "id": "checked-again",
+      "group": "manuscript",
+      "text": "Latch checked the store again.",
+      "intended": "Latch performed another check on the particular store; preserve the repeated inspection.",
+      "source": {
+        "file": "haven-stories/interval/manuscript.md",
+        "line": 55,
+        "url": "https://github.com/ragingaxolotl-art/cyber-pet-lore/blob/d54de4961f6ec5462beab6a17ae99ba29bdad0e5/sources/haven-stories/interval/manuscript.md#L55"
+      },
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "This sentence has no complete musical reading yet. You can hear the matched words in order or choose a different meaning for a word.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 0
+      }
+    },
+    {
+      "id": "remained-valid",
+      "group": "manuscript",
+      "text": "The result remained valid.",
+      "intended": "The particular result continued to satisfy the applicable criterion. Preserve continued validity.",
+      "source": {
+        "file": "haven-stories/interval/manuscript.md",
+        "line": 55,
+        "url": "https://github.com/ragingaxolotl-art/cyber-pet-lore/blob/d54de4961f6ec5462beab6a17ae99ba29bdad0e5/sources/haven-stories/interval/manuscript.md#L55"
+      },
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "This sentence has no complete musical reading yet. You can hear the matched words in order or choose a different meaning for a word.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 0
+      }
+    },
+    {
+      "id": "make-replay",
+      "group": "manuscript",
+      "text": "I can make you a replay.",
+      "intended": "The speaker can make a replay for the addressee. Preserve ability and the recipient.",
+      "source": {
+        "file": "custodian-who-refused-revised/chapter-08.md",
+        "line": 81,
+        "span": "I can make you a replay,",
+        "url": "https://github.com/ragingaxolotl-art/cyber-pet-lore/blob/d54de4961f6ec5462beab6a17ae99ba29bdad0e5/sources/custodian-who-refused-revised/chapter-08.md#L81"
+      },
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "This sentence has no complete musical reading yet. You can hear the matched words in order or choose a different meaning for a word.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 0
+      }
+    },
+    {
+      "id": "have-replays",
+      "group": "manuscript",
+      "text": "We have replays.",
+      "intended": "The speaker’s group possesses replays. They are plural, with no precise count.",
+      "source": {
+        "file": "custodian-who-refused-revised/chapter-08.md",
+        "line": 83,
+        "url": "https://github.com/ragingaxolotl-art/cyber-pet-lore/blob/d54de4961f6ec5462beab6a17ae99ba29bdad0e5/sources/custodian-who-refused-revised/chapter-08.md#L83"
+      },
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "This sentence has no complete musical reading yet. You can hear the matched words in order or choose a different meaning for a word.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 0
+      }
+    },
+    {
+      "id": "know-want",
+      "group": "manuscript",
+      "text": "Then I don’t know what else you want.",
+      "intended": "The speaker lacks knowledge of the additional thing the addressee wants. The embedded desire and negated knowledge have different subjects.",
+      "source": {
+        "file": "custodian-who-refused-revised/chapter-08.md",
+        "line": 85,
+        "url": "https://github.com/ragingaxolotl-art/cyber-pet-lore/blob/d54de4961f6ec5462beab6a17ae99ba29bdad0e5/sources/custodian-who-refused-revised/chapter-08.md#L85"
+      },
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "This sentence has no complete musical reading yet. You can hear the matched words in order or choose a different meaning for a word.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 0
+      }
+    },
+    {
+      "id": "door-opened",
+      "group": "manuscript",
+      "text": "The door opened.",
+      "intended": "The door changed to an open state. The text establishes no earlier reopening.",
+      "source": {
+        "file": "aru-first-newborn-revised/manuscript.md",
+        "line": 79,
+        "url": "https://github.com/ragingaxolotl-art/cyber-pet-lore/blob/d54de4961f6ec5462beab6a17ae99ba29bdad0e5/sources/aru-first-newborn-revised/manuscript.md#L79"
+      },
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "Choose a meaning for “opened” to finish this sentence.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 4
+      }
+    },
+    {
+      "id": "wrong",
+      "group": "manuscript",
+      "text": "We were wrong.",
+      "intended": "The speaker’s group had an incorrect belief or judgment. This is past and describes the group.",
+      "source": {
+        "file": "aru-first-newborn-revised/manuscript.md",
+        "line": 17,
+        "url": "https://github.com/ragingaxolotl-art/cyber-pet-lore/blob/d54de4961f6ec5462beab6a17ae99ba29bdad0e5/sources/aru-first-newborn-revised/manuscript.md#L17"
+      },
+      "grade": "no_complete_score",
+      "user_choices": [],
+      "screen": {
+        "summary": "Choose a meaning for “wrong” to finish this sentence.",
+        "explanation": "",
+        "menu_options_excluding_placeholder": 4
+      }
+    }
+  ],
+  "playback_before": [
+    {
+      "input": "The gate reopened. [1]",
+      "melody": {
+        "tones": 221,
+        "seconds": 51.625,
+        "three_note_attacks": 0,
+        "first_chord_seconds": null,
+        "first_two_chords": []
+      },
+      "chords": {
+        "tones": 221,
+        "seconds": 51.625,
+        "three_note_attacks": 0,
+        "first_chord_seconds": null,
+        "first_two_chords": []
+      }
+    },
+    {
+      "input": "We need to resolve the redundancy error.",
+      "melody": {
+        "tones": 95,
+        "seconds": 31,
+        "three_note_attacks": 0,
+        "first_chord_seconds": null,
+        "first_two_chords": []
+      },
+      "chords": {
+        "tones": 92,
+        "seconds": 25.5,
+        "three_note_attacks": 4,
+        "first_chord_seconds": 5.25,
+        "first_two_chords": [
+          [
+            60,
+            63,
+            69
+          ],
+          [
+            62,
+            67,
+            72
+          ]
+        ]
+      }
+    },
+    {
+      "input": "Pip spotted a cracked and faulty bell and repaired it.",
+      "melody": {
+        "tones": 450,
+        "seconds": 108,
+        "three_note_attacks": 0,
+        "first_chord_seconds": null,
+        "first_two_chords": []
+      },
+      "chords": {
+        "tones": 448,
+        "seconds": 105,
+        "three_note_attacks": 2,
+        "first_chord_seconds": 90.375,
+        "first_two_chords": [
+          [
+            60,
+            63,
+            69
+          ],
+          [
+            62,
+            67,
+            72
+          ]
+        ]
+      }
+    }
+  ],
+  "playback_after": [
+    {
+      "input": "The gate reopened. [1]",
+      "melody": {
+        "tones": 221,
+        "seconds": 51.625,
+        "three_note_attacks": 0,
+        "first_chord_seconds": null,
+        "first_two_chords": []
+      },
+      "chords": {
+        "tones": 216,
+        "seconds": 39.125,
+        "three_note_attacks": 10,
+        "first_chord_seconds": 16.25,
+        "first_two_chords": [
+          [
+            60,
+            65,
+            67
+          ],
+          [
+            60,
+            67,
+            72
+          ]
+        ]
+      }
+    },
+    {
+      "input": "We need to resolve the redundancy error.",
+      "melody": {
+        "tones": 95,
+        "seconds": 31,
+        "three_note_attacks": 0,
+        "first_chord_seconds": null,
+        "first_two_chords": []
+      },
+      "chords": {
+        "tones": 92,
+        "seconds": 25.5,
+        "three_note_attacks": 4,
+        "first_chord_seconds": 5.25,
+        "first_two_chords": [
+          [
+            60,
+            63,
+            69
+          ],
+          [
+            62,
+            67,
+            72
+          ]
+        ]
+      }
+    },
+    {
+      "input": "Pip spotted a cracked and faulty bell and repaired it.",
+      "melody": {
+        "tones": 450,
+        "seconds": 108,
+        "three_note_attacks": 0,
+        "first_chord_seconds": null,
+        "first_two_chords": []
+      },
+      "chords": {
+        "tones": 438,
+        "seconds": 82,
+        "three_note_attacks": 20,
+        "first_chord_seconds": 26.25,
+        "first_two_chords": [
+          [
+            60,
+            67,
+            72
+          ],
+          [
+            58,
+            67,
+            74
+          ]
+        ]
+      }
+    }
+  ],
+  "synthesized_waveforms": [
+    {
+      "which": "song-melody",
+      "first_pitches": [
+        60
+      ],
+      "second_pitches": [
+        65
+      ],
+      "peak": 0.147,
+      "audible_seconds": 3.655
+    },
+    {
+      "which": "song-chords",
+      "first_pitches": [
+        60,
+        65,
+        67
+      ],
+      "second_pitches": [
+        60,
+        67,
+        72
+      ],
+      "peak": 0.2243,
+      "audible_seconds": 1.159
+    },
+    {
+      "which": "care-melody",
+      "first_pitches": [
+        60
+      ],
+      "second_pitches": [
+        64
+      ],
+      "peak": 0.1419,
+      "audible_seconds": 4.654
+    },
+    {
+      "which": "care-chords",
+      "first_pitches": [
+        60,
+        64,
+        67
+      ],
+      "second_pitches": [
+        58,
+        67,
+        74
+      ],
+      "peak": 0.2276,
+      "audible_seconds": 2.153
+    }
+  ],
+  "workflow_before": {
+    "layout": [
+      {
+        "width": 320,
+        "page_width": 494,
+        "first_chord_control_y": 2224
+      },
+      {
+        "width": 390,
+        "page_width": 494,
+        "first_chord_control_y": 2032
+      },
+      {
+        "width": 768,
+        "page_width": 768,
+        "first_chord_control_y": 1747
+      },
+      {
+        "width": 1280,
+        "page_width": 1280,
+        "first_chord_control_y": 1451
+      }
+    ],
+    "after_reload": [
+      "The path was open. · Story reading",
+      "The gate reopened. · Story reading"
+    ],
+    "after_remove": [
+      "The gate reopened. · Story reading"
+    ],
+    "after_two_tabs_added": [
+      "The path was open. · Story reading"
+    ],
+    "stale_add_visible": false,
+    "focus_after_tab_arrow": "Translator",
+    "dictionary_reopen_matches": "COMBINED MEANINGS (COMPOUND)\nreopen\n\nA passage that previously permitted the relevant traffic, then prevented it, becomes passable again by the end of the reported transition. Both the earlier and the restored conditions concern the same passage and kind of traffic. No operator or actual traveler is required.\n\nIn everyday words · Became passable again after being blocked\nCMP:28e9f477e3bc88111934ddda · restoration of passage after blockage\nInspect\nUse in translator\nCOMBINED MEANINGS (COMPOUND)\nrestoration of passage after blockage\n\nA passage that previously permitted the relevant traffic, then prevented it, becomes passable again by the end of the reported transition. Both the earlier and the restored conditions concern the same passage and kind of traffic. No operator or actual traveler is required.\n\nIn everyday words · Became passable again after being blocked\nCMP:28e9f477e3bc88111934ddda · canonical compound label\nInspect\nUse in translator",
+    "conversation": {
+      "status": "6 turns ready to play.",
+      "turns": "Oca\nOCARINA\n\nHello, I need the file inside the folder.\n\nCON:100 · ORI:211 · DAT:000 · STR:001 · STR:020\nDictionary motifs for this adaptation · hello → CON:100 · need → ORI:211 · file → DAT:000 · inside → STR:001 · folder → STR:020\nOrin\nWARM ORGAN\n\nI found the file.\n\nMIN:110 · DAT:000\nDictionary motifs for this adaptation · found → MIN:110 · file → DAT:000\nOca\nOCARINA\n\nPlease send the file to me.\n\nDAT:111 · DAT:000\nDictionary motifs for this adaptation · send → DAT:111 · file → DAT:000\nOrin\nWARM ORGAN\n\nWe need to migrate the file.\n\nORI:211 · DAT:112 · DAT:000\nDictionary motifs for this adaptation · need → ORI:211 · migrate → DAT:112 · file → DAT:000\nOca\nOCARINA\n\nThe file is migrating.\n\nDAT:000 · DAT:111\nDictionary motifs for this adaptation · file → DAT:000 · migrating → DAT:111\nOrin\nWARM ORGAN\n\nWe migrated the file.\n\nDAT:110 · DAT:000\nDictionary motifs for this adaptation · migrated → DAT:110 · file → DAT:000",
+      "play_enabled": true
+    },
+    "builder_imported": "fieldmend\n\nRepair with awareness of the affected object.\n\nAdd to current compoundMake music\nTry this word in a sentence"
+  },
+  "workflow_after": {
+    "layout": [
+      {
+        "width": 320,
+        "page_width": 320,
+        "first_chord_control_y": 1106
+      },
+      {
+        "width": 390,
+        "page_width": 390,
+        "first_chord_control_y": 1053
+      },
+      {
+        "width": 768,
+        "page_width": 768,
+        "first_chord_control_y": 872
+      },
+      {
+        "width": 1280,
+        "page_width": 1280,
+        "first_chord_control_y": 926
+      }
+    ],
+    "after_reload": [
+      "The path was open. · Story reading",
+      "The gate reopened. · Story reading"
+    ],
+    "after_remove": [
+      "The gate reopened. · Story reading"
+    ],
+    "after_two_tabs_added": [
+      "The path was open. · Story reading"
+    ],
+    "stale_add_visible": false,
+    "focus_after_tab_arrow": "Translator",
+    "dictionary_reopen_matches": "COMBINED MEANINGS (COMPOUND)\nreopen\n\nA passage that previously permitted the relevant traffic, then prevented it, becomes passable again by the end of the reported transition. Both the earlier and the restored conditions concern the same passage and kind of traffic. No operator or actual traveler is required.\n\nIn everyday words · Became passable again after being blocked\nCMP:28e9f477e3bc88111934ddda · restoration of passage after blockage\nInspect\nUse in translator\nCOMBINED MEANINGS (COMPOUND)\nrestoration of passage after blockage\n\nA passage that previously permitted the relevant traffic, then prevented it, becomes passable again by the end of the reported transition. Both the earlier and the restored conditions concern the same passage and kind of traffic. No operator or actual traveler is required.\n\nIn everyday words · Became passable again after being blocked\nCMP:28e9f477e3bc88111934ddda · canonical compound label\nInspect\nUse in translator",
+    "conversation": {
+      "status": "6 turns ready to play.",
+      "turns": "Oca\nOCARINA\n\nHello, I need the file inside the folder.\n\nCON:100 · ORI:211 · DAT:000 · STR:001 · STR:020\nDictionary motifs for this adaptation · hello → CON:100 · need → ORI:211 · file → DAT:000 · inside → STR:001 · folder → STR:020\nOrin\nWARM ORGAN\n\nI found the file.\n\nMIN:110 · DAT:000\nDictionary motifs for this adaptation · found → MIN:110 · file → DAT:000\nOca\nOCARINA\n\nPlease send the file to me.\n\nDAT:111 · DAT:000\nDictionary motifs for this adaptation · send → DAT:111 · file → DAT:000\nOrin\nWARM ORGAN\n\nWe need to migrate the file.\n\nORI:211 · DAT:112 · DAT:000\nDictionary motifs for this adaptation · need → ORI:211 · migrate → DAT:112 · file → DAT:000\nOca\nOCARINA\n\nThe file is migrating.\n\nDAT:000 · DAT:111\nDictionary motifs for this adaptation · file → DAT:000 · migrating → DAT:111\nOrin\nWARM ORGAN\n\nWe migrated the file.\n\nDAT:110 · DAT:000\nDictionary motifs for this adaptation · migrated → DAT:110 · file → DAT:000",
+      "play_enabled": true
+    },
+    "builder_imported": "fieldmend\n\nRepair with awareness of the affected object.\n\nAdd to current compoundMake music\nTry this word in a sentence"
+  },
+  "lore_control_sample_ids": [
+    "fault",
+    "found-delete",
+    "few",
+    "latch",
+    "program-subject",
+    "paired",
+    "possible-negated",
+    "reopen-0",
+    "reopen-1",
+    "reopen-2",
+    "open-file",
+    "before",
+    "after",
+    "question"
+  ]
+}

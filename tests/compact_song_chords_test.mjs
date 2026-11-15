@@ -1,10 +1,12 @@
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
-import {compactChordMidi,expandChordMidi} from '../pages/compact_chords.mjs';
+import {compactChordMidi,compactChordPerformance,expandChordMidi} from '../pages/compact_chords.mjs';
 import {notesFromMidi,midiFromNoteTimeline} from '../pages/performance_codec.mjs';
 import {midiFromFormal} from '../pages/engine.mjs';
 import {composeInformationPassage,decodeInformationPassageMidi} from '../pages/information_passage.mjs';
 import {scoreSongText,songMidi} from '../pages/song_lines.mjs';
+import {decodeStoryMidi} from '../pages/story_music.mjs';
+import {encodeName,midiFromName} from '../pages/names.mjs';
 const data=file=>JSON.parse(fs.readFileSync(new URL('../pages/'+file,import.meta.url)));
 const a=data('data/index.json');
 const notes=(bytes,poly=false)=>notesFromMidi(bytes,{allowPolyphony:poly}).notes.map(({midi,start_tick,end_tick})=>[midi,start_tick,end_tick]);
@@ -29,6 +31,30 @@ for(const text of ['I care for you.','I do not care for you. [0]','Does Nora car
  const line=await scoreSongText(text,a,load);assert(line,text);
  const song=songMidi([{midi},line]);assert.deepEqual(notes(expandChordMidi(compactChordMidi(song,a.atoms),a.atoms)),notes(song),text);
 }
+// These saved scores contain roots with no rest between components. The previously
+// released arranger returned identical monophonic music for every runtime of reopen.
+const joined=[];
+for(const state of [0,1,2]){
+  const text='The gate reopened. ['+state+']';
+  const scored=await scoreSongText(text,a,load);
+  const arrangement=compactChordPerformance(scored.midi,a.atoms,{preview:true});
+  assert.equal(arrangement.rootCount,5);
+  const attacks=Map.groupBy(notes(arrangement.midi,true),n=>n[1]);
+  assert.equal([...attacks.values()].filter(group=>group.length===3).length,10);
+  assert(arrangement.chordSeconds<.8*arrangement.melodySeconds);
+  const expanded=expandChordMidi(arrangement.midi,a.atoms);
+  assert.deepEqual(notes(expanded),notes(scored.midi));
+  assert.equal(decodeStoryMidi(expanded,a.atoms).runtime_state,state);
+  assert.deepEqual(notes(expandChordMidi(arrangement.firstRoot.chords,a.atoms)),notes(arrangement.firstRoot.melody));
+  joined.push(scored);
+}
+const namesOnly=midiFromName(await encodeName('Gate 2'));
+assert.equal(compactChordPerformance(namesOnly,a.atoms,{preview:true}).firstRoot,null);
+assert.deepEqual(notes(compactChordMidi(namesOnly,a.atoms)),notes(namesOnly));
+const mixed=songMidi([joined[2],{midi:namesOnly},joined[0]]);
+const combination=compactChordPerformance(mixed,a.atoms,{preview:true});
+assert.equal(combination.rootCount,10);
+assert.deepEqual(notes(expandChordMidi(combination.midi,a.atoms)),notes(mixed));
 const sample=compactChordMidi(midiFromFormal(data(a.resolution_files['MOV:101']).variants['assertion:2'].formal),a.atoms);
 const attacks=notesFromMidi(sample,{allowPolyphony:true}).notes;
 assert.throws(()=>expandChordMidi(midiFromNoteTimeline(attacks.slice(1)),a.atoms));

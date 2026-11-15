@@ -1,6 +1,8 @@
       <section class="card song-editor" data-app-view="translator" aria-labelledby="songTitle">
         <h2 id="songTitle">Your song</h2><p>Translate a line, then choose <strong>Add to song</strong>. Lines play in the order you add them.</p>
         <label>Song arrangement<select id="songArrangement"><option value="chords">Compact chords</option><option value="melody">Original melody</option></select></label>
+        <button id="previewSongRoot" type="button" disabled>Hear first root in chords</button>
+        <p id="songTiming" aria-live="polite"></p>
         <ol id="songLines"></ol>
         <div class="translation-actions"><button id="playSong" disabled>Play song</button><button id="stopSong" disabled>Stop</button><button id="exportSong" disabled>Download song MIDI</button></div>
         <p id="songStatus" role="status"></p>

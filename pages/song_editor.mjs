@@ -1,4 +1,4 @@
-import {compactChordMidi} from './compact_chords.mjs';
+import {compactChordPerformance} from './compact_chords.mjs?v=joined-roots-1';
 import {songMidi} from './song_lines.mjs';
 import {notesFromMidi} from './performance_codec.mjs';
 
@@ -7,11 +7,43 @@ export function mountSongEditor({document,storage,player,download,getAtoms}) {
   const list=document.getElementById('songLines'), status=document.getElementById('songStatus');
   const play=document.getElementById('playSong'), save=document.getElementById('exportSong'),stop=document.getElementById('stopSong');
   const arrangement=document.getElementById('songArrangement');
-  const arranged=()=>{
-    const melody=songMidi(lines);
-    return arrangement.value==='chords'?compactChordMidi(melody,getAtoms()):melody;
-  };
-  arrangement.addEventListener('change',()=>player.stop());
+  const preview=document.getElementById('previewSongRoot'),timing=document.getElementById('songTiming');
+  let prepared=null,original=null;
+  const originalMelody=()=>original??=songMidi(lines);
+  function performance(){
+    if(!prepared){
+      const melody=originalMelody();
+      prepared={melody,...compactChordPerformance(melody,getAtoms(),{preview:true})};
+    }
+    return prepared;
+  }
+  const inChords=()=>arrangement.value==='chords';
+  const arranged=()=>inChords()?performance().midi:originalMelody();
+  const showSeconds=n=>Number(n.toFixed(2))+' s';
+  function showArrangement(){
+    if(!preview||!timing)return;
+    preview.disabled=true;
+    preview.textContent=inChords()?'Hear first root in chords':'Hear first root as a melody';
+    timing.textContent='';
+    if(!lines.length||!getAtoms()?.length)return;
+    try{
+      const result=performance();
+      if(!result.firstRoot){
+        timing.textContent='This song contains no recognizable dictionary root. Both arrangements use the same notes.';
+        return;
+      }
+      preview.disabled=false;
+      timing.textContent='Melody '+showSeconds(result.melodySeconds)+' · Compact chords '+showSeconds(result.chordSeconds)+
+        '. The first chord starts at '+showSeconds(result.firstRoot.atSeconds)+'.';
+    }catch(error){timing.textContent=error.message;}
+  }
+  arrangement.addEventListener('change',()=>{player.stop();showArrangement();});
+  preview?.addEventListener('click',async()=>{
+    try{
+      const first=performance().firstRoot;
+      if(first)await player.play(inChords()?first.chords:first.melody,{chords:inChords()});
+    }catch(error){status.textContent=error.message;}
+  });
   let lines=[],canSave=true;
   try {
     const stored=storage.getItem(key);
@@ -22,6 +54,7 @@ export function mountSongEditor({document,storage,player,download,getAtoms}) {
     });
   } catch { canSave=false;status.textContent='The saved song could not be opened. New lines are available in this tab.'; }
   function render() {
+    prepared=null;original=null;
     list.replaceChildren();
     play.disabled=save.disabled=stop.disabled=!lines.length;
     for (const [index,line] of lines.entries()) {
@@ -31,6 +64,7 @@ export function mountSongEditor({document,storage,player,download,getAtoms}) {
       remove.addEventListener('click',()=>{player.stop();lines.splice(index,1);changed('Line removed.');});
       row.append(label,remove);list.append(row);
     }
+    showArrangement();
   }
   function changed(message) {
     render();
@@ -44,9 +78,11 @@ export function mountSongEditor({document,storage,player,download,getAtoms}) {
   stop.addEventListener('click',()=>player.stop());
   save.addEventListener('click',()=>{try{download(new Blob([arranged()],{type:'audio/midi'}),'era-zero-song-'+arrangement.value+'.mid');}catch(error){status.textContent=error.message;}});
   render();
-  return (text,midi,label)=>{
+  function addLine(text,midi,label){
     if (!text.trim()||!notesFromMidi(midi).notes.length) throw Error('This line has no music.');
     player.stop();lines.push({text,label,midi:new Uint8Array(midi)});changed('Line '+lines.length+' added.');
     return lines.length;
-  };
+  }
+  addLine.refreshArrangement=showArrangement;
+  return addLine;
 }

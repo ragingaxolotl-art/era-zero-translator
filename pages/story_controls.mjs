@@ -1,7 +1,7 @@
 import {storyReading} from './story_readings.mjs?v=story-passages-1';
 import {scoreStory} from './story_music.mjs?v=story-passages-1';
 import {everydayMeaning} from './everyday.mjs';
-import {compactChordMidi} from './compact_chords.mjs';
+import {compactChordMidi} from './compact_chords.mjs?v=joined-roots-1';
 
 export async function showStoryControls(input,authority,{list,summary,current,preferences,player,add,download,onError},initial){
   const element=(tag,text)=>{const node=document.createElement(tag);if(text)node.textContent=text;return node;};

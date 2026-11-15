@@ -59,3 +59,10 @@
 .dictionary-clause label {display:block;margin:10px 0}
 .dictionary-clause select {display:block;max-width:100%;margin-top:4px}
 .dictionary-clause button {margin:2px 4px 2px 0}
+
+.chord-preview{margin:14px 0;padding:12px 14px;border-left:3px solid var(--accent,#51d5cd);background:rgba(52,174,170,.07);border-radius:6px}
+.chord-preview p,.song-editor #songTiming{margin:0 0 8px;line-height:1.45}
+.chord-actions{display:flex;flex-wrap:wrap;gap:8px}
+.chord-actions button,.song-editor #previewSongRoot{min-height:36px;cursor:pointer}
+.song-editor #previewSongRoot{margin:8px 0}.song-editor #songTiming:empty{display:none}
+@media(max-width:560px){.app-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%}.app-tabs .app-tab{min-width:0;width:100%}}

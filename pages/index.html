@@ -6,7 +6,7 @@
   <meta name="description" content="Browser workbench for conservative English-to-Era-Zero translation, clarification, formal notation, SVG, and MIDI export.">
   <title>Era Zero Translator Workbench</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1420'/%3E%3Cpath d='M14 10h36v8H24v10h22v8H24v10h26v8H14z' fill='%2361e1d2'/%3E%3C/svg%3E">
-    <link rel="stylesheet" href="./styles.css?v=1.16.0">
+    <link rel="stylesheet" href="./styles.css?v=1.18.0">
 </head>
 <body>
   <div class="shell">
@@ -40,6 +40,14 @@
           </div>
           <label for="sourceInput" id="inputLabel">Write it in normal English</label>
           <textarea id="sourceInput" rows="5" spellcheck="true" placeholder="Try: I am leaving home now."></textarea>
+          <div id="chord-preview" class="chord-preview">
+            <p>Hear the root for “care”. Three notes sound together for its family, then three for its address. The upper note carries the ending.</p>
+            <div class="chord-actions">
+              <button id="hearCareChords" type="button" disabled>Hear “care” in chords</button>
+              <button id="hearCareMelody" type="button" disabled>Hear as a melody</button>
+              <button id="stopCarePreview" type="button" disabled>Stop example</button>
+            </div>
+          </div>
           <div class="examples" aria-label="Examples">
             <span>Examples</span>
             <button data-example="We need to resolve the redundancy error.">redundancy error</button>
@@ -200,6 +208,8 @@
       <section class="card song-editor" data-app-view="translator" aria-labelledby="songTitle">
         <h2 id="songTitle">Your song</h2><p>Translate a line, then choose <strong>Add to song</strong>. Lines play in the order you add them.</p>
         <label>Song arrangement<select id="songArrangement"><option value="chords">Compact chords</option><option value="melody">Original melody</option></select></label>
+        <button id="previewSongRoot" type="button" disabled>Hear first root in chords</button>
+        <p id="songTiming" aria-live="polite"></p>
         <ol id="songLines"></ol>
         <div class="translation-actions"><button id="playSong" disabled>Play song</button><button id="stopSong" disabled>Stop</button><button id="exportSong" disabled>Download song MIDI</button></div>
         <p id="songStatus" role="status"></p>
@@ -289,6 +299,6 @@
     </section>
   </div>
   <div id="toast" role="status" aria-live="polite"></div>
-    <script type="module" src="./app.js?v=1.17.0"></script>
+    <script type="module" src="./app.js?v=1.18.0"></script>
 </body>
 </html>
