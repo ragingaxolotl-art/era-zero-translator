@@ -1,0 +1,71 @@
+{
+  "source": "c5b6c5f4dc0bb2f2ebbb26b04ba1eca8fdc075f1",
+  "results": [
+    {
+      "command": [
+        "node",
+        "tools/validate_pages_release.mjs"
+      ],
+      "exit_code": 0,
+      "output": "GitHub Pages audit: PASS\nChecks passed: 12876; failed: 0; canonical variants: 6195\n"
+    },
+    {
+      "command": [
+        "node",
+        "tools/validate_local_compound_release.mjs"
+      ],
+      "exit_code": 0,
+      "output": "PASS local_builder_authoring_test.mjs\nPASS local_canonical_dependencies_test.mjs\nPASS local_compound_binding_test.mjs\nPASS local_compound_controls_test.mjs\nPASS local_compound_english_test.mjs\nPASS local_compound_examples_test.mjs\nPASS local_compound_expansion_test.mjs\nPASS local_compound_merge_test.mjs\nPASS local_compound_music_test.mjs\nPASS local_compound_performance_test.mjs\nPASS local_compound_player_test.mjs\nPASS local_compound_pronouns_test.mjs\nPASS local_compound_sentence_test.mjs\nPASS local_compounds_test.mjs\nPASS local_english_controls_test.mjs\nPASS local_participant_groups_test.mjs\nPASS local_role_link_controls_test.mjs\nPASS local_role_links_test.mjs\nPASS local_saved_routing_test.mjs\nPASS local_verb_english_test.mjs\n20/20 checks passed; 164 browser modules available.\n"
+    },
+    {
+      "command": [
+        "ruby",
+        "tools/test_compound_extension.rb"
+      ],
+      "exit_code": 0,
+      "output": "Compound extension: PASS \u2014 119 compounds, new lookup, 15 round trips, stable existing IDs, repeatable rebuild; canonical inventory untouched.\n"
+    },
+    {
+      "command": [
+        "node",
+        "tools/validate_love_compound.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Love compound: PASS \u2014 lookup, three atoms, bond head, 15 exact variants, num, and separate affection reading.\n"
+    },
+    {
+      "command": [
+        "node",
+        "tools/audit_full_translator.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Phrase lookup and inventory checks: PASS\nChecks passed: 98; failed: 0; phrase cases: 80; documents: 837\n"
+    },
+    {
+      "command": [
+        "ruby",
+        "tools/validate_product_application.rb"
+      ],
+      "exit_code": 0,
+      "output": "Product application audit: PASS\nChecks passed: 16; checks failed: 0\n"
+    },
+    {
+      "command": [
+        "ruby",
+        "tools/audit_project_completeness.rb"
+      ],
+      "exit_code": 0,
+      "output": "Release inventory/reference audit: PASS (not a full-translator certificate)\nChecks passed: 11; failed: 0\n"
+    },
+    {
+      "command": [
+        "ruby",
+        "tools/regress_current_state.rb"
+      ],
+      "exit_code": 0,
+      "output": "refresh current gap inventory: PASS\nGap reports regenerated: 324 canonical, 0 provisional, 0 chunks\nNext packet: none \u2014 atomic semantic review complete\nvalidate current authority and translator boundary: PASS\nChecks passed: 29\nChecks failed: 0\nCanonical: 324; provisional: 0\nEffective promotions: 288; generated-form assertions: 2592\nTranslator checks passed: 8; failed: 0\nvalidate latest semantic packet with reusable contract: PASS\nORI:200\u2013222: PASS\nMode: canonical; checks passed: 18; checks failed: 0\nCandidates: 45; score assertions: 360; stress tests: 115\nvalidate Gate 4A typed compound architecture: PASS\nGate 4A validation: PASS\nChecks passed: 21; checks failed: 0\nValid cases: 12; invalid cases: 23; dictionary entries: 0\nvalidate Gate 4B high-frequency compound dictionary: PASS\nGate 4B validation: PASS\nChecks passed: 16; checks failed: 0; entries: 118\nvalidate Gate 4C English concept and sense index: PASS\nGate 4C validation: PASS\nChecks passed: 17; checks failed: 0; senses: 591; lemmas: 570\nvalidate Gate 4D coverage and ambiguity report: PASS\nGate 4D validation: PASS\nChecks passed: 11; checks failed: 0\nvalidate Gate 4E formal etymology table: PASS\nGate 4E validation: PASS\nChecks passed: 13; checks failed: 0\nvalidate semantic IR and executable grammar: PASS\nSemantic IR validation: PASS\nChecks passed: 14; checks failed: 0; valid: 16; invalid: 13\nvalidate deterministic renderer and inverse decoder: PASS\nRenderer/decoder validation: PASS\nChecks passed: 12; checks failed: 0\nvalidate controlled English compiler: PASS\nControlled English validation: PASS\nChecks passed: 13; checks failed: 0\nvalidate general-English candidate translator: PASS\nGeneral English validation: PASS\nChecks passed: 16; checks failed: 0\nvalidate glyph and MIDI presentation: PASS\nGlyph/audio validation: PASS\nChecks passed: 10; checks failed: 0\nvalidate carrier-driven character visemes: PASS\nViseme performance: PASS \u00b7 6195 variants \u00b7 112743 cues \u00b7 100746 assertions\nvalidate optional recognition audio checksums: PASS\nRecognition audio: PASS \u00b7 6195 variants \u00b7 36963 assertions\nvalidate recorded-waveform recognition checks against canonical form: PASS\nRecognition waveform: PASS \u00b7 108 performances \u00b7 327 assertions\nvalidate recognition controls, meaning-rich dictionary, and concept intake UI: PASS\nRecognition/dictionary UI: PASS \u00b7 6 intake probes\nvalidate persistent DBA concept review queue and noncanonical surface approvals: PASS\nConcept queue: PASS \u00b7 21 assertions\nvalidate selectable audio voice envelopes: PASS\nAudio voice envelopes: PASS \u00b7 5 voices \u00b7 release tails and softened stops checked\nvalidate two-being conversation and MP3: PASS\nConversation validation: PASS \u00b7 14 passed \u00b7 0 failed \u00b7 6 turns\nvalidate keyed lore conversation performances: PASS\nLore conversation validation: PASS \u00b7 66 passed \u00b7 0 failed \u00b7 5 presets \u00b7 22 turns\naudit game and story English translation profile: PASS\nGame/story translation audit: PASS\nChecks passed: 86; failed: 0; phrases: 69\naudit ordinary-language, game, and lore phrase coverage: PASS\nOrdinary-language corpus: PASS \u00b7 144 phrases \u00b7 0 failures\nvalidate complete plain-English discovery and matching layer: PASS\nPlain-English matching: PASS (442/442 labels; 442 complete mappings)\nvalidate lexical/POS audit and DBA concept-intake workflow: PASS\nLexical/concept intake: PASS \u00b7 7 checks\nvalidate translator workbench product application: PASS\nProduct application audit: PASS\nChecks passed: 16; checks failed: 0\nvalidate translator workbench frontend syntax: PASS\nProduct frontend syntax: PASS (local source, browser release, viseme compiler)\nvalidate translator workbench over real localhost HTTP: PASS\nProduct HTTP smoke: PASS (v1.15.0 recognition performance decoding, meaning-rich dictionary, persistent concept review, complete plain-English matching, conversations, selectable voices, layered character rig, health, analyze, exact round trip)\nvalidate the complete REP:000\u2013222 family: PASS\nREP:000\u2013222 soundness: PASS\nMode: canonical; checks passed: 24; checks failed: 0\nvalidate the complete LOG:000\u2013222 family: PASS\nLOG:000\u2013222 soundness: PASS\nMode: canonical; checks passed: 24; checks failed: 0\nvalidate the complete DAT:000\u2013222 family: PASS\nDAT:000\u2013222 soundness: PASS\nMode: canonical; checks passed: 24; checks failed: 0\nvalidate the complete CRE:000\u2013222 family: PASS\nCRE:000\u2013222 soundness: PASS\nMode: canonical; checks passed: 24; checks failed: 0\nvalidate the complete ORI:000\u2013222 family: PASS\nORI:000\u2013222 soundness: PASS\nMode: canonical; checks passed: 22; checks failed: 0\nvalidate the complete CON:000\u2013222 family: PASS\nCON:000\u2013222 soundness: PASS\nMode: canonical; checks passed: 16; checks failed: 0\nvalidate the complete STR:000\u2013222 family: PASS\nSTR:000\u2013222 soundness: PASS\nMode: canonical; checks passed: 24; checks failed: 0\nvalidate the complete WRN:000\u2013222 family: PASS\nWRN:000\u2013222 soundness: PASS\nMode: canonical; checks passed: 24; checks failed: 0\n"
+    }
+  ],
+  "passed": true,
+  "completed_at": "2026-11-22T23:47:37.163050+00:00"
+}

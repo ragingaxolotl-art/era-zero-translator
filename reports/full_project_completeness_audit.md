@@ -20,15 +20,15 @@ source corpus preserved separately with immutable source IDs
 
 ## PASS — approved compounds
 
-117 approved definitions
+118 approved definitions
 
 ## PASS — complete sense options
 
-324 atomic labels / 117 compound labels
+324 atomic labels / 118 compound labels
 
 ## PASS — complete lexical targets
 
-441 unique direct targets
+442 unique direct targets
 
 ## PASS — 11 explicit gaps
 
