@@ -6,7 +6,7 @@ import {acquisitionMusicEvent} from './acquisition_music_frames.mjs';
 import {grammarMarker} from './scheduler.mjs';
 import {midiFromScheduledEvents} from './engine.mjs';
 import {validAcquisitionScopes,acquisitionScopeMarker} from './acquisition_scopes.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
 export async function midiFromUnderstandingAcquisition(input,authority,{allowDraft=false,anchor=60}={}){
  const d=await validateUnderstandingAcquisition(input,{allowDraft}),formal={performance:{anchor_midi:anchor}};
  const [head]=await renderLexicalOccurrences({nodes:[{node_id:'acquisition',kind:'lexical_occurrence',target_type:'atom',target_id:'ORI:110',runtime_state:d.transition_runtime}],edges:[]},authority,{anchor});

@@ -4,7 +4,7 @@ import {painComparisonMusicEvents,readPainComparisonTree} from './pain_compariso
 import {renderLexicalOccurrences} from './bound_compounds.mjs';
 import {grammarMarker} from './scheduler.mjs';
 import {midiFromScheduledEvents} from './engine.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
 export async function midiFromPainPreference(document,authority,{allowDraft=false,anchor=60}={}){
  const d=await validatePainPreference(document,{allowDraft}),mark=name=>grammarMarker({performance:{anchor_midi:anchor}},'pain-preference',name);
  let events=[painPreferenceEvent(d.runtime_state,'open',anchor)];

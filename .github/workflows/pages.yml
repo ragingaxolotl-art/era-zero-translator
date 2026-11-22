@@ -40,6 +40,8 @@ jobs:
           node tests/compact_song_chords_test.mjs
           node tests/story_readings_test.mjs
           node tests/state_adjective_sentences_test.mjs
+          node tests/sentence_scope_reliability_test.mjs
+          node tests/love_semantic_inverse_test.mjs
           node tests/field_repair_regression.mjs
           node tools/audit_story_readings.mjs
           node tools/audit_story_followup.mjs initial

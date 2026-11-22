@@ -1,4 +1,6 @@
-# Full Translator Phrase, Dictionary, and Document Audit
+# Phrase Lookup, Dictionary, and Document Checks
+
+Scope: lexical lookup, inventory and document availability. These checks do not establish whole-sentence translation, intended-meaning preservation or recorded-audio recovery.
 
 Status: **PASS**
 
@@ -8,7 +10,7 @@ Status: **PASS**
 - Dictionary roots: **324**
 - Compounds: **107**
 - Indexed senses: **560**
-- Public document records: **625**
+- Public document records: **721**
 
 ## Phrase matrix
 
@@ -103,7 +105,7 @@ Status: **PASS**
 - **PASS** — all generated root fields available
 - **PASS** — complete compound records
 - **PASS** — complete indexed dictionary options
-- **PASS** — document manifest count is exact: 625 records
+- **PASS** — document manifest count is exact: 721 records
 - **PASS** — every document path exists
 - **PASS** — required authority documents are public
 - **PASS** — all evidence categories available

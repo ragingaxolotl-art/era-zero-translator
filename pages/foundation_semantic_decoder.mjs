@@ -5,7 +5,7 @@ import {validAcquisitionScopes} from './acquisition_scopes.mjs';
 import {readSwimmingTree} from './swimming_decoder.mjs';
 import {readFeltConditionTree} from './felt_decoder.mjs';
 import {validateFoundations,foundationPath} from './foundations.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
 // No source IR, expected sentence, or formal plan is accepted by this inverse.
 export async function decodeFoundationSentenceMidi(bytes,atoms,records,{allowDraft=false,allowDraftQuestionContent=false,allowDraftAcquisition=false}={}){
  records=await validateFoundations(records,{allowDraft});

@@ -1,10 +1,10 @@
 import {validStorySlots} from './story_saved_adjectives.mjs';
 import {isPassageHead} from './passage_nouns.mjs';
 import {knownValueReading} from './known_value.mjs?v=field-repairs-1';
-import {faultCategoryReading} from './fault_correction.mjs?v=field-repairs-1';
+import {faultCategoryReading} from './fault_correction.mjs?v=meaning-reliability-1';
 import {routeNounLabel} from './nominals.mjs';
 import {expandNegativeContractions} from './contractions.mjs';
-import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs';
+import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs?v=meaning-reliability-1';
 import {properties,feltProperties,isMaterialTarget} from './story_qualities.mjs';
 import {storyWords} from './story_words.mjs?v=state-adjectives-1';
 
@@ -190,17 +190,9 @@ function describeChoice(row) {
 function predicate(verb, subject, object, authority, runtime, preferences) {
   const anchor = subject.pronoun ? (deictics[subject.pronoun] || (['they','them'].includes(subject.pronoun)?'we':'Ada')) :
     subject.plural&&!subject.singularAgreement?'we':'Ada';
-  const capability=/^(cannot|can not|can|will)(?: (not))? (.+)$/i.exec(verb);
-  const governed=capability?capability[3]:verb;
-  const placeholder = anchor+' '+(capability?'might ':'')+governed+(object?' the gate':'');
+  const placeholder = anchor+' '+verb+(object?' the gate':'');
   const syntax = clauseSyntax(placeholder);
   if (!syntax) return [];
-  if(capability){
-    const modal=capability[1].toLowerCase();
-    syntax.scopes=modal==='will'?['time_after_speech']:['ability'];
-    if(modal==='cannot'||modal==='can not')syntax.scopes.unshift('negation');
-    else if(capability[2])syntax.scopes.push('negation');
-  }
   const personal=preferences.length && dictionaryClausePlan(placeholder+' ['+runtime+'].',authority,{preferences});
   if(personal && personal.preferred>=0){
     const r=personal.readings[personal.preferred];
@@ -510,7 +502,7 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
         if(!isMaterialTarget(head)){
           const key='physical'+index;
           if(!answers[key])return {question:{key,prompt:'Does “'+reading.word+'” describe a physical action on '+entity.label+'?',options:[
-            {value:'physical',label:words.get(reading.word).example},{value:'other',label:'Another meaning'}]}};
+            {value:'physical',label:({push:'Physical pushing',lift:'Physical lifting',lower:'Controlled physical lowering',displace:'Physical displacement'})[reading.word]||'Physical '+reading.word},{value:'other',label:'Another meaning'}]}};
           if(answers[key]!=='physical')return null;
         }
       }

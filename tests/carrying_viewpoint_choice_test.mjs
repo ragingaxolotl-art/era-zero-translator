@@ -4,6 +4,7 @@ import vm from 'node:vm';
 import {execFileSync} from 'node:child_process';
 import {parseNamedSentence,composeNamedSentence,composeSentenceSequence} from '../pages/sentences.mjs';
 import {midiFromFormal,soundPlanFromFormal,svgFromFormal} from '../pages/engine.mjs';
+import {sentenceReadiness} from '../pages/sentence_readiness.mjs';
 import {recognitionForTarget} from '../pages/recognition.mjs';
 import {decodeStrictMusicMidi} from '../pages/strict_music_decoder.mjs';
 import {decodeNominalMassRestrictions} from '../pages/reference_property_decoder.mjs';
@@ -64,13 +65,14 @@ ui=show();ui.view.value='habitual';ui.threshold.value='20';let fail;ctx.sentence
 // The real browser revealed that convention/property markers reached a lexical
 // checksum lookup and aborted showResolution before runtime/contour were shown.
 const {everydayMeaning}=await import('../pages/everyday.mjs');
-const displayIds=['addSentenceToSong','resultScope','hearTranslation','output','meaningTitle','sourceEcho','sourceInput','controlledText','readingLabel','targetBadge','utteranceId','formalId','roundTrip','prefixText','carrierText','familyNotes','addressNotes','recognitionNotes','runtimeNote','contourNotes','irCode','formalCode','glyphStage'];
+const displayIds=['sentenceReadiness','addSentenceToSong','resultScope','hearTranslation','output','meaningTitle','sourceEcho','sourceInput','controlledText','readingLabel','targetBadge','utteranceId','formalId','roundTrip','prefixText','carrierText','familyNotes','addressNotes','recognitionNotes','runtimeNote','contourNotes','irCode','formalCode','glyphStage'];
 const display=Object.fromEntries(displayIds.map(id=>[id,element(id)]));
 for(const mode of ['recognition','strict','learning'])for(const code of [0,1,2]){
  const result=results.find(r=>r.source_input===`I carry the heavy box. [${code}]`&&r.selected_viewpoint==='habitual');
- const context=vm.createContext({everydayMeaning,state:{data:authority},$:id=>display[id],currentSoundMode:()=>mode,soundPlanFromFormal,svgFromFormal,recognitionForTarget:(target,...args)=>{assert(!/^EZGRAM:|^EZLEX:/.test(target));return recognitionForTarget(target,...args)}});
+ const context=vm.createContext({everydayMeaning,sentenceReadiness,midiFromFormal,loadSongFoundations:async()=>[],state:{data:authority,resolution:result},$:id=>display[id],currentSoundMode:()=>mode,soundPlanFromFormal,svgFromFormal,recognitionForTarget:(target,...args)=>{assert(!/^EZGRAM:|^EZLEX:/.test(target));return recognitionForTarget(target,...args)}});
  vm.runInContext(app.slice(app.indexOf('async function showResolution('),app.indexOf('function showError(')),context);
  await context.showResolution(result,{definition:result.semantic_note});
+ assert.match(display.sentenceReadiness.textContent,/Whole sentence ready/);
  assert(display.runtimeNote.textContent.includes(`MOV:121 [${code}]`));assert(display.contourNotes.textContent.startsWith('level:'));
  assert.equal(display.readingLabel.textContent,'Lexical gloss');assert.equal(display.controlledText.textContent,result.formal.literal_gloss);
  assert(display.glyphStage.innerHTML.includes('<svg'));assert.equal(JSON.parse(display.irCode.textContent).utterance_id,result.semantic_ir.utterance_id);

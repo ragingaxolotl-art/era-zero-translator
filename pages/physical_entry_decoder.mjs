@@ -1,4 +1,4 @@
-import {strictSemanticReader} from './strict_semantic_reader.mjs';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
 import {readSpatialRelationTree} from './spatial_relation_decoder.mjs';
 export function decodePhysicalEntryMidi(bytes,atoms){
  const fail=()=>{throw new Error('Unsupported or malformed physical entry music.');};

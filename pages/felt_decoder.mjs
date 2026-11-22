@@ -1,4 +1,4 @@
-import {strictSemanticReader} from './strict_semantic_reader.mjs';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
 
 // Learned lexical conventions interpreted from performed MIDI, not source IR.
 const profiles={

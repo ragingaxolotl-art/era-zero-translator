@@ -2,7 +2,7 @@ import {selectedContentEvents,readSelectedContent} from './content_selection.mjs
 // Draft contextual selectors. These select content; they do not assert a
 // communication, a true answer, understanding, empathy, or successful learning.
 import {midiFromScheduledEvents} from './engine.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
 import {CONTEXTUAL_CONTENT_KINDS,contextualContentMusicEvent} from './contextual_content_frames.mjs';
 export {CONTEXTUAL_CONTENT_KINDS,contextualContentMusicFrames,contextualContentMusicEvent} from './contextual_content_frames.mjs';
 export function readContextualContentMusic(bytes,atoms,{allowDraft=false}={}){

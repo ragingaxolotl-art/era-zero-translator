@@ -1,0 +1,81 @@
+[
+  {
+    "command": [
+      "tests/compact_song_chords_test.mjs"
+    ],
+    "passed": true,
+    "log": "/tmp/dba-required-0-1122.log"
+  },
+  {
+    "command": [
+      "tools/audit_story_readings.mjs"
+    ],
+    "passed": true,
+    "log": "/tmp/dba-required-1-1122.log"
+  },
+  {
+    "command": [
+      "tools/audit_story_followup.mjs",
+      "initial"
+    ],
+    "passed": true,
+    "log": "/tmp/dba-required-2-1122.log"
+  },
+  {
+    "command": [
+      "tools/audit_story_followup.mjs",
+      "reserve"
+    ],
+    "passed": true,
+    "log": "/tmp/dba-required-3-1122.log"
+  },
+  {
+    "command": [
+      "tools/validate_local_compound_release.mjs"
+    ],
+    "passed": true,
+    "log": "/tmp/dba-required-4-1122.log"
+  },
+  {
+    "command": [
+      "tools/test_compound_extension.rb"
+    ],
+    "passed": true,
+    "log": "/tmp/dba-required-5-1122.log"
+  },
+  {
+    "command": [
+      "tools/validate_love_compound.mjs"
+    ],
+    "passed": true,
+    "log": "/tmp/dba-required-6-1122.log"
+  },
+  {
+    "command": [
+      "tools/audit_full_translator.mjs"
+    ],
+    "passed": true,
+    "log": "/tmp/dba-required-7-1122.log"
+  },
+  {
+    "command": [
+      "tools/validate_product_application.rb"
+    ],
+    "passed": true,
+    "log": "/tmp/dba-required-8-1122.log"
+  },
+  {
+    "command": [
+      "tools/audit_project_completeness.rb"
+    ],
+    "passed": true,
+    "log": "/tmp/dba-required-9-1122.log"
+  },
+  {
+    "command": [
+      "tools/regress_current_state.rb"
+    ],
+    "passed": true,
+    "log": "/tmp/dba-required-10-1122.log"
+  }
+]

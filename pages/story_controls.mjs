@@ -1,7 +1,8 @@
-import {storyReading} from './story_readings.mjs?v=state-adjectives-1';
+import {storyReading} from './story_readings.mjs?v=meaning-reliability-1';
 import {scoreStory} from './story_music.mjs?v=state-adjectives-1';
 import {everydayMeaning} from './everyday.mjs';
 import {compactChordMidi} from './compact_chords.mjs?v=state-adjectives-1';
+import {sentenceReadiness} from './sentence_readiness.mjs?v=meaning-reliability-1';
 
 export async function showStoryControls(input,authority,{list,summary,current,preferences,adjectives,player,add,download,onError},initial){
   const element=(tag,text)=>{const node=document.createElement(tag);if(text)node.textContent=text;return node;};
@@ -37,8 +38,10 @@ export async function showStoryControls(input,authority,{list,summary,current,pr
       return;
     }
     const scored=await scoreStory(plan,authority);if(!active())return;
-    summary.textContent='Whole story line ready';
+    const readiness=await sentenceReadiness(scored.midi,authority.atoms,{adjectives});if(!active())return;
+    summary.textContent=readiness.summary;
     card.append(element('p',scored.description));
+    card.append(element('p',readiness.detail));
     button('Play whole passage',()=>player.play(scored.midi)).className='primary';
     button('Play compact chords',()=>player.play(compactChordMidi(scored.midi,authority.atoms),{chords:true}));
     button('Stop',()=>player.stop());

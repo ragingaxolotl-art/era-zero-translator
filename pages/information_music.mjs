@@ -9,6 +9,8 @@ const roleNode=(node,role)=>({nodes:[node,{node_id:'clause',kind:'clause'}],
 export function informationMusic(authority,runtime) {
   const anchor=60, marker=name=>grammarMarker({performance:{anchor_midi:anchor}},'passage',name);
   const wrap=(name,events,draft=false)=>{
+    // Reuse the existing audible ability enclosure across draft sentence routes.
+    if(name==='ability'){name='story_ability';draft=true;}
     const frame=side=>draft?informationFrame(name+'_'+side,anchor):marker(name+'_'+side);
     return [frame('open'),...events,frame('close')];
   };

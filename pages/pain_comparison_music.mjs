@@ -4,7 +4,7 @@ import {painStimulusMusicEvents,readPainStimulusTree} from './pain_stimulus_musi
 import {renderLexicalOccurrences} from './bound_compounds.mjs';
 import {grammarMarker} from './scheduler.mjs';
 import {midiFromScheduledEvents} from './engine.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
 export async function painComparisonMusicEvents(document,authority,{allowDraft=false,anchor=60}={}){
  const d=await validatePainComparison(document,{allowDraft}),mark=name=>grammarMarker({performance:{anchor_midi:anchor}},'pain-comparison',name);
  let events=[painComparisonEvent(d.relation,d.runtime_state,'open',anchor),mark('role_content_open'),...await renderLexicalOccurrences({nodes:[d.context],edges:[]},authority,{anchor}),mark('role_content_close'),mark('role_target_open'),...await painStimulusMusicEvents(d.left,authority,{allowDraft:true,anchor}),mark('role_target_close'),mark('role_comparison_standard_open'),...await painStimulusMusicEvents(d.right,authority,{allowDraft:true,anchor}),mark('role_comparison_standard_close'),painComparisonEvent(d.relation,d.runtime_state,'close',anchor)];

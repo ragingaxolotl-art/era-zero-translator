@@ -1,9 +1,9 @@
-import {clauseSyntax} from './dictionary_clauses.mjs';
-import {scoreRoleReference,readRoleReference} from './dictionary_clause_music.mjs?v=field-repairs-1';
+import {clauseSyntax} from './dictionary_clauses.mjs?v=meaning-reliability-1';
+import {scoreRoleReference,readRoleReference} from './dictionary_clause_music.mjs?v=meaning-reliability-1';
 import {midiFromScheduledEvents} from './engine.mjs';
-import {informationMusic} from './information_music.mjs?v=field-repairs-1';
+import {informationMusic} from './information_music.mjs?v=meaning-reliability-1';
 import {encodeName} from './names.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=field-repairs-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
 
 // These nouns name categories of fault. A category does not specify its cause or a repair procedure.
 const faultTypes = ['redundancy','duplicate','checksum','data','memory','network','parity','storage','syntax','timing','transmission','backup','sensor','valve','power','clock','disk'];
@@ -67,7 +67,8 @@ export async function decodeFaultCorrectionMidi(bytes,atoms) {
   const operators=scopes.map(s=>{
     if(s.operator==='modality'&&['possible','necessary'].includes(s.mode)&&s.strength===undefined)return s.mode;
     if(s.operator==='negation')return 'negation';
-    if(s.operator==='time'&&['previous_day','current_day','next_day','before_speech'].includes(s.relation))return 'time_'+s.relation;
+    if(s.operator==='ability')return 'ability';
+    if(s.operator==='time'&&['previous_day','current_day','next_day','before_speech','after_speech'].includes(s.relation))return 'time_'+s.relation;
     fail();
   });
   if(!operators.includes('necessary')||current.length!==3)fail();
@@ -86,7 +87,7 @@ export async function decodeFaultCorrectionMidi(bytes,atoms) {
 
 export function describeFaultCorrection(plan) {
   const subject = {we:'Our group',I:'I',you:'You'}[plan.actor]||plan.actor;
-  if(plan.speechAct==='question'||plan.scopes.some(s=>s==='possible'||s.startsWith('time_')))return (plan.speechAct==='question'?'Question':'Statement')+' about '+subject+' correcting '+plan.determiner+' '+(plan.type?plan.type+' ':'')+'fault. Scope · '+plan.scopes.map(s=>s.replaceAll('_',' ')).join(' → ')+'.';
+  if(plan.speechAct==='question'||plan.scopes.some(s=>s==='possible'||s==='ability'||s.startsWith('time_')))return (plan.speechAct==='question'?'Question':'Statement')+' about '+subject+' correcting '+plan.determiner+' '+(plan.type?plan.type+' ':'')+'fault. Scope · '+plan.scopes.map(s=>s.replaceAll('_',' ')).join(' → ')+'.';
   const needs = ['you','I'].includes(plan.actor)?'need':'needs';
   const action = plan.scopes[0] === 'negation' ? (['you','I'].includes(plan.actor)?'do':'does')+' not need to correct'
     : plan.scopes.includes('negation') ? needs+' to refrain from correcting' : needs+' to correct';

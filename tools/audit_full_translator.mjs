@@ -140,12 +140,12 @@ check('phonemic labels deterministic',firstName.name_id===secondName.name_id&&no
 check('phonemic label has audible framed sequence',notesForName(firstName).length>firstName.phonemes.length*2);
 
 const failed=checks.filter(item=>!item.ok),passed=checks.length-failed.length;
-const lines=['# Full Translator Phrase, Dictionary, and Document Audit','',`Status: **${failed.length?'FAIL':'PASS'}**`,'',`- Checks passed: **${passed}**`,`- Checks failed: **${failed.length}**`,`- Phrase cases: **${cases.length}**`,`- Dictionary roots: **${data.atoms.length}**`,`- Compounds: **${data.compounds.length}**`,`- Indexed senses: **${data.senses.length}**`,`- Public document records: **${documents.count}**`,'','## Phrase matrix','','| Phrase | Primary result | Auto | Runtime | Speech act | Word handling | Status |','|---|---|---:|---:|---|---|---|'];
+const lines=['# Phrase Lookup, Dictionary, and Document Checks','','Scope: lexical lookup, inventory and document availability. These checks do not establish whole-sentence translation, intended-meaning preservation or recorded-audio recovery.','',`Status: **${failed.length?'FAIL':'PASS'}**`,'',`- Checks passed: **${passed}**`,`- Checks failed: **${failed.length}**`,`- Phrase cases: **${cases.length}**`,`- Dictionary roots: **${data.atoms.length}**`,`- Compounds: **${data.compounds.length}**`,`- Indexed senses: **${data.senses.length}**`,`- Public document records: **${documents.count}**`,'','## Phrase matrix','','| Phrase | Primary result | Auto | Runtime | Speech act | Word handling | Status |','|---|---|---:|---:|---|---|---|'];
 for(const row of phraseRows){lines.push(`| ${row.test.phrase.replaceAll('|','\\|')} | ${(row.top?.target_id||row.top?.sense_key||'no semantic candidate').replaceAll('|','\\|')} | ${row.result.decision.auto_resolution_allowed?'yes':'no'} | ${row.result.explicit_runtime_state} | ${row.result.speech_act_proposal} | ${row.result.term_coverage.map(item=>`${item.term}:${item.status}`).join(', ')} | ${row.ok?'PASS':'FAIL'} |`)}
 lines.push('','## Non-phrase checks','');
 for(const item of checks.slice(cases.length))lines.push(`- **${item.ok?'PASS':'FAIL'}** — ${item.name}${item.detail?`: ${item.detail}`:''}`);
 lines.push('','## Boundary','','A word-level recommendation is not a new canonical meaning. Grammar and Semantic-IR routes remain structural, explicit gaps remain gaps, English-only function words make no lexical claim, and EZNAME remains a nonsemantic label channel.');
 fs.writeFileSync(path.join(root,'reports/full_translator_audit.md'),`${lines.join('\n')}\n`);
-console.log(`Full translator audit: ${failed.length?'FAIL':'PASS'}`);
+console.log(`Phrase lookup and inventory checks: ${failed.length?'FAIL':'PASS'}`);
 console.log(`Checks passed: ${passed}; failed: ${failed.length}; phrase cases: ${cases.length}; documents: ${documents.count}`);
 if(failed.length){for(const item of failed)console.error(`FAIL: ${item.name} — ${item.detail}`);process.exit(1)}

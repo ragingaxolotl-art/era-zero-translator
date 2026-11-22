@@ -76,7 +76,7 @@ export function clauseSyntax(input) {
   text=text.replace(/[.!?]$/,'');
   let first='', lead;
   if (question){
-    lead=/^(do|does|did|might|is|are|am|was|were)\s+(.+)$/i.exec(text);
+    lead=/^(do|does|did|might|can|cannot|will|is|are|am|was|were)\s+(.+)$/i.exec(text);
     if(!lead)return null;
     first=normalized(lead[1]);text=lead[2];
   }
@@ -91,13 +91,19 @@ export function clauseSyntax(input) {
   const scopes=[],when=/\s+(today|yesterday|tomorrow)$/i.exec(tail);
   if(when){scopes.push('time_'+({today:'current_day',yesterday:'previous_day',tomorrow:'next_day'}[normalized(when[1])]));tail=tail.slice(0,when.index);}
   let form=knownActor.test(subject)?'base':'third',being=false;
-  const aux=/^(do|does|did|might|is|are|am|was|were)\s+(not\s+)?(.+)$/i.exec(tail);
+  const aux=/^(do|does|did|might|can|cannot|will|is|are|am|was|were)\s+(not\s+)?(.+)$/i.exec(tail);
   if(aux){
     const a=normalized(aux[1]);
     if(!agrees(a,subject))return null;
     if(a==='did'||a==='was'||a==='were')scopes.push('time_before_speech');
     if(a==='might')scopes.push('modality_possible');
-    if(aux[2])scopes.push('negation');
+    if(a==='will')scopes.push('time_after_speech');
+    // Cannot / can not deny ability; will not places negation inside future time.
+    if(a==='can'||a==='cannot'){
+      if(a==='cannot'&&aux[2])return null;
+      if(a==='cannot'||aux[2])scopes.push('negation');
+      scopes.push('ability');
+    }else if(aux[2])scopes.push('negation');
     being=['am','is','are','was','were'].includes(a);
     form=being?'progressive':'base';tail=aux[3];
   }
@@ -225,6 +231,9 @@ export function dictionaryRoles(root) {
 // their existing parser for necessities and the inclusive speaker-group anchor.
 export function savedScopedReadings(input,entries,part) {
   const syntax=clauseSyntax(input);if(!syntax)return [];
+  // Bound personal compounds do not yet have the story ability enclosure.
+  // Do not reinterpret ability as an empty or possible modality.
+  if(syntax.scopes.includes('ability'))return [];
   if(syntax.subject!=='we'&&!syntax.scopes.includes('modality_necessary'))return [];
   const scopes=syntax.scopes.map(scope=>scope==='negation'?{operator:'negation'}:scope.startsWith('time_')?{operator:'time',relation:scope.slice(5)}:{operator:'modality',mode:scope.slice(9)});
   const tail=normalized(syntax.tail),matches=[];

@@ -3,7 +3,7 @@ import {custodyOpportunityEvent} from './custody_opportunity_frames.mjs';
 import {renderLexicalOccurrences} from './bound_compounds.mjs';
 import {grammarMarker} from './scheduler.mjs';
 import {midiFromScheduledEvents} from './engine.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
 export async function custodyOpportunityMusicEvents(document,authority,{allowDraft=false,anchor=60}={}){
  const d=await validateCustodyOpportunity(document,{allowDraft}),mark=name=>grammarMarker({performance:{anchor_midi:anchor}},'custody_opportunity',name);
  let events=[custodyOpportunityEvent(d.runtime_state,'open',anchor)];

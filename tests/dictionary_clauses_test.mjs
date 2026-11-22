@@ -95,12 +95,12 @@ class El{
 let added,played,status,current=true;
 function mount(plan){
  const container=new El();
- const work=mountDictionaryClause(container,plan,a,{document:{createElement:()=>new El()},player:{play:b=>{played=b;},stop(){}},add:(...args)=>{added=args;},download(){},
+ const work=mountDictionaryClause(container,plan,a,{document:{createElement:tag=>Object.assign(new El(),{tagName:tag})},player:{play:b=>{played=b;},stop(){}},add:(...args)=>{added=args;},download(){},
    remember:(r,forms,forget)=>updateWordChoice(store,r,forms,forget),onStatus:msg=>{status=msg;},isCurrent:()=>current,onError:e=>assert.fail(e.message)});
- return work.then(()=>{const card=container.children[0],output=card.children.at(-1),sel=card.children.find(e=>e.children.some(c=>'value' in c))?.children[0];
+ return work.then(()=>{const card=container.children[0],output=card.children.at(-1),sel=(function find(el){return el.tagName==='select'?el:el.children.map(find).find(Boolean)})(card);
  return {sel,output,button:name=>output.children.find(e=>e.textContent===name)?.listeners.click};});
 }
-const ui=await mount(pick);assert.equal(ui.sel.value,'');assert.match(status,/Choose a meaning/);assert.equal(ui.button('Add to song'),undefined);
+const ui=await mount(pick);assert.equal(ui.sel.value,'');assert.match(status,/Missing definition/);assert.equal(ui.button('Add to song'),undefined);
 const idx=pick.readings.findIndex(r=>r.root==='REP:110');assert(idx>=0);ui.sel.value=String(idx);await ui.sel.listeners.change();assert.match(status,/Whole sentence ready/);assert(ui.sel.children.some(o=>o.textContent.includes('repair')&&o.textContent.includes('REP:110')));
 await ui.button('Play whole sentence')();await ui.button('Add to song')();assert.deepEqual(played,added[1]);assert.equal(added[0],unknown);
 const old=ui.button('Add to song');await ui.button('Use this meaning next time')();

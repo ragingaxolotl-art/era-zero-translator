@@ -6,6 +6,8 @@ The user should be able to write a new message, resolve a genuine ambiguity in o
 
 ## Ordered work packages
 
+November 22 implementation update: the specific scope-loss, love-inverse and mobile-picker defects are repaired, with independent decoding and browser checks. See the [repair report](../reports/meaning_reliability_2026_11_22.md) for evidence and remaining boundaries. The first two packages have substantial progress; this does not close the broader translator or the separate physical-device/audio checks. The next implementation work is the dependency-ordered vocabulary below.
+
 ### 1. Repair meaning loss and make readiness truthful
 
 Fix the shared predicate-routing fallback before extending its vocabulary. Carry the already interpreted time, ability and negation scopes into all returned readings, including personal preferences. Compare *will*, *can*, *might*, *will not* and *cannot* for known special verbs, dictionary fallback verbs and personal verbs in simple sentences, questions, conditions and coordinated clauses. Respect scope order; merely copying a set of flags is insufficient.
@@ -78,7 +80,7 @@ Record exact language/profile revisions with each released song and library. Rec
 | Original phase | Current conclusion |
 |---|---|
 | One baseline and accurate status | Current revisions and scope are recorded; broad historical reconciliation remains incomplete. |
-| Meaning survives rendering | Strong evidence for tested profiles; the new scope-loss and love-inverse findings prevent broad closure. |
+| Meaning survives rendering | The identified scope-loss and love-inverse findings are repaired and tested. Broader unfamiliar-input coverage still prevents closure. |
 | Recursive compounds and reference binding | Working infrastructure and nested-adjective tests; broader constructions and shared dialogue references remain. |
 | Complete small vertical slice | The earlier approved text-to-music release exists. This is narrower than full translation. |
 | Coherent vocabulary expansion | Substantial additions exist; missing physical, descriptive, social and cultural senses remain. |

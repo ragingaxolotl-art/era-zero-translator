@@ -1,4 +1,4 @@
-import {strictSemanticReader} from './strict_semantic_reader.mjs';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
 import {CONTEXTUAL_NORMS} from './contextual_standards.mjs';
 export function decodeContextualStandardMidi(bytes,atoms){
  const message='Unsupported or malformed contextual-standard music.',fail=()=>{throw new Error(message);};

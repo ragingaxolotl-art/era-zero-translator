@@ -1,5 +1,6 @@
 // Shared strict semantic inverses; no expected sentence or predicate hint.
 import {decodeCareMidi} from './care_decoder.mjs';
+import {decodeLoveMidi} from './love_decoder.mjs?v=meaning-reliability-1';
 import {decodeSwimmingMidi} from './swimming_decoder.mjs';
 import {decodePhysicalEntryMidi} from './physical_entry_decoder.mjs';
 import {decodeRunningMidi} from './running_decoder.mjs';
@@ -12,7 +13,7 @@ import {decodeFeltConditionMidi} from './felt_decoder.mjs';
 import {decodeContextualStandardMidi} from './contextual_standard_decoder.mjs';
 import {decodeMaterialMeasurementMidi} from './material_measurement_decoder.mjs';
 import {decodePropertyComparisonMidi} from './property_comparison_decoder.mjs';
-const DECODERS=[decodeNamedProcessMidi,decodePhysicalCarryingMidi,decodeCareMidi,decodeSwimmingMidi,decodePhysicalEntryMidi,decodeRunningMidi,decodeSpatialRelationMidi,decodePhysicalCustodyMidi,decodeCustodyAcquisitionMidi,decodeCustodyTransferMidi,decodeCustodyDeliveryMidi,decodeDestinationCarryingMidi,decodeFeltConditionMidi,decodeContextualStandardMidi,decodeMaterialMeasurementMidi,decodePropertyComparisonMidi];
+const DECODERS=[decodeNamedProcessMidi,decodePhysicalCarryingMidi,decodeCareMidi,decodeLoveMidi,decodeSwimmingMidi,decodePhysicalEntryMidi,decodeRunningMidi,decodeSpatialRelationMidi,decodePhysicalCustodyMidi,decodeCustodyAcquisitionMidi,decodeCustodyTransferMidi,decodeCustodyDeliveryMidi,decodeDestinationCarryingMidi,decodeFeltConditionMidi,decodeContextualStandardMidi,decodeMaterialMeasurementMidi,decodePropertyComparisonMidi];
 export function decodeSupportedMeaningMidi(bytes,atoms){
  const accepted=[];
  for(const decoder of DECODERS){try{accepted.push(decoder(bytes,atoms));}catch{}}
@@ -38,8 +39,8 @@ export async function decodeSupportedMeaningWithDrafts(bytes,atoms,records,{allo
  const {decodePainMidi}=await import('./pain_music.mjs');
  const {decodeCuriosityMidi}=await import('./curiosity_music.mjs');
  const {decodeRouteLearningMidi}=await import('./route_learning_music.mjs');
- const {decodeDictionaryClauseMidi}=await import('./dictionary_clause_music.mjs?v=field-repairs-1');
- const {decodeFaultCorrectionMidi}=await import('./fault_correction.mjs?v=field-repairs-1');
+ const {decodeDictionaryClauseMidi}=await import('./dictionary_clause_music.mjs?v=meaning-reliability-1');
+ const {decodeFaultCorrectionMidi}=await import('./fault_correction.mjs?v=meaning-reliability-1');
  const {decodeInformationPassageMidi}=await import('./information_passage.mjs');
  const {decodeKnownValueMidi}=await import('./known_value.mjs?v=field-repairs-1');
  const {decodeStoryMidi}=await import('./story_music.mjs?v=state-adjectives-1');

@@ -1,7 +1,7 @@
-import {informationMusic} from './information_music.mjs';
+import {informationMusic} from './information_music.mjs?v=meaning-reliability-1';
 import {contextualContentReference} from './contextual_content.mjs';
 import {midiFromScheduledEvents} from './engine.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
 
 const programClass = 'CMP:2f350e7d8e5dfba4a802d82d';
 const actor = '(I|[Ww]e|[Yy]ou|[A-Z][a-z]+)';
