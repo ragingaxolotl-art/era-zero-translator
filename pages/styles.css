@@ -77,4 +77,9 @@
 .definition-alias-options {margin-top:16px}
 .definition-alias-options summary {font-weight:600}
 .translation-details{margin-top:18px}.translation-details summary{cursor:pointer;color:var(--muted);padding:10px 0}
+.candidate button {max-width:100%;margin:4px 6px 4px 0;min-height:44px;line-height:1.35}
+.candidate button:not(.primary) {padding:10px 13px;border:1px solid var(--line);border-radius:8px;background:#111a27;color:var(--ink);cursor:pointer}
+.candidate button:not(.primary):hover:not(:disabled) {border-color:var(--blue)}
+.candidate button:focus-visible {outline:2px solid var(--cyan);outline-offset:2px}
+.candidate button:disabled {opacity:.45;cursor:not-allowed}
 @media(max-width:560px){.candidate button{min-height:44px}.candidate-head{flex-wrap:wrap}.output-tabs{flex-wrap:wrap}}

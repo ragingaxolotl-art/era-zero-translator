@@ -1,12 +1,13 @@
 import {validStorySlots} from './story_saved_adjectives.mjs';
 import {isPassageHead} from './passage_nouns.mjs';
-import {knownValueReading} from './known_value.mjs?v=physical-vocabulary-1';
-import {faultCategoryReading} from './fault_correction.mjs?v=physical-vocabulary-1';
+import {knownValueReading} from './known_value.mjs?v=information-operations-1';
+import {faultCategoryReading} from './fault_correction.mjs?v=information-operations-1';
 import {routeNounLabel} from './nominals.mjs';
 import {expandNegativeContractions} from './contractions.mjs';
-import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs?v=physical-vocabulary-1';
+import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs?v=information-operations-1';
 import {properties,feltProperties,isMaterialTarget,isPhysicalContainer,physicalActionLabels} from './story_qualities.mjs?v=physical-vocabulary-1';
 import {storyWords} from './story_words.mjs?v=physical-vocabulary-1';
+import {ERASURE,isStoredInformationTarget} from './information_operations.mjs?v=information-operations-1';
 
 const words = new Map(storyWords.map(word => [word.word, word]));
 const id = word => words.get(word).id;
@@ -22,6 +23,7 @@ const shapes = [
   ['release','releases','released',['actor','target'],null,'releasing'],
   ['fall','falls','fell',['bearer'],null,'falling'],
   ['drop','drops','dropped',['actor','target'],null,'dropping'],
+  ['delete','deletes','deleted',['actor','target'],ERASURE,'deleting'],
   ['resume','resumes','resumed',['bearer'],null,'resuming'],
   ['vibrate', 'vibrates', 'vibrated', ['bearer']],
   ['sound', 'sounds', 'sounded', ['source']],
@@ -52,7 +54,7 @@ const shapes = [
   ['move','moves','moved',['actor'],'MOV:121','moving'],
   ['make','makes','made',['source','result'],'CRE:110']
 ];
-const predicateId = (word,target) => target?.includes(':')?target:word==='arrive'?'MOV:110':id(target||word);
+const predicateId = (word,target) => target===ERASURE||target?.includes(':')?target:word==='arrive'?'MOV:110':id(target||word);
 const commandVerbs=new Set(['repair',...shapes.filter(row=>row[3].length===2).map(row=>row[0]),'ring']);
 const pronouns = new Set('they them he him she her it'.split(' '));
 const deictics = {i:'I',me:'I',we:'we',us:'we',you:'you'};
@@ -201,7 +203,7 @@ function predicate(verb, subject, object, authority, runtime, preferences) {
   const personal=preferences.length && dictionaryClausePlan(placeholder+' ['+runtime+'].',authority,{preferences});
   if(personal && personal.preferred>=0){
     const r=personal.readings[personal.preferred];
-    if(r.root!=='erase_stored_object')return [{root:r.root,word:r.sense.lemma,roles:r.participants.map(p=>p.role),scopes:r.scopes,sense:r.sense,specific:false}];
+    return [{root:r.root,word:r.sense.lemma,roles:r.participants.map(p=>p.role),scopes:r.scopes,sense:r.sense,specific:false}];
   }
   const tail = object ? folded(syntax.tail).slice(0,-' the gate'.length) : folded(syntax.tail);
   if(syntax.being && !object && properties.has(tail) && !Object.hasOwn(feltProperties,tail) && !['available','curious','resumed'].includes(tail))return [{root:properties.get(tail),word:tail,roles:['bearer'],scopes:syntax.scopes,specific:words.has(tail)||passageQualities.has(properties.get(tail))}];
@@ -232,7 +234,7 @@ function predicate(verb, subject, object, authority, runtime, preferences) {
   }
   const plan = dictionaryClausePlan(placeholder+' ['+runtime+'].',authority,{preferences});
   if (!plan) return [];
-  const rows = (plan.preferred>=0?[plan.readings[plan.preferred]]:plan.readings).filter(r=>r.root!=='erase_stored_object');
+  const rows = plan.preferred>=0?[plan.readings[plan.preferred]]:plan.readings;
   return rows.map(r=>({root:r.root,word:r.sense.lemma,roles:r.participants.map(p=>p.role),scopes:r.scopes,
     sense:r.sense, specific:false}));
 }
@@ -534,6 +536,17 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
         if(!answers[key])return {question:{key,prompt:'Does “'+reading.word+'” describe a physical action involving '+entity.label+'?',options:[
           {value:'physical',label:physicalActionLabels[reading.word]},{value:'other',label:'Another meaning'}]}};
         if(answers[key]!=='physical')return null;
+      }
+    }
+    if(reading.root===ERASURE){
+      const target=args.find(a=>a.role==='target');
+      for(const [i,option] of [target,...target.alternatives||[]].entries()){
+        const entity=entities[option.entity];
+        if(isStoredInformationTarget(entity.head))continue;
+        const key='information'+index+(i?'Alternative'+(i-1):'');
+        if(!answers[key])return {question:{key,prompt:'Does “delete” mean removing '+entity.label+' from a store or collection of information?',options:[
+          {value:'stored',label:'Remove the stored information item'},{value:'other',label:'Another meaning'}]}};
+        if(answers[key]!=='stored')return null;
       }
     }
     const bearer=args.find(a=>a.role==='bearer');
