@@ -11,6 +11,7 @@ import {decodeFaultCorrectionMidi} from '../pages/fault_correction.mjs';
 import {emptyLocalCompounds,addLocalCompound} from '../pages/local_compounds.mjs';
 import {localVerbPlan,composeLocalVerb,composeLocalAdjective} from '../pages/local_compound_english.mjs';
 import {encodeName} from '../pages/names.mjs';
+import {storyWords} from '../pages/story_words.mjs';
 
 const data=f=>JSON.parse(fs.readFileSync(new URL('../pages/'+f,import.meta.url))),a=data('data/index.json');
 const load=id=>a.compound_plans[id]?.expanded.nodes.some(n=>n.kind==='slot')?{authority:a}:{...data(a.resolution_files[id]).variants['assertion:1'],authority:a};
@@ -52,7 +53,10 @@ for(const [text,id,roles,scopes,act] of [
 const fix=await scoreSongText('We need to repair the gate.',a,load);
 assert.equal(fix.meaning.predicate,'REP:110');
 const mixed=await scoreSongText('I found a compass. We need to delete the file.',a,load);
-assert.deepEqual(mixed.meaning.map(m=>m.predicate),['MIN:110','erase_stored_object']);
+const mixedHeard=await decodeSupportedMeaningWithDrafts(mixed.midi,a.atoms,[],{allowDraft:true});
+assert.deepEqual(mixedHeard.events.map(e=>e.predicate),[storyWords.find(w=>w.word==='find').id,'erase_stored_object']);
+assert.deepEqual(mixedHeard.events.map(e=>e.scopes),[['time_before_speech'],['modality_necessary']]);
+assert.deepEqual(mixedHeard.events.map(e=>e.arguments.map(a=>a.entity)),[[0,1],[2,3]]);
 for(const text of ['We need to fix the gate and run.','We need to restore it.','Please fix the sensor.','We might send the extremely bright signal to Ada.','We need to repairs the gate.','We need to delete a child.']){
  assert.equal(dictionaryClausePlan(text,a),null,text);
 }

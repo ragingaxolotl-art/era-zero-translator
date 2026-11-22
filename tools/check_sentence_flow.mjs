@@ -10,7 +10,7 @@ await fs.mkdir(output,{recursive:true});
 const authority=JSON.parse(await fs.readFile(new URL('../pages/data/index.json',import.meta.url)));
 const browser=await chromium.launch({headless:true,...(process.env.CHROME_PATH?{executablePath:process.env.CHROME_PATH}:{})});
 const report={site,browser:'Chromium; viewport checks are not physical iOS/Safari tests',timestamp:new Date().toISOString(),layouts:[],meanings:[]};
-const missing=['Nora twisted the rope.','Nora stacked the box.','Nora copied the file.','Nora deleted the file.',
+const missing=['Nora twisted the rope.','Nora stacked the box.','Nora copied the file.','Nora archived the file.',
   'Nora remembers Mira.','Nora zorbled the box.','The lamp is glimmerwise.'];
 try{
   for(const width of [320,390,768]){

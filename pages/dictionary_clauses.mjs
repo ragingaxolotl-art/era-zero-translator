@@ -4,6 +4,7 @@ import {matchingChoice} from './dictionary_word_choices.mjs';
 import {analyzeEnglish,phrasalVerbAt} from './english.mjs?v=physical-vocabulary-1';
 import {parseNominal} from './nominals.mjs';
 import {expandNegativeContractions} from './contractions.mjs';
+import {ERASURE,isStoredInformationTarget,erasureSense} from './information_operations.mjs?v=information-operations-1';
 
 const frames = new Map();
 function frame(ids,subject,object,prepositions={}) {
@@ -170,7 +171,7 @@ export function dictionaryClausePlan(input,authority,{offerDefinition=false,pref
     if(tail!==form&&!tail.startsWith(form+' '))continue;
     const participants=argumentsFor(shape,syntax.subject,syntax.tail.slice(form.length).trim());
     if(!participants || new Set(participants.map(p=>normalized(p.text))).size!==participants.length)continue;
-    if(sense.target_id==='erase_stored_object'&&(!syntax.scopes.includes('modality_necessary')||!/^(?:the|this|that|a|an) (program|file|record|message|document|backup|log|entry)$/.test(participants[1]?.text)))continue;
+    if(sense.target_id===ERASURE&&!isStoredInformationTarget(participants[1]?.text?.replace(/^(?:the|this|that|a|an) /,'')))continue;
     const scopes=[...syntax.scopes];
     if(mode==='past' && scopes.includes('time_next_day'))continue;
     if(mode==='past')scopes.push('time_before_speech');
@@ -178,7 +179,8 @@ export function dictionaryClausePlan(input,authority,{offerDefinition=false,pref
     const pair=!sense.local_review&&phases[sense.target_id],root=pair?pair[mode==='past'||scopes.includes('modality_necessary')&&mode==='base'?1:0]:sense.target_id;
     const key=JSON.stringify([root,participants,scopes]);
     if(readings.some(r=>r.key===key))continue;
-    readings.push({key,sense,root,participants,scopes,word:syntax.tail.slice(0,form.length),quality:mode==='quality'});
+    const selectedSense=root===ERASURE?erasureSense(authority,{mode,scopes,speechAct:syntax.speechAct}):sense;
+    readings.push({key,sense:selectedSense,root,participants,scopes,word:syntax.tail.slice(0,form.length),quality:mode==='quality'});
   }
   if(readings.length>1){
     const rank=new Map(analyzeEnglish(input,authority).candidates.map((c,i)=>[c.sense_id,i]));

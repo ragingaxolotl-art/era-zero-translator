@@ -102,6 +102,9 @@ await control('Play whole passage').click();assert.deepEqual(lineNotes(playedLin
 await control('Play compact chords').click();assert.equal(playedLine.options.chords,true);assert.deepEqual(lineNotes(expandChordMidi(playedLine.bytes,a.atoms)),first);
 control('Add to song').click();assert.equal(forwarded[0].text,phrase);assert.deepEqual(lineNotes(forwarded[0].midi),first);
 fields.sourceInput.value='We found the program. We deleted it.';control('Add to song').click();assert.equal(forwarded.length,1);
+// Completed deletion now has a whole-story route, tested separately. An unknown
+// action still cannot reuse or create a complete score through these controls.
+fields.sourceInput.value='We found the program. We zorbled it.';
 assert.equal(await ctx.showWholePassage(fields.sourceInput.value),false);
 console.log('PASS whole passage, chord preview and Add to song buttons use the scored notes and discard stale readings.');
 

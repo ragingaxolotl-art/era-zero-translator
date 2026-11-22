@@ -1,0 +1,114 @@
+{
+  "source_revision": "2d4b6113f35ef2e34e5e21057648dca148fe959d",
+  "purpose": "Existing required-deletion scores must remain byte-identical. Hashes are not a proof of semantic or acoustic recovery.",
+  "cases": [
+    {
+      "text": "Do we need to delete the file? [0]",
+      "sha256": "266be0bee48ec5930f5f1a258703b1ab7dd4fcf0e00900b9a617f37e184a85ee",
+      "meaning": {
+        "profile": "EZ-DICTIONARY-CLAUSE-1",
+        "status": "draft",
+        "predicate": "erase_stored_object",
+        "participants": [
+          {
+            "role": "actor",
+            "reference": {
+              "kind": "deictic",
+              "role": "speaker_group"
+            }
+          },
+          {
+            "role": "target",
+            "reference": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            }
+          }
+        ],
+        "scopes": [
+          "modality_necessary"
+        ],
+        "runtime_state": 0,
+        "speech_act": "question"
+      }
+    },
+    {
+      "text": "Do we need to delete the file? [1]",
+      "sha256": "3a67ae1a6589228189d2d7af8a67a0a6c050cf620690cf0df2c08502def13896",
+      "meaning": {
+        "profile": "EZ-DICTIONARY-CLAUSE-1",
+        "status": "draft",
+        "predicate": "erase_stored_object",
+        "participants": [
+          {
+            "role": "actor",
+            "reference": {
+              "kind": "deictic",
+              "role": "speaker_group"
+            }
+          },
+          {
+            "role": "target",
+            "reference": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            }
+          }
+        ],
+        "scopes": [
+          "modality_necessary"
+        ],
+        "runtime_state": 1,
+        "speech_act": "question"
+      }
+    },
+    {
+      "text": "Do we need to delete the file? [2]",
+      "sha256": "27831c3feee7b90492cdba75e15c5d5126475084a3f706dc118b519a8382ece0",
+      "meaning": {
+        "profile": "EZ-DICTIONARY-CLAUSE-1",
+        "status": "draft",
+        "predicate": "erase_stored_object",
+        "participants": [
+          {
+            "role": "actor",
+            "reference": {
+              "kind": "deictic",
+              "role": "speaker_group"
+            }
+          },
+          {
+            "role": "target",
+            "reference": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            }
+          }
+        ],
+        "scopes": [
+          "modality_necessary"
+        ],
+        "runtime_state": 2,
+        "speech_act": "question"
+      }
+    }
+  ]
+}
