@@ -1,12 +1,12 @@
 import {validStorySlots} from './story_saved_adjectives.mjs';
 import {isPassageHead} from './passage_nouns.mjs';
-import {knownValueReading} from './known_value.mjs?v=information-operations-1';
-import {faultCategoryReading} from './fault_correction.mjs?v=information-operations-1';
+import {knownValueReading} from './known_value.mjs?v=information-vocabulary-1';
+import {faultCategoryReading} from './fault_correction.mjs?v=information-vocabulary-1';
 import {routeNounLabel} from './nominals.mjs';
 import {expandNegativeContractions} from './contractions.mjs';
-import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs?v=information-operations-1';
-import {properties,feltProperties,isMaterialTarget,isPhysicalContainer,physicalActionLabels} from './story_qualities.mjs?v=physical-vocabulary-1';
-import {storyWords} from './story_words.mjs?v=physical-vocabulary-1';
+import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs?v=information-vocabulary-1';
+import {properties,feltProperties,isMaterialTarget,isPhysicalContainer,physicalActionLabels} from './story_qualities.mjs?v=information-vocabulary-1';
+import {storyWords} from './story_words.mjs?v=information-vocabulary-1';
 import {ERASURE,isStoredInformationTarget} from './information_operations.mjs?v=information-operations-1';
 
 const words = new Map(storyWords.map(word => [word.word, word]));
@@ -24,6 +24,9 @@ const shapes = [
   ['fall','falls','fell',['bearer'],null,'falling'],
   ['drop','drops','dropped',['actor','target'],null,'dropping'],
   ['delete','deletes','deleted',['actor','target'],ERASURE,'deleting'],
+  ['copy','copies','copied',['actor','target'],null,'copying'],
+  ['recall','recalls','recalled',['experiencer','target'],null,'recalling'],
+  ['remember','remembers','remembered',['experiencer','target'],'recall','remembering'],
   ['resume','resumes','resumed',['bearer'],null,'resuming'],
   ['vibrate', 'vibrates', 'vibrated', ['bearer']],
   ['sound', 'sounds', 'sounded', ['source']],
@@ -291,8 +294,13 @@ function prepare(input, authority, preferences, adjectives) {
       }
       const polite=folded(tokens[0]||'')==='please'?1:0;
       const commandOffset=polite+(folded(tokens[polite]||'')==='do'&&folded(tokens[polite+1]||'')==='not'?2:0);
-      if(clauses.length===0 && sentences.length===1 && commandVerbs.has(folded(tokens[commandOffset]||'')) &&
-          /^(?:it|them|the|a|an|this|that)$/.test(folded(tokens[commandOffset+1]||''))){
+      const commandWord=folded(tokens[commandOffset]||'');
+      const commandTail=commandVerbs.has(commandWord)?tokens.slice(commandOffset):[];
+      const command=commandTail.length?(stateComplement(commandTail,parseObject,qualityAt)||parseObject(commandTail)):null;
+      // Use the same complete object parser as statements. An article-only
+      // shortcut excluded names and pronouns; matching the entire predicate
+      // also avoids turning a person named Copy into an imperative subject.
+      if(clauses.length===0 && sentences.length===1 && command?.object && folded(command.verb)===commandWord){
         subject={text:'you',pronoun:'you'};consumed=polite;act='command';
       }
       if(!subject || q&&!subject.plural)return null;
@@ -538,16 +546,25 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
         if(answers[key]!=='physical')return null;
       }
     }
-    if(reading.root===ERASURE){
+    const informationVerb=reading.root===ERASURE?'delete':reading.root===id('copy')?'copy':null;
+    if(informationVerb){
       const target=args.find(a=>a.role==='target');
       for(const [i,option] of [target,...target.alternatives||[]].entries()){
         const entity=entities[option.entity];
         if(isStoredInformationTarget(entity.head))continue;
         const key='information'+index+(i?'Alternative'+(i-1):'');
-        if(!answers[key])return {question:{key,prompt:'Does “delete” mean removing '+entity.label+' from a store or collection of information?',options:[
-          {value:'stored',label:'Remove the stored information item'},{value:'other',label:'Another meaning'}]}};
+        if(!answers[key])return {question:{key,prompt:informationVerb==='delete'
+          ?'Does “delete” mean removing '+entity.label+' from a store or collection of information?'
+          :'Does “copy” mean creating a distinct stored copy of '+entity.label+' while retaining the source?',options:[
+          {value:'stored',label:informationVerb==='delete'?'Remove the stored information item':'Create a stored copy'},{value:'other',label:'Another meaning'}]}};
         if(answers[key]!=='stored')return null;
       }
+    }
+    if(reading.root===id('recall')){
+      const key='retrieval'+index;
+      if(!answers[key])return {question:{key,prompt:'Does “'+reading.word+'” mean bringing a previously latent representation back to mind?',options:[
+        {value:'retrieval',label:'Bring it back to mind'},{value:'other',label:'Another meaning'}]}};
+      if(answers[key]!=='retrieval')return null;
     }
     const bearer=args.find(a=>a.role==='bearer');
     if(bearer){

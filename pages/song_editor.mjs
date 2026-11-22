@@ -1,7 +1,7 @@
 import {compactChordPerformance} from './compact_chords.mjs?v=state-adjectives-1';
-import {readSongLine} from './song_readback.mjs?v=information-operations-1';
+import {readSongLine} from './song_readback.mjs?v=information-vocabulary-1';
 import {compactChordMidi} from './compact_chords.mjs?v=state-adjectives-1';
-import {songMidi} from './song_lines.mjs?v=information-operations-1';
+import {songMidi} from './song_lines.mjs?v=information-vocabulary-1';
 import {notesFromMidi} from './performance_codec.mjs';
 
 import {isSongStorageKey,readSongLines,newSongLine,saveSongLine,removeSongLine} from './song_storage.mjs?v=field-repairs-1';

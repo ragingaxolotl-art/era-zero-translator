@@ -1,4 +1,4 @@
-import {storyWords} from './story_words.mjs?v=physical-vocabulary-1';
+import {storyWords} from './story_words.mjs?v=information-vocabulary-1';
 import {FELT_CONDITIONS} from './felt_conditions.mjs';
 import {isPassageHead} from './passage_nouns.mjs';
 
