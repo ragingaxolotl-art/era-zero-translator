@@ -3,7 +3,7 @@ import {painEvent} from './pain_frames.mjs';
 import {renderLexicalOccurrences} from './bound_compounds.mjs';
 import {grammarMarker} from './scheduler.mjs';
 import {midiFromScheduledEvents} from './engine.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
 import {readFeltConditionTree} from './felt_decoder.mjs';
 export async function painMusicEvents(document,authority,{allowDraft=false,anchor=60}={}){
  const d=await validatePainMeaning(document,{allowDraft}),mark=name=>grammarMarker({performance:{anchor_midi:anchor}},'pain',name);

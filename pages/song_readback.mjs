@@ -1,6 +1,6 @@
 import {savedQualityLabel} from './story_saved_adjectives.mjs';
 import {expandChordMidi} from './compact_chords.mjs?v=state-adjectives-1';
-import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=state-adjectives-1';
+import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=meaning-reliability-1';
 import {describeClaim,describeRuntime} from './meaning_readback.mjs?v=field-repairs-1';
 import {feltProperties} from './story_qualities.mjs';
 import {storyWords} from './story_words.mjs?v=state-adjectives-1';

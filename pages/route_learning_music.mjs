@@ -5,7 +5,7 @@ import {renderLexicalOccurrences} from './bound_compounds.mjs';
 import {scheduledLexicalEvents,grammarMarker} from './scheduler.mjs';
 import {acquisitionMusicEvent} from './acquisition_music_frames.mjs';
 import {acquisitionScopeMarker,validAcquisitionScopes} from './acquisition_scopes.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
 export async function routeLearningFoundations(){
  return Promise.all(Object.entries(ROUTE_LEARNING_READINGS).map(async([reading,r],i)=>{
   const record={profile:'EZFOUND-1',definition_version:'1.0.0',family_affinity:'MIN',status:'candidate',review:'reviews/route_learning.md',sound_code:4+i,display_title:r.predicate,definition:r.definition,roles:{experiencer:['entity'],target:['entity']},excludes:[...r.excludes]};

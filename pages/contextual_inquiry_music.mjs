@@ -2,7 +2,7 @@ import {validateContextualInquiry} from './contextual_inquiry.mjs';
 import {contextualInquiryEvent} from './contextual_inquiry_frames.mjs';
 import {contextualContentMusicEvent} from './contextual_content_frames.mjs';
 import {renderLexicalOccurrences} from './bound_compounds.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
 import {readSelectedContent} from './content_selection.mjs';
 import {midiFromScheduledEvents} from './engine.mjs';
 export function decodeContextualInquiryMidi(bytes,atoms,{allowDraft=false}={}){

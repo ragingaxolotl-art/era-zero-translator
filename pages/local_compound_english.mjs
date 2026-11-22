@@ -1,4 +1,4 @@
-import {savedScopedReadings} from './dictionary_clauses.mjs';
+import {savedScopedReadings} from './dictionary_clauses.mjs?v=meaning-reliability-1';
 import {speakerGroupReference} from './references.mjs?v=clauses-1';
 import {validateLocalCompounds} from './local_compounds.mjs';
 import {contextualContentReference} from './contextual_content.mjs';

@@ -57,7 +57,7 @@
 @media(max-width:900px){.result-grid{grid-template-columns:minmax(0,1fr)}}
 
 .dictionary-clause label {display:block;margin:10px 0}
-.dictionary-clause select {display:block;max-width:100%;margin-top:4px}
+.dictionary-clause select {display:block;width:100%;min-width:0;max-width:100%;margin-top:4px;text-overflow:ellipsis;padding:10px;border:1px solid var(--line);border-radius:8px;background:#0d141f;color:var(--ink);min-height:44px}
 .dictionary-clause button {margin:2px 4px 2px 0}
 
 .chord-preview{margin:14px 0;padding:12px 14px;border-left:3px solid var(--accent,#51d5cd);background:rgba(52,174,170,.07);border-radius:6px}
@@ -70,3 +70,11 @@
 .song-editor li [role="status"]:not(:empty){margin:.5rem 0 1rem;overflow-wrap:anywhere}
 .song-editor li pre{white-space:pre-wrap;font-size:.85em}
 .song-editor #nextSongRoot{min-height:36px;margin-inline-start:.25rem}
+
+.workspace > *, .candidate-list, .candidate, .candidate label {min-width:0;max-width:100%}
+.candidate {overflow-wrap:anywhere}
+.candidate select {width:100%;min-width:0;max-width:100%}
+.definition-alias-options {margin-top:16px}
+.definition-alias-options summary {font-weight:600}
+.translation-details{margin-top:18px}.translation-details summary{cursor:pointer;color:var(--muted);padding:10px 0}
+@media(max-width:560px){.candidate button{min-height:44px}.candidate-head{flex-wrap:wrap}.output-tabs{flex-wrap:wrap}}

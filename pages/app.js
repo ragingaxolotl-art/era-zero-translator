@@ -1,15 +1,16 @@
+import {sentenceReadiness} from './sentence_readiness.mjs?v=meaning-reliability-1';
 import {storedStoryAdjectives} from './story_saved_adjectives.mjs';
 import {everydayMeaning,routeName} from './everyday.mjs';
-import {storyReading} from './story_readings.mjs?v=state-adjectives-1';
-import {showStoryControls} from './story_controls.mjs?v=state-adjectives-1';
+import {storyReading} from './story_readings.mjs?v=meaning-reliability-1';
+import {showStoryControls} from './story_controls.mjs?v=meaning-reliability-1';
 import {readWordChoices,updateWordChoice} from './dictionary_word_choices.mjs?v=exact-word-1';
-import {dictionaryClausePlan} from './dictionary_clauses.mjs?v=1.16.1';
-import {mountDictionaryClause} from './dictionary_clause_controls.mjs?v=field-repairs-1';
+import {dictionaryClausePlan} from './dictionary_clauses.mjs?v=meaning-reliability-1';
+import {mountDictionaryClause} from './dictionary_clause_controls.mjs?v=meaning-reliability-1';
 import {compactChordMidi} from './compact_chords.mjs?v=state-adjectives-1';
 import {mountSongEditor} from './song_editor.mjs?v=state-adjectives-1';
 import {needsWholeReading,scoreSongText} from './song_lines.mjs?v=state-adjectives-1';
 import {informationPassagePlan} from './information_passage.mjs';
-import {faultCorrectionPlan} from './fault_correction.mjs?v=field-repairs-1';
+import {faultCorrectionPlan} from './fault_correction.mjs?v=meaning-reliability-1';
 import {selectedWordMatch,wordScorePlan,scoreSelectedWords} from './word_score.mjs';
 import {conversationTargets} from './conversation_targets.mjs';
 import {takeLocalExample,queueLocalExample} from './local_compound_examples.mjs';
@@ -985,7 +986,8 @@ function showAnalysis(result) {
  const partial=result.complete_sentence_unavailable || !result.candidates.length;
  const single=result.term_coverage.length===1;
  if (partial && !single) {
-  $('decisionSummary').textContent='This sentence has no complete musical reading yet. You can hear the matched words in order or choose a different meaning for a word.';
+  const missing=(result.term_coverage||[]).find(item=>item.status==='unresolved_semantic');
+  $('decisionSummary').textContent=missing?'Missing definition · “'+missing.term+'” needs a '+(missing.semantic_kind||'word')+' meaning. Use Find or build this meaning below.':'Sentence structure not yet supported · the matched words do not yet form a complete interpretation.';
  } else if (result.decision.auto_resolution_allowed) {
   $('decisionSummary').textContent='Dictionary label matched · '+result.runtime_inference+'.';
  } else {
@@ -1148,6 +1150,9 @@ async function compileControlled(input){const match=input.match(/^(ASSERT|QUESTI
 async function showResolution(result,candidate){
  const isDraft=['candidate_translation','draft_quantified_translation'].includes(result.status);
  const isWhole=!!(result.construction||isDraft)&&!result.partial_sentence;
+ const readiness=isWhole?await sentenceReadiness(midiFromFormal(result.formal),state.data.atoms,{records:await loadSongFoundations()}):null;
+ if(state.resolution!==result)return;
+ $('sentenceReadiness').textContent=readiness?readiness.summary+'. '+readiness.detail:result.partial_sentence?'Only this dictionary entry is resolved. The whole sentence still needs an interpretation.':'Dictionary entry ready.';
  $('addSentenceToSong').hidden=!(isWhole||result.standalone_entry);
  $('resultScope').textContent=result.partial_sentence?'One dictionary entry from your text':isWhole?'Whole sentence':'Dictionary entry';
  $('hearTranslation').textContent=result.partial_sentence?'Play this entry only':isWhole?'Play whole sentence':'Play dictionary entry';
@@ -1270,11 +1275,12 @@ async function showWholePassage(input) {
  if (!plan&&!correction&&!multiple) return false;
  const scored=await scoreSongText(input,state.data,sentenceTemplate,state.wordPreferences||[]);
  if (!scored) return false;
+ const readiness=await sentenceReadiness(scored.midi,state.data.atoms,{records:await loadSongFoundations()});
  if (!current()) return true;
  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
  for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
  $('results').classList.remove('hidden');const list=$('candidateList');list.replaceChildren();
- $('decisionSummary').textContent=correction?'Whole sentence · draft musical grammar':plan?'Whole passage · draft musical grammar':scored.label;
+ $('decisionSummary').textContent=readiness.summary+(correction||plan?' · draft musical grammar':'');
  const card=document.createElement('article');card.className='candidate';
  const title=document.createElement('h3');title.textContent=input;card.append(title);
  const note=document.createElement('p');
@@ -1285,6 +1291,7 @@ async function showWholePassage(input) {
  }else if(correction)note.textContent=scored.description+(correction.type?' “'+correction.type+'” names the kind of fault.':'');
  else note.textContent='Each sentence is scored in the order you wrote it.';
  card.append(note);
+ const evidence=document.createElement('p');evidence.textContent=readiness.detail;card.append(evidence);
  const play=document.createElement('button');play.className='primary';play.textContent=correction?'Play whole sentence':'Play whole passage';
  play.addEventListener('click',async()=>{if(current())try{await savedCompoundPlayer.play(scored.midi);}catch(error){toast(error.message);}});card.append(play);
  const chords=document.createElement('button');chords.textContent='Play compact chords';

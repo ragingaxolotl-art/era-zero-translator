@@ -1,15 +1,15 @@
-import {dictionaryRoles} from './dictionary_clauses.mjs';
+import {dictionaryRoles} from './dictionary_clauses.mjs?v=meaning-reliability-1';
 import {contextualContentReference} from './contextual_content.mjs';
-import {informationMusic} from './information_music.mjs?v=field-repairs-1';
+import {informationMusic} from './information_music.mjs?v=meaning-reliability-1';
 import {informationFrame} from './information_passage_frames.mjs?v=field-repairs-1';
 import {midiFromScheduledEvents} from './engine.mjs';
 import {registerFor} from './roles.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=field-repairs-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
 
 const semantic=(root,participants,scopes,runtime_state,speech_act)=>({
   profile:'EZ-DICTIONARY-CLAUSE-1',status:'draft',predicate:root,participants,scopes,runtime_state,speech_act
 });
-const supportedScopes=new Set(['modality_necessary','modality_possible','negation','aspect_ongoing','time_before_speech','time_previous_day','time_current_day','time_next_day']);
+const supportedScopes=new Set(['modality_necessary','modality_possible','ability','negation','aspect_ongoing','time_before_speech','time_after_speech','time_previous_day','time_current_day','time_next_day']);
 
 function framed(name,events,anchor) {
   return [informationFrame(name+'_open',anchor),...events,informationFrame(name+'_close',anchor)];
@@ -72,7 +72,7 @@ export function decodeDictionaryClauseMidi(bytes,atoms) {
   const reader=strictSemanticReader(bytes,atoms,'Invalid dictionary clause.',{allowDraftInformationPassage:true});
   let nodes=reader.readTree();const scopes=[];
   while(nodes.length===1 && nodes[0].marker!=='dictionary_clause_open'){
-    const scope=nodes[0].marker?.replace(/_open$/,'');
+    const scope=nodes[0].marker==='story_ability_open'?'ability':nodes[0].marker?.replace(/_open$/,'');
     if(!supportedScopes.has(scope)||!nodes[0].children||scopes.length>=8)fail();
     scopes.push(scope);nodes=nodes[0].children;
   }

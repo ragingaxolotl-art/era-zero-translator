@@ -5,7 +5,7 @@ import {foundationPayload,validateFoundations,foundationEvent,foundationPath} fr
 import {renderLexicalOccurrences} from './bound_compounds.mjs';
 import {grammarMarker} from './scheduler.mjs';
 import {contextualContentMusicEvent} from './contextual_content_frames.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
 export async function understandingFoundation(){
  const record={profile:'EZFOUND-1',definition_version:'1.0.0',family_affinity:'MIN',status:'candidate',review:'reviews/understanding_content.md',sound_code:3,display_title:'contextual content comprehension',definition:'The experiencer grasps the selected contextual content under its specific adequacy criterion. '+Object.values(UNDERSTANDING_READINGS).join(' '),roles:{experiencer:['entity'],content:['contextual_content']},excludes:['Attention, receipt, confidence or memorization alone treated as comprehension','Truth of communicated claims, shared feelings, approval, acquisition or permanent retention inferred from comprehension','A topic label used as a particular message or explanation']};
  const digest=await canonicalDigest(foundationPayload(record));return {...record,content_digest:digest,foundation_id:`FND:${digest.slice(0,24)}`};

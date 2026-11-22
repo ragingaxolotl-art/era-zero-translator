@@ -6,7 +6,7 @@ import {foundationEvent,foundationPath,validateFoundations} from './foundations.
 import {renderLexicalOccurrences} from './bound_compounds.mjs';
 import {grammarMarker} from './scheduler.mjs';
 import {midiFromScheduledEvents} from './engine.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
 import {readSelectedContent} from './content_selection.mjs';
 async function desireRecord(records){await validateFoundations(records,{allowDraft:true});const r=records.find(r=>r.foundation_id===CURIOSITY_CONTRACT.desire_foundation_id);if(!r)throw new Error('Shared original desire definition required.');return r;}
 export async function midiFromCuriosity(document,authority,records,{allowDraft=false,anchor=60}={}){

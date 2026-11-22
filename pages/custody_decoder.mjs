@@ -1,4 +1,4 @@
-import {strictSemanticReader} from './strict_semantic_reader.mjs';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
 
 // Interpret the released custody convention from performed MIDI and root sounds.
 // Never accept source text, semantic IR, compound plans or expected participants.
