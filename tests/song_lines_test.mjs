@@ -1,3 +1,4 @@
+import {sentenceReadiness} from '../pages/sentence_readiness.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {composeInformationPassage,informationPassagePlan,decodeInformationPassageMidi} from '../pages/information_passage.mjs';
@@ -87,7 +88,7 @@ const fields=Object.fromEntries(['sourceInput','output','phraseCoverage','resolu
 fields.sourceInput.value=phrase;
 let forwarded=[],playedLine;
 const {storyReading}=await import('../pages/story_readings.mjs');
-const ctx=vm.createContext({storedStoryAdjectives,storyReading,faultCorrectionPlan,informationPassagePlan,composeInformationPassage,scoreSongText,compactChordMidi,
+const ctx=vm.createContext({sentenceReadiness,loadSongFoundations:async()=>[],storedStoryAdjectives,storyReading,faultCorrectionPlan,informationPassagePlan,composeInformationPassage,scoreSongText,compactChordMidi,
  state:{data:a,mode:'general',wordSelections:new Map()},$:id=>fields[id],sentenceTemplate:load,document:{createElement:()=>new ResultElement()},
  savedCompoundPlayer:{play:async(bytes,options)=>{playedLine={bytes,options};},stop(){}},toast(){},download(){},
  addPerformance:(text,midi,label)=>forwarded.push({text,midi,label})});
@@ -95,6 +96,7 @@ const snippet=(start,end)=>app.slice(app.indexOf(start),app.indexOf(end,app.inde
 vm.runInContext(snippet('function songButton(','state.song='),ctx);
 vm.runInContext(snippet('async function showWholePassage(', "$('sourceInput').addEventListener"),ctx);
 assert.equal(await ctx.showWholePassage(phrase),true);
+assert.match(fields.decisionSummary.textContent,/Whole sentence ready/);
 const card=fields.candidateList.children[0],control=name=>card.children.find(e=>e.textContent===name);
 await control('Play whole passage').click();assert.deepEqual(lineNotes(playedLine.bytes),first);
 await control('Play compact chords').click();assert.equal(playedLine.options.chords,true);assert.deepEqual(lineNotes(expandChordMidi(playedLine.bytes,a.atoms)),first);

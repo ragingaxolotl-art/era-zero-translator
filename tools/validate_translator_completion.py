@@ -3,6 +3,7 @@
 import argparse
 from datetime import datetime, timezone
 import json
+import re
 from pathlib import Path
 import shutil
 import subprocess
@@ -34,6 +35,13 @@ commands = [['ruby', path] for path in [
     'tools/validate_pages_release.mjs',
     'tools/validate_viseme_performance.mjs',
 ]]
+# Keep deployment sentence/UI tests in the same regression run. Their VM
+# fixtures exercise browser controls that pure music tests cannot cover.
+workflow = (ROOT / '.github/workflows/pages.yml').read_text()
+deployment_tests = re.findall(r'^\s+node (tests/[a-zA-Z0-9_/-]+\.mjs)\s*$', workflow, re.MULTILINE)
+commands = [list(command) for command in dict.fromkeys(
+    tuple(command) for command in [[args.node, path] for path in deployment_tests] + commands)]
+
 if args.include_acoustic:
     commands += [[sys.executable, 'tests/acoustic_low_pitch_test.py']]
     commands += [[args.node, path] for path in ['tests/acquisition_viewpoint_acoustic_test.mjs', 'tests/acoustic_transport_test.mjs', 'tests/cognitive_acoustic_test.mjs', 'tests/understanding_acoustic_test.mjs', 'tests/understanding_spoken_content_test.mjs', 'tests/understanding_acquisition_acoustic_test.mjs', 'tests/route_learning_acoustic_test.mjs', 'tests/curiosity_acoustic_test.mjs', 'tests/contextual_nominal_mass_acoustic_test.mjs', 'tests/preference_nominal_mass_acoustic_test.mjs', 'tests/pain_acoustic_test.mjs', 'tests/pain_stimulus_acoustic_test.mjs', 'tests/pain_comparison_acoustic_test.mjs', 'tests/pain_preference_acoustic_test.mjs', 'tests/desired_ownership_acoustic_test.mjs', 'tests/custody_opportunity_acoustic_test.mjs', 'tests/desired_availability_acoustic_test.mjs', 'tests/ownership_acoustic_test.mjs', 'tests/delivery_question_acoustic_test.mjs', 'tests/object_desire_acoustic_test.mjs', 'tests/drinking_acoustic_test.mjs', 'tests/desired_drinking_acoustic_test.mjs', 'tests/cognitive_conjunction_acoustic_test.mjs', 'tests/cognitive_conjunction_scope_acoustic_test.mjs', 'tests/cognitive_conjunction_possibility_acoustic_test.mjs', 'tests/cognitive_conjunction_question_acoustic_test.mjs']]
