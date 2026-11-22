@@ -13,11 +13,13 @@ The identified scope-loss bug, missing love inverse and overflowing meaning pick
 
 ## Evidence
 
+A clean-checkout run of **all 252 implementation checks passed** at source revision `693d2d25e12479a685850256a8a658b767d65181`. The [clean report](reliability_2026_11_22/clean-regression.json) records that revision and an empty initial working-tree status. The initial run and targeted retest are retained: its two failures came from an outdated VM fixture and hard-coded asset versions, both repaired before the clean run. All separately required release checks also passed.
+
 - **145 sentence pairs** independently decoded in both melody and compact chords: multiple ordinary and fallback verbs, conditions, coordination, questions, nested scope, saved word choices and endings **0/1/2**. Expected scope lists are specified separately from the encoder output.
 - **12 love readings** independently decoded in both arrangements, including participant reversal, negation and all endings. Altered qualifiers and truncated scores are rejected.
 - The existing **216 dictionary sentence cases**, **44 state/adjective cases**, story and field regressions pass. The **972 root/ending** compact-chord checks pass.
 - Browser checks cover seven missing-word cases at **320, 390 and 768 pixels**, including expanded selects and keyboard use. Editing clears the old Add to song action. A word created through the builder returns to the unchanged sentence and becomes playable. Six actual song exports recover the checked meanings without English or original IR.
-- The same browser checks pass in the Lore integration. Its **190 tests** pass. Only synthetic data was used; existing user songs, definitions and backups were not edited.
+- The same browser checks pass in the Lore integration. Its **196 tests** pass after merging current Lore main. Only synthetic data was used; existing user songs, definitions and backups were not edited.
 
 The reproducible checks are [sentence scopes](../tests/sentence_scope_reliability_test.mjs), [love inverse](../tests/love_semantic_inverse_test.mjs), and [browser flow](../tools/check_sentence_flow.mjs). Browser evidence is retained in `reliability_2026_11_22/` beside this report. Broader release regression results are recorded there separately.
 
@@ -26,3 +28,5 @@ The reproducible checks are [sentence scopes](../tests/sentence_scope_reliabilit
 This repair adds no new canonical words. Missing verbs, adjectives and sentence constructions still need the [ordered vocabulary and grammar work](../docs/full-translator-next-steps.md). Bound personal compounds do not yet support the ability enclosure; they are rejected rather than assigned an incorrect modality. Other specialized preview paths retain their own draft status and should be included as readiness checks expand.
 
 Chromium viewport tests are not physical iOS/Safari tests. No new speaker-to-microphone study was performed. Names, grammar and compound framing retain their existing durations; experimental grammar chords remain unreleased. The broader audio, vocabulary, grammar and song-compression objectives remain open.
+
+Existing saved scores retain their stored notes. Re-translate a line affected by the earlier scope bug to produce the corrected music; this release does not silently replace saved performances.
