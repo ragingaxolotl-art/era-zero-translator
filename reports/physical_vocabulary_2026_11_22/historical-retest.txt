@@ -1,0 +1,100 @@
+refresh current gap inventory: PASS
+Gap reports regenerated: 324 canonical, 0 provisional, 0 chunks
+Next packet: none — atomic semantic review complete
+validate current authority and translator boundary: PASS
+Checks passed: 29
+Checks failed: 0
+Canonical: 324; provisional: 0
+Effective promotions: 288; generated-form assertions: 2592
+Translator checks passed: 8; failed: 0
+validate latest semantic packet with reusable contract: PASS
+ORI:200–222: PASS
+Mode: canonical; checks passed: 18; checks failed: 0
+Candidates: 45; score assertions: 360; stress tests: 115
+validate Gate 4A typed compound architecture: PASS
+Gate 4A validation: PASS
+Checks passed: 21; checks failed: 0
+Valid cases: 12; invalid cases: 23; dictionary entries: 0
+validate Gate 4B high-frequency compound dictionary: PASS
+Gate 4B validation: PASS
+Checks passed: 16; checks failed: 0; entries: 115
+validate Gate 4C English concept and sense index: PASS
+Gate 4C validation: PASS
+Checks passed: 17; checks failed: 0; senses: 574; lemmas: 553
+validate Gate 4D coverage and ambiguity report: PASS
+Gate 4D validation: PASS
+Checks passed: 11; checks failed: 0
+validate Gate 4E formal etymology table: PASS
+Gate 4E validation: PASS
+Checks passed: 13; checks failed: 0
+validate semantic IR and executable grammar: PASS
+Semantic IR validation: PASS
+Checks passed: 14; checks failed: 0; valid: 16; invalid: 13
+validate deterministic renderer and inverse decoder: PASS
+Renderer/decoder validation: PASS
+Checks passed: 12; checks failed: 0
+validate controlled English compiler: PASS
+Controlled English validation: PASS
+Checks passed: 13; checks failed: 0
+validate general-English candidate translator: PASS
+General English validation: PASS
+Checks passed: 16; checks failed: 0
+validate glyph and MIDI presentation: PASS
+Glyph/audio validation: PASS
+Checks passed: 10; checks failed: 0
+validate carrier-driven character visemes: PASS
+Viseme performance: PASS · 6150 variants · 110400 cues · 100026 assertions
+validate optional recognition audio checksums: PASS
+Recognition audio: PASS · 6150 variants · 36711 assertions
+validate recorded-waveform recognition checks against canonical form: PASS
+Recognition waveform: PASS · 108 performances · 327 assertions
+validate recognition controls, meaning-rich dictionary, and concept intake UI: PASS
+Recognition/dictionary UI: PASS · 6 intake probes
+validate persistent DBA concept review queue and noncanonical surface approvals: PASS
+Concept queue: PASS · 21 assertions
+validate selectable audio voice envelopes: PASS
+Audio voice envelopes: PASS · 5 voices · release tails and softened stops checked
+validate two-being conversation and MP3: PASS
+Conversation validation: PASS · 14 passed · 0 failed · 6 turns
+validate keyed lore conversation performances: PASS
+Lore conversation validation: PASS · 66 passed · 0 failed · 5 presets · 22 turns
+audit game and story English translation profile: PASS
+Game/story translation audit: PASS
+Checks passed: 86; failed: 0; phrases: 69
+audit ordinary-language, game, and lore phrase coverage: PASS
+Ordinary-language corpus: PASS · 144 phrases · 0 failures
+validate complete plain-English discovery and matching layer: PASS
+Plain-English matching: PASS (439/439 labels; 439 complete mappings)
+validate lexical/POS audit and DBA concept-intake workflow: PASS
+Lexical/concept intake: PASS · 7 checks
+validate translator workbench product application: PASS
+Product application audit: PASS
+Checks passed: 16; checks failed: 0
+validate translator workbench frontend syntax: PASS
+Product frontend syntax: PASS (local source, browser release, viseme compiler)
+validate translator workbench over real localhost HTTP: PASS
+Product HTTP smoke: PASS (v1.15.0 recognition performance decoding, meaning-rich dictionary, persistent concept review, complete plain-English matching, conversations, selectable voices, layered character rig, health, analyze, exact round trip)
+validate the complete REP:000–222 family: PASS
+REP:000–222 soundness: PASS
+Mode: canonical; checks passed: 24; checks failed: 0
+validate the complete LOG:000–222 family: PASS
+LOG:000–222 soundness: PASS
+Mode: canonical; checks passed: 24; checks failed: 0
+validate the complete DAT:000–222 family: PASS
+DAT:000–222 soundness: PASS
+Mode: canonical; checks passed: 24; checks failed: 0
+validate the complete CRE:000–222 family: PASS
+CRE:000–222 soundness: PASS
+Mode: canonical; checks passed: 24; checks failed: 0
+validate the complete ORI:000–222 family: PASS
+ORI:000–222 soundness: PASS
+Mode: canonical; checks passed: 22; checks failed: 0
+validate the complete CON:000–222 family: PASS
+CON:000–222 soundness: PASS
+Mode: canonical; checks passed: 16; checks failed: 0
+validate the complete STR:000–222 family: PASS
+STR:000–222 soundness: PASS
+Mode: canonical; checks passed: 24; checks failed: 0
+validate the complete WRN:000–222 family: PASS
+WRN:000–222 soundness: PASS
+Mode: canonical; checks passed: 24; checks failed: 0
