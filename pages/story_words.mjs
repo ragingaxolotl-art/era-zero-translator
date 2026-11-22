@@ -480,6 +480,92 @@ export const storyWords = [
       "MIN:010",
       "MIN:201"
     ]
+  },
+  {
+    "word": "pull",
+    "code": 75,
+    "example": "Nora pulled the rope.",
+    "near": "Nora pushed a cart away; the cart later rolled back.",
+    "id": "CMP:906075e53ffeb8edae29ed9c",
+    "parts": [
+      "MAT:201",
+      "MAT:211"
+    ]
+  },
+  {
+    "word": "physical holding foundation",
+    "code": 76,
+    "example": "A clamp physically holds the board.",
+    "near": "Nora owns a box stored elsewhere.",
+    "id": "CMP:834a56d90e31b430990720ff",
+    "parts": [
+      "MAT:010",
+      "MAT:211"
+    ]
+  },
+  {
+    "word": "release",
+    "code": 77,
+    "example": "Nora released the rope.",
+    "near": "Nora loosened the grip but continued holding the rope.",
+    "id": "CMP:69f57af236cf82c134e3c51a",
+    "parts": [
+      "CMP:834a56d90e31b430990720ff",
+      "CMP:3d95154b4812da0cefd7fc45"
+    ]
+  },
+  {
+    "word": "fall",
+    "code": 78,
+    "example": "The box fell.",
+    "near": "Nora steadily lowered a supported box.",
+    "id": "CMP:a4f16f95fedfe546c18e7115",
+    "parts": [
+      "MAT:010",
+      "MOV:120"
+    ]
+  },
+  {
+    "word": "drop",
+    "code": 79,
+    "example": "Nora dropped the box.",
+    "near": "Nora released the box onto a shelf and it stayed still.",
+    "id": "CMP:31da7c021f7da53eed929076",
+    "parts": [
+      "CMP:69f57af236cf82c134e3c51a",
+      "CMP:a4f16f95fedfe546c18e7115"
+    ]
+  },
+  {
+    "word": "physical content capacity foundation",
+    "code": 80,
+    "example": "A bottle has room for its relevant contents.",
+    "near": "A promise lacks substance.",
+    "id": "CMP:ace0fc4ddd0c53a2a33e8fee",
+    "parts": [
+      "MAT:000",
+      "MAT:010"
+    ]
+  },
+  {
+    "word": "empty",
+    "code": 81,
+    "example": "The bottle is empty.",
+    "near": "The bottle contains a little water but is not full.",
+    "id": "CMP:7e3cdc51fe00e1c61e5e9f12",
+    "parts": [
+      "CMP:ace0fc4ddd0c53a2a33e8fee"
+    ]
+  },
+  {
+    "word": "full",
+    "code": 82,
+    "example": "The bottle is full.",
+    "near": "The bottle contains a little water below its capacity.",
+    "id": "CMP:d03beca450a29869aa6fd980",
+    "parts": [
+      "CMP:ace0fc4ddd0c53a2a33e8fee"
+    ]
   }
 ];
 export const storyDependencies = [

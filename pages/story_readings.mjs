@@ -1,12 +1,12 @@
 import {validStorySlots} from './story_saved_adjectives.mjs';
 import {isPassageHead} from './passage_nouns.mjs';
-import {knownValueReading} from './known_value.mjs?v=field-repairs-1';
-import {faultCategoryReading} from './fault_correction.mjs?v=meaning-reliability-1';
+import {knownValueReading} from './known_value.mjs?v=physical-vocabulary-1';
+import {faultCategoryReading} from './fault_correction.mjs?v=physical-vocabulary-1';
 import {routeNounLabel} from './nominals.mjs';
 import {expandNegativeContractions} from './contractions.mjs';
-import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs?v=meaning-reliability-1';
-import {properties,feltProperties,isMaterialTarget} from './story_qualities.mjs';
-import {storyWords} from './story_words.mjs?v=state-adjectives-1';
+import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs?v=physical-vocabulary-1';
+import {properties,feltProperties,isMaterialTarget,isPhysicalContainer,physicalActionLabels} from './story_qualities.mjs?v=physical-vocabulary-1';
+import {storyWords} from './story_words.mjs?v=physical-vocabulary-1';
 
 const words = new Map(storyWords.map(word => [word.word, word]));
 const id = word => words.get(word).id;
@@ -18,6 +18,10 @@ const shapes = [
   ['displace','displaces','displaced',['cause','bearer'],null,'displacing'],
   ['lift','lifts','lifted',['actor','target'],null,'lifting'],
   ['lower','lowers','lowered',['actor','target'],null,'lowering'],
+  ['pull','pulls','pulled',['actor','target'],null,'pulling'],
+  ['release','releases','released',['actor','target'],null,'releasing'],
+  ['fall','falls','fell',['bearer'],null,'falling'],
+  ['drop','drops','dropped',['actor','target'],null,'dropping'],
   ['resume','resumes','resumed',['bearer'],null,'resuming'],
   ['vibrate', 'vibrates', 'vibrated', ['bearer']],
   ['sound', 'sounds', 'sounded', ['source']],
@@ -49,6 +53,7 @@ const shapes = [
   ['make','makes','made',['source','result'],'CRE:110']
 ];
 const predicateId = (word,target) => target?.includes(':')?target:word==='arrive'?'MOV:110':id(target||word);
+const commandVerbs=new Set(['repair',...shapes.filter(row=>row[3].length===2).map(row=>row[0]),'ring']);
 const pronouns = new Set('they them he him she her it'.split(' '));
 const deictics = {i:'I',me:'I',we:'we',us:'we',you:'you'};
 const determiners = new Set('a an the this that'.split(' '));
@@ -282,8 +287,11 @@ function prepare(input, authority, preferences, adjectives) {
           shared&&predicate(shared.verb,clauses.at(-1).subject,shared.object,authority,runtime,preferences).length)){
         subject=clauses.at(-1).subject;consumed=0;inherited=true;special=true;
       }
-      if(clauses.length===0 && sentences.length===1 && /^(?:find|notice|spot|repair|repeat|ring|keep|push|lift|lower|displace) (?:(?:it|them|the|a|an|this|that)\b)/i.test(piece)){
-        subject={text:'you',pronoun:'you'};consumed=0;act='command';
+      const polite=folded(tokens[0]||'')==='please'?1:0;
+      const commandOffset=polite+(folded(tokens[polite]||'')==='do'&&folded(tokens[polite+1]||'')==='not'?2:0);
+      if(clauses.length===0 && sentences.length===1 && commandVerbs.has(folded(tokens[commandOffset]||'')) &&
+          /^(?:it|them|the|a|an|this|that)$/.test(folded(tokens[commandOffset+1]||''))){
+        subject={text:'you',pronoun:'you'};consumed=polite;act='command';
       }
       if(!subject || q&&!subject.plural)return null;
       let tail=tokens.slice(consumed),when=null,again=false,recipient=null;
@@ -396,6 +404,13 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
     entities.push({reference,referenceKind:np.referenceKind,domain:np.domain,label:np.guessedName?np.reference:np.text,head:np.head,plural:!!np.plural||reference==='we',category,owner});return entities.length-1;
   }
   function passageSense(entity,word,key,root){
+    if(root===id('empty')||root===id('full')){
+      if(isPhysicalContainer(entities[entity].head||'')||answers[key]==='physical')return root;
+      if(answers[key]==='other')return null;
+      const label=root===id('empty')?'A physical container with none of the relevant contents':'A physical container whose relevant contents reach capacity';
+      question={key,prompt:'What does “'+word+'” mean for '+entities[entity].label+'?',options:[{value:'physical',label},{value:'other',label:'Another meaning'}]};
+      return null;
+    }
     if(root===id('available for use') && word!=='available for use' || root===id('curious') && word==='curious' || root===id('closed')){
       const head=entities[entity].head||'';
       if(root===id('closed') && /^(?:gates?|doors?|hatch(?:es)?|windows?|lids?|boxes|box|valves?)$/.test(head))return root;
@@ -495,17 +510,6 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
     if(c.object){
       const target=identify(c.object,'object'+index,sub);
       if(target===null)return question?{question}:null;
-      if(['push','lift','lower','displace'].includes(reading.word)){
-        const entity=entities[target],head=entity.head||'';
-        // A conventional physical reading is direct for ordinary material targets.
-        // Named and abstract targets can also be a ban, a price or a software push.
-        if(!isMaterialTarget(head)){
-          const key='physical'+index;
-          if(!answers[key])return {question:{key,prompt:'Does “'+reading.word+'” describe a physical action on '+entity.label+'?',options:[
-            {value:'physical',label:({push:'Physical pushing',lift:'Physical lifting',lower:'Controlled physical lowering',displace:'Physical displacement'})[reading.word]||'Physical '+reading.word},{value:'other',label:'Another meaning'}]}};
-          if(answers[key]!=='physical')return null;
-        }
-      }
       const objectArg=argument(c.object,target,reading.roles[1],'property'+index+'Object');
       if(!objectArg)return question?{question}:null;
       if(c.alternatives.length){
@@ -519,6 +523,18 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
         }
       }
       args.push(objectArg);
+    }
+    if(Object.hasOwn(physicalActionLabels,reading.word)){
+      const affected=args.find(a=>a.role===(reading.word==='fall'?'bearer':reading.word==='displace'?'bearer':'target'));
+      for(const [i,option] of [affected,...affected?.alternatives||[]].entries()){
+        if(!option)continue;
+        const entity=entities[option.entity];
+        if(isMaterialTarget(entity.head||''))continue;
+        const key='physical'+index+(i?'Alternative'+(i-1):'');
+        if(!answers[key])return {question:{key,prompt:'Does “'+reading.word+'” describe a physical action involving '+entity.label+'?',options:[
+          {value:'physical',label:physicalActionLabels[reading.word]},{value:'other',label:'Another meaning'}]}};
+        if(answers[key]!=='physical')return null;
+      }
     }
     const bearer=args.find(a=>a.role==='bearer');
     if(bearer){

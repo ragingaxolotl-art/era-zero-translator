@@ -2,7 +2,7 @@
 metadata:
   title: Gate 4B dictionary conformance and routing cases
   version: 1.0.0
-  approved_entries: 107
+  approved_entries: 115
 accepted:
 - case_id: arrival_back_at_a_prior_position
   compound_id: CMP:0808e01be62b7fac873ee324
@@ -76,6 +76,9 @@ accepted:
 - case_id: living_body
   compound_id: CMP:3122dedcff0f85ad293e2580
   expected: valid_approved_entry
+- case_id: physical_release_causing_a_fall
+  compound_id: CMP:31da7c021f7da53eed929076
+  expected: valid_approved_entry
 - case_id: backup_dataset
   compound_id: CMP:33c135410b0deef525b6770d
   expected: valid_approved_entry
@@ -136,6 +139,9 @@ accepted:
 - case_id: material_artifact
   compound_id: CMP:61bfb0de7a1e9d7f5b981725
   expected: valid_approved_entry
+- case_id: ending_of_a_physical_holding_engagement
+  compound_id: CMP:69f57af236cf82c134e3c51a
+  expected: valid_approved_entry
 - case_id: route_through_an_interface
   compound_id: CMP:6ae4a680528e1cd7fd1ac0df
   expected: valid_approved_entry
@@ -169,11 +175,17 @@ accepted:
 - case_id: ongoing_physical_carrying
   compound_id: CMP:7a6749aaf61cd6181e544bd6
   expected: valid_approved_entry
+- case_id: absence_of_relevant_physical_contents
+  compound_id: CMP:7e3cdc51fe00e1c61e5e9f12
+  expected: valid_approved_entry
 - case_id: shut_configuration_of_a_closure
   compound_id: CMP:82a697e83c845e4a7b38b53e
   expected: valid_approved_entry
 - case_id: caused_displacement_in_a_physical_frame
   compound_id: CMP:82dc9c681fbaf7944cb7b85b
+  expected: valid_approved_entry
+- case_id: maintained_physical_holding_engagement
+  compound_id: CMP:834a56d90e31b430990720ff
   expected: valid_approved_entry
 - case_id: physical_region_boundary_relation
   compound_id: CMP:835d2edc1573d2aea3a6fd18
@@ -186,6 +198,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: synchronized_data_network
   compound_id: CMP:8f05a5e16a897935492726fa
+  expected: valid_approved_entry
+- case_id: application_of_physical_pulling_force
+  compound_id: CMP:906075e53ffeb8edae29ed9c
   expected: valid_approved_entry
 - case_id: material_route
   compound_id: CMP:919b714e6201a462756224a2
@@ -211,6 +226,9 @@ accepted:
 - case_id: completed_physical_entry
   compound_id: CMP:a3244e0195aa8c228dd0af8c
   expected: valid_approved_entry
+- case_id: downward_physical_displacement_under_gravity
+  compound_id: CMP:a4f16f95fedfe546c18e7115
+  expected: valid_approved_entry
 - case_id: composite_artifact
   compound_id: CMP:a7fc0ca38a6f95a40cdb87b1
   expected: valid_approved_entry
@@ -219,6 +237,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: onset_of_awareness_of_a_target
   compound_id: CMP:ac9df67396f3632d36b5d078
+  expected: valid_approved_entry
+- case_id: contextual_physical_content_capacity
+  compound_id: CMP:ace0fc4ddd0c53a2a33e8fee
   expected: valid_approved_entry
 - case_id: ongoing_sensory_registration
   compound_id: CMP:ade73037114406a2cd91ce13
@@ -273,6 +294,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: physical_region_exterior_relation
   compound_id: CMP:cc6d19387b62013464e0e850
+  expected: valid_approved_entry
+- case_id: relevant_physical_contents_at_capacity
+  compound_id: CMP:d03beca450a29869aa6fd980
   expected: valid_approved_entry
 - case_id: cause_another_occurrence_of_a_pattern
   compound_id: CMP:d372748e7d848ebe63c65cd0

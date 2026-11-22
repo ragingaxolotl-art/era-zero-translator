@@ -4,12 +4,12 @@ metadata:
   version: 1.0.0
   status: canonical_gate4e
   atom_entries: 324
-  compound_entries: 107
-  total_entries: 431
+  compound_entries: 115
+  total_entries: 439
   scope: Auditable synchronic derivation and authority provenance; no invented natural-language
     ancestry.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: '07857b7faebd53159404141633ce7a28d7b1e065cd1e76ef700ffab6dfa091e3'
+  compound_dictionary_fingerprint: 591962fb3cab25f19e67b8b7d47ae58bd80e02a30092e9a545f4230c6ef7d450
 principles:
   synchronic_not_fictional: Era Zero forms are engineered encodings. The table records
     actual construction rules and approval history rather than inventing ancestors
@@ -18571,6 +18571,77 @@ entries:
     approval_date: '2026-10-09'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
+- etymology_id: ETY:95aec0f23ecf45a7b044b073
+  target_type: compound
+  target_id: CMP:31da7c021f7da53eed929076
+  status: canonical
+  english_label: physical release causing a fall
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: compound_ref
+    target_id: CMP:a4f16f95fedfe546c18e7115
+  components:
+  - kind: compound_ref
+    compound_id: CMP:69f57af236cf82c134e3c51a
+    definition_version: 1.0.0
+    node_id: q1
+  - kind: compound_ref
+    compound_id: CMP:a4f16f95fedfe546c18e7115
+    definition_version: 1.0.0
+    node_id: h
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: One linked event in which a holder releases a distinct material
+      object from a physical holding engagement and that release causes the same object
+      to undergo downward physical displacement under gravity. Release and falling
+      are phases of this one event, not two unrelated occurrences. The outer actor
+      is the former holder; the outer target is both the formerly held object and
+      the falling mover. Intention, negligence, landing, damage, a recipient and ownership
+      transfer are unspecified. Release onto a support that prevents any fall, continued
+      controlled lowering, a drop in price and abandoning a topic do not establish
+      this meaning.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: physical_release_causing_a_fall
+      sound_code: 79
+      added_definition: One linked event in which a holder releases a distinct material
+        object from a physical holding engagement and that release causes the same
+        object to undergo downward physical displacement under gravity. Release and
+        falling are phases of this one event, not two unrelated occurrences. The outer
+        actor is the former holder; the outer target is both the formerly held object
+        and the falling mover. Intention, negligence, landing, damage, a recipient
+        and ownership transfer are unspecified. Release onto a support that prevents
+        any fall, continued controlled lowering, a drop in price and abandoning a
+        topic do not establish this meaning.
+      excludes:
+      - Releasing an object that stays supported without falling
+      - A release and an unrelated fall, or different objects in the two events
+      - Controlled lowering, dropping a topic, deleting data or reducing a price
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 31da7c021f7da53eed9290760193c51e970973c23f517c08e920b9373f69761b
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/physical_vocabulary_2026_11_22.yaml
+    approval_date: '2026-11-22'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
 - etymology_id: ETY:6c991f4426994338d177ba47
   target_type: compound
   target_id: CMP:33c135410b0deef525b6770d
@@ -19681,6 +19752,77 @@ entries:
     approval_date: '2026-10-09'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
+- etymology_id: ETY:27c8f23a7047725d2c1685fe
+  target_type: compound
+  target_id: CMP:69f57af236cf82c134e3c51a
+  status: canonical
+  english_label: ending of a physical holding engagement
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: compound_ref
+    target_id: CMP:3d95154b4812da0cefd7fc45
+  components:
+  - kind: compound_ref
+    compound_id: CMP:834a56d90e31b430990720ff
+    definition_version: 1.0.0
+    node_id: q1
+  - kind: compound_ref
+    compound_id: CMP:3d95154b4812da0cefd7fc45
+    definition_version: 1.0.0
+    node_id: h
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: A holder's previously maintained physical holding engagement
+      with the same distinct material object ends. The nested holding relation describes
+      the pre-phase; the nested cessation is the ending of that exact engagement.
+      The former holder and held object remain the two participants of this release.
+      Neither continued holding at the endpoint nor movement, falling, transfer, destruction,
+      permanent freedom, intention or a change of ownership is asserted. Ending a
+      hold while another support keeps the object still is included. Releasing software,
+      information or a claim, and granting permission without ending a physical hold,
+      are different meanings.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: ending_of_a_physical_holding_engagement
+      sound_code: 77
+      added_definition: A holder's previously maintained physical holding engagement
+        with the same distinct material object ends. The nested holding relation describes
+        the pre-phase; the nested cessation is the ending of that exact engagement.
+        The former holder and held object remain the two participants of this release.
+        Neither continued holding at the endpoint nor movement, falling, transfer,
+        destruction, permanent freedom, intention or a change of ownership is asserted.
+        Ending a hold while another support keeps the object still is included. Releasing
+        software, information or a claim, and granting permission without ending a
+        physical hold, are different meanings.
+      excludes:
+      - An object moves while the same hold continues
+      - Another holder takes custody without ending this physical engagement
+      - Publishing software, disclosing data, legal release or permission alone
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 69f57af236cf82c134e3c51a59e21c44bda8c59b668ca3bf376ad5ba985b144a
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/physical_vocabulary_2026_11_22.yaml
+    approval_date: '2026-11-22'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
 - etymology_id: ETY:599fc0bc7ef9098df03b953e
   target_type: compound
   target_id: CMP:6ae4a680528e1cd7fd1ac0df
@@ -20438,6 +20580,65 @@ entries:
     approval_date: '2026-10-28'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
+- etymology_id: ETY:f9e12021ab0e66f30ae133ab
+  target_type: compound
+  target_id: CMP:7e3cdc51fe00e1c61e5e9f12
+  status: canonical
+  english_label: absence of relevant physical contents
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: compound_ref
+    target_id: CMP:ace0fc4ddd0c53a2a33e8fee
+  components:
+  - kind: compound_ref
+    compound_id: CMP:ace0fc4ddd0c53a2a33e8fee
+    definition_version: 1.0.0
+    node_id: h
+  relations: []
+  semantic_derivation:
+    invariant_definition: The same material container has none of the relevant physical
+      contents under its fixed contextual capacity criterion. Its own body and contents
+      of irrelevant kinds, such as air in an otherwise empty bottle, are not counted.
+      No vacuum, damage, cleaning, previous emptying, usability or runtime state is
+      asserted. A partly filled container is not empty even though it is not full.
+      Figurative emptiness, a data container and emotional feeling are separate meanings.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: absence_of_relevant_physical_contents
+      sound_code: 81
+      added_definition: The same material container has none of the relevant physical
+        contents under its fixed contextual capacity criterion. Its own body and contents
+        of irrelevant kinds, such as air in an otherwise empty bottle, are not counted.
+        No vacuum, damage, cleaning, previous emptying, usability or runtime state
+        is asserted. A partly filled container is not empty even though it is not
+        full. Figurative emptiness, a data container and emotional feeling are separate
+        meanings.
+      excludes:
+      - Partly filled but not full
+      - Vacuum or absence of the container's own material body inferred from emptiness
+      - An empty promise, emotional emptiness or an empty software collection
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 7e3cdc51fe00e1c61e5e9f12de89e3a7d1bc5fb875e2a959efc3096c686980c9
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/physical_vocabulary_2026_11_22.yaml
+    approval_date: '2026-11-22'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
 - etymology_id: ETY:b3399bdeade28485d50cbbd8
   target_type: compound
   target_id: CMP:82a697e83c845e4a7b38b53e
@@ -20543,6 +20744,71 @@ entries:
     authority: gate4b_reviewed_compound
     record: lexicon/story_compound_batch.json
     approval_date: '2026-11-15'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:364d73d3f76826152b71c7e1
+  target_type: compound
+  target_id: CMP:834a56d90e31b430990720ff
+  status: canonical
+  english_label: maintained physical holding engagement
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: MAT:211
+  components:
+  - kind: root
+    root_id: MAT:010
+    node_id: q1
+  - kind: root
+    root_id: MAT:211
+    node_id: h
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: A material holder maintains an actual physical engagement
+      with a distinct material object that constrains that object's position or motion
+      through gripping, restraint or load-bearing support. The object is the bounded
+      material target, and the holder supplies the active physical influence. The
+      object need not be stationary, wholly supported, owned or under the holder's
+      practical custody. Intention and exclusive control are unspecified. Touch or
+      influence that does not maintain such a holding constraint is insufficient.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: maintained_physical_holding_engagement
+      sound_code: 76
+      added_definition: A material holder maintains an actual physical engagement
+        with a distinct material object that constrains that object's position or
+        motion through gripping, restraint or load-bearing support. The object is
+        the bounded material target, and the holder supplies the active physical influence.
+        The object need not be stationary, wholly supported, owned or under the holder's
+        practical custody. Intention and exclusive control are unspecified. Touch
+        or influence that does not maintain such a holding constraint is insufficient.
+      excludes:
+      - Touch without a maintained holding constraint
+      - Practical custody, ownership or permission without actual physical engagement
+      - Remembering, reserving, delaying or retaining information
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 834a56d90e31b430990720ff9b59d903ba5c47ae7153e571598db66887b2a0fb
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/physical_vocabulary_2026_11_22.yaml
+    approval_date: '2026-11-22'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
 - etymology_id: ETY:c12117b6145b0fe8a080b255
@@ -20776,6 +21042,73 @@ entries:
     authority: gate4b_reviewed_compound
     record: migrations/gate4b_compound_dictionary_1.0.yaml
     approval_date: '2026-10-09'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:c002ee73ec272e5b6fcb72f8
+  target_type: compound
+  target_id: CMP:906075e53ffeb8edae29ed9c
+  status: canonical
+  english_label: application of physical pulling force
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: MAT:211
+  components:
+  - kind: root
+    root_id: MAT:201
+    node_id: q1
+  - kind: root
+    root_id: MAT:211
+    node_id: h
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: An actor exercises available physical work capacity by transmitting
+      a pulling force to a distinct material target through a grip or tension-bearing
+      physical connection. The force draws toward the actor-side of that connection,
+      rather than pressing the target away. The target need not move. The same actor
+      supplies the capacity and the influence in this episode; intention, strength,
+      duration and eventual displacement are unspecified. This contact-transmitted
+      sense does not include attraction by gravity or a field alone, obtaining software
+      changes, influence on a decision or a figurative withdrawal.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: application_of_physical_pulling_force
+      sound_code: 75
+      added_definition: An actor exercises available physical work capacity by transmitting
+        a pulling force to a distinct material target through a grip or tension-bearing
+        physical connection. The force draws toward the actor-side of that connection,
+        rather than pressing the target away. The target need not move. The same actor
+        supplies the capacity and the influence in this episode; intention, strength,
+        duration and eventual displacement are unspecified. This contact-transmitted
+        sense does not include attraction by gravity or a field alone, obtaining software
+        changes, influence on a decision or a figurative withdrawal.
+      excludes:
+      - Pushing away, even when the target ultimately moves toward the actor
+      - Movement without a transmitted pulling force
+      - Gravity or field attraction alone; software, persuasive or figurative pulling
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 906075e53ffeb8edae29ed9ceb1d35a58d9b8bf2215c53ad169dd1be6cbed898
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/physical_vocabulary_2026_11_22.yaml
+    approval_date: '2026-11-22'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
 - etymology_id: ETY:5cfaf7754b59ce90ee48c555
@@ -21237,6 +21570,73 @@ entries:
     approval_date: '2026-11-04'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
+- etymology_id: ETY:02dd0f98dd528e0bb64ae9f5
+  target_type: compound
+  target_id: CMP:a4f16f95fedfe546c18e7115
+  status: canonical
+  english_label: downward physical displacement under gravity
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: MOV:120
+  components:
+  - kind: root
+    root_id: MAT:010
+    node_id: q1
+  - kind: root
+    root_id: MOV:120
+    node_id: h
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: 'A distinct material object completes a downward change
+      of position in the local gravitational frame, with gravity driving the descent
+      and without a supporting agent conducting a controlled lowering. The material
+      object is exactly the mover. This bounds the described displacement episode,
+      not a destination or the whole later fall: landing, injury, damage, free fall
+      without resistance, an external agent, deliberate action and a prior release
+      are not asserted. An ongoing aspect views the event internally without asserting
+      its endpoint. Changes in a price, rank, mood or software state are excluded.'
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: downward_physical_displacement_under_gravity
+      sound_code: 78
+      added_definition: 'A distinct material object completes a downward change of
+        position in the local gravitational frame, with gravity driving the descent
+        and without a supporting agent conducting a controlled lowering. The material
+        object is exactly the mover. This bounds the described displacement episode,
+        not a destination or the whole later fall: landing, injury, damage, free fall
+        without resistance, an external agent, deliberate action and a prior release
+        are not asserted. An ongoing aspect views the event internally without asserting
+        its endpoint. Changes in a price, rank, mood or software state are excluded.'
+      excludes:
+      - A supported load deliberately conducted down by its carrier
+      - Merely being low, or moving upward or horizontally
+      - A price, rank, mood or software state decreasing
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: a4f16f95fedfe546c18e7115f9c680176ee489eab1e45ae2a6d1b9c32d180cf5
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/physical_vocabulary_2026_11_22.yaml
+    approval_date: '2026-11-22'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
 - etymology_id: ETY:6ec69ac7938a326fe51d77d7
   target_type: compound
   target_id: CMP:a7fc0ca38a6f95a40cdb87b1
@@ -21406,6 +21806,75 @@ entries:
     authority: gate4b_reviewed_compound
     record: lexicon/story_compound_batch.json
     approval_date: '2026-11-14'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:0536f6b46584aced6ae0faff
+  target_type: compound
+  target_id: CMP:ace0fc4ddd0c53a2a33e8fee
+  status: canonical
+  english_label: contextual physical content capacity
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: MAT:010
+  components:
+  - kind: root
+    root_id: MAT:000
+    node_id: q1
+  - kind: root
+    root_id: MAT:010
+    node_id: h
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: A materially bounded container object, with its own enduring
+      physical body, has a contextually fixed positive usable capacity for a relevant
+      kind of physical content. Both material roots describe that same container;
+      its body is distinct from what counts as contents. The capacity criterion and
+      content kind are contextual parameters, not a numerical amount supplied by this
+      meaning. Current contents, structural integrity, a sealed enclosure and suitability
+      for every kind of content are unspecified. The criterion is physical holding
+      capacity, not memory, information, emotional experience, a promise or a person's
+      feeling of satiety.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: contextual_physical_content_capacity
+      sound_code: 80
+      added_definition: A materially bounded container object, with its own enduring
+        physical body, has a contextually fixed positive usable capacity for a relevant
+        kind of physical content. Both material roots describe that same container;
+        its body is distinct from what counts as contents. The capacity criterion
+        and content kind are contextual parameters, not a numerical amount supplied
+        by this meaning. Current contents, structural integrity, a sealed enclosure
+        and suitability for every kind of content are unspecified. The criterion is
+        physical holding capacity, not memory, information, emotional experience,
+        a promise or a person's feeling of satiety.
+      excludes:
+      - A numerical capacity inferred without being supplied
+      - A data store, proposition or feeling treated as a physical container
+      - Changing the content kind or capacity criterion midway through a comparison
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: ace0fc4ddd0c53a2a33e8fee956961a4aebfd9f5b249666d8f1f2a2b43d78885
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/physical_vocabulary_2026_11_22.yaml
+    approval_date: '2026-11-22'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
 - etymology_id: ETY:76d306e4c7645e0ab6bdf7df
@@ -22503,6 +22972,66 @@ entries:
     authority: gate4b_reviewed_compound
     record: migrations/spatial_relations_2026_11_04.yaml
     approval_date: '2026-11-04'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:bf7ae3d751c77ad5617d973a
+  target_type: compound
+  target_id: CMP:d03beca450a29869aa6fd980
+  status: canonical
+  english_label: relevant physical contents at capacity
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: compound_ref
+    target_id: CMP:ace0fc4ddd0c53a2a33e8fee
+  components:
+  - kind: compound_ref
+    compound_id: CMP:ace0fc4ddd0c53a2a33e8fee
+    definition_version: 1.0.0
+    node_id: h
+  relations: []
+  semantic_derivation:
+    invariant_definition: The same material container's relevant physical contents
+      meet or exceed its fixed contextual usable-capacity threshold, so there is no
+      remaining allowance for more of that content under that criterion. This need
+      not mean that every microscopic space is occupied, that the container is sealed,
+      or that overflowing, damage or a particular filling process occurred. A nonempty
+      container below the threshold is not full. Bodily satiety, intensity, completeness
+      of information and software capacity are separate meanings.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: relevant_physical_contents_at_capacity
+      sound_code: 82
+      added_definition: The same material container's relevant physical contents meet
+        or exceed its fixed contextual usable-capacity threshold, so there is no remaining
+        allowance for more of that content under that criterion. This need not mean
+        that every microscopic space is occupied, that the container is sealed, or
+        that overflowing, damage or a particular filling process occurred. A nonempty
+        container below the threshold is not full. Bodily satiety, intensity, completeness
+        of information and software capacity are separate meanings.
+      excludes:
+      - Any positive amount mistaken for full capacity
+      - An empty container assigned runtime state 1
+      - Feeling satisfied after eating, complete information or a full software queue
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: d03beca450a29869aa6fd98054f0c587c98ea9f8efc57d34a0f7f7da212e3da0
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/physical_vocabulary_2026_11_22.yaml
+    approval_date: '2026-11-22'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
 - etymology_id: ETY:0a6df1188103f51c1312352d

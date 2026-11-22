@@ -1,7 +1,7 @@
 // English predicates come from the installed dictionary. A frame specifies which
 // participant a predicate can take in this construction, independently of its spelling.
 import {matchingChoice} from './dictionary_word_choices.mjs';
-import {analyzeEnglish,phrasalVerbAt} from './english.mjs?v=1.16.1';
+import {analyzeEnglish,phrasalVerbAt} from './english.mjs?v=physical-vocabulary-1';
 import {parseNominal} from './nominals.mjs';
 import {expandNegativeContractions} from './contractions.mjs';
 

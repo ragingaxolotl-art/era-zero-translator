@@ -4,7 +4,7 @@ The broader translator remains unfinished. The [November 22 audit](../reports/fu
 
 The subsequent [meaning and input-flow repair](../reports/meaning_reliability_2026_11_22.md) fixes the identified future/ability/negation fallback, adds the missing approved-love inverse and makes missing definitions and small-screen choices clearer. The original audit is preserved as evidence of the earlier build. Main sentence controls now distinguish a complete interpretation from verified independent score decoding.
 
-The browser translator makes music from supported English sentences and from words you build yourself. It includes 324 canonical roots, 107 approved compounds and 560 indexed English senses. You can combine earlier compounds in the order you choose, mark the main meaning, and connect participants across the parts. Your definitions stay in your browser and can be exported and imported. [Open the translator](https://ragingaxolotl-art.github.io/era-zero-translator/) · [Open the compound builder](https://ragingaxolotl-art.github.io/era-zero-translator/compound-builder.html)
+The browser translator makes music from supported English sentences and from words you build yourself. It includes 324 canonical roots, 115 approved compounds and 574 indexed English senses. You can combine earlier compounds in the order you choose, mark the main meaning, and connect participants across the parts. Your definitions stay in your browser and can be exported and imported. [Open the translator](https://ragingaxolotl-art.github.io/era-zero-translator/) · [Open the compound builder](https://ragingaxolotl-art.github.io/era-zero-translator/compound-builder.html)
 
 The field audit tests 51 inputs through the song controls, measures the sound of both arrangements and ranks the remaining bugs. [Field audit](../reports/translator_field_audit.md) · [Story and dialogue audit](../reports/story_readings.md)
 
@@ -22,6 +22,8 @@ Nouns and proper names can have phonemic labels. A verb or adjective needs a mea
 Try **The gate was open**, **The gate stayed open**, and **Mira kept the gate open**. The first describes passability. The second says it continued through an interval. The third gives Mira responsibility for maintaining it. Change the gate to a hatch and try **Nora kept the hatch shut**. **Available** has a reading in which a resource is accessible and ready for the relevant use. For an ambiguous resource the translator lets you select that reading.
 
 **Push** describes directed contact pressure and leaves the outcome open. **Lift** and **lower** reuse one physical displacement meaning with opposite vertical directions. Each takes an actor and a target.
+
+**Pull**, **release**, **fall** and **drop** now have distinct physical meanings. Try **Nora pulled the full box**, **The empty bottle fell**, or **Please do not drop the box**. Dropping reuses release and falling; releasing alone does not imply movement. **Empty** and **full** describe relevant physical contents under a contextual capacity criterion. Abstract uses ask for clarification. [Vocabulary and sentence evidence](../reports/physical_vocabulary_2026_11_22.md)
 
 Try **The curious child waited** and choose the child's inclination to find things out. **The resumed stream waited** describes which stream waited. Likewise **The hungry child lifted the closed box** attaches hunger to the child and closure to the box. **The child is curious about the map** keeps its existing topic-specific reading.
 

@@ -6,7 +6,7 @@ The user should be able to write a new message, resolve a genuine ambiguity in o
 
 ## Ordered work packages
 
-November 22 implementation update: the specific scope-loss, love-inverse and mobile-picker defects are repaired, with independent decoding and browser checks. See the [repair report](../reports/meaning_reliability_2026_11_22.md) for evidence and remaining boundaries. The first two packages have substantial progress; this does not close the broader translator or the separate physical-device/audio checks. The next implementation work is the dependency-ordered vocabulary below.
+November 22 implementation update: the specific scope-loss, love-inverse and mobile-picker defects are repaired, with independent decoding and browser checks. See the [repair report](../reports/meaning_reliability_2026_11_22.md) for evidence and remaining boundaries. The first two packages have substantial progress; this does not close the broader translator or the separate physical-device/audio checks. The first dependency-ordered physical vocabulary batch is now implemented; see its [evidence and limits](../reports/physical_vocabulary_2026_11_22.md). The larger vocabulary package remains open.
 
 ### 1. Repair meaning loss and make readiness truthful
 
@@ -25,6 +25,8 @@ Keep Translate, the plain-language interpreted message, Play and Add to song tog
 **Acceptance:** all recorded picker cases fit 320-, 390- and 768-pixel viewports; keyboard and touch reach each action; changing input clears stale results; unknown verbs/adjectives never become phonemic names or unrelated meanings; a newly built word returns to the original sentence. Verify actual iOS/Safari behavior separately from Chromium viewport emulation.
 
 ### 3. Expand reusable meanings and their English forms together
+
+Implemented first batch: pull, release, fall, drop, empty and full, with holding and capacity foundations. Existing roots and meanings are preserved. Placement, narrow/wide, degree and information operations remain next work; the physical meanings do not cover their figurative counterparts.
 
 Use this decision order for each intended sense: exact existing meaning → ordinary composition from existing meanings → explicitly defined conventional compound → grammar feature → unresolved primitive proposal. A new alias must entail the existing definition. Do not substitute lowering for dropping, dormancy for deletion, care for pleasure, or ability for permission.
 

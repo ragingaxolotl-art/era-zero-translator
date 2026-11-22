@@ -7840,3 +7840,624 @@ reviews:
     decision: 'rejected: unnecessary change of authority'
   recommendation: approve specific_convention
   confidence: high
+- compound_id: CMP:906075e53ffeb8edae29ed9c
+  display_title: application of physical pulling force
+  current_choice_reason: reviews/physical_vocabulary_2026_11_22.md; scores are author
+    judgments, not measured accuracy or independent validation.
+  candidates:
+  - candidate_id: explicit_physical_convention
+    direction: Reuse exact dependencies and state the additional physical distinction,
+      phase and participant constraints audibly.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - kind: root
+        root_id: MAT:201
+        node_id: q1
+      - kind: root
+        root_id: MAT:211
+        node_id: h
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: application_of_physical_pulling_force
+        sound_code: 75
+        added_definition: An actor exercises available physical work capacity by transmitting
+          a pulling force to a distinct material target through a grip or tension-bearing
+          physical connection. The force draws toward the actor-side of that connection,
+          rather than pressing the target away. The target need not move. The same
+          actor supplies the capacity and the influence in this episode; intention,
+          strength, duration and eventual displacement are unspecified. This contact-transmitted
+          sense does not include attraction by gravity or a field alone, obtaining
+          software changes, influence on a decision or a figurative withdrawal.
+        excludes:
+        - Pushing away, even when the target ultimately moves toward the actor
+        - Movement without a transmitted pulling force
+        - Gravity or field attraction alone; software, persuasive or figurative pulling
+  - candidate_id: unmarked_root_conjunction
+    direction: Root adjacency alone does not supply pulling direction, a release/fall
+      causal link or a content-capacity criterion.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: distinction absent'
+  - candidate_id: runtime_or_nearby_alias
+    direction: Runtime, related movement or a nearby English label cannot replace
+      the intended meaning.
+    scores:
+      atomicity: 2
+      address_fit: 3
+      family_fit: 3
+      neighbor_separation: 1
+      cross_family_separation: 2
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 17
+    decision: 'rejected: semantic substitution'
+  recommendation: approve explicit_physical_convention
+  confidence: high
+- compound_id: CMP:834a56d90e31b430990720ff
+  display_title: maintained physical holding engagement
+  current_choice_reason: reviews/physical_vocabulary_2026_11_22.md; scores are author
+    judgments, not measured accuracy or independent validation.
+  candidates:
+  - candidate_id: explicit_physical_convention
+    direction: Reuse exact dependencies and state the additional physical distinction,
+      phase and participant constraints audibly.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - kind: root
+        root_id: MAT:010
+        node_id: q1
+      - kind: root
+        root_id: MAT:211
+        node_id: h
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: maintained_physical_holding_engagement
+        sound_code: 76
+        added_definition: A material holder maintains an actual physical engagement
+          with a distinct material object that constrains that object's position or
+          motion through gripping, restraint or load-bearing support. The object is
+          the bounded material target, and the holder supplies the active physical
+          influence. The object need not be stationary, wholly supported, owned or
+          under the holder's practical custody. Intention and exclusive control are
+          unspecified. Touch or influence that does not maintain such a holding constraint
+          is insufficient.
+        excludes:
+        - Touch without a maintained holding constraint
+        - Practical custody, ownership or permission without actual physical engagement
+        - Remembering, reserving, delaying or retaining information
+  - candidate_id: unmarked_root_conjunction
+    direction: Root adjacency alone does not supply pulling direction, a release/fall
+      causal link or a content-capacity criterion.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: distinction absent'
+  - candidate_id: runtime_or_nearby_alias
+    direction: Runtime, related movement or a nearby English label cannot replace
+      the intended meaning.
+    scores:
+      atomicity: 2
+      address_fit: 3
+      family_fit: 3
+      neighbor_separation: 1
+      cross_family_separation: 2
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 17
+    decision: 'rejected: semantic substitution'
+  recommendation: approve explicit_physical_convention
+  confidence: high
+- compound_id: CMP:69f57af236cf82c134e3c51a
+  display_title: ending of a physical holding engagement
+  current_choice_reason: reviews/physical_vocabulary_2026_11_22.md; scores are author
+    judgments, not measured accuracy or independent validation.
+  candidates:
+  - candidate_id: explicit_physical_convention
+    direction: Reuse exact dependencies and state the additional physical distinction,
+      phase and participant constraints audibly.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - kind: compound_ref
+        compound_id: CMP:834a56d90e31b430990720ff
+        definition_version: 1.0.0
+        node_id: q1
+      - kind: compound_ref
+        compound_id: CMP:3d95154b4812da0cefd7fc45
+        definition_version: 1.0.0
+        node_id: h
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: ending_of_a_physical_holding_engagement
+        sound_code: 77
+        added_definition: A holder's previously maintained physical holding engagement
+          with the same distinct material object ends. The nested holding relation
+          describes the pre-phase; the nested cessation is the ending of that exact
+          engagement. The former holder and held object remain the two participants
+          of this release. Neither continued holding at the endpoint nor movement,
+          falling, transfer, destruction, permanent freedom, intention or a change
+          of ownership is asserted. Ending a hold while another support keeps the
+          object still is included. Releasing software, information or a claim, and
+          granting permission without ending a physical hold, are different meanings.
+        excludes:
+        - An object moves while the same hold continues
+        - Another holder takes custody without ending this physical engagement
+        - Publishing software, disclosing data, legal release or permission alone
+  - candidate_id: unmarked_root_conjunction
+    direction: Root adjacency alone does not supply pulling direction, a release/fall
+      causal link or a content-capacity criterion.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: distinction absent'
+  - candidate_id: runtime_or_nearby_alias
+    direction: Runtime, related movement or a nearby English label cannot replace
+      the intended meaning.
+    scores:
+      atomicity: 2
+      address_fit: 3
+      family_fit: 3
+      neighbor_separation: 1
+      cross_family_separation: 2
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 17
+    decision: 'rejected: semantic substitution'
+  recommendation: approve explicit_physical_convention
+  confidence: high
+- compound_id: CMP:a4f16f95fedfe546c18e7115
+  display_title: downward physical displacement under gravity
+  current_choice_reason: reviews/physical_vocabulary_2026_11_22.md; scores are author
+    judgments, not measured accuracy or independent validation.
+  candidates:
+  - candidate_id: explicit_physical_convention
+    direction: Reuse exact dependencies and state the additional physical distinction,
+      phase and participant constraints audibly.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - kind: root
+        root_id: MAT:010
+        node_id: q1
+      - kind: root
+        root_id: MOV:120
+        node_id: h
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: downward_physical_displacement_under_gravity
+        sound_code: 78
+        added_definition: 'A distinct material object completes a downward change
+          of position in the local gravitational frame, with gravity driving the descent
+          and without a supporting agent conducting a controlled lowering. The material
+          object is exactly the mover. This bounds the described displacement episode,
+          not a destination or the whole later fall: landing, injury, damage, free
+          fall without resistance, an external agent, deliberate action and a prior
+          release are not asserted. An ongoing aspect views the event internally without
+          asserting its endpoint. Changes in a price, rank, mood or software state
+          are excluded.'
+        excludes:
+        - A supported load deliberately conducted down by its carrier
+        - Merely being low, or moving upward or horizontally
+        - A price, rank, mood or software state decreasing
+  - candidate_id: unmarked_root_conjunction
+    direction: Root adjacency alone does not supply pulling direction, a release/fall
+      causal link or a content-capacity criterion.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: distinction absent'
+  - candidate_id: runtime_or_nearby_alias
+    direction: Runtime, related movement or a nearby English label cannot replace
+      the intended meaning.
+    scores:
+      atomicity: 2
+      address_fit: 3
+      family_fit: 3
+      neighbor_separation: 1
+      cross_family_separation: 2
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 17
+    decision: 'rejected: semantic substitution'
+  recommendation: approve explicit_physical_convention
+  confidence: high
+- compound_id: CMP:31da7c021f7da53eed929076
+  display_title: physical release causing a fall
+  current_choice_reason: reviews/physical_vocabulary_2026_11_22.md; scores are author
+    judgments, not measured accuracy or independent validation.
+  candidates:
+  - candidate_id: explicit_physical_convention
+    direction: Reuse exact dependencies and state the additional physical distinction,
+      phase and participant constraints audibly.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - kind: compound_ref
+        compound_id: CMP:69f57af236cf82c134e3c51a
+        definition_version: 1.0.0
+        node_id: q1
+      - kind: compound_ref
+        compound_id: CMP:a4f16f95fedfe546c18e7115
+        definition_version: 1.0.0
+        node_id: h
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: physical_release_causing_a_fall
+        sound_code: 79
+        added_definition: One linked event in which a holder releases a distinct material
+          object from a physical holding engagement and that release causes the same
+          object to undergo downward physical displacement under gravity. Release
+          and falling are phases of this one event, not two unrelated occurrences.
+          The outer actor is the former holder; the outer target is both the formerly
+          held object and the falling mover. Intention, negligence, landing, damage,
+          a recipient and ownership transfer are unspecified. Release onto a support
+          that prevents any fall, continued controlled lowering, a drop in price and
+          abandoning a topic do not establish this meaning.
+        excludes:
+        - Releasing an object that stays supported without falling
+        - A release and an unrelated fall, or different objects in the two events
+        - Controlled lowering, dropping a topic, deleting data or reducing a price
+  - candidate_id: unmarked_root_conjunction
+    direction: Root adjacency alone does not supply pulling direction, a release/fall
+      causal link or a content-capacity criterion.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: distinction absent'
+  - candidate_id: runtime_or_nearby_alias
+    direction: Runtime, related movement or a nearby English label cannot replace
+      the intended meaning.
+    scores:
+      atomicity: 2
+      address_fit: 3
+      family_fit: 3
+      neighbor_separation: 1
+      cross_family_separation: 2
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 17
+    decision: 'rejected: semantic substitution'
+  recommendation: approve explicit_physical_convention
+  confidence: high
+- compound_id: CMP:ace0fc4ddd0c53a2a33e8fee
+  display_title: contextual physical content capacity
+  current_choice_reason: reviews/physical_vocabulary_2026_11_22.md; scores are author
+    judgments, not measured accuracy or independent validation.
+  candidates:
+  - candidate_id: explicit_physical_convention
+    direction: Reuse exact dependencies and state the additional physical distinction,
+      phase and participant constraints audibly.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - kind: root
+        root_id: MAT:000
+        node_id: q1
+      - kind: root
+        root_id: MAT:010
+        node_id: h
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: contextual_physical_content_capacity
+        sound_code: 80
+        added_definition: A materially bounded container object, with its own enduring
+          physical body, has a contextually fixed positive usable capacity for a relevant
+          kind of physical content. Both material roots describe that same container;
+          its body is distinct from what counts as contents. The capacity criterion
+          and content kind are contextual parameters, not a numerical amount supplied
+          by this meaning. Current contents, structural integrity, a sealed enclosure
+          and suitability for every kind of content are unspecified. The criterion
+          is physical holding capacity, not memory, information, emotional experience,
+          a promise or a person's feeling of satiety.
+        excludes:
+        - A numerical capacity inferred without being supplied
+        - A data store, proposition or feeling treated as a physical container
+        - Changing the content kind or capacity criterion midway through a comparison
+  - candidate_id: unmarked_root_conjunction
+    direction: Root adjacency alone does not supply pulling direction, a release/fall
+      causal link or a content-capacity criterion.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: distinction absent'
+  - candidate_id: runtime_or_nearby_alias
+    direction: Runtime, related movement or a nearby English label cannot replace
+      the intended meaning.
+    scores:
+      atomicity: 2
+      address_fit: 3
+      family_fit: 3
+      neighbor_separation: 1
+      cross_family_separation: 2
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 17
+    decision: 'rejected: semantic substitution'
+  recommendation: approve explicit_physical_convention
+  confidence: high
+- compound_id: CMP:7e3cdc51fe00e1c61e5e9f12
+  display_title: absence of relevant physical contents
+  current_choice_reason: reviews/physical_vocabulary_2026_11_22.md; scores are author
+    judgments, not measured accuracy or independent validation.
+  candidates:
+  - candidate_id: explicit_physical_convention
+    direction: Reuse exact dependencies and state the additional physical distinction,
+      phase and participant constraints audibly.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - kind: compound_ref
+        compound_id: CMP:ace0fc4ddd0c53a2a33e8fee
+        definition_version: 1.0.0
+        node_id: h
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: absence_of_relevant_physical_contents
+        sound_code: 81
+        added_definition: The same material container has none of the relevant physical
+          contents under its fixed contextual capacity criterion. Its own body and
+          contents of irrelevant kinds, such as air in an otherwise empty bottle,
+          are not counted. No vacuum, damage, cleaning, previous emptying, usability
+          or runtime state is asserted. A partly filled container is not empty even
+          though it is not full. Figurative emptiness, a data container and emotional
+          feeling are separate meanings.
+        excludes:
+        - Partly filled but not full
+        - Vacuum or absence of the container's own material body inferred from emptiness
+        - An empty promise, emotional emptiness or an empty software collection
+  - candidate_id: unmarked_root_conjunction
+    direction: Root adjacency alone does not supply pulling direction, a release/fall
+      causal link or a content-capacity criterion.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: distinction absent'
+  - candidate_id: runtime_or_nearby_alias
+    direction: Runtime, related movement or a nearby English label cannot replace
+      the intended meaning.
+    scores:
+      atomicity: 2
+      address_fit: 3
+      family_fit: 3
+      neighbor_separation: 1
+      cross_family_separation: 2
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 17
+    decision: 'rejected: semantic substitution'
+  recommendation: approve explicit_physical_convention
+  confidence: high
+- compound_id: CMP:d03beca450a29869aa6fd980
+  display_title: relevant physical contents at capacity
+  current_choice_reason: reviews/physical_vocabulary_2026_11_22.md; scores are author
+    judgments, not measured accuracy or independent validation.
+  candidates:
+  - candidate_id: explicit_physical_convention
+    direction: Reuse exact dependencies and state the additional physical distinction,
+      phase and participant constraints audibly.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - kind: compound_ref
+        compound_id: CMP:ace0fc4ddd0c53a2a33e8fee
+        definition_version: 1.0.0
+        node_id: h
+      edges: []
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: relevant_physical_contents_at_capacity
+        sound_code: 82
+        added_definition: The same material container's relevant physical contents
+          meet or exceed its fixed contextual usable-capacity threshold, so there
+          is no remaining allowance for more of that content under that criterion.
+          This need not mean that every microscopic space is occupied, that the container
+          is sealed, or that overflowing, damage or a particular filling process occurred.
+          A nonempty container below the threshold is not full. Bodily satiety, intensity,
+          completeness of information and software capacity are separate meanings.
+        excludes:
+        - Any positive amount mistaken for full capacity
+        - An empty container assigned runtime state 1
+        - Feeling satisfied after eating, complete information or a full software
+          queue
+  - candidate_id: unmarked_root_conjunction
+    direction: Root adjacency alone does not supply pulling direction, a release/fall
+      causal link or a content-capacity criterion.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: distinction absent'
+  - candidate_id: runtime_or_nearby_alias
+    direction: Runtime, related movement or a nearby English label cannot replace
+      the intended meaning.
+    scores:
+      atomicity: 2
+      address_fit: 3
+      family_fit: 3
+      neighbor_separation: 1
+      cross_family_separation: 2
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 17
+    decision: 'rejected: semantic substitution'
+  recommendation: approve explicit_physical_convention
+  confidence: high
