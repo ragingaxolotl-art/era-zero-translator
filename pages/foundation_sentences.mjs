@@ -1,13 +1,13 @@
 import {personalPronounPlan,resolvePersonalPronouns} from './personal_pronoun_plan.mjs';
 import {expandNegativeContractions} from './contractions.mjs';
-import {validReferent} from './pronouns.mjs?v=contextual-width-2';
-import {canonicalDigest} from './engine.mjs?v=contextual-width-2';
+import {validReferent} from './pronouns.mjs?v=partial-word-flow-1';
+import {canonicalDigest} from './engine.mjs?v=partial-word-flow-1';
 import {encodeName} from './names.mjs';
 import {deicticReference,NOMINAL_MODES} from './references.mjs';
-import {parseNominal} from './nominals.mjs?v=contextual-width-2';
-import {parseNamedSentence,composeNamedSentence} from './sentences.mjs?v=contextual-width-2';
-import {validateFoundations} from './foundations.mjs?v=contextual-width-2';
-import {renderLexicalOccurrences,lexicalGloss} from './bound_compounds.mjs?v=contextual-width-2';
+import {parseNominal} from './nominals.mjs?v=partial-word-flow-1';
+import {parseNamedSentence,composeNamedSentence} from './sentences.mjs?v=partial-word-flow-1';
+import {validateFoundations} from './foundations.mjs?v=partial-word-flow-1';
+import {renderLexicalOccurrences,lexicalGloss} from './bound_compounds.mjs?v=partial-word-flow-1';
 const HOLDER='(?:I|[Yy]ou|[A-Z][a-z]+|"[^"\\n]+"|(?:[Tt]he|[Tt]his|[Tt]hat) [a-z]+)';
 export function parseFoundationSentence(input,{allowCognitive=false}={}){
  if(typeof input!=='string')return null;

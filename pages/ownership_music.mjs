@@ -1,9 +1,9 @@
-import {validateOwnershipMeaning,OWNERSHIP_CONTRACT} from './ownership_meaning.mjs?v=contextual-width-2';
+import {validateOwnershipMeaning,OWNERSHIP_CONTRACT} from './ownership_meaning.mjs?v=partial-word-flow-1';
 import {ownershipEvent} from './ownership_frames.mjs';
-import {renderLexicalOccurrences} from './bound_compounds.mjs?v=contextual-width-2';
-import {grammarMarker} from './scheduler.mjs?v=contextual-width-2';
-import {midiFromScheduledEvents} from './engine.mjs?v=contextual-width-2';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=contextual-width-2';
+import {renderLexicalOccurrences} from './bound_compounds.mjs?v=partial-word-flow-1';
+import {grammarMarker} from './scheduler.mjs?v=partial-word-flow-1';
+import {midiFromScheduledEvents} from './engine.mjs?v=partial-word-flow-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
 export async function ownershipMusicEvents(document,authority,{allowDraft=false,anchor=60}={}){
  const d=await validateOwnershipMeaning(document,{allowDraft}),mark=name=>grammarMarker({performance:{anchor_midi:anchor}},'ownership',name);
  let events=[ownershipEvent(d.runtime_state,'open',anchor)];

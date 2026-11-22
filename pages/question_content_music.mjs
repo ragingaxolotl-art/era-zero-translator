@@ -1,8 +1,8 @@
-import {canonicalDigest,midiFromScheduledEvents} from './engine.mjs?v=contextual-width-2';
-import {scheduledLexicalEvents} from './scheduler.mjs?v=contextual-width-2';
-import {validatePolarQuestionContent} from './question_content.mjs?v=contextual-width-2';
+import {canonicalDigest,midiFromScheduledEvents} from './engine.mjs?v=partial-word-flow-1';
+import {scheduledLexicalEvents} from './scheduler.mjs?v=partial-word-flow-1';
+import {validatePolarQuestionContent} from './question_content.mjs?v=partial-word-flow-1';
 import {questionContentMusicEvent} from './question_music_frames.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=contextual-width-2';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
 export async function midiFromPolarQuestionContent(document,formal,{allowDraft=false}={}){
  formal=structuredClone(formal);
  document=await validatePolarQuestionContent(document,{allowDraft});

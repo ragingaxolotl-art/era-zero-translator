@@ -1,7 +1,7 @@
 import {questionContentMusicEvent} from './question_music_frames.mjs';
 import {validateQuantifiedBindings} from './quantified_binding.mjs';
 import {quantifiedMusicEvent} from './quantified_music.mjs';
-import {CONTEXTUAL_NORMS,validContextualComparison} from './contextual_standards.mjs?v=contextual-width-2';
+import {CONTEXTUAL_NORMS,validContextualComparison} from './contextual_standards.mjs?v=partial-word-flow-1';
 import {validateSubjectControl} from './subject_control.mjs';
 const ASPECTS=['bounded','ongoing','habitual'];
 const PROPERTY_COMPARISONS=['equal','greater_than','less_than','at_least','at_most','not_equal'];

@@ -1,9 +1,9 @@
-import {composePainMeaning} from './pain_meaning.mjs?v=contextual-width-2';
-import {createPainStimulus,PAIN_RELATIONS} from './pain_stimulus.mjs?v=contextual-width-2';
-import {createPainComparison} from './pain_comparison.mjs?v=contextual-width-2';
-import {contextualContentReference} from './contextual_content.mjs?v=contextual-width-2';
+import {composePainMeaning} from './pain_meaning.mjs?v=partial-word-flow-1';
+import {createPainStimulus,PAIN_RELATIONS} from './pain_stimulus.mjs?v=partial-word-flow-1';
+import {createPainComparison} from './pain_comparison.mjs?v=partial-word-flow-1';
+import {contextualContentReference} from './contextual_content.mjs?v=partial-word-flow-1';
 import {personalPronounPlan,resolvePersonalPronouns} from './personal_pronoun_plan.mjs';
-import {validReferent} from './pronouns.mjs?v=contextual-width-2';
+import {validReferent} from './pronouns.mjs?v=partial-word-flow-1';
 const REF='(?:I|me|you|You|[A-Z][a-z]+|"[^"\\n]+"|(?:[Tt]he|[Tt]his|[Tt]hat) [a-z]+)';
 export function painComparisonPlan(input){
  if(typeof input!=='string')return null;

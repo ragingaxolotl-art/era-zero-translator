@@ -1,10 +1,10 @@
-import {validateDesiredDrinking} from './desired_drinking.mjs?v=contextual-width-2';
+import {validateDesiredDrinking} from './desired_drinking.mjs?v=partial-word-flow-1';
 import {desiredDrinkingEvent} from './desired_drinking_frames.mjs';
-import {drinkingMusicEvents,readDrinkingTree} from './drinking_music.mjs?v=contextual-width-2';
-import {renderLexicalOccurrences} from './bound_compounds.mjs?v=contextual-width-2';
-import {grammarMarker} from './scheduler.mjs?v=contextual-width-2';
-import {midiFromScheduledEvents} from './engine.mjs?v=contextual-width-2';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=contextual-width-2';
+import {drinkingMusicEvents,readDrinkingTree} from './drinking_music.mjs?v=partial-word-flow-1';
+import {renderLexicalOccurrences} from './bound_compounds.mjs?v=partial-word-flow-1';
+import {grammarMarker} from './scheduler.mjs?v=partial-word-flow-1';
+import {midiFromScheduledEvents} from './engine.mjs?v=partial-word-flow-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
 export async function midiFromDesiredDrinking(document,authority,{allowDraft=false,anchor=60}={}){
  const d=await validateDesiredDrinking(document,{allowDraft}),mark=name=>grammarMarker({performance:{anchor_midi:anchor}},'desired-drinking',name);
  let events=[desiredDrinkingEvent(d.subject_binding,d.runtime_state,'open',anchor),mark('role_experiencer_open'),...await renderLexicalOccurrences({nodes:[d.holder],edges:[]},authority,{anchor}),mark('role_experiencer_close'),mark('proposition_content_open'),...await drinkingMusicEvents(d.content,authority,{allowDraft:true,anchor}),mark('proposition_content_close'),desiredDrinkingEvent(d.subject_binding,d.runtime_state,'close',anchor)];

@@ -1,5 +1,5 @@
 // Restriction on the source of referenced content, not a matrix speech event.
-import {grammarMarker} from './scheduler.mjs?v=contextual-width-2';
+import {grammarMarker} from './scheduler.mjs?v=partial-word-flow-1';
 export function contentSelectionFrames(){return ['open','close'].map(side=>({marker:`spoken_source_${side}`,path:[0,side==='open'?-35:35,0,0]}));}
 export function spokenSourceEvent(side,anchor){
  const frame=contentSelectionFrames().find(f=>f.marker===`spoken_source_${side}`);

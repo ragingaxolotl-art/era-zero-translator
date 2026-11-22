@@ -1,5 +1,5 @@
-import {addLocalCompound} from './local_compounds.mjs?v=contextual-width-2';
-import {expandLocalCompound} from './local_compound_expansion.mjs?v=contextual-width-2';
+import {addLocalCompound} from './local_compounds.mjs?v=partial-word-flow-1';
+import {expandLocalCompound} from './local_compound_expansion.mjs?v=partial-word-flow-1';
 import {localParticipantGroups} from './local_participant_groups.mjs';
 export async function mountRoleLinkControls(container,definition,registry,authority,{document=globalThis.document}={}){
  const draft=await addLocalCompound(registry,definition,authority),id=draft.entries.at(-1).compound_id,expansion=await expandLocalCompound(id,draft,authority),fields=[];

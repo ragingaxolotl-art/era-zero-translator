@@ -1,6 +1,6 @@
 import {resolvePersonalPronouns,substitutePersonalPronouns} from './personal_pronoun_plan.mjs';
-import {parseNamedSentence,composeNamedSentence,parseSentenceConditional} from './sentences.mjs?v=contextual-width-2';
-import {parseNominal} from './nominals.mjs?v=contextual-width-2';
+import {parseNamedSentence,composeNamedSentence,parseSentenceConditional} from './sentences.mjs?v=partial-word-flow-1';
+import {parseNominal} from './nominals.mjs?v=partial-word-flow-1';
 
 // A referent is supplied by the reader for each occurrence. No gender, identity,
 // animacy or coreference is inferred from a name or from another pronoun.

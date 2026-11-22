@@ -1,7 +1,7 @@
 // Draft intensity comparison over existing pain-stimulus meanings.
-import {canonicalDigest} from './engine.mjs?v=contextual-width-2';
-import {validatePainStimulus} from './pain_stimulus.mjs?v=contextual-width-2';
-import {createContextualContent} from './contextual_content.mjs?v=contextual-width-2';
+import {canonicalDigest} from './engine.mjs?v=partial-word-flow-1';
+import {validatePainStimulus} from './pain_stimulus.mjs?v=partial-word-flow-1';
+import {createContextualContent} from './contextual_content.mjs?v=partial-word-flow-1';
 const CONTRACT={dimension:'felt_bodily_pain_intensity',basis:'same_experiencer_and_selected_context',scale:'ordinal_no_numeric_score',operand_scope:'governed_by_comparison_and_matrix_scope'};
 const validScopes=[[],[{operator:'negation'}],[{operator:'time',relation:'before_speech'}],[{operator:'time',relation:'before_speech'},{operator:'negation'}]];
 export async function validatePainComparison(document,{allowDraft=false}={}){

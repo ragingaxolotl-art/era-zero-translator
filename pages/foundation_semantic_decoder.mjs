@@ -1,11 +1,11 @@
-import {readCustodyDeliveryTree} from './delivery_decoder.mjs?v=contextual-width-2';
-import {readPhysicalCarryingTree} from './carrying_decoder.mjs?v=contextual-width-2';
-import {readPhysicalCustodyTree,readCustodyAcquisitionTree} from './custody_decoder.mjs?v=contextual-width-2';
+import {readCustodyDeliveryTree} from './delivery_decoder.mjs?v=partial-word-flow-1';
+import {readPhysicalCarryingTree} from './carrying_decoder.mjs?v=partial-word-flow-1';
+import {readPhysicalCustodyTree,readCustodyAcquisitionTree} from './custody_decoder.mjs?v=partial-word-flow-1';
 import {validAcquisitionScopes} from './acquisition_scopes.mjs';
-import {readSwimmingTree} from './swimming_decoder.mjs?v=contextual-width-2';
-import {readFeltConditionTree} from './felt_decoder.mjs?v=contextual-width-2';
-import {validateFoundations,foundationPath} from './foundations.mjs?v=contextual-width-2';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=contextual-width-2';
+import {readSwimmingTree} from './swimming_decoder.mjs?v=partial-word-flow-1';
+import {readFeltConditionTree} from './felt_decoder.mjs?v=partial-word-flow-1';
+import {validateFoundations,foundationPath} from './foundations.mjs?v=partial-word-flow-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
 // No source IR, expected sentence, or formal plan is accepted by this inverse.
 export async function decodeFoundationSentenceMidi(bytes,atoms,records,{allowDraft=false,allowDraftQuestionContent=false,allowDraftAcquisition=false}={}){
  records=await validateFoundations(records,{allowDraft});

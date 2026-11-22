@@ -84,3 +84,9 @@
 .candidate button:disabled {opacity:.45;cursor:not-allowed}
 .unsupported-sentence {cursor:default}.unsupported-sentence:hover {transform:none;border-color:var(--line)}
 @media(max-width:560px){.candidate button{min-height:44px}.candidate-head{flex-wrap:wrap}.output-tabs{flex-wrap:wrap}}
+
+/* Partial word sounds stay available without resembling a sentence result. */
+.partial-word-details > summary {cursor:pointer;font-weight:650;line-height:1.5;overflow-wrap:anywhere}
+.partial-word-details > p {color:var(--muted);font-size:12px;line-height:1.6}
+.partial-word-details[open] > summary {margin-bottom:10px}
+.missing-word-list:not(:empty) {margin-bottom:16px}

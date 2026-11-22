@@ -1,6 +1,6 @@
 // A contextual inquiry selects questions about a topic, not answers or interest.
-import {canonicalDigest} from './engine.mjs?v=contextual-width-2';
-import {createContextualContent,validateContextualContent} from './contextual_content.mjs?v=contextual-width-2';
+import {canonicalDigest} from './engine.mjs?v=partial-word-flow-1';
+import {createContextualContent,validateContextualContent} from './contextual_content.mjs?v=partial-word-flow-1';
 const CONTRACT={profile:'EZCONTEXTUAL-INQUIRY-1',status:'draft',content_kind:'contextual_question_set',resolution_scope:'local_context',question_selection:'contextually_relevant_unresolved',answer_commitment:'none',specific_question_supplied:false};
 export async function validateContextualInquiry(document,{allowDraft=false}={}){
  if(!allowDraft)throw new Error('Contextual inquiry requires draft opt-in.');
