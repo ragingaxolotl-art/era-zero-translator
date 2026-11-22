@@ -1213,6 +1213,61 @@ analysis_cases:
           serialization:
             canonical_format: EZIR-JSON-1
             content_digest: 0d85316c94b6d1eac10a331cfd8e75213a0669b304b7ef6305c2548b64b6ba3b
+    - sense_id: ENS:aaee9383d68d688a402e6bf9
+      lemma: generation of a distinct stored information copy
+      sense_key: canonical_compound_label
+      route: compound
+      target_id: CMP:9ea919967152aa85bc1c7169
+      definition: An actor completes an operation that generates a distinct retained
+        information object reproducing the relevant content of one source information
+        object under a fixed contextual content-equivalence criterion. DAT:000 describes
+        the generated information object; CRE:110 describes that same object's generation
+        by the actor. The source object is the outer target, not the newly generated
+        result. The source and result are distinct tokens even when their relevant
+        content is equal. This operation does not itself remove or modify the source's
+        relevant content. The result is maintained in a contextual store; its location,
+        name, ownership, encoding and physical medium are unspecified. This meaning
+        does not guarantee every bit, file attribute or metadata field is identical
+        unless the contextual criterion includes them. Ongoing aspect views the copying
+        internally without asserting a completed result.
+      selection_cues:
+      - exact approved compound label
+      - all component restrictions are intended
+      score: 0.076
+      confidence: low
+      match_type: token_overlap
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 2
+      canonical_label: generation of a distinct stored information copy
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: compound
+            target_id: CMP:9ea919967152aa85bc1c7169
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:cc43a37ce63c776b50e156cd
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: cc43a37ce63c776b50e156cd2d8af6d9f2e1e609586a64c15be156faf003cad5
     - sense_id: ENS:17debe254c0cf35f28cdaa21
       lemma: active systemic material change
       sense_key: canonical_atom_label
@@ -1256,49 +1311,7 @@ analysis_cases:
           serialization:
             canonical_format: EZIR-JSON-1
             content_digest: f326ac79b26924c6716a58e994a45c4bb5c0fec7c0ada9a79206e236b2c313e8
-    - sense_id: ENS:19b4251c8120baac2507447f
-      lemma: completed target material change
-      sense_key: canonical_atom_label
-      route: atom
-      target_id: MAT:110
-      definition: Completion of a physical-state change localized in a distinct material
-        target.
-      selection_cues: *9
-      score: 0.065
-      confidence: low
-      match_type: token_overlap
-      evidence:
-        lexical_overlap: 1
-        selection_cue_overlap: 0
-        definition_overlap: 1
-      canonical_label: completed target material change
-      required_roles: []
-      semantic_ir_options:
-      - runtime_state: 1
-        semantic_ir:
-          ir_version: '1.0'
-          root_clause: n001
-          speech_act: assertion
-          nodes:
-          - node_id: n001
-            kind: clause
-            clause_type: predication
-          - node_id: n002
-            kind: lexical_occurrence
-            target_type: atom
-            target_id: MAT:110
-            runtime_state:
-              code: 1
-          edges:
-          - edge_id: e001
-            type: centers
-            from: n002
-            to: n001
-          discourse_constraints: {}
-          utterance_id: UTT:4e663167274d99b6c36dfbdc
-          serialization:
-            canonical_format: EZIR-JSON-1
-            content_digest: 4e663167274d99b6c36dfbdc9449684a01a33d92c328859cd1980772568a8108
+
     decision:
       auto_resolution_allowed: false
       requires_clarification: true
