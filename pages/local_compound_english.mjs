@@ -1,4 +1,4 @@
-import {savedScopedReadings} from './dictionary_clauses.mjs?v=physical-placement-1';
+import {savedScopedReadings} from './dictionary_clauses.mjs?v=container-actions-1';
 import {speakerGroupReference} from './references.mjs?v=clauses-1';
 import {validateLocalCompounds} from './local_compounds.mjs?v=partial-word-flow-1';
 import {contextualContentReference} from './contextual_content.mjs?v=partial-word-flow-1';

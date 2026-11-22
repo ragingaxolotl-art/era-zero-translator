@@ -1,4 +1,4 @@
-import {dictionaryRoles} from './dictionary_clauses.mjs?v=physical-placement-1';
+import {dictionaryRoles} from './dictionary_clauses.mjs?v=container-actions-1';
 import {contextualContentReference} from './contextual_content.mjs?v=partial-word-flow-1';
 import {informationMusic} from './information_music.mjs?v=partial-word-flow-1';
 import {informationFrame} from './information_passage_frames.mjs?v=field-repairs-1';

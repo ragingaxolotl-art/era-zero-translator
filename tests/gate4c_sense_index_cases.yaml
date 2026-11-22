@@ -1,8 +1,8 @@
 ---
 metadata:
   version: 1.0.0
-  sense_count: 591
-  lemma_count: 570
+  sense_count: 595
+  lemma_count: 573
 exact_atom_labels:
 - input: continuous self
   expected_route: atom
@@ -1166,6 +1166,9 @@ exact_compound_labels:
 - input: physical region boundary relation
   expected_route: compound
   expected_target: CMP:835d2edc1573d2aea3a6fd18
+- input: physical filling to contextual capacity
+  expected_route: compound
+  expected_target: CMP:8732bb43e880fb058158e27d
 - input: machine
   expected_route: compound
   expected_target: CMP:8e5ae722d9e5e31f85ac3c5b
@@ -1325,6 +1328,9 @@ exact_compound_labels:
 - input: physical injury
   expected_route: compound
   expected_target: CMP:f1abd5eccdf06d92d5690a32
+- input: physical removal of relevant container contents
+  expected_route: compound
+  expected_target: CMP:f6a1885a79cc91ee94fb86aa
 - input: passage preventing traversal
   expected_route: compound
   expected_target: CMP:f9554786959994e2f5fb6e9c

@@ -263,5 +263,49 @@
     ],
     "pos": "verb",
     "everyday": "Physically moves the object to the specified destination"
+  },
+  {
+    "word": "fill",
+    "title": "physical filling to contextual capacity",
+    "code": 86,
+    "parts": [
+      "caused displacement in a physical frame",
+      "relevant physical contents at capacity",
+      "ORI:110"
+    ],
+    "definition": "An actor physically adds relevant material contents to a distinct container, changing it from below its fixed contextual usable-capacity threshold to meeting or exceeding that same threshold. The caused-displacement dependency describes the actor's movement of added contents into the container, not movement of the container itself. The full-state dependency describes the same container and content criterion at the result phase; ORI:110 is the completed actualization of that result. These are causally linked phases of one filling episode. The container's identity, positive capacity criterion and relevant content kind remain fixed across the transition. The actor need not move the container. No named substance, numerical amount, source, exact route, seal, overflow, intention, ownership or continued fullness is asserted. Adding some contents without reaching capacity does not complete this meaning. Ongoing aspect views filling internally without asserting a completed full result.",
+    "example": "Nora filled the bottle.",
+    "near": "Nora added a little water, leaving the bottle below capacity.",
+    "reuse": "Reuse this filling event before specifying its material content, source, amount, route or maintained result.",
+    "forms": [
+      "fill",
+      "fills",
+      "filled",
+      "filling"
+    ],
+    "pos": "verb",
+    "everyday": "Adds physical contents until the container reaches its contextual capacity"
+  },
+  {
+    "word": "empty container",
+    "title": "physical removal of relevant container contents",
+    "code": 87,
+    "parts": [
+      "caused displacement in a physical frame",
+      "absence of relevant physical contents",
+      "ORI:110"
+    ],
+    "definition": "An actor physically removes the relevant material contents from a distinct container, changing it from having some such contents to having none under the same fixed contextual content criterion. The caused-displacement dependency describes the actor's movement of those contents out of the container, not destruction or movement of the container's own body. The empty-state dependency describes the same container and content criterion at the result phase; ORI:110 is the completed actualization of that absence. These are causally linked phases of one emptying episode. The container remains the same material object, and its positive capacity and relevant content kind remain fixed. Contents of irrelevant kinds, such as air in a bottle emptied of water, may remain. No destination, disposal, cleaning, vacuum, named substance, intention, ownership change or continued emptiness is asserted. Removing only some relevant contents does not complete this meaning. Ongoing aspect views emptying internally without asserting a completed empty result.",
+    "example": "Mira emptied the box.",
+    "near": "Mira removed one item but relevant contents remained in the box.",
+    "reuse": "Reuse this emptying event before adding a removal destination, disposal, a named content kind or a maintained result.",
+    "forms": [
+      "empty",
+      "empties",
+      "emptied",
+      "emptying"
+    ],
+    "pos": "verb",
+    "everyday": "Physically removes all relevant contents while preserving the container"
   }
 ]

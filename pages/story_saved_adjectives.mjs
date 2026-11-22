@@ -20,9 +20,10 @@ async function prepare(entry,registry,authority){
     const {path,slot_path,role}=group[0];
     return {path,slot_path,role,reference:await contextualContentReference('"'+(i+1)+'"')};
   }));
-  const distinct=[];
+  const distinct=[],canonicalTargets=new Set();
   function visit(node){
     if(node.kind==='canonical_compound'){
+      canonicalTargets.add(node.target_id);
       for(const rule of authority.compound_plans[node.target_id].expanded.binding_constraints||[]){
         if(rule.relation!=='distinct_arguments')continue;
         distinct.push(rule.slot_paths.map(slot=>groups.findIndex(group=>group.some(row=>
@@ -34,7 +35,7 @@ async function prepare(entry,registry,authority){
   visit(expansion.tree);
   const music=await localCompoundMusic(id,registry,authority,bindings,{runtimeState:1});
   const {notes,division}=notesFromMidi(music.midi);
-  return {id,label,parts:label.split(/\s+/),definition:entry.definition.definition,slots,distinct,events:music.events,
+  return {id,label,parts:label.split(/\s+/),definition:entry.definition.definition,slots,distinct,canonicalTargets:[...canonicalTargets],events:music.events,
     // The final two notes are the standalone speech act, supplied by the outer sentence here.
     pattern:notes.slice(0,-2).map(n=>[n.midi-60,n.start_tick/division,n.end_tick/division])};
 }

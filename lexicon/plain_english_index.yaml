@@ -12,8 +12,8 @@ policy:
     authorize automatic semantic resolution.
 counts:
   atoms: 324
-  compounds: 118
-  entries: 442
+  compounds: 120
+  entries: 444
 entries:
 - target_id: CMP:0808e01be62b7fac873ee324
   target_type: compound
@@ -1321,7 +1321,7 @@ entries:
 - target_id: CMP:7e3cdc51fe00e1c61e5e9f12
   target_type: compound
   canonical_title: absence of relevant physical contents
-  plain_label: empty
+  plain_label: absence of relevant physical contents
   plain_explanation: An everyday discovery label for the approved compound “absence
     of relevant physical contents”; the compound graph controls its exact meaning.
   ordinary_terms:
@@ -1441,6 +1441,35 @@ entries:
   - physical region boundary relation
   example_searches:
   - physical region boundary relation
+  mapping_status: discovery_only_noncanonical
+  authority_note: These words help people find the compound. They do not replace or
+    broaden its canonical graph.
+- target_id: CMP:8732bb43e880fb058158e27d
+  target_type: compound
+  canonical_title: physical filling to contextual capacity
+  plain_label: fill
+  plain_explanation: An everyday discovery label for the approved compound “physical
+    filling to contextual capacity”; the compound graph controls its exact meaning.
+  ordinary_terms:
+  - physical
+  - filling
+  - to
+  - contextual
+  - capacity
+  - fill
+  - fills
+  - filled
+  - physical filling to contextual capacity
+  match_phrases:
+  - fill
+  - fills
+  - filled
+  - filling
+  - physical filling to contextual capacity
+  example_searches:
+  - fill
+  - fills
+  - filled
   mapping_status: discovery_only_noncanonical
   authority_note: These words help people find the compound. They do not replace or
     broaden its canonical graph.
@@ -2686,6 +2715,38 @@ entries:
   example_searches:
   - injury
   - physical injury
+  mapping_status: discovery_only_noncanonical
+  authority_note: These words help people find the compound. They do not replace or
+    broaden its canonical graph.
+- target_id: CMP:f6a1885a79cc91ee94fb86aa
+  target_type: compound
+  canonical_title: physical removal of relevant container contents
+  plain_label: physical removal of relevant container contents
+  plain_explanation: An everyday discovery label for the approved compound “physical
+    removal of relevant container contents”; the compound graph controls its exact
+    meaning.
+  ordinary_terms:
+  - physical
+  - removal
+  - of
+  - relevant
+  - container
+  - contents
+  - empty
+  - empties
+  - emptied
+  - emptying
+  - physical removal of relevant container contents
+  match_phrases:
+  - empty
+  - empties
+  - emptied
+  - emptying
+  - physical removal of relevant container contents
+  example_searches:
+  - empty
+  - empties
+  - emptied
   mapping_status: discovery_only_noncanonical
   authority_note: These words help people find the compound. They do not replace or
     broaden its canonical graph.
