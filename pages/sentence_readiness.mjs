@@ -1,4 +1,4 @@
-import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=sentence-diagnostics-1';
+import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=physical-holding-1';
 
 // A composed interpretation and an independently readable score are separate
 // facts. This check receives no English, expected predicate or original IR.

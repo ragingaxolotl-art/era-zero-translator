@@ -1,0 +1,11 @@
+# Reuse the existing physical holding meaning
+
+The approved physical holding foundation already means a material holder maintains a grip, restraint or load-bearing engagement with the same distinct object. Release ends that engagement; drop links that release to the same object's fall. Ordinary **hold/holds/held/holding** should reuse `CMP:834a56d90e31b430990720ff`, including its sound code 76 and exact definition. Creating another compound would duplicate the meaning and weaken this dependency order.
+
+This is an English surface and sentence-frame extension under the user's translator-completion authorization. It is an author review, not separate user approval of every interpretation or independent linguistic validation. No root, compound, sound or existing sense record changes. The public dictionary gains one verb sense whose definition is exactly the foundation's invariant.
+
+The outer actor is the physical holder and the outer target is the held object. Present hold describes the maintained relation. Held places it before speech; it does not assert a completed acquisition or a later release. Progressive holding views that same engagement internally. Negation, possibility, ability, necessity and runtime apply to the whole relation. Runtime 0 and 2 do not mean release or absence of a hold. A role reversal exchanges holder and object and must change recovered meaning.
+
+Physical holding can coexist with movement and need not imply ownership, exclusive control, intention or wholly supporting the target's weight. Mere touching is insufficient. Holding an opinion, retaining data, reserving a place, delaying an event and conducting a meeting are other senses. Ambiguous objects require a physical-holding choice; rejecting it must leave the message unresolved. Every alternative target is checked.
+
+Reuse this exact identifier in later compounds. Check irregular held, commands, questions, pronouns, conditions, descriptions on both participants, all runtime endings and both exported arrangements. Protect the earlier dictionary and release/drop records by fingerprint and reject damaged musical definitions. Unsupported prepositional, passive and perfect constructions remain unsupported.

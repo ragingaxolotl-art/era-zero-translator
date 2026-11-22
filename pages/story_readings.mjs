@@ -1,11 +1,11 @@
 import {validStorySlots} from './story_saved_adjectives.mjs';
 import {isPassageHead} from './passage_nouns.mjs';
-import {knownValueReading} from './known_value.mjs?v=sentence-diagnostics-1';
-import {faultCategoryReading} from './fault_correction.mjs?v=sentence-diagnostics-1';
+import {knownValueReading} from './known_value.mjs?v=physical-holding-1';
+import {faultCategoryReading} from './fault_correction.mjs?v=physical-holding-1';
 import {routeNounLabel} from './nominals.mjs';
 import {expandNegativeContractions} from './contractions.mjs';
-import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs?v=sentence-diagnostics-1';
-import {properties,feltProperties,isMaterialTarget,isPhysicalContainer,physicalActionLabels} from './story_qualities.mjs?v=information-vocabulary-1';
+import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs?v=physical-holding-1';
+import {properties,feltProperties,isMaterialTarget,isPhysicalContainer,physicalActionLabels} from './story_qualities.mjs?v=physical-holding-1';
 import {storyWords} from './story_words.mjs?v=information-vocabulary-1';
 import {ERASURE,isStoredInformationTarget} from './information_operations.mjs?v=information-operations-1';
 
@@ -20,6 +20,7 @@ const shapes = [
   ['lift','lifts','lifted',['actor','target'],null,'lifting'],
   ['lower','lowers','lowered',['actor','target'],null,'lowering'],
   ['pull','pulls','pulled',['actor','target'],null,'pulling'],
+  ['hold','holds','held',['actor','target'],'physical holding foundation','holding'],
   ['release','releases','released',['actor','target'],null,'releasing'],
   ['fall','falls','fell',['bearer'],null,'falling'],
   ['drop','drops','dropped',['actor','target'],null,'dropping'],

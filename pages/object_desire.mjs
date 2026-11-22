@@ -1,5 +1,5 @@
 import {midiFromFormal} from './engine.mjs';
-import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=sentence-diagnostics-1';
+import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=physical-holding-1';
 // Resolve an object-directed desire only through an explicit desired proposition.
 // Reuses the existing intensional desire grammar and all its musical conventions.
 import {parseFoundationSentence,composeFoundationSentence} from './foundation_sentences.mjs';

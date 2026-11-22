@@ -5,9 +5,9 @@ metadata:
   status: noncanonical_metadata_complete
   canonical_semantic_changes: 0
   root_count: 324
-  indexed_sense_count: 578
+  indexed_sense_count: 579
   game_story_surface_sense_count: 48
-  total_audited_senses: 626
+  total_audited_senses: 627
   part_of_speech_counts:
     adjective: 36
     adverb: 2
@@ -19,7 +19,7 @@ metadata:
     number: 1
     preposition: 2
     quantifier: 1
-    verb: 106
+    verb: 107
     verb_phrase: 108
   policy: English senses carry parts of speech; Era Zero roots retain address-derived
     semantic affordances and may support more than one English syntactic realization.
@@ -16863,6 +16863,27 @@ senses:
   definition: An experiencer is aware of a target through acoustic input registered
     from that target during the reference interval. Recognizing its identity or understanding
     a message is optional.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:cf6e8f4b3cb436c16ae34cde
+  lemma: hold
+  part_of_speech: verb
+  surface_forms:
+  - hold
+  - holds
+  - held
+  - holding
+  route: compound
+  target_id: CMP:834a56d90e31b430990720ff
+  sense_key: maintained_physical_holding_engagement
+  definition: A material holder maintains an actual physical engagement with a distinct
+    material object that constrains that object's position or motion through gripping,
+    restraint or load-bearing support. The object is the bounded material target,
+    and the holder supplies the active physical influence. The object need not be
+    stationary, wholly supported, owned or under the holder's practical custody. Intention
+    and exclusive control are unspecified. Touch or influence that does not maintain
+    such a holding constraint is insufficient.
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index

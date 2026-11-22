@@ -3,8 +3,8 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 578
-  lemma_count: 557
+  sense_count: 579
+  lemma_count: 558
   canonical_atom_senses: 324
   canonical_compound_senses: 117
   reviewed_high_frequency_senses: 84
@@ -4644,6 +4644,35 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: lexicon/story_compound_batch.json
+- lemma: hold
+  part_of_speech: verb
+  sense_key: maintained_physical_holding_engagement
+  route: compound
+  target_id: CMP:834a56d90e31b430990720ff
+  definition: A material holder maintains an actual physical engagement with a distinct
+    material object that constrains that object's position or motion through gripping,
+    restraint or load-bearing support. The object is the bounded material target,
+    and the holder supplies the active physical influence. The object need not be
+    stationary, wholly supported, owned or under the holder's practical custody. Intention
+    and exclusive control are unspecified. Touch or influence that does not maintain
+    such a holding constraint is insufficient.
+  sense_id: ENS:cf6e8f4b3cb436c16ae34cde
+  display_form: hold
+  surface_forms:
+  - hold
+  - holds
+  - held
+  - holding
+  selection_cues:
+  - Nora held the rope.
+  - A clamp physically holds the board.
+  excluded_readings:
+  - Touch without a maintained holding constraint
+  - Practical custody, ownership or permission without actual physical engagement
+  - Remembering, reserving, delaying or retaining information
+  confidence: high
+  controlled_input_allowed: false
+  provenance: reviews/physical_holding_surface_2026_11_22.md
 - sense_id: ENS:ce7583f1235d7078c9de8e70
   lemma: home
   display_form: home
@@ -12379,6 +12408,13 @@ lemma_index:
   hear:
     sense_ids:
     - ENS:cce785297d28220b5d691431
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  hold:
+    sense_ids:
+    - ENS:cf6e8f4b3cb436c16ae34cde
     requires_disambiguation: false
     direct_target_count: 1
     routes:
