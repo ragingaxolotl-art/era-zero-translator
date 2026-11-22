@@ -13,3 +13,7 @@ The actor is the holder and the target is the held object. Holding maintains a g
 - Lore passed its catalog build and **214 tests**, plus the same browser acceptance. Live publication is recorded separately after deployment.
 
 Holding an opinion, retaining data, reserving a place and conducting a meeting remain other meanings. Added instruments/beneficiaries, passive/perfect constructions and restrictive “only” are not silently discarded. This release adds no new recorded-audio evidence; general microphone recovery and physical iOS/Safari checks remain unfinished. The [larger completion plan](../docs/full-translator-next-steps.md) stays open.
+
+## Live publication
+
+Both PR 22 releases were merged and deployed successfully: [translator deployment](https://github.com/ragingaxolotl-art/era-zero-translator/actions/runs/45075986437) and [Lore deployment](https://github.com/ragingaxolotl-art/cyber-pet-lore/actions/runs/45075992257). Each live site passed 15 layouts, 10 independently decoded downloads and nine ambiguity checks. Compact exports were shorter and contained simultaneous notes. Results are retained in this report’s evidence directory.
