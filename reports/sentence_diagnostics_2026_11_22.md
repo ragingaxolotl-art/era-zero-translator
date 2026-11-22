@@ -15,3 +15,5 @@ This change preserves every vocabulary meaning, musical encoding and stored song
 - Lore passed its catalog build and 210 tests, plus the same final browser checks. The first attempted build command used a nonexistent script; the documented catalog command was then run successfully. This was a command-path error, not an application defect.
 
 Chromium viewport tests do not establish physical iOS/Safari behavior. This UI/parser guard adds no recorded-audio claim. Broader grammar, adjective meanings and ordinary-English coverage remain open in the [completion plan](../docs/full-translator-next-steps.md).
+
+Published and verified after [translator deployment 45074456254](https://github.com/ragingaxolotl-art/era-zero-translator/actions/runs/45074456254) and [Lore deployment 45074460100](https://github.com/ragingaxolotl-art/cyber-pet-lore/actions/runs/45074460100). Each public site passed 21 layouts, nine missing-word checks and four independent song-download decodes. The live evidence is saved beside this report.
