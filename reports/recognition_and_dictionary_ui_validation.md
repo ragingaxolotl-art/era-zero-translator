@@ -3,8 +3,8 @@
 Status: **PASS**
 
 - Sound modes: **strict, recognition, learning**
-- Meaning-rich root/compound options: **439**
-- Lexically audited English senses exposed: **622**
+- Meaning-rich root/compound options: **441**
+- Lexically audited English senses exposed: **626**
 - Concept-intake probes: **6**
 - Automatic canonical additions: **0**
 - Failures: **0**

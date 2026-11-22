@@ -3,10 +3,10 @@
 Status: **PASS**
 
 - Canonical atoms covered: **324**
-- Hosted formal variants covered: **6150**
+- Hosted formal variants covered: **6180**
 - Eye-expression layers per variant: **3**
-- Synchronized tone/viseme cues checked: **110400**
-- Assertions: **100026**
+- Synchronized tone/viseme cues checked: **111717**
+- Assertions: **100506**
 - Failures: **0**
 - Semantic identity changed: **no**
 - Head/eyes/mouth isolation: **verified**
