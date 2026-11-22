@@ -1,0 +1,460 @@
+{
+  "method": "Freeze intended readings before running the November 22 diagnostic.\n\nPurposive author-written probes and verbatim manuscript extracts; not a random\nsample or an independently adjudicated English-coverage benchmark.",
+  "expected_readings_frozen_before_run": true,
+  "cases": [
+    {
+      "id": "audit-01",
+      "group": "state and participant",
+      "text": "The hatch stayed closed.",
+      "intended": "Past continuation of physical closure; hatch is bearer; no maintainer asserted.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-02",
+      "group": "state and participant",
+      "text": "Nora kept the hatch closed.",
+      "intended": "Past causal maintenance of physical closure; Nora is cause, hatch bearer.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-03",
+      "group": "state and participant",
+      "text": "The tired worker lowered the empty box.",
+      "intended": "Past physical lowering, tired describes worker, empty describes box; neither descriptor may be discarded.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-04",
+      "group": "state and participant",
+      "text": "The closed hatch frightened Nora.",
+      "intended": "Past causing fear in Nora; closure describes hatch, not Nora.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-05",
+      "group": "state and participant",
+      "text": "Nora pushed Mira.",
+      "intended": "Past directed physical pressure by Nora on Mira; no displacement implied.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-06",
+      "group": "state and participant",
+      "text": "Mira pushed Nora.",
+      "intended": "Same action with actor and target reversed.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-07",
+      "group": "scope and time",
+      "text": "The hatch might stay closed.",
+      "intended": "Possible continuation of closure; possibility is not future time or runtime 2.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-08",
+      "group": "scope and time",
+      "text": "Nora did not keep the hatch closed.",
+      "intended": "Negated past causal maintenance; this does not assert that the hatch opened.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-09",
+      "group": "scope and time",
+      "text": "Did Nora keep the hatch closed?",
+      "intended": "Question about past causal maintenance; do not assert the maintenance.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-10",
+      "group": "scope and time",
+      "text": "Nora might not keep the hatch closed. [2]",
+      "intended": "Possible non-maintenance with runtime 2 independent of modality and negation.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-11",
+      "group": "scope and time",
+      "text": "Nora must not open the hatch.",
+      "intended": "Prohibition: obligation scopes over not opening; not an absence of obligation.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-12",
+      "group": "scope and time",
+      "text": "Nora does not have to open the hatch.",
+      "intended": "No obligation to open; opening is not forbidden.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-13",
+      "group": "scope and time",
+      "text": "Nora opened the hatch before Mira arrived.",
+      "intended": "Both past events with opening earlier than arrival.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-14",
+      "group": "scope and time",
+      "text": "Nora opened the hatch after Mira arrived.",
+      "intended": "Both past events with arrival earlier than opening.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-15",
+      "group": "scope and time",
+      "text": "Nora kept the hatch closed until Mira arrived.",
+      "intended": "Maintenance lasts to arrival; do not claim continued closure after that endpoint.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-16",
+      "group": "scope and time",
+      "text": "If Nora opens the hatch, Mira will leave.",
+      "intended": "Conditional future departure; do not independently assert opening or departure.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-17",
+      "group": "number reference and place",
+      "text": "Both workers waited.",
+      "intended": "All members of a contextually given pair of workers waited.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-18",
+      "group": "number reference and place",
+      "text": "Only Nora waited.",
+      "intended": "Nora waited and alternatives in context did not.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-19",
+      "group": "number reference and place",
+      "text": "Not every worker waited.",
+      "intended": "At least one worker did not wait; different from no workers waiting.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-20",
+      "group": "number reference and place",
+      "text": "No worker waited.",
+      "intended": "No members of the worker domain waited.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-21",
+      "group": "number reference and place",
+      "text": "Three workers waited.",
+      "intended": "Exactly three workers waited, preserving cardinality.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-22",
+      "group": "number reference and place",
+      "text": "Nora found Mira in the third room.",
+      "intended": "Past finding with the finding/Mira located in ordinal room three, according to context.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-23",
+      "group": "number reference and place",
+      "text": "Nora found Mira. She waited.",
+      "intended": "She is intentionally ambiguous between Nora and Mira; request a referent rather than silently bind.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-24",
+      "group": "number reference and place",
+      "text": "Nora found the box. She lifted it.",
+      "intended": "Nora is subject of both events; box is found and lifted; past time.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-25",
+      "group": "lexical distinctions and modification",
+      "text": "Nora is happy.",
+      "intended": "Felt happiness; not simply active life or high viability.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-26",
+      "group": "lexical distinctions and modification",
+      "text": "Nora is sad.",
+      "intended": "Felt sadness, distinct from happiness and physical fatigue.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-27",
+      "group": "lexical distinctions and modification",
+      "text": "The water is colder than the air.",
+      "intended": "Ordered temperature comparison: water below air, not absolute coldness.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-28",
+      "group": "lexical distinctions and modification",
+      "text": "The box is very heavy.",
+      "intended": "High degree of contextual heaviness; preserve degree or ask for standard.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-29",
+      "group": "lexical distinctions and modification",
+      "text": "Nora pulled the box.",
+      "intended": "Directed drawing force; distinguish from pushing and from asserted displacement.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-30",
+      "group": "lexical distinctions and modification",
+      "text": "Nora put the box beside the hatch.",
+      "intended": "Placement with actor, moved object and beside-hatch goal relation.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-31",
+      "group": "lexical distinctions and modification",
+      "text": "Nora dropped the box.",
+      "intended": "Release resulting in downward motion; distinguish from controlled lowering.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-32",
+      "group": "lexical distinctions and modification",
+      "text": "Nora lifted the ban.",
+      "intended": "Removal of a restriction; not physical upward movement. Ask about sense if needed.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-33",
+      "group": "lexical distinctions and modification",
+      "text": "Nora is glimmerwise.",
+      "intended": "Glimmerwise is an undefined adjective. Require a definition; do not invent meaning or use a name sound.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-34",
+      "group": "lexical distinctions and modification",
+      "text": "Nora zorbled the box.",
+      "intended": "Zorbled is an undefined verb. Require meaning and participants; do not invent a close known action.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-35",
+      "group": "mind culture and information",
+      "text": "Nora wants water but does not need water.",
+      "intended": "Desire and need are distinct; only the need is negated; clarify desired outcome if necessary.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-36",
+      "group": "mind culture and information",
+      "text": "Nora knows that Mira left.",
+      "intended": "Nora's knowledge of past departure, with an embedded proposition.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-37",
+      "group": "mind culture and information",
+      "text": "Nora thinks that Mira left.",
+      "intended": "Nora's belief about past departure; do not replace belief by knowledge.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-38",
+      "group": "mind culture and information",
+      "text": "Nora promised to return.",
+      "intended": "Commitment to future return, not a prediction or already returning.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-39",
+      "group": "mind culture and information",
+      "text": "Nora copied the record.",
+      "intended": "A distinct informational copy; not identical continuing entity or deletion.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-40",
+      "group": "mind culture and information",
+      "text": "Nora deleted the record.",
+      "intended": "Selected stored information ceases to be retained; not dormancy.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-41",
+      "group": "mind culture and information",
+      "text": "Nora saved the record before deleting the copy.",
+      "intended": "Save original and delete distinct copy with ordered times; preserve object distinction.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-42",
+      "group": "mind culture and information",
+      "text": "Your future will remain relevant to my choices.",
+      "intended": "Future-directed relationship in which listener's future matters to speaker's choices; preserve roles and continuing relevance.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-43",
+      "group": "mind culture and information",
+      "text": "Preserve this without deciding what it must become.",
+      "intended": "Command to preserve referent while excluding imposed determination of its future identity; referent needs context.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-44",
+      "group": "mind culture and information",
+      "text": "I love you. [2]",
+      "intended": "Use the approved poetic relational love reading and its unfinished-becoming num interpretation; not generic preference or every sense of English love.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-45",
+      "group": "mind culture and information",
+      "text": "The program remembers the route.",
+      "intended": "Program has memory of route, without assuming biological gender or current execution.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-46",
+      "group": "mind culture and information",
+      "text": "The program is asleep. [1]",
+      "intended": "A validly asserted dormant/sleeping condition; lexical dormancy and runtime 1 remain separate.",
+      "source": "authored contrast"
+    },
+    {
+      "id": "audit-47",
+      "group": "verbatim lore",
+      "text": "The comparison request arrived.",
+      "intended": "Arrival of the comparison request, past, with comparison modifying the request.",
+      "source": {
+        "path": "sources/haven-stories/interval/manuscript.md",
+        "line": 47,
+        "file_sha256": "f1bf88edf9d629bcb5403d2d6e7b68178fbd0d48ed58ec96a0ba12c92e56975f"
+      }
+    },
+    {
+      "id": "audit-48",
+      "group": "verbatim lore",
+      "text": "Latch found the result. It found the context.",
+      "intended": "Latch finds both distinct referents in two past events; it is Latch.",
+      "source": {
+        "path": "sources/haven-stories/interval/manuscript.md",
+        "line": 49,
+        "file_sha256": "f1bf88edf9d629bcb5403d2d6e7b68178fbd0d48ed58ec96a0ba12c92e56975f"
+      }
+    },
+    {
+      "id": "audit-49",
+      "group": "verbatim lore",
+      "text": "The worker requested completion.",
+      "intended": "Worker requests that pending work finish; do not assert it completed.",
+      "source": {
+        "path": "sources/haven-stories/interval/manuscript.md",
+        "line": 53,
+        "file_sha256": "f1bf88edf9d629bcb5403d2d6e7b68178fbd0d48ed58ec96a0ba12c92e56975f"
+      }
+    },
+    {
+      "id": "audit-50",
+      "group": "verbatim lore",
+      "text": "The ordering record existed.",
+      "intended": "Past existence of the ordering record; ordering is its descriptive function.",
+      "source": {
+        "path": "sources/haven-stories/interval/manuscript.md",
+        "line": 57,
+        "file_sha256": "f1bf88edf9d629bcb5403d2d6e7b68178fbd0d48ed58ec96a0ba12c92e56975f"
+      }
+    },
+    {
+      "id": "audit-51",
+      "group": "verbatim lore",
+      "text": "Latch could see its description.",
+      "intended": "Past ability to inspect the ordering record's description; possessive refers to the record, not Latch.",
+      "source": {
+        "path": "sources/haven-stories/interval/manuscript.md",
+        "line": 59,
+        "file_sha256": "f1bf88edf9d629bcb5403d2d6e7b68178fbd0d48ed58ec96a0ba12c92e56975f"
+      }
+    },
+    {
+      "id": "audit-52",
+      "group": "verbatim lore",
+      "text": "The path to it returned no permission.",
+      "intended": "Path to ordering record yields absent access authorization; permission is distinct from physical capability.",
+      "source": {
+        "path": "sources/haven-stories/interval/manuscript.md",
+        "line": 61,
+        "file_sha256": "f1bf88edf9d629bcb5403d2d6e7b68178fbd0d48ed58ec96a0ba12c92e56975f"
+      }
+    },
+    {
+      "id": "audit-53",
+      "group": "verbatim lore",
+      "text": "The restoration request remained possible.",
+      "intended": "The possibility of a request continues; no restoration execution asserted.",
+      "source": {
+        "path": "sources/haven-stories/chorus/manuscript.md",
+        "line": 171,
+        "file_sha256": "68899457092d3fe02b034386b3aebe527a12e4a8428a881077d14e139da499ed"
+      }
+    },
+    {
+      "id": "audit-54",
+      "group": "verbatim lore",
+      "text": "The counter sent a request to restore its former preparation.",
+      "intended": "Counter sends a request for restoration of its earlier preparation; request is not successful restoration.",
+      "source": {
+        "path": "sources/haven-stories/chorus/manuscript.md",
+        "line": 165,
+        "file_sha256": "68899457092d3fe02b034386b3aebe527a12e4a8428a881077d14e139da499ed"
+      }
+    },
+    {
+      "id": "audit-55",
+      "group": "verbatim lore",
+      "text": "The second term was still absent.",
+      "intended": "Continued absence of ordinal term two, separate from runtime 0.",
+      "source": {
+        "path": "sources/haven-stories/chorus/manuscript.md",
+        "line": 169,
+        "file_sha256": "68899457092d3fe02b034386b3aebe527a12e4a8428a881077d14e139da499ed"
+      }
+    },
+    {
+      "id": "audit-56",
+      "group": "verbatim lore",
+      "text": "The routine returned a smaller allocation.",
+      "intended": "Return of comparatively smaller allocation; preserve comparison and information-operation reading.",
+      "source": {
+        "path": "sources/haven-stories/still/manuscript.md",
+        "line": 87,
+        "file_sha256": "0dd79e8d3c7e26d98b4265b0cfd953754544a1f2ad0fd85b71abb5422d91d292"
+      }
+    },
+    {
+      "id": "audit-57",
+      "group": "verbatim lore",
+      "text": "The routine maintained the narrow boundary.",
+      "intended": "Past maintenance of boundary with narrowness as a property of boundary.",
+      "source": {
+        "path": "sources/haven-stories/still/manuscript.md",
+        "line": 99,
+        "file_sha256": "0dd79e8d3c7e26d98b4265b0cfd953754544a1f2ad0fd85b71abb5422d91d292"
+      }
+    },
+    {
+      "id": "audit-58",
+      "group": "verbatim lore",
+      "text": "The reference shortened again.",
+      "intended": "Repeated shortening of the available reference lifetime, given manuscript context; not merely an unspecified change.",
+      "source": {
+        "path": "sources/haven-stories/still/manuscript.md",
+        "line": 115,
+        "file_sha256": "0dd79e8d3c7e26d98b4265b0cfd953754544a1f2ad0fd85b71abb5422d91d292"
+      }
+    }
+  ]
+}

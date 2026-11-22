@@ -1,0 +1,75 @@
+{
+  "goal_scope": "Full project audit and completion plan, including evidence-based musical evaluation. This is not a claim that the full translator is implemented.",
+  "date": "2026-11-22",
+  "requirements": [
+    {
+      "requirement": "Establish current implementation and source context",
+      "evidence": [
+        "source_inventory.json",
+        "regression.json"
+      ],
+      "conclusion": "Translator and Lore revisions plus current source-document revisions recorded; historical gaps explicitly retained.",
+      "audit_requirement": "satisfied"
+    },
+    {
+      "requirement": "Test complete messages against intended meanings",
+      "evidence": [
+        "initial.json",
+        "clarified.json",
+        "adjudication.json",
+        "case_ledger.md",
+        "baseline_overlap.json"
+      ],
+      "conclusion": "58 frozen intentions, real browser/export paths, separate musical inverse and engineering adjudication; no representative-accuracy claim.",
+      "audit_requirement": "satisfied"
+    },
+    {
+      "requirement": "Investigate bugs and usability",
+      "evidence": [
+        "scope_followup.json",
+        "mobile-layout.json",
+        "mobile-picker.png"
+      ],
+      "conclusion": "Scope-loss routing class, missing general inverse and seven overflow views reproduced.",
+      "audit_requirement": "satisfied"
+    },
+    {
+      "requirement": "Evaluate distinct, shorter musical forms",
+      "evidence": [
+        "music_experiment.json",
+        "music_summary.json"
+      ],
+      "conclusion": "Existing roots tested separately; 539-frame chord/rhythm prototype, exact inversion, 18 performances and measured late distinctions.",
+      "audit_requirement": "satisfied"
+    },
+    {
+      "requirement": "Check actual waveform evidence",
+      "evidence": [
+        "audio_current_decoder.json",
+        "audio_rendering.json",
+        "music_summary.json"
+      ],
+      "conclusion": "Fresh WAV-only current-profile recovery compared after decoding; experimental audio rejected; physical generalization remains unproven.",
+      "audit_requirement": "satisfied"
+    },
+    {
+      "requirement": "Preserve and reuse language and current work",
+      "evidence": [
+        "source_inventory.json"
+      ],
+      "conclusion": "No edits to production pages, canonical lexicon or specs; cultural/source constraints and recursive dependencies documented.",
+      "audit_requirement": "satisfied"
+    },
+    {
+      "requirement": "Deliver an ordered full completion plan",
+      "evidence": [
+        "../full_language_music_audit_2026_11_22.md",
+        "../../docs/full-translator-next-steps.md"
+      ],
+      "conclusion": "Seven work packages retain the broader objective and distinguish finished first release from unfinished full translation.",
+      "audit_requirement": "satisfied"
+    }
+  ],
+  "translator_status": "unfinished",
+  "experimental_profile_status": "research only; not deployed"
+}

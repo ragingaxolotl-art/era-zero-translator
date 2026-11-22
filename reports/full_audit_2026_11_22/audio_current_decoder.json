@@ -1,0 +1,48 @@
+{
+  "profile": "EZ-COMPACT-REFERENCE-AUDIO-1",
+  "onset_seconds": 0.108,
+  "compact_chord_spans": 3,
+  "notes": 183,
+  "meaning": {
+    "profile": "EZ-STORY-1",
+    "status": "draft",
+    "entities": [
+      {
+        "identity": {
+          "kind": "phonemic",
+          "reference_mode": "definite_nominal",
+          "phonemes": [
+            "HH",
+            "AE",
+            "CH"
+          ],
+          "instance_code": null
+        },
+        "plural": false,
+        "owner": null
+      }
+    ],
+    "events": [
+      {
+        "predicate": "CMP:ec3a1fad0ed828279e948372",
+        "arguments": [
+          {
+            "role": "bearer",
+            "entity": 0,
+            "properties": []
+          }
+        ],
+        "scopes": [
+          "time_before_speech"
+        ],
+        "quantifier": null,
+        "negated_quantifier": false,
+        "condition": "CMP:82a697e83c845e4a7b38b53e"
+      }
+    ],
+    "relations": [],
+    "runtime_state": 1,
+    "speech_act": "assertion"
+  },
+  "note_sha256": "972730737a30324cc787a1dc1dd3031ab49f77c90d9a2a3b0691d55d1545d7bd"
+}

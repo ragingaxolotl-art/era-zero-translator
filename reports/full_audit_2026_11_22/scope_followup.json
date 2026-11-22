@@ -1,0 +1,209 @@
+{
+  "method": "Directed follow-up, source text goes only to composer; score-only inverse yields the checked scope. These examples are additional to the 58-case denominator.",
+  "results": [
+    {
+      "text": "Nora will leave.",
+      "status": "not_composed"
+    },
+    {
+      "text": "Nora can leave.",
+      "status": "not_composed"
+    },
+    {
+      "text": "Nora will not leave.",
+      "status": "not_composed"
+    },
+    {
+      "text": "Nora cannot leave.",
+      "status": "not_composed"
+    },
+    {
+      "text": "Nora will wait.",
+      "expected_outer_scope": "time_after_speech",
+      "recovered_scopes": [
+        "time_after_speech"
+      ],
+      "preserves_outer_scope": true,
+      "preserves_negation": true
+    },
+    {
+      "text": "Nora can wait.",
+      "expected_outer_scope": "ability",
+      "recovered_scopes": [
+        "ability"
+      ],
+      "preserves_outer_scope": true,
+      "preserves_negation": true
+    },
+    {
+      "text": "Nora will not wait.",
+      "expected_outer_scope": "time_after_speech",
+      "recovered_scopes": [
+        "time_after_speech",
+        "negation"
+      ],
+      "preserves_outer_scope": true,
+      "preserves_negation": true
+    },
+    {
+      "text": "Nora cannot wait.",
+      "expected_outer_scope": "ability",
+      "recovered_scopes": [
+        "negation",
+        "ability"
+      ],
+      "preserves_outer_scope": true,
+      "preserves_negation": true
+    },
+    {
+      "text": "Nora will lift the box.",
+      "expected_outer_scope": "time_after_speech",
+      "recovered_scopes": [
+        "time_after_speech"
+      ],
+      "preserves_outer_scope": true,
+      "preserves_negation": true
+    },
+    {
+      "text": "Nora can lift the box.",
+      "expected_outer_scope": "ability",
+      "recovered_scopes": [
+        "ability"
+      ],
+      "preserves_outer_scope": true,
+      "preserves_negation": true
+    },
+    {
+      "text": "Nora will not lift the box.",
+      "expected_outer_scope": "time_after_speech",
+      "recovered_scopes": [
+        "time_after_speech",
+        "negation"
+      ],
+      "preserves_outer_scope": true,
+      "preserves_negation": true
+    },
+    {
+      "text": "Nora cannot lift the box.",
+      "expected_outer_scope": "ability",
+      "recovered_scopes": [
+        "negation",
+        "ability"
+      ],
+      "preserves_outer_scope": true,
+      "preserves_negation": true
+    },
+    {
+      "text": "If Nora opens the hatch, Mira will leave.",
+      "expected_outer_scope": "time_after_speech",
+      "recovered_scopes": [
+        "modality_possible"
+      ],
+      "preserves_outer_scope": false,
+      "preserves_negation": true
+    },
+    {
+      "text": "If Nora opens the hatch, Mira can leave.",
+      "expected_outer_scope": "ability",
+      "recovered_scopes": [
+        "modality_possible"
+      ],
+      "preserves_outer_scope": false,
+      "preserves_negation": true
+    },
+    {
+      "text": "If Nora opens the hatch, Mira will not leave.",
+      "expected_outer_scope": "time_after_speech",
+      "recovered_scopes": [
+        "modality_possible"
+      ],
+      "preserves_outer_scope": false,
+      "preserves_negation": false
+    },
+    {
+      "text": "If Nora opens the hatch, Mira cannot leave.",
+      "expected_outer_scope": "ability",
+      "recovered_scopes": [
+        "modality_possible"
+      ],
+      "preserves_outer_scope": false,
+      "preserves_negation": false
+    },
+    {
+      "text": "If Nora opens the hatch, Mira will wait.",
+      "expected_outer_scope": "time_after_speech",
+      "recovered_scopes": [
+        "time_after_speech"
+      ],
+      "preserves_outer_scope": true,
+      "preserves_negation": true
+    },
+    {
+      "text": "If Nora opens the hatch, Mira can wait.",
+      "expected_outer_scope": "ability",
+      "recovered_scopes": [
+        "ability"
+      ],
+      "preserves_outer_scope": true,
+      "preserves_negation": true
+    },
+    {
+      "text": "If Nora opens the hatch, Mira will not wait.",
+      "expected_outer_scope": "time_after_speech",
+      "recovered_scopes": [
+        "time_after_speech",
+        "negation"
+      ],
+      "preserves_outer_scope": true,
+      "preserves_negation": true
+    },
+    {
+      "text": "If Nora opens the hatch, Mira cannot wait.",
+      "expected_outer_scope": "ability",
+      "recovered_scopes": [
+        "negation",
+        "ability"
+      ],
+      "preserves_outer_scope": true,
+      "preserves_negation": true
+    },
+    {
+      "text": "If Nora opens the hatch, Mira will lift the box.",
+      "expected_outer_scope": "time_after_speech",
+      "recovered_scopes": [
+        "time_after_speech"
+      ],
+      "preserves_outer_scope": true,
+      "preserves_negation": true
+    },
+    {
+      "text": "If Nora opens the hatch, Mira can lift the box.",
+      "expected_outer_scope": "ability",
+      "recovered_scopes": [
+        "ability"
+      ],
+      "preserves_outer_scope": true,
+      "preserves_negation": true
+    },
+    {
+      "text": "If Nora opens the hatch, Mira will not lift the box.",
+      "expected_outer_scope": "time_after_speech",
+      "recovered_scopes": [
+        "time_after_speech",
+        "negation"
+      ],
+      "preserves_outer_scope": true,
+      "preserves_negation": true
+    },
+    {
+      "text": "If Nora opens the hatch, Mira cannot lift the box.",
+      "expected_outer_scope": "ability",
+      "recovered_scopes": [
+        "negation",
+        "ability"
+      ],
+      "preserves_outer_scope": true,
+      "preserves_negation": true
+    }
+  ]
+}

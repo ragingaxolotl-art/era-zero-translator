@@ -1,5 +1,7 @@
 # Translator completion work
 
+**Current status, November 22:** the full translator remains unfinished. The [current language/music audit](../reports/full_language_music_audit_2026_11_22.md) and [ordered next steps](full-translator-next-steps.md) supersede older summaries of remaining work while preserving the history below. Audit completion is not translator completion.
+
 Baseline: `e8a42f842aeb789b3696936a59a2699d328687ab`, October 28, 2026.
 The delivered first-release scope, usage examples, browser verification and remaining limits are recorded in the [first-release guide](first-release-status.md). The implementation notes below retain the history of the work.
 

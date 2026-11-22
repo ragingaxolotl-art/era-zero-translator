@@ -1,0 +1,115 @@
+{
+  "sentence_performances": 18,
+  "shared_prefix_pairs": [
+    {
+      "left": "audit-02",
+      "right": "audit-09",
+      "left_text": "Nora kept the hatch closed.",
+      "right_text": "Did Nora keep the hatch closed?",
+      "identical_attacks": 227,
+      "seconds_before_first_difference": 50.75
+    },
+    {
+      "left": "audit-13",
+      "right": "audit-14",
+      "left_text": "Nora opened the hatch before Mira arrived.",
+      "right_text": "Nora opened the hatch after Mira arrived.",
+      "identical_attacks": 252,
+      "seconds_before_first_difference": 58.25
+    },
+    {
+      "left": "audit-25",
+      "right": "audit-26",
+      "left_text": "Nora is happy.",
+      "right_text": "Nora is sad.",
+      "identical_attacks": 7,
+      "seconds_before_first_difference": 0.875
+    }
+  ],
+  "median_reduction_from_existing_chords_sixteenth": 0.14430363543266772,
+  "median_reduction_from_existing_chords_eighth": 0.05147058823529416,
+  "first_root_seconds_in_existing_chords": [
+    {
+      "id": "audit-01",
+      "seconds": 13
+    },
+    {
+      "id": "audit-02",
+      "seconds": 23.625
+    },
+    {
+      "id": "audit-05",
+      "seconds": 21.25
+    },
+    {
+      "id": "audit-06",
+      "seconds": 21.25
+    },
+    {
+      "id": "audit-07",
+      "seconds": 12.875
+    },
+    {
+      "id": "audit-08",
+      "seconds": 24.375
+    },
+    {
+      "id": "audit-09",
+      "seconds": 23.625
+    },
+    {
+      "id": "audit-10",
+      "seconds": 24.25
+    },
+    {
+      "id": "audit-13",
+      "seconds": 33.25
+    },
+    {
+      "id": "audit-14",
+      "seconds": 33.25
+    },
+    {
+      "id": "audit-16",
+      "seconds": 32.375
+    },
+    {
+      "id": "audit-24",
+      "seconds": 23
+    },
+    {
+      "id": "audit-25",
+      "seconds": 14.125
+    },
+    {
+      "id": "audit-26",
+      "seconds": 14.125
+    },
+    {
+      "id": "audit-46",
+      "seconds": 0.875
+    },
+    {
+      "id": "audit-48",
+      "seconds": 37.75
+    },
+    {
+      "id": "audit-49",
+      "seconds": 16.625
+    }
+  ],
+  "clean_reference_audio": {
+    "input": "audio/hatch-chords.wav",
+    "decoder_arguments": "WAV path only; fixed public reference voice/tempo and language",
+    "source": "Synthetic Web Audio PCM, no physical room capture",
+    "exact_notes_and_timing": true,
+    "exact_meaning": true,
+    "notes": 183
+  },
+  "experimental_audio": {
+    "input": "audio/hatch-frame-16th.wav",
+    "current_decoder_result": "rejected: The recording does not give one complete, supported musical reading.",
+    "decision": "Keep the profile experimental; a shorter exact-MIDI encoding is not yet a working recorded-audio language."
+  },
+  "measurements_scope": "Pitches, timing, duration, invertibility and selected corrupted-note rejection. Not a human listening preference study or an unrestricted noisy-audio evaluation."
+}
