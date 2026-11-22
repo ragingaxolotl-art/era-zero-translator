@@ -1,3 +1,4 @@
+import {decodeContextualGroupMidi} from './contextual_group_decoder.mjs?v=partial-word-flow-1';
 // Shared strict semantic inverses; no expected sentence or predicate hint.
 import {decodeCareMidi} from './care_decoder.mjs?v=partial-word-flow-1';
 import {decodeLoveMidi} from './love_decoder.mjs?v=partial-word-flow-1';
@@ -13,7 +14,7 @@ import {decodeFeltConditionMidi} from './felt_decoder.mjs?v=partial-word-flow-1'
 import {decodeContextualStandardMidi} from './contextual_standard_decoder.mjs?v=partial-word-flow-1';
 import {decodeMaterialMeasurementMidi} from './material_measurement_decoder.mjs?v=partial-word-flow-1';
 import {decodePropertyComparisonMidi} from './property_comparison_decoder.mjs?v=partial-word-flow-1';
-const DECODERS=[decodeNamedProcessMidi,decodePhysicalCarryingMidi,decodeCareMidi,decodeLoveMidi,decodeSwimmingMidi,decodePhysicalEntryMidi,decodeRunningMidi,decodeSpatialRelationMidi,decodePhysicalCustodyMidi,decodeCustodyAcquisitionMidi,decodeCustodyTransferMidi,decodeCustodyDeliveryMidi,decodeDestinationCarryingMidi,decodeFeltConditionMidi,decodeContextualStandardMidi,decodeMaterialMeasurementMidi,decodePropertyComparisonMidi];
+const DECODERS=[decodeContextualGroupMidi,decodeNamedProcessMidi,decodePhysicalCarryingMidi,decodeCareMidi,decodeLoveMidi,decodeSwimmingMidi,decodePhysicalEntryMidi,decodeRunningMidi,decodeSpatialRelationMidi,decodePhysicalCustodyMidi,decodeCustodyAcquisitionMidi,decodeCustodyTransferMidi,decodeCustodyDeliveryMidi,decodeDestinationCarryingMidi,decodeFeltConditionMidi,decodeContextualStandardMidi,decodeMaterialMeasurementMidi,decodePropertyComparisonMidi];
 export function decodeSupportedMeaningMidi(bytes,atoms){
  const accepted=[];
  for(const decoder of DECODERS){try{accepted.push(decoder(bytes,atoms));}catch{}}

@@ -30,6 +30,22 @@ export async function readSongLine(bytes,atoms,records,chords,adjectives){
       const [a,b]=r.events.map(i=>i+1);
       words.push(r.kind==='before'?'Action '+a+' occurs before action '+b+'.':r.kind==='condition'?'Action '+b+' depends on action '+a+'.':'Actions '+a+' and '+b+' both apply.');
     }
+  }else if(m.profile==='EZCONTEXTUAL-GROUP-INVERSE-1'){
+    const relation={sequence:'The clauses hold in the stated temporal order.',all_of:'All clauses are included; no temporal order is asserted.',any_of:'At least one clause holds; both may hold.',exactly_one:'Exactly one clause holds.',conditional:'The second clause depends on the first; neither is asserted independently.'}[m.operator];
+    words.push((m.speech_act==='question'?'Question about the group. ':m.speech_act==='assertion'?'':m.speech_act+' over the group. ')+relation);
+    if(m.scopes.length){
+      const scopes=m.scopes.map(s=>s.operator==='time'?'time_'+s.relation:s.operator==='modality'?'modality_'+s.mode:s.operator==='aspect'?'aspect_'+s.aspect:s.operator);
+      const supported=new Set(['negation','time_before_speech','time_at_speech','time_after_speech','modality_possible','modality_necessary','modality_predicted','aspect_ongoing']);
+      words.push(scopes.every(s=>supported.has(s))&&!m.scopes.some(s=>s.strength!==undefined)?'Whole group: '+describeClaim('the entire relationship',scopes,m.speech_act):'The entire relationship has additional scope details shown in the complete meaning.');
+    }
+    if(m.condition_status&&m.condition_status!=='open')words.push('Condition status: '+m.condition_status+'.');
+    m.members.forEach((member,index)=>{
+      const scopes=member.scopes.map(s=>s.operator==='time'?'time_'+s.relation:s.operator==='modality'?'modality_'+s.mode:s.operator==='aspect'?'aspect_'+s.aspect:s.operator);
+      const supported=new Set(['negation','time_before_speech','time_at_speech','time_after_speech','time_previous_day','time_current_day','time_next_day','modality_possible','modality_necessary','modality_predicted','aspect_ongoing']);
+      const claim=scopes.every(s=>supported.has(s))?describeClaim(member.standard.norm,scopes):'Scoped '+member.standard.norm+'; see complete scope details.';
+      words.push('Clause '+(index+1)+' content: '+claim+' Bearer = '+identity(member.bearer)+'. '+describeRuntime(member.runtime_state));
+    });
+    words.push('Comparison standards are local to each adjective; no numerical cutoffs are stated.');
   }else if(m.knowledge)words.push('Knowledge of '+(m.knowledge.question.additional?'an additional':'a')+' wanted value. Knower = '+identity(m.knowledge.knower)+', wanter = '+identity(m.knowledge.question.restriction.wanter)+'. '+describeClaim('knows which value',m.knowledge.scopes));
   else if(m.fault)words.push(describeClaim('correct the '+(typeof m.fault.type_label==='string'?m.fault.type_label+' ':'')+'fault',m.scopes.map(s=>['possible','necessary'].includes(s)?'modality_'+s:s),m.speech_act)+' Actor = '+identity(m.actor)+'.');
   else if(m.discovery)words.push(identity(m.discovery.actor)+' found the referenced item. '+identity(m.requirement.actor)+' is required to erase that same item.');
