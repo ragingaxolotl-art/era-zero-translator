@@ -4,7 +4,7 @@ The broader translator remains unfinished. The [November 22 audit](../reports/fu
 
 The subsequent [meaning and input-flow repair](../reports/meaning_reliability_2026_11_22.md) fixes the identified future/ability/negation fallback, adds the missing approved-love inverse and makes missing definitions and small-screen choices clearer. The original audit is preserved as evidence of the earlier build. Main sentence controls now distinguish a complete interpretation from verified independent score decoding.
 
-The browser translator makes music from supported English sentences and from words you build yourself. It includes 324 canonical roots, 117 approved compounds and 578 indexed English senses. You can combine earlier compounds in the order you choose, mark the main meaning, and connect participants across the parts. Your definitions stay in your browser and can be exported and imported. [Open the translator](https://ragingaxolotl-art.github.io/era-zero-translator/) · [Open the compound builder](https://ragingaxolotl-art.github.io/era-zero-translator/compound-builder.html)
+The browser translator makes music from supported English sentences and from words you build yourself. It includes 324 canonical roots, 117 approved compounds and 579 indexed English senses. You can combine earlier compounds in the order you choose, mark the main meaning, and connect participants across the parts. Your definitions stay in your browser and can be exported and imported. [Open the translator](https://ragingaxolotl-art.github.io/era-zero-translator/) · [Open the compound builder](https://ragingaxolotl-art.github.io/era-zero-translator/compound-builder.html)
 
 The field audit tests 51 inputs through the song controls, measures the sound of both arrangements and ranks the remaining bugs. [Field audit](../reports/translator_field_audit.md) · [Story and dialogue audit](../reports/story_readings.md)
 
@@ -63,3 +63,5 @@ Automated checks exercise MIDI note and timing contrasts, role reversal, nested 
 ## Remaining limits
 
 English support is construction-based. New definitions extend the vocabulary available in those constructions. Arbitrary multi-clause prose, unrestricted plural reference, and many adjective–noun fragments still need more grammar. The site shows partial dictionary readings when it cannot compose a whole sentence. The first release covers text to meaning to music. Recovery from a speaker-to-microphone recording and wider independent English testing remain future work. [Project history and original completion plan](translator-completion.md)
+
+Physical holding update: hold/holds/held/holding reuse the exact foundation already used by release/drop; no new compound or sound. See [evidence and boundaries](../reports/physical_holding_2026_11_22.md).
