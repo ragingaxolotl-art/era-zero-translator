@@ -20,3 +20,7 @@ The original November 22 audit remains unchanged. This batch repairs three of it
 This batch does not implement figurative senses, emptying/filling verbs, arbitrary physical placement, explicit contents/capacity quantities, passive or perfect constructions, or the information-operation verbs. Names, grammar and compound frames keep their previous timing. Nested compounds are reusable but can make longer music. General microphone recovery and experimental grammar chords remain outside the shorter release.
 
 Existing songs and private definitions retain their saved notes and data. The new vocabulary is available when translating a new or revised line; old performances are not silently rewritten. The [completion plan](../docs/full-translator-next-steps.md) remains open.
+
+## Public release verification
+
+Both public sites passed 15 sentence layouts, 10 actual song-export decodes and 12 ambiguity checks after publishing. [Standalone results](physical_vocabulary_2026_11_22/live-standalone.json) and [Lore results](physical_vocabulary_2026_11_22/live-lore.json) identify the URLs and times. GitHub initially failed to see uploaded artifacts, then found duplicates on retry. Fresh workflow runs [45068120711](https://github.com/ragingaxolotl-art/era-zero-translator/actions/runs/45068120711) and [45068123564](https://github.com/ragingaxolotl-art/cyber-pet-lore/actions/runs/45068123564) completed successfully without changing the translator to work around that platform failure.
