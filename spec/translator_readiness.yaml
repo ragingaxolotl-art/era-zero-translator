@@ -129,18 +129,18 @@ translator_start_conditions:
 - semantic IR and grammar are versioned
 - deterministic renderer and decoder pass round-trip tests
 - unsupported and ambiguous inputs have specified behavior
-next_semantic_chunk_after_pending_decisions:
+next_semantic_chunk_after_pending_decisions: 
 authority:
   semantic_status_source: lexicon/semantic_authority.yaml
   roadmap: reports/translator_readiness_roadmap.md
-next_authorized_gate:
+next_authorized_gate: 
 gate4a:
   status: complete_and_canonical
   architecture: spec/compound_architecture_1.0.yaml
   schema: spec/compound_graph_schema.yaml
   validation: reports/gate4a_validation.md
   conformance_cases: tests/gate4a_compound_cases.yaml
-  dictionary_entries: 117
+  dictionary_entries: 118
 gate4b:
   status: complete_and_canonical
   dictionary: lexicon/compound_dictionary.yaml

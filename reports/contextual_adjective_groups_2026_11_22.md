@@ -16,6 +16,8 @@ The result heading now shows the interpreted sentence. Longer technical explanat
 
 The [evidence directory](contextual_adjective_groups_2026_11_22/) records the tested sources and outputs. Browser checks use Chromium viewport emulation, not physical iOS/Safari. Initial browser inspection exposed missing accessible choice names and an oversized technical heading; the released implementation fixes both.
 
+The release is deployed through PR 25 in both repositories. Each public site passes the same 18 layouts, 12 independently decoded exports and six explicit alternative choices. Lore's integrated catalog build and 251 tests also pass; live and integration records are retained with this report.
+
 ## Remaining boundaries
 
 This inverse supports contextual physical adjectives, without nested groups or a mixture of other predicate profiles. It does not add numeric widths, degree, comparative width, figurative senses, or arbitrary English constructions. Each comparison standard is local; identical reference sounds alone do not prove identity in the outside world. Unsupported messages must still remain visibly unsupported.

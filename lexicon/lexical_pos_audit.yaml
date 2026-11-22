@@ -5,9 +5,9 @@ metadata:
   status: noncanonical_metadata_complete
   canonical_semantic_changes: 0
   root_count: 324
-  indexed_sense_count: 589
+  indexed_sense_count: 591
   game_story_surface_sense_count: 48
-  total_audited_senses: 637
+  total_audited_senses: 639
   part_of_speech_counts:
     adjective: 46
     adverb: 2
@@ -15,11 +15,11 @@ metadata:
     grammar: 1
     interjection: 1
     noun: 32
-    noun_phrase: 333
+    noun_phrase: 334
     number: 1
     preposition: 2
     quantifier: 1
-    verb: 107
+    verb: 108
     verb_phrase: 108
   policy: English senses carry parts of speech; Era Zero roots retain address-derived
     semantic affordances and may support more than one English syntactic realization.
@@ -14099,7 +14099,7 @@ senses:
   surface_forms:
   - after
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: temporal_order
   definition: Order one occurrence later than another.
   fidelity: high
@@ -14111,7 +14111,7 @@ senses:
   surface_forms:
   - and
   route: grammar
-  target_id:
+  target_id: 
   sense_key: coordination_all
   definition: Coordinate all listed expressions conjunctively.
   fidelity: high
@@ -14364,7 +14364,7 @@ senses:
   surface_forms:
   - be
   route: grammar
-  target_id:
+  target_id: 
   sense_key: copular_predication
   definition: Link a referent to a predicate or identity assertion.
   fidelity: high
@@ -14376,7 +14376,7 @@ senses:
   surface_forms:
   - become
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: generic_transition
   definition: Enter a context-selected state.
   fidelity: high
@@ -14388,7 +14388,7 @@ senses:
   surface_forms:
   - before
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: temporal_order
   definition: Order one occurrence earlier than another.
   fidelity: high
@@ -14439,7 +14439,7 @@ senses:
   surface_forms:
   - bright
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: contextual_luminance_bright
   definition: The material bearer's photometric surface luminance in the contextual
     viewing direction is above the local contextual bright standard. The selected
@@ -14470,7 +14470,7 @@ senses:
   surface_forms:
   - build
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: generate_composite_artifact
   definition: Generate an artifact while establishing its composite arrangement.
   fidelity: high
@@ -14496,7 +14496,7 @@ senses:
   surface_forms:
   - cause
   route: grammar
-  target_id:
+  target_id: 
   sense_key: semantic_role
   definition: Mark or introduce the cause role of an occurrence.
   fidelity: high
@@ -14552,6 +14552,30 @@ senses:
   sense_key: canonical_compound_label
   definition: An actor physically displaces a target downwards relative to the local
     vertical. Distance, method, destination and subsequent contact are unspecified.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:f9918b0a73ee9841a96c021f
+  lemma: caused physical placement at a destination
+  part_of_speech: noun_phrase
+  surface_forms:
+  - caused physical placement at a destination
+  route: compound
+  target_id: CMP:64574c1a25d72a89aafc46ef
+  sense_key: canonical_compound_label
+  definition: An actor physically displaces a distinct material target so that this
+    same target completes its arrival at a specified destination position in the same
+    spatial frame. The nested caused-displacement event and MOV:110 describe the causal
+    movement and its arrival endpoint within one placement episode; they do not describe
+    two unrelated movers or destinations. The outer actor supplies the nested physical
+    influence, the outer target is its displaced bearer and the arriving mover, and
+    the outer destination supplies the arrival position. The destination may be a
+    place identified relative to a named landmark. Placement does not itself assert
+    support, containment, attachment, release of a grip, ownership transfer, the actor's
+    own arrival, an exact coordinate, a route, or continued presence after the endpoint.
+    Ongoing aspect views the placement internally without asserting a completed arrival.
+    This physical sense excludes assigning a value, storing a digital item, ranking
+    a competitor, or expressing an idea.
   fidelity: high
   controlled_input_allowed: true
   authority_layer: english_sense_index
@@ -14617,7 +14641,7 @@ senses:
   surface_forms:
   - change
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: generic_state_transition
   definition: Transition between context-selected states without enough domain information
     to choose an atom.
@@ -14701,7 +14725,7 @@ senses:
   surface_forms:
   - cold
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: contextual_thermodynamic_temperature_cold
   definition: The material bearer's thermodynamic temperature is below the local contextual
     cold standard. The selected physical reading requires a bound bearer and an explicit
@@ -15433,7 +15457,7 @@ senses:
   surface_forms:
   - continue
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: persistence_of_occurrence
   definition: Maintain an occurrence across a later interval.
   fidelity: high
@@ -15538,7 +15562,7 @@ senses:
   surface_forms:
   - cross
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: boundary_traversal
   definition: Move from one side of a boundary locus to another.
   fidelity: high
@@ -15664,7 +15688,7 @@ senses:
   surface_forms:
   - dim
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: contextual_luminance_dim
   definition: The material bearer's photometric surface luminance in the contextual
     viewing direction is below the local contextual dim standard. The selected physical
@@ -16667,7 +16691,7 @@ senses:
   surface_forms:
   - follow
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: trajectory_tracking
   definition: Move while maintaining a relation to another mover or route.
   fidelity: high
@@ -16679,7 +16703,7 @@ senses:
   surface_forms:
   - food
   route: gap
-  target_id:
+  target_id: 
   sense_key: nutritive_material
   definition: Material conventionally suitable for consumption to support life.
   fidelity: high
@@ -16691,7 +16715,7 @@ senses:
   surface_forms:
   - forget
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: lose_access_to_representation
   definition: Cease manifest access to or preservation of a representation.
   fidelity: high
@@ -16716,7 +16740,7 @@ senses:
   surface_forms:
   - friend
   route: gap
-  target_id:
+  target_id: 
   sense_key: social_friendship
   definition: A person standing in a socially recognized friendship relation.
   fidelity: high
@@ -16760,7 +16784,7 @@ senses:
   surface_forms:
   - future
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: reference_time_after_now
   definition: Locate an occurrence after the reference present.
   fidelity: high
@@ -16808,7 +16832,7 @@ senses:
   surface_forms:
   - go
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: abstract_transition
   definition: Enter another nonspatial state through a context-specific transition.
   fidelity: high
@@ -16864,7 +16888,7 @@ senses:
   surface_forms:
   - have
   route: grammar
-  target_id:
+  target_id: 
   sense_key: perfect_auxiliary
   definition: Mark perfect aspect in English input.
   fidelity: high
@@ -16876,7 +16900,7 @@ senses:
   surface_forms:
   - have
   route: gap
-  target_id:
+  target_id: 
   sense_key: possession
   definition: Stand in a possession or control relation.
   fidelity: high
@@ -16922,7 +16946,7 @@ senses:
   surface_forms:
   - heavy
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: contextual_mass_heavy
   definition: The material bearer's physical mass is above the local contextual heavy
     standard. The selected physical reading requires a bound bearer and an explicit
@@ -16959,7 +16983,7 @@ senses:
   surface_forms:
   - home
   route: gap
-  target_id:
+  target_id: 
   sense_key: affective_social_center
   definition: A socially or affectively anchored place of belonging.
   fidelity: high
@@ -16971,7 +16995,7 @@ senses:
   surface_forms:
   - home
   route: gap
-  target_id:
+  target_id: 
   sense_key: physical_dwelling
   definition: A structure conventionally serving as a habitual dwelling.
   fidelity: high
@@ -16983,7 +17007,7 @@ senses:
   surface_forms:
   - hot
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: contextual_thermodynamic_temperature_hot
   definition: The material bearer's thermodynamic temperature is above the local contextual
     hot standard. The selected physical reading requires a bound bearer and an explicit
@@ -17011,7 +17035,7 @@ senses:
   surface_forms:
   - if
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: conditional
   definition: Make one proposition conditional on another.
   fidelity: high
@@ -17109,7 +17133,7 @@ senses:
   surface_forms:
   - know
   route: gap
-  target_id:
+  target_id: 
   sense_key: truth_entailing_knowledge
   definition: Possess justified or truth-entailing knowledge.
   fidelity: high
@@ -17591,7 +17615,7 @@ senses:
   surface_forms:
   - light
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: contextual_mass_light
   definition: The material bearer's physical mass is below the local contextual light
     standard. The selected physical reading requires a bound bearer and an explicit
@@ -17938,7 +17962,7 @@ senses:
   surface_forms:
   - many
   route: grammar
-  target_id:
+  target_id: 
   sense_key: plural_quantity
   definition: Specify contextually large cardinality.
   fidelity: high
@@ -18052,7 +18076,7 @@ senses:
   surface_forms:
   - move
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: cause_target_displacement
   definition: Cause a distinct target to undergo movement.
   fidelity: high
@@ -18064,7 +18088,7 @@ senses:
   surface_forms:
   - move
   route: gap
-  target_id:
+  target_id: 
   sense_key: emotional_effect
   definition: Cause an affective response.
   fidelity: high
@@ -18088,7 +18112,7 @@ senses:
   surface_forms:
   - narrow
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: contextual_physical_width_narrow
   definition: The material bearer's lateral physical extent along a contextually selected
     transverse axis and section is below the local contextual narrow standard. The
@@ -18386,7 +18410,7 @@ senses:
   surface_forms:
   - not
   route: grammar
-  target_id:
+  target_id: 
   sense_key: negation
   definition: Negate a scoped proposition, predicate, or participant relation.
   fidelity: high
@@ -18468,7 +18492,7 @@ senses:
   surface_forms:
   - one
   route: grammar
-  target_id:
+  target_id: 
   sense_key: quantity_one
   definition: Specify cardinal quantity one.
   fidelity: high
@@ -19129,7 +19153,7 @@ senses:
   surface_forms:
   - or
   route: grammar
-  target_id:
+  target_id: 
   sense_key: coordination_any
   definition: Coordinate alternatives disjunctively.
   fidelity: high
@@ -19223,7 +19247,7 @@ senses:
   surface_forms:
   - past
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: reference_time_before_now
   definition: Locate an occurrence before the reference present.
   fidelity: high
@@ -19235,7 +19259,7 @@ senses:
   surface_forms:
   - pause
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: temporary_suspension
   definition: Suspend an occurrence while preserving the possibility of continuation.
   fidelity: high
@@ -20392,6 +20416,36 @@ senses:
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
+- sense_id: ENS:63a0aea1f453450c976a80a9
+  lemma: put
+  part_of_speech: verb
+  surface_forms:
+  - put
+  - puts
+  - putting
+  - place
+  - places
+  - placed
+  - placing
+  route: compound
+  target_id: CMP:64574c1a25d72a89aafc46ef
+  sense_key: caused_physical_placement_at_a_destination
+  definition: An actor physically displaces a distinct material target so that this
+    same target completes its arrival at a specified destination position in the same
+    spatial frame. The nested caused-displacement event and MOV:110 describe the causal
+    movement and its arrival endpoint within one placement episode; they do not describe
+    two unrelated movers or destinations. The outer actor supplies the nested physical
+    influence, the outer target is its displaced bearer and the arriving mover, and
+    the outer destination supplies the arrival position. The destination may be a
+    place identified relative to a named landmark. Placement does not itself assert
+    support, containment, attachment, release of a grip, ownership transfer, the actor's
+    own arrival, an exact coordinate, a route, or continued presence after the endpoint.
+    Ongoing aspect views the placement internally without asserting a completed arrival.
+    This physical sense excludes assigning a value, storing a digital item, ranking
+    a competitor, or expressing an idea.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
 - sense_id: ENS:4f942868d77d2376a79f744d
   lemma: readiness for self-awakening
   part_of_speech: verb_phrase
@@ -20558,7 +20612,7 @@ senses:
   surface_forms:
   - remember
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: manifest_latent_representation
   definition: Bring a previously latent representation into manifest cognition.
   fidelity: high
@@ -20775,7 +20829,7 @@ senses:
   surface_forms:
   - return
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: function_result
   definition: Produce a value as the result of a computational occurrence.
   fidelity: high
@@ -20787,7 +20841,7 @@ senses:
   surface_forms:
   - return
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: movement_to_prior_position
   definition: Move to a position previously occupied or treated as origin.
   fidelity: high
@@ -20816,7 +20870,7 @@ senses:
   surface_forms:
   - rough
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: contextual_surface_texture_rough
   definition: The material bearer's physical surface irregularity in the contextually
     selected surface region and at the selected scale is above the local contextual
@@ -20871,7 +20925,7 @@ senses:
   surface_forms:
   - run
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: locomotion
   definition: Move by a gait convention not atomically distinguished in Motion.
   fidelity: high
@@ -20883,7 +20937,7 @@ senses:
   surface_forms:
   - run
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: machine_operation
   definition: Maintain a machine in active operation.
   fidelity: high
@@ -20895,7 +20949,7 @@ senses:
   surface_forms:
   - run
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: program_execution
   definition: Instantiate an occurrence that executes a program definition.
   fidelity: high
@@ -20923,7 +20977,7 @@ senses:
   surface_forms:
   - safe
   route: gap
-  target_id:
+  target_id: 
   sense_key: acceptable_risk
   definition: Below a contextually acceptable risk threshold.
   fidelity: high
@@ -21078,7 +21132,7 @@ senses:
   surface_forms:
   - smooth
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: contextual_surface_texture_smooth
   definition: The material bearer's physical surface irregularity in the contextually
     selected surface region and at the selected scale is below the local contextual
@@ -21188,7 +21242,7 @@ senses:
   surface_forms:
   - stop
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: cessation
   definition: Terminate an active occurrence or movement.
   fidelity: high
@@ -21240,7 +21294,7 @@ senses:
   surface_forms:
   - think
   route: gap
-  target_id:
+  target_id: 
   sense_key: generic_cognition
   definition: Engage in cognition not limited to model revision or attention.
   fidelity: high
@@ -21278,7 +21332,7 @@ senses:
   surface_forms:
   - transport
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: caused_target_movement
   definition: Cause a distinct target to move through a route toward a destination.
   fidelity: high
@@ -21290,7 +21344,7 @@ senses:
   surface_forms:
   - 'true'
   route: gap
-  target_id:
+  target_id: 
   sense_key: truth_value
   definition: Satisfying a truth condition.
   fidelity: high
@@ -21495,7 +21549,7 @@ senses:
   surface_forms:
   - wait
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: deferred_action
   definition: Remain without actualizing a pending process until a condition holds.
   fidelity: high
@@ -21524,7 +21578,7 @@ senses:
   surface_forms:
   - water
   route: gap
-  target_id:
+  target_id: 
   sense_key: chemical_substance
   definition: The substance H2O under ordinary reference conditions.
   fidelity: high
@@ -21536,7 +21590,7 @@ senses:
   surface_forms:
   - wide
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: contextual_physical_width_wide
   definition: The material bearer's lateral physical extent along a contextually selected
     transverse axis and section is above the local contextual wide standard. The selected
@@ -21956,7 +22010,7 @@ senses:
   - desires
   - desiring
   route: gap
-  target_id:
+  target_id: 
   sense_key: desire
   definition: A preference or desire for a state, object, or event.
   fidelity: gap
@@ -21972,7 +22026,7 @@ senses:
   - excited
   - pleased
   route: gap
-  target_id:
+  target_id: 
   sense_key: positive_affect
   definition: A positively valenced affective state.
   fidelity: gap
@@ -21988,7 +22042,7 @@ senses:
   - crying
   - lonely
   route: gap
-  target_id:
+  target_id: 
   sense_key: negative_affect
   definition: A negatively valenced affective state characterized by sorrow or low
     mood.
@@ -22005,7 +22059,7 @@ senses:
   - frustrated
   - annoyed
   route: gap
-  target_id:
+  target_id: 
   sense_key: anger_affect
   definition: An affective state of anger, irritation, or frustration.
   fidelity: gap
@@ -22021,7 +22075,7 @@ senses:
   - fearful
   - fear
   route: gap
-  target_id:
+  target_id: 
   sense_key: fear_affect
   definition: An affective state oriented toward perceived threat.
   fidelity: gap
@@ -22039,7 +22093,7 @@ senses:
   - liking
   - affection
   route: gap
-  target_id:
+  target_id: 
   sense_key: affection_or_preference
   definition: Affection for, attachment to, or positive preference toward a target.
   fidelity: gap
@@ -22059,7 +22113,7 @@ senses:
   - dancing
   - danced
   route: gap
-  target_id:
+  target_id: 
   sense_key: recreational_activity
   definition: Activity undertaken primarily for recreation, enjoyment, or social engagement.
   fidelity: gap
@@ -22080,7 +22134,7 @@ senses:
   - drank
   - drunk
   route: gap
-  target_id:
+  target_id: 
   sense_key: ingestion
   definition: Taking nutritive material into a living body.
   fidelity: gap
@@ -22097,7 +22151,7 @@ senses:
   - treat
   - water
   route: gap
-  target_id:
+  target_id: 
   sense_key: nutritive_referent
   definition: A labeled nutritive or hydrating referent whose specific semantics are
     not lexicalized in Era Zero.
@@ -22117,7 +22171,7 @@ senses:
   - bandage
   - brush
   route: gap
-  target_id:
+  target_id: 
   sense_key: game_object_referent
   definition: A labeled game or care object whose specific object class is not lexicalized
     in Era Zero.
@@ -22135,7 +22189,7 @@ senses:
   - stamina
   - focus
   route: gap
-  target_id:
+  target_id: 
   sense_key: game_status_measure
   definition: A game-specific measured status whose scale and unit require an explicit
     measurement schema.
@@ -22150,7 +22204,7 @@ senses:
   - messy
   - filthy
   route: gap
-  target_id:
+  target_id: 
   sense_key: cleanliness_deficit
   definition: A material cleanliness condition below the contextually accepted threshold.
   fidelity: gap
@@ -22164,7 +22218,7 @@ senses:
   - satisfied
   - clean
   route: gap
-  target_id:
+  target_id: 
   sense_key: satisfied_game_status
   definition: A game-specific care measure at or above its contextually accepted threshold.
   fidelity: gap
@@ -22178,7 +22232,7 @@ senses:
   - coder
   - developer
   route: label
-  target_id:
+  target_id: 
   sense_key: labeled_person_occupation
   definition: A person referent preserved by a phonemic label; the occupation is not
     asserted unless separately composed.
@@ -22225,7 +22279,7 @@ senses:
   - maximum
   - minimum
   route: gap
-  target_id:
+  target_id: 
   sense_key: game_measure_level
   definition: A qualitative position on a game-specific measured scale.
   fidelity: gap
@@ -22239,7 +22293,7 @@ senses:
   - let's
   - lets
   route: grammar
-  target_id:
+  target_id: 
   sense_key: permissive_or_cohortative_clause
   definition: A permissive or first-person-group imperative construction requiring
     clause and participant structure.
@@ -22304,7 +22358,7 @@ senses:
   - using
   - used
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: instrumental_use_relation
   definition: An entity participates as the instrument or resource by which a separately
     identified action is performed.
@@ -22318,7 +22372,7 @@ senses:
   - delete
   - deletes
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: requested_information_deletion
   definition: A requested operation whose intended result is that a selected information
     object is no longer retained by the addressed system.
@@ -22336,7 +22390,7 @@ senses:
   - was being deleted
   - were being deleted
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: active_information_deletion
   definition: An ongoing operation whose intended result is that a selected information
     object is no longer retained by the addressed system.
@@ -22354,7 +22408,7 @@ senses:
   - was deleted
   - were deleted
   route: semantic_ir
-  target_id:
+  target_id: 
   sense_key: completed_information_deletion
   definition: A completed operation whose result is that a selected information object
     is no longer retained by the addressed system.

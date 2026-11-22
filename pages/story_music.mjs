@@ -4,16 +4,16 @@ import {renderLexicalOccurrences} from './bound_compounds.mjs?v=partial-word-flo
 import {deicticReference} from './references.mjs';
 import {validStorySlots,savedQualityLabel} from './story_saved_adjectives.mjs?v=partial-word-flow-1';
 import {notesFromMidi} from './performance_codec.mjs?v=partial-word-flow-1';
-import {scoreKnownValue} from './known_value.mjs?v=partial-word-flow-2';
-import {composeFaultCorrection,describeFaultCorrection} from './fault_correction.mjs?v=partial-word-flow-2';
+import {scoreKnownValue} from './known_value.mjs?v=physical-placement-1';
+import {composeFaultCorrection,describeFaultCorrection} from './fault_correction.mjs?v=physical-placement-1';
 import {describeClaim,describeRuntime} from './meaning_readback.mjs?v=field-repairs-1';
 import {everydayMeaning} from './everyday.mjs?v=partial-word-flow-1';
-import {scoreRoleReference,readRoleReference} from './dictionary_clause_music.mjs?v=partial-word-flow-2';
+import {scoreRoleReference,readRoleReference} from './dictionary_clause_music.mjs?v=physical-placement-1';
 import {informationMusic} from './information_music.mjs?v=partial-word-flow-1';
 import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
 import {midiFromFormal,midiFromScheduledEvents} from './engine.mjs?v=partial-word-flow-1';
-import {storyWords,storyDependencies} from './story_words.mjs?v=information-vocabulary-1';
-import {storyRoles,storyPropertyIds,needsState} from './story_readings.mjs?v=partial-word-flow-2';
+import {storyWords,storyDependencies} from './story_words.mjs?v=physical-placement-1';
+import {storyRoles,storyPropertyIds,needsState} from './story_readings.mjs?v=physical-placement-1';
 import {ERASURE,erasureLabel,scoreErasure,readErasure} from './information_operations.mjs?v=information-operations-1';
 
 const feltTargets=new Map(FELT_CONDITIONS.map(f=>[f.predicate,f]));
@@ -234,6 +234,7 @@ export function decodeStoryMidi(bytes,atoms,adjectives) {
         return {role,...member(n.children)};
       });
       if(!storyRoles(word.id).some(signature=>signature.join('/')===args.map(a=>a.role).join('/')))invalid();
+      if(catalog.get(word.id)?.word==='put' && [args[1],...args[1].alternatives||[]].some(a=>a.entity===args[0].entity||a.entity===args[2].entity))invalid();
       const condition=stateNode?readProperty(stateNode,args.find(a=>a.role==='bearer').entity):null;
       if(quantifier&&!entities[args[0].entity].plural)invalid();
       events.push({predicate:word.id,arguments:args,scopes:modifiers,quantifier,negated_quantifier,...(condition?{condition}:{})});

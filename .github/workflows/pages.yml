@@ -46,6 +46,8 @@ jobs:
           node tests/information_erasure_sentences_test.mjs
           node tests/information_vocabulary_test.mjs
           node tests/physical_holding_surface_test.mjs
+          node tests/physical_placement_test.mjs
+          ruby tests/placement_dictionary_test.rb
           node tests/contextual_width_test.mjs
           node tests/contextual_group_inverse_test.mjs
           node tests/sentence_scope_reliability_test.mjs

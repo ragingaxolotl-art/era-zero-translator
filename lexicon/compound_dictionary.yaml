@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 117
+  entry_count: 118
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -2724,6 +2724,123 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 61bfb0de7a1e9d7f5b98172517f8145bf2603c26ec4ed8da6b1149474901b518
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - kind: compound_ref
+    compound_id: CMP:82dc9c681fbaf7944cb7b85b
+    definition_version: 1.0.0
+    node_id: q1
+  - kind: root
+    root_id: MOV:110
+    node_id: h
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - Reuse the exact approved caused-displacement compound; its physical actor and
+    displaced material bearer are the outer actor and target.
+  - MOV:110's mover is that same target, and its target position is the outer destination.
+    The movement and arrival share one episode and spatial frame.
+  - The target is distinct from the actor and from its destination referent. A destination
+    identified by a landmark denotes its contextually specified place; neither contact
+    nor being inside or on that landmark is inferred.
+  - The physical influence belongs to the causal movement phase; it need not persist
+    after arrival. Arrival does not imply release, support, containment or a transfer
+    of custody.
+  - Tense, negation, modality, aspect and runtime scope the whole placement. They
+    do not leave the nested displacement or arrival independently asserted.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: caused_physical_placement_at_a_destination
+    sound_code: 85
+    added_definition: An actor physically displaces a distinct material target so
+      that this same target completes its arrival at a specified destination position
+      in the same spatial frame. The nested caused-displacement event and MOV:110
+      describe the causal movement and its arrival endpoint within one placement episode;
+      they do not describe two unrelated movers or destinations. The outer actor supplies
+      the nested physical influence, the outer target is its displaced bearer and
+      the arriving mover, and the outer destination supplies the arrival position.
+      The destination may be a place identified relative to a named landmark. Placement
+      does not itself assert support, containment, attachment, release of a grip,
+      ownership transfer, the actor's own arrival, an exact coordinate, a route, or
+      continued presence after the endpoint. Ongoing aspect views the placement internally
+      without asserting a completed arrival. This physical sense excludes assigning
+      a value, storing a digital item, ranking a competitor, or expressing an idea.
+    excludes:
+    - Movement that does not reach the specified destination in a completed assertion
+    - Holding, lowering or releasing an object without the specified placement result
+    - Being at a place without a caused change of position
+    - Support, containment, contact, ownership, duration or the actor's arrival inferred
+      from destination alone
+    - Digital storage, assignment, ranking or figurative placement
+  compound_id: CMP:64574c1a25d72a89aafc46ef
+  content_digest: 64574c1a25d72a89aafc46efca01944360f710b81dcfdb6b6652d37f657665ac
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-22'
+  display_title: caused physical placement at a destination
+  english_glosses:
+  - caused physical placement at a destination
+  invariant_definition: An actor physically displaces a distinct material target so
+    that this same target completes its arrival at a specified destination position
+    in the same spatial frame. The nested caused-displacement event and MOV:110 describe
+    the causal movement and its arrival endpoint within one placement episode; they
+    do not describe two unrelated movers or destinations. The outer actor supplies
+    the nested physical influence, the outer target is its displaced bearer and the
+    arriving mover, and the outer destination supplies the arrival position. The destination
+    may be a place identified relative to a named landmark. Placement does not itself
+    assert support, containment, attachment, release of a grip, ownership transfer,
+    the actor's own arrival, an exact coordinate, a route, or continued presence after
+    the endpoint. Ongoing aspect views the placement internally without asserting
+    a completed arrival. This physical sense excludes assigning a value, storing a
+    digital item, ranking a competitor, or expressing an idea.
+  boundaries:
+    includes: An actor physically displaces a distinct material target so that this
+      same target completes its arrival at a specified destination position in the
+      same spatial frame. The nested caused-displacement event and MOV:110 describe
+      the causal movement and its arrival endpoint within one placement episode; they
+      do not describe two unrelated movers or destinations. The outer actor supplies
+      the nested physical influence, the outer target is its displaced bearer and
+      the arriving mover, and the outer destination supplies the arrival position.
+      The destination may be a place identified relative to a named landmark. Placement
+      does not itself assert support, containment, attachment, release of a grip,
+      ownership transfer, the actor's own arrival, an exact coordinate, a route, or
+      continued presence after the endpoint. Ongoing aspect views the placement internally
+      without asserting a completed arrival. This physical sense excludes assigning
+      a value, storing a digital item, ranking a competitor, or expressing an idea.
+    excludes: Movement that does not reach the specified destination in a completed
+      assertion; Holding, lowering or releasing an object without the specified placement
+      result; Being at a place without a caused change of position; Support, containment,
+      contact, ownership, duration or the actor's arrival inferred from destination
+      alone; Digital storage, assignment, ranking or figurative placement
+  collision_audit: reviews/placement_vocabulary_2026_11_22.md; exact dependency versions,
+    explicit phase and participant constraints, and convention 85 preserve this distinction.
+  confidence: high
+  approval_record: migrations/placement_vocabulary_2026_11_22.yaml
+  approval_basis: Author semantic review under the user-directed translator completion
+    goal; reviews/placement_vocabulary_2026_11_22.md. Not independent linguistic validation
+    or separate user approval of each definition.
+  examples:
+    ordinary: Nora put the box at the gate.
+    technical: Reuse the exact approved caused-displacement compound; its physical
+      actor and displaced material bearer are the outer actor and target. MOV:110's
+      mover is that same target, and its target position is the outer destination.
+      The movement and arrival share one episode and spatial frame. The target is
+      distinct from the actor and from its destination referent. A destination identified
+      by a landmark denotes its contextually specified place; neither contact nor
+      being inside or on that landmark is inferred. The physical influence belongs
+      to the causal movement phase; it need not persist after arrival. Arrival does
+      not imply release, support, containment or a transfer of custody. Tense, negation,
+      modality, aspect and runtime scope the whole placement. They do not leave the
+      nested displacement or arrival independently asserted.
+    future_compound: Reuse this placement with a shared target before adding containment,
+      surface support, release, an exact coordinate or a maintained endpoint state.
+    counterexample: Nora moved the box toward the gate, but it never arrived there.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 64574c1a25d72a89aafc46efca01944360f710b81dcfdb6b6652d37f657665ac
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
