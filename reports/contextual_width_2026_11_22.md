@@ -20,3 +20,7 @@ Detailed results, the earlier failures, screenshots and integration records are 
 Numerical width, wider/narrower comparisons, degree words, aperture clearance and width-modified noun phrases remain unsupported. At this revision, combined contextual adjective clauses can render but their complete inverse remains unavailable; the interface says **score decoding unverified**. Single-clause success does not establish that broader case. General recorded-audio recovery and the [full translator plan](../docs/full-translator-next-steps.md) remain open.
 
 All eight required release gates pass at the same implementation revision. Publication is recorded after deployment.
+
+## Live publication
+
+PR 23 is merged and deployed on both sites. [Main deployment](https://github.com/ragingaxolotl-art/era-zero-translator/actions/runs/45078333877) and [Lore deployment](https://github.com/ragingaxolotl-art/cyber-pet-lore/actions/runs/45077811248) succeeded. Each live site passed 12 layouts, eight independently decoded downloads and 12 boundary checks. The first main deployment passed validation but failed because Pages could not find its uploaded artifact; a fresh workflow completed without a code change.
