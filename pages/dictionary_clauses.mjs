@@ -39,6 +39,36 @@ function inflections(phrase) {
   return {base:phrase,third:third+tail,past:(pastForms[verb]||past)+tail,progressive:stem+'ing'+tail};
 }
 
+// Recognition is separate from having a composer for a particular sentence.
+// Exact forms of an existing meaning must not become a new-word alias picker
+// just because its argument structure, voice or aspect is unsupported.
+const recognizedCache=new WeakMap();
+function recognizedPredicateForms(authority){
+  const cached=recognizedCache.get(authority);
+  if(cached&&cached.local===authority.local_senses)return cached.forms;
+  const forms=new Set(),verbSeeds=new Set();
+  for(const sense of [...(authority.local_senses||[]),...(authority.game_story_senses||[]),...authority.senses]){
+    if(!['verb','adjective'].includes(sense.part_of_speech)||!['atom','compound','semantic_ir','grammar'].includes(sense.route))continue;
+    for(const surface of [sense.lemma,...(sense.surface_forms||[])]){
+      const form=normalized(surface);forms.add(form);
+      if(sense.part_of_speech==='verb'&&/^[a-z-]+(?: [a-z-]+)?$/.test(form)&&
+          (!form.includes(' ')||particles.has(form.split(' ')[1])))verbSeeds.add(form);
+    }
+  }
+  const derived=new Set([...verbSeeds].flatMap(seed=>Object.values(inflections(seed)).filter(form=>form!==seed)));
+  for(const seed of verbSeeds)if(!derived.has(seed)&&!/(?:ed|ing)$/.test(seed)){
+    for(const form of Object.values(inflections(seed)))forms.add(form);
+  }
+  recognizedCache.set(authority,{local:authority.local_senses,forms});return forms;
+}
+
+export function recognizedClausePredicate(input,authority){
+  const syntax=clauseSyntax(input);if(!syntax)return null;
+  const tokens=syntax.tail.split(' '),length=phrasalVerbAt(tokens.map(normalized),0)?2:1;
+  const surface=tokens.slice(0,length).join(' ');
+  return recognizedPredicateForms(authority).has(normalized(surface))?surface:null;
+}
+
 function subjectAndTail(text) {
   const m=/^("[^"\n]+"|(?:the|this|that|a|an) [a-z]+(?:-[a-z]+)*|[a-z]+)\s+(.+)$/i.exec(text);
   if (!m) return null;
@@ -211,6 +241,9 @@ export function dictionaryClausePlan(input,authority,{offerDefinition=false,pref
   }
   if(!readings.length)return null;
   const preferred=readings.findIndex(r=>matchingChoice(preferences,r)?.target===r.sense.target_id);
+  // A prior explicit personal definition can deliberately use the same spelling.
+  // Without one, do not offer unrelated meanings for an already defined word.
+  if(needsDefinition&&preferred<0&&recognizedClausePredicate(input,authority))return null;
   if(preferred>=0){
     const reading=readings[preferred],choice=matchingChoice(preferences,reading);
     const root=choice.root??choice.target;

@@ -1,4 +1,4 @@
-import {dictionaryRoles} from './dictionary_clauses.mjs?v=information-vocabulary-1';
+import {dictionaryRoles} from './dictionary_clauses.mjs?v=sentence-diagnostics-1';
 import {contextualContentReference} from './contextual_content.mjs';
 import {informationMusic} from './information_music.mjs?v=meaning-reliability-1';
 import {informationFrame} from './information_passage_frames.mjs?v=field-repairs-1';

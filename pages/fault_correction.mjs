@@ -1,5 +1,5 @@
-import {clauseSyntax} from './dictionary_clauses.mjs?v=information-vocabulary-1';
-import {scoreRoleReference,readRoleReference} from './dictionary_clause_music.mjs?v=information-vocabulary-1';
+import {clauseSyntax} from './dictionary_clauses.mjs?v=sentence-diagnostics-1';
+import {scoreRoleReference,readRoleReference} from './dictionary_clause_music.mjs?v=sentence-diagnostics-1';
 import {midiFromScheduledEvents} from './engine.mjs';
 import {informationMusic} from './information_music.mjs?v=meaning-reliability-1';
 import {encodeName} from './names.mjs';
