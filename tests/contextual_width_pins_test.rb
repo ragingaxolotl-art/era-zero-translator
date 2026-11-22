@@ -7,7 +7,13 @@ class ContextualWidthPinsTest < Minitest::Test
     old=rows.select { |r| source.fetch('preserved_ids').include?(r.fetch('sense_id')) }
     assert_equal source.fetch('preserved_ids').sort,old.map { |r| r.fetch('sense_id') }.sort
     assert_equal source.fetch('before_fingerprint'),v.fingerprint(old)
-    assert_equal m.fetch('compound_fingerprint'),v.fingerprint(v.load_yaml('lexicon/compound_dictionary.yaml').fetch('entries'))
+    # The earlier sense records already pin the complete dictionary's canonical
+    # labels and IDs. Protect those meanings while permitting later additions.
+    compound_ids=old.select { |r| r['sense_key']=='canonical_compound_label' }.map { |r| r.fetch('target_id') }
+    refute_empty compound_ids
+    compounds=v.load_yaml('lexicon/compound_dictionary.yaml').fetch('entries').select { |r| compound_ids.include?(r.fetch('compound_id')) }
+    assert_equal compound_ids.sort,compounds.map { |r| r.fetch('compound_id') }.sort
+    assert_equal m.fetch('compound_fingerprint'),v.fingerprint(compounds)
     norms=v.load_yaml('spec/contextual_scalar_standard_1.0.yaml').fetch('norms')
     m.fetch('preserved_norms').each { |name,value| assert_equal value,norms.fetch(name) }
     m.fetch('new_norms').each { |name,value| assert_equal value,norms.fetch(name) }
