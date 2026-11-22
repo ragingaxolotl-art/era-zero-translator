@@ -4,9 +4,11 @@ Public browser release: **https://ragingaxolotl-art.github.io/era-zero-translato
 
 This repository contains both the canonical Ruby application/API and a deterministic browser-native GitHub Pages release.
 
+**Overall translator status: unfinished.** The [November 22 language and music audit](reports/full_language_music_audit_2026_11_22.md) records whole-sentence gaps, a scope-loss defect, mobile layout problems and tested musical shortening options. The [ordered completion plan](docs/full-translator-next-steps.md) distinguishes the delivered first release from the broader goal.
+
 ## Translate a sentence or build a word
 
-Try “I swim” or “Pip carries the heavy box to Ada” in the browser. Choose the intended reading and play the resulting music. For an unfamiliar action or quality, use **Find or build this meaning**. You can save a word, reuse it inside another compound, and translate your original sentence with it. The current dictionary includes 324 roots, 76 approved compounds and 497 indexed senses. It supports specific English constructions and shows gaps when it cannot preserve the whole sentence. [Compound builder](https://ragingaxolotl-art.github.io/era-zero-translator/compound-builder.html) · [Examples, verification, and limits](docs/first-release-status.md)
+Try “I swim” or “Pip carries the heavy box to Ada” in the browser. Choose the intended reading and play the resulting music. For an unfamiliar action or quality, use **Find or build this meaning**. You can save a word, reuse it inside another compound, and translate your original sentence with it. The current dictionary includes 324 roots, 107 approved compounds and 560 indexed senses. It supports specific English constructions and shows gaps when it cannot preserve the whole sentence. [Compound builder](https://ragingaxolotl-art.github.io/era-zero-translator/compound-builder.html) · [Examples, verification, and limits](docs/first-release-status.md)
 
 ## Story and dialogue readings
 

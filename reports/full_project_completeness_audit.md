@@ -1,12 +1,14 @@
-# Full Project Completeness and Provenance Audit
+# Release Inventory and Source-Reference Consistency
 
-Status: **PASS**
+Inventory/reference checks: **PASS**
+
+**Full translator completion is not established by this check.** It does not test intended whole-sentence meanings, general language coverage, recorded-audio recovery or the contents of every cited source. See the [November 22 language/music audit](full_language_music_audit_2026_11_22.md) and [completion plan](../docs/full-translator-next-steps.md).
 
 - Checks passed: **11**
 - Checks failed: **0**
-- Audited: **2026-11-15**
+- Audited: **2026-11-22**
 
-This audit reconciles the browser release with the canonical lexicon, compound dictionary, English index, current gate status, original shared conversation, integrated Google document, and current development-conversation decisions.
+These checks compare the current inventories and recorded release metadata, verify expected source-reference fields, and check the listed authority files exist. They do not reconcile every historical source or certify the broader translator goal.
 
 ## PASS — 324 canonical atoms
 
@@ -32,17 +34,17 @@ source corpus preserved separately with immutable source IDs
 
 11 indexed gaps
 
-## PASS — all planned gates complete
+## PASS — recorded release gates marked complete
 
-complete_all_planned_gates
+complete_all_planned_gates describes legacy implementation gates, not the full-language acceptance plan
 
-## PASS — current progress flags
+## PASS — recorded release progress flags
 
-no completed layer is still marked unstarted
+readiness metadata agrees with this release's inventory and started-feature flags; the flags do not prove arbitrary English support
 
-## PASS — shared conversation fingerprint
+## PASS — recorded shared conversation fingerprint
 
-313 nodes / 129 turns / fixed SHA-256
+metadata records 313 nodes / 129 turns / the expected SHA-256; this check does not recover missing historical content
 
 ## PASS — primary source links
 
@@ -54,4 +56,4 @@ semantic_authority_status.md, lexicon/semantic_authority.yaml, spec/canonical_sp
 
 ## Product boundary
 
-The interface accepts any phrase, exposes every indexed option, and preserves unfamiliar terms as EZNAME phonemic labels. A phonemic label identifies a surface form; it is not a fabricated semantic translation. Free-form multi-clause semantic composition remains constrained by the approved IR and must not be guessed.
+Unfamiliar nouns and names may use EZNAME sound labels; an unknown verb or adjective requires a defined meaning. A sound label does not establish lexical meaning. Accepting text or resolving a dictionary entry does not prove that the complete intended sentence was translated. Broader sentence composition and independent recovery require their own evidence.

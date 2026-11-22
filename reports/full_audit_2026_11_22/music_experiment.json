@@ -1,0 +1,427 @@
+{
+  "profile": "DBA-FRAME-CHORD-EXPERIMENT-1",
+  "alphabet_sha256": "1769776f3a89bed209f267cd954cf203aa82501c952b5bb1fd1b51b65ea284e4",
+  "limitations": [
+    "Research prototype only, absent from deployed site.",
+    "No physical microphone decoding of this profile has been established.",
+    "Exact MIDI inversion is not an audio robustness or subjective musical-quality result.",
+    "Names, convention IDs and personal-word frames remain serial. Existing runtime, contour and root distinctions are preserved."
+  ],
+  "alphabet_cases": 3234,
+  "corruption_checks": [
+    {
+      "mutation": "drop_voice",
+      "rejected": true
+    },
+    {
+      "mutation": "detune_voice",
+      "rejected": true
+    },
+    {
+      "mutation": "wrong_duration",
+      "rejected": true
+    },
+    {
+      "mutation": "missing_second_chord",
+      "rejected": true
+    }
+  ],
+  "results": [
+    {
+      "id": "audit-01",
+      "beats": 0.25,
+      "frame_count": 13,
+      "melody_seconds": 47.375,
+      "compact_seconds": 34.875,
+      "experimental_seconds": 29.875,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-01-frame-16th.mid"
+    },
+    {
+      "id": "audit-01",
+      "beats": 0.5,
+      "frame_count": 13,
+      "melody_seconds": 47.375,
+      "compact_seconds": 34.875,
+      "experimental_seconds": 33.125,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-01-frame-8th.mid"
+    },
+    {
+      "id": "audit-02",
+      "beats": 0.25,
+      "frame_count": 18,
+      "melody_seconds": 66,
+      "compact_seconds": 51,
+      "experimental_seconds": 43.875,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-02-frame-16th.mid"
+    },
+    {
+      "id": "audit-02",
+      "beats": 0.5,
+      "frame_count": 18,
+      "melody_seconds": 66,
+      "compact_seconds": 51,
+      "experimental_seconds": 48.375,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-02-frame-8th.mid"
+    },
+    {
+      "id": "audit-05",
+      "beats": 0.25,
+      "frame_count": 16,
+      "melody_seconds": 39.25,
+      "compact_seconds": 34.25,
+      "experimental_seconds": 27.875,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-05-frame-16th.mid"
+    },
+    {
+      "id": "audit-05",
+      "beats": 0.5,
+      "frame_count": 16,
+      "melody_seconds": 39.25,
+      "compact_seconds": 34.25,
+      "experimental_seconds": 31.875,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-05-frame-8th.mid"
+    },
+    {
+      "id": "audit-06",
+      "beats": 0.25,
+      "frame_count": 16,
+      "melody_seconds": 39.25,
+      "compact_seconds": 34.25,
+      "experimental_seconds": 27.875,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-06-frame-16th.mid"
+    },
+    {
+      "id": "audit-06",
+      "beats": 0.5,
+      "frame_count": 16,
+      "melody_seconds": 39.25,
+      "compact_seconds": 34.25,
+      "experimental_seconds": 31.875,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-06-frame-8th.mid"
+    },
+    {
+      "id": "audit-07",
+      "beats": 0.25,
+      "frame_count": 13,
+      "melody_seconds": 47.125,
+      "compact_seconds": 34.625,
+      "experimental_seconds": 29.875,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-07-frame-16th.mid"
+    },
+    {
+      "id": "audit-07",
+      "beats": 0.5,
+      "frame_count": 13,
+      "melody_seconds": 47.125,
+      "compact_seconds": 34.625,
+      "experimental_seconds": 33.125,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-07-frame-8th.mid"
+    },
+    {
+      "id": "audit-08",
+      "beats": 0.25,
+      "frame_count": 20,
+      "melody_seconds": 67.5,
+      "compact_seconds": 52.5,
+      "experimental_seconds": 44.875,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-08-frame-16th.mid"
+    },
+    {
+      "id": "audit-08",
+      "beats": 0.5,
+      "frame_count": 20,
+      "melody_seconds": 67.5,
+      "compact_seconds": 52.5,
+      "experimental_seconds": 49.875,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-08-frame-8th.mid"
+    },
+    {
+      "id": "audit-09",
+      "beats": 0.25,
+      "frame_count": 18,
+      "melody_seconds": 66,
+      "compact_seconds": 51,
+      "experimental_seconds": 43.875,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-09-frame-16th.mid"
+    },
+    {
+      "id": "audit-09",
+      "beats": 0.5,
+      "frame_count": 18,
+      "melody_seconds": 66,
+      "compact_seconds": 51,
+      "experimental_seconds": 48.375,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-09-frame-8th.mid"
+    },
+    {
+      "id": "audit-10",
+      "beats": 0.25,
+      "frame_count": 20,
+      "melody_seconds": 68,
+      "compact_seconds": 53,
+      "experimental_seconds": 45.625,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-10-frame-16th.mid"
+    },
+    {
+      "id": "audit-10",
+      "beats": 0.5,
+      "frame_count": 20,
+      "melody_seconds": 68,
+      "compact_seconds": 53,
+      "experimental_seconds": 50.625,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-10-frame-8th.mid"
+    },
+    {
+      "id": "audit-13",
+      "beats": 0.25,
+      "frame_count": 30,
+      "melody_seconds": 72.625,
+      "compact_seconds": 62.625,
+      "experimental_seconds": 50.875,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-13-frame-16th.mid"
+    },
+    {
+      "id": "audit-13",
+      "beats": 0.5,
+      "frame_count": 30,
+      "melody_seconds": 72.625,
+      "compact_seconds": 62.625,
+      "experimental_seconds": 58.375,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-13-frame-8th.mid"
+    },
+    {
+      "id": "audit-14",
+      "beats": 0.25,
+      "frame_count": 30,
+      "melody_seconds": 72.625,
+      "compact_seconds": 62.625,
+      "experimental_seconds": 50.875,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-14-frame-16th.mid"
+    },
+    {
+      "id": "audit-14",
+      "beats": 0.5,
+      "frame_count": 30,
+      "melody_seconds": 72.625,
+      "compact_seconds": 62.625,
+      "experimental_seconds": 58.375,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-14-frame-8th.mid"
+    },
+    {
+      "id": "audit-16",
+      "beats": 0.25,
+      "frame_count": 28,
+      "melody_seconds": 70.375,
+      "compact_seconds": 60.375,
+      "experimental_seconds": 49.875,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-16-frame-16th.mid"
+    },
+    {
+      "id": "audit-16",
+      "beats": 0.5,
+      "frame_count": 28,
+      "melody_seconds": 70.375,
+      "compact_seconds": 60.375,
+      "experimental_seconds": 56.875,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-16-frame-8th.mid"
+    },
+    {
+      "id": "audit-24",
+      "beats": 0.25,
+      "frame_count": 26,
+      "melody_seconds": 67.75,
+      "compact_seconds": 55.25,
+      "experimental_seconds": 44.625,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-24-frame-16th.mid"
+    },
+    {
+      "id": "audit-24",
+      "beats": 0.5,
+      "frame_count": 26,
+      "melody_seconds": 67.75,
+      "compact_seconds": 55.25,
+      "experimental_seconds": 51.125,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-24-frame-8th.mid"
+    },
+    {
+      "id": "audit-25",
+      "beats": 0.25,
+      "frame_count": 2,
+      "melody_seconds": 27,
+      "compact_seconds": 22,
+      "experimental_seconds": 21.125,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-25-frame-16th.mid"
+    },
+    {
+      "id": "audit-25",
+      "beats": 0.5,
+      "frame_count": 2,
+      "melody_seconds": 27,
+      "compact_seconds": 22,
+      "experimental_seconds": 21.625,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-25-frame-8th.mid"
+    },
+    {
+      "id": "audit-26",
+      "beats": 0.25,
+      "frame_count": 2,
+      "melody_seconds": 27,
+      "compact_seconds": 22,
+      "experimental_seconds": 21.125,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-26-frame-16th.mid"
+    },
+    {
+      "id": "audit-26",
+      "beats": 0.5,
+      "frame_count": 2,
+      "melody_seconds": 27,
+      "compact_seconds": 22,
+      "experimental_seconds": 21.625,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-26-frame-8th.mid"
+    },
+    {
+      "id": "audit-44",
+      "beats": 0.25,
+      "frame_count": 4,
+      "melody_seconds": 17.75,
+      "compact_seconds": 10.25,
+      "experimental_seconds": 8.375,
+      "notes_restored": true,
+      "meaning_restored": null,
+      "path": "midi/audit-44-frame-16th.mid"
+    },
+    {
+      "id": "audit-44",
+      "beats": 0.5,
+      "frame_count": 4,
+      "melody_seconds": 17.75,
+      "compact_seconds": 10.25,
+      "experimental_seconds": 9.375,
+      "notes_restored": true,
+      "meaning_restored": null,
+      "path": "midi/audit-44-frame-8th.mid"
+    },
+    {
+      "id": "audit-46",
+      "beats": 0.25,
+      "frame_count": 4,
+      "melody_seconds": 19.25,
+      "compact_seconds": 16.75,
+      "experimental_seconds": 15.125,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-46-frame-16th.mid"
+    },
+    {
+      "id": "audit-46",
+      "beats": 0.5,
+      "frame_count": 4,
+      "melody_seconds": 19.25,
+      "compact_seconds": 16.75,
+      "experimental_seconds": 16.125,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-46-frame-8th.mid"
+    },
+    {
+      "id": "audit-48",
+      "beats": 0.25,
+      "frame_count": 28,
+      "melody_seconds": 75.75,
+      "compact_seconds": 65.75,
+      "experimental_seconds": 54.375,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-48-frame-16th.mid"
+    },
+    {
+      "id": "audit-48",
+      "beats": 0.5,
+      "frame_count": 28,
+      "melody_seconds": 75.75,
+      "compact_seconds": 65.75,
+      "experimental_seconds": 61.375,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-48-frame-8th.mid"
+    },
+    {
+      "id": "audit-49",
+      "beats": 0.25,
+      "frame_count": 11,
+      "melody_seconds": 44.125,
+      "compact_seconds": 33.625,
+      "experimental_seconds": 29.375,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-49-frame-16th.mid"
+    },
+    {
+      "id": "audit-49",
+      "beats": 0.5,
+      "frame_count": 11,
+      "melody_seconds": 44.125,
+      "compact_seconds": 33.625,
+      "experimental_seconds": 32.125,
+      "notes_restored": true,
+      "meaning_restored": true,
+      "path": "midi/audit-49-frame-8th.mid"
+    }
+  ]
+}

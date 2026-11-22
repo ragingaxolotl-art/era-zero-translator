@@ -1,0 +1,570 @@
+{
+  "timestamp": "2026-11-22T16:46:52.179Z",
+  "site": "http://127.0.0.1:8766/",
+  "viewport": 390,
+  "intentions_sha256": "ebaf840012a2e307213d6d611fca3def18d4ad418d06a4d0ee9900c4ae3fcb2d",
+  "decoder_inputs": "Downloaded MIDI and shared public atom and foundation dictionaries only. No text, expected IR, original event list, hashes or composer metadata.",
+  "results": [
+    {
+      "id": "audit-05",
+      "text": "Nora pushed Mira.",
+      "errors": [],
+      "initial": {
+        "summary": "One detail needed to play the whole line",
+        "text": "Nora pushed Mira.\n\nDoes “push” describe a physical action on Mira?\n\nMira pushed the gate.Another meaning",
+        "buttons": [
+          {
+            "text": "Mira pushed the gate.",
+            "disabled": false
+          },
+          {
+            "text": "Another meaning",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [
+        {
+          "button": "Mira pushed the gate."
+        }
+      ],
+      "final": {
+        "summary": "Whole story line ready",
+        "text": "Nora pushed Mira.\n\nAction 1 · In the past, the event or condition “Applies physical pressure against the target” holds. actor = Nora, target = Mira. Runtime [1] · active, valid or executing.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDIChange the reading",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          },
+          {
+            "text": "Change the reading",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-05-melody.mid",
+          "notes": 149,
+          "seconds": 39.25,
+          "chord_attacks": 0,
+          "sha256": "f9a32766fd268073dcb71240cf4a4ce11ec370be5614f5aee035476ba4e91e92"
+        },
+        "chords": {
+          "path": "midi/audit-05-chords.mid",
+          "notes": 147,
+          "seconds": 34.25,
+          "chord_attacks": 4,
+          "sha256": "33eb299977ae37bdbb0fc8897a3cb753100992fc77a242e2425abff54a1c8a37"
+        }
+      },
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "M",
+                "ER",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:9549f538a6224892d3aff0ea",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 10.5,
+        "phonemic": 13,
+        "convention_frame": 2.75,
+        "root": 7.25
+      },
+      "token_counts": {
+        "grammar": 16,
+        "phonemic": 2,
+        "convention_frame": 2,
+        "root": 2
+      },
+      "root_onset_seconds": 21.25
+    },
+    {
+      "id": "audit-06",
+      "text": "Mira pushed Nora.",
+      "errors": [],
+      "initial": {
+        "summary": "One detail needed to play the whole line",
+        "text": "Mira pushed Nora.\n\nDoes “push” describe a physical action on Nora?\n\nMira pushed the gate.Another meaning",
+        "buttons": [
+          {
+            "text": "Mira pushed the gate.",
+            "disabled": false
+          },
+          {
+            "text": "Another meaning",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [
+        {
+          "button": "Mira pushed the gate."
+        }
+      ],
+      "final": {
+        "summary": "Whole story line ready",
+        "text": "Mira pushed Nora.\n\nAction 1 · In the past, the event or condition “Applies physical pressure against the target” holds. actor = Mira, target = Nora. Runtime [1] · active, valid or executing.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDIChange the reading",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          },
+          {
+            "text": "Change the reading",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-06-melody.mid",
+          "notes": 149,
+          "seconds": 39.25,
+          "chord_attacks": 0,
+          "sha256": "9bb223f2bb26fa4709dd8718b17a2b9262e9b9fcbfde104cac17a8f4bbef3fa0"
+        },
+        "chords": {
+          "path": "midi/audit-06-chords.mid",
+          "notes": 147,
+          "seconds": 34.25,
+          "chord_attacks": 4,
+          "sha256": "36eaa1d1ffcd2cf047ab7b3970419f8534ffc003ef126e9e4a4b2511b90a6240"
+        }
+      },
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "M",
+                "ER",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:9549f538a6224892d3aff0ea",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 10.5,
+        "phonemic": 13,
+        "convention_frame": 2.75,
+        "root": 7.25
+      },
+      "token_counts": {
+        "grammar": 16,
+        "phonemic": 2,
+        "convention_frame": 2,
+        "root": 2
+      },
+      "root_onset_seconds": 21.25
+    },
+    {
+      "id": "audit-32",
+      "text": "Nora lifted the ban.",
+      "errors": [],
+      "initial": {
+        "summary": "One detail needed to play the whole line",
+        "text": "Nora lifted the ban.\n\nDoes “lift” describe a physical action on the ban?\n\nMira lifted the box.Another meaning",
+        "buttons": [
+          {
+            "text": "Mira lifted the box.",
+            "disabled": false
+          },
+          {
+            "text": "Another meaning",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [
+        {
+          "button": "Another meaning"
+        }
+      ],
+      "final": {
+        "summary": "This meaning has no whole-line score yet.",
+        "text": "Nora lifted the ban.\nChange the reading",
+        "buttons": [
+          {
+            "text": "Change the reading",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-35",
+      "text": "Nora wants water but does not need water.",
+      "errors": [],
+      "initial": {
+        "summary": "Desire, preference and knowing whether have draft meanings available. Their new sounds are still under review.",
+        "text": "Preview the complete sentence using draft vocabulary. Preference compares alternatives without asserting that either is wanted absolutely. Desire does not assert that the desired event happens. Knowing whether means knowing the answer, without asserting that the answer is yes. For “wants tea,” specify what should happen to the tea.\n\nPreview draft translation",
+        "buttons": [
+          {
+            "text": "Preview draft translation",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [
+        {
+          "button": "Preview draft translation"
+        }
+      ],
+      "final": {
+        "summary": "Nothing was translated.",
+        "text": "error\n\nSpecify the desired proposition; an object alone does not determine whether you mean drinking, possessing, or something else.",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-48",
+      "text": "Latch found the result. It found the context.",
+      "errors": [],
+      "initial": {
+        "summary": "One detail needed to play the whole line",
+        "text": "Latch found the result. It found the context.\n\nWhat does “It” refer to?\n\nLatch (reference 1)the result (reference 2)Name or noun phraseUse this referent",
+        "buttons": [
+          {
+            "text": "Latch (reference 1)",
+            "disabled": false
+          },
+          {
+            "text": "the result (reference 2)",
+            "disabled": false
+          },
+          {
+            "text": "Use this referent",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [
+        {
+          "button": "Latch (reference 1)"
+        }
+      ],
+      "final": {
+        "summary": "Whole story line ready",
+        "text": "Latch found the result. It found the context.\n\nAction 1 · In the past, the event or condition “Discovered something or found out where it was” holds. experiencer = Latch, target = the result. Action 2 · In the past, the event or condition “Discovered something or found out where it was” holds. experiencer = Latch, target = the context. “It” refers to Latch. Runtime [1] · active, valid or executing.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDIChange the reading",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          },
+          {
+            "text": "Change the reading",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-48-melody.mid",
+          "notes": 284,
+          "seconds": 75.75,
+          "chord_attacks": 0,
+          "sha256": "ae58d71bbc97a3fcea46bbaaf43af675ad80e762acba093053f6af63059bcfb6"
+        },
+        "chords": {
+          "path": "midi/audit-48-chords.mid",
+          "notes": 280,
+          "seconds": 65.75,
+          "chord_attacks": 8,
+          "sha256": "0e69fd0e80eebebbbffff276dcac4883ee339317ab239526016c3c30211bacca"
+        }
+      },
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "L",
+                "AE",
+                "CH"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "EH",
+                "S",
+                "UH",
+                "L",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "K",
+                "AA",
+                "N",
+                "T",
+                "EH",
+                "K",
+                "S",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:ec01f9b5c6eb3c5483bc3b72",
+            "arguments": [
+              {
+                "role": "experiencer",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          },
+          {
+            "predicate": "CMP:ec01f9b5c6eb3c5483bc3b72",
+            "arguments": [
+              {
+                "role": "experiencer",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 2,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 18.5,
+        "phonemic": 26,
+        "reference_mode": 1,
+        "convention_frame": 5.5,
+        "root": 14.5
+      },
+      "token_counts": {
+        "grammar": 28,
+        "phonemic": 3,
+        "reference_mode": 2,
+        "convention_frame": 4,
+        "root": 4
+      },
+      "root_onset_seconds": 37.75
+    }
+  ]
+}
