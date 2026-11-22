@@ -1,12 +1,12 @@
-import {validateUnderstandingAcquisition} from './understanding_acquisition.mjs';
-import {understandingMusicEvents,understandingFoundation,readUnderstandingTree} from './understanding_music.mjs';
-import {foundationPath} from './foundations.mjs';
-import {renderLexicalOccurrences} from './bound_compounds.mjs';
+import {validateUnderstandingAcquisition} from './understanding_acquisition.mjs?v=contextual-width-2';
+import {understandingMusicEvents,understandingFoundation,readUnderstandingTree} from './understanding_music.mjs?v=contextual-width-2';
+import {foundationPath} from './foundations.mjs?v=contextual-width-2';
+import {renderLexicalOccurrences} from './bound_compounds.mjs?v=contextual-width-2';
 import {acquisitionMusicEvent} from './acquisition_music_frames.mjs';
-import {grammarMarker} from './scheduler.mjs';
-import {midiFromScheduledEvents} from './engine.mjs';
+import {grammarMarker} from './scheduler.mjs?v=contextual-width-2';
+import {midiFromScheduledEvents} from './engine.mjs?v=contextual-width-2';
 import {validAcquisitionScopes,acquisitionScopeMarker} from './acquisition_scopes.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=contextual-width-2';
 export async function midiFromUnderstandingAcquisition(input,authority,{allowDraft=false,anchor=60}={}){
  const d=await validateUnderstandingAcquisition(input,{allowDraft}),formal={performance:{anchor_midi:anchor}};
  const [head]=await renderLexicalOccurrences({nodes:[{node_id:'acquisition',kind:'lexical_occurrence',target_type:'atom',target_id:'ORI:110',runtime_state:d.transition_runtime}],edges:[]},authority,{anchor});

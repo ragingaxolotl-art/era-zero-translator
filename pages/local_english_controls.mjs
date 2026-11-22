@@ -1,8 +1,8 @@
 import {localParticipantGroups} from './local_participant_groups.mjs';
-import {localWordPronounPlan,resolveLocalWordPronouns} from './local_compound_pronouns.mjs?v=physical-holding-1';
-import {localAdjectivePlan,composeLocalAdjective,localVerbPlan,localVerbCandidates,composeLocalVerb} from './local_compound_english.mjs?v=physical-holding-1';
-import {expandLocalCompound} from './local_compound_expansion.mjs';
-import {contextualContentReference} from './contextual_content.mjs';
+import {localWordPronounPlan,resolveLocalWordPronouns} from './local_compound_pronouns.mjs?v=contextual-width-2';
+import {localAdjectivePlan,composeLocalAdjective,localVerbPlan,localVerbCandidates,composeLocalVerb} from './local_compound_english.mjs?v=contextual-width-2';
+import {expandLocalCompound} from './local_compound_expansion.mjs?v=contextual-width-2';
+import {contextualContentReference} from './contextual_content.mjs?v=contextual-width-2';
 function describeInterpretation(plan) {
  const parts = [plan.speech_act === 'question' ? 'Question' : 'Statement', 'subject '+plan.subject];
  if (plan.object) parts.push(`object ${plan.object}`);

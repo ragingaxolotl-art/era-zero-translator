@@ -1,18 +1,18 @@
 // Shared strict semantic inverses; no expected sentence or predicate hint.
-import {decodeCareMidi} from './care_decoder.mjs';
-import {decodeLoveMidi} from './love_decoder.mjs?v=meaning-reliability-1';
-import {decodeSwimmingMidi} from './swimming_decoder.mjs';
-import {decodePhysicalEntryMidi} from './physical_entry_decoder.mjs';
-import {decodeRunningMidi} from './running_decoder.mjs';
-import {decodeSpatialRelationMidi} from './spatial_relation_decoder.mjs';
-import {decodePhysicalCustodyMidi,decodeCustodyAcquisitionMidi,decodeCustodyTransferMidi} from './custody_decoder.mjs';
-import {decodeCustodyDeliveryMidi} from './delivery_decoder.mjs';
-import {decodeNamedProcessMidi} from './named_process_decoder.mjs?v=field-repairs-1';
-import {decodePhysicalCarryingMidi,decodeDestinationCarryingMidi} from './carrying_decoder.mjs?v=field-repairs-1';
-import {decodeFeltConditionMidi} from './felt_decoder.mjs';
-import {decodeContextualStandardMidi} from './contextual_standard_decoder.mjs';
-import {decodeMaterialMeasurementMidi} from './material_measurement_decoder.mjs';
-import {decodePropertyComparisonMidi} from './property_comparison_decoder.mjs';
+import {decodeCareMidi} from './care_decoder.mjs?v=contextual-width-2';
+import {decodeLoveMidi} from './love_decoder.mjs?v=contextual-width-2';
+import {decodeSwimmingMidi} from './swimming_decoder.mjs?v=contextual-width-2';
+import {decodePhysicalEntryMidi} from './physical_entry_decoder.mjs?v=contextual-width-2';
+import {decodeRunningMidi} from './running_decoder.mjs?v=contextual-width-2';
+import {decodeSpatialRelationMidi} from './spatial_relation_decoder.mjs?v=contextual-width-2';
+import {decodePhysicalCustodyMidi,decodeCustodyAcquisitionMidi,decodeCustodyTransferMidi} from './custody_decoder.mjs?v=contextual-width-2';
+import {decodeCustodyDeliveryMidi} from './delivery_decoder.mjs?v=contextual-width-2';
+import {decodeNamedProcessMidi} from './named_process_decoder.mjs?v=contextual-width-2';
+import {decodePhysicalCarryingMidi,decodeDestinationCarryingMidi} from './carrying_decoder.mjs?v=contextual-width-2';
+import {decodeFeltConditionMidi} from './felt_decoder.mjs?v=contextual-width-2';
+import {decodeContextualStandardMidi} from './contextual_standard_decoder.mjs?v=contextual-width-2';
+import {decodeMaterialMeasurementMidi} from './material_measurement_decoder.mjs?v=contextual-width-2';
+import {decodePropertyComparisonMidi} from './property_comparison_decoder.mjs?v=contextual-width-2';
 const DECODERS=[decodeNamedProcessMidi,decodePhysicalCarryingMidi,decodeCareMidi,decodeLoveMidi,decodeSwimmingMidi,decodePhysicalEntryMidi,decodeRunningMidi,decodeSpatialRelationMidi,decodePhysicalCustodyMidi,decodeCustodyAcquisitionMidi,decodeCustodyTransferMidi,decodeCustodyDeliveryMidi,decodeDestinationCarryingMidi,decodeFeltConditionMidi,decodeContextualStandardMidi,decodeMaterialMeasurementMidi,decodePropertyComparisonMidi];
 export function decodeSupportedMeaningMidi(bytes,atoms){
  const accepted=[];
@@ -24,26 +24,26 @@ export function decodeSupportedMeaningMidi(bytes,atoms){
 // Draft meanings remain explicitly gated and never silently become canonical.
 export async function decodeSupportedMeaningWithDrafts(bytes,atoms,records,{allowDraft=false,allowConjunction=true,adjectives}={}){
  if(!allowDraft)return decodeSupportedMeaningMidi(bytes,atoms);
- const {decodeFoundationSentenceMidi}=await import('./foundation_semantic_decoder.mjs');
- const {decodeUnderstandingMidi}=await import('./understanding_music.mjs');
- const {decodeUnderstandingAcquisitionMidi}=await import('./understanding_acquisition_music.mjs');
- const {decodeDesiredDrinkingMidi}=await import('./desired_drinking_music.mjs');
- const {decodeDesiredAvailabilityMidi}=await import('./desired_availability_music.mjs');
- const {decodeDesiredOwnershipMidi}=await import('./desired_ownership_music.mjs');
- const {decodeCustodyOpportunityMidi}=await import('./custody_opportunity_music.mjs');
- const {decodeOwnershipMidi}=await import('./ownership_music.mjs');
- const {decodeDrinkingMidi}=await import('./drinking_music.mjs');
- const {decodePainPreferenceMidi}=await import('./pain_preference_music.mjs');
- const {decodePainComparisonMidi}=await import('./pain_comparison_music.mjs');
- const {decodePainStimulusMidi}=await import('./pain_stimulus_music.mjs');
- const {decodePainMidi}=await import('./pain_music.mjs');
- const {decodeCuriosityMidi}=await import('./curiosity_music.mjs');
- const {decodeRouteLearningMidi}=await import('./route_learning_music.mjs');
- const {decodeDictionaryClauseMidi}=await import('./dictionary_clause_music.mjs?v=physical-holding-1');
- const {decodeFaultCorrectionMidi}=await import('./fault_correction.mjs?v=physical-holding-1');
- const {decodeInformationPassageMidi}=await import('./information_passage.mjs');
- const {decodeKnownValueMidi}=await import('./known_value.mjs?v=physical-holding-1');
- const {decodeStoryMidi}=await import('./story_music.mjs?v=physical-holding-1');
+ const {decodeFoundationSentenceMidi}=await import('./foundation_semantic_decoder.mjs?v=contextual-width-2');
+ const {decodeUnderstandingMidi}=await import('./understanding_music.mjs?v=contextual-width-2');
+ const {decodeUnderstandingAcquisitionMidi}=await import('./understanding_acquisition_music.mjs?v=contextual-width-2');
+ const {decodeDesiredDrinkingMidi}=await import('./desired_drinking_music.mjs?v=contextual-width-2');
+ const {decodeDesiredAvailabilityMidi}=await import('./desired_availability_music.mjs?v=contextual-width-2');
+ const {decodeDesiredOwnershipMidi}=await import('./desired_ownership_music.mjs?v=contextual-width-2');
+ const {decodeCustodyOpportunityMidi}=await import('./custody_opportunity_music.mjs?v=contextual-width-2');
+ const {decodeOwnershipMidi}=await import('./ownership_music.mjs?v=contextual-width-2');
+ const {decodeDrinkingMidi}=await import('./drinking_music.mjs?v=contextual-width-2');
+ const {decodePainPreferenceMidi}=await import('./pain_preference_music.mjs?v=contextual-width-2');
+ const {decodePainComparisonMidi}=await import('./pain_comparison_music.mjs?v=contextual-width-2');
+ const {decodePainStimulusMidi}=await import('./pain_stimulus_music.mjs?v=contextual-width-2');
+ const {decodePainMidi}=await import('./pain_music.mjs?v=contextual-width-2');
+ const {decodeCuriosityMidi}=await import('./curiosity_music.mjs?v=contextual-width-2');
+ const {decodeRouteLearningMidi}=await import('./route_learning_music.mjs?v=contextual-width-2');
+ const {decodeDictionaryClauseMidi}=await import('./dictionary_clause_music.mjs?v=contextual-width-2');
+ const {decodeFaultCorrectionMidi}=await import('./fault_correction.mjs?v=contextual-width-2');
+ const {decodeInformationPassageMidi}=await import('./information_passage.mjs?v=contextual-width-2');
+ const {decodeKnownValueMidi}=await import('./known_value.mjs?v=contextual-width-2');
+ const {decodeStoryMidi}=await import('./story_music.mjs?v=contextual-width-2');
  const accepted=[];
  try{accepted.push(decodeKnownValueMidi(bytes,atoms));}catch{}
  try{accepted.push(decodeStoryMidi(bytes,atoms,adjectives));}catch{}
@@ -66,7 +66,7 @@ export async function decodeSupportedMeaningWithDrafts(bytes,atoms,records,{allo
  try{accepted.push(decodePainStimulusMidi(bytes,atoms,{allowDraft:true}));}catch{}
  try{accepted.push(decodePainMidi(bytes,atoms,{allowDraft:true}));}catch{}
  try{accepted.push(await decodeCuriosityMidi(bytes,atoms,records,{allowDraft:true}));}catch{}
- if(allowConjunction){const {decodeCognitiveConjunctionMidi}=await import('./cognitive_conjunction_music.mjs?v=physical-holding-1');try{accepted.push(await decodeCognitiveConjunctionMidi(bytes,atoms,records,{allowDraft:true}));}catch{}}
+ if(allowConjunction){const {decodeCognitiveConjunctionMidi}=await import('./cognitive_conjunction_music.mjs?v=contextual-width-2');try{accepted.push(await decodeCognitiveConjunctionMidi(bytes,atoms,records,{allowDraft:true}));}catch{}}
  if(accepted.length!==1)throw new Error('No unique supported canonical or draft semantic interpretation.');
  return accepted[0];
 }

@@ -1,8 +1,8 @@
-import {compactChordPerformance} from './compact_chords.mjs?v=state-adjectives-1';
-import {readSongLine} from './song_readback.mjs?v=physical-holding-1';
-import {compactChordMidi} from './compact_chords.mjs?v=state-adjectives-1';
-import {songMidi} from './song_lines.mjs?v=physical-holding-1';
-import {notesFromMidi} from './performance_codec.mjs';
+import {compactChordPerformance} from './compact_chords.mjs?v=contextual-width-2';
+import {readSongLine} from './song_readback.mjs?v=contextual-width-2';
+import {compactChordMidi} from './compact_chords.mjs?v=contextual-width-2';
+import {songMidi} from './song_lines.mjs?v=contextual-width-2';
+import {notesFromMidi} from './performance_codec.mjs?v=contextual-width-2';
 
 import {isSongStorageKey,readSongLines,newSongLine,saveSongLine,removeSongLine} from './song_storage.mjs?v=field-repairs-1';
 export function mountSongEditor({document,storage,player,download,getAtoms,getRecords,getAdjectives}) {

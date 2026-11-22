@@ -2,7 +2,7 @@ const PLURALS={lamps:'lamp',lanterns:'lantern',shelves:'shelf',sensors:'sensor',
 const SINGULARS=new Set(Object.values(PLURALS));
 const WORDS={zero:'0',one:'1',two:'2',three:'3',four:'4',five:'5',six:'6',seven:'7',eight:'8',nine:'9',ten:'10'};
 // A noun labels a referent; it does not need a semantic dictionary entry.
-const PROPERTY_WORDS = new Set('heavy light hot cold happy sad hungry thirsty tired curious bright dim rough smooth broken damaged active conscious dormant'.split(' '));
+const PROPERTY_WORDS = new Set('heavy light hot cold happy sad hungry thirsty tired curious bright dim rough smooth wide narrow broken damaged active conscious dormant'.split(' '));
 export function isAttributiveProperty(word, nextWord) {
  if (!nextWord || NON_HEADS.has(nextWord)) return false;
  return PROPERTY_WORDS.has(word) || (SINGULARS.has(nextWord) && /(?:ous|ful|less|ive|able|ible|ish|ary|ory)$/.test(word));

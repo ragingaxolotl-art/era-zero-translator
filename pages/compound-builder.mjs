@@ -1,9 +1,9 @@
-import {everydayMeaning} from './everyday.mjs';
+import {everydayMeaning} from './everyday.mjs?v=contextual-width-2';
 import {localCompoundExamples,queueLocalExample} from './local_compound_examples.mjs';
-import {mountRoleLinkControls} from './local_role_link_controls.mjs';
-import {createLocalCompoundPlayer} from './local_compound_player.mjs';
-import {mountLocalCompoundControls} from './local_compound_controls.mjs';
-import {loadLocalCompounds,saveLocalCompounds,addLocalCompound,importLocalCompounds,mergeLocalCompounds} from './local_compounds.mjs';
+import {mountRoleLinkControls} from './local_role_link_controls.mjs?v=contextual-width-2';
+import {createLocalCompoundPlayer} from './local_compound_player.mjs?v=contextual-width-2';
+import {mountLocalCompoundControls} from './local_compound_controls.mjs?v=contextual-width-2';
+import {loadLocalCompounds,saveLocalCompounds,addLocalCompound,importLocalCompounds,mergeLocalCompounds} from './local_compounds.mjs?v=contextual-width-2';
 import {ROLE_ORDER} from './roles.mjs';
 const $=id=>document.getElementById(id),node=(tag,text)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e;};
 let authority,registry,parts=[],busy=false,readRoleLinks=null,roleLinkSnapshot=null;

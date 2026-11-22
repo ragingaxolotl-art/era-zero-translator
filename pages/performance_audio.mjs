@@ -1,5 +1,5 @@
-import{visemePlanFromFormal}from'./visemes.mjs';
-import{verifyPerformanceNotes}from'./performance_codec.mjs';
+import{visemePlanFromFormal}from'./visemes.mjs?v=contextual-width-2';
+import{verifyPerformanceNotes}from'./performance_codec.mjs?v=contextual-width-2';
 
 export const AUDIO_CHECK_FORMAT='EZREC-AUDIO-1';
 export const REFERENCE_SAMPLE_RATE=22050;

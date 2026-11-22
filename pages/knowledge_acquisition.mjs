@@ -1,7 +1,7 @@
 import {validAcquisitionScopes} from './acquisition_scopes.mjs';
 // Draft result-state binding convention, not a new root or approved compound.
-import {canonicalDigest} from './engine.mjs';
-import {validateFoundationIR} from './foundation_ir.mjs';
+import {canonicalDigest} from './engine.mjs?v=contextual-width-2';
+import {validateFoundationIR} from './foundation_ir.mjs?v=contextual-width-2';
 const PROFILE='EZKNOWLEDGE-ACQUISITION-1';
 const fields=['profile','status','transition_root','transition_runtime','speech_act','event_scopes','result_assertion','phase_contract','result_state','vocabulary','content_digest','acquisition_id'];
 export async function validateKnowledgeAcquisition(input,{allowDraft=false}={}){

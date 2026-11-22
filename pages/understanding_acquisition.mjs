@@ -1,6 +1,6 @@
 // Completed entry into a comprehension state, not a new understanding sense.
-import {canonicalDigest} from './engine.mjs';
-import {composeUnderstandingContent,validateUnderstandingContent,understandingInterpretationPlan,understandingPronounPlan} from './understanding_content.mjs';
+import {canonicalDigest} from './engine.mjs?v=contextual-width-2';
+import {composeUnderstandingContent,validateUnderstandingContent,understandingInterpretationPlan,understandingPronounPlan} from './understanding_content.mjs?v=contextual-width-2';
 import {validAcquisitionScopes} from './acquisition_scopes.mjs';
 const exact=(v,fields)=>v&&typeof v==='object'&&!Array.isArray(v)&&Object.keys(v).length===fields.length&&fields.every(k=>Object.hasOwn(v,k));
 export async function validateUnderstandingAcquisition(input,{allowDraft=false}={}){

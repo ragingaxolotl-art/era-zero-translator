@@ -1,4 +1,4 @@
-import{soundPlanFromFormal}from'./engine.mjs?v=1.14.0';
+import{soundPlanFromFormal}from'./engine.mjs?v=contextual-width-2';
 import{recognitionForTarget}from'./recognition.mjs?v=1.14.0';
 
 export const VISEME_VERSION='EZVISEME-1';

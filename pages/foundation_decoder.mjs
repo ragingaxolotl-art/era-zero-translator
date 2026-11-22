@@ -1,5 +1,5 @@
-import {validateFoundations,foundationPath} from './foundations.mjs';
-import {decodeStrictMusicMidi} from './strict_music_decoder.mjs';
+import {validateFoundations,foundationPath} from './foundations.mjs?v=contextual-width-2';
+import {decodeStrictMusicMidi} from './strict_music_decoder.mjs?v=contextual-width-2';
 
 // Shared registry supplies identity, never expected source IR or participant roles.
 // This observes sound tokens; lexical identity alone does not validate a sentence.

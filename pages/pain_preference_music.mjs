@@ -1,10 +1,10 @@
-import {validatePainPreference} from './pain_preference.mjs';
+import {validatePainPreference} from './pain_preference.mjs?v=contextual-width-2';
 import {painPreferenceEvent} from './pain_preference_frames.mjs';
-import {painComparisonMusicEvents,readPainComparisonTree} from './pain_comparison_music.mjs';
-import {renderLexicalOccurrences} from './bound_compounds.mjs';
-import {grammarMarker} from './scheduler.mjs';
-import {midiFromScheduledEvents} from './engine.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
+import {painComparisonMusicEvents,readPainComparisonTree} from './pain_comparison_music.mjs?v=contextual-width-2';
+import {renderLexicalOccurrences} from './bound_compounds.mjs?v=contextual-width-2';
+import {grammarMarker} from './scheduler.mjs?v=contextual-width-2';
+import {midiFromScheduledEvents} from './engine.mjs?v=contextual-width-2';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=contextual-width-2';
 export async function midiFromPainPreference(document,authority,{allowDraft=false,anchor=60}={}){
  const d=await validatePainPreference(document,{allowDraft}),mark=name=>grammarMarker({performance:{anchor_midi:anchor}},'pain-preference',name);
  let events=[painPreferenceEvent(d.runtime_state,'open',anchor)];

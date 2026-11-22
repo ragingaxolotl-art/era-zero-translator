@@ -1,11 +1,11 @@
-import {canonicalDigest,midiFromScheduledEvents} from './engine.mjs';
-import {ROUTE_LEARNING_READINGS,validateRouteLearning} from './route_learning.mjs';
-import {foundationPayload,validateFoundations,foundationPath} from './foundations.mjs';
-import {renderLexicalOccurrences} from './bound_compounds.mjs';
-import {scheduledLexicalEvents,grammarMarker} from './scheduler.mjs';
+import {canonicalDigest,midiFromScheduledEvents} from './engine.mjs?v=contextual-width-2';
+import {ROUTE_LEARNING_READINGS,validateRouteLearning} from './route_learning.mjs?v=contextual-width-2';
+import {foundationPayload,validateFoundations,foundationPath} from './foundations.mjs?v=contextual-width-2';
+import {renderLexicalOccurrences} from './bound_compounds.mjs?v=contextual-width-2';
+import {scheduledLexicalEvents,grammarMarker} from './scheduler.mjs?v=contextual-width-2';
 import {acquisitionMusicEvent} from './acquisition_music_frames.mjs';
 import {acquisitionScopeMarker,validAcquisitionScopes} from './acquisition_scopes.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=contextual-width-2';
 export async function routeLearningFoundations(){
  return Promise.all(Object.entries(ROUTE_LEARNING_READINGS).map(async([reading,r],i)=>{
   const record={profile:'EZFOUND-1',definition_version:'1.0.0',family_affinity:'MIN',status:'candidate',review:'reviews/route_learning.md',sound_code:4+i,display_title:r.predicate,definition:r.definition,roles:{experiencer:['entity'],target:['entity']},excludes:[...r.excludes]};

@@ -1,5 +1,5 @@
-import {scheduledLexicalEvents} from './scheduler.mjs';
-import{visemePlanFromFormal}from'./visemes.mjs';
+import {scheduledLexicalEvents} from './scheduler.mjs?v=contextual-width-2';
+import{visemePlanFromFormal}from'./visemes.mjs?v=contextual-width-2';
 
 // EZREC-PERF-1 is an optional performance channel. It never changes the formal IR.
 export const PERFORMANCE_FORMAT='EZREC-PERF-1';

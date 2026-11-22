@@ -1,8 +1,8 @@
-import {selectedContentEvents,readSelectedContent} from './content_selection.mjs';
+import {selectedContentEvents,readSelectedContent} from './content_selection.mjs?v=contextual-width-2';
 // Draft contextual selectors. These select content; they do not assert a
 // communication, a true answer, understanding, empathy, or successful learning.
-import {midiFromScheduledEvents} from './engine.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
+import {midiFromScheduledEvents} from './engine.mjs?v=contextual-width-2';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=contextual-width-2';
 import {CONTEXTUAL_CONTENT_KINDS,contextualContentMusicEvent} from './contextual_content_frames.mjs';
 export {CONTEXTUAL_CONTENT_KINDS,contextualContentMusicFrames,contextualContentMusicEvent} from './contextual_content_frames.mjs';
 export function readContextualContentMusic(bytes,atoms,{allowDraft=false}={}){
@@ -24,8 +24,8 @@ export function midiFromContextualContent(kind,referenceEvents,atoms,{allowDraft
 
 // Render from validated semantic content rather than caller-supplied sound data.
 export async function midiFromContextualContentDocument(document,authority,{allowDraft=false,anchor=60}={}){
- const {validateContextualContent}=await import('./contextual_content.mjs');
- const {renderLexicalOccurrences}=await import('./bound_compounds.mjs');
+ const {validateContextualContent}=await import('./contextual_content.mjs?v=contextual-width-2');
+ const {renderLexicalOccurrences}=await import('./bound_compounds.mjs?v=contextual-width-2');
  const checked=await validateContextualContent(document,{allowDraft});
  const events=await renderLexicalOccurrences({nodes:[checked.anchor],edges:[]},authority,{anchor});
  return midiFromContextualContent(checked.content_kind,selectedContentEvents(checked,events,anchor),authority.atoms,{allowDraft,anchor});

@@ -11,12 +11,12 @@ import {painStimulusFrames} from './pain_stimulus_frames.mjs';
 import {painFrames} from './pain_frames.mjs';
 import {curiosityFrames} from './curiosity_frames.mjs';
 import {contextualInquiryFrames} from './contextual_inquiry_frames.mjs';
-import {contentSelectionFrames} from './content_selection.mjs';
+import {contentSelectionFrames} from './content_selection.mjs?v=contextual-width-2';
 import {contextualContentMusicFrames} from './contextual_content_frames.mjs';
 import {acquisitionMusicFrames} from './acquisition_music_frames.mjs';
 import {questionContentMusicFrames} from './question_music_frames.mjs';
 import {quantifiedMusicFrames} from './quantified_music.mjs';
-import {notesFromMidi} from './performance_codec.mjs';
+import {notesFromMidi} from './performance_codec.mjs?v=contextual-width-2';
 import {PHONEMES} from './names.mjs';
 import {ROLE_ORDER} from './roles.mjs';
 // This inverse receives MIDI and a shared atom dictionary, never source IR,
@@ -34,7 +34,7 @@ const frame=(marker,path)=>frames.push({marker,path});
 frame('desire_subject_reference',[0,-25,0,0]);
 for(const side of ['open','close']){
  const sign=side==='open'?-1:1;
- ['hot','cold','heavy','light','bright','dim','rough','smooth'].forEach((norm,code)=>frame(`contextual_${norm}_${side}`,[0,sign*26,code,0]));
+ ['hot','cold','heavy','light','bright','dim','rough','smooth','wide','narrow'].forEach((norm,code)=>frame(`contextual_${norm}_${side}`,[0,sign*26,code,0]));
  frame(`proposition_content_${side}`,[0,sign*24,0,0]);
  ['bounded','ongoing','habitual'].forEach((mode,i)=>frame(`aspect_${mode}_${side}`,[0,sign*22,i,0]));
  frame(`negation_${side}`,[0,sign,sign,0]);

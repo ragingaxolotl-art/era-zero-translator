@@ -1,6 +1,6 @@
-import {renderLexicalOccurrences} from './bound_compounds.mjs';
-import {contextualContentReference} from './contextual_content.mjs';
-import {grammarMarker} from './scheduler.mjs';
+import {renderLexicalOccurrences} from './bound_compounds.mjs?v=contextual-width-2';
+import {contextualContentReference} from './contextual_content.mjs?v=contextual-width-2';
+import {grammarMarker} from './scheduler.mjs?v=contextual-width-2';
 import {informationFrame} from './information_passage_frames.mjs?v=field-repairs-1';
 
 const roleNode=(node,role)=>({nodes:[node,{node_id:'clause',kind:'clause'}],

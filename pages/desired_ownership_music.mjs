@@ -1,10 +1,10 @@
-import {validateDesiredOwnership} from './desired_ownership.mjs';
+import {validateDesiredOwnership} from './desired_ownership.mjs?v=contextual-width-2';
 import {desiredOwnershipEvent} from './desired_ownership_frames.mjs';
-import {ownershipMusicEvents,readOwnershipTree} from './ownership_music.mjs';
-import {renderLexicalOccurrences} from './bound_compounds.mjs';
-import {grammarMarker} from './scheduler.mjs';
-import {midiFromScheduledEvents} from './engine.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
+import {ownershipMusicEvents,readOwnershipTree} from './ownership_music.mjs?v=contextual-width-2';
+import {renderLexicalOccurrences} from './bound_compounds.mjs?v=contextual-width-2';
+import {grammarMarker} from './scheduler.mjs?v=contextual-width-2';
+import {midiFromScheduledEvents} from './engine.mjs?v=contextual-width-2';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=contextual-width-2';
 export async function midiFromDesiredOwnership(document,authority,{allowDraft=false,anchor=60}={}){
  const d=await validateDesiredOwnership(document,{allowDraft}),mark=name=>grammarMarker({performance:{anchor_midi:anchor}},'desired-ownership',name);
  let events=[desiredOwnershipEvent(d.subject_binding,d.runtime_state,'open',anchor),mark('role_experiencer_open'),...await renderLexicalOccurrences({nodes:[d.holder],edges:[]},authority,{anchor}),mark('role_experiencer_close'),mark('proposition_content_open'),...await ownershipMusicEvents(d.content,authority,{allowDraft:true,anchor}),mark('proposition_content_close'),desiredOwnershipEvent(d.subject_binding,d.runtime_state,'close',anchor)];

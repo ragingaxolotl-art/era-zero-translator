@@ -1,8 +1,8 @@
-import {canonicalDigest} from './engine.mjs';
-import {composeCuriosity,validateCuriosity,curiosityInterpretationPlan,curiosityPronounPlan} from './curiosity.mjs';
-import {composeUnderstandingContent,validateUnderstandingContent,understandingInterpretationPlan,understandingPronounPlan} from './understanding_content.mjs';
-import {composeRouteLearning,validateRouteLearning,routeLearningInterpretationPlan,routeLearningPronounPlan} from './route_learning.mjs';
-import {composeCameToUnderstand,validateUnderstandingAcquisition,parseCameToUnderstand} from './understanding_acquisition.mjs';
+import {canonicalDigest} from './engine.mjs?v=contextual-width-2';
+import {composeCuriosity,validateCuriosity,curiosityInterpretationPlan,curiosityPronounPlan} from './curiosity.mjs?v=contextual-width-2';
+import {composeUnderstandingContent,validateUnderstandingContent,understandingInterpretationPlan,understandingPronounPlan} from './understanding_content.mjs?v=contextual-width-2';
+import {composeRouteLearning,validateRouteLearning,routeLearningInterpretationPlan,routeLearningPronounPlan} from './route_learning.mjs?v=contextual-width-2';
+import {composeCameToUnderstand,validateUnderstandingAcquisition,parseCameToUnderstand} from './understanding_acquisition.mjs?v=contextual-width-2';
 const VALIDATORS={'EZCURIOSITY-1':validateCuriosity,'EZUNDERSTANDING-CONTENT-1':validateUnderstandingContent,'EZROUTE-LEARNING-1':validateRouteLearning,'EZUNDERSTANDING-ACQUISITION-1':validateUnderstandingAcquisition};
 const composer=input=>curiosityInterpretationPlan(input)||curiosityPronounPlan(input)?composeCuriosity:parseCameToUnderstand(input)?composeCameToUnderstand:routeLearningInterpretationPlan(input)||routeLearningPronounPlan(input)?composeRouteLearning:understandingInterpretationPlan(input)||understandingPronounPlan(input)?composeUnderstandingContent:null;
 export function cognitiveClauseChoicePlan(input){

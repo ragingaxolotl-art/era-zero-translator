@@ -1,5 +1,5 @@
-import {bindLocalCompound} from './local_compound_binding.mjs?v=clauses-1';
-import {renderLexicalOccurrences} from './bound_compounds.mjs?v=clauses-1';
+import {bindLocalCompound} from './local_compound_binding.mjs?v=contextual-width-2';
+import {renderLexicalOccurrences} from './bound_compounds.mjs?v=contextual-width-2';
 // Prepare existing lexical performances inside an explicit local scope tree.
 // This is not a flattened MIDI export: local boundaries still need audible frames.
 export async function prepareLocalCompoundPerformance(id,registry,authority,bindings,{runtimeState=1,anchor=60}={}){

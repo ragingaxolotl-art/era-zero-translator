@@ -1,4 +1,4 @@
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=contextual-width-2';
 export function readSwimmingTree(node,reader,readActor){
  const fail=()=>{throw new Error('Unsupported or malformed swimming music.');};
  let outer=node,region;

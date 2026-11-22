@@ -1,10 +1,10 @@
-import {validateContextualInquiry} from './contextual_inquiry.mjs';
+import {validateContextualInquiry} from './contextual_inquiry.mjs?v=contextual-width-2';
 import {contextualInquiryEvent} from './contextual_inquiry_frames.mjs';
 import {contextualContentMusicEvent} from './contextual_content_frames.mjs';
-import {renderLexicalOccurrences} from './bound_compounds.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
-import {readSelectedContent} from './content_selection.mjs';
-import {midiFromScheduledEvents} from './engine.mjs';
+import {renderLexicalOccurrences} from './bound_compounds.mjs?v=contextual-width-2';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=contextual-width-2';
+import {readSelectedContent} from './content_selection.mjs?v=contextual-width-2';
+import {midiFromScheduledEvents} from './engine.mjs?v=contextual-width-2';
 export function decodeContextualInquiryMidi(bytes,atoms,{allowDraft=false}={}){
  if(!allowDraft)throw new Error('Contextual inquiry requires draft opt-in.');
  const reader=strictSemanticReader(bytes,atoms,'Malformed contextual inquiry.',{allowDraftContextualContent:true,allowDraftContextualInquiry:true}),tree=reader.readTree();

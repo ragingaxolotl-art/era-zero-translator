@@ -1,9 +1,9 @@
-import {validateDrinkingMeaning,DRINKING_CONTRACT,DRINKING_VIEWPOINTS} from './drinking_meaning.mjs';
+import {validateDrinkingMeaning,DRINKING_CONTRACT,DRINKING_VIEWPOINTS} from './drinking_meaning.mjs?v=contextual-width-2';
 import {drinkingEvent} from './drinking_frames.mjs';
-import {renderLexicalOccurrences} from './bound_compounds.mjs';
-import {grammarMarker} from './scheduler.mjs';
-import {midiFromScheduledEvents} from './engine.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
+import {renderLexicalOccurrences} from './bound_compounds.mjs?v=contextual-width-2';
+import {grammarMarker} from './scheduler.mjs?v=contextual-width-2';
+import {midiFromScheduledEvents} from './engine.mjs?v=contextual-width-2';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=contextual-width-2';
 export async function drinkingMusicEvents(document,authority,{allowDraft=false,anchor=60}={}){
  const d=await validateDrinkingMeaning(document,{allowDraft}),mark=name=>grammarMarker({performance:{anchor_midi:anchor}},'drinking',name);
  let events=[drinkingEvent(d.viewpoint,d.runtime_state,'open',anchor)];

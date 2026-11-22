@@ -5,11 +5,11 @@ metadata:
   status: noncanonical_metadata_complete
   canonical_semantic_changes: 0
   root_count: 324
-  indexed_sense_count: 579
+  indexed_sense_count: 589
   game_story_surface_sense_count: 48
-  total_audited_senses: 627
+  total_audited_senses: 637
   part_of_speech_counts:
-    adjective: 36
+    adjective: 46
     adverb: 2
     conjunction: 3
     grammar: 1
@@ -14099,7 +14099,7 @@ senses:
   surface_forms:
   - after
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: temporal_order
   definition: Order one occurrence later than another.
   fidelity: high
@@ -14111,7 +14111,7 @@ senses:
   surface_forms:
   - and
   route: grammar
-  target_id: 
+  target_id:
   sense_key: coordination_all
   definition: Coordinate all listed expressions conjunctively.
   fidelity: high
@@ -14364,7 +14364,7 @@ senses:
   surface_forms:
   - be
   route: grammar
-  target_id: 
+  target_id:
   sense_key: copular_predication
   definition: Link a referent to a predicate or identity assertion.
   fidelity: high
@@ -14376,7 +14376,7 @@ senses:
   surface_forms:
   - become
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: generic_transition
   definition: Enter a context-selected state.
   fidelity: high
@@ -14388,7 +14388,7 @@ senses:
   surface_forms:
   - before
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: temporal_order
   definition: Order one occurrence earlier than another.
   fidelity: high
@@ -14433,6 +14433,23 @@ senses:
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
+- sense_id: ENS:67efd3ebdb2e1749f95bc7da
+  lemma: bright
+  part_of_speech: adjective
+  surface_forms:
+  - bright
+  route: semantic_ir
+  target_id:
+  sense_key: contextual_luminance_bright
+  definition: The material bearer's photometric surface luminance in the contextual
+    viewing direction is above the local contextual bright standard. The selected
+    physical reading requires a bound bearer and an explicit comparison interpretation.
+    No numerical cutoff, measured value, universal threshold or equality with another
+    occurrence's standard is asserted. The opposite adjective may use a different
+    standard; grammatical negation and runtime 0/1/2 remain separate.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
 - sense_id: ENS:c8dcd3b72256609763340515
   lemma: broken
   part_of_speech: adjective
@@ -14453,7 +14470,7 @@ senses:
   surface_forms:
   - build
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: generate_composite_artifact
   definition: Generate an artifact while establishing its composite arrangement.
   fidelity: high
@@ -14479,7 +14496,7 @@ senses:
   surface_forms:
   - cause
   route: grammar
-  target_id: 
+  target_id:
   sense_key: semantic_role
   definition: Mark or introduce the cause role of an occurrence.
   fidelity: high
@@ -14600,7 +14617,7 @@ senses:
   surface_forms:
   - change
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: generic_state_transition
   definition: Transition between context-selected states without enough domain information
     to choose an atom.
@@ -14675,6 +14692,22 @@ senses:
   sense_key: shut_configuration_of_a_closure
   definition: A closure is in its shut configuration at the reference time. Its lock,
     seal and the cause of closure are unspecified.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:7f809e58f4a57eaa4de88aec
+  lemma: cold
+  part_of_speech: adjective
+  surface_forms:
+  - cold
+  route: semantic_ir
+  target_id:
+  sense_key: contextual_thermodynamic_temperature_cold
+  definition: The material bearer's thermodynamic temperature is below the local contextual
+    cold standard. The selected physical reading requires a bound bearer and an explicit
+    comparison interpretation. No numerical cutoff, measured value, universal threshold
+    or equality with another occurrence's standard is asserted. The opposite adjective
+    may use a different standard; grammatical negation and runtime 0/1/2 remain separate.
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
@@ -15400,7 +15433,7 @@ senses:
   surface_forms:
   - continue
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: persistence_of_occurrence
   definition: Maintain an occurrence across a later interval.
   fidelity: high
@@ -15505,7 +15538,7 @@ senses:
   surface_forms:
   - cross
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: boundary_traversal
   definition: Move from one side of a boundary locus to another.
   fidelity: high
@@ -15622,6 +15655,23 @@ senses:
   target_id: MOV:010
   sense_key: movement_endpoint
   definition: A stable location identified as the endpoint of movement.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:970c35f586fcd701baed90d6
+  lemma: dim
+  part_of_speech: adjective
+  surface_forms:
+  - dim
+  route: semantic_ir
+  target_id:
+  sense_key: contextual_luminance_dim
+  definition: The material bearer's photometric surface luminance in the contextual
+    viewing direction is below the local contextual dim standard. The selected physical
+    reading requires a bound bearer and an explicit comparison interpretation. No
+    numerical cutoff, measured value, universal threshold or equality with another
+    occurrence's standard is asserted. The opposite adjective may use a different
+    standard; grammatical negation and runtime 0/1/2 remain separate.
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
@@ -16617,7 +16667,7 @@ senses:
   surface_forms:
   - follow
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: trajectory_tracking
   definition: Move while maintaining a relation to another mover or route.
   fidelity: high
@@ -16629,7 +16679,7 @@ senses:
   surface_forms:
   - food
   route: gap
-  target_id: 
+  target_id:
   sense_key: nutritive_material
   definition: Material conventionally suitable for consumption to support life.
   fidelity: high
@@ -16641,7 +16691,7 @@ senses:
   surface_forms:
   - forget
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: lose_access_to_representation
   definition: Cease manifest access to or preservation of a representation.
   fidelity: high
@@ -16666,7 +16716,7 @@ senses:
   surface_forms:
   - friend
   route: gap
-  target_id: 
+  target_id:
   sense_key: social_friendship
   definition: A person standing in a socially recognized friendship relation.
   fidelity: high
@@ -16710,7 +16760,7 @@ senses:
   surface_forms:
   - future
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: reference_time_after_now
   definition: Locate an occurrence after the reference present.
   fidelity: high
@@ -16758,7 +16808,7 @@ senses:
   surface_forms:
   - go
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: abstract_transition
   definition: Enter another nonspatial state through a context-specific transition.
   fidelity: high
@@ -16814,7 +16864,7 @@ senses:
   surface_forms:
   - have
   route: grammar
-  target_id: 
+  target_id:
   sense_key: perfect_auxiliary
   definition: Mark perfect aspect in English input.
   fidelity: high
@@ -16826,7 +16876,7 @@ senses:
   surface_forms:
   - have
   route: gap
-  target_id: 
+  target_id:
   sense_key: possession
   definition: Stand in a possession or control relation.
   fidelity: high
@@ -16866,6 +16916,22 @@ senses:
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
+- sense_id: ENS:efd773eaf9f5079ab627088e
+  lemma: heavy
+  part_of_speech: adjective
+  surface_forms:
+  - heavy
+  route: semantic_ir
+  target_id:
+  sense_key: contextual_mass_heavy
+  definition: The material bearer's physical mass is above the local contextual heavy
+    standard. The selected physical reading requires a bound bearer and an explicit
+    comparison interpretation. No numerical cutoff, measured value, universal threshold
+    or equality with another occurrence's standard is asserted. The opposite adjective
+    may use a different standard; grammatical negation and runtime 0/1/2 remain separate.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
 - sense_id: ENS:cf6e8f4b3cb436c16ae34cde
   lemma: hold
   part_of_speech: verb
@@ -16893,7 +16959,7 @@ senses:
   surface_forms:
   - home
   route: gap
-  target_id: 
+  target_id:
   sense_key: affective_social_center
   definition: A socially or affectively anchored place of belonging.
   fidelity: high
@@ -16905,9 +16971,25 @@ senses:
   surface_forms:
   - home
   route: gap
-  target_id: 
+  target_id:
   sense_key: physical_dwelling
   definition: A structure conventionally serving as a habitual dwelling.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:15f5f0dd1d8d908d6fc1958c
+  lemma: hot
+  part_of_speech: adjective
+  surface_forms:
+  - hot
+  route: semantic_ir
+  target_id:
+  sense_key: contextual_thermodynamic_temperature_hot
+  definition: The material bearer's thermodynamic temperature is above the local contextual
+    hot standard. The selected physical reading requires a bound bearer and an explicit
+    comparison interpretation. No numerical cutoff, measured value, universal threshold
+    or equality with another occurrence's standard is asserted. The opposite adjective
+    may use a different standard; grammatical negation and runtime 0/1/2 remain separate.
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
@@ -16929,7 +17011,7 @@ senses:
   surface_forms:
   - if
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: conditional
   definition: Make one proposition conditional on another.
   fidelity: high
@@ -17027,7 +17109,7 @@ senses:
   surface_forms:
   - know
   route: gap
-  target_id: 
+  target_id:
   sense_key: truth_entailing_knowledge
   definition: Possess justified or truth-entailing knowledge.
   fidelity: high
@@ -17503,6 +17585,22 @@ senses:
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
+- sense_id: ENS:7c880b4c936522f169290456
+  lemma: light
+  part_of_speech: adjective
+  surface_forms:
+  - light
+  route: semantic_ir
+  target_id:
+  sense_key: contextual_mass_light
+  definition: The material bearer's physical mass is below the local contextual light
+    standard. The selected physical reading requires a bound bearer and an explicit
+    comparison interpretation. No numerical cutoff, measured value, universal threshold
+    or equality with another occurrence's standard is asserted. The opposite adjective
+    may use a different standard; grammatical negation and runtime 0/1/2 remain separate.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
 - sense_id: ENS:84286135902b03f0325e5fbd
   lemma: live shared-frame configuration
   part_of_speech: noun_phrase
@@ -17840,7 +17938,7 @@ senses:
   surface_forms:
   - many
   route: grammar
-  target_id: 
+  target_id:
   sense_key: plural_quantity
   definition: Specify contextually large cardinality.
   fidelity: high
@@ -17954,7 +18052,7 @@ senses:
   surface_forms:
   - move
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: cause_target_displacement
   definition: Cause a distinct target to undergo movement.
   fidelity: high
@@ -17966,7 +18064,7 @@ senses:
   surface_forms:
   - move
   route: gap
-  target_id: 
+  target_id:
   sense_key: emotional_effect
   definition: Cause an affective response.
   fidelity: high
@@ -17981,6 +18079,23 @@ senses:
   target_id: MOV:121
   sense_key: spatial_displacement
   definition: Undergo active shared-frame positional change.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:d89065ff4f490325947b1a79
+  lemma: narrow
+  part_of_speech: adjective
+  surface_forms:
+  - narrow
+  route: semantic_ir
+  target_id:
+  sense_key: contextual_physical_width_narrow
+  definition: The material bearer's lateral physical extent along a contextually selected
+    transverse axis and section is below the local contextual narrow standard. The
+    selected physical reading requires a bound bearer and an explicit comparison interpretation.
+    No numerical cutoff, measured value, universal threshold or equality with another
+    occurrence's standard is asserted. The opposite adjective may use a different
+    standard; grammatical negation and runtime 0/1/2 remain separate.
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
@@ -18271,7 +18386,7 @@ senses:
   surface_forms:
   - not
   route: grammar
-  target_id: 
+  target_id:
   sense_key: negation
   definition: Negate a scoped proposition, predicate, or participant relation.
   fidelity: high
@@ -18353,7 +18468,7 @@ senses:
   surface_forms:
   - one
   route: grammar
-  target_id: 
+  target_id:
   sense_key: quantity_one
   definition: Specify cardinal quantity one.
   fidelity: high
@@ -19014,7 +19129,7 @@ senses:
   surface_forms:
   - or
   route: grammar
-  target_id: 
+  target_id:
   sense_key: coordination_any
   definition: Coordinate alternatives disjunctively.
   fidelity: high
@@ -19108,7 +19223,7 @@ senses:
   surface_forms:
   - past
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: reference_time_before_now
   definition: Locate an occurrence before the reference present.
   fidelity: high
@@ -19120,7 +19235,7 @@ senses:
   surface_forms:
   - pause
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: temporary_suspension
   definition: Suspend an occurrence while preserving the possibility of continuation.
   fidelity: high
@@ -20443,7 +20558,7 @@ senses:
   surface_forms:
   - remember
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: manifest_latent_representation
   definition: Bring a previously latent representation into manifest cognition.
   fidelity: high
@@ -20660,7 +20775,7 @@ senses:
   surface_forms:
   - return
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: function_result
   definition: Produce a value as the result of a computational occurrence.
   fidelity: high
@@ -20672,7 +20787,7 @@ senses:
   surface_forms:
   - return
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: movement_to_prior_position
   definition: Move to a position previously occupied or treated as origin.
   fidelity: high
@@ -20692,6 +20807,23 @@ senses:
   definition: One source produces a resonant ringing sound during an episode of mechanical
     sound emission. The ringing is the sound of that source. A listener, a responsible
     striker and repeated strikes are unspecified.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:8f105cb5da34c86ca012d1bb
+  lemma: rough
+  part_of_speech: adjective
+  surface_forms:
+  - rough
+  route: semantic_ir
+  target_id:
+  sense_key: contextual_surface_texture_rough
+  definition: The material bearer's physical surface irregularity in the contextually
+    selected surface region and at the selected scale is above the local contextual
+    rough standard. The selected physical reading requires a bound bearer and an explicit
+    comparison interpretation. No numerical cutoff, measured value, universal threshold
+    or equality with another occurrence's standard is asserted. The opposite adjective
+    may use a different standard; grammatical negation and runtime 0/1/2 remain separate.
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
@@ -20739,7 +20871,7 @@ senses:
   surface_forms:
   - run
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: locomotion
   definition: Move by a gait convention not atomically distinguished in Motion.
   fidelity: high
@@ -20751,7 +20883,7 @@ senses:
   surface_forms:
   - run
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: machine_operation
   definition: Maintain a machine in active operation.
   fidelity: high
@@ -20763,7 +20895,7 @@ senses:
   surface_forms:
   - run
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: program_execution
   definition: Instantiate an occurrence that executes a program definition.
   fidelity: high
@@ -20791,7 +20923,7 @@ senses:
   surface_forms:
   - safe
   route: gap
-  target_id: 
+  target_id:
   sense_key: acceptable_risk
   definition: Below a contextually acceptable risk threshold.
   fidelity: high
@@ -20940,6 +21072,24 @@ senses:
   fidelity: high
   controlled_input_allowed: true
   authority_layer: english_sense_index
+- sense_id: ENS:5be87b6d2d5c836e04af25f8
+  lemma: smooth
+  part_of_speech: adjective
+  surface_forms:
+  - smooth
+  route: semantic_ir
+  target_id:
+  sense_key: contextual_surface_texture_smooth
+  definition: The material bearer's physical surface irregularity in the contextually
+    selected surface region and at the selected scale is below the local contextual
+    smooth standard. The selected physical reading requires a bound bearer and an
+    explicit comparison interpretation. No numerical cutoff, measured value, universal
+    threshold or equality with another occurrence's standard is asserted. The opposite
+    adjective may use a different standard; grammatical negation and runtime 0/1/2
+    remain separate.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
 - sense_id: ENS:b8a8116c284c8366399cde70
   lemma: sound
   part_of_speech: verb
@@ -21038,7 +21188,7 @@ senses:
   surface_forms:
   - stop
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: cessation
   definition: Terminate an active occurrence or movement.
   fidelity: high
@@ -21090,7 +21240,7 @@ senses:
   surface_forms:
   - think
   route: gap
-  target_id: 
+  target_id:
   sense_key: generic_cognition
   definition: Engage in cognition not limited to model revision or attention.
   fidelity: high
@@ -21128,7 +21278,7 @@ senses:
   surface_forms:
   - transport
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: caused_target_movement
   definition: Cause a distinct target to move through a route toward a destination.
   fidelity: high
@@ -21140,7 +21290,7 @@ senses:
   surface_forms:
   - 'true'
   route: gap
-  target_id: 
+  target_id:
   sense_key: truth_value
   definition: Satisfying a truth condition.
   fidelity: high
@@ -21345,7 +21495,7 @@ senses:
   surface_forms:
   - wait
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: deferred_action
   definition: Remain without actualizing a pending process until a condition holds.
   fidelity: high
@@ -21374,9 +21524,26 @@ senses:
   surface_forms:
   - water
   route: gap
-  target_id: 
+  target_id:
   sense_key: chemical_substance
   definition: The substance H2O under ordinary reference conditions.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:adfd937c4f5cf2f2a7d912ab
+  lemma: wide
+  part_of_speech: adjective
+  surface_forms:
+  - wide
+  route: semantic_ir
+  target_id:
+  sense_key: contextual_physical_width_wide
+  definition: The material bearer's lateral physical extent along a contextually selected
+    transverse axis and section is above the local contextual wide standard. The selected
+    physical reading requires a bound bearer and an explicit comparison interpretation.
+    No numerical cutoff, measured value, universal threshold or equality with another
+    occurrence's standard is asserted. The opposite adjective may use a different
+    standard; grammatical negation and runtime 0/1/2 remain separate.
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
@@ -21789,7 +21956,7 @@ senses:
   - desires
   - desiring
   route: gap
-  target_id: 
+  target_id:
   sense_key: desire
   definition: A preference or desire for a state, object, or event.
   fidelity: gap
@@ -21805,7 +21972,7 @@ senses:
   - excited
   - pleased
   route: gap
-  target_id: 
+  target_id:
   sense_key: positive_affect
   definition: A positively valenced affective state.
   fidelity: gap
@@ -21821,7 +21988,7 @@ senses:
   - crying
   - lonely
   route: gap
-  target_id: 
+  target_id:
   sense_key: negative_affect
   definition: A negatively valenced affective state characterized by sorrow or low
     mood.
@@ -21838,7 +22005,7 @@ senses:
   - frustrated
   - annoyed
   route: gap
-  target_id: 
+  target_id:
   sense_key: anger_affect
   definition: An affective state of anger, irritation, or frustration.
   fidelity: gap
@@ -21854,7 +22021,7 @@ senses:
   - fearful
   - fear
   route: gap
-  target_id: 
+  target_id:
   sense_key: fear_affect
   definition: An affective state oriented toward perceived threat.
   fidelity: gap
@@ -21872,7 +22039,7 @@ senses:
   - liking
   - affection
   route: gap
-  target_id: 
+  target_id:
   sense_key: affection_or_preference
   definition: Affection for, attachment to, or positive preference toward a target.
   fidelity: gap
@@ -21892,7 +22059,7 @@ senses:
   - dancing
   - danced
   route: gap
-  target_id: 
+  target_id:
   sense_key: recreational_activity
   definition: Activity undertaken primarily for recreation, enjoyment, or social engagement.
   fidelity: gap
@@ -21913,7 +22080,7 @@ senses:
   - drank
   - drunk
   route: gap
-  target_id: 
+  target_id:
   sense_key: ingestion
   definition: Taking nutritive material into a living body.
   fidelity: gap
@@ -21930,7 +22097,7 @@ senses:
   - treat
   - water
   route: gap
-  target_id: 
+  target_id:
   sense_key: nutritive_referent
   definition: A labeled nutritive or hydrating referent whose specific semantics are
     not lexicalized in Era Zero.
@@ -21950,7 +22117,7 @@ senses:
   - bandage
   - brush
   route: gap
-  target_id: 
+  target_id:
   sense_key: game_object_referent
   definition: A labeled game or care object whose specific object class is not lexicalized
     in Era Zero.
@@ -21968,7 +22135,7 @@ senses:
   - stamina
   - focus
   route: gap
-  target_id: 
+  target_id:
   sense_key: game_status_measure
   definition: A game-specific measured status whose scale and unit require an explicit
     measurement schema.
@@ -21983,7 +22150,7 @@ senses:
   - messy
   - filthy
   route: gap
-  target_id: 
+  target_id:
   sense_key: cleanliness_deficit
   definition: A material cleanliness condition below the contextually accepted threshold.
   fidelity: gap
@@ -21997,7 +22164,7 @@ senses:
   - satisfied
   - clean
   route: gap
-  target_id: 
+  target_id:
   sense_key: satisfied_game_status
   definition: A game-specific care measure at or above its contextually accepted threshold.
   fidelity: gap
@@ -22011,7 +22178,7 @@ senses:
   - coder
   - developer
   route: label
-  target_id: 
+  target_id:
   sense_key: labeled_person_occupation
   definition: A person referent preserved by a phonemic label; the occupation is not
     asserted unless separately composed.
@@ -22058,7 +22225,7 @@ senses:
   - maximum
   - minimum
   route: gap
-  target_id: 
+  target_id:
   sense_key: game_measure_level
   definition: A qualitative position on a game-specific measured scale.
   fidelity: gap
@@ -22072,7 +22239,7 @@ senses:
   - let's
   - lets
   route: grammar
-  target_id: 
+  target_id:
   sense_key: permissive_or_cohortative_clause
   definition: A permissive or first-person-group imperative construction requiring
     clause and participant structure.
@@ -22137,7 +22304,7 @@ senses:
   - using
   - used
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: instrumental_use_relation
   definition: An entity participates as the instrument or resource by which a separately
     identified action is performed.
@@ -22151,7 +22318,7 @@ senses:
   - delete
   - deletes
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: requested_information_deletion
   definition: A requested operation whose intended result is that a selected information
     object is no longer retained by the addressed system.
@@ -22169,7 +22336,7 @@ senses:
   - was being deleted
   - were being deleted
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: active_information_deletion
   definition: An ongoing operation whose intended result is that a selected information
     object is no longer retained by the addressed system.
@@ -22187,7 +22354,7 @@ senses:
   - was deleted
   - were deleted
   route: semantic_ir
-  target_id: 
+  target_id:
   sense_key: completed_information_deletion
   definition: A completed operation whose result is that a selected information object
     is no longer retained by the addressed system.

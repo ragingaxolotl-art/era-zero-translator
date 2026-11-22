@@ -1,9 +1,9 @@
-import {clauseSyntax} from './dictionary_clauses.mjs?v=physical-holding-1';
-import {scoreRoleReference,readRoleReference} from './dictionary_clause_music.mjs?v=physical-holding-1';
-import {midiFromScheduledEvents} from './engine.mjs';
-import {informationMusic} from './information_music.mjs?v=meaning-reliability-1';
+import {clauseSyntax} from './dictionary_clauses.mjs?v=contextual-width-2';
+import {scoreRoleReference,readRoleReference} from './dictionary_clause_music.mjs?v=contextual-width-2';
+import {midiFromScheduledEvents} from './engine.mjs?v=contextual-width-2';
+import {informationMusic} from './information_music.mjs?v=contextual-width-2';
 import {encodeName} from './names.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=contextual-width-2';
 
 // These nouns name categories of fault. A category does not specify its cause or a repair procedure.
 const faultTypes = ['redundancy','duplicate','checksum','data','memory','network','parity','storage','syntax','timing','transmission','backup','sensor','valve','power','clock','disk'];

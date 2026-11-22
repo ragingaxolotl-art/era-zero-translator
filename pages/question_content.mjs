@@ -1,7 +1,7 @@
 // Draft epistemic content, not a speech act or an assertion of either answer.
 // This wrapper supplements the ordinary IR validator; it does not replace it.
-import {canonicalDigest} from './engine.mjs';
-import {parseNamedSentence,composeNamedSentence} from './sentences.mjs';
+import {canonicalDigest} from './engine.mjs?v=contextual-width-2';
+import {parseNamedSentence,composeNamedSentence} from './sentences.mjs?v=contextual-width-2';
 const PROFILE='EZQUESTION-CONTENT-1';
 const keys=(value,allowed)=>value&&typeof value==='object'&&!Array.isArray(value)&&Object.keys(value).every(key=>allowed.includes(key))&&allowed.every(key=>Object.hasOwn(value,key));
 export async function validatePolarQuestionContent(document,{allowDraft=false}={}){

@@ -1,7 +1,7 @@
 // Draft literal-drinking convention. No canonical admission or music code yet.
-import {canonicalDigest} from './engine.mjs';
-import {createContextualContent} from './contextual_content.mjs';
-import {validateMaterialReference} from './material_reference.mjs';
+import {canonicalDigest} from './engine.mjs?v=contextual-width-2';
+import {createContextualContent} from './contextual_content.mjs?v=contextual-width-2';
+import {validateMaterialReference} from './material_reference.mjs?v=contextual-width-2';
 export const DRINKING_CONTRACT=Object.freeze({predicate:'literal_drinking',action_category:'oral_intake_of_liquid_as_drink',participant_binding:'drinker_performs_intake_of_material',material_classification_scope:'within_drinking_content_not_global_label_fact',thirst_commitment:'not_entailed',ownership_commitment:'not_entailed',pleasure_commitment:'not_entailed',benefit_commitment:'not_entailed',intention_commitment:'not_entailed',whole_amount_consumption:'not_asserted'});
 export const DRINKING_VIEWPOINTS=Object.freeze({ongoing:'Drinking activity is in progress; no completed intake amount or completed event is asserted.',bounded:'A bounded drinking event is presented as a whole; some intake belongs to that event, but no entire contextual portion or numeric amount is asserted.',habitual:'Drinking is a recurring or characteristic activity; no particular occurrence at speech time is asserted.'});
 const allowedScopes=[[],[{operator:'negation'}],[{operator:'time',relation:'before_speech'}],[{operator:'time',relation:'before_speech'},{operator:'negation'}]];

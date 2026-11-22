@@ -1,4 +1,4 @@
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=contextual-width-2';
 
 // Independent interpretation of the released EZLEX conventions 3–6. Inputs are
 // performed MIDI and the root sound inventory, never English, IR or event plans.

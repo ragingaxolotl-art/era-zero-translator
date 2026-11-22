@@ -1,4 +1,4 @@
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=contextual-width-2';
 // Reads normalized mass, temperature or luminance measurement/bound meaning from MIDI alone.
 export function decodeMaterialMeasurementMidi(bytes,atoms){
  const message='Unsupported or malformed material measurement music.',fail=()=>{throw new Error(message);};

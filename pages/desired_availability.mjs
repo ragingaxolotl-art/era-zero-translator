@@ -1,10 +1,10 @@
 import {personalPronounPlan,resolvePersonalPronouns} from './personal_pronoun_plan.mjs';
-import {validReferent} from './pronouns.mjs';
-import {parseFoundationSentence} from './foundation_sentences.mjs';
-import {contextualContentReference,createContextualContent} from './contextual_content.mjs';
-import {composeAvailabilitySentence,availabilityPlan} from './availability_sentences.mjs';
-import {validateCustodyOpportunity} from './custody_opportunity.mjs';
-import {canonicalDigest} from './engine.mjs';
+import {validReferent} from './pronouns.mjs?v=contextual-width-2';
+import {parseFoundationSentence} from './foundation_sentences.mjs?v=contextual-width-2';
+import {contextualContentReference,createContextualContent} from './contextual_content.mjs?v=contextual-width-2';
+import {composeAvailabilitySentence,availabilityPlan} from './availability_sentences.mjs?v=contextual-width-2';
+import {validateCustodyOpportunity} from './custody_opportunity.mjs?v=contextual-width-2';
+import {canonicalDigest} from './engine.mjs?v=contextual-width-2';
 const FOUNDATION='FND:f66b7a3877f4b0140a0b7023';
 export function desiredAvailabilityPlan(input){
  const p=parseFoundationSentence(input);if(p?.type!=='desire'||p.calendarDay!==undefined)return null;

@@ -16,6 +16,16 @@ norms:
   dim: {dimension: luminance, relation: less_than, code: 5}
   rough: {dimension: surface_texture, relation: greater_than, code: 6}
   smooth: {dimension: surface_texture, relation: less_than, code: 7}
+  wide: {dimension: physical_width, relation: greater_than, code: 8}
+  narrow: {dimension: physical_width, relation: less_than, code: 9}
+physical_width:
+  review: reviews/contextual_width_2026_11_22.md
+  property: Lateral physical extent of the material bearer along a locally selected transverse axis
+  axis_and_section: Local contextual parameters; no measured values or cross-context identity inferred
+  wide: Extent exceeds the local wide standard
+  narrow: Extent is below the local narrow standard
+  exclusions: [aperture clearance, passability, capacity, area, height, length, thickness, apparent size, figurative breadth]
+  implementation_boundary: Selected contextual descriptions only; numeric width and entity comparisons are unsupported
 surface_texture:
   review: reviews/surface_texture_foundation.md
   property: Local physical surface irregularity of the material bearer

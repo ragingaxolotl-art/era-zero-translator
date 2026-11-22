@@ -6,6 +6,16 @@ const routeNames = {
   label:'A name played as sounds'
 };
 const senses = {
+  contextual_thermodynamic_temperature_hot:'The object’s temperature is above the local hot standard',
+  contextual_thermodynamic_temperature_cold:'The object’s temperature is below the local cold standard',
+  contextual_mass_heavy:'The object’s mass is above the local heavy standard',
+  contextual_mass_light:'The object’s mass is below the local light standard',
+  contextual_luminance_bright:'The surface’s emitted or reflected light is above the local bright standard',
+  contextual_luminance_dim:'The surface’s emitted or reflected light is below the local dim standard',
+  contextual_surface_texture_rough:'The surface is more irregular than the local rough standard',
+  contextual_surface_texture_smooth:'The surface is less irregular than the local smooth standard',
+  contextual_physical_width_wide:'The object’s width is above the local wide standard',
+  contextual_physical_width_narrow:'The object’s width is below the local narrow standard',
   coordination_all:'Both parts are true or included', copular_predication:'Says what something is or what it is like',
   generic_transition:'Something comes to be a different way', generate_composite_artifact:'Make one thing from several parts',
   semantic_role:'What brings about the event', generic_state_transition:'Something changes from one state to another',

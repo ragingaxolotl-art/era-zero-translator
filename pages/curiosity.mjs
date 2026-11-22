@@ -1,8 +1,8 @@
-import {canonicalDigest} from './engine.mjs';
-import {contextualContentReference,createContextualContent} from './contextual_content.mjs';
-import {createContextualInquiry,validateContextualInquiry} from './contextual_inquiry.mjs';
+import {canonicalDigest} from './engine.mjs?v=contextual-width-2';
+import {contextualContentReference,createContextualContent} from './contextual_content.mjs?v=contextual-width-2';
+import {createContextualInquiry,validateContextualInquiry} from './contextual_inquiry.mjs?v=contextual-width-2';
 import {personalPronounPlan,resolvePersonalPronouns} from './personal_pronoun_plan.mjs';
-import {validReferent} from './pronouns.mjs';
+import {validReferent} from './pronouns.mjs?v=contextual-width-2';
 export const CURIOSITY_CONTRACT=Object.freeze({
  predicate:'epistemic_curiosity',desire_foundation_id:'FND:f66b7a3877f4b0140a0b7023',
  criterion:'The experiencer has epistemic interest in the contextual inquiry: resolving some contextually relevant uncertainty about the topic is itself motivationally attractive, rather than wanted solely for a separate practical outcome. Instrumental motives may coexist. This does not require pleasure, current attention, a conscious feeling, intention, action, successful discovery or complete ignorance of the topic.',

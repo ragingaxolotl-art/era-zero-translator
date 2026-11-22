@@ -1,9 +1,9 @@
 import {personalPronounPlan,resolvePersonalPronouns} from './personal_pronoun_plan.mjs';
-import {validReferent} from './pronouns.mjs';
+import {validReferent} from './pronouns.mjs?v=contextual-width-2';
 // Draft interpretation/meaning contract. Its musical implementation is separate;
 // creating this document does not imply canonical vocabulary admission.
-import {canonicalDigest} from './engine.mjs';
-import {contextualContentReference,createContextualContent,validateContextualContent} from './contextual_content.mjs';
+import {canonicalDigest} from './engine.mjs?v=contextual-width-2';
+import {contextualContentReference,createContextualContent,validateContextualContent} from './contextual_content.mjs?v=contextual-width-2';
 import {expandNegativeContractions} from './contractions.mjs';
 const REF='(?:I|[Mm]e|[Yy]ou|[A-Z][a-z]+|"[^"\\n]+"|(?:[Tt]he|[Tt]his|[Tt]hat) [a-z]+)';
 export const UNDERSTANDING_READINGS=Object.freeze({

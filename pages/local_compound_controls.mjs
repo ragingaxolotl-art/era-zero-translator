@@ -1,8 +1,8 @@
 import {localParticipantGroups} from './local_participant_groups.mjs';
-import {composeLocalCompoundSentence} from './local_compound_sentence.mjs';
-import {expandLocalCompound} from './local_compound_expansion.mjs';
-import {contextualContentReference} from './contextual_content.mjs';
-import {localCompoundMusic} from './local_compound_music.mjs';
+import {composeLocalCompoundSentence} from './local_compound_sentence.mjs?v=contextual-width-2';
+import {expandLocalCompound} from './local_compound_expansion.mjs?v=contextual-width-2';
+import {contextualContentReference} from './contextual_content.mjs?v=contextual-width-2';
+import {localCompoundMusic} from './local_compound_music.mjs?v=contextual-width-2';
 export async function mountLocalCompoundControls(container,id,registry,authority,{document=globalThis.document,download,player,onError=()=>{}}={}){
  const make=(tag,text)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e;};
  const expansion=await expandLocalCompound(id,registry,authority),fields=[];

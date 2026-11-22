@@ -1,8 +1,8 @@
 import {expandNegativeContractions} from './contractions.mjs';
-import {parseNamedSentence,composeNamedSentence} from './sentences.mjs';
-import {NOMINAL_PATTERN,parseNominal} from './nominals.mjs';
+import {parseNamedSentence,composeNamedSentence} from './sentences.mjs?v=contextual-width-2';
+import {NOMINAL_PATTERN,parseNominal} from './nominals.mjs?v=contextual-width-2';
 import {validateQuantifiedBindings} from './quantified_binding.mjs';
-import {canonicalDigest} from './engine.mjs';
+import {canonicalDigest} from './engine.mjs?v=contextual-width-2';
 const properties='(?:physically energized|damaged|impaired|restored|conscious|dormant)';
 export function parseQuantifiedPropertySentence(input){
  if(typeof input!=='string')return null;

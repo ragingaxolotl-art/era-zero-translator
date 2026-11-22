@@ -1,8 +1,8 @@
 import {personalPronounPlan,resolvePersonalPronouns} from './personal_pronoun_plan.mjs';
-import {validReferent} from './pronouns.mjs';
+import {validReferent} from './pronouns.mjs?v=contextual-width-2';
 import {expandNegativeContractions} from './contractions.mjs';
-import {composeFoundationSentence} from './foundation_sentences.mjs';
-import {createKnowledgeAcquisition} from './knowledge_acquisition.mjs';
+import {composeFoundationSentence} from './foundation_sentences.mjs?v=contextual-width-2';
+import {createKnowledgeAcquisition} from './knowledge_acquisition.mjs?v=contextual-width-2';
 const HOLDER='(?:I|[Yy]ou|[A-Z][a-z]+|"[^"\\n]+"|(?:[Tt]he|[Tt]his|[Tt]hat) [a-z]+)';
 export function parseLearnedWhether(input){
  if(typeof input!=='string')return null;

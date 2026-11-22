@@ -1,7 +1,7 @@
 import {validateSubjectControl} from './subject_control.mjs';
 // Typed argument and intensional-content validation for the opt-in EZFOUND-1 profile.
 // This supplements (and does not replace) the ordinary semantic IR validator.
-import {validateFoundations} from './foundations.mjs';
+import {validateFoundations} from './foundations.mjs?v=contextual-width-2';
 export async function validateFoundationIR(input, records, {allowDraft=false}={}) {
  const ir=structuredClone(input);
  const registry=await validateFoundations(records,{allowDraft});

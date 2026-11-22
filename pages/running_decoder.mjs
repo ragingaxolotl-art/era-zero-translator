@@ -1,4 +1,4 @@
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=contextual-width-2';
 export function readRunningTree(node,reader,readActor,{embedded=false}={}){
  const fail=()=>{throw new Error('Unsupported or malformed running music.');};
  if(node.marker!=='convention_23_open'||node.children?.length!==1)fail();

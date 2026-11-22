@@ -1,10 +1,10 @@
-import {validateDesiredAvailability} from './desired_availability.mjs';
+import {validateDesiredAvailability} from './desired_availability.mjs?v=contextual-width-2';
 import {desiredAvailabilityEvent} from './desired_availability_frames.mjs';
-import {custodyOpportunityMusicEvents,readCustodyOpportunityTree} from './custody_opportunity_music.mjs';
-import {renderLexicalOccurrences} from './bound_compounds.mjs';
-import {grammarMarker} from './scheduler.mjs';
-import {midiFromScheduledEvents} from './engine.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
+import {custodyOpportunityMusicEvents,readCustodyOpportunityTree} from './custody_opportunity_music.mjs?v=contextual-width-2';
+import {renderLexicalOccurrences} from './bound_compounds.mjs?v=contextual-width-2';
+import {grammarMarker} from './scheduler.mjs?v=contextual-width-2';
+import {midiFromScheduledEvents} from './engine.mjs?v=contextual-width-2';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=contextual-width-2';
 export async function midiFromDesiredAvailability(document,authority,{allowDraft=false,anchor=60}={}){
  const d=await validateDesiredAvailability(document,{allowDraft}),mark=name=>grammarMarker({performance:{anchor_midi:anchor}},'desired-availability',name);
  let events=[desiredAvailabilityEvent(d.subject_binding,d.runtime_state,'open',anchor),mark('role_experiencer_open'),...await renderLexicalOccurrences({nodes:[d.holder],edges:[]},authority,{anchor}),mark('role_experiencer_close'),mark('proposition_content_open'),...await custodyOpportunityMusicEvents(d.content,authority,{allowDraft:true,anchor}),mark('proposition_content_close'),desiredAvailabilityEvent(d.subject_binding,d.runtime_state,'close',anchor)];

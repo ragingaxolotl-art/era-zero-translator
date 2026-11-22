@@ -1,4 +1,4 @@
-import {decodePropertyComparisonMidi} from './property_comparison_decoder.mjs';
+import {decodePropertyComparisonMidi} from './property_comparison_decoder.mjs?v=contextual-width-2';
 
 // Preserve the existing mass-only API and its rejection of other dimensions.
 export function decodeMassComparisonMidi(bytes){

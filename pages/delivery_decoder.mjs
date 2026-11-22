@@ -1,4 +1,4 @@
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=contextual-width-2';
 
 // Independent bounded semantic projection; only performed MIDI and root sounds.
 export function decodeCustodyDeliveryMidi(bytes,atoms){

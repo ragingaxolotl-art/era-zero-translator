@@ -1,6 +1,6 @@
-import {savedQualityLabel} from './story_saved_adjectives.mjs';
-import {expandChordMidi} from './compact_chords.mjs?v=state-adjectives-1';
-import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=physical-holding-1';
+import {savedQualityLabel} from './story_saved_adjectives.mjs?v=contextual-width-2';
+import {expandChordMidi} from './compact_chords.mjs?v=contextual-width-2';
+import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=contextual-width-2';
 import {describeClaim,describeRuntime} from './meaning_readback.mjs?v=field-repairs-1';
 import {feltProperties} from './story_qualities.mjs?v=physical-holding-1';
 import {storyWords} from './story_words.mjs?v=information-vocabulary-1';
@@ -33,6 +33,14 @@ export async function readSongLine(bytes,atoms,records,chords,adjectives){
   }else if(m.knowledge)words.push('Knowledge of '+(m.knowledge.question.additional?'an additional':'a')+' wanted value. Knower = '+identity(m.knowledge.knower)+', wanter = '+identity(m.knowledge.question.restriction.wanter)+'. '+describeClaim('knows which value',m.knowledge.scopes));
   else if(m.fault)words.push(describeClaim('correct the '+(typeof m.fault.type_label==='string'?m.fault.type_label+' ':'')+'fault',m.scopes.map(s=>['possible','necessary'].includes(s)?'modality_'+s:s),m.speech_act)+' Actor = '+identity(m.actor)+'.');
   else if(m.discovery)words.push(identity(m.discovery.actor)+' found the referenced item. '+identity(m.requirement.actor)+' is required to erase that same item.');
+  else if(m.standard?.kind==='contextual'&&m.bearer){
+    const dimension=({physical_width:'physical width',thermodynamic_temperature:'temperature',mass:'mass',luminance:'surface luminance',surface_texture:'surface texture'})[m.dimension]||m.dimension;
+    const scopes=(m.scopes||[]).map(s=>s.operator==='time'?'time_'+s.relation:s.operator==='modality'?'modality_'+s.mode:s.operator==='aspect'?'aspect_'+s.aspect:s.operator);
+    const supported=new Set(['negation','time_before_speech','time_at_speech','time_after_speech','time_previous_day','time_current_day','time_next_day','modality_possible','modality_necessary','modality_predicted','aspect_ongoing']);
+    const label=m.standard.norm+' ('+dimension+')';
+    words.push(scopes.every(s=>supported.has(s))?describeClaim(label,scopes,m.speech_act):'Recovered a scoped '+label+' reading; the complete meaning contains additional scope details.');
+    words.push('Bearer = '+identity(m.bearer)+'. The standard is local; no numerical cutoff is stated.');
+  }
   else if(typeof m.predicate==='string'){
     const roles=Array.isArray(m.participants)?m.participants.map(p=>[p.role,p.reference]):Object.entries(m.participants||{});
     const scopes=(m.scopes||[]).map(scope=>typeof scope==='string'?scope:scope.operator==='time'?'time_'+scope.relation:scope.operator==='aspect'?'aspect_'+scope.aspect:scope.operator);

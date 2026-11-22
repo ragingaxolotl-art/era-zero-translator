@@ -1,5 +1,5 @@
 import {contextsForWords} from './word_coverage_context.mjs?v=physical-holding-1';
-import {isAttributiveProperty} from './nominals.mjs';
+import {isAttributiveProperty} from './nominals.mjs?v=contextual-width-2';
 const STOPWORDS=new Set('a an the to of in on at for from with am is are was were be being been do does did i you he she it we they this that these those my your his her its our their please now just may might maybe could can would will shall should perhaps possibly probably'.split(' '));
 const DIRECT=new Set(['atom','compound']);
 const INHERENTLY_POLYSEMOUS=new Set(['know','have','exist','receive','send','share','change','return','run','home']);

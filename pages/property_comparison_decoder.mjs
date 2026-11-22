@@ -1,4 +1,4 @@
-import {notesFromMidi} from './performance_codec.mjs';
+import {notesFromMidi} from './performance_codec.mjs?v=contextual-width-2';
 
 // Independent inverse of the strict EZPROPERTYCOMPARE-1 material-property profile.
 // Accepts MIDI bytes only: no source sentence, formal plan, or semantic IR.

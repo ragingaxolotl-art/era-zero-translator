@@ -1,10 +1,10 @@
-import {dictionaryRoles} from './dictionary_clauses.mjs?v=physical-holding-1';
-import {contextualContentReference} from './contextual_content.mjs';
-import {informationMusic} from './information_music.mjs?v=meaning-reliability-1';
+import {dictionaryRoles} from './dictionary_clauses.mjs?v=contextual-width-2';
+import {contextualContentReference} from './contextual_content.mjs?v=contextual-width-2';
+import {informationMusic} from './information_music.mjs?v=contextual-width-2';
 import {informationFrame} from './information_passage_frames.mjs?v=field-repairs-1';
-import {midiFromScheduledEvents} from './engine.mjs';
+import {midiFromScheduledEvents} from './engine.mjs?v=contextual-width-2';
 import {registerFor} from './roles.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=meaning-reliability-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=contextual-width-2';
 import {ERASURE,scoreErasure,readErasure} from './information_operations.mjs?v=information-operations-1';
 
 const semantic=(root,participants,scopes,runtime_state,speech_act)=>({
