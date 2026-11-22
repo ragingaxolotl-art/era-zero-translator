@@ -8461,3 +8461,178 @@ reviews:
     decision: 'rejected: semantic substitution'
   recommendation: approve explicit_physical_convention
   confidence: high
+- compound_id: CMP:9ea919967152aa85bc1c7169
+  display_title: generation of a distinct stored information copy
+  current_choice_reason: reviews/information_vocabulary_2026_11_22.md; scores are
+    author judgments, not measured accuracy or independent validation.
+  candidates:
+  - candidate_id: explicit_information_convention
+    direction: Reuse exact dependencies and state the additional information distinction,
+      phase and participant constraints audibly.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - kind: root
+        root_id: DAT:000
+        node_id: q1
+      - kind: root
+        root_id: CRE:110
+        node_id: h
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: generation_of_a_distinct_stored_information_copy
+        sound_code: 83
+        added_definition: An actor completes an operation that generates a distinct
+          retained information object reproducing the relevant content of one source
+          information object under a fixed contextual content-equivalence criterion.
+          DAT:000 describes the generated information object; CRE:110 describes that
+          same object's generation by the actor. The source object is the outer target,
+          not the newly generated result. The source and result are distinct tokens
+          even when their relevant content is equal. This operation does not itself
+          remove or modify the source's relevant content. The result is maintained
+          in a contextual store; its location, name, ownership, encoding and physical
+          medium are unspecified. This meaning does not guarantee every bit, file
+          attribute or metadata field is identical unless the contextual criterion
+          includes them. Ongoing aspect views the copying internally without asserting
+          a completed result.
+        excludes:
+        - Moving or deleting the source instead of retaining it through the copying
+          operation
+        - A new empty object or an unrelated artifact
+        - Transferring information without a distinct retained copy result
+        - Imitating behavior, making a physical replica, or asserting bitwise and
+          metadata identity without a criterion
+  - candidate_id: unmarked_root_conjunction
+    direction: Root adjacency alone does not supply a distinct copy result, source
+      preservation or ordered mental-retrieval phases.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: distinction absent'
+  - candidate_id: runtime_or_nearby_alias
+    direction: Runtime, generic transfer or a nearby English label cannot replace
+      the intended meaning.
+    scores:
+      atomicity: 2
+      address_fit: 3
+      family_fit: 3
+      neighbor_separation: 1
+      cross_family_separation: 2
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 17
+    decision: 'rejected: semantic substitution'
+  recommendation: approve explicit_information_convention
+  confidence: high
+- compound_id: CMP:aa39f8fdd0d04ee37348de05
+  display_title: retrieval of a latent target representation
+  current_choice_reason: reviews/information_vocabulary_2026_11_22.md; scores are
+    author judgments, not measured accuracy or independent validation.
+  candidates:
+  - candidate_id: explicit_information_convention
+    direction: Reuse exact dependencies and state the additional information distinction,
+      phase and participant constraints audibly.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - kind: root
+        root_id: MIN:012
+        node_id: q1
+      - kind: root
+        root_id: MIN:011
+        node_id: q2
+      - kind: root
+        root_id: ORI:110
+        node_id: h
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      - type: qualifies
+        from: q2
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: retrieval_of_a_latent_target_representation
+        sound_code: 84
+        added_definition: A cognizer completes a retrieval transition in which a previously
+          latent mental representation of one distinct target becomes manifest in
+          that cognizer's cognition. MIN:012 describes the retained but nonmanifest
+          representation in the pre-phase; MIN:011 describes that same representation
+          of the same target in the result phase. ORI:110 marks the completed actualization
+          of that manifest condition, not creation of a new target or a new cognizer.
+          This specializes the existing reviewed remember meaning, bringing a previously
+          latent representation into manifest cognition. It does not assert new learning,
+          truth or accuracy of the representation, deliberate effort, spoken expression,
+          emotional familiarity, or continuous awareness. Ongoing aspect views the
+          retrieval internally without asserting its completed result.
+        excludes:
+        - A representation that merely persists without becoming manifest
+        - Learning or discovering the target for the first time
+        - Truth, accuracy or conscious emotional familiarity inferred from retrieval
+        - Retrieving bytes from storage without cognition, recalling a product, or
+          recalling a sent message
+  - candidate_id: unmarked_root_conjunction
+    direction: Root adjacency alone does not supply a distinct copy result, source
+      preservation or ordered mental-retrieval phases.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: distinction absent'
+  - candidate_id: runtime_or_nearby_alias
+    direction: Runtime, generic transfer or a nearby English label cannot replace
+      the intended meaning.
+    scores:
+      atomicity: 2
+      address_fit: 3
+      family_fit: 3
+      neighbor_separation: 1
+      cross_family_separation: 2
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 17
+    decision: 'rejected: semantic substitution'
+  recommendation: approve explicit_information_convention
+  confidence: high

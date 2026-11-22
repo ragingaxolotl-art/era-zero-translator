@@ -1,0 +1,15 @@
+# Review: copying information and recalling a target
+
+These proposed conventional compounds extend the user's translator-completion work. This is an author semantic review, not independent linguistic validation or separate user approval of every definition. Existing roots and all earlier meanings must remain unchanged. No new root family is justified.
+
+The order starts with a distinct stored-copy result using existing data and artifact-generation meanings. Recall independently reuses latent/manifest target representations and completed actualization. Neither operation depends on a new generic save or storage word. Adding such a dependency would incorrectly equate a stored copy, a storage action and mental retrieval.
+
+For **copy**, the new retained information object is the generated artifact. The source item and result are distinct tokens under one content-equivalence criterion. The compound's explicit convention supplies this connection; DAT:000 next to CRE:110 alone does not entail it. DAT:010 would incorrectly require the copy to denote the source object. DAT:110 would assert transfer to a distinct target context, which is not required for a copy within one store. The copy operation preserves its source; it does not promise that nothing else can ever change that source. Exact bytes, metadata, location and naming need additional explicit information.
+
+For **recall**, reuse the approved `manifest_latent_representation` sense of *remember* (`ENS:901babefedfc9e1f7aa95438`). That route means bringing a previously latent representation into manifest cognition, not merely having a memory. The new compound makes its ordered latent/result phases explicit. MIN:110 alone is too broad, and treating every retrieval as revision of representational content would add a claim. ORI:110 actualizes the manifest condition; it does not create the represented person or object. A memory can be inaccurate; the operation does not establish knowledge or truth.
+
+The ordinary words are ambiguous. Copying a file can use the stored-information reading directly; copying a person, physical object or behavior requires a focused sense choice. *Remember* and *recall* must distinguish retrieval from persistent memory, product/message withdrawal and other meanings. Rejecting the offered sense must not create a song with that sense.
+
+**Save** remains separate. Establishing durable retention, writing a new snapshot, retaining an already stored object and rescuing a person have different commitments. No existing root should be given all of those meanings by an English alias. This batch does not claim to implement save, forgetting, arbitrary content propositions, named copy results or source/destination stores.
+
+Before publication: protect every earlier record by fingerprint; validate dependency and code uniqueness; test roles and phase scope with all runtime states; test new subjects, tenses, negation, questions, commands, pronouns and alternative targets; independently decode melody and chords; verify actual browser song exports and honest ambiguity handling. Preserve prior stored songs and definitions.

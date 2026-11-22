@@ -192,5 +192,52 @@
     ],
     "pos": "adjective",
     "everyday": "Relevant physical contents reach the contextual capacity"
+  },
+  {
+    "word": "copy",
+    "title": "generation of a distinct stored information copy",
+    "code": 83,
+    "parts": [
+      "DAT:000",
+      "CRE:110"
+    ],
+    "definition": "An actor completes an operation that generates a distinct retained information object reproducing the relevant content of one source information object under a fixed contextual content-equivalence criterion. DAT:000 describes the generated information object; CRE:110 describes that same object's generation by the actor. The source object is the outer target, not the newly generated result. The source and result are distinct tokens even when their relevant content is equal. This operation does not itself remove or modify the source's relevant content. The result is maintained in a contextual store; its location, name, ownership, encoding and physical medium are unspecified. This meaning does not guarantee every bit, file attribute or metadata field is identical unless the contextual criterion includes them. Ongoing aspect views the copying internally without asserting a completed result.",
+    "example": "Nora copied the file.",
+    "near": "Nora moved the file and the source entry ceased to exist.",
+    "reuse": "Reuse this exact copying event before specifying a destination, a named result or a stronger fidelity criterion.",
+    "forms": [
+      "copy",
+      "copies",
+      "copied",
+      "copying"
+    ],
+    "pos": "verb",
+    "everyday": "Creates a distinct stored copy without removing the source"
+  },
+  {
+    "word": "recall",
+    "title": "retrieval of a latent target representation",
+    "code": 84,
+    "parts": [
+      "MIN:012",
+      "MIN:011",
+      "ORI:110"
+    ],
+    "definition": "A cognizer completes a retrieval transition in which a previously latent mental representation of one distinct target becomes manifest in that cognizer's cognition. MIN:012 describes the retained but nonmanifest representation in the pre-phase; MIN:011 describes that same representation of the same target in the result phase. ORI:110 marks the completed actualization of that manifest condition, not creation of a new target or a new cognizer. This specializes the existing reviewed remember meaning, bringing a previously latent representation into manifest cognition. It does not assert new learning, truth or accuracy of the representation, deliberate effort, spoken expression, emotional familiarity, or continuous awareness. Ongoing aspect views the retrieval internally without asserting its completed result.",
+    "example": "Nora recalled Mira.",
+    "near": "Nora retained a representation of Mira but it never came to mind.",
+    "reuse": "Reuse this retrieval before adding accuracy, a cause, an expressed message or a proposition about the target.",
+    "forms": [
+      "recall",
+      "recalls",
+      "recalled",
+      "recalling",
+      "remember",
+      "remembers",
+      "remembered",
+      "remembering"
+    ],
+    "pos": "verb",
+    "everyday": "Brings a previously latent representation back to mind"
   }
 ]

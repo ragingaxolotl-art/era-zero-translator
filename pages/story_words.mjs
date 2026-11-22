@@ -566,6 +566,29 @@ export const storyWords = [
     "parts": [
       "CMP:ace0fc4ddd0c53a2a33e8fee"
     ]
+  },
+  {
+    "word": "copy",
+    "code": 83,
+    "example": "Nora copied the file.",
+    "near": "Nora moved the file and the source entry ceased to exist.",
+    "id": "CMP:9ea919967152aa85bc1c7169",
+    "parts": [
+      "DAT:000",
+      "CRE:110"
+    ]
+  },
+  {
+    "word": "recall",
+    "code": 84,
+    "example": "Nora recalled Mira.",
+    "near": "Nora retained a representation of Mira but it never came to mind.",
+    "id": "CMP:aa39f8fdd0d04ee37348de05",
+    "parts": [
+      "MIN:011",
+      "MIN:012",
+      "ORI:110"
+    ]
   }
 ];
 export const storyDependencies = [

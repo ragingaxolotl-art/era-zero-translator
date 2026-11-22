@@ -26,7 +26,7 @@ Keep Translate, the plain-language interpreted message, Play and Add to song tog
 
 ### 3. Expand reusable meanings and their English forms together
 
-Implemented first batch: pull, release, fall, drop, empty and full, with holding and capacity foundations. Existing roots and meanings are preserved. The existing deletion operation now generalizes across supported subjects, tense, scopes and clauses; see the [erasure evidence](../reports/information_erasure_2026_11_22.md). Placement, narrow/wide, degree and other information operations remain next work; the physical meanings do not cover their figurative counterparts.
+Implemented first batch: pull, release, fall, drop, empty and full, with holding and capacity foundations. Existing roots and meanings are preserved. The existing deletion operation now generalizes across supported subjects, tense, scopes and clauses; see the [erasure evidence](../reports/information_erasure_2026_11_22.md). Stored copying and clarified mental retrieval now have reusable meanings and sentence support; see their [evidence and limits](../reports/information_vocabulary_2026_11_22.md). Placement, narrow/wide, degree, saving and other information operations remain next work; the physical meanings do not cover their figurative counterparts.
 
 Use this decision order for each intended sense: exact existing meaning → ordinary composition from existing meanings → explicitly defined conventional compound → grammar feature → unresolved primitive proposal. A new alias must entail the existing definition. Do not substitute lowering for dropping, dormancy for deletion, care for pleasure, or ability for permission.
 
