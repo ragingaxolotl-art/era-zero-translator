@@ -55,7 +55,7 @@ try{
     }
     await translate('Nora dropped the full box.');
     await page.getByRole('button',{name:'Add to song',exact:true}).filter({visible:true}).waitFor();
-    await page.locator('#sourceInput').scrollIntoViewIfNeeded();
+    await page.locator('#candidateList').scrollIntoViewIfNeeded();
     await page.screenshot({path:output+'/ready-'+width+'.png'});
     await page.locator('#sourceInput').fill('Nora dropped the subject.');
     assert.equal(await page.getByRole('button',{name:'Add to song',exact:true}).filter({visible:true}).count(),0);
