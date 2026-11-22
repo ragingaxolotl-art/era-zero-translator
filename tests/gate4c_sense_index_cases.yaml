@@ -1,8 +1,8 @@
 ---
 metadata:
   version: 1.0.0
-  sense_count: 589
-  lemma_count: 568
+  sense_count: 591
+  lemma_count: 570
 exact_atom_labels:
 - input: continuous self
   expected_route: atom
@@ -1112,6 +1112,9 @@ exact_compound_labels:
 - input: material artifact
   expected_route: compound
   expected_target: CMP:61bfb0de7a1e9d7f5b981725
+- input: caused physical placement at a destination
+  expected_route: compound
+  expected_target: CMP:64574c1a25d72a89aafc46ef
 - input: ending of a physical holding engagement
   expected_route: compound
   expected_target: CMP:69f57af236cf82c134e3c51a

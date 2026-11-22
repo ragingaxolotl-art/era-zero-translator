@@ -1,12 +1,12 @@
 import {validStorySlots} from './story_saved_adjectives.mjs?v=partial-word-flow-1';
 import {isPassageHead} from './passage_nouns.mjs';
-import {knownValueReading} from './known_value.mjs?v=partial-word-flow-2';
-import {faultCategoryReading} from './fault_correction.mjs?v=partial-word-flow-2';
+import {knownValueReading} from './known_value.mjs?v=physical-placement-1';
+import {faultCategoryReading} from './fault_correction.mjs?v=physical-placement-1';
 import {routeNounLabel} from './nominals.mjs?v=partial-word-flow-1';
 import {expandNegativeContractions} from './contractions.mjs';
-import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs?v=partial-word-flow-2';
-import {properties,feltProperties,isMaterialTarget,isPhysicalContainer,physicalActionLabels} from './story_qualities.mjs?v=physical-holding-1';
-import {storyWords} from './story_words.mjs?v=information-vocabulary-1';
+import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs?v=physical-placement-1';
+import {properties,feltProperties,isMaterialTarget,isPhysicalContainer,isPhysicalPlace,physicalActionLabels} from './story_qualities.mjs?v=physical-placement-1';
+import {storyWords} from './story_words.mjs?v=physical-placement-1';
 import {ERASURE,isStoredInformationTarget} from './information_operations.mjs?v=information-operations-1';
 
 const words = new Map(storyWords.map(word => [word.word, word]));
@@ -19,6 +19,8 @@ const shapes = [
   ['displace','displaces','displaced',['cause','bearer'],null,'displacing'],
   ['lift','lifts','lifted',['actor','target'],null,'lifting'],
   ['lower','lowers','lowered',['actor','target'],null,'lowering'],
+  ['put','puts','put',['actor','target'],null,'putting'],
+  ['place','places','placed',['actor','target'],'put','placing'],
   ['pull','pulls','pulled',['actor','target'],null,'pulling'],
   ['hold','holds','held',['actor','target'],'physical holding foundation','holding'],
   ['release','releases','released',['actor','target'],null,'releasing'],
@@ -72,6 +74,7 @@ const plural = noun => ['people','children','men','women','mice'].includes(noun)
 export const storyPropertyIds = new Set([...properties.values(),id('open for use')]);
 export const needsState = root => root === id('stay') || root === id('keep');
 export function storyRoles(root) {
+  if(root===id('put'))return [['actor','target','destination']];
   const roles = shapes.filter(row=>predicateId(row[0],row[4])===root).map(row=>row[3]);
   if(root===id('hand off work'))roles.push(['source','content']);
   if(root===id('open for use')||root===id('resume'))roles.push(['bearer']);
@@ -166,6 +169,16 @@ function splitObject(tokens,parseNoun) {
   }
   return {verb:tokens.join(' '), object:null};
 }
+// A destination belongs to the event, rather than becoming part of the object's
+// name. Other spatial relations need their own meaning and are not treated as at.
+function destinationComplement(tokens,parseObject,parseNoun){
+  const at=tokens.findIndex(token=>folded(token)==='at');
+  if(at<2)return null;
+  const destination=parseNoun(tokens,at+1);
+  if(!destination||at+1+destination.length!==tokens.length)return null;
+  const parsed=parseObject(tokens.slice(0,at));
+  return parsed.object?{...parsed,destination}:null;
+}
 // Keep the predicated state separate from a description inside the noun phrase.
 function stateComplement(tokens, parseObject, propertyAt) {
   for (let i=1; i<tokens.length; i++) {
@@ -198,7 +211,7 @@ function propertyAt(tokens,offset,adjectives) {
 function describeChoice(row) {
   return row.word === 'return' ? 'went back to an earlier place' : 'happened again';
 }
-function predicate(verb, subject, object, authority, runtime, preferences) {
+function predicate(verb, subject, object, authority, runtime, preferences,command=false) {
   const anchor = subject.pronoun ? (deictics[subject.pronoun] || (['they','them'].includes(subject.pronoun)?'we':'Ada')) :
     subject.plural&&!subject.singularAgreement?'we':'Ada';
   const placeholder = anchor+' '+verb+(object?' the gate':'');
@@ -218,16 +231,17 @@ function predicate(verb, subject, object, authority, runtime, preferences) {
   for (const [base,third,past,roles,target,progressive] of shapes) {
     const repeatedEvent=base==='repeat'&&!object;
     if ((!repeatedEvent && roles.length !== (object?2:1))||syntax.being&&tail!==progressive)continue;
-    const pastMatch = syntax.allowPast && tail === past;
+    const pastMatch = !command && syntax.allowPast && tail === past;
     if(!pastMatch&&!(syntax.being&&tail===progressive)&&tail!==(syntax.form==='third'?third:base))continue;
-    const scopes = [...syntax.scopes, ...(pastMatch?['time_before_speech']:[]),...(syntax.being?['aspect_ongoing']:[])];
+    const tenseChoice=pastMatch&&past===base&&syntax.form==='base';
+    const scopes = [...syntax.scopes, ...(pastMatch&&!tenseChoice?['time_before_speech']:[]),...(syntax.being?['aspect_ongoing']:[])];
     let root=predicateId(base,target);
     if(base==='follow' && !subject.domain && !/^(?:event|update|adjustment|arrival|response|request|silence|change)s?$/.test(subject.head||'')){
       readings.push({root,word:base,roles,scopes,specific:true,followChoice:true});break;
     }
     if(base==='move'&&pastMatch)root='MOV:120';
     if(base==='leave'&&pastMatch)root='MOV:100';
-    readings.push({root:repeatedEvent?id('recur'):root,word:repeatedEvent?'recur':base,roles:repeatedEvent?['bearer']:roles,scopes,specific:true});
+    readings.push({root:repeatedEvent?id('recur'):root,word:repeatedEvent?'recur':base,roles:repeatedEvent?['bearer']:roles,scopes,specific:true,...(tenseChoice?{tenseChoice:true}:{})});
     if (base==='return') readings.push({root:id('recur'),word:'recur',roles:['bearer'],scopes,specific:true});
     break;
   }
@@ -297,7 +311,7 @@ function prepare(input, authority, preferences, adjectives) {
       const commandOffset=polite+(folded(tokens[polite]||'')==='do'&&folded(tokens[polite+1]||'')==='not'?2:0);
       const commandWord=folded(tokens[commandOffset]||'');
       const commandTail=commandVerbs.has(commandWord)?tokens.slice(commandOffset):[];
-      const command=commandTail.length?(stateComplement(commandTail,parseObject,qualityAt)||parseObject(commandTail)):null;
+      const command=commandTail.length?(destinationComplement(commandTail,parseObject,parseNoun)||stateComplement(commandTail,parseObject,qualityAt)||parseObject(commandTail)):null;
       // Use the same complete object parser as statements. An article-only
       // shortcut excluded names and pronouns; matching the entire predicate
       // also avoids turning a person named Copy into an imperative subject.
@@ -315,17 +329,19 @@ function prepare(input, authority, preferences, adjectives) {
           recipient=indirect;tail=[...tail.slice(0,ditransitive+1),...tail.slice(ditransitive+1+indirect.length)];
         }
       }
-      const state=stateComplement(tail,parseObject,qualityAt);
-      let {verb,object,alternatives=[]}=state||parseObject(tail);
+      const placement=destinationComplement(tail,parseObject,parseNoun);
+      const state=placement?null:stateComplement(tail,parseObject,qualityAt);
+      let {verb,object,alternatives=[]}=placement||state||parseObject(tail);
       if(!object && /^notic(?:e|es|ed)$/i.test(verb)){
         object={text:'the omitted target',pronoun:'it',prompt:'What did '+subject.text+' notice?'};
       }
       if(!verb)return null;
-      let readings=predicate(verb,subject,object,authority,runtime,preferences);
+      let readings=predicate(verb,subject,object,authority,runtime,preferences,act==='command');
       if(act==='command' && folded(verb)==='find' && object && !preferences.some(p=>p.forms?.includes('find'))){
         readings=[{root:id('find'),word:'find',roles:['experiencer','target'],scopes:[],specific:true}];
       }
       readings=readings.filter(r=>needsState(r.root)===!!state);
+      readings=readings.filter(r=>(r.root===id('put'))===!!placement);
       if(again)readings=readings.filter(r=>r.root===id('check')).map(r=>({...r,root:id('recheck'),word:'recheck'}));
       if(when)readings=readings.map(r=>({...r,scopes:[when,...r.scopes]}));
       if(recipient)readings=readings.filter(r=>r.root==='CRE:110');
@@ -339,7 +355,7 @@ function prepare(input, authority, preferences, adjectives) {
       }
       special ||= !!link || readings.some(r=>r.specific) || !!subject.owner || !!object?.owner || !!subject.qualities?.length || !!object?.qualities?.length ||
         pronouns.has(subject.pronoun)||pronouns.has(object?.pronoun);
-      clauses.push({subject,object,alternatives,recipient,inherited,readings,q,outsideNegation,condition:state?.condition});
+      clauses.push({subject,object,alternatives,recipient,destination:placement?.destination,inherited,readings,q,outsideNegation,condition:state?.condition});
     }
   }
   return special ? {runtime,act,clauses,relations} : null;
@@ -500,6 +516,12 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
       reading=c.readings.find(r=>r.root===answers['word'+index]);
       if(!reading)return {question:{key:'word'+index,prompt:'Which meaning do you intend in this action?',options:c.readings.map(r=>({value:r.root,label:r.specific?describeChoice(r):r.sense.definition,sense:r.sense}))}};
     }
+    if(reading.tenseChoice){
+      const key='tense'+index,tense=answers[key];
+      if(!['present','past'].includes(tense))return {question:{key,prompt:'Does “'+c.subject.text+' put” describe present time or a past event?',options:[
+        {value:'present',label:'Present time'},{value:'past',label:'A past event'}]}};
+      if(tense==='past')reading={...reading,scopes:[...reading.scopes,'time_before_speech']};
+    }
     if(reading.followChoice){
       const key='following'+index;
       if(!answers[key])return {question:{key,prompt:'Does “follow” mean something happened later?',options:[
@@ -583,6 +605,21 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
       const recipient=identify(c.recipient,'recipient'+index);
       if(recipient===null)return question?{question}:null;
       args.push({role:'recipient',entity:recipient,properties:[]});
+    }
+    if(c.destination){
+      const destination=identify(c.destination,'destination'+index);
+      if(destination===null)return question?{question}:null;
+      const target=args.find(a=>a.role==='target');
+      if([target,...target.alternatives||[]].some(option=>option.entity===destination||option.entity===sub))return null;
+      const place=entities[destination],key='place'+index;
+      if(!isPhysicalPlace(place.head||'')){
+        if(!answers[key])return {question:{key,prompt:'Does '+place.label+' identify the physical destination of this placement?',options:[
+          {value:'physical',label:'A physical place'},{value:'other',label:'Another meaning'}]}};
+        if(answers[key]!=='physical')return null;
+      }
+      const arg=argument(c.destination,destination,'destination','property'+index+'Destination');
+      if(!arg)return question?{question}:null;
+      args.push(arg);
     }
     if(args.length===2&&args[0].entity===args[1].entity && !['MIN:011','MIN:110'].includes(reading.root))return null;
     lastSubject=sub;

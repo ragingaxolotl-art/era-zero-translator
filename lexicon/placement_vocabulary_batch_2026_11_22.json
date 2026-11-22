@@ -1,0 +1,26 @@
+[
+  {
+    "word": "put", "title": "caused physical placement at a destination", "code": 85,
+    "parts": ["caused displacement in a physical frame", "MOV:110"],
+    "definition": "An actor physically displaces a distinct material target so that this same target completes its arrival at a specified destination position in the same spatial frame. The nested caused-displacement event and MOV:110 describe the causal movement and its arrival endpoint within one placement episode; they do not describe two unrelated movers or destinations. The outer actor supplies the nested physical influence, the outer target is its displaced bearer and the arriving mover, and the outer destination supplies the arrival position. The destination may be a place identified relative to a named landmark. Placement does not itself assert support, containment, attachment, release of a grip, ownership transfer, the actor's own arrival, an exact coordinate, a route, or continued presence after the endpoint. Ongoing aspect views the placement internally without asserting a completed arrival. This physical sense excludes assigning a value, storing a digital item, ranking a competitor, or expressing an idea.",
+    "constraints": [
+      "Reuse the exact approved caused-displacement compound; its physical actor and displaced material bearer are the outer actor and target.",
+      "MOV:110's mover is that same target, and its target position is the outer destination. The movement and arrival share one episode and spatial frame.",
+      "The target is distinct from the actor and from its destination referent. A destination identified by a landmark denotes its contextually specified place; neither contact nor being inside or on that landmark is inferred.",
+      "The physical influence belongs to the causal movement phase; it need not persist after arrival. Arrival does not imply release, support, containment or a transfer of custody.",
+      "Tense, negation, modality, aspect and runtime scope the whole placement. They do not leave the nested displacement or arrival independently asserted."
+    ],
+    "excludes": [
+      "Movement that does not reach the specified destination in a completed assertion",
+      "Holding, lowering or releasing an object without the specified placement result",
+      "Being at a place without a caused change of position",
+      "Support, containment, contact, ownership, duration or the actor's arrival inferred from destination alone",
+      "Digital storage, assignment, ranking or figurative placement"
+    ],
+    "example": "Nora put the box at the gate.",
+    "near": "Nora moved the box toward the gate, but it never arrived there.",
+    "reuse": "Reuse this placement with a shared target before adding containment, surface support, release, an exact coordinate or a maintained endpoint state.",
+    "forms": ["put", "puts", "putting", "place", "places", "placed", "placing"],
+    "pos": "verb", "everyday": "Physically moves the object to the specified destination"
+  }
+]

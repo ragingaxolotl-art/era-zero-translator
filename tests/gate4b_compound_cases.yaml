@@ -2,7 +2,7 @@
 metadata:
   title: Gate 4B dictionary conformance and routing cases
   version: 1.0.0
-  approved_entries: 117
+  approved_entries: 118
 accepted:
 - case_id: arrival_back_at_a_prior_position
   compound_id: CMP:0808e01be62b7fac873ee324
@@ -138,6 +138,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: material_artifact
   compound_id: CMP:61bfb0de7a1e9d7f5b981725
+  expected: valid_approved_entry
+- case_id: caused_physical_placement_at_a_destination
+  compound_id: CMP:64574c1a25d72a89aafc46ef
   expected: valid_approved_entry
 - case_id: ending_of_a_physical_holding_engagement
   compound_id: CMP:69f57af236cf82c134e3c51a

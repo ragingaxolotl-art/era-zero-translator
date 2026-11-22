@@ -12,8 +12,8 @@ policy:
     authorize automatic semantic resolution.
 counts:
   atoms: 324
-  compounds: 117
-  entries: 441
+  compounds: 118
+  entries: 442
 entries:
 - target_id: CMP:0808e01be62b7fac873ee324
   target_type: compound
@@ -1010,6 +1010,43 @@ entries:
   - material artifact
   example_searches:
   - material artifact
+  mapping_status: discovery_only_noncanonical
+  authority_note: These words help people find the compound. They do not replace or
+    broaden its canonical graph.
+- target_id: CMP:64574c1a25d72a89aafc46ef
+  target_type: compound
+  canonical_title: caused physical placement at a destination
+  plain_label: put
+  plain_explanation: An everyday discovery label for the approved compound “caused
+    physical placement at a destination”; the compound graph controls its exact meaning.
+  ordinary_terms:
+  - caused
+  - physical
+  - placement
+  - at
+  - a
+  - destination
+  - caused physical placement at a destination
+  - put
+  - puts
+  - putting
+  - place
+  - places
+  - placed
+  - placing
+  match_phrases:
+  - caused physical placement at a destination
+  - put
+  - puts
+  - putting
+  - place
+  - places
+  - placed
+  - placing
+  example_searches:
+  - caused physical placement at a destination
+  - put
+  - puts
   mapping_status: discovery_only_noncanonical
   authority_note: These words help people find the compound. They do not replace or
     broaden its canonical graph.

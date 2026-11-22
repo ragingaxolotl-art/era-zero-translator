@@ -1,12 +1,12 @@
-import {storyReading} from './story_readings.mjs?v=partial-word-flow-2';
-import {scoreStory} from './story_music.mjs?v=partial-word-flow-2';
-import {dictionaryClausePlan} from './dictionary_clauses.mjs?v=partial-word-flow-2';
-import {scoreDictionaryClause} from './dictionary_clause_music.mjs?v=partial-word-flow-2';
+import {storyReading} from './story_readings.mjs?v=physical-placement-1';
+import {scoreStory} from './story_music.mjs?v=physical-placement-1';
+import {dictionaryClausePlan} from './dictionary_clauses.mjs?v=physical-placement-1';
+import {scoreDictionaryClause} from './dictionary_clause_music.mjs?v=physical-placement-1';
 import {midiFromFormal,midiFromScheduledEvents} from './engine.mjs?v=partial-word-flow-1';
 import {notesFromMidi} from './performance_codec.mjs?v=partial-word-flow-1';
 import {composeNamedSentence,parseNamedSentence,parseSentenceConjunction,composeSentenceConjunction,
   parseSentenceSequence,composeSentenceSequence,parseSentenceConditional,composeSentenceConditional} from './sentences.mjs?v=partial-word-flow-1';
-import {faultCorrectionPlan,composeFaultCorrection,describeFaultCorrection} from './fault_correction.mjs?v=partial-word-flow-2';
+import {faultCorrectionPlan,composeFaultCorrection,describeFaultCorrection} from './fault_correction.mjs?v=physical-placement-1';
 import {informationPassagePlan,composeInformationPassage} from './information_passage.mjs?v=partial-word-flow-1';
 
 export function songMidi(lines) {

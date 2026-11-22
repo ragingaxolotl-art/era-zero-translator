@@ -4,12 +4,12 @@ metadata:
   version: 1.0.0
   status: canonical_gate4e
   atom_entries: 324
-  compound_entries: 117
-  total_entries: 441
+  compound_entries: 118
+  total_entries: 442
   scope: Auditable synchronic derivation and authority provenance; no invented natural-language
     ancestry.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: 19a152e770b8e2404db3ecfb60f74a0b253fa82d561b480099240cb3929a0ad5
+  compound_dictionary_fingerprint: 0df8270213bfde6ee1f36ca27a437a57ff7d612e3160fc2b264eb9ec7d8a14d5
 principles:
   synchronic_not_fictional: Era Zero forms are engineered encodings. The table records
     actual construction rules and approval history rather than inventing ancestors
@@ -19750,6 +19750,88 @@ entries:
     authority: gate4b_reviewed_compound
     record: migrations/gate4b_compound_dictionary_1.0.yaml
     approval_date: '2026-10-09'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:1038b93d55bdc43ffadf41ce
+  target_type: compound
+  target_id: CMP:64574c1a25d72a89aafc46ef
+  status: canonical
+  english_label: caused physical placement at a destination
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: MOV:110
+  components:
+  - kind: compound_ref
+    compound_id: CMP:82dc9c681fbaf7944cb7b85b
+    definition_version: 1.0.0
+    node_id: q1
+  - kind: root
+    root_id: MOV:110
+    node_id: h
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: An actor physically displaces a distinct material target
+      so that this same target completes its arrival at a specified destination position
+      in the same spatial frame. The nested caused-displacement event and MOV:110
+      describe the causal movement and its arrival endpoint within one placement episode;
+      they do not describe two unrelated movers or destinations. The outer actor supplies
+      the nested physical influence, the outer target is its displaced bearer and
+      the arriving mover, and the outer destination supplies the arrival position.
+      The destination may be a place identified relative to a named landmark. Placement
+      does not itself assert support, containment, attachment, release of a grip,
+      ownership transfer, the actor's own arrival, an exact coordinate, a route, or
+      continued presence after the endpoint. Ongoing aspect views the placement internally
+      without asserting a completed arrival. This physical sense excludes assigning
+      a value, storing a digital item, ranking a competitor, or expressing an idea.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: caused_physical_placement_at_a_destination
+      sound_code: 85
+      added_definition: An actor physically displaces a distinct material target so
+        that this same target completes its arrival at a specified destination position
+        in the same spatial frame. The nested caused-displacement event and MOV:110
+        describe the causal movement and its arrival endpoint within one placement
+        episode; they do not describe two unrelated movers or destinations. The outer
+        actor supplies the nested physical influence, the outer target is its displaced
+        bearer and the arriving mover, and the outer destination supplies the arrival
+        position. The destination may be a place identified relative to a named landmark.
+        Placement does not itself assert support, containment, attachment, release
+        of a grip, ownership transfer, the actor's own arrival, an exact coordinate,
+        a route, or continued presence after the endpoint. Ongoing aspect views the
+        placement internally without asserting a completed arrival. This physical
+        sense excludes assigning a value, storing a digital item, ranking a competitor,
+        or expressing an idea.
+      excludes:
+      - Movement that does not reach the specified destination in a completed assertion
+      - Holding, lowering or releasing an object without the specified placement result
+      - Being at a place without a caused change of position
+      - Support, containment, contact, ownership, duration or the actor's arrival
+        inferred from destination alone
+      - Digital storage, assignment, ranking or figurative placement
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 64574c1a25d72a89aafc46efca01944360f710b81dcfdb6b6652d37f657665ac
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/placement_vocabulary_2026_11_22.yaml
+    approval_date: '2026-11-22'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
 - etymology_id: ETY:27c8f23a7047725d2c1685fe

@@ -589,6 +589,17 @@ export const storyWords = [
       "MIN:012",
       "ORI:110"
     ]
+  },
+  {
+    "word": "put",
+    "code": 85,
+    "example": "Nora put the box at the gate.",
+    "near": "Nora moved the box toward the gate, but it never arrived there.",
+    "id": "CMP:64574c1a25d72a89aafc46ef",
+    "parts": [
+      "CMP:82dc9c681fbaf7944cb7b85b",
+      "MOV:110"
+    ]
   }
 ];
 export const storyDependencies = [

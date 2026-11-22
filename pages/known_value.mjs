@@ -1,7 +1,7 @@
 // Knowing the identity of a wanted value is an embedded open question. The existing
 // polar-knowledge foundation selects a yes/no answer and cannot express this binding.
 import {expandNegativeContractions} from './contractions.mjs';
-import {scoreRoleReference,readRoleReference} from './dictionary_clause_music.mjs?v=partial-word-flow-2';
+import {scoreRoleReference,readRoleReference} from './dictionary_clause_music.mjs?v=physical-placement-1';
 import {informationMusic} from './information_music.mjs?v=partial-word-flow-1';
 import {midiFromScheduledEvents} from './engine.mjs?v=partial-word-flow-1';
 import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
