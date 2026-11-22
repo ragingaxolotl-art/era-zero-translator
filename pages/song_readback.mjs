@@ -1,6 +1,6 @@
 import {savedQualityLabel} from './story_saved_adjectives.mjs?v=partial-word-flow-1';
 import {expandChordMidi} from './compact_chords.mjs?v=partial-word-flow-1';
-import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=partial-word-flow-2';
+import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=contextual-groups-1';
 import {describeClaim,describeRuntime} from './meaning_readback.mjs?v=field-repairs-1';
 import {feltProperties} from './story_qualities.mjs?v=physical-holding-1';
 import {storyWords} from './story_words.mjs?v=information-vocabulary-1';
@@ -31,7 +31,7 @@ export async function readSongLine(bytes,atoms,records,chords,adjectives){
       words.push(r.kind==='before'?'Action '+a+' occurs before action '+b+'.':r.kind==='condition'?'Action '+b+' depends on action '+a+'.':'Actions '+a+' and '+b+' both apply.');
     }
   }else if(m.profile==='EZCONTEXTUAL-GROUP-INVERSE-1'){
-    const relation={sequence:'The clauses hold in the stated temporal order.',all_of:'All clauses are included; no temporal order is asserted.',any_of:'At least one clause holds; both may hold.',exactly_one:'Exactly one clause holds.',conditional:'The second clause depends on the first; neither is asserted independently.'}[m.operator];
+    const relation={sequence:'The relationship places the clauses in temporal order.',all_of:'The relationship includes all clauses, without specifying temporal order.',any_of:'The relationship requires at least one clause and permits both.',exactly_one:'The relationship requires exactly one clause.',conditional:'The relationship makes the second clause conditional on the first; neither is asserted independently.'}[m.operator];
     words.push((m.speech_act==='question'?'Question about the group. ':m.speech_act==='assertion'?'':m.speech_act+' over the group. ')+relation);
     if(m.scopes.length){
       const scopes=m.scopes.map(s=>s.operator==='time'?'time_'+s.relation:s.operator==='modality'?'modality_'+s.mode:s.operator==='aspect'?'aspect_'+s.aspect:s.operator);

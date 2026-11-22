@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import crypto from 'node:crypto';
 import {composeSentenceSequence,composeSentenceConjunction,composeSentenceConditional,composeSentenceDisjunction} from '../pages/sentences.mjs';
 import {midiFromFormal} from '../pages/engine.mjs';
 import {decodeSupportedMeaningMidi} from '../pages/semantic_music_dispatch.mjs';
@@ -12,6 +13,8 @@ const authority=JSON.parse(fs.readFileSync(new URL('../pages/data/index.json',im
 const load=async id=>JSON.parse(fs.readFileSync(new URL('../pages/'+authority.resolution_files[id],import.meta.url))).variants['assertion:1'];
 const width={interpretation:'width_standard',standard:{kind:'contextual',dimension:'physical_width'}};
 const hot={interpretation:'thermal_standard',standard:{kind:'contextual',dimension:'thermodynamic_temperature'}};
+const legacy=JSON.parse(fs.readFileSync(new URL('./contextual_groups_legacy_2026_11_22.json',import.meta.url)));
+assert.equal(legacy.performances.length,30);
 const choices=[width,width],sounds=new Set();let checked=0,example;
 for(const runtime of [0,1,2])for(const negated of [false,true]){
  const first=`The gate was ${negated?'not ':''}wide [${runtime}]`,second=`the board is narrow [${runtime}]`;
@@ -23,6 +26,7 @@ for(const runtime of [0,1,2])for(const negated of [false,true]){
   ['exactly_one',(t,l,c)=>composeSentenceDisjunction(t,l,c,{disjunction:'exactly_one'}),first+' or '+second+'.']
  ]){
   const result=await compose(text,load,choices),midi=midiFromFormal(result.formal);
+  assert.equal(crypto.createHash('sha256').update(midi).digest('hex'),legacy.performances.find(row=>row.operator===operator&&row.text===text)?.sha256,'Existing group music must remain unchanged');
   const heard=decodeContextualGroupMidi(midi,authority.atoms);assert.equal(heard.operator,operator);
   assert.equal(heard.members.length,2);assert.deepEqual(heard.members.map(m=>m.standard.norm),['wide','narrow']);
   assert.deepEqual(heard.members.map(m=>m.runtime_state),[runtime,runtime]);
@@ -85,4 +89,4 @@ const missingSeparator=unionNotes.notes.filter(n=>n.start_tick<separator.start_t
 const missingBytes=midiFromNoteTimeline(missingSeparator,unionNotes.division,unionNotes.tempos[0].value);
 decodeStrictMusicMidi(missingBytes,authority.atoms);
 assert.throws(()=>decodeContextualGroupMidi(missingBytes,authority.atoms));
-console.log('PASS '+checked+' independently decoded groups, five relationships, all runtimes, scope/bearer order, compact parity, mixed physical dimensions and malformed boundaries/heads/separators.');
+console.log('PASS '+checked+' independently decoded groups with unchanged music, five relationships, all runtimes, scope/bearer order, compact parity, mixed physical dimensions and malformed boundaries/heads/separators.');

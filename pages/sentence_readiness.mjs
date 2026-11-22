@@ -1,4 +1,4 @@
-import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=partial-word-flow-2';
+import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=contextual-groups-1';
 
 // A composed interpretation and an independently readable score are separate
 // facts. This check receives no English, expected predicate or original IR.
