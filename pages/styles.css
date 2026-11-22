@@ -82,4 +82,5 @@
 .candidate button:not(.primary):hover:not(:disabled) {border-color:var(--blue)}
 .candidate button:focus-visible {outline:2px solid var(--cyan);outline-offset:2px}
 .candidate button:disabled {opacity:.45;cursor:not-allowed}
+.unsupported-sentence {cursor:default}.unsupported-sentence:hover {transform:none;border-color:var(--line)}
 @media(max-width:560px){.candidate button{min-height:44px}.candidate-head{flex-wrap:wrap}.output-tabs{flex-wrap:wrap}}

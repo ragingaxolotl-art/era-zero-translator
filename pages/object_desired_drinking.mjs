@@ -1,7 +1,7 @@
-import {resolveObjectDesireInput} from './object_desire.mjs?v=information-vocabulary-1';
+import {resolveObjectDesireInput} from './object_desire.mjs?v=sentence-diagnostics-1';
 import {composeDesiredDrinking} from './desired_drinking.mjs';
 import {midiFromDesiredDrinking} from './desired_drinking_music.mjs';
-import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=information-vocabulary-1';
+import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=sentence-diagnostics-1';
 import {encodeName} from './names.mjs';
 // Explicitly selected drinking outcome; never the default meaning of wants tea.
 export async function composeObjectDesiredDrinking(input,authority,{allowDraft=false,desiredProposition,interpretation,viewpoint,materialReading}={}){

@@ -1,8 +1,8 @@
-import {storyReading} from './story_readings.mjs?v=information-vocabulary-1';
-import {scoreStory} from './story_music.mjs?v=information-vocabulary-1';
+import {storyReading} from './story_readings.mjs?v=sentence-diagnostics-1';
+import {scoreStory} from './story_music.mjs?v=sentence-diagnostics-1';
 import {everydayMeaning} from './everyday.mjs';
 import {compactChordMidi} from './compact_chords.mjs?v=state-adjectives-1';
-import {sentenceReadiness} from './sentence_readiness.mjs?v=information-vocabulary-1';
+import {sentenceReadiness} from './sentence_readiness.mjs?v=sentence-diagnostics-1';
 
 export async function showStoryControls(input,authority,{list,summary,current,preferences,adjectives,player,add,download,onError},initial){
   const element=(tag,text)=>{const node=document.createElement(tag);if(text)node.textContent=text;return node;};
