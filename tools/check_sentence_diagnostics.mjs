@@ -22,6 +22,7 @@ try{
       await translate(text);
       assert.match(await page.locator('#decisionSummary').innerText(),/Sentence structure not yet supported/,text);
       const card=page.locator('.unsupported-sentence');assert.equal(await card.locator('h3').innerText(),text);
+      assert(await page.evaluate(()=>!!(document.querySelector('#candidateList').compareDocumentPosition(document.querySelector('#phraseCoverage'))&Node.DOCUMENT_POSITION_FOLLOWING))),'Sentence explanation must come before the detailed word map');
       if(!text.includes('only'))assert.match(await card.locator('p').innerText(),/already has a dictionary meaning/,text);
       assert.equal(await page.locator('.definition-alias-options').count(),0,text);
       assert.equal(await add().count(),0,text);
