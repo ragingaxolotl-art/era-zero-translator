@@ -73,8 +73,8 @@ for(const norm of Object.keys(CONTEXTUAL_NORMS)){
   assert(analyzeEnglish(text,authority).term_coverage.some(item=>item.term===norm&&item.matches.some(m=>m.route==='semantic_ir')),norm);
   assert.equal(dictionaryClausePlan(text,authority,{offerDefinition:true}),null,norm+' must not become an unrelated alias');
 }
-// The existing generic sequence renderer lacks a full inverse for these clauses.
-// Keep that boundary explicit instead of equating renderability with recovery.
+// Complete contextual-adjective groups now reuse the established group sounds.
 const sequence=await composeSentenceSequence('The gate is wide, then the board is narrow.',load,[options,options]);
-await assert.rejects(()=>decodeSupportedMeaningWithDrafts(midiFromFormal(sequence.formal),authority.atoms,[],{allowDraft:true}));
-console.log('PASS '+results.length+' width meanings, Ruby/browser parity, 48 unchanged legacy sounds, ten dictionary routes and malformed/unsupported rejection. Multi-clause inverse remains unsupported.');
+const group=await decodeSupportedMeaningWithDrafts(midiFromFormal(sequence.formal),authority.atoms,[],{allowDraft:true});
+assert.equal(group.operator,'sequence');assert.deepEqual(group.members.map(m=>m.standard.norm),['wide','narrow']);
+console.log('PASS '+results.length+' width meanings, Ruby/browser parity, 48 unchanged legacy sounds, ten dictionary routes and malformed/unsupported rejection. Ordered contextual-adjective groups independently decode.');

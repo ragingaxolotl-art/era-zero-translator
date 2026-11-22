@@ -18,7 +18,7 @@ Complete the normal sentence inverse for the approved love reading, or clearly w
 
 ### 2. Make the normal sentence flow usable
 
-Implemented: [known-word diagnostics](../reports/sentence_diagnostics_2026_11_22.md) now distinguish missing definitions from unavailable sentence constructions, preserve valid personal choices and put the sentence explanation first. [Partial word sounds](../reports/partial_word_flow_2026_11_22.md) now require opening an explicitly incomplete section, while missing-word help stays visible. Restrictive “only” no longer becomes a noun sound. Passive/perfect and added relationship grammar remain open.
+Implemented: [known-word diagnostics](../reports/sentence_diagnostics_2026_11_22.md) now distinguish missing definitions from unavailable sentence constructions, preserve valid personal choices and put the sentence explanation first. [Partial word sounds](../reports/partial_word_flow_2026_11_22.md) now require opening an explicitly incomplete section, while missing-word help stays visible. Restrictive “only” no longer becomes a noun sound. [Related physical descriptions](../reports/contextual_adjective_groups_2026_11_22.md) now independently decode using their existing music, and results show the interpreted sentence with longer meaning details collapsed. Passive/perfect and added relationship grammar remain open.
 
 Constrain candidate cards, labels and selects to the viewport; shorten option labels and show definitions below. Replace example-sentence confirmation buttons with the actual choice, such as “Physical pushing.” Do not offer unrelated roots as likely substitutes for a missing action. Clearly distinguish a missing definition from unsupported sentence structure and an unclear referent.
 

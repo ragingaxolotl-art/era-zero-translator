@@ -65,7 +65,7 @@ ui=show();ui.view.value='habitual';ui.threshold.value='20';let fail;ctx.sentence
 // The real browser revealed that convention/property markers reached a lexical
 // checksum lookup and aborted showResolution before runtime/contour were shown.
 const {everydayMeaning}=await import('../pages/everyday.mjs');
-const displayIds=['sentenceReadiness','addSentenceToSong','resultScope','hearTranslation','output','meaningTitle','sourceEcho','sourceInput','controlledText','readingLabel','targetBadge','utteranceId','formalId','roundTrip','prefixText','carrierText','familyNotes','addressNotes','recognitionNotes','runtimeNote','contourNotes','irCode','formalCode','glyphStage'];
+const displayIds=['sentenceReadiness','addSentenceToSong','resultScope','hearTranslation','output','meaningTitle','meaningDetails','meaningExplanation','sourceEcho','sourceInput','controlledText','readingLabel','targetBadge','utteranceId','formalId','roundTrip','prefixText','carrierText','familyNotes','addressNotes','recognitionNotes','runtimeNote','contourNotes','irCode','formalCode','glyphStage'];
 const display=Object.fromEntries(displayIds.map(id=>[id,element(id)]));
 for(const mode of ['recognition','strict','learning'])for(const code of [0,1,2]){
  const result=results.find(r=>r.source_input===`I carry the heavy box. [${code}]`&&r.selected_viewpoint==='habitual');

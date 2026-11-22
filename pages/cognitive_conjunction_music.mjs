@@ -31,7 +31,7 @@ export async function decodeCognitiveConjunctionMidi(bytes,atoms,records,{allowD
  const groups=[[]];
  for(const token of body.slice(1,-1)){if(token.marker==='coord_member'&&token.enclosing_scopes.length===body[0].enclosing_scopes.length)groups.push([]);else groups.at(-1).push(token);}
  if(groups.length<2||groups.length>8||groups.some(g=>!g.length))throw new Error('Invalid conjunction member count.');
- const {notes,division}=notesFromMidi(bytes),{decodeSupportedMeaningWithDrafts}=await import('./semantic_music_dispatch.mjs?v=partial-word-flow-2'),members=[];
+ const {notes,division}=notesFromMidi(bytes),{decodeSupportedMeaningWithDrafts}=await import('./semantic_music_dispatch.mjs?v=contextual-groups-1'),members=[];
  const profiles=['EZCURIOSITY-INVERSE-1','EZUNDERSTANDING-MUSIC-INVERSE-1','EZUNDERSTANDING-ACQUISITION-INVERSE-1','EZROUTE-LEARNING-INVERSE-1'];
  for(const group of groups){
   const segment=notes.filter(n=>n.start_tick>=group[0].start_tick&&n.end_tick<=group.at(-1).end_tick);

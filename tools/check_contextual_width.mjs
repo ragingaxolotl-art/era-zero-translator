@@ -54,8 +54,8 @@ try{
     await translate('The gate is wide, then the board is narrow.');
     await page.getByRole('button',{name:'Translate all clauses',exact:true}).click();
     await page.locator('#sentenceReadiness').waitFor();
-    assert.match(await page.locator('#sentenceReadiness').innerText(),/score decoding unverified/);
-    report.boundaries.push({text:'The gate is wide, then the board is narrow.',width,inverseUnverified:true});
+    assert.match(await page.locator('#sentenceReadiness').innerText(),/Whole sentence ready/);
+    report.boundaries.push({text:'The gate is wide, then the board is narrow.',width,inverseSupported:true});
     await translate('The board is wide.');await page.locator('#candidateList').scrollIntoViewIfNeeded();
     await page.screenshot({path:output+'/choice-'+width+'.png'});
     await page.getByRole('button',{name:'Use physical width',exact:true}).click();await add().waitFor();

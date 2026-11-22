@@ -90,3 +90,8 @@
 .partial-word-details > p {color:var(--muted);font-size:12px;line-height:1.6}
 .partial-word-details[open] > summary {margin-bottom:10px}
 .missing-word-list:not(:empty) {margin-bottom:16px}
+
+.meaning-summary #meaningTitle {font-size:clamp(20px,3vw,28px);line-height:1.3;overflow-wrap:anywhere}
+.meaning-explanation {margin:12px 0;font-size:13px;line-height:1.6;overflow-wrap:anywhere}
+.meaning-explanation > summary {cursor:pointer;color:var(--muted)}
+.meaning-explanation > p {margin:8px 0}

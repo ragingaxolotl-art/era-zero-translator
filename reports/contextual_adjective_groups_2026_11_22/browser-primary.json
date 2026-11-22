@@ -1,0 +1,967 @@
+{
+  "site": "http://127.0.0.1:8776/",
+  "timestamp": "2026-11-22T22:52:26.447Z",
+  "browser": "Chromium viewport emulation; not physical iOS/Safari",
+  "layouts": [
+    {
+      "text": "The gate was wide, then the board is not narrow.",
+      "operator": "sequence",
+      "viewport": 320,
+      "document": 320,
+      "headingRight": 274.5
+    },
+    {
+      "text": "The gate is wide and the board is narrow.",
+      "operator": "all_of",
+      "viewport": 320,
+      "document": 320,
+      "headingRight": 243.5
+    },
+    {
+      "text": "If the gate is wide [0], then the board is narrow [2].",
+      "operator": "conditional",
+      "viewport": 320,
+      "document": 320,
+      "headingRight": 268.25
+    },
+    {
+      "text": "The gate is wide or the board is narrow.",
+      "operator": "any_of",
+      "viewport": 320,
+      "document": 320,
+      "headingRight": 285.65625
+    },
+    {
+      "text": "The gate is wide or the board is narrow.",
+      "operator": "exactly_one",
+      "viewport": 320,
+      "document": 320,
+      "headingRight": 285.65625
+    },
+    {
+      "text": "The gate is wide and the board is hot.",
+      "operator": "all_of",
+      "viewport": 320,
+      "document": 320,
+      "headingRight": 243.5
+    },
+    {
+      "text": "The gate was wide, then the board is not narrow.",
+      "operator": "sequence",
+      "viewport": 390,
+      "document": 390,
+      "headingRight": 350.390625
+    },
+    {
+      "text": "The gate is wide and the board is narrow.",
+      "operator": "all_of",
+      "viewport": 390,
+      "document": 390,
+      "headingRight": 319.390625
+    },
+    {
+      "text": "If the gate is wide [0], then the board is narrow [2].",
+      "operator": "conditional",
+      "viewport": 390,
+      "document": 390,
+      "headingRight": 357.859375
+    },
+    {
+      "text": "The gate is wide or the board is narrow.",
+      "operator": "any_of",
+      "viewport": 390,
+      "document": 390,
+      "headingRight": 304.984375
+    },
+    {
+      "text": "The gate is wide or the board is narrow.",
+      "operator": "exactly_one",
+      "viewport": 390,
+      "document": 390,
+      "headingRight": 304.984375
+    },
+    {
+      "text": "The gate is wide and the board is hot.",
+      "operator": "all_of",
+      "viewport": 390,
+      "document": 390,
+      "headingRight": 358.921875
+    },
+    {
+      "text": "The gate was wide, then the board is not narrow.",
+      "operator": "sequence",
+      "viewport": 768,
+      "document": 768,
+      "headingRight": 541.75
+    },
+    {
+      "text": "The gate is wide and the board is narrow.",
+      "operator": "all_of",
+      "viewport": 768,
+      "document": 768,
+      "headingRight": 466.5
+    },
+    {
+      "text": "If the gate is wide [0], then the board is narrow [2].",
+      "operator": "conditional",
+      "viewport": 768,
+      "document": 768,
+      "headingRight": 568.78125
+    },
+    {
+      "text": "The gate is wide or the board is narrow.",
+      "operator": "any_of",
+      "viewport": 768,
+      "document": 768,
+      "headingRight": 449.90625
+    },
+    {
+      "text": "The gate is wide or the board is narrow.",
+      "operator": "exactly_one",
+      "viewport": 768,
+      "document": 768,
+      "headingRight": 449.90625
+    },
+    {
+      "text": "The gate is wide and the board is hot.",
+      "operator": "all_of",
+      "viewport": 768,
+      "document": 768,
+      "headingRight": 426.765625
+    }
+  ],
+  "exports": [
+    {
+      "text": "The gate was wide, then the board is not narrow.",
+      "mode": "melody",
+      "end_tick": 32640,
+      "max_simultaneous_notes": 1,
+      "meaning": {
+        "profile": "EZCONTEXTUAL-GROUP-INVERSE-1",
+        "operator": "sequence",
+        "speech_act": "assertion",
+        "scopes": [],
+        "members": [
+          {
+            "scopes": [
+              {
+                "operator": "time",
+                "relation": "before_speech"
+              }
+            ],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 1,
+            "dimension": "physical_width",
+            "relation": "greater_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "wide",
+              "scope": "local_context"
+            }
+          },
+          {
+            "scopes": [
+              {
+                "operator": "negation"
+              }
+            ],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "OW",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 1,
+            "dimension": "physical_width",
+            "relation": "less_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "narrow",
+              "scope": "local_context"
+            }
+          }
+        ],
+        "limitations": [
+          "Members are proposition contents; the group operator and outer scopes determine what is asserted or asked.",
+          "Each adjective retains its own local comparison standard. Matching reference sounds do not prove external identity.",
+          "Supports two to eight physical contextual-adjective clauses, without nested groups or other predicate profiles.",
+          "Strict MIDI recovery; general microphone recovery is not established."
+        ]
+      }
+    },
+    {
+      "text": "The gate was wide, then the board is not narrow.",
+      "mode": "chords",
+      "end_tick": 27840,
+      "max_simultaneous_notes": 3,
+      "meaning": {
+        "profile": "EZCONTEXTUAL-GROUP-INVERSE-1",
+        "operator": "sequence",
+        "speech_act": "assertion",
+        "scopes": [],
+        "members": [
+          {
+            "scopes": [
+              {
+                "operator": "time",
+                "relation": "before_speech"
+              }
+            ],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 1,
+            "dimension": "physical_width",
+            "relation": "greater_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "wide",
+              "scope": "local_context"
+            }
+          },
+          {
+            "scopes": [
+              {
+                "operator": "negation"
+              }
+            ],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "OW",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 1,
+            "dimension": "physical_width",
+            "relation": "less_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "narrow",
+              "scope": "local_context"
+            }
+          }
+        ],
+        "limitations": [
+          "Members are proposition contents; the group operator and outer scopes determine what is asserted or asked.",
+          "Each adjective retains its own local comparison standard. Matching reference sounds do not prove external identity.",
+          "Supports two to eight physical contextual-adjective clauses, without nested groups or other predicate profiles.",
+          "Strict MIDI recovery; general microphone recovery is not established."
+        ]
+      }
+    },
+    {
+      "text": "The gate is wide and the board is narrow.",
+      "mode": "melody",
+      "end_tick": 31440,
+      "max_simultaneous_notes": 1,
+      "meaning": {
+        "profile": "EZCONTEXTUAL-GROUP-INVERSE-1",
+        "operator": "all_of",
+        "speech_act": "assertion",
+        "scopes": [],
+        "members": [
+          {
+            "scopes": [],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 1,
+            "dimension": "physical_width",
+            "relation": "greater_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "wide",
+              "scope": "local_context"
+            }
+          },
+          {
+            "scopes": [],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "OW",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 1,
+            "dimension": "physical_width",
+            "relation": "less_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "narrow",
+              "scope": "local_context"
+            }
+          }
+        ],
+        "limitations": [
+          "Members are proposition contents; the group operator and outer scopes determine what is asserted or asked.",
+          "Each adjective retains its own local comparison standard. Matching reference sounds do not prove external identity.",
+          "Supports two to eight physical contextual-adjective clauses, without nested groups or other predicate profiles.",
+          "Strict MIDI recovery; general microphone recovery is not established."
+        ]
+      }
+    },
+    {
+      "text": "The gate is wide and the board is narrow.",
+      "mode": "chords",
+      "end_tick": 26640,
+      "max_simultaneous_notes": 3,
+      "meaning": {
+        "profile": "EZCONTEXTUAL-GROUP-INVERSE-1",
+        "operator": "all_of",
+        "speech_act": "assertion",
+        "scopes": [],
+        "members": [
+          {
+            "scopes": [],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 1,
+            "dimension": "physical_width",
+            "relation": "greater_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "wide",
+              "scope": "local_context"
+            }
+          },
+          {
+            "scopes": [],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "OW",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 1,
+            "dimension": "physical_width",
+            "relation": "less_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "narrow",
+              "scope": "local_context"
+            }
+          }
+        ],
+        "limitations": [
+          "Members are proposition contents; the group operator and outer scopes determine what is asserted or asked.",
+          "Each adjective retains its own local comparison standard. Matching reference sounds do not prove external identity.",
+          "Supports two to eight physical contextual-adjective clauses, without nested groups or other predicate profiles.",
+          "Strict MIDI recovery; general microphone recovery is not established."
+        ]
+      }
+    },
+    {
+      "text": "If the gate is wide [0], then the board is narrow [2].",
+      "mode": "melody",
+      "end_tick": 32040,
+      "max_simultaneous_notes": 1,
+      "meaning": {
+        "profile": "EZCONTEXTUAL-GROUP-INVERSE-1",
+        "operator": "conditional",
+        "speech_act": "assertion",
+        "scopes": [],
+        "condition_status": "open",
+        "members": [
+          {
+            "scopes": [],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 0,
+            "dimension": "physical_width",
+            "relation": "greater_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "wide",
+              "scope": "local_context"
+            }
+          },
+          {
+            "scopes": [],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "OW",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 2,
+            "dimension": "physical_width",
+            "relation": "less_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "narrow",
+              "scope": "local_context"
+            }
+          }
+        ],
+        "limitations": [
+          "Members are proposition contents; the group operator and outer scopes determine what is asserted or asked.",
+          "Each adjective retains its own local comparison standard. Matching reference sounds do not prove external identity.",
+          "Supports two to eight physical contextual-adjective clauses, without nested groups or other predicate profiles.",
+          "Strict MIDI recovery; general microphone recovery is not established."
+        ]
+      }
+    },
+    {
+      "text": "If the gate is wide [0], then the board is narrow [2].",
+      "mode": "chords",
+      "end_tick": 27240,
+      "max_simultaneous_notes": 3,
+      "meaning": {
+        "profile": "EZCONTEXTUAL-GROUP-INVERSE-1",
+        "operator": "conditional",
+        "speech_act": "assertion",
+        "scopes": [],
+        "condition_status": "open",
+        "members": [
+          {
+            "scopes": [],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 0,
+            "dimension": "physical_width",
+            "relation": "greater_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "wide",
+              "scope": "local_context"
+            }
+          },
+          {
+            "scopes": [],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "OW",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 2,
+            "dimension": "physical_width",
+            "relation": "less_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "narrow",
+              "scope": "local_context"
+            }
+          }
+        ],
+        "limitations": [
+          "Members are proposition contents; the group operator and outer scopes determine what is asserted or asked.",
+          "Each adjective retains its own local comparison standard. Matching reference sounds do not prove external identity.",
+          "Supports two to eight physical contextual-adjective clauses, without nested groups or other predicate profiles.",
+          "Strict MIDI recovery; general microphone recovery is not established."
+        ]
+      }
+    },
+    {
+      "text": "The gate is wide or the board is narrow.",
+      "mode": "melody",
+      "end_tick": 31440,
+      "max_simultaneous_notes": 1,
+      "meaning": {
+        "profile": "EZCONTEXTUAL-GROUP-INVERSE-1",
+        "operator": "any_of",
+        "speech_act": "assertion",
+        "scopes": [],
+        "members": [
+          {
+            "scopes": [],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 1,
+            "dimension": "physical_width",
+            "relation": "greater_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "wide",
+              "scope": "local_context"
+            }
+          },
+          {
+            "scopes": [],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "OW",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 1,
+            "dimension": "physical_width",
+            "relation": "less_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "narrow",
+              "scope": "local_context"
+            }
+          }
+        ],
+        "limitations": [
+          "Members are proposition contents; the group operator and outer scopes determine what is asserted or asked.",
+          "Each adjective retains its own local comparison standard. Matching reference sounds do not prove external identity.",
+          "Supports two to eight physical contextual-adjective clauses, without nested groups or other predicate profiles.",
+          "Strict MIDI recovery; general microphone recovery is not established."
+        ]
+      }
+    },
+    {
+      "text": "The gate is wide or the board is narrow.",
+      "mode": "chords",
+      "end_tick": 26640,
+      "max_simultaneous_notes": 3,
+      "meaning": {
+        "profile": "EZCONTEXTUAL-GROUP-INVERSE-1",
+        "operator": "any_of",
+        "speech_act": "assertion",
+        "scopes": [],
+        "members": [
+          {
+            "scopes": [],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 1,
+            "dimension": "physical_width",
+            "relation": "greater_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "wide",
+              "scope": "local_context"
+            }
+          },
+          {
+            "scopes": [],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "OW",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 1,
+            "dimension": "physical_width",
+            "relation": "less_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "narrow",
+              "scope": "local_context"
+            }
+          }
+        ],
+        "limitations": [
+          "Members are proposition contents; the group operator and outer scopes determine what is asserted or asked.",
+          "Each adjective retains its own local comparison standard. Matching reference sounds do not prove external identity.",
+          "Supports two to eight physical contextual-adjective clauses, without nested groups or other predicate profiles.",
+          "Strict MIDI recovery; general microphone recovery is not established."
+        ]
+      }
+    },
+    {
+      "text": "The gate is wide or the board is narrow.",
+      "mode": "melody",
+      "end_tick": 31440,
+      "max_simultaneous_notes": 1,
+      "meaning": {
+        "profile": "EZCONTEXTUAL-GROUP-INVERSE-1",
+        "operator": "exactly_one",
+        "speech_act": "assertion",
+        "scopes": [],
+        "members": [
+          {
+            "scopes": [],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 1,
+            "dimension": "physical_width",
+            "relation": "greater_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "wide",
+              "scope": "local_context"
+            }
+          },
+          {
+            "scopes": [],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "OW",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 1,
+            "dimension": "physical_width",
+            "relation": "less_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "narrow",
+              "scope": "local_context"
+            }
+          }
+        ],
+        "limitations": [
+          "Members are proposition contents; the group operator and outer scopes determine what is asserted or asked.",
+          "Each adjective retains its own local comparison standard. Matching reference sounds do not prove external identity.",
+          "Supports two to eight physical contextual-adjective clauses, without nested groups or other predicate profiles.",
+          "Strict MIDI recovery; general microphone recovery is not established."
+        ]
+      }
+    },
+    {
+      "text": "The gate is wide or the board is narrow.",
+      "mode": "chords",
+      "end_tick": 26640,
+      "max_simultaneous_notes": 3,
+      "meaning": {
+        "profile": "EZCONTEXTUAL-GROUP-INVERSE-1",
+        "operator": "exactly_one",
+        "speech_act": "assertion",
+        "scopes": [],
+        "members": [
+          {
+            "scopes": [],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 1,
+            "dimension": "physical_width",
+            "relation": "greater_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "wide",
+              "scope": "local_context"
+            }
+          },
+          {
+            "scopes": [],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "OW",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 1,
+            "dimension": "physical_width",
+            "relation": "less_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "narrow",
+              "scope": "local_context"
+            }
+          }
+        ],
+        "limitations": [
+          "Members are proposition contents; the group operator and outer scopes determine what is asserted or asked.",
+          "Each adjective retains its own local comparison standard. Matching reference sounds do not prove external identity.",
+          "Supports two to eight physical contextual-adjective clauses, without nested groups or other predicate profiles.",
+          "Strict MIDI recovery; general microphone recovery is not established."
+        ]
+      }
+    },
+    {
+      "text": "The gate is wide and the board is hot.",
+      "mode": "melody",
+      "end_tick": 31440,
+      "max_simultaneous_notes": 1,
+      "meaning": {
+        "profile": "EZCONTEXTUAL-GROUP-INVERSE-1",
+        "operator": "all_of",
+        "speech_act": "assertion",
+        "scopes": [],
+        "members": [
+          {
+            "scopes": [],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 1,
+            "dimension": "physical_width",
+            "relation": "greater_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "wide",
+              "scope": "local_context"
+            }
+          },
+          {
+            "scopes": [],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "OW",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 1,
+            "dimension": "thermodynamic_temperature",
+            "relation": "greater_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "hot",
+              "scope": "local_context"
+            }
+          }
+        ],
+        "limitations": [
+          "Members are proposition contents; the group operator and outer scopes determine what is asserted or asked.",
+          "Each adjective retains its own local comparison standard. Matching reference sounds do not prove external identity.",
+          "Supports two to eight physical contextual-adjective clauses, without nested groups or other predicate profiles.",
+          "Strict MIDI recovery; general microphone recovery is not established."
+        ]
+      }
+    },
+    {
+      "text": "The gate is wide and the board is hot.",
+      "mode": "chords",
+      "end_tick": 26640,
+      "max_simultaneous_notes": 3,
+      "meaning": {
+        "profile": "EZCONTEXTUAL-GROUP-INVERSE-1",
+        "operator": "all_of",
+        "speech_act": "assertion",
+        "scopes": [],
+        "members": [
+          {
+            "scopes": [],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 1,
+            "dimension": "physical_width",
+            "relation": "greater_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "wide",
+              "scope": "local_context"
+            }
+          },
+          {
+            "scopes": [],
+            "bearer": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "OW",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "material_root": "MAT:010",
+            "runtime_state": 1,
+            "dimension": "thermodynamic_temperature",
+            "relation": "greater_than",
+            "standard": {
+              "kind": "contextual",
+              "norm": "hot",
+              "scope": "local_context"
+            }
+          }
+        ],
+        "limitations": [
+          "Members are proposition contents; the group operator and outer scopes determine what is asserted or asked.",
+          "Each adjective retains its own local comparison standard. Matching reference sounds do not prove external identity.",
+          "Supports two to eight physical contextual-adjective clauses, without nested groups or other predicate profiles.",
+          "Strict MIDI recovery; general microphone recovery is not established."
+        ]
+      }
+    }
+  ],
+  "clarifications": [
+    {
+      "text": "The gate is wide or the board is narrow.",
+      "choice": "any_of",
+      "width": 320
+    },
+    {
+      "text": "The gate is wide or the board is narrow.",
+      "choice": "exactly_one",
+      "width": 320
+    },
+    {
+      "text": "The gate is wide or the board is narrow.",
+      "choice": "any_of",
+      "width": 390
+    },
+    {
+      "text": "The gate is wide or the board is narrow.",
+      "choice": "exactly_one",
+      "width": 390
+    },
+    {
+      "text": "The gate is wide or the board is narrow.",
+      "choice": "any_of",
+      "width": 768
+    },
+    {
+      "text": "The gate is wide or the board is narrow.",
+      "choice": "exactly_one",
+      "width": 768
+    }
+  ]
+}

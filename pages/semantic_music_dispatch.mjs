@@ -1,3 +1,4 @@
+import {decodeContextualGroupMidi} from './contextual_group_decoder.mjs?v=contextual-groups-1';
 // Shared strict semantic inverses; no expected sentence or predicate hint.
 import {decodeCareMidi} from './care_decoder.mjs?v=partial-word-flow-1';
 import {decodeLoveMidi} from './love_decoder.mjs?v=partial-word-flow-1';
@@ -10,10 +11,10 @@ import {decodeCustodyDeliveryMidi} from './delivery_decoder.mjs?v=partial-word-f
 import {decodeNamedProcessMidi} from './named_process_decoder.mjs?v=partial-word-flow-1';
 import {decodePhysicalCarryingMidi,decodeDestinationCarryingMidi} from './carrying_decoder.mjs?v=partial-word-flow-1';
 import {decodeFeltConditionMidi} from './felt_decoder.mjs?v=partial-word-flow-1';
-import {decodeContextualStandardMidi} from './contextual_standard_decoder.mjs?v=partial-word-flow-1';
+import {decodeContextualStandardMidi} from './contextual_standard_decoder.mjs?v=contextual-groups-1';
 import {decodeMaterialMeasurementMidi} from './material_measurement_decoder.mjs?v=partial-word-flow-1';
 import {decodePropertyComparisonMidi} from './property_comparison_decoder.mjs?v=partial-word-flow-1';
-const DECODERS=[decodeNamedProcessMidi,decodePhysicalCarryingMidi,decodeCareMidi,decodeLoveMidi,decodeSwimmingMidi,decodePhysicalEntryMidi,decodeRunningMidi,decodeSpatialRelationMidi,decodePhysicalCustodyMidi,decodeCustodyAcquisitionMidi,decodeCustodyTransferMidi,decodeCustodyDeliveryMidi,decodeDestinationCarryingMidi,decodeFeltConditionMidi,decodeContextualStandardMidi,decodeMaterialMeasurementMidi,decodePropertyComparisonMidi];
+const DECODERS=[decodeContextualGroupMidi,decodeNamedProcessMidi,decodePhysicalCarryingMidi,decodeCareMidi,decodeLoveMidi,decodeSwimmingMidi,decodePhysicalEntryMidi,decodeRunningMidi,decodeSpatialRelationMidi,decodePhysicalCustodyMidi,decodeCustodyAcquisitionMidi,decodeCustodyTransferMidi,decodeCustodyDeliveryMidi,decodeDestinationCarryingMidi,decodeFeltConditionMidi,decodeContextualStandardMidi,decodeMaterialMeasurementMidi,decodePropertyComparisonMidi];
 export function decodeSupportedMeaningMidi(bytes,atoms){
  const accepted=[];
  for(const decoder of DECODERS){try{accepted.push(decoder(bytes,atoms));}catch{}}
@@ -66,7 +67,7 @@ export async function decodeSupportedMeaningWithDrafts(bytes,atoms,records,{allo
  try{accepted.push(decodePainStimulusMidi(bytes,atoms,{allowDraft:true}));}catch{}
  try{accepted.push(decodePainMidi(bytes,atoms,{allowDraft:true}));}catch{}
  try{accepted.push(await decodeCuriosityMidi(bytes,atoms,records,{allowDraft:true}));}catch{}
- if(allowConjunction){const {decodeCognitiveConjunctionMidi}=await import('./cognitive_conjunction_music.mjs?v=partial-word-flow-2');try{accepted.push(await decodeCognitiveConjunctionMidi(bytes,atoms,records,{allowDraft:true}));}catch{}}
+ if(allowConjunction){const {decodeCognitiveConjunctionMidi}=await import('./cognitive_conjunction_music.mjs?v=contextual-groups-1');try{accepted.push(await decodeCognitiveConjunctionMidi(bytes,atoms,records,{allowDraft:true}));}catch{}}
  if(accepted.length!==1)throw new Error('No unique supported canonical or draft semantic interpretation.');
  return accepted[0];
 }

@@ -1,5 +1,5 @@
 import {compactChordPerformance} from './compact_chords.mjs?v=partial-word-flow-1';
-import {readSongLine} from './song_readback.mjs?v=partial-word-flow-2';
+import {readSongLine} from './song_readback.mjs?v=contextual-groups-1';
 import {compactChordMidi} from './compact_chords.mjs?v=partial-word-flow-1';
 import {songMidi} from './song_lines.mjs?v=partial-word-flow-2';
 import {notesFromMidi} from './performance_codec.mjs?v=partial-word-flow-1';

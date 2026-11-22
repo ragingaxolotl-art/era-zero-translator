@@ -1,6 +1,6 @@
 import {savedQualityLabel} from './story_saved_adjectives.mjs?v=partial-word-flow-1';
 import {expandChordMidi} from './compact_chords.mjs?v=partial-word-flow-1';
-import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=partial-word-flow-2';
+import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=contextual-groups-1';
 import {describeClaim,describeRuntime} from './meaning_readback.mjs?v=field-repairs-1';
 import {feltProperties} from './story_qualities.mjs?v=physical-holding-1';
 import {storyWords} from './story_words.mjs?v=information-vocabulary-1';
@@ -30,6 +30,22 @@ export async function readSongLine(bytes,atoms,records,chords,adjectives){
       const [a,b]=r.events.map(i=>i+1);
       words.push(r.kind==='before'?'Action '+a+' occurs before action '+b+'.':r.kind==='condition'?'Action '+b+' depends on action '+a+'.':'Actions '+a+' and '+b+' both apply.');
     }
+  }else if(m.profile==='EZCONTEXTUAL-GROUP-INVERSE-1'){
+    const relation={sequence:'The relationship places the clauses in temporal order.',all_of:'The relationship includes all clauses, without specifying temporal order.',any_of:'The relationship requires at least one clause and permits both.',exactly_one:'The relationship requires exactly one clause.',conditional:'The relationship makes the second clause conditional on the first; neither is asserted independently.'}[m.operator];
+    words.push((m.speech_act==='question'?'Question about the group. ':m.speech_act==='assertion'?'':m.speech_act+' over the group. ')+relation);
+    if(m.scopes.length){
+      const scopes=m.scopes.map(s=>s.operator==='time'?'time_'+s.relation:s.operator==='modality'?'modality_'+s.mode:s.operator==='aspect'?'aspect_'+s.aspect:s.operator);
+      const supported=new Set(['negation','time_before_speech','time_at_speech','time_after_speech','modality_possible','modality_necessary','modality_predicted','aspect_ongoing']);
+      words.push(scopes.every(s=>supported.has(s))&&!m.scopes.some(s=>s.strength!==undefined)?'Whole group: '+describeClaim('the entire relationship',scopes,m.speech_act):'The entire relationship has additional scope details shown in the complete meaning.');
+    }
+    if(m.condition_status&&m.condition_status!=='open')words.push('Condition status: '+m.condition_status+'.');
+    m.members.forEach((member,index)=>{
+      const scopes=member.scopes.map(s=>s.operator==='time'?'time_'+s.relation:s.operator==='modality'?'modality_'+s.mode:s.operator==='aspect'?'aspect_'+s.aspect:s.operator);
+      const supported=new Set(['negation','time_before_speech','time_at_speech','time_after_speech','time_previous_day','time_current_day','time_next_day','modality_possible','modality_necessary','modality_predicted','aspect_ongoing']);
+      const claim=scopes.every(s=>supported.has(s))?describeClaim(member.standard.norm,scopes):'Scoped '+member.standard.norm+'; see complete scope details.';
+      words.push('Clause '+(index+1)+' content: '+claim+' Bearer = '+identity(member.bearer)+'. '+describeRuntime(member.runtime_state));
+    });
+    words.push('Comparison standards are local to each adjective; no numerical cutoffs are stated.');
   }else if(m.knowledge)words.push('Knowledge of '+(m.knowledge.question.additional?'an additional':'a')+' wanted value. Knower = '+identity(m.knowledge.knower)+', wanter = '+identity(m.knowledge.question.restriction.wanter)+'. '+describeClaim('knows which value',m.knowledge.scopes));
   else if(m.fault)words.push(describeClaim('correct the '+(typeof m.fault.type_label==='string'?m.fault.type_label+' ':'')+'fault',m.scopes.map(s=>['possible','necessary'].includes(s)?'modality_'+s:s),m.speech_act)+' Actor = '+identity(m.actor)+'.');
   else if(m.discovery)words.push(identity(m.discovery.actor)+' found the referenced item. '+identity(m.requirement.actor)+' is required to erase that same item.');

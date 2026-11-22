@@ -1,0 +1,29 @@
+profile: EZCONTEXTUAL-GROUP-INVERSE-1
+version: '1.0'
+status: implemented strict MIDI inverse for the existing group performance
+source_profile: EZCONTEXTUAL-1
+music_changes: none
+meaning:
+  members: Two through eight physical contextual-adjective proposition contents.
+  bearer: Preserve each member's phonemic or deictic reference and reference mode.
+  standards: Preserve each local norm and physical dimension independently.
+  runtime: Preserve each member's 0, 1, or 2 separately from negation and time.
+  scopes: Preserve ordered outer scopes on the relationship and ordered scopes on each member.
+  speech_act: The final contour applies to the complete relationship; members are embedded contents.
+relationships:
+  sequence: Complete members in order, each nonfinal member ending with the existing one-beat boundary.
+  all_of: Explicit coord_all_of frame with coord_member separators.
+  any_of: Explicit coord_any_of frame; at least one member, allowing more than one.
+  exactly_one: Explicit coord_exactly_one frame; exactly one member.
+  conditional: Explicit conditional frame and one conditional_then separator; preserve condition status and antecedent/consequent order.
+acceptance:
+  - Every recovered member must pass the existing complete contextual-adjective validation.
+  - No omitted or unexplained tokens, malformed delimiters, empty members, or arbitrary half-beat juxtaposition.
+  - Public roots and grammar only; no original English, source IR, expected predicate, or hidden song metadata.
+  - Both original melody and expanded compact chords recover the same complete group.
+limits:
+  - No nested groups or mixed non-contextual predicate profiles in this inverse.
+  - No numeric width, aperture clearance, degree, or figurative adjective inference.
+  - Matching reference sounds alone do not establish external identity.
+  - Existing English parsing limits remain; a valid musical form need not have a supported English construction.
+  - General recorded-audio recovery is not established.
