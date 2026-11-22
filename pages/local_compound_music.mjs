@@ -1,7 +1,7 @@
-import {prepareLocalCompoundPerformance} from './local_compound_performance.mjs?v=contextual-width-1';
-import {grammarMarker} from './scheduler.mjs?v=contextual-width-1';
-import {midiFromScheduledEvents} from './engine.mjs?v=contextual-width-1';
-import {validateLocalCompounds} from './local_compounds.mjs?v=contextual-width-1';
+import {prepareLocalCompoundPerformance} from './local_compound_performance.mjs?v=contextual-width-2';
+import {grammarMarker} from './scheduler.mjs?v=contextual-width-2';
+import {midiFromScheduledEvents} from './engine.mjs?v=contextual-width-2';
+import {validateLocalCompounds} from './local_compounds.mjs?v=contextual-width-2';
 // Local-only namespace ±39/19. The portable registry supplies definitions.
 // 48-bit identifiers are checked for collisions across that registry.
 export function localCompoundFrame(id,relation,side,anchor=60){
