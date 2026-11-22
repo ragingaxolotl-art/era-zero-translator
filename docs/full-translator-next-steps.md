@@ -18,6 +18,8 @@ Complete the normal sentence inverse for the approved love reading, or clearly w
 
 ### 2. Make the normal sentence flow usable
 
+Implemented: [known-word diagnostics](../reports/sentence_diagnostics_2026_11_22.md) now distinguish missing definitions from unavailable sentence constructions, preserve valid personal choices and put the sentence explanation first. Passive/perfect and added relationship grammar remain open.
+
 Constrain candidate cards, labels and selects to the viewport; shorten option labels and show definitions below. Replace example-sentence confirmation buttons with the actual choice, such as “Physical pushing.” Do not offer unrelated roots as likely substitutes for a missing action. Clearly distinguish a missing definition from unsupported sentence structure and an unclear referent.
 
 Keep Translate, the plain-language interpreted message, Play and Add to song together. Put atomic IDs, graph details and MIDI tools in optional details. On failure, identify the first unresolved span, explain what is needed, link to the builder and return to the unchanged sentence. Preserve previous songs and definitions. A saveable “this sentence / what I meant” record would provide useful future evidence.
