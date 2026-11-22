@@ -1,8 +1,8 @@
 import {savedQualityLabel} from './story_saved_adjectives.mjs';
 import {expandChordMidi} from './compact_chords.mjs?v=state-adjectives-1';
-import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=sentence-diagnostics-1';
+import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=physical-holding-1';
 import {describeClaim,describeRuntime} from './meaning_readback.mjs?v=field-repairs-1';
-import {feltProperties} from './story_qualities.mjs?v=information-vocabulary-1';
+import {feltProperties} from './story_qualities.mjs?v=physical-holding-1';
 import {storyWords} from './story_words.mjs?v=information-vocabulary-1';
 
 const labels=new Map([...storyWords.map(r=>[r.id,r.word]),...Object.entries(feltProperties).map(([word,id])=>[id,word])]);

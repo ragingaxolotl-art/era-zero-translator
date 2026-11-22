@@ -16,4 +16,4 @@ export const properties = new Map(Object.entries({
 export const isPhysicalContainer=head=>/^(?:box(?:es)?|crates?|bottles?|cups?|bowls?|buckets?|baskets?|bags?|jars?|cans?|tanks?|containers?|barrels?)$/.test(head);
 export const isMaterialTarget=head=>isPassageHead(head)||isPhysicalContainer(head)||/^(?:gates?|doors?|carts?|stones?|rocks?|books?|chairs?|tables?|lids?|packages?|handles?|levers?|loads?|weights?|lamps?|balls?|tools?|boards?|ropes?|cords?|cables?|chains?|shelves|shelf)$/.test(head);
 export const physicalActionLabels=Object.freeze({push:'Physical pushing',lift:'Physical lifting',lower:'Controlled physical lowering',displace:'Physical displacement',
-  pull:'Pulling through a grip or tension',release:'Ending a physical hold',drop:'Releasing the object and causing it to fall',fall:'Downward movement under gravity'});
+  hold:'Maintaining a grip, restraint or physical support',pull:'Pulling through a grip or tension',release:'Ending a physical hold',drop:'Releasing the object and causing it to fall',fall:'Downward movement under gravity'});

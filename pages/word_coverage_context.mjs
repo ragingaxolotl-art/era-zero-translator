@@ -1,4 +1,4 @@
-import {properties,isMaterialTarget,isPhysicalContainer,physicalActionLabels} from './story_qualities.mjs?v=information-vocabulary-1';
+import {properties,isMaterialTarget,isPhysicalContainer,physicalActionLabels} from './story_qualities.mjs?v=physical-holding-1';
 // Some compounds have multiword English names. Their component words alone can
 // suggest unrelated predicates (for example "used" inside "open for use").
 import {storyWords} from './story_words.mjs?v=information-vocabulary-1';

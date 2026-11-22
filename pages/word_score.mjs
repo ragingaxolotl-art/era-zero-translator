@@ -1,6 +1,6 @@
 import {midiFromFormal} from './engine.mjs';
 import {encodeName,midiFromName} from './names.mjs';
-import {songMidi} from './song_lines.mjs?v=sentence-diagnostics-1';
+import {songMidi} from './song_lines.mjs?v=physical-holding-1';
 
 export function selectedWordMatch(item,selections) {
   const id = selections.get(item.token_index) ?? item.recommended_sense_id;
