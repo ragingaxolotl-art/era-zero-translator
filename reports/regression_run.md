@@ -54,7 +54,7 @@ Checks passed: 16; checks failed: 0; entries: 117
 
 ```text
 Gate 4C validation: PASS
-Checks passed: 17; checks failed: 0; senses: 579; lemmas: 558
+Checks passed: 17; checks failed: 0; senses: 589; lemmas: 568
 ```
 
 ## PASS — validate Gate 4D coverage and ambiguity report

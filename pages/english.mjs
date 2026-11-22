@@ -191,8 +191,9 @@ function unknownSemanticKind(words,index,phrasalVerb){
 }
 
 function quotedTokenIndexes(raw){
-  const quoted=[...String(raw).matchAll(/"[^"\n]+"|“[^”\n]+”|'[^'\n]+'/g)];
-  return new Set([...String(raw).matchAll(/[\p{L}\p{N}_-]+/gu)].flatMap((token,index)=>
+  const text=String(raw).normalize('NFC');
+  const quoted=[...text.matchAll(/"[^"\n]+"|“[^”\n]+”|(?<![\p{L}\p{N}])'[^'\n]+'(?![\p{L}\p{N}])|‘[^’\n]+’/gu)];
+  return new Set([...text.matchAll(/[\p{L}\p{N}_-]+/gu)].flatMap((token,index)=>
     quoted.some(span=>token.index>span.index&&token.index+token[0].length<span.index+span[0].length)?[index]:[]));
 }
 

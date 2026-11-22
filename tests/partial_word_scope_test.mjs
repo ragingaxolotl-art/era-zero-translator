@@ -15,7 +15,8 @@ for(const text of ['Nora copied only the file.','Only Nora copied the file.','No
   assert(plan.omitted.includes('only'),text);assert(!plan.playable.some(row=>row.term==='only'),text);
   assert.equal(await scoreSongText(text,authority,load),null,text+' must not discard restrictive scope');
 }
-for(const text of ['Nora copied "Only".','Nora copied “Only”.',"Nora copied 'Only'."]){
+for(const text of ['Nora copied "Only".','Nora copied “Only”.',"Nora copied 'Only'.",
+  "Nora didn't copy 'Only'.",'Nora didn’t copy ‘Only’.','Cafe\u0301ine copied "Only".']){
   const row=analyzeEnglish(text,authority).term_coverage.find(row=>row.term==='only');
   assert.equal(row.status,'phonemic_label',text);assert.equal(row.unscored_scope,undefined,text);
 }

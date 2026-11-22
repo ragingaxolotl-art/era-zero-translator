@@ -6,7 +6,7 @@ Status: **PASS**
 - Existing game/story phrases: **69**
 - Lore performance turns: **22**
 - Total audited phrases: **144**
-- Canonical roots / indexed and profile senses: **324 / 627**
+- Canonical roots / indexed and profile senses: **324 / 637**
 - Automatic single-target readings: **1** (not full sentence translations)
 - Phrases with documented gaps: **27**
 - Phrases with unresolved predicates/descriptors: **21**
