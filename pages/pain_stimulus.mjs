@@ -1,7 +1,7 @@
 // Draft relation prerequisite; no musical or English route is claimed here.
-import {canonicalDigest} from './engine.mjs?v=contextual-width-2';
-import {validatePainMeaning} from './pain_meaning.mjs?v=contextual-width-2';
-import {createContextualContent} from './contextual_content.mjs?v=contextual-width-2';
+import {canonicalDigest} from './engine.mjs?v=partial-word-flow-1';
+import {validatePainMeaning} from './pain_meaning.mjs?v=partial-word-flow-1';
+import {createContextualContent} from './contextual_content.mjs?v=partial-word-flow-1';
 export const PAIN_RELATIONS=Object.freeze({
  actual_causation:'The stimulus causally contributes to the specified pain experience; causal contribution is not mere correlation or temporal order and need not be the sole cause.',
  expected_outcome:'In the selected local context, occurrence or application of the stimulus is expected to produce the specified pain experience; neither occurrence nor pain is asserted as actual.',

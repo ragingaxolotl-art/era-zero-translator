@@ -1,8 +1,8 @@
-import {savedScopedReadings} from './dictionary_clauses.mjs?v=contextual-width-2';
+import {savedScopedReadings} from './dictionary_clauses.mjs?v=partial-word-flow-2';
 import {speakerGroupReference} from './references.mjs?v=clauses-1';
-import {validateLocalCompounds} from './local_compounds.mjs?v=contextual-width-2';
-import {contextualContentReference} from './contextual_content.mjs?v=contextual-width-2';
-import {composeLocalCompoundSentence} from './local_compound_sentence.mjs?v=contextual-width-2';
+import {validateLocalCompounds} from './local_compounds.mjs?v=partial-word-flow-1';
+import {contextualContentReference} from './contextual_content.mjs?v=partial-word-flow-1';
+import {composeLocalCompoundSentence} from './local_compound_sentence.mjs?v=partial-word-flow-1';
 import {expandNegativeContractions} from './contractions.mjs';
 const REF='(?:I|[Yy]ou|(?:[Tt]he|[Tt]his|[Tt]hat) [a-z]+|[A-Z][a-z]+|"[^"\\n]+")';
 const localReference=text=>text==='we'?speakerGroupReference('anchor'):contextualContentReference(text);

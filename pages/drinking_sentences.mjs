@@ -1,9 +1,9 @@
 import {expandNegativeContractions} from './contractions.mjs';
 import {personalPronounPlan,resolvePersonalPronouns} from './personal_pronoun_plan.mjs';
-import {validReferent} from './pronouns.mjs?v=contextual-width-2';
-import {contextualContentReference} from './contextual_content.mjs?v=contextual-width-2';
-import {createMaterialReference} from './material_reference.mjs?v=contextual-width-2';
-import {createDrinkingMeaning} from './drinking_meaning.mjs?v=contextual-width-2';
+import {validReferent} from './pronouns.mjs?v=partial-word-flow-1';
+import {contextualContentReference} from './contextual_content.mjs?v=partial-word-flow-1';
+import {createMaterialReference} from './material_reference.mjs?v=partial-word-flow-1';
+import {createDrinkingMeaning} from './drinking_meaning.mjs?v=partial-word-flow-1';
 const REF='(?:I|[Yy]ou|[A-Z][a-z]+|"[^"\\n]+"|(?:[Tt]he|[Tt]his|[Tt]hat) [a-z]+)';
 export function drinkingPlan(input){
  if(typeof input!=='string')return null;

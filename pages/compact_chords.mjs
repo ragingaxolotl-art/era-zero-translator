@@ -1,6 +1,6 @@
 // Perform dictionary roots as chords. Names, grammar and the speech-act contour retain their notes.
-import {notesFromMidi,midiFromNoteTimeline} from './performance_codec.mjs?v=contextual-width-2';
-import {decodeStrictMusicNotes} from './strict_music_decoder.mjs?v=contextual-width-2';
+import {notesFromMidi,midiFromNoteTimeline} from './performance_codec.mjs?v=partial-word-flow-1';
+import {decodeStrictMusicNotes} from './strict_music_decoder.mjs?v=partial-word-flow-1';
 
 const laneOffsets=[0,5,12],tritMotion=[0,2,-2];
 const cache=new WeakMap();

@@ -1,8 +1,8 @@
-import {validContentSelection} from './content_selection.mjs?v=contextual-width-2';
+import {validContentSelection} from './content_selection.mjs?v=partial-word-flow-1';
 // Contextual content is a reference, never proof of a cognitive predicate.
-import {canonicalDigest} from './engine.mjs?v=contextual-width-2';
+import {canonicalDigest} from './engine.mjs?v=partial-word-flow-1';
 import {encodeName} from './names.mjs';
-import {parseNominal,validNominalLabel} from './nominals.mjs?v=contextual-width-2';
+import {parseNominal,validNominalLabel} from './nominals.mjs?v=partial-word-flow-1';
 import {deicticReference,NOMINAL_MODES} from './references.mjs';
 import {CONTEXTUAL_CONTENT_KINDS} from './contextual_content_frames.mjs';
 const exact=(v,fields)=>v&&typeof v==='object'&&!Array.isArray(v)&&Object.keys(v).length===fields.length&&fields.every(k=>Object.hasOwn(v,k));

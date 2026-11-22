@@ -1,5 +1,5 @@
-import {validateLocalCompounds} from './local_compounds.mjs?v=contextual-width-2';
-import {canonicalDigest} from './engine.mjs?v=contextual-width-2';
+import {validateLocalCompounds} from './local_compounds.mjs?v=partial-word-flow-1';
+import {canonicalDigest} from './engine.mjs?v=partial-word-flow-1';
 // Preserve nested identity and qualification scopes. Canonical compounds remain
 // atomic references to their validated release plans, never flattened to roots.
 export async function expandLocalCompound(compoundId,registry,authority,{maxNodes=4096,maxDepth=32}={}){

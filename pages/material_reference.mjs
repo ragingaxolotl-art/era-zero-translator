@@ -1,7 +1,7 @@
 // Draft reference prerequisite for consumption. No drinking or liquid assertion.
-import {canonicalDigest} from './engine.mjs?v=contextual-width-2';
+import {canonicalDigest} from './engine.mjs?v=partial-word-flow-1';
 import {encodeName} from './names.mjs';
-import {parseNominal} from './nominals.mjs?v=contextual-width-2';
+import {parseNominal} from './nominals.mjs?v=partial-word-flow-1';
 import {NOMINAL_MODES} from './references.mjs';
 const CONTRACT=Object.freeze({material_kind_commitment:'label_not_classification',quantity:'unspecified',whole_amount_consumption:'not_asserted',existence_commitment:'governed_by_enclosing_content'});
 export async function createMaterialReference(text,{allowDraft=false,reading}={}){

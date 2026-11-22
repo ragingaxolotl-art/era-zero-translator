@@ -1,4 +1,4 @@
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=contextual-width-2';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
 // Initial semantic inverse: counted unary atomic properties. More predicate
 // valences and nested counts must be admitted explicitly, not silently ignored.
 export function decodeQuantifiedPropertyMidi(bytes,atoms,{allowDraft=false}={}){

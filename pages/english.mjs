@@ -1,5 +1,5 @@
 import {contextsForWords} from './word_coverage_context.mjs?v=physical-holding-1';
-import {isAttributiveProperty} from './nominals.mjs?v=contextual-width-2';
+import {isAttributiveProperty} from './nominals.mjs?v=partial-word-flow-1';
 const STOPWORDS=new Set('a an the to of in on at for from with am is are was were be being been do does did i you he she it we they this that these those my your his her its our their please now just may might maybe could can would will shall should perhaps possibly probably'.split(' '));
 const DIRECT=new Set(['atom','compound']);
 const INHERENTLY_POLYSEMOUS=new Set(['know','have','exist','receive','send','share','change','return','run','home']);
@@ -190,7 +190,15 @@ function unknownSemanticKind(words,index,phrasalVerb){
   return null;
 }
 
-function termCoverage(normalized,data,ranked,allSenses){
+function quotedTokenIndexes(raw){
+  const text=String(raw).normalize('NFC');
+  const quoted=[...text.matchAll(/"[^"\n]+"|“[^”\n]+”|(?<![\p{L}\p{N}])'[^'\n]+'(?![\p{L}\p{N}])|‘[^’\n]+’/gu)];
+  return new Set([...text.matchAll(/[\p{L}\p{N}_-]+/gu)].flatMap((token,index)=>
+    quoted.some(span=>token.index>span.index&&token.index+token[0].length<span.index+span[0].length)?[index]:[]));
+}
+
+function termCoverage(normalized,data,ranked,allSenses,raw=normalized){
+  const quoted=quotedTokenIndexes(raw);
   const words=normalize(normalized).match(/[\p{L}\p{N}_-]+/gu)||[],rankBySense=new Map(ranked.map((item,index)=>[item.sense_id,{index,score:item.score,match_type:item.match_type}]));
   const phrases=words.map((_,index)=>phrasalVerbAt(words,index));
   return words.map((word,tokenIndex)=>{
@@ -214,9 +222,13 @@ function termCoverage(normalized,data,ranked,allSenses){
     const labels=authoritative.filter(match=>match.route==='label');
     const participant=PARTICIPANTS.get(word),semanticKind=unknownSemanticKind(words,tokenIndex,phrase);
     const contextualStructure=['grammar','semantic_ir'].includes(matches[0]?.route)&&rankBySense.get(matches[0].sense_id)?.match_type==='contextual_english';
-    const status=participant?'participant_reference':SCOPE_WORDS.has(word)&&!authoritative.length?'function_word':contextualStructure?'structural':direct.length?'canonical':gaps.length?'documented_gap':labels.length?'labeled_entity':authoritative.length?'structural':STOPWORDS.has(word)||particle?'function_word':semanticKind?'unresolved_semantic':'phonemic_label';
+    // Restrictive focus changes the message. It is not an unfamiliar noun and
+    // cannot acquire a name sound merely because its grammar is unsupported.
+    // An explicitly quoted name such as "Only" remains a name.
+    const unscoredScope=word==='only'&&!quoted.has(tokenIndex);
+    const status=unscoredScope?'function_word':participant?'participant_reference':SCOPE_WORDS.has(word)&&!authoritative.length?'function_word':contextualStructure?'structural':direct.length?'canonical':gaps.length?'documented_gap':labels.length?'labeled_entity':authoritative.length?'structural':STOPWORDS.has(word)||particle?'function_word':semanticKind?'unresolved_semantic':'phonemic_label';
     const label=labels[0];
-    return{token_index:tokenIndex,term:word,status,semantic_kind:semanticKind,participant_role:participant||null,semantic_class_target_id:label?.semantic_class_target_id||null,recommended_sense_id:matches[0]?.sense_id??null,matches};
+    return{token_index:tokenIndex,term:word,status,...(unscoredScope?{unscored_scope:true}:{}),semantic_kind:semanticKind,participant_role:participant||null,semantic_class_target_id:label?.semantic_class_target_id||null,recommended_sense_id:matches[0]?.sense_id??null,matches};
   });
 }
 
@@ -227,7 +239,7 @@ export function analyzeEnglish(raw,data,{limit=Number.POSITIVE_INFINITY}={}){
   const intent=inferEnglishIntent(text,explicitRuntime),inputTokens=lexicalTokens(normalized);
   const allSenses=[...data.senses,...(data.game_story_senses||[]),...(data.local_senses||[]),...plainMappedSenses(data)].filter(contextsForWords(normalized,data.senses)),candidateSenses=allSenses.filter(sense=>sense.route!=='label');
   const ranked=candidateSenses.map(sense=>scoreSense(sense,normalized,inputTokens)).filter(Boolean).sort((a,b)=>Number(b.reviewed_label_match)-Number(a.reviewed_label_match)||b.score-a.score||b.specificity-a.specificity||a.sense_id.localeCompare(b.sense_id)).slice(0,limit);
-  const coverage=termCoverage(normalized,data,ranked,allSenses);
+  const coverage=termCoverage(normalized,data,ranked,allSenses,text);
   const unresolvedSemantic=coverage.some(item=>item.status==='unresolved_semantic');
   if(!ranked.length)return{status:'ok',input:raw,normalized_input:normalized,speech_act_proposal:intent.speechAct,explicit_runtime_state:intent.runtime,runtime_inference:intent.runtimeSource,candidates:[],candidate_count:0,term_coverage:coverage,decision:{auto_resolution_allowed:false,requires_clarification:true,reasons:[unresolvedSemantic?'unresolved_semantic_content':'phonemic_labels_only'],competing_sense_ids:[]}};
   ranked.forEach(candidate=>{candidate.required_roles=candidate.target_id?data.required_roles[candidate.target_id]||[]:[]});

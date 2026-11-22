@@ -1,6 +1,6 @@
-import {localCompoundMusic} from './local_compound_music.mjs?v=contextual-width-2';
-import {grammarMarker} from './scheduler.mjs?v=contextual-width-2';
-import {midiFromScheduledEvents,canonicalDigest} from './engine.mjs?v=contextual-width-2';
+import {localCompoundMusic} from './local_compound_music.mjs?v=partial-word-flow-1';
+import {grammarMarker} from './scheduler.mjs?v=partial-word-flow-1';
+import {midiFromScheduledEvents,canonicalDigest} from './engine.mjs?v=partial-word-flow-1';
 // Explicit scope order is outermost first: not(possible(P)) differs from
 // possible(not(P)). No English interpretation is inferred by this API.
 export async function composeLocalCompoundSentence(id,registry,authority,bindings,{runtimeState=1,anchor=60,scopes=[],speechAct='assertion'}={}){

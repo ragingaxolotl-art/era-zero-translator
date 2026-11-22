@@ -1,10 +1,10 @@
-import {validStorySlots} from './story_saved_adjectives.mjs?v=contextual-width-2';
+import {validStorySlots} from './story_saved_adjectives.mjs?v=partial-word-flow-1';
 import {isPassageHead} from './passage_nouns.mjs';
-import {knownValueReading} from './known_value.mjs?v=contextual-width-2';
-import {faultCategoryReading} from './fault_correction.mjs?v=contextual-width-2';
-import {routeNounLabel} from './nominals.mjs?v=contextual-width-2';
+import {knownValueReading} from './known_value.mjs?v=partial-word-flow-2';
+import {faultCategoryReading} from './fault_correction.mjs?v=partial-word-flow-2';
+import {routeNounLabel} from './nominals.mjs?v=partial-word-flow-1';
 import {expandNegativeContractions} from './contractions.mjs';
-import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs?v=contextual-width-2';
+import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs?v=partial-word-flow-2';
 import {properties,feltProperties,isMaterialTarget,isPhysicalContainer,physicalActionLabels} from './story_qualities.mjs?v=physical-holding-1';
 import {storyWords} from './story_words.mjs?v=information-vocabulary-1';
 import {ERASURE,isStoredInformationTarget} from './information_operations.mjs?v=information-operations-1';

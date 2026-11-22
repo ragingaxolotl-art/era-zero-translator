@@ -1,9 +1,9 @@
-import {canonicalDigest} from './engine.mjs?v=contextual-width-2';
-import {parseFoundationSentence} from './foundation_sentences.mjs?v=contextual-width-2';
-import {contextualContentReference,createContextualContent} from './contextual_content.mjs?v=contextual-width-2';
-import {composePainMeaning} from './pain_meaning.mjs?v=contextual-width-2';
-import {createPainStimulus} from './pain_stimulus.mjs?v=contextual-width-2';
-import {createPainComparison,validatePainComparison} from './pain_comparison.mjs?v=contextual-width-2';
+import {canonicalDigest} from './engine.mjs?v=partial-word-flow-1';
+import {parseFoundationSentence} from './foundation_sentences.mjs?v=partial-word-flow-1';
+import {contextualContentReference,createContextualContent} from './contextual_content.mjs?v=partial-word-flow-1';
+import {composePainMeaning} from './pain_meaning.mjs?v=partial-word-flow-1';
+import {createPainStimulus} from './pain_stimulus.mjs?v=partial-word-flow-1';
+import {createPainComparison,validatePainComparison} from './pain_comparison.mjs?v=partial-word-flow-1';
 import {encodeName} from './names.mjs';
 import {NOMINAL_MODES} from './references.mjs';
 const FOUNDATION='FND:018dd25d713dff83661a76a4';

@@ -1,4 +1,4 @@
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=contextual-width-2';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
 
 // Reads the care relation, its argument structure and scopes from MIDI alone.
 export function decodeCareMidi(bytes,atoms){

@@ -1,10 +1,10 @@
 // Knowing the identity of a wanted value is an embedded open question. The existing
 // polar-knowledge foundation selects a yes/no answer and cannot express this binding.
 import {expandNegativeContractions} from './contractions.mjs';
-import {scoreRoleReference,readRoleReference} from './dictionary_clause_music.mjs?v=contextual-width-2';
-import {informationMusic} from './information_music.mjs?v=contextual-width-2';
-import {midiFromScheduledEvents} from './engine.mjs?v=contextual-width-2';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=contextual-width-2';
+import {scoreRoleReference,readRoleReference} from './dictionary_clause_music.mjs?v=partial-word-flow-2';
+import {informationMusic} from './information_music.mjs?v=partial-word-flow-1';
+import {midiFromScheduledEvents} from './engine.mjs?v=partial-word-flow-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
 import {describeRuntime} from './meaning_readback.mjs?v=field-repairs-1';
 
 const nominal='(I|we|you|they|she|he|it|(?:the|this|that) [a-z]+|[A-Z][a-z]+|"[^"]+")';

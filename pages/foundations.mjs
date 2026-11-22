@@ -1,6 +1,6 @@
 // EZFOUND-1 is an additive candidate profile. Existing root addresses are unchanged.
 // Draft records require an explicit opt-in and never become dictionary meanings here.
-import {canonicalDigest} from './engine.mjs?v=contextual-width-2';
+import {canonicalDigest} from './engine.mjs?v=partial-word-flow-1';
 const OFFSETS={low:-12,middle:0,high:12,sustained_background:-5};
 const KEYS=['profile','definition_version','family_affinity','sound_code','definition','roles','excludes'];
 export function foundationPayload(record){return Object.fromEntries(KEYS.map(k=>[k,record[k]]));}
